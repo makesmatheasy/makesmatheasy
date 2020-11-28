@@ -410,15 +410,15 @@ function sumofmatrix(){
                         addop('opval','Select Operation');
                         addop('opval','+');
                         addop('opval','-');
-                        addop('opval','x');
+                        addop('opval','×');
                     }
                     else if(c1==r2 && r1!=c2){
-                        addop('opval','x');
-                        signofmatrix('x');
+                        addop('opval','×');
+                        signofmatrix('×');
                     }
                     else if(c1==r2 && r1==c2){
-                        addop('opval','x');
-                        signofmatrix('x');
+                        addop('opval','×');
+                        signofmatrix('×');
                     }
                 }
                 else{
