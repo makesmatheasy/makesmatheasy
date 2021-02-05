@@ -990,12 +990,12 @@ function multiplywithsteps(numm, withnum) {
             m += "&times;";
         }
         for (i = 0; i < String(mulsol).length; i++) {
-            line += "--";
+            line += "_";
         }
     } else {   //no plus simple multiply
         var mulsol = eval(nerdamer(String(numwith) + '*' + String(num)).evaluate().toString());
         for (i = 0; i < String(mulsol).length; i++) {
-            line += "--";
+            line += "_";
         }
     }
     if (numwith.length == 1) {
