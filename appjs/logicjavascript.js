@@ -716,9 +716,10 @@ function orderas() {
             }
         }
     }
-    val = val.join('&nbsp;&nbsp;&nbsp;')
-    document.getElementById("orderresult").innerHTML += "Ascending Order&nbsp;";
-    document.getElementById("orderresult").innerHTML += "[&nbsp;&nbsp;&nbsp;" + val + "&nbsp;&nbsp;&nbsp;]<br>";
+    val = val.join(',');
+    document.getElementById("orderresult").innerHTML += "\\[Ascending \\quad Order\\]";
+    document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById('orderresult'));
 }
 
 function orderde() {
@@ -738,9 +739,10 @@ function orderde() {
             }
         }
     }
-    val = val.join('&nbsp;&nbsp;&nbsp;')
-    document.getElementById("orderresultde").innerHTML += "Descending Order&nbsp;";
-    document.getElementById("orderresultde").innerHTML += "[&nbsp;&nbsp;&nbsp;" + val + "&nbsp;&nbsp;&nbsp;]<br>";
+    val = val.join(',')
+    document.getElementById("orderresultde").innerHTML += "\\[ Descending \\quad Order \\]";
+    document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById('orderresultde'));
 }
 
 function orderfieldclear() {
