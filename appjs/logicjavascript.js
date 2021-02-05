@@ -1,3 +1,4 @@
+
 function convertkatex(element, value) {
     var x = nerdamer(value);
     var value = x.toTeX()
@@ -117,7 +118,7 @@ function performdivide() {
     } else {
         var rem = num1 % num3;
         var c = num1 / num3;
-        var temp = num1 + "÷" + num3 + "=" + c + "<br>" + "Quotient =" + parseInt(c) + "<br>" + "Remainder =" + rem;
+        var temp = num1 + " ÷ " + num3 + " = " + c + "<br>" + "Quotient = " + parseInt(c) + "<br>" + "Remainder = " + rem;
         document.getElementById("resultdivi").innerHTML = temp;
     }
 
@@ -755,7 +756,7 @@ function checkdivisibility() {
     var n2 = parseInt(document.getElementById("n2").value);
     if (n1 % n2 == 0) {
         document.getElementById("divisibilitycheckresult").innerHTML = "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
-        document.getElementById("divisibilitycheckresult").innerHTML += String(n1) + " / " + String(n2) + " = " + eval(String(n1 / n2)) + "<br>";
+        document.getElementById("divisibilitycheckresult").innerHTML += "\\[ \\frac{"+String(n1) + "}{" + String(n2) + "} = " + eval(String(n1 / n2)) + " \\]";
         document.getElementById("divisibilitycheckresultex").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder 0.";
 //            var btn = document.createElement('input');
 //            btn.id="showcheckdivisibilitysteps"
@@ -767,6 +768,7 @@ function checkdivisibility() {
         document.getElementById("divisibilitycheckresult").innerHTML = "No! " + String(n1) + " is not Divisible by " + n2;
         document.getElementById("divisibilitycheckresultex").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder " + eval(n1 % n2) + ".";
     }
+    renderMathInElement(document.getElementById('divisibilitycheckresult'))
 }
 
 
