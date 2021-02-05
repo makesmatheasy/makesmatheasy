@@ -3,336 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<!--    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>Makes Math Easy</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <!--    <script src="codemirror-5.58.1/lib/codemirror.js"></script>-->
-    <!--    <link rel="stylesheet" href="codemirror-5.58.1/lib/codemirror.css">-->
-    <!--    <script src="codemirror-5.58.1/mode/javascript/javascript.js"></script>-->
-    <!--    <script src='js/has.js'></script>-->
-    <!--    <script type="text/javascript" src="js/edp1hux.js"></script>-->
-    <!--    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
-    <!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-    <!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
-    <!--    <script src="popper.js"></script>-->
-
-
-    <script defer src="katex/katex.min.js"></script>
-    <script defer src="katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+<link rel="shortcut icon" type="image/png" href=”https://github.com/sairish2001/makesmatheasy.github.io/raw/main/sairish-650x650.png”/>
+    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--    <script src="codemirror-5.58.1/lib/codemirror.js"></script>-->
+<!--    <link rel="stylesheet" href="codemirror-5.58.1/lib/codemirror.css">-->
+<!--    <script src="codemirror-5.58.1/mode/javascript/javascript.js"></script>-->
+    <script src="js/matrixlogic.js"></script>
+    <!--<script src="jquery.min.js"></script>-->
+    <script src="js/url.js"></script>
+    <script src="js/two.min.js"></script>
+<!--    <script src='js/has.js'></script>-->
+<!--    <script type="text/javascript" src="js/edp1hux.js"></script>-->
+<!--    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--    <script src="popper.js"></script>-->
+<!--    <script src="popper.min.js"></script>-->
+    <!--<script src="js/bootstrap.js"></script>-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=8"/>
     <link rel="stylesheet" href="simplecal.css">
     <link rel="stylesheet" href="css/animista.css">
     <link href="katex/katex.min.css" rel="stylesheet">
-
+    <script defer src="katex/katex.min.js"></script>
+    <script defer src="katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script src='displaymath.js'></script>
+    <script src="js/plotly-1.35.2.min.js"></script>
+    <script src="js/math.min.js"></script>
     <noscript>
         <style>
-            .javascriptno {
-                display: block !important;
-                background: black;
-                background-size: cover;
-                text-align: center;
-                min-height: 100vh;
-                color: white;
+            .javascriptno{
+                display:block !important;
+                background:black;
+                background-size:cover;
+                text-align:center;
+                min-height:100vh;
+                color:white;
             }
         </style>
     </noscript>
 
     <!--    my page logic-->
-
+    <script src="logicjquery.js"></script>
 
     <!--    my page logic ends-->
     <style>
-        pu {
+         pu {
             text-decoration: none;
             border-left: 2px solid white;
             border-bottom: 2px solid white;
-            padding: 2px;
-        }
+            padding:2px;
+            }​
 
-        ​
-        st {
-            border: 2px dotted black;
-            padding: 5px;
-        }
+            st{
+            border:2px dotted black;
+            padding:5px;
+            }
 
-        lc {
-            padding-left: 0;
-            border-bottom: 4px solid white;
-            border-left: 4px solid white;
-        }
-
-        v {
-            border: 5px solid #232a36;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            align-content: center !important;
-        }
-
-        chnc {
-            color: red;
-        }
+            lc{
+                padding-left:0;
+                border-bottom:4px solid white;
+                border-left:4px solid white;
+            }
+            v{
+                border:5px solid #232a36;
+                padding:10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center !important;
+            }
+            chnc{
+                color:red;
+            }
     </style>
     <link href="css/style.css" rel="stylesheet">
+    <script src="logicjavascript.js"></script>
     <link rel="stylesheet" href="searchbar.css">
     <!--    splash logic-->
-    <!--        <script>-->
-    <!--            function checkscreen(x){-->
-    <!--                if(x.matches){-->
-    <!--                    alert("matches");-->
-    <!--                }-->
-    <!--            }-->
-    <!--            window.onload=function () {-->
-    <!--                $(document).ready(function(){-->
-    <!--                    var x = window.matchMedia("(max-width: 768px)")-->
-    <!--                    checkscreen(x)-->
-    <!--                    x.addListener(checkscreen)-->
-    <!--                })-->
-    <!--            };-->
+<!--        <script>-->
+<!--            function checkscreen(x){-->
+<!--                if(x.matches){-->
+<!--                    alert("matches");-->
+<!--                }-->
+<!--            }-->
+<!--            window.onload=function () {-->
+<!--                $(document).ready(function(){-->
+<!--                    var x = window.matchMedia("(max-width: 768px)")-->
+<!--                    checkscreen(x)-->
+<!--                    x.addListener(checkscreen)-->
+<!--                })-->
+<!--            };-->
 
-    <!--        </script>-->
+<!--        </script>-->
     <!--    splash logic ends-->
 
     <style>
 
         @font-face {
-            font-family: myfont;
-            src: url(fonts/JosefinSans-SemiBold.ttf) format('truetype');
+        font-family: myfont;
+        src: url(fonts/JosefinSans-SemiBold.ttf)format('truetype');
         }
-
-        @font-face {
-            font-family: myfont2;
-            src: url(fonts/ARIAL.TTF) format('truetype');
+        @font-face{
+        font-family: myfont2;
+        src: url(fonts/ARIAL.TTF)format('truetype');
         }
-
-        @font-face {
-            font-family: mathfont;
-            src: url(fonts/Grandstander-Regular.ttf) format('truetype');
+        @font-face{
+        font-family: mathfont;
+        src: url(fonts/Grandstander-Regular.ttf)format('truetype');
         }
-
-        body {
-            background: #232a36;
+        body{
+            //background:rgb(209,130,255);
+            background:#232a36;
             font-family: 'myfont';
-            background-size: cover;
+            background-size:cover;
             height: 100vh;
-            top: 0;
-            bottom: 0;
-            padding: 0;
-            margin: 0;
+            top:0;
+            bottom:0;
+            padding:0;
+            margin:0;
         }
 
-        #about {
-            font-family: 'myfont';
-        }
+#about{
+font-family: 'myfont';
+}
 
     </style>
     <style>
         /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 10px;
-        }
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
 
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #aa42f5;
-            border-radius: 10px;
-        }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aa42f5;
+  border-radius: 10px;
+}
 
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a32ff7;
-        }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a32ff7;
+}
 
-        .hidescroll::-webkit-scrollbar {
-            display: none;
-        }
+.hidescroll::-webkit-scrollbar {
+    display: none;
+}
 
-        .hidescroll {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
+.hidescroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
     </style>
+    <script>
+        $(document).ready(function(){
+            $('i').click(function(){
+                $('ul').toggleClass('ul_show');
+                $('section').toggleClass('slide_image');
+            });
+        });
+
+    </script>
+    <script>
+		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		if (isMobile) {
+            console.log("Mobile")
+		}
+		else {
+		    console.log("Desktop")
+		}
+	</script>
     <style>
-        .readonlybody {
-            user-select: none;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            -ms-user-select: none;
-            touch-action: auto;
-            overflow-y: scroll !important;
-            position: relative !important;
-        }
+    .readonlybody{
+        user-select:none;
+        -moz-user-select:none;
+        -webkit-user-select:none;
+        -webkit-touch-callout:none;
+        -ms-user-select:none;
+        touch-action: auto;
+        overflow-y:scroll !important;
+        position:relative !important;
+    }
 
     </style>
+
+    <script src="simplecallogic.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
     <style>
-        ul li {
-            height: auto;
-            outline: none;
-            background: black;
+        ul li{
+            height:auto;
+           outline: none;
+           background:black;
         }
     </style>
-    <!--    <script async src="gcse.js"></script>-->
-    <!--    <script async src="https://cse.google.com/cse.js?cx=009872370340293281187:ywqdtxvpk3s"></script>-->
-    <!---->
+<!--    <script async src="gcse.js"></script>-->
+<!--    <script async src="https://cse.google.com/cse.js?cx=009872370340293281187:ywqdtxvpk3s"></script>-->
+<!---->
 </head>
 <body class="readonlybody hidescroll" onload="bodyload()">
 <nav id="navbar-main" style="z-index:30">
-    <ul id="slide-out" class="sidenav ulstyle">
+    <ul id="slide-out" class="sidenav ulstyle" >
 
-        <li class="listyle"><a id="homeoption" style="cursor: pointer;">Home</a></li>
-        <li onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer">Linear Algebra<img
-                style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
-        <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
-            <div class="dropdown-divider"></div>
-            <li><a id="matrixcollapsebtn"
-                   style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Matrix</a><span
-                    style="display:inline;float:right;"
-                    onclick="addtofavourite('Matrix','#matrixcollapse','c','matrixfav')"><img id="matrixfav"
-                                                                                              src="unfavourite.png"
-                                                                                              style="height:25px;"></span>
-            </li>
-            <div class="dropdown-divider"></div>
-        </div>
+        <li class="listyle"><a id="homeoption" style="cursor: pointer;" >Home</a></li>
+	<li onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer">Linear Algebra<img style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
+	<div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+		<div class="dropdown-divider"></div>
+        <li><a id="matrixcollapsebtn" style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Matrix</a><span style="display:inline;float:right;" onclick="addtofavourite('Matrix','#matrixcollapse','c','matrixfav')"><img id="matrixfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <div class="dropdown-divider"></div>
+	</div>
+	
+    <li onclick="collapseit('calculustoggle')"><a style="cursor: pointer">Calculus<img style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
+    <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+        <div class="dropdown-divider"></div>
+        <li><a id="integrate" style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Integration</a><span style="display:inline;float:right;" onclick="addtofavourite('Integration','#integralcollapse','c','intimgfav')"><img id="intimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a id="differentiate" style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Differentiation</a><span style="display:inline;float:right;" onclick="addtofavourite('Differentiation','#differentiatecollapse','c','diffimgfav')"><img id="diffimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a id="partialdiff" style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Partial Differentiation</a><span style="display:inline;float:right;" onclick="addtofavourite('Partial Differentiate','#partialdiffcollapse','c','pardiffimgfav')"><img id="pardiffimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a id="laplace" style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Laplace</a><span style="display:inline;float:right;" onclick="addtofavourite('Laplace','#laplacecollapse','c','laplaceimgfav')"><img id="laplaceimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        
+        <div class="dropdown-divider"></div>
+    </div>
+    <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
+    <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+        <div class="dropdown-divider"></div>
+        <li><a id="simpletrignocollapsebutton" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">P/B/H Trigo.</a><span style="display:inline;float:right;" onclick="addtofavourite('P/B/H Trigo.','#simpletrignocollapse','c','strigoimgfav')"><img id="strigoimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <div class="dropdown-divider"></div>
+    </div>
 
-        <li onclick="collapseit('calculustoggle')"><a style="cursor: pointer">Calculus<img
-                style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
-        <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:10px;padding-left:10px">
-            <div class="dropdown-divider"></div>
-            <li><a id="integrate"
-                   style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Integration</a><span
-                    style="display:inline;float:right;"
-                    onclick="addtofavourite('Integration','#integralcollapse','c','intimgfav')"><img id="intimgfav"
-                                                                                                     src="unfavourite.png"
-                                                                                                     style="height:25px;"></span>
-            </li>
-            <li><a id="differentiate"
-                   style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Differentiation</a><span
-                    style="display:inline;float:right;"
-                    onclick="addtofavourite('Differentiation','#differentiatecollapse','c','diffimgfav')"><img
-                    id="diffimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <li><a id="partialdiff"
-                   style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Partial
-                Differentiation</a><span style="display:inline;float:right;"
-                                         onclick="addtofavourite('Partial Differentiate','#partialdiffcollapse','c','pardiffimgfav')"><img
-                    id="pardiffimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <li><a id="laplace"
-                   style="display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Laplace</a><span
-                    style="display:inline;float:right;"
-                    onclick="addtofavourite('Laplace','#laplacecollapse','c','laplaceimgfav')"><img id="laplaceimgfav"
-                                                                                                    src="unfavourite.png"
-                                                                                                    style="height:25px;"></span>
-            </li>
+    <li onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer">General Maths<img style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
+    <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+        <div class="dropdown-divider"></div>
+        <li><a id="factorsoption" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">LCM/HCF/Factors</a><span style="display:inline;float:right;" onclick="addtofavourite('LCM/HCF/Factors','#factors','c','facimgfav')"><img id="facimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a data-toggle="modal" data-target="#roman" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic Numerals</a><span style="display:inline;float:right;" onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img src="unfavourite.png" id="romanimgfav" style="height:25px;"></span></li>
+        <li><a data-toggle="modal" data-target="#orderit" style=" display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a><span style="display:inline;float:right;" onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img id="orderitimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a data-toggle="modal" data-target="#internationalnumber" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion to Words</a><span style="display:inline;float:right;" onclick="addtofavourite('Conversion to Words','#internationalnumber','d','ctowordsimgfav')"><img id="ctowordsimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a id="tableoption" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Multiplication Table</a><span style="display:inline;float:right;" onclick="addtofavourite('Multiplication Table','#table','c','tableimgfav')"><img src="unfavourite.png" id="tableimgfav" style="height:25px;"></span></li>
+        <li><a id="areacalbtn" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes Calculator</a><span style="display:inline;float:right;" onclick="addtofavourite('Shapes Calculator','#areacal','c','areaimgfav')"><img id="areaimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a id="divideoption" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Divide</a><span style="display:inline;float:right;" onclick="addtofavourite('Divide','#divide','c','divideimgfav')"><img id="divideimgfav" src="unfavourite.png" style="height:25px;"></span></li>
+        <li><a id="mulsolwithstepsbtn" style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Multiply With Steps</a><span style="display:inline;float:right;" onclick="addtofavourite('Multiply with Steps','#mulsolwithsteps','c','mulsolimgfav')"><img src="unfavourite.png" id='mulsolimgfav' style="height:25px;"></span></li>
+        <div class="dropdown-divider"></div>
+    </div>
 
-            <div class="dropdown-divider"></div>
-        </div>
-        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img
-                style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
-        <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
-            <div class="dropdown-divider"></div>
-            <li><a id="simpletrignocollapsebutton"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">P/B/H
-                Trigo.</a><span style="display:inline;float:right;"
-                                onclick="addtofavourite('P/B/H Trigo.','#simpletrignocollapse','c','strigoimgfav')"><img
-                    id="strigoimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <div class="dropdown-divider"></div>
-        </div>
-
-        <li onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer">General Maths<img
-                style="height:20px;filter: invert(100%);" src="dropdownlogo.png"></a></li>
-        <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
-            <div class="dropdown-divider"></div>
-            <li><a id="factorsoption"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">LCM/HCF/Factors</a><span
-                    style="display:inline;float:right;"
-                    onclick="addtofavourite('LCM/HCF/Factors','#factors','c','facimgfav')"><img id="facimgfav"
-                                                                                                src="unfavourite.png"
-                                                                                                style="height:25px;"></span>
-            </li>
-            <li><a data-toggle="modal" data-target="#roman"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
-                Numerals</a><span style="display:inline;float:right;"
-                                  onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
-                    src="unfavourite.png" id="romanimgfav" style="height:25px;"></span></li>
-            <li><a data-toggle="modal" data-target="#orderit"
-                   style=" display:inline;font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a><span
-                    style="display:inline;float:right;"
-                    onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img
-                    id="orderitimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <li><a data-toggle="modal" data-target="#internationalnumber"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion
-                to Words</a><span style="display:inline;float:right;"
-                                  onclick="addtofavourite('Conversion to Words','#internationalnumber','d','ctowordsimgfav')"><img
-                    id="ctowordsimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <li><a id="tableoption"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Multiplication
-                Table</a><span style="display:inline;float:right;"
-                               onclick="addtofavourite('Multiplication Table','#table','c','tableimgfav')"><img
-                    src="unfavourite.png" id="tableimgfav" style="height:25px;"></span></li>
-            <li><a id="areacalbtn"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes
-                Calculator</a><span style="display:inline;float:right;"
-                                    onclick="addtofavourite('Shapes Calculator','#areacal','c','areaimgfav')"><img
-                    id="areaimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <li><a id="divideoption"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Divide</a><span
-                    style="display:inline;float:right;" onclick="addtofavourite('Divide','#divide','c','divideimgfav')"><img
-                    id="divideimgfav" src="unfavourite.png" style="height:25px;"></span></li>
-            <li><a id="mulsolwithstepsbtn"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Multiply
-                With Steps</a><span style="display:inline;float:right;"
-                                    onclick="addtofavourite('Multiply with Steps','#mulsolwithsteps','c','mulsolimgfav')"><img
-                    src="unfavourite.png" id='mulsolimgfav' style="height:25px;"></span></li>
-            <div class="dropdown-divider"></div>
-        </div>
-
-        <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
-        <li><a id="contactbutton" style="cursor: pointer" href="contact.html">Contact</a></li>
-        <li><a href="whatsapp://send?text=Thanks for using Makes Math Easy, %0a *Regards Sairish*"
-               data-action="share/whatsapp/share">Share to Whatsapp<img style="display:inline;height:25px;"
-                                                                        src="images/whatsapplogo.png"></a></li>
-        <li><a data-toggle="modal" data-target="#settings" style="color:white;text-decoration:none;"
-               href="#">Settings</a></li>
-    </ul>
+    <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
+    <li><a id="contactbutton" style="cursor: pointer" href="contact.html">Contact</a></li>
+    <li><a href="whatsapp://send?text=Thanks for using Makes Math Easy, %0a *Regards Sairish*" data-action="share/whatsapp/share">Share to Whatsapp<img style="display:inline;height:25px;" src="pictures/whatsapplogo.png"></a></li>
+    <li><a data-toggle="modal" data-target="#settings" style="color:white;text-decoration:none;" href="#">Settings</a></li>
+</ul>
 </nav>
-<div class="blink-1 javascriptno" style="width:100%;position:absolute;z-index:999;display:none;">May be your Browser
-    won't Support Javascript<br>or<br>Try Turning on Javascript in Browser Settings<br><br><a class="btn btn-primary"
-                                                                                              href="helpjavascript.html">Check
-        How to?</a></div>
-<div id="main" style="z-index:31;">
-    <a style="position:fixed;z-index:100" href="#" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><i
-            class="material-icons"><img src="icons/menu.png" style="height:2rem;z-index:9;position:relative;"></i></a>
-    <!--        <span class="mainheading">Makes Math Easy</span>-->
-    <span onclick="opencal()"><img src="icons/calculator.png"
-                                   style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:9"></span>
+<div class="blink-1 javascriptno" style="width:100%;position:absolute;z-index:999;display:none;">May be your Browser won't Support Javascript<br>or<br>Try Turning on Javascript in Browser Settings<br><br><a class="btn btn-primary" href="helpjavascript.html">Check How to?</a></div>
+    <div id="main" style="z-index:31;">
+        <a style="position:fixed;z-index:100" href="#" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><i class="material-icons"><img src="icons/menu.png" style="height:2rem;z-index:9;position:relative;"></i></a>
+<!--        <span class="mainheading">Makes Math Easy</span>-->
+        <span onclick="opencal()"><img src="icons/calculator.png" style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:9"></span>
     <br>
     <br>
     <div class="container" style="z-index:9;position:relative;">
         <div class="text-center form-group">
-            <form autocomplete="off" style="font-family: 'myfont2';">
+            <form autocomplete="off" style="font-family: 'myfont2';" >
                 <div class="form-group">
                     <div class="autocomplete">
-                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
-                               style="display:inline;font-size: 1rem;">
+                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field" style="display:inline;font-size: 1rem;">
                     </div>
-                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                                                                                   style="height:25px;display:inline;"
-                                                                                   src="speechlogo.png"></span>
-                    <button type="button" class="searchbtn"
-                            onclick="searchgoogle(document.getElementById('myInput').value)"><img
-                            style="height:30px;filter:invert(100%)" src="icons/loupe.png"></button>
+                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i" style="height:25px;display:inline;" src="speechlogo.png"></span>
+                    <button type="button" class="searchbtn" onclick="searchgoogle(document.getElementById('myInput').value)"><img style="height:30px;filter:invert(100%)" src="icons/loupe.png"></button>
                 </div>
             </form>
         </div>
@@ -340,18 +289,16 @@
         <div id="homecollapse" style="z-index:11;position:relative;">
             <br>
             <ol id="favourite" style="list-style:none" class="slide-in-elliptic-left-fwd"></ol>
-            <!--            <a class="step-wp whatsapp sharing" data-action="share/whatsapp/share" href="whatsapp://send?text=hjhh">ghg</a>-->
+<!--            <a class="step-wp whatsapp sharing" data-action="share/whatsapp/share" href="whatsapp://send?text=hjhh">ghg</a>-->
         </div>
         <!--    end home-->
         <br>
-        <div class="collapse" id="divide">
+        <div class="collapse"  id="divide">
             <hr style="background:black;height:1px;">
             <div>
                 <form class="form-inline">
-                    <input type="number" id="divisornumwith" class="form__field"
-                           style="width:70px;border-bottom:6px solid #ff00cc;font-size:20px">
-                    <input type="number" id="dividendnum" class="form__field"
-                           style="width:120px;border-left:6px solid #ff00cc;font-size:20px;border-top:6px solid #ff00cc;">
+                    <input type="number" id="divisornumwith"  class="form__field" style="width:70px;border-bottom:6px solid #ff00cc;font-size:20px">
+                    <input type="number" id="dividendnum" class="form__field" style="width:120px;border-left:6px solid #ff00cc;font-size:20px;border-top:6px solid #ff00cc;">
                     <button type="button" class="btn-grad" onclick="divisionwithsteps()">Solve</button>
                 </form>
                 <br>
@@ -359,10 +306,9 @@
                     <p id="resultofdivsteps" style="font-size:30px;"></p>
                 </div>
             </div>
-            <!--            -->
+<!--            -->
 
-            <p id="resultdivi" class="stopwrap"
-               style="font-family:mathfont;font-size:30px;background-color:transparent;"></p>
+            <p id="resultdivi" class="stopwrap" style="font-family:mathfont;font-size:30px;background-color:transparent;"></p>
 
             <hr style="background:black;height:1px;">
             <h5>Check Divisibility</h5>
@@ -370,30 +316,24 @@
                 <form class="form-inline">
                     <div class="form-group">
                         <label style="display:inline-block;font-family:mathfont;font-size:20px">Is&nbsp;</label>
-                        <input type="number" id="n1" class="form__field"
-                               style="font-size:20px;display:inline-block;width:20%">
+                        <input type="number" id="n1" class="form__field" style="font-size:20px;display:inline-block;width:20%">
                         <label style="font-family:mathfont;font-size:20px">&nbsp;divisible by&nbsp;</label>
-                        <input type="number" id="n2" class="form__field"
-                               style="font-size:20px;display:inline-block;width:20%">
+                        <input type="number" id="n2" class="form__field" style="font-size:20px;display:inline-block;width:20%">
                         <label style="display:inline-block;font-family:mathfont;font-size:20px">&nbsp;?&nbsp;</label>
-                        <button type="button" class="btn btn-success" onclick="checkdivisibility()">Check</button>
+                    <button type="button" class="btn btn-success" onclick="checkdivisibility()">Check</button>
                     </div>
                 </form>
                 <br>
                 <p id="divisibilitycheckresult" class="stopwrap" style="font-family:mathfont;font-size:30px;"></p>
                 <p id="divisibilitycheckresultex" class="stopwrap" style="font-family:mathfont;font-size:20px;"></p>
-                <button class="btn btn-info" id="showcheckdivisibilitysteps"
-                        onclick="showdivisionstepsforcheckdivisibility()">Show Division Steps
-                </button>
+                <button class="btn btn-info" id="showcheckdivisibilitysteps" onclick="showdivisionstepsforcheckdivisibility()">Show Division Steps</button>
             </div>
             <hr style="background:black;height:1px;">
             <h5>Variable Divide</h5>
             <div>
                 <form class="form-inline">
-                    <input value="t" type="text" id="withvardivi" class="form__field"
-                           style="font-size:20px;width:70px;border-bottom:6px solid black;">
-                    <input value="2t^2-3t" type="text" id="numvardivi" class="form__field"
-                           style="font-size:20px;width:120px;border-left:6px solid black;border-top:6px solid black;">
+                    <input value="t" type="text" id="withvardivi" class="form__field" style="font-size:20px;width:70px;border-bottom:6px solid black;">
+                    <input value="2t^2-3t" type="text" id="numvardivi" class="form__field" style="font-size:20px;width:120px;border-left:6px solid black;border-top:6px solid black;">
                     <button type="button" id="variabledividebtn" class="btn-grad">Solve</button>
 
                 </form>
@@ -403,47 +343,68 @@
                 <p style="font-size:50px" id="demoRenderingdividevariable">``</p>
             </div>
         </div>
-        <!--        start factors-->
-        <div id="factors">
+<!--        start factors-->
+        <div class="collapse" id="factors">
+            <h5>Prime Factors Single Number(with Steps)</h5>
             <form class="form-group">
-                <input type="tel" id="num2" name="num2" class="form__field"
-                       placeholder="Enter Number(s) Space Separated">
-                <button type="button" onclick="factorslcmhcfempty();factorselect('num2')" class="btn btn-success">Factors</button>
-                <button type="button" onclick="factorslcmhcfempty();lcmsol('num2')" class="btn btn-success">LCM</button>
-                <button type="button" onclick="factorslcmhcfempty();hcf('num2')" class="btn btn-success">HCF</button>
+                <input type="number" id="num2" name="num2" class="form__field"
+                       placeholder="Enter Number">
+                <button type="button" onclick="printfactors()" class="btn btn-success">Print</button>
+                <button type="button" class="btn btn-danger" onclick="document.getElementById('num2').value='';document.getElementById('result').innerHTML='';document.getElementById('result1').innerHTML='';document.getElementById('result12').innerHTML='';">Clear</button>
             </form>
+            <p id="result" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
+            <p id="result1" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
+            <p id="result12" style="display:block;font-size:30px;font-family:mathfont;"></p>
+            <div class="dropdown-divider"></div>
 
-            <!--            prime factors with steps-->
-            <p id="dividefactor" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
-            <p id="dividefactorresult" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
-            <p id="factorresult" class="stopwrap" style="display:block;font-size:30px;font-family:mathfont;"></p>
-            <!--            prime factors with steps-->
+            <h5>Prime Factors More than One Number</h5>
+            <input type="tel" id="nnuumm2" class="form__field" placeholder="Enter Numbers(Space Separated)" style="font-size:20px;">
 
-            <!--lcm result-->
+            <button type="button" id="printmorefactorsbutton"
+                    onclick="printmorefactors('nnuumm2','resultmore')" class="btn btn-success">Print
+            </button>
+            <button type="button" class="btn btn-danger"  onclick="clearit('nnuumm2','resultmore')">Clear</button>
+
+            <p id="resultmore" class="stopwrap" style="font-size:30px;font-family:mathfont"></p>
+            <br>
+            <br>
+            <div class="dropdown-divider"></div>
+
+            <h5>LCM with Steps More than One Numbers</h5>
+            <input type="tel" class="form__field" id="numlcm" style="font-size:20px;" oninput="document.getElementById('resultlcms').innerHTML='';document.getElementById('resultlcm').innerHTML='';document.getElementById('resultfac').innerHTML=''" placeholder="Enter Numbers (Space separated)">
+            <button class="btn-grad" onclick="lcmsol()">Solve</button><br>
+            <br>
             <div class="stopwrap">
                 <div class="btn-group">
-                    <div class="col-sm-0" style="float:left;">
-                        <p style="font-size:30px;font-family:mathfont;display:inline-block;" id="resultfac"></p>
-                    </div>
-                    <div class="col-sm-0" style="padding-left:1px;float:left;">
-                        <p style="font-size:30px;font-family:mathfont;display:inline-block;" id="resultlcm"></p>
-                    </div>
+                <div class="col-sm-0" style="float:left;">
+                    <p style="font-size:30px;font-family:mathfont;display:inline-block;" id="resultfac"></p>
+                </div>
+                <div class="col-sm-0" style="padding-left:1px;float:left;">
+                    <p style="font-size:30px;font-family:mathfont;display:inline-block;" id="resultlcm"></p>
+                </div>
                 </div>
             </div>
             <div class="row stopwrap">
                 <p id="resultlcms" style="font-size:30px;font-family:mathfont;float:left;"></p>
             </div>
-            <!--lcm result-->
-            <p id="hcfprimefactor" style="font-size:30px;font-family:mathfont" class="stopwrap"></p>
-            <p id="resulthcf" style="font-size:30px;font-family:mathfont" class="stopwrap"></p>
+<div class="dropdown-divider"></div>
+            <h5>HCF More than One Number</h5>
+            <input type="tel" id="num22" class="form__field" style="font-size:20px;" placeholder="Enter Numbers(Space Separated)">
+
+            <button type="button" onclick="printmorefactorshcf('num22','result222');hcf()"
+                    class="btn btn-success">Print
+            </button>
+            <button type="button" class="btn btn-danger" onclick="document.getElementById('num22').value='';document.getElementById('result222').innerHTML='';document.getElementById('result22').innerHTML='';">Clear</button>
+
+            <br>
+            <br>
+            <p id="result222" style="font-size:30px;font-family:mathfont" class="stopwrap"></p>
+            <p id="result22" style="font-size:30px;font-family:mathfont" class="stopwrap"></p>
 
         </div>
-        <!--        end factors-->
-
         <div class="collapse" id="table">
             <form class="form-group">
-                <input type="number" id="num" name="num" class="form__field" style="font-size:20px;"
-                       placeholder="Enter Number">
+                <input type="number" id="num" name="num" class="form__field" style="font-size:20px;" placeholder="Enter Number">
                 <input type="number" id="ending" style="font-size:20px;" name="ending" class="form__field"
                        placeholder="Upto">
                 <button type="button" onclick="printtable()" class="btn btn-success">Print</button>
@@ -458,11 +419,8 @@
 
         <div class="collapse" id="differentiatecollapse">
             <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" type="button" id="difforderselect" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Order of Diff.
-                </button>
-                <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;" aria-labelledby="difforderselect"
-                     onclick="ddiff();">
+                <button class="btn btn-info dropdown-toggle" type="button" id="difforderselect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order of Diff.</button>
+                <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;" aria-labelledby="difforderselect" onclick="ddiff();">
                     <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
                     <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
                     <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
@@ -472,28 +430,22 @@
                     <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
                     <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
                     <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
-                    <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
+<!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
                 </div>
             </div>
             <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" type="button" id="diffvariableselect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
-                </button>
+                <button class="btn btn-info dropdown-toggle" type="button" id="diffvariableselect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable</button>
                 <div class="dropdown-menu" aria-labelledby="diffvariableselect" onclick="ddiff();">
                     <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">x</span>
                     <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">y</span>
                     <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">t</span>
                     <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">u</span>
                     <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">v</span>
-                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
-                                                       oninput="getdiffvariable(this.value);ddiff();"></span>
+                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getdiffvariable(this.value);ddiff();"></span>
                 </div>
             </div>
-            <input type="text" placeholder="Enter Function" id="inputdifferentiatequation" class="form__field"
-                   oninput="ddiff()">
-            <button type="button" class="btn-grad" onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
-                Solve
-            </button>
+            <input type="text" placeholder="Enter Function" id="inputdifferentiatequation" class="form__field" oninput="ddiff()">
+            <button type="button" class="btn-grad" onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">Solve</button>
             <button type="button" class="btn btn-success" id="diffsolvebutton">Show Steps</button>
             <button type="button" class="btn btn-danger" id="cleardiff">Clear</button>
             <br>
@@ -503,8 +455,7 @@
         </div>
 
         <div class="collapse" id="partialdiffcollapse">
-            <input type="text" id="inputpartialdiff" class="form__field" placeholder="Enter Function"
-                   oninput="dpardiff()">
+            <input type="text" id="inputpartialdiff" class="form__field" placeholder="Enter Function" oninput="dpardiff()">
             <input type="text" id="inputpartialorder" class="form__field" placeholder="Order" oninput="dpardiff()">
             <button type="button" id="solvepardiff" class="btn-grad">Solve</button>
             <br>
@@ -513,36 +464,26 @@
         </div>
         <div class="collapse" id="integralcollapse">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Variable
-                </button>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable</button>
                 <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
                     <span onclick="getintegralvar(this.innerText);" class="dropdown-item">x</span>
                     <span onclick="getintegralvar(this.innerText);" class="dropdown-item">y</span>
                     <span onclick="getintegralvar(this.innerText);" class="dropdown-item">t</span>
                     <span onclick="getintegralvar(this.innerText);" class="dropdown-item">u</span>
                     <span onclick="getintegralvar(this.innerText);" class="dropdown-item">v</span>
-                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
-                                                       oninput="getintegralvar(this.value);dint();"></span>
+                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>
                 </div>
             </div>
             <input type="checkbox" id="enablelimit" value="Enable" onclick="collapselimitbox();dint();">
             <label for="enablelimit">Enable Limits</label><br>
             <input type="text" id="inputintegral" class="form__field" placeholder="Enter Function" oninput='dint()'>
             <div class="collapse" id="collapselimit">
-                <input type="text" id="upperlimit" placeholder="Upper Limit" style="font-size:20px;" class="form__field"
-                       style="display:inline;width:30%" oninput='dint()'>
-                <input type="text" id="lowerlimit" placeholder="Lower Limit" style="font-size:20px;" class="form__field"
-                       style="display:inline;width:30%" oninput='dint()'>
+                <input type="text" id="upperlimit" placeholder="Upper Limit" style="font-size:20px;" class="form__field" style="display:inline;width:30%" oninput='dint()'>
+                <input type="text" id="lowerlimit" placeholder="Lower Limit" style="font-size:20px;" class="form__field" style="display:inline;width:30%" oninput='dint()'>
             </div>
-            <button type="button" class="btn-grad" onclick="plotit('inputintegral','integralplot',sint())">Solve
-            </button>
-            <button type="button" id="solveintegral" onclick="solveintegral()" class="btn btn-success">Show Steps
-            </button>
-            <button type="button" id="clearintegral" class="btn btn-danger"
-                    onclick="document.getElementById('inputintegral').value='';document.getElementById('upperlimit').value='';document.getElementById('lowerlimit').value='';">
-                Clear
-            </button>
+            <button type="button" class="btn-grad" onclick="plotit('inputintegral','integralplot',sint())">Solve</button>
+            <button type="button" id="solveintegral" onclick="solveintegral()" class="btn btn-success">Show Steps</button>
+            <button type="button" id="clearintegral" class="btn btn-danger" onclick="document.getElementById('inputintegral').value='';document.getElementById('upperlimit').value='';document.getElementById('lowerlimit').value='';">Clear</button>
             <button type="button" class="btn btn-info" onclick="keyboard('inputintegral')">Keyboard</button>
             <br>
             <br>
@@ -554,15 +495,10 @@
         <div class="collapse" id="laplacecollapse">
             <div id="laplacecollapseit">
                 <div class="text-center"><label>Laplace Transform</label></div>
-                <div class="text-center" style="color:white;font-size:20px;">
-                    \[F(s)=\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st} f(t).dt\]
-                </div>
+                <div class="text-center" style="color:white;font-size:20px;">\[F(s)=\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st} f(t).dt\]</div>
                 <form class="form-group">
-                    <div class="form-group"><label for="inputlaplace" style="font-size:20px">\[f(t)\]</label><input
-                            type="text" id="inputlaplace" placeholder="Enter Function" class="form__field"
-                            oninput="dlap()"></div>
-                    <button type="button" class="btn-grad" onclick="plotit('inputlaplace','laplaceplot',slap())">Solve
-                    </button>
+                    <div class="form-group"><label for="inputlaplace" style="font-size:20px">\[f(t)\]</label><input type="text" id="inputlaplace" placeholder="Enter Function" class="form__field" oninput="dlap()"></div>
+                    <button type="button" class="btn-grad" onclick="plotit('inputlaplace','laplaceplot',slap())">Solve</button>
                     <button type="button" id="solvelaplaceid" class="btn btn-primary"
                             onclick="solvelaplace()">Show Steps
                     </button>
@@ -580,12 +516,7 @@
                 <div class="text-center" style="color:white;font-size:20px;">\[\mathcal{L}^{−1}(F(s))\]</div>
                 <form class="form-group">
                     <div class="form-group">
-                        <label for="inputinverselaplace" style="font-size:20px">\[F(s)\]</label><input type="text"
-                                                                                                       id="inputinverselaplace"
-                                                                                                       placeholder="Enter Function"
-                                                                                                       class="form__field"
-                                                                                                       oninput="dinvlap()">
-                    </div>
+                        <label for="inputinverselaplace" style="font-size:20px">\[F(s)\]</label><input type="text" id="inputinverselaplace" placeholder="Enter Function" class="form__field" oninput="dinvlap()"></div>
                     <button type="button" class="btn-grad" onclick="sinvlap()">Solve</button>
                     <button type="button" id="solveinverselaplaceid" class="btn btn-primary"
                             onclick="solveinverselaplace()">Show Steps
@@ -603,90 +534,68 @@
 
         <div class="collapse" id="matrixcollapse">
             <div class="row">
-                <button class="carddis" id="singlematrix"
-                        onclick="$('#singlematrixcollapse').slideToggle();$('#multiplematrixcollapse').slideUp();">
-                    Single Matrix
-                </button>
+                <button class="carddis" id="singlematrix" onclick="$('#singlematrixcollapse').slideToggle();$('#multiplematrixcollapse').slideUp();">Single Matrix</button>
             </div>
             <div class="row">
-                <button id="twomatrix" class="carddis"
-                        onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();">
-                    Multiple Matrix
-                </button>
+                <button id="twomatrix" class="carddis" onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();">Multiple Matrix</button>
             </div>
         </div>
-        <!--        single matrix-->
+<!--        single matrix-->
         <div class="collapse" id="singlematrixcollapse">
             <div style="display:inline-block">
-                <input type="number" id="srow1" class="form__field" placeholder="m"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
+                <input type="number" id="srow1" class="form__field" placeholder="m" style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
                 <label style="font-size:30px;">&times;</label>
-                <input type="number" id="scolumn1" class="form__field" placeholder="n"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
+                <input type="number" id="scolumn1" class="form__field" placeholder="n" style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
             </div>
             <div>
                 <select id="sopval" class="btn btn-primary" onmousedown="this.value=''">
                     <option>Input Fields</option>
                 </select>
                 <div class="stopwrap" style="color:white;" id="generatedmatrixsingle"></div>
-                <button type="button" class="btn-grad" onclick="soperation(document.getElementById('sopval').value);">
-                    Solve
-                </button>
+                <button type="button" class="btn-grad" onclick="soperation(document.getElementById('sopval').value);">Solve</button>
                 <br>
                 <br>
                 <div class="stopwrap" style="color:white;font-size:30px" id="singlematrixresult"></div>
+				<br>
+<!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
+                <div class="stopwrap bi" style="border-radius:50px;color:black;font-size:20px" id="singlematrixexplanation"></div>
+<!--                <button class="btn btn-info" onclick="GaussVerfahren()">Click</button>-->
+                <div class="stopwrap" style="color:white;font-size:20px" id="singlematrixexplanation2"></div>
+            </div>
+        </div>
+<!--        multiple matrix-->
+            <div class="collapse" id="multiplematrixcollapse">
+                <div style="display:inline-block">
+                    <span style="color:#ff00cc">Matrix 1</span><br>
+                        <input type="number" id="row1"  class="form__field" placeholder="m" style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                        <label style="font-size:30px;">&times;</label>
+                        <input type="number" id="column1" class="form__field" placeholder="n" style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                </div>
+                <div style="display:inline-block" style="color:#ff00cc">
+                    <span style="color:#ff00cc">Matrix 2</span><br>
+                        <input type="number" id="row2" class="form__field" placeholder="m" style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                        <label style="font-size:30px;">&times;</label>
+                        <input type="number" id="column2"  class="form__field" placeholder="n" style="font-size:20px;width:70px;display:inline" oninput="checkfunctionsmultiple()">
+                </div>
                 <br>
-                <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
-                <div class="stopwrap bi" style="border-radius:50px;color:black;font-size:20px"
-                     id="singlematrixexplanation"></div>
-                <!--                <button class="btn btn-info" onclick="GaussVerfahren()">Click</button>-->
-                <!--                <div class="stopwrap" style="color:white;font-size:20px" id="singlematrixexplanation2"></div>-->
+                <select id="opval" class="btn btn-primary" onmousedown="this.value=''" onchange="signofmatrix(this.value);">
+                    <option>Input Fields</option>
+                </select>
+                <div class="stopwrap">
+                        <table>
+                            <td><div id='generatedmatrix1'></div></td>
+                            <td><p style="font-size:50px" id="signofmatrix"></p></td>
+                            <td><div id='generatedmatrix2'></div></td>
+                        </table>
+                </div>
+                <button type='button' class="btn-grad" onclick="calloperation(document.getElementById('opval').value)">Solve</button>
+                <br>
+                <br>
+                <p class="stopwrap" id="matrixresult" style="font-size:30px;height:auto !important;"></p>
+                <p id="explanationmatrixresult" class="stopwrap" style="font-size:20px;font-family:mathfont;color:#232a36 !important;"></p>
             </div>
-        </div>
-        <!--        multiple matrix-->
-        <div class="collapse" id="multiplematrixcollapse">
-            <div style="display:inline-block">
-                <span style="color:#ff00cc">Matrix 1</span><br>
-                <input type="number" id="row1" class="form__field" placeholder="m"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-                <label style="font-size:30px;">&times;</label>
-                <input type="number" id="column1" class="form__field" placeholder="n"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-            </div>
-            <div style="display:inline-block" style="color:#ff00cc">
-                <span style="color:#ff00cc">Matrix 2</span><br>
-                <input type="number" id="row2" class="form__field" placeholder="m"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-                <label style="font-size:30px;">&times;</label>
-                <input type="number" id="column2" class="form__field" placeholder="n"
-                       style="font-size:20px;width:70px;display:inline" oninput="checkfunctionsmultiple()">
-            </div>
-            <br>
-            <select id="opval" class="btn btn-primary" onmousedown="this.value=''" onchange="signofmatrix(this.value);">
-                <option>Input Fields</option>
-            </select>
-            <div class="stopwrap">
-                <table>
-                    <td>
-                        <div id='generatedmatrix1'></div>
-                    </td>
-                    <td><p style="font-size:50px" id="signofmatrix"></p></td>
-                    <td>
-                        <div id='generatedmatrix2'></div>
-                    </td>
-                </table>
-            </div>
-            <button type='button' class="btn-grad" onclick="calloperation(document.getElementById('opval').value)">
-                Solve
-            </button>
-            <br>
-            <br>
-            <p class="stopwrap" id="matrixresult" style="font-size:30px;height:auto !important;"></p>
-            <p id="explanationmatrixresult" class="stopwrap"
-               style="font-size:20px;font-family:mathfont;color:#232a36 !important;"></p>
-        </div>
 
-        <!--multiple matrix-->
+<!--multiple matrix-->
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">
                 <div class="col-6">
@@ -697,37 +606,23 @@
                     <input style="font-size:20px;" type="number" id="h" class="form__field" placeholder="Hypotenuse">
                 </div>
                 <div class="col-6">
-                    <img src="images/righttriangle.png" style="height:200px">
+                    <img src="pictures/righttriangle.png" style="height:200px">
                 </div>
             </div>
 
             <button type="button" id="simpletrigosolve" class="btn-grad"
-                    onclick="solvesimpletrigo();checkforusetrigovalue();">Solve
+                    onclick="solvesimpletrigo()">Solve
             </button>
             <p style="font-size:20px;font-family:mathfont" class="stopwrap" id="soltri"></p>
-            <div class="text-center collapse" id="usetrigovaluesbtn">
-                <button style="margin: 2px;" class="btn btn-outline-light" id="sini" onclick="set(this)">Use sinθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="cosi" onclick="set(this)">Use cosθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="tani" onclick="set(this)">Use tanθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="coseci" onclick="set(this)">Use cosecθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="seci" onclick="set(this)">Use secθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="coti" onclick="set(this)">Use cotθ
-                    value
-                </button>
+            <div class="btn-group">
+                <button class="btn-danger" id="sini" onclick="set(this)">Use sinθ value</button>
+                <button class="btn-info" id="cosi" onclick="set(this)">Use cosθ value</button>
+                <button class="btn-success" id="tani" onclick="set(this)">Use tanθ value</button>
+                <button class="btn-danger" id="coseci" onclick="set(this)">Use cosecθ value</button>
+                <button class="btn-info" id="seci" onclick="set(this)">Use secθ value</button>
+                <button class="btn-success" id="coti" onclick="set(this)">Use cotθ value</button>
             </div>
-
         </div>
-
         <div class="collapse" id="areacal">
             <h2>Calculator for Shapes</h2>
             <table class="table">
@@ -765,26 +660,19 @@
                 </tr>
             </table>
         </div>
-
         <div class="collapse" id="mulsolwithsteps">
             <form class="form-inline">
-                <input type="number" id="numofmulsol" class="form__field" placeholder="Enter Number"
-                       style="font-size:20px;">
-                <label style="font-size:30px;padding:0 5px 0 5px">*</label>
-                <input type="number" id="numwithofmulsol" class="form__field" placeholder="Enter Number"
-                       style="font-size:20px;">
-                <button type="button" class="btn-grad" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
-                    Solve
-                </button>
+            <input type="number" id="numofmulsol" class="form__field" placeholder="Enter Number" style="font-size:20px;">
+            <label style="font-size:30px;padding:0 5px 0 5px">*</label>
+            <input type="number" id="numwithofmulsol" class="form__field" placeholder="Enter Number" style="font-size:20px;">
+            <button type="button" class="btn-grad" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">Solve</button>
             </form>
             <br>
             <div>
-                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;"
-                   align="right"></p>
+                <p id="resultmulsol" style="display:flex;align-items: left;font-family:mathfont;font-size:30px;width:auto;min-width:none;" align="right"></p>
             </div>
 
         </div>
-
         <div class="collapse" id="about">
             <table class="table">
                 <tr>
@@ -793,101 +681,78 @@
             </table>
         </div>
 
-        <!--        check divisibility-->
+<!--        check divisibility-->
 
-        <!--        end of check divisibility-->
+<!--        end of check divisibility-->
         <!--    start of calculator -->
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
-            <div class="bodyof">
-                <form class="calculator" name="calc">
-                    <input type="tel" class="value" id="txt" name="txt" style="overflow-y:hidden;"
-                           oninput="calsol(this.value);chh(this.value)">
-                    <input readonly type="text" class="soltext" id="soltxt">
-                    <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
-                    <span onclick="more()">More</span>
-                    <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
-                    <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
-                    <span class="back"
-                          onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
-                            class="bk" src="icons/backspace-arrow.png" style="height:30px;filter: invert(100%);"></span>
-                    <span id="seven"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">7</span>
-                    <span id="eight"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">8</span>
-                    <span id="nine"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">9</span>
-                    <span class="divi"
-                          onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);">÷</span>
-                    <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo" src="speechlogo.png"
-                                                                                         height=30px></span>
-                    <span id="four"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">4</span>
-                    <span id="five"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">5</span>
-                    <span id="six"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">6</span>
-                    <span class="mul"
-                          onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);">X</span>
-                    <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=30px></span>-->
-                    <span id="percent"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">%</span>
-                    <span id="one"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">1</span>
-                    <span id="two"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">2</span>
-                    <span id="three"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">3</span>
-                    <span class="sub"
-                          onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);">_</span>
-                    <span id="deci" onclick="todeci()">Deci.</span>
-                    <span id="zero" class="zero"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
-                    <span id="dot"
-                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
-                    <span onclick="calsq(document.getElementById('txt').value)">√</span>
-                    <span class="plus"
-                          onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);">+</span>
-                    <span class="equal" onclick="calsoleq(document.getElementById('txt').value)">=</span>
-                </form>
-            </div>
+        <div class="bodyof">
+            <form class="calculator" name="calc">
+                <input type="tel" class="value" id="txt" name="txt" style="overflow-y:hidden;" oninput="calsol(this.value);chh(this.value)">
+                <input readonly type="text" class="soltext" id="soltxt">
+                <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
+                <span onclick="more()">More</span>
+                <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
+                <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
+                <span class="back" onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img class="bk" src="icons/backspace-arrow.png" style="height:30px;filter: invert(100%);"></span>
+                <span id="seven" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">7</span>
+                <span id="eight" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">8</span>
+                <span id="nine" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">9</span>
+                <span class="divi" onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);">÷</span>
+                <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo" src="speechlogo.png" height=30px></span>
+                <span id="four" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">4</span>
+                <span id="five" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">5</span>
+                <span id="six" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">6</span>
+                <span class="mul" onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);">X</span>
+<!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=30px></span>-->
+                <span id="percent" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">%</span>
+                <span id="one" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">1</span>
+                <span id="two" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">2</span>
+                <span id="three" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">3</span>
+                <span class="sub" onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);">_</span>
+                <span id="deci" onclick="todeci()">Deci.</span>
+                <span id="zero" class="zero" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
+                <span id="dot" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
+                <span onclick="calsq(document.getElementById('txt').value)">√</span>
+                <span class="plus" onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);">+</span>
+                <span class="equal" onclick="calsoleq(document.getElementById('txt').value)">=</span>
+            </form>
+        </div>
         </div>
 
         <!--    end of calculator-->
-        <!--                <div class="container">-->
-        <!--                    <form action="https://www.google.com/search" method="get" target="_blank">-->
-        <!--                        <input type="text" name="q">-->
-        <!--                        <input type="submit" value="search">-->
-        <!--                    </form>-->
-        <!--                </div>-->
+<!--                <div class="container">-->
+<!--                    <form action="https://www.google.com/search" method="get" target="_blank">-->
+<!--                        <input type="text" name="q">-->
+<!--                        <input type="submit" value="search">-->
+<!--                    </form>-->
+<!--                </div>-->
 
-        <!--end of box div-->
+    <!--end of box div-->
 
-    </div>
+</div>
 </div>
 
-<div class="modal fade" id="settings" tabindex="-1" role="dialog"
-     aria-hidden="true">
+<div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Settings</h5>
-                <button style="text-decoration:none" type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
+                <button style="text-decoration:none" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" style="background:#232a36">
                 <table class="table">
-                    <!--                    <tr>-->
-                    <!--                        <td><h5>Change Background Color</h5></td>-->
-                    <!--                        <td><input type="color" id="colorselector" oninput="changebackground(this.value)"></td>-->
-                    <!--                        <td><button class="btn btn-success" onclick="changebackground('#232a36')" style="text-decoration:none;">Set Default</button></td>-->
-                    <!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><h5>Change Background Color</h5></td>-->
+<!--                        <td><input type="color" id="colorselector" oninput="changebackground(this.value)"></td>-->
+<!--                        <td><button class="btn btn-success" onclick="changebackground('#232a36')" style="text-decoration:none;">Set Default</button></td>-->
+<!--                    </tr>-->
                     <tr>
                         <td><h5>Background Type</h5></td>
                         <td>
-                            <select onmousedown="this.value=''" onchange="getbackval(this.value)"
-                                    class="btn btn-success">
+                            <select onmousedown="this.value=''" onchange="getbackval(this.value)" class="btn btn-success">
                                 <option value="Animated">Animated</option>
                                 <option value="Static">Static</option>
                             </select>
@@ -897,9 +762,7 @@
 
                     <tr>
                         <td><h5>Clear Favourites</h5></td>
-                        <td>
-                            <button class="btn btn-success" onclick="removefavourite();checkfavourite()">Clear</button>
-                        </td>
+                        <td><button class="btn btn-success" onclick="removefavourite();checkfavourite()">Clear</button></td>
                         <td style="color:white;">Kindly Restart The App for Changes to Apply</td>
                     </tr>
                 </table>
@@ -914,26 +777,20 @@
 <!----------------------order starts--------------------------------->
 
 
-<div class="modal fade" id="orderit" tabindex="-1" role="dialog"
-     aria-hidden="true">
+<div class="modal fade" id="orderit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Ascending/Descending Order</h5>
-                <button style="text-decoration:none" type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ascending/Descending Order</h5>
+                <button style="text-decoration:none" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" style='background:#232a36'>
-                <input type="tel" id="ordergetval" class="form__field" placeholder="Enter Numbers(Space Separated)"
-                       oninput="orderfieldclear()">
+                <input type="tel" id="ordergetval" class="form__field" placeholder="Enter Numbers(Space Separated)" oninput="orderfieldclear()">
                 <button type="button" class="btn btn-success" onclick="orderas()">Ascending</button>
                 <button type="button" class="btn btn-success" onclick="orderde()">Descending</button>
-                <button type="button" class="btn btn-primary"
-                        onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
-                    Space
-                </button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">Space</button>
                 <p class="stopwrap" style="font-family:mathfont;font-size:30px;" id="orderresult"></p>
                 <p style="font-family:mathfont;font-size:30px;" class="stopwrap" id="orderresultde"></p>
             </div>
@@ -948,11 +805,11 @@
 <!--area for shapes modal-->
 <div>
     <div class="modal fade" id="square" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Square</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Square</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -967,12 +824,11 @@
                                 <p class="text-center" style="font-size:20px;">\[4(side)\]</p>
                             </div>
                             <div class="col-6">
-                                <img src="images/square.png" style="height:150px">
+                                <img src="pictures/square.png" style="height:150px">
                             </div>
                         </div>
 
-                        <input class="form__field" type="number" placeholder="Enter Side" id="inputsqside"
-                               oninput="solveareasq();solveperisq();">
+                        <input class="form__field" type="number" placeholder="Enter Side" id="inputsqside" oninput="solveareasq();solveperisq();">
                         <p class="stopwrap" id="resultofareasq" style="font-size:20px;font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperisq" style="font-size:20px;font-family:mathfont;"></p>
                     </div>
@@ -985,11 +841,11 @@
         </div>
     </div>
     <div class="modal fade" id="rectangle" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Rectangle</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Rectangle</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1006,7 +862,7 @@
                                 <p class="text-center" style="font-size:20px;">\[d= \sqrt{w^2-l^2}\]</p>
                             </div>
                             <div class="col-6">
-                                <img src="images/rectangle.png" style="height:100px">
+                                <img src="pictures/rectangle.png" style="height:100px">
                                 <br>
                                 <br>
                                 <h5 class="text-center" style="font-size:20px">Length of Rectangle</h5>
@@ -1017,11 +873,9 @@
                         </div>
                         <div class="dropdown-divider"></div>
                         <p>Fill Atleast Any of two</p>
-                        <input class="form__field" type="number" placeholder="Enter Length (cm)" id="inputreclength"
-                               oninput="rectanglesolve()">
-                        <input class="form__field" type="number" placeholder="Enter Breadth (cm)" id="inputrecbreadth"
-                               oninput="rectanglesolve()">
-                        <!--                        <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal" oninput="rectanglesolve()">-->
+                        <input class="form__field" type="number" placeholder="Enter Length (cm)" id="inputreclength" oninput="rectanglesolve()">
+                        <input class="form__field" type="number" placeholder="Enter Breadth (cm)" id="inputrecbreadth" oninput="rectanglesolve()">
+<!--                        <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal" oninput="rectanglesolve()">-->
                         <br>
                         <p class="stopwrap" id="resultofarearec" style="font-size:20px;font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperirec" style="font-size:20px;font-family:mathfont;"></p>
@@ -1036,11 +890,11 @@
         </div>
     </div>
     <div class="modal fade" id="triangle" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Triangle</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Triangle</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1056,11 +910,11 @@
         </div>
     </div>
     <div class="modal fade" id="circle" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Circle</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Circle</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1076,11 +930,11 @@
         </div>
     </div>
     <div class="modal fade" id="trapezium" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Trapezium</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Trapezium</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1095,11 +949,12 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="ellipse" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="ellipse" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Ellipse</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Ellipse</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1115,11 +970,11 @@
         </div>
     </div>
     <div class="modal fade" id="parallelogram" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Parallelogram</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Parallelogram</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1135,11 +990,11 @@
         </div>
     </div>
     <div class="modal fade" id="sector" tabindex="-1" role="dialog"
-         aria-hidden="true">
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Sector</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Sector</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1160,18 +1015,17 @@
 <!-------------------------------------------------------->
 <!--international number convert-->
 <div class="modal fade" id="internationalnumber" tabindex="-1" role="dialog"
-     aria-hidden="true">
+     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">International Number Conversion</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">International Number Conversion</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" style='background:#232a36'>
-                <input placeholder="Start Typing a Number" type="number" id="interval" class="form__field"
-                       oninput="internationalwords(document.getElementById('interval').value)">
+                <input placeholder="Start Typing a Number" type="number" id="interval" class="form__field" oninput="internationalwords(document.getElementById('interval').value)">
                 <p id="interresult"></p>
             </div>
             <div class="modal-footer">
@@ -1185,86 +1039,41 @@
 <!-------------------------------------------------------->
 <!--roman numeral-->
 <div>
-    <div class="modal fade" id="roman" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Roman/Arabic Numeral</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style='background:#232a36'>
-                    <input type="number" id="inpo" class="form__field" placeholder="Enter a Number"
-                           oninput="callr();document.getElementById('ouo').innerHTML=''">
-                    <button type="button" onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
-                            class="btn btn-success">Expand
-                    </button>
-                    <p id="ouo" style="font-family:mathfont;font-size:30px"></p>
-                    <p id="ouroman" style="font-family:mathfont;font-size:30px"></p>
-                    <br>
-                    <input type="text" id="rinp" class="form__field" placeholder="Enter Roman Number"
-                           oninput="callder();document.getElementById('exro').innerHTML=''">
-                    <button type="button" onclick="expandedformde('out2','exro')" class="btn btn-success">Expand
-                    </button>
-                    <p id="exro" style="font-family:mathfont;font-size:30px"></p>
-                    <p id="out2" style="font-family:mathfont;font-size:30px"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
+<div class="modal fade" id="roman" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Roman/Arabic Numeral</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style='background:#232a36'>
+                <input type="number" id="inpo" class="form__field" placeholder="Enter a Number" oninput="callr();document.getElementById('ouo').innerHTML=''">
+                <button type="button" onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')" class="btn btn-success">Expand</button>
+                <p id="ouo" style="font-family:mathfont;font-size:30px"></p>
+                <p id="ouroman" style="font-family:mathfont;font-size:30px"></p>
+                <br>
+                <input type="text" id="rinp" class="form__field" placeholder="Enter Roman Number" oninput="callder();document.getElementById('exro').innerHTML=''">
+                <button type="button" onclick="expandedformde('out2','exro')" class="btn btn-success">Expand</button>
+                <p id="exro" style="font-family:mathfont;font-size:30px"></p>
+                <p id="out2" style="font-family:mathfont;font-size:30px"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                </button>
             </div>
         </div>
     </div>
+</div>
 </div>
 <!--roman numeral end-->
 
 <!--------------------------------------------------------->
 <!--    speech recognition start -->
-<script src="appjs/speechreco.js"></script>
+<script src="js/speechreco.js"></script>
 <!--    speech recognition ends-->
-
-<!--script files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/two.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script src="js/url.js"></script>
-<script src="js/math.min.js"></script>
-<script src="js/plotly-1.35.2.min.js"></script>
-
-<script src="appjs/logicjquery.js"></script>
-<script src="appjs/logicjavascript.js"></script>
-<script>
-    $(document).ready(function () {
-        $('i').click(function () {
-            $('ul').toggleClass('ul_show');
-            $('section').toggleClass('slide_image');
-        });
-    });
-
-</script>
-<script>
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-        console.log("Mobile")
-    } else {
-        console.log("Desktop")
-    }
-</script>
-<script src='appjs/displaymath.js'></script>
-<script src="appjs/simplecallogic.js"></script>
-<script src="appjs/matrixlogic.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-</script>
-<!--script files-->
-
 <script src="nerdamer/nerdamer.core.js"></script>
 <!-- assuming you've saved the file in the root of course -->
 <!-- LOAD ADD-ONS -->
@@ -1272,9 +1081,8 @@
 <script src="nerdamer/Calculus.js"></script>
 <script src="nerdamer/Solve.js"></script>
 <script src="nerdamer/Extra.js"></script> <!-- again assuming you've saved the files in root -->
-<script src="appjs/searchbar.js"></script>
-<script src="appjs/speechrecoforall.js"></script>
-
+<script src="searchbar.js"></script>
+<script src="js/speechrecoforall.js"></script>
 <!--<script>-->
 <!--    function createaddclass(){-->
 <!--        var sheet = document.createElement('style');-->
