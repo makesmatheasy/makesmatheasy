@@ -1275,9 +1275,11 @@ function rectanglesolve() {
     var resultlength = document.getElementById('resultoflengthrec');
     var resultbreadth = document.getElementById('resultofbreadthrec');
     if(length!='' && breadth!='' && diagonal!=''){
-        resultlength.innerHTML='';
-        resultbreadth.innerHTML='';
-        resultdiagonal.innerHTML='';
+        resultarea.innerHTML = '';
+        resultperi.innerHTML = '';
+        resultdiagonal.innerHTML = '';
+        resultlength.innerHTML = '';
+        resultbreadth.innerHTML = '';
         if(length<breadth){
             resultarea.innerHTML="Length Should be Greater";
         }else{
@@ -1290,6 +1292,9 @@ function rectanglesolve() {
 
     }
     else if (length != '' && breadth != '' && diagonal=='') {
+        resultarea.innerHTML = '';
+        resultperi.innerHTML = '';
+        resultdiagonal.innerHTML = '';
         resultlength.innerHTML = '';
         resultbreadth.innerHTML = '';
         if(length<breadth){
@@ -1310,6 +1315,11 @@ function rectanglesolve() {
         }
 
     }else if(length!='' && diagonal!=''){
+        resultarea.innerHTML = '';
+        resultperi.innerHTML = '';
+        resultdiagonal.innerHTML = '';
+        resultlength.innerHTML = '';
+        resultbreadth.innerHTML = '';
         if(diagonal<length){
             resultbreadth.innerHTML="Diagonal Should be Greater";
         }else {
@@ -1328,6 +1338,11 @@ function rectanglesolve() {
             resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(length) + '+' + String(bsub2sqrt) + ")") + "\\]";
         }
     }else if(diagonal!='' && breadth!=''){
+        resultarea.innerHTML = '';
+        resultperi.innerHTML = '';
+        resultdiagonal.innerHTML = '';
+        resultlength.innerHTML = '';
+        resultbreadth.innerHTML = '';
         if(diagonal<breadth){
             resultlength.innerHTML="Length should be Greater";
         }else {
