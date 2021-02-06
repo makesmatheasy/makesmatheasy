@@ -351,9 +351,9 @@
             <div>
                 <form class="form-inline">
                     <input type="number" id="divisornumwith" class="form__field"
-                           style="width:70px;border-bottom:6px solid #ff00cc;font-size:20px">
+                           style="width:70px;border-bottom:6px solid #ff88e7;font-size:20px">
                     <input type="number" id="dividendnum" class="form__field"
-                           style="width:120px;border-left:6px solid #ff00cc;font-size:20px;border-top:6px solid #ff00cc;">
+                           style="width:120px;border-left:6px solid #ff88e7;font-size:20px;border-top:6px solid #ff88e7;">
                     <button type="button" class="btn-grad" onclick="divisionwithsteps()">Solve</button>
                 </form>
                 <br>
@@ -410,7 +410,9 @@
             <form class="form-group">
                 <input type="tel" id="num2" name="num2" class="form__field"
                        placeholder="Enter Number(s) Space Separated">
-                <button type="button" onclick="factorslcmhcfempty();factorselect('num2')" class="btn btn-success">Factors</button>
+                <button type="button" onclick="factorslcmhcfempty();factorselect('num2')" class="btn btn-success">
+                    Factors
+                </button>
                 <button type="button" onclick="factorslcmhcfempty();lcmsol('num2')" class="btn btn-success">LCM</button>
                 <button type="button" onclick="factorslcmhcfempty();hcf('num2')" class="btn btn-success">HCF</button>
             </form>
@@ -459,148 +461,196 @@
 
 
         <div class="collapse" id="differentiatecollapse">
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" type="button" id="difforderselect" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Order of Diff.
-                </button>
-                <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;" aria-labelledby="difforderselect"
-                     onclick="ddiff();">
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">4</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">5</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">6</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
-                    <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
+            <div class="form-group">
+                <div style="display: inline-block;" class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="difforderselect"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Order of Diff.
+                    </button>
+                    <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
+                         aria-labelledby="difforderselect"
+                         onclick="ddiff();">
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">4</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">5</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">6</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
+                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
+                        <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
+                    </div>
+                </div>
+                <div style="display: inline-block;" class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="diffvariableselect"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="diffvariableselect" onclick="ddiff();">
+                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">x</span>
+                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">y</span>
+                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">t</span>
+                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">u</span>
+                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">v</span>
+                        <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
+                                                           oninput="getdiffvariable(this.value);ddiff();"></span>
+                    </div>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" type="button" id="diffvariableselect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
-                </button>
-                <div class="dropdown-menu" aria-labelledby="diffvariableselect" onclick="ddiff();">
-                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">x</span>
-                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">y</span>
-                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">t</span>
-                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">u</span>
-                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">v</span>
-                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
-                                                       oninput="getdiffvariable(this.value);ddiff();"></span>
-                </div>
-            </div>
-            <input type="text" placeholder="Enter Function" id="inputdifferentiatequation" class="form__field"
-                   oninput="ddiff()">
-            <button type="button" class="btn-grad" onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
-                Solve
-            </button>
-            <button type="button" class="btn btn-success" id="diffsolvebutton">Show Steps</button>
-            <button type="button" class="btn btn-danger" id="cleardiff">Clear</button>
-            <br>
-            <br>
-            <p style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
-            <p style="font-size:20px" id="diffplot"></p>
-        </div>
 
+            <div class="form-group">
+                <input type="text" placeholder="Enter Function" id="inputdifferentiatequation" class="form__field"
+                       oninput="ddiff()">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-outline-light" id="diffsolvebutton">Show Steps</button>
+            </div>
+            <div class="form-group">
+                <p style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
+            </div>
+            <div class="form-group">
+                <p style="font-size:20px" id="diffplot"></p>
+            </div>
+
+        </div>
         <div class="collapse" id="partialdiffcollapse">
-            <input type="text" id="inputpartialdiff" class="form__field" placeholder="Enter Function"
-                   oninput="dpardiff()">
-            <input type="text" id="inputpartialorder" class="form__field" placeholder="Order" oninput="dpardiff()">
-            <button type="button" id="solvepardiff" class="btn-grad">Solve</button>
-            <br>
-            <br>
-            <p style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
+            <div class="form-group">
+                <input type="text" id="inputpartialdiff" class="form__field" placeholder="Enter Function"
+                       oninput="dpardiff()">
+                <input type="text" id="inputpartialorder" class="form__field" placeholder="Order" oninput="dpardiff()">
+            </div>
+            <div class="form-group">
+                <button type="button" id="solvepardiff" class="btn btn-light">Solve</button>
+            </div>
+            <div class="form-group">
+                <p style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
+            </div>
+
+
         </div>
         <div class="collapse" id="integralcollapse">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Variable
-                </button>
-                <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
-                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">x</span>
-                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">y</span>
-                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">t</span>
-                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">u</span>
-                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">v</span>
-                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
-                                                       oninput="getintegralvar(this.value);dint();"></span>
+            <div class="form-group">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Variable
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
+                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">x</span>
+                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">y</span>
+                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">t</span>
+                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">u</span>
+                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">v</span>
+                        <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
+                                                           oninput="getintegralvar(this.value);dint();"></span>
+                    </div>
                 </div>
             </div>
-            <input type="checkbox" id="enablelimit" value="Enable" onclick="collapselimitbox();dint();">
-            <label for="enablelimit">Enable Limits</label><br>
-            <input type="text" id="inputintegral" class="form__field" placeholder="Enter Function" oninput='dint()'>
-            <div class="collapse" id="collapselimit">
-                <input type="text" id="upperlimit" placeholder="Upper Limit" style="font-size:20px;" class="form__field"
-                       style="display:inline;width:30%" oninput='dint()'>
-                <input type="text" id="lowerlimit" placeholder="Lower Limit" style="font-size:20px;" class="form__field"
-                       style="display:inline;width:30%" oninput='dint()'>
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" id="enablelimit" value="Enable" onclick="collapselimitbox();dint();"
+                           class="form-check-input">
+                    <label class="form-check-label" for="enablelimit">Enable Limits</label><br>
+                </div>
             </div>
-            <button type="button" class="btn-grad" onclick="plotit('inputintegral','integralplot',sint())">Solve
-            </button>
-            <button type="button" id="solveintegral" onclick="solveintegral()" class="btn btn-success">Show Steps
-            </button>
-            <button type="button" id="clearintegral" class="btn btn-danger"
-                    onclick="document.getElementById('inputintegral').value='';document.getElementById('upperlimit').value='';document.getElementById('lowerlimit').value='';">
-                Clear
-            </button>
-            <button type="button" class="btn btn-info" onclick="keyboard('inputintegral')">Keyboard</button>
-            <br>
-            <br>
-            <p id="resultintegration" style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%"></p>
-            <p style="font-size:20px;" id="integralplot"></p>
+            <div class="form-group">
+                <input type="text" id="inputintegral" class="form__field" placeholder="Enter Function" oninput='dint()'>
+            </div>
+
+            <div class="form-group">
+                <div class="collapse" id="collapselimit">
+                    <input type="text" id="upperlimit" placeholder="Upper Limit" style="font-size:20px;"
+                           class="form__field"
+                           style="display:inline;width:30%" oninput='dint()'>
+                    <input type="text" id="lowerlimit" placeholder="Lower Limit" style="font-size:20px;"
+                           class="form__field"
+                           style="display:inline;width:30%" oninput='dint()'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="plotit('inputintegral','integralplot',sint())">
+                    Solve
+                </button>
+                <button type="button" id="solveintegral" onclick="solveintegral()" class="btn btn-outline-light">Show
+                    Steps
+                </button>
+            </div>
+            <div class="form-group">
+                <p id="resultintegration" style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%"></p>
+            </div>
+            <div class="form-group">
+                <p style="font-size:20px;" id="integralplot"></p>
+            </div>
+
 
         </div>
-
         <div class="collapse" id="laplacecollapse">
-            <div id="laplacecollapseit">
+            <div class="collapse" id="laplacecollapseit">
                 <div class="text-center"><label>Laplace Transform</label></div>
                 <div class="text-center" style="color:white;font-size:20px;">
                     \[F(s)=\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st} f(t).dt\]
                 </div>
-                <form class="form-group">
-                    <div class="form-group"><label for="inputlaplace" style="font-size:20px">\[f(t)\]</label><input
-                            type="text" id="inputlaplace" placeholder="Enter Function" class="form__field"
-                            oninput="dlap()"></div>
-                    <button type="button" class="btn-grad" onclick="plotit('inputlaplace','laplaceplot',slap())">Solve
+
+                <div style="display: inline-block;" class="form-group">
+                    <label for="inputlaplace" style="font-size:20px">\[f(t)=\]</label>
+                </div>
+                <div style="display: inline-block;" class="form-group">
+                    <input type="text" id="inputlaplace" placeholder="Enter Function" class="form__field"
+                           oninput="dlap()">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="plotit('inputlaplace','laplaceplot',slap())">
+                        Solve
                     </button>
-                    <button type="button" id="solvelaplaceid" class="btn btn-primary"
-                            onclick="solvelaplace()">Show Steps
+                    <button type="button" id="solvelaplaceid" class="btn btn-outline-light" onclick="solvelaplace()">
+                        Show Steps
                     </button>
-                    <br>
+                </div>
+                <div class="form-group">
                     <p id="resultlaplace" style="font-size:30px"></p>
+                </div>
+                <div class="form-group">
                     <p id="laplaceplot" style="font-size:20px"></p>
-                    <br>
+                </div>
+                <div class="form-group">
                     <button type="button" class="btn btn-secondary"
                             id="inverselaplacecollapsebutton">Inverse Laplace Transform
                     </button>
-                </form>
+                </div>
             </div>
+
             <div class="collapse" id="inverselaplacecollapse">
                 <div class="text-center"><label>Inverse Laplace Transform</label></div>
                 <div class="text-center" style="color:white;font-size:20px;">\[\mathcal{L}^{−1}(F(s))\]</div>
-                <form class="form-group">
-                    <div class="form-group">
-                        <label for="inputinverselaplace" style="font-size:20px">\[F(s)\]</label><input type="text"
-                                                                                                       id="inputinverselaplace"
-                                                                                                       placeholder="Enter Function"
-                                                                                                       class="form__field"
-                                                                                                       oninput="dinvlap()">
-                    </div>
-                    <button type="button" class="btn-grad" onclick="sinvlap()">Solve</button>
-                    <button type="button" id="solveinverselaplaceid" class="btn btn-primary"
+
+                <div style="display: inline-block;" class="form-group">
+                    <label for="inputinverselaplace" style="font-size:20px">\[F(s)=\]</label>
+                </div>
+                <div style="display: inline-block;" class="form-group">
+                    <input type="text" id="inputinverselaplace" placeholder="Enter Function" class="form__field"
+                           oninput="dinvlap()">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="sinvlap()">Solve</button>
+                    <button type="button" id="solveinverselaplaceid" class="btn btn-outline-light"
                             onclick="solveinverselaplace()">Show Steps
                     </button>
-                    <br>
+                </div>
+                <div class="form-group">
                     <p id="resultinverselaplace" style="font-size:20px"></p>
-                    <br>
+                </div>
+                <div class="form-group">
                     <button type="button" class="btn btn-secondary" id="laplacecollapsebutton">
                         Laplace Transform
                     </button>
-                </form>
+                </div>
+
             </div>
-            <br>
         </div>
 
         <div class="collapse" id="matrixcollapse">
@@ -619,73 +669,94 @@
         </div>
         <!--        single matrix-->
         <div class="collapse" id="singlematrixcollapse">
-            <div style="display:inline-block">
+            <div class="form-group" style="display:inline-block">
                 <input type="number" id="srow1" class="form__field" placeholder="m"
                        style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
                 <label style="font-size:30px;">&times;</label>
                 <input type="number" id="scolumn1" class="form__field" placeholder="n"
                        style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
             </div>
-            <div>
-                <select id="sopval" class="btn btn-primary" onmousedown="this.value=''">
+            <div class="form-group">
+                <select id="sopval" class="btn btn-outline-light" onmousedown="this.value=''">
                     <option>Input Fields</option>
                 </select>
+            </div>
+            <div class="form-group">
                 <div class="stopwrap" style="color:white;" id="generatedmatrixsingle"></div>
-                <button type="button" class="btn-grad" onclick="soperation(document.getElementById('sopval').value);">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="soperation(document.getElementById('sopval').value);">
                     Solve
                 </button>
-                <br>
-                <br>
+            </div>
+            <div class="form-group">
                 <div class="stopwrap" style="color:white;font-size:30px" id="singlematrixresult"></div>
-                <br>
-                <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
+            </div>
+            <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
+            <div class="form-group">
                 <div class="stopwrap bi" style="border-radius:50px;color:black;font-size:20px"
                      id="singlematrixexplanation"></div>
-                <!--                <button class="btn btn-info" onclick="GaussVerfahren()">Click</button>-->
-                <!--                <div class="stopwrap" style="color:white;font-size:20px" id="singlematrixexplanation2"></div>-->
             </div>
+
+            <!--                <button class="btn btn-info" onclick="GaussVerfahren()">Click</button>-->
+            <!--                <div class="stopwrap" style="color:white;font-size:20px" id="singlematrixexplanation2"></div>-->
+
         </div>
         <!--        multiple matrix-->
         <div class="collapse" id="multiplematrixcollapse">
-            <div style="display:inline-block">
-                <span style="color:#ff00cc">Matrix 1</span><br>
-                <input type="number" id="row1" class="form__field" placeholder="m"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-                <label style="font-size:30px;">&times;</label>
-                <input type="number" id="column1" class="form__field" placeholder="n"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+            <div class="form-group">
+                <div style="display:inline-block">
+                    <span style="color:#ff88e7">Matrix 1</span><br>
+                    <input type="number" id="row1" class="form__field" placeholder="m"
+                           style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                    <label style="font-size:30px;">&times;</label>
+                    <input type="number" id="column1" class="form__field" placeholder="n"
+                           style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                </div>
+                <div style="display:inline-block" style="color:#ff88e7">
+                    <span style="color:#ff88e7">Matrix 2</span><br>
+                    <input type="number" id="row2" class="form__field" placeholder="m"
+                           style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                    <label style="font-size:30px;">&times;</label>
+                    <input type="number" id="column2" class="form__field" placeholder="n"
+                           style="font-size:20px;width:70px;display:inline" oninput="checkfunctionsmultiple()">
+                </div>
             </div>
-            <div style="display:inline-block" style="color:#ff00cc">
-                <span style="color:#ff00cc">Matrix 2</span><br>
-                <input type="number" id="row2" class="form__field" placeholder="m"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-                <label style="font-size:30px;">&times;</label>
-                <input type="number" id="column2" class="form__field" placeholder="n"
-                       style="font-size:20px;width:70px;display:inline" oninput="checkfunctionsmultiple()">
+            <div class="form-group">
+                <select id="opval" class="btn btn-primary" onmousedown="this.value=''"
+                        onchange="signofmatrix(this.value);">
+                    <option>Input Fields</option>
+                </select>
             </div>
-            <br>
-            <select id="opval" class="btn btn-primary" onmousedown="this.value=''" onchange="signofmatrix(this.value);">
-                <option>Input Fields</option>
-            </select>
-            <div class="stopwrap">
-                <table>
-                    <td>
-                        <div id='generatedmatrix1'></div>
-                    </td>
-                    <td><p style="font-size:50px" id="signofmatrix"></p></td>
-                    <td>
-                        <div id='generatedmatrix2'></div>
-                    </td>
-                </table>
+            <div class="form-group">
+                <div class="stopwrap">
+                    <table>
+                        <td>
+                            <div id='generatedmatrix1'></div>
+                        </td>
+                        <td><p style="font-size:50px" id="signofmatrix"></p></td>
+                        <td>
+                            <div id='generatedmatrix2'></div>
+                        </td>
+                    </table>
+                </div>
             </div>
-            <button type='button' class="btn-grad" onclick="calloperation(document.getElementById('opval').value)">
-                Solve
-            </button>
-            <br>
-            <br>
-            <p class="stopwrap" id="matrixresult" style="font-size:30px;height:auto !important;"></p>
-            <p id="explanationmatrixresult" class="stopwrap"
-               style="font-size:20px;font-family:mathfont;color:#232a36 !important;"></p>
+
+            <div class="form-group">
+                <button type='button' class="btn btn-light"
+                        onclick="calloperation(document.getElementById('opval').value)">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group">
+                <p class="stopwrap" id="matrixresult" style="font-size:30px;height:auto !important;"></p>
+            </div>
+            <div class="form-group">
+                <p id="explanationmatrixresult" class="stopwrap"
+                   style="font-size:20px;font-family:mathfont;color:#232a36 !important;"></p>
+            </div>
+
         </div>
 
         <!--multiple matrix-->
@@ -702,35 +773,72 @@
                     <img src="images/righttriangle.png" style="height:200px">
                 </div>
             </div>
+            <div class="form-group">
+                <button type="button" id="simpletrigosolve" class="btn btn-light"
+                        onclick="solvesimpletrigo();checkforusetrigovalue();">Solve
+                </button>
+            </div>
 
-            <button type="button" id="simpletrigosolve" class="btn-grad"
-                    onclick="solvesimpletrigo();checkforusetrigovalue();">Solve
-            </button>
-            <p style="font-size:20px;font-family:mathfont" class="stopwrap" id="soltri"></p>
-            <div class="text-center collapse" id="usetrigovaluesbtn">
-                <button style="margin: 2px;" class="btn btn-outline-light" id="sini" onclick="set(this)">Use sinθ
-                    value
+            <div class="form-group">
+                <p style="font-size:20px;font-family:mathfont" class="stopwrap" id="soltri"></p>
+            </div>
+            <div class="form-group">
+                <div class="text-center collapse" id="usetrigovaluesbtn">
+                    <button style="margin: 2px;" class="btn btn-outline-light" id="sini" onclick="set(this)">Use sinθ
+                        value
+                    </button>
+                    <button style="margin: 2px;" class="btn btn-outline-light" id="cosi" onclick="set(this)">Use cosθ
+                        value
+                    </button>
+                    <button style="margin: 2px;" class="btn btn-outline-light" id="tani" onclick="set(this)">Use tanθ
+                        value
+                    </button>
+                    <button style="margin: 2px;" class="btn btn-outline-light" id="coseci" onclick="set(this)">Use
+                        cosecθ
+                        value
+                    </button>
+                    <button style="margin: 2px;" class="btn btn-outline-light" id="seci" onclick="set(this)">Use secθ
+                        value
+                    </button>
+                    <button style="margin: 2px;" class="btn btn-outline-light" id="coti" onclick="set(this)">Use cotθ
+                        value
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="collapse" id="mulsolwithsteps">
+            <form class="form-inline">
+                <input type="number" id="numofmulsol" class="form__field" placeholder="Number"
+                       style="font-size:20px;display:inline;width:100px;">
+                <label style="font-size:30px;padding:0 5px 0 5px">×</label>
+                <input type="number" id="numwithofmulsol" class="form__field" placeholder="Number"
+                       style="font-size:20px;display:inline;width:100px;">
+                <button type="button" class="btn-grad" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
+                    Solve
                 </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="cosi" onclick="set(this)">Use cosθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="tani" onclick="set(this)">Use tanθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="coseci" onclick="set(this)">Use cosecθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="seci" onclick="set(this)">Use secθ
-                    value
-                </button>
-                <button style="margin: 2px;" class="btn btn-outline-light" id="coti" onclick="set(this)">Use cotθ
-                    value
-                </button>
+            </form>
+            <br>
+            <div>
+                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;"
+                   align="right"></p>
             </div>
 
         </div>
 
-        <div class="collapse" id="areacal">
+        <div class="collapse" id="about">
+            <table class="table">
+                <tr>
+                    <td><h5>App is Developed By <span class="badge badge-light" style="cursor:pointer;"
+                                                      onclick="window.open('https://sairish2001.github.io')">Sairish</span>
+                    </h5></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="" id="areacal">
             <h2>Calculator for Shapes</h2>
             <table class="table">
                 <tr>
@@ -767,34 +875,6 @@
                 </tr>
             </table>
         </div>
-
-        <div class="collapse" id="mulsolwithsteps">
-            <form class="form-inline">
-                <input type="number" id="numofmulsol" class="form__field" placeholder="Number"
-                       style="font-size:20px;display:inline;width:100px;">
-                <label style="font-size:30px;padding:0 5px 0 5px">×</label>
-                <input type="number" id="numwithofmulsol" class="form__field" placeholder="Number"
-                       style="font-size:20px;display:inline;width:100px;">
-                <button type="button" class="btn-grad" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
-                    Solve
-                </button>
-            </form>
-            <br>
-            <div>
-                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;"
-                   align="right"></p>
-            </div>
-
-        </div>
-
-        <div class="collapse" id="about">
-            <table class="table">
-                <tr>
-                    <td><h5>App is Developed By <span class="badge badge-light" style="cursor:pointer;" onclick="window.open('https://sairish2001.github.io')">Sairish</span></h5></td>
-                </tr>
-            </table>
-        </div>
-
         <!--        check divisibility-->
 
         <!--        end of check divisibility-->
@@ -965,8 +1045,12 @@
                             <div class="col-6">
                                 <h5 class="text-center" style="font-size:20px">Area of Square</h5>
                                 <p class="text-center" style="font-size:20px;">\[(side)^{2}\]</p>
+
                                 <h5 class="text-center" style="font-size:20px">Perimeter of Square</h5>
                                 <p class="text-center" style="font-size:20px;">\[4(side)\]</p>
+
+                                <h5 class="text-center" style="font-size:20px">Diagonal of Square</h5>
+                                <p class="text-center" style="font-size:20px;">\[d=\sqrt{2}(side)\]</p>
                             </div>
                             <div class="col-6">
                                 <img src="images/square.png" style="height:150px">
@@ -974,9 +1058,10 @@
                         </div>
 
                         <input class="form__field" type="number" placeholder="Enter Side" id="inputsqside"
-                               oninput="solveareasq();solveperisq();">
+                               oninput="solveareasq();solveperisq();solvediagonalsq();">
                         <p class="stopwrap" id="resultofareasq" style="font-size:20px;font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperisq" style="font-size:20px;font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalsq" style="font-size:20px;font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1001,16 +1086,16 @@
                         <div class="row">
                             <div class="col-6">
                                 <h5 class="text-center" style="font-size:20px">Area of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[l \times b\]</p>
+                                <p class="text-center" style="font-size:20px;">\[a=l \times b\]</p>
                                 <h5 class="text-center" style="font-size:20px">Perimeter of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[2(l+b)\]</p>
+                                <p class="text-center" style="font-size:20px;">\[p=2(l+b)\]</p>
                                 <h5 class="text-center" style="font-size:20px">Diagonal of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[d= \sqrt{w^2-l^2}\]</p>
+                                <p class="text-center" style="font-size:20px;">\[d= \sqrt{b^2+l^2}\]</p>
                             </div>
                             <div class="col-6">
-                                <img src="images/rectangle.png" style="height:100px">
-                                <br>
-                                <br>
+                                <div class="form-group">
+                                    <img src="images/rectangle.png" class="img-fluid">
+                                </div>
                                 <h5 class="text-center" style="font-size:20px">Length of Rectangle</h5>
                                 <p class="text-center" style="font-size:20px;">\[l= \sqrt{d^2-b^2}\]</p>
                                 <h5 class="text-center" style="font-size:20px">Breadth of Rectangle</h5>
@@ -1023,11 +1108,13 @@
                                oninput="rectanglesolve()">
                         <input class="form__field" type="number" placeholder="Enter Breadth (cm)" id="inputrecbreadth"
                                oninput="rectanglesolve()">
-                        <!--                        <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal" oninput="rectanglesolve()">-->
+                        <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal" oninput="rectanglesolve()">
                         <br>
+                        <p class="stopwrap" id="resultoflengthrec" style="font-size:20px;font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofbreadthrec" style="font-size:20px;font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofarearec" style="font-size:20px;font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperirec" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultotherrec" style="font-size:20px;font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalrec" style="font-size:20px;font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">

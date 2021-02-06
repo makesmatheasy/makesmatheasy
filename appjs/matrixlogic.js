@@ -131,7 +131,7 @@ function sumofmatrix() {
         summ[i] = [];
         sumexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
         for (j = 0; j < document.getElementById('column2').value; j++) {
-            sumexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\quad and \\quad b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix2[i][j])) + '\\]';
+            sumexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix2[i][j])) + '\\]';
             summ[i][j] = parseInt(matrix1[i][j]) + parseInt(matrix2[i][j]);
             var dp = ''
             var dp2 = ''
@@ -194,7 +194,7 @@ function sumofmatrix() {
     }
     <!--            printhere-->
     document.getElementById('explanationmatrixresult').innerHTML = sumexplanation;
-    displaymatrix('Addition\\quad Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
+    displaymatrix('Addition\\space Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
     renderMathInElement(document.getElementById('explanationmatrixresult'));
     <!--            printhere-->
 
@@ -210,7 +210,7 @@ function subtractofmatrix() {
         subb[i] = [];
         subbexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
         for (j = 0; j < document.getElementById('column2').value; j++) {
-            subbexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\quad and \\quad b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}=' + String(parseInt(matrix2[i][j])) + '\\]';
+            subbexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}=' + String(parseInt(matrix2[i][j])) + '\\]';
             subb[i][j] = parseInt(matrix1[i][j]) - parseInt(matrix2[i][j]);
             var dp = ''
             var dp2 = ''
@@ -274,7 +274,7 @@ function subtractofmatrix() {
     }
     <!--            printhere-->
     document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
-    displaymatrix('Substraction\\quad Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
+    displaymatrix('Substraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
     renderMathInElement(document.getElementById('explanationmatrixresult'));
     <!--            printhere-->
 
@@ -298,7 +298,7 @@ function mulofmatrix() {
             mulexplanation += '<u>Column ' + String(j + 1) + ' of Matrix 2</u><br>';
             mul[i][j] = 0;
             for (k = 0; k < document.getElementById('column1').value; k++) {
-                mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrix1[i][k])) + '\\quad and \\quad b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrix1[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + '\\]'
+                mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrix1[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrix1[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + '\\]'
                 temp += String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + ' + '
                 mul[i][j] = parseInt(mul[i][j]) + parseInt(matrix1[i][k]) * parseInt(matrix2[k][j]);
             }
@@ -370,7 +370,7 @@ function mulofmatrix() {
     <!--            printhere-->
     document.getElementById('explanationmatrixresult').innerHTML = mulexplanation;
     renderMathInElement(document.getElementById('explanationmatrixresult'));
-    displaymatrix('Multiplication\\quad Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
+    displaymatrix('Multiplication\\space Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
     <!--            printhere-->
 
 }
@@ -493,7 +493,7 @@ function transpose() {
             trans[i][j] = matrixsingle[j][i];
         }
     }
-    displaymatrix('Transposed\\quad Matrix', trans, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+    displaymatrix('Transposed\\space Matrix', trans, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
     document.getElementById('singlematrixexplanation').innerHTML = "&nbsp;&nbsp;Just Interchange Rows and Columns"
 }
 
@@ -590,12 +590,12 @@ function miandcofactors() {
             }
         }
         temp += '</div>'
-        displaymatrix('Co-Factor\\quad Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        displaymatrix('Co-Factor\\space Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
         var el = document.createElement('div')
         el.id = 'minormat'
         el.style.margin = '10px';
         document.getElementById('singlematrixresult').appendChild(el)
-        displaymatrix('Minor\\quad Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        displaymatrix('Minor\\space Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
         document.getElementById('singlematrixexplanation').innerHTML = temp;
         renderMathInElement(document.getElementById('singlematrixexplanation'));
     }
@@ -842,12 +842,12 @@ function miandcofactors() {
             }
         }
         temp += "</div>"
-        displaymatrix('Co-Factor\\quad Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        displaymatrix('Co-Factor\\space Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
         var el = document.createElement('div')
         el.id = 'minormat'
         el.style.margin = '10px';
         document.getElementById('singlematrixresult').appendChild(el)
-        displaymatrix('Minor\\quad Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        displaymatrix('Minor\\space Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
         document.getElementById('singlematrixexplanation').innerHTML = temp;
         renderMathInElement(document.getElementById('singlematrixexplanation'));
     }
@@ -967,447 +967,447 @@ function checkfunctions() {
 //}
 //
 //
-// function laplacedeterminant() {
-//     sendtomatrixsingle();
-//     document.getElementById('singlematrixexplanation').innerHTML = '';
-//     determinant(matrixsingle);
-//
-// }
-//
-// function determinant(ma) {
-//     var row = ma.length;
-//     var column = ma.length;
-//     var firstrow = [];
-//     var jj = 1;
-//     var el = 0;
-//     for (j = 0; j < column + column; j += 2) {
-//         if (el % 2 == 0) {
-//             var sign = '+'
-//         } else {
-//             sign = '-'
-//         }
-//         firstrow[j] = sign + ma[0][el];
-//         firstrow[jj] = '0' + String(el);
-//         jj += 2;
-//         el += 1;
-//     }
-//     var jj = 1;
-//     var firstrowel = 0;
-//     var result = [];
-//     var sol2 = '';
-//     var sol2sub = '';
-//     var vt = ''
-//     var dtemp = '';
-//     var vtofsub = '';
-//     var vtfinalfirstresult = '';
-//     var vtfinalfirstresult2 = '';
-//     var vtfinalfirst = '';
-//     var matsol = '';
-//     var vtfinal = '';
-//     var vtfinalresult = '';
-//     var vtfinalresult2 = '';
-//     var vtfinalresult3 = '';
-//     var vtfinalresult4 = '';
-//     var vtfinalofsub = '';
-//     var vtfinalofsubresult = '';
-//     var vtfinalofsubresult2 = '';
-//     var vtfinalofsubresult3 = '';
-//     var vtfinalofsubresult4 = '';
-//     var vtfinalofsubresult5 = '';
-//     var vtfinalofsubresult6 = '';
-//     var vtfinalfirstresult2final = ''
-//     var sol3 = '';
-//     var sol3sub = '';
-//     var sol4sub = '';
-//     var sol5sub = '';
-//     vtfinal += '\\['
-//     vtfinalresult += '\\[';
-//     vtfinalresult2 += '\\[';
-//     vtfinalresult3 += '\\[';
-//     vtfinalresult4 += '\\[';
-//
-//     vtfinalfirst = '\\['
-//     vtfinalfirstresult = '\\['
-//     vtfinalfirstresult2 = '\\['
-//
-//     vt += '\\['
-//     vtofsub += '\\['
-//     vtfinalofsub += '\\['
-//     vtfinalofsubresult += '\\['
-//     vtfinalofsubresult2 += '\\['
-//     vtfinalofsubresult3 += '\\['
-//     vtfinalofsubresult4 += '\\['
-//     vtfinalofsubresult5 += '\\['
-//     vtfinalofsubresult6 += '\\['
-//     dtemp += '\\[';
-//     if (row == 2 && column == 2) {
-//         var lets2 = "\\["
-//         lets2 += '\\color{red}\\big(\\color{black}' + ma[0][0] + '\\times' + ma[1][1] + '\\color{red}\\big)\\color{black}-\\color{red}\\big(\\color{black}' + ma[0][1] + '\\times' + ma[1][0] + '\\color{red}\\big)'
-//         lets2 += "\\]"
-//
-//         var lets22 = "\\["
-//         var ss = nerdamer(ma[0][0] * ma[1][1]).evaluate().toString()
-//         var ss2 = nerdamer(ma[0][1] * ma[1][0]).evaluate().toString()
-//         lets22 += "\\color{red}\\big(\\color{black}" + ss + '\\color{red}\\big)\\color{black}-\\color{red}\\big(\\color{black}' + ss2 + "\\color{red}\\big)\\color{black}";
-//         lets22 += "\\]"
-//
-//         var lets222 = "\\["
-//         ss2 = nerdamer(ss - ss2).evaluate().toString()
-//         lets222 += 'Determinant = ' + ss2;
-//         lets222 += "\\]"
-//         var dtemp = '\\[\\begin{vmatrix}'
-//         for (ij of ma) {
-//             for (ji of ij) {
-//                 dtemp += ji + "&"
-//             }
-//             dtemp = dtemp.slice(0, -1);
-//             dtemp += '\\\\';
-//         }
-//         dtemp += '\\end{vmatrix} = ' + ss2 + '\\]'
-//         document.getElementById('singlematrixresult').innerHTML = dtemp;
-//         document.getElementById('singlematrixexplanation').innerHTML = lets2 + lets22 + lets222;
-//
-//     } else {
-//
-//         //    removes row and column
-//         for (lk = 0; lk < column; lk++) {
-//             var submatrix = [];
-//             var k = 0;
-//             var l = 0;
-//             for (i = 0; i < row; i++) {
-//                 submatrix[l] = [];
-//                 if (i == parseInt(firstrow[jj].slice(0, 1)))
-//                     continue;
-//                 for (j = 0; j < column; j++) {
-//                     if (j == parseInt(firstrow[jj].slice(1, 2)))
-//                         continue;
-//                     submatrix[l][k] = ma[i][j];
-//                     k = (k + 1) % (row - 1);
-//                     if (k == 0)
-//                         l++;
-//                 }
-//             }
-//             if (submatrix.length == parseInt(document.getElementById('srow1').value) - 1) {
-//                 vtfinalfirst += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalfirstresult += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalfirstresult2 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalfirstresult2final += firstrow[firstrowel] + '('
-//                 dtemp += '\\color{red}' + firstrow[firstrowel] + '\\color{black}\\begin{bmatrix}'
-//                 for (ij of submatrix) {
-//                     for (ji of ij) {
-//                         dtemp += ji + "&"
-//                     }
-//                     dtemp = dtemp.slice(0, -1);
-//                     dtemp += '\\\\';
-//                 }
-//                 dtemp += '\\end{bmatrix}'
-//                 vtfinalfirst += '\\big(' + submatrix[0][0] + '\\big)\\times\\big(' + submatrix[1][1] + '\\big)-\\big(' + submatrix[0][1] + '\\big)\\times\\big(' + submatrix[1][0] + '\\big)'
-//                 vtfinalfirstresult += '\\big(' + eval(submatrix[0][0] * submatrix[1][1]) + '\\big)-\\big(' + eval(submatrix[0][1] * submatrix[1][0]) + '\\big)'
-//                 vtfinalfirstresult2 += eval(eval(submatrix[0][0] * submatrix[1][1]) - eval(submatrix[0][1] * submatrix[1][0]))
-//                 vtfinalfirstresult2final += eval(eval(submatrix[0][0] * submatrix[1][1]) - eval(submatrix[0][1] * submatrix[1][0]))
-//             }
-//             vtfinalfirst += '\\color{red}\\bigg)\\color{black}'
-//             vtfinalfirstresult += '\\color{red}\\bigg)\\color{black}'
-//             vtfinalfirstresult2 += '\\color{red}\\bigg)\\color{black}'
-//             vtfinalfirstresult2final += ')'
-//             //----------------------------------------------
-//             if (submatrix.length > 2) {
-//                 var colofsub = submatrix.length;
-//                 var rowofsub = submatrix.length;
-//                 var firstrowofsub = [];
-//                 var resultofsub = [];
-//                 var jjofsub = 1;
-//                 var elofsub = 0;
-//                 for (jofsub = 0; jofsub < colofsub + colofsub; jofsub += 2) {
-//                     if (elofsub % 2 == 0) {
-//                         var signofsub = '+'
-//                     } else {
-//                         signofsub = '-'
-//                     }
-//                     firstrowofsub[jofsub] = signofsub + submatrix[0][elofsub];
-//                     firstrowofsub[jjofsub] = '0' + String(elofsub);
-//                     jjofsub += 2;
-//                     elofsub += 1;
-//                 }
-//                 var firstrowelofsub = 0;
-//                 var jjofsub = 1;
-//                 vt += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//
-//                 vtofsub += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalofsub += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//                 vtfinalofsubresult += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//                 vtfinalofsubresult2 += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//                 vtfinalofsubresult3 += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//                 vtfinalofsubresult4 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalofsubresult5 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalofsubresult6 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 sol5sub += firstrow[firstrowel] + '('
-//
-//                 vtfinal += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//                 vtfinalresult += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
-//                 vtfinalresult2 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalresult3 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 vtfinalresult4 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
-//                 sol3 += firstrow[firstrowel] + '('
-//
-//                 for (lkofsub = 0; lkofsub < colofsub; lkofsub++) {
-//                     var submatrixofsub = [];
-//                     var kofsub = 0;
-//                     var lofsub = 0;
-//                     for (iofsub = 0; iofsub < rowofsub; iofsub++) {
-//                         submatrixofsub[lofsub] = [];
-//                         if (iofsub == parseInt(firstrowofsub[jjofsub].slice(0, 1)))
-//                             continue;
-//                         for (jofsub = 0; jofsub < colofsub; jofsub++) {
-//                             if (jofsub == parseInt(firstrowofsub[jjofsub].slice(1, 2)))
-//                                 continue;
-//                             submatrixofsub[lofsub][kofsub] = submatrix[iofsub][jofsub];
-//                             kofsub = (kofsub + 1) % (rowofsub - 1);
-//                             if (kofsub == 0)
-//                                 lofsub++;
-//                         }
-//                     }
-//                     vt += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\color{black}\\begin{bmatrix}'
-//                     vtfinal += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\bigg(\\color{black}'
-//                     vtfinalresult += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\bigg(\\color{black}'
-//                     vtfinalresult2 += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\big(\\color{black}'
-//                     vtfinalresult3 += '\\color{blue}' + firstrowofsub[firstrowelofsub][0] + '\\big(\\color{black}'
-//                     sol2 += firstrowofsub[firstrowelofsub][0] + '('
-//                     for (ij of submatrixofsub) {
-//                         for (ji of ij) {
-//                             vt += ji + "&"
-//                         }
-//                         vt = vt.slice(0, -1);
-//                         vt += '\\\\';
-//                     }
-//                     vt += '\\end{bmatrix}'
-//                     vtfinal += '\\big(' + submatrixofsub[0][0] + '\\times' + submatrixofsub[1][1] + '\\big)-\\big(' + submatrixofsub[0][1] + '\\times' + submatrixofsub[1][0] + '\\big)\\color{blue}\\bigg)'
-//                     vtfinalresult += '\\big(' + eval(submatrixofsub[0][0] * submatrixofsub[1][1]) + '\\big)-\\big(' + eval(submatrixofsub[0][1] * submatrixofsub[1][0]) + '\\big)\\color{blue}\\bigg)'
-//                     var sol = eval(eval(submatrixofsub[0][0] * submatrixofsub[1][1]) - eval(submatrixofsub[0][1] * submatrixofsub[1][0]))
-//                     vtfinalresult2 += sol + '\\color{blue}\\big)'
-//                     vtfinalresult3 += eval(firstrowofsub[firstrowelofsub].slice(1) * sol) + '\\color{blue}\\big)'
-//                     //			vtfinalresult3+='\\big)'
-//                     sol2 += eval(firstrowofsub[firstrowelofsub].slice(1) * sol) + ')'
-//
-//                     jjofsub += 2;
-//                     firstrowelofsub += 2;
-//                     //inner sub------------------------------------------
-//                     if (submatrixofsub.length > 2) {
-//                         var colofsubofsub = submatrixofsub.length;
-//                         var rowofsubofsub = submatrixofsub.length;
-//                         var firstrowofsubofsub = [];
-//                         var resultofsubofsub = [];
-//                         var jjofsubofsub = 1;
-//                         var elofsubofsub = 0;
-//                         for (jofsubofsub = 0; jofsubofsub < colofsubofsub + colofsubofsub; jofsubofsub += 2) {
-//                             if (elofsubofsub % 2 == 0) {
-//                                 var signofsubofsub = '+'
-//                             } else {
-//                                 signofsubofsub = '-'
-//                             }
-//                             firstrowofsubofsub[jofsubofsub] = signofsubofsub + submatrixofsub[0][elofsubofsub];
-//                             firstrowofsubofsub[jjofsubofsub] = '0' + String(elofsubofsub);
-//                             jjofsubofsub += 2;
-//                             elofsubofsub += 1;
-//                         }
-//                         var firstrowelofsubofsub = 0;
-//                         var jjofsubofsub = 1;
-//                         vtfinalofsub += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
-//
-//                         vtfinalofsubresult += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
-//                         vtfinalofsubresult2 += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
-//                         vtfinalofsubresult3 += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
-//                         vtfinalofsubresult4 += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\color{black}'//last 3
-//
-//                         sol3sub += firstrowofsub[firstrowelofsub - 2] + '('
-//                         sol4sub += firstrowofsub[firstrowelofsub - 2] + '('
-//
-//                         vtofsub += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
-//
-//                         for (lkofsubofsub = 0; lkofsubofsub < colofsubofsub; lkofsubofsub++) {
-//                             var submatrixofsubofsub = [];
-//                             var kofsubofsub = 0;
-//                             var lofsubofsub = 0;
-//                             for (iofsubofsub = 0; iofsubofsub < rowofsubofsub; iofsubofsub++) {
-//                                 submatrixofsubofsub[lofsubofsub] = [];
-//                                 if (iofsubofsub == parseInt(firstrowofsubofsub[jjofsubofsub].slice(0, 1)))
-//                                     continue;
-//                                 for (jofsubofsub = 0; jofsubofsub < colofsubofsub; jofsubofsub++) {
-//                                     if (jofsubofsub == parseInt(firstrowofsubofsub[jjofsubofsub].slice(1, 2)))
-//                                         continue;
-//                                     submatrixofsubofsub[lofsubofsub][kofsubofsub] = submatrixofsub[iofsubofsub][jofsubofsub];
-//                                     kofsubofsub = (kofsubofsub + 1) % (rowofsubofsub - 1);
-//                                     if (kofsubofsub == 0)
-//                                         lofsubofsub++;
-//                                 }
-//                             }
-//
-//                             vtofsub += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\color{black}\\begin{bmatrix}'
-//                             vtfinalofsub += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\bigg(\\color{black}'
-//
-//                             vtfinalofsubresult += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\bigg(\\color{black}'
-//                             vtfinalofsubresult2 += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\color{black}'
-//                             vtfinalofsubresult3 += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub][0] + '\\color{black}'
-//                             sol2sub += firstrowofsubofsub[firstrowelofsubofsub][0]
-//                             for (ijofsub of submatrixofsubofsub) {
-//                                 for (jiofsub of ijofsub) {
-//                                     vtofsub += jiofsub + "&"
-//                                 }
-//                                 vtofsub = vtofsub.slice(0, -1);
-//                                 vtofsub += '\\\\';
-//                             }
-//                             vtofsub += '\\end{bmatrix}'
-//                             vtfinalofsub += '\\big(' + submatrixofsubofsub[0][0] + '\\times' + submatrixofsubofsub[1][1] + '\\big)-\\big(' + submatrixofsubofsub[0][1] + '\\times' + submatrixofsubofsub[1][0] + '\\big)\\color{#fb650d}\\bigg)'
-//
-//                             vtfinalofsubresult += '\\big(' + eval(submatrixofsubofsub[0][0] * submatrixofsubofsub[1][1]) + '\\big)-\\big(' + eval(submatrixofsubofsub[0][1] * submatrixofsubofsub[1][0]) + '\\big)\\color{#fb650d}\\bigg)'
-//                             var sol = eval(eval(submatrixofsubofsub[0][0] * submatrixofsubofsub[1][1]) - eval(submatrixofsubofsub[0][1] * submatrixofsubofsub[1][0]))
-//                             vtfinalofsubresult2 += '\\color{#fb650d}\\big(\\color{black}' + sol + '\\color{#fb650d}\\big)\\color{black}'
-//                             vtfinalofsubresult3 += '\\color{#fb650d}\\big(\\color{black}' + eval(firstrowofsubofsub[firstrowelofsubofsub].slice(1) * sol) + '\\color{#fb650d}\\big)\\color{black}'
-//                             sol2sub += '(' + eval(firstrowofsubofsub[firstrowelofsubofsub].slice(1) * sol) + ')'
-//
-//                             jjofsubofsub += 2;
-//                             firstrowelofsubofsub += 2;
-//
-//                         }
-//                         vtfinalofsubresult4 += '\\color{blue}\\big(\\color{black}' + nerdamer(sol2sub).evaluate().toString() + '\\color{blue}\\big)\\color{black}'
-//
-//                         sol3sub += nerdamer(sol2sub).evaluate().toString() + ')'
-//                         sol4sub += nerdamer(sol2sub).evaluate().toString() + ')'
-//                         vtfinalofsubresult5 += '\\color{blue}+\\color{black}\\big(' + nerdamer(sol3sub).evaluate().toString() + '\\big)'
-//                         sol3sub = ''
-//                         sol2sub = '';
-//
-//                         vtofsub += '\\color{blue}\\bigg)\\color{black}'
-//                         vtfinalofsub += '\\color{blue}\\bigg)\\color{black}'
-//                         vtfinalofsubresult += '\\color{blue}\\bigg)\\color{black}'
-//                         vtfinalofsubresult2 += '\\color{blue}\\bigg)\\color{black}'
-//                         vtfinalofsubresult3 += '\\color{blue}\\bigg)\\color{black}'
-//
-//                     }
-//                     //inner sub------------------------------------------
-//                 }
-//
-//                 vt += '\\color{red}\\right)'
-//                 vtfinal += '\\color{red}\\right)'
-//                 vtfinalresult += '\\color{red}\\right)'
-//                 vtfinalresult2 += '\\color{red}\\bigg)'
-//                 vtfinalresult3 += '\\color{red}\\bigg)'
-//                 vtfinalofsubresult6 += nerdamer(sol4sub).evaluate().toString()
-//                 sol5sub += nerdamer(sol4sub).evaluate().toString()
-//                 sol4sub = ''
-//                 var jk = nerdamer(sol2).evaluate().toString()
-//                 vtfinalresult4 += jk + '\\color{red}\\bigg)'
-//                 sol3 += jk + ')'
-//                 sol2 = '';
-//                 vtofsub += '\\color{red}\\bigg)\\color{black}'
-//                 vtfinalofsub += '\\color{red}\\right)\\color{black}'
-//                 vtfinalofsubresult += '\\color{red}\\right)\\color{black}'
-//                 vtfinalofsubresult2 += '\\color{red}\\right)\\color{black}'
-//                 vtfinalofsubresult3 += '\\color{red}\\right)\\color{black}'
-//                 vtfinalofsubresult4 += '\\color{red}\\bigg)\\color{black}'
-//                 vtfinalofsubresult5 += '\\color{red}\\bigg)\\color{black}'
-//                 vtfinalofsubresult6 += '\\color{red}\\bigg)\\color{black}'
-//                 sol5sub += ')'
-//
-//             }
-//             //-----------------------------------
-//             if (submatrix.length <= 2) {
-//                 result[lk] = eval(firstrow[firstrowel] * eval(eval(submatrix[0][0] * submatrix[1][1]) - eval(submatrix[0][1] * submatrix[1][0])))
-//             }
-//             jj += 2;
-//             firstrowel += 2;
-//         }
-//         //    removes row and column
-//         dtemp += '\\]'
-//         vt += '\\]'
-//         vtofsub += '\\]'
-//         vtfinal += '\\]'
-//         vtfinalofsub += '\\]'
-//         vtfinalofsubresult += '\\]'
-//         vtfinalofsubresult2 += '\\]'
-//         vtfinalofsubresult3 += '\\]'
-//         vtfinalofsubresult4 += '\\]'
-//         vtfinalofsubresult5 += '\\]'
-//         vtfinalofsubresult6 += '\\]'
-//         vtfinalfirst += '\\]'
-//         vtfinalfirstresult += '\\]'
-//         vtfinalfirstresult2 += '\\]'
-//         vtfinalresult += '\\]'
-//         vtfinalresult2 += '\\]'
-//         vtfinalresult3 += '\\]'
-//         vtfinalresult4 += '\\]'
-//
-//         //    dtemp+='--------------------'
-//         document.getElementById('singlematrixexplanation').innerHTML += dtemp;
-//         if (submatrix.length == 2) {
-//             document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirst;
-//             document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirstresult;
-//             document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirstresult2;
-//             var dis = '\\[\\begin{vmatrix}';
-//             for (om of ma) {
-//                 for (omm of om) {
-//                     dis += omm + '&'
-//                 }
-//                 dis = dis.slice(0, -1)
-//                 dis += '\\\\'
-//             }
-//             var sdd = nerdamer(vtfinalfirstresult2final).evaluate().toString();
-//             dis += '\\end{vmatrix}=' + sdd + '\\]'
-//             document.getElementById('singlematrixexplanation').innerHTML += '\\[Determinant = ' + sdd + '\\]';
-//             document.getElementById('singlematrixresult').innerHTML = dis;
-//         }
-//
-//         if (submatrix.length > 2) {
-//             document.getElementById('singlematrixexplanation').innerHTML += vt;
-//             if (submatrixofsub.length == 2) {
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinal;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult2;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult3;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult4;
-//                 var dis = '\\[\\begin{vmatrix}';
-//                 for (om of ma) {
-//                     for (omm of om) {
-//                         dis += omm + '&'
-//                     }
-//                     dis = dis.slice(0, -1)
-//                     dis += '\\\\'
-//                 }
-//                 var sdd = nerdamer(sol3).evaluate().toString();
-//                 dis += '\\end{vmatrix}=' + sdd + '\\]'
-//                 document.getElementById('singlematrixexplanation').innerHTML += '\\[Determinant = ' + sdd + '\\]';
-//                 document.getElementById('singlematrixresult').innerHTML = dis;
-//             }
-//             if (submatrixofsub.length > 2) {
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtofsub;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsub;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult2;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult3;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult4;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult5;
-//                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult6;
-//                 var dis = '\\[\\begin{vmatrix}';
-//                 for (om of ma) {
-//                     for (omm of om) {
-//                         dis += omm + '&'
-//                     }
-//                     dis = dis.slice(0, -1)
-//                     dis += '\\\\'
-//                 }
-//                 var sdd = nerdamer(sol5sub).evaluate().toString();
-//                 dis += '\\end{vmatrix}=' + sdd + '\\]'
-//                 document.getElementById('singlematrixexplanation').innerHTML += '\\[Determinant = ' + sdd + '\\]';
-//                 document.getElementById('singlematrixresult').innerHTML = dis;
-//             }
-//         }
-//         submatrix = []
-//         submatrixofsub = []
-//         submatrixofsubofsub = []
-//     }
-//     renderMathInElement(document.getElementById('singlematrixexplanation'));
-//     renderMathInElement(document.getElementById('singlematrixresult'));
-// }
+function laplacedeterminant() {
+    sendtomatrixsingle();
+    document.getElementById('singlematrixexplanation').innerHTML = '';
+    determinant(matrixsingle);
+
+}
+
+function determinant(ma) {
+    var row = ma.length;
+    var column = ma.length;
+    var firstrow = [];
+    var jj = 1;
+    var el = 0;
+    for (j = 0; j < column + column; j += 2) {
+        if (el % 2 == 0) {
+            var sign = '+'
+        } else {
+            sign = '-'
+        }
+        firstrow[j] = sign + ma[0][el];
+        firstrow[jj] = '0' + String(el);
+        jj += 2;
+        el += 1;
+    }
+    var jj = 1;
+    var firstrowel = 0;
+    var result = [];
+    var sol2 = '';
+    var sol2sub = '';
+    var vt = ''
+    var dtemp = '';
+    var vtofsub = '';
+    var vtfinalfirstresult = '';
+    var vtfinalfirstresult2 = '';
+    var vtfinalfirst = '';
+    var matsol = '';
+    var vtfinal = '';
+    var vtfinalresult = '';
+    var vtfinalresult2 = '';
+    var vtfinalresult3 = '';
+    var vtfinalresult4 = '';
+    var vtfinalofsub = '';
+    var vtfinalofsubresult = '';
+    var vtfinalofsubresult2 = '';
+    var vtfinalofsubresult3 = '';
+    var vtfinalofsubresult4 = '';
+    var vtfinalofsubresult5 = '';
+    var vtfinalofsubresult6 = '';
+    var vtfinalfirstresult2final = ''
+    var sol3 = '';
+    var sol3sub = '';
+    var sol4sub = '';
+    var sol5sub = '';
+    vtfinal += '\\['
+    vtfinalresult += '\\[';
+    vtfinalresult2 += '\\[';
+    vtfinalresult3 += '\\[';
+    vtfinalresult4 += '\\[';
+
+    vtfinalfirst = '\\['
+    vtfinalfirstresult = '\\['
+    vtfinalfirstresult2 = '\\['
+
+    vt += '\\['
+    vtofsub += '\\['
+    vtfinalofsub += '\\['
+    vtfinalofsubresult += '\\['
+    vtfinalofsubresult2 += '\\['
+    vtfinalofsubresult3 += '\\['
+    vtfinalofsubresult4 += '\\['
+    vtfinalofsubresult5 += '\\['
+    vtfinalofsubresult6 += '\\['
+    dtemp += '\\[';
+    if (row == 2 && column == 2) {
+        var lets2 = "\\["
+        lets2 += '\\color{red}\\big(\\color{black}' + ma[0][0] + '\\times' + ma[1][1] + '\\color{red}\\big)\\color{black}-\\color{red}\\big(\\color{black}' + ma[0][1] + '\\times' + ma[1][0] + '\\color{red}\\big)'
+        lets2 += "\\]"
+
+        var lets22 = "\\["
+        var ss = nerdamer(ma[0][0] * ma[1][1]).evaluate().toString()
+        var ss2 = nerdamer(ma[0][1] * ma[1][0]).evaluate().toString()
+        lets22 += "\\color{red}\\big(\\color{black}" + ss + '\\color{red}\\big)\\color{black}-\\color{red}\\big(\\color{black}' + ss2 + "\\color{red}\\big)\\color{black}";
+        lets22 += "\\]"
+
+        var lets222 = "\\["
+        ss2 = nerdamer(ss - ss2).evaluate().toString()
+        lets222 += 'Determinant = ' + ss2;
+        lets222 += "\\]"
+        var dtemp = '\\[\\begin{vmatrix}'
+        for (ij of ma) {
+            for (ji of ij) {
+                dtemp += ji + "&"
+            }
+            dtemp = dtemp.slice(0, -1);
+            dtemp += '\\\\';
+        }
+        dtemp += '\\end{vmatrix} = ' + ss2 + '\\]'
+        document.getElementById('singlematrixresult').innerHTML = dtemp;
+        document.getElementById('singlematrixexplanation').innerHTML = lets2 + lets22 + lets222;
+
+    } else {
+
+        //    removes row and column
+        for (lk = 0; lk < column; lk++) {
+            var submatrix = [];
+            var k = 0;
+            var l = 0;
+            for (i = 0; i < row; i++) {
+                submatrix[l] = [];
+                if (i == parseInt(firstrow[jj].slice(0, 1)))
+                    continue;
+                for (j = 0; j < column; j++) {
+                    if (j == parseInt(firstrow[jj].slice(1, 2)))
+                        continue;
+                    submatrix[l][k] = ma[i][j];
+                    k = (k + 1) % (row - 1);
+                    if (k == 0)
+                        l++;
+                }
+            }
+            if (submatrix.length == parseInt(document.getElementById('srow1').value) - 1) {
+                vtfinalfirst += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalfirstresult += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalfirstresult2 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalfirstresult2final += firstrow[firstrowel] + '('
+                dtemp += '\\color{red}' + firstrow[firstrowel] + '\\color{black}\\begin{bmatrix}'
+                for (ij of submatrix) {
+                    for (ji of ij) {
+                        dtemp += ji + "&"
+                    }
+                    dtemp = dtemp.slice(0, -1);
+                    dtemp += '\\\\';
+                }
+                dtemp += '\\end{bmatrix}'
+                vtfinalfirst += '\\big(' + submatrix[0][0] + '\\big)\\times\\big(' + submatrix[1][1] + '\\big)-\\big(' + submatrix[0][1] + '\\big)\\times\\big(' + submatrix[1][0] + '\\big)'
+                vtfinalfirstresult += '\\big(' + eval(submatrix[0][0] * submatrix[1][1]) + '\\big)-\\big(' + eval(submatrix[0][1] * submatrix[1][0]) + '\\big)'
+                vtfinalfirstresult2 += eval(eval(submatrix[0][0] * submatrix[1][1]) - eval(submatrix[0][1] * submatrix[1][0]))
+                vtfinalfirstresult2final += eval(eval(submatrix[0][0] * submatrix[1][1]) - eval(submatrix[0][1] * submatrix[1][0]))
+            }
+            vtfinalfirst += '\\color{red}\\bigg)\\color{black}'
+            vtfinalfirstresult += '\\color{red}\\bigg)\\color{black}'
+            vtfinalfirstresult2 += '\\color{red}\\bigg)\\color{black}'
+            vtfinalfirstresult2final += ')'
+            //----------------------------------------------
+            if (submatrix.length > 2) {
+                var colofsub = submatrix.length;
+                var rowofsub = submatrix.length;
+                var firstrowofsub = [];
+                var resultofsub = [];
+                var jjofsub = 1;
+                var elofsub = 0;
+                for (jofsub = 0; jofsub < colofsub + colofsub; jofsub += 2) {
+                    if (elofsub % 2 == 0) {
+                        var signofsub = '+'
+                    } else {
+                        signofsub = '-'
+                    }
+                    firstrowofsub[jofsub] = signofsub + submatrix[0][elofsub];
+                    firstrowofsub[jjofsub] = '0' + String(elofsub);
+                    jjofsub += 2;
+                    elofsub += 1;
+                }
+                var firstrowelofsub = 0;
+                var jjofsub = 1;
+                vt += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+
+                vtofsub += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalofsub += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+                vtfinalofsubresult += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+                vtfinalofsubresult2 += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+                vtfinalofsubresult3 += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+                vtfinalofsubresult4 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalofsubresult5 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalofsubresult6 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                sol5sub += firstrow[firstrowel] + '('
+
+                vtfinal += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+                vtfinalresult += '\\color{red}' + firstrow[firstrowel] + '\\left(\\color{black}'
+                vtfinalresult2 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalresult3 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                vtfinalresult4 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
+                sol3 += firstrow[firstrowel] + '('
+
+                for (lkofsub = 0; lkofsub < colofsub; lkofsub++) {
+                    var submatrixofsub = [];
+                    var kofsub = 0;
+                    var lofsub = 0;
+                    for (iofsub = 0; iofsub < rowofsub; iofsub++) {
+                        submatrixofsub[lofsub] = [];
+                        if (iofsub == parseInt(firstrowofsub[jjofsub].slice(0, 1)))
+                            continue;
+                        for (jofsub = 0; jofsub < colofsub; jofsub++) {
+                            if (jofsub == parseInt(firstrowofsub[jjofsub].slice(1, 2)))
+                                continue;
+                            submatrixofsub[lofsub][kofsub] = submatrix[iofsub][jofsub];
+                            kofsub = (kofsub + 1) % (rowofsub - 1);
+                            if (kofsub == 0)
+                                lofsub++;
+                        }
+                    }
+                    vt += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\color{black}\\begin{bmatrix}'
+                    vtfinal += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\bigg(\\color{black}'
+                    vtfinalresult += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\bigg(\\color{black}'
+                    vtfinalresult2 += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\big(\\color{black}'
+                    vtfinalresult3 += '\\color{blue}' + firstrowofsub[firstrowelofsub][0] + '\\big(\\color{black}'
+                    sol2 += firstrowofsub[firstrowelofsub][0] + '('
+                    for (ij of submatrixofsub) {
+                        for (ji of ij) {
+                            vt += ji + "&"
+                        }
+                        vt = vt.slice(0, -1);
+                        vt += '\\\\';
+                    }
+                    vt += '\\end{bmatrix}'
+                    vtfinal += '\\big(' + submatrixofsub[0][0] + '\\times' + submatrixofsub[1][1] + '\\big)-\\big(' + submatrixofsub[0][1] + '\\times' + submatrixofsub[1][0] + '\\big)\\color{blue}\\bigg)'
+                    vtfinalresult += '\\big(' + eval(submatrixofsub[0][0] * submatrixofsub[1][1]) + '\\big)-\\big(' + eval(submatrixofsub[0][1] * submatrixofsub[1][0]) + '\\big)\\color{blue}\\bigg)'
+                    var sol = eval(eval(submatrixofsub[0][0] * submatrixofsub[1][1]) - eval(submatrixofsub[0][1] * submatrixofsub[1][0]))
+                    vtfinalresult2 += sol + '\\color{blue}\\big)'
+                    vtfinalresult3 += eval(firstrowofsub[firstrowelofsub].slice(1) * sol) + '\\color{blue}\\big)'
+                    //			vtfinalresult3+='\\big)'
+                    sol2 += eval(firstrowofsub[firstrowelofsub].slice(1) * sol) + ')'
+
+                    jjofsub += 2;
+                    firstrowelofsub += 2;
+                    //inner sub------------------------------------------
+                    if (submatrixofsub.length > 2) {
+                        var colofsubofsub = submatrixofsub.length;
+                        var rowofsubofsub = submatrixofsub.length;
+                        var firstrowofsubofsub = [];
+                        var resultofsubofsub = [];
+                        var jjofsubofsub = 1;
+                        var elofsubofsub = 0;
+                        for (jofsubofsub = 0; jofsubofsub < colofsubofsub + colofsubofsub; jofsubofsub += 2) {
+                            if (elofsubofsub % 2 == 0) {
+                                var signofsubofsub = '+'
+                            } else {
+                                signofsubofsub = '-'
+                            }
+                            firstrowofsubofsub[jofsubofsub] = signofsubofsub + submatrixofsub[0][elofsubofsub];
+                            firstrowofsubofsub[jjofsubofsub] = '0' + String(elofsubofsub);
+                            jjofsubofsub += 2;
+                            elofsubofsub += 1;
+                        }
+                        var firstrowelofsubofsub = 0;
+                        var jjofsubofsub = 1;
+                        vtfinalofsub += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
+
+                        vtfinalofsubresult += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
+                        vtfinalofsubresult2 += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
+                        vtfinalofsubresult3 += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
+                        vtfinalofsubresult4 += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\color{black}'//last 3
+
+                        sol3sub += firstrowofsub[firstrowelofsub - 2] + '('
+                        sol4sub += firstrowofsub[firstrowelofsub - 2] + '('
+
+                        vtofsub += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
+
+                        for (lkofsubofsub = 0; lkofsubofsub < colofsubofsub; lkofsubofsub++) {
+                            var submatrixofsubofsub = [];
+                            var kofsubofsub = 0;
+                            var lofsubofsub = 0;
+                            for (iofsubofsub = 0; iofsubofsub < rowofsubofsub; iofsubofsub++) {
+                                submatrixofsubofsub[lofsubofsub] = [];
+                                if (iofsubofsub == parseInt(firstrowofsubofsub[jjofsubofsub].slice(0, 1)))
+                                    continue;
+                                for (jofsubofsub = 0; jofsubofsub < colofsubofsub; jofsubofsub++) {
+                                    if (jofsubofsub == parseInt(firstrowofsubofsub[jjofsubofsub].slice(1, 2)))
+                                        continue;
+                                    submatrixofsubofsub[lofsubofsub][kofsubofsub] = submatrixofsub[iofsubofsub][jofsubofsub];
+                                    kofsubofsub = (kofsubofsub + 1) % (rowofsubofsub - 1);
+                                    if (kofsubofsub == 0)
+                                        lofsubofsub++;
+                                }
+                            }
+
+                            vtofsub += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\color{black}\\begin{bmatrix}'
+                            vtfinalofsub += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\bigg(\\color{black}'
+
+                            vtfinalofsubresult += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\bigg(\\color{black}'
+                            vtfinalofsubresult2 += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\color{black}'
+                            vtfinalofsubresult3 += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub][0] + '\\color{black}'
+                            sol2sub += firstrowofsubofsub[firstrowelofsubofsub][0]
+                            for (ijofsub of submatrixofsubofsub) {
+                                for (jiofsub of ijofsub) {
+                                    vtofsub += jiofsub + "&"
+                                }
+                                vtofsub = vtofsub.slice(0, -1);
+                                vtofsub += '\\\\';
+                            }
+                            vtofsub += '\\end{bmatrix}'
+                            vtfinalofsub += '\\big(' + submatrixofsubofsub[0][0] + '\\times' + submatrixofsubofsub[1][1] + '\\big)-\\big(' + submatrixofsubofsub[0][1] + '\\times' + submatrixofsubofsub[1][0] + '\\big)\\color{#fb650d}\\bigg)'
+
+                            vtfinalofsubresult += '\\big(' + eval(submatrixofsubofsub[0][0] * submatrixofsubofsub[1][1]) + '\\big)-\\big(' + eval(submatrixofsubofsub[0][1] * submatrixofsubofsub[1][0]) + '\\big)\\color{#fb650d}\\bigg)'
+                            var sol = eval(eval(submatrixofsubofsub[0][0] * submatrixofsubofsub[1][1]) - eval(submatrixofsubofsub[0][1] * submatrixofsubofsub[1][0]))
+                            vtfinalofsubresult2 += '\\color{#fb650d}\\big(\\color{black}' + sol + '\\color{#fb650d}\\big)\\color{black}'
+                            vtfinalofsubresult3 += '\\color{#fb650d}\\big(\\color{black}' + eval(firstrowofsubofsub[firstrowelofsubofsub].slice(1) * sol) + '\\color{#fb650d}\\big)\\color{black}'
+                            sol2sub += '(' + eval(firstrowofsubofsub[firstrowelofsubofsub].slice(1) * sol) + ')'
+
+                            jjofsubofsub += 2;
+                            firstrowelofsubofsub += 2;
+
+                        }
+                        vtfinalofsubresult4 += '\\color{blue}\\big(\\color{black}' + nerdamer(sol2sub).evaluate().toString() + '\\color{blue}\\big)\\color{black}'
+
+                        sol3sub += nerdamer(sol2sub).evaluate().toString() + ')'
+                        sol4sub += nerdamer(sol2sub).evaluate().toString() + ')'
+                        vtfinalofsubresult5 += '\\color{blue}+\\color{black}\\big(' + nerdamer(sol3sub).evaluate().toString() + '\\big)'
+                        sol3sub = ''
+                        sol2sub = '';
+
+                        vtofsub += '\\color{blue}\\bigg)\\color{black}'
+                        vtfinalofsub += '\\color{blue}\\bigg)\\color{black}'
+                        vtfinalofsubresult += '\\color{blue}\\bigg)\\color{black}'
+                        vtfinalofsubresult2 += '\\color{blue}\\bigg)\\color{black}'
+                        vtfinalofsubresult3 += '\\color{blue}\\bigg)\\color{black}'
+
+                    }
+                    //inner sub------------------------------------------
+                }
+
+                vt += '\\color{red}\\right)'
+                vtfinal += '\\color{red}\\right)'
+                vtfinalresult += '\\color{red}\\right)'
+                vtfinalresult2 += '\\color{red}\\bigg)'
+                vtfinalresult3 += '\\color{red}\\bigg)'
+                vtfinalofsubresult6 += nerdamer(sol4sub).evaluate().toString()
+                sol5sub += nerdamer(sol4sub).evaluate().toString()
+                sol4sub = ''
+                var jk = nerdamer(sol2).evaluate().toString()
+                vtfinalresult4 += jk + '\\color{red}\\bigg)'
+                sol3 += jk + ')'
+                sol2 = '';
+                vtofsub += '\\color{red}\\bigg)\\color{black}'
+                vtfinalofsub += '\\color{red}\\right)\\color{black}'
+                vtfinalofsubresult += '\\color{red}\\right)\\color{black}'
+                vtfinalofsubresult2 += '\\color{red}\\right)\\color{black}'
+                vtfinalofsubresult3 += '\\color{red}\\right)\\color{black}'
+                vtfinalofsubresult4 += '\\color{red}\\bigg)\\color{black}'
+                vtfinalofsubresult5 += '\\color{red}\\bigg)\\color{black}'
+                vtfinalofsubresult6 += '\\color{red}\\bigg)\\color{black}'
+                sol5sub += ')'
+
+            }
+            //-----------------------------------
+            if (submatrix.length <= 2) {
+                result[lk] = eval(firstrow[firstrowel] * eval(eval(submatrix[0][0] * submatrix[1][1]) - eval(submatrix[0][1] * submatrix[1][0])))
+            }
+            jj += 2;
+            firstrowel += 2;
+        }
+        //    removes row and column
+        dtemp += '\\]'
+        vt += '\\]'
+        vtofsub += '\\]'
+        vtfinal += '\\]'
+        vtfinalofsub += '\\]'
+        vtfinalofsubresult += '\\]'
+        vtfinalofsubresult2 += '\\]'
+        vtfinalofsubresult3 += '\\]'
+        vtfinalofsubresult4 += '\\]'
+        vtfinalofsubresult5 += '\\]'
+        vtfinalofsubresult6 += '\\]'
+        vtfinalfirst += '\\]'
+        vtfinalfirstresult += '\\]'
+        vtfinalfirstresult2 += '\\]'
+        vtfinalresult += '\\]'
+        vtfinalresult2 += '\\]'
+        vtfinalresult3 += '\\]'
+        vtfinalresult4 += '\\]'
+
+        //    dtemp+='--------------------'
+        document.getElementById('singlematrixexplanation').innerHTML += dtemp;
+        if (submatrix.length == 2) {
+            document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirst;
+            document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirstresult;
+            document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirstresult2;
+            var dis = '\\[\\begin{vmatrix}';
+            for (om of ma) {
+                for (omm of om) {
+                    dis += omm + '&'
+                }
+                dis = dis.slice(0, -1)
+                dis += '\\\\'
+            }
+            var sdd = nerdamer(vtfinalfirstresult2final).evaluate().toString();
+            dis += '\\end{vmatrix}=' + sdd + '\\]'
+            document.getElementById('singlematrixexplanation').innerHTML += '\\[Determinant = ' + sdd + '\\]';
+            document.getElementById('singlematrixresult').innerHTML = dis;
+        }
+
+        if (submatrix.length > 2) {
+            document.getElementById('singlematrixexplanation').innerHTML += vt;
+            if (submatrixofsub.length == 2) {
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinal;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult2;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult3;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult4;
+                var dis = '\\[\\begin{vmatrix}';
+                for (om of ma) {
+                    for (omm of om) {
+                        dis += omm + '&'
+                    }
+                    dis = dis.slice(0, -1)
+                    dis += '\\\\'
+                }
+                var sdd = nerdamer(sol3).evaluate().toString();
+                dis += '\\end{vmatrix}=' + sdd + '\\]'
+                document.getElementById('singlematrixexplanation').innerHTML += '\\[Determinant = ' + sdd + '\\]';
+                document.getElementById('singlematrixresult').innerHTML = dis;
+            }
+            if (submatrixofsub.length > 2) {
+                document.getElementById('singlematrixexplanation').innerHTML += vtofsub;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsub;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult2;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult3;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult4;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult5;
+                document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult6;
+                var dis = '\\[\\begin{vmatrix}';
+                for (om of ma) {
+                    for (omm of om) {
+                        dis += omm + '&'
+                    }
+                    dis = dis.slice(0, -1)
+                    dis += '\\\\'
+                }
+                var sdd = nerdamer(sol5sub).evaluate().toString();
+                dis += '\\end{vmatrix}=' + sdd + '\\]'
+                document.getElementById('singlematrixexplanation').innerHTML += '\\[Determinant = ' + sdd + '\\]';
+                document.getElementById('singlematrixresult').innerHTML = dis;
+            }
+        }
+        submatrix = []
+        submatrixofsub = []
+        submatrixofsubofsub = []
+    }
+    renderMathInElement(document.getElementById('singlematrixexplanation'));
+    renderMathInElement(document.getElementById('singlematrixresult'));
+}
 //
 // var a = [];
 // var N = 3;
