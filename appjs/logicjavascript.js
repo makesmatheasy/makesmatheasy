@@ -172,13 +172,17 @@ function printtable() {
     var temp = "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
     var num = parseInt(document.getElementById("num").value);
     var end = parseInt(document.getElementById("ending").value);
-    for (var i = 1; i <= end; i++) {
-        temp += "<tr>"
-        temp += '<td>' + num + '</td><td>X</td><td>' + i + '</td><td>=</td><td>' + num * i + '</td>';
-        temp += "</tr>"
+    if(num=='' || end==''){
+        document.getElementById("resulttable").innerHTML = "";
+    }else {
+        for (var i = 1; i <= end; i++) {
+            temp += "<tr>"
+            temp += '<td>' + num + '</td><td>×</td><td>' + i + '</td><td>=</td><td>' + num * i + '</td>';
+            temp += "</tr>"
+        }
+        temp += "</table>"
+        document.getElementById("resulttable").innerHTML = "<b>" + temp + "</b>";
     }
-    temp += "</table>"
-    document.getElementById("resulttable").innerHTML = "<b>" + temp + "</b>";
 }
 
 function checkforusetrigovalue() {

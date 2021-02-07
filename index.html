@@ -354,7 +354,7 @@
                            style="width:70px;border-bottom:6px solid #ff88e7;font-size:20px">
                     <input type="number" id="dividendnum" class="form__field"
                            style="width:120px;border-left:6px solid #ff88e7;font-size:20px;border-top:6px solid #ff88e7;">
-                    <button type="button" class="btn-grad" onclick="divisionwithsteps()">Solve</button>
+                    <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
                 </form>
                 <br>
                 <div class="col-sm-3">
@@ -378,13 +378,13 @@
                         <input type="number" id="n2" class="form__field"
                                style="font-size:20px;display:inline-block;width:20%">
                         <label style="display:inline-block;font-family:mathfont;font-size:20px">&nbsp;?&nbsp;</label>
-                        <button type="button" class="btn btn-success" onclick="checkdivisibility()">Check</button>
+                        <button type="button" class="btn btn-light" onclick="checkdivisibility()">Check</button>
                     </div>
                 </form>
                 <br>
                 <p id="divisibilitycheckresult" class="stopwrap" style="font-family:mathfont;font-size:30px;"></p>
                 <p id="divisibilitycheckresultex" class="stopwrap" style="font-family:mathfont;font-size:20px;"></p>
-                <button class="btn btn-info" id="showcheckdivisibilitysteps"
+                <button class="btn btn-outline-light" id="showcheckdivisibilitysteps"
                         onclick="showdivisionstepsforcheckdivisibility()">Show Division Steps
                 </button>
             </div>
@@ -396,7 +396,7 @@
                            style="font-size:20px;width:70px;border-bottom:6px solid black;">
                     <input value="2t^2-3t" type="text" id="numvardivi" class="form__field"
                            style="font-size:20px;width:120px;border-left:6px solid black;border-top:6px solid black;">
-                    <button type="button" id="variabledividebtn" class="btn-grad">Solve</button>
+                    <button type="button" id="variabledividebtn" class="btn btn-light">Solve</button>
 
                 </form>
             </div>
@@ -407,15 +407,17 @@
         </div>
         <!--        start factors-->
         <div class="collapse" id="factors">
-            <form class="form-group">
+            <div class="form-group">
                 <input type="tel" id="num2" name="num2" class="form__field"
                        placeholder="Enter Number(s) Space Separated">
-                <button type="button" onclick="factorslcmhcfempty();factorselect('num2')" class="btn btn-success">
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="factorslcmhcfempty();factorselect('num2')" class="btn btn-light">
                     Factors
                 </button>
-                <button type="button" onclick="factorslcmhcfempty();lcmsol('num2')" class="btn btn-success">LCM</button>
-                <button type="button" onclick="factorslcmhcfempty();hcf('num2')" class="btn btn-success">HCF</button>
-            </form>
+                <button type="button" onclick="factorslcmhcfempty();lcmsol('num2')" class="btn btn-light">LCM</button>
+                <button type="button" onclick="factorslcmhcfempty();hcf('num2')" class="btn btn-light">HCF</button>
+            </div>
 
             <!--            prime factors with steps-->
             <p id="dividefactor" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
@@ -445,17 +447,18 @@
         <!--        end factors-->
 
         <div class="collapse" id="table">
-            <form class="form-group">
+            <div class="form-group" style="display: inline-block;">
                 <input type="number" id="num" name="num" class="form__field" style="font-size:20px;"
                        placeholder="Enter Number">
+            </div>
+            <div class="form-group" style="display: inline-block;">
                 <input type="number" id="ending" style="font-size:20px;" name="ending" class="form__field"
                        placeholder="Upto">
-                <button type="button" onclick="printtable()" class="btn btn-success">Print</button>
-                <button type="button" id="cleartable"
-                        class="btn btn-danger">
-                    Clear
-                </button>
-            </form>
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="printtable()" class="btn btn-light">Print</button>
+            </div>
             <p id="resulttable" style="font-family:mathfont;font-size:30px;"></p>
         </div>
 
@@ -724,7 +727,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <select id="opval" class="btn btn-primary" onmousedown="this.value=''"
+                <select id="opval" class="btn btn-outline-light" onmousedown="this.value=''"
                         onchange="signofmatrix(this.value);">
                     <option>Input Fields</option>
                 </select>
@@ -816,7 +819,7 @@
                 <label style="font-size:30px;padding:0 5px 0 5px">×</label>
                 <input type="number" id="numwithofmulsol" class="form__field" placeholder="Number"
                        style="font-size:20px;display:inline;width:100px;">
-                <button type="button" class="btn-grad" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
+                <button type="button" class="btn btn-light" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
                     Solve
                 </button>
             </form>
@@ -1033,16 +1036,22 @@
                 </button>
             </div>
             <div class="modal-body" style='background:#232a36'>
-                <input type="tel" id="ordergetval" class="form__field" placeholder="Enter Numbers(Space Separated)"
-                       oninput="orderfieldclear()">
-                <button type="button" class="btn btn-success" onclick="orderas()">Ascending</button>
-                <button type="button" class="btn btn-success" onclick="orderde()">Descending</button>
-                <button type="button" class="btn btn-primary"
-                        onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
-                    Space
-                </button>
-                <p class="stopwrap" style="font-family:mathfont;font-size:30px;" id="orderresult"></p>
-                <p style="font-family:mathfont;font-size:30px;" class="stopwrap" id="orderresultde"></p>
+                <div class="form-group">
+                    <input type="tel" id="ordergetval" class="form__field" placeholder="Enter Numbers(Space Separated)"
+                           oninput="orderfieldclear()">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="orderas()">Ascending</button>
+                    <button type="button" class="btn btn-light" onclick="orderde()">Descending</button>
+                    <button type="button" class="btn btn-light"
+                            onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
+                        Space
+                    </button>
+                </div>
+                <div class="form-group">
+                    <p class="stopwrap" style="font-family:mathfont;font-size:30px;" id="orderresult"></p>
+                    <p style="font-family:mathfont;font-size:30px;" class="stopwrap" id="orderresultde"></p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1530,20 +1539,31 @@
                     </button>
                 </div>
                 <div class="modal-body" style='background:#232a36'>
-                    <input type="number" id="inpo" class="form__field" placeholder="Enter a Number"
-                           oninput="callr();document.getElementById('ouo').innerHTML=''">
-                    <button type="button" onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
-                            class="btn btn-success">Expand
-                    </button>
-                    <p id="ouo" style="font-family:mathfont;font-size:30px"></p>
-                    <p id="ouroman" style="font-family:mathfont;font-size:30px"></p>
-                    <br>
-                    <input type="text" id="rinp" class="form__field" placeholder="Enter Roman Number"
-                           oninput="callder();document.getElementById('exro').innerHTML=''">
-                    <button type="button" onclick="expandedformde('out2','exro')" class="btn btn-success">Expand
-                    </button>
-                    <p id="exro" style="font-family:mathfont;font-size:30px"></p>
-                    <p id="out2" style="font-family:mathfont;font-size:30px"></p>
+                    <div class="form-group">
+                        <input type="number" id="inpo" class="form__field" placeholder="Enter a Number"
+                               oninput="callr();document.getElementById('ouo').innerHTML=''">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
+                                class="btn btn-light">Expand
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <p id="ouo" style="font-family:mathfont;font-size:30px"></p>
+                        <p id="ouroman" style="font-family:mathfont;font-size:30px"></p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="rinp" class="form__field" placeholder="Enter Roman Number"
+                               oninput="callder();document.getElementById('exro').innerHTML=''">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" onclick="expandedformde('out2','exro')" class="btn btn-light">Expand</button>
+                    </div>
+                    <div class="form-group">
+                        <p id="exro" style="font-family:mathfont;font-size:30px"></p>
+                        <p id="out2" style="font-family:mathfont;font-size:30px"></p>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
