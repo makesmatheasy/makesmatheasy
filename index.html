@@ -850,8 +850,37 @@
                            style="text-decoration:none;" href="#">Rectangle</a></td>
                 </tr>
                 <tr>
-                    <td><a data-toggle="modal" data-target="#triangle"
-                           style="text-decoration:none;" href="#">Triangle</a></td>
+                    <td>
+                        <div onclick="$('#typesoftriangle').slideToggle();" style="color: white;cursor: pointer;">
+                            Triangles
+                        </div>
+                        <div class="collapse" id="typesoftriangle" style="margin: 15px;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#equilateraltriangle"
+                                           style="text-decoration:none;" href="#">Equilateral Triangle</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#isoscelestriangle"
+                                           style="text-decoration:none;"
+                                           href="#">Isosceles Triangle</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#rightangletriangle"
+                                           style="text-decoration:none;"
+                                           href="#">Right-angle Triangle</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#scalenetriangle"
+                                           style="text-decoration:none;"
+                                           href="#">Scalene Triangle</a></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+
+                    </td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#circle"
@@ -868,10 +897,6 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#parallelogram"
                            style="text-decoration:none;" href="#">Parallelogram</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#sector"
-                           style="text-decoration:none;" href="#">Sector</a></td>
                 </tr>
             </table>
         </div>
@@ -1087,8 +1112,10 @@
                             <div class="col-6">
                                 <h5 class="text-center" style="font-size:20px">Area of Rectangle</h5>
                                 <p class="text-center" style="font-size:20px;">\[a=l \times b\]</p>
+                                <div class="dropdown-divider"></div>
                                 <h5 class="text-center" style="font-size:20px">Perimeter of Rectangle</h5>
                                 <p class="text-center" style="font-size:20px;">\[p=2(l+b)\]</p>
+                                <div class="dropdown-divider"></div>
                                 <h5 class="text-center" style="font-size:20px">Diagonal of Rectangle</h5>
                                 <p class="text-center" style="font-size:20px;">\[d= \sqrt{b^2+l^2}\]</p>
                             </div>
@@ -1096,8 +1123,10 @@
                                 <div class="form-group">
                                     <img src="images/rectangle.png" class="img-fluid">
                                 </div>
+                                <div class="dropdown-divider"></div>
                                 <h5 class="text-center" style="font-size:20px">Length of Rectangle</h5>
                                 <p class="text-center" style="font-size:20px;">\[l= \sqrt{d^2-b^2}\]</p>
+                                <div class="dropdown-divider"></div>
                                 <h5 class="text-center" style="font-size:20px">Breadth of Rectangle</h5>
                                 <p class="text-center" style="font-size:20px;">\[b= \sqrt{d^2-l^2}\]</p>
                             </div>
@@ -1108,7 +1137,8 @@
                                oninput="rectanglesolve()">
                         <input class="form__field" type="number" placeholder="Enter Breadth (cm)" id="inputrecbreadth"
                                oninput="rectanglesolve()">
-                        <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal" oninput="rectanglesolve()">
+                        <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal"
+                               oninput="rectanglesolve()">
                         <br>
                         <p class="stopwrap" id="resultoflengthrec" style="font-size:20px;font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofbreadthrec" style="font-size:20px;font-family:mathfont;"></p>
@@ -1124,18 +1154,39 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="triangle" tabindex="-1" role="dialog"
+
+    <div class="modal fade" id="scalenetriangle" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Triangle</h5>
+                    <h5 class="modal-title">Scalene Triangle</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body" style='background:#232a36'>
-                    <p>lklklklllkkk</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \frac{1}{2} \times b \times h\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
+                            <p class="text-center" style="font-size:20px;">\[P = a+b+c\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Height</h5>
+                            <p class="text-center" style="font-size:20px;">\[h = 2 \times \frac{A}{b}\]</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Base</h5>
+                            <p class="text-center" style="font-size:20px;">\[b = 2 \times \frac{A}{h}\]</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1144,6 +1195,129 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="isoscelestriangle" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Isosceles Triangle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style='background:#232a36'>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \frac{1}{2} \times b \times h\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
+                            <p class="text-center" style="font-size:20px;">\[P = 2a+b\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side</h5>
+                            <p class="text-center" style="font-size:20px;">\[a = \frac{P}{2}- \frac{b}{2} \]</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Base</h5>
+                            <p class="text-center" style="font-size:20px;">\[b = P -2a \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Height</h5>
+                            <p class="text-center" style="font-size:20px;">\[h = \sqrt{a^2 - \frac{b^2}{4}} \]</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="equilateraltriangle" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Equilateral Triangle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style='background:#232a36'>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \frac{\sqrt{3}}{4} a^2 \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
+                            <p class="text-center" style="font-size:20px;">\[P = 3a\]</p>
+
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="rightangletriangle" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Right-angle Triangle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style='background:#232a36'>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \frac{1}{2} \times a \times b\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
+                            <p class="text-center" style="font-size:20px;">\[P = a+b+ \sqrt{a^2+b^2}\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side</h5>
+                            <p class="text-center" style="font-size:20px;">\[a = P \frac{P-2b}{2(P-b)} \]</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Base</h5>
+                            <p class="text-center" style="font-size:20px;">\[b = P \frac{P-2a}{2(P-a)} \]</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="modal fade" id="circle" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -1155,7 +1329,25 @@
                     </button>
                 </div>
                 <div class="modal-body" style='background:#232a36'>
-                    <div style="font-size:50px">Area of Circle`pi r^2`</div>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \pi r^2\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Diameter</h5>
+                            <p class="text-center" style="font-size:20px;">\[d = 2r\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Circumference</h5>
+                            <p class="text-center" style="font-size:20px;">\[C=2 \pi r\]</p>
+
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1164,6 +1356,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="trapezium" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -1175,7 +1368,36 @@
                     </button>
                 </div>
                 <div class="modal-body" style='background:#232a36'>
-                    <p>lklklklllkkk</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \frac{a+b}{2} h\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
+                            <p class="text-center" style="font-size:20px;">\[P = a+b+c+d\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Height</h5>
+                            <p class="text-center" style="font-size:20px;">\[h = 2 \frac{A}{a+b} \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side(a)</h5>
+                            <p class="text-center" style="font-size:20px;">\[a=2 \frac{A}{h}-b \]</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side(b)</h5>
+                            <p class="text-center" style="font-size:20px;">\[b=2 \frac{A}{h}-a \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side(c)</h5>
+                            <p class="text-center" style="font-size:20px;">\[c=P-a-b-d \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side(d)</h5>
+                            <p class="text-center" style="font-size:20px;">\[d=P-a-b-c \]</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1194,7 +1416,25 @@
                     </button>
                 </div>
                 <div class="modal-body" style='background:#232a36'>
-                    <p>lklklklllkkk</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = \pi a b \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Axis(a)</h5>
+                            <p class="text-center" style="font-size:20px;">\[a = \frac{A}{ \pi b} \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Axis(b)</h5>
+                            <p class="text-center" style="font-size:20px;">\[b = \frac{A}{\pi a} \]</p>
+
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1203,6 +1443,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="parallelogram" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -1214,27 +1455,31 @@
                     </button>
                 </div>
                 <div class="modal-body" style='background:#232a36'>
-                    <p>lklklklllkkk</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="sector" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Sector</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style='background:#232a36'>
-                    <p>lklklklllkkk</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="font-size:20px">Area</h5>
+                            <p class="text-center" style="font-size:20px;">\[A = b \times h \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
+                            <p class="text-center" style="font-size:20px;">\[P = 2(a+b) \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Height</h5>
+                            <p class="text-center" style="font-size:20px;">\[h = \frac{A}{b} \]</p>
+
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/rectangle.png" class="img-fluid">
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Base</h5>
+                            <p class="text-center" style="font-size:20px;">\[b = \frac{A}{h} \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="font-size:20px">Side</h5>
+                            <p class="text-center" style="font-size:20px;">\[a = \frac{P}{2}-b \]</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
