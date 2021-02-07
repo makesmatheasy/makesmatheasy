@@ -147,13 +147,13 @@
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: #aa42f5;
+            background: #ff88e7;
             border-radius: 10px;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: #a32ff7;
+            background: #ff88e7;
         }
 
         .hidescroll::-webkit-scrollbar {
@@ -310,34 +310,37 @@
     </ul>
 </nav>
 <div class="blink-1 javascriptno" style="width:100%;position:absolute;z-index:999;display:none;">May be your Browser
-    won't Support Javascript<br>or<br>Try Turning on Javascript in Browser Settings<br><br><a class="btn btn-primary"
+    won't Support Javascript<br>or<br>Try Turning on Javascript in Browser Settings<br><br><a class="btn btn-light"
                                                                                               href="helpjavascript.html">Check
         How to?</a></div>
 <div id="main" style="z-index:31;">
-    <a style="position:fixed;z-index:100" href="#" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><i
-            class="material-icons"><img src="icons/menu.png" style="height:2rem;z-index:9;position:relative;"></i></a>
-    <!--        <span class="mainheading">Makes Math Easy</span>-->
-    <span onclick="opencal()"><img src="icons/calculator.png"
-                                   style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:9"></span>
-    <br>
-    <br>
-    <div class="container" style="z-index:9;position:relative;">
-        <div class="text-center form-group">
-            <form autocomplete="off" style="font-family: 'myfont2';">
-                <div class="form-group">
-                    <div class="autocomplete">
-                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
-                               style="display:inline;font-size: 1rem;">
-                    </div>
-                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                                                                                   style="height:25px;display:inline;"
-                                                                                   src="speechlogo.png"></span>
-                    <button type="button" class="searchbtn"
-                            onclick="searchgoogle(document.getElementById('myInput').value)"><img
-                            style="height:30px;filter:invert(100%)" src="icons/loupe.png"></button>
+    <div class="form-group">
+        <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><img
+                class="material-icons" src="icons/list.svg"
+                style="cursor:pointer;filter: invert(100%);height: 2.5rem;padding-left: 10px;"></span>
+        <span onclick="opencal()"><img src="icons/keys.svg"
+                                       style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:20;padding-right: 10px;filter: invert(100%);"></span>
+    </div>
+
+    <div class="text-center" style="padding-top: 50px;">
+        <form autocomplete="off" style="font-family: 'myfont2';">
+            <div class="form-group">
+                <div class="autocomplete">
+                    <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
+                           style="display:inline;font-size: 1rem;width: 45vw;position: relative;">
                 </div>
-            </form>
-        </div>
+                <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
+                                                                               src="speechlogo.png"></span>
+                <span type="button" class="searchbtn"
+                      onclick="searchgoogle(document.getElementById('myInput').value)" style="margin-left: 20px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
+                        style="height:38px;padding:10px;filter:invert(100%);" src="icons/loupe.png"></span>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+
         <!--    start home-->
         <div id="homecollapse" style="z-index:11;position:relative;">
             <br>
@@ -819,7 +822,8 @@
                 <label style="font-size:30px;padding:0 5px 0 5px">×</label>
                 <input type="number" id="numwithofmulsol" class="form__field" placeholder="Number"
                        style="font-size:20px;display:inline;width:100px;">
-                <button type="button" class="btn btn-light" onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
+                <button type="button" class="btn btn-light"
+                        onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
                     Solve
                 </button>
             </form>
@@ -1557,7 +1561,8 @@
                                oninput="callder();document.getElementById('exro').innerHTML=''">
                     </div>
                     <div class="form-group">
-                        <button type="button" onclick="expandedformde('out2','exro')" class="btn btn-light">Expand</button>
+                        <button type="button" onclick="expandedformde('out2','exro')" class="btn btn-light">Expand
+                        </button>
                     </div>
                     <div class="form-group">
                         <p id="exro" style="font-family:mathfont;font-size:30px"></p>
