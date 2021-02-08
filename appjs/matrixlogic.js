@@ -274,7 +274,7 @@ function subtractofmatrix() {
     }
     <!--            printhere-->
     document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
-    displaymatrix('Substraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
+    displaymatrix('Subtraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
     renderMathInElement(document.getElementById('explanationmatrixresult'));
     <!--            printhere-->
 
@@ -288,14 +288,14 @@ function mulofmatrix() {
     var mulexplanation = '';
     var d = '';
     for (i = 0; i < document.getElementById('row1').value; i++) {
-        mulexplanation += "<hr style='background:white;height:4px'><br>"
-        mulexplanation += "<span style='color:#fc7aff !important'>"
-        mulexplanation += 'Taking Row ' + String(i + 1) + ' of Matrix 1';
+        mulexplanation += "<div class='dropdown-divider'></div><br>"
+        mulexplanation += "<span style='color:var(--apppink) !important'>"
+        mulexplanation += '<span style="font-size: 20px;"> Taking Row ' + String(i + 1) + ' of Matrix 1</span>';
         mulexplanation += "</span><br>"
         mul[i] = [];
         for (j = 0; j < document.getElementById('column2').value; j++) {
-            mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;'>"
-            mulexplanation += '<u>Column ' + String(j + 1) + ' of Matrix 2</u><br>';
+            mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;width:100%;'>"
+            mulexplanation += '<span style="border: 3px solid #232a36;padding: 10px;border-radius: 30px;font-size: 20px;">Column ' + String(j + 1) + ' of Matrix 2</span><br>';
             mul[i][j] = 0;
             for (k = 0; k < document.getElementById('column1').value; k++) {
                 mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrix1[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrix1[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + '\\]'
@@ -334,7 +334,7 @@ function mulofmatrix() {
             dp += '\\end{bmatrix}\\]'
 
             mulexplanation += dp;
-            mulexplanation += '<v>' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</v>';
+            mulexplanation += '<b style="font-size: 25px;">' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</b>';
             var mat = [];
             for (f = 0; f < document.getElementById('row1').value; f++) {
                 mat[f] = [];
@@ -535,7 +535,7 @@ function miandcofactors() {
                     temp += '\\end{vmatrix}'
                     temp += '=' + lk
                     temp += '\\]</div>'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 0 && j == 1) {
                     cof[i][j] = -(matrixsingle[1][0]);
                     minor[i][j] = matrixsingle[1][0];
@@ -552,7 +552,7 @@ function miandcofactors() {
                     temp += '\\end{vmatrix}'
                     temp += '=' + matrixsingle[1][0]
                     temp += '\\]</div>'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 1 && j == 0) {
                     var lk = cof[i][j] = -(matrixsingle[0][1]);
                     minor[i][j] = matrixsingle[0][1];
@@ -569,7 +569,7 @@ function miandcofactors() {
                     temp += '\\end{vmatrix}'
                     temp += '=' + matrixsingle[0][1]
                     temp += '\\]</div>'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 1 && j == 1) {
                     var lk = minor[i][j] = cof[i][j] = matrixsingle[0][0];
                     temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
@@ -585,7 +585,7 @@ function miandcofactors() {
                     temp += '\\end{vmatrix}'
                     temp += '=' + lk
                     temp += '\\]</div>'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 }
             }
         }
@@ -631,7 +631,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][1] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[1][2] + ')(' + matrixsingle[2][1] + '\\big)\\bigg)=' + lk
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
 
                 } else if (i == 0 && j == 1) {
                     var lk = cof[i][j] = -((matrixsingle[1][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[1][2]))
@@ -658,7 +658,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][0] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[1][2] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + kl
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 0 && j == 2) {
                     var lk = cof[i][j] = minor[i][j] = (matrixsingle[1][0] * matrixsingle[2][1]) - (matrixsingle[2][0] * matrixsingle[1][1])
                     temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
@@ -683,7 +683,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][0] + ')(' + matrixsingle[2][1] + ') - (' + matrixsingle[1][1] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + lk
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 1 && j == 0) {
                     var lk = cof[i][j] = -((matrixsingle[0][1] * matrixsingle[2][2]) - (matrixsingle[0][2] * matrixsingle[2][1]))
                     var kl = minor[i][j] = (matrixsingle[0][1] * matrixsingle[2][2]) - (matrixsingle[0][2] * matrixsingle[2][1])
@@ -709,7 +709,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][1] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[2][1] + '\\big)\\bigg)=' + kl
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 1 && j == 1) {
                     var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[0][2])
                     temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
@@ -734,7 +734,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + lk
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 1 && j == 2) {
                     var lk = cof[i][j] = -((matrixsingle[0][0] * matrixsingle[2][1]) - (matrixsingle[0][1] * matrixsingle[2][0]))
                     var kl = minor[i][j] = (matrixsingle[0][0] * matrixsingle[2][1]) - (matrixsingle[0][1] * matrixsingle[2][0])
@@ -760,7 +760,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[2][1] + ') - (' + matrixsingle[0][1] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + kl
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 2 && j == 0) {
                     var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][1] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][1])
                     temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
@@ -785,7 +785,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][1] + ')(' + matrixsingle[1][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[1][1] + '\\big)\\bigg)=' + lk
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 2 && j == 1) {
                     var lk = cof[i][j] = -((matrixsingle[0][0] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][0]))
                     var kl = minor[i][j] = (matrixsingle[0][0] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][0])
@@ -811,7 +811,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[1][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[1][0] + '\\big)\\bigg)=' + kl
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
                 } else if (i == 2 && j == 2) {
                     var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][0] * matrixsingle[1][1]) - (matrixsingle[0][1] * matrixsingle[1][0])
                     temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
@@ -836,7 +836,7 @@ function miandcofactors() {
                     temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
                     temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[1][1] + ') - (' + matrixsingle[0][1] + ')(' + matrixsingle[1][0] + '\\big)\\bigg)=' + lk
                     temp += '\\]'
-                    temp += "<div style='background:#fc7aff;height:2px !important;margin:20px !important;'></div>"
+                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
 
                 }
             }
@@ -897,76 +897,6 @@ function checkfunctions() {
     }
 }
 
-//function determinant(ma){
-//    var row=ma.length;
-//    var column=ma.length;
-//    var expanding=[]
-//
-//    for(i=0;i<row;i++){
-//        expanding[i]=[]
-//        for(j=0;j<column;j++){
-//            expanding[i][j]=ma[i][j]
-//        }
-//    }
-//
-//    if(ma[0][0]!=1){    //loop just for making first element 1
-//        for(j=0;j<column;j++){
-//            var x=eval(String(ma[0][j]/ma[0][0]));
-//            expanding[0][j]=nerdamer(x.toString()).evaluate().toString();
-//        }
-//    }
-//
-//    var multiplier=[]   //this contains first el of c2 c3...so on
-//    for(i=1;i<row;i++){
-//        multiplier[i-1]=eval(expanding[0][i].toString())
-//        for(j=0;j<column;j++){
-//            var c1=String(expanding[j][0]);     //all elements of c1
-//            var c2=eval(String(expanding[j][i]))    //all els of c2
-//            var mulwithc2=eval(String(multiplier[i-1])*eval(c1))    //multiplying with c1
-//            var x=c2-mulwithc2  //subtracting c2 from multiplier
-//            expanding[j][i]=nerdamer(x.toString()).evaluate().toString();
-//        }
-//    }
-//
-//    var minormatrix=[]
-//    for(i=1;i<column;i++){
-//        minormatrix[i-1]=[]
-//        for(j=0;j<column;j++){
-//            minormatrix[i-1][j-1]=eval(expanding[i][j]);
-//        }
-//    }
-//    var flag=0;
-//    for(i=0;i<minormatrix.length;i++){
-//        for(j=0;j<minormatrix.length;j++){
-//            if(minormatrix[i][j]!=0){
-//                flag=1;
-//            }
-//        }
-//    }
-//    var flagnan=3;
-//    for(i=0;i<minormatrix.length;i++){
-//        for(j=0;j<minormatrix.length;j++){
-//            if(String(minormatrix[i][j])=='NaN'){
-//                console.log('nan true')
-//                flagnan=4;
-//                break;
-//            }
-//        }
-//    }
-//
-//   var m1=minormatrix;
-//    for(i=0;i<minormatrix.length;i++){
-//        for(j=0;j<minormatrix.length;j++){
-//            m1[i][j]=nerdamer(String(minormatrix[i][j])).evaluate().toString();
-//        }
-//    }
-//    displaymatrix('result',m1,'singlematrixresult','3','3');
-//    if(minormatrix.length>2 && flag==1 && flagnan==3){
-//        determinant(minormatrix);
-//    }
-//}
-//
-//
 function laplacedeterminant() {
     sendtomatrixsingle();
     document.getElementById('singlematrixexplanation').innerHTML = '';
@@ -1408,178 +1338,3 @@ function determinant(ma) {
     renderMathInElement(document.getElementById('singlematrixexplanation'));
     renderMathInElement(document.getElementById('singlematrixresult'));
 }
-//
-// var a = [];
-// var N = 3;
-// var Wert = 1;
-// var strforgaussver = "";
-// var digits = 3;
-//
-// function GV_drawDiagramm6() {
-//     N = 3
-//     a = new Array(N);
-//     //Wert = 1;
-//     for (var i = 0; i < a.length; ++i) {
-//         a[i] = new Array(N);
-//     }
-//     //digits = 3;
-// }
-//
-// function GaussVerfahren() {
-//     sendtomatrixsingle();
-//     GV_drawDiagramm6()
-//     var Gleichung = document.getElementById("singlematrixexplanation2");
-//     Wert = 1;
-//     strforgaussver = '<p></p>';
-//     strforgaussver += '<p>';
-//     strforgaussver += '\\[';
-//     strforgaussver += '\\begin{vmatrix}';
-//     for (var i = 0; i < (N); ++i) {
-//         for (var j = 0; j < (N); ++j) {
-//             a[i][j] = matrixsingle[i][j];
-//             strforgaussver += a[i][j] + '&';
-//         }
-//         strforgaussver = strforgaussver.slice(0, -1)
-//         strforgaussver += '\\\\';
-//     }
-//     strforgaussver += '\\end{vmatrix}';
-//     strforgaussver += '\\]';
-//     strforgaussver += '</p>';
-//
-//     dreieckGV(a, 0, 0);
-//
-//     strforgaussver += '<p>Determinant is </p>';
-//     strforgaussver += '<p>';
-//     strforgaussver += '\\[';
-//     strforgaussver += 'det\\big(A)=' + Math.round(Wert.toFixed(digits));
-//     strforgaussver += '\\]';
-//     strforgaussver += '</p>';
-//     Gleichung.innerHTML = strforgaussver;
-//     renderMathInElement(document.getElementById('singlematrixexplanation2'))
-// }
-//
-// function Display_GV(text, farbe) {
-//     strforgaussver += '<p style="padding-top: 20px; color:' + farbe + ';">' + text + '</p>';
-//     strforgaussver += '<p style=" text-align: center; margin: 10px; padding-top:10px; color:' + farbe + ';">';
-//     strforgaussver += '\\[';
-//     if (isInt(Wert)) {
-//         strforgaussver += Wert;
-//     } else {
-//         strforgaussver += parseFloat(Wert.toFixed(digits));
-//     }
-//     strforgaussver += '\\begin{vmatrix}';
-//     for (var i = 0; i < (N); ++i) {
-//         for (var j = 0; j < (N); ++j) {
-//             strforgaussver += a[i][j] + '&';
-//         }
-//         strforgaussver = strforgaussver.slice(0, -1)
-//         strforgaussver += '\\\\';
-//     }
-//     strforgaussver += '\\end{vmatrix}';
-//     strforgaussver += '\\]';
-//     strforgaussver += '</p>';
-// }
-//
-// function dreieckGV(b, i1, j1) {
-//     for (var i = i1; i < (N); ++i) {
-//         var temp = b[i][i1];
-//         console.log(b[i][i1])
-//         if (temp == 0) {
-//             temp = 1;
-//         }
-//         Wert *= temp;
-//         for (var j = j1; j < (N); ++j) {
-//             var t = eval(String(b[i][j] / temp))
-//             if (isInt(t)) {
-//                 b[i][j] = t
-//             } else {
-//                 b[i][j] = parseFloat(t).toFixed(3)
-//             }
-//
-//         }
-//     }
-//     Display_GV("Division of rows " + i1 + "by the element of the row in the column " + i1, "black");
-//
-//     if (i1 < N) {
-//         for (var i = i1 + 1; i < (N); ++i) {
-//             for (var j = j1; j < (N); ++j) {
-//                 var t = eval(String(b[i][j] - b[i1][j]))
-//                 if (isInt(t)) {
-//                     b[i][j] = t;
-//                 } else {
-//                     b[i][j] = parseFloat(t).toFixed(3);
-//                 }
-//
-//             }
-//         }
-//         Display_GV("Subtracting the " + i1 + ". line of the following", "black");
-//     }
-//     if (i1 < N) {
-//         dreieckGV(a, i1 + 1, j1 + 1);
-//     }
-// }
-//
-// function isInt(n) {
-//     return Number(n) == n && n % 1 == 0;
-// }
-//
-// function isFloat(n) {
-//     return Number(n) == n && n % 1 != 0;
-// }
-
-//var str= '';
-//var dimension= 3;
-//var Sym = false;
-//var b = new Array(4);
-//var Auswahl = new Array(3);
-//function GaussVerfahren() {
-//    var Gleichung = document.getElementById("singlematrixexplanation2");
-//	Wert = 1;
-//	str= '';
-//	N= 3;
-//	a = new Array(4);
-//	for (var i = 0; i < 4; ++i) {
-//	  a[i] = new Array(4);
-//	}
-//	a[1][1] = parseFloat(document.Formular5.b11.value.replace(',','.'));
-//	a[1][2] = parseFloat(document.Formular5.b12.value.replace(',','.'));
-//	a[1][3] = parseFloat(document.Formular5.b13.value.replace(',','.'));
-//	a[2][1] = parseFloat(document.Formular5.b21.value.replace(',','.'));
-//	a[2][2] = parseFloat(document.Formular5.b22.value.replace(',','.'));
-//	a[2][3] = parseFloat(document.Formular5.b23.value.replace(',','.'));
-//	a[3][1] = parseFloat(document.Formular5.b31.value.replace(',','.'));
-//	a[3][2] = parseFloat(document.Formular5.b32.value.replace(',','.'));
-//	a[3][3] = parseFloat(document.Formular5.b33.value.replace(',','.'));
-//
-//	str += '<div  class="verteilt">';
-//	str += '<p  class="pdet">det( A ) = </p>';
-//	str += Display_det(a);
-//	str += '</div>';
-//
-//	dreieckGV(a, 1, 1);
-//
-//	str += '<div style=clear:both;">';
-//	str += '<p>';
-//	str += 'The determinant value is: <b>det( A ) = ' + Wert.toFixed(digits) + '</b>';
-//	str += '</p></div>';
-//
-//	Gleichung.innerHTML = str;
-//}
-//function setData() {
-//	b = new Array(3);
-//	for (var i = 0; i < b.length; ++i) {
-//		b[i] = new Array(3);
-//	}
-//	b[0][0] = parseFloat(document.Formular5.b11.value.replace(',','.'));
-//	b[0][1] = parseFloat(document.Formular5.b12.value.replace(',','.'));
-//	b[0][2] = parseFloat(document.Formular5.b13.value.replace(',','.'));
-//	b[1][0] = parseFloat(document.Formular5.b21.value.replace(',','.'));
-//	b[1][1] = parseFloat(document.Formular5.b22.value.replace(',','.'));
-//	b[1][2] = parseFloat(document.Formular5.b23.value.replace(',','.'));
-//	b[2][0] = parseFloat(document.Formular5.b31.value.replace(',','.'));
-//	b[2][1] = parseFloat(document.Formular5.b32.value.replace(',','.'));
-//	b[2][2] = parseFloat(document.Formular5.b33.value.replace(',','.'));
-//	Auswahl[0]= 2;
-//	Auswahl[1]= -2;
-//	Auswahl[2]= 1;
-//}

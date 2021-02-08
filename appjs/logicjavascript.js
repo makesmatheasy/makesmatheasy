@@ -99,26 +99,26 @@ function expandedformde(input, output) {
 
 
 function performdivide() {
-    var num1 = parseFloat(document.getElementById("dividendnum").value);
-    var num3 = parseFloat(document.getElementById("divisornumwith").value);
-    if (String(num3) == 'NaN' || String(num1) == 'NaN' || num3 == 0) {
-        if (String(num1) == 'NaN') {
+    var dividend = parseFloat(document.getElementById("dividendnum").value);
+    var divisor = parseFloat(document.getElementById("divisornumwith").value);
+    if (String(divisor) == 'NaN' || String(dividend) == 'NaN' || divisor == 0) {
+        if (String(dividend) == 'NaN') {
             document.getElementById("resultdivi").innerHTML = 'Enter Dividend'
         }
-        if (String(num3) == 'NaN') {
+        if (String(divisor) == 'NaN') {
             document.getElementById("resultdivi").innerHTML = 'Enter Divisor'
         }
-        if (num3 == 0) {
+        if (divisor == 0) {
             document.getElementById("resultdivi").innerHTML = '';
         }
-        if (String(num3) == 'NaN' && String(num1) == 'NaN') {
+        if (String(divisor) == 'NaN' && String(dividend) == 'NaN') {
             document.getElementById("resultdivi").innerHTML = 'Enter Divisor and Dividend'
         }
 
     } else {
-        var rem = num1 % num3;
-        var c = num1 / num3;
-        var temp = num1 + " ÷ " + num3 + " = " + c + "<br>" + "Quotient = " + parseInt(c) + "<br>" + "Remainder = " + rem;
+        var rem = dividend % divisor;
+        var c = dividend / divisor;
+        var temp = dividend + " ÷ " + divisor + " = " + c + "<br>" + "Quotient = " + parseInt(c) + "<br>" + "Remainder = " + rem;
         document.getElementById("resultdivi").innerHTML = temp;
     }
 
@@ -126,16 +126,16 @@ function performdivide() {
 }
 
 function printfactors() {
-    var num2 = parseInt(document.getElementById("num2").value);
+    var num = parseInt(document.getElementById("numforfactorhcflcm").value);
     var temp = "";
     var tt = "";
     var v = "";
-    for (i = 2; i <= num2; i++) {
-        while ((num2 % i) == 0) {
+    for (i = 2; i <= num; i++) {
+        while ((num % i) == 0) {
             temp += i + "&nbsp;&nbsp;&nbsp;<br>";
             v += i + ",";
-            tt += "<pu>" + num2 + "</pu><br>";
-            num2 = num2 / i;
+            tt += "<pu>" + num + "</pu><br>";
+            num = num / i;
         }
         document.getElementById("dividefactor").innerHTML = temp;
         document.getElementById("dividefactorresult").innerHTML = tt;
@@ -147,12 +147,12 @@ function printfactors() {
 }
 
 function printhcffactor(val, outputf) {
-    var num2 = parseInt(val);
+    var num = parseInt(val);
     var temp = "";
-    for (i = 2; i <= num2; i++) {
-        while ((num2 % i) == 0) {
+    for (i = 2; i <= num; i++) {
+        while ((num % i) == 0) {
             temp += i + " ";
-            num2 = num2 / i;
+            num = num / i;
         }
     }
     temp = temp.split(" ");
@@ -170,8 +170,8 @@ function removeDuplicates(array) {
 
 function printtable() {
     var temp = "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
-    var num = parseInt(document.getElementById("num").value);
-    var end = parseInt(document.getElementById("ending").value);
+    var num = parseInt(document.getElementById("numtable").value);
+    var end = parseInt(document.getElementById("numending").value);
     if(num=='' || end==''){
         document.getElementById("resulttable").innerHTML = "";
     }else {
@@ -674,18 +674,6 @@ function findintesol(input, output) {
     document.getElementById(input).value += "";
 }
 
-function changebackground(value) {
-    if (typeof (Storage) !== "undefined") {
-        // Store
-        localStorage.setItem("backgroundcolor", value);
-        // Retrieve
-        document.body.style.backgroundColor = localStorage.getItem("backgroundcolor");
-//              document.body.style.backgroundImage = localStorage.getItem("backgroundcolor");
-//              document.getElementById('main').style.background= localStorage.getItem("backgroundcolor");
-    }
-
-}
-
 function opencal() {
     $('#cal').slideToggle();
 }
@@ -699,22 +687,6 @@ function getran(l) {
     return text;
 }
 
-function getbackval(value) {
-    localStorage.setItem("backgroundtype", value);
-}
-
-function animatedback() {
-    if (localStorage.getItem("backgroundtype") == null) {
-        localStorage.setItem("backgroundtype", "Animated");
-    }
-    if (localStorage.getItem("backgroundtype") == "Animated") {
-        var script = document.createElement('script');
-        script.id = "bb"
-        script.src = "js/dynamic.js";
-        document.getElementsByTagName('body')[0].appendChild(script);
-    }
-
-}
 
 function orderas() {
     document.getElementById("orderresult").innerHTML = "";
@@ -776,7 +748,7 @@ function checkdivisibility() {
     if (n1 % n2 == 0) {
         document.getElementById("divisibilitycheckresult").innerHTML = "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
         document.getElementById("divisibilitycheckresult").innerHTML += "\\[ \\frac{"+String(n1) + "}{" + String(n2) + "} = " + eval(String(n1 / n2)) + " \\]";
-        document.getElementById("divisibilitycheckresultex").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder 0.";
+        document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder 0.";
 //            var btn = document.createElement('input');
 //            btn.id="showcheckdivisibilitysteps"
 //            btn.type = "button";
@@ -785,7 +757,7 @@ function checkdivisibility() {
 //            document.getElementById('checkdivisibility').appendChild(btn);
     } else {
         document.getElementById("divisibilitycheckresult").innerHTML = "No! " + String(n1) + " is not Divisible by " + n2;
-        document.getElementById("divisibilitycheckresultex").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder " + eval(n1 % n2) + ".";
+        document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder " + eval(n1 % n2) + ".";
     }
     renderMathInElement(document.getElementById('divisibilitycheckresult'))
 }
@@ -835,14 +807,14 @@ function factorselect(numid) {
 }
 
 function printfactorsfl(value) {
-    var num2 = parseInt(value);
+    var num = parseInt(value);
     var temp = [];
     ind = -1;
-    for (i = 2; i <= num2; i++) {
-        while ((num2 % i) == 0) {
+    for (i = 2; i <= num; i++) {
+        while ((num % i) == 0) {
             ind += 1;
             temp[ind] = i;
-            num2 = num2 / i;
+            num = num / i;
         }
     }
     return temp;
@@ -1091,7 +1063,7 @@ function divisionwithsteps() {
         for (a = 1; a <= tableNumRows; a++) {
             tableBody += '<tr>';
             for (b = 1; b <= tableNumColumns; b++) {
-                tableBody += '<td style="padding: 7px; border:1px solid #ff88e7 ;"></td>';
+                tableBody += '<td style="padding: 7px; border:1px solid var(--apppink); ;"></td>';
             }
             tableBody += '</tr>';
         }
@@ -1127,10 +1099,6 @@ function keyboard(field) {
 }
 
 function bodyload() {
-    animatedback();
-    //localStorage.removeItem('backgroundcolor')
-    //changebackground(localStorage.getItem('backgroundcolor'));
-
     var ar = JSON.parse(localStorage.getItem('favouritearray'));
     var oid = JSON.parse(localStorage.getItem('openingidarray'));
     var tp = JSON.parse(localStorage.getItem('typearray'));
@@ -1173,7 +1141,7 @@ function addtofavourite(btnid, openid, type, img) {
         openingid.push(openid)
         typearray.push(type)
         imgarray.push(img)
-        favarray.push('favourite.png')
+        favarray.push('images/favourite.png')
         localStorage.setItem("favouritearray", JSON.stringify(favouritearray));
         localStorage.setItem("openingidarray", JSON.stringify(openingid));
         localStorage.setItem("typearray", JSON.stringify(typearray));
@@ -1184,7 +1152,7 @@ function addtofavourite(btnid, openid, type, img) {
     if (flag == 1) {
         var index = oid.indexOf(openid);
         if (index > -1) {
-            document.getElementById(imgarray[index]).src = 'unfavourite.png';
+            document.getElementById(imgarray[index]).src = 'images/unfavourite.png';
             openingid.splice(index, 1);
             favouritearray.splice(index, 1);
             typearray.splice(index, 1);

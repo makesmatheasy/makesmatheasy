@@ -8,14 +8,14 @@ function runSpeechRecognition(output, input, logo) {
         var c = 0;
 //                    action.value = "Listening....";
         document.getElementById('soltxt').value = '';
-        document.getElementById(logo).src = "listening.gif";
+        document.getElementById(logo).src = "images/listening.gif";
         document.getElementById(logo).style.height = "80px";
         document.getElementById(logo).style.width = "80px";
     };
     recognition.onspeechend = function () {
 
         action.value = "";
-        document.getElementById(logo).src = "speechlogo.png";
+        document.getElementById(logo).src = "images/speechlogo.png";
         document.getElementById('soltxt').value = '';
         document.getElementById(logo).style.height = "30px";
         document.getElementById(logo).style.width = "20.91px";
@@ -100,7 +100,7 @@ function runSpeechRecognition(output, input, logo) {
         recognition.start();
     } catch (e) {
         recognition.stop();
-        document.getElementById(logo).src = "speechlogo.png";
+        document.getElementById(logo).src = "images/speechlogo.png";
 //                    document.getElementById('txt').value='';
         document.getElementById(logo).style.height = "30px";
         document.getElementById(logo).style.width = "20.91px"
@@ -115,5 +115,5 @@ function stoprecognition(output2, input2, logo2) {
     var action2 = document.getElementById(input2);
     output2.value = "";
     input2.value = "";
-    document.getElementById(logo2).src = "speechlogo.png";
+    document.getElementById(logo2).src = "images/speechlogo.png";
 }

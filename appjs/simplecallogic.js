@@ -174,7 +174,12 @@ function todeci() {
     var el = document.getElementById('deci');
     if (el.innerText == "Deci.") {
         var val = document.getElementById('soltxt').value;
-        document.getElementById('soltxt').value = 'Ans is:  ' + eval(val.slice(7))
+        if(val.slice(0,3)=="Ans"){
+            document.getElementById('soltxt').value = 'Ans is:  ' + eval(val.slice(7));
+        }else if(val.slice(0,4)=="Sqrt"){
+            document.getElementById('soltxt').value = 'Sqrt is: ' + eval(val.slice(8));
+        }
+
         el.innerText = "Frac."
     } else {
         el.innerText = "Deci."
