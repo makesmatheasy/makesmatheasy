@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>Makes Math Easy</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
@@ -163,7 +163,9 @@
 
             <div class="dropdown-divider"></div>
         </div>
-        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img class="dropdownlogo"
+                                                                                           src="icons/dropdown.svg"></a>
+        </li>
         <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li><a id="simpletrignocollapsebutton"
@@ -219,6 +221,11 @@
                 With Steps</a><span style="display:inline;float:right;"
                                     onclick="addtofavourite('Multiply with Steps','#mulsolwithsteps','c','mulsolimgfav')"><img
                     src="images/unfavourite.png" id='mulsolimgfav' style="height:25px;"></span></li>
+            <li><a id="rootsquadraticbtn"
+                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of
+                Quadratic Equation</a><span style="display:inline;float:right;"
+                                            onclick="addtofavourite('Roots of Quadratic Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
+                    id="rootsquadraticeqimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -255,7 +262,8 @@
                                                                                style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
                                                                                src="images/speechlogo.png"></span>
                 <span type="button" class="searchbtn"
-                      onclick="searchgoogle(document.getElementById('myInput').value)" style="margin-left: 20px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
+                      onclick="searchgoogle(document.getElementById('myInput').value)"
+                      style="margin-left: 20px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
                         style="height:38px;padding:10px;filter:invert(100%);" src="icons/loupe.png"></span>
             </div>
         </form>
@@ -286,10 +294,9 @@
                     <p id="resultofdivsteps" style="font-size:30px;"></p>
                 </div>
                 <p id="resultdivi" class="stopwrap"
-                     style="font-family:mathfont;font-size:30px;"></p>
+                   style="font-family:mathfont;font-size:30px;"></p>
             </div>
             <!--            -->
-
 
 
             <div class="dropdown-divider"></div>
@@ -309,8 +316,10 @@
                 </form>
 
                 <div class="form-group">
-                    <div id="divisibilitycheckresult" class="stopwrap" style="font-family:mathfont;font-size:30px;"></div>
-                    <div id="divisibilitycheckresultexplanation" class="stopwrap" style="font-family:mathfont;font-size:20px;"></div>
+                    <div id="divisibilitycheckresult" class="stopwrap"
+                         style="font-family:mathfont;font-size:30px;"></div>
+                    <div id="divisibilitycheckresultexplanation" class="stopwrap"
+                         style="font-family:mathfont;font-size:20px;"></div>
                 </div>
 
                 <button class="btn btn-outline-light" id="showcheckdivisibilitysteps"
@@ -336,15 +345,20 @@
         <!--        start factors-->
         <div class="collapse" id="factors">
             <div class="form-group">
-                <input type="tel" id="numforfactorhcflcm"class="form__field"
+                <input type="tel" id="numforfactorhcflcm" class="form__field"
                        placeholder="Enter Number(s) Space Separated">
             </div>
             <div class="form-group">
-                <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')" class="btn btn-light">
+                <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
+                        class="btn btn-light">
                     Factors
                 </button>
-                <button type="button" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')" class="btn btn-light">LCM</button>
-                <button type="button" onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')" class="btn btn-light">HCF</button>
+                <button type="button" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')" class="btn btn-light">
+                    LCM
+                </button>
+                <button type="button" onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')" class="btn btn-light">
+                    HCF
+                </button>
             </div>
 
             <!--            prime factors with steps-->
@@ -603,7 +617,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <div class="stopwrap"  id="generatedmatrixsingle"></div>
+                <div class="stopwrap" id="generatedmatrixsingle"></div>
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light"
@@ -727,6 +741,50 @@
 
         </div>
 
+        <div class="collapse" id="rootsquadratic">
+            <div class="form-group">
+                <p>\[f(x)=ax^2+bx+c\]</p>
+                <div class="form-group">
+                    <div style="display: inline-block;">
+                        <p>\[a=\]</p>
+                    </div>
+                    <div style="display: inline-block;">
+                        <input type="tel" class="form__field" id="coffa" placeholder="Enter Number" oninput="rootquadratic();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="display: inline-block;">
+                        <p>\[b=\]</p>
+                    </div>
+                    <div style="display: inline-block;">
+                        <input type="tel" class="form__field" id="coffb" placeholder="Enter Number" oninput="rootquadratic();">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div style="display: inline-block;">
+                        <p>\[c=\]</p>
+                    </div>
+                    <div style="display: inline-block;">
+                        <input type="tel" class="form__field" id="coffc" placeholder="Enter Number" oninput="rootquadratic();">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p id="rootsquadraticresult"></p>
+                </div>
+                <div class="collapse">
+                    <p>Rules \[1. \quad b^2-4ac<0\] There are no Real Roots
+                        \[2. \quad b^2-4ac=0\] There is one Real Root
+                        \[3. \quad b^2-4ac>0\] There are two Real Roots</p>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
         <div class="collapse" id="mulsolwithsteps">
             <form class="form-inline">
                 <input type="number" id="numofmulsol" class="form__field" placeholder="Number"
@@ -844,7 +902,8 @@
                           onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">9</span>
                     <span class="divi"
                           onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);">÷</span>
-                    <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo" src="images/speechlogo.png"
+                    <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo"
+                                                                                         src="images/speechlogo.png"
                                                                                          height=30px></span>
                     <span id="four"
                           onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">4</span>
@@ -1473,7 +1532,7 @@
 <script src="js/jquery.min.js"></script>
 
 <script src="js/popper.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
 <script src="js/math.min.js"></script>
@@ -1481,15 +1540,15 @@
 
 <script src="appjs/logicjquery.js"></script>
 <script src="appjs/logicjavascript.js"></script>
-<script>
-    $(document).ready(function () {
-        $('i').click(function () {
-            $('ul').toggleClass('ul_show');
-            $('section').toggleClass('slide_image');
-        });
-    });
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        $('i').click(function () {-->
+<!--            $('ul').toggleClass('ul_show');-->
+<!--            $('section').toggleClass('slide_image');-->
+<!--        });-->
+<!--    });-->
 
-</script>
+<!--</script>-->
 <script>
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {

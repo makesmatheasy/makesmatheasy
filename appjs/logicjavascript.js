@@ -1,4 +1,3 @@
-
 function convertkatex(element, value) {
     var x = nerdamer(value);
     var value = x.toTeX()
@@ -172,9 +171,9 @@ function printtable() {
     var temp = "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
     var num = parseInt(document.getElementById("numtable").value);
     var end = parseInt(document.getElementById("numending").value);
-    if(num=='' || end==''){
+    if (num == '' || end == '') {
         document.getElementById("resulttable").innerHTML = "";
-    }else {
+    } else {
         for (var i = 1; i <= end; i++) {
             temp += "<tr>"
             temp += '<td>' + num + '</td><td>×</td><td>' + i + '</td><td>=</td><td>' + num * i + '</td>';
@@ -407,35 +406,38 @@ function solveperisq() {
     } else {
         var sol = eval(String(4) + '*' + String(val));
         var temp = '\\[ 4 \\times ( ' + val + ' ) = ' + sol + '\\]';
-        temp += '\\[Perimeter \\space of \\space Square \\space is \\space ' + sol +'\\]';
+        temp += '\\[Perimeter \\space of \\space Square \\space is \\space ' + sol + '\\]';
         document.getElementById("resultofperisq").innerHTML = temp;
     }
     renderMathInElement(document.getElementById("resultofperisq"));
 }
-function solvediagonalsq(){
+
+function solvediagonalsq() {
     var val = document.getElementById("inputsqside").value;
     if (val == '') {
         document.getElementById("resultofdiagonalsq").innerHTML = '';
     } else {
         var sol = eval(1.414 + '*' + String(val));
         var temp = '\\[ \\sqrt{2} ( ' + val + ' ) = ' + sol + '\\]';
-        temp += '\\[Diagonal \\space of \\space Square \\space is \\space ' + sol +'\\]';
+        temp += '\\[Diagonal \\space of \\space Square \\space is \\space ' + sol + '\\]';
         document.getElementById("resultofdiagonalsq").innerHTML = temp;
     }
     renderMathInElement(document.getElementById("resultofdiagonalsq"));
 }
+
 function solveareasq() {
     var val = document.getElementById("inputsqside").value;
     if (val == '') {
         document.getElementById("resultofareasq").innerHTML = '';
     } else {
         var sol = eval(String(val) + '*' + String(val));
-        var temp ='\\['+ val + ' \\times ' + val + ' = ' + sol + '\\]';
-        temp += '\\[Area \\space of \\space Square \\space is \\space ' + sol+'\\]';
+        var temp = '\\[' + val + ' \\times ' + val + ' = ' + sol + '\\]';
+        temp += '\\[Area \\space of \\space Square \\space is \\space ' + sol + '\\]';
         document.getElementById("resultofareasq").innerHTML = temp;
     }
     renderMathInElement(document.getElementById("resultofareasq"));
 }
+
 //square
 
 function printmorefactors(input, output) {
@@ -747,7 +749,7 @@ function checkdivisibility() {
     var n2 = parseInt(document.getElementById("n2").value);
     if (n1 % n2 == 0) {
         document.getElementById("divisibilitycheckresult").innerHTML = "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
-        document.getElementById("divisibilitycheckresult").innerHTML += "\\[ \\frac{"+String(n1) + "}{" + String(n2) + "} = " + eval(String(n1 / n2)) + " \\]";
+        document.getElementById("divisibilitycheckresult").innerHTML += "\\[ \\frac{" + String(n1) + "}{" + String(n2) + "} = " + eval(String(n1 / n2)) + " \\]";
         document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder 0.";
 //            var btn = document.createElement('input');
 //            btn.id="showcheckdivisibilitysteps"
@@ -1240,61 +1242,60 @@ function count(s) {
 function rectanglesolve() {
     var length = document.getElementById('inputreclength').value;
     var breadth = document.getElementById('inputrecbreadth').value;
-    var diagonal=document.getElementById('inputrecdiagonal').value;
+    var diagonal = document.getElementById('inputrecdiagonal').value;
     var resultarea = document.getElementById('resultofarearec');
     var resultperi = document.getElementById('resultofperirec');
     var resultdiagonal = document.getElementById('resultofdiagonalrec');
     var resultlength = document.getElementById('resultoflengthrec');
     var resultbreadth = document.getElementById('resultofbreadthrec');
-    if(length!='' && breadth!='' && diagonal!=''){
+    if (length != '' && breadth != '' && diagonal != '') {
         resultarea.innerHTML = '';
         resultperi.innerHTML = '';
         resultdiagonal.innerHTML = '';
         resultlength.innerHTML = '';
         resultbreadth.innerHTML = '';
-        if(length<breadth){
-            resultarea.innerHTML="Length Should be Greater";
-        }else{
-            resultarea.innerHTML = "\\[a=" +length + " \\times " + breadth + " = " + eval(String(length) + '*' + String(breadth)) +"\\]";
-            resultarea.innerHTML += "\\[Area \\space of \\space Rectangle \\space is \\space" + eval(String(length) + '*' + String(breadth))+"\\]";
+        if (length < breadth) {
+            resultarea.innerHTML = "Length Should be Greater";
+        } else {
+            resultarea.innerHTML = "\\[a=" + length + " \\times " + breadth + " = " + eval(String(length) + '*' + String(breadth)) + "\\]";
+            resultarea.innerHTML += "\\[Area \\space of \\space Rectangle \\space is \\space" + eval(String(length) + '*' + String(breadth)) + "\\]";
 
-            resultperi.innerHTML = "\\[p=2( " + length + " + " + breadth + " ) = 2( " + eval(String(length) + '+' + String(breadth)) + " ) = " + eval('2*(' + String(length) + '+' + String(breadth) + ")")+"\\]";
-            resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(length) + '+' + String(breadth) + ")")+"\\]";
+            resultperi.innerHTML = "\\[p=2( " + length + " + " + breadth + " ) = 2( " + eval(String(length) + '+' + String(breadth)) + " ) = " + eval('2*(' + String(length) + '+' + String(breadth) + ")") + "\\]";
+            resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(length) + '+' + String(breadth) + ")") + "\\]";
         }
 
-    }
-    else if (length != '' && breadth != '' && diagonal=='') {
+    } else if (length != '' && breadth != '' && diagonal == '') {
         resultarea.innerHTML = '';
         resultperi.innerHTML = '';
         resultdiagonal.innerHTML = '';
         resultlength.innerHTML = '';
         resultbreadth.innerHTML = '';
-        if(length<breadth){
-                resultarea.innerHTML="Length Should be Greater";
-        }else{
-            resultarea.innerHTML = "\\[a=" +length + " \\times " + breadth + " = " + eval(String(length) + '*' + String(breadth)) +"\\]";
-            resultarea.innerHTML += "\\[Area \\space of \\space Rectangle \\space is \\space" + eval(String(length) + '*' + String(breadth))+"\\]";
+        if (length < breadth) {
+            resultarea.innerHTML = "Length Should be Greater";
+        } else {
+            resultarea.innerHTML = "\\[a=" + length + " \\times " + breadth + " = " + eval(String(length) + '*' + String(breadth)) + "\\]";
+            resultarea.innerHTML += "\\[Area \\space of \\space Rectangle \\space is \\space" + eval(String(length) + '*' + String(breadth)) + "\\]";
 
-            resultperi.innerHTML = "\\[p=2( " + length + " + " + breadth + " ) = 2( " + eval(String(length) + '+' + String(breadth)) + " ) = " + eval('2*(' + String(length) + '+' + String(breadth) + ")")+"\\]";
-            resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(length) + '+' + String(breadth) + ")")+"\\]";
+            resultperi.innerHTML = "\\[p=2( " + length + " + " + breadth + " ) = 2( " + eval(String(length) + '+' + String(breadth)) + " ) = " + eval('2*(' + String(length) + '+' + String(breadth) + ")") + "\\]";
+            resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(length) + '+' + String(breadth) + ")") + "\\]";
 
-            var breadth2=breadth*breadth;
-            var length2=length*length;
-            var add2=eval(String(breadth2 + length2));
-            var add2sqrt=nerdamer.sqrt(add2).toString();
-            resultdiagonal.innerHTML="\\[d= \\sqrt{"+breadth+"^2+"+length+"^2}= \\sqrt{"+breadth2+"+"+length2+"}= \\sqrt{"+add2+"}="+eval(add2sqrt).toFixed(3)+"\\]";
-            resultdiagonal.innerHTML += "\\[Diagonal \\space of \\space Rectangle \\space is \\space" +eval(add2sqrt).toFixed(3)+"\\]";
+            var breadth2 = breadth * breadth;
+            var length2 = length * length;
+            var add2 = eval(String(breadth2 + length2));
+            var add2sqrt = nerdamer.sqrt(add2).toString();
+            resultdiagonal.innerHTML = "\\[d= \\sqrt{" + breadth + "^2+" + length + "^2}= \\sqrt{" + breadth2 + "+" + length2 + "}= \\sqrt{" + add2 + "}=" + eval(add2sqrt).toFixed(3) + "\\]";
+            resultdiagonal.innerHTML += "\\[Diagonal \\space of \\space Rectangle \\space is \\space" + eval(add2sqrt).toFixed(3) + "\\]";
         }
 
-    }else if(length!='' && diagonal!=''){
+    } else if (length != '' && diagonal != '') {
         resultarea.innerHTML = '';
         resultperi.innerHTML = '';
         resultdiagonal.innerHTML = '';
         resultlength.innerHTML = '';
         resultbreadth.innerHTML = '';
-        if(diagonal<length){
-            resultbreadth.innerHTML="Diagonal Should be Greater";
-        }else {
+        if (diagonal < length) {
+            resultbreadth.innerHTML = "Diagonal Should be Greater";
+        } else {
             var length22 = length * length;
             var diagonal22 = diagonal * diagonal;
             var bsub2 = eval(String(diagonal22 - length22));
@@ -1309,15 +1310,15 @@ function rectanglesolve() {
             resultperi.innerHTML = "\\[p=2( " + length + " + " + bsub2sqrt + " ) = 2( " + eval(String(length) + '+' + String(bsub2sqrt)) + " ) = " + eval('2*(' + String(length) + '+' + String(bsub2sqrt) + ")") + "\\]";
             resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(length) + '+' + String(bsub2sqrt) + ")") + "\\]";
         }
-    }else if(diagonal!='' && breadth!=''){
+    } else if (diagonal != '' && breadth != '') {
         resultarea.innerHTML = '';
         resultperi.innerHTML = '';
         resultdiagonal.innerHTML = '';
         resultlength.innerHTML = '';
         resultbreadth.innerHTML = '';
-        if(diagonal<breadth){
-            resultlength.innerHTML="Length should be Greater";
-        }else {
+        if (diagonal < breadth) {
+            resultlength.innerHTML = "Length should be Greater";
+        } else {
             var diagonal2 = diagonal * diagonal;
             var breadth22 = breadth * breadth;
             var sub2 = eval(String(diagonal2 - breadth22));
@@ -1332,8 +1333,7 @@ function rectanglesolve() {
             resultperi.innerHTML = "\\[p=2( " + sub2sqrt + " + " + breadth + " ) = 2( " + eval(String(sub2sqrt) + '+' + String(breadth)) + " ) = " + eval('2*(' + String(sub2sqrt) + '+' + String(breadth) + ")") + "\\]";
             resultperi.innerHTML += "\\[Perimeter \\space of \\space Rectangle \\space is \\space" + eval('2*(' + String(sub2sqrt) + '+' + String(breadth) + ")") + "\\]";
         }
-    }
-    else {
+    } else {
         resultarea.innerHTML = '';
         resultperi.innerHTML = '';
         resultdiagonal.innerHTML = '';
@@ -1378,6 +1378,95 @@ function plotit(input, output, funcname) {
     }
 
     draw()
+}
+
+function rootquadratic() {
+    var a = parseInt(document.getElementById('coffa').value);
+    var b = parseInt(document.getElementById('coffb').value);
+    var c = parseInt(document.getElementById('coffc').value);
+    if (a.toString() == NaN.toString() || b.toString() == NaN.toString() || c.toString() == NaN.toString()) {
+        document.getElementById("rootsquadraticresult").innerHTML = "";
+    } else {
+        var negativeb = -b;
+        var bsquare = b * b;
+        var temp = "\\[D= b^2-4ac\\]"
+        temp += "\\[D=" + bsquare + "-(4 \\times " + a + " \\times " + c + ") \\]";
+        var fourac = 4 * a * c;
+        temp += "\\[D=" + bsquare + "-" + fourac + " \\]";
+        var bsquareminusfourac = bsquare - fourac;
+        temp += "\\[D=" + bsquareminusfourac + " \\]";
+
+        var twoa = 2 * a;
+        if (bsquareminusfourac < 0) {
+            temp += "\\[D=" + bsquareminusfourac + " < 0\\]";
+            temp += "\\[There \\space are \\space no \\space Real \\space Roots \\]";
+            temp += "<div class='dropdown-divider'></div>";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{D}}{2a}\\]";
+
+            temp += "\\[x=\\frac{" + negativeb + " \\pm \\sqrt{" + bsquareminusfourac + "}}{2 \\times" + a + "}\\]";
+            temp += "\\[x=\\frac{" + negativeb + " \\pm \\sqrt{" + -bsquareminusfourac + "}i}{" + twoa + "}\\]";
+            var sqrtofdiscriminant = nerdamer.sqrt(-bsquareminusfourac).toString();
+            temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "i}{" + twoa + "}\\]";
+            temp += "\\[x=\\frac{" + negativeb + " \\pm " + eval(sqrtofdiscriminant).toFixed(4) + " i}{" + twoa + "}\\]";
+            temp += "<div class='row'>" +
+                "<div class='col-sm-6'>" +
+                "\\[x=\\frac{" + negativeb + " + " + eval(sqrtofdiscriminant).toFixed(4) + " i}{" + twoa + "}\\]" +
+                "</div>" +
+                "<div class='col-sm-6'>" +
+                "\\[x=\\frac{" + negativeb + " - " + eval(sqrtofdiscriminant).toFixed(4) + " i}{" + twoa + "}\\]" +
+                "</div>" +
+                "</div>";
+
+        } else if (bsquareminusfourac == 0) {
+            temp += "\\[There \\space is \\space one \\space Real \\space Root \\]";
+            temp += "<div class='dropdown-divider'></div>";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{D}}{2a}\\]";
+            temp += "\\[x=\\frac{" + negativeb + " \\pm \\sqrt{0}}{2 \\times " + a + "}\\]";
+            temp += "\\[x=\\frac{" + negativeb + "}{" + twoa + "}\\]";
+            var sol = nerdamer(negativeb / twoa).evaluate().toString();
+            temp += "\\[x=" + sol + "\\]";
+            if((negativeb / twoa)%2!=0){
+                temp += "\\[x=" + eval(sol) + "\\]";
+            }
+        } else {
+            var sqrtofdiscriminant = nerdamer.sqrt(bsquareminusfourac).toString();
+            temp += "\\[D=" + bsquareminusfourac + " > 0\\]";
+            sqrtofdiscriminant = eval(sqrtofdiscriminant.toString()).toFixed(4)
+            // temp += "\\[D=" + sqrtofdiscriminant + " > 0\\]";
+            temp += "\\[There \\space are \\space two \\space Real \\space Roots \\]";
+            temp += "<div class='dropdown-divider'></div>";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{D}}{2a}\\]";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{"+bsquareminusfourac+"}}{2a}\\]";
+            temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "}{2\\times" + a + "}\\]";
+            temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
+            temp += "<div class='row'>"
+
+                temp += "<div class='col-sm-6'>";
+                    temp += "\\[x=\\frac{" + negativeb + " + " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
+                    var addthem=eval((negativeb+ '+'+ sqrtofdiscriminant).toString()).toFixed(4);
+                    temp += "\\[x=\\frac{" + addthem + "}{" + twoa + "}\\]";
+                    addthem=eval((addthem+'/'+twoa).toString()).toFixed(4);
+                    temp += "\\[x="+eval(addthem)+"\\]";
+                temp += "</div>";
+
+                temp += "<div class='col-sm-6'>";
+                    temp += "\\[x=\\frac{" + negativeb + " - " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
+                    var subtractthem=eval((negativeb+ '-'+ sqrtofdiscriminant).toString()).toFixed(4);
+                    temp += "\\[x=\\frac{" + subtractthem + "}{" + twoa + "}\\]";
+                    subtractthem=eval((subtractthem+'/'+twoa).toString()).toFixed(4);
+                    temp += "\\[x="+eval(subtractthem)+"\\]";
+                temp += "</div>";
+            temp += "</div>";
+        }
+
+        document.getElementById("rootsquadraticresult").innerHTML = temp;
+        renderMathInElement(document.getElementById("rootsquadraticresult"));
+    }
+
+
 }
 
 

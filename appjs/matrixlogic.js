@@ -94,18 +94,6 @@ function displaymatrix(val, ar, elid, m, n) {
     });
 }
 
-function returnmatrixcode(ar) {
-    dtemp = '\\begin{bmatrix}'
-    for (i of ar) {
-        for (j of i) {
-            dtemp += j + "&"
-        }
-        dtemp = dtemp.slice(0, -1);
-        dtemp += '\\\\';
-    }
-    dtemp += '\\end{bmatrix}'
-    return dtemp
-}
 
 function signofmatrix(value) {
     var el = document.getElementById('signofmatrix');
@@ -123,256 +111,272 @@ function removeall(elid) {
 }
 
 function sumofmatrix() {
-    sendtomatrix1();
-    sendtomatrix2();
-    var summ = [];
-    var sumexplanation = '';
-    for (i = 0; i < document.getElementById('row2').value; i++) {
-        summ[i] = [];
-        sumexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
-        for (j = 0; j < document.getElementById('column2').value; j++) {
-            sumexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix2[i][j])) + '\\]';
-            summ[i][j] = parseInt(matrix1[i][j]) + parseInt(matrix2[i][j]);
-            var dp = ''
-            var dp2 = ''
-            dp += '\\[\\color{black}\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += matrix1[ii][jj] + "&"
-                    } else {
-                        dp += ".&";
+    loader('show');
+    setTimeout(function () {
+        sendtomatrix1();
+        sendtomatrix2();
+        var summ = [];
+        var sumexplanation = '';
+        for (i = 0; i < document.getElementById('row2').value; i++) {
+            summ[i] = [];
+            sumexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
+            for (j = 0; j < document.getElementById('column2').value; j++) {
+                sumexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix2[i][j])) + '\\]';
+                summ[i][j] = parseInt(matrix1[i][j]) + parseInt(matrix2[i][j]);
+                var dp = ''
+                var dp2 = ''
+                dp += '\\[\\color{black}\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += matrix1[ii][jj] + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += '\\end{bmatrix}'
-            dp += '+\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += matrix2[ii][jj] + "&"
-                    } else {
-                        dp += ".&";
+                dp += '\\end{bmatrix}'
+                dp += '+\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += matrix2[ii][jj] + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += '\\end{bmatrix}='
-            dp += '\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += String(matrix1[ii][jj]) + '+' + String(matrix2[ii][jj]) + "&"
-                    } else {
-                        dp += ".&";
+                dp += '\\end{bmatrix}='
+                dp += '\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += String(matrix1[ii][jj]) + '+' + String(matrix2[ii][jj]) + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += "\\end{bmatrix}="
-            dp += '\\color{blue}\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += eval(String(matrix1[ii][jj]) + '+' + String(matrix2[ii][jj])) + "&"
-                    } else {
-                        dp += ".&";
+                dp += "\\end{bmatrix}="
+                dp += '\\color{blue}\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += eval(String(matrix1[ii][jj]) + '+' + String(matrix2[ii][jj])) + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
+                dp += "\\end{bmatrix}\\]"
+                sumexplanation += dp;
             }
-            dp += "\\end{bmatrix}\\]"
-            sumexplanation += dp;
+            sumexplanation += "</div>"
+            sumexplanation += '<br>';
         }
-        sumexplanation += "</div>"
-        sumexplanation += '<br>';
-    }
-    <!--            printhere-->
-    document.getElementById('explanationmatrixresult').innerHTML = sumexplanation;
-    displaymatrix('Addition\\space Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
-    renderMathInElement(document.getElementById('explanationmatrixresult'));
-    <!--            printhere-->
-
+        <!--            printhere-->
+        document.getElementById('explanationmatrixresult').innerHTML = sumexplanation;
+        displaymatrix('Addition\\space Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
+        renderMathInElement(document.getElementById('explanationmatrixresult'));
+        <!--            printhere-->
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
 
 function subtractofmatrix() {
-    sendtomatrix1();
-    sendtomatrix2();
+    loader('show');
+    setTimeout(function () {
+        sendtomatrix1();
+        sendtomatrix2();
 
-    var subb = [];
-    var subbexplanation = '';
-    for (i = 0; i < document.getElementById('row2').value; i++) {
-        subb[i] = [];
-        subbexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
-        for (j = 0; j < document.getElementById('column2').value; j++) {
-            subbexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}=' + String(parseInt(matrix2[i][j])) + '\\]';
-            subb[i][j] = parseInt(matrix1[i][j]) - parseInt(matrix2[i][j]);
-            var dp = ''
-            var dp2 = ''
-            dp += '\\[\\color{black}\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += matrix1[ii][jj] + "&"
-                    } else {
-                        dp += ".&";
+        var subb = [];
+        var subbexplanation = '';
+        for (i = 0; i < document.getElementById('row2').value; i++) {
+            subb[i] = [];
+            subbexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
+            for (j = 0; j < document.getElementById('column2').value; j++) {
+                subbexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}=' + String(parseInt(matrix2[i][j])) + '\\]';
+                subb[i][j] = parseInt(matrix1[i][j]) - parseInt(matrix2[i][j]);
+                var dp = ''
+                var dp2 = ''
+                dp += '\\[\\color{black}\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += matrix1[ii][jj] + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += '\\end{bmatrix}'
-            dp += '-\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += matrix2[ii][jj] + "&"
-                    } else {
-                        dp += ".&";
+                dp += '\\end{bmatrix}'
+                dp += '-\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += matrix2[ii][jj] + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += '\\end{bmatrix}='
-            dp += '\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += String(matrix1[ii][jj]) + '-' + String(matrix2[ii][jj]) + "&"
-                    } else {
-                        dp += ".&";
+                dp += '\\end{bmatrix}='
+                dp += '\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += String(matrix1[ii][jj]) + '-' + String(matrix2[ii][jj]) + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += "\\end{bmatrix}="
-            dp += '\\color{blue}\\begin{bmatrix}'
-            for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                for (jj = 0; jj < document.getElementById('column2').value; jj++) {
-                    if (ii == i && jj == j) {
-                        dp += eval(String(matrix1[ii][jj]) + '-' + String(matrix2[ii][jj])) + "&"
-                    } else {
-                        dp += ".&";
+                dp += "\\end{bmatrix}="
+                dp += '\\color{blue}\\begin{bmatrix}'
+                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                        if (ii == i && jj == j) {
+                            dp += eval(String(matrix1[ii][jj]) + '-' + String(matrix2[ii][jj])) + "&"
+                        } else {
+                            dp += ".&";
+                        }
                     }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
+                dp += "\\end{bmatrix}\\]"
+                subbexplanation += dp;
             }
-            dp += "\\end{bmatrix}\\]"
-            subbexplanation += dp;
+
+            subbexplanation += '</div>';
+            subbexplanation += '<br>';
         }
-
-        subbexplanation += '</div>';
-        subbexplanation += '<br>';
-    }
-    <!--            printhere-->
-    document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
-    displaymatrix('Subtraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
-    renderMathInElement(document.getElementById('explanationmatrixresult'));
-    <!--            printhere-->
+        <!--            printhere-->
+        document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
+        displaymatrix('Subtraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
+        renderMathInElement(document.getElementById('explanationmatrixresult'));
+        <!--            printhere-->
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 
 }
 
 function mulofmatrix() {
-    sendtomatrix1();
-    sendtomatrix2();
-    var mul = [];
-    var temp = '';
-    var mulexplanation = '';
-    var d = '';
-    for (i = 0; i < document.getElementById('row1').value; i++) {
-        mulexplanation += "<div class='dropdown-divider'></div><br>"
-        mulexplanation += "<span style='color:var(--apppink) !important'>"
-        mulexplanation += '<span style="font-size: 20px;"> Taking Row ' + String(i + 1) + ' of Matrix 1</span>';
-        mulexplanation += "</span><br>"
-        mul[i] = [];
-        for (j = 0; j < document.getElementById('column2').value; j++) {
-            mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;width:100%;'>"
-            mulexplanation += '<span style="border: 3px solid #232a36;padding: 10px;border-radius: 30px;font-size: 20px;">Column ' + String(j + 1) + ' of Matrix 2</span><br>';
-            mul[i][j] = 0;
-            for (k = 0; k < document.getElementById('column1').value; k++) {
-                mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrix1[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrix1[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + '\\]'
-                temp += String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + ' + '
-                mul[i][j] = parseInt(mul[i][j]) + parseInt(matrix1[i][k]) * parseInt(matrix2[k][j]);
-            }
-            var dp = '\\[\\begin{bmatrix}'
-            var count = 0
-            for (ij of matrix1) {
-                for (ji of ij) {
-                    if (count == i)
-                        dp += '\\color{blue}' + ji + "&"
-                    else {
-                        dp += ji + "&"
-                    }
+    loader('show');
+    setTimeout(function () {
+        sendtomatrix1();
+        sendtomatrix2();
+        var mul = [];
+        var temp = '';
+        var mulexplanation = '';
+        var d = '';
+        for (i = 0; i < document.getElementById('row1').value; i++) {
+            mulexplanation += "<div class='dropdown-divider'></div><br>"
+            mulexplanation += "<span style='color:var(--apppink) !important'>"
+            mulexplanation += '<span style="font-size: 20px;"> Taking Row ' + String(i + 1) + ' of Matrix 1</span>';
+            mulexplanation += "</span><br>"
+            mul[i] = [];
+            for (j = 0; j < document.getElementById('column2').value; j++) {
+                mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;width:100%;'>"
+                mulexplanation += '<span style="border: 3px solid #232a36;padding: 10px;border-radius: 30px;font-size: 20px;">Column ' + String(j + 1) + ' of Matrix 2</span><br>';
+                mul[i][j] = 0;
+                for (k = 0; k < document.getElementById('column1').value; k++) {
+                    mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrix1[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrix1[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + '\\]'
+                    temp += String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + ' + '
+                    mul[i][j] = parseInt(mul[i][j]) + parseInt(matrix1[i][k]) * parseInt(matrix2[k][j]);
                 }
-                count += 1;
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += '\\end{bmatrix}\\times'
-            dp += '\\begin{bmatrix}';
-            for (ij of matrix2) {
+                var dp = '\\[\\begin{bmatrix}'
                 var count = 0
-                for (ji of ij) {
-                    if (count == j)
-                        dp += '\\color{blue}' + ji + "&"
-                    else {
-                        dp += ji + "&"
+                for (ij of matrix1) {
+                    for (ji of ij) {
+                        if (count == i)
+                            dp += '\\color{blue}' + ji + "&"
+                        else {
+                            dp += ji + "&"
+                        }
                     }
                     count += 1;
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
                 }
-                dp = dp.slice(0, -1);
-                dp += '\\\\';
-            }
-            dp += '\\end{bmatrix}\\]'
+                dp += '\\end{bmatrix}\\times'
+                dp += '\\begin{bmatrix}';
+                for (ij of matrix2) {
+                    var count = 0
+                    for (ji of ij) {
+                        if (count == j)
+                            dp += '\\color{blue}' + ji + "&"
+                        else {
+                            dp += ji + "&"
+                        }
+                        count += 1;
+                    }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
+                }
+                dp += '\\end{bmatrix}\\]'
 
-            mulexplanation += dp;
-            mulexplanation += '<b style="font-size: 25px;">' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</b>';
-            var mat = [];
-            for (f = 0; f < document.getElementById('row1').value; f++) {
-                mat[f] = [];
-                for (d = 0; d < document.getElementById('column2').value; d++) {
-                    if (f == i && d == j) {
-                        mat[f][d] = String(eval(temp.slice(0, -3)))
-                    } else {
-                        mat[f][d] = '.';
+                mulexplanation += dp;
+                mulexplanation += '<b style="font-size: 25px;">' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</b>';
+                var mat = [];
+                for (f = 0; f < document.getElementById('row1').value; f++) {
+                    mat[f] = [];
+                    for (d = 0; d < document.getElementById('column2').value; d++) {
+                        if (f == i && d == j) {
+                            mat[f][d] = String(eval(temp.slice(0, -3)))
+                        } else {
+                            mat[f][d] = '.';
+                        }
                     }
                 }
-            }
-            dtemp = '\\[\\begin{bmatrix}'
-            for (ij of mat) {
-                for (ji of ij) {
-                    if (ji == '.')
-                        dtemp += ji + "&"
-                    else
-                        dtemp += '\\color{blue}' + ji + "&"
+                dtemp = '\\[\\begin{bmatrix}'
+                for (ij of mat) {
+                    for (ji of ij) {
+                        if (ji == '.')
+                            dtemp += ji + "&"
+                        else
+                            dtemp += '\\color{blue}' + ji + "&"
+                    }
+                    dtemp = dtemp.slice(0, -1);
+                    dtemp += '\\\\';
                 }
-                dtemp = dtemp.slice(0, -1);
-                dtemp += '\\\\';
+                dtemp += '\\end{bmatrix}\\]'
+
+                mulexplanation += dtemp;
+                temp = '';
+                mat = '';
+                m1 = '';
+                mulexplanation += "</div>"
             }
-            dtemp += '\\end{bmatrix}\\]'
-
-            mulexplanation += dtemp;
-            temp = '';
-            mat = '';
-            m1 = '';
-            mulexplanation += "</div>"
+            mulexplanation += '<br>';
         }
-        mulexplanation += '<br>';
-    }
-    <!--            printhere-->
-    document.getElementById('explanationmatrixresult').innerHTML = mulexplanation;
-    renderMathInElement(document.getElementById('explanationmatrixresult'));
-    displaymatrix('Multiplication\\space Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
-    <!--            printhere-->
-
+        <!--            printhere-->
+        document.getElementById('explanationmatrixresult').innerHTML = mulexplanation;
+        renderMathInElement(document.getElementById('explanationmatrixresult'));
+        displaymatrix('Multiplication\\space Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
+        <!--            printhere-->
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
 
 function clearfields() {
@@ -485,16 +489,22 @@ function sendtomatrixsingle() {
 }
 
 function transpose() {
-    sendtomatrixsingle();
-    var trans = [];
-    for (i = 0; i < document.getElementById('scolumn1').value; i++) {
-        trans[i] = [];
-        for (j = 0; j < document.getElementById('srow1').value; j++) {
-            trans[i][j] = matrixsingle[j][i];
+    loader('show');
+    setTimeout(function () {
+        sendtomatrixsingle();
+        var trans = [];
+        for (i = 0; i < document.getElementById('scolumn1').value; i++) {
+            trans[i] = [];
+            for (j = 0; j < document.getElementById('srow1').value; j++) {
+                trans[i][j] = matrixsingle[j][i];
+            }
         }
-    }
-    displaymatrix('Transposed\\space Matrix', trans, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
-    document.getElementById('singlematrixexplanation').innerHTML = "&nbsp;&nbsp;Just Interchange Rows and Columns"
+        displaymatrix('Transposed\\space Matrix', trans, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        document.getElementById('singlematrixexplanation').innerHTML = "&nbsp;&nbsp;Just Interchange Rows and Columns"
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
 
 function soperation(value) {
@@ -508,349 +518,354 @@ function soperation(value) {
 }
 
 function miandcofactors() {
-    sendtomatrixsingle();
-    var row = document.getElementById('srow1').value;
-    var column = document.getElementById('scolumn1').value;
-    var cof = [];
-    var minor = []
-    var temp = '';
-    if (row == 2 && column == 2) {
-        var temp = "<div style='border-radius:50px;display:table;color:black;padding:20px;margin-left: auto; margin-right: auto;'>"
-        for (i = 0; i < row; i++) {
-            cof[i] = [];
-            minor[i] = [];
-            for (j = 0; j < column; j++) {
-                if (i == 0 && j == 0) {
-                    var lk = minor[i][j] = cof[i][j] = matrixsingle[1][1];
-                    temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 0 && j == 1) {
-                    cof[i][j] = -(matrixsingle[1][0]);
-                    minor[i][j] = matrixsingle[1][0];
-                    temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0]
-                    temp += '\\end{vmatrix}'
-                    temp += '=-\\big(' + matrixsingle[1][0] + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + matrixsingle[1][0]
-                    temp += '\\]</div>'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 1 && j == 0) {
-                    var lk = cof[i][j] = -(matrixsingle[0][1]);
-                    minor[i][j] = matrixsingle[0][1];
-                    temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=-\\big(' + matrixsingle[0][1] + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + matrixsingle[0][1]
-                    temp += '\\]</div>'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 1 && j == 1) {
-                    var lk = minor[i][j] = cof[i][j] = matrixsingle[0][0];
-                    temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + lk
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + lk
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                }
-            }
-        }
-        temp += '</div>'
-        displaymatrix('Co-Factor\\space Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
-        var el = document.createElement('div')
-        el.id = 'minormat'
-        el.style.margin = '10px';
-        document.getElementById('singlematrixresult').appendChild(el)
-        displaymatrix('Minor\\space Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
-        document.getElementById('singlematrixexplanation').innerHTML = temp;
-        renderMathInElement(document.getElementById('singlematrixexplanation'));
-    }
-    else {
+    loader('show');
+    setTimeout(function () {
+        sendtomatrixsingle();
+        var row = document.getElementById('srow1').value;
+        var column = document.getElementById('scolumn1').value;
         var cof = [];
         var minor = []
-        var temp = "<div style='border-radius:50px;display:table;color:black;padding:20px;margin-left: auto; margin-right: auto;'>"
-        for (i = 0; i < row; i++) {
-            cof[i] = [];
-            minor[i] = []
-            for (j = 0; j < column; j++) {
-                if (i == 0 && j == 0) {
-                    var lk = cof[i][j] = minor[i][j] = (matrixsingle[1][1] * matrixsingle[2][2]) - (matrixsingle[2][1] * matrixsingle[1][2])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][1] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[1][2] + ')(' + matrixsingle[2][1] + '\\big)\\bigg)=' + lk
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-
-                } else if (i == 0 && j == 1) {
-                    var lk = cof[i][j] = -((matrixsingle[1][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[1][2]))
-                    var kl = minor[i][j] = (matrixsingle[1][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[1][2])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=-\\big(' + kl + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + kl
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][0] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[1][2] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + kl
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 0 && j == 2) {
-                    var lk = cof[i][j] = minor[i][j] = (matrixsingle[1][0] * matrixsingle[2][1]) - (matrixsingle[2][0] * matrixsingle[1][1])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][0] + ')(' + matrixsingle[2][1] + ') - (' + matrixsingle[1][1] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + lk
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 1 && j == 0) {
-                    var lk = cof[i][j] = -((matrixsingle[0][1] * matrixsingle[2][2]) - (matrixsingle[0][2] * matrixsingle[2][1]))
-                    var kl = minor[i][j] = (matrixsingle[0][1] * matrixsingle[2][2]) - (matrixsingle[0][2] * matrixsingle[2][1])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=-\\big(' + kl + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + kl
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][1] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[2][1] + '\\big)\\bigg)=' + kl
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 1 && j == 1) {
-                    var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[0][2])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + lk
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 1 && j == 2) {
-                    var lk = cof[i][j] = -((matrixsingle[0][0] * matrixsingle[2][1]) - (matrixsingle[0][1] * matrixsingle[2][0]))
-                    var kl = minor[i][j] = (matrixsingle[0][0] * matrixsingle[2][1]) - (matrixsingle[0][1] * matrixsingle[2][0])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=-\\big(' + kl + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + kl
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[2][1] + ') - (' + matrixsingle[0][1] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + kl
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 2 && j == 0) {
-                    var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][1] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][1])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][1] + ')(' + matrixsingle[1][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[1][1] + '\\big)\\bigg)=' + lk
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 2 && j == 1) {
-                    var lk = cof[i][j] = -((matrixsingle[0][0] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][0]))
-                    var kl = minor[i][j] = (matrixsingle[0][0] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][0])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=-\\big(' + kl + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + kl
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[1][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[1][0] + '\\big)\\bigg)=' + kl
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-                } else if (i == 2 && j == 2) {
-                    var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][0] * matrixsingle[1][1]) - (matrixsingle[0][1] * matrixsingle[1][0])
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=+\\big(' + lk + '\\big)'
-                    temp += '\\]</div>'
-                    temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
-                    temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
-                    temp += '\\end{vmatrix}'
-                    temp += '=' + lk
-                    temp += '\\]</div>'
-                    temp += 'Solution of Determinant'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}a&b\\\\c&d'
-                    temp += '\\end{vmatrix}=a.d-b.c'
-                    temp += '\\]'
-                    temp += '\\['
-                    temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
-                    temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[1][1] + ') - (' + matrixsingle[0][1] + ')(' + matrixsingle[1][0] + '\\big)\\bigg)=' + lk
-                    temp += '\\]'
-                    temp += "<div style='height:2px !important;margin:20px !important;'></div>"
-
+        var temp = '';
+        if (row == 2 && column == 2) {
+            var temp = "<div style='border-radius:50px;display:table;color:black;padding:20px;margin-left: auto; margin-right: auto;'>"
+            for (i = 0; i < row; i++) {
+                cof[i] = [];
+                minor[i] = [];
+                for (j = 0; j < column; j++) {
+                    if (i == 0 && j == 0) {
+                        var lk = minor[i][j] = cof[i][j] = matrixsingle[1][1];
+                        temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 0 && j == 1) {
+                        cof[i][j] = -(matrixsingle[1][0]);
+                        minor[i][j] = matrixsingle[1][0];
+                        temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0]
+                        temp += '\\end{vmatrix}'
+                        temp += '=-\\big(' + matrixsingle[1][0] + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + matrixsingle[1][0]
+                        temp += '\\]</div>'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 1 && j == 0) {
+                        var lk = cof[i][j] = -(matrixsingle[0][1]);
+                        minor[i][j] = matrixsingle[0][1];
+                        temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=-\\big(' + matrixsingle[0][1] + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + matrixsingle[0][1]
+                        temp += '\\]</div>'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 1 && j == 1) {
+                        var lk = minor[i][j] = cof[i][j] = matrixsingle[0][0];
+                        temp += "<div style='border:3px solid black;border-radius:30px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + lk
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:30px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + lk
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    }
                 }
             }
+            temp += '</div>'
+            displaymatrix('Co-Factor\\space Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+            var el = document.createElement('div')
+            el.id = 'minormat'
+            el.style.margin = '10px';
+            document.getElementById('singlematrixresult').appendChild(el)
+            displaymatrix('Minor\\space Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+            document.getElementById('singlematrixexplanation').innerHTML = temp;
+            renderMathInElement(document.getElementById('singlematrixexplanation'));
+        } else {
+            var cof = [];
+            var minor = []
+            var temp = "<div style='border-radius:50px;display:table;color:black;padding:20px;margin-left: auto; margin-right: auto;'>"
+            for (i = 0; i < row; i++) {
+                cof[i] = [];
+                minor[i] = []
+                for (j = 0; j < column; j++) {
+                    if (i == 0 && j == 0) {
+                        var lk = cof[i][j] = minor[i][j] = (matrixsingle[1][1] * matrixsingle[2][2]) - (matrixsingle[2][1] * matrixsingle[1][2])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][1] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][1] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[1][2] + ')(' + matrixsingle[2][1] + '\\big)\\bigg)=' + lk
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+
+                    } else if (i == 0 && j == 1) {
+                        var lk = cof[i][j] = -((matrixsingle[1][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[1][2]))
+                        var kl = minor[i][j] = (matrixsingle[1][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[1][2])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=-\\big(' + kl + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + kl
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][0] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[1][2] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + kl
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 0 && j == 2) {
+                        var lk = cof[i][j] = minor[i][j] = (matrixsingle[1][0] * matrixsingle[2][1]) - (matrixsingle[2][0] * matrixsingle[1][1])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[1][0] + '&' + matrixsingle[1][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[1][0] + ')(' + matrixsingle[2][1] + ') - (' + matrixsingle[1][1] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + lk
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 1 && j == 0) {
+                        var lk = cof[i][j] = -((matrixsingle[0][1] * matrixsingle[2][2]) - (matrixsingle[0][2] * matrixsingle[2][1]))
+                        var kl = minor[i][j] = (matrixsingle[0][1] * matrixsingle[2][2]) - (matrixsingle[0][2] * matrixsingle[2][1])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=-\\big(' + kl + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + kl
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][1] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][1] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[2][1] + '\\big)\\bigg)=' + kl
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 1 && j == 1) {
+                        var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][0] * matrixsingle[2][2]) - (matrixsingle[2][0] * matrixsingle[0][2])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][2]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[2][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + lk
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 1 && j == 2) {
+                        var lk = cof[i][j] = -((matrixsingle[0][0] * matrixsingle[2][1]) - (matrixsingle[0][1] * matrixsingle[2][0]))
+                        var kl = minor[i][j] = (matrixsingle[0][0] * matrixsingle[2][1]) - (matrixsingle[0][1] * matrixsingle[2][0])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=-\\big(' + kl + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + kl
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[2][0] + '&' + matrixsingle[2][1]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[2][1] + ') - (' + matrixsingle[0][1] + ')(' + matrixsingle[2][0] + '\\big)\\bigg)=' + kl
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 2 && j == 0) {
+                        var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][1] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][1])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][1] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][1] + '&' + matrixsingle[1][2]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][1] + ')(' + matrixsingle[1][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[1][1] + '\\big)\\bigg)=' + lk
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 2 && j == 1) {
+                        var lk = cof[i][j] = -((matrixsingle[0][0] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][0]))
+                        var kl = minor[i][j] = (matrixsingle[0][0] * matrixsingle[1][2]) - (matrixsingle[0][2] * matrixsingle[1][0])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=-\\big(' + kl + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[M_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + kl
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][2] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][2]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[1][2] + ') - (' + matrixsingle[0][2] + ')(' + matrixsingle[1][0] + '\\big)\\bigg)=' + kl
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+                    } else if (i == 2 && j == 2) {
+                        var lk = cof[i][j] = minor[i][j] = (matrixsingle[0][0] * matrixsingle[1][1]) - (matrixsingle[0][1] * matrixsingle[1][0])
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Co-Factor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '(-1)^{' + String(parseInt(i + 1)) + '+' + String(parseInt(j + 1)) + '}'
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=+\\big(' + lk + '\\big)'
+                        temp += '\\]</div>'
+                        temp += "<div style='border:3px solid black;border-radius:50px;margin:2px'>\\[Minor\\]"
+                        temp += '\\[C_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}='
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
+                        temp += '\\end{vmatrix}'
+                        temp += '=' + lk
+                        temp += '\\]</div>'
+                        temp += 'Solution of Determinant'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}a&b\\\\c&d'
+                        temp += '\\end{vmatrix}=a.d-b.c'
+                        temp += '\\]'
+                        temp += '\\['
+                        temp += '\\begin{vmatrix}' + matrixsingle[0][0] + '&' + matrixsingle[0][1] + '\\\\' + matrixsingle[1][0] + '&' + matrixsingle[1][1]
+                        temp += '\\end{vmatrix}=\\bigg(\\big(' + matrixsingle[0][0] + ')(' + matrixsingle[1][1] + ') - (' + matrixsingle[0][1] + ')(' + matrixsingle[1][0] + '\\big)\\bigg)=' + lk
+                        temp += '\\]'
+                        temp += "<div style='height:2px !important;margin:20px !important;'></div>"
+
+                    }
+                }
+            }
+            temp += "</div>"
+            displaymatrix('Co-Factor\\space Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+            var el = document.createElement('div')
+            el.id = 'minormat'
+            el.style.margin = '10px';
+            document.getElementById('singlematrixresult').appendChild(el)
+            displaymatrix('Minor\\space Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+            document.getElementById('singlematrixexplanation').innerHTML = temp;
+            renderMathInElement(document.getElementById('singlematrixexplanation'));
         }
-        temp += "</div>"
-        displaymatrix('Co-Factor\\space Matrix', cof, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
-        var el = document.createElement('div')
-        el.id = 'minormat'
-        el.style.margin = '10px';
-        document.getElementById('singlematrixresult').appendChild(el)
-        displaymatrix('Minor\\space Matrix', minor, 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
-        document.getElementById('singlematrixexplanation').innerHTML = temp;
-        renderMathInElement(document.getElementById('singlematrixexplanation'));
-    }
+    },100);
+    setTimeout(function () {
+        loader('hide');
+    },2000);
 }
 
 //single matrix
@@ -898,10 +913,16 @@ function checkfunctions() {
 }
 
 function laplacedeterminant() {
+    loader('show');
     sendtomatrixsingle();
     document.getElementById('singlematrixexplanation').innerHTML = '';
-    determinant(matrixsingle);
+    setTimeout(function () {
+        determinant(matrixsingle);
+    }, 100);
 
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
 
 function determinant(ma) {

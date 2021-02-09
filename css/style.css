@@ -15,12 +15,6 @@
 body {
     background: #232a36;
     font-family: 'myfont';
-    background-size: cover;
-    height: 100vh;
-    top: 0;
-    bottom: 0;
-    padding: 0;
-    margin: 0;
 }
 
 p {
@@ -54,7 +48,6 @@ a, p, label {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--apppink);
-/ / magenta
 }
 
 .modal-title {
@@ -246,4 +239,7 @@ px
     padding-left:5px ;
     height: 20px;
     filter: invert(100%);
+}
+.katex{
+    font-size: 20px !important;
 }
