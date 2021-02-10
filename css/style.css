@@ -53,6 +53,9 @@ h1, h2, h3, h4, h5, h6 {
 .modal-title {
     color: #343a40;
 }
+.modal-body{
+    background:#232a36;
+}
 
 .ulstyle {
     position: fixed;
