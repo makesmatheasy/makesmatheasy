@@ -1384,9 +1384,38 @@ function rootquadratic() {
     var a = parseInt(document.getElementById('coffa').value);
     var b = parseInt(document.getElementById('coffb').value);
     var c = parseInt(document.getElementById('coffc').value);
+    var eq=document.getElementById("quadraticequation");
     if (a.toString() == NaN.toString() || b.toString() == NaN.toString() || c.toString() == NaN.toString()) {
+        var eqval="";
+        if(a.toString() != NaN.toString() && b.toString() == NaN.toString() && c.toString() == NaN.toString()){
+            eqval="\\[f(x)="+a+"x^2+bx+c\\]";
+        }
+        if(a.toString() == NaN.toString() && b.toString() != NaN.toString() && c.toString() == NaN.toString()){
+            eqval="\\[f(x)=ax^2+"+b+"x+c\\]";
+        }
+        if(a.toString() == NaN.toString() && b.toString() == NaN.toString() && c.toString() != NaN.toString()){
+            eqval="\\[f(x)=ax^2+bx+"+c+"\\]";
+        }
+        if(a.toString() != NaN.toString() && b.toString() != NaN.toString() && c.toString() == NaN.toString()){
+            eqval="\\[f(x)="+a+"x^2+"+b+"x+c\\]";
+        }
+        if(a.toString() == NaN.toString() && b.toString() != NaN.toString() && c.toString() != NaN.toString()){
+            eqval="\\[f(x)=ax^2+"+b+"x+"+c+"\\]";
+        }
+        if(a.toString() != NaN.toString() && b.toString() == NaN.toString() && c.toString() != NaN.toString()){
+            eqval="\\[f(x)="+a+"x^2+bx+"+c+"\\]";
+        }
+        if(a.toString() == NaN.toString() && b.toString() == NaN.toString() && c.toString() == NaN.toString()){
+            eqval="\\[f(x)=ax^2+bx+c\\]";
+        }
+        eq.innerHTML=eqval;
         document.getElementById("rootsquadraticresult").innerHTML = "";
+        renderMathInElement(eq);
     } else {
+        var eq=document.getElementById("quadraticequation");
+        var eqval="\\[f(x)="+a+"x^2+"+b+"x+"+c+"\\]";
+        eq.innerHTML=eqval;
+        renderMathInElement(eq);
         var negativeb = -b;
         var bsquare = b * b;
         var temp = "\\[D= b^2-4ac\\]"
@@ -1410,10 +1439,10 @@ function rootquadratic() {
             temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "i}{" + twoa + "}\\]";
             temp += "\\[x=\\frac{" + negativeb + " \\pm " + eval(sqrtofdiscriminant).toFixed(4) + " i}{" + twoa + "}\\]";
             temp += "<div class='row'>" +
-                "<div class='col-sm-6'>" +
+                "<div class='col-6'>" +
                 "\\[x=\\frac{" + negativeb + " + " + eval(sqrtofdiscriminant).toFixed(4) + " i}{" + twoa + "}\\]" +
                 "</div>" +
-                "<div class='col-sm-6'>" +
+                "<div class='col-6'>" +
                 "\\[x=\\frac{" + negativeb + " - " + eval(sqrtofdiscriminant).toFixed(4) + " i}{" + twoa + "}\\]" +
                 "</div>" +
                 "</div>";
@@ -1444,7 +1473,7 @@ function rootquadratic() {
             temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
             temp += "<div class='row'>"
 
-                temp += "<div class='col-sm-6'>";
+                temp += "<div class='col-6'>";
                     temp += "\\[x=\\frac{" + negativeb + " + " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
                     var addthem=eval((negativeb+ '+'+ sqrtofdiscriminant).toString()).toFixed(4);
                     temp += "\\[x=\\frac{" + addthem + "}{" + twoa + "}\\]";
@@ -1452,7 +1481,7 @@ function rootquadratic() {
                     temp += "\\[x="+eval(addthem)+"\\]";
                 temp += "</div>";
 
-                temp += "<div class='col-sm-6'>";
+                temp += "<div class='col-6'>";
                     temp += "\\[x=\\frac{" + negativeb + " - " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
                     var subtractthem=eval((negativeb+ '-'+ sqrtofdiscriminant).toString()).toFixed(4);
                     temp += "\\[x=\\frac{" + subtractthem + "}{" + twoa + "}\\]";

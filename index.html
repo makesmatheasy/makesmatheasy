@@ -743,13 +743,37 @@
 
         <div class="collapse" id="rootsquadratic">
             <div class="form-group">
-                <p>\[f(x)=ax^2+bx+c\]</p>
+                <p id="quadraticequation">\[f(x)=ax^2+bx+c\]</p>
+                <div class="form-group text-center">
+                    <button class="btn btn-outline-light" data-toggle="modal" data-target="#rootsrules">Rules</button>
+                    <div class="modal fade" id="rootsrules" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Rules for Roots of Quadratic Equation</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>There are no Real Roots if \[b^2-4ac<0\]</p>
+                                    <p>There is one Real Root if \[b^2-4ac=0\]</p>
+                                    <p>There are two Real Roots if \[b^2-4ac>0\]</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div style="display: inline-block;">
                         <p>\[a=\]</p>
                     </div>
                     <div style="display: inline-block;">
-                        <input type="tel" class="form__field" id="coffa" placeholder="Enter Number" oninput="rootquadratic();">
+                        <input type="tel" class="form__field" id="coffa" placeholder="Enter Number"
+                               oninput="rootquadratic();">
                     </div>
                 </div>
                 <div class="form-group">
@@ -757,29 +781,22 @@
                         <p>\[b=\]</p>
                     </div>
                     <div style="display: inline-block;">
-                        <input type="tel" class="form__field" id="coffb" placeholder="Enter Number" oninput="rootquadratic();">
+                        <input type="tel" class="form__field" id="coffb" placeholder="Enter Number"
+                               oninput="rootquadratic();">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div style="display: inline-block;">
                         <p>\[c=\]</p>
                     </div>
                     <div style="display: inline-block;">
-                        <input type="tel" class="form__field" id="coffc" placeholder="Enter Number" oninput="rootquadratic();">
+                        <input type="tel" class="form__field" id="coffc" placeholder="Enter Number"
+                               oninput="rootquadratic();">
                     </div>
                 </div>
                 <div class="form-group">
-                    <p id="rootsquadraticresult"></p>
+                    <p class="stopwrap" id="rootsquadraticresult"></p>
                 </div>
-                <div class="collapse">
-                    <p>Rules \[1. \quad b^2-4ac<0\] There are no Real Roots
-                        \[2. \quad b^2-4ac=0\] There is one Real Root
-                        \[3. \quad b^2-4ac>0\] There are two Real Roots</p>
-                </div>
-
-
-
 
 
             </div>
@@ -950,7 +967,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" style="background:#232a36">
+            <div class="modal-body">
                 <table class="table">
                     <tr>
                         <td><h5>Clear Favourites</h5></td>
@@ -982,7 +999,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" style='background:#232a36'>
+            <div class="modal-body">
                 <div class="form-group">
                     <input type="tel" id="ordergetval" class="form__field" placeholder="Enter Numbers(Space Separated)"
                            oninput="orderfieldclear()">
@@ -1020,7 +1037,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
@@ -1062,7 +1079,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
@@ -1121,7 +1138,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1162,7 +1179,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1206,7 +1223,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1242,7 +1259,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1284,7 +1301,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1323,7 +1340,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1371,7 +1388,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1410,7 +1427,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="font-size:20px">Area</h5>
@@ -1459,7 +1476,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" style='background:#232a36'>
+            <div class="modal-body">
                 <input placeholder="Start Typing a Number" type="number" id="interval" class="form__field"
                        oninput="internationalwords(document.getElementById('interval').value)">
                 <p id="interresult"></p>
@@ -1485,7 +1502,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style='background:#232a36'>
+                <div class="modal-body">
                     <div class="form-group">
                         <input type="number" id="inpo" class="form__field" placeholder="Enter a Number"
                                oninput="callr();document.getElementById('ouo').innerHTML=''">

@@ -1,5 +1,5 @@
 function openit(id) {
-    var ids = ['#mulsolwithsteps', '#table', '#areacal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about',"#rootsquadratic"]
+    var ids = ['#mulsolwithsteps', '#table', '#areacal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic"]
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -16,20 +16,25 @@ function cleardiv(arrayofclearids) {
 }
 
 function clearall() {
-    cleardiv(["resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation"]);
-    cleardiv(["dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf"]);
-    cleardiv(["resulttable"]);
-    cleardiv(["generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult"]);
-    cleardiv(["resultdiff", "diffplot"]);
-    cleardiv(["resultmulsol"]);
-    cleardiv(["soltri"]);
+    setTimeout(function () {
+        cleardiv(["resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation"]);
+        cleardiv(["dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf"]);
+        cleardiv(["resulttable"]);
+        cleardiv(["generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult"]);
+        cleardiv(["resultdiff", "diffplot"]);
+        cleardiv(["resultintegration", "integralplot"])
+        cleardiv(["resultmulsol"]);
+        cleardiv(["soltri"]);
+        cleardiv(["resultpardiff"]);
+        cleardiv(["resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot"])
+    }, 1000);
 }
 
 $(document).ready(function () {
     $("#divideoption").click(function () {
         openit("#divide");
-        clearall();
         closenav();
+        clearall();
     });
 
     $("#aboutbutton").click(function () {
@@ -38,61 +43,61 @@ $(document).ready(function () {
     });
     $("#factorsoption").click(function () {
         openit("#factors");
-        clearall();
         closenav();
+        clearall();
     });
 
     $("#tableoption").click(function () {
         openit("#table");
-        clearall();
         closenav();
+        clearall();
 
     });
 //            matrix
     $("#matrixcollapsebtn").click(function () {
         openit("#matrixcollapse");
-        clearall();
         closenav();
+        clearall();
     });
 
     $("#differentiate").click(function () {
         openit("#differentiatecollapse");
-        clearall();
         closenav();
+        clearall();
     })
 
     $("#integrate").click(function () {
         openit("#integralcollapse");
-        cleardiv(["resultintegration", "integralplot"])
         closenav();
+        clearall();
     })
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
-        cleardiv(["resultpardiff"]);
         closenav();
+        clearall();
     })
 
     $("#laplace").click(function () {
         openit("#laplacecollapse");
-        cleardiv(["resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot"])
         closenav();
+        clearall();
     })
     $("#areacalbtn").click(function () {
         openit("#areacal");
-        clearall();
         closenav();
+        clearall();
     })
 
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
-        clearall();
         closenav();
+        clearall();
     })
 
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
-        clearall();
         closenav();
+        clearall();
     })
 
     $("#diffsolvebutton").click(function () {
@@ -103,8 +108,8 @@ $(document).ready(function () {
     })
     $("#rootsquadraticbtn").click(function () {
         openit("#rootsquadratic");
-        clearall();
         closenav();
+        clearall();
     });
 
 });
@@ -163,7 +168,7 @@ function loader(action) {
                 "            80%, 100% { transform: rotate(360deg); }\n" +
                 "        }\n" +
                 "\n" +
-                   "        @keyframes sk-chase-dot-before {\n" +
+                "        @keyframes sk-chase-dot-before {\n" +
                 "            50% {\n" +
                 "                transform: scale(0.4);\n" +
                 "            } 100%, 0% {\n" +
