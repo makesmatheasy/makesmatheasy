@@ -1,28 +1,9 @@
 function back(vlu) {
-//    if(document.getElementById('txt').value.includes("Ans is:")){
-//    for (i of vlu){
-//                if(i=="A"){
-//                    var ind=vlu.indexOf("A")
-//                    var cc=parseInt(vlu.length-ind)
-//                    vlu=vlu.slice(0,-cc);
-//                }
-//        }
-//        document.getElementById('txt').value=vlu;
-//    }
-//    if(document.getElementById('txt').value.includes("Sqrt is:")){
-//        for (i of vlu){
-//                    if(i=="S"){
-//                        var ind=vlu.indexOf("S")
-//                        var cc=parseInt(vlu.length-ind)
-//                        vlu=vlu.slice(0,-cc);
-//                    }
-//            }
-//            document.getElementById('txt').value=vlu;
-//        }
+    var newstr;
     if (document.getElementById('txt').value == "Invalid Expression") {
         newStr = "";
     } else {
-        var newStr = vlu.slice(0, -1);
+        newStr = vlu.slice(0, -1);
     }
     document.getElementById('txt').value = newStr;
 }
@@ -34,31 +15,27 @@ function replaceAll(string, search, replace) {
 function calsol(va) {           //oninput call this
     va = va.replace(/\s+/g, '');
     try {
-        var solution = String(nerdamer(va).evaluate().toString())
+        var solution =nerdamer(va).evaluate().toString();
         var soo = document.getElementById('txt').value = va;
-        document.getElementById("soltxt").value = "\nAns is:  " + solution;
+        document.getElementById("soltxt").value = solution;
     } catch (err) {
         document.getElementById("soltxt").value = "";
     }
-
 }
 
 function ans(hj) {
-    for (i of hj) {
-        hj = hj.replace(i, '');
-        if (i == ":") {
-            break;
-        }
-    }
     document.getElementById('txt').value = hj;
+
     document.getElementById('soltxt').value = '';
+
+
 }
 
 function calsq(valui) {
     valui = valui.replace(/\s+/g, '');
     try {
         document.getElementById('txt').value = valui;
-        document.getElementById('soltxt').value = "\nSqrt is: " + nerdamer.sqrt(valui).toString();
+        document.getElementById('soltxt').value = nerdamer.sqrt(valui).toString();
     } catch (e) {
         document.getElementById('soltxt').value = "Invalid Expression";
     }
@@ -75,8 +52,6 @@ function calsoleq(va) {
     try {
         if (document.getElementById('soltxt').value != '') {
             ans(document.getElementById('soltxt').value);
-        } else {
-            document.getElementById('soltxt').value = "Invalid Expression";
         }
     } catch (err) {
         document.getElementById('soltxt').value = "Invalid Expression";
@@ -172,17 +147,17 @@ function more() {
 
 function todeci() {
     var el = document.getElementById('deci');
+    var val = document.getElementById('soltxt').value;
     if (el.innerText == "Deci.") {
-        var val = document.getElementById('soltxt').value;
-        if(val.slice(0,3)=="Ans"){
-            document.getElementById('soltxt').value = 'Ans is:  ' + eval(val.slice(7));
-        }else if(val.slice(0,4)=="Sqrt"){
-            document.getElementById('soltxt').value = 'Sqrt is: ' + eval(val.slice(8));
+        var decisol=eval(val);
+        if(decisol!=undefined){
+            document.getElementById('soltxt').value = decisol;
+            el.innerText = "Frac."
+        }else{
+            document.getElementById('soltxt').value = document.getElementById('txt').value;
         }
-
-        el.innerText = "Frac."
     } else {
-        el.innerText = "Deci."
-        calsol(document.getElementById('txt').value)
+        el.innerText = "Deci.";
+        calsol(document.getElementById('txt').value);
     }
 }

@@ -898,7 +898,7 @@
 
         <!--        end of check divisibility-->
         <!--    start of calculator -->
-        <div class="collapse" id="cal" style="z-index:9;position:relative;">
+        <div class="" id="cal" style="z-index:9;position:relative;">
             <div class="bodyof">
                 <form class="calculator" name="calc">
                     <input type="tel" class="value" id="txt" name="txt" style="overflow-y:hidden;"
@@ -946,7 +946,7 @@
                           onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
                     <span id="dot"
                           onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
-                    <span onclick="calsq(document.getElementById('txt').value)">√</span>
+                    <span onclick="document.getElementById('txt').value+='sqrt(';">√</span>
                     <span class="plus"
                           onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);">+</span>
                     <span class="equal" onclick="calsoleq(document.getElementById('txt').value)">=</span>
