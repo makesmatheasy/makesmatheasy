@@ -186,7 +186,7 @@ function printtable() {
 
 function checkforusetrigovalue() {
     var el = document.getElementById('soltri');
-    if (el.innerText != '' && el.innerText != "Cannot Compute for -ve Square Root") {
+    if (el.innerText != '' && el.innerText != "Cannot Compute for -ve Square Root" && el.innerText != "Hypotenuse Should be Greater" && el.innerText!="Kindly fill Atleast 2 fields") {
         $('#usetrigovaluesbtn').fadeIn();
     } else {
         $('#usetrigovaluesbtn').fadeOut();
@@ -198,80 +198,81 @@ function solvesimpletrigo() {
     var pp = document.getElementById("p").value;
     var base = document.getElementById("b").value;
     var hyp = document.getElementById("h").value;
-//            if((pp=='' && base=='')||(base=='' && hyp=='')||(hyp='' && pp=='')){
-//                document.getElementById('soltri').innerHTML="Kindly fill Atleast 2 fields";
-//            }
-    if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
-        document.getElementById('h').style.color = "red";
-        document.getElementById('soltri').innerHTML = "Hypotenuse Should be Greater";
-    } else if (pp == '') {
-        document.getElementById('h').style.color = "white";
-        var pp = eval((hyp * hyp) - (base * base))
-        var kl = String(pp)
-        pp = Math.sqrt(String(pp))
-        if (pp.toString() != 'NaN') {
-            pp = pp.toFixed(2);
-            var tempp = "\\[Value\\space of\\space  Perpendicular= \\sqrt{" + kl + "}=" + pp + "\\]";
-            tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-            tempp += "\\[cos\\theta =\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+    if ((pp == '' && base == '') || (base == '' && hyp == '') || (hyp == '' && pp == '')) {
+        document.getElementById('soltri').innerHTML = "Kindly fill Atleast 2 fields";
+    }else {
+        if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
+            document.getElementById('h').style.color = "red";
+            document.getElementById('soltri').innerHTML = "Hypotenuse Should be Greater";
+        } else if (pp == '') {
+            document.getElementById('h').style.color = "white";
+            var pp = eval((hyp * hyp) - (base * base))
+            var kl = String(pp)
+            pp = Math.sqrt(String(pp))
+            if (pp.toString() != 'NaN') {
+                pp = pp.toFixed(2);
+                var tempp = "\\[Value\\space of\\space  Perpendicular= \\sqrt{" + kl + "}=" + pp + "\\]";
+                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+                tempp += "\\[cos\\theta =\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
+                document.getElementById("soltri").innerHTML = tempp;
+                renderMathInElement(document.getElementById('soltri'));
+            } else {
+                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
+            }
+        } else if (base == '') {
+            document.getElementById('h').style.color = "white";
+            var base = eval((hyp * hyp) - (pp * pp))
+            var kll = String(base)
+            base = Math.sqrt(String(base))
+            if (base.toString() != 'NaN') {
+                base = base.toFixed(2);
+                var tempp = "\\[Value\\space of\\space Base= \\sqrt{" + kll + "}=" + base + "\\]";
+                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+                tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "} = " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
+                document.getElementById("soltri").innerHTML = tempp;
+                renderMathInElement(document.getElementById('soltri'));
+            } else {
+                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
+            }
+        } else if (hyp == '') {
+            document.getElementById('h').style.color = "white";
+            var hyp = eval((base * base) + (pp * pp))
+            var klll = String(hyp)
+            hyp = Math.sqrt(String(hyp))
+            if (hyp.toString() != 'NaN') {
+                hyp = hyp.toFixed(2);
+                var tempp = "\\[Value\\space of\\space Hypotenuse=\\sqrt{" + klll + "}=" + hyp + "\\]";
+                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "}= " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+                tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
+
+                document.getElementById("soltri").innerHTML = tempp;
+                renderMathInElement(document.getElementById('soltri'));
+            } else {
+                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
+            }
+        } else {
+            document.getElementById('h').style.color = "white";
+            var tempp = String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+            tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}=" + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
             tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-            tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+            tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "} = " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+            tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
             tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
             document.getElementById("soltri").innerHTML = tempp;
             renderMathInElement(document.getElementById('soltri'));
-        } else {
-            document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
         }
-    } else if (base == '') {
-        document.getElementById('h').style.color = "white";
-        var base = eval((hyp * hyp) - (pp * pp))
-        var kll = String(base)
-        base = Math.sqrt(String(base))
-        if (base.toString() != 'NaN') {
-            base = base.toFixed(2);
-            var tempp = "\\[Value\\space of\\space Base= \\sqrt{" + kll + "}=" + base + "\\]";
-            tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-            tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "} = " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-            tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-            tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-            document.getElementById("soltri").innerHTML = tempp;
-            renderMathInElement(document.getElementById('soltri'));
-        } else {
-            document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
-        }
-    } else if (hyp == '') {
-        document.getElementById('h').style.color = "white";
-        var hyp = eval((base * base) + (pp * pp))
-        var klll = String(hyp)
-        hyp = Math.sqrt(String(hyp))
-        if (hyp.toString() != 'NaN') {
-            hyp = hyp.toFixed(2);
-            var tempp = "\\[Value\\space of\\space Hypotenuse=\\sqrt{" + klll + "}=" + hyp + "\\]";
-            tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "}= " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-            tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-            tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-            tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-
-            document.getElementById("soltri").innerHTML = tempp;
-            renderMathInElement(document.getElementById('soltri'));
-        } else {
-            document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
-        }
-    } else {
-        document.getElementById('h').style.color = "white";
-        var tempp = String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-        tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}=" + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-        tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-        tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "} = " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-        tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-        tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-        document.getElementById("soltri").innerHTML = tempp;
-        renderMathInElement(document.getElementById('soltri'));
     }
 }
 
@@ -1384,37 +1385,37 @@ function rootquadratic() {
     var a = parseInt(document.getElementById('coffa').value);
     var b = parseInt(document.getElementById('coffb').value);
     var c = parseInt(document.getElementById('coffc').value);
-    var eq=document.getElementById("quadraticequation");
+    var eq = document.getElementById("quadraticequation");
     if (a.toString() == NaN.toString() || b.toString() == NaN.toString() || c.toString() == NaN.toString()) {
-        var eqval="";
-        if(a.toString() != NaN.toString() && b.toString() == NaN.toString() && c.toString() == NaN.toString()){
-            eqval="\\[f(x)="+a+"x^2+bx+c\\]";
+        var eqval = "";
+        if (a.toString() != NaN.toString() && b.toString() == NaN.toString() && c.toString() == NaN.toString()) {
+            eqval = "\\[f(x)=" + a + "x^2+bx+c\\]";
         }
-        if(a.toString() == NaN.toString() && b.toString() != NaN.toString() && c.toString() == NaN.toString()){
-            eqval="\\[f(x)=ax^2+"+b+"x+c\\]";
+        if (a.toString() == NaN.toString() && b.toString() != NaN.toString() && c.toString() == NaN.toString()) {
+            eqval = "\\[f(x)=ax^2+" + b + "x+c\\]";
         }
-        if(a.toString() == NaN.toString() && b.toString() == NaN.toString() && c.toString() != NaN.toString()){
-            eqval="\\[f(x)=ax^2+bx+"+c+"\\]";
+        if (a.toString() == NaN.toString() && b.toString() == NaN.toString() && c.toString() != NaN.toString()) {
+            eqval = "\\[f(x)=ax^2+bx+" + c + "\\]";
         }
-        if(a.toString() != NaN.toString() && b.toString() != NaN.toString() && c.toString() == NaN.toString()){
-            eqval="\\[f(x)="+a+"x^2+"+b+"x+c\\]";
+        if (a.toString() != NaN.toString() && b.toString() != NaN.toString() && c.toString() == NaN.toString()) {
+            eqval = "\\[f(x)=" + a + "x^2+" + b + "x+c\\]";
         }
-        if(a.toString() == NaN.toString() && b.toString() != NaN.toString() && c.toString() != NaN.toString()){
-            eqval="\\[f(x)=ax^2+"+b+"x+"+c+"\\]";
+        if (a.toString() == NaN.toString() && b.toString() != NaN.toString() && c.toString() != NaN.toString()) {
+            eqval = "\\[f(x)=ax^2+" + b + "x+" + c + "\\]";
         }
-        if(a.toString() != NaN.toString() && b.toString() == NaN.toString() && c.toString() != NaN.toString()){
-            eqval="\\[f(x)="+a+"x^2+bx+"+c+"\\]";
+        if (a.toString() != NaN.toString() && b.toString() == NaN.toString() && c.toString() != NaN.toString()) {
+            eqval = "\\[f(x)=" + a + "x^2+bx+" + c + "\\]";
         }
-        if(a.toString() == NaN.toString() && b.toString() == NaN.toString() && c.toString() == NaN.toString()){
-            eqval="\\[f(x)=ax^2+bx+c\\]";
+        if (a.toString() == NaN.toString() && b.toString() == NaN.toString() && c.toString() == NaN.toString()) {
+            eqval = "\\[f(x)=ax^2+bx+c\\]";
         }
-        eq.innerHTML=eqval;
+        eq.innerHTML = eqval;
         document.getElementById("rootsquadraticresult").innerHTML = "";
         renderMathInElement(eq);
     } else {
-        var eq=document.getElementById("quadraticequation");
-        var eqval="\\[f(x)="+a+"x^2+"+b+"x+"+c+"\\]";
-        eq.innerHTML=eqval;
+        var eq = document.getElementById("quadraticequation");
+        var eqval = "\\[f(x)=" + a + "x^2+" + b + "x+" + c + "\\]";
+        eq.innerHTML = eqval;
         renderMathInElement(eq);
         var negativeb = -b;
         var bsquare = b * b;
@@ -1430,7 +1431,7 @@ function rootquadratic() {
             temp += "\\[D=" + bsquareminusfourac + " < 0\\]";
             temp += "\\[There \\space are \\space no \\space Real \\space Roots \\]";
             temp += "<div class='dropdown-divider'></div>";
-            temp += "\\[x=\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{b^2-4   ac}}{2a}\\]";
             temp += "\\[x=\\frac{-b \\pm \\sqrt{D}}{2a}\\]";
 
             temp += "\\[x=\\frac{" + negativeb + " \\pm \\sqrt{" + bsquareminusfourac + "}}{2 \\times" + a + "}\\]";
@@ -1456,7 +1457,7 @@ function rootquadratic() {
             temp += "\\[x=\\frac{" + negativeb + "}{" + twoa + "}\\]";
             var sol = nerdamer(negativeb / twoa).evaluate().toString();
             temp += "\\[x=" + sol + "\\]";
-            if((negativeb / twoa)%2!=0){
+            if ((negativeb / twoa) % 2 != 0) {
                 temp += "\\[x=" + eval(sol) + "\\]";
             }
         } else {
@@ -1468,26 +1469,26 @@ function rootquadratic() {
             temp += "<div class='dropdown-divider'></div>";
             temp += "\\[x=\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]";
             temp += "\\[x=\\frac{-b \\pm \\sqrt{D}}{2a}\\]";
-            temp += "\\[x=\\frac{-b \\pm \\sqrt{"+bsquareminusfourac+"}}{2a}\\]";
+            temp += "\\[x=\\frac{-b \\pm \\sqrt{" + bsquareminusfourac + "}}{2a}\\]";
             temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "}{2\\times" + a + "}\\]";
             temp += "\\[x=\\frac{" + negativeb + " \\pm " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
             temp += "<div class='row'>"
 
-                temp += "<div class='col-6'>";
-                    temp += "\\[x=\\frac{" + negativeb + " + " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
-                    var addthem=eval((negativeb+ '+'+ sqrtofdiscriminant).toString()).toFixed(4);
-                    temp += "\\[x=\\frac{" + addthem + "}{" + twoa + "}\\]";
-                    addthem=eval((addthem+'/'+twoa).toString()).toFixed(4);
-                    temp += "\\[x="+eval(addthem)+"\\]";
-                temp += "</div>";
+            temp += "<div class='col-6'>";
+            temp += "\\[x=\\frac{" + negativeb + " + " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
+            var addthem = eval((negativeb + '+' + sqrtofdiscriminant).toString()).toFixed(4);
+            temp += "\\[x=\\frac{" + addthem + "}{" + twoa + "}\\]";
+            addthem = eval((addthem + '/' + twoa).toString()).toFixed(4);
+            temp += "\\[x=" + eval(addthem) + "\\]";
+            temp += "</div>";
 
-                temp += "<div class='col-6'>";
-                    temp += "\\[x=\\frac{" + negativeb + " - " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
-                    var subtractthem=eval((negativeb+ '-'+ sqrtofdiscriminant).toString()).toFixed(4);
-                    temp += "\\[x=\\frac{" + subtractthem + "}{" + twoa + "}\\]";
-                    subtractthem=eval((subtractthem+'/'+twoa).toString()).toFixed(4);
-                    temp += "\\[x="+eval(subtractthem)+"\\]";
-                temp += "</div>";
+            temp += "<div class='col-6'>";
+            temp += "\\[x=\\frac{" + negativeb + " - " + sqrtofdiscriminant + "}{" + twoa + "}\\]";
+            var subtractthem = eval((negativeb + '-' + sqrtofdiscriminant).toString()).toFixed(4);
+            temp += "\\[x=\\frac{" + subtractthem + "}{" + twoa + "}\\]";
+            subtractthem = eval((subtractthem + '/' + twoa).toString()).toFixed(4);
+            temp += "\\[x=" + eval(subtractthem) + "\\]";
+            temp += "</div>";
             temp += "</div>";
         }
 

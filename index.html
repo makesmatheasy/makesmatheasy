@@ -316,10 +316,10 @@
                 </form>
 
                 <div class="form-group">
-                    <div id="divisibilitycheckresult" class="stopwrap"
-                         style="font-family:mathfont;font-size:30px;"></div>
-                    <div id="divisibilitycheckresultexplanation" class="stopwrap"
-                         style="font-family:mathfont;font-size:20px;"></div>
+                    <p id="divisibilitycheckresult" class="stopwrap"
+                         style="font-family:mathfont;font-size:30px;"></p>
+                    <p id="divisibilitycheckresultexplanation" class="stopwrap"
+                         style="font-family:mathfont;font-size:20px;"></p>
                 </div>
 
                 <button class="btn btn-outline-light" id="showcheckdivisibilitysteps"
@@ -697,20 +697,14 @@
                 <div class="col-6">
                     <div class="text-center">Fill atleast any of Two</div>
                     <br>
-                    <input style="font-size:20px;" type="number" id="p" class="form__field" placeholder="Perpendicular">
-                    <input style="font-size:20px;" type="number" id="b" class="form__field" placeholder="Base">
-                    <input style="font-size:20px;" type="number" id="h" class="form__field" placeholder="Hypotenuse">
+                    <input style="font-size:20px;" type="number" id="p" class="form__field" placeholder="Perpendicular" oninput="solvesimpletrigo();checkforusetrigovalue();">
+                    <input style="font-size:20px;" type="number" id="b" class="form__field" placeholder="Base" oninput="solvesimpletrigo();checkforusetrigovalue();">
+                    <input style="font-size:20px;" type="number" id="h" class="form__field" placeholder="Hypotenuse" oninput="solvesimpletrigo();checkforusetrigovalue();">
                 </div>
                 <div class="col-6">
                     <img src="images/righttriangle.png" style="height:200px">
                 </div>
             </div>
-            <div class="form-group">
-                <button type="button" id="simpletrigosolve" class="btn btn-light"
-                        onclick="solvesimpletrigo();checkforusetrigovalue();">Solve
-                </button>
-            </div>
-
             <div class="form-group">
                 <p style="font-size:20px;font-family:mathfont" class="stopwrap" id="soltri"></p>
             </div>
@@ -901,8 +895,7 @@
         <div class="" id="cal" style="z-index:9;position:relative;">
             <div class="bodyof">
                 <form class="calculator" name="calc">
-                    <input type="tel" class="value" id="txt" name="txt" style="overflow-y:hidden;"
-                           oninput="calsol(this.value);chh(this.value)">
+                    <input type="tel" class="value" id="txt" style="overflow-y:hidden;" oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
                     <span onclick="more()">More</span>

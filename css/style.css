@@ -6,11 +6,15 @@
     font-family: myfont;
     src: url(../fonts/JosefinSans-SemiBold.ttf) format('truetype');
 }
-
 @font-face {
     font-family: mathfont;
-    src: url(../fonts/Grandstander-Regular.ttf) format('truetype');
+    src: url(../fonts/BalsamiqSans-Regular.ttf) format('truetype');
 }
+
+/*@font-face {*/
+/*    font-family: mathfont;*/
+/*    src: url(../fonts/Grandstander-Regular.ttf) format('truetype');*/
+/*}*/
 
 body {
     background: #232a36;
