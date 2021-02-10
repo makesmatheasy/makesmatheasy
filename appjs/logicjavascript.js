@@ -1188,7 +1188,7 @@ function checkfavourite() {
             var el = document.createElement('span');
             el.textContent = ar[i]
             el.className = 'headingdivinner'
-            el.style.color = '#ff00a2'
+            el.style.color = 'var(--apppink)'
             var idf = oid[i]
             if (tp[i] == 'c') {
                 el.setAttribute('onclick', 'openit("' + String(idf) + '")')

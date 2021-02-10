@@ -1,5 +1,5 @@
 :root {
-    --apppink: #ff88e7;
+    --apppink: rgb(255, 136, 231);
 }
 
 @font-face {
@@ -104,33 +104,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .headingdiv {
-    background: white;
     white-space: nowrap;
     overflow-x: auto;
     padding: 20px;
-    border-bottom: 0.2rem solid red;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-radius: 30px;
     padding-left: 20px;
 }
 
 .headingdivinner {
-    background: white;
     white-space: nowrap;
     overflow-x: auto;
-    padding: 20px;
-    border-bottom: 0.2rem solid red;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    padding-left: 20px;
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid white;
+    /*border-bottom: 0.2rem double var(--apppink);*/
+    border-radius: 30px;
+    /*padding-left: 20px;*/
 }
 
-.headingdivinner:active {
-/ / border-bottom: 0.2 rem dotted black;
-    border-left: 0.2rem solid black;
-    border-right: 0.2rem solid black;
-    transition: 0.1s;
+.headingdivinner:hover{
+    cursor:pointer;
 }
+
 
 .mainheading {
     color: white;
@@ -150,7 +145,6 @@ h1, h2, h3, h4, h5, h6 {
     border-top: none !important;
 }
 
-
 .form__group {
     position: relative;
     padding: 15px 0 0;
@@ -169,19 +163,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
-
-&
-::placeholder {
-    color: transparent;
-}
-
-&
-:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
-}
-
 }
 
 .form__label {
@@ -191,51 +172,6 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.2s;
     font-size: 1rem;
     color: white;
-}
-
-.form__field:focus {
-
-~ .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: white;
-    font-weight: 700;
-}
-
-padding-bottom:
-
-6
-px
-
-;
-}
-
-
-.btn-grad {
-    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)
-}
-
-.btn-grad {
-/ / margin: 5 px;
-    padding: 10px 20px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-/ / box-shadow: 0 0 20 px #eee;
-    border-radius: 50px;
-/ / display: block;
-    outline: none !important;
-}
-
-.btn-grad:active {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
 }
 
 .bi {
