@@ -1,5 +1,5 @@
 function openit(id) {
-    var ids = ['#mulsolwithsteps', '#table', '#areacal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph"]
+    var ids = ['#mulsolwithsteps', '#table', '#shapescal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph"]
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -84,8 +84,8 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    $("#areacalbtn").click(function () {
-        openit("#areacal");
+    $("#shapescalbtn").click(function () {
+        openit("#shapescal");
         closenav();
         clearall();
     })

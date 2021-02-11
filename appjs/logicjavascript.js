@@ -186,7 +186,7 @@ function printtable() {
 
 function checkforusetrigovalue() {
     var el = document.getElementById('soltri');
-    if (el.innerText != '' && el.innerText != "Cannot Compute for -ve Square Root" && el.innerText != "Hypotenuse Should be Greater" && el.innerText!="Kindly fill Atleast 2 fields") {
+    if (el.innerText != '' && el.innerText != "Cannot Compute for -ve Square Root" && el.innerText != "Hypotenuse Should be Greater" && el.innerText != "Kindly fill Atleast 2 fields") {
         $('#usetrigovaluesbtn').fadeIn();
     } else {
         $('#usetrigovaluesbtn').fadeOut();
@@ -200,7 +200,7 @@ function solvesimpletrigo() {
     var hyp = document.getElementById("h").value;
     if ((pp == '' && base == '') || (base == '' && hyp == '') || (hyp == '' && pp == '')) {
         document.getElementById('soltri').innerHTML = "Kindly fill Atleast 2 fields";
-    }else {
+    } else {
         if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
             document.getElementById('h').style.color = "red";
             document.getElementById('soltri').innerHTML = "Hypotenuse Should be Greater";
@@ -412,7 +412,6 @@ function solveperisq() {
     }
     renderMathInElement(document.getElementById("resultofperisq"));
 }
-
 function solvediagonalsq() {
     var val = document.getElementById("inputsqside").value;
     if (val == '') {
@@ -425,7 +424,6 @@ function solvediagonalsq() {
     }
     renderMathInElement(document.getElementById("resultofdiagonalsq"));
 }
-
 function solveareasq() {
     var val = document.getElementById("inputsqside").value;
     if (val == '') {
@@ -438,8 +436,33 @@ function solveareasq() {
     }
     renderMathInElement(document.getElementById("resultofareasq"));
 }
-
 //square
+
+function equilateraltrianglearea(){
+    var side=document.getElementById('equilateraltriangleside').value;
+    var areaoutput=document.getElementById('equilateraltrianglearea');
+    var perimeteroutput=document.getElementById('equilateraltriangleperimeter');
+    var areatemp="";
+    var perimetertemp="";
+    if(side!="") {
+        perimetertemp += "\\[P=3 \\times " + side + "\\]";
+        perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval(String(3 * side)) + "\\]";
+        perimeteroutput.innerHTML = perimetertemp;
+
+        areatemp+="\\[A = \\frac{\\sqrt{3}}{4} "+side+"^2 \\]";
+        areatemp+="\\[A = \\frac{1.73}{4} ("+eval(String(side*side))+")\\]";
+        areatemp+="\\[A=0.433 \\times "+eval(String(side*side))+" \\]";
+        var a=eval(String("0.433*"+String(side*side)));
+        areatemp+="\\[A="+a+" \\]";
+        areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]"
+        areaoutput.innerHTML=areatemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(perimeteroutput);
+    }else{
+        areaoutput.innerHTML="";
+        perimeteroutput.innerHTML="";
+    }
+}
 
 function printmorefactors(input, output) {
     document.getElementById(output).textContent = "";
@@ -993,14 +1016,14 @@ function multiplywithsteps(numm, withnum) {
     if (numwith.length == 1) {
         r.innerHTML = "";
         r.innerHTML += num + "<br>";
-        r.innerHTML += "x " + numwith + "<br>"
+        r.innerHTML += "× " + numwith + "<br>"
         r.innerHTML += line + "<br>";
         r.innerHTML += mulsol + "<br>";
         r.innerHTML += line + "<br>";
     } else {
         r.innerHTML = "";
         r.innerHTML += num + "<br>";
-        r.innerHTML += "x " + numwith.join('') + "<br>"
+        r.innerHTML += "× " + numwith.join('') + "<br>"
         r.innerHTML += line + "<br>";
         r.innerHTML += temp;
         r.innerHTML += line + "<br>";
@@ -1351,6 +1374,7 @@ function rectanglesolve() {
 function plotit(input, output, funcname) {
     var val = funcname;
     document.getElementById(output).innerHTML = '';
+
     function draw() {
         try {
             //val=val.replace(/s/g, 'x');
@@ -1371,7 +1395,7 @@ function plotit(input, output, funcname) {
             const data = [trace1]
             Plotly.newPlot(output, data)
         } catch (err) {
-            document.getElementById(output).innerHTML = "<chnc>Only PLOT for Single Variable 'x'</chnc><br>"
+            document.getElementById(output).innerHTML = "<span style='color:red;'>Only PLOT for Single Variable 'x'</span><br>"
             document.getElementById(output).innerHTML += "Sorry! Can't Plot because ";
             document.getElementById(output).innerHTML += "<b><u>" + err + "</u></b>";
         }

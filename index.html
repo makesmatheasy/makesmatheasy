@@ -44,19 +44,15 @@
         }
 
         ​
-        st {
-            border: 2px dotted black;
-            padding: 5px;
-        }
+        /*st {*/
+        /*    border: 2px dotted black;*/
+        /*    padding: 5px;*/
+        /*}*/
 
         lc {
             padding-left: 0;
             border-bottom: 4px solid white;
             border-left: 4px solid white;
-        }
-
-        chnc {
-            color: red;
         }
     </style>
     <link href="css/style.css" rel="stylesheet">
@@ -214,11 +210,11 @@
                 Table</a><span style="display:inline;float:right;"
                                onclick="addtofavourite('Multiplication Table','#table','c','tableimgfav')"><img
                     src="images/unfavourite.png" id="tableimgfav" style="height:25px;"></span></li>
-            <li><a id="areacalbtn"
+            <li><a id="shapescalbtn"
                    style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes
                 Calculator</a><span style="display:inline;float:right;"
-                                    onclick="addtofavourite('Shapes Calculator','#areacal','c','areaimgfav')"><img
-                    id="areaimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
+                                    onclick="addtofavourite('Shapes Calculator','#shapescal','c','shapesimgfav')"><img
+                    id="shapesimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
             <li><a id="divideoption"
                    style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Divide</a><span
                     style="display:inline;float:right;" onclick="addtofavourite('Divide','#divide','c','divideimgfav')"><img
@@ -816,8 +812,7 @@
             </form>
 
             <div class="form-group">
-                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;"
-                   align="right"></p>
+                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;" class="stopwrap" align="right"></p>
             </div>
 
         </div>
@@ -846,7 +841,7 @@
             </table>
         </div>
 
-        <div class="collapse" id="areacal">
+        <div class="collapse" id="shapescal">
             <h2>Calculator for Shapes</h2>
             <table class="table">
                 <tr>
@@ -1244,7 +1239,6 @@
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="font-size:20px">Perimeter</h5>
                             <p class="text-center" style="font-size:20px;">\[P = 3a\]</p>
-
                         </div>
                         <div class="col-6">
                             <div class="form-group">
@@ -1253,6 +1247,15 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <div class="form-group">
+                        <input type="number" id="equilateraltriangleside" class="form__field" placeholder="Enter Side" oninput="equilateraltrianglearea();">
+                    </div>
+                    <div class="form-group">
+                        <p class="stopwrap" id="equilateraltrianglearea"></p>
+                    </div>
+                    <div class="form-group">
+                        <p class="stopwrap" id="equilateraltriangleperimeter"></p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
