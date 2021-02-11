@@ -152,7 +152,23 @@ function slap() {
     katex.render(value, document.getElementById('resultlaplace'), {
         throwOnError: false
     });
-    return t.toString();
+
+    var ar=t.toString().split('');
+    for(i=0;i<ar.length;i++){
+        if(ar[i]=='s' && ar[i+1]=='i'){
+            continue;
+        }else if(ar[i]=='s' && ar[i-1]=='o' && ar[i-2]=='c'){
+            continue;
+        }else if(ar[i]=='s' && ar[i+1]=='e' && ar[i+2]=='c'){
+            continue;
+        }else if(ar[i]=='s' && ar[i-1]=='c' && ar[i+1]=='c'){
+            continue;
+        } else if(ar[i]=='s'){
+            ar[i]='x';
+        }
+    }
+    ar=ar.join('');
+    return ar.toString();
 }
 
 function dinvlap() {
@@ -164,13 +180,33 @@ function dinvlap() {
         throwOnError: false
     });
 }
+function dploteq() {
+    var value = document.getElementById('inputplotequation').value;
+    value = nerdamer(value).toTeX();
+    katex.render(value, document.getElementById('plotgrapheqdisplay'), {
+        throwOnError: false
+    });
+}
 
 function sinvlap() {
     var value = nerdamer.ilt(document.getElementById('inputinverselaplace').value, "s", "t")
+    var t=value;
     value = nerdamer(value).toTeX();
     katex.render(value, document.getElementById('resultinverselaplace'), {
         throwOnError: false
     });
+    var ar=t.toString().split('');
+    for(i=0;i<ar.length;i++){
+        if(ar[i]=='t' && ar[i+1]=='a' && ar[i+2]=='n'){
+            continue;
+        }else if(ar[i]=='t' && ar[i-1]=='c' && ar[i-2]=='c'){
+            continue;
+        } else if(ar[i]=='t'){
+            ar[i]='x';
+        }
+    }
+    ar=ar.join('');
+    return ar.toString();
 }
 
 

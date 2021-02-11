@@ -187,6 +187,13 @@
                                                                                                 src="images/unfavourite.png"
                                                                                                 style="height:25px;"></span>
             </li>
+            <li><a id="plotgraphoption"
+                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Plot Graph</a><span
+                    style="display:inline;float:right;"
+                    onclick="addtofavourite('Plot Graph','#plotgraph','c','plotimgfav')"><img id="plotimgfav"
+                                                                                                src="images/unfavourite.png"
+                                                                                                style="height:25px;"></span>
+            </li>
             <li><a data-toggle="modal" data-target="#roman"
                    style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
                 Numerals</a><span style="display:inline;float:right;"
@@ -222,9 +229,8 @@
                                     onclick="addtofavourite('Multiply with Steps','#mulsolwithsteps','c','mulsolimgfav')"><img
                     src="images/unfavourite.png" id='mulsolimgfav' style="height:25px;"></span></li>
             <li><a id="rootsquadraticbtn"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of
-                Quadratic Equation</a><span style="display:inline;float:right;"
-                                            onclick="addtofavourite('Roots of Quadratic Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
+                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of Equation</a><span style="display:inline;float:right;"
+                                            onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
                     id="rootsquadraticeqimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
             <div class="dropdown-divider"></div>
         </div>
@@ -574,7 +580,7 @@
                            oninput="dinvlap()">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="sinvlap()">Solve</button>
+                    <button type="button" class="btn btn-light" onclick="plotit('inputinverselaplace','inverselaplaceplot',sinvlap());">Solve</button>
                     <button type="button" id="solveinverselaplaceid" class="btn btn-outline-light"
                             onclick="solveinverselaplace()">Show Steps
                     </button>
@@ -814,6 +820,20 @@
                    align="right"></p>
             </div>
 
+        </div>
+        <div class="collapse" id="plotgraph">
+            <div class="form-group">
+                <input type="text" id="inputplotequation" class="form__field" placeholder="Enter Equation" oninput="dploteq();document.getElementById('plotequationresult').innerHTML=''">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-light" type="button" onclick="plotit('inputplotequation','plotequationresult',nerdamer(document.getElementById('inputplotequation').value).evaluate().toString());">Plot</button>
+            </div>
+            <div class="form-group">
+                <p id="plotgrapheqdisplay"></p>
+            </div>
+            <div class="form-group">
+                <p id="plotequationresult" style="font-size:20px"></p>
+            </div>
         </div>
 
         <div class="collapse" id="about">

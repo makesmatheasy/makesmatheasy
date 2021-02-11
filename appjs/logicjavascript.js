@@ -1186,10 +1186,10 @@ function checkfavourite() {
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement('span');
-            el.textContent = ar[i]
-            el.className = 'headingdivinner'
-            el.style.color = 'var(--apppink)'
-            var idf = oid[i]
+            el.textContent = ar[i];
+            el.className = 'headingdivinner';
+            el.style.color = 'white';
+            var idf = oid[i];
             if (tp[i] == 'c') {
                 el.setAttribute('onclick', 'openit("' + String(idf) + '")')
             } else {
@@ -1351,7 +1351,6 @@ function rectanglesolve() {
 function plotit(input, output, funcname) {
     var val = funcname;
     document.getElementById(output).innerHTML = '';
-
     function draw() {
         try {
             //val=val.replace(/s/g, 'x');

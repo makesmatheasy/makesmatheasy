@@ -1,5 +1,5 @@
 function openit(id) {
-    var ids = ['#mulsolwithsteps', '#table', '#areacal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic"]
+    var ids = ['#mulsolwithsteps', '#table', '#areacal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph"]
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -26,7 +26,9 @@ function clearall() {
         cleardiv(["resultmulsol"]);
         cleardiv(["soltri"]);
         cleardiv(["resultpardiff"]);
-        cleardiv(["resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot"])
+        cleardiv(["resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot"]);
+        cleardiv(["plotequationresult"]);
+        cleardiv(["rootsquadraticresult"]);
     }, 1000);
 }
 
@@ -108,6 +110,11 @@ $(document).ready(function () {
     })
     $("#rootsquadraticbtn").click(function () {
         openit("#rootsquadratic");
+        closenav();
+        clearall();
+    });
+    $("#plotgraphoption").click(function () {
+        openit("#plotgraph");
         closenav();
         clearall();
     });

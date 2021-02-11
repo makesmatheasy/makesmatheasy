@@ -116,7 +116,10 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: auto;
     margin: 5px;
     padding: 15px;
-    border: 1px solid white;
+    border-left: 2px solid white;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+    /*border: 1px solid white;*/
     /*border-bottom: 0.2rem double var(--apppink);*/
     border-radius: 30px;
     /*padding-left: 20px;*/
@@ -184,5 +187,5 @@ h1, h2, h3, h4, h5, h6 {
     filter: invert(100%);
 }
 .katex{
-    font-size: 20px !important;
+    font-size: 25px !important;
 }
