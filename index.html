@@ -13,6 +13,7 @@
 
     <script defer src="katex/katex.min.js"></script>
     <script defer src="katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="css/simplecal.css">
     <link rel="stylesheet" href="css/animista.css">
     <link href="katex/katex.min.css" rel="stylesheet">
@@ -111,6 +112,7 @@
 <body class="readonlybody hidescroll" onload="bodyload()">
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
+
         <li class="listyle"><a id="homeoption" style="cursor: pointer;">Home</a></li>
         <li onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer">Linear Algebra<img
                 class="dropdownlogo" src="icons/dropdown.svg"></a></li>
@@ -244,8 +246,8 @@
         How to?</a></div>
 <div id="main" style="z-index:31;">
     <div class="form-group">
-        <span onclick="nav.toggle(event)" style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><img
-                src="icons/list.svg"
+        <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><img
+                class="material-icons" src="icons/list.svg"
                 style="cursor:pointer;filter: invert(100%);height: 2.5rem;padding-left: 10px;"></span>
         <span onclick="opencal()"><img src="icons/keys.svg"
                                        style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:20;padding-right: 10px;filter: invert(100%);"></span>
@@ -1564,6 +1566,7 @@
 
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 
 <script>
     setTimeout(function () {
@@ -1576,13 +1579,6 @@
     },3000);
 </script>
 
-<script src="sidenav/dna.js"></script>
-<script src="sidenav/gestures.js"></script>
-<script src="sidenav/sidenav.js"></script>
-<script type="text/javascript">
-    var leftElement = document.getElementById('navbar-main');
-    var nav = new SideNav(leftElement);
-</script>
 
 <script src="appjs/logicjquery.js"></script>
 <script src="appjs/logicjavascript.js"></script>
@@ -1606,6 +1602,11 @@
 <script src='appjs/displaymath.js'></script>
 <script src="appjs/simplecallogic.js"></script>
 <script src="appjs/matrixlogic.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+</script>
 <!--script files-->
 
 <script src="nerdamer/nerdamer.core.js"></script>
