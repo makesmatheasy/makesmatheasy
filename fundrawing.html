@@ -1,150 +1,32 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Two.js: Dynamic Vertices</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/url.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/two.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SideNav</title>
+    <script src="sidenav/dna.js"></script>
+    <script src="sidenav/gestures.js"></script>
+    <script src="sidenav/sidenav.js"></script>
+
 </head>
-<div>
-    <button class="badge badge-pill" style="position:absolute;z-index:20;height:50px;width:50px;outline:none" onclick="location.reload()">Clear</button><br>
-    <input style="position:relative;z-index:20;width:100px;height:100px;float:right;" type="color" oninput="choosecolor(this.value)">
-</div>
-<body style="touch-action:none;">
-
-
-<div id="main" style="position:absolute;z-index:1;">
-    <script>
-        var value="#333"
-        function choosecolor(va){
-          value = va;
-        }
-        $(function() {
-          createGrid();
-          var type = /(canvas|webgl)/.test(url.type) ? url.type : 'svg';
-          var two = new Two({
-            type: Two.Types[type],
-            fullscreen:true,
-            autostart: true
-          }).appendTo(document.body);
-          var x, y, line, mouse = new Two.Vector(), randomness = 2;
-          var drag = function(e) {
-            x = e.clientX;
-            y = e.clientY;
-            if (!line) {
-              var v1 = makePoint(mouse);
-              var v2 = makePoint(x, y);
-              line = two.makeCurve([v1, v2], true);
-              line.noFill().stroke = value;
-              line.linewidth = 10;
-              line.vertices.forEach(function(v) {
-                v.addSelf(line.translation);
-
-              });
-              line.translation.clear();
-
-            } else {
-
-              var v1 = makePoint(x, y);
-              line.vertices.push(v1);
-            }
-            mouse.set(x, y);
-          };
-
-          var dragEnd = function(e) {
-            $(window)
-              .unbind('mousemove', drag)
-              .unbind('mouseup', dragEnd);
-          };
-
-          var touchDrag = function(e) {
-            e.preventDefault();
-            var touch = e.originalEvent.changedTouches[0];
-            drag({
-               clientX: touch.pageX,
-              clientY: touch.pageY
-            });
-            return false;
-          };
-
-          var touchEnd = function(e) {
-            e.preventDefault();
-            $(window)
-              .unbind('touchmove', touchDrag)
-              .unbind('touchend', touchEnd);
-            return false;
-          };
-
-          $(window)
-            .bind('mousedown', function(e) {
-              mouse.set(e.clientX, e.clientY);
-              line = null;
-
-              $(window)
-                .bind('mousemove', drag)
-                .bind('mouseup', dragEnd);
-            })
-            .bind('touchstart', function(e) {
-              e.preventDefault();
-              var touch = e.originalEvent.changedTouches[0];
-              mouse.set(touch.pageX, touch.pageY);
-              line = null;
-              $(window)
-                .bind('touchmove', touchDrag)
-                .bind('touchend', touchEnd);
-              return false;
-            });
-
-          two.bind('update', function(frameCount, timeDelta) {
-            two.scene.children.forEach(function(child) {
-              child.vertices.forEach(function(v) {
-                if (!v.position) {
-                  return;
-                }
-                v.x = v.position.x + (Math.random() * randomness - randomness / 2);
-                v.y = v.position.y + (Math.random() * randomness - randomness / 2);
-              });
-            });
-          });
-
-          function makePoint(x, y) {
-            if (arguments.length <= 1) {
-              y = x.y;
-              x = x.x;
-            }
-            var v = new Two.Vector(x, y);
-            v.position = new Two.Vector().copy(v);
-            return v;
-          }
-
-          function createGrid(s) {
-            var size = s || 30;
-            var two = new Two({
-              type: Two.Types.canvas,
-              width: size,
-              height: size
-            });
-
-            var a = two.makeLine(two.width / 2, 0, two.width / 2, two.height);
-            var b = two.makeLine(0, two.height / 2, two.width, two.height / 2);
-            a.stroke = b.stroke = '#6dcff6';
-
-            two.update();
-
-            $(document.body).css({
-              background: 'url(' + two.renderer.domElement.toDataURL('image/png') + ') 0 0 repeat',
-              backgroundSize: size + 'px ' + size + 'px'
-            });
-
-          }
-
-        });
-
-      </script>
-</div>
+<body style="overflow-x: hidden;">
+<button onclick="nav.toggle(event)">Toggle Left</button>
+<button onclick="nav2.toggle(event)" style="float: right">Toggle Right</button>
+<nav id="left">
+    <button onclick="nav.toggle(event)">Toggle</button>
+</nav>
+<nav id="right">
+    <button onclick="nav2.toggle(event)">Toggle</button>
+</nav>
+<script type="text/javascript">
+    var leftElement = document.querySelector('nav#left');
+    var rightElement = document.querySelector('nav#right');
+    var nav = new SideNav(leftElement);
+    var nav2 = new SideNav(rightElement);
+    nav2.options = {
+        'open': true,
+        'position': 'right'
+    };
+</script>
 </body>
 </html>
