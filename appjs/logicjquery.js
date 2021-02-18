@@ -1,13 +1,4 @@
-function openit(id) {
-    var ids = ['#mulsolwithsteps', '#table', '#shapescal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph"]
-    for (i = 0; i < ids.length; i++) {
-        if (ids[i] != id) {
-            $(ids[i]).slideUp();
-        } else {
-            $(String(id)).slideToggle();
-        }
-    }
-}
+
 
 function cleardiv(arrayofclearids) {
     for (parameterarray of arrayofclearids) {

@@ -76,7 +76,6 @@ function sendtomatrix1() {
     }
 }
 
-
 function displaymatrix(val, ar, elid, m, n) {
     temp = val + '\\\\'
     temp += '\\begin{bmatrix}'
@@ -94,20 +93,10 @@ function displaymatrix(val, ar, elid, m, n) {
     });
 }
 
-
 function signofmatrix(value) {
     var el = document.getElementById('signofmatrix');
     el.innerHTML = value;
     clearfields();
-}
-
-function removeall(elid) {
-    if (document.getElementById(elid).innerHTML != '') {
-        var r = document.getElementById(elid);
-        while (r.firstChild) {
-            r.removeChild(r.lastChild);
-        }
-    }
 }
 
 function sumofmatrix() {

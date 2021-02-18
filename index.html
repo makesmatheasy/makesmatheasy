@@ -44,11 +44,10 @@
         }
 
         ​
-        /*st {*/
-        /*    border: 2px dotted black;*/
-        /*    padding: 5px;*/
-        /*}*/
-
+            /*st {*/
+            /*    border: 2px dotted black;*/
+            /*    padding: 5px;*/
+            /*}*/
         lc {
             padding-left: 0;
             border-bottom: 4px solid white;
@@ -184,11 +183,12 @@
                                                                                                 style="height:25px;"></span>
             </li>
             <li><a id="plotgraphoption"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Plot Graph</a><span
+                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
+                Graph</a><span
                     style="display:inline;float:right;"
                     onclick="addtofavourite('Plot Graph','#plotgraph','c','plotimgfav')"><img id="plotimgfav"
-                                                                                                src="images/unfavourite.png"
-                                                                                                style="height:25px;"></span>
+                                                                                              src="images/unfavourite.png"
+                                                                                              style="height:25px;"></span>
             </li>
             <li><a data-toggle="modal" data-target="#roman"
                    style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
@@ -225,8 +225,9 @@
                                     onclick="addtofavourite('Multiply with Steps','#mulsolwithsteps','c','mulsolimgfav')"><img
                     src="images/unfavourite.png" id='mulsolimgfav' style="height:25px;"></span></li>
             <li><a id="rootsquadraticbtn"
-                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of Equation</a><span style="display:inline;float:right;"
-                                            onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
+                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of
+                Equation</a><span style="display:inline;float:right;"
+                                  onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
                     id="rootsquadraticeqimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
             <div class="dropdown-divider"></div>
         </div>
@@ -319,9 +320,9 @@
 
                 <div class="form-group">
                     <p id="divisibilitycheckresult" class="stopwrap"
-                         style="font-family:mathfont;font-size:30px;"></p>
+                       style="font-family:mathfont;font-size:30px;"></p>
                     <p id="divisibilitycheckresultexplanation" class="stopwrap"
-                         style="font-family:mathfont;font-size:20px;"></p>
+                       style="font-family:mathfont;font-size:20px;"></p>
                 </div>
 
                 <button class="btn btn-outline-light" id="showcheckdivisibilitysteps"
@@ -576,7 +577,9 @@
                            oninput="dinvlap()">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="plotit('inputinverselaplace','inverselaplaceplot',sinvlap());">Solve</button>
+                    <button type="button" class="btn btn-light"
+                            onclick="plotit('inputinverselaplace','inverselaplaceplot',sinvlap());">Solve
+                    </button>
                     <button type="button" id="solveinverselaplaceid" class="btn btn-outline-light"
                             onclick="solveinverselaplace()">Show Steps
                     </button>
@@ -699,9 +702,12 @@
                 <div class="col-6">
                     <p class="text-center">Fill atleast any of Two</p>
                     <br>
-                    <input style="font-size:20px;" type="number" id="p" class="form__field" placeholder="Perpendicular" oninput="solvesimpletrigo();checkforusetrigovalue();">
-                    <input style="font-size:20px;" type="number" id="b" class="form__field" placeholder="Base" oninput="solvesimpletrigo();checkforusetrigovalue();">
-                    <input style="font-size:20px;" type="number" id="h" class="form__field" placeholder="Hypotenuse" oninput="solvesimpletrigo();checkforusetrigovalue();">
+                    <input style="font-size:20px;" type="number" id="p" class="form__field" placeholder="Perpendicular"
+                           oninput="solvesimpletrigo();checkforusetrigovalue();">
+                    <input style="font-size:20px;" type="number" id="b" class="form__field" placeholder="Base"
+                           oninput="solvesimpletrigo();checkforusetrigovalue();">
+                    <input style="font-size:20px;" type="number" id="h" class="form__field" placeholder="Hypotenuse"
+                           oninput="solvesimpletrigo();checkforusetrigovalue();">
                 </div>
                 <div class="col-6">
                     <img src="images/righttriangle.png" style="height:200px">
@@ -742,12 +748,13 @@
                 <p id="quadraticequation">\[f(x)=ax^2+bx+c\]</p>
                 <div class="form-group text-center">
                     <button class="btn btn-outline-light" data-toggle="modal" data-target="#rootsrules">Rules</button>
-                    <div class="modal fade" id="rootsrules" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal fade" id="rootsrules" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Rules for Roots of Quadratic Equation</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                            style="outline: none;">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -812,16 +819,21 @@
             </form>
 
             <div class="form-group">
-                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;" class="stopwrap" align="right"></p>
+                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;"
+                   class="stopwrap" align="right"></p>
             </div>
 
         </div>
         <div class="collapse" id="plotgraph">
             <div class="form-group">
-                <input type="text" id="inputplotequation" class="form__field" placeholder="Enter Equation" oninput="dploteq();document.getElementById('plotequationresult').innerHTML=''">
+                <input type="text" id="inputplotequation" class="form__field" placeholder="Enter Equation"
+                       oninput="dploteq();document.getElementById('plotequationresult').innerHTML=''">
             </div>
             <div class="form-group">
-                <button class="btn btn-light" type="button" onclick="plotit('inputplotequation','plotequationresult',nerdamer(document.getElementById('inputplotequation').value).evaluate().toString());">Plot</button>
+                <button class="btn btn-light" type="button"
+                        onclick="plotit('inputplotequation','plotequationresult',nerdamer(document.getElementById('inputplotequation').value).evaluate().toString());">
+                    Plot
+                </button>
             </div>
             <div class="form-group">
                 <p id="plotgrapheqdisplay"></p>
@@ -910,7 +922,8 @@
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
             <div class="bodyof">
                 <form class="calculator" name="calc">
-                    <input type="tel" class="value" id="txt" style="overflow-y:hidden;" oninput="calsol(this.value);chh(this.value)">
+                    <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
+                           oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
                     <span onclick="more()">More</span>
@@ -1248,7 +1261,8 @@
                     </div>
                     <div class="dropdown-divider"></div>
                     <div class="form-group">
-                        <input type="number" id="equilateraltriangleside" class="form__field" placeholder="Enter Side" oninput="equilateraltrianglearea();">
+                        <input type="number" id="equilateraltriangleside" class="form__field" placeholder="Enter Side"
+                               oninput="equilateraltrianglearea();">
                     </div>
                     <div class="form-group">
                         <p class="stopwrap" id="equilateraltrianglearea"></p>
@@ -1563,35 +1577,18 @@
 
 <!--script files-->
 <script src="js/jquery.min.js"></script>
-
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
+<script src="appjs/index.js"></script>
 <script>
     setTimeout(function () {
-        var sc=document.createElement('script');
-        sc.src="js/math.min.js";
-        document.getElementsByTagName("body")[0].appendChild(sc);
-        var sc2=document.createElement('script');
-        sc2.src="js/plotly-1.35.2.min.js";
-        document.getElementsByTagName("body")[0].appendChild(sc2);
-    },3000);
-</script>
-
-
-<script src="appjs/logicjquery.js"></script>
-<script src="appjs/logicjavascript.js"></script>
-<!--<script>-->
-<!--    $(document).ready(function () {-->
-<!--        $('i').click(function () {-->
-<!--            $('ul').toggleClass('ul_show');-->
-<!--            $('section').toggleClass('slide_image');-->
-<!--        });-->
-<!--    });-->
-
-<!--</script>-->
-<script>
+        loadfilesafterload();
+    }, 1000);
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
         console.log("Mobile")
@@ -1599,25 +1596,12 @@
         console.log("Desktop")
     }
 </script>
-<script src='appjs/displaymath.js'></script>
-<script src="appjs/simplecallogic.js"></script>
-<script src="appjs/matrixlogic.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-</script>
-<!--script files-->
 
 <script src="nerdamer/nerdamer.core.js"></script>
-<!-- assuming you've saved the file in the root of course -->
-<!-- LOAD ADD-ONS -->
 <script src="nerdamer/Algebra.js"></script>
 <script src="nerdamer/Calculus.js"></script>
 <script src="nerdamer/Solve.js"></script>
-<script src="nerdamer/Extra.js"></script> <!-- again assuming you've saved the files in root -->
-<script src="appjs/searchbar.js"></script>
-<script src="appjs/speechrecoforall.js"></script>
+<script src="nerdamer/Extra.js"></script>
 
 </body>
 </html>

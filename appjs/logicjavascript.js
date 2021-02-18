@@ -467,28 +467,20 @@ function equilateraltrianglearea(){
 function printmorefactors(input, output) {
     document.getElementById(output).textContent = "";
     var ar = [];
-    var ll = document.getElementById(input).value;
-    if (ll.includes(" ")) {
-        ll = ll.split(" ")
-        for (kj of ll) {
-            ar.push(kj)
-        }
-        ar = ar.filter(function (str) {
-            return /\S/.test(str);
-        });
-    } else {
-        ar.push(parseInt(document.getElementById(input).value));
-    }
+    var val = document.getElementById(input).value;
+    val =val.replace(/\s+$/, '');  //right trim
+    val = val.replace(/^\s+/, '');  //left trim
+    val = val.split(" ");
+    ar=val;
     var temp = "";
     document.getElementById(output).innerHTML = "\\[Prime \\space Factors \\space of \\space\\]";
-    for (jk of ar) {
-        var nnuumm2 = jk;
-        var getnu = "\\[" + nnuumm2 + "\\space : \\space";
+    for (num of ar) {
+        var getnu = "\\[" + num + "\\space : \\space";
         var i;
-        for (i = 2; i <= nnuumm2; i++) {
-            while ((nnuumm2 % i) == 0) {
+        for (i = 2; i <= num; i++) {
+            while ((num % i) == 0) {
                 temp += i + ",";
-                nnuumm2 = nnuumm2 / i;
+                num = num / i;
             }
         }
         temp = temp.slice(0, -1);
@@ -497,50 +489,6 @@ function printmorefactors(input, output) {
         temp = "";
     }
     renderMathInElement(document.getElementById(output));
-}
-
-function printmorefactorshcf(input, output) {
-    document.getElementById(output).textContent = "";
-    var ar = [];
-    var ll = document.getElementById(input).value;
-    if (ll.includes(" ")) {
-        ll = ll.split(" ")
-        for (kj of ll) {
-            ar.push(kj)
-        }
-        ar = ar.filter(function (str) {
-            return /\S/.test(str);
-        });
-    } else {
-        ar.push(parseInt(document.getElementById(input).value));
-    }
-    var temp = "";
-    document.getElementById(output).innerHTML = "\\[Prime \\space Factors \\space of \\space\\]";
-    var factorarray = [];
-    var j = 0;
-    for (jk of ar) {
-        factorarray[j] = [];
-        factorarray[j][0] = 1;
-        var index = 1;
-        var nnuumm2 = jk;
-        var getnu = "\\[" + nnuumm2 + "\\space : \\space";
-        temp += "1,";
-        for (i = 2; i <= nnuumm2; i++) {
-            while ((nnuumm2 % i) == 0) {
-                factorarray[j][index] = i;
-                index++;
-                temp += i + ",";
-                nnuumm2 = nnuumm2 / i;
-            }
-        }
-        temp = temp.slice(0, -1);
-        document.getElementById(output).innerHTML += getnu + temp + "\\]";
-        j++;
-        temp += "<br>"
-        temp = "";
-    }
-    renderMathInElement(document.getElementById(output));
-    return factorarray;
 }
 
 function findduplicatesforhcf(array) {
@@ -583,71 +531,68 @@ function findduplicatesforhcf(array) {
 
 <!--        hcf start-->
 function hcf(input) {
-    var arrayoffactors = printmorefactorshcf(input, 'hcfprimefactor');
+    var ar = [];
+    var val = document.getElementById(input).value;
+    val =val.replace(/\s+$/, '');  //right trim
+    val = val.replace(/^\s+/, '');  //left trim
+    val=val.split(" ");
+    ar=val;
+
+    document.getElementById("hcfprimefactor").textContent = "";
+    var temp = "";
+    document.getElementById("hcfprimefactor").innerHTML = "\\[Prime \\space Factors \\space of \\space\\]";
+    var factorarray = [];
+    var j = 0;
+    for (num of ar) {
+        factorarray[j] = [];
+        factorarray[j][0] = 1;
+        var index = 1;
+        var getnu = "\\[" + num + "\\space : \\space";
+        temp += "1,";
+        for (i = 2; i <= num; i++) {
+            while ((num % i) == 0) {
+                factorarray[j][index] = i;
+                index++;
+                temp += i + ",";
+                num = num / i;
+            }
+        }
+        temp = temp.slice(0, -1);
+        document.getElementById("hcfprimefactor").innerHTML += getnu + temp + "\\]";
+        j++;
+        temp += "<br>"
+        temp = "";
+    }
+
+    var arrayoffactors = factorarray;
     var dup = findduplicatesforhcf(arrayoffactors);
     var hfac = '';
+    var hcfans=1;
     for (i of dup) {
         if (i != 0) {
+            hcfans*=parseInt(i);
             hfac += i + ',';
         }
     }
     hfac = hfac.slice(0, -1);
-    var ar = [];
-    var ll = document.getElementById(input).value;
-    ll = ll.replace(/\s+$/, '');  //right trim
-    ll = ll.replace(/^\s+/, '');  //left trim
-    if (ll.includes(" ")) {
-        ll = ll.split(" ")
-        var flag = 0;
-        for (kj of ll) {
-            ar.push(parseInt(kj));
-        }
-        ar = ar.filter(function (str) {
-            return /\S/.test(str);
-        });
-    } else {
-        flag = 1;
-        ar.push(parseInt(document.getElementById(input).value));
-    }
-    input = ar;
-    if (toString.call(input) !== "[object Array]")
-        return false;
-    var len, a, b;
-    len = input.length;
-    if (!len) {
-        return null;
-    }
-    a = input[0];
-    for (var i = 1; i < len; i++) {
-        b = input[i];
-        a = gcd_two_numbers(a, b);
-    }
+    var flag=0;
+    if(ar.length==1)
+        flag=1;
+
     if (flag == 1) {
-        document.getElementById("resulthcf").innerHTML = "\\[ HCF \\space is \\space " + a + " \\]";
+        document.getElementById("resulthcf").innerHTML = "\\[ HCF \\space is \\space " + hcfans + " \\]";
         renderMathInElement(document.getElementById('resulthcf'));
     } else {
-        var hcffac = printhcffactor(a, 'resulthcf');
+        var hcffac = printhcffactor(ar, 'resulthcf');
         document.getElementById("resulthcf").innerHTML = "\\[" + hfac + "\\space are \\space in \\space Common.\\] \\[Therefore,";
-        document.getElementById("resulthcf").innerHTML += "\\space HCF \\space is \\space " + a + "\\]";
+        document.getElementById("resulthcf").innerHTML += "\\space HCF \\space is \\space " + hcfans + "\\]";
         renderMathInElement(document.getElementById('resulthcf'));
     }
-    if (ll == null || ll == '') {
+    if (val == null || val == '') {
         document.getElementById('resulthcf').innerHTML = "";
         document.getElementById('hcfprimefactor').innerHTML = "";
     }
-}
-
-function gcd_two_numbers(x, y) {
-    if ((typeof x !== 'number') || (typeof y !== 'number'))
-        return false;
-    x = Math.abs(x);
-    y = Math.abs(y);
-    while (y) {
-        var t = y;
-        y = x % y;
-        x = t;
-    }
-    return x;
+    renderMathInElement(document.getElementById("hcfprimefactor"));
 }
 
 <!--hcf end-->
@@ -683,15 +628,6 @@ function solveintegralwithoutsteps() {
 
 }
 
-//        function mathrender(input,output){
-//                    MathJax.Hub.processSectionDelay = 0
-//                    var Render = document.getElementById(output)
-//                    var inp=document.getElementById(input).value;
-//                    var mmaath = MathJax.Hub.getAllJax('Render')[0]
-//                    demoSour=inp
-//                    alert(demoSour)
-//                    MathJax.Hub.Typeset(['Text',mmaath,demoSour])
-//                  }
 var intsol = "";
 
 function findintesol(input, output) {
@@ -1118,126 +1054,6 @@ function divisionwithsteps() {
             bufferVar = tmpVar + (dividend.toString())[currentStep];
         }
     }
-}
-
-function keyboard(field) {
-    var field = document.getElementById(field);
-}
-
-function bodyload() {
-    var ar = JSON.parse(localStorage.getItem('favouritearray'));
-    var oid = JSON.parse(localStorage.getItem('openingidarray'));
-    var tp = JSON.parse(localStorage.getItem('typearray'));
-    var imgar = JSON.parse(localStorage.getItem('imgarray'));
-    var favar = JSON.parse(localStorage.getItem('favarray'));
-    if (oid != null) {
-        for (i = 0; i < ar.length; i++) {
-            favouritearray[i] = ar[i]
-            openingid[i] = oid[i];
-            typearray[i] = tp[i];
-            imgarray[i] = imgar[i];
-            favarray[i] = favar[i];
-        }
-        checkfavourite()
-    }
-
-}
-
-var favouritearray = [];
-var openingid = [];
-var typearray = [];
-var imgarray = [];
-var favarray = [];
-
-function addtofavourite(btnid, openid, type, img) {
-    var ar = JSON.parse(localStorage.getItem('favouritearray'))
-    var oid = JSON.parse(localStorage.getItem('openingidarray'))
-    var imgar = JSON.parse(localStorage.getItem('imgarray'))
-    var favar = JSON.parse(localStorage.getItem('favarray'))
-    var flag = 0;
-    if (oid != null) {
-        for (i = 0; i < oid.length; i++) {
-            if (openid == oid[i]) {
-                flag = 1;
-            }
-        }
-    }
-    if (flag == 0) {
-        favouritearray.push(btnid)
-        openingid.push(openid)
-        typearray.push(type)
-        imgarray.push(img)
-        favarray.push('images/favourite.png')
-        localStorage.setItem("favouritearray", JSON.stringify(favouritearray));
-        localStorage.setItem("openingidarray", JSON.stringify(openingid));
-        localStorage.setItem("typearray", JSON.stringify(typearray));
-        localStorage.setItem("imgarray", JSON.stringify(imgarray));
-        localStorage.setItem("favarray", JSON.stringify(favarray));
-        checkfavourite()
-    }
-    if (flag == 1) {
-        var index = oid.indexOf(openid);
-        if (index > -1) {
-            document.getElementById(imgarray[index]).src = 'images/unfavourite.png';
-            openingid.splice(index, 1);
-            favouritearray.splice(index, 1);
-            typearray.splice(index, 1);
-            imgarray.splice(index, 1);
-            favarray.splice(index, 1);
-        }
-        localStorage.setItem("favouritearray", JSON.stringify(favouritearray));
-        localStorage.setItem("openingidarray", JSON.stringify(openingid));
-        localStorage.setItem("typearray", JSON.stringify(typearray));
-        localStorage.setItem("imgarray", JSON.stringify(imgarray));
-        localStorage.setItem("favarray", JSON.stringify(favarray));
-        checkfavourite()
-    }
-}
-
-function checkfavourite() {
-    removeall('favourite')
-    var ar = JSON.parse(localStorage.getItem('favouritearray'))
-    var oid = JSON.parse(localStorage.getItem('openingidarray'))
-    var tp = JSON.parse(localStorage.getItem('typearray'))
-    var imgar = JSON.parse(localStorage.getItem('imgarray'))
-    var favar = JSON.parse(localStorage.getItem('favarray'))
-    if (ar.length == 0) {
-        $('#favourite').removeClass('headingdiv')
-    } else {
-        $('#favourite').addClass('headingdiv')
-    }
-    if (ar.length != 0) {
-        for (i = 0; i < ar.length; i++) {
-            var el = document.createElement('span');
-            el.textContent = ar[i];
-            el.className = 'headingdivinner';
-            el.style.color = 'white';
-            var idf = oid[i];
-            if (tp[i] == 'c') {
-                el.setAttribute('onclick', 'openit("' + String(idf) + '")')
-            } else {
-                el.setAttribute('data-toggle', "modal")
-                el.setAttribute('data-target', idf)
-            }
-
-            document.getElementById('favourite').appendChild(el)
-            document.getElementById(imgar[i]).src = favar[i];
-        }
-    }
-}
-
-function removefavourite() {
-    localStorage.removeItem('favouritearray')
-    localStorage.removeItem('openingidarray')
-    localStorage.removeItem('imgarray')
-    localStorage.removeItem('favarray')
-    localStorage.removeItem('typearray');
-    $('#favourite').removeClass('headingdiv');
-    checkfavourite();
-}
-
-function collapseit(openit) {
-    $(String('#' + openit)).slideToggle();
 }
 
 function searchgoogle(value) {
