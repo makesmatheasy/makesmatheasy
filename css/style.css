@@ -1,28 +1,31 @@
 :root {
     --apppink: rgb(255, 136, 231);
+    --appblack:#232a36;
 }
-
 @font-face {
-    font-family: myfont;
-    src: url(../fonts/JosefinSans-SemiBold.ttf) format('truetype');
+    font-family: mainfont;
+    src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: mainfontbold;
+    src: url(../fonts/Product_Sans_Bold.ttf) format('truetype');
 }
 @font-face {
     font-family: mathfont;
     src: url(../fonts/BalsamiqSans-Regular.ttf) format('truetype');
 }
 
-/*@font-face {*/
-/*    font-family: mathfont;*/
-/*    src: url(../fonts/Grandstander-Regular.ttf) format('truetype');*/
-/*}*/
-
 body {
-    background: #232a36;
-    font-family: 'myfont';
+    background-color: var(--appblack);
+    font-family:mainfont;
+    overflow-x: hidden;
 }
-
+html{
+    overflow-x: hidden;
+}
 p {
     color: white;
+    font-size: 20px;
 }
 
 .readonlybody {
@@ -36,11 +39,6 @@ p {
     position: relative !important;
 }
 
-.form-control {
-    border-radius: 100px !important;
-    font-size: 20px;
-    font-family: mathfont;
-}
 
 .btn {
     border-radius: 100px !important;
@@ -58,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #343a40;
 }
 .modal-body{
-    background:#232a36;
+    background:var(--appblack);
 }
 
 .ulstyle {
@@ -67,21 +65,18 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     padding: 0 !important;
     height: 100%;
-    background: #232a36 !important;
+    background: var(--appblack);
 }
 
 .ulstyle li {
     list-style-type: none;
-    background: #232a36;
     padding: 10px !important;
-}
-
-.ulstyle li:hover {
-    background: #232a32;
 }
 
 .ulstyle li a {
     color: white !important;
+    font-family: mathfont;
+    letter-spacing: 1px;
 }
 
 .stopwrap {
@@ -95,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 .carddis {
     width: 100%;
     background: white;
-    color: black;
+    color: var(--appblack);
     border-radius: 40px;
     outline: none !important;
     padding: 15px;
@@ -116,13 +111,10 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: auto;
     margin: 5px;
     padding: 15px;
-    border-left: 2px solid white;
-    border-right:2px solid white;
+    /*border-left: 2px solid white;*/
+    /*border-right:2px solid white;*/
     border-bottom:2px solid white;
-    /*border: 1px solid white;*/
-    /*border-bottom: 0.2rem double var(--apppink);*/
     border-radius: 30px;
-    /*padding-left: 20px;*/
 }
 
 .headingdivinner:hover{
@@ -148,33 +140,19 @@ h1, h2, h3, h4, h5, h6 {
     border-top: none !important;
 }
 
-.form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
-}
 
 .form__field {
-    font-family: mathfont;
+    font-family: mainfont;
+    font-size: 20px !important;
+    letter-spacing: 2px;
     width: 100%;
     border: 0;
     border-bottom: 1px solid white;
     outline: 0;
-    font-size: 1.3rem;
     color: white;
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
-}
-
-.form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: white;
 }
 
 .bi {
@@ -187,5 +165,13 @@ h1, h2, h3, h4, h5, h6 {
     filter: invert(100%);
 }
 .katex{
-    font-size: 25px !important;
+    font-size: 20px !important;
+}
+#numberfact{
+    font-family: mainfont;
+    letter-spacing: 2px;
+    font-size: 15px;
+    text-align: center !important;
+    margin-top: auto;
+    margin-bottom: auto;
 }

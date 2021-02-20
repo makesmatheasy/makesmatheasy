@@ -229,6 +229,11 @@
                 Equation</a><span style="display:inline;float:right;"
                                   onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
                     id="rootsquadraticeqimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
+            <li><a id="roundoffbtn"
+                   style="display:inline; font-size:15px;cursor: pointer;background:transparent;border:none;">Roundoff</a><span
+                    style="display:inline;float:right;"
+                    onclick="addtofavourite('Roundoff','#roundoff','c','roundoffimgfav')"><img
+                    id="roundoffimgfav" src="images/unfavourite.png" style="height:25px;"></span></li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -273,13 +278,22 @@
     </div>
 
     <div class="container">
-
         <!--    start home-->
         <div id="homecollapse" style="z-index:11;position:relative;">
-            <br>
-            <ol id="favourite" style="list-style:none" class="slide-in-elliptic-left-fwd"></ol>
-            <!--            <a class="step-wp whatsapp sharing" data-action="share/whatsapp/share" href="whatsapp://send?text=hjhh">ghg</a>-->
+            <div class="form-group text-center">
+                <table style="margin-left: auto;margin-right: auto;">
+                    <tr>
+                        <td><p id="numberfact" style="display: inline-block;"></p></td>
+                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg" alt="refresh" style="height: 20px;filter:invert(100%);padding-left: 20px;"></td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
+        <div class="form-group">
+            <ol id="favourite" style="list-style:none" class="slide-in-elliptic-left-fwd"></ol>
+        </div>
+
         <!--    end home-->
         <br>
         <div class="collapse" id="divide">
@@ -287,17 +301,17 @@
             <div class="form-group">
                 <form class="form-inline">
                     <input type="number" id="divisornumwith" class="form__field"
-                           style="width:70px;border-bottom:6px solid var(--apppink);;font-size:20px">
+                           style="width:70px;border-bottom:6px solid var(--apppink);;">
                     <input type="number" id="dividendnum" class="form__field"
-                           style="width:120px;border-left:6px solid var(--apppink);;font-size:20px;border-top:6px solid var(--apppink);;">
+                           style="width:120px;border-left:6px solid var(--apppink);;;border-top:6px solid var(--apppink);;">
                     <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
                 </form>
                 <br>
                 <div class="col-3">
-                    <p id="resultofdivsteps" style="font-size:30px;"></p>
+                    <p id="resultofdivsteps" style=";"></p>
                 </div>
                 <p id="resultdivi" class="stopwrap"
-                   style="font-family:mathfont;font-size:30px;"></p>
+                   style="font-family:mathfont;;"></p>
             </div>
             <!--            -->
 
@@ -307,22 +321,22 @@
             <div id="checkdivisibility">
                 <form class="form-inline">
                     <div class="form-group">
-                        <label style="display:inline-block;font-family:mathfont;font-size:20px">Is&nbsp;</label>
+                        <label style="display:inline-block;font-family:mathfont;">Is&nbsp;</label>
                         <input type="number" id="n1" class="form__field"
-                               style="font-size:20px;display:inline-block;width:20%">
-                        <label style="font-family:mathfont;font-size:20px">&nbsp;divisible by&nbsp;</label>
+                               style=";display:inline-block;width:20%">
+                        <label style="font-family:mathfont;">&nbsp;divisible by&nbsp;</label>
                         <input type="number" id="n2" class="form__field"
-                               style="font-size:20px;display:inline-block;width:20%">
-                        <label style="display:inline-block;font-family:mathfont;font-size:20px">&nbsp;?&nbsp;</label>
+                               style=";display:inline-block;width:20%">
+                        <label style="display:inline-block;font-family:mathfont;">&nbsp;?&nbsp;</label>
                         <button type="button" class="btn btn-light" onclick="checkdivisibility()">Check</button>
                     </div>
                 </form>
 
                 <div class="form-group">
                     <p id="divisibilitycheckresult" class="stopwrap"
-                       style="font-family:mathfont;font-size:30px;"></p>
+                       style="font-family:mathfont;;"></p>
                     <p id="divisibilitycheckresultexplanation" class="stopwrap"
-                       style="font-family:mathfont;font-size:20px;"></p>
+                       style="font-family:mathfont;;"></p>
                 </div>
 
                 <button class="btn btn-outline-light" id="showcheckdivisibilitysteps"
@@ -334,15 +348,15 @@
             <div>
                 <form class="form-inline">
                     <input value="t" type="text" id="withvardivi" class="form__field"
-                           style="font-size:20px;width:70px;border-bottom:6px solid black;">
+                           style=";width:70px;border-bottom:6px solid black;">
                     <input value="2t^2-3t" type="text" id="numvardivi" class="form__field"
-                           style="font-size:20px;width:120px;border-left:6px solid black;border-top:6px solid black;">
+                           style=";width:120px;border-left:6px solid black;border-top:6px solid black;">
                     <button type="button" id="variabledividebtn" class="btn btn-light">Solve</button>
 
                 </form>
             </div>
             <div class="row">
-                <p id="resultofvariabledivide" style="font-family:mathfont;font-size:30px;"></p>
+                <p id="resultofvariabledivide" style="font-family:mathfont;;"></p>
             </div>
         </div>
         <!--        start factors-->
@@ -365,46 +379,46 @@
             </div>
 
             <!--            prime factors with steps-->
-            <p id="dividefactor" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
-            <p id="dividefactorresult" style="display:inline-block;font-size:30px;font-family:mathfont;"></p>
-            <p id="factorresult" class="stopwrap" style="display:block;font-size:30px;font-family:mathfont;"></p>
+            <p id="dividefactor" style="display:inline-block;;font-family:mathfont;"></p>
+            <p id="dividefactorresult" style="display:inline-block;;font-family:mathfont;"></p>
+            <p id="factorresult" class="stopwrap" style="display:block;;font-family:mathfont;"></p>
             <!--            prime factors with steps-->
 
             <!--lcm result-->
             <div class="stopwrap">
                 <div class="btn-group">
                     <div class="col-sm-0" style="float:left;">
-                        <p style="font-size:30px;font-family:mathfont;display:inline-block;" id="resultfac"></p>
+                        <p style=";font-family:mathfont;display:inline-block;" id="resultfac"></p>
                     </div>
                     <div class="col-sm-0" style="padding-left:1px;float:left;">
-                        <p style="font-size:30px;font-family:mathfont;display:inline-block;" id="resultlcm"></p>
+                        <p style=";font-family:mathfont;display:inline-block;" id="resultlcm"></p>
                     </div>
                 </div>
             </div>
             <div class="row stopwrap">
-                <p id="resultlcms" style="font-size:30px;font-family:mathfont;float:left;"></p>
+                <p id="resultlcms" style=";font-family:mathfont;float:left;"></p>
             </div>
             <!--lcm result-->
-            <p id="hcfprimefactor" style="font-size:30px;font-family:mathfont" class="stopwrap"></p>
-            <p id="resulthcf" style="font-size:30px;font-family:mathfont" class="stopwrap"></p>
+            <p id="hcfprimefactor" style=";font-family:mathfont" class="stopwrap"></p>
+            <p id="resulthcf" style=";font-family:mathfont" class="stopwrap"></p>
 
         </div>
         <!--        end factors-->
 
         <div class="collapse" id="table">
             <div class="form-group" style="display: inline-block;">
-                <input type="number" id="numtable" class="form__field" style="font-size:20px;"
+                <input type="number" id="numtable" class="form__field" style=";"
                        placeholder="Enter Number">
             </div>
             <div class="form-group" style="display: inline-block;">
-                <input type="number" id="numending" style="font-size:20px;" name="ending" class="form__field"
+                <input type="number" id="numending" style=";" name="ending" class="form__field"
                        placeholder="Upto">
             </div>
 
             <div class="form-group">
                 <button type="button" onclick="printtable()" class="btn btn-light">Print</button>
             </div>
-            <p id="resulttable" style="font-family:mathfont;font-size:30px;"></p>
+            <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
 
 
@@ -458,10 +472,10 @@
                 <button type="button" class="btn btn-outline-light" id="diffsolvebutton">Show Steps</button>
             </div>
             <div class="form-group">
-                <p style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
+                <p style=";overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
             </div>
             <div class="form-group">
-                <p style="font-size:20px" id="diffplot"></p>
+                <p style="" id="diffplot"></p>
             </div>
 
         </div>
@@ -475,7 +489,7 @@
                 <button type="button" id="solvepardiff" class="btn btn-light">Solve</button>
             </div>
             <div class="form-group">
-                <p style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
+                <p style=";overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
             </div>
         </div>
         <div class="collapse" id="integralcollapse">
@@ -509,10 +523,10 @@
 
             <div class="form-group">
                 <div class="collapse" id="collapselimit">
-                    <input type="text" id="upperlimit" placeholder="Upper Limit" style="font-size:20px;"
+                    <input type="text" id="upperlimit" placeholder="Upper Limit" style=";"
                            class="form__field"
                            style="display:inline;width:30%" oninput='dint()'>
-                    <input type="text" id="lowerlimit" placeholder="Lower Limit" style="font-size:20px;"
+                    <input type="text" id="lowerlimit" placeholder="Lower Limit" style=";"
                            class="form__field"
                            style="display:inline;width:30%" oninput='dint()'>
                 </div>
@@ -527,10 +541,10 @@
                 </button>
             </div>
             <div class="form-group">
-                <p id="resultintegration" style="font-size:30px;overflow-x:scroll;overflow-y:hidden;height:100%"></p>
+                <p id="resultintegration" style=";overflow-x:scroll;overflow-y:hidden;height:100%"></p>
             </div>
             <div class="form-group">
-                <p style="font-size:20px;" id="integralplot"></p>
+                <p style=";" id="integralplot"></p>
             </div>
 
 
@@ -538,12 +552,12 @@
         <div class="collapse" id="laplacecollapse">
             <div class="form-group">
                 <div class="text-center"><label>Laplace Transform</label></div>
-                <p class="text-center" style="font-size:20px;">
+                <p class="text-center" style=";">
                     \[F(s)=\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st} f(t).dt\]
                 </p>
 
                 <div style="display: inline-block;" class="form-group">
-                    <label for="inputlaplace" style="font-size:20px">\[f(t)=\]</label>
+                    <label for="inputlaplace" style="">\[f(t)=\]</label>
                 </div>
                 <div style="display: inline-block;" class="form-group">
                     <input type="text" id="inputlaplace" placeholder="Enter Function" class="form__field"
@@ -558,19 +572,19 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <p id="resultlaplace" style="font-size:30px"></p>
+                    <p id="resultlaplace" style=""></p>
                 </div>
                 <div class="form-group">
-                    <p id="laplaceplot" style="font-size:20px"></p>
+                    <p id="laplaceplot" style=""></p>
                 </div>
             </div>
             <div class="dropdown-divider"></div>
             <div class="form-group">
                 <div class="text-center"><label>Inverse Laplace Transform</label></div>
-                <p class="text-center" style="font-size:20px;">\[\mathcal{L}^{−1}(F(s))\]</p>
+                <p class="text-center" style=";">\[\mathcal{L}^{−1}(F(s))\]</p>
 
                 <div style="display: inline-block;" class="form-group">
-                    <label for="inputinverselaplace" style="font-size:20px">\[F(s)=\]</label>
+                    <label for="inputinverselaplace" style="">\[F(s)=\]</label>
                 </div>
                 <div style="display: inline-block;" class="form-group">
                     <input type="text" id="inputinverselaplace" placeholder="Enter Function" class="form__field"
@@ -585,10 +599,10 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <p id="resultinverselaplace" style="font-size:20px"></p>
+                    <p id="resultinverselaplace" style=""></p>
                 </div>
                 <div class="form-group">
-                    <p id="inverselaplaceplot" style="font-size:20px"></p>
+                    <p id="inverselaplaceplot" style=""></p>
                 </div>
             </div>
         </div>
@@ -611,10 +625,10 @@
         <div class="collapse" id="singlematrixcollapse">
             <div class="form-group" style="display:inline-block">
                 <input type="number" id="srow1" class="form__field" placeholder="m"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
-                <label style="font-size:30px;">&times;</label>
+                       style=";width:70px;display:inline;" oninput="checkfunctions()">
+                <label style=";">&times;</label>
                 <input type="number" id="scolumn1" class="form__field" placeholder="n"
-                       style="font-size:20px;width:70px;display:inline;" oninput="checkfunctions()">
+                       style=";width:70px;display:inline;" oninput="checkfunctions()">
             </div>
             <div class="form-group">
                 <select id="sopval" class="btn btn-outline-light" onmousedown="this.value=''">
@@ -631,11 +645,11 @@
                 </button>
             </div>
             <div class="form-group text-center">
-                <p class="stopwrap" style="font-size:20px;color:white;" id="singlematrixresult"></p>
+                <p class="stopwrap" style=";color:white;" id="singlematrixresult"></p>
             </div>
             <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
             <div class="form-group">
-                <div class="stopwrap bi" style="border-radius:50px;color:black !important;font-size:20px"
+                <div class="stopwrap bi" style="border-radius:50px;color:black !important;"
                      id="singlematrixexplanation"></div>
             </div>
 
@@ -646,18 +660,18 @@
                 <div style="display:inline-block">
                     <span style="color:var(--apppink);">Matrix 1</span><br>
                     <input type="number" id="row1" class="form__field" placeholder="m"
-                           style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-                    <label style="font-size:30px;">&times;</label>
+                           style=";width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                    <label style=";">&times;</label>
                     <input type="number" id="column1" class="form__field" placeholder="n"
-                           style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                           style=";width:70px;display:inline;" oninput="checkfunctionsmultiple()">
                 </div>
                 <div style="display:inline-block" style="color:var(--apppink);">
                     <span style="color:var(--apppink);">Matrix 2</span><br>
                     <input type="number" id="row2" class="form__field" placeholder="m"
-                           style="font-size:20px;width:70px;display:inline;" oninput="checkfunctionsmultiple()">
-                    <label style="font-size:30px;">&times;</label>
+                           style=";width:70px;display:inline;" oninput="checkfunctionsmultiple()">
+                    <label style=";">&times;</label>
                     <input type="number" id="column2" class="form__field" placeholder="n"
-                           style="font-size:20px;width:70px;display:inline" oninput="checkfunctionsmultiple()">
+                           style=";width:70px;display:inline" oninput="checkfunctionsmultiple()">
                 </div>
             </div>
             <div class="form-group">
@@ -687,11 +701,11 @@
                 </button>
             </div>
             <div class="form-group text-center">
-                <p class="stopwrap" id="matrixresult" style="color:white;font-size:30px;height:auto !important;"></p>
+                <p class="stopwrap" id="matrixresult" style="color:white;;height:auto !important;"></p>
             </div>
             <div class="form-group text-center">
                 <p id="explanationmatrixresult" class="stopwrap"
-                   style="font-size:20px;font-family:mathfont;color:#232a36 !important;"></p>
+                   style="font-family:mathfont;color:var(--appblack) !important;"></p>
             </div>
 
         </div>
@@ -702,11 +716,11 @@
                 <div class="col-6">
                     <p class="text-center">Fill atleast any of Two</p>
                     <br>
-                    <input style="font-size:20px;" type="number" id="p" class="form__field" placeholder="Perpendicular"
+                    <input style=";" type="number" id="p" class="form__field" placeholder="Perpendicular"
                            oninput="solvesimpletrigo();checkforusetrigovalue();">
-                    <input style="font-size:20px;" type="number" id="b" class="form__field" placeholder="Base"
+                    <input style=";" type="number" id="b" class="form__field" placeholder="Base"
                            oninput="solvesimpletrigo();checkforusetrigovalue();">
-                    <input style="font-size:20px;" type="number" id="h" class="form__field" placeholder="Hypotenuse"
+                    <input style=";" type="number" id="h" class="form__field" placeholder="Hypotenuse"
                            oninput="solvesimpletrigo();checkforusetrigovalue();">
                 </div>
                 <div class="col-6">
@@ -714,7 +728,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <p style="font-size:20px;font-family:mathfont" class="stopwrap" id="soltri"></p>
+                <p style=";font-family:mathfont" class="stopwrap" id="soltri"></p>
             </div>
             <div class="form-group">
                 <div class="text-center collapse" id="usetrigovaluesbtn">
@@ -805,13 +819,53 @@
             </div>
 
         </div>
+
+        <div class="collapse" id="roundoff">
+            <div class="form-group">
+
+
+                <div class="form-group" style="display: inline-block;">
+                    <input type="number" id="inputroundoffinput" class="form__field" placeholder="Enter Number">
+                </div>
+                <div class="form-group" style="display: inline-block;">
+                    <div style="display: inline-block;" class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="placeofroundoffbtn"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Place of Roundoff
+                        </button>
+                        <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
+                             aria-labelledby="placeofroundoff">
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Once</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Tens</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Hundred</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Thousand</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten Thousand</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Lakh</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ten Lakh</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Crore</span>
+                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ten Crore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="roundoff('inputroundoffinput','inputroundoffoutput')">Round Off
+                </button>
+            </div>
+            <div class="form-group">
+                <p class="stopwrap" id="inputroundoffoutput"></p>
+            </div>
+        </div>
+
         <div class="collapse" id="mulsolwithsteps">
             <form class="form-inline">
                 <input type="number" id="numofmulsol" class="form__field" placeholder="Number"
-                       style="font-size:20px;display:inline;width:100px;">
-                <label style="font-size:30px;padding:0 5px 0 5px">×</label>
+                       style=";display:inline;width:100px;">
+                <label style=";padding:0 5px 0 5px">×</label>
                 <input type="number" id="numwithofmulsol" class="form__field" placeholder="Number"
-                       style="font-size:20px;display:inline;width:100px;">
+                       style=";display:inline;width:100px;">
                 <button type="button" class="btn btn-light"
                         onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
                     Solve
@@ -819,7 +873,7 @@
             </form>
 
             <div class="form-group">
-                <p id="resultmulsol" style="display:flex;font-family:mathfont;font-size:30px;width:auto;"
+                <p id="resultmulsol" style="display:flex;font-family:mathfont;;width:auto;"
                    class="stopwrap" align="right"></p>
             </div>
 
@@ -839,7 +893,7 @@
                 <p id="plotgrapheqdisplay"></p>
             </div>
             <div class="form-group">
-                <p id="plotequationresult" style="font-size:20px"></p>
+                <p id="plotequationresult" style=""></p>
             </div>
         </div>
 
@@ -1006,9 +1060,8 @@
         </div>
     </div>
 </div>
+
 <!----------------------order starts--------------------------------->
-
-
 <div class="modal fade" id="orderit" tabindex="-1" role="dialog"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -1034,8 +1087,8 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <p class="stopwrap" style="font-family:mathfont;font-size:30px;" id="orderresult"></p>
-                    <p style="font-family:mathfont;font-size:30px;" class="stopwrap" id="orderresultde"></p>
+                    <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
+                    <p style="font-family:mathfont;;" class="stopwrap" id="orderresultde"></p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -1045,7 +1098,8 @@
         </div>
     </div>
 </div>
-<!--order ends-->
+<!-----------------------order ends---------------------------------->
+
 <!--area for shapes modal-->
 <div>
     <div class="modal fade" id="square" tabindex="-1" role="dialog"
@@ -1062,14 +1116,14 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center" style="font-size:20px">Area of Square</h5>
-                                <p class="text-center" style="font-size:20px;">\[(side)^{2}\]</p>
+                                <h5 class="text-center" style="">Area of Square</h5>
+                                <p class="text-center" style=";">\[(side)^{2}\]</p>
 
-                                <h5 class="text-center" style="font-size:20px">Perimeter of Square</h5>
-                                <p class="text-center" style="font-size:20px;">\[4(side)\]</p>
+                                <h5 class="text-center" style="">Perimeter of Square</h5>
+                                <p class="text-center" style=";">\[4(side)\]</p>
 
-                                <h5 class="text-center" style="font-size:20px">Diagonal of Square</h5>
-                                <p class="text-center" style="font-size:20px;">\[d=\sqrt{2}(side)\]</p>
+                                <h5 class="text-center" style="">Diagonal of Square</h5>
+                                <p class="text-center" style=";">\[d=\sqrt{2}(side)\]</p>
                             </div>
                             <div class="col-6">
                                 <img src="images/square.png" style="height:150px" class="img-fluid">
@@ -1078,9 +1132,9 @@
 
                         <input class="form__field" type="number" placeholder="Enter Side" id="inputsqside"
                                oninput="solveareasq();solveperisq();solvediagonalsq();">
-                        <p class="stopwrap" id="resultofareasq" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofperisq" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofdiagonalsq" style="font-size:20px;font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareasq" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperisq" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalsq" style=";font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1104,25 +1158,25 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center" style="font-size:20px">Area of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[a=l \times b\]</p>
+                                <h5 class="text-center" style="">Area of Rectangle</h5>
+                                <p class="text-center" style=";">\[a=l \times b\]</p>
                                 <div class="dropdown-divider"></div>
-                                <h5 class="text-center" style="font-size:20px">Perimeter of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[p=2(l+b)\]</p>
+                                <h5 class="text-center" style="">Perimeter of Rectangle</h5>
+                                <p class="text-center" style=";">\[p=2(l+b)\]</p>
                                 <div class="dropdown-divider"></div>
-                                <h5 class="text-center" style="font-size:20px">Diagonal of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[d= \sqrt{b^2+l^2}\]</p>
+                                <h5 class="text-center" style="">Diagonal of Rectangle</h5>
+                                <p class="text-center" style=";">\[d= \sqrt{b^2+l^2}\]</p>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <img src="images/rectangle.png" class="img-fluid">
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <h5 class="text-center" style="font-size:20px">Length of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[l= \sqrt{d^2-b^2}\]</p>
+                                <h5 class="text-center" style="">Length of Rectangle</h5>
+                                <p class="text-center" style=";">\[l= \sqrt{d^2-b^2}\]</p>
                                 <div class="dropdown-divider"></div>
-                                <h5 class="text-center" style="font-size:20px">Breadth of Rectangle</h5>
-                                <p class="text-center" style="font-size:20px;">\[b= \sqrt{d^2-l^2}\]</p>
+                                <h5 class="text-center" style="">Breadth of Rectangle</h5>
+                                <p class="text-center" style=";">\[b= \sqrt{d^2-l^2}\]</p>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
@@ -1134,11 +1188,11 @@
                         <input class="form__field" type="number" placeholder="Enter Diagonal (cm)" id="inputrecdiagonal"
                                oninput="rectanglesolve()">
                         <br>
-                        <p class="stopwrap" id="resultoflengthrec" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofbreadthrec" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofarearec" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofperirec" style="font-size:20px;font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofdiagonalrec" style="font-size:20px;font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflengthrec" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofbreadthrec" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofarearec" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperirec" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalrec" style=";font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1162,22 +1216,22 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \frac{1}{2} \times b \times h\]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \frac{1}{2} \times b \times h\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
-                            <p class="text-center" style="font-size:20px;">\[P = a+b+c\]</p>
+                            <h5 class="text-center" style="">Perimeter</h5>
+                            <p class="text-center" style=";">\[P = a+b+c\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Height</h5>
-                            <p class="text-center" style="font-size:20px;">\[h = 2 \times \frac{A}{b}\]</p>
+                            <h5 class="text-center" style="">Height</h5>
+                            <p class="text-center" style=";">\[h = 2 \times \frac{A}{b}\]</p>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <img src="images/rectangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Base</h5>
-                            <p class="text-center" style="font-size:20px;">\[b = 2 \times \frac{A}{h}\]</p>
+                            <h5 class="text-center" style="">Base</h5>
+                            <p class="text-center" style=";">\[b = 2 \times \frac{A}{h}\]</p>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -1203,25 +1257,25 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \frac{1}{2} \times b \times h\]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \frac{1}{2} \times b \times h\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
-                            <p class="text-center" style="font-size:20px;">\[P = 2a+b\]</p>
+                            <h5 class="text-center" style="">Perimeter</h5>
+                            <p class="text-center" style=";">\[P = 2a+b\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side</h5>
-                            <p class="text-center" style="font-size:20px;">\[a = \frac{P}{2}- \frac{b}{2} \]</p>
+                            <h5 class="text-center" style="">Side</h5>
+                            <p class="text-center" style=";">\[a = \frac{P}{2}- \frac{b}{2} \]</p>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <img src="images/rectangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Base</h5>
-                            <p class="text-center" style="font-size:20px;">\[b = P -2a \]</p>
+                            <h5 class="text-center" style="">Base</h5>
+                            <p class="text-center" style=";">\[b = P -2a \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Height</h5>
-                            <p class="text-center" style="font-size:20px;">\[h = \sqrt{a^2 - \frac{b^2}{4}} \]</p>
+                            <h5 class="text-center" style="">Height</h5>
+                            <p class="text-center" style=";">\[h = \sqrt{a^2 - \frac{b^2}{4}} \]</p>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -1247,11 +1301,11 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \frac{\sqrt{3}}{4} a^2 \]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \frac{\sqrt{3}}{4} a^2 \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
-                            <p class="text-center" style="font-size:20px;">\[P = 3a\]</p>
+                            <h5 class="text-center" style="">Perimeter</h5>
+                            <p class="text-center" style=";">\[P = 3a\]</p>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
@@ -1292,22 +1346,22 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \frac{1}{2} \times a \times b\]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \frac{1}{2} \times a \times b\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
-                            <p class="text-center" style="font-size:20px;">\[P = a+b+ \sqrt{a^2+b^2}\]</p>
+                            <h5 class="text-center" style="">Perimeter</h5>
+                            <p class="text-center" style=";">\[P = a+b+ \sqrt{a^2+b^2}\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side</h5>
-                            <p class="text-center" style="font-size:20px;">\[a = P \frac{P-2b}{2(P-b)} \]</p>
+                            <h5 class="text-center" style="">Side</h5>
+                            <p class="text-center" style=";">\[a = P \frac{P-2b}{2(P-b)} \]</p>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <img src="images/rectangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Base</h5>
-                            <p class="text-center" style="font-size:20px;">\[b = P \frac{P-2a}{2(P-a)} \]</p>
+                            <h5 class="text-center" style="">Base</h5>
+                            <p class="text-center" style=";">\[b = P \frac{P-2a}{2(P-a)} \]</p>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -1334,14 +1388,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \pi r^2\]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \pi r^2\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Diameter</h5>
-                            <p class="text-center" style="font-size:20px;">\[d = 2r\]</p>
+                            <h5 class="text-center" style="">Diameter</h5>
+                            <p class="text-center" style=";">\[d = 2r\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Circumference</h5>
-                            <p class="text-center" style="font-size:20px;">\[C=2 \pi r\]</p>
+                            <h5 class="text-center" style="">Circumference</h5>
+                            <p class="text-center" style=";">\[C=2 \pi r\]</p>
 
                         </div>
                         <div class="col-6">
@@ -1373,31 +1427,31 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \frac{a+b}{2} h\]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \frac{a+b}{2} h\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
-                            <p class="text-center" style="font-size:20px;">\[P = a+b+c+d\]</p>
+                            <h5 class="text-center" style="">Perimeter</h5>
+                            <p class="text-center" style=";">\[P = a+b+c+d\]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Height</h5>
-                            <p class="text-center" style="font-size:20px;">\[h = 2 \frac{A}{a+b} \]</p>
+                            <h5 class="text-center" style="">Height</h5>
+                            <p class="text-center" style=";">\[h = 2 \frac{A}{a+b} \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side(a)</h5>
-                            <p class="text-center" style="font-size:20px;">\[a=2 \frac{A}{h}-b \]</p>
+                            <h5 class="text-center" style="">Side(a)</h5>
+                            <p class="text-center" style=";">\[a=2 \frac{A}{h}-b \]</p>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <img src="images/rectangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side(b)</h5>
-                            <p class="text-center" style="font-size:20px;">\[b=2 \frac{A}{h}-a \]</p>
+                            <h5 class="text-center" style="">Side(b)</h5>
+                            <p class="text-center" style=";">\[b=2 \frac{A}{h}-a \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side(c)</h5>
-                            <p class="text-center" style="font-size:20px;">\[c=P-a-b-d \]</p>
+                            <h5 class="text-center" style="">Side(c)</h5>
+                            <p class="text-center" style=";">\[c=P-a-b-d \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side(d)</h5>
-                            <p class="text-center" style="font-size:20px;">\[d=P-a-b-c \]</p>
+                            <h5 class="text-center" style="">Side(d)</h5>
+                            <p class="text-center" style=";">\[d=P-a-b-c \]</p>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -1421,14 +1475,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = \pi a b \]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = \pi a b \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Axis(a)</h5>
-                            <p class="text-center" style="font-size:20px;">\[a = \frac{A}{ \pi b} \]</p>
+                            <h5 class="text-center" style="">Axis(a)</h5>
+                            <p class="text-center" style=";">\[a = \frac{A}{ \pi b} \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Axis(b)</h5>
-                            <p class="text-center" style="font-size:20px;">\[b = \frac{A}{\pi a} \]</p>
+                            <h5 class="text-center" style="">Axis(b)</h5>
+                            <p class="text-center" style=";">\[b = \frac{A}{\pi a} \]</p>
 
                         </div>
                         <div class="col-6">
@@ -1460,14 +1514,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="text-center" style="font-size:20px">Area</h5>
-                            <p class="text-center" style="font-size:20px;">\[A = b \times h \]</p>
+                            <h5 class="text-center" style="">Area</h5>
+                            <p class="text-center" style=";">\[A = b \times h \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Perimeter</h5>
-                            <p class="text-center" style="font-size:20px;">\[P = 2(a+b) \]</p>
+                            <h5 class="text-center" style="">Perimeter</h5>
+                            <p class="text-center" style=";">\[P = 2(a+b) \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Height</h5>
-                            <p class="text-center" style="font-size:20px;">\[h = \frac{A}{b} \]</p>
+                            <h5 class="text-center" style="">Height</h5>
+                            <p class="text-center" style=";">\[h = \frac{A}{b} \]</p>
 
                         </div>
                         <div class="col-6">
@@ -1475,11 +1529,11 @@
                                 <img src="images/rectangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Base</h5>
-                            <p class="text-center" style="font-size:20px;">\[b = \frac{A}{h} \]</p>
+                            <h5 class="text-center" style="">Base</h5>
+                            <p class="text-center" style=";">\[b = \frac{A}{h} \]</p>
                             <div class="dropdown-divider"></div>
-                            <h5 class="text-center" style="font-size:20px">Side</h5>
-                            <p class="text-center" style="font-size:20px;">\[a = \frac{P}{2}-b \]</p>
+                            <h5 class="text-center" style="">Side</h5>
+                            <p class="text-center" style=";">\[a = \frac{P}{2}-b \]</p>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -1495,6 +1549,7 @@
 <!--area for shapes end-->
 
 <!-------------------------------------------------------->
+
 <!--international number convert-->
 <div class="modal fade" id="internationalnumber" tabindex="-1" role="dialog"
      aria-hidden="true">
@@ -1520,6 +1575,7 @@
 </div>
 <!--end of international number convert-->
 <!-------------------------------------------------------->
+
 <!--roman numeral-->
 <div>
     <div class="modal fade" id="roman" tabindex="-1" role="dialog"
@@ -1543,8 +1599,8 @@
                         </button>
                     </div>
                     <div class="form-group">
-                        <p id="ouo" style="font-family:mathfont;font-size:30px"></p>
-                        <p id="ouroman" style="font-family:mathfont;font-size:30px"></p>
+                        <p id="ouo" style="font-family:mathfont;"></p>
+                        <p id="ouroman" style="font-family:mathfont;"></p>
                     </div>
                     <div class="form-group">
                         <input type="text" id="rinp" class="form__field" placeholder="Enter Roman Number"
@@ -1555,8 +1611,8 @@
                         </button>
                     </div>
                     <div class="form-group">
-                        <p id="exro" style="font-family:mathfont;font-size:30px"></p>
-                        <p id="out2" style="font-family:mathfont;font-size:30px"></p>
+                        <p id="exro" style="font-family:mathfont;"></p>
+                        <p id="out2" style="font-family:mathfont;"></p>
                     </div>
 
                 </div>
@@ -1586,14 +1642,16 @@
     setTimeout(function () {
         loadfilesafterload();
     }, 1000);
+
     $(document).ready(function () {
         $('.sidenav').sidenav();
     });
+
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        console.log("Mobile")
+        console.log("Mobile");
     } else {
-        console.log("Desktop")
+        console.log("Desktop");
     }
 </script>
 

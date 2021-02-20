@@ -11,7 +11,7 @@ function collapseit(openit) {
     $(String('#' + openit)).slideToggle();
 }
 function openit(id) {
-    var ids = ['#mulsolwithsteps', '#table', '#shapescal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph"]
+    var ids = ['#mulsolwithsteps', '#table', '#shapescal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph","#roundoff"]
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -55,7 +55,7 @@ function bodyload() {
         favarray = favar;
         checkfavourite()
     }
-
+    numbersapi();
 }
 
 var favouritearray = [];
@@ -150,3 +150,33 @@ function removefavourite() {
     $('#favourite').removeClass('headingdiv');
     checkfavourite();
 }
+
+function numbersapi(){
+    var number=Math.floor(Math.random()*100);
+    var xhttp = new XMLHttpRequest();
+    var el=document.getElementById("numberfact");
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var val=this.responseText;
+
+            // var valTex='';
+            // for(i of val){
+            //     if(i==' '){
+            //         valTex+=" \\space ";
+            //     }else{
+            //         valTex+=i;
+            //     }
+            // }
+            // console.log(valTex);
+            // el.innerHTML="\\["+valTex+"\\]";
+            el.innerHTML=val;
+            renderMathInElement(el);
+        }
+    };
+    xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
+    xhttp.onerror = function () {
+        el.innerHTML = "Turn on your Internet Connection, to read Interesting facts!";
+    };
+    xhttp.send();
+}
+

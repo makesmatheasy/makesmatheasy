@@ -8,18 +8,7 @@ function cleardiv(arrayofclearids) {
 
 function clearall() {
     setTimeout(function () {
-        cleardiv(["resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation"]);
-        cleardiv(["dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf"]);
-        cleardiv(["resulttable"]);
-        cleardiv(["generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult"]);
-        cleardiv(["resultdiff", "diffplot"]);
-        cleardiv(["resultintegration", "integralplot"])
-        cleardiv(["resultmulsol"]);
-        cleardiv(["soltri"]);
-        cleardiv(["resultpardiff"]);
-        cleardiv(["resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot"]);
-        cleardiv(["plotequationresult"]);
-        cleardiv(["rootsquadraticresult"]);
+        cleardiv(["resultintegration", "integralplot","resultdiff", "diffplot","resulttable","generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult","rootsquadraticresult","inputroundoffoutput","plotequationresult","resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot","resultpardiff","resultmulsol","soltri","resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation","dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf"]);
     }, 1000);
 }
 
@@ -106,6 +95,11 @@ $(document).ready(function () {
     });
     $("#plotgraphoption").click(function () {
         openit("#plotgraph");
+        closenav();
+        clearall();
+    });
+    $("#roundoffbtn").click(function () {
+        openit("#roundoff");
         closenav();
         clearall();
     });

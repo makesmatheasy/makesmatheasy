@@ -1334,8 +1334,50 @@ function rootquadratic() {
         document.getElementById("rootsquadraticresult").innerHTML = temp;
         renderMathInElement(document.getElementById("rootsquadraticresult"));
     }
+}
 
+var placeofroundoff;
+function placeofroundoffget(place){
+    placeofroundoff=place;
+}
+function roundoff(input,output){
+    var val=document.getElementById(input).value;
+    var el=document.getElementById(output);
+    var ar=val.split('');
+    var len=val.length;
+    var placeofroundoffarray={
+        "Once":len-1,
+        "Tens":len-2,
+        "Hundred":len-3,
+        "Thousand":len-4,
+        "Ten Thousand":len-5,
+        "Lakh":len-6,
+        "Ten Lakh":len-7,
+        "Crore":len-8,
+        "Ten Crore":len-9
+    }
+    var place=placeofroundoffarray[placeofroundoff];
+    if(place<0){
+        el.innerHTML="Enter Bigger number to roundoff to nearest "+placeofroundoff;
+    }else {
+        if (parseInt(ar[place + 1]) >= 5) {
+            if (parseInt(ar[place]) == 9) {
+                ar[place - 1] = parseInt(ar[place - 1]) + 1;
+                ar[place] = 0;
+            } else {
+                ar[place] = parseInt(ar[place]) + 1;
+            }
 
+            for (i = place + 1; i < len; i++) {
+                ar[i] = 0;
+            }
+        } else {
+            for (i = place + 1; i < len; i++) {
+                ar[i] = 0;
+            }
+        }
+        el.innerHTML = ar.join('');
+    }
 }
 
 
