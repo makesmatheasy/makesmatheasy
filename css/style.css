@@ -19,9 +19,13 @@ body {
     background-color: var(--appblack);
     font-family:mainfont;
     overflow-x: hidden;
+    height:100vh;
 }
 html{
     overflow-x: hidden;
+}
+.container{
+    padding-bottom: 100px;
 }
 p {
     color: white;
@@ -36,9 +40,12 @@ p {
     -ms-user-select: none;
     touch-action: auto;
     overflow-y: scroll !important;
-    position: relative !important;
+    /*position: relative !important;*/
 }
-
+.form-control{
+    border-radius: 50px;
+    margin:2px;
+}
 
 .btn {
     border-radius: 100px !important;
@@ -98,30 +105,38 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px;
 }
 
-.headingdiv {
-    white-space: nowrap;
-    overflow-x: auto;
+.favouritecontainer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -15px ;
+    background-color: var(--appblack);
     padding: 20px;
-    border-radius: 30px;
-    padding-left: 20px;
-}
+    list-style:none;
+    border-top:1px solid white;
+    border-left:1px solid white;
+    border-right:1px solid white;
 
-.headingdivinner {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow-y: hidden !important;
+    overflow-x: auto !important;
+}
+.favourites {
     white-space: nowrap;
-    overflow-x: auto;
     margin: 5px;
     padding: 15px;
-    /*border-left: 2px solid white;*/
-    /*border-right:2px solid white;*/
-    border-bottom:2px solid white;
-    border-radius: 30px;
+    color: white !important;
 }
 
-.headingdivinner:hover{
+.favourites:hover{
     cursor:pointer;
 }
 
-
+::selection{
+    color:var(--appblack);
+    background-color: var(--apppink);
+}
 .mainheading {
     color: white;
     display: inline;
@@ -143,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .form__field {
     font-family: mainfont;
-    font-size: 20px !important;
+    font-size: 15px !important;
     letter-spacing: 2px;
     width: 100%;
     border: 0;
@@ -174,4 +189,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
     margin-top: auto;
     margin-bottom: auto;
+}
+ul li .table{
+    margin-bottom: 0;
 }

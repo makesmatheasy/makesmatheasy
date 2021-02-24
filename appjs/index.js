@@ -117,15 +117,15 @@ function checkfavourite() {
     var imgar = JSON.parse(localStorage.getItem('imgarray'))
     var favar = JSON.parse(localStorage.getItem('favarray'))
     if (ar.length == 0) {
-        $('#favourite').removeClass('headingdiv')
+        $('#favourite').removeClass('favouritecontainer')
     } else {
-        $('#favourite').addClass('headingdiv')
+        $('#favourite').addClass('favouritecontainer')
     }
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement('span');
             el.textContent = ar[i];
-            el.className = 'headingdivinner';
+            el.className = 'favourites';
             el.style.color = 'white';
             var idf = oid[i];
             if (tp[i] == 'c') {
@@ -173,7 +173,9 @@ function numbersapi(){
             renderMathInElement(el);
         }
     };
-    xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
+    xhttp.open("GET", "https://api.math.tools/numbers/fact?number="+number, true);
+    xhttp.setRequestHeader("content-type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Credentials', 'true');
     xhttp.onerror = function () {
         el.innerHTML = "Turn on your Internet Connection, to read Interesting facts!";
     };
