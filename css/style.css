@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
     border-top:1px solid white;
     border-left:1px solid white;
     border-right:1px solid white;
-
+    z-index:900;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     overflow-y: hidden !important;

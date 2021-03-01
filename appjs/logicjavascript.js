@@ -1029,7 +1029,7 @@ function divisionwithsteps() {
             }
             tableBody += '</tr>';
         }
-        resultContainer.html('<div class="row"><h4 style="color:white"><table class="table table-bordered" style="color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;">' + tableBody + '</table></div>');
+        resultContainer.html('<div><h4 style="color:white"><table class="table table-bordered" style="color:white;width: 50px; padding: 0; margin-left:auto;margin-right:auto; border:2px solid light-grey;">' + tableBody + '</table></div>');
         var tableRows = resultContainer.find('table tr');
         for (i = 0; i < divisorLength; i++) {
             tableRows.eq(1).find('td').eq(i).html((divisor.toString())[i]);
@@ -1358,7 +1358,16 @@ function roundoff(input,output){
     }
     var place=placeofroundoffarray[placeofroundoff];
     if(place<0){
-        el.innerHTML="Enter Bigger number to roundoff to nearest "+placeofroundoff;
+        var temp='';
+        if(ar[place+1]>=5){
+            temp+='1';
+            for(var i=0;i<len;i++){
+                temp+='0';
+            }
+            el.innerHTML=temp;
+        }else {
+            el.innerHTML = "Enter Bigger number to roundoff to nearest " + placeofroundoff;
+        }
     }else {
         if (parseInt(ar[place + 1]) >= 5) {
             if (parseInt(ar[place]) == 9) {
@@ -1381,6 +1390,14 @@ function roundoff(input,output){
 }
 
 
+// function presskey(){
+//     document.addEventListener ('keydown', function (event){
+//         document.getElementById('txt').value=(String.fromCharCode(event.which));
+//     });
+//     var evt = new KeyboardEvent('keydown', {'keyCode':50, 'which':50});
+//     document.dispatchEvent (evt);
+//
+// }
 
 
 

@@ -55,7 +55,7 @@ function bodyload() {
         favarray = favar;
         checkfavourite()
     }
-    numbersapi();
+    // numbersapi();
 }
 
 var favouritearray = [];
