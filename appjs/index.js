@@ -11,7 +11,7 @@ function collapseit(openit) {
     $(String('#' + openit)).slideToggle();
 }
 function openit(id) {
-    var ids = ['#mulsolwithsteps', '#table', '#shapescal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph","#roundoff"]
+    var ids = ['#equationssolver','#mulsolwithsteps', '#table', '#shapescal', '#divide', '#simpletrignocollapse', '#factors', '#integralcollapse', '#differentiatecollapse', '#partialdiffcollapse', '#laplacecollapse', '#matrixcollapse', '#multiplematrixcollapse', '#singlematrixcollapse', '#about', "#rootsquadratic","#plotgraph","#roundoff"]
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -55,7 +55,7 @@ function bodyload() {
         favarray = favar;
         checkfavourite()
     }
-    // numbersapi();
+    numbersapi();
 }
 
 var favouritearray = [];
@@ -173,7 +173,7 @@ function numbersapi(){
             renderMathInElement(el);
         }
     };
-    xhttp.open("GET", "https://api.math.tools/numbers/fact?number="+number, true);
+    xhttp.open("GET", "http://numbersapi.com/"+number+"/math", true);
     xhttp.setRequestHeader("content-type", "application/json");
     xhttp.setRequestHeader('Access-Control-Allow-Credentials', 'true');
     xhttp.onerror = function () {

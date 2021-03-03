@@ -153,21 +153,21 @@ function slap() {
         throwOnError: false
     });
 
-    var ar=t.toString().split('');
-    for(i=0;i<ar.length;i++){
-        if(ar[i]=='s' && ar[i+1]=='i'){
+    var ar = t.toString().split('');
+    for (i = 0; i < ar.length; i++) {
+        if (ar[i] == 's' && ar[i + 1] == 'i') {
             continue;
-        }else if(ar[i]=='s' && ar[i-1]=='o' && ar[i-2]=='c'){
+        } else if (ar[i] == 's' && ar[i - 1] == 'o' && ar[i - 2] == 'c') {
             continue;
-        }else if(ar[i]=='s' && ar[i+1]=='e' && ar[i+2]=='c'){
+        } else if (ar[i] == 's' && ar[i + 1] == 'e' && ar[i + 2] == 'c') {
             continue;
-        }else if(ar[i]=='s' && ar[i-1]=='c' && ar[i+1]=='c'){
+        } else if (ar[i] == 's' && ar[i - 1] == 'c' && ar[i + 1] == 'c') {
             continue;
-        } else if(ar[i]=='s'){
-            ar[i]='x';
+        } else if (ar[i] == 's') {
+            ar[i] = 'x';
         }
     }
-    ar=ar.join('');
+    ar = ar.join('');
     return ar.toString();
 }
 
@@ -180,6 +180,7 @@ function dinvlap() {
         throwOnError: false
     });
 }
+
 function dploteq() {
     var value = document.getElementById('inputplotequation').value;
     value = nerdamer(value).toTeX();
@@ -190,27 +191,83 @@ function dploteq() {
 
 function sinvlap() {
     var value = nerdamer.ilt(document.getElementById('inputinverselaplace').value, "s", "t")
-    var t=value;
+    var t = value;
     value = nerdamer(value).toTeX();
     katex.render(value, document.getElementById('resultinverselaplace'), {
         throwOnError: false
     });
-    var ar=t.toString().split('');
-    for(i=0;i<ar.length;i++){
-        if(ar[i]=='t' && ar[i+1]=='a' && ar[i+2]=='n'){
+    var ar = t.toString().split('');
+    for (i = 0; i < ar.length; i++) {
+        if (ar[i] == 't' && ar[i + 1] == 'a' && ar[i + 2] == 'n') {
             continue;
-        }else if(ar[i]=='t' && ar[i-1]=='c' && ar[i-2]=='c'){
+        } else if (ar[i] == 't' && ar[i - 1] == 'c' && ar[i - 2] == 'c') {
             continue;
-        } else if(ar[i]=='t'){
-            ar[i]='x';
+        } else if (ar[i] == 't') {
+            ar[i] = 'x';
         }
     }
-    ar=ar.join('');
+    ar = ar.join('');
     return ar.toString();
 }
 
+function dsimplifyequation() {
+    var val = document.getElementById('inputequation').value;
+    val = nerdamer(val).toTeX();
+    katex.render(val, document.getElementById('displayequation'), {
+        throwOnError: false
+    });
+}
 
+function ssimplifyequation(input, output) {
+    var val = document.getElementById(input).value;
+    var sol = nerdamer('simplify(' + String(val) + ')');
+    sol = nerdamer(sol).toTeX();
+    katex.render('Simplified:\\newline'+sol, document.getElementById(output), {
+        throwOnError: false
+    });
+}
 
+function sequationexpand(input, output) {
+    var val = document.getElementById(input).value;
+    var sol;
+    var x = nerdamer(val);
+    sol = x.expand().toString();
+    sol = nerdamer(sol).toTeX();
+    katex.render('Expanded:\\newline'+sol, document.getElementById(output), {
+        throwOnError: false
+    });
+}
+
+function sequationsolver(output) {
+    var sol;
+    var ar=[]
+    for(var i=0;i<document.getElementById('numberofequationfields').value;i++){
+        ar[i]=document.getElementById("eq"+eval(String(i+1))).value;
+    }
+    nerdamer.set('SOLUTIONS_AS_OBJECT', false);
+    ar=ar.join(",");
+    try {
+        sol = nerdamer('solveEquations([' + ar + '])');
+        sol=sol.toString();
+        sol=sol.slice(0,-1);
+        sol=sol.slice(1,sol.length);
+        sol=sol.split(',');
+        var temp='';
+        for(i=0;i<=sol.length/2+1;i+=2){
+            temp+='\\['+sol[i]+'='+sol[i+1]+'\\]';
+        }
+        document.getElementById(output).innerHTML=temp;
+        renderMathInElement(document.getElementById(output));
+    }catch (e) {
+        document.getElementById(output).innerHTML="Sorry! cannot Compute for these values.";
+    }
+
+}
+function equationmagic() {
+    var input='inputequation';
+    ssimplifyequation(input,'resultsimplifyequation');
+    sequationexpand(input,'resultexpandequation');
+}
 
 
 

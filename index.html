@@ -6,7 +6,7 @@
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<!--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -128,6 +128,20 @@
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Matrix','#matrixcollapse','c','matrixfav')"><img
                                     id="matrixfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="equationssolverbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Play with Equations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Play with Equations','#equationssolver','c','equationssolverfav')"><img
+                                    id="equationssolverfav" src="images/unfavourite.png" style="height:25px;"></span>
                         </td>
                     </tr>
                 </table>
@@ -992,7 +1006,7 @@
 
         </div>
 
-        <div class="" id="roundoff">
+        <div class="collapse" id="roundoff">
             <div class="form-group">
 
 
@@ -1028,6 +1042,43 @@
             </div>
             <div class="form-group">
                 <p class="stopwrap" id="inputroundoffoutput"></p>
+            </div>
+        </div>
+
+        <div class="collapse" id="equationssolver">
+            <div class="form-group">
+                <p class="stopwrap" id="displayequation">
+                </p>
+            </div>
+            <div class="form-group">
+                <input type="text" id="inputequation" class="form__field" placeholder="Enter Equation" oninput="dsimplifyequation();">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="equationmagic();">Reduce</button>
+                <button type="button" class="btn btn-light" onclick="collapseit('equationsmanydiv');">Solve for Variables</button>
+            </div>
+
+            <div class="form-group">
+                <p class="stopwrap" id="resultsimplifyequation">
+                </p>
+            </div>
+            <div class="form-group">
+                <p class="stopwrap" id="resultexpandequation">
+
+                </p>
+            </div>
+
+            <div id="equationsmanydiv" class="form-group collapse">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="numberofequationfields" oninput="generateinputfields(this.value);" placeholder="No. of Equations">
+                </div>
+                <div class="form-group" id="equationsmany"></div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="sequationsolver('resultsolverequation');">Solve</button>
+                </div>
+                <p class="stopwrap" id="resultsolverequation">
+
+                </p>
             </div>
         </div>
 
@@ -1813,7 +1864,7 @@
 <script>
     setTimeout(function () {
         loadfilesafterload();
-    }, 1000);
+    }, 100);
 
     $(document).ready(function () {
         $('.sidenav').sidenav();

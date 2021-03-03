@@ -1388,7 +1388,17 @@ function roundoff(input,output){
         el.innerHTML = ar.join('');
     }
 }
-
+function generateinputfields(value) {
+    removeall('equationsmany');
+    for(var i=0;i<value;i++){
+        var inp = document.createElement('input');
+        inp.id="eq"+eval(String(i+1));
+        inp.placeholder="Equation "+eval(String(i+1));
+        inp.className="form__field";
+        inp.type="text";
+        document.getElementById('equationsmany').appendChild(inp);
+    }
+}
 
 // function presskey(){
 //     document.addEventListener ('keydown', function (event){

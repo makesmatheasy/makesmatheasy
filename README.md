@@ -105,15 +105,15 @@ Feel Free to contribute. To start contribution follow steps:
 - Fork [this](https://github.com/sairish2001/makesmatheasy.github.io/) repository
 
 - Clone your forked copy of the project. 
-  ```git clone https://github.com/<your_user_name>/makesmatheasy.github.io.git```
+  ```git clone https://github.com/<your_user_name>/awesome-javascript-projects.git```
 
 - Navigate to the project directory.
 
-  ```cd makesmatheasy.github.io```
+  ```cd awesome-javascript-projects```
 
 - Add a reference(remote) to the original repository. 
 
-  ```git remote add upstream https://github.com/sairish2001/makesmatheasy.github.io.git```
+  ```git remote add upstream https://github.com/vishal-raj-1/awesome-javascript-projects.git```
 
 - Check the remotes for this repository. 
 
@@ -121,7 +121,7 @@ Feel Free to contribute. To start contribution follow steps:
 
 - Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository). 
 
-  ```git pull upstream main```
+  ```git pull upstream master```
 
 - Create a new branch. 
 
@@ -157,18 +157,20 @@ Feel Free to contribute. To start contribution follow steps:
 
 ![GirlScript Summer of Code](https://imgur.com/OIQHXht.png)
 
-### Project Maintainer
+### 	Project Maintainer
 
-<div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 40%;">
-  <img src="https://avatars.githubusercontent.com/u/60106112?s=460&u=1f8d02afaa92e2a459627d686a7367c6b6e499de&v=4" alt="Admin Picture" style="width:100%">
-  <div style="padding: 2px 16px;">
-    <h4><b>Rajinderpal Singh</b></h4> 
-    <p>
-    	<ul>
-        	<li>Top Contributor of WoC'20</li>
-    		<li>Open Source Enthusiast</li>
-    	</ul>
-    </p> 
-  </div>
-</div>
+<table style="width:30%;border:none;margin-left:auto;margin-right:auto;">
+    <tr>
+        <td style="text-align:center;">Rajinderpal Singh</td>
+    </tr>
+    <tr>
+        <td><img src="https://avatars.githubusercontent.com/u/60106112?s=460&u=1f8d02afaa92e2a459627d686a7367c6b6e499de&v=4" alt="Admin Picture" style="width:100%"></td>
+    </tr>
+    <tr>        
+        <td>Top Contributor of WoC'20</td>       
+    </tr>
+    <tr>
+    	<td>Open Source Enthusiast</td>
+    </tr>
+</table>
+
