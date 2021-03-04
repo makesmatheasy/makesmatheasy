@@ -105,15 +105,15 @@ Feel Free to contribute. To start contribution follow steps:
 - Fork [this](https://github.com/sairish2001/makesmatheasy.github.io/) repository
 
 - Clone your forked copy of the project. 
-  ```git clone https://github.com/<your_user_name>/awesome-javascript-projects.git```
+  ```git clone https://github.com/<your_user_name>/makesmatheasy.github.io.git```
 
 - Navigate to the project directory.
 
-  ```cd awesome-javascript-projects```
+  ```cd makesmatheasy.github.io```
 
 - Add a reference(remote) to the original repository. 
 
-  ```git remote add upstream https://github.com/vishal-raj-1/awesome-javascript-projects.git```
+  ```git remote add upstream https://github.com/sairish2001/makesmatheasy.github.io.git```
 
 - Check the remotes for this repository. 
 
@@ -121,7 +121,7 @@ Feel Free to contribute. To start contribution follow steps:
 
 - Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository). 
 
-  ```git pull upstream master```
+  ```git pull upstream main```
 
 - Create a new branch. 
 
