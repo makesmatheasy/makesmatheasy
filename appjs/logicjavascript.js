@@ -6,8 +6,14 @@ function convertkatex(element, value) {
     });
 }
 
-
-//start of roman
+function searchgoogle(value) {
+    if (value != '') {
+        value = encodeURIComponent(value);
+        window.open("https://www.google.com/search?q=" + value)
+    }
+}
+//-----------------------------------------------------
+//roman expanded form
 function expandedform(input) {
     if (input == 'inpo') {
         var num = parseInt(document.getElementById(input).value);
@@ -30,7 +36,9 @@ function expandedform(input) {
     return temp;
 
 }
+//roman expanded form
 
+//roman calculator
 function romanize(input) {
     if (input == 'inpo') {
         var num = parseInt(document.getElementById(input).value);
@@ -50,7 +58,28 @@ function romanize(input) {
     return Array(+digits.join("") + 1).join("M") + roman;
 
 }
+//roman calculator
 
+//deroman expanded form
+function expandedformde(input, output) {
+    var val = document.getElementById(input).textContent;
+    var expanded = expandedform(input)
+    var ar = []
+    ar = expanded.split("+")
+    var temp = ""
+    for (i of ar) {
+        if (i == 0) {
+            temp += "";
+        } else {
+            temp += (romanize(i)) + "+";
+        }
+    }
+    temp = temp.slice(0, -1);
+    document.getElementById(output).innerHTML = temp;
+}
+//deroman expanded form
+
+//roman to arabic calulator
 function deromanize(str) {
     var str = str.toUpperCase(),
         validator = /^M*(?:D?C{0,3}|C[MD])(?:L?X{0,3}|X[CL])(?:V?I{0,3}|I[XV])$/,
@@ -68,35 +97,23 @@ function deromanize(str) {
         num += key[m[0]];
     return num;
 }
+//roman to arabic calulator
 
+//call deromanize
 function callder() {
     document.getElementById('out2').innerHTML = (deromanize(document.getElementById('rinp').value))
 }
+//call deromanize
 
+//call romanize
 function callr() {
     document.getElementById('ouroman').innerHTML = romanize('inpo');
 }
+//call romanize
+//-----------------------------------------------------
 
-function expandedformde(input, output) {
-    var val = document.getElementById(input).textContent;
-    var expanded = expandedform(input)
-    var ar = []
-    ar = expanded.split("+")
-    var temp = ""
-    for (i of ar) {
-        if (i == 0) {
-            temp += "";
-        } else {
-            temp += (romanize(i)) + "+";
-        }
-    }
-    temp = temp.slice(0, -1);
-    document.getElementById(output).innerHTML = temp;
-}
-
-//end of roman
-
-
+//-----------------------------------------------------
+//simple divide result
 function performdivide() {
     var dividend = parseFloat(document.getElementById("dividendnum").value);
     var divisor = parseFloat(document.getElementById("divisornumwith").value);
@@ -123,7 +140,124 @@ function performdivide() {
 
 
 }
+//simple divide result
 
+//divide steps
+function divisionwithsteps() {
+    performdivide();
+    var dividend = document.getElementById("dividendnum").value;
+    var divisor = document.getElementById("divisornumwith").value;
+    var resultContainer = $('#resultofdivsteps');
+    var numberFormatTester = new RegExp("^[1-9]{1}[0-9]*$");
+    var isDecimal = ('' + dividend).indexOf('.') > -1 || ('' + divisor).indexOf('.') > -1;
+    var isNum = !(isNaN(+dividend) && isNaN(+divisor)) && parseFloat(dividend) >= 0 && parseFloat(divisor) >= 0;
+    if (String(dividend) == '' || String(divisor) == '') {
+        document.getElementById("resultofdivsteps").innerHTML = "";
+    } else if (('' + divisor) == '0') {
+        document.getElementById("resultofdivsteps").innerHTML = "You cannot divide by 0";
+        return false;
+    } else if (isDecimal) {
+        document.getElementById("resultofdivsteps").innerHTML = "Can't show steps for Decimal Division";
+        return false;
+    } else if (!numberFormatTester.test(divisor)) {
+        if (String(divisor) == '') {
+            document.getElementById("resultofdivsteps").innerHTML = "";
+        } else {
+            document.getElementById("resultofdivsteps").innerHTML = "Can't show steps for Negative Divisor";
+        }
+        return false;
+    } else if (!numberFormatTester.test(dividend)) {
+        if (String(dividend) == '') {
+            document.getElementById("resultofdivsteps").innerHTML = "";
+        } else {
+            document.getElementById("resultofdivsteps").innerHTML = "Can't show steps for Negative Dividend";
+        }
+        return false;
+    } else {
+        var quotient = Math.floor(dividend / divisor);
+        var remainder = dividend % divisor;
+        var dividendLength = (dividend.toString()).length;
+        var divisorLength = (divisor.toString()).length;
+        var tableBody = '';
+        var tableNumColumns = dividendLength + divisorLength;
+        var tableNumRows = dividendLength * 2 + 2;
+        var numSteps = dividendLength + 1;
+        var tmpVar;
+        for (a = 1; a <= tableNumRows; a++) {
+            tableBody += '<tr>';
+            for (b = 1; b <= tableNumColumns; b++) {
+                tableBody += '<td style="padding: 7px; border:1px solid var(--apppink); ;"></td>';
+            }
+            tableBody += '</tr>';
+        }
+        resultContainer.html('<div><h4 style="color:white"><table class="table table-bordered" style="color:white;width: 50px; padding: 0; margin-left:auto;margin-right:auto; border:2px solid light-grey;">' + tableBody + '</table></div>');
+        var tableRows = resultContainer.find('table tr');
+        for (i = 0; i < divisorLength; i++) {
+            tableRows.eq(1).find('td').eq(i).html((divisor.toString())[i]);
+        }
+        tableRows.eq(1).find('td').eq(divisorLength - 1).css('border-right', '6px solid white');
+        for (i = 0; i < dividendLength; i++) {
+            tableRows.eq(1).find('td').eq(divisorLength + i).html((dividend.toString())[i]).css('border-top', '6px solid white');
+        }
+        for (currentStep = 1; currentStep < numSteps; currentStep++) {
+            if (!bufferVar) var bufferVar = (dividend.toString())[0];
+            var stepResult = Math.floor(bufferVar / divisor);
+            tableRows.eq(0).find('td').eq(divisorLength + currentStep - 1).html(stepResult);
+            tmpVar = (stepResult * divisor).toString();
+            for (a = tmpVar.length - 1; a >= 0; a--) {
+                tableRows.eq(currentStep * 2).find('td').eq(divisorLength + currentStep - a - 1).html(tmpVar[tmpVar.length - a - 1]).css('border-bottom', '6px solid white');
+            }
+            tmpVar = (bufferVar - stepResult * divisor).toString();
+            for (a = tmpVar.length - 1; a >= 0; a--) {
+                tableRows.eq(currentStep * 2 + 1).find('td').eq(divisorLength + currentStep - a - 1).html(tmpVar[tmpVar.length - a - 1]);
+            }
+            tableRows.eq(currentStep * 2 + 1).find('td').eq(divisorLength + currentStep).html((dividend.toString())[currentStep]);
+            bufferVar = tmpVar + (dividend.toString())[currentStep];
+        }
+    }
+}
+//divide steps
+
+//divisibility checker
+function checkdivisibility() {
+    var n1 = parseInt(document.getElementById("n1").value);
+    var n2 = parseInt(document.getElementById("n2").value);
+    if (n1 % n2 == 0) {
+        document.getElementById("divisibilitycheckresult").innerHTML = "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
+        document.getElementById("divisibilitycheckresult").innerHTML += "\\[ \\frac{" + String(n1) + "}{" + String(n2) + "} = " + eval(String(n1 / n2)) + " \\]";
+        document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder 0.";
+//            var btn = document.createElement('input');
+//            btn.id="showcheckdivisibilitysteps"
+//            btn.type = "button";
+//            btn.className="btn btn-info";
+//            btn.value="Show Steps"
+//            document.getElementById('checkdivisibility').appendChild(btn);
+    } else {
+        document.getElementById("divisibilitycheckresult").innerHTML = "No! " + String(n1) + " is not Divisible by " + n2;
+        document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder " + eval(n1 % n2) + ".";
+    }
+    renderMathInElement(document.getElementById('divisibilitycheckresult'))
+}
+function showdivisionstepsforcheckdivisibility() {
+    $('html, body').animate({
+        scrollTop: $("#divide").offset().top
+    }, 100);
+    document.getElementById('divisornumwith').value = document.getElementById('n2').value;
+    document.getElementById('dividendnum').value = document.getElementById('n1').value;
+    divisionwithsteps();
+    $("#showcheckdivisibilitysteps").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#divide").offset().top
+        }, 2000);
+    });
+}
+//divisibility checker
+
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//factors
+//    one number with steps
 function printfactors() {
     var num = parseInt(document.getElementById("numforfactorhcflcm").value);
     var temp = "";
@@ -144,326 +278,9 @@ function printfactors() {
 
     }
 }
+//    one number with steps
 
-function printhcffactor(val, outputf) {
-    var num = parseInt(val);
-    var temp = "";
-    for (i = 2; i <= num; i++) {
-        while ((num % i) == 0) {
-            temp += i + " ";
-            num = num / i;
-        }
-    }
-    temp = temp.split(" ");
-    temp = removeDuplicates(temp);
-    var newtemp = "";
-    for (ih of temp) {
-        newtemp += ih + " ";
-    }
-    return newtemp;
-}
-
-function removeDuplicates(array) {
-    return array.filter((a, b) => array.indexOf(a) === b)
-}
-
-function printtable() {
-    var temp = "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
-    var num = parseInt(document.getElementById("numtable").value);
-    var end = parseInt(document.getElementById("numending").value);
-    if (num == '' || end == '') {
-        document.getElementById("resulttable").innerHTML = "";
-    } else {
-        for (var i = 1; i <= end; i++) {
-            temp += "<tr>"
-            temp += '<td>' + num + '</td><td>×</td><td>' + i + '</td><td>=</td><td>' + num * i + '</td>';
-            temp += "</tr>"
-        }
-        temp += "</table>"
-        document.getElementById("resulttable").innerHTML = "<b>" + temp + "</b>";
-    }
-}
-
-function checkforusetrigovalue() {
-    var el = document.getElementById('soltri');
-    if (el.innerText != '' && el.innerText != "Cannot Compute for -ve Square Root" && el.innerText != "Hypotenuse Should be Greater" && el.innerText != "Kindly fill Atleast 2 fields") {
-        $('#usetrigovaluesbtn').fadeIn();
-    } else {
-        $('#usetrigovaluesbtn').fadeOut();
-    }
-
-}
-
-function solvesimpletrigo() {
-    var pp = document.getElementById("p").value;
-    var base = document.getElementById("b").value;
-    var hyp = document.getElementById("h").value;
-    if ((pp == '' && base == '') || (base == '' && hyp == '') || (hyp == '' && pp == '')) {
-        document.getElementById('soltri').innerHTML = "Kindly fill Atleast 2 fields";
-    } else {
-        if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
-            document.getElementById('h').style.color = "red";
-            document.getElementById('soltri').innerHTML = "Hypotenuse Should be Greater";
-        } else if (pp == '') {
-            document.getElementById('h').style.color = "white";
-            var pp = eval((hyp * hyp) - (base * base))
-            var kl = String(pp)
-            pp = Math.sqrt(String(pp))
-            if (pp.toString() != 'NaN') {
-                pp = pp.toFixed(2);
-                var tempp = "\\[Value\\space of\\space  Perpendicular= \\sqrt{" + kl + "}=" + pp + "\\]";
-                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-                tempp += "\\[cos\\theta =\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-                document.getElementById("soltri").innerHTML = tempp;
-                renderMathInElement(document.getElementById('soltri'));
-            } else {
-                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
-            }
-        } else if (base == '') {
-            document.getElementById('h').style.color = "white";
-            var base = eval((hyp * hyp) - (pp * pp))
-            var kll = String(base)
-            base = Math.sqrt(String(base))
-            if (base.toString() != 'NaN') {
-                base = base.toFixed(2);
-                var tempp = "\\[Value\\space of\\space Base= \\sqrt{" + kll + "}=" + base + "\\]";
-                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-                tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "} = " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-                document.getElementById("soltri").innerHTML = tempp;
-                renderMathInElement(document.getElementById('soltri'));
-            } else {
-                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
-            }
-        } else if (hyp == '') {
-            document.getElementById('h').style.color = "white";
-            var hyp = eval((base * base) + (pp * pp))
-            var klll = String(hyp)
-            hyp = Math.sqrt(String(hyp))
-            if (hyp.toString() != 'NaN') {
-                hyp = hyp.toFixed(2);
-                var tempp = "\\[Value\\space of\\space Hypotenuse=\\sqrt{" + klll + "}=" + hyp + "\\]";
-                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "}= " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-                tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-
-                document.getElementById("soltri").innerHTML = tempp;
-                renderMathInElement(document.getElementById('soltri'));
-            } else {
-                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
-            }
-        } else {
-            document.getElementById('h').style.color = "white";
-            var tempp = String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
-            tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}=" + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
-            tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "} = " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
-            tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
-            tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
-            document.getElementById("soltri").innerHTML = tempp;
-            renderMathInElement(document.getElementById('soltri'));
-        }
-    }
-}
-
-function set(obj) {
-    if (document.getElementById("cal").style.display == "" || document.getElementById("cal").style.display == "none") {
-        opencal();
-    }
-    var pp = document.getElementById("p").value;
-    var base = document.getElementById("b").value;
-    var hyp = document.getElementById("h").value;
-    if (hyp == "") {
-        var hyp = eval((base * base) + (pp * pp));
-        hyp = Math.sqrt(String(hyp));
-        hyp = hyp.toFixed(2);
-    }
-    if (pp == "") {
-        var pp = eval((hyp * hyp) - (base * base));
-        pp = Math.sqrt(String(pp));
-        pp = pp.toFixed(2);
-    }
-    if (base == "") {
-        var base = eval((hyp * hyp) - (pp * pp));
-        base = Math.sqrt(String(base));
-        base = base.toFixed(2);
-    }
-
-    if (obj.id == "sini") {
-        var sintheta = String(eval(String(pp + "/" + hyp)).toFixed(2))
-        document.getElementById("txt").value += sintheta;
-    }
-    if (obj.id == "cosi") {
-        var costheta = eval(String(base + "/" + hyp)).toFixed(2);
-        document.getElementById("txt").value += costheta;
-    }
-    if (obj.id == "tani") {
-        var tantheta = eval(String(pp + "/" + base)).toFixed(2);
-        document.getElementById("txt").value += tantheta;
-    }
-    if (obj.id == "coseci") {
-        var cosectheta = eval(String(hyp + "/" + pp)).toFixed(2);
-        document.getElementById("txt").value += cosectheta;
-    }
-    if (obj.id == "seci") {
-        var sectheta = eval(String(hyp + "/" + base)).toFixed(2);
-        document.getElementById("txt").value += sectheta;
-    }
-    if (obj.id == "coti") {
-        var cottheta = eval(String(base + "/" + pp)).toFixed(2);
-        document.getElementById("txt").value += cottheta;
-    }
-
-}
-
-function diffsolve() {
-    var ok = document.getElementById("inputdifferentiatequation").value;
-    ok = encodeURIComponent(ok);
-    window.open("https://www.emathhelp.net/calculators/calculus-1/derivative-calculator/?f=" + ok + "+&order=" + difforder + "&var=" + diffvariable + "&p=&steps=on#solution");
-}
-
-var pardifforder = "";
-
-function getparorder(value) {
-    pardifforder = value;
-}
-
-function partialdiffsolve() {
-    var ikk = document.getElementById("inputpartialorder");
-    if (ikk.value == "") {
-        ikk.value = "x";
-    }
-    var parok = encodeURIComponent(document.getElementById("inputpartialdiff").value);
-    var parorder = encodeURIComponent(document.getElementById("inputpartialorder").value);
-    window.open("https://www.emathhelp.net/calculators/calculus-3/partial-derivative-calculator/?f=" + parok + "&var=" + parorder + "&steps=on#solution");
-}
-
-var integralvar = "";
-
-function getintegralvar(value) {
-    integralvar = value;
-}
-
-function solveintegral() {
-
-    if (checkit == "notok" || checkit == "") {
-        var inte = encodeURIComponent(document.getElementById("inputintegral").value);
-        window.open("https://www.emathhelp.net/calculators/calculus-2/integral-calculator/?f=" + inte + "&var=" + integralvar + "&steps=on#solution")
-    }
-    if (checkit == "ok") {
-        var upperlim = document.getElementById("upperlimit").value;
-        var lowerlim = document.getElementById("lowerlimit").value;
-        var integ = encodeURIComponent(document.getElementById("inputintegral").value);
-        var iv = ""
-        if (upperlim == "" && lowerlim == "") {
-            var upperlimmm = "inf";
-            var lowerlimmm = "-inf";
-        } else if (lowerlim != "" && upperlim == "") {
-            var upperlimmm = "inf";
-            var lowerlimmm = lowerlim;
-        } else if (lowerlim == "" && upperlim != "") {
-            var upperlimmm = upperlim;
-            var lowerlimmmgf = "-inf";
-        } else if (lowerlim != "" && upperlim != "") {
-            var upperlimmm = upperlim;
-            var lowerlimmm = lowerlim;
-        }
-        window.open("https://www.emathhelp.net/calculators/calculus-2/definite-integral-calculator/?f=" + integ + "&var=" + integralvar + "&a=" + lowerlimmm + "&b=" + upperlimmm + "&steps=on#solution")
-
-    }
-
-}
-
-
-var checkit = ""
-
-function collapselimitbox() {
-    var sa = document.getElementById("enablelimit");
-    if (sa.checked == true) {
-        checkit = "ok";
-        $('#collapselimit').slideDown();
-    }
-    if (sa.checked == false) {
-        checkit = "notok";
-        $('#collapselimit').slideUp();
-    }
-}
-
-//square
-function solveperisq() {
-    var val = document.getElementById("inputsqside").value;
-    if (val == '') {
-        document.getElementById("resultofperisq").innerHTML = '';
-    } else {
-        var sol = eval(String(4) + '*' + String(val));
-        var temp = '\\[ 4 \\times ( ' + val + ' ) = ' + sol + '\\]';
-        temp += '\\[Perimeter \\space of \\space Square \\space is \\space ' + sol + '\\]';
-        document.getElementById("resultofperisq").innerHTML = temp;
-    }
-    renderMathInElement(document.getElementById("resultofperisq"));
-}
-function solvediagonalsq() {
-    var val = document.getElementById("inputsqside").value;
-    if (val == '') {
-        document.getElementById("resultofdiagonalsq").innerHTML = '';
-    } else {
-        var sol = eval(1.414 + '*' + String(val));
-        var temp = '\\[ \\sqrt{2} ( ' + val + ' ) = ' + sol + '\\]';
-        temp += '\\[Diagonal \\space of \\space Square \\space is \\space ' + sol + '\\]';
-        document.getElementById("resultofdiagonalsq").innerHTML = temp;
-    }
-    renderMathInElement(document.getElementById("resultofdiagonalsq"));
-}
-function solveareasq() {
-    var val = document.getElementById("inputsqside").value;
-    if (val == '') {
-        document.getElementById("resultofareasq").innerHTML = '';
-    } else {
-        var sol = eval(String(val) + '*' + String(val));
-        var temp = '\\[' + val + ' \\times ' + val + ' = ' + sol + '\\]';
-        temp += '\\[Area \\space of \\space Square \\space is \\space ' + sol + '\\]';
-        document.getElementById("resultofareasq").innerHTML = temp;
-    }
-    renderMathInElement(document.getElementById("resultofareasq"));
-}
-//square
-
-function equilateraltrianglearea(){
-    var side=document.getElementById('equilateraltriangleside').value;
-    var areaoutput=document.getElementById('equilateraltrianglearea');
-    var perimeteroutput=document.getElementById('equilateraltriangleperimeter');
-    var areatemp="";
-    var perimetertemp="";
-    if(side!="") {
-        perimetertemp += "\\[P=3 \\times " + side + "\\]";
-        perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval(String(3 * side)) + "\\]";
-        perimeteroutput.innerHTML = perimetertemp;
-
-        areatemp+="\\[A = \\frac{\\sqrt{3}}{4} "+side+"^2 \\]";
-        areatemp+="\\[A = \\frac{1.73}{4} ("+eval(String(side*side))+")\\]";
-        areatemp+="\\[A=0.433 \\times "+eval(String(side*side))+" \\]";
-        var a=eval(String("0.433*"+String(side*side)));
-        areatemp+="\\[A="+a+" \\]";
-        areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]"
-        areaoutput.innerHTML=areatemp;
-        renderMathInElement(areaoutput);
-        renderMathInElement(perimeteroutput);
-    }else{
-        areaoutput.innerHTML="";
-        perimeteroutput.innerHTML="";
-    }
-}
-
+//    more than one number without steps
 function printmorefactors(input, output) {
     document.getElementById(output).textContent = "";
     var ar = [];
@@ -490,7 +307,29 @@ function printmorefactors(input, output) {
     }
     renderMathInElement(document.getElementById(output));
 }
+//    more than one number without steps
 
+//hcf
+function printhcffactor(val, outputf) {
+    var num = parseInt(val);
+    var temp = "";
+    for (i = 2; i <= num; i++) {
+        while ((num % i) == 0) {
+            temp += i + " ";
+            num = num / i;
+        }
+    }
+    temp = temp.split(" ");
+    temp = removeDuplicates(temp);
+    var newtemp = "";
+    for (ih of temp) {
+        newtemp += ih + " ";
+    }
+    return newtemp;
+}
+function removeDuplicates(array) {
+    return array.filter((a, b) => array.indexOf(a) === b)
+}
 function findduplicatesforhcf(array) {
     var maxlengthofarray = 0;
     var dup, indexofdup = 0;
@@ -528,8 +367,6 @@ function findduplicatesforhcf(array) {
     }
     return dup;
 }
-
-<!--        hcf start-->
 function hcf(input) {
     var ar = [];
     var val = document.getElementById(input).value;
@@ -594,157 +431,9 @@ function hcf(input) {
     }
     renderMathInElement(document.getElementById("hcfprimefactor"));
 }
+//hcf
 
-<!--hcf end-->
-function solvelaplace() {
-    var lurl = encodeURIComponent(document.getElementById("inputlaplace").value);
-    window.open("https://www.emathhelp.net/calculators/differential-equations/laplace-transform-calculator/?f=" + lurl + "#solution");
-}
-
-function solveinverselaplace() {
-    var ilurl = encodeURIComponent(document.getElementById("inputinverselaplace").value);
-    window.open("https://www.emathhelp.net/calculators/differential-equations/inverse-laplace-transform-calculator/?f=" + ilurl + "#solution");
-}
-
-var diffvariable = "";
-var difforder = "";
-
-function getdiffvariable(value) {
-    diffvariable = value;
-}
-
-function getdifforder(value) {
-    difforder = value;
-}
-
-function clearit(input, output) {
-    document.getElementById(output).innerHTML = '';
-    document.getElementById(input).value = '';
-}
-
-function solveintegralwithoutsteps() {
-    var intval = document.getElementById("inputintegral").value;
-    //var integration=nerdamer.integrate(intval,integralvar)
-
-}
-
-var intsol = "";
-
-function findintesol(input, output) {
-    var inp = document.getElementById(input).value;
-    intsol = nerdamer.integrate(inp, 'x')
-    document.getElementById(input).value += "";
-}
-
-function opencal() {
-    $('#cal').slideToggle();
-}
-
-function getran(l) {
-    var text = "";
-    var char_list = "0123456789+-/=";
-    for (var i = 0; i < l; i++) {
-        text += char_list.charAt(Math.floor(Math.random() * char_list.length));
-    }
-    return text;
-}
-
-
-function orderas() {
-    document.getElementById("orderresult").innerHTML = "";
-    var val = document.getElementById("ordergetval").value;
-    val = val.split(" ");
-    val = val.filter(function (str) {
-        return /\S/.test(str);
-    });
-    var len = parseInt(val.length);
-    for (i = 0; i <= len - 1; i++) {
-        for (j = 0; j <= len - 1 - i; j++) {
-            if (parseInt(val[j]) > parseInt(val[j + 1])) {
-                temp = parseInt(val[j]);
-                val[j] = parseInt(val[j + 1]);
-                val[j + 1] = temp;
-            }
-        }
-    }
-    val = val.join(',');
-    document.getElementById("orderresult").innerHTML += "\\[Ascending \\space Order\\]";
-    document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
-    renderMathInElement(document.getElementById('orderresult'));
-}
-
-function orderde() {
-    document.getElementById("orderresultde").innerHTML = "";
-    var val = document.getElementById("ordergetval").value;
-    val = val.split(" ");
-    val = val.filter(function (str) {
-        return /\S/.test(str);
-    });
-    var len = parseInt(val.length);
-    for (i = 0; i <= len - 1; i++) {
-        for (j = 0; j <= len - 1 - i; j++) {
-            if (parseInt(val[j]) < parseInt(val[j + 1])) {
-                temp = parseInt(val[j]);
-                val[j] = parseInt(val[j + 1]);
-                val[j + 1] = temp;
-            }
-        }
-    }
-    val = val.join(',')
-    document.getElementById("orderresultde").innerHTML += "\\[ Descending \\space Order \\]";
-    document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
-    renderMathInElement(document.getElementById('orderresultde'));
-}
-
-function orderfieldclear() {
-    if (document.getElementById("orderresult").textContent != "" || document.getElementById("orderresultde").textContent != "") {
-        document.getElementById("orderresult").innerHTML = ""
-        document.getElementById("orderresultde").innerHTML = ""
-    }
-
-}
-
-function checkdivisibility() {
-    var n1 = parseInt(document.getElementById("n1").value);
-    var n2 = parseInt(document.getElementById("n2").value);
-    if (n1 % n2 == 0) {
-        document.getElementById("divisibilitycheckresult").innerHTML = "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
-        document.getElementById("divisibilitycheckresult").innerHTML += "\\[ \\frac{" + String(n1) + "}{" + String(n2) + "} = " + eval(String(n1 / n2)) + " \\]";
-        document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder 0.";
-//            var btn = document.createElement('input');
-//            btn.id="showcheckdivisibilitysteps"
-//            btn.type = "button";
-//            btn.className="btn btn-info";
-//            btn.value="Show Steps"
-//            document.getElementById('checkdivisibility').appendChild(btn);
-    } else {
-        document.getElementById("divisibilitycheckresult").innerHTML = "No! " + String(n1) + " is not Divisible by " + n2;
-        document.getElementById("divisibilitycheckresultexplanation").innerHTML = "Explanation:<br>When " + String(n1) + " divides with " + String(n2) + " leaves Remainder " + eval(n1 % n2) + ".";
-    }
-    renderMathInElement(document.getElementById('divisibilitycheckresult'))
-}
-
-
-function internationalwords(num) {
-    var a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
-    var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-    if ((num = num.toString()).length > 9) return 'overflow';
-    n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-    if (!n) return;
-    var str = '';
-    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
-    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
-    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
-    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
-    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
-    if (count(num) >= 9) {
-        document.getElementById("interresult").innerHTML = 'Upto 8 digits only';
-    } else {
-        document.getElementById("interresult").innerHTML = str;
-    }
-
-}
-
+//lcm
 function factorslcmhcfempty() {
     $('#dividefactor').empty();
     $('#dividefactorresult').empty();
@@ -755,7 +444,6 @@ function factorslcmhcfempty() {
     $('#resultfac').empty();
     $('#resultlcm').empty();
 }
-
 function factorselect(numid) {
     var num = document.getElementById(numid).value;
     num = num.replace(/^\s+/, '');  //left trim
@@ -767,7 +455,6 @@ function factorselect(numid) {
         printmorefactors(numid, 'factorresult');
     }
 }
-
 function printfactorsfl(value) {
     var num = parseInt(value);
     var temp = [];
@@ -781,7 +468,6 @@ function printfactorsfl(value) {
     }
     return temp;
 }
-
 function lcmsol(input) {
     document.getElementById("resultlcm").innerHTML = "";
     document.getElementById("resultfac").innerHTML = "";
@@ -878,205 +564,340 @@ function lcmsol(input) {
         document.getElementById('resultlcm').innerHTML = temp;
     }
 }
+//lcm
+//-----------------------------------------------------
 
-function multiplywithsteps(numm, withnum) {
-    var num = document.getElementById(numm).value.toString();
-    var numwith = document.getElementById(withnum).value.toString();
-    if (num % 1 == 0 && numwith % 1 != 0) {
-        var sw = numwith;
-        numwith = num;
-        num = sw;
-        document.getElementById(withnum).value = numwith;
-        document.getElementById(numm).value = num;
+//-----------------------------------------------------
+//check for set value buttons
+function checkforusetrigovalue() {
+    var el = document.getElementById('soltri');
+    if (el.innerText != '' && el.innerText != "Cannot Compute for -ve Square Root" && el.innerText != "Hypotenuse Should be Greater" && el.innerText != "Kindly fill Atleast 2 fields") {
+        $('#usetrigovaluesbtn').fadeIn();
+    } else {
+        $('#usetrigovaluesbtn').fadeOut();
     }
-    var flag = 0; // num
-    if (num % 1 != 0)
-        flag = 1; //float
-    var countdot = 0;
-    var countdotwith = 0;
 
-    if (flag == 1) {
-        for (i = num.length - 1; i >= 0; i--) {
-            if (num[i] == '.') {
-                break;
-            }
-            countdot++;
-        }
-        for (j = numwith.length - 1; j >= 0; j--) {
-            if (numwith[j] == '.') {
-                break;
-            }
-            countdotwith++;
-        }
-        var v = 0;
-        if ((countdotwith > countdot) && (numwith % 1 != 0)) {
-            var sw = numwith;
-            numwith = num;
-            num = sw;
-            document.getElementById(withnum).value = numwith;
-            document.getElementById(numm).value = num;
-            v = 1;
-        }
+}
+//check for set value buttons
 
-    }
-    var r = document.getElementById("resultmulsol");
-    var temp = "";
-    var m = "";
-    var line = "";
-    var mulsol = eval(nerdamer(String(numwith) + '*' + String(num)).evaluate().toString());
-    if (numwith.length > 1) {
-        numwith = numwith.split('');
-        for (i = numwith.length - 1; i >= 0; i--) {
-            if (numwith[i] == '.')
-                continue;
-            if (numwith.length == m.length + 1) {
-                var vm = eval(nerdamer(String(numwith[i]) + '*' + String(num)).evaluate().toString());
-                temp += "+ " + String(vm).replace('.', '') + m;
+//solve trigonometry values from right triangle
+function solvesimpletrigo() {
+    var pp = document.getElementById("p").value;
+    var base = document.getElementById("b").value;
+    var hyp = document.getElementById("h").value;
+    if ((pp == '' && base == '') || (base == '' && hyp == '') || (hyp == '' && pp == '')) {
+        document.getElementById('soltri').innerHTML = "Kindly fill Atleast 2 fields";
+    } else {
+        if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
+            document.getElementById('h').style.color = "red";
+            document.getElementById('soltri').innerHTML = "Hypotenuse Should be Greater";
+        } else if (pp == '') {
+            document.getElementById('h').style.color = "white";
+            var pp = eval((hyp * hyp) - (base * base))
+            var kl = String(pp)
+            pp = Math.sqrt(String(pp))
+            if (pp.toString() != 'NaN') {
+                pp = pp.toFixed(2);
+                var tempp = "\\[Value\\space of\\space  Perpendicular= \\sqrt{" + kl + "}=" + pp + "\\]";
+                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+                tempp += "\\[cos\\theta =\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
+                document.getElementById("soltri").innerHTML = tempp;
+                renderMathInElement(document.getElementById('soltri'));
             } else {
-                var vm = eval(nerdamer(String(numwith[i]) + '*' + String(num)).evaluate().toString())
-                temp += String(vm).replace('.', '') + m;
-
+                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
             }
-            temp += "<br>";
-            m += "&times;";
-        }
-        for (i = 0; i < String(mulsol).length; i++) {
-            line += "_";
-        }
-    } else {   //no plus simple multiply
-        var mulsol = eval(nerdamer(String(numwith) + '*' + String(num)).evaluate().toString());
-        for (i = 0; i < String(mulsol).length; i++) {
-            line += "_";
-        }
-    }
-    if (numwith.length == 1) {
-        r.innerHTML = "";
-        r.innerHTML += num + "<br>";
-        r.innerHTML += "× " + numwith + "<br>"
-        r.innerHTML += line + "<br>";
-        r.innerHTML += mulsol + "<br>";
-        r.innerHTML += line + "<br>";
-    } else {
-        r.innerHTML = "";
-        r.innerHTML += num + "<br>";
-        r.innerHTML += "× " + numwith.join('') + "<br>"
-        r.innerHTML += line + "<br>";
-        r.innerHTML += temp;
-        r.innerHTML += line + "<br>";
-        r.innerHTML += mulsol + "<br>";
-        r.innerHTML += line + "<br>";
-    }
-}
+        } else if (base == '') {
+            document.getElementById('h').style.color = "white";
+            var base = eval((hyp * hyp) - (pp * pp))
+            var kll = String(base)
+            base = Math.sqrt(String(base))
+            if (base.toString() != 'NaN') {
+                base = base.toFixed(2);
+                var tempp = "\\[Value\\space of\\space Base= \\sqrt{" + kll + "}=" + base + "\\]";
+                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+                tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "} = " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
+                document.getElementById("soltri").innerHTML = tempp;
+                renderMathInElement(document.getElementById('soltri'));
+            } else {
+                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
+            }
+        } else if (hyp == '') {
+            document.getElementById('h').style.color = "white";
+            var hyp = eval((base * base) + (pp * pp))
+            var klll = String(hyp)
+            hyp = Math.sqrt(String(hyp))
+            if (hyp.toString() != 'NaN') {
+                hyp = hyp.toFixed(2);
+                var tempp = "\\[Value\\space of\\space Hypotenuse=\\sqrt{" + klll + "}=" + hyp + "\\]";
+                tempp += String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "}= " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+                tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}= " + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+                tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "}= " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+                tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "}= " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+                tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "} = " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
 
-function showdivisionstepsforcheckdivisibility() {
-    $('html, body').animate({
-        scrollTop: $("#divide").offset().top
-    }, 100);
-    document.getElementById('divisornumwith').value = document.getElementById('n2').value;
-    document.getElementById('dividendnum').value = document.getElementById('n1').value;
-    divisionwithsteps();
-    $("#showcheckdivisibilitysteps").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#divide").offset().top
-        }, 2000);
-    });
-}
-
-function divisionwithsteps() {
-    performdivide();
-    var dividend = document.getElementById("dividendnum").value;
-    var divisor = document.getElementById("divisornumwith").value;
-    var resultContainer = $('#resultofdivsteps');
-    var numberFormatTester = new RegExp("^[1-9]{1}[0-9]*$");
-    var isDecimal = ('' + dividend).indexOf('.') > -1 || ('' + divisor).indexOf('.') > -1;
-    var isNum = !(isNaN(+dividend) && isNaN(+divisor)) && parseFloat(dividend) >= 0 && parseFloat(divisor) >= 0;
-    if (String(dividend) == '' || String(divisor) == '') {
-        document.getElementById("resultofdivsteps").innerHTML = "";
-    } else if (('' + divisor) == '0') {
-        document.getElementById("resultofdivsteps").innerHTML = "You cannot divide by 0";
-        return false;
-    } else if (isDecimal) {
-        document.getElementById("resultofdivsteps").innerHTML = "Can't show steps for Decimal Division";
-        return false;
-    } else if (!numberFormatTester.test(divisor)) {
-        if (String(divisor) == '') {
-            document.getElementById("resultofdivsteps").innerHTML = "";
+                document.getElementById("soltri").innerHTML = tempp;
+                renderMathInElement(document.getElementById('soltri'));
+            } else {
+                document.getElementById("soltri").innerHTML = 'Cannot Compute for -ve Square Root';
+            }
         } else {
-            document.getElementById("resultofdivsteps").innerHTML = "Can't show steps for Negative Divisor";
+            document.getElementById('h').style.color = "white";
+            var tempp = String("\\[sin\\theta =\\frac{p}{h} =\\frac{" + pp + "}{" + hyp + "} = " + eval(String(pp + "/" + hyp)).toFixed(2)) + '\\]';
+            tempp += "\\[cos\\theta=\\frac{b}{h} =\\frac{" + base + "}{" + hyp + "}=" + eval(String(base + "/" + hyp)).toFixed(2) + '\\]';
+            tempp += "\\[tan\\theta=\\frac{p}{b} =\\frac{" + pp + "}{" + base + "}= " + eval(String(pp + "/" + base)).toFixed(2) + '\\]';
+            tempp += "\\[cosec\\theta=\\frac{h}{p} =\\frac{" + hyp + "}{" + pp + "} = " + eval(String(hyp + "/" + pp)).toFixed(2) + '\\]';
+            tempp += "\\[sec\\theta=\\frac{h}{b} =\\frac{" + hyp + "}{" + base + "} = " + eval(String(hyp + "/" + base)).toFixed(2) + '\\]';
+            tempp += "\\[cot\\theta=\\frac{b}{p} =\\frac{" + base + "}{" + pp + "}= " + eval(String(base + "/" + pp)).toFixed(2) + '\\]';
+            document.getElementById("soltri").innerHTML = tempp;
+            renderMathInElement(document.getElementById('soltri'));
         }
-        return false;
-    } else if (!numberFormatTester.test(dividend)) {
-        if (String(dividend) == '') {
-            document.getElementById("resultofdivsteps").innerHTML = "";
-        } else {
-            document.getElementById("resultofdivsteps").innerHTML = "Can't show steps for Negative Dividend";
+    }
+}
+//solve trigonometry values from right triangle
+
+//set trigonometry value to calculator
+function set(obj) {
+    if (document.getElementById("cal").style.display == "" || document.getElementById("cal").style.display == "none") {
+        opencal();
+    }
+    var pp = document.getElementById("p").value;
+    var base = document.getElementById("b").value;
+    var hyp = document.getElementById("h").value;
+    if (hyp == "") {
+        var hyp = eval((base * base) + (pp * pp));
+        hyp = Math.sqrt(String(hyp));
+        hyp = hyp.toFixed(2);
+    }
+    if (pp == "") {
+        var pp = eval((hyp * hyp) - (base * base));
+        pp = Math.sqrt(String(pp));
+        pp = pp.toFixed(2);
+    }
+    if (base == "") {
+        var base = eval((hyp * hyp) - (pp * pp));
+        base = Math.sqrt(String(base));
+        base = base.toFixed(2);
+    }
+
+    if (obj.id == "sini") {
+        var sintheta = String(eval(String(pp + "/" + hyp)).toFixed(2))
+        document.getElementById("txt").value += sintheta;
+    }
+    if (obj.id == "cosi") {
+        var costheta = eval(String(base + "/" + hyp)).toFixed(2);
+        document.getElementById("txt").value += costheta;
+    }
+    if (obj.id == "tani") {
+        var tantheta = eval(String(pp + "/" + base)).toFixed(2);
+        document.getElementById("txt").value += tantheta;
+    }
+    if (obj.id == "coseci") {
+        var cosectheta = eval(String(hyp + "/" + pp)).toFixed(2);
+        document.getElementById("txt").value += cosectheta;
+    }
+    if (obj.id == "seci") {
+        var sectheta = eval(String(hyp + "/" + base)).toFixed(2);
+        document.getElementById("txt").value += sectheta;
+    }
+    if (obj.id == "coti") {
+        var cottheta = eval(String(base + "/" + pp)).toFixed(2);
+        document.getElementById("txt").value += cottheta;
+    }
+
+}
+//set trigonometry value to calculator
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//calculus
+function solveintegralwithoutsteps() {
+    var intval = document.getElementById("inputintegral").value;
+    //var integration=nerdamer.integrate(intval,integralvar)
+
+}
+var intsol = "";
+function findintesol(input, output) {
+    var inp = document.getElementById(input).value;
+    intsol = nerdamer.integrate(inp, 'x')
+    document.getElementById(input).value += "";
+}
+
+
+var diffvariable = "";
+var difforder = "";
+function getdiffvariable(value) {
+    diffvariable = value;
+}
+function getdifforder(value) {
+    difforder = value;
+}
+function diffsolve() {
+    var ok = document.getElementById("inputdifferentiatequation").value;
+    ok = encodeURIComponent(ok);
+    window.open("https://www.emathhelp.net/calculators/calculus-1/derivative-calculator/?f=" + ok + "+&order=" + difforder + "&var=" + diffvariable + "&p=&steps=on#solution");
+}
+
+var pardifforder = "";
+function getparorder(value) {
+    pardifforder = value;
+}
+function partialdiffsolve() {
+    var ikk = document.getElementById("inputpartialorder");
+    if (ikk.value == "") {
+        ikk.value = "x";
+    }
+    var parok = encodeURIComponent(document.getElementById("inputpartialdiff").value);
+    var parorder = encodeURIComponent(document.getElementById("inputpartialorder").value);
+    window.open("https://www.emathhelp.net/calculators/calculus-3/partial-derivative-calculator/?f=" + parok + "&var=" + parorder + "&steps=on#solution");
+}
+
+var integralvar = "";
+function getintegralvar(value) {
+    integralvar = value;
+}
+function solveintegral() {
+
+    if (checkit == "notok" || checkit == "") {
+        var inte = encodeURIComponent(document.getElementById("inputintegral").value);
+        window.open("https://www.emathhelp.net/calculators/calculus-2/integral-calculator/?f=" + inte + "&var=" + integralvar + "&steps=on#solution")
+    }
+    if (checkit == "ok") {
+        var upperlim = document.getElementById("upperlimit").value;
+        var lowerlim = document.getElementById("lowerlimit").value;
+        var integ = encodeURIComponent(document.getElementById("inputintegral").value);
+        var iv = ""
+        if (upperlim == "" && lowerlim == "") {
+            var upperlimmm = "inf";
+            var lowerlimmm = "-inf";
+        } else if (lowerlim != "" && upperlim == "") {
+            var upperlimmm = "inf";
+            var lowerlimmm = lowerlim;
+        } else if (lowerlim == "" && upperlim != "") {
+            var upperlimmm = upperlim;
+            var lowerlimmmgf = "-inf";
+        } else if (lowerlim != "" && upperlim != "") {
+            var upperlimmm = upperlim;
+            var lowerlimmm = lowerlim;
         }
-        return false;
+        window.open("https://www.emathhelp.net/calculators/calculus-2/definite-integral-calculator/?f=" + integ + "&var=" + integralvar + "&a=" + lowerlimmm + "&b=" + upperlimmm + "&steps=on#solution")
+
+    }
+
+}
+
+var checkit = ""
+function collapselimitbox() {
+    var sa = document.getElementById("enablelimit");
+    if (sa.checked == true) {
+        checkit = "ok";
+        $('#collapselimit').slideDown();
+    }
+    if (sa.checked == false) {
+        checkit = "notok";
+        $('#collapselimit').slideUp();
+    }
+}
+
+function solvelaplace() {
+    var lurl = encodeURIComponent(document.getElementById("inputlaplace").value);
+    window.open("https://www.emathhelp.net/calculators/differential-equations/laplace-transform-calculator/?f=" + lurl + "#solution");
+}
+function solveinverselaplace() {
+    var ilurl = encodeURIComponent(document.getElementById("inputinverselaplace").value);
+    window.open("https://www.emathhelp.net/calculators/differential-equations/inverse-laplace-transform-calculator/?f=" + ilurl + "#solution");
+}
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+function printtable() {
+    var temp = "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
+    var num = parseInt(document.getElementById("numtable").value);
+    var end = parseInt(document.getElementById("numending").value);
+    if (num == '' || end == '') {
+        document.getElementById("resulttable").innerHTML = "";
     } else {
-        var quotient = Math.floor(dividend / divisor);
-        var remainder = dividend % divisor;
-        var dividendLength = (dividend.toString()).length;
-        var divisorLength = (divisor.toString()).length;
-        var tableBody = '';
-        var tableNumColumns = dividendLength + divisorLength;
-        var tableNumRows = dividendLength * 2 + 2;
-        var numSteps = dividendLength + 1;
-        var tmpVar;
-        for (a = 1; a <= tableNumRows; a++) {
-            tableBody += '<tr>';
-            for (b = 1; b <= tableNumColumns; b++) {
-                tableBody += '<td style="padding: 7px; border:1px solid var(--apppink); ;"></td>';
-            }
-            tableBody += '</tr>';
+        for (var i = 1; i <= end; i++) {
+            temp += "<tr>"
+            temp += '<td>' + num + '</td><td>×</td><td>' + i + '</td><td>=</td><td>' + num * i + '</td>';
+            temp += "</tr>"
         }
-        resultContainer.html('<div><h4 style="color:white"><table class="table table-bordered" style="color:white;width: 50px; padding: 0; margin-left:auto;margin-right:auto; border:2px solid light-grey;">' + tableBody + '</table></div>');
-        var tableRows = resultContainer.find('table tr');
-        for (i = 0; i < divisorLength; i++) {
-            tableRows.eq(1).find('td').eq(i).html((divisor.toString())[i]);
-        }
-        tableRows.eq(1).find('td').eq(divisorLength - 1).css('border-right', '6px solid white');
-        for (i = 0; i < dividendLength; i++) {
-            tableRows.eq(1).find('td').eq(divisorLength + i).html((dividend.toString())[i]).css('border-top', '6px solid white');
-        }
-        for (currentStep = 1; currentStep < numSteps; currentStep++) {
-            if (!bufferVar) var bufferVar = (dividend.toString())[0];
-            var stepResult = Math.floor(bufferVar / divisor);
-            tableRows.eq(0).find('td').eq(divisorLength + currentStep - 1).html(stepResult);
-            tmpVar = (stepResult * divisor).toString();
-            for (a = tmpVar.length - 1; a >= 0; a--) {
-                tableRows.eq(currentStep * 2).find('td').eq(divisorLength + currentStep - a - 1).html(tmpVar[tmpVar.length - a - 1]).css('border-bottom', '6px solid white');
-            }
-            tmpVar = (bufferVar - stepResult * divisor).toString();
-            for (a = tmpVar.length - 1; a >= 0; a--) {
-                tableRows.eq(currentStep * 2 + 1).find('td').eq(divisorLength + currentStep - a - 1).html(tmpVar[tmpVar.length - a - 1]);
-            }
-            tableRows.eq(currentStep * 2 + 1).find('td').eq(divisorLength + currentStep).html((dividend.toString())[currentStep]);
-            bufferVar = tmpVar + (dividend.toString())[currentStep];
-        }
+        temp += "</table>"
+        document.getElementById("resulttable").innerHTML = "<b>" + temp + "</b>";
     }
 }
 
-function searchgoogle(value) {
-    if (value != '') {
-        value = encodeURIComponent(value);
-        window.open("https://www.google.com/search?q=" + value)
+//-----------------------------------------------------
+//shapes calculator
+function solveperisq() {
+    var val = document.getElementById("inputsqside").value;
+    if (val == '') {
+        document.getElementById("resultofperisq").innerHTML = '';
+    } else {
+        var sol = eval(String(4) + '*' + String(val));
+        var temp = '\\[ 4 \\times ( ' + val + ' ) = ' + sol + '\\]';
+        temp += '\\[Perimeter \\space of \\space Square \\space is \\space ' + sol + '\\]';
+        document.getElementById("resultofperisq").innerHTML = temp;
     }
+    renderMathInElement(document.getElementById("resultofperisq"));
+}
+function solvediagonalsq() {
+    var val = document.getElementById("inputsqside").value;
+    if (val == '') {
+        document.getElementById("resultofdiagonalsq").innerHTML = '';
+    } else {
+        var sol = eval(1.414 + '*' + String(val));
+        var temp = '\\[ \\sqrt{2} ( ' + val + ' ) = ' + sol + '\\]';
+        temp += '\\[Diagonal \\space of \\space Square \\space is \\space ' + sol + '\\]';
+        document.getElementById("resultofdiagonalsq").innerHTML = temp;
+    }
+    renderMathInElement(document.getElementById("resultofdiagonalsq"));
+}
+function solveareasq() {
+    var val = document.getElementById("inputsqside").value;
+    if (val == '') {
+        document.getElementById("resultofareasq").innerHTML = '';
+    } else {
+        var sol = eval(String(val) + '*' + String(val));
+        var temp = '\\[' + val + ' \\times ' + val + ' = ' + sol + '\\]';
+        temp += '\\[Area \\space of \\space Square \\space is \\space ' + sol + '\\]';
+        document.getElementById("resultofareasq").innerHTML = temp;
+    }
+    renderMathInElement(document.getElementById("resultofareasq"));
 }
 
-function closenav() {
-    $('#slide-out').addClass('sidenav-close');
-    setTimeout(function () {
-        $('#slide-out').removeClass('sidenav-close');
-    }, 100);
-}
+function equilateraltrianglearea(){
+    var side=document.getElementById('equilateraltriangleside').value;
+    var areaoutput=document.getElementById('equilateraltrianglearea');
+    var perimeteroutput=document.getElementById('equilateraltriangleperimeter');
+    var areatemp="";
+    var perimetertemp="";
+    if(side!="") {
+        perimetertemp += "\\[P=3 \\times " + side + "\\]";
+        perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval(String(3 * side)) + "\\]";
+        perimeteroutput.innerHTML = perimetertemp;
 
-function count(s) {
-    var id = document.getElementById('interval');
-    var count = 0;
-    for (i in s) {
-        count++;
+        areatemp+="\\[A = \\frac{\\sqrt{3}}{4} "+side+"^2 \\]";
+        areatemp+="\\[A = \\frac{1.73}{4} ("+eval(String(side*side))+")\\]";
+        areatemp+="\\[A=0.433 \\times "+eval(String(side*side))+" \\]";
+        var a=eval(String("0.433*"+String(side*side)));
+        areatemp+="\\[A="+a+" \\]";
+        areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]"
+        areaoutput.innerHTML=areatemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(perimeteroutput);
+    }else{
+        areaoutput.innerHTML="";
+        perimeteroutput.innerHTML="";
     }
-    return count;
 }
 
 function rectanglesolve() {
@@ -1186,7 +1007,93 @@ function rectanglesolve() {
     renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
+//shapes calculator
+//-----------------------------------------------------
 
+//-----------------------------------------------------
+//display inputted equation
+function dequation() {
+    var val = document.getElementById('inputequation').value;
+    val = nerdamer(val).toTeX();
+    katex.render(val, document.getElementById('displayequation'), {
+        throwOnError: false
+    });
+}
+//display inputted equation
+
+//simplify equation
+function ssimplifyequation(input, output) {
+    var val = document.getElementById(input).value;
+    var sol = nerdamer('simplify(' + String(val) + ')');
+    sol = nerdamer(sol).toTeX();
+    katex.render('Simplified:\\newline'+sol, document.getElementById(output), {
+        throwOnError: false
+    });
+}
+//simplify equation
+
+//expand equation
+function sequationexpand(input, output) {
+    var val = document.getElementById(input).value;
+    var sol;
+    var x = nerdamer(val);
+    sol = x.expand().toString();
+    sol = nerdamer(sol).toTeX();
+    katex.render('Expanded:\\newline'+sol, document.getElementById(output), {
+        throwOnError: false
+    });
+}
+//expand equation
+
+//solve for variables of multiple equations
+function generateinputfields(value) {
+    removeall('equationsmany');
+    for(var i=0;i<value;i++){
+        var inp = document.createElement('input');
+        inp.id="eq"+eval(String(i+1));
+        inp.placeholder="Equation "+eval(String(i+1));
+        inp.className="form__field";
+        inp.type="text";
+        document.getElementById('equationsmany').appendChild(inp);
+    }
+}
+function sequationsolver(output) {
+    var sol;
+    var ar=[]
+    for(var i=0;i<document.getElementById('numberofequationfields').value;i++){
+        ar[i]=document.getElementById("eq"+eval(String(i+1))).value;
+    }
+    nerdamer.set('SOLUTIONS_AS_OBJECT', false);
+    ar=ar.join(",");
+    try {
+        sol = nerdamer('solveEquations([' + ar + '])');
+        sol=sol.toString();
+        sol=sol.slice(0,-1);
+        sol=sol.slice(1,sol.length);
+        sol=sol.split(',');
+        var temp='';
+        for(i=0;i<=sol.length/2+1;i+=2){
+            temp+='\\['+sol[i]+'='+sol[i+1]+'\\]';
+        }
+        document.getElementById(output).innerHTML=temp;
+        renderMathInElement(document.getElementById(output));
+    }catch (e) {
+        document.getElementById(output).innerHTML="Sorry! cannot Compute for these values.";
+    }
+
+}
+//solve for variables of multiple equations
+
+//call
+function equationmagic() {
+    var input='inputequation';
+    ssimplifyequation(input,'resultsimplifyequation');
+    sequationexpand(input,'resultexpandequation');
+}
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//plotting graphs
 function plotit(input, output, funcname) {
     var val = funcname;
     document.getElementById(output).innerHTML = '';
@@ -1219,7 +1126,414 @@ function plotit(input, output, funcname) {
 
     draw()
 }
+//plotting graphs
+//-----------------------------------------------------
 
+//-----------------------------------------------------
+//display inputted equation for plotting graph
+function dploteq() {
+    var value = document.getElementById('inputplotequation').value;
+    value = nerdamer(value).toTeX();
+    katex.render(value, document.getElementById('plotgrapheqdisplay'), {
+        throwOnError: false
+    });
+}
+//display inputted equation for plotting graph
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//display inputted integral equation
+function dint() {
+    var lowerli = document.getElementById("lowerlimit").value;
+    var upperli = document.getElementById("upperlimit").value;
+    if (integralvar == '') {
+        integralvar = 'x';
+    }
+    var value = document.getElementById('inputintegral').value;
+    var x = nerdamer(value);
+    var value = x.toTeX()
+    if (checkit == '' || checkit == 'notok') {
+        lowerli = '';
+        upperli = '';
+    } else {
+        if (lowerli == '' && upperli == '') {
+            lowerli = '-\\infty';
+            upperli = '\\infty';
+        } else if (lowerli != '' && upperli == '') {
+            upperli = '\\infty';
+        } else if (lowerli == '' && upperli != '') {
+            lowerli = '-\\infty';
+        }
+    }
+    katex.render('\\int_{' + lowerli + '}^{' + upperli + '}' + value + 'd' + integralvar, document.getElementById('resultintegration'), {
+        throwOnError: false
+    });
+}
+//display inputted integral equation
+
+//solve integral
+function sint() {
+    var lowerli = document.getElementById("lowerlimit").value;
+    var upperli = document.getElementById("upperlimit").value;
+    if (integralvar == '') {
+        integralvar = 'x';
+    }
+    if (checkit == '' || checkit == 'notok') {
+        var t = nerdamer.integrate(document.getElementById('inputintegral').value, integralvar)
+        convertkatex(document.getElementById('resultintegration'), t);
+        return t.toString();
+    } else {
+        var t = nerdamer.defint(document.getElementById('inputintegral').value, lowerli, upperli, integralvar);
+        if (lowerli == '') {
+            lowerli = "-Infinity";
+        }
+        if (upperli == '') {
+            upperli = "Infinity";
+        }
+        convertkatex(document.getElementById('resultintegration'), t);
+        return t.toString();
+    }
+}
+//solve integral
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//display inputted differentiation equation
+function ddiff() {
+    var value = document.getElementById('inputdifferentiatequation').value;
+    var x = nerdamer(value);
+    var value = x.toTeX();
+    var o = '';
+    if (difforder == "") {
+        difforder = '1';
+    }
+    if (diffvariable == "") {
+        diffvariable = "x";
+    }
+    if ((diffvariable == "" && difforder == "")) {
+        o = "\\dfrac{d}{dx}";
+    } else if (diffvariable == "" && difforder != "") {
+        o = '\\dfrac{d^' + difforder + '}{dx' + difforder + '}';
+    } else {
+        o = '\\dfrac{d^' + difforder + '}{d' + diffvariable + '^' + difforder + '}';
+    }
+    katex.render(o + value, document.getElementById('resultdiff'), {
+        throwOnError: false
+    });
+}
+//display inputted differentiation equation
+
+//solve differentiation
+function sdiff() {
+    var t = String(nerdamer.diff(document.getElementById('inputdifferentiatequation').value, diffvariable, difforder))
+    convertkatex(document.getElementById('resultdiff'), t);
+    return t;
+}
+//solve differentiation
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//display inputted partial differentiation equation
+function dpardiff() {
+    var value = document.getElementById('inputpartialdiff').value;
+    getparorder(document.getElementById('inputpartialorder').value);
+    var sum = 0;
+    var or = pardifforder.match(/\d+/g);
+    var po = '';
+    if (or == null) {
+        if (pardifforder == "") {
+            po = "\\frac{\\partial }{\\partial x}"
+        } else if (pardifforder != "") {
+            var sp = pardifforder.split(",")
+            var v;
+            var temp = '';
+            for (v of sp) {
+                temp += "\\partial " + v;
+            }
+            po = '\\frac{\\partial }{' + temp + '}';
+        }
+    } else {
+        for (i of or) {
+            sum += parseInt(i);
+        }
+        if (pardifforder == "") {
+            po = '\\frac{\\partial^' + sum + '}{\\partial x}'
+        } else if (pardifforder != "") {
+            var sp = pardifforder.split(",")
+            var v;
+            var temp = '';
+            for (v of sp) {
+                temp += "\\partial " + v;
+            }
+            po = '\\frac{\\partial^' + sum + '}{' + temp + '}';
+        }
+
+    }
+
+    var x = nerdamer(value);
+    value = x.toTeX();
+    katex.render(po + value, document.getElementById('resultpardiff'), {
+        throwOnError: false
+    });
+}
+//display inputted partial differentiation equation
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//display inputted laplace equation
+function dlap() {
+    var value = document.getElementById('inputlaplace').value;
+    value = nerdamer(value).toTeX();
+    var b = "\\mathcal{L}(";
+    a = ")";
+    katex.render(b + value + a, document.getElementById('resultlaplace'), {
+        throwOnError: false
+    });
+}
+//display inputted laplace equation
+
+//solve laplace
+function slap() {
+    var value = nerdamer.laplace(document.getElementById('inputlaplace').value, "t", "s")
+    var t = value;
+    value = nerdamer(value).toTeX();
+    katex.render(value, document.getElementById('resultlaplace'), {
+        throwOnError: false
+    });
+
+    var ar = t.toString().split('');
+    for (i = 0; i < ar.length; i++) {
+        if (ar[i] == 's' && ar[i + 1] == 'i') {
+            continue;
+        } else if (ar[i] == 's' && ar[i - 1] == 'o' && ar[i - 2] == 'c') {
+            continue;
+        } else if (ar[i] == 's' && ar[i + 1] == 'e' && ar[i + 2] == 'c') {
+            continue;
+        } else if (ar[i] == 's' && ar[i - 1] == 'c' && ar[i + 1] == 'c') {
+            continue;
+        } else if (ar[i] == 's') {
+            ar[i] = 'x';
+        }
+    }
+    ar = ar.join('');
+    return ar.toString();
+}
+//solve laplace
+
+//display inputted inverse laplace equation
+function dinvlap() {
+    var value = document.getElementById('inputinverselaplace').value;
+    value = nerdamer(value).toTeX();
+    var b = "\\mathcal{L}(";
+    a = ")";
+    katex.render(b + value + a, document.getElementById('resultinverselaplace'), {
+        throwOnError: false
+    });
+}
+//display inputted inverse laplace equation
+
+//solve inverse laplace
+function sinvlap() {
+    var value = nerdamer.ilt(document.getElementById('inputinverselaplace').value, "s", "t")
+    var t = value;
+    value = nerdamer(value).toTeX();
+    katex.render(value, document.getElementById('resultinverselaplace'), {
+        throwOnError: false
+    });
+    var ar = t.toString().split('');
+    for (i = 0; i < ar.length; i++) {
+        if (ar[i] == 't' && ar[i + 1] == 'a' && ar[i + 2] == 'n') {
+            continue;
+        } else if (ar[i] == 't' && ar[i - 1] == 'c' && ar[i - 2] == 'c') {
+            continue;
+        } else if (ar[i] == 't') {
+            ar[i] = 'x';
+        }
+    }
+    ar = ar.join('');
+    return ar.toString();
+}
+//solve inverse laplace
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//ascending order
+function orderas() {
+    document.getElementById("orderresult").innerHTML = "";
+    var val = document.getElementById("ordergetval").value;
+    val = val.split(" ");
+    val = val.filter(function (str) {
+        return /\S/.test(str);
+    });
+    var len = parseInt(val.length);
+    for (i = 0; i <= len - 1; i++) {
+        for (j = 0; j <= len - 1 - i; j++) {
+            if (parseInt(val[j]) > parseInt(val[j + 1])) {
+                temp = parseInt(val[j]);
+                val[j] = parseInt(val[j + 1]);
+                val[j + 1] = temp;
+            }
+        }
+    }
+    val = val.join(',');
+    document.getElementById("orderresult").innerHTML += "\\[Ascending \\space Order\\]";
+    document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById('orderresult'));
+}
+//ascending order
+
+//descending order
+function orderde() {
+    document.getElementById("orderresultde").innerHTML = "";
+    var val = document.getElementById("ordergetval").value;
+    val = val.split(" ");
+    val = val.filter(function (str) {
+        return /\S/.test(str);
+    });
+    var len = parseInt(val.length);
+    for (i = 0; i <= len - 1; i++) {
+        for (j = 0; j <= len - 1 - i; j++) {
+            if (parseInt(val[j]) < parseInt(val[j + 1])) {
+                temp = parseInt(val[j]);
+                val[j] = parseInt(val[j + 1]);
+                val[j + 1] = temp;
+            }
+        }
+    }
+    val = val.join(',')
+    document.getElementById("orderresultde").innerHTML += "\\[ Descending \\space Order \\]";
+    document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById('orderresultde'));
+}
+//descending order
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+function count(s) {
+    var id = document.getElementById('interval');
+    var count = 0;
+    for (i in s) {
+        count++;
+    }
+    return count;
+}
+function internationalwords(num) {
+    var a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
+    var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    if ((num = num.toString()).length > 9) return 'overflow';
+    n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+    if (!n) return;
+    var str = '';
+    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+
+    if (count(num) >= 9) {
+        document.getElementById("interresult").innerHTML = 'Upto 8 digits only';
+    } else {
+        document.getElementById("interresult").innerHTML = str;
+    }
+
+}
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//multiplicaion with steps
+function multiplywithsteps(numm, withnum) {
+    var num = document.getElementById(numm).value.toString();
+    var numwith = document.getElementById(withnum).value.toString();
+    if (num % 1 == 0 && numwith % 1 != 0) {
+        var sw = numwith;
+        numwith = num;
+        num = sw;
+        document.getElementById(withnum).value = numwith;
+        document.getElementById(numm).value = num;
+    }
+    var flag = 0; // num
+    if (num % 1 != 0)
+        flag = 1; //float
+    var countdot = 0;
+    var countdotwith = 0;
+
+    if (flag == 1) {
+        for (i = num.length - 1; i >= 0; i--) {
+            if (num[i] == '.') {
+                break;
+            }
+            countdot++;
+        }
+        for (j = numwith.length - 1; j >= 0; j--) {
+            if (numwith[j] == '.') {
+                break;
+            }
+            countdotwith++;
+        }
+        var v = 0;
+        if ((countdotwith > countdot) && (numwith % 1 != 0)) {
+            var sw = numwith;
+            numwith = num;
+            num = sw;
+            document.getElementById(withnum).value = numwith;
+            document.getElementById(numm).value = num;
+            v = 1;
+        }
+
+    }
+    var r = document.getElementById("resultmulsol");
+    var temp = "";
+    var m = "";
+    var line = "";
+    var mulsol = eval(nerdamer(String(numwith) + '*' + String(num)).evaluate().toString());
+    if (numwith.length > 1) {
+        numwith = numwith.split('');
+        for (i = numwith.length - 1; i >= 0; i--) {
+            if (numwith[i] == '.')
+                continue;
+            if (numwith.length == m.length + 1) {
+                var vm = eval(nerdamer(String(numwith[i]) + '*' + String(num)).evaluate().toString());
+                temp += "+ " + String(vm).replace('.', '') + m;
+            } else {
+                var vm = eval(nerdamer(String(numwith[i]) + '*' + String(num)).evaluate().toString())
+                temp += String(vm).replace('.', '') + m;
+
+            }
+            temp += "<br>";
+            m += "&times;";
+        }
+        for (i = 0; i < String(mulsol).length; i++) {
+            line += "_";
+        }
+    } else {   //no plus simple multiply
+        var mulsol = eval(nerdamer(String(numwith) + '*' + String(num)).evaluate().toString());
+        for (i = 0; i < String(mulsol).length; i++) {
+            line += "_";
+        }
+    }
+    if (numwith.length == 1) {
+        r.innerHTML = "";
+        r.innerHTML += num + "<br>";
+        r.innerHTML += "× " + numwith + "<br>"
+        r.innerHTML += line + "<br>";
+        r.innerHTML += mulsol + "<br>";
+        r.innerHTML += line + "<br>";
+    } else {
+        r.innerHTML = "";
+        r.innerHTML += num + "<br>";
+        r.innerHTML += "× " + numwith.join('') + "<br>"
+        r.innerHTML += line + "<br>";
+        r.innerHTML += temp;
+        r.innerHTML += line + "<br>";
+        r.innerHTML += mulsol + "<br>";
+        r.innerHTML += line + "<br>";
+    }
+}
+//multiplicaion with steps
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+//roots of quadratic equation
 function rootquadratic() {
     var a = parseInt(document.getElementById('coffa').value);
     var b = parseInt(document.getElementById('coffb').value);
@@ -1335,11 +1649,18 @@ function rootquadratic() {
         renderMathInElement(document.getElementById("rootsquadraticresult"));
     }
 }
+//roots of quadratic equation
+//-----------------------------------------------------
 
+//-----------------------------------------------------
+//place of roundoff
 var placeofroundoff;
 function placeofroundoffget(place){
     placeofroundoff=place;
 }
+//place of roundoff
+
+//roundoff
 function roundoff(input,output){
     var val=document.getElementById(input).value;
     var el=document.getElementById(output);
@@ -1388,26 +1709,5 @@ function roundoff(input,output){
         el.innerHTML = ar.join('');
     }
 }
-function generateinputfields(value) {
-    removeall('equationsmany');
-    for(var i=0;i<value;i++){
-        var inp = document.createElement('input');
-        inp.id="eq"+eval(String(i+1));
-        inp.placeholder="Equation "+eval(String(i+1));
-        inp.className="form__field";
-        inp.type="text";
-        document.getElementById('equationsmany').appendChild(inp);
-    }
-}
-
-// function presskey(){
-//     document.addEventListener ('keydown', function (event){
-//         document.getElementById('txt').value=(String.fromCharCode(event.which));
-//     });
-//     var evt = new KeyboardEvent('keydown', {'keyCode':50, 'which':50});
-//     document.dispatchEvent (evt);
-//
-// }
-
-
-
+//roundoff
+//-----------------------------------------------------

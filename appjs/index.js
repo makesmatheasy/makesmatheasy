@@ -23,10 +23,9 @@ function openit(id) {
 
 function loadfilesafterload() {
     var aroffiles = [
-        "appjs/logicjquery.js",
+        "appjs/working.js",
         "appjs/logicjavascript.js",
         "appjs/matrixlogic.js",
-        "appjs/displaymath.js",
         "appjs/simplecallogic.js",
         "appjs/searchbar.js",
         "appjs/speechrecoforall.js",
@@ -40,7 +39,6 @@ function loadfilesafterload() {
         document.getElementsByTagName("body")[0].appendChild(scriptelm);
     }
 }
-
 function bodyload() {
     var ar = JSON.parse(localStorage.getItem('favouritearray'));
     var oid = JSON.parse(localStorage.getItem('openingidarray'));
@@ -57,7 +55,6 @@ function bodyload() {
     }
     numbersapi();
 }
-
 var favouritearray = [];
 var openingid = [];
 var typearray = [];

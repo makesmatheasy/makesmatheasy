@@ -1,15 +1,21 @@
-
-
+function opencal() {
+    $('#cal').slideToggle();
+}
 function cleardiv(arrayofclearids) {
     for (parameterarray of arrayofclearids) {
         document.getElementById(parameterarray).innerHTML = "";
     }
 }
-
 function clearall() {
     setTimeout(function () {
         cleardiv(["resultintegration", "integralplot","resultdiff", "diffplot","resulttable","generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult","rootsquadraticresult","inputroundoffoutput","plotequationresult","resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot","resultpardiff","resultmulsol","soltri","resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation","dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf","displayequation","resultsimplifyequation","resultexpandequation","equationsmany","resultsolverequation"]);
     }, 1000);
+}
+function closenav() {
+    $('#slide-out').addClass('sidenav-close');
+    setTimeout(function () {
+        $('#slide-out').removeClass('sidenav-close');
+    }, 100);
 }
 
 $(document).ready(function () {
