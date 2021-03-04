@@ -6,7 +6,7 @@
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+    <!--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -23,11 +23,13 @@
         <style>
             .javascriptno {
                 display: block !important;
-                background: black;
+                position: absolute;
+                width: 100%;
+                z-index: 999;
+                background: var(--appblack);
                 background-size: cover;
                 text-align: center;
                 min-height: 100vh;
-                color: white;
             }
         </style>
     </noscript>
@@ -110,6 +112,20 @@
     </style>
 </head>
 <body class="readonlybody hidescroll" onload="bodyload()">
+<div class="blink-1 javascriptno" style="display:none;">
+    <p>
+    <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
+    <br>
+    <br>
+    May be your Browser won't Support Javascript
+    <br>or<br>
+    Try enabling Javascript in your Browser Settings
+    <br><br>
+    <a class="btn btn-secondary" href="https://enablejavascript.co/">Check
+        How to enable?</a>
+    </p>
+</div>
+
 <ol id="favourite" class="sticky-bottom"></ol>
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
@@ -137,7 +153,8 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="equationssolverbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Play with Equations</a>
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Play with
+                                Equations</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Play with Equations','#equationssolver','c','equationssolverfav')"><img
@@ -423,18 +440,18 @@
         </div>
 
         <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
-        <li><a id="contactbutton" style="cursor: pointer;color:white;" onclick="window.open('contact.html')">Contact</a></li>
-        <li><a href="whatsapp://send?text=Thanks for using Makes Math Easy, %0a *Regards Sairish*"
+        <li><a id="contactbutton" style="cursor: pointer;color:white;" onclick="window.open('contact.html')">Contact</a>
+        </li>
+
+        <li><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
+"
                data-action="share/whatsapp/share">Share to Whatsapp<img style="display:inline;height:25px;"
                                                                         src="images/whatsapplogo.png"></a></li>
         <li><a data-toggle="modal" data-target="#settings" style="text-decoration:none;"
                href="#">Settings</a></li>
     </ul>
 </nav>
-<div class="blink-1 javascriptno" style="width:100%;position:absolute;z-index:999;display:none;">May be your Browser
-    won't Support Javascript<br>or<br>Try Turning on Javascript in Browser Settings<br><br><a class="btn btn-light"
-                                                                                              href="helpjavascript.html">Check
-        How to?</a></div>
+
 <div id="main" style="z-index:31;">
     <div class="form-group">
         <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out" class="sidenav-trigger"><img
@@ -485,19 +502,21 @@
                 <table>
                     <tr>
                         <td>
-                            <input type="number" id="divisornumwith" class="form__field" style="width:70px;border-bottom:6px solid var(--apppink);">
+                            <input type="number" id="divisornumwith" class="form__field"
+                                   style="width:70px;border-bottom:6px solid var(--apppink);">
                         </td>
                         <td>
-                            <input type="number" id="dividendnum" class="form__field" style="width:120px;border-left:6px solid var(--apppink);border-top:6px solid var(--apppink);">
+                            <input type="number" id="dividendnum" class="form__field"
+                                   style="width:120px;border-left:6px solid var(--apppink);border-top:6px solid var(--apppink);">
                         </td>
                         <td>
                             <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
                         </td>
                     </tr>
                 </table>
-<!--                <div class="col-3">-->
-                    <p id="resultofdivsteps"></p>
-<!--                </div>-->
+                <!--                <div class="col-3">-->
+                <p id="resultofdivsteps"></p>
+                <!--                </div>-->
                 <p id="resultdivi" class="stopwrap" style="font-family:mathfont;;"></p>
             </div>
             <!--            -->
@@ -611,40 +630,40 @@
 
         <div class="collapse" id="differentiatecollapse">
 
-                <div style="display: inline-block;" class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="difforderselect"
-                            data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Order of Diff.
-                    </button>
-                    <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
-                         aria-labelledby="difforderselect"
-                         onclick="ddiff();">
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">4</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">5</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">6</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
-                        <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
-                        <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
-                    </div>
+            <div style="display: inline-block;" class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="difforderselect"
+                        data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Order of Diff.
+                </button>
+                <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
+                     aria-labelledby="difforderselect"
+                     onclick="ddiff();">
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">4</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">5</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">6</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
+                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
+                    <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
                 </div>
-                <div style="display: inline-block;" class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="diffvariableselect"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="diffvariableselect" onclick="ddiff();">
-                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">x</span>
-                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">y</span>
-                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">t</span>
-                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">u</span>
-                        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">v</span>
-                        <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
-                                                           oninput="getdiffvariable(this.value);ddiff();"></span>
-                    </div>
+            </div>
+            <div style="display: inline-block;" class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="diffvariableselect"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
+                </button>
+                <div class="dropdown-menu" aria-labelledby="diffvariableselect" onclick="ddiff();">
+                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">x</span>
+                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">y</span>
+                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">t</span>
+                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">u</span>
+                    <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">v</span>
+                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
+                                                       oninput="getdiffvariable(this.value);ddiff();"></span>
                 </div>
+            </div>
 
 
             <div class="form-group">
@@ -681,21 +700,21 @@
         </div>
         <div class="collapse" id="integralcollapse">
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect"
-                            data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Variable
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
-                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">x</span>
-                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">y</span>
-                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">t</span>
-                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">u</span>
-                        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">v</span>
-                        <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
-                                                           oninput="getintegralvar(this.value);dint();"></span>
-                    </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect"
+                        data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Variable
+                </button>
+                <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
+                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">x</span>
+                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">y</span>
+                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">t</span>
+                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">u</span>
+                    <span onclick="getintegralvar(this.innerText);" class="dropdown-item">v</span>
+                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
+                                                       oninput="getintegralvar(this.value);dint();"></span>
                 </div>
+            </div>
             <div class="form-group">
                 <div class="form-check">
                     <input type="checkbox" id="enablelimit" value="Enable" onclick="collapselimitbox();dint();"
@@ -1014,25 +1033,25 @@
                     <input type="number" id="inputroundoffinput" class="form__field" placeholder="Enter Number">
                 </div>
 
-                    <div style="display: inline-block;" class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="placeofroundoffbtn"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Place of Roundoff
-                        </button>
-                        <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
-                             aria-labelledby="placeofroundoff">
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Once</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Tens</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Hundred</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Thousand</span>
-                            <span onclick="placeofroundoffget(this.innerText);"
-                                  class="dropdown-item">Ten Thousand</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Lakh</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ten Lakh</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Crore</span>
-                            <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ten Crore</span>
-                        </div>
+                <div style="display: inline-block;" class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="placeofroundoffbtn"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Place of Roundoff
+                    </button>
+                    <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
+                         aria-labelledby="placeofroundoff">
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Once</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Tens</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Hundred</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Thousand</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Ten Thousand</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Lakh</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ten Lakh</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Crore</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ten Crore</span>
                     </div>
+                </div>
 
             </div>
             <div class="form-group">
@@ -1051,11 +1070,14 @@
                 </p>
             </div>
             <div class="form-group">
-                <input type="text" id="inputequation" class="form__field" placeholder="Enter Equation" oninput="dsimplifyequation();">
+                <input type="text" id="inputequation" class="form__field" placeholder="Enter Equation"
+                       oninput="dsimplifyequation();">
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light" onclick="equationmagic();">Reduce</button>
-                <button type="button" class="btn btn-light" onclick="collapseit('equationsmanydiv');">Solve for Variables</button>
+                <button type="button" class="btn btn-light" onclick="collapseit('equationsmanydiv');">Solve for
+                    Variables
+                </button>
             </div>
 
             <div class="form-group">
@@ -1070,11 +1092,14 @@
 
             <div id="equationsmanydiv" class="form-group collapse">
                 <div class="form-group">
-                    <input type="number" class="form__field" id="numberofequationfields" oninput="generateinputfields(this.value);" placeholder="No. of Equations">
+                    <input type="number" class="form__field" id="numberofequationfields"
+                           oninput="generateinputfields(this.value);" placeholder="No. of Equations">
                 </div>
                 <div class="form-group" id="equationsmany"></div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="sequationsolver('resultsolverequation');">Solve</button>
+                    <button type="button" class="btn btn-light" onclick="sequationsolver('resultsolverequation');">
+                        Solve
+                    </button>
                 </div>
                 <p class="stopwrap" id="resultsolverequation">
 
