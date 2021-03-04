@@ -37,6 +37,10 @@ Other Tech/Libraries
     - Addition
     - Subtraction
     - Multiplication
+  - Play with Equations (without Steps)
+    - Simplify Equation
+    - Expand Equation
+    - Solve value of variables of multiple inputted equations
 - Calculus
   - Integration + Limits
     - Solution from Nerdamer
