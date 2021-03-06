@@ -133,7 +133,7 @@ function more() {
     }
 
     if (dot.innerText == ".") {
-        dot.innerText = '.'
+        dot.innerText = 'log('
     } else {
         dot.innerText = '.'
     }
@@ -143,6 +143,14 @@ function more() {
     } else {
         percent.innerText = '%'
     }
+    if(sqrt.innerText=="√"){
+        sqrt.innerText='log10('
+    }
+    else{
+        sqrt.innerText='√'
+    }
+
+    
 }
 
 function todeci() {
