@@ -1,4 +1,9 @@
-# Makes Math Easy
+![Makes Math Easy](https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png)
+
+
+
+
+
 Started on **13 July,2020**
 
 Solves various Math Problems along with Steps
