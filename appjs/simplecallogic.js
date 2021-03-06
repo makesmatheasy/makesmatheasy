@@ -139,7 +139,7 @@ function more() {
     }
 
     if (percent.innerText == "%") {
-        percent.innerText = 'RAD'
+        percent.innerText = 'DEG'
     } else {
         percent.innerText = '%'
     }
