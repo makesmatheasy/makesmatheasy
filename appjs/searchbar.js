@@ -134,9 +134,9 @@ function autocomplete(inp, arr) {
     });
 }
 
-var countries = ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiate", "Area for Shapes", "Factors", "Matrix"];
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), countries);
+var arrayofelements = ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiate", "Area for Shapes", "Factors", "Matrix"];
+/*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), arrayofelements);
 
 function handleclick(value) {
     if (value.toUpperCase() == "INTEGRATION") {
@@ -168,6 +168,4 @@ function handleclick(value) {
         $("#inverselaplacecollapse").slideToggle();
         $("#laplacecollapseit").slideUp();
     }
-
-
 }
