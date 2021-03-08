@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Makes Math Easy</title>
@@ -252,6 +252,21 @@
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('P/B/H Trigo.','#simpletrignocollapse','c','strigoimgfav')"><img
+                                    id="strigoimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="trigonovaluestablebutton"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Trigonometry Values
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Trigonometry Values','#trigonovaluestable','c','strigoimgfav')"><img
                                     id="strigoimgfav" src="images/unfavourite.png" style="height:25px;"></span>
                         </td>
                     </tr>
@@ -916,8 +931,71 @@
         </div>
 
         <!--multiple matrix-->
-        <div id="trigonovaluestable">
-            
+        <div class="collapse" id="trigonovaluestable">
+
+            <table class="table table-bordered table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Angles→<br>Ratios↓</th>
+                    <th scope="col">0°</th>
+                    <th scope="col">30°</th>
+                    <th scope="col">45°</th>
+                    <th scope="col">60°</th>
+                    <th scope="col">90°</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">sin θ</th>
+                    <td>0</td>
+                    <td>1/2</td>
+                    <td>1/√2</td>
+                    <td>√3/2</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">cos θ</th>
+                    <td>1</td>
+                    <td>√3/2</td>
+                    <td>1/√2</td>
+                    <td>1/2</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">tan θ</th>
+                    <td>0</td>
+                    <td>1/√3</td>
+                    <td>1</td>
+                    <td>√3</td>
+                    <td>Not defined</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">cosec θ</th>
+                    <td>Not defined</td>
+                    <td>2</td>
+                    <td>√2</td>
+                    <td>2/√3</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">sec θ</th>
+                    <td>1</td>
+                    <td>2/√3</td>
+                    <td>√2</td>
+                    <td>2</td>
+                    <td>Not defined</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">cot θ</th>
+                    <td>Not defined</td>
+                    <td>√3</td>
+                    <td>1</td>
+                    <td>1/√3</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+
         </div>
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">

@@ -18,6 +18,7 @@ function openit(id) {
     "#shapescal",
     "#divide",
     "#simpletrignocollapse",
+    "#trigonovaluestable",
     "#factors",
     "#integralcollapse",
     "#differentiatecollapse",
