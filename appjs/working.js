@@ -87,6 +87,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#trigonovaluestablebutton").click(function () {
+        openit("#trigonovaluestable");
+        closenav();
+        clearall();
+    })
 
     $("#diffsolvebutton").click(function () {
         diffsolve();
