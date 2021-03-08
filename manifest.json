@@ -6,7 +6,7 @@
     "display":"standalone",
     "icons":[
         {
-            "src":"images/firefox.png",
+            "src":"icons/makesmatheasylogo.png",
             "image":"image/png",
             "sizes":"192x192"
         }
