@@ -2,6 +2,8 @@
 
 Hi there! We're thrilled that you would like to contribute to this project. Your contribution is essential for keeping it great.
 
+If you are a participant of GSSOC'21 and interested in this Project. Kindly Join the [Discord Server](https://discord.gg/3BrekSZV5H) for Discussions. (only GSSOC'21 participants)
+
 ## Issues and PRs
 
 If you have suggestions for how this project could be improved, or want to report a bug, **open an issue!** We love every contribution. If you have questions, too, we love to hear them.
