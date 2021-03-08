@@ -451,6 +451,23 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="unitconbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Unit
+                                Convertor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Unit Convertor','#unitconcal','c','unitimgfav')"><img
+                                    id="unitimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -1297,6 +1314,53 @@
                            style="text-decoration:none;" href="#">Parallelogram</a></td>
                 </tr>
             </table>
+        </div>    
+        <div class="collapse" id="unitconcal">
+            <h2>Unit Convertor</h2>
+            <table class="table"> 
+                <tr>
+                    <td>
+                        <div style="color: white;cursor: pointer;">
+                            <a data-toggle="modal" data-target="#lengthcon"
+                                           style="text-decoration:none;" href="#">Length</a>
+                        </div>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: white;cursor: pointer;">
+                            <a data-toggle="modal" data-target="#areacon"
+                                           style="text-decoration:none;" href="#">Area</a>
+                        </div>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: white;cursor: pointer;">
+                            <a data-toggle="modal" data-target="#volcon"
+                                           style="text-decoration:none;" href="#">Volume</a>
+                        </div>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: white;cursor: pointer;">
+                            <a data-toggle="modal" data-target="#masscon"
+                                           style="text-decoration:none;" href="#">Mass</a>
+                        </div>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: white;cursor: pointer;">
+                            <a data-toggle="modal" data-target="#tempcon"
+                                           style="text-decoration:none;" href="#">Temperature</a>
+                        </div>
+                    </td>                    
+                </tr>
+                
+                
+            </table>
         </div>
         <!--        check divisibility-->
 
@@ -1868,7 +1932,331 @@
 <!--shapes end-->
 
 <!-------------------------------------------------------->
+<!--unit convert-->
+<div>
+    <div class="modal fade" id="lengthcon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Length</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center" style="">From</h5>
+                        </label>
+                        <select id="lengthcon-1" class="form__field" onchange="lentgthcon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Millimeter
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Centimeter
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Meter
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Kilometer
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Inch</option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Foot</option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Yard</option>
+                            <option value="8" class="form_field" style="background-color:var(--appblack);">Mile</option>
+                            <option value="9" class="form_field" style="background-color:var(--appblack);">Nautical mile
+                            </option>
+                        </select>
+                        <input type="number" id="lengthconin" class="form__field" placeholder="Enter Side" value="0" ;
+                            oninput="lentgthcon();">
 
+                        <label for="To">
+                            <h5 class="text-center" style="">To</h5>
+                        </label>
+                        <select id="lengthcon-2" class="form__field" onchange="lentgthcon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Millimeter
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Centimeter
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Meter
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Kilometer
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Inch</option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Foot</option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Yard</option>
+                            <option value="8" class="form_field" style="background-color:var(--appblack);">Mile</option>
+                            <option value="9" class="form_field" style="background-color:var(--appblack);">Nautical mile
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field" style=";" id="lengthconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="areacon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Length</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center" style="">From</h5>
+                        </label>
+                        <select id="areacon-1" class="form__field" onchange="areacon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Acre
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Are
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Hectare
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Square
+                                centimeter
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Square foot
+                            </option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Square inch
+                            </option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Square meter
+                            </option>
+                        </select>
+                        <input type="number" id="areaconin" class="form__field" placeholder="Enter Side" value="0" ;
+                            oninput="areacon();">
+
+                        <label for="To">
+                            <h5 class="text-center" style="">To</h5>
+                        </label>
+                        <select id="areacon-2" class="form__field" onchange="areacon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Acre
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Are
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Hectare
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Square
+                                centimeter
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Square foot
+                            </option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Square inch
+                            </option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Square meter
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field" style=";" id="areaconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="volcon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Length</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center" >From</h5>
+                        </label>
+                        <select id="volcon-1" class="form__field" onchange="volcon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Gallon (US)
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Gallon (UK)
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Liter
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Milliliter
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Cubic
+                                centimeter (cc)</option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Cubic meter
+                            </option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Cubic inch
+                            </option>
+                            <option value="8" class="form_field" style="background-color:var(--appblack);">Cubic foot
+                            </option>
+                        </select>
+                        <input type="number" id="volconin" class="form__field" placeholder="Enter Side" value="0" ;
+                            oninput="volcon();">
+
+                        <label for="To">
+                            <h5 class="text-center" >To</h5>
+                        </label>
+                        <select id="volcon-2" class="form__field" onchange="volcon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Gallon (US)
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Gallon (UK)
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Liter
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Milliliter
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Cubic
+                                centimeter (cc)</option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Cubic meter
+                            </option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Cubic inch
+                            </option>
+                            <option value="8" class="form_field" style="background-color:var(--appblack);">Cubic foot
+                            </option>
+                        </select>
+                        </select>
+                        <label for="out">
+                            <p class="form__field"  id="volconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="masscon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Length</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center" >From</h5>
+                        </label>
+                        <select id="masscon-1" class="form__field" onchange="masscon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Ton
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Ton (UK)
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Ton (US)
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Pound
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Ounce
+                            </option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Kilogram
+                            </option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Gram</option>
+                            <option value="8" class="form_field" style="background-color:var(--appblack);">Miligram
+                            </option>
+                        </select>
+                        <input type="number" id="massconin" class="form__field" placeholder="Enter Side" value="0" ;
+                            oninput="masscon();">
+
+                        <label for="To">
+                            <h5 class="text-center" >To</h5>
+                        </label>
+                        <select id="masscon-2" class="form__field" onchange="masscon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Ton
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Ton (UK)
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Ton (US)
+                            </option>
+                            <option value="4" class="form_field" style="background-color:var(--appblack);">Pound
+                            </option>
+                            <option value="5" class="form_field" style="background-color:var(--appblack);">Ounce
+                            </option>
+                            <option value="6" class="form_field" style="background-color:var(--appblack);">Kilogram
+                            </option>
+                            <option value="7" class="form_field" style="background-color:var(--appblack);">Gram</option>
+                            <option value="8" class="form_field" style="background-color:var(--appblack);">Miligram
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field"  id="massconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tempcon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Length</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center" >From</h5>
+                        </label>
+                        <select id="tempcon-1" class="form__field" onchange="tempcon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Celsius
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Fahrenheit
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Kelvin
+                        </select>
+                        <input type="number" id="tempconin" class="form__field" placeholder="Enter Side" value="0" ;
+                            oninput="tempcon();">
+
+                        <label for="To">
+                            <h5 class="text-center" >To</h5>
+                        </label>
+                        <select id="tempcon-2" class="form__field" onchange="tempcon()">
+                            <option value="1" class="form_field" style="background-color:var(--appblack);">Celsius
+                            </option>
+                            <option value="2" class="form_field" style="background-color:var(--appblack);">Fahrenheit
+                            </option>
+                            <option value="3" class="form_field" style="background-color:var(--appblack);">Kelvin
+                        </select>
+                        </select>
+                        <label for="out">
+                            <p class="form__field"  id="tempconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--unit  converto end-->
+
+<!-------------------------------------------------------->
 <!--international number convert-->
 <div class="modal fade" id="internationalnumber" tabindex="-1" role="dialog"
      aria-hidden="true">

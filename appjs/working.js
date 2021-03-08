@@ -74,7 +74,7 @@ $(document).ready(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })
+    })  
 
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
@@ -119,6 +119,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#unitconbtn").click(function () {
+        openit("#unitconcal");
+        closenav();
+        clearall();
+    })
 
 });
 

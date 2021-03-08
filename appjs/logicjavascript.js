@@ -1711,3 +1711,105 @@ function roundoff(input,output){
 }
 //roundoff
 //-----------------------------------------------------
+//unit convert
+function lenu(a) {
+    switch (a) {
+        case "1": return (0.001);
+        case "2": return (0.01);
+        case "3": return (1);
+        case "4": return (1000);
+        case "5": return (0.0254);
+        case "6": return (0.3048);
+        case "7": return (0.9144);
+        case "8": return (1609.34);
+        case "9": return (1852);
+        }
+}
+function lentgthcon() {
+    const f = lenu(document.getElementById("lengthcon-1").value);
+    const t = lenu(document.getElementById("lengthcon-2").value);
+    const i = parseInt(document.getElementById("lengthconin").value);
+    const a = (i * f) / t;
+    document.getElementById("lengthconou").innerHTML = `${a}`
+}
+
+function areau(a) {
+    switch (a) {
+        case "1": return (4046.86);
+        case "2": return (100);
+        case "3": return (10000);
+        case "4": return (0.0001);
+        case "5": return (0.092903);
+        case "6": return (0.00064516);
+        case "7": return (1);
+    }
+}
+function areacon() {
+    const f = areau(document.getElementById("areacon-1").value);
+    const t = areau(document.getElementById("areacon-2").value);
+    const i = parseInt(document.getElementById("areaconin").value);
+    const a = (i * f) / t;
+    document.getElementById("areaconou").innerHTML = `${a}`
+}
+function volnu(a) {
+    switch (a) {
+        case "1": return (3.78541);
+        case "2": return (4.54609);
+        case "3": return (1);
+        case "4": return (0.001);
+        case "5": return (0.001);
+        case "6": return (1000);
+        case "7": return (0.0163871);
+        case "8": return (28.3168);
+        }
+}
+function volcon() {
+    const f = volnu(document.getElementById("volcon-1").value);
+    const t = volnu(document.getElementById("volcon-2").value);
+    const i = parseInt(document.getElementById("volconin").value);
+    const a = (i * f) / t;
+    document.getElementById("volconou").innerHTML = `${a}`
+}
+function massu(a) {
+    switch (a) {
+        case "1": return (1000);
+        case "2": return (1016.05);
+        case "3": return (907.185);
+        case "4": return (0.45359250018101);
+        case "5": return (0.0283495);
+        case "6": return (1);
+        case "7": return (0.001);
+        }
+}
+function masscon() {
+    const f = massu(document.getElementById("masscon-1").value);
+    const t = massu(document.getElementById("masscon-2").value);
+    const i = parseInt(document.getElementById("massconin").value);
+    const a = (i * f) / t;
+    document.getElementById("massconou").innerHTML = `${a}`
+}
+function tempau(a) {
+    switch (a) {
+        case "1": return (100);
+        case "2": return (180);
+        case "3": return (100);
+        }
+}
+function tempbu(a) {
+    switch (a) {
+        case "1": return (0);
+        case "2": return (32);
+        case "3": return (273);
+        }
+}
+function tempcon() {
+    const fd = tempau(document.getElementById("tempcon-1").value);
+    const tm = tempau(document.getElementById("tempcon-2").value);
+    const fs = tempbu(document.getElementById("tempcon-1").value);
+    const ta = tempbu(document.getElementById("tempcon-2").value);
+    const i = parseInt(document.getElementById("tempconin").value);
+    const a = (((i-fs)/fd)*tm)+ta;
+    document.getElementById("tempconou").innerHTML = `${a}`
+}
+//unit convert
+//-----------------------------------------------------
