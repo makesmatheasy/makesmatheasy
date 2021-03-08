@@ -1898,6 +1898,16 @@
 <script src="nerdamer/Calculus.js"></script>
 <script src="nerdamer/Solve.js"></script>
 <script src="nerdamer/Extra.js"></script>
-
+<script>
+    if('serviceWorker in navigator'){
+        navigator.serviceWorker.register('service-worker.js')
+        .then(function(reg){
+            console.log("service worker registered");
+        })
+        .catch(function(err){
+            console.log("error:",err);
+        })
+    }
+</script>
 </body>
 </html>
