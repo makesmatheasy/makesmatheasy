@@ -30,6 +30,7 @@ function openit(id) {
     "#rootsquadratic",
     "#plotgraph",
     "#roundoff",
+    "#unitconcal",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
