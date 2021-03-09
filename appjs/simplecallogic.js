@@ -14,8 +14,15 @@ function replaceAll(string, search, replace) {
 
 function calsol(va) {           //oninput call this
     va = va.replace(/\s+/g, '');
+    var i = va.search("√");
+    if (i != -1) {
+       va = va.replaceAll("√", "sqrt");
+    }
     try {
         var solution =nerdamer(va).evaluate().toString();
+        if (i != -1) {
+          va = va.replaceAll("sqrt", "√");
+        }
         var soo = document.getElementById('txt').value = va;
         document.getElementById("soltxt").value = solution;
     } catch (err) {
@@ -250,4 +257,8 @@ document.getElementById('three').addEventListener("click", function () {
     }
     document.getElementById('txt').value += this.innerText;
     calsol(document.getElementById('txt').value);    
+});
+document.getElementById('sqrt').addEventListener("click", function () {
+    document.getElementById('txt').value+=this.innerText+(this.innerText=='√'?'(':'');
+    calsol(document.getElementById('txt').value);
 });
