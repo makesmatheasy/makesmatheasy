@@ -6,10 +6,10 @@
     "display":"standalone",
     "icons":[
         {
-            "src":"icons/makesmatheasylogo.png",
+            "src":"images/icon1921.png",
             "image":"image/png",
             "sizes":"192x192"
         }
     ],
-    "start-url":"index.html"
+    "start_url":"/"
 }
