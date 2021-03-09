@@ -168,9 +168,34 @@ function removefavourite() {
   $("#favourite").removeClass("headingdiv");
   checkfavourite();
 }
-
 function numbersapi() {
-	let el=document.getElementById("numberfact");
+  let number = Math.floor(Math.random() * 100);
+  let xhttp = new XMLHttpRequest();
+  let el = document.getElementById("numberfact");
+  //If the fact is successfully retreived
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      let val = this.responseText;
+
+      // var valTex='';
+      // for(i of val){
+      //     if(i==' '){
+      //         valTex+=" \\space ";
+      //     }else{
+      //         valTex+=i;
+      //     }
+      // }
+      // console.log(valTex);
+      // el.innerHTML="\\["+valTex+"\\]";
+      el.innerHTML = val;
+      renderMathInElement(el);
+    }
+  };
+
+  xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
+
+  xhttp.onerror = function () {
+   let el=document.getElementById("numberfact");
 	var facts=
 	["The number 4 is the only number spelled with the same number of letters as itself",
 	"8 is the largest cube in the Fibonacci series",
@@ -197,14 +222,16 @@ function numbersapi() {
 	"80 is the smallest number n where n and n+1 are both products of 4 or more primes.",
 	"25 is an aliquot sum of 6 and number 6 is the first (or smallest) number to have an aliquot sequence that does not culminate in 0 through a prime.",
 	"37 is a prime number, the fifth lucky prime, the first irregular prime, the third unique prime and the third cuban prime of the form.",
-	"101 is the number of partitions of 13."
+	"101 is the number of partitions of 13.",
 	"88 is one of only 2 numbers known whose square has no isolated digits.",
     ];
     i=Math.floor(Math.random() * 27);
 	let val=facts[i];
-	el.innerHTML=val;
-}	
-   
+	el.innerHTML=val; 
+  };
+  xhttp.send();
+}
+ 
 
 
 
