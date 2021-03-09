@@ -8,7 +8,7 @@ Started on **13 July,2020**
 
 Solves various Math Problems along with Steps
 
-### How is different from other Problem-solving Projects?
+### How it differs from other problem-solving projects?
 - Speed
 - No Server-side Interactions
 - Complex Calculations within a few ms(milliseconds)
