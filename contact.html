@@ -34,11 +34,51 @@
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
         }
+        @font-face {
+            font-family: mainfont;
+            src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
+        }
+        body {
+            background-color: #232a36;
+            font-family:mainfont;
+            color: rgb(255, 136, 231);
+            overflow-x: hidden;
+            height:100vh;
+        }
+        .topp{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            
+        }
+        .topp img{
+            width: 200px;
+            height: 200px;
+        }
+        .topp h1{
+            padding: 80px 40px 40px 20px;
+        }
+        @media(max-width: 500px){
+            .topp img{
+                width: 100px;
+                height: 100px;
+            }
+            .topp h1{
+                font-size: 20px;
+                padding: 30px 40px 40px 20px;
+        
+            }
+        }
+        
     </style>
 </head>
 <body>
 <div class="container">
     <div>
+        <div class="topp">
+            <img src="images/makesmatheasylogo.png">
+            <h1>Makes Math Easy</h1>
+            </div>
         <iframe id="contactform"
                 src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
                 width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…
