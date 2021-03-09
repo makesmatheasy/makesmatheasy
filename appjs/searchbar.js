@@ -50,23 +50,52 @@ function autocomplete(inp, arr) {
                         $("#matrixcollapse").slideToggle();
                     } else if (inp.value.toUpperCase() == "MULTIPLICATION TABLE") {
                         $("#table").slideToggle();
-                    } else if (inp.value.toUpperCase() == "PARTIAL DIFFERENTIATE") {
+                    } else if (inp.value.toUpperCase() == "PARTIAL DIFFERENTIATION") {
                         $("#partialdiffcollapse").slideToggle();
                     } else if (inp.value.toUpperCase() == "LAPLACE") {
                         $("#laplacecollapse").slideDown();
 
                         $("#laplacecollapseit").slideToggle();
                         $("#inverselaplacecollapse").slideUp();
-                    } else if (inp.value.toUpperCase() == "AREA FOR SHAPES") {
-                        $("#areacal").slideToggle();
-                    } else if (inp.value.toUpperCase() == "SIMPLE TRIGNOMETRY") {
+                    } else if (inp.value.toUpperCase() == "SHAPES") {
+                        $("#shapescal").slideToggle();
+                    } else if (inp.value.toUpperCase() == "SIMPLE TRIGONOMETRY") {
                         $("#simpletrignocollapse").slideToggle();
                     } else if (inp.value.toUpperCase() == "INVERSE LAPLACE") {
                         $("#laplacecollapse").slideDown();
                         $("#inverselaplacecollapse").slideToggle();
                         $("#laplacecollapseit").slideToggle();
 
-                    }
+                    }else if (inp.value.toUpperCase() == "GRAPH") {
+                        $("#plotgraph").slideToggle();
+                    }  else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
+                        $("#mulsolwithsteps").slideToggle();
+                    }  else if (inp.value.toUpperCase() == "PLAY WITH EQUATIONS") {
+                        $("#equationssolver").slideToggle();
+                    } else if (inp.value.toUpperCase() == "ROOTS OF EQUATION") {
+                        $("#rootsquadratic").slideToggle();
+                    } else if (inp.value.toUpperCase() == "ROUNDOFF") {
+                        $("#roundoff").slideToggle();
+                    } else if (inp.value.toUpperCase() == "LCM") {
+                        $("#factors").slideToggle();
+                    } else if (inp.value.toUpperCase() == "HCF") {
+                        $("#factors").slideToggle();
+                    } else if (inp.value.toUpperCase() == "TRIGONOMETRIC VALUES") {
+                        $("#trigonovaluestable").slideToggle();
+                    } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
+                        $("#unitconcal").slideToggle();
+                    } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
+                        document.getElementById('romaracov').click();
+                    } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
+                        document.getElementById('romaracov').click();
+                    } else if (inp.value.toUpperCase() == "ASCENDING ORDER") {
+                        document.getElementById('order').click();
+                    } else if (inp.value.toUpperCase() == "DESCENDING ORDER") {
+                        document.getElementById('order').click();
+                    }  else if (inp.value.toUpperCase() == "CONVERSION TO WORDS") {
+                          document.getElementById('covtowords').click();                      
+                    } 
+
 
                 });
                 a.appendChild(b);
@@ -134,7 +163,9 @@ function autocomplete(inp, arr) {
     });
 }
 
-var arrayofelements = ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiate", "Area for Shapes", "Factors", "Matrix"];
+var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
+                        "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
+                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Trigonometric Values", "Unit Converter"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -153,19 +184,48 @@ function handleclick(value) {
         $("#matrixcollapse").slideToggle();
     } else if (value.toUpperCase() == "MULTIPLICATION TABLE") {
         $("#table").slideToggle();
-    } else if (value.toUpperCase() == "PARTIAL DIFFERENTIATE") {
+    } else if (value.toUpperCase() == "PARTIAL DIFFERENTIATION") {
         $("#partialdiffcollapse").slideToggle();
     } else if (value.toUpperCase() == "LAPLACE") {
         $("#laplacecollapse").slideDown();
         $("#inverselaplacecollapse").slideUp();
         $("#laplacecollapseit").slideToggle();
-    } else if (value.toUpperCase() == "AREA FOR SHAPES") {
-        $("#areacal").slideToggle();
-    } else if (value.toUpperCase() == "SIMPLE TRIGNOMETRY") {
+    } else if (value.toUpperCase() == "SHAPES") {
+        $("#shapescal").slideToggle();
+    } else if (value.toUpperCase() == "SIMPLE TRIGONOMETRY") {
         $("#simpletrignocollapse").slideToggle();
     } else if (value.toUpperCase() == "INVERSE LAPLACE") {
         $("#laplacecollapse").slideDown();
         $("#inverselaplacecollapse").slideToggle();
         $("#laplacecollapseit").slideUp();
-    }
+    } else if (inp.value.toUpperCase() == "GRAPH") {
+        $("#plotgraph").slideToggle();
+    } else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
+        $("#mulsolwithsteps").slideToggle();
+    } else if (inp.value.toUpperCase() == "PLAY WITH EQUATIONS") {
+        $("#equationssolver").slideToggle();
+    } else if (inp.value.toUpperCase() == "ROOTS OF EQUATION") {
+        $("#rootsquadratic").slideToggle();
+    } else if (inp.value.toUpperCase() == "ROUNDOFF") {
+        $("#roundoff").slideToggle();
+    } else if (inp.value.toUpperCase() == "LCM") {
+        $("#factors").slideToggle();
+    } else if (inp.value.toUpperCase() == "HCF") {
+        $("#factors").slideToggle();
+    } else if (inp.value.toUpperCase() == "TRIGONOMETRIC VALUES") {
+        $("#trigonovaluestable").slideToggle();
+    } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
+        $("#unitconcal").slideToggle();
+    } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
+        document.getElementById('romaracov').click();
+    } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
+        document.getElementById('romaracov').click();
+    } else if (inp.value.toUpperCase() == "ASCENDING ORDER") {
+        document.getElementById('order').click();
+    } else if (inp.value.toUpperCase() == "DESCENDING ORDER") {
+        document.getElementById('order').click();
+    }  else if (inp.value.toUpperCase() == "CONVERSION TO WORDS") {
+          document.getElementById('covtowords').click();                      
+    } 
+
 }

@@ -243,10 +243,34 @@
 
                 </li>
 
+
                 <div class="dropdown-divider"></div>
             </div>
             <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img class="dropdownlogo"
                         src="icons/dropdown.svg"></a>
+
+            <div class="dropdown-divider"></div>
+        </div>
+        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trigonometry<img class="dropdownlogo"
+                                                                                           src="icons/dropdown.svg"></a>
+        </li>
+        <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="simpletrignocollapsebutton"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">P/B/H
+                                Trigo.</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('P/B/H Trigo.','#simpletrignocollapse','c','strigoimgfav')"><img
+                                    id="strigoimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+
             </li>
             <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
                 <div class="dropdown-divider"></div>
@@ -320,6 +344,7 @@
                         </tr>
                     </table>
 
+
                 </li>
                 <li>
                     <table class="table">
@@ -345,6 +370,33 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
+
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="romaracov" data-toggle="modal" data-target="#roman"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
+                                Numerals</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
+                                    src="images/unfavourite.png" id="romanimgfav" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="order" data-toggle="modal" data-target="#orderit"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+
                                     onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img
                                         id="orderitimgfav" src="images/unfavourite.png" style="height:25px;"></span>
                             </td>
@@ -481,6 +533,129 @@
             <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
             <li><a id="contactbutton" style="cursor: pointer;color:white;"
                     onclick="window.open('contact.html')">Contact</a>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="covtowords" data-toggle="modal" data-target="#internationalnumber"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion
+                                to Words</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Conversion to Words','#internationalnumber','d','ctowordsimgfav')"><img
+                                    id="ctowordsimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="tableoption"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Multiplication
+                                Table</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Multiplication Table','#table','c','tableimgfav')"><img
+                                    src="images/unfavourite.png" id="tableimgfav" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="shapescalbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Shapes Calculator','#shapescal','c','shapesimgfav')"><img
+                                    id="shapesimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="divideoption"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Divide</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Divide','#divide','c','divideimgfav')"><img
+                                    id="divideimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="mulsolwithstepsbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Multiply
+                                With Steps</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Multiply with Steps','#mulsolwithsteps','c','mulsolimgfav')"><img
+                                    src="images/unfavourite.png" id='mulsolimgfav' style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="rootsquadraticbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of
+                                Equation</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
+                                    id="rootsquadraticeqimgfav" src="images/unfavourite.png"
+                                    style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="roundoffbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roundoff</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Roundoff','#roundoff','c','roundoffimgfav')"><img
+                                    id="roundoffimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="unitconbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Unit
+                                Convertor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Unit Convertor','#unitconcal','c','unitimgfav')"><img
+                                    id="unitimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+
             </li>
 
             <li><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
