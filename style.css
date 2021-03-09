@@ -1,0 +1,195 @@
+:root {
+    --apppink: rgb(255, 136, 231);
+    --appblack:#232a36;
+}
+@font-face {
+    font-family: mainfont;
+    src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: mainfontbold;
+    src: url(../fonts/Product_Sans_Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: mathfont;
+    src: url(../fonts/BalsamiqSans-Regular.ttf) format('truetype');
+}
+
+body {
+    background-color: var(--appblack);
+    font-family:mainfont;
+    overflow-x: hidden;
+    height:100vh;
+}
+html{
+    overflow-x: hidden;
+}
+.container{
+    padding-bottom: 100px;
+}
+p {
+    color: white;
+    font-size: 20px;
+}
+
+.readonlybody {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -ms-user-select: none;
+    touch-action: auto;
+    overflow-y: scroll !important;
+    /*position: relative !important;*/
+}
+.form-control{
+    border-radius: 50px;
+    margin:2px;
+}
+
+.btn {
+    border-radius: 100px !important;
+}
+
+a, p, label {
+    color: white !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--apppink);
+}
+
+.modal-title {
+    color: #343a40;
+}
+.modal-body{
+    background:var(--appblack);
+}
+
+.ulstyle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 !important;
+    height: 100%;
+    background: var(--appblack);
+}
+
+.ulstyle li {
+    list-style-type: none;
+    padding: 10px !important;
+}
+
+.ulstyle li a {
+    color: white !important;
+    font-family: mathfont;
+    letter-spacing: 1px;
+}
+
+.stopwrap {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.carddis {
+    width: 100%;
+    background: white;
+    color: var(--appblack);
+    border-radius: 40px;
+    outline: none !important;
+    padding: 15px;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.favouritecontainer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -15px ;
+    background-color: var(--appblack);
+    padding: 20px;
+    list-style:none;
+    border-top:1px solid white;
+    border-left:1px solid white;
+    border-right:1px solid white;
+    z-index:900;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow-y: hidden !important;
+    overflow-x: auto !important;
+}
+.favourites {
+    white-space: nowrap;
+    margin: 5px;
+    padding: 15px;
+    color: white !important;
+}
+
+.favourites:hover{
+    cursor:pointer;
+}
+
+::selection{
+    color:var(--appblack);
+    background-color: var(--apppink);
+}
+.mainheading {
+    color: white;
+    display: inline;
+}
+
+.searchbtn {
+    background: transparent;
+    border-radius: 100%;
+    height: 45px;
+    width: 45px;
+    outline: none !important;
+}
+
+.bor {
+    border-right: 0.2rem solid white !important;
+    border-top: none !important;
+}
+
+
+.form__field {
+    font-family: mainfont;
+    font-size: 15px !important;
+    letter-spacing: 2px;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.bi {
+    background-image: linear-gradient(to right top, #cfcfcf, #d6d1d8, #e3d2dc, #f1d3db, #ffd4d4);
+}
+
+.dropdownlogo {
+    padding-left:5px ;
+    height: 20px;
+    filter: invert(100%);
+}
+.katex{
+    font-size: 20px !important;
+}
+#numberfact{
+    font-family: mainfont;
+    letter-spacing: 2px;
+    font-size: 15px;
+    text-align: center !important;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+ul li .table{
+    margin-bottom: 0;
+}
