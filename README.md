@@ -1,14 +1,10 @@
 ![Makes Math Easy](https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png)
 
-
-
-
-
 Started on **13 July,2020**
 
 Solves various Math Problems along with Steps
 
-### How is different from other Problem-solving Projects?
+### How it differs from other problem-solving projects?
 - Speed
 - No Server-side Interactions
 - Complex Calculations within a few ms(milliseconds)
@@ -99,6 +95,8 @@ Other Tech/Libraries
   - Roots of Quadratic Equation
   - Rounding off numbers
   
+### Documentation
+  [Makes Math Easy Documentation](https://github.com/sairish2001/Makes-Math-Easy-Documentation)
 ### Future Scope
 - To add more useful calculators to solve Math problems along with steps
 - To show steps of Integration, Differentiation, Laplace, Partial Differentiation rather than showing on eMathHelp website by redirecting to it

@@ -74,7 +74,7 @@ $(document).ready(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })
+    })  
 
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
@@ -84,6 +84,11 @@ $(document).ready(function () {
 
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
+        closenav();
+        clearall();
+    })
+    $("#trigonovaluestablebutton").click(function () {
+        openit("#trigonovaluestable");
         closenav();
         clearall();
     })
@@ -114,6 +119,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#unitconbtn").click(function () {
+        openit("#unitconcal");
+        closenav();
+        clearall();
+    })
 
 });
 
