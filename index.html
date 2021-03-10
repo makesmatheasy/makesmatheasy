@@ -56,11 +56,6 @@
             border-bottom: 4px solid white;
             border-left: 4px solid white;
         }
-       
-        .list_menu_items {
-            padding-left: 30px;
-        }
-
     </style>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/searchbar.css">
@@ -134,8 +129,8 @@
 <ol id="favourite" class="sticky-bottom"></ol>
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
-        <li class="listyle home list_menu_items" style="margin-top: 20px;"><a id="homeoption" style="cursor: pointer;font-size: 19px;letter-spacing: 2px;color: pink;">Home</a></li>
-        <li class="list_menu_items" onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer;font-size: 16px;">Linear Algebra<img
+        <li class="listyle"><a id="homeoption" style="cursor: pointer;">Home</a></li>
+        <li onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer">Linear Algebra<img
                 class="dropdownlogo" src="icons/dropdown.svg"></a></li>
         <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -171,7 +166,7 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li class="list_menu_items" onclick="collapseit('calculustoggle')"><a style="cursor: pointer;font-size: 16px;">Calculus<img
+        <li onclick="collapseit('calculustoggle')"><a style="cursor: pointer">Calculus<img
                 class="dropdownlogo" src="icons/dropdown.svg"></a></li>
         <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -242,7 +237,8 @@
 
             <div class="dropdown-divider"></div>
         </div>
-        <li class="list_menu_items" onclick="collapseit('trigotoggle')"><a style="cursor: pointer;font-size: 16px;">Trignometry<img class="dropdownlogo" src="icons/dropdown.svg"></a>
+        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img class="dropdownlogo"
+                                                                                           src="icons/dropdown.svg"></a>
         </li>
         <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -279,7 +275,7 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li class="list_menu_items" onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer;font-size: 16px;">General Maths<img
+        <li onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer">General Maths<img
                 class="dropdownlogo" src="icons/dropdown.svg"></a></li>
         <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -322,9 +318,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="romaracov" data-toggle="modal" data-target="#roman"
-                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
-                             Numerals</a>
+                            <a data-toggle="modal" data-target="#roman"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
+                                Numerals</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
@@ -337,8 +333,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="order" data-toggle="modal" data-target="#orderit"
-                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
+                            <a data-toggle="modal" data-target="#orderit"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span
@@ -353,7 +349,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="covtowords" data-toggle="modal" data-target="#internationalnumber"
+                            <a data-toggle="modal" data-target="#internationalnumber"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion
                                 to Words</a>
                         </td>
@@ -475,15 +471,15 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
-        <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;" onclick="window.open('contact.html')">Contact</a>
+        <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
+        <li><a id="contactbutton" style="cursor: pointer;color:white;" onclick="window.open('contact.html')">Contact</a>
         </li>
 
-        <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
+        <li><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
 "
-               data-action="share/whatsapp/share" style="font-size: 16px;">Share to Whatsapp<img style="display:inline;height:25px;"
+               data-action="share/whatsapp/share">Share to Whatsapp<img style="display:inline;height:25px;"
                                                                         src="images/whatsapplogo.png"></a></li>
-        <li class="list_menu_items"><a data-toggle="modal" data-target="#settings" style="text-decoration:none;font-size: 16px;"
+        <li><a data-toggle="modal" data-target="#settings" style="text-decoration:none;"
                href="#">Settings</a></li>
     </ul>
 </nav>
@@ -953,70 +949,70 @@
 
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
-            <div class="stopwrap">
+
             <table class="table table-bordered table-dark">
                 <thead>
-                    <tr>
-                        <th scope="col">\[Angles→\]<br>\[Ratios↓\]</th>
-                        <th scope="col">\[0^{\circ}\]</th>
-                        <th scope="col">\[30^{\circ}\]</th>
-                        <th scope="col">\[45^{\circ}\]</th>
-                        <th scope="col">\[60^{\circ}\]</th>
-                        <th scope="col">\[90^{\circ}\]</th>
-                    </tr>
+                  <tr>
+                    <th scope="col">Angles→<br>Ratios↓</th>
+                    <th scope="col">0°</th>
+                    <th scope="col">30°</th>
+                    <th scope="col">45°</th>
+                    <th scope="col">60°</th>
+                    <th scope="col">90°</th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">\[\sin\theta\]</th>
-                    <td>\[0\]</td>
-                    <td>\[\frac{1}{2}\]</td>
-                    <td>\[\frac{1}{\sqrt{2}}\]</td>
-                    <td>\[\frac{\sqrt{3}}{2}\]</td>
-                    <td>\[1\]</td>
+                    <th scope="row">sin θ</th>
+                    <td>0</td>
+                    <td>1/2</td>
+                    <td>1/√2</td>
+                    <td>√3/2</td>
+                    <td>1</td>
                   </tr>
                   <tr>
-                    <th scope="row">\[\cos\theta\]</th>
-                            <td>\[1\]</td>
-                            <td>\[\frac{\sqrt{3}}{2}\]</td>
-                            <td>\[\frac{1}{\sqrt{2}}\]</td>
-                            <td>\[\frac{1}{2}\]</td>
-                            <td>\[0\]</td>
+                    <th scope="row">cos θ</th>
+                    <td>1</td>
+                    <td>√3/2</td>
+                    <td>1/√2</td>
+                    <td>1/2</td>
+                    <td>0</td>
                   </tr>
                   <tr>
-                    <th scope="row">\[\tan\theta\]</th>
-                            <td>\[0\]</td>
-                            <td>\[\frac{1}{\sqrt{3}}\]</td>
-                            <td>\[1\]</td>
-                            <td>\[\sqrt{3}\]</td>
-                            <td>\[Not \space Defined\]</td>
+                    <th scope="row">tan θ</th>
+                    <td>0</td>
+                    <td>1/√3</td>
+                    <td>1</td>
+                    <td>√3</td>
+                    <td>Not defined</td>
                   </tr>
                   <tr>
-                    <th scope="row">\[\cosec\theta\]</th>
-                            <td>\[Not \space Defined\]</td>
-                            <td>\[2\]</td>
-                            <td>\[\sqrt{2}\]</td>
-                            <td>\[\frac{2}{\sqrt{3}}\]</td>
-                            <td>\[1\]</td>
+                    <th scope="row">cosec θ</th>
+                    <td>Not defined</td>
+                    <td>2</td>
+                    <td>√2</td>
+                    <td>2/√3</td>
+                    <td>1</td>
                   </tr>
                   <tr>
-                    <th scope="row">\[\sec\theta\]</th>
-                    <td>\[1\]</td>
-                    <td>\[\frac{2}{\sqrt{3}}\]</td>
-                    <td>\[\sqrt{2}\]</td>
-                    <td>\[2\]</td>
-                    <td>\[Not \space Defined\]</td>
+                    <th scope="row">sec θ</th>
+                    <td>1</td>
+                    <td>2/√3</td>
+                    <td>√2</td>
+                    <td>2</td>
+                    <td>Not defined</td>
                   </tr>
                   <tr>
-                    <th scope="row">\[\cot\theta\]</th>
-                    <td>\[Not \space Defined\]</td>
-                    <td>\[\sqrt{3}\]</td>
-                    <td>\[1\]</td>
-                    <td>\[\frac{1}{\sqrt{3}}\]</td>
-                    <td>\[0\]</td>        
-                     </tr>
+                    <th scope="row">cot θ</th>
+                    <td>Not defined</td>
+                    <td>√3</td>
+                    <td>1</td>
+                    <td>1/√3</td>
+                    <td>0</td>
+                  </tr>
                 </tbody>
               </table>
-            </div>
+
         </div>
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">
@@ -1142,7 +1138,7 @@
                     </button>
                     <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
                          aria-labelledby="placeofroundoff">
-                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ones</span>
+                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Once</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Tens</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Hundred</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Thousand</span>
@@ -1516,7 +1512,7 @@
                                 <img src="images/square.png" style="height:150px" class="img-fluid">
                             </div>
                         </div>
-
+                        <!-- <div class="dropdown-divider"></div> -->
                         <input class="form__field" type="number" placeholder="Enter Side" id="inputsqside"
                                oninput="solveareasq();solveperisq();solvediagonalsq();">
                         <p class="stopwrap" id="resultofareasq" style=";font-family:mathfont;"></p>
@@ -1601,6 +1597,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1622,6 +1620,18 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- ADDED THIS -->
+                    <input class="form__field" type="number" placeholder="Enter First Side" id="inputfirstside" 
+                    oninput="solvescalenetriangle();">
+                    <input class="form__field" type="number" placeholder="Enter Second Side" id="inputsecondside"
+                     oninput="solvescalenetriangle();">
+                     <input class="form__field" type="number" placeholder="Enter Third Side" id="inputthirdside" 
+                     oninput="solvescalenetriangle();">
+                     <p class="stopwrap" id="resultofareast" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperist" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheightst" style=";font-family:mathfont;"></p>
+                </div>
+                    <!-- TILL HERE -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1642,6 +1652,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1666,6 +1678,17 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- FROM HERE -->
+                    <input class="form__field" type="number" placeholder="Enter Equivalent Side" id="inputeqitside" 
+                    >
+                    <input class="form__field" type="number" placeholder="Enter Non-Equalivalent Side" id="inputitside" 
+                    oninput="isoscelestrianglearea();">
+                    <br>
+                    <p class="stopwrap" id="resultofareait" style=";font-family:mathfont;"></p>
+                    <p class="stopwrap" id="resultofperiit" style=";font-family:mathfont;"></p>
+                    <p class="stopwrap" id="resultofheightit" style=";font-family:mathfont;"></p>
+                  </div>
+                <!-- TILL HERE -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1731,6 +1754,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1752,6 +1777,16 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM-->
+                    <input class="form__field" type="number" placeholder="Enter Base" id="inputbase" 
+                    oninput="solverightangletriangle();">
+                    <input class="form__field" type="number" placeholder="Enter Height" id="inputheight"
+                     oninput="solverightangletriangle();">
+                     <p class="stopwrap" id="resultofarearat" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperirat" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofsiderat" style=";font-family:mathfont;"></p>
+                     </div>
+                     <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1773,6 +1808,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1792,6 +1829,14 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM-->
+                    <input class="form__field" type="number" placeholder="Enter Radius" id="inputradius" 
+                    oninput="solvecircle();">
+                     <p class="stopwrap" id="resultofareac" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofcircumferencec" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofdiameterc" style=";font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1812,6 +1857,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1842,6 +1889,21 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- --------FROM------- -->
+                    <input class="form__field" type="number" placeholder="Enter First Parallel Side" id="inputparallel1" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter Second Parallel Side" id="inputparallel2" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter First Non-Parallel Side" id="inputnparallel1" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter Second Parallel Side" id="inputnparallel2" 
+                    oninput="solvetrapezium();">
+                     <p class="stopwrap" id="resultofareatrap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperitrap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheighttrap" style=";font-family:mathfont;"></p>
+                     -
+                    </div>
+                    <!-- ------HERE------ -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1860,6 +1922,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div clas="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1879,6 +1943,14 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- ------FROM------- -->
+                    <input class="form__field" type="number" placeholder="Enter Axis(a)" id="inputfirstaxis" 
+                    oninput="solveellipse();">
+                    <input class="form__field" type="number" placeholder="Enter Axis(a)" id="inputsecondaxis" 
+                    oninput="solveellipse();">
+                     <p class="stopwrap" id="resultofareac" style=";font-family:mathfont;"></p>
+                      </div>
+                      <!-- ------till----- -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1899,6 +1971,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1924,6 +1998,18 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM--->
+                    <input class="form__field" type="number" placeholder="Enter Base" id="inputbase" 
+                    oninput="solveparallelogram();">
+                    <input class="form__field" type="number" placeholder="Enter Height" id="inputheight" 
+                    oninput="solveparallelogram();">
+                    <input class="form__field" type="number" placeholder="Enter Other Side" id="inputside" 
+                    oninput="solveparallelogram();">
+                     <p class="stopwrap" id="resultofareap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperip" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheightp" style=";font-family:mathfont;"></p>
+                      </div>
+                      <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
