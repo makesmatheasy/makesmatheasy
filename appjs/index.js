@@ -232,6 +232,11 @@ function numbersapi() {
   xhttp.send();
 }
  
+$(document).on('click',' .list_menu_items ',function(){
+  // $(this).addClass('home').siblings().removeClass('home');
+  $(this).siblings().removeClass('home');
+  $(this).addClass('home');
+});
 
 
 
