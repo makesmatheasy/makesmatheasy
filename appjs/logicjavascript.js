@@ -15,6 +15,10 @@ function searchgoogle(value) {
 //-----------------------------------------------------
 //roman expanded form
 function expandedform(input) {
+  if(String(document.getElementById(input).value)=="")
+    return "";
+  else
+  { 
   if (input == "inpo") {
     var num = parseInt(document.getElementById(input).value);
   } else {
@@ -35,7 +39,8 @@ function expandedform(input) {
   var temp = ar.reverse().join("+");
   return temp;
 }
-//roman expanded form
+}
+ //roman expanded form
 
 //roman calculator
 function romanize(input) {
@@ -82,25 +87,31 @@ function romanize(input) {
     i = 3;
   while (i--) roman = (key[+digits.pop() + i * 10] || "") + roman;
   return Array(+digits.join("") + 1).join("M") + roman;
+  
 }
 //roman calculator
 
 //deroman expanded form
 function expandedformde(input, output) {
-  var val = document.getElementById(input).textContent;
-  var expanded = expandedform(input);
-  var ar = [];
-  ar = expanded.split("+");
-  var temp = "";
-  for (i of ar) {
-    if (i == 0) {
-      temp += "";
-    } else {
-      temp += romanize(i) + "+";
-    }
-  }
-  temp = temp.slice(0, -1);
-  document.getElementById(output).innerHTML = temp;
+  if(document.getElementById(input).textContent=="")
+      document.getElementById(output).innerHTML = "";
+  else
+  {    
+      var val = document.getElementById(input).textContent;
+      var expanded = expandedform(input);
+      var ar = [];
+      ar = expanded.split("+");
+      var temp = "";
+      for (i of ar) {
+        if (i == 0) {
+          temp += "";
+        } else {
+          temp += romanize(i) + "+";
+        }
+      }
+      temp = temp.slice(0, -1);
+      document.getElementById(output).innerHTML = temp;
+}
 }
 //deroman expanded form
 
@@ -140,15 +151,15 @@ function deromanize(str) {
 
 //call deromanize
 function callder() {
-  document.getElementById("out2").innerHTML = deromanize(
-    document.getElementById("rinp").value
-  );
+   document.getElementById("out2").innerHTML = deromanize(
+     document.getElementById("rinp").value
+   );
 }
 //call deromanize
 
 //call romanize
 function callr() {
-  document.getElementById("ouroman").innerHTML = romanize("inpo");
+   document.getElementById("ouroman").innerHTML = romanize(document.getElementById("inpo").value);
 }
 //call romanize
 //-----------------------------------------------------
@@ -311,7 +322,8 @@ function divisionwithsteps() {
 function checkdivisibility() {
   var n1 = parseInt(document.getElementById("n1").value);
   var n2 = parseInt(document.getElementById("n2").value);
-  if (n1 % n2 == 0) {
+  
+  if (String(n1)!=NaN && String(n2)!="NaN" && n1 % n2 == 0) {
     document.getElementById("divisibilitycheckresult").innerHTML =
       "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
     document.getElementById("divisibilitycheckresult").innerHTML +=
@@ -334,7 +346,7 @@ function checkdivisibility() {
     //            btn.className="btn btn-info";
     //            btn.value="Show Steps"
     //            document.getElementById('checkdivisibility').appendChild(btn);
-  } else {
+  } else if(String(n1)!="NaN" && String(n2)!="NaN") {
     document.getElementById("divisibilitycheckresult").innerHTML =
       "No! " + String(n1) + " is not Divisible by " + n2;
     document.getElementById("divisibilitycheckresultexplanation").innerHTML =
@@ -1419,9 +1431,9 @@ function printtable() {
     "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
   var num = parseInt(document.getElementById("numtable").value);
   var end = parseInt(document.getElementById("numending").value);
-  if (num == "" || end == "") {
+  if (num == "" && end == "") {
     document.getElementById("resulttable").innerHTML = "";
-  } else {
+  } else if(String(num)!="NaN" && String(end) !="NaN") {
     for (var i = 1; i <= end; i++) {
       temp += "<tr>";
       temp +=
@@ -2153,10 +2165,17 @@ function orderas() {
     }
   }
   val = val.join(",");
+  if(val.length==0)
+  {
+    document.getElementById("orderresult").innerHTML +="";
+  }
+  else
+  {
   document.getElementById("orderresult").innerHTML +=
     "\\[Ascending \\space Order\\]";
   document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
   renderMathInElement(document.getElementById("orderresult"));
+} 
 }
 //ascending order
 
@@ -2164,6 +2183,7 @@ function orderas() {
 function orderde() {
   document.getElementById("orderresultde").innerHTML = "";
   var val = document.getElementById("ordergetval").value;
+  
   val = val.split(" ");
   val = val.filter(function (str) {
     return /\S/.test(str);
@@ -2178,11 +2198,19 @@ function orderde() {
       }
     }
   }
+  
   val = val.join(",");
+  if(val.length==0)
+  {
+    document.getElementById("orderresultde").innerHTML ="";
+  }
+  else
+  {
   document.getElementById("orderresultde").innerHTML +=
     "\\[ Descending \\space Order \\]";
   document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
   renderMathInElement(document.getElementById("orderresultde"));
+} 
 }
 //descending order
 //-----------------------------------------------------
