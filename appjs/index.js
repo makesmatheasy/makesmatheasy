@@ -195,42 +195,14 @@ function numbersapi() {
   xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
 
   xhttp.onerror = function () {
-   let el=document.getElementById("numberfact");
-	var facts=
-	["The number 4 is the only number spelled with the same number of letters as itself",
-	"8 is the largest cube in the Fibonacci series",
-	"123 is the tenth Lucas number",
-	"3 is the fourth open meandric number",
-	"15 is a triangular number, a hexagonal number, a pentatope number and the 4th Bell number.",
-	"111 is the smallest possible magic constant of a 3×3 magic square of distinct primes.",
-	"55 is the largest triangular number in the Fibonacci sequence.",
-	"3 is the second triangular number and it is the only prime triangular number.",
-	"2 is a primorial, as well as its own factorial.",
-	"7 is the lowest number that cannot be represented as the sum of the squares of three integers.",
-	"13 is the number of Archimedian solids.",
-	"16 is a centered pentagonal number.",
-	"17 is the only positive Genocchi number that is prime, the only negative one being −3.",
-	"100 is the smallest number whose common logarithm is a prime number.",
-	"100 is the smallest square which is also the sum of 4 consecutive cubes.",
-	"99 is the ninth repdigit, a palindromic number and a Kaprekar number.",
-	"23 is the ninth prime number, the smallest odd prime that is not a twin prime.",
-	"21 is a repdigit in base 4 (111)",
-	"20 is the smallest primitive abundant number",
-	"72 is the sum of four consecutive primes (13 + 17 + 19 + 23), as well as the sum of six consecutive primes (5 + 7 + 11 + 13 + 17 + 19).",
-	"75 is the number of orderings of 4 objects with ties allowed.",
-	"79 is the n value of the Wagstaff prime 201487636602438195784363.",
-	"80 is the smallest number n where n and n+1 are both products of 4 or more primes.",
-	"25 is an aliquot sum of 6 and number 6 is the first (or smallest) number to have an aliquot sequence that does not culminate in 0 through a prime.",
-	"37 is a prime number, the fifth lucky prime, the first irregular prime, the third unique prime and the third cuban prime of the form.",
-	"101 is the number of partitions of 13.",
-	"88 is one of only 2 numbers known whose square has no isolated digits.",
-    ];
-    i=Math.floor(Math.random() * 27);
-	let val=facts[i];
-	el.innerHTML=val; 
+    el.innerHTML =
+      "Turn on your Internet Connection, to read Interesting facts!";
+
+      
   };
   xhttp.send();
 }
+
 
 $(document).on('click',' .list_menu_items ',function(){
   // $(this).addClass('home').siblings().removeClass('home');
