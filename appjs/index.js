@@ -1,3 +1,5 @@
+var a=0,b=0,c=0,d=0;
+
 function removeall(elid) {
   if (document.getElementById(elid).innerHTML != "") {
     var r = document.getElementById(elid);
@@ -7,6 +9,54 @@ function removeall(elid) {
   }
 }
 
+function changeImage1() {
+  a++;
+ 
+   if (a%2==0) 
+   {
+       document.getElementById("imgClickAndChange1").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange1").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage2() {
+  b++;
+ 
+   if (b%2==0) 
+   {
+       document.getElementById("imgClickAndChange2").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange2").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage3() {
+  c++;
+ 
+   if (c%2==0) 
+   {
+       document.getElementById("imgClickAndChange3").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange3").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage4() {
+  d++;
+ 
+   if (d%2==0) 
+   {
+       document.getElementById("imgClickAndChange4").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange4").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
 function collapseit(openit) {
   $(String("#" + openit)).slideToggle();
 }
