@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dropdownlogo {
-    padding-left:5px ;
+    padding-left:15px ;
     height: 20px;
     filter: invert(100%);
 }
@@ -193,3 +193,25 @@ h1, h2, h3, h4, h5, h6 {
 ul li .table{
     margin-bottom: 0;
 }
+
+.home{
+    height: fit-content;
+    background: rgba(255, 136, 231,0.5);
+    margin: 13px;
+  }
+  
+  
+  .list_menu_items a:hover {
+   background: rgba(255, 136, 231,0.5)!important;
+   }
+
+  .table td:hover{
+       text-decoration: underline;
+      text-shadow: 2px 1px rgb(202, 15, 130);
+       border-top: 1px solid #dee2e6;
+    
+  }
+ 
+ .list_menu_items{
+     max-height: fit-content;
+ }
