@@ -135,8 +135,8 @@
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
         <li class="listyle home list_menu_items" style="margin-top: 20px;"><a id="homeoption" style="cursor: pointer;font-size: 19px;letter-spacing: 2px;color: pink;">Home</a></li>
-        <li class="list_menu_items" onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer;font-size: 16px;">Linear Algebra<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('lineralgebratoggle'); changeImage1();"><a style="cursor: pointer;font-size: 16px;">Linear Algebra<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange1"></a></li>
         <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -171,8 +171,8 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li class="list_menu_items" onclick="collapseit('calculustoggle')"><a style="cursor: pointer;font-size: 16px;">Calculus<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('calculustoggle'); changeImage2();"><a style="cursor: pointer;font-size: 16px;">Calculus<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange2"></a></li>
         <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -242,7 +242,7 @@
 
             <div class="dropdown-divider"></div>
         </div>
-        <li class="list_menu_items" onclick="collapseit('trigotoggle')"><a style="cursor: pointer;font-size: 16px;">Trignometry<img class="dropdownlogo" src="icons/dropdown.svg"></a>
+        <li class="list_menu_items" onclick="collapseit('trigotoggle'); changeImage3();"><a style="cursor: pointer;font-size: 16px;">Trignometry<img class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange3"></a>
         </li>
         <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -279,8 +279,8 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li class="list_menu_items" onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer;font-size: 16px;">General Maths<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('generalmathstoggle'); changeImage4();"><a style="cursor: pointer;font-size: 16px;">General Maths<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange4"></a></li>
         <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
