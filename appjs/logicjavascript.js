@@ -1425,12 +1425,30 @@ function solveinverselaplace() {
 }
 //-----------------------------------------------------
 
+// Checking for the limit of input while generating Multiplication table.
+function checklimit(){
+  let num = parseInt(document.querySelector('#numtable').value);
+  let end = parseInt(document.querySelector('#numending').value);
+  let error = document.querySelector('.error');
+
+  document.getElementById('resulttable').innerText = '';
+
+  if (num > 25000 || end > 25000)
+    error.innerText = 'Number cannot be greater than 25000';
+  else if ((end < 25000 && isNaN(num)) || ( num < 25000 && isNaN(end)) || (num < 25000 && end < 25000))
+    error.innerText = '';
+
+}
 //-----------------------------------------------------
+
+//-----------------------------------------------------
+//  Prints Multiplication Table
 function printtable() {
   var temp =
     "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
   var num = parseInt(document.getElementById("numtable").value);
   var end = parseInt(document.getElementById("numending").value);
+
   if (num == "" && end == "") {
     document.getElementById("resulttable").innerHTML = "";
   } else if(String(num)!="NaN" && String(end) !="NaN") {

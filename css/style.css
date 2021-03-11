@@ -194,6 +194,11 @@ ul li .table{
     margin-bottom: 0;
 }
 
+.error{
+    font-size:0.8em;
+    color:red;
+}
+
 .home{
     height: fit-content;
     /* background: rgba(255, 136, 231,0.5); */
