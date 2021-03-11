@@ -56,6 +56,11 @@
             border-bottom: 4px solid white;
             border-left: 4px solid white;
         }
+       
+        .list_menu_items {
+            padding-left: 30px;
+        }
+
     </style>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/searchbar.css">
@@ -129,9 +134,9 @@
 <ol id="favourite" class="sticky-bottom"></ol>
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
-        <li class="listyle"><a id="homeoption" style="cursor: pointer;">Home</a></li>
-        <li onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer">Linear Algebra<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="listyle home list_menu_items" style="margin-top: 20px;"><a id="homeoption" style="cursor: pointer;font-size: 19px;letter-spacing: 2px;color: pink;">Home</a></li>
+        <li class="list_menu_items" onclick="collapseit('lineralgebratoggle'); changeImage1();"><a style="cursor: pointer;font-size: 16px;">Linear Algebra<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange1"></a></li>
         <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -166,8 +171,8 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li onclick="collapseit('calculustoggle')"><a style="cursor: pointer">Calculus<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('calculustoggle'); changeImage2();"><a style="cursor: pointer;font-size: 16px;">Calculus<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange2"></a></li>
         <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -237,8 +242,7 @@
 
             <div class="dropdown-divider"></div>
         </div>
-        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trigonometry<img class="dropdownlogo"
-                                                                                           src="icons/dropdown.svg"></a>
+        <li class="list_menu_items" onclick="collapseit('trigotoggle'); changeImage3();"><a style="cursor: pointer;font-size: 16px;">Trignometry<img class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange3"></a>
         </li>
         <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -275,8 +279,8 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer">General Maths<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('generalmathstoggle'); changeImage4();"><a style="cursor: pointer;font-size: 16px;">General Maths<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange4"></a></li>
         <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -319,8 +323,8 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="romaracov" data-toggle="modal" data-target="#roman"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
-                                Numerals</a>
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
+                             Numerals</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
@@ -334,7 +338,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="order" data-toggle="modal" data-target="#orderit"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span
@@ -471,15 +475,15 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
-        <li><a id="contactbutton" style="cursor: pointer;color:white;" onclick="window.open('contact.html')">Contact</a>
+        <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
+        <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;" onclick="window.open('contact.html')">Contact</a>
         </li>
 
-        <li><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
+        <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
 "
-               data-action="share/whatsapp/share">Share to Whatsapp<img style="display:inline;height:25px;"
+               data-action="share/whatsapp/share" style="font-size: 16px;">Share to Whatsapp<img style="display:inline;height:25px;"
                                                                         src="images/whatsapplogo.png"></a></li>
-        <li><a data-toggle="modal" data-target="#settings" style="text-decoration:none;"
+        <li class="list_menu_items"><a data-toggle="modal" data-target="#settings" style="text-decoration:none;font-size: 16px;"
                href="#">Settings</a></li>
     </ul>
 </nav>
@@ -950,70 +954,70 @@
 
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
-
+            <div class="stopwrap">
             <table class="table table-bordered table-dark">
-                                    <thead>
-                        <tr>
-                            <th scope="col">\[Angles→\]<br>\[Ratios↓\]</th>
-                            <th scope="col">\[0^{\circ}\]</th>
-                            <th scope="col">\[30^{\circ}\]</th>
-                            <th scope="col">\[45^{\circ}\]</th>
-                            <th scope="col">\[60^{\circ}\]</th>
-                            <th scope="col">\[90^{\circ}\]</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">\[\sin\theta\]</th>
-                            <td>\[0\]</td>
-                            <td>\[\frac{1}{2}\]</td>
-                            <td>\[\frac{1}{\sqrt{2}}\]</td>
-                            <td>\[\frac{\sqrt{3}}{2}\]</td>
+                <thead>
+                    <tr>
+                        <th scope="col">\[Angles→\]<br>\[Ratios↓\]</th>
+                        <th scope="col">\[0^{\circ}\]</th>
+                        <th scope="col">\[30^{\circ}\]</th>
+                        <th scope="col">\[45^{\circ}\]</th>
+                        <th scope="col">\[60^{\circ}\]</th>
+                        <th scope="col">\[90^{\circ}\]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">\[\sin\theta\]</th>
+                    <td>\[0\]</td>
+                    <td>\[\frac{1}{2}\]</td>
+                    <td>\[\frac{1}{\sqrt{2}}\]</td>
+                    <td>\[\frac{\sqrt{3}}{2}\]</td>
+                    <td>\[1\]</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">\[\cos\theta\]</th>
                             <td>\[1\]</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">\[\cos\theta\]</th>
-                            <td>\[1\]</td>
                             <td>\[\frac{\sqrt{3}}{2}\]</td>
                             <td>\[\frac{1}{\sqrt{2}}\]</td>
                             <td>\[\frac{1}{2}\]</td>
                             <td>\[0\]</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">\[\tan\theta\]</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">\[\tan\theta\]</th>
                             <td>\[0\]</td>
                             <td>\[\frac{1}{\sqrt{3}}\]</td>
                             <td>\[1\]</td>
                             <td>\[\sqrt{3}\]</td>
                             <td>\[Not \space Defined\]</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">\[\cosec\theta\]</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">\[\cosec\theta\]</th>
                             <td>\[Not \space Defined\]</td>
                             <td>\[2\]</td>
                             <td>\[\sqrt{2}\]</td>
                             <td>\[\frac{2}{\sqrt{3}}\]</td>
                             <td>\[1\]</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">\[\sec\theta\]</th>
-                            <td>\[1\]</td>
-                            <td>\[\frac{2}{\sqrt{3}}\]</td>
-                            <td>\[\sqrt{2}\]</td>
-                            <td>\[2\]</td>
-                            <td>\[Not \space Defined\]</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">\[\cot\theta\]</th>
-                            <td>\[Not \space Defined\]</td>
-                            <td>\[\sqrt{3}\]</td>
-                            <td>\[1\]</td>
-                            <td>\[\frac{1}{\sqrt{3}}\]</td>
-                            <td>\[0\]</td>
-                        </tr>
+                  </tr>
+                  <tr>
+                    <th scope="row">\[\sec\theta\]</th>
+                    <td>\[1\]</td>
+                    <td>\[\frac{2}{\sqrt{3}}\]</td>
+                    <td>\[\sqrt{2}\]</td>
+                    <td>\[2\]</td>
+                    <td>\[Not \space Defined\]</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">\[\cot\theta\]</th>
+                    <td>\[Not \space Defined\]</td>
+                    <td>\[\sqrt{3}\]</td>
+                    <td>\[1\]</td>
+                    <td>\[\frac{1}{\sqrt{3}}\]</td>
+                    <td>\[0\]</td>        
+                     </tr>
                 </tbody>
               </table>
-
+            </div>
         </div>
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">
@@ -1139,7 +1143,7 @@
                     </button>
                     <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
                          aria-labelledby="placeofroundoff">
-                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ones</span>
+                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ones</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Tens</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Hundred</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Thousand</span>
@@ -1611,7 +1615,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/scalenetriangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center">Base</h5>
@@ -1652,7 +1656,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/isosceleltriangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Base</h5>
@@ -1693,7 +1697,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/equi.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -1741,7 +1745,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/rightangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Base</h5>
@@ -1784,7 +1788,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/circle.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -1825,7 +1829,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/trapezium.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Side(b)</h5>
@@ -1871,7 +1875,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/ellipse.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -1910,7 +1914,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/parallelogram.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Base</h5>

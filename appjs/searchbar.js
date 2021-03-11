@@ -44,6 +44,8 @@ function autocomplete(inp, arr) {
                         $("#divide").slideToggle();
                     } else if (inp.value.toUpperCase() == "ABOUT") {
                         $("#about").slideToggle();
+                    }else if (inp.value.toUpperCase() == "HOME") {
+                        $("#home").slideToggle();
                     } else if (inp.value.toUpperCase() == "FACTORS") {
                         $("#factors").slideToggle();
                     } else if (inp.value.toUpperCase() == "MATRIX") {
@@ -178,6 +180,8 @@ function handleclick(value) {
         $("#divide").slideToggle();
     } else if (value.toUpperCase() == "ABOUT") {
         $("#about").slideToggle();
+    }else if (inp.value.toUpperCase() == "HOME") {
+        $("#home").slideToggle();
     } else if (value.toUpperCase() == "FACTORS") {
         $("#factors").slideToggle();
     } else if (value.toUpperCase() == "MATRIX") {
