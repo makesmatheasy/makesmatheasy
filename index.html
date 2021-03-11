@@ -1632,6 +1632,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1653,6 +1655,18 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- ADDED THIS -->
+                    <input class="form__field" type="number" placeholder="Enter First Side (a)" id="inputfirstside" 
+                    oninput="solvescalenetriangle();">
+                    <input class="form__field" type="number" placeholder="Enter Second Side (b)" id="inputsecondside"
+                     oninput="solvescalenetriangle();">
+                     <input class="form__field" type="number" placeholder="Enter Third Side (c)" id="inputthirdside" 
+                     oninput="solvescalenetriangle();">
+                     <p class="stopwrap" id="resultofareast" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperist" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheightst" style=";font-family:mathfont;"></p>
+                </div>
+                    <!-- TILL HERE -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1673,6 +1687,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1697,6 +1713,17 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- FROM HERE -->
+                    <input class="form__field" type="number" placeholder="Enter Equivalent Side (a)" id="inputeqitside" 
+                    >
+                    <input class="form__field" type="number" placeholder="Enter Non-Equalivalent Side (b)" id="inputitside" 
+                    oninput="isoscelestrianglearea();">
+                    <br>
+                    <p class="stopwrap" id="resultofareait" style=";font-family:mathfont;"></p>
+                    <p class="stopwrap" id="resultofperiit" style=";font-family:mathfont;"></p>
+                    <p class="stopwrap" id="resultofheightit" style=";font-family:mathfont;"></p>
+                  </div>
+                <!-- TILL HERE -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1762,6 +1789,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1783,6 +1812,16 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM-->
+                    <input class="form__field" type="number" placeholder="Enter Base (b)" id="inputbase" 
+                    oninput="solverightangletriangle();">
+                    <input class="form__field" type="number" placeholder="Enter Height (a)" id="inputheight"
+                     oninput="solverightangletriangle();">
+                     <p class="stopwrap" id="resultofarearat" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperirat" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofsiderat" style=";font-family:mathfont;"></p>
+                     </div>
+                     <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1804,6 +1843,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                     <!-- added div with class container -->
+                     <div class="conatiner">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1823,6 +1864,14 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM-->
+                    <input class="form__field" type="number" placeholder="Enter Radius" id="inputradius" 
+                    oninput="solvecircle();">
+                     <p class="stopwrap" id="resultofareac" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofcircumferencec" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofdiameterc" style=";font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1843,6 +1892,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1873,6 +1924,21 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- --------FROM------- -->
+                    <input class="form__field" type="number" placeholder="Enter First Parallel Side (a)" id="inputparallel1" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter Second Parallel Side (b)" id="inputparallel2" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter First Non-Parallel Side (c)" id="inputnparallel1" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter Second Non-Parallel Side (d)" id="inputnparallel2" 
+                    oninput="solvetrapezium();">
+                     <p class="stopwrap" id="resultofareatrap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperitrap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheighttrap" style=";font-family:mathfont;"></p>
+                     
+                    </div>
+                    <!-- ------HERE------ -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1891,6 +1957,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div clas="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1910,6 +1978,14 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                     <!-- ------FROM------- -->
+                     <input class="form__field" type="number" placeholder="Enter Axis(a)" id="inputfirstaxis" 
+                     oninput="solveellipse();">
+                     <input class="form__field" type="number" placeholder="Enter Axis(b)" id="inputsecondaxis" 
+                     oninput="solveellipse();">
+                      <p class="stopwrap" id="resultofareac" style=";font-family:mathfont;"></p>
+                       </div>
+                       <!-- ------till----- -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1930,6 +2006,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                     <!-- added div with class container -->
+                     <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1955,6 +2033,18 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM--->
+                    <input class="form__field" type="number" placeholder="Enter Base (b)" id="inputbase" 
+                    oninput="solveparallelogram();">
+                    <input class="form__field" type="number" placeholder="Enter Height (h)" id="inputheight" 
+                    oninput="solveparallelogram();">
+                    <input class="form__field" type="number" placeholder="Enter Other Side (a)" id="inputside" 
+                    oninput="solveparallelogram();">
+                     <p class="stopwrap" id="resultofareap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperip" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheightp" style=";font-family:mathfont;"></p>
+                      </div>
+                      <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
