@@ -85,7 +85,7 @@
     <style>
         /* width */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
         }
 
         /* Track */
@@ -99,7 +99,21 @@
             background: var(--apppink);;
             border-radius: 10px;
         }
-
+		::-webkit-scrollbar-button:single-button{
+		    display:block;
+		    background-color:white;
+			height:20px;
+			}	
+        ::-webkit-scrollbar-button:single-button:vertical:decrement{
+		    background-position:center 2px;
+			backgroun-size:8px 8px;
+			background-image:url(images/uparrow.png);
+			}
+		::-webkit-scrollbar-button:single-button:vertical:increment{
+		    background-position:center 2px;
+			backgroun-size:8px 8px;
+			background-image:url(images/downarrow.png);
+			}
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
             background: var(--apppink);;
