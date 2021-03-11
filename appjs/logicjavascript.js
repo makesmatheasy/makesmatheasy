@@ -1784,6 +1784,51 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultoflengthrec"));
   renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
+// created function for isosceles triangle
+function isoscelestrianglearea(){
+  var eqside=document.getElementById('inputeqitside').value;
+  var side=document.getElementById('inputitside').value;
+  var areaoutput=document.getElementById('resultofareait');
+  var perimeteroutput=document.getElementById('resultofperiit');
+  var heightoutput=document.getElementById('resultofheightit');
+  var areatemp="";
+  var perimetertemp="";
+  var heighttemp="";
+// if((eqside=="" && side!="") ||(eqside!="" && side==""))
+// {
+// areaoutput.innerHTML="Please enter both values";
+// }
+if(side!="" && eqside!="") {
+      areatemp="";
+      perimetertemp="";
+      heighttemp="";
+      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
+      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
+
+      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
+      heightoutput.innerHTML=heighttemp;
+
+      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
+      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
+      var a=eval(String("0.5*"+String(side*heighttemp)));
+      areatemp+="\\[A="+a+" \\]";
+      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
+      areaoutput.innerHTML=areatemp;
+
+      renderMathInElement(areaoutput);
+      renderMathInElement(perimeteroutput);
+      renderMathInElement(heightoutput);
+  }
+  else{
+      areaoutput.innerHTML="";
+      perimeteroutput.innerHTML="";
+      heightoutput.innerHTML="";
+  }
+  
+}
+//added till here 
 //shapes calculator
 //-----------------------------------------------------
 
