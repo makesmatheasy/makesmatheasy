@@ -127,6 +127,11 @@ $(document).ready(function () {
         openit("#unitconcal");
         closenav();
         clearall();
+    });
+    $("#curconbtn").click(function () {
+        openit("#unitconcal");
+        closenav();
+        clearall();
     })
 
 });
