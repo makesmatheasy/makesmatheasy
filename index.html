@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/animista.css">
     <link href="katex/katex.min.css" rel="stylesheet">
 
+
     <noscript>
         <style>
             .javascriptno {
@@ -56,6 +57,11 @@
             border-bottom: 4px solid white;
             border-left: 4px solid white;
         }
+       
+        .list_menu_items {
+            padding-left: 30px;
+        }
+
     </style>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/searchbar.css">
@@ -80,7 +86,7 @@
     <style>
         /* width */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
         }
 
         /* Track */
@@ -94,7 +100,21 @@
             background: var(--apppink);;
             border-radius: 10px;
         }
-
+		::-webkit-scrollbar-button:single-button{
+		    display:block;
+		    background-color:white;
+			height:20px;
+			}	
+        ::-webkit-scrollbar-button:single-button:vertical:decrement{
+		    background-position:center 2px;
+			backgroun-size:8px 8px;
+			background-image:url(images/uparrow.png);
+			}
+		::-webkit-scrollbar-button:single-button:vertical:increment{
+		    background-position:center 2px;
+			backgroun-size:8px 8px;
+			background-image:url(images/downarrow.png);
+			}
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
             background: var(--apppink);;
@@ -109,8 +129,20 @@
             scrollbar-width: none; /* Firefox */
         }
 
+        @media screen and (max-width: 320px) {
+            .ulstyle {
+                width: 250px;
+            }
+        }
+
+        .sidenav li>a {
+            display: inline-block;
+        }
+
     </style>
 </head>
+
+
 <body class="readonlybody hidescroll" onload="bodyload()">
 <div class="blink-1 javascriptno" style="display:none;">
     <p>
@@ -129,9 +161,9 @@
 <ol id="favourite" class="sticky-bottom"></ol>
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
-        <li class="listyle"><a id="homeoption" style="cursor: pointer;">Home</a></li>
-        <li onclick="collapseit('lineralgebratoggle')"><a style="cursor: pointer">Linear Algebra<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="listyle home list_menu_items" style="margin-top: 20px;"><a id="homeoption" style="cursor: pointer;font-size: 19px;letter-spacing: 2px;color: pink;">Home</a></li>
+        <li class="list_menu_items" onclick="collapseit('lineralgebratoggle'); changeImage1();"><a style="cursor: pointer;font-size: 16px;">Linear Algebra<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange1"></a></li>
         <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -166,8 +198,8 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li onclick="collapseit('calculustoggle')"><a style="cursor: pointer">Calculus<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('calculustoggle'); changeImage2();"><a style="cursor: pointer;font-size: 16px;">Calculus<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange2"></a></li>
         <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -237,8 +269,7 @@
 
             <div class="dropdown-divider"></div>
         </div>
-        <li onclick="collapseit('trigotoggle')"><a style="cursor: pointer">Trignometry<img class="dropdownlogo"
-                                                                                           src="icons/dropdown.svg"></a>
+        <li class="list_menu_items" onclick="collapseit('trigotoggle'); changeImage3();"><a style="cursor: pointer;font-size: 16px;">Trignometry<img class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange3"></a>
         </li>
         <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
@@ -275,8 +306,8 @@
             <div class="dropdown-divider"></div>
         </div>
 
-        <li onclick="collapseit('generalmathstoggle')"><a style="cursor: pointer">General Maths<img
-                class="dropdownlogo" src="icons/dropdown.svg"></a></li>
+        <li class="list_menu_items" onclick="collapseit('generalmathstoggle'); changeImage4();"><a style="cursor: pointer;font-size: 16px;">General Maths<img
+                class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange4"></a></li>
         <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
             <div class="dropdown-divider"></div>
             <li>
@@ -318,9 +349,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a data-toggle="modal" data-target="#roman"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
-                                Numerals</a>
+                            <a id="romaracov" data-toggle="modal" data-target="#roman"
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
+                             Numerals</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
@@ -333,8 +364,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a data-toggle="modal" data-target="#orderit"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
+                            <a id="order" data-toggle="modal" data-target="#orderit"
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span
@@ -349,7 +380,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a data-toggle="modal" data-target="#internationalnumber"
+                            <a id="covtowords" data-toggle="modal" data-target="#internationalnumber"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion
                                 to Words</a>
                         </td>
@@ -468,19 +499,33 @@
                 </table>
             </li>
             <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="curconbtn" style="font-size:15px;cursor: pointer;background:transparent;border:none;">Currency
+                                Convertor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Currency Convertor','#curconcal','c','curimgfav')"><img id="curimgfav"
+                                    src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
-        <li><a id="aboutbutton" style="cursor: pointer">About</a></li>
-        <li><a id="contactbutton" style="cursor: pointer;color:white;" onclick="window.open('contact.html')">Contact</a>
+        <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
+        <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;" onclick="window.open('contact.html')">Contact</a>
         </li>
 
-        <li><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
+        <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
 "
-               data-action="share/whatsapp/share">Share to Whatsapp<img style="display:inline;height:25px;"
+               data-action="share/whatsapp/share" style="font-size: 16px;">Share to Whatsapp<img style="display:inline;height:25px;"
                                                                         src="images/whatsapplogo.png"></a></li>
-        <li><a data-toggle="modal" data-target="#settings" style="text-decoration:none;"
+        <li class="list_menu_items"><a data-toggle="modal" data-target="#settings" style="text-decoration:none;font-size: 16px;"
                href="#">Settings</a></li>
+        <li class="list_menu_items" style="color:white;font-size: 8px; bottom: 0px; position:relative;">Copyright © 2021 Makes Math Easy. All Rights Reserved.</li>     
     </ul>
 </nav>
 
@@ -493,13 +538,28 @@
         style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:10;padding-right: 10px;filter: invert(100%);margin: -20px;"></span>
     </div>
 
+    
+
     <div class="text-center" style="padding-top: 50px;">
         <form autocomplete="off">
             <div class="form-group" id="box">
                 <div class="autocomplete" id="search-txt">
                     <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
                 </div>
-                <span type="button" class="searchbtn" onclick="searchgoogle(document.getElementById('myInput').value)"><img
+                <span type="button" class="searchbtn" onclick="searchgoogle(document.getElementById('myInput').value)"><img id="i"
+                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
+                                                                               src="images/speechlogo.png"></span>
+            <div class="form-group ">
+                <div class="autocomplete">
+                    <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
+                           style="display:inline;font-size: 1rem;width: 45vw;position: relative;">
+                </div>
+                <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
+                                                                               src="images/speechlogo.png"></span>
+                <span type="button" class="searchbtn"
+                      onclick="searchgoogle(document.getElementById('myInput').value)"
+                      style="margin-left: 50px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
                         style="height:38px;padding:10px;filter:invert(100%);" src="icons/loupe.png"></span>
                 <span class="searchbtn" onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
                         style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
@@ -515,9 +575,7 @@
                 <table style="margin-left: auto;margin-right: auto;">
                     <tr>
                         <td><p id="numberfact" style="display: inline-block;"></p></td>
-                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg" alt="refresh"
-                        style="height: 20px;filter:invert(100%);padding-left: 20px;">
-                        </td>
+                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg" alt="refresh" style="height: 20px;filter:invert(100%);padding-left: 20px;"></td>
                     </tr>
                 </table>
             </div>
@@ -641,18 +699,19 @@
         <!--        end factors-->
 
         <div class="collapse" id="table">
-            <div class="form-group" style="display: inline-block;">
-                <input type="number" id="numtable" class="form__field" style=";"
+            <div class="form-group num-limit" style="display: inline-block;">
+                <input type="number" oninput="checklimit()" id="numtable" class="form__field" style=";"
                        placeholder="Enter Number">
             </div>
             <div class="form-group" style="display: inline-block;">
-                <input type="number" id="numending" style=";" name="ending" class="form__field"
+                <input type="number" oninput="checklimit()" id="numending" style=";" name="ending" class="form__field"
                        placeholder="Upto">
             </div>
 
             <div class="form-group">
                 <button type="button" onclick="printtable()" class="btn btn-light">Print</button>
             </div>
+            <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
 
@@ -946,70 +1005,70 @@
 
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
-
+            <div class="stopwrap">
             <table class="table table-bordered table-dark">
                 <thead>
-                  <tr>
-                    <th scope="col">Angles→<br>Ratios↓</th>
-                    <th scope="col">0°</th>
-                    <th scope="col">30°</th>
-                    <th scope="col">45°</th>
-                    <th scope="col">60°</th>
-                    <th scope="col">90°</th>
-                  </tr>
+                    <tr>
+                        <th scope="col">\[Angles→\]<br>\[Ratios↓\]</th>
+                        <th scope="col">\[0^{\circ}\]</th>
+                        <th scope="col">\[30^{\circ}\]</th>
+                        <th scope="col">\[45^{\circ}\]</th>
+                        <th scope="col">\[60^{\circ}\]</th>
+                        <th scope="col">\[90^{\circ}\]</th>
+                    </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">sin θ</th>
-                    <td>0</td>
-                    <td>1/2</td>
-                    <td>1/√2</td>
-                    <td>√3/2</td>
-                    <td>1</td>
+                    <th scope="row">\[\sin\theta\]</th>
+                    <td>\[0\]</td>
+                    <td>\[\frac{1}{2}\]</td>
+                    <td>\[\frac{1}{\sqrt{2}}\]</td>
+                    <td>\[\frac{\sqrt{3}}{2}\]</td>
+                    <td>\[1\]</td>
                   </tr>
                   <tr>
-                    <th scope="row">cos θ</th>
-                    <td>1</td>
-                    <td>√3/2</td>
-                    <td>1/√2</td>
-                    <td>1/2</td>
-                    <td>0</td>
+                    <th scope="row">\[\cos\theta\]</th>
+                            <td>\[1\]</td>
+                            <td>\[\frac{\sqrt{3}}{2}\]</td>
+                            <td>\[\frac{1}{\sqrt{2}}\]</td>
+                            <td>\[\frac{1}{2}\]</td>
+                            <td>\[0\]</td>
                   </tr>
                   <tr>
-                    <th scope="row">tan θ</th>
-                    <td>0</td>
-                    <td>1/√3</td>
-                    <td>1</td>
-                    <td>√3</td>
-                    <td>Not defined</td>
+                    <th scope="row">\[\tan\theta\]</th>
+                            <td>\[0\]</td>
+                            <td>\[\frac{1}{\sqrt{3}}\]</td>
+                            <td>\[1\]</td>
+                            <td>\[\sqrt{3}\]</td>
+                            <td>\[Not \space Defined\]</td>
                   </tr>
                   <tr>
-                    <th scope="row">cosec θ</th>
-                    <td>Not defined</td>
-                    <td>2</td>
-                    <td>√2</td>
-                    <td>2/√3</td>
-                    <td>1</td>
+                    <th scope="row">\[\cosec\theta\]</th>
+                            <td>\[Not \space Defined\]</td>
+                            <td>\[2\]</td>
+                            <td>\[\sqrt{2}\]</td>
+                            <td>\[\frac{2}{\sqrt{3}}\]</td>
+                            <td>\[1\]</td>
                   </tr>
                   <tr>
-                    <th scope="row">sec θ</th>
-                    <td>1</td>
-                    <td>2/√3</td>
-                    <td>√2</td>
-                    <td>2</td>
-                    <td>Not defined</td>
+                    <th scope="row">\[\sec\theta\]</th>
+                    <td>\[1\]</td>
+                    <td>\[\frac{2}{\sqrt{3}}\]</td>
+                    <td>\[\sqrt{2}\]</td>
+                    <td>\[2\]</td>
+                    <td>\[Not \space Defined\]</td>
                   </tr>
                   <tr>
-                    <th scope="row">cot θ</th>
-                    <td>Not defined</td>
-                    <td>√3</td>
-                    <td>1</td>
-                    <td>1/√3</td>
-                    <td>0</td>
-                  </tr>
+                    <th scope="row">\[\cot\theta\]</th>
+                    <td>\[Not \space Defined\]</td>
+                    <td>\[\sqrt{3}\]</td>
+                    <td>\[1\]</td>
+                    <td>\[\frac{1}{\sqrt{3}}\]</td>
+                    <td>\[0\]</td>        
+                     </tr>
                 </tbody>
               </table>
-
+            </div>
         </div>
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">
@@ -1135,7 +1194,7 @@
                     </button>
                     <div class="dropdown-menu" style="max-height:200px;overflow-y:auto;"
                          aria-labelledby="placeofroundoff">
-                        <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Once</span>
+                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Ones</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Tens</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Hundred</span>
                         <span onclick="placeofroundoffget(this.innerText);" class="dropdown-item">Thousand</span>
@@ -1311,17 +1370,17 @@
                            style="text-decoration:none;" href="#">Parallelogram</a></td>
                 </tr>
             </table>
-        </div>    
+        </div>
         <div class="collapse" id="unitconcal">
             <h2>Unit Convertor</h2>
-            <table class="table"> 
+            <table class="table">
                 <tr>
                     <td>
                         <div style="color: white;cursor: pointer;">
                             <a data-toggle="modal" data-target="#lengthcon"
                                            style="text-decoration:none;" href="#">Length</a>
                         </div>
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -1329,7 +1388,7 @@
                             <a data-toggle="modal" data-target="#areacon"
                                            style="text-decoration:none;" href="#">Area</a>
                         </div>
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -1337,7 +1396,7 @@
                             <a data-toggle="modal" data-target="#volcon"
                                            style="text-decoration:none;" href="#">Volume</a>
                         </div>
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -1345,7 +1404,7 @@
                             <a data-toggle="modal" data-target="#masscon"
                                            style="text-decoration:none;" href="#">Mass</a>
                         </div>
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -1353,13 +1412,243 @@
                             <a data-toggle="modal" data-target="#tempcon"
                                            style="text-decoration:none;" href="#">Temperature</a>
                         </div>
-                    </td>                    
+                    </td>
                 </tr>
-                
-                
+
+
             </table>
         </div>
         <!--        check divisibility-->
+        <!-- Currency convert -->
+        <div>
+            <div class="collapse" id="curconcal">
+                <!-- <h2>Currency Convertor</h2> -->
+                <div class="col-6">
+                    <h5>From</h5>
+                    <select id="curcon-1" class="form__field" onchange="curcon()">
+                        <option value="USD" class="form_field" style="background-color:var(--appblack);">USD
+                        </option>
+                        <option value="AED" class="form_field" style="background-color:var(--appblack);">AED
+                        </option>
+                        <option value="ARS" class="form_field" style="background-color:var(--appblack);">ARS
+                        </option>
+                        <option value="AUD" class="form_field" style="background-color:var(--appblack);">AUD
+                        </option>
+                        <option value="BGN" class="form_field" style="background-color:var(--appblack);">BGN
+                        </option>
+                        <option value="BRL" class="form_field" style="background-color:var(--appblack);">BRL
+                        </option>
+                        <option value="BSD" class="form_field" style="background-color:var(--appblack);">BSD
+                        </option>
+                        <option value="CAD" class="form_field" style="background-color:var(--appblack);">CAD
+                        </option>
+                        <option value="CHF" class="form_field" style="background-color:var(--appblack);">CHF
+                        </option>
+                        <option value="CLP" class="form_field" style="background-color:var(--appblack);">CLP
+                        </option>
+                        <option value="CNY" class="form_field" style="background-color:var(--appblack);">CNY
+                        </option>
+                        <option value="COP" class="form_field" style="background-color:var(--appblack);">COP
+                        </option>
+                        <option value="CZK" class="form_field" style="background-color:var(--appblack);">CZK
+                        </option>
+                        <option value="DKK" class="form_field" style="background-color:var(--appblack);">DKK
+                        </option>
+                        <option value="DOP" class="form_field" style="background-color:var(--appblack);">DOP
+                        </option>
+                        <option value="EGP" class="form_field" style="background-color:var(--appblack);">EGP
+                        </option>
+                        <option value="EUR" class="form_field" style="background-color:var(--appblack);">EUR
+                        </option>
+                        <option value="FJD" class="form_field" style="background-color:var(--appblack);">FJD
+                        </option>
+                        <option value="GBP" class="form_field" style="background-color:var(--appblack);">GBP
+                        </option>
+                        <option value="GTQ" class="form_field" style="background-color:var(--appblack);">GTQ
+                        </option>
+                        <option value="HKD" class="form_field" style="background-color:var(--appblack);">HKD
+                        </option>
+                        <option value="HRK" class="form_field" style="background-color:var(--appblack);">HRK
+                        </option>
+                        <option value="HUF" class="form_field" style="background-color:var(--appblack);">HUF
+                        </option>
+                        <option value="IDR" class="form_field" style="background-color:var(--appblack);">IDR
+                        </option>
+                        <option value="ILS" class="form_field" style="background-color:var(--appblack);">ILS
+                        </option>
+                        <option value="INR" class="form_field" style="background-color:var(--appblack);">INR
+                        </option>
+                        <option value="ISK" class="form_field" style="background-color:var(--appblack);">ISK
+                        </option>
+                        <option value="JPY" class="form_field" style="background-color:var(--appblack);">JPY
+                        </option>
+                        <option value="KRW" class="form_field" style="background-color:var(--appblack);">KRW
+                        </option>
+                        <option value="KZT" class="form_field" style="background-color:var(--appblack);">KZT
+                        </option>
+                        <option value="MVR" class="form_field" style="background-color:var(--appblack);">MVR
+                        </option>
+                        <option value="MXN" class="form_field" style="background-color:var(--appblack);">MXN
+                        </option>
+                        <option value="MYR" class="form_field" style="background-color:var(--appblack);">MYR
+                        </option>
+                        <option value="NOK" class="form_field" style="background-color:var(--appblack);">NOK
+                        </option>
+                        <option value="NZD" class="form_field" style="background-color:var(--appblack);">NZD
+                        </option>
+                        <option value="PAB" class="form_field" style="background-color:var(--appblack);">PAB
+                        </option>
+                        <option value="PEN" class="form_field" style="background-color:var(--appblack);">PEN
+                        </option>
+                        <option value="PHP" class="form_field" style="background-color:var(--appblack);">PHP
+                        </option>
+                        <option value="PKR" class="form_field" style="background-color:var(--appblack);">PKR
+                        </option>
+                        <option value="PLN" class="form_field" style="background-color:var(--appblack);">PLN
+                        </option>
+                        <option value="PYG" class="form_field" style="background-color:var(--appblack);">PYG
+                        </option>
+                        <option value="RON" class="form_field" style="background-color:var(--appblack);">RON
+                        </option>
+                        <option value="RUB" class="form_field" style="background-color:var(--appblack);">RUB
+                        </option>
+                        <option value="SAR" class="form_field" style="background-color:var(--appblack);">SAR
+                        </option>
+                        <option value="SEK" class="form_field" style="background-color:var(--appblack);">SEK
+                        </option>
+                        <option value="SGD" class="form_field" style="background-color:var(--appblack);">SGD
+                        </option>
+                        <option value="THB" class="form_field" style="background-color:var(--appblack);">THB
+                        </option>
+                        <option value="TRY" class="form_field" style="background-color:var(--appblack);">TRY
+                        </option>
+                        <option value="TWD" class="form_field" style="background-color:var(--appblack);">TWD
+                        </option>
+                        <option value="UAH" class="form_field" style="background-color:var(--appblack);">UAH
+                        </option>
+                        <option value="UYU" class="form_field" style="background-color:var(--appblack);">UYU
+                        </option>
+                        <option value="ZAR" class="form_field" style="background-color:var(--appblack);">ZAR
+                        </option>
+                    </select>
+                    <input type="number" id="curconin" class="form__field" placeholder="Enter Side" value="0" ;
+                        oninput="curcon();">
+                    <h5>To</h5>
+                    <select id="curcon-2" class="form__field" onchange="curcon()">
+                        <option value="USD" class="form_field" style="background-color:var(--appblack);">USD
+                        </option>
+                        <option value="AED" class="form_field" style="background-color:var(--appblack);">AED
+                        </option>
+                        <option value="ARS" class="form_field" style="background-color:var(--appblack);">ARS
+                        </option>
+                        <option value="AUD" class="form_field" style="background-color:var(--appblack);">AUD
+                        </option>
+                        <option value="BGN" class="form_field" style="background-color:var(--appblack);">BGN
+                        </option>
+                        <option value="BRL" class="form_field" style="background-color:var(--appblack);">BRL
+                        </option>
+                        <option value="BSD" class="form_field" style="background-color:var(--appblack);">BSD
+                        </option>
+                        <option value="CAD" class="form_field" style="background-color:var(--appblack);">CAD
+                        </option>
+                        <option value="CHF" class="form_field" style="background-color:var(--appblack);">CHF
+                        </option>
+                        <option value="CLP" class="form_field" style="background-color:var(--appblack);">CLP
+                        </option>
+                        <option value="CNY" class="form_field" style="background-color:var(--appblack);">CNY
+                        </option>
+                        <option value="COP" class="form_field" style="background-color:var(--appblack);">COP
+                        </option>
+                        <option value="CZK" class="form_field" style="background-color:var(--appblack);">CZK
+                        </option>
+                        <option value="DKK" class="form_field" style="background-color:var(--appblack);">DKK
+                        </option>
+                        <option value="DOP" class="form_field" style="background-color:var(--appblack);">DOP
+                        </option>
+                        <option value="EGP" class="form_field" style="background-color:var(--appblack);">EGP
+                        </option>
+                        <option value="EUR" class="form_field" style="background-color:var(--appblack);">EUR
+                        </option>
+                        <option value="FJD" class="form_field" style="background-color:var(--appblack);">FJD
+                        </option>
+                        <option value="GBP" class="form_field" style="background-color:var(--appblack);">GBP
+                        </option>
+                        <option value="GTQ" class="form_field" style="background-color:var(--appblack);">GTQ
+                        </option>
+                        <option value="HKD" class="form_field" style="background-color:var(--appblack);">HKD
+                        </option>
+                        <option value="HRK" class="form_field" style="background-color:var(--appblack);">HRK
+                        </option>
+                        <option value="HUF" class="form_field" style="background-color:var(--appblack);">HUF
+                        </option>
+                        <option value="IDR" class="form_field" style="background-color:var(--appblack);">IDR
+                        </option>
+                        <option value="ILS" class="form_field" style="background-color:var(--appblack);">ILS
+                        </option>
+                        <option value="INR" class="form_field" style="background-color:var(--appblack);">INR
+                        </option>
+                        <option value="ISK" class="form_field" style="background-color:var(--appblack);">ISK
+                        </option>
+                        <option value="JPY" class="form_field" style="background-color:var(--appblack);">JPY
+                        </option>
+                        <option value="KRW" class="form_field" style="background-color:var(--appblack);">KRW
+                        </option>
+                        <option value="KZT" class="form_field" style="background-color:var(--appblack);">KZT
+                        </option>
+                        <option value="MVR" class="form_field" style="background-color:var(--appblack);">MVR
+                        </option>
+                        <option value="MXN" class="form_field" style="background-color:var(--appblack);">MXN
+                        </option>
+                        <option value="MYR" class="form_field" style="background-color:var(--appblack);">MYR
+                        </option>
+                        <option value="NOK" class="form_field" style="background-color:var(--appblack);">NOK
+                        </option>
+                        <option value="NZD" class="form_field" style="background-color:var(--appblack);">NZD
+                        </option>
+                        <option value="PAB" class="form_field" style="background-color:var(--appblack);">PAB
+                        </option>
+                        <option value="PEN" class="form_field" style="background-color:var(--appblack);">PEN
+                        </option>
+                        <option value="PHP" class="form_field" style="background-color:var(--appblack);">PHP
+                        </option>
+                        <option value="PKR" class="form_field" style="background-color:var(--appblack);">PKR
+                        </option>
+                        <option value="PLN" class="form_field" style="background-color:var(--appblack);">PLN
+                        </option>
+                        <option value="PYG" class="form_field" style="background-color:var(--appblack);">PYG
+                        </option>
+                        <option value="RON" class="form_field" style="background-color:var(--appblack);">RON
+                        </option>
+                        <option value="RUB" class="form_field" style="background-color:var(--appblack);">RUB
+                        </option>
+                        <option value="SAR" class="form_field" style="background-color:var(--appblack);">SAR
+                        </option>
+                        <option value="SEK" class="form_field" style="background-color:var(--appblack);">SEK
+                        </option>
+                        <option value="SGD" class="form_field" style="background-color:var(--appblack);">SGD
+                        </option>
+                        <option value="THB" class="form_field" style="background-color:var(--appblack);">THB
+                        </option>
+                        <option value="TRY" class="form_field" style="background-color:var(--appblack);">TRY
+                        </option>
+                        <option value="TWD" class="form_field" style="background-color:var(--appblack);">TWD
+                        </option>
+                        <option value="UAH" class="form_field" style="background-color:var(--appblack);">UAH
+                        </option>
+                        <option value="UYU" class="form_field" style="background-color:var(--appblack);">UYU
+                        </option>
+                        <option value="ZAR" class="form_field" style="background-color:var(--appblack);">ZAR
+                        </option>
+                    </select>
+                    <label for="out">
+                        <p id="curconou">0</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Currency convert End-->
+        <!-------------------------------------------------------->
 
         <!--        end of check divisibility-->
         <!--    start of calculator -->
@@ -1594,6 +1883,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1607,7 +1898,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/scalenetriangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center">Base</h5>
@@ -1615,6 +1906,18 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- ADDED THIS -->
+                    <input class="form__field" type="number" placeholder="Enter First Side (a)" id="inputfirstside" 
+                    oninput="solvescalenetriangle();">
+                    <input class="form__field" type="number" placeholder="Enter Second Side (b)" id="inputsecondside"
+                     oninput="solvescalenetriangle();">
+                     <input class="form__field" type="number" placeholder="Enter Third Side (c)" id="inputthirdside" 
+                     oninput="solvescalenetriangle();">
+                     <p class="stopwrap" id="resultofareast" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperist" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheightst" style=";font-family:mathfont;"></p>
+                </div>
+                    <!-- TILL HERE -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1635,6 +1938,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1648,7 +1953,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/isosceleltriangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Base</h5>
@@ -1659,6 +1964,17 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- FROM HERE -->
+                    <input class="form__field" type="number" placeholder="Enter Equivalent Side (a)" id="inputeqitside" 
+                    >
+                    <input class="form__field" type="number" placeholder="Enter Non-Equalivalent Side (b)" id="inputitside" 
+                    oninput="isoscelestrianglearea();">
+                    <br>
+                    <p class="stopwrap" id="resultofareait" style=";font-family:mathfont;"></p>
+                    <p class="stopwrap" id="resultofperiit" style=";font-family:mathfont;"></p>
+                    <p class="stopwrap" id="resultofheightit" style=";font-family:mathfont;"></p>
+                  </div>
+                <!-- TILL HERE -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1689,7 +2005,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/equi.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -1724,6 +2040,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1737,7 +2055,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/rightangle.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Base</h5>
@@ -1745,6 +2063,16 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM-->
+                    <input class="form__field" type="number" placeholder="Enter Base (b)" id="inputbase" 
+                    oninput="solverightangletriangle();">
+                    <input class="form__field" type="number" placeholder="Enter Height (a)" id="inputheight"
+                     oninput="solverightangletriangle();">
+                     <p class="stopwrap" id="resultofarearat" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperirat" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofsiderat" style=";font-family:mathfont;"></p>
+                     </div>
+                     <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1766,6 +2094,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                     <!-- added div with class container -->
+                     <div class="conatiner">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1780,11 +2110,19 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/circle.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM-->
+                    <input class="form__field" type="number" placeholder="Enter Radius" id="inputradius" 
+                    oninput="solvecircle();">
+                     <p class="stopwrap" id="resultofareac" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofcircumferencec" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofdiameterc" style=";font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1805,6 +2143,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1821,7 +2161,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/trapezium.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Side(b)</h5>
@@ -1835,6 +2175,21 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!-- --------FROM------- -->
+                    <input class="form__field" type="number" placeholder="Enter First Parallel Side (a)" id="inputparallel1" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter Second Parallel Side (b)" id="inputparallel2" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter First Non-Parallel Side (c)" id="inputnparallel1" 
+                    oninput="solvetrapezium();">
+                    <input class="form__field" type="number" placeholder="Enter Second Non-Parallel Side (d)" id="inputnparallel2" 
+                    oninput="solvetrapezium();">
+                     <p class="stopwrap" id="resultofareatrap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperitrap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheighttrap" style=";font-family:mathfont;"></p>
+                     
+                    </div>
+                    <!-- ------HERE------ -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1853,6 +2208,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div clas="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1867,11 +2224,19 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/ellipse.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                     <!-- ------FROM------- -->
+                     <input class="form__field" type="number" placeholder="Enter Axis(a)" id="inputfirstaxis" 
+                     oninput="solveellipse();">
+                     <input class="form__field" type="number" placeholder="Enter Axis(b)" id="inputsecondaxis" 
+                     oninput="solveellipse();">
+                      <p class="stopwrap" id="resultofareac" style=";font-family:mathfont;"></p>
+                       </div>
+                       <!-- ------till----- -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -1892,6 +2257,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                     <!-- added div with class container -->
+                     <div class="container">
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-center" style="">Area</h5>
@@ -1906,7 +2273,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <img src="images/rectangle.png" class="img-fluid">
+                                <img src="images/parallelogram.png" class="img-fluid">
                             </div>
                             <div class="dropdown-divider"></div>
                             <h5 class="text-center" style="">Base</h5>
@@ -1917,6 +2284,18 @@
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <!---FROM--->
+                    <input class="form__field" type="number" placeholder="Enter Base (b)" id="inputbase" 
+                    oninput="solveparallelogram();">
+                    <input class="form__field" type="number" placeholder="Enter Height (h)" id="inputheight" 
+                    oninput="solveparallelogram();">
+                    <input class="form__field" type="number" placeholder="Enter Other Side (a)" id="inputside" 
+                    oninput="solveparallelogram();">
+                     <p class="stopwrap" id="resultofareap" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofperip" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofheightp" style=";font-family:mathfont;"></p>
+                      </div>
+                      <!---TILL-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -2000,7 +2379,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Length</h5>
+                    <h5 class="modal-title">Area</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -2068,7 +2447,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Length</h5>
+                    <h5 class="modal-title">Volume</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -2139,7 +2518,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Length</h5>
+                    <h5 class="modal-title">Mass</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -2206,7 +2585,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Length</h5>
+                    <h5 class="modal-title">Temperature</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                         <span aria-hidden="true">&times;</span>
                     </button>
