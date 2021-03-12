@@ -2961,6 +2961,7 @@ function masscon() {
   const a = (i * f) / t;
   document.getElementById("massconou").innerHTML = `${a}`;
 }
+
 function tempau(a) {
   switch (a) {
     case "1":
@@ -3006,3 +3007,46 @@ function curcon() {
 }
 //Currency convert
 //-----------------------------------------------------
+// Time convert
+function timeu(a) {
+  switch (a) {
+    case "1":
+      return 86400;
+    case "2":
+      return 3600;
+    case "3":
+      return 60;
+    case "4":
+      return 1;
+    case "5":
+      return 0.001;
+    case "6":
+      return 0.000001;
+    
+  }
+}
+function timecon() {
+  const f = timeu(document.getElementById("timecon-1").value);
+  const t = timeu(document.getElementById("timecon-2").value);
+  const i = parseInt(document.getElementById("timeconin").value);
+  const a = (i * f) / t;
+  document.getElementById("timeconou").innerHTML = `${a}`;
+}
+// Speed convert
+function speedu(a) {
+  switch (a) {
+    case "1":
+      return 1.60934;
+    case "2":
+      return 1;
+    case "3":
+	return 3.6;    
+  }
+}
+function speedcon() {
+  const f = speedu(document.getElementById("speedcon-1").value);
+  const t = speedu(document.getElementById("speedcon-2").value);
+  const i = parseInt(document.getElementById("speedconin").value);
+  const a = (i * f) / t;
+  document.getElementById("speedconou").innerHTML = `${a}`;
+}
