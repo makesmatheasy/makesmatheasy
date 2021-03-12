@@ -59,6 +59,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--apppink);
 }
 
+.totd{
+    text-align: center;
+    color: rgb(120, 189, 250);
+}
+
 .modal-title {
     color: #343a40;
 }
@@ -183,7 +188,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px !important;
 }
 #numberfact{
+    background-color: #181c24;
     font-family: mainfont;
+    border-radius: 3%;
+    border-color: black;
     letter-spacing: 2px;
     font-size: 15px;
     text-align: center !important;
