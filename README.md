@@ -218,3 +218,17 @@ Awesome! You have made your first contribution. If you have any doubts please le
     </tr>
 </table>
 
+## 🌟 Contributors 
+
+Thanks to these wonderful peoples ✨✨:
+
+<table>
+	<tr>
+		<td>
+			<a href="https://github.com/sairish2001/makesmatheasy.github.io/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sairish2001/makesmatheasy.github.io" />
+</a>
+		</td>
+	</tr>
+</table>
+
