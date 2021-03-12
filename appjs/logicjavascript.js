@@ -1828,6 +1828,28 @@ if(side!="" && eqside!="") {
   }
   
 }
+function solveSlope()
+{
+  let x1=document.getElementById("inputLineX1").value;
+  let y1=document.getElementById("inputLineY1").value;
+  let x2=document.getElementById("inputLineX2").value;
+  let y2=document.getElementById("inputLineY2").value;
+  if(x1==""||y1==""||x2==""||y2=="")
+  {
+    document.getElementById("resultofline").innerHTML="Enter all four points";
+  }
+  else if(parseInt(x2)-parseInt(x1)==0)
+  {
+     document.getElementById("resultofline").innerHTML="Infinity";
+  }
+  else
+  {
+     let temp=(y2-y1)/(x2-x1);
+     let sol= "Slope  of  Line  is =" + temp;
+     document.getElementById("resultofline").innerHTML=sol;
+  }
+  
+}
 //added till here 
 //shapes calculator
 //-----------------------------------------------------
