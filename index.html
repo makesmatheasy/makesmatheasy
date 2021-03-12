@@ -535,20 +535,13 @@
                 class="material-icons" src="icons/list.svg"
                 style="cursor:pointer;filter: invert(100%);height: 2.5rem;padding-left: 10px;"></span>
         <span onclick="opencal()"><img src="icons/keys.svg"
-        style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:10;padding-right: 10px;filter: invert(100%);margin: -20px;"></span>
+                                       style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:20;padding-right: 10px;filter: invert(100%);"></span>
     </div>
 
     
 
     <div class="text-center" style="padding-top: 50px;">
         <form autocomplete="off">
-            <div class="form-group" id="box">
-                <div class="autocomplete" id="search-txt">
-                    <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
-                </div>
-                <span type="button" class="searchbtn" onclick="searchgoogle(document.getElementById('myInput').value)"><img id="i"
-                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
-                                                                               src="images/speechlogo.png"></span>
             <div class="form-group ">
                 <div class="autocomplete">
                     <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
@@ -561,9 +554,6 @@
                       onclick="searchgoogle(document.getElementById('myInput').value)"
                       style="margin-left: 50px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
                         style="height:38px;padding:10px;filter:invert(100%);" src="icons/loupe.png"></span>
-                <span class="searchbtn" onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                        style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
-                        src="images/speechlogo.png"></span>
             </div>
         </form>
     </div>
@@ -575,7 +565,9 @@
                 <table style="margin-left: auto;margin-right: auto;">
                     <tr>
                         <td><p id="numberfact" style="display: inline-block;"></p></td>
-                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg" alt="refresh" style="height: 20px;filter:invert(100%);padding-left: 20px;"></td>
+                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg" alt="refresh"
+                                                                                  style="height: 20px;filter:invert(100%);padding-left: 20px;padding-right: 10px;">
+                        </td>
                     </tr>
                 </table>
             </div>
