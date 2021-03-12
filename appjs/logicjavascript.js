@@ -2240,8 +2240,43 @@ function orderas() {
   renderMathInElement(document.getElementById("orderresult"));
 } 
 }
+var s=0;
 //ascending order
-
+//Mean of a number
+function Means() {
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val=val.split(" ");
+  var len=parseInt(val.length);
+  for(i=0;i<len;i++)
+  {
+    s=s+parseInt(val[i]);
+    // alert(s);
+  }
+  // alert(s);
+  var ans=s/len;
+  // <h2>Mean is</h2>
+  document.getElementById("Meanresult").innerHTML =
+  "\\[ \\space Order\\]";
+  document.getElementById("Meanresult").innerHTML += ans;
+  renderMathInElement(document.getElementById("Meanresult"));
+}
+//Mean End
+//Median start
+function Median() {
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val=val.split(" ");
+  var len=parseInt(val.length);
+  let arrSort = val.sort();
+  let mid = Math.ceil(len / 2);
+  
+  const median =
+    len % 2 == 0 ? (val[mid] + val[mid - 1]) / 2 : val[mid - 1];
+  
+  alert(median);
+}
+// Median end
 //descending order
 function orderde() {
   document.getElementById("orderresultde").innerHTML = "";
