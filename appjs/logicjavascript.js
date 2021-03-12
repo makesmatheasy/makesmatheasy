@@ -2992,3 +2992,17 @@ function tempcon() {
 }
 //unit convert
 //-----------------------------------------------------
+//Currency convert
+function curcon() {
+  fetch("https://api.exchangerate-api.com/v4/latest/USD").then(cur => {
+    return cur.json();
+  }
+  ).then(curout = function (c) {
+    const f = c.rates[document.getElementById("curcon-1").value];
+    const t = c.rates[document.getElementById("curcon-2").value];
+    const i = parseInt(document.getElementById("curconin").value);
+    document.getElementById("curconou").innerHTML = `${i * t / f}`;
+  })
+}
+//Currency convert
+//-----------------------------------------------------
