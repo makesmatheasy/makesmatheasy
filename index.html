@@ -180,21 +180,6 @@
                     </tr>
                 </table>
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="equationssolverbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Play with
-                                Equations</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Play with Equations','#equationssolver','c','equationssolverfav')"><img
-                                    id="equationssolverfav" src="images/unfavourite.png" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -327,70 +312,7 @@
                 </table>
 
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="plotgraphoption"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
-                                Graph</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Plot Graph','#plotgraph','c','plotimgfav')"><img
-                                    id="plotimgfav"
-                                    src="images/unfavourite.png"
-                                    style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-
-            </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="romaracov" data-toggle="modal" data-target="#roman"
-                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
-                             Numerals</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
-                                    src="images/unfavourite.png" id="romanimgfav" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="order" data-toggle="modal" data-target="#orderit"
-                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span
-                                    onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img
-                                    id="orderitimgfav" src="images/unfavourite.png" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="covtowords" data-toggle="modal" data-target="#internationalnumber"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion
-                                to Words</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Conversion to Words','#internationalnumber','d','ctowordsimgfav')"><img
-                                    id="ctowordsimgfav" src="images/unfavourite.png" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+           
             <li>
                 <table class="table">
                     <tr>
@@ -403,22 +325,6 @@
                             <span
                                     onclick="addtofavourite('Multiplication Table','#table','c','tableimgfav')"><img
                                     src="images/unfavourite.png" id="tableimgfav" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="shapescalbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes
-                                Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span
-                                    onclick="addtofavourite('Shapes Calculator','#shapescal','c','shapesimgfav')"><img
-                                    id="shapesimgfav" src="images/unfavourite.png" style="height:25px;"></span>
                         </td>
                     </tr>
                 </table>
@@ -456,14 +362,32 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="rootsquadraticbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of
-                                Equation</a>
+                            <a id="roundoffbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roundoff</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
-                                    id="rootsquadraticeqimgfav" src="images/unfavourite.png"
-                                    style="height:25px;"></span>
+                            <span onclick="addtofavourite('Roundoff','#roundoff','c','roundoffimgfav')"><img
+                                    id="roundoffimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+              <div class="dropdown-divider"></div>
+        </div>
+        <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a style="cursor: pointer;font-size: 16px;">Basic Convertors<img class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange5"></a>
+        </li>
+        <div class="collapse" id="convertortoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="curconbtn" style="font-size:15px;cursor: pointer;background:transparent;border:none;">Currency
+                                Convertor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Currency Convertor','#curconcal','c','curimgfav')"><img id="curimgfav"
+                                    src="images/unfavourite.png" style="height:25px;"></span>
                         </td>
                     </tr>
                 </table>
@@ -472,12 +396,13 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="roundoffbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roundoff</a>
+                            <a id="covtowords" data-toggle="modal" data-target="#internationalnumber"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Conversion
+                                to Words</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Roundoff','#roundoff','c','roundoffimgfav')"><img
-                                    id="roundoffimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                            <span onclick="addtofavourite('Conversion to Words','#internationalnumber','d','ctowordsimgfav')"><img
+                                    id="ctowordsimgfav" src="images/unfavourite.png" style="height:25px;"></span>
                         </td>
                     </tr>
                 </table>
@@ -502,18 +427,118 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="curconbtn" style="font-size:15px;cursor: pointer;background:transparent;border:none;">Currency
-                                Convertor</a>
+                            <a id="order" data-toggle="modal" data-target="#orderit"
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ascending/Descending</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Currency Convertor','#curconcal','c','curimgfav')"><img id="curimgfav"
-                                    src="images/unfavourite.png" style="height:25px;"></span>
+                            <span
+                                    onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img
+                                    id="orderitimgfav" src="images/unfavourite.png" style="height:25px;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="romaracov" data-toggle="modal" data-target="#roman"
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roman/Arabic
+                             Numerals</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Roman/Arabic Numerals','#roman','d','romanimgfav')"><img
+                                    src="images/unfavourite.png" id="romanimgfav" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+           
+             <div class="dropdown-divider"></div>
+        </div>
+        <li class="list_menu_items" onclick="collapseit('graphtoggle'); changeImage6();"><a style="cursor: pointer;font-size: 16px;">Graphs and Shapes<img class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange6"></a>
+        </li>
+        <div class="collapse" id="graphtoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="plotgraphoption"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
+                                Graph</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Plot Graph','#plotgraph','c','plotimgfav')"><img
+                                    id="plotimgfav"
+                                    src="images/unfavourite.png"
+                                    style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="shapescalbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Shapes Calculator','#shapescal','c','shapesimgfav')"><img
+                                    id="shapesimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+           
             <div class="dropdown-divider"></div>
         </div>
+        <li class="list_menu_items" onclick="collapseit('equationsolutions'); changeImage7();"><a style="cursor: pointer;font-size: 16px;">Equations<img class="dropdownlogo" src="icons/down-chevron.svg" id="imgClickAndChange7"></a>
+        </li>
+        <div class="collapse" id="equationsolutions" style="color:#1c911c;margin:10px;padding-left:10px">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="rootsquadraticbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Roots of
+                                Equation</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Roots of Equation','#rootsquadratic','c','rootsquadraticeqimgfav')"><img
+                                    id="rootsquadraticeqimgfav" src="images/unfavourite.png"
+                                    style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="equationssolverbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Play with
+                                Equations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Play with Equations','#equationssolver','c','equationssolverfav')"><img
+                                    id="equationssolverfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+          
+           
+            <div class="dropdown-divider"></div>
+        </div>
+
+
 
         <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
         <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;" onclick="window.open('contact.html')">Contact</a>
