@@ -82,6 +82,8 @@ function openit(id) {
     "#plotgraph",
     "#roundoff",
     "#unitconcal",
+    "#home",
+    "#curconcal",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

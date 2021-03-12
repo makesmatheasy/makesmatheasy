@@ -29,6 +29,10 @@ $(document).ready(function () {
         openit("#about");
         closenav();
     });
+    $("#homeoption").click(function () {
+        openit("#home");
+        closenav();
+    });
     $("#factorsoption").click(function () {
         openit("#factors");
         closenav();
@@ -121,6 +125,11 @@ $(document).ready(function () {
     });
     $("#unitconbtn").click(function () {
         openit("#unitconcal");
+        closenav();
+        clearall();
+    });
+    $("#curconbtn").click(function () {
+        openit("#curconcal");
         closenav();
         clearall();
     })
