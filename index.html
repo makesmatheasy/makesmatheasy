@@ -1381,7 +1381,8 @@
                     <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
                     <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
                     <span class="back"
-                          onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
+                          onmousedown="startTimer(new Date())" onmouseup="endTimer(new Date())" onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);">
+                          <img
                             class="bk" src="icons/backspace-arrow.png" style="height:30px;filter: invert(100%);"></span>
                     <span id="seven">7</span>
                     <span id="eight">8</span>

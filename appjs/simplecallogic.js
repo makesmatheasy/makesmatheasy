@@ -1,8 +1,19 @@
+var start,end,diff=0;
+function startTimer(start1){
+    start=start1;
+}
+function endTimer(end1){
+    end=end1;
+}
 function back(vlu) {
     var newstr;
     if (document.getElementById('txt').value == "Invalid Expression") {
         newStr = "";
-    } else {
+    } 
+    else if((diff=end-start)>=1000){
+        newStr = "";
+    }
+    else {
         newStr = vlu.slice(0, -1);
     }
     document.getElementById('txt').value = newStr;
