@@ -127,6 +127,8 @@ function openit(id) {
     "#unitconcal",
     "#home",
     "#curconcal",
+    "#factorial",
+    "#pandc",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

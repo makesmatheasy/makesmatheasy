@@ -132,6 +132,20 @@ $(document).ready(function () {
         openit("#curconcal");
         closenav();
         clearall();
+    });
+
+    // I have added
+    $("#factorialbtn").click(function () {
+        openit("#factorial");
+        closenav();
+        clearall();
+    });
+
+    // Permutation and combination
+    $("#pandcbtn").click(function () {
+        openit("#pandc");
+        closenav();
+        clearall();
     })
 
 });
