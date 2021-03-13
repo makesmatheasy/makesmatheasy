@@ -1,8 +1,22 @@
+var start,end,diff=0;
+//Backspace button working
+var backbtn=document.getElementById("backspace");
+backbtn.addEventListener("mousedown",function(){
+    start=new Date();
+});
+
+backbtn.addEventListener("mouseup",function(){
+    end=new Date();
+});
 function back(vlu) {
     var newstr;
     if (document.getElementById('txt').value == "Invalid Expression") {
         newStr = "";
-    } else {
+    } 
+    else if((diff=end-start)>=1000){
+        newStr = "";
+    }
+    else {
         newStr = vlu.slice(0, -1);
     }
     document.getElementById('txt').value = newStr;
