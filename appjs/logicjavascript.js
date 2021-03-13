@@ -2240,43 +2240,7 @@ function orderas() {
   renderMathInElement(document.getElementById("orderresult"));
 } 
 }
-var s=0;
 //ascending order
-//Mean of a number
-function Means() {
-  document.getElementById("Meanresult").innerHTML = "";
-  var val = document.getElementById("getNum").value;
-  val=val.split(" ");
-  var len=parseInt(val.length);
-  for(i=0;i<len;i++)
-  {
-    s=s+parseInt(val[i]);
-    // alert(s);
-  }
-  // alert(s);
-  var ans=s/len;
-  // <h2>Mean is</h2>
-  document.getElementById("Meanresult").innerHTML =
-  "\\[ \\space Order\\]";
-  document.getElementById("Meanresult").innerHTML += ans;
-  renderMathInElement(document.getElementById("Meanresult"));
-}
-//Mean End
-//Median start
-function Median() {
-  document.getElementById("Meanresult").innerHTML = "";
-  var val = document.getElementById("getNum").value;
-  val=val.split(" ");
-  var len=parseInt(val.length);
-  let arrSort = val.sort();
-  let mid = Math.ceil(len / 2);
-  
-  const median =
-    len % 2 == 0 ? (val[mid] + val[mid - 1]) / 2 : val[mid - 1];
-  
-  alert(median);
-}
-// Median end
 //descending order
 function orderde() {
   document.getElementById("orderresultde").innerHTML = "";
@@ -2312,6 +2276,106 @@ function orderde() {
 }
 //descending order
 //-----------------------------------------------------
+//Mean start
+function Means() {
+  var s=0;
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val=val.split(" ");
+  val = val.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len=parseInt(val.length);
+  for(i=0;i<len;i++)
+  {
+    s=s+parseInt(val[i]);
+  }
+  if(val.length===0)
+  {
+    document.getElementById("Meanresult").innerHTML =`No Number Added`;
+  }
+  else
+  {
+    var ans=s/len;
+    document.getElementById("Meanresult").innerHTML =`Mean Value is => `;
+    document.getElementById("Meanresult").innerHTML +=`(${val[0]}`;
+    for(i=1;i<val.length;i++)
+    {
+      document.getElementById("Meanresult").innerHTML+=`+${val[i]}`;
+    }
+    document.getElementById("Meanresult").innerHTML +=`)/${val.length}=`;
+    document.getElementById("Meanresult").innerHTML += ans;
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+}
+//Mean End
+//Median start
+function Median() {
+  document.getElementById("Meanresult").innerHTML = "";
+  var arr = document.getElementById("getNum").value;
+  arr=arr.split(" ");
+  arr = arr.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len=parseInt(arr.length);
+  arr = arr.sort();
+  let mid = Math.floor(len / 2);
+  if(arr.length===0)
+  {
+    document.getElementById("Meanresult").innerHTML =`No Number Added`;
+  }
+  else
+  {
+    let median =
+    len % 2 === 0 ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2 : arr[mid - 1];
+   document.getElementById("Meanresult").innerHTML=`After Sorting:- ${arr}</br>`;
+   document.getElementById("Meanresult").innerHTML+=`Median:-`
+  document.getElementById("Meanresult").innerHTML += median;
+  renderMathInElement(document.getElementById("Meanresult"));
+  }
+  
+}
+// Median end
+//Mode Start
+function Mode() {
+  document.getElementById("Meanresult").innerHTML = "";
+    var arr = document.getElementById("getNum").value;
+    arr=arr.split(" ");
+    arr = arr.filter(function (str) {
+      return /\S/.test(str);
+    });
+    const frequencyTable = {};
+    arr.forEach(elem => frequencyTable[elem] = frequencyTable[elem] + 1 || 1);
+  
+    let modes = [];
+    let maxFrequency = 0;
+    for(const key in frequencyTable) {
+      if(frequencyTable[key] > maxFrequency) {
+        modes = [Number(key)];
+        maxFrequency = frequencyTable[key];
+      }
+      else if(frequencyTable[key] === maxFrequency) {
+        modes.push(Number(key));
+      }
+    }
+    
+    if(modes.length === Object.keys(frequencyTable).length) modes = [];
+    if(arr.length===0)
+    {
+      document.getElementById("Meanresult").innerHTML =`No Number Added`;
+    }
+    else
+    {
+      if(modes.length===0)
+      {
+        document.getElementById("Meanresult").innerHTML+=`All Number appeared Just Once`;
+      }
+      else{
+        document.getElementById("Meanresult").innerHTML+=`Mode is:-${modes}`;
+      }
+    }
+  }
+//Mode end
 
 //-----------------------------------------------------
 function count(s) {
