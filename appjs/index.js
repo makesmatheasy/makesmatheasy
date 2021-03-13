@@ -112,6 +112,7 @@ function openit(id) {
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
+    "#trigonoiden",
     "#factors",
     "#integralcollapse",
     "#differentiatecollapse",
