@@ -1,4 +1,5 @@
 var start,end,diff=0;
+//Backspace button working
 var backbtn=document.getElementById("backspace");
 backbtn.addEventListener("mousedown",function(){
     start=new Date();
