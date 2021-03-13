@@ -84,6 +84,8 @@ function autocomplete(inp, arr) {
                         $("#factors").slideToggle();
                     } else if (inp.value.toUpperCase() == "TRIGONOMETRIC VALUES") {
                         $("#trigonovaluestable").slideToggle();
+                    } else if (inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITIES") {
+                        $("#trigonoiden").slideToggle();
                     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
                         $("#unitconcal").slideToggle();
                     } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
@@ -218,6 +220,8 @@ function handleclick(value) {
         $("#factors").slideToggle();
     } else if (inp.value.toUpperCase() == "TRIGONOMETRIC VALUES") {
         $("#trigonovaluestable").slideToggle();
+    } else if (inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITIES") {
+        $("#trigonoiden").slideToggle();
     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
         $("#unitconcal").slideToggle();
     } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {

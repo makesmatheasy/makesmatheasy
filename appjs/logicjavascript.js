@@ -1425,12 +1425,30 @@ function solveinverselaplace() {
 }
 //-----------------------------------------------------
 
+// Checking for the limit of input while generating Multiplication table.
+function checklimit(){
+  let num = parseInt(document.querySelector('#numtable').value);
+  let end = parseInt(document.querySelector('#numending').value);
+  let error = document.querySelector('.error');
+
+  document.getElementById('resulttable').innerText = '';
+
+  if (num > 25000 || end > 25000)
+    error.innerText = 'Number cannot be greater than 25000';
+  else if ((end < 25000 && isNaN(num)) || ( num < 25000 && isNaN(end)) || (num < 25000 && end < 25000))
+    error.innerText = '';
+
+}
 //-----------------------------------------------------
+
+//-----------------------------------------------------
+//  Prints Multiplication Table
 function printtable() {
   var temp =
     "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
   var num = parseInt(document.getElementById("numtable").value);
   var end = parseInt(document.getElementById("numending").value);
+
   if (num == "" && end == "") {
     document.getElementById("resulttable").innerHTML = "";
   } else if(String(num)!="NaN" && String(end) !="NaN") {
@@ -1766,6 +1784,51 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultoflengthrec"));
   renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
+// created function for isosceles triangle
+function isoscelestrianglearea(){
+  var eqside=document.getElementById('inputeqitside').value;
+  var side=document.getElementById('inputitside').value;
+  var areaoutput=document.getElementById('resultofareait');
+  var perimeteroutput=document.getElementById('resultofperiit');
+  var heightoutput=document.getElementById('resultofheightit');
+  var areatemp="";
+  var perimetertemp="";
+  var heighttemp="";
+// if((eqside=="" && side!="") ||(eqside!="" && side==""))
+// {
+// areaoutput.innerHTML="Please enter both values";
+// }
+if(side!="" && eqside!="") {
+      areatemp="";
+      perimetertemp="";
+      heighttemp="";
+      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
+      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
+
+      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
+      heightoutput.innerHTML=heighttemp;
+
+      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
+      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
+      var a=eval(String("0.5*"+String(side*heighttemp)));
+      areatemp+="\\[A="+a+" \\]";
+      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
+      areaoutput.innerHTML=areatemp;
+
+      renderMathInElement(areaoutput);
+      renderMathInElement(perimeteroutput);
+      renderMathInElement(heightoutput);
+  }
+  else{
+      areaoutput.innerHTML="";
+      perimeteroutput.innerHTML="";
+      heightoutput.innerHTML="";
+  }
+  
+}
+//added till here 
 //shapes calculator
 //-----------------------------------------------------
 
@@ -2898,6 +2961,7 @@ function masscon() {
   const a = (i * f) / t;
   document.getElementById("massconou").innerHTML = `${a}`;
 }
+
 function tempau(a) {
   switch (a) {
     case "1":
@@ -2929,3 +2993,60 @@ function tempcon() {
 }
 //unit convert
 //-----------------------------------------------------
+//Currency convert
+function curcon() {
+  fetch("https://api.exchangerate-api.com/v4/latest/USD").then(cur => {
+    return cur.json();
+  }
+  ).then(curout = function (c) {
+    const f = c.rates[document.getElementById("curcon-1").value];
+    const t = c.rates[document.getElementById("curcon-2").value];
+    const i = parseInt(document.getElementById("curconin").value);
+    document.getElementById("curconou").innerHTML = `${i * t / f}`;
+  })
+}
+//Currency convert
+//-----------------------------------------------------
+// Time convert
+function timeu(a) {
+  switch (a) {
+    case "1":
+      return 86400;
+    case "2":
+      return 3600;
+    case "3":
+      return 60;
+    case "4":
+      return 1;
+    case "5":
+      return 0.001;
+    case "6":
+      return 0.000001;
+    
+  }
+}
+function timecon() {
+  const f = timeu(document.getElementById("timecon-1").value);
+  const t = timeu(document.getElementById("timecon-2").value);
+  const i = parseInt(document.getElementById("timeconin").value);
+  const a = (i * f) / t;
+  document.getElementById("timeconou").innerHTML = `${a}`;
+}
+// Speed convert
+function speedu(a) {
+  switch (a) {
+    case "1":
+      return 1.60934;
+    case "2":
+      return 1;
+    case "3":
+	return 3.6;    
+  }
+}
+function speedcon() {
+  const f = speedu(document.getElementById("speedcon-1").value);
+  const t = speedu(document.getElementById("speedcon-2").value);
+  const i = parseInt(document.getElementById("speedconin").value);
+  const a = (i * f) / t;
+  document.getElementById("speedconou").innerHTML = `${a}`;
+}

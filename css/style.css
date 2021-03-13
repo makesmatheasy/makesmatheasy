@@ -180,7 +180,9 @@ h1, h2, h3, h4, h5, h6 {
     filter: invert(100%);
 }
 .katex{
-    font-size: 20px !important;
+    font-size: 25px !important;
+    display: flex;
+    
 }
 #numberfact{
     font-family: mainfont;
@@ -192,6 +194,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 ul li .table{
     margin-bottom: 0;
+}
+
+.error{
+    font-size:0.8em;
+    color:red;
 }
 
 .home{
@@ -211,7 +218,9 @@ ul li .table{
    border-radius: 36px;
 
    }
-
+   .table td{
+       text-align: center;
+   }
   .table td:hover{
        text-decoration: underline;
       text-shadow: 2px 1px rgb(202, 15, 130);
