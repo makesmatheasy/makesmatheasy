@@ -96,6 +96,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#trigonoidenbutton").click(function () {
+        openit("#trigonoiden");
+        closenav();
+        clearall();
+    })
 
     $("#diffsolvebutton").click(function () {
         diffsolve();
