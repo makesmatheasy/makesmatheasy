@@ -1837,6 +1837,9 @@ function solveSlope()
   if(x1==""||y1==""||x2==""||y2=="")
   {
     document.getElementById("resultofline").innerHTML="Enter all four points";
+    document.getElementById("answerofline").innerHTML="";
+    document.getElementById("answer").innerHTML="";
+
   }
   else if(parseInt(x2)-parseInt(x1)==0)
   {
@@ -1845,8 +1848,15 @@ function solveSlope()
   else
   {
      let temp=(y2-y1)/(x2-x1);
-     let sol= "Slope  of  Line  is =" + temp;
-     document.getElementById("resultofline").innerHTML=sol;
+     console.log(temp);
+     let sol="\\[Slope=\\frac{"+y2+"-"+y1+"}{"+x2+"-"+x1+"}\\]";
+     let sol2="\\[Slope="+temp+"\\]";
+     document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
+     document.getElementById("answerofline").innerHTML=sol;
+     document.getElementById("answer").innerHTML=sol2;
+     renderMathInElement(document.getElementById("answerofline"));
+     renderMathInElement(document.getElementById("answer"));
+     renderMathInElement(document.getElementById("resultofline"));
   }
   
 }

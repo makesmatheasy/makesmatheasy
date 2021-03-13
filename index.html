@@ -2146,9 +2146,12 @@
                         <input class="form__field" type="number" placeholder="Enter X1" id="inputLineX1">
                         <input class="form__field" type="number" placeholder="Enter Y1" id="inputLineY1">
                         <input class="form__field" type="number" placeholder="Enter X2" id="inputLineX2">       
-                        <input class="form__field" type="number" placeholder="Enter Y2" id="inputLineY2"
-                               oninput="solveSlope();">
+                        <input class="form__field" type="number" placeholder="Enter Y2" id="inputLineY2">
+                        <button type="button" onclick="solveSlope()" class="btn btn-secondary" style="margin-top: 20px;">Calculate
+                            </button>
                         <p class="stopwrap" id="resultofline" style="font-family:mathfont; margin-top: 50px"></p>
+                        <p class="stopwrap" style="font-family:mathfont; margin-left: 0px;" id="answerofline" ></p>
+                        <p class="stopwrap" style="font-family:mathfont; margin-left: 0px;" id="answer" ></p>
                     </div>
                 </div>
                 <div class="modal-footer">
