@@ -218,7 +218,9 @@ ul li .table{
    border-radius: 36px;
 
    }
-
+   .table td{
+       text-align: center;
+   }
   .table td:hover{
        text-decoration: underline;
       text-shadow: 2px 1px rgb(202, 15, 130);
