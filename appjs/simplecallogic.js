@@ -1,10 +1,12 @@
 var start,end,diff=0;
-function startTimer(start1){
-    start=start1;
-}
-function endTimer(end1){
-    end=end1;
-}
+var backbtn=document.getElementById("backspace");
+backbtn.addEventListener("mousedown",function(){
+    start=new Date();
+});
+
+backbtn.addEventListener("mouseup",function(){
+    end=new Date();
+});
 function back(vlu) {
     var newstr;
     if (document.getElementById('txt').value == "Invalid Expression") {
