@@ -1828,6 +1828,38 @@ if(side!="" && eqside!="") {
   }
   
 }
+function solveSlope()
+{
+  let x1=document.getElementById("inputLineX1").value;
+  let y1=document.getElementById("inputLineY1").value;
+  let x2=document.getElementById("inputLineX2").value;
+  let y2=document.getElementById("inputLineY2").value;
+  if(x1==""||y1==""||x2==""||y2=="")
+  {
+    document.getElementById("resultofline").innerHTML="Enter all four points";
+    document.getElementById("answerofline").innerHTML="";
+    document.getElementById("answer").innerHTML="";
+
+  }
+  else if(parseInt(x2)-parseInt(x1)==0)
+  {
+     document.getElementById("resultofline").innerHTML="Infinity";
+  }
+  else
+  {
+     let temp=(y2-y1)/(x2-x1);
+     console.log(temp);
+     let sol="\\[Slope=\\frac{"+y2+"-"+y1+"}{"+x2+"-"+x1+"}\\]";
+     let sol2="\\[Slope="+temp+"\\]";
+     document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
+     document.getElementById("answerofline").innerHTML=sol;
+     document.getElementById("answer").innerHTML=sol2;
+     renderMathInElement(document.getElementById("answerofline"));
+     renderMathInElement(document.getElementById("answer"));
+     renderMathInElement(document.getElementById("resultofline"));
+  }
+  
+}
 //added till here 
 //shapes calculator
 //-----------------------------------------------------
