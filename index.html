@@ -175,6 +175,34 @@
             display: inline-block;
         }
     </style>
+    
+
+     <!-- Pandc -->
+     <style>
+        #permutation_div
+          {
+              display: none;
+          }
+          #combination_div
+          {
+              display: none;
+          }
+       @media screen and (max-width: 435px)
+       {
+          #nval
+          {
+              margin-top: 2%;
+          }
+       }
+       @media screen and (min-width: 436px)
+       {
+          #rval
+          {
+              margin-left: 2%;
+          }
+       }
+   </style>
+
 </head>
 
 
@@ -447,6 +475,41 @@
                     </table>
                 </li>
 
+                     <!-- Factorial added -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="factorialbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Factorial</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Factorial','#factorial','c','factorialimgfav')"><img
+                                    id="factorialimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!-- Permutation and combination -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="pandcbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Permutation and Combination</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Permutation and Combination','#pandc','c','pandcimgfav')"><img
+                                    id="pandcimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            
+
+
+
                 <div class="dropdown-divider"></div>
             </div>
             <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -532,6 +595,8 @@
                         </tr>
                     </table>
                 </li>
+
+            
 
                 <div class="dropdown-divider"></div>
             </div>
@@ -1666,6 +1731,96 @@
 
                 </table>
             </div>
+            
+            <!-- Factorial -->
+        <div class="collapse" id="factorial">
+            <form class="form-inline">
+                <input type="number" id="factorialval" placeholder="Enter a Number" style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light" onclick="factorialsol('factorialval')">
+                    Solve
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="explain_fact" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap" align="right"></p>
+                   <br>
+                <p id="factorialsolprint" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap" align="right"></p>
+            </div>
+
+        </div>
+        <!-- Factorial end -->
+
+        <!-- Permutattiona and combination -->
+        <div class="collapse" id="pandc">
+            <form class="form-inline">
+                <input type="number" id="nval" placeholder="Total items in the set (n)" style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
+                <input type="number" id="rval" placeholder="Item taken from the set (r) " style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
+
+            </form>
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="permutationcal('nval','rval')">
+                    Permutation
+                </button>
+                <button type="button"  class="btn btn-light" onclick="combinationcal('nval','rval')">
+                    Combination
+                </button>
+            </div>
+             <br>
+            <div class="form-group">
+                <div id="permutation_div">
+                    <div id="permutation_div_div1">
+                        <p id="permutation_wrong" style="display:flex;font-family:mathfont;;width:auto;"
+                        class="stopwrap" align="right">
+                     </p>
+                    </div>
+              <div id="premutation_div_div2">
+                <p id="permutation" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap" align="right">
+                      Permutations,&nbsp;
+                       <strong>
+                           <sup>n</sup>
+                           P
+                           <sub>r</sub>
+                       </strong>
+                       &nbsp;
+                     =
+                     &nbsp;
+                     <span id="permutation_ans"></span>
+                </p>
+              </div>
+                </div>
+                <div id="combination_div">
+                    <div id="combination_div_div1">
+                        <p id="combination_wrong" style="display:flex;font-family:mathfont;;width:auto;"
+                        class="stopwrap" align="right">
+                     </p>
+                    </div>
+              <div id="combination_div_div2">
+                <p id="combination" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap" align="right">
+                      Combinations,&nbsp;
+                       <strong>
+                           <sup>n</sup>
+                           C
+                           <sub>r</sub>
+                       </strong>
+                       &nbsp;
+                     =
+                     &nbsp;
+                     <span id="combination_ans"></span>
+                </p>
+              </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
             <!--        check divisibility-->
             <!-- Currency convert -->
             <div>

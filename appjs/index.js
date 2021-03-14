@@ -128,6 +128,8 @@ function openit(id) {
     "#unitconcal",
     "#home",
     "#curconcal",
+    "#factorial",
+    "#pandc",
     "#interest"
   ];
   for (i = 0; i < ids.length; i++) {
