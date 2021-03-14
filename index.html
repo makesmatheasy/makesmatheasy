@@ -1289,6 +1289,22 @@
                             <p>\[tan (\theta ± \phi ) = \frac{tan \space\theta ± tan \space\phi}{1 ∓ tan \space\theta tan\space\phi}\]</p>
                         </div>
                     </div>
+                    <div class="coll">
+                        <div class="left">
+                            <h4>Product-to-Sum Identities</h4>
+                            <p>\[2 cos \space \theta \cos \space \varphi = {{\cos(\theta - \varphi) + \cos(\theta + \varphi)}}\]</p>
+                            <p>\[2 sin \space \theta \sin \space \varphi = {{\cos(\theta - \varphi) - \cos(\theta + \varphi)}}\]</p>
+                            <p>\[2 sin \space \theta \cos \space \varphi = {{\sin(\theta + \varphi) + \sin(\theta - \varphi)}}\]</p>
+                            <p>\[2 cos \space \theta \sin \space \varphi = {{\sin(\theta + \varphi) - \sin(\theta - \varphi)}}\]</p>
+                            <p>\[2 tan \space \theta \tan \space \varphi =\frac{\cos(\theta-\varphi)-\cos(\theta+\varphi)}{\cos(\theta-\varphi)+\cos(\theta+\varphi)}\]</p>
+                        </div>
+                        <div class="right">
+                            <h4>Sum-to-Product Identities</h4>                       
+                            <p>\[sin \space \theta \pm \sin \space \varphi = 2\sin\left( \frac{\theta \pm \varphi}{2} \right) \cos\left( \frac{\theta \mp \varphi}{2} \right)\]</p>
+                            <p>\[cos \space \theta + \cos \space \varphi = 2\cos\left( \frac{\theta + \varphi} {2} \right) \cos\left( \frac{\theta - \varphi}{2} \right)\]</p>
+                            <p>\[cos \space \theta - \cos \space \varphi = -2\sin\left( \frac{\theta + \varphi}{2}\right) \sin\left(\frac{\theta - \varphi}{2}\right)\]</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="collapse" id="simpletrignocollapse">
@@ -1598,6 +1614,10 @@
                     <tr>
                         <td><a data-toggle="modal" data-target="#circle" style="text-decoration:none;"
                                 href="#">Circle</a></td>
+                    </tr>
+                    <tr>
+                        <td><a data-toggle="modal" data-target="#line" style="text-decoration:none;"
+                                href="#">Line</a></td>
                     </tr>
                     <tr>
                         <td><a data-toggle="modal" data-target="#trapezium" style="text-decoration:none;"
@@ -2352,6 +2372,48 @@
             </div>
         </div>
 
+        <div class="modal fade" id="line" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Line</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                            
+
+                                <h5 class="text-center" style="">Slope of Line</h5>
+                                <p class="text-center" style=";">\[Slope =\frac{y2-y1}{x2-x1}\]</p>
+                            </div>
+                            <div class="col-6">
+                                <img src="images/Line.png" style="height:150px" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <input class="form__field" type="number" placeholder="Enter X1" id="inputLineX1">
+                        <input class="form__field" type="number" placeholder="Enter Y1" id="inputLineY1">
+                        <input class="form__field" type="number" placeholder="Enter X2" id="inputLineX2">       
+                        <input class="form__field" type="number" placeholder="Enter Y2" id="inputLineY2">
+                        <button type="button" onclick="solveSlope()" class="btn btn-secondary" style="margin-top: 20px;">Calculate
+                            </button>
+                        <p class="stopwrap" id="resultofline" style="font-family:mathfont; margin-top: 50px"></p>
+                        <p class="stopwrap" style="font-family:mathfont; margin-left: 0px;" id="answerofline" ></p>
+                        <p class="stopwrap" style="font-family:mathfont; margin-left: 0px;" id="answer" ></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <div class="modal fade" id="circle" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
