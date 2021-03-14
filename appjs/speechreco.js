@@ -24,68 +24,160 @@ function runSpeechRecognition(output, input, logo) {
     recognition.onresult = function (event) {
         var transcript = event.results[0][0].transcript;
 
+        transcript=transcript.toLowerCase()
         if (transcript.includes("multiply")) {
-            transcript = transcript.replace(/multiply/g, "*");
+            transcript = transcript.replace(/multiply/ig, "*");
         }
         if (transcript.includes("X")) {
-            transcript = transcript.replace(/X/g, "*");
+            transcript = transcript.replace(/X/ig, "*");
         }
         if (transcript.includes("into")) {
-            transcript = transcript.replace(/into/g, "*");
+            transcript = transcript.replace(/into/ig, "*");
         }
         if (transcript.includes("x")) {
-            transcript = transcript.replace(/x/g, "*");
+            transcript = transcript.replace(/x/ig, "*");
         }
         if (transcript.includes("divided by")) {
-            transcript = transcript.replace(/divided by/g, "/");
+            transcript = transcript.replace(/divided by/ig, "/");
         }
         if (transcript.includes("minus")) {
-            transcript = transcript.replace(/minus/g, "-");
+            transcript = transcript.replace(/minus/ig, "-");
         }
         if (transcript.includes("by")) {
-            transcript = transcript.replace(/by/g, "/");
+            transcript = transcript.replace(/by/ig, "/");
         }
         if (transcript.includes("plus")) {
-            transcript = transcript.replace(/plus/g, "+");
+            transcript = transcript.replace(/plus/ig, "+");
         }
         if (transcript.includes("to")) {
-            transcript = transcript.replace(/to/g, "2");
+            transcript = transcript.replace(/to/ig, "2");
         }
         if (transcript.includes("too")) {
-            transcript = transcript.replace(/too/g, "2");
+            transcript = transcript.replace(/too/ig, "2");
         }
         if (transcript.includes("six")) {
-            transcript = transcript.replace(/six/g, "6");
+            transcript = transcript.replace(/six/ig, "6");
         }
         if (transcript.includes("class")) {
-            transcript = transcript.replace(/class/g, "+");
+            transcript = transcript.replace(/class/ig, "+");
         }
         if (transcript.includes("divide")) {
-            transcript = transcript.replace(/divide/g, "/");
+            transcript = transcript.replace(/divide/ig, "/");
         }
         if (transcript.includes("divide by")) {
-            transcript = transcript.replace(/divide by/g, "/");
+            transcript = transcript.replace(/divide by/ig, "/");
         }
         if (transcript.includes("in2")) {
-            transcript = transcript.replace(/in2/g, "*");
+            transcript = transcript.replace(/in2/ig, "*");
         }
         if (transcript.includes("close")) {
-            transcript = transcript.replace(/close/g, "");
+            transcript = transcript.replace(/close/ig, "");
         }
         if (transcript.includes("thousand")) {
-            transcript = transcript.replace(/thousand/g, "1000");
+            transcript = transcript.replace(/thousand/ig, "1000");
         }
         if (transcript.includes("hundred")) {
-            transcript = transcript.replace(/hundred/g, "100");
+            transcript = transcript.replace(/hundred/ig, "100");
+        }
+        if(transcript.includes("basetenlog")){
+            transcript=transcript.replace(/base10log/ig,"log10(");
         }
         if (transcript.includes("ten")) {
-            transcript = transcript.replace(/ten/g, "10");
+            transcript = transcript.replace(/ten/ig, "10");
         }
         if (transcript.includes("one")) {
-            transcript = transcript.replace(/one/g, "1");
+            transcript = transcript.replace(/one/ig, "1");
         }
         if (transcript.includes("lakh")) {
-            transcript = transcript.replace(/lakh/g, "100000");
+            transcript = transcript.replace(/lakh/ig, "100000");
+        }
+        if(transcript.includes("sin")){
+            transcript=transcript.replace(/sin/ig,"sin(");
+        }
+        if(transcript.includes("sine")){
+            transcript=transcript.replace(/sin/ig,"sin(");
+        }
+        if(transcript.includes("cos")){
+            transcript=transcript.replace(/cos/ig,"cos(");
+        }
+        if(transcript.includes("course")){
+            transcript=transcript.replace(/course/ig,"cos(");
+        }
+        if(transcript.includes("cose")){
+            transcript=transcript.replace(/cose/ig,"cos(");
+        }
+        if(transcript.includes("quotes")){
+            transcript=transcript.replace(/quotes/ig,"cos(");
+        }
+        if(transcript.includes("tan")){
+            transcript=transcript.replace(/tan/ig,"tan(");
+        }
+        if(transcript.includes("secant")){
+            transcript=transcript.replace(/secant/ig,"secant(");
+        }
+        if(transcript.includes("cosecant")){
+            transcript=transcript.replace(/cosecant/ig,"cosecantcsc(");
+        }
+        if(transcript.includes("kosikant")){
+            transcript=transcript.replace(/kosikant/ig,"cosecantcsc(");
+        }
+        if(transcript.includes("cot")){
+            transcript=transcript.replace(/cot/ig,"cot(");
+        }
+        if(transcript.includes("Court")){
+            transcript=transcript.replace(/court/ig,"cot(");
+        }
+        if(transcript.includes("pi")){
+            transcript=transcript.replace(/pi/ig,"3.14");
+        }
+        if(transcript.includes("pie")){
+            transcript=transcript.replace(/pie/ig,"3.14");
+        }
+        if(transcript.includes("/e")){
+            transcript=transcript.replace(/\//ig,"3.14");
+        }
+        if(transcript.includes("underroot")){
+            transcript=transcript.replace(/underroot/ig,"sqrt(");
+        }
+        if(transcript.includes("squareroot")){
+            transcript=transcript.replace(/squareroot/ig,"sqrt(");
+        }
+        if(transcript.includes("log")){
+            transcript=transcript.replace(/log/ig,"log(");
+        }
+        if(transcript.includes("asign")){
+            transcript=transcript.replace(/asign/ig,"asin(");
+        }
+        if(transcript.includes("asine")){
+            transcript=transcript.replace(/asine/ig,"asin(");
+        }
+        if(transcript.includes("asin")){
+            transcript=transcript.replace(/asin/ig,"asin(");
+        }
+        if(transcript.includes("ekosh")){
+            transcript=transcript.replace(/asin/ig,"acos(");
+        }
+        if(transcript.includes("acose")){
+            transcript=transcript.replace(/asin/ig,"acos(");
+        }
+        if(transcript.includes("acos")){
+            transcript=transcript.replace(/asin/ig,"acos(");
+        }
+        if(transcript.includes("a10")){
+            transcript=transcript.replace(/asin/ig,"atan(");
+        }
+        if(transcript.includes("atan")){
+            transcript=transcript.replace(/asin/ig,"atan(");
+        }
+
+
+        let check=transcript.match(/\d+/)
+        check2=check===null&&!transcript.includes("(");
+        // console.log(check2)
+        if(check2)
+        {
+            // console.log(transcript)
+            transcript=""
         }
         output.value += transcript;
         if (document.getElementById('soltxt').value != "Invalid Expression") {
