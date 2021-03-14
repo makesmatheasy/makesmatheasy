@@ -431,6 +431,22 @@
                         </tr>
                     </table>
                 </li>
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="interestbtn"
+                                   style="font-size:15px;cursor: pointer;background:transparent;border:none;">Interest(Simple,Compound)</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
+                                        id="interestfav" src="images/unfavourite.png" style="height:25px;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
                 <div class="dropdown-divider"></div>
             </div>
             <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -1398,6 +1414,21 @@
                 <div class="form-group">
                     <p class="stopwrap" id="inputroundoffoutput"></p>
                 </div>
+            </div>
+            <div class="collapse" id ="interest">
+                <h2 style="color: white;">Simple and Compund Interest</h2>
+                <br>
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="first" placeholder="Enter principal"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="second" placeholder="Enter time period "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="third" placeholder="Enter rate of interest(%)"/>
+                    <br>
+                    <br>
+                    <button  class = "btn btn-outline-light" onclick = "simple_interest()" >Find</button>
+                    <br>
+                    <div style="color:white; font-size: large;" id="num"></div>
+                    <div id="num1" style="color: white; font-size: large"></div>
+                </div>            
             </div>
 
             <div class="collapse" id="equationssolver">
