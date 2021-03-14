@@ -86,6 +86,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#interestbtn").click(function () {
+        openit('#interest');
+        closenav();
+        clearall();
+    })
+
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
         closenav();
