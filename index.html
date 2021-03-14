@@ -507,7 +507,21 @@
                 </table>
             </li>
             
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="Mean" data-toggle="modal" data-target="#Meanit"
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Mean Median Mode</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Mean Median Mode','#Meanit','d','Meanitimgfav')"><img
+                                    id="Meanitimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
                 <div class="dropdown-divider"></div>
@@ -1848,7 +1862,44 @@
 
         </div>
 
-
+   <!-- Mean start -->
+<div class="modal fade" id="Meanit" tabindex="-1" role="dialog"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <h5 class="modal-title">Mean Median Mode</h5>
+           <button style="text-decoration:none" type="button" class="close" data-dismiss="modal"
+                   aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+           </button>
+       </div>
+       <div class="modal-body">
+           <div class="form-group">
+               <input type="tel" id="getNum" class="form__field" placeholder="Enter Numbers(Space Separated)"
+                      oninput="orderfieldclear()">
+           </div>
+           <div class="form-group">
+               <button type="button" class="btn btn-light" onclick="Means()">Mean</button>
+               <button type="button" class="btn btn-light" onclick="Median()">Median</button>
+               <button type="button" class="btn btn-light" onclick="Mode()">Mode</button>
+               <button type="button" class="btn btn-light"
+                       onclick="document.getElementById('getNum').value+=' ';document.getElementById('getNum').focus();">
+                   Space
+               </button>
+           </div>
+           <div class="form-group">
+               <p class="stopwrap" style="font-family:mathfont;" id="Meanresult"></p>
+               <p style="font-family:mathfont;" class="stopwrap" id="Meanresultde"></p>
+           </div>
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+           </button>
+       </div>
+   </div>
+</div>
+</div>
 
 
             <!--        check divisibility-->
