@@ -620,7 +620,37 @@
                 <div class="dropdown-divider"></div>
             </div>
 
+<!-- Binary Calculations Section -->
 
+            <li class="list_menu_items" onclick="collapseit('binary-calculations'); changeImage8();"><a
+                style="cursor: pointer;font-size: 16px;">Binary Calculations<img class="dropdownlogo"
+                    src="icons/down-chevron.svg" id="imgClickAndChange8"></a>
+        </li>
+        <div class="collapse" id="binary-calculations" style="color:#1c911c;margin:10px;padding-left:10px">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="decimal-to-binary-btn"
+                                style="font-size:14px;cursor: pointer;background:transparent;border:none;">Decimal / Binary Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                onclick="addtofavourite('Decimal / Binary Converter','#decimal-binary','c','decimal-binary-imgfav')"><img
+                                    id="decimal-binary-imgfav" src="images/unfavourite.png"
+                                    style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+           
+
+
+            <div class="dropdown-divider"></div>
+        </div>
+
+        <!--End of Binary Calculations Section -->
 
             <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
             <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;"
@@ -3116,6 +3146,35 @@
         </div>
     </div>
     <!--roman numeral end-->
+
+<!-- Start of Decimal / Binary -->
+<div>    
+    <div class="collapse" id="decimal-binary">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>From</h5>
+                    <select id="decimal-binary-select1" class="form__field" onchange="convertBinDec()">
+                        <option class="form_field" style="background-color: #232a36;">Decimal</option>
+                        <option class="form_field" style="background-color: #232a36;">Binary</option>
+                    </select>
+                    <input type="number" id="decimal-binary-input" value="0" class="form__field" oninput="convertBinDec()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="decimal-binary-select2" class="form__field" onchange="convertBinDec()">
+                        <option class="form__field" style="background-color: #232a36;">Decimal</option>
+                        <option class="form__field" style="background-color: #232a36;">Binary</option>
+                    </select>
+                </div>
+                <label class="form__group" id="decimal-binary-result">0</label>
+            </div>
+    </div>
+</div>
+
+
+<!-- End of Decimal / Binary -->
 
     <!--------------------------------------------------------->
     <!--    speech recognition start -->

@@ -137,11 +137,19 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    })
+    });
+    
+    //Function of collapsing binary/decimal section on click
+    $("#decimal-to-binary-btn").click(function(){
+        openit("#decimal-binary");
+        closenav();
+        clearall();
+    });
 
 });
 

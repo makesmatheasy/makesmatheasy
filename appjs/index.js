@@ -1,4 +1,4 @@
-var a=0,b=0,c=0,d=0,e=0,f=0,g=0;
+var a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
 
 function removeall(elid) {
   if (document.getElementById(elid).innerHTML != "") {
@@ -100,6 +100,23 @@ function changeImage1() {
 
 
  }
+
+ function changeImage8(){
+  h++;
+ 
+  if (h%2==0) 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+
 function collapseit(openit) {
   $(String("#" + openit)).slideToggle();
 }
@@ -128,7 +145,8 @@ function openit(id) {
     "#unitconcal",
     "#home",
     "#curconcal",
-    "#interest"
+    "#interest",
+    "#decimal-binary"
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
