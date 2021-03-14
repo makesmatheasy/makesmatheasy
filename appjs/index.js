@@ -145,6 +145,8 @@ function openit(id) {
     "#unitconcal",
     "#home",
     "#curconcal",
+    "#factorial",
+    "#pandc",
     "#interest",
     "#decimal-binary"
   ];

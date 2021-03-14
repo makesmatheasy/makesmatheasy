@@ -3094,6 +3094,163 @@ function speedcon() {
   document.getElementById("speedconou").innerHTML = `${a}`;
 }
 
+//factorial calculator
+
+function factorialsol(factorialval)
+{
+   var num = document.getElementById(factorialval).value;
+   var num1=parseInt(num);
+   var ans=document.getElementById("factorialsolprint");
+   var desc=document.getElementById("explain_fact");
+   if(isNaN(num1))
+   {
+      desc.innerHTML="Enter a number.";
+      ans.innerHTML="";
+   }
+   else if(num1==0 || num1==1)
+   {
+      ans.innerHTML="";
+      desc.innerHTML=`Factorial Formula of ${num1} ! = 1`;
+   }
+   else if(num1<=15)
+   {
+    desc.innerHTML=`Factorial Formula of ${num1} ! = 1  `;
+    let calc=1;
+    for(i=2; i<=num1; i++)
+    {
+      desc.innerHTML+=` x ${i}`
+      calc*=i;
+    }
+    ans.innerHTML=num1;
+    ans.innerHTML+=" !";
+    ans.innerHTML+=" =";
+    ans.innerHTML+=" ";
+    ans.innerHTML+=calc;
+   }
+   else
+   {
+    desc.innerHTML=`Factorial Formula is ${num1} ! = 1 x 2 x 3 x ..... x ${num1} `;
+    let calc=1;
+    for(i=1; i<=num1; i++)
+    {
+      calc*=i;
+    }
+    ans.innerHTML=num1;
+    ans.innerHTML+=" !";
+    ans.innerHTML+=" =";
+    ans.innerHTML+=" ";
+    ans.innerHTML+=calc;
+   }
+}
+function permutationcal(nval,rval)
+{
+   document.getElementById("permutation_div").style.display="block";
+   document.getElementById("combination_div").style.display="none";
+   var val1=document.getElementById(nval).value;
+   var val2=document.getElementById(rval).value;
+   var val3=parseInt(val1);
+   var val4=parseInt(val2);
+   if(isNaN(val3) || isNaN(val4))
+   {
+    // document.getElementById("permutation_wrong").innerHTML="Enter a Number."
+    document.getElementById("premutation_div_div2").style.display="none";
+    document.getElementById("permutation_div_div1").style.display="none";
+   }
+  else if(val3<val4)
+   {
+     
+      document.getElementById("permutation_wrong").innerHTML="n must be greater than r."
+      document.getElementById("premutation_div_div2").style.display="none";
+      document.getElementById("permutation_div_div1").style.display="block";
+   }
+   else
+   {
+       let ans1=1,ans2=1,ans3=0;
+      if(val3-val4==0)
+      {
+        for(i=1; i<=val3; i++)
+        {
+           ans1*=i;
+        }
+        document.getElementById("permutation_ans").innerHTML=`(${val3}) ! / (${val3} - ${val4}) ! = ${ans1}`;
+        document.getElementById("permutation_div_div1").style.display="none";
+        document.getElementById("premutation_div_div2").style.display="block";
+      }
+      else{
+      for(i=1; i<=val3; i++)
+      {
+         ans1*=i;
+      }
+      for(i=1; i<=(val3-val4); i++)
+      {
+        ans2*=i;
+      }
+      ans3=ans1/ans2;
+      document.getElementById("permutation_ans").innerHTML=`(${val3}) ! / (${val3} - ${val4}) ! = ${ans3}`;
+      document.getElementById("permutation_div_div1").style.display="none";
+      document.getElementById("premutation_div_div2").style.display="block";
+    }
+   
+  }
+  
+}
+
+function combinationcal(nval,rval)
+{
+   document.getElementById("combination_div").style.display="block";
+   document.getElementById("permutation_div").style.display="none";
+   var val1=document.getElementById(nval).value;
+   var val2=document.getElementById(rval).value;
+   var val3=parseInt(val1);
+   var val4=parseInt(val2);
+   if(isNaN(val3)|| isNaN(val4))
+   {
+    document.getElementById("combination_div_div2").style.display="none";
+    document.getElementById("combination_div_div1").style.display="none";
+   }
+   else if(val3<val4)
+   {
+     
+      document.getElementById("combination_wrong").innerHTML="n must be greater than r."
+      document.getElementById("combination_div_div2").style.display="none";
+      document.getElementById("combination_div_div1").style.display="block";
+   }
+   else
+   {
+       let ans1=1,ans2=1,ans3=1;
+       let ans4=0;
+      if(val3-val4==0)
+      {
+        document.getElementById("combination_ans").innerHTML=`(${val3}) ! / ( (${val4})! x (${val3} - ${val4}) ! ) = 1`;
+        document.getElementById("combination_div_div1").style.display="none";
+        document.getElementById("combination_div_div2").style.display="block";
+      }
+      else{
+      for(i=1; i<=val3; i++)
+      {
+         ans1*=i;
+      }
+      for(i=1; i<=val4; i++)
+      {
+        ans2*=i;
+      }
+      for(i=1; i<=(val3-val4); i++)
+      {
+        ans3*=i;
+      }
+      console.log(ans1);
+      console.log(ans2);
+      console.log(ans3);
+      ans4= (ans1/(ans2*ans3));
+      document.getElementById("combination_ans").innerHTML=`(${val3}) ! / ( (${val4}) ! x (${val3} - ${val4}) ! ) = ${ans4}`;
+      document.getElementById("combination_div_div1").style.display="none";
+      document.getElementById("combination_div_div2").style.display="block";
+    }
+   
+  }
+  
+}
+
 // Binary and Decimal Conversion
 
 //Function that performs conversion
