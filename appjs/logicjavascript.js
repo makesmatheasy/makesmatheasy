@@ -2733,6 +2733,19 @@ function roundoff(input, output) {
   var ar = val.split("");
   var len = val.length;
   var i = -1;
+  //to check if negative number or not
+  ar1 = [];
+  if(ar[0]=='-'){
+    for(itr=0;itr<ar.length-1;itr++){
+      ar1[itr]=ar[itr+1];
+    }
+  }
+  else {
+    for(itr=0;itr<ar.length;itr++){
+      ar1[itr]=ar[itr];
+    }
+  }
+  len1 = ar1.length
   //to check floating point number
   for (var j = 0; j < len; j++) {
     if (ar[j] == ".") {
@@ -2740,6 +2753,9 @@ function roundoff(input, output) {
       break;
     }
   }
+  var placeUpto = ["Ones","Tens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","Hundred&nbsp;&nbsp;&nbsp;","Thousand&nbsp;&nbsp;","TenThousand","Lakh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","Ten Lakh&nbsp;&nbsp;&nbsp;", "Crore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","Ten Crore&nbsp;&nbsp;&nbsp;"];
+  var spaces = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  var spaces1 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
   //if not a floating number
   if (i == -1) {
     var placeofroundoffarray = {
@@ -2754,20 +2770,74 @@ function roundoff(input, output) {
       "Ten Crore": len - 9,
     };
     var place = placeofroundoffarray[placeofroundoff];
+    var place1;
+    if(ar1.length == ar.length){
+      place1 = place;
+    }
+    else place1=place-1;
+    el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
+    el.innerHTML += "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>";
     if (place < 0) {
       var temp = "";
-      if (ar[place + 1] >= 5) {
+      if (ar1[place + 1] >= 5) {
+        for(itr=len1;itr>=0;itr--){
+          itrPlace = placeUpto[itr];
+          el.innerHTML +=itrPlace + "&nbsp;&nbsp;";
+        }
+        el.innerHTML+="<br>" + "0"  ;
+        for(itr=0;itr<len1;itr++){
+          el.innerHTML+= spaces + ar1[itr];
+        }
+        el.innerHTML+= "<br>" + "0" +spaces+ ar1[0] + ">=5" + "<br>";
+        el.innerHTML+= "1" + "<br>";
         temp += "1";
-        for (var i = 0; i < len; i++) {
+        for (var i = 0; i < len1; i++) {
           temp += "0";
         }
-        el.innerHTML = temp;
+        el.innerHTML += temp + "<br>";
+        el.innerHTML += val + " after rounding off to the nearest " + placeofroundoff + " is " + temp + "."; 
       } else {
-        el.innerHTML =
+        el.innerHTML +=
           "Enter Bigger number to roundoff to nearest " + placeofroundoff;
       }
     } else {
+      for(itr=len1-1;itr>=0;itr--){
+        itrPlace = placeUpto[itr];
+        el.innerHTML +=itrPlace + "&nbsp;&nbsp;";
+      }
+      if(place1+1!=len1){
+      el.innerHTML+="<br>" + ar1[0];
+      for(itr=1;itr<len1;itr++){
+          el.innerHTML+= spaces + ar1[itr];
+        }
+      el.innerHTML +="<br>" + ar1[0];
+      for(itr=1;itr<=place1;itr++){
+          el.innerHTML +=spaces + ar1[itr];
+      }
+      
+        el.innerHTML +=spaces + ar1[place1+1];
+        if (parseInt(ar1[place1 + 1]) >= 5){
+          el.innerHTML += ">=5" + "<br>" + ar1[0];
+          for(itr =1;itr<=place1;itr++){
+            el.innerHTML +=spaces + ar1[itr];
+          }
+          el.innerHTML +="+1";
+        }
+        else {
+          el.innerHTML += "<5" + "<br>" + ar1[0];
+          for(itr =1;itr<=place1;itr++){
+            el.innerHTML +=spaces + ar1[itr];
+          }
+        }
+      }
+      else{
+        el.innerHTML+="<br>" + ar1[0];
+      for(itr=1;itr<len1;itr++){
+          el.innerHTML+= spaces + ar1[itr];
+        }
+      }
       if (parseInt(ar[place + 1]) >= 5) {
+        
         if (parseInt(ar[place]) == 9) {
           //handling boundary cases
           var k = 0,
@@ -2798,10 +2868,14 @@ function roundoff(input, output) {
           ar[i] = 0;
         }
       }
-      el.innerHTML = ar.join("");
+      el.innerHTML +="<br>" + ar.join("");
+      el.innerHTML += "<br>" + val + " after rounding off to the nearest " + placeofroundoff + " is " + ar.join("");
     }
   } else {
     // a floating number
+    el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
+    el.innerHTML += "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" + spaces;
+
     var placeofroundoffarray = {
       Ones: i + 1,
       Tens: i + 2,
@@ -2814,12 +2888,73 @@ function roundoff(input, output) {
       "Ten Crore": i + 9,
     };
     var place = placeofroundoffarray[placeofroundoff];
+
     if (place >= len) {
+      for(itr =0;itr<place-i;itr++){
+        itrPlace = placeUpto[itr];
+        el.innerHTML += spaces1 + itrPlace;
+      }
+      el.innerHTML += "<br>"
+      flag=-1;
+      for(itr=0;itr<ar.length;itr++){
+        if(flag==-1)
+        el.innerHTML +=ar[itr];
+        else
+        el.innerHTML += spaces + ar[itr];
+        if(ar[itr]==".")
+        flag=1;
+      }
+      el.innerHTML +="<br>";
       for (var j = len; j < place + 1; j++) {
         ar.push("0");
       }
-      el.innerHTML = ar.join("");
+      flag=-1;
+      for(itr=0;itr<ar.length;itr++){
+        if(flag==-1)
+        el.innerHTML +=ar[itr];
+        else
+        el.innerHTML += spaces + ar[itr];
+        if(ar[itr]==".")
+        flag=1;
+      }
+      el.innerHTML +="<br>" + ar.join("");
+      el.innerHTML +="<br>" + val + " after rounding off to the nearest " + placeofroundoff + " is " + ar.join("") + ".";
     } else {
+      for(itr =0;itr<ar.length-i-1;itr++){
+        itrPlace = placeUpto[itr];
+        el.innerHTML += spaces1 + itrPlace;
+      }
+      el.innerHTML += "<br>"
+      flag=-1;
+      for(itr=0;itr<ar.length;itr++){
+        if(flag==-1)
+        el.innerHTML +=ar[itr];
+        else
+        el.innerHTML += spaces + ar[itr];
+        if(ar[itr]==".")
+        flag=1;
+      }
+      el.innerHTML +="<br>";
+      for(itr=0;itr<ar.length;itr++){
+        el.innerHTML +=ar[itr];
+        if(ar[itr]==".")
+        break;
+      }
+      flag=1;
+      for(itr=i+1;itr<=place+1;itr++){
+        if(itr>=ar.length){
+        flag=-1;
+        break;
+        }
+        el.innerHTML += spaces + ar[itr];
+      }
+      if(parseInt(ar[place+1])>=5 ){
+        el.innerHTML +=">=5";
+      }
+      else if(parseInt(ar[place+1])<5) {
+        el.innerHTML += "<5";
+      }
+      el.innerHTML +="<br>";
       if (parseInt(ar[place + 1]) >= 5) {
         if (parseInt(ar[place]) == 9) {
           //handling boundary cases
@@ -2873,7 +3008,8 @@ function roundoff(input, output) {
       var b;
       if (flag == 1) b = ar.slice(0, place + 2);
       else b = ar.slice(0, place + 1);
-      el.innerHTML = b;
+      el.innerHTML += b + "<br>";
+      el.innerHTML += val + " after rounding off to the nearest " + placeofroundoff + " is " + b + ".";
     }
   }
 }
