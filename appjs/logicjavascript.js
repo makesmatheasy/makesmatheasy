@@ -15,32 +15,30 @@ function searchgoogle(value) {
 //-----------------------------------------------------
 //roman expanded form
 function expandedform(input) {
-  if(String(document.getElementById(input).value)=="")
-    return "";
-  else
-  { 
-  if (input == "inpo") {
-    var num = parseInt(document.getElementById(input).value);
-  } else {
-    var num = parseInt(document.getElementById(input).textContent);
+  if (String(document.getElementById(input).value) == "") return "";
+  else {
+    if (input == "inpo") {
+      var num = parseInt(document.getElementById(input).value);
+    } else {
+      var num = parseInt(document.getElementById(input).textContent);
+    }
+    i = 1;
+    j = 0;
+    var ar = [];
+    var temp = "";
+    while (parseInt(num) != 0) {
+      var last = parseInt(num % 10);
+      var br = last * i;
+      ar[j] = br;
+      num = num / 10;
+      i = i * 10;
+      j++;
+    }
+    var temp = ar.reverse().join("+");
+    return temp;
   }
-  i = 1;
-  j = 0;
-  var ar = [];
-  var temp = "";
-  while (parseInt(num) != 0) {
-    var last = parseInt(num % 10);
-    var br = last * i;
-    ar[j] = br;
-    num = num / 10;
-    i = i * 10;
-    j++;
-  }
-  var temp = ar.reverse().join("+");
-  return temp;
 }
-}
- //roman expanded form
+//roman expanded form
 
 //roman calculator
 function romanize(input) {
@@ -87,31 +85,29 @@ function romanize(input) {
     i = 3;
   while (i--) roman = (key[+digits.pop() + i * 10] || "") + roman;
   return Array(+digits.join("") + 1).join("M") + roman;
-  
 }
 //roman calculator
 
 //deroman expanded form
 function expandedformde(input, output) {
-  if(document.getElementById(input).textContent=="")
-      document.getElementById(output).innerHTML = "";
-  else
-  {    
-      var val = document.getElementById(input).textContent;
-      var expanded = expandedform(input);
-      var ar = [];
-      ar = expanded.split("+");
-      var temp = "";
-      for (i of ar) {
-        if (i == 0) {
-          temp += "";
-        } else {
-          temp += romanize(i) + "+";
-        }
+  if (document.getElementById(input).textContent == "")
+    document.getElementById(output).innerHTML = "";
+  else {
+    var val = document.getElementById(input).textContent;
+    var expanded = expandedform(input);
+    var ar = [];
+    ar = expanded.split("+");
+    var temp = "";
+    for (i of ar) {
+      if (i == 0) {
+        temp += "";
+      } else {
+        temp += romanize(i) + "+";
       }
-      temp = temp.slice(0, -1);
-      document.getElementById(output).innerHTML = temp;
-}
+    }
+    temp = temp.slice(0, -1);
+    document.getElementById(output).innerHTML = temp;
+  }
 }
 //deroman expanded form
 
@@ -151,15 +147,17 @@ function deromanize(str) {
 
 //call deromanize
 function callder() {
-   document.getElementById("out2").innerHTML = deromanize(
-     document.getElementById("rinp").value
-   );
+  document.getElementById("out2").innerHTML = deromanize(
+    document.getElementById("rinp").value
+  );
 }
 //call deromanize
 
 //call romanize
 function callr() {
-   document.getElementById("ouroman").innerHTML = romanize(document.getElementById("inpo").value);
+  document.getElementById("ouroman").innerHTML = romanize(
+    document.getElementById("inpo").value
+  );
 }
 //call romanize
 //-----------------------------------------------------
@@ -322,8 +320,8 @@ function divisionwithsteps() {
 function checkdivisibility() {
   var n1 = parseInt(document.getElementById("n1").value);
   var n2 = parseInt(document.getElementById("n2").value);
-  
-  if (String(n1)!=NaN && String(n2)!="NaN" && n1 % n2 == 0) {
+
+  if (String(n1) != NaN && String(n2) != "NaN" && n1 % n2 == 0) {
     document.getElementById("divisibilitycheckresult").innerHTML =
       "Yes! " + String(n1) + " is Divisible by " + n2 + "<br>";
     document.getElementById("divisibilitycheckresult").innerHTML +=
@@ -346,7 +344,7 @@ function checkdivisibility() {
     //            btn.className="btn btn-info";
     //            btn.value="Show Steps"
     //            document.getElementById('checkdivisibility').appendChild(btn);
-  } else if(String(n1)!="NaN" && String(n2)!="NaN") {
+  } else if (String(n1) != "NaN" && String(n2) != "NaN") {
     document.getElementById("divisibilitycheckresult").innerHTML =
       "No! " + String(n1) + " is not Divisible by " + n2;
     document.getElementById("divisibilitycheckresultexplanation").innerHTML =
@@ -1425,15 +1423,36 @@ function solveinverselaplace() {
 }
 //-----------------------------------------------------
 
+// Checking for the limit of input while generating Multiplication table.
+function checklimit() {
+  let num = parseInt(document.querySelector("#numtable").value);
+  let end = parseInt(document.querySelector("#numending").value);
+  let error = document.querySelector(".error");
+
+  document.getElementById("resulttable").innerText = "";
+
+  if (num > 25000 || end > 25000)
+    error.innerText = "Number cannot be greater than 25000";
+  else if (
+    (end < 25000 && isNaN(num)) ||
+    (num < 25000 && isNaN(end)) ||
+    (num < 25000 && end < 25000)
+  )
+    error.innerText = "";
+}
 //-----------------------------------------------------
+
+//-----------------------------------------------------
+//  Prints Multiplication Table
 function printtable() {
   var temp =
     "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
   var num = parseInt(document.getElementById("numtable").value);
   var end = parseInt(document.getElementById("numending").value);
+
   if (num == "" && end == "") {
     document.getElementById("resulttable").innerHTML = "";
-  } else if(String(num)!="NaN" && String(end) !="NaN") {
+  } else if (String(num) != "NaN" && String(end) != "NaN") {
     for (var i = 1; i <= end; i++) {
       temp += "<tr>";
       temp +=
@@ -1765,6 +1784,84 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultofdiagonalrec"));
   renderMathInElement(document.getElementById("resultoflengthrec"));
   renderMathInElement(document.getElementById("resultofbreadthrec"));
+}
+// created function for isosceles triangle
+function isoscelestrianglearea() {
+  var eqside = document.getElementById("inputeqitside").value;
+  var side = document.getElementById("inputitside").value;
+  var areaoutput = document.getElementById("resultofareait");
+  var perimeteroutput = document.getElementById("resultofperiit");
+  var heightoutput = document.getElementById("resultofheightit");
+  var areatemp = "";
+  var perimetertemp = "";
+  var heighttemp = "";
+  // if((eqside=="" && side!="") ||(eqside!="" && side==""))
+  // {
+  // areaoutput.innerHTML="Please enter both values";
+  // }
+  if (side != "" && eqside != "") {
+    areatemp = "";
+    perimetertemp = "";
+    heighttemp = "";
+    perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
+    perimetertemp +=
+      "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
+      eval("2*(" + String(eqside) + ")" + String(side)) +
+      "\\]";
+    perimeteroutput.innerHTML = perimetertemp;
+
+    heighttemp =
+      "\\[h=\\sqrt{" + eqside + "^2-" + "\\frac{" + side + "^2}{4}}\\]";
+    heighttemp +=
+      "\\[h=\\sqrt{" +
+      eval(String(eqside * eqside)) +
+      "\\frac{" +
+      eval(String(side * side)) +
+      "}{4}}\\]";
+    heightoutput.innerHTML = heighttemp;
+
+    areatemp = "\\[A=\\frac{1}{2} \\times" + side + heighttemp + "\\]";
+    areatemp += "\\[A=0.5\\times" + eval(String(side * heighttemp)) + "\\]";
+    var a = eval(String("0.5*" + String(side * heighttemp)));
+    areatemp += "\\[A=" + a + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Triangle \\space is \\space " + a + "\\]";
+    areaoutput.innerHTML = areatemp;
+
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+    renderMathInElement(heightoutput);
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+    heightoutput.innerHTML = "";
+  }
+}
+function solveSlope() {
+  let x1 = document.getElementById("inputLineX1").value;
+  let y1 = document.getElementById("inputLineY1").value;
+  let x2 = document.getElementById("inputLineX2").value;
+  let y2 = document.getElementById("inputLineY2").value;
+  if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
+    document.getElementById("resultofline").innerHTML = "Enter all four points";
+    document.getElementById("answerofline").innerHTML = "";
+    document.getElementById("answer").innerHTML = "";
+  } else if (parseInt(x2) - parseInt(x1) == 0) {
+    document.getElementById("resultofline").innerHTML = "Infinity";
+  } else {
+    let temp = (y2 - y1) / (x2 - x1);
+    console.log(temp);
+    let sol =
+      "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
+    let sol2 = "\\[Slope=" + temp + "\\]";
+    document.getElementById("resultofline").innerHTML =
+      "\\[Slope=\\frac{y2-y1}{x2-x1}\\]";
+    document.getElementById("answerofline").innerHTML = sol;
+    document.getElementById("answer").innerHTML = sol2;
+    renderMathInElement(document.getElementById("answerofline"));
+    renderMathInElement(document.getElementById("answer"));
+    renderMathInElement(document.getElementById("resultofline"));
+  }
 }
 //shapes calculator
 //-----------------------------------------------------
@@ -2165,17 +2262,14 @@ function orderas() {
     }
   }
   val = val.join(",");
-  if(val.length==0)
-  {
-    document.getElementById("orderresult").innerHTML +="";
+  if (val.length == 0) {
+    document.getElementById("orderresult").innerHTML += "";
+  } else {
+    document.getElementById("orderresult").innerHTML +=
+      "\\[Ascending \\space Order\\]";
+    document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById("orderresult"));
   }
-  else
-  {
-  document.getElementById("orderresult").innerHTML +=
-    "\\[Ascending \\space Order\\]";
-  document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
-  renderMathInElement(document.getElementById("orderresult"));
-} 
 }
 //ascending order
 
@@ -2183,7 +2277,7 @@ function orderas() {
 function orderde() {
   document.getElementById("orderresultde").innerHTML = "";
   var val = document.getElementById("ordergetval").value;
-  
+
   val = val.split(" ");
   val = val.filter(function (str) {
     return /\S/.test(str);
@@ -2198,19 +2292,16 @@ function orderde() {
       }
     }
   }
-  
+
   val = val.join(",");
-  if(val.length==0)
-  {
-    document.getElementById("orderresultde").innerHTML ="";
+  if (val.length == 0) {
+    document.getElementById("orderresultde").innerHTML = "";
+  } else {
+    document.getElementById("orderresultde").innerHTML +=
+      "\\[ Descending \\space Order \\]";
+    document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById("orderresultde"));
   }
-  else
-  {
-  document.getElementById("orderresultde").innerHTML +=
-    "\\[ Descending \\space Order \\]";
-  document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
-  renderMathInElement(document.getElementById("orderresultde"));
-} 
 }
 //descending order
 //-----------------------------------------------------
@@ -2644,6 +2735,18 @@ function roundoff(input, output) {
   var ar = val.split("");
   var len = val.length;
   var i = -1;
+  //to check if negative number or not
+  ar1 = [];
+  if (ar[0] == "-") {
+    for (itr = 0; itr < ar.length - 1; itr++) {
+      ar1[itr] = ar[itr + 1];
+    }
+  } else {
+    for (itr = 0; itr < ar.length; itr++) {
+      ar1[itr] = ar[itr];
+    }
+  }
+  len1 = ar1.length;
   //to check floating point number
   for (var j = 0; j < len; j++) {
     if (ar[j] == ".") {
@@ -2651,6 +2754,20 @@ function roundoff(input, output) {
       break;
     }
   }
+  var placeUpto = [
+    "Ones",
+    "Tens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "Hundred&nbsp;&nbsp;&nbsp;",
+    "Thousand&nbsp;&nbsp;",
+    "TenThousand",
+    "Lakh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "Ten Lakh&nbsp;&nbsp;&nbsp;",
+    "Crore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "Ten Crore&nbsp;&nbsp;&nbsp;",
+  ];
+  var spaces =
+    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  var spaces1 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   //if not a floating number
   if (i == -1) {
     var placeofroundoffarray = {
@@ -2665,19 +2782,76 @@ function roundoff(input, output) {
       "Ten Crore": len - 9,
     };
     var place = placeofroundoffarray[placeofroundoff];
+    var place1;
+    if (ar1.length == ar.length) {
+      place1 = place;
+    } else place1 = place - 1;
+    el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
+    el.innerHTML +=
+      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>";
     if (place < 0) {
       var temp = "";
-      if (ar[place + 1] >= 5) {
+      if (ar1[place + 1] >= 5) {
+        for (itr = len1; itr >= 0; itr--) {
+          itrPlace = placeUpto[itr];
+          el.innerHTML += itrPlace + "&nbsp;&nbsp;";
+        }
+        el.innerHTML += "<br>" + "0";
+        for (itr = 0; itr < len1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
+        }
+        el.innerHTML += "<br>" + "0" + spaces + ar1[0] + ">=5" + "<br>";
+        el.innerHTML += "1" + "<br>";
         temp += "1";
-        for (var i = 0; i < len; i++) {
+        for (var i = 0; i < len1; i++) {
           temp += "0";
         }
-        el.innerHTML = temp;
+        el.innerHTML += temp + "<br>";
+        el.innerHTML +=
+          val +
+          " after rounding off to the nearest " +
+          placeofroundoff +
+          " is " +
+          temp +
+          ".";
       } else {
-        el.innerHTML =
+        el.innerHTML +=
           "Enter Bigger number to roundoff to nearest " + placeofroundoff;
       }
     } else {
+      for (itr = len1 - 1; itr >= 0; itr--) {
+        itrPlace = placeUpto[itr];
+        el.innerHTML += itrPlace + "&nbsp;&nbsp;";
+      }
+      if (place1 + 1 != len1) {
+        el.innerHTML += "<br>" + ar1[0];
+        for (itr = 1; itr < len1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
+        }
+        el.innerHTML += "<br>" + ar1[0];
+        for (itr = 1; itr <= place1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
+        }
+
+        el.innerHTML += spaces + ar1[place1 + 1];
+        if (parseInt(ar1[place1 + 1]) >= 5) {
+          el.innerHTML += ">=5" + "<br>" + ar1[0];
+          for (itr = 1; itr <= place1; itr++) {
+            el.innerHTML += spaces + ar1[itr];
+          }
+          el.innerHTML += "+1";
+        } else {
+          el.innerHTML += "<5" + "<br>" + ar1[0];
+          for (itr = 1; itr <= place1; itr++) {
+            el.innerHTML += spaces + ar1[itr];
+          }
+        }
+      } else {
+        el.innerHTML += "<br>" + ar1[0];
+        for (itr = 1; itr < len1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
+        }
+      }
       if (parseInt(ar[place + 1]) >= 5) {
         if (parseInt(ar[place]) == 9) {
           //handling boundary cases
@@ -2709,10 +2883,21 @@ function roundoff(input, output) {
           ar[i] = 0;
         }
       }
-      el.innerHTML = ar.join("");
+      el.innerHTML += "<br>" + ar.join("");
+      el.innerHTML +=
+        "<br>" +
+        val +
+        " after rounding off to the nearest " +
+        placeofroundoff +
+        " is " +
+        ar.join("");
     }
   } else {
     // a floating number
+    el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
+    el.innerHTML +=
+      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" + spaces;
+
     var placeofroundoffarray = {
       Ones: i + 1,
       Tens: i + 2,
@@ -2725,12 +2910,69 @@ function roundoff(input, output) {
       "Ten Crore": i + 9,
     };
     var place = placeofroundoffarray[placeofroundoff];
+
     if (place >= len) {
+      for (itr = 0; itr < place - i; itr++) {
+        itrPlace = placeUpto[itr];
+        el.innerHTML += spaces1 + itrPlace;
+      }
+      el.innerHTML += "<br>";
+      flag = -1;
+      for (itr = 0; itr < ar.length; itr++) {
+        if (flag == -1) el.innerHTML += ar[itr];
+        else el.innerHTML += spaces + ar[itr];
+        if (ar[itr] == ".") flag = 1;
+      }
+      el.innerHTML += "<br>";
       for (var j = len; j < place + 1; j++) {
         ar.push("0");
       }
-      el.innerHTML = ar.join("");
+      flag = -1;
+      for (itr = 0; itr < ar.length; itr++) {
+        if (flag == -1) el.innerHTML += ar[itr];
+        else el.innerHTML += spaces + ar[itr];
+        if (ar[itr] == ".") flag = 1;
+      }
+      el.innerHTML += "<br>" + ar.join("");
+      el.innerHTML +=
+        "<br>" +
+        val +
+        " after rounding off to the nearest " +
+        placeofroundoff +
+        " is " +
+        ar.join("") +
+        ".";
     } else {
+      for (itr = 0; itr < ar.length - i - 1; itr++) {
+        itrPlace = placeUpto[itr];
+        el.innerHTML += spaces1 + itrPlace;
+      }
+      el.innerHTML += "<br>";
+      flag = -1;
+      for (itr = 0; itr < ar.length; itr++) {
+        if (flag == -1) el.innerHTML += ar[itr];
+        else el.innerHTML += spaces + ar[itr];
+        if (ar[itr] == ".") flag = 1;
+      }
+      el.innerHTML += "<br>";
+      for (itr = 0; itr < ar.length; itr++) {
+        el.innerHTML += ar[itr];
+        if (ar[itr] == ".") break;
+      }
+      flag = 1;
+      for (itr = i + 1; itr <= place + 1; itr++) {
+        if (itr >= ar.length) {
+          flag = -1;
+          break;
+        }
+        el.innerHTML += spaces + ar[itr];
+      }
+      if (parseInt(ar[place + 1]) >= 5) {
+        el.innerHTML += ">=5";
+      } else if (parseInt(ar[place + 1]) < 5) {
+        el.innerHTML += "<5";
+      }
+      el.innerHTML += "<br>";
       if (parseInt(ar[place + 1]) >= 5) {
         if (parseInt(ar[place]) == 9) {
           //handling boundary cases
@@ -2784,7 +3026,14 @@ function roundoff(input, output) {
       var b;
       if (flag == 1) b = ar.slice(0, place + 2);
       else b = ar.slice(0, place + 1);
-      el.innerHTML = b;
+      el.innerHTML += b + "<br>";
+      el.innerHTML +=
+        val +
+        " after rounding off to the nearest " +
+        placeofroundoff +
+        " is " +
+        b +
+        ".";
     }
   }
 }
@@ -2898,6 +3147,7 @@ function masscon() {
   const a = (i * f) / t;
   document.getElementById("massconou").innerHTML = `${a}`;
 }
+
 function tempau(a) {
   switch (a) {
     case "1":
@@ -2927,5 +3177,394 @@ function tempcon() {
   const a = ((i - fs) / fd) * tm + ta;
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
+
+// simple and compound interest
+//-----------------------------------------------------
+function simple_interest() {
+  var p, t, r, si, ci;
+  p = document.getElementById("first").value;
+  t = document.getElementById("second").value;
+  r = document.getElementById("third").value;
+  si = parseInt((p * t * r) / 100);
+  amount = p * Math.pow(1 + r / 100, t);
+  ci = amount - p;
+  document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
+  document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
+}
+
 //unit convert
 //-----------------------------------------------------
+//Currency convert
+function curcon() {
+  fetch("https://api.exchangerate-api.com/v4/latest/USD")
+    .then((cur) => {
+      return cur.json();
+    })
+    .then(
+      (curout = function (c) {
+        const f = c.rates[document.getElementById("curcon-1").value];
+        const t = c.rates[document.getElementById("curcon-2").value];
+        const i = parseInt(document.getElementById("curconin").value);
+        document.getElementById("curconou").innerHTML = `${(i * t) / f}`;
+      })
+    );
+}
+//Currency convert
+//-----------------------------------------------------
+// Time convert
+function timeu(a) {
+  switch (a) {
+    case "1":
+      return 86400;
+    case "2":
+      return 3600;
+    case "3":
+      return 60;
+    case "4":
+      return 1;
+    case "5":
+      return 0.001;
+    case "6":
+      return 0.000001;
+  }
+}
+function timecon() {
+  const f = timeu(document.getElementById("timecon-1").value);
+  const t = timeu(document.getElementById("timecon-2").value);
+  const i = parseInt(document.getElementById("timeconin").value);
+  const a = (i * f) / t;
+  document.getElementById("timeconou").innerHTML = `${a}`;
+}
+// Speed convert
+function speedu(a) {
+  switch (a) {
+    case "1":
+      return 1.60934;
+    case "2":
+      return 1;
+    case "3":
+      return 3.6;
+  }
+}
+function speedcon() {
+  const f = speedu(document.getElementById("speedcon-1").value);
+  const t = speedu(document.getElementById("speedcon-2").value);
+  const i = parseInt(document.getElementById("speedconin").value);
+  const a = (i * f) / t;
+  document.getElementById("speedconou").innerHTML = `${a}`;
+}
+
+//factorial calculator
+
+function factorialsol(factorialval) {
+  var num = document.getElementById(factorialval).value;
+  var num1 = parseInt(num);
+  var ans = document.getElementById("factorialsolprint");
+  var desc = document.getElementById("explain_fact");
+  if (isNaN(num1)) {
+    desc.innerHTML = "Enter a number.";
+    ans.innerHTML = "";
+  } else if (num1 == 0 || num1 == 1) {
+    ans.innerHTML = "";
+    desc.innerHTML = `Factorial Formula of ${num1} ! = 1`;
+  } else if (num1 <= 15) {
+    desc.innerHTML = `Factorial Formula of ${num1} ! = 1  `;
+    let calc = 1;
+    for (i = 2; i <= num1; i++) {
+      desc.innerHTML += ` x ${i}`;
+      calc *= i;
+    }
+    ans.innerHTML = num1;
+    ans.innerHTML += " !";
+    ans.innerHTML += " =";
+    ans.innerHTML += " ";
+    ans.innerHTML += calc;
+  } else {
+    desc.innerHTML = `Factorial Formula is ${num1} ! = 1 x 2 x 3 x ..... x ${num1} `;
+    let calc = 1;
+    for (i = 1; i <= num1; i++) {
+      calc *= i;
+    }
+    ans.innerHTML = num1;
+    ans.innerHTML += " !";
+    ans.innerHTML += " =";
+    ans.innerHTML += " ";
+    ans.innerHTML += calc;
+  }
+}
+function permutationcal(nval, rval) {
+  document.getElementById("permutation_div").style.display = "block";
+  document.getElementById("combination_div").style.display = "none";
+  var val1 = document.getElementById(nval).value;
+  var val2 = document.getElementById(rval).value;
+  var val3 = parseInt(val1);
+  var val4 = parseInt(val2);
+  if (isNaN(val3) || isNaN(val4)) {
+    // document.getElementById("permutation_wrong").innerHTML="Enter a Number."
+    document.getElementById("premutation_div_div2").style.display = "none";
+    document.getElementById("permutation_div_div1").style.display = "none";
+  } else if (val3 < val4) {
+    document.getElementById("permutation_wrong").innerHTML =
+      "n must be greater than r.";
+    document.getElementById("premutation_div_div2").style.display = "none";
+    document.getElementById("permutation_div_div1").style.display = "block";
+  } else {
+    let ans1 = 1,
+      ans2 = 1,
+      ans3 = 0;
+    if (val3 - val4 == 0) {
+      for (i = 1; i <= val3; i++) {
+        ans1 *= i;
+      }
+      document.getElementById(
+        "permutation_ans"
+      ).innerHTML = `(${val3}) ! / (${val3} - ${val4}) ! = ${ans1}`;
+      document.getElementById("permutation_div_div1").style.display = "none";
+      document.getElementById("premutation_div_div2").style.display = "block";
+    } else {
+      for (i = 1; i <= val3; i++) {
+        ans1 *= i;
+      }
+      for (i = 1; i <= val3 - val4; i++) {
+        ans2 *= i;
+      }
+      ans3 = ans1 / ans2;
+      document.getElementById(
+        "permutation_ans"
+      ).innerHTML = `(${val3}) ! / (${val3} - ${val4}) ! = ${ans3}`;
+      document.getElementById("permutation_div_div1").style.display = "none";
+      document.getElementById("premutation_div_div2").style.display = "block";
+    }
+  }
+}
+
+function combinationcal(nval, rval) {
+  document.getElementById("combination_div").style.display = "block";
+  document.getElementById("permutation_div").style.display = "none";
+  var val1 = document.getElementById(nval).value;
+  var val2 = document.getElementById(rval).value;
+  var val3 = parseInt(val1);
+  var val4 = parseInt(val2);
+  if (isNaN(val3) || isNaN(val4)) {
+    document.getElementById("combination_div_div2").style.display = "none";
+    document.getElementById("combination_div_div1").style.display = "none";
+  } else if (val3 < val4) {
+    document.getElementById("combination_wrong").innerHTML =
+      "n must be greater than r.";
+    document.getElementById("combination_div_div2").style.display = "none";
+    document.getElementById("combination_div_div1").style.display = "block";
+  } else {
+    let ans1 = 1,
+      ans2 = 1,
+      ans3 = 1;
+    let ans4 = 0;
+    if (val3 - val4 == 0) {
+      document.getElementById(
+        "combination_ans"
+      ).innerHTML = `(${val3}) ! / ( (${val4})! x (${val3} - ${val4}) ! ) = 1`;
+      document.getElementById("combination_div_div1").style.display = "none";
+      document.getElementById("combination_div_div2").style.display = "block";
+    } else {
+      for (i = 1; i <= val3; i++) {
+        ans1 *= i;
+      }
+      for (i = 1; i <= val4; i++) {
+        ans2 *= i;
+      }
+      for (i = 1; i <= val3 - val4; i++) {
+        ans3 *= i;
+      }
+      console.log(ans1);
+      console.log(ans2);
+      console.log(ans3);
+      ans4 = ans1 / (ans2 * ans3);
+      document.getElementById(
+        "combination_ans"
+      ).innerHTML = `(${val3}) ! / ( (${val4}) ! x (${val3} - ${val4}) ! ) = ${ans4}`;
+      document.getElementById("combination_div_div1").style.display = "none";
+      document.getElementById("combination_div_div2").style.display = "block";
+    }
+  }
+}
+
+//Mean start
+function Means() {
+  var s = 0;
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val = val.split(" ");
+  val = val.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len = parseInt(val.length);
+  for (i = 0; i < len; i++) {
+    s = s + parseInt(val[i]);
+  }
+  if (val.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+    var ans = s / len;
+    document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
+    document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
+    for (i = 1; i < val.length; i++) {
+      document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
+    }
+    document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
+    document.getElementById("Meanresult").innerHTML += ans;
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+}
+//Mean End
+//Median start
+function Median() {
+  document.getElementById("Meanresult").innerHTML = "";
+  var arr = document.getElementById("getNum").value;
+  arr = arr.split(" ");
+  arr = arr.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len = parseInt(arr.length);
+  arr = arr.sort();
+  let mid = Math.floor(len / 2);
+  if (arr.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+    let median =
+      len % 2 === 0
+        ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2
+        : arr[mid - 1];
+    document.getElementById(
+      "Meanresult"
+    ).innerHTML = `After Sorting:- ${arr}</br>`;
+    document.getElementById("Meanresult").innerHTML += `Median:-`;
+    document.getElementById("Meanresult").innerHTML += median;
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+}
+// Median end
+//Mode Start
+function Mode() {
+  document.getElementById("Meanresult").innerHTML = "";
+  var arr = document.getElementById("getNum").value;
+  arr = arr.split(" ");
+  arr = arr.filter(function (str) {
+    return /\S/.test(str);
+  });
+  const frequencyTable = {};
+  arr.forEach((elem) => (frequencyTable[elem] = frequencyTable[elem] + 1 || 1));
+
+  let modes = [];
+  let maxFrequency = 0;
+  for (const key in frequencyTable) {
+    if (frequencyTable[key] > maxFrequency) {
+      modes = [Number(key)];
+      maxFrequency = frequencyTable[key];
+    } else if (frequencyTable[key] === maxFrequency) {
+      modes.push(Number(key));
+    }
+  }
+
+  if (modes.length === Object.keys(frequencyTable).length) modes = [];
+  if (arr.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+    if (modes.length === 0) {
+      document.getElementById(
+        "Meanresult"
+      ).innerHTML += `All Number appeared Just Once`;
+    } else {
+      document.getElementById("Meanresult").innerHTML += `Mode is:-${modes}`;
+    }
+  }
+}
+//Mode end
+
+///////// Binary and Decimal Conversion ///////////
+
+//Function that performs conversion
+function convertBinDec() {
+  const fromBase = document.getElementById("decimal-binary-select1").value;
+  const toBase = document.getElementById("decimal-binary-select2").value;
+  const input = document.getElementById("decimal-binary-input").value;
+  let result = document.getElementById("decimal-binary-result");
+  let from = 10;
+  let to = 10;
+
+  if (fromBase === "Decimal") from = 10;
+  else from = 2;
+
+  if (toBase === "Decimal") to = 10;
+  else to = 2;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+}
+
+//////////////////////////////////////////////////////////////
+
+////////////// Bitwise Calculator Section /////////////////
+
+//Function to clear inputs when user changes his/her numbering base system
+function clearInputs() {
+  document.getElementById("bitwise-first-number").value = 0;
+  document.getElementById("bitwise-second-number").value = 0;
+  document.getElementById("bitwise-result").innerHTML = 0;
+}
+
+//Function that performs bitwise calculation
+function bitwiseCalc() {
+  let firstOperand = parseInt(
+    document.getElementById("bitwise-first-number").value
+  );
+  let secondOperand = parseInt(
+    document.getElementById("bitwise-second-number").value
+  );
+  const operation = document.getElementById("bitwise-operation").value;
+  const numberSystem = document.getElementById("bitwise-numbers-system").value;
+  let result;
+
+  if (numberSystem === "Binary") {
+    firstOperand = parseInt(firstOperand, 2);
+    secondOperand = parseInt(secondOperand, 2);
+  }
+
+  if (isNaN(firstOperand) || isNaN(secondOperand)) {
+    document.getElementById("bitwise-result").innerHTML = "NaN";
+  } else {
+    switch (operation) {
+      case "AND":
+        result = firstOperand & secondOperand;
+        break;
+      case "OR":
+        result = firstOperand | secondOperand;
+        break;
+      case "XOR":
+        result = firstOperand ^ secondOperand;
+        break;
+    }
+
+    if (numberSystem === "Binary")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(2);
+    else document.getElementById("bitwise-result").innerHTML = result;
+  }
+}
+
+/////////////////////////////////////////////////////////////
+//Function that performs conversion of Octal to binary and viceversa
+function convertBinOct() {
+  const fromBase = document.getElementById("octal-binary-select1").value;
+  const toBase = document.getElementById("octal-binary-select2").value;
+  const input = document.getElementById("octal-binary-input").value;
+  let result = document.getElementById("octal-binary-result");
+  let from = 8;
+  let to = 8;
+
+  if (fromBase === "Octal") from = 8;
+  else from = 2;
+
+  if (toBase === "Octal") to = 8;
+  else to = 2;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+}
