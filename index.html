@@ -743,6 +743,37 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="intrbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Intrest
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('Intrest Calculator','#intrcal','c','interimgfav')"><img
+                                    id="interimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="curconbtn" style="font-size:15px;cursor: pointer;background:transparent;border:none;">Currency
+                                Convertor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Currency Convertor','#curconcal','c','curimgfav')"><img id="curimgfav"
+                                    src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>        
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="bitwise-calc-btn"
                                 style="font-size:15px;cursor: pointer;background:transparent;border:none;">Bitwise Calculator</a>
                         </td>
@@ -754,6 +785,7 @@
                             </tr>
                         </table>
                     </li>
+
             <div class="dropdown-divider"></div>
         </div>
 
@@ -1535,9 +1567,339 @@
                     <div class="form-group">
                         <p class="stopwrap" id="rootsquadraticresult"></p>
                     </div>
-
-
                 </div>
+            </div>
+
+
+        <!-- Currency convert -->
+        <div>
+            <div class="collapse" id="curconcal">
+                <!-- <h2>Currency Convertor</h2> -->
+                <div class="col-6">
+                    <h5>From</h5>
+                    <select id="curcon-1" class="form__field" onchange="curcon()">
+                        <option value="USD" class="form_field" style="background-color:var(--appblack);">USD
+                        </option>
+                        <option value="AED" class="form_field" style="background-color:var(--appblack);">AED
+                        </option>
+                        <option value="ARS" class="form_field" style="background-color:var(--appblack);">ARS
+                        </option>
+                        <option value="AUD" class="form_field" style="background-color:var(--appblack);">AUD
+                        </option>
+                        <option value="BGN" class="form_field" style="background-color:var(--appblack);">BGN
+                        </option>
+                        <option value="BRL" class="form_field" style="background-color:var(--appblack);">BRL
+                        </option>
+                        <option value="BSD" class="form_field" style="background-color:var(--appblack);">BSD
+                        </option>
+                        <option value="CAD" class="form_field" style="background-color:var(--appblack);">CAD
+                        </option>
+                        <option value="CHF" class="form_field" style="background-color:var(--appblack);">CHF
+                        </option>
+                        <option value="CLP" class="form_field" style="background-color:var(--appblack);">CLP
+                        </option>
+                        <option value="CNY" class="form_field" style="background-color:var(--appblack);">CNY
+                        </option>
+                        <option value="COP" class="form_field" style="background-color:var(--appblack);">COP
+                        </option>
+                        <option value="CZK" class="form_field" style="background-color:var(--appblack);">CZK
+                        </option>
+                        <option value="DKK" class="form_field" style="background-color:var(--appblack);">DKK
+                        </option>
+                        <option value="DOP" class="form_field" style="background-color:var(--appblack);">DOP
+                        </option>
+                        <option value="EGP" class="form_field" style="background-color:var(--appblack);">EGP
+                        </option>
+                        <option value="EUR" class="form_field" style="background-color:var(--appblack);">EUR
+                        </option>
+                        <option value="FJD" class="form_field" style="background-color:var(--appblack);">FJD
+                        </option>
+                        <option value="GBP" class="form_field" style="background-color:var(--appblack);">GBP
+                        </option>
+                        <option value="GTQ" class="form_field" style="background-color:var(--appblack);">GTQ
+                        </option>
+                        <option value="HKD" class="form_field" style="background-color:var(--appblack);">HKD
+                        </option>
+                        <option value="HRK" class="form_field" style="background-color:var(--appblack);">HRK
+                        </option>
+                        <option value="HUF" class="form_field" style="background-color:var(--appblack);">HUF
+                        </option>
+                        <option value="IDR" class="form_field" style="background-color:var(--appblack);">IDR
+                        </option>
+                        <option value="ILS" class="form_field" style="background-color:var(--appblack);">ILS
+                        </option>
+                        <option value="INR" class="form_field" style="background-color:var(--appblack);">INR
+                        </option>
+                        <option value="ISK" class="form_field" style="background-color:var(--appblack);">ISK
+                        </option>
+                        <option value="JPY" class="form_field" style="background-color:var(--appblack);">JPY
+                        </option>
+                        <option value="KRW" class="form_field" style="background-color:var(--appblack);">KRW
+                        </option>
+                        <option value="KZT" class="form_field" style="background-color:var(--appblack);">KZT
+                        </option>
+                        <option value="MVR" class="form_field" style="background-color:var(--appblack);">MVR
+                        </option>
+                        <option value="MXN" class="form_field" style="background-color:var(--appblack);">MXN
+                        </option>
+                        <option value="MYR" class="form_field" style="background-color:var(--appblack);">MYR
+                        </option>
+                        <option value="NOK" class="form_field" style="background-color:var(--appblack);">NOK
+                        </option>
+                        <option value="NZD" class="form_field" style="background-color:var(--appblack);">NZD
+                        </option>
+                        <option value="PAB" class="form_field" style="background-color:var(--appblack);">PAB
+                        </option>
+                        <option value="PEN" class="form_field" style="background-color:var(--appblack);">PEN
+                        </option>
+                        <option value="PHP" class="form_field" style="background-color:var(--appblack);">PHP
+                        </option>
+                        <option value="PKR" class="form_field" style="background-color:var(--appblack);">PKR
+                        </option>
+                        <option value="PLN" class="form_field" style="background-color:var(--appblack);">PLN
+                        </option>
+                        <option value="PYG" class="form_field" style="background-color:var(--appblack);">PYG
+                        </option>
+                        <option value="RON" class="form_field" style="background-color:var(--appblack);">RON
+                        </option>
+                        <option value="RUB" class="form_field" style="background-color:var(--appblack);">RUB
+                        </option>
+                        <option value="SAR" class="form_field" style="background-color:var(--appblack);">SAR
+                        </option>
+                        <option value="SEK" class="form_field" style="background-color:var(--appblack);">SEK
+                        </option>
+                        <option value="SGD" class="form_field" style="background-color:var(--appblack);">SGD
+                        </option>
+                        <option value="THB" class="form_field" style="background-color:var(--appblack);">THB
+                        </option>
+                        <option value="TRY" class="form_field" style="background-color:var(--appblack);">TRY
+                        </option>
+                        <option value="TWD" class="form_field" style="background-color:var(--appblack);">TWD
+                        </option>
+                        <option value="UAH" class="form_field" style="background-color:var(--appblack);">UAH
+                        </option>
+                        <option value="UYU" class="form_field" style="background-color:var(--appblack);">UYU
+                        </option>
+                        <option value="ZAR" class="form_field" style="background-color:var(--appblack);">ZAR
+                        </option>
+                    </select>
+                    <input type="number" id="curconin" class="form__field" placeholder="Enter Side" value="0" ;
+                        oninput="curcon();">
+                    <h5>To</h5>
+                    <select id="curcon-2" class="form__field" onchange="curcon()">
+                        <option value="USD" class="form_field" style="background-color:var(--appblack);">USD
+                        </option>
+                        <option value="AED" class="form_field" style="background-color:var(--appblack);">AED
+                        </option>
+                        <option value="ARS" class="form_field" style="background-color:var(--appblack);">ARS
+                        </option>
+                        <option value="AUD" class="form_field" style="background-color:var(--appblack);">AUD
+                        </option>
+                        <option value="BGN" class="form_field" style="background-color:var(--appblack);">BGN
+                        </option>
+                        <option value="BRL" class="form_field" style="background-color:var(--appblack);">BRL
+                        </option>
+                        <option value="BSD" class="form_field" style="background-color:var(--appblack);">BSD
+                        </option>
+                        <option value="CAD" class="form_field" style="background-color:var(--appblack);">CAD
+                        </option>
+                        <option value="CHF" class="form_field" style="background-color:var(--appblack);">CHF
+                        </option>
+                        <option value="CLP" class="form_field" style="background-color:var(--appblack);">CLP
+                        </option>
+                        <option value="CNY" class="form_field" style="background-color:var(--appblack);">CNY
+                        </option>
+                        <option value="COP" class="form_field" style="background-color:var(--appblack);">COP
+                        </option>
+                        <option value="CZK" class="form_field" style="background-color:var(--appblack);">CZK
+                        </option>
+                        <option value="DKK" class="form_field" style="background-color:var(--appblack);">DKK
+                        </option>
+                        <option value="DOP" class="form_field" style="background-color:var(--appblack);">DOP
+                        </option>
+                        <option value="EGP" class="form_field" style="background-color:var(--appblack);">EGP
+                        </option>
+                        <option value="EUR" class="form_field" style="background-color:var(--appblack);">EUR
+                        </option>
+                        <option value="FJD" class="form_field" style="background-color:var(--appblack);">FJD
+                        </option>
+                        <option value="GBP" class="form_field" style="background-color:var(--appblack);">GBP
+                        </option>
+                        <option value="GTQ" class="form_field" style="background-color:var(--appblack);">GTQ
+                        </option>
+                        <option value="HKD" class="form_field" style="background-color:var(--appblack);">HKD
+                        </option>
+                        <option value="HRK" class="form_field" style="background-color:var(--appblack);">HRK
+                        </option>
+                        <option value="HUF" class="form_field" style="background-color:var(--appblack);">HUF
+                        </option>
+                        <option value="IDR" class="form_field" style="background-color:var(--appblack);">IDR
+                        </option>
+                        <option value="ILS" class="form_field" style="background-color:var(--appblack);">ILS
+                        </option>
+                        <option value="INR" class="form_field" style="background-color:var(--appblack);">INR
+                        </option>
+                        <option value="ISK" class="form_field" style="background-color:var(--appblack);">ISK
+                        </option>
+                        <option value="JPY" class="form_field" style="background-color:var(--appblack);">JPY
+                        </option>
+                        <option value="KRW" class="form_field" style="background-color:var(--appblack);">KRW
+                        </option>
+                        <option value="KZT" class="form_field" style="background-color:var(--appblack);">KZT
+                        </option>
+                        <option value="MVR" class="form_field" style="background-color:var(--appblack);">MVR
+                        </option>
+                        <option value="MXN" class="form_field" style="background-color:var(--appblack);">MXN
+                        </option>
+                        <option value="MYR" class="form_field" style="background-color:var(--appblack);">MYR
+                        </option>
+                        <option value="NOK" class="form_field" style="background-color:var(--appblack);">NOK
+                        </option>
+                        <option value="NZD" class="form_field" style="background-color:var(--appblack);">NZD
+                        </option>
+                        <option value="PAB" class="form_field" style="background-color:var(--appblack);">PAB
+                        </option>
+                        <option value="PEN" class="form_field" style="background-color:var(--appblack);">PEN
+                        </option>
+                        <option value="PHP" class="form_field" style="background-color:var(--appblack);">PHP
+                        </option>
+                        <option value="PKR" class="form_field" style="background-color:var(--appblack);">PKR
+                        </option>
+                        <option value="PLN" class="form_field" style="background-color:var(--appblack);">PLN
+                        </option>
+                        <option value="PYG" class="form_field" style="background-color:var(--appblack);">PYG
+                        </option>
+                        <option value="RON" class="form_field" style="background-color:var(--appblack);">RON
+                        </option>
+                        <option value="RUB" class="form_field" style="background-color:var(--appblack);">RUB
+                        </option>
+                        <option value="SAR" class="form_field" style="background-color:var(--appblack);">SAR
+                        </option>
+                        <option value="SEK" class="form_field" style="background-color:var(--appblack);">SEK
+                        </option>
+                        <option value="SGD" class="form_field" style="background-color:var(--appblack);">SGD
+                        </option>
+                        <option value="THB" class="form_field" style="background-color:var(--appblack);">THB
+                        </option>
+                        <option value="TRY" class="form_field" style="background-color:var(--appblack);">TRY
+                        </option>
+                        <option value="TWD" class="form_field" style="background-color:var(--appblack);">TWD
+                        </option>
+                        <option value="UAH" class="form_field" style="background-color:var(--appblack);">UAH
+                        </option>
+                        <option value="UYU" class="form_field" style="background-color:var(--appblack);">UYU
+                        </option>
+                        <option value="ZAR" class="form_field" style="background-color:var(--appblack);">ZAR
+                        </option>
+                    </select>
+                    <label for="out">
+                        <p id="curconou">0</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Currency convert End-->
+        <!-------------------------------------------------------->
+        <!-- Intrest Calculator -->
+<div>
+    <div class="collapse" id="intrcal">
+
+        <div class="row">
+            <div class="col-6" style="max-width: 33%;">
+                <label>
+                    <h5>Principal</h5>
+                </label>
+                <input type="number" id="principal" class="form__field" placeholder="Enter Side" value="0" ;
+                    oninput="intrest();">
+            </div>
+            <div class="col-6" style="max-width: 33%;">
+                <label>
+                    <h5>Rate</h5>
+                </label>
+                <input type="number" id="rate" class="form__field" placeholder="Enter Side" value="0" ;
+                    oninput="intrest();">
+            </div>
+            <div class="col-6" style="max-width: 33%;">
+                <label>
+                    <h5>Time</h5>
+                </label>
+                <input type="number" id="time" class="form__field" placeholder="Enter Side" value="0" ;
+                    oninput="intrest();">
+            </div>
+
+        </div>
+        <br>
+        <div class="dropdown-divider"></div>
+        <div class="row">
+            <div class="col-6" style="max-width: 66%;">
+                <label>
+                    <h5>Simple Intrest</h5>
+                </label>
+                <p id="sintrest">0</p>
+            </div>
+            <div class="col-6" style="max-width: 33%;">
+                <label>
+                    <h5>Compound Intrest</h5>
+                </label>
+                <p id="cintrest">0</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Intrest Calculator End-->
+            <!-------------------------------------------------------->
+
+        <!--        end of check divisibility-->
+        <!--    start of calculator -->
+
+        <div class="collapse" id="cal" style="z-index:9;position:relative;">
+            <div class="bodyof">
+                <form class="calculator" name="calc">
+                    <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
+                           oninput="calsol(this.value);chh(this.value)">
+                    <input readonly type="text" class="soltext" id="soltxt">
+                    <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
+                    <span onclick="more();">More</span>
+                    <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
+                    <span onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
+                    <span class="back"
+                          onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
+                            class="bk" src="icons/backspace-arrow.png" style="height:30px;filter: invert(100%);"></span>
+                    <span id="seven">7</span>
+                    <span id="eight">8</span>
+                    <span id="nine">9</span>
+                    <span class="divi"
+                          onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);"><img src="icons/divide.svg" height="20px" alt="divide-icon"></span>
+                    <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo"
+                                                                                         src="images/speechlogo.png"
+                                                                                         height=30px></span>
+                    <span id="four">4</span>
+                    <span id="five">5</span>
+                    <span id="six">6</span>
+                    <span class="mul"
+                          onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img src="icons/crossed.svg" height="20px" alt="crossed-icon"></span>
+                    <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=30px></span>-->
+                    <span id="percent" >%</span>
+                    <span id="one">1</span>
+                    <span id="two">2</span>
+                    <span id="three">3</span>
+                    <span class="sub"
+                          onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);"><img src="icons/minus.svg" height="20px" alt="minus-icon"></span>
+                    <span id="deci" onclick="todeci()">Deci.</span>
+                    <span id="zero" class="zero"
+                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
+                    <span id="dot"
+                          onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
+                    <span id="sqrt">√</span>
+                    <span class="plus"
+                          onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);"><img src="icons/add.svg" height="20px" alt="add-icon"></span>
+                    <span class="equal" onclick="calsoleq(document.getElementById('txt').value)">=</span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
             </div>
 
