@@ -129,7 +129,12 @@ $(document).ready(function () {
         clearall();
     });
     $("#curconbtn").click(function () {
-        openit("#unitconcal");
+        openit("#curconcal");
+        closenav();
+        clearall();
+    });
+    $("#intrbtn").click(function () {
+        openit("#intrcal");
         closenav();
         clearall();
     })
