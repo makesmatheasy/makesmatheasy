@@ -3507,3 +3507,21 @@ function convertBinDec() {
 
   result.innerHTML = parseInt(input, from).toString(to);
 }
+
+//Function that performs conversion of Octal to binary and viceversa
+function convertBinOct() {
+  const fromBase = document.getElementById("octal-binary-select1").value;
+  const toBase = document.getElementById("octal-binary-select2").value;
+  const input = document.getElementById("octal-binary-input").value;
+  let result = document.getElementById("octal-binary-result");
+  let from = 8;
+  let to = 8;
+
+  if (fromBase === "Octal") from = 8;
+  else from = 2;
+
+  if (toBase === "Octal") to = 8;
+  else to = 2;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+}

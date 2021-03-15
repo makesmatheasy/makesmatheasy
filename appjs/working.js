@@ -166,6 +166,12 @@ $(document).ready(function () {
     });
 
 
+//Function of collapsing binary/octal section on click
+    $("#octal-to-binary-btn").click(function(){
+        openit("#octal-binary");
+        closenav();
+        clearall();
+    });
 
 });
 

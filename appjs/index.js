@@ -148,7 +148,8 @@ function openit(id) {
     "#factorial",
     "#pandc",
     "#interest",
-    "#decimal-binary"
+    "#decimal-binary",
+    "#octal-binary",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
