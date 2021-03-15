@@ -739,7 +739,21 @@
                     </tr>
                 </table>
             </li>
-             
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bitwise-calc-btn"
+                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Bitwise Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                onclick="addtofavourite('Bitwise Calculator','#bitwise-calc','c','bitwise-calc-imgfav')"><img
+                                    id="bitwise-calc-imgfav" src="images/unfavourite.png"style="height:25px;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -3469,6 +3483,56 @@ aria-hidden="true">
 
 <!-- End of Decimal / Binary -->
 
+
+<!-- Start of Bitwise Calculator -->
+<div class="container">    
+    <div class="collapse" id="bitwise-calc">
+        <div class="row">
+            <div class="col-md-6">
+               <div class="form-group">
+                   <h5>Choose your numbers system</h5>
+                   <select id="bitwise-numbers-system" class="form__field" onchange="clearInputs()">
+                        <option class="form__field" style="background-color: #232a36;"> Decimal </option>
+                        <option class="form__field" style="background-color: #232a36;"> Binary </option>
+                   </select>
+               </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>First number</h5>
+                    <input type="number" value="0" class="form__field" id="bitwise-first-number" oninput="bitwiseCalc()">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Operation</h5>
+                    <select id="bitwise-operation" class="form__field" onchange="bitwiseCalc()">
+                        <option class="form__field" style="background-color: #232a36;"> AND </option>
+                        <option class="form__field" style="background-color: #232a36;"> OR </option>
+                        <option class="form__field" style="background-color: #232a36;"> XOR </option>
+                   </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Second number</h5>
+                    <input type="number" value="0" class="form__field" id="bitwise-second-number" oninput="bitwiseCalc()">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Result</h5>
+                    <label class="form__field" id="bitwise-result">0</label>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
+<!-- End of Bitwise Calculator-->
 
 <!-- Start of Octal / Binary -->
 <div>    
