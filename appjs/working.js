@@ -85,7 +85,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#interestbtn").click(function () {
+        openit('#interest');
+        closenav();
+        clearall();
+    })
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
         closenav();
@@ -133,11 +137,47 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+     // I have added
+     $("#factorialbtn").click(function () {
+        openit("#factorial");
+        closenav();
+        clearall();
+    });
+
+    // Permutation and combination
+    $("#pandcbtn").click(function () {
+        openit("#pandc");
+        closenav();
+        clearall();
+    });
+
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    })
+    });
+    
+    //Function of collapsing binary/decimal section on click
+    $("#decimal-to-binary-btn").click(function(){
+        openit("#decimal-binary");
+        closenav();
+        clearall();
+    });
+
+    //Function of collapsing bitwise calculator section on click
+    $("#bitwise-calc-btn").click(function(){
+        openit("#bitwise-calc");
+        closenav();
+        clearall();
+    });
+
+//Function of collapsing binary/octal section on click
+    $("#octal-to-binary-btn").click(function(){
+        openit("#octal-binary");
+        closenav();
+        clearall();
+    });
 
 });
 
