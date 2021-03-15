@@ -723,6 +723,7 @@
                     </tr>
                 </table>
             </li>
+<<<<<<< HEAD
 
             <li>
                 <table class="table">
@@ -735,14 +736,31 @@
                             <span
                                 onclick="addtofavourite('Bitwise Calculator','#bitwise-calc','c','bitwise-calc-imgfav')"><img
                                     id="bitwise-calc-imgfav" src="images/unfavourite.png"
+=======
+           <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="octal-to-binary-btn"
+                                style="font-size:14px;cursor: pointer;background:transparent;border:none;">Octal / Binary Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                onclick="addtofavourite('Octal / Binary Converter','#octal-binary','c','octal-binary-imgfav')"><img
+                                    id="octal-binary-imgfav" src="images/unfavourite.png"
+>>>>>>> f331ad945b3b462eb2d4f964db2548358e5855cb
                                     style="height:25px;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
+<<<<<<< HEAD
            
 
 
+=======
+             
+>>>>>>> f331ad945b3b462eb2d4f964db2548358e5855cb
             <div class="dropdown-divider"></div>
         </div>
 
@@ -3522,6 +3540,35 @@ aria-hidden="true">
     </div>
 </div>
 <!-- End of Bitwise Calculator-->
+
+<!-- Start of Octal / Binary -->
+<div>    
+    <div class="collapse" id="octal-binary">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>From</h5>
+                    <select id="octal-binary-select1" class="form__field" onchange="convertBinOct()">
+                        <option class="form_field" style="background-color: #232a36;">Octal</option>
+                        <option class="form_field" style="background-color: #232a36;">Binary</option>
+                    </select>
+                    <input type="number" id="octal-binary-input" value="0" class="form__field" oninput="convertBinOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="octal-binary-select2" class="form__field" onchange="convertBinOct()">
+                        <option class="form__field" style="background-color: #232a36;">Octal</option>
+                        <option class="form__field" style="background-color: #232a36;">Binary</option>
+                    </select>
+                </div>
+                <label class="form__group" id="octal-binary-result">0</label>
+            </div>
+    </div>
+</div>
+
+
+<!-- End of Octal / Binary -->
 
     <!--------------------------------------------------------->
     <!--    speech recognition start -->
