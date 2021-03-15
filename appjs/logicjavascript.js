@@ -1829,6 +1829,23 @@ if(side!="" && eqside!="") {
   }
   
 }
+function solvecircle()
+{
+    let radius=document.getElementById("inputradius").value;
+    let area=3.14*radius*radius;
+    let Circumference=2*3.14*radius;
+    let diameter=2*radius;
+    console.log(radius);
+      area=area.toPrecision(3);
+      Circumference=Circumference.toPrecision(3);
+      diameter=diameter.toPrecision(3);
+      document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Circle \\ 3.14 r^2\\ = "+area+"\\]";
+      document.getElementById("resultofcircumferencec").innerHTML="\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = "+Circumference+"\\]";
+      document.getElementById("resultofdiameterc").innerHTML="Diameter of Circle = "+diameter;
+    renderMathInElement(document.getElementById("resultofareac"));
+    renderMathInElement(document.getElementById("resultofcircumferencec"));
+    //renderMathInElement(document.getElementById("resultofdiameterc"));
+}
 function solveSlope()
 {
   let x1=document.getElementById("inputLineX1").value;
