@@ -1786,80 +1786,82 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
 // created function for isosceles triangle
-function isoscelestrianglearea(){
-  var eqside=document.getElementById('inputeqitside').value;
-  var side=document.getElementById('inputitside').value;
-  var areaoutput=document.getElementById('resultofareait');
-  var perimeteroutput=document.getElementById('resultofperiit');
-  var heightoutput=document.getElementById('resultofheightit');
-  var areatemp="";
-  var perimetertemp="";
-  var heighttemp="";
-// if((eqside=="" && side!="") ||(eqside!="" && side==""))
-// {
-// areaoutput.innerHTML="Please enter both values";
-// }
-if(side!="" && eqside!="") {
-      areatemp="";
-      perimetertemp="";
-      heighttemp="";
-      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
-      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
-      perimeteroutput.innerHTML = perimetertemp;
+function isoscelestrianglearea() {
+  var eqside = document.getElementById("inputeqitside").value;
+  var side = document.getElementById("inputitside").value;
+  var areaoutput = document.getElementById("resultofareait");
+  var perimeteroutput = document.getElementById("resultofperiit");
+  var heightoutput = document.getElementById("resultofheightit");
+  var areatemp = "";
+  var perimetertemp = "";
+  var heighttemp = "";
+  // if((eqside=="" && side!="") ||(eqside!="" && side==""))
+  // {
+  // areaoutput.innerHTML="Please enter both values";
+  // }
+  if (side != "" && eqside != "") {
+    areatemp = "";
+    perimetertemp = "";
+    heighttemp = "";
+    perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
+    perimetertemp +=
+      "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
+      eval("2*(" + String(eqside) + ")" + String(side)) +
+      "\\]";
+    perimeteroutput.innerHTML = perimetertemp;
 
-      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
-      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
-      heightoutput.innerHTML=heighttemp;
+    heighttemp =
+      "\\[h=\\sqrt{" + eqside + "^2-" + "\\frac{" + side + "^2}{4}}\\]";
+    heighttemp +=
+      "\\[h=\\sqrt{" +
+      eval(String(eqside * eqside)) +
+      "\\frac{" +
+      eval(String(side * side)) +
+      "}{4}}\\]";
+    heightoutput.innerHTML = heighttemp;
 
-      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
-      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
-      var a=eval(String("0.5*"+String(side*heighttemp)));
-      areatemp+="\\[A="+a+" \\]";
-      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
-      areaoutput.innerHTML=areatemp;
+    areatemp = "\\[A=\\frac{1}{2} \\times" + side + heighttemp + "\\]";
+    areatemp += "\\[A=0.5\\times" + eval(String(side * heighttemp)) + "\\]";
+    var a = eval(String("0.5*" + String(side * heighttemp)));
+    areatemp += "\\[A=" + a + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Triangle \\space is \\space " + a + "\\]";
+    areaoutput.innerHTML = areatemp;
 
-      renderMathInElement(areaoutput);
-      renderMathInElement(perimeteroutput);
-      renderMathInElement(heightoutput);
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+    renderMathInElement(heightoutput);
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+    heightoutput.innerHTML = "";
   }
-  else{
-      areaoutput.innerHTML="";
-      perimeteroutput.innerHTML="";
-      heightoutput.innerHTML="";
-  }
-  
 }
-function solveSlope()
-{
-  let x1=document.getElementById("inputLineX1").value;
-  let y1=document.getElementById("inputLineY1").value;
-  let x2=document.getElementById("inputLineX2").value;
-  let y2=document.getElementById("inputLineY2").value;
-  if(x1==""||y1==""||x2==""||y2=="")
-  {
-    document.getElementById("resultofline").innerHTML="Enter all four points";
-    document.getElementById("answerofline").innerHTML="";
-    document.getElementById("answer").innerHTML="";
-
+function solveSlope() {
+  let x1 = document.getElementById("inputLineX1").value;
+  let y1 = document.getElementById("inputLineY1").value;
+  let x2 = document.getElementById("inputLineX2").value;
+  let y2 = document.getElementById("inputLineY2").value;
+  if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
+    document.getElementById("resultofline").innerHTML = "Enter all four points";
+    document.getElementById("answerofline").innerHTML = "";
+    document.getElementById("answer").innerHTML = "";
+  } else if (parseInt(x2) - parseInt(x1) == 0) {
+    document.getElementById("resultofline").innerHTML = "Infinity";
+  } else {
+    let temp = (y2 - y1) / (x2 - x1);
+    console.log(temp);
+    let sol =
+      "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
+    let sol2 = "\\[Slope=" + temp + "\\]";
+    document.getElementById("resultofline").innerHTML =
+      "\\[Slope=\\frac{y2-y1}{x2-x1}\\]";
+    document.getElementById("answerofline").innerHTML = sol;
+    document.getElementById("answer").innerHTML = sol2;
+    renderMathInElement(document.getElementById("answerofline"));
+    renderMathInElement(document.getElementById("answer"));
+    renderMathInElement(document.getElementById("resultofline"));
   }
-  else if(parseInt(x2)-parseInt(x1)==0)
-  {
-     document.getElementById("resultofline").innerHTML="Infinity";
-  }
-  else
-  {
-     let temp=(y2-y1)/(x2-x1);
-     console.log(temp);
-     let sol="\\[Slope=\\frac{"+y2+"-"+y1+"}{"+x2+"-"+x1+"}\\]";
-     let sol2="\\[Slope="+temp+"\\]";
-     document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
-     document.getElementById("answerofline").innerHTML=sol;
-     document.getElementById("answer").innerHTML=sol2;
-     renderMathInElement(document.getElementById("answerofline"));
-     renderMathInElement(document.getElementById("answer"));
-     renderMathInElement(document.getElementById("resultofline"));
-  }
-  
 }
 //shapes calculator
 //-----------------------------------------------------
@@ -2735,17 +2737,16 @@ function roundoff(input, output) {
   var i = -1;
   //to check if negative number or not
   ar1 = [];
-  if(ar[0]=='-'){
-    for(itr=0;itr<ar.length-1;itr++){
-      ar1[itr]=ar[itr+1];
+  if (ar[0] == "-") {
+    for (itr = 0; itr < ar.length - 1; itr++) {
+      ar1[itr] = ar[itr + 1];
+    }
+  } else {
+    for (itr = 0; itr < ar.length; itr++) {
+      ar1[itr] = ar[itr];
     }
   }
-  else {
-    for(itr=0;itr<ar.length;itr++){
-      ar1[itr]=ar[itr];
-    }
-  }
-  len1 = ar1.length
+  len1 = ar1.length;
   //to check floating point number
   for (var j = 0; j < len; j++) {
     if (ar[j] == ".") {
@@ -2753,9 +2754,20 @@ function roundoff(input, output) {
       break;
     }
   }
-  var placeUpto = ["Ones","Tens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","Hundred&nbsp;&nbsp;&nbsp;","Thousand&nbsp;&nbsp;","TenThousand","Lakh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","Ten Lakh&nbsp;&nbsp;&nbsp;", "Crore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","Ten Crore&nbsp;&nbsp;&nbsp;"];
-  var spaces = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-  var spaces1 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+  var placeUpto = [
+    "Ones",
+    "Tens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "Hundred&nbsp;&nbsp;&nbsp;",
+    "Thousand&nbsp;&nbsp;",
+    "TenThousand",
+    "Lakh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "Ten Lakh&nbsp;&nbsp;&nbsp;",
+    "Crore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+    "Ten Crore&nbsp;&nbsp;&nbsp;",
+  ];
+  var spaces =
+    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  var spaces1 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   //if not a floating number
   if (i == -1) {
     var placeofroundoffarray = {
@@ -2771,73 +2783,76 @@ function roundoff(input, output) {
     };
     var place = placeofroundoffarray[placeofroundoff];
     var place1;
-    if(ar1.length == ar.length){
+    if (ar1.length == ar.length) {
       place1 = place;
-    }
-    else place1=place-1;
+    } else place1 = place - 1;
     el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
-    el.innerHTML += "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>";
+    el.innerHTML +=
+      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>";
     if (place < 0) {
       var temp = "";
       if (ar1[place + 1] >= 5) {
-        for(itr=len1;itr>=0;itr--){
+        for (itr = len1; itr >= 0; itr--) {
           itrPlace = placeUpto[itr];
-          el.innerHTML +=itrPlace + "&nbsp;&nbsp;";
+          el.innerHTML += itrPlace + "&nbsp;&nbsp;";
         }
-        el.innerHTML+="<br>" + "0"  ;
-        for(itr=0;itr<len1;itr++){
-          el.innerHTML+= spaces + ar1[itr];
+        el.innerHTML += "<br>" + "0";
+        for (itr = 0; itr < len1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
         }
-        el.innerHTML+= "<br>" + "0" +spaces+ ar1[0] + ">=5" + "<br>";
-        el.innerHTML+= "1" + "<br>";
+        el.innerHTML += "<br>" + "0" + spaces + ar1[0] + ">=5" + "<br>";
+        el.innerHTML += "1" + "<br>";
         temp += "1";
         for (var i = 0; i < len1; i++) {
           temp += "0";
         }
         el.innerHTML += temp + "<br>";
-        el.innerHTML += val + " after rounding off to the nearest " + placeofroundoff + " is " + temp + "."; 
+        el.innerHTML +=
+          val +
+          " after rounding off to the nearest " +
+          placeofroundoff +
+          " is " +
+          temp +
+          ".";
       } else {
         el.innerHTML +=
           "Enter Bigger number to roundoff to nearest " + placeofroundoff;
       }
     } else {
-      for(itr=len1-1;itr>=0;itr--){
+      for (itr = len1 - 1; itr >= 0; itr--) {
         itrPlace = placeUpto[itr];
-        el.innerHTML +=itrPlace + "&nbsp;&nbsp;";
+        el.innerHTML += itrPlace + "&nbsp;&nbsp;";
       }
-      if(place1+1!=len1){
-      el.innerHTML+="<br>" + ar1[0];
-      for(itr=1;itr<len1;itr++){
-          el.innerHTML+= spaces + ar1[itr];
+      if (place1 + 1 != len1) {
+        el.innerHTML += "<br>" + ar1[0];
+        for (itr = 1; itr < len1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
         }
-      el.innerHTML +="<br>" + ar1[0];
-      for(itr=1;itr<=place1;itr++){
-          el.innerHTML +=spaces + ar1[itr];
-      }
-      
-        el.innerHTML +=spaces + ar1[place1+1];
-        if (parseInt(ar1[place1 + 1]) >= 5){
+        el.innerHTML += "<br>" + ar1[0];
+        for (itr = 1; itr <= place1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
+        }
+
+        el.innerHTML += spaces + ar1[place1 + 1];
+        if (parseInt(ar1[place1 + 1]) >= 5) {
           el.innerHTML += ">=5" + "<br>" + ar1[0];
-          for(itr =1;itr<=place1;itr++){
-            el.innerHTML +=spaces + ar1[itr];
+          for (itr = 1; itr <= place1; itr++) {
+            el.innerHTML += spaces + ar1[itr];
           }
-          el.innerHTML +="+1";
-        }
-        else {
+          el.innerHTML += "+1";
+        } else {
           el.innerHTML += "<5" + "<br>" + ar1[0];
-          for(itr =1;itr<=place1;itr++){
-            el.innerHTML +=spaces + ar1[itr];
+          for (itr = 1; itr <= place1; itr++) {
+            el.innerHTML += spaces + ar1[itr];
           }
         }
-      }
-      else{
-        el.innerHTML+="<br>" + ar1[0];
-      for(itr=1;itr<len1;itr++){
-          el.innerHTML+= spaces + ar1[itr];
+      } else {
+        el.innerHTML += "<br>" + ar1[0];
+        for (itr = 1; itr < len1; itr++) {
+          el.innerHTML += spaces + ar1[itr];
         }
       }
       if (parseInt(ar[place + 1]) >= 5) {
-        
         if (parseInt(ar[place]) == 9) {
           //handling boundary cases
           var k = 0,
@@ -2868,13 +2883,20 @@ function roundoff(input, output) {
           ar[i] = 0;
         }
       }
-      el.innerHTML +="<br>" + ar.join("");
-      el.innerHTML += "<br>" + val + " after rounding off to the nearest " + placeofroundoff + " is " + ar.join("");
+      el.innerHTML += "<br>" + ar.join("");
+      el.innerHTML +=
+        "<br>" +
+        val +
+        " after rounding off to the nearest " +
+        placeofroundoff +
+        " is " +
+        ar.join("");
     }
   } else {
     // a floating number
     el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
-    el.innerHTML += "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" + spaces;
+    el.innerHTML +=
+      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" + spaces;
 
     var placeofroundoffarray = {
       Ones: i + 1,
@@ -2890,71 +2912,67 @@ function roundoff(input, output) {
     var place = placeofroundoffarray[placeofroundoff];
 
     if (place >= len) {
-      for(itr =0;itr<place-i;itr++){
+      for (itr = 0; itr < place - i; itr++) {
         itrPlace = placeUpto[itr];
         el.innerHTML += spaces1 + itrPlace;
       }
-      el.innerHTML += "<br>"
-      flag=-1;
-      for(itr=0;itr<ar.length;itr++){
-        if(flag==-1)
-        el.innerHTML +=ar[itr];
-        else
-        el.innerHTML += spaces + ar[itr];
-        if(ar[itr]==".")
-        flag=1;
+      el.innerHTML += "<br>";
+      flag = -1;
+      for (itr = 0; itr < ar.length; itr++) {
+        if (flag == -1) el.innerHTML += ar[itr];
+        else el.innerHTML += spaces + ar[itr];
+        if (ar[itr] == ".") flag = 1;
       }
-      el.innerHTML +="<br>";
+      el.innerHTML += "<br>";
       for (var j = len; j < place + 1; j++) {
         ar.push("0");
       }
-      flag=-1;
-      for(itr=0;itr<ar.length;itr++){
-        if(flag==-1)
-        el.innerHTML +=ar[itr];
-        else
-        el.innerHTML += spaces + ar[itr];
-        if(ar[itr]==".")
-        flag=1;
+      flag = -1;
+      for (itr = 0; itr < ar.length; itr++) {
+        if (flag == -1) el.innerHTML += ar[itr];
+        else el.innerHTML += spaces + ar[itr];
+        if (ar[itr] == ".") flag = 1;
       }
-      el.innerHTML +="<br>" + ar.join("");
-      el.innerHTML +="<br>" + val + " after rounding off to the nearest " + placeofroundoff + " is " + ar.join("") + ".";
+      el.innerHTML += "<br>" + ar.join("");
+      el.innerHTML +=
+        "<br>" +
+        val +
+        " after rounding off to the nearest " +
+        placeofroundoff +
+        " is " +
+        ar.join("") +
+        ".";
     } else {
-      for(itr =0;itr<ar.length-i-1;itr++){
+      for (itr = 0; itr < ar.length - i - 1; itr++) {
         itrPlace = placeUpto[itr];
         el.innerHTML += spaces1 + itrPlace;
       }
-      el.innerHTML += "<br>"
-      flag=-1;
-      for(itr=0;itr<ar.length;itr++){
-        if(flag==-1)
-        el.innerHTML +=ar[itr];
-        else
-        el.innerHTML += spaces + ar[itr];
-        if(ar[itr]==".")
-        flag=1;
+      el.innerHTML += "<br>";
+      flag = -1;
+      for (itr = 0; itr < ar.length; itr++) {
+        if (flag == -1) el.innerHTML += ar[itr];
+        else el.innerHTML += spaces + ar[itr];
+        if (ar[itr] == ".") flag = 1;
       }
-      el.innerHTML +="<br>";
-      for(itr=0;itr<ar.length;itr++){
-        el.innerHTML +=ar[itr];
-        if(ar[itr]==".")
-        break;
+      el.innerHTML += "<br>";
+      for (itr = 0; itr < ar.length; itr++) {
+        el.innerHTML += ar[itr];
+        if (ar[itr] == ".") break;
       }
-      flag=1;
-      for(itr=i+1;itr<=place+1;itr++){
-        if(itr>=ar.length){
-        flag=-1;
-        break;
+      flag = 1;
+      for (itr = i + 1; itr <= place + 1; itr++) {
+        if (itr >= ar.length) {
+          flag = -1;
+          break;
         }
         el.innerHTML += spaces + ar[itr];
       }
-      if(parseInt(ar[place+1])>=5 ){
-        el.innerHTML +=">=5";
-      }
-      else if(parseInt(ar[place+1])<5) {
+      if (parseInt(ar[place + 1]) >= 5) {
+        el.innerHTML += ">=5";
+      } else if (parseInt(ar[place + 1]) < 5) {
         el.innerHTML += "<5";
       }
-      el.innerHTML +="<br>";
+      el.innerHTML += "<br>";
       if (parseInt(ar[place + 1]) >= 5) {
         if (parseInt(ar[place]) == 9) {
           //handling boundary cases
@@ -3009,7 +3027,13 @@ function roundoff(input, output) {
       if (flag == 1) b = ar.slice(0, place + 2);
       else b = ar.slice(0, place + 1);
       el.innerHTML += b + "<br>";
-      el.innerHTML += val + " after rounding off to the nearest " + placeofroundoff + " is " + b + ".";
+      el.innerHTML +=
+        val +
+        " after rounding off to the nearest " +
+        placeofroundoff +
+        " is " +
+        b +
+        ".";
     }
   }
 }
@@ -3232,189 +3256,160 @@ function speedcon() {
 
 //factorial calculator
 
-function factorialsol(factorialval)
-{
-   var num = document.getElementById(factorialval).value;
-   var num1=parseInt(num);
-   var ans=document.getElementById("factorialsolprint");
-   var desc=document.getElementById("explain_fact");
-   if(isNaN(num1))
-   {
-      desc.innerHTML="Enter a number.";
-      ans.innerHTML="";
-   }
-   else if(num1==0 || num1==1)
-   {
-      ans.innerHTML="";
-      desc.innerHTML=`Factorial Formula of ${num1} ! = 1`;
-   }
-   else if(num1<=15)
-   {
-    desc.innerHTML=`Factorial Formula of ${num1} ! = 1  `;
-    let calc=1;
-    for(i=2; i<=num1; i++)
-    {
-      desc.innerHTML+=` x ${i}`
-      calc*=i;
+function factorialsol(factorialval) {
+  var num = document.getElementById(factorialval).value;
+  var num1 = parseInt(num);
+  var ans = document.getElementById("factorialsolprint");
+  var desc = document.getElementById("explain_fact");
+  if (isNaN(num1)) {
+    desc.innerHTML = "Enter a number.";
+    ans.innerHTML = "";
+  } else if (num1 == 0 || num1 == 1) {
+    ans.innerHTML = "";
+    desc.innerHTML = `Factorial Formula of ${num1} ! = 1`;
+  } else if (num1 <= 15) {
+    desc.innerHTML = `Factorial Formula of ${num1} ! = 1  `;
+    let calc = 1;
+    for (i = 2; i <= num1; i++) {
+      desc.innerHTML += ` x ${i}`;
+      calc *= i;
     }
-    ans.innerHTML=num1;
-    ans.innerHTML+=" !";
-    ans.innerHTML+=" =";
-    ans.innerHTML+=" ";
-    ans.innerHTML+=calc;
-   }
-   else
-   {
-    desc.innerHTML=`Factorial Formula is ${num1} ! = 1 x 2 x 3 x ..... x ${num1} `;
-    let calc=1;
-    for(i=1; i<=num1; i++)
-    {
-      calc*=i;
+    ans.innerHTML = num1;
+    ans.innerHTML += " !";
+    ans.innerHTML += " =";
+    ans.innerHTML += " ";
+    ans.innerHTML += calc;
+  } else {
+    desc.innerHTML = `Factorial Formula is ${num1} ! = 1 x 2 x 3 x ..... x ${num1} `;
+    let calc = 1;
+    for (i = 1; i <= num1; i++) {
+      calc *= i;
     }
-    ans.innerHTML=num1;
-    ans.innerHTML+=" !";
-    ans.innerHTML+=" =";
-    ans.innerHTML+=" ";
-    ans.innerHTML+=calc;
-   }
-}
-function permutationcal(nval,rval)
-{
-   document.getElementById("permutation_div").style.display="block";
-   document.getElementById("combination_div").style.display="none";
-   var val1=document.getElementById(nval).value;
-   var val2=document.getElementById(rval).value;
-   var val3=parseInt(val1);
-   var val4=parseInt(val2);
-   if(isNaN(val3) || isNaN(val4))
-   {
-    // document.getElementById("permutation_wrong").innerHTML="Enter a Number."
-    document.getElementById("premutation_div_div2").style.display="none";
-    document.getElementById("permutation_div_div1").style.display="none";
-   }
-  else if(val3<val4)
-   {
-     
-      document.getElementById("permutation_wrong").innerHTML="n must be greater than r."
-      document.getElementById("premutation_div_div2").style.display="none";
-      document.getElementById("permutation_div_div1").style.display="block";
-   }
-   else
-   {
-       let ans1=1,ans2=1,ans3=0;
-      if(val3-val4==0)
-      {
-        for(i=1; i<=val3; i++)
-        {
-           ans1*=i;
-        }
-        document.getElementById("permutation_ans").innerHTML=`(${val3}) ! / (${val3} - ${val4}) ! = ${ans1}`;
-        document.getElementById("permutation_div_div1").style.display="none";
-        document.getElementById("premutation_div_div2").style.display="block";
-      }
-      else{
-      for(i=1; i<=val3; i++)
-      {
-         ans1*=i;
-      }
-      for(i=1; i<=(val3-val4); i++)
-      {
-        ans2*=i;
-      }
-      ans3=ans1/ans2;
-      document.getElementById("permutation_ans").innerHTML=`(${val3}) ! / (${val3} - ${val4}) ! = ${ans3}`;
-      document.getElementById("permutation_div_div1").style.display="none";
-      document.getElementById("premutation_div_div2").style.display="block";
-    }
-   
+    ans.innerHTML = num1;
+    ans.innerHTML += " !";
+    ans.innerHTML += " =";
+    ans.innerHTML += " ";
+    ans.innerHTML += calc;
   }
-  
+}
+function permutationcal(nval, rval) {
+  document.getElementById("permutation_div").style.display = "block";
+  document.getElementById("combination_div").style.display = "none";
+  var val1 = document.getElementById(nval).value;
+  var val2 = document.getElementById(rval).value;
+  var val3 = parseInt(val1);
+  var val4 = parseInt(val2);
+  if (isNaN(val3) || isNaN(val4)) {
+    // document.getElementById("permutation_wrong").innerHTML="Enter a Number."
+    document.getElementById("premutation_div_div2").style.display = "none";
+    document.getElementById("permutation_div_div1").style.display = "none";
+  } else if (val3 < val4) {
+    document.getElementById("permutation_wrong").innerHTML =
+      "n must be greater than r.";
+    document.getElementById("premutation_div_div2").style.display = "none";
+    document.getElementById("permutation_div_div1").style.display = "block";
+  } else {
+    let ans1 = 1,
+      ans2 = 1,
+      ans3 = 0;
+    if (val3 - val4 == 0) {
+      for (i = 1; i <= val3; i++) {
+        ans1 *= i;
+      }
+      document.getElementById(
+        "permutation_ans"
+      ).innerHTML = `(${val3}) ! / (${val3} - ${val4}) ! = ${ans1}`;
+      document.getElementById("permutation_div_div1").style.display = "none";
+      document.getElementById("premutation_div_div2").style.display = "block";
+    } else {
+      for (i = 1; i <= val3; i++) {
+        ans1 *= i;
+      }
+      for (i = 1; i <= val3 - val4; i++) {
+        ans2 *= i;
+      }
+      ans3 = ans1 / ans2;
+      document.getElementById(
+        "permutation_ans"
+      ).innerHTML = `(${val3}) ! / (${val3} - ${val4}) ! = ${ans3}`;
+      document.getElementById("permutation_div_div1").style.display = "none";
+      document.getElementById("premutation_div_div2").style.display = "block";
+    }
+  }
 }
 
-function combinationcal(nval,rval)
-{
-   document.getElementById("combination_div").style.display="block";
-   document.getElementById("permutation_div").style.display="none";
-   var val1=document.getElementById(nval).value;
-   var val2=document.getElementById(rval).value;
-   var val3=parseInt(val1);
-   var val4=parseInt(val2);
-   if(isNaN(val3)|| isNaN(val4))
-   {
-    document.getElementById("combination_div_div2").style.display="none";
-    document.getElementById("combination_div_div1").style.display="none";
-   }
-   else if(val3<val4)
-   {
-     
-      document.getElementById("combination_wrong").innerHTML="n must be greater than r."
-      document.getElementById("combination_div_div2").style.display="none";
-      document.getElementById("combination_div_div1").style.display="block";
-   }
-   else
-   {
-       let ans1=1,ans2=1,ans3=1;
-       let ans4=0;
-      if(val3-val4==0)
-      {
-        document.getElementById("combination_ans").innerHTML=`(${val3}) ! / ( (${val4})! x (${val3} - ${val4}) ! ) = 1`;
-        document.getElementById("combination_div_div1").style.display="none";
-        document.getElementById("combination_div_div2").style.display="block";
+function combinationcal(nval, rval) {
+  document.getElementById("combination_div").style.display = "block";
+  document.getElementById("permutation_div").style.display = "none";
+  var val1 = document.getElementById(nval).value;
+  var val2 = document.getElementById(rval).value;
+  var val3 = parseInt(val1);
+  var val4 = parseInt(val2);
+  if (isNaN(val3) || isNaN(val4)) {
+    document.getElementById("combination_div_div2").style.display = "none";
+    document.getElementById("combination_div_div1").style.display = "none";
+  } else if (val3 < val4) {
+    document.getElementById("combination_wrong").innerHTML =
+      "n must be greater than r.";
+    document.getElementById("combination_div_div2").style.display = "none";
+    document.getElementById("combination_div_div1").style.display = "block";
+  } else {
+    let ans1 = 1,
+      ans2 = 1,
+      ans3 = 1;
+    let ans4 = 0;
+    if (val3 - val4 == 0) {
+      document.getElementById(
+        "combination_ans"
+      ).innerHTML = `(${val3}) ! / ( (${val4})! x (${val3} - ${val4}) ! ) = 1`;
+      document.getElementById("combination_div_div1").style.display = "none";
+      document.getElementById("combination_div_div2").style.display = "block";
+    } else {
+      for (i = 1; i <= val3; i++) {
+        ans1 *= i;
       }
-      else{
-      for(i=1; i<=val3; i++)
-      {
-         ans1*=i;
+      for (i = 1; i <= val4; i++) {
+        ans2 *= i;
       }
-      for(i=1; i<=val4; i++)
-      {
-        ans2*=i;
-      }
-      for(i=1; i<=(val3-val4); i++)
-      {
-        ans3*=i;
+      for (i = 1; i <= val3 - val4; i++) {
+        ans3 *= i;
       }
       console.log(ans1);
       console.log(ans2);
       console.log(ans3);
-      ans4= (ans1/(ans2*ans3));
-      document.getElementById("combination_ans").innerHTML=`(${val3}) ! / ( (${val4}) ! x (${val3} - ${val4}) ! ) = ${ans4}`;
-      document.getElementById("combination_div_div1").style.display="none";
-      document.getElementById("combination_div_div2").style.display="block";
+      ans4 = ans1 / (ans2 * ans3);
+      document.getElementById(
+        "combination_ans"
+      ).innerHTML = `(${val3}) ! / ( (${val4}) ! x (${val3} - ${val4}) ! ) = ${ans4}`;
+      document.getElementById("combination_div_div1").style.display = "none";
+      document.getElementById("combination_div_div2").style.display = "block";
     }
-   
   }
-  
 }
 
 //Mean start
 function Means() {
-  var s=0;
+  var s = 0;
   document.getElementById("Meanresult").innerHTML = "";
   var val = document.getElementById("getNum").value;
-  val=val.split(" ");
+  val = val.split(" ");
   val = val.filter(function (str) {
     return /\S/.test(str);
   });
-  var len=parseInt(val.length);
-  for(i=0;i<len;i++)
-  {
-    s=s+parseInt(val[i]);
+  var len = parseInt(val.length);
+  for (i = 0; i < len; i++) {
+    s = s + parseInt(val[i]);
   }
-  if(val.length===0)
-  {
-    document.getElementById("Meanresult").innerHTML =`No Number Added`;
-  }
-  else
-  {
-    var ans=s/len;
-    document.getElementById("Meanresult").innerHTML =`Mean Value is => `;
-    document.getElementById("Meanresult").innerHTML +=`(${val[0]}`;
-    for(i=1;i<val.length;i++)
-    {
-      document.getElementById("Meanresult").innerHTML+=`+${val[i]}`;
+  if (val.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+    var ans = s / len;
+    document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
+    document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
+    for (i = 1; i < val.length; i++) {
+      document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
     }
-    document.getElementById("Meanresult").innerHTML +=`)/${val.length}=`;
+    document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
     document.getElementById("Meanresult").innerHTML += ans;
     renderMathInElement(document.getElementById("Meanresult"));
   }
@@ -3424,71 +3419,67 @@ function Means() {
 function Median() {
   document.getElementById("Meanresult").innerHTML = "";
   var arr = document.getElementById("getNum").value;
-  arr=arr.split(" ");
+  arr = arr.split(" ");
   arr = arr.filter(function (str) {
     return /\S/.test(str);
   });
-  var len=parseInt(arr.length);
+  var len = parseInt(arr.length);
   arr = arr.sort();
   let mid = Math.floor(len / 2);
-  if(arr.length===0)
-  {
-    document.getElementById("Meanresult").innerHTML =`No Number Added`;
-  }
-  else
-  {
+  if (arr.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
     let median =
-    len % 2 === 0 ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2 : arr[mid - 1];
-   document.getElementById("Meanresult").innerHTML=`After Sorting:- ${arr}</br>`;
-   document.getElementById("Meanresult").innerHTML+=`Median:-`
-  document.getElementById("Meanresult").innerHTML += median;
-  renderMathInElement(document.getElementById("Meanresult"));
+      len % 2 === 0
+        ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2
+        : arr[mid - 1];
+    document.getElementById(
+      "Meanresult"
+    ).innerHTML = `After Sorting:- ${arr}</br>`;
+    document.getElementById("Meanresult").innerHTML += `Median:-`;
+    document.getElementById("Meanresult").innerHTML += median;
+    renderMathInElement(document.getElementById("Meanresult"));
   }
-  
 }
 // Median end
 //Mode Start
 function Mode() {
   document.getElementById("Meanresult").innerHTML = "";
-    var arr = document.getElementById("getNum").value;
-    arr=arr.split(" ");
-    arr = arr.filter(function (str) {
-      return /\S/.test(str);
-    });
-    const frequencyTable = {};
-    arr.forEach(elem => frequencyTable[elem] = frequencyTable[elem] + 1 || 1);
-  
-    let modes = [];
-    let maxFrequency = 0;
-    for(const key in frequencyTable) {
-      if(frequencyTable[key] > maxFrequency) {
-        modes = [Number(key)];
-        maxFrequency = frequencyTable[key];
-      }
-      else if(frequencyTable[key] === maxFrequency) {
-        modes.push(Number(key));
-      }
-    }
-    
-    if(modes.length === Object.keys(frequencyTable).length) modes = [];
-    if(arr.length===0)
-    {
-      document.getElementById("Meanresult").innerHTML =`No Number Added`;
-    }
-    else
-    {
-      if(modes.length===0)
-      {
-        document.getElementById("Meanresult").innerHTML+=`All Number appeared Just Once`;
-      }
-      else{
-        document.getElementById("Meanresult").innerHTML+=`Mode is:-${modes}`;
-      }
+  var arr = document.getElementById("getNum").value;
+  arr = arr.split(" ");
+  arr = arr.filter(function (str) {
+    return /\S/.test(str);
+  });
+  const frequencyTable = {};
+  arr.forEach((elem) => (frequencyTable[elem] = frequencyTable[elem] + 1 || 1));
+
+  let modes = [];
+  let maxFrequency = 0;
+  for (const key in frequencyTable) {
+    if (frequencyTable[key] > maxFrequency) {
+      modes = [Number(key)];
+      maxFrequency = frequencyTable[key];
+    } else if (frequencyTable[key] === maxFrequency) {
+      modes.push(Number(key));
     }
   }
+
+  if (modes.length === Object.keys(frequencyTable).length) modes = [];
+  if (arr.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+    if (modes.length === 0) {
+      document.getElementById(
+        "Meanresult"
+      ).innerHTML += `All Number appeared Just Once`;
+    } else {
+      document.getElementById("Meanresult").innerHTML += `Mode is:-${modes}`;
+    }
+  }
+}
 //Mode end
 
-// Binary and Decimal Conversion
+///////// Binary and Decimal Conversion ///////////
 
 //Function that performs conversion
 function convertBinDec() {
@@ -3507,3 +3498,56 @@ function convertBinDec() {
 
   result.innerHTML = parseInt(input, from).toString(to);
 }
+
+//////////////////////////////////////////////////////////////
+
+////////////// Bitwise Calculator Section /////////////////
+
+//Function to clear inputs when user changes his/her numbering base system
+function clearInputs() {
+  document.getElementById("bitwise-first-number").value = 0;
+  document.getElementById("bitwise-second-number").value = 0;
+  document.getElementById("bitwise-result").innerHTML = 0;
+}
+
+//Function that performs bitwise calculation
+function bitwiseCalc() {
+  let firstOperand = parseInt(
+    document.getElementById("bitwise-first-number").value
+  );
+  let secondOperand = parseInt(
+    document.getElementById("bitwise-second-number").value
+  );
+  const operation = document.getElementById("bitwise-operation").value;
+  const numberSystem = document.getElementById("bitwise-numbers-system").value;
+  let result;
+
+  if (numberSystem === "Binary") {
+    firstOperand = parseInt(firstOperand, 2);
+    secondOperand = parseInt(secondOperand, 2);
+  }
+
+  if (isNaN(firstOperand) || isNaN(secondOperand)) {
+    document.getElementById("bitwise-result").innerHTML = "NaN";
+  } else {
+    switch (operation) {
+      case "AND":
+        result = firstOperand & secondOperand;
+        break;
+      case "OR":
+        result = firstOperand | secondOperand;
+        break;
+      case "XOR":
+        result = firstOperand ^ secondOperand;
+        break;
+    }
+
+    if (numberSystem === "Binary")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(2);
+    else document.getElementById("bitwise-result").innerHTML = result;
+  }
+}
+
+/////////////////////////////////////////////////////////////

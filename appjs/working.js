@@ -165,6 +165,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    //Function of collapsing bitwise calculator section on click
+    $("#bitwise-calc-btn").click(function(){
+        openit("#bitwise-calc");
+        closenav();
+        clearall();
+    });
 
 
 });
