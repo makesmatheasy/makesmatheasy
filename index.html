@@ -231,7 +231,11 @@
                 style="cursor: pointer;font-size: 16px;">Linear Algebra<img class="dropdownlogo"
                                                                             src="icons/down-chevron.svg"
                                                                             id="imgClickAndChange1"></a></li>
+
+
         <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+
+
             <div class="dropdown-divider"></div>
             <li>
                 <table class="table">
@@ -387,8 +391,12 @@
                 style="cursor: pointer;font-size: 16px;">General Maths<img class="dropdownlogo"
                                                                            src="icons/down-chevron.svg"
                                                                            id="imgClickAndChange4"></a></li>
+
+
         <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+            
             <div class="dropdown-divider"></div>
+            
             <li>
                 <table class="table">
                     <tr>
@@ -403,6 +411,22 @@
                     </tr>
                 </table>
 
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;" onclick="display_log()">
+                            <a id="logValues" 
+                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Logarithm Values</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Logarithm Values','#log_values','c','logimgfav')"><img id="logimgfav"
+                                    src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            
             </li>
 
             <li>
@@ -936,8 +960,12 @@
                 <p id="resultofvariabledivide" style="font-family:mathfont;;"></p>
             </div>
         </div>
+
+
+
         <!--        start factors-->
         <div class="collapse" id="factors">
+
             <div class="form-group">
                 <input type="tel" id="numforfactorhcflcm" class="form__field"
                        placeholder="Enter Number(s) Space Separated">
@@ -983,6 +1011,21 @@
 
         </div>
         <!--        end factors-->
+
+
+        <!-- log values ------------------------------------------------------------->
+
+        <div class="collapse" id="log_values">
+            <input type="number" oninput="checklimit()" id="num" class="form__field" style=";" placeholder="Enter Number">
+            <input type="number" oninput="checklimit()" id="base" class="form__field" style=";" placeholder="Enter Base">
+            <button type="button" class="btn btn-light" style="margin-top: 40px";>
+                FIND LOG
+            </button>
+        </div>
+
+        
+        <!-- end of log - values ----------------------------------------------------->
+    
 
         <div class="collapse" id="table">
             <div class="form-group num-limit" style="display: inline-block;">
@@ -3713,6 +3756,11 @@
 <script src="nerdamer/Calculus.js"></script>
 <script src="nerdamer/Solve.js"></script>
 <script src="nerdamer/Extra.js"></script>
+
+<!-- log values -->
+<script src="appjs/logValue.js"></script>
+
+
 <script>
     if ('serviceWorker in navigator') {
         navigator.serviceWorker.register('service-worker.js')
