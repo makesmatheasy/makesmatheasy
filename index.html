@@ -848,18 +848,18 @@
 
     <div class="text-center" style="padding-top: 50px;">
         <form autocomplete="off">
-            <div class="form-group ">
-                <div class="autocomplete">
-                    <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
-                           style="display:inline;font-size: 1rem;width: 45vw;position: relative;">
+            <div class="form-group" id="box">
+                <div class="autocomplete" id="search-txt">
+                    <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
                 </div>
+              <span type="button" class="searchbtn"
+                      onclick="searchgoogle(document.getElementById('myInput').value)"><img
+                        style="height:38px;padding:10px;filter:none;" src="icons/loupe.png"></span>
+              
                 <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;filter: none;"
+                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;filter:none;"
                                                                                src="images/speechlogo.png"></span>
-                <span type="button" class="searchbtn"
-                      onclick="searchgoogle(document.getElementById('myInput').value)"
-                      style="margin-left: 50px;border-right: 2px solid var(--appimage);border-bottom: 2px solid var(--appimage);border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
-                        style="height:38px;padding:10px;" src="icons/loupe.png"></span>
+               
             </div>
         </form>
     </div>

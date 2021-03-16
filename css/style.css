@@ -35,7 +35,8 @@ html{
     overflow-x: hidden;
 }
 .container{
-    padding-bottom: 100px;
+    padding-bottom: 70%;
+    padding-top: 15%;
 }
 p {
     color: var(--appimage);
@@ -157,12 +158,46 @@ h1, h2, h3, h4, h5, h6 {
     display: inline;
 }
 
+#search-txt {
+  border: none;
+  background: none !important;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
 .searchbtn {
-    background: transparent;
-    border-radius: 100%;
-    height: 45px;
-    width: 45px;
-    outline: none !important;
+  background: #ff299c;
+  color: #f1faee;
+  border-radius: 50%;
+  float: right;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none !important;
+}
+#box {
+  position: fixed !important;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff299c;
+  height: 60px;
+  border-radius: 40px;
+  padding: 10px;
+}
+#box:hover > #search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+#box:hover > .searchbtn {
+  background: #0bd54f;
 }
 
 .bor {
