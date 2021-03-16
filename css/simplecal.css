@@ -96,9 +96,9 @@
 }
 
 .calculator span.divi {
-    grid-row: span 1;
-    background: #163152;
-    height: 80px;
+  grid-row: span 1;
+  background: #163152;
+  height: 80px;
 }
 
 .calculator span.equal {
@@ -109,3 +109,30 @@
 .calculator span.zero {
     border-radius: 0 0 0 40px;
 }
+
+
+.light-mode .calculator span
+{
+    background-color: #9fd8df;
+    color: black;
+}
+.light-mode .calculator span.clear
+{
+    background-color: #ff3077;
+    color: black;
+}
+
+/* --------------------Responsive calculator-------------------- */
+@media (max-width: 450px) {
+  .calculator span {
+
+    font-size: 15px;
+    height:auto;
+    width:auto;
+  }
+  .calculator span.clear {
+    width: auto;
+  }
+  .calculator span.back {
+    width: auto;
+  }

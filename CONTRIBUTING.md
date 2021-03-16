@@ -1,8 +1,7 @@
 ## Contributing
 
 Hi there! We're thrilled that you would like to contribute to this project. Your contribution is essential for keeping it great.
-
-If you are a participant of GSSOC'21 and interested in this Project. Kindly Join the Discord Server for Discussions (link will be provided soon). (only GSSOC'21 participants)
+This project is released under the [Code of Conduct](https://www.github.com/sairish2001/makesmatheasy.github.io/tree/main/CODE_OF_CONDUCT.md)
 
 ## Issues and PRs
 

@@ -1,3 +1,5 @@
+var a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
+
 function removeall(elid) {
   if (document.getElementById(elid).innerHTML != "") {
     var r = document.getElementById(elid);
@@ -6,6 +8,114 @@ function removeall(elid) {
     }
   }
 }
+
+function changeImage1() {
+  a++;
+ 
+   if (a%2==0) 
+   {
+       document.getElementById("imgClickAndChange1").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange1").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage2() {
+  b++;
+ 
+   if (b%2==0) 
+   {
+       document.getElementById("imgClickAndChange2").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange2").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage3() {
+  c++;
+ 
+   if (c%2==0) 
+   {
+       document.getElementById("imgClickAndChange3").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange3").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage4() {
+  d++;
+ 
+   if (d%2==0) 
+   {
+       document.getElementById("imgClickAndChange4").src = 'icons/down-chevron.svg';
+   }
+   else 
+   {
+       document.getElementById("imgClickAndChange4").src = 'icons/chevron-arrow-up.svg';
+   }
+ }
+ function changeImage5(){
+  e++;
+ 
+  if (e%2==0) 
+  {
+      document.getElementById("imgClickAndChange5").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange5").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+ function changeImage6(){
+  f++;
+ 
+  if (f%2==0) 
+  {
+      document.getElementById("imgClickAndChange6").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange6").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+ 
+ function changeImage7(){
+  g++;
+ 
+  if (g%2==0) 
+  {
+      document.getElementById("imgClickAndChange7").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange7").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+ function changeImage8(){
+  h++;
+ 
+  if (h%2==0) 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
 
 function collapseit(openit) {
   $(String("#" + openit)).slideToggle();
@@ -19,6 +129,7 @@ function openit(id) {
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
+    "#trigonoiden",
     "#factors",
     "#integralcollapse",
     "#differentiatecollapse",
@@ -32,6 +143,16 @@ function openit(id) {
     "#plotgraph",
     "#roundoff",
     "#unitconcal",
+    "#home",
+    "#curconcal",
+    "#factorial",
+    "#pandc",
+    "#interest",
+    "#decimal-binary",
+    "#bitwise-calc",
+    "#octal-binary",
+    "#intrcal",
+	"#binary-hexadecimal"
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
@@ -168,7 +289,6 @@ function removefavourite() {
   $("#favourite").removeClass("headingdiv");
   checkfavourite();
 }
-
 function numbersapi() {
   let number = Math.floor(Math.random() * 100);
   let xhttp = new XMLHttpRequest();
@@ -196,8 +316,49 @@ function numbersapi() {
   xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
 
   xhttp.onerror = function () {
-    el.innerHTML =
-      "Turn on your Internet Connection, to read Interesting facts!";
+   let el=document.getElementById("numberfact");
+	var facts=
+	["The number 4 is the only number spelled with the same number of letters as itself",
+	"8 is the largest cube in the Fibonacci series",
+	"123 is the tenth Lucas number",
+	"3 is the fourth open meandric number",
+	"15 is a triangular number, a hexagonal number, a pentatope number and the 4th Bell number.",
+	"111 is the smallest possible magic constant of a 3×3 magic square of distinct primes.",
+	"55 is the largest triangular number in the Fibonacci sequence.",
+	"3 is the second triangular number and it is the only prime triangular number.",
+	"2 is a primorial, as well as its own factorial.",
+	"7 is the lowest number that cannot be represented as the sum of the squares of three integers.",
+	"13 is the number of Archimedian solids.",
+	"16 is a centered pentagonal number.",
+	"17 is the only positive Genocchi number that is prime, the only negative one being −3.",
+	"100 is the smallest number whose common logarithm is a prime number.",
+	"100 is the smallest square which is also the sum of 4 consecutive cubes.",
+	"99 is the ninth repdigit, a palindromic number and a Kaprekar number.",
+	"23 is the ninth prime number, the smallest odd prime that is not a twin prime.",
+	"21 is a repdigit in base 4 (111)",
+	"20 is the smallest primitive abundant number",
+	"72 is the sum of four consecutive primes (13 + 17 + 19 + 23), as well as the sum of six consecutive primes (5 + 7 + 11 + 13 + 17 + 19).",
+	"75 is the number of orderings of 4 objects with ties allowed.",
+	"79 is the n value of the Wagstaff prime 201487636602438195784363.",
+	"80 is the smallest number n where n and n+1 are both products of 4 or more primes.",
+	"25 is an aliquot sum of 6 and number 6 is the first (or smallest) number to have an aliquot sequence that does not culminate in 0 through a prime.",
+	"37 is a prime number, the fifth lucky prime, the first irregular prime, the third unique prime and the third cuban prime of the form.",
+	"101 is the number of partitions of 13.",
+	"88 is one of only 2 numbers known whose square has no isolated digits.",
+    ];
+    i=Math.floor(Math.random() * 27);
+	let val=facts[i];
+	el.innerHTML=val; 
   };
   xhttp.send();
 }
+ 
+$(document).on('click',' .list_menu_items ',function(){
+  // $(this).addClass('home').siblings().removeClass('home');
+  $(this).siblings().removeClass('home');
+  $(this).addClass('home');
+});
+
+
+
+
