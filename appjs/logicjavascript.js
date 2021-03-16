@@ -3618,3 +3618,23 @@ function intrest() {
   document.getElementById("cintrest").innerHTML = `${(p * (((1 + r / 100) ** t) - 1))}`;
 }
 //----------------------------
+
+
+//Function that performs conversion of Binary to Hexadecimal and viceversa
+function convertBinhex() {
+  const fromBase = document.getElementById("binary-hexadecimal-select1").value;
+  const toBase = document.getElementById("binary-hexadecimal-select2").value;
+  const input = document.getElementById("binary-hexadecimal-input").value;
+  let result = document.getElementById("binary-hexadecimal-result");
+  let from = 2;
+  let to = 2;
+
+  if (fromBase === "Binary") from = 2;
+  else from = 16;
+
+  if (toBase === "Binary") to = 2;
+  else to = 16;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+}
+//--------------------------------------------------------------------------------
