@@ -734,6 +734,34 @@
                     </tr>
                 </table>
             </li>
+			
+			<!--Binary to hexadecimal converter start-->
+			
+			        <li>
+					<table class="table">
+					<tr>
+                        <td style="border-top: none;">
+                            <a id="binary-to-hexadecimal-btn"
+                                style="font-size:13px;cursor: pointer;background:transparent;border:none;">Binary/Hexadecimal
+								 Converter </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                onclick="addtofavourite('Binary / Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
+                                    id="binary-hexadecimal-imgfav" src="images/unfavourite.png"
+                                    style="height:25px;"></span>
+                        </td>
+                    </tr>
+					</table>
+					</li>
+			
+			
+			
+			
+			<!--end-->
+			
+			
+			
             <li>
                 <table class="table">
                     <tr>
@@ -3680,6 +3708,36 @@
 
 
 <!-- End of Octal / Binary -->
+
+
+
+<!--Start Binary to Hexadecimal-->
+<div>    
+    <div class="collapse" id="binary-hexadecimal">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>From</h5>
+                    <select id="binary-hexadecimal-select1" class="form__field" onchange="convertBinhex()">
+                        <option class="form_field" style="background-color: #232a36;">Binary</option>
+                        <option class="form_field" style="background-color: #232a36;">Hexadecimal</option>
+                    </select>
+            <input type=" " id="binary-hexadecimal-input" value="0" class="form__field" oninput="convertBinhex()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="binary-hexadecimal-select2" class="form__field" onchange="convertBinhex()">
+                        <option class="form__field" style="background-color: #232a36;">Binary</option>
+                        <option class="form__field" style="background-color: #232a36;">Hexadecimal </option>
+                    </select>
+                </div>
+                <label class="form__group" id="binary-hexadecimal-result">0</label>
+            </div>
+    </div>
+</div>
+
+<!--end of binary to hexadecimal-->
 
 <!--------------------------------------------------------->
 <!--    speech recognition start -->
