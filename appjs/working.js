@@ -152,6 +152,13 @@ $(document).ready(function () {
         clearall();
     });
 
+    // for prime
+    $("#primebtn").click(function () {
+        openit("#prime");
+        closenav();
+        clearall();
+    }); 
+
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();

@@ -152,7 +152,8 @@ function openit(id) {
     "#bitwise-calc",
     "#octal-binary",
     "#intrcal",
-	"#binary-hexadecimal"
+	  "#binary-hexadecimal",
+    "#prime" ,
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

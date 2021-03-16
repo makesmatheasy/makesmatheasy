@@ -3402,6 +3402,83 @@ function combinationcal(nval, rval) {
   }
 }
 
+
+// Primality test
+function check_prime(isprime)
+{
+  var num = document.getElementById(isprime).value;
+  var num1 = parseInt(num);
+  var ans = document.getElementById("isprimesol");
+  var flag = true;
+  ans.innerHTML = num1;
+  ans.innerHTML += " is "; 
+  if(num1==1 || num1==0)
+  {
+    ans.innerHTML += "neither Prime nor Composite number";
+  }
+  else
+  {for (i = 2; i <= Math.sqrt(num1) ; i++) {
+      if(num1%i==0)
+      {
+        flag = false;
+        break;
+      }
+    }
+  if(flag==true)
+  {
+    ans.innerHTML += "a Prime number";
+  }
+  else
+  {  ans.innerHTML += "a Composite number";}
+}
+}
+
+function prime_till_num(primetill)
+{
+  var num = document.getElementById(primetill).value;
+  var num1 = parseInt(num);
+  var ans = document.getElementById("primetillsol");
+  var B="";
+  var cnt=0;
+  var prime = [];
+  if(num1<=1)
+  {
+    ans.innerHTML = "Enter positive integer greater than 1.";
+  }
+  else
+  {    for (i = 0; i <= num1; i++)
+          prime.push(true);
+ 
+        for (i = 2; i * i <= num1; i++) 
+        {
+            // If prime[p] is not changed, then it is a prime
+            if (prime[i] == true) 
+            {
+                // Updating all multiples of p
+                for (j = i * i; j <= num1; j += i)
+                    prime[j] = false;
+            }
+        }
+ 
+        // Store all prime in a string
+        for (i = 2; i <= num1; i++)
+        {
+            if (prime[i] == true)
+            {
+              B=B+i;
+              B=B+", ";
+            }
+        }
+          ans.innerHTML="Prime numbers till ";
+          ans.innerHTML+=num1;
+          ans.innerHTML+=" are: "
+          ans.innerHTML+= B.slice(0,B.length - 2);          
+      }
+  }
+
+//end
+
+
 //Mean start
 function Means() {
   var s = 0;
