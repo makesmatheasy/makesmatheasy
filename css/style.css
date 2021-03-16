@@ -326,4 +326,9 @@ ul li .table{
 {
     filter:none;
 }
-
+span.mul img, span.divi img, span.plus img, span.sub img{
+    filter: none;
+}
+.light-mode span.mul img, .light-mode span.divi img, .light-mode span.plus img, .light-mode span.sub img{
+    filter: invert(100%);
+}
