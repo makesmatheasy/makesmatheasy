@@ -1,6 +1,13 @@
 :root {
     --apppink: rgb(255, 136, 231);
     --appblack:#232a36;
+    --appimage: white;
+}
+:root .light-mode
+{
+    --apppink: #7868e6;
+    --appblack: #d3e0ea;
+    --appimage: black;
 }
 @font-face {
     font-family: mainfont;
@@ -21,14 +28,18 @@ body {
     overflow-x: hidden;
     height:100vh;
 }
+body img {
+    filter:invert(100%);
+}
 html{
     overflow-x: hidden;
 }
 .container{
-    padding-bottom: 100px;
+    padding-bottom: 70%;
+    padding-top: 15%;
 }
 p {
-    color: white;
+    color: var(--appimage);
     font-size: 20px;
 }
 
@@ -52,7 +63,7 @@ p {
 }
 
 a, p, label {
-    color: white !important;
+    color: var(--appimage) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,11 +92,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ulstyle li a {
-    color: white !important;
+    color: var(--appimage) !important;
     font-family: mathfont;
     letter-spacing: 1px;
 }
 
+.ulstyle li a:hover, .ulstyle li a:active {
+    color: white !important;
+}
 .stopwrap {
     white-space: nowrap;
     overflow-y: hidden;
@@ -98,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 .carddis {
     width: 100%;
     background: white;
-    color: var(--appblack);
+    color: black;
     border-radius: 40px;
     outline: none !important;
     padding: 15px;
@@ -114,9 +128,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--appblack);
     padding: 20px;
     list-style:none;
-    border-top:1px solid white;
-    border-left:1px solid white;
-    border-right:1px solid white;
+    border-top:1px solid var(--appimage);
+    border-left:1px solid  var(--appimage);
+    border-right:1px solid var(--appimage);
     z-index:900;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -127,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     margin: 5px;
     padding: 15px;
-    color: white !important;
+    color: var(--appimage) !important;
 }
 
 .favourites:hover{
@@ -137,22 +151,57 @@ h1, h2, h3, h4, h5, h6 {
 ::selection{
     color:var(--appblack);
     background-color: var(--apppink);
+
 }
 .mainheading {
     color: white;
     display: inline;
 }
 
+#search-txt {
+  border: none;
+  background: none !important;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
 .searchbtn {
-    background: transparent;
-    border-radius: 100%;
-    height: 45px;
-    width: 45px;
-    outline: none !important;
+  background: #ff299c;
+  color: #f1faee;
+  border-radius: 50%;
+  float: right;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none !important;
+}
+#box {
+  position: fixed !important;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff299c;
+  height: 60px;
+  border-radius: 40px;
+  padding: 10px;
+}
+#box:hover > #search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+#box:hover > .searchbtn {
+  background: #0bd54f;
 }
 
 .bor {
-    border-right: 0.2rem solid white !important;
+    border-right: 0.2rem solid var(--appimage) !important;
     border-top: none !important;
 }
 
@@ -163,9 +212,9 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 2px;
     width: 100%;
     border: 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--appimage);
     outline: 0;
-    color: white;
+    color: var(--appimage);
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
@@ -192,7 +241,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
     margin-top: auto;
     margin-bottom: auto;
+    color: var(--apppimage);
 }
+
 ul li .table{
     margin-bottom: 0;
 }
@@ -205,32 +256,115 @@ ul li .table{
 .home{
     height: fit-content;
     /* background: rgba(255, 136, 231,0.5); */
-    background: rgba(243, 118, 218, 0.8)!important;
+    background: var(--apppink)!important;
     margin: 13px;
     border-radius: 36px;
-    
     font-size: large;
   }
   
   
   .list_menu_items a:hover {
    /* background: rgba(255, 136, 231,0.5)!important; */
-   background: rgba(243, 118, 218, 0.8)!important;
+   background: var(--apppink)!important;
    border-radius: 36px;
 
    }
    #about .table td{
        text-align: center;
+
    }
   .table td:hover{
        text-decoration: underline;
       text-shadow: 2px 1px rgb(202, 15, 130);
        border-top: 1px solid #dee2e6;
-       border-radius: 36px;
-     
+       border-radius: 36px;     
     
   }
- 
+
  .list_menu_items{
      max-height: fit-content;
  }
+.calculator span.mul
+{
+    color: white;
+}
+
+
+
+/*light mode*/
+
+.light-mode .table td a
+{
+  color: var(--apppimage)!important;
+}
+
+.light-mode #factorsoption
+{
+    color: var(--apppimage)!important;
+}
+
+.light-mode #numberfact
+{
+    color: var(--apppimage) !important;
+}
+.light-mode .table td:hover{
+       text-decoration: none;
+       text-shadow: none;
+       font-weight: bold;
+       font-variant: small-caps; 
+  }
+.light-mode .btn.btn-outline-light{
+    color: black; 
+    border-color: black;
+}
+.light-mode .stopwrap {
+    background: none;
+    color: white;
+}
+
+.light-mode .bi {
+    background-image: linear-gradient(to right top, #ccf2f4, #f4f9f9, #a4ebf3);
+    color: black;
+}
+.light-mode input{
+    color: black;
+}
+
+#resulttable table td
+{
+    color: var(--appimage);
+    border-color: var(--appimage);
+}
+
+.light-mode table.table-bordered.table-dark td, .light-mode table.table-bordered.table-dark th
+{
+    color: black;
+    border: none;
+    background-color: #d3e0ef;
+}
+.light-mode table.table-bordered.table-dark th
+{
+   border-color: black;
+   border-style: double;
+}
+.light-mode table.table-bordered td, .light-mode table.table-bordered th
+{
+    color: black;
+    border: none;
+    background-color: #d3e0ef;
+}
+.light-mode table.table-bordered.table-dark th
+{
+   border-color: black;
+   border-style: double;
+}
+.light-mode img
+{
+    filter:none;
+}
+span.mul img, span.divi img, span.plus img, span.sub img{
+    filter: none;
+}
+.light-mode span.mul img, .light-mode span.divi img, .light-mode span.plus img, .light-mode span.sub img{
+    filter: invert(100%);
+}

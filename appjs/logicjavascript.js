@@ -3527,19 +3527,36 @@ function clearInputs() {
 
 //Function that performs bitwise calculation
 function bitwiseCalc() {
-  let firstOperand = parseInt(
+  
+  const operation = document.getElementById("bitwise-operation").value;
+  const numberSystem = document.getElementById("bitwise-numbers-system").value;
+  let result;
+
+ 
+ 
+  let  firstOperand = parseInt(
     document.getElementById("bitwise-first-number").value
   );
   let secondOperand = parseInt(
     document.getElementById("bitwise-second-number").value
   );
-  const operation = document.getElementById("bitwise-operation").value;
-  const numberSystem = document.getElementById("bitwise-numbers-system").value;
-  let result;
+
+ 
+  
 
   if (numberSystem === "Binary") {
     firstOperand = parseInt(firstOperand, 2);
     secondOperand = parseInt(secondOperand, 2);
+  }
+
+  if (numberSystem === "Octal") {
+    firstOperand = parseInt(firstOperand, 8);
+    secondOperand = parseInt(secondOperand, 8);
+  }
+
+  if (numberSystem === "Hexadecimal") {
+    firstOperand = parseInt(firstOperand, 16).toString(16);
+    secondOperand = parseInt(secondOperand, 16).toString(16);
   }
 
   if (isNaN(firstOperand) || isNaN(secondOperand)) {
@@ -3561,6 +3578,14 @@ function bitwiseCalc() {
       document.getElementById("bitwise-result").innerHTML = parseInt(
         result
       ).toString(2);
+    else if (numberSystem === "Octal")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(8);
+    else if(numberSystem === "Hexadecimal")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(16);
     else document.getElementById("bitwise-result").innerHTML = result;
   }
 }
@@ -3593,3 +3618,23 @@ function intrest() {
   document.getElementById("cintrest").innerHTML = `${(p * (((1 + r / 100) ** t) - 1))}`;
 }
 //----------------------------
+
+
+//Function that performs conversion of Binary to Hexadecimal and viceversa
+function convertBinhex() {
+  const fromBase = document.getElementById("binary-hexadecimal-select1").value;
+  const toBase = document.getElementById("binary-hexadecimal-select2").value;
+  const input = document.getElementById("binary-hexadecimal-input").value;
+  let result = document.getElementById("binary-hexadecimal-result");
+  let from = 2;
+  let to = 2;
+
+  if (fromBase === "Binary") from = 2;
+  else from = 16;
+
+  if (toBase === "Binary") to = 2;
+  else to = 16;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+}
+//--------------------------------------------------------------------------------

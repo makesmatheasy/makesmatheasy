@@ -182,11 +182,22 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
     $("#complexcollapsebtn").click(function(){
         openit("#complexcollapse");
         closenav();
         clearall();
     });
+
+	//Function of collapsing binary/hexadecimal section on click
+	$("#binary-to-hexadecimal-btn").click(function(){
+        openit("#binary-hexadecimal");
+        closenav();
+        clearall();
+    });
+
+
+
 
 });
 
