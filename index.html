@@ -323,6 +323,7 @@
 
             <div class="dropdown-divider"></div>
         </div>
+        
         <li class="list_menu_items" onclick="collapseit('trigotoggle'); changeImage3();"><a
                 style="cursor: pointer;font-size: 16px;">Trignometry<img class="dropdownlogo"
                                                                          src="icons/down-chevron.svg"
@@ -803,8 +804,32 @@
 
             <div class="dropdown-divider"></div>
         </div>
-
         <!--End of Binary Calculations Section -->
+        
+        <!-- Complex Calculations Section -->
+        <li class="list_menu_items" onclick="collapseit('complextoggle'); changeImage9();"><a
+            style="cursor: pointer;font-size: 16px;">Complex Numbers<img class="dropdownlogo"
+                                                                        src="icons/down-chevron.svg"
+                                                                        id="imgClickAndChange9"></a></li>
+        <div class="collapse" id="complextoggle" style="color:#1c911c;margin:10px;padding-left:10px">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexcollapsebtn"
+                            style="font-size:15px;cursor: pointer;background:transparent;border:none;">Calculations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Calculations','#complexcollapse','c','complexfav')"><img
+                                        id="complexfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div class="dropdown-divider"></div>
+        </div>
+        <!--End of Complex Calculations Section -->
 
         <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
         <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;"
@@ -1185,6 +1210,45 @@
                 </div>
             </div>
         </div>
+
+        <!-- Complex Number Calculations Begin-->
+        <div class="collapse" id="complexcollapse">
+            <h1>Complex Calculations</h1>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part of first number :</label>
+                <input type="number" id="creal1" class="form__field" placeholder="m"
+                       style="width:30px;display:inline;">
+                <label> Enter the imaginary part of first number :</label>
+                <input type="number" id="cimg1" class="form__field" placeholder="n"
+                       style="width:30px;display:inline;">
+            </div>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part of second number :</label>
+                <input type="number" id="creal2" class="form__field" placeholder="m"
+                       style="width:30px;display:inline;" >
+                <label> Enter the imaginary part of second number :</label>
+                <input type="number" id="cimg2" class="form__field" placeholder="n"
+                       style="width:30px;display:inline;" >
+            </div>
+            <div class="form-group">
+                <select id="comval" class="btn btn-outline-light">
+                    <option>Available Operations:</option>
+                    <option>Addition</option>
+                    <option>Subtraction</option>
+                    <option>Multiplication</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="comOperation(document.getElementById('comval').value);">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="compresult"></p>
+            </div>
+        </div>
+        <!-- Complex Number Calculations End -->
 
         <div class="collapse" id="matrixcollapse">
             <div class="row">
