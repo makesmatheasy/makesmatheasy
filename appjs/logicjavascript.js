@@ -3512,19 +3512,36 @@ function clearInputs() {
 
 //Function that performs bitwise calculation
 function bitwiseCalc() {
-  let firstOperand = parseInt(
+  
+  const operation = document.getElementById("bitwise-operation").value;
+  const numberSystem = document.getElementById("bitwise-numbers-system").value;
+  let result;
+
+ 
+ 
+  let  firstOperand = parseInt(
     document.getElementById("bitwise-first-number").value
   );
   let secondOperand = parseInt(
     document.getElementById("bitwise-second-number").value
   );
-  const operation = document.getElementById("bitwise-operation").value;
-  const numberSystem = document.getElementById("bitwise-numbers-system").value;
-  let result;
+
+ 
+  
 
   if (numberSystem === "Binary") {
     firstOperand = parseInt(firstOperand, 2);
     secondOperand = parseInt(secondOperand, 2);
+  }
+
+  if (numberSystem === "Octal") {
+    firstOperand = parseInt(firstOperand, 8);
+    secondOperand = parseInt(secondOperand, 8);
+  }
+
+  if (numberSystem === "Hexadecimal") {
+    firstOperand = parseInt(firstOperand, 16).toString(16);
+    secondOperand = parseInt(secondOperand, 16).toString(16);
   }
 
   if (isNaN(firstOperand) || isNaN(secondOperand)) {
@@ -3546,6 +3563,14 @@ function bitwiseCalc() {
       document.getElementById("bitwise-result").innerHTML = parseInt(
         result
       ).toString(2);
+    else if (numberSystem === "Octal")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(8);
+    else if(numberSystem === "Hexadecimal")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(16);
     else document.getElementById("bitwise-result").innerHTML = result;
   }
 }
