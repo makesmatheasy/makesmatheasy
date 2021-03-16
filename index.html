@@ -132,7 +132,7 @@
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
-            background-color: white;
+            background-color: var(--appimage);
             height: 20px;
         }
 
@@ -760,7 +760,7 @@
         <!--End of Binary Calculations Section -->
 
             <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 16px;">About</a></li>
-            <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:white;font-size: 16px;"
+            <li class="list_menu_items"><a id="contactbutton" style="cursor: pointer;color:var(--appimage);font-size: 16px;"
                     onclick="window.open('contact.html')">Contact</a>
             </li>
 
@@ -769,18 +769,22 @@
                         src="images/whatsapplogo.png"></a></li>
             <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
                     style="text-decoration:none;font-size: 16px;" href="#">Settings</a></li>
-            <li class="list_menu_items" style="color:white;font-size: 8px; bottom: 0px; position:relative;">Copyright ©
+            <li class="list_menu_items"><a class="toggle" id="contactbutton" style="cursor: pointer;color:var(--appimage);font-size: 16px;"
+                    onclick="myFunction()">Change Mode <dive id="moon" style="font-size: 20px;">🌓</a></li>
+            <li class="list_menu_items" style="color:var(--appimage);font-size: 8px; bottom: 0px; position:relative;">Copyright ©
                 2021 Makes Math Easy. All Rights Reserved.</li>
         </ul>
     </nav>
+    <a class="toggle" id="contactbutton" style="cursor: pointer;color:var(--appimage);font-size: 25px;"
+                    onclick="myFunction()">🌓</a>
 
     <div id="main" style="z-index:31;">
         <div class="form-group">
             <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
                 class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
-                    style="cursor:pointer;filter: invert(100%);height: 2.5rem;padding-left: 10px;"></span>
+                    style="cursor:pointer;  height: 2.5rem;padding-left: 10px;"></span>
             <span onclick="opencal()"><img src="icons/keys.svg"
-                    style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:20;padding-right: 10px;filter: invert(100%);"></span>
+                    style="cursor:pointer;display:inline;position:relative;height:2.5rem;float:right;z-index:20;padding-right: 10px;  "></span>
         </div>
 
 
@@ -793,12 +797,12 @@
                             style="display:inline;font-size: 1rem;width: 45vw;position: relative;">
                     </div>
                     <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                            style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
-                            src="images/speechlogo.png"></span>
+                            style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer; filter: none;"
+                            src="images/speechlogo.png"; ></span>
                     <span type="button" class="searchbtn"
                         onclick="searchgoogle(document.getElementById('myInput').value)"
-                        style="margin-left: 50px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
-                            style="height:38px;padding:10px;filter:invert(100%);" src="icons/loupe.png"></span>
+                        style="margin-left: 50px;border-right: 2px solid var(--appimage);border-bottom: 2px solid var(--appimage);border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
+                            style="height:38px;padding:10px;" src="icons/loupe.png";></span>
                 </div>
             </form>
         </div>
@@ -814,7 +818,7 @@
                             </td>
                             <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
                                     alt="refresh"
-                                    style="height: 20px;filter:invert(100%);padding-left: 20px;padding-right: 10px;">
+                                    style="height: 20px; padding-left: 20px;padding-right: 10px;">
                             </td>
                         </tr>
                     </table>
@@ -1176,7 +1180,7 @@
                     </button>
                 </div>
                 <div class="form-group text-center">
-                    <p class="stopwrap" style=";color:white;" id="singlematrixresult"></p>
+                    <p class="stopwrap" style=";color:var(--appimage);" id="singlematrixresult"></p>
                 </div>
                 <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
                 <div class="form-group">
@@ -1234,7 +1238,7 @@
                     </button>
                 </div>
                 <div class="form-group text-center">
-                    <p class="stopwrap" id="matrixresult" style="color:white;;height:auto !important;"></p>
+                    <p class="stopwrap" id="matrixresult" style="color: var(--appimage);;height:auto !important;"></p>
                 </div>
                 <div class="form-group text-center">
                     <p id="explanationmatrixresult" class="stopwrap"
@@ -1580,7 +1584,7 @@
                 </div>
             </div>
             <div class="collapse" id ="interest">
-                <h2 style="color: white;">Simple and Compund Interest</h2>
+                <h2 style="color: var(--appimage);">Simple and Compund Interest</h2>
                 <br>
                 <div class="form-group">
                     <input type="text" style="width: 250px;" class="form__field" name="a" id="first" placeholder="Enter principal"/>
@@ -1590,8 +1594,8 @@
                     <br>
                     <button  class = "btn btn-outline-light" onclick = "simple_interest()" >Find</button>
                     <br>
-                    <div style="color:white; font-size: large;" id="num"></div>
-                    <div id="num1" style="color: white; font-size: large"></div>
+                    <div style="color: var(--appimage); font-size: large;" id="num"></div>
+                    <div id="num1" style="color: var(--appimage); font-size: large"></div>
                 </div>            
             </div>
 
@@ -1701,7 +1705,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div onclick="$('#typesoftriangle').slideToggle();" style="color: white;cursor: pointer;">
+                            <div onclick="$('#typesoftriangle').slideToggle();" style="color: var(--appimage);cursor: pointer;">
                                 Triangles
                             </div>
                             <div class="collapse" id="typesoftriangle" style="margin: 15px;">
@@ -1756,7 +1760,7 @@
                 <table class="table">
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#lengthcon" style="text-decoration:none;"
                                     href="#">Length</a>
                             </div>
@@ -1764,7 +1768,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#areacon" style="text-decoration:none;"
                                     href="#">Area</a>
                             </div>
@@ -1772,7 +1776,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#volcon" style="text-decoration:none;"
                                     href="#">Volume</a>
                             </div>
@@ -1780,7 +1784,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#masscon" style="text-decoration:none;"
                                     href="#">Mass</a>
                             </div>
@@ -1788,7 +1792,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#tempcon" style="text-decoration:none;"
                                     href="#">Temperature</a>
                             </div>
@@ -1796,7 +1800,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
                                     href="#">Time</a>
                             </div>
@@ -1804,7 +1808,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="color: white;cursor: pointer;">
+                            <div style="color: var(--appimage);cursor: pointer;">
                                 <a data-toggle="modal" data-target="#speedcon" style="text-decoration:none;"
                                     href="#">Speed</a>
                             </div>
@@ -1818,7 +1822,7 @@
             <!-- Factorial -->
         <div class="collapse" id="factorial">
             <form class="form-inline">
-                <input type="number" id="factorialval" placeholder="Enter a Number" style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
+                <input type="number" id="factorialval" placeholder="Enter a Number" style="border: none; background: transparent; border-bottom: 1px solid white; color: var(--appimage);">
                 <button type="button" class="btn btn-light" onclick="factorialsol('factorialval')">
                     Solve
                 </button>
@@ -1838,8 +1842,8 @@
         <!-- Permutattiona and combination -->
         <div class="collapse" id="pandc">
             <form class="form-inline">
-                <input type="number" id="nval" placeholder="Total items in the set (n)" style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
-                <input type="number" id="rval" placeholder="Item taken from the set (r) " style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
+                <input type="number" id="nval" placeholder="Total items in the set (n)" style="border: none; background: transparent; border-bottom: 1px solid white; color: var(--appimage);">
+                <input type="number" id="rval" placeholder="Item taken from the set (r) " style="border: none; background: transparent; border-bottom: 1px solid white; color: var(--appimage);">
 
             </form>
             <br>
@@ -2190,21 +2194,21 @@ aria-hidden="true">
                         <span class="back"
                             onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
                                 class="bk" src="icons/backspace-arrow.png"
-                                style="height:30px;filter: invert(100%);"></span>
+                                style="height:30px;  "></span>
                         <span id="seven">7</span>
                         <span id="eight">8</span>
                         <span id="nine">9</span>
                         <span class="divi"
                             onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);"><img
-                                src="icons/divide.svg" height="20px" alt="divide-icon"></span>
+                                src="icons/divide.svg" height="20px" alt="divide-icon" style="filter: none;"></span>
                         <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo"
-                                src="images/speechlogo.png" height=30px></span>
+                                src="images/speechlogo.png" height=30px style="filter: none;"></span>
                         <span id="four">4</span>
                         <span id="five">5</span>
                         <span id="six">6</span>
                         <span class="mul"
                             onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
-                                src="icons/crossed.svg" height="20px" alt="crossed-icon"></span>
+                                src="icons/crossed.svg" height="20px" alt="crossed-icon" style="filter: none;"></span>
                         <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=30px></span>-->
                         <span id="percent">%</span>
                         <span id="one">1</span>
@@ -2212,7 +2216,7 @@ aria-hidden="true">
                         <span id="three">3</span>
                         <span class="sub"
                             onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);"><img
-                                src="icons/minus.svg" height="20px" alt="minus-icon"></span>
+                                src="icons/minus.svg" height="20px" alt="minus-icon" style="filter: none;"></span>
                         <span id="deci" onclick="todeci()">Deci.</span>
                         <span id="zero" class="zero"
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
@@ -2221,7 +2225,7 @@ aria-hidden="true">
                         <span id="sqrt">√</span>
                         <span class="plus"
                             onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);"><img
-                                src="icons/add.svg" height="20px" alt="add-icon"></span>
+                                src="icons/add.svg" height="20px" alt="add-icon" style="filter: none;"></span>
                         <span class="equal" onclick="calsoleq(document.getElementById('txt').value)">=</span>
                     </form>
                 </div>
