@@ -126,9 +126,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--appblack);
     padding: 20px;
     list-style:none;
-    border-top:1px solid white;
-    border-left:1px solid white;
-    border-right:1px solid white;
+    border-top:1px solid var(--appimage);
+    border-left:1px solid  var(--appimage);
+    border-right:1px solid var(--appimage);
     z-index:900;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     margin: 5px;
     padding: 15px;
-    color: white !important;
+    color: var(--appimage) !important;
 }
 
 .favourites:hover{
