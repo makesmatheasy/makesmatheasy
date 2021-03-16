@@ -157,7 +157,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    
+    $("#intrbtn").click(function () {
+        openit("#intrcal");
+        closenav();
+        clearall();
+    });
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
@@ -178,6 +182,14 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+	//Function of collapsing binary/hexadecimal section on click
+	$("#binary-to-hexadecimal-btn").click(function(){
+        openit("#binary-hexadecimal");
+        closenav();
+        clearall();
+    });
+
+
 
 });
 

@@ -1786,82 +1786,97 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
 // created function for isosceles triangle
-function isoscelestrianglearea() {
-  var eqside = document.getElementById("inputeqitside").value;
-  var side = document.getElementById("inputitside").value;
-  var areaoutput = document.getElementById("resultofareait");
-  var perimeteroutput = document.getElementById("resultofperiit");
-  var heightoutput = document.getElementById("resultofheightit");
-  var areatemp = "";
-  var perimetertemp = "";
-  var heighttemp = "";
-  // if((eqside=="" && side!="") ||(eqside!="" && side==""))
-  // {
-  // areaoutput.innerHTML="Please enter both values";
-  // }
-  if (side != "" && eqside != "") {
-    areatemp = "";
-    perimetertemp = "";
-    heighttemp = "";
-    perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
-    perimetertemp +=
-      "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
-      eval("2*(" + String(eqside) + ")" + String(side)) +
-      "\\]";
-    perimeteroutput.innerHTML = perimetertemp;
+function isoscelestrianglearea(){
+  var eqside=document.getElementById('inputeqitside').value;
+  var side=document.getElementById('inputitside').value;
+  var areaoutput=document.getElementById('resultofareait');
+  var perimeteroutput=document.getElementById('resultofperiit');
+  var heightoutput=document.getElementById('resultofheightit');
+  var areatemp="";
+  var perimetertemp="";
+  var heighttemp="";
+// if((eqside=="" && side!="") ||(eqside!="" && side==""))
+// {
+// areaoutput.innerHTML="Please enter both values";
+// }
+if(side!="" && eqside!="") {
+      areatemp="";
+      perimetertemp="";
+      heighttemp="";
+      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
+      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
 
-    heighttemp =
-      "\\[h=\\sqrt{" + eqside + "^2-" + "\\frac{" + side + "^2}{4}}\\]";
-    heighttemp +=
-      "\\[h=\\sqrt{" +
-      eval(String(eqside * eqside)) +
-      "\\frac{" +
-      eval(String(side * side)) +
-      "}{4}}\\]";
-    heightoutput.innerHTML = heighttemp;
+      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
+      heightoutput.innerHTML=heighttemp;
 
-    areatemp = "\\[A=\\frac{1}{2} \\times" + side + heighttemp + "\\]";
-    areatemp += "\\[A=0.5\\times" + eval(String(side * heighttemp)) + "\\]";
-    var a = eval(String("0.5*" + String(side * heighttemp)));
-    areatemp += "\\[A=" + a + " \\]";
-    areatemp +=
-      "\\[Area \\space of \\space Triangle \\space is \\space " + a + "\\]";
-    areaoutput.innerHTML = areatemp;
+      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
+      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
+      var a=eval(String("0.5*"+String(side*heighttemp)));
+      areatemp+="\\[A="+a+" \\]";
+      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
+      areaoutput.innerHTML=areatemp;
 
-    renderMathInElement(areaoutput);
-    renderMathInElement(perimeteroutput);
-    renderMathInElement(heightoutput);
-  } else {
-    areaoutput.innerHTML = "";
-    perimeteroutput.innerHTML = "";
-    heightoutput.innerHTML = "";
+      renderMathInElement(areaoutput);
+      renderMathInElement(perimeteroutput);
+      renderMathInElement(heightoutput);
   }
+  else{
+      areaoutput.innerHTML="";
+      perimeteroutput.innerHTML="";
+      heightoutput.innerHTML="";
+  }
+  
 }
-function solveSlope() {
-  let x1 = document.getElementById("inputLineX1").value;
-  let y1 = document.getElementById("inputLineY1").value;
-  let x2 = document.getElementById("inputLineX2").value;
-  let y2 = document.getElementById("inputLineY2").value;
-  if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
-    document.getElementById("resultofline").innerHTML = "Enter all four points";
-    document.getElementById("answerofline").innerHTML = "";
-    document.getElementById("answer").innerHTML = "";
-  } else if (parseInt(x2) - parseInt(x1) == 0) {
-    document.getElementById("resultofline").innerHTML = "Infinity";
-  } else {
-    let temp = (y2 - y1) / (x2 - x1);
-    console.log(temp);
-    let sol =
-      "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
-    let sol2 = "\\[Slope=" + temp + "\\]";
-    document.getElementById("resultofline").innerHTML =
-      "\\[Slope=\\frac{y2-y1}{x2-x1}\\]";
-    document.getElementById("answerofline").innerHTML = sol;
-    document.getElementById("answer").innerHTML = sol2;
-    renderMathInElement(document.getElementById("answerofline"));
-    renderMathInElement(document.getElementById("answer"));
-    renderMathInElement(document.getElementById("resultofline"));
+function solvecircle()
+{
+    let radius=document.getElementById("inputradius").value;
+    let area=3.14*radius*radius;
+    let Circumference=2*3.14*radius;
+    let diameter=2*radius;
+    console.log(radius);
+      area=area.toPrecision(3);
+      Circumference=Circumference.toPrecision(3);
+      diameter=diameter.toPrecision(3);
+      document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Circle \\ 3.14 r^2\\ = "+area+"\\]";
+      document.getElementById("resultofcircumferencec").innerHTML="\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = "+Circumference+"\\]";
+      document.getElementById("resultofdiameterc").innerHTML="Diameter of Circle = "+diameter;
+    renderMathInElement(document.getElementById("resultofareac"));
+    renderMathInElement(document.getElementById("resultofcircumferencec"));
+    //renderMathInElement(document.getElementById("resultofdiameterc"));
+}
+function solveSlope()
+{
+  let x1=document.getElementById("inputLineX1").value;
+  let y1=document.getElementById("inputLineY1").value;
+  let x2=document.getElementById("inputLineX2").value;
+  let y2=document.getElementById("inputLineY2").value;
+  if(x1==""||y1==""||x2==""||y2=="")
+  {
+    document.getElementById("resultofline").innerHTML="Enter all four points";
+    document.getElementById("answerofline").innerHTML="";
+    document.getElementById("answer").innerHTML="";
+
   }
+  else if(parseInt(x2)-parseInt(x1)==0)
+  {
+     document.getElementById("resultofline").innerHTML="Infinity";
+  }
+  else
+  {
+     let temp=(y2-y1)/(x2-x1);
+     console.log(temp);
+     let sol="\\[Slope=\\frac{"+y2+"-"+y1+"}{"+x2+"-"+x1+"}\\]";
+     let sol2="\\[Slope="+temp+"\\]";
+     document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
+     document.getElementById("answerofline").innerHTML=sol;
+     document.getElementById("answer").innerHTML=sol2;
+     renderMathInElement(document.getElementById("answerofline"));
+     renderMathInElement(document.getElementById("answer"));
+     renderMathInElement(document.getElementById("resultofline"));
+  }
+  
 }
 //shapes calculator
 //-----------------------------------------------------
@@ -3512,19 +3527,36 @@ function clearInputs() {
 
 //Function that performs bitwise calculation
 function bitwiseCalc() {
-  let firstOperand = parseInt(
+  
+  const operation = document.getElementById("bitwise-operation").value;
+  const numberSystem = document.getElementById("bitwise-numbers-system").value;
+  let result;
+
+ 
+ 
+  let  firstOperand = parseInt(
     document.getElementById("bitwise-first-number").value
   );
   let secondOperand = parseInt(
     document.getElementById("bitwise-second-number").value
   );
-  const operation = document.getElementById("bitwise-operation").value;
-  const numberSystem = document.getElementById("bitwise-numbers-system").value;
-  let result;
+
+ 
+  
 
   if (numberSystem === "Binary") {
     firstOperand = parseInt(firstOperand, 2);
     secondOperand = parseInt(secondOperand, 2);
+  }
+
+  if (numberSystem === "Octal") {
+    firstOperand = parseInt(firstOperand, 8);
+    secondOperand = parseInt(secondOperand, 8);
+  }
+
+  if (numberSystem === "Hexadecimal") {
+    firstOperand = parseInt(firstOperand, 16).toString(16);
+    secondOperand = parseInt(secondOperand, 16).toString(16);
   }
 
   if (isNaN(firstOperand) || isNaN(secondOperand)) {
@@ -3546,6 +3578,14 @@ function bitwiseCalc() {
       document.getElementById("bitwise-result").innerHTML = parseInt(
         result
       ).toString(2);
+    else if (numberSystem === "Octal")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(8);
+    else if(numberSystem === "Hexadecimal")
+      document.getElementById("bitwise-result").innerHTML = parseInt(
+        result
+      ).toString(16);
     else document.getElementById("bitwise-result").innerHTML = result;
   }
 }
@@ -3568,3 +3608,33 @@ function convertBinOct() {
 
   result.innerHTML = parseInt(input, from).toString(to);
 }
+//Intrest 
+function intrest() {
+
+  const p = parseInt(document.getElementById("principal").value);
+  const r = parseInt(document.getElementById("rate").value);
+  const t = parseInt(document.getElementById("time").value);
+  document.getElementById("sintrest").innerHTML = `${(p * t * r) / 100}`;
+  document.getElementById("cintrest").innerHTML = `${(p * (((1 + r / 100) ** t) - 1))}`;
+}
+//----------------------------
+
+
+//Function that performs conversion of Binary to Hexadecimal and viceversa
+function convertBinhex() {
+  const fromBase = document.getElementById("binary-hexadecimal-select1").value;
+  const toBase = document.getElementById("binary-hexadecimal-select2").value;
+  const input = document.getElementById("binary-hexadecimal-input").value;
+  let result = document.getElementById("binary-hexadecimal-result");
+  let from = 2;
+  let to = 2;
+
+  if (fromBase === "Binary") from = 2;
+  else from = 16;
+
+  if (toBase === "Binary") to = 2;
+  else to = 16;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+}
+//--------------------------------------------------------------------------------
