@@ -168,7 +168,8 @@ function openit(id) {
     "#decimal-binary",
     "#bitwise-calc",
     "#octal-binary",    
-	  "#binary-hexadecimal"
+	  "#binary-hexadecimal",
+    "#inversetrigonoiden"
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
