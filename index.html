@@ -691,7 +691,22 @@
                     </tr>
                 </table>
             </li>
-
+             <li>
+                  <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="tdshapescalbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">3-D Shapes
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                    onclick="addtofavourite('3-D Shapes Calculator','#tdshapescal','c','tdshapesimgfav')"><img
+                                    id="tdshapesimgfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('equationsolutions'); changeImage7();"><a
@@ -2240,6 +2255,33 @@
                 </tr>
             </table>
         </div>
+		<div class="collapse" id="tdshapescal">
+            <h2>Calculator for 3-D Shapes</h2>
+            <table class="table">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cube"
+                           style="text-decoration:none;" href="#">Cube</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cuboid"
+                           style="text-decoration:none;" href="#">Cuboid</a></td>
+                </tr>
+                
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cylinder"
+                           style="text-decoration:none;" href="#">Cylinder</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cone"
+                           style="text-decoration:none;" href="#">Cone</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#sphere"
+                           style="text-decoration:none;" href="#">Sphere</a></td>
+                </tr>
+            </table>
+        </div>
+
         <div class="collapse" id="unitconcal">
             <h2>Unit Convertor</h2>
             <table class="table">
@@ -3147,7 +3189,250 @@
     </div>
 </div>
 <!--shapes end-->
+<!--3-D shapes model -------->
+<div>
+    <div class="modal fade" id="cylinder" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cylinder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center" style="">Volume of Cylinder</h5>
+                                <p class="text-center" style=";">\[V= \pi (r)^{2} h \]</p>
+                                 <div class="dropdown-divider"></div>
+                                <h5 class="text-center" style="">Curved Surface area of Cylinder</h5>
+                                <p class="text-center" style=";">\[2 \pi r h \]</p>
 
+                                
+                            </div>
+                            <div class="col-6">
+                                <img src="images/cylinder.png" style="height:150px" class="img-fluid">
+								<div class="dropdown-divider"></div>
+								<h5 class="text-center" style="">Total Surface area of Cylinder</h5>
+                                <p class="text-center" style=";">\[ 2 \pi r(r+h) \]</p>
+                            </div>
+                        </div>
+
+                        <input class="form__field" type="number" placeholder="Enter radius" id="inputcylr"
+                               oninput="solvecyl();">
+					    <input class="form__field" type="number" placeholder="Enter Height" id="inputcylh"
+                               oninput="solvecyl();">		   
+                        <p class="stopwrap" id="resultofvolcyl" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftsacyl" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofcsacyl" style=";font-family:mathfont;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cube" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cube</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center" style="">Volume of Cube</h5>
+                                <p class="text-center" style=";">\[(side)^{3}\]</p>
+                                 <div class="dropdown-divider"></div>
+                                <h5 class="text-center" style="">Surface area of cube</h5>
+                                <p class="text-center" style=";">\[6(side)^{2}\]</p>                               
+                            </div>
+                            <div class="col-6">
+                                <img src="images/cube.png" style="height:150px" class="img-fluid">
+								<div class="dropdown-divider"></div>
+								 <h5 class="text-center" style="">Body Diagonal of Cube</h5>
+                                <p class="text-center" style=";">\[d=\sqrt{3}(side)\]</p>
+                            </div>
+                        </div>
+
+                        <input class="form__field" type="number" placeholder="Enter Side" id="inputcuside"
+                               oninput="solvecube();">
+                        <p class="stopwrap" id="resultofvolcu" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftsacu" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalcu" style=";font-family:mathfont;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+	  <div class="modal fade" id="cone" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cone</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center" style="">Volume</h5>
+                            <p class="text-center" style=";">\[V = \pi (r)^{2} h /3 \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="">Curved surface area</h5>
+                            <p class="text-center" style=";">\[ \pi rl \]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center" style="">Total Surface area</h5>
+                            <p class="text-center" style=";">\[ \pi r(r+l) \]</p>
+                            
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/cone.jpeg" class="img-fluid">
+                            </div>
+                            <div class="dropdown-divider"></div>
+							<h5 class="text-center" style="">Slant Height</h5>
+                            <p class="text-center" style=";">\[l= \sqrt{r^2 + h^2}\]</p>
+						</div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <!-- --------FROM------- -->
+                    <input class="form__field" type="number" placeholder="Enter radius" id="inputrcone" 
+                    oninput="solvecone();">
+                    <input class="form__field" type="number" placeholder="Enter Height" id="inputhcone" 
+                    oninput="solvecone();">
+                     <p class="stopwrap" id="resultofvolcone" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultofcsacone" style=";font-family:mathfont;"></p>
+                     <p class="stopwrap" id="resultoftsacone" style=";font-family:mathfont;"></p>
+					 <p class="stopwrap" id="resultofshcone" style=";font-family:mathfont;"></p>
+                     
+                    </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" id="sphere" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sphere</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center" style="">Volume</h5>
+                                    <p class="text-center" style=";">\[V =4 \pi r^3 /3\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center" style="">Surface Area</h5>
+                                    <p class="text-center" style=";">\[ 4 \pi r^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/sphere.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter Radius" id="inputradiussph"
+                                oninput="solvesphere();">
+                            <p class="stopwrap" id="resultofvolsp" style=";font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftsasp" style=";font-family:mathfont;"></p>
+                            </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="modal fade" id="cuboid" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cuboid</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+							    <h5 class="text-center" style="">Volume of Cuboid</h5>
+                                <p class="text-center" style=";">\[V=l \times b \times h\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center" style="">Surface Area of Cuboid</h5>
+                                <p class="text-center" style=";">\[2(lb + bh + hl)\]</p>
+                               
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/cuboid.png" class="img-fluid">
+                                </div>
+								 <div class="dropdown-divider"></div>
+                                <h5 class="text-center" style="">Body Diagonal of Cuboid</h5>
+                                <p class="text-center" style=";">\[d= \sqrt{b^2+l^2+h^2}\]</p>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <p>Fill All three</p>
+                        <input class="form__field" type="number" placeholder="Enter Length (cm)" id="inputcubolength"
+                               oninput="cubosolve()">
+                        <input class="form__field" type="number" placeholder="Enter Breadth (cm)" id="inputcubobreadth"
+                               oninput="cubosolve()">
+                        <input class="form__field" type="number" placeholder="Enter Height (cm)" id="inputcuboheight"
+                               oninput="cubosolve()">
+                        <br>
+                        <p class="stopwrap" id="resultofvolcubo" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftsacubo" style=";font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalcubo" style=";font-family:mathfont;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--3-D shapes end-->
+ 
 <!-------------------------------------------------------->
 <!--unit convert-->
 <div>

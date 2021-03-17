@@ -1880,6 +1880,181 @@ function solveSlope()
 }
 //shapes calculator
 //-----------------------------------------------------
+//3-D Shapes Calculator
+function solvecyl() {
+  var height = document.getElementById("inputcylh").value;
+  var radius = document.getElementById("inputcylr").value;
+  
+  var voloutput = document.getElementById("resultofvolcyl");
+  var tsaoutput = document.getElementById("resultoftsacyl");
+  var csaoutput = document.getElementById("resultofcsacyl");
+  var voltemp = "";
+  var tsatemp = "";
+  var csatemp = "";
+  if ((radius != "") && (height !="")) {
+	voltemp+= "\\[ \\pi \\times " + radius + "^2 \\times "+ height +"\\]";
+    voltemp+="\\[Volume \\space of \\space Cylinder \\space is \\space " +  eval(String(3.14159*radius*radius*height)) + "\\]";
+    voloutput.innerHTML = voltemp;
+    csatemp += "\\[ 2 \\times \\pi \\times"  + radius + "\\times" +height+" \\]";
+	csatemp+="\\[Curved \\space Surface \\space Area \\space of \\space Cylinder \\space is \\space \\]";
+	csatemp+= "\\["+eval(String(3.14159*radius*2*height)) + "\\]";
+	csaoutput.innerHTML = csatemp;
+    tsatemp += "\\[2 \\times \\pi \\times"+radius+"("+radius+"+"+height+") \\]";
+    tsatemp +=
+      "\\[Total \\space Surface \\space Area \\space of \\space Cylinder \\space is \\space  \\]";
+	  tsatemp+="\\["+eval(String((2*3.14159*radius*height) + (2*3.14159*radius*radius))) + "\\]";
+    tsaoutput.innerHTML = tsatemp;
+    renderMathInElement(voloutput);
+    renderMathInElement(tsaoutput);
+	renderMathInElement(csaoutput);
+  } else {
+    voloutput.innerHTML = "";
+    tsaoutput.innerHTML = "";
+	csaoutput.innerHTML = "";
+  }
+}
+function solvecube() {
+  var side = document.getElementById("inputcuside").value;
+  var voloutput = document.getElementById("resultofvolcu");
+  var tsaoutput = document.getElementById("resultoftsacu");
+  var diagoutput = document.getElementById("resultofdiagonalcu");
+  var voltemp = "";
+  var tsatemp = "";
+  var diagtemp = "";
+  if (side != "") {
+	voltemp+= "\\["  + side +"^3 \\]";
+    voltemp+="\\[Volume \\space of \\space cube \\space is \\space " +  eval(String(side*side*side)) + "\\]";
+    voloutput.innerHTML = voltemp;
+    tsatemp += "\\[ 6 \\times " + side + "^2 \\]";
+	tsatemp+="\\[Total \\space Surface \\space Area \\space of \\space Cube \\space is \\space \\]";
+	tsatemp+= "\\[" + eval(String(6*side*side)) + "\\]";
+	tsaoutput.innerHTML = tsatemp;
+    diagtemp += "\\[\\sqrt{3} \\times "+ side +" \\]";
+    diagtemp +=
+      "\\[Body \\space Diagnol \\space of \\space Cube \\space is \\space  \\]";
+	  diagtemp+="\\["+eval(String(1.732*side)) + "\\]";
+    diagoutput.innerHTML = diagtemp;
+    renderMathInElement(voloutput);
+    renderMathInElement(tsaoutput);
+	renderMathInElement(diagoutput);
+  } else {
+    voloutput.innerHTML = "";
+    tsaoutput.innerHTML = "";
+	diagoutput.innerHTML = "";
+  }
+}
+function cubosolve() {
+  var length = document.getElementById("inputcubolength").value;
+  var breadth = document.getElementById("inputcubobreadth").value;
+  var length = document.getElementById("inputcubolength").value;
+  var height = document.getElementById("inputcuboheight").value;
+  var voloutput = document.getElementById("resultofvolcubo");
+  var tsaoutput = document.getElementById("resultoftsacubo");
+  var diagoutput = document.getElementById("resultofdiagonalcubo");
+  var voltemp = "";
+  var tsatemp = "";
+  var diagtemp = "";
+  if ((length != "") && (breadth != "") && (height != "")) {
+	voltemp+= "\\["  + length +"\\times"+breadth+ "\\times"+height+"\\]";
+    voltemp+="\\[Volume \\space of \\space cuboid \\space is \\space " +  eval(String(length*breadth*height)) + "\\]";
+    voloutput.innerHTML = voltemp;
+    tsatemp += "\\[ 2(" + length+"\\times "+breadth+"+"+breadth+"\\times"+height+"+"+height+"\\times"+length + ") \\]";
+	tsatemp+="\\[Total \\space Surface \\space Area \\space of \\space Cuboid \\space is \\space \\]";
+	tsatemp+= "\\[" + eval(String(2*(length*breadth+breadth*height+height*length))) + "\\]";
+	tsaoutput.innerHTML = tsatemp;
+	var breadth2 = breadth * breadth;
+    var length2 = length * length;
+	var height2=height*height;
+    var add = eval(String(breadth2 + length2 +height2));
+    var d = nerdamer.sqrt(add).toString();
+	diagtemp+= "\\[d= \\sqrt{" + length + "^2+" + breadth +"^2+"+height+"^2} \\]";
+    diagtemp+="\\[ \\sqrt{" + length2 + "+" +breadth+"+"+ height2 +"} \\]";
+	diagtemp+="\\[ \\sqrt{" + add +"} \\]";
+    diagtemp+="\\[" +
+        eval(d).toFixed(3) +
+        "\\]";
+    diagoutput.innerHTML = diagtemp;
+    renderMathInElement(voloutput);
+    renderMathInElement(tsaoutput);
+	renderMathInElement(diagoutput);
+  } else {
+    voloutput.innerHTML = "";
+    tsaoutput.innerHTML = "";
+	diagoutput.innerHTML = "";
+  }
+}
+
+function solvesphere() {
+  var radius = document.getElementById("inputradiussph").value;
+  
+  var voloutput = document.getElementById("resultofvolsp");
+  var tsaoutput = document.getElementById("resultoftsasp");
+  var voltemp = "";
+  var tsatemp = "";
+  if (radius != "") {
+	voltemp+= "\\[ \\frac{4}{3} \\times \\pi \\times " + radius + "^3 \\]";
+    voltemp+="\\[Volume \\space of \\space Sphere \\space is \\space " +  eval(String((4*3.14159*radius*radius*radius)/3)) + "\\]";
+    voloutput.innerHTML = voltemp;
+    tsatemp += "\\[4 \\times \\pi \\times"+radius+"^2 \\]";
+    tsatemp +=
+      "\\[Total \\space Surface \\space Area \\space of \\space Sphere \\space is \\space  \\]";
+	  tsatemp+="\\["+eval(String(4*3.14159*radius*radius)) + "\\]";
+    tsaoutput.innerHTML = tsatemp;
+    renderMathInElement(voloutput);
+    renderMathInElement(tsaoutput);
+  } else {
+    voloutput.innerHTML = "";
+    tsaoutput.innerHTML = "";
+  }
+}
+function solvecone() {
+  var height = document.getElementById("inputhcone").value;
+  var radius = document.getElementById("inputrcone").value;
+  
+  var voloutput = document.getElementById("resultofvolcone");
+  var tsaoutput = document.getElementById("resultoftsacone");
+  var csaoutput = document.getElementById("resultofcsacone");
+  var shoutput = document.getElementById("resultofshcone");
+  var radius2 = radius * radius;
+  var height2 = height * height;
+  var add2 = eval(String(radius2 + height2));
+  var l= nerdamer.sqrt(add2).toString();
+  var voltemp = "";
+  var tsatemp = "";
+  var csatemp = "";
+  var ltemp="";
+  if ((radius != "") && (height !="")) {
+	voltemp+= "\\[ \\frac{1}{3} \\times \\pi \\times " + radius + "^2 \\times "+ height +"\\]";
+    voltemp+="\\[Volume \\space of \\space Cone \\space is \\space " +  eval(String((3.1415*radius*radius*height)/3)) + "\\]";
+    voloutput.innerHTML = voltemp;
+    csatemp += "\\[ \\pi \\times"  + radius + "\\times" + l + " \\]";
+	csatemp+="\\[Curved \\space Surface \\space Area \\space of \\space Cone \\space is \\space \\]";
+	csatemp+= "\\["+ eval(String(3.14159*radius*eval(l).toFixed(3))) + "\\]";
+	csaoutput.innerHTML = csatemp;
+    tsatemp += "\\[ \\pi \\times"+radius+"("+radius+"+"+l+")\\]";
+    tsatemp +=
+      "\\[Total \\space Surface \\space Area \\space of \\space Cone \\space is \\space  \\]";
+	tsatemp+="\\["+eval(String((3.14159*radius*eval(l).toFixed(3)) + (3.14159*radius*radius))) + "\\]";
+    tsaoutput.innerHTML = tsatemp;
+	ltemp+= "\\[l= \\sqrt{" + radius + "^2+" + height +"^2} \\]";
+    ltemp+="\\[ \\sqrt{" + radius2 + "+" + height2 +"} \\]";
+	ltemp+="\\[ \\sqrt{" + add2 +"} \\]";
+	ltemp+="\\[" +
+        eval(l).toFixed(3) +
+        "\\]";
+	shoutput.innerHTML = ltemp;	
+    renderMathInElement(voloutput);
+    renderMathInElement(tsaoutput);
+	renderMathInElement(csaoutput);
+	renderMathInElement(shoutput);
+  } else {
+    voloutput.innerHTML = "";
+    tsaoutput.innerHTML = "";
+	csaoutput.innerHTML = "";
+	shoutput.innerHTML = "";
+  }
+}
+//-----------------------------------------------------
 
 //-----------------------------------------------------
 //display inputted equation

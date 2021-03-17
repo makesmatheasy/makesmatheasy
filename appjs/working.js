@@ -84,6 +84,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })  
+	$("#tdshapescalbtn").click(function () {
+        openit("#tdshapescal");
+        closenav();
+        clearall();
+    })  
 
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
