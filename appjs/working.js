@@ -156,12 +156,7 @@ $(document).ready(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });
-    $("#intrbtn").click(function () {
-        openit("#intrcal");
-        closenav();
-        clearall();
-    });
+    });    
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
