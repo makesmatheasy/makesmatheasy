@@ -110,7 +110,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#inversetrigonoidenbutton").click(function () {
+        openit("#inversetrigonoiden");
+        closenav();
+        clearall();
+    })
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
