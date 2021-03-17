@@ -74,6 +74,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#limits").click(function () {
+        openit("#limitscollapse");
+        closenav();
+        clearall();
+    })
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
         closenav();
