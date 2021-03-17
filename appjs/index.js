@@ -170,7 +170,8 @@ function openit(id) {
     "#bitwise-calc",
     "#octal-binary",    
 	  "#binary-hexadecimal",
-    "#inversetrigonoiden"
+    "#inversetrigonoiden",
+    "#prime",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
