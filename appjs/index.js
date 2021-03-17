@@ -142,6 +142,7 @@ function openit(id) {
     "#mulsolwithsteps",
     "#table",
     "#shapescal",
+	"#tdshapescal",
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
@@ -151,6 +152,7 @@ function openit(id) {
     "#differentiatecollapse",
     "#partialdiffcollapse",
     "#laplacecollapse",
+    "#limitscollapse",
     "#matrixcollapse",
     "#multiplematrixcollapse",
     "#singlematrixcollapse",
@@ -166,8 +168,10 @@ function openit(id) {
     "#interest",
     "#decimal-binary",
     "#bitwise-calc",
-    "#octal-binary",
-    "#intrcal"
+    "#octal-binary",    
+	  "#binary-hexadecimal",
+    "#inversetrigonoiden",
+    "#prime",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

@@ -74,8 +74,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#limits").click(function () {
+        openit("#limitscollapse");
+        closenav();
+        clearall();
+    })
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
+        closenav();
+        clearall();
+    })  
+	$("#tdshapescalbtn").click(function () {
+        openit("#tdshapescal");
         closenav();
         clearall();
     })  
@@ -105,7 +115,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#inversetrigonoidenbutton").click(function () {
+        openit("#inversetrigonoiden");
+        closenav();
+        clearall();
+    })
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
@@ -152,16 +166,18 @@ $(document).ready(function () {
         clearall();
     });
 
+    // Prime 
+    $("#primebtn").click(function () {
+        openit("#prime");
+        closenav();
+        clearall();
+    }); 
+
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });
-    $("#intrbtn").click(function () {
-        openit("#intrcal");
-        closenav();
-        clearall();
-    });
+    });    
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
@@ -187,6 +203,22 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#complexcollapsebtn").click(function(){
+        openit("#complexcollapse");
+        closenav();
+        clearall();
+    });
+
+	//Function of collapsing binary/hexadecimal section on click
+	$("#binary-to-hexadecimal-btn").click(function(){
+        openit("#binary-hexadecimal");
+        closenav();
+        clearall();
+    });
+
+
+
 
 });
 
