@@ -3307,6 +3307,87 @@ function factorialsol(factorialval) {
     ans.innerHTML += calc;
   }
 }
+
+
+// Primality test
+function check_prime(isprime)
+{
+  var num = document.getElementById(isprime).value;
+  var num1 = parseInt(num);
+  var ans = document.getElementById("isprimesol");
+  var flag = true;
+  if(!isNaN(num1))
+  {
+      ans.innerHTML = num1;
+      ans.innerHTML += " is "; 
+      if(num1==1 || num1==0)
+      {
+        ans.innerHTML += "neither Prime nor Composite number";
+      }
+      else
+      {
+        for (i = 2; i <= Math.sqrt(num1) ; i++) {
+          if(num1%i==0)
+          {
+            flag = false;
+            break;
+          }
+      }
+      if(flag==true)
+      {
+        ans.innerHTML += "a Prime number";
+      }
+      else
+      {  ans.innerHTML += "a Composite number";}
+    }
+  }
+  else
+    ans.innerHTML = "Enter an integer!"
+}
+
+function prime_till_num(primetill)
+{
+  var num = document.getElementById(primetill).value;
+  var num1 = parseInt(num);
+  var ans = document.getElementById("primetillsol");
+  var B="";
+  var prime = [];
+  if(isNaN(num1) || num1<=1)
+  {
+    ans.innerHTML = "Enter positive integer greater than 1.";
+  }
+  else
+  {    for (i = 0; i <= num1; i++)
+          prime.push(true);
+ 
+        for (i = 2; i * i <= num1; i++) 
+        {
+            // If prime[p] is not changed, then it is a
+            // prime
+            if (prime[i] == true) 
+            {
+                // Update all multiples of p
+                for (j = i * i; j <= num1; j += i)
+                    prime[j] = false;
+            }
+        }
+ 
+        // Print all prime numbers
+        for (i = 2; i <= num1; i++)
+        {
+            if (prime[i] == true)
+            {
+              B=B+i;
+              B=B+", ";
+            }
+        }
+          ans.innerHTML= B.slice(0,B.length - 2);
+          
+      }
+  }
+
+//end 
+
 function permutationcal(nval, rval) {
   document.getElementById("permutation_div").style.display = "block";
   document.getElementById("combination_div").style.display = "none";
