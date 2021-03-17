@@ -150,10 +150,12 @@ function openit(id) {
     "#interest",
     "#decimal-binary",
     "#bitwise-calc",
+    
     "#octal-binary",
     "#intrcal",
 	  "#binary-hexadecimal",
     "#prime" ,
+    
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
