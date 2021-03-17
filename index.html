@@ -1016,11 +1016,23 @@
         <!-- log values ------------------------------------------------------------->
 
         <div class="collapse" id="log_values">
-            <input type="number" oninput="checklimit()" id="num" class="form__field" style=";" placeholder="Enter Number">
-            <input type="number" oninput="checklimit()" id="base" class="form__field" style=";" placeholder="Enter Base">
-            <button type="button" class="btn btn-light" style="margin-top: 40px";>
+
+            <h3 >Log(</h3>
+            <input type="number" id="num" name="number" class="form__field" placeholder="Number" style="display:inline;width:100px;">
+            <h4>to the base</h4>
+            <input type="number" id="base" name="base" class="form__field" placeholder="Number" style="display:inline;width:100px;">
+            <h3>)</h3>
+
+            <button type="button" class="btn btn-light" style="margin-top: 40px"; onclick="cal_log()">
                 FIND LOG
             </button>
+
+        
+
+            <div id="answer" style="color: aliceblue;">
+
+            </div>
+
         </div>
 
         
