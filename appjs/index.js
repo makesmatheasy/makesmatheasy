@@ -135,6 +135,7 @@ function openit(id) {
     "#differentiatecollapse",
     "#partialdiffcollapse",
     "#laplacecollapse",
+    "#limitscollapse",
     "#matrixcollapse",
     "#multiplematrixcollapse",
     "#singlematrixcollapse",
