@@ -8,7 +8,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["resultintegration", "integralplot","resultdiff", "diffplot","resulttable","generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult","rootsquadraticresult","inputroundoffoutput","plotequationresult","resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot","resultpardiff","resultmulsol","soltri","resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation","dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf","displayequation","resultsimplifyequation","resultexpandequation","equationsmany","resultsolverequation"]);
+        cleardiv(["resultintegration", "integralplot","resultdiff", "diffplot","resulttable","generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult","rootsquadraticresult","inputroundoffoutput","plotequationresult","resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot","resultpardiff","resultmulsol","soltri","resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation","dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf","displayequation","resultsimplifyequation","resultexpandequation","equationsmany","resultsolverequation","compresult"]);
     }, 1000);
 }
 function closenav() {
@@ -182,12 +182,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#complexcollapsebtn").click(function(){
+        openit("#complexcollapse");
+        closenav();
+        clearall();
+    });
+
 	//Function of collapsing binary/hexadecimal section on click
 	$("#binary-to-hexadecimal-btn").click(function(){
         openit("#binary-hexadecimal");
         closenav();
         clearall();
     });
+
 
 
 
