@@ -74,6 +74,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#limits").click(function () {
+        openit("#limitscollapse");
+        closenav();
+        clearall();
+    })
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
         closenav();
@@ -156,12 +161,7 @@ $(document).ready(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });
-    $("#intrbtn").click(function () {
-        openit("#intrcal");
-        closenav();
-        clearall();
-    });
+    });    
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");

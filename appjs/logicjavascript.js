@@ -3608,17 +3608,8 @@ function convertBinOct() {
 
   result.innerHTML = parseInt(input, from).toString(to);
 }
-//Intrest 
-function intrest() {
 
-  const p = parseInt(document.getElementById("principal").value);
-  const r = parseInt(document.getElementById("rate").value);
-  const t = parseInt(document.getElementById("time").value);
-  document.getElementById("sintrest").innerHTML = `${(p * t * r) / 100}`;
-  document.getElementById("cintrest").innerHTML = `${(p * (((1 + r / 100) ** t) - 1))}`;
-}
 //----------------------------
-
 
 //Function that performs conversion of Binary to Hexadecimal and viceversa
 function convertBinhex() {
