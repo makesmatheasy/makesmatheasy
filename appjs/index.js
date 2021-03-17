@@ -142,6 +142,7 @@ function openit(id) {
     "#mulsolwithsteps",
     "#table",
     "#shapescal",
+	"#tdshapescal",
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
