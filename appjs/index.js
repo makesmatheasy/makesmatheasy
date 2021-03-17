@@ -1,4 +1,4 @@
-var a=0,b=0,c=0,d=0;
+var a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
 
 function removeall(elid) {
   if (document.getElementById(elid).innerHTML != "") {
@@ -57,23 +57,102 @@ function changeImage1() {
        document.getElementById("imgClickAndChange4").src = 'icons/chevron-arrow-up.svg';
    }
  }
+ function changeImage5(){
+  e++;
+ 
+  if (e%2==0) 
+  {
+      document.getElementById("imgClickAndChange5").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange5").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+ function changeImage6(){
+  f++;
+ 
+  if (f%2==0) 
+  {
+      document.getElementById("imgClickAndChange6").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange6").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+ 
+ function changeImage7(){
+  g++;
+ 
+  if (g%2==0) 
+  {
+      document.getElementById("imgClickAndChange7").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange7").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+ function changeImage8(){
+  h++;
+ 
+  if (h%2==0) 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+ function changeImage9(){
+  i++;
+ 
+  if (i%2==0) 
+  {
+      document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+
 function collapseit(openit) {
   $(String("#" + openit)).slideToggle();
 }
 function openit(id) {
   var ids = [
+    "#complexcollapse",
     "#equationssolver",
     "#mulsolwithsteps",
     "#table",
     "#shapescal",
+	"#tdshapescal",
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
+    "#trigonoiden",
     "#factors",
     "#integralcollapse",
     "#differentiatecollapse",
     "#partialdiffcollapse",
     "#laplacecollapse",
+    "#limitscollapse",
     "#matrixcollapse",
     "#multiplematrixcollapse",
     "#singlematrixcollapse",
@@ -84,6 +163,15 @@ function openit(id) {
     "#unitconcal",
     "#home",
     "#curconcal",
+    "#factorial",
+    "#pandc",
+    "#interest",
+    "#decimal-binary",
+    "#bitwise-calc",
+    "#octal-binary",    
+	  "#binary-hexadecimal",
+    "#inversetrigonoiden",
+    "#prime",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
@@ -102,6 +190,7 @@ function loadfilesafterload() {
     "appjs/simplecallogic.js",
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
+    "appjs/complexlogic.js",
 
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",

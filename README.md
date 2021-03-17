@@ -201,20 +201,25 @@ Awesome! You have made your first contribution. If you have any doubts please le
 
 ![GirlScript Summer of Code](https://imgur.com/OIQHXht.png)
 
-### 	Project Maintainer
+### 	Project Maintainers
 
-<table style="width:30%;border:none;margin-left:auto;margin-right:auto;">
-    <tr>
-        <td style="text-align:center;">Rajinderpal Singh</td>
-    </tr>
-    <tr>
-        <td><img src="https://avatars.githubusercontent.com/u/60106112?s=460&u=1f8d02afaa92e2a459627d686a7367c6b6e499de&v=4" alt="Admin Picture" style="width:100%"></td>
-    </tr>
-    <tr>        
-        <td>Top Contributor of WoC'20</td>       
-    </tr>
-    <tr>
-    	<td>Open Source Enthusiast</td>
-    </tr>
+- [Rajinderpal Singh](https://github.com/sairish2001) (Admin)
+- [Shrey Tripathi](https://github.com/shrey27tri01) (Mentor)
+- [Apeksha Manchanda](https://github.com/apekshamanchanda) (Mentor)
+- [Nidhi](https://github.com/Nidhirajput1301) (Mentor)
+
+
+## 🌟 Contributors 
+
+Thanks to these wonderful peoples ✨✨:
+
+<table>
+	<tr>
+		<td>
+			<a href="https://github.com/sairish2001/makesmatheasy.github.io/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sairish2001/makesmatheasy.github.io" />
+</a>
+		</td>
+	</tr>
 </table>
 
