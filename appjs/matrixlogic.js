@@ -171,11 +171,11 @@ function sumofmatrix() {
             sumexplanation += "</div>"
             sumexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = sumexplanation;
         displaymatrix('Addition\\space Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -256,11 +256,11 @@ function subtractofmatrix() {
             subbexplanation += '</div>';
             subbexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
         displaymatrix('Subtraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -357,11 +357,11 @@ function mulofmatrix() {
             }
             mulexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = mulexplanation;
         renderMathInElement(document.getElementById('explanationmatrixresult'));
         displaymatrix('Multiplication\\space Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
