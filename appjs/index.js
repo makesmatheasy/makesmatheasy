@@ -116,16 +116,33 @@ function changeImage1() {
 
  }
 
+ function changeImage9(){
+  i++;
+ 
+  if (i%2==0) 
+  {
+      document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
 
 function collapseit(openit) {
   $(String("#" + openit)).slideToggle();
 }
 function openit(id) {
   var ids = [
+    "#complexcollapse",
     "#equationssolver",
     "#mulsolwithsteps",
     "#table",
     "#shapescal",
+	"#tdshapescal",
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
@@ -135,6 +152,7 @@ function openit(id) {
     "#differentiatecollapse",
     "#partialdiffcollapse",
     "#laplacecollapse",
+    "#limitscollapse",
     "#matrixcollapse",
     "#multiplematrixcollapse",
     "#singlematrixcollapse",
@@ -151,8 +169,10 @@ function openit(id) {
     "#interest",
     "#decimal-binary",
     "#bitwise-calc",
-    "#octal-binary",
-    "#intrcal"
+    "#octal-binary",    
+	  "#binary-hexadecimal",
+    "#inversetrigonoiden",
+    "#prime",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
@@ -171,7 +191,8 @@ function loadfilesafterload() {
     "appjs/simplecallogic.js",
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
-    "appjs/logValue.js",
+    "appjs/logValue.js"
+    "appjs/complexlogic.js",
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",
   ];

@@ -171,11 +171,11 @@ function sumofmatrix() {
             sumexplanation += "</div>"
             sumexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = sumexplanation;
         displaymatrix('Addition\\space Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -256,11 +256,11 @@ function subtractofmatrix() {
             subbexplanation += '</div>';
             subbexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
         displaymatrix('Subtraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -357,11 +357,11 @@ function mulofmatrix() {
             }
             mulexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = mulexplanation;
         renderMathInElement(document.getElementById('explanationmatrixresult'));
         displaymatrix('Multiplication\\space Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -387,7 +387,16 @@ function checkfunctionsmultiple() {
         document.getElementById('generatedmatrix2').innerHTML = '';
         document.getElementById('signofmatrix').innerHTML = '';
 
-    } else {
+    }
+	else if(parseInt(r1) <=0 || parseInt(r2) <=0 || parseInt(c1) <=0 || parseInt(c2) <=0)
+	{
+		 document.getElementById('mmatrixerror').innerHTML = "<center>Please enter positive integers for the dimensions.</center>";
+		 removeall('generatedmatrix1');
+         removeall('generatedmatrix2');
+	}
+	   
+	else {
+		removeall('mmatrixerror');
         creatematrix2();
         creatematrix1();
         if (r1 == r2 && c1 == c2) {
@@ -876,9 +885,17 @@ function checkfunctions() {
         document.getElementById('singlematrixresult').innerHTML = '';
         removeall('generatedmatrixsingle');
     }
+	else if(parseInt(row) <=0 || parseInt(column) <=0)
+	{
+		 document.getElementById('smatrixerror').innerHTML = "<center>Please enter positive integers for the dimensions.</center>";
+		 removeall('generatedmatrixsingle');
+	}
+	else
+	   removeall('smatrixerror');
     if (row != column && row != '' && column != '') {
         creatematrixsingle();
         addop('sopval', 'Transpose')
+		
     }
     if (row == column) {
         creatematrixsingle();
