@@ -151,11 +151,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#datebtn").click(function () {
-        openit("#datecal");
-        closenav();
-        clearall();
-    });
 
      // I have added
      $("#factorialbtn").click(function () {

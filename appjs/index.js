@@ -172,7 +172,6 @@ function openit(id) {
 	  "#binary-hexadecimal",
     "#inversetrigonoiden",
     "#prime",
-    "#datecal"
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
