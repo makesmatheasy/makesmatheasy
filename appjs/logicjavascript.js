@@ -3735,7 +3735,7 @@ function Mode() {
     }
   }
 
-  if (modes.length === Object.keys(frequencyTable).length) modes = [];
+  if (modes.length === arr.length) modes = [];
   if (arr.length === 0) {
     document.getElementById("Meanresult").innerHTML = `No Number Added`;
   } else {
