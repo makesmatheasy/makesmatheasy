@@ -1443,10 +1443,15 @@
                 <div class="form-group" style="display:inline-block">
                     <input type="number" id="srow1" class="form__field" placeholder="m"
                         style="width:4.375rem;display:inline;" oninput="checkfunctions()">
-                    <label>&times;</label>
+                    <label>&times; &nbsp;</label>
                     <input type="number" id="scolumn1" class="form__field" placeholder="n"
                         style="width:4.375rem;display:inline;" oninput="checkfunctions()">
                 </div>
+				<div class="form-group">
+                    <div class="stopwrap bi" style="border-radius:3.125rem;color:black !important;"
+                        id="smatrixerror"></div>
+                </div>
+
                 <div class="form-group">
                     <select id="sopval" class="btn btn-outline-light" onmousedown="this.value=''">
                         <option>Input Fields</option>
@@ -1491,6 +1496,11 @@
                             style="width:4.375rem;display:inline" oninput="checkfunctionsmultiple()">
                     </div>
                 </div>
+				<div class="form-group">
+                    <div class="stopwrap bi" style="border-radius:3.125rem;color:black !important;"
+                        id="mmatrixerror"></div>
+                </div>
+
                 <div class="form-group">
                     <select id="opval" class="btn btn-outline-light" onmousedown="this.value=''"
                         onchange="signofmatrix(this.value);">
