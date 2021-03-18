@@ -160,7 +160,6 @@ function openit(id) {
     "#rootsquadratic",
     "#plotgraph",
     "#roundoff",
-    "#log_values",
     "#unitconcal",
     "#home",
     "#curconcal",
@@ -191,8 +190,8 @@ function loadfilesafterload() {
     "appjs/simplecallogic.js",
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
-    "appjs/logValue.js"
     "appjs/complexlogic.js",
+
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",
   ];
