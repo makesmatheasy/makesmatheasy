@@ -274,8 +274,7 @@ ul li .table{
 
    }
   .table td:hover{
-       text-decoration: underline;
-      text-shadow: 2px 1px rgb(202, 15, 130);
+      
        border-top: 1px solid #dee2e6;
        border-radius: 36px;     
     
