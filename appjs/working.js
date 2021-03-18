@@ -198,7 +198,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#complexcollapsebtn").click(function(){
         openit("#complexcollapse");
         closenav();
