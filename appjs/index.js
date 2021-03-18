@@ -164,6 +164,7 @@ function openit(id) {
     "#home",
     "#curconcal",
     "#factorial",
+    "#log_values",
     "#pandc",
     "#interest",
     "#decimal-binary",
@@ -191,7 +192,7 @@ function loadfilesafterload() {
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
     "appjs/complexlogic.js",
-
+    "appjs/logValue.js",
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",
   ];
