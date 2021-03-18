@@ -210,54 +210,6 @@
 
 
 <body class="readonlybody hidescroll" onload="bodyload()">
-
-<div class="blink-1 javascriptno" style="display:none;">
-    <p>
-        <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
-        <br>
-        <br>
-        May be your Browser won't Support Javascript
-        <br>or<br>
-        Try enabling Javascript in your Browser Settings
-        <br><br>
-        <a class="btn btn-secondary" href="helpjavascript.html">Check
-            How to enable?</a>
-    </p>
-</div>
-
-<ol id="favourite" class="sticky-bottom"></ol>
-<nav id="navbar-main" style="z-index:30">
-    <ul id="slide-out" class="sidenav ulstyle">
-        <li class="listyle home list_menu_items" style="margin-top: 20px;"><a id="homeoption"
-                                                                              style="cursor: pointer;font-size: 19px;letter-spacing: 2px;color: pink;">Home</a>
-        </li>
-        <li class="list_menu_items" onclick="collapseit('lineralgebratoggle'); changeImage1();"><a
-                style="cursor: pointer;font-size: 16px;">Linear Algebra<img class="dropdownlogo"
-                                                                            src="icons/down-chevron.svg"
-                                                                            id="imgClickAndChange1"></a></li>
-
-
-        <div class="collapse" id="lineralgebratoggle" style="color:#1c911c;margin:10px;padding-left:10px">
-
-
-            <div class="dropdown-divider"></div>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="matrixcollapsebtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Matrix</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Matrix','#matrixcollapse','c','matrixfav')"><img
-                                        id="matrixfav" src="images/unfavourite.png" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <div class="dropdown-divider"></div>
-        </div>
-
     <div class="blink-1 javascriptno" style="display:none;">
         <p>
             <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
@@ -271,7 +223,6 @@
                 How to enable?</a>
         </p>
     </div>
-
 
     <ol id="favourite" class="sticky-bottom"></ol>
     <nav id="navbar-main" style="z-index:30">
@@ -473,25 +424,8 @@
                     </table>
                 </li>
                 <div class="dropdown-divider"></div>
-            </d
-        <li class="list_menu_items" onclick="collapseit('generalmathstoggle'); changeImage4();"><a
-                style="cursor: pointer;font-size: 16px;">General Maths<img class="dropdownlogo"
-                                                                           src="icons/down-chevron.svg"
-                                                                           id="imgClickAndChange4"></a></li>
+            </div>
 
-
-        <div class="collapse" id="generalmathstoggle" style="color:#1c911c;margin:10px;padding-left:10px">
-            
-            <div class="dropdown-divider"></div>
-            
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="factorsoption"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">LCM/HCF/Factors</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
             <li class="list_menu_items" onclick="collapseit('generalmathstoggle'); changeImage4();"><a
                     style="cursor: pointer;font-size: 1rem;">General Maths<img class="dropdownlogo"
                         src="icons/down-chevron.svg" id="imgClickAndChange4"></a></li>
@@ -512,33 +446,6 @@
                         </tr>
                     </table>
 
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;" onclick="display_log()">
-                            <a id="logValues" 
-                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Logarithm Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                            <span onclick="addtofavourite('Logarithm Values','#log_values','c','logimgfav')"><img id="logimgfav"
-                                    src="images/unfavourite.png" style="height:25px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="tableoption"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Multiplication
-                                Table</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-
                 </li>
 
                 <li>
@@ -550,7 +457,6 @@
                                     Table</a>
                             </td>
                             <td style="float:right;border-top: none;">
-
                                 <span onclick="addtofavourite('Multiplication Table','#table','c','tableimgfav')"><img
                                         src="images/unfavourite.png" id="tableimgfav"
                                         style="height:1.5625rem;filter: none;"></span>
@@ -1085,17 +991,6 @@
                 </div>
 
             </div>
-
-        </div>
-
-
-
-        <!--        start factors-->
-        <div class="collapse" id="factors">
-
-            <div class="form-group">
-                <input type="tel" id="numforfactorhcflcm" class="form__field"
-                       placeholder="Enter Number(s) Space Separated">
             <!--    end home-->
             <br>
             <div class="collapse" id="divide">
@@ -1162,7 +1057,6 @@
                 <div class="row">
                     <p id="resultofvariabledivide" style="font-family:mathfont;;"></p>
                 </div>
-
             </div>
             <!--        start factors-->
             <div class="collapse" id="factors">
@@ -1209,45 +1103,6 @@
                 <p id="hcfprimefactor" style="font-family:mathfont" class="stopwrap"></p>
                 <p id="resulthcf" style="font-family:mathfont" class="stopwrap"></p>
 
-
-
-        <!-- log values ------------------------------------------------------------->
-
-        <div class="collapse" id="log_values">
-
-            <fieldset class="form-group">
-                <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log Calculator</legend>
-                <strong  style="font-size: 30px; color: aliceblue;">log</strong>
-                <sub ><input type="number" min="1" max="9999" step="1" name="log-base" id="log-base" placeholder="Number" value="" required="">
-                </sub>
-                <sup><input type="number" min="1" max="999999999" name="x-number" id="x-number" placeholder="Number"
-                    class="fontbig" value="" required=""></sup>
-                
-            </fieldset>
-            
-            <button type="button" class="btn btn-light" style="margin-top: 40px"; onclick="cal_log()">
-                FIND LOG
-            </button>
-
-            <div class="form-group"  style=" margin-top: 40px ; color: aliceblue display: inline;">
-                <h2  id="result">log<sub id="base_1">y</sub> (<var id="no_1">x</var>) = <var id="answer"></var></h2>
-               </div>
-
-
-        </div>
-
-        
-        <!-- end of log - values ----------------------------------------------------->
-    
-
-        <div class="collapse" id="table">
-            <div class="form-group num-limit" style="display: inline-block;">
-                <input type="number" oninput="checklimit()" id="numtable" class="form__field" style=";"
-                       placeholder="Enter Number">
-            </div>
-            <div class="form-group" style="display: inline-block;">
-                <input type="number" oninput="checklimit()" id="numending" style=";" name="ending"
-                       class="form__field" placeholder="Upto">
             </div>
             <!--        end factors-->
 
@@ -4519,93 +4374,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of Bitwise Calculator-->
-
-<!-- Start of Octal / Binary -->
-<div>
-    <div class="collapse" id="octal-binary">
-        <div class="col-6">
-            <div class="form-group">
-                <h5>From</h5>
-                <select id="octal-binary-select1" class="form__field" onchange="convertBinOct()">
-                    <option class="form_field" style="background-color: #232a36;">Octal</option>
-                    <option class="form_field" style="background-color: #232a36;">Binary</option>
-                </select>
-                <input type="number" id="octal-binary-input" value="0" class="form__field" oninput="convertBinOct()">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>To</h5>
-                <select id="octal-binary-select2" class="form__field" onchange="convertBinOct()">
-                    <option class="form__field" style="background-color: #232a36;">Octal</option>
-                    <option class="form__field" style="background-color: #232a36;">Binary</option>
-                </select>
-            </div>
-            <label class="form__group" id="octal-binary-result">0</label>
-        </div>
-    </div>
-</div>
-
-
-<!-- End of Octal / Binary -->
-
-<!--------------------------------------------------------->
-<!--    speech recognition start -->
-<script src="appjs/speechreco.js"></script>
-<!--    speech recognition ends-->
-
-<!--script files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-
-<script src="appjs/index.js"></script>
-<script>
-    setTimeout(function () {
-        loadfilesafterload();
-    }, 100);
-
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-        console.log("Mobile");
-    } else {
-        console.log("Desktop");
-    }
-</script>
-
-<script src="nerdamer/nerdamer.core.js"></script>
-<script src="nerdamer/Algebra.js"></script>
-<script src="nerdamer/Calculus.js"></script>
-<script src="nerdamer/Solve.js"></script>
-<script src="nerdamer/Extra.js"></script>
-
-<!-- log values -->
-<script src="appjs/logValue.js"></script>
-
-
-<script>
-    if ('serviceWorker in navigator') {
-        navigator.serviceWorker.register('service-worker.js')
-            .then(function (reg) {
-                console.log("service worker registered");
-            })
-            .catch(function (err) {
-                console.log("error:", err);
-            })
-    }
-</script>
-
-
                 <!--end of binary to hexadecimal-->
 
                 <!--------------------------------------------------------->
@@ -4653,7 +4421,6 @@
                             })
                     }
                 </script>
-
 </body>
 
 </html>
