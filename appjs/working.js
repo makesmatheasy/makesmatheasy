@@ -177,7 +177,14 @@ $(document).ready(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });    
+    });  
+     // Sumof nterms of an Arithmetic Progression 
+     $("#APbtn").click(function () {
+        openit("#sum_n_AP");
+        closenav();
+        clearall();
+    }); 
+    
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");

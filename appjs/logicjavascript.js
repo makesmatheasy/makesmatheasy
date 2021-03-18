@@ -3482,7 +3482,23 @@ function factorialsol(factorialval) {
     ans.innerHTML += calc;
   }
 }
-
+//sum of nterms of an Arithmetic Progression
+function sum_n_apsol(nval,rval,r1val)
+{
+   var n = document.getElementById(nval).value;
+   var a = document.getElementById(rval).value;
+   var d = document.getElementById(r1val).value;
+   var res = document.getElementById("sum_APsolprint");
+   var explain = document.getElementById("sumAP_formula");
+   let cal;
+   if(!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d)))
+   {
+       explain.innerHTML += "Formula of Sum of Nterms of an Arithmetic Progression is: n/2[2a + (n – 1)d]" ;
+       cal =  (n*(2*a+(n-1)*d))/2;
+       res.innerHTML += `Result: ${cal}`;
+       console.log(res);
+   }
+}
 
 // Primality test
 function check_prime(isprime)

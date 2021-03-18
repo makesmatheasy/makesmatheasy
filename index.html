@@ -600,8 +600,22 @@
                         </tr>
                     </table>
                 </li>
-
-
+            <!--sum of n terms of an ap-->
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="APbtn"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Nterms of an Arithmetic Progression</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an Arithmetic Progression','#sum_n_AP','c','APimgfav')"><img
+                                        id="APimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
 
                 <div class="dropdown-divider"></div>
             </div>
@@ -2445,7 +2459,30 @@
 
             </div>
             <!-- Factorial end -->
+            <!--sum of nterms-->
+            <div class="collapse" id="sum_n_AP">
+                <form class="form-inline" >
+                 <input type="number" id="nval"  placeholder="Enter the Nterms  (n)"
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="rval" placeholder="Enter the first term(a) "
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="r1val" placeholder="Enter the difference between two consecutive terms (d) "
+                    style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick="sum_n_apsol('nval','rval','r1val')">
+                    Solve
+                </button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <p id="sumAP_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                        align="right"></p>
+                    <br>
+                    <p id="sum_APsolprint" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                        align="right"></p>
+                </div>
 
+            </div>
+            <!--sum of nterms ends-->
             <!-- Permutattiona and combination -->
             <div class="collapse" id="pandc">
                 <form class="form-inline">
