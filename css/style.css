@@ -37,7 +37,7 @@ html{
 }
 .container{
     padding-bottom: 70%;
-    padding-top: 1.5em;
+    padding-top: 15%;
 }
 p {
     color: var(--appimage);
@@ -224,12 +224,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     display: inline;
 }
-.searchbar-container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
+
 #search-txt {
   border: none;
   background: none !important;
@@ -255,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none !important;
 }
 #box {
-  position: relative !important;
+  position: fixed !important;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -263,9 +258,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 60px;
   border-radius: 40px;
   padding: 10px;
-  margin-left: 6em;
-  margin-bottom: 0;
-  margin-top: 4em;
 }
 #box:hover > #search-txt {
   width: 240px;
@@ -310,13 +302,24 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 #numberfact{
-    font-family: mainfont;
+    font-family: 'Berkshire Swash', cursive;
     letter-spacing: 2px;
-    font-size: 15px;
+    font-size: 25px;
     text-align: center !important;
     margin-top: auto;
     margin-bottom: auto;
     color: var(--apppimage);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: #26282b;
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 35px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+#numberfact:hover {
+    font-size: 25.5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: var(--appblack);
 }
 
 ul li .table{
