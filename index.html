@@ -955,19 +955,44 @@
         </div>
 
 
-        <div class="text-center" style="padding-top: 3.125rem;">
-            <form autocomplete="off">
-                <div class="form-group" id="box">
-                    <div class="autocomplete" id="search-txt">
-                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
-                    </div>
-                    <span type="button" class="searchbtn"
-                        onclick="searchgoogle(document.getElementById('myInput').value)"><img
-                            style="height:2.375rem;padding:0.625rem;filter:none;" src="icons/loupe.png"></span>
+<div class="searchbar-container">
+    <div class="text-center" style="padding-top: 50px;">
+        <form autocomplete="off">
+            <div class="form-group" id="box">
+                <div class="autocomplete" id="search-txt">
+                    <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
+                </div>
+              <span type="button" class="searchbtn"
+                      onclick="searchgoogle(document.getElementById('myInput').value)"><img
+                        style="height:38px;padding:10px;filter:none;" src="icons/loupe.png"></span>
+              
+                <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                                                                               style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;filter:none;"
+                                                                               src="images/speechlogo.png"></span>
+               
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="container">
+        <!--    start home-->
+        <div id="homecollapse" style="z-index:11;position:relative;">
+            <div class="form-group text-center">
+                <table style="margin-left: auto;margin-right: auto;">
+                    <tr>
+                        <td>
+                            <p id="numberfact" style="display: inline-block;"></p>
+                        </td>
+                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
+                                                                                  alt="refresh"
+                                                                                  style="height: 20px;padding-left: 20px;padding-right: 10px;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                            style="height:1.5625rem;display:inline;margin: -1.25rem;position: relative;z-index:10;cursor: pointer;filter:none;"
-                            src="images/speechlogo.png"></span>
+
+     
 
                 </div>
             </form>
