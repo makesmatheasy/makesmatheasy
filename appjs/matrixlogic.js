@@ -1126,11 +1126,8 @@ function checkfunctions() {
         creatematrixsingle();
         addop('sopval', 'Select Operation')
         addop('sopval', 'Transpose')
-<<<<<<< HEAD
         addop('sopval', 'Rank')
-=======
-		
->>>>>>> upstream/main
+
     }
     if (row == column) {
         creatematrixsingle();
