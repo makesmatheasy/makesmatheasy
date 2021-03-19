@@ -24,7 +24,8 @@
 }
 
 body {
-    background-color: var(--appblack);
+    /* background-color: var(--appblack); */
+    background:url("background2.png");
     font-family:mainfont;
     overflow-x: hidden;
     height:100vh;
@@ -257,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 #box {
   position: relative !important;
   top: 20%;
-  left: 50%;
+  left: 30%;
   transform: translate(-50%, -50%);
   background: #ff299c;
   height: 60px;
@@ -342,7 +343,7 @@ ul li .table{
 .home{
     height: fit-content;
     /* background: rgba(255, 136, 231,0.5); */
-    background: var(--apppink)!important;
+    /* background: var(--apppink)!important; */
     margin: 13px;
     border-radius: 36px;
     font-size: large;
