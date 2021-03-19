@@ -707,6 +707,21 @@
                         </tr>
                     </table>
                 </li>
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="datebtn"
+                                   style="font-size:15px;cursor: pointer;background:transparent;border:none;">Date</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Date Calculator ','#datecal','c','dateimgfav')"><img
+                                        id="dateimgfav" src="images/unfavourite.png" 
+                                        style="height:1.5625rem; filter:none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
 
                 <li>
                     <table class="table">
@@ -2452,6 +2467,44 @@
                     </tr>
                 </table>
             </div>
+            
+            <div class="collapse" id="datecal">        
+                <div class="row">
+                    <div class="col-6" style="max-width: 50%;">
+                        <label>
+                            <h5>From</h5>
+                        </label>
+                        <input type="date" id="datef" class="form__field" placeholder="Enter Date";
+                        onchange="datecal();">
+                    </div>
+                    <div class="col-6" style="max-width: 50%;">
+                        <label>
+                            <h5>To</h5>
+                        </label>
+                        <input type="date" id="datet" class="form__field" placeholder="Enter Date"  ;
+                        onchange="datecal();">
+                    </div>        
+                </div>
+                <br>
+                <div class="dropdown-divider"></div>
+                <div class="row">
+                    <div class="col-6" style="max-width: 66%;">
+                        <label>
+                            <h5>Difference (years , months ,days) </h5>
+                        </label>
+                        <p id="date-1">0</p>
+                    </div>
+                    <div class="col-6" style="max-width: 33%;">
+                        <label>
+                            <h5>Difference (days)</h5>
+                        </label>
+                        <p id="date-2">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    <!-- Date Calculator End-->
+                    <!-------------------------------------------------------->
 
             <div class="collapse" id="unitconcal">
                 <h2>Unit Convertor</h2>

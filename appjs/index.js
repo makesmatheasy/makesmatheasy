@@ -172,6 +172,7 @@ function openit(id) {
     "#octal-binary",    
 	  "#binary-hexadecimal",
     "#inversetrigonoiden",
+    "#datecal",
     "#prime",
     "#sum_n_AP",
   ];

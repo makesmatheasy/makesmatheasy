@@ -110,6 +110,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#datebtn").click(function () {
+        openit("#datecal");
+        closenav();
+        clearall();
+    });
     $("#trigonoidenbutton").click(function () {
         openit("#trigonoiden");
         closenav();
