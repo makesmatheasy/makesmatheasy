@@ -224,7 +224,7 @@
         </p>
     </div>
 
-    <ol id="favourite" class="sticky-bottom"></ol>
+    <ul id="favourite"></ul>
     <nav id="navbar-main" style="z-index:30">
         <ul id="slide-out" class="sidenav ulstyle">
             <li class="listyle home list_menu_items" style="margin-top: 1.25rem;"><a id="homeoption"
@@ -455,13 +455,30 @@
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">LCM/HCF/Factors</a>
                             </td>
                             <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('LCM/HCF/Factors','#factors','c','facimgfav')"><img
+                                <span onclick="addtofavourite('LCM/HCF /Factors','#factors','c','facimgfav')"><img
                                         id="facimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
                         </tr>
                     </table>
 
+                </li>
+
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;" onclick="display_log()">
+                                <a id="logValues" style="font-size:15px;cursor: pointer;background:transparent;border:none;">Logarithm
+                                    Calculator</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Logarithm Values','#log_values','c','logimgfav')"><img id="logimgfav"
+                                        src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                
                 </li>
 
                 <li>
@@ -615,9 +632,6 @@
                             </td>
                         </tr>
                     </table>
-                </li>
-                
-
 
 
                 <div class="dropdown-divider"></div>
@@ -686,7 +700,7 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img
+                                    onclick="addtofavourite('Ascending /Descending','#orderit','d','orderitimgfav')"><img
                                         id="orderitimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -820,6 +834,8 @@
                 <div class="dropdown-divider"></div>
             </div>
 
+
+
             <!-- Binary Calculations Section -->
 
             <li class="list_menu_items" onclick="collapseit('binary-calculations'); changeImage8();"><a
@@ -872,6 +888,8 @@
 
 
                 <!--end-->
+
+                
 
 
 
@@ -963,33 +981,36 @@
     </nav>
 
     <div id="main" style="z-index:31;">
-        <div class="form-group">
+        <div class="form-group" style="margin-top:1rem">
             <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
                 class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
                     style="cursor:pointer; height: 40px;padding-left: 0.625rem;"></span>
             <span onclick="opencal()"><img src="icons/keys.svg"
-                    style="cursor:pointer;display:inline;position:relative;height:40px;float:right;z-index:20;padding-right: 0.625rem;"></span>
+                    style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;"></span>
+            <button id="fav-button" onclick="collapseit('favourite')"> <span style="font-size:135%;" >&starf;</span>  Favourite </button>  
+
         </div>
 
-
+    <div class="searchbar-container">
         <div class="text-center" style="padding-top: 3.125rem;">
             <form autocomplete="off">
                 <div class="form-group" id="box">
                     <div class="autocomplete" id="search-txt">
                         <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
                     </div>
-                    <span type="button" class="searchbtn"
-                        onclick="searchgoogle(document.getElementById('myInput').value)"><img
-                            style="height:2.375rem;padding:0.625rem;filter:none;" src="icons/loupe.png"></span>
-
-                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                            style="height:1.5625rem;display:inline;margin: -1.25rem;position: relative;z-index:10;cursor: pointer;filter:none;"
+                    <div class="d-flex justify-content-end">
+                        <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                            style="height:1.5625rem;display:inline; margin-top: 0rem; margin-bottom: -0.9rem; position: relative;z-index:10;cursor: pointer;filter:none;"
                             src="images/speechlogo.png"></span>
 
+                        <span type="button" class="searchbtn"
+                        onclick="searchgoogle(document.getElementById('myInput').value)"><img
+                            style="height:2.375rem; padding:0.525rem; filter:none;" src="icons/loupe.png"></span>
+                    </div>
                 </div>
             </form>
         </div>
-
+    </div>
         <div class="container">
             <!--    start home-->
             <div id="homecollapse" style="z-index:11;position:relative;">
@@ -1122,6 +1143,35 @@
 
             </div>
             <!--        end factors-->
+
+            <!-- log values ------------------------------------------------------------->
+            
+            <div class="collapse" id="log_values">
+            
+                <fieldset class="form-group">
+                    <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log Calculator</legend>
+                    <strong style="font-size: 30px; color: aliceblue;">log</strong>
+                    <sub><input type="number" min="1" max="9999" step="1" name="log-base" id="log-base" placeholder="Number"
+                            value="" required="">
+                    </sub>
+                    <sup><input type="number" min="1" max="999999999" name="x-number" id="x-number" placeholder="Number"
+                            class="fontbig" value="" required=""></sup>
+            
+                </fieldset>
+            
+                <button type="button" class="btn btn-light" style="margin-top: 40px" ; onclick="cal_log()">
+                    FIND LOG
+                </button>
+            
+                <div class="form-group" style=" margin-top: 40px ; color: aliceblue display: inline;">
+                    <h2 id="result">log<sub id="base_1">y</sub> (<var id="no_1">x</var>) = <var id="answer"></var></h2>
+                </div>
+            
+            
+            </div>
+            
+            
+            <!-- end of log - values ----------------------------------------------------->
 
             <div class="collapse" id="table">
                 <div class="form-group num-limit" style="display: inline-block;">
@@ -1460,10 +1510,15 @@
                 <div class="form-group" style="display:inline-block">
                     <input type="number" id="srow1" class="form__field" placeholder="m"
                         style="width:4.375rem;display:inline;" oninput="checkfunctions()">
-                    <label>&times;</label>
+                    <label>&times; &nbsp;</label>
                     <input type="number" id="scolumn1" class="form__field" placeholder="n"
                         style="width:4.375rem;display:inline;" oninput="checkfunctions()">
                 </div>
+                <div class="form-group">
+                    <div class="stopwrap bi" style="border-radius:3.125rem;color:black !important;" id="smatrixerror">
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <select id="sopval" class="btn btn-outline-light" onmousedown="this.value=''">
                         <option>Input Fields</option>
@@ -1508,6 +1563,11 @@
                             style="width:4.375rem;display:inline" oninput="checkfunctionsmultiple()">
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="stopwrap bi" style="border-radius:3.125rem;color:black !important;" id="mmatrixerror">
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <select id="opval" class="btn btn-outline-light" onmousedown="this.value=''"
                         onchange="signofmatrix(this.value);">
@@ -2303,12 +2363,27 @@
                 <table class="table">
                     <tr>
                         <td>
-                            <h5>App is Developed By <span class="badge badge-light" style="cursor:pointer;"
-                                    onclick="window.open('https://sairish2001.github.io')">Sairish</span>
+                            <h5>MakesMathEasy solves various math problems along with steps. We provide speedy calculations, within a few ms. We work together, design, create and produce work that we are proud of. We believe that <span
+                                    style="color: white;">"MATH IS FUN"!</span><br>
+
                             </h5>
                         </td>
                     </tr>
                 </table>
+                <h5><span style="color: white;">The IDEA:</span> We offer mathematics in an enjoyable and
+                    easy-to-learn manner.</h5><br>
+
+                <h5><span style="color: white;">Our commitment:</span> The site will continue to grow
+                    over time. Keep coming back to find out what has been added.</h5><br>
+
+                <h5><span style="color: white;">Feedback:</span> If you like the site or would like to make comments or
+                    even contributions then <a href="contact.html">contact us.</a></h5><br>
+
+                <h5><span style="color: white;">Developed By:</span> Rajinderpal Singh <span class="badge badge-light"
+                        style="cursor:pointer;" onclick="window.open('https://sairish2001.github.io')">Sairish</span>
+                </h5>
+
+
             </div>
 
             <div class="collapse" id="shapescal">
@@ -2486,7 +2561,33 @@
 
             </div>
             <!-- Factorial end -->
+            <!--sum of nterms-->
+            <div class="collapse" id="sum_n_AP">
+                <div class="text-center">
+                    <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
+                </div>
+                <form class="form-inline" >
+                 <input type="number" id="nval"  placeholder="Enter the Nterms  (n)"
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="rval" placeholder="Enter the first term(a) "
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="r1val" placeholder="Enter the difference between two consecutive terms (d) "
+                    style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick="sum_n_apsol('nval','rval','r1val')">
+                    Solve
+                </button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <p id="sumAP_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                        align="right"></p>
+                    <br>
+                    <p id="sum_APsolprint" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                        align="right"></p>
+                </div>
 
+            </div>
+            <!--sum of nterms ends-->
             <!-- Permutattiona and combination -->
             <div class="collapse" id="pandc">
                 <form class="form-inline">
@@ -4441,6 +4542,12 @@
                 <script src="nerdamer/Calculus.js"></script>
                 <script src="nerdamer/Solve.js"></script>
                 <script src="nerdamer/Extra.js"></script>
+
+
+                <!-- For Log Calculator -->
+                <script  type="text/javascript" src="appjs/logValue.js"></script>
+
+
                 <script>
                     if ('serviceWorker in navigator') {
                         navigator.serviceWorker.register('service-worker.js')
