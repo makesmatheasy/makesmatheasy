@@ -3902,3 +3902,36 @@ function convertBinhex() {
   result.innerHTML = parseInt(input, from).toString(to);
 }
 //--------------------------------------------------------------------------------
+function datecal()
+{
+   var c = new Date(Date.parse(document.getElementById("datef").value));
+   var d = new Date(Date.parse(document.getElementById("datet").value));   
+   var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+  	var y = d.getFullYear()-c.getFullYear();
+   	var m = d.getMonth()-c.getMonth();
+    var da = d.getDate()-c.getDate();
+    if(da<0)
+    {
+    	m--;
+        da = x+ da;
+	}
+    if(m<0)
+    {
+    	y--;
+        m = 12+ m;
+	}
+
+  var dd = (d.getTime() - c.getTime())/(1000 * 3600 * 24);
+  if(y>=0)
+  {
+    document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${dd}`;
+  }
+  else{
+    
+    document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${-dd}`;
+
+  }
+  
+}
