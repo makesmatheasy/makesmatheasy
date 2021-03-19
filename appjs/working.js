@@ -51,6 +51,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#algebraic-idencollapsebtn").click(function () {
+        openit("#algebraic-idencollapse");
+        closenav();
+        clearall();
+    });
 
     $("#differentiate").click(function () {
         openit("#differentiatecollapse");
@@ -120,6 +125,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
@@ -172,6 +178,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+  
 
     $("#curconbtn").click(function () {
         openit("#curconcal");
