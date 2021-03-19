@@ -164,6 +164,7 @@ function openit(id) {
     "#home",
     "#curconcal",
     "#factorial",
+    "#log_values",
     "#pandc",
     "#interest",
     "#decimal-binary",
@@ -191,7 +192,7 @@ function loadfilesafterload() {
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
     "appjs/complexlogic.js",
-
+    "appjs/logValue.js",
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",
   ];
@@ -282,7 +283,7 @@ function checkfavourite() {
   }
   if (ar.length != 0) {
     for (i = 0; i < ar.length; i++) {
-      var el = document.createElement("span");
+      var el = document.createElement("li");
       el.textContent = ar[i];
       el.className = "favourites";
       el.style.color = "white";
@@ -299,6 +300,14 @@ function checkfavourite() {
     }
   }
 }
+
+$(document).on('click',' .favourites ',function(){
+  $(this).addClass('favnew');
+  $(this).siblings().removeClass('favnew');
+});
+$(document).on('hover',' .favnew ',function(){
+  $(this).addClass('favourites');
+});
 
 function removefavourite() {
   localStorage.removeItem("favouritearray");

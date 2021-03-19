@@ -388,7 +388,16 @@ function checkfunctionsmultiple() {
         document.getElementById('generatedmatrix2').innerHTML = '';
         document.getElementById('signofmatrix').innerHTML = '';
 
-    } else {
+    }
+	else if(parseInt(r1) <=0 || parseInt(r2) <=0 || parseInt(c1) <=0 || parseInt(c2) <=0)
+	{
+		 document.getElementById('mmatrixerror').innerHTML = "<center>Please enter positive integers for the dimensions.</center>";
+		 removeall('generatedmatrix1');
+         removeall('generatedmatrix2');
+	}
+	   
+	else {
+		removeall('mmatrixerror');
         creatematrix2();
         creatematrix1();
         if (r1 == r2 && c1 == c2) {
@@ -1106,11 +1115,22 @@ function checkfunctions() {
         document.getElementById('singlematrixresult').innerHTML = '';
         removeall('generatedmatrixsingle');
     }
+	else if(parseInt(row) <=0 || parseInt(column) <=0)
+	{
+		 document.getElementById('smatrixerror').innerHTML = "<center>Please enter positive integers for the dimensions.</center>";
+		 removeall('generatedmatrixsingle');
+	}
+	else
+	   removeall('smatrixerror');
     if (row != column && row != '' && column != '') {
         creatematrixsingle();
         addop('sopval', 'Select Operation')
         addop('sopval', 'Transpose')
+<<<<<<< HEAD
         addop('sopval', 'Rank')
+=======
+		
+>>>>>>> upstream/main
     }
     if (row == column) {
         creatematrixsingle();

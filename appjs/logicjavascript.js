@@ -1447,7 +1447,7 @@ function checklimit() {
 function printtable() {
   var temp =
     "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
-  var num = parseInt(document.getElementById("numtable").value);
+  var num = parseFloat(document.getElementById("numtable").value);
   var end = parseInt(document.getElementById("numending").value);
 
   if (num == "" && end == "") {
@@ -1461,7 +1461,7 @@ function printtable() {
         "</td><td>×</td><td>" +
         i +
         "</td><td>=</td><td>" +
-        num * i +
+        (num * i).toFixed(2) +
         "</td>";
       temp += "</tr>";
     }
@@ -3735,7 +3735,7 @@ function Mode() {
     }
   }
 
-  if (modes.length === Object.keys(frequencyTable).length) modes = [];
+  if (modes.length === arr.length) modes = [];
   if (arr.length === 0) {
     document.getElementById("Meanresult").innerHTML = `No Number Added`;
   } else {
