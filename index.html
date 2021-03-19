@@ -984,14 +984,15 @@
                     <div class="autocomplete" id="search-txt">
                         <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
                     </div>
-                    <span type="button" class="searchbtn"
-                        onclick="searchgoogle(document.getElementById('myInput').value)"><img
-                            style="height:2.375rem;padding:0.625rem;filter:none;" src="icons/loupe.png"></span>
-
-                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                            style="height:1.5625rem;display:inline;margin: -1.25rem;position: relative;z-index:10;cursor: pointer;filter:none;"
+                    <div class="d-flex justify-content-end">
+                        <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                            style="height:1.5625rem;display:inline; margin-top: 0rem; margin-bottom: -0.9rem; position: relative;z-index:10;cursor: pointer;filter:none;"
                             src="images/speechlogo.png"></span>
 
+                        <span type="button" class="searchbtn"
+                        onclick="searchgoogle(document.getElementById('myInput').value)"><img
+                            style="height:2.375rem; padding:0.525rem; filter:none;" src="icons/loupe.png"></span>
+                    </div>
                 </div>
             </form>
         </div>
