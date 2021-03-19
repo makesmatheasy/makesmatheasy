@@ -3493,10 +3493,11 @@ function sum_n_apsol(nval,rval,r1val)
    let cal;
    if(!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d)))
    {
-       explain.innerHTML += "Formula of Sum of Nterms of an Arithmetic Progression is: n/2[2a + (n – 1)d]" ;
+       explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[2a+(n-1)d\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
-       res.innerHTML += `Result: ${cal}`;
+       res.innerHTML = `Result: ${cal}`;
        console.log(res);
+       renderMathInElement(document.getElementById("sumAP_formula"));
    }
 }
 
