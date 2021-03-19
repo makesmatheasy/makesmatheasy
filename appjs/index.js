@@ -173,7 +173,6 @@ function openit(id) {
 	  "#binary-hexadecimal",
     "#inversetrigonoiden",
     "#prime",
-    "#datecal",
     "#sum_n_AP",
   ];
   for (i = 0; i < ids.length; i++) {
