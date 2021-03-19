@@ -1878,6 +1878,51 @@ function solveSlope()
   }
   
 }
+
+// ellipse calculator function
+
+function solveellipse() {
+  var a = document.getElementById("inputfirstaxis").value;
+  var b = document.getElementById("inputsecondaxis").value;
+  var areaoutput = document.getElementById("resultofareae");
+  var perimeteroutput = document.getElementById("resultofperimetere");
+  var areatemp = "";
+  var perimetertemp = "";
+  if (a != "" && b!="") {
+    var a2= a*a;
+    var b2= b*b;
+    var ans= a2+b2;
+    var anssqrt = nerdamer.sqrt(ans).toString();
+      anssqrt = eval(anssqrt).toFixed(3);
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\sqrt{" + a +"^2"+"+"+ b + "^2"+ "}\\]";
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\sqrt{" + a2 +"+"+ b2 + "}\\]";
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\sqrt{" + ans + "}\\]";
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\times" + anssqrt +"\\]";
+    perimetertemp += "\\[P=1.414 \\times 3.14 \\times" + anssqrt + "\\]";
+    var sol= 1.414 * 3.14 * anssqrt;
+    perimetertemp +=
+      "\\[Perimeter \\space of \\space Ellipse \\space is \\space" +
+      sol +
+      "\\]";
+    perimeteroutput.innerHTML = perimetertemp;
+
+    areatemp += "\\[A = \\pi \\times" + a + "\\times" + b + " \\]";
+    areatemp += "\\[A = \\pi \\times" + eval(String(a * b)) + "\\]";
+    areatemp += "\\[A=3.14 \\times " + eval(String(a * b)) + " \\]";
+    var ar = eval(String("3.14*" + String(a * b)));
+    areatemp += "\\[A=" + ar + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Ellipse \\space is \\space " + ar + "\\]";
+    areaoutput.innerHTML = areatemp;
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+  }
+}
+
+
 //shapes calculator
 //-----------------------------------------------------
 //3-D Shapes Calculator
