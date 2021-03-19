@@ -583,7 +583,7 @@ function rank(){
                             let temp=matrixsingle[k][i];
                             matrixsingle[k][i]=matrixsingle[k][rank];
                             matrixsingle[k][rank]=temp;
-                        //matrixsingle[k][i]=matrixsingle[k][rank];
+                        
                         }
                     }
                     
@@ -656,7 +656,6 @@ function rank(){
         rankexplanation+="\\[Count \\space number\\space of \\space non \\space zero \\space rows/columns,\\space that \\space will \\space be \\space rank.\\\\Rank\\space Of \\space Matrix="+ rank +"\\]";
         rankexplanation+="</div>";
         document.getElementById('singlematrixresult').innerHTML=  "\\[Rank \\space Of \\space Matrix=" + rank + "\\]";
-        //displaymatrix('Transposed\\space Matrix', matrixsingle, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
         document.getElementById('singlematrixexplanation').innerHTML =rankexplanation;
         renderMathInElement(document.getElementById('singlematrixexplanation'));
         renderMathInElement(document.getElementById('singlematrixresult'));
