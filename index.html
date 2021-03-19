@@ -448,6 +448,23 @@
 
                 </li>
 
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;" onclick="display_log()">
+                                <a id="logValues" style="font-size:15px;cursor: pointer;background:transparent;border:none;">Logarithm
+                                    Calculator</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Logarithm Values','#log_values','c','logimgfav')"><img id="logimgfav"
+                                        src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                
+                </li>
+
                 <li>
                     <table class="table">
                         <tr>
@@ -803,6 +820,8 @@
                 <div class="dropdown-divider"></div>
             </div>
 
+
+
             <!-- Binary Calculations Section -->
 
             <li class="list_menu_items" onclick="collapseit('binary-calculations'); changeImage8();"><a
@@ -855,6 +874,8 @@
 
 
                 <!--end-->
+
+                
 
 
 
@@ -1105,6 +1126,35 @@
 
             </div>
             <!--        end factors-->
+
+            <!-- log values ------------------------------------------------------------->
+            
+            <div class="collapse" id="log_values">
+            
+                <fieldset class="form-group">
+                    <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log Calculator</legend>
+                    <strong style="font-size: 30px; color: aliceblue;">log</strong>
+                    <sub><input type="number" min="1" max="9999" step="1" name="log-base" id="log-base" placeholder="Number"
+                            value="" required="">
+                    </sub>
+                    <sup><input type="number" min="1" max="999999999" name="x-number" id="x-number" placeholder="Number"
+                            class="fontbig" value="" required=""></sup>
+            
+                </fieldset>
+            
+                <button type="button" class="btn btn-light" style="margin-top: 40px" ; onclick="cal_log()">
+                    FIND LOG
+                </button>
+            
+                <div class="form-group" style=" margin-top: 40px ; color: aliceblue display: inline;">
+                    <h2 id="result">log<sub id="base_1">y</sub> (<var id="no_1">x</var>) = <var id="answer"></var></h2>
+                </div>
+            
+            
+            </div>
+            
+            
+            <!-- end of log - values ----------------------------------------------------->
 
             <div class="collapse" id="table">
                 <div class="form-group num-limit" style="display: inline-block;">
@@ -4425,6 +4475,12 @@
                 <script src="nerdamer/Calculus.js"></script>
                 <script src="nerdamer/Solve.js"></script>
                 <script src="nerdamer/Extra.js"></script>
+
+
+                <!-- For Log Calculator -->
+                <script  type="text/javascript" src="appjs/logValue.js"></script>
+
+
                 <script>
                     if ('serviceWorker in navigator') {
                         navigator.serviceWorker.register('service-worker.js')
