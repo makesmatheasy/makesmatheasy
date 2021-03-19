@@ -224,7 +224,7 @@
         </p>
     </div>
 
-    <ol id="favourite" class="sticky-bottom"></ol>
+    <ul id="favourite"></ul>
     <nav id="navbar-main" style="z-index:30">
         <ul id="slide-out" class="sidenav ulstyle">
             <li class="listyle home list_menu_items" style="margin-top: 1.25rem;"><a id="homeoption"
@@ -439,7 +439,7 @@
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">LCM/HCF/Factors</a>
                             </td>
                             <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('LCM/HCF/Factors','#factors','c','facimgfav')"><img
+                                <span onclick="addtofavourite('LCM/HCF /Factors','#factors','c','facimgfav')"><img
                                         id="facimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -686,7 +686,7 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Ascending/Descending','#orderit','d','orderitimgfav')"><img
+                                    onclick="addtofavourite('Ascending /Descending','#orderit','d','orderitimgfav')"><img
                                         id="orderitimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -967,12 +967,14 @@
     </nav>
 
     <div id="main" style="z-index:31;">
-        <div class="form-group">
+        <div class="form-group" style="margin-top:1rem">
             <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
                 class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
                     style="cursor:pointer; height: 40px;padding-left: 0.625rem;"></span>
             <span onclick="opencal()"><img src="icons/keys.svg"
-                    style="cursor:pointer;display:inline;position:relative;height:40px;float:right;z-index:20;padding-right: 0.625rem;"></span>
+                    style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;"></span>
+            <button id="fav-button" onclick="collapseit('favourite')"> <span style="font-size:135%;" >&starf;</span>  Favourite </button>  
+
         </div>
 
 

@@ -283,7 +283,7 @@ function checkfavourite() {
   }
   if (ar.length != 0) {
     for (i = 0; i < ar.length; i++) {
-      var el = document.createElement("span");
+      var el = document.createElement("li");
       el.textContent = ar[i];
       el.className = "favourites";
       el.style.color = "white";
@@ -300,6 +300,14 @@ function checkfavourite() {
     }
   }
 }
+
+$(document).on('click',' .favourites ',function(){
+  $(this).addClass('favnew');
+  $(this).siblings().removeClass('favnew');
+});
+$(document).on('hover',' .favnew ',function(){
+  $(this).addClass('favourites');
+});
 
 function removefavourite() {
   localStorage.removeItem("favouritearray");
