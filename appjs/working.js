@@ -115,6 +115,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#datebtn").click(function () {
+        openit("#datecal");
+        closenav();
+        clearall();
+    });
     $("#trigonoidenbutton").click(function () {
         openit("#trigonoiden");
         closenav();
@@ -184,7 +189,19 @@ $(document).ready(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });    
+    });  
+     // Sumof nterms of an Arithmetic Progression 
+     $("#APbtn").click(function () {
+        openit("#sum_n_AP");
+        closenav();
+        clearall();
+    }); 
+    // algebraic equations formula lists
+    $("#algebraic_formulacollapsebtn").click(function () {
+    openit("#algebraic_formulascollapse");
+    closenav();
+    clearall();
+     }); 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
