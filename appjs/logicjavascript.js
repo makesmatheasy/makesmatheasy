@@ -1856,7 +1856,7 @@ function solveSlope()
   {
     document.getElementById("resultofline").innerHTML="Enter all four points";
     document.getElementById("answerofline").innerHTML="";
-    document.getElementById("answer").innerHTML="";
+    document.getElementById("answerofline2").innerHTML="";
 
   }
   else if(parseInt(x2)-parseInt(x1)==0)
@@ -1871,9 +1871,9 @@ function solveSlope()
      let sol2="\\[Slope="+temp+"\\]";
      document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
      document.getElementById("answerofline").innerHTML=sol;
-     document.getElementById("answer").innerHTML=sol2;
+     document.getElementById("answerofline2").innerHTML=sol2;
      renderMathInElement(document.getElementById("answerofline"));
-     renderMathInElement(document.getElementById("answer"));
+     renderMathInElement(document.getElementById("answerofline2"));
      renderMathInElement(document.getElementById("resultofline"));
   }
   
