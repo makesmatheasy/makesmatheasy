@@ -538,9 +538,23 @@
                             </td>
                         </tr>
                     </table>
-
                 </li>
 
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="profitlossbutton"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Profit Loss Calculations</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Profit Loss Calculations','#profitloss','c','plimgfav')"><img
+                                        id="plimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
 
                 <li>
                     <table class="table">
@@ -2489,6 +2503,18 @@
                 </div>
             </div>
 
+            <div class="collapse" id="profitloss">
+                <h2>Profit Loss calculations</h2>
+                <br>
+                <input style="width: 275px;" type="text" class="form__field" placeholder="Enter cost price" id="cp">
+                <input style="width: 275px;" type="text" class="form__field" placeholder="Enter selling price" id="sp">
+                <br><br>
+                <button class="btn btn-light" onclick=profitloss()>Submit</button>
+                <br><br>
+                <h5 id="profit">Profit = 0</h5>
+                <br>
+                <h5 id="loss">Loss = 0</h5>
+            </div>
 
             <!-- Currency convert -->
             <div>
