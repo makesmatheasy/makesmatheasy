@@ -3811,6 +3811,89 @@ function Mode() {
   }
 }
 //Mode end
+//Variance
+function Variance() {
+  var s = 0,ans=0;
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val = val.split(" ");
+  val = val.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len = parseInt(val.length);
+  for (i = 0; i < len; i++) {
+    s = s + parseInt(val[i]);
+  }
+  if (val.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+	document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;  
+    var mean = s / len;
+	for (i = 0; i < len; i++) {
+    num=parseInt(val[i]);
+	ans= ans+Math.pow(num-mean,2);
+	if(i==0)
+	{ 
+		document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num-mean,2))}`;
+	}
+	else
+	{
+	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;	
+	}
+    }
+	document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
+	document.getElementById("Meanresult").innerHTML += ans;
+	document.getElementById("Meanresult").innerHTML += `/${val.length} &nbsp;= <br>`;
+	ans=ans/len;
+	document.getElementById("Meanresult").innerHTML += ans;
+    }
+   
+    
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+// Standard Deviation
+function std() {
+  var s = 0,ans=0;
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val = val.split(" ");
+  val = val.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len = parseInt(val.length);
+  for (i = 0; i < len; i++) {
+    s = s + parseInt(val[i]);
+  }
+  if (val.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+	document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;  
+    var mean = s / len;
+	for (i = 0; i < len; i++) {
+    num=parseInt(val[i]);
+	ans= ans+Math.pow(num-mean,2);
+	if(i==0)
+	{ 
+		document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num-mean,2))}`;
+	}
+	else
+	{
+	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;	
+	}
+    }
+	document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
+	document.getElementById("Meanresult").innerHTML += `&#8730; ${ans}`;
+	document.getElementById("Meanresult").innerHTML += `/ &#8730;${val.length} &nbsp;= <br>`;
+	ans=ans/len;
+	document.getElementById("Meanresult").innerHTML += `&#8730; ${ans} &nbsp; = &nbsp`;
+	ans=Math.sqrt(ans);
+	document.getElementById("Meanresult").innerHTML += ans;
+    }
+   
+    
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+// standard deviation end
 
 ///////// Binary and Decimal Conversion ///////////
 
