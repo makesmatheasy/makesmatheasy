@@ -3527,6 +3527,22 @@ function factorialsol(factorialval) {
     ans.innerHTML += calc;
   }
 }
+// profit loss calculations
+function profitloss(){
+  var cp = document.getElementById("cp").value
+  var sp = document.getElementById("sp").value
+  if(cp>sp){
+    var loss = cp-sp;
+    document.getElementById("loss").innerHTML = "Loss = "+ loss
+    document.getElementById("profit").innerHTML = "Profit = 0"
+  }
+  else {
+    var profit = sp-cp;
+    document.getElementById("profit").innerHTML = "Profit = " + profit
+    document.getElementById("loss").innerHTML = "Loss = 0"
+  }
+}
+
 //sum of nterms of an Arithmetic Progression
 function sum_n_apsol(nval,rval,r1val)
 {
