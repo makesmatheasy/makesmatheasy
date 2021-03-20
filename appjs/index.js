@@ -175,6 +175,7 @@ function openit(id) {
     "#datecal",
     "#prime",
     "#sum_n_AP",
+    "#algebraic_formulascollapse",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
