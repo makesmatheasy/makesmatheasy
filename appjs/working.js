@@ -218,7 +218,21 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#parabolacollapsebtn").click(function(){
+        openit("#parabolacollapse");
+        closenav();
+        clearall();
+    });
+    $("#ellipsecollapsebtn").click(function(){
+        openit("#ellipsecollapse");
+        closenav();
+        clearall();
+    });
+    $("#hyperbolacollapsebtn").click(function(){
+        openit("#hyperbolacollapse");
+        closenav();
+        clearall();
+    });
 
 
 });

@@ -173,6 +173,9 @@ function openit(id) {
 	  "#binary-hexadecimal",
     "#inversetrigonoiden", 
     "#prime",
+    "#parabolacollapse",
+    "#ellipsecollapse",
+    "#hyperbolacollapse",
    
   ];
   for (i = 0; i < ids.length; i++) {
