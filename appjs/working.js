@@ -51,6 +51,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();

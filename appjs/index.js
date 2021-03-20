@@ -180,7 +180,7 @@ function openit(id) {
     "#ellipsecollapse",
     "#hyperbolacollapse",
    
-=======
+
     "#inversetrigonoiden",
     "#datecal",
     "#prime",
@@ -188,7 +188,7 @@ function openit(id) {
     "#algebraic_formulascollapse",
 
 
-=======
+
     "#expansion",
 
   ];
