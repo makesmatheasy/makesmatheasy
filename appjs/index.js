@@ -142,7 +142,7 @@ function openit(id) {
     "#mulsolwithsteps",
     "#table",
     "#shapescal",
-	"#tdshapescal",
+	  "#tdshapescal",
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
@@ -156,6 +156,7 @@ function openit(id) {
     "#matrixcollapse",
     "#multiplematrixcollapse",
     "#singlematrixcollapse",
+    "#algebraic-idencollapse",
     "#about",
     "#rootsquadratic",
     "#plotgraph",
@@ -171,12 +172,25 @@ function openit(id) {
     "#bitwise-calc",
     "#octal-binary",    
 	  "#binary-hexadecimal",
+    
+
+    "#inversetrigonoiden", 
+    "#prime",
+    "#parabolacollapse",
+    "#ellipsecollapse",
+    "#hyperbolacollapse",
+   
+
     "#inversetrigonoiden",
     "#datecal",
     "#prime",
     "#sum_n_AP",
     "#algebraic_formulascollapse",
+
+
+
     "#expansion",
+
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

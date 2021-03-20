@@ -51,6 +51,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    
+    $("#algebraic-idencollapsebtn").click(function () {
+        openit("#algebraic-idencollapse");
+        closenav();
+        clearall();
+    });
 
     $("#differentiate").click(function () {
         openit("#differentiatecollapse");
@@ -130,6 +136,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
@@ -182,6 +189,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+  
 
     $("#curconbtn").click(function () {
         openit("#curconcal");
@@ -233,7 +241,21 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#parabolacollapsebtn").click(function(){
+        openit("#parabolacollapse");
+        closenav();
+        clearall();
+    });
+    $("#ellipsecollapsebtn").click(function(){
+        openit("#ellipsecollapse");
+        closenav();
+        clearall();
+    });
+    $("#hyperbolacollapsebtn").click(function(){
+        openit("#hyperbolacollapse");
+        closenav();
+        clearall();
+    });
 
 
 });
