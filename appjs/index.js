@@ -187,6 +187,10 @@ function openit(id) {
     "#sum_n_AP",
     "#algebraic_formulascollapse",
 
+
+=======
+    "#expansion",
+
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

@@ -125,6 +125,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#expansionbutton").click(function () {
+        openit("#expansion");
+        closenav();
+        clearall();
+    })
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
