@@ -1447,7 +1447,7 @@ function checklimit() {
 function printtable() {
   var temp =
     "<table class='table table-bordered' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
-  var num = parseInt(document.getElementById("numtable").value);
+  var num = parseFloat(document.getElementById("numtable").value);
   var end = parseInt(document.getElementById("numending").value);
 
   if (num == "" && end == "") {
@@ -1461,7 +1461,7 @@ function printtable() {
         "</td><td>×</td><td>" +
         i +
         "</td><td>=</td><td>" +
-        num * i +
+        (num * i).toFixed(2) +
         "</td>";
       temp += "</tr>";
     }
@@ -1878,6 +1878,51 @@ function solveSlope()
   }
   
 }
+
+// ellipse calculator function
+
+function solveellipse() {
+  var a = document.getElementById("inputfirstaxis").value;
+  var b = document.getElementById("inputsecondaxis").value;
+  var areaoutput = document.getElementById("resultofareae");
+  var perimeteroutput = document.getElementById("resultofperimetere");
+  var areatemp = "";
+  var perimetertemp = "";
+  if (a != "" && b!="") {
+    var a2= a*a;
+    var b2= b*b;
+    var ans= a2+b2;
+    var anssqrt = nerdamer.sqrt(ans).toString();
+      anssqrt = eval(anssqrt).toFixed(3);
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\sqrt{" + a +"^2"+"+"+ b + "^2"+ "}\\]";
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\sqrt{" + a2 +"+"+ b2 + "}\\]";
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\sqrt{" + ans + "}\\]";
+    perimetertemp += "\\[P=\\sqrt{2}\\times \\pi \\times" + anssqrt +"\\]";
+    perimetertemp += "\\[P=1.414 \\times 3.14 \\times" + anssqrt + "\\]";
+    var sol= 1.414 * 3.14 * anssqrt;
+    perimetertemp +=
+      "\\[Perimeter \\space of \\space Ellipse \\space is \\space" +
+      sol +
+      "\\]";
+    perimeteroutput.innerHTML = perimetertemp;
+
+    areatemp += "\\[A = \\pi \\times" + a + "\\times" + b + " \\]";
+    areatemp += "\\[A = \\pi \\times" + eval(String(a * b)) + "\\]";
+    areatemp += "\\[A=3.14 \\times " + eval(String(a * b)) + " \\]";
+    var ar = eval(String("3.14*" + String(a * b)));
+    areatemp += "\\[A=" + ar + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Ellipse \\space is \\space " + ar + "\\]";
+    areaoutput.innerHTML = areatemp;
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+  }
+}
+
+
 //shapes calculator
 //-----------------------------------------------------
 //3-D Shapes Calculator
@@ -3752,7 +3797,7 @@ function Mode() {
     }
   }
 
-  if (modes.length === Object.keys(frequencyTable).length) modes = [];
+  if (modes.length === arr.length) modes = [];
   if (arr.length === 0) {
     document.getElementById("Meanresult").innerHTML = `No Number Added`;
   } else {
@@ -3766,6 +3811,89 @@ function Mode() {
   }
 }
 //Mode end
+//Variance
+function Variance() {
+  var s = 0,ans=0;
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val = val.split(" ");
+  val = val.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len = parseInt(val.length);
+  for (i = 0; i < len; i++) {
+    s = s + parseInt(val[i]);
+  }
+  if (val.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+	document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;  
+    var mean = s / len;
+	for (i = 0; i < len; i++) {
+    num=parseInt(val[i]);
+	ans= ans+Math.pow(num-mean,2);
+	if(i==0)
+	{ 
+		document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num-mean,2))}`;
+	}
+	else
+	{
+	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;	
+	}
+    }
+	document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
+	document.getElementById("Meanresult").innerHTML += ans;
+	document.getElementById("Meanresult").innerHTML += `/${val.length} &nbsp;= <br>`;
+	ans=ans/len;
+	document.getElementById("Meanresult").innerHTML += ans;
+    }
+   
+    
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+// Standard Deviation
+function std() {
+  var s = 0,ans=0;
+  document.getElementById("Meanresult").innerHTML = "";
+  var val = document.getElementById("getNum").value;
+  val = val.split(" ");
+  val = val.filter(function (str) {
+    return /\S/.test(str);
+  });
+  var len = parseInt(val.length);
+  for (i = 0; i < len; i++) {
+    s = s + parseInt(val[i]);
+  }
+  if (val.length === 0) {
+    document.getElementById("Meanresult").innerHTML = `No Number Added`;
+  } else {
+	document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;  
+    var mean = s / len;
+	for (i = 0; i < len; i++) {
+    num=parseInt(val[i]);
+	ans= ans+Math.pow(num-mean,2);
+	if(i==0)
+	{ 
+		document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num-mean,2))}`;
+	}
+	else
+	{
+	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;	
+	}
+    }
+	document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
+	document.getElementById("Meanresult").innerHTML += `&#8730; ${ans}`;
+	document.getElementById("Meanresult").innerHTML += `/ &#8730;${val.length} &nbsp;= <br>`;
+	ans=ans/len;
+	document.getElementById("Meanresult").innerHTML += `&#8730; ${ans} &nbsp; = &nbsp`;
+	ans=Math.sqrt(ans);
+	document.getElementById("Meanresult").innerHTML += ans;
+    }
+   
+    
+    renderMathInElement(document.getElementById("Meanresult"));
+  }
+// standard deviation end
 
 ///////// Binary and Decimal Conversion ///////////
 
@@ -3900,5 +4028,40 @@ function convertBinhex() {
   else to = 16;
 
   result.innerHTML = parseInt(input, from).toString(to);
+}
+//--------------------------------------------------------------------------------
+
+////////////////////date calculator///////////
+function datecal()
+{
+   var c = new Date(Date.parse(document.getElementById("datef").value));
+   var d = new Date(Date.parse(document.getElementById("datet").value));   
+   var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+  	var y = d.getFullYear()-c.getFullYear();
+   	var m = d.getMonth()-c.getMonth();
+    var da = d.getDate()-c.getDate();
+    if(da<0)
+    {
+    	m--;
+        da = x+ da;
+	}
+    if(m<0)
+    {
+    	y--;
+        m = 12+ m;
+	}
+
+  var dd = (d.getTime() - c.getTime())/(1000 * 3600 * 24);
+  if(y>=0)
+  {
+    document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${dd}`;
+  }
+  else{
+
+    document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${-dd}`;
+
+  }
 }
 //--------------------------------------------------------------------------------
