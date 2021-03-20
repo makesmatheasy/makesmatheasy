@@ -189,7 +189,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
-    
+    // algebraic equations formula lists
+    $("#algebraic_formulacollapsebtn").click(function () {
+    openit("#algebraic_formulascollapse");
+    closenav();
+    clearall();
+     }); 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");

@@ -250,6 +250,7 @@
                         </tr>
                     </table>
                 </li>
+    
                 <div class="dropdown-divider"></div>
             </div>
 
@@ -806,8 +807,26 @@
                     style="cursor: pointer;font-size: 1rem;">Equations<img class="dropdownlogo"
                         src="icons/down-chevron.svg" id="imgClickAndChange7"></a>
             </li>
+   
             <div class="collapse" id="equationsolutions" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
                 <div class="dropdown-divider"></div>
+                <!--Algebraic list of formulas-->
+                         <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+                                        <a id="algebraic_formulacollapsebtn"
+                                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Algebraic Equations Formulas</a>
+                                    </td>
+                                    <td style="float:right;border-top: none;">
+                                        <span onclick="addtofavourite('Algebraic Equations Formulas','#algebraic_formulascollapse','c','formulafav')"><img
+                                                id="formulafav" src="images/unfavourite.png"
+                                                style="height:1.5625rem;filter: none;"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                <!--Algebraic list of formulas end-->
                 <li>
                     <table class="table">
                         <tr>
@@ -1920,7 +1939,32 @@
 
 
             </div>
-
+            <!--algebraic formulas list starts-->
+            <div class="collapse" id="algebraic_formulascollapse">
+                <div class="stopwrap">
+                    <div class="coll">
+                        <div class="left">
+                            <h4>Algebraic Equations Formulas</h4>
+                            <p>\[1)\space a^2-b^2\space =(a-b)(a+b)\]</p>
+                            <p>\[2)\space (a+b)^2\space =a^2+2ab+b^2\]</p>
+                            <p>\[3)\space a^2+b^2\space =(a+b)^2-2ab\]</p>
+                            <p>\[4)\space (a-b)^2\space =a^2-2ab+b^2\]</p>
+                            <p>\[5)\space (a+b+c)^2\space =a^2+b^2+c^2+2ab+2bc+2ca\]</p>
+                            <p>\[6)\space (a-b-c)^2\space =a^2+b^2+c^2-2ab+2bc-2ca\]</p>
+                            <p>\[7)\space (a+b)^3\space =a^3+b^3+3a^2b+3ab^2\]</p>
+                            <p>\[8)\space (a-b)^3\space =a^3-b^3-3a^2b+3ab^2\]</p>
+                            <p>\[9)\space a^3-b^3\space =(a-b)(a^2+ab+b^2)\]</p>
+                            <p>\[10)\space a^3+b^3\space =(a+b)(a^2-ab+b^2)\]</p>
+                            <p>\[11)\space (a+b)^4\space =a^4+4a^3b+6a^2b^2+4ab^3+b^4\]</p>
+                            <p>\[12)\space (a-b)^4\space =a^4-4a^3b+6a^2b^2-4ab^3+b^4\]</p>
+                            <p>\[13)\space a^4-b^4\space =(a-b)(a+b)(a^2+b^2)\]</p>
+                            <p>\[14)\space a^5-b^5\space =(a-b)(a^4+a^3b+a^2b^2+ab^3+b^4)\]</p>
+                            <p>\[15)\space (a+b+c+...)^2\space =a^2+b^2+c^2+....+2(ab+bc+ca+...)\]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--formulas list ends-->
             <div class="collapse" id="rootsquadratic">
                 <div class="form-group">
                     <p id="quadraticequation">\[f(x)=ax^2+bx+c\]</p>
@@ -2619,6 +2663,7 @@
 
             </div>
             <!--sum of nterms ends-->
+            
             <!-- Permutattiona and combination -->
             <div class="collapse" id="pandc">
                 <form class="form-inline">
