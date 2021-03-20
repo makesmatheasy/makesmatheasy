@@ -24,7 +24,8 @@
 }
 
 body {
-    background-color: var(--appblack);
+    /* background-color: var(--appblack); */
+    background:url("./background1.png");
     font-family:mainfont;
     overflow-x: hidden;
     height:100vh;
