@@ -148,6 +148,7 @@ function openit(id) {
     "#trigonovaluestable",
     "#trigonoiden",
     "#factors",
+    "#fractions",
     "#integralcollapse",
     "#differentiatecollapse",
     "#partialdiffcollapse",
@@ -191,9 +192,10 @@ function loadfilesafterload() {
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
     "appjs/complexlogic.js",
-
+    "appjs/fraction_operation.js",
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",
+    
   ];
   for (i of aroffiles) {
     var scriptelm = document.createElement("script");

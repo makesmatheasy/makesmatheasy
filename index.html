@@ -451,6 +451,23 @@
                 <li>
                     <table class="table">
                         <tr>
+                            <td style="border-top: none;" onclick="display_fractions()">
+                                <a id="fractions_op"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations on
+                                    Fraction</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Operations on Fraction','#fractions','c','facimgfrac')"><img
+                                        id="facimgfrac" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                
+                </li>
+
+                <li>
+                    <table class="table">
+                        <tr>
                             <td style="border-top: none;">
                                 <a id="tableoption"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Multiplication
@@ -1105,6 +1122,53 @@
 
             </div>
             <!--        end factors-->
+
+            <!-- Start of Operatiosn on fractions  -->
+            <div class="collapse" id="fractions">
+
+                <div id="side1" style="display:inline-block; width: 500px;">
+                    <div class="row">
+                        <button cd="twomatrix" class="carddis"
+                            onclick="$('#singlematrixcollapse').slideToggle();$('#multiplematrixcollapse').slideUp();clearall();">
+                            Addition of fractions
+                        </button>
+                    </div>
+                    <div class="row">
+                        <button id="twomatrix1" class="carddis"
+                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                            Subtraction of fractions
+                        </button>
+                    </div>
+                    <div class="row">
+                        <button id="twomatrix" class="carddis"
+                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                            Division of fractions
+                        </button>
+                    </div>
+                </div>
+                <div id="side2" style="margin-left: 50px; display:inline-block; width: 500px;">
+                    <div class="row">
+                        <button id="twomatrix" class="carddis"
+                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                            Multiplication of fractions
+                        </button>
+                    </div>
+                    <div class="row">
+                        <button id="twomatrix" class="carddis"
+                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                            Conversion of Mixed Fraction to an Improper Fraction
+                        </button>
+                    </div>
+                    <div class="row">
+                        <button id="twomatrix" class="carddis"
+                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                            Conversion of an Improper Fraction to Mixed Fraction
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--        end factors-->
+            <!-- End of Operatiosn on fractions   ------------------------------------------>
 
             <div class="collapse" id="table">
                 <div class="form-group num-limit" style="display: inline-block;">
@@ -4380,6 +4444,10 @@
                 <!--    speech recognition start -->
                 <script src="appjs/speechreco.js"></script>
                 <!--    speech recognition ends-->
+
+                <!-- Operation on Fraction -->
+                
+                <script type="text/javascript" src="appjs/fraction_operation.js"></script>
 
                 <!--script files-->
                 <script src="js/jquery.min.js"></script>
