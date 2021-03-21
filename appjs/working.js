@@ -211,12 +211,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    // Sumof nterms of an Arithmetic Progression 
+
+     // Sumof nterms of an Arithmetic Progression 
+
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
         closenav();
         clearall();
-    });
+
+    }); 
+    $("#GPbtn").click(function () {
+        openit("#sum_n_GP");
+        closenav();
+        clearall();
+    }); 
+
     // algebraic equations formula lists
     $("#algebraic_formulacollapsebtn").click(function () {
         openit("#algebraic_formulascollapse");

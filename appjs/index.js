@@ -176,6 +176,7 @@ function openit(id) {
         "#datecal",
         "#prime",
         "#sum_n_AP",
+        "#sum_n_GP",
         "#algebraic_formulascollapse",
         "#expansion",
         "#plotangle",
