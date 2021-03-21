@@ -261,6 +261,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#differentiate-rulecollapsebtn").click(function(){
+        openit("#differentiate-rulecollapse");
+        closenav();
+        clearall();
+    });
 
 
 

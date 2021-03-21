@@ -122,69 +122,6 @@ function collapseit(openit) {
 }
 
 function openit(id) {
-
-  var ids = [
-    "#complexcollapse",
-    "#equationssolver",
-    "#mulsolwithsteps",
-    "#table",
-    "#shapescal",
-	  "#tdshapescal",
-    "#divide",
-    "#simpletrignocollapse",
-    "#trigonovaluestable",
-    "#trigonoiden",
-    "#factors",
-    "#integralcollapse",
-    "#differentiatecollapse",
-    "#partialdiffcollapse",
-    "#laplacecollapse",
-    "#limitscollapse",
-    "#matrixcollapse",
-    "#multiplematrixcollapse",
-    "#singlematrixcollapse",
-    "#algebraic-idencollapse",
-    "#about",
-    "#rootsquadratic",
-    "#plotgraph",
-    "#roundoff",
-    "#unitconcal",
-    "#home",
-    "#curconcal",
-    "#factorial",
-    "#log_values",
-    "#pandc",
-    "#interest",
-    "#decimal-binary",
-    "#bitwise-calc",
-    "#octal-binary",    
-	  "#binary-hexadecimal",
-    
-
-    "#inversetrigonoiden", 
-    "#prime",
-    "#parabolacollapse",
-    "#ellipsecollapse",
-    "#hyperbolacollapse",
-   
-
-    "#inversetrigonoiden",
-    "#datecal",
-    "#prime",
-    "#sum_n_AP",
-    "#algebraic_formulascollapse",
-
-
-
-    "#expansion",
-
-  ];
-  for (i = 0; i < ids.length; i++) {
-    if (ids[i] != id) {
-      $(ids[i]).slideUp();
-    } else {
-      $(String(id)).slideToggle();
-
     var ids = [
         "#complexcollapse",
         "#equationssolver",
@@ -234,6 +171,7 @@ function openit(id) {
         "#expansion",
         "#plotangle",
         "#profitloss",
+        "#differentiate-rulecollapse",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
@@ -242,7 +180,6 @@ function openit(id) {
         } else {
             $(String(id)).slideToggle();
         }
-
     }
 }
 
@@ -453,4 +390,3 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
-  
