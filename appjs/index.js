@@ -172,6 +172,7 @@ function openit(id) {
         "#expansion",
         "#plotangle",
         "#profitloss",
+        "#differentiate-rulecollapse",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
@@ -390,7 +391,3 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
-
-
-
-

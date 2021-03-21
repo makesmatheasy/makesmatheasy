@@ -266,12 +266,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#differentiate-rulecollapsebtn").click(function(){
+        openit("#differentiate-rulecollapse");
+        closenav();
+        clearall();
+    });
+
+
 
   $("#plotangleoption").click(function(){
         openit("#plotangle");
         closenav();
         clearall();
     });
+
 
 
 });
