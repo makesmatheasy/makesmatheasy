@@ -648,6 +648,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="plotangleoption"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
+                                Angle</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Plot Angle','#plotangle','c','plotangfav')"><img
+                                        id="plotangfav" src="images/unfavourite.png" style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="shapescalbtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Shapes
                                 Calculator</a>
@@ -2026,6 +2042,36 @@
                 <p id="plotequationresult" style=""></p>
             </div>
         </div>
+
+
+     <div class="collapse" id="plotangle">
+            <div class="form-group">
+                <input type="number" id="inputangle" class="form__field" placeholder="Enter Angle in Degree"
+                >
+            </div>
+            <div class="form-group">
+                <td>
+                    </td>
+                <button class="btn btn-light" type="button" onclick="angleplot();">
+                    Plot Angle
+                </button>
+                <p>Kindly press the button twice for re-entering the angle</p>
+
+            </div>
+            
+            <div class="form-group">
+                <canvas id="plotangleres" width="1000" height="500" style="border:1px solid #d3d3d3;background-color:white">
+              </canvas>
+                
+            </div>
+        </div>
+
+
+
+
+
+
+
 
         <div class="collapse" id="about">
             <table class="table">
