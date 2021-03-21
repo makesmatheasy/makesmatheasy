@@ -399,6 +399,25 @@
                     </tr>
                 </table>
             </li>
+             <li>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="integration-idencollapsebtn"
+                                        style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Integration
+                                        Formulae</a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                    <span
+                                        onclick="addtofavourite('Integration Formulae','#integration-idencollapse','c','integration-idenfav')"><img
+                                            id="integration-idenfav" src="images/unfavourite.png"
+                                            style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
             <li>
                 <table class="table">
                     <tr>
@@ -1427,6 +1446,8 @@
                     <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
                 </div>
             </div>
+
+
             <div style="display: inline-block;" class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="diffvariableselect"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
@@ -1462,6 +1483,52 @@
             </div>
 
         </div>
+
+        <div class="collapse" id="integration-idencollapse">
+                <div class="stopwrap">
+                    <div class="coll">
+                        <div class="left">
+                            <h4>Integration Formulae</h4>
+                            <p>\[1)\space\int x^n \,dx\space=\frac{x^{(n+1)}}{n+1}+c\]</p>
+                            <p>\[2)\space\int\frac{1}{x}\,dx\space=ln\,|x|+c\]</p>
+                            <p>\[3)\space\int e^x\,dx\space=e^x+c\]</p>
+                            <p>\[4)\space\int a^x\,dx\space=\frac{a^x}{ln\space a}+c\]</p>
+                            <p>\[5)\space\int ln\space x\,dx\space=x\,ln\space x-x+c\]</p>
+                            <p>\[6)\space\int sin\space x\,dx\space=-\,cos\space x+c\]</p>
+                            <p>\[7)\space\int cos\space x\,dx\space=sin\space x+c\]</p>
+                            <p>\[8)\space\int sec^2\space x\,dx\space=tan\space x+c\]</p>
+                            <p>\[9)\space\int cosec^2\space x\,dx\space=-\,cot\space x+c\]</p>
+                            <p>\[10)\space\int sec\space x\space tan\space x\,dx=sec\space x+c\]</p>
+                            <p>\[11)\space\int cosec\space x\space cot\space x\,dx=-\,cosec\space x+c\]</p>
+                            <p>\[12)\space\int\tan\space x\,dx=ln\,|sec\space x|+c\]</p>
+                            <p>\[13)\space\int\cot\space x\,dx=ln\,|sin\space x|=-\,ln\,|cosec\space x|+c\]</p>
+                            <p>\[14)\space\int\sec\space x\,dx=ln\,|tan\space x\,+\,sec\space x|=-\,ln\,|sec\space
+                                x\,-\,tan\space x|+c\]</p>
+                            <p>\[15)\space\int\cosec\space x\,dx=ln\,|cosec\space x\,-\,cot\space
+                                x|=ln\,|tan\,\frac{x}{2}|+c\]</p>
+                            <p>\[16)\space\int\frac{1}{x^2+a^2}\,dx=\frac{1}{a}\,tan^{-1}\lparen\frac{x}{a}\rparen+c\]
+                            </p>
+                            <p>\[17)\space\int\frac{1}{x^2-a^2}\,dx=\frac{1}{2a}\,ln\,|\frac{x-a}{x+a}|+c\]</p>
+                            <p>\[18)\space\int\frac{1}{a^2-x^2}\,dx=\frac{1}{2a}\,ln\,|\frac{x+a}{x-a}|+c\]</p>
+                            <p>\[19)\space\int\frac{1}{\sqrt{a^2-x^2}}\,dx=sin^{-1}(\frac{x}{a})+c\]</p>
+                            <p>\[20)\space\int\frac{1}{\sqrt{a^2+x^2}}\,dx=ln\,|x+\sqrt{x^2+a^2}|+c\]</p>
+                            <p>\[21)\space\int\frac{1}{\sqrt{x^2-a^2}}\,dx=ln\,|x+\sqrt{x^2-a^2}|+c\]</p>
+                            <p>\[22)\space\int\sqrt{a^2-x^2}\,dx=\frac{x}{2}\sqrt{a^2-x^2}\,+\,\frac{a^2}{2}sin^{-1}(\frac{x}{a})+c\]
+                            </p>
+                            <p>\[23)\space\int\sqrt{x^2-a^2}\,dx=\frac{x}{2}\sqrt{x^2-a^2}\,-\,\frac{a^2}{2}ln\,|x+\sqrt{x^2-a^2}|+c\]
+                            </p>
+                            <p>\[24)\space\int\sqrt{x^2+a^2}\,dx=\frac{x}{2}\sqrt{x^2+a^2}\,+\,\frac{a^2}{2}ln\,|x+\sqrt{x^2+a^2}|+c\]
+                            </p>
+                            <p>\[25)\space\int\frac{1}{|x|\,\sqrt{x^2-a^2}}\,dx=\frac{1}{a}\,sec^{-1}\lparen\frac{x}{a}\rparen+c\]
+                            </p>
+                            <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
+                            <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
+                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         <div class="collapse" id="differentiate-rulecollapse">
             <div class="stopwrap">
                 <div class="coll">
