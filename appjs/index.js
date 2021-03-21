@@ -178,6 +178,7 @@ function openit(id) {
         "#sum_n_AP",
         "#algebraic_formulascollapse",
         "#expansion",
+        "#plotangle",
         "#profitloss",
     ];
     console.log(id)

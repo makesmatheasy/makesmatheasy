@@ -899,9 +899,26 @@
                                 <span onclick="addtofavourite('Plot Graph','#plotgraph','c','plotimgfav')"><img
                                         id="plotimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
+
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="plotangleoption"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
+                                Angle</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Plot Angle','#plotangle','c','plotangfav')"><img
+                                        id="plotangfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+
 
                 </li>
                 <li>
@@ -2167,6 +2184,57 @@
                                     <td>\[(bsec\theta,atan\theta)\]</td>
                                     <td>\[\frac{bx}{sec\theta}+\frac{ay}{tan\theta}=b^2+a^2\]</td>
                                     <td>\[c=\frac{m(b^2-a^2)}{\sqrt{a^2m^2-b^2}}\]</td>
+=======
+        <div class="collapse" id="plotangle">
+            <div class="form-group">
+                <input type="number" id="inputangle" class="form__field" placeholder="Enter Angle in Degree"
+                >
+            </div>
+            <div class="form-group">
+                <td>
+                    </td>
+                <button class="btn btn-light" type="button" onclick="angleplot();">
+                    Plot Angle
+                </button>
+                <p>Kindly press the button twice for re-entering the angle</p>
+
+            </div>
+            
+            <div class="form-group">
+                <canvas id="plotangleres" width="1000" height="500" style="border:1px solid #d3d3d3;background-color:white">
+              </canvas>
+                
+            </div>
+        </div>
+
+        <div class="collapse" id="about">
+            <table class="table">
+                <tr>
+                    <td>
+                        <h5>MakesMathEasy solves various math problems along with steps. We provide speedy calculations,
+                            within a few ms. We work together, design, create and produce work that we are proud of. We
+                            believe that <span
+                                    style="color: white;">"MATH IS FUN"!</span><br>
+
+                        </h5>
+                    </td>
+                </tr>
+            </table>
+            <h5><span style="color: white;">The IDEA:</span> We offer mathematics in an enjoyable and
+                easy-to-learn manner.</h5><br>
+
+            <h5><span style="color: white;">Our commitment:</span> The site will continue to grow
+                over time. Keep coming back to find out what has been added.</h5><br>
+
+            <h5><span style="color: white;">Feedback:</span> If you like the site or would like to make comments or
+                even contributions then <a href="contact.html">contact us.</a></h5><br>
+
+            <h5><span style="color: white;">Developed By:</span> Rajinderpal Singh <span class="badge badge-light"
+                                                                                         style="cursor:pointer;"
+                                                                                         onclick="window.open('https://sairish2001.github.io')">Sairish</span>
+            </h5>
+        </div>
+
 
                                 </tr>
 

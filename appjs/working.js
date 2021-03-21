@@ -272,6 +272,12 @@ $(document).ready(function () {
         clearall();
     });
 
+  $("#plotangleoption").click(function(){
+        openit("#plotangle");
+        closenav();
+        clearall();
+    });
+
 
 });
 
