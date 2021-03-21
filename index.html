@@ -3256,6 +3256,7 @@
             <div class="text-center">
                 <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
             </div>
+            <h4>If first term,number of terms and common difference is given</h4><br>
             <form class="form-inline">
                 <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
@@ -3275,7 +3276,21 @@
                 <p id="sum_APsolprint" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                    align="right"></p>
             </div>
-
+            <br><br><br>
+            <h4>If first term,number of terms and last term is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft" placeholder="Enter the first term(a) "
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt" placeholder="Enter the last term(l)"
+                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=anotherap()>
+                Solve
+                </button>
+            </form>    
+            <h5 id="ltap"></h5>
+            <h5 id="formula"></h5>
         </div>
         <!--sum of nterms in A.P. ends-->
 
