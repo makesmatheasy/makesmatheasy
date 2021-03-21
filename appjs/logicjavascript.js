@@ -1544,6 +1544,169 @@ function equilateraltrianglearea() {
   }
 }
 
+// created function for right angle triangle
+function solverightangletriangle() {
+  var base = document.getElementById("inputbase").value;
+  var height = document.getElementById("inputheight").value;
+  var areaoutput = document.getElementById("resultofarearat");
+  var perimeteroutput = document.getElementById("resultofperirat");
+  var hypooutput = document.getElementById("resultofhyporat");
+  var areatemp = "";
+  var perimetertemp = "";
+  var hypotemp = "";
+  if (base != "" && height!= "") {
+    var base2 = base * base;
+      var height2 = height * height;
+      var add2 = eval(String(base2 + height2));
+      var add2sqrt = nerdamer.sqrt(add2).toString();
+
+      hypotemp  += "\\[H=\\sqrt{" + base + "^2" + "+" + height +"^2" + "}\\]";
+      hypotemp +="\\[H= \\sqrt{" + base2 + "+" + height2 + "}\\]";
+      hypotemp +="\\[H= \\sqrt{" + add2 + "}\\]";
+      hypotemp += "\\[H=" + eval(add2sqrt).toFixed(3) + "\\]";
+    hypotemp += "\\[Hypotenuse \\space of \\space Triangle \\space is \\space" +
+      eval(add2sqrt).toFixed(3) + "\\]";
+      hypooutput.innerHTML = hypotemp;
+
+        var hypovar=eval(add2sqrt).toFixed(3);
+
+    perimetertemp += "\\[P=" + base + "+" + height + "+" + hypovar +  "\\]";
+    perimetertemp +=
+      "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
+      eval(String(base)+ "+" +String(height)+ "+" + String(hypovar)) +
+      "\\]";
+    perimeteroutput.innerHTML = perimetertemp;
+
+    areatemp += "\\[A = \\frac{1}{2} \\times " + base + "\\times" + height +  "\\]";
+    areatemp += "\\[A = \\frac{1}{2} (" + eval(String(base* height)) + ")\\]";
+    var a = eval(String("0.5*" + String(base * height)));
+    areatemp += "\\[A=" + a + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Triangle \\space is \\space " + a + "\\]";
+    areaoutput.innerHTML = areatemp;
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+    renderMathInElement(hypooutput);
+
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+    hypooutput.innerHTML = "";
+  }
+}
+
+// created function for scalene triangle
+function solvescalenetriangle() {
+  var sidea = document.getElementById("inputfirstside").value;
+  var sideb = document.getElementById("inputsecondside").value;
+  var sidec = document.getElementById("inputthirdside").value;
+  var areaoutput = document.getElementById("resultofareast");
+  var perimeteroutput = document.getElementById("resultofperist");
+  var semiperioutput = document.getElementById("resultofsemiperist");
+  var areatemp = "";
+  var perimetertemp = "";
+  var semiperitemp = "";
+  if (sidea != "" && sideb != "" && sidec != "") {
+    
+      perimetertemp += "\\[P=" + sidea + "+" + sideb + "+" + sidec +  "\\]";
+      perimetertemp +=
+        "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
+        eval(String(sidea)+ "+" +String(sideb)+ "+" + String(sidec)) +
+        "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
+
+    semiperitemp += "\\[P=\\frac{" + sidea + "+" + sideb + "+" + sidec + "}{2}" +"\\]";
+    semiperitemp += "\\[P=\\frac{" + eval(String(sidea) + "+" + String(sideb) + "+" + String(sidec)) + "}{2} \\]";
+    var sidesum = eval(String(sidea)+ "+" +String(sideb)+ "+" + String(sidec));
+    
+    semiperitemp +=  "\\[Semi-perimeter \\space of \\space Triangle \\space is \\space" +
+    eval(String("0.5*" + String(sidesum))) +
+      "\\]";
+    semiperioutput.innerHTML = semiperitemp;
+    
+
+    var semiperimeter= eval(String("0.5*" + String(sidesum)));
+    var a2= semiperimeter-sidea;
+    var b2= semiperimeter-sideb;
+    var c2= semiperimeter-sidec;
+    var ans= semiperimeter * a2 * b2 * c2;
+    var anssqrt = nerdamer.sqrt(ans).toString();
+      anssqrt = eval(anssqrt).toFixed(3);
+
+    areatemp += "\\[A = \\sqrt{ " + semiperimeter + "\\times (" + semiperimeter + "-" + sidea +
+    ") \\times (" + semiperimeter+ "-" + sideb + ") \\times (" + semiperimeter + "-" + sidec +")}" +  "\\]";
+    areatemp += "\\[A = \\sqrt{ " + semiperimeter + "\\times" + a2 + "\\times" + b2 + "\\times" + c2 +"}\\]";
+    areatemp += "\\[A = \\sqrt{ " + semiperimeter + "\\times" + eval(String(a2*b2*c2)) +"}\\]";
+    areatemp += "\\[A = \\sqrt{ " + ans +" }\\]";
+    areatemp += "\\[A=" + anssqrt + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Triangle \\space is \\space " + anssqrt + "\\]";
+    areaoutput.innerHTML = areatemp;
+
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+    renderMathInElement(semiperioutput);
+  
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+    semiperioutput.innerHTML = "";
+  }
+}
+
+// created function for isosceles triangle
+function isoscelestrianglearea(){
+  var eqside=document.getElementById("inputeqitside").value;
+  var side=document.getElementById("inputitside").value;
+  var areaoutput=document.getElementById("resultofareait");
+  var perimeteroutput=document.getElementById("resultofperiit");
+  var heightoutput=document.getElementById("resultofheightit");
+  var areatemp="";
+  var perimetertemp="";
+  var heighttemp="";
+
+if(side!="" && eqside!="") {
+      perimetertemp += "\\[P=2 \\times " + eqside + "+" + side + "\\]";
+      perimetertemp += "\\[P= " + eval(String(2 * eqside)) + "+" + side + "\\]";
+      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" +  eval("2*(" + String(eqside) + ")+" + String(side))  + "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
+
+      var eq2= eqside * eqside;
+      var side2= side * side;
+      var side22= side2/4;
+    var ans= eq2-side22;
+    var anssqrt = nerdamer.sqrt(ans).toString();
+      anssqrt = eval(anssqrt).toFixed(3);
+
+      heighttemp+="\\[h=\\sqrt{"+eqside+"^2" +"-" +"\\frac{" + side+ "^2" + "}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eq2+ "-" + "\\frac{"+side2+"}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eq2+"-"+side22+"}\\]";
+      heighttemp+="\\[h=\\sqrt{"+ans+"}\\]";
+      heighttemp += "\\[Height \\space of \\space Triangle \\space is \\space" + anssqrt + "\\]";
+      heightoutput.innerHTML=heighttemp;
+      var height= eval(anssqrt).toFixed(3);
+
+      areatemp+="\\[A=\\frac{1}{2} \\times"+side+ "\\times" + height+"\\]";
+      areatemp+="\\[A=0.5\\times"+eval(String(side*height))+"\\]";
+      var a=eval(String("0.5*"+ String(side*height)));
+      areatemp+="\\[A="+a+" \\]";
+      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
+      areaoutput.innerHTML=areatemp;
+
+      renderMathInElement(areaoutput);
+      renderMathInElement(perimeteroutput);
+      renderMathInElement(heightoutput);
+  }
+  else{
+      areaoutput.innerHTML="";
+      perimeteroutput.innerHTML="";
+      heightoutput.innerHTML="";
+  }
+  
+}
+
+
+
 function rectanglesolve() {
   var length = document.getElementById("inputreclength").value;
   var breadth = document.getElementById("inputrecbreadth").value;
@@ -1785,49 +1948,7 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultoflengthrec"));
   renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
-// created function for isosceles triangle
-function isoscelestrianglearea(){
-  var eqside=document.getElementById('inputeqitside').value;
-  var side=document.getElementById('inputitside').value;
-  var areaoutput=document.getElementById('resultofareait');
-  var perimeteroutput=document.getElementById('resultofperiit');
-  var heightoutput=document.getElementById('resultofheightit');
-  var areatemp="";
-  var perimetertemp="";
-  var heighttemp="";
-// if((eqside=="" && side!="") ||(eqside!="" && side==""))
-// {
-// areaoutput.innerHTML="Please enter both values";
-// }
-if(side!="" && eqside!="") {
-      areatemp="";
-      perimetertemp="";
-      heighttemp="";
-      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
-      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
-      perimeteroutput.innerHTML = perimetertemp;
 
-      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
-      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
-      heightoutput.innerHTML=heighttemp;
-
-      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
-      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
-      var a=eval(String("0.5*"+String(side*heighttemp)));
-      areatemp+="\\[A="+a+" \\]";
-      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
-      areaoutput.innerHTML=areatemp;
-
-      renderMathInElement(areaoutput);
-      renderMathInElement(perimeteroutput);
-      renderMathInElement(heightoutput);
-  }
-  else{
-      areaoutput.innerHTML="";
-      perimeteroutput.innerHTML="";
-      heightoutput.innerHTML="";
-  }
-  
 }
 function solvecircle()
 {
