@@ -265,6 +265,41 @@
                     </tr>
                 </table>
             </li>
+            <!--sum of n terms of an ap-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="APbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
+                                Nterms of an Arithmetic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an Arithmetic Progression','#sum_n_AP','c','APimgfav')"><img
+                                        id="APimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--sum of n terms of an gp-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="GPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
+                                Nterms of an Geometric Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_GP','c','GPimgfav')"><img
+                                        id="GPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             <div class="dropdown-divider"></div>
@@ -729,27 +764,7 @@
                         </td>
                     </tr>
                 </table>
-            </li>
-
-
-            <!--sum of n terms of an ap-->
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="APbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
-                                Nterms of an Arithmetic Progression</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Nterms of an Arithmetic Progression','#sum_n_AP','c','APimgfav')"><img
-                                        id="APimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
+            </li>            
 
             <div class="dropdown-divider"></div>
         </div>
@@ -3159,7 +3174,7 @@
         </div>
         <!-- Factorial end -->
 
-        <!--sum of nterms-->
+        <!--sum of nterms in A.P.-->
         <div class="collapse" id="sum_n_AP">
             <div class="text-center">
                 <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
@@ -3185,7 +3200,26 @@
             </div>
 
         </div>
-        <!--sum of nterms ends-->
+        <!--sum of nterms in A.P. ends-->
+
+        <!-- sum of nterms in G.P.  -->
+        <div class="collapse" id="sum_n_GP">            
+            <h2>Sum of Nterms of an Geometric Progression</h2>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field"  id="firstterm"
+                       placeholder="Enter first term"/>
+                <input type="text"  style="width: 15.625rem;" class="form__field" id="ratio"
+                       placeholder="Enter ratio between terms"/>
+                <input type="text"  style="width: 15.625rem;" class="form__field" id="number"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="gp()">Find</button>
+                <br>
+                <div style="color:var(--appimage); font-size: large;" id="sumgp"></div>                
+            </div>
+        </div>
+        <!-- sum of nterms in G.P. ends  -->
 
         <!-- Permutattiona and combination -->
         <div class="collapse" id="pandc">

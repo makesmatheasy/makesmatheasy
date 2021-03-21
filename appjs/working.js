@@ -202,8 +202,13 @@ $(document).ready(function () {
         clearall();
     });  
      // Sumof nterms of an Arithmetic Progression 
-     $("#APbtn").click(function () {
+    $("#APbtn").click(function () {
         openit("#sum_n_AP");
+        closenav();
+        clearall();
+    }); 
+    $("#GPbtn").click(function () {
+        openit("#sum_n_GP");
         closenav();
         clearall();
     }); 
