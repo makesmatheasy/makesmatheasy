@@ -136,6 +136,7 @@ function openit(id) {
         "#factors",
         "#integralcollapse",
         "#integration-idencollapse",
+        "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#laplacecollapse",

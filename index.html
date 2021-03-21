@@ -418,6 +418,25 @@
                         </tbody>
                     </table>
                 </li>
+                         <li>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="defintegration-idencollapsebtn"
+                                        style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Definite Integration
+                                        Formulae</a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                    <span
+                                        onclick="addtofavourite('Definite Integration Formulae','#defintegration-idencollapse','c','defintegration-idenfav')"><img
+                                            id="defintegration-idenfav" src="images/unfavourite.png"
+                                            style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>   
             <li>
                 <table class="table">
                     <tr>
@@ -571,7 +590,8 @@
                         <td style="border-top: none;">
                             <a id="inversetrigonoidenbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse
-                                Trigonometric Identities
+                                Trigonometry
+                                Identities
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -1527,7 +1547,74 @@
                     </div>
                 </div>
             </div>
-            
+        
+                <div class="collapse" id="defintegration-idencollapse">
+            <div class="stopwrap">
+            	 <div class="coll">
+                    <div class="left">
+                        <h4>General Formula</h4>
+                       	<p>\[1)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{b}{f(t)dt}\]</p>
+                        <p>\[2)\int\limits_{a}^{b}{f(x)dx=}-\int\limits_{b}^{a}{f(x)dx}\]</p>
+                        <p>\[3)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{c}{f(t)dt}+\int\limits_{c}^{b}{f(t)dt}\]</p>
+                        <p>\[4)\int\limits_{-a}^{a}{f(x)dx=\left\{ \begin{matrix} 0 & if\,\,f\left( x \right)\,is\,odd \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( x \right)\,is\,odd \\ \end{matrix} \right.\,\,\,\,\,\,}\]</p>
+                        </div>
+                    </div>
+
+                     <div class="coll">
+                    <div class="left">
+                        <h4>Shifting</h4>
+                        <p>\[1)\space\int_{a}^b\,f(x)\,dx\space=\int_{a-c}^{b-c}\,f(x+c)\,dx\]</p>
+                        <p>\[2)\space\int_{a}^b\,f(x)\,dx\space=\int_{a+c}^{b+c}\,f(x-c)\,dx\]</p>
+                        <p>\[3)\space\int_{a}^b\,f(x)\,dx\space=\int_{ak}^{bk}\,\frac{1}{k}\,f(\frac{x}{k})\,dx\]</p>
+                        <p>\[4)\space\int_{a}^b\,f(x)\,dx\space=\int_{0}^{b-a}\,f(x+a)\,dx\]</p>
+                </div>
+            </div>
+             <div class="coll">
+                    <div class="left">
+                        <h4>Periodicity</h4>
+                        <p>\[f(x)\,is\,a\,periodic\,function\,with\,period\,\,T\,and\,m\,and\,n\,are\,integers\]</p>
+                        <p>\[1)\space\int_{0}^{nT}\,f(x)\,dx\space=n\,\int_{0}^T\,f(x)\,dx\]</p>
+                        <p>\[2)\space\int_{nT}^{mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
+                        <p>\[3)\space\int_{a+nT}^{a+mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
+                </div>
+            </div>
+                <div class="coll">
+                    <div class="left">
+                        <h4>King's Rule</h4>
+                        <p>\[1)\space\int_{a}^b\,f(x)\,dx\space=\int_{a}^b\,f(a+b-x)\,dx\]</p>
+                        <p>\[2)\space\int_{0}^a\,f(x)\,dx\space=\int_{0}^a\,f(a-x)\,dx\]</p>
+                        <p>\[3)\space\int_{-a}^a\,f(x)\,dx\space=\int_{-a}^a\,f(-x)\,dx\]</p>
+                </div>
+            </div>
+                    <div class="coll">
+                    <div class="left">
+                        <h4>Integration By Part</h4>
+                        <p>\[\int_{a}^{b} du(\frac{dv}{dx})dx=[uv]_{a}^{b}-\int_{a}^{b} v(\frac{du}{dx})dx\]</p>
+                    </div>
+                </div>
+                <div class="coll">
+                    <div class="left">
+                        <h4> Leibniz's rule</h4>
+                       <center> <p>\[For\,an\,integral\,of\,the\,form\,\displaystyle{ \int_{a(x)}^{b(x)} f(x,t)\,dt, }\]</p>
+                        <p>\[where\,\displaystyle{ -\infty \lt  a(x), b(x) \lt  \infty },\,the\,derivative\,of\,this\,integral\,is\,expressible\,as\]</p>
+                        <p>\[\displaystyle{ \frac{d}{dx} \left (\int_{a(x)}^{b(x)} f(x,t)\,dt \right )= f\big(x,b(x)\big)\cdot \frac{d}{dx} b(x) - f\big(x,a(x)\big)\cdot \frac{d}{dx} a(x) + \int_{a(x)}^{b(x)}\frac{\partial}{\partial x} f(x,t) \,dt, }\]</p>
+                        	<p>\[where\,the\,partial\,derivative\,indicates\,that\,inside\,the\,integral,\]<p>\[only\,the\,variation\,of\,f(x, t)\,with\,x\,is\,considered\,in\,taking\,the\,derivative.\]</p></center>
+             		</div>
+                </div>
+                <div class="coll">
+                    <div class="left">
+                        <h4>Wallis Integrals</h4>
+                        <p>\[If\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \sin^n x \,dx  }\,or\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \cos^n x \,dx. }\]</p>
+                        <p>\[then,\,\,\,If\,n\,is\,even,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}, }\]</p>
+                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}. }\]<p>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
         <div class="collapse" id="differentiate-rulecollapse">
             <div class="stopwrap">
                 <div class="coll">
