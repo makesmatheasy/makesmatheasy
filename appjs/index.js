@@ -135,6 +135,7 @@ function openit(id) {
         "#trigonoiden",
         "#factors",
         "#integralcollapse",
+        "#integration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#laplacecollapse",
