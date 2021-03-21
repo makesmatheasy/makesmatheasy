@@ -131,6 +131,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#profitlossbutton").click(function () {
+        openit("#profitloss");
+        closenav();
+        clearall();
+    })
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
@@ -256,6 +261,15 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+
+
+  $("#plotangleoption").click(function(){
+        openit("#plotangle");
+        closenav();
+        clearall();
+    });
+
 
 
 });

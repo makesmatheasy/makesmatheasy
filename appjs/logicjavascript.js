@@ -1856,7 +1856,7 @@ function solveSlope()
   {
     document.getElementById("resultofline").innerHTML="Enter all four points";
     document.getElementById("answerofline").innerHTML="";
-    document.getElementById("answer").innerHTML="";
+    document.getElementById("answerofline2").innerHTML="";
 
   }
   else if(parseInt(x2)-parseInt(x1)==0)
@@ -1871,9 +1871,9 @@ function solveSlope()
      let sol2="\\[Slope="+temp+"\\]";
      document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
      document.getElementById("answerofline").innerHTML=sol;
-     document.getElementById("answer").innerHTML=sol2;
+     document.getElementById("answerofline2").innerHTML=sol2;
      renderMathInElement(document.getElementById("answerofline"));
-     renderMathInElement(document.getElementById("answer"));
+     renderMathInElement(document.getElementById("answerofline2"));
      renderMathInElement(document.getElementById("resultofline"));
   }
   
@@ -3527,6 +3527,22 @@ function factorialsol(factorialval) {
     ans.innerHTML += calc;
   }
 }
+// profit loss calculations
+function profitloss(){
+  var cp = document.getElementById("cp").value
+  var sp = document.getElementById("sp").value
+  if(cp>sp){
+    var loss = cp-sp;
+    document.getElementById("loss").innerHTML = "Loss = "+ loss
+    document.getElementById("profit").innerHTML = "Profit = 0"
+  }
+  else {
+    var profit = sp-cp;
+    document.getElementById("profit").innerHTML = "Profit = " + profit
+    document.getElementById("loss").innerHTML = "Loss = 0"
+  }
+}
+
 //sum of nterms of an Arithmetic Progression
 function sum_n_apsol(nval,rval,r1val)
 {
@@ -4065,3 +4081,68 @@ function datecal()
   }
 }
 //--------------------------------------------------------------------------------
+
+function angleplot()
+{
+
+//clearing the canvas
+var canvas = document.getElementById('plotangleres');
+var context = canvas.getContext('2d');
+context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+
+
+
+
+var input = document.getElementById("inputangle").value;
+var c = document.getElementById("plotangleres");
+var ctx = c.getContext("2d");
+ctx.lineWidth = 3;
+
+
+
+//for labelling 0 
+var c0tx = c.getContext("2d");
+c0tx.font = "15px Arial";
+c0tx.fillText("0° ",630,250); 
+
+
+//for labelling 90 
+var c90tx = c.getContext("2d");
+c90tx.font = "15px Arial";
+c90tx.fillText("90° ",510,125); 
+
+//for labelling 180 
+var c180tx = c.getContext("2d");
+c180tx.font = "15px Arial";
+c180tx.fillText("180° ",335,250); 
+
+
+//for labelling 270 
+var c270tx = c.getContext("2d");
+c270tx.font = "15px Arial";
+c270tx.fillText("270° ",510,400); 
+
+
+
+
+
+
+var ytx=c.getContext("2d");
+var xtx=c.getContext("2d");
+ytx.moveTo(500, 0);
+ytx.lineTo(500, 1000);
+ytx.stroke(); 
+xtx.moveTo(0,250);
+xtx.lineTo(1000, 250);
+xtx.stroke(); 
+ctx.beginPath();
+input=input%360;
+ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+ctx.stroke();
+
+
+
+}

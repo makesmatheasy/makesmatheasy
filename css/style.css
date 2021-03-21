@@ -318,7 +318,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: auto;
     color: var(--apppimage);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    background-color: #26282b;
+    /* because of this it is of black color now it will inherit the body color */
+    /* background-color: #26282b; */
     border-bottom-right-radius: 35px;
     border-top-left-radius: 35px;
     transition: all 0.2s;
