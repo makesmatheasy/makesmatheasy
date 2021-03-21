@@ -3562,6 +3562,16 @@ function sum_n_apsol(nval,rval,r1val)
    }
 }
 
+function anotherap(){
+  var n = document.getElementById("numterms").value
+  var a = document.getElementById("ft").value
+  var l = document.getElementById("lt").value  
+  var nhalf = parseInt(n/2)
+  var al = parseInt(a)+parseInt(l)
+  var ans = parseInt(nhalf *al)
+  document.getElementById("ltap").innerHTML = "Result: " + ans  
+}
+
 // Primality test
 function check_prime(isprime)
 {
