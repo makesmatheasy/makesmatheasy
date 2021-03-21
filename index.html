@@ -1128,46 +1128,258 @@
 
                 <div id="side1" style="display:inline-block; width: 500px;">
                     <div class="row">
-                        <button cd="twomatrix" class="carddis"
-                            onclick="$('#singlematrixcollapse').slideToggle();$('#multiplematrixcollapse').slideUp();clearall();">
+                        <button id="add_frac" class="carddis" data-toggle="modal"
+                            onclick="$('#addition_fraction').slideToggle();$('#fractions').slideUp();clearall();">
                             Addition of fractions
                         </button>
                     </div>
                     <div class="row">
-                        <button id="twomatrix1" class="carddis"
-                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                        <button id="sub_frac" class="carddis"
+                            onclick="$('#subtraction_fraction').slideToggle();$('#fractions').slideUp();clearall();">
                             Subtraction of fractions
                         </button>
                     </div>
                     <div class="row">
-                        <button id="twomatrix" class="carddis"
-                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                        <button id="div_frac" class="carddis"
+                            onclick="$('#division_fraction').slideToggle();$('#fractions').slideUp();clearall();">
                             Division of fractions
                         </button>
                     </div>
                 </div>
                 <div id="side2" style="margin-left: 50px; display:inline-block; width: 500px;">
                     <div class="row">
-                        <button id="twomatrix" class="carddis"
-                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                        <button id="mul_frac" class="carddis"
+                            onclick="$('#miltiplication_fraction').slideToggle();$('#fractions').slideUp();clearall();">
                             Multiplication of fractions
                         </button>
                     </div>
                     <div class="row">
-                        <button id="twomatrix" class="carddis"
-                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                        <button id="mix_frac" class="carddis"
+                            onclick="$('#mixed_to_improper').slideToggle();$('#fractions').slideUp();clearall();">
                             Conversion of Mixed Fraction to an Improper Fraction
                         </button>
                     </div>
                     <div class="row">
-                        <button id="twomatrix" class="carddis"
-                            onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+                        <button id="imp_frac" class="carddis"
+                            onclick="$('#improper_to_mixed').slideToggle();$('#fractions').slideUp();clearall();">
                             Conversion of an Improper Fraction to Mixed Fraction
                         </button>
                     </div>
                 </div>
             </div>
-            <!--        end factors-->
+
+
+            <div>
+                <div class="modal" id="addition_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">ADDTION</h5>
+                                <button onclick="$('#fractions').slideToggle();$('#addition_fraction').slideUp();clearall();" type="button" class="close"  aria-label="Close" style="outline:none">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    
+                                        <!-- <div style="display: list-item">
+                                            <input type="number"  id="add_num"   placeholder="Numerator" size="4">
+                                            <br><div style="color: white;">---------------------------------------------</div><br>
+                                            <input type="number"  id="sub_den"   placeholder="Denominator">
+
+                                        </div>
+
+                                        <div style="display: right: inherit">
+                                            <input type="number" id="add_num" placeholder="Numerator" size="4">
+                                            <br>
+                                            <div style="color: white;">---------------------------------------------</div><br>
+                                            <input type="number" id="sub_den" placeholder="Denominator">
+                                        </div> -->
+
+                                        <div style="display: inline-block;">
+                                                <div class="row">
+                                                    <div class="cell borderBottom_1">
+                            
+                                                        <input name="n_1" id="n_1" placeholder="Numerator" size="4" maxlength="8"  type="number"
+                                                            required="" >
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="cell">
+                                                        
+                                                        <input name="d_1" id="d_1" placeholder="Numerator" ssize="4" maxlength="8" type="number"
+                                                            required="">
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        
+
+                                        <span style="color: aliceblue;">+</span>
+
+                                        
+                                        <div style="display: inline-block; margin-left: 10px;">
+                                                <div class="row">
+                                                    <div class="cell borderBottom_1">
+                                        
+                                                        <input name="n_1" id="n_1" placeholder="Numerator" size="4" maxlength="8" type="number" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="cell">
+                                        
+                                                        <input name="d_1" id="d_1" placeholder="Numerator" ssize="4" maxlength="8" type="number" required="">
+                                                    </div>
+                                                </div>
+                                        </div>
+                                       
+
+                                            <button type="button" class="btn btn-light" style="margin-top: 40px" ; onclick="additon()">
+                                                ADD
+                                            </button>
+
+
+
+                                        
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="$('#fractions').slideToggle();$('#addition_fraction').slideUp();clearall();" type="button" class="btn btn-secondary" >Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal" id="subtraction_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">SUBTRACTION</h5>
+                                    <button onclick="$('#fractions').slideToggle();$('#subtraction_fraction').slideUp();clearall();"
+                                        type="button" class="close" aria-label="Close" style="outline:none">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                
+                
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button onclick="$('#fractions').slideToggle();$('#subtraction_fraction').slideUp();clearall();"
+                                        type="button" class="btn btn-secondary">Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="modal" id="division_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">DIVISION</h5>
+                                        <button onclick="$('#fractions').slideToggle();$('#division_fraction').slideUp();clearall();"
+                                            type="button" class="close" aria-label="Close" style="outline:none">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                    
+                    
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button onclick="$('#fractions').slideToggle();$('#division_fraction').slideUp();clearall();"
+                                            type="button" class="btn btn-secondary">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="modal" id="miltiplication_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">MULTIPLICATION</h5>
+                                            <button onclick="$('#fractions').slideToggle();$('#miltiplication_fraction').slideUp();clearall();"
+                                                type="button" class="close" aria-label="Close" style="outline:none">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                        
+                        
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button onclick="$('#fractions').slideToggle();$('#miltiplication_fraction').slideUp();clearall();"
+                                                type="button" class="btn btn-secondary">Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="modal" id="mixed_to_improper" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">MIXED FRACTION   --->   IMPROPER FRACTION</h5>
+                                                <button onclick="$('#fractions').slideToggle();$('#mixed_to_improper').slideUp();clearall();"
+                                                    type="button" class="close" aria-label="Close" style="outline:none">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container">
+                            
+                            
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button onclick="$('#fractions').slideToggle();$('#mixed_to_improper').slideUp();clearall();"
+                                                    type="button" class="btn btn-secondary">Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="modal" id="improper_to_mixed" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">IMPROPER FRACTION   --->   MIXED FRACTION</h5>
+                                                    <button onclick="$('#fractions').slideToggle();$('#improper_to_mixed').slideUp();clearall();"
+                                                        type="button" class="close" aria-label="Close" style="outline:none">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                
+                                
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button onclick="$('#fractions').slideToggle();$('#improper_to_mixed').slideUp();clearall();"
+                                                        type="button" class="btn btn-secondary">Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
             <!-- End of Operatiosn on fractions   ------------------------------------------>
 
             <div class="collapse" id="table">
