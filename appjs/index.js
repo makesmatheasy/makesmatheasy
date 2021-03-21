@@ -140,6 +140,7 @@ function openit(id) {
         "#laplacecollapse",
         "#limitscollapse",
         "#matrixcollapse",
+        "#matrixprops",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
