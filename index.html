@@ -253,6 +253,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="matrixpropsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties of Matrices and Determinants</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Properties of Matrices and Determinants','#matrixprops','c','matrixpropsfav')"><img
+                                        id="matrixpropsfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="algebraic-idencollapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Algebraic
                                 Identities</a>
@@ -1791,6 +1807,30 @@
             </div>
 
         </div>
+        <div class="collapse" id="matrixprops">
+            <h2>Properties of Matrices</h2>
+            <p>1. If the rows and columns in a matrix A are interchanged, the new matrix is called the transpose of the original matrix 
+                 The transposed matrix is denoted by  A<sup>T</sup>
+            </p>
+            <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
+            <p>3. If the matrix product AB is defined, then (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
+            <p>4. AA<sup>-1</sup> = I where A<sup>-1</sup> is inverse of matrix A</p>
+            <p>5. (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></p>
+            <p>6. A matrix is said to be Involutary if A<sup>2</sup> = I</p>
+            <p>7. A matrix is said to be Idempotent if A<sup>2</sup> = A</p>
+            <p>8. A matrix is said to be Nilpotent if A<sup>p</sup> = 0 , where p is any positive integer</p>
+            <p>9. A matrix is said to be symmetric if A = A<sup>T</sup> and skew-symmetric if A = -A<sup>T</sup></p>
+            <p>10. A matrix is said to be Hermitian if A = A<sup>*</sup> and skew-Hermitian if A = -A<sup>*</sup>
+            where A<sup>*</sup> is transpose conjugate of matrix</p>
+            <h2>Properties of Determinants</h2>
+            <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
+            <p>2. det(X) = det(X<sup>T</sup>)</p>
+            <p>3. det(X<sup>-1</sup>) = -det(X)</p>
+            <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
+            <p>5. In a triangular matrix , the product of diagnol elements is determinant</p>
+            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>            
+        </div>
+
         <div class="collapse" id="algebraic-idencollapse">
             <div class="stopwrap">
                 <div class="coll">

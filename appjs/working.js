@@ -51,6 +51,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#matrixpropsbtn").click(function () {
+        openit("#matrixprops");
+        closenav();
+        clearall();
+    });
     
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
