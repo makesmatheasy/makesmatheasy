@@ -165,7 +165,6 @@ function openit(id) {
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
-        "#inversetrigonoiden",
         "#datecal",
         "#prime",
         "#sum_n_AP",
