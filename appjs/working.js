@@ -81,7 +81,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-<<<<<<< HEAD
 
     $("#defintegration-idencollapsebtn").click(function () {
         openit("#defintegration-idencollapse");
@@ -89,9 +88,6 @@ $(document).ready(function () {
         clearall();
     })    
 
-=======
-    
->>>>>>> b97b58a7e04809533408ad2d0c562cb0d089c3d4
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
