@@ -81,7 +81,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    
+
+    $("#defintegration-idencollapsebtn").click(function () {
+        openit("#defintegration-idencollapse");
+        closenav();
+        clearall();
+    })    
+
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
