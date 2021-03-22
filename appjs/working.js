@@ -88,6 +88,12 @@ $(document).ready(function () {
         clearall();
     })    
 
+    $("#3d-solid-btn").click(function () {
+        openit("#3d-solid");
+        closenav();
+        clearall();
+    })    
+
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
