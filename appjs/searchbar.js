@@ -48,6 +48,8 @@ function autocomplete(inp, arr) {
                         $("#home").slideToggle();
                     } else if (inp.value.toUpperCase() == "FACTORS") {
                         $("#factors").slideToggle();
+                    }else if (inp.value.toUpperCase() == "PRIME FACTORS") {
+                        $("#primefactors").slideToggle();
                     } else if (inp.value.toUpperCase() == "MATRIX") {
                         $("#matrixcollapse").slideToggle();
                     } else if (inp.value.toUpperCase() == "MULTIPLICATION TABLE") {

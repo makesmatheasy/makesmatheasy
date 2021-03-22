@@ -408,57 +408,99 @@ function showdivisionstepsforcheckdivisibility() {
 //factors
 //    one number with steps
 function printfactors() {
-    var num = parseInt(document.getElementById("numforfactorhcflcm").value);
-    var temp = "";
-    var tt = "";
-    var v = "";
-    for (i = 2; i <= num; i++) {
-        while (num % i == 0) {
-            temp += i + "&nbsp;&nbsp;&nbsp;<br>";
-            v += i + ",";
-            tt += "<pu>" + num + "</pu><br>";
-            num = num / i;
-        }
-        document.getElementById("dividefactor").innerHTML = temp;
-        document.getElementById("dividefactorresult").innerHTML = tt;
-        document.getElementById("factorresult").innerHTML =
-            "\\[Prime \\space Factors \\space are:\\]\\[" + v.slice(0, -1)+ "\\]";
-        renderMathInElement(document.getElementById("factorresult"));
+  var num = parseInt(document.getElementById("numforfactorhcflcm").value);
+  var temp = "";
+  for (i = 1; i <= num; i++) {
+    if(num%i==0){
+      temp += i ;
+      if(num!=i) 
+       temp += ",";
     }
+    document.getElementById("factorresult").innerHTML =
+      "\\[All \\space Factors \\space are:\\]\\[" + temp + "\\]";
+    renderMathInElement(document.getElementById("factorresult"));
+  }
+}
+//    one number with steps
+
+//    more than one number without steps
+function printmorefactors(input, output) {
+  document.getElementById(output).textContent = "";
+  var ar = [];
+  var val = document.getElementById(input).value;
+  val = val.replace(/\s+$/, ""); //right trim
+  val = val.replace(/^\s+/, ""); //left trim
+  val = val.split(" ");
+  ar = val;
+  var temp = "";
+  document.getElementById(output).innerHTML =
+    "\\[All \\space Factors \\space of \\space\\]";
+  for (num of ar) {
+    var getnu = "\\[" + num + "\\space : \\space";
+    var i;
+    for (i = 1; i <= num; i++) {
+      if(num%i==0){
+        temp += i ;
+        if(num!=i) 
+         temp += ",";
+      }
+    }
+    //temp = temp.slice(0, -1);
+    document.getElementById(output).innerHTML += getnu + temp + "\\]";
+    temp += "<br>";
+    temp = "";
+  }
+  renderMathInElement(document.getElementById(output));
+}
+//    more than one number without steps
+
+//Prime factors
+//    one number with steps
+function printprimefactors() {
+  var num = parseInt(document.getElementById("numforfactorhcflcm").value);
+  var temp = "";
+  var tt = "";
+  var v = "";
+  for (i = 2; i <= num; i++) {
+    while (num % i == 0) {
+      temp += i + "&nbsp;&nbsp;&nbsp;<br>";
+      v += i;
+      if(num!=i) 
+         v += ",";
+      tt += "<pu>" + num + "</pu><br>";
+      num = num / i;
+    }
+    document.getElementById("dividefactor").innerHTML = temp;
+    document.getElementById("dividefactorresult").innerHTML = tt;
+    //v = v.slice(0, -1);
+    document.getElementById("factorresult").innerHTML =
+      "\\[Prime \\space Factors \\space are:\\]\\[" + v + "\\]";
+    renderMathInElement(document.getElementById("factorresult"));
+  }
 }
 
 //    one number with steps
 
 //    more than one number without steps
-function printmorefactors(input, output) {
-    document.getElementById(output).textContent = "";
-    var ar = [];
-    var val = document.getElementById(input).value;
-    val = val.replace(/\s+$/, ""); //right trim
-    val = val.replace(/^\s+/, ""); //left trim
-	if (val.search(/^[0-9 ]+$/) == -1)
-	{
-		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
-		return;
-	}
-    val = val.split(" ");
-    ar = val;
-    var temp = "";
-    document.getElementById(output).innerHTML =
-        "\\[Prime \\space Factors \\space of \\space\\]";
-    for (num of ar) {
-        var getnu = "\\[" + num + "\\space : \\space";
-        var i;
-        for (i = 2; i <= num; i++) {
-            while (num % i == 0) {
-                temp += i + ",";
-                num = num / i;
-            }
-        }
-        temp = temp.slice(0, -1);
-        document.getElementById(output).innerHTML += getnu + temp + "\\]";
-        temp += "<br>";
-        temp = "";
+function printmoreprimefactors(input, output) {
+  document.getElementById(output).textContent = "";
+  var ar = [];
+  var val = document.getElementById(input).value;
+  val = val.replace(/\s+$/, ""); //right trim
+  val = val.replace(/^\s+/, ""); //left trim
+  val = val.split(" ");
+  ar = val;
+  var temp = "";
+  document.getElementById(output).innerHTML =
+    "\\[Prime \\space Factors \\space of \\space\\]";
+  for (num of ar) {
+    var getnu = "\\[" + num + "\\space : \\space";
+    var i;
+    for (i = 2; i <= num; i++) {
+      while (num % i == 0) {
+        temp += i + ",";
+        num = num / i;
+      }
     }
     renderMathInElement(document.getElementById(output));
 }
@@ -528,42 +570,32 @@ function findduplicatesforhcf(array) {
 }
 
 function hcf(input) {
-    var ar = [];
-    var val = document.getElementById(input).value;
-    val = val.replace(/\s+$/, ""); //right trim
-    val = val.replace(/^\s+/, ""); //left trim
-	document.getElementById("hcfprimefactor").textContent = "";
-	if (val.search(/^[0-9 ]+$/) == -1)
-	{
-		document.getElementById("hcfprimefactor").innerHTML ="Enter positive numbers only";
-		return;
-	}
-    val = val.split(" ");
-    ar = val;
-    var temp = "";
-    document.getElementById("hcfprimefactor").innerHTML =
-        "\\[Prime \\space Factors \\space of \\space\\]";
-    var factorarray = [];
-    var j = 0;
-    for (num of ar) {
-        factorarray[j] = [];
-        factorarray[j][0] = 1;
-        var index = 1;
-        var getnu = "\\[" + num + "\\space : \\space";
-        temp += "1,";
-        for (i = 2; i <= num; i++) {
-            while (num % i == 0) {
-                factorarray[j][index] = i;
-                index++;
-                temp += i + ",";
-                num = num / i;
-            }
-        }
-        temp = temp.slice(0, -1);
-        document.getElementById("hcfprimefactor").innerHTML += getnu + temp + "\\]";
-        j++;
-        temp += "<br>";
-        temp = "";
+  var ar = [];
+  var val = document.getElementById(input).value;
+  val = val.replace(/\s+$/, ""); //right trim
+  val = val.replace(/^\s+/, ""); //left trim
+  val = val.split(" ");
+  ar = val;
+
+  document.getElementById("hcfprimefactor").textContent = "";
+  var temp = "";
+  document.getElementById("hcfprimefactor").innerHTML =
+    "\\[Prime \\space Factors \\space of \\space\\]";
+  var factorarray = [];
+  var j = 0;
+  for (num of ar) {
+    factorarray[j] = [];
+    factorarray[j][0] = 1;
+    var index = 1;
+    var getnu = "\\[" + num + "\\space : \\space";
+    //temp += "1,"; as 1 is not a prime
+    for (i = 2; i <= num; i++) {
+      while (num % i == 0) {
+        factorarray[j][index] = i;
+        index++;
+        temp += i + ",";
+        num = num / i;
+      }
     }
 
     var arrayoffactors = factorarray;
@@ -629,7 +661,17 @@ function factorselect(numid) {
         printmorefactors(numid, "factorresult");
     }
 }
-
+function primefactorselect(numid) {
+  var num = document.getElementById(numid).value;
+  num = num.replace(/^\s+/, ""); //left trim
+  num = num.replace(/\s+$/, ""); //right trim
+  num = num.split(" ");
+  if (num.length == 1) {
+    printprimefactors();
+  } else {
+    printmoreprimefactors(numid, "factorresult");
+  }
+}
 function printfactorsfl(value) {
     var num = parseInt(value);
     var temp = [];
@@ -8223,4 +8265,6 @@ function ssscal()
             ans="The required angles oppsite to first side is: "+ab+" second side is: "+bc+"  third side is: "+ca;
     }
     document.getElementById("sstans").innerHTML=ans;
+}
+}
 }
