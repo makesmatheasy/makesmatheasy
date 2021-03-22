@@ -940,7 +940,8 @@ function checkforusetrigovalue() {
     el.innerText != "" &&
     el.innerText != "Cannot Compute for -ve Square Root" &&
     el.innerText != "Hypotenuse Should be Greater" &&
-    el.innerText != "Kindly fill Atleast 2 fields"
+    el.innerText != "Kindly fill Atleast 2 fields" &&
+	el.innerText != "Right angled triangle with such dimensions is not possible" 
   ) {
     $("#usetrigovaluesbtn").fadeIn();
   } else {
@@ -966,7 +967,12 @@ function solvesimpletrigo() {
       document.getElementById("h").style.color = "red";
       document.getElementById("soltri").innerHTML =
         "Hypotenuse Should be Greater";
-    } else if (pp == "") {
+    } else if(pp != "" && base != "" && hyp != "" && parseInt(hyp)^2 != parseInt(pp)^2 + parseInt(base)^2) 
+	{
+      document.getElementById("soltri").innerHTML =
+        "Right angled triangle with such dimensions is not possible";
+	}
+	  else if (pp == "") {
       document.getElementById("h").style.color = "white";
       var pp = eval(hyp * hyp - base * base);
       var kl = String(pp);
