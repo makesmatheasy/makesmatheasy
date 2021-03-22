@@ -51,6 +51,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#matrixpropsbtn").click(function () {
+        openit("#matrixprops");
+        closenav();
+        clearall();
+    });
     
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
@@ -69,6 +75,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#integration-idencollapsebtn").click(function () {
+        openit("#integration-idencollapse");
+        closenav();
+        clearall();
+    })
+    
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
@@ -202,8 +215,13 @@ $(document).ready(function () {
         clearall();
     });  
      // Sumof nterms of an Arithmetic Progression 
-     $("#APbtn").click(function () {
+    $("#APbtn").click(function () {
         openit("#sum_n_AP");
+        closenav();
+        clearall();
+    }); 
+    $("#GPbtn").click(function () {
+        openit("#sum_n_GP");
         closenav();
         clearall();
     }); 

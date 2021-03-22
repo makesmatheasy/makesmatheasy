@@ -3562,6 +3562,16 @@ function sum_n_apsol(nval,rval,r1val)
    }
 }
 
+function anotherap(){
+  var n = document.getElementById("numterms").value
+  var a = document.getElementById("ft").value
+  var l = document.getElementById("lt").value  
+  var nhalf = parseInt(n/2)
+  var al = parseInt(a)+parseInt(l)
+  var ans = parseInt(nhalf *al)
+  document.getElementById("ltap").innerHTML = "Result: " + ans  
+}
+
 // Primality test
 function check_prime(isprime)
 {
@@ -3640,6 +3650,19 @@ function prime_till_num(primetill)
   }
 
 //end 
+
+function gp(){
+  var a = document.getElementById("firstterm").value
+  var r = document.getElementById("ratio").value
+  var n = document.getElementById("number").value
+  console.log(a)
+  console.log(r)
+  console.log(n)
+  var power = parseInt(Math.pow(r,n) -1)
+  var ans1 = parseInt(a * power)
+  var ans = parseInt(ans1/(r-1))
+  document.getElementById("sumgp").innerHTML = "Sum = " + ans1
+}
 
 function permutationcal(nval, rval) {
   document.getElementById("permutation_div").style.display = "block";

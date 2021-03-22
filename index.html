@@ -253,6 +253,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="matrixpropsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties of Matrices and Determinants</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Properties of Matrices and Determinants','#matrixprops','c','matrixpropsfav')"><img
+                                        id="matrixpropsfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="algebraic-idencollapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Algebraic
                                 Identities</a>
@@ -260,6 +276,41 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Algebraic Identities','#algebraic-idencollapse','c','algebraic-idenfav')"><img
                                         id="algebraic-idenfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!--sum of n terms of an ap-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="APbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
+                                Nterms of an Arithmetic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an Arithmetic Progression','#sum_n_AP','c','APimgfav')"><img
+                                        id="APimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--sum of n terms of an gp-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="GPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
+                                Nterms of an Geometric Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_GP','c','GPimgfav')"><img
+                                        id="GPimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -348,6 +399,25 @@
                     </tr>
                 </table>
             </li>
+             <li>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="integration-idencollapsebtn"
+                                        style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Integration
+                                        Formulae</a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                    <span
+                                        onclick="addtofavourite('Integration Formulae','#integration-idencollapse','c','integration-idenfav')"><img
+                                            id="integration-idenfav" src="images/unfavourite.png"
+                                            style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
             <li>
                 <table class="table">
                     <tr>
@@ -501,8 +571,7 @@
                         <td style="border-top: none;">
                             <a id="inversetrigonoidenbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse
-                                Trigonometry
-                                Identities
+                                Trigonometric Identities
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -747,26 +816,6 @@
                     </tr>
                 </table>
             </li>
-
-
-            <!--sum of n terms of an ap-->
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="APbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
-                                Nterms of an Arithmetic Progression</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Nterms of an Arithmetic Progression','#sum_n_AP','c','APimgfav')"><img
-                                        id="APimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
 
             <div class="dropdown-divider"></div>
         </div>
@@ -1158,8 +1207,7 @@
                                        style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
                                        onclick="myFunction()">Change Mode
             <span id="moon" style="font-size: 1.25rem;">🌓</span></a></li>
-        <li class="list_menu_items"
-            style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
+        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
             Math Easy. All Rights Reserved.
         </li>
     </ul>
@@ -1396,6 +1444,8 @@
                     <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
                 </div>
             </div>
+
+
             <div style="display: inline-block;" class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="diffvariableselect"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Variable
@@ -1431,6 +1481,55 @@
             </div>
 
         </div>
+
+
+
+        <div class="collapse" id="integration-idencollapse">
+                <div class="stopwrap">
+                    <div class="coll">
+                        <div class="left">
+                            <h4>Integration Formulae</h4>
+                            <p>\[1)\space\int x^n \,dx\space=\frac{x^{(n+1)}}{n+1}+c\]</p>
+                            <p>\[2)\space\int\frac{1}{x}\,dx\space=ln\,|x|+c\]</p>
+                            <p>\[3)\space\int e^x\,dx\space=e^x+c\]</p>
+                            <p>\[4)\space\int a^x\,dx\space=\frac{a^x}{ln\space a}+c\]</p>
+                            <p>\[5)\space\int ln\space x\,dx\space=x\,ln\space x-x+c\]</p>
+                            <p>\[6)\space\int sin\space x\,dx\space=-\,cos\space x+c\]</p>
+                            <p>\[7)\space\int cos\space x\,dx\space=sin\space x+c\]</p>
+                            <p>\[8)\space\int sec^2\space x\,dx\space=tan\space x+c\]</p>
+                            <p>\[9)\space\int cosec^2\space x\,dx\space=-\,cot\space x+c\]</p>
+                            <p>\[10)\space\int sec\space x\space tan\space x\,dx=sec\space x+c\]</p>
+                            <p>\[11)\space\int cosec\space x\space cot\space x\,dx=-\,cosec\space x+c\]</p>
+                            <p>\[12)\space\int\tan\space x\,dx=ln\,|sec\space x|+c\]</p>
+                            <p>\[13)\space\int\cot\space x\,dx=ln\,|sin\space x|=-\,ln\,|cosec\space x|+c\]</p>
+                            <p>\[14)\space\int\sec\space x\,dx=ln\,|tan\space x\,+\,sec\space x|=-\,ln\,|sec\space
+                                x\,-\,tan\space x|+c\]</p>
+                            <p>\[15)\space\int\cosec\space x\,dx=ln\,|cosec\space x\,-\,cot\space
+                                x|=ln\,|tan\,\frac{x}{2}|+c\]</p>
+                            <p>\[16)\space\int\frac{1}{x^2+a^2}\,dx=\frac{1}{a}\,tan^{-1}\lparen\frac{x}{a}\rparen+c\]
+                            </p>
+                            <p>\[17)\space\int\frac{1}{x^2-a^2}\,dx=\frac{1}{2a}\,ln\,|\frac{x-a}{x+a}|+c\]</p>
+                            <p>\[18)\space\int\frac{1}{a^2-x^2}\,dx=\frac{1}{2a}\,ln\,|\frac{x+a}{x-a}|+c\]</p>
+                            <p>\[19)\space\int\frac{1}{\sqrt{a^2-x^2}}\,dx=sin^{-1}(\frac{x}{a})+c\]</p>
+                            <p>\[20)\space\int\frac{1}{\sqrt{a^2+x^2}}\,dx=ln\,|x+\sqrt{x^2+a^2}|+c\]</p>
+                            <p>\[21)\space\int\frac{1}{\sqrt{x^2-a^2}}\,dx=ln\,|x+\sqrt{x^2-a^2}|+c\]</p>
+                            <p>\[22)\space\int\sqrt{a^2-x^2}\,dx=\frac{x}{2}\sqrt{a^2-x^2}\,+\,\frac{a^2}{2}sin^{-1}(\frac{x}{a})+c\]
+                            </p>
+                            <p>\[23)\space\int\sqrt{x^2-a^2}\,dx=\frac{x}{2}\sqrt{x^2-a^2}\,-\,\frac{a^2}{2}ln\,|x+\sqrt{x^2-a^2}|+c\]
+                            </p>
+                            <p>\[24)\space\int\sqrt{x^2+a^2}\,dx=\frac{x}{2}\sqrt{x^2+a^2}\,+\,\frac{a^2}{2}ln\,|x+\sqrt{x^2+a^2}|+c\]
+                            </p>
+                            <p>\[25)\space\int\frac{1}{|x|\,\sqrt{x^2-a^2}}\,dx=\frac{1}{a}\,sec^{-1}\lparen\frac{x}{a}\rparen+c\]
+                            </p>
+                            <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
+                            <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
+                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
         <div class="collapse" id="differentiate-rulecollapse">
             <div class="stopwrap">
                 <div class="coll">
@@ -1668,8 +1767,8 @@
                             x}\]</p>
                         <p>\[7)\space \lim_{x→0}\space\frac{tan\space x}{x}=1=\lim_{x→0}\space\frac{x}{tan\space
                             x}\]</p>
-                        <p>\[8)\space \lim_{x→a}\space sin^{-1}\space x=sin^{-1}a,\space\space |a|<=1\]< /p>
-                        <p>\[9)\space \lim_{x→a}\space cos^{-1}\space x=cos^{-1}a,\space\space |a|<=1\]< /p>
+                        <p>\[8)\space \lim_{x→a}\space sin^{-1}\space x=sin^{-1}a,\space\space |a|<=1\] </p>
+                        <p>\[9)\space \lim_{x→a}\space cos^{-1}\space x=cos^{-1}a,\space\space |a|<=1\] </p>
                         <p>\[10)\space \lim_{x→a}\space tan^{-1}\space x=tan^{-1}a,\space\space -∞<
                             a <∞ \]</p>
 
@@ -1694,7 +1793,7 @@
                         <p>\[1)\space \lim_{x→a}\space \frac{(x^{n}-a^{n})}{x-a}\space=n(a)^{n-1}\]</p>
                         <p>\[2)\space \lim_{x→0}\space a^{x}\space =\frac{∞ \space if a > 1}{0\space if a< 1}\]
                             \[i.e.,\space a^{∞}\space=∞,\space if\space a>1\space and\space a^∞\space = 0,\space
-                            if\space a<1\]< /p>
+                            if\space a<1\] </p>
                         <p>\[3)\space if\space\lim_{x→a}\space f(x)\space =+∞,\space
                             then\space\lim_{x→a}\space \frac{1}{(x)}\space =0\]</p>
                         <p>\[4)\space\lim_{x→a}\space fog(x)=\space f(\lim_{x→a}\space g(x))\space
@@ -1848,6 +1947,30 @@
             </div>
 
         </div>
+        <div class="collapse" id="matrixprops">
+            <h2>Properties of Matrices</h2>
+            <p>1. If the rows and columns in a matrix A are interchanged, the new matrix is called the transpose of the original matrix 
+                 The transposed matrix is denoted by  A<sup>T</sup>
+            </p>
+            <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
+            <p>3. If the matrix product AB is defined, then (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
+            <p>4. AA<sup>-1</sup> = I where A<sup>-1</sup> is inverse of matrix A</p>
+            <p>5. (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></p>
+            <p>6. A matrix is said to be Involutary if A<sup>2</sup> = I</p>
+            <p>7. A matrix is said to be Idempotent if A<sup>2</sup> = A</p>
+            <p>8. A matrix is said to be Nilpotent if A<sup>p</sup> = 0 , where p is any positive integer</p>
+            <p>9. A matrix is said to be symmetric if A = A<sup>T</sup> and skew-symmetric if A = -A<sup>T</sup></p>
+            <p>10. A matrix is said to be Hermitian if A = A<sup>*</sup> and skew-Hermitian if A = -A<sup>*</sup>
+            where A<sup>*</sup> is transpose conjugate of matrix</p>
+            <h2>Properties of Determinants</h2>
+            <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
+            <p>2. det(X) = det(X<sup>T</sup>)</p>
+            <p>3. det(X<sup>-1</sup>) = -det(X)</p>
+            <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
+            <p>5. In a triangular matrix , the product of diagnol elements is determinant</p>
+            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>            
+        </div>
+
         <div class="collapse" id="algebraic-idencollapse">
             <div class="stopwrap">
                 <div class="coll">
@@ -3019,11 +3142,11 @@
                 <p>Kindly press the button twice for re-entering the angle</p>
 
             </div>
-            
+
             <div class="form-group">
                 <canvas id="plotangleres" width="1000" height="500" style="border:1px solid #d3d3d3;background-color:white">
               </canvas>
-                
+
             </div>
         </div>
 
@@ -3268,11 +3391,12 @@
         </div>
         <!-- Factorial end -->
 
-        <!--sum of nterms-->
+        <!--sum of nterms in A.P.-->
         <div class="collapse" id="sum_n_AP">
             <div class="text-center">
                 <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
             </div>
+            <h4>If first term,number of terms and common difference is given</h4><br>
             <form class="form-inline">
                 <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
@@ -3292,9 +3416,42 @@
                 <p id="sum_APsolprint" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                    align="right"></p>
             </div>
-
+            <br><br><br>
+            <h4>If first term,number of terms and last term is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft" placeholder="Enter the first term(a) "
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt" placeholder="Enter the last term(l)"
+                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=anotherap()>
+                Solve
+                </button>
+            </form>    
+            <h5 id="ltap"></h5>
+            <h5 id="formula"></h5>
         </div>
-        <!--sum of nterms ends-->
+        <!--sum of nterms in A.P. ends-->
+
+        <!-- sum of nterms in G.P.  -->
+        <div class="collapse" id="sum_n_GP">
+            <h2>Sum of Nterms of an Geometric Progression</h2>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field"  id="firstterm"
+                       placeholder="Enter first term"/>
+                <input type="text"  style="width: 15.625rem;" class="form__field" id="ratio"
+                       placeholder="Enter ratio between terms"/>
+                <input type="text"  style="width: 15.625rem;" class="form__field" id="number"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="gp()">Find</button>
+                <br>
+                <div style="color:var(--appimage); font-size: large;" id="sumgp"></div>
+            </div>
+        </div>
+        <!-- sum of nterms in G.P. ends  -->
 
         <!-- Permutattiona and combination -->
         <div class="collapse" id="pandc">
