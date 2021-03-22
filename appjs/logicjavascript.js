@@ -940,7 +940,8 @@ function checkforusetrigovalue() {
     el.innerText != "" &&
     el.innerText != "Cannot Compute for -ve Square Root" &&
     el.innerText != "Hypotenuse Should be Greater" &&
-    el.innerText != "Kindly fill Atleast 2 fields"
+    el.innerText != "Kindly fill Atleast 2 fields" &&
+	el.innerText != "Right angled triangle with such dimensions is not possible" 
   ) {
     $("#usetrigovaluesbtn").fadeIn();
   } else {
@@ -966,7 +967,12 @@ function solvesimpletrigo() {
       document.getElementById("h").style.color = "red";
       document.getElementById("soltri").innerHTML =
         "Hypotenuse Should be Greater";
-    } else if (pp == "") {
+    } else if(pp != "" && base != "" && hyp != "" && parseInt(hyp)^2 != parseInt(pp)^2 + parseInt(base)^2) 
+	{
+      document.getElementById("soltri").innerHTML =
+        "Right angled triangle with such dimensions is not possible";
+	}
+	  else if (pp == "") {
       document.getElementById("h").style.color = "white";
       var pp = eval(hyp * hyp - base * base);
       var kl = String(pp);
@@ -1856,7 +1862,7 @@ function solveSlope()
   {
     document.getElementById("resultofline").innerHTML="Enter all four points";
     document.getElementById("answerofline").innerHTML="";
-    document.getElementById("answer").innerHTML="";
+    document.getElementById("answerofline2").innerHTML="";
 
   }
   else if(parseInt(x2)-parseInt(x1)==0)
@@ -1871,9 +1877,9 @@ function solveSlope()
      let sol2="\\[Slope="+temp+"\\]";
      document.getElementById("resultofline").innerHTML="\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
      document.getElementById("answerofline").innerHTML=sol;
-     document.getElementById("answer").innerHTML=sol2;
+     document.getElementById("answerofline2").innerHTML=sol2;
      renderMathInElement(document.getElementById("answerofline"));
-     renderMathInElement(document.getElementById("answer"));
+     renderMathInElement(document.getElementById("answerofline2"));
      renderMathInElement(document.getElementById("resultofline"));
   }
   
@@ -3527,6 +3533,24 @@ function factorialsol(factorialval) {
     ans.innerHTML += calc;
   }
 }
+// profit loss calculations
+function profitloss(){
+  var cp = parseFloat(document.getElementById("cp").value);
+  var sp = parseFloat(document.getElementById("sp").value);
+  if(cp>sp){
+    var loss = cp-sp;
+	var perl=(loss*100)/cp;
+    document.getElementById("pol").innerHTML = "Loss = "+ loss;
+	document.getElementById("percent").innerHTML = "Loss Percentage =" + perl +"%";
+  }
+  else {
+    var profit = sp-cp; 
+	var perp =(profit*100)/sp;
+    document.getElementById("pol").innerHTML = "Profit = " + profit;
+	document.getElementById("percent").innerHTML = "Profit Percentage =" + perp +"%";
+  }
+}
+
 //sum of nterms of an Arithmetic Progression
 function sum_n_apsol(nval,rval,r1val)
 {
@@ -3535,15 +3559,40 @@ function sum_n_apsol(nval,rval,r1val)
    var d = document.getElementById(r1val).value;
    var res = document.getElementById("sum_APsolprint");
    var explain = document.getElementById("sumAP_formula");
+   var printseries = document.getElementById("printAPseries");
    let cal;
    if(!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d)))
    {
+      for(var i=1, series = "", num = 0;i <= n ;i++){
+        num = parseInt(a)+(i-1)*d;
+        series += (num.toString() + ", ");
+      }
+      printseries.innerHTML = "Arithmetic Progression: "+series;
        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[2a+(n-1)d\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
        console.log(res);
        renderMathInElement(document.getElementById("sumAP_formula"));
    }
+}
+
+function anotherap(){
+  var n = document.getElementById("numterms").value
+  var a = document.getElementById("ft").value
+  var l = document.getElementById("lt").value  
+  var nhalf = parseInt(n/2)
+  var al = parseInt(a)+parseInt(l)
+  var ans = parseInt(nhalf *al)
+  var series="";
+  var num = parseInt(a);
+  series += num.toString() + ", ";
+  let d = parseInt((l-a)/(n-1))
+  while(parseInt(num)<parseInt(l)){
+    num += parseInt(d);
+    series += (num.toString() + ", ");
+ }
+  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
+  document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
 
 // Primality test
@@ -3624,6 +3673,19 @@ function prime_till_num(primetill)
   }
 
 //end 
+
+function gp(){
+  var a = document.getElementById("firstterm").value
+  var r = document.getElementById("ratio").value
+  var n = document.getElementById("number").value
+  console.log(a)
+  console.log(r)
+  console.log(n)
+  var power = parseInt(Math.pow(r,n) -1)
+  var ans1 = parseInt(a * power)
+  var ans = parseInt(ans1/(r-1))
+  document.getElementById("sumgp").innerHTML = "Sum = " + ans1
+}
 
 function permutationcal(nval, rval) {
   document.getElementById("permutation_div").style.display = "block";
@@ -4065,3 +4127,68 @@ function datecal()
   }
 }
 //--------------------------------------------------------------------------------
+
+function angleplot()
+{
+
+//clearing the canvas
+var canvas = document.getElementById('plotangleres');
+var context = canvas.getContext('2d');
+context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+
+
+
+
+var input = document.getElementById("inputangle").value;
+var c = document.getElementById("plotangleres");
+var ctx = c.getContext("2d");
+ctx.lineWidth = 3;
+
+
+
+//for labelling 0 
+var c0tx = c.getContext("2d");
+c0tx.font = "15px Arial";
+c0tx.fillText("0° ",630,250); 
+
+
+//for labelling 90 
+var c90tx = c.getContext("2d");
+c90tx.font = "15px Arial";
+c90tx.fillText("90° ",510,125); 
+
+//for labelling 180 
+var c180tx = c.getContext("2d");
+c180tx.font = "15px Arial";
+c180tx.fillText("180° ",335,250); 
+
+
+//for labelling 270 
+var c270tx = c.getContext("2d");
+c270tx.font = "15px Arial";
+c270tx.fillText("270° ",510,400); 
+
+
+
+
+
+
+var ytx=c.getContext("2d");
+var xtx=c.getContext("2d");
+ytx.moveTo(500, 0);
+ytx.lineTo(500, 1000);
+ytx.stroke(); 
+xtx.moveTo(0,250);
+xtx.lineTo(1000, 250);
+xtx.stroke(); 
+ctx.beginPath();
+input=input%360;
+ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+ctx.stroke();
+
+
+
+}
