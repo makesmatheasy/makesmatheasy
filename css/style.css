@@ -42,6 +42,24 @@ p {
   font-size: 20px;
 }
 
+.frac {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  letter-spacing: 0.001em;
+  text-align: center;
+}
+.frac > span {
+  display: block;
+  padding: 0.1em;
+}
+.frac span.bottom {
+  border-top: thin solid rgb(202, 15, 130);
+}
+.frac span.symbol {
+  display: none;
+}
+
 .readonlybody {
   user-select: none;
   -moz-user-select: none;
