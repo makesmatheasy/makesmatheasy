@@ -3529,17 +3529,19 @@ function factorialsol(factorialval) {
 }
 // profit loss calculations
 function profitloss(){
-  var cp = document.getElementById("cp").value
-  var sp = document.getElementById("sp").value
+  var cp = parseFloat(document.getElementById("cp").value);
+  var sp = parseFloat(document.getElementById("sp").value);
   if(cp>sp){
     var loss = cp-sp;
-    document.getElementById("loss").innerHTML = "Loss = "+ loss
-    document.getElementById("profit").innerHTML = "Profit = 0"
+	var perl=(loss*100)/cp;
+    document.getElementById("pol").innerHTML = "Loss = "+ loss;
+	document.getElementById("percent").innerHTML = "Loss Percentage =" + perl +"%";
   }
   else {
-    var profit = sp-cp;
-    document.getElementById("profit").innerHTML = "Profit = " + profit
-    document.getElementById("loss").innerHTML = "Loss = 0"
+    var profit = sp-cp; 
+	var perp =(profit*100)/sp;
+    document.getElementById("pol").innerHTML = "Profit = " + profit;
+	document.getElementById("percent").innerHTML = "Profit Percentage =" + perp +"%";
   }
 }
 
