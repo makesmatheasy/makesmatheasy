@@ -3559,9 +3559,15 @@ function sum_n_apsol(nval,rval,r1val)
    var d = document.getElementById(r1val).value;
    var res = document.getElementById("sum_APsolprint");
    var explain = document.getElementById("sumAP_formula");
+   var printseries = document.getElementById("printAPseries");
    let cal;
    if(!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d)))
    {
+      for(var i=1, series = "", num = 0;i <= n ;i++){
+        num = parseInt(a)+(i-1)*d;
+        series += (num.toString() + ", ");
+      }
+      printseries.innerHTML = "Arithmetic Progression: "+series;
        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[2a+(n-1)d\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
@@ -3577,6 +3583,15 @@ function anotherap(){
   var nhalf = parseInt(n/2)
   var al = parseInt(a)+parseInt(l)
   var ans = parseInt(nhalf *al)
+  var series="";
+  var num = parseInt(a);
+  series += num.toString() + ", ";
+  let d = parseInt((l-a)/(n-1))
+  while(parseInt(num)<parseInt(l)){
+    num += parseInt(d);
+    series += (num.toString() + ", ");
+ }
+  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
 
