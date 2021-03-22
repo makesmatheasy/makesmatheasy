@@ -418,6 +418,7 @@
                         </tbody>
                     </table>
                 </li>
+
                          <li>
                     <table class="table">
                         <tbody>
@@ -436,7 +437,10 @@
                             </tr>
                         </tbody>
                     </table>
-                </li>   
+
+                </li>
+
+
             <li>
                 <table class="table">
                     <tr>
@@ -1216,7 +1220,7 @@
                                        onclick="window.open('contact.html')">Contact</a>
         </li>
 
-        <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy.github.io
+        <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/MakesMathEasy/
 " data-action="share/whatsapp/share" style="font-size: 1rem;">Share to Whatsapp<img
                 style="display:inline;height:1.5625rem;filter: none;" src="images/whatsapplogo.png"></a>
         </li>
@@ -1545,7 +1549,7 @@
                     </div>
                 </div>
             </div>
-        
+
                 <div class="collapse" id="defintegration-idencollapse">
             <div class="stopwrap">
             	 <div class="coll">
@@ -1605,7 +1609,7 @@
                         <p>\[If\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \sin^n x \,dx  }\,or\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \cos^n x \,dx. }\]</p>
                         <p>\[then,\,\,\,If\,n\,is\,even,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}, }\]</p>
                         <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}. }\]<p>
-                        
+
                     </div>
                 </div>
 
@@ -1635,7 +1639,7 @@
                         <p>\[\frac{d}{dx}(a^x)=a^xln \space a\]</p>
                         <p>\[\frac{d}{dx}(e^{g(x)})=e^{g(x)}g'(x)\]</p>
                         <p>\[\frac{d}{dx}(a^{g(x)})=ln(a)a^{g(x)}g'(x)\]</p>
-                        
+
                     </div>
                     <div class="right">
                         <h4>Logarithmic Functions</h4>
@@ -1654,7 +1658,7 @@
                         <p>\[\frac{d}{dx}(cosecx)=-cosecx \space cotx\]</p>
                         <p>\[\frac{d}{dx}(secx)=secx \space tanx\]
                         <p>\[\frac{d}{dx}(cotx)=-cosec^2x\]
-                    
+
                     </div>
                     <div class="right">
                         <h4>Inverse Trignometric Functions</h4>
@@ -2032,7 +2036,7 @@
         </div>
         <div class="collapse" id="matrixprops">
             <h2>Properties of Matrices</h2>
-            <p>1. If the rows and columns in a matrix A are interchanged, the new matrix is called the transpose of the original matrix 
+            <p>1. If the rows and columns in a matrix A are interchanged, the new matrix is called the transpose of the original matrix
                  The transposed matrix is denoted by  A<sup>T</sup>
             </p>
             <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
@@ -2051,7 +2055,7 @@
             <p>3. det(X<sup>-1</sup>) = -det(X)</p>
             <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
             <p>5. In a triangular matrix , the product of diagnol elements is determinant</p>
-            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>            
+            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
         </div>
 
         <div class="collapse" id="algebraic-idencollapse">
@@ -2696,7 +2700,7 @@
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">
                 <div class="col-6">
-                    <p class="text-center">Fill atleast any of Two</p>
+                    <p class="text-center">Fill atleast any Two</p>
                     <br>
                     <input type="number" id="p" class="form__field" placeholder="Perpendicular"
                            oninput="solvesimpletrigo();checkforusetrigovalue();">
@@ -2846,9 +2850,9 @@
             <br><br>
             <button class="btn btn-light" onclick=profitloss()>Submit</button>
             <br><br>
-            <h5 id="profit">Profit = 0</h5>
+            <h5 id="pol"></h5>
             <br>
-            <h5 id="loss">Loss = 0</h5>
+            <h5 id="percent"></h5>
         </div>
 
         <!-- Currency convert -->
@@ -3502,6 +3506,9 @@
             </form>
             <br>
             <div class="form-group">
+                <p id="printAPseries" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+                <br>
                 <p id="sumAP_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                    align="right"></p>
                 <br>
@@ -3520,7 +3527,10 @@
                 <button type="button" class="btn btn-light" onclick=anotherap()>
                 Solve
                 </button>
-            </form>    
+            </form>   
+            <br>
+            <p id="printAPseries1" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                align="right"></p>
             <h5 id="ltap"></h5>
             <h5 id="formula"></h5>
         </div>
