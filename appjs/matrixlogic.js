@@ -93,6 +93,7 @@ function displaymatrix(val, ar, elid, m, n) {
     });
 }
 
+
 function signofmatrix(value) {
     var el = document.getElementById('signofmatrix');
     el.innerHTML = value;
@@ -171,11 +172,11 @@ function sumofmatrix() {
             sumexplanation += "</div>"
             sumexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = sumexplanation;
         displaymatrix('Addition\\space Result', summ, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -256,11 +257,11 @@ function subtractofmatrix() {
             subbexplanation += '</div>';
             subbexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = subbexplanation;
         displaymatrix('Subtraction\\space Result', subb, 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -357,11 +358,11 @@ function mulofmatrix() {
             }
             mulexplanation += '<br>';
         }
-        <!--            printhere-->
+        // <!--            printhere-->
         document.getElementById('explanationmatrixresult').innerHTML = mulexplanation;
         renderMathInElement(document.getElementById('explanationmatrixresult'));
         displaymatrix('Multiplication\\space Result', mul, 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
-        <!--            printhere-->
+        // <!--            printhere-->
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -387,7 +388,16 @@ function checkfunctionsmultiple() {
         document.getElementById('generatedmatrix2').innerHTML = '';
         document.getElementById('signofmatrix').innerHTML = '';
 
-    } else {
+    }
+	else if(parseInt(r1) <=0 || parseInt(r2) <=0 || parseInt(c1) <=0 || parseInt(c2) <=0)
+	{
+		 document.getElementById('mmatrixerror').innerHTML = "<center>Please enter positive integers for the dimensions.</center>";
+		 removeall('generatedmatrix1');
+         removeall('generatedmatrix2');
+	}
+	   
+	else {
+		removeall('mmatrixerror');
         creatematrix2();
         creatematrix1();
         if (r1 == r2 && c1 == c2) {
@@ -496,15 +506,166 @@ function transpose() {
     }, 2000);
 }
 
+
 function soperation(value) {
     if (value == 'Transpose') {
         transpose();
-    } else if (value == 'Minors & Co-Factors') {
+    } else if(value == 'Rank'){
+        rank();
+    }
+    else if (value == 'Minors & Co-Factors') {
         miandcofactors();
     } else if (value == "Determinant") {
         laplacedeterminant();
     }
 }
+
+
+//rank calculation
+function rank(){
+    loader('show');
+    setTimeout(function () {
+        sendtomatrixsingle();
+        var rankexplanation = "<div style='border-radius:50px;display:table;color:black;padding:20px;margin-left: auto; margin-right: auto;'>"
+        var row = document.getElementById('srow1').value;
+        var column = document.getElementById('scolumn1').value;
+        var rank=column;
+        //---print initial matrix
+        rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Given \\space Matrix\\]"
+        rankexplanation+='\\[\\begin{bmatrix}'
+        for (i = 0; i < row; i++){
+            for (j = 0; j < column; j++){
+                rankexplanation+=matrixsingle[i][j]+"&";
+            }
+            rankexplanation = rankexplanation.slice(0, -1);
+            rankexplanation+='\\\\';
+        }
+        rankexplanation+='\\end{bmatrix}\\]'+"</div>";
+
+        for (i = 0; i < rank && i<row; i++) {
+            let eliminateflag=1,swaprowflag=1,swapcolumnflag=1,swaprow;
+            if (matrixsingle[i][i]!=0) {
+                for (j = i; j < row; j++) {
+                    if(j!=i && matrixsingle[j][i]!=0){
+                        let factor=matrixsingle[j][i]/matrixsingle[i][i];
+                        for(k=0;k<rank;k++){
+                            matrixsingle[j][k]-=factor * matrixsingle[i][k];
+                            eliminateflag=0;
+                        }   
+                    }
+                }
+                if(i!=row-1 && eliminateflag==0 ){
+                        rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Eliminate \\space elements \\space in \\space the \\space "+(i+1)+" \\space column \\space under \\space" +(i+1)+"\\space element\\]";
+                }
+            }     
+            else {
+               let flag=1;
+               for(j=i+1;j<row;j++) {
+                   if(matrixsingle[j][i]!=0){
+                        rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Swap \\space the \\space "+(i+1)+" \\space and \\space " +(j+1)+"\\space row\\]";
+                        swaprowflag=0; 
+                        swaprow=j;
+                        for(k=0;k<column;k++){
+                           let temp=matrixsingle[i][k];
+                           matrixsingle[i][k]=matrixsingle[j][k];
+                           matrixsingle[j][k]=temp;
+                        }
+                        flag=0;
+                        break;
+                    }
+                }
+                if(flag){
+                    rank--;
+                    if(i!=rank){
+                        rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Swap \\space the \\space "+(i+1)+" \\space and \\space " +(rank+1)+"\\space column\\]";
+                        swapcolumnflag=0;
+                        for(k=0;k<row;k++){
+                            let temp=matrixsingle[k][i];
+                            matrixsingle[k][i]=matrixsingle[k][rank];
+                            matrixsingle[k][rank]=temp;
+                        
+                        }
+                    }
+                    
+                }
+                i--;    
+            }
+            if(eliminateflag==0){
+                rankexplanation+='\\[\\begin{bmatrix}'
+                for(j=0;j<row;j++){
+                    for(k=0;k<column;k++){
+                        if(k==i && j>=i){
+                            rankexplanation+='\\color{blue}'
+                            let e=nerdamer(matrixsingle[j][k])
+                            rankexplanation+=e.text('fractions')+"&";
+                        }
+                        else{
+                            let e=nerdamer(matrixsingle[j][k])
+                            rankexplanation+=e.text('fractions')+"&";
+                        }   
+                    }
+                    rankexplanation = rankexplanation.slice(0, -1);
+                    rankexplanation+='\\\\';
+                }
+                rankexplanation+='\\end{bmatrix}\\]'+"</div>";
+            }
+            else if(swaprowflag==0){
+                rankexplanation+='\\[\\begin{bmatrix}'
+                for(j=0;j<row;j++){
+                    for(k=0;k<column;k++){
+                        if(j==i+1 || j==swaprow){
+                            rankexplanation+='\\color{blue}'
+                            let e=nerdamer(matrixsingle[j][k])
+                            rankexplanation+=e.text('fractions')+"&";
+                        }
+                        else{
+                            let e=nerdamer(matrixsingle[j][k])
+                            rankexplanation+=e.text('fractions')+"&";
+                        }   
+                    }
+                    rankexplanation = rankexplanation.slice(0, -1);
+                    rankexplanation+='\\\\';
+                }
+                rankexplanation+='\\end{bmatrix}\\]'+"</div>";
+            }
+            else if(swapcolumnflag==0){
+                rankexplanation+='\\[\\begin{bmatrix}'
+                for(j=0;j<row;j++){
+                    for(k=0;k<column;k++){
+                        if(k==i+1|| k==rank){
+                            rankexplanation+='\\color{blue}'
+                            let e=nerdamer(matrixsingle[j][k])
+                            rankexplanation+=e.text('fractions')+"&";
+                        }
+                        else{
+                            let e=nerdamer(matrixsingle[j][k])
+                            rankexplanation+=e.text('fractions')+"&";
+                        }   
+                    }
+                    rankexplanation = rankexplanation.slice(0, -1);
+                    rankexplanation+='\\\\';
+                }
+                rankexplanation+='\\end{bmatrix}\\]'+"</div>";
+            }
+        }
+        let minimum=Math.min(row,column);
+        let maximum=Math.max(row,column);
+        if(rank>minimum ){
+              rank=minimum-(maximum-rank);
+        }
+        rankexplanation+="\\[Count \\space number\\space of \\space non \\space zero \\space rows/columns,\\space that \\space will \\space be \\space rank.\\\\Rank\\space Of \\space Matrix="+ rank +"\\]";
+        rankexplanation+="</div>";
+        document.getElementById('singlematrixresult').innerHTML=  "\\[Rank \\space Of \\space Matrix=" + rank + "\\]";
+        document.getElementById('singlematrixexplanation').innerHTML =rankexplanation;
+        renderMathInElement(document.getElementById('singlematrixexplanation'));
+        renderMathInElement(document.getElementById('singlematrixresult'));
+
+        }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
+}
+
 
 function miandcofactors() {
     loader('show');
@@ -876,14 +1037,25 @@ function checkfunctions() {
         document.getElementById('singlematrixresult').innerHTML = '';
         removeall('generatedmatrixsingle');
     }
+	else if(parseInt(row) <=0 || parseInt(column) <=0)
+	{
+		 document.getElementById('smatrixerror').innerHTML = "<center>Please enter positive integers for the dimensions.</center>";
+		 removeall('generatedmatrixsingle');
+	}
+	else
+	   removeall('smatrixerror');
     if (row != column && row != '' && column != '') {
         creatematrixsingle();
+        addop('sopval', 'Select Operation')
         addop('sopval', 'Transpose')
+        addop('sopval', 'Rank')
+
     }
     if (row == column) {
         creatematrixsingle();
         addop('sopval', 'Select Operation')
         addop('sopval', 'Transpose')
+        addop('sopval', 'Rank')
         addop('sopval', 'Minors & Co-Factors')
         addop('sopval', 'Determinant')
     }
@@ -893,9 +1065,12 @@ function checkfunctions() {
         if (parseInt(row) <= 5 && (parseInt(row) == parseInt(column))) {
             addop('sopval', 'Select Operation')
             addop('sopval', 'Transpose')
+            addop('sopval', 'Rank')
             addop('sopval', 'Determinant')
         } else {
+            addop('sopval', 'Select Operation')
             addop('sopval', 'Transpose')
+            addop('sopval', 'Rank')
         }
 
     }
