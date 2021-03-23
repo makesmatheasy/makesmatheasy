@@ -207,7 +207,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    
+    $("#spiconbtn").click(function () {
+        openit("#spiconcal");
+        closenav();
+        clearall();
+    });
      // I have added
      $("#factorialbtn").click(function () {
         openit("#factorial");

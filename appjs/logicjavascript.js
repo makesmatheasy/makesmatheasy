@@ -3303,6 +3303,54 @@ function lenu(a) {
       return 1852;
   }
 }
+function spicon() {
+  const f = lenu(document.getElementById("spicon-1").value);
+  const t = lenu(document.getElementById("spicon-2").value);
+  const i = parseFloat(document.getElementById("spiconin").value);
+
+  if(f == 0.001 && t == 0.001)
+  {
+   if(i >10)
+   {
+    document.getElementById("spiconou").innerHTML = "SPI must be <= 10";
+   } 
+   else{
+  document.getElementById("spiconou").innerHTML = `${i}`;
+  }
+}
+  else if(f == 0.01 && t == 0.01)
+  {
+    if(i >95)
+    {
+     document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
+    } 
+    else{
+   document.getElementById("spiconou").innerHTML = `${i}`;
+   }
+  }
+  else if(f == 0.001)
+  {
+    if(i>10)
+    {
+      document.getElementById("spiconou").innerHTML = "SPI must be <= 10";  
+    }
+    else
+    {
+    document.getElementById("spiconou").innerHTML = `${((i-0.5)*10)}`; 
+  }
+}
+  else
+  {
+    if(i>95)
+    {
+      document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
+    }
+    else
+    {
+    document.getElementById("spiconou").innerHTML = `${(i/10) + 0.5}`;
+    }
+}
+}
 function lentgthcon() {
   const f = lenu(document.getElementById("lengthcon-1").value);
   const t = lenu(document.getElementById("lengthcon-2").value);
