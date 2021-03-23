@@ -1495,7 +1495,7 @@
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
-        <!-->
+      
 
         <div class="collapse" id="differentiatecollapse">
             <div style="display: inline-block;" class="dropdown">
@@ -1595,7 +1595,9 @@
                             </p>
                             <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
                             <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
-                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
+                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p> 
+                            <p>\[29)\space e^{ax}sinbx \space dx \space = \frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
+                            <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
                         </div>
                     </div>
                 </div>
@@ -1608,7 +1610,7 @@
                        	<p>\[1)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{b}{f(t)dt}\]</p>
                         <p>\[2)\int\limits_{a}^{b}{f(x)dx=}-\int\limits_{b}^{a}{f(x)dx}\]</p>
                         <p>\[3)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{c}{f(t)dt}+\int\limits_{c}^{b}{f(t)dt}\]</p>
-                        <p>\[4)\int\limits_{-a}^{a}{f(x)dx=\left\{ \begin{matrix} 0 & if\,\,f\left( x \right)\,is\,odd \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( x \right)\,is\,odd \\ \end{matrix} \right.\,\,\,\,\,\,}\]</p>
+                        <p>\[4)\int\limits_{-a}^{a}{f(x)dx=\int\limits_{0}^{a}[f(x)+f(-x)]=\left\{ \begin{matrix} 0 & if\,\,f\left( x \right)\,is\,odd\,function \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( x \right)\,is\,even\,function \\ \end{matrix} \right.\,\,\,\,\,\,}\]</p>
                         </div>
                     </div>
 
@@ -1636,6 +1638,7 @@
                         <p>\[1)\space\int_{a}^b\,f(x)\,dx\space=\int_{a}^b\,f(a+b-x)\,dx\]</p>
                         <p>\[2)\space\int_{0}^a\,f(x)\,dx\space=\int_{0}^a\,f(a-x)\,dx\]</p>
                         <p>\[3)\space\int_{-a}^a\,f(x)\,dx\space=\int_{-a}^a\,f(-x)\,dx\]</p>
+                        <p>\[4)\int\limits_{0}^{2a}{f(x)dx=\int\limits_{0}^{a}f(x) + \int_{0}^a f(2a-x)dx \space = \left\{ \begin{matrix} 0 & if\,\,f\left( 2a-x \right)\,-f(x) \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( 2a-x \right)\,=f(x) \\ \end{matrix} \right.\,\,\,\,\,\,}\]</p>
                 </div>
             </div>
                     <div class="coll">
@@ -1646,7 +1649,7 @@
                 </div>
                 <div class="coll">
                     <div class="left">
-                        <h4> Leibniz's rule</h4>
+                        <h4> Leibnitz's rule</h4>
                        <center> <p>\[For\,an\,integral\,of\,the\,form\,\displaystyle{ \int_{a(x)}^{b(x)} f(x,t)\,dt, }\]</p>
                         <p>\[where\,\displaystyle{ -\infty \lt  a(x), b(x) \lt  \infty },\,the\,derivative\,of\,this\,integral\,is\,expressible\,as\]</p>
                         <p>\[\displaystyle{ \frac{d}{dx} \left (\int_{a(x)}^{b(x)} f(x,t)\,dt \right )= f\big(x,b(x)\big)\cdot \frac{d}{dx} b(x) - f\big(x,a(x)\big)\cdot \frac{d}{dx} a(x) + \int_{a(x)}^{b(x)}\frac{\partial}{\partial x} f(x,t) \,dt, }\]</p>
@@ -1663,7 +1666,15 @@
 
 
 
-                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}. 
+                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}} \]</p>
+                      </div>
+                </div>
+                <div class="coll">
+                    <div class="left">
+                        <h4>Some Standard Results</h4>
+                        <p>\[\int\limits_{0}^{\frac{\pi}{2}}logsinx \space = -\frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosx \space dx\]</p>
+                        <p>\[\int\limits_{a}^{b}{x}dx \space=\frac{b-a}{2} \space a,b \in I\]
+                        <p>\[\int \limits_{a}^{b}\frac{|x|}{x}dx \space = |b|-|a|\]
 
                     </div>
                 </div>
