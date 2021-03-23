@@ -163,7 +163,6 @@ function openit(id) {
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
-        "#prime",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
