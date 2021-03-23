@@ -166,7 +166,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    
+    $("#trigsolcollapsebtn").click(function () {
+        openit("#trigsolcollapse");
+        closenav();
+        clearall();
+    })
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
