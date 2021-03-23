@@ -300,6 +300,11 @@ $(document).ready(function () {
     });
 
 
+    $("#emibtn").click(function(){
+        openit("#emical");
+        closenav();
+        clearall();
+    });
 
 });
 

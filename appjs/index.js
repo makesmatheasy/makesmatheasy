@@ -175,6 +175,7 @@ function openit(id) {
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
+        "#emical"
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
