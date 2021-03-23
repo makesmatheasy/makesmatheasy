@@ -3697,6 +3697,18 @@ function gp(){
   var ans = parseInt(ans1/(r-1))
   document.getElementById("sumgp").innerHTML = "Sum = " + ans1
 }
+function igp(){
+  var a = document.getElementById("fterm").value
+  var r = parseFloat(document.getElementById("r").value)
+  if(r>=1)
+  {
+	document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
+  }
+  else{
+  var ans=a/(1-r)
+  document.getElementById("sumigp").innerHTML = "Sum = " + ans
+  }
+}
 
 function permutationcal(nval, rval) {
   document.getElementById("permutation_div").style.display = "block";
