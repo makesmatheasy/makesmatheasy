@@ -173,6 +173,7 @@ function openit(id) {
         "#sum_n_GP",
         "#algebraic_formulascollapse",
         "#expansion",
+        "#solutiontri",
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
