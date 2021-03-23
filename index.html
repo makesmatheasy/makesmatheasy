@@ -605,8 +605,25 @@
                     </tr>
                 </table>
             </li>
-
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="trigsolcollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">General Solution of
+                                Trigonometric Equations
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('General Solution of Trigonometric Equations','#trigsolcollapse','c','trigsolimgfav')"><img
+                                        id="trigsolimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        
             <li>
                 <table class="table">
                     <tr>
@@ -1478,7 +1495,7 @@
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
-        <!-->
+      
 
         <div class="collapse" id="differentiatecollapse">
             <div style="display: inline-block;" class="dropdown">
@@ -1580,7 +1597,7 @@
                             <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
                             <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p> 
                             <p>\[29)\space e^{ax}sinbx \space dx \space = \frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
-                            <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>                          
+                            <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
                         </div>
                     </div>
                 </div>
@@ -1624,7 +1641,7 @@
                         <p>\[4)\int\limits_{0}^{2a}{f(x)dx=\int\limits_{0}^{a}f(x) + \int_{0}^a f(2a-x)dx \space = \left\{ \begin{matrix} 0 & if\,\,f\left( 2a-x \right)\,-f(x) \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( 2a-x \right)\,=f(x) \\ \end{matrix} \right.\,\,\,\,\,\,}\]</p>
                 </div>
             </div>
-                <div class="coll">
+                    <div class="coll">
                     <div class="left">
                         <h4>Integration By Part</h4>
                         <p>\[\int_{a}^{b} du(\frac{dv}{dx})dx=[uv]_{a}^{b}-\int_{a}^{b} v(\frac{du}{dx})dx\]</p>
@@ -1644,8 +1661,13 @@
                         <h4>Wallis Integrals</h4>
                         <p>\[If\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \sin^n x \,dx  }\,or\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \cos^n x \,dx. }\]</p>
                         <p>\[then,\,\,\,If\,n\,is\,even,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}, }\]</p>
+
+                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}. }\]<p>
+
+
+
                         <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}} \]</p>
-                    </div>
+                      </div>
                 </div>
                 <div class="coll">
                     <div class="left">
@@ -1653,6 +1675,7 @@
                         <p>\[\int\limits_{0}^{\frac{\pi}{2}}logsinx \space = -\frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosx \space dx\]</p>
                         <p>\[\int\limits_{a}^{b}{x}dx \space=\frac{b-a}{2} \space a,b \in I\]
                         <p>\[\int \limits_{a}^{b}\frac{|x|}{x}dx \space = |b|-|a|\]
+
                     </div>
                 </div>
 
@@ -2806,6 +2829,29 @@
                 <li style="color: white; font-size: 1.25rem;">tan-1x - tan-1y = tan-1(x-y/(1+xy))</li>
             </ol>
         </div>
+        <div class="collapse" id="trigsolcollapse">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>General Solution of Some Trigonometric Equations</h4>
+                        <p>\[1)\space If \space sin\theta=0, \space then \space \theta=n\pi, \space n \in I(set \space of \space integers)\]</p>
+                        <p>\[2)\space If \space cos\theta=0, \space then \space \theta=(2n+1)\frac{\pi}{2}, \space n \in I\]</p>
+                        <p>\[3)\space If \space tan\theta=0, \space then \space \theta=n\pi, \space n \in I\]</p>
+                        <p>\[4)\space If \space sin\theta=sin\alpha, \space then \space \theta=n\pi +(-1)^n\alpha, \space where \space \alpha \in [\frac{-\pi}{2},\frac{\pi}{2}], \space n\in I\]</p>
+                        <p>\[5)\space If \space cos\theta=cos\alpha, \space then \space \theta=2n\pi ± \alpha, \space n \in I \space \alpha \in [0,\pi]\]</p>
+                        <p>\[6)\space If \space tan\theta=tan\alpha, \space then \space \theta=n\pi + \alpha, \space n \in I \space \alpha \in (\frac{-\pi}{2},\frac{\pi}{2})\]</p>
+                        <p>\[7)\space If \space sin\theta=1, \space \theta=2n\pi+ \frac{\pi}{2}=(4n+1)\frac{\pi}{2}, \space n \in I\]</p>
+                        <p>\[8)\space If \space cos\theta=1 \space then \space \theta=2n\pi, \space n \in I\]</p>
+                        <p>\[9)\space If sin^2\theta \space =sin^2\alpha \space \space or \space cos^2\theta \space = cos^2\alpha \space \space or \space tan^2\theta \space = tan^2\alpha,\]\[then \space \theta=n\pi \space ± \space \alpha, \space n \in I\]</p>
+                        <p>\[10)\space For \space n \in I, \space sinn\pi=0 \space and \space cosn\pi \space =(-1)^n, \space n \in I \]\[sin(n\pi + \theta) \space = (-1)^nsin\theta\]\[cos(n\pi+ \theta) \space =(-1)^ncos\theta\]</p>
+                        <p>\[11)\space cos \space n\pi \space = (-1)^n, \space n \in I\]</p>
+                        <p>\[12)\space If \space n \space is \space an \space odd \space integer \space then \space  sin\frac{n\pi}{2}=(-1)^{\frac{n-1}{2}}, \space cos\frac{n\pi}{2}=0\]</p>
+                        <p>\[13)\space sin(\frac{n\pi}{2}+\theta) \space = (-1)^{\frac{n-1}{2}} \space cos\theta, \space cos(\frac{n\pi}{2}+\theta) \space = (-1)^{\frac{n+1}{2}}sin\theta\]
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="collapse" id="expansion">
             <h2>Expansion of Trigonometric Functions</h2>
             <ol>
