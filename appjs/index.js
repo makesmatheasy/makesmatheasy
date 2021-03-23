@@ -139,6 +139,7 @@ function openit(id) {
         "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
+        "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
         "#matrixcollapse",
@@ -151,6 +152,7 @@ function openit(id) {
         "#plotgraph",
         "#roundoff",
         "#unitconcal",
+        "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
@@ -162,7 +164,6 @@ function openit(id) {
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
-        "#prime",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
@@ -172,9 +173,12 @@ function openit(id) {
         "#sum_n_GP",
         "#algebraic_formulascollapse",
         "#expansion",
+        "#solutiontri",
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
+        "#emical",
+        "#trigsolcollapse",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {

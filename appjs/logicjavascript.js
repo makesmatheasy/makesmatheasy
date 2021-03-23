@@ -3303,6 +3303,54 @@ function lenu(a) {
       return 1852;
   }
 }
+function spicon() {
+  const f = lenu(document.getElementById("spicon-1").value);
+  const t = lenu(document.getElementById("spicon-2").value);
+  const i = parseFloat(document.getElementById("spiconin").value);
+
+  if(f == 0.001 && t == 0.001)
+  {
+   if(i >10)
+   {
+    document.getElementById("spiconou").innerHTML = "SPI must be <= 10";
+   } 
+   else{
+  document.getElementById("spiconou").innerHTML = `${i}`;
+  }
+}
+  else if(f == 0.01 && t == 0.01)
+  {
+    if(i >95)
+    {
+     document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
+    } 
+    else{
+   document.getElementById("spiconou").innerHTML = `${i}`;
+   }
+  }
+  else if(f == 0.001)
+  {
+    if(i>10)
+    {
+      document.getElementById("spiconou").innerHTML = "SPI must be <= 10";  
+    }
+    else
+    {
+    document.getElementById("spiconou").innerHTML = `${((i-0.5)*10)}`; 
+  }
+}
+  else
+  {
+    if(i>95)
+    {
+      document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
+    }
+    else
+    {
+    document.getElementById("spiconou").innerHTML = `${(i/10) + 0.5}`;
+    }
+}
+}
 function lentgthcon() {
   const f = lenu(document.getElementById("lengthcon-1").value);
   const t = lenu(document.getElementById("lengthcon-2").value);
@@ -3426,12 +3474,23 @@ function simple_interest() {
   p = document.getElementById("first").value;
   t = document.getElementById("second").value;
   r = document.getElementById("third").value;
-  si = parseInt((p * t * r) / 100);
+  si = parseFloat((p * t * r) / 100).toFixed(3);
   amount = p * Math.pow(1 + r / 100, t);
   ci = amount - p;
   document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
   document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
 }
+// EMI Calulator
+//-----------------------------------------------------
+function emical() {
+  var p, t, r, emi;
+  p = parseInt(document.getElementById("first1").value);
+  r = parseFloat(document.getElementById("third3").value)/1200;
+  t = parseInt(document.getElementById("second2").value)*12;
+  emi = ((p * r * Math.pow((1+r),t))/(Math.pow((1+r),t)-1));
+  document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2)+ "   Per month";
+}
+
 
 //unit convert
 //-----------------------------------------------------
@@ -3568,7 +3627,7 @@ function sum_n_apsol(nval,rval,r1val)
         series += (num.toString() + ", ");
       }
       printseries.innerHTML = "Arithmetic Progression: "+series;
-       explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[2a+(n-1)d\\]" ;
+       explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
        console.log(res);
@@ -3580,7 +3639,7 @@ function anotherap(){
   var n = document.getElementById("numterms").value
   var a = document.getElementById("ft").value
   var l = document.getElementById("lt").value  
-  var nhalf = parseInt(n/2)
+  var nhalf = parseFloat(n/2)
   var al = parseInt(a)+parseInt(l)
   var ans = parseInt(nhalf *al)
   var series="";
@@ -3678,13 +3737,32 @@ function gp(){
   var a = document.getElementById("firstterm").value
   var r = document.getElementById("ratio").value
   var n = document.getElementById("number").value
+  var ans;
+  var ans1;
   console.log(a)
   console.log(r)
   console.log(n)
-  var power = parseInt(Math.pow(r,n) -1)
-  var ans1 = parseInt(a * power)
-  var ans = parseInt(ans1/(r-1))
-  document.getElementById("sumgp").innerHTML = "Sum = " + ans1
+  var power = parseInt(Math.pow(r,n))
+  if(r<-1 && r>1){
+  ans1 = parseInt(a * (power-1))
+  ans = parseInt(ans1/(r-1))
+  }else if(r>-1 && r<1 && r!=1){
+    ans1 = parseInt(a*(1-power))
+    ans=parseInt(ans1/(1-r))
+  }
+  document.getElementById("sumgp").innerHTML = "Sum = " + ans;
+}
+function igp(){
+  var a = document.getElementById("fterm").value
+  var r = parseFloat(document.getElementById("r").value)
+  if(r>=1)
+  {
+	document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
+  }
+  else{
+  var ans=a/(1-r)
+  document.getElementById("sumigp").innerHTML = "Sum = " + ans
+  }
 }
 
 function permutationcal(nval, rval) {
@@ -4099,7 +4177,9 @@ function datecal()
    var c = new Date(Date.parse(document.getElementById("datef").value));
    var d = new Date(Date.parse(document.getElementById("datet").value));   
    var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
-  	var y = d.getFullYear()-c.getFullYear();
+  	if(d.getTime() > c.getTime())
+	{
+	var y = d.getFullYear()-c.getFullYear();
    	var m = d.getMonth()-c.getMonth();
     var da = d.getDate()-c.getDate();
     if(da<0)
@@ -4125,6 +4205,35 @@ function datecal()
     document.getElementById("date-2").innerHTML = `${-dd}`;
 
   }
+ }
+ else {
+	var y = c.getFullYear()-d.getFullYear();
+   	var m = c.getMonth()-d.getMonth();
+    var da = c.getDate()-d.getDate();
+    if(da<0)
+    {
+    	m--;
+        da = x+ da;
+	}
+    if(m<0)
+    {
+    	y--;
+        m = 12+ m;
+	}
+
+  var dd = (c.getTime() - d.getTime())/(1000 * 3600 * 24);
+  if(y>=0)
+  {
+    document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${dd}`;
+  }
+  else{
+
+    document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${-dd}`;
+
+  }
+ }
 }
 //--------------------------------------------------------------------------------
 
