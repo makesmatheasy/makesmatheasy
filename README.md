@@ -71,6 +71,13 @@ Other Tech/Libraries
     - Prime Factorization **( with steps for single number)**
   - Log Calculator
     - Calculates the log of x to the base y
+  - Operations on Fractions **( with steps)**
+    - Addition of fractions
+    - Subtraction of fractions
+    - Division of fractions
+    - Multiplication of fractions
+    - Conversion of mixed fraction to improper fraction
+    - Conversion of improper fraction to mixed fraction
   - Plot Graph
     - Plots a Graph of entered Equation having single variable 'x'
   - Roman/Arabic Numerals

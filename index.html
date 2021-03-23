@@ -704,6 +704,23 @@
             </li>
 
             <li>
+            <table class="table">
+                <tr>
+                    <td style="border-top: none;" onclick="display_fractions()">
+                        <a id="fractions_op"
+                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations on
+                            Fractions</a>
+                    </td>
+                    <td style="float:right;border-top: none;">
+                        <span onclick="addtofavourite('Operations on Fraction','#fractions','c','facimgfrac')"><img id="facimgfrac"
+                                src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                    </td>
+                </tr>
+            </table>
+            
+            </li>
+
+            <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -1433,6 +1450,709 @@
 
         </div>
         <!--        end factors-->
+
+        <!-- Start of Operatiosn on fractions  -->
+        <div class="collapse" id="fractions">
+        
+            <div id="side1" style="display:inline-block; width: 500px;">
+                <div class="row">
+                    <button id="add_frac" class="carddis" data-toggle="modal"
+                        onclick="$('#addition_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Addition of fractions
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="sub_frac" class="carddis"
+                        onclick="$('#subtraction_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Subtraction of fractions
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="div_frac" class="carddis"
+                        onclick="$('#division_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Division of fractions
+                    </button>
+                </div>
+            </div>
+            <div id="side2" style="margin-left: 50px; display:inline-block; width: 500px;">
+                <div class="row">
+                    <button id="mul_frac" class="carddis"
+                        onclick="$('#miltiplication_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Multiplication of fractions
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="mix_frac" class="carddis"
+                        onclick="$('#mixed_to_improper').slideToggle();$('#fractions').slideUp();clearall();">
+                        Conversion of Mixed Fraction to an Improper Fraction
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="imp_frac" class="carddis"
+                        onclick="$('#improper_to_mixed').slideToggle();$('#fractions').slideUp();clearall();">
+                        Conversion of an Improper Fraction to Mixed Fraction
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div>
+            <div class="modal" id="addition_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">ADDTION</h5>
+                            <button onclick="$('#fractions').slideToggle();$('#addition_fraction').slideUp();clearall();"
+                                type="button" class="close" aria-label="Close" style="outline:none">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container" style="padding-top:0%">
+        
+                                <div style="display: inline-block;">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+        
+                                            <input id="one_add" placeholder="Numerator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+        
+                                            <input id="two_add" placeholder="Denominator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                </div>
+        
+        
+                                <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">+</div>
+        
+        
+                                <div style="display: inline-block; margin-left: 10px;">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+        
+                                            <input id="three_add" placeholder="Numerator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+        
+                                            <input id="four_add" placeholder="Denominator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                </div>
+        
+        
+                                <center>
+                                    <button type="button" class="btn btn-light" ; onclick="additon()">
+                                        ADD
+                                    </button>
+                                </center>
+        
+                                <br>
+        
+                                <div style="display: flex; justify-content: center;">
+        
+                                    <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+        
+                                        <div style="display:inline-block">
+        
+                                            <div><var id="a">a</var></div>
+                                            <div class="symbol" style="color: #ff299c;">----- +</div>
+                                            <div class="bottom"><var id="bz">b</var></div>
+        
+                                        </div>
+        
+        
+        
+                                        <div style="display: inline-block;">
+                                            <div><var id="c">c</var></div>
+                                            <div style="color: #ff299c;">&nbsp; -----</div>
+                                            <div class="bottom"><var id="d">d</var></div>
+        
+                                        </div>
+        
+        
+        
+        
+                                        <span>= &nbsp;(<var id="a1">a</var>*<var id="d1">d</var>)+(<var id="c1">c</var>*<var
+                                                id="b1">b</var>)</span>
+                                        <span class="symbol">/</span>
+                                        <span class="bottom"><var id="b2">b</var>*<var id="d2">d</var></span>
+        
+                                        <span>= &nbsp;<var id="e">e</var>+<var id="g">g</var></span>
+                                        <span class="symbol">/</span>
+                                        <span class="bottom"><var id="f">f</var></span>
+        
+                                        <span>= &nbsp;<var id="t">t</var></span>
+                                        <span class="symbol">/</span>
+                                        <span class="bottom"><var id="q">q</var></span>
+        
+                                        =
+        
+                                        <var id="ans">k</var>
+        
+        
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                    </div>
+                </div>
+            </div>
+        
+            <div>
+                <div class="modal" id="subtraction_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">SUBTRACTION</h5>
+                                <button onclick="$('#fractions').slideToggle();$('#subtraction_fraction').slideUp();clearall();"
+                                    type="button" class="close" aria-label="Close" style="outline:none">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+        
+        
+                            <div class="modal-body">
+                                <div class="container" style="padding-top:0%">
+        
+        
+                                    <div style="display: inline-block;">
+                                        <div class="row">
+                                            <div class="cell borderBottom_1">
+        
+                                                <input id="one_sub" placeholder="Numerator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
+        
+                                                <input id="two_sub" placeholder="Denominator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                    </div>
+        
+        
+                                    <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">-</div>
+        
+        
+                                    <div style="display: inline-block; margin-left: 10px;">
+                                        <div class="row">
+                                            <div class="cell borderBottom_1">
+        
+                                                <input id="three_sub" placeholder="Numerator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
+        
+                                                <input id="four_sub" placeholder="Denominator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <center>
+        
+                                        <button type="button" class="btn btn-light" ; onclick="subtractiom()">
+                                            SUBTRACT
+                                        </button>
+                                    </center>
+        
+                                    <br>
+        
+                                    <div style="display: flex; justify-content: center;">
+        
+                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+        
+                                            <div style="display:inline-block">
+        
+                                                <div><var id="suba">a</var></div>
+                                                <div style="color: #ff299c;" class="symbol">----- &nbsp; -</div>
+                                                <div class="bottom"><var id="subb">b</var></div>
+        
+                                            </div>
+        
+        
+        
+                                            <div style="display: inline-block;">
+                                                <div><var id="subc">c</var></div>
+                                                <div style="color: #ff299c;">&nbsp; -----</div>
+                                                <div class="bottom"><var id="subd">d</var></div>
+        
+                                            </div>
+        
+        
+        
+        
+                                            <span style="margin-top: 15px;">= &nbsp;(<var id="suba1">a</var>*<var
+                                                    id="subd1">d</var>)-(<var id="subc1">c</var>*<var id="subb1">b</var>)</span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="subb2">b</var>*<var id="subd2">d</var></span>
+        
+                                            <span style="margin-top: 15px;">= &nbsp;<var id="sube">e</var>-<var
+                                                    id="subg">g</var></span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="subf">f</var></span>
+        
+                                            <span style="margin-top: 15px;">= &nbsp;<var id="subt">t</var></span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="subq">q</var></span>
+        
+                                            =
+        
+                                            <var id="subans" style="margin-top: 15px;">k</var>
+        
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+        
+                <div>
+                    <div class="modal" id="division_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">DIVISION</h5>
+                                    <button
+                                        onclick="$('#fractions').slideToggle();$('#division_fraction').slideUp();clearall();"
+                                        type="button" class="close" aria-label="Close" style="outline:none">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" style="padding-top:0%">
+        
+        
+                                        <div style="display: inline-block;">
+                                            <div class="row">
+                                                <div class="cell borderBottom_1">
+        
+                                                    <input id="one_div" placeholder="Numerator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell">
+        
+                                                    <input id="two_div" placeholder="Denominator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                        </div>
+        
+        
+                                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">/
+                                        </div>
+        
+        
+                                        <div style="display: inline-block; margin-left: 10px;">
+                                            <div class="row">
+                                                <div class="cell borderBottom_1">
+        
+                                                    <input id="three_div" placeholder="Numerator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell">
+        
+                                                    <input id="four_div" placeholder="Denominator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <center>
+                                            <button type="button" class="btn btn-light" ; onclick="division()">
+                                                DIVIDE
+                                            </button>
+                                        </center>
+        
+                                        <br>
+        
+        
+                                        <div style="display: flex; justify-content: center;">
+        
+                                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+        
+                                                <div style="display:inline-block">
+        
+                                                    <div><var id="diva">a</var></div>
+                                                    <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;</div>
+                                                    <div class="bottom"><var id="divb">b</var></div>
+        
+                                                </div>
+        
+        
+        
+        
+                                                <div style="display: inline-block;">
+                                                    <div><var id="divc">c</var></div>
+                                                    <div style="color: #ff299c;">&nbsp; -----</div>
+                                                    <div class="bottom"><var id="divd">d</var></div>
+        
+                                                </div>
+        
+                                                <br>
+        
+                                                <div style="display:inline-block; margin-top: 15px;">
+        
+                                                    <div><var id="diva1">a</var></div>
+                                                    <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
+                                                    <div class="bottom"><var id="divb1">b</var></div>
+        
+                                                </div>
+        
+        
+        
+                                                <div style="display: inline-block;">
+                                                    <div><var id="divc1">d</var></div>
+                                                    <div style="color:#ff299c;">&nbsp; -----</div>
+                                                    <div class="bottom"><var id="divd1">c</var></div>
+        
+                                                </div>
+        
+        
+        
+        
+                                                <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
+                                                        id="divd2">d</var></span>
+                                                <span class="symbol">/</span>
+                                                <span class="bottom"><var id="divb2">b</var>*<var id="divc2">c</var></span>
+        
+        
+        
+                                                <span style="margin-top: 15px;">= &nbsp;<var id="divt">t</var></span>
+                                                <span class="symbol">/</span>
+                                                <span class="bottom"><var id="divq">q</var></span>
+        
+                                                =
+        
+                                                <var id="divans" style="margin-top: 15px;">k</var>
+        
+        
+                                            </div>
+        
+                                        </div>
+        
+        
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div>
+                        <div class="modal" id="miltiplication_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">MULTIPLICATION</h5>
+                                        <button
+                                            onclick="$('#fractions').slideToggle();$('#miltiplication_fraction').slideUp();clearall();"
+                                            type="button" class="close" aria-label="Close" style="outline:none">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container" style="padding-top:0%">
+        
+                                            <div style="display: inline-block;">
+                                                <div class="row">
+                                                    <div class="cell borderBottom_1">
+        
+                                                        <input id="one_mul" placeholder="Numerator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="cell">
+        
+                                                        <input id="two_mul" placeholder="Denominator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+        
+                                            <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
+                                                x</div>
+        
+        
+                                            <div style="display: inline-block; margin-left: 10px;">
+                                                <div class="row">
+                                                    <div class="cell borderBottom_1">
+        
+                                                        <input id="three_mul" placeholder="Numerator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="cell">
+        
+                                                        <input id="four_mul" placeholder="Denominator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <center>
+                                                <button type="button" class="btn btn-light" ; onclick="multiplication1()">
+                                                    MULTIPLY
+                                                </button>
+                                            </center>
+        
+        
+                                            <br>
+        
+                                            <div style="display: flex; justify-content: center;">
+        
+                                                <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+        
+                                                    <div style="display:inline-block">
+        
+                                                        <div><var id="mula">a</var></div>
+                                                        <div style="color: #ff299c;" class="symbol">----- &nbsp; x</div>
+                                                        <div class="bottom"><var id="mulb">b</var></div>
+        
+                                                    </div>
+        
+        
+        
+                                                    <div style="display: inline-block;">
+                                                        <div><var id="mulc">c</var></div>
+                                                        <div style="color: #ff299c;">&nbsp; -----</div>
+                                                        <div class="bottom"><var id="muld">d</var></div>
+        
+                                                    </div>
+        
+        
+        
+        
+                                                    <span style="margin-top: 15px;">= &nbsp;<var id="mula1">a</var>*<var
+                                                            id="mulc1">c</var></span>
+                                                    <span class="symbol">/</span>
+                                                    <span class="bottom"><var id="mulb1">b</var>*<var id="muld1">d</var></span>
+        
+        
+        
+                                                    <span style="margin-top: 15px;">= &nbsp;<var id="mult">t</var></span>
+                                                    <span class="symbol">/</span>
+                                                    <span class="bottom"><var id="mulq">q</var></span>
+        
+                                                    =
+        
+                                                    <var id="mulans" style="margin-top: 15px;">k</var>
+        
+        
+                                                </div>
+        
+                                            </div>
+        
+        
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div>
+                            <div class="modal" id="mixed_to_improper" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">MIXED FRACTION ---> IMPROPER FRACTION</h5>
+                                            <button
+                                                onclick="$('#fractions').slideToggle();$('#mixed_to_improper').slideUp();clearall();"
+                                                type="button" class="close" aria-label="Close" style="outline:none">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container" style="padding-top:0%">
+        
+        
+                                                <div style="display: inline-block; margin-left: 40px; ">
+                                                    <div class="row">
+        
+                                                        <div class="row" style="margin-top: 10px;">
+                                                            <div class="cell borderBottom_1">
+        
+                                                                <input id="side_mix" placeholder="Side" type="number"
+                                                                    required="" style="width: 70px; ">
+                                                            </div>
+                                                        </div>
+                                                        <div class="cell borderBottom_1" style="margin-left: 20px; ">
+        
+                                                            <input id="one_mix" placeholder="Numerator" type="number"
+                                                                required="" style="width: 150px;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="margin-left: 45px;">
+                                                        <div class="cell">
+        
+                                                            <input id="two_mix" placeholder="Denominator" type="number"
+                                                                required="" style="width: 150px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
+                                                <br>
+        
+                                                <center>
+                                                    <button type="button" class="btn btn-light" ; onclick="mixed_to_improper()"
+                                                        style="margin-top: 20px;">
+                                                        CONVERT
+                                                    </button>
+                                                </center>
+        
+                                                <br>
+        
+                                                <div style="display: flex; justify-content: center;">
+        
+                                                    <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                                        class="frac">
+        
+                                                        <div style="display:inline-block">
+        
+        
+                                                            <div><var id="mixa">a</var></div>
+                                                            <div style="color: #ff299c;" class="symbol"><var
+                                                                    id="side">s</var>&nbsp;-----</div>
+                                                            <div class="bottom"><var id="mixb">b</var></div>
+        
+                                                        </div>
+                                                        <span style="margin-top: 15px;">= &nbsp;<var id="mixa1">a</var>*<var
+                                                                id="mixs">s</var>*<var id="mixb1">b</var></span>
+                                                        <span class="symbol">/</span>
+                                                        <span class="bottom"><var id="mixb2">b</var></span>
+        
+        
+        
+                                                        <span style="margin-top: 15px;">= &nbsp;<var id="mixt">t</var></span>
+                                                        <span class="symbol">/</span>
+                                                        <span class="bottom"><var id="mixq">q</var></span>
+        
+                                                        =
+        
+                                                        <var id="mixans" style="margin-top: 15px;">k</var>
+        
+        
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div>
+                                <div class="modal" id="improper_to_mixed" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">IMPROPER FRACTION ---> MIXED FRACTION</h5>
+                                                <button
+                                                    onclick="$('#fractions').slideToggle();$('#improper_to_mixed').slideUp();clearall();"
+                                                    type="button" class="close" aria-label="Close" style="outline:none">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+        
+                                                <div class="container" style="padding-top:0%">
+        
+                                                    <center>
+                                                        <div style="display: inline-block;  ">
+                                                            <div class="row">
+                                                                <div class="cell borderBottom_1">
+        
+                                                                    <input id="one_imp" placeholder="Numerator" type="number"
+                                                                        required="" style="width: 150px;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="cell">
+        
+                                                                    <input id="two_imp" placeholder="Denominator" type="number"
+                                                                        required="" style="width: 150px;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+        
+                                                        <br>
+        
+        
+                                                        <button type="button" class="btn btn-light" ;
+                                                            onclick="improper_to_mixed()" style="margin-top: 20px;">
+                                                            CONVERT
+                                                        </button>
+                                                    </center>
+        
+                                                    <br>
+        
+                                                    <div style="display: flex; justify-content: center;">
+        
+                                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                                            class="frac">
+        
+                                                            <div style="display:inline-block">
+        
+        
+                                                                <div><var id="impa">a</var></div>
+                                                                <div style="color: #ff299c;" class="symbol">-----</div>
+                                                                <div class="bottom"><var id="impb">b</var></div>
+        
+                                                            </div>
+        
+                                                            <h5>Divide &nbsp; a/b &nbsp; and &nbsp; get &nbsp; q : quotient
+                                                                &nbsp;, &nbsp; r : remainder </h5>
+        
+                                                            <div><var id="impr">r</var></div>
+                                                            <div style="color: #ff299c;" class="symbol"><var
+                                                                    id="impq">q</var>&nbsp;-----</div>
+                                                            <div class="bottom"><var id="impb1">b</var></div>
+        
+                                                        </div>
+        
+                                                    </div>
+        
+        
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- End of Operatiosn on fractions   ------------------------------------------>
 
         <!-- log values ------------------------------------------------------------->
 
@@ -5701,6 +6421,8 @@
 
 <!-- For Log Calculator -->
 <script type="text/javascript" src="appjs/logValue.js"></script>
+<!-- Operation on Fraction -->
+ <script type="text/javascript" src="appjs/operations_on_fraction.js"></script>
 
 </body>
 

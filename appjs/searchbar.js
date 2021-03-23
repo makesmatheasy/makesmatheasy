@@ -70,7 +70,10 @@ function autocomplete(inp, arr) {
 
                     }else if (inp.value.toUpperCase() == "GRAPH") {
                         $("#plotgraph").slideToggle();
-                    }  else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
+                        
+                    }  else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
+                         $("#fractions").slideToggle();
+                    } else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
                         $("#mulsolwithsteps").slideToggle();
                     }  else if (inp.value.toUpperCase() == "PLAY WITH EQUATIONS") {
                         $("#equationssolver").slideToggle();
@@ -171,7 +174,7 @@ function autocomplete(inp, arr) {
 
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
-                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Trigonometric Values", "Unit Converter" ,"Log Calculator"];
+                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Trigonometric Values", "Unit Converter" ,"Log Calculator","Operations on Fractions"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -198,6 +201,8 @@ function handleclick(value) {
         $("#laplacecollapse").slideDown();
         $("#inverselaplacecollapse").slideUp();
         $("#laplacecollapseit").slideToggle();
+    }else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
+        $("#fractions").slideToggle();
     } else if (value.toUpperCase() == "SHAPES") {
         $("#shapescal").slideToggle();
     } else if (value.toUpperCase() == "SIMPLE TRIGONOMETRY") {
