@@ -1836,7 +1836,34 @@
 
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complexcollapse">
-            <h1>Complex Calculations</h1>
+		    <h1>Calculations for 1 complex number</h1>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part : &nbsp; &nbsp;  </label>
+                <input type="number" id="creal" class="form__field" placeholder="Real"
+                       style="width:3rem;display:inline;"> &nbsp; &nbsp;
+                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+                <input type="number" id="cimg" class="form__field" placeholder="Imag"
+                       style="width:3rem;display:inline;">
+            </div>
+			<div class="form-group">
+                <select id="comop" class="btn btn-outline-light">
+                    <option>Available Operations:</option>
+                    <option>Magnitude</option>
+                    <option>Argument</option>
+                    <option>Conjugate</option>
+                </select>
+            </div>
+			<div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="comOp(document.getElementById('comop').value);">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="comresult"></p>
+            </div>
+			
+            <h1>Complex Calculations for 2 complex numbers.</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of first number :</label>
                 <input type="number" id="creal1" class="form__field" placeholder="m"
@@ -1870,6 +1897,7 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
+			
         </div>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
