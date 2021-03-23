@@ -84,4 +84,54 @@ function comOperation(value) {
         err();
     }
 }
+function mag()
+{
+ var x=parseInt(document.getElementById('creal').value);	
+ var y=parseInt(document.getElementById('cimg').value);
+ var ans=x*x + y*y;
+ ans=Math.sqrt(ans);
+ document.getElementById('comresult').innerHTML="Magnitude is &nbsp;" + ans;
+
+}
+function arg()
+{
+ var x=parseInt(document.getElementById('creal').value);	
+ var y=parseInt(document.getElementById('cimg').value);
+ var ans=Math.atan(y/x);
+ document.getElementById('comresult').innerHTML="Argument is &nbsp;" + ans + "&nbsp; radians";
+
+}
+
+function conj()
+{
+ var x=parseInt(document.getElementById('creal').value);	
+ var y=parseInt(document.getElementById('cimg').value);
+ if(y<0)
+ {
+	 y=y*-1;
+	 document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x + "&nbsp; +" + y + "i";
+ }
+ else
+ {
+  document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x + "&nbsp; - &nbsp" + y + "i";
+ }
+}
+function err1() {
+    katex.render("Invalid!", document.getElementById('comresult'), {
+        throwOnError: false
+    });
+}
+function comOp(value) {
+    if (value == "Magnitude") {
+        mag();
+    } 
+	else if (value == "Argument") {
+        arg();
+    } else if (value == "Conjugate") {
+        conj();
+    }
+    else {
+        err1();
+    }
+}
 
