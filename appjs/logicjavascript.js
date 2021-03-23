@@ -4110,7 +4110,9 @@ function datecal()
    var c = new Date(Date.parse(document.getElementById("datef").value));
    var d = new Date(Date.parse(document.getElementById("datet").value));   
    var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
-  	var y = d.getFullYear()-c.getFullYear();
+  	if(d.getTime() > c.getTime())
+	{
+	var y = d.getFullYear()-c.getFullYear();
    	var m = d.getMonth()-c.getMonth();
     var da = d.getDate()-c.getDate();
     if(da<0)
@@ -4136,6 +4138,35 @@ function datecal()
     document.getElementById("date-2").innerHTML = `${-dd}`;
 
   }
+ }
+ else {
+	var y = c.getFullYear()-d.getFullYear();
+   	var m = c.getMonth()-d.getMonth();
+    var da = c.getDate()-d.getDate();
+    if(da<0)
+    {
+    	m--;
+        da = x+ da;
+	}
+    if(m<0)
+    {
+    	y--;
+        m = 12+ m;
+	}
+
+  var dd = (c.getTime() - d.getTime())/(1000 * 3600 * 24);
+  if(y>=0)
+  {
+    document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${dd}`;
+  }
+  else{
+
+    document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
+    document.getElementById("date-2").innerHTML = `${-dd}`;
+
+  }
+ }
 }
 //--------------------------------------------------------------------------------
 
