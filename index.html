@@ -27,7 +27,7 @@
                 display: block !important;
                 position: absolute;
                 width: 100%;
-                z-index: 999;
+                z-index: 1005;
                 background: var(--appblack);
                 background-size: cover;
                 text-align: center;
@@ -265,7 +265,7 @@
                 </table>
             </li>
 
-            <li>
+            <!-- <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -280,7 +280,7 @@
                         </td>
                     </tr>
                 </table>
-            </li>
+            </li> -->
             <!--sum of n terms of an ap-->
             <li>
                 <table class="table">
@@ -1658,8 +1658,12 @@
                         <h4>Wallis Integrals</h4>
                         <p>\[If\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \sin^n x \,dx  }\,or\,\displaystyle{  W_n = \int_0^{\frac{\pi}{2}} \cos^n x \,dx. }\]</p>
                         <p>\[then,\,\,\,If\,n\,is\,even,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}, }\]</p>
+
                         <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}. }\]<p>
 
+
+
+                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}. 
 
                     </div>
                 </div>
@@ -1855,7 +1859,34 @@
 
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complexcollapse">
-            <h1>Complex Calculations</h1>
+		    <h1>Calculations for 1 complex number</h1>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part : &nbsp; &nbsp;  </label>
+                <input type="number" id="creal" class="form__field" placeholder="Real"
+                       style="width:3rem;display:inline;"> &nbsp; &nbsp;
+                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+                <input type="number" id="cimg" class="form__field" placeholder="Imag"
+                       style="width:3rem;display:inline;">
+            </div>
+			<div class="form-group">
+                <select id="comop" class="btn btn-outline-light">
+                    <option>Available Operations:</option>
+                    <option>Magnitude</option>
+                    <option>Argument</option>
+                    <option>Conjugate</option>
+                </select>
+            </div>
+			<div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="comOp(document.getElementById('comop').value);">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="comresult"></p>
+            </div>
+			
+            <h1>Complex Calculations for 2 complex numbers.</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of first number :</label>
                 <input type="number" id="creal1" class="form__field" placeholder="m"
@@ -1889,6 +1920,7 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
+			
         </div>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
@@ -2106,33 +2138,13 @@
             <p>3. det(X<sup>-1</sup>) = -det(X)</p>
             <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
             <p>5. In a triangular matrix , the product of diagnol elements is determinant</p>
-            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
-        </div>
 
-        <div class="collapse" id="algebraic-idencollapse">
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                        <h4>Algebraic Identities of Polynomials</h4>
-                        <p>\[1)\space (a+b)^2\space=a^2+2ab+b^2\]</p>
-                        <p>\[2)\space (a-b)^2\space=a^2-2ab+b^2\]</p>
-                        <p>\[3)\space a^2-b^2\space=(a+b)(a-b)\]</p>
-                        <p>\[4)\space (a+b)^3\space=a^3+b^3+3ab(a+b)\]</p>
-                        <p>\[5)\space (a-b)^3\space=a^3-b^3-3ab(a-b)\]</p>
-                        <p>\[6)\space (a+b+c)^2\space=a^2+b^2+c^2+2ab+2bc+2ca\]</p>
-                        <p>\[7)\space (a+b-c)^2\space=a^2+b^2+c^2+2ab-2bc-2ca\]</p>
-                        <p>\[8)\space (a-b-c)^2\space=a^2+b^2+c^2-2ab+2bc-2ca\]</p>
-                        <p>\[9)\space a^3+b^3\space=(a+b)^3-3ab(a+b)\space=(a+b)(a^2-ab+b^2)\]</p>
-                        <p>\[10)\space a^3-b^3\space=(a-b)^3+3ab(a-b)\space=(a-b)(a^2+ab+b^2)\]</p>
-                        <p>\[11)\space a^3+b^3+c^3-3abc\space=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\]</p>
-                        <p>\[if\space a+b+c=0 \space then \space a^3+b^3+c^3\space=\space3abc\]</p>
-                        <p>\[12)\space a^4+b^4\space=(a+b)(a-b)[(a+b)^2-2ab]\]
-                        <p>\[13)\space a^4+a^2b^2+b^4\space=(a^2+ab+b^2)(a^2-ab+b^2)\]
-                        <p>\[14)\space a^8-b^8\space=(a^4+b^4)(a^2+b^2)(a+b)(a-b)\]
-                    </div>
-                </div>
-            </div>
-        </div>
+            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>            
+        </div>              
+                      
+                      
+    
+           
         <div class="collapse" id="parabolacollapse">
             <div class="stopwrap">
                 <table class="table table-bordered table-dark">
@@ -2940,11 +2952,13 @@
                         <p>\[8)\space (a-b)^3\space =a^3-b^3-3a^2b+3ab^2\]</p>
                         <p>\[9)\space a^3-b^3\space =(a-b)(a^2+ab+b^2)\]</p>
                         <p>\[10)\space a^3+b^3\space =(a+b)(a^2-ab+b^2)\]</p>
-                        <p>\[11)\space (a+b)^4\space =a^4+4a^3b+6a^2b^2+4ab^3+b^4\]</p>
-                        <p>\[12)\space (a-b)^4\space =a^4-4a^3b+6a^2b^2-4ab^3+b^4\]</p>
-                        <p>\[13)\space a^4-b^4\space =(a-b)(a+b)(a^2+b^2)\]</p>
-                        <p>\[14)\space a^5-b^5\space =(a-b)(a^4+a^3b+a^2b^2+ab^3+b^4)\]</p>
-                        <p>\[15)\space (a+b+c+...)^2\space =a^2+b^2+c^2+....+2(ab+bc+ca+...)\]</p>
+                        <p>\[11)\space a^3+b^3+c^3-3abc\space=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\]</p>
+                        <p>\[if\space a+b+c=0 \space then \space a^3+b^3+c^3\space=\space3abc\]</p>
+                        <p>\[12)\space (a+b)^4\space =a^4+4a^3b+6a^2b^2+4ab^3+b^4\]</p>
+                        <p>\[13)\space (a-b)^4\space =a^4-4a^3b+6a^2b^2-4ab^3+b^4\]</p>
+                        <p>\[14)\space a^4-b^4\space =(a-b)(a+b)(a^2+b^2)\]</p>
+                        <p>\[15)\space a^5-b^5\space =(a-b)(a^4+a^3b+a^2b^2+ab^3+b^4)\]</p>
+                        <p>\[16)\space (a+b+c+...)^2\space =a^2+b^2+c^2+....+2(ab+bc+ca+...)\]</p>
                     </div>
                 </div>
             </div>
@@ -3728,7 +3742,7 @@
 
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
-            <h2>Sum of Nterms of an Geometric Progression</h2>
+            <h2>Sum of N terms of a Geometric Progression</h2>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field"  id="firstterm"
                        placeholder="Enter first term"/>
@@ -3740,7 +3754,23 @@
                 <br>
                 <button class="btn btn-outline-light" onclick="gp()">Find</button>
                 <br>
+				   <br>   <br>
                 <div style="color:var(--appimage); font-size: large;" id="sumgp"></div>
+            </div>
+			<br>
+            <br>
+			<h2>Sum of infinite terms of a Geometric Progression with common ratio less than 1</h2>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field"  id="fterm"
+                       placeholder="Enter first term"/>
+                <input type="text"  style="width: 15.625rem;" class="form__field" id="r"
+                       placeholder="Enter ratio between terms"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="igp()">Find</button>
+                <br>
+				   <br>   <br>
+                <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
         </div>
         <!-- sum of nterms in G.P. ends  -->
