@@ -3579,7 +3579,7 @@ function sum_n_apsol(nval,rval,r1val)
         series += (num.toString() + ", ");
       }
       printseries.innerHTML = "Arithmetic Progression: "+series;
-       explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[2a+(n-1)d\\]" ;
+       explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
        console.log(res);
@@ -3591,7 +3591,7 @@ function anotherap(){
   var n = document.getElementById("numterms").value
   var a = document.getElementById("ft").value
   var l = document.getElementById("lt").value  
-  var nhalf = parseInt(n/2)
+  var nhalf = parseFloat(n/2)
   var al = parseInt(a)+parseInt(l)
   var ans = parseInt(nhalf *al)
   var series="";
