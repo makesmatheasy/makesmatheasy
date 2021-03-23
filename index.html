@@ -3695,7 +3695,7 @@
 
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
-            <h2>Sum of Nterms of an Geometric Progression</h2>
+            <h2>Sum of N terms of a Geometric Progression</h2>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field"  id="firstterm"
                        placeholder="Enter first term"/>
@@ -3707,7 +3707,23 @@
                 <br>
                 <button class="btn btn-outline-light" onclick="gp()">Find</button>
                 <br>
+				   <br>   <br>
                 <div style="color:var(--appimage); font-size: large;" id="sumgp"></div>
+            </div>
+			<br>
+            <br>
+			<h2>Sum of infinite terms of a Geometric Progression with common ratio less than 1</h2>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field"  id="fterm"
+                       placeholder="Enter first term"/>
+                <input type="text"  style="width: 15.625rem;" class="form__field" id="r"
+                       placeholder="Enter ratio between terms"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="igp()">Find</button>
+                <br>
+				   <br>   <br>
+                <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
         </div>
         <!-- sum of nterms in G.P. ends  -->
