@@ -898,6 +898,24 @@
                     </tr>
                 </table>
             </li>
+           
+            <!-- SPI CONVERTER  -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="spiconbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">SPI/CGPA
+                                Convertor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('SPI Convertor','#spiconcal','c','unitimgfav')"><img
+                                        id="unitimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -3477,7 +3495,29 @@
                 </tr>
             </table>
         </div>
-
+  <!-- SPI/CGPA -->
+  <div class="collapse" id="spiconcal">
+      
+    <h2>SPI/CGPA Convertor</h2>
+    <table class="table">
+        <tr>
+            <td>
+                <div style="color: var(--appimage);cursor: pointer;">
+                    <a data-toggle="modal" data-target="#spicon" style="text-decoration:none;"
+                       href="#">SPI/CGPA</a>
+                </div>
+            </td>
+        </tr>
+       
+    </table>
+    <button class="btn btn-outline-light" onclick="" style="margin-left: 440px;"  >Rules
+    </button>
+    <br><br>
+  
+    <p  style="margin-left: 300px;">1.  Percentage(%) = (SPI/CGPA - 0.5 ) *10 <br> 2.  SPI/CGPA = ( Percentage(%) / 10 ) + 0.5 <br>
+    3. SPI/CGPA scaled out of 10.
+    </p>
+</div>
         <!-- Factorial -->
         <div class="collapse" id="factorial">
             <form class="form-inline">
@@ -4929,7 +4969,63 @@
             </div>
         </div>
     </div>
+<!-- SPI?CGPA CONVERT-->
+<div>
+    <div class="modal fade" id="spicon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SPI/CGPA CONVERTOR</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center">From</h5>
+                        </label>
+                        <select id="spicon-1" class="form__field" onchange="spicon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                SPI/CGPA
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                Percentage
+                            </option>
+                            
+                        </select>
+                        <input type="number" id="spiconin" class="form__field"
+                               placeholder="Enter Side" value="0" ; oninput="spicon();">
 
+                        <label for="To">
+                            <h5 class="text-center">To</h5>
+                        </label>
+                        <select id="spicon-2" class="form__field" onchange="spicon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                SPI/CGPA
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                Percentage
+                            </option>
+                            
+                        </select>
+                        <label for="out">
+                            <p class="form__field" id="spiconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="areacon" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

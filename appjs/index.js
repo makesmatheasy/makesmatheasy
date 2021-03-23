@@ -151,6 +151,7 @@ function openit(id) {
         "#plotgraph",
         "#roundoff",
         "#unitconcal",
+        "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
