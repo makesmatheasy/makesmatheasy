@@ -940,7 +940,8 @@ function checkforusetrigovalue() {
     el.innerText != "" &&
     el.innerText != "Cannot Compute for -ve Square Root" &&
     el.innerText != "Hypotenuse Should be Greater" &&
-    el.innerText != "Kindly fill Atleast 2 fields"
+    el.innerText != "Kindly fill Atleast 2 fields" &&
+	el.innerText != "Right angled triangle with such dimensions is not possible" 
   ) {
     $("#usetrigovaluesbtn").fadeIn();
   } else {
@@ -966,7 +967,12 @@ function solvesimpletrigo() {
       document.getElementById("h").style.color = "red";
       document.getElementById("soltri").innerHTML =
         "Hypotenuse Should be Greater";
-    } else if (pp == "") {
+    } else if(pp != "" && base != "" && hyp != "" && parseInt(hyp)^2 != parseInt(pp)^2 + parseInt(base)^2) 
+	{
+      document.getElementById("soltri").innerHTML =
+        "Right angled triangle with such dimensions is not possible";
+	}
+	  else if (pp == "") {
       document.getElementById("h").style.color = "white";
       var pp = eval(hyp * hyp - base * base);
       var kl = String(pp);
@@ -3426,6 +3432,17 @@ function simple_interest() {
   document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
   document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
 }
+// EMI Calulator
+//-----------------------------------------------------
+function emical() {
+  var p, t, r, emi;
+  p = parseInt(document.getElementById("first1").value);
+  r = parseInt(document.getElementById("third3").value)/1200;
+  t = parseInt(document.getElementById("second2").value)*12;
+  emi = ((p * r * Math.pow((1+r),t))/(Math.pow((1+r),t)-1));
+  document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2)+ "   Per month";
+}
+
 
 //unit convert
 //-----------------------------------------------------
@@ -3529,17 +3546,19 @@ function factorialsol(factorialval) {
 }
 // profit loss calculations
 function profitloss(){
-  var cp = document.getElementById("cp").value
-  var sp = document.getElementById("sp").value
+  var cp = parseFloat(document.getElementById("cp").value);
+  var sp = parseFloat(document.getElementById("sp").value);
   if(cp>sp){
     var loss = cp-sp;
-    document.getElementById("loss").innerHTML = "Loss = "+ loss
-    document.getElementById("profit").innerHTML = "Profit = 0"
+	var perl=(loss*100)/cp;
+    document.getElementById("pol").innerHTML = "Loss = "+ loss;
+	document.getElementById("percent").innerHTML = "Loss Percentage =" + perl +"%";
   }
   else {
-    var profit = sp-cp;
-    document.getElementById("profit").innerHTML = "Profit = " + profit
-    document.getElementById("loss").innerHTML = "Loss = 0"
+    var profit = sp-cp; 
+	var perp =(profit*100)/sp;
+    document.getElementById("pol").innerHTML = "Profit = " + profit;
+	document.getElementById("percent").innerHTML = "Profit Percentage =" + perp +"%";
   }
 }
 
@@ -3551,9 +3570,15 @@ function sum_n_apsol(nval,rval,r1val)
    var d = document.getElementById(r1val).value;
    var res = document.getElementById("sum_APsolprint");
    var explain = document.getElementById("sumAP_formula");
+   var printseries = document.getElementById("printAPseries");
    let cal;
    if(!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d)))
    {
+      for(var i=1, series = "", num = 0;i <= n ;i++){
+        num = parseInt(a)+(i-1)*d;
+        series += (num.toString() + ", ");
+      }
+      printseries.innerHTML = "Arithmetic Progression: "+series;
        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[2a+(n-1)d\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
@@ -3569,6 +3594,15 @@ function anotherap(){
   var nhalf = parseInt(n/2)
   var al = parseInt(a)+parseInt(l)
   var ans = parseInt(nhalf *al)
+  var series="";
+  var num = parseInt(a);
+  series += num.toString() + ", ";
+  let d = parseInt((l-a)/(n-1))
+  while(parseInt(num)<parseInt(l)){
+    num += parseInt(d);
+    series += (num.toString() + ", ");
+ }
+  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
 

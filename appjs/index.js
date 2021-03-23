@@ -139,6 +139,7 @@ function openit(id) {
         "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
+        "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
         "#matrixcollapse",
@@ -175,6 +176,7 @@ function openit(id) {
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
+        "#emical"
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
