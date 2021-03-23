@@ -3689,13 +3689,22 @@ function gp(){
   var a = document.getElementById("firstterm").value
   var r = document.getElementById("ratio").value
   var n = document.getElementById("number").value
+  var ans;
+  var ans1;
   console.log(a)
   console.log(r)
   console.log(n)
-  var power = parseInt(Math.pow(r,n) -1)
-  var ans1 = parseInt(a * power)
-  var ans = parseInt(ans1/(r-1))
-  document.getElementById("sumgp").innerHTML = "Sum = " + ans1
+  var power = parseInt(Math.pow(r,n))
+  if(r<-1 && r>1){
+  ans1 = parseInt(a * (power-1))
+  ans = parseInt(ans1/(r-1))
+  }else if(r>-1 && r<1 && r!=1){
+    ans1 = parseInt(a*(1-power))
+    ans=parseInt(ans1/(1-r))
+  }else if(r==1){
+    ans= parseInt(a*n);
+  }
+  document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
 
 function permutationcal(nval, rval) {
