@@ -3437,7 +3437,7 @@ function simple_interest() {
 function emical() {
   var p, t, r, emi;
   p = parseInt(document.getElementById("first1").value);
-  r = parseInt(document.getElementById("third3").value)/1200;
+  r = parseFloat(document.getElementById("third3").value)/1200;
   t = parseInt(document.getElementById("second2").value)*12;
   emi = ((p * r * Math.pow((1+r),t))/(Math.pow((1+r),t)-1));
   document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2)+ "   Per month";
