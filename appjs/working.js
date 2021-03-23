@@ -39,6 +39,12 @@ $(document).ready(function () {
         clearall();
     });
 
+     $("#fractions_op").click(function(){
+        openit("#fractions");
+        closenav();
+        clearall();
+    })
+
     $("#tableoption").click(function () {
         openit("#table");
         closenav();

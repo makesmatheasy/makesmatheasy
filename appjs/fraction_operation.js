@@ -3,14 +3,20 @@ function display_fractions(){
 }
 
 function additon(){
+    
 
     var n1 = parseInt(document.getElementById('one_add').value);
     var d1 = parseInt(document.getElementById('two_add').value);
     var n2 = parseInt(document.getElementById('three_add').value);
     var d2 = parseInt(document.getElementById('four_add').value);
 
+     if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+     {
+         window.alert("Enter an Integer")
+     }
+
     document.getElementById('a').innerHTML =n1;
-    document.getElementById('b').innerHTML = d1;
+    document.getElementById('bz').innerHTML = d1;
     document.getElementById('c').innerHTML = n2;
     document.getElementById('d').innerHTML = d2;
 
@@ -46,6 +52,12 @@ function subtractiom(){
     var n2 = parseInt(document.getElementById('three_sub').value);
     var d2 = parseInt(document.getElementById('four_sub').value);
 
+
+     if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+     {
+         window.alert("Enter an Integer")
+     }
+
     document.getElementById('suba').innerHTML =n1;
     document.getElementById('subb').innerHTML = d1;
     document.getElementById('subc').innerHTML = n2;
@@ -77,17 +89,152 @@ function subtractiom(){
 }
 
 function division(){
+
+    var n1 = parseInt(document.getElementById('one_div').value);
+    var d1 = parseInt(document.getElementById('two_div').value);
+    var n2 = parseInt(document.getElementById('three_div').value);
+    var d2 = parseInt(document.getElementById('four_div').value);
+
+    if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+     {
+         window.alert("Enter an Integer")
+     }
+
+    document.getElementById('diva').innerHTML = n1;
+    document.getElementById('divb').innerHTML = d1;
+    document.getElementById('divc').innerHTML = n2;
+    document.getElementById('divd').innerHTML = d2;
+
+    document.getElementById('diva1').innerHTML = n1;
+    document.getElementById('divb1').innerHTML = d1;
+    document.getElementById('divc1').innerHTML = d2;
+    document.getElementById('divd1').innerHTML = n2;
+
+    document.getElementById('diva2').innerHTML = n1;
+    document.getElementById('divb2').innerHTML = d1;
+    document.getElementById('divc2').innerHTML = n2;
+    document.getElementById('divd2').innerHTML = d2;
+
+    var top = n1 * d2;
+    var bot = d1 * n2;
+
+     document.getElementById('divt').innerHTML = top;
+    document.getElementById('divq').innerHTML = bot
+
+    var ans = top / bot;
+    document.getElementById('divans').innerHTML = ans;
+
+
     
 }
 
 function Multiplication(){
+
+    var n1 = parseInt(document.getElementById('one_mul').value);
+    var d1 = parseInt(document.getElementById('two_mul').value);
+    var n2 = parseInt(document.getElementById('three_mul').value);
+    var d2 = parseInt(document.getElementById('four_mul').value);
+
+    if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+     {
+         window.alert("Enter an Integer")
+     }
+
+    document.getElementById('mula').innerHTML = n1;
+    document.getElementById('mulb').innerHTML = d1;
+    document.getElementById('mulc').innerHTML = n2;
+    document.getElementById('muld').innerHTML = d2;
+
+    document.getElementById('mula1').innerHTML = n1;
+    document.getElementById('mulb1').innerHTML = d1;
+    document.getElementById('mulc1').innerHTML = n2;
+    document.getElementById('muld1').innerHTML = d2;
+
+    var top = n1 * n2;
+    var bot  = d1 * d2;
+
+
+    document.getElementById('mult').innerHTML = top;
+    document.getElementById('mulq').innerHTML = bot
+
+    var ans = top / bot;
+    document.getElementById('mulans').innerHTML = ans;
     
 }
 
 function mixed_to_improper(){
+
+
+    var n1 = parseInt(document.getElementById('one_mix').value);
+    var d1 = parseInt(document.getElementById('two_mix').value);
+    var s = parseInt(document.getElementById('side_mix').value);
+
+    if(Number.isNaN(d1) || Number.isNaN(s) || Number.isNaN(n1) )
+     {
+         window.alert("Enter an Integer")
+     }
+
+    document.getElementById('mixa').innerHTML = n1;
+    document.getElementById('side').innerHTML = s;
+    document.getElementById('mixb').innerHTML = d1;
+
+    document.getElementById('mixa1').innerHTML = n1;
+    document.getElementById('mixs').innerHTML = s;
+    document.getElementById('mixb1').innerHTML = d1;
+    document.getElementById('mixb2').innerHTML = d1;
+
+    var top = n1*s*d1;
+    var bot = d1;
+
+     document.getElementById('mixt').innerHTML = top;
+    document.getElementById('mixq').innerHTML = bot
+
+    var ans = top / bot;
+    document.getElementById('mixans').innerHTML = ans;
+
     
 }
 
 function improper_to_mixed(){
+
+    var n1 = parseInt(document.getElementById('one_imp').value);
+    var d1 = parseInt(document.getElementById('two_imp').value);
+
+    if(Number.isNaN(d1) || Number.isNaN(n1) )
+     {
+         window.alert("Enter an Integer")
+     }
+
+
+    document.getElementById('impa').innerHTML = n1;
+    document.getElementById('impb').innerHTML = d1;
+
+
+    const arr = [n1, d1];
+    
+        const properToMixed = arr => {
+            const quotient = Math.floor(arr[0] / arr[1]);
+            const remainder = arr[0] % arr[1];
+            if(n1<d1){
+                    document.getElementById('impr').innerHTML = n1;
+                    document.getElementById('impq').innerHTML = 1;
+                    document.getElementById('impb1').innerHTML = d1;
+            }
+            else if(remainder === 0){
+                return [quotient];
+            }else{
+                    var q = quotient;
+                    var r = remainder;
+                    var b = d1;
+
+                    document.getElementById('impr').innerHTML = r;
+                    document.getElementById('impq').innerHTML = q;
+                    document.getElementById('impb1').innerHTML = b;
+
+                
+            };
+            };
+
+        properToMixed(arr);
     
 }
