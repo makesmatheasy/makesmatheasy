@@ -139,6 +139,7 @@ function openit(id) {
         "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
+        "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
         "#matrixcollapse",
