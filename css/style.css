@@ -1,3 +1,4 @@
+
 :root {
   --apppink: rgb(255, 136, 231);
   --appblack: #232a36;
@@ -33,9 +34,15 @@ body img {
 html {
   overflow-x: hidden;
 }
+
 .container {
   padding-bottom: 70%;
   padding-top: 15%;
+
+.container{
+    padding-bottom: 70%;
+    padding-top: 1.5em;
+
 }
 p {
   color: var(--appimage);
@@ -145,7 +152,26 @@ h6 {
   margin: 10px;
 }
 
+#fav-button{
+    position:relative;
+    display:block;
+    z-index: 10;
+    float:right;
+    padding: 0px 10px 2px 10px;
+    text-transform: uppercase;
+    border-radius:8px;
+    border-color: white;
+    color:var(--apppink);
+    background-color: var(--appblack);
+    outline: none;
+    transition-duration: 0.4s;
+}
+#fav-button:hover{
+    background-color: rgba(255, 244, 253, 0.993);
+    font-weight: bolder;
+}
 .favouritecontainer {
+
   position: fixed;
   left: 0;
   right: 0;
@@ -171,6 +197,81 @@ h6 {
 
 .favourites:hover {
   cursor: pointer;
+
+    position: fixed;
+    left: 76%;
+    right: 0%;
+    top: 15%;
+    bottom: -15px ;
+    background-color:#02050a00;
+    padding: 20px;
+    padding-right: 0px;
+    padding-left: 0;
+    z-index:900;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+#favourite:ul{
+    padding-right:0 ;
+    list-style: none;
+}
+.favourites {
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top: 1px solid var(--apppink);
+    border-bottom: 1px solid var(--apppink);
+    border-left: 1px solid var(--apppink);
+    background-color: var(--appblack);
+    margin: 10px;
+    padding: 15px;
+    text-align:center;
+    color: white !important;
+    cursor:pointer;
+}
+
+.favnew{
+    height: fit-content;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top: 1px solid var(--apppink);
+    border-bottom: 1px solid var(--apppink);
+    border-left: 1px solid var(--apppink);
+    background: var(--apppink)!important;
+    margin-left: 0px;
+    font-size: 120%;
+  
+  }
+
+.favourites:hover{
+    background-color: rgb(255, 136, 231);
+    cursor:pointer;
+
+}
+@media screen and (max-width:600px)
+{
+    .favouritecontainer
+    {
+        left: 10%;
+        right:5%;
+        top: 15%;
+        bottom: -15px;
+        background-color: #232a36ce;
+    }
+    .favourites {
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+        border-top: 1px solid var(--apppink);
+        border-bottom: 1px solid var(--apppink);
+        border-left: 1px solid var(--apppink);
+        background-color: var(--appblack);
+        margin: 10px;
+        padding: 15px;
+        text-align:center;
+        color: white !important;
+        cursor:pointer;
+    }
 }
 
 ::selection {
@@ -181,7 +282,12 @@ h6 {
   color: white;
   display: inline;
 }
-
+.searchbar-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 #search-txt {
   border: none;
   background: none !important;
@@ -207,7 +313,7 @@ h6 {
   outline: none !important;
 }
 #box {
-  position: fixed !important;
+  position: relative !important;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -215,6 +321,9 @@ h6 {
   height: 60px;
   border-radius: 40px;
   padding: 10px;
+  margin-left: 6em;
+  margin-bottom: 0;
+  margin-top: 4em;
 }
 #box:hover > #search-txt {
   width: 240px;
@@ -255,6 +364,7 @@ h6 {
 }
 
 .dropdownlogo {
+
   padding-left: 15px;
   height: 20px;
   filter: invert(100%);
@@ -275,6 +385,81 @@ h6 {
 
 ul li .table {
   margin-bottom: 0;
+
+    padding-left:15px ;
+    height: 20px;
+    filter: invert(100%);
+}
+.katex{
+    font-size: 25px !important;
+    display: flex;
+    
+}
+#numberfact{
+    font-family: mainfont;
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-align: center !important;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--apppimage);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    /* because of this it is of black color now it will inherit the body color */
+    /* background-color: #26282b; */
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 35px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+#numberfact:hover {
+    font-size: 25.5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: var(--appblack);
+}
+
+ul li .table{
+    margin-bottom: 0;
+}
+
+.error{
+    font-size:0.8em;
+    color:red;
+}
+
+.home{
+    height: fit-content;
+    /* background: rgba(255, 136, 231,0.5); */
+    background: var(--apppink)!important;
+    margin: 13px;
+    border-radius: 36px;
+    font-size: large;
+  }
+  
+  
+  .list_menu_items a:hover {
+   /* background: rgba(255, 136, 231,0.5)!important; */
+   background: var(--apppink)!important;
+   border-radius: 36px;
+
+   }
+   #about .table td{
+       text-align: center;
+
+   }
+  .table td:hover{
+      
+       border-top: 1px solid #dee2e6;
+       border-radius: 36px;     
+    
+  }
+
+ .list_menu_items{
+     max-height: fit-content;
+ }
+.calculator span.mul
+{
+    color: white;
+
 }
 
 .error {
@@ -323,8 +508,16 @@ ul li .table {
   color: var(--apppimage) !important;
 }
 
+
 .light-mode #numberfact {
   color: var(--apppimage) !important;
+
+.light-mode #numberfact
+{
+    color: var(--apppimage) !important;
+    box-shadow: rgba(117, 110, 110, 0.3), rgba(rgba(201, 196, 196, 0.22));
+    background-color: #0571dd;
+
 }
 .light-mode .table td:hover {
   text-decoration: none;
@@ -389,3 +582,22 @@ span.sub img {
 .light-mode span.sub img {
   filter: invert(100%);
 }
+
+
+.light-mode span.mul img, .light-mode span.divi img, .light-mode span.plus img, .light-mode span.sub img{
+    filter: invert(100%);
+}
+.light-mode .favourites{
+    color: black !important;
+}
+.light-mode .favnew{
+    color: white !important;
+}
+.light-mode #fav-button{
+    border-color: #7868e6;
+}
+.light-mode #fav-button:hover{
+    background-color: white;
+    font-weight: bolder;
+}
+

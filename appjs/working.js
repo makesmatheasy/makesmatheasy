@@ -58,6 +58,18 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#matrixpropsbtn").click(function () {
+        openit("#matrixprops");
+        closenav();
+        clearall();
+    });
+    
+    $("#algebraic-idencollapsebtn").click(function () {
+        openit("#algebraic-idencollapse");
+        closenav();
+        clearall();
+    });
+
     $("#differentiate").click(function () {
         openit("#differentiatecollapse");
         closenav();
@@ -69,6 +81,25 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#integration-idencollapsebtn").click(function () {
+        openit("#integration-idencollapse");
+        closenav();
+        clearall();
+    })
+
+    $("#defintegration-idencollapsebtn").click(function () {
+        openit("#defintegration-idencollapse");
+        closenav();
+        clearall();
+    })    
+
+    $("#3d-solid-btn").click(function () {
+        openit("#3d-solid");
+        closenav();
+        clearall();
+    })    
+
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
@@ -116,8 +147,23 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#datebtn").click(function () {
+        openit("#datecal");
+        closenav();
+        clearall();
+    });
     $("#trigonoidenbutton").click(function () {
         openit("#trigonoiden");
+        closenav();
+        clearall();
+    })
+    $("#expansionbutton").click(function () {
+        openit("#expansion");
+        closenav();
+        clearall();
+    })
+    $("#profitlossbutton").click(function () {
+        openit("#profitloss");
         closenav();
         clearall();
     })
@@ -126,6 +172,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
@@ -178,12 +225,30 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+  
 
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });    
+    });  
+     // Sumof nterms of an Arithmetic Progression 
+    $("#APbtn").click(function () {
+        openit("#sum_n_AP");
+        closenav();
+        clearall();
+    }); 
+    $("#GPbtn").click(function () {
+        openit("#sum_n_GP");
+        closenav();
+        clearall();
+    }); 
+    // algebraic equations formula lists
+    $("#algebraic_formulacollapsebtn").click(function () {
+    openit("#algebraic_formulascollapse");
+    closenav();
+    clearall();
+     }); 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
@@ -217,8 +282,41 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#parabolacollapsebtn").click(function(){
+        openit("#parabolacollapse");
+        closenav();
+        clearall();
+    });
+    $("#ellipsecollapsebtn").click(function(){
+        openit("#ellipsecollapse");
+        closenav();
+        clearall();
+    });
+    $("#hyperbolacollapsebtn").click(function(){
+        openit("#hyperbolacollapse");
+        closenav();
+        clearall();
+    });
+    $("#differentiate-rulecollapsebtn").click(function(){
+        openit("#differentiate-rulecollapse");
+        closenav();
+        clearall();
+    });
 
 
+
+  $("#plotangleoption").click(function(){
+        openit("#plotangle");
+        closenav();
+        clearall();
+    });
+
+
+    $("#emibtn").click(function(){
+        openit("#emical");
+        closenav();
+        clearall();
+    });
 
 });
 
