@@ -156,6 +156,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#solutiontributton").click(function () {
+        openit("#solutiontri");
+        closenav();
+        clearall();
+    })
     $("#profitlossbutton").click(function () {
         openit("#profitloss");
         closenav();
