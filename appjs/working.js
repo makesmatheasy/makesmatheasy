@@ -1,9 +1,13 @@
+var toggle=false
 function opencal() {
-    $('#cal').slideToggle();
-}
-function cleardiv(arrayofclearids) {
-    for (parameterarray of arrayofclearids) {
-        document.getElementById(parameterarray).innerHTML = "";
+    $('#cal').slideToggle(function(){
+        toggle=!toggle
+    });
+    if(!toggle){
+    $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+    else{
+        alert("Calculator is now hidden");
     }
 }
 function clearall() {
