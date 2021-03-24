@@ -3742,13 +3742,13 @@ function gp(){
   console.log(a)
   console.log(r)
   console.log(n)
-  var power = parseInt(Math.pow(r,n))
-  if(r<-1 && r>1){
-  ans1 = parseInt(a * (power-1))
-  ans = parseInt(ans1/(r-1))
-  }else if(r>-1 && r<1 && r!=1){
-    ans1 = parseInt(a*(1-power))
-    ans=parseInt(ans1/(1-r))
+  var power = parseFloat(Math.pow(r,n))
+  if(r<-1 || r>1){
+  ans1 = parseFloat(a * (power-1))
+  ans = parseFloat(ans1/(r-1))
+  }else if(r>-1 || r<1 && r!=1){
+    ans1 = parseFloat(a*(1-power))
+    ans=parseFloat(ans1/(1-r))
   }
   document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
