@@ -125,7 +125,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })  
-
+    $("#consimbtn").click(function () {
+        openit("#consim");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
@@ -161,6 +165,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#solutiontributton").click(function () {
+        openit("#solutiontri");
+        closenav();
+        clearall();
+    })
     $("#profitlossbutton").click(function () {
         openit("#profitloss");
         closenav();
@@ -171,7 +180,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    
+    $("#trigsolcollapsebtn").click(function () {
+        openit("#trigsolcollapse");
+        closenav();
+        clearall();
+    })
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
@@ -203,7 +216,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    
+    $("#spiconbtn").click(function () {
+        openit("#spiconcal");
+        closenav();
+        clearall();
+    });
      // I have added
      $("#factorialbtn").click(function () {
         openit("#factorial");
@@ -270,6 +288,12 @@ $(document).ready(function () {
     });
     $("#complexcollapsebtn").click(function(){
         openit("#complexcollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#stats-btn").click(function(){
+        openit("#stats");
         closenav();
         clearall();
     });

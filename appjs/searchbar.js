@@ -91,7 +91,11 @@ function autocomplete(inp, arr) {
                         $("#trigonoiden").slideToggle();
                     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
                         $("#unitconcal").slideToggle();
-                    } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
+
+                    }else if (inp.value.toUpperCase() == "SPI CONVERTER") {
+                        $("#spiconcal").slideToggle(); 
+                    }
+                    else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
                         document.getElementById('romaracov').click();
                     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
                         document.getElementById('romaracov').click();
@@ -231,6 +235,9 @@ function handleclick(value) {
         $("#trigonoiden").slideToggle();
     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
         $("#unitconcal").slideToggle();
+    }
+    else if (inp.value.toUpperCase() == "SPI CONVERTER") {
+        $("#spiconcal").slideToggle();
     } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
         document.getElementById('romaracov').click();
     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
