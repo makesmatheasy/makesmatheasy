@@ -120,7 +120,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })  
-
+    $("#consimbtn").click(function () {
+        openit("#consim");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
