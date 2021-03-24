@@ -1,5 +1,11 @@
+var toggle=false
 function opencal() {
-    $('#cal').slideToggle();
+    $('#cal').slideToggle(function(){
+        toggle=!toggle
+    });
+    if(!toggle){
+    $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
 }
 function cleardiv(arrayofclearids) {
     for (parameterarray of arrayofclearids) {
