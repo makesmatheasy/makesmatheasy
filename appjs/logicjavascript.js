@@ -2516,7 +2516,7 @@ function orderas() {
 
 //descending order
 function orderde() {
-  document.getElementById("orderresultde").innerHTML = "";
+  document.getElementById("orderresult").innerHTML = "";
   var val = document.getElementById("ordergetval").value;
 
   val = val.split(" ");
@@ -2536,12 +2536,12 @@ function orderde() {
 
   val = val.join(",");
   if (val.length == 0) {
-    document.getElementById("orderresultde").innerHTML = "";
+    document.getElementById("orderresult").innerHTML = "";
   } else {
-    document.getElementById("orderresultde").innerHTML +=
+    document.getElementById("orderresult").innerHTML +=
       "\\[ Descending \\space Order \\]";
-    document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
-    renderMathInElement(document.getElementById("orderresultde"));
+    document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById("orderresult"));
   }
 }
 //descending order
