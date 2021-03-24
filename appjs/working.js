@@ -136,6 +136,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#convdivbtn").click(function () {
+        openit("#convdiv");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
