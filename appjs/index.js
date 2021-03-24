@@ -181,6 +181,7 @@ function openit(id) {
         "#emical",
         "#trigsolcollapse",
         "#consim",
+        "#convdiv",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
