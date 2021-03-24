@@ -6,9 +6,7 @@ function opencal() {
     if(!toggle){
     $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
-    else{
-        alert("Calculator is now hidden");
-    }
+   
 }
 function clearall() {
     setTimeout(function () {
