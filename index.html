@@ -141,15 +141,31 @@
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:decrement {
-            background-position: center 2px;
+            background-position: center 4px;
             background-size: 8px 8px;
             background-image: url(images/uparrow.png);
+			background-repeat:no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:increment {
-            background-position: center 2px;
+            background-position: center 4px;
             background-size: 8px 8px;
             background-image: url(images/downarrow.png);
+			background-repeat:no-repeat;
+        }
+		
+		::-webkit-scrollbar-button:single-button:horizontal:decrement {
+            background-position: center 4px;
+            background-size: 8px 8px;
+            background-image: url(images/leftarrow.png);
+			background-repeat:no-repeat;
+        }
+
+        ::-webkit-scrollbar-button:single-button:horizontal:increment {
+            background-position: center 4px;
+            background-size: 8px 8px;
+            background-image: url(images/rightarrow.png);
+			background-repeat:no-repeat;
         }
 
         /* Handle on hover */
