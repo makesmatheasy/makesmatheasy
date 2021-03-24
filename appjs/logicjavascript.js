@@ -2516,7 +2516,7 @@ function orderas() {
 
 //descending order
 function orderde() {
-  document.getElementById("orderresultde").innerHTML = "";
+  document.getElementById("orderresult").innerHTML = "";
   var val = document.getElementById("ordergetval").value;
 
   val = val.split(" ");
@@ -2536,12 +2536,12 @@ function orderde() {
 
   val = val.join(",");
   if (val.length == 0) {
-    document.getElementById("orderresultde").innerHTML = "";
+    document.getElementById("orderresult").innerHTML = "";
   } else {
-    document.getElementById("orderresultde").innerHTML +=
+    document.getElementById("orderresult").innerHTML +=
       "\\[ Descending \\space Order \\]";
-    document.getElementById("orderresultde").innerHTML += "\\[" + val + "\\]";
-    renderMathInElement(document.getElementById("orderresultde"));
+    document.getElementById("orderresult").innerHTML += "\\[" + val + "\\]";
+    renderMathInElement(document.getElementById("orderresult"));
   }
 }
 //descending order
@@ -3742,13 +3742,15 @@ function gp(){
   console.log(a)
   console.log(r)
   console.log(n)
-  var power = parseInt(Math.pow(r,n))
-  if(r<-1 && r>1){
-  ans1 = parseInt(a * (power-1))
-  ans = parseInt(ans1/(r-1))
+  var power = parseFloat(Math.pow(r,n))
+  if(r<-1 || r>1){
+  ans1 = parseFloat(a * (power-1))
+  ans = parseFloat(ans1/(r-1))
   }else if(r>-1 && r<1 && r!=1){
-    ans1 = parseInt(a*(1-power))
-    ans=parseInt(ans1/(1-r))
+    ans1 = parseFloat(a*(1-power))
+    ans=parseFloat(ans1/(1-r))
+  }else if(r==1){
+    ans=parseInt(a*n)
   }
   document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
@@ -3905,7 +3907,7 @@ function Median() {
     let median =
       len % 2 === 0
         ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2
-        : arr[mid - 1];
+        : arr[mid];
     document.getElementById(
       "Meanresult"
     ).innerHTML = `After Sorting:- ${arr}</br>`;

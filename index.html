@@ -141,15 +141,31 @@
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:decrement {
-            background-position: center 2px;
+            background-position: center 4px;
             background-size: 8px 8px;
             background-image: url(images/uparrow.png);
+			background-repeat:no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:increment {
-            background-position: center 2px;
+            background-position: center 4px;
             background-size: 8px 8px;
             background-image: url(images/downarrow.png);
+			background-repeat:no-repeat;
+        }
+		
+		::-webkit-scrollbar-button:single-button:horizontal:decrement {
+            background-position: center 4px;
+            background-size: 8px 8px;
+            background-image: url(images/leftarrow.png);
+			background-repeat:no-repeat;
+        }
+
+        ::-webkit-scrollbar-button:single-button:horizontal:increment {
+            background-position: center 4px;
+            background-size: 8px 8px;
+            background-image: url(images/rightarrow.png);
+			background-repeat:no-repeat;
         }
 
         /* Handle on hover */
@@ -623,7 +639,7 @@
                     </tr>
                 </table>
             </li>
-        
+
             <li>
                 <table class="table">
                     <tr>
@@ -701,24 +717,26 @@
                         </td>
                     </tr>
                 </table>
-            </li>
+            </li>           
+
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="3d-solid-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volume, CSA, TSA
+                            <a id="stats-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Statistics Formulae
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
-                                        onclick="addtofavourite('Volume, CSA, TSA','#3d-solid','c','3d-solidimgfav')"><img
-                                        id="3d-solidimgfav" src="images/unfavourite.png"
+                                        onclick="addtofavourite('Statistics Formulae','#stats','c','statsimgfav')"><img
+                                        id="statsimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
+
 
             <li>
                 <table class="table">
@@ -965,7 +983,7 @@
                     </tr>
                 </table>
             </li>
-           
+
             <!-- SPI CONVERTER  -->
             <li>
                 <table class="table">
@@ -1103,6 +1121,40 @@
                                 <span
                                         onclick="addtofavourite('3-D Shapes Calculator','#tdshapescal','c','tdshapesimgfav')"><img
                                         id="tdshapesimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="3d-solid-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volume, CSA, TSA
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Volume, CSA, TSA','#3d-solid','c','3d-solidimgfav')"><img
+                                        id="3d-solidimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="consimbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Congruence and Similarity of Triangles
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Congruence and Similarity of Triangles','#consim','c','consimimgfav')"><img
+                                        id="consimimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1531,7 +1583,7 @@
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
-      
+
 
         <div class="collapse" id="differentiatecollapse">
             <div style="display: inline-block;" class="dropdown">
@@ -1631,13 +1683,140 @@
                             </p>
                             <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
                             <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
-                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p> 
+                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
                             <p>\[29)\space e^{ax}sinbx \space dx \space = \frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
                             <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="collapse" id="stats">
+                <div class="stopwrap">
+                    <div class="coll">
+                        <div class="left">
+                            <h4>Statistics Formula Sheet</h4>
+                            <table class="table table-bordered table-dark">
+                                <tbody>
+                                <tr>
+                                    <th scope="row">\[Mean\]</th>
+                                    <td>\[\bar{x}=\frac{\sum x}{n}\]</td>
+                                    <td><p>\[x\,=\, Observations \,given\]</p>
+                                        <p>\[n\, =\, Total\, number\, of\]</p><p>\[observations\]</p></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Median\]</th>
+                                    <td><p>\[If\, n\, is\, odd,\, then\]</p><p>\[M\,=(\frac{n+1}{2})\,term\]</p><p>\[If\, n\, is\, even,\, then\]</p><p>\[M \,=\,\frac{(\frac{n}{2})^{th}term+(\frac{n}{2}+1)^{th}term}{2}\]</p></td>
+                                    <td><p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Mode\]</th>
+                                    <td><p></p>\[The\, value\, which\, occurs\]</p> <p>\[most\, frequently\]</p></td>
+                                    <td>\[-\]</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Variance\]</th>
+                                    <td>\[\sigma ^{2}\,=\,\frac{\sum (x-\bar{x})^{2}}{n}\]</td>
+                                    <td><p>\[x\, =\, Observations\, given\]</p>
+                                    <p>\[x¯\, =\, Mean\]</p>
+                                    <p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Standard \,Deviation\]</th>
+                                    <td>\[S = \sigma = \sqrt{\frac{\sum (x-\bar{x})^{2}}{n}}\]</td>
+                                    <td><p>\[x\, =\, Observations\, given\]</p>
+                                    <p>\[x¯\, =\, Mean\]</p>
+                                    <p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Range\]</th>
+                                    <td>\[L-S\]</td>
+                                    <td><p>\[L\, =\, Largest\, value\]</p>
+                                    <p>\[S\, =\, Smallest\, value\]</p>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Coeff.\,of\,Range\]</th>
+                                    <td>\[\frac{L-S}{L+S}\]</td>
+                                    <td><p>\[L\, =\, Largest\, value\]</p>
+                                    <p>\[S\, =\, Smallest\, value\]</p>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">\[Coeff.\,of\,Variation\]</th>
+                                    <td>\[\frac{\sigma}{\bar{x}}*100\]</td>
+                                    <td><p>\[\sigma=Standard\, Deviation\]</p>
+                                        <p>\[x¯\, =\, Mean\]</p>
+                                </td>
+                                <tr>
+                                    <th scope="row">\[Combined \,Mean\]</th>
+                                    <td>\[\frac{m\bar{x}\,+\,n\bar{y}}{m+n}\]</td>
+                                    <td>
+                                        <p>\[x¯\,/y¯\, =\, Mean\, of\, two\]</p>
+                                        </p>\[distributions\]</p>
+                                        <p>\[m\,/n\,=no.\,of\,elements\,in\,\]</p>
+                                        <p\></p>\[each\,distributions\]</p>
+                                        
+                                </td>
+                                <tr>
+                                    <th scope="row">\[Weighted\,Mean\]</th>
+                                    <td>\[\frac{\sum Wi\,xi}{\sum Wi}\]</td>
+                                    <td><p>\[Wi=Weight \,of\, each\]</p>
+                                        </p>\[distributions\]</p>
+                                        <p>\[xi=ith\,observation\]</p>
+                                </td>
+                                <tr>
+                                    <th scope="row"><p>\[Mean\,Deviation\]</p>
+                                    <p>\[about\,mean\]</p>
+                                <p>\[\bar{X}\]</th>
+                                    <td>\[\frac{\sum|xi-\bar{x}|}{n}\]</td>
+                                    <td><p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
+                                        <p>\[x¯\, =\, Mean\]</p>
+                                        <p>\[xi=ith\,observation\]</p>
+                                </td>
+                                <tr>
+                                    <th scope="row"><p>\[Mean\,Deviation\]</p>
+                                    <p>\[about\,median\]</p>
+                                <p>\[M\]</th>
+                                    <td>\[\frac{\sum|xi-M|}{n}\]</td>
+                                    <td><p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
+                                        <p>\[M\, =\, Median\]</p>
+                                        <p>\[xi=ith\,observation\]</p>
+                                </td>
+                                <tr>
+                                    <th scope="row"><p>\[Mean\,Deviation\]</p>
+                                    <p>\[about\,mode\]</p>
+                                <p>\[Z\]</p></th>
+                                    <td>\[\frac{\sum|xi-Z|}{n}\]</td>
+                                    <td><p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
+                                        <p>\[Z\, =\, Mode\]</p>
+                                        <p>\[xi=ith\,observation\]</p>
+                                </td>
+                                <tr>
+                                    <th scope="row"><p>\[Mean\,Deviation\]</p>
+                                    <p>\[about\,any\,no.\,'a'\]</p>
+                                </th>
+                                    <td>\[\frac{\sum|xi-a|}{n}\]</td>
+                                    <td><p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
+                                        <p>\[xi=ith\,observation\]</p>
+                                        
+                                </td>
+                                <tr>
+                                    <th scope="row"><p>\[For \,symmetrical \]</p><p>\[Distribution:\]</p>
+                                </th>
+                                <td>\[Mode\,=\,3Median\,-\,2Mean\]</td>
+                                <td>\[-\]</td>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
                 <div class="collapse" id="defintegration-idencollapse">
             <div class="stopwrap">
             	 <div class="coll">
@@ -1933,7 +2112,7 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
-			
+
             <h1>Complex Calculations for 2 complex numbers.</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of first number :</label>
@@ -1969,7 +2148,7 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
-			
+
         </div>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
@@ -2168,32 +2347,49 @@
         </div>
         <div class="collapse" id="matrixprops">
             <h2>Properties of Matrices</h2>
-            <p>1. If the rows and columns in a matrix A are interchanged, the new matrix is called the transpose of the original matrix
-                 The transposed matrix is denoted by  A<sup>T</sup>
-            </p>
-            <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
-            <p>3. If the matrix product AB is defined, then (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
-            <p>4. AA<sup>-1</sup> = I where A<sup>-1</sup> is inverse of matrix A</p>
-            <p>5. (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></p>
-            <p>6. A matrix is said to be Involutary if A<sup>2</sup> = I</p>
-            <p>7. A matrix is said to be Idempotent if A<sup>2</sup> = A</p>
-            <p>8. A matrix is said to be Nilpotent if A<sup>p</sup> = 0 , where p is any positive integer</p>
-            <p>9. A matrix is said to be symmetric if A = A<sup>T</sup> and skew-symmetric if A = -A<sup>T</sup></p>
-            <p>10. A matrix is said to be Hermitian if A = A<sup>*</sup> and skew-Hermitian if A = -A<sup>*</sup>
-            where A<sup>*</sup> is transpose conjugate of matrix</p>
-            <h2>Properties of Determinants</h2>
-            <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
-            <p>2. det(X) = det(X<sup>T</sup>)</p>
-            <p>3. det(X<sup>-1</sup>) = -det(X)</p>
-            <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
-            <p>5. In a triangular matrix , the product of diagnol elements is determinant</p>
+           <p>1. If A be any matrix then the matrix obtained by interchanging the rows and columns of A is called the Transpose of A.
+                  Transpose of the matrix A is denoted by A<sup>'</sup> or A<sup>T</sup>
+           </p>
+           <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
+           <p>3. If the matrix product AB is defined, then (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
+           <p>4. AA<sup>-1</sup> = I where A<sup>-1</sup> is inverse of matrix A</p>
+           <p>5. (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></p>
+           <p>6. A matrix is said to be Involutary if A<sup>2</sup> = I</p>
+           <p>7. A matrix is said to be Idempotent if A<sup>2</sup> = A</p>
+           <p>8. A matrix is said to be Nilpotent if A<sup>p</sup> = 0 , where p is any positive integer</p>
+           <p>9. A square matrix A is called Periodic if A<sup>k+1</sup> = A where k is a positive integer</p>
+           <p>10. A square matrix A is said to be a Singular if |A| = 0 and a square matrix A is said to be Non Singular if |A| ≠ 0 </p>
+           <p>11. A matrix is said to be symmetric if A = A<sup>T</sup> and skew-symmetric if A = -A<sup>T</sup></p>
+           <p>12. A matrix is said to be Hermitian if A = A<sup>θ</sup> and skew-Hermitian if A = -A<sup>θ</sup>
+                  where A<sup>θ</sup> is transpose conjugate of matrix</p>
+           <p>13. A square matrix A is said to be Unitary if AA<sup>θ</sup> = I</p>
+           <p>14. If A be a square matrix, then AA<sup>θ</sup> and A<sup>θ</sup>A are Hermitian matrix</p>
+           <p>15. If A be a square matrix of order n and C be the cofactor in A then the transpose of the matrix of cofactors of
+                  element of A is called the adjoint of A and is denoted by adj(A). Thus adj(A) = [C<sub>ij</sub>]<sup>T</sup></p>
+           <p>16. A square matrix A(non-singular) of order n is said to be invertible, if there exists a square matrix B of same order such that
+                 <br>AB = I<sub>n</sub> = BA then B is called the inverse of A and is denoted by A<sup>-1</sup> . Thus A<sup>-1</sup> = adjA/|A| </p>
+           <p>17. If A is a non singular square matrix of order n then adj(adj A) = |A|<sup>n-2</sup>A</p>
 
-            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>            
-        </div>              
-                      
-                      
-    
-           
+            <h2>Properties of Determinants</h2>
+             <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
+             <p>2. det(X) = det(X<sup>T</sup>)</p>
+             <p>3. det(X<sup>-1</sup>) = -det(X)</p>
+             <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
+             <p>5. If two rows(or columns) of a determinant are identical then the values of the determinant is zero</p>
+             <p>6. If determinant Δ becomes zero on putting x = α then we say that (x-α) is a factor of Δ</p>
+             <p>7. If X is orthogonal matrix then det(X) = ±1 </p>
+             <p>8. If X is a skew-symmetric matrix of odd order then det(X) = 0</p>
+             <p>9. If X is a skew-symmetric matrix of even order then det(X) is a perfect square.</p>
+             <p>10. det(kX) = k<sup>n</sup>det(X) where n is order of X and k is scalar</p>
+             <p>11. In a triangular matrix , the product of diagnol elements is determinant</p>
+             <p>12. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
+
+
+        </div>
+
+
+
+
         <div class="collapse" id="parabolacollapse">
             <div class="stopwrap">
                 <table class="table table-bordered table-dark">
@@ -2325,6 +2521,37 @@
                     </tr>
                     </tbody>
                 </table>
+                <h2>Director Circle of all Parabolas</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equations\space of\space Parabola\]</th>
+                        <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[y^2=4ax\]</th>
+                        <td>\[x\,+a\space=\,0\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y^2=-4ax\]</th>
+                        <td>\[x\,-a\space=\,0\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2=4ay\]</th>
+                        <td>\[y\,+a\space=\,0\]</td>
+                       
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2=-4ay\]</th>
+                        <td>\[y\,-a\space=\,0\]</td>
+                      
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="collapse" id="ellipsecollapse">
@@ -2417,6 +2644,31 @@
                         <td>\[(bcos\theta,asin\theta)\]</td>
                         <td>\[\frac{bx}{cos\theta}-\frac{ay}{sin\theta}=b^2-a^2\]</td>
                         <td>\[c=±\frac{m(b^2-a^2)}{\sqrt{b^2+a^2m^2}}\]</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+                <h2>Equations of Director circle of Ellipse</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equation\]</th>
+                        <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[\frac{x^2}{a^2}\space+\frac{y^2}{b^2}\space=1\]<br>\[a>b\]</th>
+
+                        <td>\[x^2\,+\,y^2\space=\,a^2\,+\,b^2\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[\frac{x^2}{a^2}\space+\frac{y^2}{b^2}\space=1\]<br>\[a < b\]</th>
+
+                        <td>\[x^2\,+\,y^2\space=\,a^2\,+\,b^2\]</td>
 
                     </tr>
 
@@ -2536,6 +2788,26 @@
 
                     </tbody>
                 </table>
+                <h2>Equations of Director Circle of Hyperbola</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equation\]</th>
+                        <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[\frac{x^2}{a^2}\space-\frac{y^2}{b^2}\space=1\]</th>
+                        <td>\[x^2\,+\,y^2\space\,=a^2\,-\,b^2\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[\frac{y^2}{b^2}\space-\frac{x^2}{a^2}\space=1\]</th>
+                        <td>\[x^2\,+\,y^2\space\,=b^2\,-\,a^2\]</td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -2593,6 +2865,94 @@
             </tr>
             <tr>
                 
+                <th scope="row">\[Sphere\]</th>
+                <td>\[\frac{4}{3}\, π\,r^{3}\]</td>
+                <td>\[ 4\, π\,r^{2}\]</td>
+                <td>\[4\, π\,r^{2}\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[Hollow\space Sphere\]</th>
+                <td>\[\frac{4}{3}\, π\,(\,R^{3}\,-\,r^{3})\]</td>
+                <td><p>\[Internal\]</p><p>\[Surface\,Area\]</p><p>\[=\]</p>\[4\, π\,r^{2}\]</td>
+                <td><p>\[External\]</p><p>\[Surface\,Area\]</p><p>\[=\]</p>\[4\, π\,R^{2}\]</td>
+            </tr>
+
+            <tr>
+                <th scope="row">\[Hemisphere\]</th>
+                <td>\[\frac{(2\, π\,r^{3}\,)}{3}\]</td>
+                <td>\[2\, π\,r^{2}\]</td>
+                <td>\[3\, π\,r^{2}\]</td>
+            </tr><tr>
+                <th scope="row">\[Prism\]</th>
+                <td>\[ Area \,of \,base× Height \]</td>
+                <td><p></p>\[Perimeter\, of\, base\]</p><p>\[×\]</p><p>\[Height\, of\, prism\]</p></td>
+                <td>\[LSA + Area \,of\, base\]</td>
+            </tr>
+                <th scope="row">\[Pyramid\]</th>
+                <td>\[\frac{1}{3}×base\,area×Height\]</td>
+                <td><p></p>\[ \frac{1}{2} × Perimeter\, of\, base\]</p><p>\[×\] </p> <p>\[Slant\, height\, Total\]</p</td>
+                <td>\[LSA + Area\, of \,base\]</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+            </div>
+        </div>
+        <div class="collapse" id="3d-solid">
+            <div class="stopwrap">
+
+        <h2><center>Volume, CSA/LSA and TSA of 3D solids</center></h2>
+        <table class="table table-bordered table-dark">
+            <thead>
+            <tr>
+                <th scope="col">\[Shape\]</th>
+                <th scope="col">\[Volume\]</th>
+                <th scope="col">\[C\,S\,A \space/\,L\,S\,A \]</th>
+                <th scope="col">\[T\,S\,A\]</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">\[Cube\]</th>
+                <td>\[a^{3}\]</td>
+                <td>\[4\,a^{2}\]</td>
+                <td>\[6\,a^{2}\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[Cuboid\]</th>
+                <td>\[l\,b\,h\]</td>
+                <td>\[2\,(\,l\,+\,b\,)\,h\]</td>
+                <td>\[2\,(\,lb\,+\,bh\,+\,lh\,)\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[Cylinder\]</th>
+                <td>\[ π\,r^{2}\,h\]</td>
+                <td>\[2\,π\,r\,h\]</td>
+                <td>\[2πr\, (\, r\, +\, h\, )\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[Hollow\space Cylinder\]</th>
+                <td>\[ πh\,(\, R \,+ \,r\, )\, (\, R\, -\, r\, )\]</td>
+                <td>\[2πh\space ( \,R\, +\, r\, )\]</td>
+                <td>\[2πh\, (\, R\, +\, r\, )\]</p><p>\[+\]</p><p>\[2π\, (\, R\, +\, r\, )\, (\, R\, -\, r\, )\]</p></td>
+            </tr>
+            <tr>
+                <th scope="row">\[Cone\]</th>
+                <td>\[ \frac{1}{3} \, π\,r^{2} \, h\]</td>
+                <td>\[πrl\, =\, πr\,√( r^{2}\,+ \,h^{2} )\]</td>
+                <td>\[πr \,(\, l\, +\, r\, )\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[Frustum Of Cone\]</th>
+                <td>\[ ( \frac{rh}{3} )\, ( \,r^{2} \,+\, R^{2} \,+\, rR \,)\]</td>
+                <td>\[π(R+r)√(h^{2}+(R-r)^{2})\]</td>
+                <td>\[π(rl+Rl+r^{2}+R^{2})\]</td>
+            </tr>
+            <tr>
+
                 <th scope="row">\[Sphere\]</th>
                 <td>\[\frac{4}{3}\, π\,r^{3}\]</td>
                 <td>\[ 4\, π\,r^{2}\]</td>
@@ -2849,45 +3209,37 @@
         <div class="collapse" id="inversetrigonoiden">
             <h2>Inverse Trignometric Identities</h2>
             <br><br>
-            <h4>Negative Formulaes</h4>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sin^-1(-x) = -sin^-1(x), x ∈ [-1, 1]</li>
-                <li style="color: white; font-size: 1.25rem;">cos-1(-x) = π -cos-1(x), x ∈ [-1, 1]</li>
-                <li style="color: white; font-size: 1.25rem;">tan-1(-x) = -tan-1(x), x ∈ R</li>
-                <li style="color: white; font-size: 1.25rem;">cosec-1(-x) = -cosec-1(x), |x| ≥ 1</li>
-                <li style="color: white; font-size: 1.25rem;">sec-1(-x) = π -sec-1(x), |x| ≥ 1</li>
-                <li style="color: white; font-size: 1.25rem;">cot-1(-x) = π – cot-1(x), x ∈ R</li>
-            </ol>
-            <h4>Addition of two functions</h4>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sin-1(x) + cos-1(x) = π/2 , x ∈ [-1, 1]</li>
-                <li style="color: white; font-size: 1.25rem;">tan-1(x) + cot-1(x) = π/2 , x ∈ R</li>
-                <li style="color: white; font-size: 1.25rem;">sec-1(x) + cosec-1(x) = π/2 ,|x| ≥ 1</li>
-            </ol>
-            <h4>Reciprocal Formulaes</h4>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sin-1(1/x) = cosec-1(x), if x ≥ 1 or x ≤ -1</li>
-                <li style="color: white; font-size: 1.25rem;">cos-1(1/x) = sec-1(x), if x ≥ 1 or x ≤ -1</li>
-                <li style="color: white; font-size: 1.25rem;">tan-1(1/x) = cot-1(x), x > 0</li>
-            </ol>
-            <h4>Identity Formulaes</h4>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sin(sin-1(x)) = x, -1≤ x ≤1</li>
-                <li style="color: white; font-size: 1.25rem;">cos(cos-1(x)) = x, -1≤ x ≤1</li>
-                <li style="color: white; font-size: 1.25rem;">tan(tan-1(x)) = x, – ∞ < x < ∞</li>
-                <li style="color: white; font-size: 1.25rem;">cosec(cosec-1(x)) = x, – ∞ < x ≤ 1 or -1 ≤ x < ∞</li>
-                <li style="color: white; font-size: 1.25rem;">sec(sec-1(x)) = x,- ∞ < x ≤ 1 or 1 ≤ x < ∞</li>
-                <li style="color: white; font-size: 1.25rem;">cot(cot-1(x)) = x, – ∞ < x < ∞.</li>
-            </ol>
-            <h4>Addition of Same functions</h4>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sin-1x + sin-1y = sin-1 (x √1-y^2 + y √1-x^2)</li>
-                <li style="color: white; font-size: 1.25rem;">sin-1x - sin-1y = sin-1 (x √1-y^2 - y √1-x^2)</li>
-                <li style="color: white; font-size: 1.25rem;">cos-1x + cos-1y = cos-1(xy-√(1-x^2)(1-y^2)</li>
-                <li style="color: white; font-size: 1.25rem;">cos-1x - cos-1y = cos-1(xy+√(1-x^2)(1-y^2)</li>
-                <li style="color: white; font-size: 1.25rem;">tan-1x + tan-1y = tan-1(x+y/(1-xy))</li>
-                <li style="color: white; font-size: 1.25rem;">tan-1x - tan-1y = tan-1(x-y/(1+xy))</li>
-            </ol>
+            <h4 style="text-align: center;">Negative Formulaes</h4>                         
+            <p>\[ sin^{-1}(-x) = -sin^{-1}(x)\]</p>
+            <p>\[ cos^{-1}(-x) = π-cos^{-1}(x)\]</p>
+            <p>\[ tan^{-1}(-x) = -tan^{-1}(x)\]</p>
+            <p>\[ cot^{-1}(-x) = π-cot^{-1}(x)\]</p>
+            <p>\[ sec^{-1}(-x) = π-sec^{-1}(x)\]</p>
+            <p>\[ cosec^{-1}(-x) = -cosec^{-1}(x)\]</p>
+            <h4 style="text-align: center;">Addition of two functions</h4>               
+            <p>\[sin^{-1}x + cos^{-1}x = π/2 \space,\space x ∈ [-1, 1] \]</p>                
+            <p>\[tan^{-1}x + cot^{-1}x = π/2 , x ∈ R\]</p>
+            <p>\[cosec^{-1}x + sec^{-1}x = π/2 \]</p>            
+            <h4 style="text-align: center;">Reciprocal Formulaes</h4>                     
+            <p>\[sin^{-1}\frac{1}{x} = cosec^{-1}x  \]</p>
+            <p>\[cos^{-1}\frac{1}{x} = sec^{-1}x \]</p>
+            <p>\[tan^{-1}\frac{1}{x} = cot^{-1}x, x > 0\]</p>
+            <h4 style="text-align: center;">Identity Formulaes</h4>       
+            
+            <p>\[sin(sin^{-1}x) = x, -1≤ x ≤1\]</p>
+            <p>\[cos(cos^{-1}x) = x, -1≤ x ≤1\]</p>
+            <p>\[tan(tan^{-1}x) = x, – ∞ < x < ∞ \]</p>
+            <p>\[cot(cot^{-1}x) = x, – ∞ < x < ∞ \]</p>
+            <p>\[sec(sec^{-1}x) = x, - ∞ < x ≤ 1\space or\space 1 ≤ x < ∞\]</p>
+            <p>\[cosec(cosec^{-1}x) = x, - ∞ < x ≤ 1\space or\space 1 ≤ x < ∞\]</p>
+            <h4 style="text-align : center;">Addition of Same functions</h4>       
+            
+            <p>\[sin^{-1}x+sin^{-1}y = sin^{-1}(x\sqrt{1-y^2} + y\sqrt{1-x^2})\]</p>
+            <p>\[sin^{-1}x-sin^{-1}y = sin^{-1}(x\sqrt{1-y^2} - y\sqrt{1-x^2})\]</p>
+            <p>\[cos^{-1}x+cos{-1}y = cos^{-1}(xy-\sqrt{(1-x^2)(1-y^2)}\]</p>
+            <p>\[cos^{-1}x-cos{-1}y = cos^{-1}(xy+\sqrt{(1-x^2)(1-y^2)}\]</p>
+            <p>\[tan^{-1}x+tan^{-1}y = tan^{-1}\frac{x+y}{1-xy}\]</p>
+            <p>\[tan^{-1}x-tan^{-1}y = tan^{-1}\frac{x-y}{1+xy}\]</p>
         </div>
         <div class="collapse" id="trigsolcollapse">
             <div class="stopwrap">
@@ -2913,41 +3265,19 @@
         </div>
 
         <div class="collapse" id="expansion">
-            <h2>Expansion of Trigonometric Functions</h2>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sine = &nbsp;&nbsp; x - &nbsp; x^3/3! &nbsp; + x^5/5!
-                    &nbsp; - x^7/7! &nbsp; + x^9/9! .....
-                <li style="color: white; font-size: 1.25rem;">cosine = &nbsp;&nbsp; 1 - &nbsp; x^2/2! &nbsp; + x^4/4!
-                    &nbsp; - x^6/6! &nbsp; + x^8/8! .....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">tan = &nbsp;&nbsp; x &nbsp; +(x^3)/3 &nbsp; &nbsp;+(2x^5)/15
-                    &nbsp; +(17x^7)/315 &nbsp; +(62x^9)/2835 .....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">cot = &nbsp;&nbsp; x^(-1) &nbsp; -1/3x &nbsp; -1/(45)x^3
-                    &nbsp; &nbsp;-2/(945)x^5 &nbsp; -1/(4725)x^7-.....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">sec = &nbsp;&nbsp; 1 &nbsp; +1/2x^2 &nbsp; +5/(24)x^4
-                    &nbsp; +(61)/(720)x^6 &nbsp; +(277)/(8064)x^8+.....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">cosec = &nbsp;&nbsp; x^(-1) &nbsp; +1/6x+7/(360)x^3+
-                    &nbsp; (31)/(15120)x^5+.....
-                </li>
-            </ol>
-            <h2>Expansion of Inverse Trigonometric Functions</h2>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">sin^(-1) = &nbsp;&nbsp; x &nbsp;&nbsp;+1/6x^3 &nbsp;&nbsp;+3/(40)x^5
-                    &nbsp;&nbsp;+5/(112)x^7 &nbsp;&nbsp;+(35)/(1152)x^9+.....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">cos^(-1) = &nbsp;&nbsp; 1/2pi &nbsp;&nbsp;-x &nbsp;&nbsp;-1/6x^3
-                    &nbsp;&nbsp;-3/(40)x^5 &nbsp;&nbsp;-5/(112)x^7-.....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">tan^(-1) = &nbsp;&nbsp; x&nbsp;&nbsp;-1/3x^3 &nbsp;&nbsp;+1/5x^5
-                    &nbsp;&nbsp;-1/7x^7+.....
-                </li>
-                <li style="color: white; font-size: 1.25rem;">cot^(-1) = &nbsp;&nbsp; 1/2pi&nbsp;&nbsp;-x &nbsp;&nbsp;+1/3x^3
-                    &nbsp;&nbsp;-1/5x^5 &nbsp;&nbsp;+1/7x^7 &nbsp;&nbsp;-1/9x^9+.....
-                </li>
-            </ol>
+            <h2>Expansion of Trigonometric Functions</h2>                 
+            <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} - \frac{x^7}{7!}.....\]</p>                
+            <p>\[cosine\space =\space 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}.....\]</p>                
+            <p>\[tan\space =\space x+\frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}.....\]</p>                
+            <p>\[cot\space = \space x^{-1} - \frac{1}{3x} -\frac{1}{45}x^3 - \frac{2}{945}x^5.....\]</p>                
+            <p>\[sec\space = \space 1 + \frac{1}{2x^2} + \frac{5}{24}x^4 + \frac{61}{720}x^6......\]</p>                
+            <p>\[cosec\space =\space x^{-1}+\frac{1}{6x+7}360x^3 + \frac{31}{15120}x^5.....\]</p>
+            
+            <h2>Expansion of Inverse Trigonometric Functions</h2>            
+            <p>\[sin^{-1}\space =\space x + \frac{1}{6}x^3 +\frac{3}{40}x^5 +\frac{5}{112}x^7.....\]</p>                
+            <p>\[cos^{-1}\space =\space \frac{π}{2} - (expansion\space of\space sine)\]</p>                
+            <p>\[tan^{-1}\space =\space x - \frac{1}{3}x^3 + \frac{1}{5}x^5.....\]</p>                
+            <p>\[cot^{-1}\space =\space \frac{π}{2} - (expansion\space of\space tan)\]</p>
             <p>The rest can be found out using <a href="#inversetrigonoiden">Identities</a></p>
         </div>
 
@@ -3006,9 +3336,9 @@
             </div>
         </div>
 
-        <div class="collapse" id="solutiontri">   
+        <div class="collapse" id="solutiontri">
             <h2 style="text-align: center;">Solution of Triangles</h2>
-            <br>         
+            <br>
             <p>\[Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} = \frac{c}{sinC}\]</p>
             <p>\[Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
             <p>\[Projection\space Formula : a = b cos C + c cos B \]</p>
@@ -3018,7 +3348,7 @@
             <p>\[tan\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{(s)(s-a)}\]</p>
             <p>\[Area\space of\space \triangle : \frac{1}{2}absinC = \frac{1}{2}bcsinA = \frac{1}{2}acsinB \]</p>
             <p>\[If\space D\space be\space the\space point\space on\space the\space side\space BC\space of a triangle\space ABC\space which\space divides\space the\space side\space BC\space in\space the\space ratio\space m: n,
-                \\If\space BD:DC = m:n, then\\                 
+                \\If\space BD:DC = m:n, then\\
                 (m+n) cot θ = m cot α- n cot β = n cot B – m cot C\]
             </p>
             <p>\[Radius\space of\space CircumCircle : R = \frac{a}{2sinA} = \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
@@ -3026,7 +3356,7 @@
             <p>\[r_1 = stan\frac{A}{2}\]</p>
             <p>\[r_1 = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
             <p>\[Orthocentre\space and\space Pedal\space triangle : \\
-                The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space 
+                The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space
                 altitudes\space is\space called\space the\space Pedal\space Triangle.\\
                 The\space sides\space are\space a cos A = R sin 2A \\
                 a cos B = R sin 2B\\
@@ -3435,11 +3765,11 @@
             <br>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="first1"
-                       placeholder="Enter Amount"/>                
+                       placeholder="Enter Amount"/>
                 <input type="text" name="c" style="width: 15.625rem;" class="form__field" id="third3"
                        placeholder="Enter rate of interest(%)"/> <p style= "display: inline;">  %      </p>
                 <input type="text" name="b" style="width: 15.625rem;" class="form__field" id="second2"
-                       placeholder="Enter time period(in Year) "/>    <p style= "display: inline;">  Year      </p>     
+                       placeholder="Enter time period(in Year) "/>    <p style= "display: inline;">  Year      </p>
                 <br>
                 <br>
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
@@ -3644,6 +3974,34 @@
                 </tr>
             </table>
         </div>
+        <div class="collapse" id="consim">
+            <h2>Congruence Properties of Triangles</h2>
+            <p>1. SSS Property (Side-Side-Side) - When all the three corresponding sides of 2 triangles are of equal size then
+                triangles are congruent
+            </p>
+            <br>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-2.png" style="margin-left: 50px;" alt="">
+            <br><br>
+            <p>2. SAS Property (Side-Angle-Side) - If any two sides and the angle included between the sides of one triangle are equivalent to the corresponding two sides and the angle between the sides of the second triangle, then the two triangles are said to be congruent by SAS rule. </p>
+            <br>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-3.png" alt="">
+            <br><br>
+            <p>3. ASA Property (Angle-Side-Angle) - If any two angles and the side included between the angles of one triangle are equivalent to the corresponding two angles and side included between the angles of the second triangle, then the two triangles are said to be congruent by ASA rule.</p>
+            <br>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-4.png" alt="">
+            <br><br>
+            <p>4. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side of a right- angled triangle is equivalent to the hypotenuse and a side of the second right- angled triangle, then the two right triangles are said to be congruent by RHS rule.</p>           
+            <br>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-5.png" alt="">
+            <br><br><br><br>
+            <h2>Similarity of Triangles</h2>
+            <br>
+            <p>1. AA Similarity - If any two angles of a triangle are equal to any two angles of another triangle, then the two triangles are similar to each other.</p>
+            <br><br>
+            <p>2. SAS Similarity - If the two sides of a triangle are in the same proportion of the two sides of another triangle, and the angle inscribed by the two sides in both the triangle are equal, then two triangles are said to be similar.</p>
+            <br><br>
+            <p>3. SSS Similarity - If all the three sides of a triangle are in proportion to the three sides of another triangle, then the two triangles are similar.</p>
+        </div>
 
         <div class="collapse" id="tdshapescal">
             <h2>Calculator for 3-D Shapes</h2>
@@ -3773,7 +4131,7 @@
         </div>
   <!-- SPI/CGPA -->
   <div class="collapse" id="spiconcal">
-      
+
     <h2>SPI/CGPA Convertor</h2>
     <table class="table">
         <tr>
@@ -3784,12 +4142,12 @@
                 </div>
             </td>
         </tr>
-       
+
     </table>
     <button class="btn btn-outline-light" onclick="" style="margin-left: 440px;"  >Rules
     </button>
     <br><br>
-  
+
     <p  style="margin-left: 300px;">1.  Percentage(%) = (SPI/CGPA - 0.5 ) *10 <br> 2.  SPI/CGPA = ( Percentage(%) / 10 ) + 0.5 <br>
     3. SPI/CGPA scaled out of 10.
     </p>
@@ -3855,7 +4213,7 @@
                 <button type="button" class="btn btn-light" onclick=anotherap()>
                 Solve
                 </button>
-            </form>   
+            </form>
             <br>
             <p id="printAPseries1" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                 align="right"></p>
@@ -4309,7 +4667,6 @@
                 </div>
                 <div class="form-group">
                     <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
-                    <p style="font-family:mathfont;;" class="stopwrap" id="orderresultde"></p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -5287,7 +5644,7 @@
                                     style="background-color:var(--appblack);">
                                 Percentage
                             </option>
-                            
+
                         </select>
                         <input type="number" id="spiconin" class="form__field"
                                placeholder="Enter Side" value="0" ; oninput="spicon();">
@@ -5304,7 +5661,7 @@
                                     style="background-color:var(--appblack);">
                                 Percentage
                             </option>
-                            
+
                         </select>
                         <label for="out">
                             <p class="form__field" id="spiconou">0</p>
