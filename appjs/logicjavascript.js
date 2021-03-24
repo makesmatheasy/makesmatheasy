@@ -3750,7 +3750,7 @@ function gp(){
     ans1 = parseFloat(a*(1-power))
     ans=parseFloat(ans1/(1-r))
   }else if(r==1){
-    ans = parseInt(a*n)
+    ans=parseInt(a*n)
   }
   document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
