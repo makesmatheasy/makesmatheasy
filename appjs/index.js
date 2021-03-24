@@ -145,6 +145,7 @@ function openit(id) {
         "#limitscollapse",
         "#matrixcollapse",
         "#matrixprops",
+        "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
@@ -204,6 +205,7 @@ function loadfilesafterload() {
         "appjs/logValue.js",
         "js/math.min.js",
         "js/plotly-1.35.2.min.js",
+        "appjs/operations_on_fractions.js",
     ];
     for (i of aroffiles) {
         var scriptelm = document.createElement("script");

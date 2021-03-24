@@ -24,6 +24,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+     $("#fractions_op").click(function(){
+         openit("#fractions");
+         closenav();
+         clearall();
+     })
 
     $("#aboutbutton").click(function () {
         openit("#about");
