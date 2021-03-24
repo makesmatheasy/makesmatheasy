@@ -3986,6 +3986,16 @@ function convertBinDec() {
   else to = 2;
 
   result.innerHTML = parseInt(input, from).toString(to);
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+  else if(from == 2)
+  {
+	     if(input.search(/^[10]+$/) == -1)
+		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+	  
+  }
 }
 
 //////////////////////////////////////////////////////////////
