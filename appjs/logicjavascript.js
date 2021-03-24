@@ -3135,149 +3135,54 @@ function roundoff(input, output) {
     }
   } else {
     // a floating number
-    el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
+	el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
     el.innerHTML +=
-      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" + spaces;
-
-    var placeofroundoffarray = {
-      Ones: i + 1,
-      Tens: i + 2,
-      Hundred: i + 3,
-      Thousand: i + 4,
-      "Ten Thousand": i + 5,
-      Lakh: i + 6,
-      "Ten Lakh": i + 7,
-      Crore: i + 8,
-      "Ten Crore": i + 9,
+      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" ;
+	var placeofroundoffarray = {
+      Ones:  0,
+      Tens: 1,
+      Hundred: 2,
+      Thousand: 3,
+      "Ten Thousand":4,
+      Lakh:5,
+      "Ten Lakh": 6,
+      Crore:  7,
+      "Ten Crore": 8,
     };
     var place = placeofroundoffarray[placeofroundoff];
-
-    if (place >= len) {
-      for (itr = 0; itr < place - i; itr++) {
-        itrPlace = placeUpto[itr];
-        el.innerHTML += spaces1 + itrPlace;
-      }
-      el.innerHTML += "<br>";
-      flag = -1;
-      for (itr = 0; itr < ar.length; itr++) {
-        if (flag == -1) el.innerHTML += ar[itr];
-        else el.innerHTML += spaces + ar[itr];
-        if (ar[itr] == ".") flag = 1;
-      }
-      el.innerHTML += "<br>";
-      for (var j = len; j < place + 1; j++) {
-        ar.push("0");
-      }
-      flag = -1;
-      for (itr = 0; itr < ar.length; itr++) {
-        if (flag == -1) el.innerHTML += ar[itr];
-        else el.innerHTML += spaces + ar[itr];
-        if (ar[itr] == ".") flag = 1;
-      }
-      el.innerHTML += "<br>" + ar.join("");
-      el.innerHTML +=
-        "<br>" +
+    var a=Math.round(parseFloat(val));
+	if(a<Math.pow(10,place)/2)
+	{
+		el.innerHTML +="Enter Bigger number to roundoff to nearest " + placeofroundoff;
+	}
+	else 
+	{ el.innerHTML += "<br>" +
+        val +
+        " after rounding off to the nearest " +
+        "Ones" +
+        " is " + a;
+	  if(place>0)
+	 {
+	    var b=parseInt((a/Math.pow(10,place)))*Math.pow(10,place);
+		var c=b+Math.pow(10,place);
+		if(a>=Math.pow(10,place)/2)
+		{
+			el.innerHTML += "<br> As "+ a%Math.pow(10,place) + ">=" + Math.pow(10,place)/2;
+		}
+		else{
+			el.innerHTML += "<br> As "+ a%Math.pow(10,place) + "<" + Math.pow(10,place)/2;
+		}
+		a=(a-b < c-a)?b:c;		
+	    el.innerHTML += "<br>" +
         val +
         " after rounding off to the nearest " +
         placeofroundoff +
-        " is " +
-        ar.join("") +
-        ".";
-    } else {
-      for (itr = 0; itr < ar.length - i - 1; itr++) {
-        itrPlace = placeUpto[itr];
-        el.innerHTML += spaces1 + itrPlace;
-      }
-      el.innerHTML += "<br>";
-      flag = -1;
-      for (itr = 0; itr < ar.length; itr++) {
-        if (flag == -1) el.innerHTML += ar[itr];
-        else el.innerHTML += spaces + ar[itr];
-        if (ar[itr] == ".") flag = 1;
-      }
-      el.innerHTML += "<br>";
-      for (itr = 0; itr < ar.length; itr++) {
-        el.innerHTML += ar[itr];
-        if (ar[itr] == ".") break;
-      }
-      flag = 1;
-      for (itr = i + 1; itr <= place + 1; itr++) {
-        if (itr >= ar.length) {
-          flag = -1;
-          break;
-        }
-        el.innerHTML += spaces + ar[itr];
-      }
-      if (parseInt(ar[place + 1]) >= 5) {
-        el.innerHTML += ">=5";
-      } else if (parseInt(ar[place + 1]) < 5) {
-        el.innerHTML += "<5";
-      }
-      el.innerHTML += "<br>";
-      if (parseInt(ar[place + 1]) >= 5) {
-        if (parseInt(ar[place]) == 9) {
-          //handling boundary cases
-          var k = 0,
-            j = place,
-            carry = 0;
-          while (k == 0 && j > i) {
-            if (parseInt(ar[j]) == 9) {
-              ar[j] = "0";
-              carry = 1;
-            } else {
-              ar[j] = parseInt(ar[j]) + carry;
-              carry = 0;
-              k = 1;
-            }
-            j--;
-          }
-          if (j == i && carry == 1) {
-            ar[j - 1] = parseInt(ar[j - 1]) + carry;
-            carry = 0;
-            j--;
-            k = 0;
-          }
-          if (parseInt(ar[j]) == 10) {
-            ar[j] = "0";
-            carry = 1;
-            k = 0;
-            j--;
-            while (k == 0 && j >= 0) {
-              if (parseInt(ar[j]) == 9) {
-                if (j == 0) ar[0] = parseInt(ar[0]) + 1;
-                else {
-                  ar[j] = "0";
-                  carry = 1;
-                }
-              } else {
-                ar[j] = parseInt(ar[j]) + carry;
-                carry = 0;
-                k = 1;
-              }
-              j--;
-            }
-          }
-        } else {
-          ar[place] = parseInt(ar[place]) + 1;
-        }
-      }
-      var flag = 0;
-      if (ar[0] == "10") flag = 1;
-      ar = ar.join("");
-      var b;
-      if (flag == 1) b = ar.slice(0, place + 2);
-      else b = ar.slice(0, place + 1);
-      el.innerHTML += b + "<br>";
-      el.innerHTML +=
-        val +
-        " after rounding off to the nearest " +
-        placeofroundoff +
-        " is " +
-        b +
-        ".";
-    }
+        " is " + a;
+	   
+	}
   }
-}
+ }
+} 
 //roundoff
 //-----------------------------------------------------
 //unit convert
