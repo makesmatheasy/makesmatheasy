@@ -1550,6 +1550,32 @@ function equilateraltrianglearea() {
   }
 }
 
+function rhombussolve() {
+  var d1= document.getElementById("inputd1").value;
+  var d2= document.getElementById("inputd2").value;
+  var a= document.getElementById("inputside").value;
+  var resultarea = document.getElementById("resultofarearec");
+  var resultperi = document.getElementById("resultofperi");
+  resultarea.innerHTML = "";
+  resultperi.innerHTML = "";
+  var area = 0.5 * (d1*d2);
+  var perimeter = 4 * a;
+  console.log("area");
+  console.log(area);
+  console.log("perimeter");
+  console.log(perimeter);
+  if(d1!="" && d2!=""){
+    document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Rhombus  \\space \\frac{1}{2} \\times" +d1+ "\\times"+ d2 +"\\ = "+area+"\\]";
+    renderMathInElement(document.getElementById("resultofareac"));
+  }
+  if (a!=""){
+    document.getElementById("resultofperi").innerHTML=`\\[Perimeter \\space of \\space Rhombus \\ 4 \\times${a}\\ = ${perimeter}\\]`;
+    renderMathInElement(document.getElementById("resultofperi"));
+  }else if(a==""){
+    document.getElementById("resultofperi").innerHTML="Enter side value to calculate perimeter";
+  }
+}
+
 function rectanglesolve() {
   var length = document.getElementById("inputreclength").value;
   var breadth = document.getElementById("inputrecbreadth").value;
