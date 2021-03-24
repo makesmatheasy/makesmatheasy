@@ -3746,9 +3746,11 @@ function gp(){
   if(r<-1 || r>1){
   ans1 = parseFloat(a * (power-1))
   ans = parseFloat(ans1/(r-1))
-  }else if(r>-1 || r<1 && r!=1){
+  }else if(r>-1 && r<1 && r!=1){
     ans1 = parseFloat(a*(1-power))
     ans=parseFloat(ans1/(1-r))
+  }else if(r==1){
+    ans=parseInt(a*n)
   }
   document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
