@@ -623,7 +623,7 @@
                     </tr>
                 </table>
             </li>
-        
+
             <li>
                 <table class="table">
                     <tr>
@@ -984,7 +984,7 @@
                     </tr>
                 </table>
             </li>
-           
+
             <!-- SPI CONVERTER  -->
             <li>
                 <table class="table">
@@ -1567,7 +1567,7 @@
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
-      
+
 
         <div class="collapse" id="differentiatecollapse">
             <div style="display: inline-block;" class="dropdown">
@@ -1667,7 +1667,7 @@
                             </p>
                             <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
                             <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
-                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p> 
+                            <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
                             <p>\[29)\space e^{ax}sinbx \space dx \space = \frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
                             <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
                         </div>
@@ -2096,7 +2096,7 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
-			
+
             <h1>Complex Calculations for 2 complex numbers.</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of first number :</label>
@@ -2132,7 +2132,7 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
-			
+
         </div>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
@@ -2331,32 +2331,49 @@
         </div>
         <div class="collapse" id="matrixprops">
             <h2>Properties of Matrices</h2>
-            <p>1. If the rows and columns in a matrix A are interchanged, the new matrix is called the transpose of the original matrix
-                 The transposed matrix is denoted by  A<sup>T</sup>
-            </p>
-            <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
-            <p>3. If the matrix product AB is defined, then (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
-            <p>4. AA<sup>-1</sup> = I where A<sup>-1</sup> is inverse of matrix A</p>
-            <p>5. (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></p>
-            <p>6. A matrix is said to be Involutary if A<sup>2</sup> = I</p>
-            <p>7. A matrix is said to be Idempotent if A<sup>2</sup> = A</p>
-            <p>8. A matrix is said to be Nilpotent if A<sup>p</sup> = 0 , where p is any positive integer</p>
-            <p>9. A matrix is said to be symmetric if A = A<sup>T</sup> and skew-symmetric if A = -A<sup>T</sup></p>
-            <p>10. A matrix is said to be Hermitian if A = A<sup>*</sup> and skew-Hermitian if A = -A<sup>*</sup>
-            where A<sup>*</sup> is transpose conjugate of matrix</p>
-            <h2>Properties of Determinants</h2>
-            <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
-            <p>2. det(X) = det(X<sup>T</sup>)</p>
-            <p>3. det(X<sup>-1</sup>) = -det(X)</p>
-            <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
-            <p>5. In a triangular matrix , the product of diagnol elements is determinant</p>
+           <p>1. If A be any matrix then the matrix obtained by interchanging the rows and columns of A is called the Transpose of A.
+                  Transpose of the matrix A is denoted by A<sup>'</sup> or A<sup>T</sup>
+           </p>
+           <p>2. A square matrix A is called orthogonal if A A<sup>T</sup> = I where I is identity matrix</p>
+           <p>3. If the matrix product AB is defined, then (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
+           <p>4. AA<sup>-1</sup> = I where A<sup>-1</sup> is inverse of matrix A</p>
+           <p>5. (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></p>
+           <p>6. A matrix is said to be Involutary if A<sup>2</sup> = I</p>
+           <p>7. A matrix is said to be Idempotent if A<sup>2</sup> = A</p>
+           <p>8. A matrix is said to be Nilpotent if A<sup>p</sup> = 0 , where p is any positive integer</p>
+           <p>9. A square matrix A is called Periodic if A<sup>k+1</sup> = A where k is a positive integer</p>
+           <p>10. A square matrix A is said to be a Singular if |A| = 0 and a square matrix A is said to be Non Singular if |A| ≠ 0 </p>
+           <p>11. A matrix is said to be symmetric if A = A<sup>T</sup> and skew-symmetric if A = -A<sup>T</sup></p>
+           <p>12. A matrix is said to be Hermitian if A = A<sup>θ</sup> and skew-Hermitian if A = -A<sup>θ</sup>
+                  where A<sup>θ</sup> is transpose conjugate of matrix</p>
+           <p>13. A square matrix A is said to be Unitary if AA<sup>θ</sup> = I</p>
+           <p>14. If A be a square matrix, then AA<sup>θ</sup> and A<sup>θ</sup>A are Hermitian matrix</p>
+           <p>15. If A be a square matrix of order n and C be the cofactor in A then the transpose of the matrix of cofactors of
+                  element of A is called the adjoint of A and is denoted by adj(A). Thus adj(A) = [C<sub>ij</sub>]<sup>T</sup></p>
+           <p>16. A square matrix A(non-singular) of order n is said to be invertible, if there exists a square matrix B of same order such that
+                 <br>AB = I<sub>n</sub> = BA then B is called the inverse of A and is denoted by A<sup>-1</sup> . Thus A<sup>-1</sup> = adjA/|A| </p>
+           <p>17. If A is a non singular square matrix of order n then adj(adj A) = |A|<sup>n-2</sup>A</p>
 
-            <p>6. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>            
-        </div>              
-                      
-                      
-    
-           
+            <h2>Properties of Determinants</h2>
+             <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
+             <p>2. det(X) = det(X<sup>T</sup>)</p>
+             <p>3. det(X<sup>-1</sup>) = -det(X)</p>
+             <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
+             <p>5. If two rows(or columns) of a determinant are identical then the values of the determinant is zero</p>
+             <p>6. If determinant Δ becomes zero on putting x = α then we say that (x-α) is a factor of Δ</p>
+             <p>7. If X is orthogonal matrix then det(X) = ±1 </p>
+             <p>8. If X is a skew-symmetric matrix of odd order then det(X) = 0</p>
+             <p>9. If X is a skew-symmetric matrix of even order then det(X) is a perfect square.</p>
+             <p>10. det(kX) = k<sup>n</sup>det(X) where n is order of X and k is scalar</p>
+             <p>11. In a triangular matrix , the product of diagnol elements is determinant</p>
+             <p>12. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
+
+
+        </div>
+
+
+
+
         <div class="collapse" id="parabolacollapse">
             <div class="stopwrap">
                 <table class="table table-bordered table-dark">
@@ -2855,7 +2872,7 @@
                 <th scope="col">\[Volume\]</th>
                 <th scope="col">\[C\,S\,A \space/\,L\,S\,A \]</th>
                 <th scope="col">\[T\,S\,A\]</th>
-                
+
             </tr>
             </thead>
             <tbody>
@@ -2864,7 +2881,7 @@
                 <td>\[a^{3}\]</td>
                 <td>\[4\,a^{2}\]</td>
                 <td>\[6\,a^{2}\]</td>
-                
+
             </tr>
             <tr>
                 <th scope="row">\[Cuboid\]</th>
@@ -2897,7 +2914,7 @@
                 <td>\[π(rl+Rl+r^{2}+R^{2})\]</td>
             </tr>
             <tr>
-                
+
                 <th scope="row">\[Sphere\]</th>
                 <td>\[\frac{4}{3}\, π\,r^{3}\]</td>
                 <td>\[ 4\, π\,r^{2}\]</td>
@@ -3311,9 +3328,9 @@
             </div>
         </div>
 
-        <div class="collapse" id="solutiontri">   
+        <div class="collapse" id="solutiontri">
             <h2 style="text-align: center;">Solution of Triangles</h2>
-            <br>         
+            <br>
             <p>\[Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} = \frac{c}{sinC}\]</p>
             <p>\[Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
             <p>\[Projection\space Formula : a = b cos C + c cos B \]</p>
@@ -3323,7 +3340,7 @@
             <p>\[tan\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{(s)(s-a)}\]</p>
             <p>\[Area\space of\space \triangle : \frac{1}{2}absinC = \frac{1}{2}bcsinA = \frac{1}{2}acsinB \]</p>
             <p>\[If\space D\space be\space the\space point\space on\space the\space side\space BC\space of a triangle\space ABC\space which\space divides\space the\space side\space BC\space in\space the\space ratio\space m: n,
-                \\If\space BD:DC = m:n, then\\                 
+                \\If\space BD:DC = m:n, then\\
                 (m+n) cot θ = m cot α- n cot β = n cot B – m cot C\]
             </p>
             <p>\[Radius\space of\space CircumCircle : R = \frac{a}{2sinA} = \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
@@ -3331,7 +3348,7 @@
             <p>\[r_1 = stan\frac{A}{2}\]</p>
             <p>\[r_1 = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
             <p>\[Orthocentre\space and\space Pedal\space triangle : \\
-                The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space 
+                The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space
                 altitudes\space is\space called\space the\space Pedal\space Triangle.\\
                 The\space sides\space are\space a cos A = R sin 2A \\
                 a cos B = R sin 2B\\
@@ -3740,11 +3757,11 @@
             <br>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="first1"
-                       placeholder="Enter Amount"/>                
+                       placeholder="Enter Amount"/>
                 <input type="text" name="c" style="width: 15.625rem;" class="form__field" id="third3"
                        placeholder="Enter rate of interest(%)"/> <p style= "display: inline;">  %      </p>
                 <input type="text" name="b" style="width: 15.625rem;" class="form__field" id="second2"
-                       placeholder="Enter time period(in Year) "/>    <p style= "display: inline;">  Year      </p>     
+                       placeholder="Enter time period(in Year) "/>    <p style= "display: inline;">  Year      </p>
                 <br>
                 <br>
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
@@ -4106,7 +4123,7 @@
         </div>
   <!-- SPI/CGPA -->
   <div class="collapse" id="spiconcal">
-      
+
     <h2>SPI/CGPA Convertor</h2>
     <table class="table">
         <tr>
@@ -4117,12 +4134,12 @@
                 </div>
             </td>
         </tr>
-       
+
     </table>
     <button class="btn btn-outline-light" onclick="" style="margin-left: 440px;"  >Rules
     </button>
     <br><br>
-  
+
     <p  style="margin-left: 300px;">1.  Percentage(%) = (SPI/CGPA - 0.5 ) *10 <br> 2.  SPI/CGPA = ( Percentage(%) / 10 ) + 0.5 <br>
     3. SPI/CGPA scaled out of 10.
     </p>
@@ -4188,7 +4205,7 @@
                 <button type="button" class="btn btn-light" onclick=anotherap()>
                 Solve
                 </button>
-            </form>   
+            </form>
             <br>
             <p id="printAPseries1" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                 align="right"></p>
@@ -5620,7 +5637,7 @@
                                     style="background-color:var(--appblack);">
                                 Percentage
                             </option>
-                            
+
                         </select>
                         <input type="number" id="spiconin" class="form__field"
                                placeholder="Enter Side" value="0" ; oninput="spicon();">
@@ -5637,7 +5654,7 @@
                                     style="background-color:var(--appblack);">
                                 Percentage
                             </option>
-                            
+
                         </select>
                         <label for="out">
                             <p class="form__field" id="spiconou">0</p>
