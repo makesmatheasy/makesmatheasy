@@ -134,6 +134,7 @@ function openit(id) {
         "#trigonovaluestable",
         "#trigonoiden",
         "#factors",
+        "#stats",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
@@ -179,6 +180,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#trigsolcollapse",
+        "#consim",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {

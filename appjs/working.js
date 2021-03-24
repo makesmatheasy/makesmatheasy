@@ -120,7 +120,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })  
-
+    $("#consimbtn").click(function () {
+        openit("#consim");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
@@ -279,6 +283,12 @@ $(document).ready(function () {
     });
     $("#complexcollapsebtn").click(function(){
         openit("#complexcollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#stats-btn").click(function(){
+        openit("#stats");
         closenav();
         clearall();
     });
