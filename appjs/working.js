@@ -269,6 +269,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#stats-btn").click(function(){
+        openit("#stats");
+        closenav();
+        clearall();
+    });
+
 	//Function of collapsing binary/hexadecimal section on click
 	$("#binary-to-hexadecimal-btn").click(function(){
         openit("#binary-hexadecimal");

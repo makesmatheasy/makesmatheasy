@@ -134,6 +134,7 @@ function openit(id) {
         "#trigonovaluestable",
         "#trigonoiden",
         "#factors",
+        "#stats",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
