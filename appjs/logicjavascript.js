@@ -3905,7 +3905,7 @@ function Median() {
     let median =
       len % 2 === 0
         ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2
-        : arr[mid - 1];
+        : arr[mid];
     document.getElementById(
       "Meanresult"
     ).innerHTML = `After Sorting:- ${arr}</br>`;
