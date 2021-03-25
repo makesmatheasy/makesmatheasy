@@ -1395,6 +1395,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="greybtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Grey Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Grey Code Converter','#grey-bin','c','grey-imgfav')"><img
+                                        id="grey-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="bitwise-calc-btn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Bitwise
                                 Calculator</a>
@@ -5576,6 +5594,30 @@
         </div>
         <!-- End of Octal / Binary -->
 
+        <!-- Start of grey convertor -->
+        <div>
+            <div class="collapse" id="grey-bin">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>From</h5>
+                        <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                            <option class="form_field" style="background-color: #232a36;">Grey Code</option>
+                            <option class="form_field" style="background-color: #232a36;">Binary</option>
+                        </select>
+                        <input type="number" id="grey-input" value="0" class="form__field"
+                               oninput="convertgrey()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>To</h5>
+                        
+                    </div>
+                    <label class="form__group" id="grey-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of grey convertor -->
 
         <!--Start Binary to Hexadecimal-->
         <div>

@@ -181,6 +181,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#trigsolcollapse",
+        "#grey-bin",
         "#consim",
         "#convdiv",
         "#curve",

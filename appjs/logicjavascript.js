@@ -4136,6 +4136,32 @@ function convertBinOct() {
 
 //----------------------------
 
+//Function that performs conversion of grey to binary and viceversa
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+function convertgrey() {
+  const fromBase = document.getElementById("grey-select1").value;
+  var input = document.getElementById("grey-input").value;
+  let result = document.getElementById("grey-result");
+  var x = input[0];
+
+  if (fromBase == "Binary") 
+    for (var i = 1; i < input.length; i++) 
+        x +=parseInt(input[i-1]^input[i]).toString();
+  
+  else 
+    for (var i = 1; i < input.length; i++) 
+      x +=parseInt(x[i-1]^input[i]).toString();
+  
+
+
+  result.innerHTML = x;
+}
+
+//----------------------------
+
 //Function that performs conversion of Binary to Hexadecimal and viceversa
 function convertBinhex() {
   const fromBase = document.getElementById("binary-hexadecimal-select1").value;
