@@ -201,7 +201,7 @@ document.getElementById('percentage').addEventListener("click", function () {
 document.getElementById('seven').addEventListener("click", function () {
     document.getElementById('txt').value += this.innerText;
     calsol(document.getElementById('txt').value);
-    if (document.getElementById('seven').innerText != "7" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('seven').innerText != "7" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(pi/180)";
         calsol(document.getElementById('txt').value);
     }
@@ -209,7 +209,7 @@ document.getElementById('seven').addEventListener("click", function () {
 document.getElementById('eight').addEventListener("click", function () {
     document.getElementById('txt').value += this.innerText;
     calsol(document.getElementById('txt').value);
-    if (document.getElementById('eight').innerText != "8" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('eight').innerText != "8" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(pi/180)";
         calsol(document.getElementById('txt').value);
     }
@@ -225,7 +225,7 @@ document.getElementById('nine').addEventListener("click", function () {
 document.getElementById('four').addEventListener("click", function () {
     document.getElementById('txt').value += this.innerText;
     calsol(document.getElementById('txt').value);
-    if (document.getElementById('four').innerText != "4" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('four').innerText != "4" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(pi/180)";
         calsol(document.getElementById('txt').value);
     }
@@ -233,7 +233,7 @@ document.getElementById('four').addEventListener("click", function () {
 document.getElementById('five').addEventListener("click", function () {
     document.getElementById('txt').value += this.innerText;
     calsol(document.getElementById('txt').value);
-    if (document.getElementById('five').innerText != "5" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('five').innerText != "5" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(pi/180)";
         calsol(document.getElementById('txt').value);
     }
@@ -247,7 +247,7 @@ document.getElementById('six').addEventListener("click", function () {
     }
 });
 document.getElementById('one').addEventListener("click", function () {
-    if (document.getElementById('one').innerText != "1" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('one').innerText != "1" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(180/pi)";
         calsol(document.getElementById('txt').value);
     }
@@ -255,7 +255,7 @@ document.getElementById('one').addEventListener("click", function () {
     calsol(document.getElementById('txt').value);        
 });
 document.getElementById('two').addEventListener("click", function () {
-    if (document.getElementById('two').innerText != "2" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('two').innerText != "2" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(180/pi)";
         calsol(document.getElementById('txt').value);
     }
@@ -263,7 +263,7 @@ document.getElementById('two').addEventListener("click", function () {
     calsol(document.getElementById('txt').value);
 });
 document.getElementById('three').addEventListener("click", function () {
-    if (document.getElementById('three').innerText != "3" && document.getElementById('percent').innerText == "RAD") {
+    if (document.getElementById('three').innerText != "3" && document.getElementById('percentage').innerText == "RAD") {
         document.getElementById('txt').value += "(180/pi)";
         calsol(document.getElementById('txt').value);    
     }
