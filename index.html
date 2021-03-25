@@ -5550,7 +5550,7 @@
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
-                    <span onclick="more();">More</span>
+                    <span id="more" onclick="more();">More</span>
                     <span
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
                     <span
@@ -5575,7 +5575,8 @@
                           onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
                             src="icons/crossed.svg" height="1.25rem" alt="crossed-icon"></span>
                     <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=1.875rem></span>-->
-                    <span id="percent">%</span>
+                    
+					<span id="percentage">%</span>
                     <span id="one">1</span>
                     <span id="two">2</span>
                     <span id="three">3</span>
