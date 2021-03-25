@@ -3584,7 +3584,43 @@ function anotherap(){
   document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
+function amsol()
+{
+  var a = document.getElementById("aval").value
+  var c = document.getElementById("cval").value
+  var amadd=parseInt(a)+parseInt(c)
+  var res =parseInt(amadd/2)
+  var explain = document.getElementById("am_formula");
+  explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
+  renderMathInElement(document.getElementById("am_formula"));
+  document.getElementById("am").innerHTML = "Result: " +res
 
+}
+function gmsol()
+{
+  var a = document.getElementById("aval1").value
+  var c = document.getElementById("cval1").value
+  var gmmul=parseInt(a)*parseInt(c)
+  var res =Math.sqrt(gmmul)
+  var explain = document.getElementById("gm_formula");
+  explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] " ;
+  renderMathInElement(document.getElementById("gm_formula"));
+  document.getElementById("gm").innerHTML = "Result: " +res
+
+}
+function hmsol()
+{
+  var a = document.getElementById("aval2").value
+  var c = document.getElementById("cval2").value
+  var hmmul=2*parseInt(a)*parseInt(c)
+  var hmadd=parseInt(a)+parseInt(c)
+  var res =(hmmul/hmadd)
+  var explain = document.getElementById("hm_formula");
+  explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] " ;
+  renderMathInElement(document.getElementById("hm_formula"));
+  document.getElementById("hm").innerHTML = "Result: " +res
+
+}
 // Primality test
 function check_prime(isprime)
 {
