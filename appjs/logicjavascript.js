@@ -1480,9 +1480,10 @@ function printtable() {
 //shapes calculator
 function solveperisq() {
   var val = document.getElementById("inputsqside").value;
-  if (val == "") {
+  if (val == "" || val<0) {
     document.getElementById("resultofperisq").innerHTML = "";
-  } else {
+  } 
+  else {
     var sol = eval(String(4) + "*" + String(val));
     var temp = "\\[ 4 \\times ( " + val + " ) = " + sol + "\\]";
     temp +=
@@ -1495,7 +1496,7 @@ function solveperisq() {
 }
 function solvediagonalsq() {
   var val = document.getElementById("inputsqside").value;
-  if (val == "") {
+  if (val == "" || val<0) {
     document.getElementById("resultofdiagonalsq").innerHTML = "";
   } else {
     var sol = eval(1.414 + "*" + String(val));
@@ -1510,6 +1511,10 @@ function solveareasq() {
   var val = document.getElementById("inputsqside").value;
   if (val == "") {
     document.getElementById("resultofareasq").innerHTML = "";
+  }
+  else if(val<0)
+  {
+    document.getElementById("resultofareasq").innerHTML = "Enter positive values only";
   } else {
     var sol = eval(String(val) + "*" + String(val));
     var temp = "\\[" + val + " \\times " + val + " = " + sol + "\\]";
