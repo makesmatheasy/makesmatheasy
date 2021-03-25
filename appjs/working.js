@@ -361,7 +361,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#meanbtn").click(function(){
+        openit("#mean");
+        closenav();
+        clearall();
+    });
 });
 
 function loader(action) {

@@ -185,6 +185,7 @@ function openit(id) {
         "#convdiv",
         "#curve",
         "#coor",
+        "#mean",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
