@@ -153,7 +153,7 @@
             background-image: url(images/downarrow.png);
 			background-repeat:no-repeat;
         }
-		
+
 		::-webkit-scrollbar-button:single-button:horizontal:decrement {
             background-position: center 4px;
             background-size: 8px 8px;
@@ -327,6 +327,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_GP','c','GPimgfav')"><img
                                         id="GPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="convdivbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Convergence and Divergence of Series</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Convergence and Divergence of Series','#convdiv','c','convdivfav')"><img
+                                        id="convdivimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -717,7 +732,7 @@
                         </td>
                     </tr>
                 </table>
-            </li>           
+            </li>
 
             <li>
                 <table class="table">
@@ -753,6 +768,23 @@
                         </td>
                     </tr>
                 </table>
+
+            </li>
+
+            <li>
+            <table class="table">
+                <tr>
+                    <td style="border-top: none;" onclick="display_fractions()">
+                        <a id="fractions_op"
+                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations on
+                            Fractions</a>
+                    </td>
+                    <td style="float:right;border-top: none;">
+                        <span onclick="addtofavourite('Operations on Fraction','#fractions','c','facimgfrac')"><img id="facimgfrac"
+                                src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                    </td>
+                </tr>
+            </table>
 
             </li>
 
@@ -1090,7 +1122,36 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="coorbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate Systems
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coordinate Systems','#coor','c','coorfav')"><img
+                                        id="coorfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="curvebtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Curve Tracing
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Curve Tracing','#curve','c','curvefav')"><img
+                                        id="curvfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
             <li>
                 <table class="table">
@@ -1539,6 +1600,709 @@
         </div>
         <!--        end factors-->
 
+        <!-- Start of Operatiosn on fractions  -->
+        <div class="collapse" id="fractions">
+
+            <div id="side1" style="display:inline-block; width: 500px;">
+                <div class="row">
+                    <button id="add_frac" class="carddis" data-toggle="modal"
+                        onclick="$('#addition_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Addition of fractions
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="sub_frac" class="carddis"
+                        onclick="$('#subtraction_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Subtraction of fractions
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="div_frac" class="carddis"
+                        onclick="$('#division_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Division of fractions
+                    </button>
+                </div>
+            </div>
+            <div id="side2" style="margin-left: 50px; display:inline-block; width: 500px;">
+                <div class="row">
+                    <button id="mul_frac" class="carddis"
+                        onclick="$('#miltiplication_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                        Multiplication of fractions
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="mix_frac" class="carddis"
+                        onclick="$('#mixed_to_improper').slideToggle();$('#fractions').slideUp();clearall();">
+                        Conversion of Mixed Fraction to an Improper Fraction
+                    </button>
+                </div>
+                <div class="row">
+                    <button id="imp_frac" class="carddis"
+                        onclick="$('#improper_to_mixed').slideToggle();$('#fractions').slideUp();clearall();">
+                        Conversion of an Improper Fraction to Mixed Fraction
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="modal" id="addition_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">ADDTION</h5>
+                            <button onclick="$('#fractions').slideToggle();$('#addition_fraction').slideUp();clearall();"
+                                type="button" class="close" aria-label="Close" style="outline:none">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container" style="padding-top:0%">
+
+                                <div style="display: inline-block;">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+
+                                            <input id="one_add" placeholder="Numerator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+
+                                            <input id="two_add" placeholder="Denominator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">+</div>
+
+
+                                <div style="display: inline-block; margin-left: 10px;">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+
+                                            <input id="three_add" placeholder="Numerator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+
+                                            <input id="four_add" placeholder="Denominator" type="number" required=""
+                                                style="width: 150px;">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <center>
+                                    <button type="button" class="btn btn-light" ; onclick="additon()">
+                                        ADD
+                                    </button>
+                                </center>
+
+                                <br>
+
+                                <div style="display: flex; justify-content: center;">
+
+                                    <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+
+                                        <div style="display:inline-block">
+
+                                            <div><var id="a">a</var></div>
+                                            <div class="symbol" style="color: #ff299c;">----- +</div>
+                                            <div class="bottom"><var id="bz">b</var></div>
+
+                                        </div>
+
+
+
+                                        <div style="display: inline-block;">
+                                            <div><var id="c">c</var></div>
+                                            <div style="color: #ff299c;">&nbsp; -----</div>
+                                            <div class="bottom"><var id="d">d</var></div>
+
+                                        </div>
+
+
+
+
+                                        <span>= &nbsp;(<var id="a1">a</var>*<var id="d1">d</var>)+(<var id="c1">c</var>*<var
+                                                id="b1">b</var>)</span>
+                                        <span class="symbol">/</span>
+                                        <span class="bottom"><var id="b2">b</var>*<var id="d2">d</var></span>
+
+                                        <span>= &nbsp;<var id="e">e</var>+<var id="g">g</var></span>
+                                        <span class="symbol">/</span>
+                                        <span class="bottom"><var id="f">f</var></span>
+
+                                        <span>= &nbsp;<var id="t">t</var></span>
+                                        <span class="symbol">/</span>
+                                        <span class="bottom"><var id="q">q</var></span>
+
+                                        =
+
+                                        <var id="ans">k</var>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="modal" id="subtraction_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">SUBTRACTION</h5>
+                                <button onclick="$('#fractions').slideToggle();$('#subtraction_fraction').slideUp();clearall();"
+                                    type="button" class="close" aria-label="Close" style="outline:none">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+
+                            <div class="modal-body">
+                                <div class="container" style="padding-top:0%">
+
+
+                                    <div style="display: inline-block;">
+                                        <div class="row">
+                                            <div class="cell borderBottom_1">
+
+                                                <input id="one_sub" placeholder="Numerator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
+
+                                                <input id="two_sub" placeholder="Denominator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">-</div>
+
+
+                                    <div style="display: inline-block; margin-left: 10px;">
+                                        <div class="row">
+                                            <div class="cell borderBottom_1">
+
+                                                <input id="three_sub" placeholder="Numerator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
+
+                                                <input id="four_sub" placeholder="Denominator" type="number" required=""
+                                                    style="width: 150px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <center>
+
+                                        <button type="button" class="btn btn-light" ; onclick="subtractiom()">
+                                            SUBTRACT
+                                        </button>
+                                    </center>
+
+                                    <br>
+
+                                    <div style="display: flex; justify-content: center;">
+
+                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+
+                                            <div style="display:inline-block">
+
+                                                <div><var id="suba">a</var></div>
+                                                <div style="color: #ff299c;" class="symbol">----- &nbsp; -</div>
+                                                <div class="bottom"><var id="subb">b</var></div>
+
+                                            </div>
+
+
+
+                                            <div style="display: inline-block;">
+                                                <div><var id="subc">c</var></div>
+                                                <div style="color: #ff299c;">&nbsp; -----</div>
+                                                <div class="bottom"><var id="subd">d</var></div>
+
+                                            </div>
+
+
+
+
+                                            <span style="margin-top: 15px;">= &nbsp;(<var id="suba1">a</var>*<var
+                                                    id="subd1">d</var>)-(<var id="subc1">c</var>*<var id="subb1">b</var>)</span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="subb2">b</var>*<var id="subd2">d</var></span>
+
+                                            <span style="margin-top: 15px;">= &nbsp;<var id="sube">e</var>-<var
+                                                    id="subg">g</var></span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="subf">f</var></span>
+
+                                            <span style="margin-top: 15px;">= &nbsp;<var id="subt">t</var></span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="subq">q</var></span>
+
+                                            =
+
+                                            <var id="subans" style="margin-top: 15px;">k</var>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal" id="division_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">DIVISION</h5>
+                                    <button
+                                        onclick="$('#fractions').slideToggle();$('#division_fraction').slideUp();clearall();"
+                                        type="button" class="close" aria-label="Close" style="outline:none">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" style="padding-top:0%">
+
+
+                                        <div style="display: inline-block;">
+                                            <div class="row">
+                                                <div class="cell borderBottom_1">
+
+                                                    <input id="one_div" placeholder="Numerator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell">
+
+                                                    <input id="two_div" placeholder="Denominator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">/
+                                        </div>
+
+
+                                        <div style="display: inline-block; margin-left: 10px;">
+                                            <div class="row">
+                                                <div class="cell borderBottom_1">
+
+                                                    <input id="three_div" placeholder="Numerator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell">
+
+                                                    <input id="four_div" placeholder="Denominator" type="number" required=""
+                                                        style="width: 150px;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <center>
+                                            <button type="button" class="btn btn-light" ; onclick="division()">
+                                                DIVIDE
+                                            </button>
+                                        </center>
+
+                                        <br>
+
+
+                                        <div style="display: flex; justify-content: center;">
+
+                                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+
+                                                <div style="display:inline-block">
+
+                                                    <div><var id="diva">a</var></div>
+                                                    <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;</div>
+                                                    <div class="bottom"><var id="divb">b</var></div>
+
+                                                </div>
+
+
+
+
+                                                <div style="display: inline-block;">
+                                                    <div><var id="divc">c</var></div>
+                                                    <div style="color: #ff299c;">&nbsp; -----</div>
+                                                    <div class="bottom"><var id="divd">d</var></div>
+
+                                                </div>
+
+                                                <br>
+
+                                                <div style="display:inline-block; margin-top: 15px;">
+
+                                                    <div><var id="diva1">a</var></div>
+                                                    <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
+                                                    <div class="bottom"><var id="divb1">b</var></div>
+
+                                                </div>
+
+
+
+                                                <div style="display: inline-block;">
+                                                    <div><var id="divc1">d</var></div>
+                                                    <div style="color:#ff299c;">&nbsp; -----</div>
+                                                    <div class="bottom"><var id="divd1">c</var></div>
+
+                                                </div>
+
+
+
+
+                                                <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
+                                                        id="divd2">d</var></span>
+                                                <span class="symbol">/</span>
+                                                <span class="bottom"><var id="divb2">b</var>*<var id="divc2">c</var></span>
+
+
+
+                                                <span style="margin-top: 15px;">= &nbsp;<var id="divt">t</var></span>
+                                                <span class="symbol">/</span>
+                                                <span class="bottom"><var id="divq">q</var></span>
+
+                                                =
+
+                                                <var id="divans" style="margin-top: 15px;">k</var>
+
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="modal" id="miltiplication_fraction" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">MULTIPLICATION</h5>
+                                        <button
+                                            onclick="$('#fractions').slideToggle();$('#miltiplication_fraction').slideUp();clearall();"
+                                            type="button" class="close" aria-label="Close" style="outline:none">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container" style="padding-top:0%">
+
+                                            <div style="display: inline-block;">
+                                                <div class="row">
+                                                    <div class="cell borderBottom_1">
+
+                                                        <input id="one_mul" placeholder="Numerator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="cell">
+
+                                                        <input id="two_mul" placeholder="Denominator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
+                                                x</div>
+
+
+                                            <div style="display: inline-block; margin-left: 10px;">
+                                                <div class="row">
+                                                    <div class="cell borderBottom_1">
+
+                                                        <input id="three_mul" placeholder="Numerator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="cell">
+
+                                                        <input id="four_mul" placeholder="Denominator" type="number" required=""
+                                                            style="width: 150px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <center>
+                                                <button type="button" class="btn btn-light" ; onclick="multiplication1()">
+                                                    MULTIPLY
+                                                </button>
+                                            </center>
+
+
+                                            <br>
+
+                                            <div style="display: flex; justify-content: center;">
+
+                                                <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+
+                                                    <div style="display:inline-block">
+
+                                                        <div><var id="mula">a</var></div>
+                                                        <div style="color: #ff299c;" class="symbol">----- &nbsp; x</div>
+                                                        <div class="bottom"><var id="mulb">b</var></div>
+
+                                                    </div>
+
+
+
+                                                    <div style="display: inline-block;">
+                                                        <div><var id="mulc">c</var></div>
+                                                        <div style="color: #ff299c;">&nbsp; -----</div>
+                                                        <div class="bottom"><var id="muld">d</var></div>
+
+                                                    </div>
+
+
+
+
+                                                    <span style="margin-top: 15px;">= &nbsp;<var id="mula1">a</var>*<var
+                                                            id="mulc1">c</var></span>
+                                                    <span class="symbol">/</span>
+                                                    <span class="bottom"><var id="mulb1">b</var>*<var id="muld1">d</var></span>
+
+
+
+                                                    <span style="margin-top: 15px;">= &nbsp;<var id="mult">t</var></span>
+                                                    <span class="symbol">/</span>
+                                                    <span class="bottom"><var id="mulq">q</var></span>
+
+                                                    =
+
+                                                    <var id="mulans" style="margin-top: 15px;">k</var>
+
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="modal" id="mixed_to_improper" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">MIXED FRACTION ---> IMPROPER FRACTION</h5>
+                                            <button
+                                                onclick="$('#fractions').slideToggle();$('#mixed_to_improper').slideUp();clearall();"
+                                                type="button" class="close" aria-label="Close" style="outline:none">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container" style="padding-top:0%">
+
+
+                                                <div style="display: inline-block; margin-left: 40px; ">
+                                                    <div class="row">
+
+                                                        <div class="row" style="margin-top: 10px;">
+                                                            <div class="cell borderBottom_1">
+
+                                                                <input id="side_mix" placeholder="Side" type="number"
+                                                                    required="" style="width: 70px; ">
+                                                            </div>
+                                                        </div>
+                                                        <div class="cell borderBottom_1" style="margin-left: 20px; ">
+
+                                                            <input id="one_mix" placeholder="Numerator" type="number"
+                                                                required="" style="width: 150px;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="margin-left: 45px;">
+                                                        <div class="cell">
+
+                                                            <input id="two_mix" placeholder="Denominator" type="number"
+                                                                required="" style="width: 150px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
+                                                <center>
+                                                    <button type="button" class="btn btn-light" ; onclick="mixed_to_improper()"
+                                                        style="margin-top: 20px;">
+                                                        CONVERT
+                                                    </button>
+                                                </center>
+
+                                                <br>
+
+                                                <div style="display: flex; justify-content: center;">
+
+                                                    <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                                        class="frac">
+
+                                                        <div style="display:inline-block">
+
+
+                                                            <div><var id="mixa">a</var></div>
+                                                            <div style="color: #ff299c;" class="symbol"><var
+                                                                    id="side">s</var>&nbsp;-----</div>
+                                                            <div class="bottom"><var id="mixb">b</var></div>
+
+                                                        </div>
+                                                        <span style="margin-top: 15px;">= &nbsp;<var id="mixa1">a</var>*<var
+                                                                id="mixs">s</var>*<var id="mixb1">b</var></span>
+                                                        <span class="symbol">/</span>
+                                                        <span class="bottom"><var id="mixb2">b</var></span>
+
+
+
+                                                        <span style="margin-top: 15px;">= &nbsp;<var id="mixt">t</var></span>
+                                                        <span class="symbol">/</span>
+                                                        <span class="bottom"><var id="mixq">q</var></span>
+
+                                                        =
+
+                                                        <var id="mixans" style="margin-top: 15px;">k</var>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="modal" id="improper_to_mixed" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">IMPROPER FRACTION ---> MIXED FRACTION</h5>
+                                                <button
+                                                    onclick="$('#fractions').slideToggle();$('#improper_to_mixed').slideUp();clearall();"
+                                                    type="button" class="close" aria-label="Close" style="outline:none">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="container" style="padding-top:0%">
+
+                                                    <center>
+                                                        <div style="display: inline-block;  ">
+                                                            <div class="row">
+                                                                <div class="cell borderBottom_1">
+
+                                                                    <input id="one_imp" placeholder="Numerator" type="number"
+                                                                        required="" style="width: 150px;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="cell">
+
+                                                                    <input id="two_imp" placeholder="Denominator" type="number"
+                                                                        required="" style="width: 150px;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <br>
+
+
+                                                        <button type="button" class="btn btn-light" ;
+                                                            onclick="improper_to_mixed()" style="margin-top: 20px;">
+                                                            CONVERT
+                                                        </button>
+                                                    </center>
+
+                                                    <br>
+
+                                                    <div style="display: flex; justify-content: center;">
+
+                                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                                            class="frac">
+
+                                                            <div style="display:inline-block">
+
+
+                                                                <div><var id="impa">a</var></div>
+                                                                <div style="color: #ff299c;" class="symbol">-----</div>
+                                                                <div class="bottom"><var id="impb">b</var></div>
+
+                                                            </div>
+
+                                                            <h5>Divide &nbsp; a/b &nbsp; and &nbsp; get &nbsp; q : quotient
+                                                                &nbsp;, &nbsp; r : remainder </h5>
+
+                                                            <div><var id="impr">r</var></div>
+                                                            <div style="color: #ff299c;" class="symbol"><var
+                                                                    id="impq">q</var>&nbsp;-----</div>
+                                                            <div class="bottom"><var id="impb1">b</var></div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- End of Operatiosn on fractions   ------------------------------------------>
+
         <!-- log values ------------------------------------------------------------->
 
         <div class="collapse" id="log_values">
@@ -1758,7 +2522,7 @@
                                         </p>\[distributions\]</p>
                                         <p>\[m\,/n\,=no.\,of\,elements\,in\,\]</p>
                                         <p\></p>\[each\,distributions\]</p>
-                                        
+
                                 </td>
                                 <tr>
                                     <th scope="row">\[Weighted\,Mean\]</th>
@@ -1801,14 +2565,14 @@
                                     <td>\[\frac{\sum|xi-a|}{n}\]</td>
                                     <td><p>\[n \,= \,Total\, number \,of\]</p><p> \[observations\]</p>
                                         <p>\[xi=ith\,observation\]</p>
-                                        
+
                                 </td>
                                 <tr>
                                     <th scope="row"><p>\[For \,symmetrical \]</p><p>\[Distribution:\]</p>
                                 </th>
                                 <td>\[Mode\,=\,3Median\,-\,2Mean\]</td>
                                 <td>\[-\]</td>
-                                   
+
                                 </tbody>
                             </table>
                         </div>
@@ -1824,7 +2588,7 @@
                         <h4>General Formula</h4>
                        	<p>\[1)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{b}{f(t)dt}\]</p>
                         <p>\[2)\int\limits_{a}^{b}{f(x)dx=}-\int\limits_{b}^{a}{f(x)dx}\]</p>
-                        <p>\[3)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{c}{f(t)dt}+\int\limits_{c}^{b}{f(t)dt}\]</p>
+                        <p>\[3)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{c}{f(x)dx}+\int\limits_{c}^{b}{f(x)dx}\]</p>
                         <p>\[4)\int\limits_{-a}^{a}{f(x)dx=\int\limits_{0}^{a}[f(x)+f(-x)]=\left\{ \begin{matrix} 0 & if\,\,f\left( x \right)\,is\,odd\,function \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( x \right)\,is\,even\,function \\ \end{matrix} \right.\,\,\,\,\,\,}\]</p>
                         </div>
                     </div>
@@ -1844,7 +2608,9 @@
                         <p>\[f(x)\,is\,a\,periodic\,function\,with\,period\,\,T\,and\,m\,and\,n\,are\,integers\]</p>
                         <p>\[1)\space\int_{0}^{nT}\,f(x)\,dx\space=n\,\int_{0}^T\,f(x)\,dx\]</p>
                         <p>\[2)\space\int_{nT}^{mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
-                        <p>\[3)\space\int_{a+nT}^{a+mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
+                        <p>\[3)\space\int_{a}^{a+nT}\,f(x)\,dx\space=n\,\int_{0}^T\,f(x)\,dx\]</p>
+                        <p>\[4)\space\int_{a+nT}^{a+mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
+                        <p>\[5)\space\int_{a+nT}^{b+nT}\,f(x)\,dx\space=\int_{a}^b\,f(x)\,dx\]</p>
                 </div>
             </div>
                 <div class="coll">
@@ -1885,11 +2651,23 @@
                       </div>
                 </div>
                 <div class="coll">
+               <div class="left">
+                   <h4>Inequalities</h4>
+                    <center><p>\[1)\,\,If\,at\,every\,point\,x\,of\,an\,interval\,[a,b]\,the\,inequalities\,g(x)\,≤\,f(x)\,≤\,h(x)\,are\,fulfilled\,,\,then\]</p></center>
+                   <p>\[\space\int_{a}^b\,g(x)\,dx\space≤\int_{a}^{b}\,f(x)\,dx\space≤\int_{a}^{b}\,h(x)\,dx\]</p>
+                   <center><p>\[2)\,\,If\,m\,is\,the\,least\,value\,and\,M\,is\,the\,greatest\,value\,of\,function\,f(x)\,on\,the\,interval\,[a,b]\,,\,then\]</p></center>
+                   <p>\[\space\,m\,(b-a)\space≤\int_{a}^b\,f(x)\,dx\space≤\,M\,(b-a)\]</p>
+                  <p>\[3)\space\,|\int_{a}^b\,f(x)\,dx\,|\space≤\int_{a}^b\,|\,f(x)\,|\,dx\]</p>
+           </div>
+       </div>
+                <div class="coll">
                     <div class="left">
                         <h4>Some Standard Results</h4>
-                        <p>\[\int\limits_{0}^{\frac{\pi}{2}}logsinx \space = -\frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosx \space dx\]</p>
-                        <p>\[\int\limits_{a}^{b}{x}dx \space=\frac{b-a}{2} \space a,b \in I\]
-                        <p>\[\int \limits_{a}^{b}\frac{|x|}{x}dx \space = |b|-|a|\]
+                        <p>\[1)\space\int\limits_{0}^{\frac{\pi}{2}}logsinx \space dx \space = -\frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosx \space dx\]</p>
+                        <p>\[2)\space\int\limits_{0}^{\frac{\pi}{2}}logsecx \space dx \space = \frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosecx \space dx\]</p>
+                        <p>\[3)\space\int\limits_{0}^{\frac{\pi}{2}}logtanx \space dx \space = \,0 \space=\int\limits_{0}^{\frac{\pi}{2}}logcotx \space dx\]</p>
+                        <p>\[4)\space\int\limits_{a}^{b}{x}dx \space=\frac{b-a}{2} \space a,b \in I\]
+                        <p>\[5)\space\int \limits_{a}^{b}\frac{|x|}{x}dx \space = |b|-|a|\]
 
                     </div>
                 </div>
@@ -2533,22 +3311,22 @@
                     <tr>
                         <th scope="row">\[y^2=4ax\]</th>
                         <td>\[x\,+a\space=\,0\]</td>
-                        
+
                     </tr>
                     <tr>
                         <th scope="row">\[y^2=-4ax\]</th>
                         <td>\[x\,-a\space=\,0\]</td>
-                        
+
                     </tr>
                     <tr>
                         <th scope="row">\[x^2=4ay\]</th>
                         <td>\[y\,+a\space=\,0\]</td>
-                       
+
                     </tr>
                     <tr>
                         <th scope="row">\[x^2=-4ay\]</th>
                         <td>\[y\,-a\space=\,0\]</td>
-                      
+
                     </tr>
                     </tbody>
                 </table>
@@ -2707,6 +3485,14 @@
                         <td>\[y=±\frac{b}{e}\]</td>
                         <td>\[2b\]</td>
                     </tr>
+                    <tr>
+                        <th scope="row">\[{x^2}\space-{y^2}\space={a^2}\]</th>
+                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw5QUDKo9jqVjTyqagOTwt6qgP04QWO60TWw&usqp=CAU" class="img-fluid"></td>
+                        <td >\[(0, ±a{\sqrt{2}} )\]</td>
+                        <td>\[2a\]</td>
+                        <td>\[x=±\frac{a}{\sqrt{2}}\]</td>
+                        <td>\[2a\]</td>
+                    </tr>
 
                     </tbody>
                 </table>
@@ -2735,6 +3521,13 @@
                         <td>\[c=±\sqrt{-bm^2+a^2}\]</td>
 
                     </tr>
+                    <tr>
+                        <th scope="row">\[{x^2}\space-{y^2}\space={a^2}\]</th>
+                        <td>\[(asec\theta,atan\theta)\]</td>
+                        <td>\[y=mx±\sqrt{am^2-a^2}\]</td>
+                        <td>\[c=±\sqrt{am^2-a^2}\]</td>
+
+                    </tr>
 
                     </tbody>
                 </table>
@@ -2761,6 +3554,13 @@
                         <td>\[(bsec\theta,atan\theta)\]</td>
                         <td>\[\frac{bx}{sec\theta}+\frac{ay}{tan\theta}=b^2+a^2\]</td>
                         <td>\[c=\frac{m(b^2-a^2)}{\sqrt{a^2m^2-b^2}}\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[{x^2}\space-{y^2}\space={a^2}\]</th>
+                        <td>\[(asec\theta,atan\theta)\]</td>
+                        <td>\[\frac{x}{sec\theta}+\frac{y}{tan\theta}=2a\]</td>
+                        <td>\[c=\frac{2am}{\sqrt{1-m^2}}\]</td>
 
                     </tr>
 
@@ -2800,7 +3600,7 @@
                 <th scope="col">\[Volume\]</th>
                 <th scope="col">\[C\,S\,A \space/\,L\,S\,A \]</th>
                 <th scope="col">\[T\,S\,A\]</th>
-                
+
             </tr>
             </thead>
             <tbody>
@@ -2809,7 +3609,7 @@
                 <td>\[a^{3}\]</td>
                 <td>\[4\,a^{2}\]</td>
                 <td>\[6\,a^{2}\]</td>
-                
+
             </tr>
             <tr>
                 <th scope="row">\[Cuboid\]</th>
@@ -2842,7 +3642,7 @@
                 <td>\[π(rl+Rl+r^{2}+R^{2})\]</td>
             </tr>
             <tr>
-                
+
                 <th scope="row">\[Sphere\]</th>
                 <td>\[\frac{4}{3}\, π\,r^{3}\]</td>
                 <td>\[ 4\, π\,r^{2}\]</td>
@@ -2864,7 +3664,7 @@
                 <th scope="row">\[Prism\]</th>
                 <td>\[ Area \,of \,base× Height \]</td>
                 <td><p></p>\[Perimeter\, of\, base\]</p><p>\[×\]</p><p>\[Height\, of\, prism\]</p></td>
-                <td>\[LSA + Area \,of\, base\]</td>
+                <td>\[LSA + 2\,× Area \,of\, base\]</td>
             </tr>
                 <th scope="row">\[Pyramid\]</th>
                 <td>\[\frac{1}{3}×base\,area×Height\]</td>
@@ -3181,43 +3981,116 @@
                         <p>\[cot\space A\space cot\space B\space+\space cot\space B\space cot\space C\space+\space cot\space C\space cot\space A\space=\,1\]</p>
                     </div>
                 </div>
+                 <div class="coll">
+                    <div class="left">
+                        <h4>Trigonometric Identities involving three different angles</h4>
+                        <p>\[1) \space sin\space (A+B+C) \space = sinAcosBcosC \space + \space sinBcosAcosC \space + \space sinCcosAcosB \space - \space sinAsinBsinC \]\[=cosAcosBcosC \space [tanA +tanB+tanc-tanAtanBtanc]\]</p>
+                        <p>\[2) \space cos\space (A+B+C) \space = cosAcosBcosC \space - \space sinAsinBcosC \space  \space sinAcosBsinC \space - \space cosAsinBsinC \]\[=cosAcosBcosC \space [1-tanAtanB - tanBtanC-tanCtanA]\]</p>
+                        <p>\[3) \space tan\space (A+B+C) \space = \frac{tanA \space + \space tanB \space + \space tanC \space - \space tanAtanBtanC}{1-tanAtanB-tanBtanC-tanCtanA}\]</p>
+                        <br>
+                        <h4>Sine and Cosine Series</h4>
+                        <p>\[sin\alpha + sin(\alpha + \beta) + sin(\alpha +2\beta) +...+sin(\alpha+ \overline{n-1}\beta)\]\[=\frac{sin( \alpha+(\frac{n-1}{2})\beta) sin(\frac{n\beta}{2})}{sin(\frac{\beta}{2})}\]</p>
+                        <p>\[cos\alpha + cos(\alpha + \beta) + cos(\alpha +2\beta) +...+cos(\alpha+ \overline{n-1}\beta)\]\[=\frac{cos( \alpha+(\frac{n-1}{2})\beta) sin(\frac{n\beta}{2})}{sin(\frac{\beta}{2})}\]</p>
+                        <br>
+                        <h4>IMPORTANT RESULTS</h4>
+                        <p>\[1) \space sin\theta \space sin(60^{\circ}-\theta) \space sin(60^{\circ}+\theta) \space = \space \frac{1}{4}sin3\theta\]</p>
+                        <p>\[2) \space cos\theta \space cos(60^{\circ}-\theta) \space cos(60^{\circ}+\theta) \space = \space \frac{1}{4}cos3\theta\]</p>
+                        <p>\[3) \space tan\theta \space tan(60^{\circ}-\theta) \space tan(60^{\circ}+\theta) \space = \space tan3\theta\]</p>
+                        <p>\[4) \space cot\theta \space cot(60^{\circ}-\theta) \space cot(60^{\circ}+\theta) \space = \space cot3\theta\]</p>
+                        <p>\[5) \space (i) sin^2\theta \space + \space sin^2(60^{\circ}+\theta) \space + \space sin^2(60^{\circ}-\theta) \space = \frac{3}{2}\]</p>
+                        <p>\[\space \space  \space \space (ii) cos^2\theta \space + \space cos^2(60^{\circ}+\theta) \space + \space cos^2(60^{\circ}-\theta) \space = \frac{3}{2}\]</p>
+                        <p>\[6) \space If \space tanA+tanB+tanC \space = \space tanAtanBtanC,\]\[then \space A+B+C \space = \space n\pi, \space n \in I\]</p>
+                        <p>\[7) \space If \space tanAtanB+tanBtanC+tanCtanA \space = \space 1,\]\[\space \space then \space A+B+C \space = \space (2n+1)\frac{\pi}{2}, \space n \in I\]</p>
+                        <p>\[8) \space cos\theta \space cos2\theta \space cos4\theta ..... cos(2^{n-1}\theta) \space = \space \frac{sin(2^n\theta)}{2^nsin\theta}\]</p>
+                        <p>\[9) \space cotA \space - \space tanA \space = \space 2cot2A\]</p>
+                    </div>
+
+                </div>
             </div>
         </div>
 
         <div class="collapse" id="inversetrigonoiden">
             <h2>Inverse Trignometric Identities</h2>
             <br><br>
-            <h4 style="text-align: center;">Negative Formulaes</h4>                         
+            <h4 style="text-align: center;">Negative Formulaes</h4>
             <p>\[ sin^{-1}(-x) = -sin^{-1}(x)\]</p>
             <p>\[ cos^{-1}(-x) = π-cos^{-1}(x)\]</p>
             <p>\[ tan^{-1}(-x) = -tan^{-1}(x)\]</p>
             <p>\[ cot^{-1}(-x) = π-cot^{-1}(x)\]</p>
             <p>\[ sec^{-1}(-x) = π-sec^{-1}(x)\]</p>
             <p>\[ cosec^{-1}(-x) = -cosec^{-1}(x)\]</p>
-            <h4 style="text-align: center;">Addition of two functions</h4>               
-            <p>\[sin^{-1}x + cos^{-1}x = π/2 \space,\space x ∈ [-1, 1] \]</p>                
+            <h4 style="text-align: center;">Addition of two functions</h4>
+            <p>\[sin^{-1}x + cos^{-1}x = π/2 \space,\space x ∈ [-1, 1] \]</p>
             <p>\[tan^{-1}x + cot^{-1}x = π/2 , x ∈ R\]</p>
-            <p>\[cosec^{-1}x + sec^{-1}x = π/2 \]</p>            
-            <h4 style="text-align: center;">Reciprocal Formulaes</h4>                     
+            <p>\[cosec^{-1}x + sec^{-1}x = π/2 \]</p>
+            <h4 style="text-align: center;">Reciprocal Formulaes</h4>
             <p>\[sin^{-1}\frac{1}{x} = cosec^{-1}x  \]</p>
             <p>\[cos^{-1}\frac{1}{x} = sec^{-1}x \]</p>
             <p>\[tan^{-1}\frac{1}{x} = cot^{-1}x, x > 0\]</p>
-            <h4 style="text-align: center;">Identity Formulaes</h4>       
-            
+            <h4 style="text-align: center;">Identity Formulaes</h4>
+
             <p>\[sin(sin^{-1}x) = x, -1≤ x ≤1\]</p>
             <p>\[cos(cos^{-1}x) = x, -1≤ x ≤1\]</p>
             <p>\[tan(tan^{-1}x) = x, – ∞ < x < ∞ \]</p>
             <p>\[cot(cot^{-1}x) = x, – ∞ < x < ∞ \]</p>
             <p>\[sec(sec^{-1}x) = x, - ∞ < x ≤ 1\space or\space 1 ≤ x < ∞\]</p>
             <p>\[cosec(cosec^{-1}x) = x, - ∞ < x ≤ 1\space or\space 1 ≤ x < ∞\]</p>
-            <h4 style="text-align : center;">Addition of Same functions</h4>       
-            
+            <h4 style="text-align : center;">Addition of Same functions</h4>
+
             <p>\[sin^{-1}x+sin^{-1}y = sin^{-1}(x\sqrt{1-y^2} + y\sqrt{1-x^2})\]</p>
             <p>\[sin^{-1}x-sin^{-1}y = sin^{-1}(x\sqrt{1-y^2} - y\sqrt{1-x^2})\]</p>
             <p>\[cos^{-1}x+cos{-1}y = cos^{-1}(xy-\sqrt{(1-x^2)(1-y^2)}\]</p>
             <p>\[cos^{-1}x-cos{-1}y = cos^{-1}(xy+\sqrt{(1-x^2)(1-y^2)}\]</p>
             <p>\[tan^{-1}x+tan^{-1}y = tan^{-1}\frac{x+y}{1-xy}\]</p>
             <p>\[tan^{-1}x-tan^{-1}y = tan^{-1}\frac{x-y}{1+xy}\]</p>
+            <h3>Simplified Inverse Trigonometric Functions</h3>
+            <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equation\]</th>
+                        <th scope="col">\[Conditions\]</th>
+                        <th scope="col">\[Graph\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[y=sin^{-1}(\frac{2x}{1+x^2})\]</th>
+                        <td>\[\space \space \space \space \space \space  \space \space 2tan^{-1}x \space  \space \space \space \space  \space \space \space \space \space if \space  \space \space \space \space \space |x| \leqslant 1\] \[ \pi \space - \space 2tan^{-1}x  \space \space  \space \space \space \space \space \space \space \space  if \space \space \space \space \space \space x>1\]\[-(\pi + 2tan^{-1}x) \space \space \space \space \space \space \space \space \space if \space \space \space \space \space \space \space x<-1\]</td>
+                        <td><img src="images/sininvgraph.png" class="img-fluid"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y=cos^{-1}(\frac{1-x^2}{1+x^2})\]</th>
+                        <td>\[2tan^{-1}x \space  \space \space \space \space \space \space \space \space if \space \space \space \space \space x \geqslant 0\] \[ -2tan^{-1}x \space  \space   \space \space \space \space if \space \space \space \space \space x<0\]</td>
+                        <td><img src="images/cosinvgraph.png" class="img-fluid"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y=tan^{-1}(\frac{2x}{1-x^2})\]</th>
+                        <td>\[\space \space \space \space \space \space \space \space 2tan^{-1}x \space  \space \space  \space \space \space \space \space  \space \space \space \space if \space \space \space  \space \space \space |x|<1\] \[ \pi \space + \space 2tan^{-1}x  \space \space \space \space \space \space \space \space \space if \space \space \space \space \space \space x<-1\]\[-(\pi - 2tan^{-1}x) \space \space \space \space \space \space \space  \space if \space  \space  \space \space \space \space x>1\]</td>
+                        <td><img src="images/taninv.png" class="img-fluid"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y=sin^{-1}(3x-4x^3)\]</th>
+                        <td>\[-(\pi+3sin^{-1}x) \space \space \space \space \space \space  if \space \space \space \space \space \space -1 \leqslant x \leqslant -\frac{1}{2}\]\[\space \space \space \space \space \space \space \space \space \space \space 3sin^{-1}x \space \space \space \space \space \space \space if \space  \space \space \space \space  \space \space \space - \frac{1}{2} \leqslant x \leqslant \frac{1}{2}\]\[\pi - 3sin^{-1}x \space \space \space \space \space \space  if \space \space \space \space \space \space \space \space \space \frac{1}{2} \leqslant x \leqslant 1\]</td>
+                        <td><img src="images/sin3inv.png" class="img-fluid"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y=cos^{-1}(4x^3-3x)\]</th>
+                        <td>\[3cos^{-1}x-2\pi \space \space \space \space \space \space if \space \space \space \space \space \space -1 \leqslant x \leqslant -\frac{1}{2}\]\[2\pi - 3cos^{-1}x \space \space \space \space \space \space if \space \space \space \space \space \space -\frac{1}{2} \leqslant x \leqslant \frac{1}{2}\]\[\space \space \space \space \space \space \space \space \space \space \space 3cos^{-1}x \space \space \space \space \space \space \space  if  \space  \space \space \space \space  \space \space \space \frac{1}{2} \leqslant x \leqslant 1\]</td>
+                        <td><img src="images/cos3inv.png" class="img-fluid"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y=sin^{-1}(2x \sqrt{1-x^2})\]</th>
+                        <td>\[-(\pi+2sin^{-1}x) \space \space \space \space \space \space  if \space \space \space \space \space \space  -1 \leqslant x\leqslant -\frac{1}{2}\]\[\space \space \space \space \space \space \space \space \space \space \space 2sin^{-1}x \space \space \space \space \space \space \space if \space \space \space \space \space \space \space \space  -\frac{1}{\sqrt{2}} \leqslant x \leqslant \frac{1}{\sqrt{2}}\]\[\pi - 2sin^{-1}x \space \space \space \space \space \space  if \space \space \space \space \space \space  \frac{1}{\sqrt{2}} \leqslant x \leqslant 1\]</td>
+                        <td><img src="images/sin2inv.png" class="img-fluid"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[y=cos^{-1}(2x^2-1)\]</th>
+                        <td>\[\space \space \space \space 2cos^{-1}x \space \space \space \space \space \space if \space \space \space \space \space \space \space \space \space 0 \leqslant x \leqslant 1\]\[2\pi-2cos^{-1}x \space \space \space \space \space \space if \space \space \space \space\space -1 \leqslant x \leqslant 0\]</td>
+                        <td><img src="images/cos2inv.png" class="img-fluid"></td>
+                    </tr>
+
+                    </tbody>
+            </table>
         </div>
         <div class="collapse" id="trigsolcollapse">
             <div class="stopwrap">
@@ -3243,18 +4116,18 @@
         </div>
 
         <div class="collapse" id="expansion">
-            <h2>Expansion of Trigonometric Functions</h2>                 
-            <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} - \frac{x^7}{7!}.....\]</p>                
-            <p>\[cosine\space =\space 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}.....\]</p>                
-            <p>\[tan\space =\space x+\frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}.....\]</p>                
-            <p>\[cot\space = \space x^{-1} - \frac{1}{3x} -\frac{1}{45}x^3 - \frac{2}{945}x^5.....\]</p>                
-            <p>\[sec\space = \space 1 + \frac{1}{2x^2} + \frac{5}{24}x^4 + \frac{61}{720}x^6......\]</p>                
+            <h2>Expansion of Trigonometric Functions</h2>
+            <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} - \frac{x^7}{7!}.....\]</p>
+            <p>\[cosine\space =\space 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}.....\]</p>
+            <p>\[tan\space =\space x+\frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}.....\]</p>
+            <p>\[cot\space = \space x^{-1} - \frac{1}{3x} -\frac{1}{45}x^3 - \frac{2}{945}x^5.....\]</p>
+            <p>\[sec\space = \space 1 + \frac{1}{2x^2} + \frac{5}{24}x^4 + \frac{61}{720}x^6......\]</p>
             <p>\[cosec\space =\space x^{-1}+\frac{1}{6x+7}360x^3 + \frac{31}{15120}x^5.....\]</p>
-            
-            <h2>Expansion of Inverse Trigonometric Functions</h2>            
-            <p>\[sin^{-1}\space =\space x + \frac{1}{6}x^3 +\frac{3}{40}x^5 +\frac{5}{112}x^7.....\]</p>                
-            <p>\[cos^{-1}\space =\space \frac{π}{2} - (expansion\space of\space sine)\]</p>                
-            <p>\[tan^{-1}\space =\space x - \frac{1}{3}x^3 + \frac{1}{5}x^5.....\]</p>                
+
+            <h2>Expansion of Inverse Trigonometric Functions</h2>
+            <p>\[sin^{-1}\space =\space x + \frac{1}{6}x^3 +\frac{3}{40}x^5 +\frac{5}{112}x^7.....\]</p>
+            <p>\[cos^{-1}\space =\space \frac{π}{2} - (expansion\space of\space sine)\]</p>
+            <p>\[tan^{-1}\space =\space x - \frac{1}{3}x^3 + \frac{1}{5}x^5.....\]</p>
             <p>\[cot^{-1}\space =\space \frac{π}{2} - (expansion\space of\space tan)\]</p>
             <p>The rest can be found out using <a href="#inversetrigonoiden">Identities</a></p>
         </div>
@@ -3392,7 +4265,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>There are no Real Roots if \[b^2-4ac<0\]< /p>
+                                    <p>There are no Real Roots if \[b^2-4ac<0\]</p>
                                     <p>There is one Real Root if \[b^2-4ac=0\]</p>
                                     <p>There are two Real Roots if \[b^2-4ac>0\]</p>
                                 </div>
@@ -3837,6 +4710,101 @@
                 <p id="plotequationresult"></p>
             </div>
         </div>
+        <div class="collapse" id="coor">
+            <h2 style="text-align: center;">Coordinate Systems</h2>
+            <br><br>
+            <h4>1. Cartesian Coordinate System</h4>
+            <p>It uses the concept of mutually perpendicular lines to denote the coordinate of a point.  To locate the position of a point in
+                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in 
+                two-dimension with respect to x- and y- axes. The x-coordinate of a point is its perpendicular distance from the y-axis measured along the x-axis
+                and it is known as Abscissa. The y-coordinate of a point is its perpendicular distance from the x-axis measured along the y-axis and it is known as Ordinate.
+            </p>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cartesian_coordinates_2D.svg/240px-Cartesian_coordinates_2D.svg.png" alt="">
+            <h4>2. Polar Coordinate System</h4>
+            <p>Here, a point is chosen as the pole and a ray from this point is taken as the polar axis. Basically, we have two parameters namely angle and radius.
+                The angle Ɵ with the polar axis has a single line through the pole measured anti-clockwise from the axis to the line.</p>
+            <br>
+            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ). 
+                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p> 
+            <br>
+            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>       
+            <br>
+            <p>
+                Consider the figure below that depicts the relationship between polar and cartesian coordinates. <br>
+                X = r cos Ɵ and y = r sin Ɵ <br>
+                \[r =\space \sqrt{x^2 + y^2}\space and\space tan Ɵ\space =\space \frac{y}{x}\]
+            </p>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://cdn1.byjus.com/wp-content/uploads/2020/01/polar-coordinate-system.png" alt="">
+            <br>
+            <h4>3. Spherical Coordinate System</h4>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates.png" alt="">
+            <p>
+                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the 
+                positive x-axis and the line segment from the origin to Q. Lastly, ϕ is the angle between the positive z-axis and the line segment from the origin to P.
+            </p>
+            <img style="margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates_cartesian.png" alt="">
+            <p style="text-align: center;">
+                x = ρsinϕcosθ <br>
+                y = ρsinϕsinθ <br>
+                z = ρcosϕ 
+            </p>
+            <br>
+            <h4>4. Cylindrical Coordinate System</h4>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathworld.wolfram.com/images/eps-gif/CylindricalCoordinates_1001.gif" alt="">
+            <p style="text-align: center;">
+                x=rcosθ <br> y=rsinθ <br> z=z
+            </p>
+            <p style="text-align: center;">Its just Polar coordinates with z as height forming a cylinder</p>
+        </div>
+        <div class="collapse" id="curve">
+            <h2 style="text-align: center;">Curve Tracing</h2>
+            <h4>For Cartesian Curves</h4>
+            <p>\[1.\space Symmetry\space - \\
+                If\space even\space powers\space of\space x,\space then\space symmetrical\space about\space y\space axis \\
+                If\space even\space powers\space of\space y,\space then\space symmetrical\space about\space x\space axis \\
+                If\space replacing\space y\space by\space x\space no\space change\space in\space curve,\space symmetrical\space about\space y=x\]
+            </p>
+            <br>
+            <p>\[2.\space Origin\space - \\
+                If\space curve\space has\space no\space constant\space term,\space Equate\space to\space 0\space the\space
+                lowest\space degree\space term\space to\space get\space equation\space of\space tangent\space at\space origin\]
+            </p>
+            <br>
+            <p>\[3.\space Asymptotes\space - \\
+                For\space Asymptotes\space parallel\space to\space x\space axis,\space equate\space highest\space degree's\space coefficient\space of \space x\space to\space 0 \\
+                For\space Asymptotes\space parallel\space to\space y\space axis,\space equate\space highest\space degree's\space coefficient\space of \space y\space to\space 0 \]
+            </p>
+            <br>
+            <p>\[4.\space Region\space - \\
+                Using\space logic\space find\space region\space in\space which\space the\space curve\space will\space lie \\
+                Use\space wavy\space curve\space method\space to\space find\space the\space region(best\space way)\]
+            </p>
+            <br>
+            <p>\[5.\space Point\space of\space Intersection\space - \\
+                Put\space certain\space values\space of\space x\space to\space get\space corresponding\space values\space of\space y\space and\space plot\space them\space to\space get\space final\space answer\]
+            </p>
+            <h4>For Polar Curves</h4>
+            <p>\[1.\space Symmetry\space -\\
+                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space 
+                If\space curve\space remains\space same\space then\space symmetrical\]
+            </p>
+            <br>
+            <p>\[2.\space Pole\space -\\
+                Put\space r=0\space to\space get\space equation\space of\space tangent\space at\space pole\]
+            </p>
+            <br>
+            <p>\[3.\space Asymptotes\space -\\
+                Put\space r = \infty\space to\space get\space Asymptotes\]
+            </p>
+            <br>
+            <p>\[4.\space Region\space -\\
+                Put\space extreme\space values\space of\space cosine/sine\space to\space get\space region\space in\space which\space curve\space lie\]
+            </p>
+            <br>
+            <p>\[5.\space Point\space of\space Intersection\space \\
+                Put\space values\space of\space \theta\space to\space get\space specific\space values\space of\space r,\space then\space plot\]
+            </p>
+        </div>
 
         <div class="collapse" id="plotangle">
             <div class="form-group">
@@ -3898,6 +4866,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#rectangle" style="text-decoration:none;"
                            href="#">Rectangle</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#rhombus" style="text-decoration:none;"
+                           href="#">Rhombus</a></td>
                 </tr>
                 <tr>
                     <td>
@@ -3968,7 +4940,7 @@
             <br>
             <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-4.png" alt="">
             <br><br>
-            <p>4. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side of a right- angled triangle is equivalent to the hypotenuse and a side of the second right- angled triangle, then the two right triangles are said to be congruent by RHS rule.</p>           
+            <p>4. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side of a right- angled triangle is equivalent to the hypotenuse and a side of the second right- angled triangle, then the two right triangles are said to be congruent by RHS rule.</p>
             <br>
             <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-5.png" alt="">
             <br><br><br><br>
@@ -4234,6 +5206,44 @@
             </div>
         </div>
         <!-- sum of nterms in G.P. ends  -->
+        <div class="collapse" id="convdiv">
+            <h2>Convergence and Divergence of Series<h2>
+            <p>\[1.\space If\space \lim_{n\to\infty}a_n\space is\space finite\space and\space unique\space,\space the\space sequence\space
+                 is\space said\space to\space be\space convergent\]
+            </p>
+            <p>\[2.\space If\space \lim_{n\to\infty}a_n\space is\space =\space +/-\infty,\space then\space the\space sequence\space
+                is\space said\space to\space be\space divergent \]
+            </p>
+            <p>\[3.\space If\space \lim_{n\to\infty}a_n\space is\space not\space unique,\space then\space the\space sequence\space
+                is\space said\space to\space be\space oscillatory\]
+            </p>
+            <h4 style="text-align: center;">D'Alembert's Ratio Test</h4>
+            <p>\[Let\space u_k\space be\space a\space series\space with\space positive\space terms\space and\space suppose \\
+                \rho=\lim_{k\to\infty}\frac{u_{k+1}}{u_k}.\\ \\
+                Then,\\
+
+                1.\space If\space \rho<1,\space the\space series\space converges.\\
+
+                2.\space If\space \rho>1\space or\space \rho=\infty,\space the\space series\space diverges.\\
+
+                3.\space If\space \rho=1,\space the\space series\space may\space converge\space or\space diverge.\]
+            </p>
+            <h4 style="text-align: center;">Rabbe's Test</h4>
+            <p>\[Given\space a\space series\space of\space positive\space terms\space u_i\space and\space a\space sequence\space of\space positive\space constants\space {a_i},\\
+                \rho = \lim_{n\to\infty}n(\frac{u_n}{u_{n+1}}-1)\\
+                1. If\space \rho>1,\space the\space series\space converges.\\
+                2. If\space \rho<1,\space the\space series\space diverges.>\\
+                3. If\space \rho=1,\space the\space series\space may\space converge\space or\space diverge.\]
+            </p>
+            <h4 style="text-align: center;">Comparison Test</h4>
+            <p>\[Let\space b[n]\space be\space a\space second\space series.\space Require\space that\space all\space a[n]\space and\space b[n]\space
+                are\space positive.\space If b[n] converges,\space and\space a[n]<=b[n]\\ \space for\space all\space n,\space then\space a[n]\space also\space converges.\space
+                If\space the\space sum\space of\space b[n]\space diverges,\space and\space a[n]>=b[n]\space for\space all\space n, \\ \space
+                then\space the\space sum\space of\space a[n]\space also\space diverges.\]
+            </p>
+            <h4 style="text-align: center;">Root's Test</h4>
+            <p>\[If\space \lim_{n\to\infty}{\sqrt{n}a_n}\ < 1\space then\space convergent\space else\space divergent\]</p>
+        </div>
 
         <!-- Permutattiona and combination -->
         <div class="collapse" id="pandc">
@@ -4700,6 +5710,61 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="rhombus" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rhombus</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area of Rhombus</h5>
+                                <p class="text-center">\[A=\frac{1}{2} \times d1 \times d2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter of Rhombus</h5>
+                                <p class="text-center">\[P= 4 \times a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Side (a) </h5>
+                                <p class="text-center">\[a= \frac{P}{4}\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/rhombus.PNG" class="img-fluid">
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal(d1) of Rhombus</h5>
+                                <p class="text-center">\[d1= 2 \times \frac{A}{d2}\]</p>
+                                <h5 class="text-center">Diagonal(d1) of Rhombus</h5>
+                                <p class="text-center">\[d2= 2 \times \frac{A}{d1}\]</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number" placeholder="Enter Diagonal(d1) of Rhombus"
+                               id="inputd1" oninput="rhombussolve()">
+                        <input class="form__field" type="number" placeholder="Enter Diagonal(d2) of Rhombus"
+                               id="inputd2" oninput="rhombussolve()">
+                        <input class="form__field" type="number" placeholder="Enter side(a) of Rhombus"
+                               id="inputside" oninput="rhombussolve()">
+                        <br>
+                        <p class="stopwrap" id="resultofareac" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperi" style="font-family:mathfont;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="rectangle" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -6262,6 +7327,8 @@
 
 <!-- For Log Calculator -->
 <script type="text/javascript" src="appjs/logValue.js"></script>
+<!-- Operation on Fraction -->
+ <script type="text/javascript" src="appjs/operations_on_fraction.js"></script>
 
 </body>
 

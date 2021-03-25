@@ -1,5 +1,11 @@
+var toggle=false
 function opencal() {
-    $('#cal').slideToggle();
+    $('#cal').slideToggle(function(){
+        toggle=!toggle
+    });
+    if(!toggle){
+    $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
 }
 function cleardiv(arrayofclearids) {
     for (parameterarray of arrayofclearids) {
@@ -24,6 +30,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+     $("#fractions_op").click(function(){
+         openit("#fractions");
+         closenav();
+         clearall();
+     })
 
     $("#aboutbutton").click(function () {
         openit("#about");
@@ -114,7 +125,17 @@ $(document).ready(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })  
+    }) 
+    $("#coorbtn").click(function () {
+        openit("#coor");
+        closenav();
+        clearall();
+    }) 
+    $("#curvebtn").click(function () {
+        openit("#curve");
+        closenav();
+        clearall();
+    }) 
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
@@ -122,6 +143,11 @@ $(document).ready(function () {
     })  
     $("#consimbtn").click(function () {
         openit("#consim");
+        closenav();
+        clearall();
+    })
+    $("#convdivbtn").click(function () {
+        openit("#convdiv");
         closenav();
         clearall();
     })
