@@ -125,7 +125,12 @@ $(document).ready(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })  
+    }) 
+    $("#curvebtn").click(function () {
+        openit("#curve");
+        closenav();
+        clearall();
+    }) 
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
