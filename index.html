@@ -1127,6 +1127,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="coorbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate Systems
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coordinate Systems','#coor','c','coorfav')"><img
+                                        id="coorfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="curvebtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Curve Tracing
                             </a>
@@ -4683,6 +4698,52 @@
             <div class="form-group">
                 <p id="plotequationresult"></p>
             </div>
+        </div>
+        <div class="collapse" id="coor">
+            <h2 style="text-align: center;">Coordinate Systems</h2>
+            <br><br>
+            <h4>1. Cartesian Coordinate System</h4>
+            <p>It uses the concept of mutually perpendicular lines to denote the coordinate of a point.  To locate the position of a point in
+                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in 
+                two-dimension with respect to x- and y- axes. The x-coordinate of a point is its perpendicular distance from the y-axis measured along the x-axis
+                and it is known as Abscissa. The y-coordinate of a point is its perpendicular distance from the x-axis measured along the y-axis and it is known as Ordinate.
+            </p>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cartesian_coordinates_2D.svg/240px-Cartesian_coordinates_2D.svg.png" alt="">
+            <h4>2. Polar Coordinate System</h4>
+            <p>Here, a point is chosen as the pole and a ray from this point is taken as the polar axis. Basically, we have two parameters namely angle and radius.
+                The angle Ɵ with the polar axis has a single line through the pole measured anti-clockwise from the axis to the line.</p>
+            <br>
+            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ). 
+                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p> 
+            <br>
+            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>       
+            <br>
+            <p>
+                Consider the figure below that depicts the relationship between polar and cartesian coordinates. <br>
+                X = r cos Ɵ and y = r sin Ɵ <br>
+                \[r =\space \sqrt{x^2 + y^2}\space and\space tan Ɵ\space =\space \frac{y}{x}\]
+            </p>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://cdn1.byjus.com/wp-content/uploads/2020/01/polar-coordinate-system.png" alt="">
+            <br>
+            <h4>3. Spherical Coordinate System</h4>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates.png" alt="">
+            <p>
+                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the 
+                positive x-axis and the line segment from the origin to Q. Lastly, ϕ is the angle between the positive z-axis and the line segment from the origin to P.
+            </p>
+            <img style="margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates_cartesian.png" alt="">
+            <p style="text-align: center;">
+                x = ρsinϕcosθ <br>
+                y = ρsinϕsinθ <br>
+                z = ρcosϕ 
+            </p>
+            <br>
+            <h4>4. Cylindrical Coordinate System</h4>
+            <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathworld.wolfram.com/images/eps-gif/CylindricalCoordinates_1001.gif" alt="">
+            <p style="text-align: center;">
+                x=rcosθ <br> y=rsinθ <br> z=z
+            </p>
+            <p style="text-align: center;">Its just Polar coordinates with z as height forming a cylinder</p>
         </div>
         <div class="collapse" id="curve">
             <h2 style="text-align: center;">Curve Tracing</h2>

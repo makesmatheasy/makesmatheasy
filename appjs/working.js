@@ -126,6 +126,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     }) 
+    $("#coorbtn").click(function () {
+        openit("#coor");
+        closenav();
+        clearall();
+    }) 
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();
