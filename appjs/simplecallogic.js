@@ -78,14 +78,14 @@ function more() {
     var three = document.getElementById('three');
     var four = document.getElementById('four');
     var five = document.getElementById('five');
-    var percent = document.getElementById('percent');
+    var percent = document.getElementById('percentage');
     var six = document.getElementById('six');
     var seven = document.getElementById('seven');
     var eight = document.getElementById('eight');
     var nine = document.getElementById('nine');
     var zero = document.getElementById('zero');
     var dot = document.getElementById('dot');
-
+    var more=document.getElementById('more');
     if (one.innerText == "1") {
         one.innerText = 'asin('
     } else {
@@ -152,8 +152,8 @@ function more() {
         dot.innerText = '.'
     }
 
-    if (percent.innerText == "%") {
-        percent.innerText = 'DEG'
+    if (percent.innerText == '%') {
+        percent.innerText = "DEG"
     } else {
         percent.innerText = '%'
     }
@@ -163,7 +163,12 @@ function more() {
     else{
         sqrt.innerText='√'
     }
-
+    if(more.innerText=="More"){
+		more.innerText="Less"
+	}
+	else{
+		more.innerText="More"
+	}
     
 }
 
@@ -184,13 +189,13 @@ function todeci() {
     }
 }
 // All on-click EventListener..........................
-document.getElementById('percent').addEventListener("click", function () {
-    if (document.getElementById('percent').innerText == "%") {
+document.getElementById('percentage').addEventListener("click", function () {
+    if (document.getElementById('percentage').innerText == "%") {
         document.getElementById('txt').value += this.innerText; calsol(document.getElementById('txt').value);    }
-    else if (document.getElementById('percent').innerText == "RAD") {
-        document.getElementById("percent").innerText = "DEG";
+    else if (document.getElementById('percentage').innerText == "RAD") {
+        document.getElementById("percentage").innerText = "DEG";
     } else {
-        document.getElementById("percent").innerText = "RAD";
+        document.getElementById("percentage").innerText = "RAD";
     }
 });
 document.getElementById('seven').addEventListener("click", function () {
