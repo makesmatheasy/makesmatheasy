@@ -3590,7 +3590,9 @@ function amsol()
   var c = document.getElementById("cval").value
   var amadd=parseInt(a)+parseInt(c)
   var res =parseInt(amadd/2)
-  document.getElementById("Formula").innerHTML = "Arithmetic Mean: (a+c)/2 " 
+  var explain = document.getElementById("am_formula");
+  explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
+  renderMathInElement(document.getElementById("am_formula"));
   document.getElementById("am").innerHTML = "Result: " +res
 
 }
@@ -3600,7 +3602,9 @@ function gmsol()
   var c = document.getElementById("cval1").value
   var gmmul=parseInt(a)*parseInt(c)
   var res =Math.sqrt(gmmul)
-  document.getElementById("gmFormula").innerHTML = "Geometric Mean: √(ac) " 
+  var explain = document.getElementById("gm_formula");
+  explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] " ;
+  renderMathInElement(document.getElementById("gm_formula"));
   document.getElementById("gm").innerHTML = "Result: " +res
 
 }
@@ -3611,7 +3615,9 @@ function hmsol()
   var hmmul=2*parseInt(a)*parseInt(c)
   var hmadd=parseInt(a)+parseInt(c)
   var res =(hmmul/hmadd)
-  document.getElementById("hmFormula").innerHTML = "Harmonic Mean: 2ac/a+c " 
+  var explain = document.getElementById("hm_formula");
+  explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] " ;
+  renderMathInElement(document.getElementById("hm_formula"));
   document.getElementById("hm").innerHTML = "Result: " +res
 
 }
