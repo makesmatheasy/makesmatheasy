@@ -1550,6 +1550,32 @@ function equilateraltrianglearea() {
   }
 }
 
+function rhombussolve() {
+  var d1= document.getElementById("inputd1").value;
+  var d2= document.getElementById("inputd2").value;
+  var a= document.getElementById("inputside").value;
+  var resultarea = document.getElementById("resultofarearec");
+  var resultperi = document.getElementById("resultofperi");
+  resultarea.innerHTML = "";
+  resultperi.innerHTML = "";
+  var area = 0.5 * (d1*d2);
+  var perimeter = 4 * a;
+  console.log("area");
+  console.log(area);
+  console.log("perimeter");
+  console.log(perimeter);
+  if(d1!="" && d2!=""){
+    document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Rhombus  \\space \\frac{1}{2} \\times" +d1+ "\\times"+ d2 +"\\ = "+area+"\\]";
+    renderMathInElement(document.getElementById("resultofareac"));
+  }
+  if (a!=""){
+    document.getElementById("resultofperi").innerHTML=`\\[Perimeter \\space of \\space Rhombus \\ 4 \\times${a}\\ = ${perimeter}\\]`;
+    renderMathInElement(document.getElementById("resultofperi"));
+  }else if(a==""){
+    document.getElementById("resultofperi").innerHTML="Enter side value to calculate perimeter";
+  }
+}
+
 function rectanglesolve() {
   var length = document.getElementById("inputreclength").value;
   var breadth = document.getElementById("inputrecbreadth").value;
@@ -3135,149 +3161,54 @@ function roundoff(input, output) {
     }
   } else {
     // a floating number
-    el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
+	el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
     el.innerHTML +=
-      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" + spaces;
-
-    var placeofroundoffarray = {
-      Ones: i + 1,
-      Tens: i + 2,
-      Hundred: i + 3,
-      Thousand: i + 4,
-      "Ten Thousand": i + 5,
-      Lakh: i + 6,
-      "Ten Lakh": i + 7,
-      Crore: i + 8,
-      "Ten Crore": i + 9,
+      "Place of round off:&nbsp;&nbsp;" + placeofroundoff + "<br>" ;
+	var placeofroundoffarray = {
+      Ones:  0,
+      Tens: 1,
+      Hundred: 2,
+      Thousand: 3,
+      "Ten Thousand":4,
+      Lakh:5,
+      "Ten Lakh": 6,
+      Crore:  7,
+      "Ten Crore": 8,
     };
     var place = placeofroundoffarray[placeofroundoff];
-
-    if (place >= len) {
-      for (itr = 0; itr < place - i; itr++) {
-        itrPlace = placeUpto[itr];
-        el.innerHTML += spaces1 + itrPlace;
-      }
-      el.innerHTML += "<br>";
-      flag = -1;
-      for (itr = 0; itr < ar.length; itr++) {
-        if (flag == -1) el.innerHTML += ar[itr];
-        else el.innerHTML += spaces + ar[itr];
-        if (ar[itr] == ".") flag = 1;
-      }
-      el.innerHTML += "<br>";
-      for (var j = len; j < place + 1; j++) {
-        ar.push("0");
-      }
-      flag = -1;
-      for (itr = 0; itr < ar.length; itr++) {
-        if (flag == -1) el.innerHTML += ar[itr];
-        else el.innerHTML += spaces + ar[itr];
-        if (ar[itr] == ".") flag = 1;
-      }
-      el.innerHTML += "<br>" + ar.join("");
-      el.innerHTML +=
-        "<br>" +
+    var a=Math.round(parseFloat(val));
+	if(a<Math.pow(10,place)/2)
+	{
+		el.innerHTML +="Enter Bigger number to roundoff to nearest " + placeofroundoff;
+	}
+	else 
+	{ el.innerHTML += "<br>" +
+        val +
+        " after rounding off to the nearest " +
+        "Ones" +
+        " is " + a;
+	  if(place>0)
+	 {
+	    var b=parseInt((a/Math.pow(10,place)))*Math.pow(10,place);
+		var c=b+Math.pow(10,place);
+		if(a>=Math.pow(10,place)/2)
+		{
+			el.innerHTML += "<br> As "+ a%Math.pow(10,place) + ">=" + Math.pow(10,place)/2;
+		}
+		else{
+			el.innerHTML += "<br> As "+ a%Math.pow(10,place) + "<" + Math.pow(10,place)/2;
+		}
+		a=(a-b < c-a)?b:c;		
+	    el.innerHTML += "<br>" +
         val +
         " after rounding off to the nearest " +
         placeofroundoff +
-        " is " +
-        ar.join("") +
-        ".";
-    } else {
-      for (itr = 0; itr < ar.length - i - 1; itr++) {
-        itrPlace = placeUpto[itr];
-        el.innerHTML += spaces1 + itrPlace;
-      }
-      el.innerHTML += "<br>";
-      flag = -1;
-      for (itr = 0; itr < ar.length; itr++) {
-        if (flag == -1) el.innerHTML += ar[itr];
-        else el.innerHTML += spaces + ar[itr];
-        if (ar[itr] == ".") flag = 1;
-      }
-      el.innerHTML += "<br>";
-      for (itr = 0; itr < ar.length; itr++) {
-        el.innerHTML += ar[itr];
-        if (ar[itr] == ".") break;
-      }
-      flag = 1;
-      for (itr = i + 1; itr <= place + 1; itr++) {
-        if (itr >= ar.length) {
-          flag = -1;
-          break;
-        }
-        el.innerHTML += spaces + ar[itr];
-      }
-      if (parseInt(ar[place + 1]) >= 5) {
-        el.innerHTML += ">=5";
-      } else if (parseInt(ar[place + 1]) < 5) {
-        el.innerHTML += "<5";
-      }
-      el.innerHTML += "<br>";
-      if (parseInt(ar[place + 1]) >= 5) {
-        if (parseInt(ar[place]) == 9) {
-          //handling boundary cases
-          var k = 0,
-            j = place,
-            carry = 0;
-          while (k == 0 && j > i) {
-            if (parseInt(ar[j]) == 9) {
-              ar[j] = "0";
-              carry = 1;
-            } else {
-              ar[j] = parseInt(ar[j]) + carry;
-              carry = 0;
-              k = 1;
-            }
-            j--;
-          }
-          if (j == i && carry == 1) {
-            ar[j - 1] = parseInt(ar[j - 1]) + carry;
-            carry = 0;
-            j--;
-            k = 0;
-          }
-          if (parseInt(ar[j]) == 10) {
-            ar[j] = "0";
-            carry = 1;
-            k = 0;
-            j--;
-            while (k == 0 && j >= 0) {
-              if (parseInt(ar[j]) == 9) {
-                if (j == 0) ar[0] = parseInt(ar[0]) + 1;
-                else {
-                  ar[j] = "0";
-                  carry = 1;
-                }
-              } else {
-                ar[j] = parseInt(ar[j]) + carry;
-                carry = 0;
-                k = 1;
-              }
-              j--;
-            }
-          }
-        } else {
-          ar[place] = parseInt(ar[place]) + 1;
-        }
-      }
-      var flag = 0;
-      if (ar[0] == "10") flag = 1;
-      ar = ar.join("");
-      var b;
-      if (flag == 1) b = ar.slice(0, place + 2);
-      else b = ar.slice(0, place + 1);
-      el.innerHTML += b + "<br>";
-      el.innerHTML +=
-        val +
-        " after rounding off to the nearest " +
-        placeofroundoff +
-        " is " +
-        b +
-        ".";
-    }
+        " is " + a;
+	   
+	}
   }
-}
+ }
+} 
 //roundoff
 //-----------------------------------------------------
 //unit convert
@@ -3653,7 +3584,43 @@ function anotherap(){
   document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
+function amsol()
+{
+  var a = document.getElementById("aval").value
+  var c = document.getElementById("cval").value
+  var amadd=parseInt(a)+parseInt(c)
+  var res =parseInt(amadd/2)
+  var explain = document.getElementById("am_formula");
+  explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
+  renderMathInElement(document.getElementById("am_formula"));
+  document.getElementById("am").innerHTML = "Result: " +res
 
+}
+function gmsol()
+{
+  var a = document.getElementById("aval1").value
+  var c = document.getElementById("cval1").value
+  var gmmul=parseInt(a)*parseInt(c)
+  var res =Math.sqrt(gmmul)
+  var explain = document.getElementById("gm_formula");
+  explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] " ;
+  renderMathInElement(document.getElementById("gm_formula"));
+  document.getElementById("gm").innerHTML = "Result: " +res
+
+}
+function hmsol()
+{
+  var a = document.getElementById("aval2").value
+  var c = document.getElementById("cval2").value
+  var hmmul=2*parseInt(a)*parseInt(c)
+  var hmadd=parseInt(a)+parseInt(c)
+  var res =(hmmul/hmadd)
+  var explain = document.getElementById("hm_formula");
+  explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] " ;
+  renderMathInElement(document.getElementById("hm_formula"));
+  document.getElementById("hm").innerHTML = "Result: " +res
+
+}
 // Primality test
 function check_prime(isprime)
 {
@@ -4055,6 +4022,16 @@ function convertBinDec() {
   else to = 2;
 
   result.innerHTML = parseInt(input, from).toString(to);
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+  else if(from == 2)
+  {
+	     if(input.search(/^[10]+$/) == -1)
+		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+	  
+  }
 }
 
 //////////////////////////////////////////////////////////////
