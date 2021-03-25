@@ -1122,7 +1122,21 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="curvebtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Curve Tracing
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Curve Tracing','#curve','c','curvefav')"><img
+                                        id="curvfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
             <li>
                 <table class="table">
@@ -4607,6 +4621,55 @@
             <div class="form-group">
                 <p id="plotequationresult"></p>
             </div>
+        </div>
+        <div class="collapse" id="curve">
+            <h2 style="text-align: center;">Curve Tracing</h2>
+            <h4>For Cartesian Curves</h4>
+            <p>\[1.\space Symmetry\space - \\
+                If\space even\space powers\space of\space x,\space then\space symmetrical\space about\space y\space axis \\
+                If\space even\space powers\space of\space y,\space then\space symmetrical\space about\space x\space axis \\
+                If\space replacing\space y\space by\space x\space no\space change\space in\space curve,\space symmetrical\space about\space y=x\]
+            </p>
+            <br>
+            <p>\[2.\space Origin\space - \\
+                If\space curve\space has\space no\space constant\space term,\space Equate\space to\space 0\space the\space
+                lowest\space degree\space term\space to\space get\space equation\space of\space tangent\space at\space origin\]
+            </p>
+            <br>
+            <p>\[3.\space Asymptotes\space - \\
+                For\space Asymptotes\space parallel\space to\space x\space axis,\space equate\space highest\space degree's\space coefficient\space of \space x\space to\space 0 \\
+                For\space Asymptotes\space parallel\space to\space y\space axis,\space equate\space highest\space degree's\space coefficient\space of \space y\space to\space 0 \]
+            </p>
+            <br>
+            <p>\[4.\space Region\space - \\
+                Using\space logic\space find\space region\space in\space which\space the\space curve\space will\space lie \\
+                Use\space wavy\space curve\space method\space to\space find\space the\space region(best\space way)\]
+            </p>
+            <br>
+            <p>\[5.\space Point\space of\space Intersection\space - \\
+                Put\space certain\space values\space of\space x\space to\space get\space corresponding\space values\space of\space y\space and\space plot\space them\space to\space get\space final\space answer\]
+            </p>
+            <h4>For Polar Curves</h4>
+            <p>\[1.\space Symmetry\space -\\
+                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space 
+                If\space curve\space remains\space same\space then\space symmetrical\]
+            </p>
+            <br>
+            <p>\[2.\space Pole\space -\\
+                Put\space r=0\space to\space get\space equation\space of\space tangent\space at\space pole\]
+            </p>
+            <br>
+            <p>\[3.\space Asymptotes\space -\\
+                Put\space r = \infty\space to\space get\space Asymptotes\]
+            </p>
+            <br>
+            <p>\[4.\space Region\space -\\
+                Put\space extreme\space values\space of\space cosine/sine\space to\space get\space region\space in\space which\space curve\space lie\]
+            </p>
+            <br>
+            <p>\[5.\space Point\space of\space Intersection\space \\
+                Put\space values\space of\space \theta\space to\space get\space specific\space values\space of\space r,\space then\space plot\]
+            </p>
         </div>
 
         <div class="collapse" id="plotangle">
