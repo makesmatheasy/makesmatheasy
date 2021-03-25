@@ -134,12 +134,18 @@ function openit(id) {
         "#trigonovaluestable",
         "#trigonoiden",
         "#factors",
+        "#stats",
         "#integralcollapse",
+        "#integration-idencollapse",
+        "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
+        "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
         "#matrixcollapse",
+        "#matrixprops",
+        "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
@@ -148,6 +154,7 @@ function openit(id) {
         "#plotgraph",
         "#roundoff",
         "#unitconcal",
+        "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
@@ -159,18 +166,25 @@ function openit(id) {
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
-        "#prime",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
-        "#inversetrigonoiden",
         "#datecal",
         "#prime",
         "#sum_n_AP",
+        "#sum_n_GP",
         "#algebraic_formulascollapse",
         "#expansion",
+        "#solutiontri",
         "#plotangle",
         "#profitloss",
+        "#differentiate-rulecollapse",
+        "#emical",
+        "#trigsolcollapse",
+        "#consim",
+        "#convdiv",
+        "#curve",
+        "#coor",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
@@ -194,6 +208,7 @@ function loadfilesafterload() {
         "appjs/logValue.js",
         "js/math.min.js",
         "js/plotly-1.35.2.min.js",
+        "appjs/operations_on_fractions.js",
     ];
     for (i of aroffiles) {
         var scriptelm = document.createElement("script");
@@ -389,7 +404,3 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
-
-
-
-

@@ -1,5 +1,11 @@
+var toggle=false
 function opencal() {
-    $('#cal').slideToggle();
+    $('#cal').slideToggle(function(){
+        toggle=!toggle
+    });
+    if(!toggle){
+    $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
 }
 function cleardiv(arrayofclearids) {
     for (parameterarray of arrayofclearids) {
@@ -24,6 +30,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+     $("#fractions_op").click(function(){
+         openit("#fractions");
+         closenav();
+         clearall();
+     })
 
     $("#aboutbutton").click(function () {
         openit("#about");
@@ -51,6 +62,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#matrixpropsbtn").click(function () {
+        openit("#matrixprops");
+        closenav();
+        clearall();
+    });
     
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
@@ -69,6 +86,25 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#integration-idencollapsebtn").click(function () {
+        openit("#integration-idencollapse");
+        closenav();
+        clearall();
+    })
+
+    $("#defintegration-idencollapsebtn").click(function () {
+        openit("#defintegration-idencollapse");
+        closenav();
+        clearall();
+    })    
+
+    $("#3d-solid-btn").click(function () {
+        openit("#3d-solid");
+        closenav();
+        clearall();
+    })    
+
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
@@ -89,13 +125,32 @@ $(document).ready(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })  
+    }) 
+    $("#coorbtn").click(function () {
+        openit("#coor");
+        closenav();
+        clearall();
+    }) 
+    $("#curvebtn").click(function () {
+        openit("#curve");
+        closenav();
+        clearall();
+    }) 
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
         clearall();
     })  
-
+    $("#consimbtn").click(function () {
+        openit("#consim");
+        closenav();
+        clearall();
+    })
+    $("#convdivbtn").click(function () {
+        openit("#convdiv");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
@@ -131,6 +186,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#solutiontributton").click(function () {
+        openit("#solutiontri");
+        closenav();
+        clearall();
+    })
     $("#profitlossbutton").click(function () {
         openit("#profitloss");
         closenav();
@@ -141,7 +201,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    
+    $("#trigsolcollapsebtn").click(function () {
+        openit("#trigsolcollapse");
+        closenav();
+        clearall();
+    })
     $("#diffsolvebutton").click(function () {
         diffsolve();
     })
@@ -173,7 +237,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    
+    $("#spiconbtn").click(function () {
+        openit("#spiconcal");
+        closenav();
+        clearall();
+    });
      // I have added
      $("#factorialbtn").click(function () {
         openit("#factorial");
@@ -202,8 +271,13 @@ $(document).ready(function () {
         clearall();
     });  
      // Sumof nterms of an Arithmetic Progression 
-     $("#APbtn").click(function () {
+    $("#APbtn").click(function () {
         openit("#sum_n_AP");
+        closenav();
+        clearall();
+    }); 
+    $("#GPbtn").click(function () {
+        openit("#sum_n_GP");
         closenav();
         clearall();
     }); 
@@ -239,6 +313,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#stats-btn").click(function(){
+        openit("#stats");
+        closenav();
+        clearall();
+    });
+
 	//Function of collapsing binary/hexadecimal section on click
 	$("#binary-to-hexadecimal-btn").click(function(){
         openit("#binary-hexadecimal");
@@ -261,6 +341,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#differentiate-rulecollapsebtn").click(function(){
+        openit("#differentiate-rulecollapse");
+        closenav();
+        clearall();
+    });
+
+
 
   $("#plotangleoption").click(function(){
         openit("#plotangle");
@@ -268,6 +355,12 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#emibtn").click(function(){
+        openit("#emical");
+        closenav();
+        clearall();
+    });
 
 });
 

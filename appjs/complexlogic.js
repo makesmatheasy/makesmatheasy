@@ -40,6 +40,15 @@ function complexMul(first, second) {
     var imaginary = num1.real*num2.imaginary+num1.imaginary*num2.real;
     return display(real, imaginary);
 }
+function complexDiv(first, second) {
+    var num1, num2;
+    num1 = Complex.transform(first);
+    num2 = Complex.transform(second);
+    var deno = num2.imaginary*num2.imaginary + num2.real*num2.real;
+    var real = (num1.real*num2.real + num1.imaginary*num2.imaginary) /deno;
+    var imaginary = (num2.real*num1.imaginary - num1.real*num2.imaginary) /deno; 
+    return display(real, imaginary);
+}
 
 function add() {
     var a = new Complex(document.getElementById('creal1').value,  document.getElementById('cimg1').value);
@@ -66,6 +75,14 @@ function mul() {
         throwOnError: false
     });
 }
+function div() {
+    var a = new Complex(document.getElementById('creal1').value,  document.getElementById('cimg1').value);
+    var b = new Complex(document.getElementById('creal2').value,  document.getElementById('cimg2').value);
+    var res = complexDiv(a,b);
+    katex.render(res, document.getElementById('compresult'), {
+        throwOnError: false
+    });
+}
 function err() {
     katex.render("Invalid!", document.getElementById('compresult'), {
         throwOnError: false
@@ -79,9 +96,60 @@ function comOperation(value) {
         sub();
     } else if (value == "Multiplication") {
         mul();
+    } else if (value == "Division") {
+        div();
+    } else {
+        err();
+    }
+}
+
+function mag(){
+    var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
+    var ans=x.real*x.real + x.imaginary*x.imaginary;
+    ans=Math.sqrt(ans);
+    document.getElementById('comresult').innerHTML="Magnitude is &nbsp;" + ans;
+
+}
+function arg(){
+    var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
+    var ans=Math.atan(x.imaginary/x.real);
+    document.getElementById('comresult').innerHTML="Argument is &nbsp;" + ans + "&nbsp; radians";
+
+}
+function conj(){
+    var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
+    x.imaginary=x.imaginary*-1;
+    document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; +" + x.imaginary + "i";
+}
+function sqr_rt(){
+    var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
+    var deg=Math.atan(x.imaginary/x.real);
+    var r=Math.sqrt(Math.sqrt(x.real*x.real + x.imaginary*x.imaginary));
+    var s = Math.sin(deg/2);
+    var c = Math.cos(deg/2);
+    var rePart = r*c;
+    var imPart = r*s;
+    document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart + "&nbsp; + " + imPart + "i";
+
+}
+function err1() {
+    katex.render("Invalid!", document.getElementById('comresult'), {
+        throwOnError: false
+    });
+}
+function comOp(value) {
+    if (value == "Magnitude") {
+        mag();
+    } 
+	else if (value == "Argument") {
+        arg();
+    }else if (value == "Conjugate") {
+        conj();
+    } else if( value == "SquareRoot"){
+        sqr_rt();
     }
     else {
-        err();
+        err1();
     }
 }
 
