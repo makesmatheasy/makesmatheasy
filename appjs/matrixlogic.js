@@ -395,7 +395,7 @@ function checkfunctionsmultiple() {
 		 removeall('generatedmatrix1');
          removeall('generatedmatrix2');
 	}
-	   
+
 	else {
 		removeall('mmatrixerror');
         creatematrix2();
@@ -551,19 +551,19 @@ function rank(){
                         for(k=0;k<rank;k++){
                             matrixsingle[j][k]-=factor * matrixsingle[i][k];
                             eliminateflag=0;
-                        }   
+                        }
                     }
                 }
                 if(i!=row-1 && eliminateflag==0 ){
                         rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Eliminate \\space elements \\space in \\space the \\space "+(i+1)+" \\space column \\space under \\space" +(i+1)+"\\space element\\]";
                 }
-            }     
+            }
             else {
                let flag=1;
                for(j=i+1;j<row;j++) {
                    if(matrixsingle[j][i]!=0){
                         rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Swap \\space the \\space "+(i+1)+" \\space and \\space " +(j+1)+"\\space row\\]";
-                        swaprowflag=0; 
+                        swaprowflag=0;
                         swaprow=j;
                         for(k=0;k<column;k++){
                            let temp=matrixsingle[i][k];
@@ -583,12 +583,12 @@ function rank(){
                             let temp=matrixsingle[k][i];
                             matrixsingle[k][i]=matrixsingle[k][rank];
                             matrixsingle[k][rank]=temp;
-                        
+
                         }
                     }
-                    
+
                 }
-                i--;    
+                i--;
             }
             if(eliminateflag==0){
                 rankexplanation+='\\[\\begin{bmatrix}'
@@ -602,7 +602,7 @@ function rank(){
                         else{
                             let e=nerdamer(matrixsingle[j][k])
                             rankexplanation+=e.text('fractions')+"&";
-                        }   
+                        }
                     }
                     rankexplanation = rankexplanation.slice(0, -1);
                     rankexplanation+='\\\\';
@@ -621,7 +621,7 @@ function rank(){
                         else{
                             let e=nerdamer(matrixsingle[j][k])
                             rankexplanation+=e.text('fractions')+"&";
-                        }   
+                        }
                     }
                     rankexplanation = rankexplanation.slice(0, -1);
                     rankexplanation+='\\\\';
@@ -640,7 +640,7 @@ function rank(){
                         else{
                             let e=nerdamer(matrixsingle[j][k])
                             rankexplanation+=e.text('fractions')+"&";
-                        }   
+                        }
                     }
                     rankexplanation = rankexplanation.slice(0, -1);
                     rankexplanation+='\\\\';

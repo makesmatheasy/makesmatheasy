@@ -37,6 +37,10 @@ html {
   padding-bottom: 70%;
   padding-top: 1.5em;
 }
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
 p {
   color: var(--appimage);
   font-size: 20px;

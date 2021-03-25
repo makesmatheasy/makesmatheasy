@@ -2330,7 +2330,7 @@
 
 
         <!-- end of log - values ----------------------------------------------------->
-
+<center>
         <div class="collapse" id="table">
             <div class="form-group num-limit" style="display: inline-block;">
                 <input type="number" oninput="checklimit()" id="numtable" class="form__field"
@@ -2347,8 +2347,8 @@
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
-
-
+</center>
+<center>
         <div class="collapse" id="differentiatecollapse">
             <div style="display: inline-block;" class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="difforderselect"
@@ -2405,7 +2405,7 @@
             </div>
 
         </div>
-
+</center>
 
 
         <div class="collapse" id="integration-idencollapse">
@@ -2746,6 +2746,7 @@
                 <p style="overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
             </div>
         </div>
+        <center>
         <div class="collapse" id="integralcollapse">
 
             <div class="dropdown">
@@ -2798,9 +2799,10 @@
             <div class="form-group">
                 <p id="integralplot"></p>
             </div>
-
+            </center>
 
         </div>
+        <center>
         <div class="collapse" id="laplacecollapse">
             <div class="form-group">
                 <div class="text-center"><label>Laplace Transform</label></div>
@@ -2860,8 +2862,9 @@
                 </div>
             </div>
         </div>
-
+</center>
         <!-- Complex Number Calculations Begin-->
+        <center>
         <div class="collapse" id="complexcollapse">
 		    <h1>Calculations for 1 complex number</h1>
             <div class="form-group" style="display:inline-block">
@@ -2928,6 +2931,7 @@
             </div>
 
         </div>
+      </center>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
             <div class="stopwrap">
@@ -3022,6 +3026,7 @@
             </div>
         </div>
         <!--        single matrix-->
+        <center>
         <div class="collapse" id="singlematrixcollapse">
             <div class="form-group" style="display:inline-block">
                 <input type="number" id="srow1" class="form__field" placeholder="m"
@@ -3061,7 +3066,9 @@
             </div>
 
         </div>
+          </center>
         <!--        multiple matrix-->
+        <center>
         <div class="collapse" id="multiplematrixcollapse">
             <div class="form-group">
                 <div style="display:inline-block">
@@ -3070,15 +3077,15 @@
                            style="width:4.375rem;display:inline;" oninput="checkfunctionsmultiple()">
                     <label>&times;</label>
                     <input type="number" id="column1" class="form__field" placeholder="n"
-                           style="width:4.375rem;display:inline;" oninput="checkfunctionsmultiple()">
+                           style="width:4.375rem;display:inline;margin-left: 5px;" oninput="checkfunctionsmultiple()">
                 </div>
                 <div style="display:inline-block" style="color:var(--apppink);">
-                    <span style="color:var(--apppink);">Matrix 2</span><br>
+                    <span style="color:var(--apppink);margin-left: 5px;">Matrix 2</span><br>
                     <input type="number" id="row2" class="form__field" placeholder="m"
-                           style="width:4.375rem;display:inline;" oninput="checkfunctionsmultiple()">
+                           style="width:4.375rem;display:inline;margin-left: 10px;" oninput="checkfunctionsmultiple()">
                     <label>&times;</label>
                     <input type="number" id="column2" class="form__field" placeholder="n"
-                           style="width:4.375rem;display:inline" oninput="checkfunctionsmultiple()">
+                           style="width:4.375rem;display:inline;margin-left: 5px;" oninput="checkfunctionsmultiple()">
                 </div>
             </div>
             <div class="form-group">
@@ -3094,7 +3101,7 @@
             </div>
             <div class="form-group">
                 <div class="stopwrap">
-                    <table>
+                    <table class="center">
                         <td>
                             <div id='generatedmatrix1'></div>
                         </td>
@@ -3123,6 +3130,7 @@
             </div>
 
         </div>
+      </center>
         <div class="collapse" id="matrixprops">
             <h2>Properties of Matrices</h2>
            <p>1. If A be any matrix then the matrix obtained by interchanging the rows and columns of A is called the Transpose of A.
@@ -4010,7 +4018,7 @@
         </div>
 
         <div class="collapse" id="inversetrigonoiden">
-            <h2>Inverse Trignometric Identities</h2>
+          <center>  <h2>Inverse Trignometric Identities</h2></center>
             <br><br>
             <h4 style="text-align: center;">Negative Formulaes</h4>
             <p>\[ sin^{-1}(-x) = -sin^{-1}(x)\]</p>
@@ -4116,7 +4124,7 @@
         </div>
 
         <div class="collapse" id="expansion">
-            <h2>Expansion of Trigonometric Functions</h2>
+          <center>  <h2>Expansion of Trigonometric Functions</h2> </center>
             <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} - \frac{x^7}{7!}.....\]</p>
             <p>\[cosine\space =\space 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}.....\]</p>
             <p>\[tan\space =\space x+\frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}.....\]</p>
@@ -4124,14 +4132,14 @@
             <p>\[sec\space = \space 1 + \frac{1}{2x^2} + \frac{5}{24}x^4 + \frac{61}{720}x^6......\]</p>
             <p>\[cosec\space =\space x^{-1}+\frac{1}{6x+7}360x^3 + \frac{31}{15120}x^5.....\]</p>
 
-            <h2>Expansion of Inverse Trigonometric Functions</h2>
+          <center>  <h2>Expansion of Inverse Trigonometric Functions</h2></center>
             <p>\[sin^{-1}\space =\space x + \frac{1}{6}x^3 +\frac{3}{40}x^5 +\frac{5}{112}x^7.....\]</p>
             <p>\[cos^{-1}\space =\space \frac{π}{2} - (expansion\space of\space sine)\]</p>
             <p>\[tan^{-1}\space =\space x - \frac{1}{3}x^3 + \frac{1}{5}x^5.....\]</p>
             <p>\[cot^{-1}\space =\space \frac{π}{2} - (expansion\space of\space tan)\]</p>
-            <p>The rest can be found out using <a href="#inversetrigonoiden">Identities</a></p>
+          <center>  <p>The rest can be found out using <a href="#inversetrigonoiden">Identities</a></p> </center>
         </div>
-
+<center>
         <div class="collapse" id="simpletrignocollapse">
             <div class="row">
                 <div class="col-6">
@@ -4186,7 +4194,7 @@
                 </div>
             </div>
         </div>
-
+</center>
         <div class="collapse" id="solutiontri">
             <h2 style="text-align: center;">Solution of Triangles</h2>
             <br>
@@ -4247,7 +4255,7 @@
             </div>
         </div>
         <!--formulas list ends-->
-
+<center>
         <div class="collapse" id="rootsquadratic">
             <div class="form-group">
                 <p id="quadraticequation">\[f(x)=ax^2+bx+c\]</p>
@@ -4309,7 +4317,8 @@
                 </div>
             </div>
         </div>
-
+      </center>
+         <center>
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>
             <br>
@@ -4322,7 +4331,7 @@
             <br>
             <h5 id="percent"></h5>
         </div>
-
+</center>
         <!-- Currency convert -->
         <div>
             <div class="collapse" id="curconcal">
@@ -4552,7 +4561,7 @@
         </div>
 
         <!-- Currency convert End-->
-
+<center>
         <div class="collapse" id="roundoff">
             <div class="form-group">
 
@@ -4591,7 +4600,7 @@
                 <p class="stopwrap" id="inputroundoffoutput"></p>
             </div>
         </div>
-
+</center>
         <div class="collapse" id="interest">
             <h2 style="color: var(--appimage);">Simple and Compund Interest</h2>
             <br>
@@ -4715,7 +4724,7 @@
             <br><br>
             <h4>1. Cartesian Coordinate System</h4>
             <p>It uses the concept of mutually perpendicular lines to denote the coordinate of a point.  To locate the position of a point in
-                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in 
+                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in
                 two-dimension with respect to x- and y- axes. The x-coordinate of a point is its perpendicular distance from the y-axis measured along the x-axis
                 and it is known as Abscissa. The y-coordinate of a point is its perpendicular distance from the x-axis measured along the y-axis and it is known as Ordinate.
             </p>
@@ -4724,10 +4733,10 @@
             <p>Here, a point is chosen as the pole and a ray from this point is taken as the polar axis. Basically, we have two parameters namely angle and radius.
                 The angle Ɵ with the polar axis has a single line through the pole measured anti-clockwise from the axis to the line.</p>
             <br>
-            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ). 
-                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p> 
+            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ).
+                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p>
             <br>
-            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>       
+            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>
             <br>
             <p>
                 Consider the figure below that depicts the relationship between polar and cartesian coordinates. <br>
@@ -4739,14 +4748,14 @@
             <h4>3. Spherical Coordinate System</h4>
             <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates.png" alt="">
             <p>
-                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the 
+                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the
                 positive x-axis and the line segment from the origin to Q. Lastly, ϕ is the angle between the positive z-axis and the line segment from the origin to P.
             </p>
             <img style="margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates_cartesian.png" alt="">
             <p style="text-align: center;">
                 x = ρsinϕcosθ <br>
                 y = ρsinϕsinθ <br>
-                z = ρcosϕ 
+                z = ρcosϕ
             </p>
             <br>
             <h4>4. Cylindrical Coordinate System</h4>
@@ -4785,7 +4794,7 @@
             </p>
             <h4>For Polar Curves</h4>
             <p>\[1.\space Symmetry\space -\\
-                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space 
+                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space
                 If\space curve\space remains\space same\space then\space symmetrical\]
             </p>
             <br>
@@ -5124,6 +5133,7 @@
         <!-- Factorial end -->
 
         <!--sum of nterms in A.P.-->
+        <center>
         <div class="collapse" id="sum_n_AP">
             <div class="text-center">
                 <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
@@ -5131,11 +5141,11 @@
             <h4>If first term,number of terms and common difference is given</h4><br>
             <form class="form-inline">
                 <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);margin:auto;"><br>
                 <input type="number" id="rapterms" placeholder="Enter the first term(a) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);margin:auto;"><br>
                 <input type="number" id="r1val" placeholder="Enter the difference between two consecutive terms (d) "
-                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);margin:auto;">
                 <button type="button" class="btn btn-light" onclick="sum_n_apsol('napterms','rapterms','r1val')">
                     Solve
                 </button>
@@ -5155,11 +5165,13 @@
             <h4>If first term,number of terms and last term is given</h4><br>
             <form class="form-inline">
                 <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);margin:auto;"><br>
                 <input type="number" id="ft" placeholder="Enter the first term(a) "
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);margin:auto;"><br>
                 <input type="number" id="lt" placeholder="Enter the last term(l)"
-                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);margin:auto;">
+                        <br>
+                        <br>
                 <button type="button" class="btn btn-light" onclick=anotherap()>
                 Solve
                 </button>
@@ -5170,11 +5182,12 @@
             <h5 id="ltap"></h5>
             <h5 id="formula"></h5>
         </div>
+          </center>
         <!--sum of nterms in A.P. ends-->
 
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
-            <h2>Sum of N terms of a Geometric Progression</h2>
+          <center>  <h2>Sum of N terms of a Geometric Progression</h2>  </center>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field"  id="firstterm"
                        placeholder="Enter first term"/>
@@ -5191,7 +5204,7 @@
             </div>
 			<br>
             <br>
-			<h2>Sum of infinite terms of a Geometric Progression with common ratio less than 1</h2>
+		<center>	<h2>Sum of infinite terms of a Geometric Progression with common ratio less than 1</h2>  </center>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field"  id="fterm"
                        placeholder="Enter first term"/>
@@ -5207,7 +5220,7 @@
         </div>
         <!-- sum of nterms in G.P. ends  -->
         <div class="collapse" id="convdiv">
-            <h2>Convergence and Divergence of Series<h2>
+          <center>  <h2>Convergence and Divergence of Series<h2> </center>
             <p>\[1.\space If\space \lim_{n\to\infty}a_n\space is\space finite\space and\space unique\space,\space the\space sequence\space
                  is\space said\space to\space be\space convergent\]
             </p>
