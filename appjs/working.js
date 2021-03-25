@@ -286,6 +286,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#greybtn").click(function(){
+        openit("#grey-bin");
+        closenav();
+        clearall();
+    });
 
     $("#stats-btn").click(function(){
         openit("#stats");

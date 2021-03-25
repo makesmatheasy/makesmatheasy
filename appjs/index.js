@@ -180,6 +180,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#trigsolcollapse",
+        "#grey-bin",
         "#consim",
     ];
     console.log(id)
