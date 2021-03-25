@@ -3585,6 +3585,39 @@ function anotherap(){
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
 
+function amsol()
+{
+  var a = document.getElementById("aval").value
+  var c = document.getElementById("cval").value
+  var amadd=parseInt(a)+parseInt(c)
+  var res =parseInt(amadd/2)
+  document.getElementById("Formula").innerHTML = "Arithmetic Mean: (a+c)/2 " 
+  document.getElementById("am").innerHTML = "Result: " +res
+
+}
+function gmsol()
+{
+  var a = document.getElementById("aval1").value
+  var c = document.getElementById("cval1").value
+  var gmmul=parseInt(a)*parseInt(c)
+  var res =Math.sqrt(gmmul)
+  document.getElementById("gmFormula").innerHTML = "Geometric Mean: √(ac) " 
+  document.getElementById("gm").innerHTML = "Result: " +res
+
+}
+function hmsol()
+{
+  var a = document.getElementById("aval2").value
+  var c = document.getElementById("cval2").value
+  var hmmul=2*parseInt(a)*parseInt(c)
+  var hmadd=parseInt(a)+parseInt(c)
+  var res =(hmmul/hmadd)
+  document.getElementById("hmFormula").innerHTML = "Harmonic Mean: 2ac/a+c " 
+  document.getElementById("hm").innerHTML = "Result: " +res
+
+}
+
+
 // Primality test
 function check_prime(isprime)
 {
