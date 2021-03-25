@@ -31,7 +31,7 @@ body img {
   filter: invert(100%);
 }
 html {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .container {
   padding-bottom: 70%;
@@ -67,7 +67,8 @@ p {
   -webkit-touch-callout: none;
   -ms-user-select: none;
   touch-action: auto;
-  overflow-y: scroll !important;
+  /* overflow-y: auto; */
+   /* !important; */
   /*position: relative !important;*/
 }
 .form-control {
