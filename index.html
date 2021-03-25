@@ -552,7 +552,6 @@
                         </td>
                     </tr>
                 </table>
-
             </li>
             <li>
                 <table class="table">
@@ -568,7 +567,21 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vectorbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Calculus</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Calculus','#vector','c','vectorimgfav')"><img
+                                        id="vectorimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
 
             <div class="dropdown-divider"></div>
@@ -2463,8 +2476,10 @@
                             <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
                             <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
                             <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
-                            <p>\[29)\space e^{ax}sinbx \space dx \space = \frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
-                            <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
+                            <p>\[29)\space\int (f(x))^{n}\,f'(x)\,dx\space=\frac{(f(x))^{(n+1)}}{n+1}+c\]</p>
+                            <p>\[30)\space\int e^{x}\,(f(x)\,+\,f'(x)\,)\,dx\space=e^{x}\,f(x)\,+c\]</p>
+                            <p>\[31)\space\int e^{ax}sinbx \,dx\space=\frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
+                            <p>\[32)\space\int e^{ax}cosbx \,dx\space=\frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
                         </div>
                     </div>
                 </div>
@@ -2943,6 +2958,29 @@
             </div>
 
         </div>
+        <div class="collapse" id="vector">
+            <h2 style="text-align: center;">Vector Calculus Theorems</h2>
+            <br><br>
+            <h4>1. Gauss Divergence Theorem</h4>
+            <p>The divergence theorem states that the surface integral of the normal component of a vector point function “F”
+                over a closed surface “S” is equal to the volume integral of the divergence of F,  
+                taken over the volume “V” enclosed by the surface S.
+            </p>
+            <p>\[\iint_S F.n \,dS = \iiint_v divF\,dV\]</p>
+            <h4>2. Stokes' Theorem</h4>
+            <p>Let S be an oriented smooth surface that is bounded by a simple, closed, smooth boundary curve              C
+                 with positive orientation. Also let F be a vector field then,
+            </p>
+            <p>\[\int_C F\,dr = \iint_S curlF\,dS\]</p>
+            <img style="margin-left: 350px;" src="https://tutorial.math.lamar.edu/classes/calcIII/StokesTheorem_Files/image001.png" alt="">
+            <h4>3. Green's Theorem</h4>
+            <p>
+                Let C be a positively oriented, piecewise smooth, simple, closed curve and let D be the region enclosed by the curve. If P
+                and Q have continuous first order partial derivatives on D then,
+            </p>
+            <p>\[\int_C {P\,dx + Q\,dy} = \iint_S ({\frac {∂Q}{∂x}-\frac{∂P}{∂y}})\,dA \]</p>
+            <img style="margin-left: 350px;" src="https://tutorial.math.lamar.edu/classes/calciii/GreensTheorem_Files/image001.png" alt="">
+        </div>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
             <div class="stopwrap">
@@ -3139,7 +3177,8 @@
 
         </div>
         <div class="collapse" id="matrixprops">
-            <h2>Properties of Matrices</h2>
+            <br>
+            <h2>Properties of Matrices</h2><br>
            <p>1. If A be any matrix then the matrix obtained by interchanging the rows and columns of A is called the Transpose of A.
                   Transpose of the matrix A is denoted by A<sup>'</sup> or A<sup>T</sup>
            </p>
@@ -3163,19 +3202,28 @@
                  <br>AB = I<sub>n</sub> = BA then B is called the inverse of A and is denoted by A<sup>-1</sup> . Thus A<sup>-1</sup> = adjA/|A| </p>
            <p>17. If A is a non singular square matrix of order n then adj(adj A) = |A|<sup>n-2</sup>A</p>
 
-            <h2>Properties of Determinants</h2>
-             <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
-             <p>2. det(X) = det(X<sup>T</sup>)</p>
-             <p>3. det(X<sup>-1</sup>) = -det(X)</p>
-             <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
-             <p>5. If two rows(or columns) of a determinant are identical then the values of the determinant is zero</p>
-             <p>6. If determinant Δ becomes zero on putting x = α then we say that (x-α) is a factor of Δ</p>
-             <p>7. If X is orthogonal matrix then det(X) = ±1 </p>
-             <p>8. If X is a skew-symmetric matrix of odd order then det(X) = 0</p>
-             <p>9. If X is a skew-symmetric matrix of even order then det(X) is a perfect square.</p>
-             <p>10. det(kX) = k<sup>n</sup>det(X) where n is order of X and k is scalar</p>
-             <p>11. In a triangular matrix , the product of diagnol elements is determinant</p>
-             <p>12. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
+           <br><br>
+
+           <h2>Properties of Determinants</h2>
+           <br>
+            <p>1. det(XY) = det(X)det(Y) where det is determinant, this is Distributive property</p>
+            <p>2. If rows and columns are interchanged then value of determinant remains same (value does not change), det(X<sup>T</sup>) = det(X)</p>
+            <p>3. Determinant of inverse of a matrix is, det(X<sup>-1</sup>) = -det(X)</p>
+            <p>4. The determinant of a matrix will be 0 if all the elements of any one column or row is 0</p>
+            <p>5. If two rows(or columns) of a determinant are identical then the values of the determinant is zero</p>
+            <p>6. If determinant Δ becomes zero on putting x = α then we say that (x-α) is a factor of Δ</p>
+            <p>7. If X is orthogonal matrix then det(X) = ±1 </p>
+            <p>8. If X is a skew-symmetric matrix of odd order then det(X) = 0</p>
+            <p>9. If X is a skew-symmetric matrix of even order then det(X) is a perfect square.</p>
+            <p>10. det(kX) = k<sup>n</sup>det(X) where n is order of X and k is scalar</p>
+            <p>11. If all the elements of a determinant above or below the main diagonal consist of zeros, determinant equals to product of diagonal elements</p>
+            <p>12. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
+            <p>13. Determinant remains unaltered if its rows are changed into columns and the columns into rows, this is property of reflection.</p>
+            <p>14. If i not equals to j, subtracting t times row i from row j doesn’t change the determinant value</p>
+            <p>15. If det A is exactly  0, where det A is determinant of A, then A is singular</p>
+            <p>16. If det A not equals to  0, where det A is determinant of A, then A is invertible</p>
+            <p>17. The determinant of A is defined for all matrices A</p>
+       </div>
 
 
         </div>
@@ -3653,7 +3701,7 @@
             <tr>
                 <th scope="row">\[Frustum Of Cone\]</th>
                 <td>\[ ( \frac{rh}{3} )\, ( \,r^{2} \,+\, R^{2} \,+\, rR \,)\]</td>
-                <td>\[π(R+r)√(h^{2}+(R-r)^{2})\]</td>
+                <td>\[π(R+r)l\, =\, π(R+r)√(h^{2}+(R-r)^{2})\]</td>
                 <td>\[π(rl+Rl+r^{2}+R^{2})\]</td>
             </tr>
             <tr>
@@ -4730,7 +4778,7 @@
             <br><br>
             <h4>1. Cartesian Coordinate System</h4>
             <p>It uses the concept of mutually perpendicular lines to denote the coordinate of a point.  To locate the position of a point in
-                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in 
+                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in
                 two-dimension with respect to x- and y- axes. The x-coordinate of a point is its perpendicular distance from the y-axis measured along the x-axis
                 and it is known as Abscissa. The y-coordinate of a point is its perpendicular distance from the x-axis measured along the y-axis and it is known as Ordinate.
             </p>
@@ -4739,10 +4787,10 @@
             <p>Here, a point is chosen as the pole and a ray from this point is taken as the polar axis. Basically, we have two parameters namely angle and radius.
                 The angle Ɵ with the polar axis has a single line through the pole measured anti-clockwise from the axis to the line.</p>
             <br>
-            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ). 
-                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p> 
+            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ).
+                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p>
             <br>
-            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>       
+            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>
             <br>
             <p>
                 Consider the figure below that depicts the relationship between polar and cartesian coordinates. <br>
@@ -4754,14 +4802,14 @@
             <h4>3. Spherical Coordinate System</h4>
             <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates.png" alt="">
             <p>
-                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the 
+                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the
                 positive x-axis and the line segment from the origin to Q. Lastly, ϕ is the angle between the positive z-axis and the line segment from the origin to P.
             </p>
             <img style="margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates_cartesian.png" alt="">
             <p style="text-align: center;">
                 x = ρsinϕcosθ <br>
                 y = ρsinϕsinθ <br>
-                z = ρcosϕ 
+                z = ρcosϕ
             </p>
             <br>
             <h4>4. Cylindrical Coordinate System</h4>
@@ -4800,7 +4848,7 @@
             </p>
             <h4>For Polar Curves</h4>
             <p>\[1.\space Symmetry\space -\\
-                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space 
+                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space
                 If\space curve\space remains\space same\space then\space symmetrical\]
             </p>
             <br>
@@ -5564,7 +5612,7 @@
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
-                    <span onclick="more();">More</span>
+                    <span id="more" onclick="more();">More</span>
                     <span
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
                     <span
@@ -5589,7 +5637,8 @@
                           onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
                             src="icons/crossed.svg" height="1.25rem" alt="crossed-icon"></span>
                     <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=1.875rem></span>-->
-                    <span id="percent">%</span>
+                    
+					<span id="percentage">%</span>
                     <span id="one">1</span>
                     <span id="two">2</span>
                     <span id="three">3</span>

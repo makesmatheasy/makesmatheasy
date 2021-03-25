@@ -130,7 +130,12 @@ $(document).ready(function () {
         openit("#coor");
         closenav();
         clearall();
-    }) 
+    })
+    $("#vectorbtn").click(function () {
+        openit("#vector");
+        closenav();
+        clearall();
+    })  
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();

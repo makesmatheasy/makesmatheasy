@@ -185,7 +185,10 @@ function openit(id) {
         "#convdiv",
         "#curve",
         "#coor",
+
         "#mean",
+        "#vector",
+
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
