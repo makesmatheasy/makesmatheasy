@@ -131,6 +131,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#diffeqnbtn").click(function () {
+        openit("#diffeqn");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
@@ -314,6 +319,11 @@ $(document).ready(function () {
     });
     $("#complexcollapsebtn").click(function(){
         openit("#complexcollapse");
+        closenav();
+        clearall();
+    });
+    $("#greybtn").click(function(){
+        openit("#grey-bin");
         closenav();
         clearall();
     });

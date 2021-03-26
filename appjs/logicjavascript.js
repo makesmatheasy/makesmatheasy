@@ -1480,9 +1480,10 @@ function printtable() {
 //shapes calculator
 function solveperisq() {
   var val = document.getElementById("inputsqside").value;
-  if (val == "") {
+  if (val == "" || val<0) {
     document.getElementById("resultofperisq").innerHTML = "";
-  } else {
+  } 
+  else {
     var sol = eval(String(4) + "*" + String(val));
     var temp = "\\[ 4 \\times ( " + val + " ) = " + sol + "\\]";
     temp +=
@@ -1495,7 +1496,7 @@ function solveperisq() {
 }
 function solvediagonalsq() {
   var val = document.getElementById("inputsqside").value;
-  if (val == "") {
+  if (val == "" || val<0) {
     document.getElementById("resultofdiagonalsq").innerHTML = "";
   } else {
     var sol = eval(1.414 + "*" + String(val));
@@ -1510,6 +1511,10 @@ function solveareasq() {
   var val = document.getElementById("inputsqside").value;
   if (val == "") {
     document.getElementById("resultofareasq").innerHTML = "";
+  }
+  else if(val<0)
+  {
+    document.getElementById("resultofareasq").innerHTML = "Enter positive values only";
   } else {
     var sol = eval(String(val) + "*" + String(val));
     var temp = "\\[" + val + " \\times " + val + " = " + sol + "\\]";
@@ -3557,7 +3562,7 @@ function sum_n_apsol(nval,rval,r1val)
         num = parseInt(a)+(i-1)*d;
         series += (num.toString() + ", ");
       }
-      printseries.innerHTML = "Arithmetic Progression: "+series;
+      printseries.innerHTML = "Arithmetic Progression: "+series.substring(0,series.length-2);
        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
@@ -3581,7 +3586,7 @@ function anotherap(){
     num += parseInt(d);
     series += (num.toString() + ", ");
  }
-  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
+  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0,series.length-2);
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
 function amsol()
@@ -4131,6 +4136,16 @@ function convertBinOct() {
 
 //----------------------------
 
+
+
+  34  appjs/logicjavascript.js 
+Viewed
+@@ -4131,6 +4131,40 @@ function convertBinOct() {
+
+
+//----------------------------	//----------------------------
+
+
 //Function that performs conversion of  binary to bcd
 
 function convertbcd() {
@@ -4158,8 +4173,34 @@ function convertbcd() {
          {
             x = x+  +y+"_   ";
          }
-        
+
        }
+
+  result.innerHTML = x;
+}
+
+//----------------------------
+
+//Function that performs conversion of grey to binary and viceversa
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+function convertgrey() {
+  const fromBase = document.getElementById("grey-select1").value;
+  var input = document.getElementById("grey-input").value;
+  let result = document.getElementById("grey-result");
+  var x = input[0];
+
+  if (fromBase == "Binary") 
+    for (var i = 1; i < input.length; i++) 
+        x +=parseInt(input[i-1]^input[i]).toString();
+
+  else 
+    for (var i = 1; i < input.length; i++) 
+      x +=parseInt(x[i-1]^input[i]).toString();
+
+
 
   result.innerHTML = x;
 }
