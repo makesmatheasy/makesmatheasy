@@ -34,8 +34,12 @@ $(document).ready(function () {
          openit("#fractions");
          closenav();
          clearall();
-     })
-
+     });
+    $("#logValues").click(function(){
+        openit("#log_values");
+        closenav();
+        clearall();
+    });
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
