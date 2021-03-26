@@ -4154,10 +4154,6 @@ function convertBinOct() {
 
 
 
-  34  appjs/logicjavascript.js 
-Viewed
-@@ -4131,6 +4131,40 @@ function convertBinOct() {
-
 
 //----------------------------	//----------------------------
 
