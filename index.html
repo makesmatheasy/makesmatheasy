@@ -173,11 +173,11 @@
             background: var(--apppink);;
         }
 
-        .hidescroll::-webkit-scrollbar {
+        .main::-webkit-scrollbar {
             display: none;
         }
 
-        .hidescroll {
+        .main {
             -ms-overflow-style: none;
             /* IE and Edge */
             scrollbar-width: none;
@@ -326,6 +326,21 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_GP','c','GPimgfav')"><img
+                                        id="GPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="meanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
                                         id="GPimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -1385,6 +1400,24 @@
                                 <span
                                         onclick="addtofavourite('Octal / Binary Converter','#octal-binary','c','octal-binary-imgfav')"><img
                                         id="octal-binary-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="greybtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Grey Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Grey Code Converter','#grey-bin','c','grey-imgfav')"><img
+                                        id="grey-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -5306,6 +5339,53 @@
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
         </div>
+        <div class="collapse" id="mean">
+            <div class="text-center">
+                <h2><label>Mean Calculator</label></h2>
+            </div>
+            <h4>Arithmetic Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=amsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+            
+            <h5 id="am"></h5>
+            <br><br><br>
+            <h4>Geometric Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval1" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval1" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=gmsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+            <h5 id="gm"></h5>
+            <br><br><br>
+            <h4>Harmonic Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval2" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval2" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=hmsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+            <h5 id="hm"></h5>
+        </div>
         <!-- sum of nterms in G.P. ends  -->
         <div class="collapse" id="convdiv">
             <h2>Convergence and Divergence of Series<h2>
@@ -5567,6 +5647,30 @@
         </div>
         <!-- End of Octal / Binary -->
 
+        <!-- Start of grey convertor -->
+        <div>
+            <div class="collapse" id="grey-bin">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>From</h5>
+                        <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                            <option class="form_field" style="background-color: #232a36;">Grey Code</option>
+                            <option class="form_field" style="background-color: #232a36;">Binary</option>
+                        </select>
+                        <input type="number" id="grey-input" value="0" class="form__field"
+                               oninput="convertgrey()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>To</h5>
+                        
+                    </div>
+                    <label class="form__group" id="grey-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of grey convertor -->
 
         <!--Start Binary to Hexadecimal-->
         <div>

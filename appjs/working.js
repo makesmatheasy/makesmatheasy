@@ -322,6 +322,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#greybtn").click(function(){
+        openit("#grey-bin");
+        closenav();
+        clearall();
+    });
 
     $("#stats-btn").click(function(){
         openit("#stats");
@@ -371,7 +376,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#meanbtn").click(function(){
+        openit("#mean");
+        closenav();
+        clearall();
+    });
 });
 
 function loader(action) {
