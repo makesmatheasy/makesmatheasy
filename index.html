@@ -5111,6 +5111,10 @@
                            href="#">Circle</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
+                           href="#">Kite</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#line" style="text-decoration:none;" href="#">Line</a>
                     </td>
                 </tr>
@@ -6054,6 +6058,64 @@
                         <br>
                         <p class="stopwrap" id="resultofareac" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperi" style="font-family:mathfont;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kite</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area of Kite</h5>
+                                <p class="text-center">\[A=\frac{1}{2} \times p \times q\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter of Kite</h5>
+                                <p class="text-center">\[P= 2 \times (a + b)\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Side (a) </h5>
+                                <p class="text-center">\[a= \frac{P}{2} - b\]</p>
+                                <h5 class="text-center">Side (b) </h5>
+                                <p class="text-center">\[b= \frac{P}{2} - a\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/kite.jpg" class="img-fluid">
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal(p) of Kite</h5>
+                                <p class="text-center">\[p= 2 \times \frac{A}{q}\]</p>
+                                <h5 class="text-center">Diagonal(p) of Kite</h5>
+                                <p class="text-center">\[q= 2 \times \frac{A}{p}\]</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number" placeholder="Enter Diagonal(p) of Kite"
+                               id="inputp" oninput="Kitesolve()">
+                        <input class="form__field" type="number" placeholder="Enter Diagonal(q) of Kite"
+                               id="inputq" oninput="Kitesolve()">
+                        <input class="form__field" type="number" placeholder="Enter side(a) of Kite"
+                               id="inputsidea" oninput="Kitesolve()">
+                        <input class="form__field" type="number" placeholder="Enter side(b) of Kite"
+                               id="inputsideb" oninput="Kitesolve()">
+                        <br>
+                        <p class="stopwrap" id="resultofareaK" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperiK" style="font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
