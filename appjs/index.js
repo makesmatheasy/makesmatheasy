@@ -188,6 +188,7 @@ function openit(id) {
         "#coor",
 
         "#mean",
+        "#bcd",
         "#vector",
         "#diffeqn",
     ];

@@ -4136,6 +4136,51 @@ function convertBinOct() {
 
 //----------------------------
 
+
+
+  34  appjs/logicjavascript.js 
+Viewed
+@@ -4131,6 +4131,40 @@ function convertBinOct() {
+
+
+//----------------------------	//----------------------------
+
+
+//Function that performs conversion of  binary to bcd
+
+function convertbcd() {
+
+  var input = document.getElementById("bcd-input").value;
+  let result = document.getElementById("bcd-result");
+  var x = "_";
+
+   for(var i = 0; i < input.length; i++) 
+       { 
+         var y = parseInt(input[i]).toString(2)
+         if(y.length == 1) 
+         {
+            x = x+ "000" +y + "_   ";
+         }
+         if(y.length == 2) 
+         {
+            x = x+ "00" +y +"_   ";
+         }
+         if(y.length == 3) 
+         {
+            x = x+ "0" +y+"_   ";
+         }
+         if(y.length == 4) 
+         {
+            x = x+  +y+"_   ";
+         }
+
+       }
+
+  result.innerHTML = x;
+}
+
+//----------------------------
+
 //Function that performs conversion of grey to binary and viceversa
 function reverseString(str) {
   return str.split("").reverse().join("");
@@ -4150,18 +4195,17 @@ function convertgrey() {
   if (fromBase == "Binary") 
     for (var i = 1; i < input.length; i++) 
         x +=parseInt(input[i-1]^input[i]).toString();
-  
+
   else 
     for (var i = 1; i < input.length; i++) 
       x +=parseInt(x[i-1]^input[i]).toString();
-  
+
 
 
   result.innerHTML = x;
 }
 
 //----------------------------
-
 //Function that performs conversion of Binary to Hexadecimal and viceversa
 function convertBinhex() {
   const fromBase = document.getElementById("binary-hexadecimal-select1").value;

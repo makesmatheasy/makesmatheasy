@@ -1385,6 +1385,23 @@
 
 
             <!--end-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bcdbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">BCD Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('BCD Code Converter','#bcd','c','bcd-imgfav')"><img
+                                        id="bcd-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             <li>
@@ -5609,6 +5626,28 @@
         </div>
         <!-- End of Octal / Binary -->
 
+         <!-- Start of bcd convertor -->
+        <div>
+            <div class="collapse" id="bcd">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Binary</h5>
+
+                        <input type="number" id="bcd-input" value="0" class="form__field"
+                               oninput="convertbcd()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>BCD</h5>
+
+                    </div>
+                    <label class="form__group" id="bcd-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of bcd convertor -->
+          
         <!-- Start of grey convertor -->
         <div>
             <div class="collapse" id="grey-bin">
@@ -5626,13 +5665,14 @@
                 <div class="col-6">
                     <div class="form-group">
                         <h5>To</h5>
-                        
+
                     </div>
                     <label class="form__group" id="grey-result">0</label>
                 </div>
             </div>
         </div>
         <!-- End of grey convertor -->
+          
 
         <!--Start Binary to Hexadecimal-->
         <div>

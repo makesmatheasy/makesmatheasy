@@ -334,6 +334,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#bcdbtn").click(function(){
+        openit("#bcd");
+        closenav();
+        clearall();
+    });
+
 	//Function of collapsing binary/hexadecimal section on click
 	$("#binary-to-hexadecimal-btn").click(function(){
         openit("#binary-hexadecimal");
