@@ -113,7 +113,7 @@ function subtractiom(){
 
  }
 
- function Multiplication(){
+ function multiplication1(){
 
      var n1 = parseInt(document.getElementById('one_mul').value);
      var d1 = parseInt(document.getElementById('two_mul').value);
@@ -168,7 +168,7 @@ function subtractiom(){
      document.getElementById('mixb1').innerHTML = d1;
      document.getElementById('mixb2').innerHTML = d1;
 
-     var top = n1*s*d1;
+     var top = n1+(s*d1);
      var bot = d1;
 
       document.getElementById('mixt').innerHTML = top;
