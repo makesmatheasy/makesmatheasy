@@ -181,10 +181,15 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#trigsolcollapse",
+        "#grey-bin",
         "#consim",
         "#convdiv",
         "#curve",
         "#coor",
+
+        "#mean",
+        "#vector",
+        "#diffeqn",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {

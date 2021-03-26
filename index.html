@@ -336,6 +336,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="meanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
+                                        id="GPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="convdivbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Convergence and Divergence of Series</a>
                         </td>
@@ -521,7 +536,22 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="diffeqnbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Differential Equations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Differential Equations','#diffeqn','c','diffeqnimgfav')"><img
+                                        id="diffeqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
             <li>
                 <table class="table">
@@ -537,7 +567,6 @@
                         </td>
                     </tr>
                 </table>
-
             </li>
             <li>
                 <table class="table">
@@ -553,7 +582,21 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vectorbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Calculus</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Calculus','#vector','c','vectorimgfav')"><img
+                                        id="vectorimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
 
             <div class="dropdown-divider"></div>
@@ -1357,6 +1400,24 @@
                                 <span
                                         onclick="addtofavourite('Octal / Binary Converter','#octal-binary','c','octal-binary-imgfav')"><img
                                         id="octal-binary-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="greybtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Grey Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Grey Code Converter','#grey-bin','c','grey-imgfav')"><img
+                                        id="grey-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2196,8 +2257,8 @@
                                                             <div class="bottom"><var id="mixb">b</var></div>
 
                                                         </div>
-                                                        <span style="margin-top: 15px;">= &nbsp;<var id="mixa1">a</var>*<var
-                                                                id="mixs">s</var>*<var id="mixb1">b</var></span>
+                                                        <span style="margin-top: 15px;">= &nbsp;<var id="mixa1">a</var>+(<var
+                                                                id="mixs">s</var>*<var id="mixb1">b</var>)</span>
                                                         <span class="symbol">/</span>
                                                         <span class="bottom"><var id="mixb2">b</var></span>
 
@@ -2448,8 +2509,10 @@
                             <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
                             <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
                             <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}} \,dx\space=2\sqrt{f(x)}\,+c\]</p>
-                            <p>\[29)\space e^{ax}sinbx \space dx \space = \frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
-                            <p>\[30)\space e^{ax}cosbx \space dx = \frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
+                            <p>\[29)\space\int (f(x))^{n}\,f'(x)\,dx\space=\frac{(f(x))^{(n+1)}}{n+1}+c\]</p>
+                            <p>\[30)\space\int e^{x}\,(f(x)\,+\,f'(x)\,)\,dx\space=e^{x}\,f(x)\,+c\]</p>
+                            <p>\[31)\space\int e^{ax}sinbx \,dx\space=\frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
+                            <p>\[32)\space\int e^{ax}cosbx \,dx\space=\frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
                         </div>
                     </div>
                 </div>
@@ -2732,6 +2795,44 @@
 
             </div>
         </div>
+        <div class="collapse" id="diffeqn">
+            <h2 style="text-align: center;">Differential Equations</h2>
+            <br><br>
+            <h4>1. Variable Seperable</h4>
+            <br>
+            <p style="text-align: center;">It can be used when, <br> All the y terms (including dy) can be moved to one side of the equation, and <br>
+                All the x terms (including dx) to the other side.
+            </p>
+            <p>\[\frac{dx}{dy} = 4xy\ which\space can\space be\space written\space as, \\
+                \frac{dx}{x} = 4ydy\]
+            </p>
+            <br>
+            <h4>2. Equation reducible to variable seperable</h4>
+            <br>
+            <p>\[ The\space equation\space \frac{dy}{dx}-f(ax+by+c)\space can\space be\space written\space as \\
+                \frac{dy}{dx}-f(t)\space keeping\space ax+by+c = t\space then\space solve \]
+            </p>
+            <br>
+            <h4>3. Homogenous Equations</h4>
+            <br>
+            <p style="text-align: center;">A differential equation, M dx + N dy = 0, is homogeneous if replacement of x and y by λx and λy results in the original function 
+                multiplied by some power of λ, where the power of λ is called the degree of the original function. If so, follow these steps.
+            </p>
+            <p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
+            <p>\[Now\space put\space value\space of\space \frac{dy}{dx} in\space the\space equation\space and\space solve\]</p>
+            <br>
+            <h4>4. First Order Linear Differential Equations</h4>
+            <br>
+            <p>When the equation is written in form</p>
+            <p>\[\frac{dy}{dx} + Py = Q,\space where\space P\space and\space Q\space are\space functions\space of\space x\space or , \\
+                \frac{dx}{dy} + Px = Q,\space where\space P\space and\space Q\space are\space functions\space of\space y\]
+            </p>
+            <p>Then these can be solved by - </p>
+            <p>\[Let\space Integrating\space Factor(I)\space =\space e^{\int P\,dx} (for\space first\space equation\space) or, \\
+                I = e^{\int P \,dy}(for\space second\space equation)\]
+            </p>
+            <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
+        </div>
         <div class="collapse" id="partialdiffcollapse">
             <div class="form-group">
                 <input type="text" id="inputpartialdiff" class="form__field" placeholder="Enter Function"
@@ -2927,6 +3028,29 @@
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
 
+        </div>
+        <div class="collapse" id="vector">
+            <h2 style="text-align: center;">Vector Calculus Theorems</h2>
+            <br><br>
+            <h4>1. Gauss Divergence Theorem</h4>
+            <p>The divergence theorem states that the surface integral of the normal component of a vector point function “F”
+                over a closed surface “S” is equal to the volume integral of the divergence of F,  
+                taken over the volume “V” enclosed by the surface S.
+            </p>
+            <p>\[\iint_S F.n \,dS = \iiint_v divF\,dV\]</p>
+            <h4>2. Stokes' Theorem</h4>
+            <p>Let S be an oriented smooth surface that is bounded by a simple, closed, smooth boundary curve              C
+                 with positive orientation. Also let F be a vector field then,
+            </p>
+            <p>\[\int_C F\,dr = \iint_S curlF\,dS\]</p>
+            <img style="margin-left: 350px;" src="https://tutorial.math.lamar.edu/classes/calcIII/StokesTheorem_Files/image001.png" alt="">
+            <h4>3. Green's Theorem</h4>
+            <p>
+                Let C be a positively oriented, piecewise smooth, simple, closed curve and let D be the region enclosed by the curve. If P
+                and Q have continuous first order partial derivatives on D then,
+            </p>
+            <p>\[\int_C {P\,dx + Q\,dy} = \iint_S ({\frac {∂Q}{∂x}-\frac{∂P}{∂y}})\,dA \]</p>
+            <img style="margin-left: 350px;" src="https://tutorial.math.lamar.edu/classes/calciii/GreensTheorem_Files/image001.png" alt="">
         </div>
         <!-- Complex Number Calculations End -->
         <div class="collapse" id="limitscollapse">
@@ -3124,7 +3248,8 @@
 
         </div>
         <div class="collapse" id="matrixprops">
-            <h2>Properties of Matrices</h2>
+            <br>
+            <h2>Properties of Matrices</h2><br>
            <p>1. If A be any matrix then the matrix obtained by interchanging the rows and columns of A is called the Transpose of A.
                   Transpose of the matrix A is denoted by A<sup>'</sup> or A<sup>T</sup>
            </p>
@@ -3148,19 +3273,28 @@
                  <br>AB = I<sub>n</sub> = BA then B is called the inverse of A and is denoted by A<sup>-1</sup> . Thus A<sup>-1</sup> = adjA/|A| </p>
            <p>17. If A is a non singular square matrix of order n then adj(adj A) = |A|<sup>n-2</sup>A</p>
 
-            <h2>Properties of Determinants</h2>
-             <p>1. det(XY) = det(X)det(Y) where det is determinant</p>
-             <p>2. det(X) = det(X<sup>T</sup>)</p>
-             <p>3. det(X<sup>-1</sup>) = -det(X)</p>
-             <p>4. The determinant of a matrix will be 0 if any one column or row is 0</p>
-             <p>5. If two rows(or columns) of a determinant are identical then the values of the determinant is zero</p>
-             <p>6. If determinant Δ becomes zero on putting x = α then we say that (x-α) is a factor of Δ</p>
-             <p>7. If X is orthogonal matrix then det(X) = ±1 </p>
-             <p>8. If X is a skew-symmetric matrix of odd order then det(X) = 0</p>
-             <p>9. If X is a skew-symmetric matrix of even order then det(X) is a perfect square.</p>
-             <p>10. det(kX) = k<sup>n</sup>det(X) where n is order of X and k is scalar</p>
-             <p>11. In a triangular matrix , the product of diagnol elements is determinant</p>
-             <p>12. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
+           <br><br>
+
+           <h2>Properties of Determinants</h2>
+           <br>
+            <p>1. det(XY) = det(X)det(Y) where det is determinant, this is Distributive property</p>
+            <p>2. If rows and columns are interchanged then value of determinant remains same (value does not change), det(X<sup>T</sup>) = det(X)</p>
+            <p>3. Determinant of inverse of a matrix is, det(X<sup>-1</sup>) = -det(X)</p>
+            <p>4. The determinant of a matrix will be 0 if all the elements of any one column or row is 0</p>
+            <p>5. If two rows(or columns) of a determinant are identical then the values of the determinant is zero</p>
+            <p>6. If determinant Δ becomes zero on putting x = α then we say that (x-α) is a factor of Δ</p>
+            <p>7. If X is orthogonal matrix then det(X) = ±1 </p>
+            <p>8. If X is a skew-symmetric matrix of odd order then det(X) = 0</p>
+            <p>9. If X is a skew-symmetric matrix of even order then det(X) is a perfect square.</p>
+            <p>10. det(kX) = k<sup>n</sup>det(X) where n is order of X and k is scalar</p>
+            <p>11. If all the elements of a determinant above or below the main diagonal consist of zeros, determinant equals to product of diagonal elements</p>
+            <p>12. A matrix A can be written as det(A- λI) = 0 , the  λ are eigen values of the matrix</p>
+            <p>13. Determinant remains unaltered if its rows are changed into columns and the columns into rows, this is property of reflection.</p>
+            <p>14. If i not equals to j, subtracting t times row i from row j doesn’t change the determinant value</p>
+            <p>15. If det A is exactly  0, where det A is determinant of A, then A is singular</p>
+            <p>16. If det A not equals to  0, where det A is determinant of A, then A is invertible</p>
+            <p>17. The determinant of A is defined for all matrices A</p>
+       </div>
 
 
         </div>
@@ -3636,9 +3770,9 @@
                 <td>\[πr \,(\, l\, +\, r\, )\]</td>
             </tr>
             <tr>
-                <th scope="row">\[Frustum Of Cone\]</th>
+                <th scope="row">\[Frustum\space Of\space Cone\]</th>
                 <td>\[ ( \frac{rh}{3} )\, ( \,r^{2} \,+\, R^{2} \,+\, rR \,)\]</td>
-                <td>\[π(R+r)√(h^{2}+(R-r)^{2})\]</td>
+                <td>\[π(R+r)l\, =\, π(R+r)√(h^{2}+(R-r)^{2})\]</td>
                 <td>\[π(rl+Rl+r^{2}+R^{2})\]</td>
             </tr>
             <tr>
@@ -3665,99 +3799,61 @@
                 <td>\[ Area \,of \,base× Height \]</td>
                 <td><p></p>\[Perimeter\, of\, base\]</p><p>\[×\]</p><p>\[Height\, of\, prism\]</p></td>
                 <td>\[LSA + 2\,× Area \,of\, base\]</td>
-            </tr>
-                <th scope="row">\[Pyramid\]</th>
-                <td>\[\frac{1}{3}×base\,area×Height\]</td>
-                <td><p></p>\[ \frac{1}{2} × Perimeter\, of\, base\]</p><p>\[×\] </p> <p>\[Slant\, height\, Total\]</p</td>
-                <td>\[LSA + Area\, of \,base\]</td>
-            </tr>
-
-            </tbody>
-        </table>
-
-            </div>
-        </div>
-        <div class="collapse" id="3d-solid">
-            <div class="stopwrap">
-
-        <h2><center>Volume, CSA/LSA and TSA of 3D solids</center></h2>
-        <table class="table table-bordered table-dark">
-            <thead>
-            <tr>
-                <th scope="col">\[Shape\]</th>
-                <th scope="col">\[Volume\]</th>
-                <th scope="col">\[C\,S\,A \space/\,L\,S\,A \]</th>
-                <th scope="col">\[T\,S\,A\]</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">\[Cube\]</th>
-                <td>\[a^{3}\]</td>
-                <td>\[4\,a^{2}\]</td>
-                <td>\[6\,a^{2}\]</td>
-
-            </tr>
-            <tr>
-                <th scope="row">\[Cuboid\]</th>
-                <td>\[l\,b\,h\]</td>
-                <td>\[2\,(\,l\,+\,b\,)\,h\]</td>
-                <td>\[2\,(\,lb\,+\,bh\,+\,lh\,)\]</td>
-            </tr>
-            <tr>
-                <th scope="row">\[Cylinder\]</th>
-                <td>\[ π\,r^{2}\,h\]</td>
-                <td>\[2\,π\,r\,h\]</td>
-                <td>\[2πr\, (\, r\, +\, h\, )\]</td>
-            </tr>
-            <tr>
-                <th scope="row">\[Hollow\space Cylinder\]</th>
-                <td>\[ πh\,(\, R \,+ \,r\, )\, (\, R\, -\, r\, )\]</td>
-                <td>\[2πh\space ( \,R\, +\, r\, )\]</td>
-                <td>\[2πh\, (\, R\, +\, r\, )\]</p><p>\[+\]</p><p>\[2π\, (\, R\, +\, r\, )\, (\, R\, -\, r\, )\]</p></td>
-            </tr>
-            <tr>
-                <th scope="row">\[Cone\]</th>
-                <td>\[ \frac{1}{3} \, π\,r^{2} \, h\]</td>
-                <td>\[πrl\, =\, πr\,√( r^{2}\,+ \,h^{2} )\]</td>
-                <td>\[πr \,(\, l\, +\, r\, )\]</td>
-            </tr>
-            <tr>
-                <th scope="row">\[Frustum Of Cone\]</th>
-                <td>\[ ( \frac{rh}{3} )\, ( \,r^{2} \,+\, R^{2} \,+\, rR \,)\]</td>
-                <td>\[π(R+r)√(h^{2}+(R-r)^{2})\]</td>
-                <td>\[π(rl+Rl+r^{2}+R^{2})\]</td>
-            </tr>
-            <tr>
-
-                <th scope="row">\[Sphere\]</th>
-                <td>\[\frac{4}{3}\, π\,r^{3}\]</td>
-                <td>\[ 4\, π\,r^{2}\]</td>
-                <td>\[4\, π\,r^{2}\]</td>
-            </tr>
-            <tr>
-                <th scope="row">\[Hollow\space Sphere\]</th>
-                <td>\[\frac{4}{3}\, π\,(\,R^{3}\,-\,r^{3})\]</td>
-                <td><p>\[Internal\]</p><p>\[Surface\,Area\]</p><p>\[=\]</p>\[4\, π\,r^{2}\]</td>
-                <td><p>\[External\]</p><p>\[Surface\,Area\]</p><p>\[=\]</p>\[4\, π\,R^{2}\]</td>
-            </tr>
-
-            <tr>
-                <th scope="row">\[Hemisphere\]</th>
-                <td>\[\frac{(2\, π\,r^{3}\,)}{3}\]</td>
-                <td>\[2\, π\,r^{2}\]</td>
-                <td>\[3\, π\,r^{2}\]</td>
             </tr><tr>
-                <th scope="row">\[Prism\]</th>
-                <td>\[ Area \,of \,base× Height \]</td>
-                <td><p></p>\[Perimeter\, of\, base\]</p><p>\[×\]</p><p>\[Height\, of\, prism\]</p></td>
-                <td>\[LSA + Area \,of\, base\]</td>
-            </tr>
+                <th scope="row">\[Rectangular\space Prism\]</th>
+                <td>\[(l\,b)\,×h\]</td>
+                <td>\[(\,2l\,+\,2b\,)\,×h\]</td>
+                <td>\[LSA +2×(\,lb\,)\]</td>
+            </tr><tr>
+                <th scope="row">\[Triangular\space Prism\]</th>
+                <td><p>\[(\frac{1}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length)\,×Height\]</p></td>
+                <td><p>\[(3\,×base\,length)\]</p><p>\[×\]</p><p>\[Height\]</p></td>
+                <td><p>\[LSA + 2×(\,\frac{1}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\]</p></td>
+            </tr><tr>
+                <th scope="row">\[Pentagonal\space Prism\]</th>
+                <td><p>\[(\frac{5}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length)\,×Height\]</p></td>
+                <td><p>\[(5\,×base\,length)\]</p><p>\[×\]</p><p>\[Height\]</p></td>
+                <td><p>\[LSA + 2×(\,\frac{5}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\]</p></td>
+            </tr><tr>
+                <th scope="row">\[Hexagonal\space Prism\]</th>
+                <td><p>\[(3\,×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length)\,×Height\]</p></td>
+                <td><p>\[(6\,×base\,length)\]</p><p>\[×\]</p><p>\[Height\]</p></td>
+                <td><p>\[LSA + 2×(\,3\,×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\]</p></td>
+            </tr><tr>
                 <th scope="row">\[Pyramid\]</th>
                 <td>\[\frac{1}{3}×base\,area×Height\]</td>
-                <td><p></p>\[ \frac{1}{2} × Perimeter\, of\, base\]</p><p>\[×\] </p> <p>\[Slant\, height\, Total\]</p</td>
+                <td><p></p>\[ \frac{1}{2} × Perimeter\, of\, base\]</p><p>\[×\] </p> <p>\[Slant\, height\, Total\]</p></td>
                 <td>\[LSA + Area\, of \,base\]</td>
+            </tr><tr>
+                <th scope="row">\[Square\space Pyramid\]</th>
+                <td>\[\frac{1}{3}(\,base\space length\,)^{2}\,×Height\]</td>
+                <td>\[\frac{1}{2} (4\,×base\, length)\]\[×\]\[slant\, height\]</td>
+                <td>\[LSA + (\,base\space length\,)^{2}\]</td>
+            </tr><tr>
+                <th scope="row">\[Triangular\space Pyramid\]</th>
+                <td><p>\[\frac{1}{3}(\,\frac{1}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\,×Height\]</p></td>
+                <td><p>\[\frac{1}{2}(\,3×base\,length)\]</p><p>\[×\]</p><p>\[slant\space height\]</p></td>
+                <td><p>\[LSA +(\, \frac{1}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\]</p></td>
+            </tr><tr>
+                <th scope="row">\[Pentagonal\space Pyramid\]</th>
+                <td><p>\[\frac{1}{3}(\,\frac{5}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\,×Height\]</p></td>
+                <td><p>\[\frac{1}{2}(\,5×base\space length)\]</p><p>\[×\]</p><p>\[slant\space height\]</p></td>
+                <td><p>\[LSA +(\, \frac{5}{2}×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\]</p></td>
+            </tr><tr>
+                <th scope="row">\[Hexagonal\space Pyramid\]</th>
+                <td><p>\[\frac{1}{3}(\,3×\,apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\,×Height\]</p></td>
+                <td><p>\[\frac{1}{2}(\, 6×base\space length)\]</p><p>\[×\]</p><p>\[slant\space height\]</p></td>
+                <td><p>\[LSA +(\, 3×apothem\space length\]</p><p>\[×\]</p><p>\[base\space length\,)\]</p></td>
+            </tr><tr>
+                <th scope="row">\[Frustum\space Of\space Pyramid\]</th>
+                <td><p>\[\frac{1}{3}×(\,A_1+A_2+\,\sqrt{A_1A_2})\,×Height\]</p><p>\[^{*}A_1\,-Area\, of\, Upper\, Base\]</p><p>\[^{*}A_2\,-Area\, of\, Lower\, Base\]</p></td>
+                <td>\[\frac{1}{2}×(P_1+P_2)\,×slant\,height\]\[^{*}P_1\,-Perimeter\,Of\,Upper\,Base\]\[^{*}P_2\,-Perimeter\,Of\,Lower\,Base\]</td>
+                <td>\[LSA\,+\,A_1\,+\,A_2\]</td>
+            </tr><tr>
+                <th scope="row">\[Torus\]</th>
+                <td>\[(\,2π\,R\,)\,(\,π\,r^{2}\,)\]\[^{*}R\,-\,Major\,Radius\]\[^{*}r\,-\,Minor\,Radius\]</td>
+                <td>\[(\,2π\,R\,)\,(\,2π\,r\,)\]</td>
+                <td>\[(\,2π\,R\,)\,(\,2π\,r\,)\]</td>
             </tr>
 
             </tbody>
@@ -3765,7 +3861,7 @@
 
             </div>
         </div>
-
+        
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
             <div class="stopwrap">
@@ -4715,7 +4811,7 @@
             <br><br>
             <h4>1. Cartesian Coordinate System</h4>
             <p>It uses the concept of mutually perpendicular lines to denote the coordinate of a point.  To locate the position of a point in
-                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in 
+                a plane using two perpendicular lines, we use the cartesian coordinate system. Points are represented in the form of coordinates (x, y) in
                 two-dimension with respect to x- and y- axes. The x-coordinate of a point is its perpendicular distance from the y-axis measured along the x-axis
                 and it is known as Abscissa. The y-coordinate of a point is its perpendicular distance from the x-axis measured along the y-axis and it is known as Ordinate.
             </p>
@@ -4724,10 +4820,10 @@
             <p>Here, a point is chosen as the pole and a ray from this point is taken as the polar axis. Basically, we have two parameters namely angle and radius.
                 The angle Ɵ with the polar axis has a single line through the pole measured anti-clockwise from the axis to the line.</p>
             <br>
-            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ). 
-                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p> 
+            <p>The point will have a unique distance from the origin (r). Thus, a point in Polar coordinate system is represented as a pair of coordinates (r, Ɵ).
+                The pole is represented by (0, Ɵ) for any value of Ɵ, where r = 0.</p>
             <br>
-            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>       
+            <p>The distance from the pole is called the radial coordinate, radial distance or simply radius and the angular coordinate, polar angle or azimuth.</p>
             <br>
             <p>
                 Consider the figure below that depicts the relationship between polar and cartesian coordinates. <br>
@@ -4739,14 +4835,14 @@
             <h4>3. Spherical Coordinate System</h4>
             <img style="width: 300px; height:250px; margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates.png" alt="">
             <p>
-                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the 
+                The coordinate ρ is the distance from P to the origin. If the point Q is the projection of P to the xy-plane, then θ is the angle between the
                 positive x-axis and the line segment from the origin to Q. Lastly, ϕ is the angle between the positive z-axis and the line segment from the origin to P.
             </p>
             <img style="margin-left: 300px;" src="https://mathinsight.org/media/image/image/spherical_coordinates_cartesian.png" alt="">
             <p style="text-align: center;">
                 x = ρsinϕcosθ <br>
                 y = ρsinϕsinθ <br>
-                z = ρcosϕ 
+                z = ρcosϕ
             </p>
             <br>
             <h4>4. Cylindrical Coordinate System</h4>
@@ -4785,7 +4881,7 @@
             </p>
             <h4>For Polar Curves</h4>
             <p>\[1.\space Symmetry\space -\\
-                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space 
+                To\space check\space for\space any\space angle\space \theta\space for\space symmetry\space check\space for\space (2\alpha - \theta),\space
                 If\space curve\space remains\space same\space then\space symmetrical\]
             </p>
             <br>
@@ -5205,6 +5301,53 @@
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
         </div>
+        <div class="collapse" id="mean">
+            <div class="text-center">
+                <h2><label>Mean Calculator</label></h2>
+            </div>
+            <h4>Arithmetic Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=amsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+            
+            <h5 id="am"></h5>
+            <br><br><br>
+            <h4>Geometric Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval1" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval1" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=gmsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+            <h5 id="gm"></h5>
+            <br><br><br>
+            <h4>Harmonic Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval2" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval2" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=hmsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                   align="right"></p>
+            <h5 id="hm"></h5>
+        </div>
         <!-- sum of nterms in G.P. ends  -->
         <div class="collapse" id="convdiv">
             <h2>Convergence and Divergence of Series<h2>
@@ -5466,6 +5609,30 @@
         </div>
         <!-- End of Octal / Binary -->
 
+        <!-- Start of grey convertor -->
+        <div>
+            <div class="collapse" id="grey-bin">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>From</h5>
+                        <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                            <option class="form_field" style="background-color: #232a36;">Grey Code</option>
+                            <option class="form_field" style="background-color: #232a36;">Binary</option>
+                        </select>
+                        <input type="number" id="grey-input" value="0" class="form__field"
+                               oninput="convertgrey()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>To</h5>
+                        
+                    </div>
+                    <label class="form__group" id="grey-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of grey convertor -->
 
         <!--Start Binary to Hexadecimal-->
         <div>
@@ -5502,7 +5669,7 @@
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear" onclick="document.getElementById('txt').value=''">C</span>
-                    <span onclick="more();">More</span>
+                    <span id="more" onclick="more();">More</span>
                     <span
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
                     <span
@@ -5527,7 +5694,8 @@
                           onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
                             src="icons/crossed.svg" height="1.25rem" alt="crossed-icon"></span>
                     <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=1.875rem></span>-->
-                    <span id="percent">%</span>
+                    
+					<span id="percentage">%</span>
                     <span id="one">1</span>
                     <span id="two">2</span>
                     <span id="three">3</span>

@@ -1480,9 +1480,10 @@ function printtable() {
 //shapes calculator
 function solveperisq() {
   var val = document.getElementById("inputsqside").value;
-  if (val == "") {
+  if (val == "" || val<0) {
     document.getElementById("resultofperisq").innerHTML = "";
-  } else {
+  } 
+  else {
     var sol = eval(String(4) + "*" + String(val));
     var temp = "\\[ 4 \\times ( " + val + " ) = " + sol + "\\]";
     temp +=
@@ -1495,7 +1496,7 @@ function solveperisq() {
 }
 function solvediagonalsq() {
   var val = document.getElementById("inputsqside").value;
-  if (val == "") {
+  if (val == "" || val<0) {
     document.getElementById("resultofdiagonalsq").innerHTML = "";
   } else {
     var sol = eval(1.414 + "*" + String(val));
@@ -1510,6 +1511,10 @@ function solveareasq() {
   var val = document.getElementById("inputsqside").value;
   if (val == "") {
     document.getElementById("resultofareasq").innerHTML = "";
+  }
+  else if(val<0)
+  {
+    document.getElementById("resultofareasq").innerHTML = "Enter positive values only";
   } else {
     var sol = eval(String(val) + "*" + String(val));
     var temp = "\\[" + val + " \\times " + val + " = " + sol + "\\]";
@@ -3557,7 +3562,7 @@ function sum_n_apsol(nval,rval,r1val)
         num = parseInt(a)+(i-1)*d;
         series += (num.toString() + ", ");
       }
-      printseries.innerHTML = "Arithmetic Progression: "+series;
+      printseries.innerHTML = "Arithmetic Progression: "+series.substring(0,series.length-2);
        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
@@ -3581,10 +3586,46 @@ function anotherap(){
     num += parseInt(d);
     series += (num.toString() + ", ");
  }
-  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
+  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0,series.length-2);
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
+function amsol()
+{
+  var a = document.getElementById("aval").value
+  var c = document.getElementById("cval").value
+  var amadd=parseInt(a)+parseInt(c)
+  var res =parseInt(amadd/2)
+  var explain = document.getElementById("am_formula");
+  explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
+  renderMathInElement(document.getElementById("am_formula"));
+  document.getElementById("am").innerHTML = "Result: " +res
 
+}
+function gmsol()
+{
+  var a = document.getElementById("aval1").value
+  var c = document.getElementById("cval1").value
+  var gmmul=parseInt(a)*parseInt(c)
+  var res =Math.sqrt(gmmul)
+  var explain = document.getElementById("gm_formula");
+  explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] " ;
+  renderMathInElement(document.getElementById("gm_formula"));
+  document.getElementById("gm").innerHTML = "Result: " +res
+
+}
+function hmsol()
+{
+  var a = document.getElementById("aval2").value
+  var c = document.getElementById("cval2").value
+  var hmmul=2*parseInt(a)*parseInt(c)
+  var hmadd=parseInt(a)+parseInt(c)
+  var res =(hmmul/hmadd)
+  var explain = document.getElementById("hm_formula");
+  explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] " ;
+  renderMathInElement(document.getElementById("hm_formula"));
+  document.getElementById("hm").innerHTML = "Result: " +res
+
+}
 // Primality test
 function check_prime(isprime)
 {
@@ -4091,6 +4132,32 @@ function convertBinOct() {
   else to = 2;
 
   result.innerHTML = parseInt(input, from).toString(to);
+}
+
+//----------------------------
+
+//Function that performs conversion of grey to binary and viceversa
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+function convertgrey() {
+  const fromBase = document.getElementById("grey-select1").value;
+  var input = document.getElementById("grey-input").value;
+  let result = document.getElementById("grey-result");
+  var x = input[0];
+
+  if (fromBase == "Binary") 
+    for (var i = 1; i < input.length; i++) 
+        x +=parseInt(input[i-1]^input[i]).toString();
+  
+  else 
+    for (var i = 1; i < input.length; i++) 
+      x +=parseInt(x[i-1]^input[i]).toString();
+  
+
+
+  result.innerHTML = x;
 }
 
 //----------------------------
