@@ -131,6 +131,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#diffeqnbtn").click(function () {
+        openit("#diffeqn");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();

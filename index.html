@@ -521,7 +521,22 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="diffeqnbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Differential Equations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Differential Equations','#diffeqn','c','diffeqnimgfav')"><img
+                                        id="diffeqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
             <li>
                 <table class="table">
@@ -2746,6 +2761,44 @@
                 </div>
 
             </div>
+        </div>
+        <div class="collapse" id="diffeqn">
+            <h2 style="text-align: center;">Differential Equations</h2>
+            <br><br>
+            <h4>1. Variable Seperable</h4>
+            <br>
+            <p style="text-align: center;">It can be used when, <br> All the y terms (including dy) can be moved to one side of the equation, and <br>
+                All the x terms (including dx) to the other side.
+            </p>
+            <p>\[\frac{dx}{dy} = 4xy\ which\space can\space be\space written\space as, \\
+                \frac{dx}{x} = 4ydy\]
+            </p>
+            <br>
+            <h4>2. Equation reducible to variable seperable</h4>
+            <br>
+            <p>\[ The\space equation\space \frac{dy}{dx}-f(ax+by+c)\space can\space be\space written\space as \\
+                \frac{dy}{dx}-f(t)\space keeping\space ax+by+c = t\space then\space solve \]
+            </p>
+            <br>
+            <h4>3. Homogenous Equations</h4>
+            <br>
+            <p style="text-align: center;">A differential equation, M dx + N dy = 0, is homogeneous if replacement of x and y by λx and λy results in the original function 
+                multiplied by some power of λ, where the power of λ is called the degree of the original function. If so, follow these steps.
+            </p>
+            <p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
+            <p>\[Now\space put\space value\space of\space \frac{dy}{dx} in\space the\space equation\space and\space solve\]</p>
+            <br>
+            <h4>4. First Order Linear Differential Equations</h4>
+            <br>
+            <p>When the equation is written in form</p>
+            <p>\[\frac{dy}{dx} + Py = Q,\space where\space P\space and\space Q\space are\space functions\space of\space x\space or , \\
+                \frac{dx}{dy} + Px = Q,\space where\space P\space and\space Q\space are\space functions\space of\space y\]
+            </p>
+            <p>Then these can be solved by - </p>
+            <p>\[Let\space Integrating\space Factor(I)\space =\space e^{\int P\,dx} (for\space first\space equation\space) or, \\
+                I = e^{\int P \,dy}(for\space second\space equation)\]
+            </p>
+            <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
         </div>
         <div class="collapse" id="partialdiffcollapse">
             <div class="form-group">
