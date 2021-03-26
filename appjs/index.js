@@ -186,8 +186,7 @@ function openit(id) {
         "#curve",
         "#coor",
         "#vector",
-        "#diffeqn",
-=======    
+        "#diffeqn", 
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
