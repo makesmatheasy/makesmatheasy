@@ -113,7 +113,7 @@ function subtractiom(){
 
  }
 
- function Multiplication(){
+ function multiplication1(){
 
      var n1 = parseInt(document.getElementById('one_mul').value);
      var d1 = parseInt(document.getElementById('two_mul').value);
