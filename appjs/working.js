@@ -387,6 +387,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#tangentbtn").click(function(){
+        openit("#tangent");
+        closenav();
+        clearall();
+    });
 });
 
 function loader(action) {

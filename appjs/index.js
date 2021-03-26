@@ -186,11 +186,11 @@ function openit(id) {
         "#convdiv",
         "#curve",
         "#coor",
-
         "#mean",
         "#bcd",
         "#vector",
         "#diffeqn",
+        "#tangent",
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
