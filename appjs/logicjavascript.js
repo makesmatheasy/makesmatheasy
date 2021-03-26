@@ -3562,7 +3562,7 @@ function sum_n_apsol(nval,rval,r1val)
         num = parseInt(a)+(i-1)*d;
         series += (num.toString() + ", ");
       }
-      printseries.innerHTML = "Arithmetic Progression: "+series;
+      printseries.innerHTML = "Arithmetic Progression: "+series.substring(0,series.length-2);
        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]" ;
        cal =  (n*(2*a+(n-1)*d))/2;
        res.innerHTML = `Result: ${cal}`;
@@ -3586,7 +3586,7 @@ function anotherap(){
     num += parseInt(d);
     series += (num.toString() + ", ");
  }
-  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series
+  document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0,series.length-2);
   document.getElementById("ltap").innerHTML = "Result: " + ans  
 }
 function amsol()
