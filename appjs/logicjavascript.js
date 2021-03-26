@@ -1571,10 +1571,10 @@ function solverightangletriangle() {
       var add2 = eval(String(base2 + height2));
       var add2sqrt = nerdamer.sqrt(add2).toString();
 
-      hypotemp  += "\\[H=\\sqrt{" + base + "^2" + "+" + height +"^2" + "}\\]";
-      hypotemp +="\\[H= \\sqrt{" + base2 + "+" + height2 + "}\\]";
-      hypotemp +="\\[H= \\sqrt{" + add2 + "}\\]";
-      hypotemp += "\\[H=" + eval(add2sqrt).toFixed(3) + "\\]";
+      hypotemp  += "\\[h=\\sqrt{" + base + "^2" + "+" + height +"^2" + "}\\]";
+      hypotemp +="\\[h= \\sqrt{" + base2 + "+" + height2 + "}\\]";
+      hypotemp +="\\[h= \\sqrt{" + add2 + "}\\]";
+      hypotemp += "\\[h=" + eval(add2sqrt).toFixed(3) + "\\]";
     hypotemp += "\\[Hypotenuse \\space of \\space Triangle \\space is \\space" +
       eval(add2sqrt).toFixed(3) + "\\]";
       hypooutput.innerHTML = hypotemp;
