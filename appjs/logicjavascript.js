@@ -1565,10 +1565,6 @@ function rhombussolve() {
   resultperi.innerHTML = "";
   var area = 0.5 * (d1*d2);
   var perimeter = 4 * a;
-  console.log("area");
-  console.log(area);
-  console.log("perimeter");
-  console.log(perimeter);
   if(d1!="" && d2!=""){
     document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Rhombus  \\space \\frac{1}{2} \\times" +d1+ "\\times"+ d2 +"\\ = "+area+"\\]";
     renderMathInElement(document.getElementById("resultofareac"));
@@ -1578,6 +1574,30 @@ function rhombussolve() {
     renderMathInElement(document.getElementById("resultofperi"));
   }else if(a==""){
     document.getElementById("resultofperi").innerHTML="Enter side value to calculate perimeter";
+  }
+}
+
+function Kitesolve() {
+  var p= document.getElementById("inputp").value;
+  var q= document.getElementById("inputq").value;
+  var a= document.getElementById("inputsidea").value;
+  var b= document.getElementById("inputsideb").value;
+  var resultareaKite = document.getElementById("resultofareaK");
+  var resultperiKite = document.getElementById("resultofperiK");
+  resultareaKite.innerHTML = "";
+  resultperiKite.innerHTML = "";
+  sum = parseInt(a)+ parseInt(b);
+  var area = 0.5 * (p*q);
+  var perimeter = 2 * sum;
+  if(p!="" && q!=""){
+    document.getElementById("resultofareaK").innerHTML="\\[Area \\space of \\space Kite  \\space \\space \\frac{1}{2} \\times" +p+ "\\times"+ q +"\\ = "+area+"\\]";
+    renderMathInElement(document.getElementById("resultofareaK"));
+  }
+  if (a!="" && b!=""){
+    document.getElementById("resultofperiK").innerHTML="\\[Perimeter \\space of \\space Kite  \\space \\ 2 \\times ("+a+ "+" +b+")\\ = "+perimeter+" \\]";
+    renderMathInElement(document.getElementById("resultofperiK"));
+  }else if(a=="" || b==""){
+    document.getElementById("resultofperiK").innerHTML="Enter side a and b both to calculate perimeter";
   }
 }
 
