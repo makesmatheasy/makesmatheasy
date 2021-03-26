@@ -168,7 +168,7 @@ function subtractiom(){
      document.getElementById('mixb1').innerHTML = d1;
      document.getElementById('mixb2').innerHTML = d1;
 
-     var top = n1*s*d1;
+     var top = n1+(s*d1);
      var bot = d1;
 
       document.getElementById('mixt').innerHTML = top;
