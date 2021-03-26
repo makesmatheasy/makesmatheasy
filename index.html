@@ -1505,6 +1505,44 @@
         </div>
         <!--End of Complex Calculations Section -->
 
+<!--Probability Section -->
+     <li class="list_menu_items" onclick="collapseit('probabilitytoggle'); changeImage9();"><a
+                style="cursor: pointer;font-size: 1rem;">Probability<img class="dropdownlogo"
+                                                                             src="icons/down-chevron.svg"
+                                                                             id="imgClickAndChange9"></a></li>
+        <div class="collapse" id="probabilitytoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="probabilitycollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Simple Probability
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('SimpleProbability','#probabilitycollapse','c','probabilityfav')"><img
+                                     id="probabilityfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div class="dropdown-divider"></div>
+        </div>
+
+
+ <!--End of Probability Section -->
+
+
+
+
+
+
+
+
+
+
+
         <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
         <li class="list_menu_items"><a id="contactbutton"
                                        style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
@@ -7528,6 +7566,48 @@
     </div>
 </div>
 <!--roman numeral end-->
+<!--Simple Probability-->
+
+       <div class="collapse" id="probabilitycollapse">
+            <h1>Simple Probability</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes</h5>
+                        <input type="number" value="0" class="form__field" id="favourable">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                          <h5>Enter number of possible outcomes</h5>
+                        <input type="number" value="1" class="form__field" id="total">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="computeprobability()">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="probability-result"></p>
+            </div>
+    </div>
+
+
+
+
+<!--End of Simple Probability-->
+
+
+
+
+
+
+
+
+
 
 <!--------------------------------------------------------->
 <!--    speech recognition start -->

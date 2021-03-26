@@ -4134,16 +4134,7 @@ function convertBinOct() {
   result.innerHTML = parseInt(input, from).toString(to);
 }
 
-//----------------------------
 
-
-
-  34  appjs/logicjavascript.js 
-Viewed
-@@ -4131,6 +4131,40 @@ function convertBinOct() {
-
-
-//----------------------------	//----------------------------
 
 
 //Function that performs conversion of  binary to bcd
@@ -4290,6 +4281,27 @@ function datecal()
  }
 }
 //--------------------------------------------------------------------------------
+function computeprobability()
+{
+
+   var favour=document.getElementById("favourable").value;
+
+   var nettotal=document.getElementById('total').value;
+   let result = document.getElementById("probability-result");
+
+     
+  result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+}
+
+
+
+
+
+
+
+
+
+
 
 function angleplot()
 {
