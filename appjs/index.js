@@ -159,6 +159,7 @@ function openit(id) {
         "#curconcal",
         "#factorial",
         "#log_values",
+        "#log-collapse",
         "#pandc",
         "#interest",
         "#decimal-binary",
