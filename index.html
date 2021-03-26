@@ -587,6 +587,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="tangentbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Tangent and Normal</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Tangent and Normal','#tangent','c','tangentimgfav')"><img
+                                        id="tangentimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="vectorbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Calculus</a>
                         </td>
@@ -1385,6 +1400,23 @@
 
 
             <!--end-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bcdbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">BCD Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('BCD Code Converter','#bcd','c','bcd-imgfav')"><img
+                                        id="bcd-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             <li>
@@ -2832,6 +2864,32 @@
                 I = e^{\int P \,dy}(for\space second\space equation)\]
             </p>
             <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
+        </div>
+        <div class="collapse" id="tangent">
+            <h2 style="text-align: center;">Tangent & Normal</h2>
+            <br><br>
+            <h4>Things To Remember</h4>
+            <br>
+            <p style="text-align: center;">(a) The value of the derivative at P(x<sub>1</sub>,y<sub>1</sub>) gives the slope of the tangent of the curve at P. Symbolically <br> 
+            </p>
+            <p>\[\space f'(x_{1}) \space = \frac{dy}{dx}\Big]_{(x_{1},y_{1})} = Slope \space of \space tangent \space at \space P(x_{1},y_{1}) \space = m \]
+            </p>
+            <br>
+            <p style="text-align: center;">(b) Equation of tangent at (x<sub>1</sub>,y<sub>1</sub>) is:
+            <p>\[ y \space - \space y_{1} = \frac{dy}{dx}\Big]_{(x_{1},y_{1})} \space (x-x_{1}) \]
+            </p>
+            <br>
+            <p style="text-align: center;">(c) Equation of normal at (x<sub>1</sub>,y<sub>1</sub>) is :</p>
+            <p>\[ y \space - \space y_{1} \space = -\frac{1}{\frac{dy}{dx}\Big]_{(x_{1},y_{1})}} \space (x-x_{1}) \]</p>
+            <p style="text-align: center;">(d) If the Angle of intersection between two curves is 90<span>&#176;</span> then<br>  they are called ORTHOGONAL curves </p>
+            <br>
+            <h4>Length of Tangent, Subtangent, Normal & Subnormal.</h4>
+            <img style="margin-left: 200px;" src="images/tangent.png" alt="Tangent-Normal">
+            <p>\[Length \space of \space the \space tangent(PT) \space = \space \frac{y_{1}\sqrt{1+[f'(x_{1})]^2}}{f'(x_{1})}\]</p>
+            <p>\[Length \space of \space Subtangent \space (MT) \space = \space \frac{y_{1}}{f'(x_{1})} \]</p>
+            <p>\[Length \space of \space Normal \space (PN) \space = y_{1}\sqrt{1+[f'(x_{1})]^2}\]</p>
+            <p>\[Length \space of \space Subnormal \space (MN) \space = \space y_{1}f'(x_{1})\]</p>
+            
         </div>
         <div class="collapse" id="partialdiffcollapse">
             <div class="form-group">
@@ -5627,6 +5685,28 @@
         </div>
         <!-- End of Octal / Binary -->
 
+         <!-- Start of bcd convertor -->
+        <div>
+            <div class="collapse" id="bcd">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Binary</h5>
+
+                        <input type="number" id="bcd-input" value="0" class="form__field"
+                               oninput="convertbcd()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>BCD</h5>
+
+                    </div>
+                    <label class="form__group" id="bcd-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of bcd convertor -->
+          
         <!-- Start of grey convertor -->
         <div>
             <div class="collapse" id="grey-bin">
@@ -5644,13 +5724,14 @@
                 <div class="col-6">
                     <div class="form-group">
                         <h5>To</h5>
-                        
+
                     </div>
                     <label class="form__group" id="grey-result">0</label>
                 </div>
             </div>
         </div>
         <!-- End of grey convertor -->
+          
 
         <!--Start Binary to Hexadecimal-->
         <div>

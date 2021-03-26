@@ -334,6 +334,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#bcdbtn").click(function(){
+        openit("#bcd");
+        closenav();
+        clearall();
+    });
+
 	//Function of collapsing binary/hexadecimal section on click
 	$("#binary-to-hexadecimal-btn").click(function(){
         openit("#binary-hexadecimal");
@@ -378,6 +384,11 @@ $(document).ready(function () {
     });
     $("#meanbtn").click(function(){
         openit("#mean");
+        closenav();
+        clearall();
+    });
+    $("#tangentbtn").click(function(){
+        openit("#tangent");
         closenav();
         clearall();
     });
