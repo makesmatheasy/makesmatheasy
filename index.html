@@ -6138,12 +6138,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center">Area</h5>
-                                <p class="text-center">\[A = \frac{1}{2} \times b \times h\]</p>
-                                <div class="dropdown-divider"></div>
                                 <h5 class="text-center">Perimeter</h5>
                                 <p class="text-center">\[P = a+b+c\]</p>
                                 <div class="dropdown-divider"></div>
+				<h5 class="text-center">Semi-Perimeter</h5>
+                                        <p class="text-center">\[s = \frac{a+b+c}{2} \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = \sqrt {s(s-a)(s-b)(s-c)}\]</p>
+                                        <div class="dropdown-divider"></div>
                                 <h5 class="text-center">Height</h5>
                                 <p class="text-center">\[h = 2 \times \frac{A}{b}\]</p>
                             </div>
@@ -6164,9 +6167,9 @@
                                id="inputsecondside" oninput="solvescalenetriangle();">
                         <input class="form__field" type="number" placeholder="Enter Third Side (c)"
                                id="inputthirdside" oninput="solvescalenetriangle();">
-                        <p class="stopwrap" id="resultofareast" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofperist" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofheightst" style="font-family:mathfont;"></p>
+                         <p class="stopwrap" id="resultofperist" style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofsemiperist" style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofareast" style="font-family:mathfont;"></p>
                     </div>
                     <!-- TILL HERE -->
                 </div>
@@ -6221,9 +6224,9 @@
                         <input class="form__field" type="number" placeholder="Enter Non-Equalivalent Side (b)"
                                id="inputitside" oninput="isoscelestrianglearea();">
                         <br>
+			<p class="stopwrap" id="resultofheightit" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofareait" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofperiit" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofheightit" style="font-family:mathfont;"></p>
+			<p class="stopwrap" id="resultofperiit" style="font-family:mathfont;"></p>
                     </div>
                     <!-- TILL HERE -->
                 </div>
@@ -6325,8 +6328,9 @@
                                id="inputheightrighttriangle"
                                oninput="solverightangletriangle();">
                         <p class="stopwrap" id="resultofarearat" style="font-family:mathfont;"></p>
+			<p class="stopwrap" id="resultofhyporat" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperirat" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofsiderat" style="font-family:mathfont;"></p>
+                       
                     </div>
                     <!---TILL-->
                 </div>
