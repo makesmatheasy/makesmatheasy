@@ -4303,6 +4303,28 @@ function datecal()
 }
 //--------------------------------------------------------------------------------
 
+
+function computeprobability()
+{
+
+   var favour=document.getElementById("favourable").value;
+
+   var nettotal=document.getElementById('total').value;
+   let result = document.getElementById("probability-result");
+
+     
+  result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+}
+
+
+
+
+
+
+
+
+
+
 function angleplot()
 {
 

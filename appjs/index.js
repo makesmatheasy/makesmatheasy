@@ -191,6 +191,8 @@ function openit(id) {
         "#vector",
         "#diffeqn",
         "#tangent",
+        "#probabilitycollapse",
+
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {

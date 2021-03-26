@@ -392,6 +392,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#probabilitycollapsebtn").click(function(){
+        openit("#probabilitycollapse");
+        closenav();
+        clearall();
+    });
 });
 
 function loader(action) {
