@@ -34,8 +34,12 @@ $(document).ready(function () {
          openit("#fractions");
          closenav();
          clearall();
-     })
-
+     });
+    $("#logValues").click(function(){
+        openit("#log_values");
+        closenav();
+        clearall();
+    });
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
@@ -68,7 +72,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    
+
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();
@@ -97,13 +101,13 @@ $(document).ready(function () {
         openit("#defintegration-idencollapse");
         closenav();
         clearall();
-    })    
+    })
 
     $("#3d-solid-btn").click(function () {
         openit("#3d-solid");
         closenav();
         clearall();
-    })    
+    })
 
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
@@ -125,7 +129,7 @@ $(document).ready(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    }) 
+    })
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
@@ -140,17 +144,17 @@ $(document).ready(function () {
         openit("#vector");
         closenav();
         clearall();
-    })  
+    })
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();
         clearall();
-    }) 
+    })
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
         clearall();
-    })  
+    })
     $("#consimbtn").click(function () {
         openit("#consim");
         closenav();
@@ -247,7 +251,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    
+
     $("#spiconbtn").click(function () {
         openit("#spiconcal");
         closenav();
@@ -267,36 +271,36 @@ $(document).ready(function () {
         clearall();
     });
 
-    // Prime 
+    // Prime
     $("#primebtn").click(function () {
         openit("#prime");
         closenav();
         clearall();
-    }); 
-  
+    });
+
 
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
         clearall();
-    });  
-     // Sumof nterms of an Arithmetic Progression 
+    });
+     // Sumof nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
         closenav();
         clearall();
-    }); 
+    });
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
         closenav();
         clearall();
-    }); 
+    });
     // algebraic equations formula lists
     $("#algebraic_formulacollapsebtn").click(function () {
     openit("#algebraic_formulascollapse");
     closenav();
     clearall();
-     }); 
+     });
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
@@ -330,6 +334,18 @@ $(document).ready(function () {
 
     $("#stats-btn").click(function(){
         openit("#stats");
+        closenav();
+        clearall();
+    });
+
+    $("#log-collapsebtn").click(function(){
+      openit("#log-collapse");
+      closenav();
+      clearall();
+  });
+
+    $("#bcdbtn").click(function(){
+        openit("#bcd");
         closenav();
         clearall();
     });
@@ -378,6 +394,16 @@ $(document).ready(function () {
     });
     $("#meanbtn").click(function(){
         openit("#mean");
+        closenav();
+        clearall();
+    });
+    $("#tangentbtn").click(function(){
+        openit("#tangent");
+        closenav();
+        clearall();
+    });
+    $("#probabilitycollapsebtn").click(function(){
+        openit("#probabilitycollapse");
         closenav();
         clearall();
     });

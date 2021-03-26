@@ -587,6 +587,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="tangentbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Tangent and Normal</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Tangent and Normal','#tangent','c','tangentimgfav')"><img
+                                        id="tangentimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="vectorbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Calculus</a>
                         </td>
@@ -813,6 +828,25 @@
                 </table>
 
             </li>
+
+
+        <li>
+               <table class="table">
+                   <tr>
+                       <td style="border-top: none;">
+                           <a id="log-collapsebtn"
+                              style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm Properties
+                           </a>
+                       </td>
+                       <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Logarithm Properties','#log-collapse','c','logimgfav')"><img
+                                       id="logimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                       </td>
+                   </tr>
+               </table>
+           </li>
 
             <li>
             <table class="table">
@@ -1385,6 +1419,23 @@
 
 
             <!--end-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bcdbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">BCD Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('BCD Code Converter','#bcd','c','bcd-imgfav')"><img
+                                        id="bcd-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             <li>
@@ -1472,6 +1523,34 @@
             <div class="dropdown-divider"></div>
         </div>
         <!--End of Complex Calculations Section -->
+
+        <!--Probability Section -->
+     <li class="list_menu_items" onclick="collapseit('probabilitytoggle'); changeImage9();"><a
+                style="cursor: pointer;font-size: 1rem;">Probability<img class="dropdownlogo"
+                                                                             src="icons/down-chevron.svg"
+                                                                             id="imgClickAndChange9"></a></li>
+        <div class="collapse" id="probabilitytoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="probabilitycollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Simple Probability
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('SimpleProbability','#probabilitycollapse','c','probabilityfav')"><img
+                                     id="probabilityfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div class="dropdown-divider"></div>
+        </div>
+
+
+ <!--End of Probability Section -->
 
         <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
         <li class="list_menu_items"><a id="contactbutton"
@@ -2493,6 +2572,38 @@
                 </div>
             </div>
 
+
+                            <div class="collapse" id="log-collapse">
+                        <div class="stopwrap">
+                        	 <div class="coll">
+                                <div class="left">
+                                <center>    <h2>Properties of Logarithm</h2>  </center>
+                                    <br><br>
+                                    <h4>Principle Properties of Logarithm</h4>
+                                    <p>\[Let\, m\, and\, n\, be\, arbitrary\, positive\, numbers\, ,\, a\,>\,0\, ,\, a\, \mathrel{\mathtt{!=}}\, 1\, , \, b\,>\,0\, ,\,b\mathrel{\mathtt{!=}}\,1\,and\space\,α\,,\,β\] \[\,be\,any\,real\,numbers\,,\,then\]  </p>
+                                   	<p>\[1)\space\,log_a\,(mn)\space=\space\,log_a\,m\,+\,log_a\,n\]</p>
+                                    <p>\[2)\space\,log_a\,(\,\frac{m}{n}\,)\,\space=\space\,log_a\,m\,-\,log_a\,n\]</p>
+                                    <p>\[3)\space\,log_a\,m^α\space=\space\,α\,log_a\,m\]</p>
+                                    <p>\[4)\space\,log_{a\space^β}\,m\space=\space\frac{1}{β}\,log_a\,m\]</p>
+                                    <p>\[5)\space\,log_b\,m\space=\space\frac{log_a\,m}{log_a\,b}\]</p>
+                                    </div>
+                                </div>
+                                <div class="coll">
+                               <div class="left">
+                                   <h4>Extra properties of Logarithm</h4>
+                                   <p>\[1)\space\,a^{{log_b}\,x}\space=\space\,x^{{log_b}\,a}\,,\,b\,\mathrel{\mathtt{!=}}\,1\,,\,a\,,\,b\,,\,x\,are\,positive\,numbers\]</p>
+                                    <p>\[2)\space\,a^{{log_a}\,x}\space=\space\,x\,,\,a\,>\,0\,,\,a\,\mathrel{\mathtt{!=}}\,1\,,\,x\,>\,0\]</p>
+                                    <p>\[3)\space\,log_{a\space^k}\,x\space=\space\frac{1}{k}\,log_a\,x\,,\,a\,>\,0\,,\,a\,\mathrel{\mathtt{!=}}\,1\,,\,x\,>\,0\]</p>
+                                    <p>\[4)\space\,log_a\,x^{2k}\space=\space\,2k\,log_a\,|x|\,,\,a\,>\,0\,,\,a\,\mathrel{\mathtt{!=}}\,1\,,\,k\,\in\,I\]</p>
+                                    <p>\[5)\space\,log_{a\space^{2k}}\,x\space=\space\frac{1}{2k}\,log_{|a|}\,x\,,\,x\,>\,0\,,\,a\,>\,0\,,\,a\,\mathrel{\mathtt{!=}}\,±1\space\,and\space\,k\,\in\,I\,\sim\{\,0\}\]</p>
+                                    <p>\[6)\space\,log_{a\space^α}\,x^β\space=\space\frac{β}{α}\,log_a\,x\,,\,x\,>\,0\,,\,a\,>\,0\,,\,a\,\mathrel{\mathtt{!=}}\,1\,,\,α\,\mathrel{\mathtt{!=}}\,0\]</p>
+                                    <p>\[7)\space\,a^{{log_b}\,a}\space=\space\sqrt{a}\,,\,if\,b\,=\,a^2\,,\,a\,>\,0\,,\,b\,>\,0\,,\,b\,\mathrel{\mathtt{!=}}\,1\]</p>
+                                    <p>\[8)\space\,a^{{log_b}\,a}\space=\space\,a^2\,,\,if\,b\,=\sqrt{a}\,,\,a\,>\,0\,,\,b\,>\,0\,,\,b\,\mathrel{\mathtt{!=}}\,1\]</p>
+                             </div>
+                             </div>
+                        </div>
+
+
             <div class="collapse" id="stats">
                 <div class="stopwrap">
                     <div class="coll">
@@ -2818,7 +2929,7 @@
             <br>
             <h4>3. Homogenous Equations</h4>
             <br>
-            <p style="text-align: center;">A differential equation, M dx + N dy = 0, is homogeneous if replacement of x and y by λx and λy results in the original function 
+            <p style="text-align: center;">A differential equation, M dx + N dy = 0, is homogeneous if replacement of x and y by λx and λy results in the original function
                 multiplied by some power of λ, where the power of λ is called the degree of the original function. If so, follow these steps.
             </p>
             <p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
@@ -2835,6 +2946,32 @@
                 I = e^{\int P \,dy}(for\space second\space equation)\]
             </p>
             <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
+        </div>
+        <div class="collapse" id="tangent">
+            <h2 style="text-align: center;">Tangent & Normal</h2>
+            <br><br>
+            <h4>Things To Remember</h4>
+            <br>
+            <p style="text-align: center;">(a) The value of the derivative at P(x<sub>1</sub>,y<sub>1</sub>) gives the slope of the tangent of the curve at P. Symbolically <br>
+            </p>
+            <p>\[\space f'(x_{1}) \space = \frac{dy}{dx}\Big]_{(x_{1},y_{1})} = Slope \space of \space tangent \space at \space P(x_{1},y_{1}) \space = m \]
+            </p>
+            <br>
+            <p style="text-align: center;">(b) Equation of tangent at (x<sub>1</sub>,y<sub>1</sub>) is:
+            <p>\[ y \space - \space y_{1} = \frac{dy}{dx}\Big]_{(x_{1},y_{1})} \space (x-x_{1}) \]
+            </p>
+            <br>
+            <p style="text-align: center;">(c) Equation of normal at (x<sub>1</sub>,y<sub>1</sub>) is :</p>
+            <p>\[ y \space - \space y_{1} \space = -\frac{1}{\frac{dy}{dx}\Big]_{(x_{1},y_{1})}} \space (x-x_{1}) \]</p>
+            <p style="text-align: center;">(d) If the Angle of intersection between two curves is 90<span>&#176;</span> then<br>  they are called ORTHOGONAL curves </p>
+            <br>
+            <h4>Length of Tangent, Subtangent, Normal & Subnormal.</h4>
+            <img style="margin-left: 200px;" src="images/tangent.png" alt="Tangent-Normal">
+            <p>\[Length \space of \space the \space tangent(PT) \space = \space \frac{y_{1}\sqrt{1+[f'(x_{1})]^2}}{f'(x_{1})}\]</p>
+            <p>\[Length \space of \space Subtangent \space (MT) \space = \space \frac{y_{1}}{f'(x_{1})} \]</p>
+            <p>\[Length \space of \space Normal \space (PN) \space = y_{1}\sqrt{1+[f'(x_{1})]^2}\]</p>
+            <p>\[Length \space of \space Subnormal \space (MN) \space = \space y_{1}f'(x_{1})\]</p>
+
         </div>
         <div class="collapse" id="partialdiffcollapse">
             <div class="form-group">
@@ -2995,6 +3132,24 @@
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
 
+            <h1>Find polar Represantaion of complex number</h1>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part : &nbsp; &nbsp;  </label>
+                <input type="number" id="cpreal" class="form__field" placeholder="Real"
+                       style="width:3rem;display:inline;"> &nbsp; &nbsp;
+                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+                <input type="number" id="cpimg" class="form__field" placeholder="Imag"
+                       style="width:3rem;display:inline;">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="polar()">
+                    Find
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="compresult"></p>
+            </div>
+
             <h1>Complex Calculations for 2 complex numbers.</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of first number :</label>
@@ -3037,7 +3192,7 @@
             <br><br>
             <h4>1. Gauss Divergence Theorem</h4>
             <p>The divergence theorem states that the surface integral of the normal component of a vector point function “F”
-                over a closed surface “S” is equal to the volume integral of the divergence of F,  
+                over a closed surface “S” is equal to the volume integral of the divergence of F,
                 taken over the volume “V” enclosed by the surface S.
             </p>
             <p>\[\iint_S F.n \,dS = \iiint_v divF\,dV\]</p>
@@ -3864,7 +4019,7 @@
 
             </div>
         </div>
-        
+
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
             <div class="stopwrap">
@@ -4289,32 +4444,36 @@
         <div class="collapse" id="solutiontri">
             <h2 style="text-align: center;">Solution of Triangles</h2>
             <br>
-            <p>\[Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} = \frac{c}{sinC}\]</p>
-            <p>\[Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
-            <p>\[Projection\space Formula : a = b cos C + c cos B \]</p>
-            <p>\[Napier's\space Analogy : tan\frac{B-C}{2} = (\frac{b-c}{b+c}) cot\frac{A}{2}\]</p>
-            <p>\[Half\space Angle\space Formula: sin\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{bc}\] </p>
+            <p>\[1) \space Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} = \frac{c}{sinC}\]</p>
+            <p>\[2) \space Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
+            <p>\[3) \space Projection\space Formula : a = b cos C + c cos B \]</p>
+            <p>\[4) \space Napier's\space Analogy : tan\frac{B-C}{2} = (\frac{b-c}{b+c}) cot\frac{A}{2}\]</p>
+            <p>\[5) \space Half\space Angle\space Formula: sin\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{bc}\] </p>
             <p>\[cos\frac{A}{2} = \sqrt\frac{(s)(s-a)}{bc}\]</p>
             <p>\[tan\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{(s)(s-a)}\]</p>
-            <p>\[Area\space of\space \triangle : \frac{1}{2}absinC = \frac{1}{2}bcsinA = \frac{1}{2}acsinB \]</p>
-            <p>\[If\space D\space be\space the\space point\space on\space the\space side\space BC\space of a triangle\space ABC\space which\space divides\space the\space side\space BC\space in\space the\space ratio\space m: n,
+            <p>\[6) \space Area\space of\space \triangle : \frac{1}{2}absinC = \frac{1}{2}bcsinA = \frac{1}{2}acsinB \]</p>
+            <p>\[8) \space m-n \space Theorem \space : \space If\space D\space be\space the\space point\space on\space the\space side\space BC\space of a triangle\space ABC\space which\space divides\space the\space side\space BC\space in\space the\space ratio\space m: n,
                 \\If\space BD:DC = m:n, then\\
                 (m+n) cot θ = m cot α- n cot β = n cot B – m cot C\]
             </p>
-            <p>\[Radius\space of\space CircumCircle : R = \frac{a}{2sinA} = \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
-            <p>\[Radius\space of\space InCircle : r_1 = \frac{\triangle}{s-a}\]</p>
-            <p>\[r_1 = stan\frac{A}{2}\]</p>
-            <p>\[r_1 = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
-            <p>\[Orthocentre\space and\space Pedal\space triangle : \\
-                The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space
-                altitudes\space is\space called\space the\space Pedal\space Triangle.\\
-                The\space sides\space are\space a cos A = R sin 2A \\
-                a cos B = R sin 2B\\
-                a cos C = R sin 2C \]
-            </p>
-            <p>\[circumcentre (O) : O_A\space =\space R\space\space and\space\space O_A\space =\space R cos A\]</p>
-            <p>\[Excentre (I_1): I_1A\space =\space r_1\space cosec\frac{A}{2}\]</p>
+            <img style="margin-left: 450px;" src="images/Mn.png">
+            <p>\[9) \space Radius\space of\space CircumCircle : R = \frac{a}{2sinA} = \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
+            <img style="margin-left: 450px;" src="images/circumcircle.png">
+            <p>\[10) \space Radius\space of\space InCircle : r_1 = \frac{\triangle}{s-a} \space = stan\frac{A}{2} \space = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
+            <img style="margin-left: 420px;" src="images/incircle.png">
+            <p>\[11) \space Orthocentre\space and\space Pedal\space triangle : \]</p>
+            <img style="margin-left: 420px;" src="images/pedal.png">
+            <p>  \[ The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space
+                altitudes\space is\space called\space the\space Pedal\space Triangle.\]
+                \[a) \space The \space sides\space are\space a cos A = R sin 2A , \space a cos B = R sin 2B \space  a cos C = R sin 2C\]</p>
+            <p>\[b) \space The \space distances \space of \space the \space orthocenter \space from \space the \space angular \space points \space of \space the \triangle ABC \space are \space \]\[2RcosA, \space 2RcosB, \space and \space 2RcosC.\]</p>
+            <p>\[c) \space The \space distance \space of \space orthocenter \space from \space sides \space are\]\[ 2RcosB \space cosC, \space 2RcosCcosA \space and 2RcosCcosA.\]</p>
+            <p>\[d) \space Area \space of \space Pedal \space Triangle \space = \space 2 \triangle cosAcosBcosC \space = \frac{1}{2}R^2sin2Asin2Bsin2C \]</p>
+            <p>\[e) \space Circumradii \space of \space pedal \space triangle \space = \space \frac{R}{2}\]</p><br>
+            <p>\[12) \space Important Results\]</p>
+            <p>\[Circumcentre (O) : O_A\space =\space R\space\space and\space\space O_A\space =\space R cos A\]</p>
             <p>\[Orthocentre: H_A = 2R cos A and H_A = 2R cos B cos C\]</p>
+            <p>\[Excentre (I_1): I_1A\space =\space r_1\space cosec\frac{A}{2}\]</p>
             <p>\[Centroid(G) :G_A =\sqrt[3]{2b^2+2c^2-a^2}\]</p>
         </div>
 
@@ -5006,6 +5165,10 @@
                            href="#">Circle</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
+                           href="#">Kite</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#line" style="text-decoration:none;" href="#">Line</a>
                     </td>
                 </tr>
@@ -5320,7 +5483,7 @@
             </form>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                    align="right"></p>
-            
+
             <h5 id="am"></h5>
             <br><br><br>
             <h4>Geometric Mean</h4><br>
@@ -5612,6 +5775,28 @@
         </div>
         <!-- End of Octal / Binary -->
 
+         <!-- Start of bcd convertor -->
+        <div>
+            <div class="collapse" id="bcd">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Binary</h5>
+
+                        <input type="number" id="bcd-input" value="0" class="form__field"
+                               oninput="convertbcd()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>BCD</h5>
+
+                    </div>
+                    <label class="form__group" id="bcd-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of bcd convertor -->
+
         <!-- Start of grey convertor -->
         <div>
             <div class="collapse" id="grey-bin">
@@ -5629,13 +5814,14 @@
                 <div class="col-6">
                     <div class="form-group">
                         <h5>To</h5>
-                        
+
                     </div>
                     <label class="form__group" id="grey-result">0</label>
                 </div>
             </div>
         </div>
         <!-- End of grey convertor -->
+
 
         <!--Start Binary to Hexadecimal-->
         <div>
@@ -5697,7 +5883,7 @@
                           onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
                             src="icons/crossed.svg" height="1.25rem" alt="crossed-icon"></span>
                     <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=1.875rem></span>-->
-                    
+
 					<span id="percentage">%</span>
                     <span id="one">1</span>
                     <span id="two">2</span>
@@ -5926,6 +6112,64 @@
                         <br>
                         <p class="stopwrap" id="resultofareac" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperi" style="font-family:mathfont;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kite</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area of Kite</h5>
+                                <p class="text-center">\[A=\frac{1}{2} \times p \times q\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter of Kite</h5>
+                                <p class="text-center">\[P= 2 \times (a + b)\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Side (a) </h5>
+                                <p class="text-center">\[a= \frac{P}{2} - b\]</p>
+                                <h5 class="text-center">Side (b) </h5>
+                                <p class="text-center">\[b= \frac{P}{2} - a\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/kite.jpg" class="img-fluid">
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal(p) of Kite</h5>
+                                <p class="text-center">\[p= 2 \times \frac{A}{q}\]</p>
+                                <h5 class="text-center">Diagonal(p) of Kite</h5>
+                                <p class="text-center">\[q= 2 \times \frac{A}{p}\]</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number" placeholder="Enter Diagonal(p) of Kite"
+                               id="inputp" oninput="Kitesolve()">
+                        <input class="form__field" type="number" placeholder="Enter Diagonal(q) of Kite"
+                               id="inputq" oninput="Kitesolve()">
+                        <input class="form__field" type="number" placeholder="Enter side(a) of Kite"
+                               id="inputsidea" oninput="Kitesolve()">
+                        <input class="form__field" type="number" placeholder="Enter side(b) of Kite"
+                               id="inputsideb" oninput="Kitesolve()">
+                        <br>
+                        <p class="stopwrap" id="resultofareaK" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperiK" style="font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -7450,6 +7694,55 @@
     </div>
 </div>
 <!--roman numeral end-->
+
+
+<!--Simple Probability-->
+
+       <div class="collapse" id="probabilitycollapse">
+            <h1>Simple Probability</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes</h5>
+                        <input type="number" value="0" class="form__field" id="favourable">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                          <h5>Enter number of possible outcomes</h5>
+                        <input type="number" value="1" class="form__field" id="total">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="computeprobability()">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="probability-result"></p>
+            </div>
+    </div>
+
+
+
+
+<!--End of Simple Probability-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--------------------------------------------------------->
 <!--    speech recognition start -->

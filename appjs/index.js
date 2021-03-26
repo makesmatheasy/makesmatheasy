@@ -159,6 +159,7 @@ function openit(id) {
         "#curconcal",
         "#factorial",
         "#log_values",
+        "#log-collapse",
         "#pandc",
         "#interest",
         "#decimal-binary",
@@ -186,10 +187,13 @@ function openit(id) {
         "#convdiv",
         "#curve",
         "#coor",
-
         "#mean",
+        "#bcd",
         "#vector",
         "#diffeqn",
+        "#tangent",
+        "#probabilitycollapse",
+
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {

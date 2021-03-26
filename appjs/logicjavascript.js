@@ -1565,10 +1565,6 @@ function rhombussolve() {
   resultperi.innerHTML = "";
   var area = 0.5 * (d1*d2);
   var perimeter = 4 * a;
-  console.log("area");
-  console.log(area);
-  console.log("perimeter");
-  console.log(perimeter);
   if(d1!="" && d2!=""){
     document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Rhombus  \\space \\frac{1}{2} \\times" +d1+ "\\times"+ d2 +"\\ = "+area+"\\]";
     renderMathInElement(document.getElementById("resultofareac"));
@@ -1578,6 +1574,30 @@ function rhombussolve() {
     renderMathInElement(document.getElementById("resultofperi"));
   }else if(a==""){
     document.getElementById("resultofperi").innerHTML="Enter side value to calculate perimeter";
+  }
+}
+
+function Kitesolve() {
+  var p= document.getElementById("inputp").value;
+  var q= document.getElementById("inputq").value;
+  var a= document.getElementById("inputsidea").value;
+  var b= document.getElementById("inputsideb").value;
+  var resultareaKite = document.getElementById("resultofareaK");
+  var resultperiKite = document.getElementById("resultofperiK");
+  resultareaKite.innerHTML = "";
+  resultperiKite.innerHTML = "";
+  sum = parseInt(a)+ parseInt(b);
+  var area = 0.5 * (p*q);
+  var perimeter = 2 * sum;
+  if(p!="" && q!=""){
+    document.getElementById("resultofareaK").innerHTML="\\[Area \\space of \\space Kite  \\space \\space \\frac{1}{2} \\times" +p+ "\\times"+ q +"\\ = "+area+"\\]";
+    renderMathInElement(document.getElementById("resultofareaK"));
+  }
+  if (a!="" && b!=""){
+    document.getElementById("resultofperiK").innerHTML="\\[Perimeter \\space of \\space Kite  \\space \\ 2 \\times ("+a+ "+" +b+")\\ = "+perimeter+" \\]";
+    renderMathInElement(document.getElementById("resultofperiK"));
+  }else if(a=="" || b==""){
+    document.getElementById("resultofperiK").innerHTML="Enter side a and b both to calculate perimeter";
   }
 }
 
@@ -3403,6 +3423,22 @@ function tempcon() {
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
 
+function polar()
+{
+  var r = parseInt(document.getElementById("cpreal").value);
+  var i = parseInt(document.getElementById("cpimg").value);
+  var result= document.getElementById("compresult");
+  var x = (Math.sqrt((r*r)+(i*i)));
+  if(!Number.isInteger(x))
+  {
+    var j = (r*r)+(i*i);
+    x = "&#8730;  "+ j ;
+  }
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  x=x+" cos( π" +y+") + i sin ( π"+ y+ ")";
+  result.innerHTML = x;
+}
+
 // simple and compound interest
 //-----------------------------------------------------
 function simple_interest() {
@@ -4136,6 +4172,47 @@ function convertBinOct() {
 
 //----------------------------
 
+
+
+
+//----------------------------	//----------------------------
+
+
+//Function that performs conversion of  binary to bcd
+
+function convertbcd() {
+
+  var input = document.getElementById("bcd-input").value;
+  let result = document.getElementById("bcd-result");
+  var x = "_";
+
+   for(var i = 0; i < input.length; i++) 
+       { 
+         var y = parseInt(input[i]).toString(2)
+         if(y.length == 1) 
+         {
+            x = x+ "000" +y + "_   ";
+         }
+         if(y.length == 2) 
+         {
+            x = x+ "00" +y +"_   ";
+         }
+         if(y.length == 3) 
+         {
+            x = x+ "0" +y+"_   ";
+         }
+         if(y.length == 4) 
+         {
+            x = x+  +y+"_   ";
+         }
+
+       }
+
+  result.innerHTML = x;
+}
+
+//----------------------------
+
 //Function that performs conversion of grey to binary and viceversa
 function reverseString(str) {
   return str.split("").reverse().join("");
@@ -4150,18 +4227,17 @@ function convertgrey() {
   if (fromBase == "Binary") 
     for (var i = 1; i < input.length; i++) 
         x +=parseInt(input[i-1]^input[i]).toString();
-  
+
   else 
     for (var i = 1; i < input.length; i++) 
       x +=parseInt(x[i-1]^input[i]).toString();
-  
+
 
 
   result.innerHTML = x;
 }
 
 //----------------------------
-
 //Function that performs conversion of Binary to Hexadecimal and viceversa
 function convertBinhex() {
   const fromBase = document.getElementById("binary-hexadecimal-select1").value;
@@ -4246,6 +4322,28 @@ function datecal()
  }
 }
 //--------------------------------------------------------------------------------
+
+
+function computeprobability()
+{
+
+   var favour=document.getElementById("favourable").value;
+
+   var nettotal=document.getElementById('total').value;
+   let result = document.getElementById("probability-result");
+
+     
+  result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+}
+
+
+
+
+
+
+
+
+
 
 function angleplot()
 {
