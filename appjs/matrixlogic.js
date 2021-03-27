@@ -517,9 +517,8 @@ function soperation(value) {
         miandcofactors();
     } else if (value == "Determinant") {
         laplacedeterminant();
-    }
+    } 
 }
-
 
 //rank calculation
 function rank(){
