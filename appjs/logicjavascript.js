@@ -4544,14 +4544,18 @@ function computeprobability()
 
    
 
-   if(favour>nettotal)
+   if(favour<0 || nettotal<0)
    {
-        result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
+        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
 
+     }
+     else if(favour>nettotal)
+     {
+      result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
      }
      else
      {
-        result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+        result.innerHTML = "The probability of the event is : " + (favour/nettotal).toFixed(3);
      }
   
    
@@ -4572,33 +4576,40 @@ function computejointprobability()
     let result3 = document.getElementById("probability-result3");
      var check=true;
 
-   if((document.getElementById("favourable1").value) >(document.getElementById('total1').value))
+   if((document.getElementById("favourable1").value) > 0 && (document.getElementById('total1').value)>0 && (document.getElementById("favourable2").value) > 0 && (document.getElementById('total2').value) > 0)
    {
-        result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
-           check=false;
-     }
-     else
-     {
-         result1.innerHTML="The probability of first event is :-" + (probability1).toFixed(3);
-     }
+    if((document.getElementById("favourable1").value) >(document.getElementById('total1').value))
+    {
+         result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+            check=false;
+      }
+      else
+      {
+          result1.innerHTML="The probability of first event is :-" + (probability1).toFixed(3);
+      }
+     
+ 
+     if((document.getElementById("favourable2").value) >(document.getElementById('total2').value))
+    {
+         result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+       check=false;
+      }
+      else
+      {
+          result2.innerHTML="The probability of second event is :-" + (probability2).toFixed(3);
+      }
+ 
+     
     
-
-    if((document.getElementById("favourable2").value) >(document.getElementById('total2').value))
+    if(check==true)
+    {
+      result3.innerHTML="The joint probability of both the events is:-" + (probability3).toFixed(3);
+ 
+    }
+   }
+   else
    {
-        result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
-      check=false;
-     }
-     else
-     {
-         result2.innerHTML="The probability of second event is :-" + (probability2).toFixed(3);
-     }
-
-    
-   
-   if(check==true)
-   {
-     result3.innerHTML="The joint probability of both the events is:-" + (probability3).toFixed(3);
-
+    result1.innerHTML = "Outcomes can't be negative. Enter positive values only";
    }
    
 
