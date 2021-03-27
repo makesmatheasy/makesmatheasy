@@ -4375,6 +4375,58 @@ function convertBinhex() {
 }
 //--------------------------------------------------------------------------------
 
+// 1's 2's complement
+function onetwoCalc() {
+  const input = document.getElementById("onetwonumber").value;
+  let result = document.getElementById("onetworesult");
+  var ar=input.split("");
+  var one=new Array(ar.length);
+  var two=new Array(ar.length);
+  for(var i=0;i< ar.length;i++)
+  {
+	  if(ar[i]==0)
+	  {
+		  one[i]=1;
+	  } else 
+	  {
+		  one[i]=0;
+	  }
+  }
+  var onec = one.join('');
+  result.innerHTML ="One's complement of "+input+" is "+ onec+"<br>";
+  
+  for(var i= ar.length-1;i>=0;i--)
+  {   
+      two[i]=ar[i];
+	  if(ar[i]==1)
+	  break;
+	
+  }
+  if(i==-1)
+  {
+    var twoc='1'+ two.join('');
+  } else{
+	  for(var k=i-1;k>=0;k--)
+	  {
+		   if(ar[k]==0)
+	  {
+		  two[k]=1;
+	  } else 
+	  {
+		  two[k]=0;
+	  }
+	  }
+	  var twoc =two.join('');
+  }
+  result.innerHTML +="Two's complement of "+input+" is "+ twoc +"<br>";
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+  else if(input.search(/^[10]+$/) == -1)
+		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+	  
+}
 ////////////////////date calculator///////////
 function datecal()
 {
@@ -4450,13 +4502,67 @@ function computeprobability()
    var nettotal=document.getElementById('total').value;
    let result = document.getElementById("probability-result");
 
-     
-  result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+   
+
+   if(favour>nettotal)
+   {
+        result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
+
+     }
+     else
+     {
+        result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+     }
+  
+   
 }
 
 
+function computejointprobability()
+{
 
 
+    var probability1=(document.getElementById("favourable1").value)/(document.getElementById('total1').value);
+    var probability2=(document.getElementById("favourable2").value)/(document.getElementById('total2').value);
+
+    var probability3=(probability1*probability2);
+
+    let result1 = document.getElementById("probability-result1");
+    let result2 = document.getElementById("probability-result2");
+    let result3 = document.getElementById("probability-result3");
+     var check=true;
+
+   if((document.getElementById("favourable1").value) >(document.getElementById('total1').value))
+   {
+        result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+           check=false;
+     }
+     else
+     {
+         result1.innerHTML="The probability of first event is :-" + (probability1).toFixed(3);
+     }
+    
+
+    if((document.getElementById("favourable2").value) >(document.getElementById('total2').value))
+   {
+        result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+      check=false;
+     }
+     else
+     {
+         result2.innerHTML="The probability of second event is :-" + (probability2).toFixed(3);
+     }
+
+    
+   
+   if(check==true)
+   {
+     result3.innerHTML="The joint probability of both the events is:-" + (probability3).toFixed(3);
+
+   }
+   
+
+}
 
 
 
