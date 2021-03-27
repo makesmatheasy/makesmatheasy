@@ -1,6 +1,6 @@
 
  function display_log(){
-     document.getElementById('log_values').style.display = "block";
+     document.getElementById('log_values').style.display = 'block';
  }
 
 
@@ -8,8 +8,6 @@
 
      var number1 = parseInt(document.getElementById('x-number').value);
      var base = parseInt(document.getElementById('log-base').value);
-
-     var ans =  Math.log(number1)/Math.log(base);
 
      if(base==1)
      {
@@ -20,9 +18,9 @@
 		  document.getElementById('result').innerHTML = "Please enter a positive integer ";
 	 }
      else {
-     document.getElementById('answer').innerHTML = ans;
-     document.getElementById('base_1').innerHTML = base;
-     document.getElementById('no_1').innerHTML = number1;
+        var ans =  Math.log(number1)/Math.log(base);
+        
+     document.getElementById('result').innerHTML = "log<sub>"+base+"</sub> ("+number1+") = "+ans;
 
      }
  } 
