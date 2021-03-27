@@ -407,6 +407,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#lapprobtn").click(function(){
+        openit("#lappro");
+        closenav();
+        clearall();
+    });
 });
 
 function loader(action) {

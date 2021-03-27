@@ -572,6 +572,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="lapprobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Laplace Transforms and Properties</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Laplace Transforms and Properties','#lappro','c','lapproimgfav')"><img
+                                        id="lapproimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="limits"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Limits</a>
                         </td>
@@ -2730,7 +2745,7 @@
                 </div>
             </div>
 
-            <!-- log values ------------------------------------------------------------->
+            
 
         <div class="collapse" id="log_values">
             <fieldset class="form-group">
@@ -2756,7 +2771,7 @@
         </div>
 
 
-        <!-- end of log - values ----------------------------------------------------->
+        
 
 
                 <div class="collapse" id="defintegration-idencollapse">
@@ -3100,6 +3115,114 @@
                 <div class="form-group">
                     <p id="inverselaplaceplot"></p>
                 </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="lappro">
+            <div class="stopwrap">
+            <h3> Table of Laplace Transforms</h3>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[f(t)=\mathcal{L}^{-1}\{F(s)\}\]</th>
+                        <th scope="col">\[F(s)=\mathcal{L}\{f(t)\}\]</th>
+                        <th scope="col">\[f(t)=\mathcal{L}^{-1}\{F(s)\}\]</th>
+                        <th scope="col">\[F(s)=\mathcal{L}\{f(t)\}\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[1\]</th>
+                        <td>\[\frac{1}{s}\]</td>
+                        <td>\[e^{at}\]</td>
+                        <td>\[\frac{1}{s-a}\]</td>
+                       
+                    </tr>
+                    <tr>
+                        <th scope="row">\[t^n, \space n=1,2,3...\]</th>
+                        <td>\[\frac{n!}{s^{n+1}}\]</td>
+                        <td>\[t^p, \space p>-1\]</td>
+                        <td>\[\frac{p+1}{s^{p+1}}\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[\sqrt{t}\]</th>
+                        <td>\[\frac{\sqrt{\pi}}{2s^{\frac{1}{2}}}\]</td>
+                        <td>\[t^{n-\frac{1}{2}}, \space n=1,2,3,...\]</td>
+                        <td>\[\frac{1.3.5....(2n-1)\sqrt{\pi}}{2^{n}s^{n+\frac{1}{2}}}\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[sin(at)\]</th>
+                        <td>\[\frac{a}{s^2+a^2}\]</td>
+                        <td>\[cos(at)\]</td>
+                        <td>\[\frac{s}{s^2+a^2}\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[tsin(at)\]</th>
+                        <td>\[\frac{2as}{(s^2+a^2)^2}\]</td>
+                        <td>\[tcos(at)\]</td>
+                        <td>\[\frac{s^2-a^2}{(s^2+a^2)^2}\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[sin(at)-atcos(at)\]</th>
+                        <td>\[\frac{2a^3}{(s^2+a^2)^2}\]</td>
+                        <td>\[sin(at)+atcos(at)\]</td>
+                        <td>\[\frac{2as^2}{(s^2+a^2)^2}\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[cos(at)-atsin(at)\]</th>
+                        <td>\[\frac{s(a^2-a^2)}{(s^2+a^2)^2}\]</td>
+                        <td>\[cos(at)+atsin(at)\]</td>
+                        <td>\[\frac{s(s^2+3a^2)}{(s^2+a^2)^2}\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[sin(at+b)\]</th>
+                        <td>\[\frac{ssin(b)+acos(b)}{s^2+a^2}\]</td>
+                        <td>\[cos(at+b)\]</td>
+                        <td>\[\frac{scos(b)-asin(b)}{s^2+a^2}\]</td>   
+                    </tr>
+                    <tr>
+                        <th scope="row">\[sinh(at)\]</th>
+                        <td>\[\frac{a}{s^2-a^2}\]</td>
+                        <td>\[cosh(at)\]</td>
+                        <td>\[\frac{s}{s^2-a^2}\]</td>   
+                    </tr>
+                    <tr>
+                        <th scope="row">\[e^{at}sin(bt)\]</th>
+                        <td>\[\frac{b}{(s-a)^2+b^2}\]</td>
+                        <td>\[e^{at}cos(bt)\]</td>
+                        <td>\[\frac{s-a}{(s-a)^2+b^2}\]</td>   
+                    </tr>
+                    <tr>
+                        <th scope="row">\[e^{at}sinh(bt)\]</th>
+                        <td>\[\frac{b}{(s-a)^2-b^2}\]</td>
+                        <td>\[e^{at}cosh(bt)\]</td>
+                        <td>\[\frac{s-a}{(s-a)^2-b^2}\]</td>   
+                    </tr>
+                    <tr>
+                        <th scope="row">\[t^ne^{at}, \space n=1,2,3,...\]</th>
+                        <td>\[\frac{n!}{(s-a)^{n+1}}\]</td>
+                        <td>\[f(ct)\]</td>
+                        <td>\[\frac{1}{c}F\Big(\frac{s}{c}\Big)\]</td>   
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                <br>
+                <h3>Properties of Laplace Transforms</h3>
+                <p>\[1) \space Shifting \space Property : \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space \mathcal{L}\{e^{at}f(t)\} = \space \bar{f}(s-a)\]</p>
+                <p>\[2) \space Division \space Property : \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space \mathcal{L}\{\frac{1}{t}f(t)\} \space = \space \int\limits_{s}^{\infty}\bar{f}(s)ds\]</p>
+                <p>\[3) \space Transforms \space  of \space  integral : \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space \mathcal{L}\{\int\limits_{0}^{t}f(t)dt\} \space = \space \frac{1}{s} \bar{f}(s)\]</p>
+                <p>\[4) \space Multiplication \space Property : \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space \mathcal{L}\{t^nf(t)\} \space = \space (-1)^n \frac{d^n}{ds^n}[\bar {f}(s)] \]</p>
+                <p>\[5) \space Laplace \space transform \space of \space a \space Derivative : \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space \mathcal{L}\{f^n(t)\} \space = \space s^n \mathcal{L}\{f(t)\} - s^{n-1}f(0) - s^{n-2}f'(0) - s^{n-3}f''(0) - s^{n-4}f'''(0)-...\]
+
+                
             </div>
         </div>
 

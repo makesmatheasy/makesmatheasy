@@ -193,6 +193,7 @@ function openit(id) {
         "#diffeqn",
         "#tangent",
         "#probabilitycollapse",
+        "#lappro",
 
     ];
     console.log(id)
