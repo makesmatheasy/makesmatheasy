@@ -4627,7 +4627,14 @@ xtx.lineTo(1000, 250);
 xtx.stroke(); 
 ctx.beginPath();
 input=input%360;
-ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+if(input<0)
+{
+  ctx.arc(500, 250, 125, -2*Math.PI-((input/180)* Math.PI),0,true);
+}
+else
+{
+  ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+}
 ctx.stroke();
 
 
