@@ -517,28 +517,9 @@ function soperation(value) {
         miandcofactors();
     } else if (value == "Determinant") {
         laplacedeterminant();
-    } else if(value == "Inverse")
-	{
-		matinverse();
-	}
+    } 
 }
 
-//inverse calculation
-function matinverse {
-	var row = document.getElementById('srow1').value;
-    var column = document.getElementById('scolumn1').value;
-	loader('show');
-    setTimeout(function () {
-        sendtomatrixsingle();
-        var inv = [];
-		inv=math.inv(matrixsingle)
-        displaymatrix('Transposed\\space Matrix', inv, 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
-        document.getElementById('singlematrixexplanation').innerHTML = "&nbsp;&nbsp;Just Interchange Rows and Columns"
-    }, 100);
-    setTimeout(function () {
-        loader('hide');
-    }, 2000);
-}	
 //rank calculation
 function rank(){
     loader('show');
