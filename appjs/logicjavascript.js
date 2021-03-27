@@ -2664,9 +2664,9 @@ function orderas() {
   var len = parseInt(val.length);
   for (i = 0; i <= len - 1; i++) {
     for (j = 0; j <= len - 1 - i; j++) {
-      if (parseInt(val[j]) > parseInt(val[j + 1])) {
-        temp = parseInt(val[j]);
-        val[j] = parseInt(val[j + 1]);
+      if (parseFloat(val[j]) > parseFloat(val[j + 1])) {
+        temp = parseFloat(val[j]);
+        val[j] = parseFloat(val[j + 1]);
         val[j + 1] = temp;
       }
     }
@@ -2695,9 +2695,9 @@ function orderde() {
   var len = parseInt(val.length);
   for (i = 0; i <= len - 1; i++) {
     for (j = 0; j <= len - 1 - i; j++) {
-      if (parseInt(val[j]) < parseInt(val[j + 1])) {
-        temp = parseInt(val[j]);
-        val[j] = parseInt(val[j + 1]);
+      if (parseFloat(val[j]) < parseFloat(val[j + 1])) {
+        temp = parseFloat(val[j]);
+        val[j] = parseFloat(val[j + 1]);
         val[j + 1] = temp;
       }
     }
