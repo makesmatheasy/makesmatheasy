@@ -134,6 +134,7 @@ function openit(id) {
         "#trigonovaluestable",
         "#trigonoiden",
         "#factors",
+        "#stats",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
@@ -144,6 +145,7 @@ function openit(id) {
         "#limitscollapse",
         "#matrixcollapse",
         "#matrixprops",
+        "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
@@ -152,10 +154,12 @@ function openit(id) {
         "#plotgraph",
         "#roundoff",
         "#unitconcal",
+        "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
         "#log_values",
+        "#log-collapse",
         "#pandc",
         "#interest",
         "#decimal-binary",
@@ -163,7 +167,6 @@ function openit(id) {
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
-        "#prime",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
@@ -173,10 +176,24 @@ function openit(id) {
         "#sum_n_GP",
         "#algebraic_formulascollapse",
         "#expansion",
+        "#solutiontri",
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
-        "#emical"
+        "#emical",
+        "#trigsolcollapse",
+        "#grey-bin",
+        "#consim",
+        "#convdiv",
+        "#curve",
+        "#coor",
+        "#mean",
+        "#bcd",
+        "#vector",
+        "#diffeqn",
+        "#tangent",
+        "#probabilitycollapse",
+
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
@@ -200,6 +217,7 @@ function loadfilesafterload() {
         "appjs/logValue.js",
         "js/math.min.js",
         "js/plotly-1.35.2.min.js",
+        "appjs/operations_on_fractions.js",
     ];
     for (i of aroffiles) {
         var scriptelm = document.createElement("script");
