@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Makes <!--Joint  Probability-->
+    <title>MakesMathEasy</title>
 
 
 <div class="collapse" id="joint-probabilitycollapse">
@@ -1594,13 +1594,29 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="complexcollapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Calculations</a>
+                            <a id="complex1collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1 complex number</a>
                         </td>
                         <td style="float:right;border-top: none;">
                              <span
-                                     onclick="addtofavourite('Calculations','#complexcollapse','c','complexfav')"><img
-                                     id="complexfav" src="images/unfavourite.png"
+                                     onclick="addtofavourite('Complex1','#complex1collapse','c','complex1fav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complex2collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 2 complex numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Complex2','#complex2collapse','c','complex2fav')"><img
+                                     id="complex2fav" src="images/unfavourite.png"
                                      style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -3233,17 +3249,17 @@
         </div>
 
         <!-- Complex Number Calculations Begin-->
-        <div class="collapse" id="complexcollapse">
-		    <h1>Calculations for 1 complex number</h1>
+        <div class="collapse" id="complex1collapse">
+            <h1>Calculations for 1 complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp;  </label>
                 <input type="number" id="creal" class="form__field" placeholder="Real"
-                       style="width:3rem;display:inline;"> &nbsp; &nbsp;
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                 <label> Enter the imaginary part : &nbsp; &nbsp;</label>
                 <input type="number" id="cimg" class="form__field" placeholder="Imag"
-                       style="width:3rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
-			<div class="form-group">
+            <div class="form-group">
                 <select id="comop" class="btn btn-outline-light">
                     <option>Available Operations:</option>
                     <option>Magnitude</option>
@@ -3252,7 +3268,7 @@
                     <option>SquareRoot</option>
                 </select>
             </div>
-			<div class="form-group">
+            <div class="form-group">
                 <button type="button" class="btn btn-light"
                         onclick="comOp(document.getElementById('comop').value);">
                     Solve
@@ -3262,14 +3278,14 @@
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
 
-            <h1>Find polar Represantaion of complex number</h1>
+            <h1>Polar representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp;  </label>
                 <input type="number" id="cpreal" class="form__field" placeholder="Real"
-                       style="width:3rem;display:inline;"> &nbsp; &nbsp;
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                 <label> Enter the imaginary part : &nbsp; &nbsp;</label>
                 <input type="number" id="cpimg" class="form__field" placeholder="Imag"
-                       style="width:3rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light" onclick="polar()">
@@ -3277,25 +3293,26 @@
                 </button>
             </div>
             <div class="form-group text-center">
-                <p class="stopwrap" style="color:white;" id="compresult"></p>
+                <p class="stopwrap" style="color:white;" id="comp1result"></p>
             </div>
-
-            <h1>Complex Calculations for 2 complex numbers.</h1>
+        </div>
+        <div class="collapse" id="complex2collapse">
+            <h1>Calculations for 2 complex numbers</h1>
             <div class="form-group" style="display:inline-block">
-                <label>Enter the real part of first number :</label>
+                <label>Enter the real part of first number : </label>
                 <input type="number" id="creal1" class="form__field" placeholder="Real"
-                       style="width:1.875rem;display:inline;">
-                <label> Enter the imaginary part of first number :</label>
+                    style="width:3rem;display:inline;margin-right: 6.5rem;">
+                <label> Enter the imaginary part of first number : </label>
                 <input type="number" id="cimg1" class="form__field" placeholder="Imag"
-                       style="width:1.875rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group" style="display:inline-block">
-                <label>Enter the real part of second number :</label>
+                <label>Enter the real part of second number : </label>
                 <input type="number" id="creal2" class="form__field" placeholder="Real"
-                       style="width:1.875rem;display:inline;">
-                <label> Enter the imaginary part of second number :</label>
+                    style="width:3rem;display:inline;margin-right: 5rem;">
+                <label> Enter the imaginary part of second number : </label>
                 <input type="number" id="cimg2" class="form__field" placeholder="Imag"
-                       style="width:1.875rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
                 <select id="comval" class="btn btn-outline-light">
@@ -3315,7 +3332,6 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
-
         </div>
         <div class="collapse" id="vector">
             <h2 style="text-align: center;">Vector Calculus Theorems</h2>

@@ -332,8 +332,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#complexcollapsebtn").click(function(){
-        openit("#complexcollapse");
+    $("#complex1collapsebtn").click(function(){
+        openit("#complex1collapse");
+        closenav();
+        clearall();
+    });
+    $("#complex2collapsebtn").click(function(){
+        openit("#complex2collapse");
         closenav();
         clearall();
     });
