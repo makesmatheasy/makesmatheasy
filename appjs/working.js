@@ -314,6 +314,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+	
+	$("#onetwocom-calc-btn").click(function(){
+        openit("#onetwocom-calc");
+        closenav();
+        clearall();
+    });
 
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
