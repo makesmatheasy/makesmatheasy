@@ -185,6 +185,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#srfbtn").click(function () {
+        openit("#srf");
+        closenav();
+        clearall();
+    })
     $("#maxminbtn").click(function () {
         openit("#maxmin");
         closenav();

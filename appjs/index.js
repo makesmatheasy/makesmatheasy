@@ -195,6 +195,7 @@ function openit(id) {
         "#maxmin",
         "#locroots",
         "#tangent",
+        "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
 
