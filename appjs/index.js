@@ -194,6 +194,7 @@ function openit(id) {
         "#vector",
         "#diffeqn",
         "#maxmin",
+        "#locroots",
         "#tangent",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",

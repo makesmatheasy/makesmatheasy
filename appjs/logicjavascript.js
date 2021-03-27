@@ -1525,6 +1525,46 @@ function solveareasq() {
   renderMathInElement(document.getElementById("resultofareasq"));
 }
 
+function solvetetra() {
+  var a= document.getElementById("inputtside").value;
+
+  var resultvolt = document.getElementById("resultofvolt");
+  var resultheightt = document.getElementById("resultofheightt");
+  var resultofcircumt = document.getElementById("resultofcircumt");
+  var resultofinradt = document.getElementById("resultofinradt");
+  resultofvolt.innerHTML = "";
+  resultofheightt.innerHTML = "";
+  resultofcircumt.innerHTML = "";
+  resultofinradt.innerHTML = "";
+ 
+  var volume = 0.118 * (a*a*a);
+  var height = 1.074 * a;
+  var circum = 0.612 * a;
+  var inradius =0.2041 * a;
+  if(a!=""){
+    document.getElementById("resultofvolt").innerHTML="\\[Volume \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" +a + "\\times"+ a +"\\times"+ a +"\\ = "+volume+"\\]";
+    renderMathInElement(document.getElementById("resultofvolt"));
+  }
+  if (a!=""){
+    document.getElementById("resultofheightt").innerHTML="\\[Height \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times ("+a+")\\ = "+height+" \\]";
+    renderMathInElement(document.getElementById("resultofheightt"));
+  }
+  if (a!=""){
+    document.getElementById("resultofcircumt").innerHTML="\\[CircumRadius \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{6}}{4} \\times ("+a+")\\ = "+circum+" \\]";
+    renderMathInElement(document.getElementById("resultofcircumt"));
+  }
+  if (a!=""){
+    document.getElementById("resultofinradt").innerHTML="\\[InRadius \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{\\sqrt{24}} \\times ("+a+")\\ = "+inradius+" \\]";
+    renderMathInElement(document.getElementById("resultofinradt"));
+  }
+  else if(a==""){
+    document.getElementById("resultofvolt").innerHTML="Enter side a to calculate volume";
+  }
+}
+
+
+
+
 function equilateraltrianglearea() {
   var side = document.getElementById("equilateraltriangleside").value;
   var areaoutput = document.getElementById("equilateraltrianglearea");
@@ -2664,9 +2704,9 @@ function orderas() {
   var len = parseInt(val.length);
   for (i = 0; i <= len - 1; i++) {
     for (j = 0; j <= len - 1 - i; j++) {
-      if (parseInt(val[j]) > parseInt(val[j + 1])) {
-        temp = parseInt(val[j]);
-        val[j] = parseInt(val[j + 1]);
+      if (parseFloat(val[j]) > parseFloat(val[j + 1])) {
+        temp = parseFloat(val[j]);
+        val[j] = parseFloat(val[j + 1]);
         val[j + 1] = temp;
       }
     }
@@ -2695,9 +2735,9 @@ function orderde() {
   var len = parseInt(val.length);
   for (i = 0; i <= len - 1; i++) {
     for (j = 0; j <= len - 1 - i; j++) {
-      if (parseInt(val[j]) < parseInt(val[j + 1])) {
-        temp = parseInt(val[j]);
-        val[j] = parseInt(val[j + 1]);
+      if (parseFloat(val[j]) < parseFloat(val[j + 1])) {
+        temp = parseFloat(val[j]);
+        val[j] = parseFloat(val[j + 1]);
         val[j + 1] = temp;
       }
     }
@@ -3732,7 +3772,7 @@ function amsol()
   var a = document.getElementById("aval").value
   var c = document.getElementById("cval").value
   var amadd=parseInt(a)+parseInt(c)
-  var res =parseInt(amadd/2)
+  var res =parseFloat(amadd/2)
   var explain = document.getElementById("am_formula");
   explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
   renderMathInElement(document.getElementById("am_formula"));
@@ -4611,7 +4651,14 @@ xtx.lineTo(1000, 250);
 xtx.stroke(); 
 ctx.beginPath();
 input=input%360;
-ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+if(input<0)
+{
+  ctx.arc(500, 250, 125, -2*Math.PI-((input/180)* Math.PI),0,true);
+}
+else
+{
+  ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+}
 ctx.stroke();
 
 
