@@ -1709,49 +1709,24 @@ function solvescalenetriangle() {
 function isoscelestrianglearea(){
   var eqside=document.getElementById("inputeqitside").value;
   var side=document.getElementById("inputitside").value;
-  var areaoutput=document.getElementById("resultofareait");
-  var perimeteroutput=document.getElementById("resultofperiit");
-  var heightoutput=document.getElementById("resultofheightit");
-  var areatemp="";
-  var perimetertemp="";
-  var heighttemp="";
+  var height = Math.sqrt((parseInt(eqside)*parseInt(eqside)) - ((parseInt(side)*parseInt(side))/4));
+  var perimeter = (2 * parseInt(eqside) + parseInt(side));
+  var area = 0.5 * side * height;
+  if(side!="" && eqside!="") {
+      document.getElementById('resultofheightit1').innerHTML = "\\[Height \\space of \\space the \\space Isosceles \\space triangle \\space is \\]";
+      renderMathInElement(document.getElementById('resultofheightit1'));
+      document.getElementById('resultofheightit2').innerHTML = "\\[\\sqrt{"+eval(eqside*eqside)+" \\space - \\frac{"+eval(side*side)+"}{4}} =" +height.toFixed(2)+ "\\]";
+      renderMathInElement(document.getElementById('resultofheightit2'));
 
-if(side!="" && eqside!="") {
-      perimetertemp += "\\[P=2 \\times " + eqside + "+" + side + "\\]";
-      perimetertemp += "\\[P= " + eval(String(2 * eqside)) + "+" + side + "\\]";
-      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" +  eval("2*(" + String(eqside) + ")+" + String(side))  + "\\]";
-      perimeteroutput.innerHTML = perimetertemp;
+      document.getElementById('resultofareait1').innerHTML ="\\[Area \\space of \\space the \\space Isosceles \\space triangle \\space is \\]";
+      renderMathInElement(document.getElementById('resultofareait1'));
+      document.getElementById('resultofareait2').innerHTML = "\\[\\frac{1}{2} \\times"+side+ "\\times "+height.toFixed(2)+" = "+area.toFixed(2)+"\\]";
+      renderMathInElement(document.getElementById('resultofareait2'));
 
-      var eq2= eqside * eqside;
-      var side2= side * side;
-      var side22= side2/4;
-    var ans= eq2-side22;
-    var anssqrt = nerdamer.sqrt(ans).toString();
-      anssqrt = eval(anssqrt).toFixed(3);
-
-      heighttemp+="\\[h=\\sqrt{"+eqside+"^2" +"-" +"\\frac{" + side+ "^2" + "}{4}}\\]";
-      heighttemp+="\\[h=\\sqrt{"+eq2+ "-" + "\\frac{"+side2+"}{4}}\\]";
-      heighttemp+="\\[h=\\sqrt{"+eq2+"-"+side22+"}\\]";
-      heighttemp+="\\[h=\\sqrt{"+ans+"}\\]";
-      heighttemp += "\\[Height \\space of \\space Triangle \\space is \\space" + anssqrt + "\\]";
-      heightoutput.innerHTML=heighttemp;
-      var height= eval(anssqrt).toFixed(3);
-
-      areatemp+="\\[A=\\frac{1}{2} \\times"+side+ "\\times" + height+"\\]";
-      areatemp+="\\[A=0.5\\times"+eval(String(side*height))+"\\]";
-      var a=eval(String("0.5*"+ String(side*height)));
-      areatemp+="\\[A="+a+" \\]";
-      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
-      areaoutput.innerHTML=areatemp;
-
-      renderMathInElement(areaoutput);
-      renderMathInElement(perimeteroutput);
-      renderMathInElement(heightoutput);
-  }
-  else{
-      areaoutput.innerHTML="";
-      perimeteroutput.innerHTML="";
-      heightoutput.innerHTML="";
+      document.getElementById('resultofperiit1').innerHTML = "\\[Perimeter \\space of \\space the \\space Isosceles \\space triangle \\space is \\]";
+      renderMathInElement(document.getElementById('resultofperiit1'));
+      document.getElementById('resultofperiit2').innerHTML = "\\[2*(" + eqside + ") + " + side + "= "+perimeter+"\\]";
+      renderMathInElement(document.getElementById('resultofperiit2'));
   }
   
 }
@@ -4528,14 +4503,18 @@ function computeprobability()
 
    
 
-   if(favour>nettotal)
+   if(favour<0 || nettotal<0)
    {
-        result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
+        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
 
+     }
+     else if(favour>nettotal)
+     {
+      result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
      }
      else
      {
-        result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+        result.innerHTML = "The probability of the event is : " + (favour/nettotal).toFixed(3);
      }
   
    
@@ -4556,33 +4535,40 @@ function computejointprobability()
     let result3 = document.getElementById("probability-result3");
      var check=true;
 
-   if((document.getElementById("favourable1").value) >(document.getElementById('total1').value))
+   if((document.getElementById("favourable1").value) > 0 && (document.getElementById('total1').value)>0 && (document.getElementById("favourable2").value) > 0 && (document.getElementById('total2').value) > 0)
    {
-        result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
-           check=false;
-     }
-     else
-     {
-         result1.innerHTML="The probability of first event is :-" + (probability1).toFixed(3);
-     }
+    if((document.getElementById("favourable1").value) >(document.getElementById('total1').value))
+    {
+         result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+            check=false;
+      }
+      else
+      {
+          result1.innerHTML="The probability of first event is :-" + (probability1).toFixed(3);
+      }
+     
+ 
+     if((document.getElementById("favourable2").value) >(document.getElementById('total2').value))
+    {
+         result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+       check=false;
+      }
+      else
+      {
+          result2.innerHTML="The probability of second event is :-" + (probability2).toFixed(3);
+      }
+ 
+     
     
-
-    if((document.getElementById("favourable2").value) >(document.getElementById('total2').value))
+    if(check==true)
+    {
+      result3.innerHTML="The joint probability of both the events is:-" + (probability3).toFixed(3);
+ 
+    }
+   }
+   else
    {
-        result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
-      check=false;
-     }
-     else
-     {
-         result2.innerHTML="The probability of second event is :-" + (probability2).toFixed(3);
-     }
-
-    
-   
-   if(check==true)
-   {
-     result3.innerHTML="The joint probability of both the events is:-" + (probability3).toFixed(3);
-
+    result1.innerHTML = "Outcomes can't be negative. Enter positive values only";
    }
    
 
@@ -4660,7 +4646,5 @@ else
   ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
 }
 ctx.stroke();
-
-
 
 }
