@@ -407,6 +407,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#jointprobabilitycollapsebtn").click(function(){
+        openit("#joint-probabilitycollapse");
+        closenav();
+        clearall();
+    });
 });
 
 function loader(action) {
