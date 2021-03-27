@@ -4375,6 +4375,58 @@ function convertBinhex() {
 }
 //--------------------------------------------------------------------------------
 
+// 1's 2's complement
+function onetwoCalc() {
+  const input = document.getElementById("onetwonumber").value;
+  let result = document.getElementById("onetworesult");
+  var ar=input.split("");
+  var one=new Array(ar.length);
+  var two=new Array(ar.length);
+  for(var i=0;i< ar.length;i++)
+  {
+	  if(ar[i]==0)
+	  {
+		  one[i]=1;
+	  } else 
+	  {
+		  one[i]=0;
+	  }
+  }
+  var onec = one.join('');
+  result.innerHTML ="One's complement of "+input+" is "+ onec+"<br>";
+  
+  for(var i= ar.length-1;i>=0;i--)
+  {   
+      two[i]=ar[i];
+	  if(ar[i]==1)
+	  break;
+	
+  }
+  if(i==-1)
+  {
+    var twoc='1'+ two.join('');
+  } else{
+	  for(var k=i-1;k>=0;k--)
+	  {
+		   if(ar[k]==0)
+	  {
+		  two[k]=1;
+	  } else 
+	  {
+		  two[k]=0;
+	  }
+	  }
+	  var twoc =two.join('');
+  }
+  result.innerHTML +="Two's complement of "+input+" is "+ twoc +"<br>";
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+  else if(input.search(/^[10]+$/) == -1)
+		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+	  
+}
 ////////////////////date calculator///////////
 function datecal()
 {

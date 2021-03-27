@@ -164,6 +164,7 @@ function openit(id) {
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
+		"#onetwocom-calc",
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",

@@ -1561,7 +1561,24 @@
                     </tr>
                 </table>
             </li>
-
+            
+			<li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="onetwocom-calc-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">1s and 2s Complement
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('1s and 2s Complement Calculator','#onetwocom-calc','c','onetwocom-calc-imgfav')"><img
+                                        id="onetwocom-calc-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -5930,6 +5947,28 @@
             </div>
         </div>
         <!-- End of Bitwise Calculator-->
+		<!-- Start of 1's 2's Complement Calculator -->
+         <div class="collapse" id="onetwocom-calc">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter Binary number</h5>
+                        <input type="number"  class="form__field" id="onetwonumber">
+                    </div>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+					    <button type="button" class="btn btn-light" onclick="onetwoCalc()">
+                    Find
+                </button>
+                        <label class="form__field" id="onetworesult"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of 1's 2's complement Calculator-->
 
         <!-- Start of Octal / Binary -->
         <div>
