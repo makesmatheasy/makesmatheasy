@@ -192,7 +192,7 @@ function openit(id) {
         "#bcd",
         "#vector",
         "#diffeqn",
- 
+
         "#tangent",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",

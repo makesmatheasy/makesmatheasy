@@ -190,6 +190,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#locrootsbtn").click(function () {
+        openit("#locroots");
+        closenav();
+        clearall();
+    })
     $("#datebtn").click(function () {
         openit("#datecal");
         closenav();

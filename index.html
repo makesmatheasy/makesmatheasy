@@ -1432,6 +1432,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="locrootsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Location of Roots</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Location of Roots','#locroots','c','locrootsqimgfav')"><img
+                                        id="locrootsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="equationssolverbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Play
                                 with
@@ -4746,6 +4762,28 @@
             </div>
         </div>
         <!--formulas list ends-->
+        <div class="collapse" id="locroots">
+            <h2>Location of Roots</h2>
+            <p>\[Let\space f(x) = ax^2+bx+c = 0 where\space a>0\space then,\]</p>
+            <br>
+            <p>1.If both the roots are positive i.e. they lie in (0, ¥), then the sum of the roots as well as the product of the roots must be positive.</p>
+            <p>\[ ie. \space a+b = \frac{-b}{a} > 0 \space and\space ab=\frac{c}{a}>0\]</p>
+            <p>2.Similarly, if both the roots are negative i.e. they lie in (–¥, 0) then the sum of the roots will be negative and the product of the roots must be positive.</p>
+            <p>\[ie.\space a+b = \frac{-b}{a} < 0 \space and\space ab >0\]</p>
+            <p>3.Both the roots are greater than a given number k if the following three conditions are satisfied,</p>
+            <p>\[D>=0\space \frac{-b}{2a} > k\space and\space a.f(k)>0\]</p>
+            <img src="https://embibe-cdn.s3.amazonaws.com/resources/images/54556146.png" style="margin-left: 300px;" alt="">
+            <br><br>
+            <p>4.Both the roots will lie in the given interval (k1, k2) if the following conditions are satisfied </p>
+            <p>\[D>=0\space k_1 < \frac{-b}{2a} < k_2\space and\space a.f(k_1)\space and\space a.f(k_2) are >0\]</p>
+            <img src="https://embibe-cdn.s3.amazonaws.com/resources/images/4565164513.png" style="margin-left: 300px;" alt="">
+            <br><br>
+            <p>5.Exactly one of the roots lies in the given interval (k1, k2) if,</p>
+            <p>\[f(k_1).f(k_2)\space >\space 0\]</p>
+            <p>6.A given number k will lie between the roots if <b>a.f(k) < 0.</b></p>
+            <p> In particular, the roots of the equation will be of opposite signs if 0 lies between the roots <b> a.f(0) < 0. </b></p>
+            <img src="" alt="">
+        </div>
 
         <div class="collapse" id="rootsquadratic">
             <div class="form-group">

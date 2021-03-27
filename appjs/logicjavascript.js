@@ -2664,9 +2664,9 @@ function orderas() {
   var len = parseInt(val.length);
   for (i = 0; i <= len - 1; i++) {
     for (j = 0; j <= len - 1 - i; j++) {
-      if (parseInt(val[j]) > parseInt(val[j + 1])) {
-        temp = parseInt(val[j]);
-        val[j] = parseInt(val[j + 1]);
+      if (parseFloat(val[j]) > parseFloat(val[j + 1])) {
+        temp = parseFloat(val[j]);
+        val[j] = parseFloat(val[j + 1]);
         val[j + 1] = temp;
       }
     }
@@ -2695,9 +2695,9 @@ function orderde() {
   var len = parseInt(val.length);
   for (i = 0; i <= len - 1; i++) {
     for (j = 0; j <= len - 1 - i; j++) {
-      if (parseInt(val[j]) < parseInt(val[j + 1])) {
-        temp = parseInt(val[j]);
-        val[j] = parseInt(val[j + 1]);
+      if (parseFloat(val[j]) < parseFloat(val[j + 1])) {
+        temp = parseFloat(val[j]);
+        val[j] = parseFloat(val[j + 1]);
         val[j + 1] = temp;
       }
     }
@@ -3553,7 +3553,7 @@ function polar()
     x = "&#8730;  "+ j ;
   }
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+" cos( π" +y+") + i sin ( π"+ y+ ")";
+  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
 }
 
@@ -3748,7 +3748,7 @@ function amsol()
   var a = document.getElementById("aval").value
   var c = document.getElementById("cval").value
   var amadd=parseInt(a)+parseInt(c)
-  var res =parseInt(amadd/2)
+  var res =parseFloat(amadd/2)
   var explain = document.getElementById("am_formula");
   explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
   renderMathInElement(document.getElementById("am_formula"));
@@ -4627,7 +4627,14 @@ xtx.lineTo(1000, 250);
 xtx.stroke(); 
 ctx.beginPath();
 input=input%360;
-ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+if(input<0)
+{
+  ctx.arc(500, 250, 125, -2*Math.PI-((input/180)* Math.PI),0,true);
+}
+else
+{
+  ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
+}
 ctx.stroke();
 
 
