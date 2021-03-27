@@ -3748,7 +3748,7 @@ function amsol()
   var a = document.getElementById("aval").value
   var c = document.getElementById("cval").value
   var amadd=parseInt(a)+parseInt(c)
-  var res =parseInt(amadd/2)
+  var res =parseFloat(amadd/2)
   var explain = document.getElementById("am_formula");
   explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] " ;
   renderMathInElement(document.getElementById("am_formula"));
