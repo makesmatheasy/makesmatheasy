@@ -3193,6 +3193,35 @@ function tempcon() {
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
 
+ function datau(a) {
+      switch(a)
+       {
+          case "1":
+            return 0.125;
+          case "2":
+               return 1;
+          case "3":
+               return 1000;
+          case "4":
+            return 1000000;
+          case "5":
+            return 1000000000;
+          case "6":
+             return 1000000000000;
+          case "7":
+            return 1000000000000000; 
+            
+       }
+ }
+
+ function datacon() {
+  const f = datau(document.getElementById("datacon-1").value);
+  const t = datau(document.getElementById("datacon-2").value);
+  const i = parseInt(document.getElementById("dataconin").value);
+  const a = (i * f) / t;
+  document.getElementById("dataconou").innerHTML = `${a}`;
+}
+
 // simple and compound interest
 //-----------------------------------------------------
 function simple_interest() {
