@@ -185,6 +185,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#maxminbtn").click(function () {
+        openit("#maxmin");
+        closenav();
+        clearall();
+    })
     $("#datebtn").click(function () {
         openit("#datecal");
         closenav();

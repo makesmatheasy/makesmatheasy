@@ -557,6 +557,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="maxminbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Maxima and Minima of functions</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Maxima and Minima of functions','#maxmin','c','maxminimgfav')"><img
+                                        id="maxminimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="laplace"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Laplace</a>
                         </td>
@@ -2947,6 +2963,32 @@
                 I = e^{\int P \,dy}(for\space second\space equation)\]
             </p>
             <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
+        </div>
+        <div class="collapse" id="maxmin">
+            <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
+            <p>A local <b>maximum</b> point on a function is a point (x,y) on the graph of the function whose y coordinate is larger than all 
+                other y coordinates on the graph at points "close to'' (x,y). More precisely, (x,f(x)) is a local maximum if there is 
+                an interval (a,b) with (a &#60 x &#60 b) and f(x)≥f(z) for every z in (a,b). Similarly, (x,y) is a local <b>minimum</b> point if it has 
+                locally the smallest y coordinate. Again being more precise: (x,f(x)) is a local minimum if there is an interval 
+                (a,b) with a &#60 x &#60 b and f(x)≤f(z) for every z in (a,b). A local extremum is either a local minimum or a local maximum.
+           </p>
+           <img style="margin-left: 350px;" src="https://www.mathsisfun.com/calculus/images/function-min-max.svg" alt="">
+           <br><br>
+           <h4>First Order Derivative Test</h4>
+           <ol>
+               <li style="color: white; font-size: 20px;">Find out first derivative of f(x)</li>
+               <li style="color: white; font-size: 20px;">Equate to 0 and find out values of x</li>
+               <li style="color: white; font-size: 20px;">Plot a wavy curve</li>
+               <li style="color: white; font-size: 20px;">If at a point curve goes from -ve slope to +ve,Minima at that point and viceversa for Maxima</li>
+           </ol>
+           <br><br>
+           <h4>Second Order Derivative Test<h4>
+           <ol>
+               <li style="color: white; font-size: 20px;">Equate to 0 first order derivative and find values of x</li>
+               <li style="color: white; font-size: 20px;">Find out second derivative</li>
+               <li style="color: white; font-size: 20px;">Put values of x in seoond derivative </li>
+               <li style="color: white; font-size: 20px;">If answer is +ve, Minima and -ve,Maxima</li>
+           </ol>
         </div>
         <div class="collapse" id="tangent">
             <h2 style="text-align: center;">Tangent & Normal</h2>
