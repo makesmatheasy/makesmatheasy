@@ -164,6 +164,7 @@ function openit(id) {
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
+		"#onetwocom-calc",
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
@@ -191,8 +192,12 @@ function openit(id) {
         "#bcd",
         "#vector",
         "#diffeqn",
+        "#maxmin",
+        "#locroots",
         "#tangent",
+        "#srf",
         "#probabilitycollapse",
+        "#joint-probabilitycollapse",
 
     ];
     console.log(id)
