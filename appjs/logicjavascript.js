@@ -1846,46 +1846,29 @@ function rectanglesolve() {
 function isoscelestrianglearea(){
   var eqside=document.getElementById('inputeqitside').value;
   var side=document.getElementById('inputitside').value;
-  var areaoutput=document.getElementById('resultofareait');
-  var perimeteroutput=document.getElementById('resultofperiit');
-  var heightoutput=document.getElementById('resultofheightit');
-  var areatemp="";
-  var perimetertemp="";
-  var heighttemp="";
-// if((eqside=="" && side!="") ||(eqside!="" && side==""))
-// {
-// areaoutput.innerHTML="Please enter both values";
-// }
-if(side!="" && eqside!="") {
-      areatemp="";
-      perimetertemp="";
-      heighttemp="";
-      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
-      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
-      perimeteroutput.innerHTML = perimetertemp;
+  var height = Math.sqrt((parseInt(eqside)*parseInt(eqside)) - ((parseInt(side)*parseInt(side))/4));
+  var perimeter = (2 * parseInt(eqside) + parseInt(side));
+  var area = 0.5 * side * height;
+  console.log(height);
+  if(side!="" && eqside!="") {
+      document.getElementById('resultofheightit1').innerHTML = "\\[Height \\space of \\space the \\space Isosceles \\space triangle \\space is \\]";
+      renderMathInElement(document.getElementById('resultofheightit1'));
+      document.getElementById('resultofheightit2').innerHTML = "\\[\\sqrt{"+eval(eqside*eqside)+" \\space - \\frac{"+eval(side*side)+"}{4}} =" +height.toFixed(2)+ "\\]";
+      renderMathInElement(document.getElementById('resultofheightit2'));
 
-      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
-      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
-      heightoutput.innerHTML=heighttemp;
+      document.getElementById('resultofareait1').innerHTML ="\\[Area \\space of \\space the \\space Isosceles \\space triangle \\space is \\]";
+      renderMathInElement(document.getElementById('resultofareait1'));
+      document.getElementById('resultofareait2').innerHTML = "\\[\\frac{1}{2} \\times"+side+ "\\times "+height.toFixed(2)+" = "+area.toFixed(2)+"\\]";
+      renderMathInElement(document.getElementById('resultofareait2'));
 
-      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
-      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
-      var a=eval(String("0.5*"+String(side*heighttemp)));
-      areatemp+="\\[A="+a+" \\]";
-      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
-      areaoutput.innerHTML=areatemp;
+      document.getElementById('resultofperiit1').innerHTML = "\\[Perimeter \\space of \\space the \\space Isosceles \\space triangle \\space is \\]";
+      renderMathInElement(document.getElementById('resultofperiit1'));
+      document.getElementById('resultofperiit2').innerHTML = "\\[2*(" + eqside + ") + " + side + "= "+perimeter+"\\]";
+      renderMathInElement(document.getElementById('resultofperiit2'));
 
-      renderMathInElement(areaoutput);
-      renderMathInElement(perimeteroutput);
-      renderMathInElement(heightoutput);
   }
-  else{
-      areaoutput.innerHTML="";
-      perimeteroutput.innerHTML="";
-      heightoutput.innerHTML="";
-  }
-  
 }
+
 function solvecircle()
 {
     let radius=document.getElementById("inputradius").value;
