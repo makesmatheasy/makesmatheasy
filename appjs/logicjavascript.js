@@ -3553,7 +3553,7 @@ function polar()
     x = "&#8730;  "+ j ;
   }
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+" cos( π" +y+") + i sin ( π"+ y+ ")";
+  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
 }
 
