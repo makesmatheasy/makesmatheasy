@@ -1595,6 +1595,167 @@ function equilateraltrianglearea() {
   }
 }
 
+// created function for right angle triangle
+function solverightangletriangle() {
+  var base = document.getElementById("inputbase").value;
+  var height = document.getElementById("inputheight").value;
+  var areaoutput = document.getElementById("resultofarearat");
+  var perimeteroutput = document.getElementById("resultofperirat");
+  var hypooutput = document.getElementById("resultofhyporat");
+  var areatemp = "";
+  var perimetertemp = "";
+  var hypotemp = "";
+  if (base != "" && height!= "") {
+    var base2 = base * base;
+      var height2 = height * height;
+      var add2 = eval(String(base2 + height2));
+      var add2sqrt = nerdamer.sqrt(add2).toString();
+
+      hypotemp  += "\\[h=\\sqrt{" + base + "^2" + "+" + height +"^2" + "}\\]";
+      hypotemp +="\\[h= \\sqrt{" + base2 + "+" + height2 + "}\\]";
+      hypotemp +="\\[h= \\sqrt{" + add2 + "}\\]";
+      hypotemp += "\\[h=" + eval(add2sqrt).toFixed(3) + "\\]";
+    hypotemp += "\\[Hypotenuse \\space of \\space Triangle \\space is \\space" +
+      eval(add2sqrt).toFixed(3) + "\\]";
+      hypooutput.innerHTML = hypotemp;
+
+        var hypovar=eval(add2sqrt).toFixed(3);
+
+    perimetertemp += "\\[P=" + base + "+" + height + "+" + hypovar +  "\\]";
+    perimetertemp +=
+      "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
+      eval(String(base)+ "+" +String(height)+ "+" + String(hypovar)) +
+      "\\]";
+    perimeteroutput.innerHTML = perimetertemp;
+
+    areatemp += "\\[A = \\frac{1}{2} \\times " + base + "\\times" + height +  "\\]";
+    areatemp += "\\[A = \\frac{1}{2} (" + eval(String(base* height)) + ")\\]";
+    var a = eval(String("0.5*" + String(base * height)));
+    areatemp += "\\[A=" + a + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Triangle \\space is \\space " + a + "\\]";
+    areaoutput.innerHTML = areatemp;
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+    renderMathInElement(hypooutput);
+
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+    hypooutput.innerHTML = "";
+  }
+}
+
+// created function for scalene triangle
+function solvescalenetriangle() {
+  var sidea = document.getElementById("inputfirstside").value;
+  var sideb = document.getElementById("inputsecondside").value;
+  var sidec = document.getElementById("inputthirdside").value;
+  var areaoutput = document.getElementById("resultofareast");
+  var perimeteroutput = document.getElementById("resultofperist");
+  var semiperioutput = document.getElementById("resultofsemiperist");
+  var areatemp = "";
+  var perimetertemp = "";
+  var semiperitemp = "";
+  if (sidea != "" && sideb != "" && sidec != "") {
+    
+      perimetertemp += "\\[P=" + sidea + "+" + sideb + "+" + sidec +  "\\]";
+      perimetertemp +=
+        "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
+        eval(String(sidea)+ "+" +String(sideb)+ "+" + String(sidec)) +
+        "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
+
+    semiperitemp += "\\[P=\\frac{" + sidea + "+" + sideb + "+" + sidec + "}{2}" +"\\]";
+    semiperitemp += "\\[P=\\frac{" + eval(String(sidea) + "+" + String(sideb) + "+" + String(sidec)) + "}{2} \\]";
+    var sidesum = eval(String(sidea)+ "+" +String(sideb)+ "+" + String(sidec));
+    
+    semiperitemp +=  "\\[Semi-perimeter \\space of \\space Triangle \\space is \\space" +
+    eval(String("0.5*" + String(sidesum))) +
+      "\\]";
+    semiperioutput.innerHTML = semiperitemp;
+    
+
+    var semiperimeter= eval(String("0.5*" + String(sidesum)));
+    var a2= semiperimeter-sidea;
+    var b2= semiperimeter-sideb;
+    var c2= semiperimeter-sidec;
+    var ans= semiperimeter * a2 * b2 * c2;
+    var anssqrt = nerdamer.sqrt(ans).toString();
+      anssqrt = eval(anssqrt).toFixed(3);
+
+    areatemp += "\\[A = \\sqrt{ " + semiperimeter + "\\times (" + semiperimeter + "-" + sidea +
+    ") \\times (" + semiperimeter+ "-" + sideb + ") \\times (" + semiperimeter + "-" + sidec +")}" +  "\\]";
+    areatemp += "\\[A = \\sqrt{ " + semiperimeter + "\\times" + a2 + "\\times" + b2 + "\\times" + c2 +"}\\]";
+    areatemp += "\\[A = \\sqrt{ " + semiperimeter + "\\times" + eval(String(a2*b2*c2)) +"}\\]";
+    areatemp += "\\[A = \\sqrt{ " + ans +" }\\]";
+    areatemp += "\\[A=" + anssqrt + " \\]";
+    areatemp +=
+      "\\[Area \\space of \\space Triangle \\space is \\space " + anssqrt + "\\]";
+    areaoutput.innerHTML = areatemp;
+
+    renderMathInElement(areaoutput);
+    renderMathInElement(perimeteroutput);
+    renderMathInElement(semiperioutput);
+  
+  } else {
+    areaoutput.innerHTML = "";
+    perimeteroutput.innerHTML = "";
+    semiperioutput.innerHTML = "";
+  }
+}
+
+// created function for isosceles triangle
+function isoscelestrianglearea(){
+  var eqside=document.getElementById("inputeqitside").value;
+  var side=document.getElementById("inputitside").value;
+  var areaoutput=document.getElementById("resultofareait");
+  var perimeteroutput=document.getElementById("resultofperiit");
+  var heightoutput=document.getElementById("resultofheightit");
+  var areatemp="";
+  var perimetertemp="";
+  var heighttemp="";
+
+if(side!="" && eqside!="") {
+      perimetertemp += "\\[P=2 \\times " + eqside + "+" + side + "\\]";
+      perimetertemp += "\\[P= " + eval(String(2 * eqside)) + "+" + side + "\\]";
+      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" +  eval("2*(" + String(eqside) + ")+" + String(side))  + "\\]";
+      perimeteroutput.innerHTML = perimetertemp;
+
+      var eq2= eqside * eqside;
+      var side2= side * side;
+      var side22= side2/4;
+    var ans= eq2-side22;
+    var anssqrt = nerdamer.sqrt(ans).toString();
+      anssqrt = eval(anssqrt).toFixed(3);
+
+      heighttemp+="\\[h=\\sqrt{"+eqside+"^2" +"-" +"\\frac{" + side+ "^2" + "}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eq2+ "-" + "\\frac{"+side2+"}{4}}\\]";
+      heighttemp+="\\[h=\\sqrt{"+eq2+"-"+side22+"}\\]";
+      heighttemp+="\\[h=\\sqrt{"+ans+"}\\]";
+      heighttemp += "\\[Height \\space of \\space Triangle \\space is \\space" + anssqrt + "\\]";
+      heightoutput.innerHTML=heighttemp;
+      var height= eval(anssqrt).toFixed(3);
+
+      areatemp+="\\[A=\\frac{1}{2} \\times"+side+ "\\times" + height+"\\]";
+      areatemp+="\\[A=0.5\\times"+eval(String(side*height))+"\\]";
+      var a=eval(String("0.5*"+ String(side*height)));
+      areatemp+="\\[A="+a+" \\]";
+      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
+      areaoutput.innerHTML=areatemp;
+
+      renderMathInElement(areaoutput);
+      renderMathInElement(perimeteroutput);
+      renderMathInElement(heightoutput);
+  }
+  else{
+      areaoutput.innerHTML="";
+      perimeteroutput.innerHTML="";
+      heightoutput.innerHTML="";
+  }
+  
+}
+
 function rhombussolve() {
   var d1= document.getElementById("inputd1").value;
   var d2= document.getElementById("inputd2").value;
@@ -1882,50 +2043,7 @@ function rectanglesolve() {
   renderMathInElement(document.getElementById("resultoflengthrec"));
   renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
-// created function for isosceles triangle
-function isoscelestrianglearea(){
-  var eqside=document.getElementById('inputeqitside').value;
-  var side=document.getElementById('inputitside').value;
-  var areaoutput=document.getElementById('resultofareait');
-  var perimeteroutput=document.getElementById('resultofperiit');
-  var heightoutput=document.getElementById('resultofheightit');
-  var areatemp="";
-  var perimetertemp="";
-  var heighttemp="";
-// if((eqside=="" && side!="") ||(eqside!="" && side==""))
-// {
-// areaoutput.innerHTML="Please enter both values";
-// }
-if(side!="" && eqside!="") {
-      areatemp="";
-      perimetertemp="";
-      heighttemp="";
-      perimetertemp = "\\[P=2 \\times (" + eqside + ")" + side + "\\]";
-      perimetertemp += "\\[Perimeter \\space of \\space Triangle \\space is \\space" + eval('2*(' + String(eqside) + ")" + String(side)) + "\\]";
-      perimeteroutput.innerHTML = perimetertemp;
 
-      heighttemp="\\[h=\\sqrt{"+eqside+"^2-"+"\\frac{" + side+ "^2}{4}}\\]";
-      heighttemp+="\\[h=\\sqrt{"+eval(String(eqside*eqside))+"\\frac{"+eval(String(side*side))+"}{4}}\\]";
-      heightoutput.innerHTML=heighttemp;
-
-      areatemp="\\[A=\\frac{1}{2} \\times"+side+heighttemp+"\\]";
-      areatemp+="\\[A=0.5\\times"+eval(String(side*heighttemp))+"\\]";
-      var a=eval(String("0.5*"+String(side*heighttemp)));
-      areatemp+="\\[A="+a+" \\]";
-      areatemp+="\\[Area \\space of \\space Triangle \\space is \\space "+a+"\\]";
-      areaoutput.innerHTML=areatemp;
-
-      renderMathInElement(areaoutput);
-      renderMathInElement(perimeteroutput);
-      renderMathInElement(heightoutput);
-  }
-  else{
-      areaoutput.innerHTML="";
-      perimeteroutput.innerHTML="";
-      heightoutput.innerHTML="";
-  }
-  
-}
 function solvecircle()
 {
     let radius=document.getElementById("inputradius").value;
@@ -4297,6 +4415,58 @@ function convertBinhex() {
 }
 //--------------------------------------------------------------------------------
 
+// 1's 2's complement
+function onetwoCalc() {
+  const input = document.getElementById("onetwonumber").value;
+  let result = document.getElementById("onetworesult");
+  var ar=input.split("");
+  var one=new Array(ar.length);
+  var two=new Array(ar.length);
+  for(var i=0;i< ar.length;i++)
+  {
+	  if(ar[i]==0)
+	  {
+		  one[i]=1;
+	  } else 
+	  {
+		  one[i]=0;
+	  }
+  }
+  var onec = one.join('');
+  result.innerHTML ="One's complement of "+input+" is "+ onec+"<br>";
+  
+  for(var i= ar.length-1;i>=0;i--)
+  {   
+      two[i]=ar[i];
+	  if(ar[i]==1)
+	  break;
+	
+  }
+  if(i==-1)
+  {
+    var twoc='1'+ two.join('');
+  } else{
+	  for(var k=i-1;k>=0;k--)
+	  {
+		   if(ar[k]==0)
+	  {
+		  two[k]=1;
+	  } else 
+	  {
+		  two[k]=0;
+	  }
+	  }
+	  var twoc =two.join('');
+  }
+  result.innerHTML +="Two's complement of "+input+" is "+ twoc +"<br>";
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+  else if(input.search(/^[10]+$/) == -1)
+		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+	  
+}
 ////////////////////date calculator///////////
 function datecal()
 {
@@ -4372,13 +4542,67 @@ function computeprobability()
    var nettotal=document.getElementById('total').value;
    let result = document.getElementById("probability-result");
 
-     
-  result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+   
+
+   if(favour>nettotal)
+   {
+        result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
+
+     }
+     else
+     {
+        result.innerHTML = "The probability of the event is :-" + (favour/nettotal).toFixed(3);
+     }
+  
+   
 }
 
 
+function computejointprobability()
+{
 
 
+    var probability1=(document.getElementById("favourable1").value)/(document.getElementById('total1').value);
+    var probability2=(document.getElementById("favourable2").value)/(document.getElementById('total2').value);
+
+    var probability3=(probability1*probability2);
+
+    let result1 = document.getElementById("probability-result1");
+    let result2 = document.getElementById("probability-result2");
+    let result3 = document.getElementById("probability-result3");
+     var check=true;
+
+   if((document.getElementById("favourable1").value) >(document.getElementById('total1').value))
+   {
+        result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+           check=false;
+     }
+     else
+     {
+         result1.innerHTML="The probability of first event is :-" + (probability1).toFixed(3);
+     }
+    
+
+    if((document.getElementById("favourable2").value) >(document.getElementById('total2').value))
+   {
+        result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+      check=false;
+     }
+     else
+     {
+         result2.innerHTML="The probability of second event is :-" + (probability2).toFixed(3);
+     }
+
+    
+   
+   if(check==true)
+   {
+     result3.innerHTML="The joint probability of both the events is:-" + (probability3).toFixed(3);
+
+   }
+   
+
+}
 
 
 
