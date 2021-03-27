@@ -191,6 +191,7 @@ function openit(id) {
         "#bcd",
         "#vector",
         "#diffeqn",
+        "#srf",
         "#tangent",
         "#probabilitycollapse",
 

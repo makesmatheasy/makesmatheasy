@@ -190,6 +190,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#srfbtn").click(function () {
+        openit("#srf");
+        closenav();
+        clearall();
+    });
     $("#trigonoidenbutton").click(function () {
         openit("#trigonoiden");
         closenav();
