@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Makes Math Easy</title>
+    <title>MakesMathEasy</title>
     <meta charset="UTF-8">
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=8"/>
@@ -237,7 +237,7 @@
     </p>
 </div>
 
-<ul id="favourite"></ul>
+<ul id="favourite" class="collapse"></ul>
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
         <li class="listyle home list_menu_items" style="margin-top: 1.25rem;"><a id="homeoption"
@@ -548,6 +548,22 @@
                                 <span
                                         onclick="addtofavourite('Differential Equations','#diffeqn','c','diffeqnimgfav')"><img
                                         id="diffeqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="maxminbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Maxima and Minima of functions</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Maxima and Minima of functions','#maxmin','c','maxminimgfav')"><img
+                                        id="maxminimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1348,6 +1364,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="locrootsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Location of Roots</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Location of Roots','#locroots','c','locrootsqimgfav')"><img
+                                        id="locrootsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="equationssolverbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Play
                                 with
@@ -1492,7 +1524,24 @@
                     </tr>
                 </table>
             </li>
-
+            
+			<li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="onetwocom-calc-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">1s and 2s Complement
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('1s and 2s Complement Calculator','#onetwocom-calc','c','onetwocom-calc-imgfav')"><img
+                                        id="onetwocom-calc-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -1536,12 +1585,29 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="probabilitycollapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Simple Probability
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Empirical Probability
                         <td style="float:right;border-top: none;">
                              <span
-                                     onclick="addtofavourite('SimpleProbability','#probabilitycollapse','c','probabilityfav')"><img
+                                     onclick="addtofavourite('Empirical Probability','#probabilitycollapse','c','probabilityfav')"><img
                                      id="probabilityfav" src="images/unfavourite.png"
                                      style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+             <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="jointprobabilitycollapsebtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint
+                                Probability</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Joint Probability','#joint-probabilitycollapse','c','joint-probailityfav')"><img
+                                        id="joint-probailityfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -1575,13 +1641,13 @@
 </nav>
 
 <div id="main" style="z-index:31;">
-    <div class="form-group" style="margin-top:1rem">
+    <div class="form-group " style="margin-top:1rem">
             <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
                   class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
                                                style="cursor:pointer; height: 40px;padding-left: 0.625rem;"></span>
         <span onclick="opencal()"><img src="icons/keys.svg"
                                        style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;"></span>
-        <button id="fav-button" onclick="collapseit('favourite')"><span style="font-size:135%;">&starf;</span> Favourite
+        <button class="collapse" id="fav-button" onclick="collapseit('favourite')"><span style="font-size:135%;">&starf;</span> Favourite
         </button>
 
     </div>
@@ -2440,36 +2506,11 @@
                                         </div>
                                     </div>
                                 </div>
+                        
 
                                 <!-- End of Operatiosn on fractions   ------------------------------------------>
 
-        <!-- log values ------------------------------------------------------------->
-
-        <div class="collapse" id="log_values">
-            <fieldset class="form-group">
-                <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log Calculator</legend>
-                <strong style="font-size: 30px; color: aliceblue;">log</strong>
-                <sub><input type="number" min="1" max="9999" step="1" name="log-base" id="log-base" placeholder="Number"
-                            value="" required="">
-                </sub>
-                <sup><input type="number" min="1" max="999999999" name="x-number" id="x-number" placeholder="Number"
-                            class="fontbig" value="" required=""></sup>
-
-            </fieldset>
-
-            <button type="button" class="btn btn-light" style="margin-top: 40px" ; onclick="cal_log()">
-                FIND LOG
-            </button>
-
-            <div class="form-group" style=" margin-top: 40px ; color: aliceblue ; display: inline;">
-                <h2 id="result">log<sub id="base_1">y</sub> (<var id="no_1">x</var>) = <var id="answer"></var></h2>
-            </div>
-
-
-        </div>
-
-
-        <!-- end of log - values ----------------------------------------------------->
+        
 
         <div class="collapse" id="table">
             <div class="form-group num-limit" style="display: inline-block;">
@@ -2627,6 +2668,7 @@
                              </div>
                              </div>
                         </div>
+                      </div>
 
 
             <div class="collapse" id="stats">
@@ -2753,6 +2795,34 @@
                     </div>
                 </div>
             </div>
+
+            <!-- log values ------------------------------------------------------------->
+
+        <div class="collapse" id="log_values">
+            <fieldset class="form-group">
+                <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log Calculator</legend>
+                <strong style="font-size: 30px; color: aliceblue;">log</strong>
+                <sub><input type="number" min="1" max="9999" step="1" name="log-base" id="log-base" placeholder="Number"
+                            value="" required="">
+                </sub>
+                <sup><input type="number" min="1" max="999999999" name="x-number" id="x-number" placeholder="Number"
+                            class="fontbig" value="" required=""></sup>
+
+            </fieldset>
+
+            <button type="button" class="btn btn-light" style="margin-top: 40px" ; onclick="cal_log()">
+                FIND LOG
+            </button>
+
+            <div class="form-group" style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                <h2 id="result"></h2>
+            </div>
+
+
+        </div>
+
+
+        <!-- end of log - values ----------------------------------------------------->
 
 
                 <div class="collapse" id="defintegration-idencollapse">
@@ -2944,6 +3014,32 @@
             </p>
             <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
         </div>
+        <div class="collapse" id="maxmin">
+            <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
+            <p>A local <b>maximum</b> point on a function is a point (x,y) on the graph of the function whose y coordinate is larger than all 
+                other y coordinates on the graph at points "close to'' (x,y). More precisely, (x,f(x)) is a local maximum if there is 
+                an interval (a,b) with (a &#60 x &#60 b) and f(x)≥f(z) for every z in (a,b). Similarly, (x,y) is a local <b>minimum</b> point if it has 
+                locally the smallest y coordinate. Again being more precise: (x,f(x)) is a local minimum if there is an interval 
+                (a,b) with a &#60 x &#60 b and f(x)≤f(z) for every z in (a,b). A local extremum is either a local minimum or a local maximum.
+           </p>
+           <img style="margin-left: 350px;" src="https://www.mathsisfun.com/calculus/images/function-min-max.svg" alt="">
+           <br><br>
+           <h4>First Order Derivative Test</h4>
+           <ol>
+               <li style="color: white; font-size: 20px;">Find out first derivative of f(x)</li>
+               <li style="color: white; font-size: 20px;">Equate to 0 and find out values of x</li>
+               <li style="color: white; font-size: 20px;">Plot a wavy curve</li>
+               <li style="color: white; font-size: 20px;">If at a point curve goes from -ve slope to +ve,Minima at that point and viceversa for Maxima</li>
+           </ol>
+           <br><br>
+           <h4>Second Order Derivative Test<h4>
+           <ol>
+               <li style="color: white; font-size: 20px;">Equate to 0 first order derivative and find values of x</li>
+               <li style="color: white; font-size: 20px;">Find out second derivative</li>
+               <li style="color: white; font-size: 20px;">Put values of x in seoond derivative </li>
+               <li style="color: white; font-size: 20px;">If answer is +ve, Minima and -ve,Maxima</li>
+           </ol>
+        </div>
         <div class="collapse" id="tangent">
             <h2 style="text-align: center;">Tangent & Normal</h2>
             <br><br>
@@ -3129,7 +3225,7 @@
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
 
-            <h1>Find polar Represantaion of complex number</h1>
+            <h1>Find polar Representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp;  </label>
                 <input type="number" id="cpreal" class="form__field" placeholder="Real"
@@ -4342,6 +4438,54 @@
 
                     </tbody>
             </table>
+            <h3>Domain,Range and Graph of Inverse Functions</h3>
+            <table class="table table-bordered table-dark">
+                <tbody>
+                <tr>
+                <th scope="col">\[Function\]</strong></th>
+                <th scope="col">\[Domain\]</strong></th>
+                <th scope="col"><p></p>\[Range \,of\, an\]</p><p>\[ Inverse\, Function\]</p></th>
+                <th scope="col">\[Graphs\]</strong></th>
+                </tr>
+                <tr>
+                <th scope="row"><p>\[sin^{-1}x\]</p><p>\[(arcsine\,x)\]</p></th>
+                <td >\[-1≤ x&nbsp;≤1\]</td>
+                <td>\[-\frac{π}{2}≤y≤ \frac{π}{2}\]</td>
+                <td><img src="images/arcsin.png" class="img-fluid"></td>
+                </tr>
+                <tr>
+                <th scope="row"><p>\[cos^{-1}x\]</p><p>\[(arccosine\,x)\]</p></th>
+                <td>\[-1≤ x&nbsp;≤1\]</td>
+                <td>\[0≤y&nbsp;≤π\]</td>
+                <td><img src="images/arccos.png" class="img-fluid"></td>
+                </tr>
+                <tr>
+                <th scope="row"><p>\[tan^{-1}x\]</p><p>\[(arctangent\,x)\]</p></th>
+                <td>\[– ∞ &lt; x &lt;&nbsp; ∞\]</td>
+                <td>\[-\frac{π}{2}&lt;y&lt;\frac{π}{2}\]</td>
+                <td><img src="images/arctan.png" class="img-fluid"></td>
+                </tr>
+                <tr>
+                <td scope="row"><p>\[cot^{-1}x\]</p><p>\[(arccotangent\,x)\]</p></th>
+                <td>\[– ∞ &lt; x &lt;&nbsp; ∞\]</td>
+                <td>\[0&lt;y&lt;π\]</td>
+                <td><img src="images/arccot.png" class="img-fluid"></td>
+                </tr>
+                <tr>
+                <th scope="row"><p>\[sec^{-1}x\]</p><p>\[(arcsecant\,x)\]</p></th>
+                <td>\[– ∞ ≤&nbsp;x ≤-1 \]</p><p>\[or\]</p><p>\[ 1≤x≤ ∞\]</p></td>
+                <td><p>\[0≤y≤\pi,\]</p><p>\[y \neq \frac{\pi}{2}\]<p></td>
+                <td><img src="images/arcsec.png" class="img-fluid"></td>
+                </tr>
+                <tr>
+                <th scope="row"><p>\[cosec^{-1}x\]</p><p></p>\[(arccosecant\,x)\]</th>
+                <td>\[– ∞ ≤&nbsp;x ≤-1\, or\, 1≤x≤ ∞\]</td>
+                <td>\[-\frac{π}{2}≤y≤\frac{π}{2},y \neq 0\]</td>
+                    <td><img src="images/arccosec.png" class="img-fluid"></td>
+                </tr>
+                </tbody>
+                </table>
+
         </div>
         <div class="collapse" id="trigsolcollapse">
             <div class="stopwrap">
@@ -4456,9 +4600,12 @@
             <img style="margin-left: 450px;" src="images/Mn.png">
             <p>\[9) \space Radius\space of\space CircumCircle : R = \frac{a}{2sinA} = \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
             <img style="margin-left: 450px;" src="images/circumcircle.png">
-            <p>\[10) \space Radius\space of\space InCircle : r_1 = \frac{\triangle}{s-a} \space = stan\frac{A}{2} \space = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
+            <p>\[10) \space Radius\space of\space InCircle : r = \frac{\triangle}{s} \space = (s-a)tan\frac{A}{2} \space = 4R sin\frac{A}{2}sin\frac{B}{2}sin\frac{C}{2}\]</p>
             <img style="margin-left: 420px;" src="images/incircle.png">
-            <p>\[11) \space Orthocentre\space and\space Pedal\space triangle : \]</p>
+
+            <p>\[11) \space Radius\space of\space ExCircle : r_1 = \frac{\triangle}{s-a} \space = (s)tan\frac{A}{2} \space = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
+
+            <p>\[12) \space Orthocentre\space and\space Pedal\space triangle : \]</p>
             <img style="margin-left: 420px;" src="images/pedal.png">
             <p>  \[ The\space triangle\space formed\space by\space joining\space the\space feet\space of\space the\space
                 altitudes\space is\space called\space the\space Pedal\space Triangle.\]
@@ -4467,11 +4614,29 @@
             <p>\[c) \space The \space distance \space of \space orthocenter \space from \space sides \space are\]\[ 2RcosB \space cosC, \space 2RcosCcosA \space and 2RcosCcosA.\]</p>
             <p>\[d) \space Area \space of \space Pedal \space Triangle \space = \space 2 \triangle cosAcosBcosC \space = \frac{1}{2}R^2sin2Asin2Bsin2C \]</p>
             <p>\[e) \space Circumradii \space of \space pedal \space triangle \space = \space \frac{R}{2}\]</p><br>
-            <p>\[12) \space Important Results\]</p>
-            <p>\[Circumcentre (O) : O_A\space =\space R\space\space and\space\space O_A\space =\space R cos A\]</p>
-            <p>\[Orthocentre: H_A = 2R cos A and H_A = 2R cos B cos C\]</p>
-            <p>\[Excentre (I_1): I_1A\space =\space r_1\space cosec\frac{A}{2}\]</p>
-            <p>\[Centroid(G) :G_A =\sqrt[3]{2b^2+2c^2-a^2}\]</p>
+            <p>\[13) \space Important Results\]</p>
+            <p>\[a)\space Circumcentre (O) : O_A\space =\space R\space\space and\space\space O_A\space =\space R cos A\]</p>
+            <p>\[b)\space Orthocentre: H_A = 2R cos A and H_A = 2R cos B cos C\]</p>
+            <p>\[c)\space Excentre (I_1): I_1A\space =\space r_1\space cosec\frac{A}{2}\space=\,4Rcos \frac{A}{2}\]</p>
+            <p>\[d)\space Centroid(G) :G_A =\sqrt[3]{2b^2+2c^2-a^2}\]</p>
+            <p>\[e)\space Incentre(I) :I =r\,cosec\frac{A}{2}\]</p>
+            <p>\[f)\space Length\,of\,Angle\,Bisector\,from\,angle\,A\,=\frac{2bc\,cos\frac{A}{2}}{b+c}\]</p>
+            <p>\[g)\space Length\, of\, Median \,from \,angle \,A\, =\frac{1}{2}\sqrt{2b^2+2c^2-a^2}\]</p>
+            <p>\[h)\space Length \,of\, Altitude\, from \,Angle\, A\,=\,\frac{2\triangle}{a}\,=c\,sinB\]</p>
+            <p>\[i)\space Relation\, between\, area \,of\, Inscribed(A)\, and \,Excribed(A_1,A_2,A_3)\, Circle\, of \,\triangle ABC:\]</p>
+                <p>\[\frac{1}{\sqrt{A}}\,=\,\frac{1}{\sqrt{A_1}}\,+\,\frac{1}{\sqrt{A_2}}\,+\,\frac{1}{\sqrt{A_3}}\]</p><br>
+            <p>\[j)\space Relation \,between\, median \,and \,sides \,of\, \triangle ABC:\]</p>
+            <p>\[(Length\, of\, median\, from\, angle\, A)^2\,+\,(Length\, of\, median\, from\, angle\, B)^2\,+\]</p>
+            <p>\[(Length\, of\, median\, from\, angle\, C)^2\,=\,\frac{3}{4}(a^2+b^2+c^2)\]</p><br>
+            <p>\[k) \space Relation\,between\, angle\, of \triangle ABC,\, Inradius,\,Circumradius:\]</p>
+            <p>\[ cosA\,+\,cosB\,+\,cosC\,=\,1+\frac{r}{R}\]</p><br>
+            <p>\[l)\space Incentre \,and \,Centroid \,always\,lie\,inside\, the\, \triangle\]</p><br>
+            <p>\[m)\space Circumcentre\, lies\, inside\, acute\, angled\, \triangle,\,outside\, obtuse\, angled\,  \triangle\]</p>
+            <p>\[and\, on \,hypotenuse\, for\, right\, angled\, \triangle\]</p><br>
+            <p>\[n)\space Orthocentre\, lies\, inside\, acute\, angled\, \triangle,\,outside\, obtuse\, angled\,  \triangle\]</p>
+            <p>\[and\, at \,B\, for\, right\, angled\, \triangle ABC \, right \,angled \,at \,B\]</p>
+
+
         </div>
 
         <!--algebraic formulas list starts-->
@@ -4502,6 +4667,28 @@
             </div>
         </div>
         <!--formulas list ends-->
+        <div class="collapse" id="locroots">
+            <h2>Location of Roots</h2>
+            <p>\[Let\space f(x) = ax^2+bx+c = 0 where\space a>0\space then,\]</p>
+            <br>
+            <p>1.If both the roots are positive i.e. they lie in (0, ¥), then the sum of the roots as well as the product of the roots must be positive.</p>
+            <p>\[ ie. \space a+b = \frac{-b}{a} > 0 \space and\space ab=\frac{c}{a}>0\]</p>
+            <p>2.Similarly, if both the roots are negative i.e. they lie in (–¥, 0) then the sum of the roots will be negative and the product of the roots must be positive.</p>
+            <p>\[ie.\space a+b = \frac{-b}{a} < 0 \space and\space ab >0\]</p>
+            <p>3.Both the roots are greater than a given number k if the following three conditions are satisfied,</p>
+            <p>\[D>=0\space \frac{-b}{2a} > k\space and\space a.f(k)>0\]</p>
+            <img src="https://embibe-cdn.s3.amazonaws.com/resources/images/54556146.png" style="margin-left: 300px;" alt="">
+            <br><br>
+            <p>4.Both the roots will lie in the given interval (k1, k2) if the following conditions are satisfied </p>
+            <p>\[D>=0\space k_1 < \frac{-b}{2a} < k_2\space and\space a.f(k_1)\space and\space a.f(k_2) are >0\]</p>
+            <img src="https://embibe-cdn.s3.amazonaws.com/resources/images/4565164513.png" style="margin-left: 300px;" alt="">
+            <br><br>
+            <p>5.Exactly one of the roots lies in the given interval (k1, k2) if,</p>
+            <p>\[f(k_1).f(k_2)\space >\space 0\]</p>
+            <p>6.A given number k will lie between the roots if <b>a.f(k) < 0.</b></p>
+            <p> In particular, the roots of the equation will be of opposite signs if 0 lies between the roots <b> a.f(0) < 0. </b></p>
+            <img src="" alt="">
+        </div>
 
         <div class="collapse" id="rootsquadratic">
             <div class="form-group">
@@ -5181,6 +5368,10 @@
                     <td><a data-toggle="modal" data-target="#parallelogram" style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tetrahedron" style="text-decoration:none;"
+                           href="#">Tetrahedron</a></td>
+                </tr>
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -5199,7 +5390,11 @@
             <br>
             <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-4.png" alt="">
             <br><br>
-            <p>4. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side of a right- angled triangle is equivalent to the hypotenuse and a side of the second right- angled triangle, then the two right triangles are said to be congruent by RHS rule.</p>
+            <p>4. AAS Property (Angle-Angle-Side) - If any two angles and a non included side of one triangle are equivalent to the corresponding two angles and the non included side of the second triangle, then the two triangles are said to be congruent by AAS rule.</p>
+            <br>
+            <img src="images/AASprop.png" alt="" style="width: 750px;height: 361px;">
+            <br><br>
+            <p>5. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side of a right- angled triangle is equivalent to the hypotenuse and a side of the second right- angled triangle, then the two right triangles are said to be congruent by RHS rule.</p>
             <br>
             <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-5.png" alt="">
             <br><br><br><br>
@@ -5353,12 +5548,10 @@
         </tr>
 
     </table>
-    <button class="btn btn-outline-light" onclick="" style="margin-left: 440px;"  >Rules
-    </button>
-    <br><br>
-
-    <p  style="margin-left: 300px;">1.  Percentage(%) = (SPI/CGPA - 0.5 ) *10 <br> 2.  SPI/CGPA = ( Percentage(%) / 10 ) + 0.5 <br>
-    3. SPI/CGPA scaled out of 10.
+     <div class="text-center">
+                <h2><label>Rules</label></h2> 
+                <p>1.  Percentage(%) = (SPI/CGPA - 0.5 ) *10 <br> 2.  SPI/CGPA = ( Percentage(%) / 10 ) + 0.5 <br>
+                 3. SPI/CGPA scaled out of 10.
     </p>
 </div>
         <!-- Factorial -->
@@ -5743,6 +5936,28 @@
             </div>
         </div>
         <!-- End of Bitwise Calculator-->
+		<!-- Start of 1's 2's Complement Calculator -->
+         <div class="collapse" id="onetwocom-calc">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter Binary number</h5>
+                        <input type="number"  class="form__field" id="onetwonumber">
+                    </div>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+					    <button type="button" class="btn btn-light" onclick="onetwoCalc()">
+                    Find
+                </button>
+                        <label class="form__field" id="onetworesult"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of 1's 2's complement Calculator-->
 
         <!-- Start of Octal / Binary -->
         <div>
@@ -6251,14 +6466,17 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center">Area</h5>
-                                <p class="text-center">\[A = \frac{1}{2} \times b \times h\]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Perimeter</h5>
-                                <p class="text-center">\[P = a+b+c\]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Height</h5>
-                                <p class="text-center">\[h = 2 \times \frac{A}{b}\]</p>
+                                 <h5 class="text-center">Perimeter</h5>
+                                        <p class="text-center">\[P = a+b+c\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Semi-Perimeter</h5>
+                                        <p class="text-center">\[s = \frac{a+b+c}{2} \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = \sqrt {s(s-a)(s-b)(s-c)}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Height</h5>
+                                        <p class="text-center">\[h = 2 \times \frac{A}{b}\]</p>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
@@ -6277,9 +6495,9 @@
                                id="inputsecondside" oninput="solvescalenetriangle();">
                         <input class="form__field" type="number" placeholder="Enter Third Side (c)"
                                id="inputthirdside" oninput="solvescalenetriangle();">
-                        <p class="stopwrap" id="resultofareast" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofperist" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofheightst" style="font-family:mathfont;"></p>
+                       <p class="stopwrap" id="resultofperist" style="font-family:mathfont;"></p>
+                       <p class="stopwrap" id="resultofsemiperist" style="font-family:mathfont;"></p>
+                       <p class="stopwrap" id="resultofareast" style="font-family:mathfont;"></p>
                     </div>
                     <!-- TILL HERE -->
                 </div>
@@ -6334,12 +6552,13 @@
                         <input class="form__field" type="number" placeholder="Enter Non-Equalivalent Side (b)"
                                id="inputitside" oninput="isoscelestrianglearea();">
                         <br>
-                        <p class="stopwrap" id="resultofheightit1" style="font-family:mathfont;"></p>
+			                  <p class="stopwrap" id="resultofheightit1" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofheightit2" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofareait1" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofareait2" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperiit1" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperiit2" style="font-family:mathfont;"></p>
+                        
                     </div>
                     <!-- TILL HERE -->
                 </div>
@@ -6351,7 +6570,6 @@
         </div>
     </div>
 
-    
     <div class="modal fade" id="equilateraltriangle" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -6442,8 +6660,8 @@
                                id="inputheightrighttriangle"
                                oninput="solverightangletriangle();">
                         <p class="stopwrap" id="resultofarearat" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofperirat" style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofsiderat" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhyporat" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofperirat" style="font-family:mathfont;"></p>
                     </div>
                     <!---TILL-->
                 </div>
@@ -6605,6 +6823,60 @@
                         <p class="stopwrap" id="resultofareatrap" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperitrap" style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofheighttrap" style="font-family:mathfont;"></p>
+
+                    </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Regular Tetrahedron</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Circumradius</h5>
+                                <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/tetrahedron.png" class="img-fluid">
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Inradius</h5>
+                                <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number" placeholder="Enter Side (a)"
+                               id="inputtside" oninput="solvetetra()">
+                        <p class="stopwrap" id="resultofvolt" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofheightt" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofcircumt" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofinradt" style="font-family:mathfont;"></p>
 
                     </div>
                     <!-- ------HERE------ -->
@@ -7700,7 +7972,7 @@
 <!--Simple Probability-->
 
        <div class="collapse" id="probabilitycollapse">
-            <h1>Simple Probability</h1>
+            <h1>Empirical Probability</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
@@ -7733,11 +8005,64 @@
 
 
 
+<!--Joint  Probability-->
+
+
+<div class="collapse" id="joint-probabilitycollapse">
+            <h1>Joint Probability </h1>
+             <p>The probability that two events will both occur</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes in case of Event 1</h5>
+                        <input type="number" value="0" class="form__field" id="favourable1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                          <h5>Enter number of possible outcomes in case of Event 1</h5>
+                        <input type="number" value="1" class="form__field" id="total1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes in case of Event 2</h5>
+                        <input type="number" value="0" class="form__field" id="favourable2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                          <h5>Enter number of possible outcomes in case of Event 2</h5>
+                        <input type="number" value="1" class="form__field" id="total2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="computejointprobability()">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="probability-result1"></p>
+            </div>
+
+             <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="probability-result2"></p>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="probability-result3"></p>
+            </div>
+
+
+            
+    </div>
 
 
 
-
-
+<!--End of Joint Probability-->
 
 
 
@@ -7794,7 +8119,8 @@
 <script type="text/javascript" src="appjs/logValue.js"></script>
 <!-- Operation on Fraction -->
  <script type="text/javascript" src="appjs/operations_on_fraction.js"></script>
-
+ <!--For Parabola Calculator-->
+ <script type="text/javascript" src="appjs/parabolaSolve.js"></script>
 </body>
 
 </html>
