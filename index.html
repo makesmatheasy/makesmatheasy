@@ -1472,6 +1472,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="boolbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Boolean Algebra</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Boolean Algebra','#bool','c','boolimgfav')"><img
+                                        id="boolimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="decimal-to-binary-btn"
                                style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal
                                 /
@@ -6469,6 +6486,45 @@
 
             </div>
             <!--  Primarity test and prime till n cal end -->
+        </div>
+        <div class="collapse" id="bool">
+            <h2 style="text-align: center;">Boolean Algebra</h2>
+            <h5>Laws of Boolean Algebra</h5>
+            <p>1. Annulment Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A . 0 = 0</li>
+                <li style="font-size: 20px; color: white;">A + 1 = 1</li>
+            </ul>
+            <p>2. Identity Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + 0 = A</li>
+                <li style="font-size: 20px; color: white;">A . 1 = A</li>
+            </ul>
+            <p>3. Idempotent Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + A = A</li>
+                <li style="font-size: 20px; color: white;">A . A = A</li>
+            </ul>
+            <p>4. Complement Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A . A<sup>'</sup> = 0</li>
+                <li style="font-size: 20px; color: white;">A + A<sup>'</sup> = 1</li>
+            </ul>
+            <p>5. Demorgan's Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">(A+B)<sup>'</sup> = A<sup>'</sup> + B<sup>'</sup></li>
+                <li style="font-size: 20px; color: white;">(A . B)<sup>'</sup> = A<sup>'</sup> + B<sup>'</sup></li>
+            </ul>
+            <p>6. Distributive Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
+                <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
+            </ul>
+            <p>7. Absorption Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + A.B = A</li>
+                <li style="font-size: 20px; color: white;">A(A+B) = A</li>
+            </ul>
         </div>
         <!--    start of calculator -->
 

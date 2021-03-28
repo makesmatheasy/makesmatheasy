@@ -161,6 +161,7 @@ function openit(id) {
         "#curconcal",
         "#factorial",
         "#setop",
+        "#bool",
         "#log_values",
         "#log-collapse",
         "#pandc",
