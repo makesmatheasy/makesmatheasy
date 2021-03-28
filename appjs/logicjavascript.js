@@ -1734,6 +1734,41 @@ function isoscelestrianglearea(){
 
 }
 
+function solveparallelogram(){
+  var base= document.getElementById("inputbase").value;
+  var height= document.getElementById("inputheight").value;
+  var side= document.getElementById("inputsidep").value;
+  var area = document.getElementById("resultofareap");
+  var peri1 = document.getElementById("resultofperip1");
+  var peri2 = document.getElementById("resultofperip2");
+  var heightperi = document.getElementById("resultofheightp");
+  area.innerHTML = "";
+  peri1.innerHTML = "";
+  peri2.innerHTML = "";
+  heightperi.innerHTML = "";
+  var a = base*height;
+  var p = 2 * (parseInt(base) + parseInt(side));
+  var h = a/base;
+  console.log(a);
+  console.log(p);
+  console.log(h);
+  if(base!="" && height!=""){
+    document.getElementById("resultofareap").innerHTML="\\[Area \\space of \\space  parallelogram \\space \\space" +base+ "\\times"+ height +"\\ = "+a+"\\]";
+    renderMathInElement(document.getElementById("resultofareap"));
+  }
+  if (side!="" && base!=""){
+    document.getElementById("resultofperip1").innerHTML="\\[Perimeter \\space of \\space parallelogram\\]";
+    renderMathInElement(document.getElementById("resultofperip1"));
+    document.getElementById("resultofperip2").innerHTML="\\[2 \\times ("+base+ "+" +side+")\\ = "+p+" \\]";
+    renderMathInElement(document.getElementById("resultofperip2"));
+  }
+  if (base!="" && a!=""){
+    document.getElementById("resultofheightp").innerHTML="\\[Height \\space of \\space parallelogram  \\space \\frac{"+a+"}{"+base+"} = "+h+" \\]";
+    renderMathInElement(document.getElementById("resultofheightp"));
+  }
+
+}
+
 function rhombussolve() {
   var d1= document.getElementById("inputd1").value;
   var d2= document.getElementById("inputd2").value;
