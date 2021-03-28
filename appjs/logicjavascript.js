@@ -3640,20 +3640,33 @@ function tempcon() {
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  var result= document.getElementById("compresult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-  result.innerHTML = x;
+ function datau(a) {
+      switch(a)
+       {
+          case "1":
+            return 0.125;
+          case "2":
+               return 1;
+          case "3":
+               return 1000;
+          case "4":
+            return 1000000;
+          case "5":
+            return 1000000000;
+          case "6":
+             return 1000000000000;
+          case "7":
+            return 1000000000000000; 
+            
+       }
+ }
+
+ function datacon() {
+  const f = datau(document.getElementById("datacon-1").value);
+  const t = datau(document.getElementById("datacon-2").value);
+  const i = parseInt(document.getElementById("dataconin").value);
+  const a = (i * f) / t;
+  document.getElementById("dataconou").innerHTML = `${a}`;
 }
 
 // simple and compound interest
