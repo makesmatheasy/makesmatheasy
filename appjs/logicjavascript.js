@@ -2029,10 +2029,10 @@ function solvecircle()
       area=area.toPrecision(3);
       Circumference=Circumference.toPrecision(3);
       diameter=diameter.toPrecision(3);
-      document.getElementById("resultofareac").innerHTML="\\[Area \\space of \\space Circle \\ 3.14 r^2\\ = "+area+"\\]";
+      document.getElementById("resultofareacir").innerHTML="\\[Area \\space of \\space Circle \\ 3.14 r^2\\ = "+area+"\\]";
       document.getElementById("resultofcircumferencec").innerHTML="\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = "+Circumference+"\\]";
       document.getElementById("resultofdiameterc").innerHTML="Diameter of Circle = "+diameter;
-    renderMathInElement(document.getElementById("resultofareac"));
+    renderMathInElement(document.getElementById("resultofareacir"));
     renderMathInElement(document.getElementById("resultofcircumferencec"));
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
