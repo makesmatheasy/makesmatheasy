@@ -160,6 +160,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#boolbtn").click(function () {
+        openit("#bool");
+        closenav();
+        clearall();
+    })
     $("#convdivbtn").click(function () {
         openit("#convdiv");
         closenav();
