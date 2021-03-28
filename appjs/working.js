@@ -40,6 +40,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#mathrbtn").click(function(){
+        openit("#math");
+        closenav();
+        clearall();
+    });
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
@@ -185,6 +190,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#srfbtn").click(function () {
+        openit("#srf");
+        closenav();
+        clearall();
+    })
+    $("#maxminbtn").click(function () {
+        openit("#maxmin");
+        closenav();
+        clearall();
+    })
+    $("#locrootsbtn").click(function () {
+        openit("#locroots");
+        closenav();
+        clearall();
+    })
     $("#datebtn").click(function () {
         openit("#datecal");
         closenav();
@@ -314,6 +334,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+	
+	$("#onetwocom-calc-btn").click(function(){
+        openit("#onetwocom-calc");
+        closenav();
+        clearall();
+    });
 
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
@@ -404,6 +430,11 @@ $(document).ready(function () {
     });
     $("#probabilitycollapsebtn").click(function(){
         openit("#probabilitycollapse");
+        closenav();
+        clearall();
+    });
+    $("#jointprobabilitycollapsebtn").click(function(){
+        openit("#joint-probabilitycollapse");
         closenav();
         clearall();
     });
