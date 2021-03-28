@@ -276,6 +276,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="setopbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations on Sets</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
+                                        id="setopfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="matrixcollapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Matrix</a>
                         </td>
@@ -3588,8 +3603,36 @@
                 </div>
             </div>
         </div>
+        <div class="collapse" id="setop">
+            <h2 style="text-align: center;">Operations on Sets</h2>
+            <h5>1. Union</h5>
+            <p>The union of two sets is a set containing all elements that are in A or in B (possibly both). For example,</p>
+            <p>\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
+            <img src="https://www.probabilitycourse.com/images/chapter1/union_b.png" style="margin-left: 300px; height: 200px;" alt="">
+            <br><br>
+            <h5>2. Intersection</h5>
+            <p>The intersection of two sets A and B, denoted by A∩B, consists of all elements that are both in A and B. For example,</p>
+            <p>\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
+            <img src="https://www.probabilitycourse.com/images/chapter1/intersection_b.png" style="margin-left: 300px; height: 200px;" alt="">
+            <br>
+            <p style="text-align: center;"><i>The intersection of A and B is the middle part</i></p>
+            <br>
+            <img src="https://www.probabilitycourse.com/images/chapter1/intersection3_b.png" style="margin-left: 300px; height: 200px;" alt="">
+            <br><br>
+            <h5>3. Complement</h5>
+            <p>The complement of a set A, denoted by A<sup>c</sup> is elements in Universal Set which are not in A</p>
+            <br>
+            <img src="https://www.probabilitycourse.com/images/chapter1/complement_b.png" style="margin-left: 300px; height: 200px;"alt="">
+            <br><br>
+            <h5>4. Difference</h5>
+            <p>The set A−B consists of elements that are in A but not in B. For example if</p>
+            <p>\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
+                A-B = \{1,2\}\]
+            </p>
+            <img src="https://www.probabilitycourse.com/images/chapter1/difference_b.png" style="margin-left: 300px; height: 200px;" alt="">
+        </div>
         <div class="collapse" id="srf">
-            <h2>Sets,Relations and Functions</h2>
+            <h2 style="text-align: center;">Sets,Relations and Functions</h2>
             <h4>What are Sets?</h4>
             <p>A set is the representation of a collection of objects; distinct objects with one or more common properties.</p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Venn_A_intersect_B.svg/1200px-Venn_A_intersect_B.svg.png" style="margin-left: 350px; width: 300px;" alt="">
@@ -6345,6 +6388,95 @@
 
         <!--end of binary to hexadecimal-->
 
+
+        <!--Simple Probability-->
+
+       <div class="collapse" id="probabilitycollapse">
+        <h1>Empirical Probability</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of favourable outcomes</h5>
+                    <input type="number" value="0" class="form__field" id="favourable">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                      <h5>Enter number of possible outcomes</h5>
+                    <input type="number" value="1" class="form__field" id="total">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="computeprobability()">
+                Solve
+            </button>
+        </div>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="probability-result"></p>
+        </div>
+    </div>
+
+<!--End of Simple Probability-->
+
+
+
+<!--Joint  Probability-->
+
+<div class="collapse" id="joint-probabilitycollapse">
+        <h1>Joint Probability </h1>
+         <p>The probability that two events will both occur</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of favourable outcomes in case of Event 1</h5>
+                    <input type="number" value="0" class="form__field" id="favourable1">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                      <h5>Enter number of possible outcomes in case of Event 1</h5>
+                    <input type="number" value="1" class="form__field" id="total1">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of favourable outcomes in case of Event 2</h5>
+                    <input type="number" value="0" class="form__field" id="favourable2">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                      <h5>Enter number of possible outcomes in case of Event 2</h5>
+                    <input type="number" value="1" class="form__field" id="total2">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="computejointprobability()">
+                Solve
+            </button>
+        </div>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="probability-result1"></p>
+        </div>
+
+         <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="probability-result2"></p>
+        </div>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="probability-result3"></p>
+        </div>
+
+
+</div>
+
+<!--End of Joint Probability-->l̥
+
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
             <div class="bodyof">
                 <form class="calculator" name="calc">
@@ -6709,39 +6841,6 @@
                                 <p class="text-center">\[b= \sqrt{d^2-l^2}\]</p>
                             </div>
                         </div>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div style="color: white;cursor: pointer;">
-                            <a data-toggle="modal" data-target="#datacon" style="text-decoration:none;"
-                               href="#">Data Storage</a>
-                        </div>
-                    </td>
-                </tr>
-
-
-            </table>
-        </div>
-
-        <!-- Factorial -->
-        <div class="collapse" id="factorial">
-            <form class="form-inline">
-                <input type="number" id="factorialval" placeholder="Enter a Number"
-                       style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
-                <button type="button" class="btn btn-light" onclick="factorialsol('factorialval')">
-                    Solve
-                </button>
-            </form>
-            <br>
-            <div class="form-group">
-                <p id="explain_fact" style="display:flex;font-family:mathfont;;width:auto;"
-                   class="stopwrap" align="right"></p>
-                <br>
-                <p id="factorialsolprint" style="display:flex;font-family:mathfont;;width:auto;"
-                   class="stopwrap" align="right"></p>
 
                         <div class="dropdown-divider"></div>
                         <p>Fill Atleast Any of two</p>
@@ -8441,107 +8540,6 @@
 <!--roman numeral end-->
 
 
-<!--Simple Probability-->
-
-       <div class="collapse" id="probabilitycollapse">
-            <h1>Empirical Probability</h1>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes</h5>
-                        <input type="number" value="0" class="form__field" id="favourable">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                          <h5>Enter number of possible outcomes</h5>
-                        <input type="number" value="1" class="form__field" id="total">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="computeprobability()">
-                    Solve
-                </button>
-            </div>
-            <div class="form-group text-center">
-                <p class="stopwrap" style="color:white;" id="probability-result"></p>
-            </div>
-    </div>
-
-
-
-
-<!--End of Simple Probability-->
-
-
-
-<!--Joint  Probability-->
-
-
-<div class="collapse" id="joint-probabilitycollapse">
-            <h1>Joint Probability </h1>
-             <p>The probability that two events will both occur</p>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes in case of Event 1</h5>
-                        <input type="number" value="0" class="form__field" id="favourable1">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                          <h5>Enter number of possible outcomes in case of Event 1</h5>
-                        <input type="number" value="1" class="form__field" id="total1">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes in case of Event 2</h5>
-                        <input type="number" value="0" class="form__field" id="favourable2">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                          <h5>Enter number of possible outcomes in case of Event 2</h5>
-                        <input type="number" value="1" class="form__field" id="total2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="computejointprobability()">
-                    Solve
-                </button>
-            </div>
-            <div class="form-group text-center">
-                <p class="stopwrap" style="color:white;" id="probability-result1"></p>
-            </div>
-
-             <div class="form-group text-center">
-                <p class="stopwrap" style="color:white;" id="probability-result2"></p>
-            </div>
-            <div class="form-group text-center">
-                <p class="stopwrap" style="color:white;" id="probability-result3"></p>
-            </div>
-
-
-
-    </div>
-
-
-
-<!--End of Joint Probability-->
-
-
-
-
-
-
-
 <!--------------------------------------------------------->
 <!--    speech recognition start -->
 <script src="appjs/speechreco.js"></script>
@@ -8587,12 +8585,7 @@
 <script src="nerdamer/Extra.js"></script>
 
 
-<!-- For Log Calculator -->
-<script type="text/javascript" src="appjs/logValue.js"></script>
-<!-- Operation on Fraction -->
- <script type="text/javascript" src="appjs/operations_on_fraction.js"></script>
- <!--For Parabola Calculator-->
- <script type="text/javascript" src="appjs/parabolaSolve.js"></script>
+
 </body>
 
 </html>

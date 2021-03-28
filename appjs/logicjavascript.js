@@ -2171,7 +2171,7 @@ function solvehollowcyl() {
     tsatemp += "\\[2 \\times \\pi \\times"+"("+radius1+"-"+radius2+")"+"("+radius1+"+"+radius2+") \\]"
     tsatemp +=
       "\\[Total \\space Surface \\space Area \\space of \\space hollow \\space Cylinder \\space is \\space  \\]";
-	  tsatemp+="\\["+eval(String((2*3.14159*(radius1+radius2)*height) + (2*3.14159*(radius1+radius2)*(radius1-radius2))) + "\\]";
+	  tsatemp+="\\["+eval(String((2*3.14159*(radius1+radius2)*height) + (2*3.14159*(radius1+radius2)*(radius1-radius2)))) + "\\]";
     tsaoutput.innerHTML = tsatemp;
     renderMathInElement(voloutput);
     renderMathInElement(tsaoutput);
