@@ -2171,7 +2171,9 @@ function solvehollowcyl() {
     tsatemp += "\\[2 \\times \\pi \\times"+"("+radius1+"-"+radius2+")"+"("+radius1+"+"+radius2+") \\]"
     tsatemp +=
       "\\[Total \\space Surface \\space Area \\space of \\space hollow \\space Cylinder \\space is \\space  \\]";
-	  tsatemp+="\\["+eval(String((2*3.14159*(radius1+radius2)*height) + (2*3.14159*(radius1+radius2)*(radius1-radius2)))) + "\\]";
+
+	  tsatemp+="\\["+eval(String((2*3.14159*(radius1+radius2)*height) + (2*3.14159*(radius1+radius2)*(radius1-radius2))) + "\\]";
+
     tsaoutput.innerHTML = tsatemp;
     renderMathInElement(voloutput);
     renderMathInElement(tsaoutput);
@@ -3640,6 +3642,22 @@ function tempcon() {
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
 
+
+function polar()
+{
+  var r = parseInt(document.getElementById("cpreal").value);
+  var i = parseInt(document.getElementById("cpimg").value);
+  var result= document.getElementById("compresult");
+  var x = (Math.sqrt((r*r)+(i*i)));
+  if(!Number.isInteger(x))
+  {
+    var j = (r*r)+(i*i);
+    x = "&#8730;  "+ j ;
+  }
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
+  result.innerHTML = x;
+=======
  function datau(a) {
       switch(a)
        {
@@ -3667,6 +3685,7 @@ function tempcon() {
   const i = parseInt(document.getElementById("dataconin").value);
   const a = (i * f) / t;
   document.getElementById("dataconou").innerHTML = `${a}`;
+
 }
 
 // simple and compound interest
@@ -4512,7 +4531,9 @@ function onetwoCalc() {
 	  if(ar[i]==0)
 	  {
 		  one[i]=1;
+
 	  } else
+
 	  {
 		  one[i]=0;
 	  }
@@ -4520,8 +4541,9 @@ function onetwoCalc() {
   var onec = one.join('');
   result.innerHTML ="One's complement of "+input+" is "+ onec+"<br>";
 
+  
   for(var i= ar.length-1;i>=0;i--)
-  {
+  {   
       two[i]=ar[i];
 	  if(ar[i]==1)
 	  break;
@@ -4536,7 +4558,9 @@ function onetwoCalc() {
 		   if(ar[k]==0)
 	  {
 		  two[k]=1;
+
 	  } else
+
 	  {
 		  two[k]=0;
 	  }
@@ -4550,6 +4574,7 @@ function onetwoCalc() {
   }
   else if(input.search(/^[10]+$/) == -1)
 		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+
 
 }
 //
@@ -4645,6 +4670,7 @@ function computeprobability()
 
    var favour=parseInt(document.getElementById('favourable').value);
 
+
    var nettotal=parseInt(document.getElementById('total').value);
    let result = document.getElementById('probability-result');
 
@@ -4701,7 +4727,6 @@ function computejointprobability()
           result1.innerHTML="The probability of first event is : " + (probability1).toFixed(3);
       }
 
-
      if(favourable2 >total2)
     {
          result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
@@ -4714,9 +4739,11 @@ function computejointprobability()
 
 
 
+
     if(check==true)
     {
       result3.innerHTML="The joint probability of both the events is: " + (probability3).toFixed(3);
+
 
     }
    }

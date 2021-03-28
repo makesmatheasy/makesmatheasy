@@ -40,6 +40,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#mathrbtn").click(function(){
+        openit("#math");
+        closenav();
+        clearall();
+    });
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
@@ -341,11 +346,13 @@ $(document).ready(function () {
         clearall();
     });
 
+
     $("#ninetencom-calc-btn").click(function(){
         openit("#ninetencom-calc");
         closenav();
         clearall();
     });
+
 
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
@@ -444,6 +451,9 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+ 
+
 
     $("#lapprobtn").click(function(){
         openit("#lappro");

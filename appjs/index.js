@@ -136,6 +136,7 @@ function openit(id) {
         "#trigonoiden",
         "#factors",
         "#stats",
+        "#math",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
@@ -167,7 +168,9 @@ function openit(id) {
         "#decimal-binary",
         "#bitwise-calc",
 		"#onetwocom-calc",
+
         "#ninetencom-calc",
+
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
@@ -200,6 +203,7 @@ function openit(id) {
         "#tangent",
         "#srf",
         "#probabilitycollapse",
+        "#joint-probabilitycollapse",
 
         "#lappro",
 
