@@ -4552,6 +4552,27 @@ function onetwoCalc() {
 		  result.innerHTML ="Binary numbers can only have 0's and 1's";
 
 }
+//
+function ninetenCalc(){
+  const input = document.getElementById("ninetennumber").value;
+  let result = document.getElementById("ninetenresult");
+  var nine="";
+  var ten="";
+  for(var i=0;i<input.length;i++){
+     nine += '9' - input[i];
+    
+  }
+  ten=parseInt(nine)+1;
+  result.innerHTML ="Nine's complement of "+input+" is "+ parseInt(nine)+"<br>";
+  result.innerHTML +="Ten's complement of "+input+" is "+ ten+"<br>";
+
+
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+}
+
 ////////////////////date calculator///////////
 function datecal()
 {

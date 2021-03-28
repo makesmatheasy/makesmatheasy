@@ -167,6 +167,7 @@ function openit(id) {
         "#decimal-binary",
         "#bitwise-calc",
 		"#onetwocom-calc",
+        "#ninetencom-calc",
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
