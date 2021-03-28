@@ -165,6 +165,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#setopbtn").click(function () {
+        openit("#setop");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
@@ -448,7 +453,7 @@ $(document).ready(function () {
     });
 })
 
-function loader(action) {
+    function loader(action) {
     var body = document.getElementsByTagName("body");
     var head = document.getElementsByTagName("head");
     switch (action) {
