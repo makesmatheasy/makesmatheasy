@@ -3580,6 +3580,49 @@
 
 
         <div class="collapse" id="parabolacollapse">
+                        <!--Calculator for trivial parabola solution-->
+                        <div class="stopwrap">
+                            <table class="table table-bordered table-dark mb-4">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="2">\[Choose\space the\space calculator\space according\space to\space your\space equation\space type\]</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">\[For\space Equation:\space y^2=4ax\]</th>
+                                        <th scope="col">\[For\space Equation:\space x^2=4ay\]</th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <input type="number" id="a-number" class="form__field" placeholder="Enter value of 'a'"
+                                       oninput="cal_func_parabola_y();">
+                                       </th>
+                                       <th>
+                                            <input type="number" id="b-number" class="form__field" placeholder="Enter value of 'a'"
+                                       oninput="cal_func_parabola_x();">
+                                   </th>
+                                    </tr>
+            
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                                <p id="result_cal_func_parabola_y"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                                <p id="result_cal_func_parabola_x"></p>
+                                            </div>
+                                        </td>
+                                    </tr>   
+                
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--Calculator code for trivial parabola solution ends here-->
+                        <br>
+
             <div class="stopwrap">
                 <table class="table table-bordered table-dark">
                     <thead>
@@ -3744,6 +3787,44 @@
             </div>
         </div>
         <div class="collapse" id="ellipsecollapse">
+            <!--Calculator for trivial ecllipse solution-->
+            <div class="stopwrap">
+                <table class="table table-bordered table-dark mb-4">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="2">
+                                \[For\space Equation:\space \frac{x^2}{a^2}\space+\frac{y^2}{b^2}\space=1\]
+                                
+                                \[Eccentricity\space  of\space ecllipse\space:\space \frac{\sqrt{a^2 - b^2}}{a}\]
+                            </th>
+                        </tr>
+                        <tr>
+                           <th>
+                                <input type="number" id="aec-number" class="form__field" placeholder="Enter value of 'a'"
+                           oninput="cal_func_ecllipse();">
+                           </th>
+                           <th>
+                            <input type="number" id="bec-number" class="form__field" placeholder="Enter value of 'b'"
+                            oninput="cal_func_ecllipse();">
+                        </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h4 id="ecllipse_intro" style="color: var(--appwhite);"></h4>
+                                <div class="form-group" style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                    <p id="result_cal_func_ecllipse"></p>
+                                </div>
+                            </td>
+                        </tr>   
+    
+                    </tbody>
+                </table>
+            </div>
+            <!--Calculator code for trivial ecllipse solution ends here-->
+            <br>
             <div class="stopwrap">
                 <table class="table table-bordered table-dark">
                     <thead>
@@ -3867,6 +3948,65 @@
             </div>
         </div>
         <div class="collapse" id="hyperbolacollapse">
+            <!--Calculator for trivial hyperbola solution-->
+            <div class="stopwrap">
+                <table class="table table-bordered table-dark mb-4">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col" colspan="2">
+                                \[Choose\space your\space Equation \space type:\]
+                                
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="op_hyper" id="op1_hyper" oninput="cal_func_hyperbola();" checked>
+                                    <label class="form-check-label" for="op1_hyper">
+                                        \[\frac{x^2}{a^2}\space - \frac{y^2}{b^2}\space = 1\]
+                                    </label>
+                                  </div>
+
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="op_hyper" id="op2_hyper" oninput="cal_func_hyperbola();">
+                                    <label class="form-check-label" for="op2_hyper">
+                                        \[\frac{x^2}{b^2}\space - \frac{y^2}{a^2}\space = 1\]
+                                    </label>
+                                  </div>
+
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="op_hyper" id="op3_hyper" oninput="cal_func_hyperbola();">
+                                    <label class="form-check-label" for="op3_hyper">
+                                        \[{x^2}\space - {y^2}\space = {a^2}\]
+                                    </label>
+                                  </div>
+                                
+                                \[Eccentricity\space  of\space hyperbola\space:\space \frac{\sqrt{a^2 + b^2}}{a}\]
+                            </th>
+                        </tr>
+                        <tr>
+                           <th>
+                                <input type="number" id="ahy-number" class="form__field" placeholder="Enter value of 'a'"
+                            oninput="cal_func_hyperbola();">
+                           </th>
+                           <th>
+                            <input type="number" id="bhy-number" class="form__field" placeholder="Enter value of 'b'"
+                            oninput="cal_func_hyperbola();">
+                        </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h4 id="hyperbola_intro" style="color: var(--appwhite);"></h4>
+                                <div class="form-group" style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                    <p id="result_cal_func_hyperbola"></p>
+                                </div>
+                            </td>
+                        </tr>   
+    
+                    </tbody>
+                </table>
+            </div>
+            <!--Calculator code for trivial hyperbola solution ends here-->
+            <br>
             <div class="stopwrap">
                 <table class="table table-bordered table-dark">
                     <thead>
@@ -8145,8 +8285,8 @@
 <script type="text/javascript" src="appjs/logValue.js"></script>
 <!-- Operation on Fraction -->
  <script type="text/javascript" src="appjs/operations_on_fraction.js"></script>
- <!--For Parabola Calculator-->
- <script type="text/javascript" src="appjs/parabolaSolve.js"></script>
+ <!--For Conic section Calculators-->
+ <script type="text/javascript" src="appjs/conicSolve.js"></script>
 </body>
 
 </html>
