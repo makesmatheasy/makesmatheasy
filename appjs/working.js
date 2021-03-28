@@ -170,6 +170,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#setopbtn").click(function () {
+        openit("#setop");
+        closenav();
+        clearall();
+    })
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
@@ -341,14 +346,27 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#ninetencom-calc-btn").click(function(){
+        openit("#ninetencom-calc");
+        closenav();
+        clearall();
+    });
+
+
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
         openit("#octal-binary");
         closenav();
         clearall();
     });
-    $("#complexcollapsebtn").click(function(){
-        openit("#complexcollapse");
+    $("#complex1collapsebtn").click(function(){
+        openit("#complex1collapse");
+        closenav();
+        clearall();
+    });
+    $("#complex2collapsebtn").click(function(){
+        openit("#complex2collapse");
         closenav();
         clearall();
     });
@@ -433,14 +451,25 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+ 
+
+
+    $("#lapprobtn").click(function(){
+        openit("#lappro");
+        closenav();
+        clearall();
+    });
+     
+
     $("#jointprobabilitycollapsebtn").click(function(){
         openit("#joint-probabilitycollapse");
         closenav();
         clearall();
     });
-});
+})
 
-function loader(action) {
+    function loader(action) {
     var body = document.getElementsByTagName("body");
     var head = document.getElementsByTagName("head");
     switch (action) {
@@ -535,5 +564,4 @@ function loader(action) {
             head[0].removeChild(head[0].lastChild);
             break;
     }
-
 }

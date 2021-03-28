@@ -941,7 +941,7 @@ function checkforusetrigovalue() {
     el.innerText != "Cannot Compute for -ve Square Root" &&
     el.innerText != "Hypotenuse Should be Greater" &&
     el.innerText != "Kindly fill Atleast 2 fields" &&
-	el.innerText != "Right angled triangle with such dimensions is not possible" 
+	el.innerText != "Right angled triangle with such dimensions is not possible"
   ) {
     $("#usetrigovaluesbtn").fadeIn();
   } else {
@@ -967,7 +967,7 @@ function solvesimpletrigo() {
       document.getElementById("h").style.color = "red";
       document.getElementById("soltri").innerHTML =
         "Hypotenuse Should be Greater";
-    } else if(pp != "" && base != "" && hyp != "" && parseInt(hyp)^2 != parseInt(pp)^2 + parseInt(base)^2) 
+    } else if(pp != "" && base != "" && hyp != "" && parseInt(hyp)^2 != parseInt(pp)^2 + parseInt(base)^2)
 	{
       document.getElementById("soltri").innerHTML =
         "Right angled triangle with such dimensions is not possible";
@@ -1482,7 +1482,7 @@ function solveperisq() {
   var val = document.getElementById("inputsqside").value;
   if (val == "" || val<0) {
     document.getElementById("resultofperisq").innerHTML = "";
-  } 
+  }
   else {
     var sol = eval(String(4) + "*" + String(val));
     var temp = "\\[ 4 \\times ( " + val + " ) = " + sol + "\\]";
@@ -1536,7 +1536,7 @@ function solvetetra() {
   resultofheightt.innerHTML = "";
   resultofcircumt.innerHTML = "";
   resultofinradt.innerHTML = "";
- 
+
   var volume = 0.118 * (a*a*a);
   var height = 1.074 * a;
   var circum = 0.612 * a;
@@ -1658,7 +1658,7 @@ function solvescalenetriangle() {
   var perimetertemp = "";
   var semiperitemp = "";
   if (sidea != "" && sideb != "" && sidec != "") {
-    
+
       perimetertemp += "\\[P=" + sidea + "+" + sideb + "+" + sidec +  "\\]";
       perimetertemp +=
         "\\[Perimeter \\space of \\space Triangle \\space is \\space" +
@@ -1669,12 +1669,12 @@ function solvescalenetriangle() {
     semiperitemp += "\\[P=\\frac{" + sidea + "+" + sideb + "+" + sidec + "}{2}" +"\\]";
     semiperitemp += "\\[P=\\frac{" + eval(String(sidea) + "+" + String(sideb) + "+" + String(sidec)) + "}{2} \\]";
     var sidesum = eval(String(sidea)+ "+" +String(sideb)+ "+" + String(sidec));
-    
+
     semiperitemp +=  "\\[Semi-perimeter \\space of \\space Triangle \\space is \\space" +
     eval(String("0.5*" + String(sidesum))) +
       "\\]";
     semiperioutput.innerHTML = semiperitemp;
-    
+
 
     var semiperimeter= eval(String("0.5*" + String(sidesum)));
     var a2= semiperimeter-sidea;
@@ -1697,7 +1697,7 @@ function solvescalenetriangle() {
     renderMathInElement(areaoutput);
     renderMathInElement(perimeteroutput);
     renderMathInElement(semiperioutput);
-  
+
   } else {
     areaoutput.innerHTML = "";
     perimeteroutput.innerHTML = "";
@@ -1728,7 +1728,7 @@ function isoscelestrianglearea(){
       document.getElementById('resultofperiit2').innerHTML = "\\[2*(" + eqside + ") + " + side + "= "+perimeter+"\\]";
       renderMathInElement(document.getElementById('resultofperiit2'));
   }
-  
+
 }
 
 function rhombussolve() {
@@ -2066,7 +2066,7 @@ function solveSlope()
      renderMathInElement(document.getElementById("answerofline2"));
      renderMathInElement(document.getElementById("resultofline"));
   }
-  
+
 }
 
 // ellipse calculator function
@@ -2119,7 +2119,7 @@ function solveellipse() {
 function solvecyl() {
   var height = document.getElementById("inputcylh").value;
   var radius = document.getElementById("inputcylr").value;
-  
+
   var voloutput = document.getElementById("resultofvolcyl");
   var tsaoutput = document.getElementById("resultoftsacyl");
   var csaoutput = document.getElementById("resultofcsacyl");
@@ -2171,7 +2171,9 @@ function solvehollowcyl() {
     tsatemp += "\\[2 \\times \\pi \\times"+"("+radius1+"-"+radius2+")"+"("+radius1+"+"+radius2+") \\]"
     tsatemp +=
       "\\[Total \\space Surface \\space Area \\space of \\space hollow \\space Cylinder \\space is \\space  \\]";
+
 	  tsatemp+="\\["+eval(String((2*3.14159*(radius1+radius2)*height) + (2*3.14159*(radius1+radius2)*(radius1-radius2))) + "\\]";
+
     tsaoutput.innerHTML = tsatemp;
     renderMathInElement(voloutput);
     renderMathInElement(tsaoutput);
@@ -2256,7 +2258,7 @@ function cubosolve() {
 
 function solvesphere() {
   var radius = document.getElementById("inputradiussph").value;
-  
+
   var voloutput = document.getElementById("resultofvolsp");
   var tsaoutput = document.getElementById("resultoftsasp");
   var voltemp = "";
@@ -2329,7 +2331,7 @@ function solvehemisphere() {
 function solvecone() {
   var height = document.getElementById("inputhcone").value;
   var radius = document.getElementById("inputrcone").value;
-  
+
   var voloutput = document.getElementById("resultofvolcone");
   var tsaoutput = document.getElementById("resultoftsacone");
   var csaoutput = document.getElementById("resultofcsacone");
@@ -2361,7 +2363,7 @@ function solvecone() {
 	ltemp+="\\[" +
         eval(l).toFixed(3) +
         "\\]";
-	shoutput.innerHTML = ltemp;	
+	shoutput.innerHTML = ltemp;
     renderMathInElement(voloutput);
     renderMathInElement(tsaoutput);
 	renderMathInElement(csaoutput);
@@ -3423,7 +3425,7 @@ function roundoff(input, output) {
 	{
 		el.innerHTML +="Enter Bigger number to roundoff to nearest " + placeofroundoff;
 	}
-	else 
+	else
 	{ el.innerHTML += "<br>" +
         val +
         " after rounding off to the nearest " +
@@ -3440,17 +3442,17 @@ function roundoff(input, output) {
 		else{
 			el.innerHTML += "<br> As "+ a%Math.pow(10,place) + "<" + Math.pow(10,place)/2;
 		}
-		a=(a-b < c-a)?b:c;		
+		a=(a-b < c-a)?b:c;
 	    el.innerHTML += "<br>" +
         val +
         " after rounding off to the nearest " +
         placeofroundoff +
         " is " + a;
-	   
+
 	}
   }
  }
-} 
+}
 //roundoff
 //-----------------------------------------------------
 //unit convert
@@ -3486,7 +3488,7 @@ function spicon() {
    if(i >10)
    {
     document.getElementById("spiconou").innerHTML = "SPI must be <= 10";
-   } 
+   }
    else{
   document.getElementById("spiconou").innerHTML = `${i}`;
   }
@@ -3496,7 +3498,7 @@ function spicon() {
     if(i >95)
     {
      document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
-    } 
+    }
     else{
    document.getElementById("spiconou").innerHTML = `${i}`;
    }
@@ -3505,11 +3507,11 @@ function spicon() {
   {
     if(i>10)
     {
-      document.getElementById("spiconou").innerHTML = "SPI must be <= 10";  
+      document.getElementById("spiconou").innerHTML = "SPI must be <= 10";
     }
     else
     {
-    document.getElementById("spiconou").innerHTML = `${((i-0.5)*10)}`; 
+    document.getElementById("spiconou").innerHTML = `${((i-0.5)*10)}`;
   }
 }
   else
@@ -3640,6 +3642,7 @@ function tempcon() {
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
 
+
 function polar()
 {
   var r = parseInt(document.getElementById("cpreal").value);
@@ -3654,6 +3657,35 @@ function polar()
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
+=======
+ function datau(a) {
+      switch(a)
+       {
+          case "1":
+            return 0.125;
+          case "2":
+               return 1;
+          case "3":
+               return 1000;
+          case "4":
+            return 1000000;
+          case "5":
+            return 1000000000;
+          case "6":
+             return 1000000000000;
+          case "7":
+            return 1000000000000000; 
+            
+       }
+ }
+
+ function datacon() {
+  const f = datau(document.getElementById("datacon-1").value);
+  const t = datau(document.getElementById("datacon-2").value);
+  const i = parseInt(document.getElementById("dataconin").value);
+  const a = (i * f) / t;
+  document.getElementById("dataconou").innerHTML = `${a}`;
+
 }
 
 // simple and compound interest
@@ -3792,7 +3824,7 @@ function profitloss(){
 	document.getElementById("percent").innerHTML = "Loss Percentage =" + perl +"%";
   }
   else {
-    var profit = sp-cp; 
+    var profit = sp-cp;
 	var perp =(profit*100)/sp;
     document.getElementById("pol").innerHTML = "Profit = " + profit;
 	document.getElementById("percent").innerHTML = "Profit Percentage =" + perp +"%";
@@ -3827,7 +3859,7 @@ function sum_n_apsol(nval,rval,r1val)
 function anotherap(){
   var n = document.getElementById("numterms").value
   var a = document.getElementById("ft").value
-  var l = document.getElementById("lt").value  
+  var l = document.getElementById("lt").value
   var nhalf = parseFloat(n/2)
   var al = parseInt(a)+parseInt(l)
   var ans = parseInt(nhalf *al)
@@ -3840,7 +3872,7 @@ function anotherap(){
     series += (num.toString() + ", ");
  }
   document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0,series.length-2);
-  document.getElementById("ltap").innerHTML = "Result: " + ans  
+  document.getElementById("ltap").innerHTML = "Result: " + ans
 }
 function amsol()
 {
@@ -3889,7 +3921,7 @@ function check_prime(isprime)
   if(!isNaN(num1))
   {
       ans.innerHTML = num1;
-      ans.innerHTML += " is "; 
+      ans.innerHTML += " is ";
       if(num1==1 || num1==0)
       {
         ans.innerHTML += "neither Prime nor Composite number";
@@ -3929,19 +3961,19 @@ function prime_till_num(primetill)
   else
   {    for (i = 0; i <= num1; i++)
           prime.push(true);
- 
-        for (i = 2; i * i <= num1; i++) 
+
+        for (i = 2; i * i <= num1; i++)
         {
             // If prime[p] is not changed, then it is a
             // prime
-            if (prime[i] == true) 
+            if (prime[i] == true)
             {
                 // Update all multiples of p
                 for (j = i * i; j <= num1; j += i)
                     prime[j] = false;
             }
         }
- 
+
         // Print all prime numbers
         for (i = 2; i <= num1; i++)
         {
@@ -3952,11 +3984,11 @@ function prime_till_num(primetill)
             }
         }
           ans.innerHTML= B.slice(0,B.length - 2);
-          
+
       }
   }
 
-//end 
+//end
 
 function gp(){
   var a = document.getElementById("firstterm").value
@@ -4194,18 +4226,18 @@ function Variance() {
   if (val.length === 0) {
     document.getElementById("Meanresult").innerHTML = `No Number Added`;
   } else {
-	document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;  
+	document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;
     var mean = s / len;
 	for (i = 0; i < len; i++) {
     num=parseInt(val[i]);
 	ans= ans+Math.pow(num-mean,2);
 	if(i==0)
-	{ 
+	{
 		document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num-mean,2))}`;
 	}
 	else
 	{
-	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;	
+	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;
 	}
     }
 	document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
@@ -4214,8 +4246,8 @@ function Variance() {
 	ans=ans/len;
 	document.getElementById("Meanresult").innerHTML += ans;
     }
-   
-    
+
+
     renderMathInElement(document.getElementById("Meanresult"));
   }
 // Standard Deviation
@@ -4234,18 +4266,18 @@ function std() {
   if (val.length === 0) {
     document.getElementById("Meanresult").innerHTML = `No Number Added`;
   } else {
-	document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;  
+	document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;
     var mean = s / len;
 	for (i = 0; i < len; i++) {
     num=parseInt(val[i]);
 	ans= ans+Math.pow(num-mean,2);
 	if(i==0)
-	{ 
+	{
 		document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num-mean,2))}`;
 	}
 	else
 	{
-	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;	
+	  document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num-mean,2))}`;
 	}
     }
 	document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
@@ -4256,8 +4288,8 @@ function std() {
 	ans=Math.sqrt(ans);
 	document.getElementById("Meanresult").innerHTML += ans;
     }
-   
-    
+
+
     renderMathInElement(document.getElementById("Meanresult"));
   }
 // standard deviation end
@@ -4288,7 +4320,7 @@ function convertBinDec() {
   {
 	     if(input.search(/^[10]+$/) == -1)
 		  result.innerHTML ="Binary numbers can only have 0's and 1's";
-	  
+
   }
 }
 
@@ -4305,13 +4337,13 @@ function clearInputs() {
 
 //Function that performs bitwise calculation
 function bitwiseCalc() {
-  
+
   const operation = document.getElementById("bitwise-operation").value;
   const numberSystem = document.getElementById("bitwise-numbers-system").value;
   let result;
 
- 
- 
+
+
   let  firstOperand = parseInt(
     document.getElementById("bitwise-first-number").value
   );
@@ -4319,8 +4351,8 @@ function bitwiseCalc() {
     document.getElementById("bitwise-second-number").value
   );
 
- 
-  
+
+
 
   if (numberSystem === "Binary") {
     firstOperand = parseInt(firstOperand, 2);
@@ -4403,22 +4435,22 @@ function convertbcd() {
   let result = document.getElementById("bcd-result");
   var x = "_";
 
-   for(var i = 0; i < input.length; i++) 
-       { 
+   for(var i = 0; i < input.length; i++)
+       {
          var y = parseInt(input[i]).toString(2)
-         if(y.length == 1) 
+         if(y.length == 1)
          {
             x = x+ "000" +y + "_   ";
          }
-         if(y.length == 2) 
+         if(y.length == 2)
          {
             x = x+ "00" +y +"_   ";
          }
-         if(y.length == 3) 
+         if(y.length == 3)
          {
             x = x+ "0" +y+"_   ";
          }
-         if(y.length == 4) 
+         if(y.length == 4)
          {
             x = x+  +y+"_   ";
          }
@@ -4441,12 +4473,12 @@ function convertgrey() {
   let result = document.getElementById("grey-result");
   var x = input[0];
 
-  if (fromBase == "Binary") 
-    for (var i = 1; i < input.length; i++) 
+  if (fromBase == "Binary")
+    for (var i = 1; i < input.length; i++)
         x +=parseInt(input[i-1]^input[i]).toString();
 
-  else 
-    for (var i = 1; i < input.length; i++) 
+  else
+    for (var i = 1; i < input.length; i++)
       x +=parseInt(x[i-1]^input[i]).toString();
 
 
@@ -4455,7 +4487,7 @@ function convertgrey() {
 }
 
 //----------------------------
-//Function that performs conversion of Binary to Hexadecimal and viceversa
+//Function that performs conversion of Binary to Decimal to Hexadecimal and viceversa
 function convertBinhex() {
   const fromBase = document.getElementById("binary-hexadecimal-select1").value;
   const toBase = document.getElementById("binary-hexadecimal-select2").value;
@@ -4465,13 +4497,26 @@ function convertBinhex() {
   let to = 2;
 
   if (fromBase === "Binary") from = 2;
+  else if (fromBase === "Decimal") from = 10;
   else from = 16;
 
   if (toBase === "Binary") to = 2;
+  else if (toBase === "Decimal") to = 10;
   else to = 16;
 
   result.innerHTML = parseInt(input, from).toString(to);
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+  else if(from == 2)
+  {
+	     if(input.search(/^[10]+$/) == -1)
+		  result.innerHTML ="Binary numbers can only have 0's and 1's";
+
+  }
 }
+
 //--------------------------------------------------------------------------------
 
 // 1's 2's complement
@@ -4486,20 +4531,23 @@ function onetwoCalc() {
 	  if(ar[i]==0)
 	  {
 		  one[i]=1;
-	  } else 
+
+	  } else
+
 	  {
 		  one[i]=0;
 	  }
   }
   var onec = one.join('');
   result.innerHTML ="One's complement of "+input+" is "+ onec+"<br>";
+
   
   for(var i= ar.length-1;i>=0;i--)
   {   
       two[i]=ar[i];
 	  if(ar[i]==1)
 	  break;
-	
+
   }
   if(i==-1)
   {
@@ -4510,7 +4558,9 @@ function onetwoCalc() {
 		   if(ar[k]==0)
 	  {
 		  two[k]=1;
-	  } else 
+
+	  } else
+
 	  {
 		  two[k]=0;
 	  }
@@ -4524,13 +4574,35 @@ function onetwoCalc() {
   }
   else if(input.search(/^[10]+$/) == -1)
 		  result.innerHTML ="Binary numbers can only have 0's and 1's";
-	  
+
+
 }
+//
+function ninetenCalc(){
+  const input = document.getElementById("ninetennumber").value;
+  let result = document.getElementById("ninetenresult");
+  var nine="";
+  var ten="";
+  for(var i=0;i<input.length;i++){
+     nine += '9' - input[i];
+    
+  }
+  ten=parseInt(nine)+1;
+  result.innerHTML ="Nine's complement of "+input+" is "+ parseInt(nine)+"<br>";
+  result.innerHTML +="Ten's complement of "+input+" is "+ ten+"<br>";
+
+
+  if(input=="")
+  {
+	  result.innerHTML ="";
+  }
+}
+
 ////////////////////date calculator///////////
 function datecal()
 {
    var c = new Date(Date.parse(document.getElementById("datef").value));
-   var d = new Date(Date.parse(document.getElementById("datet").value));   
+   var d = new Date(Date.parse(document.getElementById("datet").value));
    var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
   	if(d.getTime() > c.getTime())
 	{
@@ -4598,12 +4670,13 @@ function computeprobability()
 
    var favour=parseInt(document.getElementById('favourable').value);
 
+
    var nettotal=parseInt(document.getElementById('total').value);
    let result = document.getElementById('probability-result');
 
-   
 
-   
+
+
 
    if(favour<0 || nettotal<0)
    {
@@ -4616,11 +4689,11 @@ function computeprobability()
      }
      else
      {
-      
+
         result.innerHTML = "The probability of the event is : " + (favour/nettotal).toFixed(3);
      }
-  
-   
+
+
 }
 
 
@@ -4653,8 +4726,7 @@ function computejointprobability()
       {
           result1.innerHTML="The probability of first event is : " + (probability1).toFixed(3);
       }
-     
- 
+
      if(favourable2 >total2)
     {
          result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
@@ -4664,13 +4736,15 @@ function computejointprobability()
       {
           result2.innerHTML="The probability of second event is : " + (probability2).toFixed(3);
       }
- 
-     
-    
+
+
+
+
     if(check==true)
     {
       result3.innerHTML="The joint probability of both the events is: " + (probability3).toFixed(3);
- 
+
+
     }
    }
    else
@@ -4679,7 +4753,7 @@ function computejointprobability()
     result2.innerHTML = "";
     result3.innerHTML = "";
    }
-   
+
 
 }
 
@@ -4709,27 +4783,27 @@ ctx.lineWidth = 3;
 
 
 
-//for labelling 0 
+//for labelling 0
 var c0tx = c.getContext("2d");
 c0tx.font = "15px Arial";
-c0tx.fillText("0° ",630,250); 
+c0tx.fillText("0° ",630,250);
 
 
-//for labelling 90 
+//for labelling 90
 var c90tx = c.getContext("2d");
 c90tx.font = "15px Arial";
-c90tx.fillText("90° ",510,125); 
+c90tx.fillText("90° ",510,125);
 
-//for labelling 180 
+//for labelling 180
 var c180tx = c.getContext("2d");
 c180tx.font = "15px Arial";
-c180tx.fillText("180° ",335,250); 
+c180tx.fillText("180° ",335,250);
 
 
-//for labelling 270 
+//for labelling 270
 var c270tx = c.getContext("2d");
 c270tx.font = "15px Arial";
-c270tx.fillText("270° ",510,400); 
+c270tx.fillText("270° ",510,400);
 
 
 
@@ -4740,10 +4814,10 @@ var ytx=c.getContext("2d");
 var xtx=c.getContext("2d");
 ytx.moveTo(500, 0);
 ytx.lineTo(500, 1000);
-ytx.stroke(); 
+ytx.stroke();
 xtx.moveTo(0,250);
 xtx.lineTo(1000, 250);
-xtx.stroke(); 
+xtx.stroke();
 ctx.beginPath();
 input=input%360;
 if(input<0)
