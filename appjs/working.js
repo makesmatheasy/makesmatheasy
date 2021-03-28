@@ -433,12 +433,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#lapprobtn").click(function(){
+        openit("#lappro");
+        closenav();
+        clearall();
+    });
+     
+
     $("#jointprobabilitycollapsebtn").click(function(){
         openit("#joint-probabilitycollapse");
         closenav();
         clearall();
     });
-});
+
 
 function loader(action) {
     var body = document.getElementsByTagName("body");

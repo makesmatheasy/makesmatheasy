@@ -198,6 +198,9 @@ function openit(id) {
         "#tangent",
         "#srf",
         "#probabilitycollapse",
+
+        "#lappro",
+
         "#joint-probabilitycollapse",
 
     ];
