@@ -5474,6 +5474,18 @@
                     <td><a data-toggle="modal" data-target="#sphere" style="text-decoration:none;"
                            href="#">Sphere</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hollowcy" style="text-decoration:none;"
+                           href="#">Hollow Cylinder</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hollowsp" style="text-decoration:none;"
+                           href="#">Hollow Sphere</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hemisphere" style="text-decoration:none;"
+                           href="#">HemiSphere</a></td>
+                </tr>
             </table>
         </div>
 
@@ -7125,6 +7137,57 @@
         </div>
     </div>
 
+    <div>
+        <div class="modal fade" id="hollowcy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hollow Cylinder</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Hollow Cylinder</h5>
+                                    <p class="text-center">\[V= \pi (r_1^{2}-r_2^{2}) h \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Curved Surface area of Hollow Cylinder</h5>
+                                    <p class="text-center">\[2 \pi (r_1+r_2) h \]</p>
+    
+    
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/hollowcy.png" style="height:9.375rem" class="img-fluid">
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area of Hollow Cylinder</h5>
+                                    <p class="text-center"><p>\[ 2 \pi (r_1+r_2)(r_1-r_2) \]</p><p>\[+\,2 \pi h(r_1+r_2) \]</p>
+                                </div>
+                            </div>
+    
+                            <input class="form__field" type="number" placeholder="Enter radius r1" id="inputhollowcylr1"
+                                   oninput="solvehollowcyl();">
+                                   <input class="form__field" type="number" placeholder="Enter radius r2" id="inputhollowcylr2"
+                                   oninput="solvehollowcyl();">
+                            <input class="form__field" type="number" placeholder="Enter Height" id="inputhollowcylh"
+                                   oninput="solvehollowcyl();">
+                            <p class="stopwrap" id="resultofvolhollowcyl" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftsahollowcyl" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcsahollowcyl" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
     <div class="modal fade" id="cube" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -7266,7 +7329,97 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="hollowsp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hollow Sphere</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V =4 \pi (r_1^3-r_2^3) /3\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Surface Area</h5>
+                                <p class="text-center">\[ 4 \pi (r_1^2-r_2^2) \]</p>
 
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hollowsp.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter Radius r1" id="inputradius1hollowsph"
+                               oninput="solvehollowsphere();">
+                               <input class="form__field" type="number" placeholder="Enter Radius r2" id="inputradius2hollowsph"
+                               oninput="solvehollowsphere();">
+                        <p class="stopwrap" id="resultofvolhollowsp" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftsahollowsp" style="font-family:mathfont;"></p>
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hemisphere" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">HemiSphere</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V =2 \pi r^3 /3\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Total Surface Area</h5>
+                                <p class="text-center">\[ 3 \pi r^2 \]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hemisphere.png" class="img-fluid">
+                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter Radius" id="inputradiushemisph"
+                               oninput="solvehemisphere();">
+                        <p class="stopwrap" id="resultofvolhollowsp" style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftsahollowsp" style="font-family:mathfont;"></p>
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="cuboid" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
