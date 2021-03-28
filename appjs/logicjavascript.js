@@ -4449,18 +4449,18 @@ function ninetenCalc(){
   var nine="";
   var ten="";
   for(var i=0;i<input.length;i++){
-     nine='9' - input[i];
-     ten=parseInt(nine)+1;
+     nine += '9' - input[i];
+    
   }
-  result.innerHTML ="Nine's complement of "+input+" is "+ nine+"<br>";
-  result.innerHTML ="Ten's complement of "+input+" is "+ ten+"<br>";
+  ten=parseInt(nine)+1;
+  result.innerHTML ="Nine's complement of "+input+" is "+ parseInt(nine)+"<br>";
+  result.innerHTML +="Ten's complement of "+input+" is "+ ten+"<br>";
+
 
   if(input=="")
   {
 	  result.innerHTML ="";
   }
-  else if(input.search(8) != -1 || input.search(9) != -1)
-		  result.innerHTML ="Binary numbers can only have 0's and 1's";
 }
 
 ////////////////////date calculator///////////
