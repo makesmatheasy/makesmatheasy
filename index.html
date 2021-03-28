@@ -141,14 +141,22 @@
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:decrement {
+
+            background-position: center 2px;
+
             background-position: center 4px;
+
             background-size: 8px 8px;
             background-image: url(images/uparrow.png);
 			background-repeat:no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:increment {
+
+            background-position: center 2px;
+
             background-position: center 4px;
+
             background-size: 8px 8px;
             background-image: url(images/downarrow.png);
 			background-repeat:no-repeat;
@@ -637,6 +645,8 @@
         </li>
         <div class="collapse" id="trigotoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
             <div class="dropdown-divider"></div>
+            
+
             <li>
                 <table class="table">
                     <tr>
@@ -895,6 +905,7 @@
                     </tr>
                 </table>
             </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -910,6 +921,7 @@
                     </tr>
                 </table>
             </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -6550,6 +6562,40 @@
                                 <p class="text-center">\[b= \sqrt{d^2-l^2}\]</p>
                             </div>
                         </div>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="color: white;cursor: pointer;">
+                            <a data-toggle="modal" data-target="#datacon" style="text-decoration:none;"
+                               href="#">Data Storage</a>
+                        </div>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+
+        <!-- Factorial -->
+        <div class="collapse" id="factorial">
+            <form class="form-inline">
+                <input type="number" id="factorialval" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 1px solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light" onclick="factorialsol('factorialval')">
+                    Solve
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="explain_fact" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap" align="right"></p>
+                <br>
+                <p id="factorialsolprint" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap" align="right"></p>
+
                         <div class="dropdown-divider"></div>
                         <p>Fill Atleast Any of two</p>
                         <input class="form__field" type="number" placeholder="Enter Length (cm)"
@@ -6570,6 +6616,7 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                     </button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -8089,8 +8136,79 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<div>
+<div class="modal fade" id="datacon" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Data Storage</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        style="outline:none">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+<div class="modal-body">
+
+    <div class="col-6">
+        <label for="from">
+            <h5 class="text-center" style="">From</h5>
+        </label>
+        <select id="datacon-1" class="form__field" onchange="datacon()">
+            <option value="1" class="form_field" style="background-color:var(--appblack);">Bit
+            </option>
+            <option value="2" class="form_field" style="background-color:var(--appblack);">Byte
+            </option>
+            <option value="3" class="form_field" style="background-color:var(--appblack);">Kilobyte
+            </option>
+            <option value="4" class="form_field" style="background-color:var(--appblack);">Megabyte
+            </option>
+            <option value="5" class="form_field" style="background-color:var(--appblack);">Gigabyte
+            </option>
+            <option value="6" class="form_field" style="background-color:var(--appblack);">Terabyte
+            </option>
+            <option value="7" class="form_field" style="background-color:var(--appblack);">Petabyte
+            </option>
+        </select>
+        <input type="number" id="dataconin" class="form__field" placeholder="Enter Side" value="0" ;
+               oninput="datacon();">
+
+        <label for="To">
+            <h5 class="text-center" style="">To</h5>
+        </label>
+        <select id="datacon-2" class="form__field" onchange="datacon()">
+            <option value="1" class="form_field" style="background-color:var(--appblack);">Bit
+            </option>
+            <option value="2" class="form_field" style="background-color:var(--appblack);">Byte
+            </option>
+            <option value="3" class="form_field" style="background-color:var(--appblack);">Kilobyte
+            </option>
+            <option value="4" class="form_field" style="background-color:var(--appblack);">Megabyte
+            </option>
+            <option value="5" class="form_field" style="background-color:var(--appblack);">Gigabyte
+            </option>
+            <option value="6" class="form_field" style="background-color:var(--appblack);">Terabyte
+            </option>
+            <option value="7" class="form_field" style="background-color:var(--appblack);">Petabyte
+            </option>
+        </select>
+        <label for="out">
+            <p class="form__field" id="dataconou">0</p>
+        </label>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+    </button>
+</div>
+</div>
+</div>
+</div>
+
+
+
 
 <!--unit  converto end-->
 
