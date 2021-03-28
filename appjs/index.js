@@ -123,7 +123,8 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
-        "#complexcollapse",
+        "#complex1collapse",
+        "#complex2collapse",
         "#equationssolver",
         "#mulsolwithsteps",
         "#table",
@@ -135,6 +136,7 @@ function openit(id) {
         "#trigonoiden",
         "#factors",
         "#stats",
+        "#math",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
@@ -158,6 +160,8 @@ function openit(id) {
         "#home",
         "#curconcal",
         "#factorial",
+        "#setop",
+        "#bool",
         "#log_values",
         "#log-collapse",
         "#pandc",
@@ -165,6 +169,9 @@ function openit(id) {
         "#decimal-binary",
         "#bitwise-calc",
 		"#onetwocom-calc",
+
+        "#ninetencom-calc",
+
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
@@ -199,6 +206,10 @@ function openit(id) {
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
 
+        "#lappro",
+
+        "#joint-probabilitycollapse",
+
     ];
     console.log(id)
     for (i = 0; i < ids.length; i++) {
@@ -222,7 +233,8 @@ function loadfilesafterload() {
         "appjs/logValue.js",
         "js/math.min.js",
         "js/plotly-1.35.2.min.js",
-        "appjs/operations_on_fractions.js",
+        "appjs/logValue.js",
+        "appjs/operations_on_fraction.js"
     ];
     for (i of aroffiles) {
         var scriptelm = document.createElement("script");
