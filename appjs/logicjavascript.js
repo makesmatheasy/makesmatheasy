@@ -3660,7 +3660,6 @@ function polar()
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
-=======
  function datau(a) {
       switch(a)
        {
@@ -4832,5 +4831,7 @@ else
   ctx.arc(500, 250, 125, 0, 2*Math.PI-((input/180)* Math.PI),true);
 }
 ctx.stroke();
+
+}
 
 }
