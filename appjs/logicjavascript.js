@@ -1597,8 +1597,11 @@ function equilateraltrianglearea() {
 
 // created function for right angle triangle
 function solverightangletriangle() {
-  var base = document.getElementById("inputbase").value;
-  var height = document.getElementById("inputheight").value;
+  //console.log("Hii");
+  var base = document.getElementById("inputbaserighttriangle").value;
+  var height = document.getElementById("inputheightrighttriangle").value;
+  console.log(base);
+  console.log(height);
   var areaoutput = document.getElementById("resultofarearat");
   var perimeteroutput = document.getElementById("resultofperirat");
   var hypooutput = document.getElementById("resultofhyporat");
@@ -1606,7 +1609,7 @@ function solverightangletriangle() {
   var perimetertemp = "";
   var hypotemp = "";
   if (base != "" && height!= "") {
-    var base2 = base * base;
+      var base2 = base * base;
       var height2 = height * height;
       var add2 = eval(String(base2 + height2));
       var add2sqrt = nerdamer.sqrt(add2).toString();
