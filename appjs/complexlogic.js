@@ -43,59 +43,43 @@ function complexMul(first, second) {
 }
 function complexDiv(first, second) {
     var num1, num2;
-  num1 = Complex.transform(first);
-  num2 = Complex.transform(second);
-  var denom = num2.imaginary * num2.imaginary + num2.real * num2.real;
-  
-
-  if(denom==0)
-  {
-    return 'Invalid , You can not divide by 0';
-  }
-
-
-var real = (num1.real * num2.real + num1.imaginary * num2.imaginary) /denom;
-var imaginary = (num2.real * num1.imaginary - num1.real * num2.imaginary) /denom; 
-return display(real, imaginary);  
-    
+    num1 = Complex.transform(first);
+    num2 = Complex.transform(second);
+    var denom = num2.imaginary * num2.imaginary + num2.real * num2.real;
+    if(denom==0)
+    {
+        return 'Invalid , You can not divide by 0';
+    }
+    var real = (num1.real * num2.real + num1.imaginary * num2.imaginary) /denom;
+    var imaginary = (num2.real * num1.imaginary - num1.real * num2.imaginary) /denom; 
+    return display(real, imaginary);   
 }
 
 function add() {
     var a = new Complex(document.getElementById('creal1').value,  document.getElementById('cimg1').value);
     var b = new Complex(document.getElementById('creal2').value,  document.getElementById('cimg2').value);
     var res = complexAdd(a,b);
-    katex.render(res, document.getElementById('compresult'), {
-        throwOnError: false
-    });
+    document.getElementById('compresult').innerHTML="The result is &nbsp;" + res;
 }
 
 function sub() {
     var a = new Complex(document.getElementById('creal1').value,  document.getElementById('cimg1').value);
     var b = new Complex(document.getElementById('creal2').value,  document.getElementById('cimg2').value);
     var res = complexSub(a,b);
-    katex.render(res, document.getElementById('compresult'), {
-        throwOnError: false
-    });
+    document.getElementById('compresult').innerHTML="The result is &nbsp;" + res;
 }
 function mul() {
     var a = new Complex(document.getElementById('creal1').value,  document.getElementById('cimg1').value);
     var b = new Complex(document.getElementById('creal2').value,  document.getElementById('cimg2').value);
     var res = complexMul(a,b);
-    katex.render(res, document.getElementById('compresult'), {
-        throwOnError: false
-    });
-}
+    document.getElementById('compresult').innerHTML="The result is &nbsp;" + res;
 
+}
 function div() {
     var a = new Complex(document.getElementById('creal1').value,  document.getElementById('cimg1').value);
     var b = new Complex(document.getElementById('creal2').value,  document.getElementById('cimg2').value);
     var res = complexDiv(a,b);
-    katex.render(res, document.getElementById('compresult'), {
-        throwOnError: false
-    });
-
-     
-   
+    document.getElementById('compresult').innerHTML="The result is &nbsp;" + res;
 }
 
 function err() {
@@ -168,3 +152,18 @@ function comOp(value) {
     }
 }
 
+function polar()
+{
+  var r = parseInt(document.getElementById("cpreal").value);
+  var i = parseInt(document.getElementById("cpimg").value);
+  var result= document.getElementById("comp1result");
+  var x = (Math.sqrt((r*r)+(i*i)));
+  if(!Number.isInteger(x))
+  {
+    var j = (r*r)+(i*i);
+    x = "&#8730;  "+ j ;
+  }
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  x=x+" cos( π" +y+") + i sin ( π"+ y+ ")";
+  result.innerHTML ="Polar representaion is &nbsp;" + x;
+}

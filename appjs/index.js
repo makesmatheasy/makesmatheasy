@@ -123,7 +123,8 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
-        "#complexcollapse",
+        "#complex1collapse",
+        "#complex2collapse",
         "#equationssolver",
         "#mulsolwithsteps",
         "#table",
