@@ -160,6 +160,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#transbtn").click(function () {
+        openit("#trans");
+        closenav();
+        clearall();
+    })
     $("#consimbtn").click(function () {
         openit("#consim");
         closenav();
