@@ -446,7 +446,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+})
 
 function loader(action) {
     var body = document.getElementsByTagName("body");
@@ -543,5 +543,4 @@ function loader(action) {
             head[0].removeChild(head[0].lastChild);
             break;
     }
-
 }
