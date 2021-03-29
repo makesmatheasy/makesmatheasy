@@ -3679,21 +3679,7 @@ function tempcon() {
 }
 
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  var result= document.getElementById("compresult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-  result.innerHTML = x;
-}
+
  function datau(a) {
       switch(a)
        {

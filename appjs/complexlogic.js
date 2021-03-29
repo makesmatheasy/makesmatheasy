@@ -163,9 +163,18 @@ function polar()
     var j = (r*r)+(i*i);
     x = "&#8730;  "+ j ;
   }
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+" cos( π" +y+") + i sin ( π"+ y+ ")";
-  result.innerHTML ="Polar representaion is &nbsp;" + x;
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+  if(y<0)
+  {   
+      y=nerdamer((-1)*y).toString();
+	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
+  }
+  else{
+	  y=y.toString();
+      x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
+  }
+  
+  result.innerHTML = x;
 }
 function euler()
 {
