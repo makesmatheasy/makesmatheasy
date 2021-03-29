@@ -488,3 +488,41 @@ span.sub img {
   background-color: white;
   font-weight: bolder;
 }
+
+/* radio butons for conic hyperbola*/
+#op1_hyper:after,
+#op2_hyper:after,
+#op3_hyper:after{
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  top: -4px;
+  left: -1px;
+  background-color: var(--appblack);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #fff;
+  transition: 1s;
+}
+
+
+#op1_hyper:checked:after,
+#op2_hyper:checked:after,
+#op3_hyper:checked:after {
+  width: 15px;
+  height: 50px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  background-color: var(--apppink);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #fff;
+}
+
+/* radio butons for conic hyperbola ends*/
+
