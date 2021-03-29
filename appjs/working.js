@@ -72,6 +72,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#ex3btn").click(function () {
+        openit("#ex3");
+        closenav();
+        clearall();
+    });
+
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();

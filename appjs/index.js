@@ -206,6 +206,7 @@ function openit(id) {
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
 
+        "#ex3",
         "#lappro",
 
         "#joint-probabilitycollapse",
