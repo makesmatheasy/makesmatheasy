@@ -1597,11 +1597,8 @@ function equilateraltrianglearea() {
 
 // created function for right angle triangle
 function solverightangletriangle() {
-  //console.log("Hii");
   var base = document.getElementById("inputbaserighttriangle").value;
   var height = document.getElementById("inputheightrighttriangle").value;
-  console.log(base);
-  console.log(height);
   var areaoutput = document.getElementById("resultofarearat");
   var perimeteroutput = document.getElementById("resultofperirat");
   var hypooutput = document.getElementById("resultofhyporat");
@@ -1768,7 +1765,7 @@ function solveparallelogram(){
   }
 
 }
-
+//created function for Rhombus
 function rhombussolve() {
   var d1= document.getElementById("inputd1").value;
   var d2= document.getElementById("inputd2").value;
@@ -1790,7 +1787,7 @@ function rhombussolve() {
     document.getElementById("resultofperi").innerHTML="Enter side value to calculate perimeter";
   }
 }
-
+//created function for Rhombus
 function Kitesolve() {
   var p= document.getElementById("inputp").value;
   var q= document.getElementById("inputq").value;
@@ -1815,6 +1812,7 @@ function Kitesolve() {
   }
 }
 
+//created function for Rectangle
 function rectanglesolve() {
   var length = document.getElementById("inputreclength").value;
   var breadth = document.getElementById("inputrecbreadth").value;
@@ -3681,20 +3679,6 @@ function tempcon() {
 }
 
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  var result= document.getElementById("compresult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-  result.innerHTML = x;
  function datau(a) {
       switch(a)
        {
@@ -3715,7 +3699,7 @@ function polar()
             
        }
       }
-    }
+    
 
  function datacon() {
   const f = datau(document.getElementById("datacon-1").value);
@@ -3734,10 +3718,23 @@ function simple_interest() {
   t = document.getElementById("second").value;
   r = document.getElementById("third").value;
   si = parseFloat((p * t * r) / 100).toFixed(3);
-  amount = p * Math.pow(1 + r / 100, t);
-  ci = amount - p;
-  document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
-  document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
+  if(si<0)
+  {
+      document.getElementById("num").innerHTML = "Negative values are invalid";
+      document.getElementById("num1").innerHTML = "";
+  }
+  else if(p=="" || t=="" || r=="")
+  {
+    document.getElementById("num").innerHTML = "All the fields are required";
+    document.getElementById("num1").innerHTML = "";
+  }
+  else
+  {
+    amount = p * Math.pow(1 + r / 100, t);
+    ci = amount - p;
+    document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
+    document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
+  }
 }
 // EMI Calulator
 //-----------------------------------------------------
@@ -4500,7 +4497,39 @@ function convertbcd() {
 
 
 //----------------------------
+//Function that performs conversion of  binary to ex3
+function convertex3() {
 
+  var input = document.getElementById("ex3-input").value;
+  let result = document.getElementById("ex3-result");
+  var x = "_";
+
+   for(var i = 0; i < input.length; i++)
+       {
+         var y = (parseInt(input[i])+3).toString(2)
+         if(y.length == 1)
+         {
+            x = x+ "000" +y + "_   ";
+         }
+         if(y.length == 2)
+         {
+            x = x+ "00" +y +"_   ";
+         }
+         if(y.length == 3)
+         {
+            x = x+ "0" +y+"_   ";
+         }
+         if(y.length == 4)
+         {
+            x = x+  +y+"_   ";
+         }
+
+       }
+
+  result.innerHTML = x;
+}
+
+//----------------------------
 //Function that performs conversion of grey to binary and viceversa
 function reverseString(str) {
   return str.split("").reverse().join("");

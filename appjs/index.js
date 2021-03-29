@@ -161,6 +161,7 @@ function openit(id) {
         "#curconcal",
         "#factorial",
         "#setop",
+        "#trans",
         "#bool",
         "#log_values",
         "#log-collapse",
@@ -206,6 +207,7 @@ function openit(id) {
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
 
+        "#ex3",
         "#lappro",
 
         "#joint-probabilitycollapse",

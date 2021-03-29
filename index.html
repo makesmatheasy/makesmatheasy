@@ -456,6 +456,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="transbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Transformation of Functions</a>
+
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span style="float:right;"
+                                      onclick="addtofavourite('Transformation of Functions','#trans','c','transimgfav')"><img
+                                        id="transimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="integrate"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Integration</a>
 
@@ -1544,6 +1561,23 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ex3btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Excess-3 Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Excess-3 Code Converter','#ex3','c','ex3-imgfav')"><img
+                                        id="ex3-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -3467,6 +3501,27 @@
                 <p style="overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
             </div>
         </div>
+        <div class="collapse" id="trans">
+            <h2 style="text-align: center;">Transformation of Functions</h2>
+            <br><br>
+            <h5>If function f(x) changes to f(x) + b or f(x) - b - </h5>
+            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph-of-yfx.jpg.jpg" style="margin-left: 250px; height: 200px;" alt="">
+            <h5>If f(x) changes to |f(x)| - </h5>
+            <p>The graph of f(x) and |f(x)| would coincide if f(x) > 0 and the portions where f(x) < 0 would get inverted in the upwards direction.</p>
+            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph2.jpg.jpg" style="margin-left: 250px; height: 200px;" alt="">
+            <h5>If f(x) changes to f(|x|) - </h5>
+            <p>Graphs of f(|x|) and f(x) would be identical in the first and the fourth quadrants (as x > 0) and as such the graph of f(|x|) would be symmetrical about the y-axis (as (|x|) is even).</p>
+            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph3.jpg.jpg" style="margin-left: 250px; height: 200px;" alt="">
+            <h5>If y = f(x) changes to |y| = f(x)</h5>
+            <p>Graph of |y| = f(x) would exist only in the regions where f(x) is non-negative and will be reflected about the x-axis only in those regions.</p>
+            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph4.jpg.jpg" style="margin-left: 250px; height: 200px;" alt="">
+            <h5>If f(x) changes to af(x) - </h5>
+            <p>No change in period of function, The maxima and minima gets increased</p>
+            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph6.jpg.jpg" style="margin-left: 250px; height: 200px;" alt="">
+            <h5>If f(x) changes to f(ax) - </h5>
+            <p>The period of function changes from <b>P to P/|a|</b></p>
+            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph7.jpg.jpg" style="margin-left: 250px; height: 200px;" alt="">
+        </div>
         <div class="collapse" id="integralcollapse">
 
             <div class="dropdown">
@@ -3722,9 +3777,6 @@
 
 
             <h1>Find polar Representaion of complex number</h1>
-
-
-            <h1>Polar representaion of complex number</h1>
 
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp;  </label>
@@ -5758,11 +5810,11 @@
             <h2 style="color: var(--appimage);">Simple and Compund Interest</h2>
             <br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="first"
+                <input type="number" style="width: 15.625rem;" class="form__field" name="a" id="first"
                        placeholder="Enter principal"/>
-                <input type="text" name="b" style="width: 15.625rem;" class="form__field" id="second"
+                <input type="number" name="b" style="width: 15.625rem;" class="form__field" id="second"
                        placeholder="Enter time period "/>
-                <input type="text" name="c" style="width: 15.625rem;" class="form__field" id="third"
+                <input type="number" name="c" style="width: 15.625rem;" class="form__field" id="third"
                        placeholder="Enter rate of interest(%)"/>
                 <br>
                 <br>
@@ -6859,6 +6911,28 @@
             </div>
         </div>
         <!-- End of bcd convertor -->
+
+        <!-- Start of ex3 convertor -->
+        <div>
+            <div class="collapse" id="ex3">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Decimal</h5>
+
+                        <input type="number" id="ex3-input" value="0" class="form__field"
+                               oninput="convertex3()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Excess-3</h5>
+
+                    </div>
+                    <label class="form__group" id="ex3-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of ex3 convertor -->
 
         <!-- Start of grey convertor -->
         <div>
@@ -8307,19 +8381,11 @@
                                 <div class="dropdown-divider"></div>
                                 <h5 class="text-center">Total Surface Area</h5>
                                 <p class="text-center">\[ 3 \pi r^2 \]</p>
-<<<<<<< HEAD
 
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
 
-=======
-
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-
->>>>>>> 82d444d0bdd25916bb00231e1e2ac95bafec674b
                                     <img src="images/hemisphere.png" class="img-fluid">
                                
                                 </div>
@@ -8971,7 +9037,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
 <div>
 <div class="modal fade" id="datacon" tabindex="-1" role="dialog" aria-hidden="true">
@@ -8985,21 +9050,6 @@
                 </button>
             </div>
 
-=======
-
-<div>
-<div class="modal fade" id="datacon" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Data Storage</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="outline:none">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
->>>>>>> 82d444d0bdd25916bb00231e1e2ac95bafec674b
 <div class="modal-body">
 
     <div class="col-6">
@@ -9302,19 +9352,13 @@
 <script src="nerdamer/Solve.js"></script>
 <script src="nerdamer/Extra.js"></script>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 <!-- For Log Calculator -->
 <script type="text/javascript" src="appjs/logValue.js"></script>
 <!-- Operation on Fraction -->
  <script type="text/javascript" src="appjs/operations_on_fraction.js"></script>
  <!--For Conic section Calculators-->
  <script type="text/javascript" src="appjs/conicSolve.js"></script>
-=======
->>>>>>> 82d444d0bdd25916bb00231e1e2ac95bafec674b
-=======
->>>>>>> 82d444d0bdd25916bb00231e1e2ac95bafec674b
+
 </body>
 
 </html>

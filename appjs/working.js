@@ -72,6 +72,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#ex3btn").click(function () {
+        openit("#ex3");
+        closenav();
+        clearall();
+    });
+
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();
@@ -157,6 +163,11 @@ $(document).ready(function () {
     })
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
+        closenav();
+        clearall();
+    })
+    $("#transbtn").click(function () {
+        openit("#trans");
         closenav();
         clearall();
     })
