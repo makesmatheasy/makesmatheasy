@@ -1597,11 +1597,8 @@ function equilateraltrianglearea() {
 
 // created function for right angle triangle
 function solverightangletriangle() {
-  //console.log("Hii");
   var base = document.getElementById("inputbaserighttriangle").value;
   var height = document.getElementById("inputheightrighttriangle").value;
-  console.log(base);
-  console.log(height);
   var areaoutput = document.getElementById("resultofarearat");
   var perimeteroutput = document.getElementById("resultofperirat");
   var hypooutput = document.getElementById("resultofhyporat");
@@ -1768,7 +1765,7 @@ function solveparallelogram(){
   }
 
 }
-
+//created function for Rhombus
 function rhombussolve() {
   var d1= document.getElementById("inputd1").value;
   var d2= document.getElementById("inputd2").value;
@@ -1790,7 +1787,7 @@ function rhombussolve() {
     document.getElementById("resultofperi").innerHTML="Enter side value to calculate perimeter";
   }
 }
-
+//created function for Rhombus
 function Kitesolve() {
   var p= document.getElementById("inputp").value;
   var q= document.getElementById("inputq").value;
@@ -1815,6 +1812,7 @@ function Kitesolve() {
   }
 }
 
+//created function for Rectangle
 function rectanglesolve() {
   var length = document.getElementById("inputreclength").value;
   var breadth = document.getElementById("inputrecbreadth").value;
