@@ -3695,7 +3695,6 @@ function polar()
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
-
  function datau(a) {
       switch(a)
        {
@@ -3715,8 +3714,8 @@ function polar()
             return 1000000000000000; 
             
        }
- }  
-}
+      }
+    }
 
  function datacon() {
   const f = datau(document.getElementById("datacon-1").value);
@@ -4640,7 +4639,6 @@ function ninetenCalc(){
 	  result.innerHTML ="";
   }
 }
-
 
 ////////////////////date calculator///////////
 function datecal()
