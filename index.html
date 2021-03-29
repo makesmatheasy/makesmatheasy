@@ -1613,7 +1613,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="bcdbtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">BCD Code
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/BCD Code
                                 Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -7224,7 +7224,16 @@
             <div class="collapse" id="bcd">
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Decimal</h5>
+                        <h5>From</h5>
+                        <select id="bcd-select1" class="form__field"
+                                onchange="convertbcd()">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                BCD Code
+                            </option>
+                        </select>
 
                         <input type="number" id="bcd-input" value="0" class="form__field"
                                oninput="convertbcd()">
@@ -7232,7 +7241,16 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>BCD</h5>
+                        <h5>To</h5>
+                        <select id="bcd-select2" class="form__field"
+                                onchange="convertbcd()">
+                            <option class="form__field" style="background-color: #232a36;">
+                                BCD Code
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
+                        </select>
 
                     </div>
                     <label class="form__group" id="bcd-result">0</label>

@@ -4469,31 +4469,66 @@ function convertBinOct() {
 
 
 //Function that performs conversion of  binary to bcd
-
-function convertbcd() {
-
-    var input = document.getElementById("bcd-input").value;
-    let result = document.getElementById("bcd-result");
-    var x = "_";
-
-    for (var i = 0; i < input.length; i++) {
-        var y = parseInt(input[i]).toString(2)
-        if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-        }
-        if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-        }
-        if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-        }
-        if (y.length == 4) {
-            x = x + +y + "_   ";
-        }
-
+function separator(str, n) { //used for converting BCD code to decimal
+    var val = [];
+    var i, l;
+    for(i = 0, l = str.length; i < l; i += n) {
+       val.push(parseInt(str.substr(i, n),2));
     }
 
-    result.innerHTML = x;
+    return val;
+};
+function bcdTOdecimal(x) {
+    var y=x.length;
+    var input1="";
+    if(y%4==1 || y==1)
+    input1="000"+x;
+    else if(y%4==2 || y==2)
+    input1="00"+x;
+    else if(y%4==3 || y==3)
+    input1="0"+x;
+    else 
+    input1=x;
+    const minVal = (currentValue) => currentValue <= 9;
+    w=separator(input1,4);
+    if(w.every(minVal)==true)
+    return w.join('_');
+    else 
+    return "Invalid";
+    }
+function convertbcd() {
+    const fromCode = document.getElementById("bcd-select1").value;
+    const toCode = document.getElementById("bcd-select2").value;
+    var input = document.getElementById("bcd-input").value;
+    let result = document.getElementById("bcd-result");
+    
+    if( fromCode=="BCD Code" && toCode=="BCD Code") 
+    result.innerHTML=input;
+    else if(fromCode=="Decimal" && toCode=="Decimal")
+    result.innerHTML=input;
+    else if(fromCode=="BCD Code" && toCode =="Decimal")
+    result.innerHTML=bcdTOdecimal(input);
+    else if(fromCode=="Decimal" && toCode=="BCD Code") {
+        var x = "_";
+
+        for (var i = 0; i < input.length; i++) {
+            var y = parseInt(input[i]).toString(2)
+            if (y.length == 1) {
+            x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+            x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+            x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+            x = x + +y + "_   ";
+            }
+
+        }
+        result.innerHTML = x;
+    }
 }
 
 //----------------------------
@@ -4625,7 +4660,7 @@ function onetwoCalc() {
 
 }
 
-//
+//9's 10's compliment
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
