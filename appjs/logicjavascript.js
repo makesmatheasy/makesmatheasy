@@ -429,6 +429,11 @@ function printmorefactors(input, output) {
     var val = document.getElementById(input).value;
     val = val.replace(/\s+$/, ""); //right trim
     val = val.replace(/^\s+/, ""); //left trim
+	if (val.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     val = val.split(" ");
     ar = val;
     var temp = "";
@@ -520,10 +525,14 @@ function hcf(input) {
     var val = document.getElementById(input).value;
     val = val.replace(/\s+$/, ""); //right trim
     val = val.replace(/^\s+/, ""); //left trim
+	document.getElementById("hcfprimefactor").textContent = "";
+	if (val.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     val = val.split(" ");
     ar = val;
-
-    document.getElementById("hcfprimefactor").textContent = "";
     var temp = "";
     document.getElementById("hcfprimefactor").innerHTML =
         "\\[Prime \\space Factors \\space of \\space\\]";
@@ -601,6 +610,11 @@ function factorselect(numid) {
     var num = document.getElementById(numid).value;
     num = num.replace(/^\s+/, ""); //left trim
     num = num.replace(/\s+$/, ""); //right trim
+	if (num.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     num = num.split(" ");
     if (num.length == 1) {
         printfactors();
@@ -628,6 +642,11 @@ function lcmsol(input) {
     document.getElementById("resultfac").innerHTML = "";
     document.getElementById("resultlcms").innerHTML = "";
     var num = document.getElementById(input).value;
+	if (num.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     num = num.split(" ");
     num = num.filter(function (str) {
         return /\S/.test(str);
@@ -4247,25 +4266,39 @@ function Means() {
     var s = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
+    val=val.trim()
+    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+
+    val = val.substring(2,val.length-2)
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
-        s = s + parseInt(val[i]);
+        s = s + parseFloat(val[i]);
     }
     if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         var ans = s / len;
+        
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
         for (i = 1; i < val.length; i++) {
             document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
@@ -4275,6 +4308,19 @@ function Means() {
 function Median() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
+    arr=arr.trim()
+    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(arr==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    arr = JSON.stringify(arr)
+    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
+
+    arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
     arr = arr.filter(function (str) {
         return /\S/.test(str);
@@ -4287,13 +4333,13 @@ function Median() {
     } else {
         let median =
             len % 2 === 0
-                ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2
+                ? (parseFloat(arr[mid]) + parseFloat(arr[mid - 1])) / 2
                 : arr[mid];
         document.getElementById(
             "Meanresult"
         ).innerHTML = `After Sorting:- ${arr}</br>`;
         document.getElementById("Meanresult").innerHTML += `Median:-`;
-        document.getElementById("Meanresult").innerHTML += median;
+        document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
@@ -4303,6 +4349,19 @@ function Median() {
 function Mode() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
+    arr=arr.trim()
+    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(arr==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    arr = JSON.stringify(arr)
+    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
+
+    arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
     arr = arr.filter(function (str) {
         return /\S/.test(str);
@@ -4341,13 +4400,28 @@ function Variance() {
     var s = 0, ans = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
+
+    val=val.trim()
+    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+
+    val = val.substring(2,val.length-2)
+
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
-        s = s + parseInt(val[i]);
+        s = s + parseFloat(val[i]);
     }
     if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
@@ -4355,7 +4429,7 @@ function Variance() {
         document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;
         var mean = s / len;
         for (i = 0; i < len; i++) {
-            num = parseInt(val[i]);
+            num = parseFloat(val[i]);
             ans = ans + Math.pow(num - mean, 2);
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num - mean, 2))}`;
@@ -4364,10 +4438,10 @@ function Variance() {
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
         document.getElementById("Meanresult").innerHTML += `/${val.length} &nbsp;= <br>`;
         ans = ans / len;
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
     }
 
 
@@ -4379,13 +4453,28 @@ function std() {
     var s = 0, ans = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
+    
+    val=val.trim()
+    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+
+    val = val.substring(2,val.length-2)
+
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
-        s = s + parseInt(val[i]);
+        s = s + parseFloat(val[i]);
     }
     if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
@@ -4393,7 +4482,7 @@ function std() {
         document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;
         var mean = s / len;
         for (i = 0; i < len; i++) {
-            num = parseInt(val[i]);
+            num = parseFloat(val[i]);
             ans = ans + Math.pow(num - mean, 2);
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num - mean, 2))}`;
@@ -4407,7 +4496,7 @@ function std() {
         ans = ans / len;
         document.getElementById("Meanresult").innerHTML += `&#8730; ${ans} &nbsp; = &nbsp`;
         ans = Math.sqrt(ans);
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
     }
 
 
@@ -4433,7 +4522,7 @@ function convertBinDec() {
     if (toBase === "Decimal") to = 10;
     else to = 2;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    result.innerHTML = parseFloat(input, from).toString(to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
@@ -4517,7 +4606,7 @@ function bitwiseCalc() {
 }
 
 /////////////////////////////////////////////////////////////
-//Function that performs conversion of Octal to binary and viceversa
+//Function that performs conversion of Octal/Binary/Decimal
 function convertBinOct() {
     const fromBase = document.getElementById("octal-binary-select1").value;
     const toBase = document.getElementById("octal-binary-select2").value;
@@ -4527,12 +4616,21 @@ function convertBinOct() {
     let to = 8;
 
     if (fromBase === "Octal") from = 8;
+    else if (fromBase === "Decimal") from=10;
     else from = 2;
 
     if (toBase === "Octal") to = 8;
+    else if(toBase === "Decimal") to = 10;
     else to = 2;
 
     result.innerHTML = parseInt(input, from).toString(to);
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (from == 2) {
+        if (input.search(/^[10]+$/) == -1)
+            result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+    }
 }
 
 //----------------------------
@@ -4652,7 +4750,10 @@ function convertgrey() {
         for (var i = 1; i < input.length; i++)
             x += parseInt(x[i - 1] ^ input[i]).toString();
 
-
+    if (input == "") {
+        x= "";
+    } else if(input.search(/^[10]+$/) == -1)
+             x= "Binary and grey code can only have 0's and 1's";
     result.innerHTML = x;
 }
 
@@ -4879,6 +4980,66 @@ function computejointprobability() {
 
 
 }
+
+function computebayesprobability() {
+
+    var favourable1 = parseInt(document.getElementById("fav1").value)
+    var favourable2 = parseInt(document.getElementById("fav2").value)
+    var total1 = parseInt(document.getElementById("tot1").value)
+    var total2 = parseInt(document.getElementById("tot2").value)
+
+    var probability1 = favourable1 / total1;
+    var probability2 = favourable2 / total2;
+
+    var probability3 =(0.5*probability1)/((0.5*probability1)+(0.5*probability2));
+
+    var probability4=(0.5*probability2)/((0.5*probability1)+(0.5*probability2));
+    
+    console.log(probability1);
+    console.log(probability2);
+    
+    let result1 = document.getElementById("bayesresult1");
+    let result2=document.getElementById("bayesresult2");
+    var check = true;
+
+    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
+        if (favourable1 > total1) {
+            result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+            check = false;
+        } 
+
+        else if (favourable2 > total2) {
+            result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+            check = false;
+        } 
+
+         if (check == true) {
+            result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
+             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);  
+
+        }
+    } else {
+        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function angleplot() {

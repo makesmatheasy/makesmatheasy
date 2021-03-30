@@ -161,6 +161,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#betagammabtn").click(function () {
+        openit("#betagamma");
+        closenav();
+        clearall();
+    })
+  
+    $("#euclidbtn").click(function () {
+        openit("#euclid");
+        closenav();
+        clearall();
+    })
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
@@ -480,6 +492,13 @@ $(document).ready(function () {
 
     $("#jointprobabilitycollapsebtn").click(function(){
         openit("#joint-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+
+    $("#bayesprobabilitycollapsebtn").click(function(){
+        openit("#bayes-probabilitycollapse");
         closenav();
         clearall();
     });

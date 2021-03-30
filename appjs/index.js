@@ -162,6 +162,8 @@ function openit(id) {
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
+        "#euclid",
+        "#betagamma",
         "#unitconcal",
         "#spiconcal",
         "#home",
@@ -216,6 +218,7 @@ function openit(id) {
         "#joint-probabilitycollapse",
         "#ex3",
         "#lappro",
+        "#bayes-probabilitycollapse",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

@@ -276,6 +276,23 @@
             </li>
             <!--            mathematical reasoning-->
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="euclidbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Euclid Geometry</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Euclid Geometry','#euclid','c','euclidfav')"><img
+                                        id="euclidfav" src="images/unfavourite.png"
+
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <!--            operations on sets-->
             <li>
                 <table class="table">
@@ -653,6 +670,22 @@
                 </table>
             </li>
             <!--maxima and minima-->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="betagammabtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Beta Gamma Functions<a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Beta Gamma Functions','#betagamma','c','betagammaimgfav')"><img
+                                        id="betagammaimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <!--            laplace-->
             <li>
@@ -1613,7 +1646,8 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="bcdbtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/BCD Code
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/BCD
+                                Code
                                 Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -1823,6 +1857,23 @@
                                 <span
                                         onclick="addtofavourite('Joint Probability','#joint-probabilitycollapse','c','joint-probailityfav')"><img
                                         id="joint-probailityfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bayesprobabilitycollapsebtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Bayes
+                                Probability Theorem</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Bayes Theorem','#bayes-probabilitycollapse','c','bayes-probailityfav')"><img
+                                        id="bayes-probailityfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -3179,6 +3230,35 @@
 
 
         </div>
+
+        <div class="collapse" id="betagamma">
+            <h2 style="text-align: center;">Beta and Gamma Functions</h2>
+            <br><br>
+            <h4>What are Beta functions?</h4>
+            <p>The beta function is a unique function where it is classified as the first kind of Euler’s integrals. The beta function 
+                is defined in the domains of real numbers. The notation to represent the beta function is “β”. The beta function is meant by B(p, q), where the 
+                parameters p and q should be real numbers.
+            </p>
+            <p>\[B(p,q)\space =\space \int_{0}^{1} t^{p-1} (1-t)^{q-1}\,dt \\ Where\space p,q\space greater\space than\space 0\]</p>
+            <h4>Properties of Beta Functions</h4>
+            <ul>
+                <li style="color: white; font-size: 20px;">This function is symmetric which means that the value of beta function is irrespective to the order of its parameters, i.e B(p, q) = B(q, p)</li>
+                <li style="color: white; font-size: 20px;">B(p, q) = B(p, q+1) + B(p+1, q)</li>
+                <li style="color: white; font-size: 20px;">B(p, q+1) = B(p, q). [q/(p+q)]</li>
+                <li style="color: white; font-size: 20px;">B(p+1, q) = B(p, q). [p/(p+q)]</li>
+                <li style="color: white; font-size: 20px;">B (p, q). B (p+q, 1-q) = π/ p sin (πq)</li>
+            </ul>
+            <p>\[B(p,q)\space  =\space \int_{0}^{\infty} \frac{t^{p-1}}{(1+t) ^{p+q}} \,dt\]</p>
+            <p>\[B(p,q)\space =\space 2\int_{0}^{\frac{\pi}{2}} sin^{2p-1}\theta\ cos^{2q-1}\theta \]</p>
+            <h4>What are Gamma functions?</h4>
+            <p>\[\gamma(x)\space =\space \int_{0}^{\infty} t^{x-1}e^{-t}\,dt\]</p>
+            <p>\[\gamma(n)\space =\space (n-1)!\]</p>
+            <p>\[\gamma (\frac{1}{2})\space =\space\frac{\sqrt{\pi}}{2} \]</p>
+            <p>\[\gamma(\frac{n}{2})\space =\space \gamma(\frac{n-2}{2})\frac{n}{2}\]</p>
+            <h4>Relation between beta and gamma functions</h4>
+            <p>\[B(p,q)\space =\space \frac{\gamma(p)\space\gamma(q)}{\gamma(p+q)}\]</p>
+        </div>
+
         <div class="collapse" id="laplacecollapse">
             <div class="form-group">
                 <div class="text-center"><label>Laplace Transform</label></div>
@@ -3589,6 +3669,48 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="collapse" id="euclid">
+            <h2 style="text-align: center;">Euclid Geometry - Axioms and Postulates</h2>
+            <br><br>
+            <h4>Euclid's Axioms</h4>
+            <p>There are 7 axioms in Euclid Geometry<p>
+            <ol>
+                <li style="color: white; font-size: 20px;">Things which are equal to the same thing are equal to one another. </li>
+                <br>
+                <li style="color: white; font-size: 20px;">If equals are added to equals, the wholes are equal. </li>
+                <br>
+                <li style="color: white; font-size: 20px;">If equals are subtracted from equals, the remainders are equal.</li>
+                <br>
+                <li style="color: white; font-size: 20px;">Things which coincide with one another are equal to one another. </li>
+                <br>
+                <li style="color: white; font-size: 20px;">The whole is greater than the part. </li>
+                <br>
+                <li style="color: white; font-size: 20px;">Things which are double of the same things are equal to one another.</li>
+                <br>
+                <li style="color: white; font-size: 20px;">Things which are halves of the same things are equal to one another</li>
+            </ol>
+            <br>
+            <h4>Euclid's Postulates</h4>
+            <p>There are 5 postulates in Euclid's Geometry</p>
+            <ol>
+                <li style="color: white; font-size: 20px;">A straight line can be drawn from anyone point to another point</li>
+                <br>
+                <img style="margin-left: 350px; height: 200px;"  src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101848/Euclidean-Geometry-Postu-1-300x121-300x121.png" alt="">
+                <br>
+                <li style="color: white; font-size: 20px;">A terminated line can be further produced indefinitely</li>
+                <br>
+                <img style="margin-left: 350px; width :350px ; height: 100px;" src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101952/Euclid-Postulates-300x50-300x50.png" alt="">
+                <br>
+                <li style="color: white; font-size: 20px;">A circle can be drawn with any centre and any radius.</li>
+                <br>
+                <li style="color: white; font-size: 20px;">All right angles are equal to one another.</li>
+                <br>
+                <li style="color: white; font-size: 20px;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles, 
+                    then the two straight lines, if produced indefinitely, meet on the side on which the sum of angles is less than two right angles
+                </li>
+            </ol>
         </div>
 
         <div class="collapse" id="setop">
@@ -6634,537 +6756,536 @@
                 </div>
             </div>
         </div>
-            <!-- Factorial -->
-            <div class="collapse" id="factorial">
-                <form class="form-inline">
-                    <input type="number" id="factorialval" placeholder="Enter a Number"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                    <button type="button" class="btn btn-light"
-                            onclick="factorialsol('factorialval')">
-                        Solve
-                    </button>
-                </form>
-                <br>
-                <div class="form-group">
-                    <p id="explain_fact" style="display:flex;font-family:mathfont;;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                    <br>
-                    <p id="factorialsolprint"
-                       style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
-                       align="right"></p>
-                </div>
-
-            </div>
-            <!-- Factorial end -->
-
-            <!--sum of nterms in A.P.-->
-            <div class="collapse" id="sum_n_AP">
-                <div class="text-center">
-                    <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
-                </div>
-                <h4>If first term,number of terms and common difference is given</h4><br>
-                <form class="form-inline">
-                    <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="rapterms" placeholder="Enter the first term(a) "
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="r1val"
-                           placeholder="Enter the difference between two consecutive terms (d) "
-                           style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                    <button type="button" class="btn btn-light"
-                            onclick="sum_n_apsol('napterms','rapterms','r1val')">
-                        Solve
-                    </button>
-                </form>
-                <br>
-                <div class="form-group">
-                    <p id="printAPseries" style="display:flex;font-family:mathfont;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                    <br>
-                    <p id="sumAP_formula" style="display:flex;font-family:mathfont;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                    <br>
-                    <p id="sum_APsolprint"
-                       style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
-                       align="right"></p>
-                </div>
-                <br><br><br>
-                <h4>If first term,number of terms and last term is given</h4><br>
-                <form class="form-inline">
-                    <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="ft" placeholder="Enter the first term(a) "
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="lt" placeholder="Enter the last term(l)"
-                           style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                    <button type="button" class="btn btn-light" onclick=anotherap()>
-                        Solve
-                    </button>
-                </form>
-                <br>
-                <p id="printAPseries1" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap" align="right"></p>
-                <h5 id="ltap"></h5>
-                <h5 id="formula"></h5>
-            </div>
-            <!--sum of nterms in A.P. ends-->
-
-            <!-- sum of nterms in G.P.  -->
-            <div class="collapse" id="sum_n_GP">
-                <h2>Sum of N terms of a Geometric Progression</h2>
-                <div class="form-group">
-                    <input type="text" style="width: 15.625rem;" class="form__field"
-                           id="firstterm"
-                           placeholder="Enter first term"/>
-                    <input type="text" style="width: 15.625rem;" class="form__field" id="ratio"
-                           placeholder="Enter ratio between terms"/>
-                    <input type="text" style="width: 15.625rem;" class="form__field" id="number"
-                           placeholder="Enter number of terms"/>
-                    <br>
-                    <br>
-                    <button class="btn btn-outline-light" onclick="gp()">Find</button>
-                </div>
-                <br>
-                <div class="form-group">
-                    <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                    <br>
-                    <p id="sumGP_formula" style="display:flex;font-family:mathfont;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                    <br>
-                    <p id="sumgp"
-                       style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
-                       align="right"></p>
-                </div>
-                <br>
-                <br>
-                <h2>Sum of infinite terms of a Geometric Progression with common ratio less than
-                    1</h2>
-                <div class="form-group">
-                    <input type="text" style="width: 15.625rem;" class="form__field" id="fterm"
-                           placeholder="Enter first term"/>
-                    <input type="text" style="width: 15.625rem;" class="form__field" id="r"
-                           placeholder="Enter ratio between terms"/>
-                    <br>
-                    <br>
-                    <button class="btn btn-outline-light" onclick="igp()">Find</button>
-                    <br>
-                    <br> <br>
-                    <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
-                </div>
-            </div>
-            <div class="collapse" id="mean">
-                <div class="text-center">
-                    <h2><label>Mean Calculator</label></h2>
-                </div>
-                <h4>Arithmetic Mean</h4><br>
-                <form class="form-inline">
-                    <input type="number" id="aval" placeholder="Enter the first term (a)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="cval" placeholder="Enter the last term(c) "
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <button type="button" class="btn btn-light" onclick=amsol()>
-                        Solve
-                    </button>
-                </form>
-                <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
+        <!-- Factorial -->
+        <div class="collapse" id="factorial">
+            <form class="form-inline">
+                <input type="number" id="factorialval" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light"
+                        onclick="factorialsol('factorialval')">
+                    Solve
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="explain_fact" style="display:flex;font-family:mathfont;;width:auto;"
                    class="stopwrap"
                    align="right"></p>
-
-                <h5 id="am"></h5>
-                <br><br><br>
-                <h4>Geometric Mean</h4><br>
-                <form class="form-inline">
-                    <input type="number" id="aval1" placeholder="Enter the first term (a)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="cval1" placeholder="Enter the last term(c) "
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <button type="button" class="btn btn-light" onclick=gmsol()>
-                        Solve
-                    </button>
-                </form>
-                <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
-                   class="stopwrap"
+                <br>
+                <p id="factorialsolprint"
+                   style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
                    align="right"></p>
-                <h5 id="gm"></h5>
-                <br><br><br>
-                <h4>Harmonic Mean</h4><br>
-                <form class="form-inline">
-                    <input type="number" id="aval2" placeholder="Enter the first term (a)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <input type="number" id="cval2" placeholder="Enter the last term(c) "
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    <button type="button" class="btn btn-light" onclick=hmsol()>
-                        Solve
-                    </button>
-                </form>
-                <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-                <h5 id="hm"></h5>
             </div>
-            <!-- sum of nterms in G.P. ends  -->
-            <div class="collapse" id="convdiv">
-                <h2>Convergence and Divergence of Series
-                    <h2>
-                        <p>\[1.\space If\space \lim_{n\to\infty}a_n\space is\space finite\space
-                            and\space unique\space,\space the\space sequence\space
-                            is\space said\space to\space be\space convergent\]
-                        </p>
-                        <p>\[2.\space If\space \lim_{n\to\infty}a_n\space is\space =\space
-                            +/-\infty,\space then\space the\space sequence\space
-                            is\space said\space to\space be\space divergent \]
-                        </p>
-                        <p>\[3.\space If\space \lim_{n\to\infty}a_n\space is\space not\space
-                            unique,\space then\space the\space sequence\space
-                            is\space said\space to\space be\space oscillatory\]
-                        </p>
-                        <h4 style="text-align: center;">D'Alembert's Ratio Test</h4>
-                        <p>\[Let\space u_k\space be\space a\space series\space with\space
-                            positive\space terms\space and\space suppose \\
-                            \rho=\lim_{k\to\infty}\frac{u_{k+1}}{u_k}.\\ \\
-                            Then,\\
 
-                            1.\space If\space \rho<1,\space the\space series\space converges.\\
+        </div>
+        <!-- Factorial end -->
 
-                            2.\space If\space \rho>1\space or\space \rho=\infty,\space the\space
-                            series\space diverges.\\
+        <!--sum of nterms in A.P.-->
+        <div class="collapse" id="sum_n_AP">
+            <div class="text-center">
+                <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
+            </div>
+            <h4>If first term,number of terms and common difference is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="rapterms" placeholder="Enter the first term(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="r1val"
+                       placeholder="Enter the difference between two consecutive terms (d) "
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light"
+                        onclick="sum_n_apsol('napterms','rapterms','r1val')">
+                    Solve
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="printAPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumAP_formula" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sum_APsolprint"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
+            <br><br><br>
+            <h4>If first term,number of terms and last term is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft" placeholder="Enter the first term(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt" placeholder="Enter the last term(l)"
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=anotherap()>
+                    Solve
+                </button>
+            </form>
+            <br>
+            <p id="printAPseries1" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+               align="right"></p>
+            <h5 id="ltap"></h5>
+            <h5 id="formula"></h5>
+        </div>
+        <!--sum of nterms in A.P. ends-->
 
-                            3.\space If\space \rho=1,\space the\space series\space may\space
-                            converge\space or\space diverge.\]
-                        </p>
-                        <h4 style="text-align: center;">Rabbe's Test</h4>
-                        <p>\[Given\space a\space series\space of\space positive\space
-                            terms\space u_i\space and\space a\space sequence\space of\space
-                            positive\space constants\space {a_i},\\
-                            \rho = \lim_{n\to\infty}n(\frac{u_n}{u_{n+1}}-1)\\
-                            1. If\space \rho>1,\space the\space series\space converges.\\
-                            2. If\space \rho<1,\space the\space series\space diverges.>\\
-                            3. If\space \rho=1,\space the\space series\space may\space
-                            converge\space or\space diverge.\]
-                        </p>
-                        <h4 style="text-align: center;">Comparison Test</h4>
-                        <p>\[Let\space b[n]\space be\space a\space second\space series.\space
-                            Require\space that\space all\space a[n]\space and\space b[n]\space
-                            are\space positive.\space If b[n] converges,\space and\space
-                            a[n]<=b[n]\\ \space for\space all\space n,\space then\space
-                            a[n]\space also\space converges.\space
-                            If\space the\space sum\space of\space b[n]\space diverges,\space
-                            and\space a[n]>=b[n]\space for\space all\space n, \\ \space
-                            then\space the\space sum\space of\space a[n]\space also\space
-                            diverges.\]
-                        </p>
-                        <h4 style="text-align: center;">Root's Test</h4>
-                        <p>\[If\space \lim_{n\to\infty}{\sqrt{n}a_n}\ < 1\space then\space
-                            convergent\space else\space divergent\]</p>
-                    </h2>
+        <!-- sum of nterms in G.P.  -->
+        <div class="collapse" id="sum_n_GP">
+            <h2>Sum of N terms of a Geometric Progression</h2>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field"
+                       id="firstterm"
+                       placeholder="Enter first term"/>
+                <input type="text" style="width: 15.625rem;" class="form__field" id="ratio"
+                       placeholder="Enter ratio between terms"/>
+                <input type="text" style="width: 15.625rem;" class="form__field" id="number"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="gp()">Find</button>
+            </div>
+            <br>
+            <div class="form-group">
+                <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumGP_formula" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumgp"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
+            <br>
+            <br>
+            <h2>Sum of infinite terms of a Geometric Progression with common ratio less than
+                1</h2>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" id="fterm"
+                       placeholder="Enter first term"/>
+                <input type="text" style="width: 15.625rem;" class="form__field" id="r"
+                       placeholder="Enter ratio between terms"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="igp()">Find</button>
+                <br>
+                <br> <br>
+                <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
+            </div>
+        </div>
+        <div class="collapse" id="mean">
+            <div class="text-center">
+                <h2><label>Mean Calculator</label></h2>
+            </div>
+            <h4>Arithmetic Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=amsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
+               class="stopwrap"
+               align="right"></p>
+
+            <h5 id="am"></h5>
+            <br><br><br>
+            <h4>Geometric Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval1" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval1" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=gmsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
+               class="stopwrap"
+               align="right"></p>
+            <h5 id="gm"></h5>
+            <br><br><br>
+            <h4>Harmonic Mean</h4><br>
+            <form class="form-inline">
+                <input type="number" id="aval2" placeholder="Enter the first term (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="cval2" placeholder="Enter the last term(c) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <button type="button" class="btn btn-light" onclick=hmsol()>
+                    Solve
+                </button>
+            </form>
+            <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
+               class="stopwrap"
+               align="right"></p>
+            <h5 id="hm"></h5>
+        </div>
+        <!-- sum of nterms in G.P. ends  -->
+        <div class="collapse" id="convdiv">
+            <h2>Convergence and Divergence of Series
+                <h2>
+                    <p>\[1.\space If\space \lim_{n\to\infty}a_n\space is\space finite\space
+                        and\space unique\space,\space the\space sequence\space
+                        is\space said\space to\space be\space convergent\]
+                    </p>
+                    <p>\[2.\space If\space \lim_{n\to\infty}a_n\space is\space =\space
+                        +/-\infty,\space then\space the\space sequence\space
+                        is\space said\space to\space be\space divergent \]
+                    </p>
+                    <p>\[3.\space If\space \lim_{n\to\infty}a_n\space is\space not\space
+                        unique,\space then\space the\space sequence\space
+                        is\space said\space to\space be\space oscillatory\]
+                    </p>
+                    <h4 style="text-align: center;">D'Alembert's Ratio Test</h4>
+                    <p>\[Let\space u_k\space be\space a\space series\space with\space
+                        positive\space terms\space and\space suppose \\
+                        \rho=\lim_{k\to\infty}\frac{u_{k+1}}{u_k}.\\ \\
+                        Then,\\
+
+                        1.\space If\space \rho<1,\space the\space series\space converges.\\
+
+                        2.\space If\space \rho>1\space or\space \rho=\infty,\space the\space
+                        series\space diverges.\\
+
+                        3.\space If\space \rho=1,\space the\space series\space may\space
+                        converge\space or\space diverge.\]
+                    </p>
+                    <h4 style="text-align: center;">Rabbe's Test</h4>
+                    <p>\[Given\space a\space series\space of\space positive\space
+                        terms\space u_i\space and\space a\space sequence\space of\space
+                        positive\space constants\space {a_i},\\
+                        \rho = \lim_{n\to\infty}n(\frac{u_n}{u_{n+1}}-1)\\
+                        1. If\space \rho>1,\space the\space series\space converges.\\
+                        2. If\space \rho<1,\space the\space series\space diverges.>\\
+                        3. If\space \rho=1,\space the\space series\space may\space
+                        converge\space or\space diverge.\]
+                    </p>
+                    <h4 style="text-align: center;">Comparison Test</h4>
+                    <p>\[Let\space b[n]\space be\space a\space second\space series.\space
+                        Require\space that\space all\space a[n]\space and\space b[n]\space
+                        are\space positive.\space If b[n] converges,\space and\space
+                        a[n]<=b[n]\\ \space for\space all\space n,\space then\space
+                        a[n]\space also\space converges.\space
+                        If\space the\space sum\space of\space b[n]\space diverges,\space
+                        and\space a[n]>=b[n]\space for\space all\space n, \\ \space
+                        then\space the\space sum\space of\space a[n]\space also\space
+                        diverges.\]
+                    </p>
+                    <h4 style="text-align: center;">Root's Test</h4>
+                    <p>\[If\space \lim_{n\to\infty}{\sqrt{n}a_n}\ < 1\space then\space
+                        convergent\space else\space divergent\]</p>
                 </h2>
+            </h2>
+        </div>
+
+        <!-- Permutattiona and combination -->
+        <div class="collapse" id="pandc">
+            <form class="form-inline">
+                <input type="number" id="nval" placeholder="Total items in the set (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <input type="number" id="rval" placeholder="Item taken from the set (r) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+
+            </form>
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="permutationcal('nval','rval')">
+                    Permutation
+                </button>
+                <button type="button" class="btn btn-light"
+                        onclick="combinationcal('nval','rval')">
+                    Combination
+                </button>
             </div>
-
-            <!-- Permutattiona and combination -->
-            <div class="collapse" id="pandc">
-                <form class="form-inline">
-                    <input type="number" id="nval" placeholder="Total items in the set (n)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                    <input type="number" id="rval" placeholder="Item taken from the set (r) "
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-
-                </form>
-                <br>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="permutationcal('nval','rval')">
-                        Permutation
-                    </button>
-                    <button type="button" class="btn btn-light"
-                            onclick="combinationcal('nval','rval')">
-                        Combination
-                    </button>
-                </div>
-                <br>
-                <div class="form-group">
-                    <div id="permutation_div">
-                        <div id="permutation_div_div1">
-                            <p id="permutation_wrong"
-                               style="display:flex;font-family:mathfont;;width:auto;"
-                               class="stopwrap" align="right">
-                            </p>
-                        </div>
-                        <div id="premutation_div_div2">
-                            <p id="permutation"
-                               style="display:flex;font-family:mathfont;;width:auto;"
-                               class="stopwrap"
-                               align="right">
-                                Permutations,&nbsp;
-                                <strong>
-                                    <sup>n</sup>
-                                    P
-                                    <sub>r</sub>
-                                </strong>
-                                &nbsp;
-                                =
-                                &nbsp;
-                                <span id="permutation_ans"></span>
-                            </p>
-                        </div>
+            <br>
+            <div class="form-group">
+                <div id="permutation_div">
+                    <div id="permutation_div_div1">
+                        <p id="permutation_wrong"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap" align="right">
+                        </p>
                     </div>
-                    <div id="combination_div">
-                        <div id="combination_div_div1">
-                            <p id="combination_wrong"
-                               style="display:flex;font-family:mathfont;;width:auto;"
-                               class="stopwrap" align="right">
-                            </p>
-                        </div>
-                        <div id="combination_div_div2">
-                            <p id="combination"
-                               style="display:flex;font-family:mathfont;;width:auto;"
-                               class="stopwrap"
-                               align="right">
-                                Combinations,&nbsp;
-                                <strong>
-                                    <sup>n</sup>
-                                    C
-                                    <sub>r</sub>
-                                </strong>
-                                &nbsp;
-                                =
-                                &nbsp;
-                                <span id="combination_ans"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- P&C end -->
-
-            <!-- Primarity test and prime till n cal -->
-            <div class="collapse" id="prime">
-                <form class="form-group">
-                    <div class="text-center">
-                        <h2><label>Primality Test</label></h2>
-                    </div>
-                    <input type="number" id="isprime" placeholder="Enter a Number"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
-                    <button type="button" class="btn btn-light"
-                            onclick="check_prime('isprime')">
-                        Check
-                    </button>
-                </form>
-                <br>
-                <div class="form-group">
-                    <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                </div>
-
-                <div class="dropdown-divider"></div>
-                <div class="form-group">
-                    <div class="text-center">
-                        <h2><label>Primes till entered number</label></h2>
-                    </div>
-                    <input type="number" id="primetill" placeholder="Enter a Number"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
-                    <button type="button" class="btn btn-light"
-                            onclick="prime_till_num('primetill')">
-                        Find
-                    </button>
-                    </form>
-                    <br>
-                    <div class="form-group">
-                        <p id="primetillsol"
+                    <div id="premutation_div_div2">
+                        <p id="permutation"
                            style="display:flex;font-family:mathfont;;width:auto;"
                            class="stopwrap"
-                           align="right"></p>
-                    </div>
-
-                </div>
-                <!--  Primarity test and prime till n cal end -->
-            </div>
-            <div class="collapse" id="bool">
-                <h2 style="text-align: center;">Boolean Algebra</h2>
-                <h5>Laws of Boolean Algebra</h5>
-                <p>1. Annulment Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">A . 0 = 0</li>
-                    <li style="font-size: 20px; color: white;">A + 1 = 1</li>
-                </ul>
-                <p>2. Identity Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">A + 0 = A</li>
-                    <li style="font-size: 20px; color: white;">A . 1 = A</li>
-                </ul>
-                <p>3. Idempotent Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">A + A = A</li>
-                    <li style="font-size: 20px; color: white;">A . A = A</li>
-                </ul>
-                <p>4. Complement Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">A . A<sup>'</sup> = 0</li>
-                    <li style="font-size: 20px; color: white;">A + A<sup>'</sup> = 1</li>
-                </ul>
-                <p>5. Demorgan's Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">(A+B)<sup>'</sup> = A<sup>'</sup>
-                        + B<sup>'</sup></li>
-                    <li style="font-size: 20px; color: white;">(A . B)<sup>'</sup> =
-                        A<sup>'</sup> + B<sup>'</sup></li>
-                </ul>
-                <p>6. Distributive Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
-                    <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
-                </ul>
-                <p>7. Absorption Law - </p>
-                <ul>
-                    <li style="font-size: 20px; color: white;">A + A.B = A</li>
-                    <li style="font-size: 20px; color: white;">A(A+B) = A</li>
-                </ul>
-            </div>
-            <!--    start of calculator -->
-
-            <!-- Start of Decimal / Binary -->
-
-            <div class="collapse" id="decimal-binary">
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>From</h5>
-                        <select id="decimal-binary-select1" class="form__field"
-                                onchange="convertBinDec()">
-                            <option class="form_field" style="background-color: #232a36;">
-                                Decimal
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Binary
-                            </option>
-                        </select>
-                        <input type="number" id="decimal-binary-input" value="0"
-                               class="form__field"
-                               oninput="convertBinDec()">
+                           align="right">
+                            Permutations,&nbsp;
+                            <strong>
+                                <sup>n</sup>
+                                P
+                                <sub>r</sub>
+                            </strong>
+                            &nbsp;
+                            =
+                            &nbsp;
+                            <span id="permutation_ans"></span>
+                        </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div id="combination_div">
+                    <div id="combination_div_div1">
+                        <p id="combination_wrong"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap" align="right">
+                        </p>
+                    </div>
+                    <div id="combination_div_div2">
+                        <p id="combination"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap"
+                           align="right">
+                            Combinations,&nbsp;
+                            <strong>
+                                <sup>n</sup>
+                                C
+                                <sub>r</sub>
+                            </strong>
+                            &nbsp;
+                            =
+                            &nbsp;
+                            <span id="combination_ans"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- P&C end -->
+
+        <!-- Primarity test and prime till n cal -->
+        <div class="collapse" id="prime">
+            <form class="form-group">
+                <div class="text-center">
+                    <h2><label>Primality Test</label></h2>
+                </div>
+                <input type="number" id="isprime" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="check_prime('isprime')">
+                    Check
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+            </div>
+
+            <div class="dropdown-divider"></div>
+            <div class="form-group">
+                <div class="text-center">
+                    <h2><label>Primes till entered number</label></h2>
+                </div>
+                <input type="number" id="primetill" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="prime_till_num('primetill')">
+                    Find
+                </button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <p id="primetillsol"
+                       style="display:flex;font-family:mathfont;;width:auto;"
+                       class="stopwrap"
+                       align="right"></p>
+                </div>
+
+            </div>
+            <!--  Primarity test and prime till n cal end -->
+        </div>
+        <div class="collapse" id="bool">
+            <h2 style="text-align: center;">Boolean Algebra</h2>
+            <h5>Laws of Boolean Algebra</h5>
+            <p>1. Annulment Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A . 0 = 0</li>
+                <li style="font-size: 20px; color: white;">A + 1 = 1</li>
+            </ul>
+            <p>2. Identity Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + 0 = A</li>
+                <li style="font-size: 20px; color: white;">A . 1 = A</li>
+            </ul>
+            <p>3. Idempotent Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + A = A</li>
+                <li style="font-size: 20px; color: white;">A . A = A</li>
+            </ul>
+            <p>4. Complement Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A . A<sup>'</sup> = 0</li>
+                <li style="font-size: 20px; color: white;">A + A<sup>'</sup> = 1</li>
+            </ul>
+            <p>5. Demorgan's Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">(A+B)<sup>'</sup> = A<sup>'</sup>
+                    + B<sup>'</sup></li>
+                <li style="font-size: 20px; color: white;">(A . B)<sup>'</sup> =
+                    A<sup>'</sup> + B<sup>'</sup></li>
+            </ul>
+            <p>6. Distributive Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
+                <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
+            </ul>
+            <p>7. Absorption Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + A.B = A</li>
+                <li style="font-size: 20px; color: white;">A(A+B) = A</li>
+            </ul>
+        </div>
+        <!--    start of calculator -->
+
+        <!-- Start of Decimal / Binary -->
+
+        <div class="collapse" id="decimal-binary">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>From</h5>
+                    <select id="decimal-binary-select1" class="form__field"
+                            onchange="convertBinDec()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                    </select>
+                    <input type="number" id="decimal-binary-input" value="0"
+                           class="form__field"
+                           oninput="convertBinDec()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="decimal-binary-select2" class="form__field"
+                            onchange="convertBinDec()">
+                        <option class="form__field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                    </select>
+                </div>
+                <label class="form__group" id="decimal-binary-result">0</label>
+            </div>
+        </div>
+        <!-- End of Decimal / Binary -->
+
+
+        <!-- Start of Bitwise Calculator -->
+
+        <div class="collapse" id="bitwise-calc">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <h5>To</h5>
-                        <select id="decimal-binary-select2" class="form__field"
-                                onchange="convertBinDec()">
+                        <h5>Choose your numbers system</h5>
+                        <select id="bitwise-numbers-system" class="form__field"
+                                onchange="clearInputs()">
                             <option class="form__field" style="background-color: #232a36;">
                                 Decimal
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
                                 Binary
                             </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Hexadecimal
+                            </option>
                         </select>
                     </div>
-                    <label class="form__group" id="decimal-binary-result">0</label>
                 </div>
             </div>
-            <!-- End of Decimal / Binary -->
-
-
-            <!-- Start of Bitwise Calculator -->
-
-            <div class="collapse" id="bitwise-calc">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <h5>Choose your numbers system</h5>
-                            <select id="bitwise-numbers-system" class="form__field"
-                                    onchange="clearInputs()">
-                                <option class="form__field" style="background-color: #232a36;">
-                                    Decimal
-                                </option>
-                                <option class="form__field" style="background-color: #232a36;">
-                                    Binary
-                                </option>
-                                <option class="form__field" style="background-color: #232a36;">
-                                    Octal
-                                </option>
-                                <option class="form__field" style="background-color: #232a36;">
-                                    Hexadecimal
-                                </option>
-                            </select>
-                        </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>First number</h5>
+                        <input type="number" value="0" class="form__field"
+                               id="bitwise-first-number"
+                               oninput="bitwiseCalc()">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>First number</h5>
-                            <input type="number" value="0" class="form__field"
-                                   id="bitwise-first-number"
-                                   oninput="bitwiseCalc()">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Operation</h5>
-                            <select id="bitwise-operation" class="form__field"
-                                    onchange="bitwiseCalc()">
-                                <option class="form__field" style="background-color: #232a36;">
-                                    AND
-                                </option>
-                                <option class="form__field" style="background-color: #232a36;">
-                                    OR
-                                </option>
-                                <option class="form__field" style="background-color: #232a36;">
-                                    XOR
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Second number</h5>
-                            <input type="number" value="0" class="form__field"
-                                   id="bitwise-second-number"
-                                   oninput="bitwiseCalc()">
-                        </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Operation</h5>
+                        <select id="bitwise-operation" class="form__field"
+                                onchange="bitwiseCalc()">
+                            <option class="form__field" style="background-color: #232a36;">
+                                AND
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                OR
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                XOR
+                            </option>
+                        </select>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Result</h5>
-                            <label class="form__field" id="bitwise-result">0</label>
-                        </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Second number</h5>
+                        <input type="number" value="0" class="form__field"
+                               id="bitwise-second-number"
+                               oninput="bitwiseCalc()">
                     </div>
                 </div>
             </div>
-            <!-- End of Bitwise Calculator-->
-            <!-- Start of 1's 2's Complement Calculator -->
-            <div class="collapse" id="onetwocom-calc">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Enter Binary number</h5>
-                            <input type="number" class="form__field" id="onetwonumber">
-                        </div>
-
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Result</h5>
+                        <label class="form__field" id="bitwise-result">0</label>
                     </div>
-
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-light" onclick="onetwoCalc()">
-                                Find
-                            </button>
-                            <label class="form__field" id="onetworesult"></label>
-                        </div>
+            </div>
+        </div>
+        <!-- End of Bitwise Calculator-->
+        <!-- Start of 1's 2's Complement Calculator -->
+        <div class="collapse" id="onetwocom-calc">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter Binary number</h5>
+                        <input type="number" class="form__field" id="onetwonumber">
                     </div>
+
                 </div>
 
             </div>
-            <!-- End of 1's 2's complement Calculator-->    
-        
-        
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="onetwoCalc()">
+                            Find
+                        </button>
+                        <label class="form__field" id="onetworesult"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of 1's 2's complement Calculator-->
 
 
         <!-- Start of 9's 10's Complement Calculator -->
@@ -7205,6 +7326,9 @@
                             <option class="form_field" style="background-color: #232a36;">
                                 Binary
                             </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
                         </select>
                         <input type="number" id="octal-binary-input" value="0"
                                class="form__field"
@@ -7221,6 +7345,9 @@
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
                                 Binary
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Decimal
                             </option>
                         </select>
                     </div>
@@ -7454,6 +7581,64 @@
 
         <!--End of Joint Probability-->l̥
 
+        <!--Bayes  Probability-->
+        <div class="collapse" id="bayes-probabilitycollapse">
+            <h1>Bayes Theorem</h1>
+            <p>Bayes’ theorem describes the probability of an event based on prior knowledge of the conditions that
+                might be relevant to the event.</p>
+            <h1>
+                P(A|B)=P(B|A)*P(A)/P(B)
+            </h1>
+            <p>P(A|B) = probability of A given B is true</p>
+            <p>P(B|A) = probability of B given A is true</p>
+            <p>P(A), P(B) = the independent probabilities of A and B</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes in case of Event A</h5>
+                        <input type="number" value="0" class="form__field" id="fav1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of possible outcomes in case of Event A</h5>
+                        <input type="number" value="1" class="form__field" id="tot1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes in case of Event B</h5>
+                        <input type="number" value="0" class="form__field" id="fav2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of possible outcomes in case of Event B</h5>
+                        <input type="number" value="1" class="form__field" id="tot2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="computebayesprobability()">
+                    Solve
+                </button>
+            </div>
+
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="bayesresult1"></p>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="bayesresult2"></p>
+            </div>
+        </div>
+
+
+        <!--End of Bayes Probability-->l̥
+
+
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
             <div class="bodyof">
                 <form class="calculator" name="calc">
@@ -7512,8 +7697,11 @@
             </div>
         </div>
 
-
     </div>
+</div>
+
+<div id="modals">
+    <!--#######-------all modals here-------#######-->
 
     <div class="modal" id="addition_fraction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -7625,7 +7813,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="modal" id="subtraction_fraction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -7743,7 +7930,6 @@
         </div>
     </div>
 
-
     <div class="modal" id="division_fraction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -7757,8 +7943,6 @@
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-
                         <div style="display: inline-block;">
                             <div class="row">
                                 <div class="cell borderBottom_1">
@@ -7778,124 +7962,121 @@
                             </div>
                         </div>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
-                            <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
-                               href="#">Pressure</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
-                            <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
-                               href="#">Time</a>
-                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
-                            /
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 10px;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_div" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 150px;">
+                        <tr>
+                            <td>
+                                <div style="color: var(--appimage);cursor: pointer;">
+                                    <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
+                                       href="#">Pressure</a>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_div" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 150px;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ; onclick="division()">
-                                DIVIDE
-                            </button>
-                        </center>
-
-                        <br>
-
-
-                        <div style="display: flex; justify-content: center;">
-
-                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
-                                 class="frac">
-
-                                <div style="display:inline-block">
-
-                                    <div><var id="diva">a</var></div>
-                                    <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="color: var(--appimage);cursor: pointer;">
+                                    <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
+                                       href="#">Time</a>
+                                    <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
+                                        /
                                     </div>
-                                    <div class="bottom"><var id="divb">b</var></div>
+
+
+                                    <div style="display: inline-block; margin-left: 10px;">
+                                        <div class="row">
+                                            <div class="cell borderBottom_1">
+
+                                                <input id="three_div" placeholder="Numerator" type="number"
+                                                       required=""
+                                                       style="width: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
+
+                                                <input id="four_div" placeholder="Denominator" type="number"
+                                                       required=""
+                                                       style="width: 150px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <center>
+                                        <button type="button" class="btn btn-light" ; onclick="division()">
+                                            DIVIDE
+                                        </button>
+                                    </center>
+
+                                    <br>
+
+
+                                    <div style="display: flex; justify-content: center;">
+
+                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                             class="frac">
+
+                                            <div style="display:inline-block">
+
+                                                <div><var id="diva">a</var></div>
+                                                <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;
+                                                </div>
+                                                <div class="bottom"><var id="divb">b</var></div>
+
+                                            </div>
+
+
+                                            <div style="display: inline-block;">
+                                                <div><var id="divc">c</var></div>
+                                                <div style="color: #ff299c;">&nbsp; -----</div>
+                                                <div class="bottom"><var id="divd">d</var></div>
+
+                                            </div>
+
+                                            <br>
+
+                                            <div style="display:inline-block; margin-top: 15px;">
+
+                                                <div><var id="diva1">a</var></div>
+                                                <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
+                                                <div class="bottom"><var id="divb1">b</var></div>
+
+                                            </div>
+
+
+                                            <div style="display: inline-block;">
+                                                <div><var id="divc1">d</var></div>
+                                                <div style="color:#ff299c;">&nbsp; -----</div>
+                                                <div class="bottom"><var id="divd1">c</var></div>
+
+                                            </div>
+
+
+                                            <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
+                                                    id="divd2">d</var></span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="divb2">b</var>*<var
+                                                    id="divc2">c</var></span>
+
+
+                                            <span style="margin-top: 15px;">= &nbsp;<var id="divt">t</var></span>
+                                            <span class="symbol">/</span>
+                                            <span class="bottom"><var id="divq">q</var></span>
+
+                                            =
+
+                                            <var id="divans" style="margin-top: 15px;">k</var>
+
+
+                                        </div>
+
+                                    </div>
+
 
                                 </div>
-
-
-                                <div style="display: inline-block;">
-                                    <div><var id="divc">c</var></div>
-                                    <div style="color: #ff299c;">&nbsp; -----</div>
-                                    <div class="bottom"><var id="divd">d</var></div>
-
-                                </div>
-
-                                <br>
-
-                                <div style="display:inline-block; margin-top: 15px;">
-
-                                    <div><var id="diva1">a</var></div>
-                                    <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
-                                    <div class="bottom"><var id="divb1">b</var></div>
-
-                                </div>
-
-
-                                <div style="display: inline-block;">
-                                    <div><var id="divc1">d</var></div>
-                                    <div style="color:#ff299c;">&nbsp; -----</div>
-                                    <div class="bottom"><var id="divd1">c</var></div>
-
-                                </div>
-
-
-                                <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
-                                        id="divd2">d</var></span>
-                                <span class="symbol">/</span>
-                                <span class="bottom"><var id="divb2">b</var>*<var
-                                        id="divc2">c</var></span>
-
-
-                                <span style="margin-top: 15px;">= &nbsp;<var id="divt">t</var></span>
-                                <span class="symbol">/</span>
-                                <span class="bottom"><var id="divq">q</var></span>
-
-                                =
-
-                                <var id="divans" style="margin-top: 15px;">k</var>
-
-
-                            </div>
-
-                        </div>
-
-
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
-
-
     <div class="modal" id="miltiplication_fraction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -8194,7 +8375,132 @@
     </div>
 
 
-    
+ 
+    <!-- Mean start -->
+    <div class="modal fade" id="Meanit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mean Median Mode</h5>
+                    <button style="text-decoration:none" type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="tel" id="getNum" class="form__field"
+                               placeholder="Enter Numbers(Space Separated)">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="Means()">Mean</button>
+                        <button type="button" class="btn btn-light" onclick="Median()">Median
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="Mode()">Mode</button>
+                        <div class="dropdown-divider"></div>
+                        <button type="button" class="btn btn-light" onclick="Variance()">Variance
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="std()">Standard
+                            Deviation
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="document.getElementById('getNum').value+=' ';document.getElementById('getNum').focus();">
+                            Space
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="stopwrap" style="font-family:mathfont;" id="Meanresult"></p>
+                        <p style="font-family:mathfont;" class="stopwrap" id="Meanresultde"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Settings</h5>
+                    <button style="text-decoration:none" type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <h5>Clear Favourites</h5>
+                            </td>
+                            <td>
+                                <button class="btn btn-light"
+                                        onclick="removefavourite();checkfavourite()">Clear
+                                </button>
+                            </td>
+                            <td>
+                                <p>Kindly Restart The App for Changes to Apply</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------order starts--------------------------------->
+    <div class="modal fade" id="orderit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ascending/Descending Order</h5>
+                    <button style="text-decoration:none" type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="tel" id="ordergetval" class="form__field"
+                               placeholder="Enter Numbers(Space Separated)"
+                               oninput="orderfieldclear()">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="orderas()">Ascending
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="orderde()">Descending
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
+                            Space
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------order ends---------------------------------->
+
 
     <!--shapes modal-->
     <div>
@@ -9412,61 +9718,6 @@
                                     <h5 class="text-center">Total Surface Area</h5>
                                     <p class="text-center">\[ 3 \pi r^2 \]</p>
 
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-
-                                        <img src="images/hollowsp.png" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Radius r1" id="inputradius1hollowsph"
-                                   oninput="solvehollowsphere();">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Radius r2" id="inputradius2hollowsph"
-                                   oninput="solvehollowsphere();">
-                            <p class="stopwrap" id="resultofvolhollowsp"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultoftsahollowsp"
-                               style="font-family:mathfont;"></p>
-                        </div>
-                        <!---TILL-->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="hemisphere" tabindex="-1" role="dialog"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">HemiSphere</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Volume</h5>
-                                    <p class="text-center">\[V =2 \pi r^3 /3\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Total Surface Area</h5>
-                                    <p class="text-center">\[ 3 \pi r^2 \]</p>
-
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
@@ -10360,6 +10611,7 @@
             </div>
         </div>
 
+
         <div class="modal fade" id="prescon" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -10396,6 +10648,9 @@
                             </select>
                             <input type="number" id="presconin" class="form__field"
                                 placeholder="Enter Side" value="0" ; oninput="prescon();">
+
+    </div>
+
 
                             <label for="To">
                                 <h5 class="text-center">To</h5>
@@ -10490,6 +10745,12 @@
     </div>
     
     <!--roman numeral end-->
+
+
+</div>
+<!--#######-------all modals here-------#######-->
+
+
 <!--------------------------------------------------------->
 
 
