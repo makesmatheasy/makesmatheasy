@@ -4652,7 +4652,10 @@ function convertgrey() {
         for (var i = 1; i < input.length; i++)
             x += parseInt(x[i - 1] ^ input[i]).toString();
 
-
+    if (input == "") {
+        x= "";
+    } else if(input.search(/^[10]+$/) == -1)
+             x= "Binary and grey code can only have 0's and 1's";
     result.innerHTML = x;
 }
 
