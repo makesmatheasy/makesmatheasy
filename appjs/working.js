@@ -161,7 +161,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#parallelbtn").click(function () {
+        openit("#parallel");
+        closenav();
+        clearall();
+    })
     $("#betagammabtn").click(function () {
         openit("#betagamma");
         closenav();
