@@ -1385,6 +1385,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="parallelbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Parallel Lines
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Properties of Parallel Lines','#parallel','c','parallelfav')"><img
+                                        id="parallelfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="coorbtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Systems
@@ -6190,6 +6206,35 @@
                 <p id="plotequationresult"></p>
             </div>
         </div>
+        <div class="collapse" id="parallel">
+            <h2 style="text-align: center;">Properties of Parallel Lines</h2>
+            <br><br>
+            <h4>What are parallel lines?</h4>
+            <p>Parallel lines are equidistant lines (lines having equal distance from each other) that will never meet. </p>
+            <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/examples-of-parallel-lines.png" alt="">
+            <br><br><br>
+            <h4>Conditions for Lines to be parallel<h4>
+            <ol>
+                <li style="color: white;">the pair of alternate angles is equal, then two straight lines are parallel to each other.</li>
+                <br><br>
+                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/alternate-interior-angles-in-parallel-lines-1.png" alt="">
+                <br><br>
+                <li style="color: white;">the pair of interior angles are on the same side of traversals is supplementary, then the two straight lines are parallel.</li>
+                <br><br>
+                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/consecutive-interior-angles-in-parallel-lines-1.png" alt="">
+                <br><br>
+                <li style="color: white;">the pair of corresponding angles is equal, then the two straight lines are parallel to each other.</li>
+                <br><br>
+                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/corresponding-angles-in-parallel-lines-1.png" alt="">
+                <br><br>
+                <li style="color: white;">Two lines cut by a transversal line are parallel when the sum of the consecutive exterior angles is 180 &deg;</li>
+                <br><br>
+                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/consecutive-exterior-angles-in-parallel-lines.png" alt="">
+                <br><br>
+                <li style="color: white;">The sum of angles together on a line is 180 &deg;</li>
+            </ol>
+            
+        </div>
         <div class="collapse" id="coor">
             <h2 style="text-align: center;">Coordinate Systems</h2>
             <br><br>
@@ -7619,6 +7664,14 @@
                         <input type="number" value="1" class="form__field" id="tot2">
                     </div>
                 </div>
+            </div>
+			<div class="row">
+				<div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter the probability of A and B(decimal)</h5>
+                        <input type="number" value="0" class="form__field" id="pandb">
+                    </div>
+					</div>
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light"
@@ -9116,7 +9169,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <img src="images/trapezium.png" class="img-fluid">
+                                        <img src="images/Trapezoid.jpeg" class="img-fluid">
                                     </div>
                                     <div class="dropdown-divider"></div>
                                     <h5 class="text-center">Side(b)</h5>
