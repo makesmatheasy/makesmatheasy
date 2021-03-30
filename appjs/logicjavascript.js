@@ -429,6 +429,11 @@ function printmorefactors(input, output) {
     var val = document.getElementById(input).value;
     val = val.replace(/\s+$/, ""); //right trim
     val = val.replace(/^\s+/, ""); //left trim
+	if (val.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     val = val.split(" ");
     ar = val;
     var temp = "";
@@ -520,10 +525,14 @@ function hcf(input) {
     var val = document.getElementById(input).value;
     val = val.replace(/\s+$/, ""); //right trim
     val = val.replace(/^\s+/, ""); //left trim
+	document.getElementById("hcfprimefactor").textContent = "";
+	if (val.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     val = val.split(" ");
     ar = val;
-
-    document.getElementById("hcfprimefactor").textContent = "";
     var temp = "";
     document.getElementById("hcfprimefactor").innerHTML =
         "\\[Prime \\space Factors \\space of \\space\\]";
@@ -601,6 +610,11 @@ function factorselect(numid) {
     var num = document.getElementById(numid).value;
     num = num.replace(/^\s+/, ""); //left trim
     num = num.replace(/\s+$/, ""); //right trim
+	if (num.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     num = num.split(" ");
     if (num.length == 1) {
         printfactors();
@@ -628,6 +642,11 @@ function lcmsol(input) {
     document.getElementById("resultfac").innerHTML = "";
     document.getElementById("resultlcms").innerHTML = "";
     var num = document.getElementById(input).value;
+	if (num.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     num = num.split(" ");
     num = num.filter(function (str) {
         return /\S/.test(str);
@@ -3711,13 +3730,51 @@ function tempbu(a) {
 }
 
 function tempcon() {
-    const fd = tempau(document.getElementById("tempcon-1").value);
-    const tm = tempau(document.getElementById("tempcon-2").value);
-    const fs = tempbu(document.getElementById("tempcon-1").value);
-    const ta = tempbu(document.getElementById("tempcon-2").value);
-    const i = parseInt(document.getElementById("tempconin").value);
-    const a = ((i - fs) / fd) * tm + ta;
-    document.getElementById("tempconou").innerHTML = `${a}`;
+  const fd = tempau(document.getElementById("tempcon-1").value);
+  const tm = tempau(document.getElementById("tempcon-2").value);
+  const fs = tempbu(document.getElementById("tempcon-1").value);
+  const ta = tempbu(document.getElementById("tempcon-2").value);
+  const i = parseInt(document.getElementById("tempconin").value);
+  const a = ((i - fs) / fd) * tm + ta;
+  document.getElementById("tempconou").innerHTML = `${a}`;
+}
+function presu(a) {
+  switch (a) {
+    case "1":
+      return 1;
+    case "2":
+      return 0.986923;
+    case "3":
+      return 9.8692e-6;
+    case "4":
+      return 0.00131579;
+    case "5":
+      return 0.068046;
+  }
+}
+function prescon() {
+  const f = presu(document.getElementById("prescon-1").value);
+  const t = presu(document.getElementById("prescon-2").value);
+  const i = parseInt(document.getElementById("presconin").value);
+  const a = (i * f) / t;
+  document.getElementById("presconou").innerHTML = `${a}`;
+}
+
+
+function polar()
+{
+  var r = parseInt(document.getElementById("cpreal").value);
+  var i = parseInt(document.getElementById("cpimg").value);
+  var result= document.getElementById("compresult");
+  var x = (Math.sqrt((r*r)+(i*i)));
+  if(!Number.isInteger(x))
+  {
+    var j = (r*r)+(i*i);
+    x = "&#8730;  "+ j ;
+  }
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
+  result.innerHTML = x;
 }
 
 
@@ -4549,7 +4606,7 @@ function bitwiseCalc() {
 }
 
 /////////////////////////////////////////////////////////////
-//Function that performs conversion of Octal to binary and viceversa
+//Function that performs conversion of Octal/Binary/Decimal
 function convertBinOct() {
     const fromBase = document.getElementById("octal-binary-select1").value;
     const toBase = document.getElementById("octal-binary-select2").value;
@@ -4559,12 +4616,21 @@ function convertBinOct() {
     let to = 8;
 
     if (fromBase === "Octal") from = 8;
+    else if (fromBase === "Decimal") from=10;
     else from = 2;
 
     if (toBase === "Octal") to = 8;
+    else if(toBase === "Decimal") to = 10;
     else to = 2;
 
     result.innerHTML = parseInt(input, from).toString(to);
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (from == 2) {
+        if (input.search(/^[10]+$/) == -1)
+            result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+    }
 }
 
 //----------------------------
@@ -4684,7 +4750,10 @@ function convertgrey() {
         for (var i = 1; i < input.length; i++)
             x += parseInt(x[i - 1] ^ input[i]).toString();
 
-
+    if (input == "") {
+        x= "";
+    } else if(input.search(/^[10]+$/) == -1)
+             x= "Binary and grey code can only have 0's and 1's";
     result.innerHTML = x;
 }
 
@@ -4882,7 +4951,7 @@ function computejointprobability() {
     let result3 = document.getElementById("probability-result3");
     var check = true;
 
-    if (favourable1 > 0 && total1 > 0 && favourable2 > 0 && total2 > 0) {
+    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
         if (favourable1 > total1) {
             result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
             check = false;
@@ -4911,6 +4980,66 @@ function computejointprobability() {
 
 
 }
+
+function computebayesprobability() {
+
+    var favourable1 = parseInt(document.getElementById("fav1").value)
+    var favourable2 = parseInt(document.getElementById("fav2").value)
+    var total1 = parseInt(document.getElementById("tot1").value)
+    var total2 = parseInt(document.getElementById("tot2").value)
+
+    var probability1 = favourable1 / total1;
+    var probability2 = favourable2 / total2;
+
+    var probability3 =(0.5*probability1)/((0.5*probability1)+(0.5*probability2));
+
+    var probability4=(0.5*probability2)/((0.5*probability1)+(0.5*probability2));
+    
+    console.log(probability1);
+    console.log(probability2);
+    
+    let result1 = document.getElementById("bayesresult1");
+    let result2=document.getElementById("bayesresult2");
+    var check = true;
+
+    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
+        if (favourable1 > total1) {
+            result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+            check = false;
+        } 
+
+        else if (favourable2 > total2) {
+            result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+            check = false;
+        } 
+
+         if (check == true) {
+            result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
+             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);  
+
+        }
+    } else {
+        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function angleplot() {
