@@ -671,6 +671,22 @@
             </li>
             <!--maxima and minima-->
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="betagammabtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Beta Gamma Functions<a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Beta Gamma Functions','#betagamma','c','betagammaimgfav')"><img
+                                        id="betagammaimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <!--            laplace-->
             <li>
                 <table class="table">
@@ -3213,6 +3229,35 @@
 
 
         </div>
+
+        <div class="collapse" id="betagamma">
+            <h2 style="text-align: center;">Beta and Gamma Functions</h2>
+            <br><br>
+            <h4>What are Beta functions?</h4>
+            <p>The beta function is a unique function where it is classified as the first kind of Euler’s integrals. The beta function 
+                is defined in the domains of real numbers. The notation to represent the beta function is “β”. The beta function is meant by B(p, q), where the 
+                parameters p and q should be real numbers.
+            </p>
+            <p>\[B(p,q)\space =\space \int_{0}^{1} t^{p-1} (1-t)^{q-1}\,dt \\ Where\space p,q\space greater\space than\space 0\]</p>
+            <h4>Properties of Beta Functions</h4>
+            <ul>
+                <li style="color: white; font-size: 20px;">This function is symmetric which means that the value of beta function is irrespective to the order of its parameters, i.e B(p, q) = B(q, p)</li>
+                <li style="color: white; font-size: 20px;">B(p, q) = B(p, q+1) + B(p+1, q)</li>
+                <li style="color: white; font-size: 20px;">B(p, q+1) = B(p, q). [q/(p+q)]</li>
+                <li style="color: white; font-size: 20px;">B(p+1, q) = B(p, q). [p/(p+q)]</li>
+                <li style="color: white; font-size: 20px;">B (p, q). B (p+q, 1-q) = π/ p sin (πq)</li>
+            </ul>
+            <p>\[B(p,q)\space  =\space \int_{0}^{\infty} \frac{t^{p-1}}{(1+t) ^{p+q}} \,dt\]</p>
+            <p>\[B(p,q)\space =\space 2\int_{0}^{\frac{\pi}{2}} sin^{2p-1}\theta\ cos^{2q-1}\theta \]</p>
+            <h4>What are Gamma functions?</h4>
+            <p>\[\gamma(x)\space =\space \int_{0}^{\infty} t^{x-1}e^{-t}\,dt\]</p>
+            <p>\[\gamma(n)\space =\space (n-1)!\]</p>
+            <p>\[\gamma (\frac{1}{2})\space =\space\frac{\sqrt{\pi}}{2} \]</p>
+            <p>\[\gamma(\frac{n}{2})\space =\space \gamma(\frac{n-2}{2})\frac{n}{2}\]</p>
+            <h4>Relation between beta and gamma functions</h4>
+            <p>\[B(p,q)\space =\space \frac{\gamma(p)\space\gamma(q)}{\gamma(p+q)}\]</p>
+        </div>
+
         <div class="collapse" id="laplacecollapse">
             <div class="form-group">
                 <div class="text-center"><label>Laplace Transform</label></div>

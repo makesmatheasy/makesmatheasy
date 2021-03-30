@@ -161,6 +161,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#betagammabtn").click(function () {
+        openit("#betagamma");
+        closenav();
+        clearall();
+    })
     $("#euclidbtn").click(function () {
         openit("#euclid");
         closenav();
