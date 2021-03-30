@@ -1816,6 +1816,39 @@ function solveparallelogram() {
 
 }
 
+//created function for Trapezium
+function solvetrapezium(){
+    var a = document.getElementById("inputparallel1").value;
+    var b = document.getElementById("inputparallel2").value;
+    var c = document.getElementById("inputnparallel1").value;
+    var d = document.getElementById("inputnparallel2").value;
+    var height = document.getElementById("inputh").value;
+    document.getElementById("resultofperitrap1").innerHTML="";
+    document.getElementById("resultofperitrap2").innerHTML="";
+    document.getElementById("resultofareatrap1").innerHTML="";
+    document.getElementById("resultofareatrap2").innerHTML="";
+    if (a!="" && b!="" && height==""){
+        document.getElementById("resultofareatrap1").innerHTML = "Enter height if you want to calculate Area";
+
+    } else if(a!="" && b!="" && height!=""){
+        var area= (0.5 * (parseInt(a)+parseInt(b))) * parseInt(height);
+        document.getElementById("resultofareatrap1").innerHTML = "\\[Area \\space of \\space Trapezium  \\]";
+        renderMathInElement(document.getElementById("resultofareatrap1"));
+        document.getElementById("resultofareatrap2").innerHTML = "\\[\\frac{1}{2} \\times (" + a + "+" + b + ") \\times "+height+" = " + area + "\\]";
+        renderMathInElement(document.getElementById("resultofareatrap2"));
+    }
+    if(c=="" || d=="")
+    {
+        document.getElementById("resultofperitrap1").innerHTML = "Enter c and d if you want to calculate perimeter";
+    } else{
+        var peri= parseInt(a) +  parseInt(b) +  parseInt(c) +  parseInt(d) ;
+        document.getElementById("resultofperitrap1").innerHTML = "\\[Perimeter \\space of \\space Trapezium \\]";
+        renderMathInElement(document.getElementById("resultofperitrap1"));
+        document.getElementById("resultofperitrap2").innerHTML = `\\[${a} + ${b} + ${c} + ${d}\\ = ${peri}\\]`;
+        renderMathInElement(document.getElementById("resultofperitrap2"));
+    }
+}
+
 //created function for Rhombus
 function rhombussolve() {
     var d1 = document.getElementById("inputd1").value;
