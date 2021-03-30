@@ -3862,7 +3862,14 @@ function curcon() {
                 const f = c.rates[document.getElementById("curcon-1").value];
                 const t = c.rates[document.getElementById("curcon-2").value];
                 const i = parseInt(document.getElementById("curconin").value);
-                document.getElementById("curconou").innerHTML = `${(i * t) / f}`;
+                if(i<0)
+                {
+                    document.getElementById("curconou").innerHTML = "Enter <strong>only</strong> positive amount values";
+                }
+                else
+                {
+                    document.getElementById("curconou").innerHTML = `${(i * t) / f}`;
+                }
             })
         );
 }
