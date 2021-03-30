@@ -4222,12 +4222,19 @@ function permutationcal(nval, rval) {
         // document.getElementById("permutation_wrong").innerHTML="Enter a Number."
         document.getElementById("premutation_div_div2").style.display = "none";
         document.getElementById("permutation_div_div1").style.display = "none";
+	} else if(val3<0 || val4<0) {
+		document.getElementById("permutation_wrong").innerHTML =
+            "n and r must be positive integers.";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block";
     } else if (val3 < val4) {
         document.getElementById("permutation_wrong").innerHTML =
             "n must be greater than r.";
         document.getElementById("premutation_div_div2").style.display = "none";
         document.getElementById("permutation_div_div1").style.display = "block";
-    } else {
+    
+	} else
+	{
         let ans1 = 1,
             ans2 = 1,
             ans3 = 0;
@@ -4267,12 +4274,20 @@ function combinationcal(nval, rval) {
     if (isNaN(val3) || isNaN(val4)) {
         document.getElementById("combination_div_div2").style.display = "none";
         document.getElementById("combination_div_div1").style.display = "none";
+	} else if(val3<0 || val4<0) {
+		 document.getElementById("combination_wrong").innerHTML =
+            "n and r must be positive integers";
+        document.getElementById("combination_div_div2").style.display = "none";
+        document.getElementById("combination_div_div1").style.display = "block";
+	
     } else if (val3 < val4) {
         document.getElementById("combination_wrong").innerHTML =
             "n must be greater than r.";
         document.getElementById("combination_div_div2").style.display = "none";
         document.getElementById("combination_div_div1").style.display = "block";
-    } else {
+
+	} else
+		{
         let ans1 = 1,
             ans2 = 1,
             ans3 = 1;
