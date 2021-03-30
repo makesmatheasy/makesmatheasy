@@ -4735,6 +4735,28 @@ function bcdTOdecimal(x) {
     else 
     return inv;
     }
+function decimalTObcd(z=""){
+    var x = "_";
+
+    for (var i = 0; i < z.length; i++) {
+        var y = parseInt(z[i]).toString(2)
+        if (y.length == 1) {
+        x = x + "000" + y + "_   ";
+        }
+        if (y.length == 2) {
+        x = x + "00" + y + "_   ";
+        }
+        if (y.length == 3) {
+        x = x + "0" + y + "_   ";
+        }
+        if (y.length == 4) {
+        x = x + +y + "_   ";
+        }
+
+    }
+    return x;
+
+}   
 function convertbcd() {
     const fromCode = document.getElementById("bcd-select1").value;
     const toCode = document.getElementById("bcd-select2").value;
@@ -4748,25 +4770,7 @@ function convertbcd() {
     else if(fromCode=="BCD Code" && toCode =="Decimal")
     result.innerHTML=bcdTOdecimal(input).join('_');
     else if(fromCode=="Decimal" && toCode=="BCD Code") {
-        var x = "_";
-
-        for (var i = 0; i < input.length; i++) {
-            var y = parseInt(input[i]).toString(2)
-            if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-            }
-            if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-            }
-            if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-            }
-            if (y.length == 4) {
-            x = x + +y + "_   ";
-            }
-
-        }
-        result.innerHTML = x;
+    result.innerHTML =decimalTObcd(input);
     }
 }
 
