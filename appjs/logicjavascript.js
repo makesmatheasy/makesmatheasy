@@ -3958,7 +3958,12 @@ function factorialsol(factorialval) {
 function profitloss() {
     var cp = parseFloat(document.getElementById("cp").value);
     var sp = parseFloat(document.getElementById("sp").value);
-    if (cp > sp) {
+    if(cp<0 || sp<0)
+    {
+        document.getElementById("pol").innerHTML = "<strong>Only</strong> positive values are accepted";
+        document.getElementById("percent").innerHTML = "";
+    }
+    else if (cp > sp) {
         var loss = cp - sp;
         var perl = (loss * 100) / cp;
         document.getElementById("pol").innerHTML = "Loss = " + loss;
