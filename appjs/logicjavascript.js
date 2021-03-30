@@ -4517,7 +4517,7 @@ function bitwiseCalc() {
 }
 
 /////////////////////////////////////////////////////////////
-//Function that performs conversion of Octal to binary and viceversa
+//Function that performs conversion of Octal/Binary/Decimal
 function convertBinOct() {
     const fromBase = document.getElementById("octal-binary-select1").value;
     const toBase = document.getElementById("octal-binary-select2").value;
@@ -4527,12 +4527,21 @@ function convertBinOct() {
     let to = 8;
 
     if (fromBase === "Octal") from = 8;
+    else if (fromBase === "Decimal") from=10;
     else from = 2;
 
     if (toBase === "Octal") to = 8;
+    else if(toBase === "Decimal") to = 10;
     else to = 2;
 
     result.innerHTML = parseInt(input, from).toString(to);
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (from == 2) {
+        if (input.search(/^[10]+$/) == -1)
+            result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+    }
 }
 
 //----------------------------
