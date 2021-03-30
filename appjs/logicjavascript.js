@@ -3757,11 +3757,27 @@ function simple_interest() {
     p = document.getElementById("first").value;
     t = document.getElementById("second").value;
     r = document.getElementById("third").value;
-    si = parseFloat((p * t * r) / 100).toFixed(3);
-    amount = p * Math.pow(1 + r / 100, t);
-    ci = amount - p;
-    document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si;
-    document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci;
+    if(p=="" || t=="" || r=="")
+    {
+        document.getElementById("simpleinterstoutput").innerHTML = "All the fields are required";
+        document.getElementById("compoundinterestoutput").innerHTML = "";
+    }
+    else
+    {
+        si = parseFloat((p * t * r) / 100).toFixed(3);
+        if(si<0)
+        {
+            document.getElementById("simpleinterstoutput").innerHTML = "Negative values not allowed";
+            document.getElementById("compoundinterestoutput").innerHTML = "";
+        }
+        else
+        {
+            amount = p * Math.pow(1 + r / 100, t);
+            ci = amount - p;
+            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si;
+            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci;
+        }
+    }
 }
 
 // EMI Calulator
