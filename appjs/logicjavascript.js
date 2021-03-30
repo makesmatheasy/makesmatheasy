@@ -4772,6 +4772,66 @@ function computejointprobability() {
 
 }
 
+function computebayesprobability() {
+
+    var favourable1 = parseInt(document.getElementById("fav1").value)
+    var favourable2 = parseInt(document.getElementById("fav2").value)
+    var total1 = parseInt(document.getElementById("tot1").value)
+    var total2 = parseInt(document.getElementById("tot2").value)
+
+    var probability1 = favourable1 / total1;
+    var probability2 = favourable2 / total2;
+
+    var probability3 =(0.5*probability1)/((0.5*probability1)+(0.5*probability2));
+
+    var probability4=(0.5*probability2)/((0.5*probability1)+(0.5*probability2));
+    
+    console.log(probability1);
+    console.log(probability2);
+    
+    let result1 = document.getElementById("bayesresult1");
+    let result2=document.getElementById("bayesresult2");
+    var check = true;
+
+    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
+        if (favourable1 > total1) {
+            result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+            check = false;
+        } 
+
+        else if (favourable2 > total2) {
+            result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+            check = false;
+        } 
+
+         if (check == true) {
+            result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
+             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);  
+
+        }
+    } else {
+        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function angleplot() {
 
