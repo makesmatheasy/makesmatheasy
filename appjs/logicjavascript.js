@@ -4812,7 +4812,7 @@ function computejointprobability() {
     let result3 = document.getElementById("probability-result3");
     var check = true;
 
-    if (favourable1 > 0 && total1 > 0 && favourable2 > 0 && total2 > 0) {
+    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
         if (favourable1 > total1) {
             result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
             check = false;
