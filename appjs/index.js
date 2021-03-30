@@ -164,6 +164,7 @@ function openit(id) {
         "#roundoff",
         "#euclid",
         "#betagamma",
+        "#parallel",
         "#unitconcal",
         "#spiconcal",
         "#home",
