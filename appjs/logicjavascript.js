@@ -4775,6 +4775,30 @@ function convertbcd() {
 }
 
 //----------------------------
+//Function to perform BCD addition
+function bcdadd(){
+    var input1 = document.getElementById("bcdadd-input1").value;
+    var input2 = document.getElementById("bcdadd-input2").value;
+    let result = document.getElementById("bcdadd-result");
+
+    var s1= bcdTOdecimal(input1).join('');
+    var s2= bcdTOdecimal(input2).join('');
+    var decimalresult;
+    var bcdresult;
+    if(s1=="INVALID" || s2=="INVALID")
+    result.innerHTML="INVALID BCD";
+    else{
+        decimalresult=parseInt(s1)+parseInt(s2);
+        bcdresult=decimalTObcd(decimalresult.toString());
+        result.innerHTML="BCD Result="+bcdresult+"<br>";
+        result.innerHTML +="Decimal Result="+decimalresult+"<br>";
+
+    }
+
+
+}
+
+//----------------------------
 //Function that performs conversion of  binary to ex3
 function convertex3() {
 
