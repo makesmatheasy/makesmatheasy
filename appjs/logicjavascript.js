@@ -5032,13 +5032,14 @@ function computebayesprobability() {
     var favourable2 = parseInt(document.getElementById("fav2").value)
     var total1 = parseInt(document.getElementById("tot1").value)
     var total2 = parseInt(document.getElementById("tot2").value)
+	var pbanda = parseFloat(document.getElementById("pandb").value)
 
     var probability1 = favourable1 / total1;
     var probability2 = favourable2 / total2;
 
-    var probability3 =(0.5*probability1)/((0.5*probability1)+(0.5*probability2));
+    var probability3 =pbanda/probability2;
 
-    var probability4=(0.5*probability2)/((0.5*probability1)+(0.5*probability2));
+    var probability4=pbanda/probability1;
     
     console.log(probability1);
     console.log(probability2);
@@ -5055,6 +5056,11 @@ function computebayesprobability() {
 
         else if (favourable2 > total2) {
             result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+            check = false;
+        } 
+		 else if (pbanda>probability2 || pbanda>probability1) {
+            result1.innerHTML = "Probability of intersection is always equal to or less than the probability of individual events";
+			result2.innerHTML ="";
             check = false;
         } 
 
