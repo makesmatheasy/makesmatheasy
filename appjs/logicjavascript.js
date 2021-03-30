@@ -4061,22 +4061,41 @@ function gp() {
     var a = document.getElementById("firstterm").value
     var r = document.getElementById("ratio").value
     var n = document.getElementById("number").value
+    var explain = document.getElementById("sumGP_formula");
+    var printseries = document.getElementById("printGPseries");
     var ans;
     var ans1;
-    console.log(a)
-    console.log(r)
-    console.log(n)
-    var power = parseFloat(Math.pow(r, n))
-    if (r < -1 || r > 1) {
-        ans1 = parseFloat(a * (power - 1))
-        ans = parseFloat(ans1 / (r - 1))
-    } else if (r > -1 && r < 1 && r != 1) {
-        ans1 = parseFloat(a * (1 - power))
-        ans = parseFloat(ans1 / (1 - r))
-    } else if (r == 1) {
-        ans = parseInt(a * n)
-    }
-    document.getElementById("sumgp").innerHTML = "Sum = " + ans;
+    // console.log(a)
+    // console.log(r)
+    // console.log(n)
+    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(r))) {
+        for (var i = 0, series = "", num = 0; i <= n-1; i++) {
+            num = parseInt(a) * Math.pow(r,i);
+            series += (num.toString() + ", ");
+        } 
+  
+        printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
+      }
+  
+  
+      var power = parseFloat(Math.pow(r, n))
+      if (r < -1 || r > 1) {
+          ans1 = parseFloat(a * (power - 1))
+          ans = parseFloat(ans1 / (r - 1))
+          explain.innerHTML = "Formula: \\[S=\\frac{a(r^n - 1)}{r - 1}\\]";
+          cal = (a * (r^n - 1)) / (r - 1);
+      } else if (r > -1 && r < 1 && r != 1) {
+          ans1 = parseFloat(a * (1 - power))
+          ans = parseFloat(ans1 / (1 - r))
+          explain.innerHTML = "Formula: \\[S=\\frac{a(r^n - 1)}{1 - r}\\]";
+          cal = (a * (r^n - 1)) / (1 - r);
+      } else if (r == 1) {
+          ans = parseInt(a * n)
+          explain.innerHTML = "Formula: \\[S= an\\]";
+          cal = a * n;
+      }
+      renderMathInElement(document.getElementById("sumGP_formula"));
+      document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
 
 function igp() {
