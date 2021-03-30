@@ -163,6 +163,7 @@ function openit(id) {
         "#plotgraph",
         "#roundoff",
         "#euclid",
+        "#betagamma",
         "#unitconcal",
         "#spiconcal",
         "#home",
