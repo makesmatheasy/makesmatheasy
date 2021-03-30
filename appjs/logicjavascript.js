@@ -3711,13 +3711,51 @@ function tempbu(a) {
 }
 
 function tempcon() {
-    const fd = tempau(document.getElementById("tempcon-1").value);
-    const tm = tempau(document.getElementById("tempcon-2").value);
-    const fs = tempbu(document.getElementById("tempcon-1").value);
-    const ta = tempbu(document.getElementById("tempcon-2").value);
-    const i = parseInt(document.getElementById("tempconin").value);
-    const a = ((i - fs) / fd) * tm + ta;
-    document.getElementById("tempconou").innerHTML = `${a}`;
+  const fd = tempau(document.getElementById("tempcon-1").value);
+  const tm = tempau(document.getElementById("tempcon-2").value);
+  const fs = tempbu(document.getElementById("tempcon-1").value);
+  const ta = tempbu(document.getElementById("tempcon-2").value);
+  const i = parseInt(document.getElementById("tempconin").value);
+  const a = ((i - fs) / fd) * tm + ta;
+  document.getElementById("tempconou").innerHTML = `${a}`;
+}
+function presu(a) {
+  switch (a) {
+    case "1":
+      return 1;
+    case "2":
+      return 0.986923;
+    case "3":
+      return 9.8692e-6;
+    case "4":
+      return 0.00131579;
+    case "5":
+      return 0.068046;
+  }
+}
+function prescon() {
+  const f = presu(document.getElementById("prescon-1").value);
+  const t = presu(document.getElementById("prescon-2").value);
+  const i = parseInt(document.getElementById("presconin").value);
+  const a = (i * f) / t;
+  document.getElementById("presconou").innerHTML = `${a}`;
+}
+
+
+function polar()
+{
+  var r = parseInt(document.getElementById("cpreal").value);
+  var i = parseInt(document.getElementById("cpimg").value);
+  var result= document.getElementById("compresult");
+  var x = (Math.sqrt((r*r)+(i*i)));
+  if(!Number.isInteger(x))
+  {
+    var j = (r*r)+(i*i);
+    x = "&#8730;  "+ j ;
+  }
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
+  result.innerHTML = x;
 }
 
 
