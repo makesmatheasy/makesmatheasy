@@ -161,6 +161,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#euclidbtn").click(function () {
+        openit("#euclid");
+        closenav();
+        clearall();
+    })
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
