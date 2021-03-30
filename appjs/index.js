@@ -162,6 +162,7 @@ function openit(id) {
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
+        "#euclid",
         "#unitconcal",
         "#spiconcal",
         "#home",
