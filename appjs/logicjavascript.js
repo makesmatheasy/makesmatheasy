@@ -4266,25 +4266,39 @@ function Means() {
     var s = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
+    val=val.trim()
+    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+
+    val = val.substring(2,val.length-2)
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
-        s = s + parseInt(val[i]);
+        s = s + parseFloat(val[i]);
     }
     if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         var ans = s / len;
+        
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
         for (i = 1; i < val.length; i++) {
             document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
@@ -4294,6 +4308,19 @@ function Means() {
 function Median() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
+    arr=arr.trim()
+    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(arr==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    arr = JSON.stringify(arr)
+    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
+
+    arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
     arr = arr.filter(function (str) {
         return /\S/.test(str);
@@ -4306,13 +4333,13 @@ function Median() {
     } else {
         let median =
             len % 2 === 0
-                ? (parseInt(arr[mid]) + parseInt(arr[mid - 1])) / 2
+                ? (parseFloat(arr[mid]) + parseFloat(arr[mid - 1])) / 2
                 : arr[mid];
         document.getElementById(
             "Meanresult"
         ).innerHTML = `After Sorting:- ${arr}</br>`;
         document.getElementById("Meanresult").innerHTML += `Median:-`;
-        document.getElementById("Meanresult").innerHTML += median;
+        document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
@@ -4322,6 +4349,19 @@ function Median() {
 function Mode() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
+    arr=arr.trim()
+    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(arr==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    arr = JSON.stringify(arr)
+    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
+
+    arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
     arr = arr.filter(function (str) {
         return /\S/.test(str);
@@ -4360,13 +4400,28 @@ function Variance() {
     var s = 0, ans = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
+
+    val=val.trim()
+    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+
+    val = val.substring(2,val.length-2)
+
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
-        s = s + parseInt(val[i]);
+        s = s + parseFloat(val[i]);
     }
     if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
@@ -4374,7 +4429,7 @@ function Variance() {
         document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;
         var mean = s / len;
         for (i = 0; i < len; i++) {
-            num = parseInt(val[i]);
+            num = parseFloat(val[i]);
             ans = ans + Math.pow(num - mean, 2);
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num - mean, 2))}`;
@@ -4383,10 +4438,10 @@ function Variance() {
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
         document.getElementById("Meanresult").innerHTML += `/${val.length} &nbsp;= <br>`;
         ans = ans / len;
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
     }
 
 
@@ -4398,13 +4453,28 @@ function std() {
     var s = 0, ans = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
+    
+    val=val.trim()
+    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("Meanresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+
+    val = val.substring(2,val.length-2)
+
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
-        s = s + parseInt(val[i]);
+        s = s + parseFloat(val[i]);
     }
     if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
@@ -4412,7 +4482,7 @@ function std() {
         document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;
         var mean = s / len;
         for (i = 0; i < len; i++) {
-            num = parseInt(val[i]);
+            num = parseFloat(val[i]);
             ans = ans + Math.pow(num - mean, 2);
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num - mean, 2))}`;
@@ -4426,7 +4496,7 @@ function std() {
         ans = ans / len;
         document.getElementById("Meanresult").innerHTML += `&#8730; ${ans} &nbsp; = &nbsp`;
         ans = Math.sqrt(ans);
-        document.getElementById("Meanresult").innerHTML += ans;
+        document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
     }
 
 
@@ -4452,7 +4522,7 @@ function convertBinDec() {
     if (toBase === "Decimal") to = 10;
     else to = 2;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    result.innerHTML = parseFloat(input, from).toString(to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
