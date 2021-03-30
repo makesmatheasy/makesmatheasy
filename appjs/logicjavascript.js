@@ -4719,7 +4719,7 @@ function separator(str, n) { //used for converting BCD code to decimal
 function bcdTOdecimal(x) {
     var y=x.length;
     var input1="";
-    var inv=["I","V","A","L","I","D"];
+    var inv=["I","N","V","A","L","I","D"];
     if(y%4==1 || y==1)
     input1="000"+x;
     else if(y%4==2 || y==2)
