@@ -4719,6 +4719,7 @@ function separator(str, n) { //used for converting BCD code to decimal
 function bcdTOdecimal(x) {
     var y=x.length;
     var input1="";
+    var inv=["I","V","A","L","I","D"];
     if(y%4==1 || y==1)
     input1="000"+x;
     else if(y%4==2 || y==2)
@@ -4730,9 +4731,9 @@ function bcdTOdecimal(x) {
     const minVal = (currentValue) => currentValue <= 9;
     w=separator(input1,4);
     if(w.every(minVal)==true)
-    return w.join('_');
+    return w;
     else 
-    return "Invalid";
+    return inv;
     }
 function convertbcd() {
     const fromCode = document.getElementById("bcd-select1").value;
@@ -4745,7 +4746,7 @@ function convertbcd() {
     else if(fromCode=="Decimal" && toCode=="Decimal")
     result.innerHTML=input;
     else if(fromCode=="BCD Code" && toCode =="Decimal")
-    result.innerHTML=bcdTOdecimal(input);
+    result.innerHTML=bcdTOdecimal(input).join('_');
     else if(fromCode=="Decimal" && toCode=="BCD Code") {
         var x = "_";
 
