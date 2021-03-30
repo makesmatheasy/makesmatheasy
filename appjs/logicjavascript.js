@@ -4102,22 +4102,29 @@ function check_prime(isprime) {
     var ans = document.getElementById("isprimesol");
     var flag = true;
     if (!isNaN(num1)) {
-        ans.innerHTML = num1;
-        ans.innerHTML += " is ";
-        if (num1 == 1 || num1 == 0) {
-            ans.innerHTML += "neither Prime nor Composite number";
-        } else {
-            for (i = 2; i <= Math.sqrt(num1); i++) {
-                if (num1 % i == 0) {
-                    flag = false;
-                    break;
+        if(num1>=0)
+        {
+            ans.innerHTML = num1;
+            ans.innerHTML += " is ";
+            if (num1 == 1 || num1 == 0) {
+                ans.innerHTML += "neither Prime nor Composite number";
+            } else {
+                for (i = 2; i <= Math.sqrt(num1); i++) {
+                    if (num1 % i == 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag == true) {
+                    ans.innerHTML += "a Prime number";
+                } else {
+                    ans.innerHTML += "a Composite number";
                 }
             }
-            if (flag == true) {
-                ans.innerHTML += "a Prime number";
-            } else {
-                ans.innerHTML += "a Composite number";
-            }
+        }
+        else
+        {
+            ans.innerHTML = "There are no negative prime numbers. Enter positive numbers to check for Primality."
         }
     } else
         ans.innerHTML = "Enter an integer!"
