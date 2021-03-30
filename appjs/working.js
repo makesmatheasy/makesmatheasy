@@ -483,6 +483,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+
+    $("#bayesprobabilitycollapsebtn").click(function(){
+        openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
 })
 
     function loader(action) {
