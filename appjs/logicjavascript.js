@@ -429,6 +429,11 @@ function printmorefactors(input, output) {
     var val = document.getElementById(input).value;
     val = val.replace(/\s+$/, ""); //right trim
     val = val.replace(/^\s+/, ""); //left trim
+	if (val.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     val = val.split(" ");
     ar = val;
     var temp = "";
@@ -520,10 +525,14 @@ function hcf(input) {
     var val = document.getElementById(input).value;
     val = val.replace(/\s+$/, ""); //right trim
     val = val.replace(/^\s+/, ""); //left trim
+	document.getElementById("hcfprimefactor").textContent = "";
+	if (val.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     val = val.split(" ");
     ar = val;
-
-    document.getElementById("hcfprimefactor").textContent = "";
     var temp = "";
     document.getElementById("hcfprimefactor").innerHTML =
         "\\[Prime \\space Factors \\space of \\space\\]";
@@ -601,6 +610,11 @@ function factorselect(numid) {
     var num = document.getElementById(numid).value;
     num = num.replace(/^\s+/, ""); //left trim
     num = num.replace(/\s+$/, ""); //right trim
+	if (num.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     num = num.split(" ");
     if (num.length == 1) {
         printfactors();
@@ -628,6 +642,11 @@ function lcmsol(input) {
     document.getElementById("resultfac").innerHTML = "";
     document.getElementById("resultlcms").innerHTML = "";
     var num = document.getElementById(input).value;
+	if (num.search(/^[0-9 ]+$/) == -1)
+	{
+		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		return;
+	}
     num = num.split(" ");
     num = num.filter(function (str) {
         return /\S/.test(str);
