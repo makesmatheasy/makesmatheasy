@@ -6312,6 +6312,14 @@
                 <tr>
                     <td>
                         <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
+                               href="#">Pressure</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
                             <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
                                href="#">Time</a>
                         </div>
@@ -8887,6 +8895,78 @@
                         </select>
                         <label for="out">
                             <p class="form__field" id="tempconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="prescon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pressure</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center">From</h5>
+                        </label>
+                        <select id="prescon-1" class="form__field" onchange="prescon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                atm[Atmosphere]
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                bar
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">pascal[Pa]
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">Torr
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">pound per sqaure inch[psi]
+                            </option>
+                        </select>
+                        <input type="number" id="presconin" class="form__field"
+                               placeholder="Enter Side" value="0" ; oninput="prescon();">
+
+                        <label for="To">
+                            <h5 class="text-center">To</h5>
+                        </label>
+                        <select id="prescon-2" class="form__field" onchange="prescon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                atm[Atmosphere]
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                bar
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">
+                                pascal[Pa]
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">Torr
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">pound per sqaure inch[psi]
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field" id="presconou">0</p>
                         </label>
                     </div>
                 </div>

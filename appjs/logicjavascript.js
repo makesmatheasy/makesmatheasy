@@ -3679,6 +3679,27 @@ function tempcon() {
   const a = ((i - fs) / fd) * tm + ta;
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
+function presu(a) {
+  switch (a) {
+    case "1":
+      return 1;
+    case "2":
+      return 0.986923;
+    case "3":
+      return 9.8692e-6;
+    case "4":
+      return 0.00131579;
+    case "5":
+      return 0.068046;
+  }
+}
+function prescon() {
+  const f = presu(document.getElementById("prescon-1").value);
+  const t = presu(document.getElementById("prescon-2").value);
+  const i = parseInt(document.getElementById("presconin").value);
+  const a = (i * f) / t;
+  document.getElementById("presconou").innerHTML = `${a}`;
+}
 
 
 function polar()
