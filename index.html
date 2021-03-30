@@ -8194,131 +8194,7 @@
     </div>
 
 
-    <!-- Mean start -->
-    <div class="modal fade" id="Meanit" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Mean Median Mode</h5>
-                    <button style="text-decoration:none" type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="tel" id="getNum" class="form__field"
-                               placeholder="Enter Numbers(Space Separated)"
-                               oninput="orderfieldclear()">
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="Means()">Mean</button>
-                        <button type="button" class="btn btn-light" onclick="Median()">Median
-                        </button>
-                        <button type="button" class="btn btn-light" onclick="Mode()">Mode</button>
-                        <div class="dropdown-divider"></div>
-                        <button type="button" class="btn btn-light" onclick="Variance()">Variance
-                        </button>
-                        <button type="button" class="btn btn-light" onclick="std()">Standard
-                            Deviation
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="document.getElementById('getNum').value+=' ';document.getElementById('getNum').focus();">
-                            Space
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <p class="stopwrap" style="font-family:mathfont;" id="Meanresult"></p>
-                        <p style="font-family:mathfont;" class="stopwrap" id="Meanresultde"></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-------------------------------------------------------->
-
-    <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Settings</h5>
-                    <button style="text-decoration:none" type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table">
-                        <tr>
-                            <td>
-                                <h5>Clear Favourites</h5>
-                            </td>
-                            <td>
-                                <button class="btn btn-light"
-                                        onclick="removefavourite();checkfavourite()">Clear
-                                </button>
-                            </td>
-                            <td>
-                                <p>Kindly Restart The App for Changes to Apply</p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!----------------------order starts--------------------------------->
-    <div class="modal fade" id="orderit" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Ascending/Descending Order</h5>
-                    <button style="text-decoration:none" type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="tel" id="ordergetval" class="form__field"
-                               placeholder="Enter Numbers(Space Separated)"
-                               oninput="orderfieldclear()">
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="orderas()">Ascending
-                        </button>
-                        <button type="button" class="btn btn-light" onclick="orderde()">Descending
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
-                            Space
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-----------------------order ends---------------------------------->
+    
 
     <!--shapes modal-->
     <div>
@@ -9682,7 +9558,125 @@
         <!--3-D shapes end-->
     </div>
     <!-------------------------------------------------------->
-    <!--unit convert-->
+
+    
+
+</div>
+    <!--international number convert-->
+    <div class="modal fade" id="internationalnumber" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">International Number Conversion</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input placeholder="Start Typing a Number" type="number"
+                           id="interval"
+                           class="form__field"
+                           oninput="internationalwords(document.getElementById('interval').value)">
+                    <p id="interresult"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of international number convert-->
+    <!-------------------------------------------------------->
+
+    <!-- Mean start -->
+    <div class="modal fade" id="Meanit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mean Median Mode</h5>
+                    <button style="text-decoration:none" type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="tel" id="getNum" class="form__field"
+                               placeholder="Enter Numbers(Space Separated)"
+                               oninput="orderfieldclear()">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="Means()">Mean</button>
+                        <button type="button" class="btn btn-light" onclick="Median()">Median
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="Mode()">Mode</button>
+                        <div class="dropdown-divider"></div>
+                        <button type="button" class="btn btn-light" onclick="Variance()">Variance
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="std()">Standard
+                            Deviation
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="document.getElementById('getNum').value+=' ';document.getElementById('getNum').focus();">
+                            Space
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="stopwrap" style="font-family:mathfont;" id="Meanresult"></p>
+                        <p style="font-family:mathfont;" class="stopwrap" id="Meanresultde"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="orderit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ascending/Descending Order</h5>
+                    <button style="text-decoration:none" type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="tel" id="ordergetval" class="form__field"
+                               placeholder="Enter Numbers(Space Separated)"
+                               oninput="orderfieldclear()">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="orderas()">Ascending
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="orderde()">Descending
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
+                            Space
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div>
         <div class="modal fade" id="lengthcon" tabindex="-1" role="dialog"
              aria-hidden="true">
@@ -10281,300 +10275,226 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
+        <div class="modal fade" id="datacon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Data Storage</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-    <div class="modal fade" id="datacon" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Data Storage</h5>
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-label="Close"
-                            style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                    <div class="modal-body">
 
-                <div class="modal-body">
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="datacon-1" class="form__field" onchange="datacon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Bit
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Byte
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">Kilobyte
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Megabyte
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Gigabyte
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">Terabyte
+                                </option>
+                                <option value="7" class="form_field"
+                                        style="background-color:var(--appblack);">Petabyte
+                                </option>
+                            </select>
+                            <input type="number" id="dataconin" class="form__field"
+                                    placeholder="Enter Side" value="0" ;
+                                    oninput="datacon();">
 
-                    <div class="col-6">
-                        <label for="from">
-                            <h5 class="text-center">From</h5>
-                        </label>
-                        <select id="datacon-1" class="form__field" onchange="datacon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Bit
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">Byte
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">Kilobyte
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Megabyte
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">Gigabyte
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">Terabyte
-                            </option>
-                            <option value="7" class="form_field"
-                                    style="background-color:var(--appblack);">Petabyte
-                            </option>
-                        </select>
-                        <input type="number" id="dataconin" class="form__field"
-                               placeholder="Enter Side" value="0" ;
-                               oninput="datacon();">
-
-                        <label for="To">
-                            <h5 class="text-center">To</h5>
-                        </label>
-                        <select id="datacon-2" class="form__field" onchange="datacon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Bit
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">Byte
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">Kilobyte
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Megabyte
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">Gigabyte
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">Terabyte
-                            </option>
-                            <option value="7" class="form_field"
-                                    style="background-color:var(--appblack);">Petabyte
-                            </option>
-                        </select>
-                        <label for="out">
-                            <p class="form__field" id="dataconou">0</p>
-                        </label>
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="datacon-2" class="form__field" onchange="datacon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Bit
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Byte
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">Kilobyte
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Megabyte
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Gigabyte
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">Terabyte
+                                </option>
+                                <option value="7" class="form_field"
+                                        style="background-color:var(--appblack);">Petabyte
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="dataconou">0</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="prescon" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Pressure</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                            style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-6">
-                        <label for="from">
-                            <h5 class="text-center">From</h5>
-                        </label>
-                        <select id="prescon-1" class="form__field" onchange="prescon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                atm[Atmosphere]
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                bar
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">pascal[Pa]
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Torr
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">pound per sqaure inch[psi]
-                            </option>
-                        </select>
-                        <input type="number" id="presconin" class="form__field"
-                               placeholder="Enter Side" value="0" ; oninput="prescon();">
+        <div class="modal fade" id="prescon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pressure</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="prescon-1" class="form__field" onchange="prescon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    atm[Atmosphere]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    bar
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">pascal[Pa]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Torr
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">pound per sqaure inch[psi]
+                                </option>
+                            </select>
+                            <input type="number" id="presconin" class="form__field"
+                                placeholder="Enter Side" value="0" ; oninput="prescon();">
 
-                        <label for="To">
-                            <h5 class="text-center">To</h5>
-                        </label>
-                        <select id="prescon-2" class="form__field" onchange="prescon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                atm[Atmosphere]
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                bar
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                pascal[Pa]
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Torr
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">pound per sqaure inch[psi]
-                            </option>
-                        </select>
-                        <label for="out">
-                            <p class="form__field" id="presconou">0</p>
-                        </label>
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="prescon-2" class="form__field" onchange="prescon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    atm[Atmosphere]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    bar
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    pascal[Pa]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Torr
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">pound per sqaure inch[psi]
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="presconou">0</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="timecon" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Time</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                            style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-6">
-                        <label for="from">
-                            <h5 class="text-center">From</h5>
-                        </label>
-                        <select id="timecon-1" class="form__field" onchange="timecon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Day
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">Hour
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">Minute
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Second
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                Millisecond
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">
-                                Microsecond
-                            </option>
 
-                        </select>
-                        <input type="number" id="timeconin" class="form__field" placeholder="Enter Side"
-                               value="0" ; oninput="timecon();">
-
-
-    <!--unit  converto end-->
-
-    <!-------------------------------------------------------->
-    <!--international number convert-->
-    <div class="modal fade" id="internationalnumber" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">International Number Conversion</h5>
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-label="Close"
-                            style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input placeholder="Start Typing a Number" type="number"
-                           id="interval"
-                           class="form__field"
-                           oninput="internationalwords(document.getElementById('interval').value)">
-                    <p id="interresult"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--end of international number convert-->
-    <!-------------------------------------------------------->
-
-    <!--roman numeral-->
     <div class="modal fade" id="roman" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Roman/Arabic Numeral</h5>
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-label="Close"
-                            style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="number" id="inpo" class="form__field"
-                               placeholder="Enter a Number"
-                               oninput="callr();document.getElementById('ouo').innerHTML=''">
-                    </div>
-                    <div class="form-group">
-                        <button type="button"
-                                onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
-                                class="btn btn-light">Expand
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Roman/Arabic Numeral</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="form-group">
-                        <p id="ouo" style="font-family:mathfont;"></p>
-                        <p id="ouroman" style="font-family:mathfont;"></p>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="rinp" class="form__field"
-                               placeholder="Enter Roman Number"
-                               oninput="callder();document.getElementById('exro').innerHTML=''">
-                    </div>
-                    <div class="form-group">
-                        <button type="button"
-                                onclick="expandedformde('out2','exro')"
-                                class="btn btn-light">Expand
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <p id="exro" style="font-family:mathfont;"></p>
-                        <p id="out2" style="font-family:mathfont;"></p>
-                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="number" id="inpo" class="form__field"
+                                placeholder="Enter a Number"
+                                oninput="callr();document.getElementById('ouo').innerHTML=''">
+                        </div>
+                        <div class="form-group">
+                            <button type="button"
+                                    onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
+                                    class="btn btn-light">Expand
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <p id="ouo" style="font-family:mathfont;"></p>
+                            <p id="ouroman" style="font-family:mathfont;"></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="rinp" class="form__field"
+                                placeholder="Enter Roman Number"
+                                oninput="callder();document.getElementById('exro').innerHTML=''">
+                        </div>
+                        <div class="form-group">
+                            <button type="button"
+                                    onclick="expandedformde('out2','exro')"
+                                    class="btn btn-light">Expand
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <p id="exro" style="font-family:mathfont;"></p>
+                            <p id="out2" style="font-family:mathfont;"></p>
+                        </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!--roman numeral end-->
-
-</div>
 <!--------------------------------------------------------->
+
+
 <!--    speech recognition start -->
 <script src="appjs/speechreco.js"></script>
 <!--    speech recognition ends-->
