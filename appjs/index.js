@@ -221,6 +221,7 @@ function openit(id) {
         "#ex3",
         "#lappro",
         "#bayes-probabilitycollapse",
+        "#anglecon",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

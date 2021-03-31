@@ -3740,6 +3740,37 @@ function masscon() {
     document.getElementById("massconou").innerHTML = `${a}`;
 }
 
+function angleu(a) {
+    switch (a) {
+        case "1":
+            return 1;
+        case "2":
+            return 57.29578;
+        case "3":
+            return 0.01667;
+        case "4":
+            return 0.0002778;
+        case "5":
+            return 30;
+        case "6":
+            return 45;
+        case "7":
+            return 60;
+        case "8":
+            return 90;
+        case "9":
+            return 360;
+    }
+}
+
+function anglecon() {
+    const f = angleu(document.getElementById("anglecon-1").value);
+    const t = angleu(document.getElementById("anglecon-2").value);
+    const i = parseInt(document.getElementById("angleconin").value);
+    const a = (i * f) / t;
+    document.getElementById("angleconou").innerHTML = `${a}`;
+}
+
 function tempau(a) {
     switch (a) {
         case "1":
@@ -4766,6 +4797,7 @@ function separator(str, n) { //used for converting BCD code to decimal
 function bcdTOdecimal(x) {
     var y=x.length;
     var input1="";
+    var inv=["I","N","V","A","L","I","D"];
     if(y%4==1 || y==1)
     input1="000"+x;
     else if(y%4==2 || y==2)
@@ -4777,10 +4809,32 @@ function bcdTOdecimal(x) {
     const minVal = (currentValue) => currentValue <= 9;
     w=separator(input1,4);
     if(w.every(minVal)==true)
-    return w.join('_');
+    return w;
     else 
-    return "Invalid";
+    return inv;
     }
+function decimalTObcd(z=""){
+    var x = "_";
+
+    for (var i = 0; i < z.length; i++) {
+        var y = parseInt(z[i]).toString(2)
+        if (y.length == 1) {
+        x = x + "000" + y + "_   ";
+        }
+        if (y.length == 2) {
+        x = x + "00" + y + "_   ";
+        }
+        if (y.length == 3) {
+        x = x + "0" + y + "_   ";
+        }
+        if (y.length == 4) {
+        x = x + +y + "_   ";
+        }
+
+    }
+    return x;
+
+}   
 function convertbcd() {
     const fromCode = document.getElementById("bcd-select1").value;
     const toCode = document.getElementById("bcd-select2").value;
@@ -4792,28 +4846,37 @@ function convertbcd() {
     else if(fromCode=="Decimal" && toCode=="Decimal")
     result.innerHTML=input;
     else if(fromCode=="BCD Code" && toCode =="Decimal")
-    result.innerHTML=bcdTOdecimal(input);
-    else if(fromCode=="Decimal" && toCode=="BCD Code") {
-        var x = "_";
+    result.innerHTML=bcdTOdecimal(input).join('_');
+    else if(fromCode=="Decimal" && toCode=="BCD Code") 
+    result.innerHTML =decimalTObcd(input);
+    
+}
 
-        for (var i = 0; i < input.length; i++) {
-            var y = parseInt(input[i]).toString(2)
-            if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-            }
-            if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-            }
-            if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-            }
-            if (y.length == 4) {
-            x = x + +y + "_   ";
-            }
+//----------------------------
+//Function to perform BCD addition
+function bcdadd(){
+    var input1 = document.getElementById("bcdadd-input1").value;
+    var input2 = document.getElementById("bcdadd-input2").value;
+    let result = document.getElementById("bcdadd-result");
 
-        }
-        result.innerHTML = x;
+    var s1= bcdTOdecimal(input1).join('');
+    var s2= bcdTOdecimal(input2).join('');
+    var decimalresult;
+    var bcdresult;
+    if(s1=="INVALID" || s2=="INVALID")
+    result.innerHTML="INVALID BCD";
+    else{
+        decimalresult=parseInt(s1)+parseInt(s2);
+        bcdresult=decimalTObcd(decimalresult.toString());
+        result.innerHTML="BCD Result="+bcdresult+"<br>";
+        result.innerHTML +="Decimal Result="+decimalresult+"<br>";
+
     }
+    if (input1 == "" && input2 == "") {
+        result.innerHTML = "";
+    } else if (input1.search(/^[10]+$/) == -1 || input2.search(/^[10]+$/) == -1 )
+        result.innerHTML = "BCD Code can only have 0's and 1's";
+
 }
 
 //----------------------------
