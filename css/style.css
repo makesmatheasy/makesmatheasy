@@ -10,15 +10,15 @@
 }
 @font-face {
   font-family: mainfont;
-  src: url(../fonts/Product_Sans_Regular.ttf) format("truetype");
+  src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
 }
 @font-face {
   font-family: mainfontbold;
-  src: url(../fonts/Product_Sans_Bold.ttf) format("truetype");
+  src: url(../fonts/Product_Sans_Bold.ttf) format('truetype');
 }
 @font-face {
   font-family: mathfont;
-  src: url(../fonts/BalsamiqSans-Regular.ttf) format("truetype");
+  src: url(../fonts/BalsamiqSans-Regular.ttf) format('truetype');
 }
 
 body {
@@ -68,7 +68,7 @@ p {
   -ms-user-select: none;
   touch-action: auto;
   /* overflow-y: auto; */
-   /* !important; */
+  /* !important; */
   /*position: relative !important;*/
 }
 .form-control {
@@ -492,7 +492,7 @@ span.sub img {
 /* radio butons for conic hyperbola*/
 #op1_hyper:after,
 #op2_hyper:after,
-#op3_hyper:after{
+#op3_hyper:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
@@ -506,7 +506,6 @@ span.sub img {
   border: 2px solid #fff;
   transition: 1s;
 }
-
 
 #op1_hyper:checked:after,
 #op2_hyper:checked:after,
@@ -526,3 +525,13 @@ span.sub img {
 
 /* radio butons for conic hyperbola ends*/
 
+/* Remove the arrows from Input type Numbers*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
