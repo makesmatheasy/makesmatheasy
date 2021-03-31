@@ -6108,7 +6108,16 @@
                        placeholder="Enter rate of interest(%)"/>
                 <br>
                 <br>
-                <button class="btn btn-outline-light" onclick="simple_interest()">Find</button>
+                <div class="form-group">
+                    <span style="color: var(--appimage);">For Compound Interest related calculations:&nbsp;</span>
+                    <select id="comp" class="btn btn-outline-light">
+                        <option>Compounded Annually</option>
+                        <option>Compounded Half-yearly</option>
+                        <option>Compounded Quaterly</option>
+                        <option>Compounded Monthly</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline-light" onclick="simple_interest();">Find</button>
                 <br>
                 <div style="color:var(--appimage); font-size: large;" id="simpleinterstoutput"></div>
                 <div id="compoundinterestoutput" style="color: var(--appimage); font-size: large"></div>
