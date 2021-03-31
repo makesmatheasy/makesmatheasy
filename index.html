@@ -6731,6 +6731,15 @@
                 <tr>
                     <td>
                         <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#anglecon"
+                               style="text-decoration:none;"
+                               href="#">Angle</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
                             <a data-toggle="modal" data-target="#speedcon"
                                style="text-decoration:none;"
                                href="#">Speed</a>
@@ -7413,6 +7422,7 @@
             <div class="collapse" id="bcd">
                 <div class="col-6">
                     <div class="form-group">
+                        <h1>Decimal/BCD Code Converter</h1>
                         <h5>From</h5>
                         <select id="bcd-select1" class="form__field"
                                 onchange="convertbcd()">
@@ -7443,6 +7453,22 @@
 
                     </div>
                     <label class="form__group" id="bcd-result">0</label>
+                </div>
+                <br>
+                <br>
+                <!--BCD Addition -->
+                <div class="col-6">
+                    <div class="form-group">
+                        <h1>BCD Code Addition </h1>
+                         <input type="number" id="bcdadd-input1" value="0" class="form__field"
+                               oninput="bcdadd()">
+                         <h1>+</h1>
+                         <input type="number" id="bcdadd-input2" value="0" class="form__field"
+                               oninput="bcdadd()">
+                    </div>
+                </div>
+                <div class="col-6">
+                     <label class="form__group" id="bcdadd-result">0</label>
                 </div>
             </div>
         </div>
@@ -10446,6 +10472,104 @@
                             </select>
                             <label for="out">
                                 <p class="form__field" id="timeconou">0</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="anglecon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Angle</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="anglecon-1" class="form__field" onchange="anglecon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Degree
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Radian
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">Minutes
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Seconds
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Sign
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">Octant
+                                </option>
+                                <option value="7" class="form_field"
+                                        style="background-color:var(--appblack);">Sextant
+                                </option>
+                                <option value="8" class="form_field"
+                                        style="background-color:var(--appblack);">Quadrant
+                                </option>
+                                <option value="9" class="form_field"
+                                        style="background-color:var(--appblack);">Revolution
+                                </option>
+
+                            </select>
+                            <input type="number" id="angleconin" class="form__field"
+                                   placeholder="Enter Angle"
+                                   value="0" ; oninput="anglecon();">
+
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="anglecon-2" class="form__field" onchange="anglecon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Degree
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Radian
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">Minutes
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Seconds
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    Sign
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">
+                                    Octant
+                                </option>
+                                <option value="7" class="form_field"
+                                        style="background-color:var(--appblack);">Sextant
+                                </option>
+                                <option value="8" class="form_field"
+                                        style="background-color:var(--appblack);">Quadrant
+                                </option>
+                                <option value="9" class="form_field"
+                                        style="background-color:var(--appblack);">Revolution
+                                </option>
+
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="angleconou">0</p>
                             </label>
                         </div>
                     </div>
