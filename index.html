@@ -7407,6 +7407,7 @@
             <div class="collapse" id="bcd">
                 <div class="col-6">
                     <div class="form-group">
+                        <h1>Decimal/BCD Code Converter</h1>
                         <h5>From</h5>
                         <select id="bcd-select1" class="form__field"
                                 onchange="convertbcd()">
@@ -7437,6 +7438,22 @@
 
                     </div>
                     <label class="form__group" id="bcd-result">0</label>
+                </div>
+                <br>
+                <br>
+                <!--BCD Addition -->
+                <div class="col-6">
+                    <div class="form-group">
+                        <h1>BCD Code Addition </h1>
+                         <input type="number" id="bcdadd-input1" value="0" class="form__field"
+                               oninput="bcdadd()">
+                         <h1>+</h1>
+                         <input type="number" id="bcdadd-input2" value="0" class="form__field"
+                               oninput="bcdadd()">
+                    </div>
+                </div>
+                <div class="col-6">
+                     <label class="form__group" id="bcdadd-result">0</label>
                 </div>
             </div>
         </div>
