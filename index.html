@@ -1635,6 +1635,27 @@
                 </table>
             </li>
 
+            <!--Start of Addition -->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="add-all-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;"> Addition Of any Number System </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#adding-all','c','adding-all-imgfav')"><img
+                                        id="adding-all-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--end -->
+
             <!--Binary to Decimal to hexadecimal converter start-->
 
             <li>
@@ -6618,8 +6639,14 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#hemisphere"
                            style="text-decoration:none;"
-                           href="#">HemiSphere</a></td>
+                           href="#">Hemisphere</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#prism"
+                           style="text-decoration:none;"
+                           href="#">Prism</a></td>
+                </tr>
+                
             </table>
         </div>
 
@@ -7239,6 +7266,84 @@
             </div>
         </div>
         <!-- End of Decimal / Binary -->
+
+        <!-- Start of Addition of any number system -->
+        <div class="collapse" id="adding-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>1st Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="adding-all-select1" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="adding-all-input1" value="0"
+                           class="form__field"
+                           oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>2nd Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="adding-all-select2" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form__field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="adding-all-input2" value="0"
+                    class="form__field"
+                    oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Result Of Addition</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="adding-all-result-type" class="form__field"
+                    onchange="addBinDecHexOct()">
+                <option class="form__field" style="background-color: #232a36;">
+                    
+                </option>    
+                <option class="form__field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Hexa Decimal
+                </option>
+            </select>
+                </div>
+                <label class="form__group" id="adding-all-result">0</label>
+            </div>
+        </div>
+        <!-- End of Addition of any number system -->
 
 
         <!-- Start of Bitwise Calculator -->
@@ -9820,6 +9925,63 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="prism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Prism</h5>
+                                    <p class="text-center">\[V=(l \times b \times h) / 2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Prism</h5>
+                                    <p class="text-center">\[b(h+l) \space + \space 2 \times l \times s\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/prism.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <p>Fill All Four</p>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Length (cm)"
+                                       id="inputprismlength" oninput="prismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Breadth (cm)"
+                                       id="inputprismbreadth" oninput="prismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Height (cm)"
+                                       id="inputprismheight" oninput="prismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Side (cm)"
+                                       id="inputprismside" oninput="prismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvolprism"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsaprism"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
