@@ -4769,9 +4769,9 @@ function convertbcd() {
     result.innerHTML=input;
     else if(fromCode=="BCD Code" && toCode =="Decimal")
     result.innerHTML=bcdTOdecimal(input).join('_');
-    else if(fromCode=="Decimal" && toCode=="BCD Code") {
+    else if(fromCode=="Decimal" && toCode=="BCD Code") 
     result.innerHTML =decimalTObcd(input);
-    }
+    
 }
 
 //----------------------------
@@ -4794,7 +4794,10 @@ function bcdadd(){
         result.innerHTML +="Decimal Result="+decimalresult+"<br>";
 
     }
-
+    if (input1 == "" && input2 == "") {
+        result.innerHTML = "";
+    } else if (input1.search(/^[10]+$/) == -1 || input2.search(/^[10]+$/) == -1 )
+        result.innerHTML = "BCD Code can only have 0's and 1's";
 
 }
 
