@@ -4701,6 +4701,53 @@ function convertBinOct() {
 }
 
 //----------------------------
+//Function for addition of any number system
+function addBinDecHexOct(){
+    const firstBase = document.getElementById("adding-all-select1").value;
+    const secondBase = document.getElementById("adding-all-select2").value;
+    const input = document.getElementById("adding-all-input").value;
+    const resultType= document.getElementById("adding-all-result-type").value;
+    let result = document.getElementById("adding-all-result");
+    var x1;
+    var x2;
+
+    if(firstBase === "Binary")
+    x1=parseInt(input,2);
+    else if (firstBase === "Octal")
+    x1=parseInt(input,8);
+    else if(firstBase === "Hexa Decimal")
+    x1=parseInt(input,16);
+    else if(firstBase === "Decimal")
+    x1=parseInt(input);
+
+    if(secondBase === "Binary")
+    x2=parseInt(input,2);
+    else if (secondBase === "Octal")
+    x2=parseInt(input,8);
+    else if(secondBase === "Hexa Decimal")
+    x2=parseInt(input,16);
+    else if(secondBase === "Decimal")
+    x2=parseInt(input);
+
+    var x3=x1+x2;
+    
+    if(resultType === "Binary")
+    result.innerHTML="Answer in binary="+x3.toString(2);
+    else if (resultType === "Octal")
+    result.innerHTML="Answer in Octal="+x3.toString(8);
+    else if(resultType === "Hexa Decimal")
+    result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
+    else if(resultType === "Decimal")
+    result.innerHTML="Answer in Decimal="+x3;
+
+    
+    
+    
+    
+
+}
+
+//----------------------------
 
 
 //----------------------------	//----------------------------
