@@ -392,6 +392,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#complexidentitiesbtn").click(function(){
+        openit("#complexidentities");
+        closenav();
+        clearall();
+    });
+    $("#complexpropertiesbtn").click(function(){
+        openit("#complexproperties");
+        closenav();
+        clearall();
+    });
     $("#complex1collapsebtn").click(function(){
         openit("#complex1collapse");
         closenav();
