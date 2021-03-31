@@ -4620,7 +4620,7 @@ function convertBinDec() {
     if (toBase === "Decimal") to = 10;
     else to = 2;
 
-    result.innerHTML = parseFloat(input, from).toString(to);
+    result.innerHTML = parseInt(input, from).toString(to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
