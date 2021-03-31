@@ -220,6 +220,7 @@ function openit(id) {
         "#ex3",
         "#lappro",
         "#bayes-probabilitycollapse",
+        "#prism",
         "#anglecon",
     ];
     for (i = 0; i < ids.length; i++) {
