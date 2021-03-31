@@ -3908,7 +3908,7 @@ function simple_interest() {
     }
     else
     {
-        si = parseFloat((p * t * r) / 100).toFixed(3);
+        si = parseFloat((p * t * r) / 100);
         if(si<0)
         {
             document.getElementById("simpleinterstoutput").innerHTML = "Negative values not allowed";
@@ -3916,11 +3916,32 @@ function simple_interest() {
         }
         else
         {
-            amount = p * Math.pow(1 + r / 100, t);
+            
+            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si.toFixed(5);
+
+            val = document.getElementById("comp").value;
+            
+            n=1;
+            if (val == "Compounded Annually") {
+                n=1;
+            } 
+            else if (val == "Compounded Half-yearly") {
+                n=2;
+            }
+            else if (val == "Compounded Quaterly") {
+                n=4;
+            } 
+            else if( val == "Compounded Monthly"){
+                n=12;
+            }
+
+            amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
-            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si;
-            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci;
+            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci.toFixed(5);
         }
+
+
+        
     }
 }
 
