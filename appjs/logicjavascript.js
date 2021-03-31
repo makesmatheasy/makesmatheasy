@@ -3740,6 +3740,37 @@ function masscon() {
     document.getElementById("massconou").innerHTML = `${a}`;
 }
 
+function angleu(a) {
+    switch (a) {
+        case "1":
+            return 1;
+        case "2":
+            return 57.29578;
+        case "3":
+            return 0.01667;
+        case "4":
+            return 0.0002778;
+        case "5":
+            return 30;
+        case "6":
+            return 45;
+        case "7":
+            return 60;
+        case "8":
+            return 90;
+        case "9":
+            return 360;
+    }
+}
+
+function anglecon() {
+    const f = angleu(document.getElementById("anglecon-1").value);
+    const t = angleu(document.getElementById("anglecon-2").value);
+    const i = parseInt(document.getElementById("angleconin").value);
+    const a = (i * f) / t;
+    document.getElementById("angleconou").innerHTML = `${a}`;
+}
+
 function tempau(a) {
     switch (a) {
         case "1":
