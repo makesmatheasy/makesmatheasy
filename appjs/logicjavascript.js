@@ -4736,29 +4736,30 @@ function convertBinOct() {
 function addBinDecHexOct(){
     const firstBase = document.getElementById("adding-all-select1").value;
     const secondBase = document.getElementById("adding-all-select2").value;
-    const input = document.getElementById("adding-all-input").value;
+    const input1 = document.getElementById("adding-all-input1").value;
+    const input2 = document.getElementById("adding-all-input2").value;
     const resultType= document.getElementById("adding-all-result-type").value;
     let result = document.getElementById("adding-all-result");
     var x1;
     var x2;
 
     if(firstBase === "Binary")
-    x1=parseInt(input,2);
+    x1=parseInt(input1,2);
     else if (firstBase === "Octal")
-    x1=parseInt(input,8);
+    x1=parseInt(input1,8);
     else if(firstBase === "Hexa Decimal")
-    x1=parseInt(input,16);
+    x1=parseInt(input1,16);
     else if(firstBase === "Decimal")
-    x1=parseInt(input);
+    x1=parseInt(input1);
 
     if(secondBase === "Binary")
-    x2=parseInt(input,2);
+    x2=parseInt(input2,2);
     else if (secondBase === "Octal")
-    x2=parseInt(input,8);
+    x2=parseInt(input2,8);
     else if(secondBase === "Hexa Decimal")
-    x2=parseInt(input,16);
+    x2=parseInt(input2,16);
     else if(secondBase === "Decimal")
-    x2=parseInt(input);
+    x2=parseInt(input2);
 
     var x3=x1+x2;
     
@@ -4769,7 +4770,7 @@ function addBinDecHexOct(){
     else if(resultType === "Hexa Decimal")
     result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
     else if(resultType === "Decimal")
-    result.innerHTML="Answer in Decimal="+x3;
+    result.innerHTML="Answer in Decimal="+x3.toString();
 
     
     
