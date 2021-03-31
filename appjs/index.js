@@ -187,6 +187,7 @@ function openit(id) {
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
+	"#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
