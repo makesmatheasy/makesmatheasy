@@ -36,7 +36,12 @@ Other Tech/Libraries
   - Regular Calculations
   - Scientific Calculations
   - Fraction/Decimal Answer
+
 - Linear Algebra
+  - Mathematical Reasoning
+  - Euclid Geometry (Axioms and Postulates)
+  - Operations on Sets
+  - Sets,Relations and Functions 
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
@@ -44,28 +49,54 @@ Other Tech/Libraries
     - Addition
     - Subtraction
     - Multiplication
-  - Play with Equations (without Steps)
-    - Simplify Equation
-    - Expand Equation
-    - Solve value of variables of multiple inputted equations
+  - Propeties of Matrices and Determinants
+  - Sum of Nterms of an Arithmetic Progession
+  - Sum of Nterms of an Geometric Progession
+  - Mean Calculator
+    - Arithmetic Mean
+    - Geometric Mean
+    - Harmonic Mean
+
+- Conic Section
+  - Parabola
+  - Ellipse
+  - Hyperbola
+
 - Calculus
+  - Transformation of Functions
   - Integration + Limits
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
+  - Integration Formulas
   - Differentiation + Higher Order
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
+  - Differentiation Formulas
   - Partial Differentiation
     - Solution/Steps from eMathHelp
     - Graph
+  - Differential Equations
+  - Maxima and Minima of functions
+  - Beta Gamma Functions
   - Laplace + Inverse Laplace
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
+  - Tangent and Normal
+  - Vector Calculus
+  - Convergence and Divergence of Series
+
 - Trigonometry
-  - Angles from Right Triangle
+  - Finding sides of a right triangle (provided any two) 
+  - Trigonometric Values
+  - Trigonometric Identities
+  - Inverse Trigonometric Identities
+  - General Solution of Trigonometric Equations
+  - Expansion of Functions
+  - Solution of Triangles
+  
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
@@ -73,36 +104,126 @@ Other Tech/Libraries
     - Calculating Factors of each number and picking common out of them
   - Factors
     - Prime Factorization **( with steps for single number)**
+  - Profit Loss Calculations
+  - Statistics Formulas
   - Log Calculator
     - Calculates the log of x to the base y
-  - Plot Graph
-    - Plots a Graph of entered Equation having single variable 'x'
+  - Log Properties
+  - Operations on Fractions
+  - Multiplication Table
+    - Prints Multiplication Table
+  - Divide
+    - Division
+    - Divisibility Checker
+  - Multiplication with Steps
+  - Rounding off numbers
+  - EMI Calculator
+  - Simple and Compound Interest
+  - Factorial
+  - Permutation & Combination
+  - Mean/Median/Mode
+  - Prime Numbers
+    - Primality Test
+    - Primes till entered number
+  
+- Basic Convertors
+  - Currency Convertor
+    - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
+  - Unit Convertor
+    - Length
+    - Area
+    - Volume
+    - Mass
+    - Temperature
+    - Time
+    - Angle
+    - Speed
+    - Data
+  - SPI/CGPA Convertor
+  - Ascending and Descending Order
+  - Date
   - Roman/Arabic Numerals
     - Conversion from Roman to Arabic and vice versa
     - Expanding the Arabic numbers **(eg. '2423' to '2000+400+20+3')**
     - Expanding the Roman numbers **(eg. 'CIV' to 'C+IV')**
-  - Ascending and Descending Order
-  - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
-  - Multiplication Table
-    - Prints Multiplication Table
+  
+- Graphs & Shapes
+  - Plot Graph
+    - Plots a Graph of entered Equation having single variable 'x'
+  - Plot Angle
+  - Properties of Parallel Lines
+  - Coordinate Systems
+  - Curve Tracing
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
+    - Rhombus
     - Equilateral Triangle
     - Isosceles Triangle
     - Right-angled Triangle
     - Scalene Triangle
     - Circle
+    - Kite
+    - Line
     - Trapezium
     - Ellipse
     - Parallelogram
-  - Divide
-    - Division
-    - Divisibility Checker
-  - Multiplication with Steps
-  - Roots of Quadratic Equation
-  - Rounding off numbers
+    - Tetrahedron
+  - 3D Shapes Calculator
+    - Cube
+    - Cuboid
+    - Cylinder
+    - Cone
+    - Sphere
+    - Hollow Cylinder
+    - Hollow Sphere
+    - Hemisphere
+    - Prism
+  - Volume, CSA, TSA
+  - Congruence and Similarity of Triangles
 
+- Equations
+  - Algebraic Equations Formulas
+  - Roots of Quadratic Equation
+  - Location of Roots
+  - Play with Equations (without Steps)
+    - Simplify Equation
+    - Expand Equation
+    - Solve value of variables of multiple inputted equations
+
+- Binary Calculations
+  - Boolean Algebra
+  - Decimal/Binary Converter
+  - Addition of any Number System
+  - Decimal/Binary/Hexadecimal Converter
+  - Decimal/BCD Converter
+    - BCD Code Addition
+  - Excess-3 Code Converter
+  - Octal/Binary Converter
+  - Grey Code Converter
+  - Bitwise Calculator
+  - 1s & 2s Complement Calculator
+  - 9s & 10s Complement Calculator
+
+- Complex Numbers
+  - Operations for 1 complex number
+    - Magnitude
+    - Argument
+    - Conjugate
+    - Square Root
+    - Polar Representation
+    - Euler Representation
+  - Operations for 2 complex numbers
+    - Addition
+    - Subtraction
+    - Multiplication
+    - Division
+
+- Probability
+  - Empirical Probability
+  - Joint Probability
+  - Bayes Probability Theorem
+  
 ---
 
 ## Documentation

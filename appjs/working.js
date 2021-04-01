@@ -438,6 +438,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+	
+	 $("#circlecollapsebtn").click(function(){
+        openit("#circlecollapse");
+        closenav();
+        clearall();
+    });
 
     $("#parabolacollapsebtn").click(function(){
         openit("#parabolacollapse");
