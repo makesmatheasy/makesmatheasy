@@ -4040,10 +4040,16 @@ function factorialsol(factorialval) {
     if (isNaN(num1)) {
         desc.innerHTML = "Enter a number.";
         ans.innerHTML = "";
-    } else if (num1 == 0 || num1 == 1) {
+    } 
+    else if(num1<0)
+    {
+        desc.innerHTML = "Factorial is not defined for negative integer since, gamma function is not defined for negative integer";
+        ans.innerHTML = "";
+    }
+    else if (num1 == 0 || num1 == 1) {
         ans.innerHTML = "";
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1`;
-    } else if (num1 <= 15) {
+    } else if (num1 <= 15 && num1 >0) {
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1  `;
         let calc = 1;
         for (i = 2; i <= num1; i++) {
