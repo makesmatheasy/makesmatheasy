@@ -84,6 +84,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#straightlinebtn").click(function () {
+        openit("#straightline");
+        closenav();
+        clearall();
+    });
+
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();
@@ -398,6 +404,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#complexidentitiesbtn").click(function(){
+        openit("#complexidentities");
+        closenav();
+        clearall();
+    });
+    $("#complexpropertiesbtn").click(function(){
+        openit("#complexproperties");
+        closenav();
+        clearall();
+    });
     $("#complex1collapsebtn").click(function(){
         openit("#complex1collapse");
         closenav();
@@ -435,6 +451,12 @@ $(document).ready(function () {
 	//Function of collapsing binary/hexadecimal section on click
 	$("#binary-to-hexadecimal-btn").click(function(){
         openit("#binary-hexadecimal");
+        closenav();
+        clearall();
+    });
+	
+	 $("#circlecollapsebtn").click(function(){
+        openit("#circlecollapse");
         closenav();
         clearall();
     });
