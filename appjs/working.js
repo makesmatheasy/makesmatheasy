@@ -441,6 +441,12 @@ $(document).ready(function () {
       closenav();
       clearall();
   });
+    
+    $("#bt-collapsebtn").click(function(){
+        openit("#bt-collapse");
+        closenav();
+        clearall();
+    });
 
     $("#bcdbtn").click(function(){
         openit("#bcd");

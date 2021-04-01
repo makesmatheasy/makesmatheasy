@@ -177,6 +177,7 @@ function openit(id) {
         "#bool",
         "#log_values",
         "#log-collapse",
+        "#bt-collapse",
         "#pandc",
         "#interest",
         "#decimal-binary",
