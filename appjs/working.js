@@ -84,6 +84,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#straightlinebtn").click(function () {
+        openit("#straightline");
+        closenav();
+        clearall();
+    });
+
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();
@@ -395,6 +401,16 @@ $(document).ready(function () {
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
         openit("#octal-binary");
+        closenav();
+        clearall();
+    });
+    $("#complexidentitiesbtn").click(function(){
+        openit("#complexidentities");
+        closenav();
+        clearall();
+    });
+    $("#complexpropertiesbtn").click(function(){
+        openit("#complexproperties");
         closenav();
         clearall();
     });

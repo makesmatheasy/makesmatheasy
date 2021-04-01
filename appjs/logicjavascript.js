@@ -4397,9 +4397,15 @@ function combinationcal(nval, rval) {
     var testVal2 = regex.test(val2);
     if (!textVal1 || !testVal2) 
     {
+<<<<<<< HEAD
         document.getElementById("combination_wrong").innerHTML ="Enter Integer values only";
         document.getElementById("combination_div_div2").style.display = "none";
         document.getElementById("combination_div_div1").style.display = "block"; 
+=======
+        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block"; 
+>>>>>>> ec327e577395e98acdff531f89e95d37c0abece9
         return;   
     }
     var val3 = parseInt(val1);
@@ -5107,7 +5113,28 @@ function onetwoCalc() {
 
 }
 
-//9's 10's compliment
+//----------------
+//7's 8's complement
+function seveneightCalc(){
+    const input = document.getElementById("seveneightnumber").value;
+    let result = document.getElementById("seveneightresult");
+    var seven = "";
+    var eight = "";
+
+    for (var i = 0; i < input.length; i++) {
+        seven += '7' - input[i];
+    }
+    eight = parseInt(seven) + 1;
+    result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
+    result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
+
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (input.search("8") != -1 || input.search("9") != -1  )
+        result.innerHTML = " Invalid Octal Number ";
+}
+
+//9's 10's complement
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
