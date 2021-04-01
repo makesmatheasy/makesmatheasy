@@ -5056,6 +5056,34 @@ function onetwoCalc() {
 
 }
 
+
+
+//--------------------
+//15's 16's compliment
+function fiftnsixtnCalc() {
+    const input = document.getElementById("fiftnsixtnnumber").value;
+    let result = document.getElementById("fiftnsixtnresult");
+    var fiftn = "";
+    var sixtn = "";
+    for (var i = 0; i < input.length; i++) {
+        fiftn += (16 - parseInt(input[i],16)).toString(16);
+
+    }
+    sixtn = (parseInt(fiftn,16) + 1).toString(16);
+    result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
+    result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+
+
+    if (input == "") {
+        result.innerHTML = "";
+    }
+    if(fiftn == "NaN"){
+        result.innerHTML = "Invalid Hexa Decimal Number"
+    }
+
+}
+
+
 //9's 10's compliment
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
