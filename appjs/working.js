@@ -40,6 +40,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#mathrbtn").click(function(){
+        openit("#math");
+        closenav();
+        clearall();
+    });
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
@@ -63,6 +68,12 @@ $(document).ready(function () {
 //            matrix
     $("#matrixcollapsebtn").click(function () {
         openit("#matrixcollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#ex3btn").click(function () {
+        openit("#ex3");
         closenav();
         clearall();
     });
@@ -150,8 +161,29 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#parallelbtn").click(function () {
+        openit("#parallel");
+        closenav();
+        clearall();
+    })
+    $("#betagammabtn").click(function () {
+        openit("#betagamma");
+        closenav();
+        clearall();
+    })
+  
+    $("#euclidbtn").click(function () {
+        openit("#euclid");
+        closenav();
+        clearall();
+    })
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
+        closenav();
+        clearall();
+    })
+    $("#transbtn").click(function () {
+        openit("#trans");
         closenav();
         clearall();
     })
@@ -160,8 +192,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#boolbtn").click(function () {
+        openit("#bool");
+        closenav();
+        clearall();
+    })
     $("#convdivbtn").click(function () {
         openit("#convdiv");
+        closenav();
+        clearall();
+    })
+    $("#setopbtn").click(function () {
+        openit("#setop");
         closenav();
         clearall();
     })
@@ -185,8 +227,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#srfbtn").click(function () {
+        openit("#srf");
+        closenav();
+        clearall();
+    })
     $("#maxminbtn").click(function () {
         openit("#maxmin");
+        closenav();
+        clearall();
+    })
+    $("#locrootsbtn").click(function () {
+        openit("#locroots");
         closenav();
         clearall();
     })
@@ -306,6 +358,12 @@ $(document).ready(function () {
     closenav();
     clearall();
      });
+     //Function of Addition of Any Number System 
+    $("#add-all-btn").click(function(){
+        openit("#adding-all");
+        closenav();
+        clearall();
+    });
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
@@ -325,6 +383,14 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+
+    $("#ninetencom-calc-btn").click(function(){
+        openit("#ninetencom-calc");
+        closenav();
+        clearall();
+    });
+
 
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
@@ -423,14 +489,32 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+ 
+
+
+    $("#lapprobtn").click(function(){
+        openit("#lappro");
+        closenav();
+        clearall();
+    });
+     
+
     $("#jointprobabilitycollapsebtn").click(function(){
         openit("#joint-probabilitycollapse");
         closenav();
         clearall();
     });
-});
 
-function loader(action) {
+
+    $("#bayesprobabilitycollapsebtn").click(function(){
+        openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+})
+
+    function loader(action) {
     var body = document.getElementsByTagName("body");
     var head = document.getElementsByTagName("head");
     switch (action) {
@@ -525,5 +609,4 @@ function loader(action) {
             head[0].removeChild(head[0].lastChild);
             break;
     }
-
 }

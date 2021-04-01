@@ -163,7 +163,40 @@ function polar()
     var j = (r*r)+(i*i);
     x = "&#8730;  "+ j ;
   }
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  x=x+" cos( π" +y+") + i sin ( π"+ y+ ")";
-  result.innerHTML ="Polar representaion is &nbsp;" + x;
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+  if(y<0)
+  {   
+      y=nerdamer((-1)*y).toString();
+	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
+  }
+  else{
+	  y=y.toString();
+      x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
+  }
+  
+  result.innerHTML = x;
 }
+function euler()
+{
+  var r = parseInt(document.getElementById("cpereal").value);
+  var i = parseInt(document.getElementById("cpeimg").value);
+  var result= document.getElementById("comperesult");
+  var x = (Math.sqrt((r*r)+(i*i)));
+  if(!Number.isInteger(x))
+  {
+    var j = (r*r)+(i*i);
+    x = "&#8730;  "+ j ;
+  }
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+  if(y<0)
+  {   
+      y=nerdamer((-1)*y).toString();
+	  x=x+"e<sup>-iπ"+y+"</sup>";
+  }
+  else{
+	  y=y.toString();
+   x=x+"e<sup>iπ"+y+"</sup>";
+  }
+  result.innerHTML = x;
+}
+

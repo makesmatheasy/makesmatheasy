@@ -1,4 +1,4 @@
-var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
+var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0,i=0,j=0;
 
 function removeall(elid) {
     if (document.getElementById(elid).innerHTML != "") {
@@ -112,10 +112,17 @@ function changeImage9() {
     } else {
         document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
     }
-
-
 }
 
+function changeImage10() {
+    j++;
+
+    if (j % 2 == 0) {
+        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+    }
+}
 
 function collapseit(openit) {
     $(String("#" + openit)).slideToggle();
@@ -136,6 +143,7 @@ function openit(id) {
         "#trigonoiden",
         "#factors",
         "#stats",
+        "#math",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
@@ -154,18 +162,28 @@ function openit(id) {
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
+        "#euclid",
+        "#betagamma",
+        "#parallel",
         "#unitconcal",
         "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
+        "#setop",
+        "#trans",
+        "#bool",
         "#log_values",
         "#log-collapse",
         "#pandc",
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
+        "#adding-all",
 		"#onetwocom-calc",
+
+        "#ninetencom-calc",
+
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
@@ -190,16 +208,22 @@ function openit(id) {
         "#curve",
         "#coor",
         "#mean",
+        "#Meanit",
         "#bcd",
         "#vector",
         "#diffeqn",
         "#maxmin",
+        "#locroots",
         "#tangent",
+        "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
-
+        "#ex3",
+        "#lappro",
+        "#bayes-probabilitycollapse",
+        "#prism",
+        "#anglecon",
     ];
-    console.log(id)
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -218,10 +242,11 @@ function loadfilesafterload() {
         "appjs/searchbar.js",
         "appjs/speechrecoforall.js",
         "appjs/complexlogic.js",
-        "appjs/logValue.js",
         "js/math.min.js",
         "js/plotly-1.35.2.min.js",
-        "appjs/operations_on_fractions.js",
+        "appjs/logValue.js",
+        "appjs/operations_on_fraction.js",
+        "appjs/conicSolve.js"
     ];
     for (i of aroffiles) {
         var scriptelm = document.createElement("script");
