@@ -4304,6 +4304,16 @@ function permutationcal(nval, rval) {
     document.getElementById("combination_div").style.display = "none";
     var val1 = document.getElementById(nval).value;
     var val2 = document.getElementById(rval).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(val1);
+    var testVal2 = regex.test(val2);
+    if (!textVal1 || !testVal2) 
+    {
+        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block"; 
+        return;   
+    }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
     if (isNaN(val3) || isNaN(val4)) {
@@ -4357,6 +4367,16 @@ function combinationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "none";
     var val1 = document.getElementById(nval).value;
     var val2 = document.getElementById(rval).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(val1);
+    var testVal2 = regex.test(val2);
+    if (!textVal1 || !testVal2) 
+    {
+        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block"; 
+        return;   
+    }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
     if (isNaN(val3) || isNaN(val4)) {
