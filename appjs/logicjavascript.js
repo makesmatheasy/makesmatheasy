@@ -4415,7 +4415,7 @@ function Means() {
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(val==null)
     {
@@ -4443,9 +4443,9 @@ function Means() {
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
         for (i = 1; i < val.length; i++) {
-            document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
+            document.getElementById("Meanresult").innerHTML += ` + ${val[i]}`;
         }
-        document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
+        document.getElementById("Meanresult").innerHTML += `)/${val.length} = `;
         document.getElementById("Meanresult").innerHTML += ans.toFixed(5);
         renderMathInElement(document.getElementById("Meanresult"));
     }
@@ -4457,7 +4457,7 @@ function Median() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
-    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(arr==null)
     {
@@ -4485,8 +4485,8 @@ function Median() {
                 : arr[mid];
         document.getElementById(
             "Meanresult"
-        ).innerHTML = `After Sorting:- ${arr}</br>`;
-        document.getElementById("Meanresult").innerHTML += `Median:-`;
+        ).innerHTML = `After Sorting: ${arr}</br>`;
+        document.getElementById("Meanresult").innerHTML += `Median: `;
         document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
         renderMathInElement(document.getElementById("Meanresult"));
     }
@@ -4498,7 +4498,7 @@ function Mode() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
-    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(arr==null)
     {
@@ -4537,7 +4537,7 @@ function Mode() {
                 "Meanresult"
             ).innerHTML += `All Number appeared Just Once`;
         } else {
-            document.getElementById("Meanresult").innerHTML += `Mode is:-${modes}`;
+            document.getElementById("Meanresult").innerHTML += `Mode is: ${modes}`;
         }
     }
 }
@@ -4550,7 +4550,7 @@ function Variance() {
     var val = document.getElementById("getNum").value;
 
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(val==null)
     {
@@ -4582,7 +4582,7 @@ function Variance() {
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num - mean, 2))}`;
             } else {
-                document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num - mean, 2))}`;
+                document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
@@ -4603,7 +4603,7 @@ function std() {
     var val = document.getElementById("getNum").value;
     
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(val==null)
     {
@@ -4635,7 +4635,7 @@ function std() {
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num - mean, 2))}`;
             } else {
-                document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num - mean, 2))}`;
+                document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
