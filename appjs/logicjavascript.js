@@ -5082,7 +5082,28 @@ function onetwoCalc() {
 
 }
 
-//9's 10's compliment
+//----------------
+//7's 8's complement
+function seveneightCalc(){
+    const input = document.getElementById("seveneightnumber").value;
+    let result = document.getElementById("seveneightresult");
+    var seven = "";
+    var eight = "";
+
+    for (var i = 0; i < input.length; i++) {
+        seven += '7' - input[i];
+    }
+    eight = parseInt(seven) + 1;
+    result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
+    result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
+
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (input.search("8") != -1 || input.search("9") != -1  )
+        result.innerHTML = " Invalid Octal Number ";
+}
+
+//9's 10's complement
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
