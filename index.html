@@ -1842,6 +1842,38 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="complexidentitiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Identities</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexidentities','#complexidentities','c','complexidentitiesfav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexpropertiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexproperties','#complexproperties','c','comlexpropertiesfav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="complex1collapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1
                                 complex number</a>
@@ -3495,6 +3527,39 @@
 
 
             </div>
+        </div>
+        <!-- Complex Identities -->
+        <div class="collapse" id="complexidentities">
+            <div class="stopwrap">
+                <div class="coll">
+                    <h4>Identities:</h4>
+                    <div class="left">
+                        <p>\[\left(Z_{1} \space + \space Z_{2}\right)^2 \space = \space \left(Z_{1}\right)^2 \space + \space \left(Z_{2}\right)^2 \space + \space 2 \space Z_{1}Z_{2} \]</p>
+                        <p>\[\left(Z_{1} \space - \space Z_{2}\right)^2 \space = \space \left(Z_{1}\right)^2 \space + \space \left(Z_{2}\right)^2 \space - \space 2 \space Z_{1}Z_{2} \]</p>
+                        <p>\[\left(Z_{1}\right)^2 \space - \space \left(Z_{2}\right)^2 \space = \space \left(Z_{1} \space + \space Z_{2} \right)\left(Z_{1} \space - \space Z_{2} \right) \]</p>
+                        <p>\[\left(Z_{1} \space + \space Z_{2}\right)^3 \space = \space \left(Z_{1}\right)^3 \space + \space 3\left(Z_{1}\right)^2Z_{2} \space + \space 3\left(Z_{2}\right)^2Z_{1} \space + \left(Z_{2}\right)^3 \]</p>
+                        <p>\[\left(Z_{1} \space - \space Z_{2}\right)^3 \space = \space \left(Z_{1}\right)^3 \space - \space 3\left(Z_{1}\right)^2Z_{2} \space + \space 3\left(Z_{2}\right)^2Z_{1} \space - \left(Z_{2}\right)^3 \]</p>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Complex Properties -->
+        <div class="collapse" id="complexproperties">
+            <h4>Properties of Complex Numbers:</h4>
+            <ol type="1" style="color:white; font-size:23px;">
+                <li>The addition of two conjugate complex numbers will result in a real number.</li>
+                <li>The multiplication of two conjugate complex number will also result in a real number.</li>
+                <li>If x and y are the real numbers and x+yi =0, then x =0 and y =0.</li>
+                <li>If p, q, r, and s are the real numbers and p+qi = r+si, then p = r, and q=s.</li>
+                <li>The complex number obeys the commutative law of addition and multiplication.<br> \[Z_{1} \space + \space Z_{2} \space = \space Z_{2} \space + \space Z_{1} \\ Z_{1} \space * \space Z_{2} \space = \space Z_{2} \space * \space Z_{1} \] </li>
+                <li>The complex number obeys the associative law of addition and multiplication.<br> \[\left(Z_{1} \space + \space Z_{2}\right) \space + Z_{3} \space = \space Z_{1} \space + \space \left(Z_{2} \space + \space Z_{3}\right) \\ \left(Z_{1} \space * \space Z_{2}\right) \space * Z_{3} \space = \space Z_{1} \space * \space \left(Z_{2} \space * \space Z_{3}\right) \]</li>
+                <li>The complex number obeys the distributive law.<br> \[Z_{1} \space * \space \left(Z_{2} \space + \space Z_{3}\right) \space = \space Z_{1}*Z_{2} \space + \space Z_{1}*Z_{3} \]</li>
+                <li>If the sum of two complex number is real, and also the product of two complex number is also real, then these complex numbers are conjugate to each other.</li>
+                <li>For any two complex numbers, say Z<sub>1</sub> and Z<sub>2</sub>, then \[\mid Z_{1} \space + \space Z_{2}\mid \space \le \space \mid Z_{1}\mid \space + \space \mid Z_{2}\mid \] </li>
+                <li>The result of the multiplication of two complex numbers and its conjugate value should result in a complex number and it should be a positive value.</li>
+              </ol>
         </div>
 
         <!-- Complex Number Calculations Begin-->
