@@ -415,6 +415,23 @@
                                                                            id="imgClickAndChange1"></a></li>
         <div class="collapse" id="conictoggle" style="color:green;margin:0.625rem;padding-left:0.625rem">
             <div class="dropdown-divider"></div>
+		
+		 <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="circlecollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Circle</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Circle','#circlecollapse','c','circlefav')"><img
+                                        id="circlefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+		
             <li>
                 <table class="table">
                     <tr>
@@ -1858,6 +1875,38 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="complexidentitiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Identities</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexidentities','#complexidentities','c','complexidentitiesfav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexpropertiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexproperties','#complexproperties','c','comlexpropertiesfav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="complex1collapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1
                                 complex number</a>
@@ -2684,6 +2733,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
@@ -3638,6 +3688,39 @@
 
             </div>
         </div>
+        <!-- Complex Identities -->
+        <div class="collapse" id="complexidentities">
+            <div class="stopwrap">
+                <div class="coll">
+                    <h4>Identities:</h4>
+                    <div class="left">
+                        <p>\[\left(Z_{1} \space + \space Z_{2}\right)^2 \space = \space \left(Z_{1}\right)^2 \space + \space \left(Z_{2}\right)^2 \space + \space 2 \space Z_{1}Z_{2} \]</p>
+                        <p>\[\left(Z_{1} \space - \space Z_{2}\right)^2 \space = \space \left(Z_{1}\right)^2 \space + \space \left(Z_{2}\right)^2 \space - \space 2 \space Z_{1}Z_{2} \]</p>
+                        <p>\[\left(Z_{1}\right)^2 \space - \space \left(Z_{2}\right)^2 \space = \space \left(Z_{1} \space + \space Z_{2} \right)\left(Z_{1} \space - \space Z_{2} \right) \]</p>
+                        <p>\[\left(Z_{1} \space + \space Z_{2}\right)^3 \space = \space \left(Z_{1}\right)^3 \space + \space 3\left(Z_{1}\right)^2Z_{2} \space + \space 3\left(Z_{2}\right)^2Z_{1} \space + \left(Z_{2}\right)^3 \]</p>
+                        <p>\[\left(Z_{1} \space - \space Z_{2}\right)^3 \space = \space \left(Z_{1}\right)^3 \space - \space 3\left(Z_{1}\right)^2Z_{2} \space + \space 3\left(Z_{2}\right)^2Z_{1} \space - \left(Z_{2}\right)^3 \]</p>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Complex Properties -->
+        <div class="collapse" id="complexproperties">
+            <h4>Properties of Complex Numbers:</h4>
+            <ol type="1" style="color:white; font-size:23px;">
+                <li>The addition of two conjugate complex numbers will result in a real number.</li>
+                <li>The multiplication of two conjugate complex number will also result in a real number.</li>
+                <li>If x and y are the real numbers and x+yi =0, then x =0 and y =0.</li>
+                <li>If p, q, r, and s are the real numbers and p+qi = r+si, then p = r, and q=s.</li>
+                <li>The complex number obeys the commutative law of addition and multiplication.<br> \[Z_{1} \space + \space Z_{2} \space = \space Z_{2} \space + \space Z_{1} \\ Z_{1} \space * \space Z_{2} \space = \space Z_{2} \space * \space Z_{1} \] </li>
+                <li>The complex number obeys the associative law of addition and multiplication.<br> \[\left(Z_{1} \space + \space Z_{2}\right) \space + Z_{3} \space = \space Z_{1} \space + \space \left(Z_{2} \space + \space Z_{3}\right) \\ \left(Z_{1} \space * \space Z_{2}\right) \space * Z_{3} \space = \space Z_{1} \space * \space \left(Z_{2} \space * \space Z_{3}\right) \]</li>
+                <li>The complex number obeys the distributive law.<br> \[Z_{1} \space * \space \left(Z_{2} \space + \space Z_{3}\right) \space = \space Z_{1}*Z_{2} \space + \space Z_{1}*Z_{3} \]</li>
+                <li>If the sum of two complex number is real, and also the product of two complex number is also real, then these complex numbers are conjugate to each other.</li>
+                <li>For any two complex numbers, say Z<sub>1</sub> and Z<sub>2</sub>, then \[\mid Z_{1} \space + \space Z_{2}\mid \space \le \space \mid Z_{1}\mid \space + \space \mid Z_{2}\mid \] </li>
+                <li>The result of the multiplication of two complex numbers and its conjugate value should result in a complex number and it should be a positive value.</li>
+              </ol>
+        </div>
 
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -3648,7 +3731,7 @@
                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                 <label> Enter the imaginary part : &nbsp; &nbsp;</label>
                 <input type="number" id="cimg" class="form__field" placeholder="Imag"
-                       style="width:3rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
                 <select id="comop" class="btn btn-outline-light">
@@ -3669,16 +3752,14 @@
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
 
-
-            <h1>Find polar Representaion of complex number</h1>
-
+            <h1>Polar representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp; </label>
                 <input type="number" id="cpreal" class="form__field" placeholder="Real"
                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                 <label> Enter the imaginary part : &nbsp; &nbsp;</label>
                 <input type="number" id="cpimg" class="form__field" placeholder="Imag"
-                       style="width:3rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light" onclick="polar()">
@@ -3711,18 +3792,18 @@
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of first number : </label>
                 <input type="number" id="creal1" class="form__field" placeholder="Real"
-                       style="width:3rem;display:inline;margin-right: 6.5rem;">
+                    style="width:3rem;display:inline;margin-right: 6.5rem;">
                 <label> Enter the imaginary part of first number : </label>
                 <input type="number" id="cimg1" class="form__field" placeholder="Imag"
-                       style="width:3rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part of second number : </label>
                 <input type="number" id="creal2" class="form__field" placeholder="Real"
-                       style="width:3rem;display:inline;margin-right: 5rem;">
+                    style="width:3rem;display:inline;margin-right: 5rem;">
                 <label> Enter the imaginary part of second number : </label>
                 <input type="number" id="cimg2" class="form__field" placeholder="Imag"
-                       style="width:3rem;display:inline;">
+                    style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
                 <select id="comval" class="btn btn-outline-light">
@@ -4217,6 +4298,144 @@
                 invertible</p>
             <p>17. The determinant of A is defined for all matrices A</p>
         </div>
+		
+		       <div class="collapse" id="circlecollapse">
+            <div class="stopwrap">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equation\]</th>
+                        <th scope="col">\[Graph\]</th>
+                        <th scope="col">\[Centre\]</th>
+                        <th scope="col">\[Radius\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td><img src="images/circle1.png" class="img-fluid"></td>
+                        <td>\[(0,0)\]</td>
+                        <td>\[a\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[(x-h)^2+(y-k)^2=a^2\]</th>
+                        <td><img src="images/circle2.png" class="img-fluid"></td>
+                        <td>\[(h,k)\]</td>
+                        <td>\[a\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                        <td><img src="images/circle3.png" class="img-fluid"></td>
+                        <td>\[(-g,-f)\]</td>
+                        <td>\[\sqrt{g^2+f^2-c}\]</td>
+                    </tr>
+                    
+
+                    </tbody>
+                </table>
+                <h2>Equations of Tangent of all Circles </h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equations\space of\]<br>\[Circle\]</th>
+                        <th scope="col">\[Point/Line\space of\space contact\space of \space \]<br>\[circle
+                            \]<br>\[\ m=slope \space of \space tangent\]
+                        </th>
+                        <th scope="col">\[Equation\space of\space \]<br>\[ tangent\]
+                        </th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[(x1,y1)\]</td>
+                        <td>\[xx1 +yy1=a^2\]</td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[(a \space cos\theta,b \space sin\theta)\]</td>
+                        <td>\[x \space cos\theta + y \space sin\theta=a\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[y=mx+c\]</td>
+                        <td>\[y=mx±a\sqrt{1+m^2}\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                        <td>\[(x1,y1)\]</td>
+                        <td>\[xx1+yy1+g(x+x1)+f(y+y1)+c=0\]</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2>Equations of Normal of all Circles</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">\[Equations\space of\]<br>\[Circle\]</th>
+                            <th scope="col">\[Point/Line\space of\space contact\space of \space \]<br>\[circle
+                                \]<br>\[\ m=slope\space of \space tangent\]
+                            </th>
+                            <th scope="col">\[Equation\space of\space\]<br>\[\ Normal\]
+                            </th>
+                            
+                        </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">\[x^2+y^2=a^2\]</th>
+                            <td>\[(x1,y1)\]</td>
+                            <td>\[\frac{x}{x1}=\frac{y}{y1}\]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">\[x^2+y^2=a^2\]</th>
+                            <td>\[(a \space cos\theta,b \space sin\theta)\]</td>
+                            <td>\[y=x\space tan\theta\]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">\[x^2+y^2=a^2\]</th>
+                            <td>\[y=mx+c\]</td>
+                            <td>\[x+my=±a\sqrt{1+m^2}\]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                            <td>\[(x1,y1)\]</td>
+                            <td>\[\frac{y-y1}{x-x1}=\frac{y1+f}{x1+g}\]</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Director Circle of all Circles</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equations\space of\space Circle\]</th>
+                        <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[x^2+y^2=2 \space a^2\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[(x-h)^2+(y-k)^2=a^2\]</th>
+                        <td>\[(x-h)^2+(y-k)^2=2 \space a^2\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                        <td>\[(x+g)^2+(y+f)^2=2(g^2+f^2-c)\]</td>
+
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
 
         <div class="collapse" id="parabolacollapse">
             <!--Calculator for trivial parabola solution-->
@@ -7398,10 +7617,25 @@
                 <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
                 <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
             </ul>
-            <p>7. Absorption Law - </p>
+            <p>7. Absorption/ Redundancy Law - </p>
             <ul>
                 <li style="font-size: 20px; color: white;">A + A.B = A</li>
                 <li style="font-size: 20px; color: white;">A(A+B) = A</li>
+            </ul>
+            <p>8. Commutative Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + B = B + A</li>
+                <li style="font-size: 20px; color: white;">A.B = B.A</li>
+            </ul>
+            <p>9. Associative Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + (B + C) = (A + B) + C</li>
+                <li style="font-size: 20px; color: white;">A.(B.C) = (A.B).C</li>
+            </ul>
+            <p>10. Double Negation Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A<sup>'</sup><sup>'</sup> = A</li>
+                <li style="font-size: 20px; color: white;">B<sup>'</sup><sup>'</sup> = B</li>
             </ul>
         </div>
         <!--    start of calculator -->
@@ -7598,6 +7832,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
+                        <h2>One's and Two's Complement</h2><br>
                         <h5>Enter Binary number</h5>
                         <input type="number" class="form__field" id="onetwonumber">
                     </div>
@@ -7612,6 +7847,28 @@
                             Find
                         </button>
                         <label class="form__field" id="onetworesult"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <br><br><h2>Seven's and Eight's Complement</h2><br>
+                        <h5>Enter Octal number</h5>
+                        <input type="number" class="form__field" id="seveneightnumber">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="seveneightCalc()">
+                            Find
+                        </button>
+                        <label class="form__field" id="seveneightresult"></label>
                     </div>
                 </div>
             </div>

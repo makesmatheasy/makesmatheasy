@@ -132,6 +132,8 @@ function openit(id) {
     var ids = [
         "#complex1collapse",
         "#complex2collapse",
+        "#complexidentities",
+        "#complexproperties",
         "#equationssolver",
         "#mulsolwithsteps",
         "#table",
@@ -187,6 +189,7 @@ function openit(id) {
         "#octal-binary",
         "#binary-hexadecimal",
         "#inversetrigonoiden",
+	"#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",

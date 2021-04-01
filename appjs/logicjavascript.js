@@ -4040,10 +4040,16 @@ function factorialsol(factorialval) {
     if (isNaN(num1)) {
         desc.innerHTML = "Enter a number.";
         ans.innerHTML = "";
-    } else if (num1 == 0 || num1 == 1) {
+    } 
+    else if(num1<0)
+    {
+        desc.innerHTML = "Factorial is not defined for negative integer since, gamma function is not defined for negative integer";
+        ans.innerHTML = "";
+    }
+    else if (num1 == 0 || num1 == 1) {
         ans.innerHTML = "";
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1`;
-    } else if (num1 <= 15) {
+    } else if (num1 <= 15 && num1 >0) {
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1  `;
         let calc = 1;
         for (i = 2; i <= num1; i++) {
@@ -4298,6 +4304,16 @@ function permutationcal(nval, rval) {
     document.getElementById("combination_div").style.display = "none";
     var val1 = document.getElementById(nval).value;
     var val2 = document.getElementById(rval).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(val1);
+    var testVal2 = regex.test(val2);
+    if (!textVal1 || !testVal2) 
+    {
+        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block"; 
+        return;   
+    }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
     if (isNaN(val3) || isNaN(val4)) {
@@ -4351,6 +4367,16 @@ function combinationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "none";
     var val1 = document.getElementById(nval).value;
     var val2 = document.getElementById(rval).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(val1);
+    var testVal2 = regex.test(val2);
+    if (!textVal1 || !testVal2) 
+    {
+        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block"; 
+        return;   
+    }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
     if (isNaN(val3) || isNaN(val4)) {
@@ -4409,7 +4435,7 @@ function Means() {
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(val==null)
     {
@@ -4437,9 +4463,9 @@ function Means() {
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
         for (i = 1; i < val.length; i++) {
-            document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
+            document.getElementById("Meanresult").innerHTML += ` + ${val[i]}`;
         }
-        document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
+        document.getElementById("Meanresult").innerHTML += `)/${val.length} = `;
         document.getElementById("Meanresult").innerHTML += ans.toFixed(5);
         renderMathInElement(document.getElementById("Meanresult"));
     }
@@ -4451,7 +4477,7 @@ function Median() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
-    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(arr==null)
     {
@@ -4479,8 +4505,8 @@ function Median() {
                 : arr[mid];
         document.getElementById(
             "Meanresult"
-        ).innerHTML = `After Sorting:- ${arr}</br>`;
-        document.getElementById("Meanresult").innerHTML += `Median:-`;
+        ).innerHTML = `After Sorting: ${arr}</br>`;
+        document.getElementById("Meanresult").innerHTML += `Median: `;
         document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
         renderMathInElement(document.getElementById("Meanresult"));
     }
@@ -4492,7 +4518,7 @@ function Mode() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
-    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(arr==null)
     {
@@ -4531,7 +4557,7 @@ function Mode() {
                 "Meanresult"
             ).innerHTML += `All Number appeared Just Once`;
         } else {
-            document.getElementById("Meanresult").innerHTML += `Mode is:-${modes}`;
+            document.getElementById("Meanresult").innerHTML += `Mode is: ${modes}`;
         }
     }
 }
@@ -4544,7 +4570,7 @@ function Variance() {
     var val = document.getElementById("getNum").value;
 
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(val==null)
     {
@@ -4576,7 +4602,7 @@ function Variance() {
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num - mean, 2))}`;
             } else {
-                document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num - mean, 2))}`;
+                document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
@@ -4597,7 +4623,7 @@ function std() {
     var val = document.getElementById("getNum").value;
     
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
     
     if(val==null)
     {
@@ -4629,7 +4655,7 @@ function std() {
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num - mean, 2))}`;
             } else {
-                document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num - mean, 2))}`;
+                document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
@@ -5056,7 +5082,28 @@ function onetwoCalc() {
 
 }
 
-//9's 10's compliment
+//----------------
+//7's 8's complement
+function seveneightCalc(){
+    const input = document.getElementById("seveneightnumber").value;
+    let result = document.getElementById("seveneightresult");
+    var seven = "";
+    var eight = "";
+
+    for (var i = 0; i < input.length; i++) {
+        seven += '7' - input[i];
+    }
+    eight = parseInt(seven) + 1;
+    result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
+    result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
+
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (input.search("8") != -1 || input.search("9") != -1  )
+        result.innerHTML = " Invalid Octal Number ";
+}
+
+//9's 10's complement
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
