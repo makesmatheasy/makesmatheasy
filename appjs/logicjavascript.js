@@ -2371,6 +2371,29 @@ function cubosolve() {
         diagoutput.innerHTML = "";
     }
 }
+function prismsolve() {
+    var length = document.getElementById("inputprismlength").value;
+    var breadth = document.getElementById("inputprismbreadth").value;
+    var height = document.getElementById("inputprismheight").value;
+    var side = document.getElementById("inputprismside").value;
+    var voloutput = document.getElementById("resultofvolprism");
+    var tsaoutput = document.getElementById("resultoftsaprism");
+    var voltemp = "";
+    var tsatemp = "";
+    if ((length != "") && (breadth != "") && (height != "") && (side != "")) {
+        voltemp += "\\[(" + length + "\\times" + breadth + "\\times" + height + ")" + "\\div" + 2 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space " + eval(String((length * breadth * height ) / 2)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ " + breadth + "(" + length + "+" + height + ")" + "+" + 2 +  "\\times"  + length + "\\times" + side + "\\]";
+        tsatemp += "\\[Surface \\space Area \\space of \\space Prism \\space is \\space" + eval(String((breadth*height) + (breadth *length)+ (2*length*side))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+}
 
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
@@ -3846,18 +3869,18 @@ function datau(a) {
     switch (a) {
         case "1":
             return 0.125;
-        case "2":
-            return 1;
-        case "3":
-            return 1000;
-        case "4":
-            return 1000000;
-        case "5":
-            return 1000000000;
-        case "6":
-            return 1000000000000;
-        case "7":
-            return 1000000000000000;
+          case "2":
+               return 1;
+          case "3":
+               return 1024;
+          case "4":
+            return 1024*1024;
+          case "5":
+            return 1024*1024*1024;
+          case "6":
+             return 1024*1024*1024*1024;
+          case "7":
+            return 1024*1024*1024*1024*1024;
 
     }
 }
@@ -3885,7 +3908,7 @@ function simple_interest() {
     }
     else
     {
-        si = parseFloat((p * t * r) / 100).toFixed(3);
+        si = parseFloat((p * t * r) / 100);
         if(si<0)
         {
             document.getElementById("simpleinterstoutput").innerHTML = "Negative values not allowed";
@@ -3893,11 +3916,32 @@ function simple_interest() {
         }
         else
         {
-            amount = p * Math.pow(1 + r / 100, t);
+            
+            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si.toFixed(5);
+
+            val = document.getElementById("comp").value;
+            
+            n=1;
+            if (val == "Compounded Annually") {
+                n=1;
+            } 
+            else if (val == "Compounded Half-yearly") {
+                n=2;
+            }
+            else if (val == "Compounded Quaterly") {
+                n=4;
+            } 
+            else if( val == "Compounded Monthly"){
+                n=12;
+            }
+
+            amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
-            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si;
-            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci;
+            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci.toFixed(5);
         }
+
+
+        
     }
 }
 
@@ -4620,7 +4664,7 @@ function convertBinDec() {
     if (toBase === "Decimal") to = 10;
     else to = 2;
 
-    result.innerHTML = parseFloat(input, from).toString(to);
+    result.innerHTML = parseInt(input, from).toString(to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
@@ -4729,6 +4773,54 @@ function convertBinOct() {
             result.innerHTML = "Binary numbers can only have 0's and 1's";
 
     }
+}
+
+//----------------------------
+//Function for addition of any number system
+function addBinDecHexOct(){
+    const firstBase = document.getElementById("adding-all-select1").value;
+    const secondBase = document.getElementById("adding-all-select2").value;
+    const input1 = document.getElementById("adding-all-input1").value;
+    const input2 = document.getElementById("adding-all-input2").value;
+    const resultType= document.getElementById("adding-all-result-type").value;
+    let result = document.getElementById("adding-all-result");
+    var x1;
+    var x2;
+
+    if(firstBase === "Binary")
+    x1=parseInt(input1,2);
+    else if (firstBase === "Octal")
+    x1=parseInt(input1,8);
+    else if(firstBase === "Hexa Decimal")
+    x1=parseInt(input1,16);
+    else if(firstBase === "Decimal")
+    x1=parseInt(input1);
+
+    if(secondBase === "Binary")
+    x2=parseInt(input2,2);
+    else if (secondBase === "Octal")
+    x2=parseInt(input2,8);
+    else if(secondBase === "Hexa Decimal")
+    x2=parseInt(input2,16);
+    else if(secondBase === "Decimal")
+    x2=parseInt(input2);
+
+    var x3=x1+x2;
+    
+    if(resultType === "Binary")
+    result.innerHTML="Answer in binary="+x3.toString(2);
+    else if (resultType === "Octal")
+    result.innerHTML="Answer in Octal="+x3.toString(8);
+    else if(resultType === "Hexa Decimal")
+    result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
+    else if(resultType === "Decimal")
+    result.innerHTML="Answer in Decimal="+x3.toString();
+
+    
+    
+    
+    
+
 }
 
 //----------------------------

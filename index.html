@@ -1635,6 +1635,27 @@
                 </table>
             </li>
 
+            <!--Start of Addition -->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="add-all-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;"> Addition Of any Number System </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#adding-all','c','adding-all-imgfav')"><img
+                                        id="adding-all-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--end -->
+
             <!--Binary to Decimal to hexadecimal converter start-->
 
             <li>
@@ -6152,7 +6173,16 @@
                        placeholder="Enter rate of interest(%)"/>
                 <br>
                 <br>
-                <button class="btn btn-outline-light" onclick="simple_interest()">Find</button>
+                <div class="form-group">
+                    <span style="color: var(--appimage);">For Compound Interest related calculations:&nbsp;</span>
+                    <select id="comp" class="btn btn-outline-light">
+                        <option>Compounded Annually</option>
+                        <option>Compounded Half-yearly</option>
+                        <option>Compounded Quaterly</option>
+                        <option>Compounded Monthly</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline-light" onclick="simple_interest();">Find</button>
                 <br>
                 <div style="color:var(--appimage); font-size: large;" id="simpleinterstoutput"></div>
                 <div id="compoundinterestoutput" style="color: var(--appimage); font-size: large"></div>
@@ -6590,39 +6620,35 @@
                 triangles are congruent
             </p>
             <br>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-2.png"
-                 style="margin-left: 50px;" alt="">
+            <img class="col-8" src="images/SSS.png" alt="">
             <br><br>
             <p>2. SAS Property (Side-Angle-Side) - If any two sides and the angle included
                 between the sides of one triangle are equivalent to the corresponding two sides
                 and the angle between the sides of the second triangle, then the two triangles
                 are said to be congruent by SAS rule. </p>
             <br>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-3.png"
-                 alt="">
+            <img class="col-8" src="images/SAS.png" alt="">
             <br><br>
             <p>3. ASA Property (Angle-Side-Angle) - If any two angles and the side included
                 between the angles of one triangle are equivalent to the corresponding two
                 angles and side included between the angles of the second triangle, then the two
                 triangles are said to be congruent by ASA rule.</p>
             <br>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-4.png"
-                 alt="">
+            <img class="col-8" src="images/ASA.png" alt="">
             <br><br>
             <p>4. AAS Property (Angle-Angle-Side) - If any two angles and a non included side of
                 one triangle are equivalent to the corresponding two angles and the non included
                 side of the second triangle, then the two triangles are said to be congruent by
                 AAS rule.</p>
             <br>
-            <img src="images/AASprop.png" alt="" style="width: 750px;height: 361px;">
+            <img class="col-8" src="images/AAS.png" alt="">
             <br><br>
             <p>5. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side
                 of a right- angled triangle is equivalent to the hypotenuse and a side of the
                 second right- angled triangle, then the two right triangles are said to be
                 congruent by RHS rule.</p>
             <br>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Congruence-of-Triangles-5.png"
-                 alt="">
+            <img class="col-8" src="images/RHS.png" alt="">
             <br><br><br><br>
             <h2>Similarity of Triangles</h2>
             <br>
@@ -6687,8 +6713,14 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#hemisphere"
                            style="text-decoration:none;"
-                           href="#">HemiSphere</a></td>
+                           href="#">Hemisphere</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#prism"
+                           style="text-decoration:none;"
+                           href="#">Prism</a></td>
+                </tr>
+                
             </table>
         </div>
 
@@ -6802,6 +6834,15 @@
                             <a data-toggle="modal" data-target="#speedcon"
                                style="text-decoration:none;"
                                href="#">Speed</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#datacon"
+                               style="text-decoration:none;"
+                               href="#">Data</a>
                         </div>
                     </td>
                 </tr>
@@ -7308,6 +7349,84 @@
             </div>
         </div>
         <!-- End of Decimal / Binary -->
+
+        <!-- Start of Addition of any number system -->
+        <div class="collapse" id="adding-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>1st Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="adding-all-select1" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="adding-all-input1" value="0"
+                           class="form__field"
+                           oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>2nd Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="adding-all-select2" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form__field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="adding-all-input2" value="0"
+                    class="form__field"
+                    oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Result Of Addition</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="adding-all-result-type" class="form__field"
+                    onchange="addBinDecHexOct()">
+                <option class="form__field" style="background-color: #232a36;">
+                    
+                </option>    
+                <option class="form__field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Hexa Decimal
+                </option>
+            </select>
+                </div>
+                <label class="form__group" id="adding-all-result">0</label>
+            </div>
+        </div>
+        <!-- End of Addition of any number system -->
 
 
         <!-- Start of Bitwise Calculator -->
@@ -9889,6 +10008,63 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="prism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Prism</h5>
+                                    <p class="text-center">\[V=(l \times b \times h) / 2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Prism</h5>
+                                    <p class="text-center">\[b(h+l) \space + \space 2 \times l \times s\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/prism.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <p>Fill All Four</p>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Length (cm)"
+                                       id="inputprismlength" oninput="prismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Breadth (cm)"
+                                       id="inputprismbreadth" oninput="prismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Height (cm)"
+                                       id="inputprismheight" oninput="prismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Side (cm)"
+                                       id="inputprismside" oninput="prismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvolprism"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsaprism"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

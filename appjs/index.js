@@ -181,6 +181,7 @@ function openit(id) {
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
+        "#adding-all",
 		"#onetwocom-calc",
 
         "#ninetencom-calc",
@@ -222,6 +223,7 @@ function openit(id) {
         "#ex3",
         "#lappro",
         "#bayes-probabilitycollapse",
+        "#prism",
         "#anglecon",
     ];
     for (i = 0; i < ids.length; i++) {

@@ -358,6 +358,12 @@ $(document).ready(function () {
     closenav();
     clearall();
      });
+     //Function of Addition of Any Number System 
+    $("#add-all-btn").click(function(){
+        openit("#adding-all");
+        closenav();
+        clearall();
+    });
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
