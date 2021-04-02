@@ -3934,24 +3934,31 @@ function simple_interest() {
     p = document.getElementById("first").value;
     t = document.getElementById("second").value;
     r = document.getElementById("third").value;
+    var sitemp1= document.getElementById("simpleinterstoutput1");
+    var sitemp2= document.getElementById("simpleinterstoutput2");
+    sitemp1.innerHTML="";
+    sitemp2.innerHTML="";
     if(p=="" || t=="" || r=="")
     {
-        document.getElementById("simpleinterstoutput").innerHTML = "All the fields are required";
-        document.getElementById("compoundinterestoutput").innerHTML = "";
+        document.getElementById("simpleinterstoutput1").innerHTML = "All the fields are required";
+        document.getElementById("compoundinterestoutput1").innerHTML = "";
     }
     else
     {
         si = parseFloat((p * t * r) / 100);
         if(si<0)
         {
-            document.getElementById("simpleinterstoutput").innerHTML = "Negative values not allowed";
-            document.getElementById("compoundinterestoutput").innerHTML = "";
+            document.getElementById("simpleinterstoutput1").innerHTML = "Negative values not allowed";
+            document.getElementById("compoundinterestoutpu1t").innerHTML = "";
         }
         else
         {
             
-            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si.toFixed(5);
+            document.getElementById("simpleinterstoutput1").innerHTML = "\\[Simple \\space Interest = \\space \\frac{1}{100} \\times p \\times t \\times r \\]";
+            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]";
 
+            renderMathInElement(document.getElementById("simpleinterstoutput1"));
+            renderMathInElement(document.getElementById("simpleinterstoutput2"));
             val = document.getElementById("comp").value;
             
             n=1;
@@ -3970,11 +3977,11 @@ function simple_interest() {
 
             amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
-            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci.toFixed(5);
-        }
-
-
-        
+            document.getElementById("compoundinterestoutput1").innerHTML = "\\[Compound \\space Interest =P\\left(1+\\frac{r}{n}\\right)^{n t}\\]"
+            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]";
+            renderMathInElement(document.getElementById("compoundinterestoutput1"));
+            renderMathInElement(document.getElementById("compoundinterestoutput2"));
+        } 
     }
 }
 
@@ -4526,7 +4533,6 @@ function Median() {
     }
 
     arr = JSON.stringify(arr)
-    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
 
     arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
@@ -4542,12 +4548,13 @@ function Median() {
         let median =
             len % 2 === 0
                 ? (parseFloat(arr[mid]) + parseFloat(arr[mid - 1])) / 2
-                : arr[mid];
+                : parseInt(arr[mid]);
         document.getElementById(
             "Meanresult"
         ).innerHTML = `After Sorting: ${arr}</br>`;
+        var med = median.toFixed(5);
         document.getElementById("Meanresult").innerHTML += `Median: `;
-        document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
+        document.getElementById("Meanresult").innerHTML += med;
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
@@ -5143,7 +5150,35 @@ function seveneightCalc(){
         result.innerHTML = " Invalid Octal Number ";
 }
 
+
+//--------------------
+//15's 16's compliment
+function fiftnsixtnCalc() {
+    const input = document.getElementById("fiftnsixtnnumber").value;
+    let result = document.getElementById("fiftnsixtnresult");
+    var fiftn = "";
+    var sixtn = "";
+    for (var i = 0; i < input.length; i++) {
+        fiftn += (16 - parseInt(input[i],16)).toString(16);
+
+    }
+    sixtn = (parseInt(fiftn,16) + 1).toString(16);
+    result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
+    result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+
+
+    if (input == "") {
+        result.innerHTML = "";
+    }
+    if(fiftn == "NaN"){
+        result.innerHTML = "Invalid Hexa Decimal Number"
+    }
+
+}
+
+
 //9's 10's complement
+
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");

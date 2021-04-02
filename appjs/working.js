@@ -102,6 +102,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#3dgeobtn").click(function () {
+        openit("#3dgeo");
+        closenav();
+        clearall();
+    })
+
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
@@ -441,6 +447,12 @@ $(document).ready(function () {
       closenav();
       clearall();
   });
+    
+    $("#bt-collapsebtn").click(function(){
+        openit("#bt-collapse");
+        closenav();
+        clearall();
+    });
 
     $("#bcdbtn").click(function(){
         openit("#bcd");
