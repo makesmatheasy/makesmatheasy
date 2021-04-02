@@ -5447,3 +5447,45 @@ function angleplot() {
     ctx.stroke();
 
 }
+function fa(x)
+{
+    if(x==1)
+        return 1;
+    return x * fa(x-1);
+}
+
+function rankcal() {
+
+    var input = document.getElementById("rankcal-input").value;
+    let result = document.getElementById("rankcal-result");
+    input = input.toUpperCase();
+    var s = input.length;
+    var m = fa(s);
+    var ans =1;
+    var c;
+    for (var j=0; j<s;++j)
+    {
+        m /= s-j;
+        c = ran(input,j,s-1);
+        ans = ans+ (c*m);
+    }
+    if(input.match(/^[A-Za-z]+$/))
+        {
+            result.innerHTML = ans;
+        }
+    else
+        result.innerHTML = "Invalid input use alphabet only";
+        
+}
+function ran(x,y,z)
+{
+    var c = 0;
+    for (var j=y+1; j<=z;++j)
+    {
+        if(x[j]<=x[y])
+        {
+            c++;
+        }
+    }
+    return c;
+}
