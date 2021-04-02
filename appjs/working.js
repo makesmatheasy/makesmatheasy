@@ -78,6 +78,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#aodbtn").click(function () {
+        openit("#aod");
+        closenav();
+        clearall();
+    });
+
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();
