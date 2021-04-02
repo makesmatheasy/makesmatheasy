@@ -5153,20 +5153,32 @@ function onetwoCalc() {
 function seveneightCalc(){
     const input = document.getElementById("seveneightnumber").value;
     let result = document.getElementById("seveneightresult");
+    let work = document.getElementById("seveneightworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 7's Complement -</h5> &emsp;"
     var seven = "";
     var eight = "";
 
     for (var i = 0; i < input.length; i++) {
+        print+="7";
         seven += '7' - input[i];
     }
+    result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
     eight = parseInt(seven) + 1;
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
+    
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+seven+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
+    print+=seven+" + 1</span> = <span style='text-decoration: underline;'>"+eight+"</span>";
+    work.innerHTML = print;
 
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search(/^[0-7]+$/) == -1)
+        work.innerHTML = "";
+    } else if (input.search(/^[0-7]+$/) == -1){
         result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
+        work.innerHTML = "";
+    }
 }
 
 
