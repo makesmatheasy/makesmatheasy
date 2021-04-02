@@ -2915,6 +2915,19 @@ function sinvlap() {
 function orderas() {
     document.getElementById("orderresult").innerHTML = "";
     var val = document.getElementById("ordergetval").value;
+    val=val.trim()
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("orderresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+
+    val = val.substring(2,val.length-2)
+
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
@@ -2946,6 +2959,18 @@ function orderas() {
 function orderde() {
     document.getElementById("orderresult").innerHTML = "";
     var val = document.getElementById("ordergetval").value;
+    val=val.trim()
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+    if(val==null)
+    {
+        document.getElementById("orderresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+
+    val = val.substring(2,val.length-2)
 
     val = val.split(" ");
     val = val.filter(function (str) {
@@ -4372,9 +4397,9 @@ function combinationcal(nval, rval) {
     var testVal2 = regex.test(val2);
     if (!textVal1 || !testVal2) 
     {
-        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
-        document.getElementById("premutation_div_div2").style.display = "none";
-        document.getElementById("permutation_div_div1").style.display = "block"; 
+        document.getElementById("combination_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("combination_div_div2").style.display = "none";
+        document.getElementById("combination_div_div1").style.display = "block"; 
         return;   
     }
     var val3 = parseInt(val1);
