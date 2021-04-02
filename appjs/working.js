@@ -84,6 +84,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#straightlinebtn").click(function () {
+        openit("#straightline");
+        closenav();
+        clearall();
+    });
+
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();
