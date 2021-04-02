@@ -5213,9 +5213,12 @@ function fiftnsixtnCalc() {
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
+    let work = document.getElementById("ninetenworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 9's Complement -</h5> &emsp;"
     var nine = "";
     var ten = "";
     for (var i = 0; i < input.length; i++) {
+        print+="9";
         nine += '9' - input[i];
 
     }
@@ -5223,6 +5226,10 @@ function ninetenCalc() {
     result.innerHTML = "Nine's complement of " + input + " is " + parseInt(nine) + "<br>";
     result.innerHTML += "Ten's complement of " + input + " is " + ten + "<br>";
 
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+nine+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 10's Complement -</h5> &emsp; 9's Complement + 1 = 10's Complement <br>&emsp; "
+    print+=nine+" + 1</span> = <span style='text-decoration: underline;'>"+ten+"</span>";
+    work.innerHTML = print;
 
     if (input == "") {
         result.innerHTML = "";
