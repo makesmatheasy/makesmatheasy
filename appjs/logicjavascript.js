@@ -3926,24 +3926,31 @@ function simple_interest() {
     p = document.getElementById("first").value;
     t = document.getElementById("second").value;
     r = document.getElementById("third").value;
+    var sitemp1= document.getElementById("simpleinterstoutput1");
+    var sitemp2= document.getElementById("simpleinterstoutput2");
+    sitemp1.innerHTML="";
+    sitemp2.innerHTML="";
     if(p=="" || t=="" || r=="")
     {
-        document.getElementById("simpleinterstoutput").innerHTML = "All the fields are required";
-        document.getElementById("compoundinterestoutput").innerHTML = "";
+        document.getElementById("simpleinterstoutput1").innerHTML = "All the fields are required";
+        document.getElementById("compoundinterestoutput1").innerHTML = "";
     }
     else
     {
         si = parseFloat((p * t * r) / 100);
         if(si<0)
         {
-            document.getElementById("simpleinterstoutput").innerHTML = "Negative values not allowed";
-            document.getElementById("compoundinterestoutput").innerHTML = "";
+            document.getElementById("simpleinterstoutput1").innerHTML = "Negative values not allowed";
+            document.getElementById("compoundinterestoutpu1t").innerHTML = "";
         }
         else
         {
             
-            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si.toFixed(5);
+            document.getElementById("simpleinterstoutput1").innerHTML = "\\[Simple \\space Interest = \\space \\frac{1}{100} \\times p \\times t \\times r \\]";
+            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]";
 
+            renderMathInElement(document.getElementById("simpleinterstoutput1"));
+            renderMathInElement(document.getElementById("simpleinterstoutput2"));
             val = document.getElementById("comp").value;
             
             n=1;
@@ -3962,11 +3969,11 @@ function simple_interest() {
 
             amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
-            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci.toFixed(5);
-        }
-
-
-        
+            document.getElementById("compoundinterestoutput1").innerHTML = "\\[Compound \\space Interest =P\\left(1+\\frac{r}{n}\\right)^{n t}\\]"
+            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]";
+            renderMathInElement(document.getElementById("compoundinterestoutput1"));
+            renderMathInElement(document.getElementById("compoundinterestoutput2"));
+        } 
     }
 }
 
