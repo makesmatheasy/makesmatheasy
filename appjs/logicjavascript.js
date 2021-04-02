@@ -5093,10 +5093,13 @@ function convertBinhex() {
 function onetwoCalc() {
     const input = document.getElementById("onetwonumber").value;
     let result = document.getElementById("onetworesult");
+    let work = document.getElementById("onetwoworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 1's Complement -</h5> &emsp;"
     var ar = input.split("");
     var one = new Array(ar.length);
     var two = new Array(ar.length);
-    for (var i = 0; i < ar.length; i++) {
+    for (var i = 0; i <ar.length; i++) {
+        print+="1";
         if (ar[i] == 0) {
             one[i] = 1;
 
@@ -5106,7 +5109,6 @@ function onetwoCalc() {
     }
     var onec = one.join('');
     result.innerHTML = "One's complement of " + input + " is " + onec + "<br>";
-
 
     for (var i = ar.length - 1; i >= 0; i--) {
         two[i] = ar[i];
@@ -5128,10 +5130,20 @@ function onetwoCalc() {
         var twoc = two.join('');
     }
     result.innerHTML += "Two's complement of " + input + " is " + twoc + "<br>";
+
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+onec+"</span><br>";
+
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 2's Complement -</h5> &emsp; 1's Complement + 1 = 2's Complement <br>&emsp; "
+    print+=onec+" + 1</span> = <span style='text-decoration: underline;'>"+twoc+"</span>";
+    work.innerHTML = print;
+
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search(/^[10]+$/) == -1)
+        work.innerHTML = "";
+    } else if (input.search(/^[10]+$/) == -1){
         result.innerHTML = "Binary numbers can only have 0's and 1's";
+        work.innerHTML = "";
+    }
 
 
 }
