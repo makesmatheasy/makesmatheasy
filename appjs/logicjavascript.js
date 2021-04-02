@@ -4486,7 +4486,6 @@ function Median() {
     }
 
     arr = JSON.stringify(arr)
-    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
 
     arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
@@ -4502,12 +4501,13 @@ function Median() {
         let median =
             len % 2 === 0
                 ? (parseFloat(arr[mid]) + parseFloat(arr[mid - 1])) / 2
-                : arr[mid];
+                : parseInt(arr[mid]);
         document.getElementById(
             "Meanresult"
         ).innerHTML = `After Sorting: ${arr}</br>`;
+        var med = median.toFixed(5);
         document.getElementById("Meanresult").innerHTML += `Median: `;
-        document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
+        document.getElementById("Meanresult").innerHTML += med;
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
