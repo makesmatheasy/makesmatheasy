@@ -102,6 +102,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#3dgeobtn").click(function () {
+        openit("#3dgeo");
+        closenav();
+        clearall();
+    })
+
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();

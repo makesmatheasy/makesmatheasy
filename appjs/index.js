@@ -183,7 +183,7 @@ function openit(id) {
         "#bitwise-calc",
         "#adding-all",
 		"#onetwocom-calc",
-
+        "#3dgeo",
         "#ninetencom-calc",
         "#straightline",
         "#octal-binary",
