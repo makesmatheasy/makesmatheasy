@@ -4031,8 +4031,15 @@ function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
     const i = parseInt(document.getElementById("timeconin").value);
-    const a = (i * f) / t;
-    document.getElementById("timeconou").innerHTML = `${a}`;
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("timeconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("timeconou").innerHTML = "Time cannot be negative. Kindly enter a positive value.";
+    }
 }
 
 // Speed convert
@@ -4397,15 +4404,9 @@ function combinationcal(nval, rval) {
     var testVal2 = regex.test(val2);
     if (!textVal1 || !testVal2) 
     {
-<<<<<<< HEAD
         document.getElementById("combination_wrong").innerHTML ="Enter Integer values only";
         document.getElementById("combination_div_div2").style.display = "none";
         document.getElementById("combination_div_div1").style.display = "block"; 
-=======
-        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
-        document.getElementById("premutation_div_div2").style.display = "none";
-        document.getElementById("permutation_div_div1").style.display = "block"; 
->>>>>>> ec327e577395e98acdff531f89e95d37c0abece9
         return;   
     }
     var val3 = parseInt(val1);
