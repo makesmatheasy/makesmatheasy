@@ -95,6 +95,18 @@
         .col2 {
             margin-left: 30px;
         }
+        /* Styling for invalid expression button */
+        #calpar button{
+            background-color: #ff3077;
+            border-radius: 50%;
+            color: white;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            right: 390px;
+            bottom: 160px;
+
+        }
     </style>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/searchbar.css">
@@ -8350,13 +8362,13 @@
 
 
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
-            <div class="bodyof">
+            <div class="bodyof" id="calpar">
                 <form class="calculator" name="calc">
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear"
-                          onclick="document.getElementById('txt').value=''">C</span>
+                          onclick="clearc()">C</span>
                     <span id="more" onclick="more();">More</span>
                     <span
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
