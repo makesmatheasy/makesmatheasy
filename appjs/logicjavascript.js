@@ -5146,8 +5146,8 @@ function seveneightCalc(){
 
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search("8") != -1 || input.search("9") != -1  )
-        result.innerHTML = " Invalid Octal Number ";
+    } else if (input.search(/^[0-7]+$/) == -1)
+        result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
 }
 
 
