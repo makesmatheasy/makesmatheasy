@@ -166,6 +166,7 @@ function openit(id) {
         "#roundoff",
         "#euclid",
         "#aod",
+        "#corgeo",
         "#betagamma",
         "#parallel",
         "#unitconcal",
