@@ -5195,7 +5195,8 @@ function ninetenCalc() {
 
     if (input == "") {
         result.innerHTML = "";
-    }
+    } else if (input.search(/^[0-9]+$/) == -1)
+        result.innerHTML = "Decimal Numbers can only have digits between 0 to 9 and '-' sign not allowed";
 }
 
 ////////////////////date calculator///////////
