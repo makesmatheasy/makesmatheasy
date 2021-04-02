@@ -4031,8 +4031,15 @@ function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
     const i = parseInt(document.getElementById("timeconin").value);
-    const a = (i * f) / t;
-    document.getElementById("timeconou").innerHTML = `${a}`;
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("timeconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("timeconou").innerHTML = "Time cannot be negative. Kindly enter a positive value.";
+    }
 }
 
 // Speed convert
