@@ -3914,8 +3914,16 @@ function datacon() {
     const f = datau(document.getElementById("datacon-1").value);
     const t = datau(document.getElementById("datacon-2").value);
     const i = parseInt(document.getElementById("dataconin").value);
-    const a = (i * f) / t;
-    document.getElementById("dataconou").innerHTML = `${a}`;
+
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("dataconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("dataconou").innerHTML = "Data size cannot be negative. Kindly enter a positive value.";
+    }
 
 }
 
