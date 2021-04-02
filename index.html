@@ -8358,10 +8358,9 @@
                     <span class="clear"
                           onclick="document.getElementById('txt').value=''">C</span>
                     <span id="more" onclick="more();">More</span>
-                    <span
+                    <span id="brac"
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
-                    <span
-                            onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
+                    <span id="power" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">Power</span>
                     <span class="back" id="backspace"
                           onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
                             class="bk" src="icons/backspace-arrow.png"

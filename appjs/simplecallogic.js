@@ -86,6 +86,7 @@ function more() {
     var zero = document.getElementById('zero');
     var dot = document.getElementById('dot');
     var more=document.getElementById('more');
+    var brac=document.getElementById('brac');
     if (one.innerText == "1") {
         one.innerText = 'asin('
     } else {
@@ -169,8 +170,19 @@ function more() {
 	else{
 		more.innerText="More"
 	}
+   if(brac.innerText=="("){
+        brac.innerText=")"
+    }
+    else{
+        brac.innerText="("
+    }
+   
+
     
 }
+
+
+
 
 function todeci() {
     var el = document.getElementById('deci');
@@ -198,6 +210,9 @@ document.getElementById('percentage').addEventListener("click", function () {
         document.getElementById("percentage").innerText = "RAD";
     }
 });
+
+
+
 document.getElementById('seven').addEventListener("click", function () {
     document.getElementById('txt').value += this.innerText;
     calsol(document.getElementById('txt').value);
