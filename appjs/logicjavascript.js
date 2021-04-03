@@ -3784,8 +3784,15 @@ function masscon() {
     const f = massu(document.getElementById("masscon-1").value);
     const t = massu(document.getElementById("masscon-2").value);
     const i = parseInt(document.getElementById("massconin").value);
-    const a = (i * f) / t;
-    document.getElementById("massconou").innerHTML = `${a}`;
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("massconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("massconou").innerHTML = "Mass cannot be negative. Kindly enter a positive value.";
+    }
 }
 
 function angleu(a) {
