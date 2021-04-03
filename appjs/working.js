@@ -71,12 +71,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#rankcalbtn").click(function () {
+        openit("#rankcal");
+        closenav();
+        clearall();
+    });
 
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
         clearall();
     });
+
 
     $("#vecalgbtn").click(function () {
         openit("#vecalg");
@@ -85,17 +91,20 @@ $(document).ready(function () {
     });
 
 
+
     $("#aodbtn").click(function () {
         openit("#aod");
         closenav();
         clearall();
     });
 
+
     $("#corgeobtn").click(function () {
         openit("#corgeo");
         closenav();
         clearall();
     });
+
 
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
