@@ -3997,10 +3997,15 @@ function simple_interest() {
 function emical() {
     var p, t, r, emi;
     p = parseInt(document.getElementById("first1").value);
-    r = parseFloat(document.getElementById("third3").value) / 1200;
+    r = parseFloat(document.getElementById("third3").value) / 100;
     t = parseInt(document.getElementById("second2").value) * 12;
     emi = ((p * r * Math.pow((1 + r), t)) / (Math.pow((1 + r), t) - 1));
-    document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2) + "   Per month";
+    document.getElementById("emio1").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{P} \\times \\mathrm{r} \\times(1+\\mathrm{r})^{\\mathrm{t}}}{(1+\\mathrm{r})^{t}-1}\\]";
+    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t+"}-1}\\]";
+    document.getElementById("emio3").innerHTML = "\\[\\mathrm{EMI}= \\space" + emi.toFixed(2) + "\\space Per\\space month\\]";
+    renderMathInElement(document.getElementById("emio1"));
+    renderMathInElement(document.getElementById("emio2"));
+    renderMathInElement(document.getElementById("emio3"));
 }
 
 
