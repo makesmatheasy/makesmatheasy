@@ -4192,7 +4192,7 @@ function amsol() {
     var amadd = parseInt(a) + parseInt(c)
     var res = parseFloat(amadd / 2)
     var explain = document.getElementById("am_formula");
-    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] ";
+    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\space \\frac{a+c}{2} =\\space \\frac{"+a+"+"+c+"}{2}\\] ";
     renderMathInElement(document.getElementById("am_formula"));
     document.getElementById("am").innerHTML = "Result: " + res
 
@@ -4204,7 +4204,7 @@ function gmsol() {
     var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
-    explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] ";
+    explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
 
@@ -4217,12 +4217,11 @@ function hmsol() {
     var hmadd = parseInt(a) + parseInt(c)
     var res = (hmmul / hmadd)
     var explain = document.getElementById("hm_formula");
-    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] ";
+    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\space \\frac{2ac}{a+c} = \\space \\frac{2\\times"+a+"\\times"+c+"}{"+a+"+"+c+"}\\] ";
     renderMathInElement(document.getElementById("hm_formula"));
     document.getElementById("hm").innerHTML = "Result: " + res
 
 }
-
 // Primality test
 function check_prime(isprime) {
     var num = document.getElementById(isprime).value;
