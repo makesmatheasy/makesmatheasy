@@ -166,7 +166,9 @@ function openit(id) {
         "#roundoff",
         "#euclid",
         "#aod",
+
         "#corgeo",
+
         "#betagamma",
         "#parallel",
         "#unitconcal",
@@ -226,6 +228,7 @@ function openit(id) {
         "#joint-probabilitycollapse",
         "#ex3",
         "#lappro",
+        "#rankcal",
         "#bayes-probabilitycollapse",
         "#prism",
         "#anglecon",

@@ -71,6 +71,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#rankcalbtn").click(function () {
+        openit("#rankcal");
+        closenav();
+        clearall();
+    });
 
     $("#ex3btn").click(function () {
         openit("#ex3");
@@ -89,6 +94,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
 
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");

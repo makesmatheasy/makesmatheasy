@@ -3784,8 +3784,15 @@ function masscon() {
     const f = massu(document.getElementById("masscon-1").value);
     const t = massu(document.getElementById("masscon-2").value);
     const i = parseInt(document.getElementById("massconin").value);
-    const a = (i * f) / t;
-    document.getElementById("massconou").innerHTML = `${a}`;
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("massconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("massconou").innerHTML = "Mass cannot be negative. Kindly enter a positive value.";
+    }
 }
 
 function angleu(a) {
@@ -3990,10 +3997,15 @@ function simple_interest() {
 function emical() {
     var p, t, r, emi;
     p = parseInt(document.getElementById("first1").value);
-    r = parseFloat(document.getElementById("third3").value) / 1200;
+    r = parseFloat(document.getElementById("third3").value) / 100;
     t = parseInt(document.getElementById("second2").value) * 12;
     emi = ((p * r * Math.pow((1 + r), t)) / (Math.pow((1 + r), t) - 1));
-    document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2) + "   Per month";
+    document.getElementById("emio1").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{P} \\times \\mathrm{r} \\times(1+\\mathrm{r})^{\\mathrm{t}}}{(1+\\mathrm{r})^{t}-1}\\]";
+    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t+"}-1}\\]";
+    document.getElementById("emio3").innerHTML = "\\[\\mathrm{EMI}= \\space" + emi.toFixed(2) + "\\space Per\\space month\\]";
+    renderMathInElement(document.getElementById("emio1"));
+    renderMathInElement(document.getElementById("emio2"));
+    renderMathInElement(document.getElementById("emio3"));
 }
 
 
@@ -4192,7 +4204,7 @@ function amsol() {
     var amadd = parseInt(a) + parseInt(c)
     var res = parseFloat(amadd / 2)
     var explain = document.getElementById("am_formula");
-    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] ";
+    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\space \\frac{a+c}{2} =\\space \\frac{"+a+"+"+c+"}{2}\\] ";
     renderMathInElement(document.getElementById("am_formula"));
     document.getElementById("am").innerHTML = "Result: " + res
 
@@ -4204,7 +4216,7 @@ function gmsol() {
     var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
-    explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] ";
+    explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
 
@@ -4217,12 +4229,11 @@ function hmsol() {
     var hmadd = parseInt(a) + parseInt(c)
     var res = (hmmul / hmadd)
     var explain = document.getElementById("hm_formula");
-    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] ";
+    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\space \\frac{2ac}{a+c} = \\space \\frac{2\\times"+a+"\\times"+c+"}{"+a+"+"+c+"}\\] ";
     renderMathInElement(document.getElementById("hm_formula"));
     document.getElementById("hm").innerHTML = "Result: " + res
 
 }
-
 // Primality test
 function check_prime(isprime) {
     var num = document.getElementById(isprime).value;
@@ -5086,10 +5097,13 @@ function convertBinhex() {
 function onetwoCalc() {
     const input = document.getElementById("onetwonumber").value;
     let result = document.getElementById("onetworesult");
+    let work = document.getElementById("onetwoworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 1's Complement -</h5> &emsp;"
     var ar = input.split("");
     var one = new Array(ar.length);
     var two = new Array(ar.length);
-    for (var i = 0; i < ar.length; i++) {
+    for (var i = 0; i <ar.length; i++) {
+        print+="1";
         if (ar[i] == 0) {
             one[i] = 1;
 
@@ -5099,7 +5113,6 @@ function onetwoCalc() {
     }
     var onec = one.join('');
     result.innerHTML = "One's complement of " + input + " is " + onec + "<br>";
-
 
     for (var i = ar.length - 1; i >= 0; i--) {
         two[i] = ar[i];
@@ -5121,10 +5134,20 @@ function onetwoCalc() {
         var twoc = two.join('');
     }
     result.innerHTML += "Two's complement of " + input + " is " + twoc + "<br>";
+
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+onec+"</span><br>";
+
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 2's Complement -</h5> &emsp; 1's Complement + 1 = 2's Complement <br>&emsp; "
+    print+=onec+" + 1</span> = <span style='text-decoration: underline;'>"+twoc+"</span>";
+    work.innerHTML = print;
+
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search(/^[10]+$/) == -1)
+        work.innerHTML = "";
+    } else if (input.search(/^[10]+$/) == -1){
         result.innerHTML = "Binary numbers can only have 0's and 1's";
+        work.innerHTML = "";
+    }
 
 
 }
@@ -5146,8 +5169,8 @@ function seveneightCalc(){
 
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search("8") != -1 || input.search("9") != -1  )
-        result.innerHTML = " Invalid Octal Number ";
+    } else if (input.search(/^[0-7]+$/) == -1)
+        result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
 }
 
 
@@ -5195,7 +5218,8 @@ function ninetenCalc() {
 
     if (input == "") {
         result.innerHTML = "";
-    }
+    } else if (input.search(/^[0-9]+$/) == -1)
+        result.innerHTML = "Decimal Numbers can only have digits between 0 to 9 and '-' sign not allowed";
 }
 
 ////////////////////date calculator///////////
@@ -5446,4 +5470,46 @@ function angleplot() {
     }
     ctx.stroke();
 
+}
+function fa(x)
+{
+    if(x==1)
+        return 1;
+    return x * fa(x-1);
+}
+
+function rankcal() {
+
+    var input = document.getElementById("rankcal-input").value;
+    let result = document.getElementById("rankcal-result");
+    input = input.toUpperCase();
+    var s = input.length;
+    var m = fa(s);
+    var ans =1;
+    var c;
+    for (var j=0; j<s;++j)
+    {
+        m /= s-j;
+        c = ran(input,j,s-1);
+        ans = ans+ (c*m);
+    }
+    if(input.match(/^[A-Za-z]+$/))
+        {
+            result.innerHTML = ans;
+        }
+    else
+        result.innerHTML = "Invalid input use alphabet only";
+        
+}
+function ran(x,y,z)
+{
+    var c = 0;
+    for (var j=y+1; j<=z;++j)
+    {
+        if(x[j]<=x[y])
+        {
+            c++;
+        }
+    }
+    return c;
 }
