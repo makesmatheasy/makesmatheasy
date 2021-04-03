@@ -71,12 +71,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#rankcalbtn").click(function () {
+        openit("#rankcal");
+        closenav();
+        clearall();
+    });
 
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
         clearall();
     });
+
 
     $("#vecalgbtn").click(function () {
         openit("#vecalg");
@@ -89,6 +95,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
 
     $("#aodbtn").click(function () {
         openit("#aod");

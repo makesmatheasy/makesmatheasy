@@ -95,6 +95,18 @@
         .col2 {
             margin-left: 30px;
         }
+        /* Styling for invalid expression button */
+        #calpar button{
+            background-color: #ff3077;
+            border-radius: 50%;
+            color: white;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            right: 390px;
+            bottom: 160px;
+
+        }
     </style>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/searchbar.css">
@@ -652,6 +664,7 @@
                 </table>
             </li>
 
+
             <li>
                 <table class="table">
                     <tr>
@@ -668,6 +681,7 @@
                     </tr>
                 </table>
             </li>
+
             <!--            differential equation-->
             <li>
                 <table class="table">
@@ -1016,7 +1030,22 @@
                     </tr>
                 </table>
             </li>
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="rankcalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Rank Calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Rank Calculator','#rankcal','c','rankimgfav')"><img
+                                        id="rankimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -1357,6 +1386,7 @@
                     </tr>
                 </table>
             </li>
+            
 
             <!-- SPI CONVERTER  -->
             <li>
@@ -2855,6 +2885,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="collapse" id="thdif">
             <div class="stopwrap">
@@ -6764,9 +6795,10 @@
                 <br>
                 <br>
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
-                <br>
-                <div style="color:var(--appimage); font-size: large;" id="emio"></div>
-                <div id="num1" style="color: var(--appimage); font-size: large"></div>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></div>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></div>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></div>
             </div>
         </div>
 
@@ -7611,12 +7643,13 @@
                     Solve
                 </button>
             </form>
+            <br>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
                class="stopwrap"
                align="right"></p>
 
             <h5 id="am"></h5>
-            <br><br><br>
+            <br><br>
             <h4>Geometric Mean</h4><br>
             <form class="form-inline">
                 <input type="number" id="aval1" placeholder="Enter the first term (a)"
@@ -7627,6 +7660,7 @@
                     Solve
                 </button>
             </form>
+            <br>
             <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
                class="stopwrap"
                align="right"></p>
@@ -7642,6 +7676,7 @@
                     Solve
                 </button>
             </form>
+            <br>
             <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
                class="stopwrap"
                align="right"></p>
@@ -8074,7 +8109,7 @@
         <!-- Start of 1's 2's Complement Calculator -->
         <div class="collapse" id="onetwocom-calc">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <h2>One's and Two's Complement</h2><br>
                         <h5>Enter Binary number</h5>
@@ -8085,16 +8120,18 @@
 
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <button type="button" class="btn btn-light" onclick="onetwoCalc()">
                             Find
                         </button>
                         <label class="form__field" id="onetworesult"></label>
+                        <p class="" id="onetwoworking"></p>
                     </div>
                 </div>
             </div>
-      
+            
+            <hr>
           <!-- Start 7's 8's Complement -->
            <div class="row">
                 <div class="col-md-4">
@@ -8298,6 +8335,28 @@
             </div>
         </div>
         <!-- End of ex3 convertor -->
+         <!-- Start   -->
+         <div>
+            <div class="collapse" id="rankcal">
+                <div class="col-6">
+                    <p>If all the letters of the word '_____' are arranged in all possible ways and written out in alphabetical(dictionary) order, then find the rank of the given word </p>
+                    <div class="form-group">
+                        <h5>Word in english characters</h5>
+
+                        <input type="text" id="rankcal-input"  class="form__field"
+                               oninput="rankcal()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Rank in Dictionary </h5>
+
+                    </div>
+                    <label class="form__group" id="rankcal-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of  -->
 
         <!-- Start of grey convertor -->
         <div>
@@ -8528,13 +8587,13 @@
 
 
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
-            <div class="bodyof">
+            <div class="bodyof" id="calpar">
                 <form class="calculator" name="calc">
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear"
-                          onclick="document.getElementById('txt').value=''">C</span>
+                          onclick="clearc()">C</span>
                     <span id="more" onclick="more();">More</span>
                     <span
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
