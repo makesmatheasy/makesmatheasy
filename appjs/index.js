@@ -165,6 +165,7 @@ function openit(id) {
         "#plotgraph",
         "#roundoff",
         "#euclid",
+        "#aod",
         "#betagamma",
         "#parallel",
         "#unitconcal",
