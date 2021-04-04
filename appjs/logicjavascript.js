@@ -4240,13 +4240,22 @@ function amsol() {
 function gmsol() {
     var a = document.getElementById("aval1").value
     var c = document.getElementById("cval1").value
+    if(a<0&&c<0){
+      var gmmul1 = parseInt(a) * parseInt(c)
+      var res1 = -(Math.sqrt(gmmul1))
+      var explain = document.getElementById("gm_formula");
+      explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space\\ - \\sqrt{a \\times c} = \\space\\ - \\sqrt{"+a+"\\times"+c+"}\\] ";
+      renderMathInElement(document.getElementById("gm_formula"));
+      document.getElementById("gm").innerHTML = "Result: " + res1
+    }
+    else{
     var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
     explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
-
+}
 }
 
 function hmsol() {
