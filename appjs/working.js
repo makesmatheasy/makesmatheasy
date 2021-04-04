@@ -89,6 +89,13 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#corgeobtn").click(function () {
+        openit("#corgeo");
+        closenav();
+        clearall();
+    });
+
+
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();

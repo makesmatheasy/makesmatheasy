@@ -1528,6 +1528,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="corgeobtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
+                                Geometry Formula and Theorem
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coordinate Geometry Formula and Theorem','#corgeo','c','corgeofav')"><img
+                                        id="corgeofav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="curvebtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Curve Tracing
                             </a>
@@ -2669,8 +2686,7 @@
             </div>
 
         </div>
-
-        <div class="collapse" id="integration-idencollapse">
+	 <div class="collapse" id="integration-idencollapse">
             <div class="stopwrap">
                 <div class="coll">
                     <div class="left">
@@ -2732,6 +2748,56 @@
                             \,dx\space=\frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
                         <p>\[32)\space\int e^{ax}cosbx
                             \,dx\space=\frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
+			</div>
+		    </div>
+		</div>
+	</div>
+		
+        <div class="collapse" id="corgeo">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Distance Formula: To Calculate Distance Between Two Points</h4>
+                        <p>\[Let \,the\, two \,points\, be \,A\, and \,B,\, having\, coordinates\, to\]</p><p>\[ be\, (x1,y1) \,and \,(x2,y2)\, respectively.\]</p>
+                        <p>\[Thus,\, the \,distance\, between\, two\, points \,is\, given\, as-\]</p>
+                        <p>\[\large d = \sqrt{(x_{2} -x_{1})^{2} + (y_{2} – y_{1})^{2}}\]</p>
+                        <p><centre><center><img src="images/diss.png"><center></center><centre></p>
+                        <br><br><br>
+                        <h4>Midpoint Theorem: To Find Mid-point of a Line Connecting Two Points</h4>
+                        <p>\[Consider\, the\, same\, points \,A\, and \,B, \,having\, coordinates\, to\]</p><p>\[ be\, (x1,y1) \,and\, (x2,y2) \,respectively.\, Let\, M(x,y)\, be\, the\]</p><p>\[ midpoint\, of\, lying\, on \,the\, line\, connecting\, these\, two\]</p><p>\[ points \,A\, and\, B.\, The \,coordinates\, of\, the\, point\, M \,is\, given\, as-\]</p>
+                        <p>\[\large M (x,y)= \left ( \frac{x_{1} + x_{2}}{2}, \frac{y_{1} + y_{2}}{2} \right )\]</p>
+                        <br><br><br>
+                        <h4>Angle Formula: To Find The Angle Between Two Lines</h4>
+                        <p>\[Consider\, two \,lines A\, and\, B,\, having \,their \,slopes\, to\, be\, m1\, and\, m2\, respectively.\]</p>
+                        <p>\[Let\, “θ” \,be\, the\, angle\, between \,these \,two\, lines,\, then\, the\, angle \,between \,them \,can \,be\, represented\, as\]</p>
+                        <p>\[\large \tan \theta = \frac{m_{1} – m_{2}}{1 + m_{1} m_{2}}\]</p>
+                        <br>
+                        <p>\[SPECIAL\, \, CASES:\]</p>
+                        <br>
+                        <p>\[i) \space \,Case \,1\,:\, When\, the\, two \,lines \,are\, parallel\, to \,each\, other,\]</p>
+                        <p>\[\large m_{1} = m_{2}=m\]</p>
+                        <p>\[Substituting\, the\, value \,in \,the\, equation\, above,\]</p>
+                        <p>\[\large \tan \theta = \frac{m – m }{1 + m^{2}} = 0\]</p>
+                        <p>\[\large \Rightarrow \theta = 0\]</p>
+                        <br>
+                        <p>\[ii) \space \,Case\, 2\,:\, When \,the\, two\, lines \,are\, perpendicular \,to \,each\, other,\]</p>
+                        <p>\[m1 . m2 = -1\]</p>
+                        <p>\[Substituting\, the\, value\, in \,the\, original \,equation,\]</p>
+                        <p>\[\large \tan \theta = \frac{m_{1} – m_{2}}{1 + (-1)} = \frac{m_{1} – m_{2}}{0}\,\, which\, is\, undefined.\]</p>
+                        <p>\[⇒ \theta  = 90°\]</p>
+                        <br><br><br>
+                        <h4>Section Formula: To Find a Point Which Divides a Line into m:n Ratio</h4>
+                        <p>\[Consider \, a \, line \, A \, and \, B \, having \, coordinates \, (x_1,y_1) \, and \, (x_2,y_2) \, respectively. \]</p>
+                        <p>\[Let \,P\, be\, a\, point\, that \,which\, divides\, the \,line\, in \,the\, ratio\, m:n, \]</p>
+                        <p>\[then \,the\, coordinates\,of\, the \,point\, P \,is \,given\, as-\]</p>
+                        <p>\[i) \space When\, the\, ratio\, m:n \,is\, internal\,:\]</p>
+                        <p>\[\large \left (\frac{mx_{2} + nx_{1}}{m + n}, \frac{my_{2} + ny_{1}}{m + n} \right )\]</p>
+                        <p>\[ii) \space When \,the\, ratio \,m:n \,is\, external\,:\]</p>
+                        <p>\[\large \left (\frac{mx_{2} – nx_{1}}{m – n}, \frac{my_{2} – ny_{1}}{m – n} \right )\]</p>
+                        <br><br><br>
+                        <h4>Area of a Triangle in Cartesian Plane</h4>
+                        <p>\[The\, area \,of\, a\, triangle\, In \,coordinate\, geometry\,whose \,vertices\, are\, (x_1,y_1),\,(x_2,y_2) \,and\, (x_3,y_3)\, is\]</p>
+                        <p>\[\frac{1}{2}|x_1 (y_2~ -~ y_3)~ + ~x_2(y_3~ – ~y_1)~ +~ x_3(y_1~ – ~y_2)|\]</p>
                     </div>
                 </div>
             </div>
@@ -7488,6 +7554,20 @@
                align="right"></p>
             <h5 id="ltap"></h5>
             <h5 id="formula"></h5>
+			<br><br><br>
+            <h4>If number of terms and the AP is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
+             
+                <input type="tel" id="ap" placeholder="Enter AP(space separated)"
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=apsum()>
+                    Solve
+                </button>
+            </form>
+            <br>
+            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p>
         </div>
         <!--sum of nterms in A.P. ends-->
 

@@ -4197,7 +4197,34 @@ function anotherap() {
     document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
     document.getElementById("ltap").innerHTML = "Result: " + ans
 }
-
+function apsum()
+{   var n = document.getElementById("nterms").value
+    var val = document.getElementById("ap").value;
+    val = val.split(" ");
+    val = val.filter(function (str) {
+       return /\S/.test(str);
+    });
+	var s=0;
+	if( parseInt(val.length)<2)
+	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
+	else{
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))	
+		{
+			document.getElementById("printAP").innerHTML="Invalid AP"
+		}
+    else
+	{	
+		var d=val[1]-val[0];
+		document.getElementById("printAP").innerHTML ="Common difference for the entered AP is &nbsp;"+d+"<br>";
+		for(i=0;i<n;i++)
+		{
+			document.getElementById("printAP").innerHTML +=eval(String(i+"*"+d + "+"+ val[0]))+",";
+			s=eval(String(s+"+"+i+"*"+d + "+"+ val[0]))
+		}
+		document.getElementById("printAP").innerHTML +="<br>The Sum of &nbsp;"+n+"&nbsp; terms of the given AP is &nbsp;"+s;
+	}
+	}	
+}
 function amsol() {
     var a = document.getElementById("aval").value
     var c = document.getElementById("cval").value
