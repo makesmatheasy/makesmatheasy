@@ -4134,7 +4134,7 @@ function factorialsol(factorialval) {
     }
 }
 
-// profit loss calculations
+// profit/loss calculations
 function profitloss() {
     var cp = parseFloat(document.getElementById("cp").value);
     var sp = parseFloat(document.getElementById("sp").value);
@@ -4154,6 +4154,75 @@ function profitloss() {
         document.getElementById("pol").innerHTML = "Profit = " + profit;
         document.getElementById("percent").innerHTML = "Profit Percentage =" + perp + "%";
     }
+}
+
+// profit/loss calculations over discount
+function discount() {
+    var dis = parseFloat(document.getElementById("dis").value);
+    var cpsp = parseFloat(document.getElementById("cpsp").value);
+    // console.log(dis);
+    // console.log(cpsp);
+    var perprice = document.getElementById("perprice").value;
+    var costsell = document.getElementById("costsell").value;
+    if(dis<0 || cpsp<0 || dis==NaN || cpsp==NaN)
+    {
+        document.getElementById("discountresult").innerHTML = "<strong>Only</strong> positive values are accepted. Refrain from blank inputs and negative values.";
+    }
+    else
+    {
+        var cp=0;
+        var sp=0;
+        var discount=""
+        var print="";
+        if(costsell=="Cost Price")
+        {
+            if(perprice=="Percentage")
+            {
+                cp=cpsp;
+                sp=cpsp-(cpsp*(dis/100));
+                discount=dis+"%";
+            }
+            else
+            {
+                cp=cpsp;
+                sp=cpsp-dis;
+                discount="Rs "+dis;
+            }
+        }
+        else
+        {
+            if(perprice=="Percentage")
+            {
+                sp=cpsp;
+                cp=(100*cpsp)/(100-dis);
+                discount=dis+"%";
+            }
+            else
+            {
+                sp=cpsp;
+                cp=cpsp+dis;
+                discount="Rs "+dis;
+            }
+        }
+
+        if(cp<0 || sp<0)
+        {
+            print="The the entered data is resulting in a negative Cost/Selling Price.";
+        }
+        else if (cp > sp) {
+            var loss = cp - sp;
+            var perl = (loss * 100) / cp;
+            print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + loss+"<br>Loss Percentage: " + perl + "%";
+        } else {
+            print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount;
+            var profit = sp - cp;
+            var perp = (profit * 100) / sp;
+            print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + profit+"<br>Loss Percentage: " + perp + "%";
+        }
+        
+        document.getElementById("discountresult").innerHTML = print;
+    }
+    
 }
 
 //Statistics Calculator
