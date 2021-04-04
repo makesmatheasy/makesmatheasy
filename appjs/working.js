@@ -421,6 +421,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+     //Function of Multiplication of Any Number System
+     $("#mult-all-btn").click(function(){
+        openit("#multiplying-all");
+        closenav();
+        clearall();
+    });
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
