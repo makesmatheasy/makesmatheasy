@@ -91,6 +91,13 @@ $(document).ready(function () {
     });
 
 
+    $("#thdifbtn").click(function () {
+        openit("#thdif");
+        closenav();
+        clearall();
+    });
+
+
 
     $("#aodbtn").click(function () {
         openit("#aod");
