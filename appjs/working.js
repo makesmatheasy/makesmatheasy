@@ -203,6 +203,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#ipbtn").click(function () {
+        openit("#ip");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();

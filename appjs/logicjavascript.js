@@ -1003,7 +1003,11 @@ function solvesimpletrigo() {
     ) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
-    } else {
+    } 
+    else if(pp <0 || base <0 || hyp == 0 ){
+        document.getElementById("soltri").innerHTML = "The sides cannot be negative"
+    }
+    else {
         if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
             document.getElementById("h").style.color = "red";
             document.getElementById("soltri").innerHTML =
