@@ -169,6 +169,7 @@ function openit(id) {
 
         "#vecalg",
         "#thdif",
+
         "#corgeo",
 
         "#betagamma",

@@ -109,6 +109,7 @@ $(document).ready(function () {
         clearall();
     });
 
+
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();
