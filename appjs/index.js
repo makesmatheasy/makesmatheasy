@@ -234,6 +234,7 @@ function openit(id) {
         "#bayes-probabilitycollapse",
         "#prism",
         "#anglecon",
+	    "#ip"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
