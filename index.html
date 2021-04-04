@@ -3806,11 +3806,11 @@
             <h2 style="text-align: center;">Inverse,Periodicity of Functions</h2>
             <br><br>
             <h4>What is a Period?</h4>
-            <p>The time interval between two waves is known as a Period whereas a function that repeats its values 
+            <p>The time interval between two waves is known as a Period whereas a function that repeats its values
                 at regular intervals or periods is known as a Periodic Function. In other words, a periodic function is a function that repeats its values after every particular interval.</p>
             <p>\[f(x+a)\space = \space f(x) for\space a>0\] </p>
             <br>
-            <h4>How to find a period?</h4>   
+            <h4>How to find a period?</h4>
             <ul>
                 <li style="color: white; font-size: 20px;">If a function repeats over at a constant period we say that is a periodic function.</li>
                 <li style="color: white; font-size: 20px;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
@@ -7786,7 +7786,7 @@
             <form class="form-inline">
                 <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
-             
+
                 <input type="tel" id="ap" placeholder="Enter AP(space separated)"
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <button type="button" class="btn btn-light" onclick=apsum()>
@@ -8076,62 +8076,65 @@
             </div>
             <!--  Primarity test and prime till n cal end -->
         </div>
+        <center>
         <div class="collapse" id="bool">
-            <h2 style="text-align: center;">Boolean Algebra</h2>
-            <h5>Laws of Boolean Algebra</h5>
-            <p>1. Annulment Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A . 0 = 0</li>
-                <li style="font-size: 20px; color: white;">A + 1 = 1</li>
-            </ul>
-            <p>2. Identity Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + 0 = A</li>
-                <li style="font-size: 20px; color: white;">A . 1 = A</li>
-            </ul>
-            <p>3. Idempotent Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + A = A</li>
-                <li style="font-size: 20px; color: white;">A . A = A</li>
-            </ul>
-            <p>4. Complement Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A . A<sup>'</sup> = 0</li>
-                <li style="font-size: 20px; color: white;">A + A<sup>'</sup> = 1</li>
-            </ul>
-            <p>5. Demorgan's Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">(A+B)<sup>'</sup> = A<sup>'</sup>
-                    + B<sup>'</sup></li>
-                <li style="font-size: 20px; color: white;">(A . B)<sup>'</sup> =
-                    A<sup>'</sup> + B<sup>'</sup></li>
-            </ul>
-            <p>6. Distributive Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
-                <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
-            </ul>
-            <p>7. Absorption/ Redundancy Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + A.B = A</li>
-                <li style="font-size: 20px; color: white;">A(A+B) = A</li>
-            </ul>
-            <p>8. Commutative Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + B = B + A</li>
-                <li style="font-size: 20px; color: white;">A.B = B.A</li>
-            </ul>
-            <p>9. Associative Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + (B + C) = (A + B) + C</li>
-                <li style="font-size: 20px; color: white;">A.(B.C) = (A.B).C</li>
-            </ul>
-            <p>10. Double Negation Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A<sup>'</sup><sup>'</sup> = A</li>
-                <li style="font-size: 20px; color: white;">B<sup>'</sup><sup>'</sup> = B</li>
-            </ul>
+            <h2 style="font-size:60px;">Boolean Algebra</h2>
+            <br>
+            <h5 style="font-size:30px;">Laws of Boolean Algebra</h5>
+            <p style="font-size:30px;">1.) Annulment Law </p>
+
+                <p>\[ A \space.\space 0 = 0\]</p>
+                <p>\[A + 1 = 1\]</p>
+
+            <p style="font-size:30px;">2.) Identity Law  </p>
+
+                <p>\[A + 0 = A\]</p>
+                <p>\[A \space.\space 1 = A\]</p>
+
+            <p style="font-size:30px;">3.) Idempotent Law </p>
+
+                <p>\[A + A = A\]</p>
+                <p>\[A \space.\space A = A\]</p>
+
+            <p style="font-size:30px;">4.) Complement Law </p>
+
+                <p>\[A \space.\space A^{'} = 0\]</p>
+                <p>\[A + A^{'} = 1\]</p>
+
+            <p style="font-size:30px;">5.) Demorgan's Law </p>
+
+                <p>\[(A+B)^{'} = A^{'}
+                    + B^{'}\]</p>
+                <p>\[(A . B)^{'} =
+                    A^{'} + B^{'}\]</p>
+
+            <p style="font-size:30px;">6.) Distributive Law </p>
+
+                <p>\[A(B+C) = A . B + A .C\]</p>
+                <p>\[A + BC = (A+B) . (A+C)\]</p>
+
+            <p style="font-size:30px;">7.) Absorption/ Redundancy Law </p>
+
+                <p>\[A + A\space .\space B = A\]</p>
+                <p>\[A(A+B) = A\]</p>
+
+            <p style="font-size:30px;">8.) Commutative Law</p>
+
+                <p>\[A + B = B + A\]</p>
+                <p>\[A\space .\space B = B\space .\space A\]</p>
+
+            <p style="font-size:30px;">9.) Associative Law</p>
+
+                <p>\[A + (B + C) = (A + B) + C\]</p>
+                <p>\[A\space .\space (B \space .\space C) = (A \space.\space B)\space.\space C\]</p>
+
+            <p style="font-size:30px;">10.) Double Negation Law</p>
+
+                <p>\[A^{''} = A\]</p>
+                <p>\[B^{''}\, = \, B\]</p>
+
         </div>
+      </center>
         <!--    start of calculator -->
 
         <!-- Start of Decimal / Binary -->
