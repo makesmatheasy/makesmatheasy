@@ -4156,6 +4156,141 @@ function profitloss() {
     }
 }
 
+//Statistics Calculator
+function cal_func_stats()
+{
+    var num = document.getElementById('num_list').value;
+    // console.log(typeof(num))
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+    
+
+    if(num=="")
+    {
+       document.getElementById('result_cal_func_stats').innerHTML = "";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('result_cal_func_stats').innerHTML = "Enter space separated numbers.<br>Example -> 1  2  2.1  -2  -2.6 <br> Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var print="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+        // console.log(num)
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        number.sort(function(a, b) {
+            return a - b;
+          });
+        console.log(number)
+        console.log(typeof(number))
+        console.log(typeof(number[0]))
+        
+        for (i = 0; i < len; i++) {
+            s = s + number[i];
+        }
+
+        mean = s/len
+        // console.log(number)
+        // console.log(len)
+        // console.log(s)
+
+        var median=0
+        if(len%2==0)
+        {
+            median=((number[parseInt(len/2)-1])+(number[parseInt((len/2))]))/2;
+        }
+        else
+        {
+            median=(number[parseInt(len/2)]);
+        }
+
+
+        const frequencyTable = {};
+        number.forEach((elem) => (frequencyTable[elem] = frequencyTable[elem] + 1 || 1));
+
+        let mode = [];
+        let maxFrequency = 0;
+        for (const key in frequencyTable) {
+            if (frequencyTable[key] > maxFrequency) {
+                mode = [Number(key)];
+                maxFrequency = frequencyTable[key];
+            } else if (frequencyTable[key] === maxFrequency) {
+                mode.push(Number(key));
+            }
+        }
+
+        if (mode.length === number.length) mode = number[0];
+        if (number.length != 0)
+        {
+            if (mode.length === 0) {
+                mode = number;
+            } else {
+                mode = `${mode}`;
+            }
+        }
+
+        var variance=0;
+        for (i = 0; i < len; i++) {
+            variance = variance + ((number[i])-mean)*((number[i])-mean);
+        }
+
+        variance = variance/len;
+        
+        var standarddev = Math.sqrt(variance);
+
+        var large=(number[len-1]);
+        var small=(number[0]);
+
+        console.log(large);
+        console.log(small);
+        
+        var range = large - small;
+        var coffrange = (large - small)/(large + small);
+        var coffvariation = (standarddev/mean)*100;
+
+        var mdmean=0;
+        for (i = 0; i < len; i++) {
+            mdmean =  mdmean + Math.abs((number[i])-mean);
+        }
+        mdmean = mdmean/len;
+
+        var mdmedian=0;
+        for (i = 0; i < len; i++) {
+            mdmedian =  mdmedian + Math.abs((number[i])-median);
+        }
+        mdmedian = mdmedian/len;
+
+        var mdmode=0;
+        for (i = 0; i < len; i++) {
+            mdmode =  mdmode + Math.abs((number[i])-mode);
+        }
+        mdmode = mdmode/len;
+
+        print+="Mean: "+mean+"<br>";
+        print+="Median: "+median+"<br>";
+        print+="Mode: "+mode+"<br>";
+        print+="Variance: "+variance+"<br>";
+        print+="Standard Deviation: "+standarddev+"<br>";
+        print+="Range: "+range+"<br>";
+        print+="Coefficient of Range: "+coffrange+"<br>";
+        print+="Coefficient of Variation: "+coffvariation+"<br>";
+        print+="Mean deviation about Mean: "+mdmean+"<br>";
+        print+="Mean deviation about Median: "+mdmedian+"<br>";
+        print+="Mean deviation about Mode: "+mdmode+"<br>";
+        
+        // print+=s/len
+
+        document.getElementById('result_cal_func_stats').innerHTML = print;
+    }
+}
+
 //sum of nterms of an Arithmetic Progression
 function sum_n_apsol(nval, rval, r1val) {
     var n = document.getElementById(nval).value;
@@ -5216,20 +5351,32 @@ function onetwoCalc() {
 function seveneightCalc(){
     const input = document.getElementById("seveneightnumber").value;
     let result = document.getElementById("seveneightresult");
+    let work = document.getElementById("seveneightworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 7's Complement -</h5> &emsp;"
     var seven = "";
     var eight = "";
 
     for (var i = 0; i < input.length; i++) {
+        print+="7";
         seven += '7' - input[i];
     }
+    result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
     eight = parseInt(seven) + 1;
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
+    
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+seven+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
+    print+=seven+" + 1</span> = <span style='text-decoration: underline;'>"+eight+"</span>";
+    work.innerHTML = print;
 
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search(/^[0-7]+$/) == -1)
+        work.innerHTML = "";
+    } else if (input.search(/^[0-7]+$/) == -1){
         result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
+        work.innerHTML = "";
+    }
 }
 
 
@@ -5264,9 +5411,12 @@ function fiftnsixtnCalc() {
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
+    let work = document.getElementById("ninetenworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 9's Complement -</h5> &emsp;"
     var nine = "";
     var ten = "";
     for (var i = 0; i < input.length; i++) {
+        print+="9";
         nine += '9' - input[i];
 
     }
@@ -5274,6 +5424,10 @@ function ninetenCalc() {
     result.innerHTML = "Nine's complement of " + input + " is " + parseInt(nine) + "<br>";
     result.innerHTML += "Ten's complement of " + input + " is " + ten + "<br>";
 
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+nine+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 10's Complement -</h5> &emsp; 9's Complement + 1 = 10's Complement <br>&emsp; "
+    print+=nine+" + 1</span> = <span style='text-decoration: underline;'>"+ten+"</span>";
+    work.innerHTML = print;
 
     if (input == "") {
         result.innerHTML = "";
