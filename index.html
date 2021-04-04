@@ -501,6 +501,22 @@
         <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
             <div class="dropdown-divider"></div>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ipbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse and Periodicity of Functions</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span style="float:right;"
+                                      onclick="addtofavourite('Inverse and Periodicity of Functions','#ip','c','ipimgfav')"><img
+                                        id="ipimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--            Transformation of Functions-->
             <li>
                 <table class="table">
@@ -1570,8 +1586,8 @@
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Curve Tracing','#curve','c','curvefav')"><img
-                                        id="curvfav" src="images/unfavourite.png"
+                                <span onclick="addtofavourite('Curve Tracing','#curve','c','curveimgfav')"><img
+                                        id="curveimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -3785,6 +3801,33 @@
                 <p style="overflow-x:scroll;overflow-y:hidden;height:100%"
                    id="resultpardiff"></p>
             </div>
+        </div>
+        <div class="collapse" id="ip">
+            <h2 style="text-align: center;">Inverse,Periodicity of Functions</h2>
+            <br><br>
+            <h4>What is a Period?</h4>
+            <p>The time interval between two waves is known as a Period whereas a function that repeats its values 
+                at regular intervals or periods is known as a Periodic Function. In other words, a periodic function is a function that repeats its values after every particular interval.</p>
+            <p>\[f(x+a)\space = \space f(x) for\space a>0\] </p>
+            <br>
+            <h4>How to find a period?</h4>   
+            <ul>
+                <li style="color: white; font-size: 20px;">If a function repeats over at a constant period we say that is a periodic function.</li>
+                <li style="color: white; font-size: 20px;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
+                <li style="color: white; font-size: 20px;">Period means the time interval between the two occurrences of the wave.</li>
+            </ul>
+            <img style="margin-left: 250px;" src="https://cdn1.byjus.com/wp-content/uploads/2020/09/Amplitude-and-period-of-a-function1.png" alt="">
+            <br><br>
+            <p>\[If\space for\space f(x)\space period\space =\space T,\space then\space period\space for\space f(ax)\space =\space \frac{T}{a}\]</p>
+            <p>\[Rest\space for\space all\space other\space cases\space of\space functions,\space the\space period\space remains\space same\]</p>
+            <br>
+            <h4>What are inverse functions?</h4>
+            <p>An inverse function or an anti function is defined as a function, which can reverse into another function. In simple words, if any function “f” takes x to y then, the inverse of “f” will take y to x.</p>
+            <p> If the function is denoted by ‘f’ or ‘F’, then the inverse function is denoted by f<sup>-1</sup>- or F<sup>-1</sup>.</p>
+            <br>
+            <h4>How to find inverse?</h4>
+            <p>The graph of the inverse of a function reflects two things, one is the function and second is the inverse of the function, over the line y = x.</p>
+            <p>\[The\space inverse\space function\space returns\space the\space original\space value\space for\space which\space a\space function\space gave\space the\space output.\]</p>
         </div>
         <div class="collapse" id="trans">
             <h2 style="text-align: center;">Transformation of Functions</h2>
@@ -6959,9 +7002,9 @@
                 <br>
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
                 <br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></div>
-                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></div>
-                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></div>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></p>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></p>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></p>
             </div>
         </div>
 
@@ -8324,7 +8367,6 @@
                     </div>
                 </div>
             </div>
-
             <hr>
           <!-- Start 7's 8's Complement -->
            <div class="row">

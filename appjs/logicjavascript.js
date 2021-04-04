@@ -1003,7 +1003,11 @@ function solvesimpletrigo() {
     ) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
-    } else {
+    } 
+    else if(pp <0 || base <0 || hyp == 0 ){
+        document.getElementById("soltri").innerHTML = "The sides cannot be negative"
+    }
+    else {
         if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
             document.getElementById("h").style.color = "red";
             document.getElementById("soltri").innerHTML =
@@ -2534,7 +2538,7 @@ function ssimplifyequation(input, output) {
     var val = document.getElementById(input).value;
     var sol = nerdamer("simplify(" + String(val) + ")");
     sol = nerdamer(sol).toTeX();
-    katex.render("Simplified:\\newline" + sol, document.getElementById(output), {
+    katex.render("Simplified:\\newline " + sol, document.getElementById(output), {
         throwOnError: false,
     });
 }
@@ -2548,7 +2552,7 @@ function sequationexpand(input, output) {
     var x = nerdamer(val);
     sol = x.expand().toString();
     sol = nerdamer(sol).toTeX();
-    katex.render("Expanded:\\newline" + sol, document.getElementById(output), {
+    katex.render("Expanded:\\newline " + sol, document.getElementById(output), {
         throwOnError: false,
     });
 }
