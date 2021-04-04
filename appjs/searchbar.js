@@ -95,6 +95,24 @@ function autocomplete(inp, arr) {
                     }else if (inp.value.toUpperCase() == "SPI CONVERTER") {
                         $("#spiconcal").slideToggle(); 
                     }
+                    else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+                        $("#math").slideToggle();
+                    }
+                    else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+                        document.getElementById('math').click();
+                    }
+                    else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
+                        $("#euclid").slideToggle();
+                    }
+                    else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
+                        document.getElementById('euclid').click();
+                    }
+                    else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
+                        $("#setop").slideToggle();
+                    }
+                    else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
+                        document.getElementById('setop').click();
+                    }
                     else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
                         document.getElementById('romaracov').click();
                     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
@@ -178,7 +196,7 @@ function autocomplete(inp, arr) {
 
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
-                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Trigonometric Values", "Unit Converter" ,"Log Calculator","Operations on Fractions"];
+                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Operations on Sets","Euclid Geometry","Trigonometric Values", "Unit Converter" ,"Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -231,13 +249,18 @@ function handleclick(value) {
         $("#factors").slideToggle();
     } else if (inp.value.toUpperCase() == "TRIGONOMETRIC VALUES") {
         $("#trigonovaluestable").slideToggle();
+    } else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+        $("#math").slideToggle();
     } else if (inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITIES") {
         $("#trigonoiden").slideToggle();
+    } else if (inp.value.toUpperCase() == "EUCLID GEOMETRY") {
+        $("#euclid").slideToggle(); 
     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
         $("#unitconcal").slideToggle();
-    }
-    else if (inp.value.toUpperCase() == "SPI CONVERTER") {
+    } else if (inp.value.toUpperCase() == "SPI CONVERTER") {
         $("#spiconcal").slideToggle();
+    } else if (inp.value.toUpperCase() == "OPEARTIONS ON SETS") {
+        $("#setop").slideToggle();     
     } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
         document.getElementById('romaracov').click();
     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
@@ -250,6 +273,15 @@ function handleclick(value) {
           document.getElementById('covtowords').click();                      
     }  else if (inp.value.toUpperCase() == "LOG CALCULATOR") {
          $("#log_values").slideToggle();
+    }
+    else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+        document.getElementById('math').click(); 
+    }
+    else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
+        document.getElementById('euclid').click(); 
+    }
+    else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
+        document.getElementById('setop').click(); 
     }
 
 }

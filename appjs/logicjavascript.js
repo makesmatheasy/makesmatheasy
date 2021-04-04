@@ -1003,7 +1003,11 @@ function solvesimpletrigo() {
     ) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
-    } else {
+    } 
+    else if(pp <0 || base <0 || hyp == 0 ){
+        document.getElementById("soltri").innerHTML = "The sides cannot be negative"
+    }
+    else {
         if (parseInt(hyp) < parseInt(pp) || parseInt(hyp) < parseInt(base)) {
             document.getElementById("h").style.color = "red";
             document.getElementById("soltri").innerHTML =
@@ -2915,6 +2919,19 @@ function sinvlap() {
 function orderas() {
     document.getElementById("orderresult").innerHTML = "";
     var val = document.getElementById("ordergetval").value;
+    val=val.trim()
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
+    if(val==null)
+    {
+        document.getElementById("orderresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+
+    val = val.substring(2,val.length-2)
+
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
@@ -2946,6 +2963,18 @@ function orderas() {
 function orderde() {
     document.getElementById("orderresult").innerHTML = "";
     var val = document.getElementById("ordergetval").value;
+    val=val.trim()
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
+    if(val==null)
+    {
+        document.getElementById("orderresult").innerHTML = `Proper input is required`;
+        return;
+    }
+
+    val = JSON.stringify(val)
+
+    val = val.substring(2,val.length-2)
 
     val = val.split(" ");
     val = val.filter(function (str) {
@@ -3759,8 +3788,15 @@ function masscon() {
     const f = massu(document.getElementById("masscon-1").value);
     const t = massu(document.getElementById("masscon-2").value);
     const i = parseInt(document.getElementById("massconin").value);
-    const a = (i * f) / t;
-    document.getElementById("massconou").innerHTML = `${a}`;
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("massconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("massconou").innerHTML = "Mass cannot be negative. Kindly enter a positive value.";
+    }
 }
 
 function angleu(a) {
@@ -3889,8 +3925,16 @@ function datacon() {
     const f = datau(document.getElementById("datacon-1").value);
     const t = datau(document.getElementById("datacon-2").value);
     const i = parseInt(document.getElementById("dataconin").value);
-    const a = (i * f) / t;
-    document.getElementById("dataconou").innerHTML = `${a}`;
+
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("dataconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("dataconou").innerHTML = "Data size cannot be negative. Kindly enter a positive value.";
+    }
 
 }
 
@@ -3901,47 +3945,54 @@ function simple_interest() {
     p = document.getElementById("first").value;
     t = document.getElementById("second").value;
     r = document.getElementById("third").value;
+    var sitemp1= document.getElementById("simpleinterstoutput1");
+    var sitemp2= document.getElementById("simpleinterstoutput2");
+    sitemp1.innerHTML="";
+    sitemp2.innerHTML="";
     if(p=="" || t=="" || r=="")
     {
-        document.getElementById("simpleinterstoutput").innerHTML = "All the fields are required";
-        document.getElementById("compoundinterestoutput").innerHTML = "";
+        document.getElementById("simpleinterstoutput1").innerHTML = "All the fields are required";
+        document.getElementById("compoundinterestoutput1").innerHTML = "";
     }
     else
     {
         si = parseFloat((p * t * r) / 100);
         if(si<0)
         {
-            document.getElementById("simpleinterstoutput").innerHTML = "Negative values not allowed";
-            document.getElementById("compoundinterestoutput").innerHTML = "";
+            document.getElementById("simpleinterstoutput1").innerHTML = "Negative values not allowed";
+            document.getElementById("compoundinterestoutpu1t").innerHTML = "";
         }
         else
         {
-            
-            document.getElementById("simpleinterstoutput").innerHTML = "Simple interest = ₹" + si.toFixed(5);
 
+            document.getElementById("simpleinterstoutput1").innerHTML = "\\[Simple \\space Interest = \\space \\frac{1}{100} \\times p \\times t \\times r \\]";
+            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]";
+
+            renderMathInElement(document.getElementById("simpleinterstoutput1"));
+            renderMathInElement(document.getElementById("simpleinterstoutput2"));
             val = document.getElementById("comp").value;
-            
+
             n=1;
             if (val == "Compounded Annually") {
                 n=1;
-            } 
+            }
             else if (val == "Compounded Half-yearly") {
                 n=2;
             }
             else if (val == "Compounded Quaterly") {
                 n=4;
-            } 
+            }
             else if( val == "Compounded Monthly"){
                 n=12;
             }
 
             amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
-            document.getElementById("compoundinterestoutput").innerHTML = "Compound interest = ₹" + ci.toFixed(5);
+            document.getElementById("compoundinterestoutput1").innerHTML = "\\[Compound \\space Interest =P\\left(1+\\frac{r}{n}\\right)^{n t}\\]"
+            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]";
+            renderMathInElement(document.getElementById("compoundinterestoutput1"));
+            renderMathInElement(document.getElementById("compoundinterestoutput2"));
         }
-
-
-        
     }
 }
 
@@ -3950,10 +4001,15 @@ function simple_interest() {
 function emical() {
     var p, t, r, emi;
     p = parseInt(document.getElementById("first1").value);
-    r = parseFloat(document.getElementById("third3").value) / 1200;
+    r = parseFloat(document.getElementById("third3").value) / 100;
     t = parseInt(document.getElementById("second2").value) * 12;
     emi = ((p * r * Math.pow((1 + r), t)) / (Math.pow((1 + r), t) - 1));
-    document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2) + "   Per month";
+    document.getElementById("emio1").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{P} \\times \\mathrm{r} \\times(1+\\mathrm{r})^{\\mathrm{t}}}{(1+\\mathrm{r})^{t}-1}\\]";
+    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t+"}-1}\\]";
+    document.getElementById("emio3").innerHTML = "\\[\\mathrm{EMI}= \\space" + emi.toFixed(2) + "\\space Per\\space month\\]";
+    renderMathInElement(document.getElementById("emio1"));
+    renderMathInElement(document.getElementById("emio2"));
+    renderMathInElement(document.getElementById("emio3"));
 }
 
 
@@ -4006,8 +4062,15 @@ function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
     const i = parseInt(document.getElementById("timeconin").value);
-    const a = (i * f) / t;
-    document.getElementById("timeconou").innerHTML = `${a}`;
+    if(i>=0)
+    {
+        const a = (i * f) / t;
+        document.getElementById("timeconou").innerHTML = `${a}`;
+    }
+    else if(i<0)
+    {
+        document.getElementById("timeconou").innerHTML = "Time cannot be negative. Kindly enter a positive value.";
+    }
 }
 
 // Speed convert
@@ -4040,10 +4103,16 @@ function factorialsol(factorialval) {
     if (isNaN(num1)) {
         desc.innerHTML = "Enter a number.";
         ans.innerHTML = "";
-    } else if (num1 == 0 || num1 == 1) {
+    }
+    else if(num1<0)
+    {
+        desc.innerHTML = "Factorial is not defined for negative integer since, gamma function is not defined for negative integer";
+        ans.innerHTML = "";
+    }
+    else if (num1 == 0 || num1 == 1) {
         ans.innerHTML = "";
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1`;
-    } else if (num1 <= 15) {
+    } else if (num1 <= 15 && num1 >0) {
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1  `;
         let calc = 1;
         for (i = 2; i <= num1; i++) {
@@ -4091,6 +4160,141 @@ function profitloss() {
     }
 }
 
+//Statistics Calculator
+function cal_func_stats()
+{
+    var num = document.getElementById('num_list').value;
+    // console.log(typeof(num))
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+    
+
+    if(num=="")
+    {
+       document.getElementById('result_cal_func_stats').innerHTML = "";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('result_cal_func_stats').innerHTML = "Enter space separated numbers.<br>Example -> 1  2  2.1  -2  -2.6 <br> Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var print="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+        // console.log(num)
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        number.sort(function(a, b) {
+            return a - b;
+          });
+        console.log(number)
+        console.log(typeof(number))
+        console.log(typeof(number[0]))
+        
+        for (i = 0; i < len; i++) {
+            s = s + number[i];
+        }
+
+        mean = s/len
+        // console.log(number)
+        // console.log(len)
+        // console.log(s)
+
+        var median=0
+        if(len%2==0)
+        {
+            median=((number[parseInt(len/2)-1])+(number[parseInt((len/2))]))/2;
+        }
+        else
+        {
+            median=(number[parseInt(len/2)]);
+        }
+
+
+        const frequencyTable = {};
+        number.forEach((elem) => (frequencyTable[elem] = frequencyTable[elem] + 1 || 1));
+
+        let mode = [];
+        let maxFrequency = 0;
+        for (const key in frequencyTable) {
+            if (frequencyTable[key] > maxFrequency) {
+                mode = [Number(key)];
+                maxFrequency = frequencyTable[key];
+            } else if (frequencyTable[key] === maxFrequency) {
+                mode.push(Number(key));
+            }
+        }
+
+        if (mode.length === number.length) mode = number[0];
+        if (number.length != 0)
+        {
+            if (mode.length === 0) {
+                mode = number;
+            } else {
+                mode = `${mode}`;
+            }
+        }
+
+        var variance=0;
+        for (i = 0; i < len; i++) {
+            variance = variance + ((number[i])-mean)*((number[i])-mean);
+        }
+
+        variance = variance/len;
+        
+        var standarddev = Math.sqrt(variance);
+
+        var large=(number[len-1]);
+        var small=(number[0]);
+
+        console.log(large);
+        console.log(small);
+        
+        var range = large - small;
+        var coffrange = (large - small)/(large + small);
+        var coffvariation = (standarddev/mean)*100;
+
+        var mdmean=0;
+        for (i = 0; i < len; i++) {
+            mdmean =  mdmean + Math.abs((number[i])-mean);
+        }
+        mdmean = mdmean/len;
+
+        var mdmedian=0;
+        for (i = 0; i < len; i++) {
+            mdmedian =  mdmedian + Math.abs((number[i])-median);
+        }
+        mdmedian = mdmedian/len;
+
+        var mdmode=0;
+        for (i = 0; i < len; i++) {
+            mdmode =  mdmode + Math.abs((number[i])-mode);
+        }
+        mdmode = mdmode/len;
+
+        print+="Mean: "+mean+"<br>";
+        print+="Median: "+median+"<br>";
+        print+="Mode: "+mode+"<br>";
+        print+="Variance: "+variance+"<br>";
+        print+="Standard Deviation: "+standarddev+"<br>";
+        print+="Range: "+range+"<br>";
+        print+="Coefficient of Range: "+coffrange+"<br>";
+        print+="Coefficient of Variation: "+coffvariation+"<br>";
+        print+="Mean deviation about Mean: "+mdmean+"<br>";
+        print+="Mean deviation about Median: "+mdmedian+"<br>";
+        print+="Mean deviation about Mode: "+mdmode+"<br>";
+        
+        // print+=s/len
+
+        document.getElementById('result_cal_func_stats').innerHTML = print;
+    }
+}
+
 //sum of nterms of an Arithmetic Progression
 function sum_n_apsol(nval, rval, r1val) {
     var n = document.getElementById(nval).value;
@@ -4132,14 +4336,41 @@ function anotherap() {
     document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
     document.getElementById("ltap").innerHTML = "Result: " + ans
 }
-
+function apsum()
+{   var n = document.getElementById("nterms").value
+    var val = document.getElementById("ap").value;
+    val = val.split(" ");
+    val = val.filter(function (str) {
+       return /\S/.test(str);
+    });
+	var s=0;
+	if( parseInt(val.length)<2)
+	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
+	else{
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))	
+		{
+			document.getElementById("printAP").innerHTML="Invalid AP"
+		}
+    else
+	{	
+		var d=val[1]-val[0];
+		document.getElementById("printAP").innerHTML ="Common difference for the entered AP is &nbsp;"+d+"<br>";
+		for(i=0;i<n;i++)
+		{
+			document.getElementById("printAP").innerHTML +=eval(String(i+"*"+d + "+"+ val[0]))+",";
+			s=eval(String(s+"+"+i+"*"+d + "+"+ val[0]))
+		}
+		document.getElementById("printAP").innerHTML +="<br>The Sum of &nbsp;"+n+"&nbsp; terms of the given AP is &nbsp;"+s;
+	}
+	}	
+}
 function amsol() {
     var a = document.getElementById("aval").value
     var c = document.getElementById("cval").value
     var amadd = parseInt(a) + parseInt(c)
     var res = parseFloat(amadd / 2)
     var explain = document.getElementById("am_formula");
-    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] ";
+    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\space \\frac{a+c}{2} =\\space \\frac{"+a+"+"+c+"}{2}\\] ";
     renderMathInElement(document.getElementById("am_formula"));
     document.getElementById("am").innerHTML = "Result: " + res
 
@@ -4148,13 +4379,22 @@ function amsol() {
 function gmsol() {
     var a = document.getElementById("aval1").value
     var c = document.getElementById("cval1").value
+    if(a<0&&c<0){
+      var gmmul1 = parseInt(a) * parseInt(c)
+      var res1 = -(Math.sqrt(gmmul1))
+      var explain = document.getElementById("gm_formula");
+      explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space\\ - \\sqrt{a \\times c} = \\space\\ - \\sqrt{"+a+"\\times"+c+"}\\] ";
+      renderMathInElement(document.getElementById("gm_formula"));
+      document.getElementById("gm").innerHTML = "Result: " + res1
+    }
+    else{
     var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
-    explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] ";
+    explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
-
+}
 }
 
 function hmsol() {
@@ -4164,12 +4404,11 @@ function hmsol() {
     var hmadd = parseInt(a) + parseInt(c)
     var res = (hmmul / hmadd)
     var explain = document.getElementById("hm_formula");
-    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] ";
+    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\space \\frac{2ac}{a+c} = \\space \\frac{2\\times"+a+"\\times"+c+"}{"+a+"+"+c+"}\\] ";
     renderMathInElement(document.getElementById("hm_formula"));
     document.getElementById("hm").innerHTML = "Result: " + res
 
 }
-
 // Primality test
 function check_prime(isprime) {
     var num = document.getElementById(isprime).value;
@@ -4256,12 +4495,12 @@ function gp() {
         for (var i = 0, series = "", num = 0; i <= n-1; i++) {
             num = parseInt(a) * Math.pow(r,i);
             series += (num.toString() + ", ");
-        } 
-  
+        }
+
         printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
       }
-  
-  
+
+
       var power = parseFloat(Math.pow(r, n))
       if (r < -1 || r > 1) {
           ans1 = parseFloat(a * (power - 1))
@@ -4298,6 +4537,16 @@ function permutationcal(nval, rval) {
     document.getElementById("combination_div").style.display = "none";
     var val1 = document.getElementById(nval).value;
     var val2 = document.getElementById(rval).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(val1);
+    var testVal2 = regex.test(val2);
+    if (!textVal1 || !testVal2)
+    {
+        document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("premutation_div_div2").style.display = "none";
+        document.getElementById("permutation_div_div1").style.display = "block";
+        return;
+    }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
     if (isNaN(val3) || isNaN(val4)) {
@@ -4314,7 +4563,7 @@ function permutationcal(nval, rval) {
             "n must be greater than r.";
         document.getElementById("premutation_div_div2").style.display = "none";
         document.getElementById("permutation_div_div1").style.display = "block";
-    
+
 	} else
 	{
         let ans1 = 1,
@@ -4351,6 +4600,16 @@ function combinationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "none";
     var val1 = document.getElementById(nval).value;
     var val2 = document.getElementById(rval).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(val1);
+    var testVal2 = regex.test(val2);
+    if (!textVal1 || !testVal2)
+    {
+        document.getElementById("combination_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("combination_div_div2").style.display = "none";
+        document.getElementById("combination_div_div1").style.display = "block";
+        return;
+    }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
     if (isNaN(val3) || isNaN(val4)) {
@@ -4361,7 +4620,7 @@ function combinationcal(nval, rval) {
             "n and r must be positive integers";
         document.getElementById("combination_div_div2").style.display = "none";
         document.getElementById("combination_div_div1").style.display = "block";
-	
+
     } else if (val3 < val4) {
         document.getElementById("combination_wrong").innerHTML =
             "n must be greater than r.";
@@ -4409,8 +4668,8 @@ function Means() {
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
     if(val==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4433,13 +4692,13 @@ function Means() {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         var ans = s / len;
-        
+
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
         for (i = 1; i < val.length; i++) {
-            document.getElementById("Meanresult").innerHTML += `+${val[i]}`;
+            document.getElementById("Meanresult").innerHTML += ` + ${val[i]}`;
         }
-        document.getElementById("Meanresult").innerHTML += `)/${val.length}=`;
+        document.getElementById("Meanresult").innerHTML += `)/${val.length} = `;
         document.getElementById("Meanresult").innerHTML += ans.toFixed(5);
         renderMathInElement(document.getElementById("Meanresult"));
     }
@@ -4451,8 +4710,8 @@ function Median() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
-    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+    arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
     if(arr==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4460,7 +4719,6 @@ function Median() {
     }
 
     arr = JSON.stringify(arr)
-    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
 
     arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
@@ -4476,12 +4734,13 @@ function Median() {
         let median =
             len % 2 === 0
                 ? (parseFloat(arr[mid]) + parseFloat(arr[mid - 1])) / 2
-                : arr[mid];
+                : parseInt(arr[mid]);
         document.getElementById(
             "Meanresult"
-        ).innerHTML = `After Sorting:- ${arr}</br>`;
-        document.getElementById("Meanresult").innerHTML += `Median:-`;
-        document.getElementById("Meanresult").innerHTML += median.toFixed(5);;
+        ).innerHTML = `After Sorting: ${arr}</br>`;
+        var med = median.toFixed(5);
+        document.getElementById("Meanresult").innerHTML += `Median: `;
+        document.getElementById("Meanresult").innerHTML += med;
         renderMathInElement(document.getElementById("Meanresult"));
     }
 }
@@ -4492,8 +4751,8 @@ function Mode() {
     document.getElementById("Meanresult").innerHTML = "";
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
-    arr = arr.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+    arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
     if(arr==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4531,7 +4790,7 @@ function Mode() {
                 "Meanresult"
             ).innerHTML += `All Number appeared Just Once`;
         } else {
-            document.getElementById("Meanresult").innerHTML += `Mode is:-${modes}`;
+            document.getElementById("Meanresult").innerHTML += `Mode is: ${modes}`;
         }
     }
 }
@@ -4544,8 +4803,8 @@ function Variance() {
     var val = document.getElementById("getNum").value;
 
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
     if(val==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4576,7 +4835,7 @@ function Variance() {
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `(${String(Math.pow(num - mean, 2))}`;
             } else {
-                document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num - mean, 2))}`;
+                document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
@@ -4595,10 +4854,10 @@ function std() {
     var s = 0, ans = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
-    
+
     val=val.trim()
-    val = val.match(/(^(\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+    val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+
     if(val==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4629,7 +4888,7 @@ function std() {
             if (i == 0) {
                 document.getElementById("Meanresult").innerHTML += `&#8730; (${String(Math.pow(num - mean, 2))}`;
             } else {
-                document.getElementById("Meanresult").innerHTML += `+${String(Math.pow(num - mean, 2))}`;
+                document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
         document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
@@ -4776,6 +5035,29 @@ function convertBinOct() {
 }
 
 //----------------------------
+
+//Function that performs conversion of Octal/hexadecimal
+function convertOctHex() {
+    const fromBase = document.getElementById("octal-hexadecimal-select1").value;
+    const toBase = document.getElementById("octal-hexadecimal-select2").value;
+    const input = document.getElementById("octal-hexadecimal-input").value;
+    let result = document.getElementById("octal-hexadecimal-result");
+    let from = 8;
+    let to = 8;
+
+    if (fromBase === "Octal") from = 8;
+    else from = 16;
+
+    if (toBase === "Octal") to = 8;
+    else to = 16;
+
+    result.innerHTML = parseInt(input, from).toString(to);
+    if (input == "") {
+        result.innerHTML = "";
+    }
+}
+//---------------------------------------------------------------------
+
 //Function for addition of any number system
 function addBinDecHexOct(){
     const firstBase = document.getElementById("adding-all-select1").value;
@@ -4806,7 +5088,7 @@ function addBinDecHexOct(){
     x2=parseInt(input2);
 
     var x3=x1+x2;
-    
+
     if(resultType === "Binary")
     result.innerHTML="Answer in binary="+x3.toString(2);
     else if (resultType === "Octal")
@@ -4816,10 +5098,10 @@ function addBinDecHexOct(){
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
 
-    
-    
-    
-    
+
+
+
+
 
 }
 
@@ -4849,13 +5131,13 @@ function bcdTOdecimal(x) {
     input1="00"+x;
     else if(y%4==3 || y==3)
     input1="0"+x;
-    else 
+    else
     input1=x;
     const minVal = (currentValue) => currentValue <= 9;
     w=separator(input1,4);
     if(w.every(minVal)==true)
     return w;
-    else 
+    else
     return inv;
     }
 function decimalTObcd(z=""){
@@ -4879,22 +5161,22 @@ function decimalTObcd(z=""){
     }
     return x;
 
-}   
+}
 function convertbcd() {
     const fromCode = document.getElementById("bcd-select1").value;
     const toCode = document.getElementById("bcd-select2").value;
     var input = document.getElementById("bcd-input").value;
     let result = document.getElementById("bcd-result");
-    
-    if( fromCode=="BCD Code" && toCode=="BCD Code") 
+
+    if( fromCode=="BCD Code" && toCode=="BCD Code")
     result.innerHTML=input;
     else if(fromCode=="Decimal" && toCode=="Decimal")
     result.innerHTML=input;
     else if(fromCode=="BCD Code" && toCode =="Decimal")
     result.innerHTML=bcdTOdecimal(input).join('_');
-    else if(fromCode=="Decimal" && toCode=="BCD Code") 
+    else if(fromCode=="Decimal" && toCode=="BCD Code")
     result.innerHTML =decimalTObcd(input);
-    
+
 }
 
 //----------------------------
@@ -5013,10 +5295,13 @@ function convertBinhex() {
 function onetwoCalc() {
     const input = document.getElementById("onetwonumber").value;
     let result = document.getElementById("onetworesult");
+    let work = document.getElementById("onetwoworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 1's Complement -</h5> &emsp;"
     var ar = input.split("");
     var one = new Array(ar.length);
     var two = new Array(ar.length);
-    for (var i = 0; i < ar.length; i++) {
+    for (var i = 0; i <ar.length; i++) {
+        print+="1";
         if (ar[i] == 0) {
             one[i] = 1;
 
@@ -5026,7 +5311,6 @@ function onetwoCalc() {
     }
     var onec = one.join('');
     result.innerHTML = "One's complement of " + input + " is " + onec + "<br>";
-
 
     for (var i = ar.length - 1; i >= 0; i--) {
         two[i] = ar[i];
@@ -5048,21 +5332,95 @@ function onetwoCalc() {
         var twoc = two.join('');
     }
     result.innerHTML += "Two's complement of " + input + " is " + twoc + "<br>";
+
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+onec+"</span><br>";
+
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 2's Complement -</h5> &emsp; 1's Complement + 1 = 2's Complement <br>&emsp; "
+    print+=onec+" + 1</span> = <span style='text-decoration: underline;'>"+twoc+"</span>";
+    work.innerHTML = print;
+
     if (input == "") {
         result.innerHTML = "";
-    } else if (input.search(/^[10]+$/) == -1)
+        work.innerHTML = "";
+    } else if (input.search(/^[10]+$/) == -1){
         result.innerHTML = "Binary numbers can only have 0's and 1's";
+        work.innerHTML = "";
+    }
 
 
 }
 
-//9's 10's compliment
+//----------------
+//7's 8's complement
+function seveneightCalc(){
+    const input = document.getElementById("seveneightnumber").value;
+    let result = document.getElementById("seveneightresult");
+    let work = document.getElementById("seveneightworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 7's Complement -</h5> &emsp;"
+    var seven = "";
+    var eight = "";
+
+    for (var i = 0; i < input.length; i++) {
+        print+="7";
+        seven += '7' - input[i];
+    }
+    result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
+    eight = parseInt(seven) + 1;
+    result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
+    result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
+    
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+seven+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
+    print+=seven+" + 1</span> = <span style='text-decoration: underline;'>"+eight+"</span>";
+    work.innerHTML = print;
+
+    if (input == "") {
+        result.innerHTML = "";
+        work.innerHTML = "";
+    } else if (input.search(/^[0-7]+$/) == -1){
+        result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
+        work.innerHTML = "";
+    }
+}
+
+
+//--------------------
+//15's 16's compliment
+function fiftnsixtnCalc() {
+    const input = document.getElementById("fiftnsixtnnumber").value;
+    let result = document.getElementById("fiftnsixtnresult");
+    var fiftn = "";
+    var sixtn = "";
+    for (var i = 0; i < input.length; i++) {
+        fiftn += (16 - parseInt(input[i],16)).toString(16);
+
+    }
+    sixtn = (parseInt(fiftn,16) + 1).toString(16);
+    result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
+    result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+
+
+    if (input == "") {
+        result.innerHTML = "";
+    }
+    if(fiftn == "NaN"){
+        result.innerHTML = "Invalid Hexa Decimal Number"
+    }
+
+}
+
+
+//9's 10's complement
+
 function ninetenCalc() {
     const input = document.getElementById("ninetennumber").value;
     let result = document.getElementById("ninetenresult");
+    let work = document.getElementById("ninetenworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 9's Complement -</h5> &emsp;"
     var nine = "";
     var ten = "";
     for (var i = 0; i < input.length; i++) {
+        print+="9";
         nine += '9' - input[i];
 
     }
@@ -5070,10 +5428,15 @@ function ninetenCalc() {
     result.innerHTML = "Nine's complement of " + input + " is " + parseInt(nine) + "<br>";
     result.innerHTML += "Ten's complement of " + input + " is " + ten + "<br>";
 
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+nine+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 10's Complement -</h5> &emsp; 9's Complement + 1 = 10's Complement <br>&emsp; "
+    print+=nine+" + 1</span> = <span style='text-decoration: underline;'>"+ten+"</span>";
+    work.innerHTML = print;
 
     if (input == "") {
         result.innerHTML = "";
-    }
+    } else if (input.search(/^[0-9]+$/) == -1)
+        result.innerHTML = "Decimal Numbers can only have digits between 0 to 9 and '-' sign not allowed";
 }
 
 ////////////////////date calculator///////////
@@ -5217,10 +5580,10 @@ function computebayesprobability() {
     var probability3 =pbanda/probability2;
 
     var probability4=pbanda/probability1;
-    
+
     console.log(probability1);
     console.log(probability2);
-    
+
     let result1 = document.getElementById("bayesresult1");
     let result2=document.getElementById("bayesresult2");
     var check = true;
@@ -5229,26 +5592,26 @@ function computebayesprobability() {
         if (favourable1 > total1) {
             result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
             check = false;
-        } 
+        }
 
         else if (favourable2 > total2) {
             result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
             check = false;
-        } 
+        }
 		 else if (pbanda>probability2 || pbanda>probability1) {
             result1.innerHTML = "Probability of intersection is always equal to or less than the probability of individual events";
 			result2.innerHTML ="";
             check = false;
-        } 
+        }
 
          if (check == true) {
             result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
-             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);  
+             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);
 
         }
     } else {
         result.innerHTML = "Outcomes can't be negative. Enter positive values only";
-        
+
     }
 
 
@@ -5324,4 +5687,46 @@ function angleplot() {
     }
     ctx.stroke();
 
+}
+function fa(x)
+{
+    if(x==1)
+        return 1;
+    return x * fa(x-1);
+}
+
+function rankcal() {
+
+    var input = document.getElementById("rankcal-input").value;
+    let result = document.getElementById("rankcal-result");
+    input = input.toUpperCase();
+    var s = input.length;
+    var m = fa(s);
+    var ans =1;
+    var c;
+    for (var j=0; j<s;++j)
+    {
+        m /= s-j;
+        c = ran(input,j,s-1);
+        ans = ans+ (c*m);
+    }
+    if(input.match(/^[A-Za-z]+$/))
+        {
+            result.innerHTML = ans;
+        }
+    else
+        result.innerHTML = "Invalid input use alphabet only";
+
+}
+function ran(x,y,z)
+{
+    var c = 0;
+    for (var j=y+1; j<=z;++j)
+    {
+        if(x[j]<=x[y])
+        {
+            c++;
+        }
+    }
+    return c;
 }

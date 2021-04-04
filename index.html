@@ -95,6 +95,18 @@
         .col2 {
             margin-left: 30px;
         }
+        /* Styling for invalid expression button */
+        #calpar button{
+            background-color: #ff3077;
+            border-radius: 50%;
+            color: white;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            right: 390px;
+            bottom: 160px;
+
+        }
     </style>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/searchbar.css">
@@ -404,22 +416,7 @@
                     </tr>
                 </table>
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="meanbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean
-                                Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
-                                        id="meanfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+
 
 
             <div class="dropdown-divider"></div>
@@ -430,6 +427,23 @@
                                                                            id="imgClickAndChange1"></a></li>
         <div class="collapse" id="conictoggle" style="color:green;margin:0.625rem;padding-left:0.625rem">
             <div class="dropdown-divider"></div>
+
+		 <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="circlecollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Circle</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Circle','#circlecollapse','c','circlefav')"><img
+                                        id="circlefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -487,6 +501,22 @@
         <div class="collapse" id="calculustoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
             <div class="dropdown-divider"></div>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ipbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse and Periodicity of Functions</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span style="float:right;"
+                                      onclick="addtofavourite('Inverse and Periodicity of Functions','#ip','c','ipimgfav')"><img
+                                        id="ipimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--            Transformation of Functions-->
             <li>
                 <table class="table">
@@ -649,8 +679,42 @@
                     </tr>
                 </table>
             </li>
-            <!--            differential equation-->
 
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="thdifbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Theorems on Differentiation</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Theorems on Differentiation','#thdif','c','thdiffav')"><img
+                                        id="thdiffav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--            differential equation-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="aodbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Application of Derivative</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Application of Derivative','#aod','c','aodfav')"><img
+                                        id="aodfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--maxima and minima-->
             <li>
                 <table class="table">
@@ -767,6 +831,23 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vecalgbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector
+                                Algebra</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Algebra','#vecalg','c','vecalgfav')"><img
+                                        id="vecalgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -965,7 +1046,22 @@
                     </tr>
                 </table>
             </li>
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="rankcalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Rank Calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Rank Calculator','#rankcal','c','rankimgfav')"><img
+                                        id="rankimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -984,7 +1080,22 @@
                     </tr>
                 </table>
             </li>
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="meanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
+                                        id="meanfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -1017,6 +1128,25 @@
                                <span
                                        onclick="addtofavourite('Logarithm Properties','#log-collapse','c','logpropimgfav')"><img
                                        id="logpropimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bt-collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Binomial Theorem
+                                Properties
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Binomial Theorem Properties','#bt-collapse','c','btpropimgfav')"><img
+                                       id="btpropimgfav" src="images/unfavourite.png"
                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1273,6 +1403,7 @@
                 </table>
             </li>
 
+
             <!-- SPI CONVERTER  -->
             <li>
                 <table class="table">
@@ -1385,6 +1516,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="straightlinebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Straight Line Formulae</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Straight Line Formulae','#straightline','c','straightlinefav')"><img
+                                        id="straightlinefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="parallelbtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Parallel Lines
                             </a>
@@ -1418,13 +1564,46 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="corgeobtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
+                                Geometry Formula and Theorem
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coordinate Geometry Formula and Theorem','#corgeo','c','corgeofav')"><img
+                                        id="corgeofav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="curvebtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Curve Tracing
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Curve Tracing','#curve','c','curvefav')"><img
-                                        id="curvfav" src="images/unfavourite.png"
+                                <span onclick="addtofavourite('Curve Tracing','#curve','c','curveimgfav')"><img
+                                        id="curveimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="propcirclebtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Circles
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Properties of Circles','#propcircle','c','propcirclefav')"><img
+                                        id="propcirclefav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1459,6 +1638,24 @@
                                 <span
                                         onclick="addtofavourite('3-D Shapes Calculator','#tdshapescal','c','tdshapesimgfav')"><img
                                         id="tdshapesimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="3dgeobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D
+                                Geometry</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('3-D Geometry','#3dgeo','c','3dgeofav')"><img
+                                        id="3dgeofav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1678,6 +1875,27 @@
 
 
             <!--end-->
+<!--start-->
+<li>
+    <table class="table">
+        <tr>
+            <td style="border-top: none;">
+                <a id="octal-to-hexadecimal-btn"
+                   style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Octal
+                    / Hexadecimal
+                    Converter</a>
+            </td>
+            <td style="float:right;border-top: none;">
+                    <span
+                            onclick="addtofavourite('Octal / Hexadecimal Converter','#octal-hexadecimal','c','octal-hexadecimal-imgfav')"><img
+                            id="octal-hexadecimal-imgfav" src="images/unfavourite.png"
+                            style="height:1.5625rem;filter: none;"></span>
+            </td>
+        </tr>
+    </table>
+</li>
+
+<!--end-->
             <li>
                 <table class="table">
                     <tr>
@@ -1821,6 +2039,38 @@
                                                                              id="imgClickAndChange9"></a></li>
         <div class="collapse" id="complextoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
             <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexidentitiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Identities</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexidentities','#complexidentities','c','complexidentitiesfav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexpropertiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexproperties','#complexproperties','c','comlexpropertiesfav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -2510,7 +2760,9 @@
 
         </div>
 
-        <div class="collapse" id="integration-idencollapse">
+
+	 <div class="collapse" id="integration-idencollapse">
+
             <div class="stopwrap">
                 <div class="coll">
                     <div class="left">
@@ -2572,6 +2824,316 @@
                             \,dx\space=\frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
                         <p>\[32)\space\int e^{ax}cosbx
                             \,dx\space=\frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
+			</div>
+		    </div>
+		</div>
+	</div>
+
+        <div class="collapse" id="corgeo">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+
+                        <h4>Distance Formula: To Calculate Distance Between Two Points</h4>
+                        <p>\[Let \,the\, two \,points\, be \,A\, and \,B,\, having\, coordinates\, to\]</p><p>\[ be\, (x1,y1) \,and \,(x2,y2)\, respectively.\]</p>
+                        <p>\[Thus,\, the \,distance\, between\, two\, points \,is\, given\, as-\]</p>
+                        <p>\[\large d = \sqrt{(x_{2} -x_{1})^{2} + (y_{2} – y_{1})^{2}}\]</p>
+                        <p><centre><center><img src="images/diss.png"><center></center><centre></p>
+                        <br><br><br>
+                        <h4>Midpoint Theorem: To Find Mid-point of a Line Connecting Two Points</h4>
+                        <p>\[Consider\, the\, same\, points \,A\, and \,B, \,having\, coordinates\, to\]</p><p>\[ be\, (x1,y1) \,and\, (x2,y2) \,respectively.\, Let\, M(x,y)\, be\, the\]</p><p>\[ midpoint\, of\, lying\, on \,the\, line\, connecting\, these\, two\]</p><p>\[ points \,A\, and\, B.\, The \,coordinates\, of\, the\, point\, M \,is\, given\, as-\]</p>
+                        <p>\[\large M (x,y)= \left ( \frac{x_{1} + x_{2}}{2}, \frac{y_{1} + y_{2}}{2} \right )\]</p>
+                        <br><br><br>
+                        <h4>Angle Formula: To Find The Angle Between Two Lines</h4>
+                        <p>\[Consider\, two \,lines A\, and\, B,\, having \,their \,slopes\, to\, be\, m1\, and\, m2\, respectively.\]</p>
+                        <p>\[Let\, “θ” \,be\, the\, angle\, between \,these \,two\, lines,\, then\, the\, angle \,between \,them \,can \,be\, represented\, as\]</p>
+                        <p>\[\large \tan \theta = \frac{m_{1} – m_{2}}{1 + m_{1} m_{2}}\]</p>
+                        <br>
+                        <p>\[SPECIAL\, \, CASES:\]</p>
+                        <br>
+                        <p>\[i) \space \,Case \,1\,:\, When\, the\, two \,lines \,are\, parallel\, to \,each\, other,\]</p>
+                        <p>\[\large m_{1} = m_{2}=m\]</p>
+                        <p>\[Substituting\, the\, value \,in \,the\, equation\, above,\]</p>
+                        <p>\[\large \tan \theta = \frac{m – m }{1 + m^{2}} = 0\]</p>
+                        <p>\[\large \Rightarrow \theta = 0\]</p>
+                        <br>
+                        <p>\[ii) \space \,Case\, 2\,:\, When \,the\, two\, lines \,are\, perpendicular \,to \,each\, other,\]</p>
+                        <p>\[m1 . m2 = -1\]</p>
+                        <p>\[Substituting\, the\, value\, in \,the\, original \,equation,\]</p>
+                        <p>\[\large \tan \theta = \frac{m_{1} – m_{2}}{1 + (-1)} = \frac{m_{1} – m_{2}}{0}\,\, which\, is\, undefined.\]</p>
+                        <p>\[⇒ \theta  = 90°\]</p>
+                        <br><br><br>
+                        <h4>Section Formula: To Find a Point Which Divides a Line into m:n Ratio</h4>
+                        <p>\[Consider \, a \, line \, A \, and \, B \, having \, coordinates \, (x_1,y_1) \, and \, (x_2,y_2) \, respectively. \]</p>
+                        <p>\[Let \,P\, be\, a\, point\, that \,which\, divides\, the \,line\, in \,the\, ratio\, m:n, \]</p>
+                        <p>\[then \,the\, coordinates\,of\, the \,point\, P \,is \,given\, as-\]</p>
+                        <p>\[i) \space When\, the\, ratio\, m:n \,is\, internal\,:\]</p>
+                        <p>\[\large \left (\frac{mx_{2} + nx_{1}}{m + n}, \frac{my_{2} + ny_{1}}{m + n} \right )\]</p>
+                        <p>\[ii) \space When \,the\, ratio \,m:n \,is\, external\,:\]</p>
+                        <p>\[\large \left (\frac{mx_{2} – nx_{1}}{m – n}, \frac{my_{2} – ny_{1}}{m – n} \right )\]</p>
+                        <br><br><br>
+                        <h4>Area of a Triangle in Cartesian Plane</h4>
+                        <p>\[The\, area \,of\, a\, triangle\, In \,coordinate\, geometry\,whose \,vertices\, are\, (x_1,y_1),\,(x_2,y_2) \,and\, (x_3,y_3)\, is\]</p>
+                        <p>\[\frac{1}{2}|x_1 (y_2~ -~ y_3)~ + ~x_2(y_3~ – ~y_1)~ +~ x_3(y_1~ – ~y_2)|\]</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="vecalg">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Magnitude of a Vector</h4>
+                        <p>\[The\, magnitude\, of\, a\, vector\, is \,shown\, by\, vertical\, lines\, on \,both\, the\, sides\, of\, the \,given\, vector\, “|a|”\]</p>
+                        <p>\[ It \,represents\, the \,length\, of\, the\, vector.\, Mathematically, \,the \,magnitude\]</p>
+                       <p>\[of \,a \,vector\, is\, calculated\, by\, the \,help\, of \,“Pythagoras\, Theorem,”\, i.e.\]</p>
+                       <p>\[|a|= √(x2+y2)\]</p>
+                       <br><br>
+                       <h4>Unit Vector</h4>
+                       <p>\[A \,unit\, vector \,has \,a \,length \,(or\, magnitude)\, equal \,to\, one,\, which \,is\, basically\, used \,to\, show\, the\]</p><p>\[ direction \,of\, any \,vector.\, A\, unit \,vector\, is \,equal \,to\, the \,ratio\, of \,a\, vector\, and\, its\, magnitude.\]</p><p>\[ Symbolically,\, it\, is\, represented \,by\, a\, cap\, or \,hat (^). \]</p>
+                        <p>\[\hat{\mathbf{a}}=\frac{\mathbf{a}}{\|\mathbf{a}\|}\]</p>
+                        <br><br>
+                        <h4>Zero Vector</h4>
+                        <p>\[A \,vector\, with\, zero \,magnitudes \,is\, called \,a \,zero\, vector.\, The \,coordinates\, of\, zero\, vector\]</p><p>\[ are\, given\, by\, (0,0,0) \,and \,it\, is\, usually \,represented \,by\, 0\, with\, an\, arrow (→) \,at \,the\, top\, or\, just\, 0\]</p>
+                        <br><br>
+                        <h4>Characteristics of Vector Math Addition</h4>
+                        <p>\[* \,Commutative\, Law-\, the\, order \,of\, addition\, does\, not \,matter,\, i.e,\, a + b = b + a\]</p>
+                        <p>\[* \,Associative\, law-\, the\, sum \,of \,three\, vectors\, has\, nothing \,to\, do\, with\]</p><p>\[ which\, pair\, of\, the\, vectors\, are \,added \,at\, the \,beginning.\]</p>
+                        <br><br>
+                        <h4>Scalar Multiplication</h4>
+                        <p>\[Only \,the\, magnitude \,of\, a\, vector\, is \,changed\, not \,the\, direction.\]</p>
+                        <p>\[* \, \, S(a+b) = Sa + Sb\]</p>
+                        <p>\[* \, \, a.1 = a\]</p>
+                        <p>\[* \, \, a.0 = 0\]</p>
+                        <p>\[* \, \, a.(-1) = -a\]</p>
+                        <br><br>
+                        <h4>Scalar Triple Product</h4>
+                        <p>\[The \,scalar\,triple\, product,\, also\, called\, as\, box\, product \,or\, mixed \,triple\]</p><p>\[ product,\, of \,three \,vectors,\, say \,a,\, b\, and \,c\, is\, given\, by \,(a×b)⋅c.\]</p>
+                        <p>\[ It\, is\, also\, denoted \,by\, (a\, b\, c). \]</p>
+                        <p>\[(a \,b\, c)\, = (a×b)⋅c\]</p>
+                        <p>\[\begin{aligned} (\mathbf{a} \times \mathbf{b}) \cdot \mathbf{c} &=\left|\begin{array}{ll} a_{2} & a_{3} \\ b_{2} & b_{3} \end{array}\right| c_{1}-\left|\begin{array}{ll} a_{1} & a_{3} \\ b_{1} & b_{3} \end{array}\right| c_{2}+\left|\begin{array}{ll} a_{1} & a_{2} \\ b_{1} & b_{2} \end{array}\right| c_{3} \\ &=\left|\begin{array}{lll} c_{1} & c_{2} & c_{3} \\ a_{1} & a_{2} & a_{3} \\ b_{1} & b_{2} & b_{3} \end{array}\right| \end{aligned}\]</p>
+                        <br><br>
+                        <h4>Vector Multiplication</h4>
+                        <br>
+                        <p>\[CROSS \, \, PRODUCT\]</p>
+                        <p>\[The \,cross\, product\, of \,two\, vectors\, results \,in\, a\, vector\, quantity.\]</p><p>\[ It\, is \,represented\, by\, a \,cross\, sign \,between\, two\, vectors.\]</p>
+
+                        <p>\[a x b = | a | | b | sin θ\]</p>
+                        <br>
+                        <p>\[DOT \, \,PRODUCT\]</p>
+                        <p>\[The\, dot \,product\, of \,two \,vectors \,always\, results\, in\, scalar\, quantity,\]</p><p>\[ i.e.\, it \,has \,only \,magnitude\, and \,no \,direction.\, It \,is\, represented\]</p><p>\[ by\, a\, dot (.)\, in \,between\, two \,vectors.\]</p>
+                        <p>\[a . b = | a | | b | cos θ\]</p>
+                        <br><br>
+                        <h4>Components of Vectors (Horizontal & Vertical)</h4>
+                        <p>\[ Vector \,“a”\, can\, be\, broken \,down \,into \,two\, components\, i.e. \,a_x\, and\, a_y\]</p>
+                        <p>\[The \,component \,a_x \,is\, called\, a \,“Horizontal\, component”\, whose \,value\, is\, a\, cos θ.\]</p>
+                        <p>\[The\, component\, a_y \,is\, called\, a \,“Vertical\, component”\, whose\, value \,is \,a\, sin θ.\]</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="straightline">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Straight Line</h4>
+                        <p>\[1)\space Centroid\,with\,given\,three \,coordinates{(x_1,y_1),(x_2,y_2),(x_3,y_3)}:\,\]</p>
+                        <p>\[\frac{x_1+x_2+x_3}{3},\frac{y_1+y_2+y_3}{3}\]</p>
+                        <br>
+                        <p>\[2)\space Relation\,between\,two\,lines\]</p>
+                        <p>\[Let \,L1 \,and\, L2 \,be \,the \,two\, lines \,as\]
+
+                         <p>\[ L_1\, :\, a_1x + b_1y + c_1 = 0 \space \space \space \, \, \, L_2 \, :\, a_2x + b_2y + c_2 = 0\]</p>
+                         <p>\[a)\space For\, Parallel\, Lines:\]</p>
+                         <p>\[\frac{a_1}{a_2}=\frac{b_1}{b_2} \neq \frac{c_1}{c_2}\]</p>
+                        <p>\[b)\space For\, Intersecting\, Lines:\]</p>
+                        <p>\[\frac{a_1}{a_2} \neq \frac{b_1}{b_2}\]</p>
+                        <p>\[c)\space For\, Coincident\, Lines:\]</p>
+                        <p>\[\frac{a_1}{a_2}=\frac{b_1}{b_2} = \frac{c_1}{c_2}\]</p>
+                       <br>
+                       <p>\[3) \space Angle \,between\, Straight\, lines\]</p>
+                       <table>
+                        <tr> <td><p><img src="images/angleline.png" class="img-fluid"></p></td>
+                      <td><p>\[Let\,L_1\,≡y=m_1 x+c_1 \, \,and \,\,\, {{L}_{2}}\,\,\,\equiv \,\,\,y={{m}_{2}}x+{{c}_{2}}\]</p>
+                       <p>\[Angle = \theta ={{\tan }^{-1}}|( \frac{{{m}_{2}}-{{m}_{1}}}{1+{{m}_{1}}{{m}_{2}}})​\]</p>
+                    <p>\[Special Cases:\]</p>
+                <p>
+                    \[i) \space m_2=m_1\,→\,lines\,are\,parallel\]
+                </p>
+            <p>\[ii) \space m_1 m_2=−1\,→\,lines \,are\,perpendicular\,to\,each\,other\]</p></td></tr>
+                       </table>
+                       <br>
+        <p>\[4) \space Length\, of\, Perpendicular \,from \,a\, Point\, on\, a\, Line\]</p>
+        <table>
+            <tr>
+                <td>
+                    <p><img src="images/perp.png" class="img-fluid"></p></td>
+                    <td><p>\[The\, length\, of\, the\, perpendicular \,from\]</p><p>\[ P(x1, y1) \,on\, ax + by + c = 0 \,is\]</p>\[\]</p>
+                        <p>\[l=\,|\frac{|ax_1+by_1+c}{\sqrt{a^2+b^2}}|\]</p>
+                        <p>\[B (x, y)\, is\, foot\, of\, perpendicular\, is\, given \,by:\]</p>
+                        <p>\[\frac{x-x_1}{a}=\frac{y-y_1}{b}=-\frac{(ax_1+by_1+c)}{(a^2+b^2)}\]</p>
+                        <p>\[A’(h, k)\, is\, mirror\, image, \,given\, by:\]</p>
+                        <p>\[\frac{h-x_1}{a}=\frac{k-y_1}{b}=-2\,\frac{(ax_1+by_1+c)}{(a^2+b^2)}\]</p>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>\[5) \space Angular\, Bisector\, of \,Straight \,lines\]</p>
+            <table>
+                <tr>
+                    <td> <p><img src="images/anglebisec.png" class="img-fluid"></p></td>
+                    <td><p>\[An \,angle\, bisector \,has \,equal \,perpendicular\, distance\]</p><p>\[ from \,the \,two\, given\, lines\]</p>
+                        <p>\[The\, equation\, of\, line\, L \,can\, be\, given\, as:\]</p>
+                        <p>\[\frac{(a_1 x+b_1 y+c_1)}{\sqrt{(a_1^2+b_1^2)}}\,=\,± \frac{(a_2 x+b_2 y+c_2)}{\sqrt{(a_2^2+b_2^2)}}\]</p></td></tr></table>
+                            <br>
+                        <p>\[6) \space Distance\, of\, a \,Point\, From\, a\, Line\]</p>
+                        <p>\[Let\, the\, perpendicular\, distance (d)\, of \,a \,line \,Ax + By+ C = 0\, from \,a \,point (x1, y1)\, is\, defined \,by\]</p>
+                        <p>\[d=\frac{\left | Ax_{1}+By_{1}+C \right |}{\sqrt{A^{2}+B^{2}}}\]</p>
+                        <br>
+                        <p>\[7) \space Distance \,Between \,Two\, Parallel\, Lines\]</p>
+                        <p>\[The \,distance \,d\, between\, two \,parallel\, lines \,say, \,y= m x+ c1\, and\, y = m x + c2 \,is \,given\, by:\]</p>
+                        <p>\[d=\frac{\left | C_{1}-C_{2} \right |}{\sqrt{1+m^{2}}}\]</p>
+                        <p>\[Consider\, the \,general\, form\, of \,the\, line,\, i.e.,\, Ax + By + C1= 0 \,and\, Ax + By + C2=0\]</p>
+                        <p>\[d=\frac{\left | c_{1}-c_{2} \right |}{\sqrt{A^{2}+B^{2}}}\]</p>
+                        <br>
+                        <p>\[8) \space Concurrency \,of \,Three \,Lines\]</p>
+                        <p>\[Let \,the\, lines \,be:\]</p>
+                        <p>\[{{L}_{1}}\equiv {{a}_{1}}x+{{b}_{1}}y+{{c}_{1}}\]</p>
+                         <p>\[   {{L}_{2}}\equiv {{a}_{2}}x+{{b}_{2}}y+{{c}_{2}}\]</p>
+                          <p>\[  {{L}_{3}}\equiv {{a}_{3}}x+{{b}_{3}}y+{{c}_{3}}\]</p>
+                        <p>\[\begin{vmatrix} a_{1} & b_{1} & c_{1}\\ a_{2} & b_{2} & c_{2}\\ a_{3} & b_{3} & c_{3} \end{vmatrix} = 0\]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="collapse" id="thdif">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Lagrange’s Mean Value Theorem</h4>
+                        <p>\[If \,a \,function\, f\,  is\, defined\, on \,the\, closed \,interval\, [a,b]\, satisfying\, the \,following\, conditions –\]</p>
+                        <p>\[i)\, \, The \,function \,f\, is \,continuous\, on\, the\, closed \,interval \,[a, b]\]</p>
+                        <p>\[ii)\, \, The \,function \,f\,  is \,differentiable \,on\, the \,open\, interval\, (a, b)\]</p>
+                        <p>\[Then \,there \,exists\, a\, value\,  x =  c\, in\, such\, a\, way\, that\, f'(c) = \,[f(b) – f(a)]/(b-a)\]</p>
+                        <br>
+                        <h4>Geometrical Interpretation of Lagrange’s Mean Value Theorem</h4>
+                        <p><center><img src="images/lmvt.png" style="height: 400px;" class="img-fluid"></center></p>
+                        <br><br>
+                        <h4>Rolle’s Theorem</h4>
+                        <p>\[A\, special\, case\, of\, Lagrange’s\, mean\, value \,theorem \,is\, Rolle’s\, Theorem\, which \,states\, that:\]</p>
+                        <p>\[If\, a \,function\, f \, is\, defined\, in\, the\, closed \,interval\, [a, b] \,in \,such \,a \,way \,that\, it \,satisfies\, the \,following:\]</p>
+                        <p>\[i) \,  The\, function\, f \,is\, continuous\, on \,the\, closed\, interval\, [a, b]\]</p>
+                        <p>\[ii)\, The \,function\,  f \,is\, differentiable \,on \,the\, open\, interval\, (a, b)\]</p>
+                        <p>\[iii) \, Now\, if\, f (a) = f (b) ,\, then\, there\, exists\, at \,least \,one\, value \,of\, x,\]</p><p>\[ let's \,assume\, this\, value\, to\, be \,c,\, which \,lies \,between\, a \,and\, b\, i.e. \,(a < c < b )\,  such \,that\, f‘(c) = 0 .\]</p>
+                        <p>\[Precisely,\, if \,a\, function\, is\, continuous \,on\, the \,closed \,interval \,[a, b]\, and \,differentiable\]</p><p>\[ on\, the\, open\, interval\, (a, b) \,then\, there\, exists\, a \,point\, x = c \, in\, (a, b) \,such\, that\, f'(c) = 0\]</p>
+                       <br>
+                       <h4>Geometric interpretation of Rolle’s Theorem</h4>
+                       <p><center><img src="images/roll.png" style="height: 400px;" class="img-fluid"></center></p>
+                       <br><br>
+                        <h4>Cauchy's Theorem</h4>
+                        <p>\[Let \,the\, functions \,f ( x ) \,and\, g ( x ) \,be\, continuous\, on \,an\, interval \,[ a , b ],\]</p><p>\[ differentiable \,on \,(a , b ) ,\, and\, g ′ ( x ) ≠ 0\, for\, all \,x ∈ ( a , b ) .\]</p><p>\[ Then\, there \,is\, a\, point\, x = c \,in \,this\, interval\, such \,that\]</p>
+                        <p>\[{\frac{{f\left( b \right) – f\left( a \right)}}{{g\left( b \right) – g\left( a \right)}}} = {\frac{{f’\left( c \right)}}{{g’\left( c \right)}}.}\]</p>
+                        <p><center><img src="images/cauchy.svg" style="height: 400px;" class="img-fluid"></center></p>
+                       <br><br>
+                        <h4>Critical Point</h4>
+                        <p>\[A \,function\, f \,which \,is\, continuous\, with \,x\, in \,its\, domain \,contains \,a \,critical \,point \,at \,point\, x\]</p><p>\[ if \,the\, following\, conditions \,hold \,good.\]</p>
+                        <p>\[* \,f ’(x) = 0 \]</p>
+                        <p>\[* \,f ’(x) \,is\, undefined \]</p>
+                        <p>\[A \,point \,of\, differentiable\, function\, f\, at \,which \,derivative \,is\, zero \,can \,be \,termed \,as\,critical \,point.\]</p>
+                        <br>
+                        <p>\[The\, types \,of\, critical\, points \,are\, as \,follows:\]</p>
+                        <p>\[* \, A\, critical \,point\, is \,a\, local \,maximum \,if\, the \,function \,changes\]</p><p>\[ from\, increasing\, to \,decreasing\, at \,that \,point, \,whereas \,it\, is\, called\]</p><p>\[ a\, local\, minimum\, if \,the\, function\, changes \,from\, decreasing\, to\, increasing\, at\, that\, point.\]</p>
+                        <p>\[* \, A \,critical\, point \,is\, an\, inflexion\, point \,if\, the \,concavity\, of\, the\]</p><p>\[ function\, changes\, at \,that\, point.\]</p>
+                        <p>\[* \,If\, a\, critical\, point \,is\, neither\, of\, the\, above, \,then\, it\, signifies \,a\]</p><p>\[ vertical\, tangent\, in\, the\, graph\, of\, a\, function.\]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="aod">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Application of Derivative</h4>
+                        <br>
+                        <h4>Rate of Change of a Quantity</h4>
+                        <p>\[ This\, is \,the\, general\, and\, most\, important\, application \,of\, derivative.\]</p><p>\[ For\, example, \,to\, check \,the \,rate \,of \,change \,of \,the\, volume \,of\, a\, cube\]</p><p>\[ with\, respect\, to\, its \,decreasing \,sides,\, we\, can \,use \,the \,derivative\, form\, as \,dy/dx.\]</p><p>\[ Where \,dy \,represents\, the\, rate\, of\, change\, of\, volume\, of \,cube\, and\]</p><p>\[ dx \,represents\, the\, change\, of \,sides\, of \,the\, cube.\]</p>
+                        <br>
+                        <h4>Increasing and Decreasing Functions</h4>
+                        <p>\[To\, find \,that\, a\, given\, function \,is \,increasing\, or \,decreasing\, or\]</p><p>\[ constant,\, say\, in\, a\, graph,\, we\, use\, derivatives.\, If \,f\, is\, a\, function\]</p><p>\[ which\, is\, continuous\, in \,[p, q] \,and \,differentiable\, in\, the \,open\, interval\, (p, q),\, then,\]</p>
+                        <p>\[* f\, is\, increasing \,at\, [p, q]\, if\, f'(x) > 0 \,for\, each \, x ∈ (p, q)\]</p>
+                            <p>\[* f\, is\, decreasing\, at\, [p, q]\, if\, f'(x) < 0\, for \,each \,x ∈ (p, q)\]</p>
+                            <p>\[* f\, is\, constant\, function\, in\, [p, q], if\, f'(x)=0 \,for \,each\, x ∈ (p, q)\]</p>
+                        <br>
+                        <h4>Monotonicity</h4>
+                            <p>\[Functions \,are \,said \,to\, be\, monotonic\, if\, they\]</p><p>\[are\, either\, increasing\, or \,decreasing\, in\, their \,entire \,domain. \]</p>
+                            <p>\[A \,function\, is \,said \,to \,be\, monotonically\, decreasing\, at\, x = a\, if\, f(x) \,satisfy;\]</p>
+                            <p>\[f(x + h) < f(a) \,for \,a\, small \,positive\, h\]</p>
+                            <p>\[* f'(x)\, will\, be\, positive\, if \,the \,function \,is \,increasing\]</p>
+                            <p>\[* f'(x) \,will\, be\, negative\, if\, the\, function \,is\, decreasing\]</p>
+                            <p>\[* f'(x)\, will\, be \,zero \,when \,the\, function\, is \,at\, its \,maxima\, or\, minima\]</p>
+                            <br>
+                            <h4>Point of Inflection</h4>
+                        <p>\[For\, continuous\, function\, f(x), \,if \,f'(x_0) = 0\, or\, f’”(x_0)\, does\, not\, exist\]</p><p>\[ at\, points\, where\, f'(x_0)\, exists\, and \,if\, f”(x)\, changes\, sign \,when \,passing\, through\]</p><p>\[ x = x_0 \,then\, x_0\, is\, called\, the\, point \,of\, inflection.\]</p>
+                        <p>\[(a) \,If \,f”(x) < 0,\, x ∈ (a, b) \,then \,the \,curve \,y = f(x)\, is \,concave \,downward\]</p>
+                        <p>\[(b) \,If \,f” (x) > 0, \,x ∈ (a, b)\, then\, the \,curve\, y = f(x)\, is \,concave\, upwards\]</p><p>\[ in (a, b)\]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="3dgeo">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>3-D Geometry</h4>
+                        <br>
+                        <p>\[1)\space Distance\, of\,P(x,y,z)\, from\, origin(0,0,0)= \sqrt {(x^2+y^2+z^2)}\]</p><br>
+                        <p>\[2) \space Distance\, between \,2 \,points\, P\left( x_1,y_1,z_1 \right)\, and \,Q\left( {{x}_{2}},{{y}_{2}},{{z}_{2}} \right)\]</p><p>\[=\sqrt{ (x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\]</p><br>
+                        <p>\[3) \space Let\, P\left( {{x}_{1}},{{y}_{1}},{{z}_{1}} \right)\, and \, Q\left( {{x}_{2}},{{y}_{2}},{{z}_{2}} \right)\,be\, 2\, points.\]</p><p>\[ R\, divides\, the\, line \,segment\, PQ\, in\, ratio\, internally.\, Then\, R\, has\, coordinate:\]</p>
+                        <p>\[(\frac {mx_2+nx_1}{m+n},\,\frac {my_2+ny_1}{m+n},\,\frac {mz_2+nz_1}{m+n})\]</p>
+                        <br>
+                        <p>\[4) \space Direction\, cosines\, and \,direction \,Ratios\, of\, a \,Line \,in \,Cartesian \,Plane\]</p>
+                        <p>\[Cosines\, of \,the \,angles\, a \,line \,makes\, with \,the \,positive\, x,\, y\, and \, z \,axis\, respectively,\]</p><p>\[ are \,called \,direction \,cosines\, of \,that \,line.\]</p>
+                        <p>\[So\, if\, those \,angles\, are\, \alpha ,\,\beta ,\,\gamma\, then\, \cos \alpha ,\,cos\beta ,\,cos\gamma\, are \,the\, direction\, cosines\, of\, the\]</p><p>\[ line. \,They \,are\, denoted\, by\, l,m,n.\]</p>
+                        <p>\[l^2+m^2+n^2=1\]</p>
+                        <p>\[Any\, 3 \,number\, a,\,b,\,c\,which\, are\, proportional\, to\, direction\, cosines\]</p><p>\[ are \,called \,direction\, ratios.\]</p>
+                        <p>\[Hence \frac{l}{a}=\frac{m}{b}=\frac{n}{c}=\frac{\sqrt{{{l}^{2}}+{{m}^{2}}+{{n}^{2}}}}{\sqrt{{{a}^{2}}+{{b}^{2}}+{{c}^{2}}}}=\frac{1}{\sqrt{{{a}^{2}}{{b}^{2}}+{{c}^{2}}}} ​\]</p>
+                        <br>
+
+                        <p>\[5) \space Let \,P(x,y,z) \,and\, Q\left( {{x}_{2}},{{y}_{2}},{{z}_{2}} \right)\, be \,2 \,points. \]</p><p>\[Then\, direction \,cosines\, will \,be\]</p><p>\[ l=\frac{{{x}_{2}}-{{x}_{1}}}{\left| PQ \right|},m=\frac{{{y}_{2}}-{{y}_{1}}}{\left| PQ \right|},n=\frac{{{z}_{2}}-{{z}_{1}}}{\left| PQ \right|}\]</p><br>
+                        <p>\[6) \space Projection\, of\, PQ,\,(P(x_1,y_1,z_1),\, Q(x_2,y_2,z_2)) \,on \,a \,line\, whose\]</p><p>\[direction \,cosines\, are \,l,m,n is \,l\left( {{x}_{2}}-{{x}_{1}} \right)+m\left( {{y}_{2}}-{{y}_{1}} \right)+n\left( {{z}_{2}}-{{z}_{1}} \right)\]</p><br>
+                        <p>\[7) \space 2\, lines \,having\, direction\, cosines\, \left( {{l}_{1}},{{m}_{1}},{{n}_{1}} \right)\, and\, \left( {{l}_{2}},{{m}_{2}},{{n}_{2}} \right).\]</p><p>\[ Then \,angle\, between\, them\, is\, \theta ={{\cos }^{-1}}\left( {{l}_{1}}{{l}_{2}}+{{m}_{1}}{{m}_{2}}+{{n}_{1}}{{n}_{2}} \right)\]</p><br>
+                        <p>\[8) \space Let\, \bar{A} \,be\, the\, vector\, area. \]</p><p>\[If\, its\, direction\, cosines \,are \, \cos \alpha ,\cos \beta ,\cos \gamma.\]</p><p>\[ Then\, projections \,are\, {{A}_{1}}=A\cos \alpha ,{{A}_{2}}=A\cos \beta ,{{A}_{3}}=A\cos \gamma .\]</p>
+                        <p>\[∴ {{A}^{2}}=A_{1}^{2}+A_{2}^{2}+A_{3}^{2}\]</p><br>
+                        <p>\[9) \space Area \,of\, a\, triangle:\]</p>
+                        <p>\[\alpha = \frac 12\left|
+                            \begin{matrix}
+                            x_1 & y_1 & 1\cr
+                            x_2 & y_2 & 1 \cr
+                            x_3 & y_3 & 1 \cr
+                            \end{matrix}
+                            \right|\]</p><br>
+                        <p>\[10) \space A \,first\, degree\, equation\, in\, x,\, y, \,z \, \, represents\, a\, plane\, in\, 3D\]</p><p>\[ ax+by+cz=0,{{z}^{2}}{{b}^{2}}+{{c}^{2}} \ne \,represents\, a \,plane.\]</p><br>
+                        <p>\[11) \space Let\, P\, be\, the\, length\, of\, the\, normal\, from\, the \,origin\, to\, the\, plane\]</p><p>\[ and \,\, l,m,n \,be\, the \,direction\, cosines\, of\, that \,normal. \]</p><p>\[Then\, the\, equation \,of \,the\, plane\, is\, given\, by \, lx+my+nz=P.\]</p><br>
+                        <p>\[12) \space Let\, a\, plane\, cuts\, length\, a,b,c \,from\, the\, coordinate\, axis.\]</p><p>\[ Then\, equation\, of \,the \,plane \,is \, \frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1.\]</p><br>
+                        <p>\[13) \space Plane\, passing\, through \, \left( {{x}_{1}}{{y}_{1}}{{z}_{1}} \right), \, \left( {{x}_{2}}{{y}_{2}}{{z}_{2}} \right), \, \left( {{x}_{3}}{{y}_{3}}{{z}_{3}} \right) \, is\]</p><p>\[ \left| \begin{matrix} x & y & z & 1 \\ {{x}_{1}} & {{y}_{1}} & {{z}_{1}} & 1 \\ {{x}_{2}} & {{y}_{2}} & {{z}_{2}} & 1 \\ {{x}_{3}} & {{y}_{3}} & {{z}_{3}} & 1 \\ \end{matrix} \right|=0\]</p><br>
+                        <p>\[14) \space Angle\, between\, 2\, planes\]</p>
+                        <p>\[{{a}_{1}}x+{{b}_{1}}y+{{c}_{1}}z+{{d}_{1}}=0 \, and \, {{a}_{2}}x+{{b}_{2}}y+{{c}_{2}}z+{{d}_{2}}=0 \, is \, given \, by:\]</p><p>\[ \cos \theta =\frac{{{a}_{1}}{{a}_{2}}+{{b}_{1}}{{b}_{2}}+{{c}_{1}}{{c}_{2}}}{\sqrt{a_{1}^{2}+b_{1}^{2}+c_{1}^{2}}\sqrt{a_{2}^{2}+b_{2}^{2}+c_{2}^{2}}}\]</p><br>
+                        <p>\[15) \space Two\, sides \,of\, a\, plane\]</p>
+                        <p>\[2\, points\, A\left( {{x}_{1}}{{y}_{1}}{{z}_{1}} \right) \,and\, B\left( {{x}_{2}}{{y}_{2}}{{z}_{2}} \right)\, lie\, on\, the\, same\, side\, or\]</p><p>\[ opposite \,sides\, of\, a\, plane\, ax+by+cz+d=0 \,accordingly\, as\, a{{x}_{1}}+b{{y}_{1}}+c{{z}_{1}}+d \]</p><p>\[and\, a{{x}_{2}}+b{{y}_{2}}+c{{z}_{2}}+d \,are\, of\, same\, sign \,or\, opposite\, sign.\]</p><br>
+                        <p>\[16) \space Distance\, from\, a\, point\, to\, a \,plane\]</p>
+                        <p>\[Distance \,of\,{{x}_{1}}{{y}_{1}}{{z}_{1}} \,from\, ax+by+cz+d\, is\]</p><p>\[ | \frac{a{{x}_{1}}+b{{y}_{1}}+c{{z}_{1}}+d}{\sqrt{{{a}^{2}}+{{b}^{2}}+{{c}^{2}}}}\]</p><br>
+                        <p>\[17) \space Equation\, of \,the\, planes\, bisecting\, the\, angle\, between \,2\, planes\]</p>
+                        <p>\[Let\, {{a}_{1}}x+{{b}_{1}}y+{{c}_{1}}z+d=0 \, and \, {{a}_{2}}x+{{b}_{2}}y+{{c}_{2}}z+d=0 \, be \, 2  \, planes. \]</p><p>\[The\, planes \,bisecting\, the\, angles \,between \,them \,are \]</p><p>\[ \frac{{{a}_{1}}x+{{b}_{1}}y+{{c}_{1}}z+{{d}_{1}}}{\sqrt{a_{1}^{2}+b_{1}^{2}+c_{1}^{2}}}=\pm \frac{{{a}_{2}}x+{{b}_{2}}y+{{c}_{2}}z+{{d}_{2}}}{\sqrt{a_{2}^{2}+b_{2}^{2}+c_{2}^{2}}}\]</p><br>
+                        <p>\[18) \space Two\, Intersecting\, plane\]</p>
+                        <p>\[If\, U=0\, and\, V=0 \,be\, 2\, planes\, then \,the\, plane\]</p><p>\[ passing\, through \,the\, line \,of \,their\, intersection\, is\]</p><p>\[ U+\lambda V=0\lambda \,to\, be \,determined\, from\, given\, condition.\]</p>
                     </div>
                 </div>
             </div>
@@ -2621,7 +3183,80 @@
             </div>
         </div>
 
+        <div class="collapse" id="bt-collapse">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <center><h2>Binomial Theorem</h2></center>
+                        <br><br>
+                        <h4>General Formula</h4>
+                        <p>\[(x+y)^{n}\,=\,nC_r x^{n-r} . y^{r}\,+ nC_r x^{n-r}.y^{r}+\,..................\,+nC_{n-1} x . y^{n-1} \, + nC_n y^{n}\]\[where,\,nC_r = \, \frac{n!}{(n-r)!r!}\]</p>
+
+                    </div>
+                </div>
+                <div class="coll">
+                    <div class="left">
+                        <center><h2>Some Useful Expansions</h2></center>
+                        <br><br>
+                        <p>\[1)\space\,(x+y)^{n} + (x-y)^{n} =\, 2[nC_0 x^{n} + nC_2 x^{n-1} y^{2} + nC_4 x^{n-4}y^{4} + ...............]\]</p>
+                        <p>\[2)\space\,(x+y)^{n} - (x-y)^{n} =\, 2[nC_1 x^{n-1} y + nC_3 x^{n-3} y^{3} + nC_5 x^{n-5} y^{5} + ..................]\]</p>
+                        <p>\[3)\space\,(1+x)^{n} = [nC_0 + nC_1 x + nC_2 x^{2} + ....... +nC_n x^{n} ]\]</p>
+                    </div>
+                </div>
+                <div class="coll">
+                    <div class="left">
+                        <h4>Properties of Binomial Coefficients</h4>
+                        <h2>\[nC_0,nC_1,nC_2,\space\ ... ...\space\ nC_{n}\,are\, called\, Binomial\, Coefficients\, and\, also\, represented\, by\, C_0,C_1,C_2,....,C_n \]</h2>
+                        <p>
+                            \[1)\space\,C_0\,+\,C_1\,+,C_2\,......\,C_n\,=\,2^{n}\]</p>
+                        <p>
+                            \[2)\space\,C_0\,+\,C_2\,+\,C_4\,......\,=\,C_1\,+\,C_3\,+\,C_5\,......\,=\,2^{n-1}\]</p>
+                        <p>
+                            \[3)\space\,C_0\,-\,C_1\,+\,C_2\,-\,C_3\, .......\,+\, (-1)^{n}. nC_n\,=\,0\]</p>
+                        <p>
+                            \[4)\space\,C_1\,+\,2C_2\,+\,3C_3\,+\,......\,+\,n.C_n\,=\,n.2^{n-1}\]</p>
+                        <p>
+                            \[5)\space\,C_1\,-\,2C_2\,+\,3C_3\,-\,4C_4\,+\,....\,+\,(-1)^{n-1} n.C_n\,=\,0\,for\,n\,>\,1)\]</p>
+                        <p>
+                            \[6)\space\,C_0^{2}\,+\,C_1^{2}\,+\,C_2^{2}\,+\,.....\,+\,C_n^{2}\,=\,[\frac{(2n)!}{(n!)^2}]\]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="collapse" id="stats">
+            <!--Calculator for statistical calculations-->
+            <div class="stopwrap">
+                <table class="table table-bordered table-dark mb-4">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="2">\[Statistics\space Calculator\]
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input type="text" id="num_list" class="form__field"
+                                   placeholder="Enter list of numbers (Space Separated)"
+                                   oninput="cal_func_stats();">
+                        </th>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-group"
+                                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                <p id="result_cal_func_stats" style="line-height: 40px;"></p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!--Calculator code for statistical calculations ends here-->
+            <br>
             <div class="stopwrap">
                 <div class="coll">
                     <div class="left">
@@ -3167,6 +3802,33 @@
                    id="resultpardiff"></p>
             </div>
         </div>
+        <div class="collapse" id="ip">
+            <h2 style="text-align: center;">Inverse,Periodicity of Functions</h2>
+            <br><br>
+            <h4>What is a Period?</h4>
+            <p>The time interval between two waves is known as a Period whereas a function that repeats its values 
+                at regular intervals or periods is known as a Periodic Function. In other words, a periodic function is a function that repeats its values after every particular interval.</p>
+            <p>\[f(x+a)\space = \space f(x) for\space a>0\] </p>
+            <br>
+            <h4>How to find a period?</h4>   
+            <ul>
+                <li style="color: white; font-size: 20px;">If a function repeats over at a constant period we say that is a periodic function.</li>
+                <li style="color: white; font-size: 20px;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
+                <li style="color: white; font-size: 20px;">Period means the time interval between the two occurrences of the wave.</li>
+            </ul>
+            <img style="margin-left: 250px;" src="https://cdn1.byjus.com/wp-content/uploads/2020/09/Amplitude-and-period-of-a-function1.png" alt="">
+            <br><br>
+            <p>\[If\space for\space f(x)\space period\space =\space T,\space then\space period\space for\space f(ax)\space =\space \frac{T}{a}\]</p>
+            <p>\[Rest\space for\space all\space other\space cases\space of\space functions,\space the\space period\space remains\space same\]</p>
+            <br>
+            <h4>What are inverse functions?</h4>
+            <p>An inverse function or an anti function is defined as a function, which can reverse into another function. In simple words, if any function “f” takes x to y then, the inverse of “f” will take y to x.</p>
+            <p> If the function is denoted by ‘f’ or ‘F’, then the inverse function is denoted by f<sup>-1</sup>- or F<sup>-1</sup>.</p>
+            <br>
+            <h4>How to find inverse?</h4>
+            <p>The graph of the inverse of a function reflects two things, one is the function and second is the inverse of the function, over the line y = x.</p>
+            <p>\[The\space inverse\space function\space returns\space the\space original\space value\space for\space which\space a\space function\space gave\space the\space output.\]</p>
+        </div>
         <div class="collapse" id="trans">
             <h2 style="text-align: center;">Transformation of Functions</h2>
             <br><br>
@@ -3272,8 +3934,8 @@
             <h2 style="text-align: center;">Beta and Gamma Functions</h2>
             <br><br>
             <h4>What are Beta functions?</h4>
-            <p>The beta function is a unique function where it is classified as the first kind of Euler’s integrals. The beta function 
-                is defined in the domains of real numbers. The notation to represent the beta function is “β”. The beta function is meant by B(p, q), where the 
+            <p>The beta function is a unique function where it is classified as the first kind of Euler’s integrals. The beta function
+                is defined in the domains of real numbers. The notation to represent the beta function is “β”. The beta function is meant by B(p, q), where the
                 parameters p and q should be real numbers.
             </p>
             <p>\[B(p,q)\space =\space \int_{0}^{1} t^{p-1} (1-t)^{q-1}\,dt \\ Where\space p,q\space greater\space than\space 0\]</p>
@@ -3478,6 +4140,39 @@
 
 
             </div>
+        </div>
+        <!-- Complex Identities -->
+        <div class="collapse" id="complexidentities">
+            <div class="stopwrap">
+                <div class="coll">
+                    <h4>Identities:</h4>
+                    <div class="left">
+                        <p>\[\left(Z_{1} \space + \space Z_{2}\right)^2 \space = \space \left(Z_{1}\right)^2 \space + \space \left(Z_{2}\right)^2 \space + \space 2 \space Z_{1}Z_{2} \]</p>
+                        <p>\[\left(Z_{1} \space - \space Z_{2}\right)^2 \space = \space \left(Z_{1}\right)^2 \space + \space \left(Z_{2}\right)^2 \space - \space 2 \space Z_{1}Z_{2} \]</p>
+                        <p>\[\left(Z_{1}\right)^2 \space - \space \left(Z_{2}\right)^2 \space = \space \left(Z_{1} \space + \space Z_{2} \right)\left(Z_{1} \space - \space Z_{2} \right) \]</p>
+                        <p>\[\left(Z_{1} \space + \space Z_{2}\right)^3 \space = \space \left(Z_{1}\right)^3 \space + \space 3\left(Z_{1}\right)^2Z_{2} \space + \space 3\left(Z_{2}\right)^2Z_{1} \space + \left(Z_{2}\right)^3 \]</p>
+                        <p>\[\left(Z_{1} \space - \space Z_{2}\right)^3 \space = \space \left(Z_{1}\right)^3 \space - \space 3\left(Z_{1}\right)^2Z_{2} \space + \space 3\left(Z_{2}\right)^2Z_{1} \space - \left(Z_{2}\right)^3 \]</p>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Complex Properties -->
+        <div class="collapse" id="complexproperties">
+            <h4>Properties of Complex Numbers:</h4>
+            <ol type="1" style="color:white; font-size:23px;">
+                <li>The addition of two conjugate complex numbers will result in a real number.</li>
+                <li>The multiplication of two conjugate complex number will also result in a real number.</li>
+                <li>If x and y are the real numbers and x+yi =0, then x =0 and y =0.</li>
+                <li>If p, q, r, and s are the real numbers and p+qi = r+si, then p = r, and q=s.</li>
+                <li>The complex number obeys the commutative law of addition and multiplication.<br> \[Z_{1} \space + \space Z_{2} \space = \space Z_{2} \space + \space Z_{1} \\ Z_{1} \space * \space Z_{2} \space = \space Z_{2} \space * \space Z_{1} \] </li>
+                <li>The complex number obeys the associative law of addition and multiplication.<br> \[\left(Z_{1} \space + \space Z_{2}\right) \space + Z_{3} \space = \space Z_{1} \space + \space \left(Z_{2} \space + \space Z_{3}\right) \\ \left(Z_{1} \space * \space Z_{2}\right) \space * Z_{3} \space = \space Z_{1} \space * \space \left(Z_{2} \space * \space Z_{3}\right) \]</li>
+                <li>The complex number obeys the distributive law.<br> \[Z_{1} \space * \space \left(Z_{2} \space + \space Z_{3}\right) \space = \space Z_{1}*Z_{2} \space + \space Z_{1}*Z_{3} \]</li>
+                <li>If the sum of two complex number is real, and also the product of two complex number is also real, then these complex numbers are conjugate to each other.</li>
+                <li>For any two complex numbers, say Z<sub>1</sub> and Z<sub>2</sub>, then \[\mid Z_{1} \space + \space Z_{2}\mid \space \le \space \mid Z_{1}\mid \space + \space \mid Z_{2}\mid \] </li>
+                <li>The result of the multiplication of two complex numbers and its conjugate value should result in a complex number and it should be a positive value.</li>
+              </ol>
         </div>
 
         <!-- Complex Number Calculations Begin-->
@@ -3742,7 +4437,7 @@
                 <br>
                 <li style="color: white; font-size: 20px;">All right angles are equal to one another.</li>
                 <br>
-                <li style="color: white; font-size: 20px;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles, 
+                <li style="color: white; font-size: 20px;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles,
                     then the two straight lines, if produced indefinitely, meet on the side on which the sum of angles is less than two right angles
                 </li>
             </ol>
@@ -4056,6 +4751,144 @@
                 invertible</p>
             <p>17. The determinant of A is defined for all matrices A</p>
         </div>
+
+		       <div class="collapse" id="circlecollapse">
+            <div class="stopwrap">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equation\]</th>
+                        <th scope="col">\[Graph\]</th>
+                        <th scope="col">\[Centre\]</th>
+                        <th scope="col">\[Radius\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td><img src="images/circle1.png" class="img-fluid"></td>
+                        <td>\[(0,0)\]</td>
+                        <td>\[a\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[(x-h)^2+(y-k)^2=a^2\]</th>
+                        <td><img src="images/circle2.png" class="img-fluid"></td>
+                        <td>\[(h,k)\]</td>
+                        <td>\[a\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                        <td><img src="images/circle3.png" class="img-fluid"></td>
+                        <td>\[(-g,-f)\]</td>
+                        <td>\[\sqrt{g^2+f^2-c}\]</td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                <h2>Equations of Tangent of all Circles </h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equations\space of\]<br>\[Circle\]</th>
+                        <th scope="col">\[Point/Line\space of\space contact\space of \space \]<br>\[circle
+                            \]<br>\[\ m=slope \space of \space tangent\]
+                        </th>
+                        <th scope="col">\[Equation\space of\space \]<br>\[ tangent\]
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[(x1,y1)\]</td>
+                        <td>\[xx1 +yy1=a^2\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[(a \space cos\theta,b \space sin\theta)\]</td>
+                        <td>\[x \space cos\theta + y \space sin\theta=a\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[y=mx+c\]</td>
+                        <td>\[y=mx±a\sqrt{1+m^2}\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                        <td>\[(x1,y1)\]</td>
+                        <td>\[xx1+yy1+g(x+x1)+f(y+y1)+c=0\]</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2>Equations of Normal of all Circles</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">\[Equations\space of\]<br>\[Circle\]</th>
+                            <th scope="col">\[Point/Line\space of\space contact\space of \space \]<br>\[circle
+                                \]<br>\[\ m=slope\space of \space tangent\]
+                            </th>
+                            <th scope="col">\[Equation\space of\space\]<br>\[\ Normal\]
+                            </th>
+
+                        </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">\[x^2+y^2=a^2\]</th>
+                            <td>\[(x1,y1)\]</td>
+                            <td>\[\frac{x}{x1}=\frac{y}{y1}\]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">\[x^2+y^2=a^2\]</th>
+                            <td>\[(a \space cos\theta,b \space sin\theta)\]</td>
+                            <td>\[y=x\space tan\theta\]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">\[x^2+y^2=a^2\]</th>
+                            <td>\[y=mx+c\]</td>
+                            <td>\[x+my=±a\sqrt{1+m^2}\]</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                            <td>\[(x1,y1)\]</td>
+                            <td>\[\frac{y-y1}{x-x1}=\frac{y1+f}{x1+g}\]</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Director Circle of all Circles</h2>
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">\[Equations\space of\space Circle\]</th>
+                        <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">\[x^2+y^2=a^2\]</th>
+                        <td>\[x^2+y^2=2 \space a^2\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[(x-h)^2+(y-k)^2=a^2\]</th>
+                        <td>\[(x-h)^2+(y-k)^2=2 \space a^2\]</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">\[x^2+y^2+2gx+2fy+c=0\]</th>
+                        <td>\[(x+g)^2+(y+f)^2=2(g^2+f^2-c)\]</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
 
         <div class="collapse" id="parabolacollapse">
             <!--Calculator for trivial parabola solution-->
@@ -6117,8 +6950,14 @@
                 </div>
                 <button class="btn btn-outline-light" onclick="simple_interest();">Find</button>
                 <br>
-                <div style="color:var(--appimage); font-size: large;" id="simpleinterstoutput"></div>
-                <div id="compoundinterestoutput" style="color: var(--appimage); font-size: large"></div>
+                <p class="stopwrap"
+                    style="color:var(--appimage); font-size: large; font-family:mathfont;" id="simpleinterstoutput1"></p>
+                <p class="stopwrap"
+                    style="color:var(--appimage); font-size: large; font-family:mathfont;" id="simpleinterstoutput2"></p>
+                <p class="stopwrap" id="compoundinterestoutput1"
+                    style="color: var(--appimage); font-size: large; font-family:mathfont;"></p>
+                <p class="stopwrap" id="compoundinterestoutput2"
+                    style="color: var(--appimage); font-size: large; font-family:mathfont;"></p>
             </div>
         </div>
 
@@ -6140,9 +6979,10 @@
                 <br>
                 <br>
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
-                <br>
-                <div style="color:var(--appimage); font-size: large;" id="emio"></div>
-                <div id="num1" style="color: var(--appimage); font-size: large"></div>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></div>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></div>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></div>
             </div>
         </div>
 
@@ -6261,7 +7101,7 @@
                 <br><br>
                 <li style="color: white;">The sum of angles together on a line is 180 &deg;</li>
             </ol>
-            
+
         </div>
         <div class="collapse" id="coor">
             <h2 style="text-align: center;">Coordinate Systems</h2>
@@ -6330,6 +7170,23 @@
             </p>
             <p style="text-align: center;">Its just Polar coordinates with z as height forming a
                 cylinder</p>
+        </div>
+        <div class="collapse" id="propcircle">
+            <h2 style="text-align: center;">Properties of Circles</h2>
+            <ol>
+                <li style="color: white; font-size : 20px;">The circles are said to be congruent if they have equal radii</li>
+                <li style="color: white; font-size : 20px;">The diameter of a circle is the longest chord of a circle</li>
+                <li style="color: white; font-size : 20px;">Equal chords and equal circles have the equal circumference</li>
+                <li style="color: white; font-size : 20px;">The radius drawn perpendicular to the chord bisects the chord</li>
+                <li style="color: white; font-size : 20px;">Circles having different radius are similar</li>
+                <li style="color: white; font-size : 20px;">A circle can circumscribe a rectangle, trapezium, triangle, square, kite</li>
+                <li style="color: white; font-size : 20px;">A circle can be inscribed inside a square, triangle and kite</li>
+                <li style="color: white; font-size : 20px;">The chords that are equidistant from the centre are equal in length</li>
+                <li style="color: white; font-size : 20px;">The distance from the centre of the circle to the longest chord (diameter) is zero</li>
+                <li style="color: white; font-size : 20px;">The perpendicular distance from the centre of the circle decreases when the length of the chord increases</li>
+                <li style="color: white; font-size : 20px;">If the tangents are drawn at the end of the diameter, they are parallel to each other</li>
+                <li style="color: white; font-size : 20px;">An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle</li>
+            </ol>
         </div>
         <div class="collapse" id="curve">
             <h2 style="text-align: center;">Curve Tracing</h2>
@@ -6653,7 +7510,7 @@
                            style="text-decoration:none;"
                            href="#">Prism</a></td>
                 </tr>
-                
+
             </table>
         </div>
 
@@ -6924,6 +7781,20 @@
                align="right"></p>
             <h5 id="ltap"></h5>
             <h5 id="formula"></h5>
+			<br><br><br>
+            <h4>If number of terms and the AP is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
+             
+                <input type="tel" id="ap" placeholder="Enter AP(space separated)"
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=apsum()>
+                    Solve
+                </button>
+            </form>
+            <br>
+            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p>
         </div>
         <!--sum of nterms in A.P. ends-->
 
@@ -6987,12 +7858,13 @@
                     Solve
                 </button>
             </form>
+            <br>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
                class="stopwrap"
                align="right"></p>
 
             <h5 id="am"></h5>
-            <br><br><br>
+            <br><br>
             <h4>Geometric Mean</h4><br>
             <form class="form-inline">
                 <input type="number" id="aval1" placeholder="Enter the first term (a)"
@@ -7003,6 +7875,7 @@
                     Solve
                 </button>
             </form>
+            <br>
             <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
                class="stopwrap"
                align="right"></p>
@@ -7018,6 +7891,7 @@
                     Solve
                 </button>
             </form>
+            <br>
             <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
                class="stopwrap"
                align="right"></p>
@@ -7237,10 +8111,25 @@
                 <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
                 <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
             </ul>
-            <p>7. Absorption Law - </p>
+            <p>7. Absorption/ Redundancy Law - </p>
             <ul>
                 <li style="font-size: 20px; color: white;">A + A.B = A</li>
                 <li style="font-size: 20px; color: white;">A(A+B) = A</li>
+            </ul>
+            <p>8. Commutative Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + B = B + A</li>
+                <li style="font-size: 20px; color: white;">A.B = B.A</li>
+            </ul>
+            <p>9. Associative Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A + (B + C) = (A + B) + C</li>
+                <li style="font-size: 20px; color: white;">A.(B.C) = (A.B).C</li>
+            </ul>
+            <p>10. Double Negation Law - </p>
+            <ul>
+                <li style="font-size: 20px; color: white;">A<sup>'</sup><sup>'</sup> = A</li>
+                <li style="font-size: 20px; color: white;">B<sup>'</sup><sup>'</sup> = B</li>
             </ul>
         </div>
         <!--    start of calculator -->
@@ -7340,8 +8229,8 @@
                     <select id="adding-all-result-type" class="form__field"
                     onchange="addBinDecHexOct()">
                 <option class="form__field" style="background-color: #232a36;">
-                    
-                </option>    
+
+                </option>
                 <option class="form__field" style="background-color: #232a36;">
                     Decimal
                 </option>
@@ -7435,8 +8324,9 @@
         <!-- Start of 1's 2's Complement Calculator -->
         <div class="collapse" id="onetwocom-calc">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
+                        <h2>One's and Two's Complement</h2><br>
                         <h5>Enter Binary number</h5>
                         <input type="number" class="form__field" id="onetwonumber">
                     </div>
@@ -7445,15 +8335,69 @@
 
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <button type="button" class="btn btn-light" onclick="onetwoCalc()">
                             Find
                         </button>
                         <label class="form__field" id="onetworesult"></label>
+                        <p class="" id="onetwoworking"></p>
                     </div>
                 </div>
             </div>
+            <hr>
+          <!-- Start 7's 8's Complement -->
+           <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <br><br><h2>Seven's and Eight's Complement</h2><br>
+                        <h5>Enter Octal number</h5>
+                        <input type="number" class="form__field" id="seveneightnumber">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="seveneightCalc()">
+                            Find
+                        </button>
+                        <label class="form__field" id="seveneightresult"></label>
+                        <p class="" id="seveneightworking"></p>
+                    </div>
+                </div>
+            </div>
+          <!-- End 7's 8's Complement -->
+
+          <!-- Start 15's 16's Complement -->
+           <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <br><br><h2>Fifteen's Sixteen's Complement</h2><br>
+                        <h5>Enter Hexa Decimal number</h5>
+                        <input class="form__field" id="fiftnsixtnnumber">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="fiftnsixtnCalc()">
+                            Find
+                        </button>
+                        <label class="form__field" id="fiftnsixtnresult"></label>
+                    </div>
+                </div>
+            </div>
+
+          <!-- End 15's 16's Complement -->
+
+
+
 
         </div>
         <!-- End of 1's 2's complement Calculator-->
@@ -7462,7 +8406,7 @@
         <!-- Start of 9's 10's Complement Calculator -->
         <div class="collapse" id="ninetencom-calc">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <h5>Enter Decimal number</h5>
                         <input type="number" class="form__field" id="ninetennumber">
@@ -7470,12 +8414,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <button type="button" class="btn btn-light" onclick="ninetenCalc()">
                             Find
                         </button>
                         <label class="form__field" id="ninetenresult"></label>
+                        <p class="" id="ninetenworking"></p>
                     </div>
                 </div>
             </div>
@@ -7528,6 +8473,45 @@
         </div>
         <!-- End of Octal / Binary -->
 
+  <!-- Start of Octal / Hexadecimal -->
+
+  <div>
+            <div class="collapse" id="octal-hexadecimal">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>From</h5>
+                        <select id="octal-hexadecimal-select1" class="form__field"
+                                onchange="convertOctHex()">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Hexadecimal
+                            </option>
+                        </select>
+                        <input type=" " id="octal-hexadecimal-input" value="0"
+                               class="form__field"
+                               oninput="convertOctHex()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>To</h5>
+                        <select id="octal-hexadecimal-select2" class="form__field"
+                                onchange="convertOctHex()">
+                            <option class="form__field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Hexadecimal
+                            </option>
+                        </select>
+                    </div>
+                    <label class="form__group" id="octal-hexadecimal-result">0</label>
+                </div>
+            </div>
+        </div>
+  <!-- End of Octal / Hexadecimal -->
         <!-- Start of bcd convertor -->
         <div>
             <div class="collapse" id="bcd">
@@ -7606,6 +8590,28 @@
             </div>
         </div>
         <!-- End of ex3 convertor -->
+         <!-- Start   -->
+         <div>
+            <div class="collapse" id="rankcal">
+                <div class="col-6">
+                    <p>If all the letters of the word '_____' are arranged in all possible ways and written out in alphabetical(dictionary) order, then find the rank of the given word </p>
+                    <div class="form-group">
+                        <h5>Word in english characters</h5>
+
+                        <input type="text" id="rankcal-input"  class="form__field"
+                               oninput="rankcal()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Rank in Dictionary </h5>
+
+                    </div>
+                    <label class="form__group" id="rankcal-result">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- End of  -->
 
         <!-- Start of grey convertor -->
         <div>
@@ -7836,13 +8842,13 @@
 
 
         <div class="collapse" id="cal" style="z-index:9;position:relative;">
-            <div class="bodyof">
+            <div class="bodyof" id="calpar">
                 <form class="calculator" name="calc">
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
                     <span class="clear"
-                          onclick="document.getElementById('txt').value=''">C</span>
+                          onclick="clearc()">C</span>
                     <span id="more" onclick="more();">More</span>
                     <span
                             onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
