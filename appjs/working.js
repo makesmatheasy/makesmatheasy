@@ -90,6 +90,7 @@ $(document).ready(function () {
         clearall();
     });
 
+
     $("#thdifbtn").click(function () {
         openit("#thdif");
         closenav();
@@ -97,11 +98,13 @@ $(document).ready(function () {
     });
 
 
+
     $("#aodbtn").click(function () {
         openit("#aod");
         closenav();
         clearall();
     });
+
 
     $("#corgeobtn").click(function () {
         openit("#corgeo");
@@ -182,6 +185,11 @@ $(document).ready(function () {
     })
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
+        closenav();
+        clearall();
+    })
+    $("#propcirclebtn").click(function () {
+        openit("#propcircle");
         closenav();
         clearall();
     })

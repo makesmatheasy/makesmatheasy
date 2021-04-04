@@ -161,6 +161,7 @@ function openit(id) {
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
+        "#propcircle",
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
@@ -168,7 +169,9 @@ function openit(id) {
         "#aod",
 
         "#vecalg",
+
         "#thdif",
+
 
         "#corgeo",
 
