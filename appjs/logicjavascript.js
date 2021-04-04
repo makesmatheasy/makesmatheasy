@@ -3997,10 +3997,15 @@ function simple_interest() {
 function emical() {
     var p, t, r, emi;
     p = parseInt(document.getElementById("first1").value);
-    r = parseFloat(document.getElementById("third3").value) / 1200;
+    r = parseFloat(document.getElementById("third3").value) / 100;
     t = parseInt(document.getElementById("second2").value) * 12;
     emi = ((p * r * Math.pow((1 + r), t)) / (Math.pow((1 + r), t) - 1));
-    document.getElementById("emio").innerHTML = "EMI  =  " + emi.toFixed(2) + "   Per month";
+    document.getElementById("emio1").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{P} \\times \\mathrm{r} \\times(1+\\mathrm{r})^{\\mathrm{t}}}{(1+\\mathrm{r})^{t}-1}\\]";
+    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t+"}-1}\\]";
+    document.getElementById("emio3").innerHTML = "\\[\\mathrm{EMI}= \\space" + emi.toFixed(2) + "\\space Per\\space month\\]";
+    renderMathInElement(document.getElementById("emio1"));
+    renderMathInElement(document.getElementById("emio2"));
+    renderMathInElement(document.getElementById("emio3"));
 }
 
 
@@ -4151,6 +4156,141 @@ function profitloss() {
     }
 }
 
+//Statistics Calculator
+function cal_func_stats()
+{
+    var num = document.getElementById('num_list').value;
+    // console.log(typeof(num))
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+    
+
+    if(num=="")
+    {
+       document.getElementById('result_cal_func_stats').innerHTML = "";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('result_cal_func_stats').innerHTML = "Enter space separated numbers.<br>Example -> 1  2  2.1  -2  -2.6 <br> Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var print="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+        // console.log(num)
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        number.sort(function(a, b) {
+            return a - b;
+          });
+        console.log(number)
+        console.log(typeof(number))
+        console.log(typeof(number[0]))
+        
+        for (i = 0; i < len; i++) {
+            s = s + number[i];
+        }
+
+        mean = s/len
+        // console.log(number)
+        // console.log(len)
+        // console.log(s)
+
+        var median=0
+        if(len%2==0)
+        {
+            median=((number[parseInt(len/2)-1])+(number[parseInt((len/2))]))/2;
+        }
+        else
+        {
+            median=(number[parseInt(len/2)]);
+        }
+
+
+        const frequencyTable = {};
+        number.forEach((elem) => (frequencyTable[elem] = frequencyTable[elem] + 1 || 1));
+
+        let mode = [];
+        let maxFrequency = 0;
+        for (const key in frequencyTable) {
+            if (frequencyTable[key] > maxFrequency) {
+                mode = [Number(key)];
+                maxFrequency = frequencyTable[key];
+            } else if (frequencyTable[key] === maxFrequency) {
+                mode.push(Number(key));
+            }
+        }
+
+        if (mode.length === number.length) mode = number[0];
+        if (number.length != 0)
+        {
+            if (mode.length === 0) {
+                mode = number;
+            } else {
+                mode = `${mode}`;
+            }
+        }
+
+        var variance=0;
+        for (i = 0; i < len; i++) {
+            variance = variance + ((number[i])-mean)*((number[i])-mean);
+        }
+
+        variance = variance/len;
+        
+        var standarddev = Math.sqrt(variance);
+
+        var large=(number[len-1]);
+        var small=(number[0]);
+
+        console.log(large);
+        console.log(small);
+        
+        var range = large - small;
+        var coffrange = (large - small)/(large + small);
+        var coffvariation = (standarddev/mean)*100;
+
+        var mdmean=0;
+        for (i = 0; i < len; i++) {
+            mdmean =  mdmean + Math.abs((number[i])-mean);
+        }
+        mdmean = mdmean/len;
+
+        var mdmedian=0;
+        for (i = 0; i < len; i++) {
+            mdmedian =  mdmedian + Math.abs((number[i])-median);
+        }
+        mdmedian = mdmedian/len;
+
+        var mdmode=0;
+        for (i = 0; i < len; i++) {
+            mdmode =  mdmode + Math.abs((number[i])-mode);
+        }
+        mdmode = mdmode/len;
+
+        print+="Mean: "+mean+"<br>";
+        print+="Median: "+median+"<br>";
+        print+="Mode: "+mode+"<br>";
+        print+="Variance: "+variance+"<br>";
+        print+="Standard Deviation: "+standarddev+"<br>";
+        print+="Range: "+range+"<br>";
+        print+="Coefficient of Range: "+coffrange+"<br>";
+        print+="Coefficient of Variation: "+coffvariation+"<br>";
+        print+="Mean deviation about Mean: "+mdmean+"<br>";
+        print+="Mean deviation about Median: "+mdmedian+"<br>";
+        print+="Mean deviation about Mode: "+mdmode+"<br>";
+        
+        // print+=s/len
+
+        document.getElementById('result_cal_func_stats').innerHTML = print;
+    }
+}
+
 //sum of nterms of an Arithmetic Progression
 function sum_n_apsol(nval, rval, r1val) {
     var n = document.getElementById(nval).value;
@@ -4199,7 +4339,7 @@ function amsol() {
     var amadd = parseInt(a) + parseInt(c)
     var res = parseFloat(amadd / 2)
     var explain = document.getElementById("am_formula");
-    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\frac{a+c}{2}\\] ";
+    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\space \\frac{a+c}{2} =\\space \\frac{"+a+"+"+c+"}{2}\\] ";
     renderMathInElement(document.getElementById("am_formula"));
     document.getElementById("am").innerHTML = "Result: " + res
 
@@ -4211,7 +4351,7 @@ function gmsol() {
     var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
-    explain.innerHTML = "Formula: \\[Geometric \\space Mean=\\sqrt{ac}\\] ";
+    explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
 
@@ -4224,12 +4364,11 @@ function hmsol() {
     var hmadd = parseInt(a) + parseInt(c)
     var res = (hmmul / hmadd)
     var explain = document.getElementById("hm_formula");
-    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\frac{2ac}{a+c}\\] ";
+    explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\space \\frac{2ac}{a+c} = \\space \\frac{2\\times"+a+"\\times"+c+"}{"+a+"+"+c+"}\\] ";
     renderMathInElement(document.getElementById("hm_formula"));
     document.getElementById("hm").innerHTML = "Result: " + res
 
 }
-
 // Primality test
 function check_prime(isprime) {
     var num = document.getElementById(isprime).value;
@@ -5485,4 +5624,46 @@ function angleplot() {
     }
     ctx.stroke();
 
+}
+function fa(x)
+{
+    if(x==1)
+        return 1;
+    return x * fa(x-1);
+}
+
+function rankcal() {
+
+    var input = document.getElementById("rankcal-input").value;
+    let result = document.getElementById("rankcal-result");
+    input = input.toUpperCase();
+    var s = input.length;
+    var m = fa(s);
+    var ans =1;
+    var c;
+    for (var j=0; j<s;++j)
+    {
+        m /= s-j;
+        c = ran(input,j,s-1);
+        ans = ans+ (c*m);
+    }
+    if(input.match(/^[A-Za-z]+$/))
+        {
+            result.innerHTML = ans;
+        }
+    else
+        result.innerHTML = "Invalid input use alphabet only";
+        
+}
+function ran(x,y,z)
+{
+    var c = 0;
+    for (var j=y+1; j<=z;++j)
+    {
+        if(x[j]<=x[y])
+        {
+            c++;
+        }
+    }
+    return c;
 }

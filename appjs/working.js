@@ -71,9 +71,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#rankcalbtn").click(function () {
+        openit("#rankcal");
+        closenav();
+        clearall();
+    });
 
     $("#ex3btn").click(function () {
         openit("#ex3");
+        closenav();
+        clearall();
+    });
+
+    $("#aodbtn").click(function () {
+        openit("#aod");
         closenav();
         clearall();
     });
