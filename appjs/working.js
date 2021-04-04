@@ -83,11 +83,28 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#vecalgbtn").click(function () {
+        openit("#vecalg");
+        closenav();
+        clearall();
+    });
+
+
+    $("#thdifbtn").click(function () {
+        openit("#thdif");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#aodbtn").click(function () {
         openit("#aod");
         closenav();
         clearall();
     });
+
 
     $("#corgeobtn").click(function () {
         openit("#corgeo");
@@ -171,6 +188,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#propcirclebtn").click(function () {
+        openit("#propcircle");
+        closenav();
+        clearall();
+    })
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
@@ -206,7 +228,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-  
+
     $("#euclidbtn").click(function () {
         openit("#euclid");
         closenav();
@@ -393,7 +415,7 @@ $(document).ready(function () {
     closenav();
     clearall();
      });
-     //Function of Addition of Any Number System 
+     //Function of Addition of Any Number System
     $("#add-all-btn").click(function(){
         openit("#adding-all");
         closenav();
@@ -412,7 +434,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-	
+
 	$("#onetwocom-calc-btn").click(function(){
         openit("#onetwocom-calc");
         closenav();
@@ -433,6 +455,14 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#octal-to-hexadecimal-btn").click(function(){
+            openit("#octal-hexadecimal");
+            closenav();
+            clearall();
+        });
+
+
     $("#complexidentitiesbtn").click(function(){
         openit("#complexidentities");
         closenav();
@@ -470,7 +500,7 @@ $(document).ready(function () {
       closenav();
       clearall();
   });
-    
+
     $("#bt-collapsebtn").click(function(){
         openit("#bt-collapse");
         closenav();
@@ -489,7 +519,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-	
+
 	 $("#circlecollapsebtn").click(function(){
         openit("#circlecollapse");
         closenav();
@@ -547,7 +577,7 @@ $(document).ready(function () {
         clearall();
     });
 
- 
+
 
 
     $("#lapprobtn").click(function(){
@@ -555,7 +585,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     
+
 
     $("#jointprobabilitycollapsebtn").click(function(){
         openit("#joint-probabilitycollapse");
