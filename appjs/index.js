@@ -167,6 +167,8 @@ function openit(id) {
         "#euclid",
         "#aod",
 
+        "#vecalg",
+
         "#corgeo",
 
         "#betagamma",

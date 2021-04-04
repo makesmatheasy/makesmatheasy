@@ -800,6 +800,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="vecalgbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector
+                                Algebra</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Algebra','#vecalg','c','vecalgfav')"><img
+                                        id="vecalgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="convdivbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Convergence
                                 and Divergence of Series</a>
@@ -2670,6 +2687,13 @@
             </div>
 
         </div>
+
+
+        <div class="collapse" id="corgeo">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+
 	 <div class="collapse" id="integration-idencollapse">
             <div class="stopwrap">
                 <div class="coll">
@@ -2741,6 +2765,7 @@
             <div class="stopwrap">
                 <div class="coll">
                     <div class="left">
+
                         <h4>Distance Formula: To Calculate Distance Between Two Points</h4>
                         <p>\[Let \,the\, two \,points\, be \,A\, and \,B,\, having\, coordinates\, to\]</p><p>\[ be\, (x1,y1) \,and \,(x2,y2)\, respectively.\]</p>
                         <p>\[Thus,\, the \,distance\, between\, two\, points \,is\, given\, as-\]</p>
@@ -2782,6 +2807,62 @@
                         <h4>Area of a Triangle in Cartesian Plane</h4>
                         <p>\[The\, area \,of\, a\, triangle\, In \,coordinate\, geometry\,whose \,vertices\, are\, (x_1,y_1),\,(x_2,y_2) \,and\, (x_3,y_3)\, is\]</p>
                         <p>\[\frac{1}{2}|x_1 (y_2~ -~ y_3)~ + ~x_2(y_3~ – ~y_1)~ +~ x_3(y_1~ – ~y_2)|\]</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="vecalg">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Magnitude of a Vector</h4>
+                        <p>\[The\, magnitude\, of\, a\, vector\, is \,shown\, by\, vertical\, lines\, on \,both\, the\, sides\, of\, the \,given\, vector\, “|a|”\]</p>
+                        <p>\[ It \,represents\, the \,length\, of\, the\, vector.\, Mathematically, \,the \,magnitude\]</p>
+                       <p>\[of \,a \,vector\, is\, calculated\, by\, the \,help\, of \,“Pythagoras\, Theorem,”\, i.e.\]</p>
+                       <p>\[|a|= √(x2+y2)\]</p>
+                       <br><br>
+                       <h4>Unit Vector</h4>
+                       <p>\[A \,unit\, vector \,has \,a \,length \,(or\, magnitude)\, equal \,to\, one,\, which \,is\, basically\, used \,to\, show\, the\]</p><p>\[ direction \,of\, any \,vector.\, A\, unit \,vector\, is \,equal \,to\, the \,ratio\, of \,a\, vector\, and\, its\, magnitude.\]</p><p>\[ Symbolically,\, it\, is\, represented \,by\, a\, cap\, or \,hat (^). \]</p>
+                        <p>\[\hat{\mathbf{a}}=\frac{\mathbf{a}}{\|\mathbf{a}\|}\]</p>
+                        <br><br>
+                        <h4>Zero Vector</h4>
+                        <p>\[A \,vector\, with\, zero \,magnitudes \,is\, called \,a \,zero\, vector.\, The \,coordinates\, of\, zero\, vector\]</p><p>\[ are\, given\, by\, (0,0,0) \,and \,it\, is\, usually \,represented \,by\, 0\, with\, an\, arrow (→) \,at \,the\, top\, or\, just\, 0\]</p>
+                        <br><br>
+                        <h4>Characteristics of Vector Math Addition</h4>
+                        <p>\[* \,Commutative\, Law-\, the\, order \,of\, addition\, does\, not \,matter,\, i.e,\, a + b = b + a\]</p>
+                        <p>\[* \,Associative\, law-\, the\, sum \,of \,three\, vectors\, has\, nothing \,to\, do\, with\]</p><p>\[ which\, pair\, of\, the\, vectors\, are \,added \,at\, the \,beginning.\]</p>
+                        <br><br>
+                        <h4>Scalar Multiplication</h4>
+                        <p>\[Only \,the\, magnitude \,of\, a\, vector\, is \,changed\, not \,the\, direction.\]</p>
+                        <p>\[* \, \, S(a+b) = Sa + Sb\]</p>
+                        <p>\[* \, \, a.1 = a\]</p>
+                        <p>\[* \, \, a.0 = 0\]</p>
+                        <p>\[* \, \, a.(-1) = -a\]</p>
+                        <br><br>
+                        <h4>Scalar Triple Product</h4>
+                        <p>\[The \,scalar\,triple\, product,\, also\, called\, as\, box\, product \,or\, mixed \,triple\]</p><p>\[ product,\, of \,three \,vectors,\, say \,a,\, b\, and \,c\, is\, given\, by \,(a×b)⋅c.\]</p>
+                        <p>\[ It\, is\, also\, denoted \,by\, (a\, b\, c). \]</p>
+                        <p>\[(a \,b\, c)\, = (a×b)⋅c\]</p>
+                        <p>\[\begin{aligned} (\mathbf{a} \times \mathbf{b}) \cdot \mathbf{c} &=\left|\begin{array}{ll} a_{2} & a_{3} \\ b_{2} & b_{3} \end{array}\right| c_{1}-\left|\begin{array}{ll} a_{1} & a_{3} \\ b_{1} & b_{3} \end{array}\right| c_{2}+\left|\begin{array}{ll} a_{1} & a_{2} \\ b_{1} & b_{2} \end{array}\right| c_{3} \\ &=\left|\begin{array}{lll} c_{1} & c_{2} & c_{3} \\ a_{1} & a_{2} & a_{3} \\ b_{1} & b_{2} & b_{3} \end{array}\right| \end{aligned}\]</p>
+                        <br><br>
+                        <h4>Vector Multiplication</h4>
+                        <br>
+                        <p>\[CROSS \, \, PRODUCT\]</p>
+                        <p>\[The \,cross\, product\, of \,two\, vectors\, results \,in\, a\, vector\, quantity.\]</p><p>\[ It\, is \,represented\, by\, a \,cross\, sign \,between\, two\, vectors.\]</p>
+
+                        <p>\[a x b = | a | | b | sin θ\]</p>
+                        <br>
+                        <p>\[DOT \, \,PRODUCT\]</p>
+                        <p>\[The\, dot \,product\, of \,two \,vectors \,always\, results\, in\, scalar\, quantity,\]</p><p>\[ i.e.\, it \,has \,only \,magnitude\, and \,no \,direction.\, It \,is\, represented\]</p><p>\[ by\, a\, dot (.)\, in \,between\, two \,vectors.\]</p>
+                        <p>\[a . b = | a | | b | cos θ\]</p>
+                        <br><br>
+                        <h4>Components of Vectors (Horizontal & Vertical)</h4>
+                        <p>\[ Vector \,“a”\, can\, be\, broken \,down \,into \,two\, components\, i.e. \,a_x\, and\, a_y\]</p>
+                        <p>\[The \,component \,a_x \,is\, called\, a \,“Horizontal\, component”\, whose \,value\, is\, a\, cos θ.\]</p>
+                        <p>\[The\, component\, a_y \,is\, called\, a \,“Vertical\, component”\, whose\, value \,is \,a\, sin θ.\]</p>
+
                     </div>
                 </div>
             </div>

@@ -83,11 +83,21 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#vecalgbtn").click(function () {
+        openit("#vecalg");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#aodbtn").click(function () {
         openit("#aod");
         closenav();
         clearall();
     });
+
 
     $("#corgeobtn").click(function () {
         openit("#corgeo");
