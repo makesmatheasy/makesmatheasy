@@ -2917,7 +2917,7 @@ function orderas() {
     var val = document.getElementById("ordergetval").value;
     val=val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(val==null)
     {
         document.getElementById("orderresult").innerHTML = `Proper input is required`;
@@ -2961,7 +2961,7 @@ function orderde() {
     var val = document.getElementById("ordergetval").value;
     val=val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(val==null)
     {
         document.getElementById("orderresult").innerHTML = `Proper input is required`;
@@ -3960,24 +3960,24 @@ function simple_interest() {
         }
         else
         {
-            
+
             document.getElementById("simpleinterstoutput1").innerHTML = "\\[Simple \\space Interest = \\space \\frac{1}{100} \\times p \\times t \\times r \\]";
             document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]";
 
             renderMathInElement(document.getElementById("simpleinterstoutput1"));
             renderMathInElement(document.getElementById("simpleinterstoutput2"));
             val = document.getElementById("comp").value;
-            
+
             n=1;
             if (val == "Compounded Annually") {
                 n=1;
-            } 
+            }
             else if (val == "Compounded Half-yearly") {
                 n=2;
             }
             else if (val == "Compounded Quaterly") {
                 n=4;
-            } 
+            }
             else if( val == "Compounded Monthly"){
                 n=12;
             }
@@ -3988,7 +3988,7 @@ function simple_interest() {
             document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]";
             renderMathInElement(document.getElementById("compoundinterestoutput1"));
             renderMathInElement(document.getElementById("compoundinterestoutput2"));
-        } 
+        }
     }
 }
 
@@ -4099,7 +4099,7 @@ function factorialsol(factorialval) {
     if (isNaN(num1)) {
         desc.innerHTML = "Enter a number.";
         ans.innerHTML = "";
-    } 
+    }
     else if(num1<0)
     {
         desc.innerHTML = "Factorial is not defined for negative integer since, gamma function is not defined for negative integer";
@@ -4332,7 +4332,34 @@ function anotherap() {
     document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
     document.getElementById("ltap").innerHTML = "Result: " + ans
 }
-
+function apsum()
+{   var n = document.getElementById("nterms").value
+    var val = document.getElementById("ap").value;
+    val = val.split(" ");
+    val = val.filter(function (str) {
+       return /\S/.test(str);
+    });
+	var s=0;
+	if( parseInt(val.length)<2)
+	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
+	else{
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))	
+		{
+			document.getElementById("printAP").innerHTML="Invalid AP"
+		}
+    else
+	{	
+		var d=val[1]-val[0];
+		document.getElementById("printAP").innerHTML ="Common difference for the entered AP is &nbsp;"+d+"<br>";
+		for(i=0;i<n;i++)
+		{
+			document.getElementById("printAP").innerHTML +=eval(String(i+"*"+d + "+"+ val[0]))+",";
+			s=eval(String(s+"+"+i+"*"+d + "+"+ val[0]))
+		}
+		document.getElementById("printAP").innerHTML +="<br>The Sum of &nbsp;"+n+"&nbsp; terms of the given AP is &nbsp;"+s;
+	}
+	}	
+}
 function amsol() {
     var a = document.getElementById("aval").value
     var c = document.getElementById("cval").value
@@ -4348,13 +4375,22 @@ function amsol() {
 function gmsol() {
     var a = document.getElementById("aval1").value
     var c = document.getElementById("cval1").value
+    if(a<0&&c<0){
+      var gmmul1 = parseInt(a) * parseInt(c)
+      var res1 = -(Math.sqrt(gmmul1))
+      var explain = document.getElementById("gm_formula");
+      explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space\\ - \\sqrt{a \\times c} = \\space\\ - \\sqrt{"+a+"\\times"+c+"}\\] ";
+      renderMathInElement(document.getElementById("gm_formula"));
+      document.getElementById("gm").innerHTML = "Result: " + res1
+    }
+    else{
     var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
     explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
-
+}
 }
 
 function hmsol() {
@@ -4455,12 +4491,12 @@ function gp() {
         for (var i = 0, series = "", num = 0; i <= n-1; i++) {
             num = parseInt(a) * Math.pow(r,i);
             series += (num.toString() + ", ");
-        } 
-  
+        }
+
         printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
       }
-  
-  
+
+
       var power = parseFloat(Math.pow(r, n))
       if (r < -1 || r > 1) {
           ans1 = parseFloat(a * (power - 1))
@@ -4500,12 +4536,12 @@ function permutationcal(nval, rval) {
     var regex = /^[\-]*[\d]+$/
     var textVal1 = regex.test(val1);
     var testVal2 = regex.test(val2);
-    if (!textVal1 || !testVal2) 
+    if (!textVal1 || !testVal2)
     {
         document.getElementById("permutation_wrong").innerHTML ="Enter Integer values only";
         document.getElementById("premutation_div_div2").style.display = "none";
-        document.getElementById("permutation_div_div1").style.display = "block"; 
-        return;   
+        document.getElementById("permutation_div_div1").style.display = "block";
+        return;
     }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
@@ -4523,7 +4559,7 @@ function permutationcal(nval, rval) {
             "n must be greater than r.";
         document.getElementById("premutation_div_div2").style.display = "none";
         document.getElementById("permutation_div_div1").style.display = "block";
-    
+
 	} else
 	{
         let ans1 = 1,
@@ -4563,12 +4599,12 @@ function combinationcal(nval, rval) {
     var regex = /^[\-]*[\d]+$/
     var textVal1 = regex.test(val1);
     var testVal2 = regex.test(val2);
-    if (!textVal1 || !testVal2) 
+    if (!textVal1 || !testVal2)
     {
         document.getElementById("combination_wrong").innerHTML ="Enter Integer values only";
         document.getElementById("combination_div_div2").style.display = "none";
-        document.getElementById("combination_div_div1").style.display = "block"; 
-        return;   
+        document.getElementById("combination_div_div1").style.display = "block";
+        return;
     }
     var val3 = parseInt(val1);
     var val4 = parseInt(val2);
@@ -4580,7 +4616,7 @@ function combinationcal(nval, rval) {
             "n and r must be positive integers";
         document.getElementById("combination_div_div2").style.display = "none";
         document.getElementById("combination_div_div1").style.display = "block";
-	
+
     } else if (val3 < val4) {
         document.getElementById("combination_wrong").innerHTML =
             "n must be greater than r.";
@@ -4629,7 +4665,7 @@ function Means() {
     var val = document.getElementById("getNum").value;
     val=val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(val==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4652,7 +4688,7 @@ function Means() {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         var ans = s / len;
-        
+
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
         for (i = 1; i < val.length; i++) {
@@ -4671,7 +4707,7 @@ function Median() {
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
     arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(arr==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4712,7 +4748,7 @@ function Mode() {
     var arr = document.getElementById("getNum").value;
     arr=arr.trim()
     arr = arr.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(arr==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4764,7 +4800,7 @@ function Variance() {
 
     val=val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(val==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4814,10 +4850,10 @@ function std() {
     var s = 0, ans = 0;
     document.getElementById("Meanresult").innerHTML = "";
     var val = document.getElementById("getNum").value;
-    
+
     val=val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
-    
+
     if(val==null)
     {
         document.getElementById("Meanresult").innerHTML = `Proper input is required`;
@@ -4995,6 +5031,29 @@ function convertBinOct() {
 }
 
 //----------------------------
+
+//Function that performs conversion of Octal/hexadecimal
+function convertOctHex() {
+    const fromBase = document.getElementById("octal-hexadecimal-select1").value;
+    const toBase = document.getElementById("octal-hexadecimal-select2").value;
+    const input = document.getElementById("octal-hexadecimal-input").value;
+    let result = document.getElementById("octal-hexadecimal-result");
+    let from = 8;
+    let to = 8;
+
+    if (fromBase === "Octal") from = 8;
+    else from = 16;
+
+    if (toBase === "Octal") to = 8;
+    else to = 16;
+
+    result.innerHTML = parseInt(input, from).toString(to);
+    if (input == "") {
+        result.innerHTML = "";
+    }
+}
+//---------------------------------------------------------------------
+
 //Function for addition of any number system
 function addBinDecHexOct(){
     const firstBase = document.getElementById("adding-all-select1").value;
@@ -5025,7 +5084,7 @@ function addBinDecHexOct(){
     x2=parseInt(input2);
 
     var x3=x1+x2;
-    
+
     if(resultType === "Binary")
     result.innerHTML="Answer in binary="+x3.toString(2);
     else if (resultType === "Octal")
@@ -5035,10 +5094,10 @@ function addBinDecHexOct(){
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
 
-    
-    
-    
-    
+
+
+
+
 
 }
 
@@ -5068,13 +5127,13 @@ function bcdTOdecimal(x) {
     input1="00"+x;
     else if(y%4==3 || y==3)
     input1="0"+x;
-    else 
+    else
     input1=x;
     const minVal = (currentValue) => currentValue <= 9;
     w=separator(input1,4);
     if(w.every(minVal)==true)
     return w;
-    else 
+    else
     return inv;
     }
 function decimalTObcd(z=""){
@@ -5098,22 +5157,22 @@ function decimalTObcd(z=""){
     }
     return x;
 
-}   
+}
 function convertbcd() {
     const fromCode = document.getElementById("bcd-select1").value;
     const toCode = document.getElementById("bcd-select2").value;
     var input = document.getElementById("bcd-input").value;
     let result = document.getElementById("bcd-result");
-    
-    if( fromCode=="BCD Code" && toCode=="BCD Code") 
+
+    if( fromCode=="BCD Code" && toCode=="BCD Code")
     result.innerHTML=input;
     else if(fromCode=="Decimal" && toCode=="Decimal")
     result.innerHTML=input;
     else if(fromCode=="BCD Code" && toCode =="Decimal")
     result.innerHTML=bcdTOdecimal(input).join('_');
-    else if(fromCode=="Decimal" && toCode=="BCD Code") 
+    else if(fromCode=="Decimal" && toCode=="BCD Code")
     result.innerHTML =decimalTObcd(input);
-    
+
 }
 
 //----------------------------
@@ -5517,10 +5576,10 @@ function computebayesprobability() {
     var probability3 =pbanda/probability2;
 
     var probability4=pbanda/probability1;
-    
+
     console.log(probability1);
     console.log(probability2);
-    
+
     let result1 = document.getElementById("bayesresult1");
     let result2=document.getElementById("bayesresult2");
     var check = true;
@@ -5529,26 +5588,26 @@ function computebayesprobability() {
         if (favourable1 > total1) {
             result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
             check = false;
-        } 
+        }
 
         else if (favourable2 > total2) {
             result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
             check = false;
-        } 
+        }
 		 else if (pbanda>probability2 || pbanda>probability1) {
             result1.innerHTML = "Probability of intersection is always equal to or less than the probability of individual events";
 			result2.innerHTML ="";
             check = false;
-        } 
+        }
 
          if (check == true) {
             result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
-             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);  
+             result2.innerHTML ="The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);
 
         }
     } else {
         result.innerHTML = "Outcomes can't be negative. Enter positive values only";
-        
+
     }
 
 
@@ -5653,7 +5712,7 @@ function rankcal() {
         }
     else
         result.innerHTML = "Invalid input use alphabet only";
-        
+
 }
 function ran(x,y,z)
 {
