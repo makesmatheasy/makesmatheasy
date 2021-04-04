@@ -13,9 +13,12 @@
      {
         document.getElementById('result').innerHTML = "Base of logarithm cannot be 1 ";
      }
-	 else if(base<=0 || number1<=0)
+     else if (base==0){
+        document.getElementById('result').innerHTML = "Base of logarithm cannon be 0"
+     }
+	 else if(base<0 || number1<0)
 	 {
-		  document.getElementById('result').innerHTML = "Please enter a positive integer ";
+		 document.getElementById('result').innerHTML = "Please enter a positive integer ";
 	 }
      else {
         var ans =  Math.log(number1)/Math.log(base);
