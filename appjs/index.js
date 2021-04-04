@@ -161,10 +161,20 @@ function openit(id) {
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
+        "#propcircle",
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
         "#euclid",
+        "#aod",
+
+        "#vecalg",
+
+        "#thdif",
+
+
+        "#corgeo",
+
         "#betagamma",
         "#parallel",
         "#unitconcal",
@@ -189,6 +199,7 @@ function openit(id) {
         "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
+        "#octal-hexadecimal",
         "#inversetrigonoiden",
 	"#circlecollapse",
         "#parabolacollapse",
@@ -224,6 +235,7 @@ function openit(id) {
         "#joint-probabilitycollapse",
         "#ex3",
         "#lappro",
+        "#rankcal",
         "#bayes-probabilitycollapse",
         "#prism",
         "#anglecon",
