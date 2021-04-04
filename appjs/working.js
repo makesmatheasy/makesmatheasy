@@ -181,6 +181,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#propcirclebtn").click(function () {
+        openit("#propcircle");
+        closenav();
+        clearall();
+    })
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
