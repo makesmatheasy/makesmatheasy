@@ -1003,7 +1003,7 @@ function solvesimpletrigo() {
     ) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
-    } 
+    }
     else if(pp <0 || base <0 || hyp == 0 ){
         document.getElementById("soltri").innerHTML = "The sides cannot be negative"
     }
@@ -4166,7 +4166,7 @@ function cal_func_stats()
     var num = document.getElementById('num_list').value;
     // console.log(typeof(num))
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
-    
+
 
     if(num=="")
     {
@@ -4195,7 +4195,7 @@ function cal_func_stats()
         console.log(number)
         console.log(typeof(number))
         console.log(typeof(number[0]))
-        
+
         for (i = 0; i < len; i++) {
             s = s + number[i];
         }
@@ -4246,7 +4246,7 @@ function cal_func_stats()
         }
 
         variance = variance/len;
-        
+
         var standarddev = Math.sqrt(variance);
 
         var large=(number[len-1]);
@@ -4254,7 +4254,7 @@ function cal_func_stats()
 
         console.log(large);
         console.log(small);
-        
+
         var range = large - small;
         var coffrange = (large - small)/(large + small);
         var coffvariation = (standarddev/mean)*100;
@@ -4288,7 +4288,7 @@ function cal_func_stats()
         print+="Mean deviation about Mean: "+mdmean+"<br>";
         print+="Mean deviation about Median: "+mdmedian+"<br>";
         print+="Mean deviation about Mode: "+mdmode+"<br>";
-        
+
         // print+=s/len
 
         document.getElementById('result_cal_func_stats').innerHTML = print;
@@ -4347,12 +4347,12 @@ function apsum()
 	if( parseInt(val.length)<2)
 	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
 	else{
-        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))	
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))
 		{
 			document.getElementById("printAP").innerHTML="Invalid AP"
 		}
     else
-	{	
+	{
 		var d=val[1]-val[0];
 		document.getElementById("printAP").innerHTML ="Common difference for the entered AP is &nbsp;"+d+"<br>";
 		for(i=0;i<n;i++)
@@ -4362,7 +4362,7 @@ function apsum()
 		}
 		document.getElementById("printAP").innerHTML +="<br>The Sum of &nbsp;"+n+"&nbsp; terms of the given AP is &nbsp;"+s;
 	}
-	}	
+	}
 }
 function amsol() {
     var a = document.getElementById("aval").value
@@ -5213,7 +5213,12 @@ function convertbcd() {
     result.innerHTML=bcdTOdecimal(input).join('_');
     else if(fromCode=="Decimal" && toCode=="BCD Code")
     result.innerHTML =decimalTObcd(input);
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (fromCode=="BCD Code" && input.search(/^[10]+$/) == -1 ){
+        result.innerHTML = "BCD Code can only have 0's and 1's";
 
+}
 }
 
 //----------------------------
@@ -5405,7 +5410,7 @@ function seveneightCalc(){
     eight = parseInt(seven) + 1;
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
-    
+
     print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+seven+"</span><br>";
     print+= "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
     print+=seven+" + 1</span> = <span style='text-decoration: underline;'>"+eight+"</span>";
