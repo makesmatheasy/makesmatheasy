@@ -183,6 +183,7 @@ function openit(id) {
         "#log_values",
         "#log-collapse",
         "#bt-collapse",
+        "#bt-collapse1",
         "#pandc",
         "#interest",
         "#decimal-binary",
