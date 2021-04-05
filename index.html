@@ -8847,6 +8847,8 @@
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
+                    
+
                     <span class="clear"
                           onclick="clearc()">C</span>
                     <span id="more" onclick="more();">More</span>
@@ -8858,6 +8860,13 @@
                           onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
                             class="bk" src="icons/backspace-arrow.png"
                             style="height:1.875rem;"></span>
+                    
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
+                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                 
                     <span id="seven">7</span>
                     <span id="eight">8</span>
                     <span id="nine">9</span>
@@ -8869,6 +8878,8 @@
                             src="images/speechlogo.png"
                             height=1.875rem
                             style="filter: none;"></span>
+                            
+                   
                     <span id="four">4</span>
                     <span id="five">5</span>
                     <span id="six">6</span>
