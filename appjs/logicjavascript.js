@@ -161,9 +161,17 @@ function callder() {
 
 //call romanize
 function callr() {
-    document.getElementById("ouroman").innerHTML = romanize(
-        document.getElementById("inpo").value
-    );
+    var x =parseInt(document.getElementById("inpo").value);
+    var y = x%5000000;
+    x = (x-y)/1000000;
+    var z= y%5000;
+    y = (y-z)/1000;
+    document.getElementById("ouroman-1").innerHTML = romanize(x.toString());
+    document.getElementById("ouroman-2").innerHTML = romanize(y.toString());
+    document.getElementById("ouroman-3").innerHTML = romanize(z.toString());
+    console.log((romanize(x.toString())));
+    console.log((romanize(y.toString())));
+
 }
 
 //call romanize
@@ -1003,7 +1011,7 @@ function solvesimpletrigo() {
     ) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
-    } 
+    }
     else if(pp <0 || base <0 || hyp == 0 ){
         document.getElementById("soltri").innerHTML = "The sides cannot be negative"
     }
@@ -3900,6 +3908,27 @@ function polar()
   result.innerHTML = x;
 }
 
+function expoxn()
+{
+  var r = parseInt(document.getElementById("cpreale").value);
+  var i = parseInt(document.getElementById("cpimge").value);
+  var result= document.getElementsByClassName("comp1resulte");
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  var x ="iπ *" +y
+  result[1].innerHTML = x;  
+  result[2].innerHTML = x;
+
+  var p = (Math.sqrt((r*r)+(i*i)));
+  var j =p;
+  if(!Number.isInteger(p))
+  {
+    j = (r*r)+(i*i);
+    j = "&#8730; "+ j ;
+    
+  }
+  result[0].innerHTML =  j ;
+
+}
 
 function datau(a) {
     switch (a) {
@@ -4235,7 +4264,7 @@ function cal_func_stats()
     var num = document.getElementById('num_list').value;
     // console.log(typeof(num))
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
-    
+
 
     if(num=="")
     {
@@ -4264,7 +4293,7 @@ function cal_func_stats()
         console.log(number)
         console.log(typeof(number))
         console.log(typeof(number[0]))
-        
+
         for (i = 0; i < len; i++) {
             s = s + number[i];
         }
@@ -4315,7 +4344,7 @@ function cal_func_stats()
         }
 
         variance = variance/len;
-        
+
         var standarddev = Math.sqrt(variance);
 
         var large=(number[len-1]);
@@ -4323,7 +4352,7 @@ function cal_func_stats()
 
         console.log(large);
         console.log(small);
-        
+
         var range = large - small;
         var coffrange = (large - small)/(large + small);
         var coffvariation = (standarddev/mean)*100;
@@ -4357,7 +4386,7 @@ function cal_func_stats()
         print+="Mean deviation about Mean: "+mdmean+"<br>";
         print+="Mean deviation about Median: "+mdmedian+"<br>";
         print+="Mean deviation about Mode: "+mdmode+"<br>";
-        
+
         // print+=s/len
 
         document.getElementById('result_cal_func_stats').innerHTML = print;
@@ -4416,12 +4445,12 @@ function apsum()
 	if( parseInt(val.length)<2)
 	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
 	else{
-        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))	
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))
 		{
 			document.getElementById("printAP").innerHTML="Invalid AP"
 		}
     else
-	{	
+	{
 		var d=val[1]-val[0];
 		document.getElementById("printAP").innerHTML ="Common difference for the entered AP is &nbsp;"+d+"<br>";
 		for(i=0;i<n;i++)
@@ -4431,7 +4460,7 @@ function apsum()
 		}
 		document.getElementById("printAP").innerHTML +="<br>The Sum of &nbsp;"+n+"&nbsp; terms of the given AP is &nbsp;"+s;
 	}
-	}	
+	}
 }
 function amsol() {
     var a = document.getElementById("aval").value
@@ -5166,12 +5195,49 @@ function addBinDecHexOct(){
     result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
+}
 
+//----------------------------
 
+//Function for multiplication of any number system
+function addBinDecHexOct(){
+    const firstBase = document.getElementById("multiplying-all-select1").value;
+    const secondBase = document.getElementById("multiplying-all-select2").value;
+    const input1 = document.getElementById("multiplying-all-input1").value;
+    const input2 = document.getElementById("multiplying-all-input2").value;
+    const resultType= document.getElementById("multiplying-all-result-type").value;
+    let result = document.getElementById("multiplying-all-result");
+    var x1;
+    var x2;
 
+    if(firstBase === "Binary")
+    x1=parseInt(input1,2);
+    else if (firstBase === "Octal")
+    x1=parseInt(input1,8);
+    else if(firstBase === "Hexa Decimal")
+    x1=parseInt(input1,16);
+    else if(firstBase === "Decimal")
+    x1=parseInt(input1);
 
+    if(secondBase === "Binary")
+    x2=parseInt(input2,2);
+    else if (secondBase === "Octal")
+    x2=parseInt(input2,8);
+    else if(secondBase === "Hexa Decimal")
+    x2=parseInt(input2,16);
+    else if(secondBase === "Decimal")
+    x2=parseInt(input2);
 
+    var x3=x1*x2;
 
+    if(resultType === "Binary")
+    result.innerHTML="Answer in binary="+x3.toString(2);
+    else if (resultType === "Octal")
+    result.innerHTML="Answer in Octal="+x3.toString(8);
+    else if(resultType === "Hexa Decimal")
+    result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
+    else if(resultType === "Decimal")
+    result.innerHTML="Answer in Decimal="+x3.toString();
 }
 
 //----------------------------
@@ -5245,7 +5311,12 @@ function convertbcd() {
     result.innerHTML=bcdTOdecimal(input).join('_');
     else if(fromCode=="Decimal" && toCode=="BCD Code")
     result.innerHTML =decimalTObcd(input);
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (fromCode=="BCD Code" && input.search(/^[10]+$/) == -1 ){
+        result.innerHTML = "BCD Code can only have 0's and 1's";
 
+}
 }
 
 //----------------------------
@@ -5437,7 +5508,7 @@ function seveneightCalc(){
     eight = parseInt(seven) + 1;
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
-    
+
     print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+seven+"</span><br>";
     print+= "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
     print+=seven+" + 1</span> = <span style='text-decoration: underline;'>"+eight+"</span>";
