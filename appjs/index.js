@@ -188,6 +188,7 @@ function openit(id) {
         "#decimal-binary",
         "#bitwise-calc",
         "#adding-all",
+        "#multiplying-all",
 		"#onetwocom-calc",
         "#3dgeo",
         "#ninetencom-calc",

@@ -1852,6 +1852,26 @@
             </li>
 
             <!--end -->
+            <!-- Start of multiplication of any number -->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="mult-all-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;"> Multiplcation Of any Number System </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#multiplying-all','c','multiplying-all-imgfav-all-imgfav')"><img
+                                        id="multiplying-all-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!-- End of multiplication of any number -->
 
             <!--Binary to Decimal to hexadecimal converter start-->
 
@@ -8250,6 +8270,84 @@
         </div>
         <!-- End of Addition of any number system -->
 
+
+         <!-- Start of Multiplication of any number system -->
+         <div class="collapse" id="multiplying-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>1st Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-select1" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="multiplying-all-input1" value="0"
+                           class="form__field"
+                           oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>2nd Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-select2" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form__field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="multiplying-all-input2" value="0"
+                    class="form__field"
+                    oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Result Of Addition</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-result-type" class="form__field"
+                    onchange="addBinDecHexOct()">
+                <option class="form__field" style="background-color: #232a36;">
+
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Hexa Decimal
+                </option>
+            </select>
+                </div>
+                <label class="form__group" id="multiplying-all-result">0</label>
+            </div>
+        </div>
+        <!-- End of Multiplication of any number system -->
 
         <!-- Start of Bitwise Calculator -->
 
