@@ -67,11 +67,9 @@ function autocomplete(inp, arr) {
                         $("#laplacecollapse").slideDown();
                         $("#inverselaplacecollapse").slideToggle();
                         $("#laplacecollapseit").slideToggle();
-
                     }else if (inp.value.toUpperCase() == "GRAPH") {
-                        $("#plotgraph").slideToggle();
-                        
-                    }  else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
+                        $("#plotgraph").slideToggle();                        
+                    } else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
                          $("#fractions").slideToggle();
                     } else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
                         $("#mulsolwithsteps").slideToggle();
@@ -91,7 +89,7 @@ function autocomplete(inp, arr) {
                         $("#trigonoiden").slideToggle();
                     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
                         $("#unitconcal").slideToggle();
-
+                        
                     }else if (inp.value.toUpperCase() == "SPI CONVERTER") {
                         $("#spiconcal").slideToggle(); 
                     }
@@ -100,6 +98,42 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
                         document.getElementById('math').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS") {
+                        $("#ip").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS"){
+                        document.getElementById('ip').click();
+                    }
+                    else if (inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS") {
+                        $("#trans").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS"){
+                        document.getElementById('trans').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS") {
+                        $("#betagamma").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS"){
+                        document.getElementById('betagamma').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "VECTOR CALCULUS") {
+                        $("#vector").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "VECTOR CALCULUS"){
+                        document.getElementById('vector').click();
+                    }
+                    else if (inp.value.toUpperCase() == "VECTOR ALGEBRA") {
+                        $("#vecalg").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "VECTOR ALGEBRA"){
+                        document.getElementById('vecalg').click();
+                    }  
+                    else if(inp.value.toUpperCase() == "LIMITS"){
+                        document.getElementById('limitscollapse').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "LIMITS") {
+                        $("#limitscollapse").slideToggle(); 
                     }
                     else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
                         $("#euclid").slideToggle();
@@ -196,7 +230,7 @@ function autocomplete(inp, arr) {
 
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
-                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Operations on Sets","Euclid Geometry","Trigonometric Values", "Unit Converter" ,"Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Conversion to Words", "Roundoff", "LCM", "HCF","Limits","Vector Algebra","Vector Calculus","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry","Trigonometric Values", "Unit Converter" ,"Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -283,5 +317,40 @@ function handleclick(value) {
     else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
         document.getElementById('setop').click(); 
     }
-
+    else if(inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS"){
+        document.getElementById('ip').click(); 
+    }
+    else if (inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS") {
+        $("#ip").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS"){
+        document.getElementById('trans').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS") {
+        $("#trans").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS"){
+        document.getElementById('betagamma').click(); 
+    }
+    else if (inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS") {
+        $("#betagamma").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "VECTOR CALCULUS"){
+        document.getElementById('vector').click(); 
+    }
+    else if (inp.value.toUpperCase() == "VECTOR CALCULUS") {
+        $("#vector").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "VECTOR ALGEBRA"){
+        document.getElementById('vecalg').click(); 
+    }
+    else if (inp.value.toUpperCase() == "VECTOR ALGEBRA") {
+        $("#vecalg").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "LIMITS"){
+        document.getElementById('limitscollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LIMITS") {
+        $("#limitscollapse").slideToggle(); 
+    } 
 }
