@@ -4589,6 +4589,12 @@ function gp() {
 
         printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
       }
+      else
+      {
+        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        explain.innerHTML="";
+        return;
+      }
 
 
       var power = parseFloat(Math.pow(r, n))
@@ -4614,6 +4620,11 @@ function gp() {
 function igp() {
     var a = document.getElementById("fterm").value
     var r = parseFloat(document.getElementById("r").value)
+    if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
+    {
+        document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+    }
     if (r >= 1) {
         document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
     } else {
