@@ -1852,6 +1852,26 @@
             </li>
 
             <!--end -->
+            <!-- Start of multiplication of any number -->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="mult-all-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;"> Multiplcation Of any Number System </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#multiplying-all','c','multiplying-all-imgfav-all-imgfav')"><img
+                                        id="multiplying-all-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!-- End of multiplication of any number -->
 
             <!--Binary to Decimal to hexadecimal converter start-->
 
@@ -3806,11 +3826,11 @@
             <h2 style="text-align: center;">Inverse,Periodicity of Functions</h2>
             <br><br>
             <h4>What is a Period?</h4>
-            <p>The time interval between two waves is known as a Period whereas a function that repeats its values 
+            <p>The time interval between two waves is known as a Period whereas a function that repeats its values
                 at regular intervals or periods is known as a Periodic Function. In other words, a periodic function is a function that repeats its values after every particular interval.</p>
             <p>\[f(x+a)\space = \space f(x) for\space a>0\] </p>
             <br>
-            <h4>How to find a period?</h4>   
+            <h4>How to find a period?</h4>
             <ul>
                 <li style="color: white; font-size: 20px;">If a function repeats over at a constant period we say that is a periodic function.</li>
                 <li style="color: white; font-size: 20px;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
@@ -4221,6 +4241,39 @@
             </div>
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comp1result"></p>
+            </div>
+            <h1>Exponential form of complex number</h1>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part : &nbsp; &nbsp; </label>
+                <input type="number" id="cpreale" class="form__field" placeholder="Real"
+                       style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+                <input type="number" id="cpimge" class="form__field" placeholder="Imag"
+                    style="width:3rem;display:inline;">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="expoxn()">
+                    Find
+                </button>
+            </div>
+            <span  class="comp1resulte" style="color: white;">r</span>>
+            <div class="form-group text-center" style="color: white;display: inline-block;"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <semantics>
+                            <mrow>
+                                <msup>
+                                    <mi>e</mi>
+                                    <mn class = "comp1resulte">i &#1012;</mn>
+                                </msup>
+                            </mrow>
+                        </semantics>
+                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
+                            style="height: 0.947438em; vertical-align: -0.08333em;"></span><span class="mord"><span
+                                class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span
+                                        class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class=""
+                                                style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut"
+                                                    style="height: 2.7em;"></span><span
+                                                    class="sizing reset-size6 size3 mtight"><span
+                                                        class="mord mtight comp1resulte" >i &#1012;</span></span></span></span></span></span></span></span></span></span>
             </div>
             <h1>Find Euler Representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
@@ -6422,6 +6475,19 @@
                         <p>\[15)\space a^5-b^5\space =(a-b)(a^4+a^3b+a^2b^2+ab^3+b^4)\]</p>
                         <p>\[16)\space (a+b+c+...)^2\space
                             =a^2+b^2+c^2+....+2(ab+bc+ca+...)\]</p>
+                        <p>\[17)\space Considering\space n\space as\space a\space natural\space number:\] 
+                            \[a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b+…+ b^{n-2}a + b^{n-1})\]</p>
+                        <p>\[18)\space Considering\space n\space as\space an\space even\space number:\] 
+                            \[a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b+…+ b^{n-2}a - b^{n-1})\]</p>
+                            <p>\[18)\space Considering\space n\space as\space an\space odd\space number:\] 
+                                \[a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b+ a^{n-3}b^2…- b^{n-2}a + b^{n-1})\]</p>
+                        <p>\[19)\space Exponential\space laws:\]
+                            \[(a^m)(a^n) = a^{m+n}\]
+                            \[(ab)^m = a^mb^m \] 
+                            \[(a^m)^n = a^{mn} \]
+                            \[{a^m\over a^n} = a^{m-n} \] 
+                            \[a^m = {1\over a^{-m}} \] 
+                            \[a^{-m} = {1\over a^m} \]</p> 
                     </div>
                 </div>
             </div>
@@ -7808,7 +7874,7 @@
             <form class="form-inline">
                 <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
-             
+
                 <input type="tel" id="ap" placeholder="Enter AP(space separated)"
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <button type="button" class="btn btn-light" onclick=apsum()>
@@ -8098,62 +8164,65 @@
             </div>
             <!--  Primarity test and prime till n cal end -->
         </div>
+        <center>
         <div class="collapse" id="bool">
-            <h2 style="text-align: center;">Boolean Algebra</h2>
-            <h5>Laws of Boolean Algebra</h5>
-            <p>1. Annulment Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A . 0 = 0</li>
-                <li style="font-size: 20px; color: white;">A + 1 = 1</li>
-            </ul>
-            <p>2. Identity Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + 0 = A</li>
-                <li style="font-size: 20px; color: white;">A . 1 = A</li>
-            </ul>
-            <p>3. Idempotent Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + A = A</li>
-                <li style="font-size: 20px; color: white;">A . A = A</li>
-            </ul>
-            <p>4. Complement Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A . A<sup>'</sup> = 0</li>
-                <li style="font-size: 20px; color: white;">A + A<sup>'</sup> = 1</li>
-            </ul>
-            <p>5. Demorgan's Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">(A+B)<sup>'</sup> = A<sup>'</sup>
-                    + B<sup>'</sup></li>
-                <li style="font-size: 20px; color: white;">(A . B)<sup>'</sup> =
-                    A<sup>'</sup> + B<sup>'</sup></li>
-            </ul>
-            <p>6. Distributive Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
-                <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
-            </ul>
-            <p>7. Absorption/ Redundancy Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + A.B = A</li>
-                <li style="font-size: 20px; color: white;">A(A+B) = A</li>
-            </ul>
-            <p>8. Commutative Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + B = B + A</li>
-                <li style="font-size: 20px; color: white;">A.B = B.A</li>
-            </ul>
-            <p>9. Associative Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + (B + C) = (A + B) + C</li>
-                <li style="font-size: 20px; color: white;">A.(B.C) = (A.B).C</li>
-            </ul>
-            <p>10. Double Negation Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A<sup>'</sup><sup>'</sup> = A</li>
-                <li style="font-size: 20px; color: white;">B<sup>'</sup><sup>'</sup> = B</li>
-            </ul>
+            <h2 style="font-size:60px;">Boolean Algebra</h2>
+            <br>
+            <h5 style="font-size:30px;">Laws of Boolean Algebra</h5>
+            <p style="font-size:30px;">1.) Annulment Law </p>
+
+                <p>\[ A \space.\space 0 = 0\]</p>
+                <p>\[A + 1 = 1\]</p>
+
+            <p style="font-size:30px;">2.) Identity Law  </p>
+
+                <p>\[A + 0 = A\]</p>
+                <p>\[A \space.\space 1 = A\]</p>
+
+            <p style="font-size:30px;">3.) Idempotent Law </p>
+
+                <p>\[A + A = A\]</p>
+                <p>\[A \space.\space A = A\]</p>
+
+            <p style="font-size:30px;">4.) Complement Law </p>
+
+                <p>\[A \space.\space A^{'} = 0\]</p>
+                <p>\[A + A^{'} = 1\]</p>
+
+            <p style="font-size:30px;">5.) Demorgan's Law </p>
+
+                <p>\[(A+B)^{'} = A^{'}
+                    + B^{'}\]</p>
+                <p>\[(A . B)^{'} =
+                    A^{'} + B^{'}\]</p>
+
+            <p style="font-size:30px;">6.) Distributive Law </p>
+
+                <p>\[A(B+C) = A . B + A .C\]</p>
+                <p>\[A + BC = (A+B) . (A+C)\]</p>
+
+            <p style="font-size:30px;">7.) Absorption/ Redundancy Law </p>
+
+                <p>\[A + A\space .\space B = A\]</p>
+                <p>\[A(A+B) = A\]</p>
+
+            <p style="font-size:30px;">8.) Commutative Law</p>
+
+                <p>\[A + B = B + A\]</p>
+                <p>\[A\space .\space B = B\space .\space A\]</p>
+
+            <p style="font-size:30px;">9.) Associative Law</p>
+
+                <p>\[A + (B + C) = (A + B) + C\]</p>
+                <p>\[A\space .\space (B \space .\space C) = (A \space.\space B)\space.\space C\]</p>
+
+            <p style="font-size:30px;">10.) Double Negation Law</p>
+
+                <p>\[A^{''} = A\]</p>
+                <p>\[B^{''}\, = \, B\]</p>
+
         </div>
+      </center>
         <!--    start of calculator -->
 
         <!-- Start of Decimal / Binary -->
@@ -8272,6 +8341,84 @@
         </div>
         <!-- End of Addition of any number system -->
 
+
+         <!-- Start of Multiplication of any number system -->
+         <div class="collapse" id="multiplying-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>1st Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-select1" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="multiplying-all-input1" value="0"
+                           class="form__field"
+                           oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>2nd Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-select2" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form__field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="multiplying-all-input2" value="0"
+                    class="form__field"
+                    oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Result Of Addition</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-result-type" class="form__field"
+                    onchange="addBinDecHexOct()">
+                <option class="form__field" style="background-color: #232a36;">
+
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Hexa Decimal
+                </option>
+            </select>
+                </div>
+                <label class="form__group" id="multiplying-all-result">0</label>
+            </div>
+        </div>
+        <!-- End of Multiplication of any number system -->
 
         <!-- Start of Bitwise Calculator -->
 
@@ -8870,6 +9017,8 @@
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
+                    
+
                     <span class="clear"
                           onclick="clearc()">C</span>
                     <span id="more" onclick="more();">More</span>
@@ -8881,6 +9030,13 @@
                           onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
                             class="bk" src="icons/backspace-arrow.png"
                             style="height:1.875rem;"></span>
+                    
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
+                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                 
                     <span id="seven">7</span>
                     <span id="eight">8</span>
                     <span id="nine">9</span>
@@ -8892,6 +9048,8 @@
                             src="images/speechlogo.png"
                             height=1.875rem
                             style="filter: none;"></span>
+                            
+                   
                     <span id="four">4</span>
                     <span id="five">5</span>
                     <span id="six">6</span>
