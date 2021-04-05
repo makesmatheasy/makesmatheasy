@@ -2538,7 +2538,7 @@ function ssimplifyequation(input, output) {
     var val = document.getElementById(input).value;
     var sol = nerdamer("simplify(" + String(val) + ")");
     sol = nerdamer(sol).toTeX();
-    katex.render("Simplified:\\newline" + sol, document.getElementById(output), {
+    katex.render("Simplified:\\newline " + sol, document.getElementById(output), {
         throwOnError: false,
     });
 }
@@ -2552,7 +2552,7 @@ function sequationexpand(input, output) {
     var x = nerdamer(val);
     sol = x.expand().toString();
     sol = nerdamer(sol).toTeX();
-    katex.render("Expanded:\\newline" + sol, document.getElementById(output), {
+    katex.render("Expanded:\\newline " + sol, document.getElementById(output), {
         throwOnError: false,
     });
 }
