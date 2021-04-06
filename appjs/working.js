@@ -513,6 +513,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#bt-collapsebtn1").click(function(){
+        openit("#bt-collapse1");
+        closenav();
+        clearall();
+    });
+
     $("#bcdbtn").click(function(){
         openit("#bcd");
         closenav();

@@ -2169,6 +2169,26 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                          <table class="table">
+                              <tr>
+                                  <td style="border-top: none;">
+                                      <a id="bt-collapsebtn1"
+                                         style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Probability
+                                          Properties
+                                      </a>
+                                  </td>
+                                  <td style="float:right;border-top: none;">
+                                         <span
+                                                 onclick="addtofavourite('Probability Properties','#bt-collapse1','c','btprop1imgfav')"><img
+                                                 id="btprop1imgfav" src="images/unfavourite.png"
+                                                 style="height:1.5625rem;filter: none;"></span>
+                                  </td>
+                              </tr>
+                          </table>
+                      </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -3243,6 +3263,59 @@
                 </div>
             </div>
         </div>
+
+        <div class="collapse" id="bt-collapse1">
+                  <div class="stopwrap">
+                      <div class="coll">
+                          <div class="left">
+                              <center><h2>Probability Properties</h2></center>
+                              <br><br>
+                              <center><h3>General Formula</h3></center>
+                              <p>\[P(E)\,=\,\frac{Number\space of\space favourable\space outcomes}{Total\space Number\space of\space outcomes}\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>General form of Addition Theorem of Probability</h3></center>
+                              <p>\[P(A_1\,\cup\,A_2\,\cup\,....\,\cup\,A_n)\,=[\,\sum_{i=1}^{n} P(A_i) \,-\,\sum_{i < j} P(A_i \,\cap \, A_j) \, + \,\sum_{i < j < k} P(A_i \,\cap \, A_j \, \cap \, A_k) \, - \\ ...\,+\,(-1)^{n-1}\,P(A_1 \,\cap\, A_2\,\cap\,...\,\cap \, A_n) ] \]</p>
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Conditional Probability</h3></center>
+                              <p>\[The\,probability\,of\,occurrence\,of\,an\,event\,E_1\, , \,given\,that\,E_2\,has\,already\,occured\\is\,called\,the\,Conditional\,Probabilty\, , \,it\,is\,denoted\,by\,P(\frac{E_1}{E_2}) \]</p>
+                              <p>
+                                  \[P(\frac{E_1}{E_2})\,=\,\frac{P(E_1\,\cap\,E_2)}{P(E_2)}\,=\,\frac{n(E_1\,\cap\,E_2)}{n(E_2)}\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Total Probability Theorem</h3></center>
+                              <p>\[Let\,E_1\, , \, E_2 \, ,\, ... \,E_n\,be\,n\,mutually\,exclusive\,and\,exhaustive\,events\,i.e.,\\E_i\, \cap \, E_j\,=\,\phi\,for\,i\,!= \,j\,and\,\bigcup_{i=1}^{n}\,E_i\,=\,S\,.\,Suppose\,that\, , \\ P(E_i)\,>\,0\, ,\,\forall\,1\,\leq\,i\,\leq\,n\,Then\,for\,any\,event\,E \]</p>
+                              <p>\[P(E)\,=\,\sum_{i=1}^{n}\,P(E_i)\,.\,P(\frac{E}{E_i})\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Baye's Theorem</h3></center>
+                              <p>\[If\,an\,event\, E \,can\, occur \,only\,with\,one\,of\,the\,n\,mutually\,exclusive\,and\,exhaustive\,events\\E_1\, ,\, E_2 \, , \, E_3 \, ... \, E_n\,and\,the\,probabilities\,P(E/E_1)\, ,\,P(E/E_2)\, ,\, ...\, , \, P(E/E_n)\,are\,known\, , \,then \]</p>
+                              <p>\[P(\frac{E_k}{E})\,=\,\frac{P(E_k)\,.\,\frac{P(E)}{P(E_k)}}{\sum_{k=1}^{n}P(E_k)\,.\,\frac{P(E)}{P(E_k)}}\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Binomial Theorem on Probability</h3></center>
+                              <p>\[Suppose\,a\,binomial\,experiment\,has\,probability\,of\,success\,p\,and\,that\,of\,failure\,q\,.\\If\,E\,be\,an\,event\,and\,let\,X\,=\,number\,of\,times\,event\,E\,occurs\,in\,n\,trials\\Then\,the\,probability\,of\,occurence\,of\,event\,E\,exactly\,r\,times\,in\,n\,trials\,is\,denoted\,by \]</p>
+                              <p>\[P(r)\,=\,nC_r\,p^{r}\,q^{n-r}\\where\, , \,r\,=\,0\, ,\,1\, , \,2\, , \,3\, , \, ... \, ,\,n\, . \]</p>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
         <div class="collapse" id="stats">
             <!--Calculator for statistical calculations-->
@@ -6475,19 +6548,19 @@
                         <p>\[15)\space a^5-b^5\space =(a-b)(a^4+a^3b+a^2b^2+ab^3+b^4)\]</p>
                         <p>\[16)\space (a+b+c+...)^2\space
                             =a^2+b^2+c^2+....+2(ab+bc+ca+...)\]</p>
-                        <p>\[17)\space Considering\space n\space as\space a\space natural\space number:\] 
+                        <p>\[17)\space Considering\space n\space as\space a\space natural\space number:\]
                             \[a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b+…+ b^{n-2}a + b^{n-1})\]</p>
-                        <p>\[18)\space Considering\space n\space as\space an\space even\space number:\] 
+                        <p>\[18)\space Considering\space n\space as\space an\space even\space number:\]
                             \[a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b+…+ b^{n-2}a - b^{n-1})\]</p>
-                            <p>\[18)\space Considering\space n\space as\space an\space odd\space number:\] 
+                            <p>\[18)\space Considering\space n\space as\space an\space odd\space number:\]
                                 \[a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b+ a^{n-3}b^2…- b^{n-2}a + b^{n-1})\]</p>
                         <p>\[19)\space Exponential\space laws:\]
                             \[(a^m)(a^n) = a^{m+n}\]
-                            \[(ab)^m = a^mb^m \] 
+                            \[(ab)^m = a^mb^m \]
                             \[(a^m)^n = a^{mn} \]
-                            \[{a^m\over a^n} = a^{m-n} \] 
-                            \[a^m = {1\over a^{-m}} \] 
-                            \[a^{-m} = {1\over a^m} \]</p> 
+                            \[{a^m\over a^n} = a^{m-n} \]
+                            \[a^m = {1\over a^{-m}} \]
+                            \[a^{-m} = {1\over a^m} \]</p>
                     </div>
                 </div>
             </div>
@@ -6608,7 +6681,6 @@
             <br>
             <p id="percent"></p>
             <br><br>
-            
             <h2>Profit/Loss calculations over Discount</h2>
             <br>
             <input style="width: 275px;" type="number" class="form__field"
@@ -9017,7 +9089,7 @@
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
-                    
+
 
                     <span class="clear"
                           onclick="clearc()">C</span>
@@ -9030,13 +9102,14 @@
                           onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
                             class="bk" src="icons/backspace-arrow.png"
                             style="height:1.875rem;"></span>
+
+                    <span id="e">e</span>
+                    <span id="exp()" onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">exp()</span>
                     
                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
-                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
-                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
-                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
-                 
+
                     <span id="seven">7</span>
                     <span id="eight">8</span>
                     <span id="nine">9</span>
@@ -9048,8 +9121,8 @@
                             src="images/speechlogo.png"
                             height=1.875rem
                             style="filter: none;"></span>
-                            
-                   
+
+
                     <span id="four">4</span>
                     <span id="five">5</span>
                     <span id="six">6</span>
@@ -12168,8 +12241,12 @@
                         </button>
                     </div>
                     <div class="form-group">
-                        <p id="ouo" style="font-family:mathfont;"></p>
-                        <p id="ouroman" style="font-family:mathfont;"></p>
+                        <p id="ouo" style="font-family:mathfont;"></p>our
+                        <p id="ouroman-1"
+                            style="font-family:mathfont; display: inline-block; text-decoration: overline; border-top: 2px solid white; padding-top: 1px;">
+                        </p>
+                        <p id="ouroman-2" style="font-family:mathfont; display: inline-block; text-decoration: overline;"></p>
+                        <p id="ouroman-3" style="font-family:mathfont ; display: inline-block;"></p>
                     </div>
                     <div class="form-group">
                         <input type="text" id="rinp" class="form__field"

@@ -108,6 +108,7 @@ function more() {
   var zero = document.getElementById("zero");
   var dot = document.getElementById("dot");
   var more = document.getElementById("more");
+
   if (one.innerText == "1") {
     one.innerText = "asin(";
   } else {
@@ -189,6 +190,10 @@ function more() {
   } else {
     more.innerText = "More";
   }
+
+
+
+
 }
 
 function todeci() {
@@ -322,4 +327,9 @@ document.getElementById("three").addEventListener("click", function () {
 document.getElementById("sqrt").addEventListener("click", function () {
   document.getElementById("txt").value +=
     this.innerText == "log10(" ? "log10(" : "sqrt(";
+});
+document.getElementById("e").addEventListener("click", function () {
+  
+  document.getElementById("txt").value +=this.innerText;
+  calsol(document.getElementById("txt").value);
 });
