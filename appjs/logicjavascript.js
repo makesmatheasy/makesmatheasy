@@ -4414,12 +4414,25 @@ function sum_n_apsol(nval, rval, r1val) {
         console.log(res);
         renderMathInElement(document.getElementById("sumAP_formula"));
     }
+    else
+        {
+            printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+            explain.innerHTML="";
+            res.innerHTML="";
+            return;
+        }
 }
 
 function anotherap() {
     var n = document.getElementById("numterms").value
     var a = document.getElementById("ft").value
     var l = document.getElementById("lt").value
+    if(isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(l)))
+    {
+        document.getElementById("printAPseries1").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        document.getElementById("ltap").innerHTML = "";
+        return;
+    }
     var nhalf = parseFloat(n / 2)
     var al = parseInt(a) + parseInt(l)
     var ans = parseInt(nhalf * al)
