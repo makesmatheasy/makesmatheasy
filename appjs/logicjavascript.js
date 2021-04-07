@@ -4006,7 +4006,7 @@ function simple_interest() {
         {
 
             document.getElementById("simpleinterstoutput1").innerHTML = "\\[Simple \\space Interest = \\space \\frac{1}{100} \\times p \\times t \\times r \\]";
-            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]";
+            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]<br>\\[Amount \\space = \\space "+p+"\\space + \\space "+si.toFixed(5)+"\\space = \\space "+(parseFloat(p)+parseFloat(si.toFixed(5)))+"\\]";
 
             renderMathInElement(document.getElementById("simpleinterstoutput1"));
             renderMathInElement(document.getElementById("simpleinterstoutput2"));
@@ -4029,7 +4029,7 @@ function simple_interest() {
             amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
             document.getElementById("compoundinterestoutput1").innerHTML = "\\[Compound \\space Interest =P\\left(1+\\frac{r}{n}\\right)^{n t}\\]"
-            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]";
+            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]<br>\\[Amount \\space = \\space "+p+"\\space + \\space "+ci.toFixed(5)+"\\space = \\space "+(parseFloat(p)+parseFloat(ci.toFixed(5)))+"\\]";
             renderMathInElement(document.getElementById("compoundinterestoutput1"));
             renderMathInElement(document.getElementById("compoundinterestoutput2"));
         }
