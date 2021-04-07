@@ -4167,25 +4167,40 @@ function factorialsol(factorialval) {
     }
 }
 
-// profit/loss calculations
+// profit loss calculations
 function profitloss() {
     var cp = parseFloat(document.getElementById("cp").value);
     var sp = parseFloat(document.getElementById("sp").value);
+    document.getElementById("pol2").innerHTML ="";
+    document.getElementById("percent1").innerHTML = "";
+    document.getElementById("pol1").innerHTML ="";
+    document.getElementById("percent2").innerHTML = "";
     if(cp<0 || sp<0)
     {
-        document.getElementById("pol").innerHTML = "<strong>Only</strong> positive values are accepted";
-        document.getElementById("percent").innerHTML = "";
+        document.getElementById("pol1").innerHTML = "<strong>Only</strong> positive values are accepted";
     }
     else if (cp > sp) {
         var loss = cp - sp;
         var perl = (loss * 100) / cp;
-        document.getElementById("pol").innerHTML = "Loss = " + loss;
-        document.getElementById("percent").innerHTML = "Loss Percentage =" + perl + "%";
+        document.getElementById("pol1").innerHTML = "\\[Loss = Cost\\space Price - Selling\\space Price\\]";
+        document.getElementById("pol2").innerHTML = "\\[Loss = "+cp+" - "+sp+" \\space =  "+loss+"\\]";
+        renderMathInElement(document.getElementById("pol1"));
+        renderMathInElement(document.getElementById("pol2"));
+        document.getElementById("percent1").innerHTML = "\\[Loss\\space Percentage = \\frac{loss}{cost\\space price} \\times 100 \\%\\]";
+        document.getElementById("percent2").innerHTML = "\\[Loss\\space Percentage =\\frac{"+loss+"}{"+cp+"} \\times 100 = " + perl.toFixed(3) + "\\% \\]";
+        renderMathInElement(document.getElementById("percent1"));
+        renderMathInElement(document.getElementById("percent2"));
     } else {
         var profit = sp - cp;
         var perp = (profit * 100) / sp;
-        document.getElementById("pol").innerHTML = "Profit = " + profit;
-        document.getElementById("percent").innerHTML = "Profit Percentage =" + perp + "%";
+        document.getElementById("pol1").innerHTML = "\\[Profit = Selling\\space Price - Cost\\space Price\\]";
+        document.getElementById("pol2").innerHTML = "\\[Profit = "+sp+" - "+cp+" \\space =  "+profit+"\\]";
+        renderMathInElement(document.getElementById("pol1"));
+        renderMathInElement(document.getElementById("pol2"));
+        document.getElementById("percent1").innerHTML = "\\[Profit\\space Percentage = \\frac{Profit}{Selling\\space price} \\times 100 \\%\\]";
+        document.getElementById("percent2").innerHTML = "\\[Profit\\space Percentage =\\frac{"+profit+"}{"+sp+"} \\times 100 = " + perp.toFixed(3) + "\\% \\]";
+        renderMathInElement(document.getElementById("percent1"));
+        renderMathInElement(document.getElementById("percent2"));
     }
 }
 
