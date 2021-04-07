@@ -1039,7 +1039,7 @@
                                 Loss Calculations</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Profit Loss Calculations','#profitloss','c','plimgfav')"><img
+                                <span onclick="addtofavourite('Profit/Loss Calculations','#profitloss','c','plimgfav')"><img
                                         id="plimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -1852,6 +1852,26 @@
             </li>
 
             <!--end -->
+            <!-- Start of multiplication of any number -->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="mult-all-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;"> Multiplcation Of any Number System </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#multiplying-all','c','multiplying-all-imgfav-all-imgfav')"><img
+                                        id="multiplying-all-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!-- End of multiplication of any number -->
 
             <!--Binary to Decimal to hexadecimal converter start-->
 
@@ -2149,6 +2169,26 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                          <table class="table">
+                              <tr>
+                                  <td style="border-top: none;">
+                                      <a id="bt-collapsebtn1"
+                                         style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Probability
+                                          Properties
+                                      </a>
+                                  </td>
+                                  <td style="float:right;border-top: none;">
+                                         <span
+                                                 onclick="addtofavourite('Probability Properties','#bt-collapse1','c','btprop1imgfav')"><img
+                                                 id="btprop1imgfav" src="images/unfavourite.png"
+                                                 style="height:1.5625rem;filter: none;"></span>
+                                  </td>
+                              </tr>
+                          </table>
+                      </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -3224,6 +3264,59 @@
             </div>
         </div>
 
+        <div class="collapse" id="bt-collapse1">
+                  <div class="stopwrap">
+                      <div class="coll">
+                          <div class="left">
+                              <center><h2>Probability Properties</h2></center>
+                              <br><br>
+                              <center><h3>General Formula</h3></center>
+                              <p>\[P(E)\,=\,\frac{Number\space of\space favourable\space outcomes}{Total\space Number\space of\space outcomes}\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>General form of Addition Theorem of Probability</h3></center>
+                              <p>\[P(A_1\,\cup\,A_2\,\cup\,....\,\cup\,A_n)\,=[\,\sum_{i=1}^{n} P(A_i) \,-\,\sum_{i < j} P(A_i \,\cap \, A_j) \, + \,\sum_{i < j < k} P(A_i \,\cap \, A_j \, \cap \, A_k) \, - \\ ...\,+\,(-1)^{n-1}\,P(A_1 \,\cap\, A_2\,\cap\,...\,\cap \, A_n) ] \]</p>
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Conditional Probability</h3></center>
+                              <p>\[The\,probability\,of\,occurrence\,of\,an\,event\,E_1\, , \,given\,that\,E_2\,has\,already\,occured\\is\,called\,the\,Conditional\,Probabilty\, , \,it\,is\,denoted\,by\,P(\frac{E_1}{E_2}) \]</p>
+                              <p>
+                                  \[P(\frac{E_1}{E_2})\,=\,\frac{P(E_1\,\cap\,E_2)}{P(E_2)}\,=\,\frac{n(E_1\,\cap\,E_2)}{n(E_2)}\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Total Probability Theorem</h3></center>
+                              <p>\[Let\,E_1\, , \, E_2 \, ,\, ... \,E_n\,be\,n\,mutually\,exclusive\,and\,exhaustive\,events\,i.e.,\\E_i\, \cap \, E_j\,=\,\phi\,for\,i\,!= \,j\,and\,\bigcup_{i=1}^{n}\,E_i\,=\,S\,.\,Suppose\,that\, , \\ P(E_i)\,>\,0\, ,\,\forall\,1\,\leq\,i\,\leq\,n\,Then\,for\,any\,event\,E \]</p>
+                              <p>\[P(E)\,=\,\sum_{i=1}^{n}\,P(E_i)\,.\,P(\frac{E}{E_i})\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Baye's Theorem</h3></center>
+                              <p>\[If\,an\,event\, E \,can\, occur \,only\,with\,one\,of\,the\,n\,mutually\,exclusive\,and\,exhaustive\,events\\E_1\, ,\, E_2 \, , \, E_3 \, ... \, E_n\,and\,the\,probabilities\,P(E/E_1)\, ,\,P(E/E_2)\, ,\, ...\, , \, P(E/E_n)\,are\,known\, , \,then \]</p>
+                              <p>\[P(\frac{E_k}{E})\,=\,\frac{P(E_k)\,.\,\frac{P(E)}{P(E_k)}}{\sum_{k=1}^{n}P(E_k)\,.\,\frac{P(E)}{P(E_k)}}\]</p>
+
+                          </div>
+                      </div>
+                      <div class="coll">
+                          <div class="left">
+                              <center><h3>Binomial Theorem on Probability</h3></center>
+                              <p>\[Suppose\,a\,binomial\,experiment\,has\,probability\,of\,success\,p\,and\,that\,of\,failure\,q\,.\\If\,E\,be\,an\,event\,and\,let\,X\,=\,number\,of\,times\,event\,E\,occurs\,in\,n\,trials\\Then\,the\,probability\,of\,occurence\,of\,event\,E\,exactly\,r\,times\,in\,n\,trials\,is\,denoted\,by \]</p>
+                              <p>\[P(r)\,=\,nC_r\,p^{r}\,q^{n-r}\\where\, , \,r\,=\,0\, ,\,1\, , \,2\, , \,3\, , \, ... \, ,\,n\, . \]</p>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
         <div class="collapse" id="stats">
             <!--Calculator for statistical calculations-->
             <div class="stopwrap">
@@ -3806,11 +3899,11 @@
             <h2 style="text-align: center;">Inverse,Periodicity of Functions</h2>
             <br><br>
             <h4>What is a Period?</h4>
-            <p>The time interval between two waves is known as a Period whereas a function that repeats its values 
+            <p>The time interval between two waves is known as a Period whereas a function that repeats its values
                 at regular intervals or periods is known as a Periodic Function. In other words, a periodic function is a function that repeats its values after every particular interval.</p>
             <p>\[f(x+a)\space = \space f(x) for\space a>0\] </p>
             <br>
-            <h4>How to find a period?</h4>   
+            <h4>How to find a period?</h4>
             <ul>
                 <li style="color: white; font-size: 20px;">If a function repeats over at a constant period we say that is a periodic function.</li>
                 <li style="color: white; font-size: 20px;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
@@ -4221,6 +4314,39 @@
             </div>
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comp1result"></p>
+            </div>
+            <h1>Exponential form of complex number</h1>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the real part : &nbsp; &nbsp; </label>
+                <input type="number" id="cpreale" class="form__field" placeholder="Real"
+                       style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+                <input type="number" id="cpimge" class="form__field" placeholder="Imag"
+                    style="width:3rem;display:inline;">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="expoxn()">
+                    Find
+                </button>
+            </div>
+            <span  class="comp1resulte" style="color: white;">r</span>>
+            <div class="form-group text-center" style="color: white;display: inline-block;"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <semantics>
+                            <mrow>
+                                <msup>
+                                    <mi>e</mi>
+                                    <mn class = "comp1resulte">i &#1012;</mn>
+                                </msup>
+                            </mrow>
+                        </semantics>
+                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
+                            style="height: 0.947438em; vertical-align: -0.08333em;"></span><span class="mord"><span
+                                class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span
+                                        class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class=""
+                                                style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut"
+                                                    style="height: 2.7em;"></span><span
+                                                    class="sizing reset-size6 size3 mtight"><span
+                                                        class="mord mtight comp1resulte" >i &#1012;</span></span></span></span></span></span></span></span></span></span>
             </div>
             <h1>Find Euler Representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
@@ -6422,19 +6548,19 @@
                         <p>\[15)\space a^5-b^5\space =(a-b)(a^4+a^3b+a^2b^2+ab^3+b^4)\]</p>
                         <p>\[16)\space (a+b+c+...)^2\space
                             =a^2+b^2+c^2+....+2(ab+bc+ca+...)\]</p>
-                        <p>\[17)\space Considering\space n\space as\space a\space natural\space number:\] 
+                        <p>\[17)\space Considering\space n\space as\space a\space natural\space number:\]
                             \[a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b+…+ b^{n-2}a + b^{n-1})\]</p>
-                        <p>\[18)\space Considering\space n\space as\space an\space even\space number:\] 
+                        <p>\[18)\space Considering\space n\space as\space an\space even\space number:\]
                             \[a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b+…+ b^{n-2}a - b^{n-1})\]</p>
-                            <p>\[18)\space Considering\space n\space as\space an\space odd\space number:\] 
+                            <p>\[18)\space Considering\space n\space as\space an\space odd\space number:\]
                                 \[a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b+ a^{n-3}b^2…- b^{n-2}a + b^{n-1})\]</p>
                         <p>\[19)\space Exponential\space laws:\]
                             \[(a^m)(a^n) = a^{m+n}\]
-                            \[(ab)^m = a^mb^m \] 
+                            \[(ab)^m = a^mb^m \]
                             \[(a^m)^n = a^{mn} \]
-                            \[{a^m\over a^n} = a^{m-n} \] 
-                            \[a^m = {1\over a^{-m}} \] 
-                            \[a^{-m} = {1\over a^m} \]</p> 
+                            \[{a^m\over a^n} = a^{m-n} \]
+                            \[a^m = {1\over a^{-m}} \]
+                            \[a^{-m} = {1\over a^m} \]</p>
                     </div>
                 </div>
             </div>
@@ -6551,9 +6677,32 @@
             <br><br>
             <button class="btn btn-light" onclick=profitloss()>Submit</button>
             <br><br>
-            <h5 id="pol"></h5>
+            <h5 class="stopwrap" id="pol1" style="font-family:mathfont;"></h5>
+            <p class="stopwrap" id="pol2" style="font-family:mathfont;"></p>
             <br>
-            <h5 id="percent"></h5>
+            <h5 class="stopwrap" id="percent1" style="font-family:mathfont;"></h5>
+            <p class="stopwrap" id="percent2" style="font-family:mathfont;"></p>
+            <br><br>
+            <h2>Profit/Loss calculations over Discount</h2>
+            <br>
+            <input style="width: 275px;" type="number" class="form__field"
+                   placeholder="Enter Discount" id="dis">
+            <select id="perprice" class="btn btn-outline-light">
+                <option>Percentage</option>
+                <option>Price</option>
+            </select>
+            <br><br>
+            <input style="width: 275px;" type="number" class="form__field"
+                   placeholder="Enter selling price/cost price" id="cpsp">
+                   <select id="costsell" class="btn btn-outline-light">
+                    <option>Cost Price</option>
+                    <option>Selling Price</option>
+                </select>
+            <br><br>
+            <button class="btn btn-light" onclick=discount()>Submit</button>
+            <br><br>
+            <p id="discountresult"></p>
+            <br>
         </div>
 
         <div class="collapse" id="curconcal">
@@ -6993,9 +7142,9 @@
                 <br>
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
                 <br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></div>
-                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></div>
-                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></div>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></p>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></p>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></p>
             </div>
         </div>
 
@@ -7799,7 +7948,7 @@
             <form class="form-inline">
                 <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
-             
+
                 <input type="tel" id="ap" placeholder="Enter AP(space separated)"
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <button type="button" class="btn btn-light" onclick=apsum()>
@@ -7815,12 +7964,12 @@
         <div class="collapse" id="sum_n_GP">
             <h2>Sum of N terms of a Geometric Progression</h2>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field"
+                <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstterm"
                        placeholder="Enter first term"/>
-                <input type="text" style="width: 15.625rem;" class="form__field" id="ratio"
+                <input type="number" style="width: 15.625rem;" class="form__field" id="ratio"
                        placeholder="Enter ratio between terms"/>
-                <input type="text" style="width: 15.625rem;" class="form__field" id="number"
+                <input type="number" style="width: 15.625rem;" class="form__field" id="number"
                        placeholder="Enter number of terms"/>
                 <br>
                 <br>
@@ -7845,9 +7994,9 @@
             <h2>Sum of infinite terms of a Geometric Progression with common ratio less than
                 1</h2>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" id="fterm"
+                <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
                        placeholder="Enter first term"/>
-                <input type="text" style="width: 15.625rem;" class="form__field" id="r"
+                <input type="number" style="width: 15.625rem;" class="form__field" id="r"
                        placeholder="Enter ratio between terms"/>
                 <br>
                 <br>
@@ -8089,62 +8238,65 @@
             </div>
             <!--  Primarity test and prime till n cal end -->
         </div>
+        <center>
         <div class="collapse" id="bool">
-            <h2 style="text-align: center;">Boolean Algebra</h2>
-            <h5>Laws of Boolean Algebra</h5>
-            <p>1. Annulment Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A . 0 = 0</li>
-                <li style="font-size: 20px; color: white;">A + 1 = 1</li>
-            </ul>
-            <p>2. Identity Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + 0 = A</li>
-                <li style="font-size: 20px; color: white;">A . 1 = A</li>
-            </ul>
-            <p>3. Idempotent Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + A = A</li>
-                <li style="font-size: 20px; color: white;">A . A = A</li>
-            </ul>
-            <p>4. Complement Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A . A<sup>'</sup> = 0</li>
-                <li style="font-size: 20px; color: white;">A + A<sup>'</sup> = 1</li>
-            </ul>
-            <p>5. Demorgan's Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">(A+B)<sup>'</sup> = A<sup>'</sup>
-                    + B<sup>'</sup></li>
-                <li style="font-size: 20px; color: white;">(A . B)<sup>'</sup> =
-                    A<sup>'</sup> + B<sup>'</sup></li>
-            </ul>
-            <p>6. Distributive Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A(B+C) = A.B + A.C</li>
-                <li style="font-size: 20px; color: white;">A + BC = (A+B) . (A+C)</li>
-            </ul>
-            <p>7. Absorption/ Redundancy Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + A.B = A</li>
-                <li style="font-size: 20px; color: white;">A(A+B) = A</li>
-            </ul>
-            <p>8. Commutative Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + B = B + A</li>
-                <li style="font-size: 20px; color: white;">A.B = B.A</li>
-            </ul>
-            <p>9. Associative Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A + (B + C) = (A + B) + C</li>
-                <li style="font-size: 20px; color: white;">A.(B.C) = (A.B).C</li>
-            </ul>
-            <p>10. Double Negation Law - </p>
-            <ul>
-                <li style="font-size: 20px; color: white;">A<sup>'</sup><sup>'</sup> = A</li>
-                <li style="font-size: 20px; color: white;">B<sup>'</sup><sup>'</sup> = B</li>
-            </ul>
+            <h2 style="font-size:60px;">Boolean Algebra</h2>
+            <br>
+            <h5 style="font-size:30px;">Laws of Boolean Algebra</h5>
+            <p style="font-size:30px;">1.) Annulment Law </p>
+
+                <p>\[ A \space.\space 0 = 0\]</p>
+                <p>\[A + 1 = 1\]</p>
+
+            <p style="font-size:30px;">2.) Identity Law  </p>
+
+                <p>\[A + 0 = A\]</p>
+                <p>\[A \space.\space 1 = A\]</p>
+
+            <p style="font-size:30px;">3.) Idempotent Law </p>
+
+                <p>\[A + A = A\]</p>
+                <p>\[A \space.\space A = A\]</p>
+
+            <p style="font-size:30px;">4.) Complement Law </p>
+
+                <p>\[A \space.\space A^{'} = 0\]</p>
+                <p>\[A + A^{'} = 1\]</p>
+
+            <p style="font-size:30px;">5.) Demorgan's Law </p>
+
+                <p>\[(A+B)^{'} = A^{'}
+                    + B^{'}\]</p>
+                <p>\[(A . B)^{'} =
+                    A^{'} + B^{'}\]</p>
+
+            <p style="font-size:30px;">6.) Distributive Law </p>
+
+                <p>\[A(B+C) = A . B + A .C\]</p>
+                <p>\[A + BC = (A+B) . (A+C)\]</p>
+
+            <p style="font-size:30px;">7.) Absorption/ Redundancy Law </p>
+
+                <p>\[A + A\space .\space B = A\]</p>
+                <p>\[A(A+B) = A\]</p>
+
+            <p style="font-size:30px;">8.) Commutative Law</p>
+
+                <p>\[A + B = B + A\]</p>
+                <p>\[A\space .\space B = B\space .\space A\]</p>
+
+            <p style="font-size:30px;">9.) Associative Law</p>
+
+                <p>\[A + (B + C) = (A + B) + C\]</p>
+                <p>\[A\space .\space (B \space .\space C) = (A \space.\space B)\space.\space C\]</p>
+
+            <p style="font-size:30px;">10.) Double Negation Law</p>
+
+                <p>\[A^{''} = A\]</p>
+                <p>\[B^{''}\, = \, B\]</p>
+
         </div>
+      </center>
         <!--    start of calculator -->
 
         <!-- Start of Decimal / Binary -->
@@ -8263,6 +8415,84 @@
         </div>
         <!-- End of Addition of any number system -->
 
+
+         <!-- Start of Multiplication of any number system -->
+         <div class="collapse" id="multiplying-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>1st Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-select1" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="multiplying-all-input1" value="0"
+                           class="form__field"
+                           oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>2nd Input</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-select2" class="form__field"
+                            onchange="addBinDecHexOct()">
+                        <option class="form__field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form__field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type=" " id="multiplying-all-input2" value="0"
+                    class="form__field"
+                    oninput="addBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Result Of Addition</h2>
+                    <h5>Choose Number System</h5>
+                    <select id="multiplying-all-result-type" class="form__field"
+                    onchange="addBinDecHexOct()">
+                <option class="form__field" style="background-color: #232a36;">
+
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Hexa Decimal
+                </option>
+            </select>
+                </div>
+                <label class="form__group" id="multiplying-all-result">0</label>
+            </div>
+        </div>
+        <!-- End of Multiplication of any number system -->
 
         <!-- Start of Bitwise Calculator -->
 
@@ -8386,7 +8616,7 @@
 
           <!-- Start 15's 16's Complement -->
            <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <br><br><h2>Fifteen's Sixteen's Complement</h2><br>
                         <h5>Enter Hexa Decimal number</h5>
@@ -8397,12 +8627,13 @@
 
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="form-group">
                         <button type="button" class="btn btn-light" onclick="fiftnsixtnCalc()">
                             Find
                         </button>
                         <label class="form__field" id="fiftnsixtnresult"></label>
+                        <p class="" id="fiftnsixtnworking"></p>
                     </div>
                 </div>
             </div>
@@ -8860,6 +9091,8 @@
                     <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
                            oninput="calsol(this.value);chh(this.value)">
                     <input readonly type="text" class="soltext" id="soltxt">
+
+
                     <span class="clear"
                           onclick="clearc()">C</span>
                     <span id="more" onclick="more();">More</span>
@@ -8871,6 +9104,14 @@
                           onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
                             class="bk" src="icons/backspace-arrow.png"
                             style="height:1.875rem;"></span>
+
+                    <span id="e">e</span>
+                    <span id="exp()" onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">exp()</span>
+                    
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+
                     <span id="seven">7</span>
                     <span id="eight">8</span>
                     <span id="nine">9</span>
@@ -8882,6 +9123,8 @@
                             src="images/speechlogo.png"
                             height=1.875rem
                             style="filter: none;"></span>
+
+
                     <span id="four">4</span>
                     <span id="five">5</span>
                     <span id="six">6</span>
@@ -9005,7 +9248,7 @@
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="b2">b</var>*<var id="d2">d</var></span>
 
-                                <span>= &nbsp;<var id="e">e</var>+<var id="g">g</var></span>
+                                <span>= &nbsp;<var id="e1">e</var>+<var id="g">g</var></span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="f">f</var></span>
 
@@ -10358,9 +10601,8 @@
                             <input class="form__field" type="number"
                                    placeholder="Enter Second Non-Parallel Side (d)"
                                    id="inputnparallel2" oninput="solvetrapezium();">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter height (h)"
-                                   id="inputh" oninput="solvetrapezium();">
+                                   <p class="stopwrap" id="heighttrap"
+                               style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofareatrap1"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofareatrap2"
@@ -12000,8 +12242,12 @@
                         </button>
                     </div>
                     <div class="form-group">
-                        <p id="ouo" style="font-family:mathfont;"></p>
-                        <p id="ouroman" style="font-family:mathfont;"></p>
+                        <p id="ouo" style="font-family:mathfont;"></p>our
+                        <p id="ouroman-1"
+                            style="font-family:mathfont; display: inline-block; text-decoration: overline; border-top: 2px solid white; padding-top: 1px;">
+                        </p>
+                        <p id="ouroman-2" style="font-family:mathfont; display: inline-block; text-decoration: overline;"></p>
+                        <p id="ouroman-3" style="font-family:mathfont ; display: inline-block;"></p>
                     </div>
                     <div class="form-group">
                         <input type="text" id="rinp" class="form__field"

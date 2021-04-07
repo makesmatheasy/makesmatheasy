@@ -161,9 +161,17 @@ function callder() {
 
 //call romanize
 function callr() {
-    document.getElementById("ouroman").innerHTML = romanize(
-        document.getElementById("inpo").value
-    );
+    var x =parseInt(document.getElementById("inpo").value);
+    var y = x%5000000;
+    x = (x-y)/1000000;
+    var z= y%5000;
+    y = (y-z)/1000;
+    document.getElementById("ouroman-1").innerHTML = romanize(x.toString());
+    document.getElementById("ouroman-2").innerHTML = romanize(y.toString());
+    document.getElementById("ouroman-3").innerHTML = romanize(z.toString());
+    console.log((romanize(x.toString())));
+    console.log((romanize(y.toString())));
+
 }
 
 //call romanize
@@ -1003,7 +1011,7 @@ function solvesimpletrigo() {
     ) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
-    } 
+    }
     else if(pp <0 || base <0 || hyp == 0 ){
         document.getElementById("soltri").innerHTML = "The sides cannot be negative"
     }
@@ -1826,25 +1834,36 @@ function solvetrapezium(){
     var b = document.getElementById("inputparallel2").value;
     var c = document.getElementById("inputnparallel1").value;
     var d = document.getElementById("inputnparallel2").value;
-    var height = document.getElementById("inputh").value;
+    //removed height input
+    //added method of finding height
+    var ts=Math.abs(b-a);
+    var s=(ts+parseInt(c)+parseInt(d))/2;
+    var areatri=Math.sqrt(s*(s-ts)*(s-parseInt(c))*(s-parseInt(d)));
+    var height= (2*areatri)/ts; 
+    var heighttemp="";
     document.getElementById("resultofperitrap1").innerHTML="";
     document.getElementById("resultofperitrap2").innerHTML="";
     document.getElementById("resultofareatrap1").innerHTML="";
     document.getElementById("resultofareatrap2").innerHTML="";
-    if (a!="" && b!="" && height==""){
-        document.getElementById("resultofareatrap1").innerHTML = "Enter height if you want to calculate Area";
+    if (a=="" || b=="" || c=="" || d==""){
+        document.getElementById("resultofareatrap1").innerHTML = "Enter all sides to calculate Height, Area and perimeter";
 
-    } else if(a!="" && b!="" && height!=""){
+    } else if(a!="" && b!="" && c!="" && d!=""){
+        heighttemp += "\\[Height=?\\]";
+        heighttemp += "\\[Base\\space of\\space triangle = b-a\\]";
+        heighttemp += "\\[Base\\space of\\space triangle = " + ts + "\\]";
+        heighttemp += "\\[Area\\space of\\space triangle = \\sqrt{s(s-base)(s-c)(s-d)} \\]";
+        heighttemp += "\\[A=\\sqrt{"+s+"("+s+"-"+ts+")("+s+"-"+c+")("+s+"-"+d+")"+"}\\]";
+        heighttemp += "\\[A = " + areatri+"\\]";
+        heighttemp += "\\[Height= \\frac{2*Area\\space of\\space triangle}{base\\space of\\space triangle}\\]";
+        heighttemp += "\\[Height= " +height+"\\]";
+        document.getElementById("heighttrap").innerHTML=heighttemp;
+        renderMathInElement(document.getElementById("heighttrap"));
         var area= (0.5 * (parseInt(a)+parseInt(b))) * parseInt(height);
-        document.getElementById("resultofareatrap1").innerHTML = "\\[Area \\space of \\space Trapezium  \\]";
+        document.getElementById("resultofareatrap1").innerHTML ="\\[Area \\space of \\space Trapezium  \\]";
         renderMathInElement(document.getElementById("resultofareatrap1"));
         document.getElementById("resultofareatrap2").innerHTML = "\\[\\frac{1}{2} \\times (" + a + "+" + b + ") \\times "+height+" = " + area + "\\]";
         renderMathInElement(document.getElementById("resultofareatrap2"));
-    }
-    if(c=="" || d=="")
-    {
-        document.getElementById("resultofperitrap1").innerHTML = "Enter c and d if you want to calculate perimeter";
-    } else{
         var peri= parseInt(a) +  parseInt(b) +  parseInt(c) +  parseInt(d) ;
         document.getElementById("resultofperitrap1").innerHTML = "\\[Perimeter \\space of \\space Trapezium \\]";
         renderMathInElement(document.getElementById("resultofperitrap1"));
@@ -2538,7 +2557,7 @@ function ssimplifyequation(input, output) {
     var val = document.getElementById(input).value;
     var sol = nerdamer("simplify(" + String(val) + ")");
     sol = nerdamer(sol).toTeX();
-    katex.render("Simplified:\\newline" + sol, document.getElementById(output), {
+    katex.render("Simplified:\\newline " + sol, document.getElementById(output), {
         throwOnError: false,
     });
 }
@@ -2552,7 +2571,7 @@ function sequationexpand(input, output) {
     var x = nerdamer(val);
     sol = x.expand().toString();
     sol = nerdamer(sol).toTeX();
-    katex.render("Expanded:\\newline" + sol, document.getElementById(output), {
+    katex.render("Expanded:\\newline " + sol, document.getElementById(output), {
         throwOnError: false,
     });
 }
@@ -3900,6 +3919,27 @@ function polar()
   result.innerHTML = x;
 }
 
+function expoxn()
+{
+  var r = parseInt(document.getElementById("cpreale").value);
+  var i = parseInt(document.getElementById("cpimge").value);
+  var result= document.getElementsByClassName("comp1resulte");
+  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
+  var x ="iπ *" +y
+  result[1].innerHTML = x;  
+  result[2].innerHTML = x;
+
+  var p = (Math.sqrt((r*r)+(i*i)));
+  var j =p;
+  if(!Number.isInteger(p))
+  {
+    j = (r*r)+(i*i);
+    j = "&#8730; "+ j ;
+    
+  }
+  result[0].innerHTML =  j ;
+
+}
 
 function datau(a) {
     switch (a) {
@@ -4142,22 +4182,106 @@ function factorialsol(factorialval) {
 function profitloss() {
     var cp = parseFloat(document.getElementById("cp").value);
     var sp = parseFloat(document.getElementById("sp").value);
+    document.getElementById("pol2").innerHTML ="";
+    document.getElementById("percent1").innerHTML = "";
+    document.getElementById("pol1").innerHTML ="";
+    document.getElementById("percent2").innerHTML = "";
     if(cp<0 || sp<0)
     {
-        document.getElementById("pol").innerHTML = "<strong>Only</strong> positive values are accepted";
-        document.getElementById("percent").innerHTML = "";
+        document.getElementById("pol1").innerHTML = "<strong>Only</strong> positive values are accepted";
     }
     else if (cp > sp) {
         var loss = cp - sp;
         var perl = (loss * 100) / cp;
-        document.getElementById("pol").innerHTML = "Loss = " + loss;
-        document.getElementById("percent").innerHTML = "Loss Percentage =" + perl + "%";
+        document.getElementById("pol1").innerHTML = "\\[Loss = Cost\\space Price - Selling\\space Price\\]";
+        document.getElementById("pol2").innerHTML = "\\[Loss = "+cp+" - "+sp+" \\space =  "+loss+"\\]";
+        renderMathInElement(document.getElementById("pol1"));
+        renderMathInElement(document.getElementById("pol2"));
+        document.getElementById("percent1").innerHTML = "\\[Loss\\space Percentage = \\frac{loss}{cost\\space price} \\times 100 \\%\\]";
+        document.getElementById("percent2").innerHTML = "\\[Loss\\space Percentage =\\frac{"+loss+"}{"+cp+"} \\times 100 = " + perl.toFixed(3) + "\\% \\]";
+        renderMathInElement(document.getElementById("percent1"));
+        renderMathInElement(document.getElementById("percent2"));
     } else {
         var profit = sp - cp;
         var perp = (profit * 100) / sp;
-        document.getElementById("pol").innerHTML = "Profit = " + profit;
-        document.getElementById("percent").innerHTML = "Profit Percentage =" + perp + "%";
+        document.getElementById("pol1").innerHTML = "\\[Profit = Selling\\space Price - Cost\\space Price\\]";
+        document.getElementById("pol2").innerHTML = "\\[Profit = "+sp+" - "+cp+" \\space =  "+profit+"\\]";
+        renderMathInElement(document.getElementById("pol1"));
+        renderMathInElement(document.getElementById("pol2"));
+        document.getElementById("percent1").innerHTML = "\\[Profit\\space Percentage = \\frac{Profit}{Selling\\space price} \\times 100 \\%\\]";
+        document.getElementById("percent2").innerHTML = "\\[Profit\\space Percentage =\\frac{"+profit+"}{"+sp+"} \\times 100 = " + perp.toFixed(3) + "\\% \\]";
+        renderMathInElement(document.getElementById("percent1"));
+        renderMathInElement(document.getElementById("percent2"));
     }
+}
+
+// profit/loss calculations over discount
+function discount() {
+    var dis = parseFloat(document.getElementById("dis").value);
+    var cpsp = parseFloat(document.getElementById("cpsp").value);
+    // console.log(dis);
+    // console.log(cpsp);
+    var perprice = document.getElementById("perprice").value;
+    var costsell = document.getElementById("costsell").value;
+    if(dis<0 || cpsp<0 || dis==NaN || cpsp==NaN)
+    {
+        document.getElementById("discountresult").innerHTML = "<strong>Only</strong> positive values are accepted. Refrain from blank inputs and negative values.";
+    }
+    else
+    {
+        var cp=0;
+        var sp=0;
+        var discount=""
+        var print="";
+        if(costsell=="Cost Price")
+        {
+            if(perprice=="Percentage")
+            {
+                cp=cpsp;
+                sp=cpsp-(cpsp*(dis/100));
+                discount=dis+"%";
+            }
+            else
+            {
+                cp=cpsp;
+                sp=cpsp-dis;
+                discount="Rs "+dis;
+            }
+        }
+        else
+        {
+            if(perprice=="Percentage")
+            {
+                sp=cpsp;
+                cp=(100*cpsp)/(100-dis);
+                discount=dis+"%";
+            }
+            else
+            {
+                sp=cpsp;
+                cp=cpsp+dis;
+                discount="Rs "+dis;
+            }
+        }
+
+        if(cp<0 || sp<0)
+        {
+            print="The the entered data is resulting in a negative Cost/Selling Price.";
+        }
+        else if (cp > sp) {
+            var loss = cp - sp;
+            var perl = (loss * 100) / cp;
+            print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + loss+"<br>Loss Percentage: " + perl + "%";
+        } else {
+            print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount;
+            var profit = sp - cp;
+            var perp = (profit * 100) / sp;
+            print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + profit+"<br>Loss Percentage: " + perp + "%";
+        }
+        
+        document.getElementById("discountresult").innerHTML = print;
+    }
+    
 }
 
 //Statistics Calculator
@@ -4166,7 +4290,7 @@ function cal_func_stats()
     var num = document.getElementById('num_list').value;
     // console.log(typeof(num))
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
-    
+
 
     if(num=="")
     {
@@ -4195,7 +4319,7 @@ function cal_func_stats()
         console.log(number)
         console.log(typeof(number))
         console.log(typeof(number[0]))
-        
+
         for (i = 0; i < len; i++) {
             s = s + number[i];
         }
@@ -4246,7 +4370,7 @@ function cal_func_stats()
         }
 
         variance = variance/len;
-        
+
         var standarddev = Math.sqrt(variance);
 
         var large=(number[len-1]);
@@ -4254,7 +4378,7 @@ function cal_func_stats()
 
         console.log(large);
         console.log(small);
-        
+
         var range = large - small;
         var coffrange = (large - small)/(large + small);
         var coffvariation = (standarddev/mean)*100;
@@ -4288,7 +4412,7 @@ function cal_func_stats()
         print+="Mean deviation about Mean: "+mdmean+"<br>";
         print+="Mean deviation about Median: "+mdmedian+"<br>";
         print+="Mean deviation about Mode: "+mdmode+"<br>";
-        
+
         // print+=s/len
 
         document.getElementById('result_cal_func_stats').innerHTML = print;
@@ -4316,12 +4440,25 @@ function sum_n_apsol(nval, rval, r1val) {
         console.log(res);
         renderMathInElement(document.getElementById("sumAP_formula"));
     }
+    else
+        {
+            printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+            explain.innerHTML="";
+            res.innerHTML="";
+            return;
+        }
 }
 
 function anotherap() {
     var n = document.getElementById("numterms").value
     var a = document.getElementById("ft").value
     var l = document.getElementById("lt").value
+    if(isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(l)))
+    {
+        document.getElementById("printAPseries1").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        document.getElementById("ltap").innerHTML = "";
+        return;
+    }
     var nhalf = parseFloat(n / 2)
     var al = parseInt(a) + parseInt(l)
     var ans = parseInt(nhalf * al)
@@ -4347,12 +4484,12 @@ function apsum()
 	if( parseInt(val.length)<2)
 	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
 	else{
-        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))	
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))
 		{
 			document.getElementById("printAP").innerHTML="Invalid AP"
 		}
     else
-	{	
+	{
 		var d=val[1]-val[0];
 		document.getElementById("printAP").innerHTML ="Common difference for the entered AP is &nbsp;"+d+"<br>";
 		for(i=0;i<n;i++)
@@ -4362,7 +4499,7 @@ function apsum()
 		}
 		document.getElementById("printAP").innerHTML +="<br>The Sum of &nbsp;"+n+"&nbsp; terms of the given AP is &nbsp;"+s;
 	}
-	}	
+	}
 }
 function amsol() {
     var a = document.getElementById("aval").value
@@ -4499,6 +4636,12 @@ function gp() {
 
         printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
       }
+      else
+      {
+        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        explain.innerHTML="";
+        return;
+      }
 
 
       var power = parseFloat(Math.pow(r, n))
@@ -4524,6 +4667,11 @@ function gp() {
 function igp() {
     var a = document.getElementById("fterm").value
     var r = parseFloat(document.getElementById("r").value)
+    if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
+    {
+        document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+    }
     if (r >= 1) {
         document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
     } else {
@@ -5097,12 +5245,49 @@ function addBinDecHexOct(){
     result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
+}
 
+//----------------------------
 
+//Function for multiplication of any number system
+function addBinDecHexOct(){
+    const firstBase = document.getElementById("multiplying-all-select1").value;
+    const secondBase = document.getElementById("multiplying-all-select2").value;
+    const input1 = document.getElementById("multiplying-all-input1").value;
+    const input2 = document.getElementById("multiplying-all-input2").value;
+    const resultType= document.getElementById("multiplying-all-result-type").value;
+    let result = document.getElementById("multiplying-all-result");
+    var x1;
+    var x2;
 
+    if(firstBase === "Binary")
+    x1=parseInt(input1,2);
+    else if (firstBase === "Octal")
+    x1=parseInt(input1,8);
+    else if(firstBase === "Hexa Decimal")
+    x1=parseInt(input1,16);
+    else if(firstBase === "Decimal")
+    x1=parseInt(input1);
 
+    if(secondBase === "Binary")
+    x2=parseInt(input2,2);
+    else if (secondBase === "Octal")
+    x2=parseInt(input2,8);
+    else if(secondBase === "Hexa Decimal")
+    x2=parseInt(input2,16);
+    else if(secondBase === "Decimal")
+    x2=parseInt(input2);
 
+    var x3=x1*x2;
 
+    if(resultType === "Binary")
+    result.innerHTML="Answer in binary="+x3.toString(2);
+    else if (resultType === "Octal")
+    result.innerHTML="Answer in Octal="+x3.toString(8);
+    else if(resultType === "Hexa Decimal")
+    result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
+    else if(resultType === "Decimal")
+    result.innerHTML="Answer in Decimal="+x3.toString();
 }
 
 //----------------------------
@@ -5176,7 +5361,12 @@ function convertbcd() {
     result.innerHTML=bcdTOdecimal(input).join('_');
     else if(fromCode=="Decimal" && toCode=="BCD Code")
     result.innerHTML =decimalTObcd(input);
+    if (input == "") {
+        result.innerHTML = "";
+    } else if (fromCode=="BCD Code" && input.search(/^[10]+$/) == -1 ){
+        result.innerHTML = "BCD Code can only have 0's and 1's";
 
+}
 }
 
 //----------------------------
@@ -5368,7 +5558,7 @@ function seveneightCalc(){
     eight = parseInt(seven) + 1;
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
-    
+
     print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+seven+"</span><br>";
     print+= "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
     print+=seven+" + 1</span> = <span style='text-decoration: underline;'>"+eight+"</span>";
@@ -5387,24 +5577,34 @@ function seveneightCalc(){
 //--------------------
 //15's 16's compliment
 function fiftnsixtnCalc() {
-    const input = document.getElementById("fiftnsixtnnumber").value;
+    var input = document.getElementById("fiftnsixtnnumber").value;
     let result = document.getElementById("fiftnsixtnresult");
+    let work = document.getElementById("fiftnsixtnworking");
+    var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
     var fiftn = "";
     var sixtn = "";
     for (var i = 0; i < input.length; i++) {
+        print+="f";
         fiftn += (16 - parseInt(input[i],16)).toString(16);
 
     }
     sixtn = (parseInt(fiftn,16) + 1).toString(16);
     result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
     result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+    
+    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
+    print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
+    print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
+    work.innerHTML = print;
 
 
     if (input == "") {
         result.innerHTML = "";
+        work.innerHTML = "";
     }
     if(fiftn == "NaN"){
         result.innerHTML = "Invalid Hexa Decimal Number"
+        work.innerHTML = "";
     }
 
 }
