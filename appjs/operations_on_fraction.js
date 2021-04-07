@@ -27,7 +27,7 @@ function display_fractions(){
     document.getElementById('d1').innerHTML = d2;
     document.getElementById('b2').innerHTML = d1;
     document.getElementById('d2').innerHTML = d2;
-    document.getElementById('e').innerHTML = n1*d2;
+    document.getElementById('e1').innerHTML = n1*d2;
     document.getElementById('g').innerHTML = n2*d1;
     document.getElementById('f').innerHTML = d1*d2;
     var top = (n1*d2) +(n2*d1);
