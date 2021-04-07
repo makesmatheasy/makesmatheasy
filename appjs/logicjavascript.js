@@ -1834,25 +1834,36 @@ function solvetrapezium(){
     var b = document.getElementById("inputparallel2").value;
     var c = document.getElementById("inputnparallel1").value;
     var d = document.getElementById("inputnparallel2").value;
-    var height = document.getElementById("inputh").value;
+    //removed height input
+    //added method of finding height
+    var ts=Math.abs(b-a);
+    var s=(ts+parseInt(c)+parseInt(d))/2;
+    var areatri=Math.sqrt(s*(s-ts)*(s-parseInt(c))*(s-parseInt(d)));
+    var height= (2*areatri)/ts; 
+    var heighttemp="";
     document.getElementById("resultofperitrap1").innerHTML="";
     document.getElementById("resultofperitrap2").innerHTML="";
     document.getElementById("resultofareatrap1").innerHTML="";
     document.getElementById("resultofareatrap2").innerHTML="";
-    if (a!="" && b!="" && height==""){
-        document.getElementById("resultofareatrap1").innerHTML = "Enter height if you want to calculate Area";
+    if (a=="" || b=="" || c=="" || d==""){
+        document.getElementById("resultofareatrap1").innerHTML = "Enter all sides to calculate Height, Area and perimeter";
 
-    } else if(a!="" && b!="" && height!=""){
+    } else if(a!="" && b!="" && c!="" && d!=""){
+        heighttemp += "\\[Height=?\\]";
+        heighttemp += "\\[Base\\space of\\space triangle = b-a\\]";
+        heighttemp += "\\[Base\\space of\\space triangle = " + ts + "\\]";
+        heighttemp += "\\[Area\\space of\\space triangle = \\sqrt{s(s-base)(s-c)(s-d)} \\]";
+        heighttemp += "\\[A=\\sqrt{"+s+"("+s+"-"+ts+")("+s+"-"+c+")("+s+"-"+d+")"+"}\\]";
+        heighttemp += "\\[A = " + areatri+"\\]";
+        heighttemp += "\\[Height= \\frac{2*Area\\space of\\space triangle}{base\\space of\\space triangle}\\]";
+        heighttemp += "\\[Height= " +height+"\\]";
+        document.getElementById("heighttrap").innerHTML=heighttemp;
+        renderMathInElement(document.getElementById("heighttrap"));
         var area= (0.5 * (parseInt(a)+parseInt(b))) * parseInt(height);
-        document.getElementById("resultofareatrap1").innerHTML = "\\[Area \\space of \\space Trapezium  \\]";
+        document.getElementById("resultofareatrap1").innerHTML ="\\[Area \\space of \\space Trapezium  \\]";
         renderMathInElement(document.getElementById("resultofareatrap1"));
         document.getElementById("resultofareatrap2").innerHTML = "\\[\\frac{1}{2} \\times (" + a + "+" + b + ") \\times "+height+" = " + area + "\\]";
         renderMathInElement(document.getElementById("resultofareatrap2"));
-    }
-    if(c=="" || d=="")
-    {
-        document.getElementById("resultofperitrap1").innerHTML = "Enter c and d if you want to calculate perimeter";
-    } else{
         var peri= parseInt(a) +  parseInt(b) +  parseInt(c) +  parseInt(d) ;
         document.getElementById("resultofperitrap1").innerHTML = "\\[Perimeter \\space of \\space Trapezium \\]";
         renderMathInElement(document.getElementById("resultofperitrap1"));
