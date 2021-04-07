@@ -657,7 +657,7 @@ function lcmsol(input) {
         var tempfac =
             "<table class='table bor' style='color:white;width: 50px; padding: 0; margin: 0 auto; border-right:2px solid light-grey !important;'>";
         if (num.length == 1) {
-            document.getElementById("resultlcm").innerHTML = "Should Be more Than 1";
+            document.getElementById("resultlcm").innerHTML = "More than one number is required";
             document.getElementById("resultlcms").innerHTML = "";
         } else if (num.length == 2) {
             var lcmis = nerdamer.lcm(parseInt(num[0]), parseInt(num[1]));
@@ -959,7 +959,7 @@ function lcmsol(input) {
             tempfac += "<tr><td>" + facar[mm] + "</td></tr>";
         }
         if (num.length == 1) {
-            document.getElementById("resultlcms").innerHTML = "Should Be more Than 1";
+            document.getElementById("resultlcms").innerHTML = "More than one number is required";
         } else {
             document.getElementById("resultlcms").innerHTML +=
                 "Lcm is " + String(lcmis);
