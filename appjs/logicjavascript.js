@@ -5580,33 +5580,44 @@ function fiftnsixtnCalc() {
     var input = document.getElementById("fiftnsixtnnumber").value;
     let result = document.getElementById("fiftnsixtnresult");
     let work = document.getElementById("fiftnsixtnworking");
-    var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
-    var fiftn = "";
-    var sixtn = "";
-    for (var i = 0; i < input.length; i++) {
-        print+="f";
-        fiftn += (16 - parseInt(input[i],16)).toString(16);
 
+    valid = /^[a-fA-F0-9]*$/
+
+    if(!(valid.test(input)))
+    {
+        result.innerHTML="Please enter valid Hexadecimal number"
+        work.innerHTML=""
     }
-    sixtn = (parseInt(fiftn,16) + 1).toString(16);
-    result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
-    result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
-    
-    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
-    print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
-    print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
-    work.innerHTML = print;
+    else
+    {
+        var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
+        var fiftn = "";
+        var sixtn = "";
+
+        for (var i = 0; i < input.length; i++) {
+            print+="f";
+            fiftn += (16 - parseInt(input[i],16)).toString(16);
+
+        }
+        sixtn = (parseInt(fiftn,16) + 1).toString(16);
+        result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
+        result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+        
+        print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
+        print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
+        print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
+        work.innerHTML = print;
 
 
-    if (input == "") {
-        result.innerHTML = "";
-        work.innerHTML = "";
+        if (input == "") {
+            result.innerHTML = "";
+            work.innerHTML = "";
+        }
+        if(fiftn == "NaN"){
+            result.innerHTML = "Invalid Hexa Decimal Number"
+            work.innerHTML = "";
+        }
     }
-    if(fiftn == "NaN"){
-        result.innerHTML = "Invalid Hexa Decimal Number"
-        work.innerHTML = "";
-    }
-
 }
 
 
