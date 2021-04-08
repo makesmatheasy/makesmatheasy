@@ -165,7 +165,7 @@ h6 {
   font-weight: bolder;
 }
 .favouritecontainer {
-  position: fixed;
+  position: absolute;
   left: 76%;
   right: 0%;
   top: 15%;
@@ -185,11 +185,8 @@ h6 {
   list-style: none;
 }
 .favourites {
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
-  border-top: 1px solid var(--apppink);
-  border-bottom: 1px solid var(--apppink);
-  border-left: 1px solid var(--apppink);
+  border-radius: 18px;
+  border: 1px solid var(--apppink);
   background-color: var(--appblack);
   margin: 10px;
   padding: 15px;
