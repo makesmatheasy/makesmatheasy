@@ -421,9 +421,8 @@ function printfactors() {
         }
         document.getElementById("dividefactor").innerHTML = temp;
         document.getElementById("dividefactorresult").innerHTML = tt;
-        v = v.slice(0, -1);
         document.getElementById("factorresult").innerHTML =
-            "\\[Prime \\space Factors \\space are:\\]\\[" + v + "\\]";
+            "\\[Prime \\space Factors \\space are:\\]\\[" + v.slice(0, -1) + "\\]";
         renderMathInElement(document.getElementById("factorresult"));
     }
 }
