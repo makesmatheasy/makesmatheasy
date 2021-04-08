@@ -8882,34 +8882,57 @@
         </div>
         <!-- End of  -->
 
-        <!-- Start of grey convertor -->
-        <div>
-            <div class="collapse" id="grey-bin">
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>From</h5>
-                        <select id="grey-select1" class="form__field" onchange="convertgrey()">
-                            <option class="form_field" style="background-color: #232a36;">Grey
-                                Code
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Binary
-                            </option>
-                        </select>
-                        <input type="number" id="grey-input" value="0" class="form__field"
-                               oninput="convertgrey()">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>To</h5>
-
-                    </div>
-                    <label class="form__group" id="grey-result">0</label>
-                </div>
+<!-- Start of grey convertor -->
+<div>
+    <div class="collapse" id="grey-bin">
+        <div class="col-6">
+            <div class="form-group">
+                <h4>Binary-Grey Code Converter</h4><br>
+                <h5>From</h5>
+                <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                    <option class="form_field" style="background-color: #232a36;">Grey
+                        Code
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                </select>
+                <input type="number" id="grey-input" value="0" class="form__field"
+                       oninput="convertgrey()">
             </div>
         </div>
-        <!-- End of grey convertor -->
+        <div class="col-6">
+            <div class="form-group">
+                <h5>To</h5>
+            </div>
+            <label class="form__group" id="grey-result">0</label>
+        </div>
+        <br><br>
+        <div class="col-6">
+            <div class="form-group">
+                <h4>Decimal-Grey Code Converter</h4><br>
+                <h5>From</h5>
+                <select id="grey-select2" class="form__field" onchange="convertgreydec()">
+                    <option class="form_field" style="background-color: #232a36;">Grey
+                        Code
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                </select>
+                <input type="number" id="greydec-input" value="0" class="form__field"
+                       oninput="convertgreydec()">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>To</h5>
+            </div>
+            <label class="form__group" id="greydec2-result"></label>
+        </div>
+    </div>
+</div>
+<!-- End of grey convertor -->
 
 
         <!--Start Binary to Hexadecimal-->
