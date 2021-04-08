@@ -6668,7 +6668,7 @@
         </div>
 
         <div class="collapse" id="profitloss">
-            <h2>Profit/Loss calculations</h2>
+            <h2>Profit Loss calculations</h2>
             <br>
             <input style="width: 275px;" type="text" class="form__field"
                    placeholder="Enter cost price" id="cp">
@@ -6677,9 +6677,11 @@
             <br><br>
             <button class="btn btn-light" onclick=profitloss()>Submit</button>
             <br><br>
-            <p id="pol"></p>
+            <h5 class="stopwrap" id="pol1" style="font-family:mathfont;"></h5>
+            <p class="stopwrap" id="pol2" style="font-family:mathfont;"></p>
             <br>
-            <p id="percent"></p>
+            <h5 class="stopwrap" id="percent1" style="font-family:mathfont;"></h5>
+            <p class="stopwrap" id="percent2" style="font-family:mathfont;"></p>
             <br><br>
             <h2>Profit/Loss calculations over Discount</h2>
             <br>
@@ -10599,9 +10601,8 @@
                             <input class="form__field" type="number"
                                    placeholder="Enter Second Non-Parallel Side (d)"
                                    id="inputnparallel2" oninput="solvetrapezium();">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter height (h)"
-                                   id="inputh" oninput="solvetrapezium();">
+                                   <p class="stopwrap" id="heighttrap"
+                               style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofareatrap1"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofareatrap2"
