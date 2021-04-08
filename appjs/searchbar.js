@@ -1,6 +1,6 @@
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
+    the text field element and an CIRCLE possible autocompleted values:*/
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function (e) {
@@ -67,10 +67,11 @@ function autocomplete(inp, arr) {
                         $("#laplacecollapse").slideDown();
                         $("#inverselaplacecollapse").slideToggle();
                         $("#laplacecollapseit").slideToggle();
-
                     }else if (inp.value.toUpperCase() == "GRAPH") {
-                        $("#plotgraph").slideToggle();
-                    }  else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
+                        $("#plotgraph").slideToggle();                        
+                    } else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
+                         $("#fractions").slideToggle();
+                    } else if (inp.value.toUpperCase() == "MULTIPLY WITH STEPS") {
                         $("#mulsolwithsteps").slideToggle();
                     }  else if (inp.value.toUpperCase() == "PLAY WITH EQUATIONS") {
                         $("#equationssolver").slideToggle();
@@ -88,7 +89,113 @@ function autocomplete(inp, arr) {
                         $("#trigonoiden").slideToggle();
                     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
                         $("#unitconcal").slideToggle();
-                    } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
+                        
+                    }else if (inp.value.toUpperCase() == "SPI CONVERTER") {
+                        $("#spiconcal").slideToggle(); 
+                    }
+                    else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+                        $("#math").slideToggle();
+                    }
+                    else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+                        document.getElementById('math').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS") {
+                        $("#ip").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS"){
+                        document.getElementById('ip').click();
+                    }
+                    else if (inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS") {
+                        $("#trans").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS"){
+                        document.getElementById('trans').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS") {
+                        $("#betagamma").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS"){
+                        document.getElementById('betagamma').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "VECTOR CALCULUS") {
+                        $("#vector").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "VECTOR CALCULUS"){
+                        document.getElementById('vector').click();
+                    }
+                    else if (inp.value.toUpperCase() == "P/B/H TRIGO") {
+                        $("#simpletrignocollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "P/B/H TRIGO"){
+                        document.getElementById('simpletrignocollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITES") {
+                        $("#trigonoiden").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITES"){
+                        document.getElementById('trigonoiden').click();
+                    }
+                    else if (inp.value.toUpperCase() == "INVERSE TRIGONOMETRIC IDENTITIES") {
+                        $("#inversetrigonoiden").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INVERSE TRIGONOMETRIC IDENTITIES"){
+                        document.getElementById('inversetrigonoiden').click();
+                    }
+                    else if (inp.value.toUpperCase() == "EXPANSION OF FUNCTIONS") {
+                        $("#expansion").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "EXPANSION OF FUNCTIONS"){
+                        document.getElementById('expansion').click();
+                    }
+                    else if (inp.value.toUpperCase() == "VECTOR ALGEBRA") {
+                        $("#vecalg").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "VECTOR ALGEBRA"){
+                        document.getElementById('vecalg').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "CIRCLE") {
+                        $("#circlecollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CIRCLE"){
+                        document.getElementById('circlecollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "ELLIPSE") {
+                        $("#ellipsecollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ELLIPSE"){
+                        document.getElementById('ellipsecollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "HYPERBOLA") {
+                        $("#hyperbolacollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "HYPERBOLA"){
+                        document.getElementById('hyperbolacollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PARABOLA") {
+                        $("#parabolacollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PARABOLA"){
+                        document.getElementById('parabolacollapse').click();
+                    } 
+                    else if(inp.value.toUpperCase() == "LIMITS"){
+                        document.getElementById('limitscollapse').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "LIMITS") {
+                        $("#limitscollapse").slideToggle(); 
+                    }
+                    else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
+                        $("#euclid").slideToggle();
+                    }
+                    else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
+                        document.getElementById('euclid').click();
+                    }
+                    else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
+                        $("#setop").slideToggle();
+                    }
+                    else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
+                        document.getElementById('setop').click();
+                    }
+                    else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
                         document.getElementById('romaracov').click();
                     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
                         document.getElementById('romaracov').click();
@@ -171,7 +278,9 @@ function autocomplete(inp, arr) {
 
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
-                        "Conversion to Words", "Roundoff", "LCM", "HCF", "Trigonometric Values", "Unit Converter" ,"Log Calculator"];
+                        "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
+                        "Vector Algebra","Vector Calculus","Hyperbola","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Unit Converter" ,"Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -198,6 +307,8 @@ function handleclick(value) {
         $("#laplacecollapse").slideDown();
         $("#inverselaplacecollapse").slideUp();
         $("#laplacecollapseit").slideToggle();
+    }else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
+        $("#fractions").slideToggle();
     } else if (value.toUpperCase() == "SHAPES") {
         $("#shapescal").slideToggle();
     } else if (value.toUpperCase() == "SIMPLE TRIGONOMETRY") {
@@ -222,10 +333,18 @@ function handleclick(value) {
         $("#factors").slideToggle();
     } else if (inp.value.toUpperCase() == "TRIGONOMETRIC VALUES") {
         $("#trigonovaluestable").slideToggle();
+    } else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+        $("#math").slideToggle();
     } else if (inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITIES") {
         $("#trigonoiden").slideToggle();
+    } else if (inp.value.toUpperCase() == "EUCLID GEOMETRY") {
+        $("#euclid").slideToggle(); 
     } else if (inp.value.toUpperCase() == "UNIT CONVERTER") {
         $("#unitconcal").slideToggle();
+    } else if (inp.value.toUpperCase() == "SPI CONVERTER") {
+        $("#spiconcal").slideToggle();
+    } else if (inp.value.toUpperCase() == "OPEARTIONS ON SETS") {
+        $("#setop").slideToggle();     
     } else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
         document.getElementById('romaracov').click();
     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
@@ -239,5 +358,97 @@ function handleclick(value) {
     }  else if (inp.value.toUpperCase() == "LOG CALCULATOR") {
          $("#log_values").slideToggle();
     }
-
+    else if(inp.value.toUpperCase() == "MATHEMATICAL REASONING"){
+        document.getElementById('math').click(); 
+    }
+    else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
+        document.getElementById('euclid').click(); 
+    }
+    else if(inp.value.toUpperCase() == "OPERATIONS ON SETS"){
+        document.getElementById('setop').click(); 
+    }
+    else if(inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS"){
+        document.getElementById('ip').click(); 
+    }
+    else if (inp.value.toUpperCase() == "INVERSE AND PERIODICITY OF FUNCTIONS") {
+        $("#ip").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS"){
+        document.getElementById('trans').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS") {
+        $("#trans").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS"){
+        document.getElementById('betagamma').click(); 
+    }
+    else if (inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS") {
+        $("#betagamma").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "VECTOR CALCULUS"){
+        document.getElementById('vector').click(); 
+    }
+    else if (inp.value.toUpperCase() == "VECTOR CALCULUS") {
+        $("#vector").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "VECTOR ALGEBRA"){
+        document.getElementById('vecalg').click(); 
+    }
+    else if (inp.value.toUpperCase() == "VECTOR ALGEBRA") {
+        $("#vecalg").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "LIMITS"){
+        document.getElementById('limitscollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LIMITS") {
+        $("#limitscollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "P/B/H TRIGO"){
+        document.getElementById('simpletrignocollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "P/B/H TRIGO") {
+        $("#simpletrignocollapse").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITES"){
+        document.getElementById('trigonoiden').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TRIGONOMETRIC IDENTITES") {
+        $("#trigonoiden").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "INVERSE TRIGONOMETRIC IDENTITIES"){
+        document.getElementById('inversetrigonoiden').click(); 
+    }
+    else if (inp.value.toUpperCase() == "INVERSE TRIGONOMETRIC IDENTITIES") {
+        $("#inversetrigonoiden").slideToggle(); 
+    } 
+    else if(inp.value.toUpperCase() == "EXPANSION OF FUNCTIONS"){
+        document.getElementById('expansion').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EXPANSION OF FUNCTIONS") {
+        $("#expansion").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CIRCLE"){
+        document.getElementById('circlecollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CIRCLE") {
+        $("#circlecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ELLIPSE"){
+        document.getElementById('ellipsecollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ELLIPSE") {
+        $("#ellipsecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "HYPERBOLA"){
+        document.getElementById('hyperbolacollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "HYPERBOLA") {
+        $("#hyperbolacollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PARABOLA"){
+        document.getElementById('parabolacollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PARABOLA") {
+        $("#parabolacollapse").slideToggle(); 
+    }
 }
