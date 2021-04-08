@@ -5425,11 +5425,42 @@ function convertex3() {
 }
 
 //----------------------------
-//Function that performs conversion of grey to binary and viceversa
+//Function that performs conversion of grey to Decimal and viceversa
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
+function convertgreydec(){
+    const fromBase = document.getElementById("grey-select2").value;
+    var input = document.getElementById("greydec-input").value;
+    let result2 = document.getElementById("greydec2-result");
+    result2.innerHTML="";
+    let from = 2;
+    let to = 2;
+
+    if (fromBase === "Grey Code") {from = 2; to = 10;}
+    else {from = 10; to = 2;}
+
+
+    result1= parseInt(input, from).toString(to);
+    //console.log(result1);
+    var x = result1[0];
+
+    if (fromBase === "Grey Code"){
+        for (var i = 1; i < result1.length; i++)
+            x += parseInt(x[i - 1] ^ result1[i]).toString();
+    }
+
+    else{
+        for (var i = 1; i < result1.length; i++)
+            x += parseInt(result1[i - 1] ^ result1[i]).toString();
+    }
+
+    result2.innerHTML = x;
+
+}
+
+//Function that performs conversion of grey to binary and viceversa
 function convertgrey() {
     const fromBase = document.getElementById("grey-select1").value;
     var input = document.getElementById("grey-input").value;
