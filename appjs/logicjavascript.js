@@ -1838,7 +1838,7 @@ function solvetrapezium(){
     var ts=Math.abs(b-a);
     var s=(ts+parseInt(c)+parseInt(d))/2;
     var areatri=Math.sqrt(s*(s-ts)*(s-parseInt(c))*(s-parseInt(d)));
-    var height= (2*areatri)/ts; 
+    var height= (2*areatri)/ts;
     var heighttemp="";
     document.getElementById("resultofperitrap1").innerHTML="";
     document.getElementById("resultofperitrap2").innerHTML="";
@@ -3925,7 +3925,7 @@ function expoxn()
   var result= document.getElementsByClassName("comp1resulte");
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   var x ="iπ *" +y
-  result[1].innerHTML = x;  
+  result[1].innerHTML = x;
   result[2].innerHTML = x;
 
   var p = (Math.sqrt((r*r)+(i*i)));
@@ -3934,7 +3934,7 @@ function expoxn()
   {
     j = (r*r)+(i*i);
     j = "&#8730; "+ j ;
-    
+
   }
   result[0].innerHTML =  j ;
 
@@ -4277,10 +4277,10 @@ function discount() {
             var perp = (profit * 100) / sp;
             print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + profit+"<br>Loss Percentage: " + perp + "%";
         }
-        
+
         document.getElementById("discountresult").innerHTML = print;
     }
-    
+
 }
 
 //Statistics Calculator
@@ -5118,8 +5118,8 @@ function bitwiseCalc() {
     }
 
     if (numberSystem === "Hexadecimal") {
-        firstOperand = parseInt(firstOperand, 16).toString(16);
-        secondOperand = parseInt(secondOperand, 16).toString(16);
+        firstOperand = parseInt(firstOperand, 16);
+        secondOperand = parseInt(secondOperand, 16);
     }
 
     if (isNaN(firstOperand) || isNaN(secondOperand)) {
@@ -5135,6 +5135,11 @@ function bitwiseCalc() {
             case "XOR":
                 result = firstOperand ^ secondOperand;
                 break;
+            case "Left Shift":
+                 result = firstOperand << secondOperand;
+                 break;
+            case "Right Shift":
+                  result = firstOperand >> secondOperand;
         }
 
         if (numberSystem === "Binary")
@@ -5632,7 +5637,7 @@ function fiftnsixtnCalc() {
         sixtn = (parseInt(fiftn,16) + 1).toString(16);
         result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
         result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
-        
+
         print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
         print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
         print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
