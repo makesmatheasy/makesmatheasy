@@ -273,7 +273,7 @@ h6 {
   outline: none !important;
 }
 #box {
-  position: fixed !important;
+  position: relative !important;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -281,6 +281,9 @@ h6 {
   height: 60px;
   border-radius: 40px;
   padding: 10px;
+  margin-left: 6em;
+  margin-bottom: 0;
+  margin-top: 4em;
 }
 #box:hover > #search-txt {
   width: 240px;
