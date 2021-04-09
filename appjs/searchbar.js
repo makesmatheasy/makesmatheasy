@@ -177,6 +177,24 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "PARABOLA"){
                         document.getElementById('parabolacollapse').click();
                     } 
+                    else if (inp.value.toUpperCase() == "CURRENCY CONVERTOR") {
+                        $("#curconcal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CURRENCY CONVERTOR"){
+                        document.getElementById('curconcal').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SPI/CGPA CONVERTOR") {
+                        $("#spiconcal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SPI/CGPA CONVERTOR"){
+                        document.getElementById('spiconcal').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "DATE") {
+                        $("#datecal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DATE"){
+                        document.getElementById('datecal').click();
+                    }
                     else if(inp.value.toUpperCase() == "LIMITS"){
                         document.getElementById('limitscollapse').click(); 
                     }
@@ -279,8 +297,8 @@ function autocomplete(inp, arr) {
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
-                        "Vector Algebra","Vector Calculus","Hyperbola","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Unit Converter" ,"Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Vector Algebra","Vector Calculus","Hyperbola","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Unit Converter" ,"SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -450,5 +468,23 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "PARABOLA") {
         $("#parabolacollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CURRENCY CONVERTOR"){
+        document.getElementById('curconcal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CURRENCY CONVERTOR") {
+        $("#curconcal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SPI/CGPA CONVERTOR"){
+        document.getElementById('spiconcal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SPI/CGPA CONVERTOR") {
+        $("#spiconcal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DATE"){
+        document.getElementById('datecal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DATE") {
+        $("#datecal").slideToggle(); 
     }
 }
