@@ -182,44 +182,60 @@ function subtractiom(){
 
  function improper_to_mixed(){
 
-     var n1 = parseInt(document.getElementById('one_imp').value);
-     var d1 = parseInt(document.getElementById('two_imp').value);
+    var n1 = parseInt(document.getElementById('one_imp').value);
+    var d1 = parseInt(document.getElementById('two_imp').value);
 
-     if(Number.isNaN(d1) || Number.isNaN(n1) )
-      {
-          window.alert("Enter an Integer")
-      }
+    document.getElementById('impr').innerHTML = "";
+    document.getElementById('impq').innerHTML = "";
+    document.getElementById('impb1').innerHTML = ""; 
 
+    if (d1 === 0){ 
+       document.getElementById('impr').innerHTML = "Infinity";
+       document.getElementById('impq').innerHTML = "";
+       document.getElementById('impb1').innerHTML = ""; 
+       return 0; }
+   
+   if (n1 === 0){ 
+       document.getElementById('impr').innerHTML = "0";
+       document.getElementById('impq').innerHTML = "";
+       document.getElementById('impb1').innerHTML = ""; 
+       return 0; }
 
-     document.getElementById('impa').innerHTML = n1;
-     document.getElementById('impb').innerHTML = d1;
-
-
-     const arr = [n1, d1];
-
-         const properToMixed = arr => {
-             const quotient = Math.floor(arr[0] / arr[1]);
-             const remainder = arr[0] % arr[1];
-             if(n1<d1){
-                     document.getElementById('impr').innerHTML = n1;
-                     document.getElementById('impq').innerHTML = 1;
-                     document.getElementById('impb1').innerHTML = d1;
-             }
-             else if(remainder === 0){
-                 return [quotient];
-             }else{
-                     var q = quotient;
-                     var r = remainder;
-                     var b = d1;
-
-                     document.getElementById('impr').innerHTML = r;
-                     document.getElementById('impq').innerHTML = q;
-                     document.getElementById('impb1').innerHTML = b;
+    if(Number.isNaN(d1) || Number.isNaN(n1) )
+     {
+         window.alert("Enter an Integer")
+     }
 
 
-             };
-             };
+    document.getElementById('impa').innerHTML = n1;
+    document.getElementById('impb').innerHTML = d1;
 
-         properToMixed(arr);
 
- }
+    const arr = [n1, d1];
+
+        const properToMixed = arr => {
+            const quotient = Math.floor(arr[0] / arr[1]);
+            const remainder = arr[0] % arr[1];
+            if(n1<d1){
+                    document.getElementById('impr').innerHTML = n1;
+                    document.getElementById('impq').innerHTML = 1;
+                    document.getElementById('impb1').innerHTML = d1;
+            }
+            else if(remainder === 0){
+                return [quotient];
+            }else{
+                    var q = quotient;
+                    var r = remainder;
+                    var b = d1;
+
+                    document.getElementById('impr').innerHTML = r;
+                    document.getElementById('impq').innerHTML = q;
+                    document.getElementById('impb1').innerHTML = b;
+
+
+            };
+            };
+
+        properToMixed(arr);
+
+}
