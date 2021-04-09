@@ -1053,6 +1053,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="pythtriplebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Pythagorean Triplets</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Pythagorean Triplets','#pythtriple','c','ptimgfav')"><img
+                                        id="ptimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="rankcalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Rank Calculator
                                 </a>
@@ -6694,7 +6709,15 @@
                 </div>
             </div>
         </div>
-
+        <div class = "collapse" id="pythtriple">
+            <h2 style="text-align: center;">Pythagorean Triplets</h2>
+            <br><br>
+            <input style="width: 275px;" type="text" class="form__field"
+                   placeholder="Enter the number" id="nom">
+            <button class="btn btn-light" onclick=pythtriple()>Submit</button>
+            <br><br>
+            <h4 style=  "color : white"id="answ"></h4>
+        </div>
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>
             <br>

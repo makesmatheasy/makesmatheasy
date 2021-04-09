@@ -166,6 +166,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#pythtriplebtn").click(function () {
+        openit("#pythtriple");
+        closenav();
+        clearall();
+    })
 
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
