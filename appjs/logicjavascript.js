@@ -4062,6 +4062,60 @@ function emical() {
 }
 
 
+// simple and compound interest
+//-----------------------------------------------------
+function simple_interest() {
+  var p, t, r, si, ci;
+  p = document.getElementById("first").value;
+  t = document.getElementById("second").value;
+  r = document.getElementById("third").value;
+  si = parseInt((p * t * r) / 100);
+  amount = p * Math.pow(1 + r / 100, t);
+  ci = amount - p;
+  document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
+  document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
+}
+
+// cost and selling price
+//-----------------------------------------------------
+
+function computeCP() {
+
+    var profit = document.getElementById("p1").value;
+    var Cost = document.getElementById("cp2").value;
+    var sell = document.getElementById("sp2").value;
+    
+    let result1 = document.getElementById("cp");
+    
+    var CP = parseInt((100 x sell)(100 + profit));
+    
+    if(Cost>0 && sell==0){
+      result1.innerHTML = "Invalid values" ;
+    }
+    else{
+      result1.innerHTML = "Cost Price = ₹ " + CP;
+    }
+}
+
+function computeSP() {
+
+    var profit = document.getElementById("p1").value;
+    var Cost = document.getElementById("cp2").value;
+    var sell = document.getElementById("sp2").value;
+    
+    let result2 = document.getElementById("sp");
+    
+    var SP = parseInt(((100 - profit) x Cost) / 100) ;
+    
+    if(sell>0 && Cost==0){
+      result1.innerHTML = "Invalid values" ;
+    }
+    else{
+      result1.innerHTML = "Selling Price = ₹ " + SP;
+    }
+}
+
+
 //unit convert
 //-----------------------------------------------------
 //Currency convert
