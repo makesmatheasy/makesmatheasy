@@ -664,7 +664,7 @@ function lcmsol(input) {
         var tempfac =
             "<table class='table bor' style='color:white;width: 50px; padding: 0; margin: 0 auto; border-right:2px solid light-grey !important;'>";
         if (num.length == 1) {
-            document.getElementById("resultlcm").innerHTML = "Should Be more Than 1";
+            document.getElementById("resultlcm").innerHTML = "More than one number is required";
             document.getElementById("resultlcms").innerHTML = "";
         } else if (num.length == 2) {
             var lcmis = nerdamer.lcm(parseInt(num[0]), parseInt(num[1]));
@@ -966,7 +966,7 @@ function lcmsol(input) {
             tempfac += "<tr><td>" + facar[mm] + "</td></tr>";
         }
         if (num.length == 1) {
-            document.getElementById("resultlcms").innerHTML = "Should Be more Than 1";
+            document.getElementById("resultlcms").innerHTML = "More than one number is required";
         } else {
             document.getElementById("resultlcms").innerHTML +=
                 "Lcm is " + String(lcmis);
@@ -1625,7 +1625,13 @@ function solvetetra() {
     }
 }
 
-
+function pythtriple(){
+    var num = parseInt(document.getElementById("nom").value)
+    var nums = parseInt(num*num)
+    var les = parseInt(2*num -1)
+    var more = parseInt(2*num +1)
+    document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+}
 function equilateraltrianglearea() {
     var side = document.getElementById("equilateraltriangleside").value;
     var areaoutput = document.getElementById("equilateraltrianglearea");
@@ -1838,7 +1844,7 @@ function solvetrapezium(){
     var ts=Math.abs(b-a);
     var s=(ts+parseInt(c)+parseInt(d))/2;
     var areatri=Math.sqrt(s*(s-ts)*(s-parseInt(c))*(s-parseInt(d)));
-    var height= (2*areatri)/ts; 
+    var height= (2*areatri)/ts;
     var heighttemp="";
     document.getElementById("resultofperitrap1").innerHTML="";
     document.getElementById("resultofperitrap2").innerHTML="";
@@ -3925,7 +3931,7 @@ function expoxn()
   var result= document.getElementsByClassName("comp1resulte");
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   var x ="iπ *" +y
-  result[1].innerHTML = x;  
+  result[1].innerHTML = x;
   result[2].innerHTML = x;
 
   var p = (Math.sqrt((r*r)+(i*i)));
@@ -3934,7 +3940,7 @@ function expoxn()
   {
     j = (r*r)+(i*i);
     j = "&#8730; "+ j ;
-    
+
   }
   result[0].innerHTML =  j ;
 
@@ -4005,7 +4011,7 @@ function simple_interest() {
         {
 
             document.getElementById("simpleinterstoutput1").innerHTML = "\\[Simple \\space Interest = \\space \\frac{1}{100} \\times p \\times t \\times r \\]";
-            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]";
+            document.getElementById("simpleinterstoutput2").innerHTML = "\\[\\frac{1}{100} \\times "+p+"\\times "+t+" \\times "+r+" = ₹" + si.toFixed(5)+"\\]<br>\\[Amount \\space = \\space "+p+"\\space + \\space "+si.toFixed(5)+"\\space = \\space "+(parseFloat(p)+parseFloat(si.toFixed(5)))+"\\]";
 
             renderMathInElement(document.getElementById("simpleinterstoutput1"));
             renderMathInElement(document.getElementById("simpleinterstoutput2"));
@@ -4028,7 +4034,7 @@ function simple_interest() {
             amount = p * Math.pow(1 + (r / (n*100)), n*t);
             ci = amount - p;
             document.getElementById("compoundinterestoutput1").innerHTML = "\\[Compound \\space Interest =P\\left(1+\\frac{r}{n}\\right)^{n t}\\]"
-            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]";
+            document.getElementById("compoundinterestoutput2").innerHTML = "\\["+p+"\\left(1+\\frac{"+r+"}{"+n+"}\\right)^{"+n+"\\times"+ t+"} = ₹" + ci.toFixed(5)+"\\]<br>\\[Amount \\space = \\space "+p+"\\space + \\space "+ci.toFixed(5)+"\\space = \\space "+(parseFloat(p)+parseFloat(ci.toFixed(5)))+"\\]";
             renderMathInElement(document.getElementById("compoundinterestoutput1"));
             renderMathInElement(document.getElementById("compoundinterestoutput2"));
         }
@@ -4277,10 +4283,10 @@ function discount() {
             var perp = (profit * 100) / sp;
             print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + profit+"<br>Loss Percentage: " + perp + "%";
         }
-        
+
         document.getElementById("discountresult").innerHTML = print;
     }
-    
+
 }
 
 //Statistics Calculator
@@ -5118,8 +5124,8 @@ function bitwiseCalc() {
     }
 
     if (numberSystem === "Hexadecimal") {
-        firstOperand = parseInt(firstOperand, 16).toString(16);
-        secondOperand = parseInt(secondOperand, 16).toString(16);
+        firstOperand = parseInt(firstOperand, 16);
+        secondOperand = parseInt(secondOperand, 16);
     }
 
     if (isNaN(firstOperand) || isNaN(secondOperand)) {
@@ -5135,6 +5141,11 @@ function bitwiseCalc() {
             case "XOR":
                 result = firstOperand ^ secondOperand;
                 break;
+            case "Left Shift":
+                 result = firstOperand << secondOperand;
+                 break;
+            case "Right Shift":
+                  result = firstOperand >> secondOperand;
         }
 
         if (numberSystem === "Binary")
@@ -5424,11 +5435,42 @@ function convertex3() {
 }
 
 //----------------------------
-//Function that performs conversion of grey to binary and viceversa
+//Function that performs conversion of grey to Decimal and viceversa
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
+function convertgreydec(){
+    const fromBase = document.getElementById("grey-select2").value;
+    var input = document.getElementById("greydec-input").value;
+    let result2 = document.getElementById("greydec2-result");
+    result2.innerHTML="";
+    let from = 2;
+    let to = 2;
+
+    if (fromBase === "Grey Code") {from = 2; to = 10;}
+    else {from = 10; to = 2;}
+
+
+    result1= parseInt(input, from).toString(to);
+    //console.log(result1);
+    var x = result1[0];
+
+    if (fromBase === "Grey Code"){
+        for (var i = 1; i < result1.length; i++)
+            x += parseInt(x[i - 1] ^ result1[i]).toString();
+    }
+
+    else{
+        for (var i = 1; i < result1.length; i++)
+            x += parseInt(result1[i - 1] ^ result1[i]).toString();
+    }
+
+    result2.innerHTML = x;
+
+}
+
+//Function that performs conversion of grey to binary and viceversa
 function convertgrey() {
     const fromBase = document.getElementById("grey-select1").value;
     var input = document.getElementById("grey-input").value;
@@ -5579,33 +5621,44 @@ function fiftnsixtnCalc() {
     var input = document.getElementById("fiftnsixtnnumber").value;
     let result = document.getElementById("fiftnsixtnresult");
     let work = document.getElementById("fiftnsixtnworking");
-    var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
-    var fiftn = "";
-    var sixtn = "";
-    for (var i = 0; i < input.length; i++) {
-        print+="f";
-        fiftn += (16 - parseInt(input[i],16)).toString(16);
 
+    valid = /^[a-fA-F0-9]*$/
+
+    if(!(valid.test(input)))
+    {
+        result.innerHTML="Please enter valid Hexadecimal number"
+        work.innerHTML=""
     }
-    sixtn = (parseInt(fiftn,16) + 1).toString(16);
-    result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
-    result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
-    
-    print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
-    print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
-    print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
-    work.innerHTML = print;
+    else
+    {
+        var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
+        var fiftn = "";
+        var sixtn = "";
+
+        for (var i = 0; i < input.length; i++) {
+            print+="f";
+            fiftn += (16 - parseInt(input[i],16)).toString(16);
+
+        }
+        sixtn = (parseInt(fiftn,16) + 1).toString(16);
+        result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
+        result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+
+        print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
+        print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
+        print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
+        work.innerHTML = print;
 
 
-    if (input == "") {
-        result.innerHTML = "";
-        work.innerHTML = "";
+        if (input == "") {
+            result.innerHTML = "";
+            work.innerHTML = "";
+        }
+        if(fiftn == "NaN"){
+            result.innerHTML = "Invalid Hexa Decimal Number"
+            work.innerHTML = "";
+        }
     }
-    if(fiftn == "NaN"){
-        result.innerHTML = "Invalid Hexa Decimal Number"
-        work.innerHTML = "";
-    }
-
 }
 
 

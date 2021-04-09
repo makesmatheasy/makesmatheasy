@@ -1,6 +1,6 @@
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
+    the text field element and an CIRCLE possible autocompleted values:*/
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function (e) {
@@ -152,7 +152,31 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "VECTOR ALGEBRA"){
                         document.getElementById('vecalg').click();
-                    }  
+                    } 
+                    else if (inp.value.toUpperCase() == "CIRCLE") {
+                        $("#circlecollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CIRCLE"){
+                        document.getElementById('circlecollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "ELLIPSE") {
+                        $("#ellipsecollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ELLIPSE"){
+                        document.getElementById('ellipsecollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "HYPERBOLA") {
+                        $("#hyperbolacollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "HYPERBOLA"){
+                        document.getElementById('hyperbolacollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PARABOLA") {
+                        $("#parabolacollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PARABOLA"){
+                        document.getElementById('parabolacollapse').click();
+                    } 
                     else if(inp.value.toUpperCase() == "LIMITS"){
                         document.getElementById('limitscollapse').click(); 
                     }
@@ -254,7 +278,9 @@ function autocomplete(inp, arr) {
 
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
-                        "Conversion to Words", "Roundoff", "LCM", "HCF","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits","Vector Algebra","Vector Calculus","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry","Trigonometric Values", "Unit Converter" ,"Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
+                        "Vector Algebra","Vector Calculus","Hyperbola","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Unit Converter" ,"Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -400,5 +426,29 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "EXPANSION OF FUNCTIONS") {
         $("#expansion").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CIRCLE"){
+        document.getElementById('circlecollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CIRCLE") {
+        $("#circlecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ELLIPSE"){
+        document.getElementById('ellipsecollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ELLIPSE") {
+        $("#ellipsecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "HYPERBOLA"){
+        document.getElementById('hyperbolacollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "HYPERBOLA") {
+        $("#hyperbolacollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PARABOLA"){
+        document.getElementById('parabolacollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PARABOLA") {
+        $("#parabolacollapse").slideToggle(); 
     }
 }

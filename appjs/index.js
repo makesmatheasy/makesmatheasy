@@ -162,6 +162,7 @@ function openit(id) {
         "#algebraic-idencollapse",
         "#about",
         "#propcircle",
+        "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
