@@ -190,12 +190,21 @@ function subtractiom(){
     document.getElementById('impb1').innerHTML = ""; 
 
     if (d1 === 0){ 
-       document.getElementById('impr').innerHTML = "Infinity";
-       document.getElementById('impq').innerHTML = "";
-       document.getElementById('impb1').innerHTML = ""; 
+
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
+
+        document.getElementById('impr').innerHTML = "Infinity";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = ""; 
+       
        return 0; }
    
    if (n1 === 0){ 
+       
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
+
        document.getElementById('impr').innerHTML = "0";
        document.getElementById('impq').innerHTML = "";
        document.getElementById('impb1').innerHTML = ""; 
