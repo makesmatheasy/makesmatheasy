@@ -3950,28 +3950,6 @@ function polar()
   result.innerHTML = x;
 }
 
-function expoxn()
-{
-  var r = parseInt(document.getElementById("cpreale").value);
-  var i = parseInt(document.getElementById("cpimge").value);
-  var result= document.getElementsByClassName("comp1resulte");
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  var x ="iπ *" +y
-  result[1].innerHTML = x;
-  result[2].innerHTML = x;
-
-  var p = (Math.sqrt((r*r)+(i*i)));
-  var j =p;
-  if(!Number.isInteger(p))
-  {
-    j = (r*r)+(i*i);
-    j = "&#8730; "+ j ;
-
-  }
-  result[0].innerHTML =  j ;
-
-}
-
 function datau(a) {
     switch (a) {
         case "1":
