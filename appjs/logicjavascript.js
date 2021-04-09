@@ -3885,6 +3885,32 @@ function tempcon() {
   const a = ((i - fs) / fd) * tm + ta;
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
+
+function energyu(a) {
+    switch (a) {
+        case "1":
+            return 1;
+        case "2":
+            return 1000;
+        case "3":
+            return 3600;
+        case "4":
+            return 3600000;
+        case "5":
+            return 4186.8;
+        case "6":
+            return 2647795.5;
+        
+    }
+}
+
+function energycon() {
+    const f = energyu(document.getElementById("energycon-1").value);
+    const t = energyu(document.getElementById("energycon-2").value);
+    const i = parseInt(document.getElementById("energyconin").value);
+    const a = (i * f) / t;
+    document.getElementById("energyconou").innerHTML = `${a}`;
+}
 function presu(a) {
   switch (a) {
     case "1":
