@@ -129,43 +129,6 @@ function collapseit(openit) {
 }
 
 function openit(id) {
-  var ids = [
-    "#equationssolver",
-    "#mulsolwithsteps",
-    "#table",
-    "#shapescal",
-    "#divide",
-    "#simpletrignocollapse",
-    "#trigonovaluestable",
-    "#trigonoiden",
-    "#factors",
-    "#integralcollapse",
-    "#differentiatecollapse",
-    "#partialdiffcollapse",
-    "#laplacecollapse",
-    "#matrixcollapse",
-    "#multiplematrixcollapse",
-    "#singlematrixcollapse",
-    "#about",
-    "#rootsquadratic",
-    "#plotgraph",
-    "#roundoff",
-    "#unitconcal",
-    "#home",
-    "#curconcal",
-    "#factorial",
-    "#pandc",
-    "#interest",
-    "#decimal-binary",
-    "#bitwise-calc",
-    "#octal-binary",
-    "#prices"
-  ];
-  for (i = 0; i < ids.length; i++) {
-    if (ids[i] != id) {
-      $(ids[i]).slideUp();
-    } else {
-      $(String(id)).slideToggle();
     var ids = [
         "#complex1collapse",
         "#complex2collapse",
@@ -274,7 +237,8 @@ function openit(id) {
         "#bayes-probabilitycollapse",
         "#prism",
         "#anglecon",
-	    "#ip"
+	    "#ip",
+	    "#prices"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
