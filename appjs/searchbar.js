@@ -171,6 +171,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "HYPERBOLA"){
                         document.getElementById('hyperbolacollapse').click();
                     } 
+                    else if (inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS") {
+                        $("#algebraic_formulascollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS"){
+                        document.getElementById('algebraic_formulascollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "LOCATION OF ROOTS") {
+                        $("#locroots").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "LOCATION OF ROOTS"){
+                        document.getElementById('locroots').click();
+                    }
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -279,8 +291,8 @@ function autocomplete(inp, arr) {
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
-                        "Vector Algebra","Vector Calculus","Hyperbola","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Unit Converter" ,"Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Vector Algebra","Vector Calculus","Hyperbola","Algebraic Equations Formulas","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Unit Converter" ,"Location of Roots","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -450,5 +462,17 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "PARABOLA") {
         $("#parabolacollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS"){
+        document.getElementById('algebraic_formulascollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS") {
+        $("#algebraic_formulascollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "LOCATION OF ROOTS"){
+        document.getElementById('locroots').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LOCATION OF ROOTS") {
+        $("#locroots").slideToggle(); 
     }
 }
