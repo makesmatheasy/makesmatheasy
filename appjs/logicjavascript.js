@@ -1625,7 +1625,13 @@ function solvetetra() {
     }
 }
 
-
+function pythtriple(){
+    var num = parseInt(document.getElementById("nom").value)
+    var nums = parseInt(num*num)
+    var les = parseInt(2*num -1)
+    var more = parseInt(2*num +1)
+    document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+}
 function equilateraltrianglearea() {
     var side = document.getElementById("equilateraltriangleside").value;
     var areaoutput = document.getElementById("equilateraltrianglearea");
