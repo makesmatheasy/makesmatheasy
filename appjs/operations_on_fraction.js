@@ -80,10 +80,17 @@ function subtractiom(){
      var n2 = parseInt(document.getElementById('three_div').value);
      var d2 = parseInt(document.getElementById('four_div').value);
 
-     if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
-      {
-          window.alert("Enter an Integer")
-      }
+    if ((document.getElementById('two_div').value) ==0 || (document.getElementById('four_div').value) == 0)
+    {
+        window.alert("Your fraction is undefined because it has zero denominator")
+        return;
+    } 
+
+    if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+    {
+        window.alert("Enter an Integer")
+        return;
+    }
 
      document.getElementById('diva').innerHTML = n1;
      document.getElementById('divb').innerHTML = d1;
