@@ -79,12 +79,13 @@ function subtractiom(){
      var d1 = parseInt(document.getElementById('two_div').value);
      var n2 = parseInt(document.getElementById('three_div').value);
      var d2 = parseInt(document.getElementById('four_div').value);
+     document.getElementById('divaz').innerHTML = "";
 
     if ((document.getElementById('two_div').value) ==0 || (document.getElementById('four_div').value) == 0)
     {
-        window.alert("Your fraction is undefined because it has zero denominator")
+        document.getElementById('divaz').innerHTML = "Your fraction is undefined because it has zero denominator";
         return;
-    } 
+    }
 
     if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
     {
@@ -110,7 +111,7 @@ function subtractiom(){
      var top = n1 * d2;
      var bot = d1 * n2;
 
-      document.getElementById('divt').innerHTML = top;
+     document.getElementById('divt').innerHTML = top;
      document.getElementById('divq').innerHTML = bot
 
      var ans = top / bot;
