@@ -4051,16 +4051,18 @@ function emical() {
     var p, t, r, emi;
     p = parseInt(document.getElementById("first1").value);
     r = parseFloat(document.getElementById("third3").value) / 100;
-    t = parseInt(document.getElementById("second2").value) * 12;
+    t1 = document.getElementById("second2").value;
+    t = parseFloat(t1) * 12;
     emi = ((p * r * Math.pow((1 + r), t)) / (Math.pow((1 + r), t) - 1));
     document.getElementById("emio1").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{P} \\times \\mathrm{r} \\times(1+\\mathrm{r})^{\\mathrm{t}}}{(1+\\mathrm{r})^{t}-1}\\]";
-    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t+"}-1}\\]";
+    document.getElementById("emio4").innerHTML = "\\[(\\mathrm{"+t1+"} \\space \\mathrm{Year} = \\mathrm{"+t.toFixed(3)+"} \\space \\mathrm{Months} = \\mathrm{t})\\]";
+    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t.toFixed(2)+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t.toFixed(2)+"}-1}\\]";
     document.getElementById("emio3").innerHTML = "\\[\\mathrm{EMI}= \\space" + emi.toFixed(2) + "\\space Per\\space month\\]";
     renderMathInElement(document.getElementById("emio1"));
+    renderMathInElement(document.getElementById("emio4"));
     renderMathInElement(document.getElementById("emio2"));
     renderMathInElement(document.getElementById("emio3"));
 }
-
 
 // simple and compound interest
 //-----------------------------------------------------
@@ -4087,7 +4089,7 @@ function computeCP() {
     
     let result1 = document.getElementById("cp");
     
-    var CP = parseInt((100 x sell)(100 + profit));
+    var CP = parseInt((100 * sell)(100 + profit));
     
     if(Cost>0 && sell==0){
       result1.innerHTML = "Invalid values" ;
@@ -4105,7 +4107,7 @@ function computeSP() {
     
     let result2 = document.getElementById("sp");
     
-    var SP = parseInt(((100 - profit) x Cost) / 100) ;
+    var SP = parseInt(((100 - profit) * Cost) / 100) ;
     
     if(sell>0 && Cost==0){
       result1.innerHTML = "Invalid values" ;
