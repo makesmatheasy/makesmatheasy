@@ -279,6 +279,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#pricesbtn").click(function () {
+        openit('#prices');
+        closenav();
+        clearall();
+    })
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
         closenav();

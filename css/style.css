@@ -79,11 +79,12 @@ p {
 .btn {
   border-radius: 100px !important;
 }
-
 a,
 p,
 label {
   color: var(--appimage) !important;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 h1,

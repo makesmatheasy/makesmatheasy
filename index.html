@@ -321,12 +321,44 @@
                                 <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
                                         id="setopfav" src="images/unfavourite.png"
 
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="interestbtn"
+                                   style="font-size:15px;cursor: pointer;background:transparent;border:none;">Interest(Simple,Compound)</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
+                                        id="interestfav" src="images/unfavourite.png" style="height:25px;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <!--Cost and selling prices added-->
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="pricesbtn"
+                                   style="font-size:15px;cursor: pointer;background:transparent;border:none;">Cost and Selling Prices</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
+                                        id="pricefav" src="images/unfavourite.png" style="height:25px;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
             <!--            operations on sets-->
+
 
             <!--          Sets,Relations and Functions -->
             <li>
@@ -4333,39 +4365,6 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comp1result"></p>
             </div>
-            <h1>Exponential form of complex number</h1>
-            <div class="form-group" style="display:inline-block">
-                <label>Enter the real part : &nbsp; &nbsp; </label>
-                <input type="number" id="cpreale" class="form__field" placeholder="Real"
-                       style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
-                <input type="number" id="cpimge" class="form__field" placeholder="Imag"
-                    style="width:3rem;display:inline;">
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="expoxn()">
-                    Find
-                </button>
-            </div>
-            <span  class="comp1resulte" style="color: white;">r</span>>
-            <div class="form-group text-center" style="color: white;display: inline-block;"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                        <semantics>
-                            <mrow>
-                                <msup>
-                                    <mi>e</mi>
-                                    <mn class = "comp1resulte">i &#1012;</mn>
-                                </msup>
-                            </mrow>
-                        </semantics>
-                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                            style="height: 0.947438em; vertical-align: -0.08333em;"></span><span class="mord"><span
-                                class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span
-                                        class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class=""
-                                                style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut"
-                                                    style="height: 2.7em;"></span><span
-                                                    class="sizing reset-size6 size3 mtight"><span
-                                                        class="mord mtight comp1resulte" >i &#1012;</span></span></span></span></span></span></span></span></span></span>
-            </div>
             <h1>Find Euler Representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp; </label>
@@ -4609,14 +4608,23 @@
             <img src="https://www.probabilitycourse.com/images/chapter1/intersection3_b.png"
                  style="margin-left: 300px; height: 200px;" alt="">
             <br><br>
-            <h5>3. Complement</h5>
+            <h5>3. Disjoint</h5>
+            <p>Set A and set B are called disjoint sets if no element is common to A and B. 
+                i.e. A and B are disjoint sets then</p>
+            <p>\(A\cap B = ∅\)</p>
+            <p>For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
+                A\cap B\cap C = ∅\]</p>
+            <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
+                 style="margin-left: 300px; height: 200px;" alt="">
+            <br><br>
+            <h5>4. Complement</h5>
             <p>The complement of a set A, denoted by A<sup>c</sup> is elements in Universal
                 Set which are not in A</p>
             <br>
             <img src="https://www.probabilitycourse.com/images/chapter1/complement_b.png"
                  style="margin-left: 300px; height: 200px;" alt="">
             <br><br>
-            <h5>4. Difference</h5>
+            <h5>5. Difference</h5>
             <p>The set A−B consists of elements that are in A but not in B. For example
                 if</p>
             <p>\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
@@ -7609,11 +7617,6 @@
                            style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
                 </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#tetrahedron"
-                           style="text-decoration:none;"
-                           href="#">Tetrahedron</a></td>
-                </tr>
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -7723,7 +7726,11 @@
                            style="text-decoration:none;"
                            href="#">Prism</a></td>
                 </tr>
-
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tetrahedron"
+                           style="text-decoration:none;"
+                           href="#">Tetrahedron</a></td>
+                </tr>
             </table>
         </div>
 
@@ -7810,6 +7817,15 @@
                             <a data-toggle="modal" data-target="#tempcon"
                                style="text-decoration:none;"
                                href="#">Temperature</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#energycon"
+                               style="text-decoration:none;"
+                               href="#">Energy</a>
                         </div>
                     </td>
                 </tr>
@@ -8289,66 +8305,119 @@
             </div>
             <!--  Primarity test and prime till n cal end -->
         </div>
-        <center>
+        
         <div class="collapse" id="bool">
-            <h2 style="font-size:60px;">Boolean Algebra</h2>
-            <br>
-            <h5 style="font-size:30px;">Laws of Boolean Algebra</h5>
-            <p style="font-size:30px;">1.) Annulment Law </p>
+    <h1 style="text-align: center; text-shadow: 1px 1px 2px red; ">Boolean Algebra</h1>
+    <!-- <u style="color: rgba(243, 118, 218, 0.8); padding: 1px; "> -->
+    <br>
+    <h4 style="text-align: center; text-shadow: 1px 1px 2px red; ">Laws of Boolean
+        Algebra</h4> <br>
+    <!-- font-family: KaTeX_Math; -->
 
-                <p>\[ A \space.\space 0 = 0\]</p>
-                <p>\[A + 1 = 1\]</p>
+    <div class="container" style="align-content: center; color: var(--appimage) !important; margin: 5px;">
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[1.\,Annulment \space\, Law\\\,(\,i\,)\,A \centerdot 0\,=\,0\\\,(\,ii\,)\,A\,+\,1\,=\,1\]
+                    </p>
+                </center>
 
-            <p style="font-size:30px;">2.) Identity Law  </p>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[2.\,Identity \space\, Law\\\,(\,i\,)\,A\,+\,0\,=\,A\\\,(\,ii\,)\,A \centerdot 1\,=\,A\]
+                    </p>
+                </center>
 
-                <p>\[A + 0 = A\]</p>
-                <p>\[A \space.\space 1 = A\]</p>
+            </div>
+            <div class="col-md-4">
 
-            <p style="font-size:30px;">3.) Idempotent Law </p>
+                <center>
+                    <p>
+                        \[3.\,Idempotent \space\, Law\\\,(\,i\,)\,A\,+\,A\,=\,A\\\,(\,ii\,)\,A \centerdot A\,=\,A\]
+                    </p>
+                </center>
 
-                <p>\[A + A = A\]</p>
-                <p>\[A \space.\space A = A\]</p>
-
-            <p style="font-size:30px;">4.) Complement Law </p>
-
-                <p>\[A \space.\space A^{'} = 0\]</p>
-                <p>\[A + A^{'} = 1\]</p>
-
-            <p style="font-size:30px;">5.) Demorgan's Law </p>
-
-                <p>\[(A+B)^{'} = A^{'}
-                    + B^{'}\]</p>
-                <p>\[(A . B)^{'} =
-                    A^{'} + B^{'}\]</p>
-
-            <p style="font-size:30px;">6.) Distributive Law </p>
-
-                <p>\[A(B+C) = A . B + A .C\]</p>
-                <p>\[A + BC = (A+B) . (A+C)\]</p>
-
-            <p style="font-size:30px;">7.) Absorption/ Redundancy Law </p>
-
-                <p>\[A + A\space .\space B = A\]</p>
-                <p>\[A(A+B) = A\]</p>
-
-            <p style="font-size:30px;">8.) Commutative Law</p>
-
-                <p>\[A + B = B + A\]</p>
-                <p>\[A\space .\space B = B\space .\space A\]</p>
-
-            <p style="font-size:30px;">9.) Associative Law</p>
-
-                <p>\[A + (B + C) = (A + B) + C\]</p>
-                <p>\[A\space .\space (B \space .\space C) = (A \space.\space B)\space.\space C\]</p>
-
-            <p style="font-size:30px;">10.) Double Negation Law</p>
-
-                <p>\[A^{''} = A\]</p>
-                <p>\[B^{''}\, = \, B\]</p>
-
+            </div>
         </div>
-      </center>
-        <!--    start of calculator -->
+        <br>
+
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[4.\,Complement \space\, Law\\\,(\,i\,)\,A \centerdot
+                        A\,'\,=\,0\\\,(\,ii\,)\,A\,+\,A\,'\,=1\]
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+
+                        \[5.\,Demorgan's \space\,Law\\ \,(\,i\,)\,
+                        ( \,A\,+\,B\,) \,'\,=\,A\,' \centerdot B\,'\\\,(\,ii\,)\, (\,A \centerdot B \,)\,'\,= \,
+                        A\,'\,+\,B\,'\]
+
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[6.\,Distributive \space \, Law \\\,(\,i\,)\, A \, (\,B\,+\,C\,)\, = \,A \centerdot B
+                        \,+\,A \centerdot C
+                        \\\,(\,ii\,)\,A \,+ \,B \centerdot C\,=\,(\,A\,+\,B\,)\centerdot (\,A\,+\,C\,)\]
+                    </p>
+                </center>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[7.\,Absorption \,/\,Redundancy \space \, Law\\\,(\,i\,)\, A \, +\,A \centerdot B\,=
+                        \,A\\\,(\,ii\,)\,A\,(\,A\,+\,B\,)\, = \,A\]
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[8.\,Commutative \space Law \\\,(\,i\,)\, A \,+\,B\,=\,B\,+\,A\\\,(\,ii\,)\, A \centerdot
+                        B\,=\,B \centerdot A\]
+                    </p>
+                </center>
+
+
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[9.\,Associative \space Law \\ \,(\,i\,)\,A \,+\,(\,B\,+\,C\,)\,=\,(\,A\,+\,B\,)\,+\,C
+                        \\\,(\,ii\,)\, A \centerdot (\, B \centerdot C \,)\, = \, (\, A \centerdot B \,) \centerdot
+                        C\]
+                    </p>
+                </center>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[10.\,Double \space Negation \space Law \\\,(\,i\,)\, A \,'\,'\, = \, A \\\,(\,ii\,)\,
+                        B\,'\,'\, = \, B\]
+                    </p>
+                </center>
+
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Start of Decimal / Binary -->
 
@@ -9956,8 +10025,77 @@
                     </button>
                 </div>
             </div>
+
+             
+
+            <!--Cost and selling prices-->
+           <div class="collapse" id="prices">
+              <h1>Cost and Selling Prices</h1>
+                <p>Cost Price:
+
+                    The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
+                    
+                    Selling Price:
+                    
+                    The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
+                    
+                    Profit or Gain:
+                    
+                    If S.P. is greater than C.P., the seller is said to have a profit or gain.
+                    
+                    Loss:
+                    
+                    If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
+                <h1>
+                    IMPORTANT FORMULAE
+                </h1>
+                <p>
+                    1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
+                    2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
+                    3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
+                    4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                                 
+                </p>
+        
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                            <input type="number" value="0" class="form__field" id="p1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Cost Price</h5>
+                            <input type="number" value="0" class="form__field" id="cp2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Selling Price</h5>
+                            <input type="number" value="0" class="form__field" id="sp2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="computeCP()">
+                        Find CP
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="computeSP()">
+                        Find SP
+                    </button>
+                </div>
+
+                <div style="color:white; font-size: large;" id="cp"></div>
+                <div id="sp" style="color: white; font-size: large"></div>
+            </div>
         </div>
     </div>
+
 
     <!-------------------------------------------------------->
 
@@ -10704,66 +10842,7 @@
         </div>
 
 
-        <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Regular Tetrahedron</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Volume</h5>
-                                    <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Height</h5>
-                                    <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a
-                                        \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Circumradius</h5>
-                                    <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/tetrahedron.png" class="img-fluid">
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Inradius</h5>
-                                    <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Side (a)"
-                                   id="inputtside" oninput="solvetetra()">
-                            <p class="stopwrap" id="resultofvolt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofheightt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofinradt"
-                               style="font-family:mathfont;"></p>
-
-                        </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="modal fade" id="ellipse" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -11343,6 +11422,66 @@
                 </div>
             </div>
         </div>
+		<div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Regular Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a
+                                        \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumradius</h5>
+                                    <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tetrahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Inradius</h5>
+                                    <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side (a)"
+                                   id="inputtside" oninput="solvetetra()">
+                            <p class="stopwrap" id="resultofvolt"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofheightt"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcircumt"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofinradt"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="cuboid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -11842,6 +11981,84 @@
                             </select>
                             <label for="out">
                                 <p class="form__field" id="tempconou">0</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="energycon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Energy</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="energycon-1" class="form__field" onchange="energycon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">joule[J]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Kilojoule[kJ]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">watt-hour[W-h]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">kilowatt-hour[kW-h]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">calorie
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">horsepower(metric)hour
+                                </option>
+                            </select>
+                            <input type="number" id="energyconin" class="form__field"
+                                   placeholder="Enter Side"
+                                   value="0" ; oninput="energycon();">
+
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="energycon-2" class="form__field" onchange="energycon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">joule[J]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Kilojoule[kJ]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">watt-hour[W-h]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">kilowatt-hour[kW-h]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">calorie
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">horsepower(metric)hour
+                                
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="energyconou">0</p>
                             </label>
                         </div>
                     </div>
