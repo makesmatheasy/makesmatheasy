@@ -171,6 +171,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "HYPERBOLA"){
                         document.getElementById('hyperbolacollapse').click();
                     } 
+                    else if (inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS") {
+                        $("#algebraic_formulascollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS"){
+                        document.getElementById('algebraic_formulascollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "LOCATION OF ROOTS") {
+                        $("#locroots").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "LOCATION OF ROOTS"){
+                        document.getElementById('locroots').click();
+                    }
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -299,6 +311,7 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Hyperbola","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Unit Converter" ,"SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
 
@@ -486,5 +499,16 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
+    else if(inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS"){
+        document.getElementById('algebraic_formulascollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS") {
+        $("#algebraic_formulascollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "LOCATION OF ROOTS"){
+        document.getElementById('locroots').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LOCATION OF ROOTS") {
+        $("#locroots").slideToggle(); 
     }
 }

@@ -3885,6 +3885,32 @@ function tempcon() {
   const a = ((i - fs) / fd) * tm + ta;
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
+
+function energyu(a) {
+    switch (a) {
+        case "1":
+            return 1;
+        case "2":
+            return 1000;
+        case "3":
+            return 3600;
+        case "4":
+            return 3600000;
+        case "5":
+            return 4186.8;
+        case "6":
+            return 2647795.5;
+        
+    }
+}
+
+function energycon() {
+    const f = energyu(document.getElementById("energycon-1").value);
+    const t = energyu(document.getElementById("energycon-2").value);
+    const i = parseInt(document.getElementById("energyconin").value);
+    const a = (i * f) / t;
+    document.getElementById("energyconou").innerHTML = `${a}`;
+}
 function presu(a) {
   switch (a) {
     case "1":
@@ -3922,28 +3948,6 @@ function polar()
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
-}
-
-function expoxn()
-{
-  var r = parseInt(document.getElementById("cpreale").value);
-  var i = parseInt(document.getElementById("cpimge").value);
-  var result= document.getElementsByClassName("comp1resulte");
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  var x ="iπ *" +y
-  result[1].innerHTML = x;
-  result[2].innerHTML = x;
-
-  var p = (Math.sqrt((r*r)+(i*i)));
-  var j =p;
-  if(!Number.isInteger(p))
-  {
-    j = (r*r)+(i*i);
-    j = "&#8730; "+ j ;
-
-  }
-  result[0].innerHTML =  j ;
-
 }
 
 function datau(a) {
@@ -4055,6 +4059,60 @@ function emical() {
     renderMathInElement(document.getElementById("emio1"));
     renderMathInElement(document.getElementById("emio2"));
     renderMathInElement(document.getElementById("emio3"));
+}
+
+
+// simple and compound interest
+//-----------------------------------------------------
+function simple_interest() {
+  var p, t, r, si, ci;
+  p = document.getElementById("first").value;
+  t = document.getElementById("second").value;
+  r = document.getElementById("third").value;
+  si = parseInt((p * t * r) / 100);
+  amount = p * Math.pow(1 + r / 100, t);
+  ci = amount - p;
+  document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
+  document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
+}
+
+// cost and selling price
+//-----------------------------------------------------
+
+function computeCP() {
+
+    var profit = document.getElementById("p1").value;
+    var Cost = document.getElementById("cp2").value;
+    var sell = document.getElementById("sp2").value;
+    
+    let result1 = document.getElementById("cp");
+    
+    var CP = parseInt((100 x sell)(100 + profit));
+    
+    if(Cost>0 && sell==0){
+      result1.innerHTML = "Invalid values" ;
+    }
+    else{
+      result1.innerHTML = "Cost Price = ₹ " + CP;
+    }
+}
+
+function computeSP() {
+
+    var profit = document.getElementById("p1").value;
+    var Cost = document.getElementById("cp2").value;
+    var sell = document.getElementById("sp2").value;
+    
+    let result2 = document.getElementById("sp");
+    
+    var SP = parseInt(((100 - profit) x Cost) / 100) ;
+    
+    if(sell>0 && Cost==0){
+      result1.innerHTML = "Invalid values" ;
+    }
+    else{
+      result1.innerHTML = "Selling Price = ₹ " + SP;
+    }
 }
 
 
