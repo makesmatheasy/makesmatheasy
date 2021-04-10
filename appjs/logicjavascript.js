@@ -4087,7 +4087,7 @@ function computeCP() {
     
     let result1 = document.getElementById("cp");
     
-    var CP = parseInt((100 x sell)(100 + profit));
+    var CP = parseInt((100 * sell)(100 + profit));
     
     if(Cost>0 && sell==0){
       result1.innerHTML = "Invalid values" ;
@@ -4105,7 +4105,7 @@ function computeSP() {
     
     let result2 = document.getElementById("sp");
     
-    var SP = parseInt(((100 - profit) x Cost) / 100) ;
+    var SP = parseInt(((100 - profit) * Cost) / 100) ;
     
     if(sell>0 && Cost==0){
       result1.innerHTML = "Invalid values" ;
@@ -5169,25 +5169,41 @@ function bitwiseCalc() {
     let secondOperand = parseInt(
         document.getElementById("bitwise-second-number").value
     );
-
-
-    if (numberSystem === "Binary") {
-        firstOperand = parseInt(firstOperand, 2);
-        secondOperand = parseInt(secondOperand, 2);
+        var x = 0;
+        var str = " invalid input  use only ";
+        if (numberSystem === "Binary") {
+       firstOperand = parseInt(firstOperand, 2);
+       secondOperand = parseInt(secondOperand, 2);
+           if(isNaN(firstOperand) ||isNaN(secondOperand))
+           {
+               x =1;
+               str+="Binary number";
+           }
     }
 
     if (numberSystem === "Octal") {
+        
         firstOperand = parseInt(firstOperand, 8);
         secondOperand = parseInt(secondOperand, 8);
-    }
+
+        if(isNaN(firstOperand) ||isNaN(secondOperand)){
+            x =1;
+        str+="Octal number";
+        }
+}
 
     if (numberSystem === "Hexadecimal") {
         firstOperand = parseInt(firstOperand, 16);
         secondOperand = parseInt(secondOperand, 16);
+
+        if(isNaN(firstOperand) ||isNaN(secondOperand)){
+            
+            str+="Hexadecimal number";
+        }
     }
 
     if (isNaN(firstOperand) || isNaN(secondOperand)) {
-        document.getElementById("bitwise-result").innerHTML = "NaN";
+        document.getElementById("bitwise-result").innerHTML = str;
     } else {
         switch (operation) {
             case "AND":
@@ -5205,7 +5221,6 @@ function bitwiseCalc() {
             case "Right Shift":
                   result = firstOperand >> secondOperand;
         }
-
         if (numberSystem === "Binary")
             document.getElementById("bitwise-result").innerHTML = parseInt(
                 result
