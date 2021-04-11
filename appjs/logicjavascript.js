@@ -3933,6 +3933,32 @@ function prescon() {
   document.getElementById("presconou").innerHTML = `${a}`;
 }
 
+function powu(a) {
+    switch (a) {
+      case "1":
+        return 1;
+      case "2":
+        return (10**(-7));
+      case "3":
+        return 0.2930;
+      case "4":
+        return 1.356;
+      case "5":
+        return 745.7;
+      case "6":
+        return 4.186;
+    }
+  }
+
+function powercon() {
+    const f = powu(document.getElementById("powercon-1").value);
+    const t = powu(document.getElementById("powercon-2").value);
+    const i = parseInt(document.getElementById("powerconin").value);
+    const a = (i * f) / t;
+    var ans = Number(parseFloat(a).toFixed(3));
+    document.getElementById("powerconou").innerHTML = `${ans}`;
+}
+
 
 function polar()
 {

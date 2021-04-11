@@ -7912,6 +7912,15 @@
                         </div>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#powercon"
+                               style="text-decoration:none;"
+                               href="#">Power</a>
+                        </div>
+                    </td>
+                </tr>
             </table>
         </div>
         <!-- SPI/CGPA -->
@@ -12587,6 +12596,86 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="powercon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Power</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center">From</h5>
+                        </label>
+                        <select id="powercon-1" class="form__field" onchange="powercon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">Watt
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">erg/sec
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">BTU/hr
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">foot-pound/sec
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">horsepower
+                            </option>
+                            <option value="6" class="form_field"
+                                    style="background-color:var(--appblack);">calorie/sec
+                            </option>
+                        </select>
+                        <input type="number" id="powerconin" class="form__field"
+                               placeholder="Enter Side" value="0" ;
+                               oninput="powercon();">
+
+                        <label for="To">
+                            <h5 class="text-center">To</h5>
+                        </label>
+                        <select id="powercon-2" class="form__field" onchange="powercon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">Watt
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">erg/sec
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">BTU/hr
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">foot-pound/sec
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">horsepower
+                            </option>
+                            <option value="6" class="form_field"
+                                    style="background-color:var(--appblack);">calorie/sec
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field" id="powerconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-------------------------------------------------------->
     <!--international number convert-->
