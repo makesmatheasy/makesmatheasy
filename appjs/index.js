@@ -236,6 +236,7 @@ function openit(id) {
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#prism",
+        "#pyramid",
         "#anglecon",
 	    "#ip",
 	    "#prices"
