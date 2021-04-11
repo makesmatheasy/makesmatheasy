@@ -319,7 +319,9 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
+
                                         id="setopfav" src="images/unfavourite.png"style="height:1.5625rem;filter: none;"/></span>
+
                         </td>                
                     </tr>    
                 </table>    
@@ -347,8 +349,10 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
+
                                         id="pricesfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
-                            </td>
+
+                         </td>
                         </tr>
                     </table>
                 </li>
@@ -372,6 +376,24 @@
                 </table>
             </li>
             <!--          Sets,Relations and Functions -->
+            <!--          Sets formula list-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="setformulalistbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sets Formulas List</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sets  Formulas List','#setformula','c','setlistfav')"><img
+                                        id="setlistfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!--          Sets formula list ends -->
+            
+
 
             <!--            matrix-->
             <li>
@@ -3539,7 +3561,30 @@
                 </div>
             </div>
         </div>
+          <!--Set Formulas List starts-->
 
+          <div class="collapse" id="setformula">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Sets Formulas</h4>
+                        <p>\[1)\space If A\space and\space  B\space are\space overlapping\space sets\space n(AUB)\space =n(A) + n(B) - n(A⋂B)\]</p>
+                        <p>\[2)\space If A\space and\space  B\space are\space disjoint\space sets\space n(AUB)\space = n(A) + n(B)\]</p>
+                        <p>\[3)\space n(A)\space = n(AUB) + n(A⋂B) - n(B)\]</p>
+                        <p>\[4)\space n(A⋂B)\space = n(A) + n(B) - n(AUB)\]</p>
+                        <p>\[5)\space n(B)\space = n(AUB) + n(A⋂B) - n(A)\]</p>
+                        <p>\[6)\space n(U)\space = n(A) + n(B) - n(A⋂B) + n((AUB)^c)\]</p>
+                        <p>\[7)\space n((AUB)^c)\space = n(U) + n(A⋂B) - n(A) - n(B)\]</p>
+                        <p>\[8)\space n(AUB)\space = n(A-B) + n(B-A) + n(A⋂B)\]</p>
+                        <p>\[9)\space n(A-B)\space = n(AUB) - n(B) \]</p>
+                        <p>\[10)\space n(A-B)\space = n(A) - n(A⋂B) \]</p>
+                        <p>\[11)\space n(A^c)\space = n(U) - n(A) \]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!--Sets Formulas List ends-->
         <div class="collapse" id="log_values">
             <fieldset class="form-group">
                 <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log
@@ -4661,7 +4706,47 @@
                 A-B = \{1,2\}\]
             </p>
             <img src="https://www.probabilitycourse.com/images/chapter1/difference_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 300px; height: 200px;" alt=""><br><br>
+            <h2 style="text-align: center;">Some conclusions from set operations</h2>
+            <p>Let S be the universal set, and A,B,C,D are subsets of S. Then,</p>
+            <ol>
+                <li style="color: white; font-size: 20px;">A ∪ ∅ = A <p>Hence ∅ i.e. empty set is identity set for 'union operation'. </p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ S = A <p>S i.e. universal set is identity set for 'intersection operation'. </p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∪ S = S <p>A ⊂ S and A ∪ S = S</p> <p>⇒ if B ⊂ A then A ∪ B  = A i.e. union of super set and subset is super set.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ ∅ = ∅ <p>∅ ⊂ A and A ∩ ∅ = ∅</p> <p>⇒ if B ⊂ A then A ∩ B  = B i.e. intersection of super set and subset is subset.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">If B ⊂ A, then A ∩ B  = B and A ∪ B  = A</li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ⊂ A ∪ B also B ⊂ A ∪ B</li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ B ⊂ A also A ∩ B ⊂ B</li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ B ⊂ A ⊂ A ∪ B and A ∩ B ⊂ B ⊂ A ∪ B i.e, A and B sets. A ∩ B is the smallest set and A ∪ B is largest set.
+                    <p>A contains A ∩ B and A is contained in A ∪ B.</p>
+                    <p>Similarly B contains A ∩ B and B is contained in A ∪ B.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">As A ∩ B ⊂ A<p>⇒ (A ∩ B) ∪ A = A [super set]</p><p>and (A ∩ B) ∩ A = (A ∩ B) [subset]</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">As A ⊂ A ∪ B<p>⇒ A ∩ (A ∪ B) = A [subset]</p><p>and A ∪ (A ∪ B) = (A ∪ B) [super set]</p> </li>
+                <br>
+                <li style="color: white; font-size: 20px;">(A - B) ∪ (A ∩ B) ∪ (B - A) = A ∪ B and (A - B), (A ∩ B), (B - A) are pairwise disjoint. i.e. 
+                    <p>(A - B) ∩ (A ∩ B) = ∅ </p><p>(A - B) ∩ (B - A) = ∅ </p><p>(A ∩ B) ∩ (B - A) = ∅ </p><p>Hence (A - B), (A ∩ B) and (B - A) are partitions of A ∪ B.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∪ A' = S <p>i.e. Union of A and its complement gives identity set for intersection operation.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
+                <br>
+            </ol>
+            <h4>Remark:</h4>
+            <ul>
+                <li style="color: white; font-size: 20px;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
+                    i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
+                <br>
+                <li style="color: white; font-size: 20px;">Multiplication of element and its complement gives additive identity element.</li>
+            </ul>
         </div>
 
         <div class="collapse" id="srf">
@@ -7532,38 +7617,40 @@
             </div>
         </div>
 
-        <div class="collapse" id="about">
-            <table class="table">
+        <div class="collapse card rounded" id="about">
+            <table class="table card-header">
                 <tr>
                     <td>
                         <h5>MakesMathEasy solves various math problems along with steps. We
                             provide speedy calculations,
                             within a few ms. We work together, design, create and produce work
                             that we are proud of. We
-                            believe that <span
-                                    style="color: white;">"MATH IS FUN"!</span><br>
+                            believe that <strong>"MATH IS FUN"!</strong><br>
 
                         </h5>
                     </td>
                 </tr>
             </table>
-            <h5><span style="color: white;">The IDEA:</span> We offer mathematics in an
-                enjoyable and
-                easy-to-learn manner.</h5><br>
-
-            <h5><span style="color: white;">Our commitment:</span> The site will continue to
-                grow
-                over time. Keep coming back to find out what has been added.</h5><br>
-
-            <h5><span style="color: white;">Feedback:</span> If you like the site or would like
-                to make comments or
-                even contributions then <a href="contact.html">contact us.</a></h5><br>
-
-            <h5><span style="color: white;">Developed By:</span> Rajinderpal Singh <span
-                    class="badge badge-light"
-                    style="cursor:pointer;"
-                    onclick="window.open('https://sairish2001.github.io')">Sairish</span>
-            </h5>
+            <div class="card-body ">
+                <h5 class="class-text"><strong>The IDEA:</strong> We offer mathematics in an
+                    enjoyable and
+                    easy-to-learn manner.</h5><br>
+    
+                <h5><strong>Our commitment:</strong> The site will continue to
+                    grow
+                    over time. Keep coming back to find out what has been added.</h5><br>
+    
+                <h5><strong>Feedback:</strong> If you like the site or would like
+                    to make comments or
+                    even contributions then <a href="contact.html">contact us.</a></h5><br>
+    
+                <h5><strong>Developed By:</strong> Rajinderpal Singh <span
+                        class="badge badge-light"
+                        style="cursor:pointer;"
+                        onclick="window.open('https://sairish2001.github.io')">Sairish</span>
+                </h5>
+            </div>
+            
         </div>
 
         <div class="collapse" id="shapescal">
@@ -7759,6 +7846,11 @@
                            href="#">Prism</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#pyramid"
+                           style="text-decoration:none;"
+                           href="#">Square Pyramid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#tetrahedron"
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
@@ -7902,6 +7994,15 @@
                             <a data-toggle="modal" data-target="#datacon"
                                style="text-decoration:none;"
                                href="#">Data</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#powercon"
+                               style="text-decoration:none;"
+                               href="#">Power</a>
                         </div>
                     </td>
                 </tr>
@@ -11522,6 +11623,69 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Square Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{a^2 h}{3} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral area</h5>
+                                    <p class="text-center">\[F= a\sqrt{4h^2+a^2} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S \space = \space F +a^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/pyramid.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height of side face</h5>
+                                    <p class="text-center">\[b= \sqrt{h^2 + (\frac{a}{2})^2 }\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length(a)" id="inputpyramidside"
+                                   oninput="pyramidsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height(h)" id="inputpyramidheight"
+                                   oninput="pyramidsolve();">
+                            <p class="stopwrap" id="resultofvolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhsfpyramid"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12580,6 +12744,86 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="powercon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Power</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center">From</h5>
+                        </label>
+                        <select id="powercon-1" class="form__field" onchange="powercon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">Watt
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">erg/sec
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">BTU/hr
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">foot-pound/sec
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">horsepower
+                            </option>
+                            <option value="6" class="form_field"
+                                    style="background-color:var(--appblack);">calorie/sec
+                            </option>
+                        </select>
+                        <input type="number" id="powerconin" class="form__field"
+                               placeholder="Enter Side" value="0" ;
+                               oninput="powercon();">
+
+                        <label for="To">
+                            <h5 class="text-center">To</h5>
+                        </label>
+                        <select id="powercon-2" class="form__field" onchange="powercon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">Watt
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">erg/sec
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">BTU/hr
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">foot-pound/sec
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">horsepower
+                            </option>
+                            <option value="6" class="form_field"
+                                    style="background-color:var(--appblack);">calorie/sec
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field" id="powerconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-------------------------------------------------------->
     <!--international number convert-->

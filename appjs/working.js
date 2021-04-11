@@ -259,6 +259,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#setformulalistbtn").click(function () {
+        openit("#setformula");
+        closenav();
+        clearall();
+    })
     $("#convdivbtn").click(function () {
         openit("#convdiv");
         closenav();
