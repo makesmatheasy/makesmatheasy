@@ -346,11 +346,13 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-    if (ar.length == 0) {
-        $("#favourite").removeClass("favouritecontainer");
-    } else {
-        $("#favourite").addClass("favouritecontainer");
-    }
+    // if (ar.length == 0) {
+    //     $("#favourite").removeClass("favouritecontainer");
+    // } else {
+    //     $("#favourite").addClass("favouritecontainer");
+    // }
+    $("#favourite").addClass("favouritecontainer");
+    
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement("li");
@@ -368,6 +370,28 @@ function checkfavourite() {
             document.getElementById("favourite").appendChild(el);
             document.getElementById(imgar[i]).src = favar[i];
         }
+    }
+    // else{
+    //     var el = document.createElement("li");
+    //     el.textContent = "Nothing in Favourites⭐."+"\n"+" Click 🤍 to add to Favourites";
+    //     el.className = "nofavourites";
+    //     el.style.color = "white";
+    //     document.getElementById("favourite").appendChild(el);
+    // }
+    
+    else{
+        var el = document.createElement("div");
+        el.className = "nofavourites";
+        el.id="nofavourite"
+        el.style.color = "white";
+        document.getElementById("favourite").appendChild(el);
+        var el1 = document.createElement("p");
+        el1.textContent = "Nothing in Favourites⭐.";
+        document.getElementById("nofavourite").appendChild(el1);
+        var el2 = document.createElement("p");
+        el2.textContent = " Click 🤍 to add to Favourites";
+        document.getElementById("nofavourite").appendChild(el2);
+        
     }
 }
 
