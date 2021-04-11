@@ -183,6 +183,60 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "LOCATION OF ROOTS"){
                         document.getElementById('locroots').click();
                     }
+                    else if (inp.value.toUpperCase() == "PLOT GRAPH") {
+                        $("#plotgraph").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PLOT GRAPH"){
+                        document.getElementById('plotgraph').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PLOT ANGLE") {
+                        $("#plotangle").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PLOT ANGLE"){
+                        document.getElementById('plotangle').click();
+                    }
+                    else if (inp.value.toUpperCase() == "STRAIGHT LINE") {
+                        $("#straightline").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "STRAIGHT LINE"){
+                        document.getElementById('straightline').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PROPERTIES OF PARALLEL LINES") {
+                        $("#parallel").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PROPERTIES OF PARALLEL LINES"){
+                        document.getElementById('parallel').click();
+                    }
+                    else if (inp.value.toUpperCase() == "COORDINATE SYSTEMS") {
+                        $("#coor").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "COORDINATE SYSTEMS"){
+                        document.getElementById('coor').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CURVE TRACING") {
+                        $("#curve").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CURVE TRACING"){
+                        document.getElementById('curve').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SHAPES CALCULATOR") {
+                        $("#shapescal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SHAPES CALCULATOR"){
+                        document.getElementById('shapescal').click();
+                    }
+                    else if (inp.value.toUpperCase() == "3-D SHAPES CALCULATOR") {
+                        $("#tdshapescal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "3-D SHAPES CALCULATOR"){
+                        document.getElementById('tdshapescal').click();
+                    }
+                    else if (inp.value.toUpperCase() == "3-D GEOMETRY") {
+                        $("#3dgeo").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "3-D GEOMETRY"){
+                        document.getElementById('3dgeo').click();
+                    }
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -310,7 +364,7 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Unit Converter" ,"Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Trigonometric Values", "Unit Converter" ,"3-D Geometry","3-D Shapes Calculator","Shapes Calculator","Curve Tracing","Coordinate Systems","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
                         
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
@@ -499,6 +553,7 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
+    }    
     else if(inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS"){
         document.getElementById('algebraic_formulascollapse').click(); 
     }
@@ -510,5 +565,59 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "LOCATION OF ROOTS") {
         $("#locroots").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PLOT GRAPH"){
+        document.getElementById('plotgraph').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PLOT GRAPH") {
+        $("#plotgraph").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PLOT ANGLE"){
+        document.getElementById('plotangle').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PLOT ANGLE") {
+        $("#plotangle").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "STRAIGHT LINE"){
+        document.getElementById('straightline').click(); 
+    }
+    else if (inp.value.toUpperCase() == "STRAIGHT LINE") {
+        $("#straightline").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PROPERTIES OF PARALLEL LINES"){
+        document.getElementById('parallel').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PROPERTIES OF PARALLEL LINES") {
+        $("#parallel").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "COORDINATE SYSTEMS"){
+        document.getElementById('coor').click(); 
+    }
+    else if (inp.value.toUpperCase() == "COORDINATE SYSTEMS") {
+        $("#coor").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CURVE TRACING"){
+        document.getElementById('curve').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CURVE TRACING") {
+        $("#curve").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SHAPES CALCULATOR"){
+        document.getElementById('shapescal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SHAPES CALCULATOR") {
+        $("#shapescal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "3-D SHAPES CALCULATOR"){
+        document.getElementById('tdshapescal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "3-D SHAPES CALCULATOR") {
+        $("#tdshapescal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "3-D GEOMETRY"){
+        document.getElementById('3dgeo').click(); 
+    }
+    else if (inp.value.toUpperCase() == "3-D GEOMETRY") {
+        $("#3dgeo").slideToggle(); 
     }
 }

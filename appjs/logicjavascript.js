@@ -2422,6 +2422,7 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+     
 function frustumsolve() {
     var radius1 = document.getElementById("inputfrustumradius1").value;
     var radius2 = document.getElementById("inputfrustumradius2").value;
@@ -2462,6 +2463,52 @@ function frustumsolve() {
         slantoutput.innerHTML = "";
     }
 }
+
+function pyramidsolve() {
+    var side = document.getElementById("inputpyramidside").value;
+    var height = document.getElementById("inputpyramidheight").value;   
+    var voloutput = document.getElementById("resultofvolpyramid");
+    var lsaoutput = document.getElementById("resultoflsapyramid");
+    var tsaoutput = document.getElementById("resultoftsapyramid");
+    var hsfoutput = document.getElementById("resultofhsfpyramid");   
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var hsftemp = "";
+    if ((side != "") && (height != "")) {
+        voltemp += "\\[ (" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + 3 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space \\]";
+        voltemp += "\\[" + eval(String((side * side * height ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        
+        lsatemp += "\\[ " + side + "\\sqrt" + "(" + "4" + "\\times" + height  + "\\times" + height + "+" + side + "\\times" + side + ")" + "\\]";
+        lsatemp += "\\[Lateral \\space area \\space of \\space Square \\space Pyramid \\space is \\space \\]";
+        lsatemp += "\\[" + eval(String((side * Math.sqrt((4 * height * height) + (side *side))))) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[ " + side + "\\sqrt" + "(" + "4" + "\\times" + height  + "\\times" + height + "+" + side + "\\times" + side + ")" + "+" + side + "\\times" + side + "\\]";
+        tsatemp += "\\[Total \\space Surface \\space area \\space of \\space Pyramid \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String((side * Math.sqrt((4 * height * height) + (side *side)) + (side*side) ))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        
+        hsftemp += "\\[" + "\\sqrt" + "(" + height + "\\times" + height + "+" + "(" + side + "\\div" + 2 + ")" + "^" + 2 + ")" + "\\]";
+        hsftemp += "\\[Height \\space of \\space  side \\space face \\space is \\space \\]";
+        hsftemp += "\\[" + eval(String(Math.sqrt((height * height) + ((side/2)*(side/2))))) + "\\]";
+        hsfoutput.innerHTML = hsftemp;
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(hsfoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        hsfoutput.innerHTML = "";      
+    }
+}
+
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
 
@@ -3972,6 +4019,32 @@ function prescon() {
   document.getElementById("presconou").innerHTML = `${a}`;
 }
 
+function powu(a) {
+    switch (a) {
+      case "1":
+        return 1;
+      case "2":
+        return (10**(-7));
+      case "3":
+        return 0.2930;
+      case "4":
+        return 1.356;
+      case "5":
+        return 745.7;
+      case "6":
+        return 4.186;
+    }
+  }
+
+function powercon() {
+    const f = powu(document.getElementById("powercon-1").value);
+    const t = powu(document.getElementById("powercon-2").value);
+    const i = parseInt(document.getElementById("powerconin").value);
+    const a = (i * f) / t;
+    var ans = Number(parseFloat(a).toFixed(3));
+    document.getElementById("powerconou").innerHTML = `${ans}`;
+}
+
 
 function polar()
 {
@@ -4103,19 +4176,6 @@ function emical() {
     renderMathInElement(document.getElementById("emio3"));
 }
 
-// simple and compound interest
-//-----------------------------------------------------
-function simple_interest() {
-  var p, t, r, si, ci;
-  p = document.getElementById("first").value;
-  t = document.getElementById("second").value;
-  r = document.getElementById("third").value;
-  si = parseInt((p * t * r) / 100);
-  amount = p * Math.pow(1 + r / 100, t);
-  ci = amount - p;
-  document.getElementById("num").innerHTML = "Simple interest = ₹" + si;
-  document.getElementById("num1").innerHTML = "Compound interest = ₹" + ci;
-}
 
 // cost and selling price
 //-----------------------------------------------------
@@ -5210,25 +5270,41 @@ function bitwiseCalc() {
     let secondOperand = parseInt(
         document.getElementById("bitwise-second-number").value
     );
-
-
-    if (numberSystem === "Binary") {
-        firstOperand = parseInt(firstOperand, 2);
-        secondOperand = parseInt(secondOperand, 2);
+        var x = 0;
+        var str = " invalid input  use only ";
+        if (numberSystem === "Binary") {
+       firstOperand = parseInt(firstOperand, 2);
+       secondOperand = parseInt(secondOperand, 2);
+           if(isNaN(firstOperand) ||isNaN(secondOperand))
+           {
+               x =1;
+               str+="Binary number";
+           }
     }
 
     if (numberSystem === "Octal") {
+        
         firstOperand = parseInt(firstOperand, 8);
         secondOperand = parseInt(secondOperand, 8);
-    }
+
+        if(isNaN(firstOperand) ||isNaN(secondOperand)){
+            x =1;
+        str+="Octal number";
+        }
+}
 
     if (numberSystem === "Hexadecimal") {
         firstOperand = parseInt(firstOperand, 16);
         secondOperand = parseInt(secondOperand, 16);
+
+        if(isNaN(firstOperand) ||isNaN(secondOperand)){
+            
+            str+="Hexadecimal number";
+        }
     }
 
     if (isNaN(firstOperand) || isNaN(secondOperand)) {
-        document.getElementById("bitwise-result").innerHTML = "NaN";
+        document.getElementById("bitwise-result").innerHTML = str;
     } else {
         switch (operation) {
             case "AND":
@@ -5246,7 +5322,6 @@ function bitwiseCalc() {
             case "Right Shift":
                   result = firstOperand >> secondOperand;
         }
-
         if (numberSystem === "Binary")
             document.getElementById("bitwise-result").innerHTML = parseInt(
                 result
