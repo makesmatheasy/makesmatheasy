@@ -3841,7 +3841,42 @@
             <p>\[h)\space \frac{xdx
                 \,+\,ydy}{\sqrt(x^2+y^2)}\,=\,\frac{1}{2}d(\frac{x^2+y^2}{\sqrt(x^2+y^2)})\]</p>
             <p>\[i)\space \frac{ye^{x}dx\,-\,e^{x}dy}{y^2}\,=\,d(\frac{e^x}{y})\]</p>
-
+            <br>
+            <h4>6. Linear Differential Equation with constant coeffiecients</h4>
+            <h5>Definition</h5>
+            <p>A diff. equation,</p>
+            <p>\[\frac{d^n}{dx^{n}}y+a_1\frac{d^{n-1}}{dx^{n-1}}y+......ay\space =\space Q\]</p>
+            <p>Where  a1 , a2 ,............., an	are constants<br>
+                While Q is a function of x.					
+            </p>
+            <p>is called Linear differential equation of nth order first degree.</p>
+            <p>Above equation can be written as -</p>
+            <p>\[D^n y+ a_1 D^{n-1}y + a_2 D^{n-2}y+....a_n y\space =\space Q\]</p>
+            <p>General Solution = Complementary Function(C.F.) + Particular Integral(P.I.)</p>
+            <br>
+            <h5>How to find C.F.?</h5>
+            <br>
+            <p>Put D = m and equate LHS to 0 to get values of m</p>
+            <p>Case-1 : If m is real and distinct</p>
+            <p>\[C.F\space =\space C_1 e^{m_1 x} + C_2 e^{m_2 x} + .... \]</p>
+            <p>Case-2 : If m is real and equal</p>
+            <p>\[C.F\space =\space (C_1 + C_2 x + C_3 x^2 + ...) e^{mx}\]</p>
+            <p>Case-3 : If m is imaginary and distinct</p>
+            <p>\[C.F\space =\space e^{ax} (C_1 cos(bx)\space +\space C_2 sin(bx))\]</p>
+            <br>
+            <h5>How to find P.I.?</h5>
+            <br>
+            <p>To find P.I. check the nature of Q</p>
+            <p>\[\frac{1}{(LHS \spaceremoving\space y)}*Q\]</p>
+            <p>1. If Q = e<sup>ax</sup></p>
+            <p>Put D = a to get the desired P.I.</p>
+            <p>2. If Q = sin(ax)/cos(ax)</p>
+            <p>Put D<sup>2</sup> = -a<sup>2</sup> and use identities of trigo to solve </p>
+            <p>3. If Q = x<sup>m</sup> </p>
+            <p>take out least degree term and use binomial expansion to solve</p>
+            <p>4. If Q = e^{ax}.V</p>
+            <p>Take out e<sup>ax</sup> by putting D to D+a and then solve</p>
+            
         </div>
         <div class="collapse" id="maxmin">
             <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
@@ -7202,6 +7237,8 @@
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></p>
+                <br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio4"></p>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></p>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></p>
             </div>
@@ -8265,7 +8302,60 @@
                     </div>
                 </div>
             </div>
+            <h4>Permutations</h4>
+            <p>An arrangement in sequence of elements of a set is called a permutation of the elements.</p>
+            <h6>Type I</h6>
+            <p>Let 0 ≤ r ≤ n.</p>
+            <p>The number of ways to have an ordered sequence of n distinct elements, taken 
+                r at a time is called as an r-permutation of n elements and is denoted by P(n,r) or <sup> n </sup> P <sub> r </sub>.</p>
 
+            <p>The first place in the sequence can be filled up in n-ways, the second place in (n - 1) ways
+                and proceeding in this manner the r <sup> th </sup> place can be filled up in (n - r + 1) ways.</p>
+
+            <p>Hence, P(n,r) or <sup> n </sup> P <sub> r </sub> = n (n - 1) (n - 2) ... (n - r + 1)</p>
+            <p> or</p>
+            <p>\[nP_r = \, \frac{n!}{(n-r)!}\]</p>
+            <h6>Type II</h6>
+            <p>A general formula for the number of ways to place r coloured balls in n number boxes, where m
+                <sub>1</sub> of these are of one colour , m<sub>2</sub> of them are of a second colour .... and 
+                m <sub>r</sub> of them are of a r<sup>th</sup> colour.</p>
+            <p>Here the placement of the r balls is not changed by rearranging the m <sub>1</sub> balls of the same
+                colour among the boxes in which they are placed or rearranging the m <sub>2</sub> balls of the same 
+                colour among the boxes in which they are placed, ...</p>
+            <p>On the other hand, if the r balls were distinctly coloured, any arrangement will yield a different placement.</p>
+            <p>It follows that each way to place the r not completely distinctly coloured balls corresponds to m <sub>1</sub> ! m <sub>2</sub> ! 
+                ... m <sub> r</sub> ! ways to place r distinctly coloured balls. Since there are P(n,r) ways to place r distinctly coloured balls 
+                in n numbered boxes, the total number of ways to place r coloured balls in n numbered boxes, where</p>
+            <p>m <sub> 1 </sub> of these balls are of one colour,</p>
+            <p>m <sub> 2 </sub> of these balls are of second colour,</p>
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p>m <sub> r </sub> of these balls are of a r <sup> th </sup> colour, is \[\frac{P(n,r)}{m_{1}! m_{2}! ... m_r!}\] </p>
+            <p>i.e.</p>
+            <p>\[Number\space of\space ways = \, \frac{nP_r}{m_{1}! m_{2}! ... m_r!}\]</p>
+            <h6>Type III</h6>
+            <p>The number of permutations of n elements, r at a time, when each element may be repeated once, twice, .... upto r times 
+                in any arrangement.</p>
+            <p>In this case, the first place may be filled up in n ways, the second place may also be filled up in n ways, and so on .... 
+                Proceeding in this manner, the number of ways in which the r places can be filled up is n <sup> r</sup>. </p>
+            <br><br>
+            <h4>Combinations</h4>
+            <p>Selection of a set of r elements from a set of n distinct elements is called a combination.</p>
+            <p>Let 0 ≤ r ≤ n.</p>
+            <p>Consider a problem of choosing 5 mangoes from 12 identical mangoes. We want to know the number of ways in which 5 mangoes
+                can be chosen out of 12 mangoes.</p>
+            <p>If all the mangoes are identical then according to the rule of permutation, the number of 
+                ways = \[\frac{P(12,5)}{5!}\]</p>
+            <p>In general the number of ways of choosing r mangoes out of n identical magoes is 
+                \[= \frac{n\space (n - 1)\space ...\space (n - r + 1)}{r!}\]</p>
+            <br><br>
+            <p>\[= \frac{n!}{r!\space (n - r)!}\]</p>
+            <p>The above quantity is denoted by C(n,r) or <sup> n </sup> C <sub> r </sub> [out of n choose r].</p>
+            <p>Hence \[nC_r = \frac{n!}{r!\space (n - r)!}\]</p>
+            <br><br>
+            <h4>Relation between <sup> n </sup> P <sub> r </sub> and <sup> n </sup> C <sub> r </sub></h4>
+            <p>\[\frac{nP_r}{r!} = nC_r\] or \[nP_r = r!.(nC_r) \]</p>
         </div>
 
         <!-- P&C end -->
@@ -8893,9 +8983,10 @@
         <!-- Start of bcd convertor -->
         <div>
             <div class="collapse" id="bcd">
+                <div class="main" style="padding-top: 40px; padding-left: 40px;">
                 <div class="col-6">
                     <div class="form-group">
-                        <h1>Decimal/BCD Code Converter</h1>
+                        <h2>Decimal/BCD Code Converter</h2>
                         <h5>From</h5>
                         <select id="bcd-select1" class="form__field"
                                 onchange="convertbcd()">
@@ -8927,12 +9018,14 @@
                     </div>
                     <label class="form__group" id="bcd-result">0</label>
                 </div>
+                </div>
                 <br>
                 <br>
                 <!--BCD Addition -->
+                <div class="main" style="padding-left: 50px;">
                 <div class="col-6">
                     <div class="form-group">
-                        <h1>BCD Code Addition </h1>
+                        <h2>BCD Code Addition </h2>
                          <input type="number" id="bcdadd-input1" value="0" class="form__field"
                                oninput="bcdadd()">
                          <h1>+</h1>
@@ -8943,6 +9036,7 @@
                 <div class="col-6">
                      <label class="form__group" id="bcdadd-result">0</label>
                 </div>
+            </div>
             </div>
         </div>
         <!-- End of bcd convertor -->
@@ -9581,7 +9675,7 @@
                             <td>
                                 <div style="color: var(--appimage);cursor: pointer;">
                                     <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
-                                       href="#">Pressure</a>
+                                       href="#"></a>
                                 </div>
                             </td>
                         </tr>
@@ -9589,7 +9683,7 @@
                             <td>
                                 <div style="color: var(--appimage);cursor: pointer;">
                                     <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
-                                       href="#">Time</a>
+                                       href="#"></a>
                                     <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
                                         /
                                     </div>
@@ -9613,7 +9707,10 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div>
+                                        <var id="divaz"></var>
+                                    </div>
+                                    <br>
                                     <center>
                                         <button type="button" class="btn btn-light" ; onclick="division()">
                                             DIVIDE

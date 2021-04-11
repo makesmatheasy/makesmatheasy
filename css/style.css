@@ -37,6 +37,13 @@ html {
   padding-bottom: 70%;
   padding-top: 1.5em;
 }
+
+.main{
+  width:50%;
+  float:left;
+}
+
+
 p {
   color: var(--appimage);
   font-size: 20px;
