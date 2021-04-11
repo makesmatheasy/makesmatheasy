@@ -346,11 +346,7 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-    // if (ar.length == 0) {
-    //     $("#favourite").removeClass("favouritecontainer");
-    // } else {
-    //     $("#favourite").addClass("favouritecontainer");
-    // }
+   
     $("#favourite").addClass("favouritecontainer");
     
     if (ar.length != 0) {
