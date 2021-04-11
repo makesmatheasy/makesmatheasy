@@ -231,6 +231,8 @@ Other Tech/Libraries
 
 [Makes Math Easy Documentation](https://github.com/sairish2001/Makes-Math-Easy-Documentation)
 
+Documentation Website :- [Link](https://sairish2001.github.io/makesmatheasy-documentation//)
+
 ### Future Scope
 
 - To add more useful calculators to solve Math problems along with steps

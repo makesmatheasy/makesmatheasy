@@ -259,6 +259,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#setformulalistbtn").click(function () {
+        openit("#setformula");
+        closenav();
+        clearall();
+    })
     $("#convdivbtn").click(function () {
         openit("#convdiv");
         closenav();
@@ -276,6 +281,11 @@ $(document).ready(function () {
     })
     $("#interestbtn").click(function () {
         openit('#interest');
+        closenav();
+        clearall();
+    })
+    $("#pricesbtn").click(function () {
+        openit('#prices');
         closenav();
         clearall();
     })

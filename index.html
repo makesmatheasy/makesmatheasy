@@ -319,14 +319,41 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
-                                        id="setopfav" src="images/unfavourite.png"
-
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+                                        id="setopfav" src="images/unfavourite.png"style="height:1.5625rem;"/></span>
+                        </td>                
+                    </tr>    
+                </table>    
+            <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="interestbtn"
+                                   style="font-size:15px;cursor: pointer;background:transparent;border:none;">Interest(Simple,Compound)</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
+                                        id="interestfav" src="images/unfavourite.png" style="height:25px;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <!--Cost and selling prices added-->
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="pricesbtn"
+                                   style="font-size:15px;cursor: pointer;background:transparent;border:none;">Cost and Selling Prices</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
+                                        id="pricesfav" src="images/unfavourite.png" style="height:25px;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
             <!--            operations on sets-->
+
 
             <!--          Sets,Relations and Functions -->
             <li>
@@ -345,6 +372,24 @@
                 </table>
             </li>
             <!--          Sets,Relations and Functions -->
+            <!--          Sets formula list-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="setformulalistbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sets Formulas List</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sets  Formulas List','#setformula','c','setlistfav')"><img
+                                        id="setlistfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!--          Sets formula list ends -->
+            
+
 
             <!--            matrix-->
             <li>
@@ -3512,7 +3557,30 @@
                 </div>
             </div>
         </div>
+          <!--Set Formulas List starts-->
 
+          <div class="collapse" id="setformula">
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                        <h4>Sets Formulas</h4>
+                        <p>\[1)\space If A\space and\space  B\space are\space overlapping\space sets\space n(AUB)\space =n(A) + n(B) - n(A⋂B)\]</p>
+                        <p>\[2)\space If A\space and\space  B\space are\space disjoint\space sets\space n(AUB)\space = n(A) + n(B)\]</p>
+                        <p>\[3)\space n(A)\space = n(AUB) + n(A⋂B) - n(B)\]</p>
+                        <p>\[4)\space n(A⋂B)\space = n(A) + n(B) - n(AUB)\]</p>
+                        <p>\[5)\space n(B)\space = n(AUB) + n(A⋂B) - n(A)\]</p>
+                        <p>\[6)\space n(U)\space = n(A) + n(B) - n(A⋂B) + n((AUB)^c)\]</p>
+                        <p>\[7)\space n((AUB)^c)\space = n(U) + n(A⋂B) - n(A) - n(B)\]</p>
+                        <p>\[8)\space n(AUB)\space = n(A-B) + n(B-A) + n(A⋂B)\]</p>
+                        <p>\[9)\space n(A-B)\space = n(AUB) - n(B) \]</p>
+                        <p>\[10)\space n(A-B)\space = n(A) - n(A⋂B) \]</p>
+                        <p>\[11)\space n(A^c)\space = n(U) - n(A) \]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!--Sets Formulas List ends-->
         <div class="collapse" id="log_values">
             <fieldset class="form-group">
                 <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log
@@ -3809,7 +3877,42 @@
             <p>\[h)\space \frac{xdx
                 \,+\,ydy}{\sqrt(x^2+y^2)}\,=\,\frac{1}{2}d(\frac{x^2+y^2}{\sqrt(x^2+y^2)})\]</p>
             <p>\[i)\space \frac{ye^{x}dx\,-\,e^{x}dy}{y^2}\,=\,d(\frac{e^x}{y})\]</p>
-
+            <br>
+            <h4>6. Linear Differential Equation with constant coeffiecients</h4>
+            <h5>Definition</h5>
+            <p>A diff. equation,</p>
+            <p>\[\frac{d^n}{dx^{n}}y+a_1\frac{d^{n-1}}{dx^{n-1}}y+......ay\space =\space Q\]</p>
+            <p>Where  a1 , a2 ,............., an	are constants<br>
+                While Q is a function of x.					
+            </p>
+            <p>is called Linear differential equation of nth order first degree.</p>
+            <p>Above equation can be written as -</p>
+            <p>\[D^n y+ a_1 D^{n-1}y + a_2 D^{n-2}y+....a_n y\space =\space Q\]</p>
+            <p>General Solution = Complementary Function(C.F.) + Particular Integral(P.I.)</p>
+            <br>
+            <h5>How to find C.F.?</h5>
+            <br>
+            <p>Put D = m and equate LHS to 0 to get values of m</p>
+            <p>Case-1 : If m is real and distinct</p>
+            <p>\[C.F\space =\space C_1 e^{m_1 x} + C_2 e^{m_2 x} + .... \]</p>
+            <p>Case-2 : If m is real and equal</p>
+            <p>\[C.F\space =\space (C_1 + C_2 x + C_3 x^2 + ...) e^{mx}\]</p>
+            <p>Case-3 : If m is imaginary and distinct</p>
+            <p>\[C.F\space =\space e^{ax} (C_1 cos(bx)\space +\space C_2 sin(bx))\]</p>
+            <br>
+            <h5>How to find P.I.?</h5>
+            <br>
+            <p>To find P.I. check the nature of Q</p>
+            <p>\[\frac{1}{(LHS \spaceremoving\space y)}*Q\]</p>
+            <p>1. If Q = e<sup>ax</sup></p>
+            <p>Put D = a to get the desired P.I.</p>
+            <p>2. If Q = sin(ax)/cos(ax)</p>
+            <p>Put D<sup>2</sup> = -a<sup>2</sup> and use identities of trigo to solve </p>
+            <p>3. If Q = x<sup>m</sup> </p>
+            <p>take out least degree term and use binomial expansion to solve</p>
+            <p>4. If Q = e^{ax}.V</p>
+            <p>Take out e<sup>ax</sup> by putting D to D+a and then solve</p>
+            
         </div>
         <div class="collapse" id="maxmin">
             <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
@@ -4333,39 +4436,6 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comp1result"></p>
             </div>
-            <h1>Exponential form of complex number</h1>
-            <div class="form-group" style="display:inline-block">
-                <label>Enter the real part : &nbsp; &nbsp; </label>
-                <input type="number" id="cpreale" class="form__field" placeholder="Real"
-                       style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                <label> Enter the imaginary part : &nbsp; &nbsp;</label>
-                <input type="number" id="cpimge" class="form__field" placeholder="Imag"
-                    style="width:3rem;display:inline;">
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="expoxn()">
-                    Find
-                </button>
-            </div>
-            <span  class="comp1resulte" style="color: white;">r</span>>
-            <div class="form-group text-center" style="color: white;display: inline-block;"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                        <semantics>
-                            <mrow>
-                                <msup>
-                                    <mi>e</mi>
-                                    <mn class = "comp1resulte">i &#1012;</mn>
-                                </msup>
-                            </mrow>
-                        </semantics>
-                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
-                            style="height: 0.947438em; vertical-align: -0.08333em;"></span><span class="mord"><span
-                                class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span
-                                        class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class=""
-                                                style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut"
-                                                    style="height: 2.7em;"></span><span
-                                                    class="sizing reset-size6 size3 mtight"><span
-                                                        class="mord mtight comp1resulte" >i &#1012;</span></span></span></span></span></span></span></span></span></span>
-            </div>
             <h1>Find Euler Representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp; </label>
@@ -4609,21 +4679,70 @@
             <img src="https://www.probabilitycourse.com/images/chapter1/intersection3_b.png"
                  style="margin-left: 300px; height: 200px;" alt="">
             <br><br>
-            <h5>3. Complement</h5>
+            <h5>3. Disjoint</h5>
+            <p>Set A and set B are called disjoint sets if no element is common to A and B. 
+                i.e. A and B are disjoint sets then</p>
+            <p>\(A\cap B = ∅\)</p>
+            <p>For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
+                A\cap B\cap C = ∅\]</p>
+            <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
+                 style="margin-left: 300px; height: 200px;" alt="">
+            <br><br>
+            <h5>4. Complement</h5>
             <p>The complement of a set A, denoted by A<sup>c</sup> is elements in Universal
                 Set which are not in A</p>
             <br>
             <img src="https://www.probabilitycourse.com/images/chapter1/complement_b.png"
                  style="margin-left: 300px; height: 200px;" alt="">
             <br><br>
-            <h5>4. Difference</h5>
+            <h5>5. Difference</h5>
             <p>The set A−B consists of elements that are in A but not in B. For example
                 if</p>
             <p>\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
                 A-B = \{1,2\}\]
             </p>
             <img src="https://www.probabilitycourse.com/images/chapter1/difference_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 300px; height: 200px;" alt=""><br><br>
+            <h2 style="text-align: center;">Some conclusions from set operations</h2>
+            <p>Let S be the universal set, and A,B,C,D are subsets of S. Then,</p>
+            <ol>
+                <li style="color: white; font-size: 20px;">A ∪ ∅ = A <p>Hence ∅ i.e. empty set is identity set for 'union operation'. </p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ S = A <p>S i.e. universal set is identity set for 'intersection operation'. </p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∪ S = S <p>A ⊂ S and A ∪ S = S</p> <p>⇒ if B ⊂ A then A ∪ B  = A i.e. union of super set and subset is super set.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ ∅ = ∅ <p>∅ ⊂ A and A ∩ ∅ = ∅</p> <p>⇒ if B ⊂ A then A ∩ B  = B i.e. intersection of super set and subset is subset.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">If B ⊂ A, then A ∩ B  = B and A ∪ B  = A</li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ⊂ A ∪ B also B ⊂ A ∪ B</li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ B ⊂ A also A ∩ B ⊂ B</li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ B ⊂ A ⊂ A ∪ B and A ∩ B ⊂ B ⊂ A ∪ B i.e, A and B sets. A ∩ B is the smallest set and A ∪ B is largest set.
+                    <p>A contains A ∩ B and A is contained in A ∪ B.</p>
+                    <p>Similarly B contains A ∩ B and B is contained in A ∪ B.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">As A ∩ B ⊂ A<p>⇒ (A ∩ B) ∪ A = A [super set]</p><p>and (A ∩ B) ∩ A = (A ∩ B) [subset]</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">As A ⊂ A ∪ B<p>⇒ A ∩ (A ∪ B) = A [subset]</p><p>and A ∪ (A ∪ B) = (A ∪ B) [super set]</p> </li>
+                <br>
+                <li style="color: white; font-size: 20px;">(A - B) ∪ (A ∩ B) ∪ (B - A) = A ∪ B and (A - B), (A ∩ B), (B - A) are pairwise disjoint. i.e. 
+                    <p>(A - B) ∩ (A ∩ B) = ∅ </p><p>(A - B) ∩ (B - A) = ∅ </p><p>(A ∩ B) ∩ (B - A) = ∅ </p><p>Hence (A - B), (A ∩ B) and (B - A) are partitions of A ∪ B.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∪ A' = S <p>i.e. Union of A and its complement gives identity set for intersection operation.</p></li>
+                <br>
+                <li style="color: white; font-size: 20px;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
+                <br>
+            </ol>
+            <h4>Remark:</h4>
+            <ul>
+                <li style="color: white; font-size: 20px;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
+                    i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
+                <br>
+                <li style="color: white; font-size: 20px;">Multiplication of element and its complement gives additive identity element.</li>
+            </ul>
         </div>
 
         <div class="collapse" id="srf">
@@ -7194,6 +7313,8 @@
                 <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></p>
+                <br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio4"></p>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio2"></p>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></p>
             </div>
@@ -7492,38 +7613,40 @@
             </div>
         </div>
 
-        <div class="collapse" id="about">
-            <table class="table">
+        <div class="collapse card rounded" id="about">
+            <table class="table card-header">
                 <tr>
                     <td>
                         <h5>MakesMathEasy solves various math problems along with steps. We
                             provide speedy calculations,
                             within a few ms. We work together, design, create and produce work
                             that we are proud of. We
-                            believe that <span
-                                    style="color: white;">"MATH IS FUN"!</span><br>
+                            believe that <strong>"MATH IS FUN"!</strong><br>
 
                         </h5>
                     </td>
                 </tr>
             </table>
-            <h5><span style="color: white;">The IDEA:</span> We offer mathematics in an
-                enjoyable and
-                easy-to-learn manner.</h5><br>
-
-            <h5><span style="color: white;">Our commitment:</span> The site will continue to
-                grow
-                over time. Keep coming back to find out what has been added.</h5><br>
-
-            <h5><span style="color: white;">Feedback:</span> If you like the site or would like
-                to make comments or
-                even contributions then <a href="contact.html">contact us.</a></h5><br>
-
-            <h5><span style="color: white;">Developed By:</span> Rajinderpal Singh <span
-                    class="badge badge-light"
-                    style="cursor:pointer;"
-                    onclick="window.open('https://sairish2001.github.io')">Sairish</span>
-            </h5>
+            <div class="card-body ">
+                <h5 class="class-text"><strong>The IDEA:</strong> We offer mathematics in an
+                    enjoyable and
+                    easy-to-learn manner.</h5><br>
+    
+                <h5><strong>Our commitment:</strong> The site will continue to
+                    grow
+                    over time. Keep coming back to find out what has been added.</h5><br>
+    
+                <h5><strong>Feedback:</strong> If you like the site or would like
+                    to make comments or
+                    even contributions then <a href="contact.html">contact us.</a></h5><br>
+    
+                <h5><strong>Developed By:</strong> Rajinderpal Singh <span
+                        class="badge badge-light"
+                        style="cursor:pointer;"
+                        onclick="window.open('https://sairish2001.github.io')">Sairish</span>
+                </h5>
+            </div>
+            
         </div>
 
         <div class="collapse" id="shapescal">
@@ -7608,11 +7731,6 @@
                     <td><a data-toggle="modal" data-target="#parallelogram"
                            style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#tetrahedron"
-                           style="text-decoration:none;"
-                           href="#">Tetrahedron</a></td>
                 </tr>
             </table>
         </div>
@@ -7722,12 +7840,24 @@
                     <td><a data-toggle="modal" data-target="#prism"
                            style="text-decoration:none;"
                            href="#">Prism</a></td>
-                </tr>
+        
                  
                 <tr>
                     <td><a data-toggle="modal" data-target="#torus"
                            style="text-decoration:none;"
                            href="#">Torus</a></td>
+                </tr>
+
+
+                <tr>
+                    <td><a data-toggle="modal" data-target="#pyramid"
+                           style="text-decoration:none;"
+                           href="#">Square Pyramid</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tetrahedron"
+                           style="text-decoration:none;"
+                           href="#">Tetrahedron</a></td>
                 </tr>
 
             </table>
@@ -7822,6 +7952,23 @@
                 <tr>
                     <td>
                         <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
+                               href="#">Pressure</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#energycon"
+                               style="text-decoration:none;"
+                               href="#">Energy</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
                             <a data-toggle="modal" data-target="#timecon"
                                style="text-decoration:none;"
                                href="#">Time</a>
@@ -7852,6 +7999,15 @@
                             <a data-toggle="modal" data-target="#datacon"
                                style="text-decoration:none;"
                                href="#">Data</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#powercon"
+                               style="text-decoration:none;"
+                               href="#">Power</a>
                         </div>
                     </td>
                 </tr>
@@ -8247,7 +8403,60 @@
                     </div>
                 </div>
             </div>
+            <h4>Permutations</h4>
+            <p>An arrangement in sequence of elements of a set is called a permutation of the elements.</p>
+            <h6>Type I</h6>
+            <p>Let 0 ≤ r ≤ n.</p>
+            <p>The number of ways to have an ordered sequence of n distinct elements, taken 
+                r at a time is called as an r-permutation of n elements and is denoted by P(n,r) or <sup> n </sup> P <sub> r </sub>.</p>
 
+            <p>The first place in the sequence can be filled up in n-ways, the second place in (n - 1) ways
+                and proceeding in this manner the r <sup> th </sup> place can be filled up in (n - r + 1) ways.</p>
+
+            <p>Hence, P(n,r) or <sup> n </sup> P <sub> r </sub> = n (n - 1) (n - 2) ... (n - r + 1)</p>
+            <p> or</p>
+            <p>\[nP_r = \, \frac{n!}{(n-r)!}\]</p>
+            <h6>Type II</h6>
+            <p>A general formula for the number of ways to place r coloured balls in n number boxes, where m
+                <sub>1</sub> of these are of one colour , m<sub>2</sub> of them are of a second colour .... and 
+                m <sub>r</sub> of them are of a r<sup>th</sup> colour.</p>
+            <p>Here the placement of the r balls is not changed by rearranging the m <sub>1</sub> balls of the same
+                colour among the boxes in which they are placed or rearranging the m <sub>2</sub> balls of the same 
+                colour among the boxes in which they are placed, ...</p>
+            <p>On the other hand, if the r balls were distinctly coloured, any arrangement will yield a different placement.</p>
+            <p>It follows that each way to place the r not completely distinctly coloured balls corresponds to m <sub>1</sub> ! m <sub>2</sub> ! 
+                ... m <sub> r</sub> ! ways to place r distinctly coloured balls. Since there are P(n,r) ways to place r distinctly coloured balls 
+                in n numbered boxes, the total number of ways to place r coloured balls in n numbered boxes, where</p>
+            <p>m <sub> 1 </sub> of these balls are of one colour,</p>
+            <p>m <sub> 2 </sub> of these balls are of second colour,</p>
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p>m <sub> r </sub> of these balls are of a r <sup> th </sup> colour, is \[\frac{P(n,r)}{m_{1}! m_{2}! ... m_r!}\] </p>
+            <p>i.e.</p>
+            <p>\[Number\space of\space ways = \, \frac{nP_r}{m_{1}! m_{2}! ... m_r!}\]</p>
+            <h6>Type III</h6>
+            <p>The number of permutations of n elements, r at a time, when each element may be repeated once, twice, .... upto r times 
+                in any arrangement.</p>
+            <p>In this case, the first place may be filled up in n ways, the second place may also be filled up in n ways, and so on .... 
+                Proceeding in this manner, the number of ways in which the r places can be filled up is n <sup> r</sup>. </p>
+            <br><br>
+            <h4>Combinations</h4>
+            <p>Selection of a set of r elements from a set of n distinct elements is called a combination.</p>
+            <p>Let 0 ≤ r ≤ n.</p>
+            <p>Consider a problem of choosing 5 mangoes from 12 identical mangoes. We want to know the number of ways in which 5 mangoes
+                can be chosen out of 12 mangoes.</p>
+            <p>If all the mangoes are identical then according to the rule of permutation, the number of 
+                ways = \[\frac{P(12,5)}{5!}\]</p>
+            <p>In general the number of ways of choosing r mangoes out of n identical magoes is 
+                \[= \frac{n\space (n - 1)\space ...\space (n - r + 1)}{r!}\]</p>
+            <br><br>
+            <p>\[= \frac{n!}{r!\space (n - r)!}\]</p>
+            <p>The above quantity is denoted by C(n,r) or <sup> n </sup> C <sub> r </sub> [out of n choose r].</p>
+            <p>Hence \[nC_r = \frac{n!}{r!\space (n - r)!}\]</p>
+            <br><br>
+            <h4>Relation between <sup> n </sup> P <sub> r </sub> and <sup> n </sup> C <sub> r </sub></h4>
+            <p>\[\frac{nP_r}{r!} = nC_r\] or \[nP_r = r!.(nC_r) \]</p>
         </div>
 
         <!-- P&C end -->
@@ -8295,66 +8504,119 @@
             </div>
             <!--  Primarity test and prime till n cal end -->
         </div>
-        <center>
+        
         <div class="collapse" id="bool">
-            <h2 style="font-size:60px;">Boolean Algebra</h2>
-            <br>
-            <h5 style="font-size:30px;">Laws of Boolean Algebra</h5>
-            <p style="font-size:30px;">1.) Annulment Law </p>
+    <h1 style="text-align: center; text-shadow: 1px 1px 2px red; ">Boolean Algebra</h1>
+    <!-- <u style="color: rgba(243, 118, 218, 0.8); padding: 1px; "> -->
+    <br>
+    <h4 style="text-align: center; text-shadow: 1px 1px 2px red; ">Laws of Boolean
+        Algebra</h4> <br>
+    <!-- font-family: KaTeX_Math; -->
 
-                <p>\[ A \space.\space 0 = 0\]</p>
-                <p>\[A + 1 = 1\]</p>
+    <div class="container" style="align-content: center; color: var(--appimage) !important; margin: 5px;">
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[1.\,Annulment \space\, Law\\\,(\,i\,)\,A \centerdot 0\,=\,0\\\,(\,ii\,)\,A\,+\,1\,=\,1\]
+                    </p>
+                </center>
 
-            <p style="font-size:30px;">2.) Identity Law  </p>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[2.\,Identity \space\, Law\\\,(\,i\,)\,A\,+\,0\,=\,A\\\,(\,ii\,)\,A \centerdot 1\,=\,A\]
+                    </p>
+                </center>
 
-                <p>\[A + 0 = A\]</p>
-                <p>\[A \space.\space 1 = A\]</p>
+            </div>
+            <div class="col-md-4">
 
-            <p style="font-size:30px;">3.) Idempotent Law </p>
+                <center>
+                    <p>
+                        \[3.\,Idempotent \space\, Law\\\,(\,i\,)\,A\,+\,A\,=\,A\\\,(\,ii\,)\,A \centerdot A\,=\,A\]
+                    </p>
+                </center>
 
-                <p>\[A + A = A\]</p>
-                <p>\[A \space.\space A = A\]</p>
-
-            <p style="font-size:30px;">4.) Complement Law </p>
-
-                <p>\[A \space.\space A^{'} = 0\]</p>
-                <p>\[A + A^{'} = 1\]</p>
-
-            <p style="font-size:30px;">5.) Demorgan's Law </p>
-
-                <p>\[(A+B)^{'} = A^{'}
-                    + B^{'}\]</p>
-                <p>\[(A . B)^{'} =
-                    A^{'} + B^{'}\]</p>
-
-            <p style="font-size:30px;">6.) Distributive Law </p>
-
-                <p>\[A(B+C) = A . B + A .C\]</p>
-                <p>\[A + BC = (A+B) . (A+C)\]</p>
-
-            <p style="font-size:30px;">7.) Absorption/ Redundancy Law </p>
-
-                <p>\[A + A\space .\space B = A\]</p>
-                <p>\[A(A+B) = A\]</p>
-
-            <p style="font-size:30px;">8.) Commutative Law</p>
-
-                <p>\[A + B = B + A\]</p>
-                <p>\[A\space .\space B = B\space .\space A\]</p>
-
-            <p style="font-size:30px;">9.) Associative Law</p>
-
-                <p>\[A + (B + C) = (A + B) + C\]</p>
-                <p>\[A\space .\space (B \space .\space C) = (A \space.\space B)\space.\space C\]</p>
-
-            <p style="font-size:30px;">10.) Double Negation Law</p>
-
-                <p>\[A^{''} = A\]</p>
-                <p>\[B^{''}\, = \, B\]</p>
-
+            </div>
         </div>
-      </center>
-        <!--    start of calculator -->
+        <br>
+
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[4.\,Complement \space\, Law\\\,(\,i\,)\,A \centerdot
+                        A\,'\,=\,0\\\,(\,ii\,)\,A\,+\,A\,'\,=1\]
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+
+                        \[5.\,Demorgan's \space\,Law\\ \,(\,i\,)\,
+                        ( \,A\,+\,B\,) \,'\,=\,A\,' \centerdot B\,'\\\,(\,ii\,)\, (\,A \centerdot B \,)\,'\,= \,
+                        A\,'\,+\,B\,'\]
+
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[6.\,Distributive \space \, Law \\\,(\,i\,)\, A \, (\,B\,+\,C\,)\, = \,A \centerdot B
+                        \,+\,A \centerdot C
+                        \\\,(\,ii\,)\,A \,+ \,B \centerdot C\,=\,(\,A\,+\,B\,)\centerdot (\,A\,+\,C\,)\]
+                    </p>
+                </center>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[7.\,Absorption \,/\,Redundancy \space \, Law\\\,(\,i\,)\, A \, +\,A \centerdot B\,=
+                        \,A\\\,(\,ii\,)\,A\,(\,A\,+\,B\,)\, = \,A\]
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[8.\,Commutative \space Law \\\,(\,i\,)\, A \,+\,B\,=\,B\,+\,A\\\,(\,ii\,)\, A \centerdot
+                        B\,=\,B \centerdot A\]
+                    </p>
+                </center>
+
+
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[9.\,Associative \space Law \\ \,(\,i\,)\,A \,+\,(\,B\,+\,C\,)\,=\,(\,A\,+\,B\,)\,+\,C
+                        \\\,(\,ii\,)\, A \centerdot (\, B \centerdot C \,)\, = \, (\, A \centerdot B \,) \centerdot
+                        C\]
+                    </p>
+                </center>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <p>
+                        \[10.\,Double \space Negation \space Law \\\,(\,i\,)\, A \,'\,'\, = \, A \\\,(\,ii\,)\,
+                        B\,'\,'\, = \, B\]
+                    </p>
+                </center>
+
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Start of Decimal / Binary -->
 
@@ -8822,9 +9084,10 @@
         <!-- Start of bcd convertor -->
         <div>
             <div class="collapse" id="bcd">
+                <div class="main" style="padding-top: 40px; padding-left: 40px;">
                 <div class="col-6">
                     <div class="form-group">
-                        <h1>Decimal/BCD Code Converter</h1>
+                        <h2>Decimal/BCD Code Converter</h2>
                         <h5>From</h5>
                         <select id="bcd-select1" class="form__field"
                                 onchange="convertbcd()">
@@ -8856,12 +9119,14 @@
                     </div>
                     <label class="form__group" id="bcd-result">0</label>
                 </div>
+                </div>
                 <br>
                 <br>
                 <!--BCD Addition -->
+                <div class="main" style="padding-left: 50px;">
                 <div class="col-6">
                     <div class="form-group">
-                        <h1>BCD Code Addition </h1>
+                        <h2>BCD Code Addition </h2>
                          <input type="number" id="bcdadd-input1" value="0" class="form__field"
                                oninput="bcdadd()">
                          <h1>+</h1>
@@ -8872,6 +9137,7 @@
                 <div class="col-6">
                      <label class="form__group" id="bcdadd-result">0</label>
                 </div>
+            </div>
             </div>
         </div>
         <!-- End of bcd convertor -->
@@ -9510,7 +9776,7 @@
                             <td>
                                 <div style="color: var(--appimage);cursor: pointer;">
                                     <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
-                                       href="#">Pressure</a>
+                                       href="#"></a>
                                 </div>
                             </td>
                         </tr>
@@ -9518,7 +9784,7 @@
                             <td>
                                 <div style="color: var(--appimage);cursor: pointer;">
                                     <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
-                                       href="#">Time</a>
+                                       href="#"></a>
                                     <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
                                         /
                                     </div>
@@ -9542,7 +9808,10 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div>
+                                        <var id="divaz"></var>
+                                    </div>
+                                    <br>
                                     <center>
                                         <button type="button" class="btn btn-light" ; onclick="division()">
                                             DIVIDE
@@ -9962,8 +10231,77 @@
                     </button>
                 </div>
             </div>
+
+             
+
+            <!--Cost and selling prices-->
+           <div class="collapse" id="prices">
+              <h1>Cost and Selling Prices</h1>
+                <p>Cost Price:
+
+                    The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
+                    
+                    Selling Price:
+                    
+                    The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
+                    
+                    Profit or Gain:
+                    
+                    If S.P. is greater than C.P., the seller is said to have a profit or gain.
+                    
+                    Loss:
+                    
+                    If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
+                <h1>
+                    IMPORTANT FORMULAE
+                </h1>
+                <p>
+                    1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
+                    2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
+                    3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
+                    4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                                 
+                </p>
+        
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                            <input type="number" value="0" class="form__field" id="p1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Cost Price</h5>
+                            <input type="number" value="0" class="form__field" id="cp2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Selling Price</h5>
+                            <input type="number" value="0" class="form__field" id="sp2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="computeCP()">
+                        Find CP
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="computeSP()">
+                        Find SP
+                    </button>
+                </div>
+
+                <div style="color:white; font-size: large;" id="cp"></div>
+                <div id="sp" style="color: white; font-size: large"></div>
+            </div>
         </div>
     </div>
+
 
     <!-------------------------------------------------------->
 
@@ -10710,66 +11048,7 @@
         </div>
 
 
-        <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Regular Tetrahedron</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Volume</h5>
-                                    <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Height</h5>
-                                    <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a
-                                        \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Circumradius</h5>
-                                    <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/tetrahedron.png" class="img-fluid">
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Inradius</h5>
-                                    <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Side (a)"
-                                   id="inputtside" oninput="solvetetra()">
-                            <p class="stopwrap" id="resultofvolt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofheightt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofinradt"
-                               style="font-family:mathfont;"></p>
-
-                        </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="modal fade" id="ellipse" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -11349,6 +11628,129 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Square Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{a^2 h}{3} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral area</h5>
+                                    <p class="text-center">\[F= a\sqrt{4h^2+a^2} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S \space = \space F +a^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/pyramid.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height of side face</h5>
+                                    <p class="text-center">\[b= \sqrt{h^2 + (\frac{a}{2})^2 }\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length(a)" id="inputpyramidside"
+                                   oninput="pyramidsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height(h)" id="inputpyramidheight"
+                                   oninput="pyramidsolve();">
+                            <p class="stopwrap" id="resultofvolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhsfpyramid"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Regular Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a
+                                        \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumradius</h5>
+                                    <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tetrahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Inradius</h5>
+                                    <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side (a)"
+                                   id="inputtside" oninput="solvetetra()">
+                            <p class="stopwrap" id="resultofvolt"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofheightt"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcircumt"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofinradt"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="cuboid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -11915,6 +12317,84 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="energycon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Energy</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="energycon-1" class="form__field" onchange="energycon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">joule[J]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Kilojoule[kJ]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">watt-hour[W-h]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">kilowatt-hour[kW-h]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">calorie
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">horsepower(metric)hour
+                                </option>
+                            </select>
+                            <input type="number" id="energyconin" class="form__field"
+                                   placeholder="Enter Side"
+                                   value="0" ; oninput="energycon();">
+
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="energycon-2" class="form__field" onchange="energycon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">joule[J]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Kilojoule[kJ]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">watt-hour[W-h]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">kilowatt-hour[kW-h]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">calorie
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">horsepower(metric)hour
+                                
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="energyconou">0</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="timecon" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12325,6 +12805,86 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="powercon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Power</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="col-6">
+                        <label for="from">
+                            <h5 class="text-center">From</h5>
+                        </label>
+                        <select id="powercon-1" class="form__field" onchange="powercon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">Watt
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">erg/sec
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">BTU/hr
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">foot-pound/sec
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">horsepower
+                            </option>
+                            <option value="6" class="form_field"
+                                    style="background-color:var(--appblack);">calorie/sec
+                            </option>
+                        </select>
+                        <input type="number" id="powerconin" class="form__field"
+                               placeholder="Enter Side" value="0" ;
+                               oninput="powercon();">
+
+                        <label for="To">
+                            <h5 class="text-center">To</h5>
+                        </label>
+                        <select id="powercon-2" class="form__field" onchange="powercon()">
+                            <option value="1" class="form_field"
+                                    style="background-color:var(--appblack);">Watt
+                            </option>
+                            <option value="2" class="form_field"
+                                    style="background-color:var(--appblack);">erg/sec
+                            </option>
+                            <option value="3" class="form_field"
+                                    style="background-color:var(--appblack);">BTU/hr
+                            </option>
+                            <option value="4" class="form_field"
+                                    style="background-color:var(--appblack);">foot-pound/sec
+                            </option>
+                            <option value="5" class="form_field"
+                                    style="background-color:var(--appblack);">horsepower
+                            </option>
+                            <option value="6" class="form_field"
+                                    style="background-color:var(--appblack);">calorie/sec
+                            </option>
+                        </select>
+                        <label for="out">
+                            <p class="form__field" id="powerconou">0</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-------------------------------------------------------->
     <!--international number convert-->

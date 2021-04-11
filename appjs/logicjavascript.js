@@ -2450,6 +2450,51 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+function pyramidsolve() {
+    var side = document.getElementById("inputpyramidside").value;
+    var height = document.getElementById("inputpyramidheight").value;   
+    var voloutput = document.getElementById("resultofvolpyramid");
+    var lsaoutput = document.getElementById("resultoflsapyramid");
+    var tsaoutput = document.getElementById("resultoftsapyramid");
+    var hsfoutput = document.getElementById("resultofhsfpyramid");   
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var hsftemp = "";
+    if ((side != "") && (height != "")) {
+        voltemp += "\\[ (" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + 3 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space \\]";
+        voltemp += "\\[" + eval(String((side * side * height ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        
+        lsatemp += "\\[ " + side + "\\sqrt" + "(" + "4" + "\\times" + height  + "\\times" + height + "+" + side + "\\times" + side + ")" + "\\]";
+        lsatemp += "\\[Lateral \\space area \\space of \\space Square \\space Pyramid \\space is \\space \\]";
+        lsatemp += "\\[" + eval(String((side * Math.sqrt((4 * height * height) + (side *side))))) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[ " + side + "\\sqrt" + "(" + "4" + "\\times" + height  + "\\times" + height + "+" + side + "\\times" + side + ")" + "+" + side + "\\times" + side + "\\]";
+        tsatemp += "\\[Total \\space Surface \\space area \\space of \\space Pyramid \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String((side * Math.sqrt((4 * height * height) + (side *side)) + (side*side) ))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        
+        hsftemp += "\\[" + "\\sqrt" + "(" + height + "\\times" + height + "+" + "(" + side + "\\div" + 2 + ")" + "^" + 2 + ")" + "\\]";
+        hsftemp += "\\[Height \\space of \\space  side \\space face \\space is \\space \\]";
+        hsftemp += "\\[" + eval(String(Math.sqrt((height * height) + ((side/2)*(side/2))))) + "\\]";
+        hsfoutput.innerHTML = hsftemp;
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(hsfoutput);
+      
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        hsfoutput.innerHTML = "";
+        
+    }
+}
 
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
@@ -3913,6 +3958,32 @@ function tempcon() {
   const a = ((i - fs) / fd) * tm + ta;
   document.getElementById("tempconou").innerHTML = `${a}`;
 }
+
+function energyu(a) {
+    switch (a) {
+        case "1":
+            return 1;
+        case "2":
+            return 1000;
+        case "3":
+            return 3600;
+        case "4":
+            return 3600000;
+        case "5":
+            return 4186.8;
+        case "6":
+            return 2647795.5;
+        
+    }
+}
+
+function energycon() {
+    const f = energyu(document.getElementById("energycon-1").value);
+    const t = energyu(document.getElementById("energycon-2").value);
+    const i = parseInt(document.getElementById("energyconin").value);
+    const a = (i * f) / t;
+    document.getElementById("energyconou").innerHTML = `${a}`;
+}
 function presu(a) {
   switch (a) {
     case "1":
@@ -3935,6 +4006,32 @@ function prescon() {
   document.getElementById("presconou").innerHTML = `${a}`;
 }
 
+function powu(a) {
+    switch (a) {
+      case "1":
+        return 1;
+      case "2":
+        return (10**(-7));
+      case "3":
+        return 0.2930;
+      case "4":
+        return 1.356;
+      case "5":
+        return 745.7;
+      case "6":
+        return 4.186;
+    }
+  }
+
+function powercon() {
+    const f = powu(document.getElementById("powercon-1").value);
+    const t = powu(document.getElementById("powercon-2").value);
+    const i = parseInt(document.getElementById("powerconin").value);
+    const a = (i * f) / t;
+    var ans = Number(parseFloat(a).toFixed(3));
+    document.getElementById("powerconou").innerHTML = `${ans}`;
+}
+
 
 function polar()
 {
@@ -3950,28 +4047,6 @@ function polar()
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
   result.innerHTML = x;
-}
-
-function expoxn()
-{
-  var r = parseInt(document.getElementById("cpreale").value);
-  var i = parseInt(document.getElementById("cpimge").value);
-  var result= document.getElementsByClassName("comp1resulte");
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
-  var x ="iπ *" +y
-  result[1].innerHTML = x;
-  result[2].innerHTML = x;
-
-  var p = (Math.sqrt((r*r)+(i*i)));
-  var j =p;
-  if(!Number.isInteger(p))
-  {
-    j = (r*r)+(i*i);
-    j = "&#8730; "+ j ;
-
-  }
-  result[0].innerHTML =  j ;
-
 }
 
 function datau(a) {
@@ -4075,14 +4150,57 @@ function emical() {
     var p, t, r, emi;
     p = parseInt(document.getElementById("first1").value);
     r = parseFloat(document.getElementById("third3").value) / 100;
-    t = parseInt(document.getElementById("second2").value) * 12;
+    t1 = document.getElementById("second2").value;
+    t = parseFloat(t1) * 12;
     emi = ((p * r * Math.pow((1 + r), t)) / (Math.pow((1 + r), t) - 1));
     document.getElementById("emio1").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{P} \\times \\mathrm{r} \\times(1+\\mathrm{r})^{\\mathrm{t}}}{(1+\\mathrm{r})^{t}-1}\\]";
-    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t+"}-1}\\]";
+    document.getElementById("emio4").innerHTML = "\\[(\\mathrm{"+t1+"} \\space \\mathrm{Year} = \\mathrm{"+t.toFixed(3)+"} \\space \\mathrm{Months} = \\mathrm{t})\\]";
+    document.getElementById("emio2").innerHTML = "\\[\\mathrm{EMI}=\\frac{\\mathrm{"+p+"} \\times \\mathrm{"+r.toFixed(2)+"} \\times(1+\\mathrm{"+r.toFixed(2)+"})^{\\mathrm{"+t.toFixed(2)+"}}}{(1+\\mathrm{"+r.toFixed(2)+"})^{"+t.toFixed(2)+"}-1}\\]";
     document.getElementById("emio3").innerHTML = "\\[\\mathrm{EMI}= \\space" + emi.toFixed(2) + "\\space Per\\space month\\]";
     renderMathInElement(document.getElementById("emio1"));
+    renderMathInElement(document.getElementById("emio4"));
     renderMathInElement(document.getElementById("emio2"));
     renderMathInElement(document.getElementById("emio3"));
+}
+
+
+// cost and selling price
+//-----------------------------------------------------
+
+function computeCP() {
+
+    var profit = document.getElementById("p1").value;
+    var Cost = document.getElementById("cp2").value;
+    var sell = document.getElementById("sp2").value;
+    
+    let result1 = document.getElementById("cp");
+    
+    var CP = parseInt((100 * sell)(100 + profit));
+    
+    if(Cost>0 && sell==0){
+      result1.innerHTML = "Invalid values" ;
+    }
+    else{
+      result1.innerHTML = "Cost Price = ₹ " + CP;
+    }
+}
+
+function computeSP() {
+
+    var profit = document.getElementById("p1").value;
+    var Cost = document.getElementById("cp2").value;
+    var sell = document.getElementById("sp2").value;
+    
+    let result2 = document.getElementById("sp");
+    
+    var SP = parseInt(((100 - profit) * Cost) / 100) ;
+    
+    if(sell>0 && Cost==0){
+      result1.innerHTML = "Invalid values" ;
+    }
+    else{
+      result1.innerHTML = "Selling Price = ₹ " + SP;
+    }
 }
 
 
@@ -5139,25 +5257,41 @@ function bitwiseCalc() {
     let secondOperand = parseInt(
         document.getElementById("bitwise-second-number").value
     );
-
-
-    if (numberSystem === "Binary") {
-        firstOperand = parseInt(firstOperand, 2);
-        secondOperand = parseInt(secondOperand, 2);
+        var x = 0;
+        var str = " invalid input  use only ";
+        if (numberSystem === "Binary") {
+       firstOperand = parseInt(firstOperand, 2);
+       secondOperand = parseInt(secondOperand, 2);
+           if(isNaN(firstOperand) ||isNaN(secondOperand))
+           {
+               x =1;
+               str+="Binary number";
+           }
     }
 
     if (numberSystem === "Octal") {
+        
         firstOperand = parseInt(firstOperand, 8);
         secondOperand = parseInt(secondOperand, 8);
-    }
+
+        if(isNaN(firstOperand) ||isNaN(secondOperand)){
+            x =1;
+        str+="Octal number";
+        }
+}
 
     if (numberSystem === "Hexadecimal") {
         firstOperand = parseInt(firstOperand, 16);
         secondOperand = parseInt(secondOperand, 16);
+
+        if(isNaN(firstOperand) ||isNaN(secondOperand)){
+            
+            str+="Hexadecimal number";
+        }
     }
 
     if (isNaN(firstOperand) || isNaN(secondOperand)) {
-        document.getElementById("bitwise-result").innerHTML = "NaN";
+        document.getElementById("bitwise-result").innerHTML = str;
     } else {
         switch (operation) {
             case "AND":
@@ -5175,7 +5309,6 @@ function bitwiseCalc() {
             case "Right Shift":
                   result = firstOperand >> secondOperand;
         }
-
         if (numberSystem === "Binary")
             document.getElementById("bitwise-result").innerHTML = parseInt(
                 result
