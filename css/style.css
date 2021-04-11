@@ -361,6 +361,18 @@ h6 {
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   background-color: var(--appblack);
 }
+.card h5{
+    color: rgb(124, 151, 238);
+}
+.card{
+    background-color: transparent;
+    /* border: 2px solid #111113; */
+    box-shadow: 8px 8px 8px #222227;
+    /* border-bottom: 3px solid #3a24c4;; */
+}
+.card-header {
+    border-bottom: 3px solid #3a24c4;;
+}
 
 ul li .table {
   margin-bottom: 0;
@@ -492,7 +504,19 @@ span.sub img {
   background-color: white;
   font-weight: bolder;
 }
+.light-mode .card h5{
+    color: rgb(18, 33, 82);
+}
 
+.light-mode .card{
+    background-color: transparent;
+    border: 2px solid #dcd8f8;
+    box-shadow: 8px 8px 8px #ccc7eb;
+    /* border-bottom: 3px solid #3a24c4;; */
+}
+.light-mode .card-header {
+    border-bottom: 3px solid #3a24c4;;
+}
 /* radio butons for conic hyperbola*/
 #op1_hyper:after,
 #op2_hyper:after,
@@ -538,9 +562,4 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
-}
-
-
-.light-mode .card h5{
-    color: black;
 }
