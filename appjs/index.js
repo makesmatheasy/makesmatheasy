@@ -371,13 +371,6 @@ function checkfavourite() {
             document.getElementById(imgar[i]).src = favar[i];
         }
     }
-    // else{
-    //     var el = document.createElement("li");
-    //     el.textContent = "Nothing in Favourites⭐."+"\n"+" Click 🤍 to add to Favourites";
-    //     el.className = "nofavourites";
-    //     el.style.color = "white";
-    //     document.getElementById("favourite").appendChild(el);
-    // }
     
     else{
         var el = document.createElement("div");
