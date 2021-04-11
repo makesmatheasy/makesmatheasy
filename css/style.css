@@ -202,6 +202,20 @@ h6 {
   color: white !important;
   cursor: pointer;
 }
+.nofavourites {
+  border-radius: 18px;
+  border: 1px solid var(--apppink);
+  background-color: var(--appblack);
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  color: white !important;
+  cursor: pointer;
+}
+
+.nofavourites p{
+  font-size: 19px;
+}
 
 .favnew {
   height: fit-content;
@@ -240,6 +254,20 @@ h6 {
     color: white !important;
     cursor: pointer;
   }
+  .nofavourites {
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-top: 1px solid var(--apppink);
+    border-bottom: 1px solid var(--apppink);
+    border-left: 1px solid var(--apppink);
+    background-color: var(--appblack);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    color: white !important;
+    cursor: pointer;
+  }
+  
 }
 
 ::selection {
@@ -492,6 +520,10 @@ span.sub img {
   filter: invert(100%);
 }
 .light-mode .favourites {
+  color: black !important;
+}
+
+.light-mode .nofavourites {
   color: black !important;
 }
 .light-mode .favnew {
