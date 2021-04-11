@@ -238,7 +238,8 @@ function openit(id) {
         "#prism",
         "#anglecon",
 	    "#ip",
-	    "#prices"
+	    "#prices",
+        "#setformula"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
