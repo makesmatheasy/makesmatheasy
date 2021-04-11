@@ -331,7 +331,7 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
-                                        id="interestfav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                                        id="interestfav" src="images/unfavourite.png" style="height:25px;"></span>
                             </td>
                         </tr>
                     </table>
@@ -346,7 +346,7 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
-                                        id="pricefav" src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                                        id="pricefav" src="images/unfavourite.png" style="height:25px;"></span>
                             </td>
                         </tr>
                     </table>
@@ -8072,74 +8072,6 @@
         </div>
         <!--sum of nterms in A.P. ends-->
 
-        <!--Cost and selling prices-->
-        <div class="collapse" id="prices">
-            <h1>Cost and Selling Prices</h1>
-              <p>Cost Price:
-
-                  The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
-                  
-                  Selling Price:
-                  
-                  The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
-                  
-                  Profit or Gain:
-                  
-                  If S.P. is greater than C.P., the seller is said to have a profit or gain.
-                  
-                  Loss:
-                  
-                  If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
-              <h1>
-                  IMPORTANT FORMULAE
-              </h1>
-              <p>
-                  1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
-                  2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br>
-                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
-                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
-                               
-              </p>
-      
-              <div class="row">
-                  <div class="col-md-4">
-                      <div class="form-group">
-                          <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
-                          <input type="number" value="0" class="form__field" id="p1">
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-4">
-                      <div class="form-group">
-                          <h5>Enter Cost Price</h5>
-                          <input type="number" value="0" class="form__field" id="cp2">
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                      <div class="form-group">
-                          <h5>Enter Selling Price</h5>
-                          <input type="number" value="0" class="form__field" id="sp2">
-                      </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <button type="button" class="btn btn-light"
-                          onclick="computeCP()">
-                      Find CP
-                  </button>
-                  <button type="button" class="btn btn-light"
-                          onclick="computeSP()">
-                      Find SP
-                  </button>
-              </div>
-
-              <div style="color:white; font-size: large;" id="cp"></div>
-              <div id="sp" style="color: white; font-size: large"></div>
-        </div>
-        <!------------------------->
-
-
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
             <h2>Sum of N terms of a Geometric Progression</h2>
@@ -10198,12 +10130,79 @@
                     </button>
                 </div>
             </div>
-        </div>
-    </div>
 
              
 
-            
+            <!--Cost and selling prices-->
+           <div class="collapse" id="prices">
+              <h1>Cost and Selling Prices</h1>
+                <p>Cost Price:
+
+                    The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
+                    
+                    Selling Price:
+                    
+                    The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
+                    
+                    Profit or Gain:
+                    
+                    If S.P. is greater than C.P., the seller is said to have a profit or gain.
+                    
+                    Loss:
+                    
+                    If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
+                <h1>
+                    IMPORTANT FORMULAE
+                </h1>
+                <p>
+                    1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
+                    2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
+                    3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
+                    4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                                 
+                </p>
+        
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                            <input type="number" value="0" class="form__field" id="p1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Cost Price</h5>
+                            <input type="number" value="0" class="form__field" id="cp2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter Selling Price</h5>
+                            <input type="number" value="0" class="form__field" id="sp2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="computeCP()">
+                        Find CP
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="computeSP()">
+                        Find SP
+                    </button>
+                </div>
+
+                <div style="color:white; font-size: large;" id="cp"></div>
+                <div id="sp" style="color: white; font-size: large"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------------------------------------------->
 
     <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
