@@ -30,6 +30,9 @@ body {
 body img {
   filter: invert(100%);
 }
+#setopfav, #interestfav, #pricesfav {
+  filter: invert(0);
+}
 html {
   /* overflow-x: hidden; */
 }
