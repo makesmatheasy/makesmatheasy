@@ -179,6 +179,7 @@ Other Tech/Libraries
     - Hollow Sphere
     - Hemisphere
     - Prism
+    - Torus
   - Volume, CSA, TSA
   - Congruence and Similarity of Triangles
 

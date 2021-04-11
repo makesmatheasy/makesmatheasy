@@ -7264,7 +7264,7 @@
             <div class="form-group">
                 <p id="resultmulsol" style="display:flex;font-family:mathfont;;width:auto;"
                    class="stopwrap"
-                   align="right"></p>
+                    align ="right"></p>
             </div>
 
         </div>
@@ -7722,6 +7722,12 @@
                     <td><a data-toggle="modal" data-target="#prism"
                            style="text-decoration:none;"
                            href="#">Prism</a></td>
+                </tr>
+                 
+                <tr>
+                    <td><a data-toggle="modal" data-target="#torus"
+                           style="text-decoration:none;"
+                           href="#">Tour</a></td>
                 </tr>
 
             </table>
@@ -11402,6 +11408,62 @@
                 </div>
             </div>
         </div>
+        <!--new shape--> 
+        <div class="modal fade" id="torus" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Torus</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Torus</h5>
+                                    <p class="text-center">\[V=(\pi r^2)(2  \pi  R)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Torus</h5>
+                                    <p class="text-center">\[A=(2 \times \pi \times R)(2 \times \pi  \times r)\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/Torus.png" class="img-fluid">
+                                    </div>
+                                    
+                                <div class="dropdown-divider"></div>
+                                <br>
+                               
+                                <p>Fill All Two</p>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Major radius (cm)"
+                                       id="inputmajorradiustorus" oninput="torussolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Minor  radius (cm)"
+                                       id="inputminorradiustorus" oninput="torussolve()">
+                               
+                                <br>
+                                <p class="stopwrap" id="resultofvoltorus"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsatorus"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--3-D shapes end-->
     </div>
     <!-------------------------------------------------------->
