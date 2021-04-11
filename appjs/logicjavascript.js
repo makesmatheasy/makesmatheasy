@@ -2422,6 +2422,51 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+function pyramidsolve() {
+    var side = document.getElementById("inputpyramidside").value;
+    var height = document.getElementById("inputpyramidheight").value;   
+    var voloutput = document.getElementById("resultofvolpyramid");
+    var lsaoutput = document.getElementById("resultoflsapyramid");
+    var tsaoutput = document.getElementById("resultoftsapyramid");
+    var hsfoutput = document.getElementById("resultofhsfpyramid");   
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var hsftemp = "";
+    if ((side != "") && (height != "")) {
+        voltemp += "\\[ (" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + 3 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space \\]";
+        voltemp += "\\[" + eval(String((side * side * height ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        
+        lsatemp += "\\[ " + side + "\\sqrt" + "(" + "4" + "\\times" + height  + "\\times" + height + "+" + side + "\\times" + side + ")" + "\\]";
+        lsatemp += "\\[Lateral \\space area \\space of \\space Square \\space Pyramid \\space is \\space \\]";
+        lsatemp += "\\[" + eval(String((side * Math.sqrt((4 * height * height) + (side *side))))) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[ " + side + "\\sqrt" + "(" + "4" + "\\times" + height  + "\\times" + height + "+" + side + "\\times" + side + ")" + "+" + side + "\\times" + side + "\\]";
+        tsatemp += "\\[Total \\space Surface \\space area \\space of \\space Pyramid \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String((side * Math.sqrt((4 * height * height) + (side *side)) + (side*side) ))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        
+        hsftemp += "\\[" + "\\sqrt" + "(" + height + "\\times" + height + "+" + "(" + side + "\\div" + 2 + ")" + "^" + 2 + ")" + "\\]";
+        hsftemp += "\\[Height \\space of \\space  side \\space face \\space is \\space \\]";
+        hsftemp += "\\[" + eval(String(Math.sqrt((height * height) + ((side/2)*(side/2))))) + "\\]";
+        hsfoutput.innerHTML = hsftemp;
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(hsfoutput);
+      
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        hsfoutput.innerHTML = "";
+        
+    }
+}
 
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
