@@ -9774,94 +9774,77 @@
                             </div>
                         </div>
 
-                        <tr>
-                            <td>
-                                <div style="color: var(--appimage);cursor: pointer;">
-                                    <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
-                                       href="#"></a>
+                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;"> /
+                        </div>
+                        <div style="display: inline-block; margin-left: 10px;">
+                            <div class="row">
+                                <div class="cell borderBottom_1">
+
+                                    <input id="three_div" placeholder="Numerator" type="number"
+                                                       required=""
+                                                       style="width: 150px;">
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="color: var(--appimage);cursor: pointer;">
-                                    <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
-                                       href="#"></a>
-                                    <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
-                                        /
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell">
 
-
-                                    <div style="display: inline-block; margin-left: 10px;">
-                                        <div class="row">
-                                            <div class="cell borderBottom_1">
-
-                                                <input id="three_div" placeholder="Numerator" type="number"
+                                    <input id="four_div" placeholder="Denominator" type="number"
                                                        required=""
                                                        style="width: 150px;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="cell">
-
-                                                <input id="four_div" placeholder="Denominator" type="number"
-                                                       required=""
-                                                       style="width: 150px;">
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div>
-                                        <var id="divaz"></var>
-                                    </div>
-                                    <br>
-                                    <center>
-                                        <button type="button" class="btn btn-light" ; onclick="division()">
+                                </div>
+                            </div>
+                            <div>
+                                <var id="divaz"></var>
+                            </div>
+                            <br>
+                                <center>
+                                <button type="button" class="btn btn-light" ; onclick="division()">
                                             DIVIDE
-                                        </button>
-                                    </center>
+                                </button>
+                                </center>
+                            <br>
 
-                                    <br>
 
+                            <div style="display: flex; justify-content: center;">
 
-                                    <div style="display: flex; justify-content: center;">
-
-                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
                                              class="frac">
 
-                                            <div style="display:inline-block">
+                                    <div style="display:inline-block">
 
                                                 <div><var id="diva">a</var></div>
                                                 <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;
                                                 </div>
                                                 <div class="bottom"><var id="divb">b</var></div>
 
-                                            </div>
+                                    </div>
 
 
-                                            <div style="display: inline-block;">
+                                    <div style="display: inline-block;">
                                                 <div><var id="divc">c</var></div>
                                                 <div style="color: #ff299c;">&nbsp; -----</div>
                                                 <div class="bottom"><var id="divd">d</var></div>
 
-                                            </div>
+                                    </div>
 
-                                            <br>
+                                    <br>
 
-                                            <div style="display:inline-block; margin-top: 15px;">
+                                    <div style="display:inline-block; margin-top: 15px;">
 
                                                 <div><var id="diva1">a</var></div>
                                                 <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
                                                 <div class="bottom"><var id="divb1">b</var></div>
 
-                                            </div>
+                                    </div>
 
 
-                                            <div style="display: inline-block;">
+                                    <div style="display: inline-block;">
                                                 <div><var id="divc1">d</var></div>
                                                 <div style="color:#ff299c;">&nbsp; -----</div>
                                                 <div class="bottom"><var id="divd1">c</var></div>
 
-                                            </div>
+                                    </div>
 
 
                                             <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
