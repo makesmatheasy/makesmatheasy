@@ -198,6 +198,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#theobtn").click(function () {
+        openit("#theo");
+        closenav();
+        clearall();
+    })
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
@@ -344,6 +349,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#hyptrigonoidenbutton").click(function () {
+        openit("#hyptrigonoiden");
+        closenav();
+        clearall();
+    })
     $("#trigsolcollapsebtn").click(function () {
         openit("#trigsolcollapse");
         closenav();
@@ -458,13 +468,6 @@ $(document).ready(function () {
 
 	$("#onetwocom-calc-btn").click(function(){
         openit("#onetwocom-calc");
-        closenav();
-        clearall();
-    });
-
-
-    $("#ninetencom-calc-btn").click(function(){
-        openit("#ninetencom-calc");
         closenav();
         clearall();
     });

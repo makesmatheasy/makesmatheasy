@@ -319,7 +319,9 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
-                                        id="setopfav" src="images/unfavourite.png"style="height:1.5625rem;"/></span>
+
+                                        id="setopfav" src="images/unfavourite.png"style="height:1.5625rem;filter: none;"/></span>
+
                         </td>                
                     </tr>    
                 </table>    
@@ -332,7 +334,7 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
-                                        id="interestfav" src="images/unfavourite.png" style="height:25px;"></span>
+                                        id="interestfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
                             </td>
                         </tr>
                     </table>
@@ -347,8 +349,10 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
-                                        id="pricesfav" src="images/unfavourite.png" style="height:25px;"></span>
-                            </td>
+
+                                        id="pricesfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
+
+                         </td>
                         </tr>
                     </table>
                 </li>
@@ -990,6 +994,24 @@
                                 <span
                                         onclick="addtofavourite('Inverse Trigonometric Identities','#inversetrigonoiden','c','inversetrigoidenimgfav')"><img
                                         id="inversetrigoidenimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hyptrigonoidenbutton"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hyperbolic
+                                Trigonometric Identities
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hyperbolic Trigonometric Identities','#hyptrigonoiden','c','hyptrigoidenimgfav')"><img
+                                        id="hyptrigoidenimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2077,34 +2099,13 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="onetwocom-calc-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">1s and 2s
-                                Complement
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">(R-1)'s and R's Complement
                                 Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
                                         onclick="addtofavourite('1s and 2s Complement Calculator','#onetwocom-calc','c','onetwocom-calc-imgfav')"><img
                                         id="onetwocom-calc-imgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="ninetencom-calc-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">9s and
-                                10s Complement
-                                Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('9s and 10s Complement Calculator','#ninetencom-calc','c','ninetencom-calc-imgfav')"><img
-                                        id="ninetencom-calc-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2149,6 +2150,22 @@
                              <span
                                      onclick="addtofavourite('complexproperties','#complexproperties','c','comlexpropertiesfav')"><img
                                      id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="theobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">De-Moivre's Theorem and Cauchy-Reimaan Theorem</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('De-Moivre Theorem and Cauchy-Reimaan Theorem','#theo','c','theofav')"><img
+                                     id="theofav" src="images/unfavourite.png"
                                      style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2333,7 +2350,7 @@
 
     <div class="container">
         <!--    start home-->
-        <div id="homecollapse" style="z-index:11;position:relative;">
+        <div id="homecollapse" class=" d-flex align-items-center justify-content-center " style="z-index:11;position:relative;">
             <div class="form-group text-center">
                 <table style="margin-left: auto;margin-right: auto;">
                     <tr>
@@ -4372,6 +4389,23 @@
                 </div>
             </div>
         </div>
+        <div class="collapse" id="theo">
+            <h2>De Moivre's Theorem</h2>
+            <p>For any real number x, we have</p>
+            <p>\[(cos(x)+isin(x))^{n}\space =\space cos(nx)\space +\space isin(nx)\]</p>
+            <p>Remark: Result can be shown true when n is a negative integer and even
+                n is a rational number.</p>
+            <br>    
+            <h2>Cauchy-Reimaan Theorem</h2>
+            <br>
+            <h4>What are analytic functions?</h4>
+            <p>A function f(z) is said to be analytic in a region R of the complex plane if f(z) has a derivative at each point of R and if f(z) is single valued.</p>
+            <p>Let f(x,y) = u(x,y) + iv(x,y) and the function should be analytic</p>
+            <p>Then,</p>
+            <p>\[\frac{∂v}{∂x}\space =\space -\frac{∂u}{∂y}\]</p>
+            <p>If, z = re<sup>iθ</sup>, then Cauchy-Reimaan Theorem become- </p>
+            <p>\[\frac{1}{r}\frac{∂u}{∂θ}\space =\space -\frac{∂v}{∂r}\]</p>
+        </div>
         <!-- Complex Properties -->
         <div class="collapse" id="complexproperties">
             <h4>Properties of Complex Numbers:</h4>
@@ -5017,7 +5051,7 @@
 
 		       <div class="collapse" id="circlecollapse">
             <div class="stopwrap">
-                <table class="table table-bordered table-dark">
+                <table class="table table-bordered table-dark" >
                     <thead>
                     <tr>
                         <th scope="col">\[Equation\]</th>
@@ -5050,7 +5084,7 @@
                     </tbody>
                 </table>
                 <h2>Equations of Tangent of all Circles </h2>
-                <table class="table table-bordered table-dark">
+                <table class="table table-bordered table-dark" style="display:block;overflow-x:auto;">
                     <thead>
                     <tr>
                         <th scope="col">\[Equations\space of\]<br>\[Circle\]</th>
@@ -6281,9 +6315,35 @@
                 </div>
             </div>
         </div>
+        <div class="collapse" id="hyptrigonoiden">
+            <h2 style="text-align: center;">Hyperbolic Trigonometric Identities</h2>
+            <p>The hyperbolic functions are analogs of the circular function or the trigonometric functions. The hyperbolic function occurs in the solutions of linear differential equations, calculation of distance and angles in the hyperbolic geometry, Laplace’s equations in the cartesian coordinates. Generally, the hyperbolic function takes place in the real argument called the hyperbolic angle. The basic hyperbolic functions are:</p>
+            <br>
+            <ul>
+                <li style="color:white; font-size: 20px;">Hyperbolic Sine(sinh)</li>
+                <li style="color:white; font-size: 20px;">Hyperbolic Cosine(cosh)</li>
+                <li style="color:white; font-size: 20px;">Hyperbolic Tangent(tanh)</li>
+            </ul>
+            <p>From these three basic functions, the other functions such as hyperbolic cosecant (cosech), hyperbolic secant(sech) and hyperbolic cotangent (coth) functions are derived.</p>
+            <p>\[sinh(x)\space =\space \frac{e^{x}-e^{-x}}{2}\]</p>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-1.png" alt="">
+            <p>\[cosh(x)\space =\space \frac{e^{x}+e^{-x}}{2}\]</p>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-2.png" alt="">
+            <p>\[tanh(x)\space =\space \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}\]</p>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-3.png" alt="">
+            <h4>Properties of Hyperbolic Functions</h4>
+            <p>\[sinh(-x)\space =\space -sinh(x)\]</p>
+            <p>\[cosh(-x)\space =\space cosh(x)\]</p>
+            <p>\[sinh(2x)\space =\space 2sinh(x)cosh(x)\]</p>
+            <p>\[cosh(2x)\space =\space cosh^{2}x + sinh^{2}x\]</p>
+            <p>\[sinh(x)\space =\space -isinh(ix)\]</p>
+            <p>\[cosh(2x)\space –\space sinh(2x)\space =\space 1\]</p>
+            <p>\[tanh(2x)\space +\space sech(2x)\space =\space 1\]</p>
+            <p>\[coth(2x)\space –\space cosech(2x)\space =\space 1\]</p>
+        </div>
 
         <div class="collapse" id="inversetrigonoiden">
-            <h2>Inverse Trignometric Identities</h2>
+            <h2>Inverse Trigonometric Identities</h2>
             <br><br>
             <h4 style="text-align: center;">Negative Formulaes</h4>
             <p>\[ sin^{-1}(-x) = -sin^{-1}(x)\]</p>
@@ -7509,17 +7569,40 @@
             <h2 style="text-align: center;">Properties of Circles</h2>
             <ol>
                 <li style="color: white; font-size : 20px;">The circles are said to be congruent if they have equal radii</li>
+                <img style="margin-left: 300px;"src="images/pr1.jpg" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The diameter of a circle is the longest chord of a circle</li>
-                <li style="color: white; font-size : 20px;">Equal chords and equal circles have the equal circumference</li>
+                <img style="margin-left: 300px;"src="images/pr2.png" alt="">
+                <br><br>
+                <li style="color: white; font-size : 20px;">Equal chords subtend equal angles at the circumference</li>
+                <img style="margin-left: 300px;"src="images/pr3.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The radius drawn perpendicular to the chord bisects the chord</li>
+                <img style="margin-left: 300px;"src="images/pr4.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">Circles having different radius are similar</li>
+                <img style="margin-left: 300px;"src="images/pr5.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">A circle can circumscribe a rectangle, trapezium, triangle, square, kite</li>
+                <img style="margin-left: 300px;"src="images/pr6.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">A circle can be inscribed inside a square, triangle and kite</li>
+                <img style="margin-left: 300px;"src="images/pr7.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The chords that are equidistant from the centre are equal in length</li>
+                <img style="margin-left: 300px;"src="images/pr8.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The distance from the centre of the circle to the longest chord (diameter) is zero</li>
+                <img style="margin-left: 300px;"src="images/pr9.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The perpendicular distance from the centre of the circle decreases when the length of the chord increases</li>
+                <img style="margin-left: 300px;"src="images/pr10.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">If the tangents are drawn at the end of the diameter, they are parallel to each other</li>
+                <img style="margin-left: 300px;"src="images/pr11.PNG" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle</li>
+                <img style="margin-left: 300px;"src="images/pr12.png" alt="">
             </ol>
         </div>
         <div class="collapse" id="curve">
@@ -7850,9 +7933,21 @@
 
 
                 <tr>
+
+                    <td><a data-toggle="modal" data-target="#frustum"
+                           style="text-decoration:none;"
+                           href="#">Conical Frustum</a>
+                   </td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#pyramid"
                            style="text-decoration:none;"
                            href="#">Square Pyramid</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tripyramid"
+                           style="text-decoration:none;"
+                           href="#">Triangular Pyramid</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#tetrahedron"
@@ -8172,6 +8267,73 @@
             <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p>
         </div>
         <!--sum of nterms in A.P. ends-->
+
+        <!--Cost and selling prices-->
+        <div class="collapse" id="prices">
+            <h1>Cost and Selling Prices</h1>
+              <p>Cost Price:
+
+                  The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
+                  
+                  Selling Price:
+                  
+                  The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
+                  
+                  Profit or Gain:
+                  
+                  If S.P. is greater than C.P., the seller is said to have a profit or gain.
+                  
+                  Loss:
+                  
+                  If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
+              <h1>
+                  IMPORTANT FORMULAE
+              </h1>
+              <p>
+                  1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
+                  2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
+                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
+                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                               
+              </p>
+      
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                          <input type="number" value="0" class="form__field" id="p1">
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <h5>Enter Cost Price</h5>
+                          <input type="number" value="0" class="form__field" id="cp2">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <h5>Enter Selling Price</h5>
+                          <input type="number" value="0" class="form__field" id="sp2">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <button type="button" class="btn btn-light"
+                          onclick="computeCP()">
+                      Find CP
+                  </button>
+                  <button type="button" class="btn btn-light"
+                          onclick="computeSP()">
+                      Find SP
+                  </button>
+              </div>
+
+              <div style="color:white; font-size: large;" id="cp"></div>
+              <div id="sp" style="color: white; font-size: large"></div>
+          </div>
+          <!--End of Cost and selling price -->
 
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
@@ -8889,8 +9051,9 @@
             </div>
         </div>
         <!-- End of Bitwise Calculator-->
-        <!-- Start of 1's 2's Complement Calculator -->
+        <!--START of (R-1)'s and R's Complement -->
         <div class="collapse" id="onetwocom-calc">
+           <!-- Start of 1's 2's Complement Calculator -->
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
@@ -8914,6 +9077,9 @@
                 </div>
             </div>
             <hr>
+          <!-- Start of 1's 2's Complement Calculator -->
+
+
           <!-- Start 7's 8's Complement -->
            <div class="row">
                 <div class="col-12">
@@ -8938,6 +9104,29 @@
                 </div>
             </div>
           <!-- End 7's 8's Complement -->
+
+          <!-- Start of 9's 10's Complement Calculator -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <br><br><h2>Nine's and Ten's Complement</h2><br>
+                        <h5>Enter Decimal number</h5>
+                        <input type="number" class="form__field" id="ninetennumber">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="ninetenCalc()">
+                            Find
+                        </button>
+                        <label class="form__field" id="ninetenresult"></label>
+                        <p class="" id="ninetenworking"></p>
+                    </div>
+                </div>
+            </div>
+        <!-- End of 9's 10's complement Calculator-->
 
           <!-- Start 15's 16's Complement -->
            <div class="row">
@@ -8965,36 +9154,8 @@
 
           <!-- End 15's 16's Complement -->
 
-
-
-
         </div>
-        <!-- End of 1's 2's complement Calculator-->
-
-
-        <!-- Start of 9's 10's Complement Calculator -->
-        <div class="collapse" id="ninetencom-calc">
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <h5>Enter Decimal number</h5>
-                        <input type="number" class="form__field" id="ninetennumber">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="ninetenCalc()">
-                            Find
-                        </button>
-                        <label class="form__field" id="ninetenresult"></label>
-                        <p class="" id="ninetenworking"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End of 9's 10's complement Calculator-->
+        <!-- END of (R-1)'s R's complement Calculator-->
 
 
         <!-- Start of Octal / Binary -->
@@ -9772,94 +9933,77 @@
                             </div>
                         </div>
 
-                        <tr>
-                            <td>
-                                <div style="color: var(--appimage);cursor: pointer;">
-                                    <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
-                                       href="#"></a>
+                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;"> /
+                        </div>
+                        <div style="display: inline-block; margin-left: 10px;">
+                            <div class="row">
+                                <div class="cell borderBottom_1">
+
+                                    <input id="three_div" placeholder="Numerator" type="number"
+                                                       required=""
+                                                       style="width: 150px;">
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="color: var(--appimage);cursor: pointer;">
-                                    <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
-                                       href="#"></a>
-                                    <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
-                                        /
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell">
 
-
-                                    <div style="display: inline-block; margin-left: 10px;">
-                                        <div class="row">
-                                            <div class="cell borderBottom_1">
-
-                                                <input id="three_div" placeholder="Numerator" type="number"
+                                    <input id="four_div" placeholder="Denominator" type="number"
                                                        required=""
                                                        style="width: 150px;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="cell">
-
-                                                <input id="four_div" placeholder="Denominator" type="number"
-                                                       required=""
-                                                       style="width: 150px;">
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div>
-                                        <var id="divaz"></var>
-                                    </div>
-                                    <br>
-                                    <center>
-                                        <button type="button" class="btn btn-light" ; onclick="division()">
+                                </div>
+                            </div>
+                            <div>
+                                <var id="divaz"></var>
+                            </div>
+                            <br>
+                                <center>
+                                <button type="button" class="btn btn-light" ; onclick="division()">
                                             DIVIDE
-                                        </button>
-                                    </center>
+                                </button>
+                                </center>
+                            <br>
 
-                                    <br>
 
+                            <div style="display: flex; justify-content: center;">
 
-                                    <div style="display: flex; justify-content: center;">
-
-                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
                                              class="frac">
 
-                                            <div style="display:inline-block">
+                                    <div style="display:inline-block">
 
                                                 <div><var id="diva">a</var></div>
                                                 <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;
                                                 </div>
                                                 <div class="bottom"><var id="divb">b</var></div>
 
-                                            </div>
+                                    </div>
 
 
-                                            <div style="display: inline-block;">
+                                    <div style="display: inline-block;">
                                                 <div><var id="divc">c</var></div>
                                                 <div style="color: #ff299c;">&nbsp; -----</div>
                                                 <div class="bottom"><var id="divd">d</var></div>
 
-                                            </div>
+                                    </div>
 
-                                            <br>
+                                    <br>
 
-                                            <div style="display:inline-block; margin-top: 15px;">
+                                    <div style="display:inline-block; margin-top: 15px;">
 
                                                 <div><var id="diva1">a</var></div>
                                                 <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
                                                 <div class="bottom"><var id="divb1">b</var></div>
 
-                                            </div>
+                                    </div>
 
 
-                                            <div style="display: inline-block;">
+                                    <div style="display: inline-block;">
                                                 <div><var id="divc1">d</var></div>
                                                 <div style="color:#ff299c;">&nbsp; -----</div>
                                                 <div class="bottom"><var id="divd1">c</var></div>
 
-                                            </div>
+                                    </div>
 
 
                                             <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
@@ -10230,74 +10374,6 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                     </button>
                 </div>
-            </div>
-
-             
-
-            <!--Cost and selling prices-->
-           <div class="collapse" id="prices">
-              <h1>Cost and Selling Prices</h1>
-                <p>Cost Price:
-
-                    The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
-                    
-                    Selling Price:
-                    
-                    The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
-                    
-                    Profit or Gain:
-                    
-                    If S.P. is greater than C.P., the seller is said to have a profit or gain.
-                    
-                    Loss:
-                    
-                    If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
-                <h1>
-                    IMPORTANT FORMULAE
-                </h1>
-                <p>
-                    1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
-                    2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
-                    3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
-                    4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
-                                 
-                </p>
-        
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
-                            <input type="number" value="0" class="form__field" id="p1">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Enter Cost Price</h5>
-                            <input type="number" value="0" class="form__field" id="cp2">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Enter Selling Price</h5>
-                            <input type="number" value="0" class="form__field" id="sp2">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="computeCP()">
-                        Find CP
-                    </button>
-                    <button type="button" class="btn btn-light"
-                            onclick="computeSP()">
-                        Find SP
-                    </button>
-                </div>
-
-                <div style="color:white; font-size: large;" id="cp"></div>
-                <div id="sp" style="color: white; font-size: large"></div>
             </div>
         </div>
     </div>
@@ -11556,9 +11632,9 @@
                             <input class="form__field" type="number"
                                    placeholder="Enter Radius" id="inputradiushemisph"
                                    oninput="solvehemisphere();">
-                            <p class="stopwrap" id="resultofvolhollowsp"
+                            <p class="stopwrap" id="resultofvolhemisp"
                                style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultoftsahollowsp"
+                            <p class="stopwrap" id="resultoftsahemisp"
                                style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
@@ -11616,6 +11692,71 @@
                                 <p class="stopwrap" id="resultofvolprism"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultoftsaprism"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="frustum" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Conical Frustum</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Slant height</h5>
+                                    <p>\[s= \sqrt{(r1 - r2)^2 + h^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <br>
+                                    <h5 class="text-center">Volume of conical frustum</h5>
+                                    <p class="text-center">\[V= \space \frac{1}{3} \times \pi \times h \times (r1^2 \space + r2^2 \space + (r1 \times r2))\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface Area </h5>
+                                    <p class="text-center">\[S= \space \pi \times ( r1 + r2) \times s\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface Area</h5>
+                                    <p class="text-center">\[A= \pi \times (r1^2+r2^2+(r1+r2) \times s)\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/F1.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                        
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter radius(r1)"
+                                       id="inputfrustumradius1" oninput="frustumsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter radius(r2)"
+                                       id="inputfrustumradius2" oninput="frustumsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Height(h)"
+                                       id="inputfrustumheight" oninput="frustumsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofslantfrustum"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvolfrustum"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoflsafrustum"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsafrustum"
                                    style="font-family:mathfont;"></p>
                             </div>
                         </div>
@@ -11691,7 +11832,79 @@
                 </div>
             </div>
         </div>
-		<div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="tripyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Triangular Pyramid (Equilateral)</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[A= \frac{\sqrt{3}}{4}a^2 \]</p>
+                                    <p class="text-center">a = side of triangle</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S= A+ \frac{1}{2}(Perimeter \times Slant Height) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA= \frac{1}{2}(Perimeter \times Slant Height) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \frac{Base Area \times Slant Height}{3} \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tripyr.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of triangle(a)" id="inputtripyramidside"
+                                   oninput="tripyramidsolve();">  
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Slant height(s)" id="inputtripyramidslant"
+                                   oninput="tripyramidsolve();">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height of pyramid(h)" id="inputtripyramidheight"
+                                   oninput="tripyramidsolve();">
+                            <p class="stopwrap" id="resultoftribasepyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftriperipyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrivolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrilsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftritsapyramid"
+                               style="font-family:mathfont;"></p>
+                            
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
