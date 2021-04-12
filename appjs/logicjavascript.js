@@ -2477,7 +2477,7 @@ function pyramidsolve() {
     var hsftemp = "";
     if ((side != "") && (height != "")) {
         voltemp += "\\[ (" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + 3 + "\\]";
-        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space \\]";
+        voltemp += "\\[Volume \\space of \\space Square \\space Pyramid \\space is \\space \\]";
         voltemp += "\\[" + eval(String((side * side * height ) / 3)) + "\\]";
         voloutput.innerHTML = voltemp;
         
@@ -2506,6 +2506,58 @@ function pyramidsolve() {
         lsaoutput.innerHTML = "";
         tsaoutput.innerHTML = "";
         hsfoutput.innerHTML = "";      
+    }
+}
+
+function tripyramidsolve() {
+    var side = document.getElementById("inputtripyramidside").value;
+    var slant = document.getElementById("inputtripyramidslant").value;
+    var height = document.getElementById("inputtripyramidheight").value;   
+    var voloutput = document.getElementById("resultoftrivolpyramid");
+    var lsaoutput = document.getElementById("resultoftrilsapyramid");
+    var tsaoutput = document.getElementById("resultoftritsapyramid");
+    var baseoutput = document.getElementById("resultoftribasepyramid");
+    var perioutput =  document.getElementById("resultoftriperipyramid");
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var basetemp = "";
+    var peritemp = "";
+    if ((side != "") && (slant != "") && (height != "")) {
+        voltemp += "\\[ (" + "\\sqrt" + 3 + "\\times" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + "(" + 3 + "\\times" + 4 + ")" +  "\\]";
+        voltemp += "\\[Volume \\space of \\space Triangular \\space Pyramid \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(( 0.43 *side * side * height ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        
+        lsatemp += "\\[ (" + 3 + "\\times" + side + "\\times" + slant + ")" + "\\div" + 2 + "\\]";
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space"  + eval(String((3 * side * slant)/2)) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[" + "\\frac{\\sqrt{3}}{4}" + "\\times" + side + "\\times" + side + "+" + "\\frac{1}{2}"  + "\\times" + 3 + "\\times" + side + "\\times" + slant + "\\]";
+        tsatemp += "\\[Total \\space Surface \\space area \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String((0.433 * side * side)+((3 * side * slant)/2))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        
+        basetemp += "\\[" + "\\frac{\\sqrt{3}}{4}" + "\\times" + side + "\\times" + side  + "\\]";
+        basetemp += "\\[Base \\space Area \\space is \\space" + eval(String(0.433 * side * side)) + "\\]";
+        baseoutput.innerHTML = basetemp;
+        
+        peritemp += "\\[" + 3 + "\\times" + side  + "\\]";
+        peritemp += "\\[Perimeter \\space of \\space Triangular \\space base \\space is \\space" + eval(String(3 * side)) + "\\]";
+        perioutput.innerHTML = peritemp;
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(baseoutput);
+        renderMathInElement(perioutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        baseoutput.innerHTML = "";
+        perioutput.innerHTML = "";      
     }
 }
 

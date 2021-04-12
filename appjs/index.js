@@ -238,6 +238,7 @@ function openit(id) {
         "#bayes-probabilitycollapse",
         "#prism",
         "#pyramid",
+        "#tripyramid",
         "#anglecon",
         "#frustum",
 	    "#ip",
