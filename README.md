@@ -202,8 +202,7 @@ Other Tech/Libraries
   - Octal/Binary Converter
   - Grey Code Converter
   - Bitwise Calculator
-  - 1s & 2s Complement Calculator
-  - 9s & 10s Complement Calculator
+  - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
   - Operations for 1 complex number

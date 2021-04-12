@@ -193,7 +193,6 @@ function openit(id) {
         "#multiplying-all",
 		"#onetwocom-calc",
         "#3dgeo",
-        "#ninetencom-calc",
         "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
