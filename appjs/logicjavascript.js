@@ -2422,6 +2422,48 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+     
+function frustumsolve() {
+    var radius1 = document.getElementById("inputfrustumradius1").value;
+    var radius2 = document.getElementById("inputfrustumradius2").value;
+    var height = document.getElementById("inputfrustumheight").value;
+    var voloutput = document.getElementById("resultofvolfrustum");
+    var lsaoutput = document.getElementById("resultoflsafrustum");
+    var tsaoutput = document.getElementById("resultoftsafrustum");
+    var slantoutput = document.getElementById("resultofslantfrustum");
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var slanttemp = "";
+    if ((radius1 != "") && (radius2 != "") && (height != "")) {
+        slanttemp += "\\[ "  +"\\sqrt" + "(" + "(" + radius1 + "-" + radius2  + ")" + "^2" + "+" + height + "^2" + ")" + "\\]";
+        slanttemp += "\\[Slant \\space Height \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        slanttemp += "\\[" + eval(String(( Math.sqrt(((radius1-radius2)*(radius1-radius2))+(height*height))))) + "\\]";
+        slantoutput.innerHTML = slanttemp;
+        lsatemp += "\\[ " + "\\pi" + "(" + radius1 + "+" + radius2 + ")" +"\\sqrt" + "(" + "(" + radius1 + "-" + radius2  + ")" + "^2" + "+" + height + "^2" + ")" + "\\]";
+        lsatemp += "\\[Lateral \\space area \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        lsatemp += "\\[" + eval(String((3.14 * radius1+ 3.14*radius2 *  Math.sqrt(((radius1-radius2)*(radius1-radius2))+(height*height))))) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+        voltemp += "\\[ " + "\\frac{1}{3}" + "\\times" +"\\pi" + "\\times" + height + "(" + radius1 + "\\times" + radius1 + "+" + radius2 + "\\times" + radius2 + "+" + "(" + radius1 + "+" + radius2 + ")" + ")" + "\\]";
+        voltemp += "\\[Volume \\space area \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(0.33 * 3.14 * height * radius1*radius1 + 0.33*3.14* height*radius2*radius2 + 0.33*3.14*height *radius1*radius2)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ " + "\\pi" + "(" + radius1 + "\\times" + radius1 + "+" + radius2 + "\\times" + radius2 + "+" + "(" + radius1 + "+" + radius2 + ")" + "\\times" +"\\sqrt" + "(" + "(" + radius1 + "-" + radius2  + ")" + "^2" + "+" + height + "^2" + ")" + ")"+ "\\]";
+        tsatemp += "\\[Total \\space surface \\space area \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String(( (3.14 * radius1*radius1) + (3.14*radius2*radius2) + (3.14 * radius1) + (3.14 * radius2 * Math.sqrt(((radius1-radius2)*(radius1-radius2))+(height*height)))))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(slantoutput);
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        slantoutput.innerHTML = "";
+    }
+}
+
 function pyramidsolve() {
     var side = document.getElementById("inputpyramidside").value;
     var height = document.getElementById("inputpyramidheight").value;   
@@ -2435,7 +2477,7 @@ function pyramidsolve() {
     var hsftemp = "";
     if ((side != "") && (height != "")) {
         voltemp += "\\[ (" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + 3 + "\\]";
-        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space \\]";
+        voltemp += "\\[Volume \\space of \\space Square \\space Pyramid \\space is \\space \\]";
         voltemp += "\\[" + eval(String((side * side * height ) / 3)) + "\\]";
         voloutput.innerHTML = voltemp;
         
@@ -2458,13 +2500,64 @@ function pyramidsolve() {
         renderMathInElement(lsaoutput);
         renderMathInElement(tsaoutput);
         renderMathInElement(hsfoutput);
-      
+
     } else {
         voloutput.innerHTML = "";
         lsaoutput.innerHTML = "";
         tsaoutput.innerHTML = "";
-        hsfoutput.innerHTML = "";
+        hsfoutput.innerHTML = "";      
+    }
+}
+
+function tripyramidsolve() {
+    var side = document.getElementById("inputtripyramidside").value;
+    var slant = document.getElementById("inputtripyramidslant").value;
+    var height = document.getElementById("inputtripyramidheight").value;   
+    var voloutput = document.getElementById("resultoftrivolpyramid");
+    var lsaoutput = document.getElementById("resultoftrilsapyramid");
+    var tsaoutput = document.getElementById("resultoftritsapyramid");
+    var baseoutput = document.getElementById("resultoftribasepyramid");
+    var perioutput =  document.getElementById("resultoftriperipyramid");
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var basetemp = "";
+    var peritemp = "";
+    if ((side != "") && (slant != "") && (height != "")) {
+        voltemp += "\\[ (" + "\\sqrt" + 3 + "\\times" + side + "\\times" + side + "\\times" + height  + ")" + "\\div" + "(" + 3 + "\\times" + 4 + ")" +  "\\]";
+        voltemp += "\\[Volume \\space of \\space Triangular \\space Pyramid \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(( 0.43 *side * side * height ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
         
+        lsatemp += "\\[ (" + 3 + "\\times" + side + "\\times" + slant + ")" + "\\div" + 2 + "\\]";
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space"  + eval(String((3 * side * slant)/2)) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[" + "\\frac{\\sqrt{3}}{4}" + "\\times" + side + "\\times" + side + "+" + "\\frac{1}{2}"  + "\\times" + 3 + "\\times" + side + "\\times" + slant + "\\]";
+        tsatemp += "\\[Total \\space Surface \\space area \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String((0.433 * side * side)+((3 * side * slant)/2))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        
+        basetemp += "\\[" + "\\frac{\\sqrt{3}}{4}" + "\\times" + side + "\\times" + side  + "\\]";
+        basetemp += "\\[Base \\space Area \\space is \\space" + eval(String(0.433 * side * side)) + "\\]";
+        baseoutput.innerHTML = basetemp;
+        
+        peritemp += "\\[" + 3 + "\\times" + side  + "\\]";
+        peritemp += "\\[Perimeter \\space of \\space Triangular \\space base \\space is \\space" + eval(String(3 * side)) + "\\]";
+        perioutput.innerHTML = peritemp;
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(baseoutput);
+        renderMathInElement(perioutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        baseoutput.innerHTML = "";
+        perioutput.innerHTML = "";      
     }
 }
 
@@ -2499,7 +2592,7 @@ function solvehollowsphere() {
     var tsaoutput = document.getElementById("resultoftsahollowsp");
     var voltemp = "";
     var tsatemp = "";
-    if (radius != "") {
+    if (radius1 != "" && radius2 != "") {
         voltemp += "\\[ \\frac{4}{3} \\times \\pi \\times (" + radius1 + "^3-" + radius2 + "^3) \\]";
         voltemp += "\\[Volume \\space of \\space Hollow \\space Sphere \\space is \\space " + eval(String(4 * 3.14159 * ((radius1 * radius1 * radius1) - (radius2 * radius2 * radius2)) / 3)) + "\\]";
         voloutput.innerHTML = voltemp;
@@ -4639,22 +4732,29 @@ function amsol() {
 function gmsol() {
     var a = document.getElementById("aval1").value
     var c = document.getElementById("cval1").value
+    var gmmul = parseInt(a) * parseInt(c)
+
     if(a<0&&c<0){
-      var gmmul1 = parseInt(a) * parseInt(c)
-      var res1 = -(Math.sqrt(gmmul1))
+      var res1 = -(Math.sqrt(gmmul))
       var explain = document.getElementById("gm_formula");
       explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space\\ - \\sqrt{a \\times c} = \\space\\ - \\sqrt{"+a+"\\times"+c+"}\\] ";
       renderMathInElement(document.getElementById("gm_formula"));
       document.getElementById("gm").innerHTML = "Result: " + res1
     }
+
+    else if(a<0 || c<0){
+        var explain = document.getElementById("gm_formula");
+        explain.innerHTML = "Please enter either both positive or both negative values to calculate the Geomteric Mean";
+        document.getElementById("gm").innerHTML = "";
+    }
+    
     else{
-    var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
     explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
-}
+    }
 }
 
 function hmsol() {
@@ -5598,7 +5698,10 @@ function convertgreydec(){
         for (var i = 1; i < result1.length; i++)
             x += parseInt(result1[i - 1] ^ result1[i]).toString();
     }
-
+    if(input=="")
+	{ 
+	  x="";
+	}
     result2.innerHTML = x;
 
 }
