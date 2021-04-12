@@ -6,34 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Us</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+	 <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
         /* width */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
         }
+
         /* Track */
         ::-webkit-scrollbar-track {
             box-shadow: inset 0 0 5px grey;
             border-radius: 10px;
         }
+
         /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: var(--apppink);
+            background: var(--apppink);;
             border-radius: 10px;
         }
+
+        ::-webkit-scrollbar-button:single-button {
+            display: block;
+            background-color: var(--appimage);
+            height: 20px;
+        }
+
+        ::-webkit-scrollbar-button:single-button:vertical:decrement {
+            background-position: center 4px;
+            background-size: 8px 8px;
+            background-image: url(images/uparrow.png);
+            background-repeat: no-repeat;
+        }
+
+        ::-webkit-scrollbar-button:single-button:vertical:increment {
+            background-position: center 4px;
+            background-size: 8px 8px;
+            background-image: url(images/downarrow.png);
+            background-repeat: no-repeat;
+        }
+
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--apppink);
+            background: var(--apppink);;
         }
-        .hidescroll::-webkit-scrollbar {
-            display: none;
-        }
-        .hidescroll {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
+
         @font-face {
             font-family: mainfont;
             src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
@@ -69,16 +87,43 @@
         
             }
         }
-        
+body img {
+  filter: invert(0%);
+} 
+#home {
+  position: relative;
+  display: block;
+  z-index: 10;
+  float: right;
+  margin-right:2rem;
+  margin-top:2rem;
+  padding: 0rem 0.625rem 0.125rem 0.625rem;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  border-color: white;
+  color: var(--apppink);
+  background-color: var(--appblack);
+  outline: none;
+  transition-duration: 0.4s;
+  font-size:1.5rem;
+}
+#home:hover {
+  background-color: rgba(255, 244, 253, 0.993);
+  font-weight: bolder;
+}
     </style>
 </head>
 <body>
+<a href="index.html">
+	    <button id="home">Home</button>
+       </a>
 <div class="container">
-    <div>
+    <div>   
         <div class="topp">
             <img src="images/makesmatheasylogo.png">
             <h1>Makes Math Easy</h1>
             </div>
+		   
         <iframe id="contactform"
                 src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
                 width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…
