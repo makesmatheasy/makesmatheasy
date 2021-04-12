@@ -463,13 +463,6 @@ $(document).ready(function () {
     });
 
 
-    $("#ninetencom-calc-btn").click(function(){
-        openit("#ninetencom-calc");
-        closenav();
-        clearall();
-    });
-
-
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
         openit("#octal-binary");

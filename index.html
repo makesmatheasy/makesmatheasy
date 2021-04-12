@@ -2081,34 +2081,13 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="onetwocom-calc-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">1s and 2s
-                                Complement
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">(R-1)'s and R's Complement
                                 Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
                                         onclick="addtofavourite('1s and 2s Complement Calculator','#onetwocom-calc','c','onetwocom-calc-imgfav')"><img
                                         id="onetwocom-calc-imgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="ninetencom-calc-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">9s and
-                                10s Complement
-                                Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('9s and 10s Complement Calculator','#ninetencom-calc','c','ninetencom-calc-imgfav')"><img
-                                        id="ninetencom-calc-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -8914,8 +8893,9 @@
             </div>
         </div>
         <!-- End of Bitwise Calculator-->
-        <!-- Start of 1's 2's Complement Calculator -->
+        <!--START of (R-1)'s and R's Complement -->
         <div class="collapse" id="onetwocom-calc">
+           <!-- Start of 1's 2's Complement Calculator -->
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
@@ -8939,6 +8919,9 @@
                 </div>
             </div>
             <hr>
+          <!-- Start of 1's 2's Complement Calculator -->
+
+
           <!-- Start 7's 8's Complement -->
            <div class="row">
                 <div class="col-12">
@@ -8963,6 +8946,29 @@
                 </div>
             </div>
           <!-- End 7's 8's Complement -->
+
+          <!-- Start of 9's 10's Complement Calculator -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <br><br><h2>Nine's and Ten's Complement</h2><br>
+                        <h5>Enter Decimal number</h5>
+                        <input type="number" class="form__field" id="ninetennumber">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="ninetenCalc()">
+                            Find
+                        </button>
+                        <label class="form__field" id="ninetenresult"></label>
+                        <p class="" id="ninetenworking"></p>
+                    </div>
+                </div>
+            </div>
+        <!-- End of 9's 10's complement Calculator-->
 
           <!-- Start 15's 16's Complement -->
            <div class="row">
@@ -8990,36 +8996,8 @@
 
           <!-- End 15's 16's Complement -->
 
-
-
-
         </div>
-        <!-- End of 1's 2's complement Calculator-->
-
-
-        <!-- Start of 9's 10's Complement Calculator -->
-        <div class="collapse" id="ninetencom-calc">
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <h5>Enter Decimal number</h5>
-                        <input type="number" class="form__field" id="ninetennumber">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="ninetenCalc()">
-                            Find
-                        </button>
-                        <label class="form__field" id="ninetenresult"></label>
-                        <p class="" id="ninetenworking"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End of 9's 10's complement Calculator-->
+        <!-- END of (R-1)'s R's complement Calculator-->
 
 
         <!-- Start of Octal / Binary -->
