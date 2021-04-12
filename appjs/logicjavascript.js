@@ -2540,7 +2540,7 @@ function solvehollowsphere() {
     var tsaoutput = document.getElementById("resultoftsahollowsp");
     var voltemp = "";
     var tsatemp = "";
-    if (radius != "") {
+    if (radius1 != "" && radius2 != "") {
         voltemp += "\\[ \\frac{4}{3} \\times \\pi \\times (" + radius1 + "^3-" + radius2 + "^3) \\]";
         voltemp += "\\[Volume \\space of \\space Hollow \\space Sphere \\space is \\space " + eval(String(4 * 3.14159 * ((radius1 * radius1 * radius1) - (radius2 * radius2 * radius2)) / 3)) + "\\]";
         voloutput.innerHTML = voltemp;
