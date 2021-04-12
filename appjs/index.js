@@ -238,6 +238,7 @@ function openit(id) {
         "#prism",
         "#pyramid",
         "#anglecon",
+        "#frustum",
 	    "#ip",
 	    "#prices",
         "#setformula"
