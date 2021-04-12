@@ -1,4 +1,4 @@
-name: Issue Autoresponse
+name: Auto_message_on_pr_merge
 
 on:
   pull_request:
