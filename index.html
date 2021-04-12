@@ -7881,6 +7881,11 @@
                            href="#">Square Pyramid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#tripyramid"
+                           style="text-decoration:none;"
+                           href="#">Triangular Pyramid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#tetrahedron"
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
@@ -11697,7 +11702,7 @@
                                     data-dismiss="modal">Close
                             </button>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -11706,6 +11711,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Square Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
@@ -11717,7 +11730,6 @@
                                     <div class="dropdown-divider"></div>
                                     <h5 class="text-center">Total Surface area</h5>
                                     <p class="text-center">\[S \space = \space F +a^2 \]</p>
-
 
                                 </div>
                                 <div class="col-6">
@@ -11757,6 +11769,78 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="tripyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Triangular Pyramid (Equilateral)</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[A= \frac{\sqrt{3}}{4}a^2 \]</p>
+                                    <p class="text-center">a = side of triangle</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S= A+ \frac{1}{2}(Perimeter \times Slant Height) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA= \frac{1}{2}(Perimeter \times Slant Height) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \frac{Base Area \times Slant Height}{3} \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tripyr.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of triangle(a)" id="inputtripyramidside"
+                                   oninput="tripyramidsolve();">  
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Slant height(s)" id="inputtripyramidslant"
+                                   oninput="tripyramidsolve();">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height of pyramid(h)" id="inputtripyramidheight"
+                                   oninput="tripyramidsolve();">
+                            <p class="stopwrap" id="resultoftribasepyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftriperipyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrivolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrilsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftritsapyramid"
+                               style="font-family:mathfont;"></p>
+                            
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 		    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
