@@ -261,6 +261,32 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "OPS2 ON COMPLEX NUMBERS"){
                         document.getElementById('complex2collapse').click();
                     }
+
+                    else if(inp.value.toUpperCase() == "EMPIRICAL PROBABILITY"){
+                        document.getElementById('probabilitycollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "EMPIRICAL PROBABILITY") {
+                        $("#probabilitycollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "JOINT PROBABILITY"){
+                        document.getElementById('joint-probabilitycollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
+                        $("#joint-probabilitycollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PROBABILITY PROPERTIES"){
+                        document.getElementById('bt-collapse1').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PROBABILITY PROPERTIES") {
+                        $("#bt-collapse1").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "BAYES PROBABILITY THEOREM"){
+                        document.getElementById('bayes-probabilitycollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "BAYES PROBABILITY THEOREM") {
+                        $("#bayes-probabilitycollapse").slideToggle();    
+                    }
+
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -387,8 +413,12 @@ function autocomplete(inp, arr) {
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
-                        "Vector Algebra","Vector Calculus","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Unit Converter" ,"OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator","Curve Tracing","Coordinate Systems","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+
+                        "Vector Algebra","Vector Calculus","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Unit Converter" ,"Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
+                        "Curve Tracing","Coordinate Systems","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+
+                       
                         
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), arrayofelements);
@@ -668,4 +698,30 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "OPS2 ON COMPLEX NUMBERS") {
         $("#complex2collapse").slideToggle(); 
     }
+
+    else if(inp.value.toUpperCase() == "EMPIRICAL PROBABILITY"){
+        document.getElementById('probabilitycollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EMPIRICAL PROBABILITY") {
+        $("#probabilitycollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "JOINT PROBABILITY"){
+        document.getElementById('joint-probabilitycollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
+        $("#joint-probabilitycollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PROBABILITY PROPERTIES"){
+        document.getElementById('bt-collapse1').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PROBABILITY PROPERTIES") {
+        $("#bt-collapse1").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "BAYES PROBABILITY THEOREM"){
+        document.getElementById('bayes-probabilitycollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "BAYES PROBABILITY THEOREM") {
+        $("#bayes-probabilitycollapse").slideToggle(); 
+    }
+
 }
