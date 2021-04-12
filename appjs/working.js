@@ -344,6 +344,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#caybtn").click(function () {
+        openit("#cay");
+        closenav();
+        clearall();
+    })
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
