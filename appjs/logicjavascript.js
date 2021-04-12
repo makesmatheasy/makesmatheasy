@@ -1839,18 +1839,26 @@ function solvetrapezium(){
     var b = document.getElementById("inputparallel2").value;
     var c = document.getElementById("inputnparallel1").value;
     var d = document.getElementById("inputnparallel2").value;
-    //removed height input
-    //added method of finding height
+
     var ts=Math.abs(b-a);
     var s=(ts+parseInt(c)+parseInt(d))/2;
-    var areatri=Math.sqrt(s*(s-ts)*(s-parseInt(c))*(s-parseInt(d)));
+    var value = s*(s-ts)*(s-parseInt(c))*(s-parseInt(d));
+    var areatri=Math.sqrt(value);
     var height= (2*areatri)/ts;
     var heighttemp="";
     document.getElementById("resultofperitrap1").innerHTML="";
     document.getElementById("resultofperitrap2").innerHTML="";
     document.getElementById("resultofareatrap1").innerHTML="";
     document.getElementById("resultofareatrap2").innerHTML="";
-    if (a=="" || b=="" || c=="" || d==""){
+    if (value<0 || value == 0){
+        document.getElementById("resultofareatrap1").innerHTML = "Please enter valid side values";
+        document.getElementById("heighttrap").innerHTML="";
+        document.getElementById("resultofperitrap1").innerHTML="";
+        document.getElementById("resultofperitrap2").innerHTML="";
+        document.getElementById("resultofareatrap2").innerHTML="";
+        return;
+    
+    }else if (a=="" || b=="" || c=="" || d==""){
         document.getElementById("resultofareatrap1").innerHTML = "Enter all sides to calculate Height, Area and perimeter";
 
     } else if(a!="" && b!="" && c!="" && d!=""){
