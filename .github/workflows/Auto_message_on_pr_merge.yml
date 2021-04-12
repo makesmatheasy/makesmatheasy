@@ -1,4 +1,4 @@
-name: Auto_message_on_pr_merge
+name: Auto message on pr merge
 
 on:
   pull_request:
