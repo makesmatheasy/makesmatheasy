@@ -30,6 +30,9 @@ body {
 body img {
   filter: invert(100%);
 }
+#setopfav, #interestfav, #pricesfav {
+  filter: invert(0);
+}
 html {
   /* overflow-x: hidden; */
 }
@@ -365,12 +368,14 @@ h6 {
   font-size: 25px !important;
   display: flex;
 }
+#homecollapse {
+  margin-top: 6rem;
+}
 #numberfact {
   font-family: mainfont;
   letter-spacing: 2px;
   font-size: 25px;
   text-align: center !important;
-  margin-top: auto;
   margin-bottom: auto;
   padding: 4vh;
   color: var(--apppimage);
@@ -383,6 +388,7 @@ h6 {
   transition: all 0.2s;
   cursor: pointer;
 }
+
 #numberfact:hover {
   font-size: 25.5px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,

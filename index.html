@@ -319,7 +319,9 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
-                                        id="setopfav" src="images/unfavourite.png"style="height:1.5625rem;"/></span>
+
+                                        id="setopfav" src="images/unfavourite.png"style="height:1.5625rem;filter: none;"/></span>
+
                         </td>                
                     </tr>    
                 </table>    
@@ -332,7 +334,7 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
-                                        id="interestfav" src="images/unfavourite.png" style="height:25px;"></span>
+                                        id="interestfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
                             </td>
                         </tr>
                     </table>
@@ -347,8 +349,10 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
-                                        id="pricesfav" src="images/unfavourite.png" style="height:25px;"></span>
-                            </td>
+
+                                        id="pricesfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
+
+                         </td>
                         </tr>
                     </table>
                 </li>
@@ -2333,7 +2337,7 @@
 
     <div class="container">
         <!--    start home-->
-        <div id="homecollapse" style="z-index:11;position:relative;">
+        <div id="homecollapse" class=" d-flex align-items-center justify-content-center " style="z-index:11;position:relative;">
             <div class="form-group text-center">
                 <table style="margin-left: auto;margin-right: auto;">
                     <tr>
@@ -7509,17 +7513,40 @@
             <h2 style="text-align: center;">Properties of Circles</h2>
             <ol>
                 <li style="color: white; font-size : 20px;">The circles are said to be congruent if they have equal radii</li>
+                <img style="margin-left: 300px;"src="images/pr1.jpg" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The diameter of a circle is the longest chord of a circle</li>
-                <li style="color: white; font-size : 20px;">Equal chords and equal circles have the equal circumference</li>
+                <img style="margin-left: 300px;"src="images/pr2.png" alt="">
+                <br><br>
+                <li style="color: white; font-size : 20px;">Equal chords subtend equal angles at the circumference</li>
+                <img style="margin-left: 300px;"src="images/pr3.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The radius drawn perpendicular to the chord bisects the chord</li>
+                <img style="margin-left: 300px;"src="images/pr4.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">Circles having different radius are similar</li>
+                <img style="margin-left: 300px;"src="images/pr5.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">A circle can circumscribe a rectangle, trapezium, triangle, square, kite</li>
+                <img style="margin-left: 300px;"src="images/pr6.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">A circle can be inscribed inside a square, triangle and kite</li>
+                <img style="margin-left: 300px;"src="images/pr7.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The chords that are equidistant from the centre are equal in length</li>
+                <img style="margin-left: 300px;"src="images/pr8.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The distance from the centre of the circle to the longest chord (diameter) is zero</li>
+                <img style="margin-left: 300px;"src="images/pr9.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">The perpendicular distance from the centre of the circle decreases when the length of the chord increases</li>
+                <img style="margin-left: 300px;"src="images/pr10.png" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">If the tangents are drawn at the end of the diameter, they are parallel to each other</li>
+                <img style="margin-left: 300px;"src="images/pr11.PNG" alt="">
+                <br><br>
                 <li style="color: white; font-size : 20px;">An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle</li>
+                <img style="margin-left: 300px;"src="images/pr12.png" alt="">
             </ol>
         </div>
         <div class="collapse" id="curve">
@@ -7840,6 +7867,13 @@
                     <td><a data-toggle="modal" data-target="#prism"
                            style="text-decoration:none;"
                            href="#">Prism</a></td>
+                </tr>
+                <tr>
+
+                    <td><a data-toggle="modal" data-target="#frustum"
+                           style="text-decoration:none;"
+                           href="#">Conical Frustum</a>
+                   </td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#pyramid"
@@ -9763,94 +9797,77 @@
                             </div>
                         </div>
 
-                        <tr>
-                            <td>
-                                <div style="color: var(--appimage);cursor: pointer;">
-                                    <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
-                                       href="#"></a>
+                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;"> /
+                        </div>
+                        <div style="display: inline-block; margin-left: 10px;">
+                            <div class="row">
+                                <div class="cell borderBottom_1">
+
+                                    <input id="three_div" placeholder="Numerator" type="number"
+                                                       required=""
+                                                       style="width: 150px;">
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="color: var(--appimage);cursor: pointer;">
-                                    <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
-                                       href="#"></a>
-                                    <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
-                                        /
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell">
 
-
-                                    <div style="display: inline-block; margin-left: 10px;">
-                                        <div class="row">
-                                            <div class="cell borderBottom_1">
-
-                                                <input id="three_div" placeholder="Numerator" type="number"
+                                    <input id="four_div" placeholder="Denominator" type="number"
                                                        required=""
                                                        style="width: 150px;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="cell">
-
-                                                <input id="four_div" placeholder="Denominator" type="number"
-                                                       required=""
-                                                       style="width: 150px;">
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div>
-                                        <var id="divaz"></var>
-                                    </div>
-                                    <br>
-                                    <center>
-                                        <button type="button" class="btn btn-light" ; onclick="division()">
+                                </div>
+                            </div>
+                            <div>
+                                <var id="divaz"></var>
+                            </div>
+                            <br>
+                                <center>
+                                <button type="button" class="btn btn-light" ; onclick="division()">
                                             DIVIDE
-                                        </button>
-                                    </center>
+                                </button>
+                                </center>
+                            <br>
 
-                                    <br>
 
+                            <div style="display: flex; justify-content: center;">
 
-                                    <div style="display: flex; justify-content: center;">
-
-                                        <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
                                              class="frac">
 
-                                            <div style="display:inline-block">
+                                    <div style="display:inline-block">
 
                                                 <div><var id="diva">a</var></div>
                                                 <div style="color: #ff299c;" class="symbol">----- &nbsp; &divide;
                                                 </div>
                                                 <div class="bottom"><var id="divb">b</var></div>
 
-                                            </div>
+                                    </div>
 
 
-                                            <div style="display: inline-block;">
+                                    <div style="display: inline-block;">
                                                 <div><var id="divc">c</var></div>
                                                 <div style="color: #ff299c;">&nbsp; -----</div>
                                                 <div class="bottom"><var id="divd">d</var></div>
 
-                                            </div>
+                                    </div>
 
-                                            <br>
+                                    <br>
 
-                                            <div style="display:inline-block; margin-top: 15px;">
+                                    <div style="display:inline-block; margin-top: 15px;">
 
                                                 <div><var id="diva1">a</var></div>
                                                 <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
                                                 <div class="bottom"><var id="divb1">b</var></div>
 
-                                            </div>
+                                    </div>
 
 
-                                            <div style="display: inline-block;">
+                                    <div style="display: inline-block;">
                                                 <div><var id="divc1">d</var></div>
                                                 <div style="color:#ff299c;">&nbsp; -----</div>
                                                 <div class="bottom"><var id="divd1">c</var></div>
 
-                                            </div>
+                                    </div>
 
 
                                             <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
@@ -11619,11 +11636,12 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal fade" id="frustum" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Square Pyramid</h5>
+                        <h5 class="modal-title">Conical Frustum</h5>
                         <button type="button" class="close" data-dismiss="modal"
                                 aria-label="Close"
                                 style="outline:none">
@@ -11631,7 +11649,63 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Slant height</h5>
+                                    <p>\[s= \sqrt{(r1 - r2)^2 + h^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <br>
+                                    <h5 class="text-center">Volume of conical frustum</h5>
+                                    <p class="text-center">\[V= \space \frac{1}{3} \times \pi \times h \times (r1^2 \space + r2^2 \space + (r1 \times r2))\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface Area </h5>
+                                    <p class="text-center">\[S= \space \pi \times ( r1 + r2) \times s\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface Area</h5>
+                                    <p class="text-center">\[A= \pi \times (r1^2+r2^2+(r1+r2) \times s)\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/F1.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                        
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter radius(r1)"
+                                       id="inputfrustumradius1" oninput="frustumsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter radius(r2)"
+                                       id="inputfrustumradius2" oninput="frustumsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Height(h)"
+                                       id="inputfrustumheight" oninput="frustumsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofslantfrustum"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvolfrustum"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoflsafrustum"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsafrustum"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Square Pyramid</h5>
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
@@ -11643,6 +11717,7 @@
                                     <div class="dropdown-divider"></div>
                                     <h5 class="text-center">Total Surface area</h5>
                                     <p class="text-center">\[S \space = \space F +a^2 \]</p>
+
 
                                 </div>
                                 <div class="col-6">
@@ -11682,7 +11757,7 @@
                 </div>
             </div>
         </div>
-		<div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+		    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
