@@ -354,6 +354,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#invhyptrigonoidenbutton").click(function () {
+        openit("#invhyptrigonoiden");
+        closenav();
+        clearall();
+    })
     $("#trigsolcollapsebtn").click(function () {
         openit("#trigsolcollapse");
         closenav();

@@ -200,6 +200,7 @@ function openit(id) {
         "#octal-hexadecimal",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
+        "#invhyptrigonoiden",
 	    "#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
