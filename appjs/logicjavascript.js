@@ -5646,7 +5646,10 @@ function convertgreydec(){
         for (var i = 1; i < result1.length; i++)
             x += parseInt(result1[i - 1] ^ result1[i]).toString();
     }
-
+    if(input=="")
+	{ 
+	  x="";
+	}
     result2.innerHTML = x;
 
 }
