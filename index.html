@@ -2159,6 +2159,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="theobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">De-Moivre's Theorem and Cauchy-Reimaan Theorem</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('De-Moivre Theorem and Cauchy-Reimaan Theorem','#theo','c','theofav')"><img
+                                     id="theofav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="complex1collapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1
                                 complex number</a>
@@ -4372,6 +4388,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="collapse" id="theo">
+            <h2>De Moivre's Theorem</h2>
+            <p>For any real number x, we have</p>
+            <p>\[(cos(x)+isin(x))^{n}\space =\space cos(nx)\space +\space isin(nx)\]</p>
+            <p>Remark: Result can be shown true when n is a negative integer and even
+                n is a rational number.</p>
+            <br>    
+            <h2>Cauchy-Reimaan Theorem</h2>
+            <br>
+            <h4>What are analytic functions?</h4>
+            <p>A function f(z) is said to be analytic in a region R of the complex plane if f(z) has a derivative at each point of R and if f(z) is single valued.</p>
+            <p>Let f(x,y) = u(x,y) + iv(x,y) and the function should be analytic</p>
+            <p>Then,</p>
+            <p>\[\frac{∂v}{∂x}\space =\space -\frac{∂u}{∂y}\]</p>
+            <p>If, z = re<sup>iθ</sup>, then Cauchy-Reimaan Theorem become- </p>
+            <p>\[\frac{1}{r}\frac{∂u}{∂θ}\space =\space -\frac{∂v}{∂r}\]</p>
         </div>
         <!-- Complex Properties -->
         <div class="collapse" id="complexproperties">

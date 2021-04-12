@@ -134,6 +134,7 @@ function openit(id) {
         "#complex2collapse",
         "#complexidentities",
         "#complexproperties",
+        "#theo",
         "#equationssolver",
         "#mulsolwithsteps",
         "#table",
