@@ -4,15 +4,22 @@ function display_fractions(){
 
  function additon(){
 
-
      var n1 = parseInt(document.getElementById('one_add').value);
      var d1 = parseInt(document.getElementById('two_add').value);
      var n2 = parseInt(document.getElementById('three_add').value);
      var d2 = parseInt(document.getElementById('four_add').value);
 
+     document.getElementById('addz').innerHTML = "";
+
+     if ((document.getElementById('two_add').value) ==0 || (document.getElementById('four_add').value) == 0)
+     {
+         document.getElementById('addz').innerHTML = "Your fraction is undefined because it has zero denominator";
+         return;
+     }
       if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
       {
           window.alert("Enter an Integer")
+          return;
       }
 
      document.getElementById('a').innerHTML =n1;
@@ -41,18 +48,26 @@ function display_fractions(){
 function subtractiom(){
     var n1 = parseInt(document.getElementById('one_sub').value);
     var d1 = parseInt(document.getElementById('two_sub').value);
-     var n2 = parseInt(document.getElementById('three_sub').value);
-     var d2 = parseInt(document.getElementById('four_sub').value);
+    var n2 = parseInt(document.getElementById('three_sub').value);
+    var d2 = parseInt(document.getElementById('four_sub').value);
 
+    document.getElementById('subz').innerHTML = "";
 
-      if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
-      {
-          window.alert("Enter an Integer")
-      }
+    if ((document.getElementById('two_sub').value) ==0 || (document.getElementById('four_sub').value) == 0)
+    {
+        document.getElementById('subz').innerHTML = "Your fraction is undefined because it has zero denominator";
+        return;
+    }
 
-     document.getElementById('suba').innerHTML =n1;
-     document.getElementById('subb').innerHTML = d1;
-     document.getElementById('subc').innerHTML = n2;
+    if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+    {
+        window.alert("Enter an Integer")
+        return;
+    }
+
+    document.getElementById('suba').innerHTML =n1;
+    document.getElementById('subb').innerHTML = d1;
+    document.getElementById('subc').innerHTML = n2;
     document.getElementById('subd').innerHTML = d2;
     document.getElementById('suba1').innerHTML = n1;
     document.getElementById('subb1').innerHTML = d1;
@@ -117,8 +132,6 @@ function subtractiom(){
      var ans = top / bot;
      document.getElementById('divans').innerHTML = ans;
 
-
-
  }
 
  function multiplication1(){
@@ -128,10 +141,19 @@ function subtractiom(){
      var n2 = parseInt(document.getElementById('three_mul').value);
      var d2 = parseInt(document.getElementById('four_mul').value);
 
+     document.getElementById('mulz').innerHTML = "";
+
+     if ((document.getElementById('two_mul').value) ==0 || (document.getElementById('four_mul').value) == 0)
+     {
+         document.getElementById('mulz').innerHTML = "Your fraction is undefined because it has zero denominator";
+         return;
+     }
      if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
       {
           window.alert("Enter an Integer")
+          return;
       }
+    
 
      document.getElementById('mula').innerHTML = n1;
      document.getElementById('mulb').innerHTML = d1;
