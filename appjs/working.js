@@ -198,6 +198,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#theobtn").click(function () {
+        openit("#theo");
+        closenav();
+        clearall();
+    })
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
