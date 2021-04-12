@@ -2506,6 +2506,8 @@ function pyramidsolve() {
         lsaoutput.innerHTML = "";
         tsaoutput.innerHTML = "";
         hsfoutput.innerHTML = "";      
+
+
     }
 }
 
@@ -2558,6 +2560,7 @@ function tripyramidsolve() {
         tsaoutput.innerHTML = "";
         baseoutput.innerHTML = "";
         perioutput.innerHTML = "";      
+
     }
 }
 
@@ -2680,6 +2683,32 @@ function solvecone() {
         shoutput.innerHTML = "";
     }
 }
+
+function torussolve() {
+    var radius1 = document.getElementById("inputmajorradiustorus").value;
+    var radius2 = document.getElementById("inputminorradiustorus").value;
+    var voloutput = document.getElementById("resultofvoltorus");
+    var tsaoutput = document.getElementById("resultoftsatorus");
+    var voltemp = "";
+    var tsatemp = "";
+    if ( radius1 != "" && radius2 != "") {
+        voltemp += "\\[ ( \\pi \\times" + radius1 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius2 + " ) \\]";
+        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " + eval(String(( 3.14159 * radius1 * radius1 ) * ( 3.14159 * 2 *radius2 )) )+ "\\]" ;
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[4 \\times \\pi \\times \\pi \\times" + radius1 + "^2 " + radius2 + "^1 \\]";
+        tsatemp +=
+            "\\[Total \\space Surface \\space Area \\space of  \\space Torus \\space is \\space  \\]";
+        tsatemp += "\\[" + eval(String(4 * 3.14159 * 3.14159 * ((radius1 * radius1) * radius2 ))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+  }
+
+
 
 //-----------------------------------------------------
 
