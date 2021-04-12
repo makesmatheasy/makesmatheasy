@@ -259,12 +259,12 @@ function divisionwithsteps() {
     } else {
         var quotient = Math.floor(dividend / divisor);
         var remainder = dividend % divisor;
-        var dividendmajorradius = dividend.toString().majorradius;
-        var divisormajorradius = divisor.toString().majorradius;
+        var dividendLength = dividend.toString().length;
+        var divisorLength = divisor.toString().length;
         var tableBody = "";
-        var tableNumColumns = dividendmajorradius + divisormajorradius;
-        var tableNumRows = dividendmajorradius * 2 + 2;
-        var numSteps = dividendmajorradius + 1;
+        var tableNumColumns = dividendLength + divisorLength;
+        var tableNumRows = dividendLength * 2 + 2;
+        var numSteps = dividendLength + 1;
         var tmpVar;
         for (a = 1; a <= tableNumRows; a++) {
             tableBody += "<tr>";
@@ -280,19 +280,19 @@ function divisionwithsteps() {
             "</table></div>"
         );
         var tableRows = resultContainer.find("table tr");
-        for (i = 0; i < divisormajorradius; i++) {
+        for (i = 0; i < divisorLength; i++) {
             tableRows.eq(1).find("td").eq(i).html(divisor.toString()[i]);
         }
         tableRows
             .eq(1)
             .find("td")
-            .eq(divisormajorradius - 1)
+            .eq(divisorLength - 1)
             .css("border-right", "6px solid white");
-        for (i = 0; i < dividendmajorradius; i++) {
+        for (i = 0; i < dividendLength; i++) {
             tableRows
                 .eq(1)
                 .find("td")
-                .eq(divisormajorradius + i)
+                .eq(divisorLength + i)
                 .html(dividend.toString()[i])
                 .css("border-top", "6px solid white");
         }
@@ -302,29 +302,29 @@ function divisionwithsteps() {
             tableRows
                 .eq(0)
                 .find("td")
-                .eq(divisormajorradius + currentStep - 1)
+                .eq(divisorLength + currentStep - 1)
                 .html(stepResult);
             tmpVar = (stepResult * divisor).toString();
-            for (a = tmpVar.majorradius - 1; a >= 0; a--) {
+            for (a = tmpVar.length - 1; a >= 0; a--) {
                 tableRows
                     .eq(currentStep * 2)
                     .find("td")
-                    .eq(divisormajorradius + currentStep - a - 1)
-                    .html(tmpVar[tmpVar.majorradius - a - 1])
+                    .eq(divisorLength + currentStep - a - 1)
+                    .html(tmpVar[tmpVar.length - a - 1])
                     .css("border-bottom", "6px solid white");
             }
             tmpVar = (bufferVar - stepResult * divisor).toString();
-            for (a = tmpVar.majorradius - 1; a >= 0; a--) {
+            for (a = tmpVar.length - 1; a >= 0; a--) {
                 tableRows
                     .eq(currentStep * 2 + 1)
                     .find("td")
-                    .eq(divisormajorradius + currentStep - a - 1)
-                    .html(tmpVar[tmpVar.majorradius - a - 1]);
+                    .eq(divisorLength + currentStep - a - 1)
+                    .html(tmpVar[tmpVar.length - a - 1]);
             }
             tableRows
                 .eq(currentStep * 2 + 1)
                 .find("td")
-                .eq(divisormajorradius + currentStep)
+                .eq(divisorLength + currentStep)
                 .html(dividend.toString()[currentStep]);
             bufferVar = tmpVar + dividend.toString()[currentStep];
         }
@@ -489,30 +489,30 @@ function removeDuplicates(array) {
 }
 
 function findduplicatesforhcf(array) {
-    var maxmajorradiusofarray = 0;
+    var maxlengthofarray = 0;
     var dup,
         indexofdup = 0;
     var i, j;
     //find reference array i.e bigger subarray
-    for (i = 0; i < array.majorradius; i++) {
-        var arlen = array[i].majorradius;
-        if (arlen > maxmajorradiusofarray) {
-            maxmajorradiusofarray = arlen;
+    for (i = 0; i < array.length; i++) {
+        var arlen = array[i].length;
+        if (arlen > maxlengthofarray) {
+            maxlengthofarray = arlen;
             dup = array[i];
             indexofdup = i;
         }
     }
     //remove elements which not present in all subarrays
-    for (k = 0; k < array.majorradius; k++) {
+    for (k = 0; k < array.length; k++) {
         if (k == indexofdup) {
             continue;
         }
-        for (i = 0; i < dup.majorradius; i++) {
+        for (i = 0; i < dup.length; i++) {
             if (dup[i] == 0) {
                 continue;
             }
             var flag = 0;
-            for (j = 0; j < array[k].majorradius; j++) {
+            for (j = 0; j < array[k].length; j++) {
                 if (dup[i] == array[k][j]) {
                     flag = 1;
                     array[k][j] = 0;
@@ -578,7 +578,7 @@ function hcf(input) {
     }
     hfac = hfac.slice(0, -1);
     var flag = 0;
-    if (ar.majorradius == 1) flag = 1;
+    if (ar.length == 1) flag = 1;
 
     if (flag == 1) {
         document.getElementById("resulthcf").innerHTML =
@@ -623,7 +623,7 @@ function factorselect(numid) {
 		return;
 	}
     num = num.split(" ");
-    if (num.majorradius == 1) {
+    if (num.length == 1) {
         printfactors();
     } else {
         printmorefactors(numid, "factorresult");
@@ -658,30 +658,30 @@ function lcmsol(input) {
     num = num.filter(function (str) {
         return /\S/.test(str);
     });
-    if (num.majorradius != 0) {
+    if (num.length != 0) {
         var temp =
             "<table class='table' style='color:white;width: 50px; padding: 0; margin: 0 auto; border:2px solid light-grey;'>";
         var tempfac =
             "<table class='table bor' style='color:white;width: 50px; padding: 0; margin: 0 auto; border-right:2px solid light-grey !important;'>";
-        if (num.majorradius == 1) {
+        if (num.length == 1) {
             document.getElementById("resultlcm").innerHTML = "More than one number is required";
             document.getElementById("resultlcms").innerHTML = "";
-        } else if (num.majorradius == 2) {
+        } else if (num.length == 2) {
             var lcmis = nerdamer.lcm(parseInt(num[0]), parseInt(num[1]));
-        } else if (num.majorradius == 3) {
+        } else if (num.length == 3) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
                 parseInt(num[2])
             );
-        } else if (num.majorradius == 4) {
+        } else if (num.length == 4) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
                 parseInt(num[2]),
                 parseInt(num[3])
             );
-        } else if (num.majorradius == 5) {
+        } else if (num.length == 5) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -689,7 +689,7 @@ function lcmsol(input) {
                 parseInt(num[3]),
                 parseInt(num[4])
             );
-        } else if (num.majorradius == 6) {
+        } else if (num.length == 6) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -698,7 +698,7 @@ function lcmsol(input) {
                 parseInt(num[4]),
                 parseInt(num[5])
             );
-        } else if (num.majorradius == 7) {
+        } else if (num.length == 7) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -708,7 +708,7 @@ function lcmsol(input) {
                 parseInt(num[5]),
                 parseInt(num[6])
             );
-        } else if (num.majorradius == 8) {
+        } else if (num.length == 8) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -719,7 +719,7 @@ function lcmsol(input) {
                 parseInt(num[6]),
                 parseInt(num[7])
             );
-        } else if (num.majorradius == 9) {
+        } else if (num.length == 9) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -731,7 +731,7 @@ function lcmsol(input) {
                 parseInt(num[7]),
                 parseInt(num[8])
             );
-        } else if (num.majorradius == 10) {
+        } else if (num.length == 10) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -744,7 +744,7 @@ function lcmsol(input) {
                 parseInt(num[8]),
                 parseInt(num[9])
             );
-        } else if (num.majorradius == 11) {
+        } else if (num.length == 11) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -758,7 +758,7 @@ function lcmsol(input) {
                 parseInt(num[9]),
                 parseInt(num[10])
             );
-        } else if (num.majorradius == 12) {
+        } else if (num.length == 12) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -773,7 +773,7 @@ function lcmsol(input) {
                 parseInt(num[10]),
                 parseInt(num[11])
             );
-        } else if (num.majorradius == 13) {
+        } else if (num.length == 13) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -789,7 +789,7 @@ function lcmsol(input) {
                 parseInt(num[11]),
                 parseInt(num[12])
             );
-        } else if (num.majorradius == 14) {
+        } else if (num.length == 14) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -806,7 +806,7 @@ function lcmsol(input) {
                 parseInt(num[12]),
                 parseInt(num[13])
             );
-        } else if (num.majorradius == 15) {
+        } else if (num.length == 15) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -824,7 +824,7 @@ function lcmsol(input) {
                 parseInt(num[13]),
                 parseInt(num[14])
             );
-        } else if (num.majorradius == 16) {
+        } else if (num.length == 16) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -843,7 +843,7 @@ function lcmsol(input) {
                 parseInt(num[14]),
                 parseInt(num[15])
             );
-        } else if (num.majorradius == 17) {
+        } else if (num.length == 17) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -863,7 +863,7 @@ function lcmsol(input) {
                 parseInt(num[15]),
                 parseInt(num[16])
             );
-        } else if (num.majorradius == 18) {
+        } else if (num.length == 18) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -884,7 +884,7 @@ function lcmsol(input) {
                 parseInt(num[16]),
                 parseInt(num[17])
             );
-        } else if (num.majorradius == 19) {
+        } else if (num.length == 19) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -906,7 +906,7 @@ function lcmsol(input) {
                 parseInt(num[17]),
                 parseInt(num[18])
             );
-        } else if (num.majorradius == 20) {
+        } else if (num.length == 20) {
             var lcmis = nerdamer.lcm(
                 parseInt(num[0]),
                 parseInt(num[1]),
@@ -932,12 +932,12 @@ function lcmsol(input) {
         } else {
             document.getElementById("resultlcm").innerHTML +=
                 "Upto 20 Numbers Supported<br>and you inputted " +
-                String(num.majorradius) +
+                String(num.length) +
                 " Numbers";
             document.getElementById("resultlcms").innerHTML = "";
         }
         var facar = printfactorsfl(parseInt(lcmis));
-        if (num.majorradius > 20 || num.majorradius == 1) {
+        if (num.length > 20 || num.length == 1) {
             document.getElementById("resultlcm").innerHTML += "";
             document.getElementById("resultlcms").innerHTML = "";
         } else {
@@ -948,8 +948,8 @@ function lcmsol(input) {
             }
             temp += "</tr>";
         }
-        for (i = 0; i < facar.majorradius; i++) {
-            for (k = 0; k < num.majorradius; k++) {
+        for (i = 0; i < facar.length; i++) {
+            for (k = 0; k < num.length; k++) {
                 if (parseInt(num[k]) % parseInt(facar[i]) == 0) {
                     num[k] = parseInt(num[k]) / parseInt(facar[i]);
                 }
@@ -961,11 +961,11 @@ function lcmsol(input) {
             }
             temp += "</tr>";
         }
-        for (mm = 0; mm < facar.majorradius; mm++) {
+        for (mm = 0; mm < facar.length; mm++) {
             //document.getElementById('resultfac').innerHTML+="&nbsp;"+facar[mm]+"&nbsp;<br>";
             tempfac += "<tr><td>" + facar[mm] + "</td></tr>";
         }
-        if (num.majorradius == 1) {
+        if (num.length == 1) {
             document.getElementById("resultlcms").innerHTML = "More than one number is required";
         } else {
             document.getElementById("resultlcms").innerHTML +=
@@ -1927,101 +1927,101 @@ function Kitesolve() {
 
 //created function for Rectangle
 function rectanglesolve() {
-    var majorradius = document.getElementById("inputrecmajorradius").value;
-    var minorradius = document.getElementById("inputrecbreadth").value;
+    var length = document.getElementById("inputreclength").value;
+    var breadth = document.getElementById("inputrecbreadth").value;
     var diagonal = document.getElementById("inputrecdiagonal").value;
     var resultarea = document.getElementById("resultofarearec");
     var resultperi = document.getElementById("resultofperirec");
     var resultdiagonal = document.getElementById("resultofdiagonalrec");
-    var resultmajorradius = document.getElementById("resultofmajorradiusrec");
+    var resultlength = document.getElementById("resultoflengthrec");
     var resultbreadth = document.getElementById("resultofbreadthrec");
-    if (majorradius != "" && minorradius != "" && diagonal != "") {
+    if (length != "" && breadth != "" && diagonal != "") {
         resultarea.innerHTML = "";
         resultperi.innerHTML = "";
         resultdiagonal.innerHTML = "";
-        resultmajorradius.innerHTML = "";
+        resultlength.innerHTML = "";
         resultbreadth.innerHTML = "";
-        if (majorradius < minorradius) {
-            resultarea.innerHTML = "majorradius Should be Greater";
+        if (length < breadth) {
+            resultarea.innerHTML = "Length Should be Greater";
         } else {
             resultarea.innerHTML =
                 "\\[a=" +
-                majorradius +
+                length +
                 " \\times " +
-                minorradius +
+                breadth +
                 " = " +
-                eval(String(majorradius) + "*" + String(minorradius)) +
+                eval(String(length) + "*" + String(breadth)) +
                 "\\]";
             resultarea.innerHTML +=
                 "\\[Area \\space of \\space Rectangle \\space is \\space" +
-                eval(String(majorradius) + "*" + String(minorradius)) +
+                eval(String(length) + "*" + String(breadth)) +
                 "\\]";
 
             resultperi.innerHTML =
                 "\\[p=2( " +
-                majorradius +
+                length +
                 " + " +
-                minorradius +
+                breadth +
                 " ) = 2( " +
-                eval(String(majorradius) + "+" + String(minorradius)) +
+                eval(String(length) + "+" + String(breadth)) +
                 " ) = " +
-                eval("2*(" + String(majorradius) + "+" + String(minorradius) + ")") +
+                eval("2*(" + String(length) + "+" + String(breadth) + ")") +
                 "\\]";
             resultperi.innerHTML +=
                 "\\[Perimeter \\space of \\space Rectangle \\space is \\space" +
-                eval("2*(" + String(majorradius) + "+" + String(minorradius) + ")") +
+                eval("2*(" + String(length) + "+" + String(breadth) + ")") +
                 "\\]";
         }
-    } else if (majorradius != "" && minorradius != "" && diagonal == "") {
+    } else if (length != "" && breadth != "" && diagonal == "") {
         resultarea.innerHTML = "";
         resultperi.innerHTML = "";
         resultdiagonal.innerHTML = "";
-        resultmajorradius.innerHTML = "";
+        resultlength.innerHTML = "";
         resultbreadth.innerHTML = "";
-        if (majorradius < minorradius) {
-            resultarea.innerHTML = "majorradius Should be Greater";
+        if (length < breadth) {
+            resultarea.innerHTML = "Length Should be Greater";
         } else {
             resultarea.innerHTML =
                 "\\[a=" +
-                majorradius +
+                length +
                 " \\times " +
-                minorradius +
+                breadth +
                 " = " +
-                eval(String(majorradius) + "*" + String(minorradius)) +
+                eval(String(length) + "*" + String(breadth)) +
                 "\\]";
             resultarea.innerHTML +=
                 "\\[Area \\space of \\space Rectangle \\space is \\space" +
-                eval(String(majorradius) + "*" + String(minorradius)) +
+                eval(String(length) + "*" + String(breadth)) +
                 "\\]";
 
             resultperi.innerHTML =
                 "\\[p=2( " +
-                majorradius +
+                length +
                 " + " +
-                minorradius +
+                breadth +
                 " ) = 2( " +
-                eval(String(majorradius) + "+" + String(minorradius)) +
+                eval(String(length) + "+" + String(breadth)) +
                 " ) = " +
-                eval("2*(" + String(majorradius) + "+" + String(minorradius) + ")") +
+                eval("2*(" + String(length) + "+" + String(breadth) + ")") +
                 "\\]";
             resultperi.innerHTML +=
                 "\\[Perimeter \\space of \\space Rectangle \\space is \\space" +
-                eval("2*(" + String(majorradius) + "+" + String(minorradius) + ")") +
+                eval("2*(" + String(length) + "+" + String(breadth) + ")") +
                 "\\]";
 
-            var breadth2 = minorradius * minorradius;
-            var majorradius2 = majorradius * majorradius;
-            var add2 = eval(String(breadth2 + majorradius2));
+            var breadth2 = breadth * breadth;
+            var length2 = length * length;
+            var add2 = eval(String(breadth2 + length2));
             var add2sqrt = nerdamer.sqrt(add2).toString();
             resultdiagonal.innerHTML =
                 "\\[d= \\sqrt{" +
-                minorradius +
+                breadth +
                 "^2+" +
-                majorradius +
+                length +
                 "^2}= \\sqrt{" +
                 breadth2 +
                 "+" +
-                majorradius2 +
+                length2 +
                 "}= \\sqrt{" +
                 add2 +
                 "}=" +
@@ -2032,29 +2032,29 @@ function rectanglesolve() {
                 eval(add2sqrt).toFixed(3) +
                 "\\]";
         }
-    } else if (majorradius != "" && diagonal != "") {
+    } else if (length != "" && diagonal != "") {
         resultarea.innerHTML = "";
         resultperi.innerHTML = "";
         resultdiagonal.innerHTML = "";
-        resultmajorradius.innerHTML = "";
+        resultlength.innerHTML = "";
         resultbreadth.innerHTML = "";
-        if (diagonal < majorradius) {
+        if (diagonal < length) {
             resultbreadth.innerHTML = "Diagonal Should be Greater";
         } else {
-            var majorradius22 = majorradius * majorradius;
+            var length22 = length * length;
             var diagonal22 = diagonal * diagonal;
-            var bsub2 = eval(String(diagonal22 - majorradius22));
+            var bsub2 = eval(String(diagonal22 - length22));
             var bsub2sqrt = nerdamer.sqrt(bsub2).toString();
             bsub2sqrt = eval(bsub2sqrt).toFixed(3);
             resultbreadth.innerHTML =
                 "\\[b= \\sqrt{" +
                 diagonal +
                 "^2-" +
-                majorradius +
+                length +
                 "^2}= \\sqrt{" +
                 diagonal22 +
                 "-" +
-                majorradius22 +
+                length22 +
                 "}= \\sqrt{" +
                 bsub2 +
                 "}=" +
@@ -2067,51 +2067,51 @@ function rectanglesolve() {
 
             resultarea.innerHTML =
                 "\\[a=" +
-                majorradius +
+                length +
                 " \\times " +
                 bsub2sqrt +
                 " = " +
-                eval(String(majorradius) + "*" + String(bsub2sqrt)) +
+                eval(String(length) + "*" + String(bsub2sqrt)) +
                 "\\]";
             resultarea.innerHTML +=
                 "\\[Area \\space of \\space Rectangle \\space is \\space" +
-                eval(String(majorradius) + "*" + String(bsub2sqrt)) +
+                eval(String(length) + "*" + String(bsub2sqrt)) +
                 "\\]";
 
             resultperi.innerHTML =
                 "\\[p=2( " +
-                majorradius +
+                length +
                 " + " +
                 bsub2sqrt +
                 " ) = 2( " +
-                eval(String(majorradius) + "+" + String(bsub2sqrt)) +
+                eval(String(length) + "+" + String(bsub2sqrt)) +
                 " ) = " +
-                eval("2*(" + String(majorradius) + "+" + String(bsub2sqrt) + ")") +
+                eval("2*(" + String(length) + "+" + String(bsub2sqrt) + ")") +
                 "\\]";
             resultperi.innerHTML +=
                 "\\[Perimeter \\space of \\space Rectangle \\space is \\space" +
-                eval("2*(" + String(majorradius) + "+" + String(bsub2sqrt) + ")") +
+                eval("2*(" + String(length) + "+" + String(bsub2sqrt) + ")") +
                 "\\]";
         }
-    } else if (diagonal != "" && minorradius != "") {
+    } else if (diagonal != "" && breadth != "") {
         resultarea.innerHTML = "";
         resultperi.innerHTML = "";
         resultdiagonal.innerHTML = "";
-        resultmajorradius.innerHTML = "";
+        resultlength.innerHTML = "";
         resultbreadth.innerHTML = "";
-        if (diagonal < minorradius) {
-            resultmajorradius.innerHTML = "majorradius should be Greater";
+        if (diagonal < breadth) {
+            resultlength.innerHTML = "Length should be Greater";
         } else {
             var diagonal2 = diagonal * diagonal;
-            var breadth22 = minorradius * minorradius;
+            var breadth22 = breadth * breadth;
             var sub2 = eval(String(diagonal2 - breadth22));
             var sub2sqrt = nerdamer.sqrt(sub2).toString();
             sub2sqrt = eval(sub2sqrt).toFixed(3);
-            resultmajorradius.innerHTML =
+            resultlength.innerHTML =
                 "\\[l= \\sqrt{" +
                 diagonal +
                 "^2-" +
-                minorradius +
+                breadth +
                 "^2}= \\sqrt{" +
                 diagonal2 +
                 "-" +
@@ -2121,8 +2121,8 @@ function rectanglesolve() {
                 "}=" +
                 sub2sqrt +
                 "\\]";
-            resultmajorradius.innerHTML +=
-                "\\[majorradius \\space of \\space Rectangle \\space is \\space" +
+            resultlength.innerHTML +=
+                "\\[Length \\space of \\space Rectangle \\space is \\space" +
                 sub2sqrt +
                 "\\]";
 
@@ -2130,41 +2130,41 @@ function rectanglesolve() {
                 "\\[a=" +
                 sub2sqrt +
                 " \\times " +
-                minorradius +
+                breadth +
                 " = " +
-                eval(String(sub2sqrt) + "*" + String(minorradius)) +
+                eval(String(sub2sqrt) + "*" + String(breadth)) +
                 "\\]";
             resultarea.innerHTML +=
                 "\\[Area \\space of \\space Rectangle \\space is \\space" +
-                eval(String(sub2sqrt) + "*" + String(minorradius)) +
+                eval(String(sub2sqrt) + "*" + String(breadth)) +
                 "\\]";
 
             resultperi.innerHTML =
                 "\\[p=2( " +
                 sub2sqrt +
                 " + " +
-                minorradius +
+                breadth +
                 " ) = 2( " +
-                eval(String(sub2sqrt) + "+" + String(minorradius)) +
+                eval(String(sub2sqrt) + "+" + String(breadth)) +
                 " ) = " +
-                eval("2*(" + String(sub2sqrt) + "+" + String(minorradius) + ")") +
+                eval("2*(" + String(sub2sqrt) + "+" + String(breadth) + ")") +
                 "\\]";
             resultperi.innerHTML +=
                 "\\[Perimeter \\space of \\space Rectangle \\space is \\space" +
-                eval("2*(" + String(sub2sqrt) + "+" + String(minorradius) + ")") +
+                eval("2*(" + String(sub2sqrt) + "+" + String(breadth) + ")") +
                 "\\]";
         }
     } else {
         resultarea.innerHTML = "";
         resultperi.innerHTML = "";
         resultdiagonal.innerHTML = "";
-        resultmajorradius.innerHTML = "";
+        resultlength.innerHTML = "";
         resultbreadth.innerHTML = "";
     }
     renderMathInElement(document.getElementById("resultofperirec"));
     renderMathInElement(document.getElementById("resultofarearec"));
     renderMathInElement(document.getElementById("resultofdiagonalrec"));
-    renderMathInElement(document.getElementById("resultofmajorradiusrec"));
+    renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
 
@@ -2358,38 +2358,11 @@ function solvecube() {
         diagoutput.innerHTML = "";
     }
 }
-  
- function torussolve() {
-    var radius1 = document.getElementById("inputmajorradiustorus").value;
-    var radius2 = document.getElementById("inputminorradiustorus").value;
-    var voloutput = document.getElementById("resultofvoltorus");
-    var tsaoutput = document.getElementById("resultoftsatorus");
-    var voltemp = "";
-    var tsatemp = "";
-    if (radius != "") {
-        voltemp += "\\[ ( \\pi \\times" + radius1 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius2 + " ) \\]";
-        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " + eval(String(( 3.14159 * radius1 * radius1 ) * ( 3.14159 * 2 *radius2 )) )+ "\\]" ;
-        voloutput.innerHTML = voltemp;
-        tsatemp += "\\[4 \\times \\pi \\times \\pi \\times" + radius1 + "^2 " + radius2 + "^1 \\]";
-        tsatemp +=
-            "\\[Total \\space Surface \\space Area \\space of  \\space Torus \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String(4 * 3.14159 * 3.14159 * ((radius1 * radius1) * radius2 ))) + "\\]";
-        tsaoutput.innerHTML = tsatemp;
-        renderMathInElement(voloutput);
-        renderMathInElement(tsaoutput);
-    } else {
-        voloutput.innerHTML = "";
-        tsaoutput.innerHTML = "";
-    }
-  }
-  
-    
- 
 
 function cubosolve() {
-    var majorradius = document.getElementById("inputcubomajorradius").value;
-    var minorradius = document.getElementById("inputcubobreadth").value;
-    var majorradius = document.getElementById("inputcubomajorradius").value;
+    var length = document.getElementById("inputcubolength").value;
+    var breadth = document.getElementById("inputcubobreadth").value;
+    var length = document.getElementById("inputcubolength").value;
     var height = document.getElementById("inputcuboheight").value;
     var voloutput = document.getElementById("resultofvolcubo");
     var tsaoutput = document.getElementById("resultoftsacubo");
@@ -2397,21 +2370,21 @@ function cubosolve() {
     var voltemp = "";
     var tsatemp = "";
     var diagtemp = "";
-    if ((majorradius != "") && (minorradius != "") && (height != "")) {
-        voltemp += "\\[" + majorradius + "\\times" + minorradius + "\\times" + height + "\\]";
-        voltemp += "\\[Volume \\space of \\space cuboid \\space is \\space " + eval(String(majorradius * minorradius * height)) + "\\]";
+    if ((length != "") && (breadth != "") && (height != "")) {
+        voltemp += "\\[" + length + "\\times" + breadth + "\\times" + height + "\\]";
+        voltemp += "\\[Volume \\space of \\space cuboid \\space is \\space " + eval(String(length * breadth * height)) + "\\]";
         voloutput.innerHTML = voltemp;
-        tsatemp += "\\[ 2(" + majorradius + "\\times " + minorradius + "+" + minorradius + "\\times" + height + "+" + height + "\\times" + majorradius + ") \\]";
+        tsatemp += "\\[ 2(" + length + "\\times " + breadth + "+" + breadth + "\\times" + height + "+" + height + "\\times" + length + ") \\]";
         tsatemp += "\\[Total \\space Surface \\space Area \\space of \\space Cuboid \\space is \\space \\]";
-        tsatemp += "\\[" + eval(String(2 * (majorradius * minorradius + minorradius * height + height * majorradius))) + "\\]";
+        tsatemp += "\\[" + eval(String(2 * (length * breadth + breadth * height + height * length))) + "\\]";
         tsaoutput.innerHTML = tsatemp;
-        var breadth2 = minorradius * minorradius;
-        var majorradius2 = majorradius * majorradius;
+        var breadth2 = breadth * breadth;
+        var length2 = length * length;
         var height2 = height * height;
-        var add = eval(String(breadth2 + majorradius2 + height2));
+        var add = eval(String(breadth2 + length2 + height2));
         var d = nerdamer.sqrt(add).toString();
-        diagtemp += "\\[d= \\sqrt{" + majorradius + "^2+" + minorradius + "^2+" + height + "^2} \\]";
-        diagtemp += "\\[ \\sqrt{" + majorradius2 + "+" + minorradius + "+" + height2 + "} \\]";
+        diagtemp += "\\[d= \\sqrt{" + length + "^2+" + breadth + "^2+" + height + "^2} \\]";
+        diagtemp += "\\[ \\sqrt{" + length2 + "+" + breadth + "+" + height2 + "} \\]";
         diagtemp += "\\[ \\sqrt{" + add + "} \\]";
         diagtemp += "\\[" +
             eval(d).toFixed(3) +
@@ -2426,22 +2399,21 @@ function cubosolve() {
         diagoutput.innerHTML = "";
     }
 }
-
 function prismsolve() {
-    var majorradius = document.getElementById("inputprismmajorradius").value;
-    var minorradius = document.getElementById("inputprismbreadth").value;
+    var length = document.getElementById("inputprismlength").value;
+    var breadth = document.getElementById("inputprismbreadth").value;
     var height = document.getElementById("inputprismheight").value;
     var side = document.getElementById("inputprismside").value;
     var voloutput = document.getElementById("resultofvolprism");
     var tsaoutput = document.getElementById("resultoftsaprism");
     var voltemp = "";
     var tsatemp = "";
-    if ((majorradius != "") && (minorradius != "") && (height != "") && (side != "")) {
-        voltemp += "\\[(" + majorradius + "\\times" + minorradius + "\\times" + height + ")" + "\\div" + 2 + "\\]";
-        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space " + eval(String((majorradius * minorradius * height ) / 2)) + "\\]";
+    if ((length != "") && (breadth != "") && (height != "") && (side != "")) {
+        voltemp += "\\[(" + length + "\\times" + breadth + "\\times" + height + ")" + "\\div" + 2 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space " + eval(String((length * breadth * height ) / 2)) + "\\]";
         voloutput.innerHTML = voltemp;
-        tsatemp += "\\[ " + minorradius + "(" + majorradius + "+" + height + ")" + "+" + 2 +  "\\times"  + majorradius + "\\times" + side + "\\]";
-        tsatemp += "\\[Surface \\space Area \\space of \\space Prism \\space is \\space" + eval(String((minorradius*height) + (minorradius *majorradius)+ (2*majorradius*side))) + "\\]";
+        tsatemp += "\\[ " + breadth + "(" + length + "+" + height + ")" + "+" + 2 +  "\\times"  + length + "\\times" + side + "\\]";
+        tsatemp += "\\[Surface \\space Area \\space of \\space Prism \\space is \\space" + eval(String((breadth*height) + (breadth *length)+ (2*length*side))) + "\\]";
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
@@ -2450,6 +2422,48 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+     
+function frustumsolve() {
+    var radius1 = document.getElementById("inputfrustumradius1").value;
+    var radius2 = document.getElementById("inputfrustumradius2").value;
+    var height = document.getElementById("inputfrustumheight").value;
+    var voloutput = document.getElementById("resultofvolfrustum");
+    var lsaoutput = document.getElementById("resultoflsafrustum");
+    var tsaoutput = document.getElementById("resultoftsafrustum");
+    var slantoutput = document.getElementById("resultofslantfrustum");
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var slanttemp = "";
+    if ((radius1 != "") && (radius2 != "") && (height != "")) {
+        slanttemp += "\\[ "  +"\\sqrt" + "(" + "(" + radius1 + "-" + radius2  + ")" + "^2" + "+" + height + "^2" + ")" + "\\]";
+        slanttemp += "\\[Slant \\space Height \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        slanttemp += "\\[" + eval(String(( Math.sqrt(((radius1-radius2)*(radius1-radius2))+(height*height))))) + "\\]";
+        slantoutput.innerHTML = slanttemp;
+        lsatemp += "\\[ " + "\\pi" + "(" + radius1 + "+" + radius2 + ")" +"\\sqrt" + "(" + "(" + radius1 + "-" + radius2  + ")" + "^2" + "+" + height + "^2" + ")" + "\\]";
+        lsatemp += "\\[Lateral \\space area \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        lsatemp += "\\[" + eval(String((3.14 * radius1+ 3.14*radius2 *  Math.sqrt(((radius1-radius2)*(radius1-radius2))+(height*height))))) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+        voltemp += "\\[ " + "\\frac{1}{3}" + "\\times" +"\\pi" + "\\times" + height + "(" + radius1 + "\\times" + radius1 + "+" + radius2 + "\\times" + radius2 + "+" + "(" + radius1 + "+" + radius2 + ")" + ")" + "\\]";
+        voltemp += "\\[Volume \\space area \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(0.33 * 3.14 * height * radius1*radius1 + 0.33*3.14* height*radius2*radius2 + 0.33*3.14*height *radius1*radius2)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ " + "\\pi" + "(" + radius1 + "\\times" + radius1 + "+" + radius2 + "\\times" + radius2 + "+" + "(" + radius1 + "+" + radius2 + ")" + "\\times" +"\\sqrt" + "(" + "(" + radius1 + "-" + radius2  + ")" + "^2" + "+" + height + "^2" + ")" + ")"+ "\\]";
+        tsatemp += "\\[Total \\space surface \\space area \\space of \\space Conical \\space Frustum \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String(( (3.14 * radius1*radius1) + (3.14*radius2*radius2) + (3.14 * radius1) + (3.14 * radius2 * Math.sqrt(((radius1-radius2)*(radius1-radius2))+(height*height)))))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(slantoutput);
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        slantoutput.innerHTML = "";
+    }
+}
+
 function pyramidsolve() {
     var side = document.getElementById("inputpyramidside").value;
     var height = document.getElementById("inputpyramidheight").value;   
@@ -2486,13 +2500,12 @@ function pyramidsolve() {
         renderMathInElement(lsaoutput);
         renderMathInElement(tsaoutput);
         renderMathInElement(hsfoutput);
-      
+
     } else {
         voloutput.innerHTML = "";
         lsaoutput.innerHTML = "";
         tsaoutput.innerHTML = "";
-        hsfoutput.innerHTML = "";
-        
+        hsfoutput.innerHTML = "";      
     }
 }
 
@@ -2527,7 +2540,7 @@ function solvehollowsphere() {
     var tsaoutput = document.getElementById("resultoftsahollowsp");
     var voltemp = "";
     var tsatemp = "";
-    if (radius != "") {
+    if (radius1 != "" && radius2 != "") {
         voltemp += "\\[ \\frac{4}{3} \\times \\pi \\times (" + radius1 + "^3-" + radius2 + "^3) \\]";
         voltemp += "\\[Volume \\space of \\space Hollow \\space Sphere \\space is \\space " + eval(String(4 * 3.14159 * ((radius1 * radius1 * radius1) - (radius2 * radius2 * radius2)) / 3)) + "\\]";
         voloutput.innerHTML = voltemp;
@@ -2616,6 +2629,32 @@ function solvecone() {
     }
 }
 
+function torussolve() {
+    var radius1 = document.getElementById("inputmajorradiustorus").value;
+    var radius2 = document.getElementById("inputminorradiustorus").value;
+    var voloutput = document.getElementById("resultofvoltorus");
+    var tsaoutput = document.getElementById("resultoftsatorus");
+    var voltemp = "";
+    var tsatemp = "";
+    if ( radius1 != "" && radius2 != "") {
+        voltemp += "\\[ ( \\pi \\times" + radius1 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius2 + " ) \\]";
+        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " + eval(String(( 3.14159 * radius1 * radius1 ) * ( 3.14159 * 2 *radius2 )) )+ "\\]" ;
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[4 \\times \\pi \\times \\pi \\times" + radius1 + "^2 " + radius2 + "^1 \\]";
+        tsatemp +=
+            "\\[Total \\space Surface \\space Area \\space of  \\space Torus \\space is \\space  \\]";
+        tsatemp += "\\[" + eval(String(4 * 3.14159 * 3.14159 * ((radius1 * radius1) * radius2 ))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+  }
+
+
+
 //-----------------------------------------------------
 
 //-----------------------------------------------------
@@ -2685,10 +2724,10 @@ function sequationsolver(output) {
         sol = nerdamer("solveEquations([" + ar + "])");
         sol = sol.toString();
         sol = sol.slice(0, -1);
-        sol = sol.slice(1, sol.majorradius);
+        sol = sol.slice(1, sol.length);
         sol = sol.split(",");
         var temp = "";
-        for (i = 0; i <= sol.majorradius / 2 + 1; i += 2) {
+        for (i = 0; i <= sol.length / 2 + 1; i += 2) {
             temp += "\\[" + sol[i] + "=" + sol[i + 1] + "\\]";
         }
         document.getElementById(output).innerHTML = temp;
@@ -2950,7 +2989,7 @@ function slap() {
     });
 
     var ar = t.toString().split("");
-    for (i = 0; i < ar.majorradius; i++) {
+    for (i = 0; i < ar.length; i++) {
         if (ar[i] == "s" && ar[i + 1] == "i") {
             continue;
         } else if (ar[i] == "s" && ar[i - 1] == "o" && ar[i - 2] == "c") {
@@ -2995,7 +3034,7 @@ function sinvlap() {
         throwOnError: false,
     });
     var ar = t.toString().split("");
-    for (i = 0; i < ar.majorradius; i++) {
+    for (i = 0; i < ar.length; i++) {
         if (ar[i] == "t" && ar[i + 1] == "a" && ar[i + 2] == "n") {
             continue;
         } else if (ar[i] == "t" && ar[i - 1] == "c" && ar[i - 2] == "c") {
@@ -3027,13 +3066,13 @@ function orderas() {
 
     val = JSON.stringify(val)
 
-    val = val.substring(2,val.majorradius-2)
+    val = val.substring(2,val.length-2)
 
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
-    var len = parseInt(val.majorradius);
+    var len = parseInt(val.length);
     for (i = 0; i <= len - 1; i++) {
         for (j = 0; j <= len - 1 - i; j++) {
             if (parseFloat(val[j]) > parseFloat(val[j + 1])) {
@@ -3044,7 +3083,7 @@ function orderas() {
         }
     }
     val = val.join(",");
-    if (val.majorradius == 0) {
+    if (val.length == 0) {
         document.getElementById("orderresult").innerHTML += "";
     } else {
         document.getElementById("orderresult").innerHTML +=
@@ -3071,13 +3110,13 @@ function orderde() {
 
     val = JSON.stringify(val)
 
-    val = val.substring(2,val.majorradius-2)
+    val = val.substring(2,val.length-2)
 
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
-    var len = parseInt(val.majorradius);
+    var len = parseInt(val.length);
     for (i = 0; i <= len - 1; i++) {
         for (j = 0; j <= len - 1 - i; j++) {
             if (parseFloat(val[j]) < parseFloat(val[j + 1])) {
@@ -3089,7 +3128,7 @@ function orderde() {
     }
 
     val = val.join(",");
-    if (val.majorradius == 0) {
+    if (val.length == 0) {
         document.getElementById("orderresult").innerHTML = "";
     } else {
         document.getElementById("orderresult").innerHTML +=
@@ -3147,7 +3186,7 @@ function internationalwords(num) {
         "eighty",
         "ninety",
     ];
-    if ((num = num.toString()).majorradius > 9) return "overflow";
+    if ((num = num.toString()).length > 9) return "overflow";
     n = ("000000000" + num)
         .substr(-9)
         .match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
@@ -3203,13 +3242,13 @@ function multiplywithsteps(numm, withnum) {
     var countdotwith = 0;
 
     if (flag == 1) {
-        for (i = num.majorradius - 1; i >= 0; i--) {
+        for (i = num.length - 1; i >= 0; i--) {
             if (num[i] == ".") {
                 break;
             }
             countdot++;
         }
-        for (j = numwith.majorradius - 1; j >= 0; j--) {
+        for (j = numwith.length - 1; j >= 0; j--) {
             if (numwith[j] == ".") {
                 break;
             }
@@ -3234,11 +3273,11 @@ function multiplywithsteps(numm, withnum) {
             .evaluate()
             .toString()
     );
-    if (numwith.majorradius > 1) {
+    if (numwith.length > 1) {
         numwith = numwith.split("");
-        for (i = numwith.majorradius - 1; i >= 0; i--) {
+        for (i = numwith.length - 1; i >= 0; i--) {
             if (numwith[i] == ".") continue;
-            if (numwith.majorradius == m.majorradius + 1) {
+            if (numwith.length == m.length + 1) {
                 var vm = eval(
                     nerdamer(String(numwith[i]) + "*" + String(num))
                         .evaluate()
@@ -3256,7 +3295,7 @@ function multiplywithsteps(numm, withnum) {
             temp += "<br>";
             m += "&times;";
         }
-        for (i = 0; i < String(mulsol).majorradius; i++) {
+        for (i = 0; i < String(mulsol).length; i++) {
             line += "_";
         }
     } else {
@@ -3266,11 +3305,11 @@ function multiplywithsteps(numm, withnum) {
                 .evaluate()
                 .toString()
         );
-        for (i = 0; i < String(mulsol).majorradius; i++) {
+        for (i = 0; i < String(mulsol).length; i++) {
             line += "_";
         }
     }
-    if (numwith.majorradius == 1) {
+    if (numwith.length == 1) {
         r.innerHTML = "";
         r.innerHTML += num + "<br>";
         r.innerHTML += "× " + numwith + "<br>";
@@ -3535,20 +3574,20 @@ function roundoff(input, output) {
     var val = document.getElementById(input).value;
     var el = document.getElementById(output);
     var ar = val.split("");
-    var len = val.majorradius;
+    var len = val.length;
     var i = -1;
     //to check if negative number or not
     ar1 = [];
     if (ar[0] == "-") {
-        for (itr = 0; itr < ar.majorradius - 1; itr++) {
+        for (itr = 0; itr < ar.length - 1; itr++) {
             ar1[itr] = ar[itr + 1];
         }
     } else {
-        for (itr = 0; itr < ar.majorradius; itr++) {
+        for (itr = 0; itr < ar.length; itr++) {
             ar1[itr] = ar[itr];
         }
     }
-    len1 = ar1.majorradius;
+    len1 = ar1.length;
     //to check floating point number
     for (var j = 0; j < len; j++) {
         if (ar[j] == ".") {
@@ -3585,7 +3624,7 @@ function roundoff(input, output) {
         };
         var place = placeofroundoffarray[placeofroundoff];
         var place1;
-        if (ar1.majorradius == ar.majorradius) {
+        if (ar1.length == ar.length) {
             place1 = place;
         } else place1 = place - 1;
         el.innerHTML = "Input number:&nbsp;&nbsp;" + val + "<br>";
@@ -3799,11 +3838,11 @@ function spicon() {
 }
 
 function lentgthcon() {
-    const f = lenu(document.getElementById("majorradiuscon-1").value);
-    const t = lenu(document.getElementById("majorradiuscon-2").value);
-    const i = parseInt(document.getElementById("majorradiusconin").value);
+    const f = lenu(document.getElementById("lengthcon-1").value);
+    const t = lenu(document.getElementById("lengthcon-2").value);
+    const i = parseInt(document.getElementById("lengthconin").value);
     const a = (i * f) / t;
-    document.getElementById("majorradiusconou").innerHTML = `${a}`;
+    document.getElementById("lengthconou").innerHTML = `${a}`;
 }
 
 function areau(a) {
@@ -4457,7 +4496,7 @@ function cal_func_stats()
         var s=0;
         num=num.trim();
         num = num.split(" ");
-        var len=parseInt(num.majorradius);
+        var len=parseInt(num.length);
         // console.log(num)
         var number=[]
         for (i = 0; i < len; i++) {
@@ -4505,10 +4544,10 @@ function cal_func_stats()
             }
         }
 
-        if (mode.majorradius === number.majorradius) mode = number[0];
-        if (number.majorradius != 0)
+        if (mode.length === number.length) mode = number[0];
+        if (number.length != 0)
         {
-            if (mode.majorradius === 0) {
+            if (mode.length === 0) {
                 mode = number;
             } else {
                 mode = `${mode}`;
@@ -4584,7 +4623,7 @@ function sum_n_apsol(nval, rval, r1val) {
             num = parseInt(a) + (i - 1) * d;
             series += (num.toString() + ", ");
         }
-        printseries.innerHTML = "Arithmetic Progression: " + series.substring(0, series.majorradius - 2);
+        printseries.innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
         explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]";
         cal = (n * (2 * a + (n - 1) * d)) / 2;
         res.innerHTML = `Result: ${cal}`;
@@ -4621,7 +4660,7 @@ function anotherap() {
         num += parseInt(d);
         series += (num.toString() + ", ");
     }
-    document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.majorradius - 2);
+    document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
     document.getElementById("ltap").innerHTML = "Result: " + ans
 }
 function apsum()
@@ -4632,10 +4671,10 @@ function apsum()
        return /\S/.test(str);
     });
 	var s=0;
-	if( parseInt(val.majorradius)<2)
+	if( parseInt(val.length)<2)
 	document.getElementById("printAP").innerHTML = "Enter atleast 2 terms of AP";
 	else{
-        if( parseInt(val.majorradius)>2 && (val[1]-val[0] != val[2]-val[1]))
+        if( parseInt(val.length)>2 && (val[1]-val[0] != val[2]-val[1]))
 		{
 			document.getElementById("printAP").innerHTML="Invalid AP"
 		}
@@ -4667,22 +4706,29 @@ function amsol() {
 function gmsol() {
     var a = document.getElementById("aval1").value
     var c = document.getElementById("cval1").value
+    var gmmul = parseInt(a) * parseInt(c)
+
     if(a<0&&c<0){
-      var gmmul1 = parseInt(a) * parseInt(c)
-      var res1 = -(Math.sqrt(gmmul1))
+      var res1 = -(Math.sqrt(gmmul))
       var explain = document.getElementById("gm_formula");
       explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space\\ - \\sqrt{a \\times c} = \\space\\ - \\sqrt{"+a+"\\times"+c+"}\\] ";
       renderMathInElement(document.getElementById("gm_formula"));
       document.getElementById("gm").innerHTML = "Result: " + res1
     }
+
+    else if(a<0 || c<0){
+        var explain = document.getElementById("gm_formula");
+        explain.innerHTML = "Please enter either both positive or both negative values to calculate the Geomteric Mean";
+        document.getElementById("gm").innerHTML = "";
+    }
+    
     else{
-    var gmmul = parseInt(a) * parseInt(c)
     var res = Math.sqrt(gmmul)
     var explain = document.getElementById("gm_formula");
     explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
     renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
-}
+    }
 }
 
 function hmsol() {
@@ -4761,7 +4807,7 @@ function prime_till_num(primetill) {
                 B = B + ", ";
             }
         }
-        ans.innerHTML = B.slice(0, B.majorradius - 2);
+        ans.innerHTML = B.slice(0, B.length - 2);
 
     }
 }
@@ -4785,7 +4831,7 @@ function gp() {
             series += (num.toString() + ", ");
         }
 
-        printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.majorradius - 2);
+        printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
       }
       else
       {
@@ -4976,28 +5022,28 @@ function Means() {
     }
 
     val = JSON.stringify(val)
-    // console.log(val.substring(2,val.majorradius-2)+"Hi"+typeof(val));
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
 
-    val = val.substring(2,val.majorradius-2)
+    val = val.substring(2,val.length-2)
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
-    var len = parseInt(val.majorradius);
+    var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
         s = s + parseFloat(val[i]);
     }
-    if (val.majorradius === 0) {
+    if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         var ans = s / len;
 
         document.getElementById("Meanresult").innerHTML = `Mean Value is => `;
         document.getElementById("Meanresult").innerHTML += `(${val[0]}`;
-        for (i = 1; i < val.majorradius; i++) {
+        for (i = 1; i < val.length; i++) {
             document.getElementById("Meanresult").innerHTML += ` + ${val[i]}`;
         }
-        document.getElementById("Meanresult").innerHTML += `)/${val.majorradius} = `;
+        document.getElementById("Meanresult").innerHTML += `)/${val.length} = `;
         document.getElementById("Meanresult").innerHTML += ans.toFixed(5);
         renderMathInElement(document.getElementById("Meanresult"));
     }
@@ -5019,15 +5065,15 @@ function Median() {
 
     arr = JSON.stringify(arr)
 
-    arr = arr.substring(2,arr.majorradius-2)
+    arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
     arr = arr.filter(function (str) {
         return /\S/.test(str);
     });
-    var len = parseInt(arr.majorradius);
+    var len = parseInt(arr.length);
     arr = arr.sort();
     let mid = Math.floor(len / 2);
-    if (arr.majorradius === 0) {
+    if (arr.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         let median =
@@ -5059,9 +5105,9 @@ function Mode() {
     }
 
     arr = JSON.stringify(arr)
-    // console.log(arr.substring(2,arr.majorradius-2)+"Hi"+typeof(arr));
+    // console.log(arr.substring(2,arr.length-2)+"Hi"+typeof(arr));
 
-    arr = arr.substring(2,arr.majorradius-2)
+    arr = arr.substring(2,arr.length-2)
     arr = arr.split(" ");
     arr = arr.filter(function (str) {
         return /\S/.test(str);
@@ -5080,11 +5126,11 @@ function Mode() {
         }
     }
 
-    if (modes.majorradius === arr.majorradius) modes = [];
-    if (arr.majorradius === 0) {
+    if (modes.length === arr.length) modes = [];
+    if (arr.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
-        if (modes.majorradius === 0) {
+        if (modes.length === 0) {
             document.getElementById(
                 "Meanresult"
             ).innerHTML += `All Number appeared Just Once`;
@@ -5111,19 +5157,19 @@ function Variance() {
     }
 
     val = JSON.stringify(val)
-    // console.log(val.substring(2,val.majorradius-2)+"Hi"+typeof(val));
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
 
-    val = val.substring(2,val.majorradius-2)
+    val = val.substring(2,val.length-2)
 
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
-    var len = parseInt(val.majorradius);
+    var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
         s = s + parseFloat(val[i]);
     }
-    if (val.majorradius === 0) {
+    if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         document.getElementById("Meanresult").innerHTML = `Variance is => <br>`;
@@ -5137,9 +5183,9 @@ function Variance() {
                 document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
-        document.getElementById("Meanresult").innerHTML += `)/${val.majorradius} &nbsp; =  &nbsp;`;
+        document.getElementById("Meanresult").innerHTML += `)/${val.length} &nbsp; =  &nbsp;`;
         document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
-        document.getElementById("Meanresult").innerHTML += `/${val.majorradius} &nbsp;= <br>`;
+        document.getElementById("Meanresult").innerHTML += `/${val.length} &nbsp;= <br>`;
         ans = ans / len;
         document.getElementById("Meanresult").innerHTML += ans.toFixed(5);;
     }
@@ -5164,19 +5210,19 @@ function std() {
     }
 
     val = JSON.stringify(val)
-    // console.log(val.substring(2,val.majorradius-2)+"Hi"+typeof(val));
+    // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
 
-    val = val.substring(2,val.majorradius-2)
+    val = val.substring(2,val.length-2)
 
     val = val.split(" ");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
-    var len = parseInt(val.majorradius);
+    var len = parseInt(val.length);
     for (i = 0; i < len; i++) {
         s = s + parseFloat(val[i]);
     }
-    if (val.majorradius === 0) {
+    if (val.length === 0) {
         document.getElementById("Meanresult").innerHTML = `No Number Added`;
     } else {
         document.getElementById("Meanresult").innerHTML = `Standard Deviation is => <br>`;
@@ -5190,9 +5236,9 @@ function std() {
                 document.getElementById("Meanresult").innerHTML += ` + ${String(Math.pow(num - mean, 2))}`;
             }
         }
-        document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.majorradius} &nbsp; =  &nbsp;`;
+        document.getElementById("Meanresult").innerHTML += `)/&#8730; ${val.length} &nbsp; =  &nbsp;`;
         document.getElementById("Meanresult").innerHTML += `&#8730; ${ans}`;
-        document.getElementById("Meanresult").innerHTML += `/ &#8730;${val.majorradius} &nbsp;= <br>`;
+        document.getElementById("Meanresult").innerHTML += `/ &#8730;${val.length} &nbsp;= <br>`;
         ans = ans / len;
         document.getElementById("Meanresult").innerHTML += `&#8730; ${ans} &nbsp; = &nbsp`;
         ans = Math.sqrt(ans);
@@ -5471,14 +5517,14 @@ function addBinDecHexOct(){
 function separator(str, n) { //used for converting BCD code to decimal
     var val = [];
     var i, l;
-    for(i = 0, l = str.majorradius; i < l; i += n) {
+    for(i = 0, l = str.length; i < l; i += n) {
        val.push(parseInt(str.substr(i, n),2));
     }
 
     return val;
 };
 function bcdTOdecimal(x) {
-    var y=x.majorradius;
+    var y=x.length;
     var input1="";
     var inv=["I","N","V","A","L","I","D"];
     if(y%4==1 || y==1)
@@ -5499,18 +5545,18 @@ function bcdTOdecimal(x) {
 function decimalTObcd(z=""){
     var x = "_";
 
-    for (var i = 0; i < z.majorradius; i++) {
+    for (var i = 0; i < z.length; i++) {
         var y = parseInt(z[i]).toString(2)
-        if (y.majorradius == 1) {
+        if (y.length == 1) {
         x = x + "000" + y + "_   ";
         }
-        if (y.majorradius == 2) {
+        if (y.length == 2) {
         x = x + "00" + y + "_   ";
         }
-        if (y.majorradius == 3) {
+        if (y.length == 3) {
         x = x + "0" + y + "_   ";
         }
-        if (y.majorradius == 4) {
+        if (y.length == 4) {
         x = x + +y + "_   ";
         }
 
@@ -5575,18 +5621,18 @@ function convertex3() {
     let result = document.getElementById("ex3-result");
     var x = "_";
 
-    for (var i = 0; i < input.majorradius; i++) {
+    for (var i = 0; i < input.length; i++) {
         var y = (parseInt(input[i]) + 3).toString(2)
-        if (y.majorradius == 1) {
+        if (y.length == 1) {
             x = x + "000" + y + "_   ";
         }
-        if (y.majorradius == 2) {
+        if (y.length == 2) {
             x = x + "00" + y + "_   ";
         }
-        if (y.majorradius == 3) {
+        if (y.length == 3) {
             x = x + "0" + y + "_   ";
         }
-        if (y.majorradius == 4) {
+        if (y.length == 4) {
             x = x + +y + "_   ";
         }
 
@@ -5618,15 +5664,18 @@ function convertgreydec(){
     var x = result1[0];
 
     if (fromBase === "Grey Code"){
-        for (var i = 1; i < result1.majorradius; i++)
+        for (var i = 1; i < result1.length; i++)
             x += parseInt(x[i - 1] ^ result1[i]).toString();
     }
 
     else{
-        for (var i = 1; i < result1.majorradius; i++)
+        for (var i = 1; i < result1.length; i++)
             x += parseInt(result1[i - 1] ^ result1[i]).toString();
     }
-
+    if(input=="")
+	{ 
+	  x="";
+	}
     result2.innerHTML = x;
 
 }
@@ -5639,11 +5688,11 @@ function convertgrey() {
     var x = input[0];
 
     if (fromBase == "Binary")
-        for (var i = 1; i < input.majorradius; i++)
+        for (var i = 1; i < input.length; i++)
             x += parseInt(input[i - 1] ^ input[i]).toString();
 
     else
-        for (var i = 1; i < input.majorradius; i++)
+        for (var i = 1; i < input.length; i++)
             x += parseInt(x[i - 1] ^ input[i]).toString();
 
     if (input == "") {
@@ -5690,9 +5739,9 @@ function onetwoCalc() {
     let work = document.getElementById("onetwoworking");
     var print = "<h5 style='margin-top: 50px;'>Working of the 1's Complement -</h5> &emsp;"
     var ar = input.split("");
-    var one = new Array(ar.majorradius);
-    var two = new Array(ar.majorradius);
-    for (var i = 0; i <ar.majorradius; i++) {
+    var one = new Array(ar.length);
+    var two = new Array(ar.length);
+    for (var i = 0; i <ar.length; i++) {
         print+="1";
         if (ar[i] == 0) {
             one[i] = 1;
@@ -5704,7 +5753,7 @@ function onetwoCalc() {
     var onec = one.join('');
     result.innerHTML = "One's complement of " + input + " is " + onec + "<br>";
 
-    for (var i = ar.majorradius - 1; i >= 0; i--) {
+    for (var i = ar.length - 1; i >= 0; i--) {
         two[i] = ar[i];
         if (ar[i] == 1)
             break;
@@ -5752,7 +5801,7 @@ function seveneightCalc(){
     var seven = "";
     var eight = "";
 
-    for (var i = 0; i < input.majorradius; i++) {
+    for (var i = 0; i < input.length; i++) {
         print+="7";
         seven += '7' - input[i];
     }
@@ -5796,7 +5845,7 @@ function fiftnsixtnCalc() {
         var fiftn = "";
         var sixtn = "";
 
-        for (var i = 0; i < input.majorradius; i++) {
+        for (var i = 0; i < input.length; i++) {
             print+="f";
             fiftn += (16 - parseInt(input[i],16)).toString(16);
 
@@ -5832,7 +5881,7 @@ function ninetenCalc() {
     var print = "<h5 style='margin-top: 50px;'>Working of the 9's Complement -</h5> &emsp;"
     var nine = "";
     var ten = "";
-    for (var i = 0; i < input.majorradius; i++) {
+    for (var i = 0; i < input.length; i++) {
         print+="9";
         nine += '9' - input[i];
 
@@ -6113,7 +6162,7 @@ function rankcal() {
     var input = document.getElementById("rankcal-input").value;
     let result = document.getElementById("rankcal-result");
     input = input.toUpperCase();
-    var s = input.majorradius;
+    var s = input.length;
     var m = fa(s);
     var ans =1;
     var c;
