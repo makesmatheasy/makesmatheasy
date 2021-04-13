@@ -239,6 +239,7 @@ function openit(id) {
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#prism",
+        "#pentprism",
         "#pyramid",
         "#tripyramid",
         "#anglecon",

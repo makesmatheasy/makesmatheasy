@@ -2430,6 +2430,28 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+function pentprismsolve() {
+    var height = document.getElementById("inputpentprismheight").value;
+    var edge = document.getElementById("inputpentprismedge").value;
+    var voloutput = document.getElementById("resultofvolpentprism");
+    var tsaoutput = document.getElementById("resultoftsapentprism");
+    var voltemp = "";
+    var tsatemp = "";
+    if ((height != "") && (edge != "")) {
+        voltemp += "\\[" + "\\frac{1}{4}" + "\\times" + "\\sqrt" + "(" + 5 + "(" + 5 + "+" + 2 + "\\times" + "\\sqrt" + 5 + ")" + ")" + "\\times" + edge + "\\times" + edge +  "\\times" + height  + "\\]";
+        voltemp += "\\[Volume \\space of \\space Pentagonal \\space Prism \\space is \\space " + eval(String(1.72 * edge * edge* height )) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[" + 5 + "\\times" + edge + "\\times" + height + "+" + "\\frac{1}{2}" + "\\times" + "\\sqrt" + "(" + 5 + "(" + 5 + "+" + 2 + "\\times" + "\\sqrt" + 5 + ")" + ")" + "\\times" + edge + "\\times" + edge   + "\\]";
+        tsatemp += "\\[Surface \\space area \\space of \\space Pentagonal \\space Prism \\space is \\space  \\]";
+        tsatemp += "\\[" + eval(String((5 * edge *height) + (1.72 * edge * edge* height) )) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+}
      
 function frustumsolve() {
     var radius1 = document.getElementById("inputfrustumradius1").value;
