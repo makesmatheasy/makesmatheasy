@@ -198,6 +198,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#theobtn").click(function () {
+        openit("#theo");
+        closenav();
+        clearall();
+    })
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
@@ -339,6 +344,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#caybtn").click(function () {
+        openit("#cay");
+        closenav();
+        clearall();
+    })
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
@@ -346,6 +356,11 @@ $(document).ready(function () {
     })
     $("#hyptrigonoidenbutton").click(function () {
         openit("#hyptrigonoiden");
+        closenav();
+        clearall();
+    })
+    $("#invhyptrigonoidenbutton").click(function () {
+        openit("#invhyptrigonoiden");
         closenav();
         clearall();
     })

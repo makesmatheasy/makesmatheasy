@@ -1011,7 +1011,7 @@ function solvesimpletrigo() {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
     }
-    else if(pp <0 || base <0 || hyp == 0 ){
+    else if(pp <0 || base <0 || hyp < 0 ){
         document.getElementById("soltri").innerHTML = "The sides cannot be negative"
     }
     else {
@@ -1019,7 +1019,7 @@ function solvesimpletrigo() {
             document.getElementById("h").style.color = "red";
             document.getElementById("soltri").innerHTML =
                 "Hypotenuse Should be Greater";
-        } else if (pp != "" && base != "" && hyp != "" && parseInt(hyp) ^ 2 != parseInt(pp) ^ 2 + parseInt(base) ^ 2) {
+        } else if (pp != "" && base != "" && hyp != "" && parseInt(hyp) ^ 2 != parseInt(pp) ^ 2 + parseInt(base) ^ 2 && parseInt(hyp) ^ 2 !=  parseInt(base) ^ 2 +parseInt(pp) ^ 2 ) {
             document.getElementById("soltri").innerHTML =
                 "Right angled triangle with such dimensions is not possible";
         } else if (pp == "") {
@@ -1839,18 +1839,26 @@ function solvetrapezium(){
     var b = document.getElementById("inputparallel2").value;
     var c = document.getElementById("inputnparallel1").value;
     var d = document.getElementById("inputnparallel2").value;
-    //removed height input
-    //added method of finding height
+
     var ts=Math.abs(b-a);
     var s=(ts+parseInt(c)+parseInt(d))/2;
-    var areatri=Math.sqrt(s*(s-ts)*(s-parseInt(c))*(s-parseInt(d)));
+    var value = s*(s-ts)*(s-parseInt(c))*(s-parseInt(d));
+    var areatri=Math.sqrt(value);
     var height= (2*areatri)/ts;
     var heighttemp="";
     document.getElementById("resultofperitrap1").innerHTML="";
     document.getElementById("resultofperitrap2").innerHTML="";
     document.getElementById("resultofareatrap1").innerHTML="";
     document.getElementById("resultofareatrap2").innerHTML="";
-    if (a=="" || b=="" || c=="" || d==""){
+    if (value<0 || value == 0){
+        document.getElementById("resultofareatrap1").innerHTML = "Please enter valid side values";
+        document.getElementById("heighttrap").innerHTML="";
+        document.getElementById("resultofperitrap1").innerHTML="";
+        document.getElementById("resultofperitrap2").innerHTML="";
+        document.getElementById("resultofareatrap2").innerHTML="";
+        return;
+    
+    }else if (a=="" || b=="" || c=="" || d==""){
         document.getElementById("resultofareatrap1").innerHTML = "Enter all sides to calculate Height, Area and perimeter";
 
     } else if(a!="" && b!="" && c!="" && d!=""){
@@ -2528,6 +2536,8 @@ function pyramidsolve() {
         lsaoutput.innerHTML = "";
         tsaoutput.innerHTML = "";
         hsfoutput.innerHTML = "";      
+
+
     }
 }
 
@@ -2580,6 +2590,7 @@ function tripyramidsolve() {
         tsaoutput.innerHTML = "";
         baseoutput.innerHTML = "";
         perioutput.innerHTML = "";      
+
     }
 }
 
@@ -2702,6 +2713,32 @@ function solvecone() {
         shoutput.innerHTML = "";
     }
 }
+
+function torussolve() {
+    var radius1 = document.getElementById("inputmajorradiustorus").value;
+    var radius2 = document.getElementById("inputminorradiustorus").value;
+    var voloutput = document.getElementById("resultofvoltorus");
+    var tsaoutput = document.getElementById("resultoftsatorus");
+    var voltemp = "";
+    var tsatemp = "";
+    if ( radius1 != "" && radius2 != "") {
+        voltemp += "\\[ ( \\pi \\times" + radius1 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius2 + " ) \\]";
+        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " + eval(String(( 3.14159 * radius1 * radius1 ) * ( 3.14159 * 2 *radius2 )) )+ "\\]" ;
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[4 \\times \\pi \\times \\pi \\times" + radius1 + "^2 " + radius2 + "^1 \\]";
+        tsatemp +=
+            "\\[Total \\space Surface \\space Area \\space of  \\space Torus \\space is \\space  \\]";
+        tsatemp += "\\[" + eval(String(4 * 3.14159 * 3.14159 * ((radius1 * radius1) * radius2 ))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+  }
+
+
 
 //-----------------------------------------------------
 
