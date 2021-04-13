@@ -219,6 +219,16 @@ function subtractiom(){
     document.getElementById('impq').innerHTML = "";
     document.getElementById('impb1').innerHTML = ""; 
 
+    if (d1 === n1){
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
+
+        document.getElementById('impr').innerHTML = "1";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = ""; 
+
+       return 0; }
+
     if (d1 === 0){ 
 
         document.getElementById('impa').innerHTML = n1;
@@ -227,7 +237,7 @@ function subtractiom(){
         document.getElementById('impr').innerHTML = "Infinity";
         document.getElementById('impq').innerHTML = "";
         document.getElementById('impb1').innerHTML = ""; 
-       
+
        return 0; }
    
    if (n1 === 0){ 
@@ -235,20 +245,20 @@ function subtractiom(){
         document.getElementById('impa').innerHTML = n1;
         document.getElementById('impb').innerHTML = d1;
 
-       document.getElementById('impr').innerHTML = "0";
-       document.getElementById('impq').innerHTML = "";
-       document.getElementById('impb1').innerHTML = ""; 
-       return 0; }
+        document.getElementById('impr').innerHTML = "0";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = "";
+         
+        return 0; }
 
     if(Number.isNaN(d1) || Number.isNaN(n1) )
      {
          window.alert("Enter an Integer")
+         return;
      }
-
 
     document.getElementById('impa').innerHTML = n1;
     document.getElementById('impb').innerHTML = d1;
-
 
     const arr = [n1, d1];
 
@@ -271,10 +281,7 @@ function subtractiom(){
                     document.getElementById('impq').innerHTML = q;
                     document.getElementById('impb1').innerHTML = b;
 
-
             };
-            };
-
+        };
         properToMixed(arr);
-
 }
