@@ -1179,6 +1179,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="leapyearbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Leap Year
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Leap Year','#lyear','c','lyearimgfav')"><img
+                                        id="lyearimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -4194,6 +4211,31 @@
             </div>
             <div class="form-group">
                 <p id="integralplot"></p>
+            </div>
+
+
+        </div>
+
+        
+        <div class="collapse" id="lyear">     
+            <h1 style="text-align: center;">Check Leap Year</h1><br>       
+            <div class="form-group">
+                <input type="text" id="leapin" class="form__field"
+                       placeholder="Enter Year"
+                       >
+            </div><br>
+
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="leap()">
+                    Solve
+                </button><br>
+                
+            </div>
+            <div class="form-group">
+                <p id="leapresult"
+                   style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
             </div>
 
 

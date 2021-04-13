@@ -246,6 +246,7 @@ function openit(id) {
         "#frustum",
 	    "#ip",
 	    "#prices",
+        "#lyear",
         "#setformula"
     ];
     for (i = 0; i < ids.length; i++) {
