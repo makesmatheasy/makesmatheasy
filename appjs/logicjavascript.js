@@ -5823,6 +5823,50 @@ function convertex3() {
 }
 
 //----------------------------
+
+//Function which performs conversion of Decimal to 2421
+function convertdec2421(){
+    var input = document.getElementById("dec2421-input").value;
+    let result = document.getElementById("dec2421-result");
+    var x = "_";
+
+    for (var i = 0; i < input.length; i++) {
+        if (input[i] == 0){
+            x = x + "0000_";
+        }
+        if (input[i] == 1) {
+            x = x + "0001_" ;
+        }
+        if (input[i] == 2) {
+            x = x + "0010_" ;
+        }
+        if (input[i] == 3) {
+            x = x + "0011_";
+        }
+        if (input[i] == 4) {
+            x = x + "0100_";
+        }
+        if(input[i] == 5){
+            x = x + "1011_";
+        }
+        if(input[i] == 6){
+            x = x + "1100_";
+        }
+        if(input[i] == 7){
+            x = x + "1101_";
+        }
+        if(input[i] == 8){
+            x = x + "1110_";
+        }
+        if(input[i] == 9){
+            x = x + "1111_";
+        }
+    }
+    result.innerHTML = x;
+}
+
+
+//---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
 function reverseString(str) {
     return str.split("").reverse().join("");
@@ -5854,7 +5898,7 @@ function convertgreydec(){
             x += parseInt(result1[i - 1] ^ result1[i]).toString();
     }
     if(input=="")
-	{ 
+	{
 	  x="";
 	}
     result2.innerHTML = x;
