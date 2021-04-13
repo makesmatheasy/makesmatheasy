@@ -5522,8 +5522,19 @@ function subBinDecHexOct(){
 
         var twoco= calculateTwoComplement(input2);
         add = (parseInt(twoco,2)+parseInt(input1,2)).toString(2);
-        result.innerHTML = add;
-
+        if(add.length == input1.length){
+            ans = calculateTwoComplement(add);
+            result.innerHTML = "-" + ans;
+        } else if (add.length > input1.length){
+            ans = add.substring(1);
+            result.innerHTML = ans;
+        } else if (add.length < input1.length){
+            var aryan = input1.length - add.length;
+            aryan = Math.pow(10,aryan);
+            ans = aryan + add;
+            ans = ans.substring(1);
+            result.innerHTML = "-" + calculateTwoComplement(ans);
+        }
     }
 }
 
