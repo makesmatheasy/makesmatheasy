@@ -461,6 +461,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    //Function of Subtraction of Any Number System
+    $("#subtracting-all-btn").click(function(){
+        openit("#subtract-all");
+        closenav();
+        clearall();
+    });
      //Function of Multiplication of Any Number System
      $("#mult-all-btn").click(function(){
         openit("#multiplying-all");
