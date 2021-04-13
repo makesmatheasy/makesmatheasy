@@ -49,6 +49,11 @@ $(document).ready(function () {
         openit("#about");
         closenav();
     });
+    
+    $("#leapyearbtn").click(function () {
+        openit("#lyear");
+        closenav();
+    });
     $("#homeoption").click(function () {
         openit("#home");
         closenav();

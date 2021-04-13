@@ -4373,6 +4373,27 @@ function timeu(a) {
     }
 }
 
+function leap()
+{   
+    const i = parseInt(document.getElementById("leapin").value);
+    var out  = document.getElementById("leapresult");
+    var ans =0;
+    if(i%4==0)
+    {
+        ans =1;
+    }
+    if(i%100==0)
+    {
+        ans =0;
+        if(i%400==0)
+        ans =1;
+    }
+    if(ans)
+    out.innerHTML = `${i} is a Leap Year`;
+    else
+    out.innerHTML = `${i} is not a Leap Year`;
+}
+
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
