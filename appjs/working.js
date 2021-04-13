@@ -601,6 +601,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#gstbtn").click(function(){
+        openit("#gstcal");
+        closenav();
+        clearall();
+    });
+    
     $("#meanbtn").click(function(){
         openit("#mean");
         closenav();

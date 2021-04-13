@@ -119,6 +119,7 @@ Other Tech/Libraries
   - Multiplication with Steps
   - Rounding off numbers
   - EMI Calculator
+  - GST Calculator
   - Simple and Compound Interest
   - Factorial
   - Permutation & Combination

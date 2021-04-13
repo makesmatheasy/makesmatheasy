@@ -4287,6 +4287,54 @@ function emical() {
     renderMathInElement(document.getElementById("emio3"));
 }
 
+// GST Calulator
+function gstcal() {
+    var p, r,final, gst,cgst;
+    p = parseInt(document.getElementById("O_Price").value);
+    r = parseFloat(document.getElementById("GST").value) / 100;
+    gst = p*r;
+    final=p+gst;
+    cgst=gst/2;
+    if (isNaN(p)|| isNaN(r))
+    {
+        document.getElementById("gst1").innerHTML ="Enter integer value" ;
+        document.getElementById("gst0").innerHTML = "";
+        document.getElementById("gst2").innerHTML = "";
+        document.getElementById("gst3").innerHTML = "";
+        document.getElementById("gst4").innerHTML =""
+        document.getElementById("gst6").innerHTML = "";
+        document.getElementById("gst7").innerHTML = "";
+        document.getElementById("gst8").innerHTML = "";  
+    }
+    else if(p<0 || r<0)
+    {
+        document.getElementById("gst1").innerHTML ="Enter a positive integer value" ;
+        document.getElementById("gst0").innerHTML = "";
+        document.getElementById("gst2").innerHTML = "";
+        document.getElementById("gst3").innerHTML = "";
+        document.getElementById("gst4").innerHTML =""
+        document.getElementById("gst6").innerHTML = "";
+        document.getElementById("gst7").innerHTML = "";
+        document.getElementById("gst8").innerHTML = "";  
+    }
+    else{
+        document.getElementById("gst0").innerHTML ="Formula Used:"
+        document.getElementById("gst1").innerHTML = "\\[\\mathrm{GST}=\\frac{\\mathrm{Original}\\space\\mathrm{Cost}\\times\\mathrm{GST}\\%}{100}\\]";
+        document.getElementById("gst2").innerHTML = "\\[\\mathrm{CGST/SGST}=\\frac{\\mathrm{GST}}{2}\\]";
+        document.getElementById("gst3").innerHTML = "\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space\\mathrm{Original}\\space\\mathrm{Cost}+\\mathrm{GST}\\]";
+        document.getElementById("gst4").innerHTML ="Results:"
+        document.getElementById("gst6").innerHTML = "\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]";
+        document.getElementById("gst7").innerHTML = "\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]";
+        document.getElementById("gst8").innerHTML = "\\[\\mathrm{Final}\\space\\mathrm{Cost}= \\space" + final.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById("gst1"));
+        renderMathInElement(document.getElementById("gst2"));
+        renderMathInElement(document.getElementById("gst3"));
+        renderMathInElement(document.getElementById("gst6"));
+        renderMathInElement(document.getElementById("gst7"));
+        renderMathInElement(document.getElementById("gst8"));
+    }
+    
+}
 
 // cost and selling price
 //-----------------------------------------------------
