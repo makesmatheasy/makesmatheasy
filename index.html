@@ -1937,6 +1937,29 @@
             </li>
 
             <!--end -->
+
+            <!--Start of Subtraction -->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="subtracting-all-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;"> Subtraction Of any Number System </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#subtract-all','c','subtract-all-imgfav')"><img
+                                        id="subtract-all-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--end -->
+
+
             <!-- Start of multiplication of any number -->
 
             <li>
@@ -8887,6 +8910,35 @@
         </div>
         <!-- End of Addition of any number system -->
 
+        <!-- Start of Subtraction of any number system -->
+        <div class="collapse" id="subtract-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Choose Number System</h5><br>
+                    <select id="subtract-all-select1" class="form__field"
+                            onchange="subBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                    </select>
+                    <br><br><h2>Input Of Minuend</h2>
+                    <input type=" " id="subtract-all-input1" value="0"
+                           class="form__field"
+                           oninput="subBinDecHexOct()">
+                    <br><br><h2>Input Of Subtrahend</h2>
+                    <input type=" " id="subtract-all-input2" value="0"
+                    class="form__field"
+                    oninput="subBinDecHexOct()">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <br><br><h2>Result Of Subtraction</h2>
+                </div>
+                <label class="form__group" id="subtract-all-result">0</label>
+            </div>
+        </div>
+        <!-- End of Subtraction of any number system -->
 
          <!-- Start of Multiplication of any number system -->
          <div class="collapse" id="multiplying-all">

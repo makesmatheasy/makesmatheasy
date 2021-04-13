@@ -5490,6 +5490,70 @@ function addBinDecHexOct(){
     result.innerHTML="Answer in Decimal="+x3.toString();
 }
 
+//---------------------------------------------------------------------
+
+//Function for subtraction of any number system
+function subBinDecHexOct(){
+    const base = document.getElementById("subtract-all-select1").value;
+    var input1 = document.getElementById("subtract-all-input1").value;
+    var input2 = document.getElementById("subtract-all-input2").value;
+    let result = document.getElementById("subtract-all-result");
+
+    if(input1.length>input2.length){
+        var p=input1.length-input2.length;
+        p = Math.pow(10,p);
+        input2 = p + input2;
+        input2 = input2.substring(1);
+        input1 = input1;
+    } else if (input1.length < input2.length){
+        var t = input2.length-input1.length;
+        t = Math.pow(10,t);
+        input1 = t + input1;
+        input1 = input1.substring(1);
+        input2 = input2;
+    } else {
+        input1 = input1;
+        input2 = input2;
+    }
+
+    if(base === "Binary"){
+        var add = "";
+        var ans = "";
+
+        var twoco= calculateTwoComplement(input2);
+        add = (parseInt(twoco,2)+parseInt(input1,2)).toString(2);
+        result.innerHTML = add;
+
+    }
+}
+
+//called this function while subtracting binary numbers.
+function calculateTwoComplement(x){
+    var ar = x.split("");
+    var two = new Array(ar.length);
+
+    for (var i = ar.length - 1; i >= 0; i--) {
+        two[i] = ar[i];
+        if (ar[i] == 1)
+            break;
+
+    }
+    if (i == -1) {
+        var twoc = '1' + two.join('');
+    } else {
+        for (var k = i - 1; k >= 0; k--) {
+            if (ar[k] == 0) {
+                two[k] = 1;
+
+            } else {
+                two[k] = 0;
+            }
+        }
+        var twoc = two.join('');
+    }
+    return twoc;
+}
+
 //----------------------------
 
 //Function for multiplication of any number system
