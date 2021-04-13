@@ -5568,7 +5568,7 @@ function calculateTwoComplement(x){
 //----------------------------
 
 //Function for multiplication of any number system
-function addBinDecHexOct(){
+function multBinDecHexOct(){
     const firstBase = document.getElementById("multiplying-all-select1").value;
     const secondBase = document.getElementById("multiplying-all-select2").value;
     const input1 = document.getElementById("multiplying-all-input1").value;
