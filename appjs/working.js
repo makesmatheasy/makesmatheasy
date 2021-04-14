@@ -468,6 +468,13 @@ $(document).ready(function () {
             clearall();
         });
 
+        // anyBase-to-anyBase-btn
+        $("#anyBase-to-anyBase-btn").click(function(){
+                openit("#anyBase");
+                closenav();
+                clearall();
+            });
+
 
     $("#complexidentitiesbtn").click(function(){
         openit("#complexidentities");

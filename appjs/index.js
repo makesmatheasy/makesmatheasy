@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#anyBase",
         "#complex1collapse",
         "#complex2collapse",
         "#complexidentities",

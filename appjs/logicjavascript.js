@@ -3915,7 +3915,7 @@ function expoxn()
   var result= document.getElementsByClassName("comp1resulte");
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate().toString();
   var x ="iπ *" +y
-  result[1].innerHTML = x;  
+  result[1].innerHTML = x;
   result[2].innerHTML = x;
 
   var p = (Math.sqrt((r*r)+(i*i)));
@@ -3924,7 +3924,7 @@ function expoxn()
   {
     j = (r*r)+(i*i);
     j = "&#8730; "+ j ;
-    
+
   }
   result[0].innerHTML =  j ;
 
@@ -4252,10 +4252,10 @@ function discount() {
             var perp = (profit * 100) / sp;
             print="Cost Price: Rs "+cp+"<br>Selling Price: Rs "+sp+"<br>Discount: "+discount+"<br>Loss: Rs " + profit+"<br>Loss Percentage: " + perp + "%";
         }
-        
+
         document.getElementById("discountresult").innerHTML = print;
     }
-    
+
 }
 
 //Statistics Calculator
@@ -5133,7 +5133,60 @@ function convertBinOct() {
 }
 
 //----------------------------
+//Function that performs anyBase to anyBase Conversion
+function convertAnyBaseToAnyBase() {
+  const fromBase = document.getElementById("anyBase-select1").value;
+  const toBase = document.getElementById("anyBase-select2").value;
+  const input = document.getElementById("anyBase-input").value;
+  let result = document.getElementById("anyBase-result");
 
+  let from = 2;
+  let to = 2;
+
+  if (fromBase === "2(Binary)") from = 2;
+  else if (fromBase === "3") from=3;
+  else if (fromBase === "4") from=4;
+  else if (fromBase === "5") from=5;
+  else if (fromBase === "6") from=6;
+  else if (fromBase === "7") from=7;
+  else if (fromBase === "8(Octal)") from=8;
+  else if (fromBase === "9") from=9;
+  else if (fromBase === "10(Decimal)") from=10;
+  else if (fromBase === "11") from=11;
+  else if (fromBase === "12") from=12;
+  else if (fromBase === "13") from=13;
+  else if (fromBase === "14") from=14;
+  else if (fromBase === "15") from=15;
+  else from = 16;
+
+  if (toBase === "2(Binary)") to = 2;
+  else if(toBase === "3") to = 3;
+  else if(toBase === "4") to = 4;
+  else if(toBase === "5") to = 5;
+  else if(toBase === "6") to = 6;
+  else if(toBase === "7") to = 7;
+  else if(toBase === "8(Octal)") to = 8;
+  else if(toBase === "9") to = 9;
+  else if(toBase === "10(Decimal)") to = 10;
+  else if(toBase === "11") to = 11;
+  else if(toBase === "12") to = 12;
+  else if(toBase === "13") to = 13;
+  else if(toBase === "14") to = 14;
+  else if(toBase === "15") to = 15;
+  else to = 16;
+
+  result.innerHTML = parseInt(input, from).toString(to);
+  if (input == "") {
+      result.innerHTML = "";
+  } else if (from == 2) {
+      if (input.search(/^[10]+$/) == -1)
+          result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+  }
+
+
+
+}
 //Function that performs conversion of Octal/hexadecimal
 function convertOctHex() {
     const fromBase = document.getElementById("octal-hexadecimal-select1").value;
