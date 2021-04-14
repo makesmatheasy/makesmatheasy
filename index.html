@@ -2131,6 +2131,25 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="dec2421btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/2421
+                                Code
+                                Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Decimal/2421 Code Converter','#dec2421','c','dec2421-imgfav')"><img
+                                        id="dec2421-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="octal-to-binary-btn"
                                style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Octal
                                 / Binary
@@ -9318,6 +9337,9 @@
                                 OR
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
+                                NOT
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
                                 XOR
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
@@ -9621,6 +9643,29 @@
             </div>
         </div>
         <!-- End of ex3 convertor -->
+
+ <!-- Start of Decimal/2421 convertor -->
+ <div>
+    <div class="collapse" id="dec2421">
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Decimal</h5>
+
+                <input type="number" id="dec2421-input" value="0" class="form__field"
+                       oninput="convertdec2421()">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>2421</h5>
+
+            </div>
+            <label class="form__group" id="dec2421-result">0</label>
+        </div>
+    </div>
+</div>
+<!-- End of Decimal/2421 convertor -->
+
          <!-- Start   -->
          <div>
             <div class="collapse" id="rankcal">
