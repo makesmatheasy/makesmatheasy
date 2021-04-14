@@ -218,6 +218,7 @@ function openit(id) {
         "#profitloss",
         "#differentiate-rulecollapse",
         "#emical",
+        "#gstcal",
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",

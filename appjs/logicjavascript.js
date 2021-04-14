@@ -4287,6 +4287,44 @@ function emical() {
     renderMathInElement(document.getElementById("emio3"));
 }
 
+// GST Calulator
+function gstcal() {
+    var p, r,final, gst,cgst;
+    p = parseInt(document.getElementById("O_Price").value);
+    r = parseFloat(document.getElementById("GST").value) / 100;
+    gst = p*r;
+    final=p+gst;
+    cgst=gst/2;
+    if (isNaN(p)|| isNaN(r))
+    {
+        document.getElementById("gst1").innerHTML ="Enter integer value" ;
+        document.getElementById("gst0").innerHTML = "";
+        document.getElementById("gst2").innerHTML = "";
+        document.getElementById("gst3").innerHTML = "";
+    }
+    else if(p<0 || r<0)
+    {
+        document.getElementById("gst1").innerHTML ="Enter a positive integer value" ;
+        document.getElementById("gst0").innerHTML = "";
+        document.getElementById("gst2").innerHTML = "";
+        document.getElementById("gst3").innerHTML = "";
+    }
+    else{
+        document.getElementById("gst0").innerHTML ="Working"
+        document.getElementById("gst2").innerHTML ="Results"
+        var gst_work="",gst_result="";
+        gst_work+="\\[\\mathrm{GST}=\\frac{\\mathrm{Original}\\space\\mathrm{Cost}\\times\\mathrm{GST}\\%}{100}\\]"+"\\[\\mathrm{GST}=\\space"+p+"\\times"+r+"\\]"+"\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]";
+        gst_work+="\\[\\mathrm{CGST/SGST}=\\frac{\\mathrm{GST}}{2}\\]"+"\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]";
+        gst_work+="\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space\\mathrm{Original}\\space\\mathrm{Cost}+\\mathrm{GST}\\]"+"\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space"+p+"+\\space"+ gst.toFixed(2) +"\\]";
+        gst_result+="\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]"+"\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]"+"\\[\\mathrm{Final}\\space\\mathrm{Cost}= \\space" + final.toFixed(2) + "\\]";
+        document.getElementById("gst1").innerHTML =gst_work;
+        document.getElementById("gst3").innerHTML =gst_result;
+        renderMathInElement(document.getElementById("gst1"));
+        renderMathInElement(document.getElementById("gst3"));
+        
+    }
+    
+}
 
 // cost and selling price
 //-----------------------------------------------------
