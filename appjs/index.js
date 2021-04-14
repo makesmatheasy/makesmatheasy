@@ -235,6 +235,7 @@ function openit(id) {
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
+        "#dec2421",
         "#ex3",
         "#lappro",
         "#rankcal",

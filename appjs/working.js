@@ -82,6 +82,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#dec2421btn").click(function () {
+        openit("#dec2421");
+        closenav();
+        clearall();
+    });
+
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
