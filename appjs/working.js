@@ -650,6 +650,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#analyticalbtn").click(function(){
+        openit("#analytical");
+        closenav();
+        clearall();
+    });
 })
 
     function loader(action) {

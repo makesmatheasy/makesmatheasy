@@ -1541,6 +1541,39 @@ function printtable() {
     }
 }
 
+function ShowDistance()
+{
+var x1, x2, y1, y2;
+    x1=parseFloat(document.getElementById('xOne').value);
+    x2=parseFloat(document.getElementById('xTwo').value);
+    y1=parseFloat(document.getElementById('yOne').value);
+    y2=parseFloat(document.getElementById('yTwo').value);
+    var explain = document.getElementById("dis_formula");
+    explain.innerHTML = "\\[Distance \\space between \\space two \\space points =\\space \\sqrt{ (x1-x2)^2 + (y1-y2)^2 } \\] ";
+    renderMathInElement(document.getElementById("dis_formula"));
+
+var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-
+y2), 2) ).toFixed(2);
+    document.getElementById('outPut').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ('+ x2 + ',' + y2 + ') is '+ distance;
+
+    
+}
+
+function midpointsolve()
+{
+    var X1, X2, Y1, Y2;
+    X1=parseFloat(document.getElementById('XOne').value);
+    X2=parseFloat(document.getElementById('XTwo').value);
+    Y1=parseFloat(document.getElementById('YOne').value);
+    Y2=parseFloat(document.getElementById('YTwo').value);
+    var explain_mid = document.getElementById("mid_formula");
+    explain_mid.innerHTML = "\\[Midpoint \\space between \\space two \\space points =\\space  (\\frac{x1 + x2}{2}, \\space \\frac{y1+y2}{2} ) \\] ";
+    renderMathInElement(document.getElementById("mid_formula"));
+var midpoint1 = (X1 + X2)/2;
+var midpoint2= (Y1 + Y2)/2;
+    document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
+    
+}
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {
