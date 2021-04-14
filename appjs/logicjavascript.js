@@ -4301,15 +4301,6 @@ function gstcal() {
         document.getElementById("gst0").innerHTML = "";
         document.getElementById("gst2").innerHTML = "";
         document.getElementById("gst3").innerHTML = "";
-        document.getElementById("gst5").innerHTML =""
-        document.getElementById("gst4").innerHTML =""
-        document.getElementById("gst6").innerHTML = "";
-        document.getElementById("gst7").innerHTML = "";
-        document.getElementById("gst8").innerHTML = "";  
-        document.getElementById("gst9").innerHTML = "";  
-        document.getElementById("gst10").innerHTML = "";  
-        document.getElementById("gst11").innerHTML = "";
-        document.getElementById("gst12").innerHTML = "";
     }
     else if(p<0 || r<0)
     {
@@ -4317,42 +4308,19 @@ function gstcal() {
         document.getElementById("gst0").innerHTML = "";
         document.getElementById("gst2").innerHTML = "";
         document.getElementById("gst3").innerHTML = "";
-        document.getElementById("gst5").innerHTML =""
-        document.getElementById("gst4").innerHTML =""
-        document.getElementById("gst6").innerHTML = "";
-        document.getElementById("gst7").innerHTML = "";
-        document.getElementById("gst8").innerHTML = ""; 
-        document.getElementById("gst9").innerHTML = "";  
-        document.getElementById("gst10").innerHTML = ""; 
-        document.getElementById("gst11").innerHTML = "";
-        document.getElementById("gst12").innerHTML = "";
     }
     else{
         document.getElementById("gst0").innerHTML ="Working"
-        document.getElementById("gst1").innerHTML = "\\[\\mathrm{GST}=\\frac{\\mathrm{Original}\\space\\mathrm{Cost}\\times\\mathrm{GST}\\%}{100}\\]";
-        document.getElementById("gst2").innerHTML ="\\[\\mathrm{GST}=\\space"+p+"\\times"+r+"\\]";
-        document.getElementById("gst3").innerHTML = "\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]";
-        document.getElementById("gst4").innerHTML = "\\[\\mathrm{CGST/SGST}=\\frac{\\mathrm{GST}}{2}\\]";
-        document.getElementById("gst5").innerHTML = "\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]";
-        document.getElementById("gst6").innerHTML = "\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space\\mathrm{Original}\\space\\mathrm{Cost}+\\mathrm{GST}\\]";
-        document.getElementById("gst7").innerHTML ="\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space"+p+"+\\space"+ gst.toFixed(2) +"\\]";
-        document.getElementById("gst8").innerHTML = "\\[\\mathrm{Final}\\space\\mathrm{Cost}= \\space" + final.toFixed(2) + "\\]";
-        document.getElementById("gst9").innerHTML ="Results"
-        document.getElementById("gst10").innerHTML = "\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]";
-        document.getElementById("gst11").innerHTML = "\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]";
-        document.getElementById("gst12").innerHTML = "\\[\\mathrm{Final}\\space\\mathrm{Cost}= \\space" + final.toFixed(2) + "\\]";
-        
+        document.getElementById("gst2").innerHTML ="Results"
+        var gst_work="",gst_result="";
+        gst_work+="\\[\\mathrm{GST}=\\frac{\\mathrm{Original}\\space\\mathrm{Cost}\\times\\mathrm{GST}\\%}{100}\\]"+"\\[\\mathrm{GST}=\\space"+p+"\\times"+r+"\\]"+"\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]";
+        gst_work+="\\[\\mathrm{CGST/SGST}=\\frac{\\mathrm{GST}}{2}\\]"+"\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]";
+        gst_work+="\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space\\mathrm{Original}\\space\\mathrm{Cost}+\\mathrm{GST}\\]"+"\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space"+p+"+\\space"+ gst.toFixed(2) +"\\]";
+        gst_result+="\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]"+"\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]"+"\\[\\mathrm{Final}\\space\\mathrm{Cost}= \\space" + final.toFixed(2) + "\\]";
+        document.getElementById("gst1").innerHTML =gst_work;
+        document.getElementById("gst3").innerHTML =gst_result;
         renderMathInElement(document.getElementById("gst1"));
-        renderMathInElement(document.getElementById("gst2"));
         renderMathInElement(document.getElementById("gst3"));
-        renderMathInElement(document.getElementById("gst4"));
-        renderMathInElement(document.getElementById("gst5"));
-        renderMathInElement(document.getElementById("gst6"));
-        renderMathInElement(document.getElementById("gst7"));
-        renderMathInElement(document.getElementById("gst8"));
-        renderMathInElement(document.getElementById("gst10"));
-        renderMathInElement(document.getElementById("gst11"));
-        renderMathInElement(document.getElementById("gst12"));
         
     }
     
