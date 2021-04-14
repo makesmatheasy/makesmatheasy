@@ -4421,6 +4421,27 @@ function timeu(a) {
     }
 }
 
+function leap()
+{   
+    const i = parseInt(document.getElementById("leapin").value);
+    var out  = document.getElementById("leapresult");
+    var ans =0;
+    if(i%4==0)
+    {
+        ans =1;
+    }
+    if(i%100==0)
+    {
+        ans =0;
+        if(i%400==0)
+        ans =1;
+    }
+    if(ans)
+    out.innerHTML = `${i} is a Leap Year`;
+    else
+    out.innerHTML = `${i} is not a Leap Year`;
+}
+
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
@@ -5597,10 +5618,85 @@ function addBinDecHexOct(){
     result.innerHTML="Answer in Decimal="+x3.toString();
 }
 
+//---------------------------------------------------------------------
+
+//Function for subtraction of any number system
+function subBinDecHexOct(){
+    const base = document.getElementById("subtract-all-select1").value;
+    var input1 = document.getElementById("subtract-all-input1").value;
+    var input2 = document.getElementById("subtract-all-input2").value;
+    let result = document.getElementById("subtract-all-result");
+
+    if(input1.length>input2.length){
+        var p=input1.length-input2.length;
+        p = Math.pow(10,p);
+        input2 = p + input2;
+        input2 = input2.substring(1);
+        input1 = input1;
+    } else if (input1.length < input2.length){
+        var t = input2.length-input1.length;
+        t = Math.pow(10,t);
+        input1 = t + input1;
+        input1 = input1.substring(1);
+        input2 = input2;
+    } else {
+        input1 = input1;
+        input2 = input2;
+    }
+
+    if(base === "Binary"){
+        var add = "";
+        var ans = "";
+
+        var twoco= calculateTwoComplement(input2);
+        add = (parseInt(twoco,2)+parseInt(input1,2)).toString(2);
+        if(add.length == input1.length){
+            ans = calculateTwoComplement(add);
+            result.innerHTML = "-" + ans;
+        } else if (add.length > input1.length){
+            ans = add.substring(1);
+            result.innerHTML = ans;
+        } else if (add.length < input1.length){
+            var aryan = input1.length - add.length;
+            aryan = Math.pow(10,aryan);
+            ans = aryan + add;
+            ans = ans.substring(1);
+            result.innerHTML = "-" + calculateTwoComplement(ans);
+        }
+    }
+}
+
+//called this function while subtracting binary numbers.
+function calculateTwoComplement(x){
+    var ar = x.split("");
+    var two = new Array(ar.length);
+
+    for (var i = ar.length - 1; i >= 0; i--) {
+        two[i] = ar[i];
+        if (ar[i] == 1)
+            break;
+
+    }
+    if (i == -1) {
+        var twoc = '1' + two.join('');
+    } else {
+        for (var k = i - 1; k >= 0; k--) {
+            if (ar[k] == 0) {
+                two[k] = 1;
+
+            } else {
+                two[k] = 0;
+            }
+        }
+        var twoc = two.join('');
+    }
+    return twoc;
+}
+
 //----------------------------
 
 //Function for multiplication of any number system
-function addBinDecHexOct(){
+function multBinDecHexOct(){
     const firstBase = document.getElementById("multiplying-all-select1").value;
     const secondBase = document.getElementById("multiplying-all-select2").value;
     const input1 = document.getElementById("multiplying-all-input1").value;

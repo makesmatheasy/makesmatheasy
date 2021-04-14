@@ -49,6 +49,11 @@ $(document).ready(function () {
         openit("#about");
         closenav();
     });
+    
+    $("#leapyearbtn").click(function () {
+        openit("#lyear");
+        closenav();
+    });
     $("#homeoption").click(function () {
         openit("#home");
         closenav();
@@ -453,6 +458,12 @@ $(document).ready(function () {
      //Function of Addition of Any Number System
     $("#add-all-btn").click(function(){
         openit("#adding-all");
+        closenav();
+        clearall();
+    });
+    //Function of Subtraction of Any Number System
+    $("#subtracting-all-btn").click(function(){
+        openit("#subtract-all");
         closenav();
         clearall();
     });
