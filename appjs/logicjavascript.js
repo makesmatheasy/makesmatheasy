@@ -2494,6 +2494,17 @@ function frustumsolve() {
     }
 }
 
+findFactors = function() {
+    var number = document.getElementById("numforfactorhcflcm").value; // Get the number entered by user.
+    var integer = parseInt(number); // Convert it to a number since all the inputs are treaded as string by JavaScript.
+    var loopCount = integer / 2; // Divide the number in half for which we will run loop, since half of any given number is it's second-largest factor.
+    for (var i = 1; i <= loopCount; i++) {
+      if (integer % i == 0) // If remainder is 0, then the number is a factor.
+        document.getElementById("allfactor").innerHTML += i +","; // Print out the factor
+    }
+    document.getElementById("allfactor").innerHTML +=  number; // Print out the number itself.
+}
+
 function pyramidsolve() {
     var side = document.getElementById("inputpyramidside").value;
     var height = document.getElementById("inputpyramidheight").value;   
