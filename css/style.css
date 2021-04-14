@@ -323,11 +323,12 @@ h6 {
   justify-content: center;
   align-items: center;
   margin-top: 8vh;
-  transform: translate(-50%, -50%);
+  margin-right:8rem;
   background: #ff299c;
   height: 3.75rem;
   border-radius: 2.5rem;
   padding: 0.625rem;
+  transform: translateX(50%,50%);
 }
 #box:hover > #search-txt {
   width: 15rem;
