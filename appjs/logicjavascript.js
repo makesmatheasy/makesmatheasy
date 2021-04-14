@@ -5436,24 +5436,49 @@ function convertBinDec() {
     const toBase = document.getElementById("decimal-binary-select2").value;
     const input = document.getElementById("decimal-binary-input").value;
     let result = document.getElementById("decimal-binary-result");
-    let from = 10;
-    let to = 10;
 
-    if (fromBase === "Decimal") from = 10;
-    else from = 2;
+    if (fromBase === "Decimal" && toBase === "Binary"){
+    var i = 1;
+    var s = "";
+    var n ;
+    var [integer , fraction = ''] = input.toString().split('.');
+    fraction = Math.pow(10,-1 * fraction.length) * fraction;
 
-    if (toBase === "Decimal") to = 10;
-    else to = 2;
+    while(i<=7 ){
+       fraction = 2 * fraction;
+       s = s + parseInt(fraction).toString(2);;
+       fraction = "0"+fraction.toString().substring(fraction.toString().indexOf("."));
+       n= Math.abs(fraction);
+       if(n - Math.floor(n) == 0){
+       break;
+       }
+       i++;
+    }
+    result.innerHTML =   parseInt(integer,10).toString(2) + "."+ s ;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    }else if (fromBase === "Binary" && toBase === "Decimal"){
+        result.innerHTML = calculatefrac(input,2);
+    }else if (fromBase === "Binary" && toBase === "Binary"){
+        result.innerHTML = input;
+    }else if (fromBase === "Decimal" && toBase ==="Decimal"){
+        result.innerHTML = input;
+    }
+
     if (input == "") {
         result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
+    } else if (fromBase  === "Binary") {
+        if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
 
     }
 }
+//converts both integer and fractional part of  binary/hexa/octal to decimal
+function calculatefrac(value, base = 2) {
+    var [integer, fraction = ''] = value.toString().split('.');
+
+    return parseInt(integer, base) + (integer[0] !== '-' || -1) * fraction.split('').reduceRight((r, a) => (r + parseInt(a, base)) / base, 0);
+}
+
 
 //////////////////////////////////////////////////////////////
 
