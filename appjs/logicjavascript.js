@@ -5398,11 +5398,15 @@ function clearInputs() {
 //Function that performs bitwise calculation
 function bitwiseCalc() {
 
+    addEventListener("change",x =>{
+        if(operation == "NOT")
+        document.getElementById("bitwise-second-number").style = "display:none";
+        else
+        document.getElementById("bitwise-second-number").style = "display:inline-block";
+        })
     const operation = document.getElementById("bitwise-operation").value;
     const numberSystem = document.getElementById("bitwise-numbers-system").value;
     let result;
-
-
     let firstOperand = parseInt(
         document.getElementById("bitwise-first-number").value
     );
@@ -5446,6 +5450,9 @@ function bitwiseCalc() {
         document.getElementById("bitwise-result").innerHTML = str;
     } else {
         switch (operation) {
+            case "NOT":
+                result = ~firstOperand;
+                break;
             case "AND":
                 result = firstOperand & secondOperand;
                 break;
