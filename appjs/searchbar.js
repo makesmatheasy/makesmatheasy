@@ -286,7 +286,30 @@ function autocomplete(inp, arr) {
                     else if (inp.value.toUpperCase() == "BAYES PROBABILITY THEOREM") {
                         $("#bayes-probabilitycollapse").slideToggle();    
                     }
-
+                    else if (inp.value.toUpperCase() == "LAPLACE TRANSFORMS AND PROPERTIES") {
+                        $("#lappro").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "LAPLACE TRANSFORMS AND PROPERTIES"){
+                        document.getElementById('lappro').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "MAXIMA AND MINIMA OF FUNCTIONS") {
+                        $("#maxmin").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "MAXIMA AND MINIMA OF FUNCTIONS"){
+                        document.getElementById('maxmin').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "APPLICATION OF DERIVATIVES") {
+                        $("#maxmin").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "APPLICATION OF DERIVATIVES"){
+                        document.getElementById('maxmin').click();
+                    }
+                    else if (inp.value.toUpperCase() == "TANGENT AND NORMAL") {
+                        $("#tangent").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "TANGENT AND NORMAL"){
+                        document.getElementById('tangent').click();
+                    } 
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -413,10 +436,9 @@ function autocomplete(inp, arr) {
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
-
-                        "Vector Algebra","Vector Calculus","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Unit Converter" ,"Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
-                        "Curve Tracing","Coordinate Systems","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Curve Tracing","Coordinate Systems","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
 
                        
                         
@@ -607,6 +629,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "TANGENT AND NORMAL"){
+        document.getElementById('tangent').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TANGENT AND NORMAL") {
+        $("#tangent").slideToggle(); 
     }    
     else if(inp.value.toUpperCase() == "ALGEBRAIC EQUATIONS FORMULAS"){
         document.getElementById('algebraic_formulascollapse').click(); 
@@ -723,5 +751,22 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "BAYES PROBABILITY THEOREM") {
         $("#bayes-probabilitycollapse").slideToggle(); 
     }
-
+    else if(inp.value.toUpperCase() == "LAPLACE TRANSFORMS AND PROPERTIES"){
+        document.getElementById('lappro').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LAPLACE TRANSFORMS AND PROPERTIES") {
+        $("#lappro").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "MAXIMA AND MINIMA OF FUNCTIONS"){
+        document.getElementById('maxmin').click(); 
+    }
+    else if (inp.value.toUpperCase() == "MAXIMA AND MINIMA OF FUNCTIONS") {
+        $("#maxmin").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "APPLICATION OF DERIVATIVES"){
+        document.getElementById('aod').click(); 
+    }
+    else if (inp.value.toUpperCase() == "APPLICATION OF DERIVATIVES") {
+        $("#aod").slideToggle(); 
+    }
 }
