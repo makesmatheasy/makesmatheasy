@@ -1714,6 +1714,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="analyticalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate Geometry
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coordinate Geometry Calculator','#analytical','c','analyticalfav')"><img
+                                        id="analyticalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="corgeobtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Geometry Formula and Theorem
@@ -3140,7 +3156,49 @@
                 </div>
             </div>
         </div>
-
+        <div class="collapse" id="analytical">
+            <div class="text-center">
+                <h2><label>Coordinate Geometry Calculator</label></h2>
+            </div>
+            <h3>Distance </h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="xOne" size=12 value='' placeholder="                   x1"> , 
+                <input type="text" id="yOne" size=12 value='' placeholder="                   y1">)
+                    <br>
+                    Coordinate 2 = (<input type="text" id="xTwo" size=12 value='' placeholder="                   x2"> , 
+                <input type="text" id="yTwo" size=12 value='' placeholder="                   y2">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=ShowDistance()>
+                    Calculate Distance
+                </button><br>
+                </p>
+            </div><br>
+            <p id="dis_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="outPut"> </h4> <br>
+            <h3>Midpoint </h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate A = (<input type="text" id="XOne" size=12 value='' placeholder="                   x1"> , 
+                <input type="text" id="YOne" size=12 value='' placeholder="                   y1">)
+                    <br>
+                    Coordinate B = (<input type="text" id="XTwo" size=12 value='' placeholder="                   x2"> , 
+                <input type="text" id="YTwo" size=12 value='' placeholder="                   y2">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=midpointsolve()>
+                    Calculate Midpoint
+                </button><br>
+                </p>
+            </div><br>
+            <p id="mid_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="mid_output"> </h4> 
+        </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
                 <div class="coll">

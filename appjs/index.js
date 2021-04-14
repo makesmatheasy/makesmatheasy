@@ -250,6 +250,7 @@ function openit(id) {
 	    "#ip",
 	    "#prices",
         "#lyear",
+        "#analytical",
         "#setformula"
     ];
     for (i = 0; i < ids.length; i++) {
