@@ -5396,7 +5396,7 @@ function convertBinDec() {
     if (input == "") {
         result.innerHTML = "";
     } else if (fromBase  === "Binary") {
-        if (input.search(/^[.10]+$/) == -1)
+        if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
 
     }
