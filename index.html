@@ -1131,7 +1131,21 @@
                     </tr>
                 </table>
             </li>
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="giffbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Greatest Integer Function and Fractional Part</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Greatest Integer Function and Fractional Part','#giff','c','giffimgfav')"><img
+                                        id="giffimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -7200,6 +7214,15 @@
             <button class="btn btn-light" onclick=pythtriple()>Submit</button>
             <br><br>
             <h4 style=  "color : white"id="answ"></h4>
+        </div>
+        <div class="collapse" id="giff">
+            <h2>Greatest Integer Function and Fractional Part</h2>
+            <input class = "form__field"type="text" id="giffnum">
+            <br><br>
+            <button class = "btn btn-light" onclick="gif()">Greatest Integer Function</button>
+            <button class = "btn btn-light" onclick="fp()">Fractional Part Function</button>
+            <p id="giffans"></p>
+            <p id="fpans"></p>
         </div>
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>

@@ -1383,7 +1383,33 @@ var pardifforder = "";
 function getparorder(value) {
     pardifforder = value;
 }
+function gif(){
+    var giffnum = parseInt(document.getElementById("giffnum").value)
+    if(giffnum >=0){
+        let ans = Math.floor(giffnum)
+        document.getElementById("giffans").innerHTML = "The gif is " + ans
+    }
+    else {
+        let ans1 = Math.abs(ans1)
+        let ans = Math.ceil(ans1)
+        document.getElementById("giffans").innerHTML = "The gif is " + "-" + ans
+    }
+}
 
+function fp(){
+    var giffnum = parseInt(document.getElementById("giffnum").value)
+    if(giffnum >=0){
+        let ans1 = Math.floor(giffnum)
+        let ans = giffnum - ans1
+        document.getElementById("giffans").innerHTML = "The fractional part is " + ans
+    }
+    else{
+        let ans1 = Math.abs(giffnum)
+        let ans2 = Math.ceil(giffnum)
+        let ans = ans2 - ans1
+        document.getElementById("giffans").innerHTML = "The fractional part is " + ans
+    }
+}
 function findsecarea(){
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
