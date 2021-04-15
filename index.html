@@ -8099,6 +8099,11 @@
                            href="#">Circle</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#annulus"
+                           style="text-decoration:none;"
+                           href="#">Annulus</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
                            href="#">Kite</a></td>
                 </tr>
@@ -11441,6 +11446,74 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Annulus </h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area enclosed by outer circle</h5>
+                                    <p class="text-center">\[A_{1} = \pi r_{1}^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area enclosed by inner circle</h5>
+                                    <p class="text-center">\[A_{2} = \pi r_{2}^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area of the annulus</h5>
+                                    <p class="text-center">\[A_{0} = A_{1} - A_{2}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/annulus.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Outer circumference of an annulus:</h5>
+                                    <p class="text-center">\[C_{1} = 2\pi r_{1} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Inner circumference of an annulus:</h5>
+                                    <p class="text-center">\[C_{2} = 2\pi r_{2} \]</p>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter outer radius (r1)"
+                                   id="inputradius1"
+                                   oninput="solveannulus()">
+                                <input class="form__field" type="number" placeholder="Enter inner radius (r2)"
+                                    id="inputradius2"
+                                    oninput="solveannulus()">
+                                <br>
+                                <p class="stopwrap" id="resultofarea1"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea2"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircum1"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircum2"
+                                style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
