@@ -2463,6 +2463,29 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+
+function hexprismsolve(){
+    var edge = document.getElementById("inputhexprismedge").value;
+    var height = document.getElementById("inputhexprismheight").value;
+    var voloutput1 = document.getElementById("resultofvolhexprism1");
+    var voloutput2 = document.getElementById("resultofvolhexprism2");
+    var areaoutput1 = document.getElementById("resultofareahexprism1");
+    var areaoutput2 = document.getElementById("resultofareahexprism2");
+    var vol = (0.5 * 3 * math.sqrt(3)) * edge**2 * height;
+    var area = 6 * edge * height + 3 * math.sqrt(3) * edge**2;
+    if ((height != "") && (edge != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Hexagonal  \\space Prism \\space is \\]";
+        voloutput2.innerHTML = "\\[\\frac{3 \\sqrt{3}}{2} \\times" + edge + "\\times" +edge+ "\\times"+height+" = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Hexagonal  \\space Prism \\space is \\]";
+        areaoutput2.innerHTML = "\\[6 \\times "+edge+"\\times"+height+" + \\space 3 \\sqrt{3} \\times" + edge + "\\times" +edge+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+    }
+}
+
+
 function pentprismsolve() {
     var height = document.getElementById("inputpentprismheight").value;
     var edge = document.getElementById("inputpentprismedge").value;
