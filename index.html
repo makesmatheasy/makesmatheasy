@@ -8276,6 +8276,12 @@
                                         href="#">Pentagonal Prism</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#octprism"
+                                        style="text-decoration:none;"
+                                        href="#">Octagonal Prism</a>
+                                    </td>
+                                </tr>
                             </table>
 
                         </div>
@@ -12243,6 +12249,63 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="octprism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Octagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Prism</h5>
+                                    <p class="text-center">\[2 (1 + \sqrt{2}) a^2h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Prism</h5>
+                                    <p class="text-center">\[8ah + 4 (1 + \sqrt{2})a^2\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/octprism.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge (a)"
+                                       id="inputoctprismedge" oninput="octprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputoctprismheight" oninput="octprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvoloctprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvoloctprism2"
+                                   style="font-family:mathfont;"></p>
+                                <br>
+                                <p class="stopwrap" id="resultofareaoctprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareaoctprism2"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="pentprism" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
