@@ -1714,6 +1714,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="analyticalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate Geometry
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coordinate Geometry Calculator','#analytical','c','analyticalfav')"><img
+                                        id="analyticalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="corgeobtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Geometry Formula and Theorem
@@ -1957,6 +1973,24 @@
                                 <span
                                         onclick="addtofavourite('Boolean Algebra','#bool','c','boolimgfav')"><img
                                         id="boolimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+<!-- Any-base-to-any-base option -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="anyBase-to-anyBase-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Any Base to Any Base Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Any Base to Any Base Convertor','#anyBase','c','anyBase-imgfav')"><img
+                                        id="anyBase-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2547,9 +2581,10 @@
                        placeholder="Enter Number(s) Space Separated">
             </div>
             <div class="form-group">
+                <button class="btn btn-light" onclick="findFactors()">Factors</button>
                 <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
                         class="btn btn-light">
-                    Factors
+                    Prime Factors
                 </button>
                 <button type="button" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')"
                         class="btn btn-light">
@@ -2565,6 +2600,7 @@
             <p id="dividefactor" style="display:inline-block;;font-family:mathfont;"></p>
             <p id="dividefactorresult" style="display:inline-block;;font-family:mathfont;"></p>
             <p id="factorresult" class="stopwrap" style="display:block;;font-family:mathfont;"></p>
+            <p id="allfactor" style="display:block;;font-family:mathfont;"></p>
             <!--            prime factors with steps-->
 
             <!--lcm result-->
@@ -3140,7 +3176,49 @@
                 </div>
             </div>
         </div>
-
+        <div class="collapse" id="analytical">
+            <div class="text-center">
+                <h2><label>Coordinate Geometry Calculator</label></h2>
+            </div>
+            <h3>Distance </h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="xOne" size=12 value='' placeholder="                   x1"> , 
+                <input type="text" id="yOne" size=12 value='' placeholder="                   y1">)
+                    <br>
+                    Coordinate 2 = (<input type="text" id="xTwo" size=12 value='' placeholder="                   x2"> , 
+                <input type="text" id="yTwo" size=12 value='' placeholder="                   y2">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=ShowDistance()>
+                    Calculate Distance
+                </button><br>
+                </p>
+            </div><br>
+            <p id="dis_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="outPut"> </h4> <br>
+            <h3>Midpoint </h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate A = (<input type="text" id="XOne" size=12 value='' placeholder="                   x1"> , 
+                <input type="text" id="YOne" size=12 value='' placeholder="                   y1">)
+                    <br>
+                    Coordinate B = (<input type="text" id="XTwo" size=12 value='' placeholder="                   x2"> , 
+                <input type="text" id="YTwo" size=12 value='' placeholder="                   y2">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=midpointsolve()>
+                    Calculate Midpoint
+                </button><br>
+                </p>
+            </div><br>
+            <p id="mid_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="mid_output"> </h4> 
+        </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
                 <div class="coll">
@@ -4160,7 +4238,6 @@
                 y_{1}\sqrt{1+[f'(x_{1})]^2}\]</p>
             <p>\[Length \space of \space Subnormal \space (MN) \space = \space
                 y_{1}f'(x_{1})\]</p>
-
         </div>
         <div class="collapse" id="partialdiffcollapse">
             <div class="form-group">
@@ -4303,10 +4380,7 @@
             <div class="form-group">
                 <p id="integralplot"></p>
             </div>
-
-
         </div>
-
         
         <div class="collapse" id="lyear">     
             <h1 style="text-align: center;">Check Leap Year</h1><br>       
@@ -4314,22 +4388,17 @@
                 <input type="text" id="leapin" class="form__field"
                        placeholder="Enter Year"
                        >
-            </div><br>
-
-            
+            </div><br>            
             <div class="form-group">
                 <button type="button" class="btn btn-light"
                         onclick="leap()">
                     Solve
-                </button><br>
-                
+                </button><br>                
             </div>
             <div class="form-group">
                 <p id="leapresult"
                    style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
             </div>
-
-
         </div>
 
         <div class="collapse" id="betagamma">
@@ -4351,11 +4420,17 @@
             </ul>
             <p>\[B(p,q)\space  =\space \int_{0}^{\infty} \frac{t^{p-1}}{(1+t) ^{p+q}} \,dt\]</p>
             <p>\[B(p,q)\space =\space 2\int_{0}^{\frac{\pi}{2}} sin^{2p-1}\theta\ cos^{2q-1}\theta \]</p>
+            <p>\[B(p,q)\space =\space \int_{0}^{1}x^{m-1}(1-x)^{n-1}\,dx\]</p>
+            <p>\[B(p,q) = B(q,p)\]</p>
             <h4>What are Gamma functions?</h4>
             <p>\[\gamma(x)\space =\space \int_{0}^{\infty} t^{x-1}e^{-t}\,dt\]</p>
             <p>\[\gamma(n)\space =\space (n-1)!\]</p>
             <p>\[\gamma (\frac{1}{2})\space =\space\frac{\sqrt{\pi}}{2} \]</p>
             <p>\[\gamma(\frac{n}{2})\space =\space \gamma(\frac{n-2}{2})\frac{n}{2}\]</p>
+            <p>\[\int_{0}^{\frac{\pi}{2}}sin^{m}\theta cos^{n}\theta \,d\theta\space =\space \frac{\gamma\frac{m+1}{2}\gamma\frac{n+1}{2}}{2\gamma\frac{m+n+2}{2}} \]</p>
+            <p>\[\gamma n \gamma(1-n)\space =\space \frac{\pi}{sin \space n\pi}\]</p>
+            <p>\[\gamma(m)\gamma(m+\frac{1}{2})\space =\space \frac{\sqrt{\pi}}{2^{2m-1}}\gamma(2m)\]</p>
+            <p>\[\gamma(\frac{1}{2})\space =\space \sqrt{\pi}\]</p>
             <h4>Relation between beta and gamma functions</h4>
             <p>\[B(p,q)\space =\space \frac{\gamma(p)\space\gamma(q)}{\gamma(p+q)}\]</p>
         </div>
@@ -4392,6 +4467,7 @@
                     <p id="laplaceplot"></p>
                 </div>
             </div>
+
             <div class="dropdown-divider"></div>
             <div class="form-group">
                 <div class="text-center"><label>Inverse Laplace Transform</label></div>
@@ -9184,6 +9260,9 @@
                         <option class="form_field" style="background-color: #232a36;">
                             Binary
                         </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
                     </select>
                     <br><br><h2>Input Of Minuend</h2>
                     <input type=" " id="subtract-all-input1" value="0"
@@ -9512,6 +9591,123 @@
             </div>
         </div>
         <!-- End of Octal / Binary -->
+
+        <!-- start of anyBase to anyBase Converter -->
+        <div>
+                  <div class="collapse" id="anyBase">
+                      <div class="col-6">
+                          <div class="form-group">
+                              <h5>From Base</h5>
+                              <select id="anyBase-select1" class="form__field"
+                                      onchange="convertAnyBaseToAnyBase()">
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      2(Binary)
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      3
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      4
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      5
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      6
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      7
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      8(Octal)
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      9
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      10(Decimal)
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      11
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      12
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      13
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      14
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      15
+                                  </option>
+                                  <option class="form_field" style="background-color: #232a36;">
+                                      16(Hexadecimal)
+                                  </option>
+                              </select>
+                              <input type=" " id="anyBase-input" value="0"
+                                     class="form__field"
+                                     oninput="convertAnyBaseToAnyBase()">
+                          </div>
+                      </div>
+                      <div class="col-6">
+                          <div class="form-group">
+                              <h5>To Base</h5>
+                              <select id="anyBase-select2" class="form__field"
+                                      onchange="convertAnyBaseToAnyBase()">
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          2(Binary)
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          3
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          4
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          5
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          6
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          7
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          8(Octal)
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          9
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          10(Decimal)
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          11
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          12
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          13
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          14
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          15
+                                      </option>
+                                      <option class="form_field" style="background-color: #232a36;">
+                                          16(Hexadecimal)
+                                      </option>
+                              </select>
+                          </div>
+                          <label class="form__group" id="anyBase-result">0</label>
+                      </div>
+                  </div>
+              </div>
+        <!-- end of anyBase to anyBase convertor -->
 
   <!-- Start of Octal / Hexadecimal -->
 
@@ -12444,18 +12640,14 @@
                                     <div class="form-group">
                                         <img src="images/torus.jpg" class="img-fluid">
                                     </div>
-                                    
+                                </div>
                                 <div class="dropdown-divider"></div>
-                                <br>
-                               <br>
-                                <p>Fill All Two</p>
                                 <input class="form__field" type="number"
                                        placeholder="Enter Major radius (cm)"
                                        id="inputmajorradiustorus" oninput="torussolve()">
                                 <input class="form__field" type="number"
                                        placeholder="Enter Minor  radius (cm)"
                                        id="inputminorradiustorus" oninput="torussolve()">
-                               
                                 <br>
                                 <p class="stopwrap" id="resultofvoltorus"
                                    style="font-family:mathfont;"></p>

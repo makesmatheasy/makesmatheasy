@@ -513,6 +513,13 @@ $(document).ready(function () {
             clearall();
         });
 
+        // anyBase-to-anyBase-btn
+        $("#anyBase-to-anyBase-btn").click(function(){
+                openit("#anyBase");
+                closenav();
+                clearall();
+            });
+
 
     $("#complexidentitiesbtn").click(function(){
         openit("#complexidentities");
@@ -660,6 +667,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#analyticalbtn").click(function(){
+        openit("#analytical");
         closenav();
         clearall();
     });

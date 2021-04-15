@@ -1,4 +1,4 @@
-<div align="center"> <img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png" height='250' width='1000px'></div>
+<img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
 Started on **13 July,2020**
 
@@ -196,6 +196,7 @@ Other Tech/Libraries
 
 - Binary Calculations
   - Boolean Algebra
+  - Any Base to Any Base Converter
   - Decimal/Binary Converter
   - Addition of any Number System
   - Decimal/Binary/Hexadecimal Converter
