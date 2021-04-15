@@ -249,6 +249,7 @@ function openit(id) {
         "#tripyramid",
         "#anglecon",
         "#frustum",
+        "#annulus",
 	    "#ip",
 	    "#prices",
         "#lyear",

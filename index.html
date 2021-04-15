@@ -2011,7 +2011,7 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
-                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#adding-all','c','adding-all-imgfav')"><img
+                                        onclick="addtofavourite('Addition Of any Number System','#adding-all','c','adding-all-imgfav')"><img
                                         id="adding-all-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -2032,7 +2032,7 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
-                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#subtract-all','c','subtract-all-imgfav')"><img
+                                        onclick="addtofavourite('Subtraction Of any Number System','#subtract-all','c','subtract-all-imgfav')"><img
                                         id="subtract-all-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -2076,7 +2076,7 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
-                                        onclick="addtofavourite('Binary / Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
+                                        onclick="addtofavourite('Binary/Decimal/Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
                                         id="binary-hexadecimal-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -3202,6 +3202,25 @@
                 class="stopwrap"
                align="right"></p>
             <h4 id="mid_output"> </h4> 
+            <h3>Distance between point and a line</h3><br>
+            <div class="coll">
+                <p>
+                    Line Equation :   <input type="text" id="a" size=3 value='' placeholder="A">  x  +
+                <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c" size=3 value='' placeholder="C"> = 0
+                    <br><br>
+                    Point = (<input type="text" id="one" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="two" size=5 value='' placeholder="y1">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=dispointsolve()>
+                    Calculate Distance
+                </button><br>
+                </p>
+            </div><br>
+            <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="dis_op"> </h4> 
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -8104,6 +8123,11 @@
                     <td><a data-toggle="modal" data-target="#sector"
                            style="text-decoration:none;"
                            href="#">Sector of Circle</a></td>
+              </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#annulus"
+                           style="text-decoration:none;"
+                           href="#">Annulus</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
@@ -8265,7 +8289,13 @@
                                         href="#">Pentagonal Prism</a>
                                     </td>
                                 </tr>
-                                <tr>
+                              <tr>
+                                    <td><a data-toggle="modal" data-target="#hexprism"
+                                        style="text-decoration:none;"
+                                        href="#">Hexagonal Prism</a>
+                                    </td>
+                                </tr>
+                              <tr>
                                     <td><a data-toggle="modal" data-target="#octprism"
                                         style="text-decoration:none;"
                                         href="#">Octagonal Prism</a>
@@ -11603,6 +11633,74 @@
             </div>
         </div>
 
+        <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Annulus </h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area enclosed by outer circle</h5>
+                                    <p class="text-center">\[A_{1} = \pi r_{1}^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area enclosed by inner circle</h5>
+                                    <p class="text-center">\[A_{2} = \pi r_{2}^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area of the annulus</h5>
+                                    <p class="text-center">\[A_{0} = A_{1} - A_{2}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/annulus.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Outer circumference of an annulus:</h5>
+                                    <p class="text-center">\[C_{1} = 2\pi r_{1} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Inner circumference of an annulus:</h5>
+                                    <p class="text-center">\[C_{2} = 2\pi r_{2} \]</p>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter outer radius (r1)"
+                                   id="inputradius1"
+                                   oninput="solveannulus()">
+                                <input class="form__field" type="number" placeholder="Enter inner radius (r2)"
+                                    id="inputradius2"
+                                    oninput="solveannulus()">
+                                <br>
+                                <p class="stopwrap" id="resultofarea1"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea2"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircum1"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircum2"
+                                style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="trapezium" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12205,6 +12303,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Traingular Prism-->
         <div class="modal fade" id="prism" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12263,6 +12363,117 @@
             </div>
         </div>
 
+        <!--Pentagonal Prism-->
+        <div class="modal fade" id="pentprism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pentagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <br><br>
+                                    <h5 class="text-center">Volume(V)</h5>
+                                    <p class="text-center">\[\frac{1}{4}\sqrt{5(5+2\sqrt{5})}a^2h\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[5ah \space + \space \frac{1}{2}\sqrt{5(5+2\sqrt{5})}a^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/pentprism.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Base egde (a)"
+                                       id="inputpentprismedge" oninput="pentprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Height (h)"
+                                       id="inputpentprismheight" oninput="pentprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvolpentprism"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsapentprism"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Hexagonal Prism-->
+        <div class="modal fade" id="hexprism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hexagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Prism</h5>
+                                    <p class="text-center">\[\frac{3 \sqrt{3}}{2} \times a^2h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Prism</h5>
+                                    <p class="text-center">\[6ah + 3\sqrt{3}a^2\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/hexprism.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge (a)"
+                                       id="inputhexprismedge" oninput="hexprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputhexprismheight" oninput="hexprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvolhexprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvolhexprism2"
+                                   style="font-family:mathfont;"></p>
+                                <br>
+                                <p class="stopwrap" id="resultofareahexprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareahexprism2"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Octagonal Prism-->
         <div class="modal fade" id="octprism" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12306,58 +12517,6 @@
                                 <p class="stopwrap" id="resultofareaoctprism1"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultofareaoctprism2"
-                                   style="font-family:mathfont;"></p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="pentprism" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Pentagonal Prism</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <br><br>
-                                    <h5 class="text-center">Volume(V)</h5>
-                                    <p class="text-center">\[\frac{1}{4}\sqrt{5(5+2\sqrt{5})}a^2h\]</p><br>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Surface Area</h5>
-                                    <p class="text-center">\[5ah \space + \space \frac{1}{2}\sqrt{5(5+2\sqrt{5})}a^2 \]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/pentprism.png" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Base egde (a)"
-                                       id="inputpentprismedge" oninput="pentprismsolve()">
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Height (h)"
-                                       id="inputpentprismheight" oninput="pentprismsolve()">
-                                <br>
-                                <p class="stopwrap" id="resultofvolpentprism"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultoftsapentprism"
                                    style="font-family:mathfont;"></p>
                             </div>
                         </div>

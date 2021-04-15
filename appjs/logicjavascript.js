@@ -1580,6 +1580,22 @@ var midpoint2= (Y1 + Y2)/2;
     document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     
 }
+
+function dispointsolve()
+{
+    var a,b,c;
+    a=parseFloat(document.getElementById('a').value);
+    b=parseFloat(document.getElementById('b').value);
+    c=parseFloat(document.getElementById('c').value);
+    x1=parseFloat(document.getElementById('one').value);
+    y1=parseFloat(document.getElementById('two').value);
+    var explain = document.getElementById("dis_point");
+    explain.innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line  =\\space  \\frac{Ax1 + By1 + C}{\\sqrt{A^2+B^2}} \\] ";
+    renderMathInElement(document.getElementById("dis_point"));
+    var dis = (Math.abs(a*x1 + b*y1 +c))/(Math.sqrt(a*a + b*b )).toFixed(2);
+    document.getElementById('dis_op').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ' + '    ' + a  + 'x' + '+' + b + 'y' + '+' + c + '=0' + '     is      ' + dis;
+    
+}
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {
@@ -2232,6 +2248,76 @@ function solvecircle() {
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
 
+function solveannulus() {
+    let radius1 = document.getElementById("inputradius1").value;
+    let radius2 = document.getElementById("inputradius2").value;
+    let area1 = 3.14 * radius1 * radius1;
+    let area2 = 3.14 * radius2 * radius2;
+    let area = area1-area2;
+    let Circumference1 = 2 * 3.14 * radius1;
+    let Circumference2 = 2 * 3.14 * radius2; 
+    console.log(radius1);
+    console.log(radius2);
+    area1 = area1.toPrecision(3);
+    area2 = area2.toPrecision(3);
+    area = area.toPrecision(3);
+    Circumference1 = Circumference1.toPrecision(3);
+    Circumference2 = Circumference2.toPrecision(3);
+    document.getElementById("resultofarea1").innerHTML = "\\[Area \\space of \\space outer \\space circle = " + area1 + "\\]";
+    document.getElementById("resultofarea2").innerHTML = "\\[Area \\space of \\space inner \\space circle \\ 3.14 r^2\\ = " + area2 + "\\]";
+    document.getElementById("resultofarea").innerHTML = "\\[Area \\space of \\space Annulus \\space \\ 3.14 r^2\\ = " + area + "\\]";
+    document.getElementById("resultofcircumference1").innerHTML = "\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = " + Circumference1 + "\\]";
+    document.getElementById("resultofcircumference2").innerHTML = "\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = " + Circumference2 + "\\]";
+    renderMathInElement(document.getElementById("resultofarea1"));
+    renderMathInElement(document.getElementById("resultofarea2"));
+    renderMathInElement(document.getElementById("resultofarea"));
+    renderMathInElement(document.getElementById("resultofcircumference1"));
+    renderMathInElement(document.getElementById("resultofcircumference2"));
+}
+
+function solveannulus() {
+    var radius1 = document.getElementById("inputradius1").value;
+    var radius2 = document.getElementById("inputradius2").value;
+    var area1output = document.getElementById("resultofarea1");
+    var area2output = document.getElementById("resultofarea2");
+    var circum1output = document.getElementById("resultofcircum1");
+    var circum2output = document.getElementById("resultofcircum2");
+    var areaoutput = document.getElementById("resultofarea");
+    var area1temp = "";
+    var area2temp = "";
+    var circum1temp = "";
+    var circum2temp = "";
+    var areatemp = "";
+    if ((radius1 != "") && (radius2 != "")) {
+        area1temp += "\\[" + "\\pi" + "\\times" + radius1 + "\\times" + radius1  + "\\]";
+        area1temp += "\\[Area \\space enclosed \\space by \\space Outer \\space circle \\space is \\space " + eval(String(3.14 * radius1 * radius1)) + "\\]";
+        area1output.innerHTML = area1temp;
+        area2temp += "\\["  + "\\pi" +  "\\times" + radius2 + "\\times"  + radius2  + "\\]";
+        area2temp += "\\[Area \\space enclosed \\space by \\space Inner \\space circle \\space is \\space " + eval(String(3.14 * radius2 * radius2)) +  "\\]";
+        area2output.innerHTML = area2temp;
+        areatemp += "\\["  + "\\pi" +  "\\times" + '(' + radius1 + "\\times"  + radius1   + '-' + radius2 + "\\times" + radius2 +  ')' + "\\]";
+        areatemp += "\\[Area \\space of \\space annulus \\space is \\space " + eval(String((3.14 * radius1 * radius1)-(3.14 * radius2 *radius2))) +  "\\]";
+        areaoutput.innerHTML = areatemp;
+        circum1temp += "\\["  + 2 +  "\\times" + "\\pi " + "\\times" + radius1 + "\\]";
+        circum1temp += "\\[Outer \\space cicrumference \\space of \\space annulus \\space is \\space " + eval(String(3.14 * 2* radius1)) +  "\\]";
+        circum1output.innerHTML = circum1temp;
+        circum2temp += "\\["  + 2 +  "\\times" + "\\pi " + "\\times" + radius2 + "\\]";
+        circum2temp += "\\[Inner \\space cicrumference \\space of \\space annulus \\space is \\space " + eval(String(3.14 * 2* radius2)) +  "\\]";
+        circum2output.innerHTML = circum2temp;
+        renderMathInElement(area1output);
+        renderMathInElement(area2output);
+        renderMathInElement(areaoutput);
+        renderMathInElement(circum1output);
+        renderMathInElement(circum2output);
+    } else {
+        area1output.innerHTML = "";
+        area2output.innerHTML = "";
+        areaoutput.innerHTML = "";
+        circum1output.innerHTML = "";
+        circum2output.innerHTML = "";
+    }
+}
+
 function solveSlope() {
     let x1 = document.getElementById("inputLineX1").value;
     let y1 = document.getElementById("inputLineY1").value;
@@ -2446,6 +2532,7 @@ function cubosolve() {
         diagoutput.innerHTML = "";
     }
 }
+//Traingular Prism
 function prismsolve() {
     var length = document.getElementById("inputprismlength").value;
     var breadth = document.getElementById("inputprismbreadth").value;
@@ -2469,32 +2556,7 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-
-function octprismsolve(){
-    var edge = document.getElementById("inputoctprismedge").value;
-    var height = document.getElementById("inputoctprismheight").value;
-    var voloutput1 = document.getElementById("resultofvoloctprism1");
-    var voloutput2 = document.getElementById("resultofvoloctprism2");
-    var areaoutput1 = document.getElementById("resultofareaoctprism1");
-    var areaoutput2 = document.getElementById("resultofareaoctprism2");
-    var vol = 2*(1 +math.sqrt(2)) * edge**2 * height;
-    var area = 8 * edge * height + 4 * (1 + math.sqrt(2)) * edge**2;
-    if ((height != "") && (edge != "")) {
-        voloutput1.innerHTML = "\\[Volume \\space of \\space Octagonal  \\space Prism \\space is \\]";
-        voloutput2.innerHTML = "\\[2 \\times ( 1 \\space + \\space \\sqrt" + 2 + ") \\times" + edge + "\\times" +edge+ "\\times"+height+" = " + vol.toFixed(2) + "\\]";
-        renderMathInElement(voloutput1);
-        renderMathInElement(voloutput2);
-        areaoutput1.innerHTML = "\\[Area \\space of \\space Octagonal  \\space Prism \\space is \\]";
-        areaoutput2.innerHTML = "\\[8 \\times "+edge+"\\times"+height+" + \\space 4( 1 \\space + \\space \\sqrt" + 2 + ")" + edge + "\\times" +edge+" = " + area.toFixed(2) + "\\]";
-        renderMathInElement(areaoutput1);
-        renderMathInElement(areaoutput2);
-        console.log("area");
-        console.log(area);
-        console.log("vol");
-        console.log(vol);
-    }
-}
-
+//Pentagonal Prism
 function pentprismsolve() {
     var height = document.getElementById("inputpentprismheight").value;
     var edge = document.getElementById("inputpentprismedge").value;
@@ -2517,7 +2579,48 @@ function pentprismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-     
+//Hexagonal Prism
+function hexprismsolve(){
+    var edge = document.getElementById("inputhexprismedge").value;
+    var height = document.getElementById("inputhexprismheight").value;
+    var voloutput1 = document.getElementById("resultofvolhexprism1");
+    var voloutput2 = document.getElementById("resultofvolhexprism2");
+    var areaoutput1 = document.getElementById("resultofareahexprism1");
+    var areaoutput2 = document.getElementById("resultofareahexprism2");
+    var vol = (0.5 * 3 * math.sqrt(3)) * edge**2 * height;
+    var area = 6 * edge * height + 3 * math.sqrt(3) * edge**2;
+    if ((height != "") && (edge != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Hexagonal  \\space Prism \\space is \\]";
+        voloutput2.innerHTML = "\\[\\frac{3 \\sqrt{3}}{2} \\times" + edge + "\\times" +edge+ "\\times"+height+" = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Hexagonal  \\space Prism \\space is \\]";
+        areaoutput2.innerHTML = "\\[6 \\times "+edge+"\\times"+height+" + \\space 3 \\sqrt{3} \\times" + edge + "\\times" +edge+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+    }
+}
+//Octagonal Prism
+function octprismsolve(){
+    var edge = document.getElementById("inputoctprismedge").value;
+    var height = document.getElementById("inputoctprismheight").value;
+    var voloutput1 = document.getElementById("resultofvoloctprism1");
+    var voloutput2 = document.getElementById("resultofvoloctprism2");
+    var areaoutput1 = document.getElementById("resultofareaoctprism1");
+    var areaoutput2 = document.getElementById("resultofareaoctprism2");
+    var vol = 2*(1 +math.sqrt(2)) * edge**2 * height;
+    var area = 8 * edge * height + 4 * (1 + math.sqrt(2)) * edge**2;
+    if ((height != "") && (edge != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Octagonal  \\space Prism \\space is \\]";
+        voloutput2.innerHTML = "\\[2 \\times ( 1 \\space + \\space \\sqrt" + 2 + ") \\times" + edge + "\\times" +edge+ "\\times"+height+" = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Octagonal  \\space Prism \\space is \\]";
+        areaoutput2.innerHTML = "\\[8 \\times "+edge+"\\times"+height+" + \\space 4( 1 \\space + \\space \\sqrt" + 2 + ")" + edge + "\\times" +edge+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+    }
+}    
 function frustumsolve() {
     var radius1 = document.getElementById("inputfrustumradius1").value;
     var radius2 = document.getElementById("inputfrustumradius2").value;
@@ -6312,7 +6415,7 @@ function seveneightCalc(){
         seven += '7' - input[i];
     }
     result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
-    eight = parseInt(seven) + 1;
+    eight = (parseInt(seven,8) + 1).toString(8);
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
 
