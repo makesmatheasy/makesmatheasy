@@ -177,6 +177,7 @@ function openit(id) {
         "#betagamma",
         "#parallel",
         "#unitconcal",
+        "#giff",
         "#spiconcal",
         "#home",
         "#curconcal",

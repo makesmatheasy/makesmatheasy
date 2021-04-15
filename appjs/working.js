@@ -204,6 +204,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#giffbtn").click(function () {
+        openit("#giff");
+        closenav();
+        clearall();
+    })
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
