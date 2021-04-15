@@ -405,6 +405,7 @@ function checkfunctionsmultiple() {
                 addop('opval', 'Select Operation');
                 addop('opval', '+');
                 addop('opval', '-');
+                addop('opval', 'Multiplication is not Possible with these inputs');
             } else if (c1 == r2) {
                 addop('opval', 'Select Operation');
                 addop('opval', '+');
@@ -420,9 +421,11 @@ function checkfunctionsmultiple() {
                 addop('opval', '×');
             } else if (c1 == r2 && r1 != c2) {
                 addop('opval', '×');
+                addop('opval', 'Addition and Subtraction is not Possible with these inputs');
                 signofmatrix('×');
             } else if (c1 == r2 && r1 == c2) {
                 addop('opval', '×');
+                addop('opval', 'Addition and Subtraction is not Possible with these inputs');
                 signofmatrix('×');
             }
         } else {
@@ -512,6 +515,9 @@ function soperation(value) {
         transpose();
     } else if(value == 'Rank'){
         rank();
+    }
+    else if(value == 'Inverse'){
+        inverse();
     }
     else if (value == 'Minors & Co-Factors') {
         miandcofactors();
@@ -1055,6 +1061,7 @@ function checkfunctions() {
         addop('sopval', 'Select Operation')
         addop('sopval', 'Transpose')
         addop('sopval', 'Rank')
+        addop('sopval', 'Inverse')
         addop('sopval', 'Minors & Co-Factors')
         addop('sopval', 'Determinant')
     }
@@ -1066,12 +1073,18 @@ function checkfunctions() {
             addop('sopval', 'Transpose')
             addop('sopval', 'Rank')
             addop('sopval', 'Determinant')
+            addop('sopval', 'Inverse')
+
+        } else if(parseInt(row) >= 5 && (parseInt(row) == parseInt(column))) {
+            addop('sopval', 'Select Operation')
+            addop('sopval', 'Transpose')
+            addop('sopval', 'Rank')
+            addop('sopval', 'Inverse')
         } else {
             addop('sopval', 'Select Operation')
             addop('sopval', 'Transpose')
             addop('sopval', 'Rank')
         }
-
     }
 }
 
@@ -1521,4 +1534,140 @@ function determinant(ma) {
     }
     renderMathInElement(document.getElementById('singlematrixexplanation'));
     renderMathInElement(document.getElementById('singlematrixresult'));
+}
+
+
+function inverse() {
+    loader('show');
+    setTimeout(function () {
+        sendtomatrixsingle(); 
+        var inverseexplanation = "<div style='border-radius:50px;display:table;color:black;padding:20px;margin-left: auto; margin-right: auto;'>"
+        var row = document.getElementById('srow1').value;
+        var column = document.getElementById('scolumn1').value;
+        var inversematrix=[];
+       
+        //---print initial matrix
+        inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Given \\space Matrix\\]"
+        inverseexplanation+='\\[\\begin{bmatrix}'
+        for (i = 0; i < row; i++){
+            inversematrix[i]=[];
+            for (j = 0; j < column; j++){
+                inversematrix[i][j]=matrixsingle[i][j];
+                inverseexplanation+=inversematrix[i][j]+"&";
+            }
+            inverseexplanation = inverseexplanation.slice(0, -1);
+            inverseexplanation+='\\\\';
+        }
+        inverseexplanation+='\\end{bmatrix}\\]'+"</div>";
+
+        inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Augmented \\space Matrix\\]";
+        inverseexplanation+='\\[\\begin{bmatrix}'
+        for (i = 0; i < row; i++){
+            for (j = 0; j < 2*column; j++){
+                if(j<row)
+                    inverseexplanation+=inversematrix[i][j]+"&";
+                else if(j-i==row)
+                {
+                    inversematrix[i][j] = 1;
+                    inverseexplanation+=inversematrix[i][j]+"&";   
+                }
+                else
+                {
+                    inversematrix[i][j]= 0;
+                    inverseexplanation+=inversematrix[i][j]+"&";
+                }
+            }
+            inverseexplanation = inverseexplanation.slice(0, -1);
+            inverseexplanation+='\\\\';
+        }
+        inverseexplanation+='\\end{bmatrix}\\]'+"</div>";
+        
+    
+        for (i = 0; i < row; i++) { 
+            var flag=0;
+            if(inversematrix[i][i]==0)
+            {
+                for(p=i+1;p<row;p++)
+                {
+                    if(inversematrix[p][i]!=0)
+                    {
+                        for(q=0;q<2*column;q++)
+                        {   
+                            var temp=inversematrix[i][q];
+                            inversematrix[i][q]=inversematrix[p][q];
+                            inversematrix[p][q]=temp;
+                        }
+                        flag=1;
+                    }
+                    if(flag==1)
+                        break;
+                }
+                
+            }
+            for (j = 0; j < row; j++) {
+    
+                if (j != i) {
+                    var temp = inversematrix[j][i] / inversematrix[i][i];
+                    for (k = 0; k < 2 * column; k++) {
+                        inversematrix[j][k] -= inversematrix[i][k] * temp;
+
+                    }
+                }
+            }
+            
+            inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Making \\space non-diagonal \\space elements \\space of \\space column \\space " +(i+1)+ "\\space as \\space 0 \\]"
+            inverseexplanation+='\\[\\begin{bmatrix}'
+            for (l = 0; l < row; l++){
+                for (m = 0; m < 2*column; m++)
+                {
+                    inverseexplanation+=parseFloat(inversematrix[l][m]).toFixed(3) +"&";
+                }
+                inverseexplanation = inverseexplanation.slice(0, -1);
+                inverseexplanation+='\\\\';
+            }
+            inverseexplanation+='\\end{bmatrix}\\]'+"</div>";
+    
+        }
+    
+        for (i = 0; i < row; i++) {
+
+            var temp = inversematrix[i][i];
+            for (j = 0; j < 2 * column; j++) {
+
+                inversematrix[i][j] = inversematrix[i][j] / temp;
+            }
+        }
+    
+        inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Dividing \\space each \\space row \\space by \\space corresponding diagonal \\space element \\space of \\space the \\space Matrix\\]"
+        inverseexplanation+='\\[\\begin{bmatrix}'
+        for (i = 0; i < row; i++){
+            for (j = 0; j < 2*column; j++)
+            {
+                 inverseexplanation+=inversematrix[i][j].toFixed(3)+"&";
+            }
+            inverseexplanation = inverseexplanation.slice(0, -1);
+            inverseexplanation+='\\\\';
+        }
+        inverseexplanation+='\\end{bmatrix}\\]'+"</div>";
+
+        inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Inverse \\space of \\space the \\space given \\space Matrix\\]"
+        inverseexplanation+='\\[\\begin{bmatrix}'
+        for (i = 0; i < row; i++){
+            for (j = column; j < 2*column; j++)
+            {
+                 inverseexplanation+=inversematrix[i][j].toFixed(3)+"&";
+            }
+            inverseexplanation = inverseexplanation.slice(0, -1);
+            inverseexplanation+='\\\\';
+        }
+        inverseexplanation+='\\end{bmatrix}\\]'+"</div>";
+
+        document.getElementById('singlematrixexplanation').innerHTML = inverseexplanation;
+        renderMathInElement(document.getElementById('singlematrixexplanation'));
+
+        
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
