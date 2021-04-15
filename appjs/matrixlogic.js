@@ -405,7 +405,7 @@ function checkfunctionsmultiple() {
                 addop('opval', 'Select Operation');
                 addop('opval', '+');
                 addop('opval', '-');
-                addop('opval', 'Multiplication is not Possible with these inputs');
+                document.getElementById('mmatrixerror').innerHTML = "<center>Multiplication is not Possible with these inputs</center>";
             } else if (c1 == r2) {
                 addop('opval', 'Select Operation');
                 addop('opval', '+');
@@ -421,11 +421,11 @@ function checkfunctionsmultiple() {
                 addop('opval', '×');
             } else if (c1 == r2 && r1 != c2) {
                 addop('opval', '×');
-                addop('opval', 'Addition and Subtraction is not Possible with these inputs');
+                document.getElementById('mmatrixerror').innerHTML = "<center>Addition and Subtraction is not Possible with these inputs</center>";
                 signofmatrix('×');
             } else if (c1 == r2 && r1 == c2) {
                 addop('opval', '×');
-                addop('opval', 'Addition and Subtraction is not Possible with these inputs');
+                document.getElementById('mmatrixerror').innerHTML = "<center>Addition and Subtraction is not Possible with these inputs</center>";
                 signofmatrix('×');
             }
         } else {
