@@ -1618,6 +1618,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="secareabtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Area of Sector</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Area of Sector','#secarea','c','secimgfav')"><img
+                                        id="secimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="plotgraphoption"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
                                 Graph</a>
@@ -7757,6 +7772,15 @@
                     align ="right"></p>
             </div>
 
+        </div>
+        <div class ="collapse" id="secarea">
+            <h2 style = "text-align: center;">Area of a Sector</h2>
+            <input id = "ang" type="text" class="form__field" placeholder="Enter angle">
+            <br>
+            <input id = "rad" type="text" class="form__field" placeholder="Enter radius">
+            <br>
+            <button type="submit" class="btn btn-light" onclick="findsecarea()">Submit</button>
+            <p id="secans"></p>
         </div>
         <div class="collapse" id="plotgraph">
             <div class="form-group">

@@ -204,6 +204,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#secareabtn").click(function () {
+        openit("#secarea");
+        closenav();
+        clearall();
+    })
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
         closenav();
