@@ -138,6 +138,7 @@ function openit(id) {
         "#theo",
         "#equationssolver",
         "#mulsolwithsteps",
+        "#secarea",
         "#table",
         "#shapescal",
         "#tdshapescal",
