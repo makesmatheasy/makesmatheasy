@@ -6306,7 +6306,7 @@ function seveneightCalc(){
         seven += '7' - input[i];
     }
     result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
-    eight = parseInt(seven) + 1;
+    eight = (parseInt(seven,8) + 1).toString(8);
     result.innerHTML = "Seven's complement of "+ input + " is " + parseInt(seven) + "<br>";
     result.innerHTML += "Eight's complement of "+ input + " is " + eight + "<br>";
 
