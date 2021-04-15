@@ -340,6 +340,7 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "EXCESS-3 CODE CONVERTOR"){
                         document.getElementById('ex3').click();
                     }      
+
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -467,8 +468,10 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+
                         "Trigonometric Values", "Unit Converter" ,"Excess-3 Code Convertor","Grey Code Convertor","Bitwise Calculator","Boolean Algebra","Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+
 
                        
                         
@@ -660,6 +663,7 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
     }
+
     else if(inp.value.toUpperCase() == "EXCESS-3 CODE CONVERTOR"){
         document.getElementById('ex3').click(); 
     }
@@ -690,6 +694,7 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "BOOLEAN ALGEBRA") {
         $("#bool").slideToggle(); 
     }
+
     else if(inp.value.toUpperCase() == "TANGENT AND NORMAL"){
         document.getElementById('tangent').click(); 
     }

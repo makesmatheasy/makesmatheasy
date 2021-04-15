@@ -1541,6 +1541,39 @@ function printtable() {
     }
 }
 
+function ShowDistance()
+{
+var x1, x2, y1, y2;
+    x1=parseFloat(document.getElementById('xOne').value);
+    x2=parseFloat(document.getElementById('xTwo').value);
+    y1=parseFloat(document.getElementById('yOne').value);
+    y2=parseFloat(document.getElementById('yTwo').value);
+    var explain = document.getElementById("dis_formula");
+    explain.innerHTML = "\\[Distance \\space between \\space two \\space points =\\space \\sqrt{ (x1-x2)^2 + (y1-y2)^2 } \\] ";
+    renderMathInElement(document.getElementById("dis_formula"));
+
+var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-
+y2), 2) ).toFixed(2);
+    document.getElementById('outPut').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ('+ x2 + ',' + y2 + ') is '+ distance;
+
+    
+}
+
+function midpointsolve()
+{
+    var X1, X2, Y1, Y2;
+    X1=parseFloat(document.getElementById('XOne').value);
+    X2=parseFloat(document.getElementById('XTwo').value);
+    Y1=parseFloat(document.getElementById('YOne').value);
+    Y2=parseFloat(document.getElementById('YTwo').value);
+    var explain_mid = document.getElementById("mid_formula");
+    explain_mid.innerHTML = "\\[Midpoint \\space between \\space two \\space points =\\space  (\\frac{x1 + x2}{2}, \\space \\frac{y1+y2}{2} ) \\] ";
+    renderMathInElement(document.getElementById("mid_formula"));
+var midpoint1 = (X1 + X2)/2;
+var midpoint2= (Y1 + Y2)/2;
+    document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
+    
+}
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {
@@ -2492,6 +2525,17 @@ function frustumsolve() {
         tsaoutput.innerHTML = "";
         slantoutput.innerHTML = "";
     }
+}
+
+findFactors = function() {
+    var number = document.getElementById("numforfactorhcflcm").value; // Get the number entered by user.
+    var integer = parseInt(number); // Convert it to a number since all the inputs are treaded as string by JavaScript.
+    var loopCount = integer / 2; // Divide the number in half for which we will run loop, since half of any given number is it's second-largest factor.
+    for (var i = 1; i <= loopCount; i++) {
+      if (integer % i == 0) // If remainder is 0, then the number is a factor.
+        document.getElementById("allfactor").innerHTML += i +","; // Print out the factor
+    }
+    document.getElementById("allfactor").innerHTML +=  number; // Print out the number itself.
 }
 
 function pyramidsolve() {
@@ -4287,6 +4331,44 @@ function emical() {
     renderMathInElement(document.getElementById("emio3"));
 }
 
+// GST Calulator
+function gstcal() {
+    var p, r,final, gst,cgst;
+    p = parseInt(document.getElementById("O_Price").value);
+    r = parseFloat(document.getElementById("GST").value) / 100;
+    gst = p*r;
+    final=p+gst;
+    cgst=gst/2;
+    if (isNaN(p)|| isNaN(r))
+    {
+        document.getElementById("gst1").innerHTML ="Enter integer value" ;
+        document.getElementById("gst0").innerHTML = "";
+        document.getElementById("gst2").innerHTML = "";
+        document.getElementById("gst3").innerHTML = "";
+    }
+    else if(p<0 || r<0)
+    {
+        document.getElementById("gst1").innerHTML ="Enter a positive integer value" ;
+        document.getElementById("gst0").innerHTML = "";
+        document.getElementById("gst2").innerHTML = "";
+        document.getElementById("gst3").innerHTML = "";
+    }
+    else{
+        document.getElementById("gst0").innerHTML ="Working"
+        document.getElementById("gst2").innerHTML ="Results"
+        var gst_work="",gst_result="";
+        gst_work+="\\[\\mathrm{GST}=\\frac{\\mathrm{Original}\\space\\mathrm{Cost}\\times\\mathrm{GST}\\%}{100}\\]"+"\\[\\mathrm{GST}=\\space"+p+"\\times"+r+"\\]"+"\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]";
+        gst_work+="\\[\\mathrm{CGST/SGST}=\\frac{\\mathrm{GST}}{2}\\]"+"\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]";
+        gst_work+="\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space\\mathrm{Original}\\space\\mathrm{Cost}+\\mathrm{GST}\\]"+"\\[\\mathrm{Final}\\space\\mathrm{Cost}=\\space"+p+"+\\space"+ gst.toFixed(2) +"\\]";
+        gst_result+="\\[\\mathrm{GST}= \\space" + gst.toFixed(2) + "\\]"+"\\[\\mathrm{CGST/SGST}= \\space" + cgst.toFixed(2) + "\\]"+"\\[\\mathrm{Final}\\space\\mathrm{Cost}= \\space" + final.toFixed(2) + "\\]";
+        document.getElementById("gst1").innerHTML =gst_work;
+        document.getElementById("gst3").innerHTML =gst_result;
+        renderMathInElement(document.getElementById("gst1"));
+        renderMathInElement(document.getElementById("gst3"));
+        
+    }
+    
+}
 
 // cost and selling price
 //-----------------------------------------------------
@@ -5365,24 +5447,49 @@ function convertBinDec() {
     const toBase = document.getElementById("decimal-binary-select2").value;
     const input = document.getElementById("decimal-binary-input").value;
     let result = document.getElementById("decimal-binary-result");
-    let from = 10;
-    let to = 10;
 
-    if (fromBase === "Decimal") from = 10;
-    else from = 2;
+    if (fromBase === "Decimal" && toBase === "Binary"){
+    var i = 1;
+    var s = "";
+    var n ;
+    var [integer , fraction = ''] = input.toString().split('.');
+    fraction = Math.pow(10,-1 * fraction.length) * fraction;
 
-    if (toBase === "Decimal") to = 10;
-    else to = 2;
+    while(i<=7 ){
+       fraction = 2 * fraction;
+       s = s + parseInt(fraction).toString(2);;
+       fraction = "0"+fraction.toString().substring(fraction.toString().indexOf("."));
+       n= Math.abs(fraction);
+       if(n - Math.floor(n) == 0){
+       break;
+       }
+       i++;
+    }
+    result.innerHTML =   parseInt(integer,10).toString(2) + "."+ s ;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    }else if (fromBase === "Binary" && toBase === "Decimal"){
+        result.innerHTML = calculatefrac(input,2);
+    }else if (fromBase === "Binary" && toBase === "Binary"){
+        result.innerHTML = input;
+    }else if (fromBase === "Decimal" && toBase ==="Decimal"){
+        result.innerHTML = input;
+    }
+
     if (input == "") {
         result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
+    } else if (fromBase  === "Binary") {
+        if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
 
     }
 }
+//converts both integer and fractional part of  binary/hexa/octal to decimal
+function calculatefrac(value, base = 2) {
+    var [integer, fraction = ''] = value.toString().split('.');
+
+    return parseInt(integer, base) + (integer[0] !== '-' || -1) * fraction.split('').reduceRight((r, a) => (r + parseInt(a, base)) / base, 0);
+}
+
 
 //////////////////////////////////////////////////////////////
 

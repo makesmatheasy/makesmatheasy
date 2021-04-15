@@ -618,6 +618,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#gstbtn").click(function(){
+        openit("#gstcal");
+        closenav();
+        clearall();
+    });
+    
     $("#meanbtn").click(function(){
         openit("#mean");
         closenav();
@@ -653,6 +660,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#analyticalbtn").click(function(){
+        openit("#analytical");
         closenav();
         clearall();
     });
