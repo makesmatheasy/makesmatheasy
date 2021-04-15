@@ -49,6 +49,11 @@ $(document).ready(function () {
         openit("#about");
         closenav();
     });
+    
+    $("#leapyearbtn").click(function () {
+        openit("#lyear");
+        closenav();
+    });
     $("#homeoption").click(function () {
         openit("#home");
         closenav();
@@ -73,6 +78,12 @@ $(document).ready(function () {
     });
     $("#rankcalbtn").click(function () {
         openit("#rankcal");
+        closenav();
+        clearall();
+    });
+
+    $("#dec2421btn").click(function () {
+        openit("#dec2421");
         closenav();
         clearall();
     });
@@ -195,6 +206,11 @@ $(document).ready(function () {
     })
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
+        closenav();
+        clearall();
+    })
+    $("#theobtn").click(function () {
+        openit("#theo");
         closenav();
         clearall();
     })
@@ -339,6 +355,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#caybtn").click(function () {
+        openit("#cay");
+        closenav();
+        clearall();
+    })
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
@@ -346,6 +367,11 @@ $(document).ready(function () {
     })
     $("#hyptrigonoidenbutton").click(function () {
         openit("#hyptrigonoiden");
+        closenav();
+        clearall();
+    })
+    $("#invhyptrigonoidenbutton").click(function () {
+        openit("#invhyptrigonoiden");
         closenav();
         clearall();
     })
@@ -441,6 +467,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    //Function of Subtraction of Any Number System
+    $("#subtracting-all-btn").click(function(){
+        openit("#subtract-all");
+        closenav();
+        clearall();
+    });
      //Function of Multiplication of Any Number System
      $("#mult-all-btn").click(function(){
         openit("#multiplying-all");
@@ -480,6 +512,13 @@ $(document).ready(function () {
             closenav();
             clearall();
         });
+
+        // anyBase-to-anyBase-btn
+        $("#anyBase-to-anyBase-btn").click(function(){
+                openit("#anyBase");
+                closenav();
+                clearall();
+            });
 
 
     $("#complexidentitiesbtn").click(function(){
@@ -586,6 +625,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#gstbtn").click(function(){
+        openit("#gstcal");
+        closenav();
+        clearall();
+    });
+    
     $("#meanbtn").click(function(){
         openit("#mean");
         closenav();
@@ -621,6 +667,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#analyticalbtn").click(function(){
+        openit("#analytical");
         closenav();
         clearall();
     });
