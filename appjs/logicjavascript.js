@@ -5687,9 +5687,9 @@ function subBinDecHexOct(){
             ans = add.substring(1);
             result.innerHTML = ans;
         } else if (add.length < input1.length){
-            var aryan = input1.length - add.length;
-            aryan = Math.pow(10,aryan);
-            ans = aryan + add;
+            var a1 = input1.length - add.length;
+            a1 = Math.pow(10,a1);
+            ans = a1 + add;
             ans = ans.substring(1);
             result.innerHTML = "-" + calculateTwoComplement(ans);
         }
@@ -5697,12 +5697,10 @@ function subBinDecHexOct(){
     }else if(base === "Octal"){
         var add1 = "";
         var ans1 = "";
-        result.innerHTML = input1;
-        result.innerHTML += input2
         var eigco= calculateEightComplement(input2);
-        result.innerHTML += eigco;
+        console.log(eigco);
         add1 = (parseInt(eigco,8)+parseInt(input1,8)).toString(8);
-        result.innerHTML += "<br>"+add1;
+        console.log(add1);
         if(add1.length == input1.length){
             ans1 = calculateEightComplement(add1);
             result.innerHTML = "-" + ans1;
@@ -5710,9 +5708,9 @@ function subBinDecHexOct(){
             ans1 = add1.substring(1);
             result.innerHTML = ans1;
         } else if (add1.length < input1.length){
-            var arya = input1.length - add1.length;
-            arya = Math.pow(10,arya);
-            ans1 = arya + add1;
+            var a2 = input1.length - add1.length;
+            a2 = Math.pow(10,a2);
+            ans1 = a2 + add1;
             ans1 = ans1.substring(1);
             result.innerHTML = "-" + calculateEightComplement(ans1);
         }
@@ -5757,7 +5755,7 @@ function calculateEightComplement(x){
     for (var i = 0; i < x.length; i++) {
         sev += '7' - x[i];
     }
-    eig = parseInt(sev) + 1;
+    eig = (parseInt(sev,8) + 1).toString(8);
     return eig;
     }
 }
