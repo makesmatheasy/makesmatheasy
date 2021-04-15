@@ -5799,12 +5799,34 @@ function subBinDecHexOct(){
             ans = add.substring(1);
             result.innerHTML = ans;
         } else if (add.length < input1.length){
-            var aryan = input1.length - add.length;
-            aryan = Math.pow(10,aryan);
-            ans = aryan + add;
+            var a1 = input1.length - add.length;
+            a1 = Math.pow(10,a1);
+            ans = a1 + add;
             ans = ans.substring(1);
             result.innerHTML = "-" + calculateTwoComplement(ans);
         }
+        
+    }else if(base === "Octal"){
+        var add1 = "";
+        var ans1 = "";
+        var eigco= calculateEightComplement(input2);
+        console.log(eigco);
+        add1 = (parseInt(eigco,8)+parseInt(input1,8)).toString(8);
+        console.log(add1);
+        if(add1.length == input1.length){
+            ans1 = calculateEightComplement(add1);
+            result.innerHTML = "-" + ans1;
+        } else if (add1.length > input1.length){
+            ans1 = add1.substring(1);
+            result.innerHTML = ans1;
+        } else if (add1.length < input1.length){
+            var a2 = input1.length - add1.length;
+            a2 = Math.pow(10,a2);
+            ans1 = a2 + add1;
+            ans1 = ans1.substring(1);
+            result.innerHTML = "-" + calculateEightComplement(ans1);
+        }
+        
     }
 }
 
@@ -5833,6 +5855,21 @@ function calculateTwoComplement(x){
         var twoc = two.join('');
     }
     return twoc;
+}
+
+//called this function while subtracting octal numbers
+function calculateEightComplement(x){
+    if(x.search(8)==0 || x.search(9)==0){
+        return  "Invalid";
+    }else{
+    var sev = "";
+    var eig = "";
+    for (var i = 0; i < x.length; i++) {
+        sev += '7' - x[i];
+    }
+    eig = (parseInt(sev,8) + 1).toString(8);
+    return eig;
+    }
 }
 
 //----------------------------
