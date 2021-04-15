@@ -2464,6 +2464,31 @@ function prismsolve() {
     }
 }
 
+function octprismsolve(){
+    var edge = document.getElementById("inputoctprismedge").value;
+    var height = document.getElementById("inputoctprismheight").value;
+    var voloutput1 = document.getElementById("resultofvoloctprism1");
+    var voloutput2 = document.getElementById("resultofvoloctprism2");
+    var areaoutput1 = document.getElementById("resultofareaoctprism1");
+    var areaoutput2 = document.getElementById("resultofareaoctprism2");
+    var vol = 2*(1 +math.sqrt(2)) * edge**2 * height;
+    var area = 8 * edge * height + 4 * (1 + math.sqrt(2)) * edge**2;
+    if ((height != "") && (edge != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Octagonal  \\space Prism \\space is \\]";
+        voloutput2.innerHTML = "\\[2 \\times ( 1 \\space + \\space \\sqrt" + 2 + ") \\times" + edge + "\\times" +edge+ "\\times"+height+" = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Octagonal  \\space Prism \\space is \\]";
+        areaoutput2.innerHTML = "\\[8 \\times "+edge+"\\times"+height+" + \\space 4( 1 \\space + \\space \\sqrt" + 2 + ")" + edge + "\\times" +edge+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+        console.log("area");
+        console.log(area);
+        console.log("vol");
+        console.log(vol);
+    }
+}
+
 function hexprismsolve(){
     var edge = document.getElementById("inputhexprismedge").value;
     var height = document.getElementById("inputhexprismheight").value;
@@ -2484,8 +2509,6 @@ function hexprismsolve(){
         renderMathInElement(areaoutput2);
     }
 }
-
-
 function pentprismsolve() {
     var height = document.getElementById("inputpentprismheight").value;
     var edge = document.getElementById("inputpentprismedge").value;
@@ -5750,30 +5773,50 @@ function addBinDecHexOct(){
     const input2 = document.getElementById("adding-all-input2").value;
     const resultType= document.getElementById("adding-all-result-type").value;
     let result = document.getElementById("adding-all-result");
-    var x1;
-    var x2;
+    var x1,x1o;
+    var x2,x2o;
+   
+    if(firstBase === "Binary"){
+        x1=parseInt(input1,2);
+        x1o=x1.toString(2);
+    }
+    else if (firstBase === "Octal"){
+        x1=parseInt(input1,8);
+        x1o=x1.toString(8);
+    }
+    else if(firstBase === "Hexa Decimal"){
+        x1=parseInt(input1,16);
+        x1o=x1.toString(16);
+    }
+    else if(firstBase === "Decimal"){
+        x1=parseInt(input1);
+        x1o=x1;
+    }
 
-    if(firstBase === "Binary")
-    x1=parseInt(input1,2);
-    else if (firstBase === "Octal")
-    x1=parseInt(input1,8);
-    else if(firstBase === "Hexa Decimal")
-    x1=parseInt(input1,16);
-    else if(firstBase === "Decimal")
-    x1=parseInt(input1);
-
-    if(secondBase === "Binary")
-    x2=parseInt(input2,2);
-    else if (secondBase === "Octal")
-    x2=parseInt(input2,8);
-    else if(secondBase === "Hexa Decimal")
-    x2=parseInt(input2,16);
-    else if(secondBase === "Decimal")
-    x2=parseInt(input2);
+    if(secondBase === "Binary"){
+        x2=parseInt(input2,2);
+        x2o=x2.toString(2);
+    }
+    else if (secondBase === "Octal"){
+        x2=parseInt(input2,8);
+        x2o=x2.toString(8);
+    }
+    else if(secondBase === "Hexa Decimal"){
+        x2=parseInt(input2,16);
+        x2o=x2.toString(16);
+    }
+    else if(secondBase === "Decimal"){
+        x2=parseInt(input2);
+        x2o=x2;
+    }
 
     var x3=x1+x2;
-
-    if(resultType === "Binary")
+    console.log(x1)
+    if(isNaN(x1) || x1o!=input1)
+    result.innerHTML="Enter correct "+firstBase+" value in Input 1";
+    else if(isNaN(x2)|| x2o!=input2)
+    result.innerHTML="Enter a "+secondBase+" value in Input 2";
+    else if(resultType === "Binary")
     result.innerHTML="Answer in binary="+x3.toString(2);
     else if (resultType === "Octal")
     result.innerHTML="Answer in Octal="+x3.toString(8);
@@ -5781,6 +5824,8 @@ function addBinDecHexOct(){
     result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
+    else
+    result.innerHTML="";
 }
 
 //---------------------------------------------------------------------
