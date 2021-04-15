@@ -1613,22 +1613,7 @@
                                                                                id="imgClickAndChange6"></a>
         </li>
         <div class="collapse" id="graphtoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
-            <div class="dropdown-divider"></div>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="secareabtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Area of Sector</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Area of Sector','#secarea','c','secimgfav')"><img
-                                        id="secimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+            <div class="dropdown-divider"></div>            
             <li>
                 <table class="table">
                     <tr>
@@ -7773,15 +7758,6 @@
             </div>
 
         </div>
-        <div class ="collapse" id="secarea">
-            <h2 style = "text-align: center;">Area of a Sector</h2>
-            <input id = "ang" type="text" class="form__field" placeholder="Enter angle">
-            <br>
-            <input id = "rad" type="text" class="form__field" placeholder="Enter radius">
-            <br>
-            <button type="submit" class="btn btn-light" onclick="findsecarea()">Submit</button>
-            <p id="secans"></p>
-        </div>
         <div class="collapse" id="plotgraph">
             <div class="form-group">
                 <input type="text" id="inputplotequation" class="form__field"
@@ -8125,6 +8101,11 @@
                            href="#">Circle</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#sector"
+                           style="text-decoration:none;"
+                           href="#">Sector of Circle</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
                            href="#">Kite</a></td>
                 </tr>
@@ -8147,7 +8128,7 @@
                     <td><a data-toggle="modal" data-target="#parallelogram"
                            style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
-                </tr>
+                </tr>                
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -11118,7 +11099,31 @@
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="sector" tabindex="-1" role="dialog" aria-hidden="true" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sector of a Circle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle">
+                                    <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
+                                    <p id="secans"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>             
+        </div>
         <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
