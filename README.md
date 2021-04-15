@@ -196,6 +196,7 @@ Other Tech/Libraries
 
 - Binary Calculations
   - Boolean Algebra
+  - Any Base to Any Base Converter
   - Decimal/Binary Converter
   - Addition of any Number System
   - Decimal/Binary/Hexadecimal Converter
