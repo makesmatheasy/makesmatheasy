@@ -6973,8 +6973,14 @@
         </div>
 
         <div class="collapse" id="solutiontri">
-            <h2 style="text-align: center;">Solution of Triangles</h2>
+            <h3 style="text-align: center;">Solution of Triangles</h3>
             <br>
+            <tr>
+                <td><a data-toggle="modal" data-target="#cosine"
+                    style="text-decoration:none;"
+                    href="#"><h4>Law of Cosines Calculator</h4></a>
+                </td>
+            </tr>
             <p>\[1) \space Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} =
                 \frac{c}{sinC}\]</p>
             <p>\[2) \space Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
@@ -7972,6 +7978,68 @@
                 <img style="margin-left: 300px;"src="images/pr12.png" alt="">
             </ol>
         </div>
+
+        <div class="modal fade" id="cosine" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Law of Cosines</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <br><br>
+                                    <h5 class="text-center">Angle A</h5>
+                                    <p class="text-center">\[cos^{-1}\Big[\frac{b^2 + c^2 -a^2}{2bc}\Big]\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Angle B</h5>
+                                    <p class="text-center">\[ cos^{-1}\Big[\frac{a^2 + c^2 -b^2}{2ac}\Big]\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group"><br>
+                                        <img src="images/cosinerule.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Angle C</h5>
+                                    <p class="text-center">\[ cos^{-1}\Big[\frac{a^2 + b^2 -c^2}{2ab}\Big]\]</p>
+                                </div><br>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side a"
+                                       id="inputsidea" oninput="solvecosine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side b"
+                                       id="inputsideb" oninput="solvecosine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side c"
+                                       id="inputsidec" oninput="solvecosine()">
+                                <br>
+                                <p class="stopwrap" id="resultofanglea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofangleb"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofanglec"
+                                   style="font-family:mathfont;"></p>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="collapse" id="curve">
             <h2 style="text-align: center;">Curve Tracing</h2>
             <h4>For Cartesian Curves</h4>

@@ -251,6 +251,7 @@ function openit(id) {
         "#anglecon",
         "#frustum",
         "#annulus",
+        "#cosine",
 	    "#ip",
 	    "#prices",
         "#lyear",
