@@ -2596,7 +2596,7 @@ function pentprismsolve() {
         voloutput.innerHTML = voltemp;
         tsatemp += "\\[" + 5 + "\\times" + edge + "\\times" + height + "+" + "\\frac{1}{2}" + "\\times" + "\\sqrt" + "(" + 5 + "(" + 5 + "+" + 2 + "\\times" + "\\sqrt" + 5 + ")" + ")" + "\\times" + edge + "\\times" + edge   + "\\]";
         tsatemp += "\\[Surface \\space area \\space of \\space Pentagonal \\space Prism \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String((5 * edge *height) + (1.72 * edge * edge* height) )) + "\\]";
+        tsatemp += "\\[" + eval(String((5 * edge *height) + (3.44 * edge * edge) )) + "\\]";
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
