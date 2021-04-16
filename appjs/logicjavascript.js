@@ -5639,24 +5639,8 @@ function convertBinDec() {
     let result = document.getElementById("decimal-binary-result");
 
     if (fromBase === "Decimal" && toBase === "Binary"){
-    var i = 1;
-    var s = "";
-    var n ;
-    var [integer , fraction = ''] = input.toString().split('.');
-    fraction = Math.pow(10,-1 * fraction.length) * fraction;
-
-    while(i<=7 ){
-       fraction = 2 * fraction;
-       s = s + parseInt(fraction).toString(2);;
-       fraction = "0"+fraction.toString().substring(fraction.toString().indexOf("."));
-       n= Math.abs(fraction);
-       if(n - Math.floor(n) == 0){
-       break;
-       }
-       i++;
-    }
-    result.innerHTML =   parseInt(integer,10).toString(2) + "."+ s ;
-
+       let ans = fracDectoBinHexOct(input,2);
+       result.innerHTML = ans;
     }else if (fromBase === "Binary" && toBase === "Decimal"){
         result.innerHTML = calculatefrac(input,2);
     }else if (fromBase === "Binary" && toBase === "Binary"){
@@ -5679,6 +5663,27 @@ function calculatefrac(value, base = 2) {
 
     return parseInt(integer, base) + (integer[0] !== '-' || -1) * fraction.split('').reduceRight((r, a) => (r + parseInt(a, base)) / base, 0);
 }
+
+//converts both integer and fractional of decimal to binary/octal/hexadecimal
+function fracDectoBinHexOct(value, base){
+    var i = 1;
+    var s = "";
+    var n ;
+    var [integer , fraction = ''] = value.toString().split('.');
+    fraction = Math.pow(10,-1 * fraction.length) * fraction;
+
+    while(i<=7 ){
+       fraction = base * fraction;
+       s = s + parseInt(fraction).toString(base);;
+       fraction = "0"+fraction.toString().substring(fraction.toString().indexOf("."));
+       n= Math.abs(fraction);
+       if(n - Math.floor(n) == 0){
+       break;
+       }
+       i++;
+    }
+    return  (parseInt(integer,10).toString(base) + "."+ s );
+    }
 
 
 //////////////////////////////////////////////////////////////
@@ -5870,16 +5875,16 @@ function convertOctHex() {
     const toBase = document.getElementById("octal-hexadecimal-select2").value;
     const input = document.getElementById("octal-hexadecimal-input").value;
     let result = document.getElementById("octal-hexadecimal-result");
-    let from = 8;
-    let to = 8;
 
-    if (fromBase === "Octal") from = 8;
-    else from = 16;
-
-    if (toBase === "Octal") to = 8;
-    else to = 16;
-
-    result.innerHTML = parseInt(input, from).toString(to);
+    if (fromBase === "Octal" && toBase === "Hexadecimal"){
+        result.innerHTML = fracDectoBinHexOct(calculatefrac(input,8),16);;
+    }else if(fromBase === "Hexadecimal" && toBase === "Octal"){
+        result.innerHTML =fracDectoBinHexOct(calculatefrac(input,16),8);
+    }else if(fromBase === "Hexadecimal" && toBase === "Hexadecimal"){
+        result.innerHTML = input;
+    }else if(fromBase === "Octal" && toBase === "Octal"){
+        result.innerHTML = input;
+    }
     if (input == "") {
         result.innerHTML = "";
     }
