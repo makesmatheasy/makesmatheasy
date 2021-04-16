@@ -2831,6 +2831,11 @@ function solvehollowsphere() {
     var voltemp = "";
     var tsatemp = "";
     if (radius1 != "" && radius2 != "") {
+		if(radius1 <= radius2)
+		{
+			tsatemp="Outer radius should be greater than inner radius";
+		}
+		else{
         voltemp += "\\[ \\frac{4}{3} \\times \\pi \\times (" + radius1 + "^3-" + radius2 + "^3) \\]";
         voltemp += "\\[Volume \\space of \\space Hollow \\space Sphere \\space is \\space " + eval(String(4 * 3.14159 * ((radius1 * radius1 * radius1) - (radius2 * radius2 * radius2)) / 3)) + "\\]";
         voloutput.innerHTML = voltemp;
@@ -2838,9 +2843,10 @@ function solvehollowsphere() {
         tsatemp +=
             "\\[Total \\space Surface \\space Area \\space of \\space Hollow \\space Sphere \\space is \\space  \\]";
         tsatemp += "\\[" + eval(String(4 * 3.14159 * ((radius1 * radius1) - (radius2 * radius2)))) + "\\]";
+		}
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
-        renderMathInElement(tsaoutput);
+        renderMathInElement(tsaoutput);	
     } else {
         voloutput.innerHTML = "";
         tsaoutput.innerHTML = "";
