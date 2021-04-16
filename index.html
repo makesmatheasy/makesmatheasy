@@ -8482,6 +8482,11 @@
                                         style="text-decoration:none;"
                                         href="#">Triangular Pyramid</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#hexpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Hexagonal Pyramid</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -12903,6 +12908,81 @@
                             <p class="stopwrap" id="resultoftritsapyramid"
                                style="font-family:mathfont;"></p>
                             
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="hexpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hexagonal Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[A = 3ab \]</p>
+                                    <p class="text-center">a = apothem</p>
+                                    <p class="text-center">b = base length</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = abh \]</p>
+                                    <p class="text-center">h = height</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S = 3b(a + s) \]</p>
+                                    <p class="text-center">s = slant height</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA = \frac{1}{2}(Perimeter \times s) \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/hexpyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter apothem of hexagon(a)" id="inputhexpyramidapothem"
+                                   oninput="hexpyramidsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base length of hexagon(b)" id="inputhexpyramidbase"
+                                   oninput="hexpyramidsolve();">  
+                            <input class="form__field" type="number"
+                                   placeholder="Enter slant height(s)" id="inputhexpyramidslant"
+                                   oninput="hexpyramidsolve();">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height of pyramid(h)" id="inputhexpyramidheight"
+                                   oninput="hexpyramidsolve();">
+                            <p class="stopwrap" id="resultofhexbasepyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhexvolpyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhextsapyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhexperipyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhexlsapyramid"
+                                style="font-family:mathfont;"></p>
 
                         </div>
                         <!-- ------HERE------ -->

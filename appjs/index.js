@@ -248,6 +248,7 @@ function openit(id) {
         "#pentprism",
         "#pyramid",
         "#tripyramid",
+        "#hexpyramid",
         "#anglecon",
         "#frustum",
         "#annulus",

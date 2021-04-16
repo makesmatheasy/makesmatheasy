@@ -2804,6 +2804,58 @@ function tripyramidsolve() {
 
     }
 }
+//Hexagonal Pyramid
+function hexpyramidsolve() {
+    var base = document.getElementById("inputhexpyramidbase").value;
+    var apothem = document.getElementById("inputhexpyramidapothem").value;
+    var slant = document.getElementById("inputhexpyramidslant").value;
+    var height = document.getElementById("inputhexpyramidheight").value;   
+    var voloutput = document.getElementById("resultofhexvolpyramid");
+    var lsaoutput = document.getElementById("resultofhexlsapyramid");
+    var tsaoutput = document.getElementById("resultofhextsapyramid");
+    var baseoutput = document.getElementById("resultofhexbasepyramid");
+    var perioutput =  document.getElementById("resultofhexperipyramid");
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    var basetemp = "";
+    var peritemp = "";
+    if ((base != "") && (apothem != "") && (slant != "") && (height != "")) {
+        basetemp += "\\[Base \\space Area \\space is \\space" +  "\\]";
+        basetemp += "\\[" + 3 + "\\times" + apothem + "\\times" + base + "=" + eval(String(3 * apothem * base)) + "\\]";
+        baseoutput.innerHTML = basetemp;
+
+        voltemp += "\\[Volume \\space of \\space Hexagonal \\space Pyramid \\space is \\space \\]";
+        voltemp += "\\[" + apothem + "\\times" + base + "\\times" + height + "=" + eval(String(apothem * base * height )) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        tsatemp += "\\[Total \\space Surface \\space area \\space is \\space \\]";
+        tsatemp += "\\[" + 3 + "\\times" + base + "\\times" + "(" + apothem + "+" + slant + ")" + "=" + eval(String( (3 * apothem * base)+(3 * base * slant) )) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        
+        peritemp += "\\[Perimeter \\space of \\space Hexagonal \\space base \\space is \\space" + "\\]";
+        peritemp += "\\[" + 6 + "\\times" + base + "=" + eval(String(6 * base)) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space"  + "\\]";
+        lsatemp += "\\[ (" + 6 + "\\times" + base + "\\times" + slant + ")" + "\\div" + 2 + "=" + eval(String((6 * base * slant)/2)) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(baseoutput);
+        renderMathInElement(perioutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        baseoutput.innerHTML = "";
+        perioutput.innerHTML = "";      
+
+    }
+}
 
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
