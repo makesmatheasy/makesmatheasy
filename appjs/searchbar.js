@@ -370,6 +370,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "LEAP YEAR"){
                         document.getElementById('lyear').click();
                     }
+                    else if (inp.value.toUpperCase() == "COORDINATE GEOMETRY CALCULATOR") {
+                        $("#analytical").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "COORDINATE GEOMETRY CALCULATOR"){
+                        document.getElementById('analytical').click();
+                    }
+                    else if (inp.value.toUpperCase() == "COORDINATE GEOMETRY FORMULA AND THEOREM") {
+                        $("#corgeo").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "COORDINATE GEOMETRY FORMULA AND THEOREM"){
+                        document.getElementById('corgeo').click();
+                    }
                     else if (inp.value.toUpperCase() == "STATISTICS FORMULAE") {
                         $("#stats").slideToggle();    
                     }
@@ -510,7 +522,7 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Unit Converter" ,"Leap Year","Rank Calculator","Excess-3 Code Convertor","Grey Code Convertor","Bitwise Calculator","Boolean Algebra","Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
-                        "Curve Tracing","Coordinate Systems","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
+                        "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning"];
                       
                         
 /*initiate the autocomplete function on the "myInput" element, and pass along the arrayofelements array as possible autocomplete values:*/
@@ -706,6 +718,18 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "MEAN CALCULATOR") {
         $("#mean").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "COORDINATE GEOMETRY CALCULATOR"){
+        document.getElementById('analytical').click(); 
+    }
+    else if (inp.value.toUpperCase() == "COORDINATE GEOMETRY CALCULATOR") {
+        $("#analytical").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "COORDINATE GEOMETRY FORMULA AND THEOREM"){
+        document.getElementById('corgeo').click(); 
+    }
+    else if (inp.value.toUpperCase() == "COORDINATE GEOMETRY FORMULA AND THEOREM") {
+        $("#corgeo").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "STATISTICS FORMULAE"){
         document.getElementById('stats').click(); 
