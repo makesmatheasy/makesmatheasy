@@ -4846,6 +4846,30 @@ function discount() {
 
 }
 
+function exposol() {
+    var x = document.getElementById("xval").value
+    var y = document.getElementById("yval").value
+    var n = document.getElementById("res");
+    var explainop = document.getElementById("steps");
+    var ntemp="";
+    var explain = "";
+    if ((x != "") && (y != "")) {
+        ntemp += "\\[Value \\space of \\space n \\space is \\space : \\space" + eval(String(Math.log(y)/Math.log(x))) + "\\]";  
+        n.innerHTML = ntemp;
+        renderMathInElement(n);
+        explain += "\\[For \\space : \\space" + x + "^{n} \\space = \\space " + y + "\\space" + "\\]";
+        explain += "\\[ Take \\space log \\space of \\space both \\space the \\space sides \\space : \\space log" + x + "^{n} \\space = \\space log" + y + "\\] ";
+        explain += "\\[ By \\space identity \\space we \\space get \\space : \\space nlog" + x + "= \\space log" + y + "\\]";
+        explain += "\\[Dividing \\space both \\space sides \\space by \\space log" + x + "\\space :" + "n \\space = \\frac{log" + y + "}{log" + x + "}" + "\\]";
+        explainop.innerHTML = explain;
+        renderMathInElement(explainop);
+    } else { 
+        n.innerHTML = ""; 
+        explainop.innerHTML = "";
+    }
+
+}
+
 //Statistics Calculator
 function cal_func_stats()
 {
