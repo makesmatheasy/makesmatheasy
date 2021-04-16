@@ -1150,6 +1150,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="expobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Solve for Exponents</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Solve for Exponents','#expo','c','expoimgfav')"><img
+                                        id="expoimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="profitlossbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Profit
                                 Loss Calculations</a>
@@ -8721,6 +8736,32 @@
 
         </div>
         <!-- Factorial end -->
+
+        <div class="collapse" id="expo">
+            <div class="text-center">
+                <h2><label>Solve for Exponent n</label></h2>
+            </div>
+            <h3>\[x^n \space =  \space y\]</h3>
+            <div class="coll">
+                <form class="form-inline">
+                    <input type="number" id="xval"  value='' placeholder="Enter x"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>       
+                    <input type="text" id="yval"  value='' placeholder="Enter y"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                    <br>
+                <button type="button" class="btn btn-light" onclick=exposol()>
+                    Calculate
+                </button><br>
+                </form>
+            </div>
+            <br>
+          
+            <h3 class="stopwrap" id="res"
+                                   style="font-family:mathfont;"></h3>
+            <p class="stopwrap" id="steps"
+                                   style="font-family:mathfont;"></p>
+            <br>
+        </div>
 
         <!--sum of nterms in A.P.-->
         <div class="collapse" id="sum_n_AP">

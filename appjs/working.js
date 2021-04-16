@@ -635,6 +635,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#expobtn").click(function(){
+        openit("#expo");
+        closenav();
+        clearall();
+    });
 
     $("#gstbtn").click(function(){
         openit("#gstcal");

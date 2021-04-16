@@ -256,6 +256,7 @@ function openit(id) {
 	    "#prices",
         "#lyear",
         "#analytical",
+        "#expo",
         "#setformula"
     ];
     for (i = 0; i < ids.length; i++) {
