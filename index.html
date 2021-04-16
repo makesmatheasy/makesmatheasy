@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
+    
     <script defer src="katex/katex.min.js"></script>
     <script defer src="katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
@@ -138,13 +139,13 @@
 
         ::-webkit-scrollbar-button:single-button:vertical:decrement {
             background-position: center 2px;
-            backgroun-size: 8px 8px;
+            background-size: 8px 8px;
             background-image: url(images/uparrow.png);
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:increment {
             background-position: center 2px;
-            backgroun-size: 8px 8px;
+            background-size: 8px 8px;
             background-image: url(images/downarrow.png);
         }
 
@@ -206,7 +207,9 @@
 </head>
 
 
-<body class="readonlybody hidescroll" onload="bodyload()">
+<body class="readonlybody hidescroll" onload="bodyload()"  background="bkimg.jpeg">
+
+
     <div class="blink-1 javascriptno" style="display:none;">
         <p>
             <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
@@ -789,8 +792,9 @@
             <form autocomplete="off">
                 <div class="form-group ">
                     <div class="autocomplete">
-                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field"
+                        <input id="myInput" type="search" name="myCountry" placeholder="Search for Operation or an Equation" class="form__field"
                             style="display:inline;font-size: 1rem;width: 45vw;position: relative;">
+                            
                     </div>
                     <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
                             style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
