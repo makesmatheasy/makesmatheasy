@@ -5993,9 +5993,7 @@ function subBinDecHexOct(){
         var add1 = "";
         var ans1 = "";
         var eigco= calculateEightComplement(input2);
-        console.log(eigco);
         add1 = (parseInt(eigco,8)+parseInt(input1,8)).toString(8);
-        console.log(add1);
         if(add1.length == input1.length){
             ans1 = calculateEightComplement(add1);
             result.innerHTML = "-" + ans1;
@@ -6010,6 +6008,25 @@ function subBinDecHexOct(){
             result.innerHTML = "-" + calculateEightComplement(ans1);
         }
         
+    }else if(base === "Hexa Decimal"){
+        var add2 = "";
+        var ans2 = "";
+        var sixtnco= calculateSixteenComplement(input2);
+        add2 = (parseInt(sixtnco,16)+parseInt(input1,16)).toString(16);
+        if(add2.length == input1.length){
+            ans2 = calculateSixteenComplement(add2);
+            result.innerHTML = "-" + ans2;
+        } else if (add2.length > input1.length){
+            ans2 = add2.substring(1);
+            result.innerHTML = ans2;
+        } else if (add2.length < input1.length){
+            var a3 = input1.length - add2.length;
+            a3 = Math.pow(10,a3);
+            ans2 = a3 + add2;
+            ans2 = ans2.substring(1);
+            result.innerHTML = "-" + calculateSixteenComplement(ans1);
+        }
+
     }
 }
 
@@ -6053,6 +6070,17 @@ function calculateEightComplement(x){
     eig = (parseInt(sev,8) + 1).toString(8);
     return eig;
     }
+}
+
+//called this function while subtracting hexa-decimal numbers.
+function calculateSixteenComplement(x){
+    var fiftn1 = "";
+    var sixtn1 = "";
+    for (var i = 0; i < x.length; i++) {
+        fiftn1 += ('15' - parseInt(x[i],16)).toString(16);
+    }
+    sixtn1 = (parseInt(fiftn1,16) + 1).toString(16);
+    return sixtn1;
 }
 
 //----------------------------
