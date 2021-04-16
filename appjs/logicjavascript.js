@@ -2256,6 +2256,38 @@ function rectanglesolve() {
     renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
+function solvecosine() {
+    var sidea = document.getElementById("inputsidea").value;
+    var sideb = document.getElementById("inputsideb").value;
+    var sidec = document.getElementById("inputsidec").value;
+    var angleaoutput = document.getElementById("resultofanglea");
+    var angleboutput = document.getElementById("resultofangleb");
+    var anglecoutput = document.getElementById("resultofanglec");
+    let angleatemp = "";
+    var anglebtemp = "";
+    var anglectemp = "";
+    if ((sidea != "") && (sideb != "") && (sidec != "")) {
+        angleatemp += "\\[ cos^{-1} [ " + sideb + "\\times" +sideb + "+" + sidec + "\\times" + sidec + "-" + sidea + "\\times" + sidea  + "\\div" + "(" + 2 + "\\times" +sideb + "\\times" + sidec + ")" + "]" + "\\]";
+        angleatemp += "\\[Angle \\space A \\space is \\space " + eval(String((57.296*Math.acos((sideb * sideb + sidec * sidec - sidea * sidea)/(2 * sideb * sidec))).toFixed(2))) + '\u00B0' + "\\]";
+        angleaoutput.innerHTML = angleatemp;
+        anglebtemp += "\\[ cos^{-1} [ " + sidea + "\\times" +sidea + "+" + sidec + "\\times" + sidec + "-" + sideb + "\\times" + sideb  + "\\div" + "(" + 2 + "\\times" +sidea + "\\times" + sidec + ")" + "]" + "\\]";
+        anglebtemp += "\\[Angle \\space B \\space is \\space " + eval(String((57.296*Math.acos((sidea * sidea + sidec * sidec - sideb * sideb)/(2 * sidea * sidec))).toFixed(2))) + '\u00B0' + "\\]";
+        angleboutput.innerHTML = anglebtemp;
+        anglectemp += "\\[ cos^{-1} [ " + sideb + "\\times" +sideb + "+" + sidea + "\\times" + sidea + "-" + sidec + "\\times" + sidec  + "\\div" + "(" + 2 + "\\times" +sidea + "\\times" + sideb + ")" + "]"  + "\\]";
+        anglectemp += "\\[Angle \\space C \\space is \\space " + eval(String((57.296*Math.acos((sideb * sideb + sidea * sidea - sidec * sidec)/(2 * sideb * sidea))).toFixed(2))) + '\u00B0' + "\\]";
+        anglecoutput.innerHTML = anglectemp;
+        
+        renderMathInElement(angleaoutput);
+        renderMathInElement(angleboutput);
+        renderMathInElement(anglecoutput);
+        
+    } else {
+        angleaoutput.innerHTML = "";
+        angleboutput.innerHTML = "";
+        anglecoutput.innerHTML = "";
+        
+    }
+}
 
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
@@ -2274,32 +2306,6 @@ function solvecircle() {
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
 
-function solveannulus() {
-    let radius1 = document.getElementById("inputradius1").value;
-    let radius2 = document.getElementById("inputradius2").value;
-    let area1 = 3.14 * radius1 * radius1;
-    let area2 = 3.14 * radius2 * radius2;
-    let area = area1-area2;
-    let Circumference1 = 2 * 3.14 * radius1;
-    let Circumference2 = 2 * 3.14 * radius2; 
-    console.log(radius1);
-    console.log(radius2);
-    area1 = area1.toPrecision(3);
-    area2 = area2.toPrecision(3);
-    area = area.toPrecision(3);
-    Circumference1 = Circumference1.toPrecision(3);
-    Circumference2 = Circumference2.toPrecision(3);
-    document.getElementById("resultofarea1").innerHTML = "\\[Area \\space of \\space outer \\space circle = " + area1 + "\\]";
-    document.getElementById("resultofarea2").innerHTML = "\\[Area \\space of \\space inner \\space circle \\ 3.14 r^2\\ = " + area2 + "\\]";
-    document.getElementById("resultofarea").innerHTML = "\\[Area \\space of \\space Annulus \\space \\ 3.14 r^2\\ = " + area + "\\]";
-    document.getElementById("resultofcircumference1").innerHTML = "\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = " + Circumference1 + "\\]";
-    document.getElementById("resultofcircumference2").innerHTML = "\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = " + Circumference2 + "\\]";
-    renderMathInElement(document.getElementById("resultofarea1"));
-    renderMathInElement(document.getElementById("resultofarea2"));
-    renderMathInElement(document.getElementById("resultofarea"));
-    renderMathInElement(document.getElementById("resultofcircumference1"));
-    renderMathInElement(document.getElementById("resultofcircumference2"));
-}
 
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
