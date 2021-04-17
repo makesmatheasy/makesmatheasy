@@ -1607,6 +1607,24 @@ var midpoint2= (Y1 + Y2)/2;
     
 }
 
+function interpointsolve()
+{
+    var a1, b1, c1, a2, b2, c2;
+    a1=parseFloat(document.getElementById('aone').value);
+    b1=parseFloat(document.getElementById('bone').value);
+    c1=parseFloat(document.getElementById('cone').value);
+    a2=parseFloat(document.getElementById('atwo').value);
+    b2=parseFloat(document.getElementById('btwo').value);
+    c2=parseFloat(document.getElementById('ctwo').value);
+    var explain = document.getElementById("formula");
+    explain.innerHTML = "\\[Intersection \\space point \\space  =\\space  (\\frac{b1 * c2 - b2 * c1}{a1 * b2 - a2 * b1}, \\space \\frac{a2 * c1 - a1 * c2}{a1 * b2 - a2 * b1} ) \\] ";
+    renderMathInElement(document.getElementById("formula"));
+    var point1 = ((b1*c2 - b2*c1)/(a1*b2 - a2*b1)).toFixed(1);
+    var point2 = ((a2*c1 - a1*c2)/(a1*b2 - a2*b1)).toFixed(1);
+    document.getElementById('inter_output').innerHTML= 'The intersection point of ' + a1 + 'x +' + b1 + 'y +'+ c1 + '= 0 and' + a2 + 'x +' + b2 + 'y +'+ c2 + '= 0 is (' + point1 + ','  + point2 + ')';
+    
+}
+
 function dispointsolve()
 {
     var a,b,c;
