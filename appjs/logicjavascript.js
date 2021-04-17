@@ -2804,6 +2804,36 @@ function tripyramidsolve() {
 
     }
 }
+
+//Pentagonal Pyramid
+function pentpyramidsolve(){
+    var side = document.getElementById("inputpentpyramidside").value;
+    var height = document.getElementById("inputpentpyramidheight").value; 
+    var voloutput1 = document.getElementById("resultofpentvolpyramid1");
+    var voloutput2 = document.getElementById("resultofpentvolpyramid2");
+    var areaoutput1 = document.getElementById("resultofpentareapyramid1");
+    var areaoutput2 = document.getElementById("resultofpentareapyramid2");
+    var areaoutput3 = document.getElementById("resultofpentareapyramid3");
+    var vol = (5/12) * (1.3763819 * height * side * side);
+    var area = (5/4) * 1.3763819 * side * side + 5 * (side/2) * math.sqrt(height * height + ((side * 1.3763819)/2)**2);
+    console.log("vol");
+    console.log(vol);
+    console.log("area");
+    console.log(area);
+    if ((height != "") && (side != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Pentagonal  \\space Pyramid \\space is \\]";
+        voloutput2.innerHTML = "\\[\\frac{5}{12} \\space tan(54 \\degree) \\space "+height+"\\times "+side+" \\times "+side+" = " + vol.toFixed(2) +"\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Pentagonal  \\space Pyramid \\space is \\]";
+        areaoutput2.innerHTML = "\\[\\frac{5}{4} \\space tan(54 \\degree) \\space "+side+"\\times "+side+" \\space + \\frac{5\\times "+side+"}{2} \\times \\]";
+        areaoutput3.innerHTML = "\\[\\sqrt("+height+"\\times "+height+" \\space + \\space (\\frac{"+side+" \\times tan(54 \\degree)}{2})^2) = "+area.toFixed(2)+"\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+        renderMathInElement(areaoutput3);
+    }
+}
+
 //Hexagonal Pyramid
 function hexpyramidsolve() {
     var base = document.getElementById("inputhexpyramidbase").value;
