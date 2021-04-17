@@ -158,6 +158,7 @@ function openit(id) {
         "#laplacecollapse",
         "#limitscollapse",
         "#matrixcollapse",
+        "#pows",
         "#matrixprops",
         "#fractions",
         "#multiplematrixcollapse",

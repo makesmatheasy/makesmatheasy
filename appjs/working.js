@@ -448,7 +448,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#powsbtn").click(function () {
+        openit("#pows");
+        closenav();
+        clearall();
+    });
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
