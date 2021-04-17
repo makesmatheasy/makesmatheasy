@@ -1,4 +1,4 @@
-![Makes Math Easy](https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png)
+<img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
 Started on **13 July,2020**
 
@@ -14,7 +14,8 @@ Solves various Math Problems along with Steps
 
 ### Tech Used
 
-![HTML5,CSS3,JavaScript](https://i.imgur.com/nMTD04v.jpg)
+<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/> 
+
 
 Other Tech/Libraries
 
@@ -118,6 +119,7 @@ Other Tech/Libraries
   - Multiplication with Steps
   - Rounding off numbers
   - EMI Calculator
+  - GST Calculator
   - Simple and Compound Interest
   - Factorial
   - Permutation & Combination
@@ -179,6 +181,7 @@ Other Tech/Libraries
     - Hollow Sphere
     - Hemisphere
     - Prism
+    - Torus
   - Volume, CSA, TSA
   - Congruence and Similarity of Triangles
 
@@ -193,6 +196,7 @@ Other Tech/Libraries
 
 - Binary Calculations
   - Boolean Algebra
+  - Any Base to Any Base Converter
   - Decimal/Binary Converter
   - Addition of any Number System
   - Decimal/Binary/Hexadecimal Converter
@@ -202,8 +206,7 @@ Other Tech/Libraries
   - Octal/Binary Converter
   - Grey Code Converter
   - Bitwise Calculator
-  - 1s & 2s Complement Calculator
-  - 9s & 10s Complement Calculator
+  - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
   - Operations for 1 complex number
@@ -229,6 +232,8 @@ Other Tech/Libraries
 ## Documentation
 
 [Makes Math Easy Documentation](https://github.com/sairish2001/Makes-Math-Easy-Documentation)
+
+Documentation Website :- [Link](https://sairish2001.github.io/makesmatheasy-documentation//)
 
 ### Future Scope
 

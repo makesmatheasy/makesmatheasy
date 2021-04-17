@@ -130,12 +130,15 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#anyBase",
         "#complex1collapse",
         "#complex2collapse",
         "#complexidentities",
         "#complexproperties",
+        "#theo",
         "#equationssolver",
         "#mulsolwithsteps",
+        "#secarea",
         "#table",
         "#shapescal",
         "#tdshapescal",
@@ -161,14 +164,20 @@ function openit(id) {
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
+        "#propcircle",
+        "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
         "#roundoff",
         "#euclid",
-        "#aod",
+	    "#aod",
+	    "#vecalg",
+	    "#thedif",
+	    "#corgeo",
         "#betagamma",
         "#parallel",
         "#unitconcal",
+        "#giff",
         "#spiconcal",
         "#home",
         "#curconcal",
@@ -179,19 +188,25 @@ function openit(id) {
         "#log_values",
         "#log-collapse",
         "#bt-collapse",
+        "#bt-collapse1",
         "#pandc",
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
         "#adding-all",
+        "#subtract-all",
+        "#multiplying-all",
 		"#onetwocom-calc",
         "#3dgeo",
-        "#ninetencom-calc",
         "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
+        "#cay",
+        "#octal-hexadecimal",
         "#inversetrigonoiden",
-	"#circlecollapse",
+        "#hyptrigonoiden",
+        "#invhyptrigonoiden",
+	    "#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
@@ -206,6 +221,7 @@ function openit(id) {
         "#profitloss",
         "#differentiate-rulecollapse",
         "#emical",
+        "#gstcal",
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
@@ -223,12 +239,26 @@ function openit(id) {
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
+        "#dec2421",
         "#ex3",
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#prism",
+        "#pentprism",
+        "#pyramid",
+        "#tripyramid",
+        "#hexpyramid",
         "#anglecon",
+        "#frustum",
+        "#annulus",
+        "#cosine",
+	    "#ip",
+	    "#prices",
+        "#lyear",
+        "#analytical",
+        "#expo",
+        "#setformula"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
@@ -336,11 +366,9 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-    if (ar.length == 0) {
-        $("#favourite").removeClass("favouritecontainer");
-    } else {
-        $("#favourite").addClass("favouritecontainer");
-    }
+   
+    $("#favourite").addClass("favouritecontainer");
+    
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement("li");
@@ -358,6 +386,21 @@ function checkfavourite() {
             document.getElementById("favourite").appendChild(el);
             document.getElementById(imgar[i]).src = favar[i];
         }
+    }
+    
+    else{
+        var el = document.createElement("div");
+        el.className = "nofavourites";
+        el.id="nofavourite"
+        el.style.color = "white";
+        document.getElementById("favourite").appendChild(el);
+        var el1 = document.createElement("p");
+        el1.textContent = "Nothing in Favourites⭐.";
+        document.getElementById("nofavourite").appendChild(el1);
+        var el2 = document.createElement("p");
+        el2.textContent = " Click 🤍 to add to Favourites";
+        document.getElementById("nofavourite").appendChild(el2);
+        
     }
 }
 

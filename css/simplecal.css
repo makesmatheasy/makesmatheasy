@@ -14,47 +14,47 @@
 .calculator .soltext {
     grid-column: span 5;
     text-align: right;
-    font-size: 25px;
+    font-size: 1.5625rem;
     outline: none;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
     color: blue;
-    padding: 30px 10px;
-    max-height: 5px;
+    padding: 1.875rem 0.625rem;
+    max-height: 0.3125rem;
     height: auto;
     border: none;
 }
 
 .calculator .value {
     grid-column: span 5;
-    max-height: 70px;
+    max-height: 4.375rem;
     height: auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
     position: relative;
-    min-height: 60px;
+    min-height: 3.75rem;
     background: #fff;
     text-align: right;
     border: none;
-    border-radius: 30px 30px 0 0;
+    border-radius: 1.875rem 1.875rem 0 0;
     outline: none;
-    padding: 30px 10px;
-    letter-spacing: 2px;
-    font-size: 20px;
+    padding: 1.875rem 0.625rem;
+    letter-spacing: 0.125rem;
+    font-size: 1.25rem;
 
 }
 
 .calculator span {
-    font-size: 25px;
+    font-size: 1.5625rem;
     display: grid;
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     color: #fff;
     background: #0c2835;
     place-items: center;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 0.0625rem solid rgba(0, 0, 0, .1);
 }
 
 .calculator span:active {
@@ -63,13 +63,13 @@
 
 .calculator span.clear {
     grid-column: span 1;
-    width: 80px;
+    width: 5rem;
     background: #ff3077;
 }
 
 .calculator span.back {
     grid-column: span 1;
-    width: 80px;
+    width: 5rem;
     background: #0c2835;
 }
 
@@ -80,34 +80,34 @@
 .calculator span.plus {
     grid-row: span 1;
     background: #163152;
-    height: 80px;
+    height: 5rem;
 }
 
 .calculator span.sub {
     grid-row: span 1;
     background: #163152;
-    height: 80px;
+    height: 5rem;
 }
 
 .calculator span.mul {
     grid-row: span 1;
     background: #163152;
-    height: 80px;
+    height: 5rem;
 }
 
 .calculator span.divi {
   grid-row: span 1;
   background: #163152;
-  height: 80px;
+  height: 5rem;
 }
 
 .calculator span.equal {
     background: #03b1ff;
-    border-radius: 0 0 40px 0;
+    border-radius: 0 0 2.5rem 0;
 }
 
 .calculator span.zero {
-    border-radius: 0 0 0 40px;
+    border-radius: 0 0 0 2.5rem;
 }
 
 .divi img, .sub img, .mul img, .plus img, #slogo{
@@ -130,7 +130,7 @@
 /* --------------------Responsive calculator-------------------- */
 @media (max-width: 450px) {
   .calculator span {
-    font-size: 19px;
+    font-size: 1.1875rem;
     height:auto;
     width: 3.5em;
   }

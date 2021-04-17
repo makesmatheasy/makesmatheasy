@@ -4,15 +4,22 @@ function display_fractions(){
 
  function additon(){
 
-
      var n1 = parseInt(document.getElementById('one_add').value);
      var d1 = parseInt(document.getElementById('two_add').value);
      var n2 = parseInt(document.getElementById('three_add').value);
      var d2 = parseInt(document.getElementById('four_add').value);
 
+     document.getElementById('addz').innerHTML = "";
+
+     if ((document.getElementById('two_add').value) ==0 || (document.getElementById('four_add').value) == 0)
+     {
+         document.getElementById('addz').innerHTML = "Your fraction is undefined because it has zero denominator";
+         return;
+     }
       if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
       {
           window.alert("Enter an Integer")
+          return;
       }
 
      document.getElementById('a').innerHTML =n1;
@@ -27,7 +34,7 @@ function display_fractions(){
     document.getElementById('d1').innerHTML = d2;
     document.getElementById('b2').innerHTML = d1;
     document.getElementById('d2').innerHTML = d2;
-    document.getElementById('e').innerHTML = n1*d2;
+    document.getElementById('e1').innerHTML = n1*d2;
     document.getElementById('g').innerHTML = n2*d1;
     document.getElementById('f').innerHTML = d1*d2;
     var top = (n1*d2) +(n2*d1);
@@ -41,18 +48,26 @@ function display_fractions(){
 function subtractiom(){
     var n1 = parseInt(document.getElementById('one_sub').value);
     var d1 = parseInt(document.getElementById('two_sub').value);
-     var n2 = parseInt(document.getElementById('three_sub').value);
-     var d2 = parseInt(document.getElementById('four_sub').value);
+    var n2 = parseInt(document.getElementById('three_sub').value);
+    var d2 = parseInt(document.getElementById('four_sub').value);
 
+    document.getElementById('subz').innerHTML = "";
 
-      if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
-      {
-          window.alert("Enter an Integer")
-      }
+    if ((document.getElementById('two_sub').value) ==0 || (document.getElementById('four_sub').value) == 0)
+    {
+        document.getElementById('subz').innerHTML = "Your fraction is undefined because it has zero denominator";
+        return;
+    }
 
-     document.getElementById('suba').innerHTML =n1;
-     document.getElementById('subb').innerHTML = d1;
-     document.getElementById('subc').innerHTML = n2;
+    if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+    {
+        window.alert("Enter an Integer")
+        return;
+    }
+
+    document.getElementById('suba').innerHTML =n1;
+    document.getElementById('subb').innerHTML = d1;
+    document.getElementById('subc').innerHTML = n2;
     document.getElementById('subd').innerHTML = d2;
     document.getElementById('suba1').innerHTML = n1;
     document.getElementById('subb1').innerHTML = d1;
@@ -79,11 +94,19 @@ function subtractiom(){
      var d1 = parseInt(document.getElementById('two_div').value);
      var n2 = parseInt(document.getElementById('three_div').value);
      var d2 = parseInt(document.getElementById('four_div').value);
+     document.getElementById('divaz').innerHTML = "";
 
-     if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
-      {
-          window.alert("Enter an Integer")
-      }
+    if ((document.getElementById('two_div').value) ==0 || (document.getElementById('four_div').value) == 0)
+    {
+        document.getElementById('divaz').innerHTML = "Your fraction is undefined because it has zero denominator";
+        return;
+    }
+
+    if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
+    {
+        window.alert("Enter an Integer")
+        return;
+    }
 
      document.getElementById('diva').innerHTML = n1;
      document.getElementById('divb').innerHTML = d1;
@@ -103,13 +126,11 @@ function subtractiom(){
      var top = n1 * d2;
      var bot = d1 * n2;
 
-      document.getElementById('divt').innerHTML = top;
+     document.getElementById('divt').innerHTML = top;
      document.getElementById('divq').innerHTML = bot
 
      var ans = top / bot;
      document.getElementById('divans').innerHTML = ans;
-
-
 
  }
 
@@ -120,10 +141,19 @@ function subtractiom(){
      var n2 = parseInt(document.getElementById('three_mul').value);
      var d2 = parseInt(document.getElementById('four_mul').value);
 
+     document.getElementById('mulz').innerHTML = "";
+
+     if ((document.getElementById('two_mul').value) ==0 || (document.getElementById('four_mul').value) == 0)
+     {
+         document.getElementById('mulz').innerHTML = "Your fraction is undefined because it has zero denominator";
+         return;
+     }
      if(Number.isNaN(d1) || Number.isNaN(d2) || Number.isNaN(n1) || Number.isNaN(n2) )
       {
           window.alert("Enter an Integer")
+          return;
       }
+    
 
      document.getElementById('mula').innerHTML = n1;
      document.getElementById('mulb').innerHTML = d1;
@@ -182,44 +212,76 @@ function subtractiom(){
 
  function improper_to_mixed(){
 
-     var n1 = parseInt(document.getElementById('one_imp').value);
-     var d1 = parseInt(document.getElementById('two_imp').value);
+    var n1 = parseInt(document.getElementById('one_imp').value);
+    var d1 = parseInt(document.getElementById('two_imp').value);
 
-     if(Number.isNaN(d1) || Number.isNaN(n1) )
-      {
-          window.alert("Enter an Integer")
-      }
+    document.getElementById('impr').innerHTML = "";
+    document.getElementById('impq').innerHTML = "";
+    document.getElementById('impb1').innerHTML = ""; 
 
+    if (d1 === n1){
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
 
-     document.getElementById('impa').innerHTML = n1;
-     document.getElementById('impb').innerHTML = d1;
+        document.getElementById('impr').innerHTML = "1";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = ""; 
 
+       return 0; }
 
-     const arr = [n1, d1];
+    if (d1 === 0){ 
 
-         const properToMixed = arr => {
-             const quotient = Math.floor(arr[0] / arr[1]);
-             const remainder = arr[0] % arr[1];
-             if(n1<d1){
-                     document.getElementById('impr').innerHTML = n1;
-                     document.getElementById('impq').innerHTML = 1;
-                     document.getElementById('impb1').innerHTML = d1;
-             }
-             else if(remainder === 0){
-                 return [quotient];
-             }else{
-                     var q = quotient;
-                     var r = remainder;
-                     var b = d1;
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
 
-                     document.getElementById('impr').innerHTML = r;
-                     document.getElementById('impq').innerHTML = q;
-                     document.getElementById('impb1').innerHTML = b;
+        document.getElementById('impr').innerHTML = "Infinity";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = ""; 
 
+       return 0; }
+   
+   if (n1 === 0){ 
+       
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
 
-             };
-             };
+        document.getElementById('impr').innerHTML = "0";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = "";
+         
+        return 0; }
 
-         properToMixed(arr);
+    if(Number.isNaN(d1) || Number.isNaN(n1) )
+     {
+         window.alert("Enter an Integer")
+         return;
+     }
 
- }
+    document.getElementById('impa').innerHTML = n1;
+    document.getElementById('impb').innerHTML = d1;
+
+    const arr = [n1, d1];
+
+        const properToMixed = arr => {
+            const quotient = Math.floor(arr[0] / arr[1]);
+            const remainder = arr[0] % arr[1];
+            if(n1<d1){
+                    document.getElementById('impr').innerHTML = n1;
+                    document.getElementById('impq').innerHTML = 1;
+                    document.getElementById('impb1').innerHTML = d1;
+            }
+            else if(remainder === 0){
+                return [quotient];
+            }else{
+                    var q = quotient;
+                    var r = remainder;
+                    var b = d1;
+
+                    document.getElementById('impr').innerHTML = r;
+                    document.getElementById('impq').innerHTML = q;
+                    document.getElementById('impb1').innerHTML = b;
+
+            };
+        };
+        properToMixed(arr);
+}

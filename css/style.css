@@ -30,16 +30,30 @@ body {
 body img {
   filter: invert(100%);
 }
-html {
-  /* overflow-x: hidden; */
+
+
+#setopfav, #interestfav, #pricesfav {
+  filter: invert(0);
 }
+
+html {
+  overflow-x: hidden;
+}
+
 .container {
   padding-bottom: 70%;
   padding-top: 1.5em;
 }
+
+.main{
+  width:50%;
+  float:left;
+}
+
+
 p {
   color: var(--appimage);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .frac {
@@ -72,18 +86,19 @@ p {
   /*position: relative !important;*/
 }
 .form-control {
-  border-radius: 50px;
-  margin: 2px;
+  border-radius: 3.125rem;
+  margin: 0.125rem;
 }
 
 .btn {
-  border-radius: 100px !important;
+  border-radius: 6.25rem !important;
 }
-
 a,
 p,
 label {
   color: var(--appimage) !important;
+  text-align: center;
+  margin-bottom: 0.3125rem;
 }
 
 h1,
@@ -113,13 +128,13 @@ h6 {
 
 .ulstyle li {
   list-style-type: none;
-  padding: 10px !important;
+  padding: 0.625rem !important;
 }
 
 .ulstyle li a {
   color: var(--appimage) !important;
   font-family: mathfont;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 }
 
 .ulstyle li a:hover,
@@ -139,11 +154,11 @@ h6 {
   width: 100%;
   background: white;
   color: black;
-  border-radius: 40px;
+  border-radius: 2.5rem;
   outline: none !important;
-  padding: 15px;
-  font-size: 20px;
-  margin: 10px;
+  padding: 0.9375rem;
+  font-size: 1.25rem;
+  margin: 0.625rem;
 }
 
 #fav-button {
@@ -151,9 +166,9 @@ h6 {
   display: block;
   z-index: 10;
   float: right;
-  padding: 0px 10px 2px 10px;
+  padding: 0rem 0.625rem 0.125rem 0.625rem;
   text-transform: uppercase;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border-color: white;
   color: var(--apppink);
   background-color: var(--appblack);
@@ -165,18 +180,18 @@ h6 {
   font-weight: bolder;
 }
 .favouritecontainer {
-  position: fixed;
+  position: absolute;
   left: 76%;
   right: 0%;
   top: 15%;
-  bottom: -15px;
+  bottom: -0.9375rem;
   background-color: #02050a00;
-  padding: 20px;
-  padding-right: 0px;
+  padding: 1.25rem;
+  padding-right: 0rem;
   padding-left: 0;
   z-index: 900;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 1.875rem;
+  border-top-right-radius: 1.875rem;
   overflow-y: auto !important;
   overflow-x: hidden !important;
 }
@@ -185,28 +200,39 @@ h6 {
   list-style: none;
 }
 .favourites {
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
-  border-top: 1px solid var(--apppink);
-  border-bottom: 1px solid var(--apppink);
-  border-left: 1px solid var(--apppink);
+  border-radius: 1.125rem;
+  border: 0.0625rem solid var(--apppink);
   background-color: var(--appblack);
-  margin: 10px;
-  padding: 15px;
+  margin: 0.625rem;
+  padding: 0.9375rem;
+  text-align: center;
+  color: white !important;
+  cursor: pointer;
+}
+.nofavourites {
+  border-radius: 1.125rem;
+  border: 0.0625rem solid var(--apppink);
+  background-color: var(--appblack);
+  margin: 0.625rem;
+  padding: 0.9375rem;
   text-align: center;
   color: white !important;
   cursor: pointer;
 }
 
+.nofavourites p{
+  font-size: 1.1875rem;
+}
+
 .favnew {
   height: fit-content;
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
-  border-top: 1px solid var(--apppink);
-  border-bottom: 1px solid var(--apppink);
-  border-left: 1px solid var(--apppink);
+  border-top-left-radius: 1.125rem;
+  border-bottom-left-radius: 1.125rem;
+  border-top: 0.0625rem solid var(--apppink);
+  border-bottom: 0.0625rem solid var(--apppink);
+  border-left: 0.0625rem solid var(--apppink);
   background: var(--apppink) !important;
-  margin-left: 0px;
+  margin-left: 0rem;
   font-size: 120%;
 }
 
@@ -214,27 +240,41 @@ h6 {
   background-color: rgb(255, 136, 231);
   cursor: pointer;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .favouritecontainer {
     left: 10%;
     right: 5%;
     top: 15%;
-    bottom: -15px;
+    bottom: -0.9375rem;
     background-color: #232a36ce;
   }
   .favourites {
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
-    border-top: 1px solid var(--apppink);
-    border-bottom: 1px solid var(--apppink);
-    border-left: 1px solid var(--apppink);
+    border-top-right-radius: 1.125rem;
+    border-bottom-right-radius: 1.125rem;
+    border-top: 0.0625rem solid var(--apppink);
+    border-bottom: 0.0625rem solid var(--apppink);
+    border-left: 0.0625rem solid var(--apppink);
     background-color: var(--appblack);
-    margin: 10px;
-    padding: 15px;
+    margin: 0.625rem;
+    padding: 0.9375rem;
     text-align: center;
     color: white !important;
     cursor: pointer;
   }
+  .nofavourites {
+    border-top-right-radius: 1.125rem;
+    border-bottom-right-radius: 1.125rem;
+    border-top: 0.0625rem solid var(--apppink);
+    border-bottom: 0.0625rem solid var(--apppink);
+    border-left: 0.0625rem solid var(--apppink);
+    background-color: var(--appblack);
+    margin: 0.625rem;
+    padding: 0.9375rem;
+    text-align: center;
+    color: white !important;
+    cursor: pointer;
+  }
+  
 }
 
 ::selection {
@@ -249,7 +289,9 @@ h6 {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  margin-left: 40vh;
 }
 #search-txt {
   border: none;
@@ -258,39 +300,38 @@ h6 {
   float: left;
   padding: 0;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
+  line-height: 2.5rem;
+  width: 0rem;
 }
 .searchbtn {
   background: #ff299c;
   color: #f1faee;
   border-radius: 50%;
   float: right;
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   outline: none !important;
 }
 #box {
-  position: relative !important;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
   background: #ff299c;
-  height: 60px;
-  border-radius: 40px;
-  padding: 10px;
-  margin-left: 6em;
-  margin-bottom: 0;
-  margin-top: 4em;
+  height: 3.75rem;
+  border-radius: 2.5rem;
+  padding: 0.625rem;
+  transform: translateX(50%,50%);
 }
 #box:hover > #search-txt {
-  width: 240px;
-  padding: 0 6px;
+  width: 15rem;
+  padding: 0 0.375rem;
 }
 #box:hover > .searchbtn {
   background: #0bd54f;
@@ -303,14 +344,14 @@ h6 {
 
 .form__field {
   font-family: mainfont;
-  font-size: 15px !important;
-  letter-spacing: 2px;
+  font-size: 0.9375rem !important;
+  letter-spacing: 0.125rem;
   width: 100%;
   border: 0;
-  border-bottom: 1px solid var(--appimage);
+  border-bottom: 0.0625rem solid var(--appimage);
   outline: 0;
   color: var(--appimage);
-  padding: 7px 0;
+  padding: 0.4375rem 0;
   background: transparent;
   transition: border-color 0.2s;
 }
@@ -327,36 +368,49 @@ h6 {
 }
 
 .dropdownlogo {
-  padding-left: 15px;
-  height: 20px;
+  padding-left: 0.9375rem;
+  height: 1.25rem;
   filter: invert(100%);
 }
 .katex {
-  font-size: 25px !important;
+  font-size: 1.5625rem !important;
   display: flex;
 }
 #numberfact {
   font-family: mainfont;
-  letter-spacing: 2px;
-  font-size: 25px;
+  letter-spacing: 0.125rem;
+  font-size: 1.5625rem;
   text-align: center !important;
-  margin-top: auto;
   margin-bottom: auto;
+  padding: 4vh;
   color: var(--apppimage);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
+    rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
   /* because of this it is of black color now it will inherit the body color */
   /* background-color: #26282b; */
-  border-bottom-right-radius: 35px;
-  border-top-left-radius: 35px;
+  border-bottom-right-radius: 1.875rem;
+  border-top-left-radius: 1.875rem;
   transition: all 0.2s;
   cursor: pointer;
 }
+
 #numberfact:hover {
-  font-size: 25.5px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  font-size: 1.5938rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
+    rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
   background-color: var(--appblack);
+}
+.card h5{
+    color: rgb(124, 151, 238);
+}
+.card{
+    background-color: transparent;
+    /* border: 0.125rem solid #111113; */
+    box-shadow: 0.5rem 0.5rem 0.5rem #222227;
+    /* border-bottom: 0.1875rem solid #3a24c4;; */
+}
+.card-header {
+    border-bottom: 0.1875rem solid #3a24c4;;
 }
 
 ul li .table {
@@ -372,22 +426,22 @@ ul li .table {
   height: fit-content;
   /* background: rgba(255, 136, 231,0.5); */
   background: var(--apppink) !important;
-  margin: 13px;
-  border-radius: 36px;
+  margin: 0.8125rem;
+  border-radius: 2.25rem;
   font-size: large;
 }
 
 .list_menu_items a:hover {
   /* background: rgba(255, 136, 231,0.5)!important; */
   background: var(--apppink) !important;
-  border-radius: 36px;
+  border-radius: 2.25rem;
 }
 #about .table td {
   text-align: center;
 }
 .table td:hover {
-  border-top: 1px solid #dee2e6;
-  border-radius: 36px;
+  border-top: 0.0625rem solid #dee2e6;
+  border-radius: 2.25rem;
 }
 
 .list_menu_items {
@@ -412,6 +466,7 @@ ul li .table {
   box-shadow: rgba(117, 110, 110, 0.3), rgba(rgba(201, 196, 196, 0.22));
   background-color: #0571dd;
 }
+
 .light-mode .table td:hover {
   text-decoration: none;
   text-shadow: none;
@@ -478,6 +533,10 @@ span.sub img {
 .light-mode .favourites {
   color: black !important;
 }
+
+.light-mode .nofavourites {
+  color: black !important;
+}
 .light-mode .favnew {
   color: white !important;
 }
@@ -488,39 +547,51 @@ span.sub img {
   background-color: white;
   font-weight: bolder;
 }
+.light-mode .card h5{
+    color: rgb(18, 33, 82);
+}
 
+.light-mode .card{
+    background-color: transparent;
+    border: 0.125rem solid #dcd8f8;
+    box-shadow: 0.5rem 0.5rem 0.5rem #ccc7eb;
+    /* border-bottom: 0.1875rem solid #3a24c4;; */
+}
+.light-mode .card-header {
+    border-bottom: 0.1875rem solid #3a24c4;;
+}
 /* radio butons for conic hyperbola*/
 #op1_hyper:after,
 #op2_hyper:after,
 #op3_hyper:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
   position: relative;
-  top: -4px;
-  left: -1px;
+  top: -0.25rem;
+  left: -0.0625rem;
   background-color: var(--appblack);
   content: '';
   display: inline-block;
   visibility: visible;
-  border: 2px solid #fff;
+  border: 0.125rem solid #fff;
   transition: 1s;
 }
 
 #op1_hyper:checked:after,
 #op2_hyper:checked:after,
 #op3_hyper:checked:after {
-  width: 15px;
-  height: 50px;
-  border-radius: 15px;
-  top: -4px;
-  left: -1px;
+  width: 0.9375rem;
+  height: 3.125rem;
+  border-radius: 0.9375rem;
+  top: -0.25rem;
+  left: -0.0625rem;
   position: relative;
   background-color: var(--apppink);
   content: '';
   display: inline-block;
   visibility: visible;
-  border: 2px solid #fff;
+  border: 0.125rem solid #fff;
 }
 
 /* radio butons for conic hyperbola ends*/
