@@ -1228,6 +1228,24 @@
             <li>
                 <table class="table">
                     <tr>
+                        <td style="border-top: none;" onclick="display_devi()">
+                            <a id="std-dvtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Standard Devation
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Standard Deviation','#deviation','c','statimgfav')"><img
+                                        id="devimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            
+            <li>
+                <table class="table">
+                    <tr>
                         <td style="border-top: none;">
                             <a id="stats-btn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Statistics
@@ -7081,6 +7099,32 @@
 
 
         </div>
+        <!--Standard Deviation starts-->
+        <div class="collapse" id="deviation">
+
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+            <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
+            <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
+            <p>&nbsp;</p>
+           
+            <button id="smpbtn" class="btn btn-secondary" onclick="samvar()" style="font-family:mathfont;float:left;"> Sample Standard Deviation</button>
+             <button id="popbtn" class="btn btn-secondary" onclick="popvar()" style="font-family:mathfont;float:right;"> Population Standard Deviation</button>
+            <p>&nbsp;</p>
+             <p>&nbsp;</p>
+          <ul style="list-style-type:disc;">
+          <li style="font-family:mathfont; color:white; float:left;"> Select Population if data contains all the measurable values or all of the values you are interested in.</li>
+           <br><br><li style="font-family:mathfont ; color:white; float:left;"> Select Sample if the data is sample of large or unlimited population an you wish to make a statement about entire population.</li>
+          </ul>
+          <p>&nbsp;</p> <p>&nbsp;</p>
+          <div class="form__group" id='std-var-rslt' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;">
+          </div>
+          </div>
+          </div> 
+           </div>
+        </div>
+<!--Standard Deviation end-->
 
         <!--algebraic formulas list starts-->
         <div class="collapse" id="algebraic_formulascollapse">

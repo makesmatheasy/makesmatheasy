@@ -200,3 +200,134 @@ function euler()
   result.innerHTML = x;
 }
 
+function display_devi(){
+    var x = document.getElementById('deviation');
+    if (x.style.display === 'none') {
+    x.style.display = 'block';
+  } else {
+    x.style.display = 'none';
+  }
+ } 
+
+function samvar()
+{
+   var num = document.getElementById('stdinp').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+
+
+    if(num=="")
+    {
+       document.getElementById('std-var-rslt').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('std-var-rslt').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        var sum=0;
+
+
+        for (i = 0; i < len; i++) {
+           sum+=number[i];
+        }
+
+        var meanrzlt= sum/len;
+         var varrzlt=0;
+        for (i = 0; i < len; i++) {
+            varrzlt = varrzlt + ((number[i])-meanrzlt)*((number[i])-meanrzlt);
+        }
+
+        varrzlt = varrzlt/(len-1);
+ var conint;
+ var sampstddev=Math.sqrt(varrzlt);
+ var q=Math.sqrt(len)
+conint= sampstddev/q;
+  
+      
+        
+       var outputstring=""
+       var text="x̄";
+       var text2="2";
+    outputstring+="Count of inputs: "+len+"<br>";
+        outputstring+="Sum(Σx): "+sum+"<br>";
+        outputstring+="Mean(μ): "+meanrzlt+"<br>";
+        outputstring+="Variance(σ"+text2.sub()+"): "+varrzlt+"<br>";
+        outputstring+="Sample Standard Deviation: "+sampstddev+" <p>&nbsp;</p>";
+        outputstring+="Confidence Interval(s" +text.sub()+"): "+conint+"<br>";
+     document.getElementById('std-var-rslt').innerHTML = outputstring;
+}
+}
+
+function popvar()
+{
+       var num = document.getElementById('stdinp').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+
+
+    if(num=="")
+    {
+       document.getElementById('std-var-rslt').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('std-var-rslt').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var text="x̄";
+        var text2="2";
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        var sum=0;
+
+
+        for (i = 0; i < len; i++) {
+           sum+=number[i];
+        }
+
+        var meanrzlt= sum/len;
+         var varrzlt=0;
+        for (i = 0; i < len; i++) {
+            varrzlt = varrzlt + ((number[i])-meanrzlt)*((number[i])-meanrzlt);
+        }
+        var conint;
+        varrzlt = varrzlt/len;
+
+       var sampstddev=Math.sqrt(varrzlt);
+       var q=Math.sqrt(len)
+        conint= sampstddev/q;
+       var outputstring=""
+
+    outputstring+="Count of inputs: "+len+"<br>";
+        outputstring+="Sum(Σx): "+sum+"<br>";
+        outputstring+="Mean(μ): "+meanrzlt+"<br>";
+        outputstring+="Variance(σ"+text2.sub()+"): "+varrzlt+"<br>";
+        outputstring+="Population Standard Deviation: "+sampstddev+" <p>&nbsp;</p>";
+        outputstring+="Confidence Interval(s" +text.sub()+"): "+conint+"<br>";
+
+
+     document.getElementById('std-var-rslt').innerHTML = outputstring;
+}
+}
