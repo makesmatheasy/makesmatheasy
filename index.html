@@ -2501,9 +2501,9 @@
     <div class="searchbar-container">
         <div class="text-center" style="padding-top: 3.125rem;">
             <form autocomplete="off">
-                <div class="form-group" id="box">
+                <div class="form-group" id="box" onmouseover="openSearchBar()" onmouseout="checkInput()">
                     <div class="autocomplete" id="search-txt">
-                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
+                        <input id="myInput" type="search" name="myCountry" oninput="checkInput()" placeholder="Search" class="form__field">
                     </div>
                     <div class="d-flex justify-content-end">
                         <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
