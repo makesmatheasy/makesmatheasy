@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="./manifest.json">
+
     <script defer src="katex/katex.min.js"></script>
     <script defer src="katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
@@ -156,22 +157,14 @@
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:decrement {
-
-            background-position: center 2px;
-
             background-position: center 4px;
-
             background-size: 8px 8px;
             background-image: url(images/uparrow.png);
             background-repeat: no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:increment {
-
-            background-position: center 2px;
-
             background-position: center 4px;
-
             background-size: 8px 8px;
             background-image: url(images/downarrow.png);
             background-repeat: no-repeat;
@@ -2499,43 +2492,41 @@
     </div>
 
     <div class="searchbar-container">
-        <div class="text-center" style="padding-top: 3.125rem;">
+        <div class="text-center" style="padding-top: 50px;">
             <form autocomplete="off">
-                <div class="form-group" id="box" onmouseover="openSearchBar()" onmouseout="checkInput()">
-                    <div class="autocomplete" id="search-txt">
-                        <input id="myInput" type="search" name="myCountry" oninput="checkInput()" placeholder="Search" class="form__field">
+                <div class="form-group ">
+                    <div class="autocomplete">
+                        <input id="myInput" type="search" name="myCountry" placeholder="Search for Operation or an Equation" class="form__field"
+                            style="display:inline;font-size: 1rem;width: 45vw;position: relative;">
+                            
                     </div>
-                    <div class="d-flex justify-content-end">
-                        <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
-                                                                                       style="height:1.5625rem;display:inline; margin-top: 0rem; margin-bottom: -0.9rem; position: relative;z-index:10;cursor: pointer;filter:none;"
-                                                                                       src="images/speechlogo.png"></span>
-
-                        <span type="button" class="searchbtn"
-                              onclick="searchgoogle(document.getElementById('myInput').value)"><img
-                                style="height:2.375rem; padding:0.525rem; filter:none;" src="icons/loupe.png"></span>
-                    </div>
+                    <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                            style="height:25px;display:inline;margin: -20px;position: relative;z-index:10;cursor: pointer;"
+                            src="images/speechlogo.png"></span>
+                    <span type="button" class="searchbtn"
+                        onclick="searchgoogle(document.getElementById('myInput').value)"
+                        style="margin-left: 50px;border-right: 2px solid white;border-bottom: 2px solid white;border-bottom-right-radius: 50px;border-top-right-radius: 50px;"><img
+                            style="height:38px;padding:10px;filter:invert(100%);" src="icons/loupe.png"></span>
                 </div>
             </form>
         </div>
-    </div>
 
-    <div class="container">
-        <!--    start home-->
-        <div id="homecollapse" class=" d-flex align-items-center justify-content-center " style="z-index:11;position:relative;">
-            <div class="form-group text-center">
-                <table style="margin-left: auto;margin-right: auto;">
-                    <tr>
-                        <td>
-                            <p id="numberfact" style="display: inline-block;"></p>
-                        </td>
-                        <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
-                                                                                  alt="refresh"
-                                                                                  style="height: 1.25rem;padding-left: 1.25rem;padding-right: 0.625rem;">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
+        <div class="container">
+            <!--    start home-->
+            <div id="homecollapse" style="z-index:11;position:relative;">
+                <div class="form-group text-center">
+                    <table style="margin-left: auto;margin-right: auto;">
+                        <tr>
+                            <td>
+                                <p id="numberfact" style="display: inline-block;"></p>
+                            </td>
+                            <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
+                                    alt="refresh"
+                                    style="height: 20px;filter:invert(100%);padding-left: 20px;padding-right: 10px;">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
         </div>
         <!--    end home-->
         <br>
