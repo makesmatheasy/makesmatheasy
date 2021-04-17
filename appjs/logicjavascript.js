@@ -4964,6 +4964,49 @@ function exposol() {
 
 }
 
+
+function solveper()
+{
+    var x,y;
+    x=parseFloat(document.getElementById('x').value);
+    y=parseFloat(document.getElementById('y').value);
+    var res = (y*x*0.01);
+    document.getElementById('op').innerHTML= 'Result : ' + res;
+
+}
+function solvepera()
+{
+    var x1,y1;
+    x1=parseFloat(document.getElementById('x1').value);
+    y1=parseFloat(document.getElementById('y1').value);
+    var n = (y1*100)/x1;
+    document.getElementById('n').innerHTML= 'Result : ' + n + '%'; 
+}
+function solvepercal()
+{
+    var x2,y2;
+    x2=parseFloat(document.getElementById('x2').value);
+    y2=parseFloat(document.getElementById('y2').value);
+    var s = (y2*100)/x2;
+    document.getElementById('s').innerHTML= 'Result : ' + s ; 
+}
+function solvepercent()
+{
+    var x3,y3;
+    x3=parseFloat(document.getElementById('x3').value);
+    y3=parseFloat(document.getElementById('y3').value);
+    var r = x3+(y3*x3)/100;
+    document.getElementById('r').innerHTML= 'Result : ' + r ; 
+}
+function solveperc()
+{
+    var x4,y4;
+    x4=parseFloat(document.getElementById('x4').value);
+    y4=parseFloat(document.getElementById('y4').value);
+    var t = x4-(y4*x4)/100;
+    document.getElementById('t').innerHTML= 'Result : ' + t ; 
+}
+
 //Statistics Calculator
 function cal_func_stats()
 {
