@@ -1181,6 +1181,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="percalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Percentage Calculator','#percal','c','percalimgfav')"><img
+                                        id="percalimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="profitlossbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Profit
                                 Loss Calculations</a>
@@ -2517,9 +2532,9 @@
     <div class="searchbar-container">
         <div class="text-center" style="padding-top: 3.125rem;">
             <form autocomplete="off">
-                <div class="form-group" id="box">
+                <div class="form-group" id="box" onmouseover="openSearchBar()" onmouseout="checkInput()">
                     <div class="autocomplete" id="search-txt">
-                        <input id="myInput" type="search" name="myCountry" placeholder="Search" class="form__field">
+                        <input id="myInput" type="search" name="myCountry" oninput="checkInput()" placeholder="Search" class="form__field">
                     </div>
                     <div class="d-flex justify-content-end">
                         <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
@@ -3244,7 +3259,7 @@
             <p id="dis_formula" style="display:flex;font-family:mathfont;;width:auto;"
                 class="stopwrap"
                align="right"></p>
-            <h4 id="outPut"> </h4> <br>
+            <h4 id="outPut"> </h4> <br><br>
             <h3>Midpoint </h3><br>
             <div class="coll">
                 <p>
@@ -3263,7 +3278,26 @@
             <p id="mid_formula" style="display:flex;font-family:mathfont;;width:auto;"
                 class="stopwrap"
                align="right"></p>
-            <h4 id="mid_output"> </h4> 
+            <h4 id="mid_output"> </h4> <br><br>
+            <h3>Intersection Point of Two Lines</h3><br>
+            <div class="coll">
+                <p>
+                    Equation 1 :   <input type="text" id="aone" size=3 value='' placeholder="A1">  x  +
+                <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text" id="cone" size=3 value='' placeholder="C1"> = 0
+                    <br><br>
+                    Equation 2 :   <input type="text" id="atwo" size=3 value='' placeholder="A2">  x  +
+                <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text" id="ctwo" size=3 value='' placeholder="C2"> = 0
+                    <br><br>
+                <button type="button" class="btn btn-light" onclick=interpointsolve()>
+                    Calculate
+                </button><br>
+                </p>
+            </div><br>
+            <p id="formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="inter_output"> </h4> <br><br>
+            
             <h3>Distance between point and a line</h3><br>
             <div class="coll">
                 <p>
@@ -4261,6 +4295,7 @@
             <p>\[P_1\space =\space \frac{\frac{d^{2}z}{dx^{2}}+P\frac{dz}{dx}}{(\frac{dz}{dx})^{2}}\space,Q_1\space =\space \frac{Q}{(\frac{dz}{dx})^{2}}\space and\space R_1\space =\space \frac{R}{(\frac{dz}{dx})^{2}}\]</p>
             <p>\[4.\space Put\space in\space \frac{d^{2}y}{dz^{2}}\space +\space P_1\frac{dy}{dx}\space +Q_1 y\space =\space R_1\space and\space solve\space
                 using\space differential\space eqn\space with\space constant\space coeffiecients\]</p>
+
         </div>
         <div class="collapse" id="pows">
             <h2>Power Series</h2>
@@ -4292,6 +4327,7 @@
             <p>If a point is not ordinary then the point is singular</p>
             <p>A singular point x = x<sub>0</sub> is called regular singular point if both (x-x<sub>0</sub>) and (x-x<sub>0</sub>)<sup>2</sup> are analytic at x = x<sub>0</sub></sup> else it is irregular </p>
             
+
         </div>
         <div class="collapse" id="maxmin">
             <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
@@ -8390,7 +8426,12 @@
                     <td><a data-toggle="modal" data-target="#parallelogram"
                            style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
-                </tr>                
+                </tr>    
+                <tr>
+                    <td><a data-toggle="modal" data-target="#pentagon"
+                           style="text-decoration:none;"
+                           href="#">Pentagon</a></td>
+                </tr>            
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -8888,6 +8929,73 @@
             <p class="stopwrap" id="steps"
                                    style="font-family:mathfont;"></p>
             <br>
+        </div>
+
+        <div class="collapse" id="percal">
+            <div class="text-center">
+                <h2>Percentage Calculator</h2><br>
+            </div>
+            <div class="coll">
+                <p>
+                    1) What is  <input type="text" id="y" size=3 value='' placeholder="Y">  % of
+                <input type="text" id="x" size=3 value='' placeholder="X">  ? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solveper()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="op"> </h4> 
+            <div class="coll">
+                <p>
+                    2) What % of  <input type="text" id="x1" size=3 value='' placeholder="X">  is
+                <input type="text" id="y1" size=3 value='' placeholder="Y">  ? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solvepera()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="n"> </h4>
+            <div class="coll">
+                <p>
+                    3)  <input type="text" id="y2" size=3 value='' placeholder="Y">  out of what is
+                <input type="text" id="x2" size=3 value='' placeholder="X"> %  ? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solvepercal()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="s"> </h4> 
+            <div class="coll">
+                <p>
+                    4)  <input type="text" id="x3" size=3 value='' placeholder="X">  plus
+                <input type="text" id="y3" size=3 value='' placeholder="Y"> % is what? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solvepercent()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="r"> </h4> 
+            <div class="coll">
+                <p>
+                    5)  <input type="text" id="x4" size=3 value='' placeholder="X">  minus
+                <input type="text" id="y4" size=3 value='' placeholder="Y"> % is what? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solveperc()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="t"> </h4> 
+
         </div>
 
         <!--sum of nterms in A.P.-->
@@ -10148,27 +10256,45 @@
         </div>
         <!-- End of bcd convertor -->
 
-        <!-- Start of ex3 convertor -->
-        <div>
-            <div class="collapse" id="ex3">
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>Decimal</h5>
+<!-- Start of ex3 convertor -->
+<div>
+    <div class="collapse" id="ex3">
+        <h5>Decimal-Excess-3 Code Converter</h5><br>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Decimal</h5>
 
-                        <input type="number" id="ex3-input" value="0" class="form__field"
-                               oninput="convertex3()">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>Excess-3</h5>
-
-                    </div>
-                    <label class="form__group" id="ex3-result">0</label>
-                </div>
+                <input type="number" id="ex3-input" value="0" class="form__field"
+                       oninput="convertex3()">
             </div>
         </div>
-        <!-- End of ex3 convertor -->
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Excess-3</h5>
+
+            </div>
+            <label class="form__group" id="ex3-result">0</label>
+        </div><br><br>
+        <h5>Binary-Excess-3 Code Converter</h5><br>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Binary</h5>
+
+                <input type="number" id="ex3bin-input" value="0" class="form__field"
+                       oninput="convertex3bin()">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Excess</h5>
+
+            </div>
+            <label class="form__group" id="ex3bin-result">0</label>
+        </div>
+
+    </div>
+</div>
+    
 
  <!-- Start of Decimal/2421 convertor -->
  <div>
@@ -12228,6 +12354,64 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="pentagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{1}{4} \sqrt{5(5 + 2 \sqrt{5})} a^2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal</h5>
+                                <p class="text-center">\[d = \frac{1 + \sqrt{5}}{2} a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P= 5 a\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/pent.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidepent"
+                               oninput="solvepent()">
+                        <p class="stopwrap" id="resultofareapent1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareapent2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalpent1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalpent2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterpent"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--shapes end-->
 
     <!--3-D shapes model -------->

@@ -256,6 +256,7 @@ function openit(id) {
         "#cosine",
 	    "#ip",
 	    "#prices",
+        "#percal",
         "#lyear",
         "#analytical",
         "#expo",

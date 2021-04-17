@@ -1607,6 +1607,24 @@ var midpoint2= (Y1 + Y2)/2;
     
 }
 
+function interpointsolve()
+{
+    var a1, b1, c1, a2, b2, c2;
+    a1=parseFloat(document.getElementById('aone').value);
+    b1=parseFloat(document.getElementById('bone').value);
+    c1=parseFloat(document.getElementById('cone').value);
+    a2=parseFloat(document.getElementById('atwo').value);
+    b2=parseFloat(document.getElementById('btwo').value);
+    c2=parseFloat(document.getElementById('ctwo').value);
+    var explain = document.getElementById("formula");
+    explain.innerHTML = "\\[Intersection \\space point \\space  =\\space  (\\frac{b1 * c2 - b2 * c1}{a1 * b2 - a2 * b1}, \\space \\frac{a2 * c1 - a1 * c2}{a1 * b2 - a2 * b1} ) \\] ";
+    renderMathInElement(document.getElementById("formula"));
+    var point1 = ((b1*c2 - b2*c1)/(a1*b2 - a2*b1)).toFixed(1);
+    var point2 = ((a2*c1 - a1*c2)/(a1*b2 - a2*b1)).toFixed(1);
+    document.getElementById('inter_output').innerHTML= 'The intersection point of ' + a1 + 'x +' + b1 + 'y +'+ c1 + '= 0 and' + a2 + 'x +' + b2 + 'y +'+ c2 + '= 0 is (' + point1 + ','  + point2 + ')';
+    
+}
+
 function dispointsolve()
 {
     var a,b,c;
@@ -2306,6 +2324,31 @@ function solvecircle() {
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
 
+function solvepent(){
+    let side = document.getElementById("inputsidepent").value;
+    let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
+    let diagonal = 0.5 * (1 + math.sqrt(5)) * side;
+    let perimeter = 5 * side;
+    document.getElementById("resultofareapent1").innerHTML = "";
+    document.getElementById("resultofareapent2").innerHTML = "";
+    document.getElementById("resultofdiagonalpent1").innerHTML = "";
+    document.getElementById("resultofdiagonalpent2").innerHTML = "";
+    document.getElementById("resultofperimeterpent").innerHTML = "";
+
+    if (side != ""){
+        document.getElementById("resultofareapent1").innerHTML = "\\[Area \\space of \\space Pentagon \\space \\]";
+        document.getElementById("resultofareapent2").innerHTML = "\\[\\frac{1}{4} \\sqrt{5(5 + 2 \\sqrt{5})} \\times "+side+"^2 = "+area.toFixed(2)+"\\]";
+        document.getElementById("resultofdiagonalpent1").innerHTML ="\\[Daigonal \\space of \\space Pentagon \\space (d) \\]";
+        document.getElementById("resultofdiagonalpent2").innerHTML = "\\[\\frac{1 + \\sqrt{5}}{2} \\times "+side+ "="+diagonal.toFixed(2)+"\\]";
+        document.getElementById("resultofperimeterpent").innerHTML = "\\[Perimeter \\space of \\space Pentagon \\space 5 \\times "+side+" = "+perimeter+"\\]";
+        renderMathInElement(document.getElementById("resultofareapent1"));
+        renderMathInElement(document.getElementById("resultofareapent2"));
+        renderMathInElement(document.getElementById("resultofdiagonalpent1"));
+        renderMathInElement(document.getElementById("resultofdiagonalpent2"));
+        renderMathInElement(document.getElementById("resultofperimeterpent"));
+    }
+
+}
 
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
@@ -4964,6 +5007,49 @@ function exposol() {
 
 }
 
+
+function solveper()
+{
+    var x,y;
+    x=parseFloat(document.getElementById('x').value);
+    y=parseFloat(document.getElementById('y').value);
+    var res = (y*x*0.01);
+    document.getElementById('op').innerHTML= 'Result : ' + res;
+
+}
+function solvepera()
+{
+    var x1,y1;
+    x1=parseFloat(document.getElementById('x1').value);
+    y1=parseFloat(document.getElementById('y1').value);
+    var n = (y1*100)/x1;
+    document.getElementById('n').innerHTML= 'Result : ' + n + '%'; 
+}
+function solvepercal()
+{
+    var x2,y2;
+    x2=parseFloat(document.getElementById('x2').value);
+    y2=parseFloat(document.getElementById('y2').value);
+    var s = (y2*100)/x2;
+    document.getElementById('s').innerHTML= 'Result : ' + s ; 
+}
+function solvepercent()
+{
+    var x3,y3;
+    x3=parseFloat(document.getElementById('x3').value);
+    y3=parseFloat(document.getElementById('y3').value);
+    var r = x3+(y3*x3)/100;
+    document.getElementById('r').innerHTML= 'Result : ' + r ; 
+}
+function solveperc()
+{
+    var x4,y4;
+    x4=parseFloat(document.getElementById('x4').value);
+    y4=parseFloat(document.getElementById('y4').value);
+    var t = x4-(y4*x4)/100;
+    document.getElementById('t').innerHTML= 'Result : ' + t ; 
+}
+
 //Statistics Calculator
 function cal_func_stats()
 {
@@ -5975,9 +6061,11 @@ function convertAnyBaseToAnyBase() {
   } else if (from == 2) {
       if (input.search(/^[10]+$/) == -1)
           result.innerHTML = "Binary numbers can only have 0's and 1's";
-
   }
-
+    else if(parseInt(input, from).toString(to)=="NaN")
+    {
+        result.innerHTML = `Invalid Input please use only ${fromBase} Base number`;   
+    }
 
 
 }
@@ -6354,9 +6442,7 @@ function bcdadd(){
         result.innerHTML = "BCD Code can only have 0's and 1's";
 
 }
-
-//----------------------------
-//Function that performs conversion of  binary to ex3
+//Function that performs conversion of  decimal to ex3
 function convertex3() {
 
     var input = document.getElementById("ex3-input").value;
@@ -6382,8 +6468,41 @@ function convertex3() {
 
     result.innerHTML = x;
 }
+//Function that performs conversion of  binary to ex3
+function convertex3bin(){
+    var input = document.getElementById("ex3bin-input").value;
+    let result = document.getElementById("ex3bin-result");
+    var x = "_";
 
-//----------------------------
+    result.innerHTML ="";
+
+    r = parseInt(input, 2).toString(10);
+    console.log("decimal");
+    console.log(r);
+
+    for (var i = 0; i < r.length; i++) {
+        var y = (parseInt(r[i]) + 3).toString(2)
+        if (y.length == 1) {
+            x = x + "000" + y + "_   ";
+        }
+        if (y.length == 2) {
+            x = x + "00" + y + "_   ";
+        }
+        if (y.length == 3) {
+            x = x + "0" + y + "_   ";
+        }
+        if (y.length == 4) {
+            x = x + +y + "_   ";
+        }
+    }
+
+    if (input == "") {
+        x= "";
+    } else if(input.search(/^[10]+$/) == -1)
+             x= "Binary code can only have 0's and 1's";
+               
+    result.innerHTML = x;
+}
 
 //Function which performs conversion of Decimal to 2421
 function convertdec2421(){
@@ -6633,7 +6752,7 @@ function fiftnsixtnCalc() {
 
         for (var i = 0; i < input.length; i++) {
             print+="f";
-            fiftn += (16 - parseInt(input[i],16)).toString(16);
+            fiftn += (15 - parseInt(input[i],16)).toString(16);
 
         }
         sixtn = (parseInt(fiftn,16) + 1).toString(16);
