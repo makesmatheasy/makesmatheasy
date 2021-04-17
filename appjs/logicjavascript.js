@@ -5975,9 +5975,11 @@ function convertAnyBaseToAnyBase() {
   } else if (from == 2) {
       if (input.search(/^[10]+$/) == -1)
           result.innerHTML = "Binary numbers can only have 0's and 1's";
-
   }
-
+    else if(parseInt(input, from).toString(to)=="NaN")
+    {
+        result.innerHTML = `Invalid Input please use only ${fromBase} Base number`;   
+    }
 
 
 }
