@@ -8362,7 +8362,12 @@
                     <td><a data-toggle="modal" data-target="#parallelogram"
                            style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
-                </tr>                
+                </tr>    
+                <tr>
+                    <td><a data-toggle="modal" data-target="#pentagon"
+                           style="text-decoration:none;"
+                           href="#">Pentagon</a></td>
+                </tr>            
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -12218,6 +12223,64 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="pentagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{1}{4} \sqrt{5(5 + 2 \sqrt{5})} a^2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal</h5>
+                                <p class="text-center">\[d = \frac{1 + \sqrt{5}}{2} a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P= 5 a\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/pent.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidepent"
+                               oninput="solvepent()">
+                        <p class="stopwrap" id="resultofareapent1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareapent2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalpent1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdiagonalpent2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterpent"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--shapes end-->
 
     <!--3-D shapes model -------->

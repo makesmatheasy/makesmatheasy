@@ -2324,6 +2324,31 @@ function solvecircle() {
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
 
+function solvepent(){
+    let side = document.getElementById("inputsidepent").value;
+    let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
+    let diagonal = 0.5 * (1 + math.sqrt(5)) * side;
+    let perimeter = 5 * side;
+    document.getElementById("resultofareapent1").innerHTML = "";
+    document.getElementById("resultofareapent2").innerHTML = "";
+    document.getElementById("resultofdiagonalpent1").innerHTML = "";
+    document.getElementById("resultofdiagonalpent2").innerHTML = "";
+    document.getElementById("resultofperimeterpent").innerHTML = "";
+
+    if (side != ""){
+        document.getElementById("resultofareapent1").innerHTML = "\\[Area \\space of \\space Pentagon \\space \\]";
+        document.getElementById("resultofareapent2").innerHTML = "\\[\\frac{1}{4} \\sqrt{5(5 + 2 \\sqrt{5})} \\times "+side+"^2 = "+area.toFixed(2)+"\\]";
+        document.getElementById("resultofdiagonalpent1").innerHTML ="\\[Daigonal \\space of \\space Pentagon \\space (d) \\]";
+        document.getElementById("resultofdiagonalpent2").innerHTML = "\\[\\frac{1 + \\sqrt{5}}{2} \\times "+side+ "="+diagonal.toFixed(2)+"\\]";
+        document.getElementById("resultofperimeterpent").innerHTML = "\\[Perimeter \\space of \\space Pentagon \\space 5 \\times "+side+" = "+perimeter+"\\]";
+        renderMathInElement(document.getElementById("resultofareapent1"));
+        renderMathInElement(document.getElementById("resultofareapent2"));
+        renderMathInElement(document.getElementById("resultofdiagonalpent1"));
+        renderMathInElement(document.getElementById("resultofdiagonalpent2"));
+        renderMathInElement(document.getElementById("resultofperimeterpent"));
+    }
+
+}
 
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
