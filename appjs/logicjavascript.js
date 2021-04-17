@@ -5886,7 +5886,7 @@ function convertBinOct() {
     else if(toBase === "Decimal") to = 10;
     else to = 2;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
