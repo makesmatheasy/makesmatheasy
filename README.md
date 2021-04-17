@@ -119,6 +119,7 @@ Other Tech/Libraries
   - Multiplication with Steps
   - Rounding off numbers
   - EMI Calculator
+  - GST Calculator
   - Simple and Compound Interest
   - Factorial
   - Permutation & Combination
@@ -180,6 +181,7 @@ Other Tech/Libraries
     - Hollow Sphere
     - Hemisphere
     - Prism
+    - Torus
   - Volume, CSA, TSA
   - Congruence and Similarity of Triangles
 
@@ -194,6 +196,7 @@ Other Tech/Libraries
 
 - Binary Calculations
   - Boolean Algebra
+  - Any Base to Any Base Converter
   - Decimal/Binary Converter
   - Addition of any Number System
   - Decimal/Binary/Hexadecimal Converter
