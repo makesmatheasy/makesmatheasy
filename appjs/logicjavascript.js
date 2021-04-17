@@ -6354,9 +6354,7 @@ function bcdadd(){
         result.innerHTML = "BCD Code can only have 0's and 1's";
 
 }
-
-//----------------------------
-//Function that performs conversion of  binary to ex3
+//Function that performs conversion of  decimal to ex3
 function convertex3() {
 
     var input = document.getElementById("ex3-input").value;
@@ -6382,8 +6380,41 @@ function convertex3() {
 
     result.innerHTML = x;
 }
+//Function that performs conversion of  binary to ex3
+function convertex3bin(){
+    var input = document.getElementById("ex3bin-input").value;
+    let result = document.getElementById("ex3bin-result");
+    var x = "_";
 
-//----------------------------
+    result.innerHTML ="";
+
+    r = parseInt(input, 2).toString(10);
+    console.log("decimal");
+    console.log(r);
+
+    for (var i = 0; i < r.length; i++) {
+        var y = (parseInt(r[i]) + 3).toString(2)
+        if (y.length == 1) {
+            x = x + "000" + y + "_   ";
+        }
+        if (y.length == 2) {
+            x = x + "00" + y + "_   ";
+        }
+        if (y.length == 3) {
+            x = x + "0" + y + "_   ";
+        }
+        if (y.length == 4) {
+            x = x + +y + "_   ";
+        }
+    }
+
+    if (input == "") {
+        x= "";
+    } else if(input.search(/^[10]+$/) == -1)
+             x= "Binary code can only have 0's and 1's";
+               
+    result.innerHTML = x;
+}
 
 //Function which performs conversion of Decimal to 2421
 function convertdec2421(){
