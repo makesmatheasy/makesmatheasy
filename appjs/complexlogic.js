@@ -118,7 +118,11 @@ function arg(){
 function conj(){
     var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
     x.imaginary=x.imaginary*-1;
+    if(x.imaginary>0)
     document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; +" + x.imaginary + "i";
+    else
+    document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; " + x.imaginary + "i";
+    
 }
 function sqr_rt(){
     var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
@@ -128,8 +132,11 @@ function sqr_rt(){
     var c = Math.cos(deg/2);
     var rePart = r*c;
     var imPart = r*s;
+    if(x.imaginary>0)
     document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart + "&nbsp; + " + imPart + "i";
-
+    else
+    document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart + "&nbsp; " + imPart + "i";
+    
 }
 function err1() {
     katex.render("Invalid!", document.getElementById('comresult'), {
