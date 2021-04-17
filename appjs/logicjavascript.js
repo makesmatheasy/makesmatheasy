@@ -6684,7 +6684,7 @@ function fiftnsixtnCalc() {
 
         for (var i = 0; i < input.length; i++) {
             print+="f";
-            fiftn += (16 - parseInt(input[i],16)).toString(16);
+            fiftn += (15 - parseInt(input[i],16)).toString(16);
 
         }
         sixtn = (parseInt(fiftn,16) + 1).toString(16);
