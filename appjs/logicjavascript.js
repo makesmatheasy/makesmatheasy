@@ -6062,7 +6062,7 @@ function convertAnyBaseToAnyBase() {
       if (input.search(/^[-.10]+$/) == -1)
           result.innerHTML = "Binary numbers can only have 0's and 1's";
   }
-    else if(parseInt(input, from).toString(to)=="NaN.0")
+    else if(fracDectoBinHexOct(calculatefrac(input,from),to)=="NaN.0")
     {
         result.innerHTML = `Invalid Input please use only ${fromBase} Base number`;   
     }
