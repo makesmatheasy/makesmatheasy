@@ -1165,6 +1165,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="percalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Percentage Calculator','#percal','c','percalimgfav')"><img
+                                        id="percalimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="profitlossbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Profit
                                 Loss Calculations</a>
@@ -8865,6 +8880,73 @@
             <p class="stopwrap" id="steps"
                                    style="font-family:mathfont;"></p>
             <br>
+        </div>
+
+        <div class="collapse" id="percal">
+            <div class="text-center">
+                <h2>Percentage Calculator</h2><br>
+            </div>
+            <div class="coll">
+                <p>
+                    1) What is  <input type="text" id="y" size=3 value='' placeholder="Y">  % of
+                <input type="text" id="x" size=3 value='' placeholder="X">  ? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solveper()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="op"> </h4> 
+            <div class="coll">
+                <p>
+                    2) What % of  <input type="text" id="x1" size=3 value='' placeholder="X">  is
+                <input type="text" id="y1" size=3 value='' placeholder="Y">  ? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solvepera()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="n"> </h4>
+            <div class="coll">
+                <p>
+                    3)  <input type="text" id="y2" size=3 value='' placeholder="Y">  out of what is
+                <input type="text" id="x2" size=3 value='' placeholder="X"> %  ? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solvepercal()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="s"> </h4> 
+            <div class="coll">
+                <p>
+                    4)  <input type="text" id="x3" size=3 value='' placeholder="X">  plus
+                <input type="text" id="y3" size=3 value='' placeholder="Y"> % is what? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solvepercent()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="r"> </h4> 
+            <div class="coll">
+                <p>
+                    5)  <input type="text" id="x4" size=3 value='' placeholder="X">  minus
+                <input type="text" id="y4" size=3 value='' placeholder="Y"> % is what? 
+                    <br><br>
+                    
+                <button type="button" class="btn btn-light" onclick=solveperc()>
+                    Calculate 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 class="text-center" id="t"> </h4> 
+
         </div>
 
         <!--sum of nterms in A.P.-->
