@@ -745,6 +745,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="powsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Power Series</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Power Series','#pows','c','powimgfav')"><img
+                                        id="powimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             <li>
@@ -4279,6 +4295,39 @@
             <p>\[P_1\space =\space \frac{\frac{d^{2}z}{dx^{2}}+P\frac{dz}{dx}}{(\frac{dz}{dx})^{2}}\space,Q_1\space =\space \frac{Q}{(\frac{dz}{dx})^{2}}\space and\space R_1\space =\space \frac{R}{(\frac{dz}{dx})^{2}}\]</p>
             <p>\[4.\space Put\space in\space \frac{d^{2}y}{dz^{2}}\space +\space P_1\frac{dy}{dx}\space +Q_1 y\space =\space R_1\space and\space solve\space
                 using\space differential\space eqn\space with\space constant\space coeffiecients\]</p>
+
+        </div>
+        <div class="collapse" id="pows">
+            <h2>Power Series</h2>
+            <p>A power series about a, or just power series, is any series that can be written in the form,</p>
+            <p>\[\sum_{n=0}^{\infty} c_n (x-a)^{n}\]</p> 
+            <p>where a<sub>n</sub>and c<sub>n</sub>n are numbers. The c<sub>n</sub> ’s are often called the coefficients of the series. The first thing to notice about a power series is that it is a function of x
+                . That is different from any other kind of series that we’ve looked at to this point. In all the prior sections we’ve only allowed numbers in the series and now we are allowing variables to be in the 
+                series as well. This will not change how things work however. Everything that we know about series still holds.
+            </p>
+            <br>
+            <p>The interval of convergence must then contain the interval a−R&lt;x&lt;a+R since we know that the power series will converge for these values. We also know that the interval of convergence can’t contain 
+                x’s in the ranges x&lt;a−R and x&gt;a+R since we know the power series diverges for these value of x . Therefore, to completely identify the interval of convergence all that we have to do is determine 
+                if the power series will converge for x=a−R or x=a+R. If the power series converges for one or both of these values then we’ll need to include those in the interval of convergence.
+            </p>
+            <br>
+            <h4>Analytic Function</h4>
+            <p>A function f(x) containing the point x=x<sub>0</sub> is called analytic at x<sub>0</sub> if its Taylor's Series exists and converges to f(x) for all x </p>
+            <p>All polynomial functions are analytic everywhere</p>
+            <br>
+            <p>It is important to note that no matter what else is happening in the power series we are guaranteed to get convergence for x = a. The series may not converge for any other value of x, but it will always
+                converge for x = a.
+            </p>
+            <h4>Ordinary Point</h4>
+            <p>At point x=x<sub>0</sub> is called an ordinary point </p>
+            <p>\[\frac{d^{2}y}{dx^{2}}+P(x)\frac{dy}{dx}+Q(x)y=0\]</p>
+            <p>If both functions are analytic at x = x<sub>0</sub></p>
+            <br>
+            <h4>Regular and Irregular Singular Points</h4>
+            <p>If a point is not ordinary then the point is singular</p>
+            <p>A singular point x = x<sub>0</sub> is called regular singular point if both (x-x<sub>0</sub>) and (x-x<sub>0</sub>)<sup>2</sup> are analytic at x = x<sub>0</sub></sup> else it is irregular </p>
+            
+
         </div>
         <div class="collapse" id="maxmin">
             <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
