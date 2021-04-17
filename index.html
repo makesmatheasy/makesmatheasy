@@ -988,17 +988,17 @@
                     </table>
                 </li>
 
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="convdivbtn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Convergence
-                                    and Divergence of Series</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
-                                <span
-                                    onclick="addtofavourite('Convergence and Divergence of Series','#convdiv','c','convdivfav')"><img
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="convdivbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Convergence
+                                and Divergence of Series</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Convergence and Divergence of Series','#convdiv','c','convdivimgfav')"><img
                                         id="convdivimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -1201,22 +1201,51 @@
                                 <span onclick="addtofavourite('LCM/HCF /Factors','#factors','c','facimgfav')"><img
                                         id="facimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
 
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="profitlossbutton"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Profit
-                                    Loss Calculations</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
-                                <span
-                                    onclick="addtofavourite('Profit/Loss Calculations','#profitloss','c','plimgfav')"><img
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="giffbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Greatest Integer Function and Fractional Part</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Greatest Integer Function and Fractional Part','#giff','c','giffimgfav')"><img
+                                        id="giffimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="expobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Solve for Exponents</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Solve for Exponents','#expo','c','expoimgfav')"><img
+                                        id="expoimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="profitlossbutton"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Profit
+                                Loss Calculations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Profit/Loss Calculations','#profitloss','c','plimgfav')"><img
                                         id="plimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -1270,21 +1299,41 @@
                                 <span onclick="addtofavourite('Leap Year','#lyear','c','lyearimgfav')"><img
                                         id="lyearimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="stats-btn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Statistics
-                                    Formulae
+
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;" onclick="display_devi()">
+                            <a id="std-dvtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Standard Devation
                                 </a>
-                            </td>
-                            <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Statistics Formulae','#stats','c','statsimgfav')"><img
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Standard Deviation','#deviation','c','statimgfav')"><img
+                                        id="devimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="stats-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Statistics
+                                Formulae
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Statistics Formulae','#stats','c','statsimgfav')"><img
                                         id="statsimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -1480,6 +1529,7 @@
                                 <span onclick="addtofavourite('GST Calculator ','#gstcal','c','gstimgfav')"><img
                                         id="gstimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem; filter:none;"></span>
+
                             </td>
                         </tr>
                     </table>
@@ -1699,23 +1749,25 @@
                 </li>
 
 
-                <div class="dropdown-divider"></div>
-            </div>
-            <li class="list_menu_items" onclick="collapseit('graphtoggle'); changeImage6();"><a
-                    style="cursor: pointer;font-size: 1rem;">Graphs and Shapes<img class="dropdownlogo"
-                        src="icons/down-chevron.svg" id="imgClickAndChange6"></a>
-            </li>
-            <div class="collapse" id="graphtoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
-                <div class="dropdown-divider"></div>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="plotgraphoption"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
-                                    Graph</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
+
+            <div class="dropdown-divider"></div>
+        </div>
+        <li class="list_menu_items" onclick="collapseit('graphtoggle'); changeImage6();"><a
+                style="cursor: pointer;font-size: 1rem;">Graphs and Shapes<img class="dropdownlogo"
+                                                                               src="icons/down-chevron.svg"
+                                                                               id="imgClickAndChange6"></a>
+        </li>
+        <div class="collapse" id="graphtoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
+            <div class="dropdown-divider"></div>            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="plotgraphoption"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
+                                Graph</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Plot Graph','#plotgraph','c','plotimgfav')"><img
                                         id="plotimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
@@ -2004,7 +2056,9 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Location of Roots','#locroots','c','locrootsqimgfav')"><img
+
+                                        onclick="addtofavourite('Location of Roots','#locroots','c','locrootsimgfav')"><img
+
                                         id="locrootsimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -2112,7 +2166,9 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Binary / Hexadecimal Converter','#adding-all','c','adding-all-imgfav')"><img
+
+                                        onclick="addtofavourite('Addition Of any Number System','#adding-all','c','adding-all-imgfav')"><img
+
                                         id="adding-all-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -2134,7 +2190,9 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Binary / Hexadecimal Converter','#subtract-all','c','subtract-all-imgfav')"><img
+
+                                        onclick="addtofavourite('Subtraction Of any Number System','#subtract-all','c','subtract-all-imgfav')"><img
+
                                         id="subtract-all-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -2157,7 +2215,9 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Binary / Hexadecimal Converter','#multiplying-all','c','multiplying-all-imgfav-all-imgfav')"><img
+
+                                        onclick="addtofavourite('Multiplcation Of any Number System','#multiplying-all','c','multiplying-all-imgfav')"><img
+
                                         id="multiplying-all-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -2179,7 +2239,9 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Binary / Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
+
+                                        onclick="addtofavourite('Binary/Decimal/Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
+
                                         id="binary-hexadecimal-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
@@ -2342,99 +2404,242 @@
                 <div class="dropdown-divider"></div>
             </div>
 
-            <!--End of Binary Calculations Section -->
-            <!-- Complex Calculations Section -->
-            <li class="list_menu_items" onclick="collapseit('complextoggle'); changeImage9();"><a
-                    style="cursor: pointer;font-size: 1rem;">Complex Numbers<img class="dropdownlogo"
-                        src="icons/down-chevron.svg" id="imgClickAndChange9"></a></li>
-            <div class="collapse" id="complextoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
-                <div class="dropdown-divider"></div>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="complexidentitiesbtn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Identities</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
+
+        <!--End of Binary Calculations Section -->
+        <!-- Complex Calculations Section -->
+        <li class="list_menu_items" onclick="collapseit('complextoggle'); changeImage9();"><a
+                style="cursor: pointer;font-size: 1rem;">Complex Numbers<img class="dropdownlogo"
+                                                                             src="icons/down-chevron.svg"
+                                                                             id="imgClickAndChange9"></a></li>
+        <div class="collapse" id="complextoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexidentitiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Identities</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Complexidentities','#complexidentities','c','complex1fav')"><img
+                                     id="complex1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complexpropertiesbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('complexproperties','#complexproperties','c','complex2fav')"><img
+                                     id="complex2fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="theobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">De-Moivre's Theorem and Cauchy-Reimaan Theorem</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('De-Moivre Theorem and Cauchy-Reimaan Theorem','#theo','c','theofav')"><img
+                                     id="theofav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complex1collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1
+                                complex number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Complex1','#complex1collapse','c','complexop1fav')"><img
+                                     id="complexop1fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="complex2collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 2
+                                complex numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Complex2','#complex2collapse','c','complexop2fav')"><img
+                                     id="complexop2fav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div class="dropdown-divider"></div>
+        </div>
+        <!--End of Complex Calculations Section -->
+
+        <!--Probability Section -->
+        <li class="list_menu_items" onclick="collapseit('probabilitytoggle'); changeImage10();"><a
+                style="cursor: pointer;font-size: 1rem;">Probability<img class="dropdownlogo"
+                                                                         src="icons/down-chevron.svg"
+                                                                         id="imgClickAndChange10"></a></li>
+        <div class="collapse" id="probabilitytoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="probabilitycollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Empirical
+                                Probability</a></td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Empirical Probability','#probabilitycollapse','c','probabilityfav')"><img
+                                     id="probabilityfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="jointprobabilitycollapsebtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint
+                                Probability</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+
                                 <span
                                     onclick="addtofavourite('complexidentities','#complexidentities','c','complexidentitiesfav')"><img
                                         id="complex1fav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="complexpropertiesbtn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
+
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                          <table class="table">
+                              <tr>
+                                  <td style="border-top: none;">
+                                      <a id="bt-collapsebtn1"
+                                         style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Probability
+                                          Properties
+                                      </a>
+                                  </td>
+                                  <td style="float:right;border-top: none;">
+                                         <span
+                                                 onclick="addtofavourite('Probability Properties','#bt-collapse1','c','btprop1imgfav')"><img
+                                                 id="btprop1imgfav" src="images/unfavourite.png"
+                                                 style="height:1.5625rem;filter: none;"></span>
+                                  </td>
+                              </tr>
+                          </table>
+                      </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="bayesprobabilitycollapsebtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Bayes
+                                Probability Theorem</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+
                                 <span
                                     onclick="addtofavourite('complexproperties','#complexproperties','c','comlexpropertiesfav')"><img
                                         id="complex1fav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="theobtn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">De-Moivre's
-                                    Theorem and Cauchy-Reimaan Theorem</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
-                                <span
-                                    onclick="addtofavourite('De-Moivre Theorem and Cauchy-Reimaan Theorem','#theo','c','theofav')"><img
-                                        id="theofav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="complex1collapsebtn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops
-                                    for 1
-                                    complex number</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Complex1','#complex1collapse','c','complex1fav')"><img
-                                        id="complex1fav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-                    <table class="table">
-                        <tr>
-                            <td style="border-top: none;">
-                                <a id="complex2collapsebtn"
-                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops
-                                    for 2
-                                    complex numbers</a>
-                            </td>
-                            <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Complex2','#complex2collapse','c','complex2fav')"><img
-                                        id="complex2fav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <div class="dropdown-divider"></div>
-            </div>
-            <!--End of Complex Calculations Section -->
+
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div class="dropdown-divider"></div>
+        </div>
+
+
+        <!--End of Probability Section -->
+
+        <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
+        <li class="list_menu_items"><a id="contactbutton"
+                                       style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
+                                       onclick="window.open('contact.html')">Contact</a>
+        </li>
+
+        <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/MakesMathEasy/
+" data-action="share/whatsapp/share" style="font-size: 1rem;">Share to Whatsapp<img
+                style="display:inline;height:1.5625rem;filter: none;" src="images/whatsapplogo.png"></a>
+        </li>
+        <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
+                                       style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
+        <li class="list_menu_items"><a class="toggle"
+                                       style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
+                                       onclick="myFunction()">Change Mode
+            <span id="moon" style="font-size: 1.25rem;">🌓</span></a></li>
+        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
+            Math Easy. All Rights Reserved.
+        </li>
+    </ul>
+</nav>
+
+<div id="main" style="z-index:31;">
+    <div class="form-group " style="margin-top:1rem">
+            <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
+                  class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
+                                               style="cursor:pointer; height: 40px;padding-left: 0.625rem;"></span>
+        <span onclick="opencal()"><img src="icons/keys.svg"
+                                       style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;"></span>
+        <button class="collapse" id="fav-button" onclick="collapseit('favourite')"><span
+                style="font-size:135%;">&starf;</span> Favourite
+        </button>
+
+    </div>
+
+    <div class="searchbar-container">
+        <div class="text-center" style="padding-top: 3.125rem;">
+            <form autocomplete="off">
+                <div class="form-group" id="box" onmouseover="openSearchBar()" onmouseout="checkInput()">
+                    <div class="autocomplete" id="search-txt">
+                        <input id="myInput" type="search" name="myCountry" oninput="checkInput()" placeholder="Search" class="form__field">
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <span onclick="runSpeechRecognitionforall('myInput','i')"><img id="i"
+                                                                                       style="height:1.5625rem;display:inline; margin-top: 0rem; margin-bottom: -0.9rem; position: relative;z-index:10;cursor: pointer;filter:none;"
+                                                                                       src="images/speechlogo.png"></span>
+
+                        <span type="button" class="searchbtn"
+                              onclick="searchgoogle(document.getElementById('myInput').value)"><img
+                                style="height:2.375rem; padding:0.525rem; filter:none;" src="icons/loupe.png"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
             <!--Probability Section -->
             <li class="list_menu_items" onclick="collapseit('probabilitytoggle'); changeImage10();"><a
@@ -3303,15 +3508,38 @@
                         <input type="text" id="yTwo" size=12 value='' placeholder="                   y2">)
                         <br>
                         <br>
-                        <button type="button" class="btn btn-light" onclick=ShowDistance()>
-                            Calculate Distance
-                        </button><br>
-                    </p>
-                </div><br>
-                <p id="dis_formula" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
-                    align="right"></p>
-                <h4 id="outPut"> </h4> <br>
-                <h3>Midpoint </h3><br>
+
+                <button type="button" class="btn btn-light" onclick=midpointsolve()>
+                    Calculate Midpoint
+                </button><br>
+                </p>
+            </div><br>
+            <p id="mid_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="mid_output"> </h4> 
+            <h3>Distance between point and a line</h3><br>
+            <div class="coll">
+                <p>
+                    Line Equation :   <input type="text" id="a" size=3 value='' placeholder="A">  x  +
+                <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c" size=3 value='' placeholder="C"> = 0
+                    <br><br>
+                    Point = (<input type="text" id="one" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="two" size=5 value='' placeholder="y1">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=dispointsolve()>
+                    Calculate Distance
+                </button><br>
+                </p>
+            </div><br>
+            <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="dis_op"> </h4> 
+        </div>
+        <div class="collapse" id="vecalg">
+            <div class="stopwrap">
                 <div class="coll">
                     <p>
                         Coordinate A = (<input type="text" id="XOne" size=12 value=''
@@ -4459,147 +4687,164 @@
 
                 </div>
             </div>
-            <div class="collapse" id="diffeqn">
-                <h2 style="text-align: center;">Differential Equations</h2>
-                <br><br>
-                <h4>1. Variable Seperable</h4>
-                <br>
-                <p style="text-align: center;">It can be used when, <br> All the y terms (including
-                    dy) can be moved to one side of the equation, and <br>
-                    All the x terms (including dx) to the other side.
-                </p>
-                <p>\[\frac{dx}{dy} = 4xy\ which\space can\space be\space written\space as, \\
-                    \frac{dx}{x} = 4ydy\]
-                </p>
-                <br>
-                <h4>2. Equation reducible to variable seperable</h4>
-                <br>
-                <p>\[ The\space equation\space \frac{dy}{dx}-f(ax+by+c)\space can\space be\space
-                    written\space as \\
-                    \frac{dy}{dx}-f(t)\space keeping\space ax+by+c = t\space then\space solve \]
-                </p>
-                <br>
-                <h4>3. Homogenous Equations</h4>
-                <br>
-                <p style="text-align: center;">A differential equation, M dx + N dy = 0, is
-                    homogeneous if replacement of x and y by λx and λy results in the original
-                    function
-                    multiplied by some power of λ, where the power of λ is called the degree of the
-                    original function. If so, follow these steps.
-                </p>
-                <p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
-                <p>\[Now\space put\space value\space of\space \frac{dy}{dx} in\space the\space
-                    equation\space and\space solve\]</p>
-                <br>
-                <h4>4. First Order Linear Differential Equations</h4>
-                <br>
-                <p>When the equation is written in form</p>
-                <p>\[\frac{dy}{dx} + Py = Q,\space where\space P\space and\space Q\space are\space
-                    functions\space of\space x\space or , \\
-                    \frac{dx}{dy} + Px = Q,\space where\space P\space and\space Q\space are\space
-                    functions\space of\space y\]
-                </p>
-                <p>Then these can be solved by - </p>
-                <p>\[Let\space Integrating\space Factor(I)\space =\space e^{\int P\,dx} (for\space
-                    first\space equation\space) or, \\
-                    I = e^{\int P \,dy}(for\space second\space equation)\]
-                </p>
-                <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
-                <br>
-                <h4>5. Formulae (Exact Form)</h4>
-                <br>
-                <p>\[a)\space xdy \,+\,ydx\,=\,d(xy)\]</p>
-                <p>\[b)\space dx \,\plusmn\,ydx\,=\,d(x \plusmn y)\]</p>
-                <p>\[c)\space xdx \,+\,ydy\,=\,\frac{1}{2}d(x^2+y^2)\]</p>
-                <p>\[d)\space \frac{xdy \,-\,ydx}{x^2}\,=\,d(\frac{y}{x})\]</p>
-                <p>\[e)\space \frac{xdy \,-\,ydx}{y^2}\,=\,-d(\frac{x}{y})\]</p>
-                <p>\[f)\space \frac{2xydx \,-\,x^2dy}{y^2}\,=\,d(\frac{x^2}{y})\]</p>
-                <p>\[g)\space \frac{xdy \,-\,ydx}{x^2+y^2}\,=\,d(tan^{-1}\frac{y}{x})\]</p>
-                <p>\[h)\space \frac{xdx
-                    \,+\,ydy}{\sqrt(x^2+y^2)}\,=\,\frac{1}{2}d(\frac{x^2+y^2}{\sqrt(x^2+y^2)})\]</p>
-                <p>\[i)\space \frac{ye^{x}dx\,-\,e^{x}dy}{y^2}\,=\,d(\frac{e^x}{y})\]</p>
-                <br>
-                <h4>6. Linear Differential Equation with constant coeffiecients</h4>
-                <h5>Definition</h5>
-                <p>A diff. equation,</p>
-                <p>\[\frac{d^n}{dx^{n}}y+a_1\frac{d^{n-1}}{dx^{n-1}}y+......ay\space =\space Q\]</p>
-                <p>Where a1 , a2 ,............., an are constants<br>
-                    While Q is a function of x.
-                </p>
-                <p>is called Linear differential equation of nth order first degree.</p>
-                <p>Above equation can be written as -</p>
-                <p>\[D^n y+ a_1 D^{n-1}y + a_2 D^{n-2}y+....a_n y\space =\space Q\]</p>
-                <p>General Solution = Complementary Function(C.F.) + Particular Integral(P.I.)</p>
-                <br>
-                <h5>How to find C.F.?</h5>
-                <br>
-                <p>Put D = m and equate LHS to 0 to get values of m</p>
-                <p>Case-1 : If m is real and distinct</p>
-                <p>\[C.F\space =\space C_1 e^{m_1 x} + C_2 e^{m_2 x} + .... \]</p>
-                <p>Case-2 : If m is real and equal</p>
-                <p>\[C.F\space =\space (C_1 + C_2 x + C_3 x^2 + ...) e^{mx}\]</p>
-                <p>Case-3 : If m is imaginary and distinct</p>
-                <p>\[C.F\space =\space e^{ax} (C_1 cos(bx)\space +\space C_2 sin(bx))\]</p>
-                <br>
-                <h5>How to find P.I.?</h5>
-                <br>
-                <p>To find P.I. check the nature of Q</p>
-                <p>\[\frac{1}{(LHS \spaceremoving\space y)}*Q\]</p>
-                <p>1. If Q = e<sup>ax</sup></p>
-                <p>Put D = a to get the desired P.I.</p>
-                <p>2. If Q = sin(ax)/cos(ax)</p>
-                <p>Put D<sup>2</sup> = -a<sup>2</sup> and use identities of trigo to solve </p>
-                <p>3. If Q = x<sup>m</sup> </p>
-                <p>take out least degree term and use binomial expansion to solve</p>
-                <p>4. If Q = e^{ax}.V</p>
-                <p>Take out e<sup>ax</sup> by putting D to D+a and then solve</p>
 
-            </div>
-            <div class="collapse" id="maxmin">
-                <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
-                <p>A local <b>maximum</b> point on a function is a point (x,y) on the graph of the
-                    function whose y coordinate is larger than all
-                    other y coordinates on the graph at points "close to'' (x,y). More precisely,
-                    (x,f(x)) is a local maximum if there is
-                    an interval (a,b) with (a &#60 x &#60 b) and f(x)≥f(z) for every z in (a,b).
-                    Similarly, (x,y) is a local <b>minimum</b> point if it has
-                    locally the smallest y coordinate. Again being more precise: (x,f(x)) is a local
-                    minimum if there is an interval
-                    (a,b) with a &#60 x &#60 b and f(x)≤f(z) for every z in (a,b). A local extremum
-                    is either a local minimum or a local maximum.
-                </p>
-                <img style="margin-left: 350px;" src="https://www.mathsisfun.com/calculus/images/function-min-max.svg"
-                    alt="">
-                <br><br>
-                <h4>First Order Derivative Test</h4>
-                <ol>
-                    <li style="color: white; font-size: 20px;">Find out first derivative of f(x)
-                    </li>
-                    <li style="color: white; font-size: 20px;">Equate to 0 and find out values of
-                        x
-                    </li>
-                    <li style="color: white; font-size: 20px;">Plot a wavy curve</li>
-                    <li style="color: white; font-size: 20px;">If at a point curve goes from -ve
-                        slope to +ve,Minima at that point and viceversa for Maxima
-                    </li>
-                </ol>
-                <br><br>
-                <h4>Second Order Derivative Test
-                    <h4>
-                        <ol>
-                            <li style="color: white; font-size: 20px;">Equate to 0 first order
-                                derivative and find values of x
-                            </li>
-                            <li style="color: white; font-size: 20px;">Find out second derivative
-                            </li>
-                            <li style="color: white; font-size: 20px;">Put values of x in seoond
-                                derivative
-                            </li>
-                            <li style="color: white; font-size: 20px;">If answer is +ve, Minima and
-                                -ve,Maxima
-                            </li>
-                        </ol>
-                    </h4>
+        </div>
+        <div class="collapse" id="diffeqn">
+            <h2 style="text-align: center;">Differential Equations</h2>
+            <br><br>
+            <h4>1. Variable Seperable</h4>
+            <br>
+            <p style="text-align: center;">It can be used when, <br> All the y terms (including
+                dy) can be moved to one side of the equation, and <br>
+                All the x terms (including dx) to the other side.
+            </p>
+            <p>\[\frac{dx}{dy} = 4xy\ which\space can\space be\space written\space as, \\
+                \frac{dx}{x} = 4ydy\]
+            </p>
+            <br>
+            <h4>2. Equation reducible to variable seperable</h4>
+            <br>
+            <p>\[ The\space equation\space \frac{dy}{dx}-f(ax+by+c)\space can\space be\space
+                written\space as \\
+                \frac{dy}{dx}-f(t)\space keeping\space ax+by+c = t\space then\space solve \]
+            </p>
+            <br>
+            <h4>3. Homogenous Equations</h4>
+            <br>
+            <p style="text-align: center;">A differential equation, M dx + N dy = 0, is
+                homogeneous if replacement of x and y by λx and λy results in the original
+                function
+                multiplied by some power of λ, where the power of λ is called the degree of the
+                original function. If so, follow these steps.
+            </p>
+            <p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
+            <p>\[Now\space put\space value\space of\space \frac{dy}{dx} in\space the\space
+                equation\space and\space solve\]</p>
+            <br>
+            <h4>4. First Order Linear Differential Equations</h4>
+            <br>
+            <p>When the equation is written in form</p>
+            <p>\[\frac{dy}{dx} + Py = Q,\space where\space P\space and\space Q\space are\space
+                functions\space of\space x\space or , \\
+                \frac{dx}{dy} + Px = Q,\space where\space P\space and\space Q\space are\space
+                functions\space of\space y\]
+            </p>
+            <p>Then these can be solved by - </p>
+            <p>\[Let\space Integrating\space Factor(I)\space =\space e^{\int P\,dx} (for\space
+                first\space equation\space) or, \\
+                I = e^{\int P \,dy}(for\space second\space equation)\]
+            </p>
+            <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
+            <br>
+            <h4>5. Formulae (Exact Form)</h4>
+            <br>
+            <p>\[a)\space xdy \,+\,ydx\,=\,d(xy)\]</p>
+            <p>\[b)\space dx \,\plusmn\,ydx\,=\,d(x \plusmn y)\]</p>
+            <p>\[c)\space xdx \,+\,ydy\,=\,\frac{1}{2}d(x^2+y^2)\]</p>
+            <p>\[d)\space \frac{xdy \,-\,ydx}{x^2}\,=\,d(\frac{y}{x})\]</p>
+            <p>\[e)\space \frac{xdy \,-\,ydx}{y^2}\,=\,-d(\frac{x}{y})\]</p>
+            <p>\[f)\space \frac{2xydx \,-\,x^2dy}{y^2}\,=\,d(\frac{x^2}{y})\]</p>
+            <p>\[g)\space \frac{xdy \,-\,ydx}{x^2+y^2}\,=\,d(tan^{-1}\frac{y}{x})\]</p>
+            <p>\[h)\space \frac{xdx
+                \,+\,ydy}{\sqrt(x^2+y^2)}\,=\,\frac{1}{2}d(\frac{x^2+y^2}{\sqrt(x^2+y^2)})\]</p>
+            <p>\[i)\space \frac{ye^{x}dx\,-\,e^{x}dy}{y^2}\,=\,d(\frac{e^x}{y})\]</p>
+            <br>
+            <h4>6. Linear Differential Equation with constant coeffiecients</h4>
+            <h5>Definition</h5>
+            <p>A diff. equation,</p>
+            <p>\[\frac{d^n}{dx^{n}}y+a_1\frac{d^{n-1}}{dx^{n-1}}y+......ay\space =\space Q\]</p>
+            <p>Where  a1 , a2 ,............., an	are constants<br>
+                While Q is a function of x.					
+            </p>
+            <p>is called Linear differential equation of nth order first degree.</p>
+            <p>Above equation can be written as -</p>
+            <p>\[D^n y+ a_1 D^{n-1}y + a_2 D^{n-2}y+....a_n y\space =\space Q\]</p>
+            <p>General Solution = Complementary Function(C.F.) + Particular Integral(P.I.)</p>
+            <br>
+            <h5>How to find C.F.?</h5>
+            <br>
+            <p>Put D = m and equate LHS to 0 to get values of m</p>
+            <p>Case-1 : If m is real and distinct</p>
+            <p>\[C.F\space =\space C_1 e^{m_1 x} + C_2 e^{m_2 x} + .... \]</p>
+            <p>Case-2 : If m is real and equal</p>
+            <p>\[C.F\space =\space (C_1 + C_2 x + C_3 x^2 + ...) e^{mx}\]</p>
+            <p>Case-3 : If m is imaginary and distinct</p>
+            <p>\[C.F\space =\space e^{ax} (C_1 cos(bx)\space +\space C_2 sin(bx))\]</p>
+            <br>
+            <h5>How to find P.I.?</h5>
+            <br>
+            <p>To find P.I. check the nature of Q</p>
+            <p>\[\frac{1}{(LHS \spaceremoving\space y)}*Q\]</p>
+            <p>1. If Q = e<sup>ax</sup></p>
+            <p>Put D = a to get the desired P.I.</p>
+            <p>2. If Q = sin(ax)/cos(ax)</p>
+            <p>Put D<sup>2</sup> = -a<sup>2</sup> and use identities of trigo to solve </p>
+            <p>3. If Q = x<sup>m</sup> </p>
+            <p>take out least degree term and use binomial expansion to solve</p>
+            <p>4. If Q = e^{ax}.V</p>
+            <p>Take out e<sup>ax</sup> by putting D to D+a and then solve</p>
+            <br>
+            <h4>Homogenous Differential equations</h4>
+            <br>
+            <p>A linear differential equation of the form,</p>
+            <p>\[x^{n} \frac{d^{n}y}{dx^{n}} + a_1x^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+a_2 x^{n-2}\frac{d^{n-2}y}{dx^{n-2}}+.....+a_n y\space =\space Q\]</p>
+            <p>with a<sub>0</sub>, a<sub>1</sub>, . . . , a<sub>n</sub> constants is called the homogeneous Euler-Cauchy equation of order n.</p>
+            <p>We introduce a new variable z where,</p>
+            <p>\[z\space =\space ln(x)\space or\space x\space =\space e^{z}\]</p>
+            <p>Then we change differentiation terms to</p>
+            <p>\[x\frac{d}{dx}\space =\space D\space,\space where\space D = \frac{d}{dz}\]</p>
+            <p>\[x^{2}\frac{d^{2}}{dx^{2}}\space =\space D(D-1)\space\space and\space\space x^{3}\frac{d^{3}}{dx^{3}}\space =\space D(D-1)(D-2) and\space so\space on\]</p>
+            <p>Now it reduces to linear differntial eqn with constant coefficients,find CF and PI to get solution and put back z = ln(x) to get final answer</p>
+            <h5>Legendre's Differential eqn</h5>
+            <p>A linear differential equation of the form,</p>
+            <p>\[(ax+b)^{n} \frac{d^{n}y}{dx^{n}} + a_1(ax+b)^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+a_2 (ax+b)^{n-2}\frac{d^{n-2}y}{dx^{n-2}}+.....+a_n y\space =\space Q\]</p>
+            <p>Put ax+b = e<sup>z</sup> and solve line homogenous equations</p>
+            <p>\[(ax+b)\frac{dy}{dx}\space = \space bD\space (ax+b)^{2}\frac{d^{2}}{dx^{2}}\space =\space b^{2}D(D-1)\space and\space so\space on\]</p>
+        </div>
+        <div class="collapse" id="maxmin">
+            <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
+            <p>A local <b>maximum</b> point on a function is a point (x,y) on the graph of the
+                function whose y coordinate is larger than all
+                other y coordinates on the graph at points "close to'' (x,y). More precisely,
+                (x,f(x)) is a local maximum if there is
+                an interval (a,b) with (a &#60 x &#60 b) and f(x)≥f(z) for every z in (a,b).
+                Similarly, (x,y) is a local <b>minimum</b> point if it has
+                locally the smallest y coordinate. Again being more precise: (x,f(x)) is a local
+                minimum if there is an interval
+                (a,b) with a &#60 x &#60 b and f(x)≤f(z) for every z in (a,b). A local extremum
+                is either a local minimum or a local maximum.
+            </p>
+            <img style="margin-left: 350px;"
+                 src="https://www.mathsisfun.com/calculus/images/function-min-max.svg" alt="">
+            <br><br>
+            <h4>First Order Derivative Test</h4>
+            <ol>
+                <li style="color: white; font-size: 20px;">Find out first derivative of f(x)
+                </li>
+                <li style="color: white; font-size: 20px;">Equate to 0 and find out values of
+                    x
+                </li>
+                <li style="color: white; font-size: 20px;">Plot a wavy curve</li>
+                <li style="color: white; font-size: 20px;">If at a point curve goes from -ve
+                    slope to +ve,Minima at that point and viceversa for Maxima
+                </li>
+            </ol>
+            <br><br>
+            <h4>Second Order Derivative Test
+                <h4>
+                    <ol>
+                        <li style="color: white; font-size: 20px;">Equate to 0 first order
+                            derivative and find values of x
+                        </li>
+                        <li style="color: white; font-size: 20px;">Find out second derivative
+                        </li>
+                        <li style="color: white; font-size: 20px;">Put values of x in seoond
+                            derivative
+                        </li>
+                        <li style="color: white; font-size: 20px;">If answer is +ve, Minima and
+                            -ve,Maxima
+                        </li>
+                    </ol>
                 </h4>
             </div>
             <div class="collapse" id="tangent">
@@ -7490,96 +7735,127 @@
                 </div>
             </div>
 
-            <div class="collapse" id="solutiontri">
-                <h2 style="text-align: center;">Solution of Triangles</h2>
-                <br>
-                <p>\[1) \space Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} =
-                    \frac{c}{sinC}\]</p>
-                <p>\[2) \space Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
-                <p>\[3) \space Projection\space Formula : a = b cos C + c cos B \]</p>
-                <p>\[4) \space Napier's\space Analogy : tan\frac{B-C}{2} = (\frac{b-c}{b+c})
-                    cot\frac{A}{2}\]</p>
-                <p>\[5) \space Half\space Angle\space Formula: sin\frac{A}{2} =
-                    \sqrt\frac{(s-b)(s-c)}{bc}\] </p>
-                <p>\[cos\frac{A}{2} = \sqrt\frac{(s)(s-a)}{bc}\]</p>
-                <p>\[tan\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{(s)(s-a)}\]</p>
-                <p>\[6) \space Area\space of\space \triangle : \frac{1}{2}absinC = \frac{1}{2}bcsinA
-                    = \frac{1}{2}acsinB \]</p>
-                <p>\[8) \space m-n \space Theorem \space : \space If\space D\space be\space
-                    the\space point\space on\space the\space side\space BC\space of a triangle\space
-                    ABC\space which\space divides\space the\space side\space BC\space in\space
-                    the\space ratio\space m: n,
-                    \\If\space BD:DC = m:n, then\\
-                    (m+n) cot θ = m cot α- n cot β = n cot B – m cot C\]
-                </p>
-                <img style="margin-left: 450px;" src="images/Mn.png">
-                <p>\[9) \space Radius\space of\space CircumCircle : R = \frac{a}{2sinA} =
-                    \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
-                <img style="margin-left: 450px;" src="images/circumcircle.png">
-                <p>\[10) \space Radius\space of\space InCircle : r = \frac{\triangle}{s} \space =
-                    (s-a)tan\frac{A}{2} \space = 4R sin\frac{A}{2}sin\frac{B}{2}sin\frac{C}{2}\]</p>
-                <img style="margin-left: 420px;" src="images/incircle.png">
+        <div class="collapse" id="solutiontri">
+            <h3 style="text-align: center;">Solution of Triangles</h3>
+            <br>
+            <tr>
+                <td><a data-toggle="modal" data-target="#cosine"
+                    style="text-decoration:none;"
+                    href="#"><h4>Law of Cosines Calculator</h4></a>
+                </td>
+            </tr>
+            <p>\[1) \space Sine\space rule : \frac{a}{sinA} = \frac{b}{sinB} =
+                \frac{c}{sinC}\]</p>
+            <p>\[2) \space Cosine\space rule : cosA = \frac{(b^2+c^2-a^2)}{2bc}\]</p>
+            <p>\[3) \space Projection\space Formula : a = b cos C + c cos B \]</p>
+            <p>\[4) \space Napier's\space Analogy : tan\frac{B-C}{2} = (\frac{b-c}{b+c})
+                cot\frac{A}{2}\]</p>
+            <p>\[5) \space Half\space Angle\space Formula: sin\frac{A}{2} =
+                \sqrt\frac{(s-b)(s-c)}{bc}\] </p>
+            <p>\[cos\frac{A}{2} = \sqrt\frac{(s)(s-a)}{bc}\]</p>
+            <p>\[tan\frac{A}{2} = \sqrt\frac{(s-b)(s-c)}{(s)(s-a)}\]</p>
+            <p>\[6) \space Area\space of\space \triangle : \frac{1}{2}absinC = \frac{1}{2}bcsinA
+                = \frac{1}{2}acsinB \]</p>
+            <p>\[8) \space m-n \space Theorem \space : \space If\space D\space be\space
+                the\space point\space on\space the\space side\space BC\space of a triangle\space
+                ABC\space which\space divides\space the\space side\space BC\space in\space
+                the\space ratio\space m: n,
+                \\If\space BD:DC = m:n, then\\
+                (m+n) cot θ = m cot α- n cot β = n cot B – m cot C\]
+            </p>
+            <img style="margin-left: 450px;" src="images/Mn.png">
+            <p>\[9) \space Radius\space of\space CircumCircle : R = \frac{a}{2sinA} =
+                \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
+            <img style="margin-left: 450px;" src="images/circumcircle.png">
+            <p>\[10) \space Radius\space of\space InCircle : r = \frac{\triangle}{s} \space =
+                (s-a)tan\frac{A}{2} \space = 4R sin\frac{A}{2}sin\frac{B}{2}sin\frac{C}{2}\]</p>
+            <img style="margin-left: 420px;" src="images/incircle.png">
 
-                <p>\[11) \space Radius\space of\space ExCircle : r_1 = \frac{\triangle}{s-a} \space
-                    = (s)tan\frac{A}{2} \space = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
+            <p>\[11) \space Radius\space of\space ExCircle : r_1 = \frac{\triangle}{s-a} \space
+                = (s)tan\frac{A}{2} \space = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
 
-                <p>\[12) \space Orthocentre\space and\space Pedal\space triangle : \]</p>
-                <img style="margin-left: 420px;" src="images/pedal.png">
-                <p> \[ The\space triangle\space formed\space by\space joining\space the\space
-                    feet\space of\space the\space
-                    altitudes\space is\space called\space the\space Pedal\space Triangle.\]
-                    \[a) \space The \space sides\space are\space a cos A = R sin 2A , \space a cos B
-                    = R sin 2B \space a cos C = R sin 2C\]</p>
-                <p>\[b) \space The \space distances \space of \space the \space orthocenter \space
-                    from \space the \space angular \space points \space of \space the \triangle ABC
-                    \space are \space \]\[2RcosA, \space 2RcosB, \space and \space 2RcosC.\]</p>
-                <p>\[c) \space The \space distance \space of \space orthocenter \space from \space
-                    sides \space are\]\[ 2RcosB \space cosC, \space 2RcosCcosA \space and
-                    2RcosCcosA.\]</p>
-                <p>\[d) \space Area \space of \space Pedal \space Triangle \space = \space 2
-                    \triangle cosAcosBcosC \space = \frac{1}{2}R^2sin2Asin2Bsin2C \]</p>
-                <p>\[e) \space Circumradii \space of \space pedal \space triangle \space = \space
-                    \frac{R}{2}\]</p><br>
-                <p>\[13) \space Important Results\]</p>
-                <p>\[a)\space Circumcentre (O) : O_A\space =\space R\space\space and\space\space
-                    O_A\space =\space R cos A\]</p>
-                <p>\[b)\space Orthocentre: H_A = 2R cos A and H_A = 2R cos B cos C\]</p>
-                <p>\[c)\space Excentre (I_1): I_1A\space =\space r_1\space
-                    cosec\frac{A}{2}\space=\,4Rcos \frac{A}{2}\]</p>
-                <p>\[d)\space Centroid(G) :G_A =\sqrt[3]{2b^2+2c^2-a^2}\]</p>
-                <p>\[e)\space Incentre(I) :I =r\,cosec\frac{A}{2}\]</p>
-                <p>\[f)\space
-                    Length\,of\,Angle\,Bisector\,from\,angle\,A\,=\frac{2bc\,cos\frac{A}{2}}{b+c}\]</p>
-                <p>\[g)\space Length\, of\, Median \,from \,angle \,A\,
-                    =\frac{1}{2}\sqrt{2b^2+2c^2-a^2}\]</p>
-                <p>\[h)\space Length \,of\, Altitude\, from \,Angle\,
-                    A\,=\,\frac{2\triangle}{a}\,=c\,sinB\]</p>
-                <p>\[i)\space Relation\, between\, area \,of\, Inscribed(A)\, and
-                    \,Excribed(A_1,A_2,A_3)\, Circle\, of \,\triangle ABC:\]</p>
-                <p>
-                    \[\frac{1}{\sqrt{A}}\,=\,\frac{1}{\sqrt{A_1}}\,+\,\frac{1}{\sqrt{A_2}}\,+\,\frac{1}{\sqrt{A_3}}\]
-                </p>
-                <br>
-                <p>\[j)\space Relation \,between\, median \,and \,sides \,of\, \triangle ABC:\]</p>
-                <p>\[(Length\, of\, median\, from\, angle\, A)^2\,+\,(Length\, of\, median\, from\,
-                    angle\, B)^2\,+\]</p>
-                <p>\[(Length\, of\, median\, from\, angle\, C)^2\,=\,\frac{3}{4}(a^2+b^2+c^2)\]</p>
-                <br>
-                <p>\[k) \space Relation\,between\, angle\, of \triangle ABC,\,
-                    Inradius,\,Circumradius:\]</p>
-                <p>\[ cosA\,+\,cosB\,+\,cosC\,=\,1+\frac{r}{R}\]</p><br>
-                <p>\[l)\space Incentre \,and \,Centroid \,always\,lie\,inside\, the\,
-                    \triangle\]</p><br>
-                <p>\[m)\space Circumcentre\, lies\, inside\, acute\, angled\, \triangle,\,outside\,
-                    obtuse\, angled\, \triangle\]</p>
-                <p>\[and\, on \,hypotenuse\, for\, right\, angled\, \triangle\]</p><br>
-                <p>\[n)\space Orthocentre\, lies\, inside\, acute\, angled\, \triangle,\,outside\,
-                    obtuse\, angled\, \triangle\]</p>
-                <p>\[and\, at \,B\, for\, right\, angled\, \triangle ABC \, right \,angled \,at
-                    \,B\]</p>
+            <p>\[12) \space Orthocentre\space and\space Pedal\space triangle : \]</p>
+            <img style="margin-left: 420px;" src="images/pedal.png">
+            <p> \[ The\space triangle\space formed\space by\space joining\space the\space
+                feet\space of\space the\space
+                altitudes\space is\space called\space the\space Pedal\space Triangle.\]
+                \[a) \space The \space sides\space are\space a cos A = R sin 2A , \space a cos B
+                = R sin 2B \space a cos C = R sin 2C\]</p>
+            <p>\[b) \space The \space distances \space of \space the \space orthocenter \space
+                from \space the \space angular \space points \space of \space the \triangle ABC
+                \space are \space \]\[2RcosA, \space 2RcosB, \space and \space 2RcosC.\]</p>
+            <p>\[c) \space The \space distance \space of \space orthocenter \space from \space
+                sides \space are\]\[ 2RcosB \space cosC, \space 2RcosCcosA \space and
+                2RcosCcosA.\]</p>
+            <p>\[d) \space Area \space of \space Pedal \space Triangle \space = \space 2
+                \triangle cosAcosBcosC \space = \frac{1}{2}R^2sin2Asin2Bsin2C \]</p>
+            <p>\[e) \space Circumradii \space of \space pedal \space triangle \space = \space
+                \frac{R}{2}\]</p><br>
+            <p>\[13) \space Important Results\]</p>
+            <p>\[a)\space Circumcentre (O) : O_A\space =\space R\space\space and\space\space
+                O_A\space =\space R cos A\]</p>
+            <p>\[b)\space Orthocentre: H_A = 2R cos A and H_A = 2R cos B cos C\]</p>
+            <p>\[c)\space Excentre (I_1): I_1A\space =\space r_1\space
+                cosec\frac{A}{2}\space=\,4Rcos \frac{A}{2}\]</p>
+            <p>\[d)\space Centroid(G) :G_A =\sqrt[3]{2b^2+2c^2-a^2}\]</p>
+            <p>\[e)\space Incentre(I) :I =r\,cosec\frac{A}{2}\]</p>
+            <p>\[f)\space
+                Length\,of\,Angle\,Bisector\,from\,angle\,A\,=\frac{2bc\,cos\frac{A}{2}}{b+c}\]</p>
+            <p>\[g)\space Length\, of\, Median \,from \,angle \,A\,
+                =\frac{1}{2}\sqrt{2b^2+2c^2-a^2}\]</p>
+            <p>\[h)\space Length \,of\, Altitude\, from \,Angle\,
+                A\,=\,\frac{2\triangle}{a}\,=c\,sinB\]</p>
+            <p>\[i)\space Relation\, between\, area \,of\, Inscribed(A)\, and
+                \,Excribed(A_1,A_2,A_3)\, Circle\, of \,\triangle ABC:\]</p>
+            <p>
+                \[\frac{1}{\sqrt{A}}\,=\,\frac{1}{\sqrt{A_1}}\,+\,\frac{1}{\sqrt{A_2}}\,+\,\frac{1}{\sqrt{A_3}}\]</p>
+            <br>
+            <p>\[j)\space Relation \,between\, median \,and \,sides \,of\, \triangle ABC:\]</p>
+            <p>\[(Length\, of\, median\, from\, angle\, A)^2\,+\,(Length\, of\, median\, from\,
+                angle\, B)^2\,+\]</p>
+            <p>\[(Length\, of\, median\, from\, angle\, C)^2\,=\,\frac{3}{4}(a^2+b^2+c^2)\]</p>
+            <br>
+            <p>\[k) \space Relation\,between\, angle\, of \triangle ABC,\,
+                Inradius,\,Circumradius:\]</p>
+            <p>\[ cosA\,+\,cosB\,+\,cosC\,=\,1+\frac{r}{R}\]</p><br>
+            <p>\[l)\space Incentre \,and \,Centroid \,always\,lie\,inside\, the\,
+                \triangle\]</p><br>
+            <p>\[m)\space Circumcentre\, lies\, inside\, acute\, angled\, \triangle,\,outside\,
+                obtuse\, angled\, \triangle\]</p>
+            <p>\[and\, on \,hypotenuse\, for\, right\, angled\, \triangle\]</p><br>
+            <p>\[n)\space Orthocentre\, lies\, inside\, acute\, angled\, \triangle,\,outside\,
+                obtuse\, angled\, \triangle\]</p>
+            <p>\[and\, at \,B\, for\, right\, angled\, \triangle ABC \, right \,angled \,at
+                \,B\]</p>
 
 
-            </div>
+        </div>
+        <!--Standard Deviation starts-->
+        <div class="collapse" id="deviation">
+
+            <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+            <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
+            <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
+            <p>&nbsp;</p>
+           
+            <button id="smpbtn" class="btn btn-secondary" onclick="samvar()" style="font-family:mathfont;float:left;"> Sample Standard Deviation</button>
+             <button id="popbtn" class="btn btn-secondary" onclick="popvar()" style="font-family:mathfont;float:right;"> Population Standard Deviation</button>
+            <p>&nbsp;</p>
+             <p>&nbsp;</p>
+          <ul style="list-style-type:disc;">
+          <li style="font-family:mathfont; color:white; float:left;"> Select Population if data contains all the measurable values or all of the values you are interested in.</li>
+           <br><br><li style="font-family:mathfont ; color:white; float:left;"> Select Sample if the data is sample of large or unlimited population an you wish to make a statement about entire population.</li>
+          </ul>
+          <p>&nbsp;</p> <p>&nbsp;</p>
+          <div class="form__group" id='std-var-rslt' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;">
+          </div>
+          </div>
+          </div> 
+           </div>
+        </div>
+<!--Standard Deviation end-->
 
             <!--algebraic formulas list starts-->
             <div class="collapse" id="algebraic_formulascollapse">
@@ -7714,8 +7990,453 @@
                                 oninput="rootquadratic();">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <p class="stopwrap" id="rootsquadraticresult"></p>
+
+                </div>
+                <div class="form-group">
+                    <p class="stopwrap" id="rootsquadraticresult"></p>
+                </div>
+            </div>
+	    <h4>Nature of the roots of the Quadratic Equation ax<sup>2</sup> + bx + c, a ≠ 0, a, b, c ∈ R</h4>
+            <p>To find out the nature of the roots of a quadratic equation,</p>
+            <ol>
+                <li style="color: white; font-size: 20px;">We find the value of the discriminant D. If D < 0, we immediately say that equation has no solution in R.</li>
+                <br>
+                <li style="color: white; font-size: 20px;">If D ≥ 0, then we examine whether it is a perfect square of a rational number or not.
+                    <ol type = "i">
+                        <li style="color: white; font-size: 20px;">If D > 0 and D is not a perfect square, then roots are real and distinct.</li>
+                        <li style="color: white; font-size: 20px;">If D > 0 and it is a perfect square of a rational number and a, b, c ∈ Q, 
+                            then the roots are real and rational. Roots are also distinct.</li>
+                    </ol>
+                </li>
+                <br>
+                <li style="color: white; font-size: 20px;">If D = 0 then the roots are real and equal and if a, b, c ∈ Q the roots are equal rational numbers.</li>
+                <br>
+            </ol>
+        </div>
+        <div class = "collapse" id="pythtriple">
+            <h2 style="text-align: center;">Pythagorean Triplets</h2>
+            <br><br>
+            <input style="width: 275px;" type="text" class="form__field"
+                   placeholder="Enter the number" id="nom">
+            <button class="btn btn-light" onclick=pythtriple()>Submit</button>
+            <br><br>
+            <h4 style=  "color : white"id="answ"></h4>
+        </div>
+        <div class="collapse" id="giff">
+            <h2>Greatest Integer Function and Fractional Part</h2>
+            <input class = "form__field"type="text" id="giffnum">
+            <br><br>
+            <button class = "btn btn-light" onclick="gif()">Greatest Integer Function</button>
+            <button class = "btn btn-light" onclick="fp()">Fractional Part Function</button>
+            <p id="giffans"></p>
+            <p id="fpans"></p>
+        </div>
+        <div class="collapse" id="profitloss">
+            <h2>Profit Loss calculations</h2>
+            <br>
+            <input style="width: 275px;" type="text" class="form__field"
+                   placeholder="Enter cost price" id="cp">
+            <input style="width: 275px;" type="text" class="form__field"
+                   placeholder="Enter selling price" id="sp">
+            <br><br>
+            <button class="btn btn-light" onclick=profitloss()>Submit</button>
+            <br><br>
+            <h5 class="stopwrap" id="pol1" style="font-family:mathfont;"></h5>
+            <p class="stopwrap" id="pol2" style="font-family:mathfont;"></p>
+            <br>
+            <h5 class="stopwrap" id="percent1" style="font-family:mathfont;"></h5>
+            <p class="stopwrap" id="percent2" style="font-family:mathfont;"></p>
+            <br><br>
+            <h2>Profit/Loss calculations over Discount</h2>
+            <br>
+            <input style="width: 275px;" type="number" class="form__field"
+                   placeholder="Enter Discount" id="dis">
+            <select id="perprice" class="btn btn-outline-light">
+                <option>Percentage</option>
+                <option>Price</option>
+            </select>
+            <br><br>
+            <input style="width: 275px;" type="number" class="form__field"
+                   placeholder="Enter selling price/cost price" id="cpsp">
+                   <select id="costsell" class="btn btn-outline-light">
+                    <option>Cost Price</option>
+                    <option>Selling Price</option>
+                </select>
+            <br><br>
+            <button class="btn btn-light" onclick=discount()>Submit</button>
+            <br><br>
+            <p id="discountresult"></p>
+            <br>
+        </div>
+
+        <div class="collapse" id="curconcal">
+            <!-- <h2>Currency Convertor</h2> -->
+            <div class="col-6">
+                <h5>From</h5>
+                <select id="curcon-1" class="form__field" onchange="curcon()">
+                    <option value="USD" class="form_field"
+                            style="background-color:var(--appblack);">USD
+                    </option>
+                    <option value="AED" class="form_field"
+                            style="background-color:var(--appblack);">AED
+                    </option>
+                    <option value="ARS" class="form_field"
+                            style="background-color:var(--appblack);">ARS
+                    </option>
+                    <option value="AUD" class="form_field"
+                            style="background-color:var(--appblack);">AUD
+                    </option>
+                    <option value="BGN" class="form_field"
+                            style="background-color:var(--appblack);">BGN
+                    </option>
+                    <option value="BRL" class="form_field"
+                            style="background-color:var(--appblack);">BRL
+                    </option>
+                    <option value="BSD" class="form_field"
+                            style="background-color:var(--appblack);">BSD
+                    </option>
+                    <option value="CAD" class="form_field"
+                            style="background-color:var(--appblack);">CAD
+                    </option>
+                    <option value="CHF" class="form_field"
+                            style="background-color:var(--appblack);">CHF
+                    </option>
+                    <option value="CLP" class="form_field"
+                            style="background-color:var(--appblack);">CLP
+                    </option>
+                    <option value="CNY" class="form_field"
+                            style="background-color:var(--appblack);">CNY
+                    </option>
+                    <option value="COP" class="form_field"
+                            style="background-color:var(--appblack);">COP
+                    </option>
+                    <option value="CZK" class="form_field"
+                            style="background-color:var(--appblack);">CZK
+                    </option>
+                    <option value="DKK" class="form_field"
+                            style="background-color:var(--appblack);">DKK
+                    </option>
+                    <option value="DOP" class="form_field"
+                            style="background-color:var(--appblack);">DOP
+                    </option>
+                    <option value="EGP" class="form_field"
+                            style="background-color:var(--appblack);">EGP
+                    </option>
+                    <option value="EUR" class="form_field"
+                            style="background-color:var(--appblack);">EUR
+                    </option>
+                    <option value="FJD" class="form_field"
+                            style="background-color:var(--appblack);">FJD
+                    </option>
+                    <option value="GBP" class="form_field"
+                            style="background-color:var(--appblack);">GBP
+                    </option>
+                    <option value="GTQ" class="form_field"
+                            style="background-color:var(--appblack);">GTQ
+                    </option>
+                    <option value="HKD" class="form_field"
+                            style="background-color:var(--appblack);">HKD
+                    </option>
+                    <option value="HRK" class="form_field"
+                            style="background-color:var(--appblack);">HRK
+                    </option>
+                    <option value="HUF" class="form_field"
+                            style="background-color:var(--appblack);">HUF
+                    </option>
+                    <option value="IDR" class="form_field"
+                            style="background-color:var(--appblack);">IDR
+                    </option>
+                    <option value="ILS" class="form_field"
+                            style="background-color:var(--appblack);">ILS
+                    </option>
+                    <option value="INR" class="form_field"
+                            style="background-color:var(--appblack);">INR
+                    </option>
+                    <option value="ISK" class="form_field"
+                            style="background-color:var(--appblack);">ISK
+                    </option>
+                    <option value="JPY" class="form_field"
+                            style="background-color:var(--appblack);">JPY
+                    </option>
+                    <option value="KRW" class="form_field"
+                            style="background-color:var(--appblack);">KRW
+                    </option>
+                    <option value="KZT" class="form_field"
+                            style="background-color:var(--appblack);">KZT
+                    </option>
+                    <option value="MVR" class="form_field"
+                            style="background-color:var(--appblack);">MVR
+                    </option>
+                    <option value="MXN" class="form_field"
+                            style="background-color:var(--appblack);">MXN
+                    </option>
+                    <option value="MYR" class="form_field"
+                            style="background-color:var(--appblack);">MYR
+                    </option>
+                    <option value="NOK" class="form_field"
+                            style="background-color:var(--appblack);">NOK
+                    </option>
+                    <option value="NZD" class="form_field"
+                            style="background-color:var(--appblack);">NZD
+                    </option>
+                    <option value="PAB" class="form_field"
+                            style="background-color:var(--appblack);">PAB
+                    </option>
+                    <option value="PEN" class="form_field"
+                            style="background-color:var(--appblack);">PEN
+                    </option>
+                    <option value="PHP" class="form_field"
+                            style="background-color:var(--appblack);">PHP
+                    </option>
+                    <option value="PKR" class="form_field"
+                            style="background-color:var(--appblack);">PKR
+                    </option>
+                    <option value="PLN" class="form_field"
+                            style="background-color:var(--appblack);">PLN
+                    </option>
+                    <option value="PYG" class="form_field"
+                            style="background-color:var(--appblack);">PYG
+                    </option>
+                    <option value="RON" class="form_field"
+                            style="background-color:var(--appblack);">RON
+                    </option>
+                    <option value="RUB" class="form_field"
+                            style="background-color:var(--appblack);">RUB
+                    </option>
+                    <option value="SAR" class="form_field"
+                            style="background-color:var(--appblack);">SAR
+                    </option>
+                    <option value="SEK" class="form_field"
+                            style="background-color:var(--appblack);">SEK
+                    </option>
+                    <option value="SGD" class="form_field"
+                            style="background-color:var(--appblack);">SGD
+                    </option>
+                    <option value="THB" class="form_field"
+                            style="background-color:var(--appblack);">THB
+                    </option>
+                    <option value="TRY" class="form_field"
+                            style="background-color:var(--appblack);">TRY
+                    </option>
+                    <option value="TWD" class="form_field"
+                            style="background-color:var(--appblack);">TWD
+                    </option>
+                    <option value="UAH" class="form_field"
+                            style="background-color:var(--appblack);">UAH
+                    </option>
+                    <option value="UYU" class="form_field"
+                            style="background-color:var(--appblack);">UYU
+                    </option>
+                    <option value="ZAR" class="form_field"
+                            style="background-color:var(--appblack);">ZAR
+                    </option>
+                </select>
+                <input type="number" id="curconin" class="form__field"
+                       placeholder="Enter Side" value="0" ;
+                       oninput="curcon();">
+                <h5>To</h5>
+                <select id="curcon-2" class="form__field" onchange="curcon()">
+                    <option value="USD" class="form_field"
+                            style="background-color:var(--appblack);">USD
+                    </option>
+                    <option value="AED" class="form_field"
+                            style="background-color:var(--appblack);">AED
+                    </option>
+                    <option value="ARS" class="form_field"
+                            style="background-color:var(--appblack);">ARS
+                    </option>
+                    <option value="AUD" class="form_field"
+                            style="background-color:var(--appblack);">AUD
+                    </option>
+                    <option value="BGN" class="form_field"
+                            style="background-color:var(--appblack);">BGN
+                    </option>
+                    <option value="BRL" class="form_field"
+                            style="background-color:var(--appblack);">BRL
+                    </option>
+                    <option value="BSD" class="form_field"
+                            style="background-color:var(--appblack);">BSD
+                    </option>
+                    <option value="CAD" class="form_field"
+                            style="background-color:var(--appblack);">CAD
+                    </option>
+                    <option value="CHF" class="form_field"
+                            style="background-color:var(--appblack);">CHF
+                    </option>
+                    <option value="CLP" class="form_field"
+                            style="background-color:var(--appblack);">CLP
+                    </option>
+                    <option value="CNY" class="form_field"
+                            style="background-color:var(--appblack);">CNY
+                    </option>
+                    <option value="COP" class="form_field"
+                            style="background-color:var(--appblack);">COP
+                    </option>
+                    <option value="CZK" class="form_field"
+                            style="background-color:var(--appblack);">CZK
+                    </option>
+                    <option value="DKK" class="form_field"
+                            style="background-color:var(--appblack);">DKK
+                    </option>
+                    <option value="DOP" class="form_field"
+                            style="background-color:var(--appblack);">DOP
+                    </option>
+                    <option value="EGP" class="form_field"
+                            style="background-color:var(--appblack);">EGP
+                    </option>
+                    <option value="EUR" class="form_field"
+                            style="background-color:var(--appblack);">EUR
+                    </option>
+                    <option value="FJD" class="form_field"
+                            style="background-color:var(--appblack);">FJD
+                    </option>
+                    <option value="GBP" class="form_field"
+                            style="background-color:var(--appblack);">GBP
+                    </option>
+                    <option value="GTQ" class="form_field"
+                            style="background-color:var(--appblack);">GTQ
+                    </option>
+                    <option value="HKD" class="form_field"
+                            style="background-color:var(--appblack);">HKD
+                    </option>
+                    <option value="HRK" class="form_field"
+                            style="background-color:var(--appblack);">HRK
+                    </option>
+                    <option value="HUF" class="form_field"
+                            style="background-color:var(--appblack);">HUF
+                    </option>
+                    <option value="IDR" class="form_field"
+                            style="background-color:var(--appblack);">IDR
+                    </option>
+                    <option value="ILS" class="form_field"
+                            style="background-color:var(--appblack);">ILS
+                    </option>
+                    <option value="INR" class="form_field"
+                            style="background-color:var(--appblack);">INR
+                    </option>
+                    <option value="ISK" class="form_field"
+                            style="background-color:var(--appblack);">ISK
+                    </option>
+                    <option value="JPY" class="form_field"
+                            style="background-color:var(--appblack);">JPY
+                    </option>
+                    <option value="KRW" class="form_field"
+                            style="background-color:var(--appblack);">KRW
+                    </option>
+                    <option value="KZT" class="form_field"
+                            style="background-color:var(--appblack);">KZT
+                    </option>
+                    <option value="MVR" class="form_field"
+                            style="background-color:var(--appblack);">MVR
+                    </option>
+                    <option value="MXN" class="form_field"
+                            style="background-color:var(--appblack);">MXN
+                    </option>
+                    <option value="MYR" class="form_field"
+                            style="background-color:var(--appblack);">MYR
+                    </option>
+                    <option value="NOK" class="form_field"
+                            style="background-color:var(--appblack);">NOK
+                    </option>
+                    <option value="NZD" class="form_field"
+                            style="background-color:var(--appblack);">NZD
+                    </option>
+                    <option value="PAB" class="form_field"
+                            style="background-color:var(--appblack);">PAB
+                    </option>
+                    <option value="PEN" class="form_field"
+                            style="background-color:var(--appblack);">PEN
+                    </option>
+                    <option value="PHP" class="form_field"
+                            style="background-color:var(--appblack);">PHP
+                    </option>
+                    <option value="PKR" class="form_field"
+                            style="background-color:var(--appblack);">PKR
+                    </option>
+                    <option value="PLN" class="form_field"
+                            style="background-color:var(--appblack);">PLN
+                    </option>
+                    <option value="PYG" class="form_field"
+                            style="background-color:var(--appblack);">PYG
+                    </option>
+                    <option value="RON" class="form_field"
+                            style="background-color:var(--appblack);">RON
+                    </option>
+                    <option value="RUB" class="form_field"
+                            style="background-color:var(--appblack);">RUB
+                    </option>
+                    <option value="SAR" class="form_field"
+                            style="background-color:var(--appblack);">SAR
+                    </option>
+                    <option value="SEK" class="form_field"
+                            style="background-color:var(--appblack);">SEK
+                    </option>
+                    <option value="SGD" class="form_field"
+                            style="background-color:var(--appblack);">SGD
+                    </option>
+                    <option value="THB" class="form_field"
+                            style="background-color:var(--appblack);">THB
+                    </option>
+                    <option value="TRY" class="form_field"
+                            style="background-color:var(--appblack);">TRY
+                    </option>
+                    <option value="TWD" class="form_field"
+                            style="background-color:var(--appblack);">TWD
+                    </option>
+                    <option value="UAH" class="form_field"
+                            style="background-color:var(--appblack);">UAH
+                    </option>
+                    <option value="UYU" class="form_field"
+                            style="background-color:var(--appblack);">UYU
+                    </option>
+                    <option value="ZAR" class="form_field"
+                            style="background-color:var(--appblack);">ZAR
+                    </option>
+                </select>
+                <label>
+                    <p id="curconou">0</p>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="collapse" id="roundoff">
+            <div class="form-group">
+
+
+                <div class="form-group" style="display: inline-block;">
+                    <input type="number" id="inputroundoffinput" class="form__field"
+                           placeholder="Enter Number">
+                </div>
+
+                <div style="display: inline-block;" class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                            id="placeofroundoffbtn"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Place of Roundoff
+                    </button>
+                    <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;"
+                         aria-labelledby="placeofroundoff">
+                                                <span onclick="placeofroundoffget(this.innerText);"
+                                                      class="dropdown-item">Ones</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Tens</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Hundred</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Thousand</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Ten
+                                Thousand</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Lakh</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Ten Lakh</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Crore</span>
+                        <span onclick="placeofroundoffget(this.innerText);"
+                              class="dropdown-item">Ten Crore</span>
+
                     </div>
                 </div>
                 <h4>Nature of the roots of the Quadratic Equation ax<sup>2</sup> + bx + c, a ≠ 0, a, b, c ∈ R</h4>
@@ -8625,7 +9346,140 @@
                 <br>
                 <img src="images/SSSsimilar.png" alt="" style="width: 750px;height: 361px;">
                 <br><br>
+
+                <li style="color: white; font-size : 20px;">An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle</li>
+                <img style="margin-left: 300px;"src="images/pr12.png" alt="">
+            </ol>
+        </div>
+
+        <div class="modal fade" id="cosine" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Law of Cosines</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <br><br>
+                                    <h5 class="text-center">Angle A</h5>
+                                    <p class="text-center">\[cos^{-1}\Big[\frac{b^2 + c^2 -a^2}{2bc}\Big]\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Angle B</h5>
+                                    <p class="text-center">\[ cos^{-1}\Big[\frac{a^2 + c^2 -b^2}{2ac}\Big]\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group"><br>
+                                        <img src="images/cosinerule.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Angle C</h5>
+                                    <p class="text-center">\[ cos^{-1}\Big[\frac{a^2 + b^2 -c^2}{2ab}\Big]\]</p>
+                                </div><br>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side a"
+                                       id="inputsidea" oninput="solvecosine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side b"
+                                       id="inputsideb" oninput="solvecosine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side c"
+                                       id="inputsidec" oninput="solvecosine()">
+                                <br>
+                                <p class="stopwrap" id="resultofanglea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofangleb"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofanglec"
+                                   style="font-family:mathfont;"></p>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <div class="collapse" id="curve">
+            <h2 style="text-align: center;">Curve Tracing</h2>
+            <h4>For Cartesian Curves</h4>
+            <p>\[1.\space Symmetry\space - \\
+                If\space even\space powers\space of\space x,\space then\space symmetrical\space
+                about\space y\space axis \\
+                If\space even\space powers\space of\space y,\space then\space symmetrical\space
+                about\space x\space axis \\
+                If\space replacing\space y\space by\space x\space no\space change\space in\space
+                curve,\space symmetrical\space about\space y=x\]
+            </p>
+            <br>
+            <p>\[2.\space Origin\space - \\
+                If\space curve\space has\space no\space constant\space term,\space Equate\space
+                to\space 0\space the\space
+                lowest\space degree\space term\space to\space get\space equation\space of\space
+                tangent\space at\space origin\]
+            </p>
+            <br>
+            <p>\[3.\space Asymptotes\space - \\
+                For\space Asymptotes\space parallel\space to\space x\space axis,\space
+                equate\space highest\space degree's\space coefficient\space of \space x\space
+                to\space 0 \\
+                For\space Asymptotes\space parallel\space to\space y\space axis,\space
+                equate\space highest\space degree's\space coefficient\space of \space y\space
+                to\space 0 \]
+            </p>
+            <br>
+            <p>\[4.\space Region\space - \\
+                Using\space logic\space find\space region\space in\space which\space the\space
+                curve\space will\space lie \\
+                Use\space wavy\space curve\space method\space to\space find\space the\space
+                region(best\space way)\]
+            </p>
+            <br>
+            <p>\[5.\space Point\space of\space Intersection\space - \\
+                Put\space certain\space values\space of\space x\space to\space get\space
+                corresponding\space values\space of\space y\space and\space plot\space
+                them\space to\space get\space final\space answer\]
+            </p>
+            <h4>For Polar Curves</h4>
+            <p>\[1.\space Symmetry\space -\\
+                To\space check\space for\space any\space angle\space \theta\space for\space
+                symmetry\space check\space for\space (2\alpha - \theta),\space
+                If\space curve\space remains\space same\space then\space symmetrical\]
+            </p>
+            <br>
+            <p>\[2.\space Pole\space -\\
+                Put\space r=0\space to\space get\space equation\space of\space tangent\space
+                at\space pole\]
+            </p>
+            <br>
+            <p>\[3.\space Asymptotes\space -\\
+                Put\space r = \infty\space to\space get\space Asymptotes\]
+            </p>
+            <br>
+            <p>\[4.\space Region\space -\\
+                Put\space extreme\space values\space of\space cosine/sine\space to\space
+                get\space region\space in\space which\space curve\space lie\]
+            </p>
+            <br>
+            <p>\[5.\space Point\space of\space Intersection\space \\
+                Put\space values\space of\space \theta\space to\space get\space specific\space
+                values\space of\space r,\space then\space plot\]
+            </p>
+        </div>
+
 
             <div class="collapse" id="tdshapescal">
                 <h2>Calculator for 3-D Shapes</h2>
@@ -8881,35 +9735,277 @@
                 </table>
                 <div class="text-center">
                     <h2><label>Rules</label></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#circle"
+                           style="text-decoration:none;"
+                           href="#">Circle</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#sector"
+                           style="text-decoration:none;"
+                           href="#">Sector of Circle</a></td>
+              </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#annulus"
+                           style="text-decoration:none;"
+                           href="#">Annulus</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
+                           href="#">Kite</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#line" style="text-decoration:none;"
+                           href="#">Line</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#trapezium"
+                           style="text-decoration:none;"
+                           href="#">Trapezium</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#ellipse"
+                           style="text-decoration:none;"
+                           href="#">Ellipse</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#parallelogram"
+                           style="text-decoration:none;"
+                           href="#">Parallelogram</a></td>
+                </tr>                
+            </table>
+        </div>
+        <div class="collapse" id="consim">
+            <h2>Congruence Properties of Triangles</h2>
+            <p>1. SSS Property (Side-Side-Side) - When all the three corresponding sides of 2
+                triangles are of equal size then
+                triangles are congruent
+            </p>
+            <br>
+            <img class="col-8" src="images/SSS.png" alt="">
+            <br><br>
+            <p>2. SAS Property (Side-Angle-Side) - If any two sides and the angle included
+                between the sides of one triangle are equivalent to the corresponding two sides
+                and the angle between the sides of the second triangle, then the two triangles
+                are said to be congruent by SAS rule. </p>
+            <br>
+            <img class="col-8" src="images/SAS.png" alt="">
+            <br><br>
+            <p>3. ASA Property (Angle-Side-Angle) - If any two angles and the side included
+                between the angles of one triangle are equivalent to the corresponding two
+                angles and side included between the angles of the second triangle, then the two
+                triangles are said to be congruent by ASA rule.</p>
+            <br>
+            <img class="col-8" src="images/ASA.png" alt="">
+            <br><br>
+            <p>4. AAS Property (Angle-Angle-Side) - If any two angles and a non included side of
+                one triangle are equivalent to the corresponding two angles and the non included
+                side of the second triangle, then the two triangles are said to be congruent by
+                AAS rule.</p>
+            <br>
+            <img class="col-8" src="images/AAS.png" alt="">
+            <br><br>
+            <p>5. RHS Property (Right-angle - Hypotenuse - Side) - If the hypotenuse and a side
+                of a right- angled triangle is equivalent to the hypotenuse and a side of the
+                second right- angled triangle, then the two right triangles are said to be
+                congruent by RHS rule.</p>
+            <br>
+            <img class="col-8" src="images/RHS.png" alt="">
+            <br><br><br><br>
+            <h2>Similarity of Triangles</h2>
+            <br>
+            <p>1. AA(or AAA) Similarity - If any two angles of a triangle are equal to any two
+                angles of another triangle, then the two triangles are similar to each
+                other.</p>
+            <br>
+            <img src="images/AAAsimilar.png" alt="" style="width: 750px;height: 361px;">
+            <br><br>
+            <p>2. SAS Similarity - If the two sides of a triangle are in the same proportion of
+                the two sides of another triangle, and the angle inscribed by the two sides in
+                both the triangle are equal, then two triangles are said to be similar.</p>
+            <br>
+            <img src="images/SASsimilar.png" alt="" style="width: 750px;height: 361px;">
+            <br><br>
+            <p>3. SSS Similarity - If all the three sides of a triangle are in proportion to the
+                three sides of another triangle, then the two triangles are similar.</p>
+            <br>
+            <img src="images/SSSsimilar.png" alt="" style="width: 750px;height: 361px;">
+            <br><br><br><br>
+            <h2>Fundamental Theorem of Proportionality</h2>
+            <br>
+            <p>If a line parallel to one of the sides of a triangle intersects the other two sides 
+                in distinct points, then the segments of the other two sides in one halfplane are 
+                proportional to the segments in the other halfplane.</p>
+            <br>
+            <img src="images/proptheo.png" alt="" style="width: 750px;height: 361px;">
+            <br><br><br><br>
+            <p>Using the fundamental theorem on proportionality, we can obtain some results:</p>
+            <ol>
+                <li style="color: white; font-size: 20px;">If a line parallel to one side of a triangle 
+                    intersects the other two sides of the triangle in distinct points, the segments of the 
+                    other sides of the triangle in the same halfplane of the line are proportional to the 
+                    corresponding sides of the triangle.<br>
+                    <img src="images/propres1.jpg" alt="" style="width: 750px;height: 361px;">  
+                </li>
+                <br>
+                <li style="color: white; font-size: 20px;">If three (or more than three) parallel lines 
+                    are intercepted by two transversals, the segments cut off on the transversals between 
+                    the same parallel lines are proportional.<br>
+                    <img src="images/propres2.jpg" alt="" style="width: 750px;height: 361px;">
+                </li>
+                <br>
+                <li style="color: white; font-size: 20px;">In a triangle the bisector of an angle divides 
+                    the side opposite to the angle in the segments whose lengths are in the ratio of their 
+                    corresponding sides.<br>
+                    <img src="images/propres3.jpg" alt="" style="width: 750px;height: 361px;">
+                </li>
+                <br>
+            </ol>
+            <br><br><br><br>
+            <h2>Converse of the fundamental theorem of proportionality</h2>
+            <br>
+            <p>If a line intersects two sides of a triangle such that segments of the sides in each half-plane 
+                are proportional then the line is parallel to the third side.</p>
+            <br>
+            <img src="images/propcontheo.png" alt="" style="width: 750px;height: 361px;">
+        </div>
 
-                    <div class="dropdown-divider"></div>
-                    <br>
-                    <div class="col-6">
-                        <label for="from">
-                            <h5 class="text-center">From</h5>
-                        </label>
-                        <select id="spicon-1" class="form__field" onchange="spicon()">
-                            <option value="1" class="form_field" style="background-color:var(--appblack);">
-                                SPI/CGPA
-                            </option>
-                            <option value="2" class="form_field" style="background-color:var(--appblack);">
-                                Percentage
-                            </option>
+        <div class="collapse" id="tdshapescal">
+            <h2>Calculator for 3-D Shapes</h2>
+            <table class="table">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cube" style="text-decoration:none;"
+                           href="#">Cube</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cuboid"
+                           style="text-decoration:none;"
+                           href="#">Cuboid</a></td>
+                </tr>
 
-                        </select>
-                        <input type="number" id="spiconin" class="form__field" placeholder="Enter Side" value="0" ;
-                            oninput="spicon();">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cylinder"
+                           style="text-decoration:none;"
+                           href="#">Cylinder</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cone" style="text-decoration:none;"
+                           href="#">Cone</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#sphere"
+                           style="text-decoration:none;"
+                           href="#">Sphere</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hollowcy"
+                           style="text-decoration:none;"
+                           href="#">Hollow Cylinder</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hollowsp"
+                           style="text-decoration:none;"
+                           href="#">Hollow Sphere</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hemisphere"
+                           style="text-decoration:none;"
+                           href="#">Hemisphere</a></td>
+                </tr>
+                    <td><a data-toggle="modal" data-target="#torus"
+                           style="text-decoration:none;"
+                           href="#">Torus</a></td>
+                </tr>
 
-                        <label for="To">
-                            <h5 class="text-center">To</h5>
-                        </label>
-                        <select id="spicon-2" class="form__field" onchange="spicon()">
-                            <option value="1" class="form_field" style="background-color:var(--appblack);">
-                                SPI/CGPA
-                            </option>
-                            <option value="2" class="form_field" style="background-color:var(--appblack);">
-                                Percentage
-                            </option>
+
+                <tr>
+                    <td><a data-toggle="modal" data-target="#frustum"
+                           style="text-decoration:none;"
+                           href="#">Conical Frustum</a>
+                   </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div onclick="$('#typesofprisms').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">
+                            Prisms
+                        </div>
+                        <div class="collapse" id="typesofprisms" style="margin: 0.9375rem;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#prism"
+                                        style="text-decoration:none;"
+                                        href="#">Triangular Prism</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pentprism"
+                                        style="text-decoration:none;"
+                                        href="#">Pentagonal Prism</a>
+                                    </td>
+                                </tr>
+                              <tr>
+                                    <td><a data-toggle="modal" data-target="#hexprism"
+                                        style="text-decoration:none;"
+                                        href="#">Hexagonal Prism</a>
+                                    </td>
+                                </tr>
+                              <tr>
+                                    <td><a data-toggle="modal" data-target="#octprism"
+                                        style="text-decoration:none;"
+                                        href="#">Octagonal Prism</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div onclick="$('#typesofpyramid').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">
+                            Pyramids
+                        </div>
+                        <div class="collapse" id="typesofpyramid" style="margin: 0.9375rem;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Square Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#tripyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Triangular Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pentpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Pentagonal Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#hexpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Hexagonal Pyramid</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tetrahedron"
+                           style="text-decoration:none;"
+                           href="#">Tetrahedron</a></td>
+                </tr>
+
+            </table>
+        </div>
 
                         </select>
                         <label for="out">
@@ -9076,20 +10172,182 @@
             </div>
             <!--End of Cost and selling price -->
 
-            <!-- sum of nterms in G.P.  -->
-            <div class="collapse" id="sum_n_GP">
-                <h2>Sum of N terms of a Geometric Progression</h2>
-                <div class="form-group">
-                    <input type="number" style="width: 15.625rem;" class="form__field" id="firstterm"
-                        placeholder="Enter first term" />
-                    <input type="number" style="width: 15.625rem;" class="form__field" id="ratio"
-                        placeholder="Enter ratio between terms" />
-                    <input type="number" style="width: 15.625rem;" class="form__field" id="number"
-                        placeholder="Enter number of terms" />
+        </div>
+        <!-- Factorial end -->
+
+        <div class="collapse" id="expo">
+            <div class="text-center">
+                <h2><label>Solve for Exponent n</label></h2>
+            </div>
+            <h3>\[x^n \space =  \space y\]</h3>
+            <div class="coll">
+                <form class="form-inline">
+                    <input type="number" id="xval"  value='' placeholder="Enter x"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>       
+                    <input type="text" id="yval"  value='' placeholder="Enter y"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                     <br>
-                    <br>
-                    <button class="btn btn-outline-light" onclick="gp()">Find</button>
-                </div>
+                <button type="button" class="btn btn-light" onclick=exposol()>
+                    Calculate
+                </button><br>
+                </form>
+            </div>
+            <br>
+          
+            <h3 class="stopwrap" id="res"
+                                   style="font-family:mathfont;"></h3>
+            <p class="stopwrap" id="steps"
+                                   style="font-family:mathfont;"></p>
+            <br>
+        </div>
+
+        <!--sum of nterms in A.P.-->
+        <div class="collapse" id="sum_n_AP">
+            <div class="text-center">
+                <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
+            </div>
+            <h4>If first term,number of terms and common difference is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="rapterms" placeholder="Enter the first term(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="r1val"
+                       placeholder="Enter the difference between two consecutive terms (d) "
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light"
+                        onclick="sum_n_apsol('napterms','rapterms','r1val')">
+                    Solve
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="printAPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumAP_formula" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sum_APsolprint"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
+            <br><br><br>
+            <h4>If first term,number of terms and last term is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft" placeholder="Enter the first term(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt" placeholder="Enter the last term(l)"
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=anotherap()>
+                    Solve
+                </button>
+            </form>
+            <br>
+            <p id="printAPseries1" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+               align="right"></p>
+            <h5 id="ltap"></h5>
+            <h5 id="formula"></h5>
+			<br><br><br>
+            <h4>If number of terms and the AP is given</h4><br>
+            <form class="form-inline">
+                <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
+
+                <input type="tel" id="ap" placeholder="Enter AP(space separated)"
+                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
+                <button type="button" class="btn btn-light" onclick=apsum()>
+                    Solve
+                </button>
+            </form>
+            <br>
+            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p>
+        </div>
+        <!--sum of nterms in A.P. ends-->
+
+        <!--Cost and selling prices-->
+        <div class="collapse" id="prices">
+            <h1>Cost and Selling Prices</h1>
+              <p>Cost Price:
+
+                  The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
+                  
+                  Selling Price:
+                  
+                  The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
+                  
+                  Profit or Gain:
+                  
+                  If S.P. is greater than C.P., the seller is said to have a profit or gain.
+                  
+                  Loss:
+                  
+                  If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
+              <h1>
+                  IMPORTANT FORMULAE
+              </h1>
+              <p>
+                  1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
+                  2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
+                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
+                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                               
+              </p>
+      
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                          <input type="number" value="0" class="form__field" id="p1">
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <h5>Enter Cost Price</h5>
+                          <input type="number" value="0" class="form__field" id="cp2">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <h5>Enter Selling Price</h5>
+                          <input type="number" value="0" class="form__field" id="sp2">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <button type="button" class="btn btn-light"
+                          onclick="computeCP()">
+                      Find CP
+                  </button>
+                  <button type="button" class="btn btn-light"
+                          onclick="computeSP()">
+                      Find SP
+                  </button>
+              </div>
+
+              <div style="color:white; font-size: large;" id="cp"></div>
+              <div id="sp" style="color: white; font-size: large"></div>
+          </div>
+          <!--End of Cost and selling price -->
+
+        <!-- sum of nterms in G.P.  -->
+        <div class="collapse" id="sum_n_GP">
+            <h2>Sum of N terms of a Geometric Progression</h2>
+            <div class="form-group">
+                <input type="number" style="width: 15.625rem;" class="form__field"
+                       id="firstterm"
+                       placeholder="Enter first term"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="ratio"
+                       placeholder="Enter ratio between terms"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="number"
+                       placeholder="Enter number of terms"/>
+                <br>
                 <br>
                 <div class="form-group">
                     <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
@@ -9523,21 +10781,31 @@
 
             <!-- Start of Decimal / Binary -->
 
-            <div class="collapse" id="decimal-binary">
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>From</h5>
-                        <select id="decimal-binary-select1" class="form__field" onchange="convertBinDec()">
-                            <option class="form_field" style="background-color: #232a36;">
-                                Decimal
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Binary
-                            </option>
-                        </select>
-                        <input type="number" id="decimal-binary-input" value="0" class="form__field"
-                            oninput="convertBinDec()">
-                    </div>
+        <!-- Start of Subtraction of any number system -->
+        <div class="collapse" id="subtract-all">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Choose Number System</h5><br>
+                    <select id="subtract-all-select1" class="form__field"
+                            onchange="subBinDecHexOct()">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <br><br><h2>Input Of Minuend</h2>
+                    <input type=" " id="subtract-all-input1" value="0"
+                           class="form__field"
+                           oninput="subBinDecHexOct()">
+                    <br><br><h2>Input Of Subtrahend</h2>
+                    <input type=" " id="subtract-all-input2" value="0"
+                    class="form__field"
+                    oninput="subBinDecHexOct()">
                 </div>
                 <div class="col-6">
                     <div class="form-group">
@@ -10414,25 +11682,26 @@
 
             </div>
 
-            <!--End of Joint Probability-->l̥
 
-            <!--Bayes  Probability-->
-            <div class="collapse" id="bayes-probabilitycollapse">
-                <h1>Bayes Theorem</h1>
-                <p>Bayes’ theorem describes the probability of an event based on prior knowledge of the conditions that
-                    might be relevant to the event.</p>
-                <h1>
-                    P(A|B)=P(B|A)*P(A)/P(B)
-                </h1>
-                <p>P(A|B) = probability of A given B is true</p>
-                <p>P(B|A) = probability of B given A is true</p>
-                <p>P(A), P(B) = the independent probabilities of A and B</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <h5>Enter number of favourable outcomes in case of Event A</h5>
-                            <input type="number" value="0" class="form__field" id="fav1">
-                        </div>
+        <!--End of Joint Probability-->
+
+        <!--Bayes  Probability-->
+        <div class="collapse" id="bayes-probabilitycollapse">
+            <h1>Bayes Theorem</h1>
+            <p>Bayes’ theorem describes the probability of an event based on prior knowledge of the conditions that
+                might be relevant to the event.</p>
+            <h1>
+                P(A|B)=P(B|A)*P(A)/P(B)
+            </h1>
+            <p>P(A|B) = probability of A given B is true</p>
+            <p>P(B|A) = probability of B given A is true</p>
+            <p>P(A), P(B) = the independent probabilities of A and B</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Enter number of favourable outcomes in case of Event A</h5>
+                        <input type="number" value="0" class="form__field" id="fav1">
+
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
@@ -10478,7 +11747,9 @@
             </div>
 
 
-            <!--End of Bayes Probability-->l̥
+
+        <!--End of Bayes Probability-->
+
 
 
             <div class="collapse" id="cal" style="z-index:9;position:relative;">
@@ -11414,7 +12685,31 @@
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="sector" tabindex="-1" role="dialog" aria-hidden="true" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sector of a Circle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle">
+                                    <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
+                                    <p id="secans"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>             
+        </div>
         <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -11843,6 +13138,74 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Annulus </h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area enclosed by outer circle</h5>
+                                    <p class="text-center">\[A_{1} = \pi r_{1}^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area enclosed by inner circle</h5>
+                                    <p class="text-center">\[A_{2} = \pi r_{2}^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area of the annulus</h5>
+                                    <p class="text-center">\[A_{0} = A_{1} - A_{2}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/annulus.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Outer circumference of an annulus:</h5>
+                                    <p class="text-center">\[C_{1} = 2\pi r_{1} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Inner circumference of an annulus:</h5>
+                                    <p class="text-center">\[C_{2} = 2\pi r_{2} \]</p>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter outer radius (r1)"
+                                   id="inputradius1"
+                                   oninput="solveannulus()">
+                                <input class="form__field" type="number" placeholder="Enter inner radius (r2)"
+                                    id="inputradius2"
+                                    oninput="solveannulus()">
+                                <br>
+                                <p class="stopwrap" id="resultofarea1"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea2"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarea"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircum1"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircum2"
+                                style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -12377,6 +13740,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Traingular Prism-->
         <div class="modal fade" id="prism" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12426,6 +13791,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Pentagonal Prism-->
         <div class="modal fade" id="pentprism" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -12466,6 +13833,120 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Hexagonal Prism-->
+        <div class="modal fade" id="hexprism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hexagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Prism</h5>
+                                    <p class="text-center">\[\frac{3 \sqrt{3}}{2} \times a^2h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Prism</h5>
+                                    <p class="text-center">\[6ah + 3\sqrt{3}a^2\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/hexprism.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge (a)"
+                                       id="inputhexprismedge" oninput="hexprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputhexprismheight" oninput="hexprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvolhexprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvolhexprism2"
+                                   style="font-family:mathfont;"></p>
+                                <br>
+                                <p class="stopwrap" id="resultofareahexprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareahexprism2"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Octagonal Prism-->
+        <div class="modal fade" id="octprism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Octagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume of Prism</h5>
+                                    <p class="text-center">\[2 (1 + \sqrt{2}) a^2h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area of Prism</h5>
+                                    <p class="text-center">\[8ah + 4 (1 + \sqrt{2})a^2\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/octprism.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge (a)"
+                                       id="inputoctprismedge" oninput="octprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputoctprismheight" oninput="octprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvoloctprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvoloctprism2"
+                                   style="font-family:mathfont;"></p>
+                                <br>
+                                <p class="stopwrap" id="resultofareaoctprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareaoctprism2"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
                             </button>
                         </div>
                     </div>
@@ -12646,7 +14127,153 @@
             </div>
         </div>
 
-        <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal fade" id="pentpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pentagonal Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Volume</h4>
+                                    <br>
+                                    <p class="text-center">\[V= \frac{5}{12} \space tan(54 \degree) \space ha^2\]</p>
+                                    <p class="text-center">a = Base edge</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Total Surface area</h4>
+                                    <br>
+                                    <p class="text-center">\[A= \frac{5}{4} \space tan(54 \degree) \space a^2 \space +\]</p>
+                                    <p class="text-center">\[5 \frac{a}{2} \sqrt(h^2 \space + \space (\frac{a \times tan(54 \degree)}{2})^2)\]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/pentpyramid.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base edge of pyramid(a)" id="inputpentpyramidside"
+                                   oninput="pentpyramidsolve();">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height of pyramid(h)" id="inputpentpyramidheight"
+                                   oninput="pentpyramidsolve();">
+                            <p class="stopwrap" id="resultofpentvolpyramid1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentvolpyramid2"
+                               style="font-family:mathfont;"></p>
+                            <br>
+                            <br>
+                            <p class="stopwrap" id="resultofpentareapyramid1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentareapyramid2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentareapyramid3"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <div class="modal fade" id="hexpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hexagonal Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[A = 3ab \]</p>
+                                    <p class="text-center">a = apothem</p>
+                                    <p class="text-center">b = base length</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = abh \]</p>
+                                    <p class="text-center">h = height</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S = 3b(a + s) \]</p>
+                                    <p class="text-center">s = slant height</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA = \frac{1}{2}(Perimeter \times s) \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/hexpyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter apothem of hexagon(a)" id="inputhexpyramidapothem"
+                                   oninput="hexpyramidsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base length of hexagon(b)" id="inputhexpyramidbase"
+                                   oninput="hexpyramidsolve();">  
+                            <input class="form__field" type="number"
+                                   placeholder="Enter slant height(s)" id="inputhexpyramidslant"
+                                   oninput="hexpyramidsolve();">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height of pyramid(h)" id="inputhexpyramidheight"
+                                   oninput="hexpyramidsolve();">
+                            <p class="stopwrap" id="resultofhexbasepyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhexvolpyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhextsapyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhexperipyramid"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhexlsapyramid"
+                                style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

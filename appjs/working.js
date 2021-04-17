@@ -204,6 +204,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#giffbtn").click(function () {
+        openit("#giff");
+        closenav();
+        clearall();
+    })
+    $("#secareabtn").click(function () {
+        openit("#secarea");
+        closenav();
+        clearall();
+    })
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
         closenav();
@@ -622,6 +632,11 @@ $(document).ready(function () {
 
     $("#emibtn").click(function(){
         openit("#emical");
+        closenav();
+        clearall();
+    });
+    $("#expobtn").click(function(){
+        openit("#expo");
         closenav();
         clearall();
     });

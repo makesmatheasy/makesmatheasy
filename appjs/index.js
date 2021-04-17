@@ -138,6 +138,7 @@ function openit(id) {
         "#theo",
         "#equationssolver",
         "#mulsolwithsteps",
+        "#secarea",
         "#table",
         "#shapescal",
         "#tdshapescal",
@@ -176,6 +177,7 @@ function openit(id) {
         "#betagamma",
         "#parallel",
         "#unitconcal",
+        "#giff",
         "#spiconcal",
         "#home",
         "#curconcal",
@@ -246,12 +248,16 @@ function openit(id) {
         "#pentprism",
         "#pyramid",
         "#tripyramid",
+        "#hexpyramid",
         "#anglecon",
         "#frustum",
+        "#annulus",
+        "#cosine",
 	    "#ip",
 	    "#prices",
         "#lyear",
         "#analytical",
+        "#expo",
         "#setformula"
     ];
     for (i = 0; i < ids.length; i++) {
