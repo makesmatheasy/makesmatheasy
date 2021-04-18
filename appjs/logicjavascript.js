@@ -1640,6 +1640,27 @@ function dispointsolve()
     document.getElementById('dis_op').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ' + '    ' + a  + 'x' + '+' + b + 'y' + '+' + c + '=0' + '     is      ' + dis;
     
 }
+
+function solveocta() {
+    var a = document.getElementById("inputtside").value;
+    var resultvolt = document.getElementById("resultofvolt");
+    var resulttsa = document.getElementById("resultoftsa");
+    resultofvolt.innerHTML = "";
+    resultoftsa.innerHTML = "";
+    var volume = (0.471 * (a * a * a)).toFixed(3);
+    var tsa = (3.464 * (a * a * a)).toFixed(3);
+  
+    if (a != "") {
+        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Octahedron \\space \\newline \\frac{\\sqrt{2}}{3} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
+        renderMathInElement(document.getElementById("resultofvolt"));
+    }
+    if (a != "") {
+        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
+        renderMathInElement(document.getElementById("resultoftsa"));
+    }
+}
+
+
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {
