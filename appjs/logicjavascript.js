@@ -1640,6 +1640,7 @@ function dispointsolve()
     document.getElementById('dis_op').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ' + '    ' + a  + 'x' + '+' + b + 'y' + '+' + c + '=0' + '     is      ' + dis;
     
 }
+
 function parallelsolve()
 {
     var x1,y1,x2,y2,x3,y3,x4,y4;
@@ -1671,6 +1672,29 @@ function parallelsolve()
     
     
 }
+
+
+function solveocta() {
+    var a = document.getElementById("inputtside").value;
+    var resultvolt = document.getElementById("resultofvolt");
+    var resulttsa = document.getElementById("resultoftsa");
+    resultofvolt.innerHTML = "";
+    resultoftsa.innerHTML = "";
+    var volume = (0.471 * (a * a * a)).toFixed(3);
+    var tsa = (3.464 * (a * a * a)).toFixed(3);
+  
+    if (a != "") {
+        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Octahedron \\space \\newline \\frac{\\sqrt{2}}{3} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
+        renderMathInElement(document.getElementById("resultofvolt"));
+    }
+    if (a != "") {
+        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
+        renderMathInElement(document.getElementById("resultoftsa"));
+    }
+}
+
+
+
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {
@@ -2378,6 +2402,20 @@ function solvepent(){
         renderMathInElement(document.getElementById("resultofdiagonalpent2"));
         renderMathInElement(document.getElementById("resultofperimeterpent"));
     }
+
+}
+
+//created function for Hexagon
+function solvehex(){
+    let side = document.getElementById("inputsidehex").value;
+    let area = 0.5 * (3 * math.sqrt(3)) * side * side;
+    let perimeter = 6 * side;
+    document.getElementById("resultofareahex1").innerHTML = "\\[Area \\space of \\space Hexagon \\space \\]";
+    document.getElementById("resultofareahex2").innerHTML = "\\[\\frac{3 \\sqrt{3}}{2} \\times "+side+"^2 = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterhex").innerHTML = "\\[Perimeter \\space of \\space Hexagon \\space 6 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareahex1"));
+    renderMathInElement(document.getElementById("resultofareahex2"));
+    renderMathInElement(document.getElementById("resultofperimeterhex"));
 
 }
 
