@@ -229,6 +229,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#strclc").click(function () {
+        openit("#straincalc");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -239,6 +245,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#hydrops").click(function () {
+        openit("#hydroz");
+        closenav();
+        clearall();
+    });
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
