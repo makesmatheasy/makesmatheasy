@@ -239,6 +239,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#hydrops").click(function () {
+        openit("#hydroz");
+        closenav();
+        clearall();
+    });
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();

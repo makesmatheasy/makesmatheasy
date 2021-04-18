@@ -338,3 +338,21 @@ function popvar()
      document.getElementById('std-var-rslt').innerHTML = outputstring;
 }
 }
+function hydrocal()
+{
+    var a=document.getElementById("dept").value;
+    var b=document.getElementById("dens").value;
+    var ans="";
+    if(a===""||b=="")
+    {
+        ans="Please enter all the values to obtain answer";
+    }
+    else{
+    var prs=b*9.80655*a+1;
+    
+   ans="Your answer is: "+prs+" atm"+" <p>&nbsp</p><p>&nbsp</p>";
+    ans+="Our hydrostatic pressure calculator uses the below hydrostatic pressure formula <br>    p = ρ * g * h + p0 where <br>  p is the hydrostatic pressure, ρ is the density of fluid,<br>  g is the gravitational acceleration (the average value for the Earth is g = 9.80655 m/s²), <br>   h is the depth,<br> p0 is the external pressure (usually atmospheric pressure p0 = 1 atm = 1013.25 hPa).";
+
+    }
+    document.getElementById("hydroans").innerHTML=ans;
+}

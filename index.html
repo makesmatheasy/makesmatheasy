@@ -1272,6 +1272,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hydrops"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Hydrostatic Pressure </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Hydrostatic Pressure', '#hydroz', 'c', 'hydrostaticimg')"><img
+                                        id="hydrostaticimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
 
             
             <li>
@@ -9420,7 +9436,23 @@
         </div>
 
         <!-- P&C end -->
+<!--Hydrostatic Pressure starts-->
 
+ 
+<div class="collapse" id="hydroz">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">HYDROSTATIC PRESSURE CALCULATOR </h1>
+    <input type="number" name="dens" class="form__field" id="dens" width="5em" placeholder="Enter fluid's density(in kg/m^3)">
+    <p>&nbsp;</p>
+    <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
+    <p id="hydroans"></p>
+    
+   
+</div>
+<!--Hydrosrtatic Pressure ends-->
         <!-- Primarity test and prime till n cal -->
         <div class="collapse" id="prime">
             <form class="form-group">
