@@ -2350,6 +2350,20 @@ function solvepent(){
 
 }
 
+//created function for Hexagon
+function solvehex(){
+    let side = document.getElementById("inputsidehex").value;
+    let area = 0.5 * (3 * math.sqrt(3)) * side * side;
+    let perimeter = 6 * side;
+    document.getElementById("resultofareahex1").innerHTML = "\\[Area \\space of \\space Hexagon \\space \\]";
+    document.getElementById("resultofareahex2").innerHTML = "\\[\\frac{3 \\sqrt{3}}{2} \\times "+side+"^2 = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterhex").innerHTML = "\\[Perimeter \\space of \\space Hexagon \\space 6 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareahex1"));
+    renderMathInElement(document.getElementById("resultofareahex2"));
+    renderMathInElement(document.getElementById("resultofperimeterhex"));
+
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
