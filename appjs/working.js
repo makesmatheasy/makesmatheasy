@@ -229,6 +229,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#strclc").click(function () {
+        openit("#straincalc");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();

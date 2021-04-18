@@ -356,3 +356,57 @@ function hydrocal()
     }
     document.getElementById("hydroans").innerHTML=ans;
 }
+
+function straincal()
+{
+    var a=document.getElementById("chnln").value;
+    var b=document.getElementById("orln").value;
+    var c=document.getElementById("orunit").value;
+    var d=document.getElementById("chunit").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values to obtain answer";
+    }
+    else{
+    if(c==='inch')
+    {
+        b=b*2.54;
+    }
+    else if(c==="mm")
+    {
+        b=b/10;
+    }
+    else if(c==="m")
+    {
+        b=b*100;
+    }
+    else if(c==="µm")
+    {
+        b=b/10000;
+    }
+
+    if(d==='inch')
+    {
+        a=a*2.54;
+    }
+    else if(d==="mm")
+    {
+        a=a/10;
+    }
+    else if(d==="m")
+    {
+        a=a*100;
+    }
+    else if(d==="µm")
+    {
+        a=a/10000;
+    }
+
+    var strain=a/b;
+    ans="The calculated Strain(S) is: "+strain+"<br> <br> <br>";
+    ans+="Strain is a measure of a materials dimensions due to a load deformation. It takes the initial length and the extension of that length due to the load and creates a ratio of the two.<br>  ε= Δl/l<br> Where: <br>   ε = Strain<br>Δl = Change in length<br>l = Length"
+   
+}
+document.getElementById("strainans").innerHTML= ans;
+}

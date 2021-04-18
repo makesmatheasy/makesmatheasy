@@ -141,6 +141,7 @@ function openit(id) {
         "#secarea",
         "#table",
         "#hydroz",
+        "#straincalc",
         "#shapescal",
         "#tdshapescal",
         "#divide",
