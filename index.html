@@ -8493,6 +8493,11 @@
                     <td><a data-toggle="modal" data-target="#pentagon"
                            style="text-decoration:none;"
                            href="#">Pentagon</a></td>
+                </tr>         
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hexagon"
+                           style="text-decoration:none;"
+                           href="#">Hexagon</a></td>
                 </tr>            
             </table>
         </div>
@@ -12508,6 +12513,57 @@
                         <p class="stopwrap" id="resultofdiagonalpent2"
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterpent"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="hexagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hexagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{3 \sqrt{3}}{2} \space a^2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 6 \times a \]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hex.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidehex"
+                               oninput="solvehex()">
+                        <p class="stopwrap" id="resultofareahex1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareahex2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterhex"
                            style="font-family:mathfont;"></p>-
                     </div>
                     <!---TILL-->
