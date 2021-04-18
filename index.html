@@ -3954,20 +3954,26 @@
 
           <!--Sets Formulas List ends-->
         <div class="collapse" id="log_values">
-            <fieldset class="form-group">
+
                 <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log
                     Calculator
                 </legend>
-                <strong style="font-size: 30px; color: aliceblue;">log</strong>
-                <sub><input type="number" min="1" max="9999" step="1" name="log-base"
-                            id="log-base" placeholder="Number"
-                            value="" required="">
-                </sub>
-                <sup><input type="number" min="1" max="999999999" name="x-number" id="x-number"
-                            placeholder="Number"
-                            class="fontbig" value="" required=""></sup>
 
-            </fieldset>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Base</h5>
+
+                    <input type="number" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Number</h5>
+
+                    <input type="number" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+                </div>
+            </div>
+            
 
             <button type="button" class="btn btn-light" style="margin-top: 40px" ;
                     onclick="cal_log()">
