@@ -409,7 +409,7 @@ function straincal()
    
 }
 document.getElementById("strainans").innerHTML= ans;
-<<<<<<< HEAD
+
 }
 
 function stresscalc()
@@ -474,9 +474,7 @@ function factorial(n){
       return answer;
     }  
   }
-  let n = 4;
-  answer = factorial(n)
-  console.log("The factorial of " + n + " is " + answer);
+  
 function bpcal()
 {
     var a=document.getElementById("psuc").value;
@@ -511,8 +509,7 @@ function bpcal()
     }
     document.getElementById("bpans").innerHTML=ans;
 
-||||||| 7d5ea5c
-=======
+
 }
 
 function stresscalc()
@@ -564,5 +561,5 @@ function stresscalc()
 }
 document.getElementById("stressans").innerHTML=ans;
     
->>>>>>> 1ed809aed6ea1bb152cebc2bebd7f7699d051afa
+
 }
