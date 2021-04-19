@@ -88,6 +88,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#sreslc").click(function () {
+        openit("#stresscalc");
+        closenav();
+        clearall();
+    });
+
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
@@ -229,6 +235,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#strclc").click(function () {
+        openit("#straincalc");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -239,6 +251,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#hydrops").click(function () {
+        openit("#hydroz");
+        closenav();
+        clearall();
+    });
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
@@ -448,7 +465,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#powsbtn").click(function () {
+        openit("#pows");
+        closenav();
+        clearall();
+    });
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
@@ -635,9 +656,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#expobtn").click(function(){
+        openit("#expo");
+        closenav();
+        clearall();
+    });
 
     $("#gstbtn").click(function(){
         openit("#gstcal");
+        closenav();
+        clearall();
+    });
+
+    $("#percalbtn").click(function(){
+        openit("#percal");
         closenav();
         clearall();
     });
@@ -657,9 +689,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-
-
 
     $("#lapprobtn").click(function(){
         openit("#lappro");
