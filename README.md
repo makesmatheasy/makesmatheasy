@@ -2,6 +2,9 @@
 
 Started on **13 July,2020**
 
+[![GitHub Super-Linter](https://github.com/sairish2001/makesmatheasy/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
+
 Solves various Math Problems along with Steps
 
 ### How it differs from other problem-solving projects?
