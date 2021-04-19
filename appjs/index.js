@@ -140,6 +140,8 @@ function openit(id) {
         "#mulsolwithsteps",
         "#secarea",
         "#table",
+        "#ssts",
+        "#arcs",
         "#hydroz",
         "#straincalc",
         "#shapescal",

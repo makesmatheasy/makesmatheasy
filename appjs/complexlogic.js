@@ -563,3 +563,47 @@ document.getElementById("stressans").innerHTML=ans;
     
 
 }
+
+function arcal()
+{
+      var a=document.getElementById("ang").value;
+      var b=document.getElementById("rad").value;
+      var y=document.getElementById("radit").value;
+      var d=document.getElementById("angit").value;
+      var ans="";
+      if(a==""||b=="")
+      {
+          ans="Error: All values are required to obtain answer";
+      }
+      else
+      {
+
+        if(d=="degree")
+        {
+            b/=57.296;
+        }
+
+
+        var c= a*b;
+
+        if(y=="cm")
+        {
+            c=c/100;
+        }
+        else if(y=="mm")
+        {
+            c=c/1000;
+        }
+        else if(y=="inch")
+        {
+              c=c/0.0254;
+        }
+      
+        var k=c.toPrecision(5);
+
+             ans="The arc length is: "+k+" m";
+      }
+
+      document.getElementById("arcans").innerHTML=ans;
+
+}
