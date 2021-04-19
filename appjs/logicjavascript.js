@@ -1967,7 +1967,20 @@ function isoscelestrianglearea() {
     }
 
 }
+function findeq(){
+    var a1 = parseInt(document.getElementById("ther").value)
+    var h1 = parseInt(document.getElementById("theh").value)
+    document.getElementById("xeqn").innerHTML = "x &nbsp  =&nbsp; "+ a1+"√u/"+Math.sqrt(h1)+" cosv "
+    document.getElementById("yeqn").innerHTML = "y &nbsp;  =&nbsp; "+ a1+" √u/ "+Math.sqrt(h1)+" sinv "
+    document.getElementById("zeqn").innerHTML = "z &nbsp;  =&nbsp;  u"
+}
 
+function volf(){
+    var a2 = parseInt(document.getElementById("ther1").value)
+    var h2 = parseInt(document.getElementById("theh1").value)
+    var ans = 0.5*3.14*a2*a2*h2
+    document.getElementById("volf").innerHTML = "The volume is " + ans
+}
 function solveparallelogram() {
     var base = document.getElementById("inputbase").value;
     var height = document.getElementById("inputheight").value;

@@ -159,6 +159,7 @@ function openit(id) {
         "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
+        "#parab",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
