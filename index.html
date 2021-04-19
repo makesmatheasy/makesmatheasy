@@ -2518,6 +2518,26 @@
                           </table>
                       </li>
 
+
+                      <li>
+                        <table class="table">
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="bpmf"
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Binomial Distribution Calculator
+                                    </a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                       <span
+                                               onclick="addtofavourite('Binomial Distribution','#bpmfs','c','bpmfimgfav')"><img
+                                               id="bpmfimgfav" src="images/unfavourite.png"
+                                               style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+
+
             <li>
                 <table class="table">
                     <tr>
@@ -6189,6 +6209,9 @@
                     </tbody>
                 </table>
             </div>
+
+
+           
             <!--Calculator code for trivial hyperbola solution ends here-->
             <br>
             <div class="stopwrap">
@@ -9578,6 +9601,23 @@
 </div>
 <!--Strain Calculator Ends-->
 
+<!--Binomial PMF starts-->
+<div class="collapse" id="bpmfs">
+    <h1 style="font-family:mathfont; text-align:center;"> PMF of Binomial Distribution Calculator </h1>
+    <input type="number" name="psuc" class="form__field" id="psuc"   placeholder="Enter probability of success">
+    <p>&nbsp;</p>
+    <input type="number" name="suc" class="form__field" id="suc" placeholder="Enter number of success">
+    <p>&nbsp;</p>
+    <input type="number" name="tri" class="form__field" id="tri" placeholder="Enter number of trials">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="bpcal()">Calculate</button>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="bpans"></div> 
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = \, \frac{n!}{(n-r)!r!} p^x (1-p)^y\]</p> where, <br> n= no. of trials <br> r= no. of successful events
+        <br> x= probability of success <br> y= porobability of not being successful(1-x)
+    </div>
+</div>
+
+<!--Binomial PMF ends-->
 <!--Stress Calculator starts-->
 <div class="collapse" id="stresscalc">
     <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>

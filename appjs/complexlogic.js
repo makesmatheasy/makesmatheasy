@@ -461,3 +461,53 @@ function stresscalc()
 document.getElementById("stressans").innerHTML=ans;
     
 }
+
+function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+      for(var i = n; i >= 1; i--){
+        answer = answer * i;
+      }
+      return answer;
+    }  
+  }
+  let n = 4;
+  answer = factorial(n)
+  console.log("The factorial of " + n + " is " + answer);
+function bpcal()
+{
+    var a=document.getElementById("psuc").value;
+    var b=document.getElementById("suc").value;
+    var c=document.getElementById("tri").value;
+    var ans="";
+
+   
+    if(a==""||b==""||c=="")
+    {
+        ans="Input Error: Please enter all the values to obtain required answer";
+    }
+    else if(a>1)
+    {
+        ans="Input Error: Probability can't be greater than 1";
+    }
+    else if(b>c)
+    {
+        ans="Input Error: Successful events can't be greater than total number of trials.";
+    }
+   
+    else{
+
+        var pmf= factorial(c) / (factorial(b) * factorial(c-b));
+        console.log(pmf);
+        var n=Math.pow(a,b);
+        var s=1-a, t=c-b;
+        var m=Math.pow(s,t);
+        pmf=pmf*n*m;
+        pmf=pmf.toPrecision(5)
+        ans="The PMF is: " +pmf;
+    }
+    document.getElementById("bpans").innerHTML=ans;
+
+}

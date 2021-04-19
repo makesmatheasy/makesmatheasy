@@ -88,6 +88,13 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#bpmf").click(function () {
+        openit("#bpmfs");
+        closenav();
+        clearall();
+    });
+
+
     $("#sreslc").click(function () {
         openit("#stresscalc");
         closenav();

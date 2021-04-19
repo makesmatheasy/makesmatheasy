@@ -202,6 +202,7 @@ function openit(id) {
         "#multiplying-all",
 		"#onetwocom-calc",
         "#3dgeo",
+        "#bpmfs",
         "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
