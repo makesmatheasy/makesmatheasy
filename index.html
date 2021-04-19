@@ -8514,7 +8514,12 @@
                     <td><a data-toggle="modal" data-target="#sector"
                            style="text-decoration:none;"
                            href="#">Sector of Circle</a></td>
-              </tr>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#semicircle"
+                           style="text-decoration:none;"
+                           href="#">Semi-Circle</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#annulus"
                            style="text-decoration:none;"
@@ -12261,6 +12266,59 @@
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofdiameterc"
                                style="font-family:mathfont;"></p>-
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="semicircle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Semi-Circle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[d = 2r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumference</h5>
+                                    <p class="text-center">\[C= \pi r +2r\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/semicircle.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter Radius"
+                                   id="semiradius"
+                                   oninput="solvesemicircle()">
+                            <p class="stopwrap" id="resultofdiasemi"
+                                style="font-family:mathfont;"></p>       
+                            <p class="stopwrap" id="resultofareasemi"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcircumsemi"
+                               style="font-family:mathfont;"></p>
+                            
                         </div>
                         <!---TILL-->
                     </div>
