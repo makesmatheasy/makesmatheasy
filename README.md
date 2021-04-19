@@ -165,6 +165,7 @@ Other Tech/Libraries
     - Right-angled Triangle
     - Scalene Triangle
     - Circle
+    - Semi-Circle
     - Kite
     - Line
     - Trapezium
