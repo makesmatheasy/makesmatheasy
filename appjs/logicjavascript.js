@@ -1641,6 +1641,39 @@ function dispointsolve()
     
 }
 
+function parallelsolve()
+{
+    var x1,y1,x2,y2,x3,y3,x4,y4;
+    x1=parseFloat(document.getElementById('xone').value);
+    y1=parseFloat(document.getElementById('yone').value);
+    x2=parseFloat(document.getElementById('xtwo').value);
+    y2=parseFloat(document.getElementById('ytwo').value);
+    x3=parseFloat(document.getElementById('xthree').value);
+    y3=parseFloat(document.getElementById('ythree').value);
+    x4=parseFloat(document.getElementById('xfour').value);
+    y4=parseFloat(document.getElementById('yfour').value);
+    var explain = document.getElementById("line1");
+    var explain1 = document.getElementById("line2");
+   // var explain = document.getElementById("formula");
+   // explain.innerHTML = "\\[Intersection \\space point \\space  =\\space  (\\frac{b1 * c2 - b2 * c1}{a1 * b2 - a2 * b1}, \\space \\frac{a2 * c1 - a1 * c2}{a1 * b2 - a2 * b1} ) \\] ";
+    //renderMathInElement(document.getElementById("formula"));
+    var m1= (y2-y1)/(x2-x1);
+    var m2 = (y4-y3)/(x4-x3);
+    if(m1==m2){
+        explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Parallel" + "\\] ";
+        renderMathInElement(document.getElementById("line1"));
+        document.getElementById('output1').innerHTML= 'Lines are Parallel ' ;
+    }
+    else{
+        explain1.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Parallel" + "\\] ";
+        renderMathInElement(document.getElementById("line2"));
+        document.getElementById('output2').innerHTML= 'Lines are not parallel';
+    }
+    
+    
+}
+
+
 function solveocta() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
@@ -1659,6 +1692,7 @@ function solveocta() {
         renderMathInElement(document.getElementById("resultoftsa"));
     }
 }
+
 
 
 //-----------------------------------------------------
