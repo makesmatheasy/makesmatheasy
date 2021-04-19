@@ -2932,6 +2932,50 @@ function tripyramidsolve() {
 
     }
 }
+//Octagonal pyramid
+function octpyramidsolve() {
+    var side = document.getElementById("inputoctpyramidside").value;
+    var height = document.getElementById("inputoctpyramidheight").value;
+    var baseoutput = document.getElementById("resultofoctbasepyramid");  
+    var voloutput = document.getElementById("resultofoctvolpyramid");
+    var tsaoutput = document.getElementById("resultofocttsapyramid");
+    var lsaoutput = document.getElementById("resultofoctlsapyramid");
+    var basetemp = "";
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    if ((side != "") && (height != "")) {
+        basetemp += "\\[Base \\space Area \\space is \\space" + "\\]";
+        basetemp += "\\[" + 2 + "\\times" + side + "\\times" + side + "\\times" + " \\space cot(22.5 \\degree) \\space" + "=" + eval(String(4.83 * side * side)).toFixed(2) + "\\]";
+        baseoutput.innerHTML = basetemp;
+
+        voltemp += "\\[Volume \\space of \\space Octagonal \\space Pyramid \\space is \\space \\]";
+        voltemp += "\\[\\frac{2}{3} \\space "+ "\\times" + height + "\\times" + side + "\\times" + side + "\\times" + " \\space cot(22.5 \\degree) \\space" + "=" + eval(String(1.61 * height * side * side)).toFixed(2) +  "\\]";
+        voloutput.innerHTML = voltemp;
+        
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space" + "\\]";
+        lsatemp += "\\[" + 2 + "\\times" + side + "\\times" + " \\space \\sqrt( " + 4 + "\\times" + height + "\\times" + height+" \\space + \\space" + side + "\\times" +  "\\]";
+        lsatemp += "\\[" + side + "\\times" + " \\space cot^2(22.5 \\degree) \\space" + ") = " + eval(String(2 * side * math.sqrt( (4 * height * height) + (5.83 * side * side) ))).toFixed(2) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[Total \\space Surface \\space area \\space is \\space \\]";
+        tsatemp += "\\[" + 2 + "\\times" + side + "\\times" + " \\space \\sqrt( " + 4 + "\\times" + height + "\\times" + height+" \\space + \\space" + side + "\\times" + side + "\\times" + "\\]";
+        tsatemp += "\\[" + " \\space cot^2(22.5 \\degree) \\space" + ")" + "+" + side + "\\times" + " \\space cot(22.5 \\degree) \\space" + "=" + eval(String(2 * side * math.sqrt( (4 * height * height) + (5.83 * side * side) ) + 2.41 * side)).toFixed(2) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+       
+        renderMathInElement(baseoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(lsaoutput);
+
+    } else {
+        baseoutput.innerHTML = ""; 
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        lsaoutput.innerHTML = "";  
+
+    }
+}
 
 //Pentagonal Pyramid
 function pentpyramidsolve(){
