@@ -8713,6 +8713,12 @@
                    </td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#ellipsoid"
+                           style="text-decoration:none;"
+                           href="#">Ellipsoid</a>
+                   </td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofprisms').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;">
@@ -13000,6 +13006,60 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ellipsoid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ellipsoid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    
+                                    <h5 class="text-center">Volume(V)</h5>
+                                    <p class="text-center">\[\frac{4}{3}\pi a b c\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[4\pi\Big(\frac{(ab)^{1.6} + (ac)^{1.6} + (bc)^{1.6}}{3}\Big)^{\frac{1}{1.6}} \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/ellipsoid.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Semi-axis (a)"
+                                       id="inputa" oninput="ellipsoidsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Semi-axis (b)"
+                                       id="inputb" oninput="ellipsoidsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Semi-axis (c)"
+                                       id="inputc" oninput="ellipsoidsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsa"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
