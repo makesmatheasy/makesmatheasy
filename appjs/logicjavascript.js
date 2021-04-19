@@ -1410,12 +1410,17 @@ function fp(){
         document.getElementById("giffans").innerHTML = "The fractional part is " + ans
     }
 }
+
 function findsecarea(){
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
-    var ans = (360/ang)*3.14*r*r
-    document.getElementById("secans").innerHTML = "The area of sector is " + ans + " " + "units.square"
+    var ans = (r*r * ang)/2;
+    document.getElementById("secans1").innerHTML = "\\[The \\space area \\space of \\space sector \\space is \\space \\space \\frac{r^2\\theta}{2} \\space\\]"
+    document.getElementById("secans2").innerHTML = "\\[\\frac{"+r+"^2\\times "+ang+"}{2} \\space = " + ans + "\\space\\]";
+    renderMathInElement(document.getElementById("secans1"));
+    renderMathInElement(document.getElementById("secans2"));
 }
+
 function partialdiffsolve() {
     var ikk = document.getElementById("inputpartialorder");
     if (ikk.value == "") {
