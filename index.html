@@ -1304,7 +1304,22 @@
                 </table>
             </li>
 
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sreslc"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Stress Calculator </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Stress Calculator', '#stresscalc', 'c', 'stressimg')"><img
+                                        id="stressimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+           
             
             <li>
                 <table class="table">
@@ -3388,7 +3403,30 @@
                 </p>
             </div><br>
             <h4 class="text-center" id="line1"> </h4> <br>
-	    <h4 class="text-center" id="line2"> </h4> <br>
+	        <h4 class="text-center" id="line2"> </h4> <br>
+
+            <h3>Section Formula</h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="x1" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="y1" size=5 value='' placeholder="y1">)
+                    <br><br>
+                    Coordinate 2 = (<input type="text" id="x2" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="y2" size=5 value='' placeholder="y2">)
+                        <br><br>
+                    Ratio = (<input type="text" id="m" size=3 value='' placeholder="m"> , 
+                <input type="text" id="n" size=3 value='' placeholder="n">)
+                    <br>
+                        <br><br>    
+                <button type="button" class="btn btn-light" onclick=solvesection()>
+                    Calculate
+                </button><br>
+                </p>
+            </div><br>
+            <p id="sec_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <p  id="output"> </p> <br>
             
         </div>
         <div class="collapse" id="vecalg">
@@ -4429,8 +4467,25 @@
             <h4>Regular and Irregular Singular Points</h4>
             <p>If a point is not ordinary then the point is singular</p>
             <p>A singular point x = x<sub>0</sub> is called regular singular point if both (x-x<sub>0</sub>) and (x-x<sub>0</sub>)<sup>2</sup> are analytic at x = x<sub>0</sub></sup> else it is irregular </p>
-            
-
+            <br>
+            <h4>Legendre's Differential Equation</h4>
+            <br>
+            <p>The differential equation of form,</p>
+            <p>\[(1-x^{2})\frac{d^{2}y}{dx^{2}}-2x\frac{dy}{dx}+n(n+1)y\space =\space 0\]</p>
+            <p>\[\frac{d}{dx}((1-x^{2})\frac{dy}{dx})+n(n+1)y\space =\space 0\]</p>
+            <p>is called Legendre's Differential Equation,where n is a real number </p>
+            <br>
+            <h4>Bessel's Differential Equation</h4>
+            <br>
+            <p>The differential equation of form,</p>
+            <p>\[x^{2}\frac{d^{2}y}{dx^{2}}+x\frac{dy}{dx}+(x^{2}-n^{2})y\space =\space 0\]</p>
+            <p>is called Bessel's Differential Equation of order n, where n is a positive constant </p>
+            <br>
+            <h4>Chebyshev's Differential Equation</h4>
+            <br>
+            <p>The differential equation of form,</p>
+            <p>\[(1-x^{2})\frac{d^{2}y}{dx^{2}}-x\frac{dy}{dx}+n^{2}y\space =\space 0\]</p>
+            <p>is called Chebyshev's Differential Equation</p>
         </div>
         <div class="collapse" id="maxmin">
             <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
@@ -8517,7 +8572,12 @@
                     <td><a data-toggle="modal" data-target="#sector"
                            style="text-decoration:none;"
                            href="#">Sector of Circle</a></td>
-              </tr>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#semicircle"
+                           style="text-decoration:none;"
+                           href="#">Semi-Circle</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#annulus"
                            style="text-decoration:none;"
@@ -8774,6 +8834,11 @@
                                     <td><a data-toggle="modal" data-target="#hexpyramid"
                                         style="text-decoration:none;"
                                         href="#">Hexagonal Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#octpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Octagonal Pyramid</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -9592,11 +9657,37 @@
     </select>
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="straincal()">Calculate</button>
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="strainans"></p>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="strainans"></div>
     
    
 </div>
 <!--Strain Calculator Ends-->
+
+<!--Stress Calculator starts-->
+<div class="collapse" id="stresscalc">
+    <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>
+    <input type="number" name="area" class="form__field" id="area"  placeholder="Enter area">
+    <select id="aunit" class="form__field">
+        <option class="form__field" value="mm" style="background-color: #232a36;">mm²</option>
+        <option class="form__field" value="cm"  style="background-color: #232a36;">cm²</option>
+        <option class="form__field" value="m"  style="background-color: #232a36;"> m²</option>
+        <option class="form__field" value="ft" style="background-color: #232a36;">ft²</option>
+        <option class="form__field" value="inch"  style="background-color: #232a36;">inch²</option>
+    </select>
+    <p>&nbsp;</p>
+    <input type="number" name="strforce" class="form__field" id="strforce" placeholder="Enter force">
+    <select id="funit" class="form__field">
+        <option class="form__field" value="n" style="background-color: #232a36;"> Newton</option>
+        <option class="form__field" value="kn" style="background-color: #232a36;">Kilo Newton</option>
+        <option class="form__field" value="mn" style="background-color: #232a36;"> Mega Newton</option>
+        <option class="form__field" value="gn"  style="background-color: #232a36;"> Giga Newton</option>
+    </select>
+    <p>&nbsp;</p>   
+    <button type="button" class="btn btn-outline-light" onclick="stresscalc()">Calculate</button>
+    <p>&nbsp;</p> 
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="stressans"></div>
+</div>
+<!--Stress Calculator Ends-->
         <!-- Primarity test and prime till n cal -->
         <div class="collapse" id="prime">
             <form class="form-group">
@@ -12248,6 +12339,59 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="semicircle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Semi-Circle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[d = 2r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumference</h5>
+                                    <p class="text-center">\[C= \pi r +2r\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/semicircle.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter Radius"
+                                   id="semiradius"
+                                   oninput="solvesemicircle()">
+                            <p class="stopwrap" id="resultofdiasemi"
+                                style="font-family:mathfont;"></p>       
+                            <p class="stopwrap" id="resultofareasemi"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcircumsemi"
+                               style="font-family:mathfont;"></p>
+                            
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -13453,7 +13597,6 @@
                 </div>
             </div>
         </div>
-
         <div class="modal fade" id="pentpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -13585,8 +13728,72 @@
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofhexlsapyramid"
                                 style="font-family:mathfont;"></p>
-
-                        </div>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="octpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Octagonal Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                  <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[BA = 2s^2 \space cot(22.5 \degree)\]</p>
+                                    <p class="text-center">s = side</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{2}{3} \space hs^2 \space cot(22.5 \degree) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[TSA = 2s \space (\sqrt{4h^2 + s^2 \space cot^2(22.5 \degree)} \space + \space \]</p>
+                                    <p class="text-center">\[s \space cot(22.5 \degree)\space)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA = 2s \sqrt{4h^2 + s^2 \space cot^2(22.5 \degree)} \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/octpyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of octagon(s)" id="inputoctpyramidside"
+                                   oninput="octpyramidsolve();">    
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height of octagon pyramid(h)" id="inputoctpyramidheight"
+                                   oninput="octpyramidsolve();">
+                            <p class="stopwrap" id="resultofoctbasepyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofoctvolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofocttsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofoctlsapyramid"
+                               style="font-family:mathfont;"></p>
+                          </div>
                         <!-- ------HERE------ -->
                     </div>
                     <div class="modal-footer">

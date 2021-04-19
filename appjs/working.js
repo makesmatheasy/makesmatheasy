@@ -88,6 +88,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#sreslc").click(function () {
+        openit("#stresscalc");
+        closenav();
+        clearall();
+    });
+
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
