@@ -662,6 +662,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#degbtn").click(function(){
+        openit("#degcal");
+        closenav();
+        clearall();
+    });
+
     $("#percalbtn").click(function(){
         openit("#percal");
         closenav();

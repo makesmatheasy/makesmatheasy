@@ -1515,6 +1515,24 @@
                     </tr>
                 </table>
             </li>
+            <!-- Polynomial degree start -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="degbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Polynomial Degree
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Polynomial Degree ','#degcal','c','degimgfav')"><img
+                                        id="degimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!-- Polynomial degree end -->
 
             <!-- Factorial added -->
             <li>
@@ -8004,6 +8022,23 @@
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="gst3"></p>
             </div>
         </div>
+
+        <div class="collapse" id="degcal">
+            <h2 style="color: var(--appimage);">Polynomial Degree</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                       id="exp"
+                       placeholder="Enter a Polynomial expression"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="degcal()">Find</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="deg"></p>
+            </div>
+        </div>
+
 
         <div class="collapse" id="equationssolver">
             <div class="form-group">
