@@ -1304,7 +1304,22 @@
                 </table>
             </li>
 
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sreslc"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Stress Calculator </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Stress Calculator', '#stresscalc', 'c', 'stressimg')"><img
+                                        id="stressimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+           
             
             <li>
                 <table class="table">
@@ -9574,11 +9589,37 @@
     </select>
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="straincal()">Calculate</button>
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="strainans"></p>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="strainans"></div>
     
    
 </div>
 <!--Strain Calculator Ends-->
+
+<!--Stress Calculator starts-->
+<div class="collapse" id="stresscalc">
+    <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>
+    <input type="number" name="area" class="form__field" id="area"  placeholder="Enter area">
+    <select id="aunit" class="form__field">
+        <option class="form__field" value="mm" style="background-color: #232a36;">mm²</option>
+        <option class="form__field" value="cm"  style="background-color: #232a36;">cm²</option>
+        <option class="form__field" value="m"  style="background-color: #232a36;"> m²</option>
+        <option class="form__field" value="ft" style="background-color: #232a36;">ft²</option>
+        <option class="form__field" value="inch"  style="background-color: #232a36;">inch²</option>
+    </select>
+    <p>&nbsp;</p>
+    <input type="number" name="strforce" class="form__field" id="strforce" placeholder="Enter force">
+    <select id="funit" class="form__field">
+        <option class="form__field" value="n" style="background-color: #232a36;"> Newton</option>
+        <option class="form__field" value="kn" style="background-color: #232a36;">Kilo Newton</option>
+        <option class="form__field" value="mn" style="background-color: #232a36;"> Mega Newton</option>
+        <option class="form__field" value="gn"  style="background-color: #232a36;"> Giga Newton</option>
+    </select>
+    <p>&nbsp;</p>   
+    <button type="button" class="btn btn-outline-light" onclick="stresscalc()">Calculate</button>
+    <p>&nbsp;</p> 
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="stressans"></div>
+</div>
+<!--Stress Calculator Ends-->
         <!-- Primarity test and prime till n cal -->
         <div class="collapse" id="prime">
             <form class="form-group">
