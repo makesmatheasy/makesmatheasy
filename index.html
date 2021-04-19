@@ -1744,6 +1744,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="plotgraphoption"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
+                                Bar Graph</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Plot Bar Graph','#plotbargraph','c','plotbarimgfav')"><img id="plotbarimgfav"
+                                    src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="plotangleoption"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
                                 Angle</a>
@@ -8069,6 +8084,12 @@
             <div class="form-group">
                 <p id="plotequationresult"></p>
             </div>
+        </div>
+        <div class="collapse" id="plotbargraph">
+        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+            
+        </div>
+
         </div>
         <div class="collapse" id="parallel">
             <h2 style="text-align: center;">Properties of Parallel Lines</h2>
