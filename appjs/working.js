@@ -204,6 +204,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#giffbtn").click(function () {
+        openit("#giff");
+        closenav();
+        clearall();
+    })
+    $("#secareabtn").click(function () {
+        openit("#secarea");
+        closenav();
+        clearall();
+    })
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
         closenav();
@@ -219,6 +229,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#strclc").click(function () {
+        openit("#straincalc");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -229,6 +245,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#hydrops").click(function () {
+        openit("#hydroz");
+        closenav();
+        clearall();
+    });
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
@@ -438,7 +459,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#powsbtn").click(function () {
+        openit("#pows");
+        closenav();
+        clearall();
+    });
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
@@ -625,9 +650,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#expobtn").click(function(){
+        openit("#expo");
+        closenav();
+        clearall();
+    });
 
     $("#gstbtn").click(function(){
         openit("#gstcal");
+        closenav();
+        clearall();
+    });
+
+    $("#percalbtn").click(function(){
+        openit("#percal");
         closenav();
         clearall();
     });
@@ -647,9 +683,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-
-
 
     $("#lapprobtn").click(function(){
         openit("#lappro");
