@@ -171,6 +171,7 @@ function openit(id) {
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
+        "#plotbargraph",
         "#roundoff",
         "#euclid",
 	    "#aod",

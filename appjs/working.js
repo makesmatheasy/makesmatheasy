@@ -715,6 +715,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#plotbargraphoption").click(function(){
+        openit("#plotbargraph");
+        closenav();
+        clearall();
+    });
 })
 
     function loader(action) {

@@ -1759,7 +1759,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="plotgraphoption"
+                            <a id="plotbargraphoption"
                                 style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
                                 Bar Graph</a>
                         </td>
@@ -8140,12 +8140,53 @@
                 <p id="plotequationresult"></p>
             </div>
         </div>
+
         <div class="collapse" id="plotbargraph">
-        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+        
+            <input type="number" class="form__field" id="numofinput" placeholder="Enter The Number Of Entries">
+            <br>
+        
+            <input name="generate" type="button" value="Enter Vlaues" onclick='createTable();' />
+            <br>
+
+            <!-- <input name="generate_graph" type="button" value="Create Graph" onclick='createGraph();' />
+            <br> -->
             
+            <div id="crete_table"></div>
+        
+            <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+        
+            <script>
+
+                function createTable() {
+                    var num_rows = document.getElementById('numofinput').value;
+                    var num_cols = 2;
+                    var theader = '<table border="1">\n';
+                    var tbody = '';
+
+                    for (var i = 0; i < num_rows; i++) {
+                        tbody += '<tr>';
+                        tbody += '<tr>';
+                        for (var j = 0; j < num_cols; j++) {
+                            tbody += '<td>';
+                            tbody += '<input type="text">'; // to display or type content
+                            tbody += '</td>'
+                        }
+                        tbody += '</tr>\n';
+                    }
+                    var tfooter = '</table>';
+                    document.getElementById('crete_table').innerHTML = theader + tbody + tfooter;
+                }
+
+            </script>
+        
+        
         </div>
 
+        
+
         </div>
+
         <div class="collapse" id="parallel">
             <h2 style="text-align: center;">Properties of Parallel Lines</h2>
             <br><br>
