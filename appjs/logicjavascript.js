@@ -2379,6 +2379,22 @@ function solvecircle() {
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
 
+function solvesemicircle() {
+    let radius = document.getElementById("semiradius").value;
+    let area = (3.14 * radius * radius)/2;
+    let Circumference = 3.14 * radius+2*radius;
+    let diameter = 2 * radius;
+    console.log(radius);
+    area = area.toPrecision(3);
+    Circumference = Circumference.toPrecision(3);
+    diameter = diameter.toPrecision(3);
+    document.getElementById("resultofareasemi").innerHTML = "\\[Area \\space of \\space SemiCircle = \\frac{ 3.14r^2}{2}\\ = " + area + "\\]";
+    document.getElementById("resultofcircumsemi").innerHTML = "\\[Circumference \\space of \\space Circle = \\ 3.14 r+2r \\ = " + Circumference + "\\]";
+    document.getElementById("resultofdiasemi").innerHTML = "\\[Diameter\\space of \\space Circle = " + diameter+"\\]";
+    renderMathInElement(document.getElementById("resultofareasemi"));
+    renderMathInElement(document.getElementById("resultofcircumsemi"));
+    renderMathInElement(document.getElementById("resultofdiasemi"));
+}
 function solvepent(){
     let side = document.getElementById("inputsidepent").value;
     let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;

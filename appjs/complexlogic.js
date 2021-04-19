@@ -409,6 +409,7 @@ function straincal()
    
 }
 document.getElementById("strainans").innerHTML= ans;
+<<<<<<< HEAD
 }
 
 function stresscalc()
@@ -510,4 +511,58 @@ function bpcal()
     }
     document.getElementById("bpans").innerHTML=ans;
 
+||||||| 7d5ea5c
+=======
+}
+
+function stresscalc()
+{
+    var b=document.getElementById("area").value;
+    var a=document.getElementById("strforce").value;
+    var c=document.getElementById("aunit").value;
+    var d=document.getElementById("funit").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values to obtain answer";
+    }
+    else{
+    if(c==='inch')
+    {
+        b=b/1550;
+    }
+    else if(c==="mm")
+    {
+        b=b/1000000;
+    }
+    else if(c==="cm")
+    {
+        b=b/10000;
+    }
+    else if(c==="ft")
+    {
+        b=b/10.764;
+    }
+
+    if(d==='gn')
+    {
+        a=a*1000000000;
+    }
+    else if(d==="kn")
+    {
+        a=a*1000;
+    }
+    else if(d==="mn")
+    {
+        a=a*1000000;
+    }
+
+    var stress=a/b;
+    ans="The calculated Stress is: "+stress +" Pa"+"<br> <br> <br>";
+
+    ans+="Stress is defined as “The restoring force per unit area of the material”. It is a tensor quantity. Denoted by Greek letter σ. Measured using Pascal or N/m2. Mathematically expressed as <br>    σ=F/A Where, <br>    F is the restoring force measured in Newton or N. <b>    A is the area of cross-section measured in m2. <br>    σ is the stress measured using N/m2 or Pa. <br>"
+}
+document.getElementById("stressans").innerHTML=ans;
+    
+>>>>>>> 1ed809aed6ea1bb152cebc2bebd7f7699d051afa
 }

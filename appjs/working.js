@@ -88,6 +88,7 @@ $(document).ready(function () {
         clearall();
     });
 
+<<<<<<< HEAD
     $("#bpmf").click(function () {
         openit("#bpmfs");
         closenav();
@@ -101,6 +102,15 @@ $(document).ready(function () {
         clearall();
     });
 
+||||||| 7d5ea5c
+=======
+    $("#sreslc").click(function () {
+        openit("#stresscalc");
+        closenav();
+        clearall();
+    });
+
+>>>>>>> 1ed809aed6ea1bb152cebc2bebd7f7699d051afa
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
