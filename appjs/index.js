@@ -193,6 +193,7 @@ function openit(id) {
         "#bt-collapse",
         "#bt-collapse1",
         "#pandc",
+        "#stresscalc",
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
