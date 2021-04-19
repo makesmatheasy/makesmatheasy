@@ -1693,7 +1693,23 @@ function perpendicularsolve(){
     }
 }
 
-
+function solvesection()
+{
+    var x1,y1,x2,y2,m,n;
+    x1=parseFloat(document.getElementById('x1').value);
+    y1=parseFloat(document.getElementById('y1').value);
+    x2=parseFloat(document.getElementById('x2').value);
+    y2=parseFloat(document.getElementById('y2').value);
+    m=parseFloat(document.getElementById('m').value);
+    n=parseFloat(document.getElementById('n').value);
+    var explain = document.getElementById("sec_formula");
+    explain.innerHTML = "\\[ \\space (x,\\space y) \\space = ( \\frac{mx2 \\space + \\space nx1}{m \\space + \\space n} , \\space \\frac{my2 \\space + \\space ny1}{m \\space + \\space n} ) \\space =" + " ( \\frac{" + m +"\\times" + x2 + "+" + n + "\\times" + x1 + "}{" + m + "+" + n + "}" + "," + "\\frac{" + m +"\\times" + y2 + "+" + n + "\\times" + y1 + "}{" + m + "+" + n + "} )" + "\\] ";
+    renderMathInElement(document.getElementById("sec_formula"));
+    var pt1 = (m*x2 + n *x1)/(m+n);
+    var pt2 = (m*y2 + n *y1)/(m+n);
+    document.getElementById('output').innerHTML= 'Point dividing (' + x1 + ',' + y1 + ') and (' + x2 + ',' + y2 + ') in the ratio ' + m + ':' + n + ' is (' + pt1 + ', ' + pt2 + ')' ;
+    
+}
 function solveocta() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
@@ -2399,6 +2415,22 @@ function solvecircle() {
     //renderMathInElement(document.getElementById("resultofdiameterc"));
 }
 
+function solvesemicircle() {
+    let radius = document.getElementById("semiradius").value;
+    let area = (3.14 * radius * radius)/2;
+    let Circumference = 3.14 * radius+2*radius;
+    let diameter = 2 * radius;
+    console.log(radius);
+    area = area.toPrecision(3);
+    Circumference = Circumference.toPrecision(3);
+    diameter = diameter.toPrecision(3);
+    document.getElementById("resultofareasemi").innerHTML = "\\[Area \\space of \\space SemiCircle = \\frac{ 3.14r^2}{2}\\ = " + area + "\\]";
+    document.getElementById("resultofcircumsemi").innerHTML = "\\[Circumference \\space of \\space Circle = \\ 3.14 r+2r \\ = " + Circumference + "\\]";
+    document.getElementById("resultofdiasemi").innerHTML = "\\[Diameter\\space of \\space Circle = " + diameter+"\\]";
+    renderMathInElement(document.getElementById("resultofareasemi"));
+    renderMathInElement(document.getElementById("resultofcircumsemi"));
+    renderMathInElement(document.getElementById("resultofdiasemi"));
+}
 function solvepent(){
     let side = document.getElementById("inputsidepent").value;
     let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
@@ -2933,6 +2965,50 @@ function tripyramidsolve() {
         tsaoutput.innerHTML = "";
         baseoutput.innerHTML = "";
         perioutput.innerHTML = "";      
+
+    }
+}
+//Octagonal pyramid
+function octpyramidsolve() {
+    var side = document.getElementById("inputoctpyramidside").value;
+    var height = document.getElementById("inputoctpyramidheight").value;
+    var baseoutput = document.getElementById("resultofoctbasepyramid");  
+    var voloutput = document.getElementById("resultofoctvolpyramid");
+    var tsaoutput = document.getElementById("resultofocttsapyramid");
+    var lsaoutput = document.getElementById("resultofoctlsapyramid");
+    var basetemp = "";
+    var voltemp = "";
+    var lsatemp = "";
+    var tsatemp = "";
+    if ((side != "") && (height != "")) {
+        basetemp += "\\[Base \\space Area \\space is \\space" + "\\]";
+        basetemp += "\\[" + 2 + "\\times" + side + "\\times" + side + "\\times" + " \\space cot(22.5 \\degree) \\space" + "=" + eval(String(4.83 * side * side)).toFixed(2) + "\\]";
+        baseoutput.innerHTML = basetemp;
+
+        voltemp += "\\[Volume \\space of \\space Octagonal \\space Pyramid \\space is \\space \\]";
+        voltemp += "\\[\\frac{2}{3} \\space "+ "\\times" + height + "\\times" + side + "\\times" + side + "\\times" + " \\space cot(22.5 \\degree) \\space" + "=" + eval(String(1.61 * height * side * side)).toFixed(2) +  "\\]";
+        voloutput.innerHTML = voltemp;
+        
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space" + "\\]";
+        lsatemp += "\\[" + 2 + "\\times" + side + "\\times" + " \\space \\sqrt( " + 4 + "\\times" + height + "\\times" + height+" \\space + \\space" + side + "\\times" +  "\\]";
+        lsatemp += "\\[" + side + "\\times" + " \\space cot^2(22.5 \\degree) \\space" + ") = " + eval(String(2 * side * math.sqrt( (4 * height * height) + (5.83 * side * side) ))).toFixed(2) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[Total \\space Surface \\space area \\space is \\space \\]";
+        tsatemp += "\\[" + 2 + "\\times" + side + "\\times" + " \\space \\sqrt( " + 4 + "\\times" + height + "\\times" + height+" \\space + \\space" + side + "\\times" + side + "\\times" + "\\]";
+        tsatemp += "\\[" + " \\space cot^2(22.5 \\degree) \\space" + ")" + "+" + side + "\\times" + " \\space cot(22.5 \\degree) \\space" + "=" + eval(String(2 * side * math.sqrt( (4 * height * height) + (5.83 * side * side) ) + 2.41 * side)).toFixed(2) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+       
+        renderMathInElement(baseoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(lsaoutput);
+
+    } else {
+        baseoutput.innerHTML = ""; 
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        lsaoutput.innerHTML = "";  
 
     }
 }
