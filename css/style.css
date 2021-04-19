@@ -322,8 +322,8 @@ h6 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 8vh;
   background: #ff299c;
+  margin-top: 8vh;
   height: 3.75rem;
   border-radius: 2.5rem;
   padding: 0.625rem;
@@ -605,4 +605,10 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+@media (max-width:420px) {
+  #box{
+     margin-right:11em; 
+  }
 }
