@@ -1177,6 +1177,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sosq"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Square of given number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Square','#sosqs','c','sumsqimgfav')"><img
+                                        id="sumsqimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -9608,7 +9625,23 @@
     
    
 </div>
+
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="sosqs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Square Calculator </h1>
+    <input type="text" name="ssq" class="form__field" id="ssq" placeholder="Enter number whose square's sum you want to find">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ssqcal()">Calculate</button> <p>&nbsp;</p>
+    <p id="ssqans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    
+    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Square : <br> <br> For two numbers : x2 + y2 = (x + y)2– 2ab ; x and y are real numbers <p>&nbsp;</p> For three numbers : x2 + y2+z2 = (x+y+z)2-2xy-2yz-2xz ; x,y and z are real numbers
+    <p>&nbsp;</p> For n Natural Numbers : Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p> For first n Even Numbers : Σ(2n)2 =[2n(n+1)(2n+1)]/3 <p>&nbsp;</p> For first n Odd Numbers : Σ(2n-1)2 = [n(2n+1)(2n-1)]/3
+    </div>
+   
+</div>
 
 <div class="collapse" id="arcs">
 

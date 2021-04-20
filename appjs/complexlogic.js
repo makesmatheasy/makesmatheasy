@@ -607,3 +607,42 @@ function arcal()
       document.getElementById("arcans").innerHTML=ans;
 
 }
+
+function ssqcal()
+{
+    var num=document.getElementById("ssq").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+
+    var sum=0;
+ 
+    for (i = 0; i < len; i++) {
+        console.log(number[i]);
+     }
+
+    for (i = 0; i < len; i++) {
+       sum=sum+(number[i]**2);
+    }
+    s="Your answer is: "+sum;
+    }
+
+    document.getElementById("ssqans").innerHTML=s;
+
+}

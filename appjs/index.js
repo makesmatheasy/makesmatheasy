@@ -142,6 +142,7 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+        "#sosqs",
         "#hydroz",
         "#straincalc",
         "#shapescal",

@@ -107,6 +107,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#sosq").click(function () {
+        openit("#sosqs");
+        closenav();
+        clearall();
+    });
+
     $("#arc").click(function () {
         openit("#arcs");
         closenav();
