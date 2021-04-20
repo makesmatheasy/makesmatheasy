@@ -3400,7 +3400,30 @@
                 </p>
             </div><br>
             <h4 class="text-center" id="line1"> </h4> <br>
-	    <h4 class="text-center" id="line2"> </h4> <br>
+	        <h4 class="text-center" id="line2"> </h4> <br>
+
+            <h3>Section Formula</h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="x1" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="y1" size=5 value='' placeholder="y1">)
+                    <br><br>
+                    Coordinate 2 = (<input type="text" id="x2" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="y2" size=5 value='' placeholder="y2">)
+                        <br><br>
+                    Ratio = (<input type="text" id="m" size=3 value='' placeholder="m"> , 
+                <input type="text" id="n" size=3 value='' placeholder="n">)
+                    <br>
+                        <br><br>    
+                <button type="button" class="btn btn-light" onclick=solvesection()>
+                    Calculate
+                </button><br>
+                </p>
+            </div><br>
+            <p id="sec_formula" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <p  id="output"> </p> <br>
             
         </div>
         <div class="collapse" id="vecalg">
@@ -8839,6 +8862,11 @@
                                         style="text-decoration:none;"
                                         href="#">Hexagonal Pyramid</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#octpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Octagonal Pyramid</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -13596,7 +13624,6 @@
                 </div>
             </div>
         </div>
-
         <div class="modal fade" id="pentpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -13728,8 +13755,72 @@
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofhexlsapyramid"
                                 style="font-family:mathfont;"></p>
-
-                        </div>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="octpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Octagonal Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                  <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[BA = 2s^2 \space cot(22.5 \degree)\]</p>
+                                    <p class="text-center">s = side</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{2}{3} \space hs^2 \space cot(22.5 \degree) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[TSA = 2s \space (\sqrt{4h^2 + s^2 \space cot^2(22.5 \degree)} \space + \space \]</p>
+                                    <p class="text-center">\[s \space cot(22.5 \degree)\space)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA = 2s \sqrt{4h^2 + s^2 \space cot^2(22.5 \degree)} \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/octpyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of octagon(s)" id="inputoctpyramidside"
+                                   oninput="octpyramidsolve();">    
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height of octagon pyramid(h)" id="inputoctpyramidheight"
+                                   oninput="octpyramidsolve();">
+                            <p class="stopwrap" id="resultofoctbasepyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofoctvolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofocttsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofoctlsapyramid"
+                               style="font-family:mathfont;"></p>
+                          </div>
                         <!-- ------HERE------ -->
                     </div>
                     <div class="modal-footer">
