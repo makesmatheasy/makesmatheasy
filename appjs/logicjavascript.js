@@ -2451,6 +2451,20 @@ function solvehex(){
 
 }
 
+//created function for Octagon
+function solveoct(){
+    let side = document.getElementById("inputsideoct").value;
+    let area = 2 * (1 + math.sqrt(2)) * side**2 ;
+    let perimeter = 8 * side;
+    document.getElementById("resultofareaoct1").innerHTML = "\\[Area \\space of \\space Octagon \\space \\]";
+    document.getElementById("resultofareaoct2").innerHTML = "\\[2 \\times (1 + \\sqrt{2}) \\times "+side+"^2 = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeteroct").innerHTML = "\\[Perimeter \\space of \\space Octagon \\space \\space  8 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareaoct1"));
+    renderMathInElement(document.getElementById("resultofareaoct2"));
+    renderMathInElement(document.getElementById("resultofperimeteroct"));
+
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
