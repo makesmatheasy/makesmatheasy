@@ -101,6 +101,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#impfix").click(function () {
+        openit("#impfixs");
+        closenav();
+        clearall();
+    });
+
     $("#segcal").click(function () {
         openit("#segcals");
         closenav();

@@ -1662,6 +1662,7 @@
                     </tr>
                 </table>
             </li>
+            
             <li>
                 <table class="table">
                     <tr>
@@ -1673,6 +1674,22 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Unit Convertor','#unitconcal','c','unitimgfav')"><img
                                         id="unitimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="impfix"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Improper to Mixed Fraction</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Improper to Mixed','#impfixs','c','miximgfav')"><img
+                                        id="miximgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -9644,6 +9661,20 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="impfixs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">IMPROPER TO MIXED FRACTION CONVERTER</h1>
+    <input type="number" name="num" class="form__field" id="num" width="5em" placeholder="Enter numerator of fraction">
+    <p>&nbsp;</p>
+    <input type="number" name="den" class="form__field" id="den" placeholder="Enter denominator of fraction">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="impcal()">CONVERT</button>
+    <p id="impans" style="color: white; text-align: center; font-family:mathfont;"></p>
+    
+   
+</div>
 
 <div class="collapse" id="sosqs">
 

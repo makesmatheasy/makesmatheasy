@@ -136,6 +136,7 @@ function openit(id) {
         "#complexidentities",
         "#complexproperties",
         "#theo",
+        "#impfixs",
         "#equationssolver",
         "#mulsolwithsteps",
         "#secarea",
