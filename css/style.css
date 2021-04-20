@@ -306,7 +306,7 @@ h6 {
   width: 0rem;
 }
 .searchbtn {
-  background: #ff299c;
+  background:azure;
   color: #f1faee;
   border-radius: 50%;
   float: right;
@@ -322,7 +322,7 @@ h6 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #ff299c;
+  background: azure;
   margin-top: 8vh;
   height: 3.75rem;
   border-radius: 2.5rem;
@@ -348,7 +348,7 @@ h6 {
   letter-spacing: 0.125rem;
   width: 100%;
   border: 0;
-  border-bottom: 0.0625rem solid var(--appimage);
+  /* border-bottom: 0.0625rem solid var(--appimage); */
   outline: 0;
   color: var(--appimage);
   padding: 0.4375rem 0;
