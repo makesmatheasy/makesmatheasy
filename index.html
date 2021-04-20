@@ -4906,8 +4906,84 @@
                     \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space
                     \mathcal{L}\{f^n(t)\} \space = \space s^n \mathcal{L}\{f(t)\} - s^{n-1}f(0)
                     - s^{n-2}f'(0) - s^{n-3}f''(0) - s^{n-4}f'''(0)-...\]
+			
+		<h3> Table of Inverse Laplace Transforms</h3>
+                    <table class="table table-bordered table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">\[F(s)\]</th>
+                            <th scope="col">\[\mathcal{L}^{-1}\{F(s)\}\]</th>
+                            <th scope="col">\[F(s)\]</th>
+                            <th scope="col">\[\mathcal{L}^{-1}\{F(s)\}\]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s}\]</td>
+                            <td>\[1\]</th>
+                            <td>\[\frac{1}{s^n}, \space n=1,2,3...\]</td>
+                            <td>\[\frac{t^{n-1}}{(n-1)!}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s+a}\]</th>
+                            <td>\[e^{-at}\]</td>
+                            <th scope="row">\[\frac{1}{s-a}\]</th>
+                            <td>\[e^{at}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s^2+a^2}\]</th>
+                            <td>\[\frac{sin(at)}{a}\]</td>
+                            <td>\[\frac{s}{s^2+a^2}\]</td>
+                            <td>\[cos(at)\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s^2-a^2}\]</th>
+                            <td>\[\frac{sinh(at)}{a}\]</td>
+                            <td>\[\frac{s}{s^2-a^2}\]</td>
+                            <td>\[cosh(at)\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{(s^2+a^2)^2}\]</th>
+                            <td>\[\frac{sin(at)-atcos(at)}{2a^3}\]</td>
+                            <td>\[\frac{s}{(s^2+a^2)^2}\]</td>
+                            <td>\[\frac{tsin(at)}{2a}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s^2}{(s^2+a^2)^2}\]</th>
+                            <td>\[\frac{sin(at)+atcos(at)}{2a}\]</td>
+                            <td>\[\frac{s^3}{(s^2+a^2)^2}\]</td>
+                            <td>\[cos(at) - \frac{1}{2}atsin(at)\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s^2-a^2}{(s^2+a^2)^2}\]</th>
+                            <td>\[tcos(at)\]</td>
+                            <td>\[\frac{1}{(s^2-a^2)^2}\]</td>
+                            <td>\[\frac{atcosh(at)-sinh(at)}{2a^3}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s}{(s^2-a^2)^2}\]</td>
+                            <td>\[\frac{tsinh(at)}{2a}\]</td>
+                            <td>\[\frac{s^2}{(s^2-a^2)^2}\]</td>
+                            <td>\[\frac{atcosh(at)+sinh(at)}{2a}\]</td>
 
-
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s^3}{(s^2-a^2)^2}\]</td>
+                            <td>\[cosh(at) + \frac{1}{2}atsinh(at)\]</td>
+                            <td>\[\frac{s^2+a^2}{(s^2-a^2)^2}\]</th>
+                            <td>\[tcosh(at)\]</td>
+                        </tr>    
+    
+                        </tbody>
+                    </table>
+                    <br>
             </div>
         </div>
         <!-- Complex Identities -->
