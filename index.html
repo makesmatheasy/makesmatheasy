@@ -246,6 +246,24 @@
 
 
 <body class="readonlybody hidescroll" onload="bodyload()">
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        var options = {
+            bottom: '64px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '32px', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: 'red', // default: '#fff'
+            backgroundColor: '#232A36',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓' // default: ''
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
 <div class="blink-1 javascriptno" style="display:none;">
     <p>
         <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
@@ -2553,10 +2571,6 @@
         </li>
         <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
                                        style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
-        <li class="list_menu_items"><a class="toggle"
-                                       style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
-                                       onclick="myFunction()">Change Mode
-            <span id="moon" style="font-size: 1.25rem;">🌓</span></a></li>
         <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
             Math Easy. All Rights Reserved.
         </li>
