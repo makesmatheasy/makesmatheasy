@@ -8167,24 +8167,34 @@
         <div class="collapse" id="plotbargraph">
         
             <input type="number" class="form__field" id="numofinput" placeholder="Enter The Number Of Entries">
-            <br>
-        
+            <br><br>
+            <center>
             <input name="generate" type="button" value="Enter Vlaues" onclick='createTable();' />
+            </center>
+            <br><br>
+
+            <div id="crete_table"></div>
+
+             <center>
+            <input name="generate_graph" type="button" value="Create Graph" onclick='create_graph();' />
+            </center>
             <br>
 
-            <!-- <input name="generate_graph" type="button" value="Create Graph" onclick='createGraph();' />
-            <br> -->
-            
-            <div id="crete_table"></div>
+            <div id="array"></div>
+
+
+            <div id="graph" style="width: 100%; height: 100%"></div>
         
             <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         
             <script>
 
                 function createTable() {
                     var num_rows = document.getElementById('numofinput').value;
                     var num_cols = 2;
-                    var theader = '<table border="1">\n';
+                    var theader = '<table border="1" id = "data_table">\n';
                     var tbody = '';
 
                     for (var i = 0; i < num_rows; i++) {
@@ -8199,6 +8209,69 @@
                     }
                     var tfooter = '</table>';
                     document.getElementById('crete_table').innerHTML = theader + tbody + tfooter;
+                }
+
+                function save_data() {
+
+                    // var TableData = new Array();
+                    // $('#crete_table tr').each(function (row, tr) {
+                    //     TableData[row] = {
+                    //         "sample1": $(tr).find('td:eq(0)'),
+                    //         "sample2": $(tr).find('td:eq(1)'),
+                    //         "sample3": $(tr).find('td:eq(2)')
+                    //     } //tableData[row]
+                    // });
+
+                     var convertedIntoArray = [];
+                    $("#data_table tr").each(function () {
+                        var rowDataArray = [];
+                        var actualData = $(this).find('td');
+                        if (actualData.length > 0) {
+                            actualData.each(function () {
+                                rowDataArray.push($(this).text());
+                            });
+                            convertedIntoArray.push(rowDataArray);
+                        }
+                    });
+
+                    document.getElementById('array').innerHTML = convertedIntoArray;
+
+                    return(convertedIntoArray);
+
+                    //  return TableData;
+
+
+                }
+
+                function create_graph()
+                {
+                    row1 = save_data();
+                    console.log(row1);
+
+                    anychart.onDocumentReady(function () {
+                        // the code to create a chart will be here
+                        // the data 
+                        var data = {
+                            header: ["Y_axis", "X_axis"],
+                            rows: row1
+                         };
+
+                        // create the chart
+                        var chart = anychart.column();
+
+                        // add the data
+                        chart.data(data);
+                        // set the chart title
+                        chart.title("The Graph Is :");
+
+                        // draw
+                        document.getElementById('graph').innerHTML = "";
+                        chart.container("graph");
+                        chart.draw();
+
+
+                    });
+
                 }
 
             </script>
