@@ -1709,7 +1709,28 @@ function solveocta() {
     }
 }
 
+function coordinatearea(){
+    var x1,y1,x2,y2,x3,y3;
+    x1=parseFloat(document.getElementById('x1s').value);
+    y1=parseFloat(document.getElementById('y1s').value);
+    x2=parseFloat(document.getElementById('x2s').value);
+    y2=parseFloat(document.getElementById('y2s').value);
+    x3=parseFloat(document.getElementById('x3s').value);
+    y3=parseFloat(document.getElementById('y3s').value);
+    var areaop = document.getElementById("areaoutput");
+    var explain = document.getElementById("formula1");
+   // explain.innerHTML = "\\[Area \\space  =\\space  \\frac{1}{2}| \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
+   // renderMathInElement(document.getElementById("formula"));
+    var area= Math.abs(((x1*y2) - (x1*y3) + (x2*y3) - (x2*y1) + (x3*y1)- (x3*y2))/2);
+    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="")){
+        areaop.innerHTML = "\\[Area \\space = \\space " + area + "\\space sq. \\space units" +"\\]";
+        renderMathInElement(document.getElementById("areaoutput"));
+        explain.innerHTML = "\\[Formula \\space  =\\space  \\frac{1}{2}| \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
+        renderMathInElement(document.getElementById("formula1"));
+        
+    }
 
+}
 
 //-----------------------------------------------------
 //shapes calculator
