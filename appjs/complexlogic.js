@@ -646,3 +646,32 @@ function ssqcal()
     document.getElementById("ssqans").innerHTML=s;
 
 }
+var toDegree = function (radians) {
+    return radians * (180 / Math.PI);
+}
+function segcal()
+{
+    var a=document.getElementById("segr").value;
+    var b=document.getElementById("sega").value;
+    var c=document.getElementById("angseg").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Enter all the values to obtain answer";
+    }
+    else{
+
+    if(c=="degree")
+    {
+        b=b/57.296;
+    }
+   console.log(Math.sin(b));
+   var t=Math.sin(b);
+   var area= a*a*(b-t)*0.5
+    ans="The area of segment is: "+area;
+}
+document.getElementById("segans").innerHTML=ans;
+
+
+
+}
