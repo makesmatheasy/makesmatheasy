@@ -88,11 +88,31 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#bpmf").click(function () {
+        openit("#bpmfs");
+        closenav();
+        clearall();
+    });
+
+
     $("#sreslc").click(function () {
         openit("#stresscalc");
         closenav();
         clearall();
     });
+
+    $("#ssst").click(function () {
+        openit("#ssts");
+        closenav();
+        clearall();
+    });
+
+    $("#arc").click(function () {
+        openit("#arcs");
+        closenav();
+        clearall();
+    });
+
 
     $("#ex3btn").click(function () {
         openit("#ex3");
@@ -444,13 +464,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     // I have added
-     $("#factorialbtn").click(function () {
+    $("#factorialbtn").click(function () {
         openit("#factorial");
         closenav();
         clearall();
     });
-
+    $("#parabbtn").click(function () {
+        openit("#parab");
+        closenav();
+        clearall();
+    });
     // Permutation and combination
     $("#pandcbtn").click(function () {
         openit("#pandc");
@@ -664,6 +687,12 @@ $(document).ready(function () {
 
     $("#gstbtn").click(function(){
         openit("#gstcal");
+        closenav();
+        clearall();
+    });
+
+    $("#degbtn").click(function(){
+        openit("#degcal");
         closenav();
         clearall();
     });
