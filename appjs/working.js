@@ -464,13 +464,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     // I have added
-     $("#factorialbtn").click(function () {
+    $("#factorialbtn").click(function () {
         openit("#factorial");
         closenav();
         clearall();
     });
-
+    $("#parabbtn").click(function () {
+        openit("#parab");
+        closenav();
+        clearall();
+    });
     // Permutation and combination
     $("#pandcbtn").click(function () {
         openit("#pandc");
