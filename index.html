@@ -8199,9 +8199,8 @@
 
                     for (var i = 0; i < num_rows; i++) {
                         tbody += '<tr>';
-                        tbody += '<tr>';
                         for (var j = 0; j < num_cols; j++) {
-                            tbody += '<td>';
+                            tbody += '<td class="values" >';
                             tbody += '<input type="text">'; // to display or type content
                             tbody += '</td>'
                         }
@@ -8213,28 +8212,23 @@
 
                 function save_data() {
 
-                    // var TableData = new Array();
-                    // $('#crete_table tr').each(function (row, tr) {
-                    //     TableData[row] = {
-                    //         "sample1": $(tr).find('td:eq(0)'),
-                    //         "sample2": $(tr).find('td:eq(1)'),
-                    //         "sample3": $(tr).find('td:eq(2)')
-                    //     } //tableData[row]
-                    // });
-
-                     var convertedIntoArray = [];
-                    $("#data_table tr").each(function () {
+                    var convertedIntoArray = [];
+                    let values = document.getElementsByClassName('values');
+                    $("values").each(function () 
+                    {
                         var rowDataArray = [];
                         var actualData = $(this).find('td');
                         if (actualData.length > 0) {
                             actualData.each(function () {
                                 rowDataArray.push($(this).text());
+                                console.log(this);
                             });
                             convertedIntoArray.push(rowDataArray);
                         }
                     });
 
-                    document.getElementById('array').innerHTML = convertedIntoArray;
+                    document.getElementById('array').innerHTML = values;
+                    console.log(values);
 
                     return(convertedIntoArray);
 
