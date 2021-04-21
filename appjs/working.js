@@ -744,6 +744,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#fourier_seriescollapsebtn").click(function(){
+        openit("#fourier_series");
+        closenav();
+        clearall();
+    });
+
 })
 
     function loader(action) {

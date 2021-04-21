@@ -271,7 +271,8 @@ function openit(id) {
         "#analytical",
         "#ellipsoid",
         "#expo",
-        "#setformula"
+        "#setformula",
+        "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
