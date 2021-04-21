@@ -3075,6 +3075,17 @@ function tripyramidsolve() {
 
     }
 }
+
+function centsolve(){
+    var x1 = parseInt(document.getElemnentById("x1st").value)
+    var y1 = parseInt(document.getElemnentById("y1st").value)
+    var x2 = parseInt(document.getElemnentById("x2nd").value)
+    var y2 = parseInt(document.getElemnentById("y2nd").value)
+    var x3 = parseInt(document.getElemnentById("x3rd").value)
+    var y3 = parseInt(document.getElemnentById("y3rd").value)
+    var xans = (x1+x2+x3)/3
+    var yans = (y1+y2+y3)/3
+    document.getElementById("apk").innerHTML = xans + "," + yans
 //Octagonal pyramid
 function octpyramidsolve() {
     var side = document.getElementById("inputoctpyramidside").value;
