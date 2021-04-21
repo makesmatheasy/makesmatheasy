@@ -50,6 +50,11 @@ $(document).ready(function () {
         closenav();
     });
     
+    $("#stbut").click(function () {
+        openit("#setcal");
+        closenav();
+    });
+
     $("#leapyearbtn").click(function () {
         openit("#lyear");
         closenav();

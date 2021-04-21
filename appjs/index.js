@@ -264,6 +264,7 @@ function openit(id) {
         "#frustum",
         "#annulus",
         "#cosine",
+        "#setcal",
 	    "#ip",
 	    "#prices",
         "#percal",
