@@ -140,6 +140,8 @@ function openit(id) {
         "#mulsolwithsteps",
         "#secarea",
         "#table",
+        "#ssts",
+        "#arcs",
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -159,6 +161,7 @@ function openit(id) {
         "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
+        "#parab",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
@@ -202,6 +205,7 @@ function openit(id) {
         "#multiplying-all",
 		"#onetwocom-calc",
         "#3dgeo",
+        "#bpmfs",
         "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
@@ -265,6 +269,7 @@ function openit(id) {
         "#percal",
         "#lyear",
         "#analytical",
+        "#ellipsoid",
         "#expo",
         "#setformula"
     ];

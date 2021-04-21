@@ -451,7 +451,25 @@ ul li .table {
   color: white;
 }
 
+#euclid p{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#euclid li{
+  color: white;
+  list-style: none;
+  text-align: center;
+} 
+#euclid img{
+  display: block;
+  margin: 0 auto;
+}
+
 /*light mode*/
+
+.light-mode #euclid li{
+  color: black !important;
+}
 
 .light-mode .table td a {
   color: var(--apppimage) !important;
