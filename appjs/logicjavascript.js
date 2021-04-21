@@ -6019,7 +6019,14 @@ function Mode() {
         }
     }
 }
-
+function hypf(){
+    var hypa = parseInt(document.getElementById("hypa").value)
+    var hypb = parseInt(document.getElementById("hypb").value)
+    var hyph = parseInt(document.getElementById("hyph").value)
+    var ans1 = (2*3.14*hyph*hypa*hypa)/(hypb*hypb)
+    var ans = ans1*(hypb*hypb + ((hyph*hyph)/3))
+    document.getElementById("hypans").innerHTML = "The volume is " + ans
+}
 //Mode end
 //Variance
 function Variance() {
@@ -7400,4 +7407,4 @@ function ran(x,y,z)
         }
     }
     return c;
-}
+}}
