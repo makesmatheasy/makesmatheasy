@@ -451,7 +451,25 @@ ul li .table {
   color: white;
 }
 
+#euclid p{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#euclid li{
+  color: white;
+  list-style: none;
+  text-align: center;
+} 
+#euclid img{
+  display: block;
+  margin: 0 auto;
+}
+
 /*light mode*/
+
+.light-mode #euclid li{
+  color: black !important;
+}
 
 .light-mode .table td a {
   color: var(--apppimage) !important;
@@ -605,4 +623,10 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+@media (max-width:420px) {
+  #box{
+     margin-right:11em; 
+  }
 }
