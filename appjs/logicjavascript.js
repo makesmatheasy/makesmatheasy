@@ -1411,6 +1411,17 @@ function fp(){
     }
 }
 
+function parapipe(){
+    var a1st = parseInt(document.getElementById("a1st").value)
+    var b1st = parseInt(document.getElementById("b1st").value)
+    var c1st = parseInt(document.getElementById("c1st").value)
+    var vol = a1st*b1st*c1st
+    var sa = 2(a1st*b1st + b1st*c1st + c1st*a1st)
+    var diag = Math.sqrt(a1st*a1st + b1st*b1st + c1st*c1st)
+    document.getElementById("volparapipe").innerHTML = "The volume is " + vol
+    document.getElementById("saparapipe").innerHTML = "The volume is " + sa
+    document.getElementById("diagparapipe").innerHTML = "The volume is " + diag
+}
 function findsecarea(){
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
