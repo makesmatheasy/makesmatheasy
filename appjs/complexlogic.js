@@ -409,6 +409,7 @@ function straincal()
    
 }
 document.getElementById("strainans").innerHTML= ans;
+
 }
 
 function stresscalc()
@@ -460,4 +461,149 @@ function stresscalc()
 }
 document.getElementById("stressans").innerHTML=ans;
     
+}
+
+function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+      for(var i = n; i >= 1; i--){
+        answer = answer * i;
+      }
+      return answer;
+    }  
+  }
+  
+function bpcal()
+{
+    var a=document.getElementById("psuc").value;
+    var b=document.getElementById("suc").value;
+    var c=document.getElementById("tri").value;
+    var ans="";
+
+   
+    if(a==""||b==""||c=="")
+    {
+        ans="Input Error: Please enter all the values to obtain required answer";
+    }
+    else if(a>1)
+    {
+        ans="Input Error: Probability can't be greater than 1";
+    }
+    else if(b>c)
+    {
+        ans="Input Error: Successful events can't be greater than total number of trials.";
+    }
+   
+    else{
+
+        var pmf= factorial(c) / (factorial(b) * factorial(c-b));
+        console.log(pmf);
+        var n=Math.pow(a,b);
+        var s=1-a, t=c-b;
+        var m=Math.pow(s,t);
+        pmf=pmf*n*m;
+        pmf=pmf.toPrecision(5)
+        ans="The PMF is: " +pmf;
+    }
+    document.getElementById("bpans").innerHTML=ans;
+
+
+}
+
+function stresscalc()
+{
+    var b=document.getElementById("area").value;
+    var a=document.getElementById("strforce").value;
+    var c=document.getElementById("aunit").value;
+    var d=document.getElementById("funit").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values to obtain answer";
+    }
+    else{
+    if(c==='inch')
+    {
+        b=b/1550;
+    }
+    else if(c==="mm")
+    {
+        b=b/1000000;
+    }
+    else if(c==="cm")
+    {
+        b=b/10000;
+    }
+    else if(c==="ft")
+    {
+        b=b/10.764;
+    }
+
+    if(d==='gn')
+    {
+        a=a*1000000000;
+    }
+    else if(d==="kn")
+    {
+        a=a*1000;
+    }
+    else if(d==="mn")
+    {
+        a=a*1000000;
+    }
+
+    var stress=a/b;
+    ans="The calculated Stress is: "+stress +" Pa"+"<br> <br> <br>";
+
+    ans+="Stress is defined as “The restoring force per unit area of the material”. It is a tensor quantity. Denoted by Greek letter σ. Measured using Pascal or N/m2. Mathematically expressed as <br>    σ=F/A Where, <br>    F is the restoring force measured in Newton or N. <b>    A is the area of cross-section measured in m2. <br>    σ is the stress measured using N/m2 or Pa. <br>"
+}
+document.getElementById("stressans").innerHTML=ans;
+    
+
+}
+
+function arcal()
+{
+      var a=document.getElementById("ang").value;
+      var b=document.getElementById("rad").value;
+      var y=document.getElementById("radit").value;
+      var d=document.getElementById("angit").value;
+      var ans="";
+      if(a==""||b=="")
+      {
+          ans="Error: All values are required to obtain answer";
+      }
+      else
+      {
+
+        if(d=="degree")
+        {
+            b/=57.296;
+        }
+
+
+        var c= a*b;
+
+        if(y=="cm")
+        {
+            c=c/100;
+        }
+        else if(y=="mm")
+        {
+            c=c/1000;
+        }
+        else if(y=="inch")
+        {
+              c=c/0.0254;
+        }
+      
+        var k=c.toPrecision(5);
+
+             ans="The arc length is: "+k+" m";
+      }
+
+      document.getElementById("arcans").innerHTML=ans;
+
 }

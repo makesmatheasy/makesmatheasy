@@ -88,11 +88,31 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#bpmf").click(function () {
+        openit("#bpmfs");
+        closenav();
+        clearall();
+    });
+
+
     $("#sreslc").click(function () {
         openit("#stresscalc");
         closenav();
         clearall();
     });
+
+    $("#ssst").click(function () {
+        openit("#ssts");
+        closenav();
+        clearall();
+    });
+
+    $("#arc").click(function () {
+        openit("#arcs");
+        closenav();
+        clearall();
+    });
+
 
     $("#ex3btn").click(function () {
         openit("#ex3");
