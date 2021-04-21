@@ -8742,6 +8742,11 @@
                     <td><a data-toggle="modal" data-target="#hexagon"
                            style="text-decoration:none;"
                            href="#">Hexagon</a></td>
+                </tr>   
+                <tr>
+                    <td><a data-toggle="modal" data-target="#octagon"
+                           style="text-decoration:none;"
+                           href="#">Octagon</a></td>
                 </tr>            
             </table>
         </div>
@@ -12976,6 +12981,57 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="octagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Octagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 2 (1 + \sqrt{2}) a^2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 8 \times a \]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/octagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsideoct"
+                               oninput="solveoct()">
+                        <p class="stopwrap" id="resultofareaoct1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareaoct2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeteroct"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--shapes end-->
 
