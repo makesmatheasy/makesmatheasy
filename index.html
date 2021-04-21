@@ -12026,14 +12026,28 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle">
+                                    <h5 class="text-center">Area of Circular Sector</h5>
+                                    <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/sector.PNG" style="height:9.375rem"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle (Radian)">
                                     <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <br><br>
                                     <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
-                                    <p id="secans"></p>
+                                    <br><br>
+                                    <p class="stopwrap" id="secans1"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="secans2"
+                                    style="font-family:mathfont;"></p>
                                 </div>
                             </div>
                         </div>
