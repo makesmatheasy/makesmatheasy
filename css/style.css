@@ -44,7 +44,10 @@ html {
   padding-bottom: 70%;
   padding-top: 1.5em;
 }
-
+.qcontainer {
+  padding-bottom: 54%;
+  padding-top: 1.5em;
+}
 .main{
   width:50%;
   float:left;

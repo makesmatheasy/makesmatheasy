@@ -245,6 +245,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("propquadbtn").click(function () {
+        openit("#propquad");
+        closenav();
+        clearall();
+    })
     $("#theobtn").click(function () {
         openit("#theo");
         closenav();
