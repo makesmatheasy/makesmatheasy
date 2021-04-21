@@ -1242,6 +1242,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="stbut"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Set calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Set calculator ','#setcal','c','setimgfav')"><img
+                                        id="setimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -9173,6 +9190,64 @@
 
         <!-- Date Calculator End-->
         <!-------------------------------------------------------->
+
+        <div class="collapse" id="setcal">
+           
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>First Set</h5>
+                        <input type="text" value="0 1" class="form__field"
+                               id="first-set"
+                               >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Operation</h5>
+                        <select id="set-operation" class="form__field">
+                            <option class="form__field" style="background-color: #232a36;">
+                                Union
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Intersection
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Difference
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Second Set</h5>
+                        <input type="text" value="2 3" class="form__field"
+                               id="second-set">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="setcal()">
+                            Find
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5>Result</h5>
+                        <label class="form__field" id="set-result">{}</label>
+                    </div>
+                </div>
+            </div>
+        </div> 
 
         <div class="collapse" id="unitconcal">
             <h2>Unit Convertor</h2>

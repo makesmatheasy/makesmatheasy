@@ -979,6 +979,41 @@ function lcmsol(input) {
 //lcm
 //-----------------------------------------------------
 
+function setcal() {
+    var s1 = document.getElementById("first-set").value;
+    var s2 = document.getElementById("second-set").value;
+    var s3 = document.getElementById("set-operation").value;
+    var a1 = s1.split(" ");
+    var a2 = s2.split(" ");
+    var e1 = new Set(a1);
+    var e2 = new Set(a2);
+    if(s3=="Union")
+    {
+        var re =new Set([...e1, ...e2]);
+        document.getElementById("set-result").innerHTML = [...re].join(' ') ;
+    }
+    if(s3=="Intersection")
+    {
+
+        var re = new Set();
+   
+        for (var elem of e1) {
+            if (e2.has(elem)) {
+                re.add(elem);
+             }
+        }
+        document.getElementById("set-result").innerHTML = [...re].join(' ') ;
+    }
+    if(s3=="Difference")
+    {
+        var re = new Set(e1);
+        for (var elem of e2) {
+            re.delete(elem);
+        }
+        document.getElementById("set-result").innerHTML = [...re].join(' ') ;
+    }
+}
+
 //-----------------------------------------------------
 //check for set value buttons
 function checkforusetrigovalue() {
@@ -7400,4 +7435,5 @@ function ran(x,y,z)
         }
     }
     return c;
+}
 }
