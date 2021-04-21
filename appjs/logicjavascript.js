@@ -1817,11 +1817,26 @@ function solvetetra() {
 
 function pythtriple(){
     var num = parseInt(document.getElementById("nom").value)
-    var nums = parseInt(num*num)
-    var les = parseInt(2*num -1)
-    var more = parseInt(2*num +1)
-    document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+    if (num%2==0){
+        
+        var nums = parseInt(num)
+        var les = parseInt((num/2)**2 -1)
+        var more = parseInt((num/2)**2 +1)
+        document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+    } else{
+
+        var nums = parseInt(num)
+        var les1 =((num*num)/2) -0.5;
+        console.log(les1);
+        var les = parseInt(les1)
+        var more1 = ((num*num)/2) +0.5;
+        console.log(more1);
+        var more = parseInt(more1)
+        document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+
+    }
 }
+
 function equilateraltrianglearea() {
     var side = document.getElementById("equilateraltriangleside").value;
     var areaoutput = document.getElementById("equilateraltrianglearea");
