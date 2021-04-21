@@ -2511,6 +2511,20 @@ function solvepent(){
 
 }
 
+//created function for Decagon
+function solvedeca(){
+    let side = document.getElementById("inputsidedeca").value;
+    let area = 2.5 * side**2  * math.sqrt(5 + (2 * math.sqrt(5)));
+    let perimeter = 10 * side;
+    document.getElementById("resultofareadeca1").innerHTML = "\\[Area \\space of \\space Decagon \\space \\]";
+    document.getElementById("resultofareadeca2").innerHTML = "\\[\\frac{5}{2} \\times"+side+"^2 \\sqrt(5 + 2\\sqrt{5}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterdeca").innerHTML = "\\[Perimeter \\space of \\space Decagon \\space \\space  10 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareadeca1"));
+    renderMathInElement(document.getElementById("resultofareadeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterdeca"));
+
+}
+
 //created function for Hexagon
 function solvehex(){
     let side = document.getElementById("inputsidehex").value;
