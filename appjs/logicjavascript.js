@@ -1727,6 +1727,29 @@ function solvesection()
     
 }
 
+
+function circumsolve(){
+    var x1,y1,x2,y2,x3,y3,A,B,C;
+    x1=parseFloat(document.getElementById('X1st').value);
+    y1=parseFloat(document.getElementById('Y1st').value);
+    x2=parseFloat(document.getElementById('X2st').value);
+    y2=parseFloat(document.getElementById('Y2st').value);
+    x3=parseFloat(document.getElementById('X3st').value);
+    y3=parseFloat(document.getElementById('Y3st').value);
+    A=parseFloat(document.getElementById('angleA').value);
+    B=parseFloat(document.getElementById('angleB').value);
+    C=parseFloat(document.getElementById('angleC').value);
+    var circenterop = document.getElementById("cir_output");
+    var explain = document.getElementById("cirformula");
+    var c1 = (((x1*Math.sin(2*A* Math.PI / 180.0))+(x2*Math.sin(2*B* Math.PI / 180.0))+(x3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
+    var c2 = (((y1*Math.sin(2*A* Math.PI / 180.0))+(y2*Math.sin(2*B* Math.PI / 180.0))+(y3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
+    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (A!="") && (B!="") && (C!="")){
+        circenterop.innerHTML = "\\[Circumcenter \\space = \\space (" + eval(String(c1)) + "," + eval(String(c2)) + ")"  +"\\]";
+        renderMathInElement(document.getElementById("cir_output"));
+        explain.innerHTML = "\\[Formula \\space (x, \\space y) \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
+        renderMathInElement(document.getElementById("cirformula"));
+    }
+}
 function incentersolve(){
     var x1,y1,x2,y2,x3,y3,a,b,c;
     x1=parseFloat(document.getElementById('X1').value);
