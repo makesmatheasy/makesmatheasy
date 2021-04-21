@@ -267,6 +267,7 @@ function openit(id) {
         "#percal",
         "#lyear",
         "#analytical",
+        "#ellipsoid",
         "#expo",
         "#setformula"
     ];
