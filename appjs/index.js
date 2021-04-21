@@ -171,6 +171,7 @@ function openit(id) {
         "#algebraic-idencollapse",
         "#about",
         "#propcircle",
+        "#propquad",
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
