@@ -1726,6 +1726,28 @@ function solvesection()
     document.getElementById('output').innerHTML= 'Point dividing (' + x1 + ',' + y1 + ') and (' + x2 + ',' + y2 + ') in the ratio ' + m + ':' + n + ' is (' + pt1 + ', ' + pt2 + ')' ;
     
 }
+
+function incentersolve(){
+    var x1,y1,x2,y2,x3,y3,a,b,c;
+    x1=parseFloat(document.getElementById('X1').value);
+    y1=parseFloat(document.getElementById('Y1').value);
+    x2=parseFloat(document.getElementById('X2').value);
+    y2=parseFloat(document.getElementById('Y2').value);
+    x3=parseFloat(document.getElementById('X3').value);
+    y3=parseFloat(document.getElementById('Y3').value);
+    a=parseFloat(document.getElementById('ina').value);
+    b=parseFloat(document.getElementById('inb').value);
+    c=parseFloat(document.getElementById('inc').value);
+    var incenterop = document.getElementById("in_output");
+    var explain = document.getElementById("informula");
+    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (a!="") && (b!="") && (c!="")){
+        incenterop.innerHTML = "\\[Incenter \\space = \\space (" + eval(String(((a*x1)+(b*x2)+(c*x3))/(a+b+c))) + "," + eval(String(((a*y1)+(b*y2)+(c*y3))/(a+b+c))) + ")"  +"\\]";
+        renderMathInElement(document.getElementById("in_output"));
+        explain.innerHTML = "\\[Formula \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" + "\\] ";
+        renderMathInElement(document.getElementById("informula"));
+
+    }
+}
 function solveocta() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
