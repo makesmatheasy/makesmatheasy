@@ -3231,7 +3231,7 @@ function solvehemisphere() {
     }
 }
 
-function solvecone() {
+function solveCone() {
     var height = document.getElementById("inputhcone").value;
     var radius = document.getElementById("inputrcone").value;
 
@@ -3239,19 +3239,18 @@ function solvecone() {
     var tsaoutput = document.getElementById("resultoftsacone");
     var csaoutput = document.getElementById("resultofcsacone");
     var shoutput = document.getElementById("resultofshcone");
-    var radius2 = radius * radius;
-    var height2 = height * height;
-    var add2 = eval(String(radius2 + height2));
-    var l = nerdamer.sqrt(add2).toString();
+    var add2 = eval(String(radius**2 + height**2));
+    var l = math.sqrt(radius*2 + height*2)
+    var vol = ((3.1415 * radius * radius * height) / 3).toFixed(3);
     var voltemp = "";
     var tsatemp = "";
     var csatemp = "";
     var ltemp = "";
     if ((radius != "") && (height != "")) {
         voltemp += "\\[ \\frac{1}{3} \\times \\pi \\times " + radius + "^2 \\times " + height + "\\]";
-        voltemp += "\\[Volume \\space of \\space Cone \\space is \\space " + eval(String((3.1415 * radius * radius * height) / 3)) + "\\]";
+        voltemp += "\\[Volume \\space of \\space Cone \\space is \\space " + eval(String(vol)) + "\\]";
         voloutput.innerHTML = voltemp;
-        csatemp += "\\[ \\pi \\times" + radius + "\\times" + l + " \\]";
+        csatemp += "\\[ \\pi \\times" + radius + "\\times" + l.toFixed(3) + " \\]";
         csatemp += "\\[Curved \\space Surface \\space Area \\space of \\space Cone \\space is \\space \\]";
         csatemp += "\\[" + eval(String(3.14159 * radius * eval(l).toFixed(3))) + "\\]";
         csaoutput.innerHTML = csatemp;
@@ -3261,7 +3260,7 @@ function solvecone() {
         tsatemp += "\\[" + eval(String((3.14159 * radius * eval(l).toFixed(3)) + (3.14159 * radius * radius))) + "\\]";
         tsaoutput.innerHTML = tsatemp;
         ltemp += "\\[l= \\sqrt{" + radius + "^2+" + height + "^2} \\]";
-        ltemp += "\\[ \\sqrt{" + radius2 + "+" + height2 + "} \\]";
+        ltemp += "\\[ \\sqrt{" + radius**2 + "+" + height**2 + "} \\]";
         ltemp += "\\[ \\sqrt{" + add2 + "} \\]";
         ltemp += "\\[" +
             eval(l).toFixed(3) +
