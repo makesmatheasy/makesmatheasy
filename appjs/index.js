@@ -229,6 +229,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#degcal",
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
