@@ -1727,6 +1727,7 @@ function solvesection()
     
 }
 
+
 function circumsolve(){
     var x1,y1,x2,y2,x3,y3,A,B,C;
     x1=parseFloat(document.getElementById('X1st').value);
@@ -1747,6 +1748,26 @@ function circumsolve(){
         renderMathInElement(document.getElementById("cir_output"));
         explain.innerHTML = "\\[Formula \\space (x, \\space y) \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
         renderMathInElement(document.getElementById("cirformula"));
+    }
+}
+function incentersolve(){
+    var x1,y1,x2,y2,x3,y3,a,b,c;
+    x1=parseFloat(document.getElementById('X1').value);
+    y1=parseFloat(document.getElementById('Y1').value);
+    x2=parseFloat(document.getElementById('X2').value);
+    y2=parseFloat(document.getElementById('Y2').value);
+    x3=parseFloat(document.getElementById('X3').value);
+    y3=parseFloat(document.getElementById('Y3').value);
+    a=parseFloat(document.getElementById('ina').value);
+    b=parseFloat(document.getElementById('inb').value);
+    c=parseFloat(document.getElementById('inc').value);
+    var incenterop = document.getElementById("in_output");
+    var explain = document.getElementById("informula");
+    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (a!="") && (b!="") && (c!="")){
+        incenterop.innerHTML = "\\[Incenter \\space = \\space (" + eval(String(((a*x1)+(b*x2)+(c*x3))/(a+b+c))) + "," + eval(String(((a*y1)+(b*y2)+(c*y3))/(a+b+c))) + ")"  +"\\]";
+        renderMathInElement(document.getElementById("in_output"));
+        explain.innerHTML = "\\[Formula \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" + "\\] ";
+        renderMathInElement(document.getElementById("informula"));
 
     }
 }
