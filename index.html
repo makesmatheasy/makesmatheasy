@@ -246,6 +246,25 @@
 
 
 <body class="readonlybody hidescroll" onload="bodyload()">
+    <!-- using darkmode.js to implement dark mode -->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        var options = {
+            bottom: '64px', // default: '32px'
+            right: '32px', // default: '32px'
+            left: 'unset', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#6c5ce7', // default: '#fff'--> changable according to dev needs for light mode
+            backgroundColor: '#232A36',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'-->for dark mode
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓' // default: ''
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
 <div class="blink-1 javascriptno" style="display:none;">
     <p>
         <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
@@ -550,6 +569,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Hyperbola','#hyperbolacollapse','c','hyperbolafav')"><img
                                         id="hyperbolafav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="parabbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Paraboloid</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Paraboloid','#parab','c','parabfav')"><img
+                                        id="parabfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1530,6 +1564,24 @@
                     </tr>
                 </table>
             </li>
+            <!-- Polynomial degree start -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="degbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Polynomial Degree
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Polynomial Degree ','#degcal','c','degimgfav')"><img
+                                        id="degimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!-- Polynomial degree end -->
 
             <!-- Factorial added -->
             <li>
@@ -1884,6 +1936,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="arc"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;"> Arc Length Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Arc Calculator','#arcs','c','arcimgfav')"><img
+                                        id="arcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -2518,6 +2587,26 @@
                           </table>
                       </li>
 
+
+                      <li>
+                        <table class="table">
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="bpmf"
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Binomial Distribution Calculator
+                                    </a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                       <span
+                                               onclick="addtofavourite('Binomial Distribution','#bpmfs','c','bpmfimgfav')"><img
+                                               id="bpmfimgfav" src="images/unfavourite.png"
+                                               style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+
+
             <li>
                 <table class="table">
                     <tr>
@@ -2553,10 +2642,6 @@
         </li>
         <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
                                        style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
-        <li class="list_menu_items"><a class="toggle"
-                                       style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
-                                       onclick="myFunction()">Change Mode
-            <span id="moon" style="font-size: 1.25rem;">🌓</span></a></li>
         <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
             Math Easy. All Rights Reserved.
         </li>
@@ -3384,8 +3469,54 @@
                 </button><br>
                 </p>
             </div><br>
+            <p class="text-center" id="line1"> </p> <br>
+	    <p class="text-center" id="line2"> </p> <br>
+            <h3>Perpendicular Line Checker</h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="xone" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="yone" size=5 value='' placeholder="y1">)
+                    <br>
+                    Coordinate 2 = (<input type="text" id="xtwo" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="ytwo" size=5 value='' placeholder="y2">)
+                        <br>
+                    Coordinate 3 = (<input type="text" id="xthree" size=5 value='' placeholder="x3"> , 
+                <input type="text" id="ythree" size=5 value='' placeholder="y3">)
+                    <br>
+                    Coordinate 4 = (<input type="text" id="xfour" size=5 value='' placeholder="x4"> , 
+                <input type="text" id="yfour" size=5 value='' placeholder="y4">)
+                        <br><br>    
+                <button type="button" class="btn btn-light" onclick=perpendicularsolve()>
+                    Check
+                </button><br>
+                </p>
+            </div><br>
             <h4 class="text-center" id="line1"> </h4> <br>
+
+            <h4 class="text-center" id="line2"> </h4> <br>
+            <h4>Centroid Calculator</h4>
+            <div class= "coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="y1st" size=5 value='' placeholder="y1">)
+                    <br>
+                    Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
+                        <br>
+                    Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
+                <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
+                    <br><br>
+                <button type="button" class="btn btn-light" onclick=centsolve()>
+                        Find Centroid
+                </button><br>
+                </p>
+            </div>
+            <h4 id="apk" style="color: white;"></h4>
 	        <h4 class="text-center" id="line2"> </h4> <br>
+
+
+            <h4 class="text-center" id="line2"> </h4> <br>
+
 
             <h3>Section Formula</h3><br>
             <div class="coll">
@@ -3408,8 +3539,8 @@
             <p id="sec_formula" style="display:flex;font-family:mathfont;;width:auto;"
                 class="stopwrap"
                align="right"></p>
-            <p  id="output"> </p> <br>
-
+            <h4  id="output" style="color:white"> </h4> <br>
+            
 
             <h3>Incentre Calculator </h3><br>
             <div class="coll">
@@ -3434,6 +3565,25 @@
             <h4 id="in_output" style="color:white"></h4>
             <h4 id="informula" style="color:white"></h4>
             
+
+            <h3>Area of Triangle</h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="y1s" size=5 value='' placeholder="y1">)
+                    <br><br>
+                    Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="y2s" size=5 value='' placeholder="y2">)
+                        <br><br>
+                    Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
+                <input type="text" id="y3s" size=5 value='' placeholder="y3">)
+                        <br><br>
+                <button type="button" class="btn btn-light" onclick=coordinatearea()>
+                    Calculate
+                </button><br>
+                </p>
+                <h4 id="areaoutput" style="color:white"></h4>
+                <h4 id="formula1" style="color:white"></h4>
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -4953,8 +5103,84 @@
                     \space If \space \mathcal{L}\{f(t)\} = \bar{f}(s)\]\[then \space
                     \mathcal{L}\{f^n(t)\} \space = \space s^n \mathcal{L}\{f(t)\} - s^{n-1}f(0)
                     - s^{n-2}f'(0) - s^{n-3}f''(0) - s^{n-4}f'''(0)-...\]
+			
+		<h3> Table of Inverse Laplace Transforms</h3>
+                    <table class="table table-bordered table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">\[F(s)\]</th>
+                            <th scope="col">\[\mathcal{L}^{-1}\{F(s)\}\]</th>
+                            <th scope="col">\[F(s)\]</th>
+                            <th scope="col">\[\mathcal{L}^{-1}\{F(s)\}\]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s}\]</td>
+                            <td>\[1\]</th>
+                            <td>\[\frac{1}{s^n}, \space n=1,2,3...\]</td>
+                            <td>\[\frac{t^{n-1}}{(n-1)!}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s+a}\]</th>
+                            <td>\[e^{-at}\]</td>
+                            <th scope="row">\[\frac{1}{s-a}\]</th>
+                            <td>\[e^{at}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s^2+a^2}\]</th>
+                            <td>\[\frac{sin(at)}{a}\]</td>
+                            <td>\[\frac{s}{s^2+a^2}\]</td>
+                            <td>\[cos(at)\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{s^2-a^2}\]</th>
+                            <td>\[\frac{sinh(at)}{a}\]</td>
+                            <td>\[\frac{s}{s^2-a^2}\]</td>
+                            <td>\[cosh(at)\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{1}{(s^2+a^2)^2}\]</th>
+                            <td>\[\frac{sin(at)-atcos(at)}{2a^3}\]</td>
+                            <td>\[\frac{s}{(s^2+a^2)^2}\]</td>
+                            <td>\[\frac{tsin(at)}{2a}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s^2}{(s^2+a^2)^2}\]</th>
+                            <td>\[\frac{sin(at)+atcos(at)}{2a}\]</td>
+                            <td>\[\frac{s^3}{(s^2+a^2)^2}\]</td>
+                            <td>\[cos(at) - \frac{1}{2}atsin(at)\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s^2-a^2}{(s^2+a^2)^2}\]</th>
+                            <td>\[tcos(at)\]</td>
+                            <td>\[\frac{1}{(s^2-a^2)^2}\]</td>
+                            <td>\[\frac{atcosh(at)-sinh(at)}{2a^3}\]</td>
+    
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s}{(s^2-a^2)^2}\]</td>
+                            <td>\[\frac{tsinh(at)}{2a}\]</td>
+                            <td>\[\frac{s^2}{(s^2-a^2)^2}\]</td>
+                            <td>\[\frac{atcosh(at)+sinh(at)}{2a}\]</td>
 
-
+                        </tr>
+                        <tr>
+                            <th scope="row">\[\frac{s^3}{(s^2-a^2)^2}\]</td>
+                            <td>\[cosh(at) + \frac{1}{2}atsinh(at)\]</td>
+                            <td>\[\frac{s^2+a^2}{(s^2-a^2)^2}\]</th>
+                            <td>\[tcosh(at)\]</td>
+                        </tr>    
+    
+                        </tbody>
+                    </table>
+                    <br>
             </div>
         </div>
         <!-- Complex Identities -->
@@ -5037,6 +5263,9 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
+            <div class="form-group text-center">
+                <p class="stopwrap"style="color:white;" id="comexplain"></p>
+            </div>
 
             <h1>Polar representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
@@ -5055,6 +5284,9 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comp1result"></p>
             </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="comp1explain"></p>
+            </div>
             <h1>Find Euler Representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp; </label>
@@ -5071,6 +5303,9 @@
             </div>
             <div class="form-group text-center">
                 <p style="color:white;" id="comperesult"></p>
+            </div>
+            <div class="form-group text-center">
+                <p style="color:white;" id="compeexplain"></p>
             </div>
         </div>
         <div class="collapse" id="complex2collapse">
@@ -5237,40 +5472,40 @@
         <div class="collapse" id="euclid">
             <h2 style="text-align: center;">Euclid Geometry - Axioms and Postulates</h2>
             <br><br>
-            <h4>Euclid's Axioms</h4>
-            <p>There are 7 axioms in Euclid Geometry<p>
+            <h4 class="text-center">Euclid's Axioms</h4>
+            <p>There are 7 axioms in Euclid Geometry:<p>
             <ol>
-                <li style="color: white; font-size: 20px;">Things which are equal to the same thing are equal to one another. </li>
+                <li style="font-size: 20px;">Things which are equal to the same thing are equal to one another. </li>
                 <br>
-                <li style="color: white; font-size: 20px;">If equals are added to equals, the wholes are equal. </li>
+                <li style="font-size: 20px;">If equals are added to equals, the wholes are equal. </li>
                 <br>
-                <li style="color: white; font-size: 20px;">If equals are subtracted from equals, the remainders are equal.</li>
+                <li style="font-size: 20px;">If equals are subtracted from equals, the remainders are equal.</li>
                 <br>
-                <li style="color: white; font-size: 20px;">Things which coincide with one another are equal to one another. </li>
+                <li style="font-size: 20px;">Things which coincide with one another are equal to one another. </li>
                 <br>
-                <li style="color: white; font-size: 20px;">The whole is greater than the part. </li>
+                <li style="font-size: 20px;">The whole is greater than the part. </li>
                 <br>
-                <li style="color: white; font-size: 20px;">Things which are double of the same things are equal to one another.</li>
+                <li style="font-size: 20px;">Things which are double of the same things are equal to one another.</li>
                 <br>
-                <li style="color: white; font-size: 20px;">Things which are halves of the same things are equal to one another</li>
+                <li style="font-size: 20px;">Things which are halves of the same things are equal to one another</li>
             </ol>
             <br>
-            <h4>Euclid's Postulates</h4>
-            <p>There are 5 postulates in Euclid's Geometry</p>
+            <h4 class="text-center">Euclid's Postulates</h4>
+            <p>There are 5 postulates in Euclid's Geometry:</p>
             <ol>
-                <li style="color: white; font-size: 20px;">A straight line can be drawn from anyone point to another point</li>
+                <li style="font-size: 20px;">A straight line can be drawn from anyone point to another point</li>
                 <br>
-                <img style="margin-left: 350px; height: 200px;"  src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101848/Euclidean-Geometry-Postu-1-300x121-300x121.png" alt="">
+                <img style=" height: 200px;"  src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101848/Euclidean-Geometry-Postu-1-300x121-300x121.png" alt="">
                 <br>
-                <li style="color: white; font-size: 20px;">A terminated line can be further produced indefinitely</li>
+                <li style="font-size: 20px;">A terminated line can be further produced indefinitely</li>
                 <br>
-                <img style="margin-left: 350px; width :350px ; height: 100px;" src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101952/Euclid-Postulates-300x50-300x50.png" alt="">
+                <img style=" width :350px ; height: 100px;" src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101952/Euclid-Postulates-300x50-300x50.png" alt="">
                 <br>
-                <li style="color: white; font-size: 20px;">A circle can be drawn with any centre and any radius.</li>
+                <li style="font-size: 20px;">A circle can be drawn with any centre and any radius.</li>
                 <br>
-                <li style="color: white; font-size: 20px;">All right angles are equal to one another.</li>
+                <li style="font-size: 20px;">All right angles are equal to one another.</li>
                 <br>
-                <li style="color: white; font-size: 20px;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles,
+                <li style="font-size: 20px;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles,
                     then the two straight lines, if produced indefinitely, meet on the side on which the sum of angles is less than two right angles
                 </li>
             </ol>
@@ -6188,6 +6423,39 @@
 
             </div>
         </div>
+        <div class="collapse" id="parab">
+            <h2 style="text-align: center;">ParaBoloid</h2>
+            <br>
+            <img style="margin-left: 350px;" src="https://mathworld.wolfram.com/images/eps-gif/Paraboloid_700.gif" alt="">
+            <p>Paraboloid, an open surface generated by rotating a parabola (q.v.) about its axis. If the axis of the surface is the z axis and the vertex is at the origin, the intersections of the surface with planes parallel to the xz and yz planes are parabolas </p>
+            <p>The surface of revolution of the parabola which is the shape used in the reflectors of automobile headlights</p>
+            <p>Its equation is given by -</p>
+            <p>\[z\space =\space b(x^{2}+y^{2})\]</p>
+            <p>The paraboloid which has radius a at height h is then given parametrically by</p>
+            <p>\[x\space =\space a\sqrt{\frac{u}{h}}cosv\]</p>
+            <p>\[y\space =\space a\sqrt{\frac{u}{h}}sinv\]</p>
+            <p>\[z\space =\space u\]</p>
+            <div style="text-align: center;">
+                <input type="text" placeholder="Enter radius" id="ther">
+                <input type="text" name="" id="theh" placeholder="Enter Height">
+                <button type="submit" onclick="findeq()">Find equations</button>
+                <h5 id="xeqn"></h5>
+                <h5 id="yeqn"></h5>
+                <h5 id="zeqn"></h5>
+            </div>
+            <p>Volume of paraboloid =</p>
+            <p>\[\frac{1}{2}\pi a^{2}h\]</p>
+            <div style="text-align: center;">
+                <input type="text" placeholder="Enter radius" id="ther1">
+                <input type="text" name="" id="theh1" placeholder="Enter Height">
+                <button type="submit" onclick="volf()">Find Volume</button>
+                <h5 id="volf"></h5>
+            </div>
+            <p>\[Geometric\space centroid\space = \]</p>
+            <p>\[\frac{2}{3}h\]</p>
+            <p>A circular or elliptical paraboloid surface may be used as a parabolic reflector. Applications of this property are used in automobile headlights, solar furnaces, radar, and radio relay stations.</p>
+        </div>
+
         <div class="collapse" id="hyperbolacollapse">
             <!--Calculator for trivial hyperbola solution-->
             <div class="stopwrap">
@@ -6253,6 +6521,9 @@
                     </tbody>
                 </table>
             </div>
+
+
+           
             <!--Calculator code for trivial hyperbola solution ends here-->
             <br>
             <div class="stopwrap">
@@ -7561,10 +7832,12 @@
         </div>
         <div class = "collapse" id="pythtriple">
             <h2 style="text-align: center;">Pythagorean Triplets</h2>
+            
             <br><br>
             <input style="width: 275px;" type="text" class="form__field"
-                   placeholder="Enter the number" id="nom">
+                   placeholder="Enter a number" id="nom">
             <button class="btn btn-light" onclick=pythtriple()>Submit</button>
+
             <br><br>
             <h4 style=  "color : white"id="answ"></h4>
         </div>
@@ -8084,6 +8357,23 @@
             </div>
         </div>
 
+        <div class="collapse" id="degcal">
+            <h2 style="color: var(--appimage);">Polynomial Degree</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                       id="exp"
+                       placeholder="Enter a Polynomial expression"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="degcal()">Find</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="deg"></p>
+            </div>
+        </div>
+
+
         <div class="collapse" id="equationssolver">
             <div class="form-group">
                 <p class="stopwrap" id="displayequation">
@@ -8602,9 +8892,19 @@
                            href="#">Pentagon</a></td>
                 </tr>         
                 <tr>
+                    <td><a data-toggle="modal" data-target="#decagon"
+                           style="text-decoration:none;"
+                           href="#">Decagon</a></td>
+                </tr>         
+                <tr>
                     <td><a data-toggle="modal" data-target="#hexagon"
                            style="text-decoration:none;"
                            href="#">Hexagon</a></td>
+                </tr>   
+                <tr>
+                    <td><a data-toggle="modal" data-target="#octagon"
+                           style="text-decoration:none;"
+                           href="#">Octagon</a></td>
                 </tr>            
             </table>
         </div>
@@ -8723,7 +9023,7 @@
                            href="#">Cylinder</a></td>
                 </tr>
                 <tr>
-                    <td><a data-toggle="modal" data-target="#cone" style="text-decoration:none;"
+                    <td><a data-toggle="modal" data-target="#Cone" style="text-decoration:none;"
                            href="#">Cone</a>
                     </td>
                 </tr>
@@ -8757,6 +9057,12 @@
                     <td><a data-toggle="modal" data-target="#frustum"
                            style="text-decoration:none;"
                            href="#">Conical Frustum</a>
+                   </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#ellipsoid"
+                           style="text-decoration:none;"
+                           href="#">Ellipsoid</a>
                    </td>
                 </tr>
                 <tr>
@@ -8842,6 +9148,11 @@
                     <td><a data-toggle="modal" data-target="#tetrahedron"
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#parallelepiped"
+                           style="text-decoration:none;"
+                           href="#">Parallelepiped</a></td>
                 </tr>
 
             </table>
@@ -9319,8 +9630,9 @@
 
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
-            <h2>Sum of N terms of a Geometric Progression</h2>
-            <div class="form-group">
+            <br>
+            <h2 class="d-flex justify-content-center">Sum of N terms of a Geometric Progression</h2>
+            <div class="form-group d-flex flex-column align-items-center">
                 <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstterm"
                        placeholder="Enter first term"/>
@@ -9329,10 +9641,8 @@
                 <input type="number" style="width: 15.625rem;" class="form__field" id="number"
                        placeholder="Enter number of terms"/>
                 <br>
-                <br>
                 <button class="btn btn-outline-light" onclick="gp()">Find</button>
             </div>
-            <br>
             <div class="form-group">
                 <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
                    class="stopwrap"
@@ -9346,16 +9656,13 @@
                    style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
                    align="right"></p>
             </div>
-            <br>
-            <br>
-            <h2>Sum of infinite terms of a Geometric Progression with common ratio less than
+            <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
                 1</h2>
-            <div class="form-group">
+            <div class="form-group d-flex flex-column align-items-center">
                 <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
                        placeholder="Enter first term"/>
                 <input type="number" style="width: 15.625rem;" class="form__field" id="r"
                        placeholder="Enter ratio between terms"/>
-                <br>
                 <br>
                 <button class="btn btn-outline-light" onclick="igp()">Find</button>
                 <br>
@@ -9622,6 +9929,37 @@
 </div>
 <!--Hydrosrtatic Pressure ends-->
 
+<div class="collapse" id="arcs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
+    <input type="number" name="ang" class="form__field" id="ang"  placeholder="Enter central angle of circle">
+    <select id="angit" class="form__field">
+        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
+        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
+    </select> <p>&nbsp;</p>
+    <input type="number" name="rad" class="form__field" id="rad"  placeholder="Enter radius of circle"> 
+    <select id="radit" class="form__field">
+        <option class="form__field" value="mm" style="background-color: #232a36;"> mm</option>
+        <option class="form__field" value="cm"  style="background-color: #232a36;"> cm</option>
+        <option class="form__field" value="m"  style="background-color: #232a36;"> m</option>
+        <option class="form__field" value="inch"  style="background-color: #232a36;"> inch</option>
+    </select>
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="arcal()">Calculate</button>
+    <p id="arcans" style="font-size: 1.5em;"></p> <p>&nbsp;</p>
+    <div id="dt" style="color: white; text-align: center; font-family:mathfont;">The length of an arc depends on the radius of a circle and the central angle θ. <br> L / θ = C / 2π<br>
+        As circumference C = 2πr,<br>
+        
+        L / θ = 2πr / 2π<br>
+        L / θ = r<br>
+        We find out the arc length formula when multiplying this equation by θ:<br>
+        
+        L = r * θ</div>
+   
+</div>
+
+
 <!--Strain Calculator starts-->
 <div class="collapse" id="straincalc">
 
@@ -9652,6 +9990,23 @@
 </div>
 <!--Strain Calculator Ends-->
 
+<!--Binomial PMF starts-->
+<div class="collapse" id="bpmfs">
+    <h1 style="font-family:mathfont; text-align:center;"> PMF of Binomial Distribution Calculator </h1>
+    <input type="number" name="psuc" class="form__field" id="psuc"   placeholder="Enter probability of success">
+    <p>&nbsp;</p>
+    <input type="number" name="suc" class="form__field" id="suc" placeholder="Enter number of success">
+    <p>&nbsp;</p>
+    <input type="number" name="tri" class="form__field" id="tri" placeholder="Enter number of trials">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="bpcal()">Calculate</button>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="bpans"></div> 
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = \, \frac{n!}{(n-r)!r!} p^x (1-p)^y\]</p> where, <br> n= no. of trials <br> r= no. of successful events
+        <br> x= probability of success <br> y= porobability of not being successful(1-x)
+    </div>
+</div>
+
+<!--Binomial PMF ends-->
 <!--Stress Calculator starts-->
 <div class="collapse" id="stresscalc">
     <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>
@@ -10871,9 +11226,9 @@
                     <span id="e">e</span>
                     <span id="exp()" onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">exp()</span>
 
-                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
-                     <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
-                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);"></span>
+                    <span id="doubleZero" onclick="document.getElementById('txt').value+='00';calsol(document.getElementById('txt').value);">00</span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
+                    <span class="exponent" onclick="document.getElementById('txt').value+='';calsol(document.getElementById('txt').value);"></span>
 
                     <span id="seven">7</span>
                     <span id="eight">8</span>
@@ -11835,14 +12190,28 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle">
+                                    <h5 class="text-center">Area of Circular Sector</h5>
+                                    <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/sector.PNG" style="height:9.375rem"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle (Radian)">
                                     <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <br><br>
                                     <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
-                                    <p id="secans"></p>
+                                    <br><br>
+                                    <p class="stopwrap" id="secans1"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="secans2"
+                                    style="font-family:mathfont;"></p>
                                 </div>
                             </div>
                         </div>
@@ -12721,6 +13090,57 @@
         </div>
     </div>
 
+    <div class="modal fade" id="decagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Octagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{5}{2} a^2 \sqrt(5 + 2\sqrt{5})\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 10 \times a \]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/decagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidedeca"
+                               oninput="solvedeca()">
+                        <p class="stopwrap" id="resultofareadeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareadeca2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterdeca"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="modal fade" id="hexagon" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -12771,6 +13191,57 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="octagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Octagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 2 (1 + \sqrt{2}) a^2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 8 \times a \]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/octagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsideoct"
+                               oninput="solveoct()">
+                        <p class="stopwrap" id="resultofareaoct1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareaoct2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeteroct"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--shapes end-->
 
@@ -12944,7 +13415,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="cone" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="Cone" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -12983,10 +13454,10 @@
                             <!-- --------FROM------- -->
                             <input class="form__field" type="number"
                                    placeholder="Enter radius" id="inputrcone"
-                                   oninput="solvecone();">
+                                   oninput="solveCone();">
                             <input class="form__field" type="number"
                                    placeholder="Enter Height" id="inputhcone"
-                                   oninput="solvecone();">
+                                   oninput="solveCone();">
                             <p class="stopwrap" id="resultofvolcone"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofcsacone"
@@ -13052,6 +13523,60 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ellipsoid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ellipsoid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    
+                                    <h5 class="text-center">Volume(V)</h5>
+                                    <p class="text-center">\[\frac{4}{3}\pi a b c\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[4\pi\Big(\frac{(ab)^{1.6} + (ac)^{1.6} + (bc)^{1.6}}{3}\Big)^{\frac{1}{1.6}} \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/ellipsoid.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Semi-axis (a)"
+                                       id="inputa" oninput="ellipsoidsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Semi-axis (b)"
+                                       id="inputb" oninput="ellipsoidsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Semi-axis (c)"
+                                       id="inputc" oninput="ellipsoidsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultoftsa"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -13842,6 +14367,52 @@
                 </div>
             </div>
         </div>
+            <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Parallelepiped</h5>
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close"
+                                    style="outline:none">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- added div with class container -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Volume</h5>
+                                        <p class="text-center">\[V=abc\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Diagonal</h5>
+                                        <p class="text-center">\[\sqrt{a^{2}+b^{2}+c^{2}}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Surface Area</h5>
+                                        <p class="text-center">\[S=2(ab+bc+ca)\]</p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- --------FROM------- -->
+                                <input type="text" id="a1st" class = "form__field"placeholder="Enter a">
+                                <input type="text" id="b1st" class = "form__field"placeholder="Enter b">
+                                <input type="text" id="c1st" class = "form__field"placeholder="Enter c">
+                                <button type="submit" id="parapipe" onclick="parapipe()">Find</button>
+                                <h6 id="volparapipe"></h6>
+                                <h6 id="saparapipe"></h6>
+                                <h6 id="diagparapipe"></h6>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            </div>    
 		    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

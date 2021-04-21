@@ -2,7 +2,7 @@
 
 - Info about Issue or bug
 
-Closes: #[issue number that will be closed through this PR]
+fix #[issue number that will be closed through this PR]
 
 #### Describe the changes you've made
 
