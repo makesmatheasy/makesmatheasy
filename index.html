@@ -9517,8 +9517,9 @@
 
         <!-- sum of nterms in G.P.  -->
         <div class="collapse" id="sum_n_GP">
-            <h2>Sum of N terms of a Geometric Progression</h2>
-            <div class="form-group">
+            <br>
+            <h2 class="d-flex justify-content-center">Sum of N terms of a Geometric Progression</h2>
+            <div class="form-group d-flex flex-column align-items-center">
                 <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstterm"
                        placeholder="Enter first term"/>
@@ -9527,10 +9528,8 @@
                 <input type="number" style="width: 15.625rem;" class="form__field" id="number"
                        placeholder="Enter number of terms"/>
                 <br>
-                <br>
                 <button class="btn btn-outline-light" onclick="gp()">Find</button>
             </div>
-            <br>
             <div class="form-group">
                 <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
                    class="stopwrap"
@@ -9544,16 +9543,13 @@
                    style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
                    align="right"></p>
             </div>
-            <br>
-            <br>
-            <h2>Sum of infinite terms of a Geometric Progression with common ratio less than
+            <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
                 1</h2>
-            <div class="form-group">
+            <div class="form-group d-flex flex-column align-items-center">
                 <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
                        placeholder="Enter first term"/>
                 <input type="number" style="width: 15.625rem;" class="form__field" id="r"
                        placeholder="Enter ratio between terms"/>
-                <br>
                 <br>
                 <button class="btn btn-outline-light" onclick="igp()">Find</button>
                 <br>
