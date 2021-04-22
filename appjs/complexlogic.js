@@ -742,6 +742,4 @@ function impcal()
         var q=(a-r)/b;
         ans="The required answer is: "+ q +" "+ r+"/"+b.sub();    }
     document.getElementById("impans").innerHTML=ans;
-
-
 }

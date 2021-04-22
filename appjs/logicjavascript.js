@@ -1676,6 +1676,25 @@ function interpointsolve()
     
 }
 
+function anglesolve()
+{
+    var a1, b1, c1, a2, b2, c2;
+    a1=parseFloat(document.getElementById('a1st').value);
+    b1=parseFloat(document.getElementById('b1st').value);
+    c1=parseFloat(document.getElementById('c1st').value);
+    a2=parseFloat(document.getElementById('a2nd').value);
+    b2=parseFloat(document.getElementById('b2nd').value);
+    c2=parseFloat(document.getElementById('c2nd').value);
+    var explain = document.getElementById("angleformula");
+    explain.innerHTML = "\\[Formula \\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2}) \\] ";
+    renderMathInElement(document.getElementById("angleformula"));
+    var M1=(-a1)/b1;
+    var M2=(-a2)/b2;
+    var angle = Math.atan((M2-M1)/(1+M1*M2));
+    document.getElementById('angle_output').innerHTML= 'Angle between lines is '  + (angle*180/Math.PI).toFixed(1) + '&deg' ;
+    
+}
+
 function dispointsolve()
 {
     var a,b,c;
@@ -1848,6 +1867,24 @@ function solveocta() {
     }
     if (a != "") {
         document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
+        renderMathInElement(document.getElementById("resultoftsa"));
+    }
+}
+function solveicosa() {
+    var a = document.getElementById("inputtside").value;
+    var resultvolt = document.getElementById("resultofvolt");
+    var resulttsa = document.getElementById("resultoftsa");
+    resultofvolt.innerHTML = "";
+    resultoftsa.innerHTML = "";
+    var volume = (2.18 * (a * a * a)).toFixed(2);
+    var tsa = (8.66 * (a * a)).toFixed(2);
+  
+    if (a != "") {
+        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Icosahedron \\space \\newline \\frac{5}{12}" + "( \\space 3 \\space + \\space \\sqrt{5})" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
+        renderMathInElement(document.getElementById("resultofvolt"));
+    }
+    if (a != "") {
+        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Icosahedron \\space \\newline " + 5  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
         renderMathInElement(document.getElementById("resultoftsa"));
     }
 }
@@ -2977,6 +3014,34 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+
+//square Prism
+function sqprismsolve(){
+    var edge = document.getElementById("inputsqprismedge").value;
+    var height = document.getElementById("inputsqprismheight").value;
+    var area = 2 * edge**2 + 4 * edge * height;
+    var volume = edge**2 * height;
+    var diagonal = math.sqrt(2 * edge**2 + height**2);
+    var voloutput = document.getElementById("resultofvolsqprism");
+    var areaoutput1 = document.getElementById("resultofareasqprism1");
+    var areaoutput2 = document.getElementById("resultofareasqprism2");
+    var diaoutput1 = document.getElementById("resultofdiasqprism1");
+    var diaoutput2 = document.getElementById("resultofdiasqprism2");
+
+    if (height!="" && edge!=""){
+        voloutput.innerHTML = "\\[Volume \\space of \\space Prism \\space \\space" + edge + "^2 \\times"+height+" = " + volume.toFixed(2) + "\\]";
+        renderMathInElement(voloutput);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Square  \\space Prism \\space is \\]";
+        areaoutput2.innerHTML = "\\[2 \\times "+edge+"^2 + 4 \\times "+edge+" \\times "+height+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+        diaoutput1.innerHTML = "\\[Diagonal \\space of \\space Square  \\space Prism \\space is \\]";
+        diaoutput2.innerHTML = "\\[\\sqrt{2 \\times "+edge+"^2 + "+height+"^2} = " + diagonal.toFixed(2) + "\\]";
+        renderMathInElement(diaoutput1);
+        renderMathInElement(diaoutput2);
+    }
+}
+
 //Pentagonal Prism
 function pentprismsolve() {
     var height = document.getElementById("inputpentprismheight").value;
@@ -3141,6 +3206,53 @@ function pyramidsolve() {
     }
 }
 
+function recpyramidsolve(){
+    var l = document.getElementById("inputrecpyramidl").value;
+    var w = document.getElementById("inputrecpyramidw").value;
+    var h = document.getElementById("inputrecpyramidheight").value;  
+    var tsa = l*w + l * (math.sqrt((w * 0.5)**2 + h**2)) + w * (math.sqrt((l * 0.5)**2 + h**2 ));
+    var volume = (l * w * h)/3;
+    var ba = l * w;
+    var lsa = l * (math.sqrt((w * 0.5)**2 + h**2)) + w * (math.sqrt((l * 0.5)**2 + h**2 ));
+
+    var baoutput = document.getElementById("resultofrecbapyramid");
+    var tsaoutput = document.getElementById("resultofrectsapyramid");
+    var volumeoutput = document.getElementById("resultofrecvolpyramid");
+    var lsaoutput = document.getElementById("resultofreclsapyramid");
+    var batemp ="";
+    var tsatemp = "";
+    var voltemp ="";
+    var lsatemp = "";
+
+    if (l != "" && w != "" && h !=""){
+        voltemp += "\\[ \\frac{" + l + "\\times" + w + "\\times" + h + "}{"+ 3 +"} \\]";
+        voltemp += "\\[Volume \\space is \\space = "+volume.toFixed(3)+"\\]";
+        volumeoutput.innerHTML = voltemp;
+
+        lsatemp += "\\[ "+l+" \\sqrt{ (\\frac{"+w+"}{2})^2 + "+h+"^2} + "+w+" \\sqrt{ (\\frac{"+l+"}{2})^2 + "+h+"^2 }\\]";
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space = "+lsa.toFixed(3)+" \\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[ "+l+" \\times"+w+" + "+l+" \\sqrt{ (\\frac{"+w+"}{2})^2 + "+h+"^2} + "+w+" \\sqrt{ (\\frac{"+l+"}{2})^2 + "+h+"^2 }\\]";
+        tsatemp += "\\[Surface \\space area \\space is \\space = "+tsa.toFixed(3)+" \\]";
+        tsaoutput.innerHTML = tsatemp;
+
+    } else if (l!="" && w!=""){
+        batemp += "\\["+l+" \\times "+w+"\\]";
+        batemp += "\\[Base \\space Area \\space is \\space = "+ba.toFixed(3)+"\\]";
+        baoutput.innerHTML = batemp;
+    } else{
+        tsaoutput.innerHTML = "";
+        volumeoutput.innerHTML ="";
+        lsaoutput.innerHTML = "";
+        baoutput.innerHTML ="";
+    }
+    renderMathInElement(volumeoutput);
+    renderMathInElement(lsaoutput);
+    renderMathInElement(tsaoutput);
+    renderMathInElement(baoutput);
+}
+
 function tripyramidsolve() {
     var side = document.getElementById("inputtripyramidside").value;
     var slant = document.getElementById("inputtripyramidslant").value;
@@ -3248,7 +3360,6 @@ function octpyramidsolve() {
 
     }
 }
-
 //Pentagonal Pyramid
 function pentpyramidsolve(){
     var side = document.getElementById("inputpentpyramidside").value;
@@ -7515,4 +7626,49 @@ function ran(x,y,z)
     }
     return c;
 }
+function radians_to_degrees(radians)
+{
+  var pi = Math.PI;
+  return radians * (180/pi);
+}
+function ssscal()
+{
+    var a=document.getElementById("sd1").value;
+    var b=document.getElementById("sd2").value;
+    var c=document.getElementById("sd3").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Error: All three sides are required to find all the angles";
+    }
+    else
+    {
+            var cosa= (b*b+c*c-a*a)/(2*b*c);
+            var cosb= (a*a+c*c-b*b)/(2*c*a);
+            var cosc= (b*b+a*a-c*c)/(2*b*a);
+            var anga=Math.acos(cosa);
+            var angb=Math.acos(cosb);
+            var angc=Math.acos(cosc);
+            var ab,bc,ca;
+            ab=radians_to_degrees(anga);
+            bc=radians_to_degrees(angb);
+            ca=radians_to_degrees(angc);
+
+            console.log(anga);
+            console.log(angb);
+            console.log(angc);
+            
+            ab=ab.toPrecision(4);
+            bc=bc.toPrecision(4);
+            ca=ca.toPrecision(4);
+            ans="The required angles oppsite to first side is: "+ab+" second side is: "+bc+"  third side is: "+ca;
+
+
+    }
+    document.getElementById("sstans").innerHTML=ans;
+
+
+
+
+
 }
