@@ -136,6 +136,7 @@ function openit(id) {
         "#complexidentities",
         "#complexproperties",
         "#theo",
+        "#impfixs",
         "#equationssolver",
         "#mulsolwithsteps",
         "#secarea",
@@ -148,8 +149,6 @@ function openit(id) {
 
         "#sosqs",
         "#segcals",
-
-
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -269,6 +268,7 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        "#icosahedron",
         "#anglecon",
         "#frustum",
         "#annulus",

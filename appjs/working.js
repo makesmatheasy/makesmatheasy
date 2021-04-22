@@ -108,6 +108,14 @@ $(document).ready(function () {
 
 
 
+    $("#impfix").click(function () {
+        openit("#impfixs");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#segcal").click(function () {
         openit("#segcals");
         closenav();
