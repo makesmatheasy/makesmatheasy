@@ -143,13 +143,8 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
-
         "#sosqs",
         "#segcals",
-
-        "#sosqs",
-        "#segcals",
-
 
         "#hydroz",
         "#straincalc",

@@ -121,6 +121,7 @@ $(document).ready(function () {
     });
 
 
+
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
@@ -128,11 +129,15 @@ $(document).ready(function () {
     });
 
 
+
+
     $("#sosq").click(function () {
         openit("#sosqs");
         closenav();
         clearall();
     });
+
+
 
 
     $("#arc").click(function () {
