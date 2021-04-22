@@ -651,4 +651,74 @@ function arcal()
 
       document.getElementById("arcans").innerHTML=ans;
 
+
+}
+
+function ssqcal()
+{
+    var num=document.getElementById("ssq").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+
+    var sum=0;
+ 
+    for (i = 0; i < len; i++) {
+        console.log(number[i]);
+     }
+
+    for (i = 0; i < len; i++) {
+       sum=sum+(number[i]**2);
+    }
+    s="Your answer is: "+sum;
+    }
+
+    document.getElementById("ssqans").innerHTML=s;
+
+}
+var toDegree = function (radians) {
+    return radians * (180 / Math.PI);
+}
+function segcal()
+{
+    var a=document.getElementById("segr").value;
+    var b=document.getElementById("sega").value;
+    var c=document.getElementById("angseg").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Enter all the values to obtain answer";
+    }
+    else{
+
+    if(c=="degree")
+    {
+        b=b/57.296;
+    }
+   console.log(Math.sin(b));
+   var t=Math.sin(b);
+   var area= a*a*(b-t)*0.5
+    ans="The area of segment is: "+area;
+}
+document.getElementById("segans").innerHTML=ans;
+
+
+
+
 }

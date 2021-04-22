@@ -106,11 +106,27 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#segcal").click(function () {
+        openit("#segcals");
+        closenav();
+        clearall();
+    });
+
+
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
         clearall();
     });
+
+
+    $("#sosq").click(function () {
+        openit("#sosqs");
+        closenav();
+        clearall();
+    });
+
 
     $("#arc").click(function () {
         openit("#arcs");
