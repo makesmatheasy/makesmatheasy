@@ -44,7 +44,10 @@ html {
   padding-bottom: 70%;
   padding-top: 1.5em;
 }
-
+.qcontainer {
+  padding-bottom: 54%;
+  padding-top: 1.5em;
+}
 .main{
   width:50%;
   float:left;
@@ -306,7 +309,7 @@ h6 {
   width: 0rem;
 }
 .searchbtn {
-  background: #ff299c;
+  background: azure;
   color: #f1faee;
   border-radius: 50%;
   float: right;
@@ -322,7 +325,7 @@ h6 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #ff299c;
+  background: azure;
   margin-top: 8vh;
   height: 3.75rem;
   border-radius: 2.5rem;
@@ -348,9 +351,9 @@ h6 {
   letter-spacing: 0.125rem;
   width: 100%;
   border: 0;
-  border-bottom: 0.0625rem solid var(--appimage);
+  /* border-bottom: 0.0625rem solid var(--appimage); */
   outline: 0;
-  color: var(--appimage);
+  color: black;
   padding: 0.4375rem 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -436,6 +439,12 @@ ul li .table {
   background: var(--apppink) !important;
   border-radius: 2.25rem;
 }
+
+td{
+  text-align: center;
+  color:white;
+}
+
 #about .table td {
   text-align: center;
 }
@@ -451,7 +460,25 @@ ul li .table {
   color: white;
 }
 
+#euclid p{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#euclid li{
+  color: white;
+  list-style: none;
+  text-align: center;
+} 
+#euclid img{
+  display: block;
+  margin: 0 auto;
+}
+
 /*light mode*/
+
+.light-mode #euclid li{
+  color: black !important;
+}
 
 .light-mode .table td a {
   color: var(--apppimage) !important;

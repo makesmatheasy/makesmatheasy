@@ -136,10 +136,21 @@ function openit(id) {
         "#complexidentities",
         "#complexproperties",
         "#theo",
+        "#impfixs",
         "#equationssolver",
         "#mulsolwithsteps",
         "#secarea",
         "#table",
+        "#ssts",
+        "#arcs",
+
+        "#sosqs",
+        "#segcals",
+
+        "#sosqs",
+        "#segcals",
+
+
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -159,6 +170,7 @@ function openit(id) {
         "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
+        "#parab",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
@@ -168,6 +180,7 @@ function openit(id) {
         "#algebraic-idencollapse",
         "#about",
         "#propcircle",
+        "#propquad",
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
@@ -202,6 +215,7 @@ function openit(id) {
         "#multiplying-all",
 		"#onetwocom-calc",
         "#3dgeo",
+        "#bpmfs",
         "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
@@ -226,6 +240,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#degcal",
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
@@ -255,17 +270,21 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        "#icosahedron",
         "#anglecon",
         "#frustum",
         "#annulus",
         "#cosine",
+        "#setcal",
 	    "#ip",
 	    "#prices",
         "#percal",
         "#lyear",
         "#analytical",
+        "#ellipsoid",
         "#expo",
-        "#setformula"
+        "#setformula",
+        "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
