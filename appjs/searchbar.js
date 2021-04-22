@@ -395,6 +395,133 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "MEAN CALCULATOR"){
                         document.getElementById('mean').click();
                     } 
+                    else if (inp.value.toUpperCase() == "INTEREST(SIMPLE,COMPOUND)") {
+                        $("#interest").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INTEREST(SIMPLE,COMPOUND)"){
+                        document.getElementById('interest').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "COST AND SELLING PRICES") {
+                        $("#prices").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "COST AND SELLING PRICES"){
+                        document.getElementById('prices').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SETS,RELATIONS AND FUNCTIONS") {
+                        $("#srf").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SETS,RELATIONS AND FUNCTIONS"){
+                        document.getElementById('srf').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SETS FORMULAS LIST") {
+                        $("#setformula").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SETS FORMULAS LIST"){
+                        document.getElementById('setformula').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PROPERTIES OF MATRICES AND DETERMINANTS") {
+                        $("#matrixprops").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PROPERTIES OF MATRICES AND DETERMINANTS"){
+                        document.getElementById('matrixprops').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "CAYLEY HAMILTON THEOREM AND DIAGONALIZATION") {
+                        $("#cay").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CAYLEY HAMILTON THEOREM AND DIAGONALIZATION"){
+                        document.getElementById('cay').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION") {
+                        $("#sum_n_AP").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION"){
+                        document.getElementById('sum_n_AP').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION") {
+                        $("#sum_n_GP").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION"){
+                        document.getElementById('sum_n_GP').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "INTEGRATION FORMULAE") {
+                        $("#integration-idencollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INTEGRATION FORMULAE"){
+                        document.getElementById('integration-idencollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "DEFINITE INTEGRATION FORMULAE") {
+                        $("#defintegration-idencollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DEFINITE INTEGRATION FORMULAE"){
+                        document.getElementById('defintegration-idencollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "DIFFERENTIAL EQUATIONS") {
+                        $("#diffeqn").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DIFFERENTIAL EQUATIONS"){
+                        document.getElementById('diffeqn').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "CONVERGENCE AND DIVERGENCE OF SERIES") {
+                        $("#convdiv").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CONVERGENCE AND DIVERGENCE OF SERIES"){
+                        document.getElementById('convdiv').click();
+                    }
+                    else if (inp.value.toUpperCase() == "HYPERBOLIC TRIGONOMETRIC IDENTITIES") {
+                        $("#hyptrigonoiden").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "HYPERBOLIC TRIGONOMETRIC IDENTITIES"){
+                        document.getElementById('hyptrigonoiden').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "GENERAL SOLUTION OF TRIGONOMETRIC EQUATIONS") {
+                        $("#trigsolcollapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "GENERAL SOLUTION OF TRIGONOMETRIC EQUATIONS"){
+                        document.getElementById('trigsolcollapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SOLUTION OF TRIANGLES") {
+                        $("#solutiontri").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SOLUTION OF TRIANGLES"){
+                        document.getElementById('solutiontri').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART") {
+                        $("#giff").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
+                        document.getElementById('giff').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
+                        $("#expo").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SOLVE FOR EXPONENTS"){
+                        document.getElementById('expo').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PERCENTAGE CALCULATOR") {
+                        $("#percal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE CALCULATOR"){
+                        document.getElementById('percal').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "STANDARD DEVIATION") {
+                        $("#deviation").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "STANDARD DEVIATION"){
+                        document.getElementById('deviation').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "MEAN MEDIAN MODE") {
+                        $("#Meanit").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "MEAN MEDIAN MODE"){
+                        document.getElementById('Meanit').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PRIME NUMBERS") {
+                        $("#prime").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PRIME NUMBERS"){
+                        document.getElementById('prime').click();
+                    } 
+
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
@@ -531,13 +658,10 @@ function autocomplete(inp, arr) {
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
-                        "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions",
-                        "Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry","Trigonometric Values", "Power Series","Unit Converter" ,"Leap Year",
-                        "Rank Calculator","Excess-3 Code Convertor","Grey Code Convertor","Bitwise Calculator","Boolean Algebra","Bayes Probability Theorem","Probability Properties","Empirical Probability",
-                        "OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator", "Curve Tracing","Coordinate Systems",
-                        "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors",
-                        "Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle",
-                        "Plot Graph","Location of Roots","SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Plot Bar Graph"];
+                        "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Power Series","Unit Converter" ,"Leap Year","Rank Calculator","Excess-3 Code Convertor","Grey Code Convertor","Bitwise Calculator","Boolean Algebra","Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
+                        "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
+                        "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph"];
                       
                         
 
@@ -717,9 +841,135 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "POWER SERIES") {
         $("#pows").slideToggle(); 
     }
-    else if(inp.value.toUpperCase() == "CURRENCY CONVERTOR"){
-        document.getElementById('curconcal').click(); 
+    else if(inp.value.toUpperCase() == "INTEREST(SIMPLE,COMPOUND)"){
+        document.getElementById('interest').click(); 
     }
+    else if (inp.value.toUpperCase() == "INTEREST(SIMPLE,COMPOUND)") {
+        $("#interest").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "INTEREST(SIMPLE,COMPOUND)"){
+        document.getElementById('interest').click(); 
+    }
+    else if (inp.value.toUpperCase() == "COST AND SELLING PRICES") {
+        $("#prices").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "COST AND SELLING PRICES"){
+        document.getElementById('prices').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SETS,RELATIONS AND FUNCTIONS") {
+        $("#srf").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SETS,RELATIONS AND FUNCTIONS"){
+        document.getElementById('srf').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SETS FORMULAS LIST") {
+        $("#setformula").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SETS FORMULAS LIST"){
+        document.getElementById('setformula').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PROPERTIES OF MATRICES AND DETERMINANTS") {
+        $("#matrixprops").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PROPERTIES OF MATRICES AND DETERMINANTS"){
+        document.getElementById('matrixprops').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CAYLEY HAMILTON THEOREM AND DIAGONALIZATION") {
+        $("#cay").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CAYLEY HAMILTON THEOREM AND DIAGONALIZATION"){
+        document.getElementById('cay').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION") {
+        $("#sum_n_AP").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION"){
+        document.getElementById('sum_n_AP').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION") {
+        $("#sum_n_GP").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION"){
+        document.getElementById('sum_n_GP').click(); 
+    }
+    else if (inp.value.toUpperCase() == "INTEGRATION FORMULAE") {
+        $("#integration-idencollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "INTEGRATION FORMULAE"){
+        document.getElementById('integration-idencollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DEFINITE INTEGRATION FORMULAE") {
+        $("#defintegration-idencollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DEFINITE INTEGRATION FORMULAE"){
+        document.getElementById('defintegration-idencollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DIFFERENTIAL EQUATIONS") {
+        $("#diffeqn").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DIFFERENTIAL EQUATIONS"){
+        document.getElementById('diffeqn').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CONVERGENCE AND DIVERGENCE OF SERIES") {
+        $("#convdiv").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CONVERGENCE AND DIVERGENCE OF SERIES"){
+        document.getElementById('convdiv').click(); 
+    }
+    else if (inp.value.toUpperCase() == "HYPERBOLIC TRIGONOMETRIC IDENTITIES") {
+        $("#hyptrigonoiden").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "HYPERBOLIC TRIGONOMETRIC IDENTITIES"){
+        document.getElementById('hyptrigonoiden').click(); 
+    }
+    else if (inp.value.toUpperCase() == "GENERAL SOLUTION OF TRIGONOMETRIC EQUATIONS") {
+        $("#trigsolcollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "GENERAL SOLUTION OF TRIGONOMETRIC EQUATIONS"){
+        document.getElementById('trigsolcollapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SOLUTION OF TRIANGLES") {
+        $("#solutiontri").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SOLUTION OF TRIANGLES"){
+        document.getElementById('solutiontri').click(); 
+    }
+    else if (inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART") {
+        $("#giff").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
+        document.getElementById('giff').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
+        $("#expo").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SOLVE FOR EXPONENTS"){
+        document.getElementById('expo').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PERCENTAGE CALCULATOR") {
+        $("#percal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PERCENTAGE CALCULATOR"){
+        document.getElementById('percal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "STANDARD DEVIATION") {
+        $("#deviation").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "STANDARD DEVIATION"){
+        document.getElementById('deviation').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PRIME NUMBERS") {
+        $("#prime").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PRIME NUMBERS"){
+        document.getElementById('prime').click(); 
+    }  
+    else if (inp.value.toUpperCase() == "MEAN MEDIAN MODE") {
+        $("#Meanit").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "MEAN MEDIAN MODE"){
+        document.getElementById('Meanit').click(); 
+    } 
     else if (inp.value.toUpperCase() == "CURRENCY CONVERTOR") {
         $("#curconcal").slideToggle(); 
     }
