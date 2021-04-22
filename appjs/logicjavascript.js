@@ -3188,6 +3188,53 @@ function pyramidsolve() {
     }
 }
 
+function recpyramidsolve(){
+    var l = document.getElementById("inputrecpyramidl").value;
+    var w = document.getElementById("inputrecpyramidw").value;
+    var h = document.getElementById("inputrecpyramidheight").value;  
+    var tsa = l*w + l * (math.sqrt((w * 0.5)**2 + h**2)) + w * (math.sqrt((l * 0.5)**2 + h**2 ));
+    var volume = (l * w * h)/3;
+    var ba = l * w;
+    var lsa = l * (math.sqrt((w * 0.5)**2 + h**2)) + w * (math.sqrt((l * 0.5)**2 + h**2 ));
+
+    var baoutput = document.getElementById("resultofrecbapyramid");
+    var tsaoutput = document.getElementById("resultofrectsapyramid");
+    var volumeoutput = document.getElementById("resultofrecvolpyramid");
+    var lsaoutput = document.getElementById("resultofreclsapyramid");
+    var batemp ="";
+    var tsatemp = "";
+    var voltemp ="";
+    var lsatemp = "";
+
+    if (l != "" && w != "" && h !=""){
+        voltemp += "\\[ \\frac{" + l + "\\times" + w + "\\times" + h + "}{"+ 3 +"} \\]";
+        voltemp += "\\[Volume \\space is \\space = "+volume.toFixed(3)+"\\]";
+        volumeoutput.innerHTML = voltemp;
+
+        lsatemp += "\\[ "+l+" \\sqrt{ (\\frac{"+w+"}{2})^2 + "+h+"^2} + "+w+" \\sqrt{ (\\frac{"+l+"}{2})^2 + "+h+"^2 }\\]";
+        lsatemp += "\\[Lateral \\space \\space Surface \\space area  \\space is \\space = "+lsa.toFixed(3)+" \\]";
+        lsaoutput.innerHTML = lsatemp;
+
+        tsatemp += "\\[ "+l+" \\times"+w+" + "+l+" \\sqrt{ (\\frac{"+w+"}{2})^2 + "+h+"^2} + "+w+" \\sqrt{ (\\frac{"+l+"}{2})^2 + "+h+"^2 }\\]";
+        tsatemp += "\\[Surface \\space area \\space is \\space = "+tsa.toFixed(3)+" \\]";
+        tsaoutput.innerHTML = tsatemp;
+
+    } else if (l!="" && w!=""){
+        batemp += "\\["+l+" \\times "+w+"\\]";
+        batemp += "\\[Base \\space Area \\space is \\space = "+ba.toFixed(3)+"\\]";
+        baoutput.innerHTML = batemp;
+    } else{
+        tsaoutput.innerHTML = "";
+        volumeoutput.innerHTML ="";
+        lsaoutput.innerHTML = "";
+        baoutput.innerHTML ="";
+    }
+    renderMathInElement(volumeoutput);
+    renderMathInElement(lsaoutput);
+    renderMathInElement(tsaoutput);
+    renderMathInElement(baoutput);
+}
+
 function tripyramidsolve() {
     var side = document.getElementById("inputtripyramidside").value;
     var slant = document.getElementById("inputtripyramidslant").value;

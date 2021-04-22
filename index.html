@@ -9422,6 +9422,11 @@
                                         href="#">Triangular Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#recpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Rectangular Pyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#pentpyramid"
                                         style="text-decoration:none;"
                                         href="#">Pentagonal Pyramid</a></td>
@@ -14865,6 +14870,77 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="recpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rectangular Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Base Area</h5>
+                                    <p class="text-center">\[A= lw\]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \frac{lwh}{3} \]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[S= lw + l \sqrt{ (\frac{w}{2})^2 + h^2} + w \sqrt{ (\frac{l}{2})^2 + h^2 }\]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[LSA= l \sqrt{ (\frac{w}{2})^2 + h^2} + w \sqrt{ (\frac{l}{2})^2 + h^2 }\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/recpyramid.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base length(l)" id="inputrecpyramidl"
+                                   oninput="recpyramidsolve();">  
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base width(w)" id="inputrecpyramidw"
+                                   oninput="recpyramidsolve();">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height of pyramid(h)" id="inputrecpyramidheight"
+                                   oninput="recpyramidsolve();">
+                            <p class="stopwrap" id="resultofrecbapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrectsapyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrecvolpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofreclsapyramid"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="tripyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
