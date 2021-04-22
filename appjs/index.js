@@ -142,6 +142,10 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+
+        "#sosqs",
+        "#segcals",
+
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -171,6 +175,7 @@ function openit(id) {
         "#algebraic-idencollapse",
         "#about",
         "#propcircle",
+        "#propquad",
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
@@ -264,6 +269,7 @@ function openit(id) {
         "#frustum",
         "#annulus",
         "#cosine",
+        "#setcal",
 	    "#ip",
 	    "#prices",
         "#percal",
@@ -271,7 +277,8 @@ function openit(id) {
         "#analytical",
         "#ellipsoid",
         "#expo",
-        "#setformula"
+        "#setformula",
+        "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

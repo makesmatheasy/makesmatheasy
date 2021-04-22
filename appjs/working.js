@@ -50,6 +50,11 @@ $(document).ready(function () {
         closenav();
     });
     
+    $("#stbut").click(function () {
+        openit("#setcal");
+        closenav();
+    });
+
     $("#leapyearbtn").click(function () {
         openit("#lyear");
         closenav();
@@ -101,11 +106,27 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#segcal").click(function () {
+        openit("#segcals");
+        closenav();
+        clearall();
+    });
+
+
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
         clearall();
     });
+
+
+    $("#sosq").click(function () {
+        openit("#sosqs");
+        closenav();
+        clearall();
+    });
+
 
     $("#arc").click(function () {
         openit("#arcs");
@@ -242,6 +263,11 @@ $(document).ready(function () {
     })
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
+        closenav();
+        clearall();
+    })
+    $("propquadbtn").click(function () {
+        openit("#propquad");
         closenav();
         clearall();
     })
@@ -744,6 +770,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#fourier_seriescollapsebtn").click(function(){
+        openit("#fourier_series");
+        closenav();
+        clearall();
+    });
+
 })
 
     function loader(action) {

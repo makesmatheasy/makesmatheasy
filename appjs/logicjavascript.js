@@ -979,6 +979,41 @@ function lcmsol(input) {
 //lcm
 //-----------------------------------------------------
 
+function setcal() {
+    var s1 = document.getElementById("first-set").value;
+    var s2 = document.getElementById("second-set").value;
+    var s3 = document.getElementById("set-operation").value;
+    var a1 = s1.split(" ");
+    var a2 = s2.split(" ");
+    var e1 = new Set(a1);
+    var e2 = new Set(a2);
+    if(s3=="Union")
+    {
+        var re =new Set([...e1, ...e2]);
+        document.getElementById("set-result").innerHTML = [...re].join(' ') ;
+    }
+    if(s3=="Intersection")
+    {
+
+        var re = new Set();
+   
+        for (var elem of e1) {
+            if (e2.has(elem)) {
+                re.add(elem);
+             }
+        }
+        document.getElementById("set-result").innerHTML = [...re].join(' ') ;
+    }
+    if(s3=="Difference")
+    {
+        var re = new Set(e1);
+        for (var elem of e2) {
+            re.delete(elem);
+        }
+        document.getElementById("set-result").innerHTML = [...re].join(' ') ;
+    }
+}
+
 //-----------------------------------------------------
 //check for set value buttons
 function checkforusetrigovalue() {
@@ -1724,6 +1759,78 @@ function solvesection()
     var pt1 = (m*x2 + n *x1)/(m+n);
     var pt2 = (m*y2 + n *y1)/(m+n);
     document.getElementById('output').innerHTML= 'Point dividing (' + x1 + ',' + y1 + ') and (' + x2 + ',' + y2 + ') in the ratio ' + m + ':' + n + ' is (' + pt1 + ', ' + pt2 + ')' ;
+    
+}
+
+
+function circumsolve(){
+    var x1,y1,x2,y2,x3,y3,A,B,C;
+    x1=parseFloat(document.getElementById('X1st').value);
+    y1=parseFloat(document.getElementById('Y1st').value);
+    x2=parseFloat(document.getElementById('X2st').value);
+    y2=parseFloat(document.getElementById('Y2st').value);
+    x3=parseFloat(document.getElementById('X3st').value);
+    y3=parseFloat(document.getElementById('Y3st').value);
+    A=parseFloat(document.getElementById('angleA').value);
+    B=parseFloat(document.getElementById('angleB').value);
+    C=parseFloat(document.getElementById('angleC').value);
+    var circenterop = document.getElementById("cir_output");
+    var explain = document.getElementById("cirformula");
+    var c1 = (((x1*Math.sin(2*A* Math.PI / 180.0))+(x2*Math.sin(2*B* Math.PI / 180.0))+(x3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
+    var c2 = (((y1*Math.sin(2*A* Math.PI / 180.0))+(y2*Math.sin(2*B* Math.PI / 180.0))+(y3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
+    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (A!="") && (B!="") && (C!="")){
+        circenterop.innerHTML = "\\[Circumcenter \\space = \\space (" + eval(String(c1)) + "," + eval(String(c2)) + ")"  +"\\]";
+        renderMathInElement(document.getElementById("cir_output"));
+        explain.innerHTML = "\\[Formula \\space (x, \\space y) \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
+        renderMathInElement(document.getElementById("cirformula"));
+    }
+}
+function incentersolve(){
+    var x1,y1,x2,y2,x3,y3,a,b,c;
+    x1=parseFloat(document.getElementById('X1').value);
+    y1=parseFloat(document.getElementById('Y1').value);
+    x2=parseFloat(document.getElementById('X2').value);
+    y2=parseFloat(document.getElementById('Y2').value);
+    x3=parseFloat(document.getElementById('X3').value);
+    y3=parseFloat(document.getElementById('Y3').value);
+    a=parseFloat(document.getElementById('ina').value);
+    b=parseFloat(document.getElementById('inb').value);
+    c=parseFloat(document.getElementById('inc').value);
+    var incenterop = document.getElementById("in_output");
+    var explain = document.getElementById("informula");
+    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (a!="") && (b!="") && (c!="")){
+        incenterop.innerHTML = "\\[Incenter \\space = \\space (" + eval(String(((a*x1)+(b*x2)+(c*x3))/(a+b+c))) + "," + eval(String(((a*y1)+(b*y2)+(c*y3))/(a+b+c))) + ")"  +"\\]";
+        renderMathInElement(document.getElementById("in_output"));
+        explain.innerHTML = "\\[Formula \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" + "\\] ";
+        renderMathInElement(document.getElementById("informula"));
+
+    }
+}
+
+function collinearsolve()
+{
+    var x1,y1,x2,y2,x3,y3;
+    x1=parseFloat(document.getElementById('a1').value);   
+    y1=parseFloat(document.getElementById('b1').value);
+    x2=parseFloat(document.getElementById('a2').value);
+    y2=parseFloat(document.getElementById('b2').value);
+    x3=parseFloat(document.getElementById('a3').value);
+    y3=parseFloat(document.getElementById('b3').value);
+    var explainA = document.getElementById('collop1');
+    var explainB = document.getElementById('collop2');
+    var mA= (y2-y1)/(x2-x1);  
+    var mB = (y3-y2)/(x3-x2);  
+    if(mA==mB){
+        explainA.innerHTML = "\\[" + "Points \\space are \\space collinear"  + "\\] ";
+        renderMathInElement(document.getElementById("collop1"));
+       
+    }
+    else{
+        explainB.innerHTML = "\\[" + "Points \\space are \\space non-collinear" +"\\] ";
+        renderMathInElement(document.getElementById("collop2"));
+     
+    }
+    
     
 }
 function solveocta() {
@@ -6019,7 +6126,14 @@ function Mode() {
         }
     }
 }
-
+function hypf(){
+    var hypa = parseInt(document.getElementById("hypa").value)
+    var hypb = parseInt(document.getElementById("hypb").value)
+    var hyph = parseInt(document.getElementById("hyph").value)
+    var ans1 = (2*3.14*hyph*hypa*hypa)/(hypb*hypb)
+    var ans = ans1*(hypb*hypb + ((hyph*hyph)/3))
+    document.getElementById("hypans").innerHTML = "The volume is " + ans
+}
 //Mode end
 //Variance
 function Variance() {
@@ -7400,4 +7514,5 @@ function ran(x,y,z)
         }
     }
     return c;
+}
 }
