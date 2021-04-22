@@ -2977,6 +2977,34 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
+
+//square Prism
+function sqprismsolve(){
+    var edge = document.getElementById("inputsqprismedge").value;
+    var height = document.getElementById("inputsqprismheight").value;
+    var area = 2 * edge**2 + 4 * edge * height;
+    var volume = edge**2 * height;
+    var diagonal = math.sqrt(2 * edge**2 + height**2);
+    var voloutput = document.getElementById("resultofvolsqprism");
+    var areaoutput1 = document.getElementById("resultofareasqprism1");
+    var areaoutput2 = document.getElementById("resultofareasqprism2");
+    var diaoutput1 = document.getElementById("resultofdiasqprism1");
+    var diaoutput2 = document.getElementById("resultofdiasqprism2");
+
+    if (height!="" && edge!=""){
+        voloutput.innerHTML = "\\[Volume \\space of \\space Prism \\space \\space" + edge + "^2 \\times"+height+" = " + volume.toFixed(2) + "\\]";
+        renderMathInElement(voloutput);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Square  \\space Prism \\space is \\]";
+        areaoutput2.innerHTML = "\\[2 \\times "+edge+"^2 + 4 \\times "+edge+" \\times "+height+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+        diaoutput1.innerHTML = "\\[Diagonal \\space of \\space Square  \\space Prism \\space is \\]";
+        diaoutput2.innerHTML = "\\[\\sqrt{2 \\times "+edge+"^2 + "+height+"^2} = " + diagonal.toFixed(2) + "\\]";
+        renderMathInElement(diaoutput1);
+        renderMathInElement(diaoutput2);
+    }
+}
+
 //Pentagonal Prism
 function pentprismsolve() {
     var height = document.getElementById("inputpentprismheight").value;
@@ -3248,7 +3276,6 @@ function octpyramidsolve() {
 
     }
 }
-
 //Pentagonal Pyramid
 function pentpyramidsolve(){
     var side = document.getElementById("inputpentpyramidside").value;
