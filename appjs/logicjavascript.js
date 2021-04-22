@@ -1851,6 +1851,24 @@ function solveocta() {
         renderMathInElement(document.getElementById("resultoftsa"));
     }
 }
+function solveicosa() {
+    var a = document.getElementById("inputtside").value;
+    var resultvolt = document.getElementById("resultofvolt");
+    var resulttsa = document.getElementById("resultoftsa");
+    resultofvolt.innerHTML = "";
+    resultoftsa.innerHTML = "";
+    var volume = (2.18 * (a * a * a)).toFixed(2);
+    var tsa = (8.66 * (a * a)).toFixed(2);
+  
+    if (a != "") {
+        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Icosahedron \\space \\newline \\frac{5}{12}" + "( \\space 3 \\space + \\space \\sqrt{5})" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
+        renderMathInElement(document.getElementById("resultofvolt"));
+    }
+    if (a != "") {
+        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Icosahedron \\space \\newline " + 5  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
+        renderMathInElement(document.getElementById("resultoftsa"));
+    }
+}
 
 function coordinatearea(){
     var x1,y1,x2,y2,x3,y3;
