@@ -270,6 +270,7 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        "#icosahedron",
         "#anglecon",
         "#frustum",
         "#annulus",
