@@ -8165,82 +8165,57 @@
         </div>
 
         <div class="collapse" id="plotbargraph">
+
+            <center><h3>PLOT BAR GRAPH</h3></center>
+            <h4>Instructions : </h4>
+            <h5>Seperate Each data with ',' for both the axis</h5>
+            <h5> - Example :</h5>
+            <h5> for Y axis enter ----> a,b,c,d :</h5>
+            <h5> for Y axis enter ----> 10,5,6,4 :</h5>
+
         
-            <input type="number" class="form__field" id="numofinput" placeholder="Enter The Number Of Entries">
+            <input type="text" class="form__field" id="y_axis" placeholder="Enter The Values of Y axis " style="margin-top: 20px;">
+            <br><br>
+            <input type="text" class="form__field" id="x_axis" placeholder="Enter The Values Of X axis ">
             <br><br>
             <center>
-            <input name="generate" type="button" value="Enter Vlaues" onclick='createTable();' />
+            <input name="generate" type="button" value="CREATE GRAPH" onclick='create_graph();' />
             </center>
             <br><br>
-
-            <div id="crete_table"></div>
-
-             <center>
-            <input name="generate_graph" type="button" value="Create Graph" onclick='create_graph();' />
-            </center>
-            <br>
-
-            <div id="array"></div>
-
 
             <div id="graph" style="width: 100%; height: 100%"></div>
         
             <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+           
         
             <script>
 
-                function createTable() {
-                    var num_rows = document.getElementById('numofinput').value;
-                    var num_cols = 2;
-                    var theader = '<table border="1" id = "data_table">\n';
-                    var tbody = '';
+                function enterData() {
+                    var y = document.getElementById('y_axis').value;
+                    var x = document.getElementById('x_axis').value;
 
-                    for (var i = 0; i < num_rows; i++) {
-                        tbody += '<tr>';
-                        for (var j = 0; j < num_cols; j++) {
-                            tbody += '<td class="values" >';
-                            tbody += '<input type="text">'; // to display or type content
-                            tbody += '</td>'
-                        }
-                        tbody += '</tr>\n';
-                    }
-                    var tfooter = '</table>';
-                    document.getElementById('crete_table').innerHTML = theader + tbody + tfooter;
-                }
+                    y_axis  = y.split(',');
+                    // x_axis = x.split(',');
+                    x_axis = x.toString().split(',').map(Number)
 
-                function save_data() {
+                    list = []
 
-                    var convertedIntoArray = [];
-                    let values = document.getElementsByClassName('values');
-                    $("values").each(function () 
+                    for(i = 0 ; i <y_axis.length ; i++)
                     {
-                        var rowDataArray = [];
-                        var actualData = $(this).find('td');
-                        if (actualData.length > 0) {
-                            actualData.each(function () {
-                                rowDataArray.push($(this).text());
-                                console.log(this);
-                            });
-                            convertedIntoArray.push(rowDataArray);
-                        }
-                    });
-
-                    document.getElementById('array').innerHTML = values;
-                    console.log(values);
-
-                    return(convertedIntoArray);
-
-                    //  return TableData;
-
-
+                        values = []
+                        values.push(y_axis[i])
+                        values.push((x_axis[i]))
+                        list.push(values)
+                    }
+                    console.log(list)
+                    return list
                 }
+
+
 
                 function create_graph()
                 {
-                    row1 = save_data();
-                    console.log(row1);
+                    row1 = enterData();
 
                     anychart.onDocumentReady(function () {
                         // the code to create a chart will be here
@@ -8269,6 +8244,8 @@
                 }
 
             </script>
+
+          
         
         
         </div>
