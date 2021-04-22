@@ -1751,6 +1751,7 @@
                     </tr>
                 </table>
             </li>
+            
             <li>
                 <table class="table">
                     <tr>
@@ -1762,6 +1763,22 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Unit Convertor','#unitconcal','c','unitimgfav')"><img
                                         id="unitimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="impfix"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Improper to Mixed Fraction</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Improper to Mixed','#impfixs','c','miximgfav')"><img
+                                        id="miximgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1872,6 +1889,22 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Plot Angle','#plotangle','c','plotangfav')"><img
                                         id="plotangfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ssst"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;"> SSS Triangle's Angle Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('SSS Triangle Angle Calculator','#ssts','c','sstfav')"><img
+                                        id="sstfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2009,6 +2042,7 @@
             </li>
 
 
+
             
             <li>
                 <table class="table">
@@ -2026,6 +2060,7 @@
                     </tr>
                 </table>
             </li>
+
 
 
             <li>
@@ -10241,6 +10276,112 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<!--SSS TRiangle starts-->
+<div class="collapse" id="ssts">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">SSS Triangle's Angle Calculator </h1>
+    <input type="number" name="sd1" class="form__field" id="sd1" width="5em" placeholder="Enter length of first side of triangle">
+    <p>&nbsp;</p>
+    <input type="number" name="sd2" class="form__field" id="sd2" placeholder="Enter length of second side of triangle">
+    <p>&nbsp;</p>
+    <input type="number" name="sd3" class="form__field" id="sd3" placeholder="Enter length of third side of triangle">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ssscal()">Calculate</button><p>&nbsp;</p>
+    <p id="sstans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"></p><p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">"SSS" is when we know three sides of the triangle, and want to find the missing angles.<br>
+
+
+        To solve an SSS triangle:<br>
+        
+        Use The Law of Cosines first to calculate one of the angles<br>
+        Use The Law of Cosines again to find another angle<br>
+        Finally use angles of a triangle add to 180° to find the last ang
+    </div>
+    
+   
+</div>
+<!--SSS Triangle ends-->
+
+<div class="collapse" id="impfixs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">IMPROPER TO MIXED FRACTION CONVERTER</h1>
+    <input type="number" name="num" class="form__field" id="num" width="5em" placeholder="Enter numerator of fraction">
+    <p>&nbsp;</p>
+    <input type="number" name="den" class="form__field" id="den" placeholder="Enter denominator of fraction">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="impcal()">CONVERT</button>
+    <p id="impans" style="color: white; text-align: center; font-family:mathfont;"></p>
+    
+   
+</div>
+
+<div class="collapse" id="sosqs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Square Calculator </h1>
+    <input type="text" name="ssq" class="form__field" id="ssq" placeholder="Enter number whose square's sum you want to find">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ssqcal()">Calculate</button> <p>&nbsp;</p>
+    <p id="ssqans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    
+    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Square : <br> <br> For two numbers : x2 + y2 = (x + y)2– 2ab ; x and y are real numbers <p>&nbsp;</p> For three numbers : x2 + y2+z2 = (x+y+z)2-2xy-2yz-2xz ; x,y and z are real numbers
+    <p>&nbsp;</p> For n Natural Numbers : Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p> For first n Even Numbers : Σ(2n)2 =[2n(n+1)(2n+1)]/3 <p>&nbsp;</p> For first n Odd Numbers : Σ(2n-1)2 = [n(2n+1)(2n-1)]/3
+    </div>
+   
+</div>
+
+<div class="collapse" id="segcals">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
+    <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
+    <p>&nbsp;</p>
+    <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
+    <select id="angseg" class="form__field">
+        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
+        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
+    </select>
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button> <p>&nbsp;</p>
+    <p id="segans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    
+    <div style="color: white; text-align: center; font-family:mathfont; font-size: 1.3em;"> A segment of a circle can be defined as a region bounded by a chord and a corresponding arc lying between the chord’s endpoints.<br>Area of a Segment in Radians: A = (½) × r x r x (θ – Sin θ)
+    <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]</div>
+   
+</div>
+
+<div class="collapse" id="arcs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
+    <input type="number" name="ang" class="form__field" id="ang"  placeholder="Enter central angle of circle">
+    <select id="angit" class="form__field">
+        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
+        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
+    </select> <p>&nbsp;</p>
+    <input type="number" name="rad" class="form__field" id="rad"  placeholder="Enter radius of circle"> 
+    <select id="radit" class="form__field">
+        <option class="form__field" value="mm" style="background-color: #232a36;"> mm</option>
+        <option class="form__field" value="cm"  style="background-color: #232a36;"> cm</option>
+        <option class="form__field" value="m"  style="background-color: #232a36;"> m</option>
+        <option class="form__field" value="inch"  style="background-color: #232a36;"> inch</option>
+    </select>
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="arcal()">Calculate</button>
+    <p id="arcans" style="font-size: 1.5em;"></p> <p>&nbsp;</p>
+    <div id="dt" style="color: white; text-align: center; font-family:mathfont;">The length of an arc depends on the radius of a circle and the central angle θ. <br> L / θ = C / 2π<br>
+        As circumference C = 2πr,<br>
+        
+        L / θ = 2πr / 2π<br>
+        L / θ = r<br>
+        We find out the arc length formula when multiplying this equation by θ:<br>
+        
+        L = r * θ</div>
+   
+</div>
+
 
 
 <div class="collapse" id="sosqs">

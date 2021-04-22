@@ -7515,4 +7515,49 @@ function ran(x,y,z)
     }
     return c;
 }
+function radians_to_degrees(radians)
+{
+  var pi = Math.PI;
+  return radians * (180/pi);
+}
+function ssscal()
+{
+    var a=document.getElementById("sd1").value;
+    var b=document.getElementById("sd2").value;
+    var c=document.getElementById("sd3").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Error: All three sides are required to find all the angles";
+    }
+    else
+    {
+            var cosa= (b*b+c*c-a*a)/(2*b*c);
+            var cosb= (a*a+c*c-b*b)/(2*c*a);
+            var cosc= (b*b+a*a-c*c)/(2*b*a);
+            var anga=Math.acos(cosa);
+            var angb=Math.acos(cosb);
+            var angc=Math.acos(cosc);
+            var ab,bc,ca;
+            ab=radians_to_degrees(anga);
+            bc=radians_to_degrees(angb);
+            ca=radians_to_degrees(angc);
+
+            console.log(anga);
+            console.log(angb);
+            console.log(angc);
+            
+            ab=ab.toPrecision(4);
+            bc=bc.toPrecision(4);
+            ca=ca.toPrecision(4);
+            ans="The required angles oppsite to first side is: "+ab+" second side is: "+bc+"  third side is: "+ca;
+
+
+    }
+    document.getElementById("sstans").innerHTML=ans;
+
+
+
+
+
 }
