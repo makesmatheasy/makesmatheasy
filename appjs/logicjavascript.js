@@ -1676,6 +1676,25 @@ function interpointsolve()
     
 }
 
+function anglesolve()
+{
+    var a1, b1, c1, a2, b2, c2;
+    a1=parseFloat(document.getElementById('a1st').value);
+    b1=parseFloat(document.getElementById('b1st').value);
+    c1=parseFloat(document.getElementById('c1st').value);
+    a2=parseFloat(document.getElementById('a2nd').value);
+    b2=parseFloat(document.getElementById('b2nd').value);
+    c2=parseFloat(document.getElementById('c2nd').value);
+    var explain = document.getElementById("angleformula");
+    explain.innerHTML = "\\[Formula \\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2}) \\] ";
+    renderMathInElement(document.getElementById("angleformula"));
+    var M1=(-a1)/b1;
+    var M2=(-a2)/b2;
+    var angle = Math.atan((M2-M1)/(1+M1*M2));
+    document.getElementById('angle_output').innerHTML= 'Angle between lines is '  + (angle*180/Math.PI).toFixed(1) + '&deg' ;
+    
+}
+
 function dispointsolve()
 {
     var a,b,c;
