@@ -50,6 +50,11 @@ $(document).ready(function () {
         closenav();
     });
     
+    $("#stbut").click(function () {
+        openit("#setcal");
+        closenav();
+    });
+
     $("#leapyearbtn").click(function () {
         openit("#lyear");
         closenav();
@@ -101,17 +106,32 @@ $(document).ready(function () {
         clearall();
     });
 
+
+    $("#segcal").click(function () {
+        openit("#segcals");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
         clearall();
     });
 
+
+
+
     $("#sosq").click(function () {
         openit("#sosqs");
         closenav();
         clearall();
     });
+
+
+
 
     $("#arc").click(function () {
         openit("#arcs");
@@ -248,6 +268,11 @@ $(document).ready(function () {
     })
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
+        closenav();
+        clearall();
+    })
+    $("propquadbtn").click(function () {
+        openit("#propquad");
         closenav();
         clearall();
     })
@@ -470,13 +495,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     // I have added
-     $("#factorialbtn").click(function () {
+    $("#factorialbtn").click(function () {
         openit("#factorial");
         closenav();
         clearall();
     });
-
+    $("#parabbtn").click(function () {
+        openit("#parab");
+        closenav();
+        clearall();
+    });
     // Permutation and combination
     $("#pandcbtn").click(function () {
         openit("#pandc");
@@ -694,6 +722,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#degbtn").click(function(){
+        openit("#degcal");
+        closenav();
+        clearall();
+    });
+
     $("#percalbtn").click(function(){
         openit("#percal");
         closenav();
@@ -741,6 +775,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#fourier_seriescollapsebtn").click(function(){
+        openit("#fourier_series");
+        closenav();
+        clearall();
+    });
+
 })
 
     function loader(action) {
