@@ -1806,6 +1806,33 @@ function incentersolve(){
 
     }
 }
+
+function collinearsolve()
+{
+    var x1,y1,x2,y2,x3,y3;
+    x1=parseFloat(document.getElementById('a1').value);   
+    y1=parseFloat(document.getElementById('b1').value);
+    x2=parseFloat(document.getElementById('a2').value);
+    y2=parseFloat(document.getElementById('b2').value);
+    x3=parseFloat(document.getElementById('a3').value);
+    y3=parseFloat(document.getElementById('b3').value);
+    var explainA = document.getElementById('collop1');
+    var explainB = document.getElementById('collop2');
+    var mA= (y2-y1)/(x2-x1);  
+    var mB = (y3-y2)/(x3-x2);  
+    if(mA==mB){
+        explainA.innerHTML = "\\[" + "Points \\space are \\space collinear"  + "\\] ";
+        renderMathInElement(document.getElementById("collop1"));
+       
+    }
+    else{
+        explainB.innerHTML = "\\[" + "Points \\space are \\space non-collinear" +"\\] ";
+        renderMathInElement(document.getElementById("collop2"));
+     
+    }
+    
+    
+}
 function solveocta() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
@@ -7488,4 +7515,4 @@ function ran(x,y,z)
     }
     return c;
 }
-
+}
