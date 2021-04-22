@@ -3149,14 +3149,6 @@ function recpyramidsolve(){
     var volume = (l * w * h)/3;
     var ba = l * w;
     var lsa = l * (math.sqrt((w * 0.5)**2 + h**2)) + w * (math.sqrt((l * 0.5)**2 + h**2 ));
-    console.log("tsa")
-    console.log(tsa)
-    console.log("ba")
-    console.log(ba)
-    console.log("vol")
-    console.log(volume)
-    console.log("lsa")
-    console.log(lsa)
 
     var baoutput = document.getElementById("resultofrecbapyramid");
     var tsaoutput = document.getElementById("resultofrectsapyramid");
