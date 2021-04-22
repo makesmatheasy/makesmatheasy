@@ -143,8 +143,14 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+
         "#sosqs",
         "#segcals",
+
+        "#sosqs",
+        "#segcals",
+
+
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -164,6 +170,7 @@ function openit(id) {
         "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
+        "#parab",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
@@ -173,6 +180,7 @@ function openit(id) {
         "#algebraic-idencollapse",
         "#about",
         "#propcircle",
+        "#propquad",
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
@@ -232,6 +240,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#degcal",
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
@@ -258,19 +267,23 @@ function openit(id) {
         "#pentprism",
         "#pyramid",
         "#tripyramid",
+        "#octpyramid",
         "#hexpyramid",
         "#octahedron",
         "#anglecon",
         "#frustum",
         "#annulus",
         "#cosine",
+        "#setcal",
 	    "#ip",
 	    "#prices",
         "#percal",
         "#lyear",
         "#analytical",
+        "#ellipsoid",
         "#expo",
-        "#setformula"
+        "#setformula",
+        "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

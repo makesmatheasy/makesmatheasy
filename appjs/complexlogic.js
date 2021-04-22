@@ -105,38 +105,62 @@ function comOperation(value) {
 function mag(){
     var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
     var ans=x.real*x.real + x.imaginary*x.imaginary;
-    ans=Math.sqrt(ans);
+    let explain="\\[Magnitude = \\sqrt{real^2+imaginary^2}\\]"+"\\[Magnitude = \\sqrt{("+x.real+")^2+("+x.imaginary+")^2}=\\sqrt{"+x.real*x.real+"+"+x.imaginary*x.imaginary+"}=\\sqrt{"+ans+"}\\]";
+    ans=Math.sqrt(ans).toFixed(3);
+    explain+="\\[Magnitude ="+ans+"\\]";
     document.getElementById('comresult').innerHTML="Magnitude is &nbsp;" + ans;
-
+    document.getElementById('comexplain').innerHTML=explain;
+    renderMathInElement(document.getElementById("comexplain"));
 }
 function arg(){
     var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
-    var ans=Math.atan(x.imaginary/x.real);
+    var ans=Math.atan(x.imaginary/x.real).toFixed(3);
+    let explain="\\[Argument =tan^{-1}\\frac{imaginary}{real}\\]"+"\\[Argument =tan^{-1}\\frac{"+x.imaginary+"}{"+x.real+"}=tan^{-1}"+(x.imaginary/x.real).toFixed(3)+"\\]";
+    explain+="\\[Argument ="+ans+"\\space radians\\]";
     document.getElementById('comresult').innerHTML="Argument is &nbsp;" + ans + "&nbsp; radians";
-
+    document.getElementById('comexplain').innerHTML=explain;
+    renderMathInElement(document.getElementById("comexplain"));
 }
 function conj(){
     var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
     x.imaginary=x.imaginary*-1;
-    if(x.imaginary>0)
-    document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; +" + x.imaginary + "i";
-    else
-    document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; " + x.imaginary + "i";
+    let explain;
+    if(x.imaginary>=0){
+        explain="\\[Conjugate = real\\space+ \\space(-1)*imaginary \\]"+"\\[Conjugate = "+x.real +"+"+x.imaginary+" i\\]";
+        document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; +" + x.imaginary + "i"
+    }
+    else{
+        explain="\\[Conjugate = real\\space+ \\space(-1)*imaginary \\]"+"\\[Conjugate = "+x.real+"\\space"+ x.imaginary+" i\\]";
+        document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; " + x.imaginary + "i";
+    }
+    document.getElementById('comexplain').innerHTML=explain;
+    renderMathInElement(document.getElementById("comexplain"));
     
 }
 function sqr_rt(){
+    let explain="\\[From\\space De\\space Moivre's\\space Formula,\\space z^n=(r^n)(cos(n\\theta)+i \\space sin(n\\theta))\\]"+"\\[So,\\space \\sqrt{z}=\\sqrt{r}(cos(\\frac{\\theta}{2})+i \\space sin(\\frac{\\theta}{2}))\\]"
+    explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
     var x = new Complex(document.getElementById('creal').value,document.getElementById('cimg').value);
-    var deg=Math.atan(x.imaginary/x.real);
-    var r=Math.sqrt(Math.sqrt(x.real*x.real + x.imaginary*x.imaginary));
-    var s = Math.sin(deg/2);
-    var c = Math.cos(deg/2);
+    var deg=Math.atan(x.imaginary/x.real).toFixed(3);
+    var r=Math.sqrt(x.real*x.real + x.imaginary*x.imaginary).toFixed(3);
+    explain+="\\[r=\\sqrt{("+x.real+")^2+("+x.imaginary+")^2}="+r+"\\space \\space , \\space \\space \\theta=tan^{-1}\\frac{"+x.imaginary+"}{"+x.real+"}="+deg+"\\]";
+    r=Math.sqrt(r).toFixed(3);
+    var s = Math.sin(deg/2).toFixed(3);
+    var c = Math.cos(deg/2).toFixed(3);
     var rePart = r*c;
     var imPart = r*s;
-    if(x.imaginary>0)
-    document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart + "&nbsp; + " + imPart + "i";
-    else
-    document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart + "&nbsp; " + imPart + "i";
-    
+    if(x.imaginary>=0){
+        document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart.toFixed(3) + "&nbsp; + " + imPart.toFixed(3) + "i";
+        explain+="\\[\\sqrt{"+x.real+"+"+x.imaginary+"i \\space}="+r+"(cos("+deg/2+")+i \\space sin("+deg/2+"))="+r+"("+c+"+"+s+"i)\\]";
+        explain+="\\[\\sqrt{"+x.real+"+"+x.imaginary+"i \\space}="+rePart.toFixed(3)+"+"+imPart.toFixed(3)+"i\\]";
+    }
+    else{
+        document.getElementById('comresult').innerHTML="Square root is &nbsp;" + rePart.toFixed(3) + "&nbsp; " + imPart.toFixed(3) + "i";
+        explain+="\\[\\sqrt{"+x.real+"+"+x.imaginary+"i \\space}="+r+"(cos("+deg/2+")+i \\space sin("+deg/2+"))="+r+"("+c+s+"i)\\]";
+        explain+="\\[\\sqrt{"+x.real+"+"+x.imaginary+"i \\space}="+rePart.toFixed(3)+imPart.toFixed(3)+"i\\]";
+    }
+    document.getElementById('comexplain').innerHTML=explain;
+    renderMathInElement(document.getElementById("comexplain"));
 }
 function err1() {
     katex.render("Invalid!", document.getElementById('comresult'), {
@@ -163,6 +187,8 @@ function polar()
 {
   var r = parseInt(document.getElementById("cpreal").value);
   var i = parseInt(document.getElementById("cpimg").value);
+  let explain="\\[Polar \\space Form \\space =r(cos(\\theta)+i\\space sin(\\theta))\\]";
+  explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
   var result= document.getElementById("comp1result");
   var x = (Math.sqrt((r*r)+(i*i)));
   if(!Number.isInteger(x))
@@ -170,41 +196,60 @@ function polar()
     var j = (r*r)+(i*i);
     x = "&#8730;  "+ j ;
   }
+  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
   if(y<0)
   {   
       y=nerdamer((-1)*y).toString();
 	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
+      explain+="-π" +y+"\\]";
   }
   else{
 	  y=y.toString();
       x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
+      explain+="π" +y+"\\]";
   }
   
   result.innerHTML = x;
+  explain+="\\[Polar \\space Form \\space ="+x+"\\]";
+  document.getElementById('comp1explain').innerHTML=explain;
+  renderMathInElement(document.getElementById("comp1explain"));
 }
 function euler()
 {
+  let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
+  explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
   var r = parseInt(document.getElementById("cpereal").value);
   var i = parseInt(document.getElementById("cpeimg").value);
   var result= document.getElementById("comperesult");
   var x = (Math.sqrt((r*r)+(i*i)));
+  var x1;
   if(!Number.isInteger(x))
   {
     var j = (r*r)+(i*i);
     x = "&#8730;  "+ j ;
   }
+  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
   var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
   if(y<0)
   {   
       y=nerdamer((-1)*y).toString();
+      x1=x+"e^{-iπ"+y+"}";
 	  x=x+"e<sup>-iπ"+y+"</sup>";
+      explain+="-π" +y+"\\]";
   }
   else{
 	  y=y.toString();
+      x1=x+"e^{iπ"+y+"}";
    x=x+"e<sup>iπ"+y+"</sup>";
+   explain+="π" +y+"\\]";
   }
   result.innerHTML = x;
+  explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
+  document.getElementById('compeexplain').innerHTML=explain;
+  renderMathInElement(document.getElementById("compeexplain"));
 }
 
 function display_devi(){
@@ -606,6 +651,7 @@ function arcal()
 
       document.getElementById("arcans").innerHTML=ans;
 
+
 }
 
 function ssqcal()
@@ -671,6 +717,7 @@ function segcal()
     ans="The area of segment is: "+area;
 }
 document.getElementById("segans").innerHTML=ans;
+
 }
 
 function impcal()
