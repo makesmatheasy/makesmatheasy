@@ -439,6 +439,12 @@ ul li .table {
   background: var(--apppink) !important;
   border-radius: 2.25rem;
 }
+
+td{
+  text-align: center;
+  color:white;
+}
+
 #about .table td {
   text-align: center;
 }
