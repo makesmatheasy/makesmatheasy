@@ -27,6 +27,11 @@ body {
   overflow-x: hidden;
   height: 100vh;
 }
+
+html, body {
+  overflow: visible;
+}
+
 body img {
   filter: invert(100%);
 }
