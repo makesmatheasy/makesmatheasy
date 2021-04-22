@@ -14,8 +14,7 @@ Solves various Math Problems along with Steps
 
 ### Tech Used
 
-<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/> 
-
+<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
 
 Other Tech/Libraries
 
@@ -34,15 +33,17 @@ Other Tech/Libraries
 ### Calculators
 
 - Inbuilt Calculator
+
   - Regular Calculations
   - Scientific Calculations
   - Fraction/Decimal Answer
 
 - Linear Algebra
+
   - Mathematical Reasoning
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
-  - Sets,Relations and Functions 
+  - Sets,Relations and Functions
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
@@ -59,11 +60,13 @@ Other Tech/Libraries
     - Harmonic Mean
 
 - Conic Section
+
   - Parabola
   - Ellipse
   - Hyperbola
 
 - Calculus
+
   - Transformation of Functions
   - Integration + Limits
     - Solution from Nerdamer
@@ -90,14 +93,13 @@ Other Tech/Libraries
   - Convergence and Divergence of Series
 
 - Trigonometry
-  - Finding sides of a right triangle (provided any two) 
+  - Finding sides of a right triangle (provided any two)
   - Trigonometric Values
   - Trigonometric Identities
   - Inverse Trigonometric Identities
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
-  
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
@@ -127,7 +129,6 @@ Other Tech/Libraries
   - Prime Numbers
     - Primality Test
     - Primes till entered number
-  
 - Basic Convertors
   - Currency Convertor
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
@@ -148,10 +149,12 @@ Other Tech/Libraries
     - Conversion from Roman to Arabic and vice versa
     - Expanding the Arabic numbers **(eg. '2423' to '2000+400+20+3')**
     - Expanding the Roman numbers **(eg. 'CIV' to 'C+IV')**
-  
 - Graphs & Shapes
+
   - Plot Graph
     - Plots a Graph of entered Equation having single variable 'x'
+  - Plot Bar Graph
+    - Plots a Bar Graph along x and y axis by taking input from the user
   - Plot Angle
   - Properties of Parallel Lines
   - Coordinate Systems
@@ -187,6 +190,7 @@ Other Tech/Libraries
   - Congruence and Similarity of Triangles
 
 - Equations
+
   - Algebraic Equations Formulas
   - Roots of Quadratic Equation
   - Location of Roots
@@ -196,6 +200,7 @@ Other Tech/Libraries
     - Solve value of variables of multiple inputted equations
 
 - Binary Calculations
+
   - Boolean Algebra
   - Any Base to Any Base Converter
   - Decimal/Binary Converter
@@ -210,6 +215,7 @@ Other Tech/Libraries
   - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
+
   - Operations for 1 complex number
     - Magnitude
     - Argument
@@ -227,7 +233,7 @@ Other Tech/Libraries
   - Empirical Probability
   - Joint Probability
   - Bayes Probability Theorem
-  
+
 ---
 
 ## Documentation
@@ -255,21 +261,22 @@ If you think that you can add a new feature or want to fix a bug. We invite you 
 
 3. Create a Git repository.
 
-    Run command ```git init```
+   Run command `git init`
 
 4. Fork the [repository](https://github.com/sairish2001/MakesMathEasy).
 
 5. Clone your forked repository of project.
- 
-``` git clone
+
+```git clone
 git clone https://github.com/<your_username>/MakesMathEasy.git
 ```
 
 6. Navigate to the project directory.
 
-``` 
-cd MakesMathEasy 
 ```
+cd MakesMathEasy
+```
+
 7. Add a reference(remote) to the original repository.
 
 ```
@@ -281,13 +288,15 @@ git remote add upstream https://github.com/sairish2001/MakesMathEasy.git
 ```
 git remote -v
 ```
+
 9. Always take a pull from the upstream repository to your main branch to keep it updated as per the main project repository.
 
 ```
-git pull upstream main 
+git pull upstream main
 ```
 
 10. Create a new branch(prefer a branch name that relates to your assigned issue).
+
 ```
 git checkout -b <YOUR_BRANCH_NAME>
 ```
@@ -299,9 +308,11 @@ git checkout -b <YOUR_BRANCH_NAME>
 ```
 git status
 ```
+
 ```
 git  diff
 ```
+
 13. Stage your changes.
 
 ```
@@ -309,27 +320,29 @@ git add . <\files_that_you_made_changes>
 ```
 
 14. Commit your changes.
+
 ```
 git commit -m "relavant message"
 ```
 
 15. Push the committed changes in your feature branch to your remote repository.
+
 ```
 git push -u origin <your_branch_name>
 ```
 
-16. To create a pull request, click on ```compare and pull requests```.
+16. To create a pull request, click on `compare and pull requests`.
 
 17. Add appropriate title and description to your PR explaining your changes.
 
-18. Click on ```Create pull request```.
+18. Click on `Create pull request`.
 
 Congratulations🎉, you have made a PR to the MakesMathEasy.
- Wait for your submission to be accepted and your PR to be merged by a maintainer. 
- 
- If you have any doubts please let us know in the comments.
+Wait for your submission to be accepted and your PR to be merged by a maintainer.
 
- ### BE OPEN!
+If you have any doubts please let us know in the comments.
+
+### BE OPEN!
 
 ---
 
