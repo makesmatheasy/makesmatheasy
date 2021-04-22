@@ -2041,6 +2041,21 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="centcalbut"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Centroid Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Centroid Calculator','#centcal','c','centcalfav')"><img
+                                        id="centcalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             
@@ -9511,6 +9526,66 @@
         </div>
 
         <!-- Date Calculator End-->
+
+        <div class="collapse" id="centcal">
+            <div class="col-8">
+                <div class="col-6">
+                    <label>
+                        <h5>First Edge</h5> 
+                    </label>
+                <div class="row">
+                    <div class="col-3">
+                    <input type="number" id="fxc" class="form__field" placeholder="x" ;
+                    oninput="centcal();">
+                    </div>
+                    <div class="col-3">
+                        <input type="number" id="fyc" class="form__field" placeholder="y" ;
+                        oninput="centcal();">
+                    </div>
+                </div>
+                </div>
+                <div class="col-6" >
+                    <label>
+                        <h5>Second Edge</h5>
+                    </label>
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="number" id="sxc" class="form__field" placeholder="x" ;
+                            oninput="centcal();">
+                        </div>
+                        <div class="col-3">
+                            <input type="number" id="syc" class="form__field" placeholder="y" ;
+                            oninput="centcal();">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6" >
+                    <label>
+                        <h5>Third Edge</h5>
+                    </label>
+                    <div class="row">
+                        <div class="col-3">
+                        <input type="number" id="txc" class="form__field" placeholder="x" ;
+                            oninput="centcal();">
+                        </div>
+                        <div class="col-3">
+                            <input type="number" id="tyc" class="form__field" placeholder="y" ;
+                                   oninput="centcal();">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <label>
+                        <h5>Centroid Of Triangle </h5>
+                    </label>
+                    <p id="rcc"> ( 0, 0 )</p>
+                </div>
+            </div>
+        </div>
+
         <!-------------------------------------------------------->
 
         <div class="collapse" id="setcal">

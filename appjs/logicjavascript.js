@@ -1015,6 +1015,20 @@ function setcal() {
 }
 
 //-----------------------------------------------------
+function centcal(){
+    var x = "( ";
+    x= x+ ((
+    parseInt(document.getElementById("fxc").value) + 
+    parseInt(document.getElementById("sxc").value) +
+    parseInt(document.getElementById("txc").value)
+    )/3).toString() + ", " + ((
+    parseInt(document.getElementById("fyc").value) + 
+    parseInt(document.getElementById("syc").value) +
+    parseInt(document.getElementById("tyc").value)
+    )/3).toString() + " )";
+    document.getElementById("rcc").innerHTML = x;
+
+}
 //check for set value buttons
 function checkforusetrigovalue() {
     var el = document.getElementById("soltri");
@@ -7671,4 +7685,4 @@ function ssscal()
 
 
 
-}
+}}
