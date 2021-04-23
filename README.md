@@ -44,29 +44,34 @@ Other Tech/Libraries
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
   - Sets,Relations and Functions
+  - Sets Formulas List
+  - Interest(Simple,Compound)
+  - Cost and Selling Prices
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
     - Determinant with Laplace(Upto 5×5)
+    - Rank
+    - Inverse
     - Addition
     - Subtraction
     - Multiplication
-  - Propeties of Matrices and Determinants
+  - Properties of Matrices and Determinants
   - Sum of Nterms of an Arithmetic Progession
   - Sum of Nterms of an Geometric Progession
-  - Mean Calculator
-    - Arithmetic Mean
-    - Geometric Mean
-    - Harmonic Mean
+  - Cayley Hamilton Theorem of Diagonalization
 
 - Conic Section
 
+  - Circle
   - Parabola
   - Ellipse
   - Hyperbola
+  - Paraboloid
 
 - Calculus
 
+  - Inverse and Periodicity of Functions
   - Transformation of Functions
   - Integration + Limits
     - Solution from Nerdamer
@@ -82,21 +87,29 @@ Other Tech/Libraries
     - Solution/Steps from eMathHelp
     - Graph
   - Differential Equations
+  - Power Series
+  - Theorems on Differentiation
+  - Application of Derivative
   - Maxima and Minima of functions
   - Beta Gamma Functions
   - Laplace + Inverse Laplace
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
+  - Laplace Transforms and Properties
   - Tangent and Normal
   - Vector Calculus
+  - Vector Algebra
   - Convergence and Divergence of Series
+  - Fourier Series
 
 - Trigonometry
+  - P/B/H Trigo
   - Finding sides of a right triangle (provided any two)
   - Trigonometric Values
   - Trigonometric Identities
-  - Inverse Trigonometric Identities
+  - Hyperbolic Trigonometric Identities
+  - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
@@ -107,12 +120,29 @@ Other Tech/Libraries
     - Calculating Factors of each number and picking common out of them
   - Factors
     - Prime Factorization **( with steps for single number)**
+  - Greatest Integer Function and Fractional Part
+  - Solve for Exponents
+  - Sum of Square of Given number
+  - Percentage Calculator
+  - Set Calculator
+  - Pythagorean Triplets
+  - Rank Calculator
+  - Leap Year
+  - Standard Deviation
+  - Hydrostatic Pressure
+  - Strain Calculator
+  - Stress Calculator
   - Profit Loss Calculations
   - Statistics Formulas
+  - Mean Calculator
+    - Arithmetic Mean
+    - Geometric Mean
+    - Harmonic Mean
   - Log Calculator
     - Calculates the log of x to the base y
   - Log Properties
   - Operations on Fractions
+  - Binomial Theorem Properties
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -122,6 +152,7 @@ Other Tech/Libraries
   - Rounding off numbers
   - EMI Calculator
   - GST Calculator
+  - Polynomial Degree Finder
   - Simple and Compound Interest
   - Factorial
   - Permutation & Combination
@@ -132,16 +163,21 @@ Other Tech/Libraries
 - Basic Convertors
   - Currency Convertor
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
+  - Conversion to words
   - Unit Convertor
     - Length
     - Area
     - Volume
     - Mass
     - Temperature
+    - Pressure
+    - Energy
     - Time
     - Angle
     - Speed
     - Data
+    - Power
+      Improper to Mixed Fraction
   - SPI/CGPA Convertor
   - Ascending and Descending Order
   - Date
@@ -156,9 +192,17 @@ Other Tech/Libraries
   - Plot Bar Graph
     - Plots a Bar Graph along x and y axis by taking input from the user
   - Plot Angle
+  - SSS Triangle's Angle Calculator
+  - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Coordinate Geometry Calculator
+  - Coordinate Geometry Formula and Theorem
+  - Segment Area Calculator
   - Curve Tracing
+  - Properties of Circles
+  - Properties of Quadrilaterals
+  - Arc Length Calculator
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -205,33 +249,42 @@ Other Tech/Libraries
   - Any Base to Any Base Converter
   - Decimal/Binary Converter
   - Addition of any Number System
+  - Subtraction of any Number System
+  - Multiplication of any Number System
   - Decimal/Binary/Hexadecimal Converter
+  - Octal/Hexadecimal Converter
   - Decimal/BCD Converter
     - BCD Code Addition
   - Excess-3 Code Converter
+  - Decimal/2421 Code Converter
   - Octal/Binary Converter
   - Grey Code Converter
   - Bitwise Calculator
   - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
+- Identities
+- Properties
+- De-Moivre's Theorem and Cauchy-Reimann Theorem
+- Operations for 1 complex number
+  - Magnitude
+  - Argument
+  - Conjugate
+  - Square Root
+  - Polar Representation
+  - Euler Representation
+- Operations for 2 complex numbers
 
-  - Operations for 1 complex number
-    - Magnitude
-    - Argument
-    - Conjugate
-    - Square Root
-    - Polar Representation
-    - Euler Representation
-  - Operations for 2 complex numbers
-    - Addition
-    - Subtraction
-    - Multiplication
-    - Division
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
 
 - Probability
   - Empirical Probability
   - Joint Probability
+  - Probabilty Properties
+  - Binomial Distribution Calculator
   - Bayes Probability Theorem
 
 ---
