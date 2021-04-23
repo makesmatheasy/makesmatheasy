@@ -263,22 +263,22 @@ Other Tech/Libraries
   - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
-- Identities
-- Properties
-- De-Moivre's Theorem and Cauchy-Reimann Theorem
-- Operations for 1 complex number
-  - Magnitude
-  - Argument
-  - Conjugate
-  - Square Root
-  - Polar Representation
-  - Euler Representation
-- Operations for 2 complex numbers
 
-  - Addition
-  - Subtraction
-  - Multiplication
-  - Division
+  - Identities
+  - Properties
+  - De-Moivre's Theorem and Cauchy-Reimann Theorem
+  - Operations for 1 complex number
+    - Magnitude
+    - Argument
+    - Conjugate
+    - Square Root
+    - Polar Representation
+    - Euler Representation
+  - Operations for 2 complex numbers
+    - Addition
+    - Subtraction
+    - Multiplication
+    - Division
 
 - Probability
   - Empirical Probability
