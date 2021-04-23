@@ -27,6 +27,7 @@ body {
   overflow-x: hidden;
   height: 100vh;
 }
+
 body img {
   filter: invert(100%);
 }
@@ -34,10 +35,6 @@ body img {
 
 #setopfav, #interestfav, #pricesfav {
   filter: invert(0);
-}
-
-html {
-  overflow-x: hidden;
 }
 
 .container {
