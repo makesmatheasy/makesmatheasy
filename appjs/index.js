@@ -143,10 +143,6 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
-
-        "#sosqs",
-
-
         "#sosqs",
         "#segcals",
         "#hydroz",
@@ -276,6 +272,7 @@ function openit(id) {
         "#setcal",
 	    "#ip",
 	    "#prices",
+        "#centcal",
         "#percal",
         "#lyear",
         "#analytical",
