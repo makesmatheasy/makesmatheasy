@@ -796,6 +796,13 @@ $(document).ready(function () {
         clearall();
     });
 
+     $("#plotbargraphoption").click(function(){
+        openit("#plotbargraph");
+        closenav();
+        clearall();
+    });
+
+
 })
 
     function loader(action) {
