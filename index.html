@@ -2798,11 +2798,14 @@
         </li>
         <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
                                        style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
-        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
-            Math Easy. All Rights Reserved.
-        </li>
+        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;" id="copyright"></li>
     </ul>
 </nav>
+
+<script>
+    var yr = new Date().getFullYear();
+    document.getElementById("copyright").innerHTML = "Copyright © " + yr + " Makes Math Easy. All Rights Reserved."
+</script>
 
 <div id="main" style="z-index:31;">
     <div class="form-group " style="margin-top:1rem">
