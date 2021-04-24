@@ -3905,11 +3905,11 @@
             <h4 id="collop1" class="text-center" style="color:white"></h4>
             <h4 id="collop2" class="text-center" style="color:white"></h4>
 
-            <h3>Line Perpendicular To Given and Pass through the Point</h3><br>
+            <h3>Line Perpendicular To Given Line and Pass through the Point</h3><br>
             <div class="coll">
                 <p>
                     Line Equation :   <input type="text" id="plpa" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="plpb" size=3 value='' placeholder="B"> y + <input type="text" id="plpc" size=3 value='' placeholder="C"> = 0
+                <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C">
                     <br><br>
                     Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
                 <input type="text" id="plpy" size=5 value='' placeholder="y">)
@@ -3924,6 +3924,26 @@
                 class="stopwrap"
                align="right"></p>
             <h4 id="plp_op"> </h4> 
+
+            <h3>Line Parallel To Given Line and Pass through the Point</h3><br>
+            <div class="coll">
+                <p>
+                    Line Equation :   <input type="text" id="pppa" size=3 value='' placeholder="A">  x  +
+                <input type="text" id="pppb" size=3 value='' placeholder="B"> y = <input type="text" id="pppc" size=3 value='' placeholder="C">
+                    <br><br>
+                    Point = (<input type="text" id="pppx" size=5 value='' placeholder="x"> , 
+                <input type="text" id="pppy" size=5 value='' placeholder="y">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=pppSolve()>
+                    Find Equation Of Line
+                </button><br>
+                </p>
+            </div><br>
+            <p id="ppp_point" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="ppp_op"> </h4> 
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
