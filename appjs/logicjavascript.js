@@ -3369,6 +3369,7 @@ function centsolve(){
     var xans = (x1+x2+x3)/3
     var yans = (y1+y2+y3)/3
     document.getElementById("apk").innerHTML = xans + "," + yans
+}
 //Octagonal pyramid
 function octpyramidsolve() {
     var side = document.getElementById("inputoctpyramidside").value;
@@ -4965,6 +4966,8 @@ function tempau(a) {
             return 180;
         case "3":
             return 100;
+        case "4":
+             return 80;
     }
 }
 
@@ -4976,6 +4979,8 @@ function tempbu(a) {
             return 32;
         case "3":
             return 273;
+        case "4":
+            return 0;
     }
 }
 
@@ -7724,4 +7729,4 @@ function ssscal()
 
 
 
-}}
+}
