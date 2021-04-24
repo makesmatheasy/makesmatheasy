@@ -297,7 +297,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    $("propquadbtn").click(function () {
+    $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();
