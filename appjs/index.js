@@ -195,6 +195,7 @@ function openit(id) {
         "#setop",
         "#trans",
         "#hp",
+        "#ppmfs",
         "#bool",
         "#log_values",
         "#log-collapse",
