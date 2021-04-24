@@ -137,6 +137,13 @@ $(document).ready(function () {
 
 
 
+    $("#sosq").click(function () {
+        openit("#sosqs");
+        closenav();
+        clearall();
+    });
+
+
 
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
