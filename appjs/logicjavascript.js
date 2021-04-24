@@ -3369,6 +3369,8 @@ function centsolve(){
     var xans = (x1+x2+x3)/3
     var yans = (y1+y2+y3)/3
     document.getElementById("apk").innerHTML = xans + "," + yans
+}
+
 //Octagonal pyramid
 function octpyramidsolve() {
     var side = document.getElementById("inputoctpyramidside").value;
@@ -7217,7 +7219,6 @@ function convertBinhex() {
     }
 }
 
-//--------------------------------------------------------------------------------
 
 // 1's 2's complement
 function onetwoCalc() {
@@ -7278,7 +7279,6 @@ function onetwoCalc() {
 
 }
 
-//----------------
 //7's 8's complement
 function seveneightCalc(){
     const input = document.getElementById("seveneightnumber").value;
@@ -7311,8 +7311,6 @@ function seveneightCalc(){
     }
 }
 
-
-//--------------------
 //15's 16's compliment
 function fiftnsixtnCalc() {
     var input = document.getElementById("fiftnsixtnnumber").value;
@@ -7358,7 +7356,6 @@ function fiftnsixtnCalc() {
     }
 }
 
-
 //9's 10's complement
 
 function ninetenCalc() {
@@ -7388,7 +7385,7 @@ function ninetenCalc() {
         result.innerHTML = "Decimal Numbers can only have digits between 0 to 9 and '-' sign not allowed";
 }
 
-////////////////////date calculator///////////
+
 function datecal() {
     var c = new Date(Date.parse(document.getElementById("datef").value));
     var d = new Date(Date.parse(document.getElementById("datet").value));
@@ -7442,8 +7439,6 @@ function datecal() {
     }
 }
 
-//--------------------------------------------------------------------------------
-
 
 function computeprobability() {
 
@@ -7463,8 +7458,6 @@ function computeprobability() {
 
         result.innerHTML = "The probability of the event is : " + (favour / nettotal).toFixed(3);
     }
-
-
 }
 
 
@@ -7500,10 +7493,8 @@ function computejointprobability() {
             result2.innerHTML = "The probability of second event is : " + (probability2).toFixed(3);
         }
 
-
         if (check == true) {
             result3.innerHTML = "The joint probability of both the events is: " + (probability3).toFixed(3);
-
 
         }
     } else {
@@ -7511,9 +7502,8 @@ function computejointprobability() {
         result2.innerHTML = "";
         result3.innerHTML = "";
     }
-
-
 }
+
 
 function computebayesprobability() {
 
@@ -7562,24 +7552,7 @@ function computebayesprobability() {
         result.innerHTML = "Outcomes can't be negative. Enter positive values only";
 
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function angleplot() {
@@ -7595,12 +7568,10 @@ function angleplot() {
     var ctx = c.getContext("2d");
     ctx.lineWidth = 3;
 
-
 //for labelling 0
     var c0tx = c.getContext("2d");
     c0tx.font = "15px Arial";
     c0tx.fillText("0° ", 630, 250);
-
 
 //for labelling 90
     var c90tx = c.getContext("2d");
@@ -7612,12 +7583,10 @@ function angleplot() {
     c180tx.font = "15px Arial";
     c180tx.fillText("180° ", 335, 250);
 
-
 //for labelling 270
     var c270tx = c.getContext("2d");
     c270tx.font = "15px Arial";
     c270tx.fillText("270° ", 510, 400);
-
 
     var ytx = c.getContext("2d");
     var xtx = c.getContext("2d");
@@ -7644,6 +7613,7 @@ function fa(x)
     return x * fa(x-1);
 }
 
+
 function rankcal() {
 
     var input = document.getElementById("rankcal-input").value;
@@ -7667,6 +7637,8 @@ function rankcal() {
         result.innerHTML = "Invalid input use alphabet only";
 
 }
+
+
 function ran(x,y,z)
 {
     var c = 0;
@@ -7684,6 +7656,8 @@ function radians_to_degrees(radians)
   var pi = Math.PI;
   return radians * (180/pi);
 }
+
+
 function ssscal()
 {
     var a=document.getElementById("sd1").value;
@@ -7715,13 +7689,6 @@ function ssscal()
             bc=bc.toPrecision(4);
             ca=ca.toPrecision(4);
             ans="The required angles oppsite to first side is: "+ab+" second side is: "+bc+"  third side is: "+ca;
-
-
     }
     document.getElementById("sstans").innerHTML=ans;
-
-
-
-
-
-}}
+}
