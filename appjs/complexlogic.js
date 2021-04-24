@@ -691,6 +691,7 @@ function ssqcal()
 
     document.getElementById("ssqans").innerHTML=s;
 
+
 }
 var toDegree = function (radians) {
     return radians * (180 / Math.PI);
@@ -718,7 +719,30 @@ function segcal()
 }
 document.getElementById("segans").innerHTML=ans;
 
+}
 
+function impcal()
+{
+    var a=document.getElementById("num").value;
+    var b=document.getElementById("den").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Enter all the required inputs to obtain answer";
+    }
+
+    else if(b>=a)
+    {
+        ans="The value of numerator must be greater than be denominator";
+             
+    }
+
+    else
+    {
+        var r=a%b;
+        var q=(a-r)/b;
+        ans="The required answer is: "+ q +" "+ r+"/"+b.sub();    }
+    document.getElementById("impans").innerHTML=ans;
 
 
 }
