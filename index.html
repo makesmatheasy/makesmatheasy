@@ -465,7 +465,7 @@
                     </tr>
                 </table>
             </li>
-            <!--            sum of n terms of ap-->
+            <!--sum of n terms of ap-->
             <li>
                 <table class="table">
                     <tr>
@@ -482,7 +482,7 @@
                     </tr>
                 </table>
             </li>
-            <!--            sum of n terms of ap-->
+            <!--sum of n terms of ap-->
 
             <!--sum of n terms of an gp-->
             <li>
@@ -501,7 +501,26 @@
                     </tr>
                 </table>
             </li>
+            <!--sum of n terms of an gp end-->
 
+            <!--sum of n terms of an HP start-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="HPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
+                                Nterms of an Harmonic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_HP','c','HPimgfav')"><img
+                                        id="HPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!--sum of n terms of an HP ends-->
 
 
             <div class="dropdown-divider"></div>
@@ -10359,6 +10378,35 @@
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
         </div>
+        <!-- sum of nterms in G.P. ends  -->
+        
+        <!-- sum of nterms in H.P.  -->
+        <div class="collapse" id="sum_n_HP">
+            <br>
+            <h2 class="d-flex justify-content-center">Sum of N terms of a Harmonic Progression</h2>
+            <div class="form-group d-flex flex-column align-items-center">
+                <input type="number" style="width: 15.625rem;" class="form__field"
+                       id="firstTerm"
+                       placeholder="Enter first term"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
+                       placeholder="Enter difference between terms"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <button class="btn btn-outline-light" onclick="hp()">Find</button>
+            </div>
+            <div class="form-group">
+                <p id="printHPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumhp"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
+        </div>
+        <!-- sum of nterms in H.P. ends -->
+
         <div class="collapse" id="mean">
             <div class="text-center">
                 <h2><label>Mean Calculator</label></h2>
