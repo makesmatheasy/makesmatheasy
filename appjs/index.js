@@ -143,14 +143,8 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
-
         "#sosqs",
         "#segcals",
-
-        "#sosqs",
-        "#segcals",
-
-
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -184,6 +178,7 @@ function openit(id) {
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
+        "#plotbargraph",
         "#roundoff",
         "#euclid",
 	    "#aod",
@@ -278,6 +273,7 @@ function openit(id) {
         "#setcal",
 	    "#ip",
 	    "#prices",
+        "#centcal",
         "#percal",
         "#lyear",
         "#analytical",

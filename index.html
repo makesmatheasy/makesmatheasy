@@ -1882,6 +1882,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="plotbargraphoption"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
+                                Bar Graph</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span onclick="addtofavourite('Plot Bar Graph','#plotbargraph','c','plotbarimgfav')"><img id="plotbarimgfav"
+                                    src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="plotangleoption"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
                                 Angle</a>
@@ -2041,6 +2056,21 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="centcalbut"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Centroid Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Centroid Calculator','#centcal','c','centcalfav')"><img
+                                        id="centcalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
 
             
@@ -3834,6 +3864,25 @@
             <h4 id="collop1" class="text-center" style="color:white"></h4>
             <h4 id="collop2" class="text-center" style="color:white"></h4>
 
+            <h3>Line Perpendicular To Given and Pass through the Point</h3><br>
+            <div class="coll">
+                <p>
+                    Line Equation :   <input type="text" id="plpa" size=3 value='' placeholder="A">  x  +
+                <input type="text" id="plpb" size=3 value='' placeholder="B"> y + <input type="text" id="plpc" size=3 value='' placeholder="C"> = 0
+                    <br><br>
+                    Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
+                <input type="text" id="plpy" size=5 value='' placeholder="y">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=plpSolve()>
+                    Find Equation Of Line
+                </button><br>
+                </p>
+            </div><br>
+            <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="plp_op"> </h4> 
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -8712,6 +8761,96 @@
                 <p id="plotequationresult"></p>
             </div>
         </div>
+
+        <div class="collapse" id="plotbargraph">
+
+            <center><h3>PLOT BAR GRAPH</h3></center>
+            <h4>Instructions : </h4>
+            <h5>Seperate Each data with ',' for both the axis</h5>
+            <h5> - Example :</h5>
+            <h5> for Y axis enter ----> a,b,c,d :</h5>
+            <h5> for Y axis enter ----> 10,5,6,4 :</h5>
+
+        
+            <input type="text"  id="y_axis" placeholder="Enter The Values of Y axis " style="margin-top: 20px;">
+            <br><br>
+            <input type="text"  id="x_axis" placeholder="Enter The Values Of X axis ">
+            <br><br>
+            <center>
+            <input name="generate" type="button" value="CREATE GRAPH" onclick='create_graph();' />
+            </center>
+            <br><br>
+
+            <div id="graph" style="width: 100%; height: 100%"></div>
+        
+            <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+           
+        
+            <script>
+
+                function enterData() {
+                    var y = document.getElementById('y_axis').value;
+                    var x = document.getElementById('x_axis').value;
+
+                    y_axis  = y.split(',');
+                    x_axis = x.toString().split(',').map(Number)
+
+                    list = []
+
+                    for(i = 0 ; i <y_axis.length ; i++)
+                    {
+                        values = []
+                        values.push(y_axis[i])
+                        values.push((x_axis[i]))
+                        list.push(values)
+                    }
+
+                    return list
+                }
+
+
+
+                function create_graph()
+                {
+                    row1 = enterData();
+
+                    anychart.onDocumentReady(function () {
+                        // the code to create a chart will be here
+                        // the data 
+                        var data = {
+                            header: ["Y_axis", "X_axis"],
+                            rows: row1
+                         };
+
+                        // create the chart
+                        var chart = anychart.column();
+
+                        // add the data
+                        chart.data(data);
+                        // set the chart title
+                        chart.title("The Graph Is :");
+
+                        // draw
+                        document.getElementById('graph').innerHTML = "";
+                        chart.container("graph");
+                        chart.draw();
+
+
+                    });
+
+                }
+
+            </script>
+
+          
+        
+        
+        </div>
+
+        
+
+        </div>
+
         <div class="collapse" id="parallel">
             <h2 style="text-align: center;">Properties of Parallel Lines</h2>
             <br><br>
@@ -9511,6 +9650,87 @@
         </div>
 
         <!-- Date Calculator End-->
+<div class="collapse" id="centcal">
+    <div class="col-9">
+        <div class="col-9">
+            <label>
+                <h5>First Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: right;" >
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: right;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: right;">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-9">
+            <label>
+                <h5>Second Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: right;">
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: right;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: right;">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-9">
+            <label>
+                <h5>Third Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: right;">
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: right;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: right;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="centcal()">
+                    Find
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label>
+                <h5>Centroid Of Triangle </h5>
+            </label>
+            <p id="rcc"> ( 0, 0 )</p>
+        </div>
+    </div>
+</div>
         <!-------------------------------------------------------->
 
         <div class="collapse" id="setcal">
@@ -10433,6 +10653,7 @@
    
 </div>
 
+
 <div class="collapse" id="segcals">
 
     
@@ -10452,6 +10673,7 @@
     <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]</div>
    
 </div>
+
 
 
 <div class="collapse" id="arcs">

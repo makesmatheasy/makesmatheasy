@@ -27,6 +27,7 @@ body {
   overflow-x: hidden;
   height: 100vh;
 }
+
 body img {
   filter: invert(100%);
 }
@@ -34,10 +35,6 @@ body img {
 
 #setopfav, #interestfav, #pricesfav {
   filter: invert(0);
-}
-
-html {
-  overflow-x: hidden;
 }
 
 .container {
@@ -399,9 +396,10 @@ h6 {
 
 #numberfact:hover {
   font-size: 1.5938rem;
+  color: black !important;
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
-  background-color: var(--appblack);
+  background-color: var(--appimage);
 }
 .card h5{
     color: rgb(124, 151, 238);
