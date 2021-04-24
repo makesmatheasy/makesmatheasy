@@ -1879,6 +1879,25 @@ function incentersolve(){
     }
 }
 
+function excentersolve(){
+    var x1,y1,x2,y2,x3,y3,a,b,c;
+    x1=parseFloat(document.getElementById('Xn1').value);
+    y1=parseFloat(document.getElementById('Yn1').value);
+    x2=parseFloat(document.getElementById('Xn2').value);
+    y2=parseFloat(document.getElementById('Yn2').value);
+    x3=parseFloat(document.getElementById('Xn3').value);
+    y3=parseFloat(document.getElementById('Yn3').value);
+    a=parseFloat(document.getElementById('ena').value);
+    b=parseFloat(document.getElementById('enb').value);
+    c=parseFloat(document.getElementById('enc').value);
+    var excenterop1 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
+    var excenterop2 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
+    var excenterop2 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
+    document.getElementById("ex_output1").innerHTML = "The excentre for first side is " + excenterop1
+    document.getElementById("ex_output2").innerHTML = "The excentre for second side is " + excenterop2
+    document.getElementById("ex_output3").innerHTML = "The excentre for third side is " + excenterop3
+}
+
 function collinearsolve()
 {
     var x1,y1,x2,y2,x3,y3;
