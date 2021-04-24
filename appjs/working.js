@@ -195,6 +195,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#3dgeocalcbtn").click(function () {
+        openit("#3dgeocalc");
+        closenav();
+        clearall();
+    });
 
     $("#straightlinebtn").click(function () {
         openit("#straightline");

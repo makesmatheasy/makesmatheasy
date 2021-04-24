@@ -1599,6 +1599,21 @@ function solvelaplace() {
     );
 }
 
+function dlp(){
+    var a1 = parseFloat(document.getElementById("la").value)
+    var b1 = parseFloat(document.getElementById("lb").value)
+    var c1 = parseFloat(document.getElementById("lc").value)
+    var a2 = parseFloat(document.getElementById("pa").value)
+    var b2 = parseFloat(document.getElementById("pb").value)
+    var c2 = parseFloat(document.getElementById("pc").value)
+    var cor1 = parseFloat(document.getElementById("cor1").value)
+    var cor2 = parseFloat(document.getElementById("cor2").value)
+    var cor3 = parseFloat(document.getElementById("cor3").value)
+    var d = parseFloat(document.getElementById("d").value)
+    var dlpans = (cor1*a2 + cor2*b2  + cor3*c2 +d)/(Math.sqrt(a2*a2+b2*b2+c2*c2))
+    document.getElementById("dlpans").innerHTML = "The distance is  " +dlpans
+}
+
 function solveinverselaplace() {
     var ilurl = encodeURIComponent(
         document.getElementById("inputinverselaplace").value
@@ -3379,12 +3394,12 @@ function tripyramidsolve() {
 }
 
 function centsolve(){
-    var x1 = parseInt(document.getElemnentById("x1st").value)
-    var y1 = parseInt(document.getElemnentById("y1st").value)
-    var x2 = parseInt(document.getElemnentById("x2nd").value)
-    var y2 = parseInt(document.getElemnentById("y2nd").value)
-    var x3 = parseInt(document.getElemnentById("x3rd").value)
-    var y3 = parseInt(document.getElemnentById("y3rd").value)
+    var x1 = parseInt(document.getElementById("x1st").value)
+    var y1 = parseInt(document.getElementById("y1st").value)
+    var x2 = parseInt(document.getElementById("x2nd").value)
+    var y2 = parseInt(document.getElementById("y2nd").value)
+    var x3 = parseInt(document.getElementById("x3rd").value)
+    var y3 = parseInt(document.getElementById("y3rd").value)
     var xans = (x1+x2+x3)/3
     var yans = (y1+y2+y3)/3
     document.getElementById("apk").innerHTML = xans + "," + yans

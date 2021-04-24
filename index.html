@@ -2165,6 +2165,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="3dgeocalcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D
+                                Geometry Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('3-D Geometry Calculator','#3dgeocalc','c','3dgeocalcfav')"><img
+                                        id="3dgeocalcfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="3d-solid-btn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volume,
                                 CSA, TSA
@@ -4120,7 +4137,25 @@
                 </div>
             </div>
         </div>
-
+        <div class="collapse" id="3dgeocalc">
+            <h2 style="text-align : center;">3-D Geometry Calculator</h2>
+            <br><br>
+            <h4>Distance between perpendicular line and plane </h4>
+            <input type="text" id="la" placeholder="Enter 1st dr of line ">
+            <input type="text" id="lb" placeholder="Enter 2nd dr of line ">
+            <input type="text" id="lc" placeholder="Enter 3rd dr of line ">
+            <input type="text" id="cor1" placeholder="Enter x coordinate of a point ">
+            <input type="text" id="cor2" placeholder="Enter y coordinate of a point ">
+            <input type="text" id="cor3" placeholder="Enter z coordinate of a point ">
+            <br>
+            <input type="text" id="pa" placeholder="Enter 1st dr of plane ">
+            <input type="text" id="pb" placeholder="Enter 2nd dr of plane ">
+            <input type="text" id="pc" placeholder="Enter 3rd dr of plane ">
+            <input type="text" id = "d" placeholder="Enter d of plane">
+            <br>
+            <button type="submit" onclick="dlp()">Find</button>
+            <h5 id="dlpans"></h5>
+        </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
                 <div class="coll">
