@@ -196,6 +196,7 @@ function openit(id) {
         "#factorial",
         "#setop",
         "#trans",
+        "#hp",
         "#bool",
         "#log_values",
         "#log-collapse",

@@ -280,6 +280,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#HPbtn").click(function () {
+        openit("#hp");
+        closenav();
+        clearall();
+    })
+
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
