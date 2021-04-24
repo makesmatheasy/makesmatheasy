@@ -549,8 +549,15 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    // Sumof nterms of an Geometric Progression
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
+        closenav();
+        clearall();
+    });
+    // Sumof nterms of an Harmonic Progression
+    $("#HPbtn").click(function () {
+        openit("#sum_n_HP");
         closenav();
         clearall();
     });
