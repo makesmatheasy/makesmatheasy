@@ -712,6 +712,31 @@ function ssqcal()
 
 
 }
+
+function cubesRangecal()
+{
+    console.log("cubes");
+    var num1=document.getElementById("range1").value;
+    var num2=document.getElementById("range2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Cubes in the given range: ";
+        cbrt1 = Math.trunc(Math.cbrt(num1));
+        cbrt2 = Math.trunc(Math.cbrt(num2));
+        for(var i=cbrt1; i<=cbrt2;i++){
+            if(i**3>=num1 && i**3<=num2){
+                var ans = i**3;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("cubesRangeans").innerHTML=s;
+}
+
 var toDegree = function (radians) {
     return radians * (180 / Math.PI);
 }
