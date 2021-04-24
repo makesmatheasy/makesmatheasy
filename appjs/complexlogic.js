@@ -520,6 +520,25 @@ function factorial(n){
     }  
   }
   
+  // HP starts
+  function hp() {
+    var a = document.getElementById("firstTerm").value;
+    var d = document.getElementById("diff").value;
+    var n = document.getElementById("noofTerms").value;
+    var printseries = document.getElementById("printHPseries");
+    var num;
+    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) | !isNaN(parseInt(d))) {
+            num = (Math.log(2*a + (2*n-1)*d)/(2*a-d))/d;
+      }
+      else
+      {
+        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+      }
+      document.getElementById("sumhp").innerHTML = "Sum = " + num;
+}
+// HP ends
+
 function bpcal()
 {
     var a=document.getElementById("psuc").value;
