@@ -5941,13 +5941,17 @@ function prime_till_num(primetill){
   {
       var w="";
       for(var f=1;f<=b;f++)
-      { var flag=0;
+      {
+          //flag acts as a counter
+           var flag=0;
+        //check for prime no
           for(var y=2;y<f;y++)
           {
               if(f%y==0)
              { flag=flag+1;
             break;}
           }
+          //adding prime no to the string w along with colon and spacing
           if(flag==0)
           {
               w=w+f+", ";
