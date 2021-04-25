@@ -38,7 +38,7 @@ body img {
 }
 
 .container {
-  padding-bottom: 70%;
+  padding-bottom: 10%;
   padding-top: 1.5em;
 }
 .qcontainer {
@@ -445,9 +445,41 @@ td{
   color:white;
 }
 
-#about .table td {
+#about {
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  width: 100%;
+  font-style: italic;
   text-align: center;
+  background-color: var(--appblack);
 }
+
+#about h5 {
+  color: white !important;
+}
+
+#aboutHeading {
+  border:2px solid azure;
+  border-style: dashed;
+  padding: 1rem;
+}
+
+#aboutBadge:hover {
+  color: black;
+  background-color: var(--apppink);
+}
+
+#aboutContact:hover {
+  color: var(--apppink) !important;
+}
+
+@media (max-width:420px) {
+  #about {
+    margin-bottom: 0;
+  }
+}
+
 .table td:hover {
   border-top: 0.0625rem solid #dee2e6;
   border-radius: 2.25rem;
