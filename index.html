@@ -4213,7 +4213,26 @@
             <input type="text" id = "d" placeholder="Enter d of plane">
             <br>
             <button type="submit" onclick="dlp()">Find</button>
-            <h5 id="dlpans"></h5>
+            <h5 id="dlpans"></h5><br>
+            <h3>Angle between planes calculator</h3><br>
+            <div class="coll">
+                <p>
+                    Plane Equation 1:   <input type="text" id="pa1" size=3 value='' placeholder="A1">  x  +
+                <input type="text" id="pb1" size=3 value='' placeholder="B1"> y + <input type="text" id="pc1" size=3 value='' placeholder="C1"> z + <input type="text" id="pd1" size=3 value='' placeholder="D1">  = 0
+                    <br><br>
+                    Plane Equation 2:   <input type="text" id="pa2" size=3 value='' placeholder="A2">  x  +
+                <input type="text" id="pb2" size=3 value='' placeholder="B2"> y + <input type="text" id="pc2" size=3 value='' placeholder="C2"> z + <input type="text" id="pd2" size=3 value='' placeholder="D2">  = 0
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=angletwoplanesolve()>
+                    Find Angle
+                </button><br>
+                </p>
+            </div><br>
+            <p id="angleplane" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 style="color:white" id="angleplaneop"> </h4> 
         </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
