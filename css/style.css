@@ -27,6 +27,7 @@ body {
   overflow-x: hidden;
   height: 100vh;
 }
+
 body img {
   filter: invert(100%);
 }
@@ -34,10 +35,6 @@ body img {
 
 #setopfav, #interestfav, #pricesfav {
   filter: invert(0);
-}
-
-html {
-  overflow-x: hidden;
 }
 
 .container {
@@ -184,9 +181,10 @@ h6 {
 }
 .favouritecontainer {
   position: absolute;
-  left: 76%;
+  left: 80%;
   right: 0%;
   top: 15%;
+  width: 20%;
   bottom: -0.9375rem;
   background-color: #02050a00;
   padding: 1.25rem;
@@ -245,10 +243,11 @@ h6 {
 }
 @media screen and (max-width: 37.5rem) {
   .favouritecontainer {
-    left: 10%;
+    left: 5%;
     right: 5%;
     top: 15%;
     bottom: -0.9375rem;
+    width: 90%;
     background-color: #232a36ce;
   }
   .favourites {
@@ -399,9 +398,10 @@ h6 {
 
 #numberfact:hover {
   font-size: 1.5938rem;
+  color: black !important;
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
-  background-color: var(--appblack);
+  background-color: var(--appimage);
 }
 .card h5{
     color: rgb(124, 151, 238);
@@ -632,6 +632,19 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+/* social media icons */
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+.icon:hover{
+  opacity: 0.8;
+  font-size: 1.4em;
 }
 
 @media (max-width:420px) {

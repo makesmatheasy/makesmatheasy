@@ -195,6 +195,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#3dgeocalcbtn").click(function () {
+        openit("#3dgeocalc");
+        closenav();
+        clearall();
+    });
 
     $("#straightlinebtn").click(function () {
         openit("#straightline");
@@ -297,7 +302,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    $("propquadbtn").click(function () {
+    $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();
@@ -561,8 +566,15 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    // Sumof nterms of an Geometric Progression
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
+        closenav();
+        clearall();
+    });
+    // Sumof nterms of an Harmonic Progression
+    $("#HPbtn").click(function () {
+        openit("#sum_n_HP");
         closenav();
         clearall();
     });
@@ -807,6 +819,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+     $("#plotbargraphoption").click(function(){
+        openit("#plotbargraph");
+        closenav();
+        clearall();
+    });
+
 
 })
 
