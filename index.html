@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="./manifest.json">
     <script defer src="katex/katex.min.js"></script>
@@ -2851,7 +2852,20 @@
         </li>
         <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
                                        style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
+
+
+        <li style=" color:var(--appimage); position:relative;" class="icons">
+            <a href="#" style="font-size: 1.3em;"><i class="fab fa-instagram icon"></i></a>
+            <a href="#" style="font-size: 1.3em;"><i class="fas fa-envelope icon"></i></a>
+            <a href="#" style="font-size: 1.3em;"><i class="fab fa-linkedin icon"></i></a>
+            <a href="#" style="font-size: 1.3em;"><i class="fab fa-discord icon"></i></a>
+        </li>
+
+        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
+            Math Easy. All Rights Reserved.
+        </li
         <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;" id="copyright"></li>
+
     </ul>
 </nav>
 
@@ -4197,8 +4211,29 @@
             </div>
         </div>
         <div class="collapse" id="3dgeocalc">
-            <h2 style="text-align : center;">3-D Geometry Calculator</h2>
+            <div class="text-center">
+                <h2><label>3-D Geometry Calculator</label></h2>
+            </div>
             <br><br>
+            <h3>Distance from point to plane calculator</h3><br>
+            <div class="coll">
+                <p>
+                    Plane Equation :   <input type="text" id="a1s" size=3 value='' placeholder="A">  x  +
+                <input type="text" id="b1s" size=3 value='' placeholder="B"> y + <input type="text" id="c1s" size=3 value='' placeholder="C"> z + <input type="text" id="d1s" size=3 value='' placeholder="D">  = 0
+                    <br><br>
+                    Point M = (<input type="text" id="mx1" size=5 value='' placeholder="Mx"> , 
+                <input type="text" id="my1" size=5 value='' placeholder="My"> , <input type="text" id="mz1" size=5 value='' placeholder="Mz">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=displanesolve()>
+                    Calculate Distance
+                </button><br>
+                </p>
+            </div><br>
+            <p id="planept" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 style="color:white" id="displanept"> </h4><br> 
             <h4>Distance between perpendicular line and plane </h4>
             <input type="text" id="la" placeholder="Enter 1st dr of line ">
             <input type="text" id="lb" placeholder="Enter 2nd dr of line ">
@@ -4213,6 +4248,7 @@
             <input type="text" id = "d" placeholder="Enter d of plane">
             <br>
             <button type="submit" onclick="dlp()">Find</button>
+
             <h5 id="dlpans"></h5>
             <br>
             <h3>Distance between two planes calculator</h3><br>
@@ -4232,6 +4268,28 @@
             </div><br>
             <h4 style="color:white" id="dplane"> </h4> <br>
             <h4 style="color:white" id="dplane1"> </h4> 
+
+            
+            <h3>Angle between planes calculator</h3><br>
+            <div class="coll">
+                <p>
+                    Plane Equation 1:   <input type="text" id="pa1" size=3 value='' placeholder="A1">  x  +
+                <input type="text" id="pb1" size=3 value='' placeholder="B1"> y + <input type="text" id="pc1" size=3 value='' placeholder="C1"> z + <input type="text" id="pd1" size=3 value='' placeholder="D1">  = 0
+                    <br><br>
+                    Plane Equation 2:   <input type="text" id="pa2" size=3 value='' placeholder="A2">  x  +
+                <input type="text" id="pb2" size=3 value='' placeholder="B2"> y + <input type="text" id="pc2" size=3 value='' placeholder="C2"> z + <input type="text" id="pd2" size=3 value='' placeholder="D2">  = 0
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=angletwoplanesolve()>
+                    Find Angle
+                </button><br>
+                </p>
+            </div><br>
+            <p id="angleplane" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 style="color:white" id="angleplaneop"> </h4> 
+
         </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
@@ -17310,7 +17368,7 @@
 <script src="nerdamer/Solve.js"></script>
 <script src="nerdamer/Extra.js"></script>
 
-
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 <script type="text/javascript" src=""></script>
 
 </body>

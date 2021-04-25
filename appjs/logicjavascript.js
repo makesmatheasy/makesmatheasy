@@ -1955,6 +1955,24 @@ function collinearsolve()
     
     
 }
+
+function displanesolve()
+{
+    var a,b,c,d,mx,my,mz;
+    a=parseFloat(document.getElementById('a1s').value);
+    b=parseFloat(document.getElementById('b1s').value);
+    c=parseFloat(document.getElementById('c1s').value);
+    d=parseFloat(document.getElementById('d1s').value);
+    mx=parseFloat(document.getElementById('mx1').value);
+    my=parseFloat(document.getElementById('my1').value);
+    mz=parseFloat(document.getElementById('mz1').value);
+    var explain = document.getElementById("planept");
+    explain.innerHTML = "\\[Distance \\space from \\space point \\space to \\space plane \\space  =\\space  \\frac{Ax + By + Cz + D}{\\sqrt{A^2+B^2+C^2}} \\] ";
+    renderMathInElement(document.getElementById("planept"));
+    var dis = (Math.abs(a*mx + b*my +c*mz+d))/(Math.sqrt(a*a + b*b + c*c ));
+    document.getElementById('displanept').innerHTML= 'The distance from ('+ mx + ',' + my + ',' + mz + ') to ' + a + 'x + ' + b + 'y + ' + c + 'z + ' + d + '= 0 is ' + dis.toFixed(2);
+    
+}
 function solveocta() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
@@ -1973,6 +1991,27 @@ function solveocta() {
         renderMathInElement(document.getElementById("resultoftsa"));
     }
 }
+function angletwoplanesolve()
+{
+    var a,b,c,d,a1,b1,c1,d1;
+    a=parseFloat(document.getElementById('pa1').value);
+    b=parseFloat(document.getElementById('pb1').value);
+    c=parseFloat(document.getElementById('pc1').value);
+    d=parseFloat(document.getElementById('pd1').value);
+    a1=parseFloat(document.getElementById('pa2').value);
+    b1=parseFloat(document.getElementById('pb2').value);
+    c1=parseFloat(document.getElementById('pc2').value);
+    d1=parseFloat(document.getElementById('pd2').value);
+    var explain = document.getElementById("angleplane");
+    explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
+    renderMathInElement(document.getElementById("angleplane"));
+    var ang = Math.acos((Math.abs(a*a1 + b*b1 +c*c1))/(Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))));
+    
+    document.getElementById('angleplaneop').innerHTML= 'Angle between plane 1 and 2 is '+ (ang*180/Math.PI).toFixed(2) + '&deg';
+    
+}
+
+
 function solveicosa() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
