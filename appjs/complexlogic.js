@@ -1,3 +1,5 @@
+const { parse } = require("node:path");
+
 function Complex(real, imaginary) {
   this.real = 0;
   this.imaginary = 0;
@@ -520,6 +522,25 @@ function factorial(n){
     }  
   }
   
+  // HP starts
+  function hp() {
+    var a = document.getElementById("firstTerm").value;
+    var d = document.getElementById("diff").value;
+    var n = document.getElementById("noofTerms").value;
+    var printseries = document.getElementById("printHPseries");
+    var num;
+    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) | !isNaN(parseInt(d))) {
+            num = (Math.log(2*a + (2*n-1)*d)/(2*a-d))/d;
+      }
+      else
+      {
+        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+      }
+      document.getElementById("sumhp").innerHTML = "Sum = " + num;
+}
+// HP ends
+
 function bpcal()
 {
     var a=document.getElementById("psuc").value;
@@ -745,4 +766,28 @@ function impcal()
     document.getElementById("impans").innerHTML=ans;
 
 
+}
+
+function hpcal()
+{
+    var x=document.getElementById("ath").value;
+    var y=document.getElementById("differ").value;
+    var z=document.getElementById("totno").value;
+    var ans="";
+    if(x==""||y==""||z=="")
+    {
+      ans="Please enter all the field";
+   }
+   else
+   {
+        var a=parseInt(x);
+        var b=parseInt(y);
+        var c=parseInt(z);
+       var num=(c-1)*b;
+       var t=a+num;
+        console.log(a+num);
+        ans= 1/num;
+   }
+   document.getElementById("hpans").innerHTML=ans;
+     
 }
