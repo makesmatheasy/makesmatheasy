@@ -466,7 +466,7 @@
                     </tr>
                 </table>
             </li>
-            <!--            sum of n terms of ap-->
+            <!--sum of n terms of ap-->
             <li>
                 <table class="table">
                     <tr>
@@ -483,7 +483,24 @@
                     </tr>
                 </table>
             </li>
-            <!--            sum of n terms of ap-->
+            <!--sum of n terms of ap-->
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="HPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
+                                Nth term of an Harmonic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Nterm of an HarmonicProgression','#hp','c','HPimgfav')"><img
+                                        id="HPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <!--sum of n terms of an gp-->
             <li>
@@ -502,7 +519,26 @@
                     </tr>
                 </table>
             </li>
+            <!--sum of n terms of an gp end-->
 
+            <!--sum of n terms of an HP start-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="HPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
+                                Nterms of an Harmonic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_HP','c','HPimgfav')"><img
+                                        id="HPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!--sum of n terms of an HP ends-->
 
 
             <div class="dropdown-divider"></div>
@@ -2166,6 +2202,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="3dgeocalcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D
+                                Geometry Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('3-D Geometry Calculator','#3dgeocalc','c','3dgeocalcfav')"><img
+                                        id="3dgeocalcfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="3d-solid-btn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volume,
                                 CSA, TSA
@@ -2800,6 +2853,7 @@
         <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
                                        style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
 
+
         <li style=" color:var(--appimage); position:relative;" class="icons">
             <a href="#" style="font-size: 1.3em;"><i class="fab fa-instagram icon"></i></a>
             <a href="#" style="font-size: 1.3em;"><i class="fas fa-envelope icon"></i></a>
@@ -2809,9 +2863,16 @@
 
         <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
             Math Easy. All Rights Reserved.
-        </li>
+        </li
+        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;" id="copyright"></li>
+
     </ul>
 </nav>
+
+<script>
+    var yr = new Date().getFullYear();
+    document.getElementById("copyright").innerHTML = "Copyright © " + yr + " Makes Math Easy. All Rights Reserved."
+</script>
 
 <div id="main" style="z-index:31;">
     <div class="form-group " style="margin-top:1rem">
@@ -3829,6 +3890,30 @@
             <h4 id="in_output" style="color:white"></h4>
             <h4 id="informula" style="color:white"></h4>
 
+            <h3>Excentre Calculator </h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
+                    <br><br>
+                    Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
+                        <br><br>
+                    Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
+                <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
+                        <br><br>
+                    a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
+                <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=excentersolve()>
+
+                    Calculate
+                </button><br>
+                </p>
+            </div>
+            <h4 id="ex_output1" style="color:white"></h4>
+            <h4 id="ex_output2" style="color:white"></h4>
+            <h4 id="ex_output3" style="color:white"></h4>
             
 
             <h3>Area of Triangle</h3><br>
@@ -3873,11 +3958,11 @@
             <h4 id="collop1" class="text-center" style="color:white"></h4>
             <h4 id="collop2" class="text-center" style="color:white"></h4>
 
-            <h3>Line Perpendicular To Given and Pass through the Point</h3><br>
+            <h3>Line Perpendicular To Given Line and Pass through the Point</h3><br>
             <div class="coll">
                 <p>
                     Line Equation :   <input type="text" id="plpa" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="plpb" size=3 value='' placeholder="B"> y + <input type="text" id="plpc" size=3 value='' placeholder="C"> = 0
+                <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C">
                     <br><br>
                     Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
                 <input type="text" id="plpy" size=5 value='' placeholder="y">)
@@ -3892,6 +3977,26 @@
                 class="stopwrap"
                align="right"></p>
             <h4 id="plp_op"> </h4> 
+
+            <h3>Line Parallel To Given Line and Pass through the Point</h3><br>
+            <div class="coll">
+                <p>
+                    Line Equation :   <input type="text" id="pppa" size=3 value='' placeholder="A">  x  +
+                <input type="text" id="pppb" size=3 value='' placeholder="B"> y = <input type="text" id="pppc" size=3 value='' placeholder="C">
+                    <br><br>
+                    Point = (<input type="text" id="pppx" size=5 value='' placeholder="x"> , 
+                <input type="text" id="pppy" size=5 value='' placeholder="y">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=pppSolve()>
+                    Find Equation Of Line
+                </button><br>
+                </p>
+            </div><br>
+            <p id="ppp_point" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <h4 id="ppp_op"> </h4> 
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -4105,7 +4210,25 @@
                 </div>
             </div>
         </div>
-
+        <div class="collapse" id="3dgeocalc">
+            <h2 style="text-align : center;">3-D Geometry Calculator</h2>
+            <br><br>
+            <h4>Distance between perpendicular line and plane </h4>
+            <input type="text" id="la" placeholder="Enter 1st dr of line ">
+            <input type="text" id="lb" placeholder="Enter 2nd dr of line ">
+            <input type="text" id="lc" placeholder="Enter 3rd dr of line ">
+            <input type="text" id="cor1" placeholder="Enter x coordinate of a point ">
+            <input type="text" id="cor2" placeholder="Enter y coordinate of a point ">
+            <input type="text" id="cor3" placeholder="Enter z coordinate of a point ">
+            <br>
+            <input type="text" id="pa" placeholder="Enter 1st dr of plane ">
+            <input type="text" id="pb" placeholder="Enter 2nd dr of plane ">
+            <input type="text" id="pc" placeholder="Enter 3rd dr of plane ">
+            <input type="text" id = "d" placeholder="Enter d of plane">
+            <br>
+            <button type="submit" onclick="dlp()">Find</button>
+            <h5 id="dlpans"></h5>
+        </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
                 <div class="coll">
@@ -4899,7 +5022,19 @@
             <p>\[3.\space Find\space P_1,Q_1,R_1\space\]</p>
             <p>\[P_1\space =\space \frac{\frac{d^{2}z}{dx^{2}}+P\frac{dz}{dx}}{(\frac{dz}{dx})^{2}}\space,Q_1\space =\space \frac{Q}{(\frac{dz}{dx})^{2}}\space and\space R_1\space =\space \frac{R}{(\frac{dz}{dx})^{2}}\]</p>
             <p>\[4.\space Put\space in\space \frac{d^{2}y}{dz^{2}}\space +\space P_1\frac{dy}{dx}\space +Q_1 y\space =\space R_1\space and\space solve\space
-                using\space differential\space eqn\space with\space constant\space coeffiecients\]</p>
+                using\space differential\space eqn\space with\space constant\space coeffiecients\]
+            </p>
+            <br>
+            <h5>Method-4 - Variation of Parameters</h5>
+            <p>Steps - </p>
+            <p>\[1.\space Convert\space to\space homogenous\space eqns\space by\space putting\space x\space =\space e^{z}\space and\space z\space =\space logx\]</p>
+            <p>\[2.\space Put\space x^{2}\frac{d^{2}y}{dx^{2}}\space =\space D(D-1)\space and\space x\frac{dy}{dx}\space =\space D,\space where\space D\space is\space \frac{d}{dz}\]</p>
+            <p>\[3.\space Solve\space for\space C.F.\space and\space let\space it\space be\space y\space =\space u+v\]</p>
+            <p>\[4.\space Find\space out\space u v_1 - v u_1\space where\space u_1\space =\space \frac{du}{dx}\]</p>
+            <p>\[5.\space Let\space the\space complete\space solution\space be\space y\space =\space Au+Bv\]</p>
+            <p>\[A\space =\space -\int\frac{Rv}{u v_1 - v u_1}\,dx\space +\space C_1\]</p>
+            <p>\[B\space =\space \int\frac{Ru}{u v_1 - v u_1}\,dx\space +\space C_2\]</p>
+            <p>\[6.\space Put\space in\space equation\space to\space get\space the\space answer\]</p>
 
         </div>
         <div class="collapse" id="pows">
@@ -7953,10 +8088,6 @@
         </div>
         <!--Standard Deviation starts-->
         <div class="collapse" id="deviation">
-
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
             <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
             <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
             <p>&nbsp;</p>
@@ -7970,11 +8101,9 @@
            <br><br><li style="font-family:mathfont ; color:white; float:left;"> Select Sample if the data is sample of large or unlimited population an you wish to make a statement about entire population.</li>
           </ul>
           <p>&nbsp;</p> <p>&nbsp;</p>
-          <div class="form__group" id='std-var-rslt' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;">
+          <div  id='std-var-rslt' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;">
           </div>
-          </div>
-          </div> 
-           </div>
+          
         </div>
 <!--Standard Deviation end-->
 
@@ -9039,10 +9168,154 @@
                            style="text-decoration:none;"
                            href="#">Trapezium</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="collapse" data-target="#sumquad"
+                           style="text-decoration:none;"
+                           href="#">Summary Of Quadrilaterals</a></td>
+                </tr>
                                 
             </table>
         </div>
 
+        <div class="collapse" id="sumquad">
+            <div class="stopwrap">
+                <table class="table table-bordered table-dark" >
+                    <thead class="bg-success">
+                    <tr>
+                        <th></th>
+                        <th scope="col">\[Property\]</th>
+                        <th scope="col">\[Parallelogram\]</th>
+                        <th scope="col">\[Rectangle\]</th>
+                        <th scope="col">\[Square\]</th>
+                        <th scope="col">\[Rhombus\]</th>
+                        <th scope="col">\[Kite\]</th>
+                        <th scope="col">\[Trapezium\]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <tr>
+                            <th scope="row" class="bg-info">Sides</th>
+                            <td class="bg-warning" >All sides are equal</td>
+                            <td class="qtd">❌ </td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Opposite sides are equal</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Opposite sides are parallel</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">✔️</td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <th scope="row" class="bg-info">Angles</th>
+                            <td class="bg-warning" >All angles are equal</td>
+                            <td class="qtd">❌ </td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Opposite angles are equal</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌(only 1 pair equal)</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Sum of two adjacent angles is 180</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <th scope="row" class="bg-info">Diagonals</th>
+                            <td class="bg-warning" >Bisect each other</td>
+                            <td class="qtd">✔️ </td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌(only 1 diagonal bisects)</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Bisect perpendicularly</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Intersect Perpendicularly</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">❌</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">✔️</td>
+                            <td class="qtd">❌</td>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <th scope="row" class="bg-info">Formulas</th>
+                            <td class="bg-warning" >Area</td>
+                            <td class="qtd">l x h </td>
+                            <td class="qtd">l x b</td>
+                            <td class="qtd">a<sup>2</sup></td>
+                            <td class="qtd"><sup>1</sup>&frasl;&nbsp;<sup>2</sup> x d1 x d2</td>
+                            <td class="qtd"><sup>1</sup>&frasl;&nbsp;<sup>2</sup> x d1 x d2</td>
+                            <td class="qtd"><sup>1</sup>&frasl;&nbsp;<sup>2</sup> x Sum of parallel sides x h</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-info"></td>
+                            <td class="bg-warning">Perimeter</td>
+                            <td class="qtd">2 x (l + b)</td>
+                            <td class="qtd">2 x (l + b)</td>
+                            <td class="qtd">4a</td>
+                            <td class="qtd">4a</td>
+                            <td class="qtd">2 x (l + b)</td>
+                            <td class="qtd">Sum of length of sides</td>
+                        </tr>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+ 
+        </div>
         <div class="modal fade" id="cosine" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -9749,7 +10022,7 @@
                     <div class="form-group">
                         <h5>First Set</h5>
                         <input type="text" value="0 1" class="form__field"
-                               id="first-set"
+                               id="first-set" style="color:white"
                                >
                     </div>
                 </div>
@@ -9759,13 +10032,13 @@
                     <div class="form-group">
                         <h5>Operation</h5>
                         <select id="set-operation" class="form__field">
-                            <option class="form__field" style="background-color: #232a36;">
+                            <option class="form__field" style="color : white ;background-color: #232a36;">
                                 Union
                             </option>
-                            <option class="form__field" style="background-color: #232a36;">
+                            <option class="form__field" style="color :white;background-color: #232a36;">
                                 Intersection
                             </option>
-                            <option class="form__field" style="background-color: #232a36;">
+                            <option class="form__field" style="color : white ;background-color: #232a36;">
                                 Difference
                             </option>
                         </select>
@@ -9776,7 +10049,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5>Second Set</h5>
-                        <input type="text" value="2 3" class="form__field"
+                        <input type="text" value="2 3" style="color:white" class="form__field"
                                id="second-set">
                     </div>
                 </div>
@@ -9794,7 +10067,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5>Result</h5>
-                        <label class="form__field" id="set-result">{}</label>
+                        <label class="form__field" style="color:white" id="set-result">{}</label>
                     </div>
                 </div>
             </div>
@@ -10280,6 +10553,35 @@
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
         </div>
+        <!-- sum of nterms in G.P. ends  -->
+        
+        <!-- sum of nterms in H.P.  -->
+        <div class="collapse" id="sum_n_HP">
+            <br>
+            <h2 class="d-flex justify-content-center">Sum of N terms of a Harmonic Progression</h2>
+            <div class="form-group d-flex flex-column align-items-center">
+                <input type="number" style="width: 15.625rem;" class="form__field"
+                       id="firstTerm"
+                       placeholder="Enter first term"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
+                       placeholder="Enter difference between terms"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <button class="btn btn-outline-light" onclick="hp()">Find</button>
+            </div>
+            <div class="form-group">
+                <p id="printHPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumhp"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
+        </div>
+        <!-- sum of nterms in H.P. ends -->
+
         <div class="collapse" id="mean">
             <div class="text-center">
                 <h2><label>Mean Calculator</label></h2>
@@ -10539,6 +10841,27 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<div class="collapse" id="hp">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term </h1>
+    <input type="number" name="ath" class="form__field" id="ath" width="5em" placeholder="Enter first number">
+    <p>&nbsp;</p>
+    <input type="number" name="differ" class="form__field" id="differ" placeholder="Enter common difference">
+    <p>&nbsp;</p>
+    <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
+    <p id="hpans"></p>
+    <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
+        A Harmonic Progression (HP) is defined as a sequence of real numbers which is determined by taking the reciprocals of the arithmetic progression<br>
+         that does not contain 0. In harmonic progression, any term in the sequence is considered as the<br>
+          harmonic means of its two neighbours. For example, the sequence a, b, c, d, …is considered as an arithmetic progression; <br>
+          the harmonic progression can be written as 1/a, 1/b, 1/c, 1/d, …
+    </div>
+   
+</div>
 <!--SSS TRiangle starts-->
 <div class="collapse" id="ssts">
 
@@ -12105,37 +12428,37 @@
 
                                 <div style="display:inline-block">
 
-                                    <div><var id="a">a</var></div>
+                                    <div><var id="sum_a">a</var></div>
                                     <div class="symbol" style="color: #ff299c;">----- +</div>
-                                    <div class="bottom"><var id="bz">b</var></div>
+                                    <div class="bottom"><var id="sum_b">b</var></div>
 
                                 </div>
 
 
                                 <div style="display: inline-block;">
-                                    <div><var id="c">c</var></div>
+                                    <div><var id="sum_c">c</var></div>
                                     <div style="color: #ff299c;">&nbsp; -----</div>
-                                    <div class="bottom"><var id="d">d</var></div>
+                                    <div class="bottom"><var id="sum_d">d</var></div>
 
                                 </div>
 
 
-                                <span>= &nbsp;(<var id="a1">a</var>*<var id="d1">d</var>)+(<var id="c1">c</var>*<var
-                                        id="b1">b</var>)</span>
+                                <span>= &nbsp;(<var id="sum_a1">a</var>*<var id="sum_d1">d</var>)+(<var id="sum_c1">c</var>*<var
+                                        id="sum_b1">b</var>)</span>
                                 <span class="symbol">/</span>
-                                <span class="bottom"><var id="b2">b</var>*<var id="d2">d</var></span>
+                                <span class="bottom"><var id="sum_b2">b</var>*<var id="sum_d2">d</var></span>
 
-                                <span>= &nbsp;<var id="e1">e</var>+<var id="g">g</var></span>
+                                <span>= &nbsp;<var id="sum_e1">e</var>+<var id="sum_g">g</var></span>
                                 <span class="symbol">/</span>
-                                <span class="bottom"><var id="f">f</var></span>
+                                <span class="bottom"><var id="sum_f">f</var></span>
 
-                                <span>= &nbsp;<var id="t">t</var></span>
+                                <span>= &nbsp;<var id="sum_t">t</var></span>
                                 <span class="symbol">/</span>
-                                <span class="bottom"><var id="q">q</var></span>
+                                <span class="bottom"><var id="sum_q">q</var></span>
 
                                 =
 
-                                <var id="ans">k</var>
+                                <var id="sum_ans">k</var>
 
 
                             </div>
@@ -16235,6 +16558,10 @@
                                 </option>
                                 <option value="3" class="form_field"
                                         style="background-color:var(--appblack);">Kelvin
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Réaumur
+                                </option>
                             </select>
                             <input type="number" id="tempconin" class="form__field"
                                    placeholder="Enter Side"
@@ -16253,6 +16580,9 @@
                                 </option>
                                 <option value="3" class="form_field"
                                         style="background-color:var(--appblack);">Kelvin
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Réaumur
                                 </option>
                             </select>
                             </select>
