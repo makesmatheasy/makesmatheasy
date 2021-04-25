@@ -145,6 +145,7 @@ function openit(id) {
         "#arcs",
         "#sosqs",
         "#sosqsn",
+        "#socbsn",
         "#cubesRanges",
         "#segcals",
         "#hydroz",

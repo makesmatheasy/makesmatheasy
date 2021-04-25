@@ -718,6 +718,7 @@ function ssqcal()
 function ssqncal()
 {
     var num=document.getElementById("ssqn").value;
+    num = parseInt(num);
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     var s="";
     if(num=="")
@@ -736,6 +737,30 @@ function ssqncal()
     document.getElementById("ssqnans").innerHTML=s;
 
 }
+
+function scbncal()
+{
+    var num=document.getElementById("scbn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc(((num*(num+1))/2)**2);
+        s="Your answer is: "+sum;
+    }
+
+    document.getElementById("scbnans").innerHTML=s;
+
+}
+
 
 function cubesRangecal()
 {
