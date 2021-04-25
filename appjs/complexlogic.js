@@ -793,6 +793,19 @@ function impcal()
 
 }
 
+
+function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+      for(var i = n; i >= 1; i--){
+        answer = answer * i;
+      }
+      return answer;
+    }  
+  }
+
 function hpcal()
 {
     var x=document.getElementById("ath").value;
@@ -815,4 +828,28 @@ function hpcal()
    }
    document.getElementById("hpans").innerHTML=ans;
      
+
+}
+
+function ppcal()
+{
+    var a=document.getElementById("lamb").value;
+    var b=document.getElementById("occ").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values";
+    }
+
+    else
+    {
+           var s=a**b;
+           var y=(2.718)**(-a);
+           var z=factorial(b);
+           var num= (s*y)/z;
+           ans="The answer is:" + num;
+    }
+
+    document.getElementById("ppans").innerHTML=ans;
+
 }

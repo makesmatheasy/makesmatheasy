@@ -6000,7 +6000,7 @@ function check_prime(isprime) {
             ans.innerHTML = num1;
             ans.innerHTML += " is ";
             if (num1 == 1 || num1 == 0) {
-                ans.innerHTML += "neither Prime nor Composite number";
+                ans.innerHTML += "neither Prime nor Composite number.";
             } else {
                 for (i = 2; i <= Math.sqrt(num1); i++) {
                     if (num1 % i == 0) {
@@ -6009,9 +6009,9 @@ function check_prime(isprime) {
                     }
                 }
                 if (flag == true) {
-                    ans.innerHTML += "a Prime number";
+                    ans.innerHTML += "a Prime number.";
                 } else {
-                    ans.innerHTML += "a Composite number";
+                    ans.innerHTML += "a Composite number.";
                 }
             }
         }
@@ -6023,40 +6023,36 @@ function check_prime(isprime) {
         ans.innerHTML = "Enter an integer!"
 }
 
-function prime_till_num(primetill) {
-    var num = document.getElementById(primetill).value;
-    var num1 = parseInt(num);
-    var ans = document.getElementById("primetillsol");
-    var B = "";
-    var prime = [];
-    if (isNaN(num1) || num1 <= 1) {
-        ans.innerHTML = "Enter positive integer greater than 1.";
-    } else {
-        for (i = 0; i <= num1; i++)
-            prime.push(true);
 
-        for (i = 2; i * i <= num1; i++) {
-            // If prime[p] is not changed, then it is a
-            // prime
-            if (prime[i] == true) {
-                // Update all multiples of p
-                for (j = i * i; j <= num1; j += i)
-                    prime[j] = false;
-            }
-        }
-
-        // Print all prime numbers
-        for (i = 2; i <= num1; i++) {
-            if (prime[i] == true) {
-                B = B + i;
-                B = B + ", ";
-            }
-        }
-        ans.innerHTML = B.slice(0, B.length - 2);
-
+function prime_till_num(primetill){
+    var b=document.getElementById('primetill').value;
+    b = parseInt(b);
+    if (isNaN(b) || b <= 1) {
+        document.getElementById("primetillsol").innerHTML = "Enter positive integer greater than 1.";
     }
+  else
+  {
+      var w="";
+      for(var f=1;f<=b;f++)
+      {
+          //flag acts as a counter
+           var flag=0;
+        //check for prime no
+          for(var y=2;y<f;y++)
+          {
+              if(f%y==0)
+             { flag=flag+1;
+            break;}
+          }
+          //adding prime no to the string w along with colon and spacing
+          if(flag==0)
+          {
+              w=w+f+", ";
+              
+          }}
+          document.getElementById("primetillsol").innerHTML=w.slice(0, w.length - 2);
+        }   
 }
-
 //end
 
 function gp() {

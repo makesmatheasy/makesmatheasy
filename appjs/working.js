@@ -282,6 +282,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#ppmf").click(function () {
+        openit("#ppmfs");
+        closenav();
+        clearall();
+    })
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();

@@ -485,6 +485,42 @@
             </li>
             <!--sum of n terms of ap-->
 
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="HPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
+                                Nth term of an Harmonic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Nterm of an HarmonicProgression','#hp','c','HPimgfav')"><img
+                                        id="HPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="HPbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
+                                Nth term of an Harmonic Progression</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Nterm of an HarmonicProgression','#hp','c','HPimgfav')"><img
+                                        id="HPimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
             <!--sum of n terms of an gp-->
             <li>
                 <table class="table">
@@ -2808,6 +2844,23 @@
                                 <td style="float:right;border-top: none;">
                                        <span
                                                onclick="addtofavourite('Binomial Distribution','#bpmfs','c','bpmfimgfav')"><img
+                                               id="bpmfimgfav" src="images/unfavourite.png"
+                                               style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <table class="table">
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="ppmf"
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Poisson Distribution Calculator
+                                    </a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                       <span
+                                               onclick="addtofavourite('Poisson Distribution','#ppmfs','c','ppmfimgfav')"><img
                                                id="bpmfimgfav" src="images/unfavourite.png"
                                                style="height:1.5625rem;filter: none;"></span>
                                 </td>
@@ -8848,8 +8901,7 @@
                 font-family:mathfont;" id="deg"></p>
             </div>
         </div>
-
-
+  
         <div class="collapse" id="equationssolver">
             <div class="form-group">
                 <p class="stopwrap" id="displayequation">
@@ -9023,6 +9075,51 @@
         
         
         </div>
+        <!-- Primarity test and prime till n cal -->
+        <br>
+        <div class="collapse" id="prime">
+            <form class="form-group">
+                <div class="text-center">
+                    <h2><label>Primality Test</label></h2>
+                </div>
+                <input type="number" id="isprime" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="check_prime('isprime')">
+                    Check
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+            </div>
+
+            <div class="dropdown-divider"></div>
+            <div class="form-group">
+                <div class="text-center">
+                    <h2><label>Primes till entered number</label></h2>
+                </div>
+                <input type="number" id="primetill" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="prime_till_num('primetill')">
+                    Find
+                </button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <p id="primetillsol"
+                       style="display:flex;font-family:mathfont;;width:auto;"
+                       class="stopwrap"
+                       align="right"></p>
+                </div>
+
+            </div>
+            <!--  Primarity test and prime till n cal end -->
+        </div>
+
 
         
 
@@ -11137,6 +11234,23 @@
 </div>
 
 <!--Binomial PMF ends-->
+<div class="collapse" id="ppmfs">
+    <h1 style="font-family:mathfont; text-align:center;"> PMF of Poisson Distribution Calculator </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="lamb" class="form__field" id="lamb"   placeholder="Average number of occurrences for a given time interval lambda, λ:">
+    <p>&nbsp;</p>
+    <input type="number" name="occ" class="form__field" id="occ" placeholder="Number of occurrences x: ">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ppcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
+    <p>&nbsp;</p> 
+    <div style="color: white; text-align: center; font-size: 1em; font-family:mathfont;">The Poisson distribution is a discrete probability distribution which results from the Poisson experiment.<br>
+     It classifies the experiment into two different categories, such as success and failure. <br>
+     Generally, the Poisson random variable “x” defines the probability of the success of the experiment.<br>
+     From the average rate of success, the Poisson distribution probability can be easily calculated.
+    </div>
+</div>
 <!--Stress Calculator starts-->
 <div class="collapse" id="stresscalc">
     <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>
@@ -11162,49 +11276,7 @@
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="stressans"></div>
 </div>
 <!--Stress Calculator Ends-->
-        <!-- Primarity test and prime till n cal -->
-        <div class="collapse" id="prime">
-            <form class="form-group">
-                <div class="text-center">
-                    <h2><label>Primality Test</label></h2>
-                </div>
-                <input type="number" id="isprime" placeholder="Enter a Number"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
-                <button type="button" class="btn btn-light"
-                        onclick="check_prime('isprime')">
-                    Check
-                </button>
-            </form>
-            <br>
-            <div class="form-group">
-                <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-            </div>
-
-            <div class="dropdown-divider"></div>
-            <div class="form-group">
-                <div class="text-center">
-                    <h2><label>Primes till entered number</label></h2>
-                </div>
-                <input type="number" id="primetill" placeholder="Enter a Number"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
-                <button type="button" class="btn btn-light"
-                        onclick="prime_till_num('primetill')">
-                    Find
-                </button>
-                </form>
-                <br>
-                <div class="form-group">
-                    <p id="primetillsol"
-                       style="display:flex;font-family:mathfont;;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                </div>
-
-            </div>
-            <!--  Primarity test and prime till n cal end -->
-        </div>
+      
         
         <div class="collapse" id="bool">
     <h1 style="text-align: center; text-shadow: 1px 1px 2px red; ">Boolean Algebra</h1>
