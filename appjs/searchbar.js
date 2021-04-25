@@ -443,6 +443,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION"){
                         document.getElementById('sum_n_GP').click();
                     } 
+                    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION") {
+                        $("#sum_n_HP").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION"){
+                        document.getElementById('sum_n_HP').click();
+                    } 
                     else if (inp.value.toUpperCase() == "INTEGRATION FORMULAE") {
                         $("#integration-idencollapse").slideToggle();    
                     }
@@ -897,6 +903,12 @@ function handleclick(value) {
     }
     else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION"){
         document.getElementById('sum_n_GP').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION") {
+        $("#sum_n_HP").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION"){
+        document.getElementById('sum_n_HP').click(); 
     }
     else if (inp.value.toUpperCase() == "INTEGRATION FORMULAE") {
         $("#integration-idencollapse").slideToggle(); 

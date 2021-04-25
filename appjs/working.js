@@ -137,9 +137,16 @@ $(document).ready(function () {
 
 
 
-
     $("#sosq").click(function () {
         openit("#sosqs");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#cubesRange").click(function () {
+        openit("#cubesRanges");
         closenav();
         clearall();
     });
@@ -560,19 +567,19 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     // Sumof nterms of an Arithmetic Progression
+     // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
         closenav();
         clearall();
     });
-    // Sumof nterms of an Geometric Progression
+    // Sum of nterms of an Geometric Progression
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
         closenav();
         clearall();
     });
-    // Sumof nterms of an Harmonic Progression
+    // Sum of nterms of an Harmonic Progression
     $("#HPbtn").click(function () {
         openit("#sum_n_HP");
         closenav();

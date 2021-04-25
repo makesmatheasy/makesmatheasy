@@ -43,19 +43,10 @@ Other Tech/Libraries
   - Mathematical Reasoning
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
-<<<<<<< HEAD
-  - Sets,Relations and Functions 
-  - Sets Formulas List
-  - Interest(Simple,Compound)
-  - Cost and Selling Prices
-||||||| 1df62c0
-  - Sets,Relations and Functions 
-=======
   - Sets,Relations and Functions
   - Sets Formulas List
   - Interest(Simple,Compound)
   - Cost and Selling Prices
->>>>>>> 900956272f09ca065126afab45fc428722a243d3
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
@@ -71,26 +62,16 @@ Other Tech/Libraries
   - Cayley Hamilton Theorem of Diagonalization
 
 - Conic Section
-<<<<<<< HEAD
-  - Circle
-||||||| 1df62c0
-=======
 
   - Circle
->>>>>>> 900956272f09ca065126afab45fc428722a243d3
   - Parabola
   - Ellipse
   - Hyperbola
   - Paraboloid
 
 - Calculus
-<<<<<<< HEAD
-  - Inverse and Periodicity of Functions
-||||||| 1df62c0
-=======
 
   - Inverse and Periodicity of Functions
->>>>>>> 900956272f09ca065126afab45fc428722a243d3
   - Transformation of Functions
   - Integration + Limits
     - Solution from Nerdamer
@@ -123,15 +104,8 @@ Other Tech/Libraries
   - Fourier Series
 
 - Trigonometry
-<<<<<<< HEAD
-  - P/B/H Trigo
-  - Finding sides of a right triangle (provided any two) 
-||||||| 1df62c0
-  - Finding sides of a right triangle (provided any two) 
-=======
   - P/B/H Trigo
   - Finding sides of a right triangle (provided any two)
->>>>>>> 900956272f09ca065126afab45fc428722a243d3
   - Trigonometric Values
   - Trigonometric Identities
   - Hyperbolic Trigonometric Identities
@@ -202,14 +176,8 @@ Other Tech/Libraries
     - Angle
     - Speed
     - Data
-<<<<<<< HEAD
-    - Power
-  Improper to Mixed Fraction
-||||||| 1df62c0
-=======
     - Power
       Improper to Mixed Fraction
->>>>>>> 900956272f09ca065126afab45fc428722a243d3
   - SPI/CGPA Convertor
   - Ascending and Descending Order
   - Date
@@ -295,17 +263,10 @@ Other Tech/Libraries
   - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
-<<<<<<< HEAD
-  - Identities
-  - Properties
-  - De-Moivre's Theorem and Cauchy-Reimann Theorem
-||||||| 1df62c0
-=======
 
   - Identities
   - Properties
   - De-Moivre's Theorem and Cauchy-Reimann Theorem
->>>>>>> 900956272f09ca065126afab45fc428722a243d3
   - Operations for 1 complex number
     - Magnitude
     - Argument
