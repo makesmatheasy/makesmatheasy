@@ -2339,6 +2339,27 @@ function volf(){
     var ans = 0.5*3.14*a2*a2*h2
     document.getElementById("volf").innerHTML = "The volume is " + ans
 }
+
+function solveparallelogramcal(){
+    var base = document.getElementById("inputbasea").value;
+    var side = document.getElementById("inputsidebpar").value;
+    var angle = document.getElementById("inputanglepar").value;
+
+    var area = base * side * math.sin(angle);
+    var peri = 2 * (parseInt(side) + parseInt(base));
+
+    if (area <=0 && base != "" && side != "" && angle != ""){
+        document.getElementById("resultofareapar").innerHTML = ""
+        document.getElementById("resultofperipar").innerHTML = "Please enter correct angle"
+        return;
+    }
+    if (base != "" && side != "" && angle != ""){
+        document.getElementById("resultofareapar").innerHTML = "The Area of the parallelogram  (S) = " +area.toFixed(3)
+        document.getElementById("resultofperipar").innerHTML = "The Perimeter of the parallelogram (P) = "+ peri.toFixed(3)
+
+    }
+}
+
 function solveparallelogram() {
     var base = document.getElementById("inputbase").value;
     var height = document.getElementById("inputheight").value;
