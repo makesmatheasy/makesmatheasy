@@ -761,10 +761,32 @@ function scbncal()
 
 }
 
+function squaresRangecal()
+{
+    var num1=document.getElementById("sqrange1").value;
+    var num2=document.getElementById("sqrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Perfect squares in the given range: ";
+        sqrt1 = Math.trunc(Math.sqrt(num1));
+        sqrt2 = Math.trunc(Math.sqrt(num2));
+        for(var i=sqrt1; i<=sqrt2;i++){
+            if(i**2>=num1 && i**2<=num2){
+                var ans = i**2;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("squaresRangeans").innerHTML=s;
+}
+
 
 function cubesRangecal()
 {
-    console.log("cubes");
     var num1=document.getElementById("range1").value;
     var num2=document.getElementById("range2").value;
     var s="";

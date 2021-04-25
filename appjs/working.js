@@ -160,12 +160,19 @@ $(document).ready(function () {
     });
 
 
+    $("#squaresRange").click(function () {
+        openit("#squaresRanges");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
         closenav();
         clearall();
     });
-
 
 
 
