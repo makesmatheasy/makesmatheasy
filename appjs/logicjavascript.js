@@ -2103,8 +2103,8 @@ function solveareasq() {
 }
 
 function solvetetra() {
-    var a = document.getElementById("inputtside").value;
-
+    var a = document.getElementById("inputtsidetetra").value;
+    console.log(a)
     var resultvolt = document.getElementById("resultofvolt");
     var resultheightt = document.getElementById("resultofheightt");
     var resultofcircumt = document.getElementById("resultofcircumt");
@@ -2115,20 +2115,25 @@ function solvetetra() {
     resultofinradt.innerHTML = "";
 
     var volume = 0.118 * (a * a * a);
-    var height = 1.074 * a;
+    var height = (math.sqrt(2) / math.sqrt(3)) * a;
     var circum = 0.612 * a;
     var inradius = 0.2041 * a;
+    var area = math.sqrt(3) * a**2;
     if (a != "") {
         document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
         renderMathInElement(document.getElementById("resultofvolt"));
     }
     if (a != "") {
-        document.getElementById("resultofheightt").innerHTML = "\\[Height \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times (" + a + ")\\ = " + height + " \\]";
+        document.getElementById("resultofheightt").innerHTML = "\\[Height \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times (" + a + ")\\ = " + height.toFixed(3) + " \\]";
         renderMathInElement(document.getElementById("resultofheightt"));
     }
     if (a != "") {
         document.getElementById("resultofcircumt").innerHTML = "\\[CircumRadius \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{6}}{4} \\times (" + a + ")\\ = " + circum + " \\]";
         renderMathInElement(document.getElementById("resultofcircumt"));
+    }
+    if (a != "") {
+        document.getElementById("resultofsurare").innerHTML = "\\[Surface \\space Area \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\sqrt{3} \\times (" + a + ")^2\\ = " + area + " \\]";
+        renderMathInElement(document.getElementById("resultofsurare"));
     }
     if (a != "") {
         document.getElementById("resultofinradt").innerHTML = "\\[InRadius \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{\\sqrt{24}} \\times (" + a + ")\\ = " + inradius + " \\]";
