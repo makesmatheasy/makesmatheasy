@@ -7297,11 +7297,11 @@ function convertBinhex() {
     else if (toBase === "Decimal") to = 10;
     else to = 16;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
+        if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
 
     }
