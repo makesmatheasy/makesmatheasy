@@ -4214,6 +4214,24 @@
             <br>
             <button type="submit" onclick="dlp()">Find</button>
             <h5 id="dlpans"></h5>
+            <br>
+            <h3>Distance between two planes calculator</h3><br>
+            <div class="coll">
+                <p>
+                    Plane Equation 1:   <input type="text" id="da1" size=3 value='' placeholder="A1">  x  +
+                <input type="text" id="db1" size=3 value='' placeholder="B1"> y + <input type="text" id="dc1" size=3 value='' placeholder="C1"> z + <input type="text" id="dd1" size=3 value='' placeholder="D1">  = 0
+                    <br><br>
+                    Plane Equation 2:   <input type="text" id="da2" size=3 value='' placeholder="A2">  x  +
+                <input type="text" id="db2" size=3 value='' placeholder="B2"> y + <input type="text" id="dc2" size=3 value='' placeholder="C2"> z + <input type="text" id="dd2" size=3 value='' placeholder="D2">  = 0
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=solvetwoplane()>
+                    Find Distance
+                </button><br>
+                </p>
+            </div><br>
+            <h4 style="color:white" id="dplane"> </h4> <br>
+            <h4 style="color:white" id="dplane1"> </h4> 
         </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">

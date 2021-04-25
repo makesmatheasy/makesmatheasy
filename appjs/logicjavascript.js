@@ -2014,6 +2014,28 @@ function coordinatearea(){
     }
 
 }
+function solvetwoplane()
+{
+    var a,b,c,d,a1,b1,c1,d1;
+    a=parseFloat(document.getElementById('da1').value);
+    b=parseFloat(document.getElementById('db1').value);
+    c=parseFloat(document.getElementById('dc1').value);
+    d=parseFloat(document.getElementById('dd1').value);
+    a1=parseFloat(document.getElementById('da2').value);
+    b1=parseFloat(document.getElementById('db2').value);
+    c1=parseFloat(document.getElementById('dc2').value);
+    d1=parseFloat(document.getElementById('dd2').value);
+    /*var explain = document.getElementById("angleplane");
+    explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
+    renderMathInElement(document.getElementById("angleplane"));*/
+    if((a==a1) && (b==b1) && (c==c1)){
+        var res = Math.abs(d1-d)/Math.sqrt(a*a + b*b + c*c);
+        document.getElementById('dplane').innerHTML= 'Distance between plane 1 and 2 is '+ res.toFixed(2) ;
+    }
+    else{
+        document.getElementById('dplane1').innerHTML= 'Planes are not parallel, so distance is 0' ;
+    }
+}
 
 //-----------------------------------------------------
 //shapes calculator
