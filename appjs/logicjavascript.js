@@ -1955,6 +1955,24 @@ function collinearsolve()
     
     
 }
+
+function displanesolve()
+{
+    var a,b,c,d,mx,my,mz;
+    a=parseFloat(document.getElementById('a1s').value);
+    b=parseFloat(document.getElementById('b1s').value);
+    c=parseFloat(document.getElementById('c1s').value);
+    d=parseFloat(document.getElementById('d1s').value);
+    mx=parseFloat(document.getElementById('mx1').value);
+    my=parseFloat(document.getElementById('my1').value);
+    mz=parseFloat(document.getElementById('mz1').value);
+    var explain = document.getElementById("planept");
+    explain.innerHTML = "\\[Distance \\space from \\space point \\space to \\space plane \\space  =\\space  \\frac{Ax + By + Cz + D}{\\sqrt{A^2+B^2+C^2}} \\] ";
+    renderMathInElement(document.getElementById("planept"));
+    var dis = (Math.abs(a*mx + b*my +c*mz+d))/(Math.sqrt(a*a + b*b + c*c ));
+    document.getElementById('displanept').innerHTML= 'The distance from ('+ mx + ',' + my + ',' + mz + ') to ' + a + 'x + ' + b + 'y + ' + c + 'z + ' + d + '= 0 is ' + dis.toFixed(2);
+    
+}
 function solveocta() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
