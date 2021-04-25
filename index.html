@@ -9687,6 +9687,10 @@
                                            style="text-decoration:none;" href="#">Scalene
                                         Triangle</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#triangle-cal"
+                                           style="text-decoration:none;" href="#">Calculator (given sides and angle)</a></td>
+                                </tr>
                             </table>
 
                         </div>
@@ -13786,6 +13790,65 @@
                                style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="triangle-cal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Calculates Area, perimeter and height of a triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = b sin \theta\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[S = \frac{1}{2} a b sin \theta\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = a+b+ \sqrt{a^2 + b^2 -2ab cos \theta} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/trian.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- ADDED THIS -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter First Side (a)"
+                                   id="inputfirsts1" oninput="solvestriangle();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Second Side (b)"
+                                   id="inputseconds2" oninput="solvestriangle();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter angle (degree)"
+                                   id="inputangledeg" oninput="solvestriangle();">
+                            <br><br>
+                           <p class="stopwrap" id="resultofper"
+                               style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofarea"
+                               style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofheight"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- TILL HERE -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
