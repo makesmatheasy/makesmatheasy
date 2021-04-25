@@ -202,6 +202,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#3dgeocalcbtn").click(function () {
+        openit("#3dgeocalc");
+        closenav();
+        clearall();
+    });
 
     $("#straightlinebtn").click(function () {
         openit("#straightline");
@@ -282,6 +287,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#HPbtn").click(function () {
+        openit("#hp");
+        closenav();
+        clearall();
+    })
+
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
@@ -292,7 +304,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    $("propquadbtn").click(function () {
+    $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();

@@ -62,9 +62,15 @@ Other Tech/Libraries
   - Cayley Hamilton Theorem of Diagonalization
 
 - Conic Section
+
   - Circle
   - Parabola
   - Ellipse
+  - Hyperbola
+  - Paraboloid
+
+- Calculus
+
   - Inverse and Periodicity of Functions
   - Transformation of Functions
   - Integration + Limits
