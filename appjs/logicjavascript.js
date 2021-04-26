@@ -3041,33 +3041,43 @@ function solveellipse() {
 function solvecyl() {
     var height = document.getElementById("inputcylh").value;
     var radius = document.getElementById("inputcylr").value;
-
+    var diameter = 2 * radius;
+    var vol = eval(String(3.14159 * radius * radius * height));
+    var csa = eval(String(3.14159 * radius * 2 * height));
+    var tsa = eval(String((2 * 3.14159 * radius * height) + (2 * 3.14159 * radius * radius))) ;
     var voloutput = document.getElementById("resultofvolcyl");
     var tsaoutput = document.getElementById("resultoftsacyl");
     var csaoutput = document.getElementById("resultofcsacyl");
+    var diaout = document.getElementById("resultofcydia");
     var voltemp = "";
     var tsatemp = "";
     var csatemp = "";
     if ((radius != "") && (height != "")) {
         voltemp += "\\[ \\pi \\times " + radius + "^2 \\times " + height + "\\]";
-        voltemp += "\\[Volume \\space of \\space Cylinder \\space is \\space " + eval(String(3.14159 * radius * radius * height)) + "\\]";
+        voltemp += "\\[Volume \\space of \\space Cylinder \\space is \\space " + vol.toFixed(3) + "\\]";
         voloutput.innerHTML = voltemp;
+
         csatemp += "\\[ 2 \\times \\pi \\times" + radius + "\\times" + height + " \\]";
         csatemp += "\\[Curved \\space Surface \\space Area \\space of \\space Cylinder \\space is \\space \\]";
-        csatemp += "\\[" + eval(String(3.14159 * radius * 2 * height)) + "\\]";
+        csatemp += "\\[" + csa.toFixed(3) + "\\]";
         csaoutput.innerHTML = csatemp;
         tsatemp += "\\[2 \\times \\pi \\times" + radius + "(" + radius + "+" + height + ") \\]";
         tsatemp +=
             "\\[Total \\space Surface \\space Area \\space of \\space Cylinder \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String((2 * 3.14159 * radius * height) + (2 * 3.14159 * radius * radius))) + "\\]";
+        tsatemp += "\\[" + tsa.toFixed(3)+ "\\]";
+        diaout.innerHTML = "\\[Diameter \\space of \\space Cylinder \\space is \\space "+diameter.toFixed(3)+"\\]";
+
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
         renderMathInElement(csaoutput);
+        renderMathInElement(diaout);
+
     } else {
         voloutput.innerHTML = "";
         tsaoutput.innerHTML = "";
         csaoutput.innerHTML = "";
+        diaout.innerHTML = "";
     }
 }
 
