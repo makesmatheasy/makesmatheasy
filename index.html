@@ -989,6 +989,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="vecbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Calculator','#vec','c','vectorimgfav')"><img
+                                        id="vectorimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="vecalgbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector
                                 Algebra</a>
@@ -5915,7 +5930,35 @@
                  src="https://tutorial.math.lamar.edu/classes/calciii/GreensTheorem_Files/image001.png"
                  alt="">
         </div>
-        <!-- Complex Number Calculations End -->
+        <!-- Vector Calculator Calculations begin -->
+        <div class="collapse" id="vec">
+            <div class="text-center">
+                <h2><label>Vector Calculator</label></h2>
+            </div>
+            <br><br>
+            <div class="text-center">
+            <h3>Vector Addition Calculator</h3><br>
+        </div>
+            <div class="coll">
+                <p>
+                    Vector X :   <input type="text" id="a1b" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="a2b" size=3 value='' placeholder="B"> j + <input type="text" id="a3b" size=3 value='' placeholder="C"> k
+                    <br><br>
+                    Vector Y :   <input type="text" id="b1c" size=3 value='' placeholder="A"> i +
+                <input type="text" id="b2c" size=3 value='' placeholder="B"> j + <input type="text" id="b3c" size=3 value='' placeholder="C"> k
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=vectoradd()>
+                    Solve
+                </button><br>
+                </p>
+            </div><br>
+            <div class="coll" style="text-align: center;">
+            <h5 id="vectoradd1" style="color: white; font-size: x-large;"></h5>
+        </div>
+</div>
+
+
         <div class="collapse" id="limitscollapse">
             <div class="stopwrap">
                 <div class="coll">

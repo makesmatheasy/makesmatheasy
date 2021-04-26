@@ -251,6 +251,7 @@ function openit(id) {
         "#Meanit",
         "#bcd",
         "#vector",
+        "#vec",
         "#diffeqn",
         "#maxmin",
         "#locroots",
