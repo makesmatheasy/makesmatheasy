@@ -9765,6 +9765,11 @@
                            href="#">Parallelogram</a></td>
                 </tr>    
                 <tr>
+                    <td><a data-toggle="modal" data-target="#parallelogramcal"
+                           style="text-decoration:none;"
+                           href="#">Parallelogram Calculator</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#pentagon"
                            style="text-decoration:none;"
                            href="#">Pentagon</a></td>
@@ -14248,6 +14253,66 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="parallelogramcal" tabindex="-1" role="dialog"
+    aria-hidden="true">
+   <div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h6 class="modal-title">Calculates Area and perimeter given two sides and angle</h6>
+               <button type="button" class="close" data-dismiss="modal"
+                       aria-label="Close"
+                       style="outline:none">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+           <div class="modal-body">
+               <!-- added div with class container -->
+               <div class="container">
+                   <div class="row">
+                       <div class="col-6">
+                           <h5 class="text-center">Area</h5>
+                           <p class="text-center">\[S = a b sin \theta \]</p>
+                           <br><br>
+                           <div class="dropdown-divider"></div>
+                           <h5 class="text-center">Perimeter</h5>
+                           <p class="text-center">\[P = 2(a+b) \]</p>
+                       </div>
+                       <div class="col-6">
+                           <div class="form-group">
+                               <img src="images/parallelo.PNG" class="img-fluid">
+                           </div>
+                       </div>
+                   </div>
+                   <br>
+                   <div class="dropdown-divider"></div>
+                   <!---FROM--->
+                   <input class="form__field" type="number"
+                          placeholder="Enter Base (a)" 
+                          id="inputbasea" oninput="solveparallelogramcal();">
+                   <input class="form__field" type="number"
+                          placeholder="Enter Side (b)"
+                          id="inputsidebpar" oninput="solveparallelogramcal();">
+                    <input class="form__field" type="number"
+                          placeholder="Enter angle (radian)"
+                          id="inputanglepar" oninput="solveparallelogramcal();">
+                    <div></div><br><br>
+                   <p class="stopwrap" id="resultofareapar"
+                      style="font-family:mathfont;"></p><br>
+                   <p class="stopwrap" id="resultofperipar"
+                      style="font-family:mathfont;"></p>
+               </div>
+               <!---TILL-->
+           </div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                   Close
+               </button>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
 
         <div class="modal fade" id="parallelogram" tabindex="-1" role="dialog"
              aria-hidden="true">
