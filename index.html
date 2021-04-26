@@ -16053,6 +16053,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="modal fade" id="octahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -16070,10 +16071,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h5 class="text-center">Volume</h5>
-                                    <p class="text-center">\[V=\frac{\sqrt{2}a^3}{3}\]</p>
+                                    <p class="text-center">\[V = \frac{\sqrt{2}a^3}{3} \]</p>
                                     <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Surface Area</h5>
-                                    <p class="text-center">\[A = 2 \sqrt{3} a^2\]</p>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = 2 \sqrt{3} a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diagonal</h5>
+                                    <p class="text-center">\[D = \sqrt{2} a \]</p>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
@@ -16084,19 +16088,20 @@
                             <div class="dropdown-divider"></div>
                             <!-- --------FROM------- -->
                             <input class="form__field" type="number"
-                                   placeholder="Enter Side (a)"
-                                   id="inputtside" oninput="solveocta()">
-                            <p class="stopwrap" id="resultofvolt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultoftsa"
-                               style="font-family:mathfont;"></p>
-                            
-                        </div>
+                                   placeholder="Enter side length of octahedron(a)" id="inputoctside"
+                                   oninput="solveocta();">  
+                            <p class="stopwrap" id="resultofoctvol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofocttsa"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofoctdiag"
+                            style="font-family:mathfont;"></p>
+                          </div>
                         <!-- ------HERE------ -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
                         </button>
                     </div>
                 </div>
