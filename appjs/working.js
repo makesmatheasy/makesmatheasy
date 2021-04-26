@@ -386,6 +386,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#cevthabtn").click(function () {
+        openit("#cevtha");
+        closenav();
+        clearall();
+    })
     $("#boolbtn").click(function () {
         openit("#bool");
         closenav();

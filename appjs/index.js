@@ -278,6 +278,7 @@ function openit(id) {
         "#setcal",
 	    "#ip",
 	    "#prices",
+        "#cevtha",
         "#percal",
         "#lyear",
         "#analytical",
