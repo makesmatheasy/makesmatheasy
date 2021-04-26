@@ -715,6 +715,36 @@ function ssqcal()
 
 }
 
+
+function numcubesRangecal()
+{
+    var num1=document.getElementById("numrange1").value;
+    var num2=document.getElementById("numrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        var count = 0;
+        s="Number of Perfect Cubes in the given range: ";
+        cubes = "Cubes are: ";
+        cbrt1 = Math.trunc(Math.cbrt(num1));
+        cbrt2 = Math.trunc(Math.cbrt(num2));
+        for(var i=cbrt1; i<=cbrt2;i++){
+            if(i**3>=num1 && i**3<=num2){
+                count++;
+                var ans = i**3;
+                cubes += ans.toString() + ", ";
+            }
+        }
+        cubes = cubes.substring(0, cubes.length-2);
+        s += count;
+    }
+    document.getElementById("numcubesRangeans").innerHTML=s;
+    document.getElementById("numcubesans").innerHTML=cubes;
+}
+
 function cubesRangecal()
 {
     console.log("cubes");

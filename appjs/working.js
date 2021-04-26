@@ -145,6 +145,14 @@ $(document).ready(function () {
 
 
 
+    $("#numcubesRange").click(function () {
+        openit("#numcubesRanges");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
         closenav();
