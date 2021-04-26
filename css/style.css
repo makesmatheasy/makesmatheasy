@@ -1,9 +1,11 @@
 :root {
   --apppink: rgb(255, 136, 231);
+  --appbg: #7868e6;
   --appblack: #232a36;
   --appimage: white;
 }
 :root .light-mode {
+  --appbg: #232a36;
   --apppink: #7868e6;
   --appblack: #d3e0ea;
   --appimage: black;
@@ -385,7 +387,8 @@ h6 {
   text-align: center !important;
   margin-bottom: auto;
   padding: 4vh;
-  color: var(--apppimage);
+  color: white !important;
+  background-color: var(--appbg);
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
   /* because of this it is of black color now it will inherit the body color */
@@ -401,7 +404,7 @@ h6 {
   color: black !important;
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
-  background-color: var(--appimage);
+  background-color: white;
 }
 .card h5{
     color: rgb(124, 151, 238);
@@ -452,10 +455,15 @@ td{
   width: 100%;
   font-style: italic;
   text-align: center;
-  background-color: var(--appblack);
+  padding: 3rem;
+  border-top-left-radius: 2.5rem !important;
+  border-bottom-right-radius: 2.5rem !important;
+  background-color: var(--appbg) !important;
+  box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
+    rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
 }
 
-#about h5 {
+#about h5, #aboutContact {
   color: white !important;
 }
 
@@ -467,11 +475,11 @@ td{
 
 #aboutBadge:hover {
   color: black;
-  background-color: var(--apppink);
+  background-color: rgb(255, 136, 231);
 }
 
 #aboutContact:hover {
-  color: var(--apppink) !important;
+  color: var(--appimage) !important;
 }
 
 @media (max-width:420px) {
