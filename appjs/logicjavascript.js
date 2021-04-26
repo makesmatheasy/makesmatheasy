@@ -3739,14 +3739,16 @@ function torussolve() {
     var tsaoutput = document.getElementById("resultoftsatorus");
     var voltemp = "";
     var tsatemp = "";
+    var area = (2 * math.pi * radius1 ) * (2 * math.pi * radius2);
+    var vol = (math.pi * radius2 * radius2) * (2 * math.pi * radius1);
     if ( radius1 != "" && radius2 != "") {
-        voltemp += "\\[ ( \\pi \\times" + radius1 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius2 + " ) \\]";
-        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " + eval(String(( 3.14159 * radius1 * radius1 ) * ( 3.14159 * 2 *radius2 )) )+ "\\]" ;
+        voltemp += "\\[ ( \\pi \\times" + radius2 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius1 + " ) \\]";
+        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " +vol.toFixed(3)+ "\\]" ;
         voloutput.innerHTML = voltemp;
-        tsatemp += "\\[4 \\times \\pi \\times \\pi \\times" + radius1 + "^2 " + radius2 + "^1 \\]";
+        tsatemp += "\\[(2 \\times \\pi \\times "+radius1+")(2 \\times \\pi  \\times "+radius2+")\\]";
         tsatemp +=
             "\\[Total \\space Surface \\space Area \\space of  \\space Torus \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String(4 * 3.14159 * 3.14159 * ((radius1 * radius1) * radius2 ))) + "\\]";
+        tsatemp += "\\[" + area.toFixed(3) + "\\]";
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
@@ -3755,12 +3757,7 @@ function torussolve() {
         tsaoutput.innerHTML = "";
     }
   }
-
-
-
-//-----------------------------------------------------
-
-//-----------------------------------------------------
+  
 //display inputted equation
 function dequation() {
     var val = document.getElementById("inputequation").value;
