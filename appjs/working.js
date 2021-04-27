@@ -145,8 +145,15 @@ $(document).ready(function () {
 
 
 
+    $("#numcubesRange").click(function () {
+        openit("#numcubesRanges");
+        closenav();
+        clearall();
+    });
+  
     $("#sosqn").click(function () {
         openit("#sosqsn");
+
         closenav();
         clearall();
     });

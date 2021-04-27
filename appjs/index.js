@@ -149,6 +149,7 @@ function openit(id) {
         "#squaresRanges",
 
         "#cubesRanges",
+        "#numcubesRanges",
         "#segcals",
         "#hydroz",
         "#straincalc",
