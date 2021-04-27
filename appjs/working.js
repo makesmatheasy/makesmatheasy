@@ -160,12 +160,12 @@ $(document).ready(function () {
     });
 
 
+
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
         clearall();
     });
-
 
 
     $("#cubesRange").click(function () {
@@ -304,13 +304,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#ppmf").click(function () {
+        openit("#ppmfs");
+        closenav();
+        clearall();
+    })
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();
         clearall();
     })
 
-    $("#HPbtn").click(function () {
+    $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
         clearall();
