@@ -144,6 +144,10 @@ function openit(id) {
         "#ssts",
         "#arcs",
         "#sosqs",
+        "#sosqsn",
+        "#socbsn",
+        "#squaresRanges",
+
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
@@ -252,6 +256,7 @@ function openit(id) {
         "#Meanit",
         "#bcd",
         "#vector",
+        "#vec",
         "#diffeqn",
         "#maxmin",
         "#locroots",
@@ -271,21 +276,27 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        '#dodecahedron',
         "#icosahedron",
         "#anglecon",
         "#frustum",
         "#annulus",
         "#cosine",
+        "#obliquecy",
         "#setcal",
 	    "#ip",
 	    "#prices",
-        "#centcal",
+
+        "#cevtha",
+
         "#percal",
         "#lyear",
         "#analytical",
+        "#isoright",
         "#ellipsoid",
         "#expo",
         "#setformula",
+        "#wedge",
         "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
@@ -519,3 +530,4 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
+
