@@ -352,7 +352,7 @@ h6 {
   border: 0;
   /* border-bottom: 0.0625rem solid var(--appimage); */
   outline: 0;
-  color: black;
+  color: white;
   padding: 0.4375rem 0;
   background: transparent;
   transition: border-color 0.2s;
