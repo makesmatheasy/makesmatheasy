@@ -2453,6 +2453,34 @@ function isoscelestrianglearea() {
 
 }
 
+function isoscelesrightsolve() {
+    var side = document.getElementById("isoside").value;
+    var height=0.5*side;
+    var base=0.707*side;
+    var peri=2.41*side;
+    var area= 0.25*side*side;
+    if (side != "" ) {
+        document.getElementById('resofisoarea1').innerHTML = "\\[Area \\space of \\space Isosceles \\space right \\space triangle \\space is \\]";
+        renderMathInElement(document.getElementById('resofisoarea1'));
+        document.getElementById('resofisoarea2').innerHTML = "\\[ \\frac{" + side + "\\times" + side + "}{4} =" + area + "\\]";
+        renderMathInElement(document.getElementById('resofisoarea2'));
+        document.getElementById('resofisoperi1').innerHTML = "\\[Perimeter \\space is \\]";
+        renderMathInElement(document.getElementById('resofisoperi1'));
+        document.getElementById('resofisoperi2').innerHTML = "\\[ (1 \\space + \\space \\sqrt{2})" + "\\times"+ side + "=" + peri + "\\]";
+        renderMathInElement(document.getElementById('resofisoperi2'));
+        document.getElementById('resofisoheight1').innerHTML = "\\[Height \\space is \\]";
+        renderMathInElement(document.getElementById('resofisoheight1'));
+        document.getElementById('resofisoheight2').innerHTML = "\\[ \\frac{1}{2} " + "\\times" + side + "=" + height + "\\]";
+        renderMathInElement(document.getElementById('resofisoheight2'));
+        document.getElementById('resofisobase1').innerHTML = "\\[Base \\space is \\]";
+        renderMathInElement(document.getElementById('resofisobase1'));
+        document.getElementById('resofisobase2').innerHTML = "\\[ \\frac{1}{\\sqrt{2}} " + "\\times" + side + "=" + base + "\\]";
+        renderMathInElement(document.getElementById('resofisobase2'));
+    
+    }
+
+}
+
 function solvestriangle(){
     var s1=  document.getElementById("inputfirsts1").value;
     var s2 =  document.getElementById("inputseconds2").value;

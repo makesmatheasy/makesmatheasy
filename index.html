@@ -9773,6 +9773,11 @@
                                         Triangle</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#isoright"
+                                           style="text-decoration:none;" href="#">Isosceles Right
+                                        Triangle</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#rightangletriangle"
                                            style="text-decoration:none;" href="#">Right-angle
                                         Triangle</a></td>
@@ -13852,6 +13857,75 @@
                             <p class="stopwrap" id="resultofperiit2"
                                style="font-family:mathfont;"></p>
 
+                        </div>
+                        <!-- TILL HERE -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="isoright" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Isosceles Right Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6"><br>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[S = \frac{a^2}{4} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = (1+\sqrt{2})a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \frac{a}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/isoright.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base</h5>
+                                    <p class="text-center">\[b = \frac{a}{\sqrt{2}} \]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- FROM HERE -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side a"
+                                   id="isoside" oninput="isoscelesrightsolve();">
+                            <div class="dropdown-divider"></div>
+                            <br>
+                            <p class="stopwrap" id="resofisoarea1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoarea2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoperi1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoperi2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoheight1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoheight2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisobase1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisobase2"
+                               style="font-family:mathfont;"></p>
+                            
                         </div>
                         <!-- TILL HERE -->
                     </div>

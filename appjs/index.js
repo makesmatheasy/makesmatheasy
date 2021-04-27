@@ -287,6 +287,7 @@ function openit(id) {
         "#percal",
         "#lyear",
         "#analytical",
+        "#isoright",
         "#ellipsoid",
         "#expo",
         "#setformula",
