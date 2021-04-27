@@ -346,6 +346,10 @@ h6 {
   border-top: none !important;
 }
 
+#myInput {
+  color: black;
+}
+
 .form__field {
   font-family: mainfont;
   font-size: 0.9375rem !important;
