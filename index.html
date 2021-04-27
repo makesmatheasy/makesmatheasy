@@ -1395,6 +1395,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="numcubesRange"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
+                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="cubesRange"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Cubes in a range</a>
                         </td>
@@ -10687,8 +10704,8 @@
             <h4 class="text-center" id="op"> </h4> 
             <div class="coll">
                 <p>
-                    2) What % of  <input type="text" id="x1" size=3 value='' placeholder="X">  is
-                <input type="text" id="y1" size=3 value='' placeholder="Y">  ? 
+                    2) What % of  <input type="text" id="perX1" size=3 value='' placeholder="X">  is
+                <input type="text" id="perY1" size=3 value='' placeholder="Y">  ? 
                     <br><br>
                     
                 <button type="button" class="btn btn-light" onclick=solvepera()>
@@ -10696,7 +10713,7 @@
                 </button><br>
                 </p>
             </div><br>
-            <h4 class="text-center" id="n"> </h4>
+            <h4 class="text-center" id="perAns1"> </h4>
             <div class="coll">
                 <p>
                     3)  <input type="text" id="perY2" size=3 value='' placeholder="Y">  out of what is

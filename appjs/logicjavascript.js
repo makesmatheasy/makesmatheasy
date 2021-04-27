@@ -5966,10 +5966,10 @@ function solveper()
 function solvepera()
 {
     var x1,y1;
-    x1=parseFloat(document.getElementById('x1').value);
-    y1=parseFloat(document.getElementById('y1').value);
+    x1=parseFloat(document.getElementById('perX1').value);
+    y1=parseFloat(document.getElementById('perY1').value);
     var n = (y1*100)/x1;
-    document.getElementById('n').innerHTML= 'Result : ' + n + '%'; 
+    document.getElementById('perAns1').innerHTML= 'Result : ' + n + '%'; 
 }
 function solvepercal()
 {

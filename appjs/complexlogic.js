@@ -766,6 +766,7 @@ function scbncal()
 
   function numcubesRangecal()
     {
+
     var num1=document.getElementById("numrange1").value;
     var num2=document.getElementById("numrange2").value;
     var s="";

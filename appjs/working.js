@@ -151,7 +151,7 @@ $(document).ready(function () {
         clearall();
     });
 
-  
+
     $("#sosqn").click(function () {
         openit("#sosqsn");
 
