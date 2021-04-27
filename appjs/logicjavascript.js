@@ -5765,9 +5765,10 @@ function solvepera()
 function solvepercal()
 {
     var x2,y2;
-    x2=parseFloat(document.getElementById('x2').value);
-    y2=parseFloat(document.getElementById('y2').value);
+    x2=parseFloat(document.getElementById('perX2').value);
+    y2=parseFloat(document.getElementById('perY2').value);
     var s = (y2*100)/x2;
+    s = s.toFixed(2);
     document.getElementById('s').innerHTML= 'Result : ' + s ; 
 }
 function solvepercent()
