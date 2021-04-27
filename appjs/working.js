@@ -152,6 +152,14 @@ $(document).ready(function () {
     });
 
 
+
+
+    $("#socbn").click(function () {
+        openit("#socbsn");
+        closenav();
+        clearall();
+    });
+
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
         closenav();
