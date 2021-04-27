@@ -284,6 +284,7 @@ function openit(id) {
         "#cosine",
         "#obliquecy",
         "#setcal",
+        "#mi",
 	    "#ip",
 	    "#prices",
 
