@@ -151,6 +151,30 @@ $(document).ready(function () {
         clearall();
     });
 
+  
+    $("#sosqn").click(function () {
+        openit("#sosqsn");
+
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#socbn").click(function () {
+        openit("#socbsn");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#squaresRange").click(function () {
+        openit("#squaresRanges");
+        closenav();
+        clearall();
+    });
+
 
 
     $("#cubesRange").click(function () {
@@ -158,7 +182,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
 
 
 
@@ -358,6 +381,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#vecbtn").click(function () {
+        openit("#vec");
+        closenav();
+        clearall();
+    })
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();
@@ -391,6 +419,11 @@ $(document).ready(function () {
     })
     $("#consimbtn").click(function () {
         openit("#consim");
+        closenav();
+        clearall();
+    })
+    $("#cevthabtn").click(function () {
+        openit("#cevtha");
         closenav();
         clearall();
     })
