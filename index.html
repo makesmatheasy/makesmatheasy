@@ -483,10 +483,11 @@
                     </tr>
                 </table>
             </li>
-            <!--sum of n terms of ap-->
 
-
-            <li>
+            <!--sum of n terms of ap ends-->
+		
+	     <!-- nth terms of an hp starts-->
+	        	<li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -502,8 +503,9 @@
                     </tr>
                 </table>
             </li>
-
-            <!--sum of n terms of an gp-->
+	<!-- nth terms of an hp ends-->
+		
+            <!--sum of n terms of an gp starts-->
             <li>
                 <table class="table">
                     <tr>
@@ -522,7 +524,7 @@
             </li>
             <!--sum of n terms of an gp end-->
 
-            <!--sum of n terms of an HP start-->
+            <!--sum of n terms of an HP starts-->
             <li>
                 <table class="table">
                     <tr>
@@ -1300,6 +1302,77 @@
                     </tr>
                 </table>
             </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sosqn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Squares of N Natural Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Square of N Natural Numbers ','#sosqsn','c','sumsqnimgfav')"><img
+                                        id="sumsqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+
+                            <a id="socbn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Cubes of N Natural Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Cubes of N Natural Numbers ','#socbsn','c','sumcbnimgfav')"><img
+                                        id="sumcbnimgfav" src="images/unfavourite.png"
+
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="squaresRange"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Squares in a range</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Perfect squares in a range','#squaresRanges','c','squaresRangeimgfav')"><img
+                                        id="squaresRangeimgfav" src="images/unfavourite.png"
+
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="numcubesRange"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
+                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
 
             <li>
                 <table class="table">
@@ -2123,11 +2196,14 @@
                         </td>
                     </tr>
                 </table>
+
             </li>
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
+
                             <a id="propcirclebtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Circles
                             </a>
@@ -2135,11 +2211,22 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Properties of Circles','#propcircle','c','propcirclefav')"><img
                                         id="propcirclefav" src="images/unfavourite.png"
+
+                            <a id="centcalbut"
+                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Triangle Calculator','#centcal','c','centcalfav')"><img
+                                        id="centcalfav" src="images/unfavourite.png"
+
+
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
+
             </li>            
+
             <li>
                 <table class="table">
                     <tr>
@@ -4261,6 +4348,24 @@
                 <h2><label>3-D Geometry Calculator</label></h2>
             </div>
             <br><br>
+            <h3>Equation of a plane</h3><br>
+            <div class="coll">
+                <p>
+                    Point A = (<input type="text" id="va1" size=5 value='' placeholder="Ax"> , 
+                <input type="text" id="va2" size=5 value='' placeholder="Ay"> , <input type="text" id="va3" size=5 value='' placeholder="Az">)
+                        <br><br>
+                    Point B = (<input type="text" id="vb1" size=5 value='' placeholder="Bx"> , 
+                <input type="text" id="vb2" size=5 value='' placeholder="By"> , <input type="text" id="vb3" size=5 value='' placeholder="Bz">)
+                        <br><br>
+                    Point C = (<input type="text" id="vc1" size=5 value='' placeholder="Cx"> , 
+                <input type="text" id="vc2" size=5 value='' placeholder="Cy"> , <input type="text" id="vc3" size=5 value='' placeholder="Cz">)
+                        <br><br>
+                <button type="button" class="btn btn-light" onclick=equationplanesolve()>
+                    Find 
+                </button><br>
+                </p>
+            </div><br>
+            <h4 style="color:white" id="eqop"> </h4><br> 
             <h3>Distance from point to plane calculator</h3><br>
             <div class="coll">
                 <p>
@@ -9751,6 +9856,11 @@
                                         Triangle</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#isoright"
+                                           style="text-decoration:none;" href="#">Isosceles Right
+                                        Triangle</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#rightangletriangle"
                                            style="text-decoration:none;" href="#">Right-angle
                                         Triangle</a></td>
@@ -10094,7 +10204,11 @@
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
                 </tr>
-
+                <tr>
+                    <td><a data-toggle="modal" data-target="#dodecahedron"
+                           style="text-decoration:none;"
+                           href="#">Dodecahedron</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#icosahedron"
                            style="text-decoration:none;"
@@ -10151,6 +10265,97 @@
 
         <!-- Date Calculator End-->
 
+
+<div class="collapse" id="centcal">
+    <h2 style="text-align: center;">Diffrent Centers of Triangel</h2><br>
+    <div class="col-9">
+        <div class="col-9">
+            <label>
+                <h5>First Edge</h5>
+            </label>
+                <div class="row">
+                    <div class="col-3">
+                        <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: center; background-color: aliceblue;" >
+                    </div>
+                    <p>X + </p>
+                    <div class="col-3">
+                        <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: center;background-color: aliceblue;">
+                    </div>
+                    <p> Y = </p>
+                    <div class="col-3">
+                        <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;">
+                    </div>
+                </div>
+
+
+    
+            </div>
+
+
+        <div class="col-9">
+            <label>
+                <h5>Second Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: center;background-color: aliceblue;">
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-9">
+            <label>
+                <h5>Third Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: center; background-color: aliceblue;">
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="centcal()">
+                    Centroid
+                </button>
+
+                <button type="button" class="btn btn-light" onclick="cencirtcal()">
+                    Circumcenter
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label>
+                <h5 id="rcch"> </h5>
+            </label>
+            <p id="rcc"></p>
+        </div>
+    </div>
+</div>
+        <!-------------------------------------------------------->
 
         <div class="collapse" id="setcal">
            
@@ -11054,6 +11259,64 @@
     </div>
    
 </div>
+
+
+<div class="collapse" id="numcubesRanges">
+
+    <h1 style="font-family:mathfont; text-align:center;">Number of Perfect Cubes in a Range</h1>
+    <input type="text" name="numrange1" class="form__field" id="numrange1" placeholder="Enter the first term" style=" text-align:center;">
+    <input type="text" name="numrange2" class="form__field" id="numrange2" placeholder="Enter the last term" style=" text-align:center;">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="numcubesRangecal()">Calculate</button> <p>&nbsp;</p>
+    <p id="numcubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    <p id="numcubesans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+
+</div>    
+
+
+<div class="collapse" id="sosqsn">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Squares of N Natural Numbers </h1>
+    <input type="text" name="ssqn" class="form__field" id="ssqn" placeholder="Enter the number upto which you want to find sum of squares">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ssqncal()">Calculate</button> <p>&nbsp;</p>
+    <p id="ssqnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    
+    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Squares of N Natural numbers : <br> <br>
+    Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p>
+    </div>
+   
+</div>
+
+<div class="collapse" id="socbsn">
+    
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Cubes of N Natural Numbers </h1>
+    <input type="text" name="scbn" class="form__field" id="scbn" placeholder="Enter the number upto which you want to find sum of cubes">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="scbncal()">Calculate</button> <p>&nbsp;</p>
+    <p id="scbnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    
+    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Cubes of N Natural numbers : <br> <br>
+    Σn2 = [n(n+1)/2]^2<p>&nbsp;</p>
+    </div>
+   
+</div>
+
+
+
+<div class="collapse" id="squaresRanges">
+    
+    <h1 style="font-family:mathfont; text-align:center;">Squares in a Range</h1>
+    <input type="text" name="sqrange1" class="form__field" id="sqrange1" placeholder="Enter the first term" style=" text-align:center;">
+    <input type="text" name="sqrange2" class="form__field" id="sqrange2" placeholder="Enter the last term" style=" text-align:center;">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="squaresRangecal()">Calculate</button> <p>&nbsp;</p>
+    <p id="squaresRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+   
+
+</div>
+
 
 <div class="collapse" id="cubesRanges">
     
@@ -13688,6 +13951,75 @@
             </div>
         </div>
 
+        <div class="modal fade" id="isoright" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Isosceles Right Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6"><br>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[S = \frac{a^2}{4} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = (1+\sqrt{2})a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \frac{a}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/isoright.gif" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base</h5>
+                                    <p class="text-center">\[b = \frac{a}{\sqrt{2}} \]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- FROM HERE -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side a"
+                                   id="isoside" oninput="isoscelesrightsolve();">
+                            <div class="dropdown-divider"></div>
+                            <br>
+                            <p class="stopwrap" id="resofisoarea1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoarea2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoperi1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoperi2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoheight1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisoheight2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisobase1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofisobase2"
+                               style="font-family:mathfont;"></p>
+                            
+                        </div>
+                        <!-- TILL HERE -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="equilateraltriangle" tabindex="-1" role="dialog"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -14836,15 +15168,18 @@
                                 <div class="dropdown-divider"></div>
                                 <h5 class="text-center">Curved Surface area of Cylinder</h5>
                                 <p class="text-center">\[2 \pi r h \]</p>
-
+                                <h5 class="text-center">Diameter of Cylinder</h5>
+                                <p class="text-center">\[d = 2 \times \sqrt{\frac{V}{\pi h }}\]</p>
 
                             </div>
                             <div class="col-6">
-                                <img src="images/cylinder.png" style="height:9.375rem"
+                                <img src="images/cylinder.PNG" style="height:9.375rem"
                                      class="img-fluid">
                                 <div class="dropdown-divider"></div>
                                 <h5 class="text-center">Total Surface area of Cylinder</h5>
                                 <p class="text-center">\[ 2 \pi r(r+h) \]</p>
+                                <h5 class="text-center">Radius of Cylinder</h5>
+                                <p class="text-center">\[r = \sqrt{\frac{V}{\pi h }} \]</p>
                             </div>
                         </div>
 
@@ -14860,6 +15195,8 @@
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofcsacyl"
                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofcydia"
+                           style="font-family:mathfont;"></p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -14870,7 +15207,6 @@
             </div>
         </div>
     </div>
-
     <div>
         <div class="modal fade" id="hollowcy" tabindex="-1" role="dialog"
              aria-hidden="true">
@@ -16023,6 +16359,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="modal fade" id="octahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -16040,10 +16377,13 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h5 class="text-center">Volume</h5>
-                                    <p class="text-center">\[V=\frac{\sqrt{2}a^3}{3}\]</p>
+                                    <p class="text-center">\[V = \frac{\sqrt{2}a^3}{3} \]</p>
                                     <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Surface Area</h5>
-                                    <p class="text-center">\[A = 2 \sqrt{3} a^2\]</p>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = 2 \sqrt{3} a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diagonal</h5>
+                                    <p class="text-center">\[D = \sqrt{2} a \]</p>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
@@ -16054,19 +16394,69 @@
                             <div class="dropdown-divider"></div>
                             <!-- --------FROM------- -->
                             <input class="form__field" type="number"
-                                   placeholder="Enter Side (a)"
-                                   id="inputtside" oninput="solveocta()">
-                            <p class="stopwrap" id="resultofvolt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultoftsa"
-                               style="font-family:mathfont;"></p>
-                            
-                        </div>
+                                   placeholder="Enter side length of octahedron(a)" id="inputoctside"
+                                   oninput="solveocta();">  
+                            <p class="stopwrap" id="resultofoctvol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofocttsa"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofoctdiag"
+                            style="font-family:mathfont;"></p>
+                          </div>
                         <!-- ------HERE------ -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="dodecahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Regular Dodecahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{15 + 7 \sqrt{5}}{4} a^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = 3 \sqrt{25 + 10 \sqrt{5}} a^2 \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/dodecahedron.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of dodecahedron(a)" id="inputdodecaside"
+                                   oninput="solvedodeca();">  
+                            <p class="stopwrap" id="resultofdodecavol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofdodecatsa"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
                         </button>
                     </div>
                 </div>
@@ -16166,53 +16556,65 @@
                     </div>
                 </div>
             </div>
-        </div>                
-            <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Parallelepiped</h5>
-                            <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close"
-                                    style="outline:none">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- added div with class container -->
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5 class="text-center">Volume</h5>
-                                        <p class="text-center">\[V=abc\]</p>
-                                        <div class="dropdown-divider"></div>
-                                        <h5 class="text-center">Diagonal</h5>
-                                        <p class="text-center">\[\sqrt{a^{2}+b^{2}+c^{2}}\]</p>
-                                        <div class="dropdown-divider"></div>
-                                        <h5 class="text-center">Surface Area</h5>
-                                        <p class="text-center">\[S=2(ab+bc+ca)\]</p>
+        </div>     
+        
+        <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Parallelepiped</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=abc\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diagonal</h5>
+                                    <p class="text-center">\[\sqrt{a^{2}+b^{2}+c^{2}}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[S=2ab+2bc+2ca)\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/parapipe.PNG" class="img-fluid">
                                     </div>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <!-- --------FROM------- -->
-                                <input type="text" id="a1st" class = "form__field"placeholder="Enter a">
-                                <input type="text" id="b1st" class = "form__field"placeholder="Enter b">
-                                <input type="text" id="c1st" class = "form__field"placeholder="Enter c">
-                                <button type="submit" id="parapipe" onclick="parapipe()">Find</button>
-                                <h6 id="volparapipe"></h6>
-                                <h6 id="saparapipe"></h6>
-                                <h6 id="diagparapipe"></h6>
                             </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="para1" class = "form__field"placeholder="Enter a">
+                                <input type="text" id="para2" class = "form__field"placeholder="Enter b">
+                                <input type="text" id="para3" class = "form__field"placeholder="Enter c">
+                                <button type="submit" id="parapipe" onclick="parapipe()">Find</button>
+                                <br><br>
+                                <p class="stopwrap" id="volparapipe"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="saparapipe"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="diagparapipe"
+                                   style="font-family:mathfont;"></p><br>
+
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                Close
-                            </button>
-                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
                     </div>
                 </div>
-            </div>   
-            </div>    
+            </div>
+        </div>
+        
             <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
