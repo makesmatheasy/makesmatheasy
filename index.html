@@ -483,10 +483,13 @@
                     </tr>
                 </table>
             </li>
+
+	   
             <!--sum of n terms of ap-->
 
 
             <li>
+
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -502,8 +505,9 @@
                     </tr>
                 </table>
             </li>
-
-            <!--sum of n terms of an gp-->
+	<!-- nth terms of an hp ends-->
+		
+            <!--sum of n terms of an gp starts-->
             <li>
                 <table class="table">
                     <tr>
@@ -522,7 +526,7 @@
             </li>
             <!--sum of n terms of an gp end-->
 
-            <!--sum of n terms of an HP start-->
+            <!--sum of n terms of an HP starts-->
             <li>
                 <table class="table">
                     <tr>
@@ -1280,6 +1284,40 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sum of Square','#sosqs','c','sumsqimgfav')"><img
                                         id="sumsqimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sosqn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Squares of N Natural Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sum of Square of N Natural Numbers ','#sosqsn','c','sumsqnimgfav')"><img
+                                        id="sumsqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cubesRange"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Cubes in a range</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Perfect cubes in a range','#cubesRanges','c','cubesRangeimgfav')"><img
+                                        id="cubesRangeimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -11062,6 +11100,23 @@
     </div>
    
 </div>
+
+
+<div class="collapse" id="sosqsn">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Squares of N Natural Numbers </h1>
+    <input type="text" name="ssqn" class="form__field" id="ssqn" placeholder="Enter the number upto which you want to find sum of squares">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ssqncal()">Calculate</button> <p>&nbsp;</p>
+    <p id="ssqnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    
+    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Squares of N Natural numbers : <br> <br>
+    Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p>
+    </div>
+   
+</div>
+
 
 <div class="collapse" id="cubesRanges">
     

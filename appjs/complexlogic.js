@@ -715,6 +715,30 @@ function ssqcal()
 
 }
 
+
+function ssqncal()
+{
+    var num=document.getElementById("ssqn").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc((num*(num+1)*(2*num+1))/6);
+        s="Your answer is: "+sum;
+    }
+
+    document.getElementById("ssqnans").innerHTML=s;
+
+}
+
+
 function cubesRangecal()
 {
     console.log("cubes");

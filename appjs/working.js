@@ -145,6 +145,13 @@ $(document).ready(function () {
 
 
 
+    $("#sosqn").click(function () {
+        openit("#sosqsn");
+        closenav();
+        clearall();
+    });
+
+
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
         closenav();
