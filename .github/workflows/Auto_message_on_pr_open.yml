@@ -2,7 +2,7 @@ name: Auto message on pr opened
 
 on:
   pull_request_target:
-    types: [opened,reopened,edited,synchronize,assigned]
+    types: [opened]
 
 jobs:
   auto-response:
