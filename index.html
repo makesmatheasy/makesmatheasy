@@ -740,7 +740,22 @@
                 </table>
             </li>
             <!--Definite Integration Formulae-->
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="mibtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Methods of Integration</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Methods of Integration','#mi','c','miimgfav')"><img
+                                        id="miimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--            differentiation-->
             <li>
                 <table class="table">
@@ -8199,7 +8214,36 @@
           
         </div>
 <!--Standard Deviation end-->
-
+        <div class="collapse" id="mi">
+            <h2 style="text-align: center;">Methods of Integration</h2>
+            <br><br>
+            <h4>1. Integration by Substitution</h4>
+            <br>
+            <p>Sometimes, it is really difficult to find the integration of a function, thus we can find the integration by introducing a new independent variable. This method is called Integration By Substitution.</p>
+            <p>The given form of integral function (say ∫f(x)) can be transformed into another by changing the independent variable x to t,</p>
+            <p>Substituting x = g(t) in the function ∫f(x), we get;</p>
+            <p>\[\frac{dx}{dt}\space =\space g^{'}t\]</p>
+            <p>\[Thus,\space I\space =\space \int f(x)\,dx\space =\space f(g(t))g^{'}t\,dt\]</p>
+            <br>
+            <h4>2. Integration by Parts</h4>
+            <br>
+            <p>Integration by parts requires a special technique for integration of a function, where the integrand function is the multiple of two or more function.
+                    <br>
+                Let us consider an integrand function to be f(x).g(x).
+                <br>
+                Mathematically, integration by parts can be represented as;
+            </p>
+            <p>\[\int f(x)g(x)\,dx\space =\space f(x)\int g(x)\,dx\space -\space \int f^{'}(x)\int g(x)\,dx\]</p>
+            <p>For deciding the first and the second functions, one can follow the ILATE rule for integration.</p>
+            <p>\[Inverse,Logarithmic,Arithmetic,Trigonometric,Exponential\space =\space ILATE\]</p>
+            <br>
+            <h4>3. Integration by Partial Fractions</h4>
+            <br>
+            <p>We know that a Rational Number can be expressed in the form of p/q, where p and q are integers and q≠0. Similarly, a rational function is defined as the ratio of two polynomials which can be expressed in the form of partial fractions: P(x)/Q(x), where Q(x)≠0.</p>
+            <p>There are in general two forms of partial fraction:</p>
+            <p><b>Proper partial fraction:</b> When the degree of the numerator is less than the degree of the denominator, then the partial fraction is known as a proper partial fraction.</p>
+            <p><b>Improper partial fraction:</b> When the degree of the numerator is greater than the degree of denominator then the partial fraction is known as an improper partial fraction. Thus, the fraction can be simplified into simpler partial fractions, that can be easily integrated.</p>
+        </div>
         <!--algebraic formulas list starts-->
         <div class="collapse" id="algebraic_formulascollapse">
             <div class="stopwrap">

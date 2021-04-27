@@ -391,6 +391,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#mibtn").click(function () {
+        openit("#mi");
+        closenav();
+        clearall();
+    })
     $("#boolbtn").click(function () {
         openit("#bool");
         closenav();

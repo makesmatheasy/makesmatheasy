@@ -276,6 +276,7 @@ function openit(id) {
         "#annulus",
         "#cosine",
         "#setcal",
+        "#mi",
 	    "#ip",
 	    "#prices",
         "#cevtha",
