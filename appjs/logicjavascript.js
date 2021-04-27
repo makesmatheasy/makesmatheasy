@@ -1752,8 +1752,8 @@ function dispointsolve()
     a=parseFloat(document.getElementById('a').value);
     b=parseFloat(document.getElementById('b').value);
     c=parseFloat(document.getElementById('c').value);
-    x1=parseFloat(document.getElementById('one').value);
-    y1=parseFloat(document.getElementById('two').value);
+    x1=parseFloat(document.getElementById('point_one').value);
+    y1=parseFloat(document.getElementById('point_two').value);
     var explain = document.getElementById("dis_point");
     explain.innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line  =\\space  \\frac{Ax1 + By1 + C}{\\sqrt{A^2+B^2}} \\] ";
     renderMathInElement(document.getElementById("dis_point"));
