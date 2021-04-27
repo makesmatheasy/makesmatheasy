@@ -1014,6 +1014,87 @@ function setcal() {
     }
 }
 
+
+//-----------------------------------------------------
+function centcal(){
+       var a1 = parseInt(document.getElementById("fxc").value);
+       var a2 = parseInt(document.getElementById("sxc").value);
+       var a3 = parseInt(document.getElementById("txc").value);
+
+       var b1 = parseInt(document.getElementById("fyc").value);
+       var b2 = parseInt(document.getElementById("syc").value);
+       var b3 = parseInt(document.getElementById("tyc").value);
+
+       var c1 = parseInt(document.getElementById("fcc").value);
+       var c2 = parseInt(document.getElementById("scc").value);
+       var c3 = parseInt(document.getElementById("tcc").value);
+
+       var x1 = ((b1*c2)-(b2*c1))/((a2*b1)-(a1*b2));
+       var y1 = ((c1*a2)-(c2*a1))/((a2*b1)-(a1*b2));
+
+       var x2 = ((b2*c3)-(b3*c2))/((a3*b2)-(a2*b3));
+       var y2 = ((c2*a3)-(c3*a2))/((a3*b2)-(a2*b3));
+
+       var x3 = ((b3*c1)-(b1*c3))/((a1*b3)-(a3*b1));
+       var y3 = ((c3*a1)-(c1*a3))/((a1*b3)-(a3*b1));
+
+ 
+
+    var ans = "( " + ((x1 + x2 +x3)/3).toFixed(2).toString() + ", " 
+    + ((y1 + y2 + y3)/3).toFixed(2).toString() + " )";
+
+    document.getElementById("rcc").innerHTML = ans;
+    document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
+}
+
+function cencirtcal(){
+    var a1 = parseInt(document.getElementById("fxc").value);
+    var a2 = parseInt(document.getElementById("sxc").value);
+    var a3 = parseInt(document.getElementById("txc").value);
+
+    var b1 = parseInt(document.getElementById("fyc").value);
+    var b2 = parseInt(document.getElementById("syc").value);
+    var b3 = parseInt(document.getElementById("tyc").value);
+
+    var c1 = parseInt(document.getElementById("fcc").value);
+    var c2 = parseInt(document.getElementById("scc").value);
+    var c3 = parseInt(document.getElementById("tcc").value);
+
+    var x1 = ((b1*c2)-(b2*c1))/((a2*b1)-(a1*b2));
+    var y1 = ((c1*a2)-(c2*a1))/((a2*b1)-(a1*b2));
+
+    var x2 = ((b2*c3)-(b3*c2))/((a3*b2)-(a2*b3));
+    var y2 = ((c2*a3)-(c3*a2))/((a3*b2)-(a2*b3));
+
+    var x3 = ((b3*c1)-(b1*c3))/((a1*b3)-(a3*b1));
+    var y3 = ((c3*a1)-(c1*a3))/((a1*b3)-(a3*b1));
+
+    var mabx =(x1+x2)/2;
+    var maby =(y1+y2)/2;
+    var aab = (y2-y1)/(x2-x1);
+
+    var macx =(x1+x3)/2;
+    var macy =(y1+y3)/2;
+    var aac = (y3-y1)/(x3-x1);
+
+    var a4 = mabx;
+    var b4 =-1;
+    var c4 = (aab*mabx)-maby;
+
+    var a5 = macx;
+    var b5 =-1;
+    var c5 = (aac*macx)-macy;
+
+
+
+    var o1 = (((b4*c5)-(b5*c4))/((a5*b4)-(a4*b5))).toFixed(2);
+    var o2 = (((c4*a5)-(c5*a4))/((a5*b4)-(a4*b5))).toFixed(2);
+
+    var ans = "( " + o1 + ", " + o2 + " )";
+    document.getElementById("rcc").innerHTML = ans;
+    document.getElementById("rcch").innerHTML ="Circumcenter of Triangle";
+
+}
 //check for set value buttons
 function checkforusetrigovalue() {
     var el = document.getElementById("soltri");
@@ -1937,23 +2018,60 @@ function displanesolve()
     
 }
 function solveocta() {
-    var a = document.getElementById("inputtside").value;
-    var resultvolt = document.getElementById("resultofvolt");
-    var resulttsa = document.getElementById("resultoftsa");
-    resultofvolt.innerHTML = "";
-    resultoftsa.innerHTML = "";
-    var volume = (0.471 * (a * a * a)).toFixed(3);
-    var tsa = (3.464 * (a * a * a)).toFixed(3);
-  
+    var a = document.getElementById("inputoctside").value;
+    var voloutput = document.getElementById("resultofoctvol");
+    var tsaoutput = document.getElementById("resultofocttsa");
+    var diagoutput = document.getElementById("resultofoctdiag");
+    var voltemp = "";
+    var tsatemp = "";
+    var diagtemp = "";
     if (a != "") {
-        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Octahedron \\space \\newline \\frac{\\sqrt{2}}{3} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
-        renderMathInElement(document.getElementById("resultofvolt"));
+        voltemp += "\\[Volume \\space of \\space Octahedron \\space \\newline \\frac{\\sqrt{2}}{3} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(0.471 * (a * a * a))).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        tsatemp += "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(3.464 * (a * a))).toFixed(3) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+
+        diagtemp += "\\[Diagonal \\space of \\space Octahedron \\space \\newline \\sqrt{2} \\times " + a + "\\ = " + eval(String(1.414 * a)).toFixed(3) + "\\]";
+        diagoutput.innerHTML = diagtemp;
+
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(diagoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
     }
-    if (a != "") {
-        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
-        renderMathInElement(document.getElementById("resultoftsa"));
-    }
+
 }
+
+
+function solvedodeca() {
+    var a = document.getElementById("inputdodecaside").value;
+    var voloutput = document.getElementById("resultofdodecavol");
+    var tsaoutput = document.getElementById("resultofdodecatsa");
+    var voltemp = "";
+    var tsatemp = "";
+    if (a != "") {
+        voltemp += "\\[Volume \\space of \\space Dodecahedron \\space \\newline \\frac{15 + 7 \\sqrt{5}}{4} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(7.663 * (a * a * a))).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        tsatemp += "\\[Surface \\space Area \\space of \\space Dodecahedron \\space \\newline " + 3  + "\\times \\sqrt{25 + 10 \\sqrt{5}} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(20.646 * (a * a))).toFixed(3) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+
+}
+
+
 function angletwoplanesolve()
 {
     var a,b,c,d,a1,b1,c1,d1;
@@ -1974,6 +2092,25 @@ function angletwoplanesolve()
     
 }
 
+function equationplanesolve()
+{
+    var ax,ay,az,bx,by,bz,cx,cy,cz;
+    ax=parseFloat(document.getElementById('va1').value);
+    ay=parseFloat(document.getElementById('va2').value);
+    az=parseFloat(document.getElementById('va3').value);
+    bx=parseFloat(document.getElementById('vb1').value);
+    by=parseFloat(document.getElementById('vb2').value);
+    bz=parseFloat(document.getElementById('vb3').value);
+    cx=parseFloat(document.getElementById('vc1').value);
+    cy=parseFloat(document.getElementById('vc2').value);
+    cz=parseFloat(document.getElementById('vc3').value);
+    var res1 = ((by-ay)*(cz-az))-((cy-ay)*(bz-az));
+    var res2 = ((bz-az)*(cx-ax))-((cz-az)*(bx-ax));
+    var res3 = ((bx-ax)*(cy-ay))-((cx-ax)*(by-ay));
+    var res4 = -(res1*ax + res2*ay + res3*az);
+    document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
+    
+}
 
 function solveicosa() {
     var a = document.getElementById("inputtside").value;
