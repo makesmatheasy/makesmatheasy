@@ -153,12 +153,12 @@ $(document).ready(function () {
 
 
 
+
     $("#socbn").click(function () {
         openit("#socbsn");
         closenav();
         clearall();
     });
-
 
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
@@ -297,13 +297,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#ppmf").click(function () {
+        openit("#ppmfs");
+        closenav();
+        clearall();
+    })
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();
         clearall();
     })
 
-    $("#HPbtn").click(function () {
+    $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
         clearall();

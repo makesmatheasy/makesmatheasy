@@ -483,14 +483,15 @@
                     </tr>
                 </table>
             </li>
+
             <!--sum of n terms of ap ends-->
 		
 	     <!-- nth terms of an hp starts-->
-		<li>
+	        	<li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="HPbtn"
+                            <a id="HPbttn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
                                 Nth term of an Harmonic Progression</a>
                         </td>
@@ -523,7 +524,7 @@
             </li>
             <!--sum of n terms of an gp end-->
 
-            <!--sum of n terms of an HP start-->
+            <!--sum of n terms of an HP starts-->
             <li>
                 <table class="table">
                     <tr>
@@ -1309,12 +1310,14 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
                             <a id="socbn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Cubes of N Natural Numbers</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sum of Cubes of N Natural Numbers ','#socbsn','c','sumcbnimgfav')"><img
                                         id="sumcbnimgfav" src="images/unfavourite.png"
+
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1438,7 +1441,7 @@
                     <tr>
                         <td style="border-top: none;" onclick="display_devi()">
                             <a id="std-dvtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Standard Devation
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Standard Deviation
                                 </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2867,6 +2870,23 @@
                             </tr>
                         </table>
                     </li>
+                    <li>
+                        <table class="table">
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="ppmf"
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Poisson Distribution Calculator
+                                    </a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                       <span
+                                               onclick="addtofavourite('Poisson Distribution','#ppmfs','c','ppmfimgfav')"><img
+                                               id="bpmfimgfav" src="images/unfavourite.png"
+                                               style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
 
 
             <li>
@@ -3288,7 +3308,7 @@
                         <h4>Truth Table For Logical Operations</h4>
                         <h4>AND operation:</h4>
                         <table class="table table-bordered table-dark">
-                            <tbody>
+                            <tbody class="abc">
                             <tr>
                                 <td><span style="font-weight: 400;">p</span></td>
                                 <td><span style="font-weight: 400;">q</span></td>
@@ -3319,7 +3339,7 @@
                         <br>
                         <h4>OR operation:</h4>
                         <table class="table table-bordered table-dark">
-                            <tbody>
+                            <tbody class="abc">
                             <tr>
                                 <td><span style="font-weight: 400;">p</span></td>
                                 <td><span style="font-weight: 400;">q</span></td>
@@ -3350,7 +3370,7 @@
                         <br>
                         <h4>Negation Operation:</h4>
                         <table class="table table-bordered table-dark">
-                            <tbody>
+                            <tbody class="abc">
                             <tr>
                                 <td>p</td>
                                 <td>∼ p</td>
@@ -3376,7 +3396,7 @@
                         <br>
                         <h4>Conditional Operation</h4>
                         <table class="table table-bordered table-dark">
-                            <tbody>
+                            <tbody class="abc">
                             <tr>
                                 <td><span style="font-weight: 400;">p</span></td>
                                 <td><span style="font-weight: 400;">q</span></td>
@@ -3407,7 +3427,7 @@
                         <br>
                         <h4>Biconditional Operation:</h4>
                         <table class="table table-bordered table-dark">
-                            <tbody>
+                            <tbody class="abc">
                             <tr>
                                 <td><span style="font-weight: 400;">p</span></td>
                                 <td><span style="font-weight: 400;">q</span></td>
@@ -3443,7 +3463,7 @@
                             of\, false\, in\, every\, possible\, interpretation\]</p>
                         <br>
                         <table class="table table-bordered table-dark">
-                            <tbody>
+                            <tbody class="abc">
                             <tr>
                                 <td><span style="font-weight: 400;">p</span></td>
                                 <td><span style="font-weight: 400;">q</span></td>
@@ -4300,7 +4320,28 @@
             <input type="text" id = "d" placeholder="Enter d of plane">
             <br>
             <button type="submit" onclick="dlp()">Find</button>
-            <h5 id="dlpans"></h5><br>
+
+            <h5 id="dlpans"></h5>
+            <br>
+            <h3>Distance between two planes calculator</h3><br>
+            <div class="coll">
+                <p>
+                    Plane Equation 1:   <input type="text" id="da1" size=3 value='' placeholder="A1">  x  +
+                <input type="text" id="db1" size=3 value='' placeholder="B1"> y + <input type="text" id="dc1" size=3 value='' placeholder="C1"> z + <input type="text" id="dd1" size=3 value='' placeholder="D1">  = 0
+                    <br><br>
+                    Plane Equation 2:   <input type="text" id="da2" size=3 value='' placeholder="A2">  x  +
+                <input type="text" id="db2" size=3 value='' placeholder="B2"> y + <input type="text" id="dc2" size=3 value='' placeholder="C2"> z + <input type="text" id="dd2" size=3 value='' placeholder="D2">  = 0
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=solvetwoplane()>
+                    Find Distance
+                </button><br>
+                </p>
+            </div><br>
+            <h4 style="color:white" id="dplane"> </h4> <br>
+            <h4 style="color:white" id="dplane1"> </h4> 
+
+            
             <h3>Angle between planes calculator</h3><br>
             <div class="coll">
                 <p>
@@ -4320,6 +4361,7 @@
                 class="stopwrap"
                align="right"></p>
             <h4 style="color:white" id="angleplaneop"> </h4> 
+
         </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
@@ -8901,8 +8943,7 @@
                 font-family:mathfont;" id="deg"></p>
             </div>
         </div>
-
-
+  
         <div class="collapse" id="equationssolver">
             <div class="form-group">
                 <p class="stopwrap" id="displayequation">
@@ -9076,10 +9117,51 @@
         
         
         </div>
+        <!-- Primarity test and prime till n cal -->
+        <br>
+        <div class="collapse" id="prime">
+            <form class="form-group">
+                <div class="text-center">
+                    <h2><label>Primality Test</label></h2>
+                </div>
+                <input type="number" id="isprime" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="check_prime('isprime')">
+                    Check
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+            </div>
 
-        
+            <div class="dropdown-divider"></div>
+            <div class="form-group">
+                <div class="text-center">
+                    <h2><label>Primes till entered number</label></h2>
+                </div>
+                <input type="number" id="primetill" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="prime_till_num('primetill')">
+                    Find
+                </button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <p id="primetillsol"
+                       style="display:flex;font-family:mathfont;;width:auto;"
+                       class="stopwrap"
+                       align="right"></p>
+                </div>
 
+            </div>
+            <!--  Primarity test and prime till n cal end -->
         </div>
+
 
         <div class="collapse" id="parallel">
             <h2 style="text-align: center;">Properties of Parallel Lines</h2>
@@ -9643,6 +9725,10 @@
                                            style="text-decoration:none;" href="#">Scalene
                                         Triangle</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#triangle-cal"
+                                           style="text-decoration:none;" href="#">Calculator (given sides and angle)</a></td>
+                                </tr>
                             </table>
 
                         </div>
@@ -9694,6 +9780,11 @@
                            style="text-decoration:none;"
                            href="#">Parallelogram</a></td>
                 </tr>    
+                <tr>
+                    <td><a data-toggle="modal" data-target="#parallelogramcal"
+                           style="text-decoration:none;"
+                           href="#">Parallelogram Calculator</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#pentagon"
                            style="text-decoration:none;"
@@ -11221,6 +11312,23 @@
 </div>
 
 <!--Binomial PMF ends-->
+<div class="collapse" id="ppmfs">
+    <h1 style="font-family:mathfont; text-align:center;"> PMF of Poisson Distribution Calculator </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="lamb" class="form__field" id="lamb"   placeholder="Average number of occurrences for a given time interval lambda, λ:">
+    <p>&nbsp;</p>
+    <input type="number" name="occ" class="form__field" id="occ" placeholder="Number of occurrences x: ">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="ppcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
+    <p>&nbsp;</p> 
+    <div style="color: white; text-align: center; font-size: 1em; font-family:mathfont;">The Poisson distribution is a discrete probability distribution which results from the Poisson experiment.<br>
+     It classifies the experiment into two different categories, such as success and failure. <br>
+     Generally, the Poisson random variable “x” defines the probability of the success of the experiment.<br>
+     From the average rate of success, the Poisson distribution probability can be easily calculated.
+    </div>
+</div>
 <!--Stress Calculator starts-->
 <div class="collapse" id="stresscalc">
     <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>
@@ -11246,49 +11354,7 @@
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="stressans"></div>
 </div>
 <!--Stress Calculator Ends-->
-        <!-- Primarity test and prime till n cal -->
-        <div class="collapse" id="prime">
-            <form class="form-group">
-                <div class="text-center">
-                    <h2><label>Primality Test</label></h2>
-                </div>
-                <input type="number" id="isprime" placeholder="Enter a Number"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
-                <button type="button" class="btn btn-light"
-                        onclick="check_prime('isprime')">
-                    Check
-                </button>
-            </form>
-            <br>
-            <div class="form-group">
-                <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-            </div>
-
-            <div class="dropdown-divider"></div>
-            <div class="form-group">
-                <div class="text-center">
-                    <h2><label>Primes till entered number</label></h2>
-                </div>
-                <input type="number" id="primetill" placeholder="Enter a Number"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
-                <button type="button" class="btn btn-light"
-                        onclick="prime_till_num('primetill')">
-                    Find
-                </button>
-                </form>
-                <br>
-                <div class="form-group">
-                    <p id="primetillsol"
-                       style="display:flex;font-family:mathfont;;width:auto;"
-                       class="stopwrap"
-                       align="right"></p>
-                </div>
-
-            </div>
-            <!--  Primarity test and prime till n cal end -->
-        </div>
+      
         
         <div class="collapse" id="bool">
     <h1 style="text-align: center; text-shadow: 1px 1px 2px red; ">Boolean Algebra</h1>
@@ -12352,49 +12418,49 @@
         <!--End of Joint Probability-->
 
         <!--Bayes  Probability-->
-        <div class="collapse" id="bayes-probabilitycollapse">
-            <h1>Bayes Theorem</h1>
+        <div class="collapse" id="bayes-probabilitycollapse" style="text-align: center; margin: auto;">
+            <h1 style="color:rgb(73 50 177);">Bayes Theorem</h1>
             <p>Bayes’ theorem describes the probability of an event based on prior knowledge of the conditions that
                 might be relevant to the event.</p>
-            <h1>
+            <h1 style="color:rgb(73 50 177);">
                 P(A|B)=P(B|A)*P(A)/P(B)
             </h1>
             <p>P(A|B) = probability of A given B is true</p>
             <p>P(B|A) = probability of B given A is true</p>
             <p>P(A), P(B) = the independent probabilities of A and B</p>
-            <div class="row">
+            <div class="row" style="justify-content: center;align-items: center;">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <h5>Enter number of favourable outcomes in case of Event A</h5>
-                        <input type="number" value="0" class="form__field" id="fav1">
+                        <h5 style="color:white">Enter number of favourable outcomes in case of Event A</h5>
+                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="fav1">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <h5>Enter number of possible outcomes in case of Event A</h5>
-                        <input type="number" value="1" class="form__field" id="tot1">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes in case of Event B</h5>
-                        <input type="number" value="0" class="form__field" id="fav2">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of possible outcomes in case of Event B</h5>
-                        <input type="number" value="1" class="form__field" id="tot2">
+                        <h5 style="color:white">Enter number of possible outcomes in case of Event A</h5>
+                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="1" class="form__field" id="tot1">
                     </div>
                 </div>
             </div>
-			<div class="row">
+            <div class="row " style="justify-content: center;align-items: center;">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5 style="color:white">Enter number of favourable outcomes in case of Event B</h5>
+                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="fav2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h5 style="color:white">Enter number of possible outcomes in case of Event B</h5>
+                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="1" class="form__field" id="tot2">
+                    </div>
+                </div>
+            </div>
+			<div class="row "  style="justify-content: center;align-items: center;">
 				<div class="col-md-4">
                     <div class="form-group">
-                        <h5>Enter the probability of A and B(decimal)</h5>
-                        <input type="number" value="0" class="form__field" id="pandb">
+                        <h5 style="color:white">Enter the probability of A and B(decimal)</h5>
+                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="pandb">
                     </div>
 					</div>
             </div>
@@ -13807,6 +13873,65 @@
             </div>
         </div>
 
+        <div class="modal fade" id="triangle-cal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Calculates Area, perimeter and height of a triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = b sin \theta\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[S = \frac{1}{2} a b sin \theta\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = a+b+ \sqrt{a^2 + b^2 -2ab cos \theta} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/trian.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- ADDED THIS -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter First Side (a)"
+                                   id="inputfirsts1" oninput="solvestriangle();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Second Side (b)"
+                                   id="inputseconds2" oninput="solvestriangle();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter angle (radian)"
+                                   id="inputangledeg" oninput="solvestriangle();">
+                            <br><br>
+                           <p class="stopwrap" id="resultofper"
+                               style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofarea"
+                               style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofheight"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- TILL HERE -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="line" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -14175,6 +14300,66 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="parallelogramcal" tabindex="-1" role="dialog"
+    aria-hidden="true">
+   <div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h6 class="modal-title">Calculates Area and perimeter given two sides and angle</h6>
+               <button type="button" class="close" data-dismiss="modal"
+                       aria-label="Close"
+                       style="outline:none">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+           <div class="modal-body">
+               <!-- added div with class container -->
+               <div class="container">
+                   <div class="row">
+                       <div class="col-6">
+                           <h5 class="text-center">Area</h5>
+                           <p class="text-center">\[S = a b sin \theta \]</p>
+                           <br><br>
+                           <div class="dropdown-divider"></div>
+                           <h5 class="text-center">Perimeter</h5>
+                           <p class="text-center">\[P = 2(a+b) \]</p>
+                       </div>
+                       <div class="col-6">
+                           <div class="form-group">
+                               <img src="images/parallelo.PNG" class="img-fluid">
+                           </div>
+                       </div>
+                   </div>
+                   <br>
+                   <div class="dropdown-divider"></div>
+                   <!---FROM--->
+                   <input class="form__field" type="number"
+                          placeholder="Enter Base (a)" 
+                          id="inputbasea" oninput="solveparallelogramcal();">
+                   <input class="form__field" type="number"
+                          placeholder="Enter Side (b)"
+                          id="inputsidebpar" oninput="solveparallelogramcal();">
+                    <input class="form__field" type="number"
+                          placeholder="Enter angle (radian)"
+                          id="inputanglepar" oninput="solveparallelogramcal();">
+                    <div></div><br><br>
+                   <p class="stopwrap" id="resultofareapar"
+                      style="font-family:mathfont;"></p><br>
+                   <p class="stopwrap" id="resultofperipar"
+                      style="font-family:mathfont;"></p>
+               </div>
+               <!---TILL-->
+           </div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                   Close
+               </button>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
 
         <div class="modal fade" id="parallelogram" tabindex="-1" role="dialog"
              aria-hidden="true">
@@ -16105,66 +16290,71 @@
                 </div>
             </div>   
             </div>    
-		    <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Regular Tetrahedron</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Volume</h5>
-                                    <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Height</h5>
-                                    <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a
-                                        \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Circumradius</h5>
-                                    <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/tetrahedron.png" class="img-fluid">
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Inradius</h5>
-                                    <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Side (a)"
-                                   id="inputtside" oninput="solvetetra()">
-                            <p class="stopwrap" id="resultofvolt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofheightt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumt"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofinradt"
-                               style="font-family:mathfont;"></p>
-
+            <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Regular Tetrahedron</h5>
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close"
+                                    style="outline:none">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
+                        <div class="modal-body">
+                            <!-- added div with class container -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Volume</h5>
+                                        <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Height</h5>
+                                        <p class="text-center">\[h = \frac{\sqrt{2}}{\sqrt{3}}a
+                                            \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Circumradius</h5>
+                                        <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/tetrahedron.png" class="img-fluid">
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Inradius</h5>
+                                        <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Surface Area</h5>
+                                        <p class="text-center">\[A =\sqrt{3} a^2 \]</p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- --------FROM------- -->
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Side (a)"
+                                       id="inputtsidetetra" oninput="solvetetra()">
+                                <p class="stopwrap" id="resultofvolt"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofheightt"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircumt"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofinradt"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofsurare"
+                                   style="font-family:mathfont;"></p>
+    
+                            </div>
+                            <!-- ------HERE------ -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         <div class="modal fade" id="cuboid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -16254,10 +16444,10 @@
                                 </div>
                                 <div class="dropdown-divider"></div>
                                 <input class="form__field" type="number"
-                                       placeholder="Enter Major radius (cm)"
+                                       placeholder="Enter Major radius R (cm)"
                                        id="inputmajorradiustorus" oninput="torussolve()">
                                 <input class="form__field" type="number"
-                                       placeholder="Enter Minor  radius (cm)"
+                                       placeholder="Enter Minor  radius r (cm)"
                                        id="inputminorradiustorus" oninput="torussolve()">
                                 <br>
                                 <p class="stopwrap" id="resultofvoltorus"
