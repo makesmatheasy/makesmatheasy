@@ -16473,53 +16473,65 @@
                     </div>
                 </div>
             </div>
-        </div>                
-            <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Parallelepiped</h5>
-                            <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close"
-                                    style="outline:none">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- added div with class container -->
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5 class="text-center">Volume</h5>
-                                        <p class="text-center">\[V=abc\]</p>
-                                        <div class="dropdown-divider"></div>
-                                        <h5 class="text-center">Diagonal</h5>
-                                        <p class="text-center">\[\sqrt{a^{2}+b^{2}+c^{2}}\]</p>
-                                        <div class="dropdown-divider"></div>
-                                        <h5 class="text-center">Surface Area</h5>
-                                        <p class="text-center">\[S=2(ab+bc+ca)\]</p>
+        </div>     
+        
+        <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Parallelepiped</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=abc\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diagonal</h5>
+                                    <p class="text-center">\[\sqrt{a^{2}+b^{2}+c^{2}}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[S=2ab+2bc+2ca)\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/parapipe.PNG" class="img-fluid">
                                     </div>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <!-- --------FROM------- -->
-                                <input type="text" id="a1st" class = "form__field"placeholder="Enter a">
-                                <input type="text" id="b1st" class = "form__field"placeholder="Enter b">
-                                <input type="text" id="c1st" class = "form__field"placeholder="Enter c">
-                                <button type="submit" id="parapipe" onclick="parapipe()">Find</button>
-                                <h6 id="volparapipe"></h6>
-                                <h6 id="saparapipe"></h6>
-                                <h6 id="diagparapipe"></h6>
                             </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="para1" class = "form__field"placeholder="Enter a">
+                                <input type="text" id="para2" class = "form__field"placeholder="Enter b">
+                                <input type="text" id="para3" class = "form__field"placeholder="Enter c">
+                                <button type="submit" id="parapipe" onclick="parapipe()">Find</button>
+                                <br><br>
+                                <p class="stopwrap" id="volparapipe"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="saparapipe"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="diagparapipe"
+                                   style="font-family:mathfont;"></p><br>
+
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                Close
-                            </button>
-                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
                     </div>
                 </div>
-            </div>   
-            </div>    
+            </div>
+        </div>
+        
             <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
