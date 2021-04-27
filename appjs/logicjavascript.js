@@ -2109,7 +2109,7 @@ function vectoradd(){
     var add3 = (c+f);
     document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (x+y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
 
-
+}
 function equationplanesolve()
 {
     var ax,ay,az,bx,by,bz,cx,cy,cz;
