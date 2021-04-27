@@ -3499,7 +3499,37 @@ function octprismsolve(){
         renderMathInElement(areaoutput1);
         renderMathInElement(areaoutput2);
     }
-}    
+}
+//Trapezoidal Prism
+function traprismsolve() {
+    var top = document.getElementById("inputtraprismtop").value;
+    var base = document.getElementById("inputtraprismbase").value;
+    var height = document.getElementById("inputtraprismheight").value;
+    var length = document.getElementById("inputtraprismlength").value;
+    var areaoutput = document.getElementById("resultoftraprismarea");   
+    var voloutput = document.getElementById("resultoftraprismvol");
+    var areatemp = "";
+    var voltemp = "";
+    if ((top != "") && (base != "") && (height != "") && (length != "")) {
+        areatemp += "\\[Area \\space of \\space Trapezium \\space Base \\space is \\space" +  "\\]";
+        areatemp += "\\[\\frac{1}{2}" + "\\times" + "(" + top + "+" + base + ")" + "\\times" + height + "=" + eval(String((0.5 * height * top) + (0.5 * height * base))) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        voltemp += "\\[Volume \\space of \\space Trapezoidal \\space Prism \\space is \\space \\]";
+        voltemp += "\\[\\frac{1}{2}" + "\\times" + "(" + top + "+" + base + ")" + "\\times" + height + "\\times" + length + "=" + eval(String((0.5 * height * top * length) + (0.5 * height * base * length))) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+
+    } else {
+
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";    
+
+    }
+}
+
 function frustumsolve() {
     var radius1 = document.getElementById("inputfrustumradius1").value;
     var radius2 = document.getElementById("inputfrustumradius2").value;
