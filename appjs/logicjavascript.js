@@ -3811,6 +3811,35 @@ function hexpyramidsolve() {
     }
 }
 
+
+function wedgesolve() {
+    var side = document.getElementById("inputwedgeside").value;
+    var width = document.getElementById("inputwedgewidth").value;
+    var topside = document.getElementById("inputwedgetopside").value;
+    var height = document.getElementById("inputwedgeheight").value;
+    var volume = (2*side*width*height + width*height*topside)/6;
+    var temp = Math.sqrt((4*height*height) + (width*width));
+    var temp1 = Math.sqrt((height*height) + (side*side) + (topside*topside) - (2*side*topside));
+    var lsa= ((temp*side)+ (temp*topside))/2  + width*temp1;
+    var sa = lsa + side*width;
+    if ((side != "" ) && (width !="") && (topside != "") && (height != "")){
+        document.getElementById('resofwedgevol1').innerHTML = "\\[Volume \\space of \\space Wedge \\space is \\]";
+        renderMathInElement(document.getElementById('resofwedgevol1'));
+        document.getElementById('resofwedgevol2').innerHTML = "\\[ \\frac{" + width + "\\times" + height + "}{6}(2 \\times" + side + "+" + topside + ") =" + volume + "\\]";
+        renderMathInElement(document.getElementById('resofwedgevol2'));
+        document.getElementById('resofwedgelsa1').innerHTML = "\\[Lateral \\space Surface \\space Area \\space (F) \\space of \\space Wedge \\space is \\]";
+        renderMathInElement(document.getElementById('resofwedgelsa1'));
+        document.getElementById('resofwedgelsa2').innerHTML = "\\[ \\frac{" + side + "\\times" + topside + "}{2} \\sqrt{4 \\times" + height + "\\times" + height + "+" + width + "\\times" + width + "} +" + width + "\\sqrt{" + height + "\\times" + height + "+(" + side + "-" + topside + ")^2} = " + lsa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById('resofwedgelsa2'));
+        document.getElementById('resofwedgesa1').innerHTML = "\\[Surface \\space  Area \\space of \\space Wedge \\space is \\]";
+        renderMathInElement(document.getElementById('resofwedgesa1'));
+        document.getElementById('resofwedgesa2').innerHTML = "\\[F \\space + " + side + "\\times" + width + "=" + sa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById('resofwedgesa2'));
+    
+    }
+
+}
+
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
 
