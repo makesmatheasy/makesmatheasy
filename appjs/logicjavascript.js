@@ -3262,6 +3262,31 @@ function solvehollowcyl() {
     }
 }
 
+function obliquecysolve() {
+    var radius = document.getElementById("inputobradius").value;
+    var height1 = document.getElementById("inputobheight1").value;
+    var height2 = document.getElementById("inputobheight2").value;
+    var volume = (3.14*radius*radius*height1 + 3.14*radius*radius*height2)/2;
+    var lsa = 3.14*radius*height1 + 3.14*radius*height2;
+    var sa = lsa + 3.14*radius*radius + 3.14*radius*Math.sqrt((radius*radius) + ((height1-height2)*(height1-height2))/4);
+    if ((radius != "" ) && (height1 !="") && (height2 != "") ){
+        document.getElementById('resofobcyvol1').innerHTML = "\\[Volume \\space of \\space Wedge \\space is \\]";
+        renderMathInElement(document.getElementById('resofobcyvol1'));
+        document.getElementById('resofobcyvol2').innerHTML = "\\[\\pi \\times" + radius + "\\times" + radius + "\\times" + "( \\frac{" + height1 + "+" + height2 + "}{2} ) =" + volume + "\\]";
+        renderMathInElement(document.getElementById('resofobcyvol2'));
+        document.getElementById('resofobcylsa1').innerHTML = "\\[Lateral \\space Surface \\space Area \\space (F) \\space of \\space Wedge \\space is \\]";
+        renderMathInElement(document.getElementById('resofobcylsa1'));
+        document.getElementById('resofobcylsa2').innerHTML = "\\[\\pi \\times" + radius +  "(" + height1 + "+" + height2 + ") \\space = " + lsa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById('resofobcylsa2'));
+        document.getElementById('resofobcysa1').innerHTML = "\\[Surface \\space  Area \\space of \\space Wedge \\space is \\]";
+        renderMathInElement(document.getElementById('resofobcysa1'));
+        document.getElementById('resofobcysa2').innerHTML = "\\[F \\space + \\pi \\times" + radius + "(" + radius + "+" + "\\sqrt{" + radius + "^2" + "+" + "(\\frac{" + height1 + "-" + height2 + "}{2})^2 } ) =" + sa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById('resofobcysa2'));
+
+    }
+
+}
+
 function solvecube() {
     var side = document.getElementById("inputcuside").value;
     var voloutput = document.getElementById("resultofvolcu");
