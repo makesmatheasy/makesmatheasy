@@ -30,6 +30,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#std_dvtn").click(function () {
+        openit("#deviation");
+        closenav();
+        clearall();
+    });
      $("#fractions_op").click(function(){
          openit("#fractions");
          closenav();

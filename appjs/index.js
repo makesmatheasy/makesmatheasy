@@ -240,6 +240,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#deviation",
         "#degcal",
         "#trigsolcollapse",
         "#grey-bin",
