@@ -2053,6 +2053,28 @@ function coordinatearea(){
     }
 
 }
+function solvetwoplane()
+{
+    var a,b,c,d,a1,b1,c1,d1;
+    a=parseFloat(document.getElementById('da1').value);
+    b=parseFloat(document.getElementById('db1').value);
+    c=parseFloat(document.getElementById('dc1').value);
+    d=parseFloat(document.getElementById('dd1').value);
+    a1=parseFloat(document.getElementById('da2').value);
+    b1=parseFloat(document.getElementById('db2').value);
+    c1=parseFloat(document.getElementById('dc2').value);
+    d1=parseFloat(document.getElementById('dd2').value);
+    /*var explain = document.getElementById("angleplane");
+    explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
+    renderMathInElement(document.getElementById("angleplane"));*/
+    if((a==a1) && (b==b1) && (c==c1)){
+        var res = Math.abs(d1-d)/Math.sqrt(a*a + b*b + c*c);
+        document.getElementById('dplane').innerHTML= 'Distance between plane 1 and 2 is '+ res.toFixed(2) ;
+    }
+    else{
+        document.getElementById('dplane1').innerHTML= 'Planes are not parallel, so distance is 0' ;
+    }
+}
 
 //-----------------------------------------------------
 //shapes calculator
@@ -2103,8 +2125,8 @@ function solveareasq() {
 }
 
 function solvetetra() {
-    var a = document.getElementById("inputtside").value;
-
+    var a = document.getElementById("inputtsidetetra").value;
+    console.log(a)
     var resultvolt = document.getElementById("resultofvolt");
     var resultheightt = document.getElementById("resultofheightt");
     var resultofcircumt = document.getElementById("resultofcircumt");
@@ -2115,20 +2137,25 @@ function solvetetra() {
     resultofinradt.innerHTML = "";
 
     var volume = 0.118 * (a * a * a);
-    var height = 1.074 * a;
+    var height = (math.sqrt(2) / math.sqrt(3)) * a;
     var circum = 0.612 * a;
     var inradius = 0.2041 * a;
+    var area = math.sqrt(3) * a**2;
     if (a != "") {
         document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
         renderMathInElement(document.getElementById("resultofvolt"));
     }
     if (a != "") {
-        document.getElementById("resultofheightt").innerHTML = "\\[Height \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times (" + a + ")\\ = " + height + " \\]";
+        document.getElementById("resultofheightt").innerHTML = "\\[Height \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times (" + a + ")\\ = " + height.toFixed(3) + " \\]";
         renderMathInElement(document.getElementById("resultofheightt"));
     }
     if (a != "") {
         document.getElementById("resultofcircumt").innerHTML = "\\[CircumRadius \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{6}}{4} \\times (" + a + ")\\ = " + circum + " \\]";
         renderMathInElement(document.getElementById("resultofcircumt"));
+    }
+    if (a != "") {
+        document.getElementById("resultofsurare").innerHTML = "\\[Surface \\space Area \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\sqrt{3} \\times (" + a + ")^2\\ = " + area + " \\]";
+        renderMathInElement(document.getElementById("resultofsurare"));
     }
     if (a != "") {
         document.getElementById("resultofinradt").innerHTML = "\\[InRadius \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{\\sqrt{24}} \\times (" + a + ")\\ = " + inradius + " \\]";
@@ -2325,6 +2352,29 @@ function isoscelestrianglearea() {
     }
 
 }
+
+function solvestriangle(){
+    var s1=  document.getElementById("inputfirsts1").value;
+    var s2 =  document.getElementById("inputseconds2").value;
+    var angle =  document.getElementById("inputangledeg").value;
+    console.log(math.sin(angle));console.log(math.cos(angle));
+    var area = 0.5 * s1 * s2 * math.sin(angle);
+    var height = s2 * math.sin(angle);
+    var peri = parseInt(s1) + parseInt(s2) + math.sqrt(s1**2 + s2**2 - (2 * s1 * s2 * math.cos(angle)));
+    
+    if (height <=0 && area <=0 && s1 != "" && s2 != "" && angle != ""){
+        document.getElementById("resultofper").innerHTML = ""
+        document.getElementById("resultofarea").innerHTML = "Please enter correct angle"
+        document.getElementById("resultofheight").innerHTML = ""
+        return;
+    }
+    if (s1 != "" && s2 != "" && angle != ""){
+        document.getElementById("resultofper").innerHTML = "The Perimeter of the triangle (P) = "+ peri.toFixed(3)
+        document.getElementById("resultofarea").innerHTML = "The Area of the triangle  (S) = " +area.toFixed(3)
+        document.getElementById("resultofheight").innerHTML = "The Height of the traingle (h) = "+height.toFixed(3)
+    }
+}
+
 function findeq(){
     var a1 = parseInt(document.getElementById("ther").value)
     var h1 = parseInt(document.getElementById("theh").value)
@@ -2339,6 +2389,27 @@ function volf(){
     var ans = 0.5*3.14*a2*a2*h2
     document.getElementById("volf").innerHTML = "The volume is " + ans
 }
+
+function solveparallelogramcal(){
+    var base = document.getElementById("inputbasea").value;
+    var side = document.getElementById("inputsidebpar").value;
+    var angle = document.getElementById("inputanglepar").value;
+
+    var area = base * side * math.sin(angle);
+    var peri = 2 * (parseInt(side) + parseInt(base));
+
+    if (area <=0 && base != "" && side != "" && angle != ""){
+        document.getElementById("resultofareapar").innerHTML = ""
+        document.getElementById("resultofperipar").innerHTML = "Please enter correct angle"
+        return;
+    }
+    if (base != "" && side != "" && angle != ""){
+        document.getElementById("resultofareapar").innerHTML = "The Area of the parallelogram  (S) = " +area.toFixed(3)
+        document.getElementById("resultofperipar").innerHTML = "The Perimeter of the parallelogram (P) = "+ peri.toFixed(3)
+
+    }
+}
+
 function solveparallelogram() {
     var base = document.getElementById("inputbase").value;
     var height = document.getElementById("inputheight").value;
@@ -3717,14 +3788,16 @@ function torussolve() {
     var tsaoutput = document.getElementById("resultoftsatorus");
     var voltemp = "";
     var tsatemp = "";
+    var area = (2 * math.pi * radius1 ) * (2 * math.pi * radius2);
+    var vol = (math.pi * radius2 * radius2) * (2 * math.pi * radius1);
     if ( radius1 != "" && radius2 != "") {
-        voltemp += "\\[ ( \\pi \\times" + radius1 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius2 + " ) \\]";
-        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " + eval(String(( 3.14159 * radius1 * radius1 ) * ( 3.14159 * 2 *radius2 )) )+ "\\]" ;
+        voltemp += "\\[ ( \\pi \\times" + radius2 + "^2 ) \\times ( 2 \\times \\pi \\times " + radius1 + " ) \\]";
+        voltemp += "\\[Volume \\space of \\space Torus  \\space is \\space " +vol.toFixed(3)+ "\\]" ;
         voloutput.innerHTML = voltemp;
-        tsatemp += "\\[4 \\times \\pi \\times \\pi \\times" + radius1 + "^2 " + radius2 + "^1 \\]";
+        tsatemp += "\\[(2 \\times \\pi \\times "+radius1+")(2 \\times \\pi  \\times "+radius2+")\\]";
         tsatemp +=
             "\\[Total \\space Surface \\space Area \\space of  \\space Torus \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String(4 * 3.14159 * 3.14159 * ((radius1 * radius1) * radius2 ))) + "\\]";
+        tsatemp += "\\[" + area.toFixed(3) + "\\]";
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
@@ -3733,12 +3806,7 @@ function torussolve() {
         tsaoutput.innerHTML = "";
     }
   }
-
-
-
-//-----------------------------------------------------
-
-//-----------------------------------------------------
+  
 //display inputted equation
 function dequation() {
     var val = document.getElementById("inputequation").value;
@@ -6000,7 +6068,7 @@ function check_prime(isprime) {
             ans.innerHTML = num1;
             ans.innerHTML += " is ";
             if (num1 == 1 || num1 == 0) {
-                ans.innerHTML += "neither Prime nor Composite number";
+                ans.innerHTML += "neither Prime nor Composite number.";
             } else {
                 for (i = 2; i <= Math.sqrt(num1); i++) {
                     if (num1 % i == 0) {
@@ -6009,9 +6077,9 @@ function check_prime(isprime) {
                     }
                 }
                 if (flag == true) {
-                    ans.innerHTML += "a Prime number";
+                    ans.innerHTML += "a Prime number.";
                 } else {
-                    ans.innerHTML += "a Composite number";
+                    ans.innerHTML += "a Composite number.";
                 }
             }
         }
@@ -6023,40 +6091,36 @@ function check_prime(isprime) {
         ans.innerHTML = "Enter an integer!"
 }
 
-function prime_till_num(primetill) {
-    var num = document.getElementById(primetill).value;
-    var num1 = parseInt(num);
-    var ans = document.getElementById("primetillsol");
-    var B = "";
-    var prime = [];
-    if (isNaN(num1) || num1 <= 1) {
-        ans.innerHTML = "Enter positive integer greater than 1.";
-    } else {
-        for (i = 0; i <= num1; i++)
-            prime.push(true);
 
-        for (i = 2; i * i <= num1; i++) {
-            // If prime[p] is not changed, then it is a
-            // prime
-            if (prime[i] == true) {
-                // Update all multiples of p
-                for (j = i * i; j <= num1; j += i)
-                    prime[j] = false;
-            }
-        }
-
-        // Print all prime numbers
-        for (i = 2; i <= num1; i++) {
-            if (prime[i] == true) {
-                B = B + i;
-                B = B + ", ";
-            }
-        }
-        ans.innerHTML = B.slice(0, B.length - 2);
-
+function prime_till_num(primetill){
+    var b=document.getElementById('primetill').value;
+    b = parseInt(b);
+    if (isNaN(b) || b <= 1) {
+        document.getElementById("primetillsol").innerHTML = "Enter positive integer greater than 1.";
     }
+  else
+  {
+      var w="";
+      for(var f=1;f<=b;f++)
+      {
+          //flag acts as a counter
+           var flag=0;
+        //check for prime no
+          for(var y=2;y<f;y++)
+          {
+              if(f%y==0)
+             { flag=flag+1;
+            break;}
+          }
+          //adding prime no to the string w along with colon and spacing
+          if(flag==0)
+          {
+              w=w+f+", ";
+              
+          }}
+          document.getElementById("primetillsol").innerHTML=w.slice(0, w.length - 2);
+        }   
 }
-
 //end
 
 function gp() {
@@ -7301,11 +7365,11 @@ function convertBinhex() {
     else if (toBase === "Decimal") to = 10;
     else to = 16;
 
-    result.innerHTML = parseInt(input, from).toString(to);
+    result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
     if (input == "") {
         result.innerHTML = "";
     } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
+        if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
 
     }
