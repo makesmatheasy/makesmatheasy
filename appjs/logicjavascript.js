@@ -1015,6 +1015,7 @@ function setcal() {
 }
 
 
+
 //-----------------------------------------------------
 function centcal(){
        var a1 = parseInt(document.getElementById("fxc").value);
@@ -1095,6 +1096,7 @@ function cencirtcal(){
     document.getElementById("rcch").innerHTML ="Circumcenter of Triangle";
 
 }
+
 //check for set value buttons
 function checkforusetrigovalue() {
     var el = document.getElementById("soltri");

@@ -2170,13 +2170,13 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="propcirclebtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Circles
+                            <a id="cevthabtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ceva's and Thales' Theorem
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Properties of Circles','#propcircle','c','propcirclefav')"><img
-                                        id="propcirclefav" src="images/unfavourite.png"
+                                <span onclick="addtofavourite('Ceva and Thales Theorem','#cevtha','c','cevthafav')"><img
+                                        id="cevthafav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2185,25 +2185,33 @@
             </li>            
 
             </li>
-
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
+                            <a id="propcirclebtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Circles
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Properties of Circles','#propcircle','c','propcirclefav')"><img
+                                        id="propcirclefav" src="images/unfavourite.png"
+
                             <a id="centcalbut"
                             style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Triangle Calculator','#centcal','c','centcalfav')"><img
                                         id="centcalfav" src="images/unfavourite.png"
+
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
+
+
             </li>
-
-
-            
 
             <li>
                 <table class="table">
@@ -9317,6 +9325,38 @@
             <p style="text-align: center;">Its just Polar coordinates with z as height forming a
                 cylinder</p>
         </div>
+        <div class="collapse" id="cevtha">
+            <h2 style="text-align: center;">Ceva and Thales Theorem</h2>
+            <br><br>
+            <h4>Ceva's Theorem</h4>
+            <br>
+            <p>Ceva’s theorem is a theorem regarding triangles in Euclidean Plane Geometry.</p>
+            <p>Ceva's theorem is a theorem of affine geometry, in the sense that it may be stated and proved without using the concepts of angles, areas, and lengths (except for the ratio of the lengths of two line segments that are collinear). It is therefore true for triangles in any affine plane over any field.</p>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/10/Cevas-Theorem.png" alt="">
+            <br>
+            <p>Ceva's theorem is a theorem about triangles in plane geometry. Given a triangle ABC, let the lines AO, BO and CO be drawn from the vertices to a common point O, to meet opposite sides at D, E and F respectively.</p>
+            <p>\[{\frac {AF}{FB}}\cdot {\frac {BD}{DC}}\cdot {\frac {CE}{EA}}=1\]</p>
+            <p>Another form of the theorem is that three concurrent lines from the polygon vertices of a triangle divide the opposite sides in such fashion that the product of three nonadjacent segments equals the product of the other three</p>
+            <br>
+            <h4>Thales' Theorem</h4>
+            <br>
+            <p>Basic Proportionality theorem was introduced by a famous Greek Mathematician, Thales, hence it is also called Thales Theorem. According to him, for any two equiangular triangles, the ratio of any two corresponding sides is always the same. Based on this concept, he gave theorem of basic proportionality 
+                (BPT). This concept has been introduced in similar triangles.  If two triangles are similar to each other then,
+            </p>
+            <p>1. Corresponding angles of both the triangles are equal </p>
+            <p>2. Corresponding sides of both the triangles are in proportion to each other</p>
+            <br>
+            <h6>Thales Theorem Statement</h6>
+            <p>If a line is drawn parallel to one side of a triangle intersecting the other two sides in distinct points, then the other two sides are divided in the same ratio.</p>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/10/Basic-Proportionality-Theorem-Similar-TrianglesArtboard-1-8.png" alt="">
+            <p>\[\frac{AP}{PB}\space =\space \frac{AQ}{QC}\]</p>
+            <p>The MidPoint theorem is a special case of the basic proportionality theorem. According to mid-point theorem, a line drawn joining the midpoints of the two sides of a triangle is parallel to the third side.</p>
+            <br>
+            <h6>Converse</h6>
+            <br>
+            <p>According to this theorem, if a line divides any two sides of a triangle in the same ratio, then the line is parallel to the third side.</p>
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/10/Basic-Proportionality-Theorem-Similar-TrianglesArtboard-1-copy-3-8.png" alt="">
+        </div>
         <div class="collapse" id="propcircle">
             <h2 style="text-align: center;">Properties of Circles</h2>
             <ol>
@@ -10182,8 +10222,6 @@
 
         <!-- Date Calculator End-->
 
-
-=======
 <div class="collapse" id="centcal">
     <h2 style="text-align: center;">Diffrent Centers of Triangel</h2><br>
     <div class="col-9">
@@ -10205,8 +10243,10 @@
                     </div>
                 </div>
 
+
     
             </div>
+
 
         <div class="col-9">
             <label>
@@ -10272,6 +10312,7 @@
     </div>
 </div>
         <!-------------------------------------------------------->
+
 
 
         <div class="collapse" id="setcal">
