@@ -1,3 +1,5 @@
+const { parse } = require("node:path");
+
 function Complex(real, imaginary) {
   this.real = 0;
   this.imaginary = 0;
@@ -520,6 +522,25 @@ function factorial(n){
     }  
   }
   
+  // HP starts
+  function hp() {
+    var a = document.getElementById("firstTerm").value;
+    var d = document.getElementById("diff").value;
+    var n = document.getElementById("noofTerms").value;
+    var printseries = document.getElementById("printHPseries");
+    var num;
+    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) | !isNaN(parseInt(d))) {
+            num = (Math.log(2*a + (2*n-1)*d)/(2*a-d))/d;
+      }
+      else
+      {
+        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+      }
+      document.getElementById("sumhp").innerHTML = "Sum = " + num;
+}
+// HP ends
+
 function bpcal()
 {
     var a=document.getElementById("psuc").value;
@@ -693,6 +714,31 @@ function ssqcal()
 
 
 }
+
+function cubesRangecal()
+{
+    console.log("cubes");
+    var num1=document.getElementById("range1").value;
+    var num2=document.getElementById("range2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Cubes in the given range: ";
+        cbrt1 = Math.trunc(Math.cbrt(num1));
+        cbrt2 = Math.trunc(Math.cbrt(num2));
+        for(var i=cbrt1; i<=cbrt2;i++){
+            if(i**3>=num1 && i**3<=num2){
+                var ans = i**3;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("cubesRangeans").innerHTML=s;
+}
+
 var toDegree = function (radians) {
     return radians * (180 / Math.PI);
 }
@@ -744,5 +790,66 @@ function impcal()
         ans="The required answer is: "+ q +" "+ r+"/"+b.sub();    }
     document.getElementById("impans").innerHTML=ans;
 
+
+}
+
+
+function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+      for(var i = n; i >= 1; i--){
+        answer = answer * i;
+      }
+      return answer;
+    }  
+  }
+
+function hpcal()
+{
+    var x=document.getElementById("ath").value;
+    var y=document.getElementById("differ").value;
+    var z=document.getElementById("totno").value;
+    var ans="";
+    if(x==""||y==""||z=="")
+    {
+      ans="Please enter all the field";
+   }
+   else
+   {
+        var a=parseInt(x);
+        var b=parseInt(y);
+        var c=parseInt(z);
+       var num=(c-1)*b;
+       var t=a+num;
+        console.log(a+num);
+        ans= 1/num;
+   }
+   document.getElementById("hpans").innerHTML=ans;
+     
+
+}
+
+function ppcal()
+{
+    var a=document.getElementById("lamb").value;
+    var b=document.getElementById("occ").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values";
+    }
+
+    else
+    {
+           var s=a**b;
+           var y=(2.718)**(-a);
+           var z=factorial(b);
+           var num= (s*y)/z;
+           ans="The answer is:" + num;
+    }
+
+    document.getElementById("ppans").innerHTML=ans;
 
 }

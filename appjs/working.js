@@ -137,9 +137,16 @@ $(document).ready(function () {
 
 
 
-
     $("#sosq").click(function () {
         openit("#sosqs");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#cubesRange").click(function () {
+        openit("#cubesRanges");
         closenav();
         clearall();
     });
@@ -192,6 +199,11 @@ $(document).ready(function () {
 
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
+        closenav();
+        clearall();
+    });
+    $("#3dgeocalcbtn").click(function () {
+        openit("#3dgeocalc");
         closenav();
         clearall();
     });
@@ -270,11 +282,23 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#ppmf").click(function () {
+        openit("#ppmfs");
+        closenav();
+        clearall();
+    })
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();
         clearall();
     })
+
+    $("#HPbttn").click(function () {
+        openit("#hp");
+        closenav();
+        clearall();
+    })
+
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
@@ -285,7 +309,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    $("propquadbtn").click(function () {
+    $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();
@@ -543,14 +567,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     // Sumof nterms of an Arithmetic Progression
+     // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
         closenav();
         clearall();
     });
+    // Sum of nterms of an Geometric Progression
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
+        closenav();
+        clearall();
+    });
+    // Sum of nterms of an Harmonic Progression
+    $("#HPbtn").click(function () {
+        openit("#sum_n_HP");
         closenav();
         clearall();
     });
