@@ -379,6 +379,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#vecbtn").click(function () {
+        openit("#vec");
+        closenav();
+        clearall();
+    })
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();

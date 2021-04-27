@@ -2097,6 +2097,19 @@ function angletwoplanesolve()
     
 }
 
+function vectoradd(){
+    var a=parseFloat(document.getElementById('a1b').value);
+    var b=parseFloat(document.getElementById('a2b').value);
+    var c=parseFloat(document.getElementById('a3b').value);
+    var d=parseFloat(document.getElementById('b1c').value);
+    var e=parseFloat(document.getElementById('b2c').value);
+    var f=parseFloat(document.getElementById('b3c').value);
+    var add1 = (a+d);
+    var add2 = (b+e);
+    var add3 = (c+f);
+    document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (x+y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
+
+
 function equationplanesolve()
 {
     var ax,ay,az,bx,by,bz,cx,cy,cz;
@@ -2114,7 +2127,6 @@ function equationplanesolve()
     var res3 = ((bx-ax)*(cy-ay))-((cx-ax)*(by-ay));
     var res4 = -(res1*ax + res2*ay + res3*az);
     document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
-    
 }
 
 function solveicosa() {
