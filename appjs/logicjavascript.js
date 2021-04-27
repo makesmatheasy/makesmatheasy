@@ -2091,6 +2091,25 @@ function angletwoplanesolve()
     
 }
 
+function equationplanesolve()
+{
+    var ax,ay,az,bx,by,bz,cx,cy,cz;
+    ax=parseFloat(document.getElementById('va1').value);
+    ay=parseFloat(document.getElementById('va2').value);
+    az=parseFloat(document.getElementById('va3').value);
+    bx=parseFloat(document.getElementById('vb1').value);
+    by=parseFloat(document.getElementById('vb2').value);
+    bz=parseFloat(document.getElementById('vb3').value);
+    cx=parseFloat(document.getElementById('vc1').value);
+    cy=parseFloat(document.getElementById('vc2').value);
+    cz=parseFloat(document.getElementById('vc3').value);
+    var res1 = ((by-ay)*(cz-az))-((cy-ay)*(bz-az));
+    var res2 = ((bz-az)*(cx-ax))-((cz-az)*(bx-ax));
+    var res3 = ((bx-ax)*(cy-ay))-((cx-ax)*(by-ay));
+    var res4 = -(res1*ax + res2*ay + res3*az);
+    document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
+    
+}
 
 function solveicosa() {
     var a = document.getElementById("inputtside").value;
