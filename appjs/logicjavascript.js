@@ -1014,6 +1014,7 @@ function setcal() {
     }
 }
 
+
 //-----------------------------------------------------
 function centcal(){
        var a1 = parseInt(document.getElementById("fxc").value);
