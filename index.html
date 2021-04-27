@@ -1378,6 +1378,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="numcubesRange"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
+                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="cubesRange"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Cubes in a range</a>
                         </td>
@@ -10682,8 +10699,8 @@
             <h4 class="text-center" id="n"> </h4>
             <div class="coll">
                 <p>
-                    3)  <input type="text" id="y2" size=3 value='' placeholder="Y">  out of what is
-                <input type="text" id="x2" size=3 value='' placeholder="X"> %  ? 
+                    3)  <input type="text" id="perY2" size=3 value='' placeholder="Y">  out of what is
+                <input type="text" id="perX2" size=3 value='' placeholder="X"> %  ? 
                     <br><br>
                     
                 <button type="button" class="btn btn-light" onclick=solvepercal()>
@@ -11278,6 +11295,7 @@
     <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="numcubesRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="numcubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     <p id="numcubesans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+
 
 </div>    
 

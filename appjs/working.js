@@ -150,6 +150,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
   
     $("#sosqn").click(function () {
         openit("#sosqsn");
@@ -173,6 +174,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
 
 
     $("#cubesRange").click(function () {

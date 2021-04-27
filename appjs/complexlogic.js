@@ -793,6 +793,7 @@ function scbncal()
     document.getElementById("numcubesans").innerHTML=cubes;
 }
 
+
 function squaresRangecal()
 {
     var num1=document.getElementById("sqrange1").value;
@@ -815,6 +816,7 @@ function squaresRangecal()
     }
     document.getElementById("squaresRangeans").innerHTML=s;
 }
+
 function cubesRangecal()
 {
 
