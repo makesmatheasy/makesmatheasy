@@ -275,6 +275,7 @@ function openit(id) {
         "#frustum",
         "#annulus",
         "#cosine",
+        "#obliquecy",
         "#setcal",
 	    "#ip",
 	    "#prices",

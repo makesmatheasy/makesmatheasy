@@ -9899,6 +9899,11 @@
                            href="#">Hollow Cylinder</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#obliquecy"
+                           style="text-decoration:none;"
+                           href="#">Oblique Circular Cylinder</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#hollowsp"
                            style="text-decoration:none;"
                            href="#">Hollow Sphere</a></td>
@@ -14934,6 +14939,79 @@
                             <p class="stopwrap" id="resultofcsahollowcyl"
                                style="font-family:mathfont;"></p>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="obliquecy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Oblique Circular Cylinder</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \pi r^2 \frac{h1+h2}{2} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[F = \pi r(h1+h2) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[S = F \space + \pi r \bigg( r + \sqrt{r^2 + (\frac{h1-h2}{2})^2} \bigg) \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/obliquecy.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius r" id="inputobradius"
+                                   oninput="obliquecysolve();">    
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height h1" id="inputobheight1"
+                                   oninput="obliquecysolve();">
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height h2" id="inputobheight2"
+                                   oninput="obliquecysolve();">
+                            
+                            
+                            <div class="dropdown-divider"></div>
+                            <p class="stopwrap" id="resofobcyvol1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofobcyvol2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofobcylsa1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofobcylsa2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofobcysa1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofobcysa2"
+                               style="font-family:mathfont;"></p>
+
+                          </div>
+                        <!-- ------HERE------ -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
