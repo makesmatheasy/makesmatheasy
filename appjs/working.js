@@ -150,7 +150,29 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+  
+    $("#sosqn").click(function () {
+        openit("#sosqsn");
 
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#socbn").click(function () {
+        openit("#socbsn");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#squaresRange").click(function () {
+        openit("#squaresRanges");
+        closenav();
+        clearall();
+    });
 
 
     $("#cubesRange").click(function () {
@@ -158,7 +180,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
 
 
 
@@ -301,7 +322,7 @@ $(document).ready(function () {
         clearall();
     })
 
-    $("#HPbtn").click(function () {
+    $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
         clearall();

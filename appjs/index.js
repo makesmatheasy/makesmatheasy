@@ -144,6 +144,10 @@ function openit(id) {
         "#ssts",
         "#arcs",
         "#sosqs",
+        "#sosqsn",
+        "#socbsn",
+        "#squaresRanges",
+
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
@@ -271,6 +275,7 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        '#dodecahedron',
         "#icosahedron",
         "#anglecon",
         "#frustum",

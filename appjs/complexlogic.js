@@ -716,8 +716,56 @@ function ssqcal()
 }
 
 
-function numcubesRangecal()
+
+function ssqncal()
 {
+    var num=document.getElementById("ssqn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc((num*(num+1)*(2*num+1))/6);
+        s="Your answer is: "+sum;
+    }
+
+    document.getElementById("ssqnans").innerHTML=s;
+
+}
+
+function scbncal()
+{
+    var num=document.getElementById("scbn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc(((num*(num+1))/2)**2);
+        s="Your answer is: "+sum; 
+    }
+
+    document.getElementById("scbnans").innerHTML=s;
+
+}
+
+
+  function numcubesRangecal()
+    {
     var num1=document.getElementById("numrange1").value;
     var num2=document.getElementById("numrange2").value;
     var s="";
@@ -745,9 +793,31 @@ function numcubesRangecal()
     document.getElementById("numcubesans").innerHTML=cubes;
 }
 
+function squaresRangecal()
+{
+    var num1=document.getElementById("sqrange1").value;
+    var num2=document.getElementById("sqrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Perfect squares in the given range: ";
+        sqrt1 = Math.trunc(Math.sqrt(num1));
+        sqrt2 = Math.trunc(Math.sqrt(num2));
+        for(var i=sqrt1; i<=sqrt2;i++){
+            if(i**2>=num1 && i**2<=num2){
+                var ans = i**2;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("squaresRangeans").innerHTML=s;
+}
 function cubesRangecal()
 {
-    console.log("cubes");
+
     var num1=document.getElementById("range1").value;
     var num2=document.getElementById("range2").value;
     var s="";

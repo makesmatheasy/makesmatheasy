@@ -1974,23 +1974,60 @@ function displanesolve()
     
 }
 function solveocta() {
-    var a = document.getElementById("inputtside").value;
-    var resultvolt = document.getElementById("resultofvolt");
-    var resulttsa = document.getElementById("resultoftsa");
-    resultofvolt.innerHTML = "";
-    resultoftsa.innerHTML = "";
-    var volume = (0.471 * (a * a * a)).toFixed(3);
-    var tsa = (3.464 * (a * a * a)).toFixed(3);
-  
+    var a = document.getElementById("inputoctside").value;
+    var voloutput = document.getElementById("resultofoctvol");
+    var tsaoutput = document.getElementById("resultofocttsa");
+    var diagoutput = document.getElementById("resultofoctdiag");
+    var voltemp = "";
+    var tsatemp = "";
+    var diagtemp = "";
     if (a != "") {
-        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Octahedron \\space \\newline \\frac{\\sqrt{2}}{3} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
-        renderMathInElement(document.getElementById("resultofvolt"));
+        voltemp += "\\[Volume \\space of \\space Octahedron \\space \\newline \\frac{\\sqrt{2}}{3} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(0.471 * (a * a * a))).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        tsatemp += "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(3.464 * (a * a))).toFixed(3) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+
+        diagtemp += "\\[Diagonal \\space of \\space Octahedron \\space \\newline \\sqrt{2} \\times " + a + "\\ = " + eval(String(1.414 * a)).toFixed(3) + "\\]";
+        diagoutput.innerHTML = diagtemp;
+
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(diagoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
     }
-    if (a != "") {
-        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Octahedron \\space \\newline " + 2  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
-        renderMathInElement(document.getElementById("resultoftsa"));
-    }
+
 }
+
+
+function solvedodeca() {
+    var a = document.getElementById("inputdodecaside").value;
+    var voloutput = document.getElementById("resultofdodecavol");
+    var tsaoutput = document.getElementById("resultofdodecatsa");
+    var voltemp = "";
+    var tsatemp = "";
+    if (a != "") {
+        voltemp += "\\[Volume \\space of \\space Dodecahedron \\space \\newline \\frac{15 + 7 \\sqrt{5}}{4} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(7.663 * (a * a * a))).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        tsatemp += "\\[Surface \\space Area \\space of \\space Dodecahedron \\space \\newline " + 3  + "\\times \\sqrt{25 + 10 \\sqrt{5}} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(20.646 * (a * a))).toFixed(3) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+
+}
+
+
 function angletwoplanesolve()
 {
     var a,b,c,d,a1,b1,c1,d1;
