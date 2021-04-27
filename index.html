@@ -10012,6 +10012,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#wedge"
+                           style="text-decoration:none;"
+                           href="#">Wedge</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#octahedron"
                            style="text-decoration:none;"
                            href="#">Octahedron</a></td>
@@ -16031,6 +16036,82 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="wedge" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Wedge</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{bh}{6} (2a+c) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface area</h5>
+                                    <p class="text-center">\[F = \frac{a+c}{2} \space \sqrt{4h^2 + b^2} + b\sqrt{h^2 + (a-c)^2} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[S = F \space + \space ab \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/wedge.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base side a" id="inputwedgeside"
+                                   oninput="wedgesolve();">    
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base width b" id="inputwedgewidth"
+                                   oninput="wedgesolve();">
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter top side c" id="inputwedgetopside"
+                                   oninput="wedgesolve();">
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height h" id="inputwedgeheight"
+                                   oninput="wedgesolve();">
+                            <div class="dropdown-divider"></div>
+                            <p class="stopwrap" id="resofwedgevol1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofwedgevol2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofwedgelsa1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofwedgelsa2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofwedgesa1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resofwedgesa2"
+                               style="font-family:mathfont;"></p>
+
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="octahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

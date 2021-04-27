@@ -285,6 +285,7 @@ function openit(id) {
         "#ellipsoid",
         "#expo",
         "#setformula",
+        "#wedge",
         "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
