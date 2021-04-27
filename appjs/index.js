@@ -517,9 +517,3 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).addClass('home');
 });
 
-// for light mode 
-var mode_button = document.querySelector(".darkmode-toggle");
-$(mode_button).click(function(){
-    $("div#about").toggleClass("light-mode");
-    $("#numberfact").toggleClass("light-mode");
-  });

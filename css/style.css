@@ -388,7 +388,7 @@ h6 {
   margin-bottom: auto;
   padding: 4vh;
   color: white !important;
-  background-color: var(--appbg);
+  background-color: var(--applink);
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
   /* because of this it is of black color now it will inherit the body color */
@@ -458,7 +458,7 @@ td{
   padding: 3rem;
   border-top-left-radius: 2.5rem !important;
   border-bottom-right-radius: 2.5rem !important;
-  background-color: var(--appbg) !important;
+  background-color: var(--applink) !important;
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
 }
