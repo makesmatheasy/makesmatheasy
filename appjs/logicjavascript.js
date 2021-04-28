@@ -3391,6 +3391,33 @@ function prismsolve() {
     var side = document.getElementById("inputprismside").value;
     var voloutput = document.getElementById("resultofvolprism");
     var tsaoutput = document.getElementById("resultoftsaprism");
+
+    var voltemp = "";
+    var tsatemp = "";
+    var res=((a**1.6 * b**1.6) + (b**1.6 * c**1.6 ) + (a**1.6 * c**1.6))**0.625;
+    if ((a != "") && (b != "") && (c != "")) {
+        voltemp += "\\[" + "\\frac{4}{3}" + "\\times" + "\\pi" + "\\times" + a + "\\times" + b + "\\times" + c   + "\\]";
+        voltemp += "\\[Volume \\space of \\space Ellipsoid \\space is \\space " + eval(String(4.18 * a * b* c )) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[" + 4 + "\\pi" + "(" + "\\frac{(" + a + "\\times" + b + ")^{1.6}" + "(" + b + "\\times" + c +")^{1.6}" + "(" + a + "\\times" + c + ")^{1.6}}{3}" + " )^{\\frac{1}{1.6}}"   + "\\]";
+        tsatemp += "\\[Surface \\space area \\space of \\space Ellipsoid \\space is \\space  \\]";
+        tsatemp += "\\[" + eval(String((6.343 * res).toFixed(2) ))  + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+}
+//Traingular Prism
+function prismsolve() {
+    var length = document.getElementById("inputprismlength").value;
+    var breadth = document.getElementById("inputprismbreadth").value;
+    var height = document.getElementById("inputprismheight").value;
+    var side = document.getElementById("inputprismside").value;
+    var voloutput = document.getElementById("resultofvolprism");
+    var tsaoutput = document.getElementById("resultoftsaprism");
     var voltemp = "";
     var tsatemp = "";
     if ((length != "") && (breadth != "") && (height != "") && (side != "")) {
@@ -7735,11 +7762,22 @@ function fiftnsixtnCalc() {
         result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
         result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
 
+
         print+=" - "+input+"</span> = <span style='text-decoration: underline;'>"+fiftn+"</span><br>";
         print+= "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
         print+=fiftn+" + 1</span> = <span style='text-decoration: underline;'>"+sixtn+"</span>";
         work.innerHTML = print;
 
+        if (input == "") {
+            result.innerHTML = "";
+            work.innerHTML = "";
+        }
+        if(fiftn == "NaN"){
+            result.innerHTML = "Invalid Hexa Decimal Number"
+            work.innerHTML = "";
+        }
+    }
+}
 
         if (input == "") {
             result.innerHTML = "";
