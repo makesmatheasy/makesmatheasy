@@ -2110,6 +2110,20 @@ function vectoradd(){
     document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (x+y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
 
 }
+function vectorsub(){
+    var a=parseFloat(document.getElementById('b1a').value);
+    var b=parseFloat(document.getElementById('b2a').value);
+    var c=parseFloat(document.getElementById('b3a').value);
+    var d=parseFloat(document.getElementById('c1b').value);
+    var e=parseFloat(document.getElementById('c2b').value);
+    var f=parseFloat(document.getElementById('c3b').value);
+    var sub1 = (a-d);
+    var sub2 = (b-e);
+    var sub3 = (c-f);
+    document.getElementById("vectorsub1").innerHTML = 'Difference between Vectors (x-y) =  ' + (sub1) + ' i'  + ' + ' + (sub2) + ' j ' + ' + ' + (sub3) + ' k ';
+
+}
+
 function equationplanesolve()
 {
     var ax,ay,az,bx,by,bz,cx,cy,cz;
