@@ -1,6 +1,7 @@
 <img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
 
+![contributors](https://img.shields.io/github/contributors/sairish2001/makesmatheasy)
 ![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
 ![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
 [![Maintenance](https://img.shields.io/maintenance/yes/2021?color=green&logo=github)](https://github.com/sairish2001/makesmatheasy)
