@@ -535,7 +535,7 @@ function hcf(input) {
 	document.getElementById("hcfprimefactor").textContent = "";
 	if (val.search(/^[0-9 ]+$/) == -1)
 	{
-		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		document.getElementById("hcfprimefactor").innerHTML ="Enter positive numbers only";
 		return;
 	}
     val = val.split(" ");
@@ -619,7 +619,7 @@ function factorselect(numid) {
     num = num.replace(/\s+$/, ""); //right trim
 	if (num.search(/^[0-9 ]+$/) == -1)
 	{
-		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		document.getElementById("hcfprimefactor").innerHTML ="Enter positive numbers only";
 		return;
 	}
     num = num.split(" ");
@@ -651,7 +651,7 @@ function lcmsol(input) {
     var num = document.getElementById(input).value;
 	if (num.search(/^[0-9 ]+$/) == -1)
 	{
-		document.getElementById("hcfprimefactor").innerHTML ="Enter numbers only";
+		document.getElementById("hcfprimefactor").innerHTML ="Enter positive numbers only";
 		return;
 	}
     num = num.split(" ");
