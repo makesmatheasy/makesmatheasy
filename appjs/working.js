@@ -60,11 +60,6 @@ $(document).ready(function () {
         closenav();
     });
 
-    $("#centcalbut").click(function () {
-        openit("#centcal");
-        closenav();
-    });
-
     $("#leapyearbtn").click(function () {
         openit("#lyear");
         closenav();
