@@ -2261,20 +2261,31 @@
                                 <span onclick="addtofavourite('Properties of Circles','#propcircle','c','propcirclefav')"><img
                                         id="propcirclefav" src="images/unfavourite.png"
 
-                            <a id="centcalbut"
-                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Triangle Calculator','#centcal','c','centcalfav')"><img
-                                        id="centcalfav" src="images/unfavourite.png"
-
-
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
 
-            </li>            
+            </li>     
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="centcalbut"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator susing Equation of Edges</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Triangle Calculator','#centcal','c','centcalfav')"><img
+                                            id="centcalfav" src="images/unfavourite.png"
+
+
+                                            style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                    </tr>
+                </table>
+
+            </li>
 
             <li>
                 <table class="table">
@@ -10392,20 +10403,17 @@
             </label>
                 <div class="row">
                     <div class="col-3">
-                        <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: center; background-color: aliceblue;" >
+                        <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;" >
                     </div>
                     <p>X + </p>
                     <div class="col-3">
-                        <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: center;background-color: aliceblue;">
+                        <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: center;color: black; background-color: aliceblue;">
                     </div>
                     <p> Y = </p>
                     <div class="col-3">
-                        <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;">
+                        <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
                     </div>
-                </div>
-
-
-    
+                </div>    
             </div>
 
 
@@ -10415,15 +10423,15 @@
             </label>
             <div class="row">
                 <div class="col-3">
-                    <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: center;background-color: aliceblue;">
+                    <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: center;background-color: aliceblue; color: black;">
                 </div>
                 <p>X + </p>
                 <div class="col-3">
-                    <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;">
+                    <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;color: black;">
                 </div>
                 <p> Y = </p>
                 <div class="col-3">
-                    <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;">
+                    <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;color: black;">
                 </div>
             </div>
         </div>
@@ -10435,15 +10443,15 @@
             </label>
             <div class="row">
                 <div class="col-3">
-                    <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: center; background-color: aliceblue;">
+                    <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;">
                 </div>
                 <p>X + </p>
                 <div class="col-3">
-                    <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;">
+                    <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: center;color: black;  background-color: aliceblue;">
                 </div>
                 <p> Y = </p>
                 <div class="col-3">
-                    <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;">
+                    <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
                 </div>
             </div>
         </div>
@@ -10458,6 +10466,9 @@
 
                 <button type="button" class="btn btn-light" onclick="cencirtcal()">
                     Circumcenter
+                </button>
+                <button type="button" class="btn btn-light" onclick="cenintcal()">
+                    InCenter
                 </button>
             </div>
         </div>

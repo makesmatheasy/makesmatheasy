@@ -1097,6 +1097,42 @@ function cencirtcal(){
 
 }
 
+
+function cenintcal(){
+    var a1 = parseInt(document.getElementById("fxc").value);
+    var a2 = parseInt(document.getElementById("sxc").value);
+    var a3 = parseInt(document.getElementById("txc").value);
+
+    var b1 = parseInt(document.getElementById("fyc").value);
+    var b2 = parseInt(document.getElementById("syc").value);
+    var b3 = parseInt(document.getElementById("tyc").value);
+
+    var c1 = parseInt(document.getElementById("fcc").value);
+    var c2 = parseInt(document.getElementById("scc").value);
+    var c3 = parseInt(document.getElementById("tcc").value);
+
+    var x1 = ((b1*c2)-(b2*c1))/((a2*b1)-(a1*b2));
+    var y1 = ((c1*a2)-(c2*a1))/((a2*b1)-(a1*b2));
+
+    var x2 = ((b2*c3)-(b3*c2))/((a3*b2)-(a2*b3));
+    var y2 = ((c2*a3)-(c3*a2))/((a3*b2)-(a2*b3));
+
+    var x3 = ((b3*c1)-(b1*c3))/((a1*b3)-(a3*b1));
+    var y3 = ((c3*a1)-(c1*a3))/((a1*b3)-(a3*b1));
+
+    var a = Math.sqrt( Math.pow((x3-x2), 2) + Math.pow((y3-y2), 2));
+    var b = Math.sqrt( Math.pow((x1-x3), 2) + Math.pow((y1-y3), 2));
+    var c = Math.sqrt( Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2));
+
+
+    var o1 = ((((a*x1)+(b*x2)+(c*x3))/(a+b+c))).toFixed(2);
+    var o2 = ((((a*y1)+(b*y2)+(c*y3))/(a+b+c))).toFixed(2);
+
+    var ans = "( " + o1 + ", " + o2 + " )";
+    document.getElementById("rcc").innerHTML = ans;
+    document.getElementById("rcch").innerHTML ="Incenter of Triangle";
+
+}
 //check for set value buttons
 function checkforusetrigovalue() {
     var el = document.getElementById("soltri");
@@ -7827,8 +7863,7 @@ function fiftnsixtnCalc() {
             result.innerHTML = "Invalid Hexa Decimal Number"
             work.innerHTML = "";
         }
-    }
-}
+
 
 //9's 10's complement
 
