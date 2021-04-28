@@ -1,5 +1,12 @@
 <img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
+
+![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
+![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
+![GitHub forks](https://img.shields.io/github/forks/sairish2001/makesmatheasy?style=social) 
+![GitHub Repo stars](https://img.shields.io/github/stars/sairish2001/makesmatheasy?style=social)
+
+
 Started on **13 July,2020**
 
 Tagline - **Your answers just a click away**
