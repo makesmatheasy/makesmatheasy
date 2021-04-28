@@ -3,6 +3,7 @@
 
 ![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
 ![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
+[![Maintenance](https://img.shields.io/maintenance/yes/2020?color=green&logo=github)](https://github.com/sairish2001/makesmatheasy)
 ![GitHub forks](https://img.shields.io/github/forks/sairish2001/makesmatheasy?style=social) 
 ![GitHub Repo stars](https://img.shields.io/github/stars/sairish2001/makesmatheasy?style=social)
 
