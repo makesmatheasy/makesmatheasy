@@ -9773,22 +9773,27 @@
                     <td><a data-toggle="modal" data-target="#pentagon"
                            style="text-decoration:none;"
                            href="#">Pentagon</a></td>
-                </tr>         
-                <tr>
-                    <td><a data-toggle="modal" data-target="#decagon"
-                           style="text-decoration:none;"
-                           href="#">Decagon</a></td>
-                </tr>         
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#hexagon"
                            style="text-decoration:none;"
                            href="#">Hexagon</a></td>
-                </tr>   
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#heptagon"
+                           style="text-decoration:none;"
+                           href="#">Heptagon</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#octagon"
                            style="text-decoration:none;"
                            href="#">Octagon</a></td>
-                </tr>            
+                </tr>       
+                <tr>
+                    <td><a data-toggle="modal" data-target="#decagon"
+                           style="text-decoration:none;"
+                           href="#">Decagon</a></td>
+                </tr>                     
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -14436,6 +14441,57 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="heptagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Heptagon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{7}{4} \space a^2 \space cot(\frac{180}{7} \degree) \]</p>
+                                <p class="text-center">a = side</p>
+                                <br>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 7 \times a \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/heptagon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                               placeholder="Enter side of heptagon(a)" id="inputsidehept"
+                               oninput="solvehept();">
+                        <p class="stopwrap" id="resultofheptarea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofheptperi"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
                     </button>
                 </div>
             </div>
