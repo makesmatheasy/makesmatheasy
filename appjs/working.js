@@ -54,7 +54,10 @@ $(document).ready(function () {
         openit("#about");
         closenav();
     });
-    
+    $("#centcalbut").click(function () {
+        openit("#centcal");
+        closenav();
+    });
     $("#stbut").click(function () {
         openit("#setcal");
         closenav();
