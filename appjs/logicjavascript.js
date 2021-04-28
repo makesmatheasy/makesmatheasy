@@ -2921,6 +2921,32 @@ function solveoct(){
 
 }
 
+//created function for Nonagon
+function solvenona() {
+    var side = document.getElementById("inputsidenona").value;  
+    var areaoutput = document.getElementById("resultofnonaarea");
+    var perioutput = document.getElementById("resultofnonaperi");
+    var areatemp = "";
+    var peritemp = "";
+    if ((side != "")) {
+        areatemp += "\\[Area \\space of \\space Nonagon \\space" +  "\\]";
+        areatemp += "\\[\\frac{9}{4}" + "\\times" + side + "\\times" + side + "\\times" + "\\space cot(\\frac{180}{9} \\degree) \\space" + "=" + eval(String(6.18182 * side * side)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Nonagon \\space is \\space \\]";
+        peritemp += "\\[" + 9 + "\\times" + side + "=" + eval(String(9 * side)) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(perioutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        perioutput.innerHTML = "";    
+
+    }
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
