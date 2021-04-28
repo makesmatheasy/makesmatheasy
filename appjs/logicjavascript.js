@@ -3424,30 +3424,6 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-//Traingular Prism
-function prismsolve() {
-    var length = document.getElementById("inputprismlength").value;
-    var breadth = document.getElementById("inputprismbreadth").value;
-    var height = document.getElementById("inputprismheight").value;
-    var side = document.getElementById("inputprismside").value;
-    var voloutput = document.getElementById("resultofvolprism");
-    var tsaoutput = document.getElementById("resultoftsaprism");
-    var voltemp = "";
-    var tsatemp = "";
-    if ((length != "") && (breadth != "") && (height != "") && (side != "")) {
-        voltemp += "\\[(" + length + "\\times" + breadth + "\\times" + height + ")" + "\\div" + 2 + "\\]";
-        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space " + eval(String((length * breadth * height ) / 2)) + "\\]";
-        voloutput.innerHTML = voltemp;
-        tsatemp += "\\[ " + breadth + "(" + length + "+" + height + ")" + "+" + 2 +  "\\times"  + length + "\\times" + side + "\\]";
-        tsatemp += "\\[Surface \\space Area \\space of \\space Prism \\space is \\space" + eval(String((breadth*height) + (breadth *length)+ (2*length*side))) + "\\]";
-        tsaoutput.innerHTML = tsatemp;
-        renderMathInElement(voloutput);
-        renderMathInElement(tsaoutput);
-    } else {
-        voloutput.innerHTML = "";
-        tsaoutput.innerHTML = "";
-    }
-}
 
 //square Prism
 function sqprismsolve(){
@@ -7793,16 +7769,6 @@ function fiftnsixtnCalc() {
     }
 }
 
-        if (input == "") {
-            result.innerHTML = "";
-            work.innerHTML = "";
-        }
-        if(fiftn == "NaN"){
-            result.innerHTML = "Invalid Hexa Decimal Number"
-            work.innerHTML = "";
-        }
-    }
-}
 
 //9's 10's complement
 
