@@ -3066,6 +3066,32 @@ function solvehex(){
 
 }
 
+//created function for Heptagon
+function solvehept() {
+    var side = document.getElementById("inputsidehept").value;  
+    var areaoutput = document.getElementById("resultofheptarea");
+    var perioutput = document.getElementById("resultofheptperi");
+    var areatemp = "";
+    var peritemp = "";
+    if ((side != "")) {
+        areatemp += "\\[Area \\space of \\space Heptagon \\space" +  "\\]";
+        areatemp += "\\[\\frac{7}{4}" + "\\times" + side + "\\times" + side + "\\times" + "\\space cot(\\frac{180}{7} \\degree) \\space" + "=" + eval(String(3.63391 * side * side)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Heptagon \\space is \\space \\]";
+        peritemp += "\\[" + 7 + "\\times" + side + "=" + eval(String(7 * side)) + "\\]";
+        perioutput.innerHTML = peritemp;
+       
+        renderMathInElement(areaoutput);
+        renderMathInElement(perioutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        perioutput.innerHTML = "";    
+
+    }
+}
+
 //created function for Octagon
 function solveoct(){
     let side = document.getElementById("inputsideoct").value;
