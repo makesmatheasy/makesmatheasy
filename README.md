@@ -1,6 +1,9 @@
-![Makes Math Easy](https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png)
+<img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
 Started on **13 July,2020**
+
+Tagline - **Your answers just a click away**
+Tagline introduction date - **28 April,2021**
 
 Solves various Math Problems along with Steps
 
@@ -14,7 +17,7 @@ Solves various Math Problems along with Steps
 
 ### Tech Used
 
-![HTML5,CSS3,JavaScript](https://i.imgur.com/nMTD04v.jpg)
+<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap**" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
 
 Other Tech/Libraries
 
@@ -33,36 +36,45 @@ Other Tech/Libraries
 ### Calculators
 
 - Inbuilt Calculator
+
   - Regular Calculations
   - Scientific Calculations
   - Fraction/Decimal Answer
 
 - Linear Algebra
+
   - Mathematical Reasoning
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
-  - Sets,Relations and Functions 
+  - Sets,Relations and Functions
+  - Sets Formulas List
+  - Interest(Simple,Compound)
+  - Cost and Selling Prices
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
     - Determinant with Laplace(Upto 5×5)
+    - Rank
+    - Inverse
     - Addition
     - Subtraction
     - Multiplication
-  - Propeties of Matrices and Determinants
+  - Properties of Matrices and Determinants
   - Sum of Nterms of an Arithmetic Progession
   - Sum of Nterms of an Geometric Progession
-  - Mean Calculator
-    - Arithmetic Mean
-    - Geometric Mean
-    - Harmonic Mean
+  - Cayley Hamilton Theorem of Diagonalization
 
 - Conic Section
+
+  - Circle
   - Parabola
   - Ellipse
   - Hyperbola
+  - Paraboloid
 
 - Calculus
+
+  - Inverse and Periodicity of Functions
   - Transformation of Functions
   - Integration + Limits
     - Solution from Nerdamer
@@ -78,25 +90,32 @@ Other Tech/Libraries
     - Solution/Steps from eMathHelp
     - Graph
   - Differential Equations
+  - Power Series
+  - Theorems on Differentiation
+  - Application of Derivative
   - Maxima and Minima of functions
   - Beta Gamma Functions
   - Laplace + Inverse Laplace
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
+  - Laplace Transforms and Properties
   - Tangent and Normal
   - Vector Calculus
+  - Vector Algebra
   - Convergence and Divergence of Series
+  - Fourier Series
 
 - Trigonometry
-  - Finding sides of a right triangle (provided any two) 
+  - P/B/H Trigo
+  - Finding sides of a right triangle (provided any two)
   - Trigonometric Values
   - Trigonometric Identities
-  - Inverse Trigonometric Identities
+  - Hyperbolic Trigonometric Identities
+  - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
-  
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
@@ -104,12 +123,29 @@ Other Tech/Libraries
     - Calculating Factors of each number and picking common out of them
   - Factors
     - Prime Factorization **( with steps for single number)**
+  - Greatest Integer Function and Fractional Part
+  - Solve for Exponents
+  - Sum of Square of Given number
+  - Percentage Calculator
+  - Set Calculator
+  - Pythagorean Triplets
+  - Rank Calculator
+  - Leap Year
+  - Standard Deviation
+  - Hydrostatic Pressure
+  - Strain Calculator
+  - Stress Calculator
   - Profit Loss Calculations
   - Statistics Formulas
+  - Mean Calculator
+    - Arithmetic Mean
+    - Geometric Mean
+    - Harmonic Mean
   - Log Calculator
     - Calculates the log of x to the base y
   - Log Properties
   - Operations on Fractions
+  - Binomial Theorem Properties
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -118,6 +154,8 @@ Other Tech/Libraries
   - Multiplication with Steps
   - Rounding off numbers
   - EMI Calculator
+  - GST Calculator
+  - Polynomial Degree Finder
   - Simple and Compound Interest
   - Factorial
   - Permutation & Combination
@@ -125,20 +163,24 @@ Other Tech/Libraries
   - Prime Numbers
     - Primality Test
     - Primes till entered number
-  
 - Basic Convertors
   - Currency Convertor
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
+  - Conversion to words
   - Unit Convertor
     - Length
     - Area
     - Volume
     - Mass
     - Temperature
+    - Pressure
+    - Energy
     - Time
     - Angle
     - Speed
     - Data
+    - Power
+      Improper to Mixed Fraction
   - SPI/CGPA Convertor
   - Ascending and Descending Order
   - Date
@@ -146,14 +188,24 @@ Other Tech/Libraries
     - Conversion from Roman to Arabic and vice versa
     - Expanding the Arabic numbers **(eg. '2423' to '2000+400+20+3')**
     - Expanding the Roman numbers **(eg. 'CIV' to 'C+IV')**
-  
 - Graphs & Shapes
+
   - Plot Graph
     - Plots a Graph of entered Equation having single variable 'x'
+  - Plot Bar Graph
+    - Plots a Bar Graph along x and y axis by taking input from the user
   - Plot Angle
+  - SSS Triangle's Angle Calculator
+  - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Coordinate Geometry Calculator
+  - Coordinate Geometry Formula and Theorem
+  - Segment Area Calculator
   - Curve Tracing
+  - Properties of Circles
+  - Properties of Quadrilaterals
+  - Arc Length Calculator
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -163,6 +215,7 @@ Other Tech/Libraries
     - Right-angled Triangle
     - Scalene Triangle
     - Circle
+    - Semi-Circle
     - Kite
     - Line
     - Trapezium
@@ -179,10 +232,12 @@ Other Tech/Libraries
     - Hollow Sphere
     - Hemisphere
     - Prism
+    - Torus
   - Volume, CSA, TSA
   - Congruence and Similarity of Triangles
 
 - Equations
+
   - Algebraic Equations Formulas
   - Roots of Quadratic Equation
   - Location of Roots
@@ -192,20 +247,29 @@ Other Tech/Libraries
     - Solve value of variables of multiple inputted equations
 
 - Binary Calculations
+
   - Boolean Algebra
+  - Any Base to Any Base Converter
   - Decimal/Binary Converter
   - Addition of any Number System
+  - Subtraction of any Number System
+  - Multiplication of any Number System
   - Decimal/Binary/Hexadecimal Converter
+  - Octal/Hexadecimal Converter
   - Decimal/BCD Converter
     - BCD Code Addition
   - Excess-3 Code Converter
+  - Decimal/2421 Code Converter
   - Octal/Binary Converter
   - Grey Code Converter
   - Bitwise Calculator
-  - 1s & 2s Complement Calculator
-  - 9s & 10s Complement Calculator
+  - (R-1)'s & R's Complement Calculator
 
 - Complex Numbers
+
+  - Identities
+  - Properties
+  - De-Moivre's Theorem and Cauchy-Reimann Theorem
   - Operations for 1 complex number
     - Magnitude
     - Argument
@@ -222,13 +286,17 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Joint Probability
+  - Probabilty Properties
+  - Binomial Distribution Calculator
   - Bayes Probability Theorem
-  
+
 ---
 
 ## Documentation
 
 [Makes Math Easy Documentation](https://github.com/sairish2001/Makes-Math-Easy-Documentation)
+
+Documentation Website :- [Link](https://sairish2001.github.io/makesmatheasy-documentation//)
 
 ### Future Scope
 
@@ -249,21 +317,22 @@ If you think that you can add a new feature or want to fix a bug. We invite you 
 
 3. Create a Git repository.
 
-    Run command ```git init```
+   Run command `git init`
 
 4. Fork the [repository](https://github.com/sairish2001/MakesMathEasy).
 
 5. Clone your forked repository of project.
- 
-``` git clone
+
+```git clone
 git clone https://github.com/<your_username>/MakesMathEasy.git
 ```
 
 6. Navigate to the project directory.
 
-``` 
-cd MakesMathEasy 
 ```
+cd MakesMathEasy
+```
+
 7. Add a reference(remote) to the original repository.
 
 ```
@@ -275,13 +344,15 @@ git remote add upstream https://github.com/sairish2001/MakesMathEasy.git
 ```
 git remote -v
 ```
+
 9. Always take a pull from the upstream repository to your main branch to keep it updated as per the main project repository.
 
 ```
-git pull upstream main 
+git pull upstream main
 ```
 
 10. Create a new branch(prefer a branch name that relates to your assigned issue).
+
 ```
 git checkout -b <YOUR_BRANCH_NAME>
 ```
@@ -293,9 +364,11 @@ git checkout -b <YOUR_BRANCH_NAME>
 ```
 git status
 ```
+
 ```
 git  diff
 ```
+
 13. Stage your changes.
 
 ```
@@ -303,27 +376,29 @@ git add . <\files_that_you_made_changes>
 ```
 
 14. Commit your changes.
+
 ```
 git commit -m "relavant message"
 ```
 
 15. Push the committed changes in your feature branch to your remote repository.
+
 ```
 git push -u origin <your_branch_name>
 ```
 
-16. To create a pull request, click on ```compare and pull requests```.
+16. To create a pull request, click on `compare and pull requests`.
 
 17. Add appropriate title and description to your PR explaining your changes.
 
-18. Click on ```Create pull request```.
+18. Click on `Create pull request`.
 
 Congratulations🎉, you have made a PR to the MakesMathEasy.
- Wait for your submission to be accepted and your PR to be merged by a maintainer. 
- 
- If you have any doubts please let us know in the comments.
+Wait for your submission to be accepted and your PR to be merged by a maintainer.
 
- ### BE OPEN!
+If you have any doubts please let us know in the comments.
+
+### BE OPEN!
 
 ---
 
