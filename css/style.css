@@ -43,6 +43,10 @@ body img {
   padding-bottom: 10%;
   padding-top: 1.5em;
 }
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
 .qcontainer {
   padding-bottom: 54%;
   padding-top: 1.5em;
