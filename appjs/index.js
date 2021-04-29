@@ -288,7 +288,7 @@ function openit(id) {
         "#mi",
 	    "#ip",
 	    "#prices",
-
+        "#centcal",
         "#cevtha",
 
         "#percal",
