@@ -205,6 +205,7 @@ function openit(id) {
         "#hp",
         "#ppmfs",
         "#bool",
+        "#eirs",
         "#log_values",
         "#log-collapse",
         "#bt-collapse",

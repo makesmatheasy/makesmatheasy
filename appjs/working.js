@@ -329,7 +329,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#eir").click(function () {
+        openit("#eirs");
+        closenav();
+        clearall();
+    })
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();

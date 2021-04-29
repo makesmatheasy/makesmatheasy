@@ -376,6 +376,24 @@
                         </tr>
                     </table>
                 </li>
+
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="eir"
+                                   style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Effective Interest Rate</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Effective Interest Rate','#eirs','c','eirimgfav')"><img
+                                            id="eirimgfav" src="images/unfavourite.png"
+                                            style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+    
             <!--            operations on sets-->
 
 
@@ -10369,7 +10387,28 @@
 
         <!-- Date Calculator End-->
         <!-------------------------------------------------------->
+        <div class="collapse" id="eirs">
 
+    
+            <h1 style="font-family:mathfont; text-align:center;">EFFECTIVE INTEREST RATE CALCULATOR </h1>
+            <p>&nbsp;</p>
+            <input type="number" name="air" class="form__field" id="air" width="5em" placeholder="Enter nominal annual interest rate">
+            <p>&nbsp;</p>
+            <input type="number" name="nop" class="form__field" id="nop" placeholder="Enter number of period">
+            <p>&nbsp;</p>
+            <input type="number" name="cprd" class="form__field" id="cprd" placeholder="Enter compounding per period">
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-light" onclick="eircal()">Calculate</button>
+            <p id="eirans"></p>
+            <p>&nbsp;</p>
+            <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
+                The effective annual interest rate is the real return on a savings account or any interest-paying investment when the effects of compounding over time are taken into account.
+                <br> It also reveals the real percentage rate owed in interest on a loan, a credit card, or any other debt.<br>
+        It is also called the effective interest rate, the effective rate, or the annual equivalent rate.
+               
+            </div>
+           
+        </div>
         <div class="collapse" id="setcal">
            
             <div class="row">
