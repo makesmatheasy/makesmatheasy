@@ -691,6 +691,25 @@ input[type='number'] {
   font-size: 1.4em;
 }
 
+.fa-instagram:hover {
+  /* color: #bc2a8d; */
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  border-radius: 10%;
+}
+
+.fa-linkedin:hover {
+  color:#0077b5;
+}
+
+.fa-envelope:hover {
+  color: #d34836;
+}
+
+.fa-discord:hover {
+  color: #7289da;
+}
+
 @media (max-width:420px) {
   #box{
      margin-right:11em; 
