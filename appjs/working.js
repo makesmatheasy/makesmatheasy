@@ -30,6 +30,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#std_dvtn").click(function () {
+        openit("#deviation");
+        closenav();
+        clearall();
+    });
      $("#fractions_op").click(function(){
          openit("#fractions");
          closenav();
@@ -52,11 +57,6 @@ $(document).ready(function () {
     
     $("#stbut").click(function () {
         openit("#setcal");
-        closenav();
-    });
-
-    $("#centcalbut").click(function () {
-        openit("#centcal");
         closenav();
     });
 
@@ -137,13 +137,51 @@ $(document).ready(function () {
 
 
 
-
     $("#sosq").click(function () {
         openit("#sosqs");
         closenav();
         clearall();
     });
 
+
+
+    $("#numcubesRange").click(function () {
+        openit("#numcubesRanges");
+        closenav();
+        clearall();
+    });
+
+
+    $("#sosqn").click(function () {
+        openit("#sosqsn");
+
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#socbn").click(function () {
+        openit("#socbsn");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#squaresRange").click(function () {
+        openit("#squaresRanges");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#cubesRange").click(function () {
+        openit("#cubesRanges");
+        closenav();
+        clearall();
+    });
 
 
 
@@ -192,6 +230,11 @@ $(document).ready(function () {
 
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
+        closenav();
+        clearall();
+    });
+    $("#3dgeocalcbtn").click(function () {
+        openit("#3dgeocalc");
         closenav();
         clearall();
     });
@@ -270,6 +313,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#ppmf").click(function () {
+        openit("#ppmfs");
+        closenav();
+        clearall();
+    })
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();
@@ -292,7 +340,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-    $("propquadbtn").click(function () {
+    $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();
@@ -333,6 +381,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#vecbtn").click(function () {
+        openit("#vec");
+        closenav();
+        clearall();
+    })
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();
@@ -369,6 +422,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#cevthabtn").click(function () {
+        openit("#cevtha");
+        closenav();
+        clearall();
+    })
+
+    $("#mibtn").click(function () {
+        openit("#mi");
+        closenav();
+        clearall();
+    })
+
     $("#boolbtn").click(function () {
         openit("#bool");
         closenav();
@@ -550,14 +615,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     // Sumof nterms of an Arithmetic Progression
+     // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
         closenav();
         clearall();
     });
+    // Sum of nterms of an Geometric Progression
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
+        closenav();
+        clearall();
+    });
+    // Sum of nterms of an Harmonic Progression
+    $("#HPbtn").click(function () {
+        openit("#sum_n_HP");
         closenav();
         clearall();
     });
@@ -802,6 +874,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+     $("#plotbargraphoption").click(function(){
+        openit("#plotbargraph");
+        closenav();
+        clearall();
+    });
+
 
 })
 

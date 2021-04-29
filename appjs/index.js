@@ -144,6 +144,12 @@ function openit(id) {
         "#ssts",
         "#arcs",
         "#sosqs",
+        "#sosqsn",
+        "#socbsn",
+        "#squaresRanges",
+
+        "#cubesRanges",
+        "#numcubesRanges",
         "#segcals",
         "#hydroz",
         "#straincalc",
@@ -178,6 +184,8 @@ function openit(id) {
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
+        "#3dgeocalc",
+        "#plotbargraph",
         "#roundoff",
         "#euclid",
 	    "#aod",
@@ -195,6 +203,7 @@ function openit(id) {
         "#setop",
         "#trans",
         "#hp",
+        "#ppmfs",
         "#bool",
         "#log_values",
         "#log-collapse",
@@ -227,6 +236,7 @@ function openit(id) {
         "#prime",
         "#sum_n_AP",
         "#sum_n_GP",
+        "#sum_n_HP",
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
@@ -235,6 +245,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#deviation",
         "#degcal",
         "#trigsolcollapse",
         "#grey-bin",
@@ -246,6 +257,7 @@ function openit(id) {
         "#Meanit",
         "#bcd",
         "#vector",
+        "#vec",
         "#diffeqn",
         "#maxmin",
         "#locroots",
@@ -265,21 +277,28 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        '#dodecahedron',
         "#icosahedron",
         "#anglecon",
         "#frustum",
         "#annulus",
         "#cosine",
+        "#obliquecy",
         "#setcal",
+        "#mi",
 	    "#ip",
 	    "#prices",
-        "#centcal",
+
+        "#cevtha",
+
         "#percal",
         "#lyear",
         "#analytical",
+        "#isoright",
         "#ellipsoid",
         "#expo",
         "#setformula",
+        "#wedge",
         "#fourier_series"
     ];
     for (i = 0; i < ids.length; i++) {
@@ -513,3 +532,4 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
+

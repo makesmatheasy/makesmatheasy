@@ -522,6 +522,25 @@ function factorial(n){
     }  
   }
   
+  // HP starts
+  function hp() {
+    var a = document.getElementById("firstTerm").value;
+    var d = document.getElementById("diff").value;
+    var n = document.getElementById("noofTerms").value;
+    var printseries = document.getElementById("printHPseries");
+    var num;
+    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) | !isNaN(parseInt(d))) {
+            num = (Math.log(2*a + (2*n-1)*d)/(2*a-d))/d;
+      }
+      else
+      {
+        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+      }
+      document.getElementById("sumhp").innerHTML = "Sum = " + num;
+}
+// HP ends
+
 function bpcal()
 {
     var a=document.getElementById("psuc").value;
@@ -695,6 +714,134 @@ function ssqcal()
 
 
 }
+
+
+
+function ssqncal()
+{
+    var num=document.getElementById("ssqn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc((num*(num+1)*(2*num+1))/6);
+        s="Your answer is: "+sum;
+    }
+
+    document.getElementById("ssqnans").innerHTML=s;
+
+}
+
+function scbncal()
+{
+    var num=document.getElementById("scbn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc(((num*(num+1))/2)**2);
+        s="Your answer is: "+sum; 
+    }
+
+    document.getElementById("scbnans").innerHTML=s;
+
+}
+
+
+  function numcubesRangecal()
+    {
+
+    var num1=document.getElementById("numrange1").value;
+    var num2=document.getElementById("numrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        var count = 0;
+        s="Number of Perfect Cubes in the given range: ";
+        cubes = "Cubes are: ";
+        cbrt1 = Math.trunc(Math.cbrt(num1));
+        cbrt2 = Math.trunc(Math.cbrt(num2));
+        for(var i=cbrt1; i<=cbrt2;i++){
+            if(i**3>=num1 && i**3<=num2){
+                count++;
+                var ans = i**3;
+                cubes += ans.toString() + ", ";
+            }
+        }
+        cubes = cubes.substring(0, cubes.length-2);
+        s += count;
+    }
+    document.getElementById("numcubesRangeans").innerHTML=s;
+    document.getElementById("numcubesans").innerHTML=cubes;
+}
+
+
+function squaresRangecal()
+{
+    var num1=document.getElementById("sqrange1").value;
+    var num2=document.getElementById("sqrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Perfect squares in the given range: ";
+        sqrt1 = Math.trunc(Math.sqrt(num1));
+        sqrt2 = Math.trunc(Math.sqrt(num2));
+        for(var i=sqrt1; i<=sqrt2;i++){
+            if(i**2>=num1 && i**2<=num2){
+                var ans = i**2;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("squaresRangeans").innerHTML=s;
+}
+
+function cubesRangecal()
+{
+
+    var num1=document.getElementById("range1").value;
+    var num2=document.getElementById("range2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Cubes in the given range: ";
+        cbrt1 = Math.trunc(Math.cbrt(num1));
+        cbrt2 = Math.trunc(Math.cbrt(num2));
+        for(var i=cbrt1; i<=cbrt2;i++){
+            if(i**3>=num1 && i**3<=num2){
+                var ans = i**3;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("cubesRangeans").innerHTML=s;
+}
+
 var toDegree = function (radians) {
     return radians * (180 / Math.PI);
 }
@@ -749,6 +896,19 @@ function impcal()
 
 }
 
+
+function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+      for(var i = n; i >= 1; i--){
+        answer = answer * i;
+      }
+      return answer;
+    }  
+  }
+
 function hpcal()
 {
     var x=document.getElementById("ath").value;
@@ -771,4 +931,28 @@ function hpcal()
    }
    document.getElementById("hpans").innerHTML=ans;
      
+
+}
+
+function ppcal()
+{
+    var a=document.getElementById("lamb").value;
+    var b=document.getElementById("occ").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values";
+    }
+
+    else
+    {
+           var s=a**b;
+           var y=(2.718)**(-a);
+           var z=factorial(b);
+           var num= (s*y)/z;
+           ans="The answer is:" + num;
+    }
+
+    document.getElementById("ppans").innerHTML=ans;
+
 }
