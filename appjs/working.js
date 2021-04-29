@@ -327,12 +327,16 @@ $(document).ready(function () {
         clearall();
     })
 
-    $("#HPbttn").click(function () {
+    $("#HPbtn").click(function () {
         openit("#hp");
         closenav();
         clearall();
     })
-
+    $("#eir").click(function () {
+        openit("#eirs");
+        closenav();
+        clearall();
+    })
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();

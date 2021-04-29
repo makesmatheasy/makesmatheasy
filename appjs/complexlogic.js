@@ -956,3 +956,27 @@ function ppcal()
     document.getElementById("ppans").innerHTML=ans;
 
 }
+
+function eircal()
+{
+    var a=document.getElementById("air").value;
+    var b=document.getElementById("nop").value;
+    var c=document.getElementById("cprd").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Enter all the values to obtain answer";
+    }
+
+    else
+    {
+
+        var x=parseInt(a)/100;
+        var y=parseInt(c);
+        var z=parseInt(b);
+        var rate_period= ((1+(x/z))**z)-1;
+        rate_period=rate_period*100;
+        ans="Effective Annual Interest Rate per Period: "+rate_period+"<br>";
+    }
+    document.getElementById("eirans").innerHTML=ans;
+}
