@@ -6975,7 +6975,26 @@ function subBinDecHexOct(){
             a3 = Math.pow(10,a3);
             ans2 = a3 + add2;
             ans2 = ans2.substring(1);
-            result.innerHTML = "-" + calculateSixteenComplement(ans1);
+            result.innerHTML = "-" + calculateSixteenComplement(ans2);
+        }
+
+    }else if(base === "Decimal"){
+        var add3 = "";
+        var ans3 = "";
+        var tenco= calculateTenComplement(input2);
+        add3 = (parseInt(tenco)+parseInt(input1)).toString();
+        if(add3.length == input1.length){
+            ans3 = calculateTenComplement(add3);
+            result.innerHTML = "-" + ans3;
+        } else if (add3.length > input1.length){
+            ans3 = add3.substring(1);
+            result.innerHTML = ans3;
+        } else if (add3.length < input1.length){
+            var a4 = input1.length - add3.length;
+            a4 = Math.pow(10,a4);
+            ans3 = a4 + add3;
+            ans3 = ans3.substring(1);
+            result.innerHTML = "-" + calculateTenComplement(ans3);
         }
 
     }
@@ -7032,6 +7051,17 @@ function calculateSixteenComplement(x){
     }
     sixtn1 = (parseInt(fiftn1,16) + 1).toString(16);
     return sixtn1;
+}
+
+//called this function while subtracting decimal numbers.
+function calculateTenComplement(x){
+    var ninec = "";
+    var tenc = "";
+    for (var i = 0; i < x.length; i++) {
+        ninec += '9' - x[i];
+    }
+    tenc = (parseInt(ninec) + 1).toString();
+    return tenc;
 }
 
 //----------------------------
