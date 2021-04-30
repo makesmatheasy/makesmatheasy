@@ -504,6 +504,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#trigonofunbutton").click(function () {
+        openit("#trigonofun");
+        closenav();
+        clearall();
+    })
     $("#expansionbutton").click(function () {
         openit("#expansion");
         closenav();
