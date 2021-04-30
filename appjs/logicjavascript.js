@@ -2155,6 +2155,42 @@ function solvedodeca() {
 
 }
 
+function solverhododeca() {
+    var a = document.getElementById("inputrhododecaside").value;
+    var areaoutput = document.getElementById("resultofrhododecaarea");
+    var voloutput = document.getElementById("resultofrhododecavol");
+    var mroutput = document.getElementById("resultofrhododecamr");
+    var iroutput = document.getElementById("resultofrhododecair");
+    var areatemp = "";
+    var voltemp = "";
+    var mrtemp = "";
+    var irtemp = "";
+    if (a != "") {
+        areatemp += "\\[Surface \\space Area \\space of \\space Rhombic \\space \\newline Dodecahedron \\space \\newline " + 8 + "\\times \\sqrt{2}" + "\\times" + a + "\\times" + a + "\\ = " + eval(String(11.31371 * a * a)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        voltemp += "\\[Volume \\space of \\space Rhombic \\space Dodecahedron \\space \\newline \\frac{16}{9} \\times \\sqrt{3}" + "\\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(3.0792 * a * a * a)).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        mrtemp += "\\[Midsphere \\space radius \\space of \\space Rhombic \\space \\newline Dodecahedron \\space \\newline \\frac{2}{3} \\times \\sqrt{2}" + "\\times" + a + "\\ = " + eval(String(0.94281 * a )).toFixed(3) + "\\]";
+        mroutput.innerHTML = mrtemp;
+
+        irtemp += "\\[Insphere \\space radius \\space of \\space Rhombic \\space \\newline Dodecahedron \\space \\newline \\frac{1}{3} \\times" + a + "\\times \\sqrt{6} " + "\\ = " + eval(String(0.8165 * a )).toFixed(3) + "\\]";
+        iroutput.innerHTML = irtemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(mroutput);
+        renderMathInElement(iroutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        mroutput.innerHTML = "";
+        iroutput.innerHTML = "";
+    }
+
+}
 
 function angletwoplanesolve()
 {
