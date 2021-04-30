@@ -266,9 +266,9 @@ function divisionwithsteps() {
         var tableNumRows = dividendLength * 2 + 2;
         var numSteps = dividendLength + 1;
         var tmpVar;
-        for (a = 1; a <= tableNumRows; a++) {
+        for (var a = 1; a <= tableNumRows; a++) {
             tableBody += "<tr>";
-            for (b = 1; b <= tableNumColumns; b++) {
+            for (var b = 1; b <= tableNumColumns; b++) {
                 tableBody +=
                     '<td style="padding: 7px; border:1px solid var(--apppink); ;"></td>';
             }
@@ -280,7 +280,7 @@ function divisionwithsteps() {
             "</table></div>"
         );
         var tableRows = resultContainer.find("table tr");
-        for (i = 0; i < divisorLength; i++) {
+        for (var i = 0; i < divisorLength; i++) {
             tableRows.eq(1).find("td").eq(i).html(divisor.toString()[i]);
         }
         tableRows
@@ -288,7 +288,7 @@ function divisionwithsteps() {
             .find("td")
             .eq(divisorLength - 1)
             .css("border-right", "6px solid white");
-        for (i = 0; i < dividendLength; i++) {
+        for (var i = 0; i < dividendLength; i++) {
             tableRows
                 .eq(1)
                 .find("td")
@@ -296,7 +296,7 @@ function divisionwithsteps() {
                 .html(dividend.toString()[i])
                 .css("border-top", "6px solid white");
         }
-        for (currentStep = 1; currentStep < numSteps; currentStep++) {
+        for (var currentStep = 1; currentStep < numSteps; currentStep++) {
             if (!bufferVar) var bufferVar = dividend.toString()[0];
             var stepResult = Math.floor(bufferVar / divisor);
             tableRows
@@ -305,7 +305,7 @@ function divisionwithsteps() {
                 .eq(divisorLength + currentStep - 1)
                 .html(stepResult);
             tmpVar = (stepResult * divisor).toString();
-            for (a = tmpVar.length - 1; a >= 0; a--) {
+            for (var a = tmpVar.length - 1; a >= 0; a--) {
                 tableRows
                     .eq(currentStep * 2)
                     .find("td")
@@ -314,7 +314,7 @@ function divisionwithsteps() {
                     .css("border-bottom", "6px solid white");
             }
             tmpVar = (bufferVar - stepResult * divisor).toString();
-            for (a = tmpVar.length - 1; a >= 0; a--) {
+            for (var a = tmpVar.length - 1; a >= 0; a--) {
                 tableRows
                     .eq(currentStep * 2 + 1)
                     .find("td")
@@ -412,7 +412,7 @@ function printfactors() {
     var temp = "";
     var tt = "";
     var v = "";
-    for (i = 2; i <= num; i++) {
+    for (var i = 2; i <= num; i++) {
         while (num % i == 0) {
             temp += i + "&nbsp;&nbsp;&nbsp;<br>";
             v += i + ",";
@@ -469,7 +469,7 @@ function printmorefactors(input, output) {
 function printhcffactor(val, outputf) {
     var num = parseInt(val);
     var temp = "";
-    for (i = 2; i <= num; i++) {
+    for (var i = 2; i <= num; i++) {
         while (num % i == 0) {
             temp += i + " ";
             num = num / i;
@@ -478,7 +478,7 @@ function printhcffactor(val, outputf) {
     temp = temp.split(" ");
     temp = removeDuplicates(temp);
     var newtemp = "";
-    for (ih of temp) {
+    for (var ih of temp) {
         newtemp += ih + " ";
     }
     return newtemp;
@@ -494,7 +494,7 @@ function findduplicatesforhcf(array) {
         indexofdup = 0;
     var i, j;
     //find reference array i.e bigger subarray
-    for (i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         var arlen = array[i].length;
         if (arlen > maxlengthofarray) {
             maxlengthofarray = arlen;
@@ -503,7 +503,7 @@ function findduplicatesforhcf(array) {
         }
     }
     //remove elements which not present in all subarrays
-    for (k = 0; k < array.length; k++) {
+    for (var k = 0; k < array.length; k++) {
         if (k == indexofdup) {
             continue;
         }
@@ -4535,7 +4535,7 @@ function slap() {
     });
 
     var ar = t.toString().split("");
-    for (i = 0; i < ar.length; i++) {
+    for (var i = 0; i < ar.length; i++) {
         if (ar[i] == "s" && ar[i + 1] == "i") {
             continue;
         } else if (ar[i] == "s" && ar[i - 1] == "o" && ar[i - 2] == "c") {
@@ -4580,7 +4580,7 @@ function sinvlap() {
         throwOnError: false,
     });
     var ar = t.toString().split("");
-    for (i = 0; i < ar.length; i++) {
+    for (var i = 0; i < ar.length; i++) {
         if (ar[i] == "t" && ar[i + 1] == "a" && ar[i + 2] == "n") {
             continue;
         } else if (ar[i] == "t" && ar[i - 1] == "c" && ar[i - 2] == "c") {
@@ -4619,8 +4619,8 @@ function orderas() {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
-    for (i = 0; i <= len - 1; i++) {
-        for (j = 0; j <= len - 1 - i; j++) {
+    for (var i = 0; i <= len - 1; i++) {
+        for (var j = 0; j <= len - 1 - i; j++) {
             if (parseFloat(val[j]) > parseFloat(val[j + 1])) {
                 temp = parseFloat(val[j]);
                 val[j] = parseFloat(val[j + 1]);
@@ -4663,8 +4663,8 @@ function orderde() {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
-    for (i = 0; i <= len - 1; i++) {
-        for (j = 0; j <= len - 1 - i; j++) {
+    for (var i = 0; i <= len - 1; i++) {
+        for (var j = 0; j <= len - 1 - i; j++) {
             if (parseFloat(val[j]) < parseFloat(val[j + 1])) {
                 temp = parseFloat(val[j]);
                 val[j] = parseFloat(val[j + 1]);
@@ -4788,13 +4788,13 @@ function multiplywithsteps(numm, withnum) {
     var countdotwith = 0;
 
     if (flag == 1) {
-        for (i = num.length - 1; i >= 0; i--) {
+        for (var i = num.length - 1; i >= 0; i--) {
             if (num[i] == ".") {
                 break;
             }
             countdot++;
         }
-        for (j = numwith.length - 1; j >= 0; j--) {
+        for (var j = numwith.length - 1; j >= 0; j--) {
             if (numwith[j] == ".") {
                 break;
             }
@@ -4821,7 +4821,7 @@ function multiplywithsteps(numm, withnum) {
     );
     if (numwith.length > 1) {
         numwith = numwith.split("");
-        for (i = numwith.length - 1; i >= 0; i--) {
+        for (var i = numwith.length - 1; i >= 0; i--) {
             if (numwith[i] == ".") continue;
             if (numwith.length == m.length + 1) {
                 var vm = eval(
@@ -4841,7 +4841,7 @@ function multiplywithsteps(numm, withnum) {
             temp += "<br>";
             m += "&times;";
         }
-        for (i = 0; i < String(mulsol).length; i++) {
+        for (var i = 0; i < String(mulsol).length; i++) {
             line += "_";
         }
     } else {
@@ -4851,7 +4851,7 @@ function multiplywithsteps(numm, withnum) {
                 .evaluate()
                 .toString()
         );
-        for (i = 0; i < String(mulsol).length; i++) {
+        for (var i = 0; i < String(mulsol).length; i++) {
             line += "_";
         }
     }
@@ -5125,11 +5125,11 @@ function roundoff(input, output) {
     //to check if negative number or not
     ar1 = [];
     if (ar[0] == "-") {
-        for (itr = 0; itr < ar.length - 1; itr++) {
+        for (var itr = 0; itr < ar.length - 1; itr++) {
             ar1[itr] = ar[itr + 1];
         }
     } else {
-        for (itr = 0; itr < ar.length; itr++) {
+        for (var itr = 0; itr < ar.length; itr++) {
             ar1[itr] = ar[itr];
         }
     }
@@ -5179,7 +5179,7 @@ function roundoff(input, output) {
         if (place < 0) {
             var temp = "";
             if (ar1[place + 1] >= 5) {
-                for (itr = len1; itr >= 0; itr--) {
+                for (var itr = len1; itr >= 0; itr--) {
                     itrPlace = placeUpto[itr];
                     el.innerHTML += itrPlace + "&nbsp;&nbsp;";
                 }
