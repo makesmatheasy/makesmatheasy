@@ -110,10 +110,12 @@ label {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  color: var(--apppink);
+h4 {
+  color: var(--appbg) !important;
+}
+
+h5, h6 {
+  color: var(--appimage) !important;
 }
 
 .modal-title {
