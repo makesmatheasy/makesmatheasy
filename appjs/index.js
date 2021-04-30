@@ -1,4 +1,4 @@
-var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
+var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0,i=0,j=0;
 
 function removeall(elid) {
     if (document.getElementById(elid).innerHTML != "") {
@@ -112,10 +112,17 @@ function changeImage9() {
     } else {
         document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
     }
-
-
 }
 
+function changeImage10() {
+    j++;
+
+    if (j % 2 == 0) {
+        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+    }
+}
 
 function collapseit(openit) {
     $(String("#" + openit)).slideToggle();
@@ -123,56 +130,179 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
-        "#complexcollapse",
+        "#anyBase",
+        "#complex1collapse",
+        "#complex2collapse",
+        "#complexidentities",
+        "#complexproperties",
+        "#theo",
+        "#impfixs",
         "#equationssolver",
         "#mulsolwithsteps",
+        "#secarea",
         "#table",
+        "#ssts",
+        "#arcs",
+        "#sosqs",
+        "#sosqsn",
+        "#socbsn",
+        "#squaresRanges",
+
+        "#cubesRanges",
+        "#numcubesRanges",
+        "#segcals",
+        "#hydroz",
+        "#straincalc",
         "#shapescal",
         "#tdshapescal",
         "#divide",
         "#simpletrignocollapse",
         "#trigonovaluestable",
         "#trigonoiden",
+        "#trigonofun",
         "#factors",
+        "#stats",
+        "#math",
         "#integralcollapse",
+        "#integration-idencollapse",
+        "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
+        "#3d-solid",
         "#laplacecollapse",
         "#limitscollapse",
+        "#parab",
         "#matrixcollapse",
+        "#pows",
+        "#matrixprops",
+        "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
+        "#propcircle",
+        "#propquad",
+        "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
+        "#3dgeocalc",
+        "#plotbargraph",
         "#roundoff",
+        "#euclid",
+	    "#aod",
+	    "#vecalg",
+	    "#thedif",
+	    "#corgeo",
+        "#betagamma",
+        "#parallel",
         "#unitconcal",
+        "#giff",
+        "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
+        "#setop",
+        "#trans",
+        "#hp",
+        "#ppmfs",
+        "#bool",
+        "#eirs",
         "#log_values",
+        "#log-collapse",
+        "#bt-collapse",
+        "#bt-collapse1",
         "#pandc",
+        "#stresscalc",
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
+        "#adding-all",
+        "#subtract-all",
+        "#multiplying-all",
+		"#onetwocom-calc",
+        "#3dgeo",
+        "#bpmfs",
+        "#straightline",
         "#octal-binary",
         "#binary-hexadecimal",
+        "#cay",
+        "#octal-hexadecimal",
         "#inversetrigonoiden",
-        "#prime",
+        "#hyptrigonoiden",
+        "#invhyptrigonoiden",
+	    "#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
-        "#inversetrigonoiden",
         "#datecal",
         "#prime",
         "#sum_n_AP",
+        "#sum_n_GP",
+        "#sum_n_HP",
         "#algebraic_formulascollapse",
         "#expansion",
+        "#solutiontri",
         "#plotangle",
         "#profitloss",
+        "#differentiate-rulecollapse",
+        "#emical",
+        "#gstcal",
+        "#deviation",
+        "#degcal",
+        "#trigsolcollapse",
+        "#grey-bin",
+        "#consim",
+        "#convdiv",
+        "#curve",
+        "#coor",
+        "#mean",
+        "#Meanit",
+        "#bcd",
+        "#vector",
+        "#vec",
+        "#diffeqn",
+        "#maxmin",
+        "#locroots",
+        "#tangent",
+        "#srf",
+        "#probabilitycollapse",
+        "#joint-probabilitycollapse",
+        "#dec2421",
+        "#ex3",
+        "#lappro",
+        "#rankcal",
+        "#bayes-probabilitycollapse",
+        "#prism",
+        "#pentprism",
+        "#pyramid",
+        "#tripyramid",
+        "#octpyramid",
+        "#hexpyramid",
+        "#octahedron",
+        '#dodecahedron',
+        "#icosahedron",
+        "#anglecon",
+        "#frustum",
+        "#annulus",
+        "#cosine",
+        "#obliquecy",
+        "#setcal",
+        "#mi",
+	    "#ip",
+	    "#prices",
+        "#centcal",
+        "#cevtha",
+
+        "#percal",
+        "#lyear",
+        "#analytical",
+        "#isoright",
+        "#ellipsoid",
+        "#expo",
+        "#setformula",
+        "#wedge",
+        "#fourier_series"
     ];
-    console.log(id)
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
@@ -191,9 +321,11 @@ function loadfilesafterload() {
         "appjs/searchbar.js",
         "appjs/speechrecoforall.js",
         "appjs/complexlogic.js",
-        "appjs/logValue.js",
         "js/math.min.js",
         "js/plotly-1.35.2.min.js",
+        "appjs/logValue.js",
+        "appjs/operations_on_fraction.js",
+        "appjs/conicSolve.js"
     ];
     for (i of aroffiles) {
         var scriptelm = document.createElement("script");
@@ -277,11 +409,9 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-    if (ar.length == 0) {
-        $("#favourite").removeClass("favouritecontainer");
-    } else {
-        $("#favourite").addClass("favouritecontainer");
-    }
+   
+    $("#favourite").addClass("favouritecontainer");
+    
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement("li");
@@ -299,6 +429,21 @@ function checkfavourite() {
             document.getElementById("favourite").appendChild(el);
             document.getElementById(imgar[i]).src = favar[i];
         }
+    }
+    
+    else{
+        var el = document.createElement("div");
+        el.className = "nofavourites";
+        el.id="nofavourite"
+        el.style.color = "white";
+        document.getElementById("favourite").appendChild(el);
+        var el1 = document.createElement("p");
+        el1.textContent = "Nothing in Favourites⭐.";
+        document.getElementById("nofavourite").appendChild(el1);
+        var el2 = document.createElement("p");
+        el2.textContent = " Click 🤍 to add to Favourites";
+        document.getElementById("nofavourite").appendChild(el2);
+        
     }
 }
 
@@ -389,7 +534,4 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
-
-
-
 
