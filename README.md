@@ -62,6 +62,7 @@ Other Tech/Libraries
   - Sets Formulas List
   - Interest(Simple,Compound)
   - Cost and Selling Prices
+  - Effective Interest Rate
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
@@ -72,8 +73,9 @@ Other Tech/Libraries
     - Subtraction
     - Multiplication
   - Properties of Matrices and Determinants
-  - Sum of Nterms of an Arithmetic Progession
-  - Sum of Nterms of an Geometric Progession
+  - Sum of Nterms of an Arithmetic Progression
+  - Sum of Nterms of a Geometric Progression
+  - Sum of Nterms of a Harmonic Progression
   - Cayley Hamilton Theorem of Diagonalization
 
 - Conic Section
@@ -123,6 +125,7 @@ Other Tech/Libraries
   - Finding sides of a right triangle (provided any two)
   - Trigonometric Values
   - Trigonometric Identities
+  - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
   - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
@@ -141,6 +144,8 @@ Other Tech/Libraries
   - Percentage Calculator
   - Set Calculator
   - Pythagorean Triplets
+  - Perfect Squares in a range
+  - Perfect Cubes in a range
   - Rank Calculator
   - Leap Year
   - Standard Deviation
@@ -192,7 +197,7 @@ Other Tech/Libraries
     - Speed
     - Data
     - Power
-      Improper to Mixed Fraction
+  - Improper to Mixed Fraction
   - SPI/CGPA Convertor
   - Ascending and Descending Order
   - Date
@@ -215,6 +220,7 @@ Other Tech/Libraries
   - Coordinate Geometry Formula and Theorem
   - Segment Area Calculator
   - Curve Tracing
+  - Ceva's and Thale's Theorem
   - Properties of Circles
   - Properties of Quadrilaterals
   - Arc Length Calculator
@@ -241,10 +247,23 @@ Other Tech/Libraries
     - Cone
     - Sphere
     - Hollow Cylinder
+    - Oblique Circular Cylinder
     - Hollow Sphere
     - Hemisphere
-    - Prism
     - Torus
+    - Conical Frustum
+    - Ellipsoid
+    - Prisms
+    - Pyramids
+    - Wedge
+    - Octahedron
+    - Tetrahedron
+    - Dodecahedron
+    - Icosahedron
+    - Parallelepiped
+    - Hyperboloid
+  - 3-D Geometry
+  - 3-D Geometry Calculator
   - Volume, CSA, TSA
   - Congruence and Similarity of Triangles
 
@@ -300,6 +319,7 @@ Other Tech/Libraries
   - Joint Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
+  - Poisson Distribution Calculator
   - Bayes Probability Theorem
 
 ---
