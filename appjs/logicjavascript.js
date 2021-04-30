@@ -4087,7 +4087,7 @@ function solveCone() {
     var csaoutput = document.getElementById("resultofcsacone");
     var shoutput = document.getElementById("resultofshcone");
     var add2 = eval(String(radius**2 + height**2));
-    var l = math.sqrt(radius*2 + height*2)
+    var l = math.sqrt(radius**2 + height**2)
     var vol = ((3.1415 * radius * radius * height) / 3).toFixed(3);
     var voltemp = "";
     var tsatemp = "";
