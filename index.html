@@ -2287,7 +2287,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="centcalbut"
-                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator using Equation of Edges</a>
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator</a>
                             </td>
                             <td style="float:right;border-top: none;">
                                     <span onclick="addtofavourite('Triangle Calculator','#centcal','c','centcalfav')"><img
@@ -4001,30 +4001,7 @@
             <h4 class="text-center" id="line1"> </h4> <br>
 
             <h4 class="text-center" id="line2"> </h4> <br>
-            <h4>Centroid Calculator</h4>
-            <div class= "coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="y1st" size=5 value='' placeholder="y1">)
-                    <br>
-                    Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
-                        <br>
-                    Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
-                    <br><br>
-                <button type="button" class="btn btn-light" onclick=centsolve()>
-                        Find Centroid
-                </button><br>
-                </p>
-            </div>
-            <h4 id="apk" style="color: white;"></h4>
-	        <h4 class="text-center" id="line2"> </h4> <br>
-
-
-            <h4 class="text-center" id="line2"> </h4> <br>
-
-
+           
             <h3>Section Formula</h3><br>
             <div class="coll">
                 <p>
@@ -4050,101 +4027,7 @@
 
             <p  id="output"> </p> <br>
 
-            <h3>Circumcentre Calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="X1st" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="Y1st" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="X2st" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="Y2st" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="X3st" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="Y3st" size=5 value='' placeholder="y3">)
-                        <br><br>
-                    A = <input type="text" id="angleA" size=7 value='' placeholder="Angle A (in &deg;) ">     B =
-                <input type="text" id="angleB" size=7 value='' placeholder="Angle B (in &deg;)">     C= <input type="text" id="angleC" size=7 value='' placeholder="Angle C (in &deg;)">
-                <br><br>
-                <button type="button" class="btn btn-light" onclick=circumsolve()>
-                    Calculate
-                </button><br>
-                </p>
-            </div>
-            <h4 id="cir_output" style="color:white"></h4>
-            <h4 id="cirformula" style="color:white"></h4>
-         
-            <h3>Incentre Calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="Y1" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="X2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="Y2" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="X3" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="Y3" size=5 value='' placeholder="y3">)
-                        <br><br>
-                    a = <input type="text" id="ina" size=5 value='' placeholder="Side a">     b =
-                <input type="text" id="inb" size=5 value='' placeholder="Side b">     c= <input type="text" id="inc" size=5 value='' placeholder="Side c">
-                <br><br>
-                <button type="button" class="btn btn-light" onclick=incentersolve()>
-
-                    Calculate
-                </button><br>
-                </p>
-            </div>
-            <h4 id="in_output" style="color:white"></h4>
-            <h4 id="informula" style="color:white"></h4>
-
-            <h3>Excentre Calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
-                        <br><br>
-                    a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
-                <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
-                <br><br>
-                <button type="button" class="btn btn-light" onclick=excentersolve()>
-
-                    Calculate
-                </button><br>
-                </p>
-            </div>
-            <h4 id="ex_output1" style="color:white"></h4>
-            <h4 id="ex_output2" style="color:white"></h4>
-            <h4 id="ex_output3" style="color:white"></h4>
             
-
-            <h3>Area of Triangle</h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="y1s" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="y2s" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="y3s" size=5 value='' placeholder="y3">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=coordinatearea()>
-
-                    Calculate
-                </button><br>
-                </p>
-
-            </div>
-            <h4 id="areaoutput" style="color:white"></h4>
-            <h4 id="formula1" style="color:white"></h4>
-
             <h3>Collinear Points Checker</h3><br>
             <div class="coll">
                 <p>
@@ -10454,6 +10337,7 @@
 
 <div class="collapse" id="centcal">
     <h2 style="text-align: center;">Diffrent Centers of Triangel</h2><br>
+    <h3 style="text-align: center;">Using Edges</h3>
     <div class="col-9">
         <div class="col-9">
             <label>
@@ -10528,6 +10412,9 @@
                 <button type="button" class="btn btn-light" onclick="cenintcal()">
                     InCenter
                 </button>
+                <button type="button" class="btn btn-light" onclick="cenextcal()">
+                    ExCenter
+                </button>
             </div>
         </div>
     </div>
@@ -10540,6 +10427,126 @@
             <p id="rcc"></p>
         </div>
     </div>
+    
+    <h3 style="text-align: center;">Using Vertex</h3>
+    <h4>Centroid Calculator</h4>
+    <div class= "coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="y1st" size=5 value='' placeholder="y1">)
+            <br>
+            Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
+                <br>
+            Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
+            <br><br>
+        <button type="button" class="btn btn-light" onclick=centsolve()>
+                Find Centroid
+        </button><br>
+        </p>
+    </div>
+    <h4 id="apk" style="color: white;"></h4>
+    <h4 class="text-center" id="line2"> </h4> <br>
+
+
+    <h4 class="text-center" id="line2"> </h4> <br>
+    <h3>Circumcentre Calculator </h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="X1st" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="Y1st" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="X2st" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="Y2st" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="X3st" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="Y3st" size=5 value='' placeholder="y3">)
+                <br><br>
+            A = <input type="text" id="angleA" size=7 value='' placeholder="Angle A (in &deg;) ">     B =
+        <input type="text" id="angleB" size=7 value='' placeholder="Angle B (in &deg;)">     C= <input type="text" id="angleC" size=7 value='' placeholder="Angle C (in &deg;)">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick=circumsolve()>
+            Calculate
+        </button><br>
+        </p>
+    </div>
+    <h4 id="cir_output" style="color:white"></h4>
+    <h4 id="cirformula" style="color:white"></h4>
+ 
+    <h3>Incentre Calculator </h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="Y1" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="X2" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="Y2" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="X3" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="Y3" size=5 value='' placeholder="y3">)
+                <br><br>
+            a = <input type="text" id="ina" size=5 value='' placeholder="Side a">     b =
+        <input type="text" id="inb" size=5 value='' placeholder="Side b">     c= <input type="text" id="inc" size=5 value='' placeholder="Side c">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick=incentersolve()>
+
+            Calculate
+        </button><br>
+        </p>
+    </div>
+    <h4 id="in_output" style="color:white"></h4>
+    <h4 id="informula" style="color:white"></h4>
+
+    <h3>Excentre Calculator </h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
+                <br><br>
+            a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
+        <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick=excentersolve()>
+
+            Calculate
+        </button><br>
+        </p>
+    </div>
+    <h4 id="ex_output1" style="color:white"></h4>
+    <h4 id="ex_output2" style="color:white"></h4>
+    <h4 id="ex_output3" style="color:white"></h4>
+    
+
+    <h2 style="text-align:center;">Area of Triangle</h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="y1s" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="y2s" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="y3s" size=5 value='' placeholder="y3">)
+                <br><br>
+        <button type="button" class="btn btn-light" onclick=coordinatearea()>
+
+            Calculate
+        </button><br>
+        </p>
+
+    </div>
+    <h4 id="areaoutput" style="color:white"></h4>
+    <h4 id="formula1" style="color:white"></h4>
+
+
 </div>
         <!-------------------------------------------------------->
         <div class="collapse" id="eirs">
