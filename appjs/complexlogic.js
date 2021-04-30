@@ -185,39 +185,6 @@ function comOp(value) {
     }
 }
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  let explain="\\[Polar \\space Form \\space =r(cos(\\theta)+i\\space sin(\\theta))\\]";
-  explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
-  var result= document.getElementById("comp1result");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-      explain+="π" +y+"\\]";
-  }
-  
-  result.innerHTML = x;
-  explain+="\\[Polar \\space Form \\space ="+x+"\\]";
-  document.getElementById('comp1explain').innerHTML=explain;
-  renderMathInElement(document.getElementById("comp1explain"));
-}
 function euler()
 {
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
@@ -290,39 +257,31 @@ function samvar()
         for (i = 0; i < len; i++) {
             number[i] = parseFloat(num[i].trim());
         }
-
         var sum=0;
-
-
         for (i = 0; i < len; i++) {
            sum+=number[i];
         }
-
         var meanrzlt= sum/len;
-         var varrzlt=0;
+        var varrzlt=0;
         for (i = 0; i < len; i++) {
             varrzlt = varrzlt + ((number[i])-meanrzlt)*((number[i])-meanrzlt);
         }
-
         varrzlt = varrzlt/(len-1);
- var conint;
- var sampstddev=Math.sqrt(varrzlt);
- var q=Math.sqrt(len)
-conint= sampstddev/q;
-  
-      
-        
-       var outputstring=""
-       var text="x̄";
-       var text2="2";
-    outputstring+="Count of inputs: "+len+"<br>";
+        var conint;
+        var sampstddev=Math.sqrt(varrzlt);
+        var q=Math.sqrt(len)
+        conint= sampstddev/q;
+        var outputstring=""
+        var text="x̄";
+        var text2="2";
+        outputstring+="Count of inputs: "+len+"<br>";
         outputstring+="Sum(Σx): "+sum+"<br>";
         outputstring+="Mean(μ): "+meanrzlt+"<br>";
         outputstring+="Variance(σ"+text2.sub()+"): "+varrzlt+"<br>";
         outputstring+="Sample Standard Deviation: "+sampstddev+" <p>&nbsp;</p>";
         outputstring+="Confidence Interval(s" +text.sub()+"): "+conint+"<br>";
-     document.getElementById('std-var-rslt').innerHTML = outputstring;
-}
+        document.getElementById('std-var-rslt').innerHTML = outputstring;
+    }
 }
 
 function popvar()
