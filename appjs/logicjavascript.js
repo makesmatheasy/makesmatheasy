@@ -2186,7 +2186,7 @@ function vectoradd(){
     var add1 = (a+d);
     var add2 = (b+e);
     var add3 = (c+f);
-    document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (x+y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
+    document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
 
 }
 function vectorsub(){
@@ -2199,8 +2199,21 @@ function vectorsub(){
     var sub1 = (a-d);
     var sub2 = (b-e);
     var sub3 = (c-f);
-    document.getElementById("vectorsub1").innerHTML = 'Difference between Vectors (x-y) =  ' + (sub1) + ' i'  + ' + ' + (sub2) + ' j ' + ' + ' + (sub3) + ' k ';
+    document.getElementById("vectorsub1").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1) + ' i'  + ' + ' + (sub2) + ' j ' + ' + ' + (sub3) + ' k ';
 
+}
+function vectordot(){
+    var a=parseFloat(document.getElementById('d1e').value);
+    var b=parseFloat(document.getElementById('d2e').value);
+    var c=parseFloat(document.getElementById('d3e').value);
+    var d=parseFloat(document.getElementById('e1d').value);
+    var e=parseFloat(document.getElementById('e2d').value);
+    var f=parseFloat(document.getElementById('e3d').value);
+    var mult1 = (a*d);
+    var mult2 = (b*e);
+    var mult3 = (c*f);
+    var mult = mult1 + mult2 + mult3;
+    document.getElementById("vectordot1").innerHTML = 'Dot Product of Vectors (X.Y) = ' + (mult);
 }
 
 function equationplanesolve()
