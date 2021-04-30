@@ -6852,7 +6852,15 @@ function hypf(){
     var hyph = parseInt(document.getElementById("hyph").value)
     var ans1 = (2*3.14*hyph*hypa*hypa)/(hypb*hypb)
     var ans = ans1*(hypb*hypb + ((hyph*hyph)/3))
-    document.getElementById("hypans").innerHTML = "The volume is " + ans
+
+    document.getElementById("hypans1").innerHTML ="\\[The \\space volume \\space of \\space Hyperboloid \\space is \\space \\]";
+    renderMathInElement(document.getElementById("hypans1"));
+
+    document.getElementById("hypans2").innerHTML ="\\[\\frac{2 \\times \\pi \\times"+hyph+"\\times"+hypa+"^{2}}{"+hypb+"^{2}}\\times("+hypb+"^{2}+\\frac{"+hyph+"^{2}}{3})\\]";
+    renderMathInElement(document.getElementById("hypans2"));
+
+    document.getElementById("hypans3").innerHTML ="\\[ = "+ans.toFixed(3)+ "\\]";
+    renderMathInElement(document.getElementById("hypans3"));
 }
 //Mode end
 //Variance
