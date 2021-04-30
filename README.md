@@ -228,18 +228,22 @@ Other Tech/Libraries
     - Square
     - Rectangle
     - Rhombus
-    - Equilateral Triangle
-    - Isosceles Triangle
-    - Right-angled Triangle
-    - Scalene Triangle
+    - Triangles
+    	1. Equilateral Triangle
+    	2. Isosceles Triangle
+    	3. Isosceles Right Triangle
+    	4. Right-angled Triangle
+    	5. Scalene Triangle
     - Circle
+    - Sector of circle
     - Semi-Circle
+    - Annulus
     - Kite
     - Line
     - Trapezium
     - Ellipse
     - Parallelogram
-    - Tetrahedron
+    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -259,6 +263,7 @@ Other Tech/Libraries
     - Octahedron
     - Tetrahedron
     - Dodecahedron
+    - Rhombic Dodecahedron
     - Icosahedron
     - Parallelepiped
     - Hyperboloid
