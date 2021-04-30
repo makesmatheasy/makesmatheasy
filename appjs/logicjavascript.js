@@ -4048,22 +4048,32 @@ function solvesphere() {
 
     var voloutput = document.getElementById("resultofvolsp");
     var tsaoutput = document.getElementById("resultoftsasp");
+    var diaoutput = document.getElementById("resultofdimsp");
     var voltemp = "";
     var tsatemp = "";
+    var diatemp = "";
+    var a = eval(String((4 * 3.14159 * radius * radius * radius) / 3));
+    var b = eval(String(4 * 3.14159 * radius * radius));
     if (radius != "") {
         voltemp += "\\[ \\frac{4}{3} \\times \\pi \\times " + radius + "^3 \\]";
-        voltemp += "\\[Volume \\space of \\space Sphere \\space is \\space " + eval(String((4 * 3.14159 * radius * radius * radius) / 3)) + "\\]";
+        voltemp += "\\[Volume \\space of \\space Sphere \\space is \\space " + a.toFixed(3) + "\\space cm^3\\]";
         voloutput.innerHTML = voltemp;
         tsatemp += "\\[4 \\times \\pi \\times" + radius + "^2 \\]";
         tsatemp +=
             "\\[Total \\space Surface \\space Area \\space of \\space Sphere \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String(4 * 3.14159 * radius * radius)) + "\\]";
+        tsatemp += "\\[" + b.toFixed(3) + "\\space cm^2\\]";
         tsaoutput.innerHTML = tsatemp;
+        diatemp += "\\[2 \\times" + radius + "\\]";
+        diatemp += "\\[Diameter \\space of \\space a \\space Sphere \\space is \\space \\]";
+        diatemp += "\\[" + eval(String(2 * radius)) + "\\space cm \\]";
+        diaoutput.innerHTML = diatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
+        renderMathInElement(diaoutput);
     } else {
         voloutput.innerHTML = "";
         tsaoutput.innerHTML = "";
+        diaoutput.innerHTML = "";
     }
 }
 
