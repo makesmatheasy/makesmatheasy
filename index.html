@@ -14566,19 +14566,29 @@
                                     <div class="form-group">
                                         <img src="images/circle.png" class="img-fluid">
                                     </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Chord Length</h5>
+                                    <p class="text-center">\[2\sqrt{r^2-d^2}\]</p>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
                             <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter Radius"
+                            <input class="form__field" type="number" placeholder="Enter Radius in cm"
                                    id="inputradius"
+                                   oninput="solvecircle()">
+                            <input class="form__field" type="number" placeholder="Enter Distance in cm"
+                                   id="inputdistance"
                                    oninput="solvecircle()">
                             <p class="stopwrap" id="resultofareacir"
                                style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumferencec"
+                            <p class="stopwrap" id="resultofcircumferencec1"
+                               style="font-family:mathfont;"></p>
+                             <p class="stopwrap" id="resultofcircumferencec2"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofdiameterc"
-                               style="font-family:mathfont;"></p>-
+                               style="font-family:mathfont;"></p>
+                               <p class="stopwrap" id="resultofchord"
+                               style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
                     </div>

@@ -3060,19 +3060,30 @@ function solvecosine() {
 
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
+    let distance = document.getElementById("inputdistance").value;
     let area = 3.14 * radius * radius;
     let Circumference = 2 * 3.14 * radius;
     let diameter = 2 * radius;
+    let a = (radius**2-distance**2);
+    let chord = 2 * Math.sqrt(a);
     console.log(radius);
+    console.log(distance);
     area = area.toPrecision(3);
     Circumference = Circumference.toPrecision(3);
     diameter = diameter.toPrecision(3);
-    document.getElementById("resultofareacir").innerHTML = "\\[Area \\space of \\space Circle \\ 3.14 r^2\\ = " + area + "\\]";
-    document.getElementById("resultofcircumferencec").innerHTML = "\\[Circumference \\space of \\space Circle \\ 2*3.14 r \\ = " + Circumference + "\\]";
-    document.getElementById("resultofdiameterc").innerHTML = "Diameter of Circle = " + diameter;
+    chord = chord.toPrecision(3);
+
+    document.getElementById("resultofareacir").innerHTML = "\\[Area \\space of \\space Circle \\ 3.14 r^2\\ = " + area + "\\space cm^2 \\]";
+    document.getElementById("resultofcircumferencec1").innerHTML = "\\[ 2*3.14 r \\ = " + Circumference + "\\]";
+    document.getElementById("resultofcircumferencec2").innerHTML = "\\[Circumference \\space of \\space Circle \\space is \\space" + Circumference + "\\space cm\\]";
+    document.getElementById("resultofdiameterc").innerHTML = "\\[Diameter \\space of \\space Circle \\ = " + diameter + "\\space cm\\]";
+    document.getElementById("resultofchord").innerHTML = "\\[Length \\space of \\space the \\space Chord \\space is \\ = " + chord + "\\space cm \\]";
     renderMathInElement(document.getElementById("resultofareacir"));
-    renderMathInElement(document.getElementById("resultofcircumferencec"));
-    //renderMathInElement(document.getElementById("resultofdiameterc"));
+    renderMathInElement(document.getElementById("resultofcircumferencec1"));
+    renderMathInElement(document.getElementById("resultofcircumferencec2"));
+    renderMathInElement(document.getElementById("resultofdiameterc"));
+    renderMathInElement(document.getElementById("resultofchord"));
+    
 }
 
 function solvesemicircle() {
