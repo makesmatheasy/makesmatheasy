@@ -10071,35 +10071,59 @@
                            href="#">Parallelogram Calculator</a></td>
                 </tr>
                 <tr>
-                    <td><a data-toggle="modal" data-target="#pentagon"
-                           style="text-decoration:none;"
-                           href="#">Pentagon</a></td>
+                    <td>
+                        <div onclick="$('#typesofpolygon').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">
+                            Polygons
+                        </div>
+                        <div class="collapse" id="typesofpolygon" style="margin: 0.9375rem;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#pentagon"
+                                           style="text-decoration:none;" href="#">Pentagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#hexagon"
+                                           style="text-decoration:none;" href="#">Hexagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#heptagon"
+                                           style="text-decoration:none;" href="#">Heptagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#octagon"
+                                           style="text-decoration:none;" href="#">Octagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#nonagon"
+                                           style="text-decoration:none;" href="#">Nonagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#decagon"
+                                           style="text-decoration:none;" href="#">Decagon</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a data-toggle="modal" data-target="#hexagon"
-                           style="text-decoration:none;"
-                           href="#">Hexagon</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#heptagon"
-                           style="text-decoration:none;"
-                           href="#">Heptagon</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#octagon"
-                           style="text-decoration:none;"
-                           href="#">Octagon</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#nonagon"
-                           style="text-decoration:none;"
-                           href="#">Nonagon</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#decagon"
-                           style="text-decoration:none;"
-                           href="#">Decagon</a></td>
-                </tr>                     
+                    <td>
+                        <div onclick="$('#typesofstarpolygons').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">
+                            Star Polygons
+                        </div>
+                        <div class="collapse" id="typesofstarpolygons" style="margin: 0.9375rem;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#pentagram"
+                                           style="text-decoration:none;" href="#">Pentagram</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>                    
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -15331,6 +15355,73 @@
         </div>
     </div>
 
+    <div class="modal fade" id="pentagram" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentagram</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Chord length</h5>
+                                <p class="text-center">\[l = a \times φ \]</p>
+                                <p class="text-center">a = edge length</p>
+                                <br>
+                                <p class="text-center">Golden ratio phi:</p>
+                                <p class="text-center">\[φ = ( 1 + √5 ) / 2 \newline = 1.618033988749895... ≈ 1.62 \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Long chord slice</h5>
+                                <p class="text-center">\[b = \frac{a}{φ} \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Short chord slice</h5>
+                                <p class="text-center">\[c = \frac{b}{φ} = \frac{1}{φ^2} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 10 \space b = \frac{10}{φ} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac {\sqrt{5 \times (5 - 2 \sqrt{5})}}{2} \space a^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/pentagram.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of rhombic dodecahedron(a)" id="inputpengramside"
+                                   oninput="solvepentagram();">
+                        <p class="stopwrap" id="resultofpengramchord"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpengramloncho"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpengramshocho"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpengramperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpengramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--shapes end-->
 
     <!-- properties of quadrilaterals -->
