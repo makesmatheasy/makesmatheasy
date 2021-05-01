@@ -185,39 +185,6 @@ function comOp(value) {
     }
 }
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  let explain="\\[Polar \\space Form \\space =r(cos(\\theta)+i\\space sin(\\theta))\\]";
-  explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
-  var result= document.getElementById("comp1result");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-      explain+="π" +y+"\\]";
-  }
-  
-  result.innerHTML = x;
-  explain+="\\[Polar \\space Form \\space ="+x+"\\]";
-  document.getElementById('comp1explain').innerHTML=explain;
-  renderMathInElement(document.getElementById("comp1explain"));
-}
 function euler()
 {
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
@@ -957,19 +924,26 @@ function ppcal()
 
 }
 
-function oopcal()
+function eircal()
 {
-    var a=document.getElementById("sum_o");
+    var a=document.getElementById("air").value;
+    var b=document.getElementById("nop").value;
+    var c=document.getElementById("cprd").value;
     var ans="";
-    if(a=="")
+    if(a==""||b==""||c=="")
     {
-        ans="Please enter the number";
-
+        ans="Enter all the values to obtain answer";
     }
+
     else
     {
-         var q=a;
-         ans=q;
+
+        var x=parseInt(a)/100;
+        var y=parseInt(c);
+        var z=parseInt(b);
+        var rate_period= ((1+(x/z))**z)-1;
+        rate_period=rate_period*100;
+        ans="Effective Annual Interest Rate per Period: "+rate_period+"<br>";
     }
-    document.getElementById("oopans").innerHTML=ans;
+    document.getElementById("eirans").innerHTML=ans;
 }

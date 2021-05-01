@@ -4,6 +4,7 @@
   --appblack: #232a36;
   --appimage: white;
 }
+
 :root .light-mode {
   --appbg: #232a36;
   --apppink: #7868e6;
@@ -42,6 +43,10 @@ body img {
 .container {
   padding-bottom: 10%;
   padding-top: 1.5em;
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
 }
 .qcontainer {
   padding-bottom: 54%;
@@ -143,6 +148,7 @@ h6 {
 .ulstyle li a:active {
   color: white !important;
 }
+
 .stopwrap {
   white-space: nowrap;
   overflow-y: hidden;
@@ -150,6 +156,20 @@ h6 {
   width: 100%;
   height: 100%;
   display: grid;
+}
+
+.form__field {
+  font-family: mainfont;
+  font-size: 0.9375rem !important;
+  letter-spacing: 0.125rem;
+  width: 100%;
+  border: 0;
+  border-bottom: 0.0625rem solid var(--appimage);
+  outline: 0;
+  color: white;
+  padding: 0.4375rem 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
 
 .carddis {
@@ -181,6 +201,7 @@ h6 {
   background-color: rgba(255, 244, 253, 0.993);
   font-weight: bolder;
 }
+
 .favouritecontainer {
   position: absolute;
   left: 80%;
@@ -198,10 +219,12 @@ h6 {
   overflow-y: auto !important;
   overflow-x: hidden !important;
 }
+
 #favourite:ul {
   padding-right: 0;
   list-style: none;
 }
+
 .favourites {
   border-radius: 1.125rem;
   border: 0.0625rem solid var(--apppink);
@@ -212,6 +235,7 @@ h6 {
   color: white !important;
   cursor: pointer;
 }
+
 .nofavourites {
   border-radius: 1.125rem;
   border: 0.0625rem solid var(--apppink);
@@ -243,6 +267,7 @@ h6 {
   background-color: rgb(255, 136, 231);
   cursor: pointer;
 }
+
 @media screen and (max-width: 37.5rem) {
   .favouritecontainer {
     left: 5%;
@@ -277,18 +302,19 @@ h6 {
     text-align: center;
     color: white !important;
     cursor: pointer;
-  }
-  
+  }  
 }
 
 ::selection {
   color: var(--appblack);
   background-color: var(--apppink);
 }
+
 .mainheading {
   color: white;
   display: inline;
 }
+
 .searchbar-container {
   position: relative;
   display: flex;
@@ -297,6 +323,7 @@ h6 {
   text-align: center;
   margin-left: 40vh;
 }
+
 #search-txt {
   border: none;
   background: none !important;
@@ -309,6 +336,7 @@ h6 {
   line-height: 2.5rem;
   width: 0rem;
 }
+
 .searchbtn {
   background: azure;
   color: #f1faee;
@@ -321,6 +349,7 @@ h6 {
   align-items: center;
   outline: none !important;
 }
+
 #box {
   display: flex;
   flex-direction: row;
@@ -333,10 +362,12 @@ h6 {
   padding: 0.625rem;
   transform: translateX(50%,50%);
 }
+
 #box:hover > #search-txt {
   width: 15rem;
   padding: 0 0.375rem;
 }
+
 #box:hover > .searchbtn {
   background: #0bd54f;
 }
@@ -348,20 +379,6 @@ h6 {
 
 #myInput {
   color: black;
-}
-
-.form__field {
-  font-family: mainfont;
-  font-size: 0.9375rem !important;
-  letter-spacing: 0.125rem;
-  width: 100%;
-  border: 0;
-  /* border-bottom: 0.0625rem solid var(--appimage); */
-  outline: 0;
-  color: white;
-  padding: 0.4375rem 0;
-  background: transparent;
-  transition: border-color 0.2s;
 }
 
 .bi {
@@ -380,10 +397,12 @@ h6 {
   height: 1.25rem;
   filter: invert(100%);
 }
+
 .katex {
   font-size: 1.5625rem !important;
   display: flex;
 }
+
 #numberfact {
   font-family: mainfont;
   letter-spacing: 0.125rem;
@@ -689,6 +708,25 @@ input[type='number'] {
 .icon:hover{
   opacity: 0.8;
   font-size: 1.4em;
+}
+
+.fa-instagram:hover {
+  /* color: #bc2a8d; */
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  border-radius: 10%;
+}
+
+.fa-linkedin:hover {
+  color:#0077b5;
+}
+
+.fa-envelope:hover {
+  color: #d34836;
+}
+
+.fa-discord:hover {
+  color: #7289da;
 }
 
 @media (max-width:420px) {

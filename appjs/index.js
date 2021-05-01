@@ -159,6 +159,7 @@ function openit(id) {
         "#simpletrignocollapse",
         "#trigonovaluestable",
         "#trigonoiden",
+        "#trigonofun",
         "#factors",
         "#stats",
         "#math",
@@ -205,6 +206,7 @@ function openit(id) {
         "#hp",
         "#ppmfs",
         "#bool",
+        "#eirs",
         "#log_values",
         "#oops",
         "#log-collapse",
@@ -289,7 +291,7 @@ function openit(id) {
         "#mi",
 	    "#ip",
 	    "#prices",
-
+        "#centcal",
         "#cevtha",
 
         "#percal",

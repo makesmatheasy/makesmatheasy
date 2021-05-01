@@ -376,6 +376,24 @@
                         </tr>
                     </table>
                 </li>
+
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <a id="eir"
+                                   style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Effective Interest Rate</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Effective Interest Rate','#eirs','c','eirimgfav')"><img
+                                            id="eirimgfav" src="images/unfavourite.png"
+                                            style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+    
             <!--            operations on sets-->
 
 
@@ -1126,6 +1144,24 @@
                                 <span
                                         onclick="addtofavourite('Trigonometry Identities','#trigonoiden','c','trigoidenimgfav')"><img
                                         id="trigoidenimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="trigonofunbutton"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trigonometric
+                                Functions
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Trigonometry Functions','#trigonofun','c','trigofunimgfav')"><img
+                                        id="trigofunimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2276,12 +2312,32 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Properties of Circles','#propcircle','c','propcirclefav')"><img
                                         id="propcirclefav" src="images/unfavourite.png"
+
                                         style="height:1.5625rem;filter: none;"></span>
-                                    </td>
-                                </tr>
-                            </table>
-            
-                        </li>
+                        </td>
+                    </tr>
+                </table>
+
+            </li>     
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="centcalbut"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Triangle Calculator</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Triangle Calculator','#centcal','c','centcalfav')"><img
+                                            id="centcalfav" src="images/unfavourite.png"
+
+
+                                            style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                    </tr>
+                </table>
+
+            </li>
 
             <li>
                 <table class="table">
@@ -3983,30 +4039,7 @@
             <h4 class="text-center" id="line1"> </h4> <br>
 
             <h4 class="text-center" id="line2"> </h4> <br>
-            <h4>Centroid Calculator</h4>
-            <div class= "coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="y1st" size=5 value='' placeholder="y1">)
-                    <br>
-                    Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
-                        <br>
-                    Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
-                    <br><br>
-                <button type="button" class="btn btn-light" onclick=centsolve()>
-                        Find Centroid
-                </button><br>
-                </p>
-            </div>
-            <h4 id="apk" style="color: white;"></h4>
-	        <h4 class="text-center" id="line2"> </h4> <br>
-
-
-            <h4 class="text-center" id="line2"> </h4> <br>
-
-
+           
             <h3>Section Formula</h3><br>
             <div class="coll">
                 <p>
@@ -4032,101 +4065,7 @@
 
             <p  id="output"> </p> <br>
 
-            <h3>Circumcentre Calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="X1st" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="Y1st" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="X2st" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="Y2st" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="X3st" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="Y3st" size=5 value='' placeholder="y3">)
-                        <br><br>
-                    A = <input type="text" id="angleA" size=7 value='' placeholder="Angle A (in &deg;) ">     B =
-                <input type="text" id="angleB" size=7 value='' placeholder="Angle B (in &deg;)">     C= <input type="text" id="angleC" size=7 value='' placeholder="Angle C (in &deg;)">
-                <br><br>
-                <button type="button" class="btn btn-light" onclick=circumsolve()>
-                    Calculate
-                </button><br>
-                </p>
-            </div>
-            <h4 id="cir_output" style="color:white"></h4>
-            <h4 id="cirformula" style="color:white"></h4>
-         
-            <h3>Incentre Calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="Y1" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="X2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="Y2" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="X3" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="Y3" size=5 value='' placeholder="y3">)
-                        <br><br>
-                    a = <input type="text" id="ina" size=5 value='' placeholder="Side a">     b =
-                <input type="text" id="inb" size=5 value='' placeholder="Side b">     c= <input type="text" id="inc" size=5 value='' placeholder="Side c">
-                <br><br>
-                <button type="button" class="btn btn-light" onclick=incentersolve()>
-
-                    Calculate
-                </button><br>
-                </p>
-            </div>
-            <h4 id="in_output" style="color:white"></h4>
-            <h4 id="informula" style="color:white"></h4>
-
-            <h3>Excentre Calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
-                        <br><br>
-                    a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
-                <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
-                <br><br>
-                <button type="button" class="btn btn-light" onclick=excentersolve()>
-
-                    Calculate
-                </button><br>
-                </p>
-            </div>
-            <h4 id="ex_output1" style="color:white"></h4>
-            <h4 id="ex_output2" style="color:white"></h4>
-            <h4 id="ex_output3" style="color:white"></h4>
             
-
-            <h3>Area of Triangle</h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="y1s" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="y2s" size=5 value='' placeholder="y2">)
-                        <br><br>
-                    Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="y3s" size=5 value='' placeholder="y3">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=coordinatearea()>
-
-                    Calculate
-                </button><br>
-                </p>
-
-            </div>
-            <h4 id="areaoutput" style="color:white"></h4>
-            <h4 id="formula1" style="color:white"></h4>
-
             <h3>Collinear Points Checker</h3><br>
             <div class="coll">
                 <p>
@@ -4221,17 +4160,37 @@
                         <p>\[(a \,b\, c)\, = (a×b)⋅c\]</p>
                         <p>\[\begin{aligned} (\mathbf{a} \times \mathbf{b}) \cdot \mathbf{c} &=\left|\begin{array}{ll} a_{2} & a_{3} \\ b_{2} & b_{3} \end{array}\right| c_{1}-\left|\begin{array}{ll} a_{1} & a_{3} \\ b_{1} & b_{3} \end{array}\right| c_{2}+\left|\begin{array}{ll} a_{1} & a_{2} \\ b_{1} & b_{2} \end{array}\right| c_{3} \\ &=\left|\begin{array}{lll} c_{1} & c_{2} & c_{3} \\ a_{1} & a_{2} & a_{3} \\ b_{1} & b_{2} & b_{3} \end{array}\right| \end{aligned}\]</p>
                         <br><br>
-                        <h4>Vector Multiplication</h4>
+                        <h4>Cross Product</h4>
                         <br>
-                        <p>\[CROSS \, \, PRODUCT\]</p>
                         <p>\[The \,cross\, product\, of \,two\, vectors\, results \,in\, a\, vector\, quantity.\]</p><p>\[ It\, is \,represented\, by\, a \,cross\, sign \,between\, two\, vectors.\]</p>
 
                         <p>\[a x b = | a | | b | sin θ\]</p>
                         <br>
-                        <p>\[DOT \, \,PRODUCT\]</p>
+                        <h4 style="color: white;">Properties of Cross Product</h4>
+                        <br>
+                        <p>\[1)\space  \overrightarrow{a}\,\times\, \overrightarrow{b}\,=\,-\, \overrightarrow{b}\,\times\, \overrightarrow{a} \]</p>
+                        <p>\[2)\space  \overrightarrow{a}\,\times\, \overrightarrow{a}\,=\,0 \]</p>
+                        <p>\[3)\space  \overrightarrow{a}\,\times\,(\,\overrightarrow{b}\,+\,\overrightarrow{c}\,)\,=\, \overrightarrow{a}\,\times\, \overrightarrow{b}\,+\,\overrightarrow{a}\,\times\,\overrightarrow{c} \]</p>
+                        <p>\[4)\space  \hat{i}\,\times\, \hat{i}\,=\,  \hat{j}\,\times\,  \hat{j}\,=\,\hat{k}\,\times\,\hat{k}\,=\,0\,\space and \space\,\hat{i}\,\times\,\hat{j}\,=\,\hat{k}\,,\,\hat{j}\,\times\,\hat{k}\,=\,\hat{i}\,,\,\hat{k}\,\times\,\hat{i}\,=\,\hat{j} \]</p>
+                        <p>\[5)\space Two\,non {\text -} zero\,vectors\, \overrightarrow{a}\,and\, \overrightarrow{b}\,are\,collinear\,if\,and\,only\,if\,  \overrightarrow{a}\,\times\, \overrightarrow{b}\,=\,0 \]</p>
+                        <p>\[6)\space If\, \overrightarrow{a}\,=\,a_1\,\hat{i}\,+\,a_2\,\hat{j}\,+\,a_3\,\hat{k}\,and\,\overrightarrow{b}\,=\,b_1\,\hat{i}\,+\,b_2\,\hat{j}\,+\,b_3\,\hat{k}\,,\,then\\ \\ \overrightarrow{a}\,\times\, \overrightarrow{b}\,=\,\begin{vmatrix}
+                            \hat{i} & \hat{j} & \hat{k} \\
+                            a_1 & a_2 & a_3 \\
+                            b_1 & b_2 & b_3
+                            \end{vmatrix}\,=\,(\,a_2b_3\,-\,a_3b_2\,)\,\hat{i}\,+\,(\,a_3b_1\,-\,a_1b_3\,)\,\hat{j}\,+\,(\,a_1b_2\,-\,a_2b_1\,)\,\hat{k} \] </p>
+                        <br>
+                        <h4>DOT PRODUCT</h4>
                         <p>\[The\, dot \,product\, of \,two \,vectors \,always\, results\, in\, scalar\, quantity,\]</p><p>\[ i.e.\, it \,has \,only \,magnitude\, and \,no \,direction.\, It \,is\, represented\]</p><p>\[ by\, a\, dot (.)\, in \,between\, two \,vectors.\]</p>
                         <p>\[a . b = | a | | b | cos θ\]</p>
-                        <br><br>
+                        <br>
+                        <h4 style="color: white;">Properties of Dot Product</h4>
+                        <p>\[1)\space  \overrightarrow{a}\,.\, \overrightarrow{a}\,=\,|\,\overrightarrow{a}\,|\,|\,\overrightarrow{a}\,|\,cos\,0\,=\,|\,\overrightarrow{a}\,|^2\,=\,a^2 \]</p>
+                        <p>\[2)\space  \hat{i}\,.\, \hat{i}\,=\,\hat{j}\,.\, \hat{j}\,=\,\hat{k}\,.\, \hat{k}\,=\,1 \]</p>
+                        <p>\[3)\space  \overrightarrow{a}\,.\, \overrightarrow{b}\,=\, \overrightarrow{b}\,.\, \overrightarrow{a}\,(\,commutative\,) \]</p>
+                        <p>\[4)\space  \overrightarrow{a}\,.\,(\, \overrightarrow{b}\,+\,\overrightarrow{c}\,)\,=\, \overrightarrow{a}\,.\, \overrightarrow{b}\,+\, \overrightarrow{a}\,.\, \overrightarrow{c}\,(\,distributive\,) \]</p>
+                        <p>\[5)\space (\,l\,\overrightarrow{a}\,)\,.\,(\,m\,\overrightarrow{b}\,)\,=\,lm\,(\,\overrightarrow{a}\,.\,\overrightarrow{b}\,)\,,\,where\,l\,and\,m\,are\,scalars \]
+                        <p>\[6)\space If\, \overrightarrow{a}\,and\, \overrightarrow{b}\,are\,two\,non {\text -} zero\,vectors\,,\,then\, \overrightarrow{a}\,.\, \overrightarrow{b}\,=\,0 \]</p>
+                        <br>
                         <h4>Components of Vectors (Horizontal & Vertical)</h4>
                         <p>\[ Vector \,“a”\, can\, be\, broken \,down \,into \,two\, components\, i.e. \,a_x\, and\, a_y\]</p>
                         <p>\[The \,component \,a_x \,is\, called\, a \,“Horizontal\, component”\, whose \,value\, is\, a\, cos θ.\]</p>
@@ -5354,6 +5313,28 @@
             <p>The differential equation of form,</p>
             <p>\[(1-x^{2})\frac{d^{2}y}{dx^{2}}-x\frac{dy}{dx}+n^{2}y\space =\space 0\]</p>
             <p>is called Chebyshev's Differential Equation</p>
+            <br>
+            <h4>Frobenius Method</h4>
+            <br>
+            <p>Steps-</p>
+            <p>1. Assume y = a<sub>0</sub>x<sup>m</sup>+a<sub>1</sub>x<sup>m+1</sup>+...</p>
+            <p>2. Substitute from 1 for y,<sup>dy</sup>&frasl;<sub>dx</sub> and <sup>d<sup>2</sup>x</sup>&frasl;<sub>dx<sup>2</sup></sup></sub></p>
+            <p>3. Equate to 0 the coefficient of lowest power of x. This gives a qudratic eqn in m</p>
+            <p>4. Equate to 0 other powers of x to find a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>....</p>
+            <p>5. Substitute in eqn</p>
+            <br>
+            <p>Case 1 - If roots are distinct and dont differ by an integer</p>
+            <p>Let m<sub>1</sub>,m<sub>2</sub> be roots,then complete solution is</p>
+            <p>\[y\space =\space c_1(y)_{m_1} + c_2(y)_{m_2}\]</p>
+            <br>
+            <p>Case 2 - If roots are equal</p>
+            <p>\[y\space =\space c_1(y)_{m_1}+c_2(\frac{\delta y}{\delta x})_{m_1}\]</p>
+            <br>
+            <p>Case 3 - If roots are distinct , differ by integer and making a coefficient of y infinite</p>
+            <p>\[y\space =\space c_1(y)_{m_1} + c_2(\frac{\delta y}{\delta x})_{m_2}\]</p>
+            <br>
+            <p>Case 4 - If roots are distinct,differ by an integer and making one or more coefficients indeterminate</p>
+            <p>Let the roots be m<sub>1</sub>,m<sub>2</sub>. If one of the coefficients becomes indeterminate when m=m<sub>2</sub>, the complete solution is given by putting m=m<sub>2</sub> in y</p>
         </div>
         <div class="collapse" id="maxmin">
             <h2 style="text-align: center;">Maxima and Minima of Functions</h2>
@@ -5982,14 +5963,14 @@
             <h1>Polar representaion of complex number</h1>
             <div class="form-group" style="display:inline-block">
                 <label>Enter the real part : &nbsp; &nbsp; </label>
-                <input type="number" id="cpreal" class="form__field" placeholder="Real"
+                <input type="number" id="cprealcx" class="form__field" placeholder="Real"
                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                 <label> Enter the imaginary part : &nbsp; &nbsp;</label>
-                <input type="number" id="cpimg" class="form__field" placeholder="Imag"
+                <input type="number" id="cpimgcx" class="form__field" placeholder="Imag"
                     style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="polar()">
+                <button type="button" class="btn btn-light" onclick="polarcx()">
                     Find
                 </button>
             </div>
@@ -6135,7 +6116,27 @@
         <div class="coll" style="text-align: center;">
         <h5 id="vectorsub1" style="color: white; font-size: x-large;"></h5>
     </div>
-
+        <br><br>
+        <div class="text-center">
+            <h3>Dot Product Calculator</h3><br>
+        </div>
+        <div class="coll">
+            <p>
+                Vector X :   <input type="text" id="d1e" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="d2e" size=3 value='' placeholder="B"> j + <input type="text" id="d3e" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector Y :   <input type="text" id="e1d" size=3 value='' placeholder="A"> i +
+            <input type="text" id="e2d" size=3 value='' placeholder="B"> j + <input type="text" id="e3d" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectordot()>
+                Solve
+            </button><br>
+            </p>
+        </div><br>
+        <div class="coll" style="text-align: center;">
+        <h5 id="vectordot1" style="color: white; font-size: x-large;"></h5>
+    </div>
 </div>
 
 
@@ -6442,7 +6443,7 @@
             </div>
         </div>
         <!--        single matrix-->
-        <div class="collapse" id="singlematrixcollapse">
+        <div class="collapse" id="singlematrixcollapse" style="text-align: center;">
             <div class="form-group" style="display:inline-block">
                 <input type="number" id="srow1" class="form__field" placeholder="m"
                        style="width:4.375rem;display:inline;" oninput="checkfunctions()">
@@ -6487,26 +6488,26 @@
 
         </div>
         <!--        multiple matrix-->
-        <div class="collapse" id="multiplematrixcollapse">
+        <div class="collapse" id="multiplematrixcollapse" style="text-align: center;">
             <div class="form-group">
                 <div style="display:inline-block">
-                    <span style="color:var(--apppink);">Matrix 1</span><br>
+                    <span style="color:var(--apppink); margin-right: 3.125rem;">Matrix 1</span><br>
                     <input type="number" id="row1" class="form__field" placeholder="m"
                            style="width:4.375rem;display:inline;"
                            oninput="checkfunctionsmultiple()">
-                    <label>&times;</label>
+                    <label style="margin-right: 3.125rem;">&times;</label>
                     <input type="number" id="column1" class="form__field" placeholder="n"
-                           style="width:4.375rem;display:inline;"
+                           style="width:4.375rem;display:inline;margin-left: 0.3125rem;"
                            oninput="checkfunctionsmultiple()">
                 </div>
                 <div style="display:inline-block" style="color:var(--apppink);">
-                    <span style="color:var(--apppink);">Matrix 2</span><br>
+                    <span style="color:var(--apppink); margin-right: 3.125rem;">Matrix 2</span><br>
                     <input type="number" id="row2" class="form__field" placeholder="m"
-                           style="width:4.375rem;display:inline;"
+                           style="width:4.375rem;display:inline; margin-left: 0.625rem;"
                            oninput="checkfunctionsmultiple()">
-                    <label>&times;</label>
+                    <label style="margin-right: 3.125rem;">&times;</label>
                     <input type="number" id="column2" class="form__field" placeholder="n"
-                           style="width:4.375rem;display:inline"
+                           style="width:4.375rem;display:inline; margin-left: 0.3125rem;"
                            oninput="checkfunctionsmultiple()">
                 </div>
             </div>
@@ -6525,7 +6526,7 @@
             </div>
             <div class="form-group">
                 <div class="stopwrap">
-                    <table>
+                    <table class="center">
                         <td>
                             <div id='generatedmatrix1'></div>
                         </td>
@@ -8189,6 +8190,65 @@
             </table>
 
         </div>
+        <div class="collapse" id="trigonofun">
+        <h3 style="text-align: center;">Domain,Range,Period and Graph of Trigonometric Functions</h3>
+        <table class="table table-bordered table-dark">
+            <tbody>
+            <tr>
+                <th scope="col">\[Function\]</strong></th>
+                <th scope="col">\[Domain\]</strong></th>
+                <th scope="col"><p></p>\[Range \,and\,Period\,of\, a\]</p><p>\[ Trigonometric\, Function\]</p>
+                </th>
+                <th scope="col">\[Graphs\]</strong></th>
+            </tr>
+            <tr>
+                <th scope="row"><p>\[sin\,x\]</p></th>
+                <td>\[R\]</td>
+                <td><p>\[-1≤ y&nbsp;≤1\]</p><br>
+                <p>\[2π\]</p></td>
+                <td><img src="images/sin.png" class="img-fluid"></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>\[cos\,x\]</p></th>
+                <td>\[R\]</td>
+                <td><p>\[-1≤ y&nbsp;≤1\]</p><br>
+                <p>\[2π\]</p></td>
+                <td><img src="images/cos.png" class="img-fluid"></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>\[tan\,x\]</p></th>
+                <td>\[R\,-\,(\,2n+1\,)\,\frac{π}{2}\,,\,n\,\in\,I\]</td>
+                <td><p>\[– ∞ &lt; y &lt;&nbsp; ∞\]</p><br>
+                <p>\[π\]</p></td>
+                <td><img src="images/tan.png" class="img-fluid"></td>
+            </tr>
+            <tr>
+                <td scope="row"><p>\[cot\,x\]</p></td>
+                <td>\[R\,-\,nπ\,,\,n\,\in\,I\]</td>
+                 <td><p>\[– ∞ &lt; y &lt;&nbsp; ∞\]</p><br>
+                <p>\[π\]</p></td>
+                <td><img src="images/cot.png" class="img-fluid"></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>\[sec\,x\]</p></th>
+                <td>\[R\,-\,(\,2n+1\,)\,\frac{π}{2}\,,\,n\,\in\,I\]</td>
+                <td><p>\[– ∞ &lt;&nbsp;y ≤-1\, or\, 1≤y &lt; ∞\]</p><br>
+                    <p>\[2π\,,\,sec^2x\,,\,|\,secx\,|\,\in\,[\,1\,,\, ∞\,)\]
+                    </p></td>
+                <td><img src="images/sec.png" class="img-fluid"></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>\[cosec\,x\]</p></th>
+                <td>\[R\,-\,nπ\,,\,n\,\in\,I\]</td>
+                <td><p>\[– ∞ &lt;&nbsp;y ≤-1\, or\, 1≤y&lt; ∞\]</p><br>
+                    <p>\[2π\,,\,cosec^2x\,,\,|\,cosecx\,|\,\in\,[\,1\,,\, ∞\,)\]
+                    </p></td>
+                <td><img src="images/cosec.png" class="img-fluid"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
         <div class="collapse" id="trigsolcollapse">
             <div class="stopwrap">
                 <div class="coll">
@@ -9978,10 +10038,7 @@
                                            style="text-decoration:none;" href="#">Calculator (given sides and angle)</a></td>
                                 </tr>
                             </table>
-
                         </div>
-
-
                     </td>
                 </tr>
                 <tr>
@@ -10052,7 +10109,12 @@
                     <td><a data-toggle="modal" data-target="#octagon"
                            style="text-decoration:none;"
                            href="#">Octagon</a></td>
-                </tr>       
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#nonagon"
+                           style="text-decoration:none;"
+                           href="#">Nonagon</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#decagon"
                            style="text-decoration:none;"
@@ -10334,6 +10396,11 @@
                            href="#">Dodecahedron</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#rhododecahedron"
+                           style="text-decoration:none;"
+                           href="#">Rhombic Dodecahedron</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#icosahedron"
                            style="text-decoration:none;"
                            href="#">Icosahedron</a></td>
@@ -10388,8 +10455,244 @@
         </div>
 
         <!-- Date Calculator End-->
-        <!-------------------------------------------------------->
 
+
+<div class="collapse" id="centcal">
+    <h2 style="text-align: center;">Diffrent Centers of Triangel</h2><br>
+    <h3 style="text-align: center;">Using Edges</h3>
+    <div class="col-9">
+        <div class="col-9">
+            <label>
+                <h5>First Edge</h5>
+            </label>
+                <div class="row">
+                    <div class="col-3">
+                        <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;" >
+                    </div>
+                    <p>X + </p>
+                    <div class="col-3">
+                        <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: center;color: black; background-color: aliceblue;">
+                    </div>
+                    <p> Y = </p>
+                    <div class="col-3">
+                        <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                    </div>
+                </div>    
+            </div>
+
+
+        <div class="col-9">
+            <label>
+                <h5>Second Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: center;background-color: aliceblue; color: black;">
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;color: black;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;color: black;">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-9">
+            <label>
+                <h5>Third Edge</h5>
+            </label>
+            <div class="row">
+                <div class="col-3">
+                    <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                </div>
+                <p>X + </p>
+                <div class="col-3">
+                    <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                </div>
+                <p> Y = </p>
+                <div class="col-3">
+                    <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="centcal()">
+                    Centroid
+                </button>
+
+                <button type="button" class="btn btn-light" onclick="cencirtcal()">
+                    Circumcenter
+                </button>
+                <button type="button" class="btn btn-light" onclick="cenintcal()">
+                    InCenter
+                </button>
+                <button type="button" class="btn btn-light" onclick="cenextcal()">
+                    ExCenter
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label>
+                <h5 id="rcch"> </h5>
+            </label>
+            <p id="rcc"></p>
+        </div>
+    </div>
+    
+    <h3 style="text-align: center;">Using Vertex</h3>
+    <h4>Centroid Calculator</h4>
+    <div class= "coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="y1st" size=5 value='' placeholder="y1">)
+            <br>
+            Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
+                <br>
+            Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
+            <br><br>
+        <button type="button" class="btn btn-light" onclick=centsolve()>
+                Find Centroid
+        </button><br>
+        </p>
+    </div>
+    <h4 id="apk" style="color: white;"></h4>
+    <h4 class="text-center" id="line2"> </h4> <br>
+
+
+    <h4 class="text-center" id="line2"> </h4> <br>
+    <h3>Circumcentre Calculator </h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="X1st" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="Y1st" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="X2st" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="Y2st" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="X3st" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="Y3st" size=5 value='' placeholder="y3">)
+                <br><br>
+            A = <input type="text" id="angleA" size=7 value='' placeholder="Angle A (in &deg;) ">     B =
+        <input type="text" id="angleB" size=7 value='' placeholder="Angle B (in &deg;)">     C= <input type="text" id="angleC" size=7 value='' placeholder="Angle C (in &deg;)">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick=circumsolve()>
+            Calculate
+        </button><br>
+        </p>
+    </div>
+    <h4 id="cir_output" style="color:white"></h4>
+    <h4 id="cirformula" style="color:white"></h4>
+ 
+    <h3>Incentre Calculator </h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="Y1" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="X2" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="Y2" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="X3" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="Y3" size=5 value='' placeholder="y3">)
+                <br><br>
+            a = <input type="text" id="ina" size=5 value='' placeholder="Side a">     b =
+        <input type="text" id="inb" size=5 value='' placeholder="Side b">     c= <input type="text" id="inc" size=5 value='' placeholder="Side c">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick=incentersolve()>
+
+            Calculate
+        </button><br>
+        </p>
+    </div>
+    <h4 id="in_output" style="color:white"></h4>
+    <h4 id="informula" style="color:white"></h4>
+
+    <h3>Excentre Calculator </h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
+                <br><br>
+            a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
+        <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick=excentersolve()>
+
+            Calculate
+        </button><br>
+        </p>
+    </div>
+    <h4 id="ex_output1" style="color:white"></h4>
+    <h4 id="ex_output2" style="color:white"></h4>
+    <h4 id="ex_output3" style="color:white"></h4>
+    
+
+    <h2 style="text-align:center;">Area of Triangle</h3><br>
+    <div class="coll">
+        <p>
+            Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
+        <input type="text" id="y1s" size=5 value='' placeholder="y1">)
+            <br><br>
+            Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
+        <input type="text" id="y2s" size=5 value='' placeholder="y2">)
+                <br><br>
+            Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
+        <input type="text" id="y3s" size=5 value='' placeholder="y3">)
+                <br><br>
+        <button type="button" class="btn btn-light" onclick=coordinatearea()>
+
+            Calculate
+        </button><br>
+        </p>
+
+    </div>
+    <h4 id="areaoutput" style="color:white"></h4>
+    <h4 id="formula1" style="color:white"></h4>
+
+
+</div>
+        <!-------------------------------------------------------->
+        <div class="collapse" id="eirs">
+
+    
+            <h1 style="font-family:mathfont; text-align:center;">EFFECTIVE INTEREST RATE CALCULATOR </h1>
+            <p>&nbsp;</p>
+            <input type="number" name="air" class="form__field" id="air" width="5em" placeholder="Enter nominal annual interest rate">
+            <p>&nbsp;</p>
+            <input type="number" name="nop" class="form__field" id="nop" placeholder="Enter number of period">
+            <p>&nbsp;</p>
+            <input type="number" name="cprd" class="form__field" id="cprd" placeholder="Enter compounding per period">
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-light" onclick="eircal()">Calculate</button>
+            <p id="eirans"></p>
+            <p>&nbsp;</p>
+            <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
+                The effective annual interest rate is the real return on a savings account or any interest-paying investment when the effects of compounding over time are taken into account.
+                <br> It also reveals the real percentage rate owed in interest on a loan, a credit card, or any other debt.<br>
+        It is also called the effective interest rate, the effective rate, or the annual equivalent rate.
+               
+            </div>
+           
+        </div>
         <div class="collapse" id="setcal">
            
             <div class="row">
@@ -11833,24 +12136,29 @@
                             Octal
                         </option>
                         <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
                             Hexa Decimal
                         </option>
                     </select>
                     <br><br><h2>Input Of Minuend</h2>
                     <input type=" " id="subtract-all-input1" value="0"
-                           class="form__field"
-                           oninput="subBinDecHexOct()">
+                           class="form__field">
                     <br><br><h2>Input Of Subtrahend</h2>
                     <input type=" " id="subtract-all-input2" value="0"
-                    class="form__field"
-                    oninput="subBinDecHexOct()">
+                    class="form__field">
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <br><br><h2>Result Of Subtraction</h2>
+                    <button type="button" class="btn btn-light" onclick="subBinDecHexOct()">
+                        Find
+                    </button>
                 </div>
-                <label class="form__group" id="subtract-all-result">0</label>
+                <label class="form__group" id="subtract-all-result"></label>
+                <p class="" id="subtract-all-working"></p>
             </div>
         </div>
         <!-- End of Subtraction of any number system -->
@@ -11962,7 +12270,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5>First number</h5>
-                        <input type="number" value="0" class="form__field"
+                        <input type="text" value="0" class="form__field"
                                id="bitwise-first-number"
                                oninput="bitwiseCalc()">
                     </div>
@@ -11996,7 +12304,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5>Second number</h5>
-                        <input type="number" value="0" class="form__field"
+                        <input type="text" value="0" class="form__field"
                                id="bitwise-second-number"
                                oninput="bitwiseCalc()">
                     </div>
@@ -12653,11 +12961,12 @@
 
         <!--Bayes  Probability-->
         <div class="collapse" id="bayes-probabilitycollapse" style="text-align: center; margin: auto;">
-            <h1 style="color:rgb(73 50 177);">Bayes Theorem</h1>
+            <h1>Bayes' Theorem</h1>
             <p>Bayes’ theorem describes the probability of an event based on prior knowledge of the conditions that
                 might be relevant to the event.</p>
-            <h1 style="color:rgb(73 50 177);">
-                P(A|B)=P(B|A)*P(A)/P(B)
+            <h1 style="color:rgb(255 255 255);">
+                \[ P \, \left( \frac{A}{B}\right)\space = \space \frac{P \left( \frac{B}{A} \right) \centerdot P(A)}{P(B)} \]
+
             </h1>
             <p>P(A|B) = probability of A given B is true</p>
             <p>P(B|A) = probability of B given A is true</p>
@@ -14316,19 +14625,29 @@
                                     <div class="form-group">
                                         <img src="images/circle.png" class="img-fluid">
                                     </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Chord Length</h5>
+                                    <p class="text-center">\[2\sqrt{r^2-d^2}\]</p>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
                             <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter Radius"
+                            <input class="form__field" type="number" placeholder="Enter Radius in cm"
                                    id="inputradius"
+                                   oninput="solvecircle()">
+                            <input class="form__field" type="number" placeholder="Enter Distance in cm"
+                                   id="inputdistance"
                                    oninput="solvecircle()">
                             <p class="stopwrap" id="resultofareacir"
                                style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumferencec"
+                            <p class="stopwrap" id="resultofcircumferencec1"
+                               style="font-family:mathfont;"></p>
+                             <p class="stopwrap" id="resultofcircumferencec2"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofdiameterc"
-                               style="font-family:mathfont;"></p>-
+                               style="font-family:mathfont;"></p>
+                               <p class="stopwrap" id="resultofchord"
+                               style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
                     </div>
@@ -14995,6 +15314,56 @@
         </div>
     </div>
 
+    <div class="modal fade" id="nonagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nonagon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{9}{4} \space a^2 \space cot(\frac{180}{9} \degree) \]</p>
+                                <p class="text-center">a = side</p>
+                                <br>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 9 \times a \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/nonagon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                               placeholder="Enter side of nonagon(a)" id="inputsidenona"
+                               oninput="solvenona();">
+                        <p class="stopwrap" id="resultofnonaarea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofnonaperi"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--shapes end-->
 
@@ -15272,7 +15641,7 @@
 
                             </div>
                             <div class="col-6">
-                                <img src="images/cylinder.PNG" style="height:9.375rem"
+                                <img src="images/cylinder.png" style="height:9.375rem"
                                      class="img-fluid">
                                 <div class="dropdown-divider"></div>
                                 <h5 class="text-center">Total Surface area of Cylinder</h5>
@@ -15576,6 +15945,9 @@
                                     <div class="dropdown-divider"></div>
                                     <h5 class="text-center">Surface Area</h5>
                                     <p class="text-center">\[ 4 \pi r^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diameter of Sphere</h5>
+                                    <p class="text-center">\[d\,=\,2\,\times\,r\]</p>
 
                                 </div>
                                 <div class="col-6">
@@ -15587,11 +15959,13 @@
                             <div class="dropdown-divider"></div>
                             <!---FROM-->
                             <input class="form__field" type="number"
-                                   placeholder="Enter Radius" id="inputradiussph"
+                                   placeholder="Enter Radius in cm" id="inputradiussph"
                                    oninput="solvesphere();">
                             <p class="stopwrap" id="resultofvolsp"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultoftsasp"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofdimsp"
                                style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
@@ -16774,6 +17148,66 @@
             </div>
         </div>
 
+        <div class="modal fade" id="rhododecahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rhombic Dodecahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = 8 \sqrt{2} \space a^2 \]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{16}{9} \sqrt{3} \space a^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius</h5>
+                                    <p class="text-center">\[r_m = \frac{2}{3} \sqrt{2} \space a \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Insphere radius</h5>
+                                    <p class="text-center">\[r_i = \frac{a}{3} \sqrt{6} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/rhombic-dodecahedron.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length of rhombic dodecahedron(a)" id="inputrhododecaside"
+                                   oninput="solverhododeca();">
+                            <p class="stopwrap" id="resultofrhododecaarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhododecavol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhododecamr"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhododecair"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="icosahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -16857,7 +17291,15 @@
                             <input class ="form__field"type="text" id="hyph" placeholder="Enter h">
                             <br>
                             <button class = "btn btn-light"type="submit" onclick="hypf()">Find Volume</button>
-                            <h5 id="hypans"></h5>
+                            <br><br>
+                            
+                            <p class="stopwrap" id="hypans1"
+                            style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="hypans2"
+                            style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="hypans3"
+                            style="font-family:mathfont;"></p><br>
+
                         </div> 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -16867,7 +17309,7 @@
                     </div>
                 </div>
             </div>
-        </div>     
+        </div>
         
         <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -17031,8 +17473,7 @@
                                        id="inputcubobreadth" oninput="cubosolve()">
                                 <input class="form__field" type="number"
                                        placeholder="Enter Height (cm)"
-                                       id="inputcuboheight" oninput="cubosolve()">
-                                <br>
+                                       id="inputcuboheight" oninput="cubosolve()"><br>
                                 <p class="stopwrap" id="resultofvolcubo"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultoftsacubo"
@@ -17102,9 +17543,8 @@
             </div>
         </div>
 
-        <!--3-D shapes end-->
+    <!--3-D shapes end-->
     </div>
-    <!-------------------------------------------------------->
     <!--unit convert-->
     <div>
         <div class="modal fade" id="lengthcon" tabindex="-1" role="dialog"

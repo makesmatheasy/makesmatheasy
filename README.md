@@ -1,5 +1,14 @@
 <img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
+
+![contributors](https://img.shields.io/github/contributors/sairish2001/makesmatheasy)
+![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
+![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
+[![Maintenance](https://img.shields.io/maintenance/yes/2021?color=green&logo=github)](https://github.com/sairish2001/makesmatheasy)
+![GitHub forks](https://img.shields.io/github/forks/sairish2001/makesmatheasy?style=social) 
+![GitHub Repo stars](https://img.shields.io/github/stars/sairish2001/makesmatheasy?style=social)
+
+
 Started on **13 July,2020**
 
 Tagline - **Your answers just a click away**
@@ -19,7 +28,7 @@ Solves various Math Problems along with Steps
 
 
 <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap**" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
-<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
+
 
 
 Other Tech/Libraries
@@ -53,6 +62,7 @@ Other Tech/Libraries
   - Sets Formulas List
   - Interest(Simple,Compound)
   - Cost and Selling Prices
+  - Effective Interest Rate
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
@@ -63,8 +73,9 @@ Other Tech/Libraries
     - Subtraction
     - Multiplication
   - Properties of Matrices and Determinants
-  - Sum of Nterms of an Arithmetic Progession
-  - Sum of Nterms of an Geometric Progession
+  - Sum of Nterms of an Arithmetic Progression
+  - Sum of Nterms of a Geometric Progression
+  - Sum of Nterms of a Harmonic Progression
   - Cayley Hamilton Theorem of Diagonalization
 
 - Conic Section
@@ -114,6 +125,7 @@ Other Tech/Libraries
   - Finding sides of a right triangle (provided any two)
   - Trigonometric Values
   - Trigonometric Identities
+  - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
   - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
@@ -132,6 +144,8 @@ Other Tech/Libraries
   - Percentage Calculator
   - Set Calculator
   - Pythagorean Triplets
+  - Perfect Squares in a range
+  - Perfect Cubes in a range
   - Rank Calculator
   - Leap Year
   - Standard Deviation
@@ -183,7 +197,7 @@ Other Tech/Libraries
     - Speed
     - Data
     - Power
-      Improper to Mixed Fraction
+  - Improper to Mixed Fraction
   - SPI/CGPA Convertor
   - Ascending and Descending Order
   - Date
@@ -206,6 +220,7 @@ Other Tech/Libraries
   - Coordinate Geometry Formula and Theorem
   - Segment Area Calculator
   - Curve Tracing
+  - Ceva's and Thale's Theorem
   - Properties of Circles
   - Properties of Quadrilaterals
   - Arc Length Calculator
@@ -213,18 +228,22 @@ Other Tech/Libraries
     - Square
     - Rectangle
     - Rhombus
-    - Equilateral Triangle
-    - Isosceles Triangle
-    - Right-angled Triangle
-    - Scalene Triangle
+    - Triangles
+    	1. Equilateral Triangle
+    	2. Isosceles Triangle
+    	3. Isosceles Right Triangle
+    	4. Right-angled Triangle
+    	5. Scalene Triangle
     - Circle
+    - Sector of circle
     - Semi-Circle
+    - Annulus
     - Kite
     - Line
     - Trapezium
     - Ellipse
     - Parallelogram
-    - Tetrahedron
+    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -232,10 +251,24 @@ Other Tech/Libraries
     - Cone
     - Sphere
     - Hollow Cylinder
+    - Oblique Circular Cylinder
     - Hollow Sphere
     - Hemisphere
-    - Prism
     - Torus
+    - Conical Frustum
+    - Ellipsoid
+    - Prisms
+    - Pyramids
+    - Wedge
+    - Octahedron
+    - Tetrahedron
+    - Dodecahedron
+    - Rhombic Dodecahedron
+    - Icosahedron
+    - Parallelepiped
+    - Hyperboloid
+  - 3-D Geometry
+  - 3-D Geometry Calculator
   - Volume, CSA, TSA
   - Congruence and Similarity of Triangles
 
@@ -291,6 +324,7 @@ Other Tech/Libraries
   - Joint Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
+  - Poisson Distribution Calculator
   - Bayes Probability Theorem
 
 ---
