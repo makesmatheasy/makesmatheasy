@@ -17257,7 +17257,15 @@
                             <input class ="form__field"type="text" id="hyph" placeholder="Enter h">
                             <br>
                             <button class = "btn btn-light"type="submit" onclick="hypf()">Find Volume</button>
-                            <h5 id="hypans"></h5>
+                            <br><br>
+                            
+                            <p class="stopwrap" id="hypans1"
+                            style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="hypans2"
+                            style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="hypans3"
+                            style="font-family:mathfont;"></p><br>
+
                         </div> 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -17267,7 +17275,7 @@
                     </div>
                 </div>
             </div>
-        </div>     
+        </div>
         
         <div class="modal fade" id="parallelepiped" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -17431,8 +17439,7 @@
                                        id="inputcubobreadth" oninput="cubosolve()">
                                 <input class="form__field" type="number"
                                        placeholder="Enter Height (cm)"
-                                       id="inputcuboheight" oninput="cubosolve()">
-                                <br>
+                                       id="inputcuboheight" oninput="cubosolve()"><br>
                                 <p class="stopwrap" id="resultofvolcubo"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultoftsacubo"
@@ -17502,9 +17509,8 @@
             </div>
         </div>
 
-        <!--3-D shapes end-->
+    <!--3-D shapes end-->
     </div>
-    <!-------------------------------------------------------->
     <!--unit convert-->
     <div>
         <div class="modal fade" id="lengthcon" tabindex="-1" role="dialog"
