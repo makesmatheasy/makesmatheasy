@@ -2235,7 +2235,17 @@ function vectorsub(){
     var sub1 = (a-d);
     var sub2 = (b-e);
     var sub3 = (c-f);
-    document.getElementById("vectorsub1").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1) + ' i'  + ' + ' + (sub2) + ' j ' + ' + ' + (sub3) + ' k ';
+    document.getElementById("vectorsub1").style.display = "block";
+    document.getElementById("vsubi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1)  ;
+    if(sub2<0)
+    document.getElementById("vsubj").innerHTML =   (sub2)  ;
+    else
+    document.getElementById("vsubj").innerHTML =  '+' +  (sub2)  ;
+    if(sub3<0)
+    document.getElementById("vsubk").innerHTML = (sub3);
+    else
+    document.getElementById("vsubk").innerHTML =  '+' +  (sub3) ;
+   
 
 }
 function vectordot(){
