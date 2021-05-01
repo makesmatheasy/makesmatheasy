@@ -12085,19 +12085,21 @@
                     </select>
                     <br><br><h2>Input Of Minuend</h2>
                     <input type=" " id="subtract-all-input1" value="0"
-                           class="form__field"
-                           oninput="subBinDecHexOct()">
+                           class="form__field">
                     <br><br><h2>Input Of Subtrahend</h2>
                     <input type=" " id="subtract-all-input2" value="0"
-                    class="form__field"
-                    oninput="subBinDecHexOct()">
+                    class="form__field">
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <br><br><h2>Result Of Subtraction</h2>
+                    <button type="button" class="btn btn-light" onclick="subBinDecHexOct()">
+                        Find
+                    </button>
                 </div>
-                <label class="form__group" id="subtract-all-result">0</label>
+                <label class="form__group" id="subtract-all-result"></label>
+                <p class="" id="subtract-all-working"></p>
             </div>
         </div>
         <!-- End of Subtraction of any number system -->

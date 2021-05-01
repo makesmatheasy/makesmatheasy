@@ -7300,6 +7300,8 @@ function subBinDecHexOct(){
     var input1 = document.getElementById("subtract-all-input1").value;
     var input2 = document.getElementById("subtract-all-input2").value;
     let result = document.getElementById("subtract-all-result");
+    let work = document.getElementById("subtract-all-working");
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
 
     if(input1.length>input2.length){
         var p=input1.length-input2.length;
@@ -7323,19 +7325,36 @@ function subBinDecHexOct(){
         var ans = "";
 
         var twoco= calculateTwoComplement(input2);
+        print += "<h5>STEP 0 : Find 2's complement of Subtrahend</h5>"+input2+"->"+twoco;
         add = (parseInt(twoco,2)+parseInt(input1,2)).toString(2);
+        print += "<br><br><h5>STEP 1 : Add Minuend and 2's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + twoco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add+"</p>";
         if(add.length == input1.length){
             ans = calculateTwoComplement(add);
             result.innerHTML = "-" + ans;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Two's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans + "</span>";
         } else if (add.length > input1.length){
             ans = add.substring(1);
             result.innerHTML = ans;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add.substring(0,1) + "</span>" +ans+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans + "</span>";
         } else if (add.length < input1.length){
             var a1 = input1.length - add.length;
             a1 = Math.pow(10,a1);
-            ans = a1 + add;
-            ans = ans.substring(1);
+            add = a1 + add;
+            ans = add.substring(1);
             result.innerHTML = "-" + calculateTwoComplement(ans);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Two's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans + "</span>";
         }
         
     }else if(base === "Octal"){
@@ -7396,6 +7415,7 @@ function subBinDecHexOct(){
         }
 
     }
+    work.innerHTML = print;
 }
 
 //called this function while subtracting binary numbers.
