@@ -489,73 +489,19 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="APbtn"
+                            <a id="sumbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
-                                Nterms of an Arithmetic Progression</a>
+                                N terms of AP,GP & HP</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Nterms of an Arithmetic Progression','#sum_n_AP','c','APimgfav')"><img
-                                        id="APimgfav" src="images/unfavourite.png"
+                                <span onclick="addtofavourite('Sum of N terms of AP,GP & HP','#sum_n','c','Nsumimgfav')"><img
+                                        id="Nsumimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="HPbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
-                                Nth term of an Harmonic Progression</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Nterm of an HarmonicProgression','#hp','c','HPimgfav')"><img
-                                        id="HPimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <!--sum of n terms of an gp-->
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="GPbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
-                                Nterms of an Geometric Progression</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_GP','c','GPimgfav')"><img
-                                        id="GPimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <!--sum of n terms of an gp end-->
-
-            <!--sum of n terms of an HP starts-->
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="HPbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
-                                Nterms of an Harmonic Progression</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Nterms of an GeometricProgression','#sum_n_HP','c','HPimgfav')"><img
-                                        id="HPimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <!--sum of n terms of an HP ends-->
+            
 
 
             <div class="dropdown-divider"></div>
@@ -11027,13 +10973,13 @@
 
         </div>
 
-        <!--sum of nterms in A.P.-->
-        <div class="collapse" id="sum_n_AP">
+        <div class="collapse" id="sum_n">
             <br>
             <div class="text-center">
-                <h2><label>Sum of Nterms of an Arithmetic Progression</label></h2>
+                <h2><label>Sum of N terms of AP,GP and HP</label></h2><br><br>
+                <h2 class="d-flex justify-content-center">1) Sum of N terms of an Arithmetic Progression</h2>
             </div>
-            <br>
+            <!--sum of nterms in A.P.-->
             <br>
             <h4 class="d-flex justify-content-center">If first term, number of terms and common difference is given</h4><br>
             <form class="form-inline d-flex flex-column align-items-center">
@@ -11049,7 +10995,7 @@
                 <br>
                 <button type="button" class="btn btn-light"
                         onclick="sum_n_apsol('napterms','rapterms','r1val')">
-                    Solve
+                    Find
                 </button>
             </form>
             <div class="form-group">
@@ -11076,7 +11022,7 @@
                 <br>
                 <br>
                 <button type="button" class="btn btn-light" onclick=anotherap()>
-                    Solve
+                    Find
                 </button>
             </form>
             <br>
@@ -11094,13 +11040,76 @@
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <br><br>
                 <button type="button" class="btn btn-light" onclick=apsum()>
-                    Solve
+                    Find
                 </button>
             </form>
             <br>
-            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p>
+            <!-- sum of nterms in G.P.  -->
+            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p><br>
+            <br>
+            <h2 class="d-flex justify-content-center">2) Sum of N terms of a Geometric Progression</h2>
+            <div class="form-group d-flex flex-column align-items-center">
+                <input type="number" style="width: 15.625rem;" class="form__field"
+                       id="firstterm"
+                       placeholder="Enter first term"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="ratio"
+                       placeholder="Enter ratio between terms"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="number"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <button class="btn btn-light" onclick="gp()">Find</button>
+            </div>
+            <div class="form-group">
+                <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumGP_formula" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumgp"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
+            <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
+                1</h2>
+            <div class="form-group d-flex flex-column align-items-center">
+                <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
+                       placeholder="Enter first term"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="r"
+                       placeholder="Enter ratio between terms"/>
+                <br>
+                <button class="btn btn-light" onclick="igp()">Find</button>
+                <br>
+                <br> <br>
+                <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
+            </div>
+            <br>
+            <!-- sum of nterms in H.P.  -->
+            <h2 class="d-flex justify-content-center">3) Sum of N terms of a Harmonic Progression</h2>
+            <div class="form-group d-flex flex-column align-items-center">
+                <input type="number" style="width: 15.625rem;" class="form__field"
+                       id="firstTerm"
+                       placeholder="Enter first term"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
+                       placeholder="Enter difference between terms"/>
+                <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
+                       placeholder="Enter number of terms"/>
+                <br>
+                <button class="btn btn-light" onclick="hp()">Find</button>
+            </div>
+            <div class="form-group">
+                <p id="printHPseries" style="display:flex;font-family:mathfont;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+                <br>
+                <p id="sumhp"
+                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
+                   align="right"></p>
+            </div>
         </div>
-        <!--sum of nterms in A.P. ends-->
+
 
         <!--Cost and selling prices-->
         <div class="collapse" id="prices">
@@ -11169,75 +11178,7 @@
           </div>
           <!--End of Cost and selling price -->
 
-        <!-- sum of nterms in G.P.  -->
-        <div class="collapse" id="sum_n_GP">
-            <br>
-            <h2 class="d-flex justify-content-center">Sum of N terms of a Geometric Progression</h2>
-            <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field"
-                       id="firstterm"
-                       placeholder="Enter first term"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="ratio"
-                       placeholder="Enter ratio between terms"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="number"
-                       placeholder="Enter number of terms"/>
-                <br>
-                <button class="btn btn-outline-light" onclick="gp()">Find</button>
-            </div>
-            <div class="form-group">
-                <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-                <br>
-                <p id="sumGP_formula" style="display:flex;font-family:mathfont;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-                <br>
-                <p id="sumgp"
-                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
-                   align="right"></p>
-            </div>
-            <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
-                1</h2>
-            <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
-                       placeholder="Enter first term"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="r"
-                       placeholder="Enter ratio between terms"/>
-                <br>
-                <button class="btn btn-outline-light" onclick="igp()">Find</button>
-                <br>
-                <br> <br>
-                <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
-            </div>
-        </div>
-        <!-- sum of nterms in G.P. ends  -->
         
-        <!-- sum of nterms in H.P.  -->
-        <div class="collapse" id="sum_n_HP">
-            <br>
-            <h2 class="d-flex justify-content-center">Sum of N terms of a Harmonic Progression</h2>
-            <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field"
-                       id="firstTerm"
-                       placeholder="Enter first term"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
-                       placeholder="Enter difference between terms"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
-                       placeholder="Enter number of terms"/>
-                <br>
-                <button class="btn btn-outline-light" onclick="hp()">Find</button>
-            </div>
-            <div class="form-group">
-                <p id="printHPseries" style="display:flex;font-family:mathfont;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-                <br>
-                <p id="sumhp"
-                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
-                   align="right"></p>
-            </div>
-        </div>
         <!-- sum of nterms in H.P. ends -->
 
         <div class="collapse" id="mean">
