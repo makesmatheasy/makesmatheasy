@@ -185,39 +185,6 @@ function comOp(value) {
     }
 }
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  let explain="\\[Polar \\space Form \\space =r(cos(\\theta)+i\\space sin(\\theta))\\]";
-  explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
-  var result= document.getElementById("comp1result");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-      explain+="π" +y+"\\]";
-  }
-  
-  result.innerHTML = x;
-  explain+="\\[Polar \\space Form \\space ="+x+"\\]";
-  document.getElementById('comp1explain').innerHTML=explain;
-  renderMathInElement(document.getElementById("comp1explain"));
-}
 function euler()
 {
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";

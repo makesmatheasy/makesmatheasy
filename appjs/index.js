@@ -159,6 +159,7 @@ function openit(id) {
         "#simpletrignocollapse",
         "#trigonovaluestable",
         "#trigonoiden",
+        "#trigonofun",
         "#factors",
         "#stats",
         "#math",

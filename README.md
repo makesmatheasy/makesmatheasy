@@ -28,7 +28,7 @@ Solves various Math Problems along with Steps
 
 
 <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap**" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
-<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
+
 
 
 Other Tech/Libraries
@@ -228,18 +228,22 @@ Other Tech/Libraries
     - Square
     - Rectangle
     - Rhombus
-    - Equilateral Triangle
-    - Isosceles Triangle
-    - Right-angled Triangle
-    - Scalene Triangle
+    - Triangles
+    	1. Equilateral Triangle
+    	2. Isosceles Triangle
+    	3. Isosceles Right Triangle
+    	4. Right-angled Triangle
+    	5. Scalene Triangle
     - Circle
+    - Sector of circle
     - Semi-Circle
+    - Annulus
     - Kite
     - Line
     - Trapezium
     - Ellipse
     - Parallelogram
-    - Tetrahedron
+    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -259,6 +263,7 @@ Other Tech/Libraries
     - Octahedron
     - Tetrahedron
     - Dodecahedron
+    - Rhombic Dodecahedron
     - Icosahedron
     - Parallelepiped
     - Hyperboloid
