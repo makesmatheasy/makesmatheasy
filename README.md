@@ -116,6 +116,7 @@ Other Tech/Libraries
   - Laplace Transforms and Properties
   - Tangent and Normal
   - Vector Calculus
+  - Vector Calculator
   - Vector Algebra
   - Convergence and Divergence of Series
   - Fourier Series
