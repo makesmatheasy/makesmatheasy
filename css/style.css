@@ -1,12 +1,10 @@
 :root {
-  --apppink: rgb(255, 136, 231);
-  --appbg: #7868e6;
+  --apppink: #CAD5E2;
   --appblack: #232a36;
   --appimage: white;
 }
 :root .light-mode {
-  --appbg: #232a36;
-  --apppink: #7868e6;
+  --apppink: white;
   --appblack: #d3e0ea;
   --appimage: black;
 }
@@ -111,7 +109,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--appbg) !important;
+  color: var(--apppink) !important; 
 }
 
 h5, h6 {
