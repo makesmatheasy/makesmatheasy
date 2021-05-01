@@ -4263,6 +4263,48 @@ function torussolve() {
         tsaoutput.innerHTML = "";
     }
   }
+
+function solvendimsphere() {
+    var g = 7;
+var C = [0.99999999999980993, 676.5203681218851, -1259.1392167224028,771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+
+function gamma(z) {
+
+    if (z < 0.5) return Math.PI / (Math.sin(Math.PI * z) * gamma(1 - z));
+    else {
+        z -= 1;
+
+        var x = C[0];
+        for (var i = 1; i < g + 2; i++)
+        x += C[i] / (z + i);
+
+        var t = z + g + 0.5;
+        return Math.sqrt(2 * Math.PI) * Math.pow(t, (z + 0.5)) * Math.exp(-t) * x;
+    }
+}
+    var radius = document.getElementById("inputndimsphereradius").value;
+    var dim = document.getElementById("inputndimspheredimension").value;
+    var volOutputTitle = document.getElementById("resultofndimspherevol1");
+    var volOutputMain = document.getElementById("resultofndimspherevol2");
+    var areaOutputTitle = document.getElementById("resultofndimspherearea1");
+    var areaOutputMain = document.getElementById("resultofndimspherearea2");
+    var ansVol = (Math.pow(Math.PI, (dim/2))* Math.pow(radius, dim))/(gamma((dim/2)+1));
+    var ansArea = (2*Math.pow(Math.PI, (dim/2))* Math.pow(radius, dim-1))/(gamma(dim/2));
+    console.log("vol");
+    console.log(ansVol);
+    console.log("area");
+    console.log(ansArea);
+    if ((dim != "") && (radius != "")) {
+        volOutputTitle.innerHTML = "\\[Volume \\space of \\space Sphere \\space in \\space n \\space dimension \\space is \\]";
+        volOutputMain.innerHTML = "\\[\\frac{\\pi ^{\\frac{"+dim+"}{2}}"+radius+"^{"+dim+"}}{\\Gamma \\left ( \\frac{"+dim+"}{2}+1 \\right )} = "+ansVol.toFixed(3)+"\\]";
+        renderMathInElement(volOutputTitle);
+        renderMathInElement(volOutputMain);
+        areaOutputTitle.innerHTML = "\\[Surface \\space Area \\space of \\space Sphere \\space in \\space n \\space dimension \\space is \\]";
+        areaOutputMain.innerHTML = "\\[\\frac{2\\pi ^{\\frac{"+dim+"}{2}}"+radius+"^{"+dim+"-1}}{\\Gamma \\left ( \\frac{n}{2} \\right )} = "+ansArea.toFixed(3)+"\\]";
+        renderMathInElement(areaOutputTitle);
+        renderMathInElement(areaOutputMain);
+    }
+}
   
 //display inputted equation
 function dequation() {
