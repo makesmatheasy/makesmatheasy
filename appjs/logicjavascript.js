@@ -7056,12 +7056,10 @@ function bitwiseCalc() {
     const operation = document.getElementById("bitwise-operation").value;
     const numberSystem = document.getElementById("bitwise-numbers-system").value;
     let result;
-    let firstOperand = parseInt(
-        document.getElementById("bitwise-first-number").value
-    );
-    let secondOperand = parseInt(
-        document.getElementById("bitwise-second-number").value
-    );
+    let firstOperand =
+        document.getElementById("bitwise-first-number").value;
+    let secondOperand = 
+        document.getElementById("bitwise-second-number").value;
         var x = 0;
         var str = " invalid input  use only ";
         if (numberSystem === "Binary") {
