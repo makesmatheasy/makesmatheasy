@@ -381,6 +381,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#oop").click(function () {
+        openit("#oops");
+        closenav();
+        clearall();
+    })
     $("#vecbtn").click(function () {
         openit("#vec");
         closenav();

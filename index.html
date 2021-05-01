@@ -1350,6 +1350,26 @@
                 </table>
             </li>
 
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+
+                            <a id="oop"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Order of Operation</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Order of Operation ','#oops','c','oopimgfav')"><img
+                                        id="oopimgfav" src="images/unfavourite.png"
+
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
             <li>
                 <table class="table">
                     <tr>
@@ -11196,6 +11216,20 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="oops">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">ORDER OF OPERATION </h1>
+    <input type="text" name="sum_o" class="form__field" id="sum_o" width="5em" placeholder="Enter your sum here">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="oopcal()">Calculate</button>
+    <p id="oopans"></p>
+    
+   
+</div>
+
+
 <div class="collapse" id="hp">
 
     

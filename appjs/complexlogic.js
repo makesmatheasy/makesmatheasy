@@ -956,3 +956,20 @@ function ppcal()
     document.getElementById("ppans").innerHTML=ans;
 
 }
+
+function oopcal()
+{
+    var a=document.getElementById("sum_o");
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter the number";
+
+    }
+    else
+    {
+         var q=a;
+         ans=q;
+    }
+    document.getElementById("oopans").innerHTML=ans;
+}
