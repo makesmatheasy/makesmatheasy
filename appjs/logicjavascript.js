@@ -2807,7 +2807,50 @@ function rhombussolve() {
     }
 }
 
-//created function for Rhombus
+function cycquadcal(){
+    var a = document.getElementById("inputquadsidea").value;
+    var b = document.getElementById("inputquadsideb").value;
+    var c = document.getElementById("inputquadsidec").value;
+    var d = document.getElementById("inputquadsided").value;
+
+    var s = 0.5 * (parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d));
+    var area = math.sqrt( (s - parseInt(a) ) * (s- parseInt(b)) * (s- parseInt(c)) *(s- parseInt(d)) );
+    var peri = 2 * s;
+
+    console.log(s)
+    console.log(area)
+    console.log(peri)
+
+    if (a != "" && b != "" && c!="" && d!= "") {
+
+        document.getElementById("resultofquads").innerHTML = "\\[s = \\frac{ "+a+" + "+b+" + "+c+" + "+d+" }{2} \\space= "+s.toFixed(2)+"\\]";
+        renderMathInElement(document.getElementById("resultofquads"));
+
+        if (area >= 0){
+
+            document.getElementById("resultofquadarea1").innerHTML = "\\[Area \\space(S) \\space of \\space Cyclic  \\space Quadrilateral \\space is \\]";
+            document.getElementById("resultofquadarea2").innerHTML = "\\[\\sqrt{ ("+s.toFixed(1)+" - "+a+") ("+s.toFixed(1)+" - "+b+") ("+s.toFixed(1)+" - "+c+") ("+s.toFixed(1)+" - "+d+") }\\]";
+            document.getElementById("resultofquadarea3").innerHTML = "\\[ = " + area.toFixed(3) + "\\]";
+            renderMathInElement(document.getElementById("resultofquadarea1"));
+            renderMathInElement(document.getElementById("resultofquadarea2"));
+            renderMathInElement(document.getElementById("resultofquadarea3"));
+        } else{
+            document.getElementById("resultofquadarea1").innerHTML = "Enter proper side values";
+            document.getElementById("resultofquadarea2").innerHTML ="";
+            document.getElementById("resultofquadarea3").innerHTML ="";
+            document.getElementById("resultofquadperip1").innerHTML = "";
+            document.getElementById("resultofquadperip2").innerHTML = "";
+            return;
+        }
+
+        document.getElementById("resultofquadperip1").innerHTML = "\\[Perimeter \\space of \\space Cyclic  \\space Quadrilateral \\space is \\]";
+        document.getElementById("resultofquadperip2").innerHTML = "\\[2 \\times ("+a+"+"+b+"+"+c+"+"+d+") = " + peri.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofquadperip1"));
+        renderMathInElement(document.getElementById("resultofquadperip2"));
+    }
+}
+
+//created function for Kite
 function Kitesolve() {
     var p = document.getElementById("inputp").value;
     var q = document.getElementById("inputq").value;

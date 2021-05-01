@@ -10066,6 +10066,11 @@
                            href="#">Parallelogram</a></td>
                 </tr>    
                 <tr>
+                    <td><a data-toggle="modal" data-target="#cycquad"
+                           style="text-decoration:none;"
+                           href="#">Cyclic Quadrilateral</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#parallelogramcal"
                            style="text-decoration:none;"
                            href="#">Parallelogram Calculator</a></td>
@@ -14948,6 +14953,82 @@
    </div>
 </div>
 </div>
+
+
+<div class="modal fade" id="cycquad" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cyclic Quadrilateral</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Here,</p>
+                                    <p class="text-center">\[s = \frac{ a+b+c+d }{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = 2s = a + b + c + d\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (S)</h5>
+                                    <p class="text-center">\[S = \sqrt{ (s - a) (s - b) (s - c) (s - d) }\]</p>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/cycquad.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM--->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side (a)" id="inputquadsidea"
+                                   oninput="cycquadcal();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side (b)" id="inputquadsideb" 
+                                   oninput="cycquadcal();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side (c)" id="inputquadsidec"
+                                   oninput="cycquadcal();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side (d)" id="inputquadsided" 
+                                   oninput="cycquadcal();">
+
+                                    
+                                   <p class="stopwrap" id="resultofquads"
+                                    style="font-family:mathfont;"></p><br>
+                                   <p class="stopwrap" id="resultofquadarea1"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofquadarea2"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofquadarea3"
+                                    style="font-family:mathfont;"></p><br>
+                                    <p class="stopwrap" id="resultofquadperip1"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofquadperip2"
+                                    style="font-family:mathfont;"></p>
+                                
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <div class="modal fade" id="parallelogram" tabindex="-1" role="dialog"
              aria-hidden="true">
