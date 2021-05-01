@@ -10356,6 +10356,11 @@
                            href="#">Dodecahedron</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#rhododecahedron"
+                           style="text-decoration:none;"
+                           href="#">Rhombic Dodecahedron</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#icosahedron"
                            style="text-decoration:none;"
                            href="#">Icosahedron</a></td>
@@ -17076,6 +17081,66 @@
                             <p class="stopwrap" id="resultofdodecavol"
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofdodecatsa"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rhododecahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rhombic Dodecahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = 8 \sqrt{2} \space a^2 \]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{16}{9} \sqrt{3} \space a^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius</h5>
+                                    <p class="text-center">\[r_m = \frac{2}{3} \sqrt{2} \space a \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Insphere radius</h5>
+                                    <p class="text-center">\[r_i = \frac{a}{3} \sqrt{6} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/rhombic-dodecahedron.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length of rhombic dodecahedron(a)" id="inputrhododecaside"
+                                   oninput="solverhododeca();">
+                            <p class="stopwrap" id="resultofrhododecaarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhododecavol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhododecamr"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhododecair"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
