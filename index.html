@@ -214,6 +214,24 @@
             }
         }
 
+        @media screen and (max-width: 627px) {
+            .container {
+                margin-left:40px ;
+            }
+        }
+        @media screen and (max-width: 576px) {
+            .container {
+                margin-left:10px ;
+            }
+        }
+        @media screen and (max-width: 344px) {
+            .darkmode-toggle{
+                right: 15px !important;
+            }
+            .darkmode-layer--button{
+                right: 15px !important;
+            }
+        }
         .sidenav li > a {
             display: inline-block;
         }
@@ -255,7 +273,7 @@
             right: '32px', // default: '32px'
             left: 'unset', // default: 'unset'
             time: '0.5s', // default: '0.3s'
-            mixColor: '#6c5ce7', // default: '#fff'--> changable according to dev needs for light mode
+            mixColor: '#CAD5E2', // default: '#fff'--> changable according to dev needs for light mode
             backgroundColor: '#232A36',  // default: '#fff'
             buttonColorDark: '#100f2c',  // default: '#100f2c'-->for dark mode
             buttonColorLight: '#fff', // default: '#fff'
@@ -3125,8 +3143,8 @@
                   class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
                                                style="cursor:pointer; height: 40px;padding-left: 0.625rem;"></span>
         <span onclick="opencal()"><img src="icons/keys.svg"
-                                       style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;"></span>
-        <button class="collapse" id="fav-button" onclick="collapseit('favourite')"><span
+                                       style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;top:1px ;right:5px;"></span>
+        <button class="collapse" id="fav-button" onclick="collapseit('favourite')" style="top: 2px;"><span
                 style="font-size:135%;">&starf;</span> Favourite
         </button>
 
