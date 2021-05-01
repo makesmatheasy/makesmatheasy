@@ -885,6 +885,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#condprobabilitybtn").click(function(){
+        openit("#condprobability");
+        closenav();
+        clearall();
+    });
+
     $("#analyticalbtn").click(function(){
         openit("#analytical");
         closenav();

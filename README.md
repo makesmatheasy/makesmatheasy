@@ -321,6 +321,7 @@ Other Tech/Libraries
 
 - Probability
   - Empirical Probability
+  - Conditional Probability
   - Joint Probability
   - Probabilty Properties
   - Binomial Distribution Calculator

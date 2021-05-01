@@ -8147,6 +8147,24 @@ function computeprobability() {
     }
 }
 
+function condprobability(){
+    var netevent = parseFloat(document.getElementById('totevent').value);
+    var event = parseFloat(document.getElementById('event').value);
+    var result1 = (netevent/event).toFixed(3);
+    if (netevent < 0 || event < 0) {
+        document.getElementById("result1").innerHTML = "Outcomes can't be negative, Enter positive values only. ";
+        document.getElementById("result2").innerHTML = "";
+        document.getElementById("result3").innerHTML = "";
+
+    }
+    else {
+        document.getElementById("result1").innerHTML = "  (P(B | A)) = P(A ∩ B) &divide P(A) " ;
+        document.getElementById("result2").innerHTML = " (P(B | A)) =" + netevent + " &divide "  + event ;
+        document.getElementById("result3").innerHTML = " Probability of Event B given Event A (P(B | A)) = " + result1 ;
+    }
+
+}
+
 
 function computejointprobability() {
 
