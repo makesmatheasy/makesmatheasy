@@ -215,6 +215,7 @@ function openit(id) {
         "#bt-collapse1",
         "#pandc",
         "#stresscalc",
+        "#pairfacts",
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
