@@ -188,7 +188,7 @@ h5, h6 {
   display: block;
   z-index: 10;
   float: right;
-  padding: 0rem 0.625rem 0.125rem 0.625rem;
+  padding: 0rem 1.625rem 0.125rem 1.625rem;
   text-transform: uppercase;
   border-radius: 0.5rem;
   border-color: white;
@@ -406,7 +406,7 @@ h5, h6 {
 #numberfact {
   font-family: mainfont;
   letter-spacing: 0.125rem;
-  font-size: 1.5625rem;
+  font-size: 1.25rem;
   text-align: center !important;
   margin-bottom: auto;
   padding: 4vh;
