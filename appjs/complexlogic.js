@@ -947,3 +947,18 @@ function eircal()
     }
     document.getElementById("eirans").innerHTML=ans;
 }
+function errpercal()
+{
+    var a=document.getElementById("acval").value;
+    var b=document.getElementById("expval").value;
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values";
+    }
+    else{
+    var c= ((b-a)/a)*100;
+    ans="The error percentage is: "+c+"%";
+    }
+    document.getElementById("errperans").innerHTML=ans;
+
+}

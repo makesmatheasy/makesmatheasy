@@ -368,6 +368,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#errper").click(function () {
+        openit("#errpers");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
