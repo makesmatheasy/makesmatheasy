@@ -947,3 +947,88 @@ function eircal()
     }
     document.getElementById("eirans").innerHTML=ans;
 }
+function errpercal()
+{
+    var a=document.getElementById("acval").value;
+    var b=document.getElementById("expval").value;
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values";
+    }
+    else{
+    var c= ((b-a)/a)*100;
+    ans="The error percentage is: "+c+"%";
+    }
+    document.getElementById("errperans").innerHTML=ans;
+
+}
+
+function faccal()
+{
+    var a=document.getElementById("facno").value;
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter number to find factors";
+    }
+    else
+    {
+        var factors=[];
+        ans="Factors of "+a+ " are: ";
+        for(var k=1;k<=a;k++)
+        {
+            if(a%k==0)
+            {
+                factors.push(k);
+            }
+        }
+
+        for(var i=0;i<factors.length;i++)
+        {
+            ans+=factors[i]+"  ";
+        }
+
+
+    }
+    document.getElementById("facans").innerHTML=ans;
+}
+
+
+function facpaircal()
+{
+    a=document.getElementById("facno").value;    
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter number to find pair factors";
+    }
+    else
+    {
+        var number1 = 0;
+        var number2 = a;
+        var answers=[];
+        for (var i = 1; i < a; i++)
+        {
+            if (a % i == 0)
+            {
+            number1 = i;
+              number2 = a/ i;
+              if (number2 >= number1){
+              answers.push(number1);
+              answers.push(number2);
+              }
+              else
+              {
+                  break;
+              }
+           }
+        }
+
+        ans="Pair factors are: ";
+        for(var i =0;i<answers.length-1;i=i+2)
+        {
+            ans+="( "+answers[i]+","+answers[i+1]+" )  "
+        }
+    }
+ document.getElementById("facans").innerHTML=ans;
+}

@@ -8,7 +8,7 @@ function opencal() {
     }
 }
 function cleardiv(arrayofclearids) {
-    for (parameterarray of arrayofclearids) {
+    for (var parameterarray of arrayofclearids) {
         document.getElementById(parameterarray).innerHTML = "";
     }
 }
@@ -368,6 +368,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#errper").click(function () {
+        openit("#errpers");
+        closenav();
+        clearall();
+    })
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -385,6 +395,16 @@ $(document).ready(function () {
     });
     $("#vectorbtn").click(function () {
         openit("#vector");
+        closenav();
+        clearall();
+    })
+    $("#reppbtn").click(function () {
+        openit("#repp");
+        closenav();
+        clearall();
+    })
+    $("#oop").click(function () {
+        openit("#oops");
         closenav();
         clearall();
     })
@@ -624,6 +644,11 @@ $(document).ready(function () {
     });
     $("#curconbtn").click(function () {
         openit("#curconcal");
+        closenav();
+        clearall();
+    });
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
         closenav();
         clearall();
     });
@@ -871,6 +896,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#condprobabilitybtn").click(function(){
+        openit("#condprobability");
         closenav();
         clearall();
     });

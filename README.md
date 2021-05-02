@@ -245,6 +245,7 @@ Other Tech/Libraries
     - Ellipse
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
+    - Star Polygons: Pentagram
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -322,6 +323,7 @@ Other Tech/Libraries
 
 - Probability
   - Empirical Probability
+  - Conditional Probability
   - Joint Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
