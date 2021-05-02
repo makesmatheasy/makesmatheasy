@@ -30,7 +30,6 @@ if((typeof module) !== 'undefined' && typeof nerdamer === 'undefined') {
         evaluate = core.Utils.evaluate,
         N = core.groups. N,
         S = core.groups.S,
-        FN = core.groups.FN,
         PL = core.groups.PL,
         CP = core.groups.CP,
         CB = core.groups.CB,
