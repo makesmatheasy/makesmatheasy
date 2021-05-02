@@ -2174,6 +2174,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="suppang"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Supplementary Angle 
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('supplementary angle calculator','#suppangs','c','suppangfav')"><img
+                                        id="suppangimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="ssst"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;"> SSS Triangle's Angle Calculator
                             </a>
@@ -11537,6 +11554,29 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<div class="collapse" id="suppangs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Supplementary Angle 
+        Calculator </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="ang" class="form__field" id="ang" width="5em" placeholder="Enter the angle whose supplementary is to be calculated">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="suppangcal()">Calculate</button>
+    <p id="suppangans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <h1 style="font-family:mathfont; text-align:center;"> Verify if two angles are supplementary </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="ang1" class="form__field" id="ang1" width="5em" placeholder="Enter first angle">
+    <p>&nbsp;</p>
+    <input type="number" name="ang2" class="form__field" id="ang2" width="5em" placeholder="Enter second angle">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="suppangvercal()">VERIFY</button>
+    <p id="suppangverans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+</div>
+
+
+
 <div class="collapse" id="errpers">
 
     

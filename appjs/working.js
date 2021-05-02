@@ -373,6 +373,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#suppang").click(function () {
+        openit("#suppangs");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
