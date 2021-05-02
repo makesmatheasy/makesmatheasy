@@ -294,7 +294,7 @@ function openit(id) {
 	    "#prices",
         "#centcal",
         "#cevtha",
-
+        "#sum_n",
         "#percal",
         "#lyear",
         "#analytical",

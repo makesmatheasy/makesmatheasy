@@ -637,6 +637,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
+        closenav();
+        clearall();
+    });
      // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
