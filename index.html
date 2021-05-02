@@ -10461,6 +10461,11 @@
                            style="text-decoration:none;"
                            href="#">Hyperboloid</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#ndimsphere"
+                           style="text-decoration:none;"
+                           href="#">N-dimension Sphere</a></td>
+                </tr>
             </table>
         </div>
 
@@ -17728,6 +17733,70 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="ndimsphere" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">N-dimension Sphere</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Volume</h4>
+                                    <br>
+                                    <p class="text-center">\[V=\frac{\pi ^{\frac{n}{2}}r^{n}}{\Gamma \left ( \frac{n}{2}+1 \right )}\]</p>
+                                    <p class="text-center">r = Radius</p>
+                                    <p class="text-center">n = Number of dimensions</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Surface area</h4>
+                                    <br>
+                                    <p class="text-center">\[S=\frac{2\pi ^{\frac{n}{2}}r^{n-1}}{\Gamma \left ( \frac{n}{2} \right )}\]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/ndimsphere.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter dimensions(n); n=1,2,3,..." id="inputndimspheredimension"
+                                   oninput="solvendimsphere()">   
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius(r)" id="inputndimsphereradius"
+                                   oninput="solvendimsphere()">
+                            <p class="stopwrap" id="resultofndimspherevol1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofndimspherevol2"
+                               style="font-family:mathfont;"></p>
+                            <br>
+                            <br>
+                            <p class="stopwrap" id="resultofndimspherearea1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofndimspherearea2"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  
 
     <!--3-D shapes end-->
     </div>
