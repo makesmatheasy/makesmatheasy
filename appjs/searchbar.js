@@ -443,24 +443,6 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CAYLEY HAMILTON THEOREM AND DIAGONALIZATION"){
                         document.getElementById('cay').click();
                     } 
-                    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION") {
-                        $("#sum_n_AP").slideToggle();    
-                    }
-                    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION"){
-                        document.getElementById('sum_n_AP').click();
-                    } 
-                    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION") {
-                        $("#sum_n_GP").slideToggle();    
-                    }
-                    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION"){
-                        document.getElementById('sum_n_GP').click();
-                    } 
-                    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION") {
-                        $("#sum_n_HP").slideToggle();    
-                    }
-                    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION"){
-                        document.getElementById('sum_n_HP').click();
-                    } 
                     else if (inp.value.toUpperCase() == "INTEGRATION FORMULAE") {
                         $("#integration-idencollapse").slideToggle();    
                     }
@@ -539,18 +521,27 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "PRIME NUMBERS"){
                         document.getElementById('prime').click();
                     } 
+                    else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
+                        $("#sum_n").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
+                        document.getElementById('sum_n').click();
+                    } 
+
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         $("#parabolacollapse").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "PARABOLA"){
                         document.getElementById('parabolacollapse').click();
                     }
+
                     else if (inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM") {
                         $("#clr").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM"){
                         document.getElementById('clr').click();
                     }
+
                     else if (inp.value.toUpperCase() == "REPRESENTATION BY POWER SERIES") {
                         $("#repp").slideToggle();    
                     }
@@ -741,7 +732,13 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Strain Calculator","Stress Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         "Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
-                        "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph"];
+                        "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph",
+                      
+
+                        "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
+                        "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
+                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
+
                       
                         
 
@@ -879,6 +876,12 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "3-D GEOMETRY CALCULATOR") {
         $("#3dgeocalc").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
+        document.getElementById('sum_n').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
+        $("#sum_n").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "P/B/H TRIGO"){
         document.getElementById('simpletrignocollapse').click(); 
     }
@@ -971,24 +974,6 @@ function handleclick(value) {
     }
     else if(inp.value.toUpperCase() == "CAYLEY HAMILTON THEOREM AND DIAGONALIZATION"){
         document.getElementById('cay').click(); 
-    }
-    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION") {
-        $("#sum_n_AP").slideToggle(); 
-    }
-    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN ARITHMETIC PROGRESSION"){
-        document.getElementById('sum_n_AP').click(); 
-    }
-    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION") {
-        $("#sum_n_GP").slideToggle(); 
-    }
-    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN GEOMETRIC PROGRESSION"){
-        document.getElementById('sum_n_GP').click(); 
-    }
-    else if (inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION") {
-        $("#sum_n_HP").slideToggle(); 
-    }
-    else if(inp.value.toUpperCase() == "SUM OF NTERMS OF AN HARMONIC PROGRESSION"){
-        document.getElementById('sum_n_HP').click(); 
     }
     else if (inp.value.toUpperCase() == "INTEGRATION FORMULAE") {
         $("#integration-idencollapse").slideToggle(); 
@@ -1089,12 +1074,14 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "DATE") {
         $("#straincalc").slideToggle(); 
     }
+
     else if(inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM"){
         document.getElementById('clr').click(); 
     }
     else if (inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM") {
         $("#clr").slideToggle(); 
     }
+
     else if(inp.value.toUpperCase() == "REPRESENTATION BY POWER SERIES"){
         document.getElementById('repp').click(); 
     }

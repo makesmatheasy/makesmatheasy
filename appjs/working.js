@@ -8,7 +8,7 @@ function opencal() {
     }
 }
 function cleardiv(arrayofclearids) {
-    for (parameterarray of arrayofclearids) {
+    for (var parameterarray of arrayofclearids) {
         document.getElementById(parameterarray).innerHTML = "";
     }
 }
@@ -373,6 +373,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -393,6 +398,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
     $("#clrbtn").click(function () {
         openit("#clr");
         closenav();
@@ -647,6 +653,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
+        closenav();
+        clearall();
+    });
      // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
@@ -891,6 +902,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#condprobabilitybtn").click(function(){
+        openit("#condprobability");
         closenav();
         clearall();
     });
