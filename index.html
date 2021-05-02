@@ -2970,6 +2970,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="condprobabilitybtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Conditional
+                                Probability</a></td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Conditional Probability','#condprobability','c','condprobabilityfav')"><img
+                                     id="condprobabilityfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="jointprobabilitycollapsebtn"
                                style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint
                                 Probability</a>
@@ -12958,6 +12974,40 @@
         </div>
 
         <!--End of Simple Probability-->
+        <!-- Conditional Probability-->
+        <div class="collapse" id="condprobability" style="text-align: center;">
+            <h1 style="text-align: center;">Conditional Probability</h1><br><br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <h5>Probability of Event A and Event B (P(A ∩ B))</h5>
+                        <input type="number" value="0" class="form__field" id="totevent">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <h5>Probability of Event A (P(A))</h5>
+                        <input type="number" value="0" class="form__field" id="event">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="condprobability()">
+                    Solve
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="result1"></p>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="result2"></p>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="result3"></p>
+            </div>
+        </div>
+
 
         <!--Joint  Probability-->
         <div class="collapse" id="joint-probabilitycollapse">

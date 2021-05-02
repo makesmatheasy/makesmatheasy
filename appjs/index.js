@@ -275,6 +275,7 @@ function openit(id) {
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#condprobability",
         "#prism",
         "#pentprism",
         "#pyramid",
