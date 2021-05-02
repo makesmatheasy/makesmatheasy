@@ -393,6 +393,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#igcbtn").click(function () {
+        openit("#igc");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();

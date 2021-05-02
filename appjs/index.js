@@ -285,6 +285,7 @@ function openit(id) {
         "#octahedron",
         "#repp",
         "#mtm",
+        "#igc",
         '#dodecahedron',
         "#icosahedron",
         "#anglecon",
