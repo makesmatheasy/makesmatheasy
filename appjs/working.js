@@ -398,6 +398,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#mtmbtn").click(function () {
+        openit("#mtm");
+        closenav();
+        clearall();
+    })
     $("#reppbtn").click(function () {
         openit("#repp");
         closenav();
