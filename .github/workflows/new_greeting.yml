@@ -1,0 +1,36 @@
+name: Greetings for All
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened,closed]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create comment for issue
+      if: github.event_name =='issues' 
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{tojson(github.event.issue.number)}}
+        body: |
+            Hi 😄, @${{ github.actor }} thanks for creating your first issue at makemathseasy, do read and follow the [Code of Conduct](https://github.com/sairish2001/makesmatheasy/blob/main/CODE_OF_CONDUCT.md) and the [Contribution Guidelines](https://github.com/sairish2001/makesmatheasy/blob/main/CONTRIBUTING.md) while contributing.
+    - name: Create comment for PR
+      if: github.event_name == 'pull_request_target'&& github.event.action == 'opened'
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{tojson(github.event.number)}}
+        body: |
+            @${{ github.actor }} Thank you for Opening  pull request. We will soon be getting back to you. Your patience will be greatly appreciated!Thanks! 🥳.
+    - name: Create comment for Merging PR
+      if: github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged == true
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{tojson(github.event.number)}}
+        body: |
+            Yaay, congratulations @${{ github.event.pull_request.user.login }} on getting your pull request merged! 🥳 🎉.
+Thanks for the contribution! 😇
+PS Don't hesitate to look at other issues and create more pull requests!.    
+
