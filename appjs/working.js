@@ -637,6 +637,13 @@ $(document).ready(function () {
         clearall();
     });
 
+    // armstrong
+    $("#armstrongbtn").click(function () {
+        openit("#armstrong");
+        closenav();
+        clearall();
+    });
+
     $("#powsbtn").click(function () {
         openit("#pows");
         closenav();

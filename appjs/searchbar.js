@@ -521,6 +521,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "PRIME NUMBERS"){
                         document.getElementById('prime').click();
                     } 
+                    else if (inp.value.toUpperCase() == "ARMSTRONG NUMBERS") {
+                        $("#armstrong").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ARMSTRONG NUMBERS"){
+                        document.getElementById('armstrong').click();
+                    } 
 
                     else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
                         $("#sum_n").slideToggle();    
@@ -728,7 +734,7 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
 
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
-                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
+                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Armstrong Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
                       
                         
 
@@ -1036,6 +1042,12 @@ function handleclick(value) {
     }
     else if(inp.value.toUpperCase() == "PRIME NUMBERS"){
         document.getElementById('prime').click(); 
+    }  
+    else if (inp.value.toUpperCase() == "ARMSTRONG NUMBERS") {
+        $("#armstrong").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ARMSTRONG NUMBERS"){
+        document.getElementById('armstrong').click(); 
     }  
     else if (inp.value.toUpperCase() == "MEAN MEDIAN MODE") {
         $("#Meanit").slideToggle(); 

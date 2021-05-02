@@ -1928,6 +1928,24 @@
                     </tr>
                 </table>
             </li>
+            
+            <!-- Armstrong Checker and armstrong number till n -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="armstrongbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Armstrong
+                                Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Armstrong Numbers','#armstrong','c','armstrongimgfav')"><img
+                                        id="armstrongimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <div class="dropdown-divider"></div>
         </div>
@@ -9447,6 +9465,52 @@
 
             </div>
             <!--  Primarity test and prime till n cal end -->
+        </div>
+        
+        <!-- armstrong test and armstrong till n cal -->
+        <br>
+        <div class="collapse" id="armstrong">
+            <form class="form-group">
+                <div class="text-center">
+                    <h2><label>Armstrong Test</label></h2>
+                </div>
+                <input type="number" id="isarmstrong" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="check_armstrong('isarmstrong')">
+                    Check
+                </button>
+            </form>
+            <br>
+            <div class="form-group">
+                <p id="isarmstrongsol" style="display:flex;font-family:mathfont;;width:auto;"
+                   class="stopwrap"
+                   align="right"></p>
+            </div>
+
+            <div class="dropdown-divider"></div>
+            <div class="form-group">
+                <div class="text-center">
+                    <h2><label>Armstrongs till entered number</label></h2>
+                </div>
+                <input type="number" id="armstrongtill" placeholder="Enter a Number"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+                <button type="button" class="btn btn-light"
+                        onclick="armstrong_till_num('armstrongtill')">
+                    Find
+                </button>
+                </form>
+                <br>
+                <div class="form-group">
+                    <p id="armstrongtillsol"
+                       style="display:flex;font-family:mathfont;;width:auto;"
+                       class="stopwrap"
+                       align="right"></p>
+                </div>
+
+            </div>
+
+            <!--  armstrong test and armstrong till n cal end -->
         </div>
 
 

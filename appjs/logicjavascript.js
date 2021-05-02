@@ -6754,6 +6754,73 @@ function prime_till_num(primetill){
 }
 //end
 
+// armstrong
+function isArmstrong(number) {
+    // program to check an Armstrong number of n digits
+
+    // take an input
+    const numberOfDigits = number.toString().length;
+    let sum = 0;
+
+    // create a temporary variable
+    let temp = number;
+
+    while (temp > 0) {
+
+        let remainder = temp % 10;
+
+        sum += remainder ** numberOfDigits;
+
+        // removing last digit from the number
+        temp = parseInt(temp / 10); // convert float into integer
+    }
+
+    if (sum == number) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function check_armstrong(isarmstrong) {
+    var num = document.getElementById(isarmstrong).value;
+    var num1 = parseInt(num);
+    var ans = document.getElementById("isarmstrongsol");
+    var flag = true;
+    if (!isNaN(num1)) {
+        if(num1>=0) {
+            ans.innerHTML = num1;
+            if (isArmstrong(num1)) {
+                ans.innerHTML += " is an Armstrong Number";
+            } else {
+                ans.innerHTML += " is not an Armstrong Number";
+            }
+        } else {
+            ans.innerHTML = "Negative Numbers are not accepted. Enter positive numbers to check for Armstrong Number."
+        }
+    } else
+        ans.innerHTML = "Enter an integer!"
+}
+
+function armstrong_till_num(armstrongtill){
+    var b=document.getElementById('armstrongtill').value;
+    b = parseInt(b);
+    if (isNaN(b) || b <= 1) {
+        document.getElementById("armstrongtillsol").innerHTML = "Enter positive integer greater than 1.";
+    } else {
+        var w="";
+        for(var f=1;f<=b;f++){
+            if (isArmstrong(f)) {
+                w = w + f + ", ";
+            }
+        }
+        document.getElementById("armstrongtillsol").innerHTML=w.slice(0, w.length - 2);
+    }   
+}
+
+// end
+
 function gp() {
     var a = document.getElementById("firstterm").value
     var r = document.getElementById("ratio").value

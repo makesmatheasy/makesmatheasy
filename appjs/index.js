@@ -239,6 +239,7 @@ function openit(id) {
         "#hyperbolacollapse",
         "#datecal",
         "#prime",
+        "#armstrong",
         "#sum_n_AP",
         "#sum_n_GP",
         "#sum_n_HP",

@@ -180,6 +180,9 @@ Other Tech/Libraries
   - Prime Numbers
     - Primality Test
     - Primes till entered number
+  - Armstrong Numbers
+    - Armstrong Test
+    - Armstrongs till entered number
 - Basic Convertors
   - Currency Convertor
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
