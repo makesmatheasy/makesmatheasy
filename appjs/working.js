@@ -378,6 +378,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#zscore").click(function () {
+        openit("#zscores");
+        closenav();
+        clearall();
+    })
+
     $("#ipbtn").click(function () {
         openit("#ip");
         closenav();

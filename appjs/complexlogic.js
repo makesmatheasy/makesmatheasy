@@ -951,6 +951,7 @@ function errpercal()
 {
     var a=document.getElementById("acval").value;
     var b=document.getElementById("expval").value;
+    var ans="";
     if(a==""||b=="")
     {
         ans="Please enter all the values";
@@ -960,5 +961,24 @@ function errpercal()
     ans="The error percentage is: "+c+"%";
     }
     document.getElementById("errperans").innerHTML=ans;
+
+}
+
+function zscorecal()
+{ 
+    var a=document.getElementById("rawscore").value;
+    var b=document.getElementById("ppmean").value;
+    var c=document.getElementById("stdtn").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+              var z= (a-b)/c;
+              ans="The calculated Z Score is: "+z;
+    }
+    document.getElementById("zscoreans").innerHTML=ans;
 
 }

@@ -207,6 +207,7 @@ function openit(id) {
         "#ppmfs",
         "#bool",
         "#eirs",
+        "#zscores",
         "#errpers",
         "#log_values",
         "#oops",
