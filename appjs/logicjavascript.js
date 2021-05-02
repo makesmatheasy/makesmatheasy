@@ -7600,19 +7600,36 @@ function subBinDecHexOct(){
         var add1 = "";
         var ans1 = "";
         var eigco= calculateEightComplement(input2);
+        print += "<h5>STEP 0 : Find 8's complement of Subtrahend</h5>"+input2+"->"+eigco;
         add1 = (parseInt(eigco,8)+parseInt(input1,8)).toString(8);
+        print += "<br><br><h5>STEP 1 : Add Minuend and 8's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + eigco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add1+"</p>";
         if(add1.length == input1.length){
             ans1 = calculateEightComplement(add1);
             result.innerHTML = "-" + ans1;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add1+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Eight's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans1 + "</span>";
         } else if (add1.length > input1.length){
             ans1 = add1.substring(1);
             result.innerHTML = ans1;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add1.substring(0,1) + "</span>" +ans1+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans1 + "</span>";
         } else if (add1.length < input1.length){
             var a2 = input1.length - add1.length;
             a2 = Math.pow(10,a2);
             ans1 = a2 + add1;
             ans1 = ans1.substring(1);
             result.innerHTML = "-" + calculateEightComplement(ans1);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add1+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Eight's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans1 + "</span>";
         }
         
     }else if(base === "Hexa Decimal"){
