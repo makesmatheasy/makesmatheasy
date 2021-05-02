@@ -3161,6 +3161,24 @@ function solvesemicircle() {
     renderMathInElement(document.getElementById("resultofcircumsemi"));
     renderMathInElement(document.getElementById("resultofdiasemi"));
 }
+
+function solvecirclecal(){
+
+    let area = document.getElementById("circlearea").value;
+    let r = math.sqrt(area / math.pi);
+    let R = 2 * r;    
+    let circum = math.pi * R;
+    console.log(r)
+    console.log(R)
+    console.log(circum)
+    document.getElementById("resultofradcircal").innerHTML = "\\[Radius \\space of \\space Circle = \\sqrt{\\frac{"+area+"}{\\pi}}\\ = " + r.toFixed(3) + "\\]";
+    document.getElementById("resultofcircumcirccal").innerHTML = "\\[Circumference = \\pi \\times 2 \\times "+r.toFixed(2)+" \\ = " + circum.toFixed(3) + "\\]";
+    document.getElementById("resultofdiacircal").innerHTML = "\\[Diameter\\space of \\space Circle = " +R.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("resultofradcircal"));
+    renderMathInElement(document.getElementById("resultofcircumcirccal"));
+    renderMathInElement(document.getElementById("resultofdiacircal"));
+}
+
 function solvepent(){
     let side = document.getElementById("inputsidepent").value;
     let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
