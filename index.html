@@ -1357,6 +1357,21 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="pairfact"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Factorization</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Factorization','#pairfacts','c','pfcimgfav')"><img
+                                        id="pfcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -11532,6 +11547,20 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<div class="collapse" id="pairfacts">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">FACTORIZATION CALCULATOR </h1>
+    <input type="number" name="facno" class="form__field" id="facno" placeholder="Enter the number">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="facpaircal()">Factor Pairs</button>
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="faccal()">Factors</button>
+    
+    
+    <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+    
+</div>
 <div class="collapse" id="errpers">
 
     

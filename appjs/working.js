@@ -373,6 +373,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
