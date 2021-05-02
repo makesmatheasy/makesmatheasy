@@ -962,3 +962,23 @@ function errpercal()
     document.getElementById("errperans").innerHTML=ans;
 
 }
+
+function slpsolve()
+{
+    var a=document.getElementById("slx1").value;
+    var b=document.getElementById("sly1").value;
+    var c=document.getElementById("slx2").value;
+    var d=document.getElementById("sly2").value;
+    var ans="";
+    if(a==""||b==""||c==""||d=="")
+    {
+        ans="Please enter all values to calculate slope";
+    }
+    else
+    {
+        var p=(d-b)/(c-a);
+        ans="Calculated slope is: "+p;
+    }
+    document.getElementById("slpans").innerHTML=ans;
+
+}
