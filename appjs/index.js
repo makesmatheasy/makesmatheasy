@@ -147,7 +147,7 @@ function openit(id) {
         "#sosqsn",
         "#socbsn",
         "#squaresRanges",
-
+        "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
@@ -459,6 +459,10 @@ $(document).on('click', ' .favourites ', function () {
 $(document).on('hover', ' .favnew ', function () {
     $(this).addClass('favourites');
 });
+
+document.querySelector(".container").addEventListener('click',function(){
+    $(".favouritecontainer").slideUp();
+})
 
 function removefavourite() {
     localStorage.removeItem("favouritearray");
