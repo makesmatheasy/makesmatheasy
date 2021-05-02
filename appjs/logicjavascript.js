@@ -101,7 +101,7 @@ function expandedformde(input, output) {
         var ar = [];
         ar = expanded.split("+");
         var temp = "";
-        for (i of ar) {
+        for (var i of ar) {
             if (i == 0) {
                 temp += "";
             } else {
@@ -266,9 +266,9 @@ function divisionwithsteps() {
         var tableNumRows = dividendLength * 2 + 2;
         var numSteps = dividendLength + 1;
         var tmpVar;
-        for (a = 1; a <= tableNumRows; a++) {
+        for (var a = 1; a <= tableNumRows; a++) {
             tableBody += "<tr>";
-            for (b = 1; b <= tableNumColumns; b++) {
+            for (var b = 1; b <= tableNumColumns; b++) {
                 tableBody +=
                     '<td style="padding: 7px; border:1px solid var(--apppink); ;"></td>';
             }
@@ -280,7 +280,7 @@ function divisionwithsteps() {
             "</table></div>"
         );
         var tableRows = resultContainer.find("table tr");
-        for (i = 0; i < divisorLength; i++) {
+        for (var i = 0; i < divisorLength; i++) {
             tableRows.eq(1).find("td").eq(i).html(divisor.toString()[i]);
         }
         tableRows
@@ -288,7 +288,7 @@ function divisionwithsteps() {
             .find("td")
             .eq(divisorLength - 1)
             .css("border-right", "6px solid white");
-        for (i = 0; i < dividendLength; i++) {
+        for (var i = 0; i < dividendLength; i++) {
             tableRows
                 .eq(1)
                 .find("td")
@@ -296,7 +296,7 @@ function divisionwithsteps() {
                 .html(dividend.toString()[i])
                 .css("border-top", "6px solid white");
         }
-        for (currentStep = 1; currentStep < numSteps; currentStep++) {
+        for (var currentStep = 1; currentStep < numSteps; currentStep++) {
             if (!bufferVar) var bufferVar = dividend.toString()[0];
             var stepResult = Math.floor(bufferVar / divisor);
             tableRows
@@ -305,7 +305,7 @@ function divisionwithsteps() {
                 .eq(divisorLength + currentStep - 1)
                 .html(stepResult);
             tmpVar = (stepResult * divisor).toString();
-            for (a = tmpVar.length - 1; a >= 0; a--) {
+            for (var a = tmpVar.length - 1; a >= 0; a--) {
                 tableRows
                     .eq(currentStep * 2)
                     .find("td")
@@ -314,7 +314,7 @@ function divisionwithsteps() {
                     .css("border-bottom", "6px solid white");
             }
             tmpVar = (bufferVar - stepResult * divisor).toString();
-            for (a = tmpVar.length - 1; a >= 0; a--) {
+            for (var a = tmpVar.length - 1; a >= 0; a--) {
                 tableRows
                     .eq(currentStep * 2 + 1)
                     .find("td")
@@ -412,7 +412,7 @@ function printfactors() {
     var temp = "";
     var tt = "";
     var v = "";
-    for (i = 2; i <= num; i++) {
+    for (var i = 2; i <= num; i++) {
         while (num % i == 0) {
             temp += i + "&nbsp;&nbsp;&nbsp;<br>";
             v += i + ",";
@@ -446,10 +446,10 @@ function printmorefactors(input, output) {
     var temp = "";
     document.getElementById(output).innerHTML =
         "\\[Prime \\space Factors \\space of \\space\\]";
-    for (num of ar) {
+    for (var num of ar) {
         var getnu = "\\[" + num + "\\space : \\space";
         var i;
-        for (i = 2; i <= num; i++) {
+        for (var i = 2; i <= num; i++) {
             while (num % i == 0) {
                 temp += i + ",";
                 num = num / i;
@@ -469,7 +469,7 @@ function printmorefactors(input, output) {
 function printhcffactor(val, outputf) {
     var num = parseInt(val);
     var temp = "";
-    for (i = 2; i <= num; i++) {
+    for (var i = 2; i <= num; i++) {
         while (num % i == 0) {
             temp += i + " ";
             num = num / i;
@@ -478,7 +478,7 @@ function printhcffactor(val, outputf) {
     temp = temp.split(" ");
     temp = removeDuplicates(temp);
     var newtemp = "";
-    for (ih of temp) {
+    for (var ih of temp) {
         newtemp += ih + " ";
     }
     return newtemp;
@@ -494,7 +494,7 @@ function findduplicatesforhcf(array) {
         indexofdup = 0;
     var i, j;
     //find reference array i.e bigger subarray
-    for (i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         var arlen = array[i].length;
         if (arlen > maxlengthofarray) {
             maxlengthofarray = arlen;
@@ -503,16 +503,16 @@ function findduplicatesforhcf(array) {
         }
     }
     //remove elements which not present in all subarrays
-    for (k = 0; k < array.length; k++) {
+    for (var k = 0; k < array.length; k++) {
         if (k == indexofdup) {
             continue;
         }
-        for (i = 0; i < dup.length; i++) {
+        for (var i = 0; i < dup.length; i++) {
             if (dup[i] == 0) {
                 continue;
             }
             var flag = 0;
-            for (j = 0; j < array[k].length; j++) {
+            for (var j = 0; j < array[k].length; j++) {
                 if (dup[i] == array[k][j]) {
                     flag = 1;
                     array[k][j] = 0;
@@ -545,13 +545,13 @@ function hcf(input) {
         "\\[Prime \\space Factors \\space of \\space\\]";
     var factorarray = [];
     var j = 0;
-    for (num of ar) {
+    for (var num of ar) {
         factorarray[j] = [];
         factorarray[j][0] = 1;
         var index = 1;
         var getnu = "\\[" + num + "\\space : \\space";
         temp += "1,";
-        for (i = 2; i <= num; i++) {
+        for (var i = 2; i <= num; i++) {
             while (num % i == 0) {
                 factorarray[j][index] = i;
                 index++;
@@ -570,7 +570,7 @@ function hcf(input) {
     var dup = findduplicatesforhcf(arrayoffactors);
     var hfac = "";
     var hcfans = 1;
-    for (i of dup) {
+    for (var i of dup) {
         if (i != 0) {
             hcfans *= parseInt(i);
             hfac += i + ",";
@@ -634,7 +634,7 @@ function printfactorsfl(value) {
     var num = parseInt(value);
     var temp = [];
     ind = -1;
-    for (i = 2; i <= num; i++) {
+    for (var i = 2; i <= num; i++) {
         while (num % i == 0) {
             ind += 1;
             temp[ind] = i;
@@ -943,25 +943,25 @@ function lcmsol(input) {
         } else {
             //document.getElementById('resultlcm').innerHTML+="<pu>&nbsp;"+num+"</pu><br>";
             temp += "<tr>";
-            for (kl of num) {
+            for (var kl of num) {
                 temp += "<td>" + kl + "</td>";
             }
             temp += "</tr>";
         }
-        for (i = 0; i < facar.length; i++) {
-            for (k = 0; k < num.length; k++) {
+        for (var i = 0; i < facar.length; i++) {
+            for (var k = 0; k < num.length; k++) {
                 if (parseInt(num[k]) % parseInt(facar[i]) == 0) {
                     num[k] = parseInt(num[k]) / parseInt(facar[i]);
                 }
             }
             //document.getElementById('resultlcm').innerHTML+="<pu>&nbsp;"+num+"</pu><br>";
             temp += "</tr>";
-            for (kl of num) {
+            for (var kl of num) {
                 temp += "<td>" + kl + "</td>";
             }
             temp += "</tr>";
         }
-        for (mm = 0; mm < facar.length; mm++) {
+        for (var mm = 0; mm < facar.length; mm++) {
             //document.getElementById('resultfac').innerHTML+="&nbsp;"+facar[mm]+"&nbsp;<br>";
             tempfac += "<tr><td>" + facar[mm] + "</td></tr>";
         }
@@ -4490,7 +4490,7 @@ function sequationsolver(output) {
         sol = sol.slice(1, sol.length);
         sol = sol.split(",");
         var temp = "";
-        for (i = 0; i <= sol.length / 2 + 1; i += 2) {
+        for (var i = 0; i <= sol.length / 2 + 1; i += 2) {
             temp += "\\[" + sol[i] + "=" + sol[i + 1] + "\\]";
         }
         document.getElementById(output).innerHTML = temp;
@@ -4692,13 +4692,13 @@ function dpardiff() {
             var sp = pardifforder.split(",");
             var v;
             var temp = "";
-            for (v of sp) {
+            for (var v of sp) {
                 temp += "\\partial " + v;
             }
             po = "\\frac{\\partial }{" + temp + "}";
         }
     } else {
-        for (i of or) {
+        for (var i of or) {
             sum += parseInt(i);
         }
         if (pardifforder == "") {
@@ -4707,7 +4707,7 @@ function dpardiff() {
             var sp = pardifforder.split(",");
             var v;
             var temp = "";
-            for (v of sp) {
+            for (var v of sp) {
                 temp += "\\partial " + v;
             }
             po = "\\frac{\\partial^" + sum + "}{" + temp + "}";
@@ -4752,7 +4752,7 @@ function slap() {
     });
 
     var ar = t.toString().split("");
-    for (i = 0; i < ar.length; i++) {
+    for (var i = 0; i < ar.length; i++) {
         if (ar[i] == "s" && ar[i + 1] == "i") {
             continue;
         } else if (ar[i] == "s" && ar[i - 1] == "o" && ar[i - 2] == "c") {
@@ -4797,7 +4797,7 @@ function sinvlap() {
         throwOnError: false,
     });
     var ar = t.toString().split("");
-    for (i = 0; i < ar.length; i++) {
+    for (var i = 0; i < ar.length; i++) {
         if (ar[i] == "t" && ar[i + 1] == "a" && ar[i + 2] == "n") {
             continue;
         } else if (ar[i] == "t" && ar[i - 1] == "c" && ar[i - 2] == "c") {
@@ -4836,8 +4836,8 @@ function orderas() {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
-    for (i = 0; i <= len - 1; i++) {
-        for (j = 0; j <= len - 1 - i; j++) {
+    for (var i = 0; i <= len - 1; i++) {
+        for (var j = 0; j <= len - 1 - i; j++) {
             if (parseFloat(val[j]) > parseFloat(val[j + 1])) {
                 temp = parseFloat(val[j]);
                 val[j] = parseFloat(val[j + 1]);
@@ -4880,8 +4880,8 @@ function orderde() {
         return /\S/.test(str);
     });
     var len = parseInt(val.length);
-    for (i = 0; i <= len - 1; i++) {
-        for (j = 0; j <= len - 1 - i; j++) {
+    for (var i = 0; i <= len - 1; i++) {
+        for (var j = 0; j <= len - 1 - i; j++) {
             if (parseFloat(val[j]) < parseFloat(val[j + 1])) {
                 temp = parseFloat(val[j]);
                 val[j] = parseFloat(val[j + 1]);
@@ -4908,7 +4908,7 @@ function orderde() {
 function count(s) {
     var id = document.getElementById("interval");
     var count = 0;
-    for (i in s) {
+    for (var i in s) {
         count++;
     }
     return count;
@@ -5005,13 +5005,13 @@ function multiplywithsteps(numm, withnum) {
     var countdotwith = 0;
 
     if (flag == 1) {
-        for (i = num.length - 1; i >= 0; i--) {
+        for (var i = num.length - 1; i >= 0; i--) {
             if (num[i] == ".") {
                 break;
             }
             countdot++;
         }
-        for (j = numwith.length - 1; j >= 0; j--) {
+        for (var j = numwith.length - 1; j >= 0; j--) {
             if (numwith[j] == ".") {
                 break;
             }
@@ -5038,7 +5038,7 @@ function multiplywithsteps(numm, withnum) {
     );
     if (numwith.length > 1) {
         numwith = numwith.split("");
-        for (i = numwith.length - 1; i >= 0; i--) {
+        for (var i = numwith.length - 1; i >= 0; i--) {
             if (numwith[i] == ".") continue;
             if (numwith.length == m.length + 1) {
                 var vm = eval(
@@ -5058,7 +5058,7 @@ function multiplywithsteps(numm, withnum) {
             temp += "<br>";
             m += "&times;";
         }
-        for (i = 0; i < String(mulsol).length; i++) {
+        for (var i = 0; i < String(mulsol).length; i++) {
             line += "_";
         }
     } else {
@@ -5068,7 +5068,7 @@ function multiplywithsteps(numm, withnum) {
                 .evaluate()
                 .toString()
         );
-        for (i = 0; i < String(mulsol).length; i++) {
+        for (var i = 0; i < String(mulsol).length; i++) {
             line += "_";
         }
     }
@@ -5342,11 +5342,11 @@ function roundoff(input, output) {
     //to check if negative number or not
     ar1 = [];
     if (ar[0] == "-") {
-        for (itr = 0; itr < ar.length - 1; itr++) {
+        for (var itr = 0; itr < ar.length - 1; itr++) {
             ar1[itr] = ar[itr + 1];
         }
     } else {
-        for (itr = 0; itr < ar.length; itr++) {
+        for (var itr = 0; itr < ar.length; itr++) {
             ar1[itr] = ar[itr];
         }
     }
@@ -5396,12 +5396,12 @@ function roundoff(input, output) {
         if (place < 0) {
             var temp = "";
             if (ar1[place + 1] >= 5) {
-                for (itr = len1; itr >= 0; itr--) {
+                for (var itr = len1; itr >= 0; itr--) {
                     itrPlace = placeUpto[itr];
                     el.innerHTML += itrPlace + "&nbsp;&nbsp;";
                 }
                 el.innerHTML += "<br>" + "0";
-                for (itr = 0; itr < len1; itr++) {
+                for (var itr = 0; itr < len1; itr++) {
                     el.innerHTML += spaces + ar1[itr];
                 }
                 el.innerHTML += "<br>" + "0" + spaces + ar1[0] + ">=5" + "<br>";
@@ -5423,36 +5423,36 @@ function roundoff(input, output) {
                     "Enter Bigger number to roundoff to nearest " + placeofroundoff;
             }
         } else {
-            for (itr = len1 - 1; itr >= 0; itr--) {
+            for (var itr = len1 - 1; itr >= 0; itr--) {
                 itrPlace = placeUpto[itr];
                 el.innerHTML += itrPlace + "&nbsp;&nbsp;";
             }
             if (place1 + 1 != len1) {
                 el.innerHTML += "<br>" + ar1[0];
-                for (itr = 1; itr < len1; itr++) {
+                for (var itr = 1; itr < len1; itr++) {
                     el.innerHTML += spaces + ar1[itr];
                 }
                 el.innerHTML += "<br>" + ar1[0];
-                for (itr = 1; itr <= place1; itr++) {
+                for (var itr = 1; itr <= place1; itr++) {
                     el.innerHTML += spaces + ar1[itr];
                 }
 
                 el.innerHTML += spaces + ar1[place1 + 1];
                 if (parseInt(ar1[place1 + 1]) >= 5) {
                     el.innerHTML += ">=5" + "<br>" + ar1[0];
-                    for (itr = 1; itr <= place1; itr++) {
+                    for (var itr = 1; itr <= place1; itr++) {
                         el.innerHTML += spaces + ar1[itr];
                     }
                     el.innerHTML += "+1";
                 } else {
                     el.innerHTML += "<5" + "<br>" + ar1[0];
-                    for (itr = 1; itr <= place1; itr++) {
+                    for (var itr = 1; itr <= place1; itr++) {
                         el.innerHTML += spaces + ar1[itr];
                     }
                 }
             } else {
                 el.innerHTML += "<br>" + ar1[0];
-                for (itr = 1; itr < len1; itr++) {
+                for (var itr = 1; itr < len1; itr++) {
                     el.innerHTML += spaces + ar1[itr];
                 }
             }
@@ -5479,11 +5479,11 @@ function roundoff(input, output) {
                 } else {
                     ar[place] = parseInt(ar[place]) + 1;
                 }
-                for (i = place + 1; i < len; i++) {
+                for (var i = place + 1; i < len; i++) {
                     ar[i] = 0;
                 }
             } else {
-                for (i = place + 1; i < len; i++) {
+                for (var i = place + 1; i < len; i++) {
                     ar[i] = 0;
                 }
             }
@@ -6221,7 +6221,7 @@ function factorialsol(factorialval) {
     } else if (num1 <= 15 && num1 >0) {
         desc.innerHTML = `Factorial Formula of ${num1} ! = 1  `;
         let calc = 1;
-        for (i = 2; i <= num1; i++) {
+        for (var i = 2; i <= num1; i++) {
             desc.innerHTML += ` x ${i}`;
             calc *= i;
         }
@@ -6233,7 +6233,7 @@ function factorialsol(factorialval) {
     } else {
         desc.innerHTML = `Factorial Formula is ${num1} ! = 1 x 2 x 3 x ..... x ${num1} `;
         let calc = 1;
-        for (i = 1; i <= num1; i++) {
+        for (var i = 1; i <= num1; i++) {
             calc *= i;
         }
         ans.innerHTML = num1;
