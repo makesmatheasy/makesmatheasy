@@ -299,6 +299,7 @@ function openit(id) {
         "#cevtha",
         "#sum_n",
         "#percal",
+        "#parabolic_arc",
         "#lyear",
         "#analytical",
         "#isoright",

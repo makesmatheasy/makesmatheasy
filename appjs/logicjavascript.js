@@ -3159,6 +3159,30 @@ function solvecosine() {
         
     }
 }
+function solveparaArc() {
+    var height = document.getElementById("inputa").value;
+    var chord = document.getElementById("inputb").value;
+    var areaoutput = document.getElementById("resultofparaarea");
+    var cirarcoutput = document.getElementById("resultofarc");
+    var areatemp = "";
+    var cirarctemp = "";
+    var s=Math.sqrt((chord*chord)+16*(height*height));
+    if ((height != "") && (chord != "")) {
+        areatemp += "\\[" + "\\frac{2}{3}" + "\\times" + height + "\\times" + chord + "\\]";
+        areatemp += "\\[Area \\space is \\space : \\space " + eval(String(0.67 * height * chord)) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        cirarctemp += "\\[" + "\\frac{1}{2}\\times s \\space + " + "\\frac{" + chord + "\\times" + chord + "}{8 \\times" + height + "} ln" + "\\frac{4 \\times" + height +  "+ s}{" + chord + "}" + "\\]";
+        cirarctemp += "\\[" + "where \\space s \\space = \\sqrt{" + chord + "\\times" + chord + "+" + 16 + "\\times" + height + "\\times" + height + "}" + "\\]";
+        cirarctemp += "\\[Circular \\space Arc \\space is \\space : \\space " + eval(String((0.5*s + ((chord*chord)/(8*height))* Math.log((4*height + s)/chord)).toFixed(3))) + "\\]";
+        cirarcoutput.innerHTML = cirarctemp;
+        renderMathInElement(cirarcoutput);
+        renderMathInElement(areaoutput);
+    } else {
+        areaoutput.innerHTML = "";
+        cirarcoutput.innerHTML = "";
+    }
+}
+
 
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
