@@ -2131,6 +2131,35 @@ function solveocta() {
 
 }
 
+function solvepolycal(){
+    var S = document.getElementById("inputareapolycal").value;
+    var n = document.getElementById("inputsidepolycal").value;   
+    var side = math.sqrt( 4 * S * math.tan(math.pi / n ) / n  );
+    var peri = side * n ;
+
+    console.log(side);
+    console.log(peri);
+    if (S!="" && n!=""){
+        if (n>=3 && n<=12){
+
+            document.getElementById('resultofsidepolycal1').innerHTML= "\\[Side \\space value \\space of \\space the \\space "+n+" \\space sided \\space polygon \\space will \\space be \\space \\]";
+            document.getElementById('resultofsidepolycal2').innerHTML= "\\[ \\sqrt{\\frac{4 \\times "+S+" \\times \\tan(\\pi / "+n+" )}{"+n+"} } = \\space "+side.toFixed(3)+"\\]";
+            renderMathInElement(document.getElementById('resultofsidepolycal1'));
+            renderMathInElement(document.getElementById('resultofsidepolycal2'));
+            document.getElementById('resultofperipolycal').innerHTML= "\\[ Perimeter (L)= "+side.toFixed(2)+" \\times "+n+" = "+peri.toFixed(2)+"\\]";
+            renderMathInElement(document.getElementById('resultofperipolycal'));
+
+        } else{
+            document.getElementById('resultofsidepolycal1').innerHTML="";
+            document.getElementById('resultofsidepolycal2').innerHTML= "Please enter value of n ranging from 3 to 12";
+            document.getElementById('resultofperipolycal').innerHTML="";
+        }
+    } else {
+        document.getElementById('resultofsidepolycal1').innerHTML="";
+        document.getElementById('resultofsidepolycal2').innerHTML= "";
+        document.getElementById('resultofperipolycal').innerHTML="";
+    }
+}
 
 function solvedodeca() {
     var a = document.getElementById("inputdodecaside").value;
