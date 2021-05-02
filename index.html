@@ -2909,6 +2909,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="reppbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Representation by Power Series</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Representation by Power Series','#repp','c','reppfav')"><img
+                                     id="reppfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="complex1collapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1
                                 complex number</a>
@@ -12658,6 +12674,33 @@
                   </div>
               </div>
         <!-- end of anyBase to anyBase convertor -->
+
+        <div class="collapse" id="repp">
+            <h2 style="text-align: center;">Representation by Power Series</h2>
+            <br>
+            <p>Every complex number which is analytic in domain D can be represented by a power series about a point z<sub>0</sub> inside D. This is called Taylor Series.
+                If f(z) is not analytic at point z<sub>0</sub>, we can still expand in both negative and positive side of z-z<sub>0</sub>. This is called Laurent's Series
+            </p>
+            <br>
+            <h4>Taylor Series</h4>
+            <p>If f(z) is analytic inside a circle C with point a as centre, then for all z inside C,</p>
+            <p>\[f(z)\space =\space f(a)+f(z-a)f^{'}(a) + \frac{(z-a)^{2}}{2}f^{''}(a)+.......\frac{(z-a)^{n}}{n}f^{n}(a)\]</p>
+            <p>\[f(z)\space =\space \sum_{n=0}^{\infty}a_n (z_a)^{n},\space where\space a_n\space =\space \frac{f^{n}a}{n!}\]</p>
+            <br>
+            <p>If a = 0, the series becomes,</p>
+            <p>\[f(z)\space =\space f(0) + zf^{'}(0) + \frac{z^{2}}{2}f^{''}(0)+......+ \frac{z^{n}}{n!}f^{n}(0)\]</p>
+            <p>This series is called Maclaurin Series</p>
+            <br>
+            <h4>Laurent's Series</h4>
+            <br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Laurent_series.svg/1200px-Laurent_series.svg.png" style="height: 400px;" alt=""><br>
+            <p>If f(z) is analytic inside and on the boundary of annular(ring-shaped) region R bounded by two concentric circled C<sub>1</sub> and C<sub>2</sub> of radii r<sub>1</sub> and r<sub>2</sub> having centre at a then for all z in R,</p>
+            <p>\[f(z)\space =\space \sum_{n=0}^{\infty}a_n (z-a)^{n}\space +\space \sum_{n=1}^{\infty}b_n (z-a)^{-n}\]</p>
+            <p>\[a_n\space =\space \frac{1}{2\pi i} \int\frac{f(w)}{(w-a)^{-n+1}}\,dw\]</p>
+            <p>\[b_n\space =\space \frac{1}{2\pi i} \int\frac{f(w)}{(w-a)^{-n+1}}\]</p>
+            <br>
+            <p>In case f(z) is anaytic inside C<sub>1</sub> then b<sub>n</sub>=0 Laurent Seris reduces to Taylor Series</p>
+        </div>
 
   <!-- Start of Octal / Hexadecimal -->
 

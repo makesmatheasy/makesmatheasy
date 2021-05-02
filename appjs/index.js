@@ -283,6 +283,7 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        "#repp",
         '#dodecahedron',
         "#icosahedron",
         "#anglecon",
