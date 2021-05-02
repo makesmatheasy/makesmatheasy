@@ -393,6 +393,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#reppbtn").click(function () {
+        openit("#repp");
+        closenav();
+        clearall();
+    })
     $("#oop").click(function () {
         openit("#oops");
         closenav();
