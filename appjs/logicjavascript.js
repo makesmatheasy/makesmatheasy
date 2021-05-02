@@ -3188,6 +3188,37 @@ function solvecircle() {
     
 }
 
+function solvearch(){
+    var r = document.getElementById("radiusarch").value;
+    var angle = document.getElementById("anglearch").value;
+    var area = 0.5 * r**2 * (angle - math.sin(angle));
+    var chord = 2 * r * math.sin(angle/2);
+    var cirarc = r * angle;
+
+    if (r!="" && angle!=""){
+
+        if (chord <=0){
+            document.getElementById("resultofareaarch1").innerHTML = "";
+            document.getElementById("resultofareaarch2").innerHTML = "";
+            document.getElementById("resultofarchchord1").innerHTML = "Please enter proper angle value in radian";
+            document.getElementById("resultofarchchord2").innerHTML = "";
+            document.getElementById("resultofcirarc").innerHTML = "";
+            return;
+        }
+        document.getElementById("resultofareaarch1").innerHTML = "\\[Area \\space of \\space Arch \\space is \\]";
+        document.getElementById("resultofareaarch2").innerHTML = "\\[\\frac{1}{2} \\times "+r+"^2 \\times ( "+angle+" - sin"+angle+" ) = "+area.toFixed(3)+"\\]";
+        document.getElementById("resultofarchchord1").innerHTML = "\\[Chord \\space of \\space Arch \\space is \\]";
+        document.getElementById("resultofarchchord2").innerHTML = "\\[ 2\\times "+r+" \\times sin (\\frac { "+angle+"}{2} ) = "+chord.toFixed(3)+"\\]";
+        document.getElementById("resultofcirarc").innerHTML = "\\[Circular \\space arc \\space = "+r+" \\times "+angle+" = "+cirarc.toFixed(2)+" \\]";
+        
+        renderMathInElement(document.getElementById("resultofareaarch1"));
+        renderMathInElement(document.getElementById("resultofareaarch2"));
+        renderMathInElement(document.getElementById("resultofarchchord1"));
+        renderMathInElement(document.getElementById("resultofarchchord2"));
+        renderMathInElement(document.getElementById("resultofcirarc"));
+    }
+}
+
 function solvesemicircle() {
     let radius = document.getElementById("semiradius").value;
     let area = (3.14 * radius * radius)/2;

@@ -10079,6 +10079,11 @@
                                 href="#">Semi-Circle</a></td>
                         </tr>
                         <tr>
+                            <td><a data-toggle="modal" data-target="#arch"
+                                style="text-decoration:none;"
+                                href="#">Arch</a></td>
+                        </tr>
+                        <tr>
                             <td><a data-toggle="modal" data-target="#circlecal"
                                 style="text-decoration:none;"
                                 href="#">Circle calculator </a></td>
@@ -14805,6 +14810,68 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="arch" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Arch</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Circular arc (L))</h5>
+                                    <p class="text-center">\[L = r \theta  \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (S)</h5>
+                                    <p class="text-center">\[S = \frac{1}{2} r^2 ( \theta - sin\theta )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Chord (c)</h5>
+                                    <p class="text-center">\[c = 2r sin (\frac { \theta}{2} ) \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/archcal.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter Radius (r)"
+                                   id="radiusarch"
+                                   oninput="solvesemicircle()">
+                            <input class="form__field" type="number" placeholder="Enter angle (Radian)"
+                                   id="anglearch"
+                                   oninput="solvearch()">
+                            <p class="stopwrap" id="resultofareaarch1"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofareaarch2"
+                                style="font-family:mathfont;"></p>       
+                            <p class="stopwrap" id="resultofarchchord1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofarchchord2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcirarc"
+                               style="font-family:mathfont;"></p>
+                            
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="semicircle" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
