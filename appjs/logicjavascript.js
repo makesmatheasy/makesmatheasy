@@ -3342,6 +3342,50 @@ function solvenona() {
     }
 }
 
+function solvepentagram() {
+    var a = document.getElementById("inputpengramside").value;
+    var chordoutput = document.getElementById("resultofpengramchord");
+    var longchordoutput = document.getElementById("resultofpengramloncho");
+    var shortchordoutput = document.getElementById("resultofpengramshocho");
+    var perioutput = document.getElementById("resultofpengramperi");
+    var areaoutput = document.getElementById("resultofpengramarea");
+    var chordtemp = "";
+    var longchotemp = "";
+    var shochotemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        chordtemp += "\\[Chord \\space length \\space of \\space Pentagram \\newline " + a + "\\times" + 1.62 + "\\ = " + eval(String(1.61803399 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        longchotemp += "\\[Long \\space chord \\space slice \\space of \\space Pentagram \\space \\newline \\frac{1}{1.62}" + "\\times" + a + "\\ = " + eval(String(0.61803399 * a)).toFixed(2) + "\\]";
+        longchordoutput.innerHTML = longchotemp;
+
+        shochotemp += "\\[Short \\space chord \\space slice \\space of \\space Pentagram \\space \\newline \\frac{1}{1.62} \\times \\frac{1}{1.62}" + "\\times" + a + "\\ = " + eval(String(0.38196601 * a)).toFixed(2) + "\\]";
+        shortchordoutput.innerHTML = shochotemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Pentagram \\space \\newline \\frac{10}{1.62} \\times" + a + "\\ = " + eval(String(6.18033989 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of \\space Pentagram \\space \\newline \\frac{\\sqrt{5 \\times (5 - 2 \\sqrt{5})}}{2} \\times" + a + "\\times" + a + "\\ = " + eval(String(0.81229924 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(chordoutput);
+        renderMathInElement(longchordoutput);
+        renderMathInElement(shortchordoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        chordoutput.innerHTML = "";
+        longchordoutput.innerHTML = "";
+        shortchordoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
