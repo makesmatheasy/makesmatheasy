@@ -373,6 +373,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -639,6 +644,11 @@ $(document).ready(function () {
     });
     $("#curconbtn").click(function () {
         openit("#curconcal");
+        closenav();
+        clearall();
+    });
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
         closenav();
         clearall();
     });

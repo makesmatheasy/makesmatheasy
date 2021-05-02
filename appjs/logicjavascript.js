@@ -2235,7 +2235,17 @@ function vectorsub(){
     var sub1 = (a-d);
     var sub2 = (b-e);
     var sub3 = (c-f);
-    document.getElementById("vectorsub1").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1) + ' i'  + ' + ' + (sub2) + ' j ' + ' + ' + (sub3) + ' k ';
+    document.getElementById("vectorsub1").style.display = "block";
+    document.getElementById("vsubi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1)  ;
+    if(sub2<0)
+    document.getElementById("vsubj").innerHTML =   (sub2)  ;
+    else
+    document.getElementById("vsubj").innerHTML =  '+' +  (sub2)  ;
+    if(sub3<0)
+    document.getElementById("vsubk").innerHTML = (sub3);
+    else
+    document.getElementById("vsubk").innerHTML =  '+' +  (sub3) ;
+   
 
 }
 function vectordot(){
@@ -2807,7 +2817,50 @@ function rhombussolve() {
     }
 }
 
-//created function for Rhombus
+function cycquadcal(){
+    var a = document.getElementById("inputquadsidea").value;
+    var b = document.getElementById("inputquadsideb").value;
+    var c = document.getElementById("inputquadsidec").value;
+    var d = document.getElementById("inputquadsided").value;
+
+    var s = 0.5 * (parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d));
+    var area = math.sqrt( (s - parseInt(a) ) * (s- parseInt(b)) * (s- parseInt(c)) *(s- parseInt(d)) );
+    var peri = 2 * s;
+
+    console.log(s)
+    console.log(area)
+    console.log(peri)
+
+    if (a != "" && b != "" && c!="" && d!= "") {
+
+        document.getElementById("resultofquads").innerHTML = "\\[s = \\frac{ "+a+" + "+b+" + "+c+" + "+d+" }{2} \\space= "+s.toFixed(2)+"\\]";
+        renderMathInElement(document.getElementById("resultofquads"));
+
+        if (area >= 0){
+
+            document.getElementById("resultofquadarea1").innerHTML = "\\[Area \\space(S) \\space of \\space Cyclic  \\space Quadrilateral \\space is \\]";
+            document.getElementById("resultofquadarea2").innerHTML = "\\[\\sqrt{ ("+s.toFixed(1)+" - "+a+") ("+s.toFixed(1)+" - "+b+") ("+s.toFixed(1)+" - "+c+") ("+s.toFixed(1)+" - "+d+") }\\]";
+            document.getElementById("resultofquadarea3").innerHTML = "\\[ = " + area.toFixed(3) + "\\]";
+            renderMathInElement(document.getElementById("resultofquadarea1"));
+            renderMathInElement(document.getElementById("resultofquadarea2"));
+            renderMathInElement(document.getElementById("resultofquadarea3"));
+        } else{
+            document.getElementById("resultofquadarea1").innerHTML = "Enter proper side values";
+            document.getElementById("resultofquadarea2").innerHTML ="";
+            document.getElementById("resultofquadarea3").innerHTML ="";
+            document.getElementById("resultofquadperip1").innerHTML = "";
+            document.getElementById("resultofquadperip2").innerHTML = "";
+            return;
+        }
+
+        document.getElementById("resultofquadperip1").innerHTML = "\\[Perimeter \\space of \\space Cyclic  \\space Quadrilateral \\space is \\]";
+        document.getElementById("resultofquadperip2").innerHTML = "\\[2 \\times ("+a+"+"+b+"+"+c+"+"+d+") = " + peri.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofquadperip1"));
+        renderMathInElement(document.getElementById("resultofquadperip2"));
+    }
+}
+
+//created function for Kite
 function Kitesolve() {
     var p = document.getElementById("inputp").value;
     var q = document.getElementById("inputq").value;
@@ -3151,6 +3204,24 @@ function solvesemicircle() {
     renderMathInElement(document.getElementById("resultofcircumsemi"));
     renderMathInElement(document.getElementById("resultofdiasemi"));
 }
+
+function solvecirclecal(){
+
+    let area = document.getElementById("circlearea").value;
+    let r = math.sqrt(area / math.pi);
+    let R = 2 * r;    
+    let circum = math.pi * R;
+    console.log(r)
+    console.log(R)
+    console.log(circum)
+    document.getElementById("resultofradcircal").innerHTML = "\\[Radius \\space of \\space Circle = \\sqrt{\\frac{"+area+"}{\\pi}}\\ = " + r.toFixed(3) + "\\]";
+    document.getElementById("resultofcircumcirccal").innerHTML = "\\[Circumference = \\pi \\times 2 \\times "+r.toFixed(2)+" \\ = " + circum.toFixed(3) + "\\]";
+    document.getElementById("resultofdiacircal").innerHTML = "\\[Diameter\\space of \\space Circle = " +R.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("resultofradcircal"));
+    renderMathInElement(document.getElementById("resultofcircumcirccal"));
+    renderMathInElement(document.getElementById("resultofdiacircal"));
+}
+
 function solvepent(){
     let side = document.getElementById("inputsidepent").value;
     let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
@@ -3269,6 +3340,50 @@ function solvenona() {
         perioutput.innerHTML = "";    
 
     }
+}
+
+function solvepentagram() {
+    var a = document.getElementById("inputpengramside").value;
+    var chordoutput = document.getElementById("resultofpengramchord");
+    var longchordoutput = document.getElementById("resultofpengramloncho");
+    var shortchordoutput = document.getElementById("resultofpengramshocho");
+    var perioutput = document.getElementById("resultofpengramperi");
+    var areaoutput = document.getElementById("resultofpengramarea");
+    var chordtemp = "";
+    var longchotemp = "";
+    var shochotemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        chordtemp += "\\[Chord \\space length \\space of \\space Pentagram \\newline " + a + "\\times" + 1.62 + "\\ = " + eval(String(1.61803399 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        longchotemp += "\\[Long \\space chord \\space slice \\space of \\space Pentagram \\space \\newline \\frac{1}{1.62}" + "\\times" + a + "\\ = " + eval(String(0.61803399 * a)).toFixed(2) + "\\]";
+        longchordoutput.innerHTML = longchotemp;
+
+        shochotemp += "\\[Short \\space chord \\space slice \\space of \\space Pentagram \\space \\newline \\frac{1}{1.62} \\times \\frac{1}{1.62}" + "\\times" + a + "\\ = " + eval(String(0.38196601 * a)).toFixed(2) + "\\]";
+        shortchordoutput.innerHTML = shochotemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Pentagram \\space \\newline \\frac{10}{1.62} \\times" + a + "\\ = " + eval(String(6.18033989 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of \\space Pentagram \\space \\newline \\frac{\\sqrt{5 \\times (5 - 2 \\sqrt{5})}}{2} \\times" + a + "\\times" + a + "\\ = " + eval(String(0.81229924 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(chordoutput);
+        renderMathInElement(longchordoutput);
+        renderMathInElement(shortchordoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        chordoutput.innerHTML = "";
+        longchordoutput.innerHTML = "";
+        shortchordoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
 }
 
 function solveannulus() {
@@ -4263,6 +4378,48 @@ function torussolve() {
         tsaoutput.innerHTML = "";
     }
   }
+
+function solvendimsphere() {
+    var g = 7;
+var C = [0.99999999999980993, 676.5203681218851, -1259.1392167224028,771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+
+function gamma(z) {
+
+    if (z < 0.5) return Math.PI / (Math.sin(Math.PI * z) * gamma(1 - z));
+    else {
+        z -= 1;
+
+        var x = C[0];
+        for (var i = 1; i < g + 2; i++)
+        x += C[i] / (z + i);
+
+        var t = z + g + 0.5;
+        return Math.sqrt(2 * Math.PI) * Math.pow(t, (z + 0.5)) * Math.exp(-t) * x;
+    }
+}
+    var radius = document.getElementById("inputndimsphereradius").value;
+    var dim = document.getElementById("inputndimspheredimension").value;
+    var volOutputTitle = document.getElementById("resultofndimspherevol1");
+    var volOutputMain = document.getElementById("resultofndimspherevol2");
+    var areaOutputTitle = document.getElementById("resultofndimspherearea1");
+    var areaOutputMain = document.getElementById("resultofndimspherearea2");
+    var ansVol = (Math.pow(Math.PI, (dim/2))* Math.pow(radius, dim))/(gamma((dim/2)+1));
+    var ansArea = (2*Math.pow(Math.PI, (dim/2))* Math.pow(radius, dim-1))/(gamma(dim/2));
+    console.log("vol");
+    console.log(ansVol);
+    console.log("area");
+    console.log(ansArea);
+    if ((dim != "") && (radius != "")) {
+        volOutputTitle.innerHTML = "\\[Volume \\space of \\space Sphere \\space in \\space n \\space dimension \\space is \\]";
+        volOutputMain.innerHTML = "\\[\\frac{\\pi ^{\\frac{"+dim+"}{2}}"+radius+"^{"+dim+"}}{\\Gamma \\left ( \\frac{"+dim+"}{2}+1 \\right )} = "+ansVol.toFixed(3)+"\\]";
+        renderMathInElement(volOutputTitle);
+        renderMathInElement(volOutputMain);
+        areaOutputTitle.innerHTML = "\\[Surface \\space Area \\space of \\space Sphere \\space in \\space n \\space dimension \\space is \\]";
+        areaOutputMain.innerHTML = "\\[\\frac{2\\pi ^{\\frac{"+dim+"}{2}}"+radius+"^{"+dim+"-1}}{\\Gamma \\left ( \\frac{n}{2} \\right )} = "+ansArea.toFixed(3)+"\\]";
+        renderMathInElement(areaOutputTitle);
+        renderMathInElement(areaOutputMain);
+    }
+}
   
 //display inputted equation
 function dequation() {
@@ -7443,19 +7600,36 @@ function subBinDecHexOct(){
         var add1 = "";
         var ans1 = "";
         var eigco= calculateEightComplement(input2);
+        print += "<h5>STEP 0 : Find 8's complement of Subtrahend</h5>"+input2+"->"+eigco;
         add1 = (parseInt(eigco,8)+parseInt(input1,8)).toString(8);
+        print += "<br><br><h5>STEP 1 : Add Minuend and 8's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + eigco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add1+"</p>";
         if(add1.length == input1.length){
             ans1 = calculateEightComplement(add1);
             result.innerHTML = "-" + ans1;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add1+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Eight's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans1 + "</span>";
         } else if (add1.length > input1.length){
             ans1 = add1.substring(1);
             result.innerHTML = ans1;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add1.substring(0,1) + "</span>" +ans1+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans1 + "</span>";
         } else if (add1.length < input1.length){
             var a2 = input1.length - add1.length;
             a2 = Math.pow(10,a2);
             ans1 = a2 + add1;
             ans1 = ans1.substring(1);
             result.innerHTML = "-" + calculateEightComplement(ans1);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add1+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Eight's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans1 + "</span>";
         }
         
     }else if(base === "Hexa Decimal"){
