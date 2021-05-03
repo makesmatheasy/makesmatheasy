@@ -405,6 +405,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#clrbtn").click(function () {
+        openit("#clr");
+        closenav();
+        clearall();
+    })
     $("#reppbtn").click(function () {
         openit("#repp");
         closenav();
