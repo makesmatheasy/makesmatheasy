@@ -287,7 +287,7 @@ Other Tech/Libraries
 
   - Boolean Algebra
   - Any Base to Any Base Converter
-  - Decimal/Binary Converter
+  - Bin/Dec/Oct/Hex Converter
   - Addition of any Number System
   - Subtraction of any Number System
   - Multiplication of any Number System
@@ -297,7 +297,6 @@ Other Tech/Libraries
     - BCD Code Addition
   - Excess-3 Code Converter
   - Decimal/2421 Code Converter
-  - Octal/Binary Converter
   - Grey Code Converter
   - Bitwise Calculator
   - (R-1)'s & R's Complement Calculator
