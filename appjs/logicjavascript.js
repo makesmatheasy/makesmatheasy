@@ -2305,6 +2305,39 @@ function vectorcross(){
     }
 }
 
+function vector_res(){
+   var a=parseFloat(document.getElementById('abc').value);
+   var b=parseFloat(document.getElementById('def').value);
+   var c=parseFloat(document.getElementById('ang3').value);
+   var resoutput = document.getElementById("vectorres1");
+   var restemp = "";
+   var res = Math.cos(c* Math.PI / 180).toFixed(3);
+   var res1 = (2 * a * b * res);
+   var res2 = eval(String((a * a) + (b * b)));
+   var res3 = res2+res1;
+   var d = nerdamer.sqrt(res3).toString();
+   if(a != "" || b != "" || c != "" ){
+       if(a>0 && b>0){
+    restemp += "\\[R= \\sqrt{ a^2 + b^2 + 2*a*b*cosθ } \\]";
+    restemp += "\\[R= \\sqrt{" + a + "^2+" + b + "^2+" + "2*" + a + "*" + b + "*" + "cos(" + c + ")} \\]";
+    restemp += "\\[ \\sqrt{" + a + "^2+" + b + "^2+ (" +  res1 + ") } \\]";
+    restemp += "\\[ \\sqrt{" + res3 + "} \\]";
+    restemp += "\\[ Resultant \\space of \\space Vector = "  +
+        eval(d).toFixed(3) +
+        "\\]";
+    resoutput.innerHTML = restemp;
+    renderMathInElement(resoutput);
+       }
+       else{
+           restemp += "\\[Magnitude \\space of \\space Vector \\space cannot \\space be \\space negative. \\space Please \\space enter \\space positive \\space value \\space only  \\]";
+           resoutput.innerHTML = restemp;
+           renderMathInElement(resoutput);
+       }
+} else {
+    resoutput.innerHTML = "";
+}
+}
+
 function equationplanesolve()
 {
     var ax,ay,az,bx,by,bz,cx,cy,cz;

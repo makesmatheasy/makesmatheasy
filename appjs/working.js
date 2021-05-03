@@ -408,6 +408,9 @@ $(document).ready(function () {
 
     $("#mtmbtn").click(function () {
         openit("#mtm");
+        closenav();
+        clearall();
+    })
 
 
     $("#clrbtn").click(function () {

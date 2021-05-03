@@ -2920,8 +2920,16 @@
                              <span
                                      onclick="addtofavourite('Milne Thomson Method','#mtm','c','mtmfav')"><img
                                      id="mtmfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
 
-
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
                             <a id="clrbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cauchy Integral,Liouville and Rouche Theorem</a>
                         </td>
@@ -6228,6 +6236,29 @@
     </div>
     <div class="coll1" style="text-align: center;">
     <h5 id="vectorcross2" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <br><br>
+    <div class="text-center">
+        <h3>Resultant Vector Calculator</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Enter Magnitude of 1st Vector :   <input type="text" id="abc" size=3 value='' placeholder="X">
+            <br><br>
+            Enter Magnitude of 2nd Vector :   <input type="text" id="def" size=3 value='' placeholder="Y">
+                <br><br>
+            Enter Angle between 1st and 2nd Vector :   <input type="text" id="ang3" size=3 value='90' placeholder="θ">
+            <br><br>
+        <button type="button" class="btn btn-light" onclick=vector_res()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vectorres1" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <div class="coll1" style="text-align: center;">
+    <h5 id="vectorres2" style="color: white; font-size: x-large;"></h5>
     </div>
 </div>
 
@@ -11695,7 +11726,7 @@
     
     
     <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
-    
+    </div>
 </div>
 
 <div class="collapse" id="errpers">
