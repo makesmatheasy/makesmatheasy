@@ -406,8 +406,13 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#mtmbtn").click(function () {
+        openit("#mtm");
+
+
     $("#clrbtn").click(function () {
         openit("#clr");
+
         closenav();
         clearall();
     })
