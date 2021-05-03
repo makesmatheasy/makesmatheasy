@@ -10317,6 +10317,11 @@
                            href="#">Oblique Circular Cylinder</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#partialcy"
+                           style="text-decoration:none;"
+                           href="#">Partial Right Cylinder</a></td>
+                </tr>   
+                <tr>
                     <td><a data-toggle="modal" data-target="#hollowsp"
                            style="text-decoration:none;"
                            href="#">Hollow Sphere</a></td>
@@ -16151,6 +16156,73 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="partialcy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Partial Right Cylinder</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = Fl\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Area</h5>
+                                    <p class="text-center">\[F = \frac{\theta}{2}r^2 - (r-h)\sqrt{h(2r-h)}\]</p>
+                                    <p class="text-center">\[where \space \theta \space = \space 2cos^{-1} \Big(1-\frac{h}{r} \Big)\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Bottom Area</h5>
+                                    <p class="text-center">\[S \space = \space r \theta l\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Top Area</h5>
+                                    <p class="text-center">\[T \space = 2l \space \sqrt{h(2r-h)}\]</p>
+
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/partial_cylinder.gif" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter radius r"
+                                    id="inputcyr"
+                                    oninput="solvepartialcy()">
+                                <input class="form__field" type="number" placeholder="Enter height h"
+                                    id="inputcyh"
+                                    oninput="solvepartialcy()">
+                                <input class="form__field" type="number" placeholder="Enter width l"
+                                    id="inputcyw"
+                                    oninput="solvepartialcy()">
+                                <br>
+                                <p class="stopwrap" id="resultofcyla"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcyvol"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcyba"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcyta"
+                                style="font-family:mathfont;"></p>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
