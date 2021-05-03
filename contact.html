@@ -1,135 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-	 <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <style>
-        /* width */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 10px;
-        }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
 
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: var(--apppink);;
-            border-radius: 10px;
-        }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: var(--apppink);
+        border-radius: 10px;
+      }
 
-        ::-webkit-scrollbar-button:single-button {
-            display: block;
-            background-color: var(--appimage);
-            height: 20px;
-        }
+      ::-webkit-scrollbar-button:single-button {
+        display: block;
+        background-color: var(--appimage);
+        height: 20px;
+      }
 
-        ::-webkit-scrollbar-button:single-button:vertical:decrement {
-            background-position: center 4px;
-            background-size: 8px 8px;
-            background-image: url(images/uparrow.png);
-            background-repeat: no-repeat;
-        }
+      ::-webkit-scrollbar-button:single-button:vertical:decrement {
+        background-position: center 4px;
+        background-size: 8px 8px;
+        background-image: url(images/uparrow.png);
+        background-repeat: no-repeat;
+      }
 
-        ::-webkit-scrollbar-button:single-button:vertical:increment {
-            background-position: center 4px;
-            background-size: 8px 8px;
-            background-image: url(images/downarrow.png);
-            background-repeat: no-repeat;
-        }
+      ::-webkit-scrollbar-button:single-button:vertical:increment {
+        background-position: center 4px;
+        background-size: 8px 8px;
+        background-image: url(images/downarrow.png);
+        background-repeat: no-repeat;
+      }
 
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--apppink);;
-        }
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--apppink);
+      }
 
-        @font-face {
-            font-family: mainfont;
-            src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
+      @font-face {
+        font-family: mainfont;
+        src: url(../fonts/Product_Sans_Regular.ttf) format("truetype");
+      }
+      body {
+        background-color: #232a36;
+        font-family: mainfont;
+        color: rgb(255, 136, 231);
+        overflow-x: hidden;
+        height: 100vh;
+      }
+      .topp {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .topp img {
+        width: 200px;
+        height: 200px;
+      }
+      .topp h1 {
+        padding: 80px 40px 40px 20px;
+      }
+      @media (max-width: 500px) {
+        .topp img {
+          width: 100px;
+          height: 100px;
         }
-        body {
-            background-color: #232a36;
-            font-family:mainfont;
-            color: rgb(255, 136, 231);
-            overflow-x: hidden;
-            height:100vh;
+        .topp h1 {
+          font-size: 20px;
+          padding: 30px 40px 40px 20px;
         }
-        .topp{
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            
-        }
-        .topp img{
-            width: 200px;
-            height: 200px;
-        }
-        .topp h1{
-            padding: 80px 40px 40px 20px;
-        }
-        @media(max-width: 500px){
-            .topp img{
-                width: 100px;
-                height: 100px;
-            }
-            .topp h1{
-                font-size: 20px;
-                padding: 30px 40px 40px 20px;
-        
-            }
-        }
-body img {
-  filter: invert(0%);
-} 
-#home {
-  position: relative;
-  display: block;
-  z-index: 10;
-  float: right;
-  margin-right:2rem;
-  margin-top:2rem;
-  padding: 0rem 0.625rem 0.125rem 0.625rem;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  border-color: white;
-  color: var(--apppink);
-  background-color: var(--appblack);
-  outline: none;
-  transition-duration: 0.4s;
-  font-size:1.5rem;
-}
-#home:hover {
-  background-color: rgba(255, 244, 253, 0.993);
-  font-weight: bolder;
-}
+      }
+      body img {
+        filter: invert(0%);
+      }
+      #home {
+        position: relative;
+        display: block;
+        z-index: 10;
+        float: right;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        padding: 0rem 0.625rem 0.125rem 0.625rem;
+        text-transform: uppercase;
+        border-radius: 0.5rem;
+        border-color: white;
+        color: var(--apppink);
+        background-color: var(--appblack);
+        outline: none;
+        transition-duration: 0.4s;
+        font-size: 1.5rem;
+      }
+      #home:hover {
+        background-color: rgba(255, 244, 253, 0.993);
+        font-weight: bolder;
+      }
     </style>
-</head>
-<body>
-<a href="index.html">
-	    <button id="home">Home</button>
-       </a>
-<div class="container">
-    <div>   
+  </head>
+  <body>
+    <a href="index.html">
+      <button id="home">Home</button>
+    </a>
+    <div class="container">
+      <div>
         <div class="topp">
-            <img src="images/makesmatheasylogo.png">
-            <h1>Makes Math Easy</h1>
-            </div>
-		   
-        <iframe id="contactform"
-                src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
-                width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…
-        </iframe>
-    </div>
-</div>
+          <img src="images/makesmatheasylogo.png" />
+          <h1>Makes Math Easy</h1>
+        </div>
 
-</body>
+        <iframe
+          id="contactform"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
+          width="100%"
+          height="1150"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…
+        </iframe>
+      </div>
+    </div>
+  </body>
 </html>

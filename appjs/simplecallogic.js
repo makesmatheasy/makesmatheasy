@@ -39,14 +39,12 @@ function calsol(va) {
     var solution = nerdamer(va).evaluate().toString();
     var soo = (document.getElementById("txt").value = va);
     document.getElementById("soltxt").value = solution;
-    document.getElementById("txt").style.color = "black";  
-    
+    document.getElementById("txt").style.color = "black";
   } catch (err) {
     document.getElementById("soltxt").value = "";
     document.getElementById("txt").style.color = "red"; //warning color for invalid expression
   }
-  if(document.getElementById("soltxt").value != "")
-  attach.removeChild(btn);
+  if (document.getElementById("soltxt").value != "") attach.removeChild(btn);
 }
 
 function ans(hj) {
@@ -70,14 +68,12 @@ function chh(value) {
     document.getElementById("soltxt").value = "";
   }
 }
-function clearc(){
-    document.getElementById("txt").value = "";
-    attach.removeChild(btn);
-    document.getElementById("soltxt").value = "";
+function clearc() {
+  document.getElementById("txt").value = "";
+  attach.removeChild(btn);
+  document.getElementById("soltxt").value = "";
 }
-      
 
-        
 function calsoleq(va) {
   va = va.replace(/\s+/g, "");
 
@@ -87,10 +83,9 @@ function calsoleq(va) {
   } else {
     attach.appendChild(btn);
     //on clicking button
-    btn.addEventListener("click", function () {  
-        document.getElementById("soltxt").value = "Invalid Expression";
+    btn.addEventListener("click", function () {
+      document.getElementById("soltxt").value = "Invalid Expression";
     });
-    
   }
 }
 
@@ -190,10 +185,6 @@ function more() {
   } else {
     more.innerText = "More";
   }
-
-
-
-
 }
 
 function todeci() {
@@ -329,7 +320,6 @@ document.getElementById("sqrt").addEventListener("click", function () {
     this.innerText == "log10(" ? "log10(" : "sqrt(";
 });
 document.getElementById("e").addEventListener("click", function () {
-  
-  document.getElementById("txt").value +=this.innerText;
+  document.getElementById("txt").value += this.innerText;
   calsol(document.getElementById("txt").value);
 });

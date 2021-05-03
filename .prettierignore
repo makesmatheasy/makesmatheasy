@@ -1,0 +1,10 @@
+.github
+fonts
+icons
+images
+js
+katex.min.css
+katex.min.js
+node_modules
+*.md 
+*.xml
