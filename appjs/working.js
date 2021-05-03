@@ -8,7 +8,7 @@ function opencal() {
     }
 }
 function cleardiv(arrayofclearids) {
-    for (parameterarray of arrayofclearids) {
+    for (var parameterarray of arrayofclearids) {
         document.getElementById(parameterarray).innerHTML = "";
     }
 }
@@ -27,6 +27,11 @@ function closenav() {
 $(document).ready(function () {
     $("#divideoption").click(function () {
         openit("#divide");
+        closenav();
+        clearall();
+    });
+    $("#std_dvtn").click(function () {
+        openit("#deviation");
         closenav();
         clearall();
     });
@@ -49,14 +54,12 @@ $(document).ready(function () {
         openit("#about");
         closenav();
     });
-    
-    $("#stbut").click(function () {
-        openit("#setcal");
-        closenav();
-    });
-
     $("#centcalbut").click(function () {
         openit("#centcal");
+        closenav();
+    });
+    $("#stbut").click(function () {
+        openit("#setcal");
         closenav();
     });
 
@@ -145,6 +148,7 @@ $(document).ready(function () {
 
 
 
+<<<<<<< HEAD
     $("#numcubesRange").click(function () {
         openit("#numcubesRanges");
         closenav();
@@ -153,12 +157,46 @@ $(document).ready(function () {
 
 
 
+||||||| bc35b65
+=======
+    $("#numcubesRange").click(function () {
+        openit("#numcubesRanges");
+        closenav();
+        clearall();
+    });
+
+
+    $("#sosqn").click(function () {
+        openit("#sosqsn");
+
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#socbn").click(function () {
+        openit("#socbsn");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#squaresRange").click(function () {
+        openit("#squaresRanges");
+        closenav();
+        clearall();
+    });
+
+
+
+>>>>>>> c26ac7d30ff3b6b3b34e862006b7fe2e2fc1155e
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
         closenav();
         clearall();
     });
-
 
 
 
@@ -306,7 +344,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#eir").click(function () {
+        openit("#eirs");
+        closenav();
+        clearall();
+    })
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
@@ -338,6 +380,23 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#errper").click(function () {
+        openit("#errpers");
+        closenav();
+        clearall();
+    })
+
+    $("#suppang").click(function () {
+        openit("#suppangs");
+       closenav();
+        clearall();
+    })
+
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
@@ -355,6 +414,32 @@ $(document).ready(function () {
     });
     $("#vectorbtn").click(function () {
         openit("#vector");
+        closenav();
+        clearall();
+    })
+
+    $("#mtmbtn").click(function () {
+        openit("#mtm");
+
+
+    $("#clrbtn").click(function () {
+        openit("#clr");
+
+        closenav();
+        clearall();
+    })
+    $("#reppbtn").click(function () {
+        openit("#repp");
+        closenav();
+        clearall();
+    })
+    $("#oop").click(function () {
+        openit("#oops");
+        closenav();
+        clearall();
+    })
+    $("#vecbtn").click(function () {
+        openit("#vec");
         closenav();
         clearall();
     })
@@ -394,6 +479,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#cevthabtn").click(function () {
+        openit("#cevtha");
+        closenav();
+        clearall();
+    })
+
+    $("#mibtn").click(function () {
+        openit("#mi");
+        closenav();
+        clearall();
+    })
+
     $("#boolbtn").click(function () {
         openit("#bool");
         closenav();
@@ -461,6 +558,11 @@ $(document).ready(function () {
     });
     $("#trigonoidenbutton").click(function () {
         openit("#trigonoiden");
+        closenav();
+        clearall();
+    })
+    $("#trigonofunbutton").click(function () {
+        openit("#trigonofun");
         closenav();
         clearall();
     })
@@ -572,6 +674,11 @@ $(document).ready(function () {
     });
     $("#curconbtn").click(function () {
         openit("#curconcal");
+        closenav();
+        clearall();
+    });
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
         closenav();
         clearall();
     });
@@ -819,6 +926,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#condprobabilitybtn").click(function(){
+        openit("#condprobability");
         closenav();
         clearall();
     });
