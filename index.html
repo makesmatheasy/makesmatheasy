@@ -2589,25 +2589,28 @@
                     </tr>
                 </table>
             </li>
+<!-- End of any base to any base -->            
 
-            <li>
+             <!--Binary to Decimal to Octal to hexadecimal converter start-->
+
+             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="decimal-to-binary-btn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal
-                                /
-                                Binary Converter</a>
+                            <a id="binary-to-hexadecimal-btn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Bin/Dec/Oct/Hex Converter </a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
-                                        onclick="addtofavourite('Decimal / Binary Converter','#decimal-binary','c','decimal-binary-imgfav')"><img
-                                        id="decimal-binary-imgfav" src="images/unfavourite.png"
+                                        onclick="addtofavourite('Binary/Decimal/Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
+                                        id="binary-hexadecimal-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
+            
+            <!--end-->
 
             <!--Start of Addition -->
 
@@ -2673,49 +2676,6 @@
 
             <!-- End of multiplication of any number -->
 
-            <!--Binary to Decimal to hexadecimal converter start-->
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="binary-to-hexadecimal-btn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Binary/Decimal/Hexadecimal
-                                Converter </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Binary/Decimal/Hexadecimal Converter','#binary-hexadecimal','c','binary-hexadecimal-imgfav')"><img
-                                        id="binary-hexadecimal-imgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
-            <!--end-->
-<!--start-->
-<li>
-    <table class="table">
-        <tr>
-            <td style="border-top: none;">
-                <a id="octal-to-hexadecimal-btn"
-                   style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Octal
-                    / Hexadecimal
-                    Converter</a>
-            </td>
-            <td style="float:right;border-top: none;">
-                    <span
-                            onclick="addtofavourite('Octal / Hexadecimal Converter','#octal-hexadecimal','c','octal-hexadecimal-imgfav')"><img
-                            id="octal-hexadecimal-imgfav" src="images/unfavourite.png"
-                            style="height:1.5625rem;filter: none;"></span>
-            </td>
-        </tr>
-    </table>
-</li>
-
-<!--end-->
             <li>
                 <table class="table">
                     <tr>
@@ -2767,25 +2727,6 @@
                                 <span
                                         onclick="addtofavourite('Decimal/2421 Code Converter','#dec2421','c','dec2421-imgfav')"><img
                                         id="dec2421-imgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="octal-to-binary-btn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Octal
-                                / Binary
-                                Converter</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Octal / Binary Converter','#octal-binary','c','octal-binary-imgfav')"><img
-                                        id="octal-binary-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -11593,6 +11534,7 @@
     <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
     
 </div>
+</div>
 <div class="collapse" id="errpers">
 
     
@@ -12092,44 +12034,6 @@
     </div>
 </div>
 
-        <!-- Start of Decimal / Binary -->
-
-        <div class="collapse" id="decimal-binary">
-            <div class="col-6">
-                <div class="form-group">
-                    <h5>From</h5>
-                    <select id="decimal-binary-select1" class="form__field"
-                            onchange="convertBinDec()">
-                        <option class="form_field" style="background-color: #232a36;">
-                            Decimal
-                        </option>
-                        <option class="form_field" style="background-color: #232a36;">
-                            Binary
-                        </option>
-                    </select>
-                    <input type="number" id="decimal-binary-input" value="0"
-                           class="form__field"
-                           oninput="convertBinDec()">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group">
-                    <h5>To</h5>
-                    <select id="decimal-binary-select2" class="form__field"
-                            onchange="convertBinDec()">
-                        <option class="form__field" style="background-color: #232a36;">
-                            Decimal
-                        </option>
-                        <option class="form__field" style="background-color: #232a36;">
-                            Binary
-                        </option>
-                    </select>
-                </div>
-                <label class="form__group" id="decimal-binary-result">0</label>
-            </div>
-        </div>
-        <!-- End of Decimal / Binary -->
-
         <!-- Start of Addition of any number system -->
         <div class="collapse" id="adding-all">
             <div class="col-6">
@@ -12512,52 +12416,6 @@
         </div>
         <!-- END of (R-1)'s R's complement Calculator-->
 
-
-        <!-- Start of Octal / Binary -->
-        <div>
-            <div class="collapse" id="octal-binary">
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>From</h5>
-                        <select id="octal-binary-select1" class="form__field"
-                                onchange="convertBinOct()">
-                            <option class="form_field" style="background-color: #232a36;">
-                                Octal
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Binary
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Decimal
-                            </option>
-                        </select>
-                        <input type="number" id="octal-binary-input" value="0"
-                               class="form__field"
-                               oninput="convertBinOct()">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>To</h5>
-                        <select id="octal-binary-select2" class="form__field"
-                                onchange="convertBinOct()">
-                            <option class="form__field" style="background-color: #232a36;">
-                                Octal
-                            </option>
-                            <option class="form__field" style="background-color: #232a36;">
-                                Binary
-                            </option>
-                            <option class="form__field" style="background-color: #232a36;">
-                                Decimal
-                            </option>
-                        </select>
-                    </div>
-                    <label class="form__group" id="octal-binary-result">0</label>
-                </div>
-            </div>
-        </div>
-        <!-- End of Octal / Binary -->
-
         <!-- start of anyBase to anyBase Converter -->
         <div>
                   <div class="collapse" id="anyBase">
@@ -12702,45 +12560,7 @@
             <p>In case f(z) is anaytic inside C<sub>1</sub> then b<sub>n</sub>=0 Laurent Seris reduces to Taylor Series</p>
         </div>
 
-  <!-- Start of Octal / Hexadecimal -->
 
-  <div>
-            <div class="collapse" id="octal-hexadecimal">
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>From</h5>
-                        <select id="octal-hexadecimal-select1" class="form__field"
-                                onchange="convertOctHex()">
-                            <option class="form_field" style="background-color: #232a36;">
-                                Octal
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Hexadecimal
-                            </option>
-                        </select>
-                        <input type=" " id="octal-hexadecimal-input" value="0"
-                               class="form__field"
-                               oninput="convertOctHex()">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>To</h5>
-                        <select id="octal-hexadecimal-select2" class="form__field"
-                                onchange="convertOctHex()">
-                            <option class="form__field" style="background-color: #232a36;">
-                                Octal
-                            </option>
-                            <option class="form__field" style="background-color: #232a36;">
-                                Hexadecimal
-                            </option>
-                        </select>
-                    </div>
-                    <label class="form__group" id="octal-hexadecimal-result">0</label>
-                </div>
-            </div>
-        </div>
-  <!-- End of Octal / Hexadecimal -->
         <!-- Start of bcd convertor -->
         <div>
             <div class="collapse" id="bcd">
@@ -12943,6 +12763,7 @@
         <!--Start Binary to Hexadecimal-->
         <div>
             <div class="collapse" id="binary-hexadecimal">
+                <h2>Bin/Dec/Oct/Hex Converter</h2>
                 <div class="col-6">
                     <div class="form-group">
                         <h5>From</h5>
@@ -12952,10 +12773,13 @@
                                 Binary
                             </option>
                             <option class="form_field" style="background-color: #232a36;">
-                                Hexadecimal
+                                Decimal
                             </option>
                             <option class="form_field" style="background-color: #232a36;">
-                                Decimal
+                                Octal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Hexadecimal
                             </option>
                         </select>
                         <input type=" " id="binary-hexadecimal-input" value="0"
@@ -12972,10 +12796,13 @@
                                 Binary
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
-                                Hexadecimal
+                                Decimal
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
-                                Decimal
+                                Octal
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Hexadecimal
                             </option>
 
                         </select>
