@@ -10281,6 +10281,10 @@
                                     <td><a data-toggle="modal" data-target="#decagon"
                                            style="text-decoration:none;" href="#">Decagon</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#polycal"
+                                           style="text-decoration:none;" href="#">Polygon Calculator</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -15631,6 +15635,61 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="polycal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Polygon Calculator</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Side (a)</h5>
+                                <p class="text-center">\[a = \sqrt{\frac{4 S \tan(\pi / n )}{n} }\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter (L)</h5>
+                                <p class="text-center">\[L = n \times a\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/polycal.PNG" class="img-fluid">
+                                    <img src="images/polycal1.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <p> n = Enter 3 for triangle 4 for square 5 and so on...</p><br>
+                        <input class="form__field" type="number" placeholder="Enter area (S)"
+                               id="inputareapolycal"
+                               oninput="solvepolycal()">
+                        <input class="form__field" type="number" placeholder="regular polygon (n)"
+                               id="inputsidepolycal"
+                               oninput="solvepolycal()">
+                        <p class="stopwrap" id="resultofsidepolycal1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofsidepolycal2"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofperipolycal"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                     </button>
                 </div>
             </div>
