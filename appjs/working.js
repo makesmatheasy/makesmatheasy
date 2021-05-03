@@ -373,6 +373,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#suppang").click(function () {
+        openit("#suppangs");
+       closenav();
+        clearall();
+    })
+
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
