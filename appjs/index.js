@@ -303,6 +303,7 @@ function openit(id) {
         "#setcal",
         "#mi",
 	    "#ip",
+        "#partialcy",
 	    "#prices",
         "#centcal",
         "#cevtha",

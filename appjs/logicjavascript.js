@@ -3813,6 +3813,47 @@ function cubosolve() {
     }
 }
 
+function solvepartialcy() {
+    var height = document.getElementById("inputcyh").value;
+    var radius = document.getElementById("inputcyr").value;
+    var width = document.getElementById("inputcyw").value;
+    var volumeoutput = document.getElementById("resultofcyvol");
+    var laoutput = document.getElementById("resultofcyla");
+    var baoutput = document.getElementById("resultofcyba");
+    var taoutput = document.getElementById("resultofcyta");
+    var voltemp = "";
+    var latemp = "";
+    var batemp = "";
+    var tatemp = "";
+    var theta = 2 * Math.acos((radius-height)/radius) ;
+    var f = 0.5*theta*radius*radius - (radius - height)*Math.sqrt((2*radius*height)-(height*height));
+    if ((height != "") && (radius != "") && (width != "")) {
+        voltemp += "\\[V \\space = \\space F \\space \\times " + width +  "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((f * width).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[F \\space = \\space \\frac{\\theta}{2}" + "\\times" + radius + "\\times" + radius + "- ("  + radius + "-" + height + ")" + "\\sqrt{" + height + "(2 \\times" + radius + "-" + height + "} )" + "\\]";
+        latemp += "\\[ \\theta = 2 cos^{-1}(1-" + "\\frac{" + height + "}{" + radius + "})" + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + (f).toFixed(2) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        batemp += "\\[S \\space =" + radius + "\\times" +  "\\theta" + "\\times" + width + "\\]";
+        batemp += "\\[Bottom \\space Area \\space is \\space = \\space " + eval(String((radius*theta*width).toFixed(2))) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        tatemp += "\\[T \\space = 2 \\times" + width + "\\times" + "\\sqrt{"+ height + "\\times" + "(2 \\times " + radius + "-" + height  + "} )" + "\\]";
+        tatemp += "\\[Top \\space Area \\space is \\space = \\space " + eval(String((2*width* Math.sqrt((2*radius*height)-(height*height))).toFixed(2))) + "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+    } 
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        baoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
+}
+
 function ellipsoidsolve() {
     var a = document.getElementById("inputa").value;
     var b = document.getElementById("inputb").value;
