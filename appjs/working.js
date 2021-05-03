@@ -414,6 +414,10 @@ $(document).ready(function () {
         openit("#mtm");
 
 
+    $("#mtmbtn").click(function () {
+        openit("#mtm");
+
+
     $("#clrbtn").click(function () {
         openit("#clr");
 
