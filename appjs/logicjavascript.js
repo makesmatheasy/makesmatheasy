@@ -6846,7 +6846,7 @@ function gp() {
 
 function igp() {
     var a = document.getElementById("fterm").value
-    var r = parseFloat(document.getElementById("r").value)
+    var r = parseFloat(document.getElementById("r1").value)
     if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
     {
         document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
@@ -6855,8 +6855,8 @@ function igp() {
     if (r >= 1) {
         document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
     } else {
-        var ans = a / (1 - r)
-        document.getElementById("sumigp").innerHTML = "Sum = " + ans
+        var ans = a / (1 - r);
+        document.getElementById("sumigp").innerHTML = "Sum = " + ans;
     }
 }
 
