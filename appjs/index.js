@@ -290,6 +290,7 @@ function openit(id) {
         "#igc",
         "#res",
 
+
         "#clr",
 
         '#dodecahedron',

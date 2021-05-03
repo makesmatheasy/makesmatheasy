@@ -2935,6 +2935,7 @@
                              <span
                                      onclick="addtofavourite('Milne Thomson Method','#mtm','c','mtmfav')"><img
                                      id="mtmfav" src="images/unfavourite.png"
+
                                      style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2951,6 +2952,7 @@
                              <span
                                      onclick="addtofavourite('Residue Methods','#res','c','resfav')"><img
                                      id="resfav" src="images/unfavourite.png"
+
 
 
                             <a id="clrbtn"
@@ -4206,6 +4208,20 @@
                 class="stopwrap"
                align="right"></p>
             <h4 id="ppp_op"> </h4> 
+            <h3>Slope of the line with 2 points known</h3>
+            <p>&nbsp;</p>
+             <div align="center" style="font-family:mathfont;width:auto; color: aliceblue; font-size: 1.5em;">
+            Required Coordinates: <input type="text" id="slx1" size=3 placeholder="X1"> , <input type="text" id="sly1" size=3 placeholder="Y1">  ,
+             <input type="text" id="slx2" size=3 placeholder="X2">  , <input type="text" id="sly2" size=3 placeholder="Y2"> 
+             <br>
+             <br>
+             <button type="button" class="btn btn-light" onclick=slpsolve()>
+                Find Slope Of Line
+            </button>
+            <p>&nbsp;</p>
+            <p id="slpans"></p>
+            </div>
+            
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -12802,6 +12818,7 @@
                   </div>
               </div>
         <!-- end of anyBase to anyBase convertor -->
+
         <div class="collapse" id="res">
             <h2 style = "text-align : center;">Residue at Pole</h2>
             <br><br>
@@ -12826,6 +12843,7 @@
         </div>
         <div class="collapse" id="mtm">
             <h2 style="text-align: center;">Milne Thomson Method</h2>
+
             <br><br>
             <p>With the help of this method, we can directly construct f(z) in terms of z without finding v when u is given or u when v is given</p>
             <p>\[f(z)\space =\space \int {\phi _1(z,0)-i\phi _2(z,0)}\,dz\space +\space C\]</p>

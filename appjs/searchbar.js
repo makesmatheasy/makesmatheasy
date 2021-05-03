@@ -578,13 +578,14 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "MILNE THOMSON METHOD"){
                         document.getElementById('mtm').click();
                     }
+
                     else if (inp.value.toUpperCase() == "IMPORTANT GRAPH CALCULATORS") {
                         $("#igc").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "IMPORTANT GRAPH CALCULATORS"){
                         document.getElementById('igc').click();
                     }
-                    else if (inp.value.toUpperCase() == "EMI CALCULATOR") {
+       else if (inp.value.toUpperCase() == "EMI CALCULATOR") {
                         $("#emical").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "EMI CALCULATOR"){
@@ -760,7 +761,10 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Curve Tracing","Milne Thomson Method","Residue Methods","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Important Graph Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
 
+                        "Curve Tracing","Milne Thomson Method","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
+
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","Perfect Squares & Cubes in a range",
+
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
 
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
@@ -1197,6 +1201,7 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "LEAP YEAR") {
         $("#lyear").slideToggle(); 
     }
+
     else if(inp.value.toUpperCase() == "IMPORTANT GRAPH CALCULATORS"){
         document.getElementById('igc').click(); 
     }
