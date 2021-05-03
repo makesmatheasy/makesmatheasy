@@ -206,6 +206,7 @@ function openit(id) {
         "#hp",
         "#ppmfs",
         "#bool",
+        "#suppangs",
         "#eirs",
         "#errpers",
         "#log_values",
@@ -286,6 +287,9 @@ function openit(id) {
         "#repp",
         "#mtm",
         "#igc",
+
+        "#clr",
+
         '#dodecahedron',
         "#icosahedron",
         "#anglecon",
