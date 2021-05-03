@@ -327,7 +327,7 @@ $(document).ready(function () {
         clearall();
     })
 
-    $("#HPbtn").click(function () {
+    $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
         clearall();
@@ -373,6 +373,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#suppang").click(function () {
+        openit("#suppangs");
+       closenav();
+        clearall();
+    })
+
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
@@ -398,8 +405,14 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
     $("#mtmbtn").click(function () {
         openit("#mtm");
+
+
+    $("#clrbtn").click(function () {
+        openit("#clr");
+
         closenav();
         clearall();
     })
