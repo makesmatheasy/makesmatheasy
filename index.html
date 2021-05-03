@@ -2278,7 +2278,22 @@
                         </td>
                     </tr>
                 </table>
-
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="igcbtn"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Important Graph Calculators
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Important Graph Calculators','#igc','c','igcfav')"><img
+                                        id="igcfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>
             <li>
                 <table class="table">
@@ -9642,6 +9657,17 @@
             </p>
             <p style="text-align: center;">Its just Polar coordinates with z as height forming a
                 cylinder</p>
+        </div>
+        <div class="collapse" id="igc">
+            <h2>Important Graph Calculators</h2>
+            <br><br>
+            <h4>FInding between chord and a tangent</h4>
+            <br>
+            <input type="text" class="form__field" id="ctangle" placeholder="Enter angle in the alternate segment">
+            <br>
+            <button type="submit" class = "btn btn-dark"onclick = "ctangle()">Find angle</button>
+            <h4 id="ctangleinfo"></h4>
+            <h4 id="ctangleans"></h4>
         </div>
         <div class="collapse" id="cevtha">
             <h2 style="text-align: center;">Ceva and Thales Theorem</h2>

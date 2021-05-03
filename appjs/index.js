@@ -288,6 +288,8 @@ function openit(id) {
         "#repp",
 
         "#mtm",
+        "#igc",
+
 
         "#clr",
 
