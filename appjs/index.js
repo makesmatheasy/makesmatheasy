@@ -208,6 +208,7 @@ function openit(id) {
         "#bool",
         "#suppangs",
         "#eirs",
+        "#zscores",
         "#errpers",
         "#log_values",
         "#oops",
