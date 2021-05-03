@@ -10301,6 +10301,11 @@
                             </table>
                         </div>
                     </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#parabolic_arc"
+                           style="text-decoration:none;"
+                           href="#">Parabolic Arch</a></td>
                 </tr>                    
             </table>
         </div>
@@ -15834,7 +15839,60 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="parabolic_arc" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Parabolic Arch</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area </h5>
+                                <p class="text-center">\[S = \frac{2}{3}ab\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Circular Arc</h5>
+                                <p class="text-center">\[L = \frac{1}{2}s + \frac{b^2}{8a}ln \Big(\frac{4a+s}{b} \Big)\]</p>
+                                <p class="text-center">\[where \space s \space = \space \sqrt{b^2 + 16a^2}\]
+                                
 
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/parabolic_arch.gif" class="img-fluid">
+                                </div>
+                                
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number" placeholder="Enter height a"
+                                id="inputa"
+                                oninput="solveparaArc()">
+                            <input class="form__field" type="number" placeholder="Enter chord b"
+                                id="inputb"
+                                oninput="solveparaArc()">
+                            <br>
+                            <p class="stopwrap" id="resultofparaarea"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofarc"
+                            style="font-family:mathfont;"></p>
+                           
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="pentagram" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -15902,6 +15960,7 @@
             </div>
         </div>
     </div>
+    
     <!--shapes end-->
 
     <!-- properties of quadrilaterals -->
