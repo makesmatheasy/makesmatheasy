@@ -10548,6 +10548,11 @@
                                         href="#">Square Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#trusqpyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Truncated Square Pyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#tripyramid"
                                         style="text-decoration:none;"
                                         href="#">Triangular Pyramid</a></td>
@@ -17350,6 +17355,69 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="trusqpyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Square Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V) </h5>
+                                    <p class="text-center">\[V = \frac{1}{3} (a^2 + ab + b^2) h \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral area (F) </h5>
+                                    <p class="text-center">\[F= 2(a+b) \sqrt{ (\frac{a-b}{2})^2 + h^2 }  \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area (S) </h5>
+                                    <p class="text-center">\[S = F + a^2 +b^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truspyramid.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base side (a)" id="inputtrusqpysidea"
+                                   oninput="trusqpyramidsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter top side (b)" id="inputtrusqpysideb"
+                                   oninput="trusqpyramidsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height (h)" id="inputtrusqpyheight"
+                                   oninput="trusqpyramidsolve();">
+                            <p class="stopwrap" id="resultofvolsqpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflsasqpyramid"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofsasqpyramid"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
