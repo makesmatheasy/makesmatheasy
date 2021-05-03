@@ -459,8 +459,9 @@
             <li>
                 <table class="table">
                     <tr>
-                        <td style="border-top: none;">
+                        <td style="border-top: none;">         
                             <a id="sumbtn"
+
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of
                                 N terms of AP,GP & HP</a>
                         </td>
@@ -1311,10 +1312,10 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="squaresRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Squares in a range</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Squares & Cubes in a range</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Perfect squares in a range','#squaresRanges','c','squaresRangeimgfav')"><img
+                                <span onclick="addtofavourite('Perfect Squares & Cubes in a range','#squaresRanges','c','squaresRangeimgfav')"><img
                                         id="squaresRangeimgfav" src="images/unfavourite.png"
 
                                         style="height:1.5625rem;filter: none;"></span>
@@ -1345,22 +1346,6 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="numcubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
-                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
                             <a id="pairfact"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Factorization</a>
                         </td>
@@ -1373,23 +1358,7 @@
                 </table>
             </li>
 
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="numcubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
-                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
+          
             <li>
                 <table class="table">
                     <tr>
@@ -1410,6 +1379,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
                             <a id="percalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage Calculator</a>
                         </td>
@@ -2129,6 +2099,23 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="suppang"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Supplementary Angle 
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('supplementary angle calculator','#suppangs','c','suppangfav')"><img
+                                        id="suppangimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -2925,6 +2912,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
+                            <a id="clrbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cauchy Integral,Liouville and Rouche Theorem</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Cauchy Integral,Liouville and Rouche Theorem','#clr','c','clrfav')"><img
+                                     id="clrfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="complex1collapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ops for 1
                                 complex number</a>
@@ -3329,6 +3333,33 @@
 
         </div>
         <!--        end factors-->
+        <div class="collapse" id="clr">
+            <h2 style="text-align: center;">CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM</h2>
+            <br><br>
+            <h4>Cauchy Integral Theorem</h4>
+            <br>
+            <p>If f(z) is analytic in some simply connected region R, then</p>
+            <p>\[\int f(z)\,dz\space =\space 0\]</p>
+            <p>for any closed contour gamma completely contained in R. Writing z as</p>
+            <p>\[z\space =\space x+iy\]</p>
+            <p>For a multiply connected region,</p>
+            <p>\[\int_{C_1} f(z)\,dz\space =\space \int_{C_2} f(z)\,dz\]</p>
+            <br>
+            <h4>Liouville Theorem</h4>
+            <br>
+            <p>In complex analysis, Liouville's theorem, named after Joseph Liouville (although the theorem was first proven by Cauchy in 1844), states that every bounded entire function must be constant. That is, every holomorphic function f for which there exists a positive number M such that  |f(z)|&lt;= M for all z in C  is constant. Equivalently, non-constant holomorphic functions on C have unbounded images.</p>
+            <p>\[{\displaystyle |a_{k}|\leq {\frac {1}{2\pi }}\oint _{C_{r}}{\frac {|f(\zeta )|}{|\zeta |^{k+1}}}\,|d\zeta |\leq {\frac {1}{2\pi }}\oint _{C_{r}}{\frac {M}{r^{k+1}}}\,|d\zeta |={\frac {M}{2\pi r^{k+1}}}\oint _{C_{r}}|d\zeta |={\frac {M}{2\pi r^{k+1}}}2\pi r={\frac {M}{r^{k}}},}\]</p>
+            <p>A consequence of the theorem is that "genuinely different" entire functions cannot dominate each other, i.e. if f and g are entire, and |f| ≤ |g| everywhere, then f = α·g for some complex number α. Consider that for g = 0 the theorem is trivial so we assume. Consider the function h = f/g. It is enough to prove that h can be extended to an entire function, in which case the result follows by Liouville's theorem. The holomorphy of h is clear except at points in g−1(0). But since h is bounded and all the zeroes of g are isolated, any singularities must be removable. Thus h can be extended to an entire bounded function which by Liouville's theorem implies it is constant.
+               
+            </p>
+            <br>
+            <h4>Rouche Theorem</h4>
+            <br>
+            <p>Rouché's theorem, named after Eugène Rouché, states that for any two complex-valued functions f and g holomorphic inside some region K with closed contour K, if |g(z)| &lt; |f(z)| on partial K, then f and f + g have the same number of zeros inside K, where each zero is counted as many times as its multiplicity. This theorem assumes that the contour  K is simple, that is, without self-intersections. Rouché's theorem is an easy consequence of a stronger symmetric Rouché's theorem described below.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Rouche-thm.png/300px-Rouche-thm.png" alt="">
+            <p>Let C be a closed, simple curve (i.e., not self-intersecting). Let h(z) = f(z) + g(z). If f and g are both holomorphic on the interior of C, then h must also be holomorphic on the interior of C. Then, with the conditions imposed above, the Rouche's theorem in its original (and not symmetric) form says that</p>
+            <p>If |f(z)| > |h(z) − f(z)|, for every z in C, then f and h have the same number of zeros in the interior of C.</p>
+        </div>
                  <!-- Start of Fourier Series  -->
                  <div class="collapse" id="fourier_series">
                     <div class="stopwrap">
@@ -6163,6 +6194,30 @@
         </div><br>
         <div class="coll" style="text-align: center;">
         <h5 id="vectordot1" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <br><br>
+    <div class="text-center">
+        <h3>Cross Product Calculator</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Vector X :   <input type="text" id="f1g" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="f2g" size=3 value='' placeholder="B"> j + <input type="text" id="f3g" size=3 value='' placeholder="C"> k
+            <br><br>
+            Vector Y :   <input type="text" id="g1f" size=3 value='' placeholder="A"> i +
+        <input type="text" id="g2f" size=3 value='' placeholder="B"> j + <input type="text" id="g3f" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectorcross()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vectorcross1" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <div class="coll1" style="text-align: center;">
+    <h5 id="vectorcross2" style="color: white; font-size: x-large;"></h5>
     </div>
 </div>
 
@@ -11593,6 +11648,31 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="suppangs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Supplementary Angle 
+        Calculator </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="ang" class="form__field" id="ang" width="5em" placeholder="Enter the angle whose supplementary is to be calculated">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="suppangcal()">Calculate</button>
+    <p id="suppangans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <h1 style="font-family:mathfont; text-align:center;"> Verify if two angles are supplementary </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="ang1" class="form__field" id="ang1" width="5em" placeholder="Enter first angle">
+    <p>&nbsp;</p>
+    <input type="number" name="ang2" class="form__field" id="ang2" width="5em" placeholder="Enter second angle">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="suppangvercal()">VERIFY</button>
+    <p id="suppangverans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+</div>
+
+
+
+
 <div class="collapse" id="pairfacts">
 
     
@@ -11607,6 +11687,7 @@
     <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
     
 </div>
+
 <div class="collapse" id="errpers">
 
     
@@ -11764,21 +11845,16 @@
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="squaresRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="squaresRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
-   
-
-</div>
-
-
-<div class="collapse" id="cubesRanges">
-    
+    <br>
     <h1 style="font-family:mathfont; text-align:center;">Cubes in a Range</h1>
     <input type="text" name="range1" class="form__field" id="range1" placeholder="Enter the first term" style=" text-align:center;">
     <input type="text" name="range2" class="form__field" id="range2" placeholder="Enter the last term" style=" text-align:center;">
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="cubesRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="cubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
-   
+
 </div>
+
 
 
 <div class="collapse" id="segcals">

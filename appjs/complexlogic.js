@@ -964,6 +964,7 @@ function errpercal()
 }
 
 
+
 function slpsolve()
 {
     var a=document.getElementById("slx1").value;
@@ -981,6 +982,47 @@ function slpsolve()
         ans="Calculated slope is: "+p;
     }
     document.getElementById("slpans").innerHTML=ans;
+
+function suppangcal()
+{
+    var a=document.getElementById("ang").value;
+    var ans="";
+    if(a=="")
+    {
+        ans="Enter the angle to find the supplementary";
+    }
+    else
+    {
+        var t=parseInt(a);
+        var v=180-t;
+        ans="The supplementary angle of "+a+" is "+v;
+    }
+
+    document.getElementById("suppangans").innerHTML=ans;
+}
+function suppangvercal()
+{
+    var a=document.getElementById("ang1").value;
+    var b=document.getElementById("ang2").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Enter both angles to verify";
+    }
+    else
+    {
+        var x=parseInt(a), y=parseInt(b);
+        if(x+y==180)
+        {ans="Entered angles are supplementary";}
+        else{
+        ans="Entered angles are not supplementary";
+        }
+    }
+
+    document.getElementById("suppangverans").innerHTML=ans;
+
+
+
 
 function faccal()
 {
@@ -1050,3 +1092,7 @@ function facpaircal()
         }
     }
  document.getElementById("facans").innerHTML=ans;
+
+
+}
+
