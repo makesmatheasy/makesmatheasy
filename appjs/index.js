@@ -147,7 +147,7 @@ function openit(id) {
         "#sosqsn",
         "#socbsn",
         "#squaresRanges",
-
+        "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
@@ -208,6 +208,7 @@ function openit(id) {
         "#bool",
         "#suppangs",
         "#eirs",
+        "#zscores",
         "#errpers",
         "#log_values",
         "#oops",
@@ -287,6 +288,8 @@ function openit(id) {
         "#repp",
 
         "#mtm",
+        "#igc",
+
 
         "#clr",
 
@@ -300,11 +303,13 @@ function openit(id) {
         "#setcal",
         "#mi",
 	    "#ip",
+        "#partialcy",
 	    "#prices",
         "#centcal",
         "#cevtha",
         "#sum_n",
         "#percal",
+        "#parabolic_arc",
         "#lyear",
         "#analytical",
         "#isoright",
@@ -465,6 +470,10 @@ $(document).on('click', ' .favourites ', function () {
 $(document).on('hover', ' .favnew ', function () {
     $(this).addClass('favourites');
 });
+
+document.querySelector(".container").addEventListener('click',function(){
+    $(".favouritecontainer").slideUp();
+})
 
 function removefavourite() {
     localStorage.removeItem("favouritearray");
