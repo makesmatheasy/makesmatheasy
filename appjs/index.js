@@ -147,7 +147,7 @@ function openit(id) {
         "#sosqsn",
         "#socbsn",
         "#squaresRanges",
-
+        "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
@@ -206,7 +206,9 @@ function openit(id) {
         "#hp",
         "#ppmfs",
         "#bool",
+        "#suppangs",
         "#eirs",
+        "#zscores",
         "#errpers",
         "#log_values",
         "#oops",
@@ -215,6 +217,7 @@ function openit(id) {
         "#bt-collapse1",
         "#pandc",
         "#stresscalc",
+        "#pairfacts",
         "#interest",
         "#decimal-binary",
         "#bitwise-calc",
@@ -274,6 +277,7 @@ function openit(id) {
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#condprobability",
         "#prism",
         "#pentprism",
         "#pyramid",
@@ -281,6 +285,14 @@ function openit(id) {
         "#octpyramid",
         "#hexpyramid",
         "#octahedron",
+        "#repp",
+
+        "#mtm",
+        "#igc",
+
+
+        "#clr",
+
         '#dodecahedron',
         "#icosahedron",
         "#anglecon",
@@ -291,11 +303,13 @@ function openit(id) {
         "#setcal",
         "#mi",
 	    "#ip",
+        "#partialcy",
 	    "#prices",
         "#centcal",
         "#cevtha",
-
+        "#sum_n",
         "#percal",
+        "#parabolic_arc",
         "#lyear",
         "#analytical",
         "#isoright",
@@ -457,6 +471,10 @@ $(document).on('click', ' .favourites ', function () {
 $(document).on('hover', ' .favnew ', function () {
     $(this).addClass('favourites');
 });
+
+document.querySelector(".container").addEventListener('click',function(){
+    $(".favouritecontainer").slideUp();
+})
 
 function removefavourite() {
     localStorage.removeItem("favouritearray");
