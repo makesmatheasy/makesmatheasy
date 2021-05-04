@@ -903,6 +903,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#rms").click(function(){
+        openit("#rmss");
+        closenav();
+        clearall();
+    });
+
 
 })
 

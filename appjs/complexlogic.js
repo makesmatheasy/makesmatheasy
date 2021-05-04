@@ -951,6 +951,7 @@ function errpercal()
 {
     var a=document.getElementById("acval").value;
     var b=document.getElementById("expval").value;
+    var ans="";
     if(a==""||b=="")
     {
         ans="Please enter all the values";
@@ -961,4 +962,37 @@ function errpercal()
     }
     document.getElementById("errperans").innerHTML=ans;
 
+}
+
+function rmscal()
+{
+    var num=document.getElementById("rmi").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+        var sum=0;
+        for (i = 0; i < len; i++) {
+            sum=sum+(number[i]**2);
+        }
+
+        sum=sum/len;
+        sum=Math.sqrt(sum);
+        ans="The root mean square of given input is: "+sum;
+        
+    }
+    document.getElementById("rmsans").innerHTML=ans;
 }
