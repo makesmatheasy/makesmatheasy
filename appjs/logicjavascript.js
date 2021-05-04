@@ -1010,6 +1010,17 @@ function setcal() {
   }
 }
 
+
+function ctangle(){
+    // javascript program to find the angle
+    // between a chord and a tangent
+    // when angle in the alternate segment is given
+    var into = document.getElementById("ctangle").value
+    document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
+    document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
+}
+
+
 //-----------------------------------------------------
 function centcal() {
   var a1 = parseInt(document.getElementById("fxc").value);
@@ -2237,159 +2248,35 @@ function perpendicularsolve() {
   }
 }
 
-function solvesection() {
-  var x1, y1, x2, y2, m, n;
-  x1 = parseFloat(document.getElementById("x1").value);
-  y1 = parseFloat(document.getElementById("y1").value);
-  x2 = parseFloat(document.getElementById("x2").value);
-  y2 = parseFloat(document.getElementById("y2").value);
-  m = parseFloat(document.getElementById("m").value);
-  n = parseFloat(document.getElementById("n").value);
-  var explain = document.getElementById("sec_formula");
-  explain.innerHTML =
-    "\\[ \\space (x,\\space y) \\space = ( \\frac{mx2 \\space + \\space nx1}{m \\space + \\space n} , \\space \\frac{my2 \\space + \\space ny1}{m \\space + \\space n} ) \\space =" +
-    " ( \\frac{" +
-    m +
-    "\\times" +
-    x2 +
-    "+" +
-    n +
-    "\\times" +
-    x1 +
-    "}{" +
-    m +
-    "+" +
-    n +
-    "}" +
-    "," +
-    "\\frac{" +
-    m +
-    "\\times" +
-    y2 +
-    "+" +
-    n +
-    "\\times" +
-    y1 +
-    "}{" +
-    m +
-    "+" +
-    n +
-    "} )" +
-    "\\] ";
-  renderMathInElement(document.getElementById("sec_formula"));
-  var pt1 = (m * x2 + n * x1) / (m + n);
-  var pt2 = (m * y2 + n * y1) / (m + n);
-  document.getElementById("output").innerHTML =
-    "Point dividing (" +
-    x1 +
-    "," +
-    y1 +
-    ") and (" +
-    x2 +
-    "," +
-    y2 +
-    ") in the ratio " +
-    m +
-    ":" +
-    n +
-    " is (" +
-    pt1 +
-    ", " +
-    pt2 +
-    ")";
-}
 
-function circumsolve() {
-  var x1, y1, x2, y2, x3, y3, A, B, C;
-  x1 = parseFloat(document.getElementById("X1st").value);
-  y1 = parseFloat(document.getElementById("Y1st").value);
-  x2 = parseFloat(document.getElementById("X2st").value);
-  y2 = parseFloat(document.getElementById("Y2st").value);
-  x3 = parseFloat(document.getElementById("X3st").value);
-  y3 = parseFloat(document.getElementById("Y3st").value);
-  A = parseFloat(document.getElementById("angleA").value);
-  B = parseFloat(document.getElementById("angleB").value);
-  C = parseFloat(document.getElementById("angleC").value);
-  var circenterop = document.getElementById("cir_output");
-  var explain = document.getElementById("cirformula");
-  var c1 = (
-    (x1 * Math.sin((2 * A * Math.PI) / 180.0) +
-      x2 * Math.sin((2 * B * Math.PI) / 180.0) +
-      x3 * Math.sin((2 * C * Math.PI) / 180.0)) /
-    (Math.sin((2 * A * Math.PI) / 180.0) +
-      Math.sin((2 * B * Math.PI) / 180.0) +
-      Math.sin((2 * C * Math.PI) / 180.0))
-  ).toFixed(1);
-  var c2 = (
-    (y1 * Math.sin((2 * A * Math.PI) / 180.0) +
-      y2 * Math.sin((2 * B * Math.PI) / 180.0) +
-      y3 * Math.sin((2 * C * Math.PI) / 180.0)) /
-    (Math.sin((2 * A * Math.PI) / 180.0) +
-      Math.sin((2 * B * Math.PI) / 180.0) +
-      Math.sin((2 * C * Math.PI) / 180.0))
-  ).toFixed(1);
-  if (
-    x1 != "" &&
-    y1 != "" &&
-    x2 != "" &&
-    y2 != "" &&
-    x3 != "" &&
-    y3 != "" &&
-    A != "" &&
-    B != "" &&
-    C != ""
-  ) {
-    circenterop.innerHTML =
-      "\\[Circumcenter \\space = \\space (" +
-      eval(String(c1)) +
-      "," +
-      eval(String(c2)) +
-      ")" +
-      "\\]";
-    renderMathInElement(document.getElementById("cir_output"));
-    explain.innerHTML =
-      "\\[Formula \\space (x, \\space y) \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" +
-      "\\] ";
-    renderMathInElement(document.getElementById("cirformula"));
-  }
-}
-function incentersolve() {
-  var x1, y1, x2, y2, x3, y3, a, b, c;
-  x1 = parseFloat(document.getElementById("X1").value);
-  y1 = parseFloat(document.getElementById("Y1").value);
-  x2 = parseFloat(document.getElementById("X2").value);
-  y2 = parseFloat(document.getElementById("Y2").value);
-  x3 = parseFloat(document.getElementById("X3").value);
-  y3 = parseFloat(document.getElementById("Y3").value);
-  a = parseFloat(document.getElementById("ina").value);
-  b = parseFloat(document.getElementById("inb").value);
-  c = parseFloat(document.getElementById("inc").value);
-  var incenterop = document.getElementById("in_output");
-  var explain = document.getElementById("informula");
-  if (
-    x1 != "" &&
-    y1 != "" &&
-    x2 != "" &&
-    y2 != "" &&
-    x3 != "" &&
-    y3 != "" &&
-    a != "" &&
-    b != "" &&
-    c != ""
-  ) {
-    incenterop.innerHTML =
-      "\\[Incenter \\space = \\space (" +
-      eval(String((a * x1 + b * x2 + c * x3) / (a + b + c))) +
-      "," +
-      eval(String((a * y1 + b * y2 + c * y3) / (a + b + c))) +
-      ")" +
-      "\\]";
-    renderMathInElement(document.getElementById("in_output"));
-    explain.innerHTML =
-      "\\[Formula \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" +
-      "\\] ";
-    renderMathInElement(document.getElementById("informula"));
-  }
+function solvepolycal(){
+    var S = document.getElementById("inputareapolycal").value;
+    var n = document.getElementById("inputsidepolycal").value;   
+    var side = math.sqrt( 4 * S * math.tan(math.pi / n ) / n  );
+    var peri = side * n ;
+
+    console.log(side);
+    console.log(peri);
+    if (S!="" && n!=""){
+        if (n>=3 && n<=12){
+
+            document.getElementById('resultofsidepolycal1').innerHTML= "\\[Side \\space value \\space of \\space the \\space "+n+" \\space sided \\space polygon \\space will \\space be \\space \\]";
+            document.getElementById('resultofsidepolycal2').innerHTML= "\\[ \\sqrt{\\frac{4 \\times "+S+" \\times \\tan(\\pi / "+n+" )}{"+n+"} } = \\space "+side.toFixed(3)+"\\]";
+            renderMathInElement(document.getElementById('resultofsidepolycal1'));
+            renderMathInElement(document.getElementById('resultofsidepolycal2'));
+            document.getElementById('resultofperipolycal').innerHTML= "\\[ Perimeter (L)= "+side.toFixed(2)+" \\times "+n+" = "+peri.toFixed(2)+"\\]";
+            renderMathInElement(document.getElementById('resultofperipolycal'));
+
+        } else{
+            document.getElementById('resultofsidepolycal1').innerHTML="";
+            document.getElementById('resultofsidepolycal2').innerHTML= "Please enter value of n ranging from 3 to 12";
+            document.getElementById('resultofperipolycal').innerHTML="";
+        }
+    } else {
+        document.getElementById('resultofsidepolycal1').innerHTML="";
+        document.getElementById('resultofsidepolycal2').innerHTML= "";
+        document.getElementById('resultofperipolycal').innerHTML="";
+    }
 }
 
 function excentersolve() {
@@ -4089,6 +3976,30 @@ function solvecosine() {
     anglecoutput.innerHTML = "";
   }
 }
+function solveparaArc() {
+    var height = document.getElementById("inputa").value;
+    var chord = document.getElementById("inputb").value;
+    var areaoutput = document.getElementById("resultofparaarea");
+    var cirarcoutput = document.getElementById("resultofarc");
+    var areatemp = "";
+    var cirarctemp = "";
+    var s=Math.sqrt((chord*chord)+16*(height*height));
+    if ((height != "") && (chord != "")) {
+        areatemp += "\\[" + "\\frac{2}{3}" + "\\times" + height + "\\times" + chord + "\\]";
+        areatemp += "\\[Area \\space is \\space : \\space " + eval(String(0.67 * height * chord)) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        cirarctemp += "\\[" + "\\frac{1}{2}\\times s \\space + " + "\\frac{" + chord + "\\times" + chord + "}{8 \\times" + height + "} ln" + "\\frac{4 \\times" + height +  "+ s}{" + chord + "}" + "\\]";
+        cirarctemp += "\\[" + "where \\space s \\space = \\sqrt{" + chord + "\\times" + chord + "+" + 16 + "\\times" + height + "\\times" + height + "}" + "\\]";
+        cirarctemp += "\\[Circular \\space Arc \\space is \\space : \\space " + eval(String((0.5*s + ((chord*chord)/(8*height))* Math.log((4*height + s)/chord)).toFixed(3))) + "\\]";
+        cirarcoutput.innerHTML = cirarctemp;
+        renderMathInElement(cirarcoutput);
+        renderMathInElement(areaoutput);
+    } else {
+        areaoutput.innerHTML = "";
+        cirarcoutput.innerHTML = "";
+    }
+}
+
 
 function solvecircle() {
   let radius = document.getElementById("inputradius").value;
@@ -4126,6 +4037,37 @@ function solvecircle() {
   renderMathInElement(document.getElementById("resultofcircumferencec2"));
   renderMathInElement(document.getElementById("resultofdiameterc"));
   renderMathInElement(document.getElementById("resultofchord"));
+}
+
+function solvearch(){
+    var r = document.getElementById("radiusarch").value;
+    var angle = document.getElementById("anglearch").value;
+    var area = 0.5 * r**2 * (angle - math.sin(angle));
+    var chord = 2 * r * math.sin(angle/2);
+    var cirarc = r * angle;
+
+    if (r!="" && angle!=""){
+
+        if (chord <=0){
+            document.getElementById("resultofareaarch1").innerHTML = "";
+            document.getElementById("resultofareaarch2").innerHTML = "";
+            document.getElementById("resultofarchchord1").innerHTML = "Please enter proper angle value in radian";
+            document.getElementById("resultofarchchord2").innerHTML = "";
+            document.getElementById("resultofcirarc").innerHTML = "";
+            return;
+        }
+        document.getElementById("resultofareaarch1").innerHTML = "\\[Area \\space of \\space Arch \\space is \\]";
+        document.getElementById("resultofareaarch2").innerHTML = "\\[\\frac{1}{2} \\times "+r+"^2 \\times ( "+angle+" - sin"+angle+" ) = "+area.toFixed(3)+"\\]";
+        document.getElementById("resultofarchchord1").innerHTML = "\\[Chord \\space of \\space Arch \\space is \\]";
+        document.getElementById("resultofarchchord2").innerHTML = "\\[ 2\\times "+r+" \\times sin (\\frac { "+angle+"}{2} ) = "+chord.toFixed(3)+"\\]";
+        document.getElementById("resultofcirarc").innerHTML = "\\[Circular \\space arc \\space = "+r+" \\times "+angle+" = "+cirarc.toFixed(2)+" \\]";
+        
+        renderMathInElement(document.getElementById("resultofareaarch1"));
+        renderMathInElement(document.getElementById("resultofareaarch2"));
+        renderMathInElement(document.getElementById("resultofarchchord1"));
+        renderMathInElement(document.getElementById("resultofarchchord2"));
+        renderMathInElement(document.getElementById("resultofcirarc"));
+    }
 }
 
 function solvesemicircle() {
@@ -4896,6 +4838,47 @@ function cubosolve() {
     tsaoutput.innerHTML = "";
     diagoutput.innerHTML = "";
   }
+}
+
+function solvepartialcy() {
+    var height = document.getElementById("inputcyh").value;
+    var radius = document.getElementById("inputcyr").value;
+    var width = document.getElementById("inputcyw").value;
+    var volumeoutput = document.getElementById("resultofcyvol");
+    var laoutput = document.getElementById("resultofcyla");
+    var baoutput = document.getElementById("resultofcyba");
+    var taoutput = document.getElementById("resultofcyta");
+    var voltemp = "";
+    var latemp = "";
+    var batemp = "";
+    var tatemp = "";
+    var theta = 2 * Math.acos((radius-height)/radius) ;
+    var f = 0.5*theta*radius*radius - (radius - height)*Math.sqrt((2*radius*height)-(height*height));
+    if ((height != "") && (radius != "") && (width != "")) {
+        voltemp += "\\[V \\space = \\space F \\space \\times " + width +  "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((f * width).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[F \\space = \\space \\frac{\\theta}{2}" + "\\times" + radius + "\\times" + radius + "- ("  + radius + "-" + height + ")" + "\\sqrt{" + height + "(2 \\times" + radius + "-" + height + "} )" + "\\]";
+        latemp += "\\[ \\theta = 2 cos^{-1}(1-" + "\\frac{" + height + "}{" + radius + "})" + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + (f).toFixed(2) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        batemp += "\\[S \\space =" + radius + "\\times" +  "\\theta" + "\\times" + width + "\\]";
+        batemp += "\\[Bottom \\space Area \\space is \\space = \\space " + eval(String((radius*theta*width).toFixed(2))) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        tatemp += "\\[T \\space = 2 \\times" + width + "\\times" + "\\sqrt{"+ height + "\\times" + "(2 \\times " + radius + "-" + height  + "} )" + "\\]";
+        tatemp += "\\[Top \\space Area \\space is \\space = \\space " + eval(String((2*width* Math.sqrt((2*radius*height)-(height*height))).toFixed(2))) + "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+    } 
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        baoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
 }
 
 function ellipsoidsolve() {
