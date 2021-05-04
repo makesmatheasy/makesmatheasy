@@ -866,6 +866,7 @@ function eircal() {
 function errpercal() {
     var a = document.getElementById("acval").value;
     var b = document.getElementById("expval").value;
+    var ans = "";
     if (a == "" || b == "") {
         ans = "Please enter all the values";
     }
@@ -879,111 +880,140 @@ function errpercal() {
 
 
 
-function slpsolve() {
-    var a = document.getElementById("slx1").value;
-    var b = document.getElementById("sly1").value;
-    var c = document.getElementById("slx2").value;
-    var d = document.getElementById("sly2").value;
+
+function zscorecal() {
+    var a = document.getElementById("rawscore").value;
+    var b = document.getElementById("ppmean").value;
+    var c = document.getElementById("stdtn").value;
     var ans = "";
-    if (a == "" || b == "" || c == "" || d == "") {
-        ans = "Please enter all values to calculate slope";
+    if (a == "" || b == "" || c == "") {
+        ans = "Please enter all the values";
     }
     else {
-        var p = (d - b) / (c - a);
-        ans = "Calculated slope is: " + p;
+        var z = (a - b) / c;
+        ans = "The calculated Z Score is: " + z;
     }
-    document.getElementById("slpans").innerHTML = ans;
+    document.getElementById("zscoreans").innerHTML = ans;
 
-    function suppangcal() {
-        var a = document.getElementById("ang").value;
+    function slpsolve() {
+        var a = document.getElementById("slx1").value;
+        var b = document.getElementById("sly1").value;
+        var c = document.getElementById("slx2").value;
+        var d = document.getElementById("sly2").value;
         var ans = "";
-        if (a == "") {
-            ans = "Enter the angle to find the supplementary";
+        if (a == "" || b == "" || c == "" || d == "") {
+            ans = "Please enter all values to calculate slope";
         }
         else {
-            var t = parseInt(a);
-            var v = 180 - t;
-            ans = "The supplementary angle of " + a + " is " + v;
+            var p = (d - b) / (c - a);
+            ans = "Calculated slope is: " + p;
         }
-
-        document.getElementById("suppangans").innerHTML = ans;
-    }
-    function suppangvercal() {
-        var a = document.getElementById("ang1").value;
-        var b = document.getElementById("ang2").value;
-        var ans = "";
-        if (a == "" || b == "") {
-            ans = "Enter both angles to verify";
-        }
-        else {
-            var x = parseInt(a), y = parseInt(b);
-            if (x + y == 180) { ans = "Entered angles are supplementary"; }
-            else {
-                ans = "Entered angles are not supplementary";
-            }
-        }
-
-        document.getElementById("suppangverans").innerHTML = ans;
+        document.getElementById("slpans").innerHTML = ans;
 
 
-
-
-        function faccal() {
-            var a = document.getElementById("facno").value;
+        function suppangcal() {
+            var a = document.getElementById("ang").value;
             var ans = "";
             if (a == "") {
-                ans = "Please enter number to find factors";
+                ans = "Enter the angle to find the supplementary";
             }
             else {
-                var factors = [];
-                ans = "Factors of " + a + " are: ";
-                for (var k = 1; k <= a; k++) {
-                    if (a % k == 0) {
-                        factors.push(k);
+                var t = parseInt(a);
+                var v = 180 - t;
+                ans = "The supplementary angle of " + a + " is " + v;
+            }
+            document.getElementById("slpans").innerHTML = ans;
+
+            function suppangcal() {
+                var a = document.getElementById("ang").value;
+                var ans = "";
+                if (a == "") {
+                    ans = "Enter the angle to find the supplementary";
+                }
+                else {
+                    var t = parseInt(a);
+                    var v = 180 - t;
+                    ans = "The supplementary angle of " + a + " is " + v;
+                }
+
+                document.getElementById("suppangans").innerHTML = ans;
+            }
+            function suppangvercal() {
+                var a = document.getElementById("ang1").value;
+                var b = document.getElementById("ang2").value;
+                var ans = "";
+                if (a == "" || b == "") {
+                    ans = "Enter both angles to verify";
+                }
+                else {
+                    var x = parseInt(a), y = parseInt(b);
+                    if (x + y == 180) { ans = "Entered angles are supplementary"; }
+                    else {
+                        ans = "Entered angles are not supplementary";
                     }
                 }
 
-                for (var i = 0; i < factors.length; i++) {
-                    ans += factors[i] + "  ";
+                document.getElementById("suppangverans").innerHTML = ans;
+
+
+
+
+                function faccal() {
+                    var a = document.getElementById("facno").value;
+                    var ans = "";
+                    if (a == "") {
+                        ans = "Please enter number to find factors";
+                    }
+                    else {
+                        var factors = [];
+                        ans = "Factors of " + a + " are: ";
+                        for (var k = 1; k <= a; k++) {
+                            if (a % k == 0) {
+                                factors.push(k);
+                            }
+                        }
+
+                        for (var i = 0; i < factors.length; i++) {
+                            ans += factors[i] + "  ";
+                        }
+
+
+                    }
+                    document.getElementById("facans").innerHTML = ans;
                 }
 
 
-            }
-            document.getElementById("facans").innerHTML = ans;
-        }
-
-
-        function facpaircal() {
-            a = document.getElementById("facno").value;
-            var ans = "";
-            if (a == "") {
-                ans = "Please enter number to find pair factors";
-            }
-            else {
-                var number1 = 0;
-                var number2 = a;
-                var answers = [];
-                for (var i = 1; i < a; i++) {
-                    if (a % i == 0) {
-                        number1 = i;
-                        number2 = a / i;
-                        if (number2 >= number1) {
-                            answers.push(number1);
-                            answers.push(number2);
+                function facpaircal() {
+                    a = document.getElementById("facno").value;
+                    var ans = "";
+                    if (a == "") {
+                        ans = "Please enter number to find pair factors";
+                    }
+                    else {
+                        var number1 = 0;
+                        var number2 = a;
+                        var answers = [];
+                        for (var i = 1; i < a; i++) {
+                            if (a % i == 0) {
+                                number1 = i;
+                                number2 = a / i;
+                                if (number2 >= number1) {
+                                    answers.push(number1);
+                                    answers.push(number2);
+                                }
+                                else {
+                                    break;
+                                }
+                            }
                         }
-                        else {
-                            break;
+
+                        ans = "Pair factors are: ";
+                        for (var i = 0; i < answers.length - 1; i = i + 2) {
+                            ans += "( " + answers[i] + "," + answers[i + 1] + " )  "
                         }
                     }
+                    document.getElementById("facans").innerHTML = ans;
+
+
                 }
-
-                ans = "Pair factors are: ";
-                for (var i = 0; i < answers.length - 1; i = i + 2) {
-                    ans += "( " + answers[i] + "," + answers[i + 1] + " )  "
-                }
-            }
-            document.getElementById("facans").innerHTML = ans;
-
-
-        }
 
