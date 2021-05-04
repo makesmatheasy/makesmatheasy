@@ -962,3 +962,53 @@ function errpercal()
     document.getElementById("errperans").innerHTML=ans;
 
 }
+
+function cvcal()
+{
+    var num=document.getElementById("cvsd").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+
+    var sum=0;
+    for (i = 0; i < len; i++) {
+       sum=sum+number[i];
+    }
+    
+    var mean=sum/len;
+    var varrzlt=0;
+    for (i = 0; i < len; i++) {
+        varrzlt = varrzlt + ((number[i]-mean)**2);
+    }
+
+    varrzlt = varrzlt/(len-1);
+    var sdev = Math.sqrt(varrzlt);
+    console.log(sdev);
+    console.log(mean);
+
+    s="The Coeffecient of Variation is: "+sdev/mean;
+
+    }
+
+    document.getElementById("cvans").innerHTML=s;
+
+
+
+
+}

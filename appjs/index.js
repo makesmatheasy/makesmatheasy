@@ -303,7 +303,8 @@ function openit(id) {
         "#expo",
         "#setformula",
         "#wedge",
-        "#fourier_series"
+        "#fourier_series",
+        "#cvs"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

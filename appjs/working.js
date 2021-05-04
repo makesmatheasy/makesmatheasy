@@ -903,6 +903,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#cv").click(function(){
+        openit("#cvs");
+        closenav();
+        clearall();
+    });
+
 
 })
 
