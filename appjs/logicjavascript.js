@@ -3878,33 +3878,6 @@ function ellipsoidsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-//Traingular Prism
-function prismsolve() {
-    var length = document.getElementById("inputprismlength").value;
-    var breadth = document.getElementById("inputprismbreadth").value;
-    var height = document.getElementById("inputprismheight").value;
-    var side = document.getElementById("inputprismside").value;
-    var voloutput = document.getElementById("resultofvolprism");
-    var tsaoutput = document.getElementById("resultoftsaprism");
-
-    var voltemp = "";
-    var tsatemp = "";
-    var res=((a**1.6 * b**1.6) + (b**1.6 * c**1.6 ) + (a**1.6 * c**1.6))**0.625;
-    if ((a != "") && (b != "") && (c != "")) {
-        voltemp += "\\[" + "\\frac{4}{3}" + "\\times" + "\\pi" + "\\times" + a + "\\times" + b + "\\times" + c   + "\\]";
-        voltemp += "\\[Volume \\space of \\space Ellipsoid \\space is \\space " + eval(String(4.18 * a * b* c )) + "\\]";
-        voloutput.innerHTML = voltemp;
-        tsatemp += "\\[" + 4 + "\\pi" + "(" + "\\frac{(" + a + "\\times" + b + ")^{1.6}" + "(" + b + "\\times" + c +")^{1.6}" + "(" + a + "\\times" + c + ")^{1.6}}{3}" + " )^{\\frac{1}{1.6}}"   + "\\]";
-        tsatemp += "\\[Surface \\space area \\space of \\space Ellipsoid \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String((6.343 * res).toFixed(2) ))  + "\\]";
-        tsaoutput.innerHTML = tsatemp;
-        renderMathInElement(voloutput);
-        renderMathInElement(tsaoutput);
-    } else {
-        voloutput.innerHTML = "";
-        tsaoutput.innerHTML = "";
-    }
-}
 
 //square Prism
 function sqprismsolve(){
@@ -3930,6 +3903,31 @@ function sqprismsolve(){
         diaoutput2.innerHTML = "\\[\\sqrt{2 \\times "+edge+"^2 + "+height+"^2} = " + diagonal.toFixed(2) + "\\]";
         renderMathInElement(diaoutput1);
         renderMathInElement(diaoutput2);
+    }
+}
+
+//Traingular Prism
+function triprismsolve() {
+    var length = document.getElementById("inputtriprismlength").value;
+    var breadth = document.getElementById("inputtriprismbreadth").value;
+    var height = document.getElementById("inputtriprismheight").value;
+    var side = document.getElementById("inputtriprismside").value;
+    var voloutput = document.getElementById("resultofvolprism");
+    var tsaoutput = document.getElementById("resultoftsaprism");
+    var voltemp = "";
+    var tsatemp = "";
+    if ((length != "") && (breadth != "") && (height != "") && (side != "")) {
+        voltemp += "\\[(" + length + "\\times" + breadth + "\\times" + height + ")" + "\\div" + 2 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space " + eval(String((length * breadth * height ) / 2)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ " + breadth + "(" + length + "+" + height + ")" + "+" + 2 +  "\\times"  + length + "\\times" + side + "\\]";
+        tsatemp += "\\[Surface \\space Area \\space of \\space Prism \\space is \\space" + eval(String((breadth*height) + (breadth *length)+ (2*length*side))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
     }
 }
 
