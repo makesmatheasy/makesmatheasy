@@ -287,6 +287,7 @@ function openit(id) {
         "#octahedron",
         "#repp",
         "#mtm",
+        "#stp",
         "#igc",
         "#res",
         "#clr",

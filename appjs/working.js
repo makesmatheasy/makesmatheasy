@@ -401,6 +401,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    
+    $("#stpbtn").click(function () {
+        openit("#stp");
+        closenav();
+        clearall();
+    })
     $("#hydrops").click(function () {
         openit("#hydroz");
         closenav();
