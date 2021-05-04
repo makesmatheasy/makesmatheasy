@@ -1013,6 +1013,14 @@ function setcal() {
         document.getElementById("set-result").innerHTML = [...re].join(' ') ;
     }
 }
+function exterior(){
+    // javascript program to find the angle
+    // of a cyclic quadrilateral
+    // when opposite interior angle is given
+    var into = document.getElementById("exterior").value
+    document.getElementById("exteriorinfo").innerHTML = "The exterior angle of a cyclic quadrilateral is same as sum of opposite interior angles"
+    document.getElementById("exteriorans").innerHTML = "The exterior angle is " + into
+}
 
 function ctangle(){
     // javascript program to find the angle
