@@ -116,6 +116,7 @@ Other Tech/Libraries
   - Laplace Transforms and Properties
   - Tangent and Normal
   - Vector Calculus
+  - Vector Calculator
   - Vector Algebra
   - Convergence and Divergence of Series
   - Fourier Series
@@ -244,6 +245,7 @@ Other Tech/Libraries
     - Ellipse
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
+    - Star Polygons: Pentagram
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -321,6 +323,7 @@ Other Tech/Libraries
 
 - Probability
   - Empirical Probability
+  - Conditional Probability
   - Joint Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
