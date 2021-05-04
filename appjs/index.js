@@ -289,6 +289,7 @@ function openit(id) {
         "#partial_sphere",
         "#mtm",
         "#igc",
+        "#res",
         "#clr",
         '#dodecahedron',
         "#icosahedron",
