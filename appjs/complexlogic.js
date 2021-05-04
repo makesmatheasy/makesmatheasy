@@ -1113,6 +1113,9 @@ function facpaircal()
     }
  document.getElementById("facans").innerHTML=ans;
 
+}
+}
+
 
 }
 
