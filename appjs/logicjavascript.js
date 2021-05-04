@@ -1781,7 +1781,29 @@ function checklimit() {
 }
 
 //-----------------------------------------------------
-
+function possible()
+{
+    let N = parseInt(document.getElementById("ssdies").value)
+    let a = parseInt(document.getElementById("initialangle").value)
+    let b = parseInt(document.getElementById("increangle").value)
+    let n = parseInt(document.getElementById("nthside").value)
+    // Angular sum of a N-sided polygon
+    let sum_of_angle = 180 * (N - 2);
+ 
+    // Angular sum of N-sided given polygon
+    let Total_angle = Math.floor((N * ((2 * a) + (N - 1) * b)) / 2);
+ 
+    // Check if both sum are equal
+    if (sum_of_angle != Total_angle)
+        document.getElementById("nthans").innerHTML = "Not Possible"
+    else{
+        let nth = 0; 
+        // Calculate nth angle
+        nth = a + (n - 1) * b;
+        document.getElementById("nthans").innerHTML = "The angle of nth side will be " + nth
+    }
+        
+}
 //-----------------------------------------------------
 //  Prints Multiplication Table
 function printtable() {
