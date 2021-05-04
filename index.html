@@ -10237,7 +10237,7 @@
                                 href="#">Circle</a></td>
                         </tr>
                         <tr>
-                            <td><a data-toggle="modal" data-target="#sector"
+                            <td><a data-toggle="modal" data-target="#cirsector"
                                 style="text-decoration:none;"
                                 href="#">Sector of Circle</a></td>
                         </tr>
@@ -14433,7 +14433,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="sector" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal fade" id="cirsector" tabindex="-1" role="dialog" aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -14452,18 +14452,19 @@
                                     <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
                                 </div>
                                 <div class="col-6">
-                                    <img src="images/sector.PNG" style="height:9.375rem"
+                                    <img src="images/sector.PNG"
                                         class="img-fluid">
                                 </div>
                             </div>
-                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle (Radian)">
-                                    <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <input class="form__field" type="text" id="sectorcirang" 
+                                        placeholder="Enter angle (Radian)" oninput="findsectorarea()">
+                                    <input class="form__field" type="text" id="sectorcirrad" 
+                                        placeholder="Enter radius" oninput="findsectorarea()">
+    
                                     <br><br>
-                                    <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
-                                    <br><br>
-                                    <p class="stopwrap" id="secans1"
+                                    <p class="stopwrap" id="sectorarea1"
                                     style="font-family:mathfont;"></p>
-                                    <p class="stopwrap" id="secans2"
+                                    <p class="stopwrap" id="sectorarea2"
                                     style="font-family:mathfont;"></p>
                                 </div>
                             </div>
@@ -14472,6 +14473,7 @@
                 </div>
             </div>             
         </div>
+
         <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

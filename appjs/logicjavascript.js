@@ -1628,14 +1628,20 @@ function parapipe(){
     document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
 }
 
-function findsecarea(){
-    var ang = parseInt(document.getElementById("ang").value)
-    var r = parseInt(document.getElementById("rad").value)
-    var ans = (r*r * ang)/2;
-    document.getElementById("secans1").innerHTML = "\\[The \\space area \\space of \\space sector \\space is \\space \\space \\frac{r^2\\theta}{2} \\space\\]"
-    document.getElementById("secans2").innerHTML = "\\[\\frac{"+r+"^2\\times "+ang+"}{2} \\space = " + ans + "\\space\\]";
-    renderMathInElement(document.getElementById("secans1"));
-    renderMathInElement(document.getElementById("secans2"));
+function findsectorarea(){
+    var ang = document.getElementById("sectorcirang").value;
+    var r = document.getElementById("sectorcirrad").value;
+    var ans = (r**2 * ang)/2;
+
+    if ((ang!="") && (r!="")){
+        document.getElementById("sectorarea1").innerHTML = "\\[The \\space area \\space of \\space sector \\space is \\space \\space \\frac{r^2\\theta}{2} \\space\\]"
+        document.getElementById("sectorarea2").innerHTML = "\\[\\frac{"+r+"^2\\times "+ang+"}{2} \\space = " + ans + "sq \\space units \\space \\]";
+        renderMathInElement(document.getElementById("sectorarea1"));
+        renderMathInElement(document.getElementById("sectorarea2"));
+    } else{
+        document.getElementById("sectorarea1").innerHTML = "";
+        document.getElementById("sectorarea2").innerHTML = "";
+    }
 }
 
 function partialdiffsolve() {
