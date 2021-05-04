@@ -2953,6 +2953,24 @@
                                      onclick="addtofavourite('Milne Thomson Method','#mtm','c','mtmfav')"><img
                                      id="mtmfav" src="images/unfavourite.png"
 
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="resbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Residue Methods</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Residue Methods','#res','c','resfav')"><img
+                                     id="resfav" src="images/unfavourite.png"
+
+
 
                             <a id="clrbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cauchy Integral,Liouville and Rouche Theorem</a>
@@ -12857,8 +12875,32 @@
                   </div>
               </div>
         <!-- end of anyBase to anyBase convertor -->
+
+        <div class="collapse" id="res">
+            <h2 style = "text-align : center;">Residue at Pole</h2>
+            <br><br>
+            <p>Let z=a be a pole of order m of a one valued section f(z) and gamma be any circle of radius r with centre at z=a which doesnt have any singularities except at z=a, then f(z) is analytic within the annulus</p>
+            <p>Hence it can be written in form of Laurent Series as</p>
+            <p>\[f(z)\space =\space \sum_{n=0}^{\infty} a_n (z-a)^{n}\space +\space \sum_{n=0}^{\infty} b_n (z-a)^{-n}\]</p>
+            <p>\[a_n \space =\space \frac{1}{2\pi i} \int \frac{f(z)}{(z-a)^{n+1}}\,dz\]</p>
+            <p>\[b_n\space =\space \frac{1}{2\pi i} \int \frac{f(z)}{(z-a)^{-n+1}}\,dz\]</p>
+            <p>\[ Particularly,\space b_1 \space =\space \frac{1}{2\pi i} \int f(z)\,dz\]</p>
+            <p>The coefficient of b<sub>1</sub> is called residue of f(z) at z=a</p>
+            <br>
+            <h4>Cauchy Residue Theorem</h4>
+            <br>
+            <p>In complex analysis, a discipline within mathematics, the residue theorem, sometimes called Cauchy's residue theorem, is a powerful tool to evaluate line integrals of analytic functions over closed curves; it can often be used to compute real integrals and infinite series as well. It generalizes the Cauchy integral theorem and Cauchy's integral formula. From a geometrical perspective, it can be seen as a special case of the generalized Stokes' theorem.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Residue_theorem_illustration.png/250px-Residue_theorem_illustration.png" alt="">
+            <p>Let U be a simply connected open subset of the complex plane containing a finite list of points a1, ..., an, U0 = U \ {a1, ..., an}, and a function f defined and holomorphic on U0. Let γ be a closed rectifiable curve in U0, and denote the winding number of γ around ak by I(γ, ak). The line integral of f around γ is equal to 2πi times the sum of residues of f at the points, each counted as many times as γ winds around the point:</p>
+            <p>\[{\displaystyle \oint _{\gamma }f(z)\,dz=2\pi i\sum _{k=1}^{n}\operatorname {I} (\gamma ,a_{k})\operatorname {Res} (f,a_{k}).}\]</p>
+            <p>If γ is a positively oriented simple closed curve, I(γ, ak) = 1 if ak is in the interior of γ, and 0 if not, therefore</p>
+            <p>\[{\displaystyle \oint _{\gamma }f(z)\,dz=2\pi i\sum \operatorname {Res} (f,a_{k})}\]</p>
+            <p>The relationship of the residue theorem to Stokes' theorem is given by the Jordan curve theorem. The general plane curve γ must first be reduced to a set of simple closed curves {γi} whose total is equivalent to γ for integration purposes; this reduces the problem to finding the integral of f dz along a Jordan curve γi with interior V. The requirement that f be holomorphic on U0 = U \ {ak} is equivalent to the statement that the exterior derivative d(f dz) = 0 on U0. Thus if two planar regions V and W of U enclose the same subset {aj} of {ak}, the regions V \ W and W \ V lie entirely in U0, and hence</p>
+            <p>\[{\displaystyle \int _{V\smallsetminus W}d(f\,dz)-\int _{W\smallsetminus V}d(f\,dz)}\]</p>
+        </div>
         <div class="collapse" id="mtm">
-            <h2 style="text-align: center;">MIlne Thomson Method</h2>
+            <h2 style="text-align: center;">Milne Thomson Method</h2>
+
             <br><br>
             <p>With the help of this method, we can directly construct f(z) in terms of z without finding v when u is given or u when v is given</p>
             <p>\[f(z)\space =\space \int {\phi _1(z,0)-i\phi _2(z,0)}\,dz\space +\space C\]</p>

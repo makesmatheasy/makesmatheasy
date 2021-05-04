@@ -411,6 +411,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#resbtn").click(function () {
+        openit("#res");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
