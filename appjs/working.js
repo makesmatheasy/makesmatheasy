@@ -428,6 +428,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#cramerbtn").click(function () {
+        openit("#cramer");
+        closenav();
+        clearall();
+    })
+
 
     $("#clrbtn").click(function () {
         openit("#clr");
