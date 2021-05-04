@@ -2717,31 +2717,59 @@ function vectorcross() {
   }
 }
 
-function equationplanesolve() {
-  var ax, ay, az, bx, by, bz, cx, cy, cz;
-  ax = parseFloat(document.getElementById("va1").value);
-  ay = parseFloat(document.getElementById("va2").value);
-  az = parseFloat(document.getElementById("va3").value);
-  bx = parseFloat(document.getElementById("vb1").value);
-  by = parseFloat(document.getElementById("vb2").value);
-  bz = parseFloat(document.getElementById("vb3").value);
-  cx = parseFloat(document.getElementById("vc1").value);
-  cy = parseFloat(document.getElementById("vc2").value);
-  cz = parseFloat(document.getElementById("vc3").value);
-  var res1 = (by - ay) * (cz - az) - (cy - ay) * (bz - az);
-  var res2 = (bz - az) * (cx - ax) - (cz - az) * (bx - ax);
-  var res3 = (bx - ax) * (cy - ay) - (cx - ax) * (by - ay);
-  var res4 = -(res1 * ax + res2 * ay + res3 * az);
-  document.getElementById("eqop").innerHTML =
-    "Plane Equation : " +
-    res1 +
-    "x + " +
-    res2 +
-    "y + " +
-    res3 +
-    "z + " +
-    res4 +
-    " = 0";
+
+function vector_res(){
+    var a=parseFloat(document.getElementById('abc').value);
+    var b=parseFloat(document.getElementById('def').value);
+    var c=parseFloat(document.getElementById('ang3').value);
+    var resoutput = document.getElementById("vectorres1");
+    var restemp = "";
+    var res = Math.cos(c* Math.PI / 180).toFixed(3);
+    var res1 = (2 * a * b * res);
+    var res2 = eval(String((a * a) + (b * b)));
+    var res3 = res2+res1;
+    var d = nerdamer.sqrt(res3).toString();
+    if(a != "" || b != "" || c != "" ){
+        if(a>0 && b>0){
+     restemp += "\\[R= \\sqrt{ a^2 + b^2 + 2*a*b*cosθ } \\]";
+     restemp += "\\[R= \\sqrt{" + a + "^2+" + b + "^2+" + "2*" + a + "*" + b + "*" + "cos(" + c + ")} \\]";
+     restemp += "\\[ \\sqrt{" + a + "^2+" + b + "^2+ (" +  res1 + ") } \\]";
+     restemp += "\\[ \\sqrt{" + res3 + "} \\]";
+     restemp += "\\[ Resultant \\space of \\space Vector = "  +
+         eval(d).toFixed(3) +
+         "\\]";
+     resoutput.innerHTML = restemp;
+     renderMathInElement(resoutput);
+        }
+        else{
+            restemp += "\\[Magnitude \\space of \\space Vector \\space cannot \\space be \\space negative. \\space Please \\space enter \\space positive \\space value \\space only  \\]";
+            resoutput.innerHTML = restemp;
+            renderMathInElement(resoutput);
+        }
+ } else {
+     resoutput.innerHTML = "";
+ }
+ }
+
+
+function equationplanesolve()
+{
+    var ax,ay,az,bx,by,bz,cx,cy,cz;
+    ax=parseFloat(document.getElementById('va1').value);
+    ay=parseFloat(document.getElementById('va2').value);
+    az=parseFloat(document.getElementById('va3').value);
+    bx=parseFloat(document.getElementById('vb1').value);
+    by=parseFloat(document.getElementById('vb2').value);
+    bz=parseFloat(document.getElementById('vb3').value);
+    cx=parseFloat(document.getElementById('vc1').value);
+    cy=parseFloat(document.getElementById('vc2').value);
+    cz=parseFloat(document.getElementById('vc3').value);
+    var res1 = ((by-ay)*(cz-az))-((cy-ay)*(bz-az));
+    var res2 = ((bz-az)*(cx-ax))-((cz-az)*(bx-ax));
+    var res3 = ((bx-ax)*(cy-ay))-((cx-ax)*(by-ay));
+    var res4 = -(res1*ax + res2*ay + res3*az);
+    document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
+
 }
 
 function solveicosa() {
