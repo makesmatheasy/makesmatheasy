@@ -320,7 +320,8 @@ function openit(id) {
         "#fourier_series",
         "#wmcs",
         "#cvs",
-        "#rmss"
+        "#rmss",
+        "#relationtypes"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
