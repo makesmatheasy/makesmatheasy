@@ -8,7 +8,7 @@ function opencal() {
     }
 }
 function cleardiv(arrayofclearids) {
-    for (parameterarray of arrayofclearids) {
+    for (var parameterarray of arrayofclearids) {
         document.getElementById(parameterarray).innerHTML = "";
     }
 }
@@ -327,7 +327,7 @@ $(document).ready(function () {
         clearall();
     })
 
-    $("#HPbtn").click(function () {
+    $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
         clearall();
@@ -373,11 +373,29 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#suppang").click(function () {
+        openit("#suppangs");
+       closenav();
+        clearall();
+    })
+
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    })
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
         clearall();
     })
+    $("#zscore").click(function () {
+        openit("#zscores");
+        closenav();
+        clearall();
+    })
+
     $("#ipbtn").click(function () {
         openit("#ip");
         closenav();
@@ -388,8 +406,37 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#igcbtn").click(function () {
+        openit("#igc");
+        closenav();
+        clearall();
+    })
+
+    $("#resbtn").click(function () {
+        openit("#res");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
+        closenav();
+        clearall();
+    })
+    $("#mtmbtn").click(function () {
+        openit("#mtm");
+        closenav();
+        clearall();
+    })
+
+
+    $("#clrbtn").click(function () {
+        openit("#clr");
+
+        closenav();
+        clearall();
+    })
+    $("#reppbtn").click(function () {
+        openit("#repp");
         closenav();
         clearall();
     })
@@ -637,6 +684,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
+        closenav();
+        clearall();
+    });
      // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
@@ -881,6 +933,12 @@ $(document).ready(function () {
 
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+
+    $("#condprobabilitybtn").click(function(){
+        openit("#condprobability");
         closenav();
         clearall();
     });
