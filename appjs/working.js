@@ -955,6 +955,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#relationtypescollapsebtn").click(function(){
+        openit("#relationtypes");
+        closenav();
+        clearall();
+    });
 
 
 })

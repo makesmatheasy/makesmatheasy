@@ -388,6 +388,24 @@
                 </table>
             </li>
             <!--          Sets,Relations and Functions -->
+            <!-- Types of Relations   -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="relationtypescollapsebtn"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Types
+                                                of Relations </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Types of Relations and Functions','#relationtypes','c','relationparts')"><img
+                                                    id="relationparts" src="images/unfavourite.png"
+                                                    style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                     </tr>
+                 </table>
+            </li>
+            
             <!--          Sets formula list-->
             <li>
                 <table class="table">
@@ -4631,6 +4649,111 @@
             <h4 style="color:white" id="angleplaneop"> </h4> 
 
         </div>
+        <!-- Start of types of relations  -->
+        <div class="collapse" id="relationtypes">
+             <div class="stopwrap">
+                <div class="coll">
+                    <div class="left">
+                       <h4>Types of Relations </h4>
+                        <p>
+                         Sets and relation are interconnected with each other. The relation defines the relation between two
+                        given
+                        <br> sets. If there are two sets available, then to check if there is any connection between the two
+                        sets,<br>
+                         we use relations For example, An empty relation denotes none of the elements in the two sets is
+                        same.
+                         </p>
+                         <p>There are 8 main types of relations which include:</p>
+                         <br>
+                <h4> 1. Empty Relation</h4>
+                <p>An empty relation (or void relation) is one in which there is no relation between any
+                    <br>
+                    elements of a set. For example, if set A = {1, 2, 3} then, one of the void relations can
+                    be R = {x, y} <br>
+                    where, |x &#8211; y| = 8. For empty relation,
+                </p>
+                <p><strong>R = φ ⊂ A × A</strong><br /><br>
+                <h4> 2. Universal Relation</h4>
+                <p>A universal (or full relation) is a type of relation in which every element of a <br>
+                    set is related to each other. Consider set A = {a, b, c}. Now one of the universal <br>
+                    relations will be R = {x, y} where, |x &#8211; y| ≥ 0. For universal relation,</p>
+                <p><strong>R = A × A</strong><br />
+                <h4> 3. Identity Relation</h4>
+                <p>In an identity relation, every element of a set is related to itself only. <br>
+                    For example,in a set A = {a, b, c}, the identity relation will be <br>
+                    I = {a, a}, {b, b}, {c, c}. For identity relation,</p>
+                <p><strong>I = {(a, a), a ∈ A}</strong><br /><br>
+                <h4> 4. Inverse Relation</h4>
+                <p>Inverse relation is seen when a set has elements which are inverse pairs of <br>
+                    another set. For example if set A = {(a, b), (c, d)}, then inverse relation will be<br>
+                    R<sup>-1</sup> = {(b, a), (d, c)}. So, for an inverse relation,</p>
+                <p><strong>R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</strong><br /><br>
+                <h4> 5. Reflexive Relation</h4>
+                <p>In a reflexive relation, every element maps to itself. For example, consider a <br>
+                    set A = {1, 2,}. Now an example of reflexive relation will be<br>
+                    R = {(1, 1), (2, 2), (1, 2), (2, 1)}. The reflexive relation is given by-</p>
+                <p><strong>(a, a) ∈ R</strong><br /><br>
+                <h4> 6. Symmetric Relation</h4>
+                <p>In a symmetric relation, if a=b is true then b=a is also true. In other words,<br>
+                    a relation R is symmetric only if (b, a) ∈ R is true when (a,b) ∈ R. An example of
+                    symmetric <br>
+                    relation will be R = {(1, 2), (2, 1)} for a set A = {1, 2}. So, for a symmetric
+                    relation,</p>
+                <p><strong>aRb ⇒ bRa, ∀ a, b ∈ A</strong><br /><br>
+                <h4> 7. Transitive Relation</h4>
+                <p>For transitive relation, if (x, y) ∈ R, (y, z) ∈ R, then (x, z) ∈ R. For a transitive
+                    relation,</p>
+                <p><strong>aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</strong><br /><br>
+                <h4> 8. Equivalence Relation</h3>
+                    <p>If a relation is reflexive, symmetric and transitive at the same time it is known as
+                        an equivalence relation.<br /></p>
+                    <br>
+                    <h3 style="text-align: center;">Representation of Types of Relations</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-dark">
+                            <tbody class="abc">
+                                <thead>
+                                    <tr>
+                                        <th>Relation Type</th>
+                                        <th>Condition</th>
+                                    </tr>
+                                </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Empty Relation</td>
+                                    <td>R = φ ⊂ A × A</td>
+                                </tr>
+                                <tr>
+                                    <td>Universal Relation</td>
+                                    <td>R = A × A</td>
+                                </tr>
+                                <tr>
+                                    <td>Identity Relation</td>
+                                    <td>I = {(a, a), a ∈ A}</td>
+                                </tr>
+                                <tr>
+                                    <td>Inverse Relation</td>
+                                    <td>R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</td>
+                                </tr>
+                                <tr>
+                                    <td>Reflexive Relation</td>
+                                    <td>(a, a) ∈ R</td>
+                                </tr>
+                                <tr>
+                                    <td>Symmetric Relation</td>
+                                    <td>aRb ⇒ bRa, ∀ a, b ∈ A</td>
+                                </tr>
+                                <tr>
+                                    <td>Transitive Relation</td>
+                                    <td>aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
                 <div class="coll">
