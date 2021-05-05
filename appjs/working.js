@@ -884,6 +884,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+
+    $("#wmc").click(function(){
+        openit("#wmcs");
+        closenav();
+        clearall();
+    });
+
+
+
     $("#cv").click(function(){
         openit("#cvs");
         closenav();
