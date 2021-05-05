@@ -226,7 +226,7 @@ function openit(id) {
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-		    "#onetwocom-calc",
+	"#onetwocom-calc",
         "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
