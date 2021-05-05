@@ -7886,19 +7886,36 @@ function subBinDecHexOct(){
         var add2 = "";
         var ans2 = "";
         var sixtnco= calculateSixteenComplement(input2);
+        print += "<h5>STEP 0 : Find 16's complement of Subtrahend</h5>"+input2+"->"+sixtnco;
         add2 = (parseInt(sixtnco,16)+parseInt(input1,16)).toString(16);
+        print += "<br><br><h5>STEP 1 : Add Minuend and 16's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + sixtnco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add2+"</p>";
         if(add2.length == input1.length){
             ans2 = calculateSixteenComplement(add2);
             result.innerHTML = "-" + ans2;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add2+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Sixteen's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans2 + "</span>";
         } else if (add2.length > input1.length){
             ans2 = add2.substring(1);
             result.innerHTML = ans2;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add2.substring(0,1) + "</span>" +ans2+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans2 + "</span>";
         } else if (add2.length < input1.length){
             var a3 = input1.length - add2.length;
             a3 = Math.pow(10,a3);
             ans2 = a3 + add2;
             ans2 = ans2.substring(1);
             result.innerHTML = "-" + calculateSixteenComplement(ans2);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add2+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Sixteen's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans2 + "</span>";
         }
 
     }else if(base === "Decimal"){
