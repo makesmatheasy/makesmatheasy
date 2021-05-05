@@ -491,6 +491,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
                         document.getElementById('giff').click();
                     } 
+                    else if (inp.value.toUpperCase() == "WORK AND TIME CALCULATOR") {
+                        $("#wandt").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "WORK AND TIME CALCULATOR"){
+                        document.getElementById('wandt').click();
+                    } 
                     else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
                         $("#expo").slideToggle();    
                     }
@@ -754,7 +760,7 @@ function autocomplete(inp, arr) {
 
 var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
-                        "Conversion to Words", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
+                        "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Strain Calculator","Stress Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         "Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
@@ -1072,6 +1078,12 @@ function handleclick(value) {
     }
     else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
         document.getElementById('giff').click(); 
+    }
+    else if (inp.value.toUpperCase() == "WORK AND TIME CALCULATOR") {
+        $("#wandt").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "WORK AND TIME CALCULATOR"){
+        document.getElementById('wandt').click(); 
     }
     else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
         $("#expo").slideToggle(); 

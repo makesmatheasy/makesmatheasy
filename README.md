@@ -140,6 +140,7 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Greatest Integer Function and Fractional Part
+  - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
   - Percentage Calculator

@@ -326,6 +326,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#wandtbtn").click(function () {
+        openit("#wandt");
+        closenav();
+        clearall();
+    })
 
     $("#HPbttn").click(function () {
         openit("#hp");
