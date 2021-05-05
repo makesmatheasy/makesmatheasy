@@ -903,6 +903,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#skew").click(function(){
+        openit("#skews");
+        closenav();
+        clearall();
+    });
+
 
 })
 

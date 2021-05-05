@@ -962,3 +962,43 @@ function errpercal()
     document.getElementById("errperans").innerHTML=ans;
 
 }
+
+function skewcal()
+{   var num=document.getElementById("skewinput").value;
+var ans="";
+if(num=="")
+{
+    ans="Please enter datasets";
+}
+else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   var sum=0;
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+        sum+=number[i];
+    }
+    sum=sum/len;
+    var ansno=0;
+    for (i = 0; i < len; i++)
+     {
+       var g=(number[i]-sum);
+       g=g**3;
+       ansno+=g;
+     }
+
+     var varrzlt=0;
+     for (i = 0; i < len; i++) {
+         varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
+     }
+
+     varrzlt = varrzlt/(len-1);
+     var sampstddev=Math.sqrt(varrzlt);
+     sampstddev=sampstddev**3;
+     var rzlt= ansno/((len-1)*sampstddev);
+     ans="The skewness is: "+rzlt;
+}
+document.getElementById("skewans").innerHTML=ans;
+}
