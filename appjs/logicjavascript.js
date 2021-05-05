@@ -8900,7 +8900,15 @@ function fa(x)
     return x * fa(x-1);
 }
 
-
+function posse(){
+    let a  = parseInt(document.getElementById("anglecalc").value)
+    let n = parseFloat(360/(180-a))
+    if(n === parseInt(n)){
+        document.getElementById("posseans").innerHTML = "Yes It is possible"
+    }
+    else
+        document.getElementById("posseans").innerHTML = "Not possible"
+}
 function rankcal() {
 
     var input = document.getElementById("rankcal-input").value;
