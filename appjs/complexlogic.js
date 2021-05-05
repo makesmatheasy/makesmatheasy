@@ -490,6 +490,7 @@ function volCuboid() {
 
 }
 
+
 function bpcal() {
     var a = document.getElementById("psuc").value;
     var b = document.getElementById("suc").value;
@@ -1019,5 +1020,3 @@ function facpaircal() {
     document.getElementById("facans").innerHTML = ans;
 
 }
-
-
