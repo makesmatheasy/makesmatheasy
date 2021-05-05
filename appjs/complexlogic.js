@@ -1,5 +1,3 @@
-const { parse } = require("node:path");
-
 function Complex(real, imaginary) {
   this.real = 0;
   this.imaginary = 0;
@@ -951,6 +949,7 @@ function errpercal()
 {
     var a=document.getElementById("acval").value;
     var b=document.getElementById("expval").value;
+    var ans="";
     if(a==""||b=="")
     {
         ans="Please enter all the values";
@@ -1002,3 +1001,307 @@ else{
 }
 document.getElementById("skewans").innerHTML=ans;
 }
+
+
+
+function wmccal()
+{
+    var num1=document.getElementById("wmcx").value;
+    var num2=document.getElementById("wmcw").value;
+    if(num1==""||num2=="")
+    {
+        ans="Please enter all the values";
+    }
+    else{
+
+    num1=num1.trim();
+    num1 = num1.split(" ");
+    var len1=parseInt(num1.length);
+    var number1=[]
+    for (i = 0; i < len1; i++) 
+    {
+        number1[i] = parseFloat(num1[i].trim());
+    }
+
+    num2=num2.trim();
+    num2 = num2.split(" ");
+    var len2=parseInt(num2.length);
+    var number2=[]
+    for (i = 0; i < len2; i++) 
+    {
+        number2[i] = parseFloat(num2[i].trim());
+    }
+   
+    if(len1!=len2)
+    {
+        ans="Your number of data and weight are not equal ";
+    }
+    else
+    {
+        var ans1=[];
+        var sum=0, wsum=0;
+        for (i = 0; i < len1; i++) 
+        {
+            ans1[i] = number2[i]*number1[i];
+            sum+=ans1[i];
+            wsum+=number2[i];
+        }
+
+        for (i = 0; i < len1; i++) 
+        {
+            console.log(ans[i]);
+        }
+
+        console.log(wsum);
+        console.log(sum);
+        var wm=sum/wsum;
+        ans="The calculated weighted mean is: "+wm;
+
+    }
+    
+    }
+    document.getElementById("wmcans").innerHTML=ans;
+
+
+function cvcal()
+{
+    var num=document.getElementById("cvsd").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+
+    var sum=0;
+    for (i = 0; i < len; i++) {
+       sum=sum+number[i];
+    }
+    
+    var mean=sum/len;
+    var varrzlt=0;
+    for (i = 0; i < len; i++) {
+        varrzlt = varrzlt + ((number[i]-mean)**2);
+    }
+
+    varrzlt = varrzlt/(len-1);
+    var sdev = Math.sqrt(varrzlt);
+    console.log(sdev);
+    console.log(mean);
+
+    s="The Coeffecient of Variation is: "+sdev/mean;
+
+    }
+
+    document.getElementById("cvans").innerHTML=s;
+
+
+
+
+
+function rmscal()
+{
+    var num=document.getElementById("rmi").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+        var sum=0;
+        for (i = 0; i < len; i++) {
+            sum=sum+(number[i]**2);
+        }
+
+        sum=sum/len;
+        sum=Math.sqrt(sum);
+        ans="The root mean square of given input is: "+sum;
+        
+    }
+    document.getElementById("rmsans").innerHTML=ans;
+
+}
+
+
+
+
+
+function zscorecal()
+{ 
+    var a=document.getElementById("rawscore").value;
+    var b=document.getElementById("ppmean").value;
+    var c=document.getElementById("stdtn").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+              var z= (a-b)/c;
+              ans="The calculated Z Score is: "+z;
+    }
+    document.getElementById("zscoreans").innerHTML=ans;
+}
+
+function slpsolve()
+{
+    var a=document.getElementById("slx1").value;
+    var b=document.getElementById("sly1").value;
+    var c=document.getElementById("slx2").value;
+    var d=document.getElementById("sly2").value;
+    var ans="";
+    if(a==""||b==""||c==""||d=="")
+    {
+        ans="Please enter all values to calculate slope";
+    }
+    else
+    {
+        var p=(d-b)/(c-a);
+        ans="Calculated slope is: "+p;
+    }
+    document.getElementById("slpans").innerHTML=ans;
+
+}
+
+
+
+}
+
+function suppangcal()
+{
+    var a=document.getElementById("ang").value;
+    var ans="";
+    if(a=="")
+    {
+        ans="Enter the angle to find the supplementary";
+    }
+    else
+    {
+        var t=parseInt(a);
+        var v=180-t;
+        ans="The supplementary angle of "+a+" is "+v;
+    }
+
+    document.getElementById("suppangans").innerHTML=ans;
+}
+function suppangvercal()
+{
+    var a=document.getElementById("ang1").value;
+    var b=document.getElementById("ang2").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Enter both angles to verify";
+    }
+    else
+    {
+        var x=parseInt(a), y=parseInt(b);
+        if(x+y==180)
+        {ans="Entered angles are supplementary";}
+        else{
+        ans="Entered angles are not supplementary";
+        }
+    }
+
+    document.getElementById("suppangverans").innerHTML=ans;
+}
+
+}
+
+function faccal()
+{
+    var a=document.getElementById("facno").value;
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter number to find factors";
+    }
+    else
+    {
+        var factors=[];
+        ans="Factors of "+a+ " are: ";
+        for(var k=1;k<=a;k++)
+        {
+            if(a%k==0)
+            {
+                factors.push(k);
+            }
+        }
+
+        for(var i=0;i<factors.length;i++)
+        {
+            ans+=factors[i]+"  ";
+        }
+
+
+    }
+    document.getElementById("facans").innerHTML=ans;
+}
+
+
+function facpaircal()
+{
+    a=document.getElementById("facno").value;    
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter number to find pair factors";
+    }
+    else
+    {
+        var number1 = 0;
+        var number2 = a;
+        var answers=[];
+        for (var i = 1; i < a; i++)
+        {
+            if (a % i == 0)
+            {
+            number1 = i;
+              number2 = a/ i;
+              if (number2 >= number1)
+              {
+              answers.push(number1);
+              answers.push(number2);
+              }
+              else
+              {
+                  break;
+              }
+           }
+        }
+
+        ans="Pair factors are: ";
+        for(var i =0;i<answers.length-1;i=i+2)
+        {
+            ans+="( "+answers[i]+","+answers[i+1]+" )  ";
+        }
+    }
+ document.getElementById("facans").innerHTML=ans;
+}
+
+
