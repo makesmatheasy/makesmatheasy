@@ -219,7 +219,6 @@ function openit(id) {
         "#stresscalc",
         "#pairfacts",
         "#interest",
-        "#decimal-binary",
         "#bitwise-calc",
         "#adding-all",
         "#subtract-all",
@@ -228,10 +227,8 @@ function openit(id) {
         "#3dgeo",
         "#bpmfs",
         "#straightline",
-        "#octal-binary",
         "#binary-hexadecimal",
         "#cay",
-        "#octal-hexadecimal",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
@@ -286,13 +283,11 @@ function openit(id) {
         "#hexpyramid",
         "#octahedron",
         "#repp",
-
+        "#partial_sphere",
         "#mtm",
         "#igc",
-
-
+        "#res",
         "#clr",
-
         '#dodecahedron',
         "#icosahedron",
         "#anglecon",

@@ -1053,8 +1053,8 @@ function slpsolve()
         ans="Calculated slope is: "+p;
     }
     document.getElementById("slpans").innerHTML=ans;
-
 }
+
 function suppangcal()
 {
     var a=document.getElementById("ang").value;
@@ -1092,7 +1092,7 @@ function suppangvercal()
     }
 
     document.getElementById("suppangverans").innerHTML=ans;
-
+}
 
 }
 

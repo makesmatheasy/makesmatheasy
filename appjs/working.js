@@ -411,6 +411,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#resbtn").click(function () {
+        openit("#res");
+        closenav();
+        clearall();
+    })
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
@@ -418,10 +424,9 @@ $(document).ready(function () {
     })
     $("#mtmbtn").click(function () {
         openit("#mtm");
-
-
-    $("#mtmbtn").click(function () {
-        openit("#mtm");
+        closenav();
+        clearall();
+    })
 
 
     $("#clrbtn").click(function () {
@@ -726,13 +731,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    //Function of collapsing binary/decimal section on click
-    $("#decimal-to-binary-btn").click(function(){
-        openit("#decimal-binary");
-        closenav();
-        clearall();
-    });
-
     //Function of collapsing bitwise calculator section on click
     $("#bitwise-calc-btn").click(function(){
         openit("#bitwise-calc");
@@ -745,20 +743,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-
-//Function of collapsing binary/octal section on click
-    $("#octal-to-binary-btn").click(function(){
-        openit("#octal-binary");
-        closenav();
-        clearall();
-    });
-
-    $("#octal-to-hexadecimal-btn").click(function(){
-            openit("#octal-hexadecimal");
-            closenav();
-            clearall();
-        });
 
         // anyBase-to-anyBase-btn
         $("#anyBase-to-anyBase-btn").click(function(){
