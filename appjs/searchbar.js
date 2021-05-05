@@ -491,6 +491,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
                         document.getElementById('giff').click();
                     } 
+                    else if (inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION") {
+                        $("#dip").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION"){
+                        document.getElementById('dip').click();
+                    } 
                     else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
                         $("#expo").slideToggle();    
                     }
@@ -586,7 +592,9 @@ function autocomplete(inp, arr) {
                         document.getElementById('igc').click();
                     }
 
+
                     else if (inp.value.toUpperCase() == "EMI CALCULATOR") {
+
                         $("#emical").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "EMI CALCULATOR"){
@@ -597,6 +605,12 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "GST CALCULATOR"){
                         document.getElementById('gstcal').click();
+                    }
+                    else if (inp.value.toUpperCase() == "RESIDUE METHODS") {
+                        $("#res").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "RESIDUE METHODS"){
+                        document.getElementById('res').click();
                     }
                     else if (inp.value.toUpperCase() == "SET CALCULATOR") {
                         $("#setcal").slideToggle();    
@@ -753,16 +767,18 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph",
 
-                        "Curve Tracing","Milne Thomson Method","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
+
+                        ,"Milne Thomson Method","Residue Methods","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
+
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Important Graph Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
 
-                        "Curve Tracing","Milne Thomson Method","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
 
-                        "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","Perfect Squares & Cubes in a range",
+
+                        "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","Perfect Squares & Cubes in a range",
 
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
 
-                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
+                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
 
                       
                         
@@ -940,6 +956,12 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "EXPANSION OF FUNCTIONS") {
         $("#expansion").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "RESIDUE METHODS"){
+        document.getElementById('res').click(); 
+    }
+    else if (inp.value.toUpperCase() == "RESIDUE METHODS") {
+        $("#res").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "CIRCLE"){
         document.getElementById('circlecollapse').click(); 
     }
@@ -1057,6 +1079,12 @@ function handleclick(value) {
     else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
         document.getElementById('giff').click(); 
     }
+    else if (inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION") {
+        $("#dip").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION"){
+        document.getElementById('dip').click(); 
+    }
     else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
         $("#expo").slideToggle(); 
     }
@@ -1096,8 +1124,9 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "SPI/CGPA CONVERTOR") {
         $("#spiconcal").slideToggle(); 
     }
+
     else if (inp.value.toUpperCase() == "STRAIN CALCULATOR") {
-        $("#datecal").slideToggle(); 
+        $("#straincalc").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "STRAIN CALCULATOR"){
         document.getElementById('straincalc').click(); 
@@ -1106,7 +1135,7 @@ function handleclick(value) {
         document.getElementById('datecal').click(); 
     }
     else if (inp.value.toUpperCase() == "DATE") {
-        $("#straincalc").slideToggle(); 
+        $("#datecal").slideToggle(); 
     }
 
     else if(inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM"){
@@ -1122,13 +1151,13 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "REPRESENTATION BY POWER SERIES") {
         $("#repp").slideToggle(); 
     }
+    
     else if(inp.value.toUpperCase() == "STRESS CALCULATOR"){
         document.getElementById('stresscalc').click(); 
     }
     else if (inp.value.toUpperCase() == "STRESS CALCULATOR") {
         $("#stresscalc").slideToggle(); 
     }
-
     else if(inp.value.toUpperCase() == "EMI CALCULATOR"){
         document.getElementById('emical').click(); 
     }

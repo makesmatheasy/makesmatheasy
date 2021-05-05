@@ -267,7 +267,15 @@ $(document).ready(function () {
         openit("#giff");
         closenav();
         clearall();
+
     });
+
+    $("#dipbtn").click(function () {
+        openit("#dip");
+        closenav();
+        clearall();
+    })
+
     $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
@@ -337,7 +345,15 @@ $(document).ready(function () {
         openit("#ip");
         closenav();
         clearall();
+
     });
+    
+    $("#stpbtn").click(function () {
+        openit("#stp");
+        closenav();
+        clearall();
+    })
+
     $("#hydrops").click(function () {
         openit("#hydroz");
         closenav();
@@ -348,16 +364,34 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+
+    $("#resbtn").click(function () {
+        openit("#res");
+        closenav();
+        clearall();
+    })
+
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
         clearall();
+
     });
+
     $("#mtmbtn").click(function () {
         openit("#mtm");
         closenav();
         clearall();
+
     });
+
+    $("#cramerbtn").click(function () {
+        openit("#cramer");
+        closenav();
+        clearall();
+    })
+
     $("#clrbtn").click(function () {
         openit("#clr");
         closenav();
@@ -654,13 +688,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    //Function of collapsing binary/decimal section on click
-    $("#decimal-to-binary-btn").click(function(){
-        openit("#decimal-binary");
-        closenav();
-        clearall();
-    });
-
     //Function of collapsing bitwise calculator section on click
     $("#bitwise-calc-btn").click(function(){
         openit("#bitwise-calc");
@@ -673,6 +700,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
 
 //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function(){
@@ -856,8 +884,20 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cv").click(function(){
+        openit("#cvs");
+        closenav();
+        clearall();
+    });
+    $("#rms").click(function(){
+        openit("#rmss");
+        closenav();
+        clearall();
+    });
 
-});
+
+})
+
 
     function loader(action) {
     var body = document.getElementsByTagName("body");
