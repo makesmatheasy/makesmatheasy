@@ -2258,8 +2258,16 @@ function vectoradd(){
     var add1 = (a+d);
     var add2 = (b+e);
     var add3 = (c+f);
-    document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
-
+    document.getElementById("vectorsum1").style.display = "block";
+    document.getElementById("vsumi").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1)  ;
+    if(add2<0)
+    document.getElementById("vsumj").innerHTML =   (add2)  ;
+    else
+    document.getElementById("vsumj").innerHTML =  '+' +  (add2)  ;
+    if(add3<0)
+    document.getElementById("vsumk").innerHTML = (add3);
+    else
+    document.getElementById("vsumk").innerHTML =  '+' +  (add3) ;
 }
 function vectorsub(){
     var a=parseFloat(document.getElementById('b1a').value);
