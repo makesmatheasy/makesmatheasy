@@ -150,8 +150,10 @@ function openit(id) {
         "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
+
         "#segcals",
         "#vtp",
+
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -321,7 +323,8 @@ function openit(id) {
         "#fourier_series",
         "#wmcs",
         "#cvs",
-        "#rmss"
+        "#rmss",
+        "#relationtypes"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

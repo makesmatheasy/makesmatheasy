@@ -112,11 +112,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#segcal").click(function () {
-        openit("#segcals");
-        closenav();
-        clearall();
-    });
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
@@ -962,6 +957,11 @@ $(document).ready(function () {
     });
     $("#rms").click(function(){
         openit("#rmss");
+        closenav();
+        clearall();
+    });
+    $("#relationtypescollapsebtn").click(function(){
+        openit("#relationtypes");
         closenav();
         clearall();
     });
