@@ -276,6 +276,7 @@ Other Tech/Libraries
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
   - Percentage change in volume of a cube
+  - Percentage change in volume of a sphere
   - Congruence and Similarity of Triangles
 
 - Equations

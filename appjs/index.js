@@ -1,4 +1,4 @@
-var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0,i=0,j=0;
+var a0 = 0, a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0, i = 0, j = 0;
 
 function removeall(elid) {
     if (document.getElementById(elid).innerHTML != "") {
@@ -169,6 +169,7 @@ function openit(id) {
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
+        "#chng-vol-sphere",
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",
@@ -190,10 +191,10 @@ function openit(id) {
         "#plotbargraph",
         "#roundoff",
         "#euclid",
-	    "#aod",
-	    "#vecalg",
-	    "#thedif",
-	    "#corgeo",
+        "#aod",
+        "#vecalg",
+        "#thedif",
+        "#corgeo",
         "#betagamma",
         "#parallel",
         "#unitconcal",
@@ -226,7 +227,7 @@ function openit(id) {
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-		"#onetwocom-calc",
+        "#onetwocom-calc",
         "#3dgeo",
         "#bpmfs",
         "#straightline",
@@ -235,7 +236,7 @@ function openit(id) {
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
-	    "#circlecollapse",
+        "#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
@@ -301,9 +302,9 @@ function openit(id) {
         "#obliquecy",
         "#setcal",
         "#mi",
-	    "#ip",
+        "#ip",
         "#partialcy",
-	    "#prices",
+        "#prices",
         "#centcal",
         "#cevtha",
         "#sum_n",
@@ -427,9 +428,9 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-   
+
     $("#favourite").addClass("favouritecontainer");
-    
+
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement("li");
@@ -448,11 +449,11 @@ function checkfavourite() {
             document.getElementById(imgar[i]).src = favar[i];
         }
     }
-    
-    else{
+
+    else {
         var el = document.createElement("div");
         el.className = "nofavourites";
-        el.id="nofavourite"
+        el.id = "nofavourite"
         el.style.color = "white";
         document.getElementById("favourite").appendChild(el);
         var el1 = document.createElement("p");
@@ -461,7 +462,7 @@ function checkfavourite() {
         var el2 = document.createElement("p");
         el2.textContent = " Click 🤍 to add to Favourites";
         document.getElementById("nofavourite").appendChild(el2);
-        
+
     }
 }
 
@@ -473,7 +474,7 @@ $(document).on('hover', ' .favnew ', function () {
     $(this).addClass('favourites');
 });
 
-document.querySelector(".container").addEventListener('click',function(){
+document.querySelector(".container").addEventListener('click', function () {
     $(".favouritecontainer").slideUp();
 })
 

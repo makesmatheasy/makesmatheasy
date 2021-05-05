@@ -2571,6 +2571,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="per-chng-sphere"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of a Sphere
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Percentage change in volume of sphere','#chng-vol-sphere','c','chng-vol-sphereimgfav')"><img
+                                        id="chng-vol-sphereimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="consimbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Congruence
                                 and Similarity of Triangles
@@ -7874,6 +7891,23 @@
 
             </div>
         </div>
+
+        <div class="collapse" id="chng-vol-sphere">
+            <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                       id="chng-side-sphere"
+                       placeholder="Enter the percentage change in the radius of the sphere"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volSphere()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="sphereAns"></p>
+            </div>
+        </div>
+
 
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
