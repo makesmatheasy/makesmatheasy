@@ -7922,19 +7922,36 @@ function subBinDecHexOct(){
         var add3 = "";
         var ans3 = "";
         var tenco= calculateTenComplement(input2);
+        print += "<h5>STEP 0 : Find 10's complement of Subtrahend</h5>"+input2+"->"+tenco;
         add3 = (parseInt(tenco)+parseInt(input1)).toString();
+        print += "<br><br><h5>STEP 1 : Add Minuend and 10's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + tenco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add3+"</p>";
         if(add3.length == input1.length){
             ans3 = calculateTenComplement(add3);
             result.innerHTML = "-" + ans3;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add3+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Ten's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         } else if (add3.length > input1.length){
             ans3 = add3.substring(1);
             result.innerHTML = ans3;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add3.substring(0,1) + "</span>" +ans3+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans3 + "</span>";
         } else if (add3.length < input1.length){
             var a4 = input1.length - add3.length;
             a4 = Math.pow(10,a4);
             ans3 = a4 + add3;
             ans3 = ans3.substring(1);
             result.innerHTML = "-" + calculateTenComplement(ans3);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add3+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         }
 
     }
