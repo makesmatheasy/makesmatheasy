@@ -326,6 +326,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#dipbtn").click(function () {
+        openit("#dip");
+        closenav();
+        clearall();
+    })
 
     $("#HPbttn").click(function () {
         openit("#hp");

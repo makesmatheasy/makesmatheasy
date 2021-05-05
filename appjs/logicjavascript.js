@@ -1607,6 +1607,24 @@ function gif(){
     }
 }
 
+// dip - calculator to find direct proportion
+function dip() {
+    var dipnum1 = parseInt(document.getElementById("dipnum1").value);
+    var dipnum2 = parseInt(document.getElementById("dipnum2").value);
+    var dipnum3 = parseInt(document.getElementById("dipnum3").value);
+    var fourthVal = (dipnum3 * dipnum2) / dipnum1;
+    document.getElementById("dipans").innerHTML = "The Fourth Value is " + fourthVal;
+}
+
+// inDP - calculator to find indirect proportion
+function inDP() {
+    var inDPnum1 = parseInt(document.getElementById("inDPnum1").value);
+    var inDPnum2 = parseInt(document.getElementById("inDPnum2").value);
+    var inDPnum3 = parseInt(document.getElementById("inDPnum3").value);
+    var fourthVal = (inDPnum1 * inDPnum2) / inDPnum3;
+    document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal;
+}
+
 function fp(){
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if(giffnum >=0){

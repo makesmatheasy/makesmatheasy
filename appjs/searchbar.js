@@ -491,6 +491,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
                         document.getElementById('giff').click();
                     } 
+                    else if (inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION") {
+                        $("#dip").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION"){
+                        document.getElementById('dip').click();
+                    } 
                     else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
                         $("#expo").slideToggle();    
                     }
@@ -772,7 +778,7 @@ var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "
 
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
 
-                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
+                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP"];
 
                       
                         
@@ -1072,6 +1078,12 @@ function handleclick(value) {
     }
     else if(inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART"){
         document.getElementById('giff').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION") {
+        $("#dip").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION"){
+        document.getElementById('dip').click(); 
     }
     else if (inp.value.toUpperCase() == "SOLVE FOR EXPONENTS") {
         $("#expo").slideToggle(); 
