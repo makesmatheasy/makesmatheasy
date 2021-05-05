@@ -903,6 +903,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#wmc").click(function(){
+        openit("#wmcs");
+        closenav();
+        clearall();
+    });
+
 
 })
 
