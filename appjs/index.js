@@ -150,7 +150,6 @@ function openit(id) {
         "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
-        "#segcals",
         "#hydroz",
         "#straincalc",
         "#shapescal",

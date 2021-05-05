@@ -2328,22 +2328,6 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="segcal"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Segment Area Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Segment Area Calculator','#segcals','c','segfav')"><img
-                                        id="segfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
                             <a id="corgeobtn"
                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Geometry Formula and Theorem
@@ -10594,7 +10578,12 @@
                     <td><a data-toggle="modal" data-target="#parabolic_arc"
                            style="text-decoration:none;"
                            href="#">Parabolic Arch</a></td>
-                </tr>                    
+                </tr>    
+                <tr>
+                    <td><a data-toggle="modal" data-target="#segcals"
+                           style="text-decoration:none;"
+                           href="#">Segment Calculator</a></td>
+                </tr>               
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -12373,7 +12362,6 @@
 
 
 <div class="collapse" id="segcals">
-
     
     <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
     <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">

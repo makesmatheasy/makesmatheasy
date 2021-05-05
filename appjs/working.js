@@ -112,11 +112,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#segcal").click(function () {
-        openit("#segcals");
-        closenav();
-        clearall();
-    });
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
