@@ -286,6 +286,7 @@ function openit(id) {
         "#hexpyramid",
         "#octahedron",
         "#repp",
+        "#partial_sphere",
         "#mtm",
         "#igc",
         "#res",

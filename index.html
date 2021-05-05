@@ -10509,6 +10509,11 @@
                            href="#">Hollow Sphere</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#partial_sphere"
+                           style="text-decoration:none;"
+                           href="#">Partial Sphere</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#hemisphere"
                            style="text-decoration:none;"
                            href="#">Hemisphere</a></td>
@@ -16945,6 +16950,67 @@
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="partial_sphere" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Partial Sphere</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Bottom Radius</h5>
+                                    <p class="text-center">\[c = \sqrt{h(2r-h)}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[v = \frac{\pi}{6}h(3c^2 + h^2)\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[S = \pi (c^2 + h^2 ) = 2\pi rh \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/sphere_partial.gif" class="img-fluid"><br><br>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Base Area</h5>
+                                        <p class="text-center">\[B = \pi c^2\]</p>
+                                    </div>
+
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter radius of sphere (r)"
+                                    id="parsphr"
+                                    oninput="solvepartialsphere()">
+                                <input class="form__field" type="number" placeholder="Enter height (h)"
+                                    id="parsphh"
+                                    oninput="solvepartialsphere()">
+                                <br>
+                                <p class="stopwrap" id="resultofparsprad"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofparspvol"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofparspsa"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofparspba"
+                                style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

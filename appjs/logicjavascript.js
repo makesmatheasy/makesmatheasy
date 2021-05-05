@@ -4491,6 +4491,47 @@ function solvehollowsphere() {
     }
 }
 
+function solvepartialsphere() {
+    var height = document.getElementById("parsphh").value;
+    var radius = document.getElementById("parsphr").value;
+    var volumeoutput = document.getElementById("resultofparspvol");
+    var radoutput = document.getElementById("resultofparsprad");
+    var baoutput = document.getElementById("resultofparspba");
+    var saoutput = document.getElementById("resultofparspsa");
+    var voltemp = "";
+    var radtemp = "";
+    var batemp = "";
+    var satemp = "";
+    var c = Math.sqrt((2*radius*height)-(height*height));
+    if ((height != "") && (radius != "")) {
+        radtemp += "\\[ c = \\sqrt{" + height + "\\times(2\\times" + radius + "-" + height + ")}" + "\\]";
+        radtemp += "\\[Radius \\space of \\space bottom \\space is \\space = \\space " + (c).toFixed(2) + "\\]";
+        radoutput.innerHTML = radtemp;
+        renderMathInElement(radoutput);
+        voltemp += "\\[ V = \\frac{\\pi}{6}" + "\\times" + height + "\\times(3 \\times c^2 +" + height + "\\times" + height + ")"  + "\\]";
+        voltemp += "\\[Volume \\space is \\space = \\space " + ((0.52*height*3*c*c) + (0.52*height*height*height)).toFixed(2) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        batemp += "\\[ B = \\pi \\times (\\sqrt{" + height + "\\times(2\\times" + radius + "-" + height + ")})^2"  + "\\]";
+        batemp += "\\[Bottom \\space Area \\space is \\space " + eval(String(3.14*c*c)) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        satemp += "\\[ S = 2 \\times \\pi \\times" + radius + "\\times" + height + "\\]";
+        satemp += "\\[Surface \\space Area \\space is \\space " + eval(String(2*3.14*radius*height)) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(saoutput);
+
+
+    } 
+    else {
+        radoutput.innerHTML = "";
+        volumeoutput.innerHTML = "";
+        baoutput.innerHTML = "";
+        saoutput.innerHTML = "";
+    }
+}
+
+
 function solvehemisphere() {
     var radius = document.getElementById("inputradiushemisph").value;
 
