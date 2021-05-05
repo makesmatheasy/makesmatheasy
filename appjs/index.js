@@ -151,6 +151,7 @@ function openit(id) {
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
+        "#vtp",
         "#hydroz",
         "#straincalc",
         "#shapescal",
