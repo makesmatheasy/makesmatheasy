@@ -170,6 +170,7 @@ function openit(id) {
         "#partialdiffcollapse",
         "#3d-solid",
         "#chng-vol-sphere",
+        "#chng-vol-cuboid",
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",

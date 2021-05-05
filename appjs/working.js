@@ -296,6 +296,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#per-chng-cuboid").click(function () {
+        openit("#chng-vol-cuboid");
+        closenav();
+        clearall();
+    })
+
     $("#pythtriplebtn").click(function () {
         openit("#pythtriple");
         closenav();

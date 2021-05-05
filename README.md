@@ -274,6 +274,7 @@ Other Tech/Libraries
   - Volume, CSA, TSA
   - Percentage change in volume of a cube
   - Percentage change in volume of a sphere
+  - Percentage change in volume of a Cuboid
   - Congruence and Similarity of Triangles
 
 - Equations
