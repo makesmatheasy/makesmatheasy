@@ -315,11 +315,9 @@ function openit(id) {
         "#setformula",
         "#wedge",
         "#fourier_series",
-<<<<<<< HEAD
-        "#cvs"
-=======
-        "#rmss"
->>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
+        "#cvs",
+        "#rmss",
+        "#clocks"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

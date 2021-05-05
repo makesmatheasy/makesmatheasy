@@ -964,7 +964,6 @@ function errpercal()
 
 }
 
-<<<<<<< HEAD
 function cvcal()
 {
     var num=document.getElementById("cvsd").value;
@@ -1013,7 +1012,6 @@ function cvcal()
 
 
 
-=======
 function rmscal()
 {
     var num=document.getElementById("rmi").value;
@@ -1045,7 +1043,6 @@ function rmscal()
         
     }
     document.getElementById("rmsans").innerHTML=ans;
->>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 }
 
 
@@ -1087,13 +1084,8 @@ function slpsolve()
         ans="Calculated slope is: "+p;
     }
     document.getElementById("slpans").innerHTML=ans;
-<<<<<<< HEAD
-}
-
-=======
 
 }
->>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 function suppangcal()
 {
     var a=document.getElementById("ang").value;
@@ -1134,11 +1126,6 @@ function suppangvercal()
 }
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
-
 function faccal()
 {
     var a=document.getElementById("facno").value;
@@ -1211,3 +1198,25 @@ function facpaircal()
 }
 
 
+function clockcal()
+{
+    a=document.getElementById("hclock").value;  
+    b=document.getElementById("mclock").value;   
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter both minutes and hour to find angle";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        var angmin=b*6;
+        var anghour=30*a+0.5*b
+           
+        ans="Angle from minute to hour hands: "+Math.abs(anghour-angmin)+" degree";
+        ans+="<br>"
+        ans+="Angle from hour to minute hands: "+Math.abs(360-Math.abs(anghour-angmin))+" degree";
+    }
+    document.getElementById("clockans").innerHTML=ans;
+}

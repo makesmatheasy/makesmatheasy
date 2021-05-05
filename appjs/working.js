@@ -963,6 +963,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#clock").click(function(){
+        openit("#clocks");
+        closenav();
+        clearall();
+    });
+
 
 })
 
