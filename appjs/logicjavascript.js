@@ -2473,45 +2473,41 @@ function solveareasq() {
 }
 
 function solvetetra() {
-    var a = document.getElementById("inputtsidetetra").value;
-    console.log(a)
-    var resultvolt = document.getElementById("resultofvolt");
-    var resultheightt = document.getElementById("resultofheightt");
-    var resultofcircumt = document.getElementById("resultofcircumt");
-    var resultofinradt = document.getElementById("resultofinradt");
-    resultofvolt.innerHTML = "";
-    resultofheightt.innerHTML = "";
-    resultofcircumt.innerHTML = "";
-    resultofinradt.innerHTML = "";
-
-    var volume = 0.118 * (a * a * a);
-    var height = (math.sqrt(2) / math.sqrt(3)) * a;
-    var circum = 0.612 * a;
-    var inradius = 0.2041 * a;
-    var area = math.sqrt(3) * a**2;
+    var a = document.getElementById("inputsidetetra").value;
+    var voloutput = document.getElementById("resultoftetravol");
+    var heioutput = document.getElementById("resultoftetrahei");
+    var croutput = document.getElementById("resultoftetracr");
+    var inroutput = document.getElementById("resultoftetrainr");
+    var areaoutput = document.getElementById("resultoftetraarea");
+    var voltemp = "";
+    var heitemp = "";
+    var crtemp = "";
+    var inrtemp = "";
+    var areatemp = "";
     if (a != "") {
-        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
-        renderMathInElement(document.getElementById("resultofvolt"));
+        voltemp += "\\[Volume \\space of \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(0.11785113 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        heitemp += "\\[Height \\space of \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times" + a + "\\ = " + eval(String(0.81649658 * a )).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        crtemp += "\\[Circumradius \\space of \\space Tetrahedron \\space \\newline \\frac{\\sqrt{6}}{4} \\times" + a + "\\ = " + eval(String(0.61237244 * a)).toFixed(2) + "\\]";
+        croutput.innerHTML = crtemp;
+        inrtemp += "\\[Inradius \\space of \\space Tetrahedron \\space \\newline \\frac{1}{\\sqrt{24}} \\times" + a + "\\ = " + eval(String(0.20412415 * a )).toFixed(2) + "\\]";
+        inroutput.innerHTML = inrtemp;
+        areatemp += "\\[Surface \\space Area \\space of \\space Tetrahedron \\space \\newline \\sqrt{3} \\times" + a + "\\times" + a + "\\ = " + eval(String(1.73205081 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(croutput);
+        renderMathInElement(inroutput);
+        renderMathInElement(heioutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        croutput.innerHTML = "";
+        inroutput.innerHTML = "";
+        heioutput.innerHTML = "";
     }
-    if (a != "") {
-        document.getElementById("resultofheightt").innerHTML = "\\[Height \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{2}}{\\sqrt{3}} \\times (" + a + ")\\ = " + height.toFixed(3) + " \\]";
-        renderMathInElement(document.getElementById("resultofheightt"));
-    }
-    if (a != "") {
-        document.getElementById("resultofcircumt").innerHTML = "\\[CircumRadius \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{\\sqrt{6}}{4} \\times (" + a + ")\\ = " + circum + " \\]";
-        renderMathInElement(document.getElementById("resultofcircumt"));
-    }
-    if (a != "") {
-        document.getElementById("resultofsurare").innerHTML = "\\[Surface \\space Area \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\sqrt{3} \\times (" + a + ")^2\\ = " + area + " \\]";
-        renderMathInElement(document.getElementById("resultofsurare"));
-    }
-    if (a != "") {
-        document.getElementById("resultofinradt").innerHTML = "\\[InRadius \\space of \\space Regular \\space Tetrahedron \\space \\newline \\frac{1}{\\sqrt{24}} \\times (" + a + ")\\ = " + inradius + " \\]";
-        renderMathInElement(document.getElementById("resultofinradt"));
-    } else if (a == "") {
-        document.getElementById("resultofvolt").innerHTML = "Enter side a to calculate volume";
-    }
-}
+}    
 
 function pythtriple(){
     var num = parseInt(document.getElementById("nom").value)
