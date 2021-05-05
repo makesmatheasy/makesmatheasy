@@ -4147,6 +4147,32 @@ findFactors = function() {
     document.getElementById("allfactor").innerHTML +=  number; // Print out the number itself.
 }
 
+function trusqpyramidsolve(){
+    var a = document.getElementById("inputtrusqpysidea").value;
+    var b = document.getElementById("inputtrusqpysideb").value;
+    var h = document.getElementById("inputtrusqpyheight").value;  
+    var vol = 1/3 * (a**2 + a*b + b**2) * h;
+    var lsa = 2 * (parseInt(a)+parseInt(b)) * math.sqrt( ((parseInt(a)-parseInt(b))/2)**2 + h**2 );
+    var sa = lsa + a**2 + b**2;
+
+    if (a!="" && b!="" && h!=""){
+
+        document.getElementById("resultofvolsqpyramid").innerHTML = "\\[Volume \\space of \\space truncated \\space square \\space pyramid \\space \\newline \\frac{1}{3}\\times("+a+"^2 + "+a+"\\times"+b+" + "+b+"^2) \\times "+h+"  = " + vol.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofvolsqpyramid"));
+
+        document.getElementById("resultoflsasqpyramid").innerHTML = "\\[Lateral \\space Area \\space of \\space square \\space pyramid \\space \\newline 2\\times ("+a+"+"+b+") \\times \\sqrt{ (\\frac{"+a+"-"+b+"}{2})^2 + "+h+"^2 }   = " + lsa.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultoflsasqpyramid"));
+
+        document.getElementById("resultofsasqpyramid").innerHTML = "\\[Surface \\space Area \\space of \\space square \\space pyramid \\space \\newline "+lsa.toFixed(2)+" + "+a+"^2 +  "+b+"^2  = " + sa.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofsasqpyramid"));
+    } else{
+        document.getElementById("resultofvolsqpyramid").innerHTML ="";
+        document.getElementById("resultoflsasqpyramid").innerHTML = "";
+        document.getElementById("resultofsasqpyramid").innerHTML = "";
+    }
+
+}
+
 function pyramidsolve() {
     var side = document.getElementById("inputpyramidside").value;
     var height = document.getElementById("inputpyramidheight").value;   
