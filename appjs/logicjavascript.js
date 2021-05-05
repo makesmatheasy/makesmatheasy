@@ -7515,34 +7515,7 @@ function std() {
 
 // standard deviation end
 
-///////// Binary and Decimal Conversion ///////////
 
-//Function that performs conversion
-function convertBinDec() {
-    const fromBase = document.getElementById("decimal-binary-select1").value;
-    const toBase = document.getElementById("decimal-binary-select2").value;
-    const input = document.getElementById("decimal-binary-input").value;
-    let result = document.getElementById("decimal-binary-result");
-
-    if (fromBase === "Decimal" && toBase === "Binary"){
-       let ans = fracDectoBinHexOct(input,2);
-       result.innerHTML = ans;
-    }else if (fromBase === "Binary" && toBase === "Decimal"){
-        result.innerHTML = calculatefrac(input,2);
-    }else if (fromBase === "Binary" && toBase === "Binary"){
-        result.innerHTML = input;
-    }else if (fromBase === "Decimal" && toBase ==="Decimal"){
-        result.innerHTML = input;
-    }
-
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (fromBase  === "Binary") {
-        if (input.search(/^[-.10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-
-    }
-}
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
@@ -7671,33 +7644,6 @@ function bitwiseCalc() {
 }
 
 /////////////////////////////////////////////////////////////
-//Function that performs conversion of Octal/Binary/Decimal
-function convertBinOct() {
-    const fromBase = document.getElementById("octal-binary-select1").value;
-    const toBase = document.getElementById("octal-binary-select2").value;
-    const input = document.getElementById("octal-binary-input").value;
-    let result = document.getElementById("octal-binary-result");
-    let from = 8;
-    let to = 8;
-
-    if (fromBase === "Octal") from = 8;
-    else if (fromBase === "Decimal") from=10;
-    else from = 2;
-
-    if (toBase === "Octal") to = 8;
-    else if(toBase === "Decimal") to = 10;
-    else to = 2;
-
-    result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-
-    }
-}
-
 //----------------------------
 //Function that performs anyBase to anyBase Conversion
 function convertAnyBaseToAnyBase() {
@@ -7755,26 +7701,7 @@ function convertAnyBaseToAnyBase() {
 
 
 }
-//Function that performs conversion of Octal/hexadecimal
-function convertOctHex() {
-    const fromBase = document.getElementById("octal-hexadecimal-select1").value;
-    const toBase = document.getElementById("octal-hexadecimal-select2").value;
-    const input = document.getElementById("octal-hexadecimal-input").value;
-    let result = document.getElementById("octal-hexadecimal-result");
 
-    if (fromBase === "Octal" && toBase === "Hexadecimal"){
-        result.innerHTML = fracDectoBinHexOct(calculatefrac(input,8),16);;
-    }else if(fromBase === "Hexadecimal" && toBase === "Octal"){
-        result.innerHTML =fracDectoBinHexOct(calculatefrac(input,16),8);
-    }else if(fromBase === "Hexadecimal" && toBase === "Hexadecimal"){
-        result.innerHTML = input;
-    }else if(fromBase === "Octal" && toBase === "Octal"){
-        result.innerHTML = input;
-    }
-    if (input == "") {
-        result.innerHTML = "";
-    }
-}
 //---------------------------------------------------------------------
 
 //Function for addition of any number system
@@ -8406,10 +8333,12 @@ function convertBinhex() {
 
     if (fromBase === "Binary") from = 2;
     else if (fromBase === "Decimal") from = 10;
+    else if (fromBase === "Octal") from = 8;
     else from = 16;
 
     if (toBase === "Binary") to = 2;
     else if (toBase === "Decimal") to = 10;
+    else if (toBase === "Octal") to = 8;
     else to = 16;
 
     result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
@@ -8418,6 +8347,10 @@ function convertBinhex() {
     } else if (from == 2) {
         if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+    }else if (from == 8) {
+        if (input.search(/^[-.01234567]+$/) == -1)
+            result.innerHTML = "Octal numbers can't have 8s and 9s";
 
     }
 }
