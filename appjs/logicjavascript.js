@@ -1664,8 +1664,9 @@ function parapipe(){
 
     var volume = parseInt(first) * parseInt(second) * parseInt(third);
     var surfacearea = 2 * (parseInt(first) * parseInt(second) + parseInt(second) * parseInt(third) + parseInt(third) * parseInt(first));
-    var diagonal = Math.sqrt(parseInt(first)**2 * parseInt(second)**2 * parseInt(third)**2)
-    
+    var diag = (parseInt(first)**2 + parseInt(second)**2 + parseInt(third)**2);
+    var diagonal = Math.sqrt(diag);
+
     document.getElementById("volparapipe").innerHTML = "The volume is " + volume.toFixed(3)
     document.getElementById("saparapipe").innerHTML = "The Surface Area is " + surfacearea.toFixed(3)
     document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
