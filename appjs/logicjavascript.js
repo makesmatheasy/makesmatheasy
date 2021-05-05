@@ -2404,8 +2404,11 @@ function vectordot(){
     var mult2 = (b*e);
     var mult3 = (c*f);
     var mult = mult1 + mult2 + mult3;
-    document.getElementById("vectordot1").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space ="  + (mult) + "\\]";
+    document.getElementById("vectordot1").innerHTML = "\\[ ="  + (mult) + "\\]";
     renderMathInElement(document.getElementById("vectordot1"));
+  
+    document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
+    renderMathInElement(document.getElementById("dotex"));
 }
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
