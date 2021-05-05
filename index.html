@@ -10525,7 +10525,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#prism"
+                                    <td><a data-toggle="modal" data-target="#triprism"
                                         style="text-decoration:none;"
                                         href="#">Triangular Prism</a>
                                     </td>
@@ -17088,64 +17088,64 @@
             </div>
         </div>
 
-        <!--Traingular Prism-->
-        <div class="modal fade" id="prism" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title"> Triangular Prism</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Volume of Prism</h5>
-                                    <p class="text-center">\[V=(l \times b \times h) / 2\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Surface Area of Prism</h5>
-                                    <p class="text-center">\[b(h+l) \space + \space 2 \times l \times s\]</p>
+<!--Traingular Prism-->
+<div class="modal fade" id="triprism" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Triangular Prism</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close"
+                        style="outline:none">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-center">Volume of Prism</h5>
+                            <p class="text-center">\[V=(l \times b \times h) / 2\]</p>
+                            <div class="dropdown-divider"></div>
+                            <h5 class="text-center">Surface Area of Prism</h5>
+                            <p class="text-center">\[b(h+l) \space + \space 2 \times l \times s\]</p>
 
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/prism.png" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <p>Fill All Four</p>
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Length (cm)"
-                                       id="inputprismlength" oninput="prismsolve()">
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Breadth (cm)"
-                                       id="inputprismbreadth" oninput="prismsolve()">
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Height (cm)"
-                                       id="inputprismheight" oninput="prismsolve()">
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Side (cm)"
-                                       id="inputprismside" oninput="prismsolve()">
-                                <br>
-                                <p class="stopwrap" id="resultofvolprism"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultoftsaprism"
-                                   style="font-family:mathfont;"></p>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <img src="images/prism.png" class="img-fluid">
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Close
-                            </button>
-                        </div>
+                        <div class="dropdown-divider"></div>
+                        <p>Fill All Four</p>
+                        <input class="form__field" type="number"
+                               placeholder="Enter Length (cm)"
+                               id="inputtriprismlength" oninput="triprismsolve()">
+                        <input class="form__field" type="number"
+                               placeholder="Enter Breadth (cm)"
+                               id="inputtriprismbreadth" oninput="triprismsolve()">
+                        <input class="form__field" type="number"
+                               placeholder="Enter Height (cm)"
+                               id="inputtriprismheight" oninput="triprismsolve()">
+                        <input class="form__field" type="number"
+                               placeholder="Enter Side (cm)"
+                               id="inputtriprismside" oninput="triprismsolve()">
+                        <br>
+                        <p class="stopwrap" id="resultofvolprism"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftsaprism"
+                           style="font-family:mathfont;"></p>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <!--Pentagonal Prism-->
         <div class="modal fade" id="pentprism" tabindex="-1" role="dialog" aria-hidden="true">
