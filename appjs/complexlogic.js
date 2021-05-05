@@ -509,10 +509,23 @@ function factorial(n){
 // HP ends
 
 function volhemiSphere() {
-    var x = parseInt(document.getElementById("chng-radius-hemisphere").value);
-    var ans = "percentage increase in the volume of the hemisphere is ";
-    const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
-    ans = ans + per + " %";
+    var x = parseInt(document.getElementById("chng-side-hemisphere").value);
+    
+    if (x > 0){
+	var ans = "percentage increase in the volume of the hemisphere is ";
+        ans += (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+	ans += " %";
+    }
+    else if (x < 0)
+    {
+	var ans = "percentage decrease in the volume of the hemisphere is ";
+    	ans += (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+	ans += " %";
+    }
+    else
+    {
+        var ans = "Volume remains the same.";
+    }
     document.getElementById("hemisphereAns").innerText = ans;
 
 }
