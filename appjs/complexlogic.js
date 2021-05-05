@@ -517,8 +517,7 @@ function volCuboid() {
     var percentInc = (1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100));
     percentInc -= 1;
     percentInc *= 100;
-
-    // const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+	
     ans = ans + percentInc + " %";
     document.getElementById("cuboidAns").innerText = ans;
 
