@@ -1038,7 +1038,6 @@ function suppangvercal()
     document.getElementById("suppangverans").innerHTML=ans;
 }
 
-
 function faccal()
 {
     var a=document.getElementById("facno").value;
