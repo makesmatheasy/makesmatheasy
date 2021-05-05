@@ -326,6 +326,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#dipbtn").click(function () {
+        openit("#dip");
+        closenav();
+        clearall();
+    })
 
     $("#HPbttn").click(function () {
         openit("#hp");
@@ -398,6 +403,12 @@ $(document).ready(function () {
 
     $("#ipbtn").click(function () {
         openit("#ip");
+        closenav();
+        clearall();
+    })
+    
+    $("#stpbtn").click(function () {
+        openit("#stp");
         closenav();
         clearall();
     })
@@ -737,13 +748,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    //Function of collapsing binary/decimal section on click
-    $("#decimal-to-binary-btn").click(function(){
-        openit("#decimal-binary");
-        closenav();
-        clearall();
-    });
-
     //Function of collapsing bitwise calculator section on click
     $("#bitwise-calc-btn").click(function(){
         openit("#bitwise-calc");
@@ -756,20 +760,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-
-//Function of collapsing binary/octal section on click
-    $("#octal-to-binary-btn").click(function(){
-        openit("#octal-binary");
-        closenav();
-        clearall();
-    });
-
-    $("#octal-to-hexadecimal-btn").click(function(){
-            openit("#octal-hexadecimal");
-            closenav();
-            clearall();
-        });
 
         // anyBase-to-anyBase-btn
         $("#anyBase-to-anyBase-btn").click(function(){
@@ -963,6 +953,18 @@ $(document).ready(function () {
 
      $("#plotbargraphoption").click(function(){
         openit("#plotbargraph");
+        closenav();
+        clearall();
+    });
+
+
+    $("#cv").click(function(){
+        openit("#cvs");
+        closenav();
+        clearall();
+    });
+    $("#rms").click(function(){
+        openit("#rmss");
         closenav();
         clearall();
     });

@@ -141,6 +141,7 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Greatest Integer Function and Fractional Part
+  - Direct And Indirect Proportion
   - Solve for Exponents
   - Sum of Square of Given number
   - Percentage Calculator
@@ -273,6 +274,7 @@ Other Tech/Libraries
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
+  - Percentage change in volume of a cube
   - Congruence and Similarity of Triangles
 
 - Equations
@@ -289,7 +291,7 @@ Other Tech/Libraries
 
   - Boolean Algebra
   - Any Base to Any Base Converter
-  - Decimal/Binary Converter
+  - Bin/Dec/Oct/Hex Converter
   - Addition of any Number System
   - Subtraction of any Number System
   - Multiplication of any Number System
@@ -299,7 +301,6 @@ Other Tech/Libraries
     - BCD Code Addition
   - Excess-3 Code Converter
   - Decimal/2421 Code Converter
-  - Octal/Binary Converter
   - Grey Code Converter
   - Bitwise Calculator
   - (R-1)'s & R's Complement Calculator
