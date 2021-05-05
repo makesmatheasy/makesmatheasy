@@ -199,6 +199,7 @@ h5, h6 {
 }
 #fav-button:hover {
   background-color: rgba(255, 244, 253, 0.993);
+  color: var(--appblack);
   font-weight: bolder;
 }
 
@@ -264,7 +265,8 @@ h5, h6 {
 }
 
 .favourites:hover {
-  background-color: rgb(255, 136, 231);
+  background-color: var(--apppink);
+  color: var(--appblack);
   cursor: pointer;
 }
 
@@ -733,4 +735,16 @@ input[type='number'] {
   #box{
      margin-right:11em; 
   }
+}
+
+#unknownWork {
+  display: none;
+}
+
+#unknownTime {
+  display: none;
+}
+
+#unknownMen {
+  display: none;
 }

@@ -1,4 +1,4 @@
-var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0,i=0,j=0;
+var a0 = 0, a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0, i = 0, j = 0;
 
 function removeall(elid) {
     if (document.getElementById(elid).innerHTML != "") {
@@ -147,10 +147,9 @@ function openit(id) {
         "#sosqsn",
         "#socbsn",
         "#squaresRanges",
-
+        "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
-        "#segcals",
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -169,12 +168,14 @@ function openit(id) {
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
+        "#chng-vol-sphere",
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
+        "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
@@ -189,14 +190,16 @@ function openit(id) {
         "#plotbargraph",
         "#roundoff",
         "#euclid",
-	    "#aod",
-	    "#vecalg",
-	    "#thedif",
-	    "#corgeo",
+        "#aod",
+        "#vecalg",
+        "#thedif",
+        "#corgeo",
         "#betagamma",
         "#parallel",
         "#unitconcal",
         "#giff",
+        "#dip",
+        "#wandt",
         "#spiconcal",
         "#home",
         "#curconcal",
@@ -206,7 +209,9 @@ function openit(id) {
         "#hp",
         "#ppmfs",
         "#bool",
+        "#suppangs",
         "#eirs",
+        "#zscores",
         "#errpers",
         "#log_values",
         "#oops",
@@ -217,24 +222,21 @@ function openit(id) {
         "#stresscalc",
         "#pairfacts",
         "#interest",
-        "#decimal-binary",
         "#bitwise-calc",
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-		"#onetwocom-calc",
+		    "#onetwocom-calc",
         "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
         "#straightline",
-        "#octal-binary",
         "#binary-hexadecimal",
         "#cay",
-        "#octal-hexadecimal",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
-	    "#circlecollapse",
+        "#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
@@ -285,6 +287,12 @@ function openit(id) {
         "#hexpyramid",
         "#octahedron",
         "#repp",
+        "#partial_sphere",
+        "#mtm",
+        "#stp",
+        "#igc",
+        "#res",
+        "#clr",
         '#dodecahedron',
         "#icosahedron",
         "#anglecon",
@@ -294,12 +302,14 @@ function openit(id) {
         "#obliquecy",
         "#setcal",
         "#mi",
-	    "#ip",
-	    "#prices",
+        "#ip",
+        "#partialcy",
+        "#prices",
         "#centcal",
         "#cevtha",
         "#sum_n",
         "#percal",
+        "#parabolic_arc",
         "#lyear",
         "#analytical",
         "#isoright",
@@ -307,7 +317,11 @@ function openit(id) {
         "#expo",
         "#setformula",
         "#wedge",
-        "#fourier_series"
+        "#fourier_series",
+        "#wmcs",
+        "#cvs",
+        "#rmss",
+        "#relationtypes"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
@@ -415,9 +429,9 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-   
+
     $("#favourite").addClass("favouritecontainer");
-    
+
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement("li");
@@ -436,11 +450,11 @@ function checkfavourite() {
             document.getElementById(imgar[i]).src = favar[i];
         }
     }
-    
-    else{
+
+    else {
         var el = document.createElement("div");
         el.className = "nofavourites";
-        el.id="nofavourite"
+        el.id = "nofavourite"
         el.style.color = "white";
         document.getElementById("favourite").appendChild(el);
         var el1 = document.createElement("p");
@@ -449,7 +463,7 @@ function checkfavourite() {
         var el2 = document.createElement("p");
         el2.textContent = " Click 🤍 to add to Favourites";
         document.getElementById("nofavourite").appendChild(el2);
-        
+
     }
 }
 
@@ -460,6 +474,10 @@ $(document).on('click', ' .favourites ', function () {
 $(document).on('hover', ' .favnew ', function () {
     $(this).addClass('favourites');
 });
+
+document.querySelector(".container").addEventListener('click', function () {
+    $(".favouritecontainer").slideUp();
+})
 
 function removefavourite() {
     localStorage.removeItem("favouritearray");
