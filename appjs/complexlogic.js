@@ -1,5 +1,3 @@
-const { parse } = require("node:path");
-
 function Complex(real, imaginary) {
   this.real = 0;
   this.imaginary = 0;
@@ -963,7 +961,64 @@ function errpercal()
     document.getElementById("errperans").innerHTML=ans;
 
 }
+function wmccal()
+{
+    var num1=document.getElementById("wmcx").value;
+    var num2=document.getElementById("wmcw").value;
+    if(num1==""||num2=="")
+    {
+        ans="Please enter all the values";
+    }
+    else{
 
+    num1=num1.trim();
+    num1 = num1.split(" ");
+    var len1=parseInt(num1.length);
+    var number1=[]
+    for (i = 0; i < len1; i++) 
+    {
+        number1[i] = parseFloat(num1[i].trim());
+    }
+
+    num2=num2.trim();
+    num2 = num2.split(" ");
+    var len2=parseInt(num2.length);
+    var number2=[]
+    for (i = 0; i < len2; i++) 
+    {
+        number2[i] = parseFloat(num2[i].trim());
+    }
+   
+    if(len1!=len2)
+    {
+        ans="Your number of data and weight are not equal ";
+    }
+    else
+    {
+        var ans1=[];
+        var sum=0, wsum=0;
+        for (i = 0; i < len1; i++) 
+        {
+            ans1[i] = number2[i]*number1[i];
+            sum+=ans1[i];
+            wsum+=number2[i];
+        }
+
+        for (i = 0; i < len1; i++) 
+        {
+            console.log(ans[i]);
+        }
+
+        console.log(wsum);
+        console.log(sum);
+        var wm=sum/wsum;
+        ans="The calculated weighted mean is: "+wm;
+
+    }
+    
+    }
+    document.getElementById("wmcans").innerHTML=ans;
+}
 function cvcal()
 {
     var num=document.getElementById("cvsd").value;
@@ -1008,10 +1063,7 @@ function cvcal()
     }
 
     document.getElementById("cvans").innerHTML=s;
-
-
-
-
+}
 function rmscal()
 {
     var num=document.getElementById("rmi").value;
@@ -1080,8 +1132,8 @@ function slpsolve()
         ans="Calculated slope is: "+p;
     }
     document.getElementById("slpans").innerHTML=ans;
-
 }
+
 function suppangcal()
 {
     var a=document.getElementById("ang").value;
@@ -1119,8 +1171,6 @@ function suppangvercal()
     }
 
     document.getElementById("suppangverans").innerHTML=ans;
-}
-
 }
 function faccal()
 {

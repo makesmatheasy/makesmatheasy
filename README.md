@@ -73,6 +73,7 @@ Other Tech/Libraries
     - Subtraction
     - Multiplication
   - Properties of Matrices and Determinants
+  - Cramer's Rule Calculator
   - Sum of Nterms of an Arithmetic Progression
   - Sum of Nterms of a Geometric Progression
   - Sum of Nterms of a Harmonic Progression
@@ -141,6 +142,7 @@ Other Tech/Libraries
     - Prime Factorization **( with steps for single number)**
   - Greatest Integer Function and Fractional Part
   - Direct And Indirect Proportion
+  - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
   - Percentage Calculator
@@ -274,6 +276,7 @@ Other Tech/Libraries
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
   - Percentage change in volume of a cube
+  - Percentage change in volume of a sphere
   - Congruence and Similarity of Triangles
 
 - Equations

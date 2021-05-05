@@ -231,6 +231,9 @@
             .darkmode-layer--button{
                 right: 15px !important;
             }
+            .sidenav{
+                width: 100%;
+            }
         }
         .sidenav li > a {
             display: inline-block;
@@ -440,6 +443,24 @@
                 </table>
             </li>
             <!--            matrix properties-->
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cramerbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cramer's Rule Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cramers Rule Calculator','#cramer','c','cramerfav')"><img
+                                        id="cramerfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -1236,23 +1257,32 @@
                     </tr>
                 </table>
             </li>
-            
+
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
                             <a id="dipbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Direct And Indirect Proportion</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Direct And Indirect Proportion','#dip','c','dipimgfav')"><img
                                         id="dipimgfav" src="images/unfavourite.png"
+
+                            <a id="wandtbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Work And Time Calculator','#wandt','c','wandtimgfav')"><img
+                                        id="wandtimgfav" src="images/unfavourite.png"
+
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
-            
+
             <li>
                 <table class="table">
                     <tr>
@@ -1693,6 +1723,23 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
                                         id="meanfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="wmc"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Weighted Mean
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Weighted Mean Calculator','#wmcs','c','wmcfav')"><img
+                                        id="wmcfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2542,6 +2589,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="per-chng-sphere"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of a Sphere
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Percentage change in volume of sphere','#chng-vol-sphere','c','chng-vol-sphereimgfav')"><img
+                                        id="chng-vol-sphereimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="consimbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Congruence
                                 and Similarity of Triangles
@@ -3202,16 +3266,16 @@
                                        style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
 
 
-        <li style=" color:var(--appimage); position:relative;" class="icons">
-            <a href="https://www.instagram.com/makesmatheasy" target="_blank" style="font-size: 1.3em;"><i class="fab fa-instagram icon"></i></a>
-            <a href="mailto:makesmatheasy@gmail.com" target="_blank" style="font-size: 1.3em;"><i class="fas fa-envelope icon"></i></a>
-            <a href="https://www.linkedin.com/in/rajinderpalsingh2001/" target="_blank" style="font-size: 1.3em;"><i class="fab fa-linkedin icon"></i></a>
-            <a href="https://discord.com/channels/811724426965811210/818825491065995264" target="_blank" style="font-size: 1.3em;"><i class="fab fa-discord icon"></i></a>
+        <li style=" color:var(--appimage); position:relative;" class="icons p-1">
+            <a href="https://www.instagram.com/makesmatheasy" target="_blank" class="p-0"><i class="fab fa-instagram icon fa-2x"></i></a>
+            <a href="mailto:makesmatheasy@gmail.com" target="_blank" class="p-0" ><i class="fas fa-envelope icon fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/rajinderpalsingh2001/" target="_blank"class="p-0" ><i class="fab fa-linkedin icon fa-2x"></i></a>
+            <a href="https://discord.com/channels/811724426965811210/818825491065995264" target="_blank" class="p-0"><i class="fab fa-discord icon fa-2x"></i></a>
         </li>
 
-        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;">Copyright © 2021 Makes
+        <li style="color:var(--appimage);font-size: 0.68rem; bottom: 0rem; position:relative;text-align: center;">Copyright © 2021 Makes
             Math Easy. All Rights Reserved.
-        </li
+        </li>
         <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;" id="copyright"></li>
 
     </ul>
@@ -6286,7 +6350,8 @@
             </button><br>
             </p>
         </div><br>
-        <div class="coll" style="text-align: center;">
+        <div class="coll" style="text-align: center; display: block;">
+            <p id="dotex"><br></p>
         <h5 id="vectordot1" style="color: white; font-size: x-large;"></h5>
     </div>
     <br><br>
@@ -6846,6 +6911,32 @@
                 invertible</p>
             <p>17. The determinant of A is defined for all matrices A</p>
         </div>
+
+        <!-- Cramers Rule Calculator-->
+<div class="collapse" id="cramer">
+    <div class="text-center">
+        <h2><label>Cramer's Rule Calculator</label></h2>
+    </div>
+    <br><br>
+    <div class="coll">
+        <p>
+            Enter 1st System of equations :   <input type="text" id="cab" size=3 value='' placeholder="a1">  x  +
+        <input type="text" id="cab1" size=3 value='' placeholder="b1"> y + <input type="text" id="cab2" size=3 value='' placeholder="c1"> = 0
+            <br><br>
+            Enter 2nd System of equations :   <input type="text" id="cab3" size=3 value='' placeholder="a2"> x +
+        <input type="text" id="cab4" size=3 value='' placeholder="b2"> y + <input type="text" id="cab5" size=3 value='' placeholder="c2"> = 0
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=cramer()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="cramerres" style="color: white; font-size: x-large;"></h5>
+</div>
+</div>
+
 
 		       <div class="collapse" id="circlecollapse">
             <div class="stopwrap">
@@ -7818,6 +7909,23 @@
 
             </div>
         </div>
+
+        <div class="collapse" id="chng-vol-sphere">
+            <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                       id="chng-side-sphere"
+                       placeholder="Enter the percentage change in the radius of the sphere"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volSphere()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="sphereAns"></p>
+            </div>
+        </div>
+
 
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
@@ -8908,6 +9016,7 @@
             <p id="giffans"></p>
             <p id="fpans"></p>
         </div>
+
         <div class="collapse" id="dip">
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>
             <h2 style="margin-bottom: 2rem;">Direct Proportion Calculator</h2>
@@ -8932,6 +9041,73 @@
             <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
             <p id="inDPans"></p>
         </div>
+
+        <!-- Work and Time -->
+        <div class="collapse" id="wandt">
+            <h1 style="text-align: center;margin: 4rem auto 4rem auto;">Work And Time Calculator</h1>
+            <h2 style="margin: 2rem auto 2rem auto;">Work, Time, Men</h2>
+            <p><strong>Work</strong> = <strong>Number of days</strong>
+                 (<i>Time</i>)(<i>T or D</i>) X <strong>Number of men</strong>(<i>M</i>)</p>
+            <p>Derived Formula from above equation: W<sub>1</sub>/W<sub>2</sub> = (T<sub>1</sub> X N<sub>1</sub>) / (T<sub>2</sub> X N<sub>2</sub>)</p>
+            <p style="margin-top:2rem; text-align: left;">What is the unknown value:</p>
+            <select class="btn btn-light" name="unknown" id="unknown" onchange="getUnknown()">
+                <option>Select</option>
+                <option value="Work">Work</option>
+                <option value="Time">Time</option>
+                <option value="Men">Men</option>
+            </select>
+            <br><br>
+            <div id="unknownWork">
+                <input class="form__field" type="number" id="work1" placeholder="Enter Work(W1)">
+                <br>
+                <input class="form__field" type="number" id="time1" placeholder="Enter Time(T1)">
+                <br>
+                <input class="form__field" type="number" id="men1" placeholder="Enter Number of Mens(N1)">
+                <br>
+                <input class="form__field" type="number" id="time2" placeholder="Enter Time(T2)">
+                <br>
+                <input class="form__field" type="number" id="men2" placeholder="Enter Number of Mens(N2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="findWork()">Find Work</button>
+                <p id="workans"></p>
+            </div>
+            <div id="unknownTime">
+                <input class="form__field" type="number" id="work1" placeholder="Enter Work(W1)">
+                <br>
+                <input class="form__field" type="number" id="time1" placeholder="Enter Time(T1)">
+                <br>
+                <input class="form__field" type="number" id="men1" placeholder="Enter Number of Mens(N1)">
+                <br>
+                <input class="form__field" type="number" id="work2" placeholder="Enter Work(W2)">
+                <br>
+                <input class="form__field" type="number" id="men2" placeholder="Enter Number of Mens(N2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="findTime()">Find Time</button>
+                <p id="timeans"></p>
+            </div>
+            <div id="unknownMen">
+                <input class="form__field" type="number" id="work1" placeholder="Enter Work(W1)">
+                <br>
+                <input class="form__field" type="number" id="time1" placeholder="Enter Time(T1)">
+                <br>
+                <input class="form__field" type="number" id="men1" placeholder="Enter Number of Mens(N1)">
+                <br>
+                <input class="form__field" type="number" id="work2" placeholder="Enter Work(W2)">
+                <br>
+                <input class="form__field" type="number" id="time2" placeholder="Enter Time(T2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="findMen()">Find Men</button>
+                <p id="menans"></p>
+            </div>
+            <!-- <input class = "form__field"type="text" id="giffnum">
+            <br><br>
+            <button class = "btn btn-light" onclick="gif()">Greatest Integer Function</button>
+            <button class = "btn btn-light" onclick="fp()">Fractional Part Function</button>
+            <p id="giffans"></p>
+            <p id="fpans"></p> -->
+        </div>
+        <!-- work and time end -->
+
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>
             <br>
@@ -9781,16 +9957,16 @@
             <button type="submit" class = "btn btn-dark"onclick = "ctangle()">Find angle</button>
             <h4 id="ctangleinfo"></h4>
             <h4 id="ctangleans"></h4>
-
             <br><br>
-            <h4>Exterior angle of a cyclic quadrilateral when the opposite interior angle is given</h4>
+            <h4>Possibility to create a polygon with a given angle</h4>
             <br>
-            <input type="text" class="form__field" id="exterior" placeholder="Enter opposite interior angle">
+            <input type = "text" class = "form__field" placeholder = "Enter angle" id="anglecalc"/>
             <br>
-            <button type="submit" class = "btn btn-dark"onclick = "exterior()">Find angle</button>
-            <h4 id="exteriorinfo"></h4>
-            <h4 id="exteriorans"></h4>
+            <button type = "submit" class="btn btn-dark" onclick = "posse()">FInd</button>
+            <br>
+            <h4 id="posseans"></h4>
         </div>
+
         <div class="collapse" id="cevtha">
             <h2 style="text-align: center;">Ceva and Thales Theorem</h2>
             <br><br>
@@ -10307,35 +10483,35 @@
                         </div>
                         <div class="collapse" id="typesofcircle" style="margin: 0.9375rem;">
                             <table>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#circle"
-                                style="text-decoration:none;"
-                                href="#">Circle</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#sector"
-                                style="text-decoration:none;"
-                                href="#">Sector of Circle</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#semicircle"
-                                style="text-decoration:none;"
-                                href="#">Semi-Circle</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#arch"
-                                style="text-decoration:none;"
-                                href="#">Arch</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#circlecal"
-                                style="text-decoration:none;"
-                                href="#">Circle calculator </a></td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#circle"
+                                    style="text-decoration:none;"
+                                    href="#">Circle</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#cirsector"
+                                    style="text-decoration:none;"
+                                    href="#">Sector of Circle</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#semicircle"
+                                    style="text-decoration:none;"
+                                    href="#">Semi-Circle</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#arch"
+                                    style="text-decoration:none;"
+                                    href="#">Arch</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#circlecal"
+                                    style="text-decoration:none;"
+                                    href="#">Circle calculator </a></td>
+                            </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#annulus"
                            style="text-decoration:none;"
@@ -10603,6 +10779,11 @@
                            href="#">Torus</a></td>
                 </tr>
 
+                <tr>
+                    <td><a data-toggle="modal" data-target="#obelisk"
+                           style="text-decoration:none;"
+                           href="#">Obelisk</a></td>
+                </tr>
 
                 <tr>
                     <td><a data-toggle="modal" data-target="#frustum"
@@ -11876,6 +12057,7 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<<<<<<< HEAD
 
 <div class="collapse" id="clocks">
 
@@ -11893,6 +12075,34 @@
    
 </div>
 
+||||||| ec8880a
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+<div class="collapse" id="wmcs">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">Weighted Mean Calculator </h1>
+    <input type="text" name="wmcx" class="form__field" id="wmcx" width="5em" placeholder="Enter value of x seperated by space">
+    <p>&nbsp;</p>
+    <input type="text" name="wmcw" class="form__field" id="wmcw" placeholder="Enter weight of inputs respectively">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="wmccal()">Calculate</button>
+    <p id="wmcans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">The Weighted mean for given set of non negative data {x1, x2, x3, ...xn} with non negative weights {w1, w2, w3, ...wn}<br>
+         can be derived from the formula: </p>
+    <img src="images\wmean.jpg" class="img-fluid" style="margin-left: 350px;">
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">where<br>
+        x is the repeating value<br>
+        w is the number of occurrences of x (weight)<br>
+        x̄ is the weighted mean</p>
+   
+</div>
+
+
+>>>>>>> 8d1af44e6a29f077ad5c895fa27c3f5de99cc6f9
 <div class="collapse" id="cvs">
 
     
@@ -11910,7 +12120,7 @@
           and it is a useful statistic for comparing the degree of variation from one data series to another,<br>
            even if the means are drastically different from one another.
         ​	</p>
-=======
+</div>
 <div class="collapse" id="rmss">
 
     
@@ -11921,25 +12131,14 @@
     <p id="rmsans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
     <p style="color: white; text-align: center; font-size: 1.1em; font-family:mathfont">In mathematics, the root mean square is also known as the quadratic mean.<br>
      It is represented by RMS or rms. The root mean square is defined as the square root of the mean square.<br>
-      We can also say that it is a generalised mean with the exponent value as 2. </p>
->>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
-    
-   
+      We can also say that it is a generalised mean with the exponent value as 2. </p>   
 </div>
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
-||||||| 626d50e
-=======
 
 
 
 <div class="collapse" id="zscores">
 
-    
     <h1 style="font-family:mathfont; text-align:center;">Z SCORE CALCULATOR </h1>
     <input type="number" name="rawscore" class="form__field" id="rawscore" width="5em" placeholder="Enter Raw Score (x)">
     <p>&nbsp;</p>
@@ -11990,15 +12189,13 @@
     <button type="button" class="btn btn-outline-light" onclick="faccal()">Factors</button>
     
     
-    <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+    <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></div>
     
 </div>
-</div>
 
->>>>>>> 63dda68dcc93c8e1811e04b249aa90e56ec1da6d
-<div class="collapse" id="errpers">
 
-    
+
+<div class="collapse" id="errpers">    
     <h1 style="font-family:mathfont; text-align:center;">ERROR PERCNTAGE CALCULATOR </h1>
     <p>&nbsp;</p>
     <input type="number" name="expval" class="form__field" id="expval" width="5em" placeholder="Enter experimental value">
@@ -14467,11 +14664,11 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="sector" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal fade" id="cirsector" tabindex="-1" role="dialog" aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Sector of a Circle</h5>
+                        <h5 class="modal-title">Sector of Circle</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"
                                 style="outline:none">
                             <span aria-hidden="true">&times;</span>
@@ -14486,19 +14683,18 @@
                                     <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
                                 </div>
                                 <div class="col-6">
-                                    <img src="images/sector.PNG" style="height:9.375rem"
+                                    <img src="images/sector.PNG"
                                         class="img-fluid">
                                 </div>
                             </div>
-                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle (Radian)">
-                                    <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <input class="form__field" type="text" id="sectorcirang" 
+                                        placeholder="Enter angle (Radian)" oninput="findsectorarea()">
+                                    <input class="form__field" type="text" id="sectorcirrad" 
+                                        placeholder="Enter radius" oninput="findsectorarea()">
+    
                                     <br><br>
-                                    <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
-                                    <br><br>
-                                    <p class="stopwrap" id="secans1"
-                                    style="font-family:mathfont;"></p>
-                                    <p class="stopwrap" id="secans2"
-                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="sectorarea1" style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="sectorarea2" style="font-family:mathfont;"></p>
                                 </div>
                             </div>
                         </div>
@@ -14506,6 +14702,7 @@
                 </div>
             </div>             
         </div>
+
         <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -14633,7 +14830,6 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -18453,24 +18649,23 @@
                 </div>
             </div>
         </div>
-        
-            <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Regular Tetrahedron</h5>
-                            <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close"
-                                    style="outline:none">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- added div with class container -->
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5 class="text-center">Volume</h5>
+        <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Regular Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
                                         <p class="text-center">\[V=\frac{a^3}{6 \sqrt{2}}\]</p>
                                         <div class="dropdown-divider"></div>
                                         <h5 class="text-center">Height</h5>
@@ -18479,46 +18674,45 @@
                                         <div class="dropdown-divider"></div>
                                         <h5 class="text-center">Circumradius</h5>
                                         <p class="text-center">\[R = \frac{\sqrt{6}}{4}a\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tetrahedron.png" class="img-fluid">
                                     </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <img src="images/tetrahedron.png" class="img-fluid">
-                                        </div>
-                                        <div class="dropdown-divider"></div>
+                                    <div class="dropdown-divider"></div>
                                         <h5 class="text-center">Inradius</h5>
                                         <p class="text-center">\[r=\frac{a}{\sqrt{24}} \]</p>
                                         <div class="dropdown-divider"></div>
                                         <h5 class="text-center">Surface Area</h5>
                                         <p class="text-center">\[A =\sqrt{3} a^2 \]</p>
-                                    </div>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <!-- --------FROM------- -->
-                                <input class="form__field" type="number"
-                                       placeholder="Enter Side (a)"
-                                       id="inputtsidetetra" oninput="solvetetra()">
-                                <p class="stopwrap" id="resultofvolt"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofheightt"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofcircumt"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofinradt"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofsurare"
-                                   style="font-family:mathfont;"></p>
-    
                             </div>
-                            <!-- ------HERE------ -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                Close
-                            </button>
-                        </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length of tetrahedron (a)" id="inputsidetetra"
+                                   oninput="solvetetra();">
+                            <p class="stopwrap" id="resultoftetravol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftetrahei"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftetracr"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftetrainr"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftetraarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
         <div class="modal fade" id="cuboid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -18628,6 +18822,78 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="obelisk" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Obelisk</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Lateral Surface area (L)</h5>
+                                    <p class="text-center">\[L = (a+b) \times \]</p>
+                                        <p>\[\sqrt{(a-b)^2 + 4i^2 } + b \]</p>
+                                        <p>\[\times \sqrt{4 \times j^2 + b^2} \]</p>
+                                    <div class="dropdown-divider"></div><br>
+                                    <h5 class="text-center">Surface area (A)</h5>
+                                    <p class="text-center">\[A = a^2 + L \]</p>
+                                    <div class="dropdown-divider"></div><br>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{i \times [ (a^2 + b^2) + \sqrt{a^2 \times b^2}] + b^2 \times j}{3} \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/obelisk.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side length at base (a)" id="inputobebase"
+                                   oninput="obelisksolve();">    
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side length at transition (b)" id="inputobetran"
+                                   oninput="obelisksolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Frustum height (i)" id="inputobefrus"
+                                   oninput="obelisksolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Pyramid height (j)" id="inputobepy"
+                                   oninput="obelisksolve();">
+                            
+                            <p class="stopwrap" id="resultofobeheight"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobevol"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobelsa"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobesa"
+                               style="font-family:mathfont;"></p>
+                           
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="ndimsphere" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
