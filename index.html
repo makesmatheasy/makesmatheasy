@@ -10668,6 +10668,11 @@
                            style="text-decoration:none;"
                            href="#">N-dimension Sphere</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#trapezoid"
+                           style="text-decoration:none;"
+                           href="#">Trapezoid</a></td>
+                </tr>
             </table>
         </div>
 
@@ -10896,8 +10901,6 @@
     <h4 id="ex_output1" style="color:white"></h4>
     <h4 id="ex_output2" style="color:white"></h4>
     <h4 id="ex_output3" style="color:white"></h4>
-    
-
     <h2 style="text-align:center;">Area of Triangle</h3><br>
     <div class="coll">
         <p>
@@ -18406,6 +18409,7 @@
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="ndimsphere" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -18470,6 +18474,68 @@
                 </div>
             </div>
         </div>  
+
+        <div class="modal fade" id="trapezoid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Trapezoid<h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Area</h4>
+                                    <br>
+                                    <p class="text-center">H*(A+B)/2</p>
+                                    <p class="text-center">H=Height</p>
+                                    <p class="text-center">A & B= Two parallel Side</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Volume</h4>
+                                    <br>
+                                    <p class="text-center">(H×h×b1×b2)/2</p>
+                                    <p class="text-center">H=Height of trapezoid</p>
+                                    <p class="text-center">H=Height of prism</p>
+                                    <p class="text-center">b1 & b2= Base of Trapezoid</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images\Trapezoids.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number" placeholder="Enter first base" id="tr1">   
+                            <input class="form__field" type="number" placeholder="Enter second base" id="tr2">
+                            <input class="form__field" type="number" placeholder="Enter height of trapezoid" id="tr3">   
+                            <input class="form__field" type="number" placeholder="Enter height of prism" id="tr4">
+                            <button class="form__field" onclick="traprzlt()">Calculate</button>
+                            <p class="stopwrap" id="trapans" style="font-family:mathfont;"></p>
+                            <br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+
+
 
     <!--3-D shapes end-->
     </div>
