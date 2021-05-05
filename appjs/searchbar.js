@@ -1124,8 +1124,9 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "SPI/CGPA CONVERTOR") {
         $("#spiconcal").slideToggle(); 
     }
+
     else if (inp.value.toUpperCase() == "STRAIN CALCULATOR") {
-        $("#datecal").slideToggle(); 
+        $("#straincalc").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "STRAIN CALCULATOR"){
         document.getElementById('straincalc').click(); 
@@ -1134,7 +1135,7 @@ function handleclick(value) {
         document.getElementById('datecal').click(); 
     }
     else if (inp.value.toUpperCase() == "DATE") {
-        $("#straincalc").slideToggle(); 
+        $("#datecal").slideToggle(); 
     }
 
     else if(inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM"){
@@ -1150,13 +1151,13 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "REPRESENTATION BY POWER SERIES") {
         $("#repp").slideToggle(); 
     }
+    
     else if(inp.value.toUpperCase() == "STRESS CALCULATOR"){
         document.getElementById('stresscalc').click(); 
     }
     else if (inp.value.toUpperCase() == "STRESS CALCULATOR") {
         $("#stresscalc").slideToggle(); 
     }
-
     else if(inp.value.toUpperCase() == "EMI CALCULATOR"){
         document.getElementById('emical').click(); 
     }
