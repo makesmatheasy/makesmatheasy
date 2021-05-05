@@ -73,6 +73,7 @@ Other Tech/Libraries
     - Subtraction
     - Multiplication
   - Properties of Matrices and Determinants
+  - Cramer's Rule Calculator
   - Sum of Nterms of an Arithmetic Progression
   - Sum of Nterms of a Geometric Progression
   - Sum of Nterms of a Harmonic Progression

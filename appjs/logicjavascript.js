@@ -1672,6 +1672,34 @@ function parapipe(){
     document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
 }
 
+
+function cramer(){
+    var a=parseFloat(document.getElementById('cab').value);
+    var b=parseFloat(document.getElementById('cab1').value);
+    var c=parseFloat(document.getElementById('cab2').value);
+    var d=parseFloat(document.getElementById('cab3').value);
+    var e=parseFloat(document.getElementById('cab4').value);
+    var f=parseFloat(document.getElementById('cab5').value);
+    var res = ((a * e)-(b * d));
+    var res1 = ((c * e)-(b * f));
+    var res2 =((a * f)-(c * d));
+    var x = (res1 / res);
+    var y = (res2 / res);
+    var cramoutput = document.getElementById("cramerres");
+    var cramtemp = "";
+   if(a != "" && b != "" && c !=""){
+    cramtemp += "\\[Δ = " + res + ",\\space Δ_x = " + res1 + ",\\space Δ_y = " + res2 + " \\]";
+    cramtemp += "\\[X = " + x + ",\\space Y = " + y + "\\]";
+    cramtemp += "\\[The \\space solution \\space is \\space (X,Y) =  (" + x + "," + y + ") \\]";
+
+    cramoutput.innerHTML = cramtemp;
+    renderMathInElement(cramoutput);
+   }
+   else {
+    cramoutput.innerHTML = "";
+  }
+}
+
 function findsectorarea(){
     var ang = document.getElementById("sectorcirang").value;
     var r = document.getElementById("sectorcirrad").value;
@@ -1686,6 +1714,7 @@ function findsectorarea(){
         document.getElementById("sectorarea1").innerHTML = "";
         document.getElementById("sectorarea2").innerHTML = "";
     }
+
 }
 
 function partialdiffsolve() {

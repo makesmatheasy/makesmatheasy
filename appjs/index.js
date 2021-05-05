@@ -175,6 +175,7 @@ function openit(id) {
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
+        "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
