@@ -736,3 +736,15 @@ input[type='number'] {
      margin-right:11em; 
   }
 }
+
+#unknownWork {
+  display: none;
+}
+
+#unknownTime {
+  display: none;
+}
+
+#unknownMen {
+  display: none;
+}

@@ -1657,6 +1657,58 @@ function fp(){
     }
 }
 
+// Work and Time calculator
+function getUnknown() {
+    selectElement = 
+            document.querySelector('#unknown');
+    output = selectElement.value;
+    var arr = ["Work", "Time", "Men"];
+    for (var i = 0; i < arr.length; i++) {
+        var unknown = 'unknown' + arr[i];
+        document.getElementById(unknown).style.display = "none";
+    }
+
+    if (output == "Work") {
+        document.getElementById('unknownWork').style.display = "block";
+    } else if (output == "Time") {
+        document.getElementById('unknownTime').style.display = "block";
+    } else if (output == "Men") {
+        document.getElementById('unknownMen').style.display = "block";
+    }
+}
+
+function findWork() {
+    const work1 = parseInt(document.getElementById('work1').value);
+    const time1 = parseInt(document.getElementById('time1').value);
+    const men1 = parseInt(document.getElementById('men1').value);
+    const time2 = parseInt(document.getElementById('time2').value);
+    const men2 = parseInt(document.getElementById('men2').value);
+    let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
+    document.getElementById('workans').innerHTML = "This work done is " + workans; 
+}
+
+function findTime() {
+    const work1 = parseInt(document.getElementById('work1').value);
+    const time1 = parseInt(document.getElementById('time1').value);
+    const men1 = parseInt(document.getElementById('men1').value);
+    const work2 = parseInt(document.getElementById('work2').value);
+    const men2 = parseInt(document.getElementById('men2').value);
+    let timans = Math.ceil(work2 * (time1 * men1) / (work1 * men2));
+    document.getElementById('timeans').innerHTML = "This work done is " + timeans; 
+}
+
+function findMen() {
+    const work1 = parseInt(document.getElementById('work1').value);
+    const time1 = parseInt(document.getElementById('time1').value);
+    const men1 = parseInt(document.getElementById('men1').value);
+    const time2 = parseInt(document.getElementById('time2').value);
+    const work2 = parseInt(document.getElementById('work2').value);
+    let menans = Math.ceil(work2 * (time1 * men1) / (work1 * time2));
+    document.getElementById('menans').innerHTML = "This work done is " + menans; 
+}
+
+// Work and Time ended
+
 function parapipe(){
     var first = document.getElementById("para1").value
     var second = document.getElementById("para2").value
