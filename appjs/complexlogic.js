@@ -1,5 +1,3 @@
-const { parse } = require("node:path");
-
 function Complex(real, imaginary) {
   this.real = 0;
   this.imaginary = 0;
