@@ -199,6 +199,7 @@ function openit(id) {
         "#unitconcal",
         "#giff",
         "#dip",
+        "#wandt",
         "#spiconcal",
         "#home",
         "#curconcal",

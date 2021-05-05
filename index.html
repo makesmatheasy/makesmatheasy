@@ -1257,23 +1257,32 @@
                     </tr>
                 </table>
             </li>
-            
+
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
                             <a id="dipbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Direct And Indirect Proportion</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Direct And Indirect Proportion','#dip','c','dipimgfav')"><img
                                         id="dipimgfav" src="images/unfavourite.png"
+
+                            <a id="wandtbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Work And Time Calculator','#wandt','c','wandtimgfav')"><img
+                                        id="wandtimgfav" src="images/unfavourite.png"
+
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
             </li>
-            
+
             <li>
                 <table class="table">
                     <tr>
@@ -8955,6 +8964,7 @@
             <p id="giffans"></p>
             <p id="fpans"></p>
         </div>
+
         <div class="collapse" id="dip">
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>
             <h2 style="margin-bottom: 2rem;">Direct Proportion Calculator</h2>
@@ -8979,6 +8989,73 @@
             <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
             <p id="inDPans"></p>
         </div>
+
+        <!-- Work and Time -->
+        <div class="collapse" id="wandt">
+            <h1 style="text-align: center;margin: 4rem auto 4rem auto;">Work And Time Calculator</h1>
+            <h2 style="margin: 2rem auto 2rem auto;">Work, Time, Men</h2>
+            <p><strong>Work</strong> = <strong>Number of days</strong>
+                 (<i>Time</i>)(<i>T or D</i>) X <strong>Number of men</strong>(<i>M</i>)</p>
+            <p>Derived Formula from above equation: W<sub>1</sub>/W<sub>2</sub> = (T<sub>1</sub> X N<sub>1</sub>) / (T<sub>2</sub> X N<sub>2</sub>)</p>
+            <p style="margin-top:2rem; text-align: left;">What is the unknown value:</p>
+            <select class="btn btn-light" name="unknown" id="unknown" onchange="getUnknown()">
+                <option>Select</option>
+                <option value="Work">Work</option>
+                <option value="Time">Time</option>
+                <option value="Men">Men</option>
+            </select>
+            <br><br>
+            <div id="unknownWork">
+                <input class="form__field" type="number" id="work1" placeholder="Enter Work(W1)">
+                <br>
+                <input class="form__field" type="number" id="time1" placeholder="Enter Time(T1)">
+                <br>
+                <input class="form__field" type="number" id="men1" placeholder="Enter Number of Mens(N1)">
+                <br>
+                <input class="form__field" type="number" id="time2" placeholder="Enter Time(T2)">
+                <br>
+                <input class="form__field" type="number" id="men2" placeholder="Enter Number of Mens(N2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="findWork()">Find Work</button>
+                <p id="workans"></p>
+            </div>
+            <div id="unknownTime">
+                <input class="form__field" type="number" id="work1" placeholder="Enter Work(W1)">
+                <br>
+                <input class="form__field" type="number" id="time1" placeholder="Enter Time(T1)">
+                <br>
+                <input class="form__field" type="number" id="men1" placeholder="Enter Number of Mens(N1)">
+                <br>
+                <input class="form__field" type="number" id="work2" placeholder="Enter Work(W2)">
+                <br>
+                <input class="form__field" type="number" id="men2" placeholder="Enter Number of Mens(N2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="findTime()">Find Time</button>
+                <p id="timeans"></p>
+            </div>
+            <div id="unknownMen">
+                <input class="form__field" type="number" id="work1" placeholder="Enter Work(W1)">
+                <br>
+                <input class="form__field" type="number" id="time1" placeholder="Enter Time(T1)">
+                <br>
+                <input class="form__field" type="number" id="men1" placeholder="Enter Number of Mens(N1)">
+                <br>
+                <input class="form__field" type="number" id="work2" placeholder="Enter Work(W2)">
+                <br>
+                <input class="form__field" type="number" id="time2" placeholder="Enter Time(T2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="findMen()">Find Men</button>
+                <p id="menans"></p>
+            </div>
+            <!-- <input class = "form__field"type="text" id="giffnum">
+            <br><br>
+            <button class = "btn btn-light" onclick="gif()">Greatest Integer Function</button>
+            <button class = "btn btn-light" onclick="fp()">Fractional Part Function</button>
+            <p id="giffans"></p>
+            <p id="fpans"></p> -->
+        </div>
+        <!-- work and time end -->
+
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>
             <br>
@@ -11928,7 +12005,7 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
-<<<<<<< HEAD
+
 <div class="collapse" id="wmcs">
 
     
@@ -11947,15 +12024,9 @@
         x is the repeating value<br>
         w is the number of occurrences of x (weight)<br>
         x̄ is the weighted mean</p>
-    
    
 </div>
 
-
-<div class="collapse" id="errpers">
-||||||| 626d50e
-<div class="collapse" id="errpers">
-=======
 
 <div class="collapse" id="cvs">
 
@@ -11985,18 +12056,14 @@
     <p id="rmsans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
     <p style="color: white; text-align: center; font-size: 1.1em; font-family:mathfont">In mathematics, the root mean square is also known as the quadratic mean.<br>
      It is represented by RMS or rms. The root mean square is defined as the square root of the mean square.<br>
-      We can also say that it is a generalised mean with the exponent value as 2. </p>
-
-   
+      We can also say that it is a generalised mean with the exponent value as 2. </p>   
 </div>
 
 
 
 
 <div class="collapse" id="zscores">
->>>>>>> 9128e328d0709f0f4ec0a82c9129def428190039
 
-    
     <h1 style="font-family:mathfont; text-align:center;">Z SCORE CALCULATOR </h1>
     <input type="number" name="rawscore" class="form__field" id="rawscore" width="5em" placeholder="Enter Raw Score (x)">
     <p>&nbsp;</p>
@@ -12047,15 +12114,13 @@
     <button type="button" class="btn btn-outline-light" onclick="faccal()">Factors</button>
     
     
-    <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+    <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></div>
     
 </div>
-</div>
 
->>>>>>> 63dda68dcc93c8e1811e04b249aa90e56ec1da6d
-<div class="collapse" id="errpers">
 
-    
+
+<div class="collapse" id="errpers">    
     <h1 style="font-family:mathfont; text-align:center;">ERROR PERCNTAGE CALCULATOR </h1>
     <p>&nbsp;</p>
     <input type="number" name="expval" class="form__field" id="expval" width="5em" placeholder="Enter experimental value">
