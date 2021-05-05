@@ -4158,6 +4158,39 @@ function traprismsolve() {
     }
 }
 
+//Obelisk Calculator
+function obelisksolve(){
+    var a = document.getElementById("inputobebase").value;
+    var b = document.getElementById("inputobetran").value;
+    var i = document.getElementById("inputobefrus").value;
+    var j = document.getElementById("inputobepy").value;
+    var h = parseInt(i) + parseInt(j);
+
+    var vol = ( i * [(a**2 + b**2) + math.sqrt(a**2 * b**2) ] + b**2 * j) / 3;
+    var lsa = (parseInt(a)+parseInt(b)) * math.sqrt((parseInt(a)-parseInt(b))**2 +(4*i**2) ) + b * math.sqrt(4 * j**2 + b**2);
+    var sa = a**2 + lsa;
+
+    if (a!="" && b!="" && i!="" && j!=""){
+
+        document.getElementById("resultofobeheight").innerHTML = "\\[Obelisk \\space height \\space (h) \\space \\newline \\space = "+i+" + "+j+" = "+h+"\\]";
+        renderMathInElement(document.getElementById("resultofobeheight"));
+
+        document.getElementById("resultofobevol").innerHTML = "\\[Volume \\space (V) \\space \\newline \\frac{"+i+" \\times [ ("+a+"^2 + "+b+"^2) + \\sqrt{"+a+"^2 \\times "+b+"^2}] + "+b+"^2 \\times "+j+"}{3} \\newline = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById("resultofobevol"));
+
+        document.getElementById("resultofobelsa").innerHTML = "\\[Lateral \\space Surface \\space area \\space (L) \\space \\newline  ("+a+"+"+b+") \\times \\sqrt{("+a+"-"+b+")^2 + 4 \\times "+i+"^2 } \\newline + "+b+" \\times \\sqrt{4 \\times "+j+"^2 + "+b+"^2} \\newline \\space = "+lsa.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("resultofobelsa"));
+
+        document.getElementById("resultofobesa").innerHTML = "\\[Surface \\space area \\space (A) \\space \\newline = \\space  "+a+"^2 + "+lsa.toFixed(2)+" = " + sa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById("resultofobesa"));
+    } else{
+        document.getElementById("resultofobeheight").innerHTML = "";
+        document.getElementById("resultofobevol").innerHTML = "";
+        document.getElementById("resultofobelsa").innerHTML = "";
+        document.getElementById("resultofobesa").innerHTML ="";
+    }
+}
+
 function frustumsolve() {
     var radius1 = document.getElementById("inputfrustumradius1").value;
     var radius2 = document.getElementById("inputfrustumradius2").value;

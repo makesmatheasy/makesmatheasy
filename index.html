@@ -10590,6 +10590,11 @@
                            href="#">Torus</a></td>
                 </tr>
 
+                <tr>
+                    <td><a data-toggle="modal" data-target="#obelisk"
+                           style="text-decoration:none;"
+                           href="#">Obelisk</a></td>
+                </tr>
 
                 <tr>
                     <td><a data-toggle="modal" data-target="#frustum"
@@ -18591,6 +18596,78 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="obelisk" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Obelisk</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Lateral Surface area (L)</h5>
+                                    <p class="text-center">\[L = (a+b) \times \]</p>
+                                        <p>\[\sqrt{(a-b)^2 + 4i^2 } + b \]</p>
+                                        <p>\[\times \sqrt{4 \times j^2 + b^2} \]</p>
+                                    <div class="dropdown-divider"></div><br>
+                                    <h5 class="text-center">Surface area (A)</h5>
+                                    <p class="text-center">\[A = a^2 + L \]</p>
+                                    <div class="dropdown-divider"></div><br>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{i \times [ (a^2 + b^2) + \sqrt{a^2 \times b^2}] + b^2 \times j}{3} \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/obelisk.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side length at base (a)" id="inputobebase"
+                                   oninput="obelisksolve();">    
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Side length at transition (b)" id="inputobetran"
+                                   oninput="obelisksolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Frustum height (i)" id="inputobefrus"
+                                   oninput="obelisksolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Pyramid height (j)" id="inputobepy"
+                                   oninput="obelisksolve();">
+                            
+                            <p class="stopwrap" id="resultofobeheight"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobevol"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobelsa"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobesa"
+                               style="font-family:mathfont;"></p>
+                           
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="ndimsphere" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
