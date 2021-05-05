@@ -1045,10 +1045,6 @@ function rmscal()
     document.getElementById("rmsans").innerHTML=ans;
 }
 
-
-
-
-
 function zscorecal()
 { 
     var a=document.getElementById("rawscore").value;
