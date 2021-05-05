@@ -289,6 +289,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+     $("#per-chng-hemisphere").click(function () {
+        openit("#chng-vol-hemisphere");
+        closenav();
+        clearall();
+    })
     $("#pythtriplebtn").click(function () {
         openit("#pythtriple");
         closenav();
