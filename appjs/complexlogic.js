@@ -964,6 +964,7 @@ function errpercal()
 
 }
 
+<<<<<<< HEAD
 function cvcal()
 {
     var num=document.getElementById("cvsd").value;
@@ -1012,6 +1013,39 @@ function cvcal()
 
 
 
+=======
+function rmscal()
+{
+    var num=document.getElementById("rmi").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+        var sum=0;
+        for (i = 0; i < len; i++) {
+            sum=sum+(number[i]**2);
+        }
+
+        sum=sum/len;
+        sum=Math.sqrt(sum);
+        ans="The root mean square of given input is: "+sum;
+        
+    }
+    document.getElementById("rmsans").innerHTML=ans;
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 }
 
 
@@ -1053,8 +1087,13 @@ function slpsolve()
         ans="Calculated slope is: "+p;
     }
     document.getElementById("slpans").innerHTML=ans;
+<<<<<<< HEAD
 }
 
+=======
+
+}
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 function suppangcal()
 {
     var a=document.getElementById("ang").value;
@@ -1095,6 +1134,10 @@ function suppangvercal()
 }
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 
 function faccal()
 {

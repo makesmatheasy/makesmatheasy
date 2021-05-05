@@ -940,8 +940,13 @@ $(document).ready(function () {
         clearall();
     });
 
+<<<<<<< HEAD
     $("#cv").click(function(){
         openit("#cvs");
+=======
+    $("#rms").click(function(){
+        openit("#rmss");
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
         closenav();
         clearall();
     });
