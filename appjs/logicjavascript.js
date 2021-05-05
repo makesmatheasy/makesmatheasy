@@ -1022,6 +1022,23 @@ function exterior(){
     document.getElementById("exteriorans").innerHTML = "The exterior angle is " + into
 }
 
+function stp(){
+    let vx1 = parseInt(document.getElementById("vx1").value)
+    let vy1 = parseInt(document.getElementById("vy1").value)
+    let vz1 = parseInt(document.getElementById("vz1").value)
+    let vx2 = parseInt(document.getElementById("vx2").value)
+    let vy2 = parseInt(document.getElementById("vy2").value)
+    let vz2 = parseInt(document.getElementById("vz2").value)
+    let vx3 = parseInt(document.getElementById("vx3").value)
+    let vy3 = parseInt(document.getElementById("vy3").value)
+    let vz3 = parseInt(document.getElementById("vz3").value)
+    let cpx = vz3*vy2 - vz2*vy3
+    let cpy = vz3*vy1 - vy3*vz1
+    let cpz = vz2*vy1 - vz1-vy2
+    var ans = vx1*cpx + vx2*cpy+vx3*cpz
+    document.getElementById(stpans).innerHTML = "The scalar Triple Product is " + ans
+}
+
 function ctangle(){
     // javascript program to find the angle
     // between a chord and a tangent

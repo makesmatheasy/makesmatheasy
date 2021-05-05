@@ -286,6 +286,7 @@ function openit(id) {
         "#repp",
         "#partial_sphere",
         "#mtm",
+        "#stp",
         "#igc",
         "#res",
         "#clr",

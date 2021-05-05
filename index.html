@@ -1963,6 +1963,22 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="stpbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Scalar Triple Product</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Scalar Triple Product','#stp','c','stpimgfav')"><img
+                                        id="stpimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -8351,6 +8367,23 @@
                 </tbody>
             </table>
 
+        </div>
+        <div class="collapse" id="stp">
+            <h2 style="text-align : center;">Scalar Triple Product</h2>
+            <br></br>
+            <input type="text" id = "vx1" class = "form__field " placeholder="Enter x coordinate of 1st vector">
+            <input type="text" id = "vy1" class = "form__field " placeholder="Enter y coordinate of 1st vector">
+            <input type="text" id = "vz1" class = "form__field " placeholder="Enter z coordinate of 1st vector">
+            <input type="text" id = "vx2" class = "form__field " placeholder="Enter x coordinate of 2nd vector">
+            <input type="text" id = "vy2" class = "form__field " placeholder="Enter y coordinate of 2nd vector">
+            <input type="text" id = "vz2" class = "form__field " placeholder="Enter z coordinate of 2nd vector">
+            <input type="text" id = "vx3" class = "form__field " placeholder="Enter x coordinate of 3rd vector">
+            <input type="text" id = "vy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
+            <input type="text" id = "vz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
+            <br>
+            <button type="submit">Find</button>
+            <br>
+            <h4 id = "stpans"></h4>
         </div>
         <div class="collapse" id="trigonofun">
         <h3 style="text-align: center;">Domain,Range,Period and Graph of Trigonometric Functions</h3>
