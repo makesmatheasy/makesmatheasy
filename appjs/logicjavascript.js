@@ -3758,6 +3758,31 @@ function solvehollowcyl() {
     }
 }
 
+function solveelliphollowcyl(){
+    var a = document.getElementById("inputelliphollowcyla").value;
+    var b = document.getElementById("inputelliphollowcylb").value;
+    var h = document.getElementById("inputelliphollowcylh").value;
+
+    var lsa = math.pi * ( parseInt(a) + parseInt(b) ) * h;
+    var sa = lsa + 2 * math.pi * a * b;
+    var vol = math.pi * h * a * b;
+
+    if ((a != "" ) && (b !="") && (h != "") ){
+        document.getElementById('resultoftsahollowcyl1').innerHTML = "\\[Lateral \\space Surface \\space Area \\space (F) \\space is \\]";
+        renderMathInElement(document.getElementById('resultoftsahollowcyl1'));
+        document.getElementById('resultoftsahollowcyl2').innerHTML = "\\[ \\pi \\times ("+a+"+"+b+") \\times "+h+" \\space = " + lsa.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById('resultoftsahollowcyl2'));
+        document.getElementById('resultofcsahollowcyl1').innerHTML = "\\[Surface \\space  Area \\space (S) \\space is \\]";
+        renderMathInElement(document.getElementById('resultofcsahollowcyl1'));
+        document.getElementById('resultofcsahollowcyl2').innerHTML = "\\["+lsa.toFixed(2)+" + 2 \\times \\pi \\times "+a+"\\times "+b+" =" + sa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById('resultofcsahollowcyl2'));
+        document.getElementById('resultofvolhollowcyl1').innerHTML = "\\[Volume \\space (V) \\space is \\]";
+        renderMathInElement(document.getElementById('resultofvolhollowcyl1'));
+        document.getElementById('resultofvolhollowcyl2').innerHTML = "\\[\\pi \\times "+a+" \\times "+b+" \\times "+h+" =" + vol.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById('resultofvolhollowcyl2'));
+    }
+}
+
 function obliquecysolve() {
     var radius = document.getElementById("inputobradius").value;
     var height1 = document.getElementById("inputobheight1").value;
