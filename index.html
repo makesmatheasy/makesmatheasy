@@ -10294,35 +10294,35 @@
                         </div>
                         <div class="collapse" id="typesofcircle" style="margin: 0.9375rem;">
                             <table>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#circle"
-                                style="text-decoration:none;"
-                                href="#">Circle</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#sector"
-                                style="text-decoration:none;"
-                                href="#">Sector of Circle</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#semicircle"
-                                style="text-decoration:none;"
-                                href="#">Semi-Circle</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#arch"
-                                style="text-decoration:none;"
-                                href="#">Arch</a></td>
-                        </tr>
-                        <tr>
-                            <td><a data-toggle="modal" data-target="#circlecal"
-                                style="text-decoration:none;"
-                                href="#">Circle calculator </a></td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#circle"
+                                    style="text-decoration:none;"
+                                    href="#">Circle</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#cirsector"
+                                    style="text-decoration:none;"
+                                    href="#">Sector of Circle</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#semicircle"
+                                    style="text-decoration:none;"
+                                    href="#">Semi-Circle</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#arch"
+                                    style="text-decoration:none;"
+                                    href="#">Arch</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#circlecal"
+                                    style="text-decoration:none;"
+                                    href="#">Circle calculator </a></td>
+                            </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#annulus"
                            style="text-decoration:none;"
@@ -14435,11 +14435,11 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="sector" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal fade" id="cirsector" tabindex="-1" role="dialog" aria-hidden="true" >
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Sector of a Circle</h5>
+                        <h5 class="modal-title">Sector of Circle</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"
                                 style="outline:none">
                             <span aria-hidden="true">&times;</span>
@@ -14454,19 +14454,18 @@
                                     <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
                                 </div>
                                 <div class="col-6">
-                                    <img src="images/sector.PNG" style="height:9.375rem"
+                                    <img src="images/sector.PNG"
                                         class="img-fluid">
                                 </div>
                             </div>
-                                    <input class="form__field" type="text" id="ang" placeholder="Enter angle (Radian)">
-                                    <input class="form__field" type="text" name="" id="rad" placeholder="Enter radius"><br>
+                                    <input class="form__field" type="text" id="sectorcirang" 
+                                        placeholder="Enter angle (Radian)" oninput="findsectorarea()">
+                                    <input class="form__field" type="text" id="sectorcirrad" 
+                                        placeholder="Enter radius" oninput="findsectorarea()">
+    
                                     <br><br>
-                                    <button class = "btn btn-light" onclick="findsecarea()">Find Area</button>
-                                    <br><br>
-                                    <p class="stopwrap" id="secans1"
-                                    style="font-family:mathfont;"></p>
-                                    <p class="stopwrap" id="secans2"
-                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="sectorarea1" style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="sectorarea2" style="font-family:mathfont;"></p>
                                 </div>
                             </div>
                         </div>
@@ -14474,6 +14473,7 @@
                 </div>
             </div>             
         </div>
+
         <div class="modal fade" id="kite" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -14601,7 +14601,6 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
