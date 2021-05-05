@@ -1013,6 +1013,31 @@ function setcal() {
         document.getElementById("set-result").innerHTML = [...re].join(' ') ;
     }
 }
+function exterior(){
+    // javascript program to find the angle
+    // of a cyclic quadrilateral
+    // when opposite interior angle is given
+    var into = document.getElementById("exterior").value
+    document.getElementById("exteriorinfo").innerHTML = "The exterior angle of a cyclic quadrilateral is same as sum of opposite interior angles"
+    document.getElementById("exteriorans").innerHTML = "The exterior angle is " + into
+}
+
+function stp(){
+    let vx1 = parseInt(document.getElementById("vx1").value)
+    let vy1 = parseInt(document.getElementById("vy1").value)
+    let vz1 = parseInt(document.getElementById("vz1").value)
+    let vx2 = parseInt(document.getElementById("vx2").value)
+    let vy2 = parseInt(document.getElementById("vy2").value)
+    let vz2 = parseInt(document.getElementById("vz2").value)
+    let vx3 = parseInt(document.getElementById("vx3").value)
+    let vy3 = parseInt(document.getElementById("vy3").value)
+    let vz3 = parseInt(document.getElementById("vz3").value)
+    let cpx = vz3*vy2 - vz2*vy3
+    let cpy = vz3*vy1 - vy3*vz1
+    let cpz = vz2*vy1 - vz1-vy2
+    var ans = vx1*cpx + vx2*cpy+vx3*cpz
+    document.getElementById(stpans).innerHTML = "The scalar Triple Product is " + ans
+}
 
 function ctangle(){
     // javascript program to find the angle
@@ -1597,6 +1622,24 @@ function gif(){
         let ans = Math.ceil(ans1)
         document.getElementById("giffans").innerHTML = "The gif is " + "-" + ans
     }
+}
+
+// dip - calculator to find direct proportion
+function dip() {
+    var dipnum1 = parseInt(document.getElementById("dipnum1").value);
+    var dipnum2 = parseInt(document.getElementById("dipnum2").value);
+    var dipnum3 = parseInt(document.getElementById("dipnum3").value);
+    var fourthVal = (dipnum3 * dipnum2) / dipnum1;
+    document.getElementById("dipans").innerHTML = "The Fourth Value is " + fourthVal;
+}
+
+// inDP - calculator to find indirect proportion
+function inDP() {
+    var inDPnum1 = parseInt(document.getElementById("inDPnum1").value);
+    var inDPnum2 = parseInt(document.getElementById("inDPnum2").value);
+    var inDPnum3 = parseInt(document.getElementById("inDPnum3").value);
+    var fourthVal = (inDPnum1 * inDPnum2) / inDPnum3;
+    document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal;
 }
 
 function fp(){
@@ -2258,8 +2301,16 @@ function vectoradd(){
     var add1 = (a+d);
     var add2 = (b+e);
     var add3 = (c+f);
-    document.getElementById("vectoradd1").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1) + ' i'  + ' + ' + (add2) + ' j ' + ' + ' + (add3) + ' k ';
-
+    document.getElementById("vectorsum1").style.display = "block";
+    document.getElementById("vsumi").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1)  ;
+    if(add2<0)
+    document.getElementById("vsumj").innerHTML =   (add2)  ;
+    else
+    document.getElementById("vsumj").innerHTML =  '+' +  (add2)  ;
+    if(add3<0)
+    document.getElementById("vsumk").innerHTML = (add3);
+    else
+    document.getElementById("vsumk").innerHTML =  '+' +  (add3) ;
 }
 function vectorsub(){
     var a=parseFloat(document.getElementById('b1a').value);
@@ -3750,6 +3801,31 @@ function solvehollowcyl() {
     }
 }
 
+function solveelliphollowcyl(){
+    var a = document.getElementById("inputelliphollowcyla").value;
+    var b = document.getElementById("inputelliphollowcylb").value;
+    var h = document.getElementById("inputelliphollowcylh").value;
+
+    var lsa = math.pi * ( parseInt(a) + parseInt(b) ) * h;
+    var sa = lsa + 2 * math.pi * a * b;
+    var vol = math.pi * h * a * b;
+
+    if ((a != "" ) && (b !="") && (h != "") ){
+        document.getElementById('resultoftsahollowcyl1').innerHTML = "\\[Lateral \\space Surface \\space Area \\space (F) \\space is \\]";
+        renderMathInElement(document.getElementById('resultoftsahollowcyl1'));
+        document.getElementById('resultoftsahollowcyl2').innerHTML = "\\[ \\pi \\times ("+a+"+"+b+") \\times "+h+" \\space = " + lsa.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById('resultoftsahollowcyl2'));
+        document.getElementById('resultofcsahollowcyl1').innerHTML = "\\[Surface \\space  Area \\space (S) \\space is \\]";
+        renderMathInElement(document.getElementById('resultofcsahollowcyl1'));
+        document.getElementById('resultofcsahollowcyl2').innerHTML = "\\["+lsa.toFixed(2)+" + 2 \\times \\pi \\times "+a+"\\times "+b+" =" + sa.toFixed(2) + "\\]";
+        renderMathInElement(document.getElementById('resultofcsahollowcyl2'));
+        document.getElementById('resultofvolhollowcyl1').innerHTML = "\\[Volume \\space (V) \\space is \\]";
+        renderMathInElement(document.getElementById('resultofvolhollowcyl1'));
+        document.getElementById('resultofvolhollowcyl2').innerHTML = "\\[\\pi \\times "+a+" \\times "+b+" \\times "+h+" =" + vol.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById('resultofvolhollowcyl2'));
+    }
+}
+
 function obliquecysolve() {
     var radius = document.getElementById("inputobradius").value;
     var height1 = document.getElementById("inputobheight1").value;
@@ -3912,33 +3988,6 @@ function ellipsoidsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-//Traingular Prism
-function prismsolve() {
-    var length = document.getElementById("inputprismlength").value;
-    var breadth = document.getElementById("inputprismbreadth").value;
-    var height = document.getElementById("inputprismheight").value;
-    var side = document.getElementById("inputprismside").value;
-    var voloutput = document.getElementById("resultofvolprism");
-    var tsaoutput = document.getElementById("resultoftsaprism");
-
-    var voltemp = "";
-    var tsatemp = "";
-    var res=((a**1.6 * b**1.6) + (b**1.6 * c**1.6 ) + (a**1.6 * c**1.6))**0.625;
-    if ((a != "") && (b != "") && (c != "")) {
-        voltemp += "\\[" + "\\frac{4}{3}" + "\\times" + "\\pi" + "\\times" + a + "\\times" + b + "\\times" + c   + "\\]";
-        voltemp += "\\[Volume \\space of \\space Ellipsoid \\space is \\space " + eval(String(4.18 * a * b* c )) + "\\]";
-        voloutput.innerHTML = voltemp;
-        tsatemp += "\\[" + 4 + "\\pi" + "(" + "\\frac{(" + a + "\\times" + b + ")^{1.6}" + "(" + b + "\\times" + c +")^{1.6}" + "(" + a + "\\times" + c + ")^{1.6}}{3}" + " )^{\\frac{1}{1.6}}"   + "\\]";
-        tsatemp += "\\[Surface \\space area \\space of \\space Ellipsoid \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String((6.343 * res).toFixed(2) ))  + "\\]";
-        tsaoutput.innerHTML = tsatemp;
-        renderMathInElement(voloutput);
-        renderMathInElement(tsaoutput);
-    } else {
-        voloutput.innerHTML = "";
-        tsaoutput.innerHTML = "";
-    }
-}
 
 //square Prism
 function sqprismsolve(){
@@ -3964,6 +4013,31 @@ function sqprismsolve(){
         diaoutput2.innerHTML = "\\[\\sqrt{2 \\times "+edge+"^2 + "+height+"^2} = " + diagonal.toFixed(2) + "\\]";
         renderMathInElement(diaoutput1);
         renderMathInElement(diaoutput2);
+    }
+}
+
+//Traingular Prism
+function triprismsolve() {
+    var length = document.getElementById("inputtriprismlength").value;
+    var breadth = document.getElementById("inputtriprismbreadth").value;
+    var height = document.getElementById("inputtriprismheight").value;
+    var side = document.getElementById("inputtriprismside").value;
+    var voloutput = document.getElementById("resultofvolprism");
+    var tsaoutput = document.getElementById("resultoftsaprism");
+    var voltemp = "";
+    var tsatemp = "";
+    if ((length != "") && (breadth != "") && (height != "") && (side != "")) {
+        voltemp += "\\[(" + length + "\\times" + breadth + "\\times" + height + ")" + "\\div" + 2 + "\\]";
+        voltemp += "\\[Volume \\space of \\space Prism \\space is \\space " + eval(String((length * breadth * height ) / 2)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ " + breadth + "(" + length + "+" + height + ")" + "+" + 2 +  "\\times"  + length + "\\times" + side + "\\]";
+        tsatemp += "\\[Surface \\space Area \\space of \\space Prism \\space is \\space" + eval(String((breadth*height) + (breadth *length)+ (2*length*side))) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
     }
 }
 
@@ -4112,6 +4186,32 @@ findFactors = function() {
         document.getElementById("allfactor").innerHTML += i +","; // Print out the factor
     }
     document.getElementById("allfactor").innerHTML +=  number; // Print out the number itself.
+}
+
+function trusqpyramidsolve(){
+    var a = document.getElementById("inputtrusqpysidea").value;
+    var b = document.getElementById("inputtrusqpysideb").value;
+    var h = document.getElementById("inputtrusqpyheight").value;  
+    var vol = 1/3 * (a**2 + a*b + b**2) * h;
+    var lsa = 2 * (parseInt(a)+parseInt(b)) * math.sqrt( ((parseInt(a)-parseInt(b))/2)**2 + h**2 );
+    var sa = lsa + a**2 + b**2;
+
+    if (a!="" && b!="" && h!=""){
+
+        document.getElementById("resultofvolsqpyramid").innerHTML = "\\[Volume \\space of \\space truncated \\space square \\space pyramid \\space \\newline \\frac{1}{3}\\times("+a+"^2 + "+a+"\\times"+b+" + "+b+"^2) \\times "+h+"  = " + vol.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofvolsqpyramid"));
+
+        document.getElementById("resultoflsasqpyramid").innerHTML = "\\[Lateral \\space Area \\space of \\space square \\space pyramid \\space \\newline 2\\times ("+a+"+"+b+") \\times \\sqrt{ (\\frac{"+a+"-"+b+"}{2})^2 + "+h+"^2 }   = " + lsa.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultoflsasqpyramid"));
+
+        document.getElementById("resultofsasqpyramid").innerHTML = "\\[Surface \\space Area \\space of \\space square \\space pyramid \\space \\newline "+lsa.toFixed(2)+" + "+a+"^2 +  "+b+"^2  = " + sa.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofsasqpyramid"));
+    } else{
+        document.getElementById("resultofvolsqpyramid").innerHTML ="";
+        document.getElementById("resultoflsasqpyramid").innerHTML = "";
+        document.getElementById("resultofsasqpyramid").innerHTML = "";
+    }
+
 }
 
 function pyramidsolve() {
@@ -4490,6 +4590,47 @@ function solvehollowsphere() {
         tsaoutput.innerHTML = "";
     }
 }
+
+function solvepartialsphere() {
+    var height = document.getElementById("parsphh").value;
+    var radius = document.getElementById("parsphr").value;
+    var volumeoutput = document.getElementById("resultofparspvol");
+    var radoutput = document.getElementById("resultofparsprad");
+    var baoutput = document.getElementById("resultofparspba");
+    var saoutput = document.getElementById("resultofparspsa");
+    var voltemp = "";
+    var radtemp = "";
+    var batemp = "";
+    var satemp = "";
+    var c = Math.sqrt((2*radius*height)-(height*height));
+    if ((height != "") && (radius != "")) {
+        radtemp += "\\[ c = \\sqrt{" + height + "\\times(2\\times" + radius + "-" + height + ")}" + "\\]";
+        radtemp += "\\[Radius \\space of \\space bottom \\space is \\space = \\space " + (c).toFixed(2) + "\\]";
+        radoutput.innerHTML = radtemp;
+        renderMathInElement(radoutput);
+        voltemp += "\\[ V = \\frac{\\pi}{6}" + "\\times" + height + "\\times(3 \\times c^2 +" + height + "\\times" + height + ")"  + "\\]";
+        voltemp += "\\[Volume \\space is \\space = \\space " + ((0.52*height*3*c*c) + (0.52*height*height*height)).toFixed(2) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        batemp += "\\[ B = \\pi \\times (\\sqrt{" + height + "\\times(2\\times" + radius + "-" + height + ")})^2"  + "\\]";
+        batemp += "\\[Bottom \\space Area \\space is \\space " + eval(String(3.14*c*c)) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        satemp += "\\[ S = 2 \\times \\pi \\times" + radius + "\\times" + height + "\\]";
+        satemp += "\\[Surface \\space Area \\space is \\space " + eval(String(2*3.14*radius*height)) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(saoutput);
+
+
+    } 
+    else {
+        radoutput.innerHTML = "";
+        volumeoutput.innerHTML = "";
+        baoutput.innerHTML = "";
+        saoutput.innerHTML = "";
+    }
+}
+
 
 function solvehemisphere() {
     var radius = document.getElementById("inputradiushemisph").value;
@@ -7012,7 +7153,7 @@ function gp() {
 
 function igp() {
     var a = document.getElementById("fterm").value
-    var r = parseFloat(document.getElementById("r").value)
+    var r = parseFloat(document.getElementById("r1").value)
     if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
     {
         document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
@@ -7021,8 +7162,8 @@ function igp() {
     if (r >= 1) {
         document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
     } else {
-        var ans = a / (1 - r)
-        document.getElementById("sumigp").innerHTML = "Sum = " + ans
+        var ans = a / (1 - r);
+        document.getElementById("sumigp").innerHTML = "Sum = " + ans;
     }
 }
 
@@ -7415,34 +7556,7 @@ function std() {
 
 // standard deviation end
 
-///////// Binary and Decimal Conversion ///////////
 
-//Function that performs conversion
-function convertBinDec() {
-    const fromBase = document.getElementById("decimal-binary-select1").value;
-    const toBase = document.getElementById("decimal-binary-select2").value;
-    const input = document.getElementById("decimal-binary-input").value;
-    let result = document.getElementById("decimal-binary-result");
-
-    if (fromBase === "Decimal" && toBase === "Binary"){
-       let ans = fracDectoBinHexOct(input,2);
-       result.innerHTML = ans;
-    }else if (fromBase === "Binary" && toBase === "Decimal"){
-        result.innerHTML = calculatefrac(input,2);
-    }else if (fromBase === "Binary" && toBase === "Binary"){
-        result.innerHTML = input;
-    }else if (fromBase === "Decimal" && toBase ==="Decimal"){
-        result.innerHTML = input;
-    }
-
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (fromBase  === "Binary") {
-        if (input.search(/^[-.10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-
-    }
-}
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
@@ -7571,33 +7685,6 @@ function bitwiseCalc() {
 }
 
 /////////////////////////////////////////////////////////////
-//Function that performs conversion of Octal/Binary/Decimal
-function convertBinOct() {
-    const fromBase = document.getElementById("octal-binary-select1").value;
-    const toBase = document.getElementById("octal-binary-select2").value;
-    const input = document.getElementById("octal-binary-input").value;
-    let result = document.getElementById("octal-binary-result");
-    let from = 8;
-    let to = 8;
-
-    if (fromBase === "Octal") from = 8;
-    else if (fromBase === "Decimal") from=10;
-    else from = 2;
-
-    if (toBase === "Octal") to = 8;
-    else if(toBase === "Decimal") to = 10;
-    else to = 2;
-
-    result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-
-    }
-}
-
 //----------------------------
 //Function that performs anyBase to anyBase Conversion
 function convertAnyBaseToAnyBase() {
@@ -7655,26 +7742,7 @@ function convertAnyBaseToAnyBase() {
 
 
 }
-//Function that performs conversion of Octal/hexadecimal
-function convertOctHex() {
-    const fromBase = document.getElementById("octal-hexadecimal-select1").value;
-    const toBase = document.getElementById("octal-hexadecimal-select2").value;
-    const input = document.getElementById("octal-hexadecimal-input").value;
-    let result = document.getElementById("octal-hexadecimal-result");
 
-    if (fromBase === "Octal" && toBase === "Hexadecimal"){
-        result.innerHTML = fracDectoBinHexOct(calculatefrac(input,8),16);;
-    }else if(fromBase === "Hexadecimal" && toBase === "Octal"){
-        result.innerHTML =fracDectoBinHexOct(calculatefrac(input,16),8);
-    }else if(fromBase === "Hexadecimal" && toBase === "Hexadecimal"){
-        result.innerHTML = input;
-    }else if(fromBase === "Octal" && toBase === "Octal"){
-        result.innerHTML = input;
-    }
-    if (input == "") {
-        result.innerHTML = "";
-    }
-}
 //---------------------------------------------------------------------
 
 //Function for addition of any number system
@@ -7845,38 +7913,72 @@ function subBinDecHexOct(){
         var add2 = "";
         var ans2 = "";
         var sixtnco= calculateSixteenComplement(input2);
+        print += "<h5>STEP 0 : Find 16's complement of Subtrahend</h5>"+input2+"->"+sixtnco;
         add2 = (parseInt(sixtnco,16)+parseInt(input1,16)).toString(16);
+        print += "<br><br><h5>STEP 1 : Add Minuend and 16's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + sixtnco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add2+"</p>";
         if(add2.length == input1.length){
             ans2 = calculateSixteenComplement(add2);
             result.innerHTML = "-" + ans2;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add2+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Sixteen's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans2 + "</span>";
         } else if (add2.length > input1.length){
             ans2 = add2.substring(1);
             result.innerHTML = ans2;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add2.substring(0,1) + "</span>" +ans2+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans2 + "</span>";
         } else if (add2.length < input1.length){
             var a3 = input1.length - add2.length;
             a3 = Math.pow(10,a3);
             ans2 = a3 + add2;
             ans2 = ans2.substring(1);
             result.innerHTML = "-" + calculateSixteenComplement(ans2);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add2+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Sixteen's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans2 + "</span>";
         }
 
     }else if(base === "Decimal"){
         var add3 = "";
         var ans3 = "";
         var tenco= calculateTenComplement(input2);
+        print += "<h5>STEP 0 : Find 10's complement of Subtrahend</h5>"+input2+"->"+tenco;
         add3 = (parseInt(tenco)+parseInt(input1)).toString();
+        print += "<br><br><h5>STEP 1 : Add Minuend and 10's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + tenco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add3+"</p>";
         if(add3.length == input1.length){
             ans3 = calculateTenComplement(add3);
             result.innerHTML = "-" + ans3;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add3+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Ten's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         } else if (add3.length > input1.length){
             ans3 = add3.substring(1);
             result.innerHTML = ans3;
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  <span style='text-decoration: underline;'>"+add3.substring(0,1) + "</span>" +ans3+"<br>";
+            print += "Note- Carry is present. So, answer will be +ve <br>"
+            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans3 + "</span>";
         } else if (add3.length < input1.length){
             var a4 = input1.length - add3.length;
             a4 = Math.pow(10,a4);
             ans3 = a4 + add3;
             ans3 = ans3.substring(1);
             result.innerHTML = "-" + calculateTenComplement(ans3);
+            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+            print += "->  _"+add3+"<br>";
+            print += "Note- No carry is present. So, answer will be -ve <br>"
+            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+            print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         }
 
     }
@@ -8272,10 +8374,12 @@ function convertBinhex() {
 
     if (fromBase === "Binary") from = 2;
     else if (fromBase === "Decimal") from = 10;
+    else if (fromBase === "Octal") from = 8;
     else from = 16;
 
     if (toBase === "Binary") to = 2;
     else if (toBase === "Decimal") to = 10;
+    else if (toBase === "Octal") to = 8;
     else to = 16;
 
     result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
@@ -8284,6 +8388,10 @@ function convertBinhex() {
     } else if (from == 2) {
         if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+    }else if (from == 8) {
+        if (input.search(/^[-.01234567]+$/) == -1)
+            result.innerHTML = "Octal numbers can't have 8s and 9s";
 
     }
 }

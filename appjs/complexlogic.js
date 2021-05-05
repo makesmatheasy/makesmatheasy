@@ -964,6 +964,91 @@ function errpercal()
 
 }
 
+<<<<<<< HEAD
+function cvcal()
+{
+    var num=document.getElementById("cvsd").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+
+    var sum=0;
+    for (i = 0; i < len; i++) {
+       sum=sum+number[i];
+    }
+    
+    var mean=sum/len;
+    var varrzlt=0;
+    for (i = 0; i < len; i++) {
+        varrzlt = varrzlt + ((number[i]-mean)**2);
+    }
+
+    varrzlt = varrzlt/(len-1);
+    var sdev = Math.sqrt(varrzlt);
+    console.log(sdev);
+    console.log(mean);
+
+    s="The Coeffecient of Variation is: "+sdev/mean;
+
+    }
+
+    document.getElementById("cvans").innerHTML=s;
+
+
+
+
+=======
+function rmscal()
+{
+    var num=document.getElementById("rmi").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+        var sum=0;
+        for (i = 0; i < len; i++) {
+            sum=sum+(number[i]**2);
+        }
+
+        sum=sum/len;
+        sum=Math.sqrt(sum);
+        ans="The root mean square of given input is: "+sum;
+        
+    }
+    document.getElementById("rmsans").innerHTML=ans;
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
+}
+
+
 
 
 
@@ -1002,8 +1087,13 @@ function slpsolve()
         ans="Calculated slope is: "+p;
     }
     document.getElementById("slpans").innerHTML=ans;
+<<<<<<< HEAD
 }
 
+=======
+
+}
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 function suppangcal()
 {
     var a=document.getElementById("ang").value;
@@ -1043,7 +1133,11 @@ function suppangvercal()
     document.getElementById("suppangverans").innerHTML=ans;
 }
 
+}
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
 
 function faccal()
 {
@@ -1095,7 +1189,8 @@ function facpaircal()
             {
             number1 = i;
               number2 = a/ i;
-              if (number2 >= number1){
+              if (number2 >= number1)
+              {
               answers.push(number1);
               answers.push(number2);
               }
@@ -1109,11 +1204,10 @@ function facpaircal()
         ans="Pair factors are: ";
         for(var i =0;i<answers.length-1;i=i+2)
         {
-            ans+="( "+answers[i]+","+answers[i+1]+" )  "
+            ans+="( "+answers[i]+","+answers[i+1]+" )  ";
         }
     }
  document.getElementById("facans").innerHTML=ans;
-
 }
 
 

@@ -197,6 +197,7 @@ function openit(id) {
         "#parallel",
         "#unitconcal",
         "#giff",
+        "#dip",
         "#spiconcal",
         "#home",
         "#curconcal",
@@ -219,7 +220,6 @@ function openit(id) {
         "#stresscalc",
         "#pairfacts",
         "#interest",
-        "#decimal-binary",
         "#bitwise-calc",
         "#adding-all",
         "#subtract-all",
@@ -228,10 +228,8 @@ function openit(id) {
         "#3dgeo",
         "#bpmfs",
         "#straightline",
-        "#octal-binary",
         "#binary-hexadecimal",
         "#cay",
-        "#octal-hexadecimal",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
@@ -286,7 +284,9 @@ function openit(id) {
         "#hexpyramid",
         "#octahedron",
         "#repp",
+        "#partial_sphere",
         "#mtm",
+        "#stp",
         "#igc",
         "#res",
         "#clr",
@@ -314,7 +314,12 @@ function openit(id) {
         "#expo",
         "#setformula",
         "#wedge",
-        "#fourier_series"
+        "#fourier_series",
+<<<<<<< HEAD
+        "#cvs"
+=======
+        "#rmss"
+>>>>>>> 9d45eec7bd527c58c93e46b8060a448e4bf56ce0
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
