@@ -258,116 +258,116 @@ $(document).ready(function () {
         openit("#differentiatecollapse");
         closenav();
         clearall();
-    })
+    });
 
     $("#3dgeobtn").click(function () {
         openit("#3dgeo");
         closenav();
         clearall();
-    })
+    });
 
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
         clearall();
-    })
+    });
 
     $("#integration-idencollapsebtn").click(function () {
         openit("#integration-idencollapse");
         closenav();
         clearall();
-    })
+    });
 
     $("#defintegration-idencollapsebtn").click(function () {
         openit("#defintegration-idencollapse");
         closenav();
         clearall();
-    })
+    });
 
     $("#3d-solid-btn").click(function () {
         openit("#3d-solid");
         closenav();
         clearall();
-    })
+    });
     $("#pythtriplebtn").click(function () {
         openit("#pythtriple");
         closenav();
         clearall();
-    })
+    });
 
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
         clearall();
-    })
+    });
 
     $("#laplace").click(function () {
         openit("#laplacecollapse");
         closenav();
         clearall();
-    })
+    });
     $("#limits").click(function () {
         openit("#limitscollapse");
         closenav();
         clearall();
-    })
+    });
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })
+    });
     $("#ppmf").click(function () {
         openit("#ppmfs");
         closenav();
         clearall();
-    })
+    });
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();
         clearall();
-    })
+    });
 
     $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
         clearall();
-    })
+    });
     $("#eir").click(function () {
         openit("#eirs");
         closenav();
         clearall();
-    })
+    });
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
         clearall();
-    })
+    });
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
         closenav();
         clearall();
-    })
+    });
     $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();
-    })
+    });
     $("#theobtn").click(function () {
         openit("#theo");
         closenav();
         clearall();
-    })
+    });
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
         clearall();
-    })
+    });
 
     $("#strclc").click(function () {
         openit("#straincalc");
         closenav();
         clearall();
-    })
+    });
     $("#errper").click(function () {
         openit("#errpers");
         closenav();
@@ -428,7 +428,7 @@ $(document).ready(function () {
         clearall();
     })
 
-
+    });
     $("#clrbtn").click(function () {
         openit("#clr");
 

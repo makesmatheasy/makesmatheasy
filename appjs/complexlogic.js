@@ -228,7 +228,7 @@ function display_devi(){
   } else {
     x.style.display = 'none';
   }
- } 
+} 
 
 function samvar()
 {
@@ -834,7 +834,6 @@ function segcal()
     ans="The area of segment is: "+area;
 }
 document.getElementById("segans").innerHTML=ans;
-
 }
 
 function impcal()
@@ -859,10 +858,7 @@ function impcal()
         var q=(a-r)/b;
         ans="The required answer is: "+ q +" "+ r+"/"+b.sub();    }
     document.getElementById("impans").innerHTML=ans;
-
-
 }
-
 
 function factorial(n){
     let answer = 1;
@@ -874,7 +870,7 @@ function factorial(n){
       }
       return answer;
     }  
-  }
+}
 
 function hpcal()
 {
@@ -885,7 +881,7 @@ function hpcal()
     if(x==""||y==""||z=="")
     {
       ans="Please enter all the field";
-   }
+    }
    else
    {
         var a=parseInt(x);
@@ -897,8 +893,6 @@ function hpcal()
         ans= 1/num;
    }
    document.getElementById("hpans").innerHTML=ans;
-     
-
 }
 
 function ppcal()
@@ -921,7 +915,6 @@ function ppcal()
     }
 
     document.getElementById("ppans").innerHTML=ans;
-
 }
 
 function eircal()
@@ -937,7 +930,6 @@ function eircal()
 
     else
     {
-
         var x=parseInt(a)/100;
         var y=parseInt(c);
         var z=parseInt(b);
@@ -947,6 +939,7 @@ function eircal()
     }
     document.getElementById("eirans").innerHTML=ans;
 }
+
 function errpercal()
 {
     var a=document.getElementById("acval").value;
@@ -963,6 +956,7 @@ function errpercal()
     document.getElementById("errperans").innerHTML=ans;
 
 }
+
 
 
 
@@ -984,6 +978,7 @@ function zscorecal()
     }
     document.getElementById("zscoreans").innerHTML=ans;
 }
+
 
 function slpsolve()
 {
@@ -1021,6 +1016,7 @@ function suppangcal()
 
     document.getElementById("suppangans").innerHTML=ans;
 }
+
 function suppangvercal()
 {
     var a=document.getElementById("ang1").value;
@@ -1039,10 +1035,8 @@ function suppangvercal()
         ans="Entered angles are not supplementary";
         }
     }
-
     document.getElementById("suppangverans").innerHTML=ans;
 }
-
 
 
 function faccal()
