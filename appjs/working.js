@@ -62,7 +62,6 @@ $(document).ready(function () {
         openit("#setcal");
         closenav();
     });
-
     $("#leapyearbtn").click(function () {
         openit("#lyear");
         closenav();
@@ -76,7 +75,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#tableoption").click(function () {
         openit("#table");
         closenav();
@@ -94,143 +92,97 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#dec2421btn").click(function () {
         openit("#dec2421");
         closenav();
         clearall();
     });
-
     $("#bpmf").click(function () {
         openit("#bpmfs");
         closenav();
         clearall();
     });
-
-
     $("#sreslc").click(function () {
         openit("#stresscalc");
         closenav();
         clearall();
     });
-
-
-
     $("#impfix").click(function () {
         openit("#impfixs");
         closenav();
         clearall();
     });
-
-
-
     $("#segcal").click(function () {
         openit("#segcals");
         closenav();
         clearall();
     });
-
-
-
     $("#ssst").click(function () {
         openit("#ssts");
         closenav();
         clearall();
     });
-
-
-
     $("#sosq").click(function () {
         openit("#sosqs");
         closenav();
         clearall();
     });
-
-
-
     $("#numcubesRange").click(function () {
         openit("#numcubesRanges");
         closenav();
         clearall();
     });
-
-
     $("#sosqn").click(function () {
         openit("#sosqsn");
 
         closenav();
         clearall();
     });
-
-
-
     $("#socbn").click(function () {
         openit("#socbsn");
         closenav();
         clearall();
     });
-
-
-
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
         clearall();
     });
-
-
-
     $("#cubesRange").click(function () {
         openit("#cubesRanges");
         closenav();
         clearall();
     });
-
-
-
     $("#arc").click(function () {
         openit("#arcs");
         closenav();
         clearall();
     });
-
-
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
         clearall();
     });
-
-
     $("#vecalgbtn").click(function () {
         openit("#vecalg");
         closenav();
         clearall();
     });
-
-
     $("#thdifbtn").click(function () {
         openit("#thdif");
         closenav();
         clearall();
     });
-
-
-
     $("#aodbtn").click(function () {
         openit("#aod");
         closenav();
         clearall();
     });
-
-
     $("#corgeobtn").click(function () {
         openit("#corgeo");
         closenav();
         clearall();
     });
-
-
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();
@@ -241,91 +193,83 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#straightlinebtn").click(function () {
         openit("#straightline");
         closenav();
         clearall();
     });
-
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();
         clearall();
     });
-
     $("#differentiate").click(function () {
         openit("#differentiatecollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#3dgeobtn").click(function () {
         openit("#3dgeo");
         closenav();
         clearall();
-    })
-
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#integration-idencollapsebtn").click(function () {
         openit("#integration-idencollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#defintegration-idencollapsebtn").click(function () {
         openit("#defintegration-idencollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#3d-solid-btn").click(function () {
         openit("#3d-solid");
         closenav();
         clearall();
-    })
+    });
     $("#pythtriplebtn").click(function () {
         openit("#pythtriple");
         closenav();
         clearall();
-    })
-
+    });
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#laplace").click(function () {
         openit("#laplacecollapse");
         closenav();
         clearall();
-    })
+    });
     $("#limits").click(function () {
         openit("#limitscollapse");
         closenav();
         clearall();
-    })
+    });
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })
+    });
     $("#ppmf").click(function () {
         openit("#ppmfs");
         closenav();
         clearall();
-    })
+    });
     $("#giffbtn").click(function () {
         openit("#giff");
         closenav();
         clearall();
-    })
+
+    });
+
     $("#dipbtn").click(function () {
         openit("#dip");
         closenav();
@@ -336,82 +280,80 @@ $(document).ready(function () {
         openit("#hp");
         closenav();
         clearall();
-    })
+    });
     $("#eir").click(function () {
         openit("#eirs");
         closenav();
         clearall();
-    })
+    });
     $("#secareabtn").click(function () {
         openit("#secarea");
         closenav();
         clearall();
-    })
+    });
     $("#propcirclebtn").click(function () {
         openit("#propcircle");
         closenav();
         clearall();
-    })
+    });
     $("#propquadbtn").click(function () {
         openit("#propquad");
         closenav();
         clearall();
-    })
+    });
     $("#theobtn").click(function () {
         openit("#theo");
         closenav();
         clearall();
-    })
+    });
     $("#coorbtn").click(function () {
         openit("#coor");
         closenav();
         clearall();
-    })
-
+    });
     $("#strclc").click(function () {
         openit("#straincalc");
         closenav();
         clearall();
-    })
+    });
     $("#errper").click(function () {
         openit("#errpers");
         closenav();
         clearall();
-    })
-
+    });
     $("#suppang").click(function () {
         openit("#suppangs");
        closenav();
         clearall();
-    })
-
+    });
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
         clearall();
-    })
+    });
     $("#diffeqnbtn").click(function () {
         openit("#diffeqn");
         closenav();
         clearall();
-    })
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();
         clearall();
-    })
-
+    });
     $("#ipbtn").click(function () {
         openit("#ip");
         closenav();
         clearall();
-    })
+
+    });
     
     $("#stpbtn").click(function () {
         openit("#stp");
         closenav();
         clearall();
     })
+
     $("#hydrops").click(function () {
         openit("#hydroz");
         closenav();
@@ -421,23 +363,28 @@ $(document).ready(function () {
         openit("#igc");
         closenav();
         clearall();
-    })
+    });
+
 
     $("#resbtn").click(function () {
         openit("#res");
         closenav();
         clearall();
     })
+
     $("#vectorbtn").click(function () {
         openit("#vector");
         closenav();
         clearall();
-    })
+
+    });
+
     $("#mtmbtn").click(function () {
         openit("#mtm");
         closenav();
         clearall();
-    })
+
+    });
 
     $("#cramerbtn").click(function () {
         openit("#cramer");
@@ -445,136 +392,131 @@ $(document).ready(function () {
         clearall();
     })
 
-
     $("#clrbtn").click(function () {
         openit("#clr");
-
         closenav();
         clearall();
-    })
+    });
     $("#reppbtn").click(function () {
         openit("#repp");
         closenav();
         clearall();
-    })
+    });
     $("#oop").click(function () {
         openit("#oops");
         closenav();
         clearall();
-    })
+    });
     $("#vecbtn").click(function () {
         openit("#vec");
         closenav();
         clearall();
-    })
+    });
     $("#curvebtn").click(function () {
         openit("#curve");
         closenav();
         clearall();
-    })
+    });
     $("#parallelbtn").click(function () {
         openit("#parallel");
         closenav();
         clearall();
-    })
+    });
     $("#betagammabtn").click(function () {
         openit("#betagamma");
         closenav();
         clearall();
-    })
-
+    });
     $("#euclidbtn").click(function () {
         openit("#euclid");
         closenav();
         clearall();
-    })
+    });
 	$("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
         clearall();
-    })
+    });
     $("#transbtn").click(function () {
         openit("#trans");
         closenav();
         clearall();
-    })
+    });
     $("#consimbtn").click(function () {
         openit("#consim");
         closenav();
         clearall();
-    })
+    });
     $("#cevthabtn").click(function () {
         openit("#cevtha");
         closenav();
         clearall();
-    })
-
+    });
     $("#mibtn").click(function () {
         openit("#mi");
         closenav();
         clearall();
-    })
-
+    });
     $("#boolbtn").click(function () {
         openit("#bool");
         closenav();
         clearall();
-    })
+    });
     $("#setformulalistbtn").click(function () {
         openit("#setformula");
         closenav();
         clearall();
-    })
+    });
     $("#convdivbtn").click(function () {
         openit("#convdiv");
         closenav();
         clearall();
-    })
+    });
     $("#setopbtn").click(function () {
         openit("#setop");
         closenav();
         clearall();
-    })
+    });
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
         clearall();
-    })
+    });
     $("#interestbtn").click(function () {
         openit('#interest');
         closenav();
         clearall();
-    })
+    });
     $("#pricesbtn").click(function () {
         openit('#prices');
         closenav();
         clearall();
-    })
+    });
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
         closenav();
         clearall();
-    })
+    });
     $("#trigonovaluestablebutton").click(function () {
         openit("#trigonovaluestable");
         closenav();
         clearall();
-    })
+    });
     $("#srfbtn").click(function () {
         openit("#srf");
         closenav();
         clearall();
-    })
+    });
     $("#maxminbtn").click(function () {
         openit("#maxmin");
         closenav();
         clearall();
-    })
+    });
     $("#locrootsbtn").click(function () {
         openit("#locroots");
         closenav();
         clearall();
-    })
+    });
     $("#datebtn").click(function () {
         openit("#datecal");
         closenav();
@@ -584,58 +526,58 @@ $(document).ready(function () {
         openit("#trigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#trigonofunbutton").click(function () {
         openit("#trigonofun");
         closenav();
         clearall();
-    })
+    });
     $("#expansionbutton").click(function () {
         openit("#expansion");
         closenav();
         clearall();
-    })
+    });
     $("#solutiontributton").click(function () {
         openit("#solutiontri");
         closenav();
         clearall();
-    })
+    });
     $("#profitlossbutton").click(function () {
         openit("#profitloss");
         closenav();
         clearall();
-    })
+    });
     $("#caybtn").click(function () {
         openit("#cay");
         closenav();
         clearall();
-    })
+    });
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#hyptrigonoidenbutton").click(function () {
         openit("#hyptrigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#invhyptrigonoidenbutton").click(function () {
         openit("#invhyptrigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#trigsolcollapsebtn").click(function () {
         openit("#trigsolcollapse");
         closenav();
         clearall();
-    })
+    });
     $("#diffsolvebutton").click(function () {
         diffsolve();
-    })
+    });
     $("#solvepardiff").click(function () {
         partialdiffsolve();
-    })
+    });
     $("#rootsquadraticbtn").click(function () {
         openit("#rootsquadratic");
         closenav();
@@ -661,7 +603,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#spiconbtn").click(function () {
         openit("#spiconcal");
         closenav();
@@ -690,7 +631,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#powsbtn").click(function () {
         openit("#pows");
         closenav();
@@ -761,13 +701,26 @@ $(document).ready(function () {
         clearall();
     });
 
-        // anyBase-to-anyBase-btn
-        $("#anyBase-to-anyBase-btn").click(function(){
-                openit("#anyBase");
-                closenav();
-                clearall();
-            });
 
+//Function of collapsing binary/octal section on click
+    $("#octal-to-binary-btn").click(function(){
+        openit("#octal-binary");
+        closenav();
+        clearall();
+    });
+
+    $("#octal-to-hexadecimal-btn").click(function(){
+            openit("#octal-hexadecimal");
+            closenav();
+            clearall();
+    });
+
+// anyBase-to-anyBase-btn
+    $("#anyBase-to-anyBase-btn").click(function(){
+        openit("#anyBase");
+        closenav();
+        clearall();
+    });
 
     $("#complexidentitiesbtn").click(function(){
         openit("#complexidentities");
@@ -794,31 +747,26 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#stats-btn").click(function(){
         openit("#stats");
         closenav();
         clearall();
     });
-
     $("#log-collapsebtn").click(function(){
       openit("#log-collapse");
       closenav();
       clearall();
-  });
-
+    });
     $("#bt-collapsebtn").click(function(){
         openit("#bt-collapse");
         closenav();
         clearall();
     });
-
     $("#bt-collapsebtn1").click(function(){
         openit("#bt-collapse1");
         closenav();
         clearall();
     });
-
     $("#bcdbtn").click(function(){
         openit("#bcd");
         closenav();
@@ -831,13 +779,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-	 $("#circlecollapsebtn").click(function(){
+	$("#circlecollapsebtn").click(function(){
         openit("#circlecollapse");
         closenav();
         clearall();
     });
-
     $("#parabolacollapsebtn").click(function(){
         openit("#parabolacollapse");
         closenav();
@@ -858,16 +804,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-
-
-  $("#plotangleoption").click(function(){
+    $("#plotangleoption").click(function(){
         openit("#plotangle");
         closenav();
         clearall();
     });
-
-
     $("#emibtn").click(function(){
         openit("#emical");
         closenav();
@@ -878,25 +819,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#gstbtn").click(function(){
         openit("#gstcal");
         closenav();
         clearall();
     });
-
     $("#degbtn").click(function(){
         openit("#degcal");
         closenav();
         clearall();
     });
-
     $("#percalbtn").click(function(){
         openit("#percal");
         closenav();
         clearall();
-    });
-    
+    }); 
     $("#meanbtn").click(function(){
         openit("#mean");
         closenav();
@@ -912,52 +849,41 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#lapprobtn").click(function(){
         openit("#lappro");
         closenav();
         clearall();
     });
-
-
     $("#jointprobabilitycollapsebtn").click(function(){
         openit("#joint-probabilitycollapse");
         closenav();
         clearall();
     });
-
-
     $("#bayesprobabilitycollapsebtn").click(function(){
         openit("#bayes-probabilitycollapse");
         closenav();
         clearall();
     });
-
     $("#condprobabilitybtn").click(function(){
         openit("#condprobability");
         closenav();
         clearall();
     });
-
     $("#analyticalbtn").click(function(){
         openit("#analytical");
         closenav();
         clearall();
     });
-
     $("#fourier_seriescollapsebtn").click(function(){
         openit("#fourier_series");
         closenav();
         clearall();
     });
-
-     $("#plotbargraphoption").click(function(){
+    $("#plotbargraphoption").click(function(){
         openit("#plotbargraph");
         closenav();
         clearall();
     });
-
-
     $("#cv").click(function(){
         openit("#cvs");
         closenav();
@@ -971,6 +897,7 @@ $(document).ready(function () {
 
 
 })
+
 
     function loader(action) {
     var body = document.getElementsByTagName("body");
