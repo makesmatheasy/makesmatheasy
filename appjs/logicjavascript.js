@@ -2618,6 +2618,25 @@ function solveareasq() {
     renderMathInElement(document.getElementById("resultofareasq"));
 }
 
+function solvetetracal(){
+    var vol = document.getElementById("inputvoltetracal").value;
+    var a = math.cbrt( 12 * vol / math.sqrt(2) );
+    var area = math.sqrt(3) * a**2;
+
+    if (vol!=""){
+        document.getElementById("resultofvoltracal1").innerHTML = "\\[Edge \\space Length \\space (a) \\newline \\space of \\space Regular \\space Tetrahedron \\space \\]";
+        document.getElementById("resultofvoltracal2").innerHTML = "\\[&#8731; \\space (\\frac{12 \\times "+vol+"} {\\sqrt{2}}) = "+a.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("resultofvoltracal1"));
+        renderMathInElement(document.getElementById("resultofvoltracal2"));
+        document.getElementById("resultofareatracal").innerHTML = "\\[Surface \\space Area \\space (a) \\newline \\space = \\sqrt{3} \\times "+a.toFixed(2)+"^2 = "+area.toFixed(3)+" \\]";
+        renderMathInElement(document.getElementById("resultofareatracal"));
+    } else{
+        document.getElementById("resultofvoltracal1").innerHTML = "";
+        document.getElementById("resultofvoltracal2").innerHTML = "";
+        document.getElementById("resultofareatracal").innerHTML = "";
+    }
+}
+
 function solvetetra() {
     var a = document.getElementById("inputsidetetra").value;
     var voloutput = document.getElementById("resultoftetravol");
