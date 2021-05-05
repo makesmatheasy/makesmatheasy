@@ -223,6 +223,7 @@ function openit(id) {
         "#subtract-all",
         "#multiplying-all",
 		"#onetwocom-calc",
+        "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
         "#straightline",

@@ -2846,6 +2846,24 @@
                 </table>
             </li>
 
+            <!--Added Hamming code button -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hamming-code-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Code </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hamming Code','#hamming-calc','c','hamming-calc-imgfav')"><img
+                                        id="hamming-calc-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <div class="dropdown-divider"></div>
         </div>
 
@@ -12938,6 +12956,27 @@
     </div>
 </div>
 <!-- End of grey convertor -->
+
+        <!-- start of Hamming Code -->
+        <div>
+            <div class="collapse" id="hamming-calc">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Encode a message by Hamming Code(Left To Right)</h5>
+                        <input type=" " id="hamming-input" value="0"
+                               class="form__field"
+                               oninput="hammingCalc()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Convert</h5>
+                    </div>
+                    <label class="form__group" id="hamming-result">0</label>
+                </div>
+            </div>
+        </div>
+  <!-- end of Hamming Code -->
 
 
         <!--Start Binary to Hexadecimal-->
