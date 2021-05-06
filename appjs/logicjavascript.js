@@ -1710,19 +1710,45 @@ function findMen() {
 // Work and Time ended
 
 function parapipe(){
-    var first = document.getElementById("para1").value
-    var second = document.getElementById("para2").value
-    var third = document.getElementById("para3").value
+    var first = document.getElementById("para1").value;
+    var second = document.getElementById("para2").value;
+    var third = document.getElementById("para3").value;
+    var voloutput = document.getElementById("volparapipe");
+    var saoutput = document.getElementById("saparapipe");
+    var diagoutput = document.getElementById("diagparapipe");
+    var voltemp = "";
+    var satemp = "";
+    var diagtemp = "";
+    if ((first != "") && (second != "") && (third != "") ) {
+        voltemp += "\\[" + first + "*" + second + "*" + third + "\\]";
+        voltemp += "\\[Volume \\space of \\space Parallelepiped \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(first * second * third)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ 2(" + first + "\\times " + second + "+" + second + "\\times" + third + "+" + third + "\\times" + first + ") \\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Parallelepiped \\space is \\space \\]";
+        satemp += "\\[" + eval(String(2 * (first * second + second * third + third * first))) + "\\]";
+        saoutput.innerHTML = satemp;
+        var dig = eval(String((first*first) + (second*second) + (third*third)));
+        var g = nerdamer.sqrt(dig).toString();
+        diagtemp += "\\[d= \\sqrt{" + first + "^2+" + second + "^2+" + third + "^2} \\]";
+        diagtemp += "\\[ \\sqrt{" + (first*first) + "+" + (second*second) + "+" + (third*third) + "} \\]";
+        diagtemp += "\\[ \\sqrt{" + dig + "} \\]";
+        diagtemp += "\\[Diagonal \\space of \\space Parallelepiped \\space is \\space \\]";
+        diagtemp += "\\["+ eval(g).toFixed(3) + "\\]";
+        diagoutput.innerHTML = diagtemp;
 
-    var volume = parseInt(first) * parseInt(second) * parseInt(third);
-    var surfacearea = 2 * (parseInt(first) * parseInt(second) + parseInt(second) * parseInt(third) + parseInt(third) * parseInt(first));
-    var diag = (parseInt(first)**2 + parseInt(second)**2 + parseInt(third)**2);
-    var diagonal = Math.sqrt(diag);
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(diagoutput);
 
-    document.getElementById("volparapipe").innerHTML = "The volume is " + volume.toFixed(3)
-    document.getElementById("saparapipe").innerHTML = "The Surface Area is " + surfacearea.toFixed(3)
-    document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
+    }
 }
+
+
 
 
 function cramer(){
@@ -1751,6 +1777,38 @@ function cramer(){
     cramoutput.innerHTML = "";
   }
 }
+
+function centsolve1() {
+    var a1 = parseInt(document.getElementById("a1m").value)
+    var b1 = parseInt(document.getElementById("a2m").value)
+    var c1 = parseInt(document.getElementById("a3m").value)
+    var a2 = parseInt(document.getElementById("a4m").value)
+    var b2 = parseInt(document.getElementById("a5m").value)
+    var c2 = parseInt(document.getElementById("a6m").value)
+    var a3 = parseInt(document.getElementById("a7m").value)
+    var b3 = parseInt(document.getElementById("a8m").value)
+    var c3 = parseInt(document.getElementById("a9m").value)
+    var a4 = parseInt(document.getElementById("a10m").value)
+    var b4 = parseInt(document.getElementById("a11m").value)
+    var c4 = parseInt(document.getElementById("a12m").value)
+    var x = (a1 + a2 + a3 + a4) / 4;
+    var y = (b1 + b2 + b3 + b4) / 4;
+    var z = (c1 + c2 + c3 + c4) / 4;
+    var centout = document.getElementById("centres");
+    var centemp = "";
+    if((a1 !="") && (a2 != "") && (a3 !="") && (a4 != "") && (b1 != "") && (b2 != "") && (b3 != "") && (b4 != "") && (c1 != "") && (c2 != "") && (c3 !="") && (c4 != "")){
+        centemp += "\\[Centroid \\space of \\space a \\space Tetrahedron \\ is \\space ( \\space \\frac{x_1+x_2+x_3+x_4}{4} \\space , \\space \\frac{y_1+y_2+y_3+y_4}{4} \\space , \\space \\frac{z_1+z_2+z_3+z_4}{4} \\space ) \\]";
+        centemp += "\\[( \\space \\frac{" + a1 + "+" + a2 + "+" + a3 + "+" +a4 + "}{4} \\space , \\space \\frac{" + b1 + "+" + b2 + "+" + b3 + "+" + b4 + "}{4} \\space , \\space \\frac{" + c1 + "+" + c2 + "+" + c3 + "+" + c4 + "}{4} \\space ) \\]";
+        centemp += "\\[( " + x + "," + y + "," + z + " )\\]";
+        centout.innerHTML = centemp;
+        renderMathInElement(centout);
+    }
+    else{
+        centout.innerHTML = "";
+    }
+    
+}
+
 function findsecarea() {
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
@@ -1775,6 +1833,32 @@ function findsectorarea(){
         document.getElementById("sectorarea2").innerHTML = "";
     }
 
+}
+
+function solvepenta(){
+    var a = document.getElementById("inputsidepenta1").value;
+    var b = document.getElementById("inputsidepenta2").value;
+    var voloutput = document.getElementById("resultofpentavol");
+    var saoutput = document.getElementById("resultofpentaarea");
+    var voltemp = "";
+    var satemp = "";
+    if ((a != "") && (b != "")) {
+        voltemp += "\\[ \\frac{" + a + "\\times" + a + "\\times" + b  + "}{" + 3 + "}\\]";
+        voltemp += "\\[Volume \\space of \\space Pentahedron \\space is \\space \\]";
+        voltemp += "\\[" + eval(String((a * a * b ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ " + a + "(" + a + "+\\sqrt{" + "(" + "4" + "\\times" + b  + "\\times" + b + "+" + a + "\\times" + a + "})" + ")\\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Pentahedron \\space is \\space \\]";
+        satemp += "\\[" + parseFloat(a)*((parseFloat(a) + (Math.sqrt((4 * parseFloat(b) * parseFloat (b)) + (parseFloat(a) * parseFloat(a)))))) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+    }
+    else{
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+
+    }
 }
 
 function partialdiffsolve() {
@@ -7339,10 +7423,21 @@ function igp() {
         renderMathInElement(resout);
     }
 }
+
 else{
              resout.innerHTML="";
 }
 }
+
+
+function tridecagon(){
+    let side = parseFloat(document.getElementById("inputsidetridec").value)
+    let area = 13.158*side*side
+    let per = 13*side
+    document.getElementById("resultofareatridec").innerHTML = "The area is "+area
+    document.getElementById("resultofperimetertridec").innerHTML = "The perimeter is "+per
+}
+
 function permutationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "block";
     document.getElementById("combination_div").style.display = "none";
@@ -8286,6 +8381,19 @@ function multBinDecHexOct(){
 
 //----------------------------	//----------------------------
 
+//function for hamming distance between numbers
+function hammingDistance(x, y) {
+    let val = x ^ y;
+    let res = 0;
+  
+    while (val > 0) {
+      val &= val - 1;
+      res++;
+    }
+    
+    document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
+  };
+
 //function for hamming code
 function hammingCalc(){
     const input = document.getElementById("hamming-input").value;
@@ -9139,3 +9247,102 @@ function ssscal()
     }
     document.getElementById("sstans").innerHTML=ans;
 }
+
+function clockcal()
+{
+    a=document.getElementById("hclock").value;  
+    b=document.getElementById("mclock").value;   
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter both minutes and hour to find angle";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        var angmin=b*6;
+        var anghour=30*a+0.5*b
+
+        ans="Angle from minute to hour hands: "+Math.abs(anghour-angmin)+" degree";
+        ans+="<br>"
+        ans+="Angle from hour to minute hands: "+Math.abs(360-Math.abs(anghour-angmin))+" degree";
+    }
+    document.getElementById("clockans").innerHTML=ans;
+}
+
+// >>>>>>> T-test function()
+function tvalue_mean(arr) {
+    let sum=0;
+    for (var i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+
+    return sum / arr.length;
+}
+
+function tvalue_dec(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp,2)
+        diff += temp;
+    }
+    
+    return diff
+}
+
+function tvalue_SD(diff, length) {
+    var val = diff / (length - 1)
+    return Math.sqrt(val);
+}
+
+function tvalue() {
+    let list1 = document.getElementById("list1").value;
+    let list2 = document.getElementById("list2").value;
+
+    list1 = list1.split(" ");
+    list2 = list2.split(" ");
+    let n1 = list1.length
+    let n2 = list2.length
+
+    if (n1 <= 30 && n2 <= 30) {
+        for (var i = 0; i < n1; i++) {
+            list1[i] = parseInt(list1[i]);
+        }
+        for (var i = 0; i < n2; i++) {
+            list2[i] = parseInt(list2[i]);
+        }
+    
+        document.getElementById('steps').innerHTML = "Values calculated while the test:"
+        let mean1 = tvalue_mean(list1)
+        document.getElementById('mean1').innerHTML = "Mean of first set of numbers = " + mean1;
+    
+        let mean2 = tvalue_mean(list2)
+        document.getElementById('mean2').innerHTML = "Mean of second set of numbers = " + mean2;
+    
+        // successive decrease in value through mean;
+        let diff1 = tvalue_dec(list1, mean1)
+        let diff2 = tvalue_dec(list2, mean2)
+    
+        let SD1 = tvalue_SD(diff1, n1)
+        document.getElementById('SD1').innerHTML = "Standard Deviation of first set of numbers = " + Number.parseFloat(SD1).toPrecision(4);
+        let SD2 = tvalue_SD(diff2, n2)
+        document.getElementById('SD2').innerHTML = "Standard Deviation of second set of numbers = " + Number.parseFloat(SD2).toPrecision(4);
+    
+        let delta_sd = Math.sqrt((Math.pow(SD1,2) / n1) + (Math.pow(SD2,2) / n2))
+        let ttest_value = (mean1 - mean2) / delta_sd
+    
+        document.getElementById('testans').innerHTML = "The value for the T-test is " + ttest_value + " = <strong>" + Number.parseFloat(ttest_value).toPrecision(4) + "</strong>(approx)."
+        document.getElementById('stepsbox').style.display = "block"
+    } else {
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('testans').innerHTML = "T-test is not applicable for set of numbers more than 30"
+    }
+}
+
+// t-value formula
+katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
+    throwOnError: false
+})

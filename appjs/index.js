@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#hamming-dist",
         "#anyBase",
         "#complex1collapse",
         "#complex2collapse",
@@ -196,8 +197,9 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
-        "#thedif",
+        "#thdif",
         "#corgeo",
+        "#ttest",
         "#betagamma",
         "#parallel",
         "#unitconcal",
@@ -271,6 +273,7 @@ function openit(id) {
         "#vector",
         "#vec",
         "#diffeqn",
+        "#pdiffeqn",
         "#maxmin",
         "#locroots",
         "#tangent",
@@ -325,7 +328,12 @@ function openit(id) {
         "#wmcs",
         "#cvs",
         "#rmss",
-        "#relationtypes"
+        "#relationtypes",
+        "#clocks",
+        "#rankcals",
+        "#skews",
+        "#clocks"
+
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
