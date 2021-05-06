@@ -360,6 +360,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#vtpbtn").click(function () {
+        openit("#vtp");
+        closenav();
+        clearall();
+    })
 
     $("#hydrops").click(function () {
         openit("#hydroz");

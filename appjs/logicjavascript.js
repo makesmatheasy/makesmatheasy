@@ -7665,7 +7665,20 @@ function Variance() {
 
     renderMathInElement(document.getElementById("Meanresult"));
 }
-
+function vtp(){
+    let vvx1 = parseInt(document.getElementById("vvx1").value)
+    let vvy1 = parseInt(document.getElementById("vvy1").value)
+    let vvz1 = parseInt(document.getElementById("vvz1").value)
+    let vvx2 = parseInt(document.getElementById("vvx2").value)
+    let vvy2 = parseInt(document.getElementById("vvy2").value)
+    let vvz2 = parseInt(document.getElementById("vvz2").value)
+    let vvx3 = parseInt(document.getElementById("vvx3").value)
+    let vvy3 = parseInt(document.getElementById("vvy3").value)
+    let vvz3 = parseInt(document.getElementById("vvz3").value)
+    let cvec = vvx1*vvx2 + vvy1*vvy2 + vvz1*vvz2
+    let avec = vvx2*vvx3 + vvy2*vvy3 + vvz2*vvz3
+    document.getElementById("vtpans").innerHTML = cvec + "c - "+ avec +"a"
+}
 // Standard Deviation
 function std() {
     var s = 0, ans = 0;

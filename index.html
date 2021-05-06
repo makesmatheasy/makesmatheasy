@@ -2043,6 +2043,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vtpbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Triple Product</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Triple Product','#vtp','c','vtpimgfav')"><img
+                                        id="vtpimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <div class="dropdown-divider"></div>
         </div>
@@ -8582,6 +8597,23 @@
             </table>
 
         </div>
+        <div class = "collapse" id="vtp">
+            <h2 style="text-align : center;">Vector Triple Product</h2>
+            <br><br>
+            <input type="text" id = "vvx1" class = "form__field " placeholder="Enter x coordinate of 1st vector">
+            <input type="text" id = "vvy1" class = "form__field " placeholder="Enter y coordinate of 1st vector">
+            <input type="text" id = "vvz1" class = "form__field " placeholder="Enter z coordinate of 1st vector">
+            <input type="text" id = "vvx2" class = "form__field " placeholder="Enter x coordinate of 2nd vector">
+            <input type="text" id = "vvy2" class = "form__field " placeholder="Enter y coordinate of 2nd vector">
+            <input type="text" id = "vvz2" class = "form__field " placeholder="Enter z coordinate of 2nd vector">
+            <input type="text" id = "vvx3" class = "form__field " placeholder="Enter x coordinate of 3rd vector">
+            <input type="text" id = "vvy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
+            <input type="text" id = "vvz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
+            <br>
+            <button type="submit" onclick="vtp()">Find</button>
+            <br>
+            <h4 id = "vtpans"></h4>
+        </div>
         <div class="collapse" id="stp">
             <h2 style="text-align : center;">Scalar Triple Product</h2>
             <br></br>
@@ -8595,7 +8627,7 @@
             <input type="text" id = "vy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
             <input type="text" id = "vz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
             <br>
-            <button type="submit">Find</button>
+            <button type="submit" onclick="stp()">Find</button>
             <br>
             <h4 id = "stpans"></h4>
         </div>
