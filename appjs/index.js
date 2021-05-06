@@ -199,6 +199,7 @@ function openit(id) {
         "#vecalg",
         "#thedif",
         "#corgeo",
+        "#ttest",
         "#betagamma",
         "#parallel",
         "#unitconcal",

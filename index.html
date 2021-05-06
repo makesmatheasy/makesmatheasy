@@ -3353,6 +3353,35 @@
 
         <!--End of Probability Section -->
 
+        <!-- Start of Statistics section -->
+        <li class="list_menu_items" onclick="collapseit('statisticstoggle'); changeImage10();"><a
+            style="cursor: pointer;font-size: 1rem;">Statistics<img class="dropdownlogo"
+                                                                     src="icons/down-chevron.svg"
+                                                                     id="imgClickAndChange10"></a></li>
+        <div class="collapse" id="statisticstoggle" style="color:#1c911c;margin:0.625rem;padding-left:0.625rem">
+            <div class="dropdown-divider"></div>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ttestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">T-test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('T test','#ttest','c','ttestfav')"><img
+                                        id="ttestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <div class="dropdown-divider"></div>
+        </div>
+        <!-- End of Statistics section -->
+
+
+
         <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
         <li class="list_menu_items"><a id="contactbutton"
                                        style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
@@ -9304,6 +9333,32 @@
             </form>
             <p id="giffans"></p>
             <p id="fpans"></p>
+        </div>
+
+        <!-- t -test -->
+        <div class="collapse" id="ttest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">T - Test</h1>
+            <p style="margin-top: 2rem;">
+                The t-test is any statistical hypothesis test in which the test statistic follows a Student’s t-distribution under the null hypothesis. It can be used to determine if two sets of data are significantly different from each other, and is most commonly applied when the test statistic would follow a normal distribution if the value of a scaling term in the test statistic were known.
+                Also number of values in each set should not exceed 30.
+                T-test uses means and standard deviations of two samples to make a comparison.
+            </p>
+            <p style="text-align: left; color: white; margin-top:2rem;">Formula for t-value:</p>
+            <p id="tformula" style="margin-bottom:4rem;"></p>
+            
+            <input class = "form__field"type="text" id="list1" placeholder="Enter list of number separated by SPACE ">
+            <br><br>
+            <input class = "form__field"type="text" id="list2" placeholder="Enter list of number separated by SPACE">
+            <br><br>
+            <button class = "btn btn-light" onclick="tvalue()">Test</button>
+            <p id="testans"></p>
+            <div id="stepsbox">    
+                <p id="steps" style="text-align: left; margin-top: 4rem;"></p>
+                <p id="mean1" style="text-align: left;"></p>
+                <p id="mean2" style="text-align: left;"></p>
+                <p id="SD1" style="text-align: left;"></p>
+                <p id="SD2" style="text-align: left;"></p>
+            </div>
         </div>
 
         <div class="collapse" id="dip">
