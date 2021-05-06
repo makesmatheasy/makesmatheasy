@@ -1032,11 +1032,11 @@ function stp(){
     let vx3 = parseInt(document.getElementById("vx3").value)
     let vy3 = parseInt(document.getElementById("vy3").value)
     let vz3 = parseInt(document.getElementById("vz3").value)
-    let cpx = vz3*vy2 - vz2*vy3
-    let cpy = vz3*vy1 - vy3*vz1
-    let cpz = vz2*vy1 - vz1-vy2
-    var ans = vx1*cpx + vx2*cpy+vx3*cpz
-    document.getElementById(stpans).innerHTML = "The scalar Triple Product is " + ans
+    let cpx = (vx1*((vy2*vz3)-(vy3*vz2)))
+    let cpy = (vy1*((vx2*vz3)-(vz2*vx3)))
+    let cpz = (vz1*((vx2*vy3)-(vy2*vx3)))
+    var ans = cpx-cpy+cpz
+    document.getElementById("stpans").innerHTML = "The scalar Triple Product is " + ans
 }
 
 function ctangle(){
