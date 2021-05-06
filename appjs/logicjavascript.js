@@ -9289,6 +9289,29 @@ function clockcal()
     document.getElementById("clockans").innerHTML=ans;
 }
 
+function slvcal()
+{
+    a=document.getElementById("solvex").value;  
+    b=document.getElementById("solvey").value; 
+    c=document.getElementById("solvez").value;   
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        c=parseFloat(c);
+
+        var w=(c-b)/a;
+        ans="The value of X is: "+w;
+        
+    }
+    document.getElementById("slvans").innerHTML=ans;
+}
+
 // >>>>>>> T-test function()
 function tvalue_mean(arr) {
     let sum=0;

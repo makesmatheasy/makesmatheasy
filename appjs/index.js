@@ -330,10 +330,10 @@ function openit(id) {
         "#cvs",
         "#rmss",
         "#relationtypes",
+        "#skew",
         "#clocks",
+        "#slvxs",
         "#rankcals",
-        "#skews",
-        "#clocks"
 
     ];
     for (i = 0; i < ids.length; i++) {
