@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -340,6 +340,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ttestbtn").click(function () {
+        openit("#ttest");
+        closenav();
+        clearall();
+    });    
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
@@ -388,6 +393,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#skew").click(function () {
+        openit("#skews");
+        closenav();
+        clearall();
+    });
+
     $("#igcbtn").click(function () {
         openit("#igc");
         closenav();
@@ -746,6 +758,13 @@ $(document).ready(function () {
         clearall();
     });
 
+    //Function for hamming distance betn numbers
+     $("#hamming-dist-btn").click(function(){
+        openit("#hamming-dist");
+        closenav();
+        clearall();
+    });
+
     //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function () {
         openit("#octal-binary");
@@ -989,7 +1008,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#perrankcalbtn").click(function(){
+        openit("#rankcals");
+        closenav();
+        clearall();
+    });
 })
 
 function loader(action) {

@@ -737,14 +737,6 @@ input[type='number'] {
   }
 }
 
-#unknownWork {
-  display: none;
-}
-
-#unknownTime {
-  display: none;
-}
-
-#unknownMen {
+#unknownWork, #unknownTime, #unknownMen, #stepsbox {
   display: none;
 }
