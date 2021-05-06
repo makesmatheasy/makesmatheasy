@@ -1350,7 +1350,21 @@
                 </table>
             </li>
 
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="clock"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Clock Angle Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Clock Angle Calculator','#clocks','c','clockimgfav')"><img
+                                        id="clockimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -1486,7 +1500,7 @@
                     </tr>
                 </table>
             </li>
-
+            
             <li>
                 <table class="table">
                     <tr>
@@ -12205,7 +12219,21 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<div class="collapse" id="clocks">
 
+
+    <h1 style="font-family:mathfont; text-align:center;">CLOCK ANGLE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="hclock" class="form__field" id="hclock" width="5em" placeholder="Enter hours of clock">
+    <p>&nbsp;</p>
+    <input type="number" name="mclock" class="form__field" id="mclock" placeholder="Enter minutes of clock">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="clockcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="clockans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+
+
+</div>
 <div class="collapse" id="wmcs">
 
     

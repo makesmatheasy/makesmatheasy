@@ -9130,3 +9130,26 @@ function ssscal()
     }
     document.getElementById("sstans").innerHTML=ans;
 }
+
+function clockcal()
+{
+    a=document.getElementById("hclock").value;  
+    b=document.getElementById("mclock").value;   
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter both minutes and hour to find angle";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        var angmin=b*6;
+        var anghour=30*a+0.5*b
+
+        ans="Angle from minute to hour hands: "+Math.abs(anghour-angmin)+" degree";
+        ans+="<br>"
+        ans+="Angle from hour to minute hands: "+Math.abs(360-Math.abs(anghour-angmin))+" degree";
+    }
+    document.getElementById("clockans").innerHTML=ans;
+}
