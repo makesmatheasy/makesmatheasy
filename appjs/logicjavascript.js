@@ -1835,6 +1835,32 @@ function findsectorarea(){
 
 }
 
+function solvepenta(){
+    var a = document.getElementById("inputsidepenta1").value;
+    var b = document.getElementById("inputsidepenta2").value;
+    var voloutput = document.getElementById("resultofpentavol");
+    var saoutput = document.getElementById("resultofpentaarea");
+    var voltemp = "";
+    var satemp = "";
+    if ((a != "") && (b != "")) {
+        voltemp += "\\[ \\frac{" + a + "\\times" + a + "\\times" + b  + "}{" + 3 + "}\\]";
+        voltemp += "\\[Volume \\space of \\space Pentahedron \\space is \\space \\]";
+        voltemp += "\\[" + eval(String((a * a * b ) / 3)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ " + a + "(" + a + "+\\sqrt{" + "(" + "4" + "\\times" + b  + "\\times" + b + "+" + a + "\\times" + a + "})" + ")\\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Pentahedron \\space is \\space \\]";
+        satemp += "\\[" + parseFloat(a)*((parseFloat(a) + (Math.sqrt((4 * parseFloat(b) * parseFloat (b)) + (parseFloat(a) * parseFloat(a)))))) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+    }
+    else{
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+
+    }
+}
+
 function partialdiffsolve() {
     var ikk = document.getElementById("inputpartialorder");
     if (ikk.value == "") {

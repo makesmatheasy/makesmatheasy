@@ -11277,6 +11277,11 @@
                            href="#">Tetrahedron</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#pentahedron"
+                           style="text-decoration:none;"
+                           href="#">Pentahedron</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#tetracal"
                            style="text-decoration:none;"
                            href="#">Tetrahedron Calculator</a></td>
@@ -19420,6 +19425,59 @@
                 </div>
             </div>
         </div>
+      <div class="modal fade" id="pentahedron" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentahedron</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=\frac{a^2h}{3}\]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <br>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[S=a(a+\sqrt{a^2+4h^2})\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/pentahedron.jpg" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                               placeholder="Enter length of the side of base" id="inputsidepenta1"
+                               oninput="solvepenta();">
+                         <input class="form__field" type="number"
+                               placeholder="Enter height from base to apex" id="inputsidepenta2"
+                               oninput="solvepenta();">
+                        <p class="stopwrap" id="resultofpentavol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpentaarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
         <div class="modal fade" id="cuboid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
