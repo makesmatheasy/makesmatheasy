@@ -150,6 +150,10 @@ function openit(id) {
         "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
+
+        "#segcals",
+        "#vtp",
+
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -226,7 +230,8 @@ function openit(id) {
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-        "#onetwocom-calc",
+	"#onetwocom-calc",
+        "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
         "#straightline",
@@ -266,6 +271,7 @@ function openit(id) {
         "#vector",
         "#vec",
         "#diffeqn",
+        "#pdiffeqn",
         "#maxmin",
         "#locroots",
         "#tangent",
@@ -320,7 +326,8 @@ function openit(id) {
         "#wmcs",
         "#cvs",
         "#rmss",
-        "#relationtypes"
+        "#relationtypes",
+        "#clocks"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
