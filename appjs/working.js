@@ -984,7 +984,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#perrankcalbtn").click(function(){
+        openit("#rankcals");
+        closenav();
+        clearall();
+    });
 })
 
 function loader(action) {
