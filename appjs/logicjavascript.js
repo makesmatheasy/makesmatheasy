@@ -7403,20 +7403,32 @@ function gp() {
 }
 
 function igp() {
-    var a = document.getElementById("fterm").value
-    var r = parseFloat(document.getElementById("r1").value)
-    if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
+    var a = document.getElementById("fterm").value;
+    var r = parseFloat(document.getElementById("r1").value);
+    var resout = document.getElementById("sumigp");
+    var restemp = "";
+    var ans = a / (1 - r);
+    if(a != "" && r != "")
     {
-        document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
-        return;
-    }
-    if (r >= 1) {
-        document.getElementById("sumigp").innerHTML = "Please enter a common ratio which is less than 1"
+    if (r <= 1) {
+        restemp += "\\[ Sum \\space of \\space infinite \\space terms \\space of \\space GP \\space is \\space \\frac{a}{1-r} \\]";
+        restemp += "\\[ S = \\frac{" + a + "}{ 1 - (" + r + ")} \\]";
+        restemp += "\\[ S = " + (ans).toFixed(3) + "\\]";
+        resout.innerHTML = restemp;
+        renderMathInElement(resout);
+
     } else {
-        var ans = a / (1 - r);
-        document.getElementById("sumigp").innerHTML = "Sum = " + ans;
+        restemp += "\\[ Please \\space enter \\space a \\space common \\space ratio \\space which \\space is \\space less \\space than \\space 1. \\]";
+        resout.innerHTML = restemp;
+        renderMathInElement(resout);
     }
 }
+
+else{
+             resout.innerHTML="";
+}
+}
+
 
 function tridecagon(){
     let side = parseFloat(document.getElementById("inputsidetridec").value)
