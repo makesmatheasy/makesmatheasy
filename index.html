@@ -809,6 +809,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="pdiffeqnbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Partial Differential
+                                Equations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Partial Differential Equations','#pdiffeqn','c','pdiffeqnimgfav')"><img
+                                        id="pdiffeqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="powsbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Power Series</a>
                         </td>
@@ -1350,7 +1367,21 @@
                 </table>
             </li>
 
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="clock"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Clock Angle Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Clock Angle Calculator','#clocks','c','clockimgfav')"><img
+                                        id="clockimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -1486,7 +1517,7 @@
                     </tr>
                 </table>
             </li>
-
+            
             <li>
                 <table class="table">
                     <tr>
@@ -2056,6 +2087,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Scalar Triple Product','#stp','c','stpimgfav')"><img
                                         id="stpimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vtpbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Triple Product</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Triple Product','#vtp','c','vtpimgfav')"><img
+                                        id="vtpimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem; filter:none;"></span>
                         </td>
                     </tr>
@@ -2947,6 +2993,24 @@
                                 <span
                                         onclick="addtofavourite('1s and 2s Complement Calculator','#onetwocom-calc','c','onetwocom-calc-imgfav')"><img
                                         id="onetwocom-calc-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--Added Hamming code button -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hamming-code-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Code </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hamming Code','#hamming-calc','c','hamming-calc-imgfav')"><img
+                                        id="hamming-calc-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -5404,6 +5468,39 @@
                 </div>
 
             </div>
+        </div>
+        <div class="collapse" id="pdiffeqn">
+            <h2 style="text-align: center;">Partial Differential Equations</h2>
+            <br><br>
+            <h4>Charpit's Method</h4>
+            <p>This method is used for solving non-linear partial differential
+                equations of order one involving two independent variables.<br>
+                A general method for solving the most general non-linear partial
+                differential equation of order one i.e., the method for solving
+            </p>
+            <p>\[f(x,y,z,p,q)\space =\space 0\]</p>
+            <p>involving two independent variables x and y is given by Charpit and is
+                known as Charpit’s method. This method is applied to solve only
+                those partial differential equations which cannot be solved by already
+                known methods. The basic idea in Charpit’s method is the introduction
+                of another partial differential equation of order one of the form
+            </p>
+            <p>\[g(x,y,z,p,q)\space =\space\]</p>
+            <p>\[dz\space =\space pdx + qdy\]</p>
+            <p>This is a linear partial differential equation of order one with x, y,
+                z, p and q as independent variables and g as the dependent variable.
+                Thus, it can be solved by Lagrange’s method.
+            </p>
+            <p>Step 1. Transfer all the terms of given PDE to L.H.S. and denote the
+                entire expression in L.H.S. by f(x, y, z, p, q).
+            </p>
+            <p>Step 2. Write down the Charpit’s auxiliary equations.</p>
+            <p>Step 3. Find the values of ∂ f/ ∂ x , ∂ f/∂ y etc. occurring in Charpit’s auxiliary equations. Put them in Charpit auxiliary equations and
+                simplify.
+            </p>
+            <p>Step 4. Choose two proper fractions from Charpit’s auxiliary
+                equations such that the resulting integral may come out as simplest
+                relation involving at least one of p or q or both.</p>
         </div>
         <div class="collapse" id="diffeqn">
             <h2 style="text-align: center;">Differential Equations</h2>
@@ -8600,6 +8697,23 @@
             </table>
 
         </div>
+        <div class = "collapse" id="vtp">
+            <h2 style="text-align : center;">Vector Triple Product</h2>
+            <br><br>
+            <input type="text" id = "vvx1" class = "form__field " placeholder="Enter x coordinate of 1st vector">
+            <input type="text" id = "vvy1" class = "form__field " placeholder="Enter y coordinate of 1st vector">
+            <input type="text" id = "vvz1" class = "form__field " placeholder="Enter z coordinate of 1st vector">
+            <input type="text" id = "vvx2" class = "form__field " placeholder="Enter x coordinate of 2nd vector">
+            <input type="text" id = "vvy2" class = "form__field " placeholder="Enter y coordinate of 2nd vector">
+            <input type="text" id = "vvz2" class = "form__field " placeholder="Enter z coordinate of 2nd vector">
+            <input type="text" id = "vvx3" class = "form__field " placeholder="Enter x coordinate of 3rd vector">
+            <input type="text" id = "vvy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
+            <input type="text" id = "vvz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
+            <br>
+            <button type="submit" onclick="vtp()">Find</button>
+            <br>
+            <h4 id = "vtpans"></h4>
+        </div>
         <div class="collapse" id="stp">
             <h2 style="text-align : center;">Scalar Triple Product</h2>
             <br></br>
@@ -8613,7 +8727,7 @@
             <input type="text" id = "vy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
             <input type="text" id = "vz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
             <br>
-            <button type="submit">Find</button>
+            <button type="submit" onclick="stp()">Find</button>
             <br>
             <h4 id = "stpans"></h4>
         </div>
@@ -11055,6 +11169,11 @@
                            style="text-decoration:none;"
                            href="#">N-dimension Sphere</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#trapezoid"
+                           style="text-decoration:none;"
+                           href="#">Trapezoid</a></td>
+                </tr>
             </table>
         </div>
 
@@ -12173,6 +12292,8 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+<div class="collapse" id="clocks">
+
 
 <div class="collapse" id="skews">
 
@@ -12196,6 +12317,18 @@
 </div>
 
 
+    <h1 style="font-family:mathfont; text-align:center;">CLOCK ANGLE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="hclock" class="form__field" id="hclock" width="5em" placeholder="Enter hours of clock">
+    <p>&nbsp;</p>
+    <input type="number" name="mclock" class="form__field" id="mclock" placeholder="Enter minutes of clock">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="clockcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="clockans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+
+
+</div>
 <div class="collapse" id="wmcs">
 
     
@@ -13560,6 +13693,27 @@
 </div>
 <!-- End of grey convertor -->
 
+        <!-- start of Hamming Code -->
+        <div>
+            <div class="collapse" id="hamming-calc">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Encode a message by Hamming Code(Left To Right)</h5>
+                        <input type=" " id="hamming-input" value="0"
+                               class="form__field"
+                               oninput="hammingCalc()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Convert</h5>
+                    </div>
+                    <label class="form__group" id="hamming-result">0</label>
+                </div>
+            </div>
+        </div>
+  <!-- end of Hamming Code -->
+
 
         <!--Start Binary to Hexadecimal-->
         <div>
@@ -14609,18 +14763,18 @@
                     <table class="table">
                         <tr>
                             <td>
-                                <h5>Clear Favourites</h5>
+                                <p>Clear Favourites</p>
                             </td>
                             <td>
                                 <button class="btn btn-light"
                                         onclick="removefavourite();checkfavourite()">Clear
                                 </button>
                             </td>
-                            <td>
-                                <p>Kindly Restart The App for Changes to Apply</p>
-                            </td>
                         </tr>
                     </table>
+                    <div>
+                        <p style="font-size: -0.1rem;">Kindly Restart The App to Apply Changes</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -19114,6 +19268,65 @@
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofndimspherearea2"
                                style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="modal fade" id="trapezoid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Trapezoid<h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Area</h4>
+                                    <br>
+                                    <p class="text-center">H*(A+B)/2</p>
+                                    <p class="text-center">H=Height</p>
+                                    <p class="text-center">A & B= Two parallel Side</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="text-center">Volume</h4>
+                                    <br>
+                                    <p class="text-center">(H×h×b1×b2)/2</p>
+                                    <p class="text-center">H=Height of trapezoid</p>
+                                    <p class="text-center">H=Height of prism</p>
+                                    <p class="text-center">b1 & b2= Base of Trapezoid</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images\Trapezoids.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number" placeholder="Enter first base" id="tr1">   
+                            <input class="form__field" type="number" placeholder="Enter second base" id="tr2">
+                            <input class="form__field" type="number" placeholder="Enter height of trapezoid" id="tr3">   
+                            <input class="form__field" type="number" placeholder="Enter height of prism" id="tr4">
+                            <button class="form__field" onclick="traprzlt()">Calculate</button>
+                            <p class="stopwrap" id="trapans" style="font-family:mathfont;"></p>
+                            <br>
                         </div>
                         <!-- ------HERE------ -->
                     </div>

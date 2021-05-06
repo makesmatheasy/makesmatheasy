@@ -1303,3 +1303,40 @@ else{
 }
 document.getElementById("skewans").innerHTML=ans;
 }
+function clockcal()
+{
+    a=document.getElementById("hclock").value;  
+    b=document.getElementById("mclock").value;   
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter both minutes and hour to find angle";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        var angmin=b*6;
+        var anghour=30*a+0.5*b
+
+        ans="Angle from minute to hour hands: "+Math.abs(anghour-angmin)+" degree";
+        ans+="<br>"
+        ans+="Angle from hour to minute hands: "+Math.abs(360-Math.abs(anghour-angmin))+" degree";
+    }
+    document.getElementById("clockans").innerHTML=ans;
+}
+
+function traprzlt()
+{
+
+    a=parseFloat(document.getElementById("tr1").value);    
+    b=parseFloat(document.getElementById("tr2").value);    
+    c=parseFloat(document.getElementById("tr3").value);    
+    d=parseFloat(document.getElementById("tr4").value);    
+    var k=(a+b)/2;
+    var traparea= c*k;
+    var trapvol=c*d*k;
+
+    var ans="The calculated area is: "+traparea+" and volume is: "+trapvol;
+    document.getElementById("trapans").innerHTML=ans;
+}
