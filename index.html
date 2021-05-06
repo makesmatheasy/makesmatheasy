@@ -925,6 +925,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="gammabtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Gamma Function Calculator<a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Gamma Function Calculator','#gamma','c','gammaimgfav')"><img
+                                        id="gammaimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <!--            laplace-->
             <li>
@@ -6121,6 +6136,16 @@
                 <p id="leapresult"
                    style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
             </div>
+        </div>
+
+        <div class = "collapse" id="gamma">
+            <h2 style="text-align: center;">Gamma Calculator</h2>
+            <br><br>
+            <input type="number" id="gammain" class="form__field" placeholder="Enter Number for gamma function">
+            <br>
+            <button type="submit" onclick ="gammafind()">Find</button>
+            <br>
+            <h4 id="gammafindans"></h4>
         </div>
 
         <div class="collapse" id="betagamma">

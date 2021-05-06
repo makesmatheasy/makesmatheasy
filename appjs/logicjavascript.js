@@ -6882,6 +6882,14 @@ function profitloss() {
     }
 }
 
+// gamma find function
+function gammafind(){
+    // function to find gamma function of any no.
+    let inpu = document.getElementById("gammain").value
+    let ans = Math.gamma(inpu)
+    document.getElementById("gammafindans").innerHTML = "The gamma is "+ans
+}
+
 // profit/loss calculations over discount
 function discount() {
     var dis = parseFloat(document.getElementById("dis").value);
