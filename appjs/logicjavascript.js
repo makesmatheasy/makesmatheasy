@@ -1777,6 +1777,38 @@ function cramer(){
     cramoutput.innerHTML = "";
   }
 }
+
+function centsolve1() {
+    var a1 = parseInt(document.getElementById("a1m").value)
+    var b1 = parseInt(document.getElementById("a2m").value)
+    var c1 = parseInt(document.getElementById("a3m").value)
+    var a2 = parseInt(document.getElementById("a4m").value)
+    var b2 = parseInt(document.getElementById("a5m").value)
+    var c2 = parseInt(document.getElementById("a6m").value)
+    var a3 = parseInt(document.getElementById("a7m").value)
+    var b3 = parseInt(document.getElementById("a8m").value)
+    var c3 = parseInt(document.getElementById("a9m").value)
+    var a4 = parseInt(document.getElementById("a10m").value)
+    var b4 = parseInt(document.getElementById("a11m").value)
+    var c4 = parseInt(document.getElementById("a12m").value)
+    var x = (a1 + a2 + a3 + a4) / 4;
+    var y = (b1 + b2 + b3 + b4) / 4;
+    var z = (c1 + c2 + c3 + c4) / 4;
+    var centout = document.getElementById("centres");
+    var centemp = "";
+    if((a1 !="") && (a2 != "") && (a3 !="") && (a4 != "") && (b1 != "") && (b2 != "") && (b3 != "") && (b4 != "") && (c1 != "") && (c2 != "") && (c3 !="") && (c4 != "")){
+        centemp += "\\[Centroid \\space of \\space a \\space Tetrahedron \\ is \\space ( \\space \\frac{x_1+x_2+x_3+x_4}{4} \\space , \\space \\frac{y_1+y_2+y_3+y_4}{4} \\space , \\space \\frac{z_1+z_2+z_3+z_4}{4} \\space ) \\]";
+        centemp += "\\[( \\space \\frac{" + a1 + "+" + a2 + "+" + a3 + "+" +a4 + "}{4} \\space , \\space \\frac{" + b1 + "+" + b2 + "+" + b3 + "+" + b4 + "}{4} \\space , \\space \\frac{" + c1 + "+" + c2 + "+" + c3 + "+" + c4 + "}{4} \\space ) \\]";
+        centemp += "\\[( " + x + "," + y + "," + z + " )\\]";
+        centout.innerHTML = centemp;
+        renderMathInElement(centout);
+    }
+    else{
+        centout.innerHTML = "";
+    }
+    
+}
+
 function findsecarea() {
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
