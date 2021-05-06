@@ -320,7 +320,8 @@ function openit(id) {
         "#wmcs",
         "#cvs",
         "#rmss",
-        "#relationtypes"
+        "#relationtypes",
+        "#rankcals"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

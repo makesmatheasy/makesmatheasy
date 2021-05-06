@@ -1263,4 +1263,41 @@ function facpaircal()
  document.getElementById("facans").innerHTML=ans;
 }
 
+function perrankcal()
+{
+    var num=document.getElementById("perrank").value;
+    var num2=document.getElementById("peryour").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num==""||num2=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+    num2=parseFloat(num2);
+    var sum=0, count=0;
+    for(var i=0; i<len;i++)
+    {
+         if(number[i]<=num2)
+         {
+             count++;
+         }
+    }
+    var pr= (count/len)*100;
+    var s="The percentile rank for given marks is: "+pr;
+}
+document.getElementById("perrankans").innerHTML=s;
 
+}

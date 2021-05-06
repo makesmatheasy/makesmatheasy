@@ -1617,6 +1617,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="perrankcalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentile Rank Calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Percentile Rank Calculator','#rankcals','c','ranksimgfav')"><img
+                                        id="ranksimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="leapyearbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Leap Year
                                 </a>
@@ -12149,12 +12166,34 @@
     <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)">
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
-    <p id="hydroans"></p>
-    
+    <p id="hydroans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+   
    
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="rankcals">
+
+    
+    <h1 style="font-family:mathfont; text-align:center;">PERCENTILE RANK CALCULATOR </h1>
+    <input type="text" name="perrank" class="form__field" id="perrank" width="5em" placeholder="Enter all the marks">
+    <p>&nbsp;</p>
+    <input type="text" name="peryour" class="form__field" id="peryour" placeholder="Enter your marks">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="perrankcal()">Calculate</button>
+    <p id="perrankans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"> PR = L / N * 100<br>
+
+        where:<br>
+        
+        PR is the percentile rank - It can take values from 0 to 100;<br>
+        
+        L is the number of values from the set A that are lower than or equal to your data value xₘ; and<br>
+        
+        N is the total number of values in the set A.</p> 
+</div>
 
 <div class="collapse" id="wmcs">
 
