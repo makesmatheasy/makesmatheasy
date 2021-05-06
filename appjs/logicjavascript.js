@@ -7828,6 +7828,24 @@ function std() {
 
 // standard deviation end
 
+//Euler's Totient Function
+
+function eulerTotient(n) {
+    function gcd(a, b) {
+      if (a === 0) {
+        return b;
+      }
+  
+      return gcd(b % a, a);
+    }
+    let res = 1;  
+    for (let i = 2; i < n; i++) {
+      if (gcd(i, n) === 1) {
+        res++;
+      }
+    }
+    document.getElementById("etfResult").innerHTML = "The number of coprime of " + n + " is: " + res;
+  }
 
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
