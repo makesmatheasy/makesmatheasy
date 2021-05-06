@@ -334,7 +334,8 @@ Other Tech/Libraries
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator
   - Bayes Probability Theorem
-
+- Statistics
+  - T-test
 ---
 
 ## Documentation

@@ -9153,3 +9153,79 @@ function clockcal()
     }
     document.getElementById("clockans").innerHTML=ans;
 }
+
+// >>>>>>> T-test function()
+function tvalue_mean(arr) {
+    let sum=0;
+    for (var i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+
+    return sum / arr.length;
+}
+
+function tvalue_dec(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp,2)
+        diff += temp;
+    }
+    
+    return diff
+}
+
+function tvalue_SD(diff, length) {
+    var val = diff / (length - 1)
+    return Math.sqrt(val);
+}
+
+function tvalue() {
+    let list1 = document.getElementById("list1").value;
+    let list2 = document.getElementById("list2").value;
+
+    list1 = list1.split(" ");
+    list2 = list2.split(" ");
+    let n1 = list1.length
+    let n2 = list2.length
+
+    if (n1 <= 30 && n2 <= 30) {
+        for (var i = 0; i < n1; i++) {
+            list1[i] = parseInt(list1[i]);
+        }
+        for (var i = 0; i < n2; i++) {
+            list2[i] = parseInt(list2[i]);
+        }
+    
+        document.getElementById('steps').innerHTML = "Values calculated while the test:"
+        let mean1 = tvalue_mean(list1)
+        document.getElementById('mean1').innerHTML = "Mean of first set of numbers = " + mean1;
+    
+        let mean2 = tvalue_mean(list2)
+        document.getElementById('mean2').innerHTML = "Mean of second set of numbers = " + mean2;
+    
+        // successive decrease in value through mean;
+        let diff1 = tvalue_dec(list1, mean1)
+        let diff2 = tvalue_dec(list2, mean2)
+    
+        let SD1 = tvalue_SD(diff1, n1)
+        document.getElementById('SD1').innerHTML = "Standard Deviation of first set of numbers = " + Number.parseFloat(SD1).toPrecision(4);
+        let SD2 = tvalue_SD(diff2, n2)
+        document.getElementById('SD2').innerHTML = "Standard Deviation of second set of numbers = " + Number.parseFloat(SD2).toPrecision(4);
+    
+        let delta_sd = Math.sqrt((Math.pow(SD1,2) / n1) + (Math.pow(SD2,2) / n2))
+        let ttest_value = (mean1 - mean2) / delta_sd
+    
+        document.getElementById('testans').innerHTML = "The value for the T-test is " + ttest_value + " = <strong>" + Number.parseFloat(ttest_value).toPrecision(4) + "</strong>(approx)."
+        document.getElementById('stepsbox').style.display = "block"
+    } else {
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('testans').innerHTML = "T-test is not applicable for set of numbers more than 30"
+    }
+}
+
+// t-value formula
+katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
+    throwOnError: false
+})
