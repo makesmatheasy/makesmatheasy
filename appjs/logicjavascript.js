@@ -3158,6 +3158,23 @@ function cycquadcal(){
     }
 }
 
+//interior angle calculation
+function interiorsolve(){
+    var n = parseInt(document.getElementById("polyside").value);
+    var sub=n-2;
+    var interiorSum=sub*180;
+    var eachInterior=interiorSum/n;
+    console.log(n);
+    console.log(interiorSum);
+    document.getElementById("suminterior").innerHTML = "\\[sum = ("+n+"-2)180=\\space"+sub+"\\times \\space 180\\]"+"\\[Sum \\space of \\space Interior \\space Angle ="+interiorSum+"\\]";
+    //document.getElementById("suminterior").innerHTML+="\\[Sum \\space of \\space Interior \\space \\Angle ="+interiorSum+"\\]"    
+    renderMathInElement(document.getElementById("suminterior"));
+    document.getElementById("each_interior").innerHTML = "\\[Each\\space Measure = \\frac{"+interiorSum+"}{"+n+"}\\]"+"\\[Mesaure \\space of \\space each \\space Interior \\space Angle ="+eachInterior+"\\]";
+    //document.getElementById("each_interior").innerHTML +="\\[Mesaure \\space of \\space each \\space Interior \\space \\Angle ="+eachInterior+"\\]";    
+    renderMathInElement(document.getElementById("each_interior"));
+
+       
+}
 //created function for Kite
 function Kitesolve() {
     var p = document.getElementById("inputp").value;
