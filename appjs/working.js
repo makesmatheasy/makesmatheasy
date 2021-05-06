@@ -383,6 +383,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#skew").click(function () {
+        openit("#skews");
+        closenav();
+        clearall();
+    });
+
     $("#igcbtn").click(function () {
         openit("#igc");
         closenav();

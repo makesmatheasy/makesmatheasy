@@ -327,6 +327,7 @@ function openit(id) {
         "#cvs",
         "#rmss",
         "#relationtypes",
+        "#skews",
         "#clocks"
     ];
     for (i = 0; i < ids.length; i++) {
