@@ -2089,7 +2089,22 @@
                     </tr>
                 </table>
             </li>
-
+            <!--Added Euler's Totient Function -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="etfbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Euler's Totient Function</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Euler\'s Totient Function','#etf','c','etfimgfav')"><img
+                                        id="etfimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -8696,6 +8711,26 @@
             <br>
             <h4 id = "vtpans"></h4>
         </div>
+        <!-- start of Hamming Dist -->
+        <div>
+            <div class="collapse" id="etf">
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number : &nbsp; &nbsp; </label>
+                    <input type="number" id="etfnum" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="eulerTotient(document.getElementById('etfnum').value);">
+                        Solve
+                    </button>
+                </div>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="etfResult"></p>
+                </div>
+            </div>
+        </div>
+        <!-- end of Hamming Dist -->
         <div class="collapse" id="stp">
             <h2 style="text-align : center;">Scalar Triple Product</h2>
             <br></br>
