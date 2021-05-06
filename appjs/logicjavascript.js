@@ -1710,19 +1710,45 @@ function findMen() {
 // Work and Time ended
 
 function parapipe(){
-    var first = document.getElementById("para1").value
-    var second = document.getElementById("para2").value
-    var third = document.getElementById("para3").value
+    var first = document.getElementById("para1").value;
+    var second = document.getElementById("para2").value;
+    var third = document.getElementById("para3").value;
+    var voloutput = document.getElementById("volparapipe");
+    var saoutput = document.getElementById("saparapipe");
+    var diagoutput = document.getElementById("diagparapipe");
+    var voltemp = "";
+    var satemp = "";
+    var diagtemp = "";
+    if ((first != "") && (second != "") && (third != "") ) {
+        voltemp += "\\[" + first + "*" + second + "*" + third + "\\]";
+        voltemp += "\\[Volume \\space of \\space Parallelepiped \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(first * second * third)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ 2(" + first + "\\times " + second + "+" + second + "\\times" + third + "+" + third + "\\times" + first + ") \\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Parallelepiped \\space is \\space \\]";
+        satemp += "\\[" + eval(String(2 * (first * second + second * third + third * first))) + "\\]";
+        saoutput.innerHTML = satemp;
+        var dig = eval(String((first*first) + (second*second) + (third*third)));
+        var g = nerdamer.sqrt(dig).toString();
+        diagtemp += "\\[d= \\sqrt{" + first + "^2+" + second + "^2+" + third + "^2} \\]";
+        diagtemp += "\\[ \\sqrt{" + (first*first) + "+" + (second*second) + "+" + (third*third) + "} \\]";
+        diagtemp += "\\[ \\sqrt{" + dig + "} \\]";
+        diagtemp += "\\[Diagonal \\space of \\space Parallelepiped \\space is \\space \\]";
+        diagtemp += "\\["+ eval(g).toFixed(3) + "\\]";
+        diagoutput.innerHTML = diagtemp;
 
-    var volume = parseInt(first) * parseInt(second) * parseInt(third);
-    var surfacearea = 2 * (parseInt(first) * parseInt(second) + parseInt(second) * parseInt(third) + parseInt(third) * parseInt(first));
-    var diag = (parseInt(first)**2 + parseInt(second)**2 + parseInt(third)**2);
-    var diagonal = Math.sqrt(diag);
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(diagoutput);
 
-    document.getElementById("volparapipe").innerHTML = "The volume is " + volume.toFixed(3)
-    document.getElementById("saparapipe").innerHTML = "The Surface Area is " + surfacearea.toFixed(3)
-    document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
+    }
 }
+
+
 
 
 function cramer(){
