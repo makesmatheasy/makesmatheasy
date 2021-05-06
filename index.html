@@ -483,6 +483,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="slvx"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Solve for X</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Solve for X','#slvxs','c','slvxsimgfav')"><img
+                                        id="slvxsmgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="caybtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cayley Hamilton Theorem and Diagonalization</a>
                         </td>
@@ -1293,6 +1309,8 @@
                 </table>
             </li>
 
+           
+
             <li>
                 <table class="table">
                     <tr>
@@ -1366,7 +1384,7 @@
                     </tr>
                 </table>
             </li>
-
+           
             <li>
                 <table class="table">
                     <tr>
@@ -12262,7 +12280,7 @@
 <div class="collapse" id="hydroz">
 
     
-    <h1 style="font-family:mathfont; text-align:center;">HYDROSTATIC PRESSURE CALCULATOR </h1>
+    <h1 >HYDROSTATIC PRESSURE CALCULATOR </h1>
     <input type="number" name="dens" class="form__field" id="dens" width="5em" placeholder="Enter fluid's density(in kg/m^3)">
     <p>&nbsp;</p>
     <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)">
@@ -12274,9 +12292,22 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="slvxs">
+    <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
+    <div class= "coll" style="margin-left:230px"></div>
+    <p>
+    <input type="text" id="solvex" size=5 value='' placeholder="a">X +
+    <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
+   <br><br><br><br>
+    <button type="button" class="btn btn-light" style="width:8em" onclick=slvcal()>   Solve    </button>
+    <p>&nbsp;</p>
+    <div id="slvans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
+    </p>
+</div>
+</div>
+
 <div class="collapse" id="clocks">
-
-
     <h1 style="font-family:mathfont; text-align:center;">CLOCK ANGLE CALCULATOR </h1>
     <p>&nbsp;</p>
     <input type="number" name="hclock" class="form__field" id="hclock" width="5em" placeholder="Enter hours of clock">

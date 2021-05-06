@@ -984,6 +984,11 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#slvx").click(function(){
+        openit("#slvxs");
+        closenav();
+        clearall();
+    });
 
 })
 
