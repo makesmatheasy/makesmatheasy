@@ -1020,7 +1020,7 @@ function wmccal()
     
     }
     document.getElementById("wmcans").innerHTML=ans;
-
+}
 
 function cvcal()
 {
@@ -1066,7 +1066,7 @@ function cvcal()
     }
 
     document.getElementById("cvans").innerHTML=s;
-
+}
 
 
 
@@ -1149,7 +1149,7 @@ function slpsolve()
 
 
 
-}
+
 
 function suppangcal()
 {
@@ -1190,7 +1190,7 @@ function suppangvercal()
     document.getElementById("suppangverans").innerHTML=ans;
 }
 
-}
+
 
 function faccal()
 {

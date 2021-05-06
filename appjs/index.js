@@ -331,7 +331,7 @@ function openit(id) {
         "#cvs",
         "#rmss",
         "#relationtypes",
-        "#skew",
+        "#skews",
         "#clocks",
         "#slvxs",
         "#rankcals",
