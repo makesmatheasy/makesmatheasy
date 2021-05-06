@@ -11832,7 +11832,7 @@
             <!--sum of nterms in A.P.-->
             <br>
             <h4 class="d-flex justify-content-center">If first term, number of terms and common difference is given</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center">
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
             <!-- <form class="form-inline"> -->
                 <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
@@ -11843,10 +11843,20 @@
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <br>
                 <br>
-                <button type="button" class="btn btn-light"
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
                         onclick="sum_n_apsol('napterms','rapterms','r1val')">
-                    Find
-                </button>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="ResetVal()">
+                        Reset
+                        </button>
+                    </div>
+                </div>
             </form>
             <div class="form-group">
                 <p id="printAPseries" style="display:flex;font-family:mathfont;width:auto;"
@@ -11862,7 +11872,7 @@
                    align="right"></p>
             </div>
             <h4 class="d-flex justify-content-center">If first term,number of terms and last term is given</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center">
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                 <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <input type="number" id="ft" placeholder="Enter the first term(a) "
@@ -11871,9 +11881,19 @@
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <br>
                 <br>
-                <button type="button" class="btn btn-light" onclick=anotherap()>
-                    Find
-                </button>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=anotherap()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
             </form>
             <br>
             <p id="printAPseries1" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
@@ -11889,9 +11909,19 @@
                 <input type="tel" id="ap" placeholder="Enter AP(space separated)"
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <br><br>
-                <button type="button" class="btn btn-light" onclick=apsum()>
-                    Find
-                </button>
+                <div class="row">
+                    <div class="col-6">        
+                        <button type="button" class="btn btn-light" onclick=apsum()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
             </form>
             <br>
             <!-- sum of nterms in G.P.  -->
@@ -11899,6 +11929,7 @@
             <br>
             <h2 class="d-flex justify-content-center">2) Sum of N terms of a Geometric Progression</h2>
             <div class="form-group d-flex flex-column align-items-center">
+            <form>
                 <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstterm"
                        placeholder="Enter first term"/>
@@ -11907,8 +11938,20 @@
                 <input type="number" style="width: 15.625rem;" class="form__field" id="number"
                        placeholder="Enter number of terms"/>
                 <br>
-                <button class="btn btn-light" onclick="gp()">Find</button>
-            </div>
+                <div class=" mt-3 row">
+                    <div class="col-6">
+                        <button class="btn btn-light" onclick="gp()">Find</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+                <br>
+            </form>
+                
             <div class="form-group">
                 <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
                    class="stopwrap"
@@ -11925,13 +11968,25 @@
             <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
                 1</h2>
             <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
+                <form>
+                    <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
                        placeholder="Enter first term"/>
                 <input type="number" style="width: 15.625rem;" class="form__field" id="r1"
                        placeholder="Enter ratio between terms"/>
                 <br>
-                <button class="btn btn-light" onclick="igp()">Find</button>
+                <div class="mt-3 row">
+                    <div class="col-6">      
+                         <button class="btn btn-light" onclick="igp()">Find</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
                 <br>
+                </form>
                 <br> <br>
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
@@ -11939,7 +11994,8 @@
             <!-- sum of nterms in H.P.  -->
             <h2 class="d-flex justify-content-center">3) Sum of N terms of a Harmonic Progression</h2>
             <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field"
+                <form>
+                    <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstTerm"
                        placeholder="Enter first term"/>
                 <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
@@ -11947,8 +12003,19 @@
                 <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
                        placeholder="Enter number of terms"/>
                 <br>
-                <button class="btn btn-light" onclick="hp()">Find</button>
-            </div>
+                <div class=" mt-3 row">
+                    <div class="col-6">      
+                        <button class="btn btn-light" onclick="hp()">Find</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+                <br>
+                </form>
             <div class="form-group">
                 <p id="printHPseries" style="display:flex;font-family:mathfont;width:auto;"
                    class="stopwrap"
@@ -11961,13 +12028,22 @@
     
                 <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term </h2>
                 <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" name="ath" class="form__field" id="ath" width="5em" placeholder="Enter first number">
-                <p>&nbsp;</p>
-                <input type="number" name="differ" class="form__field" id="differ" placeholder="Enter common difference">
-                <p>&nbsp;</p>
-                <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
-                <p>&nbsp;</p>
-                <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
+                    <form>
+                        <input type="number" name="ath" class="form__field" id="ath" width="5em" placeholder="Enter first number">
+                        <p>&nbsp;</p>
+                        <input type="number" name="differ" class="form__field" id="differ" placeholder="Enter common difference">
+                        <p>&nbsp;</p>
+                        <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
+                        <p>&nbsp;</p>
+                        <div class="row">
+                            <div class="col-6">      
+                                <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                            </div>
+                        </div>
+                    </form>
                 <p id="hpans"></p>
                 <p>&nbsp;</p>
                 <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
@@ -20537,6 +20613,9 @@
     } else {
         console.log("Desktop");
     }
+    function ResetVal(){
+    document.getElementById("myForm").reset();
+};
 </script>
 
 <script src="nerdamer/nerdamer.core.js"></script>
