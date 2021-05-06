@@ -3017,6 +3017,24 @@
                 </table>
             </li>
 
+            <!--Added Hamming Distance between numbers -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hamming-dist-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Distance</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hamming Dist','#hamming-dist','c','hamming-dist-imgfav')"><img
+                                        id="hamming-dist-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <div class="dropdown-divider"></div>
         </div>
 
@@ -13713,6 +13731,30 @@
             </div>
         </div>
   <!-- end of Hamming Code -->
+
+<!-- start of Hamming Dist -->
+<div>
+    <div class="collapse" id="hamming-dist">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the first number : &nbsp; &nbsp; </label>
+            <input type="number" id="numFirst" class="form__field" placeholder="x"
+                   style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            <label> Enter the second number : &nbsp; &nbsp;</label>
+            <input type="number" id="numSecond" class="form__field" placeholder="y"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="hammingDistance(document.getElementById('numFirst').value,document.getElementById('numSecond').value);">
+                Solve
+            </button>
+        </div>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="distResult"></p>
+        </div>
+    </div>
+</div>
+<!-- end of Hamming Dist -->
 
 
         <!--Start Binary to Hexadecimal-->

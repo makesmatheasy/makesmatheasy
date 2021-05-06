@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#hamming-dist",
         "#anyBase",
         "#complex1collapse",
         "#complex2collapse",

@@ -8277,6 +8277,19 @@ function multBinDecHexOct(){
 
 //----------------------------	//----------------------------
 
+//function for hamming distance between numbers
+function hammingDistance(x, y) {
+    let val = x ^ y;
+    let res = 0;
+  
+    while (val > 0) {
+      val &= val - 1;
+      res++;
+    }
+    
+    document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
+  };
+
 //function for hamming code
 function hammingCalc(){
     const input = document.getElementById("hamming-input").value;
