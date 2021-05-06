@@ -7334,6 +7334,14 @@ function igp() {
     }
 }
 
+function tridecagon(){
+    let side = parseFloat(document.getElementById("inputsidetridec").value)
+    let area = 13.158*side*side
+    let per = 13*side
+    document.getElementById("resultofareatridec").innerHTML = "The area is "+area
+    document.getElementById("resultofperimetertridec").innerHTML = "The perimeter is "+per
+}
+
 function permutationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "block";
     document.getElementById("combination_div").style.display = "none";
