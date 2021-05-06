@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#hamming-dist",
         "#anyBase",
         "#complex1collapse",
         "#complex2collapse",
@@ -328,7 +329,10 @@ function openit(id) {
         "#rmss",
         "#relationtypes",
         "#clocks",
-        "#rankcals"
+        "#rankcals",
+        "#skews",
+        "#clocks"
+
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
