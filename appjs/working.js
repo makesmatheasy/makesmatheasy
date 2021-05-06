@@ -344,7 +344,12 @@ $(document).ready(function () {
         openit("#ttest");
         closenav();
         clearall();
-    });    
+    });   
+    $("#gammabtn").click(function () {
+        openit("#gamma");
+        closenav();
+        clearall();
+    }); 
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
@@ -1007,7 +1012,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
 
     $("#slvx").click(function(){
         openit("#slvxs");

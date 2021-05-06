@@ -266,6 +266,7 @@ function openit(id) {
         "#grey-bin",
         "#consim",
         "#convdiv",
+        "#gamma",
         "#curve",
         "#coor",
         "#mean",
