@@ -8417,7 +8417,7 @@ function hammingDistance(x, y) {
     }
     
     document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
-  };
+  }
 
 //function for hamming code
 function hammingCalc(){
