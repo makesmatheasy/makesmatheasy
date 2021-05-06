@@ -1,5 +1,3 @@
-const { parse } = require("node:path");
-
 function Complex(real, imaginary) {
   this.real = 0;
   this.imaginary = 0;
@@ -185,39 +183,6 @@ function comOp(value) {
     }
 }
 
-function polar()
-{
-  var r = parseInt(document.getElementById("cpreal").value);
-  var i = parseInt(document.getElementById("cpimg").value);
-  let explain="\\[Polar \\space Form \\space =r(cos(\\theta)+i\\space sin(\\theta))\\]";
-  explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
-  var result= document.getElementById("comp1result");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-	  x=x+"( cos( -π" +y+") + i sin ( -π"+ y+ "))";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x=x+"( cos( π" +y+") + i sin ( π"+ y+ "))";
-      explain+="π" +y+"\\]";
-  }
-  
-  result.innerHTML = x;
-  explain+="\\[Polar \\space Form \\space ="+x+"\\]";
-  document.getElementById('comp1explain').innerHTML=explain;
-  renderMathInElement(document.getElementById("comp1explain"));
-}
 function euler()
 {
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
@@ -715,9 +680,112 @@ function ssqcal()
 
 }
 
+
+
+function ssqncal()
+{
+    var num=document.getElementById("ssqn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc((num*(num+1)*(2*num+1))/6);
+        s="Your answer is: "+sum;
+    }
+
+    document.getElementById("ssqnans").innerHTML=s;
+
+}
+
+function scbncal()
+{
+    var num=document.getElementById("scbn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+        var sum=Math.trunc(((num*(num+1))/2)**2);
+        s="Your answer is: "+sum; 
+    }
+
+    document.getElementById("scbnans").innerHTML=s;
+
+}
+
+
+  function numcubesRangecal()
+    {
+
+    var num1=document.getElementById("numrange1").value;
+    var num2=document.getElementById("numrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        var count = 0;
+        s="Number of Perfect Cubes in the given range: ";
+        cubes = "Cubes are: ";
+        cbrt1 = Math.trunc(Math.cbrt(num1));
+        cbrt2 = Math.trunc(Math.cbrt(num2));
+        for(var i=cbrt1; i<=cbrt2;i++){
+            if(i**3>=num1 && i**3<=num2){
+                count++;
+                var ans = i**3;
+                cubes += ans.toString() + ", ";
+            }
+        }
+        cubes = cubes.substring(0, cubes.length-2);
+        s += count;
+    }
+    document.getElementById("numcubesRangeans").innerHTML=s;
+    document.getElementById("numcubesans").innerHTML=cubes;
+}
+
+
+function squaresRangecal()
+{
+    var num1=document.getElementById("sqrange1").value;
+    var num2=document.getElementById("sqrange2").value;
+    var s="";
+    if(num1=="" || num2=="")
+    {
+       s= "Please enter both numbers";
+    }
+    else{
+        s="Perfect squares in the given range: ";
+        sqrt1 = Math.trunc(Math.sqrt(num1));
+        sqrt2 = Math.trunc(Math.sqrt(num2));
+        for(var i=sqrt1; i<=sqrt2;i++){
+            if(i**2>=num1 && i**2<=num2){
+                var ans = i**2;
+                s += ans.toString() + "   ";
+            }
+        }
+    }
+    document.getElementById("squaresRangeans").innerHTML=s;
+}
+
 function cubesRangecal()
 {
-    console.log("cubes");
+
     var num1=document.getElementById("range1").value;
     var num2=document.getElementById("range2").value;
     var s="";
@@ -852,4 +920,384 @@ function ppcal()
 
     document.getElementById("ppans").innerHTML=ans;
 
+}
+
+function eircal()
+{
+    var a=document.getElementById("air").value;
+    var b=document.getElementById("nop").value;
+    var c=document.getElementById("cprd").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Enter all the values to obtain answer";
+    }
+
+    else
+    {
+
+        var x=parseInt(a)/100;
+        var y=parseInt(c);
+        var z=parseInt(b);
+        var rate_period= ((1+(x/z))**z)-1;
+        rate_period=rate_period*100;
+        ans="Effective Annual Interest Rate per Period: "+rate_period+"<br>";
+    }
+    document.getElementById("eirans").innerHTML=ans;
+}
+function errpercal()
+{
+    var a=document.getElementById("acval").value;
+    var b=document.getElementById("expval").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter all the values";
+    }
+    else{
+    var c= ((b-a)/a)*100;
+    ans="The error percentage is: "+c+"%";
+    }
+    document.getElementById("errperans").innerHTML=ans;
+
+}
+
+
+function wmccal()
+{
+    var num1=document.getElementById("wmcx").value;
+    var num2=document.getElementById("wmcw").value;
+    if(num1==""||num2=="")
+    {
+        ans="Please enter all the values";
+    }
+    else{
+
+    num1=num1.trim();
+    num1 = num1.split(" ");
+    var len1=parseInt(num1.length);
+    var number1=[]
+    for (i = 0; i < len1; i++) 
+    {
+        number1[i] = parseFloat(num1[i].trim());
+    }
+
+    num2=num2.trim();
+    num2 = num2.split(" ");
+    var len2=parseInt(num2.length);
+    var number2=[]
+    for (i = 0; i < len2; i++) 
+    {
+        number2[i] = parseFloat(num2[i].trim());
+    }
+   
+    if(len1!=len2)
+    {
+        ans="Your number of data and weight are not equal ";
+    }
+    else
+    {
+        var ans1=[];
+        var sum=0, wsum=0;
+        for (i = 0; i < len1; i++) 
+        {
+            ans1[i] = number2[i]*number1[i];
+            sum+=ans1[i];
+            wsum+=number2[i];
+        }
+
+        for (i = 0; i < len1; i++) 
+        {
+            console.log(ans[i]);
+        }
+
+        console.log(wsum);
+        console.log(sum);
+        var wm=sum/wsum;
+        ans="The calculated weighted mean is: "+wm;
+
+    }
+    
+    }
+    document.getElementById("wmcans").innerHTML=ans;
+
+
+function cvcal()
+{
+    var num=document.getElementById("cvsd").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num=="")
+    {
+       s= "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else{
+    num=num.trim();
+    num = num.split(" ");
+    var len=parseInt(num.length);
+   
+    var number=[]
+    for (i = 0; i < len; i++) {
+        number[i] = parseFloat(num[i].trim());
+    }
+
+    var sum=0;
+    for (i = 0; i < len; i++) {
+       sum=sum+number[i];
+    }
+    
+    var mean=sum/len;
+    var varrzlt=0;
+    for (i = 0; i < len; i++) {
+        varrzlt = varrzlt + ((number[i]-mean)**2);
+    }
+
+    varrzlt = varrzlt/(len-1);
+    var sdev = Math.sqrt(varrzlt);
+    console.log(sdev);
+    console.log(mean);
+
+    s="The Coeffecient of Variation is: "+sdev/mean;
+
+    }
+
+    document.getElementById("cvans").innerHTML=s;
+
+
+
+
+
+function rmscal()
+{
+    var num=document.getElementById("rmi").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+        var sum=0;
+        for (i = 0; i < len; i++) {
+            sum=sum+(number[i]**2);
+        }
+
+        sum=sum/len;
+        sum=Math.sqrt(sum);
+        ans="The root mean square of given input is: "+sum;
+        
+    }
+    document.getElementById("rmsans").innerHTML=ans;
+
+}
+
+
+
+
+
+function zscorecal()
+{ 
+    var a=document.getElementById("rawscore").value;
+    var b=document.getElementById("ppmean").value;
+    var c=document.getElementById("stdtn").value;
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all the values";
+    }
+    else
+    {
+              var z= (a-b)/c;
+              ans="The calculated Z Score is: "+z;
+    }
+    document.getElementById("zscoreans").innerHTML=ans;
+}
+
+function slpsolve()
+{
+    var a=document.getElementById("slx1").value;
+    var b=document.getElementById("sly1").value;
+    var c=document.getElementById("slx2").value;
+    var d=document.getElementById("sly2").value;
+    var ans="";
+    if(a==""||b==""||c==""||d=="")
+    {
+        ans="Please enter all values to calculate slope";
+    }
+    else
+    {
+        var p=(d-b)/(c-a);
+        ans="Calculated slope is: "+p;
+    }
+    document.getElementById("slpans").innerHTML=ans;
+
+}
+
+
+
+}
+
+function suppangcal()
+{
+    var a=document.getElementById("ang").value;
+    var ans="";
+    if(a=="")
+    {
+        ans="Enter the angle to find the supplementary";
+    }
+    else
+    {
+        var t=parseInt(a);
+        var v=180-t;
+        ans="The supplementary angle of "+a+" is "+v;
+    }
+
+    document.getElementById("suppangans").innerHTML=ans;
+}
+function suppangvercal()
+{
+    var a=document.getElementById("ang1").value;
+    var b=document.getElementById("ang2").value;
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Enter both angles to verify";
+    }
+    else
+    {
+        var x=parseInt(a), y=parseInt(b);
+        if(x+y==180)
+        {ans="Entered angles are supplementary";}
+        else{
+        ans="Entered angles are not supplementary";
+        }
+    }
+
+    document.getElementById("suppangverans").innerHTML=ans;
+}
+
+}
+
+function faccal()
+{
+    var a=document.getElementById("facno").value;
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter number to find factors";
+    }
+    else
+    {
+        var factors=[];
+        ans="Factors of "+a+ " are: ";
+        for(var k=1;k<=a;k++)
+        {
+            if(a%k==0)
+            {
+                factors.push(k);
+            }
+        }
+
+        for(var i=0;i<factors.length;i++)
+        {
+            ans+=factors[i]+"  ";
+        }
+
+
+    }
+    document.getElementById("facans").innerHTML=ans;
+}
+
+
+function facpaircal()
+{
+    a=document.getElementById("facno").value;    
+    var ans="";
+    if(a=="")
+    {
+        ans="Please enter number to find pair factors";
+    }
+    else
+    {
+        var number1 = 0;
+        var number2 = a;
+        var answers=[];
+        for (var i = 1; i < a; i++)
+        {
+            if (a % i == 0)
+            {
+            number1 = i;
+              number2 = a/ i;
+              if (number2 >= number1)
+              {
+              answers.push(number1);
+              answers.push(number2);
+              }
+              else
+              {
+                  break;
+              }
+           }
+        }
+
+        ans="Pair factors are: ";
+        for(var i =0;i<answers.length-1;i=i+2)
+        {
+            ans+="( "+answers[i]+","+answers[i+1]+" )  ";
+        }
+    }
+ document.getElementById("facans").innerHTML=ans;
+}
+
+
+function clockcal()
+{
+    a=document.getElementById("hclock").value;  
+    b=document.getElementById("mclock").value;   
+    var ans="";
+    if(a==""||b=="")
+    {
+        ans="Please enter both minutes and hour to find angle";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        var angmin=b*6;
+        var anghour=30*a+0.5*b
+
+        ans="Angle from minute to hour hands: "+Math.abs(anghour-angmin)+" degree";
+        ans+="<br>"
+        ans+="Angle from hour to minute hands: "+Math.abs(360-Math.abs(anghour-angmin))+" degree";
+    }
+    document.getElementById("clockans").innerHTML=ans;
+}
+
+function traprzlt()
+{
+
+    a=parseFloat(document.getElementById("tr1").value);    
+    b=parseFloat(document.getElementById("tr2").value);    
+    c=parseFloat(document.getElementById("tr3").value);    
+    d=parseFloat(document.getElementById("tr4").value);    
+    var k=(a+b)/2;
+    var traparea= c*k;
+    var trapvol=c*d*k;
+
+    var ans="The calculated area is: "+traparea+" and volume is: "+trapvol;
+    document.getElementById("trapans").innerHTML=ans;
 }
