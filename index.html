@@ -10948,6 +10948,10 @@
                                            style="text-decoration:none;" href="#">TriDecagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#tetradecagon"
+                                           style="text-decoration:none;" href="#">TetraDecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#polycal"
                                            style="text-decoration:none;" href="#">Polygon Calculator</a></td>
                                 </tr>
@@ -16719,6 +16723,55 @@
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterdeca"
                            style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tetradecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">TetraDecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 15.3345 \space a^2\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 14 \times a \]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Regular_polygon_14_annotated.svg/220px-Regular_polygon_14_annotated.svg.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="text" placeholder="Enter side (a)"
+                               id="inputsidetetradec">
+                        <br>
+                        <button type="submit" class = "btn btn-dark"onclick="tetradecagon()">Find</button>       
+                        <p class="stopwrap" id="resultofareatetradec"
+                           style="font-family:mathfont;"></p>                        
+                        <p class="stopwrap" id="resultofperimetertetradec"
+                           style="font-family:mathfont;"></p>
                     </div>
                     <!---TILL-->
                 </div>

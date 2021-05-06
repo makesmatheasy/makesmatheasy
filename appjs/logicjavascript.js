@@ -7425,6 +7425,13 @@ function tridecagon(){
     document.getElementById("resultofareatridec").innerHTML = "The area is "+area
     document.getElementById("resultofperimetertridec").innerHTML = "The perimeter is "+per
 }
+function tetradecagon(){
+    let side = parseFloat(document.getElementById("inputsidetetradec").value)
+    let area = 15.3345*side*side
+    let per = 14*side
+    document.getElementById("resultofareatetradec").innerHTML = "The area is "+area
+    document.getElementById("resultofperimetertetradec").innerHTML = "The perimeter is "+per
+}
 
 function permutationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "block";
