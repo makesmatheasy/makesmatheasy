@@ -197,8 +197,9 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
-        "#thedif",
+        "#thdif",
         "#corgeo",
+        "#ttest",
         "#betagamma",
         "#parallel",
         "#unitconcal",
@@ -330,7 +331,9 @@ function openit(id) {
         "#relationtypes",
         "#skew",
         "#clocks",
-        "#slvxs"
+        "#slvxs",
+        "#rankcals",
+
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

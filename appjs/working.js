@@ -340,6 +340,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ttestbtn").click(function () {
+        openit("#ttest");
+        closenav();
+        clearall();
+    });    
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
@@ -998,12 +1003,22 @@ $(document).ready(function () {
         clearall();
     });
 
+<<<<<<< HEAD
     $("#slvx").click(function(){
         openit("#slvxs");
         closenav();
         clearall();
     });
 
+||||||| 13ef029
+
+=======
+    $("#perrankcalbtn").click(function(){
+        openit("#rankcals");
+        closenav();
+        clearall();
+    });
+>>>>>>> 772cc7d72067507f76786794ed09df329865a1cc
 })
 
 function loader(action) {
