@@ -1617,7 +1617,6 @@ function gif() {
     }
 }
 
-<<<<<<< HEAD
 // dip - calculator to find direct proportion
 function dip() {
     var dipnum1 = parseInt(document.getElementById("dipnum1").value);
@@ -1637,9 +1636,7 @@ function inDP() {
 }
 
 function fp(){
-=======
 function fp() {
->>>>>>> percentage change in volume of a sphere added
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if (giffnum >= 0) {
         let ans1 = Math.floor(giffnum)
@@ -1654,7 +1651,6 @@ function fp() {
     }
 }
 
-<<<<<<< HEAD
 // Work and Time calculator
 function getUnknown() {
     selectElement = 
@@ -1708,28 +1704,22 @@ function findMen() {
 // Work and Time ended
 
 function parapipe(){
-=======
 function parapipe() {
->>>>>>> percentage change in volume of a sphere added
     var first = document.getElementById("para1").value
     var second = document.getElementById("para2").value
     var third = document.getElementById("para3").value
 
     var volume = parseInt(first) * parseInt(second) * parseInt(third);
     var surfacearea = 2 * (parseInt(first) * parseInt(second) + parseInt(second) * parseInt(third) + parseInt(third) * parseInt(first));
-<<<<<<< HEAD
     var diag = (parseInt(first)**2 + parseInt(second)**2 + parseInt(third)**2);
     var diagonal = Math.sqrt(diag);
-=======
     var diagonal = Math.sqrt(parseInt(first) ** 2 * parseInt(second) ** 2 * parseInt(third) ** 2)
->>>>>>> percentage change in volume of a sphere added
 
     document.getElementById("volparapipe").innerHTML = "The volume is " + volume.toFixed(3)
     document.getElementById("saparapipe").innerHTML = "The Surface Area is " + surfacearea.toFixed(3)
     document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
 }
 
-<<<<<<< HEAD
 
 function cramer(){
     var a=parseFloat(document.getElementById('cab').value);
@@ -1773,7 +1763,6 @@ function findsectorarea(){
         document.getElementById("sectorarea2").innerHTML = "";
     }
 
-=======
 function findsecarea() {
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
@@ -1782,7 +1771,6 @@ function findsecarea() {
     document.getElementById("secans2").innerHTML = "\\[\\frac{" + r + "^2\\times " + ang + "}{2} \\space = " + ans + "\\space\\]";
     renderMathInElement(document.getElementById("secans1"));
     renderMathInElement(document.getElementById("secans2"));
->>>>>>> percentage change in volume of a sphere added
 }
 
 function partialdiffsolve() {
@@ -2399,7 +2387,6 @@ function angletwoplanesolve() {
     var explain = document.getElementById("angleplane");
     explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
     renderMathInElement(document.getElementById("angleplane"));
-<<<<<<< HEAD
     var ang = Math.acos((Math.abs(a*a1 + b*b1 +c*c1))/(Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))));
     
     document.getElementById('angleplaneop').innerHTML= 'Angle between plane 1 and 2 is '+ (ang*180/Math.PI).toFixed(2) + '&deg';
@@ -2437,7 +2424,6 @@ function vectorsub(){
     var sub1 = (a-d);
     var sub2 = (b-e);
     var sub3 = (c-f);
-=======
     var ang = Math.acos((Math.abs(a * a1 + b * b1 + c * c1)) / (Math.sqrt((a * a + b * b + c * c) * (a1 * a1 + b1 * b1 + c1 * c1))));
 
     document.getElementById('angleplaneop').innerHTML = 'Angle between plane 1 and 2 is ' + (ang * 180 / Math.PI).toFixed(2) + '&deg';
@@ -2467,7 +2453,6 @@ function vectorsub() {
     var sub1 = (a - d);
     var sub2 = (b - e);
     var sub3 = (c - f);
->>>>>>> percentage change in volume of a sphere added
     document.getElementById("vectorsub1").style.display = "block";
     document.getElementById("vsubi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1);
     if (sub2 < 0)
@@ -2492,11 +2477,8 @@ function vectordot() {
     var mult2 = (b * e);
     var mult3 = (c * f);
     var mult = mult1 + mult2 + mult3;
-<<<<<<< HEAD
     document.getElementById("vectordot1").innerHTML = "\\[ ="  + (mult) + "\\]";
-=======
     document.getElementById("vectordot1").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space =" + (mult) + "\\]";
->>>>>>> percentage change in volume of a sphere added
     renderMathInElement(document.getElementById("vectordot1"));
   
     document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
@@ -2728,7 +2710,6 @@ function solvetetracal(){
 }
 
 function solvetetra() {
-<<<<<<< HEAD
     var a = document.getElementById("inputsidetetra").value;
     var voloutput = document.getElementById("resultoftetravol");
     var heioutput = document.getElementById("resultoftetrahei");
@@ -2740,7 +2721,6 @@ function solvetetra() {
     var crtemp = "";
     var inrtemp = "";
     var areatemp = "";
-=======
     var a = document.getElementById("inputtsidetetra").value;
     console.log(a)
     var resultvolt = document.getElementById("resultofvolt");
@@ -2773,7 +2753,6 @@ function solvetetra() {
         document.getElementById("resultofsurare").innerHTML = "\\[Surface \\space Area \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\sqrt{3} \\times (" + a + ")^2\\ = " + area + " \\]";
         renderMathInElement(document.getElementById("resultofsurare"));
     }
->>>>>>> percentage change in volume of a sphere added
     if (a != "") {
         voltemp += "\\[Volume \\space of \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(0.11785113 * a * a * a)).toFixed(2) + "\\]";
         voloutput.innerHTML = voltemp;
@@ -4189,8 +4168,6 @@ function ellipsoidsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-<<<<<<< HEAD
-=======
 //Traingular Prism
 function prismsolve() {
     var length = document.getElementById("inputprismlength").value;
@@ -4218,7 +4195,6 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
->>>>>>> percentage change in volume of a sphere added
 
 //square Prism
 function sqprismsolve() {
@@ -7369,14 +7345,11 @@ function gp() {
 
 function igp() {
     var a = document.getElementById("fterm").value
-<<<<<<< HEAD
     var r = parseFloat(document.getElementById("r1").value)
     if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
     {
-=======
     var r = parseFloat(document.getElementById("r").value)
     if (isNaN(parseInt(a)) || isNaN(parseInt(r))) {
->>>>>>> percentage change in volume of a sphere added
         document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
         return;
     }
@@ -7768,8 +7741,6 @@ function std() {
 
 // standard deviation end
 
-<<<<<<< HEAD
-=======
 ///////// Binary and Decimal Conversion ///////////
 
 //Function that performs conversion
@@ -7795,7 +7766,6 @@ function convertBinDec() {
     } else if (fromBase === "Binary") {
         if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
->>>>>>> percentage change in volume of a sphere added
 
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
@@ -7924,8 +7894,6 @@ function bitwiseCalc() {
 }
 
 /////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-=======
 //Function that performs conversion of Octal/Binary/Decimal
 function convertBinOct() {
     const fromBase = document.getElementById("octal-binary-select1").value;
@@ -7953,7 +7921,6 @@ function convertBinOct() {
     }
 }
 
->>>>>>> percentage change in volume of a sphere added
 //----------------------------
 //Function that performs anyBase to anyBase Conversion
 function convertAnyBaseToAnyBase() {
@@ -8011,8 +7978,6 @@ function convertAnyBaseToAnyBase() {
 
 }
 
-<<<<<<< HEAD
-=======
     if (fromBase === "Octal" && toBase === "Hexadecimal") {
         result.innerHTML = fracDectoBinHexOct(calculatefrac(input, 8), 16);;
     } else if (fromBase === "Hexadecimal" && toBase === "Octal") {
@@ -8026,7 +7991,6 @@ function convertAnyBaseToAnyBase() {
         result.innerHTML = "";
     }
 }
->>>>>>> percentage change in volume of a sphere added
 //---------------------------------------------------------------------
 
 //Function for addition of any number system
@@ -8196,7 +8160,6 @@ function subBinDecHexOct() {
     } else if (base === "Hexa Decimal") {
         var add2 = "";
         var ans2 = "";
-<<<<<<< HEAD
         var sixtnco= calculateSixteenComplement(input2);
         print += "<h5>STEP 0 : Find 16's complement of Subtrahend</h5>"+input2+"->"+sixtnco;
         add2 = (parseInt(sixtnco,16)+parseInt(input1,16)).toString(16);
@@ -8218,7 +8181,6 @@ function subBinDecHexOct() {
             print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
             print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans2 + "</span>";
         } else if (add2.length < input1.length){
-=======
         var sixtnco = calculateSixteenComplement(input2);
         add2 = (parseInt(sixtnco, 16) + parseInt(input1, 16)).toString(16);
         if (add2.length == input1.length) {
@@ -8228,7 +8190,6 @@ function subBinDecHexOct() {
             ans2 = add2.substring(1);
             result.innerHTML = ans2;
         } else if (add2.length < input1.length) {
->>>>>>> percentage change in volume of a sphere added
             var a3 = input1.length - add2.length;
             a3 = Math.pow(10, a3);
             ans2 = a3 + add2;
@@ -8244,7 +8205,6 @@ function subBinDecHexOct() {
     } else if (base === "Decimal") {
         var add3 = "";
         var ans3 = "";
-<<<<<<< HEAD
         var tenco= calculateTenComplement(input2);
         print += "<h5>STEP 0 : Find 10's complement of Subtrahend</h5>"+input2+"->"+tenco;
         add3 = (parseInt(tenco)+parseInt(input1)).toString();
@@ -8266,7 +8226,6 @@ function subBinDecHexOct() {
             print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
             print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans3 + "</span>";
         } else if (add3.length < input1.length){
-=======
         var tenco = calculateTenComplement(input2);
         add3 = (parseInt(tenco) + parseInt(input1)).toString();
         if (add3.length == input1.length) {
@@ -8276,7 +8235,6 @@ function subBinDecHexOct() {
             ans3 = add3.substring(1);
             result.innerHTML = ans3;
         } else if (add3.length < input1.length) {
->>>>>>> percentage change in volume of a sphere added
             var a4 = input1.length - add3.length;
             a4 = Math.pow(10, a4);
             ans3 = a4 + add3;
