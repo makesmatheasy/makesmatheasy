@@ -687,21 +687,31 @@ function ssqncal()
     var num=document.getElementById("ssqn").value;
     num = parseInt(num);
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var soutput = document.getElementById("ssqnans");
     var s="";
     if(num=="")
     {
-       s= "Please enter number";
+       s += "\\[Please \\space enter \\space number \\]";
+       soutput.innerHTML = s;
+       renderMathInElement(soutput);
     }
     else if(!valid.test(num))
     {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+        s += "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        soutput.innerHTML = s;
+        renderMathInElement(soutput);
+    }
+    else if(num<1){
+        s += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        soutput.innerHTML = s;
+        renderMathInElement(soutput);
     }
     else{
         var sum=Math.trunc((num*(num+1)*(2*num+1))/6);
-        s="Your answer is: "+sum;
+        s += "\\[Your \\space answer \\space is: " + sum + "\\]";
+        soutput.innerHTML = s;
+        renderMathInElement(soutput);
     }
-
-    document.getElementById("ssqnans").innerHTML=s;
 
 }
 
@@ -710,21 +720,31 @@ function scbncal()
     var num=document.getElementById("scbn").value;
     num = parseInt(num);
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
-    var s="";
+    var soutput3 = document.getElementById("scbnans");
+    var stemp="";
     if(num=="")
     {
-       s= "Please enter number";
+        stemp += "\\[Please \\space enter \\space number \\]";
+        soutput3.innerHTML = stemp;
+        renderMathInElement(soutput3);
     }
     else if(!valid.test(num))
     {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+        stemp += "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        soutput3.innerHTML = stemp;
+        renderMathInElement(soutput3);
+    }
+    else if(num<1){
+        stemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        soutput3.innerHTML = stemp;
+        renderMathInElement(soutput3);
     }
     else{
         var sum=Math.trunc(((num*(num+1))/2)**2);
-        s="Your answer is: "+sum; 
+        stemp += "\\[Your \\space answer \\space is: " + sum + "\\]";
+        soutput3.innerHTML = stemp;
+        renderMathInElement(soutput3);
     }
-
-    document.getElementById("scbnans").innerHTML=s;
 
 }
 
