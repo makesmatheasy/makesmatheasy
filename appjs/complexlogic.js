@@ -1264,3 +1264,17 @@ function facpaircal()
 }
 
 
+function traprzlt()
+{
+
+    a=parseFloat(document.getElementById("tr1").value);    
+    b=parseFloat(document.getElementById("tr2").value);    
+    c=parseFloat(document.getElementById("tr3").value);    
+    d=parseFloat(document.getElementById("tr4").value);    
+    var k=(a+b)/2;
+    var traparea= c*k;
+    var trapvol=c*d*k;
+
+    var ans="The calculated area is: "+traparea+" and volume is: "+trapvol;
+    document.getElementById("trapans").innerHTML=ans;
+}
