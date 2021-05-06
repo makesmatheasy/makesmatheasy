@@ -809,6 +809,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="pdiffeqnbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Partial Differential
+                                Equations</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Partial Differential Equations','#pdiffeqn','c','pdiffeqnimgfav')"><img
+                                        id="pdiffeqnimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="powsbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Power Series</a>
                         </td>
@@ -5386,6 +5403,39 @@
                 </div>
 
             </div>
+        </div>
+        <div class="collapse" id="pdiffeqn">
+            <h2 style="text-align: center;">Partial Differential Equations</h2>
+            <br><br>
+            <h4>Charpit's Method</h4>
+            <p>This method is used for solving non-linear partial differential
+                equations of order one involving two independent variables.<br>
+                A general method for solving the most general non-linear partial
+                differential equation of order one i.e., the method for solving
+            </p>
+            <p>\[f(x,y,z,p,q)\space =\space 0\]</p>
+            <p>involving two independent variables x and y is given by Charpit and is
+                known as Charpit’s method. This method is applied to solve only
+                those partial differential equations which cannot be solved by already
+                known methods. The basic idea in Charpit’s method is the introduction
+                of another partial differential equation of order one of the form
+            </p>
+            <p>\[g(x,y,z,p,q)\space =\space\]</p>
+            <p>\[dz\space =\space pdx + qdy\]</p>
+            <p>This is a linear partial differential equation of order one with x, y,
+                z, p and q as independent variables and g as the dependent variable.
+                Thus, it can be solved by Lagrange’s method.
+            </p>
+            <p>Step 1. Transfer all the terms of given PDE to L.H.S. and denote the
+                entire expression in L.H.S. by f(x, y, z, p, q).
+            </p>
+            <p>Step 2. Write down the Charpit’s auxiliary equations.</p>
+            <p>Step 3. Find the values of ∂ f/ ∂ x , ∂ f/∂ y etc. occurring in Charpit’s auxiliary equations. Put them in Charpit auxiliary equations and
+                simplify.
+            </p>
+            <p>Step 4. Choose two proper fractions from Charpit’s auxiliary
+                equations such that the resulting integral may come out as simplest
+                relation involving at least one of p or q or both.</p>
         </div>
         <div class="collapse" id="diffeqn">
             <h2 style="text-align: center;">Differential Equations</h2>
