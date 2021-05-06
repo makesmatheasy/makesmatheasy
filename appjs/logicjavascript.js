@@ -1710,19 +1710,45 @@ function findMen() {
 // Work and Time ended
 
 function parapipe(){
-    var first = document.getElementById("para1").value
-    var second = document.getElementById("para2").value
-    var third = document.getElementById("para3").value
+    var first = document.getElementById("para1").value;
+    var second = document.getElementById("para2").value;
+    var third = document.getElementById("para3").value;
+    var voloutput = document.getElementById("volparapipe");
+    var saoutput = document.getElementById("saparapipe");
+    var diagoutput = document.getElementById("diagparapipe");
+    var voltemp = "";
+    var satemp = "";
+    var diagtemp = "";
+    if ((first != "") && (second != "") && (third != "") ) {
+        voltemp += "\\[" + first + "*" + second + "*" + third + "\\]";
+        voltemp += "\\[Volume \\space of \\space Parallelepiped \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(first * second * third)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ 2(" + first + "\\times " + second + "+" + second + "\\times" + third + "+" + third + "\\times" + first + ") \\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Parallelepiped \\space is \\space \\]";
+        satemp += "\\[" + eval(String(2 * (first * second + second * third + third * first))) + "\\]";
+        saoutput.innerHTML = satemp;
+        var dig = eval(String((first*first) + (second*second) + (third*third)));
+        var g = nerdamer.sqrt(dig).toString();
+        diagtemp += "\\[d= \\sqrt{" + first + "^2+" + second + "^2+" + third + "^2} \\]";
+        diagtemp += "\\[ \\sqrt{" + (first*first) + "+" + (second*second) + "+" + (third*third) + "} \\]";
+        diagtemp += "\\[ \\sqrt{" + dig + "} \\]";
+        diagtemp += "\\[Diagonal \\space of \\space Parallelepiped \\space is \\space \\]";
+        diagtemp += "\\["+ eval(g).toFixed(3) + "\\]";
+        diagoutput.innerHTML = diagtemp;
 
-    var volume = parseInt(first) * parseInt(second) * parseInt(third);
-    var surfacearea = 2 * (parseInt(first) * parseInt(second) + parseInt(second) * parseInt(third) + parseInt(third) * parseInt(first));
-    var diag = (parseInt(first)**2 + parseInt(second)**2 + parseInt(third)**2);
-    var diagonal = Math.sqrt(diag);
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(diagoutput);
 
-    document.getElementById("volparapipe").innerHTML = "The volume is " + volume.toFixed(3)
-    document.getElementById("saparapipe").innerHTML = "The Surface Area is " + surfacearea.toFixed(3)
-    document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
+    }
 }
+
+
 
 
 function cramer(){
@@ -1751,6 +1777,38 @@ function cramer(){
     cramoutput.innerHTML = "";
   }
 }
+
+function centsolve1() {
+    var a1 = parseInt(document.getElementById("a1m").value)
+    var b1 = parseInt(document.getElementById("a2m").value)
+    var c1 = parseInt(document.getElementById("a3m").value)
+    var a2 = parseInt(document.getElementById("a4m").value)
+    var b2 = parseInt(document.getElementById("a5m").value)
+    var c2 = parseInt(document.getElementById("a6m").value)
+    var a3 = parseInt(document.getElementById("a7m").value)
+    var b3 = parseInt(document.getElementById("a8m").value)
+    var c3 = parseInt(document.getElementById("a9m").value)
+    var a4 = parseInt(document.getElementById("a10m").value)
+    var b4 = parseInt(document.getElementById("a11m").value)
+    var c4 = parseInt(document.getElementById("a12m").value)
+    var x = (a1 + a2 + a3 + a4) / 4;
+    var y = (b1 + b2 + b3 + b4) / 4;
+    var z = (c1 + c2 + c3 + c4) / 4;
+    var centout = document.getElementById("centres");
+    var centemp = "";
+    if((a1 !="") && (a2 != "") && (a3 !="") && (a4 != "") && (b1 != "") && (b2 != "") && (b3 != "") && (b4 != "") && (c1 != "") && (c2 != "") && (c3 !="") && (c4 != "")){
+        centemp += "\\[Centroid \\space of \\space a \\space Tetrahedron \\ is \\space ( \\space \\frac{x_1+x_2+x_3+x_4}{4} \\space , \\space \\frac{y_1+y_2+y_3+y_4}{4} \\space , \\space \\frac{z_1+z_2+z_3+z_4}{4} \\space ) \\]";
+        centemp += "\\[( \\space \\frac{" + a1 + "+" + a2 + "+" + a3 + "+" +a4 + "}{4} \\space , \\space \\frac{" + b1 + "+" + b2 + "+" + b3 + "+" + b4 + "}{4} \\space , \\space \\frac{" + c1 + "+" + c2 + "+" + c3 + "+" + c4 + "}{4} \\space ) \\]";
+        centemp += "\\[( " + x + "," + y + "," + z + " )\\]";
+        centout.innerHTML = centemp;
+        renderMathInElement(centout);
+    }
+    else{
+        centout.innerHTML = "";
+    }
+    
+}
+
 function findsecarea() {
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
@@ -8276,6 +8334,19 @@ function multBinDecHexOct(){
 
 
 //----------------------------	//----------------------------
+
+//function for hamming distance between numbers
+function hammingDistance(x, y) {
+    let val = x ^ y;
+    let res = 0;
+  
+    while (val > 0) {
+      val &= val - 1;
+      res++;
+    }
+    
+    document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
+  };
 
 //function for hamming code
 function hammingCalc(){

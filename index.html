@@ -1634,6 +1634,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="skew"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Skewness Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Skewness Calculator','#skews','c','skewfav')"><img
+                                        id="skewfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="pythtriplebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Pythagorean Triplets</a>
                         </td>
@@ -3017,6 +3035,24 @@
                 </table>
             </li>
 
+            <!--Added Hamming Distance between numbers -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hamming-dist-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Distance</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hamming Dist','#hamming-dist','c','hamming-dist-imgfav')"><img
+                                        id="hamming-dist-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <div class="dropdown-divider"></div>
         </div>
 
@@ -3473,25 +3509,31 @@
         </div>
         <!--        start factors-->
         <div class="collapse" id="factors">
-            <div class="form-group">
-                <input type="tel" id="numforfactorhcflcm" class="form__field"
-                       placeholder="Enter Number(s) Space Separated">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-light" onclick="findFactors()">Factors</button>
-                <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
-                        class="btn btn-light">
-                    Prime Factors
-                </button>
-                <button type="button" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')"
-                        class="btn btn-light">
-                    LCM
-                </button>
-                <button type="button" onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')"
-                        class="btn btn-light">
-                    HCF
-                </button>
-            </div>
+            <form>
+                <div class="form-group">
+                    <input type="tel" id="numforfactorhcflcm" class="form__field"
+                           placeholder="Enter Number(s) Space Separated">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-light" onclick="findFactors()">Factors</button>
+                    <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
+                            class="btn btn-light">
+                        Prime Factors
+                    </button>
+                    <button type="button" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')"
+                            class="btn btn-light">
+                        LCM
+                    </button>
+                    <button type="button" onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')"
+                            class="btn btn-light">
+                        HCF
+                    </button>
+                    <button type="button" onclick="this.form.reset();"
+                            class="btn btn-light">
+                        Reset
+                    </button>
+                </div>
+            </form>
 
             <!--            prime factors with steps-->
             <p id="dividefactor" style="display:inline-block;;font-family:mathfont;"></p>
@@ -4729,6 +4771,31 @@
                 class="stopwrap"
                align="right"></p>
             <h4 style="color:white" id="angleplaneop"> </h4> 
+
+            
+                <h3 style="text-align: center;">Centroid of a Tetrahedron</h3>
+                <div class= "coll">
+             <p>
+              Coordinate 1 = (<input type="text" id="a1m" size=5 value='' placeholder="x1"> , 
+              <input type="text" id="a2m" size=5 value='' placeholder="y1">, <input type="text" id="a3m" size=5 value='' placeholder="z1">)
+             <br>
+              Coordinate 2 = (<input type="text" id="a4m" size=5 value='' placeholder="x2"> , 
+             <input type="text" id="a5m" size=5 value='' placeholder="y2">, <input type="text" id="a6m" size=5 value='' placeholder="z2">)
+             <br>
+         Coordinate 3 = (<input type="text" id="a7m" size=5 value='' placeholder="x3"> , 
+     <input type="text" id="a8m" size=5 value='' placeholder="y3">, <input type="text" id="a9m" size=5 value='' placeholder="z3">)
+         <br>
+         Coordinate 4 = (<input type="text" id="a10m" size=5 value='' placeholder="x4"> , 
+         <input type="text" id="a11m" size=5 value='' placeholder="y4">, <input type="text" id="a12m" size=5 value='' placeholder="z4">)
+             <br><br>
+     <button type="button" class="btn btn-light" onclick=centsolve1()>
+             Find Centroid
+     </button><br>
+     </p>
+ </div>
+ <h4 id="centres" style="color: white;"></h4>
+ <h4 class="text-center" id="line22"> </h4> <br>
+
 
         </div>
         <!-- Start of types of relations  -->
@@ -9229,10 +9296,13 @@
         </div>
         <div class="collapse" id="giff">
             <h2>Greatest Integer Function and Fractional Part</h2>
-            <input class = "form__field"type="text" id="giffnum">
+            <form>
+                <input class = "form__field"type="text" id="giffnum">
             <br><br>
             <button class = "btn btn-light" onclick="gif()">Greatest Integer Function</button>
             <button class = "btn btn-light" onclick="fp()">Fractional Part Function</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
             <p id="giffans"></p>
             <p id="fpans"></p>
         </div>
@@ -9241,25 +9311,31 @@
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>
             <h2 style="margin-bottom: 2rem;">Direct Proportion Calculator</h2>
             <p>X<sub>1</sub>/Y<sub>1</sub> = X<sub>2</sub>/Fourth Value</p>
-            <input class = "form__field"type="text" id="dipnum1" placeholder="Enter the First Value(X1)">
-            <br><br>
-            <input class = "form__field"type="text" id="dipnum2" placeholder="Enter the second value(Y1)">
-            <br><br>
-            <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
-            <br><br>
-            <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
-            <p id="dipans"></p>
+            <form>
+                <input class = "form__field"type="text" id="dipnum1" placeholder="Enter the First Value(X1)">
+                <br><br>
+                <input class = "form__field"type="text" id="dipnum2" placeholder="Enter the second value(Y1)">
+                <br><br>
+                <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+                <p id="dipans"></p>
+            </form>
             
             <h2 style="margin-bottom: 2rem; margin-top: 4rem;">Indirect Proportion Calculator</h2>
             <p>X<sub>1</sub>.Y<sub>1</sub> = X<sub>2</sub>.(Fourth Value)</p>
-            <input class = "form__field"type="text" id="inDPnum1" placeholder="Enter the First Value(X1)">
-            <br><br>
-            <input class = "form__field"type="text" id="inDPnum2" placeholder="Enter the second value(Y1)">
-            <br><br>
-            <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
-            <br><br>
-            <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
-            <p id="inDPans"></p>
+            <form>
+                <input class = "form__field"type="text" id="inDPnum1" placeholder="Enter the First Value(X1)">
+                <br><br>
+                <input class = "form__field"type="text" id="inDPnum2" placeholder="Enter the second value(Y1)">
+                <br><br>
+                <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+                <p id="inDPans"></p>
+            </form>
         </div>
 
         <!-- Work and Time -->
@@ -10037,6 +10113,10 @@
                         onclick="check_prime('isprime')">
                     Check
                 </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
+                </button>
             </form>
             <br>
             <div class="form-group">
@@ -10046,7 +10126,7 @@
             </div>
 
             <div class="dropdown-divider"></div>
-            <div class="form-group">
+            <form class="form-group">
                 <div class="text-center">
                     <h2><label>Primes till entered number</label></h2>
                 </div>
@@ -10055,6 +10135,10 @@
                 <button type="button" class="btn btn-light"
                         onclick="prime_till_num('primetill')">
                     Find
+                </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
                 </button>
                 </form>
                 <br>
@@ -11724,9 +11808,13 @@
                     <input type="text" id="yval"  value='' placeholder="Enter y"
                         style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                     <br>
-                <button type="button" class="btn btn-light" onclick=exposol()>
+                <br>
+                <button type="button" class="btn btn-light" onclick="exposol();">
                     Calculate
-                </button><br>
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
                 </form>
             </div>
             <br>
@@ -11814,7 +11902,7 @@
             <!--sum of nterms in A.P.-->
             <br>
             <h4 class="d-flex justify-content-center">If first term, number of terms and common difference is given</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center">
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
             <!-- <form class="form-inline"> -->
                 <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
@@ -11825,10 +11913,20 @@
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <br>
                 <br>
-                <button type="button" class="btn btn-light"
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
                         onclick="sum_n_apsol('napterms','rapterms','r1val')">
-                    Find
-                </button>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="ResetVal()">
+                        Reset
+                        </button>
+                    </div>
+                </div>
             </form>
             <div class="form-group">
                 <p id="printAPseries" style="display:flex;font-family:mathfont;width:auto;"
@@ -11844,7 +11942,7 @@
                    align="right"></p>
             </div>
             <h4 class="d-flex justify-content-center">If first term,number of terms and last term is given</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center">
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                 <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <input type="number" id="ft" placeholder="Enter the first term(a) "
@@ -11853,9 +11951,19 @@
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <br>
                 <br>
-                <button type="button" class="btn btn-light" onclick=anotherap()>
-                    Find
-                </button>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=anotherap()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
             </form>
             <br>
             <p id="printAPseries1" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
@@ -11871,9 +11979,19 @@
                 <input type="tel" id="ap" placeholder="Enter AP(space separated)"
                        style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <br><br>
-                <button type="button" class="btn btn-light" onclick=apsum()>
-                    Find
-                </button>
+                <div class="row">
+                    <div class="col-6">        
+                        <button type="button" class="btn btn-light" onclick=apsum()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
             </form>
             <br>
             <!-- sum of nterms in G.P.  -->
@@ -11881,6 +11999,7 @@
             <br>
             <h2 class="d-flex justify-content-center">2) Sum of N terms of a Geometric Progression</h2>
             <div class="form-group d-flex flex-column align-items-center">
+            <form>
                 <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstterm"
                        placeholder="Enter first term"/>
@@ -11889,8 +12008,20 @@
                 <input type="number" style="width: 15.625rem;" class="form__field" id="number"
                        placeholder="Enter number of terms"/>
                 <br>
-                <button class="btn btn-light" onclick="gp()">Find</button>
-            </div>
+                <div class=" mt-3 row">
+                    <div class="col-6">
+                        <button class="btn btn-light" onclick="gp()">Find</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+                <br>
+            </form>
+                
             <div class="form-group">
                 <p id="printGPseries" style="display:flex;font-family:mathfont;width:auto;"
                    class="stopwrap"
@@ -11907,13 +12038,25 @@
             <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
                 1</h2>
             <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
+                <form>
+                    <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
                        placeholder="Enter first term"/>
                 <input type="number" style="width: 15.625rem;" class="form__field" id="r1"
                        placeholder="Enter ratio between terms"/>
                 <br>
-                <button class="btn btn-light" onclick="igp()">Find</button>
+                <div class="mt-3 row">
+                    <div class="col-6">      
+                         <button class="btn btn-light" onclick="igp()">Find</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
                 <br>
+                </form>
                 <br> <br>
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
@@ -11921,7 +12064,8 @@
             <!-- sum of nterms in H.P.  -->
             <h2 class="d-flex justify-content-center">3) Sum of N terms of a Harmonic Progression</h2>
             <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" style="width: 15.625rem;" class="form__field"
+                <form>
+                    <input type="number" style="width: 15.625rem;" class="form__field"
                        id="firstTerm"
                        placeholder="Enter first term"/>
                 <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
@@ -11929,8 +12073,19 @@
                 <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
                        placeholder="Enter number of terms"/>
                 <br>
-                <button class="btn btn-light" onclick="hp()">Find</button>
-            </div>
+                <div class=" mt-3 row">
+                    <div class="col-6">      
+                        <button class="btn btn-light" onclick="hp()">Find</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+                <br>
+                </form>
             <div class="form-group">
                 <p id="printHPseries" style="display:flex;font-family:mathfont;width:auto;"
                    class="stopwrap"
@@ -11943,13 +12098,22 @@
     
                 <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term </h2>
                 <div class="form-group d-flex flex-column align-items-center">
-                <input type="number" name="ath" class="form__field" id="ath" width="5em" placeholder="Enter first number">
-                <p>&nbsp;</p>
-                <input type="number" name="differ" class="form__field" id="differ" placeholder="Enter common difference">
-                <p>&nbsp;</p>
-                <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
-                <p>&nbsp;</p>
-                <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
+                    <form>
+                        <input type="number" name="ath" class="form__field" id="ath" width="5em" placeholder="Enter first number">
+                        <p>&nbsp;</p>
+                        <input type="number" name="differ" class="form__field" id="differ" placeholder="Enter common difference">
+                        <p>&nbsp;</p>
+                        <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
+                        <p>&nbsp;</p>
+                        <div class="row">
+                            <div class="col-6">      
+                                <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                            </div>
+                        </div>
+                    </form>
                 <p id="hpans"></p>
                 <p>&nbsp;</p>
                 <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
@@ -12307,16 +12471,39 @@
 </div>
 </div>
 
-<div class="collapse" id="clocks">
+
+<div class="collapse" id="skews">
+    <h1 style="font-family:mathfont; text-align:center;">SKEWNESS CALCULATOR </h1>
+    <input type="text" name="skewinput" class="form__field" id="skewinput" width="5em" placeholder="Enter data set seperated by space">
+    <p>&nbsp;</p>
+
+    <button type="button" class="btn btn-outline-light" onclick="skewcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="skewans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">
+        How to Calculate Skewness:<br>
+        1. Calculate the mean and standard deviation<br>
+        2. Subtract the mean from each raw score<br>
+        3. Raise each of these deviations from the mean to the third power and sum<br>
+        4. Calculate skewness, which is the sum of the deviations from the mean, raise to the third power,<br> divided by number of cases minus 1, times the standard deviation raised to the third power.</p>
+
+
+</div>
+
+
     <h1 style="font-family:mathfont; text-align:center;">CLOCK ANGLE CALCULATOR </h1>
     <p>&nbsp;</p>
-    <input type="number" name="hclock" class="form__field" id="hclock" width="5em" placeholder="Enter hours of clock">
-    <p>&nbsp;</p>
-    <input type="number" name="mclock" class="form__field" id="mclock" placeholder="Enter minutes of clock">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="clockcal()">Calculate</button>
-    <p>&nbsp;</p>
-    <p id="clockans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+    <form>
+        <input type="number" name="hclock" class="form__field" id="hclock" width="5em" placeholder="Enter hours of clock">
+        <p>&nbsp;</p>
+        <input type="number" name="mclock" class="form__field" id="mclock" placeholder="Enter minutes of clock">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="clockcal()">Calculate</button>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="clockans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+    </form>
 
 
 </div>
@@ -12364,10 +12551,13 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">Root Mean Square Calculator </h1>
-    <input type="text" name="rmi" class="form__field" id="rmi" width="5em" placeholder="Enter inputs seperated by space">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="rmscal()">Calculate</button>
-    <p id="rmsans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+    <form>
+        <input type="text" name="rmi" class="form__field" id="rmi" width="5em" placeholder="Enter inputs seperated by space">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="rmscal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="rmsans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+    </form>
     <p style="color: white; text-align: center; font-size: 1.1em; font-family:mathfont">In mathematics, the root mean square is also known as the quadratic mean.<br>
      It is represented by RMS or rms. The root mean square is defined as the square root of the mean square.<br>
       We can also say that it is a generalised mean with the exponent value as 2. </p>   
@@ -12379,15 +12569,18 @@
 <div class="collapse" id="zscores">
 
     <h1 style="font-family:mathfont; text-align:center;">Z SCORE CALCULATOR </h1>
-    <input type="number" name="rawscore" class="form__field" id="rawscore" width="5em" placeholder="Enter Raw Score (x)">
-    <p>&nbsp;</p>
-    <input type="number" name="ppmean" class="form__field" id="ppmean" placeholder="Enter Population Mean (μ)">
-    <p>&nbsp;</p>
-    <input type="number" name="stdtn" class="form__field" id="stdtn" placeholder="Enter Standard Deviation (σ) ">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="zscorecal()">Calculate</button>
-    <p id="zscoreans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
-    <p>&nbsp;</p>
+    <form>
+        <input type="number" name="rawscore" class="form__field" id="rawscore" width="5em" placeholder="Enter Raw Score (x)">
+        <p>&nbsp;</p>
+        <input type="number" name="ppmean" class="form__field" id="ppmean" placeholder="Enter Population Mean (μ)">
+        <p>&nbsp;</p>
+        <input type="number" name="stdtn" class="form__field" id="stdtn" placeholder="Enter Standard Deviation (σ) ">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="zscorecal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="zscoreans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+    </form>
     <p style="color: white; text-align: center; font-family:mathfont">The z-score, also referred to as standard score, z-value, and normal score, among other things, is a dimensionless quantity that is used to indicate the signed, fractional, number of standard deviations by which an event is above the mean value being measured.<br>
      Values above the mean have positive z-scores, while values below the mean have negative z-scores. <br>The z-score can be calculated by subtracting the population mean from the raw score, or data point in question (a test score, height, age, etc.), then dividing the difference by the population standard deviation</p> 
 </div>   
@@ -12421,12 +12614,14 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">FACTORIZATION CALCULATOR </h1>
-    <input type="number" name="facno" class="form__field" id="facno" placeholder="Enter the number">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="facpaircal()">Factor Pairs</button>
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="faccal()">Factors</button>
-    
+    <form>
+        <input type="number" name="facno" class="form__field" id="facno" placeholder="Enter the number">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="facpaircal()">Factor Pairs</button>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="faccal()">Factors</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
     
     <div id="facans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></div>
     
@@ -12435,16 +12630,19 @@
 
 
 <div class="collapse" id="errpers">    
-    <h1 style="font-family:mathfont; text-align:center;">ERROR PERCNTAGE CALCULATOR </h1>
+    <h1 style="font-family:mathfont; text-align:center;">ERROR PERCENTAGE CALCULATOR </h1>
     <p>&nbsp;</p>
-    <input type="number" name="expval" class="form__field" id="expval" width="5em" placeholder="Enter experimental value">
-    <p>&nbsp;</p>
-    <input type="number" name="acval" class="form__field" id="acval" placeholder="Enter actual value">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="errpercal()">Calculate</button>
-    <p>&nbsp;</p>
-    <p id="errperans"></p>
-    <p>&nbsp;</p>
+    <form>
+        <input type="number" name="expval" class="form__field" id="expval" width="5em" placeholder="Enter experimental value">
+        <p>&nbsp;</p>
+        <input type="number" name="acval" class="form__field" id="acval" placeholder="Enter actual value">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="errpercal()">Calculate</button>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="errperans"></p>
+        <p>&nbsp;</p>
+    </form>
     <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Percentage error is a measurement of the discrepancy between an observed and a true, or accepted value. <br>
     When measuring data, the result often varies from the true value.<br>
      Error can arise due to many different reasons that are often related to human error, but can also be due to estimations and limitations of devices used in measurement.<br>
@@ -12503,11 +12701,14 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">Sum of Square Calculator </h1>
-    <input type="text" name="ssq" class="form__field" id="ssq" placeholder="Enter number whose square's sum you want to find">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="ssqcal()">Calculate</button> <p>&nbsp;</p>
-    <p id="ssqans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
-    
+    <form>
+        <input type="text" name="ssq" class="form__field" id="ssq" placeholder="Enter number whose square's sum you want to find">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="ssqcal()">Calculate</button> <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="ssqans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    </form>
+
     <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Square : <br> <br> For two numbers : x2 + y2 = (x + y)2– 2ab ; x and y are real numbers <p>&nbsp;</p> For three numbers : x2 + y2+z2 = (x+y+z)2-2xy-2yz-2xz ; x,y and z are real numbers
     <p>&nbsp;</p> For n Natural Numbers : Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p> For first n Even Numbers : Σ(2n)2 =[2n(n+1)(2n+1)]/3 <p>&nbsp;</p> For first n Odd Numbers : Σ(2n-1)2 = [n(2n+1)(2n-1)]/3
     </div>
@@ -12533,10 +12734,13 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">Sum of Squares of N Natural Numbers </h1>
-    <input type="text" name="ssqn" class="form__field" id="ssqn" placeholder="Enter the number upto which you want to find sum of squares">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="ssqncal()">Calculate</button> <p>&nbsp;</p>
-    <p id="ssqnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    <form>
+        <input type="text" name="ssqn" class="form__field" id="ssqn" placeholder="Enter the number upto which you want to find sum of squares">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="ssqncal()">Calculate</button> <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="ssqnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    </form>
     
     <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Squares of N Natural numbers : <br> <br>
     Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p>
@@ -12547,10 +12751,13 @@
 <div class="collapse" id="socbsn">
     
     <h1 style="font-family:mathfont; text-align:center;">Sum of Cubes of N Natural Numbers </h1>
-    <input type="text" name="scbn" class="form__field" id="scbn" placeholder="Enter the number upto which you want to find sum of cubes">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="scbncal()">Calculate</button> <p>&nbsp;</p>
-    <p id="scbnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    <form>
+        <input type="text" name="scbn" class="form__field" id="scbn" placeholder="Enter the number upto which you want to find sum of cubes">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="scbncal()">Calculate</button> <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="scbnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    </form>
     
     <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Cubes of N Natural numbers : <br> <br>
     Σn2 = [n(n+1)/2]^2<p>&nbsp;</p>
@@ -12987,8 +13194,7 @@
             <div class="col-6">
                 <div class="form-group">
                     <h5>Choose Number System</h5><br>
-                    <select id="subtract-all-select1" class="form__field"
-                            onchange="subBinDecHexOct()">
+                    <select id="subtract-all-select1" class="form__field">
                         <option class="form_field" style="background-color: #232a36;">
                             Binary
                         </option>
@@ -13704,6 +13910,30 @@
             </div>
         </div>
   <!-- end of Hamming Code -->
+
+<!-- start of Hamming Dist -->
+<div>
+    <div class="collapse" id="hamming-dist">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the first number : &nbsp; &nbsp; </label>
+            <input type="number" id="numFirst" class="form__field" placeholder="x"
+                   style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            <label> Enter the second number : &nbsp; &nbsp;</label>
+            <input type="number" id="numSecond" class="form__field" placeholder="y"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="hammingDistance(document.getElementById('numFirst').value,document.getElementById('numSecond').value);">
+                Solve
+            </button>
+        </div>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="distResult"></p>
+        </div>
+    </div>
+</div>
+<!-- end of Hamming Dist -->
 
 
         <!--Start Binary to Hexadecimal-->
@@ -20486,6 +20716,9 @@
     } else {
         console.log("Desktop");
     }
+    function ResetVal(){
+    document.getElementById("myForm").reset();
+};
 </script>
 
 <script src="nerdamer/nerdamer.core.js"></script>
