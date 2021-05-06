@@ -350,6 +350,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#pdiffeqnbtn").click(function () {
+        openit("#pdiffeqn");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();

@@ -271,6 +271,7 @@ function openit(id) {
         "#vector",
         "#vec",
         "#diffeqn",
+        "#pdiffeqn",
         "#maxmin",
         "#locroots",
         "#tangent",
