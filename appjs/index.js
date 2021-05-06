@@ -328,8 +328,11 @@ function openit(id) {
         "#cvs",
         "#rmss",
         "#relationtypes",
+        "#clocks",
+        "#rankcals",
         "#skews",
         "#clocks"
+
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
