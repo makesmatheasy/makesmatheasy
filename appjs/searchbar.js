@@ -632,6 +632,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "POLYNOMIAL DEGREE"){
                         document.getElementById('degcal').click();
                     }
+                    else if (inp.value.toUpperCase() == "T TEST") {
+                        $("#ttest").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "T TEST"){
+                        document.getElementById('ttest').click();
+                    }
 
                     else if (inp.value.toUpperCase() == "STRAIN CALCULATOR") {
                         $("#straincalc").slideToggle();    
@@ -766,7 +772,7 @@ function autocomplete(inp, arr) {
 }
 
 
-var arrayofelements =  ["Divide", "Integration", "Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
+var arrayofelements =  ["Divide", "Integration", "Differentiation","T test", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
@@ -981,6 +987,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "ELLIPSE") {
         $("#ellipsecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "T TEST"){
+        document.getElementById('ttest').click(); 
+    }
+    else if (inp.value.toUpperCase() == "T TEST") {
+        $("#ttest").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "HYPERBOLA"){
         document.getElementById('hyperbolacollapse').click(); 

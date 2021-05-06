@@ -198,6 +198,7 @@ function openit(id) {
         "#parallel",
         "#unitconcal",
         "#giff",
+        "#ttest",
         "#dip",
         "#wandt",
         "#spiconcal",

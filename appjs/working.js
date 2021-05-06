@@ -333,6 +333,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ttestbtn").click(function () {
+        openit("#ttest");
+        closenav();
+        clearall();
+    });
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();

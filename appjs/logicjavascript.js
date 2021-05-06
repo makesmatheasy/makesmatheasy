@@ -1617,29 +1617,7 @@ function gif() {
     }
 }
 
-<<<<<<< HEAD
-// dip - calculator to find direct proportion
-function dip() {
-    var dipnum1 = parseInt(document.getElementById("dipnum1").value);
-    var dipnum2 = parseInt(document.getElementById("dipnum2").value);
-    var dipnum3 = parseInt(document.getElementById("dipnum3").value);
-    var fourthVal = (dipnum3 * dipnum2) / dipnum1;
-    document.getElementById("dipans").innerHTML = "The Fourth Value is " + fourthVal;
-}
-
-// inDP - calculator to find indirect proportion
-function inDP() {
-    var inDPnum1 = parseInt(document.getElementById("inDPnum1").value);
-    var inDPnum2 = parseInt(document.getElementById("inDPnum2").value);
-    var inDPnum3 = parseInt(document.getElementById("inDPnum3").value);
-    var fourthVal = (inDPnum1 * inDPnum2) / inDPnum3;
-    document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal;
-}
-
-function fp(){
-=======
 function fp() {
->>>>>>> percentage change in volume of a sphere added
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if (giffnum >= 0) {
         let ans1 = Math.floor(giffnum)
@@ -1654,126 +1632,20 @@ function fp() {
     }
 }
 
-<<<<<<< HEAD
-// Work and Time calculator
-function getUnknown() {
-    selectElement = 
-            document.querySelector('#unknown');
-    output = selectElement.value;
-    var arr = ["Work", "Time", "Men"];
-    for (var i = 0; i < arr.length; i++) {
-        var unknown = 'unknown' + arr[i];
-        document.getElementById(unknown).style.display = "none";
-    }
-
-    if (output == "Work") {
-        document.getElementById('unknownWork').style.display = "block";
-    } else if (output == "Time") {
-        document.getElementById('unknownTime').style.display = "block";
-    } else if (output == "Men") {
-        document.getElementById('unknownMen').style.display = "block";
-    }
-}
-
-function findWork() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const time2 = parseInt(document.getElementById('time2').value);
-    const men2 = parseInt(document.getElementById('men2').value);
-    let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
-    document.getElementById('workans').innerHTML = "This work done is " + workans; 
-}
-
-function findTime() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const work2 = parseInt(document.getElementById('work2').value);
-    const men2 = parseInt(document.getElementById('men2').value);
-    let timans = Math.ceil(work2 * (time1 * men1) / (work1 * men2));
-    document.getElementById('timeans').innerHTML = "This work done is " + timeans; 
-}
-
-function findMen() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const time2 = parseInt(document.getElementById('time2').value);
-    const work2 = parseInt(document.getElementById('work2').value);
-    let menans = Math.ceil(work2 * (time1 * men1) / (work1 * time2));
-    document.getElementById('menans').innerHTML = "This work done is " + menans; 
-}
-
-// Work and Time ended
-
-function parapipe(){
-=======
 function parapipe() {
->>>>>>> percentage change in volume of a sphere added
     var first = document.getElementById("para1").value
     var second = document.getElementById("para2").value
     var third = document.getElementById("para3").value
 
     var volume = parseInt(first) * parseInt(second) * parseInt(third);
     var surfacearea = 2 * (parseInt(first) * parseInt(second) + parseInt(second) * parseInt(third) + parseInt(third) * parseInt(first));
-<<<<<<< HEAD
-    var diag = (parseInt(first)**2 + parseInt(second)**2 + parseInt(third)**2);
-    var diagonal = Math.sqrt(diag);
-=======
     var diagonal = Math.sqrt(parseInt(first) ** 2 * parseInt(second) ** 2 * parseInt(third) ** 2)
->>>>>>> percentage change in volume of a sphere added
 
     document.getElementById("volparapipe").innerHTML = "The volume is " + volume.toFixed(3)
     document.getElementById("saparapipe").innerHTML = "The Surface Area is " + surfacearea.toFixed(3)
     document.getElementById("diagparapipe").innerHTML = "The diagonal is " + diagonal.toFixed(3)
 }
 
-<<<<<<< HEAD
-
-function cramer(){
-    var a=parseFloat(document.getElementById('cab').value);
-    var b=parseFloat(document.getElementById('cab1').value);
-    var c=parseFloat(document.getElementById('cab2').value);
-    var d=parseFloat(document.getElementById('cab3').value);
-    var e=parseFloat(document.getElementById('cab4').value);
-    var f=parseFloat(document.getElementById('cab5').value);
-    var res = ((a * e)-(b * d));
-    var res1 = ((c * e)-(b * f));
-    var res2 =((a * f)-(c * d));
-    var x = (res1 / res);
-    var y = (res2 / res);
-    var cramoutput = document.getElementById("cramerres");
-    var cramtemp = "";
-   if(a != "" && b != "" && c !=""){
-    cramtemp += "\\[Δ = " + res + ",\\space Δ_x = " + res1 + ",\\space Δ_y = " + res2 + " \\]";
-    cramtemp += "\\[X = " + x + ",\\space Y = " + y + "\\]";
-    cramtemp += "\\[The \\space solution \\space is \\space (X,Y) =  (" + x + "," + y + ") \\]";
-
-    cramoutput.innerHTML = cramtemp;
-    renderMathInElement(cramoutput);
-   }
-   else {
-    cramoutput.innerHTML = "";
-  }
-}
-
-function findsectorarea(){
-    var ang = document.getElementById("sectorcirang").value;
-    var r = document.getElementById("sectorcirrad").value;
-    var ans = (r**2 * ang)/2;
-
-    if ((ang!="") && (r!="")){
-        document.getElementById("sectorarea1").innerHTML = "\\[The \\space area \\space of \\space sector \\space is \\space \\space \\frac{r^2\\theta}{2} \\space\\]"
-        document.getElementById("sectorarea2").innerHTML = "\\[\\frac{"+r+"^2\\times "+ang+"}{2} \\space = " + ans + "sq \\space units \\space \\]";
-        renderMathInElement(document.getElementById("sectorarea1"));
-        renderMathInElement(document.getElementById("sectorarea2"));
-    } else{
-        document.getElementById("sectorarea1").innerHTML = "";
-        document.getElementById("sectorarea2").innerHTML = "";
-    }
-
-=======
 function findsecarea() {
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)
@@ -1782,7 +1654,6 @@ function findsecarea() {
     document.getElementById("secans2").innerHTML = "\\[\\frac{" + r + "^2\\times " + ang + "}{2} \\space = " + ans + "\\space\\]";
     renderMathInElement(document.getElementById("secans1"));
     renderMathInElement(document.getElementById("secans2"));
->>>>>>> percentage change in volume of a sphere added
 }
 
 function partialdiffsolve() {
@@ -2399,45 +2270,6 @@ function angletwoplanesolve() {
     var explain = document.getElementById("angleplane");
     explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
     renderMathInElement(document.getElementById("angleplane"));
-<<<<<<< HEAD
-    var ang = Math.acos((Math.abs(a*a1 + b*b1 +c*c1))/(Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))));
-    
-    document.getElementById('angleplaneop').innerHTML= 'Angle between plane 1 and 2 is '+ (ang*180/Math.PI).toFixed(2) + '&deg';
-    
-}
-
-function vectoradd(){
-    var a=parseFloat(document.getElementById('a1b').value);
-    var b=parseFloat(document.getElementById('a2b').value);
-    var c=parseFloat(document.getElementById('a3b').value);
-    var d=parseFloat(document.getElementById('b1c').value);
-    var e=parseFloat(document.getElementById('b2c').value);
-    var f=parseFloat(document.getElementById('b3c').value);
-    var add1 = (a+d);
-    var add2 = (b+e);
-    var add3 = (c+f);
-    document.getElementById("vectorsum1").style.display = "block";
-    document.getElementById("vsumi").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1)  ;
-    if(add2<0)
-    document.getElementById("vsumj").innerHTML =   (add2)  ;
-    else
-    document.getElementById("vsumj").innerHTML =  '+' +  (add2)  ;
-    if(add3<0)
-    document.getElementById("vsumk").innerHTML = (add3);
-    else
-    document.getElementById("vsumk").innerHTML =  '+' +  (add3) ;
-}
-function vectorsub(){
-    var a=parseFloat(document.getElementById('b1a').value);
-    var b=parseFloat(document.getElementById('b2a').value);
-    var c=parseFloat(document.getElementById('b3a').value);
-    var d=parseFloat(document.getElementById('c1b').value);
-    var e=parseFloat(document.getElementById('c2b').value);
-    var f=parseFloat(document.getElementById('c3b').value);
-    var sub1 = (a-d);
-    var sub2 = (b-e);
-    var sub3 = (c-f);
-=======
     var ang = Math.acos((Math.abs(a * a1 + b * b1 + c * c1)) / (Math.sqrt((a * a + b * b + c * c) * (a1 * a1 + b1 * b1 + c1 * c1))));
 
     document.getElementById('angleplaneop').innerHTML = 'Angle between plane 1 and 2 is ' + (ang * 180 / Math.PI).toFixed(2) + '&deg';
@@ -2467,7 +2299,6 @@ function vectorsub() {
     var sub1 = (a - d);
     var sub2 = (b - e);
     var sub3 = (c - f);
->>>>>>> percentage change in volume of a sphere added
     document.getElementById("vectorsub1").style.display = "block";
     document.getElementById("vsubi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1);
     if (sub2 < 0)
@@ -2492,11 +2323,7 @@ function vectordot() {
     var mult2 = (b * e);
     var mult3 = (c * f);
     var mult = mult1 + mult2 + mult3;
-<<<<<<< HEAD
-    document.getElementById("vectordot1").innerHTML = "\\[ ="  + (mult) + "\\]";
-=======
     document.getElementById("vectordot1").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space =" + (mult) + "\\]";
->>>>>>> percentage change in volume of a sphere added
     renderMathInElement(document.getElementById("vectordot1"));
   
     document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
@@ -2728,19 +2555,6 @@ function solvetetracal(){
 }
 
 function solvetetra() {
-<<<<<<< HEAD
-    var a = document.getElementById("inputsidetetra").value;
-    var voloutput = document.getElementById("resultoftetravol");
-    var heioutput = document.getElementById("resultoftetrahei");
-    var croutput = document.getElementById("resultoftetracr");
-    var inroutput = document.getElementById("resultoftetrainr");
-    var areaoutput = document.getElementById("resultoftetraarea");
-    var voltemp = "";
-    var heitemp = "";
-    var crtemp = "";
-    var inrtemp = "";
-    var areatemp = "";
-=======
     var a = document.getElementById("inputtsidetetra").value;
     console.log(a)
     var resultvolt = document.getElementById("resultofvolt");
@@ -2773,7 +2587,6 @@ function solvetetra() {
         document.getElementById("resultofsurare").innerHTML = "\\[Surface \\space Area \\newline \\space of \\space Regular \\space Tetrahedron \\space \\newline \\sqrt{3} \\times (" + a + ")^2\\ = " + area + " \\]";
         renderMathInElement(document.getElementById("resultofsurare"));
     }
->>>>>>> percentage change in volume of a sphere added
     if (a != "") {
         voltemp += "\\[Volume \\space of \\space Tetrahedron \\space \\newline \\frac{1}{6 \\sqrt{2}} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(0.11785113 * a * a * a)).toFixed(2) + "\\]";
         voloutput.innerHTML = voltemp;
@@ -4189,8 +4002,6 @@ function ellipsoidsolve() {
         tsaoutput.innerHTML = "";
     }
 }
-<<<<<<< HEAD
-=======
 //Traingular Prism
 function prismsolve() {
     var length = document.getElementById("inputprismlength").value;
@@ -4218,7 +4029,6 @@ function prismsolve() {
         tsaoutput.innerHTML = "";
     }
 }
->>>>>>> percentage change in volume of a sphere added
 
 //square Prism
 function sqprismsolve() {
@@ -7369,14 +7179,8 @@ function gp() {
 
 function igp() {
     var a = document.getElementById("fterm").value
-<<<<<<< HEAD
-    var r = parseFloat(document.getElementById("r1").value)
-    if(isNaN(parseInt(a)) || isNaN(parseInt(r)))
-    {
-=======
     var r = parseFloat(document.getElementById("r").value)
     if (isNaN(parseInt(a)) || isNaN(parseInt(r))) {
->>>>>>> percentage change in volume of a sphere added
         document.getElementById("sumigp").innerHTML = "Enter numbers only. Blank inputs are not allowed";
         return;
     }
@@ -7768,8 +7572,6 @@ function std() {
 
 // standard deviation end
 
-<<<<<<< HEAD
-=======
 ///////// Binary and Decimal Conversion ///////////
 
 //Function that performs conversion
@@ -7795,1399 +7597,1421 @@ function convertBinDec() {
     } else if (fromBase === "Binary") {
         if (input.search(/^[-.10]+$/) == -1)
             result.innerHTML = "Binary numbers can only have 0's and 1's";
->>>>>>> percentage change in volume of a sphere added
 
-//converts both integer and fractional part of  binary/hexa/octal to decimal
-function calculatefrac(value, base = 2) {
-    var [integer, fraction = ''] = value.toString().split('.');
+        //converts both integer and fractional part of  binary/hexa/octal to decimal
+        function calculatefrac(value, base = 2) {
+            var [integer, fraction = ''] = value.toString().split('.');
 
-    return parseInt(integer, base) + (integer[0] !== '-' || -1) * fraction.split('').reduceRight((r, a) => (r + parseInt(a, base)) / base, 0);
-}
-
-//converts both integer and fractional of decimal to binary/octal/hexadecimal
-function fracDectoBinHexOct(value, base) {
-    var i = 1;
-    var s = "";
-    var n;
-    var [integer, fraction = ''] = value.toString().split('.');
-    fraction = Math.pow(10, -1 * fraction.length) * fraction;
-
-    while (i <= 7) {
-        fraction = base * fraction;
-        s = s + parseInt(fraction).toString(base);;
-        fraction = "0" + fraction.toString().substring(fraction.toString().indexOf("."));
-        n = Math.abs(fraction);
-        if (n - Math.floor(n) == 0) {
-            break;
+            return parseInt(integer, base) + (integer[0] !== '-' || -1) * fraction.split('').reduceRight((r, a) => (r + parseInt(a, base)) / base, 0);
         }
-        i++;
+
+        //converts both integer and fractional of decimal to binary/octal/hexadecimal
+        function fracDectoBinHexOct(value, base) {
+            var i = 1;
+            var s = "";
+            var n;
+            var [integer, fraction = ''] = value.toString().split('.');
+            fraction = Math.pow(10, -1 * fraction.length) * fraction;
+
+            while (i <= 7) {
+                fraction = base * fraction;
+                s = s + parseInt(fraction).toString(base);;
+                fraction = "0" + fraction.toString().substring(fraction.toString().indexOf("."));
+                n = Math.abs(fraction);
+                if (n - Math.floor(n) == 0) {
+                    break;
+                }
+                i++;
+            }
+            return (parseInt(integer, 10).toString(base) + "." + s);
+        }
+
+
+        //////////////////////////////////////////////////////////////
+
+        ////////////// Bitwise Calculator Section /////////////////
+
+        //Function to clear inputs when user changes his/her numbering base system
+        function clearInputs() {
+            document.getElementById("bitwise-first-number").value = 0;
+            document.getElementById("bitwise-second-number").value = 0;
+            document.getElementById("bitwise-result").innerHTML = 0;
+        }
+
+        //Function that performs bitwise calculation
+        function bitwiseCalc() {
+
+            addEventListener("change", x => {
+                if (operation == "NOT")
+                    document.getElementById("bitwise-second-number").style = "display:none";
+                else
+                    document.getElementById("bitwise-second-number").style = "display:inline-block";
+            })
+            const operation = document.getElementById("bitwise-operation").value;
+            const numberSystem = document.getElementById("bitwise-numbers-system").value;
+            let result;
+            let firstOperand =
+                document.getElementById("bitwise-first-number").value;
+            let secondOperand =
+                document.getElementById("bitwise-second-number").value;
+            var x = 0;
+            var str = " invalid input  use only ";
+            if (numberSystem === "Binary") {
+                firstOperand = parseInt(firstOperand, 2);
+                secondOperand = parseInt(secondOperand, 2);
+                if (isNaN(firstOperand) || isNaN(secondOperand)) {
+                    x = 1;
+                    str += "Binary number";
+                }
+            }
+
+            if (numberSystem === "Octal") {
+
+                firstOperand = parseInt(firstOperand, 8);
+                secondOperand = parseInt(secondOperand, 8);
+
+                if (isNaN(firstOperand) || isNaN(secondOperand)) {
+                    x = 1;
+                    str += "Octal number";
+                }
+            }
+
+            if (numberSystem === "Hexadecimal") {
+                firstOperand = parseInt(firstOperand, 16);
+                secondOperand = parseInt(secondOperand, 16);
+
+                if (isNaN(firstOperand) || isNaN(secondOperand)) {
+
+                    str += "Hexadecimal number";
+                }
+            }
+
+            if (isNaN(firstOperand) || isNaN(secondOperand)) {
+                document.getElementById("bitwise-result").innerHTML = str;
+            } else {
+                switch (operation) {
+                    case "NOT":
+                        result = ~firstOperand;
+                        break;
+                    case "AND":
+                        result = firstOperand & secondOperand;
+                        break;
+                    case "OR":
+                        result = firstOperand | secondOperand;
+                        break;
+                    case "XOR":
+                        result = firstOperand ^ secondOperand;
+                        break;
+                    case "Left Shift":
+                        result = firstOperand << secondOperand;
+                        break;
+                    case "Right Shift":
+                        result = firstOperand >> secondOperand;
+                }
+                if (numberSystem === "Binary")
+                    document.getElementById("bitwise-result").innerHTML = parseInt(
+                        result
+                    ).toString(2);
+                else if (numberSystem === "Octal")
+                    document.getElementById("bitwise-result").innerHTML = parseInt(
+                        result
+                    ).toString(8);
+                else if (numberSystem === "Hexadecimal")
+                    document.getElementById("bitwise-result").innerHTML = parseInt(
+                        result
+                    ).toString(16);
+                else document.getElementById("bitwise-result").innerHTML = result;
+            }
+        }
+
+        /////////////////////////////////////////////////////////////
+        //Function that performs conversion of Octal/Binary/Decimal
+        function convertBinOct() {
+            const fromBase = document.getElementById("octal-binary-select1").value;
+            const toBase = document.getElementById("octal-binary-select2").value;
+            const input = document.getElementById("octal-binary-input").value;
+            let result = document.getElementById("octal-binary-result");
+            let from = 8;
+            let to = 8;
+
+            if (fromBase === "Octal") from = 8;
+            else if (fromBase === "Decimal") from = 10;
+            else from = 2;
+
+            if (toBase === "Octal") to = 8;
+            else if (toBase === "Decimal") to = 10;
+            else to = 2;
+
+            result.innerHTML = fracDectoBinHexOct(calculatefrac(input, from), to);
+            if (input == "") {
+                result.innerHTML = "";
+            } else if (from == 2) {
+                if (input.search(/^[10]+$/) == -1)
+                    result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+            }
+        }
+
+        //----------------------------
+        //Function that performs anyBase to anyBase Conversion
+        function convertAnyBaseToAnyBase() {
+            const fromBase = document.getElementById("anyBase-select1").value;
+            const toBase = document.getElementById("anyBase-select2").value;
+            const input = document.getElementById("anyBase-input").value;
+            let result = document.getElementById("anyBase-result");
+
+            let from = 2;
+            let to = 2;
+
+            if (fromBase === "2(Binary)") from = 2;
+            else if (fromBase === "3") from = 3;
+            else if (fromBase === "4") from = 4;
+            else if (fromBase === "5") from = 5;
+            else if (fromBase === "6") from = 6;
+            else if (fromBase === "7") from = 7;
+            else if (fromBase === "8(Octal)") from = 8;
+            else if (fromBase === "9") from = 9;
+            else if (fromBase === "10(Decimal)") from = 10;
+            else if (fromBase === "11") from = 11;
+            else if (fromBase === "12") from = 12;
+            else if (fromBase === "13") from = 13;
+            else if (fromBase === "14") from = 14;
+            else if (fromBase === "15") from = 15;
+            else from = 16;
+
+            if (toBase === "2(Binary)") to = 2;
+            else if (toBase === "3") to = 3;
+            else if (toBase === "4") to = 4;
+            else if (toBase === "5") to = 5;
+            else if (toBase === "6") to = 6;
+            else if (toBase === "7") to = 7;
+            else if (toBase === "8(Octal)") to = 8;
+            else if (toBase === "9") to = 9;
+            else if (toBase === "10(Decimal)") to = 10;
+            else if (toBase === "11") to = 11;
+            else if (toBase === "12") to = 12;
+            else if (toBase === "13") to = 13;
+            else if (toBase === "14") to = 14;
+            else if (toBase === "15") to = 15;
+            else to = 16;
+
+            result.innerHTML = fracDectoBinHexOct(calculatefrac(input, from), to);
+            if (input == "") {
+                result.innerHTML = "";
+            } else if (from == 2) {
+                if (input.search(/^[-.10]+$/) == -1)
+                    result.innerHTML = "Binary numbers can only have 0's and 1's";
+            }
+            else if (fracDectoBinHexOct(calculatefrac(input, from), to) == "NaN.0") {
+                result.innerHTML = `Invalid Input please use only ${fromBase} Base number`;
+            }
+
+
+        }
+
+        if (fromBase === "Octal" && toBase === "Hexadecimal") {
+            result.innerHTML = fracDectoBinHexOct(calculatefrac(input, 8), 16);;
+        } else if (fromBase === "Hexadecimal" && toBase === "Octal") {
+            result.innerHTML = fracDectoBinHexOct(calculatefrac(input, 16), 8);
+        } else if (fromBase === "Hexadecimal" && toBase === "Hexadecimal") {
+            result.innerHTML = input;
+        } else if (fromBase === "Octal" && toBase === "Octal") {
+            result.innerHTML = input;
+        }
+        if (input == "") {
+            result.innerHTML = "";
+        }
     }
-    return (parseInt(integer, 10).toString(base) + "." + s);
-}
+    //---------------------------------------------------------------------
 
+    //Function for addition of any number system
+    function addBinDecHexOct() {
+        const firstBase = document.getElementById("adding-all-select1").value;
+        const secondBase = document.getElementById("adding-all-select2").value;
+        const input1 = document.getElementById("adding-all-input1").value;
+        const input2 = document.getElementById("adding-all-input2").value;
+        const resultType = document.getElementById("adding-all-result-type").value;
+        let result = document.getElementById("adding-all-result");
+        var x1, x1o;
+        var x2, x2o;
 
-//////////////////////////////////////////////////////////////
+        if (firstBase === "Binary") {
+            x1 = parseInt(input1, 2);
+            x1o = x1.toString(2);
+        }
+        else if (firstBase === "Octal") {
+            x1 = parseInt(input1, 8);
+            x1o = x1.toString(8);
+        }
+        else if (firstBase === "Hexa Decimal") {
+            x1 = parseInt(input1, 16);
+            x1o = x1.toString(16);
+        }
+        else if (firstBase === "Decimal") {
+            x1 = parseInt(input1);
+            x1o = x1;
+        }
 
-////////////// Bitwise Calculator Section /////////////////
+        if (secondBase === "Binary") {
+            x2 = parseInt(input2, 2);
+            x2o = x2.toString(2);
+        }
+        else if (secondBase === "Octal") {
+            x2 = parseInt(input2, 8);
+            x2o = x2.toString(8);
+        }
+        else if (secondBase === "Hexa Decimal") {
+            x2 = parseInt(input2, 16);
+            x2o = x2.toString(16);
+        }
+        else if (secondBase === "Decimal") {
+            x2 = parseInt(input2);
+            x2o = x2;
+        }
 
-//Function to clear inputs when user changes his/her numbering base system
-function clearInputs() {
-    document.getElementById("bitwise-first-number").value = 0;
-    document.getElementById("bitwise-second-number").value = 0;
-    document.getElementById("bitwise-result").innerHTML = 0;
-}
-
-//Function that performs bitwise calculation
-function bitwiseCalc() {
-
-    addEventListener("change", x => {
-        if (operation == "NOT")
-            document.getElementById("bitwise-second-number").style = "display:none";
+        var x3 = x1 + x2;
+        console.log(x1)
+        if (isNaN(x1) || x1o != input1)
+            result.innerHTML = "Enter correct " + firstBase + " value in Input 1";
+        else if (isNaN(x2) || x2o != input2)
+            result.innerHTML = "Enter a " + secondBase + " value in Input 2";
+        else if (resultType === "Binary")
+            result.innerHTML = "Answer in binary=" + x3.toString(2);
+        else if (resultType === "Octal")
+            result.innerHTML = "Answer in Octal=" + x3.toString(8);
+        else if (resultType === "Hexa Decimal")
+            result.innerHTML = "Answer in Hexa Decimal=" + x3.toString(16);
+        else if (resultType === "Decimal")
+            result.innerHTML = "Answer in Decimal=" + x3.toString();
         else
-            document.getElementById("bitwise-second-number").style = "display:inline-block";
-    })
-    const operation = document.getElementById("bitwise-operation").value;
-    const numberSystem = document.getElementById("bitwise-numbers-system").value;
-    let result;
-    let firstOperand =
-        document.getElementById("bitwise-first-number").value;
-    let secondOperand =
-        document.getElementById("bitwise-second-number").value;
-    var x = 0;
-    var str = " invalid input  use only ";
-    if (numberSystem === "Binary") {
-        firstOperand = parseInt(firstOperand, 2);
-        secondOperand = parseInt(secondOperand, 2);
-        if (isNaN(firstOperand) || isNaN(secondOperand)) {
-            x = 1;
-            str += "Binary number";
-        }
+            result.innerHTML = "";
     }
 
-    if (numberSystem === "Octal") {
-
-        firstOperand = parseInt(firstOperand, 8);
-        secondOperand = parseInt(secondOperand, 8);
-
-        if (isNaN(firstOperand) || isNaN(secondOperand)) {
-            x = 1;
-            str += "Octal number";
-        }
-    }
-
-    if (numberSystem === "Hexadecimal") {
-        firstOperand = parseInt(firstOperand, 16);
-        secondOperand = parseInt(secondOperand, 16);
-
-        if (isNaN(firstOperand) || isNaN(secondOperand)) {
-
-            str += "Hexadecimal number";
-        }
-    }
-
-    if (isNaN(firstOperand) || isNaN(secondOperand)) {
-        document.getElementById("bitwise-result").innerHTML = str;
-    } else {
-        switch (operation) {
-            case "NOT":
-                result = ~firstOperand;
-                break;
-            case "AND":
-                result = firstOperand & secondOperand;
-                break;
-            case "OR":
-                result = firstOperand | secondOperand;
-                break;
-            case "XOR":
-                result = firstOperand ^ secondOperand;
-                break;
-            case "Left Shift":
-                result = firstOperand << secondOperand;
-                break;
-            case "Right Shift":
-                result = firstOperand >> secondOperand;
-        }
-        if (numberSystem === "Binary")
-            document.getElementById("bitwise-result").innerHTML = parseInt(
-                result
-            ).toString(2);
-        else if (numberSystem === "Octal")
-            document.getElementById("bitwise-result").innerHTML = parseInt(
-                result
-            ).toString(8);
-        else if (numberSystem === "Hexadecimal")
-            document.getElementById("bitwise-result").innerHTML = parseInt(
-                result
-            ).toString(16);
-        else document.getElementById("bitwise-result").innerHTML = result;
-    }
-}
-
-/////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-=======
-//Function that performs conversion of Octal/Binary/Decimal
-function convertBinOct() {
-    const fromBase = document.getElementById("octal-binary-select1").value;
-    const toBase = document.getElementById("octal-binary-select2").value;
-    const input = document.getElementById("octal-binary-input").value;
-    let result = document.getElementById("octal-binary-result");
-    let from = 8;
-    let to = 8;
-
-    if (fromBase === "Octal") from = 8;
-    else if (fromBase === "Decimal") from = 10;
-    else from = 2;
-
-    if (toBase === "Octal") to = 8;
-    else if (toBase === "Decimal") to = 10;
-    else to = 2;
-
-    result.innerHTML = fracDectoBinHexOct(calculatefrac(input, from), to);
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-
-    }
-}
-
->>>>>>> percentage change in volume of a sphere added
-//----------------------------
-//Function that performs anyBase to anyBase Conversion
-function convertAnyBaseToAnyBase() {
-    const fromBase = document.getElementById("anyBase-select1").value;
-    const toBase = document.getElementById("anyBase-select2").value;
-    const input = document.getElementById("anyBase-input").value;
-    let result = document.getElementById("anyBase-result");
-
-    let from = 2;
-    let to = 2;
-
-    if (fromBase === "2(Binary)") from = 2;
-    else if (fromBase === "3") from = 3;
-    else if (fromBase === "4") from = 4;
-    else if (fromBase === "5") from = 5;
-    else if (fromBase === "6") from = 6;
-    else if (fromBase === "7") from = 7;
-    else if (fromBase === "8(Octal)") from = 8;
-    else if (fromBase === "9") from = 9;
-    else if (fromBase === "10(Decimal)") from = 10;
-    else if (fromBase === "11") from = 11;
-    else if (fromBase === "12") from = 12;
-    else if (fromBase === "13") from = 13;
-    else if (fromBase === "14") from = 14;
-    else if (fromBase === "15") from = 15;
-    else from = 16;
-
-    if (toBase === "2(Binary)") to = 2;
-    else if (toBase === "3") to = 3;
-    else if (toBase === "4") to = 4;
-    else if (toBase === "5") to = 5;
-    else if (toBase === "6") to = 6;
-    else if (toBase === "7") to = 7;
-    else if (toBase === "8(Octal)") to = 8;
-    else if (toBase === "9") to = 9;
-    else if (toBase === "10(Decimal)") to = 10;
-    else if (toBase === "11") to = 11;
-    else if (toBase === "12") to = 12;
-    else if (toBase === "13") to = 13;
-    else if (toBase === "14") to = 14;
-    else if (toBase === "15") to = 15;
-    else to = 16;
-
-    result.innerHTML = fracDectoBinHexOct(calculatefrac(input, from), to);
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[-.10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-    }
-    else if (fracDectoBinHexOct(calculatefrac(input, from), to) == "NaN.0") {
-        result.innerHTML = `Invalid Input please use only ${fromBase} Base number`;
-    }
-
-
-}
-
-<<<<<<< HEAD
-=======
-    if (fromBase === "Octal" && toBase === "Hexadecimal") {
-        result.innerHTML = fracDectoBinHexOct(calculatefrac(input, 8), 16);;
-    } else if (fromBase === "Hexadecimal" && toBase === "Octal") {
-        result.innerHTML = fracDectoBinHexOct(calculatefrac(input, 16), 8);
-    } else if (fromBase === "Hexadecimal" && toBase === "Hexadecimal") {
-        result.innerHTML = input;
-    } else if (fromBase === "Octal" && toBase === "Octal") {
-        result.innerHTML = input;
-    }
-    if (input == "") {
-        result.innerHTML = "";
-    }
-}
->>>>>>> percentage change in volume of a sphere added
-//---------------------------------------------------------------------
-
-//Function for addition of any number system
-function addBinDecHexOct() {
-    const firstBase = document.getElementById("adding-all-select1").value;
-    const secondBase = document.getElementById("adding-all-select2").value;
-    const input1 = document.getElementById("adding-all-input1").value;
-    const input2 = document.getElementById("adding-all-input2").value;
-    const resultType = document.getElementById("adding-all-result-type").value;
-    let result = document.getElementById("adding-all-result");
-    var x1, x1o;
-    var x2, x2o;
-
-    if (firstBase === "Binary") {
-        x1 = parseInt(input1, 2);
-        x1o = x1.toString(2);
-    }
-    else if (firstBase === "Octal") {
-        x1 = parseInt(input1, 8);
-        x1o = x1.toString(8);
-    }
-    else if (firstBase === "Hexa Decimal") {
-        x1 = parseInt(input1, 16);
-        x1o = x1.toString(16);
-    }
-    else if (firstBase === "Decimal") {
-        x1 = parseInt(input1);
-        x1o = x1;
-    }
-
-    if (secondBase === "Binary") {
-        x2 = parseInt(input2, 2);
-        x2o = x2.toString(2);
-    }
-    else if (secondBase === "Octal") {
-        x2 = parseInt(input2, 8);
-        x2o = x2.toString(8);
-    }
-    else if (secondBase === "Hexa Decimal") {
-        x2 = parseInt(input2, 16);
-        x2o = x2.toString(16);
-    }
-    else if (secondBase === "Decimal") {
-        x2 = parseInt(input2);
-        x2o = x2;
-    }
-
-    var x3 = x1 + x2;
-    console.log(x1)
-    if (isNaN(x1) || x1o != input1)
-        result.innerHTML = "Enter correct " + firstBase + " value in Input 1";
-    else if (isNaN(x2) || x2o != input2)
-        result.innerHTML = "Enter a " + secondBase + " value in Input 2";
-    else if (resultType === "Binary")
-        result.innerHTML = "Answer in binary=" + x3.toString(2);
-    else if (resultType === "Octal")
-        result.innerHTML = "Answer in Octal=" + x3.toString(8);
-    else if (resultType === "Hexa Decimal")
-        result.innerHTML = "Answer in Hexa Decimal=" + x3.toString(16);
-    else if (resultType === "Decimal")
-        result.innerHTML = "Answer in Decimal=" + x3.toString();
-    else
-        result.innerHTML = "";
-}
-
-//---------------------------------------------------------------------
-
-//Function for subtraction of any number system
-function subBinDecHexOct() {
-    const base = document.getElementById("subtract-all-select1").value;
-    var input1 = document.getElementById("subtract-all-input1").value;
-    var input2 = document.getElementById("subtract-all-input2").value;
-    let result = document.getElementById("subtract-all-result");
-    let work = document.getElementById("subtract-all-working");
-    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
-
-    if (input1.length > input2.length) {
-        var p = input1.length - input2.length;
-        p = Math.pow(10, p);
-        input2 = p + input2;
-        input2 = input2.substring(1);
-        input1 = input1;
-    } else if (input1.length < input2.length) {
-        var t = input2.length - input1.length;
-        t = Math.pow(10, t);
-        input1 = t + input1;
-        input1 = input1.substring(1);
-        input2 = input2;
-    } else {
-        input1 = input1;
-        input2 = input2;
-    }
-
-    if (base === "Binary") {
-        var add = "";
-        var ans = "";
-
-        var twoco = calculateTwoComplement(input2);
-        print += "<h5>STEP 0 : Find 2's complement of Subtrahend</h5>" + input2 + "->" + twoco;
-        add = (parseInt(twoco, 2) + parseInt(input1, 2)).toString(2);
-        print += "<br><br><h5>STEP 1 : Add Minuend and 2's complement of Subtrahend</h5>" + "<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + twoco + "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add + "</p>";
-        if (add.length == input1.length) {
-            ans = calculateTwoComplement(add);
-            result.innerHTML = "-" + ans;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _" + add + "<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Two's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans + "</span>";
-        } else if (add.length > input1.length) {
-            ans = add.substring(1);
-            result.innerHTML = ans;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  <span style='text-decoration: underline;'>" + add.substring(0, 1) + "</span>" + ans + "<br>";
-            print += "Note- Carry is present. So, answer will be +ve <br>"
-            print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans + "</span>";
-        } else if (add.length < input1.length) {
-            var a1 = input1.length - add.length;
-            a1 = Math.pow(10, a1);
-            add = a1 + add;
-            ans = add.substring(1);
-            result.innerHTML = "-" + calculateTwoComplement(ans);
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _" + add + "<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Two's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans + "</span>";
-        }
-
-    } else if (base === "Octal") {
-        var add1 = "";
-        var ans1 = "";
-        var eigco = calculateEightComplement(input2);
-        print += "<h5>STEP 0 : Find 8's complement of Subtrahend</h5>" + input2 + "->" + eigco;
-        add1 = (parseInt(eigco, 8) + parseInt(input1, 8)).toString(8);
-        print += "<br><br><h5>STEP 1 : Add Minuend and 8's complement of Subtrahend</h5>" + "<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + eigco + "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add1 + "</p>";
-        if (add1.length == input1.length) {
-            ans1 = calculateEightComplement(add1);
-            result.innerHTML = "-" + ans1;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _" + add1 + "<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Eight's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans1 + "</span>";
-        } else if (add1.length > input1.length) {
-            ans1 = add1.substring(1);
-            result.innerHTML = ans1;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  <span style='text-decoration: underline;'>" + add1.substring(0, 1) + "</span>" + ans1 + "<br>";
-            print += "Note- Carry is present. So, answer will be +ve <br>"
-            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans1 + "</span>";
-        } else if (add1.length < input1.length) {
-            var a2 = input1.length - add1.length;
-            a2 = Math.pow(10, a2);
-            ans1 = a2 + add1;
-            ans1 = ans1.substring(1);
-            result.innerHTML = "-" + calculateEightComplement(ans1);
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _" + add1 + "<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Eight's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans1 + "</span>";
-        }
-
-    } else if (base === "Hexa Decimal") {
-        var add2 = "";
-        var ans2 = "";
-<<<<<<< HEAD
-        var sixtnco= calculateSixteenComplement(input2);
-        print += "<h5>STEP 0 : Find 16's complement of Subtrahend</h5>"+input2+"->"+sixtnco;
-        add2 = (parseInt(sixtnco,16)+parseInt(input1,16)).toString(16);
-        print += "<br><br><h5>STEP 1 : Add Minuend and 16's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + sixtnco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add2+"</p>";
-        if(add2.length == input1.length){
-            ans2 = calculateSixteenComplement(add2);
-            result.innerHTML = "-" + ans2;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _"+add2+"<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Sixteen's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans2 + "</span>";
-        } else if (add2.length > input1.length){
-            ans2 = add2.substring(1);
-            result.innerHTML = ans2;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  <span style='text-decoration: underline;'>"+add2.substring(0,1) + "</span>" +ans2+"<br>";
-            print += "Note- Carry is present. So, answer will be +ve <br>"
-            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans2 + "</span>";
-        } else if (add2.length < input1.length){
-=======
-        var sixtnco = calculateSixteenComplement(input2);
-        add2 = (parseInt(sixtnco, 16) + parseInt(input1, 16)).toString(16);
-        if (add2.length == input1.length) {
-            ans2 = calculateSixteenComplement(add2);
-            result.innerHTML = "-" + ans2;
-        } else if (add2.length > input1.length) {
-            ans2 = add2.substring(1);
-            result.innerHTML = ans2;
-        } else if (add2.length < input1.length) {
->>>>>>> percentage change in volume of a sphere added
-            var a3 = input1.length - add2.length;
-            a3 = Math.pow(10, a3);
-            ans2 = a3 + add2;
-            ans2 = ans2.substring(1);
-            result.innerHTML = "-" + calculateSixteenComplement(ans2);
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _"+add2+"<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Sixteen's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans2 + "</span>";
-        }
-
-    } else if (base === "Decimal") {
-        var add3 = "";
-        var ans3 = "";
-<<<<<<< HEAD
-        var tenco= calculateTenComplement(input2);
-        print += "<h5>STEP 0 : Find 10's complement of Subtrahend</h5>"+input2+"->"+tenco;
-        add3 = (parseInt(tenco)+parseInt(input1)).toString();
-        print += "<br><br><h5>STEP 1 : Add Minuend and 10's complement of Subtrahend</h5>"+"<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + tenco+ "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add3+"</p>";
-        if(add3.length == input1.length){
-            ans3 = calculateTenComplement(add3);
-            result.innerHTML = "-" + ans3;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _"+add3+"<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Ten's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans3 + "</span>";
-        } else if (add3.length > input1.length){
-            ans3 = add3.substring(1);
-            result.innerHTML = ans3;
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  <span style='text-decoration: underline;'>"+add3.substring(0,1) + "</span>" +ans3+"<br>";
-            print += "Note- Carry is present. So, answer will be +ve <br>"
-            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans3 + "</span>";
-        } else if (add3.length < input1.length){
-=======
-        var tenco = calculateTenComplement(input2);
-        add3 = (parseInt(tenco) + parseInt(input1)).toString();
-        if (add3.length == input1.length) {
-            ans3 = calculateTenComplement(add3);
-            result.innerHTML = "-" + ans3;
-        } else if (add3.length > input1.length) {
-            ans3 = add3.substring(1);
-            result.innerHTML = ans3;
-        } else if (add3.length < input1.length) {
->>>>>>> percentage change in volume of a sphere added
-            var a4 = input1.length - add3.length;
-            a4 = Math.pow(10, a4);
-            ans3 = a4 + add3;
-            ans3 = ans3.substring(1);
-            result.innerHTML = "-" + calculateTenComplement(ans3);
-            print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
-            print += "->  _"+add3+"<br>";
-            print += "Note- No carry is present. So, answer will be -ve <br>"
-            print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
-            print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
-        }
-
-    }
-    work.innerHTML = print;
-}
-
-//called this function while subtracting binary numbers.
-function calculateTwoComplement(x) {
-    var ar = x.split("");
-    var two = new Array(ar.length);
-
-    for (var i = ar.length - 1; i >= 0; i--) {
-        two[i] = ar[i];
-        if (ar[i] == 1)
-            break;
-
-    }
-    if (i == -1) {
-        var twoc = '1' + two.join('');
-    } else {
-        for (var k = i - 1; k >= 0; k--) {
-            if (ar[k] == 0) {
-                two[k] = 1;
-
-            } else {
-                two[k] = 0;
-            }
-        }
-        var twoc = two.join('');
-    }
-    return twoc;
-}
-
-//called this function while subtracting octal numbers
-function calculateEightComplement(x) {
-    if (x.search(8) == 0 || x.search(9) == 0) {
-        return "Invalid";
-    } else {
-        var sev = "";
-        var eig = "";
-        for (var i = 0; i < x.length; i++) {
-            sev += '7' - x[i];
-        }
-        eig = (parseInt(sev, 8) + 1).toString(8);
-        return eig;
-    }
-}
-
-//called this function while subtracting hexa-decimal numbers.
-function calculateSixteenComplement(x) {
-    var fiftn1 = "";
-    var sixtn1 = "";
-    for (var i = 0; i < x.length; i++) {
-        fiftn1 += ('15' - parseInt(x[i], 16)).toString(16);
-    }
-    sixtn1 = (parseInt(fiftn1, 16) + 1).toString(16);
-    return sixtn1;
-}
-
-//called this function while subtracting decimal numbers.
-function calculateTenComplement(x) {
-    var ninec = "";
-    var tenc = "";
-    for (var i = 0; i < x.length; i++) {
-        ninec += '9' - x[i];
-    }
-    tenc = (parseInt(ninec) + 1).toString();
-    return tenc;
-}
-
-//----------------------------
-
-//Function for multiplication of any number system
-function multBinDecHexOct() {
-    const firstBase = document.getElementById("multiplying-all-select1").value;
-    const secondBase = document.getElementById("multiplying-all-select2").value;
-    const input1 = document.getElementById("multiplying-all-input1").value;
-    const input2 = document.getElementById("multiplying-all-input2").value;
-    const resultType = document.getElementById("multiplying-all-result-type").value;
-    let result = document.getElementById("multiplying-all-result");
-    var x1;
-    var x2;
-
-    if (firstBase === "Binary")
-        x1 = parseInt(input1, 2);
-    else if (firstBase === "Octal")
-        x1 = parseInt(input1, 8);
-    else if (firstBase === "Hexa Decimal")
-        x1 = parseInt(input1, 16);
-    else if (firstBase === "Decimal")
-        x1 = parseInt(input1);
-
-    if (secondBase === "Binary")
-        x2 = parseInt(input2, 2);
-    else if (secondBase === "Octal")
-        x2 = parseInt(input2, 8);
-    else if (secondBase === "Hexa Decimal")
-        x2 = parseInt(input2, 16);
-    else if (secondBase === "Decimal")
-        x2 = parseInt(input2);
-
-    var x3 = x1 * x2;
-
-    if (resultType === "Binary")
-        result.innerHTML = "Answer in binary=" + x3.toString(2);
-    else if (resultType === "Octal")
-        result.innerHTML = "Answer in Octal=" + x3.toString(8);
-    else if (resultType === "Hexa Decimal")
-        result.innerHTML = "Answer in Hexa Decimal=" + x3.toString(16);
-    else if (resultType === "Decimal")
-        result.innerHTML = "Answer in Decimal=" + x3.toString();
-}
-
-//----------------------------
-
-
-//----------------------------	//----------------------------
-
-
-//Function that performs conversion of  binary to bcd
-function separator(str, n) { //used for converting BCD code to decimal
-    var val = [];
-    var i, l;
-    for (i = 0, l = str.length; i < l; i += n) {
-        val.push(parseInt(str.substr(i, n), 2));
-    }
-
-    return val;
-};
-function bcdTOdecimal(x) {
-    var y = x.length;
-    var input1 = "";
-    var inv = ["I", "N", "V", "A", "L", "I", "D"];
-    if (y % 4 == 1 || y == 1)
-        input1 = "000" + x;
-    else if (y % 4 == 2 || y == 2)
-        input1 = "00" + x;
-    else if (y % 4 == 3 || y == 3)
-        input1 = "0" + x;
-    else
-        input1 = x;
-    const minVal = (currentValue) => currentValue <= 9;
-    w = separator(input1, 4);
-    if (w.every(minVal) == true)
-        return w;
-    else
-        return inv;
-}
-function decimalTObcd(z = "") {
-    var x = "_";
-
-    for (var i = 0; i < z.length; i++) {
-        var y = parseInt(z[i]).toString(2)
-        if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-        }
-        if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-        }
-        if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-        }
-        if (y.length == 4) {
-            x = x + +y + "_   ";
-        }
-
-    }
-    return x;
-
-}
-function convertbcd() {
-    const fromCode = document.getElementById("bcd-select1").value;
-    const toCode = document.getElementById("bcd-select2").value;
-    var input = document.getElementById("bcd-input").value;
-    let result = document.getElementById("bcd-result");
-
-    if (fromCode == "BCD Code" && toCode == "BCD Code")
-        result.innerHTML = input;
-    else if (fromCode == "Decimal" && toCode == "Decimal")
-        result.innerHTML = input;
-    else if (fromCode == "BCD Code" && toCode == "Decimal")
-        result.innerHTML = bcdTOdecimal(input).join('_');
-    else if (fromCode == "Decimal" && toCode == "BCD Code")
-        result.innerHTML = decimalTObcd(input);
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (fromCode == "BCD Code" && input.search(/^[10]+$/) == -1) {
-        result.innerHTML = "BCD Code can only have 0's and 1's";
-
-    }
-}
-
-//----------------------------
-//Function to perform BCD addition
-function bcdadd() {
-    var input1 = document.getElementById("bcdadd-input1").value;
-    var input2 = document.getElementById("bcdadd-input2").value;
-    let result = document.getElementById("bcdadd-result");
-
-    var s1 = bcdTOdecimal(input1).join('');
-    var s2 = bcdTOdecimal(input2).join('');
-    var decimalresult;
-    var bcdresult;
-    if (s1 == "INVALID" || s2 == "INVALID")
-        result.innerHTML = "INVALID BCD";
-    else {
-        decimalresult = parseInt(s1) + parseInt(s2);
-        bcdresult = decimalTObcd(decimalresult.toString());
-        result.innerHTML = "BCD Result=" + bcdresult + "<br>";
-        result.innerHTML += "Decimal Result=" + decimalresult + "<br>";
-
-    }
-    if (input1 == "" && input2 == "") {
-        result.innerHTML = "";
-    } else if (input1.search(/^[10]+$/) == -1 || input2.search(/^[10]+$/) == -1)
-        result.innerHTML = "BCD Code can only have 0's and 1's";
-
-}
-//Function that performs conversion of  decimal to ex3
-function convertex3() {
-
-    var input = document.getElementById("ex3-input").value;
-    let result = document.getElementById("ex3-result");
-    var x = "_";
-
-    for (var i = 0; i < input.length; i++) {
-        var y = (parseInt(input[i]) + 3).toString(2)
-        if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-        }
-        if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-        }
-        if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-        }
-        if (y.length == 4) {
-            x = x + +y + "_   ";
-        }
-
-    }
-
-    result.innerHTML = x;
-}
-//Function that performs conversion of  binary to ex3
-function convertex3bin() {
-    var input = document.getElementById("ex3bin-input").value;
-    let result = document.getElementById("ex3bin-result");
-    var x = "_";
-
-    result.innerHTML = "";
-
-    r = parseInt(input, 2).toString(10);
-    console.log("decimal");
-    console.log(r);
-
-    for (var i = 0; i < r.length; i++) {
-        var y = (parseInt(r[i]) + 3).toString(2)
-        if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-        }
-        if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-        }
-        if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-        }
-        if (y.length == 4) {
-            x = x + +y + "_   ";
-        }
-    }
-
-    if (input == "") {
-        x = "";
-    } else if (input.search(/^[10]+$/) == -1)
-        x = "Binary code can only have 0's and 1's";
-
-    result.innerHTML = x;
-}
-
-//Function which performs conversion of Decimal to 2421
-function convertdec2421() {
-    var input = document.getElementById("dec2421-input").value;
-    let result = document.getElementById("dec2421-result");
-    var x = "_";
-
-    for (var i = 0; i < input.length; i++) {
-        if (input[i] == 0) {
-            x = x + "0000_";
-        }
-        if (input[i] == 1) {
-            x = x + "0001_";
-        }
-        if (input[i] == 2) {
-            x = x + "0010_";
-        }
-        if (input[i] == 3) {
-            x = x + "0011_";
-        }
-        if (input[i] == 4) {
-            x = x + "0100_";
-        }
-        if (input[i] == 5) {
-            x = x + "1011_";
-        }
-        if (input[i] == 6) {
-            x = x + "1100_";
-        }
-        if (input[i] == 7) {
-            x = x + "1101_";
-        }
-        if (input[i] == 8) {
-            x = x + "1110_";
-        }
-        if (input[i] == 9) {
-            x = x + "1111_";
-        }
-    }
-    result.innerHTML = x;
-}
-
-
-//---------------------------------------------------------------------------
-//Function that performs conversion of grey to Decimal and viceversa
-function reverseString(str) {
-    return str.split("").reverse().join("");
-}
-
-function convertgreydec() {
-    const fromBase = document.getElementById("grey-select2").value;
-    var input = document.getElementById("greydec-input").value;
-    let result2 = document.getElementById("greydec2-result");
-    result2.innerHTML = "";
-    let from = 2;
-    let to = 2;
-
-    if (fromBase === "Grey Code") { from = 2; to = 10; }
-    else { from = 10; to = 2; }
-
-
-    result1 = parseInt(input, from).toString(to);
-    //console.log(result1);
-    var x = result1[0];
-
-    if (fromBase === "Grey Code") {
-        for (var i = 1; i < result1.length; i++)
-            x += parseInt(x[i - 1] ^ result1[i]).toString();
-    }
-
-    else {
-        for (var i = 1; i < result1.length; i++)
-            x += parseInt(result1[i - 1] ^ result1[i]).toString();
-    }
-    if (input == "") {
-        x = "";
-    }
-    result2.innerHTML = x;
-
-}
-
-//Function that performs conversion of grey to binary and viceversa
-function convertgrey() {
-    const fromBase = document.getElementById("grey-select1").value;
-    var input = document.getElementById("grey-input").value;
-    let result = document.getElementById("grey-result");
-    var x = input[0];
-
-    if (fromBase == "Binary")
-        for (var i = 1; i < input.length; i++)
-            x += parseInt(input[i - 1] ^ input[i]).toString();
-
-    else
-        for (var i = 1; i < input.length; i++)
-            x += parseInt(x[i - 1] ^ input[i]).toString();
-
-    if (input == "") {
-        x = "";
-    } else if (input.search(/^[10]+$/) == -1)
-        x = "Binary and grey code can only have 0's and 1's";
-    result.innerHTML = x;
-}
-
-//----------------------------
-//Function that performs conversion of Binary to Decimal to Hexadecimal and viceversa
-function convertBinhex() {
-    const fromBase = document.getElementById("binary-hexadecimal-select1").value;
-    const toBase = document.getElementById("binary-hexadecimal-select2").value;
-    const input = document.getElementById("binary-hexadecimal-input").value;
-    let result = document.getElementById("binary-hexadecimal-result");
-    let from = 2;
-    let to = 2;
-
-    if (fromBase === "Binary") from = 2;
-    else if (fromBase === "Decimal") from = 10;
-    else if (fromBase === "Octal") from = 8;
-    else from = 16;
-
-    if (toBase === "Binary") to = 2;
-    else if (toBase === "Decimal") to = 10;
-    else if (toBase === "Octal") to = 8;
-    else to = 16;
-
-    result.innerHTML = fracDectoBinHexOct(calculatefrac(input, from), to);
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (from == 2) {
-        if (input.search(/^[-.10]+$/) == -1)
-            result.innerHTML = "Binary numbers can only have 0's and 1's";
-
-    }else if (from == 8) {
-        if (input.search(/^[-.01234567]+$/) == -1)
-            result.innerHTML = "Octal numbers can't have 8s and 9s";
-
-    }
-}
-
-
-// 1's 2's complement
-function onetwoCalc() {
-    const input = document.getElementById("onetwonumber").value;
-    let result = document.getElementById("onetworesult");
-    let work = document.getElementById("onetwoworking");
-    var print = "<h5 style='margin-top: 50px;'>Working of the 1's Complement -</h5> &emsp;"
-    var ar = input.split("");
-    var one = new Array(ar.length);
-    var two = new Array(ar.length);
-    for (var i = 0; i < ar.length; i++) {
-        print += "1";
-        if (ar[i] == 0) {
-            one[i] = 1;
-
+    //---------------------------------------------------------------------
+
+    //Function for subtraction of any number system
+    function subBinDecHexOct() {
+        const base = document.getElementById("subtract-all-select1").value;
+        var input1 = document.getElementById("subtract-all-input1").value;
+        var input2 = document.getElementById("subtract-all-input2").value;
+        let result = document.getElementById("subtract-all-result");
+        let work = document.getElementById("subtract-all-working");
+        let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
+
+        if (input1.length > input2.length) {
+            var p = input1.length - input2.length;
+            p = Math.pow(10, p);
+            input2 = p + input2;
+            input2 = input2.substring(1);
+            input1 = input1;
+        } else if (input1.length < input2.length) {
+            var t = input2.length - input1.length;
+            t = Math.pow(10, t);
+            input1 = t + input1;
+            input1 = input1.substring(1);
+            input2 = input2;
         } else {
-            one[i] = 0;
+            input1 = input1;
+            input2 = input2;
         }
-    }
-    var onec = one.join('');
-    result.innerHTML = "One's complement of " + input + " is " + onec + "<br>";
 
-    for (var i = ar.length - 1; i >= 0; i--) {
-        two[i] = ar[i];
-        if (ar[i] == 1)
-            break;
+        if (base === "Binary") {
+            var add = "";
+            var ans = "";
 
-    }
-    if (i == -1) {
-        var twoc = '1' + two.join('');
-    } else {
-        for (var k = i - 1; k >= 0; k--) {
-            if (ar[k] == 0) {
-                two[k] = 1;
-
-            } else {
-                two[k] = 0;
+            var twoco = calculateTwoComplement(input2);
+            print += "<h5>STEP 0 : Find 2's complement of Subtrahend</h5>" + input2 + "->" + twoco;
+            add = (parseInt(twoco, 2) + parseInt(input1, 2)).toString(2);
+            print += "<br><br><h5>STEP 1 : Add Minuend and 2's complement of Subtrahend</h5>" + "<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + twoco + "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add + "</p>";
+            if (add.length == input1.length) {
+                ans = calculateTwoComplement(add);
+                result.innerHTML = "-" + ans;
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  _" + add + "<br>";
+                print += "Note- No carry is present. So, answer will be -ve <br>"
+                print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Two's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans + "</span>";
+            } else if (add.length > input1.length) {
+                ans = add.substring(1);
+                result.innerHTML = ans;
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  <span style='text-decoration: underline;'>" + add.substring(0, 1) + "</span>" + ans + "<br>";
+                print += "Note- Carry is present. So, answer will be +ve <br>"
+                print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans + "</span>";
+            } else if (add.length < input1.length) {
+                var a1 = input1.length - add.length;
+                a1 = Math.pow(10, a1);
+                add = a1 + add;
+                ans = add.substring(1);
+                result.innerHTML = "-" + calculateTwoComplement(ans);
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  _" + add + "<br>";
+                print += "Note- No carry is present. So, answer will be -ve <br>"
+                print += "<br><h5>STEP 3 : Find 2's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Two's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans + "</span>";
             }
+
+        } else if (base === "Octal") {
+            var add1 = "";
+            var ans1 = "";
+            var eigco = calculateEightComplement(input2);
+            print += "<h5>STEP 0 : Find 8's complement of Subtrahend</h5>" + input2 + "->" + eigco;
+            add1 = (parseInt(eigco, 8) + parseInt(input1, 8)).toString(8);
+            print += "<br><br><h5>STEP 1 : Add Minuend and 8's complement of Subtrahend</h5>" + "<p>&nbsp;&nbsp;&nbsp;" + input1 + "<br>+&nbsp;" + eigco + "<br>--------<br>&nbsp;&nbsp;&nbsp;" + add1 + "</p>";
+            if (add1.length == input1.length) {
+                ans1 = calculateEightComplement(add1);
+                result.innerHTML = "-" + ans1;
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  _" + add1 + "<br>";
+                print += "Note- No carry is present. So, answer will be -ve <br>"
+                print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Eight's complement of the sum ) ->  <span style='text-decoration: underline;'>-" + ans1 + "</span>";
+            } else if (add1.length > input1.length) {
+                ans1 = add1.substring(1);
+                result.innerHTML = ans1;
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  <span style='text-decoration: underline;'>" + add1.substring(0, 1) + "</span>" + ans1 + "<br>";
+                print += "Note- Carry is present. So, answer will be +ve <br>"
+                print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Discard the carry) ->   <span style='text-decoration: underline;'>" + ans1 + "</span>";
+            } else if (add1.length < input1.length) {
+                var a2 = input1.length - add1.length;
+                a2 = Math.pow(10, a2);
+                ans1 = a2 + add1;
+                ans1 = ans1.substring(1);
+                result.innerHTML = "-" + calculateEightComplement(ans1);
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  _" + add1 + "<br>";
+                print += "Note- No carry is present. So, answer will be -ve <br>"
+                print += "<br><h5>STEP 3 : Find 8's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Eight's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans1 + "</span>";
+            }
+
+        } else if (base === "Hexa Decimal") {
+            var add2 = "";
+            var ans2 = "";
+            var sixtnco = calculateSixteenComplement(input2);
+            add2 = (parseInt(sixtnco, 16) + parseInt(input1, 16)).toString(16);
+            if (add2.length == input1.length) {
+                ans2 = calculateSixteenComplement(add2);
+                result.innerHTML = "-" + ans2;
+            } else if (add2.length > input1.length) {
+                ans2 = add2.substring(1);
+                result.innerHTML = ans2;
+            } else if (add2.length < input1.length) {
+                var a3 = input1.length - add2.length;
+                a3 = Math.pow(10, a3);
+                ans2 = a3 + add2;
+                ans2 = ans2.substring(1);
+                result.innerHTML = "-" + calculateSixteenComplement(ans2);
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  _" + add2 + "<br>";
+                print += "Note- No carry is present. So, answer will be -ve <br>"
+                print += "<br><h5>STEP 3 : Find 16's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Sixteen's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans2 + "</span>";
+            }
+
+        } else if (base === "Decimal") {
+            var add3 = "";
+            var ans3 = "";
+            var tenco = calculateTenComplement(input2);
+            add3 = (parseInt(tenco) + parseInt(input1)).toString();
+            if (add3.length == input1.length) {
+                ans3 = calculateTenComplement(add3);
+                result.innerHTML = "-" + ans3;
+            } else if (add3.length > input1.length) {
+                ans3 = add3.substring(1);
+                result.innerHTML = ans3;
+            } else if (add3.length < input1.length) {
+                var a4 = input1.length - add3.length;
+                a4 = Math.pow(10, a4);
+                ans3 = a4 + add3;
+                ans3 = ans3.substring(1);
+                result.innerHTML = "-" + calculateTenComplement(ans3);
+                print += "<br><h5>STEP 2 : Check the presence of carry</h5>";
+                print += "->  _" + add3 + "<br>";
+                print += "Note- No carry is present. So, answer will be -ve <br>"
+                print += "<br><h5>STEP 3 : Find 10's complement of sum found in 'STEP 1'</h5>";
+                print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
+            }
+
         }
-        var twoc = two.join('');
-    }
-    result.innerHTML += "Two's complement of " + input + " is " + twoc + "<br>";
-
-    print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + onec + "</span><br>";
-
-    print += "<br><h5 style='margin-top: 5px;'>Working of the 2's Complement -</h5> &emsp; 1's Complement + 1 = 2's Complement <br>&emsp; "
-    print += onec + " + 1</span> = <span style='text-decoration: underline;'>" + twoc + "</span>";
-    work.innerHTML = print;
-
-    if (input == "") {
-        result.innerHTML = "";
-        work.innerHTML = "";
-    } else if (input.search(/^[10]+$/) == -1) {
-        result.innerHTML = "Binary numbers can only have 0's and 1's";
-        work.innerHTML = "";
+        work.innerHTML = print;
     }
 
+    //called this function while subtracting binary numbers.
+    function calculateTwoComplement(x) {
+        var ar = x.split("");
+        var two = new Array(ar.length);
 
-}
+        for (var i = ar.length - 1; i >= 0; i--) {
+            two[i] = ar[i];
+            if (ar[i] == 1)
+                break;
 
-//7's 8's complement
-function seveneightCalc() {
-    const input = document.getElementById("seveneightnumber").value;
-    let result = document.getElementById("seveneightresult");
-    let work = document.getElementById("seveneightworking");
-    var print = "<h5 style='margin-top: 50px;'>Working of the 7's Complement -</h5> &emsp;"
-    var seven = "";
-    var eight = "";
+        }
+        if (i == -1) {
+            var twoc = '1' + two.join('');
+        } else {
+            for (var k = i - 1; k >= 0; k--) {
+                if (ar[k] == 0) {
+                    two[k] = 1;
 
-    for (var i = 0; i < input.length; i++) {
-        print += "7";
-        seven += '7' - input[i];
+                } else {
+                    two[k] = 0;
+                }
+            }
+            var twoc = two.join('');
+        }
+        return twoc;
     }
-    result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
-    eight = (parseInt(seven, 8) + 1).toString(8);
-    result.innerHTML = "Seven's complement of " + input + " is " + parseInt(seven) + "<br>";
-    result.innerHTML += "Eight's complement of " + input + " is " + eight + "<br>";
 
-    print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + seven + "</span><br>";
-    print += "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
-    print += seven + " + 1</span> = <span style='text-decoration: underline;'>" + eight + "</span>";
-    work.innerHTML = print;
-
-    if (input == "") {
-        result.innerHTML = "";
-        work.innerHTML = "";
-    } else if (input.search(/^[0-7]+$/) == -1) {
-        result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
-        work.innerHTML = "";
+    //called this function while subtracting octal numbers
+    function calculateEightComplement(x) {
+        if (x.search(8) == 0 || x.search(9) == 0) {
+            return "Invalid";
+        } else {
+            var sev = "";
+            var eig = "";
+            for (var i = 0; i < x.length; i++) {
+                sev += '7' - x[i];
+            }
+            eig = (parseInt(sev, 8) + 1).toString(8);
+            return eig;
+        }
     }
-}
 
-//15's 16's compliment
-function fiftnsixtnCalc() {
-    var input = document.getElementById("fiftnsixtnnumber").value;
-    let result = document.getElementById("fiftnsixtnresult");
-    let work = document.getElementById("fiftnsixtnworking");
-
-    valid = /^[a-fA-F0-9]*$/
-
-    if (!(valid.test(input))) {
-        result.innerHTML = "Please enter valid Hexadecimal number"
-        work.innerHTML = ""
+    //called this function while subtracting hexa-decimal numbers.
+    function calculateSixteenComplement(x) {
+        var fiftn1 = "";
+        var sixtn1 = "";
+        for (var i = 0; i < x.length; i++) {
+            fiftn1 += ('15' - parseInt(x[i], 16)).toString(16);
+        }
+        sixtn1 = (parseInt(fiftn1, 16) + 1).toString(16);
+        return sixtn1;
     }
-    else {
-        var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
-        var fiftn = "";
-        var sixtn = "";
+
+    //called this function while subtracting decimal numbers.
+    function calculateTenComplement(x) {
+        var ninec = "";
+        var tenc = "";
+        for (var i = 0; i < x.length; i++) {
+            ninec += '9' - x[i];
+        }
+        tenc = (parseInt(ninec) + 1).toString();
+        return tenc;
+    }
+
+    //----------------------------
+
+    //Function for multiplication of any number system
+    function multBinDecHexOct() {
+        const firstBase = document.getElementById("multiplying-all-select1").value;
+        const secondBase = document.getElementById("multiplying-all-select2").value;
+        const input1 = document.getElementById("multiplying-all-input1").value;
+        const input2 = document.getElementById("multiplying-all-input2").value;
+        const resultType = document.getElementById("multiplying-all-result-type").value;
+        let result = document.getElementById("multiplying-all-result");
+        var x1;
+        var x2;
+
+        if (firstBase === "Binary")
+            x1 = parseInt(input1, 2);
+        else if (firstBase === "Octal")
+            x1 = parseInt(input1, 8);
+        else if (firstBase === "Hexa Decimal")
+            x1 = parseInt(input1, 16);
+        else if (firstBase === "Decimal")
+            x1 = parseInt(input1);
+
+        if (secondBase === "Binary")
+            x2 = parseInt(input2, 2);
+        else if (secondBase === "Octal")
+            x2 = parseInt(input2, 8);
+        else if (secondBase === "Hexa Decimal")
+            x2 = parseInt(input2, 16);
+        else if (secondBase === "Decimal")
+            x2 = parseInt(input2);
+
+        var x3 = x1 * x2;
+
+        if (resultType === "Binary")
+            result.innerHTML = "Answer in binary=" + x3.toString(2);
+        else if (resultType === "Octal")
+            result.innerHTML = "Answer in Octal=" + x3.toString(8);
+        else if (resultType === "Hexa Decimal")
+            result.innerHTML = "Answer in Hexa Decimal=" + x3.toString(16);
+        else if (resultType === "Decimal")
+            result.innerHTML = "Answer in Decimal=" + x3.toString();
+    }
+
+    //----------------------------
+
+
+    //----------------------------	//----------------------------
+
+
+    //Function that performs conversion of  binary to bcd
+    function separator(str, n) { //used for converting BCD code to decimal
+        var val = [];
+        var i, l;
+        for (i = 0, l = str.length; i < l; i += n) {
+            val.push(parseInt(str.substr(i, n), 2));
+        }
+
+        return val;
+    };
+    function bcdTOdecimal(x) {
+        var y = x.length;
+        var input1 = "";
+        var inv = ["I", "N", "V", "A", "L", "I", "D"];
+        if (y % 4 == 1 || y == 1)
+            input1 = "000" + x;
+        else if (y % 4 == 2 || y == 2)
+            input1 = "00" + x;
+        else if (y % 4 == 3 || y == 3)
+            input1 = "0" + x;
+        else
+            input1 = x;
+        const minVal = (currentValue) => currentValue <= 9;
+        w = separator(input1, 4);
+        if (w.every(minVal) == true)
+            return w;
+        else
+            return inv;
+    }
+    function decimalTObcd(z = "") {
+        var x = "_";
+
+        for (var i = 0; i < z.length; i++) {
+            var y = parseInt(z[i]).toString(2)
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+
+        }
+        return x;
+
+    }
+    function convertbcd() {
+        const fromCode = document.getElementById("bcd-select1").value;
+        const toCode = document.getElementById("bcd-select2").value;
+        var input = document.getElementById("bcd-input").value;
+        let result = document.getElementById("bcd-result");
+
+        if (fromCode == "BCD Code" && toCode == "BCD Code")
+            result.innerHTML = input;
+        else if (fromCode == "Decimal" && toCode == "Decimal")
+            result.innerHTML = input;
+        else if (fromCode == "BCD Code" && toCode == "Decimal")
+            result.innerHTML = bcdTOdecimal(input).join('_');
+        else if (fromCode == "Decimal" && toCode == "BCD Code")
+            result.innerHTML = decimalTObcd(input);
+        if (input == "") {
+            result.innerHTML = "";
+        } else if (fromCode == "BCD Code" && input.search(/^[10]+$/) == -1) {
+            result.innerHTML = "BCD Code can only have 0's and 1's";
+
+        }
+    }
+
+    //----------------------------
+    //Function to perform BCD addition
+    function bcdadd() {
+        var input1 = document.getElementById("bcdadd-input1").value;
+        var input2 = document.getElementById("bcdadd-input2").value;
+        let result = document.getElementById("bcdadd-result");
+
+        var s1 = bcdTOdecimal(input1).join('');
+        var s2 = bcdTOdecimal(input2).join('');
+        var decimalresult;
+        var bcdresult;
+        if (s1 == "INVALID" || s2 == "INVALID")
+            result.innerHTML = "INVALID BCD";
+        else {
+            decimalresult = parseInt(s1) + parseInt(s2);
+            bcdresult = decimalTObcd(decimalresult.toString());
+            result.innerHTML = "BCD Result=" + bcdresult + "<br>";
+            result.innerHTML += "Decimal Result=" + decimalresult + "<br>";
+
+        }
+        if (input1 == "" && input2 == "") {
+            result.innerHTML = "";
+        } else if (input1.search(/^[10]+$/) == -1 || input2.search(/^[10]+$/) == -1)
+            result.innerHTML = "BCD Code can only have 0's and 1's";
+
+    }
+    //Function that performs conversion of  decimal to ex3
+    function convertex3() {
+
+        var input = document.getElementById("ex3-input").value;
+        let result = document.getElementById("ex3-result");
+        var x = "_";
 
         for (var i = 0; i < input.length; i++) {
-            print += "f";
-            fiftn += (15 - parseInt(input[i], 16)).toString(16);
+            var y = (parseInt(input[i]) + 3).toString(2)
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
 
         }
-        sixtn = (parseInt(fiftn, 16) + 1).toString(16);
-        result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
-        result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
+
+        result.innerHTML = x;
+    }
+    //Function that performs conversion of  binary to ex3
+    function convertex3bin() {
+        var input = document.getElementById("ex3bin-input").value;
+        let result = document.getElementById("ex3bin-result");
+        var x = "_";
+
+        result.innerHTML = "";
+
+        r = parseInt(input, 2).toString(10);
+        console.log("decimal");
+        console.log(r);
+
+        for (var i = 0; i < r.length; i++) {
+            var y = (parseInt(r[i]) + 3).toString(2)
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+        }
+
+        if (input == "") {
+            x = "";
+        } else if (input.search(/^[10]+$/) == -1)
+            x = "Binary code can only have 0's and 1's";
+
+        result.innerHTML = x;
+    }
+
+    //Function which performs conversion of Decimal to 2421
+    function convertdec2421() {
+        var input = document.getElementById("dec2421-input").value;
+        let result = document.getElementById("dec2421-result");
+        var x = "_";
+
+        for (var i = 0; i < input.length; i++) {
+            if (input[i] == 0) {
+                x = x + "0000_";
+            }
+            if (input[i] == 1) {
+                x = x + "0001_";
+            }
+            if (input[i] == 2) {
+                x = x + "0010_";
+            }
+            if (input[i] == 3) {
+                x = x + "0011_";
+            }
+            if (input[i] == 4) {
+                x = x + "0100_";
+            }
+            if (input[i] == 5) {
+                x = x + "1011_";
+            }
+            if (input[i] == 6) {
+                x = x + "1100_";
+            }
+            if (input[i] == 7) {
+                x = x + "1101_";
+            }
+            if (input[i] == 8) {
+                x = x + "1110_";
+            }
+            if (input[i] == 9) {
+                x = x + "1111_";
+            }
+        }
+        result.innerHTML = x;
+    }
 
 
-        print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + fiftn + "</span><br>";
-        print += "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
-        print += fiftn + " + 1</span> = <span style='text-decoration: underline;'>" + sixtn + "</span>";
+    //---------------------------------------------------------------------------
+    //Function that performs conversion of grey to Decimal and viceversa
+    function reverseString(str) {
+        return str.split("").reverse().join("");
+    }
+
+    function convertgreydec() {
+        const fromBase = document.getElementById("grey-select2").value;
+        var input = document.getElementById("greydec-input").value;
+        let result2 = document.getElementById("greydec2-result");
+        result2.innerHTML = "";
+        let from = 2;
+        let to = 2;
+
+        if (fromBase === "Grey Code") { from = 2; to = 10; }
+        else { from = 10; to = 2; }
+
+
+        result1 = parseInt(input, from).toString(to);
+        //console.log(result1);
+        var x = result1[0];
+
+        if (fromBase === "Grey Code") {
+            for (var i = 1; i < result1.length; i++)
+                x += parseInt(x[i - 1] ^ result1[i]).toString();
+        }
+
+        else {
+            for (var i = 1; i < result1.length; i++)
+                x += parseInt(result1[i - 1] ^ result1[i]).toString();
+        }
+        if (input == "") {
+            x = "";
+        }
+        result2.innerHTML = x;
+
+    }
+
+    //Function that performs conversion of grey to binary and viceversa
+    function convertgrey() {
+        const fromBase = document.getElementById("grey-select1").value;
+        var input = document.getElementById("grey-input").value;
+        let result = document.getElementById("grey-result");
+        var x = input[0];
+
+        if (fromBase == "Binary")
+            for (var i = 1; i < input.length; i++)
+                x += parseInt(input[i - 1] ^ input[i]).toString();
+
+        else
+            for (var i = 1; i < input.length; i++)
+                x += parseInt(x[i - 1] ^ input[i]).toString();
+
+        if (input == "") {
+            x = "";
+        } else if (input.search(/^[10]+$/) == -1)
+            x = "Binary and grey code can only have 0's and 1's";
+        result.innerHTML = x;
+    }
+
+    //----------------------------
+    //Function that performs conversion of Binary to Decimal to Hexadecimal and viceversa
+    function convertBinhex() {
+        const fromBase = document.getElementById("binary-hexadecimal-select1").value;
+        const toBase = document.getElementById("binary-hexadecimal-select2").value;
+        const input = document.getElementById("binary-hexadecimal-input").value;
+        let result = document.getElementById("binary-hexadecimal-result");
+        let from = 2;
+        let to = 2;
+
+        if (fromBase === "Binary") from = 2;
+        else if (fromBase === "Decimal") from = 10;
+        else if (fromBase === "Octal") from = 8;
+        else from = 16;
+
+        if (toBase === "Binary") to = 2;
+        else if (toBase === "Decimal") to = 10;
+        else if (toBase === "Octal") to = 8;
+        else to = 16;
+
+        result.innerHTML = fracDectoBinHexOct(calculatefrac(input, from), to);
+        if (input == "") {
+            result.innerHTML = "";
+        } else if (from == 2) {
+            if (input.search(/^[-.10]+$/) == -1)
+                result.innerHTML = "Binary numbers can only have 0's and 1's";
+
+        } else if (from == 8) {
+            if (input.search(/^[-.01234567]+$/) == -1)
+                result.innerHTML = "Octal numbers can't have 8s and 9s";
+
+        }
+    }
+
+
+    // 1's 2's complement
+    function onetwoCalc() {
+        const input = document.getElementById("onetwonumber").value;
+        let result = document.getElementById("onetworesult");
+        let work = document.getElementById("onetwoworking");
+        var print = "<h5 style='margin-top: 50px;'>Working of the 1's Complement -</h5> &emsp;"
+        var ar = input.split("");
+        var one = new Array(ar.length);
+        var two = new Array(ar.length);
+        for (var i = 0; i < ar.length; i++) {
+            print += "1";
+            if (ar[i] == 0) {
+                one[i] = 1;
+
+            } else {
+                one[i] = 0;
+            }
+        }
+        var onec = one.join('');
+        result.innerHTML = "One's complement of " + input + " is " + onec + "<br>";
+
+        for (var i = ar.length - 1; i >= 0; i--) {
+            two[i] = ar[i];
+            if (ar[i] == 1)
+                break;
+
+        }
+        if (i == -1) {
+            var twoc = '1' + two.join('');
+        } else {
+            for (var k = i - 1; k >= 0; k--) {
+                if (ar[k] == 0) {
+                    two[k] = 1;
+
+                } else {
+                    two[k] = 0;
+                }
+            }
+            var twoc = two.join('');
+        }
+        result.innerHTML += "Two's complement of " + input + " is " + twoc + "<br>";
+
+        print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + onec + "</span><br>";
+
+        print += "<br><h5 style='margin-top: 5px;'>Working of the 2's Complement -</h5> &emsp; 1's Complement + 1 = 2's Complement <br>&emsp; "
+        print += onec + " + 1</span> = <span style='text-decoration: underline;'>" + twoc + "</span>";
         work.innerHTML = print;
 
         if (input == "") {
             result.innerHTML = "";
             work.innerHTML = "";
+        } else if (input.search(/^[10]+$/) == -1) {
+            result.innerHTML = "Binary numbers can only have 0's and 1's";
+            work.innerHTML = "";
         }
-        if (fiftn == "NaN") {
-            result.innerHTML = "Invalid Hexa Decimal Number"
+
+
+    }
+
+    //7's 8's complement
+    function seveneightCalc() {
+        const input = document.getElementById("seveneightnumber").value;
+        let result = document.getElementById("seveneightresult");
+        let work = document.getElementById("seveneightworking");
+        var print = "<h5 style='margin-top: 50px;'>Working of the 7's Complement -</h5> &emsp;"
+        var seven = "";
+        var eight = "";
+
+        for (var i = 0; i < input.length; i++) {
+            print += "7";
+            seven += '7' - input[i];
+        }
+        result.innerHTML = "Seven's complement of " + input + " is " + seven + "<br>";
+        eight = (parseInt(seven, 8) + 1).toString(8);
+        result.innerHTML = "Seven's complement of " + input + " is " + parseInt(seven) + "<br>";
+        result.innerHTML += "Eight's complement of " + input + " is " + eight + "<br>";
+
+        print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + seven + "</span><br>";
+        print += "<br><h5 style='margin-top: 5px;'>Working of the 8's Complement -</h5> &emsp; 7's Complement + 1 = 8's Complement <br>&emsp; "
+        print += seven + " + 1</span> = <span style='text-decoration: underline;'>" + eight + "</span>";
+        work.innerHTML = print;
+
+        if (input == "") {
+            result.innerHTML = "";
+            work.innerHTML = "";
+        } else if (input.search(/^[0-7]+$/) == -1) {
+            result.innerHTML = "Octal Numbers can only have digits between 0 to 7 and - sign not allowed";
             work.innerHTML = "";
         }
     }
-}
+
+    //15's 16's compliment
+    function fiftnsixtnCalc() {
+        var input = document.getElementById("fiftnsixtnnumber").value;
+        let result = document.getElementById("fiftnsixtnresult");
+        let work = document.getElementById("fiftnsixtnworking");
+
+        valid = /^[a-fA-F0-9]*$/
+
+        if (!(valid.test(input))) {
+            result.innerHTML = "Please enter valid Hexadecimal number"
+            work.innerHTML = ""
+        }
+        else {
+            var print = "<h5 style='margin-top: 50px;'>Working of the 15's Complement -</h5> &emsp;"
+            var fiftn = "";
+            var sixtn = "";
+
+            for (var i = 0; i < input.length; i++) {
+                print += "f";
+                fiftn += (15 - parseInt(input[i], 16)).toString(16);
+
+            }
+            sixtn = (parseInt(fiftn, 16) + 1).toString(16);
+            result.innerHTML = "Fifteen's complement of " + input + " is " + fiftn + "<br>";
+            result.innerHTML += "Sixteen's complement of " + input + " is " + sixtn + "<br>";
 
 
-//9's 10's complement
+            print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + fiftn + "</span><br>";
+            print += "<br><h5 style='margin-top: 5px;'>Working of the 16's Complement -</h5> &emsp; 15's Complement + 1 = 16's Complement <br>&emsp; "
+            print += fiftn + " + 1</span> = <span style='text-decoration: underline;'>" + sixtn + "</span>";
+            work.innerHTML = print;
 
-function ninetenCalc() {
-    const input = document.getElementById("ninetennumber").value;
-    let result = document.getElementById("ninetenresult");
-    let work = document.getElementById("ninetenworking");
-    var print = "<h5 style='margin-top: 50px;'>Working of the 9's Complement -</h5> &emsp;"
-    var nine = "";
-    var ten = "";
-    for (var i = 0; i < input.length; i++) {
-        print += "9";
-        nine += '9' - input[i];
-
+            if (input == "") {
+                result.innerHTML = "";
+                work.innerHTML = "";
+            }
+            if (fiftn == "NaN") {
+                result.innerHTML = "Invalid Hexa Decimal Number"
+                work.innerHTML = "";
+            }
+        }
     }
-    ten = parseInt(nine) + 1;
-    result.innerHTML = "Nine's complement of " + input + " is " + parseInt(nine) + "<br>";
-    result.innerHTML += "Ten's complement of " + input + " is " + ten + "<br>";
-
-    print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + nine + "</span><br>";
-    print += "<br><h5 style='margin-top: 5px;'>Working of the 10's Complement -</h5> &emsp; 9's Complement + 1 = 10's Complement <br>&emsp; "
-    print += nine + " + 1</span> = <span style='text-decoration: underline;'>" + ten + "</span>";
-    work.innerHTML = print;
-
-    if (input == "") {
-        result.innerHTML = "";
-    } else if (input.search(/^[0-9]+$/) == -1)
-        result.innerHTML = "Decimal Numbers can only have digits between 0 to 9 and '-' sign not allowed";
-}
 
 
-function datecal() {
-    var c = new Date(Date.parse(document.getElementById("datef").value));
-    var d = new Date(Date.parse(document.getElementById("datet").value));
-    var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
-    if (d.getTime() > c.getTime()) {
-        var y = d.getFullYear() - c.getFullYear();
-        var m = d.getMonth() - c.getMonth();
-        var da = d.getDate() - c.getDate();
-        if (da < 0) {
-            m--;
-            da = x + da;
+    //9's 10's complement
+
+    function ninetenCalc() {
+        const input = document.getElementById("ninetennumber").value;
+        let result = document.getElementById("ninetenresult");
+        let work = document.getElementById("ninetenworking");
+        var print = "<h5 style='margin-top: 50px;'>Working of the 9's Complement -</h5> &emsp;"
+        var nine = "";
+        var ten = "";
+        for (var i = 0; i < input.length; i++) {
+            print += "9";
+            nine += '9' - input[i];
+
         }
-        if (m < 0) {
-            y--;
-            m = 12 + m;
-        }
+        ten = parseInt(nine) + 1;
+        result.innerHTML = "Nine's complement of " + input + " is " + parseInt(nine) + "<br>";
+        result.innerHTML += "Ten's complement of " + input + " is " + ten + "<br>";
 
-        var dd = (d.getTime() - c.getTime()) / (1000 * 3600 * 24);
-        if (y >= 0) {
-            document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
-            document.getElementById("date-2").innerHTML = `${dd}`;
+        print += " - " + input + "</span> = <span style='text-decoration: underline;'>" + nine + "</span><br>";
+        print += "<br><h5 style='margin-top: 5px;'>Working of the 10's Complement -</h5> &emsp; 9's Complement + 1 = 10's Complement <br>&emsp; "
+        print += nine + " + 1</span> = <span style='text-decoration: underline;'>" + ten + "</span>";
+        work.innerHTML = print;
+
+        if (input == "") {
+            result.innerHTML = "";
+        } else if (input.search(/^[0-9]+$/) == -1)
+            result.innerHTML = "Decimal Numbers can only have digits between 0 to 9 and '-' sign not allowed";
+    }
+
+
+    function datecal() {
+        var c = new Date(Date.parse(document.getElementById("datef").value));
+        var d = new Date(Date.parse(document.getElementById("datet").value));
+        var x = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+        if (d.getTime() > c.getTime()) {
+            var y = d.getFullYear() - c.getFullYear();
+            var m = d.getMonth() - c.getMonth();
+            var da = d.getDate() - c.getDate();
+            if (da < 0) {
+                m--;
+                da = x + da;
+            }
+            if (m < 0) {
+                y--;
+                m = 12 + m;
+            }
+
+            var dd = (d.getTime() - c.getTime()) / (1000 * 3600 * 24);
+            if (y >= 0) {
+                document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
+                document.getElementById("date-2").innerHTML = `${dd}`;
+            } else {
+
+                document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
+                document.getElementById("date-2").innerHTML = `${-dd}`;
+
+            }
+        } else {
+            var y = c.getFullYear() - d.getFullYear();
+            var m = c.getMonth() - d.getMonth();
+            var da = c.getDate() - d.getDate();
+            if (da < 0) {
+                m--;
+                da = x + da;
+            }
+            if (m < 0) {
+                y--;
+                m = 12 + m;
+            }
+
+            var dd = (c.getTime() - d.getTime()) / (1000 * 3600 * 24);
+            if (y >= 0) {
+                document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
+                document.getElementById("date-2").innerHTML = `${dd}`;
+            } else {
+
+                document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
+                document.getElementById("date-2").innerHTML = `${-dd}`;
+
+            }
+        }
+    }
+
+
+    function computeprobability() {
+
+        var favour = parseInt(document.getElementById('favourable').value);
+
+
+        var nettotal = parseInt(document.getElementById('total').value);
+        let result = document.getElementById('probability-result');
+
+
+        if (favour < 0 || nettotal < 0) {
+            result.innerHTML = "Outcomes can't be negative. Enter positive values only";
+
+        } else if (favour > nettotal) {
+            result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
         } else {
 
-            document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
-            document.getElementById("date-2").innerHTML = `${-dd}`;
+            result.innerHTML = "The probability of the event is : " + (favour / nettotal).toFixed(3);
+        }
+    }
+
+    function condprobability() {
+        var netevent = parseFloat(document.getElementById('totevent').value);
+        var event = parseFloat(document.getElementById('event').value);
+        var result1 = (netevent / event).toFixed(3);
+        if (netevent < 0 || event < 0) {
+            document.getElementById("result1").innerHTML = "Outcomes can't be negative, Enter positive values only. ";
+            document.getElementById("result2").innerHTML = "";
+            document.getElementById("result3").innerHTML = "";
 
         }
-    } else {
-        var y = c.getFullYear() - d.getFullYear();
-        var m = c.getMonth() - d.getMonth();
-        var da = c.getDate() - d.getDate();
-        if (da < 0) {
-            m--;
-            da = x + da;
-        }
-        if (m < 0) {
-            y--;
-            m = 12 + m;
+        else {
+            document.getElementById("result1").innerHTML = "  (P(B | A)) = P(A ∩ B) &divide P(A) ";
+            document.getElementById("result2").innerHTML = " (P(B | A)) =" + netevent + " &divide " + event;
+            document.getElementById("result3").innerHTML = " Probability of Event B given Event A (P(B | A)) = " + result1;
         }
 
-        var dd = (c.getTime() - d.getTime()) / (1000 * 3600 * 24);
-        if (y >= 0) {
-            document.getElementById("date-1").innerHTML = `${y} Years ${m} Month ${da} Days`;
-            document.getElementById("date-2").innerHTML = `${dd}`;
+    }
+
+
+    function computejointprobability() {
+
+        var favourable1 = parseInt(document.getElementById("favourable1").value)
+        var favourable2 = parseInt(document.getElementById("favourable2").value)
+        var total1 = parseInt(document.getElementById("total1").value)
+        var total2 = parseInt(document.getElementById("total2").value)
+
+        var probability1 = favourable1 / total1;
+        var probability2 = favourable2 / total2;
+
+        var probability3 = (probability1 * probability2);
+
+        let result1 = document.getElementById("probability-result1");
+        let result2 = document.getElementById("probability-result2");
+        let result3 = document.getElementById("probability-result3");
+        var check = true;
+
+        if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
+            if (favourable1 > total1) {
+                result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+                check = false;
+            } else {
+                result1.innerHTML = "The probability of first event is : " + (probability1).toFixed(3);
+            }
+
+            if (favourable2 > total2) {
+                result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+                check = false;
+            } else {
+                result2.innerHTML = "The probability of second event is : " + (probability2).toFixed(3);
+            }
+
+            if (check == true) {
+                result3.innerHTML = "The joint probability of both the events is: " + (probability3).toFixed(3);
+
+            }
         } else {
-
-            document.getElementById("date-1").innerHTML = `${-y} Years ${m} Month ${da} Days`;
-            document.getElementById("date-2").innerHTML = `${-dd}`;
-
-        }
-    }
-}
-
-
-function computeprobability() {
-
-    var favour = parseInt(document.getElementById('favourable').value);
-
-
-    var nettotal = parseInt(document.getElementById('total').value);
-    let result = document.getElementById('probability-result');
-
-
-    if (favour < 0 || nettotal < 0) {
-        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
-
-    } else if (favour > nettotal) {
-        result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
-    } else {
-
-        result.innerHTML = "The probability of the event is : " + (favour / nettotal).toFixed(3);
-    }
-}
-
-function condprobability() {
-    var netevent = parseFloat(document.getElementById('totevent').value);
-    var event = parseFloat(document.getElementById('event').value);
-    var result1 = (netevent / event).toFixed(3);
-    if (netevent < 0 || event < 0) {
-        document.getElementById("result1").innerHTML = "Outcomes can't be negative, Enter positive values only. ";
-        document.getElementById("result2").innerHTML = "";
-        document.getElementById("result3").innerHTML = "";
-
-    }
-    else {
-        document.getElementById("result1").innerHTML = "  (P(B | A)) = P(A ∩ B) &divide P(A) ";
-        document.getElementById("result2").innerHTML = " (P(B | A)) =" + netevent + " &divide " + event;
-        document.getElementById("result3").innerHTML = " Probability of Event B given Event A (P(B | A)) = " + result1;
-    }
-
-}
-
-
-function computejointprobability() {
-
-    var favourable1 = parseInt(document.getElementById("favourable1").value)
-    var favourable2 = parseInt(document.getElementById("favourable2").value)
-    var total1 = parseInt(document.getElementById("total1").value)
-    var total2 = parseInt(document.getElementById("total2").value)
-
-    var probability1 = favourable1 / total1;
-    var probability2 = favourable2 / total2;
-
-    var probability3 = (probability1 * probability2);
-
-    let result1 = document.getElementById("probability-result1");
-    let result2 = document.getElementById("probability-result2");
-    let result3 = document.getElementById("probability-result3");
-    var check = true;
-
-    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
-        if (favourable1 > total1) {
-            result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
-            check = false;
-        } else {
-            result1.innerHTML = "The probability of first event is : " + (probability1).toFixed(3);
-        }
-
-        if (favourable2 > total2) {
-            result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
-            check = false;
-        } else {
-            result2.innerHTML = "The probability of second event is : " + (probability2).toFixed(3);
-        }
-
-        if (check == true) {
-            result3.innerHTML = "The joint probability of both the events is: " + (probability3).toFixed(3);
-
-        }
-    } else {
-        result1.innerHTML = "Outcomes can't be negative. Enter positive values only";
-        result2.innerHTML = "";
-        result3.innerHTML = "";
-    }
-}
-
-
-function computebayesprobability() {
-
-    var favourable1 = parseInt(document.getElementById("fav1").value)
-    var favourable2 = parseInt(document.getElementById("fav2").value)
-    var total1 = parseInt(document.getElementById("tot1").value)
-    var total2 = parseInt(document.getElementById("tot2").value)
-    var pbanda = parseFloat(document.getElementById("pandb").value)
-
-    var probability1 = favourable1 / total1;
-    var probability2 = favourable2 / total2;
-
-    var probability3 = pbanda / probability2;
-
-    var probability4 = pbanda / probability1;
-
-    console.log(probability1);
-    console.log(probability2);
-
-    let result1 = document.getElementById("bayesresult1");
-    let result2 = document.getElementById("bayesresult2");
-    var check = true;
-
-    if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
-        if (favourable1 > total1) {
-            result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
-            check = false;
-        }
-
-        else if (favourable2 > total2) {
-            result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
-            check = false;
-        }
-        else if (pbanda > probability2 || pbanda > probability1) {
-            result1.innerHTML = "Probability of intersection is always equal to or less than the probability of individual events";
+            result1.innerHTML = "Outcomes can't be negative. Enter positive values only";
             result2.innerHTML = "";
-            check = false;
+            result3.innerHTML = "";
         }
+    }
 
-        if (check == true) {
-            result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
-            result2.innerHTML = "The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);
+
+    function computebayesprobability() {
+
+        var favourable1 = parseInt(document.getElementById("fav1").value)
+        var favourable2 = parseInt(document.getElementById("fav2").value)
+        var total1 = parseInt(document.getElementById("tot1").value)
+        var total2 = parseInt(document.getElementById("tot2").value)
+        var pbanda = parseFloat(document.getElementById("pandb").value)
+
+        var probability1 = favourable1 / total1;
+        var probability2 = favourable2 / total2;
+
+        var probability3 = pbanda / probability2;
+
+        var probability4 = pbanda / probability1;
+
+        console.log(probability1);
+        console.log(probability2);
+
+        let result1 = document.getElementById("bayesresult1");
+        let result2 = document.getElementById("bayesresult2");
+        var check = true;
+
+        if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
+            if (favourable1 > total1) {
+                result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+                check = false;
+            }
+
+            else if (favourable2 > total2) {
+                result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+                check = false;
+            }
+            else if (pbanda > probability2 || pbanda > probability1) {
+                result1.innerHTML = "Probability of intersection is always equal to or less than the probability of individual events";
+                result2.innerHTML = "";
+                check = false;
+            }
+
+            if (check == true) {
+                result1.innerHTML = "The likelihood of event  A occurring given that B is true is:- " + (probability3).toFixed(3);
+                result2.innerHTML = "The likelihood of event  B occurring given that A is true is:- " + (probability4).toFixed(3);
+
+            }
+        } else {
+            result.innerHTML = "Outcomes can't be negative. Enter positive values only";
 
         }
+    }
+
+
+    function angleplot() {
+
+        //clearing the canvas
+        var canvas = document.getElementById('plotangleres');
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        var input = document.getElementById("inputangle").value;
+        var c = document.getElementById("plotangleres");
+        var ctx = c.getContext("2d");
+        ctx.lineWidth = 3;
+
+        //for labelling 0
+        var c0tx = c.getContext("2d");
+        c0tx.font = "15px Arial";
+        c0tx.fillText("0° ", 630, 250);
+
+        //for labelling 90
+        var c90tx = c.getContext("2d");
+        c90tx.font = "15px Arial";
+        c90tx.fillText("90° ", 510, 125);
+
+        //for labelling 180
+        var c180tx = c.getContext("2d");
+        c180tx.font = "15px Arial";
+        c180tx.fillText("180° ", 335, 250);
+
+        //for labelling 270
+        var c270tx = c.getContext("2d");
+        c270tx.font = "15px Arial";
+        c270tx.fillText("270° ", 510, 400);
+
+        var ytx = c.getContext("2d");
+        var xtx = c.getContext("2d");
+        ytx.moveTo(500, 0);
+        ytx.lineTo(500, 1000);
+        ytx.stroke();
+        xtx.moveTo(0, 250);
+        xtx.lineTo(1000, 250);
+        xtx.stroke();
+        ctx.beginPath();
+        input = input % 360;
+        if (input < 0) {
+            ctx.arc(500, 250, 125, -2 * Math.PI - ((input / 180) * Math.PI), 0, true);
+        } else {
+            ctx.arc(500, 250, 125, 0, 2 * Math.PI - ((input / 180) * Math.PI), true);
+        }
+        ctx.stroke();
+
+    }
+    function fa(x) {
+        if (x == 1)
+            return 1;
+        return x * fa(x - 1);
+    }
+
+    function posse() {
+        let a = parseInt(document.getElementById("anglecalc").value)
+        let n = parseFloat(360 / (180 - a))
+        if (n === parseInt(n)) {
+            document.getElementById("posseans").innerHTML = "Yes It is possible"
+        }
+        else
+            document.getElementById("posseans").innerHTML = "Not possible"
+    }
+    function rankcal() {
+
+        var input = document.getElementById("rankcal-input").value;
+        let result = document.getElementById("rankcal-result");
+        input = input.toUpperCase();
+        var s = input.length;
+        var m = fa(s);
+        var ans = 1;
+        var c;
+        for (var j = 0; j < s; ++j) {
+            m /= s - j;
+            c = ran(input, j, s - 1);
+            ans = ans + (c * m);
+        }
+        if (input.match(/^[A-Za-z]+$/)) {
+            result.innerHTML = ans;
+        }
+        else
+            result.innerHTML = "Invalid input use alphabet only";
+
+    }
+
+
+    function ran(x, y, z) {
+        var c = 0;
+        for (var j = y + 1; j <= z; ++j) {
+            if (x[j] <= x[y]) {
+                c++;
+            }
+        }
+        return c;
+    }
+    function radians_to_degrees(radians) {
+        var pi = Math.PI;
+        return radians * (180 / pi);
+    }
+
+
+    function ssscal() {
+        var a = document.getElementById("sd1").value;
+        var b = document.getElementById("sd2").value;
+        var c = document.getElementById("sd3").value;
+        var ans = "";
+        if (a == "" || b == "" || c == "") {
+            ans = "Error: All three sides are required to find all the angles";
+        }
+        else {
+            var cosa = (b * b + c * c - a * a) / (2 * b * c);
+            var cosb = (a * a + c * c - b * b) / (2 * c * a);
+            var cosc = (b * b + a * a - c * c) / (2 * b * a);
+            var anga = Math.acos(cosa);
+            var angb = Math.acos(cosb);
+            var angc = Math.acos(cosc);
+            var ab, bc, ca;
+            ab = radians_to_degrees(anga);
+            bc = radians_to_degrees(angb);
+            ca = radians_to_degrees(angc);
+
+            console.log(anga);
+            console.log(angb);
+            console.log(angc);
+
+            ab = ab.toPrecision(4);
+            bc = bc.toPrecision(4);
+            ca = ca.toPrecision(4);
+            ans = "The required angles oppsite to first side is: " + ab + " second side is: " + bc + "  third side is: " + ca;
+        }
+        document.getElementById("sstans").innerHTML = ans;
+    }
+}
+
+// >>>>>>> T-test function()
+function tvalue_mean(arr) {
+    let sum=0;
+    for (var i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+
+    return sum / arr.length;
+}
+
+function tvalue_dec(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp,2)
+        diff += temp;
+    }
+    
+    return diff
+}
+
+function tvalue_SD(diff, length) {
+    var val = diff / (length - 1)
+    return Math.sqrt(val);
+}
+
+function tvalue() {
+    let list1 = document.getElementById("list1").value;
+    let list2 = document.getElementById("list2").value;
+
+    list1 = list1.split(" ");
+    list2 = list2.split(" ");
+    let n1 = list1.length
+    let n2 = list2.length
+
+    if (n1 <= 30 && n2 <= 30) {
+        for (var i = 0; i < n1; i++) {
+            list1[i] = parseInt(list1[i]);
+        }
+        for (var i = 0; i < n2; i++) {
+            list2[i] = parseInt(list2[i]);
+        }
+    
+        document.getElementById('steps').innerHTML = "Values calculated while the test:"
+        let mean1 = tvalue_mean(list1)
+        document.getElementById('mean1').innerHTML = "Mean of first set of numbers = " + mean1;
+    
+        let mean2 = tvalue_mean(list2)
+        document.getElementById('mean2').innerHTML = "Mean of second set of numbers = " + mean2;
+    
+        // successive decrease in value through mean;
+        let diff1 = tvalue_dec(list1, mean1)
+        let diff2 = tvalue_dec(list2, mean2)
+    
+        let SD1 = tvalue_SD(diff1, n1)
+        document.getElementById('SD1').innerHTML = "Standard Deviation of first set of numbers = " + Number.parseFloat(SD1).toPrecision(4);
+        let SD2 = tvalue_SD(diff2, n2)
+        document.getElementById('SD2').innerHTML = "Standard Deviation of second set of numbers = " + Number.parseFloat(SD2).toPrecision(4);
+    
+        let delta_sd = Math.sqrt((Math.pow(SD1,2) / n1) + (Math.pow(SD2,2) / n2))
+        let ttest_value = (mean1 - mean2) / delta_sd
+    
+        document.getElementById('testans').innerHTML = "The value for the T-test is " + ttest_value + " = <strong>" + Number.parseFloat(ttest_value).toPrecision(4) + "</strong>(approx)."
+        document.getElementById('stepsbox').style.display = "block"
     } else {
-        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
-
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('testans').innerHTML = "T-test is not applicable for set of numbers more than 30"
     }
 }
 
-
-function angleplot() {
-
-    //clearing the canvas
-    var canvas = document.getElementById('plotangleres');
-    var context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-
-    var input = document.getElementById("inputangle").value;
-    var c = document.getElementById("plotangleres");
-    var ctx = c.getContext("2d");
-    ctx.lineWidth = 3;
-
-    //for labelling 0
-    var c0tx = c.getContext("2d");
-    c0tx.font = "15px Arial";
-    c0tx.fillText("0° ", 630, 250);
-
-    //for labelling 90
-    var c90tx = c.getContext("2d");
-    c90tx.font = "15px Arial";
-    c90tx.fillText("90° ", 510, 125);
-
-    //for labelling 180
-    var c180tx = c.getContext("2d");
-    c180tx.font = "15px Arial";
-    c180tx.fillText("180° ", 335, 250);
-
-    //for labelling 270
-    var c270tx = c.getContext("2d");
-    c270tx.font = "15px Arial";
-    c270tx.fillText("270° ", 510, 400);
-
-    var ytx = c.getContext("2d");
-    var xtx = c.getContext("2d");
-    ytx.moveTo(500, 0);
-    ytx.lineTo(500, 1000);
-    ytx.stroke();
-    xtx.moveTo(0, 250);
-    xtx.lineTo(1000, 250);
-    xtx.stroke();
-    ctx.beginPath();
-    input = input % 360;
-    if (input < 0) {
-        ctx.arc(500, 250, 125, -2 * Math.PI - ((input / 180) * Math.PI), 0, true);
-    } else {
-        ctx.arc(500, 250, 125, 0, 2 * Math.PI - ((input / 180) * Math.PI), true);
-    }
-    ctx.stroke();
-
-}
-function fa(x) {
-    if (x == 1)
-        return 1;
-    return x * fa(x - 1);
-}
-
-function posse(){
-    let a  = parseInt(document.getElementById("anglecalc").value)
-    let n = parseFloat(360/(180-a))
-    if(n === parseInt(n)){
-        document.getElementById("posseans").innerHTML = "Yes It is possible"
-    }
-    else
-        document.getElementById("posseans").innerHTML = "Not possible"
-}
-function rankcal() {
-
-    var input = document.getElementById("rankcal-input").value;
-    let result = document.getElementById("rankcal-result");
-    input = input.toUpperCase();
-    var s = input.length;
-    var m = fa(s);
-    var ans = 1;
-    var c;
-    for (var j = 0; j < s; ++j) {
-        m /= s - j;
-        c = ran(input, j, s - 1);
-        ans = ans + (c * m);
-    }
-    if (input.match(/^[A-Za-z]+$/)) {
-        result.innerHTML = ans;
-    }
-    else
-        result.innerHTML = "Invalid input use alphabet only";
-
-}
-
-
-function ran(x, y, z) {
-    var c = 0;
-    for (var j = y + 1; j <= z; ++j) {
-        if (x[j] <= x[y]) {
-            c++;
-        }
-    }
-    return c;
-}
-function radians_to_degrees(radians) {
-    var pi = Math.PI;
-    return radians * (180 / pi);
-}
-
-
-function ssscal() {
-    var a = document.getElementById("sd1").value;
-    var b = document.getElementById("sd2").value;
-    var c = document.getElementById("sd3").value;
-    var ans = "";
-    if (a == "" || b == "" || c == "") {
-        ans = "Error: All three sides are required to find all the angles";
-    }
-    else {
-        var cosa = (b * b + c * c - a * a) / (2 * b * c);
-        var cosb = (a * a + c * c - b * b) / (2 * c * a);
-        var cosc = (b * b + a * a - c * c) / (2 * b * a);
-        var anga = Math.acos(cosa);
-        var angb = Math.acos(cosb);
-        var angc = Math.acos(cosc);
-        var ab, bc, ca;
-        ab = radians_to_degrees(anga);
-        bc = radians_to_degrees(angb);
-        ca = radians_to_degrees(angc);
-
-        console.log(anga);
-        console.log(angb);
-        console.log(angc);
-
-        ab = ab.toPrecision(4);
-        bc = bc.toPrecision(4);
-        ca = ca.toPrecision(4);
-        ans = "The required angles oppsite to first side is: " + ab + " second side is: " + bc + "  third side is: " + ca;
-    }
-    document.getElementById("sstans").innerHTML = ans;
-}
+// t-value formula
+katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
+    throwOnError: false
+})

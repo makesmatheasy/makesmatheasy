@@ -334,6 +334,9 @@ Other Tech/Libraries
   - Poisson Distribution Calculator
   - Bayes Probability Theorem
 
+- Statistics
+  - T-test
+
 ---
 
 ## Documentation
