@@ -493,16 +493,28 @@ function factorial(n){
     var d = document.getElementById("diff").value;
     var n = document.getElementById("noofTerms").value;
     var printseries = document.getElementById("printHPseries");
-    var num;
-    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) | !isNaN(parseInt(d))) {
-            num = (Math.log(2*a + (2*n-1)*d)/(2*a-d))/d;
+    var printemp = "";
+    var num = (Math.log(2*a + (2*n-1)*d)/(2*a-d));
+    var num1 = num/d;
+    if(a == "" || d == "" || n == ""){
+        printemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        printseries.innerHTML = printemp;
+        renderMathInElement(printseries);
+    }
+   else if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d))) {
+            printemp += "\\[Sum \\space of \\space Nterms \\space of \\space HP \\space = \\space \\frac{1}{d} ln \\frac{2a+(2n-1)d}{2a-d} \\]";
+            printemp += "\\[S_n \\space = \\space \\frac{1}{" + d + "} ln \\frac{2*" + a + "+(2*" + n + "- 1)" + d + "}{2*" + a + "-" + d + "} \\]";
+            printemp += "\\[S_n \\space = \\space \\frac{1}{" + d + "} ln (" + (num).toFixed(3) + ")\\]";
+            printemp += "\\[S_n \\space = \\space " + (num1).toFixed(3) + "\\]";
+            printseries.innerHTML = printemp;
+            renderMathInElement(printseries);
       }
       else
       {
-        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
-        return;
+        printemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+        printseries.innerHTML = printemp;
+        renderMathInElement(printseries);
       }
-      document.getElementById("sumhp").innerHTML = "Sum = " + num;
 }
 // HP ends
 
