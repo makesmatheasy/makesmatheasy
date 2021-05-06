@@ -2057,6 +2057,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vtpbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Triple Product</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Triple Product','#vtp','c','vtpimgfav')"><img
+                                        id="vtpimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <div class="dropdown-divider"></div>
         </div>
@@ -2943,6 +2958,24 @@
                                 <span
                                         onclick="addtofavourite('1s and 2s Complement Calculator','#onetwocom-calc','c','onetwocom-calc-imgfav')"><img
                                         id="onetwocom-calc-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--Added Hamming code button -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hamming-code-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Code </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hamming Code','#hamming-calc','c','hamming-calc-imgfav')"><img
+                                        id="hamming-calc-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -8596,6 +8629,23 @@
             </table>
 
         </div>
+        <div class = "collapse" id="vtp">
+            <h2 style="text-align : center;">Vector Triple Product</h2>
+            <br><br>
+            <input type="text" id = "vvx1" class = "form__field " placeholder="Enter x coordinate of 1st vector">
+            <input type="text" id = "vvy1" class = "form__field " placeholder="Enter y coordinate of 1st vector">
+            <input type="text" id = "vvz1" class = "form__field " placeholder="Enter z coordinate of 1st vector">
+            <input type="text" id = "vvx2" class = "form__field " placeholder="Enter x coordinate of 2nd vector">
+            <input type="text" id = "vvy2" class = "form__field " placeholder="Enter y coordinate of 2nd vector">
+            <input type="text" id = "vvz2" class = "form__field " placeholder="Enter z coordinate of 2nd vector">
+            <input type="text" id = "vvx3" class = "form__field " placeholder="Enter x coordinate of 3rd vector">
+            <input type="text" id = "vvy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
+            <input type="text" id = "vvz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
+            <br>
+            <button type="submit" onclick="vtp()">Find</button>
+            <br>
+            <h4 id = "vtpans"></h4>
+        </div>
         <div class="collapse" id="stp">
             <h2 style="text-align : center;">Scalar Triple Product</h2>
             <br></br>
@@ -8609,7 +8659,7 @@
             <input type="text" id = "vy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
             <input type="text" id = "vz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
             <br>
-            <button type="submit">Find</button>
+            <button type="submit" onclick="stp()">Find</button>
             <br>
             <h4 id = "stpans"></h4>
         </div>
@@ -13548,6 +13598,27 @@
 </div>
 <!-- End of grey convertor -->
 
+        <!-- start of Hamming Code -->
+        <div>
+            <div class="collapse" id="hamming-calc">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Encode a message by Hamming Code(Left To Right)</h5>
+                        <input type=" " id="hamming-input" value="0"
+                               class="form__field"
+                               oninput="hammingCalc()">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Convert</h5>
+                    </div>
+                    <label class="form__group" id="hamming-result">0</label>
+                </div>
+            </div>
+        </div>
+  <!-- end of Hamming Code -->
+
 
         <!--Start Binary to Hexadecimal-->
         <div>
@@ -14597,18 +14668,18 @@
                     <table class="table">
                         <tr>
                             <td>
-                                <h5>Clear Favourites</h5>
+                                <p>Clear Favourites</p>
                             </td>
                             <td>
                                 <button class="btn btn-light"
                                         onclick="removefavourite();checkfavourite()">Clear
                                 </button>
                             </td>
-                            <td>
-                                <p>Kindly Restart The App for Changes to Apply</p>
-                            </td>
                         </tr>
                     </table>
+                    <div>
+                        <p style="font-size: -0.1rem;">Kindly Restart The App to Apply Changes</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close

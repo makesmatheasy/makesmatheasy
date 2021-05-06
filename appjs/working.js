@@ -367,6 +367,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#vtpbtn").click(function () {
+        openit("#vtp");
+        closenav();
+        clearall();
+    })
 
     $("#hydrops").click(function () {
         openit("#hydroz");
@@ -724,6 +729,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    //Function for hamming code
+    $("#hamming-code-btn").click(function(){
+        openit("#hamming-calc");
+        closenav();
+        clearall();
+    });
 
     //Function of collapsing binary/octal section on click
     $("#octal-to-binary-btn").click(function () {

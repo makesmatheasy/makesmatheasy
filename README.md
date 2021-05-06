@@ -306,6 +306,7 @@ Other Tech/Libraries
   - Grey Code Converter
   - Bitwise Calculator
   - (R-1)'s & R's Complement Calculator
+  - Hamming Code
 
 - Complex Numbers
 
