@@ -1616,6 +1616,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="skew"
+                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Skewness Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Skewness Calculator','#skews','c','skewfav')"><img
+                                        id="skewfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="pythtriplebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Pythagorean Triplets</a>
                         </td>
@@ -2993,6 +3011,24 @@
                                 <span
                                         onclick="addtofavourite('Hamming Code','#hamming-calc','c','hamming-calc-imgfav')"><img
                                         id="hamming-calc-imgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <!--Added Hamming Distance between numbers -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hamming-dist-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Distance</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Hamming Dist','#hamming-dist','c','hamming-dist-imgfav')"><img
+                                        id="hamming-dist-imgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -12277,6 +12313,28 @@
 <div class="collapse" id="clocks">
 
 
+<div class="collapse" id="skews">
+
+
+    <h1 style="font-family:mathfont; text-align:center;">SKEWNESS CALCULATOR </h1>
+    <input type="text" name="skewinput" class="form__field" id="skewinput" width="5em" placeholder="Enter data set seperated by space">
+    <p>&nbsp;</p>
+
+    <button type="button" class="btn btn-outline-light" onclick="skewcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="skewans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">
+        How to Calculate Skewness:<br>
+        1. Calculate the mean and standard deviation<br>
+        2. Subtract the mean from each raw score<br>
+        3. Raise each of these deviations from the mean to the third power and sum<br>
+        4. Calculate skewness, which is the sum of the deviations from the mean, raise to the third power,<br> divided by number of cases minus 1, times the standard deviation raised to the third power.</p>
+
+
+</div>
+
+
     <h1 style="font-family:mathfont; text-align:center;">CLOCK ANGLE CALCULATOR </h1>
     <p>&nbsp;</p>
     <input type="number" name="hclock" class="form__field" id="hclock" width="5em" placeholder="Enter hours of clock">
@@ -13673,6 +13731,30 @@
             </div>
         </div>
   <!-- end of Hamming Code -->
+
+<!-- start of Hamming Dist -->
+<div>
+    <div class="collapse" id="hamming-dist">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the first number : &nbsp; &nbsp; </label>
+            <input type="number" id="numFirst" class="form__field" placeholder="x"
+                   style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            <label> Enter the second number : &nbsp; &nbsp;</label>
+            <input type="number" id="numSecond" class="form__field" placeholder="y"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="hammingDistance(document.getElementById('numFirst').value,document.getElementById('numSecond').value);">
+                Solve
+            </button>
+        </div>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="distResult"></p>
+        </div>
+    </div>
+</div>
+<!-- end of Hamming Dist -->
 
 
         <!--Start Binary to Hexadecimal-->
