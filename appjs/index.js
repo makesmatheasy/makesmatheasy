@@ -335,7 +335,7 @@ function openit(id) {
         "#clocks",
         "#slvxs",
         "#rankcals",
-
+        "#hyperbolicratios"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

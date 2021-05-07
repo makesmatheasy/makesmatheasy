@@ -9419,3 +9419,24 @@ function tvalue() {
 katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
     throwOnError: false
 })
+
+// hyperbolic trignmetry calculator ratios 
+
+function hypertrigno()
+{   
+    const i = parseInt(document.getElementById("hypertrignoin").value);
+    var sinh=document.getElementById("hypersinh");
+    var cosh=document.getElementById("hypercosh");
+    var tanh=document.getElementById("hypertanh");
+    var hyperresult=document.getElementById("hyperresult");
+    var ans =0;
+    var a =Math.sinh(i);
+    var b =Math.cosh(i);
+    var c =Math.tanh(i);
+    hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
+    sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
+    cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
+    tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
+
+
+}
