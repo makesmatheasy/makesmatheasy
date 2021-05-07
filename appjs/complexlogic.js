@@ -719,8 +719,14 @@ function ssqncal()
         renderMathInElement(soutput);
     }
     else{
-        var sum=Math.trunc((num*(num+1)*(2*num+1))/6);
-        s += "\\[Your \\space answer \\space is: " + sum + "\\]";
+        var sum=Math.trunc((num*(num+1)*(2*num+1)));
+        var sum1 = sum/6;
+        s += "\\[Sum \\space of \\space the \\space Squares \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        s += "\\[ \\sum {n}^2 \\space = \\space \\frac{n(n+1)(2n+1)}{6}  \\]";
+        s += "\\[\\sum {n}^2 \\space = \\space \\frac{" + num + "(" + num + " + 1)(2 \\times" + num + "+ 1)}{6} \\]";
+        s += "\\[\\sum {n}^2 \\space = \\space \\frac{" + num + "\\times" + (num+1) + "\\times" + ((2*num)+1) + "}{6} \\]";
+        s += "\\[\\sum {n}^2 \\space = \\space \\frac{" + sum + "}{6} \\]";
+        s += "\\[\\sum {n}^2 \\space = \\space " + sum1 + "\\]";
         soutput.innerHTML = s;
         renderMathInElement(soutput);
     }
@@ -752,8 +758,16 @@ function scbncal()
         renderMathInElement(soutput3);
     }
     else{
-        var sum=Math.trunc(((num*(num+1))/2)**2);
-        stemp += "\\[Your \\space answer \\space is: " + sum + "\\]";
+        var sum=Math.trunc((num*(num+1)));
+        var sum1 = (sum/2);
+        var sum2 = (sum1)**2;
+        stemp += "\\[Sum \\space of \\space the \\space Cubes \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        stemp += "\\[ \\sum {n}^3 \\space = \\space (\\frac{n(n+1)}{2})^2  \\]";
+        stemp += "\\[\\sum {n}^3 \\space = \\space (\\frac{" + num + "(" + num + " + 1)}{2})^2 \\]";
+        stemp += "\\[\\sum {n}^3 \\space = \\space (\\frac{" + num + "\\times" + (num+1) + "}{2})^2 \\]";
+        stemp += "\\[\\sum {n}^3 \\space = \\space (\\frac{" + sum + "}{2})^2 \\]";
+        stemp += "\\[\\sum {n}^3 \\space = \\space (" + sum1 + ")^2\\]";
+        stemp += "\\[\\sum {n}^3 \\space = \\space " + sum2 + "\\]";
         soutput3.innerHTML = stemp;
         renderMathInElement(soutput3);
     }
