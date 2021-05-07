@@ -9528,3 +9528,48 @@ function lrccal()
 }
 document.getElementById("lrcans").innerHTML=s;
 }
+
+function ratpercal()
+{
+    var num1=document.getElementById("ratperx").value;
+    var num2=document.getElementById("ratpery").value;
+    ans="";
+    if(num1==""||num2=="")
+    {
+        ans="Please enter complete ratio";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        var z=num1/num2;
+        z=z*100;
+        ans="The calculated percentage is: "+z+" %";
+    }
+    document.getElementById("ratperans").innerHTML=ans;
+
+}
+
+function perratcal()
+{
+    var num1=document.getElementById("peratx").value;
+    var ans="", f=100;
+    if(num1=="")
+    {
+        ans="Please enter percentage";
+    }
+    else
+    {
+        for(var i=2;i<num1;i++)
+        {
+            if((num1%i==0)&&(f%i==0))
+            {
+                num1=num1/i;
+                f=f/i;
+                i--;
+            }
+        }
+        ans="The calculated ratio is: "+num1+" : "+f;
+    }
+    document.getElementById("perratans").innerHTML=ans;
+}
