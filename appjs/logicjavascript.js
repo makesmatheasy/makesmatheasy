@@ -3884,12 +3884,13 @@ function solveannulus() {
 }
 
 function solveSlope() {
-    let x1 = document.getElementById("inputLineX1").value;
-    let y1 = document.getElementById("inputLineY1").value;
-    let x2 = document.getElementById("inputLineX2").value;
-    let y2 = document.getElementById("inputLineY2").value;
+    var x1 = document.getElementById("inputlinex1").value;
+    var y1 = document.getElementById("inputliney1").value;
+    var x2 = document.getElementById("inputlinex2").value;
+    var y2 = document.getElementById("inputliney2").value;
+
     if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
-        document.getElementById("resultofline").innerHTML = "Enter all four points";
+        document.getElementById("resultofline").innerHTML = "Please enter all four points";
         document.getElementById("answerofline").innerHTML = "";
         document.getElementById("answerofline2").innerHTML = "";
 
