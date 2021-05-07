@@ -9419,3 +9419,36 @@ function tvalue() {
 katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
     throwOnError: false
 })
+
+
+// Z-test logic 
+
+function zvalue() {
+    let pm = document.getElementById('pm').value
+    let sm = document.getElementById('sm').value
+    let sd = document.getElementById('sd').value
+    let sn = document.getElementById('sn').value
+
+    // z score
+    let z = ((sm - pm) * Math.sqrt(sn)) / sd
+
+    let alpha = document.getElementById('alpha').value;
+    let pvalue;
+    if (alpha == 0.01) {
+        pvalue = 2.58;
+    } else if (alpha == 0.05) {
+        pvalue = 1.96; 
+    } else if (alpha == 0.1) {
+        pvalue = 1.64;
+    }
+
+    if (z > pvalue) {
+        document.getElementById('stepsbox2').style.display = "block"
+        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " > " + pvalue + "</strong>, Null Hypothesis is Rejected."
+        document.getElementById('pvalue').innerHTML = "P value = " + pvalue
+        document.getElementById('alphavalue').innerHTML = "Alpha(α) = " + alpha
+    } else {
+        document.getElementById('stepsbox2').style.display = "none"
+        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " < " + pvalue + "</strong>, Null Hypothesis is Not Rejected."
+    }
+}

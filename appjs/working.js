@@ -276,14 +276,12 @@ $(document).ready(function () {
         openit("#giff");
         closenav();
         clearall();
-
     });
-
     $("#dipbtn").click(function () {
         openit("#dip");
         closenav();
         clearall();
-    })
+    });
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
@@ -342,6 +340,11 @@ $(document).ready(function () {
     });
     $("#ttestbtn").click(function () {
         openit("#ttest");
+        closenav();
+        clearall();
+    });   
+    $("#ztestbtn").click(function () {
+        openit("#ztest");
         closenav();
         clearall();
     });   

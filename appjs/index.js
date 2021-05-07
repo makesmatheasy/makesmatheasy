@@ -201,6 +201,7 @@ function openit(id) {
         "#thdif",
         "#corgeo",
         "#ttest",
+        "#ztest",
         "#betagamma",
         "#parallel",
         "#unitconcal",

@@ -1340,29 +1340,38 @@
                     </tr>
                 </table>
             </li>
-
-           
-
+            
+            <!-- direct and indirect -->
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-
                             <a id="dipbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Direct And Indirect Proportion</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Direct And Indirect Proportion
+                                </a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Direct And Indirect Proportion','#dip','c','dipimgfav')"><img
                                         id="dipimgfav" src="images/unfavourite.png"
-
-                            <a id="wandtbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Work And Time Calculator','#wandt','c','wandtimgfav')"><img
-                                        id="wandtimgfav" src="images/unfavourite.png"
-
                                         style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li> 
+
+            <!-- work and time -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="wandtbtn"
+                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
+                     </td>
+                     <td style="float:right;border-top: none;">
+                             <span onclick="addtofavourite('Work And Time Calculator','#wandt','c','wandtimgfav')"><img
+                                     id="wandtimgfav" src="images/unfavourite.png"
+
+                                     style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -3418,6 +3427,22 @@
                                 <span
                                         onclick="addtofavourite('T test','#ttest','c','ttestfav')"><img
                                         id="ttestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ztestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Z-test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Z test','#ztest','c','ztestfav')"><img
+                                        id="ztestfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -9441,6 +9466,35 @@
                 <p id="mean2" style="text-align: left;"></p>
                 <p id="SD1" style="text-align: left;"></p>
                 <p id="SD2" style="text-align: left;"></p>
+            </div>
+        </div>
+        
+        <!-- t -test -->
+        <div class="collapse" id="ztest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
+            <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
+            <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
+            <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
+            <br><br>
+            <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
+            <br><br>
+            <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
+            <br><br>
+            <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
+            <br><br>
+            <label for="">Significance Level</label>
+            <br>
+            <select name="alpha" id="alpha">
+                <option value=0.01>0.01</option>
+                <option value=0.05>0.05</option>
+                <option value=0.1>0.1</option>
+            </select>
+            <br><br>
+            <button class = "btn btn-light" onclick="zvalue()">Test</button>
+            <p id="ztestans"></p>
+            <div id="stepsbox2">
+                <p id="alphavalue"></p>
+                <p id="pvalue"></p>
             </div>
         </div>
 
