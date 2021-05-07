@@ -12857,11 +12857,14 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">IMPROPER TO MIXED FRACTION CONVERTER</h1>
-    <input type="number" name="num" class="form__field" id="num" width="5em" placeholder="Enter numerator of fraction">
-    <p>&nbsp;</p>
-    <input type="number" name="den" class="form__field" id="den" placeholder="Enter denominator of fraction">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="impcal()">CONVERT</button>
+    <form action="">
+        <input type="number" name="num" class="form__field" id="num" width="5em" placeholder="Enter numerator of fraction">
+        <p>&nbsp;</p>
+        <input type="number" name="den" class="form__field" id="den" placeholder="Enter denominator of fraction">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="impcal()">CONVERT</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
     <p id="impans" style="color: white; text-align: center; font-family:mathfont;"></p>
     
    
@@ -15235,29 +15238,33 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <input type="tel" id="ordergetval" class="form__field"
-                               placeholder="Enter Numbers(Space Separated)"
-                               oninput="orderfieldclear()">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="tel" id="ordergetval" class="form__field"
+                                   placeholder="Enter Numbers(Space Separated)"
+                                   oninput="orderfieldclear()">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-light" onclick="orderas()">Ascending
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="orderde()">Descending
+                            </button>
+                            <button type="button" class="btn btn-light"
+                                    onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
+                                Space
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="orderas()">Ascending
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
                         </button>
-                        <button type="button" class="btn btn-light" onclick="orderde()">Descending
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="document.getElementById('ordergetval').value+=' ';document.getElementById('ordergetval').focus();">
-                            Space
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                         </button>
                     </div>
-                    <div class="form-group">
-                        <p class="stopwrap" style="font-family:mathfont;;" id="orderresult"></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
+                    </form>
             </div>
         </div>
     </div>
@@ -21006,18 +21013,23 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <input placeholder="Start Typing a Number" type="number"
-                           id="interval"
-                           class="form__field"
-                           oninput="internationalwords(document.getElementById('interval').value)">
-                    <p id="interresult"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
+                <form>
+                    <div class="modal-body">
+                        <input placeholder="Start Typing a Number" type="number"
+                               id="interval"
+                               class="form__field"
+                               oninput="internationalwords(document.getElementById('interval').value)">
+                        <p id="interresult"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                onclick="this.form.reset();">Reset
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -21038,17 +21050,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <input type="number" id="inpo" class="form__field"
-                               placeholder="Enter a Number"
-                               oninput="callr();document.getElementById('ouo').innerHTML=''">
-                    </div>
-                    <div class="form-group">
-                        <button type="button"
-                                onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
-                                class="btn btn-light">Expand
-                        </button>
-                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="number" id="inpo" class="form__field"
+                                   placeholder="Enter a Number"
+                                   oninput="callr();document.getElementById('ouo').innerHTML=''">
+                        </div>
+                        <div class="form-group">
+                            <button type="button"
+                                    onclick="document.getElementById('ouo').innerHTML=expandedform('inpo')"
+                                    class="btn btn-light">Expand
+                            </button>
+                            <button type="button"
+                                    onclick="this.form.reset();"
+                                    class="btn btn-light">Reset
+                            </button>
+                        </div>
+                    </form>
                     <div class="form-group">
                         <p id="ouo" style="font-family:mathfont;"></p>our
                         <p id="ouroman-1"
@@ -21057,17 +21075,23 @@
                         <p id="ouroman-2" style="font-family:mathfont; display: inline-block; text-decoration: overline;"></p>
                         <p id="ouroman-3" style="font-family:mathfont ; display: inline-block;"></p>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="rinp" class="form__field"
-                               placeholder="Enter Roman Number"
-                               oninput="callder();document.getElementById('exro').innerHTML=''">
-                    </div>
-                    <div class="form-group">
-                        <button type="button"
-                                onclick="expandedformde('out2','exro')"
-                                class="btn btn-light">Expand
-                        </button>
-                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" id="rinp" class="form__field"
+                                   placeholder="Enter Roman Number"
+                                   oninput="callder();document.getElementById('exro').innerHTML=''">
+                        </div>
+                        <div class="form-group">
+                            <button type="button"
+                                    onclick="expandedformde('out2','exro')"
+                                    class="btn btn-light">Expand
+                            </button>
+                            <button type="button"
+                                        onclick="this.form.reset();"
+                                        class="btn btn-light">Reset
+                            </button>
+                        </div>
+                    </form>
                     <div class="form-group">
                         <p id="exro" style="font-family:mathfont;"></p>
                         <p id="out2" style="font-family:mathfont;"></p>
