@@ -248,7 +248,7 @@ Other Tech/Libraries
     - Ellipse
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
-    - Star Polygons: Pentagram
+    - Star Polygons: Pentagram, Double Star Polygon
   - 3D Shapes Calculator
     - Cube
     - Cuboid

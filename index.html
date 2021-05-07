@@ -10807,6 +10807,11 @@
                                            data-target="#pentagram"
                                            style="text-decoration:none;" href="#">Pentagram</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#doublestar"
+                                           style="text-decoration:none;" href="#">Double Star Polygon</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -16607,6 +16612,79 @@
                         <p class="stopwrap" id="resultofpengramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofpengramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="doublestar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Double Star Polygon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h_1 = \sqrt{l_1^2 - \frac{b^2}{4}} \]</p>
+                                <p class="text-center">\[h_2 = \sqrt{l_2^2 - \frac{b^2}{4}} \]</p>
+                                <p class="text-center">\[h_1 = height \space long \space point \]</p>
+                                <p class="text-center">\[h_2 = height \space short \space point \]</p>
+                                <p class="text-center">\[l_1 = side \space length \space long \space point \]</p>
+                                <p class="text-center">\[l_2 = side \space length \space short \space point \]</p>
+                                <p class="text-center">b = base length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Star diameter</h5>
+                                <p class="text-center">\[d = 2 \space h_1 + b \space (1 + \sqrt{2}) \]</p>
+                                <p class="text-center">\[\space \space = 2 \space \sqrt{l_1^2 - \frac{b^2}{4}} + b \space (1 + \sqrt{2}) \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[p = 8 \space (l_1 + l_2) \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 2 \space b \space [b \space (1 + \sqrt{2}) + (h_1 + h_2)] \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/double-star-polygon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter base length (b)" id="inputdoustarside"
+                                   oninput="solvedoustar();">
+                        <input class="form__field" type="number"
+                                   placeholder="Enter side length long point (l1)" id="inputdoustarlonlen"
+                                   oninput="solvedoustar();">
+                        <input class="form__field" type="number"
+                                   placeholder="Enter side length short point (l2)" id="inputdoustarsholen"
+                                   oninput="solvedoustar();">
+                        <p class="stopwrap" id="resultofdoustarlonhei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustarshohei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustardia"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustarperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustararea"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
