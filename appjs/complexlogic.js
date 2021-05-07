@@ -922,27 +922,32 @@ function factorial(n){
 
 function hpcal()
 {
-    var x=document.getElementById("ath").value;
-    var y=document.getElementById("differ").value;
-    var z=document.getElementById("totno").value;
-    var ans="";
-    if(x==""||y==""||z=="")
-    {
-      ans="Please enter all the field";
+    var x=parseInt(document.getElementById("ath").value);
+    var y=parseInt(document.getElementById("differ").value);
+    var z=parseInt(document.getElementById("totno").value);
+    var ansout = document.getElementById("hpans");
+    var anstemp ="";
+    if(x == "" || y == "" || z == ""){
+        anstemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        ansout.innerHTML = anstemp;
+        renderMathInElement(ansout);
+    }
+   else if(!isNaN(parseInt(x)) && !isNaN(parseInt(y)) && !isNaN(parseInt(z)))
+   {
+    var numb = x + ((y - 1)*z);
+    var num6 = (1 / numb) ;
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space = \\space \\frac{1}{a+(n-1)d} \\]";
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space = \\space \\frac{1}{" + x +  "+ (" + y + " - 1)" + z + "} \\]";
+    anstemp +=  "\\[nth \\space Term \\space of \\space HP \\space = \\space" + (num6).toFixed(3) + "\\]";
+    ansout.innerHTML = anstemp;
+    renderMathInElement(ansout);
    }
    else
    {
-        var a=parseInt(x);
-        var b=parseInt(y);
-        var c=parseInt(z);
-       var num=(c-1)*b;
-       var t=a+num;
-        console.log(a+num);
-        ans= 1/num;
+     anstemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+     ansout.innerHTML = anstemp;
+     renderMathInElement(ansout);
    }
-   document.getElementById("hpans").innerHTML=ans;
-     
-
 }
 
 function ppcal()
