@@ -4200,24 +4200,29 @@ function solvepartialcy() {
 }
 
 function ellipsoidsolve() {
-    var a = document.getElementById("inputa").value;
-    var b = document.getElementById("inputb").value;
-    var c = document.getElementById("inputc").value;
+
+    var a = document.getElementById("inputellipa").value;
+    var b = document.getElementById("inputellipb").value;
+    var c = document.getElementById("inputellipc").value;
+
     var voloutput = document.getElementById("resultofvol");
     var tsaoutput = document.getElementById("resultoftsa");
     var voltemp = "";
     var tsatemp = "";
-    var res=((a**1.6 * b**1.6) + (b**1.6 * c**1.6 ) + (a**1.6 * c**1.6))**0.625;
+    var vol = 4.18 * a * b* c ;
+    var area = 6.343 * (((a**1.6 * b**1.6) + (b**1.6 * c**1.6 ) + (a**1.6 * c**1.6))**0.625);
+
     if ((a != "") && (b != "") && (c != "")) {
-        voltemp += "\\[" + "\\frac{4}{3}" + "\\times" + "\\pi" + "\\times" + a + "\\times" + b + "\\times" + c   + "\\]";
-        voltemp += "\\[Volume \\space of \\space Ellipsoid \\space is \\space " + eval(String(4.18 * a * b* c )) + "\\]";
+        voltemp += "\\[\\frac{4}{3} \\times \\pi \\times " + a + "\\times" + b + "\\times" + c   + "\\]";
+        voltemp += "\\[Volume \\space of \\space Ellipsoid \\space is \\space " + vol.toFixed(3) + "\\]";
         voloutput.innerHTML = voltemp;
         tsatemp += "\\[" + 4 + "\\pi" + "(" + "\\frac{(" + a + "\\times" + b + ")^{1.6}" + "(" + b + "\\times" + c +")^{1.6}" + "(" + a + "\\times" + c + ")^{1.6}}{3}" + " )^{\\frac{1}{1.6}}"   + "\\]";
         tsatemp += "\\[Surface \\space area \\space of \\space Ellipsoid \\space is \\space  \\]";
-        tsatemp += "\\[" + eval(String((6.343 * res).toFixed(2) ))  + "\\]";
+        tsatemp += "\\[" + area.toFixed(3) + "\\]";
         tsaoutput.innerHTML = tsatemp;
         renderMathInElement(voloutput);
         renderMathInElement(tsaoutput);
+
     } else {
         voloutput.innerHTML = "";
         tsaoutput.innerHTML = "";
