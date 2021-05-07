@@ -1861,6 +1861,30 @@ function solvepenta(){
     }
 }
 
+function solvetetrahexa(){
+    var a = document.getElementById("inputsidetetrahexa1").value;
+    var voloutput = document.getElementById("resultoftetrahexavol");
+    var saoutput = document.getElementById("resultoftetrahexaarea");
+    var voltemp = "";
+    var satemp = "";
+    if (a != "") {
+        voltemp += "\\[ \\frac{" + 3 + "\\times" + a + "\\times" + a + "\\times" + a  + "}{" + 2 + "}\\]";
+        voltemp += "\\[Volume \\space of \\space Tetrahexahedron \\space is \\space \\]";
+        voltemp += "\\[" + eval(String((3 * a * a * a ) / 2)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ " + 3 + "\\times" + a + "\\times" + a + "\\times" + "\\sqrt{" + 5 + "}" +"\\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Tetrahexahedron \\space is \\space \\]";
+        satemp += "\\[" + eval(String(3 * a * a * Math.sqrt(5) )) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+    }else{
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+
+    }
+}
+
 function partialdiffsolve() {
     var ikk = document.getElementById("inputpartialorder");
     if (ikk.value == "") {
