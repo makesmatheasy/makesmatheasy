@@ -8435,14 +8435,18 @@ function multBinDecHexOct(){
 function hammingDistance(x, y) {
     let val = x ^ y;
     let res = 0;
-  
+    
+    if(x.length == y.length){
     while (val > 0) {
       val &= val - 1;
       res++;
     }
     
     document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
-  }
+    }else{
+        document.getElementById("distResult").innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal inputs )"
+    }
+}
 
 //function for hamming code
 function hammingCalc(){
