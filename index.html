@@ -14112,15 +14112,25 @@
             <div class="collapse" id="hamming-calc">
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Encode a message by Hamming Code(Left To Right)</h5>
+                        <h5>Encode a message by Hamming Code</h5>
+                        <select id="hamming-select1" class="form__field">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Left-To-Right
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Right-To-Left
+                            </option>
+                        </select>
                         <input type=" " id="hamming-input" value="0"
-                               class="form__field"
-                               oninput="hammingCalc()">
+                               class="form__field">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Convert</h5>
+                        <h5>Compute Hamming Code</h5>
+                        <button type="button" class="btn btn-light" onclick="hammingCalc()">
+                            Find
+                        </button>
                     </div>
                     <label class="form__group" id="hamming-result">0</label>
                 </div>
