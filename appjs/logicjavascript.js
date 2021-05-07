@@ -3840,6 +3840,56 @@ function solvepentagram() {
 
 }
 
+function solvedoustar() {
+    var b = document.getElementById("inputdoustarside").value;
+    var l1 = document.getElementById("inputdoustarlonlen").value;
+    var l2 = document.getElementById("inputdoustarsholen").value;
+    var h1output = document.getElementById("resultofdoustarlonhei");
+    var h2output = document.getElementById("resultofdoustarshohei");
+    var diaoutput = document.getElementById("resultofdoustardia");
+    var perioutput = document.getElementById("resultofdoustarperi");
+    var areaoutput = document.getElementById("resultofdoustararea");
+    var h1temp = "";
+    var h2temp = "";
+    var diatemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if ((b != "") && (l1 != "") && (l2 != "")) {
+        if(l1<l2) {
+            h1output.innerHTML = "l1 should be greater than l2";
+        } else {
+        h1temp += "\\[Height \\space long \\space point \\space \\newline \\sqrt{" + l1 + "^2 - \\frac{" + b + "^2}{4}}" + "\\ = " + eval(String(Math.sqrt((l1 * l1) - (b * b)/4))).toFixed(2) + "\\]";
+        h1output.innerHTML = h1temp;
+
+        h2temp += "\\[Height \\space short \\space point \\space \\newline \\sqrt{" + l2 + "^2 - \\frac{" + b + "^2}{4}}" + "\\ = " + eval(String(Math.sqrt((l2 * l2) - (b * b)/4))).toFixed(2) + "\\]";
+        h2output.innerHTML = h2temp;
+
+        diatemp += "\\[Star \\space Diameter \\space \\newline" + 2 + "\\times \\sqrt{" + l1 + "^2 - \\frac{" + b + "^2}{4}} +" + b + "\\times (1 + \\sqrt{2})" + "\\ = " + eval(String(2 * Math.sqrt((l1 * l1) - (b * b)/4) + b * (1 + Math.sqrt(2))  )).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+
+        peritemp += "\\[Perimeter \\space \\newline" + 8 + "\\times (" + l1 + "+" + l2 + ")" + "\\ = " + eval(String((8 * l1) + (8 * l2))).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space \\newline" + 2 + "\\times" + b + "\\space [" + b + "(1 + \\sqrt{2}) \\newline + (\\sqrt{" + l1 + "^2 - \\frac{" + b + "^2}{4}} + \\sqrt{" + l2 + "^2 - \\frac{" + b + "^2}{4}})]" + "\\ = " + eval(String(2 * b* [ b * ( 1 + Math.sqrt(2) ) + ( Math.sqrt((l1 * l1) - (b * b)/4) + Math.sqrt((l2 * l2) - (b * b)/4) ) ])).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(h1output);
+        renderMathInElement(h2output);
+        renderMathInElement(diaoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+        }
+
+    } else {
+        h1output.innerHTML = "";
+        h2output.innerHTML = "";
+        diaoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
