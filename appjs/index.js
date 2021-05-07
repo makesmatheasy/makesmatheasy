@@ -508,27 +508,19 @@ function numbersapi() {
     let xhttp = new XMLHttpRequest();
     let el = document.getElementById("numberfact");
     //If the fact is successfully retreived
+    
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let val = this.responseText;
-
-            // var valTex='';
-            // for(i of val){
-            //     if(i==' '){
-            //         valTex+=" \\space ";
-            //     }else{
-            //         valTex+=i;
-            //     }
-            // }
-            // console.log(valTex);
-            // el.innerHTML="\\["+valTex+"\\]";
             el.innerHTML = val;
             renderMathInElement(el);
         }
     };
 
+    
     xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
 
+    /*
     xhttp.onerror = function () {
         let el = document.getElementById("numberfact");
         var facts =
@@ -564,7 +556,9 @@ function numbersapi() {
         let val = facts[i];
         el.innerHTML = val;
     };
+    */
     xhttp.send();
+    
 }
 
 $(document).on('click', ' .list_menu_items ', function () {
