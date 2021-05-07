@@ -82,6 +82,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cov").click(function () {
+        openit("#covs");
+        closenav();
+        clearall();
+    });
     $("#tableoption").click(function () {
         openit("#table");
         closenav();
