@@ -7471,45 +7471,66 @@ function gp() {
     var n = document.getElementById("number").value
     var explain = document.getElementById("sumGP_formula");
     var printseries = document.getElementById("printGPseries");
+    var explaintemp = "";
+    var explain1temp = "";
     var ans;
     var ans1;
     // console.log(a)
     // console.log(r)
     // console.log(n)
-    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(r))) {
+    if (!isNaN(parseInt(n)) && !isNaN(parseInt(a)) && !isNaN(parseInt(r))) {
         for (var i = 0, series = "", num = 0; i <= n-1; i++) {
             num = parseInt(a) * Math.pow(r,i);
             series += (num.toString() + ", ");
         }
 
-        printseries.innerHTML = "Geometric Progression: " + series.substring(0, series.length - 2);
+        explaintemp += "\\[Geometric \\space Progression : \\space a, \\space ar, \\space ar^2,....., \\space ar^{n-1} \\]";
+        explaintemp += "\\[Geometric \\space Progression : " + series.substring(0, series.length - 2) + "\\]";
+        printseries.innerHTML = explaintemp;
+        renderMathInElement(printseries);
       }
       else
       {
-        printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        printseries.innerHTML = "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
         explain.innerHTML="";
+        renderMathInElement(printseries);
         return;
       }
 
 
       var power = parseFloat(Math.pow(r, n))
-      if (r < -1 || r > 1) {
+      if (r > 1) {
           ans1 = parseFloat(a * (power - 1))
           ans = parseFloat(ans1 / (r - 1))
-          explain.innerHTML = "Formula: \\[S=\\frac{a(r^n - 1)}{r - 1}\\]";
+          explain1temp += "\\[Formula : \\]";
+          explain1temp += "\\[S_n=\\frac{a(r^n - 1)}{r - 1}\\]";
+          explain1temp += "\\[S_n \\space = \\space \\frac{" + a + "(" + r + "^{" + n + "} - 1)}{" + r + "- 1}\\]";
+          explain1temp += "\\[S_n \\space = \\space \\frac{" + a + "\\times" + ((power)-1) + "}{"+ (r-1) + "}\\]";
+          explain1temp += "\\[S_n \\space = " + ans + "\\]";
+          explain.innerHTML = explain1temp;
+          renderMathInElement(explain);
           cal = (a * (r^n - 1)) / (r - 1);
-      } else if (r > -1 && r < 1 && r != 1) {
+      } else if (r < 1) {
           ans1 = parseFloat(a * (1 - power))
           ans = parseFloat(ans1 / (1 - r))
-          explain.innerHTML = "Formula: \\[S=\\frac{a(r^n - 1)}{1 - r}\\]";
+          explain1temp += "\\[Formula : \\]";
+          explain1temp += "\\[S_n=\\frac{a(r^n - 1)}{1 - r}\\]";
+            explain1temp += "\\[S_n \\space = \\space \\frac{" + a + "(" + r + "^{" + n + "} - 1)}{1 -(" + r + ")}\\]";
+          explain1temp += "\\[S_n \\space = \\space \\frac{" + a + "\\times" + ((power)-1) + "}{"+ (1-r) + "}\\]";
+          explain1temp += "\\[S_n \\space = " + ans + "\\]";
+          explain.innerHTML = explain1temp;
+          renderMathInElement(explain);
           cal = (a * (r^n - 1)) / (1 - r);
       } else if (r == 1) {
           ans = parseInt(a * n)
-          explain.innerHTML = "Formula: \\[S= an\\]";
+          explain1temp += "\\[Formula : \\]";
+          explain1temp += "\\[S_n = an\\]";
+          explain1temp += "\\[S_n \\space = \\space " + a + "\\times" + n +"\\]";
+          explain1temp += "\\[S_n \\space = " + ans + "\\]";
+          explain.innerHTML = explain1temp;
+          renderMathInElement(explain);
           cal = a * n;
       }
-      renderMathInElement(document.getElementById("sumGP_formula"));
-      document.getElementById("sumgp").innerHTML = "Sum = " + ans;
 }
 
 function igp() {
