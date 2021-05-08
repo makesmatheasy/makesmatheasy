@@ -3785,6 +3785,18 @@ function solvedeca(){
 
 }
 
+function solvedodeca(){
+    var side = parseInt(document.getElementById("inputsidedodeca").value);
+    var area = 3 * (side**2) * (2 + math.sqrt(3));
+    var perimeter = 12 * side;
+    document.getElementById("resultofareadodeca1").innerHTML = "\\[Area \\space of \\space Dodecagon \\space \\]";
+    document.getElementById("resultofareadodeca2").innerHTML = "\\[3 \\times ("+side+"^2) \\times (2+ \\sqrt{3})= "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterdodeca").innerHTML = "\\[Perimeter \\space of \\space Dodecagon \\space \\space  12 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareadodeca1"));
+    renderMathInElement(document.getElementById("resultofareadodeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterdodeca"));
+}
+
 //created function for Hexagon
 function solvehex(){
     let side = document.getElementById("inputsidehex").value;
