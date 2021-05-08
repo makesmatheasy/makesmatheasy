@@ -151,10 +151,7 @@ function openit(id) {
         "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
-
         "#segcals",
-        "#vtp",
-
         "#hydroz",
         "#straincalc",
         "#shapescal",
@@ -297,7 +294,6 @@ function openit(id) {
         "#repp",
         "#partial_sphere",
         "#mtm",
-        "#stp",
         "#igc",
         "#res",
         "#clr",

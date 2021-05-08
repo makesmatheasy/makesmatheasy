@@ -387,17 +387,6 @@ $(document).ready(function () {
         clearall();
 
     });
-    
-    $("#stpbtn").click(function () {
-        openit("#stp");
-        closenav();
-        clearall();
-    })
-    $("#vtpbtn").click(function () {
-        openit("#vtp");
-        closenav();
-        clearall();
-    })
     //Euler's Totient Function
     $("#etfbtn").click(function () {
         openit("#etf");
