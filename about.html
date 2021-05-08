@@ -123,6 +123,18 @@
         font-size: 1.5rem;
         box-shadow: 0px 4px 8px 0px rgb(5, 5, 5);
       }
+      #home1 {
+          margin-top: 20px;
+        text-transform: uppercase;
+        border-radius: 0.5rem;
+        border: 2px solid var(--appblack);
+        color: var(--apppink);
+        background-color: var(--appblack);
+        outline: none;
+        transition-duration: 0.6s;
+        font-size: 1.5rem;
+        box-shadow: 0px 4px 8px 0px rgb(5, 5, 5);
+      }
       #home:hover {
         background-color: #395177;
         font-weight: bolder;
@@ -209,37 +221,6 @@
             <button id="home">Contact Us</button>
           </a>
         </div>
-        <div class="card-body">
-          <h5 class="class-text">
-            <strong>The IDEA:</strong> We offer mathematics in an enjoyable and
-            easy-to-learn manner.
-          </h5>
-          <br />
-
-          <h5>
-            <strong>Our commitment:</strong> The site will continue to grow over
-            time. Keep coming back to find out what has been added.
-          </h5>
-          <br />
-
-          <h5>
-            <strong>Feedback:</strong> If you like the site or would like to
-            make comments or even contributions then
-            <a id="aboutContact" href="contact.html">contact us.</a>
-          </h5>
-          <br />
-
-          <h5>
-            <strong>Developed By:</strong> Rajinderpal Singh
-            <span
-              class="badge badge-light"
-              id="aboutBadge"
-              style="cursor: pointer"
-              onclick="window.open('https://sairish2001.github.io')"
-              >Sairish</span
-            >
-          </h5>
-        </div>
         <!-- hero section -->
 
         <div class="hero">
@@ -267,6 +248,41 @@
                         easy-to-learn manner.
                     </p>
                 
+                </div>
+            </div>
+       </div>
+       <!-- commitment section -->
+       <div class="hero">
+        <img class="illustration" src="icons/Commitment.svg" />
+    <div class="card">
+        <div class="card-header">
+            <h4><strong>Our Commitment:</strong></h4>
+            </div>
+            <div class="card-body">
+                <p>
+                    The site will continue to grow over
+            time. Keep coming back to find out what has been added.
+                </p>
+            
+            </div>
+        </div>
+   </div>
+
+          <!-- feedback section -->
+          <div class="hero">
+            <img class="illustration" src="icons/Feedback.svg" />
+        <div class="card">
+            <div class="card-header">
+                <h4><strong>Feedback:</strong></h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        If you like the site or would like to
+            make comments or even contributions then
+            <a href="contact.html">
+                <button id="home1">Contact Us</button>
+              </a>
+                    </p>
                 </div>
             </div>
        </div>
