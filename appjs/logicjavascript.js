@@ -3840,6 +3840,56 @@ function solvepentagram() {
 
 }
 
+function solvedoustar() {
+    var b = document.getElementById("inputdoustarside").value;
+    var l1 = document.getElementById("inputdoustarlonlen").value;
+    var l2 = document.getElementById("inputdoustarsholen").value;
+    var h1output = document.getElementById("resultofdoustarlonhei");
+    var h2output = document.getElementById("resultofdoustarshohei");
+    var diaoutput = document.getElementById("resultofdoustardia");
+    var perioutput = document.getElementById("resultofdoustarperi");
+    var areaoutput = document.getElementById("resultofdoustararea");
+    var h1temp = "";
+    var h2temp = "";
+    var diatemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if ((b != "") && (l1 != "") && (l2 != "")) {
+        if(l1<l2) {
+            h1output.innerHTML = "l1 should be greater than l2";
+        } else {
+        h1temp += "\\[Height \\space long \\space point \\space \\newline \\sqrt{" + l1 + "^2 - \\frac{" + b + "^2}{4}}" + "\\ = " + eval(String(Math.sqrt((l1 * l1) - (b * b)/4))).toFixed(2) + "\\]";
+        h1output.innerHTML = h1temp;
+
+        h2temp += "\\[Height \\space short \\space point \\space \\newline \\sqrt{" + l2 + "^2 - \\frac{" + b + "^2}{4}}" + "\\ = " + eval(String(Math.sqrt((l2 * l2) - (b * b)/4))).toFixed(2) + "\\]";
+        h2output.innerHTML = h2temp;
+
+        diatemp += "\\[Star \\space Diameter \\space \\newline" + 2 + "\\times \\sqrt{" + l1 + "^2 - \\frac{" + b + "^2}{4}} +" + b + "\\times (1 + \\sqrt{2})" + "\\ = " + eval(String(2 * Math.sqrt((l1 * l1) - (b * b)/4) + b * (1 + Math.sqrt(2))  )).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+
+        peritemp += "\\[Perimeter \\space \\newline" + 8 + "\\times (" + l1 + "+" + l2 + ")" + "\\ = " + eval(String((8 * l1) + (8 * l2))).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space \\newline" + 2 + "\\times" + b + "\\space [" + b + "(1 + \\sqrt{2}) \\newline + (\\sqrt{" + l1 + "^2 - \\frac{" + b + "^2}{4}} + \\sqrt{" + l2 + "^2 - \\frac{" + b + "^2}{4}})]" + "\\ = " + eval(String(2 * b* [ b * ( 1 + Math.sqrt(2) ) + ( Math.sqrt((l1 * l1) - (b * b)/4) + Math.sqrt((l2 * l2) - (b * b)/4) ) ])).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(h1output);
+        renderMathInElement(h2output);
+        renderMathInElement(diaoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+        }
+
+    } else {
+        h1output.innerHTML = "";
+        h2output.innerHTML = "";
+        diaoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
@@ -8447,8 +8497,14 @@ function hammingDistance(x, y) {
 //function for hamming code
 function hammingCalc(){
     const input = document.getElementById("hamming-input").value;
+    const type = document.getElementById("hamming-select1").value;
     let result = document.getElementById("hamming-result");
-    result.innerHTML = hammingCodeLtoREven(input);
+
+    if(type === "Left-To-Right"){
+        result.innerHTML = hammingCodeLtoREven(input);
+    }else{
+        result.innerHTML = hammingCodeRtoLEven(input);
+    }
 }
 
 //function for encoding message using hamming code with even parity from left to right
@@ -8496,6 +8552,54 @@ function hammingCodeLtoREven(x){
     }
     console.log(res);
     return res1;
+}
+
+//function for encoding message using hamming code with even parity from right ot left
+function hammingCodeRtoLEven(x){
+    let n = x.length;
+    let p = 0,t = 0,c=0;
+    let k = 0, l = 0,s=0;
+    let res = "",res1="";
+    let par=0;
+    x= x.split("").reverse().join("");//reverse the input for R to L
+    //find number of parity bits
+    while(p==0){
+        if (Math.pow(2,s) >= n+ s + 1){
+        p=s;
+        }
+        s+=1;
+    }
+    t=p+n; //total bit of hamming code
+    for (var j = 0; j<t; j++){
+        if((j+1)== Math.pow(2,k)){
+            res = res + "?";
+            k+=1;
+        }else{
+            res = res + x[l];
+            l+=1;
+        }
+    }
+    for (var i =0; i<res.length;i++){
+        if(res[i]=="?"){
+            c=i+2;
+            while(c<=t){
+                if(((i+1) & c) == (i+1)){
+                    par += parseInt(res[c-1]);
+                }
+                c+=1;
+            }
+            if(par % 2 == 0){
+                res1 +="0";
+            }else {
+                res1 +="1";
+            }
+            par =0;
+        }else{
+            res1 += res[i];
+        }
+    }
+    console.log(res);
+    return res1.split("").reverse().join(""); //reverse the ans to get the ans for R to L
 }
 
 

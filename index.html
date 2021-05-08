@@ -3423,6 +3423,7 @@
                     </tr>
                 </table>
             </li>
+<<<<<<< HEAD
             <li>
                 <table class="table">
                     <tr>
@@ -3457,6 +3458,26 @@
                     </tr>
                 </table>
             </li>
+||||||| 1aaf35f
+=======
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cov"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Covariance Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Covariance Calculator','#covs','c','covsimgfav')"><img
+                                       id="covsimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+>>>>>>> 9c57076c90914cbef5837a0f7996236ae55d20e6
             <div class="dropdown-divider"></div>
         </div>
         <!-- End of Statistics section -->
@@ -11092,6 +11113,11 @@
                                            data-target="#pentagram"
                                            style="text-decoration:none;" href="#">Pentagram</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#doublestar"
+                                           style="text-decoration:none;" href="#">Double Star Polygon</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -12987,9 +13013,6 @@
         <p id="ssqnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     </form>
     
-    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Squares of N Natural numbers : <br> <br>
-    Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p>
-    </div>
    
 </div>
 
@@ -13004,9 +13027,6 @@
         <p id="scbnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     </form>
     
-    <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Cubes of N Natural numbers : <br> <br>
-    Σn2 = [n(n+1)/2]^2<p>&nbsp;</p>
-    </div>
    
 </div>
 
@@ -14187,15 +14207,25 @@
             <div class="collapse" id="hamming-calc">
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Encode a message by Hamming Code(Left To Right)</h5>
+                        <h5>Encode a message by Hamming Code</h5>
+                        <select id="hamming-select1" class="form__field">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Left-To-Right
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Right-To-Left
+                            </option>
+                        </select>
                         <input type=" " id="hamming-input" value="0"
-                               class="form__field"
-                               oninput="hammingCalc()">
+                               class="form__field">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Convert</h5>
+                        <h5>Compute Hamming Code</h5>
+                        <button type="button" class="btn btn-light" onclick="hammingCalc()">
+                            Find
+                        </button>
                     </div>
                     <label class="form__group" id="hamming-result">0</label>
                 </div>
@@ -17296,6 +17326,79 @@
                         <p class="stopwrap" id="resultofpengramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofpengramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="doublestar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Double Star Polygon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h_1 = \sqrt{l_1^2 - \frac{b^2}{4}} \]</p>
+                                <p class="text-center">\[h_2 = \sqrt{l_2^2 - \frac{b^2}{4}} \]</p>
+                                <p class="text-center">\[h_1 = height \space long \space point \]</p>
+                                <p class="text-center">\[h_2 = height \space short \space point \]</p>
+                                <p class="text-center">\[l_1 = side \space length \space long \space point \]</p>
+                                <p class="text-center">\[l_2 = side \space length \space short \space point \]</p>
+                                <p class="text-center">b = base length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Star diameter</h5>
+                                <p class="text-center">\[d = 2 \space h_1 + b \space (1 + \sqrt{2}) \]</p>
+                                <p class="text-center">\[\space \space = 2 \space \sqrt{l_1^2 - \frac{b^2}{4}} + b \space (1 + \sqrt{2}) \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[p = 8 \space (l_1 + l_2) \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 2 \space b \space [b \space (1 + \sqrt{2}) + (h_1 + h_2)] \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/double-star-polygon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter base length (b)" id="inputdoustarside"
+                                   oninput="solvedoustar();">
+                        <input class="form__field" type="number"
+                                   placeholder="Enter side length long point (l1)" id="inputdoustarlonlen"
+                                   oninput="solvedoustar();">
+                        <input class="form__field" type="number"
+                                   placeholder="Enter side length short point (l2)" id="inputdoustarsholen"
+                                   oninput="solvedoustar();">
+                        <p class="stopwrap" id="resultofdoustarlonhei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustarshohei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustardia"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustarperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoustararea"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
