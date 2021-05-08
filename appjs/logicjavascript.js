@@ -6959,7 +6959,22 @@ function factorialsol(factorialval) {
         ans.innerHTML += calc;
     }
 }
-
+function occfind(){
+    let n = parseInt(document.getElementById("occin").value)
+    let ang = parseInt(document.getElementById("occin1").value)
+    var ans = 1;
+ 
+    // Calculate the frequency
+    // of given angle for each vertex
+    var freq = (ang * n) / 180;
+ 
+    // Multiply answer by frequency.
+    ans = ans * (n - 1 - freq);
+ 
+    // Multiply answer by the number of vertices.
+    ans = ans * n;
+    document.getElementById("occans").innerHTML = ans
+}
 // profit loss calculations
 function profitloss() {
     var cp = parseFloat(document.getElementById("cp").value);
