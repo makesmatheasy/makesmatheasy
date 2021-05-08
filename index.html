@@ -10089,19 +10089,25 @@
                 <p class="stopwrap" id="displayequation">
                 </p>
             </div>
-            <div class="form-group">
-                <input type="text" id="inputequation" class="form__field"
-                       placeholder="Enter Equation"
-                       oninput="dequation();">
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="equationmagic();">Reduce
-                </button>
-                <button type="button" class="btn btn-light"
-                        onclick="collapseit('equationsmanydiv');">Solve for
-                    Variables
-                </button>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="inputequation" class="form__field"
+                           placeholder="Enter Equation"
+                           oninput="dequation();">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="equationmagic();">Reduce
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="collapseit('equationsmanydiv');">Solve for
+                        Variables
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">Reset
+                    </button>
+                </div>
+            </form>
+            
 
             <div class="form-group">
                 <p class="stopwrap" id="resultsimplifyequation">
