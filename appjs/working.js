@@ -336,11 +336,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#strclc").click(function () {
-        openit("#straincalc");
-        closenav();
-        clearall();
-    });
     $("#errper").click(function () {
         openit("#errpers");
         closenav();

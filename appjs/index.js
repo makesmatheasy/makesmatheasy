@@ -156,7 +156,6 @@ function openit(id) {
         "#vtp",
 
         "#hydroz",
-        "#straincalc",
         "#shapescal",
         "#tdshapescal",
         "#divide",
@@ -225,7 +224,6 @@ function openit(id) {
         "#bt-collapse",
         "#bt-collapse1",
         "#pandc",
-        "#stresscalc",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
