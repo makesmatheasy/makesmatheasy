@@ -82,7 +82,36 @@
         z-index: 99;
         font-weight: 900;
       }
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        margin: 5rem 0rem;
+      }
+      .illustration {
+        width: 30%;
+        margin-right: 7rem;
+      }
+      .hero h2 {
+        color: #9dbae8 !important;
+        z-index: 99;
+        font-weight: 500;
+        margin-top: 3rem;
+      }
+      .secondary-text {
+        color: #415e8c;
+      }
+      @media (max-width: 769px) {
+        .hero {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
+        .illustration {
+          width: 80%;
+          margin: 2rem 0rem;
+        }
+      }
       body img {
         filter: invert(0%);
       }
@@ -143,6 +172,20 @@
             <button id="home">Contact Us</button>
           </a>
         </div>
+
+        <!-- hero section -->
+
+        <div class="hero">
+          <img class="illustration" src="icons/Math.svg" />
+          <h2>
+            MakesMathEasy solves various math problems along with steps. <br />
+            We provide speedy calculations, within a few mins. We work together,
+            design, create and produce work that we are proud of. We believe
+            that<strong class="secondary-text"> Math is Fun</strong>.
+          </h2>
+        </div>
+
+        <!-- hero section -->
       </div>
     </div>
   </body>

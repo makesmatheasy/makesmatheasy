@@ -774,6 +774,81 @@ function scbncal()
 
 }
 
+function ssncal()
+{
+    var num=document.getElementById("ssn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var sumoutput = document.getElementById("ssnans");
+    var sumtemp="";
+    if(num=="")
+    {
+       sumtemp += "\\[Please \\space enter \\space number \\]";
+       sumoutput.innerHTML = sumtemp;
+       renderMathInElement(sumoutput);
+    }
+    else if(!valid.test(num))
+    {
+        sumtemp += "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        sumoutput.innerHTML = sumtemp;
+        renderMathInElement(sumoutput);
+    }
+    else if(num<1){
+        sumtemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        sumoutput.innerHTML = sumtemp;
+        renderMathInElement(sumoutput);
+    }
+    else{
+        var sumN=Math.trunc((num*(num+1)));
+        var sum1N = sumN/2;
+        sumtemp += "\\[Sum \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        sumtemp += "\\[ \\sum {n} \\space = \\space \\frac{n(n+1)}{2}  \\]";
+        sumtemp += "\\[ \\sum {n} \\space = \\space \\frac{" + num + "(" + num + " + 1)}{2} \\]";
+        sumtemp += "\\[ \\sum {n} \\space = \\space \\frac{" + num + "\\times" + (num+1) +  "}{2} \\]";
+        sumtemp += "\\[ \\sum {n} \\space = \\space \\frac{" + sumN + "}{2} \\]";
+        sumtemp += "\\[ \\sum {n} \\space = \\space " + sum1N + "\\]";
+        sumoutput.innerHTML = sumtemp;
+        renderMathInElement(sumoutput);
+    }
+
+}
+
+function ssoncal()
+{
+    var num=document.getElementById("sson").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var sumoutput1 = document.getElementById("ssonans");
+    var sumtemp1="";
+    if(num=="")
+    {
+       sumtemp1 += "\\[Please \\space enter \\space number \\]";
+       sumoutput1.innerHTML = sumtemp1;
+       renderMathInElement(sumoutput1);
+    }
+    else if(!valid.test(num))
+    {
+        sumtemp1 += "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        sumoutput1.innerHTML = sumtemp1;
+        renderMathInElement(sumoutput1);
+    }
+    else if(num<1){
+        sumtemp1 += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        sumoutput1.innerHTML = sumtemp1;
+        renderMathInElement(sumoutput1);
+    }
+    else{
+        var sumCN= (num**2);
+        sumtemp1 += "\\[Sum \\space of \\space the \\space First \\space n \\space Odd \\space Natural \\space Numbers \\space is \\]";
+        sumtemp1 += "\\[ \\sum ({2n-1}) \\space = \\space n^{2}  \\]";
+        sumtemp1 += "\\[ \\sum ({2n-1}) \\space = \\space" + num + "^{2}" + "\\]";
+        sumtemp1 += "\\[ \\sum ({2n-1}) \\space =" + sumCN + "\\]";
+        sumoutput1.innerHTML = sumtemp1;
+        renderMathInElement(sumoutput1);
+    }
+
+}
+
 
   function numcubesRangecal()
     {

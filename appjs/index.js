@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#nextPrime",
         "#hamming-dist",
         "#anyBase",
         "#complex1collapse",
@@ -147,17 +148,12 @@ function openit(id) {
         "#arcs",
         "#sosqs",
         "#sosqsn",
-        "#socbsn",
         "#squaresRanges",
         "#favourite",
         "#cubesRanges",
         "#numcubesRanges",
-
         "#segcals",
-        "#vtp",
-
         "#hydroz",
-        "#straincalc",
         "#shapescal",
         "#tdshapescal",
         "#divide",
@@ -201,6 +197,7 @@ function openit(id) {
         "#thdif",
         "#corgeo",
         "#ttest",
+        "#ztest",
         "#betagamma",
         "#parallel",
         "#unitconcal",
@@ -226,7 +223,6 @@ function openit(id) {
         "#bt-collapse",
         "#bt-collapse1",
         "#pandc",
-        "#stresscalc",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
@@ -298,7 +294,6 @@ function openit(id) {
         "#repp",
         "#partial_sphere",
         "#mtm",
-        "#stp",
         "#igc",
         "#res",
         "#clr",
@@ -335,9 +330,10 @@ function openit(id) {
         "#clocks",
         "#slvxs",
         "#rankcals",
+        "#hyperbolicratios",
         "#covs",
-        "#lrcs"
-
+        "#lrcs",
+        "#perats"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

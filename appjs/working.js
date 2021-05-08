@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -119,6 +119,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#perat").click(function () {
+        openit("#perats");
+        closenav();
+        clearall();
+    });
     $("#sreslc").click(function () {
         openit("#stresscalc");
         closenav();
@@ -150,11 +155,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#socbn").click(function () {
-        openit("#socbsn");
-        closenav();
-        clearall();
-    });
+
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
@@ -335,11 +336,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#strclc").click(function () {
-        openit("#straincalc");
-        closenav();
-        clearall();
-    });
     $("#errper").click(function () {
         openit("#errpers");
         closenav();
@@ -352,6 +348,11 @@ $(document).ready(function () {
     });
     $("#ttestbtn").click(function () {
         openit("#ttest");
+        closenav();
+        clearall();
+    });   
+    $("#ztestbtn").click(function () {
+        openit("#ztest");
         closenav();
         clearall();
     });   
@@ -386,20 +387,15 @@ $(document).ready(function () {
         clearall();
 
     });
-    
-    $("#stpbtn").click(function () {
-        openit("#stp");
-        closenav();
-        clearall();
-    })
-    $("#vtpbtn").click(function () {
-        openit("#vtp");
-        closenav();
-        clearall();
-    })
     //Euler's Totient Function
     $("#etfbtn").click(function () {
         openit("#etf");
+        closenav();
+        clearall();
+    })
+    //Next Prime Function
+    $("#next-pri-btn").click(function () {
+        openit("#nextPrime");
         closenav();
         clearall();
     })
@@ -1026,6 +1022,11 @@ $(document).ready(function () {
 
     $("#perrankcalbtn").click(function(){
         openit("#rankcals");
+        closenav();
+        clearall();
+    });
+    $("#hyperbolictrignocollapsebtn").click(function(){
+        openit("#hyperbolicratios");
         closenav();
         clearall();
     });
