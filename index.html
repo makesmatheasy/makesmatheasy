@@ -1695,43 +1695,6 @@
                     </tr>
                 </table>
             </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="strclc"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Strain Calculator </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Strain Calculator', '#straincalc', 'c', 'strainimg')"><img
-                                        id="strainimg" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="sreslc"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Stress Calculator </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Stress Calculator', '#stresscalc', 'c', 'stressimg')"><img
-                                        id="stressimg" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-           
-            
-            
-           
-
            
             <li>
                 <table class="table">
@@ -13209,35 +13172,6 @@
 </div>
 
 
-<!--Strain Calculator starts-->
-<div class="collapse" id="straincalc">
-
-    
-    <h1 style="font-family:mathfont; text-align:center;">STRAIN CALCULATOR </h1>
-    <input type="number" name="chnln" class="form__field" id="chnln"  placeholder="Enter the change in length">
-    <select id="chunit" class="form__field">
-        <option class="form__field" value="µm" style="background-color: #232a36;"> µm</option>
-        <option class="form__field" value="mm"  style="background-color: #232a36;"> mm</option>
-        <option class="form__field" value="cm"  style="background-color: #232a36;"> cm</option>
-        <option class="form__field" value="m" style="background-color: #232a36;"> m</option>
-        <option class="form__field" value="inch"  style="background-color: #232a36;"> inch</option>
-    </select>
-    <p>&nbsp;</p>
-    <input type="number" name="orln" class="form__field" id="orln" placeholder="Enter the original length">
-    <select id="orunit" class="form__field">
-        <option class="form__field" value="µm" style="background-color: #232a36;"> µm</option>
-        <option class="form__field" value="mm" style="background-color: #232a36;"> mm</option>
-        <option class="form__field" value="cm" style="background-color: #232a36;"> cm</option>
-        <option class="form__field" value="mm"  style="background-color: #232a36;"> m</option>
-        <option class="form__field" value="inch"  style="background-color: #232a36;"> inch</option>
-    </select>
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="straincal()">Calculate</button>
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="strainans"></div>
-    
-   
-</div>
-<!--Strain Calculator Ends-->
 
 <!--Binomial PMF starts-->
 <div class="collapse" id="bpmfs">
@@ -13273,33 +13207,7 @@
      From the average rate of success, the Poisson distribution probability can be easily calculated.
     </div>
 </div>
-<!--Stress Calculator starts-->
-<div class="collapse" id="stresscalc">
-    <h1 style="font-family:mathfont; text-align:center;">STRESS CALCULATOR </h1>
-    <input type="number" name="area" class="form__field" id="area"  placeholder="Enter area">
-    <select id="aunit" class="form__field">
-        <option class="form__field" value="mm" style="background-color: #232a36;">mm²</option>
-        <option class="form__field" value="cm"  style="background-color: #232a36;">cm²</option>
-        <option class="form__field" value="m"  style="background-color: #232a36;"> m²</option>
-        <option class="form__field" value="ft" style="background-color: #232a36;">ft²</option>
-        <option class="form__field" value="inch"  style="background-color: #232a36;">inch²</option>
-    </select>
-    <p>&nbsp;</p>
-    <input type="number" name="strforce" class="form__field" id="strforce" placeholder="Enter force">
-    <select id="funit" class="form__field">
-        <option class="form__field" value="n" style="background-color: #232a36;"> Newton</option>
-        <option class="form__field" value="kn" style="background-color: #232a36;">Kilo Newton</option>
-        <option class="form__field" value="mn" style="background-color: #232a36;"> Mega Newton</option>
-        <option class="form__field" value="gn"  style="background-color: #232a36;"> Giga Newton</option>
-    </select>
-    <p>&nbsp;</p>   
-    <button type="button" class="btn btn-outline-light" onclick="stresscalc()">Calculate</button>
-    <p>&nbsp;</p> 
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="stressans"></div>
-</div>
-<!--Stress Calculator Ends-->
-      
-        
+
         <div class="collapse" id="bool">
     <h1 style="text-align: center; text-shadow: 1px 1px 2px red; ">Boolean Algebra</h1>
     <!-- <u style="color: rgba(243, 118, 218, 0.8); padding: 1px; "> -->

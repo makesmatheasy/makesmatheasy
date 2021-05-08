@@ -119,11 +119,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#sreslc").click(function () {
-        openit("#stresscalc");
-        closenav();
-        clearall();
-    });
     $("#impfix").click(function () {
         openit("#impfixs");
         closenav();
@@ -328,11 +323,6 @@ $(document).ready(function () {
     });
     $("#coorbtn").click(function () {
         openit("#coor");
-        closenav();
-        clearall();
-    });
-    $("#strclc").click(function () {
-        openit("#straincalc");
         closenav();
         clearall();
     });
