@@ -1639,20 +1639,20 @@ function gif(){
 
 // dip - calculator to find direct proportion
 function dip() {
-    var dipnum1 = parseInt(document.getElementById("dipnum1").value);
-    var dipnum2 = parseInt(document.getElementById("dipnum2").value);
-    var dipnum3 = parseInt(document.getElementById("dipnum3").value);
-    var fourthVal = (dipnum3 * dipnum2) / dipnum1;
-    document.getElementById("dipans").innerHTML = "The Fourth Value is " + fourthVal;
+    var dipnum1 = document.getElementById("dipnum1").value;
+    var dipnum2 = document.getElementById("dipnum2").value;
+    var dipnum3 = document.getElementById("dipnum3").value;
+    var fourthVal = (parseInt(dipnum3) * parseInt(dipnum2)) / parseInt(dipnum1);
+    document.getElementById("dipans").innerHTML = "The Fourth Value is " + fourthVal.toFixed(3);
 }
 
 // inDP - calculator to find indirect proportion
 function inDP() {
-    var inDPnum1 = parseInt(document.getElementById("inDPnum1").value);
-    var inDPnum2 = parseInt(document.getElementById("inDPnum2").value);
-    var inDPnum3 = parseInt(document.getElementById("inDPnum3").value);
-    var fourthVal = (inDPnum1 * inDPnum2) / inDPnum3;
-    document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal;
+    var inDPnum1 = document.getElementById("inDPnum1").value;
+    var inDPnum2 = document.getElementById("inDPnum2").value;
+    var inDPnum3 = document.getElementById("inDPnum3").value;
+    var fourthVal = (parseInt(inDPnum1) * parseInt(inDPnum2)) / parseInt(inDPnum3);
+    document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal.toFixed(3);
 }
 
 function fp(){
