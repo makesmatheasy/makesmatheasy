@@ -6296,8 +6296,8 @@ function spicon() {
             document.getElementById("spiconou").innerHTML = `${i}`;
         }
     } else if (f == 0.01 && t == 0.01) {
-        if (i > 95) {
-            document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
+        if (i > 100) {
+            document.getElementById("spiconou").innerHTML = "Percentage must be <=100";
         } else {
             document.getElementById("spiconou").innerHTML = `${i}`;
         }
@@ -6308,10 +6308,12 @@ function spicon() {
             document.getElementById("spiconou").innerHTML = `${((i - 0.5) * 10)}`;
         }
     } else {
-        if (i > 95) {
-            document.getElementById("spiconou").innerHTML = "Percentage must be <=95";
-        } else {
+        if (i > 100) {
+            document.getElementById("spiconou").innerHTML = "Percentage must be <=100";
+        } else if(i<95){
             document.getElementById("spiconou").innerHTML = `${(i / 10) + 0.5}`;
+        } else if(i>=95 && i<=100){
+            document.getElementById("spiconou").innerHTML = `${10}`;
         }
     }
 }
