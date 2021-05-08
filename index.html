@@ -1406,11 +1406,11 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="sosqn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Squares of N Natural Numbers</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Natural Numbers</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Square of N Natural Numbers ','#sosqsn','c','sumsqnimgfav')"><img
-                                        id="sumsqnimgfav" src="images/unfavourite.png"
+                                <span onclick="addtofavourite('Natural Numbers ','#sosqsn','c','naturalimgfav')"><img
+                                        id="naturalimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1432,24 +1432,6 @@
                     </tr>
                 </table>
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-
-                            <a id="socbn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of Cubes of N Natural Numbers</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Sum of Cubes of N Natural Numbers ','#socbsn','c','sumcbnimgfav')"><img
-                                        id="sumcbnimgfav" src="images/unfavourite.png"
-
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
 
             <li>
                 <table class="table">
@@ -12943,6 +12925,15 @@
 
 <div style="text-align: center;" class="collapse" id="sosqsn">
 
+    <h1 style="font-family:mathfont; text-align:center;">Sum of First N Natural Numbers </h1>
+    <form>
+        <input style="text-align: center;" type="text" name="ssn" class="form__field" id="ssn" placeholder="Enter the number upto which you want to find sum of squares">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="ssncal()">Calculate</button> <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="ssnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    </form>
+    <br><br>
     
     <h1 style="font-family:mathfont; text-align:center;">Sum of Squares of N Natural Numbers </h1>
     <form>
@@ -12953,10 +12944,7 @@
         <p id="ssqnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     </form>
     
-   
-</div>
-
-<div style="text-align: center;" class="collapse" id="socbsn">
+    <br><br>
     
     <h1 style="font-family:mathfont; text-align:center;">Sum of Cubes of N Natural Numbers </h1>
     <form>
