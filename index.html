@@ -9285,11 +9285,22 @@
         <!--Standard Deviation starts-->
         <div class="collapse" id="deviation">
             <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
-            <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
-            <p>&nbsp;</p>
-           
-            <button id="smpbtn" class="btn btn-secondary" onclick="samvar()" style="font-family:mathfont;float:left;"> Sample Standard Deviation</button>
-             <button id="popbtn" class="btn btn-secondary" onclick="popvar()" style="font-family:mathfont;float:right;"> Population Standard Deviation</button>
+            <form action="">
+                <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
+                <p>&nbsp;</p>
+                <div class="row">
+                    <div class="col">
+                        <button id="smpbtn" class="btn btn-secondary" onclick="samvar()" style="font-family:mathfont;"> Sample Standard Deviation</button>
+                    </div>
+                    <div class="col">
+                        <button id="popbtn" class="btn btn-secondary" onclick="popvar()" style="font-family:mathfont;"> Population Standard Deviation</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-secondary" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+                    </div>
+                </div>
+            </form>
+            
             <p>&nbsp;</p>
              <p>&nbsp;</p>
           <ul style="list-style-type:disc;">
@@ -9526,12 +9537,15 @@
             </p>
             <p style="text-align: left; color: white; margin-top:2rem;">Formula for t-value:</p>
             <p id="tformula" style="margin-bottom:4rem;"></p>
+            <form action="">
+                <input class = "form__field"type="text" id="list1" placeholder="Enter list of number separated by SPACE ">
+                <br><br>
+                <input class = "form__field"type="text" id="list2" placeholder="Enter list of number separated by SPACE">
+                <br><br>
+                <button class = "btn btn-light" onclick="tvalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
             
-            <input class = "form__field"type="text" id="list1" placeholder="Enter list of number separated by SPACE ">
-            <br><br>
-            <input class = "form__field"type="text" id="list2" placeholder="Enter list of number separated by SPACE">
-            <br><br>
-            <button class = "btn btn-light" onclick="tvalue()">Test</button>
             <p id="testans"></p>
             <div id="stepsbox">    
                 <p id="steps" style="text-align: left; margin-top: 4rem;"></p>
@@ -12483,6 +12497,9 @@
                 <button type="button" class="btn btn-light" onclick=amsol()>
                     Solve
                 </button>
+                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                    Reset
+                </button>
             </form>
             <br>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12500,6 +12517,9 @@
                 <button type="button" class="btn btn-light" onclick=gmsol()>
                     Solve
                 </button>
+                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                    Reset
+                </button>
             </form>
             <br>
             <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12515,6 +12535,9 @@
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <button type="button" class="btn btn-light" onclick=hmsol()>
                     Solve
+                </button>
+                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                    Reset
                 </button>
             </form>
             <br>
@@ -12734,11 +12757,15 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">LINEAR REGRESSION CALCULATOR </h1>
-    <input type="text" name="setlrx" class="form__field" id="setlrx" placeholder="Enter dataset X">
-    <p>&nbsp;</p>
-    <input type="text" name="setlry" class="form__field" id="setlry" placeholder="Enter dataset Y">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="lrccal()">Calculate</button>
+    <form action="">
+        <input type="text" name="setlrx" class="form__field" id="setlrx" placeholder="Enter dataset X">
+        <p>&nbsp;</p>
+        <input type="text" name="setlry" class="form__field" id="setlry" placeholder="Enter dataset Y">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="lrccal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
     <p>&nbsp;</p>
     <p id="lrcans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
@@ -12756,11 +12783,15 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">COVARIANCE CALCULATOR </h1>
-    <input type="text" name="setx" class="form__field" id="setx" placeholder="Enter dataset X">
-    <p>&nbsp;</p>
-    <input type="text" name="sety" class="form__field" id="sety" placeholder="Enter dataset Y">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="covcal()">Calculate</button>
+    <form action="">
+        <input type="text" name="setx" class="form__field" id="setx" placeholder="Enter dataset X">
+        <p>&nbsp;</p>
+        <input type="text" name="sety" class="form__field" id="sety" placeholder="Enter dataset Y">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="covcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
     <p>&nbsp;</p>
     <p id="covans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     
@@ -12832,10 +12863,13 @@
 
 <div class="collapse" id="skews">
     <h1 style="font-family:mathfont; text-align:center;">SKEWNESS CALCULATOR </h1>
-    <input type="text" name="skewinput" class="form__field" id="skewinput" width="5em" placeholder="Enter data set seperated by space">
-    <p>&nbsp;</p>
-
-    <button type="button" class="btn btn-outline-light" onclick="skewcal()">Calculate</button>
+    <form action="">
+        <input type="text" name="skewinput" class="form__field" id="skewinput" width="5em" placeholder="Enter data set seperated by space">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="skewcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p>&nbsp;</p>
     <p id="skewans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
@@ -12869,11 +12903,15 @@
 
     
     <h1 style="font-family:mathfont; text-align:center;">Weighted Mean Calculator </h1>
-    <input type="text" name="wmcx" class="form__field" id="wmcx" width="5em" placeholder="Enter value of x seperated by space">
-    <p>&nbsp;</p>
-    <input type="text" name="wmcw" class="form__field" id="wmcw" placeholder="Enter weight of inputs respectively">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="wmccal()">Calculate</button>
+    <form action="">
+        <input type="text" name="wmcx" class="form__field" id="wmcx" width="5em" placeholder="Enter value of x seperated by space">
+        <p>&nbsp;</p>
+        <input type="text" name="wmcw" class="form__field" id="wmcw" placeholder="Enter weight of inputs respectively">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="wmccal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p id="wmcans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">The Weighted mean for given set of non negative data {x1, x2, x3, ...xn} with non negative weights {w1, w2, w3, ...wn}<br>
@@ -12892,9 +12930,13 @@
     
     <h1 style="font-family:mathfont; text-align:center;">Coefficient of Variation Calculator</h1>
     <p>&nbsp;</p>
-    <input type="text" name="cvsd" class="form__field" id="cvsd" width="5em" placeholder="Enter data set(seperated by space)">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="cvcal()">Calculate</button><p>&nbsp;</p>
+    <form action="">
+        <input type="text" name="cvsd" class="form__field" id="cvsd" width="5em" placeholder="Enter data set(seperated by space)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="cvcal()">Calculate</button><p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p id="cvans" style="color: white; text-align: center; font-size: 1.6em; font-family:mathfont"></p><p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">CV= μ/σ <br>  where:<br>
         σ=standard deviation<br>
@@ -15411,35 +15453,40 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <input type="tel" id="getNum" class="form__field"
-                               placeholder="Enter Numbers(Space Separated)">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="tel" id="getNum" class="form__field"
+                                   placeholder="Enter Numbers(Space Separated)">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-light" onclick="Means()">Mean</button>
+                            <button type="button" class="btn btn-light" onclick="Median()">Median
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="Mode()">Mode</button>
+                            <div class="dropdown-divider"></div>
+                            <button type="button" class="btn btn-light" onclick="Variance()">Variance
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="std()">Standard
+                                Deviation
+                            </button>
+                            <button type="button" class="btn btn-light"
+                                    onclick="document.getElementById('getNum').value+=' ';document.getElementById('getNum').focus();">
+                                Space
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <p class="stopwrap" style="font-family:mathfont;" id="Meanresult"></p>
+                            <p style="font-family:mathfont;" class="stopwrap" id="Meanresultde"></p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="Means()">Mean</button>
-                        <button type="button" class="btn btn-light" onclick="Median()">Median
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
                         </button>
-                        <button type="button" class="btn btn-light" onclick="Mode()">Mode</button>
-                        <div class="dropdown-divider"></div>
-                        <button type="button" class="btn btn-light" onclick="Variance()">Variance
-                        </button>
-                        <button type="button" class="btn btn-light" onclick="std()">Standard
-                            Deviation
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="document.getElementById('getNum').value+=' ';document.getElementById('getNum').focus();">
-                            Space
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                         </button>
                     </div>
-                    <div class="form-group">
-                        <p class="stopwrap" style="font-family:mathfont;" id="Meanresult"></p>
-                        <p style="font-family:mathfont;" class="stopwrap" id="Meanresultde"></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                    </button>
-                </div>
+                    </form>
+                    
             </div>
         </div>
     </div>
