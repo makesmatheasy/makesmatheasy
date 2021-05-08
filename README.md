@@ -337,6 +337,7 @@ Other Tech/Libraries
   - Bayes Probability Theorem
 - Statistics
   - T-test
+  - Z-test
 ---
 
 ## Documentation

@@ -737,6 +737,6 @@ input[type='number'] {
   }
 }
 
-#unknownWork, #unknownTime, #unknownMen, #stepsbox {
+#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2{
   display: none;
 }
