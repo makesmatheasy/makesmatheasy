@@ -330,7 +330,7 @@ function openit(id) {
         "#clocks",
         "#slvxs",
         "#rankcals",
-        "#hyperbolicratios"
+        "#hyperbolicratios",
         "#covs",
         "#lrcs",
         "#perats"
