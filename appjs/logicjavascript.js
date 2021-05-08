@@ -8867,17 +8867,23 @@ function convertgreydec(){
     let from = 2;
     let to = 2;
 
-    if (fromBase === "Grey Code") {from = 2; to = 10;}
-    else {from = 10; to = 2;}
+    if (fromBase === "Decimal") {
+        from = 10; 
+        to = 2;
+        result1 = parseInt(input, from).toString(to);
+    }
+    else {
+        result1= input;
+    }
 
-
-    result1= parseInt(input, from).toString(to);
     //console.log(result1);
     var x = result1[0];
 
     if (fromBase === "Grey Code"){
-        for (var i = 1; i < result1.length; i++)
+        for (var i = 1; i < result1.length; i++){
             x += parseInt(x[i - 1] ^ result1[i]).toString();
+        }
+        x = parseInt(x,2).toString();
     }
 
     else{
