@@ -13390,13 +13390,17 @@
 <!--Binomial PMF starts-->
 <div class="collapse" id="bpmfs">
     <h1 style="font-family:mathfont; text-align:center;"> PMF of Binomial Distribution Calculator </h1>
-    <input type="number" name="psuc" class="form__field" id="psuc"   placeholder="Enter probability of success">
-    <p>&nbsp;</p>
-    <input type="number" name="suc" class="form__field" id="suc" placeholder="Enter number of success">
-    <p>&nbsp;</p>
-    <input type="number" name="tri" class="form__field" id="tri" placeholder="Enter number of trials">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="bpcal()">Calculate</button>
+    <form action="">
+        <input type="number" name="psuc" class="form__field" id="psuc"   placeholder="Enter probability of success">
+        <p>&nbsp;</p>
+        <input type="number" name="suc" class="form__field" id="suc" placeholder="Enter number of success">
+        <p>&nbsp;</p>
+        <input type="number" name="tri" class="form__field" id="tri" placeholder="Enter number of trials">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="bpcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="bpans"></div> 
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = \, \frac{n!}{(n-r)!r!} p^x (1-p)^y\]</p> where, <br> n= no. of trials <br> r= no. of successful events
         <br> x= probability of success <br> y= porobability of not being successful(1-x)
@@ -13407,11 +13411,14 @@
 <div class="collapse" id="ppmfs">
     <h1 style="font-family:mathfont; text-align:center;"> PMF of Poisson Distribution Calculator </h1>
     <p>&nbsp;</p>
-    <input type="number" name="lamb" class="form__field" id="lamb"   placeholder="Average number of occurrences for a given time interval lambda, λ:">
-    <p>&nbsp;</p>
-    <input type="number" name="occ" class="form__field" id="occ" placeholder="Number of occurrences x: ">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="ppcal()">Calculate</button>
+    <form action="">
+        <input type="number" name="lamb" class="form__field" id="lamb"   placeholder="Average number of occurrences for a given time interval lambda, λ:">
+        <p>&nbsp;</p>
+        <input type="number" name="occ" class="form__field" id="occ" placeholder="Number of occurrences x: ">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="ppcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
     <p>&nbsp;</p>
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
     <p>&nbsp;</p> 
@@ -14562,26 +14569,32 @@
 
         <div class="collapse" id="probabilitycollapse">
             <h1>Empirical Probability</h1>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes</h5>
-                        <input type="number" value="0" class="form__field" id="favourable">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter number of favourable outcomes</h5>
+                            <input type="number" value="0" class="form__field" id="favourable">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter number of possible outcomes</h5>
+                            <input type="number" value="1" class="form__field" id="total">
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of possible outcomes</h5>
-                        <input type="number" value="1" class="form__field" id="total">
-                    </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="computeprobability()">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
                 </div>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="computeprobability()">
-                    Solve
-                </button>
-            </div>
+            </form>
+            
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="probability-result"></p>
             </div>
@@ -14591,26 +14604,32 @@
         <!-- Conditional Probability-->
         <div class="collapse" id="condprobability" style="text-align: center;">
             <h1 style="text-align: center;">Conditional Probability</h1><br><br>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <h5>Probability of Event A and Event B (P(A ∩ B))</h5>
-                        <input type="number" value="0" class="form__field" id="totevent">
+            <form action="">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <h5>Probability of Event A and Event B (P(A ∩ B))</h5>
+                            <input type="number" value="0" class="form__field" id="totevent">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <h5>Probability of Event A (P(A))</h5>
+                            <input type="number" value="0" class="form__field" id="event">
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="form-group">
-                        <h5>Probability of Event A (P(A))</h5>
-                        <input type="number" value="0" class="form__field" id="event">
-                    </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="condprobability()">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
                 </div>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="condprobability()">
-                    Solve
-                </button>
-            </div>
+            </form>
+            
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="result1"></p>
             </div>
@@ -14627,40 +14646,46 @@
         <div class="collapse" id="joint-probabilitycollapse">
             <h1>Joint Probability </h1>
             <p>The probability that two events will both occur</p>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes in case of Event 1</h5>
-                        <input type="number" value="0" class="form__field" id="favourable1">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter number of favourable outcomes in case of Event 1</h5>
+                            <input type="number" value="0" class="form__field" id="favourable1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter number of possible outcomes in case of Event 1</h5>
+                            <input type="number" value="1" class="form__field" id="total1">
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of possible outcomes in case of Event 1</h5>
-                        <input type="number" value="1" class="form__field" id="total1">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter number of favourable outcomes in case of Event 2</h5>
+                            <input type="number" value="0" class="form__field" id="favourable2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Enter number of possible outcomes in case of Event 2</h5>
+                            <input type="number" value="1" class="form__field" id="total2">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of favourable outcomes in case of Event 2</h5>
-                        <input type="number" value="0" class="form__field" id="favourable2">
-                    </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="computejointprobability()">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Enter number of possible outcomes in case of Event 2</h5>
-                        <input type="number" value="1" class="form__field" id="total2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="computejointprobability()">
-                    Solve
-                </button>
-            </div>
+            </form>
+            
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="probability-result1"></p>
             </div>
@@ -14717,20 +14742,27 @@
                     </div>
                 </div>
             </div>
-			<div class="row "  style="justify-content: center;align-items: center;">
-				<div class="col-md-4">
-                    <div class="form-group">
-                        <h5 style="color:white">Enter the probability of A and B(decimal)</h5>
-                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="pandb">
-                    </div>
-					</div>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="computebayesprobability()">
-                    Solve
-                </button>
-            </div>
+            <form action="">
+                <div class="row "  style="justify-content: center;align-items: center;">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5 style="color:white">Enter the probability of A and B(decimal)</h5>
+                            <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="pandb">
+                        </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="computebayesprobability()">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset()">
+                        Reset
+                    </button>
+                </div>
+            </form>
+			
 
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="bayesresult1"></p>
