@@ -6906,7 +6906,12 @@ function speedu(a) {
             return 3.6;
     }
 }
-
+function diagnfind(){
+    let n =parseInt(document.getElementById("diagnin").value) 
+    let a = parseInt(document.getElementById("diagnin1").value)
+    let ans = (2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180));
+    document.getElementById("diagnans").innerHTML = ans
+}
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
     const t = speedu(document.getElementById("speedcon-2").value);
