@@ -6906,7 +6906,16 @@ function speedu(a) {
             return 3.6;
     }
 }
-
+function cyclefind(){
+    let N = parseInt(document.getElementById("cyclein").value)
+    let res = 0;
+    let finalResult = 0;
+    let val = 2 * N - 1;
+    let s = val;
+    res = (N - 1) * (N - 2);
+    finalResult = res + s;
+    document.getElementById("cycleans").innerHTML = finalResult
+}
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
     const t = speedu(document.getElementById("speedcon-2").value);
