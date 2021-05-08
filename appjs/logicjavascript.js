@@ -5588,7 +5588,7 @@ function orderas() {
             }
         }
     }
-    val = val.join(",");
+    val = val.join("<");
     if (val.length == 0) {
         document.getElementById("orderresult").innerHTML += "";
     } else {
@@ -5633,7 +5633,7 @@ function orderde() {
         }
     }
 
-    val = val.join(",");
+    val = val.join(">");
     if (val.length == 0) {
         document.getElementById("orderresult").innerHTML = "";
     } else {
