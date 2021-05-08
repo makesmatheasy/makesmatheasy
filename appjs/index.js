@@ -147,7 +147,6 @@ function openit(id) {
         "#arcs",
         "#sosqs",
         "#sosqsn",
-        "#socbsn",
         "#squaresRanges",
         "#favourite",
         "#cubesRanges",

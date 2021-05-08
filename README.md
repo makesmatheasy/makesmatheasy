@@ -145,6 +145,7 @@ Other Tech/Libraries
   - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
+  - Natural Numbers
   - Percentage Calculator
   - Set Calculator
   - Pythagorean Triplets
