@@ -87,6 +87,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#lrc").click(function () {
+        openit("#lrcs");
+        closenav();
+        clearall();
+    });
     $("#tableoption").click(function () {
         openit("#table");
         closenav();
