@@ -1122,6 +1122,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="hyperbolictrignocollapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hyperbolic trignometrics ratios calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Hyperbolic trignometrics ratios calculator','#hyperbolicratios','c','hyperbolictrignofav')"><img
+                                        id="hyperbolictrignofav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="trigonovaluestablebutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trigonometry
                                 Values
@@ -4225,8 +4241,38 @@
             </div>
 
         </div>
-
-
+         <!-- start of hyperbolic trigno calculator  -->
+        <div class="collapse" id="hyperbolicratios">     
+                <h1 style="text-align: center;">Hyperbolic trignometric ratios </h1><br>    
+                <div class="form-group">
+                    <input type="text" id="hypertrignoin" class="form__field"
+                           placeholder="Enter Value "
+                           >
+                </div><br>
+    
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="hypertrigno()">
+                        Calculate
+                    </button><br>
+    
+                </div>
+                <h4 style="text-align:center">Formulas to calculate hyperbolic trignometry identitites</h4>
+                <p>sinh(x) = (eˣ - e⁻ˣ) / 2</p>
+                <br>
+                <p>cosh(x) = (eˣ + e⁻ˣ) / 2 </p>
+                <br>
+                  <p>tanh(x) = sinh(x) / cosh(x) = (eˣ - e⁻ˣ) / (eˣ + e⁻ˣ) <p>  
+                 <br>
+    
+                <div class="form-group">
+                    <h4 id="hyperresult"  style="overflow-y:hidden;height:100%;text-align:center"></h4>
+                       <p id="hypersinh" style="overflow-y:hidden;height:100%;text-align: center;"></p>
+                       <p id="hypercosh" style="overflow-y:hidden;height:100%;text-align: center;"></p>
+                       <p id="hypertanh" style="overflow-y:hidden;height:100%;text-align: center;"></p>
+                </div>
+        </div>
+    
 	 <div class="collapse" id="integration-idencollapse">
 
             <div class="stopwrap">

@@ -1,3 +1,4 @@
+
 function convertkatex(element, value) {
     var x = nerdamer(value);
     var value = x.toTeX();
@@ -9732,7 +9733,24 @@ function ratpercal()
     document.getElementById("ratperans").innerHTML=ans;
 
 }
+function hypertrigno()
+{   
+    const i = parseInt(document.getElementById("hypertrignoin").value);
+    var sinh=document.getElementById("hypersinh");
+    var cosh=document.getElementById("hypercosh");
+    var tanh=document.getElementById("hypertanh");
+    var hyperresult=document.getElementById("hyperresult");
+    var ans =0;
+    var a =Math.sinh(i);
+    var b =Math.cosh(i);
+    var c =Math.tanh(i);
+    hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
+    sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
+    cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
+    tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
 
+
+}
 function perratcal()
 {
     var num1=document.getElementById("peratx").value;

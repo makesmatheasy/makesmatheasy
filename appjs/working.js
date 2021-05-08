@@ -1030,6 +1030,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#hyperbolictrignocollapsebtn").click(function(){
+        openit("#hyperbolicratios");
+        closenav();
+        clearall();
+    });
 
 })
 
