@@ -155,11 +155,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#socbn").click(function () {
-        openit("#socbsn");
-        closenav();
-        clearall();
-    });
+
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
