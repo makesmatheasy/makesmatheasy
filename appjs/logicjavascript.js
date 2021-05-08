@@ -6905,7 +6905,13 @@ function leap()
     else
     out.innerHTML = `${i} is not a Leap Year`;
 }
-
+function rotfind(){
+    // JS program to find angle of rotational symmetry
+    let side = parseInt(document.getElementById("rotside").value)
+    let ans = parseInt(360/side)
+    // parseint because we want answer in integer
+    document.getElementById("rotans").innerHTML = "The angle of rotational symmetry is " + ans
+}
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
