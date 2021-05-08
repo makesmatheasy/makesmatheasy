@@ -2033,6 +2033,22 @@
                     </tr>
                 </table>
             </li>
+             <!--Added function to find next prime number-->
+             <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="next-pri-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Next Prime Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Next Prime Number','#nextPrime','c','nextprimeimgfav')"><img
+                                        id="nextprimeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -8990,6 +9006,26 @@
             </div>
         </div>
         <!-- end of Hamming Dist -->
+        <!-- start of next prime number function-->
+          <div>
+            <div class="collapse" id="nextPrime">
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number whose next prime you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="nprime" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="nextPrime(document.getElementById('nprime').value);">
+                        Solve
+                    </button>
+                </div>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="nextPrimeResult"></p>
+                </div>
+            </div>
+        </div>
+        <!-- end of next prime number function-->
         <div class="collapse" id="stp">
             <h2 style="text-align : center;">Scalar Triple Product</h2>
             <br></br>

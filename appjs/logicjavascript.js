@@ -8010,6 +8010,38 @@ function eulerTotient(n) {
     document.getElementById("etfResult").innerHTML = "The number of coprime of " + n + " is: " + res;
   }
 
+//Next Prime Function
+
+function isPrime(n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3) 
+        return true;
+    if (n%2 == 0 || n%3 == 0) 
+        return false;
+
+    for (let i=5; i*i<=n; i=i+6) {
+        if (n%i == 0 || n%(i+2) == 0)
+            return false;
+    }
+    
+    return true;
+}
+
+function nextPrime(num)
+{ 
+    if (num <= 1)
+        return 2;
+    let res = num;
+    let isFound = false;
+    while (!isFound) {
+        res++;
+        if (isPrime(res))
+            isFound = true;
+    }
+    document.getElementById("nextPrimeResult").innerHTML = "The next prime number of " + num + " is: " + res;
+}
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
