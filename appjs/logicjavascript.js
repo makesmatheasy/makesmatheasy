@@ -2615,6 +2615,31 @@ function vectorproj(){
 
 }
 
+function vectorplanar(){
+    var a=parseFloat(document.getElementById('inp11').value);
+    var b=parseFloat(document.getElementById('inp22').value);
+    var c=parseFloat(document.getElementById('inp33').value);
+    var d=parseFloat(document.getElementById('inp44').value);
+    var e=parseFloat(document.getElementById('inp55').value);
+    var f=parseFloat(document.getElementById('inp66').value);
+    var g=parseFloat(document.getElementById('inp77').value);
+    var h=parseFloat(document.getElementById('inp88').value);
+    var i=parseFloat(document.getElementById('inp99').value);
+    var mult = (a*((e*i)-(f*h)));
+    var mult1 = (b*((d*i)-(f*g)));
+    var mult2 = (c*((d*h)-(e*g)));
+    var ans = mult-mult1+mult2;
+    if(ans == 0){
+    document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Coplanar \\space as \\space Δ \\space = \\space 0.  \\]";
+    renderMathInElement(document.getElementById("vectorplanar1"));
+}
+    else {
+        document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Non-Coplanar \\space as \\space Δ \\space != \\space 0.  \\]";
+        renderMathInElement(document.getElementById("vectorplanar1"));
+    }
+}
+
+
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
     a=parseFloat(document.getElementById('f1g').value);
