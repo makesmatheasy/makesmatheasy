@@ -6906,7 +6906,12 @@ function speedu(a) {
             return 3.6;
     }
 }
-
+function numtfind(){
+    let n = parseInt(document.getElementById("numtin").value)
+    let num = n;
+    let ans =  num * (num - 4) * (num - 5) / 6
+    document.getElementById("numtans").innerHTML = ans
+}
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
     const t = speedu(document.getElementById("speedcon-2").value);
