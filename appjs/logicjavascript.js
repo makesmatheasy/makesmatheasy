@@ -1032,13 +1032,26 @@ function stp(){
     let vx3 = parseInt(document.getElementById("vx3").value)
     let vy3 = parseInt(document.getElementById("vy3").value)
     let vz3 = parseInt(document.getElementById("vz3").value)
-    let cpx = (vx1*((vy2*vz3)-(vy3*vz2)))
-    let cpy = (vy1*((vx2*vz3)-(vz2*vx3)))
-    let cpz = (vz1*((vx2*vy3)-(vy2*vx3)))
-    var ans = cpx-cpy+cpz
-    document.getElementById("stpans").innerHTML = "The scalar Triple Product is " + ans
+    var display = document.getElementById("stpans");
+    var disptemp = "";
+    if(!isNaN(vx1) && !isNaN(vy1) && !isNaN(vz1) && !isNaN(vx2) && !isNaN(vy2) && !isNaN(vz2) && !isNaN(vx3) && !isNaN(vy3) && !isNaN(vz3))
+   {
+    disptemp += "\\[ Scalar \\space Triple \\space Product \\space of \\space three \\space vectors \\space \\overrightarrow{a}, \\space \\overrightarrow{b} \\space and \\space \\overrightarrow{c} \\space is \\space defined \\space as \\]";
+    disptemp += "\\[ [\\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c}] \\space = \\space \\overrightarrow{a} . ( \\overrightarrow{b} \\times \\overrightarrow{c} ) \\]";
+    disptemp += "\\[ [\\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c}] \\space = \\space  a1(b2c3-b3c2)-a2(b1c3-b3c1)+a3(b1c2-b2c1) \\]";
+    disptemp += "\\[ [\\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c}] \\space = \\space" + vx1 + "((" + vy2 + "\\times" + vz3 + ")-(" + vy3 + "\\times" + vz2 + "))-(" +  vy1 + "((" + vx2 + "\\times" + vz3 + ")-(" + vz2 + "\\times" + vx3 + ")))+(" +  vz1 + "((" + vx2 + "\\times" + vy3 + ")-(" + vy2 + "\\times" + vx3 + ")))  \\]";
+    disptemp += "\\[ [\\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c}] \\space = \\space" + vx1 + "(" + (vy2 * vz3) + "-(" + (vy3 * vz2) + "))-(" +  vy1 + "(" + (vx2 * vz3) + "-(" + (vz2 * vx3) + ")))+(" +  vz1 + "(" + (vx2 * vy3) + "-(" + (vy2 * vx3) + ")))  \\]";
+    disptemp += "\\[ [\\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c}] \\space = \\space" + (vx1 * ((vy2 * vz3) - (vy3 * vz2))) + "-(" +  (vy1 * ((vx2 * vz3) - (vz2 * vx3))) + ")+(" +  (vz1 * ((vx2 * vy3) - (vy2 * vx3))) + ")  \\]";
+    disptemp += "\\[ [\\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c}] \\space = \\space" + ((vx1 * ((vy2 * vz3) - (vy3 * vz2))) -  (vy1 * ((vx2 * vz3) - (vz2 * vx3))) +  (vz1 * ((vx2 * vy3) - (vy2 * vx3)))) + "  \\]";
+    display.innerHTML = disptemp;
+    renderMathInElement(display);
 }
-
+else{
+    disptemp += "\\[Please \\space enter \\space all \\space fields \\]";
+    display.innerHTML = disptemp;
+    renderMathInElement(display);
+}
+}
 function ctangle(){
     // javascript program to find the angle
     // between a chord and a tangent
