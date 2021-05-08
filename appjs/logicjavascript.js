@@ -2578,6 +2578,29 @@ function vectordot(){
     document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
     renderMathInElement(document.getElementById("dotex"));
 }
+
+function vectorproj(){
+    let a=parseFloat(document.getElementById('inp1').value);
+    let b=parseFloat(document.getElementById('inp2').value);
+    let c=parseFloat(document.getElementById('inp3').value);
+    let d=parseFloat(document.getElementById('inp4').value);
+    let e=parseFloat(document.getElementById('inp5').value);
+    let f=parseFloat(document.getElementById('inp6').value);
+    let projoutput = document.getElementById("vectorproj1");
+    let projtemp="";
+    let dot1 = (a*d)+(b*e) + (c*f);
+    let projy = (d**2+e**2+f**2);
+    let proj = Math.sqrt(projy);
+    let proj1 = (proj)**2;
+    projtemp  += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Vector \\space Projection \\space Formula \\space is \\]";
+    projtemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
+    projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toPrecision(2)+ "}(" + d + "," + e + "," + f + ") \\]";
+    projtemp += "\\[The \\space Projection \\space of \\space X \\space on \\space Y \\space are \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*e)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*f)  + "}{" + (proj1.toPrecision(2)) + "}) \\]";
+    projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorproj1"));
+
+}
+
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
     a=parseFloat(document.getElementById('f1g').value);
