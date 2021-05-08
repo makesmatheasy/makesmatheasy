@@ -2756,6 +2756,39 @@ function solveicosa() {
     }
 }
 
+function vectortetra(){
+    var a,b,c,d,e,f,g,h,i;
+     a = parseInt(document.getElementById("inp12").value);
+     b = parseInt(document.getElementById("inp13").value);
+     c = parseInt(document.getElementById("inp14").value);
+     d = parseInt(document.getElementById("inp21").value);
+     e = parseInt(document.getElementById("inp25").value);
+     f = parseInt(document.getElementById("inp23").value);
+     g = parseInt(document.getElementById("inp31").value);
+     h = parseInt(document.getElementById("inp32").value);
+     i = parseInt(document.getElementById("inp35").value);
+    var output = document.getElementById("vectortetra1");
+    var temp = "";
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f) && !isNaN(g) && !isNaN(h) && !isNaN(i))
+   {
+    temp += "\\[ Volume \\space of \\space Tetrahedron \\space  =  \\space \\frac{1}{6} \\space [ \\overrightarrow{a} \\space \\overrightarrow{b} \\space \\overrightarrow{c} \\space ] \\]";
+    temp += "\\[ Volume \\space of \\space Tetrahedron \\space  =  \\space \\frac{ \\overrightarrow{AB} . ( \\overrightarrow{AC} \\times \\overrightarrow{AD} )}{6} \\]";
+    temp += "\\[ \\frac {a1(b2c3-b3c2)-a2(b1c3-b3c1)+a3(b1c2-b2c1)}{6} \\]";
+    temp += "\\[ \\frac {" + a + "((" + e + "\\times" + i + ")-(" + h + "\\times" + f + "))-(" +  b + "((" + d + "\\times" + i + ")-(" + f + "\\times" + g + ")))+(" +  c + "((" + d + "\\times" + h + ")-(" + e + "\\times" + g + ")))}{6}  \\]";
+    temp += "\\[ \\frac{" + a + "(" + (e * i) + "-(" + (h * f) + "))-(" +  b + "(" + (d * i) + "-(" + (f * g) + ")))+(" +  c + "(" + (d * h) + "-(" + (e * g) + ")))}{6}  \\]";
+    temp += "\\[ \\frac{" + (a * ((e * i) - (h * f))) + "-(" +  (b * ((d * i) - (f * g))) + ")+(" +  (c * ((d * h) - (e * g))) + ")}{6}  \\]";
+    temp += "\\[ \\frac{|" + ((a * ((e * i) - (h * f))) -  (b * ((d * i) - (f * g))) +  (c * ((d * h) - (e * g)))) + "|}{6}  \\]";
+    temp += "\\[ Volume \\space of \\space Tetrahedron \\space  =  \\space " + ( Math.abs(((a * ((e * i) - (h * f))) -  (b * ((d * i) - (f * g))) +  (c * ((d * h) - (e * g)))))/6) + " \\space cubic \\space units \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+else{
+    temp += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+}
+
 function coordinatearea(){
     var x1,y1,x2,y2,x3,y3;
     x1=parseFloat(document.getElementById('x1s').value);
