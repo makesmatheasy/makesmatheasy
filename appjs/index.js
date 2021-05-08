@@ -333,7 +333,8 @@ function openit(id) {
         "#hyperbolicratios",
         "#covs",
         "#lrcs",
-        "#perats"
+        "#perats",
+        "#mecs"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

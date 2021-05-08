@@ -98,6 +98,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#mec").click(function () {
+        openit("#mecs");
+        closenav();
+        clearall();
+
+    });
     //            matrix
     $("#matrixcollapsebtn").click(function () {
         openit("#matrixcollapse");
