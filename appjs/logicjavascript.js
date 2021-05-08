@@ -6766,17 +6766,16 @@ function gstcal() {
 // Polynomial degree
 
 function degcal() {
-    
-    var exp = document.getElementById("exp").value;
+    var expression = document.getElementById("exp").value;
     var ans = document.getElementById("deg");
+
+    exp = expression.replace(/ /g,'')
     var x = nerdamer(`deg(${exp})`);
     ans.innerText = x;
     
 }
 
 // cost and selling price
-//-----------------------------------------------------
-
 function computeCP() {
 
     var profit = document.getElementById("p1").value;
