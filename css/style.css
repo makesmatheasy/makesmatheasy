@@ -455,8 +455,8 @@ ul li .table {
 
 .home {
   height: fit-content;
-  /* background: rgba(255, 136, 231,0.5); */
-  background: var(--apppink) !important;
+  background: rgba(255, 136, 231,0.5);
+  /* background: var(--apppink) !important; */
   margin: 0.8125rem;
   border-radius: 2.25rem;
   font-size: large;
@@ -464,7 +464,7 @@ ul li .table {
 
 .list_menu_items a:hover {
   /* background: rgba(255, 136, 231,0.5)!important; */
-  background: var(--apppink) !important;
+  /* background: var(--apppink) !important; */
   border-radius: 2.25rem;
 }
 
