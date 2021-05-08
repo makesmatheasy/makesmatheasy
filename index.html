@@ -3365,6 +3365,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="ztestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Z-test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Z test','#ztest','c','ztestfav')"><img
+                                        id="ztestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="zscore"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Z Score Calculator</a>
                         </td>
@@ -9548,6 +9564,35 @@
                 <p id="mean2" style="text-align: left;"></p>
                 <p id="SD1" style="text-align: left;"></p>
                 <p id="SD2" style="text-align: left;"></p>
+            </div>
+        </div>
+
+         <!-- z -test -->
+         <div class="collapse" id="ztest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
+            <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
+            <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
+            <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
+            <br><br>
+            <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
+            <br><br>
+            <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
+            <br><br>
+            <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
+            <br><br>
+            <label for="">Significance Level</label>
+            <br>
+            <select name="alpha" id="alpha">
+                <option value=0.01>0.01</option>
+                <option value=0.05>0.05</option>
+                <option value=0.1>0.1</option>
+            </select>
+            <br><br>
+            <button class = "btn btn-light" onclick="zvalue()">Test</button>
+            <p id="ztestans"></p>
+            <div id="stepsbox2">
+                <p id="alphavalue"></p>
+                <p id="pvalue"></p>
             </div>
         </div>
 

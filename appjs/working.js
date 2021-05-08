@@ -351,6 +351,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#ztestbtn").click(function () {
+        openit("#ztest");
+        closenav();
+        clearall();
+    });   
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();
