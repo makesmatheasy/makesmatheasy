@@ -147,7 +147,6 @@ function openit(id) {
         "#arcs",
         "#sosqs",
         "#sosqsn",
-        "#socbsn",
         "#squaresRanges",
         "#favourite",
         "#cubesRanges",
@@ -331,11 +330,14 @@ function openit(id) {
         "#cvs",
         "#rmss",
         "#relationtypes",
-        "#skew",
+        "#skews",
         "#clocks",
         "#slvxs",
         "#rankcals",
         "#hyperbolicratios"
+        "#covs",
+        "#lrcs",
+        "#perats"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

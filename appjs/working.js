@@ -82,6 +82,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cov").click(function () {
+        openit("#covs");
+        closenav();
+        clearall();
+    });
+    $("#lrc").click(function () {
+        openit("#lrcs");
+        closenav();
+        clearall();
+    });
     $("#tableoption").click(function () {
         openit("#table");
         closenav();
@@ -106,6 +116,11 @@ $(document).ready(function () {
     });
     $("#bpmf").click(function () {
         openit("#bpmfs");
+        closenav();
+        clearall();
+    });
+    $("#perat").click(function () {
+        openit("#perats");
         closenav();
         clearall();
     });
@@ -140,11 +155,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#socbn").click(function () {
-        openit("#socbsn");
-        closenav();
-        clearall();
-    });
+
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
@@ -791,12 +802,6 @@ $(document).ready(function () {
         clearall();
     });
 
-// anyBase-to-anyBase-btn
-    $("#anyBase-to-anyBase-btn").click(function(){
-        openit("#anyBase");
-        closenav();
-        clearall();
-    });
 
     $("#complexidentitiesbtn").click(function () {
         openit("#complexidentities");
