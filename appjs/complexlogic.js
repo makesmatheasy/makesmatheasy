@@ -609,12 +609,12 @@ document.getElementById("stressans").innerHTML=ans;
 
 function arcal()
 {
-      var a=document.getElementById("ang").value;
+      var a=document.getElementById("ang12").value;
       var b=document.getElementById("rad").value;
       var y=document.getElementById("radit").value;
       var d=document.getElementById("angit").value;
       var ans="";
-      if(a==""||b=="")
+      if(a == "" && b == "")
       {
           ans="Error: All values are required to obtain answer";
       }
