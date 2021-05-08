@@ -13575,40 +13575,46 @@
         <!-- Start of Subtraction of any number system -->
         <div class="collapse" id="subtract-all">
             <div class="col-6">
-                <div class="form-group">
-                    <h5>Choose Number System</h5><br>
-                    <select id="subtract-all-select1" class="form__field">
-                        <option class="form_field" style="background-color: #232a36;">
-                            Binary
-                        </option>
-                        <option class="form_field" style="background-color: #232a36;">
-                            Octal
-                        </option>
-                        <option class="form_field" style="background-color: #232a36;">
-                            Decimal
-                        </option>
-                        <option class="form_field" style="background-color: #232a36;">
-                            Hexa Decimal
-                        </option>
-                    </select>
-                    <br><br><h2>Input Of Minuend</h2>
-                    <input type=" " id="subtract-all-input1" value="0"
-                           class="form__field">
-                    <br><br><h2>Input Of Subtrahend</h2>
-                    <input type=" " id="subtract-all-input2" value="0"
-                    class="form__field">
+                <form action="">
+                    <div class="form-group">
+                        <h5>Choose Number System</h5><br>
+                        <select id="subtract-all-select1" class="form__field">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Binary
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Hexa Decimal
+                            </option>
+                        </select>
+                        <br><br><h2>Input Of Minuend</h2>
+                        <input type=" " id="subtract-all-input1" value="0"
+                               class="form__field">
+                        <br><br><h2>Input Of Subtrahend</h2>
+                        <input type=" " id="subtract-all-input2" value="0"
+                        class="form__field">
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group">
-                    <br><br><h2>Result Of Subtraction</h2>
-                    <button type="button" class="btn btn-light" onclick="subBinDecHexOct()">
-                        Find
-                    </button>
+                <div class="col-6">
+                    <div class="form-group">
+                        <br><br><h2>Result Of Subtraction</h2>
+                        <button type="button" class="btn btn-light" onclick="subBinDecHexOct()">
+                            Find
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                    <label class="form__group" id="subtract-all-result"></label>
+                    <p class="" id="subtract-all-working"></p>
                 </div>
-                <label class="form__group" id="subtract-all-result"></label>
-                <p class="" id="subtract-all-working"></p>
-            </div>
+                </form>
+                
         </div>
         <!-- End of Subtraction of any number system -->
 
@@ -13772,6 +13778,7 @@
         <!--START of (R-1)'s and R's Complement -->
         <div class="collapse" id="onetwocom-calc">
            <!-- Start of 1's 2's Complement Calculator -->
+           <form action="">
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
@@ -13789,17 +13796,22 @@
                         <button type="button" class="btn btn-light" onclick="onetwoCalc()">
                             Find
                         </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
                         <label class="form__field" id="onetworesult"></label>
                         <p class="" id="onetwoworking"></p>
                     </div>
                 </div>
             </div>
             <hr>
+           </form>
           <!-- Start of 1's 2's Complement Calculator -->
 
 
           <!-- Start 7's 8's Complement -->
-           <div class="row">
+          <form action="">
+            <div class="row">
                 <div class="col-12">
                     <div class="form-group">
                         <br><br><h2>Seven's and Eight's Complement</h2><br>
@@ -13816,14 +13828,20 @@
                         <button type="button" class="btn btn-light" onclick="seveneightCalc()">
                             Find
                         </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
                         <label class="form__field" id="seveneightresult"></label>
                         <p class="" id="seveneightworking"></p>
                     </div>
                 </div>
             </div>
+          </form>
+    
           <!-- End 7's 8's Complement -->
 
           <!-- Start of 9's 10's Complement Calculator -->
+          <form action="">
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
@@ -13839,15 +13857,21 @@
                         <button type="button" class="btn btn-light" onclick="ninetenCalc()">
                             Find
                         </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
                         <label class="form__field" id="ninetenresult"></label>
                         <p class="" id="ninetenworking"></p>
                     </div>
                 </div>
             </div>
+          </form>
+        
         <!-- End of 9's 10's complement Calculator-->
 
           <!-- Start 15's 16's Complement -->
-           <div class="row">
+          <form action="">
+            <div class="row">
                 <div class="col-12">
                     <div class="form-group">
                         <br><br><h2>Fifteen's Sixteen's Complement</h2><br>
@@ -13864,11 +13888,16 @@
                         <button type="button" class="btn btn-light" onclick="fiftnsixtnCalc()">
                             Find
                         </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
                         <label class="form__field" id="fiftnsixtnresult"></label>
                         <p class="" id="fiftnsixtnworking"></p>
                     </div>
                 </div>
             </div>
+          </form>
+           
 
           <!-- End 15's 16's Complement -->
 
@@ -14370,29 +14399,35 @@
         <div>
             <div class="collapse" id="hamming-calc">
                 <div class="col-6">
-                    <div class="form-group">
-                        <h5>Encode a message by Hamming Code</h5>
-                        <select id="hamming-select1" class="form__field">
-                            <option class="form_field" style="background-color: #232a36;">
-                                Left-To-Right
-                            </option>
-                            <option class="form_field" style="background-color: #232a36;">
-                                Right-To-Left
-                            </option>
-                        </select>
-                        <input type=" " id="hamming-input" value="0"
-                               class="form__field">
+                    <form action="">
+                        <div class="form-group">
+                            <h5>Encode a message by Hamming Code</h5>
+                            <select id="hamming-select1" class="form__field">
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Left-To-Right
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Right-To-Left
+                                </option>
+                            </select>
+                            <input type=" " id="hamming-input" value="0"
+                                   class="form__field">
+                        </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <h5>Compute Hamming Code</h5>
-                        <button type="button" class="btn btn-light" onclick="hammingCalc()">
-                            Find
-                        </button>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <h5>Compute Hamming Code</h5>
+                            <button type="button" class="btn btn-light" onclick="hammingCalc()">
+                                Find
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                        <label class="form__group" id="hamming-result">0</label>
                     </div>
-                    <label class="form__group" id="hamming-result">0</label>
-                </div>
+                    </form>
+                   
             </div>
         </div>
   <!-- end of Hamming Code -->
@@ -14400,23 +14435,29 @@
 <!-- start of Hamming Dist -->
 <div>
     <div class="collapse" id="hamming-dist">
-        <div class="form-group" style="display:inline-block">
-            <label>Enter the first number : &nbsp; &nbsp; </label>
-            <input type="number" id="numFirst" class="form__field" placeholder="x"
-                   style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-            <label> Enter the second number : &nbsp; &nbsp;</label>
-            <input type="number" id="numSecond" class="form__field" placeholder="y"
-                style="width:3rem;display:inline;">
-        </div>
-        <div class="form-group">
-            <button type="button" class="btn btn-light"
-                    onclick="hammingDistance(document.getElementById('numFirst').value,document.getElementById('numSecond').value);">
-                Solve
-            </button>
-        </div>
-        <div class="form-group text-center">
-            <p class="stopwrap" style="color:white;" id="distResult"></p>
-        </div>
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the first number : &nbsp; &nbsp; </label>
+                <input type="number" id="numFirst" class="form__field" placeholder="x"
+                       style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                <label> Enter the second number : &nbsp; &nbsp;</label>
+                <input type="number" id="numSecond" class="form__field" placeholder="y"
+                    style="width:3rem;display:inline;">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="hammingDistance(document.getElementById('numFirst').value,document.getElementById('numSecond').value);">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="distResult"></p>
+            </div>
+        </form>
+        
     </div>
 </div>
 <!-- end of Hamming Dist -->
