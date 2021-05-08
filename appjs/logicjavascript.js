@@ -3142,18 +3142,34 @@ function solveparallelogramcal(){
     var base = document.getElementById("inputbasea").value;
     var side = document.getElementById("inputsidebpar").value;
     var angle = document.getElementById("inputanglepar").value;
+    var output1 = document.getElementById("resultofareapar");
+    var output2 = document.getElementById("resultofperipar");
+    var out1temp = "";
+    var out2temp = "";
 
-    var area = base * side * math.sin(angle);
+    var area = base * side * Math.sin(angle);
     var peri = 2 * (parseInt(side) + parseInt(base));
 
     if (area <=0 && base != "" && side != "" && angle != ""){
-        document.getElementById("resultofareapar").innerHTML = ""
-        document.getElementById("resultofperipar").innerHTML = "Please enter correct angle"
+        output1.innerHTML = ""
+        output2.innerHTML = "Please enter correct angle"
         return;
     }
     if (base != "" && side != "" && angle != ""){
-        document.getElementById("resultofareapar").innerHTML = "The Area of the parallelogram  (S) = " +area.toFixed(3)
-        document.getElementById("resultofperipar").innerHTML = "The Perimeter of the parallelogram (P) = "+ peri.toFixed(3)
+        out1temp += "\\[ Area \\space of \\space the \\space Parallelogram (S) \\space is  \\]";
+        out1temp += "\\[  base \\times side \\times Sin θ \\]"
+        out1temp += "\\[ " + base + "\\times" + side + "\\times Sin (" + angle + ") \\]";
+        out1temp += "\\[" + (base*side) + "\\times" + (Math.sin(angle).toFixed(3)) + " \\]";
+        out1temp += "\\[ " + area.toFixed(3) + " \\]"
+        output1.innerHTML = out1temp;
+        out2temp += "\\[ Perimeter \\space of \\space the \\space Parallelogram (S) \\space is  \\]";
+        out2temp += "\\[ 2 \\times \\space ( \\space base \\space + \\space side \\space ) \\]";
+        out2temp += "\\[ 2 \\times \\space ( " + parseInt(base) + "+" + parseInt(side) + ") \\]";
+        out2temp += "\\[ 2 \\times \\space " + (parseInt(base)+parseInt(side)) + " \\]";
+        out2temp += "\\[ " + peri.toFixed(3) + " \\]"
+        output2.innerHTML = out2temp;
+        renderMathInElement(output1);
+        renderMathInElement(output2);
 
     }
 }
