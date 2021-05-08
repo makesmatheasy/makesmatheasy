@@ -48,9 +48,9 @@
     <style>
         pu {
             text-decoration: none;
-            border-left: 2px solid white;
-            border-bottom: 2px solid white;
-            padding: 2px;
+            border-left: 0.125rem solid white;
+            border-bottom: 0.125rem solid white;
+            padding: 0.125rem;
         }
 
         ​
@@ -60,19 +60,19 @@
             /*}*/
         lc {
             padding-left: 0;
-            border-bottom: 4px solid white;
-            border-left: 4px solid white;
+            border-bottom: 0.25rem solid white;
+            border-left: 0.25rem solid white;
         }
 
         .list_menu_items {
-            padding-left: 30px;
+            padding-left: 1.875rem;
         }
 
         .coll {
             display: flex;
             justify-content: center;
             justify-content: space-around;
-            margin-top: 20px;
+            margin-top: 1.25rem;
         }
 
         .coll h4 {
@@ -80,11 +80,11 @@
         }
 
         .left {
-            margin: 20px;
+            margin: 1.25rem;
         }
 
         .right {
-            margin: 20px;
+            margin: 1.25rem;
         }
 
         .inner {
@@ -94,22 +94,22 @@
         }
 
         .col1 {
-            margin-right: 30px;
+            margin-right: 1.875rem;
         }
 
         .col2 {
-            margin-left: 30px;
+            margin-left: 1.875rem;
         }
         /* Styling for invalid expression button */
         #calpar button{
             background-color: #ff3077;
             border-radius: 50%;
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
             position: relative;
-            right: 390px;
-            bottom: 160px;
+            right: 24.375rem;
+            bottom: 10rem;
 
         }
     </style>
@@ -136,59 +136,59 @@
     <style>
         /* width */
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 0.75rem;
         }
 
         /* Track */
         ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 10px;
+            box-shadow: inset 0 0 0.3125rem grey;
+            border-radius: 0.625rem;
         }
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
             background: var(--apppink);;
-            border-radius: 10px;
+            border-radius: 0.625rem;
         }
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
             background-color: var(--appimage);
-            height: 20px;
+            height: 1.25rem;
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:decrement {
 
-            background-position: center 2px;
+            background-position: center 0.125rem;
 
-            background-position: center 4px;
+            background-position: center 0.25rem;
 
-            background-size: 8px 8px;
+            background-size: 0.5rem 0.5rem;
             background-image: url(images/uparrow.png);
             background-repeat: no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:vertical:increment {
 
-            background-position: center 2px;
+            background-position: center 0.125rem;
 
-            background-position: center 4px;
+            background-position: center 0.25rem;
 
-            background-size: 8px 8px;
+            background-size: 0.5rem 0.5rem;
             background-image: url(images/downarrow.png);
             background-repeat: no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:horizontal:decrement {
-            background-position: center 4px;
-            background-size: 8px 8px;
+            background-position: center 0.25rem;
+            background-size: 0.5rem 0.5rem;
             background-image: url(images/leftarrow.png);
             background-repeat: no-repeat;
         }
 
         ::-webkit-scrollbar-button:single-button:horizontal:increment {
-            background-position: center 4px;
-            background-size: 8px 8px;
+            background-position: center 0.25rem;
+            background-size: 0.5rem 0.5rem;
             background-image: url(images/rightarrow.png);
             background-repeat: no-repeat;
         }
@@ -211,26 +211,26 @@
 
         @media screen and (max-width: 320px) {
             .ulstyle {
-                width: 250px;
+                width: 15.625rem;
             }
         }
 
         @media screen and (max-width: 627px) {
             .container {
-                margin-left:40px ;
+                margin-left:2.5rem ;
             }
         }
         @media screen and (max-width: 576px) {
             .container {
-                margin-left:10px ;
+                margin-left:0.625rem ;
             }
         }
         @media screen and (max-width: 344px) {
             .darkmode-toggle{
-                right: 15px !important;
+                right: 0.9375rem !important;
             }
             .darkmode-layer--button{
-                right: 15px !important;
+                right: 0.9375rem !important;
             }
             .sidenav{
                 width: 100%;
@@ -1574,11 +1574,11 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="interestbtn"
-                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Interest(Simple,Compound)</a>
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Interest(Simple,Compound)</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Simple and Compound Interest','#interest','c','interestfav')"><img
-                                    id="interestfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
+                                    id="interestfav" src="images/unfavourite.png" style="height:1.5625rem; filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -1588,12 +1588,12 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="pricesbtn"
-                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Cost and Selling Prices</a>
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cost and Selling Prices</a>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Cost and Selling Price','#prices','c','pricesfav')"><img
 
-                                    id="pricesfav" src="images/unfavourite.png" style="height:25px; filter: none;"></span>
+                                    id="pricesfav" src="images/unfavourite.png" style="height:1.5625rem; filter: none;"></span>
 
                         </td>
                     </tr>
@@ -1636,7 +1636,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="stbut"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Set calculator</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Set calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Set calculator ','#setcal','c','setimgfav')"><img
@@ -1720,7 +1720,7 @@
                     <tr>
                         <td style="border-top: none;" onclick="display_log()">
                             <a id="logValues"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Logarithm
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
                                 Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -1861,7 +1861,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="emibtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">EMI
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">EMI
                                 Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -1878,7 +1878,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="gstbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">GST
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">GST
                                 Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -1895,7 +1895,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="degbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Polynomial Degree
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Polynomial Degree
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2128,7 +2128,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="datebtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Date</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Date</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Date Calculator ','#datecal','c','dateimgfav')"><img
@@ -2202,7 +2202,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="plotangleoption"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Plot
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Plot
                                 Angle</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2235,7 +2235,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="ssst"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;"> SSS Triangle's Angle Calculator
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> SSS Triangle's Angle Calculator
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2266,7 +2266,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="parallelbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Parallel Lines
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties of Parallel Lines
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2282,7 +2282,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="coorbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Systems
                             </a>
                         </td>
@@ -2316,7 +2316,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="corgeobtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coordinate
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Geometry Formula and Theorem
                             </a>
                         </td>
@@ -2333,7 +2333,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="curvebtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Curve Tracing
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Curve Tracing
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2349,7 +2349,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="cevthabtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Ceva's and Thales' Theorem
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ceva's and Thales' Theorem
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2365,7 +2365,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="igcbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Important Graph Calculators
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Important Graph Calculators
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2383,7 +2383,7 @@
 
 
                             <a id="propcirclebtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Circles
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties of Circles
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2421,7 +2421,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="propquadbtn"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Properties of Quadrilaterals
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties of Quadrilaterals
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -3400,7 +3400,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="cv"
-                               style="font-size:15px;cursor: pointer;background:transparent;border:none;">Coefficient of Variation </a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coefficient of Variation </a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Coefficient of Variation  ','#cvs','c','cvimgfav')"><img
@@ -3520,10 +3520,10 @@
     <div class="form-group " style="margin-top:1rem">
             <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
                   class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
-                                               style="cursor:pointer; height: 40px;padding-left: 0.625rem;"></span>
+                                               style="cursor:pointer; height: 2.5rem;padding-left: 0.625rem;"></span>
         <span onclick="opencal()"><img src="icons/keys.svg"
-                                       style="cursor:pointer;display:block;position:relative;height:40px;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;top:1px ;right:5px;"></span>
-        <button class="collapse" id="fav-button" onclick="collapseit('favourite')" style="top: 2px;"><span
+                                       style="cursor:pointer;display:block;position:relative;height:2.5rem;float:right;z-index:20;padding-right:0.625rem;padding-left:2rem;margin:0rem;top:1px ;right:5px;"></span>
+        <button class="collapse" id="fav-button" onclick="collapseit('favourite')" style="top: 0.125rem;"><span
                 style="font-size:135%;">&starf;</span> Favourite
         </button>
 
@@ -3698,7 +3698,7 @@
             <p><b>Let’s understand the concept of HCF with an example:</b></p>
             <p>Consider two numbers: 12 and 18</p>
             <img src="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2020/12/28185936/image90-300x96.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
             <p>Factors of 12: 1, 2, 3, 4, 6, and 12 </p>
             <p>Factors of 18: 1, 2, 3, 6, 9, and 18 </p>
             <p>Both 12 and 18 have 1, 2, 3, and 6 as common factors, of which 6 is the highest. So, 6 is the HCF of 12 and 18.</p>
@@ -3811,7 +3811,7 @@
         <!-- Start of Operatiosn on fractions  -->
         <div class="collapse" id="fractions">
 
-            <div id="side1" style="display:inline-block; width: 500px;">
+            <div id="side1" style="display:inline-block; width: 31.25rem;">
                 <div class="row">
                     <button id="add_frac" class="carddis" data-toggle="modal"
                             onclick="$('#addition_fraction').slideToggle();$('#fractions').slideUp();clearall();">
@@ -3831,7 +3831,7 @@
                     </button>
                 </div>
             </div>
-            <div id="side2" style="margin-left: 50px; display:inline-block; width: 500px;">
+            <div id="side2" style="margin-left: 3.125rem; display:inline-block; width: 31.25rem;">
                 <div class="row">
                     <button id="mul_frac" class="carddis"
                             onclick="$('#miltiplication_fraction').slideToggle();$('#fractions').slideUp();clearall();">
@@ -4762,7 +4762,7 @@
                         <p>\[Then \,there \,exists\, a\, value\,  x =  c\, in\, such\, a\, way\, that\, f'(c) = \,[f(b) – f(a)]/(b-a)\]</p>
                         <br>
                         <h4>Geometrical Interpretation of Lagrange’s Mean Value Theorem</h4>
-                        <p><center><img src="images/lmvt.png" style="height: 400px;" class="img-fluid"></center></p>
+                        <p><center><img src="images/lmvt.png" style="height: 25rem;" class="img-fluid"></center></p>
                         <br><br>
                         <h4>Rolle’s Theorem</h4>
                         <p>\[A\, special\, case\, of\, Lagrange’s\, mean\, value \,theorem \,is\, Rolle’s\, Theorem\, which \,states\, that:\]</p>
@@ -4773,12 +4773,12 @@
                         <p>\[Precisely,\, if \,a\, function\, is\, continuous \,on\, the \,closed \,interval \,[a, b]\, and \,differentiable\]</p><p>\[ on\, the\, open\, interval\, (a, b) \,then\, there\, exists\, a \,point\, x = c \, in\, (a, b) \,such\, that\, f'(c) = 0\]</p>
                        <br>
                        <h4>Geometric interpretation of Rolle’s Theorem</h4>
-                       <p><center><img src="images/roll.png" style="height: 400px;" class="img-fluid"></center></p>
+                       <p><center><img src="images/roll.png" style="height: 25rem;" class="img-fluid"></center></p>
                        <br><br>
                         <h4>Cauchy's Theorem</h4>
                         <p>\[Let \,the\, functions \,f ( x ) \,and\, g ( x ) \,be\, continuous\, on \,an\, interval \,[ a , b ],\]</p><p>\[ differentiable \,on \,(a , b ) ,\, and\, g ′ ( x ) ≠ 0\, for\, all \,x ∈ ( a , b ) .\]</p><p>\[ Then\, there \,is\, a\, point\, x = c \,in \,this\, interval\, such \,that\]</p>
                         <p>\[{\frac{{f\left( b \right) – f\left( a \right)}}{{g\left( b \right) – g\left( a \right)}}} = {\frac{{f’\left( c \right)}}{{g’\left( c \right)}}.}\]</p>
-                        <p><center><img src="images/cauchy.svg" style="height: 400px;" class="img-fluid"></center></p>
+                        <p><center><img src="images/cauchy.svg" style="height: 25rem;" class="img-fluid"></center></p>
                        <br><br>
                         <h4>Critical Point</h4>
                         <p>\[A \,function\, f \,which \,is\, continuous\, with \,x\, in \,its\, domain \,contains \,a \,critical \,point \,at \,point\, x\]</p><p>\[ if \,the\, following\, conditions \,hold \,good.\]</p>
@@ -5273,8 +5273,8 @@
                     <tr>
                         <td>
                             <div class="form-group"
-                                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
-                                <p id="result_cal_func_stats" style="line-height: 40px;"></p>
+                                 style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
+                                <p id="result_cal_func_stats" style="line-height: 2.5rem;"></p>
                             </div>
                         </td>
                     </tr>
@@ -5454,7 +5454,7 @@
           <!--Sets Formulas List ends-->
         <div class="collapse" id="log_values">
 
-                <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 45px;">Log
+                <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 2.8125rem;">Log
                     Calculator
                 </legend>
 
@@ -5474,13 +5474,13 @@
             </div>
             
 
-            <button type="button" class="btn btn-light" style="margin-top: 40px" ;
+            <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
                     onclick="cal_log()">
                 FIND LOG
             </button>
 
             <div class="form-group"
-                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                 style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                 <h2 id="result"></h2>
             </div>
 
@@ -5994,18 +5994,18 @@
                 (a,b) with a &#60 x &#60 b and f(x)≤f(z) for every z in (a,b). A local extremum
                 is either a local minimum or a local maximum.
             </p>
-            <img style="margin-left: 350px;"
+            <img style="margin-left: 21.875rem;"
                  src="https://www.mathsisfun.com/calculus/images/function-min-max.svg" alt="">
             <br><br>
             <h4>First Order Derivative Test</h4>
             <ol>
-                <li style="color: white; font-size: 20px;">Find out first derivative of f(x)
+                <li style="color: white; font-size: 1.25rem;">Find out first derivative of f(x)
                 </li>
-                <li style="color: white; font-size: 20px;">Equate to 0 and find out values of
+                <li style="color: white; font-size: 1.25rem;">Equate to 0 and find out values of
                     x
                 </li>
-                <li style="color: white; font-size: 20px;">Plot a wavy curve</li>
-                <li style="color: white; font-size: 20px;">If at a point curve goes from -ve
+                <li style="color: white; font-size: 1.25rem;">Plot a wavy curve</li>
+                <li style="color: white; font-size: 1.25rem;">If at a point curve goes from -ve
                     slope to +ve,Minima at that point and viceversa for Maxima
                 </li>
             </ol>
@@ -6013,15 +6013,15 @@
             <h4>Second Order Derivative Test
                 <h4>
                     <ol>
-                        <li style="color: white; font-size: 20px;">Equate to 0 first order
+                        <li style="color: white; font-size: 1.25rem;">Equate to 0 first order
                             derivative and find values of x
                         </li>
-                        <li style="color: white; font-size: 20px;">Find out second derivative
+                        <li style="color: white; font-size: 1.25rem;">Find out second derivative
                         </li>
-                        <li style="color: white; font-size: 20px;">Put values of x in seoond
+                        <li style="color: white; font-size: 1.25rem;">Put values of x in seoond
                             derivative
                         </li>
-                        <li style="color: white; font-size: 20px;">If answer is +ve, Minima and
+                        <li style="color: white; font-size: 1.25rem;">If answer is +ve, Minima and
                             -ve,Maxima
                         </li>
                     </ol>
@@ -6055,7 +6055,7 @@
                 is 90<span>&#176;</span> then<br> they are called ORTHOGONAL curves </p>
             <br>
             <h4>Length of Tangent, Subtangent, Normal & Subnormal.</h4>
-            <img style="margin-left: 200px;" src="images/tangent.png" alt="Tangent-Normal">
+            <img style="margin-left: 12.5rem;" src="images/tangent.png" alt="Tangent-Normal">
             <p>\[Length \space of \space the \space tangent(PT) \space = \space
                 \frac{y_{1}\sqrt{1+[f'(x_{1})]^2}}{f'(x_{1})}\]</p>
             <p>\[Length \space of \space Subtangent \space (MT) \space = \space
@@ -6092,11 +6092,11 @@
             <br>
             <h4>How to find a period?</h4>
             <ul>
-                <li style="color: white; font-size: 20px;">If a function repeats over at a constant period we say that is a periodic function.</li>
-                <li style="color: white; font-size: 20px;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
-                <li style="color: white; font-size: 20px;">Period means the time interval between the two occurrences of the wave.</li>
+                <li style="color: white; font-size: 1.25rem;">If a function repeats over at a constant period we say that is a periodic function.</li>
+                <li style="color: white; font-size: 1.25rem;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
+                <li style="color: white; font-size: 1.25rem;">Period means the time interval between the two occurrences of the wave.</li>
             </ul>
-            <img style="margin-left: 250px;" src="https://cdn1.byjus.com/wp-content/uploads/2020/09/Amplitude-and-period-of-a-function1.png" alt="">
+            <img style="margin-left: 15.625rem;" src="https://cdn1.byjus.com/wp-content/uploads/2020/09/Amplitude-and-period-of-a-function1.png" alt="">
             <br><br>
             <p>\[If\space for\space f(x)\space period\space =\space T,\space then\space period\space for\space f(ax)\space =\space \frac{T}{a}\]</p>
             <p>\[Rest\space for\space all\space other\space cases\space of\space functions,\space the\space period\space remains\space same\]</p>
@@ -6114,31 +6114,31 @@
             <br><br>
             <h5>If function f(x) changes to f(x) + b or f(x) - b - </h5>
             <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph-of-yfx.jpg.jpg"
-                 style="margin-left: 250px; height: 200px;" alt="">
+                 style="margin-left: 15.625rem; height: 12.5rem;" alt="">
             <h5>If f(x) changes to |f(x)| - </h5>
             <p>The graph of f(x) and |f(x)| would coincide if f(x) > 0 and the portions where
                 f(x) < 0 would get inverted in the upwards direction.</p>
             <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph2.jpg.jpg"
-                 style="margin-left: 250px; height: 200px;" alt="">
+                 style="margin-left: 15.625rem; height: 12.5rem;" alt="">
             <h5>If f(x) changes to f(|x|) - </h5>
             <p>Graphs of f(|x|) and f(x) would be identical in the first and the fourth
                 quadrants (as x > 0) and as such the graph of f(|x|) would be symmetrical about
                 the y-axis (as (|x|) is even).</p>
             <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph3.jpg.jpg"
-                 style="margin-left: 250px; height: 200px;" alt="">
+                 style="margin-left: 15.625rem; height: 12.5rem;" alt="">
             <h5>If y = f(x) changes to |y| = f(x)</h5>
             <p>Graph of |y| = f(x) would exist only in the regions where f(x) is non-negative
                 and will be reflected about the x-axis only in those regions.</p>
             <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph4.jpg.jpg"
-                 style="margin-left: 250px; height: 200px;" alt="">
+                 style="margin-left: 15.625rem; height: 12.5rem;" alt="">
             <h5>If f(x) changes to af(x) - </h5>
             <p>No change in period of function, The maxima and minima gets increased</p>
             <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph6.jpg.jpg"
-                 style="margin-left: 250px; height: 200px;" alt="">
+                 style="margin-left: 15.625rem; height: 12.5rem;" alt="">
             <h5>If f(x) changes to f(ax) - </h5>
             <p>The period of function changes from <b>P to P/|a|</b></p>
             <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph7.jpg.jpg"
-                 style="margin-left: 250px; height: 200px;" alt="">
+                 style="margin-left: 15.625rem; height: 12.5rem;" alt="">
         </div>
         <div class="collapse" id="integralcollapse">
 
@@ -6248,11 +6248,11 @@
             <p>\[B(p,q)\space =\space \int_{0}^{1} t^{p-1} (1-t)^{q-1}\,dt \\ Where\space p,q\space greater\space than\space 0\]</p>
             <h4>Properties of Beta Functions</h4>
             <ul>
-                <li style="color: white; font-size: 20px;">This function is symmetric which means that the value of beta function is irrespective to the order of its parameters, i.e B(p, q) = B(q, p)</li>
-                <li style="color: white; font-size: 20px;">B(p, q) = B(p, q+1) + B(p+1, q)</li>
-                <li style="color: white; font-size: 20px;">B(p, q+1) = B(p, q). [q/(p+q)]</li>
-                <li style="color: white; font-size: 20px;">B(p+1, q) = B(p, q). [p/(p+q)]</li>
-                <li style="color: white; font-size: 20px;">B (p, q). B (p+q, 1-q) = π/ p sin (πq)</li>
+                <li style="color: white; font-size: 1.25rem;">This function is symmetric which means that the value of beta function is irrespective to the order of its parameters, i.e B(p, q) = B(q, p)</li>
+                <li style="color: white; font-size: 1.25rem;">B(p, q) = B(p, q+1) + B(p+1, q)</li>
+                <li style="color: white; font-size: 1.25rem;">B(p, q+1) = B(p, q). [q/(p+q)]</li>
+                <li style="color: white; font-size: 1.25rem;">B(p+1, q) = B(p, q). [p/(p+q)]</li>
+                <li style="color: white; font-size: 1.25rem;">B (p, q). B (p+q, 1-q) = π/ p sin (πq)</li>
             </ul>
             <p>\[B(p,q)\space  =\space \int_{0}^{\infty} \frac{t^{p-1}}{(1+t) ^{p+q}} \,dt\]</p>
             <p>\[B(p,q)\space =\space 2\int_{0}^{\frac{\pi}{2}} sin^{2p-1}\theta\ cos^{2q-1}\theta \]</p>
@@ -6568,7 +6568,7 @@
         <!-- Complex Properties -->
         <div class="collapse" id="complexproperties">
             <h4>Properties of Complex Numbers:</h4>
-            <ol type="1" style="color:white; font-size:23px;">
+            <ol type="1" style="color:white; font-size:1.4375rem;">
                 <li>The addition of two conjugate complex numbers will result in a real number.</li>
                 <li>The multiplication of two conjugate complex number will also result in a real number.</li>
                 <li>If x and y are the real numbers and x+yi =0, then x =0 and y =0.</li>
@@ -6734,7 +6734,7 @@
                 with positive orientation. Also let F be a vector field then,
             </p>
             <p>\[\int_C F\,dr = \iint_S curlF\,dS\]</p>
-            <img style="margin-left: 350px;"
+            <img style="margin-left: 21.875rem;"
                  src="https://tutorial.math.lamar.edu/classes/calcIII/StokesTheorem_Files/image001.png"
                  alt="">
             <h4>3. Green's Theorem</h4>
@@ -6744,7 +6744,7 @@
                 and Q have continuous first order partial derivatives on D then,
             </p>
             <p>\[\int_C {P\,dx + Q\,dy} = \iint_S ({\frac {∂Q}{∂x}-\frac{∂P}{∂y}})\,dA \]</p>
-            <img style="margin-left: 350px;"
+            <img style="margin-left: 21.875rem;"
                  src="https://tutorial.math.lamar.edu/classes/calciii/GreensTheorem_Files/image001.png"
                  alt="">
         </div>
@@ -7054,37 +7054,37 @@
             <h4 class="text-center">Euclid's Axioms</h4>
             <p>There are 7 axioms in Euclid Geometry:<p>
             <ol>
-                <li style="font-size: 20px;">Things which are equal to the same thing are equal to one another. </li>
+                <li style="font-size: 1.25rem;">Things which are equal to the same thing are equal to one another. </li>
                 <br>
-                <li style="font-size: 20px;">If equals are added to equals, the wholes are equal. </li>
+                <li style="font-size: 1.25rem;">If equals are added to equals, the wholes are equal. </li>
                 <br>
-                <li style="font-size: 20px;">If equals are subtracted from equals, the remainders are equal.</li>
+                <li style="font-size: 1.25rem;">If equals are subtracted from equals, the remainders are equal.</li>
                 <br>
-                <li style="font-size: 20px;">Things which coincide with one another are equal to one another. </li>
+                <li style="font-size: 1.25rem;">Things which coincide with one another are equal to one another. </li>
                 <br>
-                <li style="font-size: 20px;">The whole is greater than the part. </li>
+                <li style="font-size: 1.25rem;">The whole is greater than the part. </li>
                 <br>
-                <li style="font-size: 20px;">Things which are double of the same things are equal to one another.</li>
+                <li style="font-size: 1.25rem;">Things which are double of the same things are equal to one another.</li>
                 <br>
-                <li style="font-size: 20px;">Things which are halves of the same things are equal to one another</li>
+                <li style="font-size: 1.25rem;">Things which are halves of the same things are equal to one another</li>
             </ol>
             <br>
             <h4 class="text-center">Euclid's Postulates</h4>
             <p>There are 5 postulates in Euclid's Geometry:</p>
             <ol>
-                <li style="font-size: 20px;">A straight line can be drawn from anyone point to another point</li>
+                <li style="font-size: 1.25rem;">A straight line can be drawn from anyone point to another point</li>
                 <br>
-                <img style=" height: 200px;"  src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101848/Euclidean-Geometry-Postu-1-300x121-300x121.png" alt="">
+                <img style=" height: 12.5rem;"  src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101848/Euclidean-Geometry-Postu-1-300x121-300x121.png" alt="">
                 <br>
-                <li style="font-size: 20px;">A terminated line can be further produced indefinitely</li>
+                <li style="font-size: 1.25rem;">A terminated line can be further produced indefinitely</li>
                 <br>
-                <img style=" width :350px ; height: 100px;" src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101952/Euclid-Postulates-300x50-300x50.png" alt="">
+                <img style=" width :21.875rem ; height: 6.25rem;" src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101952/Euclid-Postulates-300x50-300x50.png" alt="">
                 <br>
-                <li style="font-size: 20px;">A circle can be drawn with any centre and any radius.</li>
+                <li style="font-size: 1.25rem;">A circle can be drawn with any centre and any radius.</li>
                 <br>
-                <li style="font-size: 20px;">All right angles are equal to one another.</li>
+                <li style="font-size: 1.25rem;">All right angles are equal to one another.</li>
                 <br>
-                <li style="font-size: 20px;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles,
+                <li style="font-size: 1.25rem;">If a straight line falling on two other straight lines makes the interior angles on the same side of it taken together less than two right angles,
                     then the two straight lines, if produced indefinitely, meet on the side on which the sum of angles is less than two right angles
                 </li>
             </ol>
@@ -7097,20 +7097,20 @@
                 (possibly both). For example,</p>
             <p>\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
             <img src="https://www.probabilitycourse.com/images/chapter1/union_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
             <br><br>
             <h5>2. Intersection</h5>
             <p>The intersection of two sets A and B, denoted by A∩B, consists of all
                 elements that are both in A and B. For example,</p>
             <p>\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
             <img src="https://www.probabilitycourse.com/images/chapter1/intersection_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
             <br>
             <p style="text-align: center;"><i>The intersection of A and B is the middle
                 part</i></p>
             <br>
             <img src="https://www.probabilitycourse.com/images/chapter1/intersection3_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
             <br><br>
             <h5>3. Disjoint</h5>
             <p>Set A and set B are called disjoint sets if no element is common to A and B. 
@@ -7119,14 +7119,14 @@
             <p>For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
                 A\cap B\cap C = ∅\]</p>
             <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
             <br><br>
             <h5>4. Complement</h5>
             <p>The complement of a set A, denoted by A<sup>c</sup> is elements in Universal
                 Set which are not in A</p>
             <br>
             <img src="https://www.probabilitycourse.com/images/chapter1/complement_b.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
             <br><br>
             <h5>5. Difference</h5>
             <p>The set A−B consists of elements that are in A but not in B. For example
@@ -7135,46 +7135,46 @@
                 A-B = \{1,2\}\]
             </p>
             <img src="https://www.probabilitycourse.com/images/chapter1/difference_b.png"
-                 style="margin-left: 300px; height: 200px;" alt=""><br><br>
+                 style="margin-left: 18.75rem; height: 12.5rem;" alt=""><br><br>
             <h2 style="text-align: center;">Some conclusions from set operations</h2>
             <p>Let S be the universal set, and A,B,C,D are subsets of S. Then,</p>
             <ol>
-                <li style="color: white; font-size: 20px;">A ∪ ∅ = A <p>Hence ∅ i.e. empty set is identity set for 'union operation'. </p></li>
+                <li style="color: white; font-size: 1.25rem;">A ∪ ∅ = A <p>Hence ∅ i.e. empty set is identity set for 'union operation'. </p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∩ S = A <p>S i.e. universal set is identity set for 'intersection operation'. </p></li>
+                <li style="color: white; font-size: 1.25rem;">A ∩ S = A <p>S i.e. universal set is identity set for 'intersection operation'. </p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∪ S = S <p>A ⊂ S and A ∪ S = S</p> <p>⇒ if B ⊂ A then A ∪ B  = A i.e. union of super set and subset is super set.</p></li>
+                <li style="color: white; font-size: 1.25rem;">A ∪ S = S <p>A ⊂ S and A ∪ S = S</p> <p>⇒ if B ⊂ A then A ∪ B  = A i.e. union of super set and subset is super set.</p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∩ ∅ = ∅ <p>∅ ⊂ A and A ∩ ∅ = ∅</p> <p>⇒ if B ⊂ A then A ∩ B  = B i.e. intersection of super set and subset is subset.</p></li>
+                <li style="color: white; font-size: 1.25rem;">A ∩ ∅ = ∅ <p>∅ ⊂ A and A ∩ ∅ = ∅</p> <p>⇒ if B ⊂ A then A ∩ B  = B i.e. intersection of super set and subset is subset.</p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">If B ⊂ A, then A ∩ B  = B and A ∪ B  = A</li>
+                <li style="color: white; font-size: 1.25rem;">If B ⊂ A, then A ∩ B  = B and A ∪ B  = A</li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ⊂ A ∪ B also B ⊂ A ∪ B</li>
+                <li style="color: white; font-size: 1.25rem;">A ⊂ A ∪ B also B ⊂ A ∪ B</li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∩ B ⊂ A also A ∩ B ⊂ B</li>
+                <li style="color: white; font-size: 1.25rem;">A ∩ B ⊂ A also A ∩ B ⊂ B</li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∩ B ⊂ A ⊂ A ∪ B and A ∩ B ⊂ B ⊂ A ∪ B i.e, A and B sets. A ∩ B is the smallest set and A ∪ B is largest set.
+                <li style="color: white; font-size: 1.25rem;">A ∩ B ⊂ A ⊂ A ∪ B and A ∩ B ⊂ B ⊂ A ∪ B i.e, A and B sets. A ∩ B is the smallest set and A ∪ B is largest set.
                     <p>A contains A ∩ B and A is contained in A ∪ B.</p>
                     <p>Similarly B contains A ∩ B and B is contained in A ∪ B.</p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">As A ∩ B ⊂ A<p>⇒ (A ∩ B) ∪ A = A [super set]</p><p>and (A ∩ B) ∩ A = (A ∩ B) [subset]</p></li>
+                <li style="color: white; font-size: 1.25rem;">As A ∩ B ⊂ A<p>⇒ (A ∩ B) ∪ A = A [super set]</p><p>and (A ∩ B) ∩ A = (A ∩ B) [subset]</p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">As A ⊂ A ∪ B<p>⇒ A ∩ (A ∪ B) = A [subset]</p><p>and A ∪ (A ∪ B) = (A ∪ B) [super set]</p> </li>
+                <li style="color: white; font-size: 1.25rem;">As A ⊂ A ∪ B<p>⇒ A ∩ (A ∪ B) = A [subset]</p><p>and A ∪ (A ∪ B) = (A ∪ B) [super set]</p> </li>
                 <br>
-                <li style="color: white; font-size: 20px;">(A - B) ∪ (A ∩ B) ∪ (B - A) = A ∪ B and (A - B), (A ∩ B), (B - A) are pairwise disjoint. i.e. 
+                <li style="color: white; font-size: 1.25rem;">(A - B) ∪ (A ∩ B) ∪ (B - A) = A ∪ B and (A - B), (A ∩ B), (B - A) are pairwise disjoint. i.e. 
                     <p>(A - B) ∩ (A ∩ B) = ∅ </p><p>(A - B) ∩ (B - A) = ∅ </p><p>(A ∩ B) ∩ (B - A) = ∅ </p><p>Hence (A - B), (A ∩ B) and (B - A) are partitions of A ∪ B.</p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∪ A' = S <p>i.e. Union of A and its complement gives identity set for intersection operation.</p></li>
+                <li style="color: white; font-size: 1.25rem;">A ∪ A' = S <p>i.e. Union of A and its complement gives identity set for intersection operation.</p></li>
                 <br>
-                <li style="color: white; font-size: 20px;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
+                <li style="color: white; font-size: 1.25rem;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
                 <br>
             </ol>
             <h4>Remark:</h4>
             <ul>
-                <li style="color: white; font-size: 20px;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
+                <li style="color: white; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
                     i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
                 <br>
-                <li style="color: white; font-size: 20px;">Multiplication of element and its complement gives additive identity element.</li>
+                <li style="color: white; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
             </ul>
         </div>
 
@@ -7185,22 +7185,22 @@
             <p>A set is the representation of a collection of objects; distinct objects with
                 one or more common properties.</p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Venn_A_intersect_B.svg/1200px-Venn_A_intersect_B.svg.png"
-                 style="margin-left: 350px; width: 300px;" alt="">
+                 style="margin-left: 21.875rem; width: 18.75rem;" alt="">
             <h6>Types of Sets</h6>
             <ol>
-                <li style="color: white; font-size: 20px;">Empty Set - A set with no
+                <li style="color: white; font-size: 1.25rem;">Empty Set - A set with no
                     elements. Empty sets are also called null sets or void sets and are
                     denoted by { } or Φ.
                 </li>
-                <li style="color: white; font-size: 20px;">Singleton Set - A set with a
+                <li style="color: white; font-size: 1.25rem;">Singleton Set - A set with a
                     single element. For example, {9}.
                 </li>
-                <li style="color: white; font-size: 20px;">Power Set - A set qualifies as
+                <li style="color: white; font-size: 1.25rem;">Power Set - A set qualifies as
                     the subset of another set if all of its elements are also the elements
                     of that another set. A collection of all the subsets of a given set is a
                     power set.
                 </li>
-                <li style="color: white; font-size: 20px;">Super Set - A super-set can be
+                <li style="color: white; font-size: 1.25rem;">Super Set - A super-set can be
                     thought of as the parent set that at least contains all the elements of
                     the subset and may or may not contain some extra elements.
                 </li>
@@ -7223,21 +7223,21 @@
                 is related to exactly one element in Y. That is, given an element x in X,
                 there is only one element in Y that x is related to.</p>
             <img src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/08/20083400/Func_venn-300x225.png"
-                 style="margin-left: 350px;" alt="">
+                 style="margin-left: 21.875rem;" alt="">
             <h6>Types of Functions - </h6>
             <ol>
-                <li style="color: white; font-size: 20px;">One to one function(Injective):
+                <li style="color: white; font-size: 1.25rem;">One to one function(Injective):
                     For each element in the domain there is one and only one element in the
                     range.
                 </li>
-                <li style="color: white; font-size: 20px;">Many to one function: When two or
+                <li style="color: white; font-size: 1.25rem;">Many to one function: When two or
                     more elements from the domain are mapped to the same single elements in
                     the range.
                 </li>
-                <li style="color: white; font-size: 20px;">Onto function(Surjective): When
+                <li style="color: white; font-size: 1.25rem;">Onto function(Surjective): When
                     every element of the range has been mapped to an element in the domain.
                 </li>
-                <li style="color: white; font-size: 20px;">One-one and onto
+                <li style="color: white; font-size: 1.25rem;">One-one and onto
                     function(Bijective): A function which is both one to one and onto
                     function.
                 </li>
@@ -7662,13 +7662,13 @@
                     <tr>
                         <td>
                             <div class="form-group"
-                                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                 style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                                 <p id="result_cal_func_parabola_y"></p>
                             </div>
                         </td>
                         <td>
                             <div class="form-group"
-                                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                 style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                                 <p id="result_cal_func_parabola_x"></p>
                             </div>
                         </td>
@@ -7880,7 +7880,7 @@
                         <td colspan="2">
                             <h4 id="ecllipse_intro" style="color: var(--appwhite);"></h4>
                             <div class="form-group"
-                                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                 style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                                 <p id="result_cal_func_ecllipse"></p>
                             </div>
                         </td>
@@ -8030,7 +8030,7 @@
         <div class="collapse" id="parab">
             <h2 style="text-align: center;">ParaBoloid</h2>
             <br>
-            <img style="margin-left: 350px;" src="https://mathworld.wolfram.com/images/eps-gif/Paraboloid_700.gif" alt="">
+            <img style="margin-left: 21.875rem;" src="https://mathworld.wolfram.com/images/eps-gif/Paraboloid_700.gif" alt="">
             <p>Paraboloid, an open surface generated by rotating a parabola (q.v.) about its axis. If the axis of the surface is the z axis and the vertex is at the origin, the intersections of the surface with planes parallel to the xz and yz planes are parabolas </p>
             <p>The surface of revolution of the parabola which is the shape used in the reflectors of automobile headlights</p>
             <p>Its equation is given by -</p>
@@ -8116,7 +8116,7 @@
                         <td colspan="2">
                             <h4 id="hyperbola_intro" style="color: var(--appwhite);"></h4>
                             <div class="form-group"
-                                 style=" margin-top: 40px ; color: aliceblue ; display: inline;">
+                                 style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                                 <p id="result_cal_func_hyperbola"></p>
                             </div>
                         </td>
@@ -8838,9 +8838,9 @@
             <p>The hyperbolic functions are analogs of the circular function or the trigonometric functions. The hyperbolic function occurs in the solutions of linear differential equations, calculation of distance and angles in the hyperbolic geometry, Laplace’s equations in the cartesian coordinates. Generally, the hyperbolic function takes place in the real argument called the hyperbolic angle. The basic hyperbolic functions are:</p>
             <br>
             <ul>
-                <li style="color:white; font-size: 20px;">Hyperbolic Sine(sinh)</li>
-                <li style="color:white; font-size: 20px;">Hyperbolic Cosine(cosh)</li>
-                <li style="color:white; font-size: 20px;">Hyperbolic Tangent(tanh)</li>
+                <li style="color:white; font-size: 1.25rem;">Hyperbolic Sine(sinh)</li>
+                <li style="color:white; font-size: 1.25rem;">Hyperbolic Cosine(cosh)</li>
+                <li style="color:white; font-size: 1.25rem;">Hyperbolic Tangent(tanh)</li>
             </ul>
             <p>From these three basic functions, the other functions such as hyperbolic cosecant (cosech), hyperbolic secant(sech) and hyperbolic cotangent (coth) functions are derived.</p>
             <p>\[sinh(x)\space =\space \frac{e^{x}-e^{-x}}{2}\]</p>
@@ -9299,19 +9299,19 @@
                 \\If\space BD:DC = m:n, then\\
                 (m+n) cot θ = m cot α- n cot β = n cot B – m cot C\]
             </p>
-            <img style="margin-left: 450px;" src="images/Mn.png">
+            <img style="margin-left: 28.125rem;" src="images/Mn.png">
             <p>\[9) \space Radius\space of\space CircumCircle : R = \frac{a}{2sinA} =
                 \frac{b}{2sinB} = \frac{c}{sinC} = \frac{abc}{4\triangle}\]</p>
-            <img style="margin-left: 450px;" src="images/circumcircle.png">
+            <img style="margin-left: 28.125rem;" src="images/circumcircle.png">
             <p>\[10) \space Radius\space of\space InCircle : r = \frac{\triangle}{s} \space =
                 (s-a)tan\frac{A}{2} \space = 4R sin\frac{A}{2}sin\frac{B}{2}sin\frac{C}{2}\]</p>
-            <img style="margin-left: 420px;" src="images/incircle.png">
+            <img style="margin-left: 26.25rem;" src="images/incircle.png">
 
             <p>\[11) \space Radius\space of\space ExCircle : r_1 = \frac{\triangle}{s-a} \space
                 = (s)tan\frac{A}{2} \space = 4R sin\frac{A}{2}cos\frac{B}{2}cos\frac{C}{2}\]</p>
 
             <p>\[12) \space Orthocentre\space and\space Pedal\space triangle : \]</p>
-            <img style="margin-left: 420px;" src="images/pedal.png">
+            <img style="margin-left: 26.25rem;" src="images/pedal.png">
             <p> \[ The\space triangle\space formed\space by\space joining\space the\space
                 feet\space of\space the\space
                 altitudes\space is\space called\space the\space Pedal\space Triangle.\]
@@ -9485,14 +9485,14 @@
                 conditions are satisfied,</p>
             <p>\[D>=0\space \frac{-b}{2a} > k\space and\space a.f(k)>0\]</p>
             <img src="https://embibe-cdn.s3.amazonaws.com/resources/images/54556146.png"
-                 style="margin-left: 300px;" alt="">
+                 style="margin-left: 18.75rem;" alt="">
             <br><br>
             <p>4.Both the roots will lie in the given interval (k1, k2) if the following
                 conditions are satisfied </p>
             <p>\[D>=0\space k_1 < \frac{-b}{2a} < k_2\space and\space a.f(k_1)\space and\space
                 a.f(k_2) are >0\]</p>
             <img src="https://embibe-cdn.s3.amazonaws.com/resources/images/4565164513.png"
-                 style="margin-left: 300px;" alt="">
+                 style="margin-left: 18.75rem;" alt="">
             <br><br>
             <p>5.Exactly one of the roots lies in the given interval (k1, k2) if,</p>
             <p>\[f(k_1).f(k_2)\space >\space 0\]</p>
@@ -9573,17 +9573,17 @@
 	    <h4>Nature of the roots of the Quadratic Equation ax<sup>2</sup> + bx + c, a ≠ 0, a, b, c ∈ R</h4>
             <p>To find out the nature of the roots of a quadratic equation,</p>
             <ol>
-                <li style="color: white; font-size: 20px;">We find the value of the discriminant D. If D < 0, we immediately say that equation has no solution in R.</li>
+                <li style="color: white; font-size: 1.25rem;">We find the value of the discriminant D. If D < 0, we immediately say that equation has no solution in R.</li>
                 <br>
-                <li style="color: white; font-size: 20px;">If D ≥ 0, then we examine whether it is a perfect square of a rational number or not.
+                <li style="color: white; font-size: 1.25rem;">If D ≥ 0, then we examine whether it is a perfect square of a rational number or not.
                     <ol type = "i">
-                        <li style="color: white; font-size: 20px;">If D > 0 and D is not a perfect square, then roots are real and distinct.</li>
-                        <li style="color: white; font-size: 20px;">If D > 0 and it is a perfect square of a rational number and a, b, c ∈ Q, 
+                        <li style="color: white; font-size: 1.25rem;">If D > 0 and D is not a perfect square, then roots are real and distinct.</li>
+                        <li style="color: white; font-size: 1.25rem;">If D > 0 and it is a perfect square of a rational number and a, b, c ∈ Q, 
                             then the roots are real and rational. Roots are also distinct.</li>
                     </ol>
                 </li>
                 <br>
-                <li style="color: white; font-size: 20px;">If D = 0 then the roots are real and equal and if a, b, c ∈ Q the roots are equal rational numbers.</li>
+                <li style="color: white; font-size: 1.25rem;">If D = 0 then the roots are real and equal and if a, b, c ∈ Q the roots are equal rational numbers.</li>
                 <br>
             </ol>
         </div>
@@ -9591,7 +9591,7 @@
             <h2 style="text-align: center;">Pythagorean Triplets</h2>
             
             <br><br>
-            <input style="width: 275px;" type="text" class="form__field"
+            <input style="width: 17.1875rem;" type="text" class="form__field"
                    placeholder="Enter a number" id="nom">
             <button class="btn btn-light" onclick=pythtriple()>Submit</button>
 
@@ -9769,9 +9769,9 @@
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>
             <br>
-            <input style="width: 275px;" type="text" class="form__field"
+            <input style="width: 17.1875rem;" type="text" class="form__field"
                    placeholder="Enter cost price" id="cp">
-            <input style="width: 275px;" type="text" class="form__field"
+            <input style="width: 17.1875rem;" type="text" class="form__field"
                    placeholder="Enter selling price" id="sp">
             <br><br>
             <button class="btn btn-light" onclick=profitloss()>Submit</button>
@@ -9784,14 +9784,14 @@
             <br><br>
             <h2>Profit/Loss calculations over Discount</h2>
             <br>
-            <input style="width: 275px;" type="number" class="form__field"
+            <input style="width: 17.1875rem;" type="number" class="form__field"
                    placeholder="Enter Discount" id="dis">
             <select id="perprice" class="btn btn-outline-light">
                 <option>Percentage</option>
                 <option>Price</option>
             </select>
             <br><br>
-            <input style="width: 275px;" type="number" class="form__field"
+            <input style="width: 17.1875rem;" type="number" class="form__field"
                    placeholder="Enter selling price/cost price" id="cpsp">
                    <select id="costsell" class="btn btn-outline-light">
                     <option>Cost Price</option>
@@ -10397,7 +10397,7 @@
             <h5> for Y axis enter ----> 10,5,6,4 :</h5>
 
             <form action="">
-                <input type="text"  id="y_axis" placeholder="Enter The Values of Y axis " style="margin-top: 20px;">
+                <input type="text"  id="y_axis" placeholder="Enter The Values of Y axis " style="margin-top: 1.25rem;">
                 <br><br>
                 <input type="text"  id="x_axis" placeholder="Enter The Values Of X axis ">
                 <br><br>
@@ -10568,7 +10568,7 @@
                 and it is known as Abscissa. The y-coordinate of a point is its perpendicular
                 distance from the x-axis measured along the y-axis and it is known as Ordinate.
             </p>
-            <img style="width: 300px; height:250px; margin-left: 300px;"
+            <img style="width: 18.75rem; height:15.625rem; margin-left: 18.75rem;"
                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cartesian_coordinates_2D.svg/240px-Cartesian_coordinates_2D.svg.png"
                  alt="">
             <h4>2. Polar Coordinate System</h4>
@@ -10590,12 +10590,12 @@
                 X = r cos Ɵ and y = r sin Ɵ <br>
                 \[r =\space \sqrt{x^2 + y^2}\space and\space tan Ɵ\space =\space \frac{y}{x}\]
             </p>
-            <img style="width: 300px; height:250px; margin-left: 300px;"
+            <img style="width: 18.75rem; height:15.625rem; margin-left: 18.75rem;"
                  src="https://cdn1.byjus.com/wp-content/uploads/2020/01/polar-coordinate-system.png"
                  alt="">
             <br>
             <h4>3. Spherical Coordinate System</h4>
-            <img style="width: 300px; height:250px; margin-left: 300px;"
+            <img style="width: 18.75rem; height:15.625rem; margin-left: 18.75rem;"
                  src="https://mathinsight.org/media/image/image/spherical_coordinates.png"
                  alt="">
             <p>
@@ -10604,7 +10604,7 @@
                 positive x-axis and the line segment from the origin to Q. Lastly, ϕ is the
                 angle between the positive z-axis and the line segment from the origin to P.
             </p>
-            <img style="margin-left: 300px;"
+            <img style="margin-left: 18.75rem;"
                  src="https://mathinsight.org/media/image/image/spherical_coordinates_cartesian.png"
                  alt="">
             <p style="text-align: center;">
@@ -10614,7 +10614,7 @@
             </p>
             <br>
             <h4>4. Cylindrical Coordinate System</h4>
-            <img style="width: 300px; height:250px; margin-left: 300px;"
+            <img style="width: 18.75rem; height:15.625rem; margin-left: 18.75rem;"
                  src="https://mathworld.wolfram.com/images/eps-gif/CylindricalCoordinates_1001.gif"
                  alt="">
             <p style="text-align: center;">
@@ -10710,52 +10710,52 @@
         <div class="collapse" id="propcircle">
             <h2 style="text-align: center;">Properties of Circles</h2>
             <ol>
-                <li style="color: white; font-size : 20px;">The circles are said to be congruent if they have equal radii</li>
-                <img style="margin-left: 300px;"src="images/pr1.jpg" alt="">
+                <li style="color: white; font-size : 1.25rem;">The circles are said to be congruent if they have equal radii</li>
+                <img style="margin-left: 18.75rem;"src="images/pr1.jpg" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">The diameter of a circle is the longest chord of a circle</li>
-                <img style="margin-left: 300px;"src="images/pr2.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">The diameter of a circle is the longest chord of a circle</li>
+                <img style="margin-left: 18.75rem;"src="images/pr2.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">Equal chords subtend equal angles at the circumference</li>
-                <img style="margin-left: 300px;"src="images/pr3.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">Equal chords subtend equal angles at the circumference</li>
+                <img style="margin-left: 18.75rem;"src="images/pr3.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">The radius drawn perpendicular to the chord bisects the chord</li>
-                <img style="margin-left: 300px;"src="images/pr4.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">The radius drawn perpendicular to the chord bisects the chord</li>
+                <img style="margin-left: 18.75rem;"src="images/pr4.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">Circles having different radius are similar</li>
-                <img style="margin-left: 300px;"src="images/pr5.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">Circles having different radius are similar</li>
+                <img style="margin-left: 18.75rem;"src="images/pr5.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">A circle can circumscribe a rectangle, trapezium, triangle, square, kite</li>
-                <img style="margin-left: 300px;"src="images/pr6.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">A circle can circumscribe a rectangle, trapezium, triangle, square, kite</li>
+                <img style="margin-left: 18.75rem;"src="images/pr6.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">A circle can be inscribed inside a square, triangle and kite</li>
-                <img style="margin-left: 300px;"src="images/pr7.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">A circle can be inscribed inside a square, triangle and kite</li>
+                <img style="margin-left: 18.75rem;"src="images/pr7.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">The chords that are equidistant from the centre are equal in length</li>
-                <img style="margin-left: 300px;"src="images/pr8.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">The chords that are equidistant from the centre are equal in length</li>
+                <img style="margin-left: 18.75rem;"src="images/pr8.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">The distance from the centre of the circle to the longest chord (diameter) is zero</li>
-                <img style="margin-left: 300px;"src="images/pr9.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">The distance from the centre of the circle to the longest chord (diameter) is zero</li>
+                <img style="margin-left: 18.75rem;"src="images/pr9.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">The perpendicular distance from the centre of the circle decreases when the length of the chord increases</li>
-                <img style="margin-left: 300px;"src="images/pr10.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">The perpendicular distance from the centre of the circle decreases when the length of the chord increases</li>
+                <img style="margin-left: 18.75rem;"src="images/pr10.png" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">If the tangents are drawn at the end of the diameter, they are parallel to each other</li>
-                <img style="margin-left: 300px;"src="images/pr11.PNG" alt="">
+                <li style="color: white; font-size : 1.25rem;">If the tangents are drawn at the end of the diameter, they are parallel to each other</li>
+                <img style="margin-left: 18.75rem;"src="images/pr11.PNG" alt="">
                 <br><br>
-                <li style="color: white; font-size : 20px;">An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle</li>
-                <img style="margin-left: 300px;"src="images/pr12.png" alt="">
+                <li style="color: white; font-size : 1.25rem;">An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle</li>
+                <img style="margin-left: 18.75rem;"src="images/pr12.png" alt="">
             </ol>
         </div>
         
         <div class="collapse" id="propquad">
             <h2 style="text-align: center;">Properties of Quadrilaterals</h2>
-            <img src="images/propquad.png" style="margin-left: 200px;"
+            <img src="images/propquad.png" style="margin-left: 12.5rem;"
                      class="img-fluid">
             <br>     
             <div>
-                <li style="color: white; font-size : 20px;">Every quadrilateral has 4 vertices, 4 angles, and 4 sides</li>
-                <li style="color: white; font-size : 20px;">The total of its interior angles = 360 degrees</li>
+                <li style="color: white; font-size : 1.25rem;">Every quadrilateral has 4 vertices, 4 angles, and 4 sides</li>
+                <li style="color: white; font-size : 1.25rem;">The total of its interior angles = 360 degrees</li>
             </div>
             <br> 
             <h2 style="text-align: center;">Different types of Quadrilaterals Are:</h2>
@@ -11089,7 +11089,7 @@
         
             <div class="form-group">
                 <canvas id="plotangleres" width="1000" height="500"
-                        style="border:1px solid #d3d3d3;background-color:white">
+                        style="border:0.0625rem solid #d3d3d3;background-color:white">
                 </canvas>
 
             </div>
@@ -11396,18 +11396,18 @@
                 angles of another triangle, then the two triangles are similar to each
                 other.</p>
             <br>
-            <img src="images/AAAsimilar.png" alt="" style="width: 750px;height: 361px;">
+            <img src="images/AAAsimilar.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
             <br><br>
             <p>2. SAS Similarity - If the two sides of a triangle are in the same proportion of
                 the two sides of another triangle, and the angle inscribed by the two sides in
                 both the triangle are equal, then two triangles are said to be similar.</p>
             <br>
-            <img src="images/SASsimilar.png" alt="" style="width: 750px;height: 361px;">
+            <img src="images/SASsimilar.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
             <br><br>
             <p>3. SSS Similarity - If all the three sides of a triangle are in proportion to the
                 three sides of another triangle, then the two triangles are similar.</p>
             <br>
-            <img src="images/SSSsimilar.png" alt="" style="width: 750px;height: 361px;">
+            <img src="images/SSSsimilar.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
             <br><br><br><br>
             <h2>Fundamental Theorem of Proportionality</h2>
             <br>
@@ -11415,27 +11415,27 @@
                 in distinct points, then the segments of the other two sides in one halfplane are 
                 proportional to the segments in the other halfplane.</p>
             <br>
-            <img src="images/proptheo.png" alt="" style="width: 750px;height: 361px;">
+            <img src="images/proptheo.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
             <br><br><br><br>
             <p>Using the fundamental theorem on proportionality, we can obtain some results:</p>
             <ol>
-                <li style="color: white; font-size: 20px;">If a line parallel to one side of a triangle 
+                <li style="color: white; font-size: 1.25rem;">If a line parallel to one side of a triangle 
                     intersects the other two sides of the triangle in distinct points, the segments of the 
                     other sides of the triangle in the same halfplane of the line are proportional to the 
                     corresponding sides of the triangle.<br>
-                    <img src="images/propres1.jpg" alt="" style="width: 750px;height: 361px;">  
+                    <img src="images/propres1.jpg" alt="" style="width: 46.875rem;height: 22.5625rem;">  
                 </li>
                 <br>
-                <li style="color: white; font-size: 20px;">If three (or more than three) parallel lines 
+                <li style="color: white; font-size: 1.25rem;">If three (or more than three) parallel lines 
                     are intercepted by two transversals, the segments cut off on the transversals between 
                     the same parallel lines are proportional.<br>
-                    <img src="images/propres2.jpg" alt="" style="width: 750px;height: 361px;">
+                    <img src="images/propres2.jpg" alt="" style="width: 46.875rem;height: 22.5625rem;">
                 </li>
                 <br>
-                <li style="color: white; font-size: 20px;">In a triangle the bisector of an angle divides 
+                <li style="color: white; font-size: 1.25rem;">In a triangle the bisector of an angle divides 
                     the side opposite to the angle in the segments whose lengths are in the ratio of their 
                     corresponding sides.<br>
-                    <img src="images/propres3.jpg" alt="" style="width: 750px;height: 361px;">
+                    <img src="images/propres3.jpg" alt="" style="width: 46.875rem;height: 22.5625rem;">
                 </li>
                 <br>
             </ol>
@@ -11445,7 +11445,7 @@
             <p>If a line intersects two sides of a triangle such that segments of the sides in each half-plane 
                 are proportional then the line is parallel to the third side.</p>
             <br>
-            <img src="images/propcontheo.png" alt="" style="width: 750px;height: 361px;">
+            <img src="images/propcontheo.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -12343,7 +12343,7 @@
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <input type="number" id="r1val"
                        placeholder="Enter the difference between two consecutive terms (d) "
-                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                       style="border: none; background: transparent;width: 25rem; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <br>
                 <br>
                 <div class="row">
@@ -12381,7 +12381,7 @@
                 <input type="number" id="ft" placeholder="Enter the first term(a) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <input type="number" id="lt" placeholder="Enter the last term(l)"
-                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                       style="border: none; background: transparent;width: 25rem; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <br>
                 <br>
                 <div class="row">
@@ -12410,7 +12410,7 @@
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
 
                 <input type="tel" id="ap" placeholder="Enter AP(space separated)"
-                       style="border: none; background: transparent;width: 400px; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
+                       style="border: none; background: transparent;width: 25rem; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <br><br>
                 <div class="row">
                     <div class="col-6">        
@@ -12962,7 +12962,7 @@
 
 <div class="collapse" id="slvxs">
     <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
-    <div class= "coll" style="margin-left:230px"></div>
+    <div class= "coll" style="margin-left:14.375rem"></div>
     <p>
     <input type="text" id="solvex" size=5 value='' placeholder="a">X +
     <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
@@ -12975,7 +12975,7 @@
 
 <div id="perats" class="collapse">
     <h1 style="font-family:mathfont; text-align:center;">Percentage to Ratio</h1><br><br>
-    <div style="margin-left:80px; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
+    <div style="margin-left:5rem; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
 
     Enter Percentage to convert to Ratio: <input type="text" id="peratx" size=5 value='' placeholder="x">% 
     <br><br>
@@ -12985,7 +12985,7 @@
     </div>
    <br><br><br><br>
    <h1 style="font-family:mathfont; text-align:center;">Ratio to Percentage</h1><br><br>
-   <div  style="margin-left:80px; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
+   <div  style="margin-left:5rem; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
    Enter Ratio to convert to Percentage: <input type="text" id="ratperx" size=5 value='' placeholder="a"> : <input type="text" id="ratpery" size=5 value='' placeholder="b">
    <br><br>
    <button type="button" class="btn btn-light" style="width:8em" onclick=ratpercal()>   Convert   </button>
@@ -13051,7 +13051,7 @@
     <p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">The Weighted mean for given set of non negative data {x1, x2, x3, ...xn} with non negative weights {w1, w2, w3, ...wn}<br>
          can be derived from the formula: </p>
-    <img src="images\wmean.jpg" class="img-fluid" style="margin-left: 350px;">
+    <img src="images\wmean.jpg" class="img-fluid" style="margin-left: 21.875rem;">
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">where<br>
         x is the repeating value<br>
         w is the number of occurrences of x (weight)<br>
@@ -13270,7 +13270,7 @@
     <input type="text" name="numrange1" class="form__field" id="numrange1" placeholder="Enter the first term" style=" text-align:center;">
     <input type="text" name="numrange2" class="form__field" id="numrange2" placeholder="Enter the last term" style=" text-align:center;">
     <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="numcubesRangecal()">Calculate</button> <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 40rem; text-align:center;" onclick="numcubesRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="numcubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     <p id="numcubesans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
 
@@ -13332,14 +13332,14 @@
     <input type="text" name="sqrange1" class="form__field" id="sqrange1" placeholder="Enter the first term" style=" text-align:center;">
     <input type="text" name="sqrange2" class="form__field" id="sqrange2" placeholder="Enter the last term" style=" text-align:center;">
     <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="squaresRangecal()">Calculate</button> <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 40rem; text-align:center;" onclick="squaresRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="squaresRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     <br>
     <h1 style="font-family:mathfont; text-align:center;">Cubes in a Range</h1>
     <input type="text" name="range1" class="form__field" id="range1" placeholder="Enter the first term" style=" text-align:center;">
     <input type="text" name="range2" class="form__field" id="range2" placeholder="Enter the last term" style=" text-align:center;">
     <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" style="margin-left: 640px; text-align:center;" onclick="cubesRangecal()">Calculate</button> <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 40rem; text-align:center;" onclick="cubesRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="cubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
 
 </div>
@@ -13514,14 +13514,14 @@
 </div>
 
         <div class="collapse" id="bool">
-    <h1 style="text-align: center; text-shadow: 1px 1px 2px red; ">Boolean Algebra</h1>
-    <!-- <u style="color: rgba(243, 118, 218, 0.8); padding: 1px; "> -->
+    <h1 style="text-align: center; text-shadow: 0.0625rem 0.0625rem 0.125rem red; ">Boolean Algebra</h1>
+    <!-- <u style="color: rgba(243, 118, 218, 0.8); padding: 0.0625rem; "> -->
     <br>
-    <h4 style="text-align: center; text-shadow: 1px 1px 2px red; ">Laws of Boolean
+    <h4 style="text-align: center; text-shadow: 0.0625rem 0.0625rem 0.125rem red; ">Laws of Boolean
         Algebra</h4> <br>
     <!-- font-family: KaTeX_Math; -->
 
-    <div class="container" style="align-content: center; color: var(--appimage) !important; margin: 5px;">
+    <div class="container" style="align-content: center; color: var(--appimage) !important; margin: 0.3125rem;">
         <div class="row">
             <div class="col-md-4">
                 <center>
@@ -14226,7 +14226,7 @@
             <br>
             <h4>Laurent's Series</h4>
             <br>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Laurent_series.svg/1200px-Laurent_series.svg.png" style="height: 400px;" alt=""><br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Laurent_series.svg/1200px-Laurent_series.svg.png" style="height: 25rem;" alt=""><br>
             <p>If f(z) is analytic inside and on the boundary of annular(ring-shaped) region R bounded by two concentric circled C<sub>1</sub> and C<sub>2</sub> of radii r<sub>1</sub> and r<sub>2</sub> having centre at a then for all z in R,</p>
             <p>\[f(z)\space =\space \sum_{n=0}^{\infty}a_n (z-a)^{n}\space +\space \sum_{n=1}^{\infty}b_n (z-a)^{-n}\]</p>
             <p>\[a_n\space =\space \frac{1}{2\pi i} \int\frac{f(w)}{(w-a)^{-n+1}}\,dw\]</p>
@@ -14239,7 +14239,7 @@
         <!-- Start of bcd convertor -->
         <div>
             <div class="collapse" id="bcd">
-                <div class="main" style="padding-top: 40px; padding-left: 40px;">
+                <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
                 <div class="col-6">
                     <div class="form-group">
                         <h2>Decimal/BCD Code Converter</h2>
@@ -14278,7 +14278,7 @@
                 <br>
                 <br>
                 <!--BCD Addition -->
-                <div class="main" style="padding-left: 50px;">
+                <div class="main" style="padding-left: 3.125rem;">
                 <div class="col-6">
                     <div class="form-group">
                         <h2>BCD Code Addition </h2>
@@ -14300,7 +14300,7 @@
 <!-- Start of ex3 convertor -->
 <div>
     <div class="collapse" id="ex3">
-        <div class="main" style="padding-top: 40px; padding-left: 40px;">
+        <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
         <h5>Decimal-Excess-3 Code Converter</h5><br>
         <div class="col-6">
             <div class="form-group">
@@ -14335,7 +14335,7 @@
         </div>
         </div>
         <br><br>
-        <div class="main" style="padding-left: 50px;">
+        <div class="main" style="padding-left: 3.125rem;">
         <h3 style="text-align: center;">Decimal/Excess-3 Table</h3>
         <table class="table table-bordered table-dark">
             <tbody style="text-align: center;">
@@ -14386,7 +14386,7 @@
  <!-- Start of Decimal/2421 convertor -->
  <div>
     <div class="collapse" id="dec2421">
-        <div class="main" style="padding-top: 40px; padding-left: 40px;">
+        <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
         <div class="col-6">
             <div class="form-group">
                 <h5>Decimal</h5>
@@ -14404,7 +14404,7 @@
         </div>
     </div>
         <br><br>
-        <div class="main" style="padding-left: 50px;">
+        <div class="main" style="padding-left: 3.125rem;">
         <h3 style="text-align: center;">Decimal/2421 Table</h3>
         <table class="table table-bordered table-dark">
             <tbody style="text-align: center;">
@@ -14802,13 +14802,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5 style="color:white">Enter number of favourable outcomes in case of Event A</h5>
-                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="fav1">
+                        <input style=" border-bottom: 0.125rem solid lightgrey;" type="number" value="0" class="form__field" id="fav1">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5 style="color:white">Enter number of possible outcomes in case of Event A</h5>
-                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="1" class="form__field" id="tot1">
+                        <input style=" border-bottom: 0.125rem solid lightgrey;" type="number" value="1" class="form__field" id="tot1">
                     </div>
                 </div>
             </div>
@@ -14816,13 +14816,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5 style="color:white">Enter number of favourable outcomes in case of Event B</h5>
-                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="fav2">
+                        <input style=" border-bottom: 0.125rem solid lightgrey;" type="number" value="0" class="form__field" id="fav2">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <h5 style="color:white">Enter number of possible outcomes in case of Event B</h5>
-                        <input style=" border-bottom: 2px solid lightgrey;" type="number" value="1" class="form__field" id="tot2">
+                        <input style=" border-bottom: 0.125rem solid lightgrey;" type="number" value="1" class="form__field" id="tot2">
                     </div>
                 </div>
             </div>
@@ -14831,7 +14831,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <h5 style="color:white">Enter the probability of A and B(decimal)</h5>
-                            <input style=" border-bottom: 2px solid lightgrey;" type="number" value="0" class="form__field" id="pandb">
+                            <input style=" border-bottom: 0.125rem solid lightgrey;" type="number" value="0" class="form__field" id="pandb">
                         </div>
                         </div>
                 </div>
@@ -14954,41 +14954,41 @@
                                 <div class="cell borderBottom_1">
 
                                     <input id="one_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="cell">
 
                                     <input id="two_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
 
 
-                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">+
+                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
                         </div>
 
 
-                        <div style="display: inline-block; margin-left: 10px;">
+                        <div style="display: inline-block; margin-left: 0.625rem;">
                             <div class="row">
                                 <div class="cell borderBottom_1">
 
                                     <input id="three_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="cell">
 
                                     <input id="four_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <var id="addz" style="color: aliceblue;font-size: 18px;" ></var>
+                            <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                         </div>
                         <br>
 
@@ -15002,7 +15002,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+                            <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;" class="frac">
 
                                 <div style="display:inline-block">
 
@@ -15071,42 +15071,42 @@
                                 <div class="cell borderBottom_1">
 
                                     <input id="one_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="cell">
 
                                     <input id="two_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
 
 
-                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
+                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
                             -
                         </div>
 
 
-                        <div style="display: inline-block; margin-left: 10px;">
+                        <div style="display: inline-block; margin-left: 0.625rem;">
                             <div class="row">
                                 <div class="cell borderBottom_1">
 
                                     <input id="three_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="cell">
 
                                     <input id="four_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <var id="subz" style="color: aliceblue;font-size: 18px;"></var>
+                            <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
                         </div>
                         <br>
                         <center>
@@ -15120,7 +15120,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;" class="frac">
+                            <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;" class="frac">
 
                                 <div style="display:inline-block">
 
@@ -15139,23 +15139,23 @@
                                 </div>
 
 
-                                <span style="margin-top: 15px;">= &nbsp;(<var id="suba1">a</var>*<var
+                                <span style="margin-top: 0.9375rem;">= &nbsp;(<var id="suba1">a</var>*<var
                                         id="subd1">d</var>)-(<var id="subc1">c</var>*<var id="subb1">b</var>)</span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="subb2">b</var>*<var id="subd2">d</var></span>
 
-                                <span style="margin-top: 15px;">= &nbsp;<var id="sube">e</var>-<var
+                                <span style="margin-top: 0.9375rem;">= &nbsp;<var id="sube">e</var>-<var
                                         id="subg">g</var></span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="subf">f</var></span>
 
-                                <span style="margin-top: 15px;">= &nbsp;<var id="subt">t</var></span>
+                                <span style="margin-top: 0.9375rem;">= &nbsp;<var id="subt">t</var></span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="subq">q</var></span>
 
                                 =
 
-                                <var id="subans" style="margin-top: 15px;">k</var>
+                                <var id="subans" style="margin-top: 0.9375rem;">k</var>
 
 
                             </div>
@@ -15188,7 +15188,7 @@
 
                                     <input id="one_div" placeholder="Numerator" type="number"
                                            required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
@@ -15196,20 +15196,20 @@
 
                                     <input id="two_div" placeholder="Denominator" type="number"
                                            required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
 
-                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;"> /
+                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
                         </div>
-                        <div style="display: inline-block; margin-left: 10px;">
+                        <div style="display: inline-block; margin-left: 0.625rem;">
                             <div class="row">
                                 <div class="cell borderBottom_1">
 
                                     <input id="three_div" placeholder="Numerator" type="number"
                                                        required=""
-                                                       style="width: 150px;">
+                                                       style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
@@ -15217,12 +15217,12 @@
 
                                     <input id="four_div" placeholder="Denominator" type="number"
                                                        required=""
-                                                       style="width: 150px;">
+                                                       style="width: 9.375rem;">
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <var id="divaz" style="color: aliceblue;font-size: 18px;"></var>
+                                <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
                             </div>
                             <br>
                                 <center>
@@ -15235,7 +15235,7 @@
 
                             <div style="display: flex; justify-content: center;">
 
-                                <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                                <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
                                              class="frac">
 
                                     <div style="display:inline-block">
@@ -15257,7 +15257,7 @@
 
                                     <br>
 
-                                    <div style="display:inline-block; margin-top: 15px;">
+                                    <div style="display:inline-block; margin-top: 0.9375rem;">
 
                                                 <div><var id="diva1">a</var></div>
                                                 <div style="color: #ff299c" class="symbol">----- &nbsp; x</div>
@@ -15274,20 +15274,20 @@
                                     </div>
 
 
-                                            <span style="margin-top: 15px;">= &nbsp;<var id="diva2">a</var>*<var
+                                            <span style="margin-top: 0.9375rem;">= &nbsp;<var id="diva2">a</var>*<var
                                                     id="divd2">d</var></span>
                                             <span class="symbol">/</span>
                                             <span class="bottom"><var id="divb2">b</var>*<var
                                                     id="divc2">c</var></span>
 
 
-                                            <span style="margin-top: 15px;">= &nbsp;<var id="divt">t</var></span>
+                                            <span style="margin-top: 0.9375rem;">= &nbsp;<var id="divt">t</var></span>
                                             <span class="symbol">/</span>
                                             <span class="bottom"><var id="divq">q</var></span>
 
                                             =
 
-                                            <var id="divans" style="margin-top: 15px;">k</var>
+                                            <var id="divans" style="margin-top: 0.9375rem;">k</var>
 
 
                                         </div>
@@ -15322,7 +15322,7 @@
 
                                     <input id="one_mul" placeholder="Numerator" type="number"
                                            required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
@@ -15330,24 +15330,24 @@
 
                                     <input id="two_mul" placeholder="Denominator" type="number"
                                            required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
 
 
-                        <div style="color: #ff299c; display: inline-block; padding: 50px; font-size: 60px;">
+                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
                             x
                         </div>
 
 
-                        <div style="display: inline-block; margin-left: 10px;">
+                        <div style="display: inline-block; margin-left: 0.625rem;">
                             <div class="row">
                                 <div class="cell borderBottom_1">
 
                                     <input id="three_mul" placeholder="Numerator" type="number"
                                            required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                             <div class="row">
@@ -15355,13 +15355,13 @@
 
                                     <input id="four_mul" placeholder="Denominator" type="number"
                                            required=""
-                                           style="width: 150px;">
+                                           style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <var id="mulz" style="color: aliceblue;font-size: 18px;" ></var>
+                            <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                         </div>
                         <br>
                         <center>
@@ -15376,7 +15376,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                            <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
                                  class="frac">
 
                                 <div style="display:inline-block">
@@ -15396,20 +15396,20 @@
                                 </div>
 
 
-                                <span style="margin-top: 15px;">= &nbsp;<var id="mula1">a</var>*<var
+                                <span style="margin-top: 0.9375rem;">= &nbsp;<var id="mula1">a</var>*<var
                                         id="mulc1">c</var></span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="mulb1">b</var>*<var id="muld1">d</var></span>
 
 
-                                <span style="margin-top: 15px;">= &nbsp;<var
+                                <span style="margin-top: 0.9375rem;">= &nbsp;<var
                                         id="mult">t</var></span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="mulq">q</var></span>
 
                                 =
 
-                                <var id="mulans" style="margin-top: 15px;">k</var>
+                                <var id="mulans" style="margin-top: 0.9375rem;">k</var>
 
 
                             </div>
@@ -15440,27 +15440,27 @@
                     <div class="container" style="padding-top:0%">
 
 
-                        <div style="display: inline-block; margin-left: 40px; ">
+                        <div style="display: inline-block; margin-left: 2.5rem; ">
                             <div class="row">
 
-                                <div class="row" style="margin-top: 10px;">
+                                <div class="row" style="margin-top: 0.625rem;">
                                     <div class="cell borderBottom_1">
 
                                         <input id="side_mix" placeholder="Side" type="number"
-                                               required="" style="width: 70px; ">
+                                               required="" style="width: 4.375rem; ">
                                     </div>
                                 </div>
-                                <div class="cell borderBottom_1" style="margin-left: 20px; ">
+                                <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
 
                                     <input id="one_mix" placeholder="Numerator" type="number"
-                                           required="" style="width: 150px;">
+                                           required="" style="width: 9.375rem;">
                                 </div>
                             </div>
-                            <div class="row" style="margin-left: 45px;">
+                            <div class="row" style="margin-left: 2.8125rem;">
                                 <div class="cell">
 
                                     <input id="two_mix" placeholder="Denominator" type="number"
-                                           required="" style="width: 150px;">
+                                           required="" style="width: 9.375rem;">
                                 </div>
                             </div>
                         </div>
@@ -15470,7 +15470,7 @@
                         <center>
                             <button type="button" class="btn btn-light" ;
                                     onclick="mixed_to_improper()"
-                                    style="margin-top: 20px;">
+                                    style="margin-top: 1.25rem;">
                                 CONVERT
                             </button>
                         </center>
@@ -15479,7 +15479,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                            <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
                                  class="frac">
 
                                 <div style="display:inline-block">
@@ -15492,20 +15492,20 @@
                                     <div class="bottom"><var id="mixb">b</var></div>
 
                                 </div>
-                                <span style="margin-top: 15px;">= &nbsp;<var id="mixa1">a</var>+(<var
+                                <span style="margin-top: 0.9375rem;">= &nbsp;<var id="mixa1">a</var>+(<var
                                         id="mixs">s</var>*<var id="mixb1">b</var>)</span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="mixb2">b</var></span>
 
 
-                                <span style="margin-top: 15px;">= &nbsp;<var
+                                <span style="margin-top: 0.9375rem;">= &nbsp;<var
                                         id="mixt">t</var></span>
                                 <span class="symbol">/</span>
                                 <span class="bottom"><var id="mixq">q</var></span>
 
                                 =
 
-                                <var id="mixans" style="margin-top: 15px;">k</var>
+                                <var id="mixans" style="margin-top: 0.9375rem;">k</var>
 
 
                             </div>
@@ -15543,7 +15543,7 @@
 
                                         <input id="one_imp" placeholder="Numerator"
                                                type="number"
-                                               required="" style="width: 150px;">
+                                               required="" style="width: 9.375rem;">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -15551,7 +15551,7 @@
 
                                         <input id="two_imp" placeholder="Denominator"
                                                type="number"
-                                               required="" style="width: 150px;">
+                                               required="" style="width: 9.375rem;">
                                     </div>
                                 </div>
                             </div>
@@ -15560,7 +15560,7 @@
 
 
                             <button type="button" class="btn btn-light" ;
-                                    onclick="improper_to_mixed()" style="margin-top: 20px;">
+                                    onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
                                 CONVERT
                             </button>
                         </center>
@@ -15569,7 +15569,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <div style="color: aliceblue;font-size: 20px; margin-top: 30px;"
+                            <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
                                  class="frac">
 
                                 <div style="display:inline-block">
@@ -17805,17 +17805,17 @@
                             </div>
                             <div class="row qrow">
                                 <div class="col-6 qcol-6">
-                                    <li style="color: white; font-size : 20px;">All sides are equal and all the angles of a square are 90°</li>
+                                    <li style="color: white; font-size : 1.25rem;">All sides are equal and all the angles of a square are 90°</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Opposite sides are parallel to each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Opposite sides are parallel to each other.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">The diagonals are congruent.</li>
+                                    <li style="color: white; font-size : 1.25rem;">The diagonals are congruent.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">The diagonals are perpendicular to and bisect each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">The diagonals are perpendicular to and bisect each other.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">A square is a special type of parallelogram whose all angles and sides are equal.</li>
+                                    <li style="color: white; font-size : 1.25rem;">A square is a special type of parallelogram whose all angles and sides are equal.</li>
                                     <br><br> 
-                                    <li style="color: white; font-size : 20px;">Also, a parallelogram becomes a square when the diagonals are equal and right bisectors of each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Also, a parallelogram becomes a square when the diagonals are equal and right bisectors of each other.</li>
                                     <br><br> 
                                 </div>    
                             </div>
@@ -17847,15 +17847,15 @@
                             </div>
                             <div class="row qrow">
                                 <div class="col-6 qcol-6">
-                                    <li style="color: white; font-size : 20px;">Opposite sides are parallel and equal.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Opposite sides are parallel and equal.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">All angles are right angled(90°) .</li>
+                                    <li style="color: white; font-size : 1.25rem;">All angles are right angled(90°) .</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">The diagonals are congruent and bisect each other (divide each other equally).</li>
+                                    <li style="color: white; font-size : 1.25rem;">The diagonals are congruent and bisect each other (divide each other equally).</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Opposite angles formed at the point where diagonals meet are congruent.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Opposite angles formed at the point where diagonals meet are congruent.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">A rectangle is a special type of parallelogram whose angles are right.</li>
+                                    <li style="color: white; font-size : 1.25rem;">A rectangle is a special type of parallelogram whose angles are right.</li>
                                     <br><br>  
                                 </div>    
                             </div>
@@ -17887,15 +17887,15 @@
                             </div>
                             <div class="row qrow">
                                 <div class="col-6 qcol-6">
-                                    <li style="color: white; font-size : 20px;">Opposite sides are parallel and equal.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Opposite sides are parallel and equal.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Opposite angles are equal.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Opposite angles are equal.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Adjacent angles are supplementary ( 180° ).</li>
+                                    <li style="color: white; font-size : 1.25rem;">Adjacent angles are supplementary ( 180° ).</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Diagonals bisect each other and each diagonal divides the parallelogram into two congruent triangles.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Diagonals bisect each other and each diagonal divides the parallelogram into two congruent triangles.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">If one of the angles of a parallelogram is a right angle then all other angles are right and it becomes a rectangle.</li>
+                                    <li style="color: white; font-size : 1.25rem;">If one of the angles of a parallelogram is a right angle then all other angles are right and it becomes a rectangle.</li>
                                     <br><br> 
                                     
                                 </div>    
@@ -17928,15 +17928,15 @@
                             </div>
                             <div class="row qrow">
                                 <div class="col-6 qcol-6">
-                                    <li style="color: white; font-size : 20px;">All sides are equal and, opposite sides are parallel to each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">All sides are equal and, opposite sides are parallel to each other.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Opposite angles are equal.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Opposite angles are equal.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">The diagonals are perpendicular to and bisect each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">The diagonals are perpendicular to and bisect each other.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Adjacent angles are supplementary (For eg., ∠A + ∠B = 180°).</li>
+                                    <li style="color: white; font-size : 1.25rem;">Adjacent angles are supplementary (For eg., ∠A + ∠B = 180°).</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">A rhombus is a parallelogram whose diagonals are perpendicular to each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">A rhombus is a parallelogram whose diagonals are perpendicular to each other.</li>
                                     <br><br> 
                                      
                                 </div>    
@@ -17969,13 +17969,13 @@
                             </div>
                             <div class="row qrow">
                                 <div class="col-6 qcol-6">
-                                    <li style="color: white; font-size : 20px;">A trapezium has two parallel sides and two non-parallel sides</li>
+                                    <li style="color: white; font-size : 1.25rem;">A trapezium has two parallel sides and two non-parallel sides</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">The diagonals of regular trapezium bisect each other.</li>
+                                    <li style="color: white; font-size : 1.25rem;">The diagonals of regular trapezium bisect each other.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">The length of the mid-segment is equal to half the sum of the parallel bases, in a trapezium.</li>
+                                    <li style="color: white; font-size : 1.25rem;">The length of the mid-segment is equal to half the sum of the parallel bases, in a trapezium.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Two pairs of adjacent angles of a trapezium formed between the parallel sides and one of the non-parallel side, add up to 180°.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Two pairs of adjacent angles of a trapezium formed between the parallel sides and one of the non-parallel side, add up to 180°.</li>
                                     <br><br>
                                 </div>    
                             </div>
@@ -18007,15 +18007,15 @@
                             </div>
                             <div class="row qrow">
                                 <div class="col-6 qcol-6">
-                                    <li style="color: white; font-size : 20px;">Two pairs of adjacent sides are equal <br>i.e.  AC = BC and AD = BD.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Two pairs of adjacent sides are equal <br>i.e.  AC = BC and AD = BD.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">One pair of opposite angles (which is obtuse) are equal <br>i.e.  ∠A = ∠B.</li>
+                                    <li style="color: white; font-size : 1.25rem;">One pair of opposite angles (which is obtuse) are equal <br>i.e.  ∠A = ∠B.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">Diagonals are perpendicular to each other<br> i.e.  AB ⊥ CD.</li>
+                                    <li style="color: white; font-size : 1.25rem;">Diagonals are perpendicular to each other<br> i.e.  AB ⊥ CD.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">A longer diagonal bisects the shorter diagonal <br>i.e.  AO = BO.</li>
+                                    <li style="color: white; font-size : 1.25rem;">A longer diagonal bisects the shorter diagonal <br>i.e.  AO = BO.</li>
                                     <br><br>
-                                    <li style="color: white; font-size : 20px;">A longer diagonal bisects the pair of opposite angles <br>i.e.  ∠ACD = ∠DCB and ∠ADC = ∠CDB.</li>
+                                    <li style="color: white; font-size : 1.25rem;">A longer diagonal bisects the pair of opposite angles <br>i.e.  ∠ACD = ∠DCB and ∠ADC = ∠CDB.</li>
                                     <br><br>
                                 </div>    
                             </div>
@@ -21626,7 +21626,7 @@
                     <div class="form-group">
                         <p id="ouo" style="font-family:mathfont;"></p>our
                         <p id="ouroman-1"
-                            style="font-family:mathfont; display: inline-block; text-decoration: overline; border-top: 2px solid white; padding-top: 1px;">
+                            style="font-family:mathfont; display: inline-block; text-decoration: overline; border-top: 0.125rem solid white; padding-top: 0.0625rem;">
                         </p>
                         <p id="ouroman-2" style="font-family:mathfont; display: inline-block; text-decoration: overline;"></p>
                         <p id="ouroman-3" style="font-family:mathfont ; display: inline-block;"></p>
