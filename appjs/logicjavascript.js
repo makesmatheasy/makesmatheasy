@@ -6879,7 +6879,47 @@ function leap()
     else
     out.innerHTML = `${i} is not a Leap Year`;
 }
-
+function embedfind(){
+    let n = parseInt(document.getElementById("embedin").value)
+    let pi = Math.acos(-1.0);
+    let proAngleVar;
+ 
+        // Projection angle variation
+        // when the number of
+        // sides are in multiple of 4
+        if (N % 4 == 0) {
+            proAngleVar = pi * (180.0 / N) / 180;
+        } else {
+            proAngleVar = pi * (180.0 / (2 * N)) / 180;
+        }
+ 
+        // Distance between the end polets
+        let negX = 1.0e+99, posX = -1.0e+99, negY = 1.0e+99, posY = -1.0e+99;
+ 
+        for ( let j = 0; j < N; ++j) {
+ 
+            // Projection from all N polets
+            // on X-axis
+            let px = Math.cos(2 * pi * j / N + proAngleVar);
+ 
+            // Projection from all N polets
+            // on Y-axis
+            let py = Math.sin(2 * pi * j / N + proAngleVar);
+ 
+            negX = Math.min(negX, px);
+            posX = Math.max(posX, px);
+            negY = Math.min(negY, py);
+            posY = Math.max(posY, py);
+        }
+ 
+        // Maximum side
+        let opt2 = Math.max(posX - negX, posY - negY);
+ 
+        // Return the portion of side
+        // forming the square
+        let ans = opt2 / Math.sin(pi / N) / 2;
+        document.getElementById("embedans").innerHTML = ans
+}
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
