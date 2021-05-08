@@ -119,6 +119,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#perat").click(function () {
+        openit("#perats");
+        closenav();
+        clearall();
+    });
     $("#sreslc").click(function () {
         openit("#stresscalc");
         closenav();

@@ -335,7 +335,8 @@ function openit(id) {
         "#slvxs",
         "#rankcals",
         "#covs",
-        "#lrcs"
+        "#lrcs",
+        "#perats"
 
     ];
     for (i = 0; i < ids.length; i++) {

@@ -1534,6 +1534,8 @@
                 </table>
             </li>
 
+           
+
             <li>
                 <table class="table">
                     <tr>
@@ -2107,7 +2109,22 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
 
+                            <a id="perat"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage and Ratio Converter</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Percentage and Ratio Converter','#perats','c','peratimgfav')"><img
+                                        id="peratimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!-- SPI CONVERTER  -->
             <li>
                 <table class="table">
@@ -3408,6 +3425,40 @@
                                 <span onclick="addtofavourite('Coefficient of Variation  ','#cvs','c','cvimgfav')"><img
                                         id="cvimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cov"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Covariance Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Covariance Calculator','#covs','c','covsimgfav')"><img
+                                       id="covsimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="lrc"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Linear Regression Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Linear Regression Calculator','#lrcs','c','lrcsimgfav')"><img
+                                       id="lrcssimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -12756,6 +12807,26 @@
     </p>
 </div>
 
+<div id="perats" class="collapse">
+    <h1 style="font-family:mathfont; text-align:center;">Percentage to Ratio</h1><br><br>
+    <div style="margin-left:80px; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
+
+    Enter Percentage to convert to Ratio: <input type="text" id="peratx" size=5 value='' placeholder="x">% 
+    <br><br>
+    <button type="button" class="btn btn-light" style="width:8em" onclick=perratcal()>  Convert   </button>
+    <br><br>
+    <div id="perratans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
+    </div>
+   <br><br><br><br>
+   <h1 style="font-family:mathfont; text-align:center;">Ratio to Percentage</h1><br><br>
+   <div  style="margin-left:80px; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
+   Enter Ratio to convert to Percentage: <input type="text" id="ratperx" size=5 value='' placeholder="a"> : <input type="text" id="ratpery" size=5 value='' placeholder="b">
+   <br><br>
+   <button type="button" class="btn btn-light" style="width:8em" onclick=ratpercal()>   Convert   </button>
+   <br><br>
+    <div id="ratperans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
+
+</div>
 
 <div class="collapse" id="skews">
     <h1 style="font-family:mathfont; text-align:center;">SKEWNESS CALCULATOR </h1>
