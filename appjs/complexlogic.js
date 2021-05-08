@@ -692,6 +692,38 @@ function ssqcal()
 
 }
 
+function sspncal()
+{
+    var num=document.getElementById("sspn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var poweroutput = document.getElementById("sspnans");
+    var powertemp="";
+     if(!valid.test(num))
+    {
+        powertemp += "\\[Enter \\space any \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else if(num<1){
+        powertemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else{
+        var powersum=Math.trunc((num*(num+1)*(2*num+1)*(3*(num**2)+(3*num)-1)));
+        var powersum1 = powersum/30;
+        powertemp += "\\[Sum \\space of \\space the \\space Power \\space Four \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        powertemp += "\\[ \\sum {n}^4 \\space = \\space \\frac{n(n+1)(2n+1)(3n^2+3n-1)}{30}  \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space \\frac{" + num + "(" + num + " + 1)(2 \\times" + num + "+ 1)(3 \\times" + num + "^2 + (3 \\times" + num + ")-1)}{30} \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space \\frac{" + num + "\\times" + (num+1) + "\\times" + ((2*num)+1) + " \\times " + (3*(num**2)+(3*num)-1) + "}{30}  \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space \\frac{" + powersum + "}{30} \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space " + powersum1 + "\\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+
+}
 
 
 function ssqncal()
