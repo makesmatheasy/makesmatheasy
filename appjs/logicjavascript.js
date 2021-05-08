@@ -7322,24 +7322,32 @@ function sum_n_apsol(nval, rval, r1val) {
     var res = document.getElementById("sum_APsolprint");
     var explain = document.getElementById("sumAP_formula");
     var printseries = document.getElementById("printAPseries");
+    var explaintemp = "";
     let cal;
-    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(d))) {
+    if (!isNaN(parseInt(n)) && !isNaN(parseInt(a)) && !isNaN(parseInt(d))) {
         for (var i = 1, series = "", num = 0; i <= n; i++) {
             num = parseInt(a) + (i - 1) * d;
             series += (num.toString() + ", ");
         }
-        printseries.innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
-        explain.innerHTML = "Formula: \\[S=\\frac{n}{2}\\] \\[(2a+(n-1)d)\\]";
+
         cal = (n * (2 * a + (n - 1) * d)) / 2;
-        res.innerHTML = `Result: ${cal}`;
-        console.log(res);
-        renderMathInElement(document.getElementById("sumAP_formula"));
+        explaintemp += "\\[Arthimetic \\space Progression : \\space a, \\space a+d, \\space a+2d,....., \\space a+(n-1)d \\]";
+        explaintemp += "\\[Arthimetic \\space Progression : " + series.substring(0, series.length - 2) + "\\]";
+        explaintemp +=  "\\[Formula : \\]";
+        explaintemp += "\\[S_n=\\frac{n}{2} (2a+(n-1)d) \\]";
+        explaintemp += "\\[S_n = \\frac{" + n + "}{2} ((2 \\times" + a + ")+(" + n + "-1)" + d + ")\\]";
+        explaintemp += "\\[S_n = " + (n / 2) + " ( " + (2 * a) + "+" + (n - 1)*d + ") \\]";
+        explaintemp += "\\[S_n = " + (n/2) + "\\times" + ((2*a)+((n-1)*d)) + " \\]";
+        explaintemp += "\\[S_n = " + cal + "\\]";
+         
+        printseries.innerHTML = explaintemp;
+        renderMathInElement(printseries);
     }
     else
         {
-            printseries.innerHTML = "Enter numbers only. Blank inputs are not allowed";
-            explain.innerHTML="";
-            res.innerHTML="";
+            explaintemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+            printseries.innerHTML= explaintemp;
+            renderMathInElement(printseries);
             return;
         }
 }
