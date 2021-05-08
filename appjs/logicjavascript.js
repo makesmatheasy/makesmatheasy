@@ -1,3 +1,5 @@
+
+
 function convertkatex(element, value) {
     var x = nerdamer(value);
     var value = x.toTeX();
@@ -2613,6 +2615,31 @@ function vectorproj(){
     renderMathInElement(document.getElementById("vectorproj1"));
 
 }
+
+function vectorplanar(){
+    var a=parseFloat(document.getElementById('inp11').value);
+    var b=parseFloat(document.getElementById('inp22').value);
+    var c=parseFloat(document.getElementById('inp33').value);
+    var d=parseFloat(document.getElementById('inp44').value);
+    var e=parseFloat(document.getElementById('inp55').value);
+    var f=parseFloat(document.getElementById('inp66').value);
+    var g=parseFloat(document.getElementById('inp77').value);
+    var h=parseFloat(document.getElementById('inp88').value);
+    var i=parseFloat(document.getElementById('inp99').value);
+    var mult = (a*((e*i)-(f*h)));
+    var mult1 = (b*((d*i)-(f*g)));
+    var mult2 = (c*((d*h)-(e*g)));
+    var ans = mult-mult1+mult2;
+    if(ans == 0){
+    document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Coplanar \\space as \\space Δ \\space = \\space 0.  \\]";
+    renderMathInElement(document.getElementById("vectorplanar1"));
+}
+    else {
+        document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Non-Coplanar \\space as \\space Δ \\space != \\space 0.  \\]";
+        renderMathInElement(document.getElementById("vectorplanar1"));
+    }
+}
+
 
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
@@ -5561,7 +5588,7 @@ function orderas() {
             }
         }
     }
-    val = val.join(",");
+    val = val.join("<");
     if (val.length == 0) {
         document.getElementById("orderresult").innerHTML += "";
     } else {
@@ -5606,7 +5633,7 @@ function orderde() {
         }
     }
 
-    val = val.join(",");
+    val = val.join(">");
     if (val.length == 0) {
         document.getElementById("orderresult").innerHTML = "";
     } else {
@@ -6766,17 +6793,16 @@ function gstcal() {
 // Polynomial degree
 
 function degcal() {
-    
-    var exp = document.getElementById("exp").value;
+    var expression = document.getElementById("exp").value;
     var ans = document.getElementById("deg");
+
+    exp = expression.replace(/ /g,'')
     var x = nerdamer(`deg(${exp})`);
     ans.innerText = x;
     
 }
 
 // cost and selling price
-//-----------------------------------------------------
-
 function computeCP() {
 
     var profit = document.getElementById("p1").value;
@@ -6879,7 +6905,13 @@ function leap()
     else
     out.innerHTML = `${i} is not a Leap Year`;
 }
-
+function rotfind(){
+    // JS program to find angle of rotational symmetry
+    let side = parseInt(document.getElementById("rotside").value)
+    let ans = parseInt(360/side)
+    // parseint because we want answer in integer
+    document.getElementById("rotans").innerHTML = "The angle of rotational symmetry is " + ans
+}
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
     const t = timeu(document.getElementById("timecon-2").value);
@@ -6906,7 +6938,12 @@ function speedu(a) {
             return 3.6;
     }
 }
-
+function diagnfind(){
+    let n =parseInt(document.getElementById("diagnin").value) 
+    let a = parseInt(document.getElementById("diagnin1").value)
+    let ans = (2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180));
+    document.getElementById("diagnans").innerHTML = ans
+}
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
     const t = speedu(document.getElementById("speedcon-2").value);
@@ -8010,6 +8047,38 @@ function eulerTotient(n) {
     document.getElementById("etfResult").innerHTML = "The number of coprime of " + n + " is: " + res;
   }
 
+//Next Prime Function
+
+function isPrime(n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3) 
+        return true;
+    if (n%2 == 0 || n%3 == 0) 
+        return false;
+
+    for (let i=5; i*i<=n; i=i+6) {
+        if (n%i == 0 || n%(i+2) == 0)
+            return false;
+    }
+    
+    return true;
+}
+
+function nextPrime(num)
+{ 
+    if (num <= 1)
+        return 2;
+    let res = num;
+    let isFound = false;
+    while (!isFound) {
+        res++;
+        if (isPrime(res))
+            isFound = true;
+    }
+    document.getElementById("nextPrimeResult").innerHTML = "The next prime number of " + num + " is: " + res;
+}
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
@@ -9603,6 +9672,38 @@ katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, doc
     throwOnError: false
 })
 
+// Z-test logic 
+
+function zvalue() {
+    let pm = document.getElementById('pm').value
+    let sm = document.getElementById('sm').value
+    let sd = document.getElementById('sd').value
+    let sn = document.getElementById('sn').value
+
+    // z score
+    let z = ((sm - pm) * Math.sqrt(sn)) / sd
+
+    let alpha = document.getElementById('alpha').value;
+    let pvalue;
+    if (alpha == 0.01) {
+        pvalue = 2.58;
+    } else if (alpha == 0.05) {
+        pvalue = 1.96; 
+    } else if (alpha == 0.1) {
+        pvalue = 1.64;
+    }
+
+    if (z > pvalue) {
+        document.getElementById('stepsbox2').style.display = "block"
+        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " > " + pvalue + "</strong>, Null Hypothesis is Rejected."
+        document.getElementById('pvalue').innerHTML = "P value = " + pvalue
+        document.getElementById('alphavalue').innerHTML = "Alpha(α) = " + alpha
+    } else {
+        document.getElementById('stepsbox2').style.display = "none"
+        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " < " + pvalue + "</strong>, Null Hypothesis is Not Rejected."
+    }
+}
+
 function covcal()
 {
     var num1=document.getElementById("setx").value;
@@ -9732,7 +9833,24 @@ function ratpercal()
     document.getElementById("ratperans").innerHTML=ans;
 
 }
+function hypertrigno()
+{   
+    const i = parseInt(document.getElementById("hypertrignoin").value);
+    var sinh=document.getElementById("hypersinh");
+    var cosh=document.getElementById("hypercosh");
+    var tanh=document.getElementById("hypertanh");
+    var hyperresult=document.getElementById("hyperresult");
+    var ans =0;
+    var a =Math.sinh(i);
+    var b =Math.cosh(i);
+    var c =Math.tanh(i);
+    hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
+    sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
+    cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
+    tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
 
+
+}
 function perratcal()
 {
     var num1=document.getElementById("peratx").value;
@@ -9755,4 +9873,46 @@ function perratcal()
         ans="The calculated ratio is: "+num1+" : "+f;
     }
     document.getElementById("perratans").innerHTML=ans;
+}
+
+function embedfind(){
+    let n = parseInt(document.getElementById("embedin").value)
+    let pi = Math.acos(-1.0);
+    let proAngleVar;
+
+        // Projection angle variation
+        // when the number of
+        // sides are in multiple of 4
+        if (N % 4 == 0) {
+            proAngleVar = pi * (180.0 / N) / 180;
+        } else {
+            proAngleVar = pi * (180.0 / (2 * N)) / 180;
+        }
+
+        // Distance between the end polets
+        let negX = 1.0e+99, posX = -1.0e+99, negY = 1.0e+99, posY = -1.0e+99;
+
+        for ( let j = 0; j < N; ++j) {
+
+            // Projection from all N polets
+            // on X-axis
+            let px = Math.cos(2 * pi * j / N + proAngleVar);
+
+            // Projection from all N polets
+            // on Y-axis
+            let py = Math.sin(2 * pi * j / N + proAngleVar);
+
+            negX = Math.min(negX, px);
+            posX = Math.max(posX, px);
+            negY = Math.min(negY, py);
+            posY = Math.max(posY, py);
+        }
+
+        // Maximum side
+        let opt2 = Math.max(posX - negX, posY - negY);
+
+        // Return the portion of side
+        // forming the square
+        let ans = opt2 / Math.sin(pi / N) / 2;
+        document.getElementById("embedans").innerHTML = ans
 }
