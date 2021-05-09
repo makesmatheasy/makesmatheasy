@@ -4933,7 +4933,7 @@ function eltripyramidsolve() {
         areaoutput.innerHTML = areatemp;
 
         htemp += "\\[" + side + "\\times (" + "1 + \\frac{\\sqrt{6}}{3} )" + "\\]";
-        htemp += "\\[Total \\space Surface \\space area \\space is \\space \\]";
+        htemp += "\\[Height \\space is \\space \\]";
         htemp += "\\[" + eval(String(1.816 * side )) + "\\]";
         houtput.innerHTML = htemp;
 
