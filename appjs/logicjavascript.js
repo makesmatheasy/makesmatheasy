@@ -8028,6 +8028,25 @@ function std() {
 
 // standard deviation end
 
+//Smallest prime factor calculator
+function smallestPrimeDivisor(num) {
+    let n = num;
+    let res = 0;
+    if (num % 2 == 0)
+        res = 2;
+    else {
+        for (let i = 3; i * i <= num; i += 2) {
+            if (num % i == 0) {
+                res = i;
+                break;
+            }
+        }
+    }
+    if(!res)
+        res = num;
+    document.getElementById("smPrimeResult").innerHTML = "The smallest prime factor of " + n + " is: " + res;
+}
+
 //Euler's Totient Function
 
 function eulerTotient(n) {
