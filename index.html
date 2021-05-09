@@ -1369,14 +1369,27 @@
                             <a id="dipbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Direct And Indirect Proportion</a>
                         </td>
+
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Direct And Indirect Proportion','#dip','c','dipimgfav')"><img
                                         id="dipimgfav" src="images/unfavourite.png"
 
-                            <a id="wandtbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
+                                        style="height:1.5625rem;filter: none;"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top:none">
+                                        <a id="wandtbtn"
+                                        style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
+                                   
+                                     </td>
+
+                                 <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Work And Time Calculator','#wandt','c','wandtimgfav')"><img
                                         id="wandtimgfav" src="images/unfavourite.png"
 
@@ -3069,6 +3082,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
+                            <a id="cibtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Contour Integration</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Contour Integration','#ci','c','cifav')"><img
+                                     id="cifav" src="images/unfavourite.png"
+
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="resbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Residue Methods</a>
                         </td>
@@ -4634,19 +4665,6 @@
                 class="stopwrap"
                align="right"></p>
             <h4 id="ppp_op"> </h4> 
-            <h3>Slope of the line with 2 points known</h3>
-            <p>&nbsp;</p>
-             <div align="center" style="font-family:mathfont;width:auto; color: aliceblue; font-size: 1.5em;">
-            Required Coordinates: <input type="text" id="slx1" size=3 placeholder="X1"> , <input type="text" id="sly1" size=3 placeholder="Y1">  ,
-             <input type="text" id="slx2" size=3 placeholder="X2">  , <input type="text" id="sly2" size=3 placeholder="Y2"> 
-             <br>
-             <br>
-             <button type="button" class="btn btn-light" onclick=slpsolve()>
-                Find Slope Of Line
-            </button>
-            <p>&nbsp;</p>
-            <p id="slpans"></p>
-            </div>
             
         </div>
         <div class="collapse" id="vecalg">
@@ -5775,7 +5793,31 @@
             </p>
             <p>Step 4. Choose two proper fractions from Charpit’s auxiliary
                 equations such that the resulting integral may come out as simplest
-                relation involving at least one of p or q or both.</p>
+                relation involving at least one of p or q or both.
+            </p>
+            <br>
+            <h4>Clairaut's Method</h4>
+            <br>
+            <p>In mathematical analysis, Clairaut's equation (or the Clairaut equation) is a differential equation of the form</p>
+            <p>\[y(x)\space =\space x\frac{dy}{dx}\space +\space f(\frac{dy}{dx})\]</p>
+            <br>
+            <p>where f is continuously differentiable.</p>
+            <br>
+            <p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E2.png/120px-Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E2.png" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E3.png/120px-Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E3.png" alt="">
+            </p>
+            <p>The singular solution envelopes are x=-f^'(c) and y=f(c)-cf^'(c).</p>
+            <p>A partial differential equation known as Clairaut's equation is given by</p>
+            <p>\[u\space =\space x u_x\space + y u_y\space +\space f(u_x+u_y) \]</p>
+            <p>Boundary value, condition accompanying a differential equation in the solution of physical problems. In mathematical problems arising from physical situations, there are two considerations involved when 
+                finding a solution: (1) the solution and its derivatives must satisfy a differential equation, which describes how the quantity behaves within the region; and (2) the solution and its derivatives must 
+                satisfy other auxiliary conditions either describing the influence from outside the region (boundary values) or giving information about the solution at a specified time (initial values), representing
+                a compressed history of the system as it affects its future behaviour. A simple example of a boundary-value problem may be demonstrated by the assumption that a function satisfies the equation f′(x) = 2x
+                for any x between 0 and 1 and that it is known that the function has the boundary value of 2 when x = 1. The function f(x) = x2 satisfies the differential equation but not the boundary condition. The 
+                function f(x) = x2 + 1, on the other hand, satisfies both the differential equation and the boundary condition. The solutions of differential equations involve unspecified constants, or functions in the 
+                case of several variables, which are determined by the auxiliary conditions.
+            </p>
         </div>
         <div class="collapse" id="diffeqn">
             <h2 style="text-align: center;">Differential Equations</h2>
@@ -6803,6 +6845,26 @@
                 <h2><label>Vector Calculator</label></h2>
             </div>
             <br><br>
+        <div class="text-center">
+            <h3>Modulus of vecotor</h3><br>
+        </div>
+        <div class="coll">
+            <p>
+                Vector :   <input type="text" id="vma" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="vmb" size=3 value='' placeholder="B"> j + <input type="text" id="vmc" size=3 value='' placeholder="C"> k
+                <br><br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vecotrmod()>
+                Solve
+            </button><br>
+            </p>
+        </div><br>
+        <div class="coll" style="text-align: center; display: block;">
+            <p id="vme"><br></p>
+        <h5 id="vmr" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <br><br>
+            <br><br>
             <div class="text-center">
             <h3>Vector Addition Calculator</h3><br>
         </div>
@@ -6898,6 +6960,7 @@
     <div class="coll1" style="text-align: center;">
     <h5 id="vectorcross2" style="color: white; font-size: x-large;"></h5>
     </div>
+
     <br><br>
     <div class="text-center">
         <h3>Vector Projection Calculator</h3><br>
@@ -6944,6 +7007,27 @@
     <div class="coll" style="text-align: center;">
     <h5 id="vectorplanar1" style="color: white; font-size: x-large;"></h5>
     </div>
+
+    <br><br>
+    <div class="text-center">
+        <h3>Unit Vector </h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Vector (a) :   <input type="text" id="vua" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="vub" size=3 value='' placeholder="B"> j + <input type="text" id="vuc" size=3 value='' placeholder="C"> k
+            <br><br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectorunit()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center; display: block;">
+        <p id="vue"><br></p>
+    <h5 id="vur" style="color: white; font-size: x-large;"></h5>
+</div>
+
 
     <br><br>
     <div class="text-center">
@@ -11376,10 +11460,6 @@
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#hexadecagon"
-                                           style="text-decoration:none;" href="#">Hexadecagon</a></td>
-                                </tr>
-                                <tr>
                                     <td><a data-toggle="modal" data-target="#heptagon"
                                            style="text-decoration:none;" href="#">Heptagon</a></td>
                                 </tr>
@@ -11396,6 +11476,10 @@
                                            style="text-decoration:none;" href="#">Decagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#hendecagon"
+                                           style="text-decoration:none;" href="#">Hendecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#dodecagon"
                                            style="text-decoration:none;" href="#">Dodecagon</a></td>
                                 </tr>
@@ -11408,16 +11492,20 @@
                                            style="text-decoration:none;" href="#">TetraDecagon</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#hendecagon"
-                                           style="text-decoration:none;" href="#">Hendecagon</a></td>
+                                    <td><a data-toggle="modal" data-target="#pendecagon"
+                                           style="text-decoration:none;" href="#">Pentadecagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#hexadecagon"
+                                           style="text-decoration:none;" href="#">Hexadecagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#enneadecagon"
+                                           style="text-decoration:none;" href="#">Enneadecagon</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#polycal"
                                            style="text-decoration:none;" href="#">Polygon Calculator</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#pendecagon"
-                                           style="text-decoration:none;" href="#">Pentadecagon</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -12379,7 +12467,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
         <div class="collapse" id="expo">
             <div class="text-center">
                 <h2><label>Solve for Exponent n</label></h2>
@@ -12788,8 +12876,7 @@
                     </div>
                  </div>
                 </div> 
-                
-
+                </div>
             </form>
             <br>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12822,9 +12909,7 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                
+        </div>
             </form>
             <br>
             <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12855,7 +12940,7 @@
                         </div>
                     </div>
                 </div>
-                
+                </div>
             </form>
             <br>
             <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -14366,9 +14451,25 @@ N is the population size.
             <p>The relationship of the residue theorem to Stokes' theorem is given by the Jordan curve theorem. The general plane curve γ must first be reduced to a set of simple closed curves {γi} whose total is equivalent to γ for integration purposes; this reduces the problem to finding the integral of f dz along a Jordan curve γi with interior V. The requirement that f be holomorphic on U0 = U \ {ak} is equivalent to the statement that the exterior derivative d(f dz) = 0 on U0. Thus if two planar regions V and W of U enclose the same subset {aj} of {ak}, the regions V \ W and W \ V lie entirely in U0, and hence</p>
             <p>\[{\displaystyle \int _{V\smallsetminus W}d(f\,dz)-\int _{W\smallsetminus V}d(f\,dz)}\]</p>
         </div>
+        <div class="collapse" id="ci">
+            <h2 style="text-align: center;">Contour Integration</h2>
+            <br><br>
+            <p>Contour integration is the process of calculating the values of a contour integral around a given contour in the complex plane. As a result of a truly amazing property of holomorphic functions, such integrals can be computed easily simply by summing the values of the complex residues inside the contour.</p>
+            <img src="https://mathworld.wolfram.com/images/eps-gif/ContourIntegral_1000.gif" alt="">
+            <br>
+            <p>Contour integration methods include:</p>
+            <p>1. direct integration of a complex-valued function along a curve in the complex plane (a contour);</p>
+            <p>2. application of the Cauchy integral formula; and</p>
+            <p>3. application of the residue theorem.</p>
+            <br>
+            <h5>Contours</h5>
+            <p>Contours are the class of curves on which we define contour integration. A contour is a directed curve which is made up of a finite sequence of directed smooth curves whose endpoints are matched to give a single direction. This requires that the sequence of curves γ1, …, γn be such that the terminal point of γi coincides with the initial point of γi+1, ∀ i, 1 ≤ i < n. This includes all directed smooth curves. Also, a single point in the complex plane is considered a contour. The symbol + is often used to denote the piecing of curves together to form a new curve.</p>
+            <p>\[\gamma = y_1\space +\space y_2\space +\space y_3\space ....+\space y_n \]</p><br>
+            <p>The contour integral of a complex function f : C → C is a generalization of the integral for real-valued functions. For continuous functions in the complex plane, the contour integral can be defined in analogy to the line integral by first defining the integral along a directed smooth curve in terms of an integral over a real valued parameter. A more general definition can be given in terms of partitions of the contour in analogy with the partition of an interval and the Riemann integral. In both cases the integral over a contour is defined as the sum of the integrals over the directed smooth curves that make up the contour.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ContourDiagram.png/250px-ContourDiagram.png" alt="">
+        </div>
         <div class="collapse" id="mtm">
             <h2 style="text-align: center;">Milne Thomson Method</h2>
-
             <br><br>
             <p>With the help of this method, we can directly construct f(z) in terms of z without finding v when u is given or u when v is given</p>
             <p>\[f(z)\space =\space \int {\phi _1(z,0)-i\phi _2(z,0)}\,dz\space +\space C\]</p>
@@ -14797,7 +14898,37 @@ N is the population size.
                         <label class="form__group" id="hamming-result">0</label>
                     </div>
                     </form>
-                   
+                    <br>
+                    <br>
+                <div class="col-6">
+                    <form action="">
+                    <div class="form-group">
+                        <h5>Detection of Error</h5>
+                        <select id="detect-type" class="form__field">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Even Parity
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Odd Parity
+                            </option>
+                        </select>
+                        <input type=" " id="detect-input" value="0"
+                               class="form__field">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Detect Error</h5>
+                        <button type="button" class="btn btn-light" onclick="hammingCalc1()">
+                            Find it
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                    <label class="form__group" id="detect-result">0</label>
+                </div>
+                </form>
             </div>
         </div>
   <!-- end of Hamming Code -->
@@ -17404,6 +17535,58 @@ N is the population size.
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterhexdeca"
                            style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enneadecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enneadecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 19 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{19}{4} a^2 \times \cot(\frac{\pi}{19})\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/enneadecagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsideenndeca"
+                               oninput="solveenndeca()">
+                        <p class="stopwrap" id="resultofareaenndeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareaenndeca2"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofperimeterenndeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterenndeca2"
+                           style="font-family:mathfont;"></p>
                     </div>
                     <!---TILL-->
                 </div>

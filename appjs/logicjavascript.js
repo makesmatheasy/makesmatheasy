@@ -2600,6 +2600,24 @@ function vectordot(){
     renderMathInElement(document.getElementById("dotex"));
 }
 
+
+function vecotrmod(){
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
+    
+    var ans = (a*a)+(c*c)+(b*b);
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
+    else
+    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
+
+    renderMathInElement(document.getElementById("vmr"));
+  
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vme"));
+}
+
 function vectorproj(){
     let a=parseFloat(document.getElementById('inp1').value);
     let b=parseFloat(document.getElementById('inp2').value);
@@ -2619,7 +2637,6 @@ function vectorproj(){
     projtemp += "\\[The \\space Projection \\space of \\space X \\space on \\space Y \\space are \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*e)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*f)  + "}{" + (proj1.toPrecision(2)) + "}) \\]";
     projoutput.innerHTML = projtemp;
     renderMathInElement(document.getElementById("vectorproj1"));
-
 }
 
 function vectorplanar(){
@@ -2645,7 +2662,29 @@ function vectorplanar(){
         renderMathInElement(document.getElementById("vectorplanar1"));
     }
 }
+function vectorunit(){
+    var a=parseFloat(document.getElementById('vua').value);
+    var b=parseFloat(document.getElementById('vub').value);
+    var c=parseFloat(document.getElementById('vuc').value);
 
+    var ans = (a*a)+(c*c)+(b*b);
+    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
+
+
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vue").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
+    else
+    document.getElementById("vue").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
+    renderMathInElement(document.getElementById("vue"));
+
+
+    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vur").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
+    else
+    document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
+    renderMathInElement(document.getElementById("vur"));
+}
 
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
@@ -3811,6 +3850,20 @@ function solvehexdeca(){
     renderMathInElement(document.getElementById("resultofareahexdeca2"));
     renderMathInElement(document.getElementById("resultofperimeterhexdeca"));
 
+}
+
+function solveenndeca(){
+    var side = document.getElementById("inputsideenndeca").value;
+    var area = (19/4) * side**2 * math.cot(math.pi / 19);
+    var perimeter = 19 * side;
+    document.getElementById("resultofareaenndeca1").innerHTML = "\\[Area \\space of \\space Enneadecagon \\space \\]";
+    document.getElementById("resultofareaenndeca2").innerHTML = "\\[\\frac{19}{4} \\times "+side+"^2 \\times \\cot(\\frac{\\pi}{19}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterenndeca1").innerHTML = "\\[Perimeter \\space of \\space Enneadecagon \\space \\]";
+    document.getElementById("resultofperimeterenndeca2").innerHTML = "\\[\\space  19 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareaenndeca1"));
+    renderMathInElement(document.getElementById("resultofareaenndeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterenndeca1"));
+    renderMathInElement(document.getElementById("resultofperimeterenndeca2"));
 }
 
 function solvepent(){
@@ -8853,7 +8906,7 @@ function hammingDistance(x, y) {
     }
 }
 
-//function for hamming code
+//function for encoding a message hamming code
 function hammingCalc(){
     const input = document.getElementById("hamming-input").value;
     const type = document.getElementById("hamming-select1").value;
@@ -8863,6 +8916,47 @@ function hammingCalc(){
         result.innerHTML = hammingCodeLtoREven(input);
     }else{
         result.innerHTML = hammingCodeRtoLEven(input);
+    }
+}
+
+//function for  error detection of a message in hamming code
+function hammingCalc1(){
+    let input1 = document.getElementById("detect-input").value;
+    const type1 = document.getElementById("detect-type").value;
+    let result1 = document.getElementById("detect-result");
+
+    if(type1 === "Even Parity"){
+        let n = input1.length;
+        let k=0,ctr=0;
+        var parity = "";
+        input1= input1.split("").reverse().join("");
+        for (var i = 0; i < n;i++){
+            if((i+1)== Math.pow(2,k)){
+                for(var j =i;j < n; j++){
+                    if(((i+1) & (j+1)) == (i+1)){
+                        if(input1[j] == "1"){
+                            ctr++;
+                        }else{
+                            ctr +=0;
+                        }
+                    }
+                }
+                if(ctr % 2 == 0){
+                    parity +="0";
+                }else if(ctr % 2 == 1 ){
+                    parity +="1";
+                }
+                ctr = 0;
+                k++;
+            }
+        }
+        if(parseInt(parity)==0){
+            result1.innerHTML = "Error Free";
+        }else{
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2).toString();
+            result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right";
+        }
     }
 }
 

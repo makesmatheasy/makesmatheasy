@@ -926,6 +926,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cibtn").click(function () {
+        openit("#ci");
+        closenav();
+        clearall();
+    });
 
     $("#gstbtn").click(function () {
         openit("#gstcal");
