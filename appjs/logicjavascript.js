@@ -7106,6 +7106,72 @@ function factorialsol(factorialval) {
     }
 }
 
+function binomialsolve(valn, valk) {
+    document.getElementById("bino_div").style.display = "block";
+    var inputval1 = document.getElementById(valn).value;
+    var inputval2 = document.getElementById(valk).value;
+    var regex = /^[\-]*[\d]+$/
+    var textVal1 = regex.test(inputval1);
+    var testVal2 = regex.test(inputval2);
+    if (!textVal1 || !testVal2)
+    {
+        document.getElementById("bino_wrong").innerHTML ="Enter Integer values only";
+        document.getElementById("bino_div_div2").style.display = "none";
+        document.getElementById("bino_div_div1").style.display = "block";
+        return;
+    }
+    var val3 = parseInt(inputval1);
+    var val4 = parseInt(inputval2);
+    if (isNaN(val3) || isNaN(val4)) {
+        document.getElementById("bino_div_div2").style.display = "none";
+        document.getElementById("bino_div_div1").style.display = "none";
+	} else if(val3<0 || val4<0) {
+		 document.getElementById("bino_wrong").innerHTML =
+            "n and r must be positive integers";
+        document.getElementById("bino_div_div2").style.display = "none";
+        document.getElementById("bino_div_div1").style.display = "block";
+
+    } else if (val3 < val4) {
+        document.getElementById("bino_wrong").innerHTML =
+            "n must be greater than k.";
+        document.getElementById("bino_div_div2").style.display = "none";
+        document.getElementById("bino_div_div1").style.display = "block";
+
+	} else
+		{
+        let ans1 = 1,
+            ans2 = 1,
+            ans3 = 1;
+        let ans4 = 0;
+        if (val3 - val4 == 0) {
+            document.getElementById(
+                "bino_ans"
+            ).innerHTML = `(${val3}) ! / ( (${val4})! x (${val3} - ${val4}) ! ) = 1`;
+            document.getElementById("bino_div_div1").style.display = "none";
+            document.getElementById("bino_div_div2").style.display = "block";
+        } else {
+            for (i = 1; i <= val3; i++) {
+                ans1 *= i;
+            }
+            for (i = 1; i <= val4; i++) {
+                ans2 *= i;
+            }
+            for (i = 1; i <= val3 - val4; i++) {
+                ans3 *= i;
+            }
+            console.log(ans1);
+            console.log(ans2);
+            console.log(ans3);
+            ans4 = ans1 / (ans2 * ans3);
+            document.getElementById(
+                "bino_ans"
+            ).innerHTML = `(${val3}) ! / ( (${val4}) ! x (${val3} - ${val4}) ! ) = ${ans4}`;
+            document.getElementById("bino_div_div1").style.display = "none";
+            document.getElementById("bino_div_div2").style.display = "block";
+        }
+    }
+}
+
 // profit loss calculations
 function profitloss() {
     var cp = parseFloat(document.getElementById("cp").value);

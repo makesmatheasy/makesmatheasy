@@ -1775,6 +1775,21 @@
             <li>
                 <table class="table">
                     <tr>
+                        <td style="border-top: none;">
+                            <a id="binomialcoeffbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Binomial Coefficient Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Binomial coefficient Calculator','#binomialcoeff','c','binomialcoeffimgfav')"><img
+                                        id="binomialcoeffimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
                         <td style="border-top: none;" onclick="display_fractions()">
                             <a id="fractions_op"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations
@@ -12319,7 +12334,51 @@
             </div>
 
         </div>
-        <!-- Factorial end -->
+        <!-- Factorial end --> 
+
+        <div class="collapse" id="binomialcoeff">
+            <form class="form-inline">
+                <input type="number" id="valn" placeholder="Enter n"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <input type="number" id="valk" placeholder="Enter k "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+
+            </form>
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="binomialsolve('valn','valk')">
+                    Find
+                </button>
+            </div>
+            <br>
+            <div class="form-group">
+                <div id="bino_div">
+                    <div id="bino_div_div1">
+                        <p id="bino_wrong"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap" align="right">
+                        </p>
+                    </div>
+                    <div id="bino_div_div2">
+                        <p id="bino"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap"
+                           align="right">
+                            Binomial coefficient&nbsp;
+                            <strong>
+                                <sup>n</sup>
+                                C
+                                <sub>k</sub>
+                            </strong>
+                            &nbsp;
+                            =
+                            &nbsp;
+                            <span id="bino_ans"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         <div class="collapse" id="expo">
             <div class="text-center">
