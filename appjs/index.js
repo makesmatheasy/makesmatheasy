@@ -338,7 +338,8 @@ function openit(id) {
         "#covs",
         "#lrcs",
         "#perats",
-        "#mecs"
+        "#mecs",
+	"#chng-vol-cube"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
