@@ -2651,7 +2651,7 @@ function vectorunit(){
     var c=parseFloat(document.getElementById('vuc').value);
 
     var ans = (a*a)+(c*c)+(b*b);
-    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline  ` ;
+    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
 
 
     if(Number.isInteger(Math.sqrt(ans)))
@@ -2661,7 +2661,7 @@ function vectorunit(){
     renderMathInElement(document.getElementById("vue"));
 
 
-    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector of \\space \\space   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
+    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
     if(Number.isInteger(Math.sqrt(ans)))
     document.getElementById("vur").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
     else
