@@ -9996,3 +9996,44 @@ function embedfind(){
         let ans = opt2 / Math.sin(pi / N) / 2;
         document.getElementById("embedans").innerHTML = ans
 }
+
+function mecal()
+{
+    var num1=document.getElementById("conf").value;
+    var num2=document.getElementById("samsize").value;
+    var num3=document.getElementById("proper").value;
+    var num4=document.getElementById("popsize").value;
+    ans="";
+    if(num1==""||num2==""||num=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        num3=num3/100;
+        if(num4=="")
+        {
+            var j=(num1*(Math.sqrt(num3*(1-num3))))/Math.sqrt(num2);
+            j=j*100;
+            ans="The margin of error is: "+j;
+        }
+        else
+        {
+            num4=parseFloat(num4);
+            if(num4<=num2)
+            {
+                ans="Population size must be greater than sample size";
+            }
+            else{
+            var j=(num1*(Math.sqrt(num3*(1-num3))))/Math.sqrt((num2*(num4-1))/(num4-num2));
+            j=j*100;
+            ans="The margin of error is: "+j;
+            }
+
+        }
+    }
+    document.getElementById("mecans").innerHTML=ans;
+}
