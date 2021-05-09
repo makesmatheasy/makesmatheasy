@@ -308,6 +308,7 @@
         <li class="listyle home list_menu_items" style="margin-top: 1.25rem;"><a id="homeoption"
                                                                                  style="cursor: pointer;font-size: 1.1875rem;letter-spacing: 0.125rem;color: pink;">Home</a>
         </li>
+        <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
         <li class="list_menu_items" onclick="collapseit('lineralgebratoggle'); changeImage0();"><a
                 style="cursor: pointer;font-size: 1rem;">Linear Algebra<img class="dropdownlogo"
                                                                             src="icons/down-chevron.svg"
@@ -1774,6 +1775,21 @@
             <li>
                 <table class="table">
                     <tr>
+                        <td style="border-top: none;">
+                            <a id="binomialcoeffbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Binomial Coefficient Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Binomial coefficient Calculator','#binomialcoeff','c','binomialcoeffimgfav')"><img
+                                        id="binomialcoeffimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
                         <td style="border-top: none;" onclick="display_fractions()">
                             <a id="fractions_op"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations
@@ -1982,7 +1998,7 @@
                     </tr>
                 </table>
             </li>
-<!--Added function to find next prime number-->
+            <!--Added function to find next prime number-->
              <li>
                 <table class="table">
                     <tr>
@@ -1994,6 +2010,22 @@
                                 <span onclick="addtofavourite('Next Prime Number','#nextPrime','c','nextprimeimgfav')"><img
                                         id="nextprimeimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!-- Smallest prime factor calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sml-pri-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Smallest Prime Factor</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Smallest prime factor','#smPrime','c','smprimeimgfav')"><img
+                                        id="smprimeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -3448,6 +3480,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="mec"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Margin of Error Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Margin of Error Calculator','#mecs','c','mecssimgfav')"><img
+                                       id="mecssimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="cov"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Covariance Calculator
                             </a>
@@ -3484,7 +3533,7 @@
 
 
 
-        <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
+
         <li class="list_menu_items"><a id="contactbutton"
                                        style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
                                        onclick="window.open('contact.html')">Contact</a>
@@ -3505,7 +3554,7 @@
             <a href="https://discord.com/channels/811724426965811210/818825491065995264" target="_blank" class="p-0"><i class="fab fa-discord icon fa-2x"></i></a>
         </li>
 
-        <li style="color:var(--appimage);font-size: 0.5rem; bottom: 0rem; position:relative;" id="copyright"> Copyright © 2021 Makes
+        <li style="color:var(--appimage);font-size: 0.7rem; bottom: 0rem; position:relative;" id="copyright" class="text-center"> Copyright © 2021 Makes
             Math Easy. All Rights Reserved.</li>
 
     </ul>
@@ -3638,11 +3687,11 @@
         <!--        start factors-->
         <div class="collapse" id="factors">
             <form>
-                <div class="form-group">
-                    <input type="tel" id="numforfactorhcflcm" class="form__field"
+                <div class="form-group" >
+                    <input style="text-align: center;" type="tel" id="numforfactorhcflcm" class="form__field"
                            placeholder="Enter Number(s) Space Separated">
                 </div>
-                <div class="form-group">
+                <div class="form-group " style="text-align: center;">
                     <button class="btn btn-light" onclick="findFactors()">Factors</button>
                     <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
                             class="btn btn-light">
@@ -3687,24 +3736,24 @@
             <!--lcm result-->
             <p id="hcfprimefactor" style="font-family:mathfont" class="stopwrap"></p>
             <p id="resulthcf" style="font-family:mathfont" class="stopwrap"></p>
-		<h4>What is a factor?</h4>
+		<h4 class="lcm" style="text-align: center;">What is a factor?</h4>
             <p>Factors of a number are numbers that divide the given number exactly without leaving any remainder. 
                 That is, they are exact divisors of the given numbers. For example, the number 12 is divisible by 2, 3, 4, and 6.</p>
-            <h4>What is HCF?</h4>
+            <h4 class="lcm" style="text-align: center;">What is HCF?</h4>
             <p>The greatest common factor (GCF or GCD or HCF) of a set of whole numbers is the largest positive integer that divides evenly all the given numbers with zero remainders. 
                 HCF stands for Highest Common Factor. HCF is also known as GCF (Greatest Common Factor) or GCD (Greatest Common Divisor).</p>
             <p>The Highest Common Factor of two or more numbers is the highest number by which all the given numbers are divisible without leaving any remainders. 
                 Basically, it is the largest number that divides all the given numbers.</p>
-            <p><b>Let’s understand the concept of HCF with an example:</b></p>
+            <p class="lcm"><b>Let’s understand the concept of HCF with an example:</b></p>
             <p>Consider two numbers: 12 and 18</p>
-            <img src="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2020/12/28185936/image90-300x96.png"
-                 style="margin-left: 300px; height: 200px;" alt="">
+            <img  src="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2020/12/28185936/image90-300x96.png"
+                 style="display: block; margin-left:auto; margin-right: auto; width: 50%; height: 200px;" alt="">
             <p>Factors of 12: 1, 2, 3, 4, 6, and 12 </p>
             <p>Factors of 18: 1, 2, 3, 6, 9, and 18 </p>
             <p>Both 12 and 18 have 1, 2, 3, and 6 as common factors, of which 6 is the highest. So, 6 is the HCF of 12 and 18.</p>
-            <h4>What is LCM?</h4>
+            <h4 class="lcm" style="text-align: center;">What is LCM?</h4>
             <p>LCM stands for Lowest or Least Common Multiple. The LCM of two or more numbers is the smallest positive integer that is divisible by all the given numbers.</p>
-            <p><b>Let’s understand the concept of LCM with an example:</b></p>
+            <p style="text-align: center;"><b>Let’s understand the concept of LCM with an example:</b></p>
             <p>Consider two numbers: 8 and 12.</p>
             <p>The multiples of 8 are:</p>
             <p> 8 X 1 = 8,<br>
@@ -3717,7 +3766,7 @@
                 12 X 3 = 36,<br>
                 12 X 4 = 48, and so on… </p>
             <p>Of all these multiples of 8 and 12, 24 is the lowest and common multiple of both. So, 24 is the LCM of 8 and 12.</p>
-            <h4>LCM And HCF Formula</h4>
+            <h4 class="lcm" style="text-align: center;">LCM And HCF Formula</h4>
             <p>The relation between HCF and LCM for two numbers is defined by the HCF and LCM formula given by:</p>
             <p>Product of two numbers = (HCF of the two numbers) x (LCM of the two numbers)</p>
 
@@ -6915,7 +6964,32 @@
     </div><br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorres1" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <br><br>
+    <div class="text-center">
+        <h3>Tetrahedron Calculator</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Vector  AB :   <input type="text" id="inp12" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="inp13" size=3 value='' placeholder="B"> j + <input type="text" id="inp14" size=3 value='' placeholder="C"> k
+            <br><br>
+            Vector  AC :   <input type="text" id="inp21" size=3 value='' placeholder="A"> i +
+        <input type="text" id="inp25" size=3 value='' placeholder="B"> j + <input type="text" id="inp23" size=3 value='' placeholder="C"> k
+        <br><br>
+        Vector  AD :   <input type="text" id="inp31" size=3 value='' placeholder="A"> i +
+        <input type="text" id="inp32" size=3 value='' placeholder="B"> j + <input type="text" id="inp35" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectortetra()>
+            Solve
+        </button><br>
+        </p>
     </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vectortetra1" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <br><br>
     <div class="text-center">
         <h3>Scalar Triple Product</h3><br>
     </div>
@@ -9071,7 +9145,7 @@
             </div>
         </div>
         <!-- end of Hamming Dist -->
-<!-- start of next prime number function-->
+        <!-- start of next prime number function-->
           <div>
             <div class="collapse" id="nextPrime">
                 <div class="form-group" style="display:inline-block">
@@ -9091,6 +9165,26 @@
             </div>
         </div>
         <!-- end of next prime number function-->
+        <!-- start of Smallest prime factor calculator -->
+        <div>
+            <div class="collapse" id="smPrime">
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number whose smallest prime factor you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="smprimenum" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="smallestPrimeDivisor(document.getElementById('smprimenum').value);">
+                        Solve
+                    </button>
+                </div>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="smPrimeResult"></p>
+                </div>
+            </div>
+        </div>
+        <!-- end of Smallest prime factor calculator -->
         <div class="collapse" id="trigonofun">
         <h3 style="text-align: center;">Domain,Range,Period and Graph of Trigonometric Functions</h3>
         <table class="table table-bordered table-dark">
@@ -9673,31 +9767,25 @@
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>
             <h2 style="margin-bottom: 2rem;">Direct Proportion Calculator</h2>
             <p>X<sub>1</sub>/Y<sub>1</sub> = X<sub>2</sub>/Fourth Value</p>
-            <form>
-                <input class = "form__field"type="text" id="dipnum1" placeholder="Enter the First Value(X1)">
-                <br><br>
-                <input class = "form__field"type="text" id="dipnum2" placeholder="Enter the second value(Y1)">
-                <br><br>
-                <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
-                <br><br>
-                <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
-                <p id="dipans"></p>
-            </form>
-            
+            <input class = "form__field"type="text" id="dipnum1" placeholder="Enter the First Value(X1)">
+            <br><br>
+            <input class = "form__field"type="text" id="dipnum2" placeholder="Enter the second value(Y1)">
+            <br><br>
+            <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
+            <br><br>
+            <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
+            <p id="dipans"></p>
+
             <h2 style="margin-bottom: 2rem; margin-top: 4rem;">Indirect Proportion Calculator</h2>
             <p>X<sub>1</sub>.Y<sub>1</sub> = X<sub>2</sub>.(Fourth Value)</p>
-            <form>
-                <input class = "form__field"type="text" id="inDPnum1" placeholder="Enter the First Value(X1)">
-                <br><br>
-                <input class = "form__field"type="text" id="inDPnum2" placeholder="Enter the second value(Y1)">
-                <br><br>
-                <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
-                <br><br>
-                <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
-                <p id="inDPans"></p>
-            </form>
+            <input class = "form__field"type="text" id="inDPnum1" placeholder="Enter the First Value(X1)">
+            <br><br>
+            <input class = "form__field"type="text" id="inDPnum2" placeholder="Enter the second value(Y1)">
+            <br><br>
+            <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
+            <br><br>
+            <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
+            <p id="inDPans"></p>
         </div>
 
         <!-- Work and Time -->
@@ -11288,6 +11376,10 @@
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#hexadecagon"
+                                           style="text-decoration:none;" href="#">Hexadecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#heptagon"
                                            style="text-decoration:none;" href="#">Heptagon</a></td>
                                 </tr>
@@ -11308,6 +11400,10 @@
                                            style="text-decoration:none;" href="#">Decagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#dodecagon"
+                                           style="text-decoration:none;" href="#">Dodecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#tridecagon"
                                            style="text-decoration:none;" href="#">TriDecagon</a></td>
                                 </tr>
@@ -11316,8 +11412,16 @@
                                            style="text-decoration:none;" href="#">TetraDecagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#hendecagon"
+                                           style="text-decoration:none;" href="#">Hendecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#polycal"
                                            style="text-decoration:none;" href="#">Polygon Calculator</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pendecagon"
+                                           style="text-decoration:none;" href="#">Pentadecagon</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -11704,19 +11808,22 @@
                     <label>
                         <h5>From</h5>
                     </label>
-                    <input type="date" id="datef" class="form__field" placeholder="Enter Date" ;
-                           onchange="datecal();">
+                    <input type="date" id="datef" class="form__field" placeholder="Enter Date">
                 </div>
                 <div class="col-6" style="max-width: 50%;">
                     <label>
                         <h5>To</h5>
                     </label>
-                    <input type="date" id="datet" class="form__field" placeholder="Enter Date" ;
-                           onchange="datecal();">
+                    <input type="date" id="datet" class="form__field" placeholder="Enter Date">
                 </div>
             </div>
             <br>
             <div class="dropdown-divider"></div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="datecal()">
+                    Find the Difference
+                </button>
+            </div>
             <div class="row">
                 <div class="col-6" style="max-width: 66%;">
                     <label>
@@ -12231,7 +12338,51 @@
             </div>
 
         </div>
-        <!-- Factorial end -->
+        <!-- Factorial end --> 
+
+        <div class="collapse" id="binomialcoeff">
+            <form class="form-inline">
+                <input type="number" id="valn" placeholder="Enter n"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <input type="number" id="valk" placeholder="Enter k "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+
+            </form>
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="binomialsolve('valn','valk')">
+                    Find
+                </button>
+            </div>
+            <br>
+            <div class="form-group">
+                <div id="bino_div">
+                    <div id="bino_div_div1">
+                        <p id="bino_wrong"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap" align="right">
+                        </p>
+                    </div>
+                    <div id="bino_div_div2">
+                        <p id="bino"
+                           style="display:flex;font-family:mathfont;;width:auto;"
+                           class="stopwrap"
+                           align="right">
+                            Binomial coefficient&nbsp;
+                            <strong>
+                                <sup>n</sup>
+                                C
+                                <sub>k</sub>
+                            </strong>
+                            &nbsp;
+                            =
+                            &nbsp;
+                            <span id="bino_ans"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         <div class="collapse" id="expo">
             <div class="text-center">
@@ -12366,17 +12517,9 @@
                 </div>
             </form>
             <div class="form-group">
-                <p id="printAPseries" style="display:flex;font-family:mathfont;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
+                <p id="printAPseries" style="font-family:mathfont;width:auto;"
+                   class="stopwrap"></p>
                 <br>
-                <p id="sumAP_formula" style="display:flex;font-family:mathfont;width:auto;"
-                   class="stopwrap"
-                   align="right"></p>
-                <br>
-                <p id="sum_APsolprint"
-                   style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"
-                   align="right"></p>
             </div>
             <h4 class="d-flex justify-content-center">If first term,number of terms and last term is given</h4><br>
             <form class="form-inline d-flex flex-column align-items-center" id="myForm">
@@ -12623,22 +12766,34 @@
         
         <!-- sum of nterms in H.P. ends -->
 
-        <div class="collapse" id="mean">
+        <div class="collapse text-center" id="mean">
             <div class="text-center">
                 <h2><label>Mean Calculator</label></h2>
             </div>
             <h4>Arithmetic Mean</h4><br>
-            <form class="form-inline">
-                <input type="number" id="aval" placeholder="Enter the first term (a)"
+            <form class="form-inline text-center">
+                <div class="container">
+                 <div class="row justify-content-center">
+                    <div class=".col-4 ">
+                        <input type="number" id="aval" placeholder="Enter the first term (a)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="cval" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <button type="button" class="btn btn-light" onclick=amsol()>
-                    Solve
-                </button>
-                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                    Reset
-                </button>
+                    
+                    <div class=".col-4 ">
+                        <input type="number" id="cval" placeholder="Enter the last term(c) "
+                     style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                    </div>
+                    <div class=".col-4 m-4 ">
+                        <button type="button" class="btn btn-light" onclick=amsol()>
+                     Solve
+                     </button>
+                     <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                     Reset
+                     </button>
+                    </div>
+                 </div>
+                </div> 
+                
+
             </form>
             <br>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12648,17 +12803,32 @@
             <h5 id="am"></h5>
             <br><br>
             <h4>Geometric Mean</h4><br>
-            <form class="form-inline">
-                <input type="number" id="aval1" placeholder="Enter the first term (a)"
+            <form class="form-inline text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class=".col-4">
+                            <input type="number" id="aval1" placeholder="Enter the first term (a)"
+                          style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        
+                        
+                        <div class=".col-4">
+                            <input type="number" id="cval1" placeholder="Enter the last term(c) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="cval1" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <button type="button" class="btn btn-light" onclick=gmsol()>
-                    Solve
-                </button>
-                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                    Reset
-                </button>
+                        </div>
+                        
+                        <div class=".col-4 m-4">
+                            <button type="button" class="btn btn-light" onclick=gmsol()>
+                                Solve
+                            </button>
+                            <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
             </form>
             <br>
             <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12667,17 +12837,29 @@
             <h5 id="gm"></h5>
             <br><br><br>
             <h4>Harmonic Mean</h4><br>
-            <form class="form-inline">
-                <input type="number" id="aval2" placeholder="Enter the first term (a)"
+            <form class="form-inline text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class=".col-4">
+                            <input type="number" id="aval2" placeholder="Enter the first term (a)"
+                         style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        
+                        
+                        <div class=".col-4">
+                            <input type="number" id="cval2" placeholder="Enter the last term(c) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="cval2" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <button type="button" class="btn btn-light" onclick=hmsol()>
-                    Solve
-                </button>
-                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                    Reset
-                </button>
+                        </div>
+                        <div class=".col-4 m-4">
+                            <button type="button" class="btn btn-light" onclick=hmsol()>
+                                Solve
+                            </button>
+                            <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
             </form>
             <br>
             <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12892,6 +13074,45 @@
 
 <!--Hydrosrtatic Pressure ends-->
 
+<div id="mecs" class="collapse">
+
+    
+    <h1 >MARGIN OF ERROR CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
+    <p>&nbsp;</p>
+    <input type="number" name="samsize" class="form__field" id="samsize" placeholder="Enter sample size">
+    <p>&nbsp;</p>
+    <input type="number" name="proper" class="form__field" id="proper" placeholder="Enter proportion percentage">
+    <p>&nbsp;</p>
+    <input type="number" name="popsize" class="form__field" id="popsize" placeholder="Enter population size (optional)">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="mecal()">Calculate</button>
+    <p id="mecans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        <p>&nbsp;</p>
+<p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">The Margin of Error (MOE) Calculator uses the following formulas:
+
+<br>1. MOE = z * √(p*(1 - p))/√n <br>
+
+2. MOE (with finite population correction) = z * √(p * (1 - p)) / √((N - 1) * n) / (N - n)<br>
+
+Where:<br>
+
+MOE  is the margin of error,<br>
+
+z  is the z-score associated with a level of confidence,<br>
+
+p  is the sample proportion, expressed as a decimal,<br>
+
+n  is the sample size,<br>
+
+N is the population size.
+
+    </p>
+    
+   
+</div>
+
 <div  class="collapse"  id="lrcs">
 
     
@@ -13059,36 +13280,29 @@
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">where<br>
         x is the repeating value<br>
         w is the number of occurrences of x (weight)<br>
-        x̄ is the weighted mean</p>
-   
+        x̄ is the weighted mean</p>  
 </div>
 
-
 <div class="collapse" id="cvs">
-
-    
     <h1 style="font-family:mathfont; text-align:center;">Coefficient of Variation Calculator</h1>
     <p>&nbsp;</p>
     <form action="">
         <input type="text" name="cvsd" class="form__field" id="cvsd" width="5em" placeholder="Enter data set(seperated by space)">
         <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="cvcal()">Calculate</button><p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="covcal()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
     </form>
-    
     <p id="cvans" style="color: white; text-align: center; font-size: 1.6em; font-family:mathfont"></p><p>&nbsp;</p>
-    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">CV= μ/σ <br>  where:<br>
-        σ=standard deviation<br>
-        μ=mean<br>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">CV= μ/σ <br>where:<br>
+        σ= standard deviation<br>
+        μ= mean<br>
         The coefficient of variation (CV) is a statistical measure of the dispersion of data points in a data series around the mean.<br>
-         The coefficient of variation represents the ratio of the standard deviation to the mean,<br>
-          and it is a useful statistic for comparing the degree of variation from one data series to another,<br>
-           even if the means are drastically different from one another.
-        ​	</p>
+        The coefficient of variation represents the ratio of the standard deviation to the mean,<br>
+        and it is a useful statistic for comparing the degree of variation from one data series to another,<br>
+        even if the means are drastically different from one another.</p>
 </div>
-<div class="collapse" id="rmss">
 
-    
+<div class="collapse" id="rmss">
     <h1 style="font-family:mathfont; text-align:center;">Root Mean Square Calculator </h1>
     <form>
         <input type="text" name="rmi" class="form__field" id="rmi" width="5em" placeholder="Enter inputs seperated by space">
@@ -13325,6 +13539,16 @@
         <p id="scbnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     </form>
     
+    <br><br>
+
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Power Four of N Natural Numbers </h1>
+    <form>
+        <input style="text-align: center;" type="text" name="sspn" class="form__field" id="sspn" placeholder="Enter the number upto which you want to find sum of squares">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="sspncal()">Calculate</button> <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="sspnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    </form>
    
 </div>
 
@@ -13375,7 +13599,7 @@
     
     <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
     <form action="">
-        <input type="number" name="ang" class="form__field" id="ang"  placeholder="Enter central angle of circle">
+        <input type="number" name="ang" class="form__field" id="ang12"  placeholder="Enter central angle of circle">
         <select id="angit" class="form__field">
             <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
             <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
@@ -13440,39 +13664,6 @@
     <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]</div>
    
 </div>
-
-
-
-<div class="collapse" id="arcs">
-
-    
-    <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
-    <input type="number" name="ang" class="form__field" id="ang"  placeholder="Enter central angle of circle">
-    <select id="angit" class="form__field">
-        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
-        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
-    </select> <p>&nbsp;</p>
-    <input type="number" name="rad" class="form__field" id="rad"  placeholder="Enter radius of circle"> 
-    <select id="radit" class="form__field">
-        <option class="form__field" value="mm" style="background-color: #232a36;"> mm</option>
-        <option class="form__field" value="cm"  style="background-color: #232a36;"> cm</option>
-        <option class="form__field" value="m"  style="background-color: #232a36;"> m</option>
-        <option class="form__field" value="inch"  style="background-color: #232a36;"> inch</option>
-    </select>
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="arcal()">Calculate</button>
-    <p id="arcans" style="font-size: 1.5em;"></p> <p>&nbsp;</p>
-    <div id="dt" style="color: white; text-align: center; font-family:mathfont;">The length of an arc depends on the radius of a circle and the central angle θ. <br> L / θ = C / 2π<br>
-        As circumference C = 2πr,<br>
-        
-        L / θ = 2πr / 2π<br>
-        L / θ = r<br>
-        We find out the arc length formula when multiplying this equation by θ:<br>
-        
-        L = r * θ</div>
-   
-</div>
-
 
 
 <!--Binomial PMF starts-->
@@ -14278,11 +14469,11 @@
                     </div>
                     <label class="form__group" id="bcd-result">0</label>
                 </div>
-                </div>
+                <br>
+                <br>
                 <br>
                 <br>
                 <!--BCD Addition -->
-                <div class="main" style="padding-left: 50px;">
                 <div class="col-6">
                     <div class="form-group">
                         <h2>BCD Code Addition </h2>
@@ -14296,6 +14487,53 @@
                 <div class="col-6">
                      <label class="form__group" id="bcdadd-result">0</label>
                 </div>
+            </div>
+                <br>
+                <br>
+                <div class="main" style="padding-left: 50px;">
+                <br>
+                <br>
+                <h3 style="text-align: center;">Decimal/BCD(8421) Table</h3>
+                <table class="table table-bordered table-dark">
+                    <tbody style="text-align: center;">
+                    <tr>
+                        <th scope="col">Decimal Equivalent</strong></th>
+                        <th scope="col">BCD Code (8421)</strong></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>0</p></th>
+                        <td>0 0 0 0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>1</p></th>
+                        <td>0 0 0 1</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>2</p></th>
+                        <td>0 0 1 0</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>3</p></th>
+                        <td>0 0 1 1</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>4</p></th>
+                        <td>0 1 0 0</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>5</p></th>
+                        <td>0 1 0 1</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>6</p></th>
+                        <td>0 1 1 0</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>7</p></th>
+                        <td>0 1 1 1</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>8</p></th>
+                        <td>1 0 0 0</td>
+                    </tr>   <tr>
+                        <th scope="row"><p>9</p></th>
+                        <td>1 0 0 1</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             </div>
         </div>
@@ -17180,6 +17418,56 @@
         </div>
     </div>
 
+    <div class="modal fade" id="hexadecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hexadecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 16 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 4 a^2 \times \cot(\frac{\pi}{16})\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hexadecagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidehexdeca"
+                               oninput="solvehexdeca()">
+                        <p class="stopwrap" id="resultofareahexdeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareahexdeca2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterhexdeca"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="pentagon" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -17347,7 +17635,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Octagon</h5>
+                    <h5 class="modal-title">Decagon</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"
                             style="outline:none">
                         <span aria-hidden="true">&times;</span>
@@ -17381,6 +17669,55 @@
                         <p class="stopwrap" id="resultofareadeca2"
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterdeca"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="dodecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dodecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 12 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 3a^2 \times (2+ \sqrt{3})\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/dodecagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidedodeca"
+                               oninput="solvedodeca()">
+                        <p class="stopwrap" id="resultofareadodeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareadodeca2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterdodeca"
                            style="font-family:mathfont;"></p>-
                     </div>
                     <!---TILL-->
@@ -17431,6 +17768,56 @@
                            style="font-family:mathfont;"></p>                        
                         <p class="stopwrap" id="resultofperimetertetradec"
                            style="font-family:mathfont;"></p>
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="pendecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentadecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 15 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{15}{4}a^2 \cot(\frac{\pi}{15})\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/pentadecagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidependeca"
+                               oninput="solvependeca()">
+                        <p class="stopwrap" id="resultofareapendeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareapendeca2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterpendeca"
+                           style="font-family:mathfont;"></p>-
                     </div>
                     <!---TILL-->
                 </div>
@@ -17579,6 +17966,55 @@
                         <p class="stopwrap" id="resultofareaoct2"
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeteroct"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="hendecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hendecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 11 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{11a^2}{4} \cot(\frac{\pi}{11})\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hendecagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsidehendeca"
+                               oninput="solvehendeca()">
+                        <p class="stopwrap" id="resultofareahendeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareahendeca2"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterhendeca"
                            style="font-family:mathfont;"></p>-
                     </div>
                     <!---TILL-->
