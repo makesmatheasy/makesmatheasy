@@ -539,6 +539,14 @@ ul li .table {
   margin: 0 auto;
 }
 
+.darkmode--activated #factors p {
+  color:#ababab !important;
+}
+
+.darkmode--activated .lcm{
+  margin-bottom: 14px;
+  margin-top: 19px;
+}
 /*light mode*/
 
 .light-mode #euclid li{
