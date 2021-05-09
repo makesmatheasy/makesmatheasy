@@ -2662,7 +2662,29 @@ function vectorplanar(){
         renderMathInElement(document.getElementById("vectorplanar1"));
     }
 }
+function vectorunit(){
+    var a=parseFloat(document.getElementById('vua').value);
+    var b=parseFloat(document.getElementById('vub').value);
+    var c=parseFloat(document.getElementById('vuc').value);
 
+    var ans = (a*a)+(c*c)+(b*b);
+    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
+
+
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vue").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
+    else
+    document.getElementById("vue").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
+    renderMathInElement(document.getElementById("vue"));
+
+
+    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vur").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
+    else
+    document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
+    renderMathInElement(document.getElementById("vur"));
+}
 
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
