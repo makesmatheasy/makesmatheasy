@@ -299,7 +299,7 @@ function openit(id) {
         "#partial_sphere",
         "#mtm",
         "#igc",
-        "#res",
+        "#res1",
         "#clr",
         '#dodecahedron',
         "#icosahedron",
