@@ -323,7 +323,6 @@ h5, h6 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-left: 40vh;
 }
 
 #search-txt {
@@ -739,11 +738,7 @@ input[type='number'] {
   color: #7289da;
 }
 
-@media (max-width:420px) {
-  #box{
-     margin-right:11em; 
-  }
-}
+
 
 #unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2{
   display: none;
