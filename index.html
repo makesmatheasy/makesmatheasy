@@ -14559,7 +14559,37 @@
                         <label class="form__group" id="hamming-result">0</label>
                     </div>
                     </form>
-                   
+                    <br>
+                    <br>
+                <div class="col-6">
+                    <form action="">
+                    <div class="form-group">
+                        <h5>Detection of Error</h5>
+                        <select id="detect-type" class="form__field">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Even Parity
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Odd Parity
+                            </option>
+                        </select>
+                        <input type=" " id="detect-input" value="0"
+                               class="form__field">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Detect Error</h5>
+                        <button type="button" class="btn btn-light" onclick="hammingCalc1()">
+                            Find it
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                    <label class="form__group" id="detect-result">0</label>
+                </div>
+                </form>
             </div>
         </div>
   <!-- end of Hamming Code -->
