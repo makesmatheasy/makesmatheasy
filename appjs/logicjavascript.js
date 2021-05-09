@@ -164,15 +164,21 @@ function callder() {
 //call romanize
 function callr() {
     var x =parseInt(document.getElementById("inpo").value);
-    var y = x%5000000;
-    x = (x-y)/1000000;
-    var z= y%5000;
-    y = (y-z)/1000;
-    document.getElementById("ouroman-1").innerHTML = romanize(x.toString());
-    document.getElementById("ouroman-2").innerHTML = romanize(y.toString());
-    document.getElementById("ouroman-3").innerHTML = romanize(z.toString());
-    console.log((romanize(x.toString())));
-    console.log((romanize(y.toString())));
+    if(x>0){
+        var y = x%5000000;
+        x = (x-y)/1000000;
+        var z= y%5000;
+        y = (y-z)/1000;
+        document.getElementById("ouroman-1").innerHTML = romanize(x.toString());
+        document.getElementById("ouroman-2").innerHTML = romanize(y.toString());
+        document.getElementById("ouroman-3").innerHTML = romanize(z.toString());
+        console.log((romanize(x.toString())));
+        console.log((romanize(y.toString())));
+    }else if(x<0){
+        document.getElementById("ouroman-3").innerHTML = "Error: There are no negative Roman Numerals";
+    }else if(x==0){
+        document.getElementById("ouroman-3").innerHTML = "Error: There are no Roman Numerals for 0";
+    }
 
 }
 
