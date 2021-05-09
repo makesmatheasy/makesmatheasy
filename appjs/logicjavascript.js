@@ -3751,6 +3751,19 @@ function solvecirclecal(){
     renderMathInElement(document.getElementById("resultofdiacircal"));
 }
 
+function solvehexdeca(){
+    var side = document.getElementById("inputsidehexdeca").value;
+    var area = 4 * side**2 * math.cot(math.pi / 16);
+    var perimeter = 16 * side;
+    document.getElementById("resultofareahexdeca1").innerHTML = "\\[Area \\space of \\space Hexadecagon \\space \\]";
+    document.getElementById("resultofareahexdeca2").innerHTML = "\\[4 \\times "+side+"^2 \\times \\cot(\\frac{\\pi}{16}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterhexdeca").innerHTML = "\\[Perimeter \\space of \\space Hexadecagon \\space \\space  16 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareahexdeca1"));
+    renderMathInElement(document.getElementById("resultofareahexdeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterhexdeca"));
+
+}
+
 function solvepent(){
     let side = document.getElementById("inputsidepent").value;
     let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
