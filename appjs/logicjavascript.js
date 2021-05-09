@@ -4666,7 +4666,47 @@ function traprismsolve() {
 
     }
 }
-
+//Decagonal Prism calculator
+function decaprismsolve(){
+    var edge = document.getElementById("inputdecaprismedge").value;
+    var height = document.getElementById("inputdecaprismheight").value;
+    var voloutput = document.getElementById("resultofvoldecaprism");
+    var laoutput = document.getElementById("resultofareadecaprism");
+    var baoutput = document.getElementById("resultofbaseareadecaprism");
+    var saoutput = document.getElementById("resultofsadecaprism");
+    var vol = 2.5*edge*edge*height*3.077;
+    var laarea = 10*edge*height;
+    var barea = 2.5*edge*edge*3.077;
+    var sarea = laarea + 5*edge*edge*3.077;
+    var voltemp ="";
+    var batemp="";
+    var satemp="";
+    var latemp="";
+    if ((height != "") && (edge != "")) {
+        voltemp += "\\[Volume \\space of \\space Decagonal \\space Prism \\space is \\space \\]";
+        voltemp += "\\[\\frac{5}{2}" + "\\times" + edge + "\\times" + edge + "\\times \\sqrt{5 + 2 \\sqrt{5}} \\times" + height +   "=" + eval(String(vol.toFixed(2) )) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(voloutput);
+        batemp += "\\[Base \\space area \\space of \\space Decagonal \\space Prism \\space is \\space \\]";
+        batemp += "\\[\\frac{5}{2}" + "\\times" + edge + "\\times" +  edge + "\\times \\sqrt{5 + 2 \\sqrt{5}}" +   "=" + eval(String(barea.toFixed(2) )) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        latemp += "\\[Lateral \\space area \\space of \\space Decagonal \\space Prism \\space is \\space \\]";
+        latemp += "\\[10 \\times " + edge + "\\times" + height +   "=" + eval(String(laarea.toFixed(2) )) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        satemp += "\\[Surface \\space area \\space of \\space Decagonal \\space Prism \\space is \\space \\]";
+        satemp += "\\[10 \\times" + edge + "\\times" + height + "\\times 5 \\times" + edge + "\\times" + edge + "\\times \\sqrt{5 + 2 \\sqrt{5}}" +   "=" + eval(String(sarea.toFixed(2) )) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(saoutput);
+    }
+    else {
+        baoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        voloutput.innerHTML = "";    
+    }
+}
 //Obelisk Calculator
 function obelisksolve(){
     var a = document.getElementById("inputobebase").value;
