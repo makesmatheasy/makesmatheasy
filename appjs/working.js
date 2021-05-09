@@ -448,6 +448,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#binomialcoeffbtn").click(function () {
+        openit("#binomialcoeff");
+        closenav();
+        clearall();
+    });
 
     $("#clrbtn").click(function () {
         openit("#clr");

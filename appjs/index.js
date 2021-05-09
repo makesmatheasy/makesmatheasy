@@ -177,6 +177,7 @@ function openit(id) {
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",
+        "#binomialcoeff",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
