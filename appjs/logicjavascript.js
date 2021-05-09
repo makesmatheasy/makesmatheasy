@@ -3897,6 +3897,19 @@ function solvenona() {
     }
 }
 
+function solvependeca(){
+    var side = parseInt(document.getElementById("inputsidependeca").value);
+    var area = 15/4 * side**2 * math.cot(math.pi / 15);
+    var perimeter = 15 * side;
+    document.getElementById("resultofareapendeca1").innerHTML = "\\[Area \\space of \\space Pendecagon \\space \\]";
+    document.getElementById("resultofareapendeca2").innerHTML = "\\[\\frac{15}{4}\\times "+side+"^2 \\times \\cot(\\frac{\\pi}{15}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterpendeca").innerHTML = "\\[Perimeter \\space of \\space Pendecagon \\space \\space  15 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareapendeca1"));
+    renderMathInElement(document.getElementById("resultofareapendeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterpendeca"));
+
+}
+
 function solvepentagram() {
     var a = document.getElementById("inputpengramside").value;
     var chordoutput = document.getElementById("resultofpengramchord");
