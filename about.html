@@ -82,6 +82,24 @@
         z-index: 99;
         font-weight: 900;
       }
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        margin: 5rem 0rem;
+      }
+      .illustration {
+        width: 30%;
+        margin-right: 7rem;
+      }
+      .hero h2 {
+        color: #9dbae8 !important;
+        z-index: 99;
+        font-weight: 500;
+        margin-top: 3rem;
+      }
+      .secondary-text {
+        color: #415e8c;
+      }
 
       body img {
         filter: invert(0%);
@@ -113,6 +131,54 @@
         transform: scale(1.1);
         transition: all 1s;
       }
+      .card {
+        align-items: center;
+        transition: 0.3s;
+        margin: 3px;
+        padding: 0px 30px;
+        color: #395177;
+        font-size: 30px;
+        width: 45%;
+        background: rgb(25, 30, 36);
+        border: 2px solid;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        transition: 0.3s;
+        box-shadow: 0 0 33px -10px rgb(5, 5, 5);
+        }
+
+
+        .card-header {
+        margin-top: 25px;
+        text-align: center;
+        padding: 50px 10px;
+        }
+
+        .card-body {
+        padding: 30px 20px;
+        font-size: 20px;
+        }
+
+        .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px -10px rgb(5, 5, 5);
+        }
+
+        @media (max-width: 769px) {
+        .hero {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card {
+            width: 80%;
+        }
+        .illustration {
+          width: 80%;
+          margin: 2rem 0rem;
+        }
+      }
       @media (max-width: 500px) {
         .topp img {
           width: 100px;
@@ -143,7 +209,67 @@
             <button id="home">Contact Us</button>
           </a>
         </div>
-      </div>
+        <div class="card-body">
+          <h5 class="class-text">
+            <strong>The IDEA:</strong> We offer mathematics in an enjoyable and
+            easy-to-learn manner.
+          </h5>
+          <br />
+
+          <h5>
+            <strong>Our commitment:</strong> The site will continue to grow over
+            time. Keep coming back to find out what has been added.
+          </h5>
+          <br />
+
+          <h5>
+            <strong>Feedback:</strong> If you like the site or would like to
+            make comments or even contributions then
+            <a id="aboutContact" href="contact.html">contact us.</a>
+          </h5>
+          <br />
+
+          <h5>
+            <strong>Developed By:</strong> Rajinderpal Singh
+            <span
+              class="badge badge-light"
+              id="aboutBadge"
+              style="cursor: pointer"
+              onclick="window.open('https://sairish2001.github.io')"
+              >Sairish</span
+            >
+          </h5>
+        </div>
+        <!-- hero section -->
+
+        <div class="hero">
+          <img class="illustration" src="icons/Math.svg" />
+          <h2>
+            MakesMathEasy solves various math problems along with steps. <br />
+            We provide speedy calculations, within a few mins. We work together,
+            design, create and produce work that we are proud of. We believe
+            that<strong class="secondary-text"> Math is Fun</strong>.
+          </h2>
+        </div>
+
+        <!-- hero section -->
+
+        <!-- idea section -->
+        <div class="hero">
+            <img class="illustration" src="icons/Ideas.svg" />
+        <div class="card">
+            <div class="card-header">
+                <h4><strong>The IDEA:</strong></h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        We offer mathematics in an enjoyable and
+                        easy-to-learn manner.
+                    </p>
+                
+                </div>
+            </div>
+       </div>
     </div>
   </body>
 </html>

@@ -609,12 +609,12 @@ document.getElementById("stressans").innerHTML=ans;
 
 function arcal()
 {
-      var a=document.getElementById("ang").value;
+      var a=document.getElementById("ang12").value;
       var b=document.getElementById("rad").value;
       var y=document.getElementById("radit").value;
       var d=document.getElementById("angit").value;
       var ans="";
-      if(a==""||b=="")
+      if(a == "" && b == "")
       {
           ans="Error: All values are required to obtain answer";
       }
@@ -692,6 +692,38 @@ function ssqcal()
 
 }
 
+function sspncal()
+{
+    var num=document.getElementById("sspn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var poweroutput = document.getElementById("sspnans");
+    var powertemp="";
+     if(!valid.test(num))
+    {
+        powertemp += "\\[Enter \\space any \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else if(num<1){
+        powertemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else{
+        var powersum=Math.trunc((num*(num+1)*(2*num+1)*(3*(num**2)+(3*num)-1)));
+        var powersum1 = powersum/30;
+        powertemp += "\\[Sum \\space of \\space the \\space Power \\space Four \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        powertemp += "\\[ \\sum {n}^4 \\space = \\space \\frac{n(n+1)(2n+1)(3n^2+3n-1)}{30}  \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space \\frac{" + num + "(" + num + " + 1)(2 \\times" + num + "+ 1)(3 \\times" + num + "^2 + (3 \\times" + num + ")-1)}{30} \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space \\frac{" + num + "\\times" + (num+1) + "\\times" + ((2*num)+1) + " \\times " + (3*(num**2)+(3*num)-1) + "}{30}  \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space \\frac{" + powersum + "}{30} \\]";
+        powertemp += "\\[\\sum {n}^4 \\space = \\space " + powersum1 + "\\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+
+}
 
 
 function ssqncal()
@@ -813,6 +845,41 @@ function ssncal()
 
 }
 
+function ssoncal()
+{
+    var num=document.getElementById("sson").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var sumoutput1 = document.getElementById("ssonans");
+    var sumtemp1="";
+    if(num=="")
+    {
+       sumtemp1 += "\\[Please \\space enter \\space number \\]";
+       sumoutput1.innerHTML = sumtemp1;
+       renderMathInElement(sumoutput1);
+    }
+    else if(!valid.test(num))
+    {
+        sumtemp1 += "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        sumoutput1.innerHTML = sumtemp1;
+        renderMathInElement(sumoutput1);
+    }
+    else if(num<1){
+        sumtemp1 += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        sumoutput1.innerHTML = sumtemp1;
+        renderMathInElement(sumoutput1);
+    }
+    else{
+        var sumCN= (num**2);
+        sumtemp1 += "\\[Sum \\space of \\space the \\space First \\space n \\space Odd \\space Natural \\space Numbers \\space is \\]";
+        sumtemp1 += "\\[ \\sum ({2n-1}) \\space = \\space n^{2}  \\]";
+        sumtemp1 += "\\[ \\sum ({2n-1}) \\space = \\space" + num + "^{2}" + "\\]";
+        sumtemp1 += "\\[ \\sum ({2n-1}) \\space =" + sumCN + "\\]";
+        sumoutput1.innerHTML = sumtemp1;
+        renderMathInElement(sumoutput1);
+    }
+
+}
 
 
   function numcubesRangecal()
@@ -1113,49 +1180,41 @@ function wmccal()
     document.getElementById("wmcans").innerHTML=ans;
 }
 
-function cvcal()
+function covcal()
 {
     var num=document.getElementById("cvsd").value;
+    var s=""; 
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
-    var s="";
-    if(num=="")
-    {
+    if(num==""){
        s= "Please enter number";
-    }
-    else if(!valid.test(num))
-    {
+
+    } else if(!valid.test(num)){
         s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    }
-    else{
+
+    } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
-   
     var number=[]
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
     }
-
     var sum=0;
     for (i = 0; i < len; i++) {
        sum=sum+number[i];
     }
-    
     var mean=sum/len;
     var varrzlt=0;
     for (i = 0; i < len; i++) {
         varrzlt = varrzlt + ((number[i]-mean)**2);
     }
-
     varrzlt = varrzlt/(len-1);
     var sdev = Math.sqrt(varrzlt);
     console.log(sdev);
     console.log(mean);
 
     s="The Coeffecient of Variation is: "+sdev/mean;
-
     }
-
     document.getElementById("cvans").innerHTML=s;
 }
 

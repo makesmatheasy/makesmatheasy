@@ -248,7 +248,7 @@ Other Tech/Libraries
     - Trapezium
     - Ellipse
     - Parallelogram
-    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon
+    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Polygon Calculator
     - Star Polygons: Pentagram, Double Star Polygon
   - 3D Shapes Calculator
     - Cube
@@ -337,6 +337,7 @@ Other Tech/Libraries
   - Bayes Probability Theorem
 - Statistics
   - T-test
+  - Z-test
 ---
 
 ## Documentation
