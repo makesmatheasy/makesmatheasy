@@ -2856,6 +2856,35 @@ function coordinatearea(){
     }
 
 }
+
+function vectorquad(){
+    var a,b,c,d,e,f;
+     a = parseInt(document.getElementById("inp51").value);
+     b = parseInt(document.getElementById("inp52").value);
+     c = parseInt(document.getElementById("inp53").value);
+     d = parseInt(document.getElementById("inp61").value);
+     e = parseInt(document.getElementById("inp62").value);
+     f = parseInt(document.getElementById("inp63").value);
+    var output = document.getElementById("vectorquad1");
+    var temp = "";
+    var mul = (b*f); var mul1 = (c*e); var mul2 = (a*f); var mul3 = (c*d); var mul4 = (a*e); var mul5 =(b*d); var ans = (mul-mul1); var ans1= -(mul2-mul3); var ans2= (mul4-mul5);
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f))
+   {
+    temp += "\\[ Area \\space of \\space Quadrilateral \\space  =  \\space \\frac{1}{2} | \\overrightarrow{AC} \\times \\overrightarrow{BD} | \\]";
+    temp +=  "\\[  | \\overrightarrow{AC} \\times \\overrightarrow{BD} | \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
+    temp += "\\[ | \\overrightarrow{AC} \\times \\overrightarrow{BD} | \\space = \\space " + ans + "\\hat{i} \\space + \\space ( " + ans1 + "\\hat{j} ) \\space + \\space ( " + ans2 + "\\hat{k} ) \\]";
+    temp += "\\[ | \\overrightarrow{AC} \\times \\overrightarrow{BD} | \\space = \\space \\sqrt{ (" + ans + ")^{2} + (" + ans1 + ")^{2} + (" + ans2 + ")^{2}} \\space = \\space \\sqrt{"+ (ans)**2 + "+" + (ans1)**2 + "+" + (ans2)**2 + "} \\space = \\space \\sqrt{" + ((ans)**2+(ans1)**2+(ans2)**2) + "}  \\]";
+    temp += "\\[  Area \\space of \\space Quadrilateral \\space ABCD \\space  =  \\space \\frac{1}{2} \\sqrt{" +  ((ans)**2+(ans1)**2+(ans2)**2) + "} \\space = \\space \\sqrt{" +   (((ans)**2+(ans1)**2+(ans2)**2))/4 + "} \\space square units \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+else{
+    temp += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+}
+
 function solvetwoplane()
 {
     var a,b,c,d,a1,b1,c1,d1;
