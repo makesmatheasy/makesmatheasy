@@ -359,6 +359,36 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "LINEAR REGRESSION CALCULATOR"){
                         document.getElementById('lrcs').click();
                     }      
+                    else if (inp.value.toUpperCase() == "PERFECT SQUARES AND CUBES IN RANGES") {
+                        $("#squaresRanges").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERFECT SQUARES AND CUBES IN RANGES"){
+                        document.getElementById('squaresRanges').click();
+                    }      
+                    else if (inp.value.toUpperCase() == "RESIDUE METHOD") {
+                        $("#res").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "RESIDUE METHOD"){
+                        document.getElementById('res').click();
+                    }      
+                    else if (inp.value.toUpperCase() == "MILNE THOMSON METHOD") {
+                        $("#mtm").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "MILNE THOMSON METHOD"){
+                        document.getElementById('mtm').click();
+                    }      
+                    else if (inp.value.toUpperCase() == "STATISTICS FORMULAE") {
+                        $("#stats").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "STATISTICS FORMULAE"){
+                        document.getElementById('stats').click();
+                    }      
+                    else if (inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR") {
+                        $("#wmcs").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR"){
+                        document.getElementById('wmcs').click();
+                    }      
                     else if (inp.value.toUpperCase() == "COVARIANCE CALCULATOR") {
                         $("#covs").slideToggle();    
                     }
@@ -797,7 +827,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Differentiati
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
+                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Perfect Squares and Cubes in Range","Residue Method","Weighted Mean Calculator","Milne Thomson Method","Statistic Formulae","Covariance Calculator","Skewness Calculator","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         ,"Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph",
@@ -1304,6 +1334,36 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "LINEAR REGRESSION CALCULATOR") {
         $("#lrcs").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PERFECT SQUARES AND CUBES IN RANGES"){
+        document.getElementById('squaresRanges').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PERFECT SQUARES AND CUBES IN RANGES") {
+        $("#squaresRanges").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "RESIDUE METHOD"){
+        document.getElementById('res').click(); 
+    }
+    else if (inp.value.toUpperCase() == "RESIDUE METHOD") {
+        $("#res").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "MILNE THOMSON METHOD"){
+        document.getElementById('mtm').click(); 
+    }
+    else if (inp.value.toUpperCase() == "MILNE THOMSON METHOD") {
+        $("#mtm").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "STATISTICS FORMULAE"){
+        document.getElementById('stats').click(); 
+    }
+    else if (inp.value.toUpperCase() == "STATISTICS FORMULAE") {
+        $("#stats").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR"){
+        document.getElementById('wmcs').click(); 
+    }
+    else if (inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR") {
+        $("#wmcs").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "COVARIANCE CALCULATOR"){
         document.getElementById('covs').click(); 
