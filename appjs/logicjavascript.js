@@ -3839,6 +3839,18 @@ function solvecirclecal(){
     renderMathInElement(document.getElementById("resultofdiacircal"));
 }
 
+function solveoctadeca(){
+    var side = parseInt(document.getElementById("inputsideoctadeca").value);
+    var area = 18/4 * side**2 * math.cot(math.pi/18);
+    var perimeter = 18 * side;
+    document.getElementById("resultofareaoctadeca1").innerHTML = "\\[Area \\space of \\space Octadecagon \\space \\]";
+    document.getElementById("resultofareaoctadeca2").innerHTML = "\\[\\frac{18}{4} \\times "+side+"^2 \\times \\cot(\\frac{\\pi}{18}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeteroctadeca").innerHTML = "\\[Perimeter \\space of \\space Octadecagon \\space \\space  18 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareaoctadeca1"));
+    renderMathInElement(document.getElementById("resultofareaoctadeca2"));
+    renderMathInElement(document.getElementById("resultofperimeteroctadeca"));
+}
+
 function solvehexdeca(){
     var side = document.getElementById("inputsidehexdeca").value;
     var area = 4 * side**2 * math.cot(math.pi / 16);
@@ -3849,7 +3861,6 @@ function solvehexdeca(){
     renderMathInElement(document.getElementById("resultofareahexdeca1"));
     renderMathInElement(document.getElementById("resultofareahexdeca2"));
     renderMathInElement(document.getElementById("resultofperimeterhexdeca"));
-
 }
 
 function solveenndeca(){
