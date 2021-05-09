@@ -10280,3 +10280,19 @@ function numtfind(){
     let ans =  num * (num - 4) * (num - 5) / 6
     document.getElementById("numtans").innerHTML = ans
 }
+function occfind(){
+    let n = parseInt(document.getElementById("occin").value)
+    let ang = parseInt(document.getElementById("occin1").value)
+    var ans = 1;
+
+    // Calculate the frequency
+    // of given angle for each vertex
+    var freq = (ang * n) / 180;
+
+    // Multiply answer by frequency.
+    ans = ans * (n - 1 - freq);
+
+    // Multiply answer by the number of vertices.
+    ans = ans * n;
+    document.getElementById("occans").innerHTML = ans
+}
