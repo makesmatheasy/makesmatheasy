@@ -4923,7 +4923,7 @@ function eltripyramidsolve() {
     var areatemp = "";
     var htemp = "";
     if (side != "") {
-        voltemp += "\\[ (" + "\\frac{1}{12}(" + "\\sqrt{2}+3\\sqrt{3}" + "))"  + side + "\\times" + side + "\\times" + side  + "\\]";
+        voltemp += "\\[ (" + "\\frac{1}{12}(" + "\\sqrt{2}+3\\sqrt{3}" + "))" + "\\times" + side + "\\times" + side + "\\times" + side  + "\\]";
         voltemp += "\\[Volume  \\space is \\space \\]";
         voltemp += "\\[" + eval(String( 0.5508 * side * side * side )) + "\\]";
         voloutput.innerHTML = voltemp;
