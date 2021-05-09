@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#smPrime",
         "#nextPrime",
         "#hamming-dist",
         "#anyBase",
@@ -174,6 +175,7 @@ function openit(id) {
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",
+        "#binomialcoeff",
         "#matrixcollapse",
         "#pows",
         "#matrixprops",
@@ -265,6 +267,7 @@ function openit(id) {
         "#gamma",
         "#curve",
         "#coor",
+        "#ci",
         "#mean",
         "#Meanit",
         "#bcd",
@@ -333,7 +336,8 @@ function openit(id) {
         "#hyperbolicratios",
         "#covs",
         "#lrcs",
-        "#perats"
+        "#perats",
+        "#mecs"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
