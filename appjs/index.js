@@ -267,6 +267,7 @@ function openit(id) {
         "#gamma",
         "#curve",
         "#coor",
+        "#ci",
         "#mean",
         "#Meanit",
         "#bcd",
