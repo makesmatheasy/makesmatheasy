@@ -692,7 +692,6 @@ function ssqcal()
 
 }
 
-<<<<<<< HEAD
 function sspncal()
 {
     var num=document.getElementById("sspn").value;
@@ -886,11 +885,6 @@ function ssoncal()
   function numcubesRangecal()
     {
 
-=======
-
-function numcubesRangecal()
-{
->>>>>>> number of cubes in a range added
     var num1=document.getElementById("numrange1").value;
     var num2=document.getElementById("numrange2").value;
     var s="";
@@ -918,7 +912,6 @@ function numcubesRangecal()
     document.getElementById("numcubesans").innerHTML=cubes;
 }
 
-<<<<<<< HEAD
 
 function squaresRangecal()
 {
@@ -943,8 +936,6 @@ function squaresRangecal()
     document.getElementById("squaresRangeans").innerHTML=s;
 }
 
-=======
->>>>>>> number of cubes in a range added
 function cubesRangecal()
 {
 
