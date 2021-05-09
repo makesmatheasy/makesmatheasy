@@ -11376,10 +11376,6 @@
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#hexadecagon"
-                                           style="text-decoration:none;" href="#">Hexadecagon</a></td>
-                                </tr>
-                                <tr>
                                     <td><a data-toggle="modal" data-target="#heptagon"
                                            style="text-decoration:none;" href="#">Heptagon</a></td>
                                 </tr>
@@ -11396,6 +11392,10 @@
                                            style="text-decoration:none;" href="#">Decagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#hendecagon"
+                                           style="text-decoration:none;" href="#">Hendecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#dodecagon"
                                            style="text-decoration:none;" href="#">Dodecagon</a></td>
                                 </tr>
@@ -11408,16 +11408,20 @@
                                            style="text-decoration:none;" href="#">TetraDecagon</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#hendecagon"
-                                           style="text-decoration:none;" href="#">Hendecagon</a></td>
+                                    <td><a data-toggle="modal" data-target="#pendecagon"
+                                           style="text-decoration:none;" href="#">Pentadecagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#hexadecagon"
+                                           style="text-decoration:none;" href="#">Hexadecagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#enneadecagon"
+                                           style="text-decoration:none;" href="#">Enneadecagon</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#polycal"
                                            style="text-decoration:none;" href="#">Polygon Calculator</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#pendecagon"
-                                           style="text-decoration:none;" href="#">Pentadecagon</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -17401,6 +17405,58 @@ N is the population size.
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterhexdeca"
                            style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enneadecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enneadecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 19 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{19}{4} a^2 \times \cot(\frac{\pi}{19})\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/enneadecagon.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsideenndeca"
+                               oninput="solveenndeca()">
+                        <p class="stopwrap" id="resultofareaenndeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofareaenndeca2"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofperimeterenndeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterenndeca2"
+                           style="font-family:mathfont;"></p>
                     </div>
                     <!---TILL-->
                 </div>

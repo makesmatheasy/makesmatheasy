@@ -3813,6 +3813,20 @@ function solvehexdeca(){
 
 }
 
+function solveenndeca(){
+    var side = document.getElementById("inputsideenndeca").value;
+    var area = (19/4) * side**2 * math.cot(math.pi / 19);
+    var perimeter = 19 * side;
+    document.getElementById("resultofareaenndeca1").innerHTML = "\\[Area \\space of \\space Enneadecagon \\space \\]";
+    document.getElementById("resultofareaenndeca2").innerHTML = "\\[\\frac{19}{4} \\times "+side+"^2 \\times \\cot(\\frac{\\pi}{19}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterenndeca1").innerHTML = "\\[Perimeter \\space of \\space Enneadecagon \\space \\]";
+    document.getElementById("resultofperimeterenndeca2").innerHTML = "\\[\\space  19 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareaenndeca1"));
+    renderMathInElement(document.getElementById("resultofareaenndeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterenndeca1"));
+    renderMathInElement(document.getElementById("resultofperimeterenndeca2"));
+}
+
 function solvepent(){
     let side = document.getElementById("inputsidepent").value;
     let area = 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side * side;
