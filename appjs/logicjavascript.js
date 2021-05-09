@@ -10274,3 +10274,9 @@ function mecal()
     }
     document.getElementById("mecans").innerHTML=ans;
 }
+function numtfind(){
+    let n = parseInt(document.getElementById("numtin").value)
+    let num = n;
+    let ans =  num * (num - 4) * (num - 5) / 6
+    document.getElementById("numtans").innerHTML = ans
+}
