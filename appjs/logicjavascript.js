@@ -3857,6 +3857,20 @@ function solveoct(){
 
 }
 
+//created function for hendecagon (or undecagon)
+function solvehendeca(){
+    var side = parseInt(document.getElementById("inputsidehendeca").value);
+    var area = ((11 * side**2)/4) * (math.cot(math.pi / 11));
+    var perimeter = 11 * side;
+    document.getElementById("resultofareahendeca1").innerHTML = "\\[Area \\space of \\space Hendecagon \\space \\]";
+    document.getElementById("resultofareahendeca2").innerHTML = "\\[\\frac{11\\times"+side+"^2}{4} \\cot(\\frac{\\pi}{11}) = "+area.toFixed(2)+"\\]";
+    document.getElementById("resultofperimeterhendeca").innerHTML = "\\[Perimeter \\space of \\space Hendecagon \\space \\space  11 \\times "+side+" = "+perimeter+"\\]";
+    renderMathInElement(document.getElementById("resultofareahendeca1"));
+    renderMathInElement(document.getElementById("resultofareahendeca2"));
+    renderMathInElement(document.getElementById("resultofperimeterhendeca"));
+
+}
+
 //created function for Nonagon
 function solvenona() {
     var side = document.getElementById("inputsidenona").value;  
