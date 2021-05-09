@@ -3069,6 +3069,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+
+                            <a id="cibtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Contour Integration</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Contour Integration','#ci','c','cifav')"><img
+                                     id="cifav" src="images/unfavourite.png"
+
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="resbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Residue Methods</a>
                         </td>
@@ -14384,9 +14402,25 @@ N is the population size.
             <p>The relationship of the residue theorem to Stokes' theorem is given by the Jordan curve theorem. The general plane curve γ must first be reduced to a set of simple closed curves {γi} whose total is equivalent to γ for integration purposes; this reduces the problem to finding the integral of f dz along a Jordan curve γi with interior V. The requirement that f be holomorphic on U0 = U \ {ak} is equivalent to the statement that the exterior derivative d(f dz) = 0 on U0. Thus if two planar regions V and W of U enclose the same subset {aj} of {ak}, the regions V \ W and W \ V lie entirely in U0, and hence</p>
             <p>\[{\displaystyle \int _{V\smallsetminus W}d(f\,dz)-\int _{W\smallsetminus V}d(f\,dz)}\]</p>
         </div>
+        <div class="collapse" id="ci">
+            <h2 style="text-align: center;">Contour Integration</h2>
+            <br><br>
+            <p>Contour integration is the process of calculating the values of a contour integral around a given contour in the complex plane. As a result of a truly amazing property of holomorphic functions, such integrals can be computed easily simply by summing the values of the complex residues inside the contour.</p>
+            <img src="https://mathworld.wolfram.com/images/eps-gif/ContourIntegral_1000.gif" alt="">
+            <br>
+            <p>Contour integration methods include:</p>
+            <p>1. direct integration of a complex-valued function along a curve in the complex plane (a contour);</p>
+            <p>2. application of the Cauchy integral formula; and</p>
+            <p>3. application of the residue theorem.</p>
+            <br>
+            <h5>Contours</h5>
+            <p>Contours are the class of curves on which we define contour integration. A contour is a directed curve which is made up of a finite sequence of directed smooth curves whose endpoints are matched to give a single direction. This requires that the sequence of curves γ1, …, γn be such that the terminal point of γi coincides with the initial point of γi+1, ∀ i, 1 ≤ i < n. This includes all directed smooth curves. Also, a single point in the complex plane is considered a contour. The symbol + is often used to denote the piecing of curves together to form a new curve.</p>
+            <p>\[\gamma = y_1\space +\space y_2\space +\space y_3\space ....+\space y_n \]</p><br>
+            <p>The contour integral of a complex function f : C → C is a generalization of the integral for real-valued functions. For continuous functions in the complex plane, the contour integral can be defined in analogy to the line integral by first defining the integral along a directed smooth curve in terms of an integral over a real valued parameter. A more general definition can be given in terms of partitions of the contour in analogy with the partition of an interval and the Riemann integral. In both cases the integral over a contour is defined as the sum of the integrals over the directed smooth curves that make up the contour.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ContourDiagram.png/250px-ContourDiagram.png" alt="">
+        </div>
         <div class="collapse" id="mtm">
             <h2 style="text-align: center;">Milne Thomson Method</h2>
-
             <br><br>
             <p>With the help of this method, we can directly construct f(z) in terms of z without finding v when u is given or u when v is given</p>
             <p>\[f(z)\space =\space \int {\phi _1(z,0)-i\phi _2(z,0)}\,dz\space +\space C\]</p>
