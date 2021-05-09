@@ -7714,10 +7714,25 @@ else{
 
 function tridecagon(){
     let side = parseFloat(document.getElementById("inputsidetridec").value)
-    let area = 13.158*side*side
-    let per = 13*side
-    document.getElementById("resultofareatridec").innerHTML = "The area is "+area
-    document.getElementById("resultofperimetertridec").innerHTML = "The perimeter is "+per
+    let area = (13.1858*side*side).toFixed(3);
+    let per = (13*side)
+    let tri1output = document.getElementById("resultofareatridec");
+    let tri2output = document.getElementById("resultofperimetertridec");
+    let tri1temp = "";
+    let tri2temp = "";
+    tri1temp += "\\[13.1858 \\times " + side + "^{2} \\]";
+    tri1temp += "\\[13.1858 \\times " + (side*side) + " \\]";
+    tri1temp += "\\[Area \\space of \\space Tridecagon \\space is \\]"; 
+    tri1temp += "\\[ " + area + " \\]";
+    tri1output.innerHTML  = tri1temp ;
+    tri2temp += "\\[13 \\times " + (side) + " \\]";
+    tri2temp += "\\[Perimeter \\space of \\space Tridecagon \\space is \\]"; 
+    tri2temp += "\\[ " + per + " \\]";
+    tri2output.innerHTML  = tri2temp ;
+    renderMathInElement(tri1output);
+    renderMathInElement(tri2output);
+
+
 }
 function tetradecagon(){
     let side = parseFloat(document.getElementById("inputsidetetradec").value)
