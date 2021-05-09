@@ -12665,22 +12665,34 @@
         
         <!-- sum of nterms in H.P. ends -->
 
-        <div class="collapse" id="mean">
+        <div class="collapse text-center" id="mean">
             <div class="text-center">
                 <h2><label>Mean Calculator</label></h2>
             </div>
             <h4>Arithmetic Mean</h4><br>
-            <form class="form-inline">
-                <input type="number" id="aval" placeholder="Enter the first term (a)"
+            <form class="form-inline text-center">
+                <div class="container">
+                 <div class="row justify-content-center">
+                    <div class=".col-4 ">
+                        <input type="number" id="aval" placeholder="Enter the first term (a)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="cval" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <button type="button" class="btn btn-light" onclick=amsol()>
-                    Solve
-                </button>
-                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                    Reset
-                </button>
+                    
+                    <div class=".col-4 ">
+                        <input type="number" id="cval" placeholder="Enter the last term(c) "
+                     style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                    </div>
+                    <div class=".col-4 m-4 ">
+                        <button type="button" class="btn btn-light" onclick=amsol()>
+                     Solve
+                     </button>
+                     <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                     Reset
+                     </button>
+                    </div>
+                 </div>
+                </div> 
+                
+
             </form>
             <br>
             <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12690,17 +12702,32 @@
             <h5 id="am"></h5>
             <br><br>
             <h4>Geometric Mean</h4><br>
-            <form class="form-inline">
-                <input type="number" id="aval1" placeholder="Enter the first term (a)"
+            <form class="form-inline text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class=".col-4">
+                            <input type="number" id="aval1" placeholder="Enter the first term (a)"
+                          style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        
+                        
+                        <div class=".col-4">
+                            <input type="number" id="cval1" placeholder="Enter the last term(c) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="cval1" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <button type="button" class="btn btn-light" onclick=gmsol()>
-                    Solve
-                </button>
-                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                    Reset
-                </button>
+                        </div>
+                        
+                        <div class=".col-4 m-4">
+                            <button type="button" class="btn btn-light" onclick=gmsol()>
+                                Solve
+                            </button>
+                            <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
             </form>
             <br>
             <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
@@ -12709,17 +12736,29 @@
             <h5 id="gm"></h5>
             <br><br><br>
             <h4>Harmonic Mean</h4><br>
-            <form class="form-inline">
-                <input type="number" id="aval2" placeholder="Enter the first term (a)"
+            <form class="form-inline text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class=".col-4">
+                            <input type="number" id="aval2" placeholder="Enter the first term (a)"
+                         style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        
+                        
+                        <div class=".col-4">
+                            <input type="number" id="cval2" placeholder="Enter the last term(c) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="cval2" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <button type="button" class="btn btn-light" onclick=hmsol()>
-                    Solve
-                </button>
-                <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                    Reset
-                </button>
+                        </div>
+                        <div class=".col-4 m-4">
+                            <button type="button" class="btn btn-light" onclick=hmsol()>
+                                Solve
+                            </button>
+                            <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
             </form>
             <br>
             <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
