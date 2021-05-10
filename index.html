@@ -1531,39 +1531,6 @@
                     </tr>
                 </table>
             </li>
-	<li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="numcubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
-                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="numcubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
-                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
             <li>
                 <table class="table">
                     <tr>
@@ -1581,22 +1548,7 @@
             </li>
 
           
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="cubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Perfect cubes in a range','#cubesRanges','c','cubesRangeimgfav')"><img
-                                        id="cubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
+           
             <li>
                 <table class="table">
                     <tr>
@@ -6927,7 +6879,7 @@
             </div>
             <br><br>
         <div class="text-center">
-            <h3>Modulus of vecotor</h3><br>
+            <h3>Modulus of Vector</h3><br>
         </div>
         <div class="coll">
             <p>
@@ -6944,7 +6896,6 @@
             <p id="vme"><br></p>
         <h5 id="vmr" style="color: white; font-size: x-large;"></h5>
     </div>
-    <br><br>
             <br><br>
             <div class="text-center">
             <h3>Vector Addition Calculator</h3><br>
@@ -7089,6 +7040,28 @@
 
     <br><br>
     <div class="text-center">
+        <h3>Scalar Projection Calculator</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Enter the First Vector X :   <input type="text" id="inp09" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="inp08" size=3 value='' placeholder="B"> j + <input type="text" id="inp07" size=3 value='' placeholder="C"> k
+            <br><br>
+            Enter the Second Vector Y :   <input type="text" id="inp06" size=3 value='' placeholder="A"> i +
+        <input type="text" id="inp05" size=3 value='' placeholder="B"> j + <input type="text" id="inp04" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectorscalar()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vectorscalar1" style="color: white; font-size: x-large;"></h5>
+    </div>
+
+    <br><br>
+    <div class="text-center">
         <h3>Vector Projection Calculator</h3><br>
     </div>
     <div class="coll">
@@ -7096,7 +7069,7 @@
             Enter the First Vector X :   <input type="text" id="inp1" size=3 value='' placeholder="A">  i  +
         <input type="text" id="inp2" size=3 value='' placeholder="B"> j + <input type="text" id="inp3" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector the Second Vector Y :   <input type="text" id="inp4" size=3 value='' placeholder="A"> i +
+            Enter the Second Vector Y :   <input type="text" id="inp4" size=3 value='' placeholder="A"> i +
         <input type="text" id="inp5" size=3 value='' placeholder="B"> j + <input type="text" id="inp6" size=3 value='' placeholder="C"> k
                 <br>
                 <br>
@@ -11796,6 +11769,11 @@
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal"
+                                           data-target="#octagram"
+                                           style="text-decoration:none;" href="#">Octagram</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
                                            data-target="#decagram"
                                            style="text-decoration:none;" href="#">decagram</a></td>
                                 </tr>
@@ -12250,7 +12228,7 @@
 
 
 <div class="collapse" id="centcal">
-    <h2 style="text-align: center;">Diffrent Centers of Triangel</h2><br>
+    <h2 style="text-align: center;">Diffrent Centers of Triangle</h2><br>
     <h3 style="text-align: center;">Using Edges</h3>
     <div class="col-9">
         <div class="col-9">
@@ -15162,7 +15140,7 @@ N is the population size.
             <div class="form-group">
                 <h4>Binary-Grey Code Converter</h4><br>
                 <h5>From</h5>
-                <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                <select id="grey-select1" class="form__field">
                     <option class="form_field" style="background-color: #232a36;">Grey
                         Code
                     </option>
@@ -15170,15 +15148,18 @@ N is the population size.
                         Binary
                     </option>
                 </select>
-                <input type="number" id="grey-input" value="0" class="form__field"
-                       oninput="convertgrey()">
+                <input type="number" id="grey-input" value="0" class="form__field">
             </div>
         </div>
         <div class="col-6">
             <div class="form-group">
                 <h5>To</h5>
+                <button type="button" class="btn btn-light" onclick="convertgrey()">
+                    Find
+                </button>
             </div>
             <label class="form__group" id="grey-result">0</label>
+            <p class="" id = "grey-working"></p>
         </div>
         <br><br>
         <div class="col-6">
@@ -18925,6 +18906,70 @@ N is the population size.
                         <p class="stopwrap" id="resultofpengramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofpengramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="octagram" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Octagram</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Chord length</h5>
+                                <p class="text-center">\[l = (1 + \sqrt{2}) \space a \]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal</h5>
+                                <p class="text-center">\[d = \sqrt{4 + 2 \sqrt{2}} a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Spike length</h5>
+                                <p class="text-center">\[b = \frac{2 - \sqrt{2}}{2} \space l \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 16 \space b \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = l^2 - 6b^2 = (6 \sqrt{2} - 8) \space l^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/octagram.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of octagram (a)" id="inputoctgramside"
+                                   oninput="solveoctagram();">
+                        <p class="stopwrap" id="resultofoctgramcho"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramdiag"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramspike"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramarea"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
