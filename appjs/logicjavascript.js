@@ -987,6 +987,14 @@ function lcmsol(input) {
 //lcm
 //-----------------------------------------------------
 
+function icosagonfind(){
+    let side = parseInt(document.getElementById("inputsideicosa").value)
+    let peri = 20*side
+    let ar = 31.568*side*side
+    document.getElementById("resultofperimetericosa2").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofareaicosa1").innerHTML = "The area is "+ar
+}
+
 function setcal() {
     var s1 = document.getElementById("first-set").value;
     var s2 = document.getElementById("second-set").value;
