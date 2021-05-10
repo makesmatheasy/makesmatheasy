@@ -12040,6 +12040,12 @@
                                         href="#">Enneagonal Prism</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#eqtrian_prism"
+                                        style="text-decoration:none;"
+                                        href="#">Equilateral triangular prism</a>
+                                    </td>
+                                </tr>
                             </table>
 
                         </div>
@@ -12108,11 +12114,6 @@
                            href="#">Wedge</a></td>
                 </tr>
                 <tr>
-                    <td><a data-toggle="modal" data-target="#ellipsoidalcap"
-                           style="text-decoration:none;"
-                           href="#">Ellipsoidal Cap</a></td>
-                </tr>   
-                <tr>
                     <td><a data-toggle="modal" data-target="#octahedron"
                            style="text-decoration:none;"
                            href="#">Octahedron</a></td>
@@ -12176,6 +12177,11 @@
                     <td><a data-toggle="modal" data-target="#spheroidalcap"
                            style="text-decoration:none;"
                            href="#">Spheroidal Cap</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#ellipsoidalcap"
+                           style="text-decoration:none;"
+                           href="#">Ellipsoidal Cap</a></td>
                 </tr>
             </table>
         </div>
@@ -17397,13 +17403,13 @@ N is the population size.
                             </div>
                             <div class="dropdown-divider"></div>
                             <!-- --------FROM------- -->
-                            <input type="text" id="spcapsemiaxisa" class = "form__field" oninput="spcap()" 
+                            <input type="text" id="spcapsemiaxisa" class = "form__field" oninput="ellipcap()" 
                                 placeholder="Enter semi-axis a">
-                            <input type="text" id="spcapsemiaxisb" class = "form__field" oninput="spcap()" 
+                            <input type="text" id="spcapsemiaxisb" class = "form__field" oninput="ellipcap()" 
                                 placeholder="Enter semi-axis b">
-                            <input type="text" id="spcapsemiaxisc" class = "form__field" oninput="spcap()" 
+                            <input type="text" id="spcapsemiaxisc" class = "form__field" oninput="ellipcap()" 
                                 placeholder="Enter semi-axis c">
-                            <input type="text" id="spcapheight" class = "form__field" oninput="spcap()"
+                            <input type="text" id="spcapheight" class = "form__field" oninput="ellipcap()"
                                 placeholder="Enter height (h)">
                                 <br><br>
                                 <p class="stopwrap" id="volspcap1"
@@ -20616,6 +20622,60 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="eqtrian_prism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Equilateral triangular Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume </h5>
+                                    <p class="text-center">\[V= \frac{\sqrt{3}}{4} a^2 h\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area </h5>
+                                    <p class="text-center">\[S= \frac{\sqrt{3}}{2} a^2+ 3ah \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/eqtrianprism.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge length (a)"
+                                       id="inputeqtrianprismedge" oninput="eqtrianprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputeqtrianprismheight" oninput="eqtrianprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvoleqtrianprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvoleqtrianprism2"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofareaeqtrianprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareaeqtrianprism2"
+                                   style="font-family:mathfont;"></p><br>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="frustum" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -21703,20 +21763,20 @@ N is the population size.
                             </div>
                             <div class="dropdown-divider"></div>
                             <!-- --------FROM------- -->
-                            <input type="text" id="spcapsemiaxisa" class = "form__field" oninput="spcap()" 
+                            <input type="text" id="sprcapsemiaxisa" class = "form__field" oninput="spcap()" 
                                 placeholder="Enter semi-axis a">
-                            <input type="text" id="spcapsemiaxisc" class = "form__field" oninput="spcap()" 
+                            <input type="text" id="sprcapsemiaxisc" class = "form__field" oninput="spcap()" 
                                 placeholder="Enter semi-axis c">
-                            <input type="text" id="spcapheight" class = "form__field" oninput="spcap()"
+                            <input type="text" id="sprcapheight" class = "form__field" oninput="spcap()"
                                 placeholder="Enter height (h)">
                                 <br><br>
-                                <p class="stopwrap" id="volspcap1"
+                                <p class="stopwrap" id="volsprcap1"
                                    style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="volspcap2"
+                                <p class="stopwrap" id="volsprcap2"
                                    style="font-family:mathfont;"></p><br>
-                                <p class="stopwrap" id="baspcap1"
+                                <p class="stopwrap" id="basprcap1"
                                    style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="baspcap2"
+                                <p class="stopwrap" id="basprcap2"
                                    style="font-family:mathfont;"></p><br>
                         </div>
                         <!-- ------HERE------ -->

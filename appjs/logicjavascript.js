@@ -4482,14 +4482,14 @@ function solvelakstar() {
 }
 
 //ellipsoidal cap shape Calculator
-function spcap(){
+function ellipcap(){
     var a = document.getElementById("spcapsemiaxisa").value;
     var b = document.getElementById("spcapsemiaxisb").value;
     var c = document.getElementById("spcapsemiaxisc").value;
     var h = document.getElementById("spcapheight").value;
 
-    var vol = ((math.pi * a * b) / (3 * c**2)) * h**2 * (3 * c - h ) ;
-    var ba = ((math.pi * a * b) / (c**2)) * h * (2 * c - h );
+    var vol = ((math.pi * a * b) / (3 * c**2)) * h**2 * ((3 * c) - h ) ;
+    var ba = ((math.pi * a * b) / (c**2)) * h * ((2 * c) - h );
 
     if(a!="" && c!="" && h!=""){
         document.getElementById("volspcap1").innerHTML = "\\[Volume \\space of \\space Ellipsoidal \\space Cap \\space is \\space \\]";
@@ -5128,6 +5128,33 @@ function ennaprismsolve(){
         voloutput.innerHTML = "";    
     }
 }
+
+function eqtrianprismsolve(){
+    var a = document.getElementById("inputeqtrianprismedge").value;
+    var h = document.getElementById("inputeqtrianprismheight").value;
+    var voloutput1 = document.getElementById("resultofvoleqtrianprism1");
+    var voloutput2 = document.getElementById("resultofvoleqtrianprism2");
+    var areaoutput1 = document.getElementById("resultofareaeqtrianprism1");
+    var areaoutput2 = document.getElementById("resultofareaeqtrianprism2");
+    var vol = (math.sqrt(3) / 4) * a**2 *h; 
+    var area = (math.sqrt(3) / 2) * a**2 + (3 * a * h);
+    if ((h != "") && (a != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Equilateral \\space Prism \\space (V)\\]";
+        voloutput2.innerHTML = "\\[\\frac{\\sqrt{3}}{4} \\times "+a+"^2 \\times "+h+" = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Equilateral \\space Prism \\space (S)\\]";
+        areaoutput2.innerHTML = "\\[\\frac{\\sqrt{3}}{2} \\times "+a+"^2 \\space + \\space 3 \\times "+a+" \\times "+h+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+    } else{
+        voloutput1.innerHTML ="";
+        voloutput2.innerHTML = "";
+        areaoutput1.innerHTML = "";
+        areaoutput2.innerHTML = "";
+    }
+}
+
 //Obelisk Calculator
 function obelisksolve(){
     var a = document.getElementById("inputobebase").value;
@@ -8721,28 +8748,28 @@ function hypf(){
 
 //spheroidal cap Calculator added
 function spcap(){
-    var a = document.getElementById("spcapsemiaxisa").value;
-    var c = document.getElementById("spcapsemiaxisc").value;
-    var h = document.getElementById("spcapheight").value;
+    var a = document.getElementById("sprcapsemiaxisa").value;
+    var c = document.getElementById("sprcapsemiaxisc").value;
+    var h = document.getElementById("sprcapheight").value;
 
-    var vol = ((math.pi * a**2 * h**2) / (3 * c**2)) * (3 * c - h ) ;
+    var vol = ((math.pi * a**2 * h**2) / (3 * c**2)) * ((3 * c) - h ) ;
     var ba = math.pi * a**2 * ( 1- (1 - (h/c))**2 );
 
     if(a!="" && c!="" && h!=""){
-        document.getElementById("volspcap1").innerHTML = "\\[Volume \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
-        document.getElementById("volspcap2").innerHTML = "\\[\\frac{\\pi \\times "+a+"^2 \\times "+h+"^2}{3 \\times "+c+"^2 } \\times (3\\times"+c+" - "+h+" ) = "+vol.toFixed(3)+"\\]";
-        renderMathInElement(document.getElementById("volspcap1"));
-        renderMathInElement(document.getElementById("volspcap2"));
+        document.getElementById("volsprcap1").innerHTML = "\\[Volume \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
+        document.getElementById("volsprcap2").innerHTML = "\\[\\frac{\\pi \\times "+a+"^2 \\times "+h+"^2}{3 \\times "+c+"^2 } \\times (3\\times"+c+" - "+h+" ) = "+vol.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("volsprcap1"));
+        renderMathInElement(document.getElementById("volsprcap2"));
         
-        document.getElementById("baspcap1").innerHTML = "\\[Base \\space Area \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
-        document.getElementById("baspcap2").innerHTML = "\\[\\pi \\times "+a+"^2 \\times (1- (1- \\frac{"+h+"}{"+c+"})^2 ) = "+ba.toFixed(3)+"\\]";
-        renderMathInElement(document.getElementById("baspcap1"));
-        renderMathInElement(document.getElementById("baspcap2"));
+        document.getElementById("basprcap1").innerHTML = "\\[Base \\space Area \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
+        document.getElementById("basprcap2").innerHTML = "\\[\\pi \\times "+a+"^2 \\times (1- (1- \\frac{"+h+"}{"+c+"})^2 ) = "+ba.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("basprcap1"));
+        renderMathInElement(document.getElementById("basprcap2"));
     } else{
-        document.getElementById("volspcap1").innerHTML ="";
-        document.getElementById("volspcap2").innerHTML = "";
-        document.getElementById("baspcap1").innerHTML ="";
-        document.getElementById("baspcap2").innerHTML ="";
+        document.getElementById("volsprcap1").innerHTML ="";
+        document.getElementById("volsprcap2").innerHTML = "";
+        document.getElementById("basprcap1").innerHTML ="";
+        document.getElementById("basprcap2").innerHTML ="";
     }
 }
 
