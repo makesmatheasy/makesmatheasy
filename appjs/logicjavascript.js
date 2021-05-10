@@ -4994,6 +4994,38 @@ function tripyramidsolve() {
     }
 }
 
+function eltripyramidsolve() {
+    var side = document.getElementById("inputeltripyramidside").value;
+    var voloutput = document.getElementById("resultofeltripyrvol");
+    var areaoutput = document.getElementById("resultofeltripyrarea");
+    var houtput = document.getElementById("resultofeltripyrheight");
+    var voltemp = "";
+    var areatemp = "";
+    var htemp = "";
+    if (side != "") {
+        voltemp += "\\[ (" + "\\frac{1}{12}(" + "\\sqrt{2}+3\\sqrt{3}" + "))" + "\\times" + side + "\\times" + side + "\\times" + side  + "\\]";
+        voltemp += "\\[Volume  \\space is \\space " + eval(String( 0.5508 * side * side * side )) + " \\]";
+        voloutput.innerHTML = voltemp;
+        
+        areatemp += "\\[ (" + 3 + "+" + "\\sqrt{3})" + "\\times" + side + "\\times" + side  +"\\]";
+        areatemp += "\\[Area \\space is \\space"  + eval(String(4.732 * side * side)) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        htemp += "\\[" + side + "\\times (" + "1 + \\frac{\\sqrt{6}}{3} )" + "\\]";
+        htemp += "\\[Height \\space is \\space " + eval(String(1.816 * side )) + " \\]";
+        houtput.innerHTML = htemp;
+
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(houtput);
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        houtput.innerHTML = "";
+    }
+}
+
 function centsolve(){
     var x1 = parseInt(document.getElementById("x1st").value)
     var y1 = parseInt(document.getElementById("y1st").value)
