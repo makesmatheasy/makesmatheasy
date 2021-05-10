@@ -221,6 +221,7 @@ function openit(id) {
         "#errpers",
         "#log_values",
         "#oops",
+        "#deca_prism",
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
@@ -267,6 +268,7 @@ function openit(id) {
         "#gamma",
         "#curve",
         "#coor",
+        "#ci",
         "#mean",
         "#Meanit",
         "#bcd",
@@ -336,7 +338,8 @@ function openit(id) {
         "#covs",
         "#lrcs",
         "#perats",
-        "#mecs"
+        "#mecs",
+	"#chng-vol-cube"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

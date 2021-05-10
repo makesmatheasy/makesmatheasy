@@ -57,6 +57,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#per-chng-cube").click(function () {
+        openit("#chng-vol-cube");
+        closenav();
+        clearall();
+    })
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
@@ -923,6 +928,11 @@ $(document).ready(function () {
     });
     $("#expobtn").click(function () {
         openit("#expo");
+        closenav();
+        clearall();
+    });
+    $("#cibtn").click(function () {
+        openit("#ci");
         closenav();
         clearall();
     });
