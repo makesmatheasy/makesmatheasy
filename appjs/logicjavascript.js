@@ -5290,6 +5290,39 @@ function pentpyramidsolve(){
     }
 }
 
+//pentagonal Bipyramid
+function pentbipyramidsolve() {
+    var side = document.getElementById("inputpentbipyramidside").value;
+    var voloutput = document.getElementById("resultofpentbipyrvol");
+    var areaoutput = document.getElementById("resultofpentbipyrarea");
+    var houtput = document.getElementById("resultofpentbipyrheight");
+    var voltemp = "";
+    var areatemp = "";
+    var htemp = "";
+    if (side != "") {
+        voltemp += "\\[ (" + "\\frac{5+\\sqrt{5}}{12}" + ")" + "\\times" + side + "\\times" + side + "\\times" + side  + "\\]";
+        voltemp += "\\[Volume  \\space is \\space " + eval(String( 0.603 * side * side * side )) + " \\]";
+        voloutput.innerHTML = voltemp;
+        
+        areatemp += "\\[ (" + "\\frac{5\\sqrt{3}}{2}" + ")" + "\\times" + side + "\\times" + side  +"\\]";
+        areatemp += "\\[Area \\space is \\space"  + eval(String(4.33 * side * side)) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        htemp += "\\[" + side + "\\times (" + "\\sqrt{2-\\frac{2}{\\sqrt{5}}} )" + "\\]";
+        htemp += "\\[Height \\space is \\space " + eval(String(1.816 * side )) + " \\]";
+        houtput.innerHTML = htemp;
+
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(houtput);
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        houtput.innerHTML = "";
+    }
+}
+
 //Hexagonal Pyramid
 function hexpyramidsolve() {
     var base = document.getElementById("inputhexpyramidbase").value;
