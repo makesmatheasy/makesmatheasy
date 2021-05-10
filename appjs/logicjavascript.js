@@ -5219,8 +5219,8 @@ function centsolve(){
     var centemp1 = "";
     if((x1 !="") && (y1 != "") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 != "")){
         centemp1 += "\\[Centroid \\space of \\space a \\space Triangle \\ is \\space ( \\space \\frac{x_1+x_2+x_3}{3} \\space , \\space \\frac{y_1+y_2+y_3}{3} ) \\space \\]";
-        centemp1 += "\\[( \\space \\frac{" + x1 + "+" + x2 + "+" + x3 + "}{3} \\space , \\space \\frac{" + y1 + "+" + y2 + "+" + y3 +  "}{3} \\space ) \\]";
-        centemp1 += "\\[( " + xans + "," + yans + " )\\]";
+        centemp1 += "\\[( \\space \\frac{ (" + x1 + ") + (" + x2 + ") + (" + x3 + ") }{3} \\space , \\space \\frac{ (" + y1 + ") + (" + y2 + ") + (" + y3 +  ") }{3} \\space ) \\]";
+        centemp1 += "\\[( " + xans.toFixed(3) + "," + yans.toFixed(3) + " )\\]";
         centout1.innerHTML = centemp1;
         renderMathInElement(centout1);
     }
