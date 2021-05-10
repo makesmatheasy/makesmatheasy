@@ -4246,6 +4246,57 @@ function solvedoustar() {
 
 }
 
+function solvelakstar() {
+    var a = document.getElementById("inputlakstarside").value;
+    var boutput = document.getElementById("resultoflakstaredoct");
+    var coutput = document.getElementById("resultoflakstaredstar");
+    var areastaroutput = document.getElementById("resultoflakstararea");
+    var areaoctoutput = document.getElementById("resultoflakstarareaoct");
+    var perioutput = document.getElementById("resultoflakstarperi");
+    var chordoutput = document.getElementById("resultoflakstarchord");
+    var btemp = "";
+    var ctemp = "";
+    var areastartemp = "";
+    var areaocttemp = "";
+    var peritemp = "";
+    var chordtemp = "";
+    if (a != "") {
+        btemp += "\\[Edge \\space length \\space octagon \\space \\newline (" + "\\sqrt{2} - 1 ) \\times" + a + "\\ = " + eval(String(0.41421356 * a)).toFixed(2) + "\\]";
+        boutput.innerHTML = btemp;
+
+        ctemp += "\\[Edge \\space length \\space star \\space \\newline \\frac{(2 - \\sqrt{2})}{2} \\times" + a + "\\ = " + eval(String(0.29289322 * a)).toFixed(2) + "\\]";
+        coutput.innerHTML = ctemp;
+
+        areastartemp += "\\[Area \\space of \\space star \\space \\newline 2 \\times ( 2 - \\sqrt{2}) \\times" + a + "\\times" + a + "\\ = " + eval(String(1.17157288 * a * a)).toFixed(2) + "\\]";
+        areastaroutput.innerHTML = areastartemp;
+
+        areaocttemp += "\\[Area \\space of \\space octagon \\space \\newline 2 \\times ( \\sqrt{2} - 1) \\times" + a + "\\times" + a + "\\ = " + eval(String(0.82842712 * a * a)).toFixed(2) + "\\]";
+        areaoctoutput.innerHTML = areaocttemp;
+
+        peritemp += "\\[Perimeter \\space \\newline 8 \\times ( 2 - \\sqrt{2}) \\times" + a + "\\ = " + eval(String(4.6862915 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        chordtemp += "\\[Chord \\space length \\space \\newline ( 2 - \\sqrt{2}) \\times" + a + "\\times 0.9238" + "\\ = " + eval(String(0.5411961 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        renderMathInElement(boutput);
+        renderMathInElement(coutput);
+        renderMathInElement(areastaroutput);
+        renderMathInElement(areaoctoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(chordoutput);
+
+    } else {
+        boutput.innerHTML = "";
+        coutput.innerHTML = "";
+        areastaroutput.innerHTML = "";
+        areaoctoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        chordoutput.innerHTML = "";
+    }
+
+}
+
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
