@@ -4196,6 +4196,50 @@ function solvepentagram() {
 
 }
 
+function solveoctagram() {
+    var a = document.getElementById("inputoctgramside").value;
+    var spikeoutput = document.getElementById("resultofoctgramspike");
+    var diagoutput = document.getElementById("resultofoctgramdiag");
+    var chordoutput = document.getElementById("resultofoctgramcho");
+    var perioutput = document.getElementById("resultofoctgramperi");
+    var areaoutput = document.getElementById("resultofoctgramarea");
+    var spiketemp = "";
+    var diagtemp = "";
+    var chordtemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        spiketemp += "\\[Spike \\space length \\space of \\space Octagram \\newline \\frac{2 - \\sqrt{2}}{2} \\times (1 + \\sqrt{2}) \\times" + a + "\\ = " + eval(String(0.70710678 * a)).toFixed(2) + "\\]";
+        spikeoutput.innerHTML = spiketemp;
+
+        diagtemp += "\\[Diagonal \\space of \\space Octagram \\space \\newline \\sqrt{4 + 2 \\times \\sqrt{2}} \\times" + a + "\\ = " + eval(String(2.61312593 * a)).toFixed(2) + "\\]";
+        diagoutput.innerHTML = diagtemp;
+
+        chordtemp += "\\[Chord \\space length \\space of \\space Octagram \\space \\newline (1 + \\sqrt{2}) \\times" + a + "\\ = " + eval(String(2.41421356 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Octagram \\space \\newline 8 \\space (2 - \\sqrt{2}) \\space (1 + \\sqrt{2}) \\times " + a + "\\ = " + eval(String(11.3137085 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of \\space Octagram \\space \\newline (6 \\space \\sqrt{2} - 8) \\space (1 + \\sqrt{2})^2 \\times" + a + "^2" + "\\ = " + eval(String(2.82842712 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(spikeoutput);
+        renderMathInElement(diagoutput);
+        renderMathInElement(chordoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        spikeoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
+        chordoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solvedoustar() {
     var b = document.getElementById("inputdoustarside").value;
     var l1 = document.getElementById("inputdoustarlonlen").value;
