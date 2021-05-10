@@ -2775,6 +2775,33 @@ function vectorplanar(){
         renderMathInElement(document.getElementById("vectorplanar1"));
     }
 }
+
+function vectorscalar(){
+    let a=parseFloat(document.getElementById('inp09').value);
+    let b=parseFloat(document.getElementById('inp08').value);
+    let c=parseFloat(document.getElementById('inp07').value);
+    let d=parseFloat(document.getElementById('inp06').value);
+    let e=parseFloat(document.getElementById('inp05').value);
+    let f=parseFloat(document.getElementById('inp04').value);
+    let scalaroutput = document.getElementById("vectorscalar1");
+    let scalartemp="";
+    let dot1 = (a*d)+(b*e) + (c*f);
+    let projy = (a**2+b**2+c**2);
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        scalartemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        scalaroutput.innerHTML = scalartemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+    }
+    else{
+    scalartemp += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Scalar \\space Projection \\space Formula \\space is \\]";
+    scalartemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|a|}  \\]";
+    scalartemp += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy)+ "}} \\]";
+    scalartemp += "\\[Scalar \\space Projection \\space of \\space X \\space on \\space Y \\space is \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy) + "}}  \\]";
+    scalaroutput.innerHTML = scalartemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+   }
+}
+
 function vectorunit(){
     var a=parseFloat(document.getElementById('vua').value);
     var b=parseFloat(document.getElementById('vub').value);
