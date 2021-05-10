@@ -2906,15 +2906,24 @@ function coordinatearea(){
     y3=parseFloat(document.getElementById('y3s').value);
     var areaop = document.getElementById("areaoutput");
     var explain = document.getElementById("formula1");
+    var areatemp = "";
+    var explaintemp = "";
    // explain.innerHTML = "\\[Area \\space  =\\space  \\frac{1}{2}| \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
    // renderMathInElement(document.getElementById("formula"));
-    var area= Math.abs(((x1*y2) - (x1*y3) + (x2*y3) - (x2*y1) + (x3*y1)- (x3*y2))/2);
+    var area= Math.abs(((x1*y2) - (x1*y3) + (x2*y3) - (x2*y1) + (x3*y1)- (x3*y2)));
+    var area1 = (area/2);
     if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="")){
-        areaop.innerHTML = "\\[Area \\space = \\space " + area + "\\space sq. \\space units" +"\\]";
-        renderMathInElement(document.getElementById("areaoutput"));
-        explain.innerHTML = "\\[Formula \\space  =\\space  \\frac{1}{2}| \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
-        renderMathInElement(document.getElementById("formula1"));
-        
+        explaintemp += "\\[Area \\space of \\space Triangle  = \\space  \\frac{1}{2} | \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2-y3) + ") + (" + x2 + ") \\times (" + (y3-y1) + ") + (" + x3 + ") \\times (" + (y1-y2) + ") \\]";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1*(y2-y3)) + ") + (" + (x2*(y3-y1)) + ") + (" + (x3*(y1-y2)) + ") | \\]";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area) + ") | \\]";
+        explaintemp += "\\[ " + area1 + " \\]";
+        areaop.innerHTML = explaintemp;
+        renderMathInElement(areaoutput);
+        areatemp += "\\[Area \\space = \\space " + area1 + "\\space sq. \\space units \\]";
+        explain.innerHTML = areatemp;
+        renderMathInElement(formula1);
     }
 
 }
