@@ -3136,8 +3136,8 @@
                         </td>
                         <td style="float:right;border-top: none;">
                              <span
-                                     onclick="addtofavourite('Residue Methods','#res','c','resfav')"><img
-                                     id="resfav" src="images/unfavourite.png"
+                                     onclick="addtofavourite('Residue Methods','#res1','c','res1fav')"><img
+                                     id="res1fav" src="images/unfavourite.png"
                                      style="height:1.5625rem;filter: none;"></span>
                                     </td>
                                 </tr>
@@ -3585,6 +3585,22 @@
                                        onclick="addtofavourite('Linear Regression Calculator','#lrcs','c','lrcsimgfav')"><img
                                        id="lrcssimgfav" src="images/unfavourite.png"
                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="chitestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Chi-Square Test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Chi-Square test','#chitest','c','chitestfav')"><img
+                                        id="chitestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -4611,7 +4627,7 @@
 
             <h4 class="text-center" id="line2"> </h4> <br>
            
-            <h3>Section Formula</h3><br>
+            <h3 style="text-align: center;">Section Formula</h3><br>
             <div class="coll">
                 <p>
                     Coordinate 1 = (<input type="text" id="x1" size=5 value='' placeholder="x1"> , 
@@ -4629,9 +4645,8 @@
                 </button><br>
                 </p>
             </div><br>
-            <p id="sec_formula" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
+            <p id="sec_formula" style="font-family:mathfont;;width:auto;"
+                class="stopwrap"></p>
 
 
             <p  id="output"> </p> <br>
@@ -6990,6 +7005,29 @@
     </div>
     <div class="coll1" style="text-align: center;">
     <h5 id="vectorcross2" style="color: white; font-size: x-large;"></h5>
+    </div>
+
+    <br><br>
+        <div class="text-center">
+            <h3>Angle Calculator</h3><br>
+        </div>
+        <div class="coll">
+            <p>
+                Vector X :   <input type="text" id="vaa1" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="vab1" size=3 value='' placeholder="B"> j + <input type="text" id="vac1" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector Y :   <input type="text" id="vaa2" size=3 value='' placeholder="A"> i +
+            <input type="text" id="vab2" size=3 value='' placeholder="B"> j + <input type="text" id="vac2" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vactorangle()>
+                Solve
+            </button><br>
+            </p>
+        </div><br>
+        <div class="coll" style="text-align: center; display: block;">
+            <p id="vae"><br></p>
+        <h5 id="var" style="color: white; font-size: x-large;"></h5>
     </div>
 
     <br><br>
@@ -9913,6 +9951,23 @@
                 <p id="pvalue"></p>
             </div>
         </div>
+         
+        
+        <!-- chi-square test -->
+         <div class="collapse" id="chitest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Chi-Square Test</h1>
+            <p style="margin: 0 auto 4rem auto; font-style: italic;">(Single Row Data)</p>
+            <p style="margin: 0 auto 6rem auto; font-style: italic;">A chi-square (χ2) statistic is a test that measures how a model compares to actual observed data. The data used in calculating a chi-square statistic must be random, raw, mutually exclusive, drawn from independent variables, and drawn from a large enough sample.</p>
+            <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
+            <br><br>
+            <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
+            <br><br>
+            <input class = "form__field"type="number" id="degFree" placeholder="Enter Degree of Freedom (d.f.)">
+            <br><br>
+            <button class = "btn btn-light" onclick="chivalue()">Test</button>
+            <p id="chitestans"></p>
+            <p id="concluChi"></p>
+        </div>
 
         <div class="collapse" id="dip">
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>
@@ -11493,6 +11548,10 @@
                            href="#">Kite</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#astroid" style="text-decoration:none;"
+                           href="#">Astroid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#slopeline" style="text-decoration:none;"
                            href="#">Line</a>
                     </td>
@@ -11589,8 +11648,16 @@
                                            style="text-decoration:none;" href="#">Hexadecagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#heptadecagon"
+                                           style="text-decoration:none;" href="#">Heptadecagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#enneadecagon"
                                            style="text-decoration:none;" href="#">Enneadecagon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#icosagon"
+                                           style="text-decoration:none;" href="#">Icosagon</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#polycal"
@@ -11615,8 +11682,18 @@
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal"
+                                           data-target="#decagram"
+                                           style="text-decoration:none;" href="#">decagram</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
                                            data-target="#doublestar"
                                            style="text-decoration:none;" href="#">Double Star Polygon</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#lakstar"
+                                           style="text-decoration:none;" href="#">Star of Lakshmi</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -11865,6 +11942,12 @@
                                         href="#">Decagonal Prism</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#enna_prism"
+                                        style="text-decoration:none;"
+                                        href="#">Enneagonal Prism</a>
+                                    </td>
+                                </tr>
                             </table>
 
                         </div>
@@ -11892,6 +11975,11 @@
                                     <td><a data-toggle="modal" data-target="#tripyramid"
                                         style="text-decoration:none;"
                                         href="#">Triangular Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#eltripyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Elongated Triangular Pyramid (Heptahedron)</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#recpyramid"
@@ -11957,7 +12045,11 @@
                            style="text-decoration:none;"
                            href="#">Tetrahexahedron</a></td>
                 </tr>
-
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tetrahexahedron"
+                           style="text-decoration:none;"
+                           href="#">Tetrahexahedron</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#parallelepiped"
                            style="text-decoration:none;"
@@ -12160,8 +12252,8 @@
     </div>
     <h4 id="cir_output" style="color:white"></h4>
     <h4 id="cirformula" style="color:white"></h4>
- 
-    <h3>Incentre Calculator </h3><br>
+ <br>
+    <h3 style="text-align: center;">Incentre Calculator </h3><br>
     <div class="coll">
         <p>
             Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
@@ -14524,7 +14616,7 @@ N is the population size.
               </div>
         <!-- end of anyBase to anyBase convertor -->
 
-        <div class="collapse" id="res">
+        <div class="collapse" id="res1">
             <h2 style = "text-align : center;">Residue at Pole</h2>
             <br><br>
             <p>Let z=a be a pole of order m of a one valued section f(z) and gamma be any circle of radius r with centre at z=a which doesnt have any singularities except at z=a, then f(z) is analytic within the annulus</p>
@@ -14968,13 +15060,23 @@ N is the population size.
                 <div class="col-6">
                     <form action="">
                         <div class="form-group">
-                            <h5>Encode a message by Hamming Code</h5>
+                            <h2>Encode a message by Hamming Code</h2>
+                            <h4>Choose Order</h4>
                             <select id="hamming-select1" class="form__field">
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Right-To-Left
+                                </option>
                                 <option class="form_field" style="background-color: #232a36;">
                                     Left-To-Right
                                 </option>
+                            </select>
+                            <h4>Choose parity type</h4>
+                            <select id="hamming-select2" class="form__field">
                                 <option class="form_field" style="background-color: #232a36;">
-                                    Right-To-Left
+                                    Even
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Odd
                                 </option>
                             </select>
                             <input type=" " id="hamming-input" value="0"
@@ -15014,9 +15116,9 @@ N is the population size.
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Detect Error</h5>
+                        <h2>Detect Error</h2>
                         <button type="button" class="btn btn-light" onclick="hammingCalc1()">
-                            Find it
+                            Find
                         </button>
                         <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
@@ -16395,10 +16497,10 @@ N is the population size.
                                    id="inputq" oninput="Kitesolve()">
                             <input class="form__field" type="number"
                                    placeholder="Enter side(a) of Kite"
-                                   id="inputsidea" oninput="Kitesolve()">
+                                   id="inputsidea1" oninput="Kitesolve()">
                             <input class="form__field" type="number"
                                    placeholder="Enter side(b) of Kite"
-                                   id="inputsideb" oninput="Kitesolve()">
+                                   id="inputsideb1" oninput="Kitesolve()">
                             <br>
                             <p class="stopwrap" id="resultofareaK"
                                style="font-family:mathfont;"></p>
@@ -17202,6 +17304,57 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="astroid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Astroid Calculator</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Cartesian Equation</h5>
+                                    <p class="text-center">\[x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Length</h5>
+                                    <p class="text-center">\[L= 6a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= \frac{3 \pi a^2}{8}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/astroid.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter a"
+                                   id="inputsideastroid"
+                                   oninput="solveastroid()">
+                                <p class="stopwrap" id="resultofastroidlen"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofastroidarea"
+                                style="font-family:mathfont;"></p>   
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="trapezium" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -17691,6 +17844,54 @@ N is the population size.
         </div>
     </div>
 
+    <div class="modal fade" id="heptadecagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Heptadecagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 17 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 22.735*a*a\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Regular_polygon_17_annotated.svg/220px-Regular_polygon_17_annotated.svg.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="text" placeholder="Enter side (a)"
+                               id="inputsideheptadeca">
+                        <button class="btn btn-dark" onclick="heptafind()">Find</button>
+                        <p class="stopwrap" id="resultofareaheptadeca1"
+                           style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofperimeterheptadeca"
+                           style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="enneadecagon" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -17731,6 +17932,54 @@ N is the population size.
                         <p class="stopwrap" id="resultofperimeterenndeca1"
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterenndeca2"
+                           style="font-family:mathfont;"></p>
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="icosagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Icosagon</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 20 \times a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 31.568*a*a\]</p>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Regular_polygon_20_annotated.svg/220px-Regular_polygon_20_annotated.svg.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter side (a)"
+                               id="inputsideicosa">
+                        <button class="btn btn-dark" onclick="icosagonfind()">Find</button>
+                        <p class="stopwrap" id="resultofareaicosa1"
+                           style="font-family:mathfont;"></p>                        
+                        <p class="stopwrap" id="resultofperimetericosa2"
                            style="font-family:mathfont;"></p>
                     </div>
                     <!---TILL-->
@@ -18473,6 +18722,56 @@ N is the population size.
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="decagram" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Decagram</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 20*a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 2\space x\space\frac {\sqrt{5 \times (5 - 2 \sqrt{5})}}{2} \space a^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Regular_star_polygon_10-3.svg/220px-Regular_star_polygon_10-3.svg.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of rhombic dodecahedron(a)" id="inputdecagramside">
+                        <button class = "btn btn-dark" onclick="decagramfind()">FInd</button>           
+                        <p class="stopwrap" id="resultofdecagramperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdecagramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="doublestar" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -18534,6 +18833,83 @@ N is the population size.
                         <p class="stopwrap" id="resultofdoustarperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofdoustararea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lakstar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Star of Lakshmi</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Edge length octagon</h5>
+                                <p class="text-center">\[b = (\sqrt{2} - 1) \space a \]</p>
+                                <p class="text-center">a = edge length square</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Edge length star</h5>
+                                <p class="text-center">\[c = \frac{2 - \sqrt{2}}{2} \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area star</h5>
+                                <p class="text-center">\[A = 2 \space( 2 - \sqrt{2}) \space a^2 \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area octagon</h5>
+                                <p class="text-center">\[A_8 = 2 \space(\sqrt{2} - 1) \space a^2 \]</p>
+                                <div class="dropdown-divider"></div> 
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 16 \times c\]</p>
+                                <p class="text-center">\[\space \space = 16 \times \frac{2 - \sqrt{2}}{2} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Chord length</h5>
+                                <p class="text-center">\[l = 2 \space c \times cos(\frac{π}{8})\]</p>
+                                <p class="text-center">\[\space \space = 2 \times \frac{2 - \sqrt{2}}{2} \space a \times cos(\frac{π}{8})\]</p>
+                                <p class="text-center">\[where \space cos(\frac{π}{8}) = 0.9238\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/star-of-lakshmi.png" class="img-fluid">
+                                    <br><br>
+                                    <img src="images/star-of-lakshmi-a.png" class="img-fluid">
+                                    <br><br>
+                                    <img src="images/star-of-lakshmi-a8.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of square of lakshmi star (a)" id="inputlakstarside"
+                                   oninput="solvelakstar();">
+                        <p class="stopwrap" id="resultoflakstaredoct"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstaredstar"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstararea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstarareaoct"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstarperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstarchord"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
@@ -19926,6 +20302,66 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="enna_prism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Enneagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume </h5>
+                                    <p class="text-center">\[V=\frac{9}{4}a^2cot\Big(\frac{180\degree}{9}\Big)h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base Area </h5>
+                                    <p class="text-center">\[A_{B}=\frac{9}{4}a^2cot\Big(\frac{180\degree}{9}\Big)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area </h5>
+                                    <p class="text-center">\[A=9ah+\frac{9}{2}a^2cot\Big(\frac{180\degree}{9}\Big)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Area </h5>
+                                    <p class="text-center">\[A_{L}=9ah\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/enna_prism.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge (a)"
+                                       id="inputennaprismedge" oninput="ennaprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputennaprismheight" oninput="ennaprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvolennaprism"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofbaseareaennaprism"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareaennaprism"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofsaennaprism"
+                                   style="font-family:mathfont;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="frustum" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -20258,6 +20694,66 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="eltripyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Regular Elongated Triangular Pyramid (Heptahedron)</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-center">a = side of Regular Elongated Triangular Pyramid</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h= a.(1+ \frac{\sqrt{6}}{3}) \]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S= ( 3 + \sqrt{3})a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=(\frac{1}{12}(\sqrt{2} + 3\sqrt{3}))a^{3} \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/eltripyr.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of triangle(a)" id="inputeltripyramidside"
+                                   oninput="eltripyramidsolve();">
+                            <p class="stopwrap" id="resultofeltripyrheight"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofeltripyrarea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofeltripyrvol"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="pentpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -21313,14 +21809,14 @@ N is the population size.
                                     <div class="dropdown-divider"></div>
                                     <h4 class="text-center">Area</h4>
                                     <br>
-                                    <p class="text-center">\[\frac{H*(A+B)}{2}\]</p>
+                                    <p class="text-center">\[H*\frac{(A+B)}{2}\]</p>
                                     <p class="text-center">H=Height</p>
                                     <p class="text-center">A & B= Two parallel Side</p>
                                     <br>
                                     <div class="dropdown-divider"></div>
                                     <h4 class="text-center">Volume</h4>
                                     <br>
-                                    <p class="text-center">\[\frac{(H×h×b1×b2)}{2}\]</p>
+                                    <p class="text-center">\[H × h ×  \frac{(b1 + b2)}{2}\]</p>
                                     <p class="text-center">H=Height of trapezoid</p>
                                     <p class="text-center">H=Height of prism</p>
                                     <p class="text-center">b1 & b2= Base of Trapezoid</p>
