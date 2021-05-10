@@ -3455,8 +3455,8 @@ function interiorsolve(){
 function Kitesolve() {
     var p = document.getElementById("inputp").value;
     var q = document.getElementById("inputq").value;
-    var a = document.getElementById("inputsidea").value;
-    var b = document.getElementById("inputsideb").value;
+    var a = document.getElementById("inputsidea1").value;
+    var b = document.getElementById("inputsideb1").value;
     var resultareaKite = document.getElementById("resultofareaK");
     var resultperiKite = document.getElementById("resultofperiK");
     resultareaKite.innerHTML = "";
