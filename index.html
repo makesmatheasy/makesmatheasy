@@ -11525,6 +11525,10 @@
                            href="#">Kite</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#astroid" style="text-decoration:none;"
+                           href="#">Astroid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#slopeline" style="text-decoration:none;"
                            href="#">Line</a>
                     </td>
@@ -17267,6 +17271,57 @@ N is the population size.
                                     data-dismiss="modal">Close
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="astroid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Astroid Calculator</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Cartesian Equation</h5>
+                                    <p class="text-center">\[x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Length</h5>
+                                    <p class="text-center">\[L= 6a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= \frac{3 \pi a^2}{8}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/astroid.gif" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter a"
+                                   id="inputsideastroid"
+                                   oninput="solveastroid()">
+                                <p class="stopwrap" id="resultofastroidlen"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofastroidarea"
+                                style="font-family:mathfont;"></p>   
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
                     </div>
                 </div>
             </div>

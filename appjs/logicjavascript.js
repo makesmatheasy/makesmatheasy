@@ -3910,6 +3910,31 @@ function solvecirclecal(){
     renderMathInElement(document.getElementById("resultofdiacircal"));
 }
 
+function solveastroid() {
+    var side = document.getElementById("inputsideastroid").value;  
+    var areaoutput = document.getElementById("resultofastroidarea");
+    var lengthoutput = document.getElementById("resultofastroidlen");
+    var areatemp = "";
+    var lengthtemp = "";
+    if ((side != "")) {
+        areatemp += "\\[Area \\space of \\space Astroid \\space" +  "\\]";
+        areatemp += "\\[\\frac{3 \\pi \\times" + side + "\\times" + side+ "}{8}" + "\\space" + "=" + eval(String(1.1775 * side * side)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        lengthtemp += "\\[Length \\space of \\space Astroid \\space is \\space \\]";
+        lengthtemp += "\\[" + 6 + "\\times" + side + "=" + eval(String(6 * side)) + "\\]";
+        lengthoutput.innerHTML = lengthtemp;
+       
+        renderMathInElement(areaoutput);
+        renderMathInElement(lengthoutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        lengthoutput.innerHTML = "";    
+
+    }
+}
+
 function solveoctadeca(){
     var side = parseInt(document.getElementById("inputsideoctadeca").value);
     var area = 18/4 * side**2 * math.cot(math.pi/18);
