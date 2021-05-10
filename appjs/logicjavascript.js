@@ -10546,3 +10546,46 @@ function occfind(){
     ans = ans * n;
     document.getElementById("occans").innerHTML = ans
 }
+
+//  chi value test
+// obs - observed
+function chivalue() {
+    let list = document.getElementById('obsList').value
+    let obsList = list.split(' ');
+    let sum = 0;
+    let n = obsList.length
+    for (var i = 0; i < n; i++) {
+        obsList[i] = parseInt(obsList[i])
+        sum += obsList[i]
+    }
+    let expMean = sum / obsList.length
+    let obsSubExpMean = []
+    let obsSubExpMeanSqr = []
+    let chiValue = []
+    let ans = 0
+    for (var i = 0; i < n; i++) {
+        obsSubExpMean[i] = obsList[i] - expMean
+        obsSubExpMeanSqr[i] = Math.pow(obsSubExpMean[i], 2)
+        chiValue[i] = obsSubExpMeanSqr[i] / expMean
+        ans += chiValue[i]
+    }
+    ans = Number.parseFloat(ans).toPrecision(5)
+    console.log(ans);
+    let sigValue = parseFloat(document.getElementById('sigValue').value)
+    console.log(sigValue);
+    console.log(ans < sigValue);
+
+    if (ans < sigValue) {
+        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> < <strong>" + sigValue + "</strong>"
+        document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
+    } else if (ans > sigValue) {
+        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> > χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> > <strong>" + sigValue + "</strong>"
+        document.getElementById('concluChi').innerHTML = "The Hypothesis is Not Accepted. So data distribution is Not uniform throughout."
+    } else {
+        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> = <strong>" + sigValue + "</strong>"
+        document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
+    }
+
+
+
+}

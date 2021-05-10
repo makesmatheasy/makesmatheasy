@@ -165,6 +165,7 @@ function openit(id) {
         "#factors",
         "#stats",
         "#math",
+        "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",

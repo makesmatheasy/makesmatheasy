@@ -338,6 +338,7 @@ Other Tech/Libraries
 - Statistics
   - T-test
   - Z-test
+  - Chi-Square Test
 ---
 
 ## Documentation
