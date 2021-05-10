@@ -436,7 +436,7 @@ $(document).ready(function () {
 
 
     $("#resbtn").click(function () {
-        openit("#res");
+        openit("#res1");
         closenav();
         clearall();
     })
