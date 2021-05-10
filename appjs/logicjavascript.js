@@ -1021,6 +1021,13 @@ function setcal() {
         document.getElementById("set-result").innerHTML = [...re].join(' ') ;
     }
 }
+function heptafind(){
+    let side = parseInt(document.getElementById("inputsideheptadeca").value)
+    let peri = 17*side
+    let ar = 22.735*side*side
+    document.getElementById("resultofareaheptadeca1").innerHTML = "The area is "+ar
+    document.getElementById("resultofperimeterheptadeca").innerHTML = "The perimeter is "+peri
+}
 function exterior(){
     // javascript program to find the angle
     // of a cyclic quadrilateral
