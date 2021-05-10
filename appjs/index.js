@@ -221,6 +221,7 @@ function openit(id) {
         "#errpers",
         "#log_values",
         "#oops",
+        "#astroid",
         "#deca_prism",
         "#log-collapse",
         "#bt-collapse",
