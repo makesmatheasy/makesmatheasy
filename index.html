@@ -11817,7 +11817,7 @@
                     <td><a data-toggle="modal" data-target="#parabolic_arc"
                            style="text-decoration:none;"
                            href="#">Parabolic Arch</a></td>
-                </tr>    
+                </tr> 
                 <tr>
                     <td><a data-toggle="modal" data-target="#segcals"
                            style="text-decoration:none;"
@@ -12129,6 +12129,11 @@
                            style="text-decoration:none;"
                            href="#">Wedge</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#ellipsoidalcap"
+                           style="text-decoration:none;"
+                           href="#">Ellipsoidal Cap</a></td>
+                </tr>   
                 <tr>
                     <td><a data-toggle="modal" data-target="#octahedron"
                            style="text-decoration:none;"
@@ -17375,6 +17380,65 @@ N is the population size.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="ellipsoidalcap" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ellipsoidal Cap</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5><br>
+                                    <p class="text-center">\[V= \frac{\pi a b}{3 c^2 } h^2 (3c - h )\]</p><br><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base Area</h5><br>
+                                    <p class="text-center">\[B = \frac{\pi a b}{c^2 } h (2c - h )\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/ellcap.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="spcapsemiaxisa" class = "form__field" oninput="spcap()" 
+                                placeholder="Enter semi-axis a">
+                            <input type="text" id="spcapsemiaxisb" class = "form__field" oninput="spcap()" 
+                                placeholder="Enter semi-axis b">
+                            <input type="text" id="spcapsemiaxisc" class = "form__field" oninput="spcap()" 
+                                placeholder="Enter semi-axis c">
+                            <input type="text" id="spcapheight" class = "form__field" oninput="spcap()"
+                                placeholder="Enter height (h)">
+                                <br><br>
+                                <p class="stopwrap" id="volspcap1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="volspcap2"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="baspcap1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="baspcap2"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
                         </button>
                     </div>
                 </div>
