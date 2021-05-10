@@ -12040,6 +12040,11 @@
                                         href="#">Pentagonal Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#pentbipyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Pentagonal Bipyramid (Decahedron)</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#hexpyramid"
                                         style="text-decoration:none;"
                                         href="#">Hexagonal Pyramid</a></td>
@@ -20868,7 +20873,65 @@ N is the population size.
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
+
+        <div class="modal fade" id="pentbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pentagonal Bipyramid (Decahedron)</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-center">a = side of Regular Pentagonal Bipyramid </p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h= a.(\sqrt{2-\frac{2}{\sqrt{5}}}) \]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S= (\frac{5\sqrt{3}}{2})a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=( \frac{5+\sqrt{5}}{12})a^3 \]</p>
+        
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/pentbipyr.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of triangle(a)" id="inputpentbipyramidside"
+                                   oninput="pentbipyramidsolve();">
+                            <p class="stopwrap" id="resultofpentbipyrheight"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentbipyrarea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentbipyrvol"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="hexpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
