@@ -3589,6 +3589,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="chitestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Chi-Square Test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Chi-Square test','#chitest','c','chitestfav')"><img
+                                        id="chitestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <!-- End of Statistics section -->
@@ -9912,6 +9928,23 @@
                 <p id="alphavalue"></p>
                 <p id="pvalue"></p>
             </div>
+        </div>
+         
+        
+        <!-- chi-square test -->
+         <div class="collapse" id="chitest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Chi-Square Test</h1>
+            <p style="margin: 0 auto 4rem auto; font-style: italic;">(Single Row Data)</p>
+            <p style="margin: 0 auto 6rem auto; font-style: italic;">A chi-square (χ2) statistic is a test that measures how a model compares to actual observed data. The data used in calculating a chi-square statistic must be random, raw, mutually exclusive, drawn from independent variables, and drawn from a large enough sample.</p>
+            <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
+            <br><br>
+            <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
+            <br><br>
+            <input class = "form__field"type="number" id="degFree" placeholder="Enter Degree of Freedom (d.f.)">
+            <br><br>
+            <button class = "btn btn-light" onclick="chivalue()">Test</button>
+            <p id="chitestans"></p>
+            <p id="concluChi"></p>
         </div>
 
         <div class="collapse" id="dip">

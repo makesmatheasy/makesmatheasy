@@ -707,6 +707,9 @@ function autocomplete(inp, arr) {
                     else if (inp.value.toUpperCase() == "Z TEST") {
                         $("#ztest").slideToggle(); 
                     }
+                    else if (inp.value.toUpperCase() == "CHI-SQUARE TEST") {
+                        $("#chitest").slideToggle(); 
+                    }
                     else if(inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULTOR"){
                         document.getElementById('binomialcoeff').click(); 
                     }
@@ -797,7 +800,7 @@ function autocomplete(inp, arr) {
 }
 
 
-var arrayofelements =  ["Divide", "Integration","T test","Z test","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
+var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
@@ -919,6 +922,9 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "TRANSFORMATION OF FUNCTIONS") {
         $("#trans").slideToggle(); 
+    }
+    else if (inp.value.toUpperCase() == "CHI-SQUARE TEST") {
+        $("#chitest").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "BETA GAMMA FUNCTIONS"){
         document.getElementById('betagamma').click(); 
