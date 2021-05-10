@@ -2235,6 +2235,12 @@ function parallelsolve()
     var explain1 = document.getElementById("line2");
     var m1= (y2-y1)/(x2-x1);
     var m2 = (y4-y3)/(x4-x3);
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)){
+        explain.innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("line1"));
+        document.getElementById('line2').innerHTML= "";
+       }
+    else{
     if(m1==m2){
         explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Parallel" + "\\] ";
         renderMathInElement(document.getElementById("line1"));
@@ -2245,7 +2251,7 @@ function parallelsolve()
         renderMathInElement(document.getElementById("line2"));
         document.getElementById('output2').innerHTML= 'Lines are not parallel';
     }
-    
+}
     
 }
 function perpendicularsolve(){
