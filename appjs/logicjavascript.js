@@ -2600,6 +2600,26 @@ function vectordot(){
     renderMathInElement(document.getElementById("dotex"));
 }
 
+function vactorangle(){
+    var a=parseFloat(document.getElementById('vaa1').value);
+    var b=parseFloat(document.getElementById('vab1').value);
+    var c=parseFloat(document.getElementById('vac1').value);
+    var d=parseFloat(document.getElementById('vaa2').value);
+    var e=parseFloat(document.getElementById('vab2').value);
+    var f=parseFloat(document.getElementById('vac2').value);
+    var x = (a*d)+(b*e)+(c*f);
+    var y = (a*a+b*b+c*c);
+    var z = (d*d+e*e+f*f);
+    var p = Math.sqrt(a*a+b*b+c*c).toFixed(2);
+    var q = Math.sqrt(d*d+e*e+f*f).toFixed(2);
+    var mult =((180*(Math.acos(x/(p*q))))/Math.PI).toFixed(1);
+    document.getElementById("var").innerHTML = "\\[ \\theta="  + (mult) + "0^{\\circ} \\]";
+    renderMathInElement(document.getElementById("var"));
+  
+    document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vae"));
+}
+
 
 function vecotrmod(){
     var a=parseFloat(document.getElementById('vma').value);
