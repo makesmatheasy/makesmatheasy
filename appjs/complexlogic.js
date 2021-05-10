@@ -1486,9 +1486,23 @@ function traprzlt()
     var k=(a+b)/2;
     var traparea= c*k;
     var trapvol=c*d*k;
-
-    var ans="The calculated area is: "+traparea+" and volume is: "+trapvol;
-    document.getElementById("trapans").innerHTML=ans;
+    var output =  document.getElementById("trapans");
+    var temp = "";
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)){
+        temp += "\\[ Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp ;
+        renderMathInElement(output);
+    }
+    else{
+   temp += "\\[" + c + "\\times \\frac{(" + a + "+" + b + ")}{2}  \\]";
+   temp += "\\[" + c + "\\times" + k + " \\]";
+   temp += "\\[ Area \\space of \\space Trapezoid \\space is \\space" + traparea + "\\]";
+   temp += "\\[" + c + "\\times" + d + "\\times \\frac{(" + a + "+" + b + ")}{2}  \\]";
+   temp += "\\[" + c + "\\times" + d + "\\times" + k + "\\]";
+   temp += "\\[ Volume \\space of \\space Trapezoid \\space is \\space" + trapvol + "\\]";
+   output.innerHTML = temp ;
+   renderMathInElement(output);
+    }
 }
 
 

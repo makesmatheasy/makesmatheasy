@@ -345,6 +345,10 @@ function openit(id) {
 
 
 
+
+
+        
+
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
             $(ids[i]).slideUp();
