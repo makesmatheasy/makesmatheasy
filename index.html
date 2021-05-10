@@ -15148,7 +15148,7 @@ N is the population size.
             <div class="form-group">
                 <h4>Decimal-Grey Code Converter</h4><br>
                 <h5>From</h5>
-                <select id="grey-select2" class="form__field" onchange="convertgreydec()">
+                <select id="grey-select2" class="form__field">
                     <option class="form_field" style="background-color: #232a36;">Grey
                         Code
                     </option>
@@ -15156,15 +15156,18 @@ N is the population size.
                         Decimal
                     </option>
                 </select>
-                <input type="number" id="greydec-input" value="0" class="form__field"
-                       oninput="convertgreydec()">
+                <input type="number" id="greydec-input" value="0" class="form__field">
             </div>
         </div>
         <div class="col-6">
             <div class="form-group">
                 <h5>To</h5>
+                <button type="button" class="btn btn-light" onclick="convertgreydec()">
+                    Find
+                </button>
             </div>
             <label class="form__group" id="greydec2-result"></label>
+            <p class="" id = "grey-dec-working"></p>
         </div>
     </div>
 </div>
