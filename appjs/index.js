@@ -239,6 +239,7 @@ function openit(id) {
         "#straightline",
         "#binary-hexadecimal",
         "#cay",
+        "#utcs",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",

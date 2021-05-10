@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#utc").click(function(){
+    openit("#utcs");
+    closenav();
+    clearall();
+});
 
 function closenav() {
     $('#slide-out').addClass('sidenav-close');

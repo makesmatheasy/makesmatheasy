@@ -1383,6 +1383,25 @@
                         <li>
                             <table class="table">
                                 <tr>
+                                    <td style="border-top: none;">
+            
+                                        <a id="utc"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Unit Rate Calculator</a>
+                                    </td>
+            
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Unit Rate Calculator','#utcs','c','utcsimgfav')"><img
+                                                    id="utcsimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+
+                        <li>
+                            <table class="table">
+                                <tr>
                                     <td style="border-top:none">
                                         <a id="wandtbtn"
                                         style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
@@ -13249,6 +13268,25 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="utcs">
+
+    
+    <h1 >UNIT RATE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="dens" id="urx1" size="5" placeholder="Enter quantity">  +
+    <input type="text" name="dens" id="urx2" size="5" placeholder="Enter unit">
+    <br>
+    <hr class="form__field">
+    <input type="number" name="dens"  id="urx3" size="5" placeholder="Enter quantity">  +
+    <input type="text" name="dens" id="urx4" size="5" placeholder="Enter unit">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="utcal()">Calculate</button>
+    <p id="utcans"></p>
+    
+   
+</div>
+
 
 <div id="mecs" class="collapse">
 

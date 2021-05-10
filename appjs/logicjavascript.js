@@ -10423,3 +10423,24 @@ function occfind(){
     ans = ans * n;
     document.getElementById("occans").innerHTML = ans
 }
+
+function utcal()
+{
+    var num1=document.getElementById("urx1").value;
+    var num2=document.getElementById("urx2").value;
+    var num3=document.getElementById("urx3").value;
+    var num4=document.getElementById("urx4").value;
+    ans="";
+    if(num1==""||num2==""||num3==""||num4=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num3=parseFloat(num3);
+        var z=num1/num3;
+        ans="The unit rate is: "+z+" "+num2+"/"+num4;
+    }
+    document.getElementById("utcans").innerHTML=ans;
+}
