@@ -1116,6 +1116,14 @@ function centcal(){
     document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
 }
 
+function decagramfind(){
+    let side  = parseInt(document.getElementById("inputdecagramside").value)
+    let peri = 20*side
+    let ar = 17.231*side*side
+    document.getElementById("resultofdecagramperi").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
+}
+
 function cencirtcal(){
     var a1 = parseInt(document.getElementById("fxc").value);
     var a2 = parseInt(document.getElementById("sxc").value);
