@@ -227,6 +227,7 @@ function openit(id) {
         "#bt-collapse",
         "#bt-collapse1",
         "#pandc",
+        "#enna_prism",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",

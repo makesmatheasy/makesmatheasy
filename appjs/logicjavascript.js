@@ -4778,6 +4778,48 @@ function decaprismsolve(){
         voloutput.innerHTML = "";    
     }
 }
+
+//Enneagonal Prism calculator
+function ennaprismsolve(){
+    var edge = document.getElementById("inputennaprismedge").value;
+    var height = document.getElementById("inputennaprismheight").value;
+    var voloutput = document.getElementById("resultofvolennaprism");
+    var laoutput = document.getElementById("resultofareaennaprism");
+    var baoutput = document.getElementById("resultofbaseareaennaprism");
+    var saoutput = document.getElementById("resultofsaennaprism");
+    var vol = 2.25*edge*edge*height*2.747;
+    var laarea = 9*edge*height;
+    var barea = 2.25*edge*edge*2.747;
+    var sarea = laarea + 4.5*edge*edge*2.747;
+    var voltemp ="";
+    var batemp="";
+    var satemp="";
+    var latemp="";
+    if ((height != "") && (edge != "")) {
+        voltemp += "\\[Volume \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        voltemp += "\\[\\frac{9}{4}" + "\\times" + edge + "\\times" + edge + "\\times cot(\\frac{180\\degree}{9}) \\times" + height +   "=" + eval(String(vol.toFixed(2) )) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(voloutput);
+        batemp += "\\[Base \\space area \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        batemp += "\\[\\frac{9}{4}" + "\\times" + edge + "\\times" +  edge + "\\times cot(\\frac{180\\degree}{9})" +   "=" + eval(String(barea.toFixed(2) )) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        latemp += "\\[Lateral \\space area \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        latemp += "\\[9 \\times " + edge + "\\times" + height +   "=" + eval(String(laarea.toFixed(2) )) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        satemp += "\\[Surface \\space area \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        satemp += "\\[9 \\times" + edge + "\\times" + height + "\\times + \\frac{9}{2} \\times" + edge + "\\times" + edge + "\\times cot(\\frac{180\\degree}{9})" +   "=" + eval(String(sarea.toFixed(2) )) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(saoutput);
+    }
+    else {
+        baoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        voloutput.innerHTML = "";    
+    }
+}
 //Obelisk Calculator
 function obelisksolve(){
     var a = document.getElementById("inputobebase").value;
