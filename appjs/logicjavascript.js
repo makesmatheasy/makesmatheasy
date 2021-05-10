@@ -2282,13 +2282,20 @@ function solvesection()
     m=parseFloat(document.getElementById('m').value);
     n=parseFloat(document.getElementById('n').value);
     var explain = document.getElementById("sec_formula");
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(m) || isNaN(n)){
+     explain.innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+     renderMathInElement(document.getElementById("sec_formula"));
+     document.getElementById('output').innerHTML= "";
+    }
+    else{
     explain.innerHTML = "\\[ \\space (x,\\space y) \\space = ( \\frac{mx2 \\space + \\space nx1}{m \\space + \\space n} , \\space \\frac{my2 \\space + \\space ny1}{m \\space + \\space n} ) \\space =" + " ( \\frac{" + m +"\\times" + x2 + "+" + n + "\\times" + x1 + "}{" + m + "+" + n + "}" + "," + "\\frac{" + m +"\\times" + y2 + "+" + n + "\\times" + y1 + "}{" + m + "+" + n + "} )" + "\\] ";
     renderMathInElement(document.getElementById("sec_formula"));
     var pt1 = (m*x2 + n *x1)/(m+n);
     var pt2 = (m*y2 + n *y1)/(m+n);
     document.getElementById('output').innerHTML= 'Point dividing (' + x1 + ',' + y1 + ') and (' + x2 + ',' + y2 + ') in the ratio ' + m + ':' + n + ' is (' + pt1 + ', ' + pt2 + ')' ;
-    
+    }
 }
+
 
 
 function circumsolve(){
