@@ -2662,6 +2662,57 @@ function vactorangle(){
     renderMathInElement(document.getElementById("vae"));
 }
 
+function vectpral(){
+    var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
+    var a=parseFloat(document.getElementById('vpa1').value);
+    var b=parseFloat(document.getElementById('vpb1').value);
+    var c=parseFloat(document.getElementById('vpc1').value);
+    var d=parseFloat(document.getElementById('vpa2').value);
+    var e=parseFloat(document.getElementById('vpb2').value);
+    var f=parseFloat(document.getElementById('vpc2').value);
+    
+    mul = (b*f);
+    mul1 = (c*e);
+    mul2 = (a*f);
+    mul3 = (c*d);
+    mul4 = (a*e);
+    mul5 =(b*d);
+    ans = (mul-mul1);
+    ans1= -(mul2-mul3);
+    ans2= (mul4-mul5);
+    
+    
+    if(ans1<0 && ans2<0){
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
+        
+
+        }
+        else if(ans1<0){
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
+        
+        }
+        else if(ans2<0){
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
+        
+        }
+        else{
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
+        
+        }
+        renderMathInElement(document.getElementById("vpe"));
+        if(ans==0&&ans1==0&&ans2 ==0)
+        {
+            document.getElementById("vpr").innerHTML = "As cross Product is Zero so X is prallel to Y";
+        }
+        else
+        {
+            document.getElementById("vpr").innerHTML = "As cross Product is Not Zero so X is Not prallel to Y"
+        }
+}
 
 function vecotrmod(){
     var a=parseFloat(document.getElementById('vma').value);
