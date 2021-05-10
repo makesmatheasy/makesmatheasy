@@ -9657,6 +9657,8 @@ function convertgreydec(){
     const fromBase = document.getElementById("grey-select2").value;
     var input = document.getElementById("greydec-input").value;
     let result2 = document.getElementById("greydec2-result");
+    let work = document.getElementById("grey-dec-working");
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
     result2.innerHTML="";
     let from = 2;
     let to = 2;
@@ -9671,25 +9673,47 @@ function convertgreydec(){
     }
 
     //console.log(result1);
+    //assigned first value of input inside result
     var x = result1[0];
 
     if (fromBase === "Grey Code"){
+        print +=  "<h4> Converting Grey Code to Decimal </h4> &emsp;";
+        print +=  "<br><h5>STEP 1 : Take the first bit of the gray code input and write it to the output. Output -> " + x + "</h5>";
+        print +=  "<br><h5>STEP 2 : Repeat the steps below until you reach the end of the input </h5>"
         for (var i = 1; i < result1.length; i++){
-            x += parseInt(x[i - 1] ^ result1[i]).toString();
+            var n = parseInt(x[i - 1] ^ result1[i]).toString();
+            print += "Take the " + (i+1) + "'th bit of the input and XOR it to the previous bit of the Output " + "i.e,"+ result1[i] + "⊕" + x.charAt(x.length-1) + "=" + n + "<br>";
+            print +=  "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + n + "</span><br><br>";
+            x += n;
         }
+        print += "<br><h5>STEP 3 : Step 3: So, our binary result is:" + x + " </h5>";
+        print += "<br><h5>Step 4 : Convert the binary output to decimal</h5>"
+        var temp = x;
         x = parseInt(x,2).toString();
+        print += temp + "->" + x;
     }
 
     else{
-        for (var i = 1; i < result1.length; i++)
-            x += parseInt(result1[i - 1] ^ result1[i]).toString();
+        print +=  "<h4> Converting Decimal to Grey Code </h4> &emsp;";
+        print +=  "<br><h5>STEP 1 : Convert the input from decimal to binary.</h5>";
+        print +=  input + "->" + result1;
+        print +=  "<br><h5>STEP 2 : Take the first bit of the binary input and write it to the output.</h5>";
+        print +=  "Output ->" + x;
+        print +=  "<br><h5>STEP 3 : Repeat the steps below until you reach the end of the input </h5>"
+        for (var i = 1; i < result1.length; i++){
+            var m = parseInt(result1[i - 1] ^ result1[i]).toString();
+            print += "Take the " + (i+1) + "'th bit of the input and XOR it to the previous bit of the input " + "i.e,"+ result1[i] + "⊕" + result1[i-1] + "=" + m + "<br>";
+            print +=  "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + m + "</span><br><br>";
+            x += m;
+        }
+        print += "<br><h5>STEP 4 : So, Answer is" + x + "</h5>"
     }
     if(input=="")
 	{
 	  x="";
 	}
-    result2.innerHTML = x;
-
+    result2.innerHTML = "Answer -> " + x;
+    work.innerHTML = print;
 }
 
 //Function that performs conversion of grey to binary and viceversa
