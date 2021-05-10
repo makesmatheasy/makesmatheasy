@@ -278,6 +278,7 @@ function openit(id) {
         "#vector",
         "#vec",
         "#diffeqn",
+        "#manhats",
         "#pdiffeqn",
         "#maxmin",
         "#locroots",

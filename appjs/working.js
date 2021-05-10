@@ -24,6 +24,12 @@ $("#clock").click(function(){
     clearall();
 });
 
+$("#manhat").click(function(){
+    openit("#manhats");
+    closenav();
+    clearall();
+});
+
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {

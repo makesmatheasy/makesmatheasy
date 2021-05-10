@@ -2288,6 +2288,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="manhat"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Manhattan Distance Calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Manhattan Distance Calculator','#manhats','c','manhatfav')"><img
+                                        id="manhatimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -13342,9 +13358,27 @@
 
 <!--Hydrosrtatic Pressure ends-->
 
-<div id="mecs" class="collapse">
+
+<div id="manhats">
 
     
+    <h1 >MANHATTAN DISTANCE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    (<input type="number" id="mdx1" width="5em" placeholder="Enter X"> , 
+    <input type="number" id="mdx2" placeholder="Enter Y">)
+    <p>&nbsp;</p>
+    (<input type="number" id="mdx3" width="5em" placeholder="Enter X"> , 
+    <input type="number" id="mdx4" placeholder="Enter Y">)
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="manhatcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="manhatans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    
+   
+</div>
+
+
+<div id="mecs" class="collapse">    
     <h1 >MARGIN OF ERROR CALCULATOR </h1>
     <p>&nbsp;</p>
     <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
