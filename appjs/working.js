@@ -192,6 +192,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#imprtoprbtn").click(function () {
+        openit("#imprtopr");
+        closenav();
+        clearall();
+    });
     $("#thdifbtn").click(function () {
         openit("#thdif");
         closenav();
