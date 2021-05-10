@@ -7949,13 +7949,28 @@ function tridecagon(){
 
 
 }
+
 function tetradecagon(){
-    let side = parseFloat(document.getElementById("inputsidetetradec").value)
-    let area = 15.3345*side*side
-    let per = 14*side
-    document.getElementById("resultofareatetradec").innerHTML = "The area is "+area
-    document.getElementById("resultofperimetertetradec").innerHTML = "The perimeter is "+per
+    let side = parseFloat(document.getElementById("inputsidetetradec").value);
+    let area = 15.3345*side*side;
+    let per = 14*side;
+    let tetra1output = document.getElementById("resultofareatetradec");
+    let tetra2output = document.getElementById("resultofperimetertetradec");
+    let tetra1temp = "";
+    let tetra2temp = "";
+    tetra1temp += "\\[15.3345 \\times " + side + "^{2} \\]";
+    tetra1temp += "\\[15.3345 \\times " + (side*side) + " \\]";
+    tetra1temp += "\\[Area \\space of \\space Tetradecagon \\space is \\]"; 
+    tetra1temp += "\\[ " + area + " \\]";
+    tetra1output.innerHTML  = tetra1temp ;
+    tetra2temp += "\\[14 \\times " + (side) + " \\]";
+    tetra2temp += "\\[Perimeter \\space of \\space Tetradecagon \\space is \\]"; 
+    tetra2temp += "\\[ " + per + " \\]";
+    tetra2output.innerHTML  = tetra2temp ;
+    renderMathInElement(tetra1output);
+    renderMathInElement(tetra2output);
 }
+
 
 function permutationcal(nval, rval) {
     document.getElementById("permutation_div").style.display = "block";
