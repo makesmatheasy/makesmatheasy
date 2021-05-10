@@ -9259,6 +9259,8 @@ function hammingCalc(){
         result.innerHTML = hammingCodeRtoLEven(input);
     }else if(type1 === "Left-To-Right" && type2 === "Odd"){
         result.innerHTML = hammingCodeLtoROdd(input);
+    }else if(type1 === "Right-To-Left" && type2 === "Odd"){
+        result.innerHTML = hammingCodeRtoLOdd(input);
     }
 }
 
@@ -9476,6 +9478,55 @@ function hammingCodeLtoROdd(x){
     console.log(res);
     return res1;
 }
+
+//function for encoding message using hamming code with odd parity from Right to left
+function hammingCodeRtoLOdd(x){
+    let n = x.length;
+    let p = 0,t = 0,c=0;
+    let k = 0, l = 0,s=0;
+    let res = "",res1="";
+    let par=0;
+    x= x.split("").reverse().join("");//reverse the input for R to L
+    //find number of parity bits
+    while(p==0){
+        if (Math.pow(2,s) >= n+ s + 1){
+        p=s;
+        }
+        s+=1;
+    }
+    t=p+n; //total bit of hamming code
+    for (var j = 0; j<t; j++){
+        if((j+1)== Math.pow(2,k)){
+            res = res + "?";
+            k+=1;
+        }else{
+            res = res + x[l];
+            l+=1;
+        }
+    }
+    for (var i =0; i<res.length;i++){
+        if(res[i]=="?"){
+            c=i+2;
+            while(c<=t){
+                if(((i+1) & c) == (i+1)){
+                    par += parseInt(res[c-1]);
+                }
+                c+=1;
+            }
+            if(par % 2 == 0){
+                res1 +="1";
+            }else {
+                res1 +="0";
+            }
+            par =0;
+        }else{
+            res1 += res[i];
+        }
+    }
+    console.log(res);
+    return res1.split("").reverse().join(""); //reverse the ans to get the ans for R to L
+}
+
 
 //Function that performs conversion of  binary to bcd
 function separator(str, n) { //used for converting BCD code to decimal
