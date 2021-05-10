@@ -10807,6 +10807,11 @@
                                            data-target="#pentagram"
                                            style="text-decoration:none;" href="#">Pentagram</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#lakstar"
+                                           style="text-decoration:none;" href="#">Star of Lakshmi</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -16607,6 +16612,82 @@
                         <p class="stopwrap" id="resultofpengramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofpengramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="lakstar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Star of Lakshmi</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Edge length octagon</h5>
+                                <p class="text-center">\[b = (\sqrt{2} - 1) \space a \]</p>
+                                <p class="text-center">a = edge length square</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Edge length star</h5>
+                                <p class="text-center">\[c = \frac{2 - \sqrt{2}}{2} \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area star</h5>
+                                <p class="text-center">\[A = 2 \space( 2 - \sqrt{2}) \space a^2 \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area octagon</h5>
+                                <p class="text-center">\[A_8 = 2 \space(\sqrt{2} - 1) \space a^2 \]</p>
+                                <div class="dropdown-divider"></div> 
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 16 \times c\]</p>
+                                <p class="text-center">\[\space \space = 16 \times \frac{2 - \sqrt{2}}{2} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Chord length</h5>
+                                <p class="text-center">\[l = 2 \space c \times cos(\frac{π}{8})\]</p>
+                                <p class="text-center">\[\space \space = 2 \times \frac{2 - \sqrt{2}}{2} \space a \times cos(\frac{π}{8})\]</p>
+                                <p class="text-center">\[where \space cos(\frac{π}{8}) = 0.9238\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/star-of-lakshmi.png" class="img-fluid">
+                                    <br><br>
+                                    <img src="images/star-of-lakshmi-a.png" class="img-fluid">
+                                    <br><br>
+                                    <img src="images/star-of-lakshmi-a8.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of square of lakshmi star (a)" id="inputlakstarside"
+                                   oninput="solvelakstar();">
+                        <p class="stopwrap" id="resultoflakstaredoct"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstaredstar"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstararea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstarareaoct"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstarperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoflakstarchord"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
