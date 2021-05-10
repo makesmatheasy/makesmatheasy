@@ -15151,7 +15151,7 @@ N is the population size.
             <div class="form-group">
                 <h4>Binary-Grey Code Converter</h4><br>
                 <h5>From</h5>
-                <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                <select id="grey-select1" class="form__field">
                     <option class="form_field" style="background-color: #232a36;">Grey
                         Code
                     </option>
@@ -15159,15 +15159,18 @@ N is the population size.
                         Binary
                     </option>
                 </select>
-                <input type="number" id="grey-input" value="0" class="form__field"
-                       oninput="convertgrey()">
+                <input type="number" id="grey-input" value="0" class="form__field">
             </div>
         </div>
         <div class="col-6">
             <div class="form-group">
                 <h5>To</h5>
+                <button type="button" class="btn btn-light" onclick="convertgrey()">
+                    Find
+                </button>
             </div>
             <label class="form__group" id="grey-result">0</label>
+            <p class="" id = "grey-working"></p>
         </div>
         <br><br>
         <div class="col-6">
