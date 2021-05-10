@@ -8155,6 +8155,34 @@ function hypf(){
     document.getElementById("hypans3").innerHTML ="\\[ = "+ans.toFixed(3)+ "\\]";
     renderMathInElement(document.getElementById("hypans3"));
 }
+
+//spheroidal cap Calculator added
+function spcap(){
+    var a = document.getElementById("spcapsemiaxisa").value;
+    var c = document.getElementById("spcapsemiaxisc").value;
+    var h = document.getElementById("spcapheight").value;
+
+    var vol = ((math.pi * a**2 * h**2) / (3 * c**2)) * (3 * c - h ) ;
+    var ba = math.pi * a**2 * ( 1- (1 - (h/c))**2 );
+
+    if(a!="" && c!="" && h!=""){
+        document.getElementById("volspcap1").innerHTML = "\\[Volume \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
+        document.getElementById("volspcap2").innerHTML = "\\[\\frac{\\pi \\times "+a+"^2 \\times "+h+"^2}{3 \\times "+c+"^2 } \\times (3\\times"+c+" - "+h+" ) = "+vol.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("volspcap1"));
+        renderMathInElement(document.getElementById("volspcap2"));
+        
+        document.getElementById("baspcap1").innerHTML = "\\[Base \\space Area \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
+        document.getElementById("baspcap2").innerHTML = "\\[\\pi \\times "+a+"^2 \\times (1- (1- \\frac{"+h+"}{"+c+"})^2 ) = "+ba.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("baspcap1"));
+        renderMathInElement(document.getElementById("baspcap2"));
+    } else{
+        document.getElementById("volspcap1").innerHTML ="";
+        document.getElementById("volspcap2").innerHTML = "";
+        document.getElementById("baspcap1").innerHTML ="";
+        document.getElementById("baspcap2").innerHTML ="";
+    }
+}
+
 //Mode end
 //Variance
 function Variance() {
