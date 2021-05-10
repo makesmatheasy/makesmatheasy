@@ -14973,13 +14973,23 @@ N is the population size.
                 <div class="col-6">
                     <form action="">
                         <div class="form-group">
-                            <h5>Encode a message by Hamming Code</h5>
+                            <h2>Encode a message by Hamming Code</h2>
+                            <h4>Choose Order</h4>
                             <select id="hamming-select1" class="form__field">
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Right-To-Left
+                                </option>
                                 <option class="form_field" style="background-color: #232a36;">
                                     Left-To-Right
                                 </option>
+                            </select>
+                            <h4>Choose parity type</h4>
+                            <select id="hamming-select2" class="form__field">
                                 <option class="form_field" style="background-color: #232a36;">
-                                    Right-To-Left
+                                    Even
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Odd
                                 </option>
                             </select>
                             <input type=" " id="hamming-input" value="0"
@@ -15019,9 +15029,9 @@ N is the population size.
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <h5>Detect Error</h5>
+                        <h2>Detect Error</h2>
                         <button type="button" class="btn btn-light" onclick="hammingCalc1()">
-                            Find it
+                            Find
                         </button>
                         <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
