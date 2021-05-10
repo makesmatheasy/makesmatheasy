@@ -372,6 +372,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#chitestbtn").click(function () {
+        openit("#chitest");
+        closenav();
+        clearall();
+    });   
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();
@@ -441,7 +446,7 @@ $(document).ready(function () {
 
 
     $("#resbtn").click(function () {
-        openit("#res");
+        openit("#res1");
         closenav();
         clearall();
     })
