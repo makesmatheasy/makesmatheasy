@@ -2744,6 +2744,12 @@ function vectorproj(){
     let projy = (d**2+e**2+f**2);
     let proj = Math.sqrt(projy);
     let proj1 = (proj)**2;
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        projtemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorproj1"));
+    }
+    else{
     projtemp  += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Vector \\space Projection \\space Formula \\space is \\]";
     projtemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
     projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toPrecision(2)+ "}(" + d + "," + e + "," + f + ") \\]";
@@ -2751,7 +2757,7 @@ function vectorproj(){
     projoutput.innerHTML = projtemp;
     renderMathInElement(document.getElementById("vectorproj1"));
 }
-
+}
 function vectorplanar(){
     var a=parseFloat(document.getElementById('inp11').value);
     var b=parseFloat(document.getElementById('inp22').value);
@@ -2766,6 +2772,12 @@ function vectorplanar(){
     var mult1 = (b*((d*i)-(f*g)));
     var mult2 = (c*((d*h)-(e*g)));
     var ans = mult-mult1+mult2;
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ||isNaN(g) ||isNaN(h) ||isNaN(i) ){
+        document.getElementById("vectorplanar1").innerHTML = "\\[Please \\space enter \\space valid \\space input  \\]";
+        renderMathInElement(document.getElementById("vectorplanar1"));
+
+    }
+    else{
     if(ans == 0){
     document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Coplanar \\space as \\space Δ \\space = \\space 0.  \\]";
     renderMathInElement(document.getElementById("vectorplanar1"));
@@ -2774,6 +2786,7 @@ function vectorplanar(){
         document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Non-Coplanar \\space as \\space Δ \\space != \\space 0.  \\]";
         renderMathInElement(document.getElementById("vectorplanar1"));
     }
+}
 }
 
 function vectorscalar(){
@@ -2808,6 +2821,11 @@ function vectorunit(){
     var c=parseFloat(document.getElementById('vuc').value);
 
     var ans = (a*a)+(c*c)+(b*b);
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("vue").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
+        renderMathInElement(document.getElementById("vue"));
+    }
+    else{
     document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
 
 
@@ -2824,6 +2842,7 @@ function vectorunit(){
     else
     document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
     renderMathInElement(document.getElementById("vur"));
+}
 }
 
 function vectorcross(){
@@ -2880,8 +2899,12 @@ function vector_res(){
     var res2 = eval(String((a * a) + (b * b)));
     var res3 = res2+res1;
     var d = nerdamer.sqrt(res3).toString();
-    if(a != "" || b != "" || c != "" ){
-        if(a>0 && b>0){
+    if((isNaN(a)) || (isNaN(b)) || (isNaN(c)) ){
+        restemp += "\\[Please \\space enter \\space valid \\space input \\]";
+        resoutput.innerHTML = restemp;
+        renderMathInElement(resoutput);
+    }
+    else if(a>0 && b>0){
      restemp += "\\[R= \\sqrt{ a^2 + b^2 + 2*a*b*cosθ } \\]";
      restemp += "\\[R= \\sqrt{" + a + "^2+" + b + "^2+" + "2*" + a + "*" + b + "*" + "cos(" + c + ")} \\]";
      restemp += "\\[ \\sqrt{" + a + "^2+" + b + "^2+ (" +  res1 + ") } \\]";
@@ -2897,9 +2920,6 @@ function vector_res(){
             resoutput.innerHTML = restemp;
             renderMathInElement(resoutput);
         }
- } else {
-     resoutput.innerHTML = "";
- }
  }
 
 
@@ -8791,7 +8811,12 @@ function vtp(){
     let vvz3 = parseInt(document.getElementById("vvz3").value)
     let cvec = vvx1*vvx2 + vvy1*vvy2 + vvz1*vvz2
     let avec = vvx2*vvx3 + vvy2*vvy3 + vvz2*vvz3
+    if((isNaN(vvx1)) || (isNaN(vvy1)) || (isNaN(vvz1))|| (isNaN(vvx2))|| (isNaN(vvy2))|| (isNaN(vvz2))|| (isNaN(vvx3))|| (isNaN(vvy3))|| (isNaN(vvz3))){
+     document.getElementById("vtpans").innerHTML = "Please enter valid input ";
+    }
+    else{
     document.getElementById("vtpans").innerHTML = cvec + "c - "+ avec +"a"
+}
 }
 // Standard Deviation
 function std() {
