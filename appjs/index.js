@@ -150,6 +150,7 @@ function openit(id) {
 	"#chng-vol-cube",
         "#sosqs",
         "#sosqsn",
+	"#chng-vol-cuboid",
         "#squaresRanges",
         "#favourite",
         "#cubesRanges",
