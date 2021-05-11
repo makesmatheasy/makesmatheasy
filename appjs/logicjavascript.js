@@ -2898,6 +2898,39 @@ function vectorcross(){
     }
 }
 
+function vectordistance(){
+    var a,b,c,d,e,f,g,h,i;
+    a = parseInt(document.getElementById("in11").value);
+    b = parseInt(document.getElementById("in22").value);
+    c = parseInt(document.getElementById("in33").value);
+    d = parseInt(document.getElementById("in44").value);
+    e = parseInt(document.getElementById("in55").value);
+    f = parseInt(document.getElementById("in66").value);
+    g =  parseInt(document.getElementById("in77").value);
+    h = parseInt(document.getElementById("in88").value);
+    i = parseInt(document.getElementById("in99").value);
+   var outputtria = document.getElementById("vectordist1");
+   var tempoutput = "";
+   var ans = (((h)*(f-c))-((i)*(e-b))); var ans1= -(((g)*(f-c))-((i)*(d-a)) ); var ans2= ( ((g)*(e-b))-((h)*(d-a)));
+   var ans3 = Math.sqrt(g**2+h**2+i**2);
+   if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f) && !isNaN(g) && !isNaN(h) && !isNaN(i))
+  {
+    tempoutput += "\\[ Shortest \\space Distance \\space = \\space \\frac{ | \\overrightarrow{b} \\times (\\overrightarrow{X2} - \\overrightarrow{X1} )} {| \\overrightarrow{b} |} \\]";
+    tempoutput += "\\[ \\overrightarrow{X2} \\space - \\space \\overrightarrow{X1} \\space = \\space (" + (d-a) + "\\hat{i}) \\space + (" + (e-b) + "\\hat{j}) \\space + (" + (f-c) + "\\hat{k}) \\]";
+    tempoutput += "\\[ \\frac{ | (" + ans + "\\hat{i}) + (" + ans1 + "\\hat{j}) + (" + ans2 + "\\hat{k}) | }{" + ans3 + "} \\]";
+    tempoutput += "\\[ \\frac{ \\sqrt{" + ans**2 + "+" + ans1**2 + "+" + ans2**2 + "}}{ " + ans3 + "} \\]";
+    tempoutput += "\\[ \\frac{ \\sqrt{" + (ans**2+ans1**2+ans2**2) + "}}{" + ans3 + "} \\]";
+    outputtria.innerHTML = tempoutput;
+    renderMathInElement(outputtria);
+}
+else{
+    tempoutput += "\\[Please \\space enter \\space all \\space fields \\]";
+    outputtria.innerHTML = tempoutput;
+    renderMathInElement(outputtria);
+}
+}
+
+
 function vector_res(){
     var a=parseFloat(document.getElementById('abc').value);
     var b=parseFloat(document.getElementById('def').value);
