@@ -11399,7 +11399,6 @@ function manhatcal()
     }
     document.getElementById("manhatans").innerHTML=ans;
 }
-
 function volCube() {
     var x = parseInt(document.getElementById("chng-side-cube").value);
     var ans = "percentage increase in the volume of the cube is ";

@@ -249,6 +249,7 @@ function openit(id) {
         "#bpmfs",
         "#straightline",
         "#binary-hexadecimal",
+        "#mis",
         "#cay",
         "#utcs",
         "#inversetrigonoiden",

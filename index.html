@@ -1410,7 +1410,25 @@
                                 </tr>
                             </table>
                         </li>
-
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+            
+                                        <a id="mi"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Multiplicative Inverse</a>
+                                    </td>
+            
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Multiplicative Inverse','#mis','c','misimgfav')"><img
+                                                    id="misimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+            
                         <li>
                             <table class="table">
                                 <tr>
@@ -13613,6 +13631,20 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+
+<div class="collapse" id="mis">    
+    <h1 >MULTIPICATIVE INVERSE</h1>
+    <p>&nbsp;</p>
+    <div style="color: white; font-size: 1.3em; font-family:mathfont"> Enter number to find mulitplicative answer: <input type="number" name="mians1" id="mians1" placeholder="Enter numerator"> 
+    <input type="number" name="mians2" id="mians2" placeholder="Enter denominator">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="midcal()">Calculate in Fraction</button>
+    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="mifcal()">Calculate in Decimal</button>
+    <p>&nbsp;</p> <p id="mians"></div>
+    
+   
+</div>
 
 <div class="collapse" id="manhats">
     <h1 style="font-family:mathfont" >MANHATTAN DISTANCE CALCULATOR </h1>
