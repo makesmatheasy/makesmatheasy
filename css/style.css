@@ -1,5 +1,5 @@
 :root {
-  --apppink: #CAD5E2;
+  --apppink: #cad5e2;
   --appblack: #232a36;
   --appimage: white;
 }
@@ -11,15 +11,15 @@
 }
 @font-face {
   font-family: mainfont;
-  src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
+  src: url(../fonts/Product_Sans_Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: mainfontbold;
-  src: url(../fonts/Product_Sans_Bold.ttf) format('truetype');
+  src: url(../fonts/Product_Sans_Bold.ttf) format("truetype");
 }
 @font-face {
   font-family: mathfont;
-  src: url(../fonts/BalsamiqSans-Regular.ttf) format('truetype');
+  src: url(../fonts/BalsamiqSans-Regular.ttf) format("truetype");
 }
 
 body {
@@ -33,8 +33,9 @@ body img {
   filter: invert(100%);
 }
 
-
-#setopfav, #interestfav, #pricesfav {
+#setopfav,
+#interestfav,
+#pricesfav {
   filter: invert(0);
 }
 
@@ -42,7 +43,7 @@ body img {
   padding-bottom: 10%;
   padding-top: 1.5em;
 }
-.center{
+.center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -50,11 +51,10 @@ body img {
   padding-bottom: 54%;
   padding-top: 1.5em;
 }
-.main{
-  width:50%;
-  float:left;
+.main {
+  width: 50%;
+  float: left;
 }
-
 
 p {
   color: var(--appimage);
@@ -110,10 +110,11 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--apppink) !important; 
+  color: var(--apppink) !important;
 }
 
-h5, h6 {
+h5,
+h6 {
   color: var(--appimage) !important;
 }
 
@@ -248,7 +249,7 @@ h5, h6 {
   cursor: pointer;
 }
 
-.nofavourites p{
+.nofavourites p {
   font-size: 1.1875rem;
 }
 
@@ -304,7 +305,7 @@ h5, h6 {
     text-align: center;
     color: white !important;
     cursor: pointer;
-  }  
+  }
 }
 
 ::selection {
@@ -362,7 +363,7 @@ h5, h6 {
   height: 3.75rem;
   border-radius: 2.5rem;
   padding: 0.625rem;
-  transform: translateX(50%,50%);
+  transform: translateX(50%, 50%);
 }
 
 #box:hover > #search-txt {
@@ -431,17 +432,17 @@ h5, h6 {
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
   background-color: white;
 }
-.card h5{
-    color: rgb(124, 151, 238);
+.card h5 {
+  color: rgb(124, 151, 238);
 }
-.card{
-    background-color: transparent;
-    /* border: 0.125rem solid #111113; */
-    box-shadow: 0.5rem 0.5rem 0.5rem #222227;
-    /* border-bottom: 0.1875rem solid #3a24c4;; */
+.card {
+  background-color: transparent;
+  /* border: 0.125rem solid #111113; */
+  box-shadow: 0.5rem 0.5rem 0.5rem #222227;
+  /* border-bottom: 0.1875rem solid #3a24c4;; */
 }
 .card-header {
-    border-bottom: 0.1875rem solid #3a24c4;;
+  border-bottom: 0.1875rem solid #3a24c4;
 }
 
 ul li .table {
@@ -455,7 +456,7 @@ ul li .table {
 
 .home {
   height: fit-content;
-  background: rgba(255, 136, 231,0.5);
+  background: rgba(255, 136, 231, 0.5);
   /* background: var(--apppink) !important; */
   margin: 0.8125rem;
   border-radius: 2.25rem;
@@ -468,9 +469,9 @@ ul li .table {
   border-radius: 2.25rem;
 }
 
-.abc{
+.abc {
   text-align: center;
-  color:white;
+  color: white;
 }
 
 #about {
@@ -488,12 +489,13 @@ ul li .table {
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
 }
 
-#about h5, #aboutContact {
+#about h5,
+#aboutContact {
   color: white !important;
 }
 
 #aboutHeading {
-  border:2px solid azure;
+  border: 2px solid azure;
   border-style: dashed;
   padding: 1rem;
 }
@@ -507,7 +509,7 @@ ul li .table {
   color: var(--appimage) !important;
 }
 
-@media (max-width:420px) {
+@media (max-width: 420px) {
   #about {
     margin-bottom: 0;
   }
@@ -525,31 +527,31 @@ ul li .table {
   color: white;
 }
 
-#euclid p{
+#euclid p {
   margin-bottom: 2rem;
   text-align: center;
 }
-#euclid li{
+#euclid li {
   color: white;
   list-style: none;
   text-align: center;
-} 
-#euclid img{
+}
+#euclid img {
   display: block;
   margin: 0 auto;
 }
 
 .darkmode--activated #factors p {
-  color:#ababab !important;
+  color: #ababab !important;
 }
 
-.darkmode--activated .lcm{
+.darkmode--activated .lcm {
   margin-bottom: 14px;
   margin-top: 19px;
 }
 /*light mode*/
 
-.light-mode #euclid li{
+.light-mode #euclid li {
   color: black !important;
 }
 
@@ -647,18 +649,18 @@ span.sub img {
   background-color: white;
   font-weight: bolder;
 }
-.light-mode .card h5{
-    color: rgb(18, 33, 82);
+.light-mode .card h5 {
+  color: rgb(18, 33, 82);
 }
 
-.light-mode .card{
-    background-color: transparent;
-    border: 0.125rem solid #dcd8f8;
-    box-shadow: 0.5rem 0.5rem 0.5rem #ccc7eb;
-    /* border-bottom: 0.1875rem solid #3a24c4;; */
+.light-mode .card {
+  background-color: transparent;
+  border: 0.125rem solid #dcd8f8;
+  box-shadow: 0.5rem 0.5rem 0.5rem #ccc7eb;
+  /* border-bottom: 0.1875rem solid #3a24c4;; */
 }
 .light-mode .card-header {
-    border-bottom: 0.1875rem solid #3a24c4;;
+  border-bottom: 0.1875rem solid #3a24c4;
 }
 /* radio butons for conic hyperbola*/
 #op1_hyper:after,
@@ -671,7 +673,7 @@ span.sub img {
   top: -0.25rem;
   left: -0.0625rem;
   background-color: var(--appblack);
-  content: '';
+  content: "";
   display: inline-block;
   visibility: visible;
   border: 0.125rem solid #fff;
@@ -688,7 +690,7 @@ span.sub img {
   left: -0.0625rem;
   position: relative;
   background-color: var(--apppink);
-  content: '';
+  content: "";
   display: inline-block;
   visibility: visible;
   border: 0.125rem solid #fff;
@@ -703,19 +705,19 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
 /* social media icons */
 
-.icons{
+.icons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   overflow: hidden;
 }
-.icon:hover{
+.icon:hover {
   opacity: 0.8;
   font-size: 1.4em;
 }
@@ -723,12 +725,19 @@ input[type='number'] {
 .fa-instagram:hover {
   /* color: #bc2a8d; */
   background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
   border-radius: 10%;
 }
 
 .fa-linkedin:hover {
-  color:#0077b5;
+  color: #0077b5;
 }
 
 .fa-envelope:hover {
@@ -739,12 +748,15 @@ input[type='number'] {
   color: #7289da;
 }
 
-@media (max-width:420px) {
-  #box{
-     margin-right:11em; 
+@media (max-width: 420px) {
+  #box {
+    margin-right: 11em;
   }
 }
 
-#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2{
+#unknownWork,
+#unknownTime,
+#unknownMen,
+#stepsbox #stepsbox2 {
   display: none;
 }
