@@ -248,8 +248,9 @@ Other Tech/Libraries
     - Trapezium
     - Ellipse
     - Parallelogram
-    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Polygon Calculator
+    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Unicursal Hexagram, Double Star Polygon, Star of Lakshmi
+
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -273,6 +274,10 @@ Other Tech/Libraries
     - Icosahedron
     - Parallelepiped
     - Hyperboloid
+    - N-dimension Sphere
+    - Trapezoid
+    - Spheroidal Cap
+    - Ellipsoidal Cap
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA

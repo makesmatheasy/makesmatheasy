@@ -179,6 +179,10 @@ function openit(id) {
         "#binomialcoeff",
         "#matrixcollapse",
         "#pows",
+        "#beta",
+
+        "#imprtopr",
+
         "#matrixprops",
         "#cramer",
         "#fractions",
@@ -227,6 +231,7 @@ function openit(id) {
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
+        "#manhats",
         "#pandc",
         "#enna_prism",
         "#pairfacts",
@@ -242,6 +247,7 @@ function openit(id) {
         "#straightline",
         "#binary-hexadecimal",
         "#cay",
+        "#utcs",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
