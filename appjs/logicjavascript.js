@@ -11241,5 +11241,4 @@ function volCube() {
     const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
     ans = ans + per + " %";
     document.getElementById("cubeAns").innerText = ans;
-
 }
