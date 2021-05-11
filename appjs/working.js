@@ -279,6 +279,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#3d-shape-btn").click(function () {
+        openit("#3d-shape");
+        closenav();
+        clearall();
+    });
+
     $("#per-chng-sphere").click(function () {
         openit("#chng-vol-sphere");
         closenav();
