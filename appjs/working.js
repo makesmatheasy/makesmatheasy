@@ -18,27 +18,6 @@ function clearall() {
     }, 1000);
 }
 
-$("#clock").click(function(){
-    openit("#clocks");
-    closenav();
-    clearall();
-});
-$("#utc").click(function(){
-    openit("#utcs");
-    closenav();
-    clearall();
-});
-$("#manhat").click(function(){
-    openit("#manhats");
-    closenav();
-    clearall();
-});
-
-$("#manhat").click(function(){
-    openit("#manhats");
-    closenav();
-    clearall();
-});
 
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
@@ -236,6 +215,21 @@ $(document).ready(function () {
     });
     $("#corgeobtn").click(function () {
         openit("#corgeo");
+        closenav();
+        clearall();
+    });
+    $("#clock").click(function(){
+        openit("#clocks");
+        closenav();
+        clearall();
+    });
+    $("#utc").click(function(){
+        openit("#utcs");
+        closenav();
+        clearall();
+    });
+    $("#manhat").click(function(){
+        openit("#manhats");
         closenav();
         clearall();
     });
