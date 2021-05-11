@@ -9667,7 +9667,7 @@ function hammingCalc1(){
             var p = parseInt(parity,2).toString();
             result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right";
         }
-    }else if(type1 === "Left-To-Right" && type2 === "Odd"){
+    }else if(type1 === "Left-To-Right" && type2 === "Odd"){//left to right using odd parity
         let n = input1.length;
         let k=0,ctr=0;
         var parity = "";
