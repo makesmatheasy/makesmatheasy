@@ -1927,8 +1927,12 @@ function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
     var saoutput = document.getElementById("resultoftetrahexaarea");
+    var midoutput =  document.getElementById("resultoftetrahexamidradius");
+    var inoutput =  document.getElementById("resultoftetrahexainradius");
     var voltemp = "";
     var satemp = "";
+    var midtemp = "";
+    var intemp = "";
     if (a != "") {
         voltemp += "\\[ \\frac{" + 3 + "\\times" + a + "\\times" + a + "\\times" + a  + "}{" + 2 + "}\\]";
         voltemp += "\\[Volume \\space of \\space Tetrahexahedron \\space is \\space \\]";
@@ -1936,13 +1940,25 @@ function solvetetrahexa(){
         voloutput.innerHTML = voltemp;
         satemp += "\\[ " + 3 + "\\times" + a + "\\times" + a + "\\times" + "\\sqrt{" + 5 + "}" +"\\]";
         satemp += "\\[Surface \\space Area \\space of \\space Tetrahexahedron \\space is \\space \\]";
-        satemp += "\\[" + eval(String(3 * a * a * Math.sqrt(5) )) + "\\]";
+        satemp += "\\[" + eval(String(3 * a * a * Math.sqrt(5) )).toFixed(3) + "\\]";
         saoutput.innerHTML = satemp;
+        midtemp += "\\[ \\frac {" + a + "\\times \\sqrt{2}}{2} \\]";
+        midtemp += "\\[Midsphere \\space Radius \\space of \\space Tetrahexahedron \\space is \\]";
+        midtemp += "\\[ " + eval(String(( a * Math.sqrt(2)) / 2)).toFixed(3) + "\\]";
+        midoutput.innerHTML = midtemp;
+        intemp += "\\[ \\frac {3}{10} \\times " + a + "\\times \\sqrt{5} \\]";
+        intemp += "\\[Insphere \\space Radius \\space of \\space Tetrahexahedron \\space is \\]";
+        intemp += "\\[ " + eval(String(((3/10)* a *Math.sqrt(5)))).toFixed(3) + " \\]";
+        inoutput.innerHTML = intemp;
         renderMathInElement(voloutput);
         renderMathInElement(saoutput);
+        renderMathInElement(midoutput);
+        renderMathInElement(inoutput);
     }else{
         voloutput.innerHTML = "";
         saoutput.innerHTML = "";
+        midoutput.innerHTML = "";
+        inoutput.innerHTML = "";
 
     }
 }
