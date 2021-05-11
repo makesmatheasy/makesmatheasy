@@ -15238,13 +15238,23 @@ N is the population size.
                 <div class="col-6">
                     <form action="">
                     <div class="form-group">
-                        <h5>Detection of Error</h5>
-                        <select id="detect-type" class="form__field">
+                        <h2>Detection of Error</h2>
+                        <h4>Choose Order</h4>
+                        <select id="detect-type1" class="form__field">
                             <option class="form_field" style="background-color: #232a36;">
-                                Even Parity
+                                Right-To-Left
                             </option>
                             <option class="form_field" style="background-color: #232a36;">
-                                Odd Parity
+                                Left-To-Right
+                            </option>
+                        </select>
+                        <h4>Choose Parity Type</h4>
+                        <select id="detect-type2" class="form__field">
+                            <option class="form_field" style="background-color: #232a36;">
+                                Even
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Odd
                             </option>
                         </select>
                         <input type=" " id="detect-input" value="0"
@@ -15253,9 +15263,9 @@ N is the population size.
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <h2>Detect Error</h2>
+                        <h5>Detect Error</h5>
                         <button type="button" class="btn btn-light" onclick="hammingCalc1()">
-                            Find
+                            Find it
                         </button>
                         <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
