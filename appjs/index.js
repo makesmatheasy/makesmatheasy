@@ -321,6 +321,7 @@ function openit(id) {
         "#setcal",
         "#mi",
         "#ip",
+        "#oocs",
         "#partialcy",
         "#prices",
         "#centcal",

@@ -1567,3 +1567,29 @@ function manhatcal()
     }
     document.getElementById("manhatans").innerHTML=ans;
 }
+
+function oocal()
+{
+    var num4=document.getElementById("oocx").value;
+    ans="";
+    if(num4=="")
+    {
+        ans="Please enter number";
+    }
+    else
+    {
+        var len=num4.length;
+        var count=0;
+        for(var b=0;b<len;b++)
+        {
+            if(num4[b]=='.')
+            {
+                break;
+            }
+            else 
+            {count++};
+        }
+        ans="The order of mangnitude is : "+(count-1);
+    }
+    document.getElementById("ooans").innerHTML=ans;
+}
