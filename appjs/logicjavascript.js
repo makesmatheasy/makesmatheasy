@@ -987,6 +987,14 @@ function lcmsol(input) {
 //lcm
 //-----------------------------------------------------
 
+function icosagonfind(){
+    let side = parseInt(document.getElementById("inputsideicosa").value)
+    let peri = 20*side
+    let ar = 31.568*side*side
+    document.getElementById("resultofperimetericosa2").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofareaicosa1").innerHTML = "The area is "+ar
+}
+
 function setcal() {
     var s1 = document.getElementById("first-set").value;
     var s2 = document.getElementById("second-set").value;
@@ -1022,11 +1030,20 @@ function setcal() {
     }
 }
 
+
 function betafind(){
     let num1 = parseInt(document.getElementById("betain1").value)
     let num2 = parseInt(document.getElementById("betain2").value)
     let ans = (Math.gamma(num1) + Math.gamma(num2))/Math.gamma(num1+num2)
     document.getElementById("betafindans").innerHTML = ans
+}
+
+function heptafind(){
+    let side = parseInt(document.getElementById("inputsideheptadeca").value)
+    let peri = 17*side
+    let ar = 22.735*side*side
+    document.getElementById("resultofareaheptadeca1").innerHTML = "The area is "+ar
+    document.getElementById("resultofperimeterheptadeca").innerHTML = "The perimeter is "+peri
 }
 
 function exterior(){
@@ -1107,6 +1124,14 @@ function centcal(){
 
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
+}
+
+function decagramfind(){
+    let side  = parseInt(document.getElementById("inputdecagramside").value)
+    let peri = 20*side
+    let ar = 17.231*side*side
+    document.getElementById("resultofdecagramperi").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
 }
 
 function cencirtcal(){
@@ -2243,6 +2268,12 @@ function parallelsolve()
     var explain1 = document.getElementById("line2");
     var m1= (y2-y1)/(x2-x1);
     var m2 = (y4-y3)/(x4-x3);
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)){
+        explain.innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("line1"));
+        document.getElementById('line2').innerHTML= "";
+       }
+    else{
     if(m1==m2){
         explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Parallel" + "\\] ";
         renderMathInElement(document.getElementById("line1"));
@@ -2253,7 +2284,7 @@ function parallelsolve()
         renderMathInElement(document.getElementById("line2"));
         document.getElementById('output2').innerHTML= 'Lines are not parallel';
     }
-    
+}
     
 }
 function perpendicularsolve(){
@@ -2290,13 +2321,20 @@ function solvesection()
     m=parseFloat(document.getElementById('m').value);
     n=parseFloat(document.getElementById('n').value);
     var explain = document.getElementById("sec_formula");
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(m) || isNaN(n)){
+     explain.innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+     renderMathInElement(document.getElementById("sec_formula"));
+     document.getElementById('output').innerHTML= "";
+    }
+    else{
     explain.innerHTML = "\\[ \\space (x,\\space y) \\space = ( \\frac{mx2 \\space + \\space nx1}{m \\space + \\space n} , \\space \\frac{my2 \\space + \\space ny1}{m \\space + \\space n} ) \\space =" + " ( \\frac{" + m +"\\times" + x2 + "+" + n + "\\times" + x1 + "}{" + m + "+" + n + "}" + "," + "\\frac{" + m +"\\times" + y2 + "+" + n + "\\times" + y1 + "}{" + m + "+" + n + "} )" + "\\] ";
     renderMathInElement(document.getElementById("sec_formula"));
     var pt1 = (m*x2 + n *x1)/(m+n);
     var pt2 = (m*y2 + n *y1)/(m+n);
     document.getElementById('output').innerHTML= 'Point dividing (' + x1 + ',' + y1 + ') and (' + x2 + ',' + y2 + ') in the ratio ' + m + ':' + n + ' is (' + pt1 + ', ' + pt2 + ')' ;
-    
+    }
 }
+
 
 
 function circumsolve(){
@@ -2332,13 +2370,19 @@ function incentersolve(){
     a=parseFloat(document.getElementById('ina').value);
     b=parseFloat(document.getElementById('inb').value);
     c=parseFloat(document.getElementById('inc').value);
-    var incenterop = document.getElementById("in_output");
-    var explain = document.getElementById("informula");
-    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (a!="") && (b!="") && (c!="")){
-        incenterop.innerHTML = "\\[Incenter \\space = \\space (" + eval(String(((a*x1)+(b*x2)+(c*x3))/(a+b+c))) + "," + eval(String(((a*y1)+(b*y2)+(c*y3))/(a+b+c))) + ")"  +"\\]";
+    var incenterop = document.getElementById("informula");
+    var explain = document.getElementById("in_output");
+    var temp = "";
+
+    if((!isNaN(x1)) && (!isNaN(y1)) && (!isNaN(x2)) && (!isNaN(y2)) && (!isNaN(x3)) && (!isNaN(y3)) && (!isNaN(a)) && (!isNaN(b)) && (!isNaN(c))){
+        explain.innerHTML = "\\[Incenter \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" + "\\] ";
         renderMathInElement(document.getElementById("in_output"));
-        explain.innerHTML = "\\[Formula \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" + "\\] ";
-        renderMathInElement(document.getElementById("informula"));
+        temp += "\\[( \\frac { (" + a + "\\times" + x1 + ") + (" + b + "\\times" + x2 + ") + (" + c + "\\times" + x3 + ")}{ ( (" + a + ")+ (" + b + ") + (" + c + "))} \\space , \\space ( \\frac { (" + a + "\\times" + y1 + ") + (" + b + "\\times" + y2 + ") + (" + c + "\\times" + y3 + ") }{ ((" + a + ") + (" + b + ") + (" + c + "))} ) \\]";
+        temp += "\\[( \\frac { ((" + (a*x1) + " ) + (" + (b*x2) + ") + (" + (c*x3) + "))}{ " + (a+b+c) + "} \\space , \\space ( \\frac { ((" + (a*y1) + ") + (" + (b*y2) + ") + (" + (c*y3) + "))}{ " + (a+b+c) + "}) \\]";
+        temp += "\\[( \\frac { " + ((a*x1)+(b*x2)+(c*x3)) + "}{" + (a+b+c) + "} \\space , \\space \\frac { " + ((a*y1)+(b*y2)+(c*y3)) + "}{" + (a+b+c) + "} ) \\]";
+        temp += "\\[(" + (eval(String(((a*x1)+(b*x2)+(c*x3))/(a+b+c)))).toFixed(3) + "," + (eval(String(((a*y1)+(b*y2)+(c*y3))/(a+b+c)))).toFixed(3) + ")"  +"\\]";
+        incenterop.innerHTML = temp;
+        renderMathInElement(incenterop);
 
     }
 }
@@ -2608,6 +2652,77 @@ function vectordot(){
     renderMathInElement(document.getElementById("dotex"));
 }
 
+function vactorangle(){
+    var a=parseFloat(document.getElementById('vaa1').value);
+    var b=parseFloat(document.getElementById('vab1').value);
+    var c=parseFloat(document.getElementById('vac1').value);
+    var d=parseFloat(document.getElementById('vaa2').value);
+    var e=parseFloat(document.getElementById('vab2').value);
+    var f=parseFloat(document.getElementById('vac2').value);
+    var x = (a*d)+(b*e)+(c*f);
+    var y = (a*a+b*b+c*c);
+    var z = (d*d+e*e+f*f);
+    var p = Math.sqrt(a*a+b*b+c*c).toFixed(2);
+    var q = Math.sqrt(d*d+e*e+f*f).toFixed(2);
+    var mult =((180*(Math.acos(x/(p*q))))/Math.PI).toFixed(1);
+    document.getElementById("var").innerHTML = "\\[ \\theta="  + (mult) + "0^{\\circ} \\]";
+    renderMathInElement(document.getElementById("var"));
+  
+    document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vae"));
+}
+
+function vectpral(){
+    var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
+    var a=parseFloat(document.getElementById('vpa1').value);
+    var b=parseFloat(document.getElementById('vpb1').value);
+    var c=parseFloat(document.getElementById('vpc1').value);
+    var d=parseFloat(document.getElementById('vpa2').value);
+    var e=parseFloat(document.getElementById('vpb2').value);
+    var f=parseFloat(document.getElementById('vpc2').value);
+    
+    mul = (b*f);
+    mul1 = (c*e);
+    mul2 = (a*f);
+    mul3 = (c*d);
+    mul4 = (a*e);
+    mul5 =(b*d);
+    ans = (mul-mul1);
+    ans1= -(mul2-mul3);
+    ans2= (mul4-mul5);
+    
+    
+    if(ans1<0 && ans2<0){
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
+        
+
+        }
+        else if(ans1<0){
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
+        
+        }
+        else if(ans2<0){
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
+        
+        }
+        else{
+        document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
+        document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
+        
+        }
+        renderMathInElement(document.getElementById("vpe"));
+        if(ans==0&&ans1==0&&ans2 ==0)
+        {
+            document.getElementById("vpr").innerHTML = "As cross Product is Zero so X is prallel to Y";
+        }
+        else
+        {
+            document.getElementById("vpr").innerHTML = "As cross Product is Not Zero so X is Not prallel to Y"
+        }
+}
 
 function vecotrmod(){
     var a=parseFloat(document.getElementById('vma').value);
@@ -2639,6 +2754,12 @@ function vectorproj(){
     let projy = (d**2+e**2+f**2);
     let proj = Math.sqrt(projy);
     let proj1 = (proj)**2;
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        projtemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorproj1"));
+    }
+    else{
     projtemp  += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Vector \\space Projection \\space Formula \\space is \\]";
     projtemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
     projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toPrecision(2)+ "}(" + d + "," + e + "," + f + ") \\]";
@@ -2646,7 +2767,7 @@ function vectorproj(){
     projoutput.innerHTML = projtemp;
     renderMathInElement(document.getElementById("vectorproj1"));
 }
-
+}
 function vectorplanar(){
     var a=parseFloat(document.getElementById('inp11').value);
     var b=parseFloat(document.getElementById('inp22').value);
@@ -2661,6 +2782,12 @@ function vectorplanar(){
     var mult1 = (b*((d*i)-(f*g)));
     var mult2 = (c*((d*h)-(e*g)));
     var ans = mult-mult1+mult2;
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ||isNaN(g) ||isNaN(h) ||isNaN(i) ){
+        document.getElementById("vectorplanar1").innerHTML = "\\[Please \\space enter \\space valid \\space input  \\]";
+        renderMathInElement(document.getElementById("vectorplanar1"));
+
+    }
+    else{
     if(ans == 0){
     document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Coplanar \\space as \\space Δ \\space = \\space 0.  \\]";
     renderMathInElement(document.getElementById("vectorplanar1"));
@@ -2670,12 +2797,45 @@ function vectorplanar(){
         renderMathInElement(document.getElementById("vectorplanar1"));
     }
 }
+}
+
+function vectorscalar(){
+    let a=parseFloat(document.getElementById('inp09').value);
+    let b=parseFloat(document.getElementById('inp08').value);
+    let c=parseFloat(document.getElementById('inp07').value);
+    let d=parseFloat(document.getElementById('inp06').value);
+    let e=parseFloat(document.getElementById('inp05').value);
+    let f=parseFloat(document.getElementById('inp04').value);
+    let scalaroutput = document.getElementById("vectorscalar1");
+    let scalartemp="";
+    let dot1 = (a*d)+(b*e) + (c*f);
+    let projy = (a**2+b**2+c**2);
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        scalartemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        scalaroutput.innerHTML = scalartemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+    }
+    else{
+    scalartemp += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Scalar \\space Projection \\space Formula \\space is \\]";
+    scalartemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|a|}  \\]";
+    scalartemp += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy)+ "}} \\]";
+    scalartemp += "\\[Scalar \\space Projection \\space of \\space X \\space on \\space Y \\space is \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy) + "}}  \\]";
+    scalaroutput.innerHTML = scalartemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+   }
+}
+
 function vectorunit(){
     var a=parseFloat(document.getElementById('vua').value);
     var b=parseFloat(document.getElementById('vub').value);
     var c=parseFloat(document.getElementById('vuc').value);
 
     var ans = (a*a)+(c*c)+(b*b);
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("vue").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
+        renderMathInElement(document.getElementById("vue"));
+    }
+    else{
     document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
 
 
@@ -2692,6 +2852,7 @@ function vectorunit(){
     else
     document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
     renderMathInElement(document.getElementById("vur"));
+}
 }
 
 function vectorcross(){
@@ -2748,8 +2909,12 @@ function vector_res(){
     var res2 = eval(String((a * a) + (b * b)));
     var res3 = res2+res1;
     var d = nerdamer.sqrt(res3).toString();
-    if(a != "" || b != "" || c != "" ){
-        if(a>0 && b>0){
+    if((isNaN(a)) || (isNaN(b)) || (isNaN(c)) ){
+        restemp += "\\[Please \\space enter \\space valid \\space input \\]";
+        resoutput.innerHTML = restemp;
+        renderMathInElement(resoutput);
+    }
+    else if(a>0 && b>0){
      restemp += "\\[R= \\sqrt{ a^2 + b^2 + 2*a*b*cosθ } \\]";
      restemp += "\\[R= \\sqrt{" + a + "^2+" + b + "^2+" + "2*" + a + "*" + b + "*" + "cos(" + c + ")} \\]";
      restemp += "\\[ \\sqrt{" + a + "^2+" + b + "^2+ (" +  res1 + ") } \\]";
@@ -2765,9 +2930,6 @@ function vector_res(){
             resoutput.innerHTML = restemp;
             renderMathInElement(resoutput);
         }
- } else {
-     resoutput.innerHTML = "";
- }
  }
 
 
@@ -2852,15 +3014,24 @@ function coordinatearea(){
     y3=parseFloat(document.getElementById('y3s').value);
     var areaop = document.getElementById("areaoutput");
     var explain = document.getElementById("formula1");
+    var areatemp = "";
+    var explaintemp = "";
    // explain.innerHTML = "\\[Area \\space  =\\space  \\frac{1}{2}| \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
    // renderMathInElement(document.getElementById("formula"));
-    var area= Math.abs(((x1*y2) - (x1*y3) + (x2*y3) - (x2*y1) + (x3*y1)- (x3*y2))/2);
+    var area= Math.abs(((x1*y2) - (x1*y3) + (x2*y3) - (x2*y1) + (x3*y1)- (x3*y2)));
+    var area1 = (area/2);
     if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="")){
-        areaop.innerHTML = "\\[Area \\space = \\space " + area + "\\space sq. \\space units" +"\\]";
-        renderMathInElement(document.getElementById("areaoutput"));
-        explain.innerHTML = "\\[Formula \\space  =\\space  \\frac{1}{2}| \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
-        renderMathInElement(document.getElementById("formula1"));
-        
+        explaintemp += "\\[Area \\space of \\space Triangle  = \\space  \\frac{1}{2} | \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2-y3) + ") + (" + x2 + ") \\times (" + (y3-y1) + ") + (" + x3 + ") \\times (" + (y1-y2) + ") \\]";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1*(y2-y3)) + ") + (" + (x2*(y3-y1)) + ") + (" + (x3*(y1-y2)) + ") | \\]";
+        explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area) + ") | \\]";
+        explaintemp += "\\[ " + area1 + " \\]";
+        areaop.innerHTML = explaintemp;
+        renderMathInElement(areaoutput);
+        areatemp += "\\[Area \\space = \\space " + area1 + "\\space sq. \\space units \\]";
+        explain.innerHTML = areatemp;
+        renderMathInElement(formula1);
     }
 
 }
@@ -2890,6 +3061,39 @@ else{
     temp += "\\[Please \\space enter \\space all \\space fields \\]";
     output.innerHTML = temp;
     renderMathInElement(output);
+}
+}
+
+function vectortria(){
+    var a,b,c,d,e,f,g,h,i;
+     a = parseInt(document.getElementById("inp90").value);
+     b = parseInt(document.getElementById("inp98").value);
+     c = parseInt(document.getElementById("inp97").value);
+     d = parseInt(document.getElementById("inp96").value);
+     e = parseInt(document.getElementById("inp95").value);
+     f = parseInt(document.getElementById("inp94").value);
+     g =  parseInt(document.getElementById("inp93").value);
+     h = parseInt(document.getElementById("inp92").value);
+     i = parseInt(document.getElementById("inp91").value);
+    var outputtria = document.getElementById("vectortria1");
+    var tempoutput = "";
+    var ans = (((e-b)*(i-c))-((f-c)*(h-b))); var ans1= -(((d-a)*(i-c))-((f-c)*(g-a)) ); var ans2= ( ((d-a)*(h-b))-((e-b)*(g-a)));
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f) && !isNaN(g) && !isNaN(h) && !isNaN(i))
+   {
+    tempoutput += "\\[ Area \\space of \\space Triangle \\space  =  \\space \\frac{1}{2} | \\overrightarrow{AB} \\times \\overrightarrow{AC} | \\]";
+    tempoutput += "\\[ \\overrightarrow{AB}\\space = \\space \\overrightarrow{Y} \\space - \\space \\overrightarrow{X} \\space = \\space (" + (d-a) + "\\hat{i}) \\space + (" + (e-b) + "\\hat{j}) \\space + (" + (f-c) + "\\hat{k}) \\]";
+    tempoutput += "\\[ \\overrightarrow{AC}\\space = \\space \\overrightarrow{Z} \\space - \\space \\overrightarrow{X} \\space = \\space (" + (g-a) + "\\hat{i}) \\space + (" + (h-b) + "\\hat{j}) \\space + (" + (i-c) + "\\hat{k}) \\]";
+    tempoutput +=  "\\[   \\overrightarrow{AB} \\times \\overrightarrow{AC}  \\space = \\space \\hat{i} \\space (" + ((e-b)*(i-c)) + "- \\space (" + ((f-c)*(h-b)) + ")\\space) \\space - \\space \\hat{j} (" + ((d-a)*(i-c)) + "- \\space (" + ((f-c)*(g-a)) + ")\\space)\\space + \\space \\hat{k} (" + ((d-a)*(h-b)) + "- \\space (" + ((e-b)*(g-a)) + ") \\space )    \\]";
+    tempoutput += "\\[ | \\overrightarrow{AB} \\times \\overrightarrow{AC} | \\space = \\space " + ans + "\\hat{i} \\space + \\space ( " + ans1 + "\\hat{j} ) \\space + \\space ( " + ans2 + "\\hat{k} ) \\]";
+    tempoutput += "\\[ | \\overrightarrow{AB} \\times \\overrightarrow{AC} | \\space = \\space \\sqrt{ (" + ans + ")^{2} + (" + ans1 + ")^{2} + (" + ans2 + ")^{2}} \\space = \\space \\sqrt{"+ (ans)**2 + "+" + (ans1)**2 + "+" + (ans2)**2 + "} \\space = \\space \\sqrt{" + ((ans)**2+(ans1)**2+(ans2)**2) + "}  \\]";
+    tempoutput += "\\[  Area \\space of \\space Triangle \\space ABC \\space  =  \\space \\frac{1}{2} \\sqrt{" +  ((ans)**2+(ans1)**2+(ans2)**2) + "} \\space = \\space \\sqrt{" +   (((ans)**2+(ans1)**2+(ans2)**2))/4 + "} \\space  \\]";
+    outputtria.innerHTML = tempoutput;
+    renderMathInElement(outputtria);
+}
+else{
+    tempoutput += "\\[Please \\space enter \\space all \\space fields \\]";
+    outputtria.innerHTML = tempoutput;
+    renderMathInElement(outputtria);
 }
 }
 
@@ -3463,8 +3667,8 @@ function interiorsolve(){
 function Kitesolve() {
     var p = document.getElementById("inputp").value;
     var q = document.getElementById("inputq").value;
-    var a = document.getElementById("inputsidea").value;
-    var b = document.getElementById("inputsideb").value;
+    var a = document.getElementById("inputsidea1").value;
+    var b = document.getElementById("inputsideb1").value;
     var resultareaKite = document.getElementById("resultofareaK");
     var resultperiKite = document.getElementById("resultofperiK");
     resultareaKite.innerHTML = "";
@@ -3876,6 +4080,31 @@ function solvecirclecal(){
     renderMathInElement(document.getElementById("resultofdiacircal"));
 }
 
+function solveastroid() {
+    var side = document.getElementById("inputsideastroid").value;  
+    var areaoutput = document.getElementById("resultofastroidarea");
+    var lengthoutput = document.getElementById("resultofastroidlen");
+    var areatemp = "";
+    var lengthtemp = "";
+    if ((side != "")) {
+        areatemp += "\\[Area \\space of \\space Astroid \\space" +  "\\]";
+        areatemp += "\\[\\frac{3 \\pi \\times" + side + "\\times" + side+ "}{8}" + "\\space" + "=" + eval(String(1.1775 * side * side)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        lengthtemp += "\\[Length \\space of \\space Astroid \\space is \\space \\]";
+        lengthtemp += "\\[" + 6 + "\\times" + side + "=" + eval(String(6 * side)) + "\\]";
+        lengthoutput.innerHTML = lengthtemp;
+       
+        renderMathInElement(areaoutput);
+        renderMathInElement(lengthoutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        lengthoutput.innerHTML = "";    
+
+    }
+}
+
 function solveoctadeca(){
     var side = parseInt(document.getElementById("inputsideoctadeca").value);
     var area = 18/4 * side**2 * math.cot(math.pi/18);
@@ -4117,6 +4346,50 @@ function solvepentagram() {
 
 }
 
+function solveoctagram() {
+    var a = document.getElementById("inputoctgramside").value;
+    var spikeoutput = document.getElementById("resultofoctgramspike");
+    var diagoutput = document.getElementById("resultofoctgramdiag");
+    var chordoutput = document.getElementById("resultofoctgramcho");
+    var perioutput = document.getElementById("resultofoctgramperi");
+    var areaoutput = document.getElementById("resultofoctgramarea");
+    var spiketemp = "";
+    var diagtemp = "";
+    var chordtemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        spiketemp += "\\[Spike \\space length \\space of \\space Octagram \\newline \\frac{2 - \\sqrt{2}}{2} \\times (1 + \\sqrt{2}) \\times" + a + "\\ = " + eval(String(0.70710678 * a)).toFixed(2) + "\\]";
+        spikeoutput.innerHTML = spiketemp;
+
+        diagtemp += "\\[Diagonal \\space of \\space Octagram \\space \\newline \\sqrt{4 + 2 \\times \\sqrt{2}} \\times" + a + "\\ = " + eval(String(2.61312593 * a)).toFixed(2) + "\\]";
+        diagoutput.innerHTML = diagtemp;
+
+        chordtemp += "\\[Chord \\space length \\space of \\space Octagram \\space \\newline (1 + \\sqrt{2}) \\times" + a + "\\ = " + eval(String(2.41421356 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Octagram \\space \\newline 8 \\space (2 - \\sqrt{2}) \\space (1 + \\sqrt{2}) \\times " + a + "\\ = " + eval(String(11.3137085 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of \\space Octagram \\space \\newline (6 \\space \\sqrt{2} - 8) \\space (1 + \\sqrt{2})^2 \\times" + a + "^2" + "\\ = " + eval(String(2.82842712 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(spikeoutput);
+        renderMathInElement(diagoutput);
+        renderMathInElement(chordoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        spikeoutput.innerHTML = "";
+        diagoutput.innerHTML = "";
+        chordoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solvedoustar() {
     var b = document.getElementById("inputdoustarside").value;
     var l1 = document.getElementById("inputdoustarlonlen").value;
@@ -4165,6 +4438,85 @@ function solvedoustar() {
         areaoutput.innerHTML = "";
     }
 
+}
+
+function solvelakstar() {
+    var a = document.getElementById("inputlakstarside").value;
+    var boutput = document.getElementById("resultoflakstaredoct");
+    var coutput = document.getElementById("resultoflakstaredstar");
+    var areastaroutput = document.getElementById("resultoflakstararea");
+    var areaoctoutput = document.getElementById("resultoflakstarareaoct");
+    var perioutput = document.getElementById("resultoflakstarperi");
+    var chordoutput = document.getElementById("resultoflakstarchord");
+    var btemp = "";
+    var ctemp = "";
+    var areastartemp = "";
+    var areaocttemp = "";
+    var peritemp = "";
+    var chordtemp = "";
+    if (a != "") {
+        btemp += "\\[Edge \\space length \\space octagon \\space \\newline (" + "\\sqrt{2} - 1 ) \\times" + a + "\\ = " + eval(String(0.41421356 * a)).toFixed(2) + "\\]";
+        boutput.innerHTML = btemp;
+
+        ctemp += "\\[Edge \\space length \\space star \\space \\newline \\frac{(2 - \\sqrt{2})}{2} \\times" + a + "\\ = " + eval(String(0.29289322 * a)).toFixed(2) + "\\]";
+        coutput.innerHTML = ctemp;
+
+        areastartemp += "\\[Area \\space of \\space star \\space \\newline 2 \\times ( 2 - \\sqrt{2}) \\times" + a + "\\times" + a + "\\ = " + eval(String(1.17157288 * a * a)).toFixed(2) + "\\]";
+        areastaroutput.innerHTML = areastartemp;
+
+        areaocttemp += "\\[Area \\space of \\space octagon \\space \\newline 2 \\times ( \\sqrt{2} - 1) \\times" + a + "\\times" + a + "\\ = " + eval(String(0.82842712 * a * a)).toFixed(2) + "\\]";
+        areaoctoutput.innerHTML = areaocttemp;
+
+        peritemp += "\\[Perimeter \\space \\newline 8 \\times ( 2 - \\sqrt{2}) \\times" + a + "\\ = " + eval(String(4.6862915 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        chordtemp += "\\[Chord \\space length \\space \\newline ( 2 - \\sqrt{2}) \\times" + a + "\\times 0.9238" + "\\ = " + eval(String(0.5411961 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        renderMathInElement(boutput);
+        renderMathInElement(coutput);
+        renderMathInElement(areastaroutput);
+        renderMathInElement(areaoctoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(chordoutput);
+
+    } else {
+        boutput.innerHTML = "";
+        coutput.innerHTML = "";
+        areastaroutput.innerHTML = "";
+        areaoctoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        chordoutput.innerHTML = "";
+    }
+
+}
+
+//ellipsoidal cap shape Calculator
+function ellipcap(){
+    var a = document.getElementById("spcapsemiaxisa").value;
+    var b = document.getElementById("spcapsemiaxisb").value;
+    var c = document.getElementById("spcapsemiaxisc").value;
+    var h = document.getElementById("spcapheight").value;
+
+    var vol = ((math.pi * a * b) / (3 * c**2)) * h**2 * ((3 * c) - h ) ;
+    var ba = ((math.pi * a * b) / (c**2)) * h * ((2 * c) - h );
+
+    if(a!="" && c!="" && h!=""){
+        document.getElementById("volspcap1").innerHTML = "\\[Volume \\space of \\space Ellipsoidal \\space Cap \\space is \\space \\]";
+        document.getElementById("volspcap2").innerHTML = "\\[\\frac{\\pi \\times "+a+" \\times "+b+"}{3 \\times"+c+"^2 } \\times"+h+"^2 \\times (3\\times"+c+"- "+h+" ) = "+vol.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("volspcap1"));
+        renderMathInElement(document.getElementById("volspcap2"));
+        
+        document.getElementById("baspcap1").innerHTML = "\\[Base \\space Area \\space of \\space Ellipsoidal \\space Cap \\space is \\space \\]";
+        document.getElementById("baspcap2").innerHTML = "\\[\\frac{\\pi \\times"+a+"\\times "+b+"}{"+c+"^2 } \\times "+h+" \\times (2 \\times"+c+" - "+h+" ) = "+ba.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("baspcap1"));
+        renderMathInElement(document.getElementById("baspcap2"));
+    } else{
+        document.getElementById("volspcap1").innerHTML ="";
+        document.getElementById("volspcap2").innerHTML = "";
+        document.getElementById("baspcap1").innerHTML ="";
+        document.getElementById("baspcap2").innerHTML ="";
+    }
 }
 
 function solveannulus() {
@@ -4744,6 +5096,75 @@ function decaprismsolve(){
         voloutput.innerHTML = "";    
     }
 }
+
+//Enneagonal Prism calculator
+function ennaprismsolve(){
+    var edge = document.getElementById("inputennaprismedge").value;
+    var height = document.getElementById("inputennaprismheight").value;
+    var voloutput = document.getElementById("resultofvolennaprism");
+    var laoutput = document.getElementById("resultofareaennaprism");
+    var baoutput = document.getElementById("resultofbaseareaennaprism");
+    var saoutput = document.getElementById("resultofsaennaprism");
+    var vol = 2.25*edge*edge*height*2.747;
+    var laarea = 9*edge*height;
+    var barea = 2.25*edge*edge*2.747;
+    var sarea = laarea + 4.5*edge*edge*2.747;
+    var voltemp ="";
+    var batemp="";
+    var satemp="";
+    var latemp="";
+    if ((height != "") && (edge != "")) {
+        voltemp += "\\[Volume \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        voltemp += "\\[\\frac{9}{4}" + "\\times" + edge + "\\times" + edge + "\\times cot(\\frac{180\\degree}{9}) \\times" + height +   "=" + eval(String(vol.toFixed(2) )) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(voloutput);
+        batemp += "\\[Base \\space area \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        batemp += "\\[\\frac{9}{4}" + "\\times" + edge + "\\times" +  edge + "\\times cot(\\frac{180\\degree}{9})" +   "=" + eval(String(barea.toFixed(2) )) + "\\]";
+        baoutput.innerHTML = batemp;
+        renderMathInElement(baoutput);
+        latemp += "\\[Lateral \\space area \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        latemp += "\\[9 \\times " + edge + "\\times" + height +   "=" + eval(String(laarea.toFixed(2) )) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        satemp += "\\[Surface \\space area \\space of \\space Enneagonal \\space Prism \\space is \\space \\]";
+        satemp += "\\[9 \\times" + edge + "\\times" + height + "\\times + \\frac{9}{2} \\times" + edge + "\\times" + edge + "\\times cot(\\frac{180\\degree}{9})" +   "=" + eval(String(sarea.toFixed(2) )) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(saoutput);
+    }
+    else {
+        baoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        voloutput.innerHTML = "";    
+    }
+}
+
+function eqtrianprismsolve(){
+    var a = document.getElementById("inputeqtrianprismedge").value;
+    var h = document.getElementById("inputeqtrianprismheight").value;
+    var voloutput1 = document.getElementById("resultofvoleqtrianprism1");
+    var voloutput2 = document.getElementById("resultofvoleqtrianprism2");
+    var areaoutput1 = document.getElementById("resultofareaeqtrianprism1");
+    var areaoutput2 = document.getElementById("resultofareaeqtrianprism2");
+    var vol = (math.sqrt(3) / 4) * a**2 *h; 
+    var area = (math.sqrt(3) / 2) * a**2 + (3 * a * h);
+    if ((h != "") && (a != "")) {
+        voloutput1.innerHTML = "\\[Volume \\space of \\space Equilateral \\space Prism \\space (V)\\]";
+        voloutput2.innerHTML = "\\[\\frac{\\sqrt{3}}{4} \\times "+a+"^2 \\times "+h+" = " + vol.toFixed(2) + "\\]";
+        renderMathInElement(voloutput1);
+        renderMathInElement(voloutput2);
+        areaoutput1.innerHTML = "\\[Area \\space of \\space Equilateral \\space Prism \\space (S)\\]";
+        areaoutput2.innerHTML = "\\[\\frac{\\sqrt{3}}{2} \\times "+a+"^2 \\space + \\space 3 \\times "+a+" \\times "+h+" = " + area.toFixed(2) + "\\]";
+        renderMathInElement(areaoutput1);
+        renderMathInElement(areaoutput2);
+    } else{
+        voloutput1.innerHTML ="";
+        voloutput2.innerHTML = "";
+        areaoutput1.innerHTML = "";
+        areaoutput2.innerHTML = "";
+    }
+}
+
 //Obelisk Calculator
 function obelisksolve(){
     var a = document.getElementById("inputobebase").value;
@@ -5002,6 +5423,38 @@ function tripyramidsolve() {
     }
 }
 
+function eltripyramidsolve() {
+    var side = document.getElementById("inputeltripyramidside").value;
+    var voloutput = document.getElementById("resultofeltripyrvol");
+    var areaoutput = document.getElementById("resultofeltripyrarea");
+    var houtput = document.getElementById("resultofeltripyrheight");
+    var voltemp = "";
+    var areatemp = "";
+    var htemp = "";
+    if (side != "") {
+        voltemp += "\\[ (" + "\\frac{1}{12}(" + "\\sqrt{2}+3\\sqrt{3}" + "))" + "\\times" + side + "\\times" + side + "\\times" + side  + "\\]";
+        voltemp += "\\[Volume  \\space is \\space " + eval(String( 0.5508 * side * side * side )) + " \\]";
+        voloutput.innerHTML = voltemp;
+        
+        areatemp += "\\[ (" + 3 + "+" + "\\sqrt{3})" + "\\times" + side + "\\times" + side  +"\\]";
+        areatemp += "\\[Area \\space is \\space"  + eval(String(4.732 * side * side)) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        htemp += "\\[" + side + "\\times (" + "1 + \\frac{\\sqrt{6}}{3} )" + "\\]";
+        htemp += "\\[Height \\space is \\space " + eval(String(1.816 * side )) + " \\]";
+        houtput.innerHTML = htemp;
+
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(houtput);
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        houtput.innerHTML = "";
+    }
+}
+
 function centsolve(){
     var x1 = parseInt(document.getElementById("x1st").value)
     var y1 = parseInt(document.getElementById("y1st").value)
@@ -5011,7 +5464,18 @@ function centsolve(){
     var y3 = parseInt(document.getElementById("y3rd").value)
     var xans = (x1+x2+x3)/3
     var yans = (y1+y2+y3)/3
-    document.getElementById("apk").innerHTML = xans + "," + yans
+    var centout1 = document.getElementById("apk");
+    var centemp1 = "";
+    if((x1 !="") && (y1 != "") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 != "")){
+        centemp1 += "\\[Centroid \\space of \\space a \\space Triangle \\ is \\space ( \\space \\frac{x_1+x_2+x_3}{3} \\space , \\space \\frac{y_1+y_2+y_3}{3} ) \\space \\]";
+        centemp1 += "\\[( \\space \\frac{ (" + x1 + ") + (" + x2 + ") + (" + x3 + ") }{3} \\space , \\space \\frac{ (" + y1 + ") + (" + y2 + ") + (" + y3 +  ") }{3} \\space ) \\]";
+        centemp1 += "\\[( " + xans.toFixed(3) + "," + yans.toFixed(3) + " )\\]";
+        centout1.innerHTML = centemp1;
+        renderMathInElement(centout1);
+    }
+    else{
+        centout1.innerHTML = "";
+    }
 }
 //Octagonal pyramid
 function octpyramidsolve() {
@@ -5083,6 +5547,39 @@ function pentpyramidsolve(){
         renderMathInElement(areaoutput1);
         renderMathInElement(areaoutput2);
         renderMathInElement(areaoutput3);
+    }
+}
+
+//pentagonal Bipyramid
+function pentbipyramidsolve() {
+    var side = document.getElementById("inputpentbipyramidside").value;
+    var voloutput = document.getElementById("resultofpentbipyrvol");
+    var areaoutput = document.getElementById("resultofpentbipyrarea");
+    var houtput = document.getElementById("resultofpentbipyrheight");
+    var voltemp = "";
+    var areatemp = "";
+    var htemp = "";
+    if (side != "") {
+        voltemp += "\\[ (" + "\\frac{5+\\sqrt{5}}{12}" + ")" + "\\times" + side + "\\times" + side + "\\times" + side  + "\\]";
+        voltemp += "\\[Volume  \\space is \\space " + eval(String( 0.603 * side * side * side )) + " \\]";
+        voloutput.innerHTML = voltemp;
+        
+        areatemp += "\\[ (" + "\\frac{5\\sqrt{3}}{2}" + ")" + "\\times" + side + "\\times" + side  +"\\]";
+        areatemp += "\\[Area \\space is \\space"  + eval(String(4.33 * side * side)) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        htemp += "\\[" + side + "\\times (" + "\\sqrt{2-\\frac{2}{\\sqrt{5}}} )" + "\\]";
+        htemp += "\\[Height \\space is \\space " + eval(String(1.816 * side )) + " \\]";
+        houtput.innerHTML = htemp;
+
+       
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(houtput);
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        houtput.innerHTML = "";
     }
 }
 
@@ -8258,6 +8755,34 @@ function hypf(){
     document.getElementById("hypans3").innerHTML ="\\[ = "+ans.toFixed(3)+ "\\]";
     renderMathInElement(document.getElementById("hypans3"));
 }
+
+//spheroidal cap Calculator added
+function spcap(){
+    var a = document.getElementById("sprcapsemiaxisa").value;
+    var c = document.getElementById("sprcapsemiaxisc").value;
+    var h = document.getElementById("sprcapheight").value;
+
+    var vol = ((math.pi * a**2 * h**2) / (3 * c**2)) * ((3 * c) - h ) ;
+    var ba = math.pi * a**2 * ( 1- (1 - (h/c))**2 );
+
+    if(a!="" && c!="" && h!=""){
+        document.getElementById("volsprcap1").innerHTML = "\\[Volume \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
+        document.getElementById("volsprcap2").innerHTML = "\\[\\frac{\\pi \\times "+a+"^2 \\times "+h+"^2}{3 \\times "+c+"^2 } \\times (3\\times"+c+" - "+h+" ) = "+vol.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("volsprcap1"));
+        renderMathInElement(document.getElementById("volsprcap2"));
+        
+        document.getElementById("basprcap1").innerHTML = "\\[Base \\space Area \\space of \\space Spheroidal \\space Cap \\space is \\space \\]";
+        document.getElementById("basprcap2").innerHTML = "\\[\\pi \\times "+a+"^2 \\times (1- (1- \\frac{"+h+"}{"+c+"})^2 ) = "+ba.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("basprcap1"));
+        renderMathInElement(document.getElementById("basprcap2"));
+    } else{
+        document.getElementById("volsprcap1").innerHTML ="";
+        document.getElementById("volsprcap2").innerHTML = "";
+        document.getElementById("basprcap1").innerHTML ="";
+        document.getElementById("basprcap2").innerHTML ="";
+    }
+}
+
 //Mode end
 //Variance
 function Variance() {
@@ -8323,7 +8848,12 @@ function vtp(){
     let vvz3 = parseInt(document.getElementById("vvz3").value)
     let cvec = vvx1*vvx2 + vvy1*vvy2 + vvz1*vvz2
     let avec = vvx2*vvx3 + vvy2*vvy3 + vvz2*vvz3
+    if((isNaN(vvx1)) || (isNaN(vvy1)) || (isNaN(vvz1))|| (isNaN(vvx2))|| (isNaN(vvy2))|| (isNaN(vvz2))|| (isNaN(vvx3))|| (isNaN(vvy3))|| (isNaN(vvz3))){
+     document.getElementById("vtpans").innerHTML = "Please enter valid input ";
+    }
+    else{
     document.getElementById("vtpans").innerHTML = cvec + "c - "+ avec +"a"
+}
 }
 // Standard Deviation
 function std() {
@@ -9012,13 +9542,18 @@ function hammingDistance(x, y) {
 //function for encoding a message hamming code
 function hammingCalc(){
     const input = document.getElementById("hamming-input").value;
-    const type = document.getElementById("hamming-select1").value;
+    const type1 = document.getElementById("hamming-select1").value;
+    const type2 = document.getElementById("hamming-select2").value;
     let result = document.getElementById("hamming-result");
 
-    if(type === "Left-To-Right"){
+    if(type1 === "Left-To-Right" && type2 ==="Even"){
         result.innerHTML = hammingCodeLtoREven(input);
-    }else{
+    }else if(type1 === "Right-To-Left" && type2 === "Even"){
         result.innerHTML = hammingCodeRtoLEven(input);
+    }else if(type1 === "Left-To-Right" && type2 === "Odd"){
+        result.innerHTML = hammingCodeLtoROdd(input);
+    }else if(type1 === "Right-To-Left" && type2 === "Odd"){
+        result.innerHTML = hammingCodeRtoLOdd(input);
     }
 }
 
@@ -9180,6 +9715,101 @@ function hammingCodeRtoLEven(x){
                 res1 +="0";
             }else {
                 res1 +="1";
+            }
+            par =0;
+        }else{
+            res1 += res[i];
+        }
+    }
+    console.log(res);
+    return res1.split("").reverse().join(""); //reverse the ans to get the ans for R to L
+}
+
+//function for encoding message using hamming code with odd parity from left to right
+function hammingCodeLtoROdd(x){
+    let n = x.length;
+    let p = 0,t = 0,c=0;
+    let k = 0, l = 0,s=0;
+    let res = "",res1="";
+    var par=0;
+    //find number of parity bits
+    while(p==0){
+        if (Math.pow(2,s) >= n+ s + 1){
+        p=s;
+        }
+        s+=1;
+    }
+    t=p+n; //total bit of hamming code
+    for (var j = 0; j<t; j++){
+        if((j+1)== Math.pow(2,k)){
+            res = res + "?";
+            k+=1;
+        }else{
+            res = res + x[l];
+            l+=1;
+        }
+    }
+    for (var i =0; i<res.length;i++){
+        if(res[i]=="?"){
+            c=i+2;
+            while(c<=t){
+                if(((i+1) & c) == (i+1)){
+                    par += parseInt(res[c-1]);
+                }
+                c+=1;
+            }
+            if(par % 2 == 0){
+                res1 +="1";
+            }else {
+                res1 +="0";
+            }
+            par =0;
+        }else{
+            res1 += res[i];
+        }
+    }
+    console.log(res);
+    return res1;
+}
+
+//function for encoding message using hamming code with odd parity from Right to left
+function hammingCodeRtoLOdd(x){
+    let n = x.length;
+    let p = 0,t = 0,c=0;
+    let k = 0, l = 0,s=0;
+    let res = "",res1="";
+    let par=0;
+    x= x.split("").reverse().join("");//reverse the input for R to L
+    //find number of parity bits
+    while(p==0){
+        if (Math.pow(2,s) >= n+ s + 1){
+        p=s;
+        }
+        s+=1;
+    }
+    t=p+n; //total bit of hamming code
+    for (var j = 0; j<t; j++){
+        if((j+1)== Math.pow(2,k)){
+            res = res + "?";
+            k+=1;
+        }else{
+            res = res + x[l];
+            l+=1;
+        }
+    }
+    for (var i =0; i<res.length;i++){
+        if(res[i]=="?"){
+            c=i+2;
+            while(c<=t){
+                if(((i+1) & c) == (i+1)){
+                    par += parseInt(res[c-1]);
+                }
+                c+=1;
+            }
+            if(par % 2 == 0){
+                res1 +="1";
+            }else {
+                res1 +="0";
             }
             par =0;
         }else{
@@ -9404,6 +10034,8 @@ function convertgreydec(){
     const fromBase = document.getElementById("grey-select2").value;
     var input = document.getElementById("greydec-input").value;
     let result2 = document.getElementById("greydec2-result");
+    let work = document.getElementById("grey-dec-working");
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
     result2.innerHTML="";
     let from = 2;
     let to = 2;
@@ -9418,25 +10050,47 @@ function convertgreydec(){
     }
 
     //console.log(result1);
+    //assigned first value of input inside result
     var x = result1[0];
 
     if (fromBase === "Grey Code"){
+        print +=  "<h4> Converting Grey Code to Decimal </h4> &emsp;";
+        print +=  "<br><h5>STEP 1 : Take the first bit of the gray code input and write it to the output. Output -> " + x + "</h5>";
+        print +=  "<br><h5>STEP 2 : Repeat the steps below until you reach the end of the input </h5>";
         for (var i = 1; i < result1.length; i++){
-            x += parseInt(x[i - 1] ^ result1[i]).toString();
+            var n = parseInt(x[i - 1] ^ result1[i]).toString();
+            print += "Take the " + (i+1) + "'th bit of the input and XOR it to the previous bit of the Output " + "i.e,"+ result1[i] + "⊕" + x.charAt(x.length-1) + "=" + n + "<br>";
+            print +=  "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + n + "</span><br><br>";
+            x += n;
         }
+        print += "<br><h5>STEP 3 : So, our binary result is:" + x + " </h5>";
+        print += "<br><h5>Step 4 : Convert the binary output to decimal</h5>";
+        var temp = x;
         x = parseInt(x,2).toString();
+        print += temp + "->" + x;
     }
 
     else{
-        for (var i = 1; i < result1.length; i++)
-            x += parseInt(result1[i - 1] ^ result1[i]).toString();
+        print +=  "<h4> Converting Decimal to Grey Code </h4> &emsp;";
+        print +=  "<br><h5>STEP 1 : Convert the input from decimal to binary.</h5>";
+        print +=  input + "->" + result1;
+        print +=  "<br><h5>STEP 2 : Take the first bit of the binary input and write it to the output.</h5>";
+        print +=  "Output ->" + x;
+        print +=  "<br><h5>STEP 3 : Repeat the steps below until you reach the end of the input </h5>";
+        for (var i = 1; i < result1.length; i++){
+            var m = parseInt(result1[i - 1] ^ result1[i]).toString();
+            print += "Take the " + (i+1) + "'th bit of the input and XOR it to the previous bit of the input " + "i.e,"+ result1[i] + "⊕" + result1[i-1] + "=" + m + "<br>";
+            print +=  "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + m + "</span><br><br>";
+            x += m;
+        }
+        print += "<br><h5>STEP 4 : So, our final gray code result is" + x + "</h5>";
     }
     if(input=="")
 	{
 	  x="";
 	}
-    result2.innerHTML = x;
-
+    result2.innerHTML = "Answer -> " + x;
+    work.innerHTML = print;
 }
 
 //Function that performs conversion of grey to binary and viceversa
@@ -9444,21 +10098,43 @@ function convertgrey() {
     const fromBase = document.getElementById("grey-select1").value;
     var input = document.getElementById("grey-input").value;
     let result = document.getElementById("grey-result");
+    let work = document.getElementById("grey-working");
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
     var x = input[0];
 
-    if (fromBase == "Binary")
-        for (var i = 1; i < input.length; i++)
-            x += parseInt(input[i - 1] ^ input[i]).toString();
+    if (fromBase == "Binary"){
+        print +=  "<h4> Converting Binary to Grey Code </h4> &emsp;";
+        print +=  "<br><h5>STEP 1 : Take the first bit of the input and write it to the output.</h5>";
+        print +=  "Output ->" + x;
+        print +=  "<br><h5>STEP 2 : Repeat the steps below until you reach the end of the input </h5>";
+        for (var i = 1; i < input.length; i++){
+            var m= parseInt(input[i - 1] ^ input[i]).toString();
+            print += "Take the " + (i+1) + "'th bit of the input and XOR it to the previous bit of the input " + "i.e,"+ input[i] + "⊕" + input[i-1] + "=" + m + "<br>";
+            print +=  "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + m + "</span><br><br>";
+            x += m;
+        }
+        print += "<br><h5>STEP 3 : So, our final gray code result is" + x + "</h5>";
+    }
 
-    else
-        for (var i = 1; i < input.length; i++)
-            x += parseInt(x[i - 1] ^ input[i]).toString();
+    else{
+        print +=  "<h4> Converting Grey Code to Binary </h4> &emsp;";
+        print +=  "<br><h5>STEP 1 : Take the first bit of the gray code input and write it to the output. Output -> " + x + "</h5>";
+        print +=  "<br><h5>STEP 2 : Repeat the steps below until you reach the end of the input </h5>";
+        for (var i = 1; i < input.length; i++){
+            var n = parseInt(x[i - 1] ^ input[i]).toString();
+            print += "Take the " + (i+1) + "'th bit of the input and XOR it to the previous bit of the Output " + "i.e,"+ input[i] + "⊕" + x.charAt(x.length-1) + "=" + n + "<br>";
+            print +=  "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + n + "</span><br><br>";
+            x += n;
+        }
+        print += "<br><h5>Step 3 : So, our binary result is:" + x + " </h5>";
+    }
 
     if (input == "") {
         x= "";
     } else if(input.search(/^[10]+$/) == -1)
              x= "Binary and grey code can only have 0's and 1's";
-    result.innerHTML = x;
+    result.innerHTML = "Answer ->" + x;
+    work.innerHTML = print;
 }
 
 //----------------------------
@@ -10430,4 +11106,68 @@ function occfind(){
     // Multiply answer by the number of vertices.
     ans = ans * n;
     document.getElementById("occans").innerHTML = ans
+}
+
+function utcal()
+{
+    var num1=document.getElementById("urx1").value;
+    var num2=document.getElementById("urx2").value;
+    var num3=document.getElementById("urx3").value;
+    var num4=document.getElementById("urx4").value;
+    ans="";
+    if(num1==""||num2==""||num3==""||num4=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num3=parseFloat(num3);
+        var z=num1/num3;
+        ans="The unit rate is: "+z+" "+num2+"/"+num4;
+    }
+    document.getElementById("utcans").innerHTML=ans;
+}
+
+//  chi value test
+// obs - observed
+function chivalue() {
+    let list = document.getElementById('obsList').value
+    let obsList = list.split(' ');
+    let sum = 0;
+    let n = obsList.length
+    for (var i = 0; i < n; i++) {
+        obsList[i] = parseInt(obsList[i])
+        sum += obsList[i]
+    }
+    let expMean = sum / obsList.length
+    let obsSubExpMean = []
+    let obsSubExpMeanSqr = []
+    let chiValue = []
+    let ans = 0
+    for (var i = 0; i < n; i++) {
+        obsSubExpMean[i] = obsList[i] - expMean
+        obsSubExpMeanSqr[i] = Math.pow(obsSubExpMean[i], 2)
+        chiValue[i] = obsSubExpMeanSqr[i] / expMean
+        ans += chiValue[i]
+    }
+    ans = Number.parseFloat(ans).toPrecision(5)
+    console.log(ans);
+    let sigValue = parseFloat(document.getElementById('sigValue').value)
+    console.log(sigValue);
+    console.log(ans < sigValue);
+
+    if (ans < sigValue) {
+        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> < <strong>" + sigValue + "</strong>"
+        document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
+    } else if (ans > sigValue) {
+        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> > χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> > <strong>" + sigValue + "</strong>"
+        document.getElementById('concluChi').innerHTML = "The Hypothesis is Not Accepted. So data distribution is Not uniform throughout."
+    } else {
+        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> = <strong>" + sigValue + "</strong>"
+        document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
+    }
+
+
+
 }
