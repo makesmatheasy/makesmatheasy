@@ -1,22 +1,39 @@
-var toggle=false
+var toggle = false
 function opencal() {
-    $('#cal').slideToggle(function(){
-        toggle=!toggle
+    $('#cal').slideToggle(function () {
+        toggle = !toggle
     });
-    if(!toggle){
-    $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+    if (!toggle) {
+        $('#cal')[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
 }
 function cleardiv(arrayofclearids) {
-    for (parameterarray of arrayofclearids) {
+    for (var parameterarray of arrayofclearids) {
         document.getElementById(parameterarray).innerHTML = "";
     }
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["resultintegration", "integralplot","resultdiff", "diffplot","resulttable","generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult","rootsquadraticresult","inputroundoffoutput","plotequationresult","resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot","resultpardiff","resultmulsol","soltri","resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation","dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf","displayequation","resultsimplifyequation","resultexpandequation","equationsmany","resultsolverequation","compresult"]);
+        cleardiv(["smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
+
+$("#clock").click(function(){
+    openit("#clocks");
+    closenav();
+    clearall();
+});
+$("#utc").click(function(){
+    openit("#utcs");
+    closenav();
+    clearall();
+});
+$("#manhat").click(function(){
+    openit("#manhats");
+    closenav();
+    clearall();
+});
+
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {
@@ -30,23 +47,45 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-     $("#fractions_op").click(function(){
-         openit("#fractions");
-         closenav();
-         clearall();
-     });
-    $("#logValues").click(function(){
+    $("#std_dvtn").click(function () {
+        openit("#deviation");
+        closenav();
+        clearall();
+    });
+    $("#fractions_op").click(function () {
+        openit("#fractions");
+        closenav();
+        clearall();
+    });
+    $("#logValues").click(function () {
         openit("#log_values");
         closenav();
         clearall();
     });
-    $("#mathrbtn").click(function(){
+    $("#mathrbtn").click(function () {
         openit("#math");
         closenav();
         clearall();
     });
+    $("#per-chng-cube").click(function () {
+        openit("#chng-vol-cube");
+        closenav();
+        clearall();
+    })
     $("#aboutbutton").click(function () {
         openit("#about");
+        closenav();
+    });
+    $("#centcalbut").click(function () {
+        openit("#centcal");
+        closenav();
+    });
+    $("#stbut").click(function () {
+        openit("#setcal");
+        closenav();
+    });
+    $("#leapyearbtn").click(function () {
+        openit("#lyear");
         closenav();
     });
     $("#homeoption").click(function () {
@@ -58,14 +97,29 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#cov").click(function () {
+        openit("#covs");
+        closenav();
+        clearall();
+    });
+    $("#lrc").click(function () {
+        openit("#lrcs");
+        closenav();
+        clearall();
+    });
     $("#tableoption").click(function () {
         openit("#table");
         closenav();
         clearall();
 
     });
-//            matrix
+    $("#mec").click(function () {
+        openit("#mecs");
+        closenav();
+        clearall();
+
+    });
+    //            matrix
     $("#matrixcollapsebtn").click(function () {
         openit("#matrixcollapse");
         closenav();
@@ -76,249 +130,500 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#dec2421btn").click(function () {
+        openit("#dec2421");
+        closenav();
+        clearall();
+    });
+    $("#bpmf").click(function () {
+        openit("#bpmfs");
+        closenav();
+        clearall();
+    });
+    $("#perat").click(function () {
+        openit("#perats");
+        closenav();
+        clearall();
+    });
+    $("#sreslc").click(function () {
+        openit("#stresscalc");
+        closenav();
+        clearall();
+    });
+    $("#impfix").click(function () {
+        openit("#impfixs");
+        closenav();
+        clearall();
+    });
+    $("#ssst").click(function () {
+        openit("#ssts");
+        closenav();
+        clearall();
+    });
+    $("#sosq").click(function () {
+        openit("#sosqs");
+        closenav();
+        clearall();
+    });
+    $("#numcubesRange").click(function () {
+        openit("#numcubesRanges");
+        closenav();
+        clearall();
+    });
+    $("#sosqn").click(function () {
+        openit("#sosqsn");
 
+        closenav();
+        clearall();
+    });
+
+    $("#squaresRange").click(function () {
+        openit("#squaresRanges");
+        closenav();
+        clearall();
+    });
+    $("#cubesRange").click(function () {
+        openit("#cubesRanges");
+        closenav();
+        clearall();
+    });
+    $("#arc").click(function () {
+        openit("#arcs");
+        closenav();
+        clearall();
+    });
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();
         clearall();
     });
-
-
     $("#vecalgbtn").click(function () {
         openit("#vecalg");
         closenav();
         clearall();
     });
+    $("#betabtn").click(function () {
+        openit("#beta");
+         closenav();
+        clearall();
+    });
+    $("#imprtoprbtn").click(function () {
+        openit("#imprtopr");
 
-
+        closenav();
+        clearall();
+    });
     $("#thdifbtn").click(function () {
         openit("#thdif");
         closenav();
         clearall();
     });
-
-
-
     $("#aodbtn").click(function () {
         openit("#aod");
         closenav();
         clearall();
     });
-
-
     $("#corgeobtn").click(function () {
         openit("#corgeo");
         closenav();
         clearall();
     });
-
-
     $("#matrixpropsbtn").click(function () {
         openit("#matrixprops");
         closenav();
         clearall();
     });
-
+    $("#3dgeocalcbtn").click(function () {
+        openit("#3dgeocalc");
+        closenav();
+        clearall();
+    });
     $("#straightlinebtn").click(function () {
         openit("#straightline");
         closenav();
         clearall();
     });
-
     $("#algebraic-idencollapsebtn").click(function () {
         openit("#algebraic-idencollapse");
         closenav();
         clearall();
     });
-
     $("#differentiate").click(function () {
         openit("#differentiatecollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#3dgeobtn").click(function () {
         openit("#3dgeo");
         closenav();
         clearall();
-    })
-
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#integration-idencollapsebtn").click(function () {
         openit("#integration-idencollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#defintegration-idencollapsebtn").click(function () {
         openit("#defintegration-idencollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#3d-solid-btn").click(function () {
         openit("#3d-solid");
         closenav();
         clearall();
     })
+
+    $("#per-chng-sphere").click(function () {
+        openit("#chng-vol-sphere");
+        closenav();
+        clearall();
+    })
+
     $("#pythtriplebtn").click(function () {
         openit("#pythtriple");
         closenav();
         clearall();
-    })
-
+    });
     $("#partialdiff").click(function () {
         openit("#partialdiffcollapse");
         closenav();
         clearall();
-    })
-
+    });
     $("#laplace").click(function () {
         openit("#laplacecollapse");
         closenav();
         clearall();
-    })
+    });
     $("#limits").click(function () {
         openit("#limitscollapse");
         closenav();
         clearall();
-    })
+    });
     $("#shapescalbtn").click(function () {
         openit("#shapescal");
         closenav();
         clearall();
-    })
-    $("#propcirclebtn").click(function () {
-        openit("#propcircle");
+    });
+    $("#ppmf").click(function () {
+        openit("#ppmfs");
+        closenav();
+        clearall();
+    });
+    $("#giffbtn").click(function () {
+        openit("#giff");
+        closenav();
+        clearall();
+
+    });
+
+    $("#dipbtn").click(function () {
+        openit("#dip");
         closenav();
         clearall();
     })
-    $("#theobtn").click(function () {
-        openit("#theo");
-        closenav();
-        clearall();
-    })
-    $("#coorbtn").click(function () {
-        openit("#coor");
-        closenav();
-        clearall();
-    })
-    $("#diffeqnbtn").click(function () {
-        openit("#diffeqn");
-        closenav();
-        clearall();
-    })
-    $("#ipbtn").click(function () {
-        openit("#ip");
-        closenav();
-        clearall();
-    })
-    $("#vectorbtn").click(function () {
-        openit("#vector");
-        closenav();
-        clearall();
-    })
-    $("#curvebtn").click(function () {
-        openit("#curve");
-        closenav();
-        clearall();
-    })
-    $("#parallelbtn").click(function () {
-        openit("#parallel");
-        closenav();
-        clearall();
-    })
-    $("#betagammabtn").click(function () {
-        openit("#betagamma");
+    $("#wandtbtn").click(function () {
+        openit("#wandt");
         closenav();
         clearall();
     })
 
+    $("#HPbttn").click(function () {
+        openit("#hp");
+        closenav();
+        clearall();
+    });
+    $("#eir").click(function () {
+        openit("#eirs");
+        closenav();
+        clearall();
+    });
+    $("#secareabtn").click(function () {
+        openit("#secarea");
+        closenav();
+        clearall();
+    });
+    $("#propcirclebtn").click(function () {
+        openit("#propcircle");
+        closenav();
+        clearall();
+    });
+    $("#propquadbtn").click(function () {
+        openit("#propquad");
+        closenav();
+        clearall();
+    });
+    $("#theobtn").click(function () {
+        openit("#theo");
+        closenav();
+        clearall();
+    });
+    $("#coorbtn").click(function () {
+        openit("#coor");
+        closenav();
+        clearall();
+    });
+    $("#errper").click(function () {
+        openit("#errpers");
+        closenav();
+        clearall();
+    });
+    $("#suppang").click(function () {
+        openit("#suppangs");
+        closenav();
+        clearall();
+    });
+    $("#ttestbtn").click(function () {
+        openit("#ttest");
+        closenav();
+        clearall();
+    });   
+    $("#ztestbtn").click(function () {
+        openit("#ztest");
+        closenav();
+        clearall();
+    });   
+    $("#chitestbtn").click(function () {
+        openit("#chitest");
+        closenav();
+        clearall();
+    });   
+    $("#gammabtn").click(function () {
+        openit("#gamma");
+        closenav();
+        clearall();
+    }); 
+    $("#pairfact").click(function () {
+        openit("#pairfacts");
+        closenav();
+        clearall();
+    });
+    $("#diffeqnbtn").click(function () {
+        openit("#diffeqn");
+        closenav();
+        clearall();
+    });
+    $("#pdiffeqnbtn").click(function () {
+        openit("#pdiffeqn");
+        closenav();
+        clearall();
+    });
+    $("#zscore").click(function () {
+        openit("#zscores");
+        closenav();
+        clearall();
+    });
+    $("#ipbtn").click(function () {
+        openit("#ip");
+        closenav();
+        clearall();
+
+    });
+    //Euler's Totient Function
+    $("#etfbtn").click(function () {
+        openit("#etf");
+        closenav();
+        clearall();
+    })
+    //Next Prime Function
+    $("#next-pri-btn").click(function () {
+        openit("#nextPrime");
+        closenav();
+        clearall();
+    })
+    //Smallest prime factor calculator
+    $("#sml-pri-btn").click(function () {
+        openit("#smPrime");
+        closenav();
+        clearall();
+    })
+    $("#hydrops").click(function () {
+        openit("#hydroz");
+        closenav();
+        clearall();
+    });
+
+    $("#segcal").click(function () {
+        openit("#segcals");
+        closenav();
+        clearall();
+    });
+
+    $("#skew").click(function () {
+        openit("#skews");
+        closenav();
+        clearall();
+    });
+
+    $("#igcbtn").click(function () {
+        openit("#igc");
+        closenav();
+        clearall();
+    });
+
+
+    $("#resbtn").click(function () {
+        openit("#res1");
+        closenav();
+        clearall();
+    })
+
+    $("#vectorbtn").click(function () {
+        openit("#vector");
+        closenav();
+        clearall();
+
+    });
+
+    $("#mtmbtn").click(function () {
+        openit("#mtm");
+        closenav();
+        clearall();
+
+    });
+
+    $("#cramerbtn").click(function () {
+        openit("#cramer");
+        closenav();
+        clearall();
+    })
+    $("#binomialcoeffbtn").click(function () {
+        openit("#binomialcoeff");
+        closenav();
+        clearall();
+    });
+
+    $("#clrbtn").click(function () {
+        openit("#clr");
+        closenav();
+        clearall();
+    });
+    $("#reppbtn").click(function () {
+        openit("#repp");
+        closenav();
+        clearall();
+    });
+    $("#oop").click(function () {
+        openit("#oops");
+        closenav();
+        clearall();
+    });
+    $("#vecbtn").click(function () {
+        openit("#vec");
+        closenav();
+        clearall();
+    });
+    $("#curvebtn").click(function () {
+        openit("#curve");
+        closenav();
+        clearall();
+    });
+    $("#parallelbtn").click(function () {
+        openit("#parallel");
+        closenav();
+        clearall();
+    });
+    $("#betagammabtn").click(function () {
+        openit("#betagamma");
+        closenav();
+        clearall();
+    });
     $("#euclidbtn").click(function () {
         openit("#euclid");
         closenav();
         clearall();
     })
-	$("#tdshapescalbtn").click(function () {
+
+    $("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
         closenav();
         clearall();
-    })
+    });
     $("#transbtn").click(function () {
         openit("#trans");
         closenav();
         clearall();
-    })
+    });
     $("#consimbtn").click(function () {
         openit("#consim");
         closenav();
         clearall();
-    })
+    });
+    $("#cevthabtn").click(function () {
+        openit("#cevtha");
+        closenav();
+        clearall();
+    });
+    $("#mibtn").click(function () {
+        openit("#mi");
+        closenav();
+        clearall();
+    });
     $("#boolbtn").click(function () {
         openit("#bool");
         closenav();
         clearall();
-    })
+    });
     $("#setformulalistbtn").click(function () {
         openit("#setformula");
         closenav();
         clearall();
-    })
+    });
     $("#convdivbtn").click(function () {
         openit("#convdiv");
         closenav();
         clearall();
-    })
+    });
     $("#setopbtn").click(function () {
         openit("#setop");
         closenav();
         clearall();
-    })
+    });
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
         clearall();
-    })
+    });
     $("#interestbtn").click(function () {
         openit('#interest');
         closenav();
         clearall();
-    })
+    });
     $("#pricesbtn").click(function () {
         openit('#prices');
         closenav();
         clearall();
-    })
+    });
     $("#simpletrignocollapsebutton").click(function () {
         openit("#simpletrignocollapse");
         closenav();
         clearall();
-    })
+    });
     $("#trigonovaluestablebutton").click(function () {
         openit("#trigonovaluestable");
         closenav();
         clearall();
-    })
+    });
     $("#srfbtn").click(function () {
         openit("#srf");
         closenav();
         clearall();
-    })
+    });
     $("#maxminbtn").click(function () {
         openit("#maxmin");
         closenav();
         clearall();
-    })
+    });
     $("#locrootsbtn").click(function () {
         openit("#locroots");
         closenav();
         clearall();
-    })
+    });
     $("#datebtn").click(function () {
         openit("#datecal");
         closenav();
@@ -328,53 +633,58 @@ $(document).ready(function () {
         openit("#trigonoiden");
         closenav();
         clearall();
-    })
+    });
+    $("#trigonofunbutton").click(function () {
+        openit("#trigonofun");
+        closenav();
+        clearall();
+    });
     $("#expansionbutton").click(function () {
         openit("#expansion");
         closenav();
         clearall();
-    })
+    });
     $("#solutiontributton").click(function () {
         openit("#solutiontri");
         closenav();
         clearall();
-    })
+    });
     $("#profitlossbutton").click(function () {
         openit("#profitloss");
         closenav();
         clearall();
-    })
+    });
     $("#caybtn").click(function () {
         openit("#cay");
         closenav();
         clearall();
-    })
+    });
     $("#inversetrigonoidenbutton").click(function () {
         openit("#inversetrigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#hyptrigonoidenbutton").click(function () {
         openit("#hyptrigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#invhyptrigonoidenbutton").click(function () {
         openit("#invhyptrigonoiden");
         closenav();
         clearall();
-    })
+    });
     $("#trigsolcollapsebtn").click(function () {
         openit("#trigsolcollapse");
         closenav();
         clearall();
-    })
+    });
     $("#diffsolvebutton").click(function () {
         diffsolve();
-    })
+    });
     $("#solvepardiff").click(function () {
         partialdiffsolve();
-    })
+    });
     $("#rootsquadraticbtn").click(function () {
         openit("#rootsquadratic");
         closenav();
@@ -400,19 +710,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
     $("#spiconbtn").click(function () {
         openit("#spiconcal");
         closenav();
         clearall();
     });
-     // I have added
-     $("#factorialbtn").click(function () {
+    $("#factorialbtn").click(function () {
         openit("#factorial");
         closenav();
         clearall();
     });
-
+    $("#parabbtn").click(function () {
+        openit("#parab");
+        closenav();
+        clearall();
+    });
     // Permutation and combination
     $("#pandcbtn").click(function () {
         openit("#pandc");
@@ -426,222 +738,361 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
-
+    $("#powsbtn").click(function () {
+        openit("#pows");
+        closenav();
+        clearall();
+    });
     $("#curconbtn").click(function () {
         openit("#curconcal");
         closenav();
         clearall();
     });
-     // Sumof nterms of an Arithmetic Progression
+    $("#sumbtn").click(function () {
+        openit("#sum_n");
+        closenav();
+        clearall();
+    });
+    // Sum of nterms of an Arithmetic Progression
     $("#APbtn").click(function () {
         openit("#sum_n_AP");
         closenav();
         clearall();
     });
+    // Sum of nterms of an Geometric Progression
     $("#GPbtn").click(function () {
         openit("#sum_n_GP");
         closenav();
         clearall();
     });
+    // Sum of nterms of an Harmonic Progression
+    $("#HPbtn").click(function () {
+        openit("#sum_n_HP");
+        closenav();
+        clearall();
+    });
     // algebraic equations formula lists
     $("#algebraic_formulacollapsebtn").click(function () {
-    openit("#algebraic_formulascollapse");
-    closenav();
-    clearall();
-     });
-     //Function of Addition of Any Number System
-    $("#add-all-btn").click(function(){
+        openit("#algebraic_formulascollapse");
+        closenav();
+        clearall();
+    });
+    //Function of Addition of Any Number System
+    $("#add-all-btn").click(function () {
         openit("#adding-all");
         closenav();
         clearall();
     });
-     //Function of Multiplication of Any Number System
-     $("#mult-all-btn").click(function(){
+    //Function of Subtraction of Any Number System
+    $("#subtracting-all-btn").click(function () {
+        openit("#subtract-all");
+        closenav();
+        clearall();
+    });
+    //Function of Multiplication of Any Number System
+    $("#mult-all-btn").click(function () {
         openit("#multiplying-all");
         closenav();
         clearall();
     });
+
     //Function of collapsing binary/decimal section on click
-    $("#decimal-to-binary-btn").click(function(){
+    $("#decimal-to-binary-btn").click(function () {
         openit("#decimal-binary");
         closenav();
         clearall();
     });
 
     //Function of collapsing bitwise calculator section on click
-    $("#bitwise-calc-btn").click(function(){
+    $("#bitwise-calc-btn").click(function () {
         openit("#bitwise-calc");
         closenav();
         clearall();
     });
 
-	$("#onetwocom-calc-btn").click(function(){
+    $("#onetwocom-calc-btn").click(function () {
         openit("#onetwocom-calc");
         closenav();
         clearall();
     });
 
+    //Function for hamming code
+    $("#hamming-code-btn").click(function(){
+        openit("#hamming-calc");
+        closenav();
+        clearall();
+    });
 
-//Function of collapsing binary/octal section on click
-    $("#octal-to-binary-btn").click(function(){
+    //Function for hamming distance betn numbers
+     $("#hamming-dist-btn").click(function(){
+        openit("#hamming-dist");
+        closenav();
+        clearall();
+    });
+
+    //Function of collapsing binary/octal section on click
+    $("#octal-to-binary-btn").click(function () {
         openit("#octal-binary");
         closenav();
         clearall();
     });
 
-    $("#octal-to-hexadecimal-btn").click(function(){
-            openit("#octal-hexadecimal");
-            closenav();
-            clearall();
-        });
+
+    $("#octal-to-hexadecimal-btn").click(function () {
+        openit("#octal-hexadecimal");
+        closenav();
+        clearall();
+    });
+
+    // anyBase-to-anyBase-btn
+    $("#anyBase-to-anyBase-btn").click(function () {
+        openit("#anyBase");
+        closenav();
+        clearall();
+    });
 
 
-    $("#complexidentitiesbtn").click(function(){
+    $("#complexidentitiesbtn").click(function () {
         openit("#complexidentities");
         closenav();
         clearall();
     });
-    $("#complexpropertiesbtn").click(function(){
+    $("#complexpropertiesbtn").click(function () {
         openit("#complexproperties");
         closenav();
         clearall();
     });
-    $("#complex1collapsebtn").click(function(){
+    $("#complex1collapsebtn").click(function () {
         openit("#complex1collapse");
         closenav();
         clearall();
     });
-    $("#complex2collapsebtn").click(function(){
+    $("#complex2collapsebtn").click(function () {
         openit("#complex2collapse");
         closenav();
         clearall();
     });
-    $("#greybtn").click(function(){
+    $("#greybtn").click(function () {
         openit("#grey-bin");
         closenav();
         clearall();
     });
 
-    $("#stats-btn").click(function(){
+
+    $("#stats-btn").click(function () {
         openit("#stats");
         closenav();
         clearall();
     });
 
-    $("#log-collapsebtn").click(function(){
-      openit("#log-collapse");
-      closenav();
-      clearall();
-  });
 
-    $("#bt-collapsebtn").click(function(){
+    $("#log-collapsebtn").click(function () {
+        openit("#log-collapse");
+        closenav();
+        clearall();
+    });
+
+    $("#bt-collapsebtn").click(function () {
         openit("#bt-collapse");
         closenav();
         clearall();
     });
 
-    $("#bt-collapsebtn1").click(function(){
+
+    $("#bt-collapsebtn1").click(function () {
         openit("#bt-collapse1");
         closenav();
         clearall();
     });
 
-    $("#bcdbtn").click(function(){
+
+    $("#bcdbtn").click(function () {
         openit("#bcd");
         closenav();
         clearall();
     });
 
-	//Function of collapsing binary/hexadecimal section on click
-	$("#binary-to-hexadecimal-btn").click(function(){
+    //Function of collapsing binary/hexadecimal section on click
+    $("#binary-to-hexadecimal-btn").click(function () {
         openit("#binary-hexadecimal");
         closenav();
         clearall();
     });
 
-	 $("#circlecollapsebtn").click(function(){
+    $("#circlecollapsebtn").click(function () {
         openit("#circlecollapse");
         closenav();
         clearall();
     });
 
-    $("#parabolacollapsebtn").click(function(){
+    $("#parabolacollapsebtn").click(function () {
         openit("#parabolacollapse");
         closenav();
         clearall();
     });
-    $("#ellipsecollapsebtn").click(function(){
+    $("#ellipsecollapsebtn").click(function () {
         openit("#ellipsecollapse");
         closenav();
         clearall();
     });
-    $("#hyperbolacollapsebtn").click(function(){
+    $("#hyperbolacollapsebtn").click(function () {
         openit("#hyperbolacollapse");
         closenav();
         clearall();
     });
-    $("#differentiate-rulecollapsebtn").click(function(){
+    $("#differentiate-rulecollapsebtn").click(function () {
         openit("#differentiate-rulecollapse");
         closenav();
         clearall();
     });
 
-
-
-  $("#plotangleoption").click(function(){
+    $("#plotangleoption").click(function () {
         openit("#plotangle");
         closenav();
         clearall();
     });
 
 
-    $("#emibtn").click(function(){
+    $("#emibtn").click(function () {
         openit("#emical");
         closenav();
         clearall();
     });
-    $("#meanbtn").click(function(){
+    $("#expobtn").click(function () {
+        openit("#expo");
+        closenav();
+        clearall();
+    });
+    $("#cibtn").click(function () {
+        openit("#ci");
+        closenav();
+        clearall();
+    });
+
+    $("#gstbtn").click(function () {
+        openit("#gstcal");
+        closenav();
+        clearall();
+    });
+
+    $("#degbtn").click(function () {
+        openit("#degcal");
+        closenav();
+        clearall();
+    });
+
+    $("#percalbtn").click(function () {
+        openit("#percal");
+        closenav();
+        clearall();
+    });
+
+    $("#meanbtn").click(function () {
         openit("#mean");
         closenav();
         clearall();
     });
-    $("#tangentbtn").click(function(){
+    $("#tangentbtn").click(function () {
         openit("#tangent");
         closenav();
         clearall();
     });
-    $("#probabilitycollapsebtn").click(function(){
+    $("#probabilitycollapsebtn").click(function () {
         openit("#probabilitycollapse");
         closenav();
         clearall();
     });
 
-
-
-
-    $("#lapprobtn").click(function(){
+    $("#lapprobtn").click(function () {
         openit("#lappro");
         closenav();
         clearall();
     });
 
 
-    $("#jointprobabilitycollapsebtn").click(function(){
+    $("#jointprobabilitycollapsebtn").click(function () {
         openit("#joint-probabilitycollapse");
         closenav();
         clearall();
     });
 
 
-    $("#bayesprobabilitycollapsebtn").click(function(){
+    $("#bayesprobabilitycollapsebtn").click(function () {
         openit("#bayes-probabilitycollapse");
         closenav();
         clearall();
     });
+
+    $("#condprobabilitybtn").click(function () {
+        openit("#condprobability");
+        closenav();
+        clearall();
+    });
+
+    $("#analyticalbtn").click(function () {
+        openit("#analytical");
+        closenav();
+        clearall();
+    });
+
+    $("#fourier_seriescollapsebtn").click(function () {
+        openit("#fourier_series");
+        closenav();
+        clearall();
+    });
+
+    $("#plotbargraphoption").click(function () {
+        openit("#plotbargraph");
+        closenav();
+        clearall();
+    });
+
+
+    $("#wmc").click(function(){
+        openit("#wmcs");
+        closenav();
+        clearall();
+    });
+
+
+
+    $("#cv").click(function(){
+        openit("#cvs");
+        closenav();
+        clearall();
+    });
+    $("#rms").click(function(){
+        openit("#rmss");
+        closenav();
+        clearall();
+    });
+    $("#relationtypescollapsebtn").click(function(){
+        openit("#relationtypes");
+        closenav();
+        clearall();
+    });
+
+    $("#slvx").click(function(){
+        openit("#slvxs");
+        closenav();
+        clearall();
+    });
+
+
+    $("#perrankcalbtn").click(function(){
+        openit("#rankcals");
+        closenav();
+        clearall();
+    });
+    $("#hyperbolictrignocollapsebtn").click(function(){
+        openit("#hyperbolicratios");
+        closenav();
+        clearall();
+    });
+
 })
 
-    function loader(action) {
+function loader(action) {
     var body = document.getElementsByTagName("body");
     var head = document.getElementsByTagName("head");
     switch (action) {

@@ -1,4 +1,4 @@
-var a0=0,a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0,i=0,j=0;
+var a0 = 0, a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0, i = 0, j = 0;
 
 function removeall(elid) {
     if (document.getElementById(elid).innerHTML != "") {
@@ -130,79 +130,128 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#smPrime",
+        "#nextPrime",
+        "#hamming-dist",
+        "#anyBase",
         "#complex1collapse",
         "#complex2collapse",
         "#complexidentities",
         "#complexproperties",
         "#theo",
+        "#impfixs",
+        "#etf",
         "#equationssolver",
         "#mulsolwithsteps",
+        "#secarea",
         "#table",
+        "#ssts",
+        "#arcs",
+        "#sosqs",
+        "#sosqsn",
+        "#squaresRanges",
+        "#favourite",
+        "#cubesRanges",
+        "#numcubesRanges",
+        "#segcals",
+        "#hydroz",
         "#shapescal",
         "#tdshapescal",
         "#divide",
         "#simpletrignocollapse",
         "#trigonovaluestable",
         "#trigonoiden",
+        "#trigonofun",
         "#factors",
         "#stats",
         "#math",
+        "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",
         "#defintegration-idencollapse",
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
+        "#chng-vol-sphere",
         "#laplacecollapse",
         "#limitscollapse",
+        "#parab",
+        "#binomialcoeff",
         "#matrixcollapse",
+        "#pows",
+        "#beta",
+
+        "#imprtopr",
+
         "#matrixprops",
+        "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
         "#propcircle",
+        "#propquad",
         "#pythtriple",
         "#rootsquadratic",
         "#plotgraph",
+        "#3dgeocalc",
+        "#plotbargraph",
         "#roundoff",
         "#euclid",
-	    "#aod",
-	    "#vecalg",
-	    "#thedif",
-	    "#corgeo",
+        "#aod",
+        "#vecalg",
+        "#thdif",
+        "#corgeo",
+        "#ttest",
+        "#ztest",
         "#betagamma",
         "#parallel",
         "#unitconcal",
+        "#giff",
+        "#dip",
+        "#wandt",
         "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
         "#setop",
         "#trans",
+        "#hp",
+        "#ppmfs",
         "#bool",
+        "#suppangs",
+        "#eirs",
+        "#zscores",
+        "#errpers",
         "#log_values",
+        "#oops",
+        "#astroid",
+        "#deca_prism",
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
+        "#manhats",
         "#pandc",
+        "#enna_prism",
+        "#pairfacts",
         "#interest",
-        "#decimal-binary",
         "#bitwise-calc",
         "#adding-all",
+        "#subtract-all",
         "#multiplying-all",
-		"#onetwocom-calc",
+	"#onetwocom-calc",
+        "#hamming-calc",
         "#3dgeo",
+        "#bpmfs",
         "#straightline",
-        "#octal-binary",
         "#binary-hexadecimal",
         "#cay",
-        "#octal-hexadecimal",
+        "#utcs",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
-	    "#circlecollapse",
+        "#circlecollapse",
         "#parabolacollapse",
         "#ellipsecollapse",
         "#hyperbolacollapse",
@@ -210,6 +259,7 @@ function openit(id) {
         "#prime",
         "#sum_n_AP",
         "#sum_n_GP",
+        "#sum_n_HP",
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
@@ -217,35 +267,88 @@ function openit(id) {
         "#profitloss",
         "#differentiate-rulecollapse",
         "#emical",
+        "#gstcal",
+        "#deviation",
+        "#degcal",
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
         "#convdiv",
+        "#gamma",
         "#curve",
         "#coor",
+        "#ci",
         "#mean",
         "#Meanit",
         "#bcd",
         "#vector",
+        "#vec",
         "#diffeqn",
+        "#pdiffeqn",
         "#maxmin",
         "#locroots",
         "#tangent",
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
+        "#dec2421",
         "#ex3",
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#condprobability",
         "#prism",
+        "#pentprism",
         "#pyramid",
         "#tripyramid",
+        "#octpyramid",
+        "#hexpyramid",
+        "#octahedron",
+        "#repp",
+        "#partial_sphere",
+        "#mtm",
+        "#igc",
+        "#res1",
+        "#clr",
+        '#dodecahedron',
+        "#icosahedron",
         "#anglecon",
         "#frustum",
-	    "#ip",
-	    "#prices",
-        "#setformula"
+        "#annulus",
+        "#cosine",
+        "#obliquecy",
+        "#setcal",
+        "#mi",
+        "#ip",
+        "#partialcy",
+        "#prices",
+        "#centcal",
+        "#cevtha",
+        "#sum_n",
+        "#percal",
+        "#parabolic_arc",
+        "#lyear",
+        "#analytical",
+        "#isoright",
+        "#ellipsoid",
+        "#expo",
+        "#setformula",
+        "#wedge",
+        "#fourier_series",
+        "#wmcs",
+        "#cvs",
+        "#rmss",
+        "#relationtypes",
+        "#skews",
+        "#clocks",
+        "#slvxs",
+        "#rankcals",
+        "#hyperbolicratios",
+        "#covs",
+        "#lrcs",
+        "#perats",
+        "#mecs",
+	"#chng-vol-cube"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
@@ -353,9 +456,9 @@ function checkfavourite() {
     var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-   
+
     $("#favourite").addClass("favouritecontainer");
-    
+
     if (ar.length != 0) {
         for (i = 0; i < ar.length; i++) {
             var el = document.createElement("li");
@@ -374,11 +477,11 @@ function checkfavourite() {
             document.getElementById(imgar[i]).src = favar[i];
         }
     }
-    
-    else{
+
+    else {
         var el = document.createElement("div");
         el.className = "nofavourites";
-        el.id="nofavourite"
+        el.id = "nofavourite"
         el.style.color = "white";
         document.getElementById("favourite").appendChild(el);
         var el1 = document.createElement("p");
@@ -387,7 +490,7 @@ function checkfavourite() {
         var el2 = document.createElement("p");
         el2.textContent = " Click 🤍 to add to Favourites";
         document.getElementById("nofavourite").appendChild(el2);
-        
+
     }
 }
 
@@ -398,6 +501,10 @@ $(document).on('click', ' .favourites ', function () {
 $(document).on('hover', ' .favnew ', function () {
     $(this).addClass('favourites');
 });
+
+document.querySelector(".container").addEventListener('click', function () {
+    $(".favouritecontainer").slideUp();
+})
 
 function removefavourite() {
     localStorage.removeItem("favouritearray");
@@ -478,3 +585,4 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
+

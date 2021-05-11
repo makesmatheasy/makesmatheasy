@@ -22,27 +22,27 @@ function display_fractions(){
           return;
       }
 
-     document.getElementById('a').innerHTML =n1;
-     document.getElementById('b').innerHTML = d1;
-     document.getElementById('bz').innerHTML = d1;
-     document.getElementById('c').innerHTML = n2;
-     document.getElementById('d').innerHTML = d2;
+     document.getElementById('sum_a').innerHTML =n1;
+     document.getElementById('sum_b').innerHTML = d1;
+     //document.getElementById('bz').innerHTML = d1;
+     document.getElementById('sum_c').innerHTML = n2;
+     document.getElementById('sum_d').innerHTML = d2;
 
-    document.getElementById('a1').innerHTML = n1;
-    document.getElementById('b1').innerHTML = d1;
-    document.getElementById('c1').innerHTML = n2;
-    document.getElementById('d1').innerHTML = d2;
-    document.getElementById('b2').innerHTML = d1;
-    document.getElementById('d2').innerHTML = d2;
-    document.getElementById('e1').innerHTML = n1*d2;
-    document.getElementById('g').innerHTML = n2*d1;
-    document.getElementById('f').innerHTML = d1*d2;
+    document.getElementById('sum_a1').innerHTML = n1;
+    document.getElementById('sum_b1').innerHTML = d1;
+    document.getElementById('sum_c1').innerHTML = n2;
+    document.getElementById('sum_d1').innerHTML = d2;
+    document.getElementById('sum_b2').innerHTML = d1;
+    document.getElementById('sum_d2').innerHTML = d2;
+    document.getElementById('sum_e1').innerHTML = n1*d2;
+    document.getElementById('sum_g').innerHTML = n2*d1;
+    document.getElementById('sum_f').innerHTML = d1*d2;
     var top = (n1*d2) +(n2*d1);
     var bot = (d1*d2);
-    document.getElementById('t').innerHTML = top;
-    document.getElementById('q').innerHTML = bot
+    document.getElementById('sum_t').innerHTML = top;
+    document.getElementById('sum_q').innerHTML = bot
     var ans = top / bot;
-    document.getElementById('ans').innerHTML = ans;
+    document.getElementById('sum_ans').innerHTML = ans;
     
 }
 function subtractiom(){
@@ -219,6 +219,16 @@ function subtractiom(){
     document.getElementById('impq').innerHTML = "";
     document.getElementById('impb1').innerHTML = ""; 
 
+    if (d1 === n1){
+        document.getElementById('impa').innerHTML = n1;
+        document.getElementById('impb').innerHTML = d1;
+
+        document.getElementById('impr').innerHTML = "1";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = ""; 
+
+       return 0; }
+
     if (d1 === 0){ 
 
         document.getElementById('impa').innerHTML = n1;
@@ -227,7 +237,7 @@ function subtractiom(){
         document.getElementById('impr').innerHTML = "Infinity";
         document.getElementById('impq').innerHTML = "";
         document.getElementById('impb1').innerHTML = ""; 
-       
+
        return 0; }
    
    if (n1 === 0){ 
@@ -235,20 +245,20 @@ function subtractiom(){
         document.getElementById('impa').innerHTML = n1;
         document.getElementById('impb').innerHTML = d1;
 
-       document.getElementById('impr').innerHTML = "0";
-       document.getElementById('impq').innerHTML = "";
-       document.getElementById('impb1').innerHTML = ""; 
-       return 0; }
+        document.getElementById('impr').innerHTML = "0";
+        document.getElementById('impq').innerHTML = "";
+        document.getElementById('impb1').innerHTML = "";
+         
+        return 0; }
 
     if(Number.isNaN(d1) || Number.isNaN(n1) )
      {
          window.alert("Enter an Integer")
+         return;
      }
-
 
     document.getElementById('impa').innerHTML = n1;
     document.getElementById('impb').innerHTML = d1;
-
 
     const arr = [n1, d1];
 
@@ -271,10 +281,7 @@ function subtractiom(){
                     document.getElementById('impq').innerHTML = q;
                     document.getElementById('impb1').innerHTML = b;
 
-
             };
-            };
-
+        };
         properToMixed(arr);
-
 }
