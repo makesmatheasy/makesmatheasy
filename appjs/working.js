@@ -303,6 +303,12 @@ $(document).ready(function () {
         clearall();
     })
 
+    $("#2d-shape-btn").click(function () {
+        openit("#2d-shape");
+        closenav();
+        clearall();
+    });
+
     $("#3d-shape-btn").click(function () {
         openit("#3d-shape");
         closenav();
