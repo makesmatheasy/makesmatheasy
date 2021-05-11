@@ -158,8 +158,6 @@ Other Tech/Libraries
   - Strain Calculator
   - Stress Calculator
   - Profit Loss Calculations
-  - Statistics Formulas
-  - Mean Calculator
     - Arithmetic Mean
     - Geometric Mean
     - Harmonic Mean
@@ -341,8 +339,19 @@ Other Tech/Libraries
   - Poisson Distribution Calculator
   - Bayes Probability Theorem
 - Statistics
+  - Statistics Formulae
+  - Mean Calculator
+  - Weighted Mean Calculator
+  - Mean Median Mode
+  - Standard Deviation
   - T-test
   - Z-test
+  - Z score Calculator
+  - Skewness Calculator
+  - Coefficient of Variation
+  - Covariance Calculator
+  - Linear Regression Calculator
+  - Margin of Error Calculator
   - Chi-Square Test
 ---
 
