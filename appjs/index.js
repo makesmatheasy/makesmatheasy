@@ -172,6 +172,7 @@ function openit(id) {
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
+        "#chng-vol-cube",
         "#chng-vol-sphere",
         "#laplacecollapse",
         "#limitscollapse",
@@ -240,7 +241,7 @@ function openit(id) {
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-	"#onetwocom-calc",
+        "#onetwocom-calc",
         "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
@@ -348,7 +349,7 @@ function openit(id) {
         "#lrcs",
         "#perats",
         "#mecs",
-	"#chng-vol-cube"
+        "#chng-vol-cube"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
