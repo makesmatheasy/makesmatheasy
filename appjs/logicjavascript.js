@@ -9142,6 +9142,19 @@ function nextPrime(num)
     }
     document.getElementById("nextPrimeResult").innerHTML = "The next prime number of " + num + " is: " + res;
 }
+
+//Sum of divisors Function
+function sumDivisor(num)
+{
+    let res = 0;
+    for (let i = 1; i <= num; i++){
+      if (!(num % i)) {
+        res += i;
+      }
+    }
+    document.getElementById("smDivResult").innerHTML = "The sum of divisors of " + num + " is: " + res;
+}
+
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
