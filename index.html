@@ -7323,38 +7323,48 @@
     </div>
     <div class="coll">
         <p>
-        <input type="text" id = "vx1" class = "form__field " placeholder="Enter x coordinate of 1st vector">
-        <input type="text" id = "vy1" class = "form__field " placeholder="Enter y coordinate of 1st vector">
-        <input type="text" id = "vz1" class = "form__field " placeholder="Enter z coordinate of 1st vector">
-        <input type="text" id = "vx2" class = "form__field " placeholder="Enter x coordinate of 2nd vector">
-        <input type="text" id = "vy2" class = "form__field " placeholder="Enter y coordinate of 2nd vector">
-        <input type="text" id = "vz2" class = "form__field " placeholder="Enter z coordinate of 2nd vector">
-        <input type="text" id = "vx3" class = "form__field " placeholder="Enter x coordinate of 3rd vector">
-        <input type="text" id = "vy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
-        <input type="text" id = "vz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
+            Vector X :   <input type="text" id="vx1" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="vy1" size=3 value='' placeholder="B"> j + <input type="text" id="vz1" size=3 value='' placeholder="C"> k
+            <br><br>
+            Vector Y :   <input type="text" id="vx2" size=3 value='' placeholder="A"> i +
+        <input type="text" id="vy2" size=3 value='' placeholder="B"> j + <input type="text" id="vz2" size=3 value='' placeholder="C"> k
         <br><br>
-        <button class="btn btn-light" type="submit" onclick="stp()">Find</button></p>
-        <br>
+        Vector Z :   <input type="text" id="vx3" size=3 value='' placeholder="A"> i +
+        <input type="text" id="vy3" size=3 value='' placeholder="B"> j + <input type="text" id="vz3" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=stp()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="stpans" style="color: white; font-size: x-large;"></h5>
     </div>
-    <h4 id = "stpans"></h4><br>
+    <br><br>
     <div class="text-center">
         <h3>Vector Triple Product</h3><br>
     </div>
-    <div class = "coll" >
+    <div class="coll">
         <p>
-        <input type="text" id = "vvx1" class = "form__field " placeholder="Enter x coordinate of 1st vector">
-        <input type="text" id = "vvy1" class = "form__field " placeholder="Enter y coordinate of 1st vector">
-        <input type="text" id = "vvz1" class = "form__field " placeholder="Enter z coordinate of 1st vector">
-        <input type="text" id = "vvx2" class = "form__field " placeholder="Enter x coordinate of 2nd vector">
-        <input type="text" id = "vvy2" class = "form__field " placeholder="Enter y coordinate of 2nd vector">
-        <input type="text" id = "vvz2" class = "form__field " placeholder="Enter z coordinate of 2nd vector">
-        <input type="text" id = "vvx3" class = "form__field " placeholder="Enter x coordinate of 3rd vector">
-        <input type="text" id = "vvy3" class = "form__field " placeholder="Enter y coordinate of 3rd vector">
-        <input type="text" id = "vvz3" class = "form__field " placeholder="Enter z coordinate of 3rd vector">
+            Vector X :   <input type="text" id="vvx1" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="vvy1" size=3 value='' placeholder="B"> j + <input type="text" id="vvz1" size=3 value='' placeholder="C"> k
+            <br><br>
+            Vector Y :   <input type="text" id="vvx2" size=3 value='' placeholder="A"> i +
+        <input type="text" id="vvy2" size=3 value='' placeholder="B"> j + <input type="text" id="vvz2" size=3 value='' placeholder="C"> k
         <br><br>
-        <button class="btn btn-light" type="submit" onclick="vtp()">Find</button></p>
+        Vector Z :   <input type="text" id="vvx3" size=3 value='' placeholder="A"> i +
+        <input type="text" id="vvy3" size=3 value='' placeholder="B"> j + <input type="text" id="vvz3" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vtp()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vtpans" style="color: white; font-size: x-large;"></h5>
     </div>
-    <h4 id = "vtpans"></h4><br>
 </div>
 
 
