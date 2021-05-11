@@ -28,6 +28,11 @@ $("#utc").click(function(){
     closenav();
     clearall();
 });
+$("#manhat").click(function(){
+    openit("#manhats");
+    closenav();
+    clearall();
+});
 
 $("#manhat").click(function(){
     openit("#manhats");
@@ -203,8 +208,14 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#betabtn").click(function () {
+        openit("#beta");
+         closenav();
+        clearall();
+    });
     $("#imprtoprbtn").click(function () {
         openit("#imprtopr");
+
         closenav();
         clearall();
     });
@@ -439,6 +450,12 @@ $(document).ready(function () {
     })
     $("#hydrops").click(function () {
         openit("#hydroz");
+        closenav();
+        clearall();
+    });
+
+    $("#segcal").click(function () {
+        openit("#segcals");
         closenav();
         clearall();
     });
