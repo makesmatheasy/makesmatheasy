@@ -2406,12 +2406,15 @@ function excentersolve(){
     a=parseFloat(document.getElementById('ena').value);
     b=parseFloat(document.getElementById('enb').value);
     c=parseFloat(document.getElementById('enc').value);
-    var excenterop1 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
-    var excenterop2 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
-    var excenterop2 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
-    document.getElementById("ex_output1").innerHTML = "The excentre for first side is " + excenterop1
-    document.getElementById("ex_output2").innerHTML = "The excentre for second side is " + excenterop2
-    document.getElementById("ex_output3").innerHTML = "The excentre for third side is " + excenterop3
+    var excenterop1 = (-a*x1 + b*x2 + c*x3)/(-a+b+c)
+    var excenterop2 = (-a*y1 + b*y2 + c*y3)/(-a+b+c)
+    var excenterop3 = (a*x1 - b*x2 + c*x3)/(a-b+c)
+    var excenterop4 = (a*y1 - b*y2 + c*y3)/(a-b+c)
+    var excenterop5 = (a*x1 + b*x2 - c*x3)/(a+b-c)
+    var excenterop6 = (a*y1 + b*y2 - c*y3)/(a+b-c)
+    document.getElementById("ex_output1").innerHTML = "The excentre for first side is (" + excenterop1.toFixed(2) + "," + excenterop2.toFixed(2) + ")";
+    document.getElementById("ex_output2").innerHTML = "The excentre for second side is (" + excenterop3.toFixed(2) + "," + excenterop4.toFixed(2) + ")";
+    document.getElementById("ex_output3").innerHTML = "The excentre for third side is (" + excenterop5.toFixed(2)  + "," + excenterop6.toFixed(2) + ")"; 
 }
 
 function collinearsolve()
