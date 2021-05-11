@@ -1030,6 +1030,14 @@ function setcal() {
     }
 }
 
+function greatcfind(){
+    let N = parseInt(document.getElementById("greatinin").value)
+    let nextN = Math.floor(Math.cbrt(N)) + 1;
+ 
+    let ans =  nextN * nextN * nextN;
+    document.getElementById("greatcube").innerHTML = "The cube greater than "+N+" is "+ans
+}
+
 function smallerscfind(){
     let N = parseInt(document.getElementById("smallinin").value)
     let prevN = Math.floor(Math.sqrt(N));
