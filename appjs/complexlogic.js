@@ -1567,3 +1567,39 @@ function manhatcal()
     }
     document.getElementById("manhatans").innerHTML=ans;
 }
+
+function mifcal()
+{
+    var num1=document.getElementById("mians1").value;
+    var num2=document.getElementById("mians2").value;
+    ans="";
+    if(num1==""||num2=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        var d=num2/num1;
+        ans="Multiplicative inverse of given number in decimal is: "+d;
+    }
+    document.getElementById("mians").innerHTML=ans;
+}
+function midcal()
+{
+    var num1=document.getElementById("mians1").value;
+    var num2=document.getElementById("mians2").value;
+    ans="";
+    if(num1==""||num2=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        ans="Multiplicative inverse of given number in fraction is: "+num2+" / "+num1;
+    }
+    document.getElementById("mians").innerHTML=ans;
+}
