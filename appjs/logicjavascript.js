@@ -10643,6 +10643,9 @@ function rankcal() {
 
     var input = document.getElementById("rankcal-input").value;
     let result = document.getElementById("rankcal-result");
+    if(input == ""){
+    result.innerHTML = "Enter a word to get its rank in dictionary";
+    }
     input = input.toUpperCase();
     var s = input.length;
     var m = fa(s);
@@ -10660,7 +10663,6 @@ function rankcal() {
         }
     else
         result.innerHTML = "Invalid input use alphabet only";
-
 }
 
 
