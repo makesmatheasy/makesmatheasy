@@ -2344,6 +2344,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="manhat"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Manhattan Distance Calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Manhattan Distance Calculator','#manhats','c','manhatfav')"><img
+                                        id="manhatimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="analyticalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate Geometry
                                Calculator</a>
@@ -13455,6 +13471,20 @@
 
 <!--Hydrosrtatic Pressure ends-->
 
+<div class="collapse" id="manhats">
+    <h1 style="font-family:mathfont" >MANHATTAN DISTANCE CALCULATOR </h1>
+    <p>&nbsp;</p>
+  <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">First Point:  <input type="number" name="mdx1" id="mdx1" width="5em" placeholder="Enter value of X1"> 
+    <input type="number" name="mdx2" id="mdx2" width="5em" placeholder="Enter value of  Y1">
+    <p>&nbsp;</p></p>
+  <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Second Point  <input type="number" name="mdx3" id="mdx3" width="5em" placeholder="Enter value of X2"> 
+    <input type="number" name="mdx4" id="mdx4" width="5em" placeholder="Enter value of Y2"> 
+    <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="manhatcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="manhatans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        <p>&nbsp;</p>
+    </div>
 <div class="collapse" id="utcs">
 
     
@@ -13476,7 +13506,8 @@
 
 <div id="mecs" class="collapse">
 
-    
+
+<div id="mecs" class="collapse">
     <h1 >MARGIN OF ERROR CALCULATOR </h1>
     <p>&nbsp;</p>
     <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
