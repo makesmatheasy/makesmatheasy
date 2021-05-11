@@ -2457,15 +2457,40 @@ function excentersolve(){
     a=parseFloat(document.getElementById('ena').value);
     b=parseFloat(document.getElementById('enb').value);
     c=parseFloat(document.getElementById('enc').value);
+    var output1 = document.getElementById("ex_output1");
+    var temp = "";
     var excenterop1 = (-a*x1 + b*x2 + c*x3)/(-a+b+c)
     var excenterop2 = (-a*y1 + b*y2 + c*y3)/(-a+b+c)
     var excenterop3 = (a*x1 - b*x2 + c*x3)/(a-b+c)
     var excenterop4 = (a*y1 - b*y2 + c*y3)/(a-b+c)
     var excenterop5 = (a*x1 + b*x2 - c*x3)/(a+b-c)
     var excenterop6 = (a*y1 + b*y2 - c*y3)/(a+b-c)
-    document.getElementById("ex_output1").innerHTML =  "The excentre for first side is (" + excenterop1.toFixed(2) + " , " + excenterop2.toFixed(2) + ")";
-    document.getElementById("ex_output2").innerHTML = "The excentre for second side is (" + excenterop3.toFixed(2) + " , " + excenterop4.toFixed(2) + ")";
-    document.getElementById("ex_output3").innerHTML = "The excentre for third side is (" + excenterop5.toFixed(2)  + " , " + excenterop6.toFixed(2) + ")"; 
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3) && !isNaN(a) && !isNaN(b) && !isNaN(c))
+    {
+     temp += "\\[The \\space coordinates \\space of \\space Excenters \\space are \\space given \\space by \\]";
+     temp += "\\[I1 \\space = \\space ( \\space \\frac{(-ax1)+(bx2)+(cx3)}{(-a)+(b)+(c)} \\space , \\space \\frac{(-ay1)+(by2)+(cy3)}{(-a)+(b)+(c)} \\space ) \\]";
+     temp +=  "\\[I1 \\space = \\space ( \\space \\frac{( " + (-a) + "\\times" + x1 + ") + (" + b + " \\times " + x2 + ") + (" + c + "\\times" + x3 + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + (-a)+ "\\times" + y1 + ") + (" + b + "\\times" + y2 + ") + (" + c + "\\times" + y3 + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} ) \\]";
+     temp += "\\[I1 \\space = \\space ( \\space \\frac{( " + ((-a)*x1) + ") + (" + (b*x2) + ") + (" + (c*x3) + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + ((-a)*y1) + ") + (" + (b*y2) + ") + (" + (c*y3) + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} ) \\]";    
+     temp +=  "\\[I1 \\space = \\space ( \\space \\frac{ " + (((-a)*x1)+(b*x2)+(c*x3)) + " }{" + ((-a)+b+c) + "} \\space , \\space \\frac{ " + (((-a)*y1)+(b*y2)+(c*y3)) + " }{" + ((-a)+b+c) + "} ) \\]";
+     temp +=  "\\[The \\space excenter \\space for \\space first \\space side \\space is \\space ( " + excenterop1.toFixed(2) + " , " + excenterop2.toFixed(2) + ") \\]";
+     temp += "\\[I2 \\space = \\space ( \\space \\frac{(ax1)-(bx2)+(cx3)}{(a)-(b)+(c)} \\space , \\space \\frac{(ay1)-(by2)+(cy3)}{(a)-(b)+(c)} \\space ) \\]";
+     temp +=  "\\[I2 \\space = \\space ( \\space \\frac{( " + (a) + "\\times" + x1 + ") - (" + (b) + " \\times " + x2 + ") + (" + c + "\\times" + x3 + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + a + "\\times" + y1 + ") - (" + b + "\\times" + y2 + ") + (" + c + "\\times" + y3 + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} ) \\]";
+     temp += "\\[I2 \\space = \\space ( \\space \\frac{( " + ((a)*x1) + ") - (" + (b*x2) + ") + (" + (c*x3) + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + ((a)*y1) + ") - (" + (b*y2) + ") + (" + (c*y3) + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} ) \\]";    
+     temp +=  "\\[I2 \\space = \\space ( \\space \\frac{ " + (((a)*x1)-(b*x2)+(c*x3)) + " }{" + (a-b+c) + "} \\space , \\space \\frac{ " + (((a)*y1)-(b*y2)+(c*y3)) + " }{" + (a-b+c) + "} ) \\]";
+     temp += "\\[The \\space excentre \\space for \\space second \\space side \\space is \\space ( " + excenterop3.toFixed(2) + " , " + excenterop4.toFixed(2) + ") \\]";
+     temp += "\\[I3 \\space = \\space ( \\space \\frac{(ax1)+(bx2)-(cx3)}{(a)+(b)-(c)} \\space , \\space \\frac{(ay1)+(by2)-(cy3)}{(a)+(b)-(c)} \\space ) \\]";
+     temp +=  "\\[I3 \\space = \\space ( \\space \\frac{( " + (a) + "\\times" + x1 + ") + (" + (b) + " \\times " + x2 + ") - (" + c + "\\times" + x3 + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} \\space , \\space \\frac{( " + a + "\\times" + y1 + ") + (" + b + "\\times" + y2 + ") - (" + c + "\\times" + y3 + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} ) \\]";
+     temp += "\\[I3 \\space = \\space ( \\space \\frac{( " + ((a)*x1) + ") + (" + (b*x2) + ") - (" + (c*x3) + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} \\space , \\space \\frac{( " + ((a)*y1) + ") + (" + (b*y2) + ") - (" + (c*y3) + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} ) \\]";    
+     temp +=  "\\[I3 \\space = \\space ( \\space \\frac{ " + (((a)*x1)+(b*x2)-(c*x3)) + " }{" + (a+b-c) + "} \\space , \\space \\frac{ " + (((a)*y1)+(b*y2)-(c*y3)) + " }{" + (a+b-c) + "} ) \\]";
+     temp  += "\\[The \\space excentre \\space for \\space third \\space side \\space is \\space ( " + excenterop5.toFixed(2)  + " , " + excenterop6.toFixed(2) + ") \\]"; 
+     output1.innerHTML = temp;
+     renderMathInElement(output1);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output1.innerHTML = temp;
+        renderMathInElement(output1);
+    }
 }
 
 function collinearsolve()
