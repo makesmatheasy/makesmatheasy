@@ -1029,6 +1029,15 @@ function setcal() {
         document.getElementById("set-result").innerHTML = [...re].join(' ') ;
     }
 }
+
+
+function betafind(){
+    let num1 = parseInt(document.getElementById("betain1").value)
+    let num2 = parseInt(document.getElementById("betain2").value)
+    let ans = (Math.gamma(num1) + Math.gamma(num2))/Math.gamma(num1+num2)
+    document.getElementById("betafindans").innerHTML = ans
+}
+
 function heptafind(){
     let side = parseInt(document.getElementById("inputsideheptadeca").value)
     let peri = 17*side
@@ -1036,6 +1045,7 @@ function heptafind(){
     document.getElementById("resultofareaheptadeca1").innerHTML = "The area is "+ar
     document.getElementById("resultofperimeterheptadeca").innerHTML = "The perimeter is "+peri
 }
+
 function exterior(){
     // javascript program to find the angle
     // of a cyclic quadrilateral
@@ -9550,10 +9560,11 @@ function hammingCalc(){
 //function for  error detection of a message in hamming code
 function hammingCalc1(){
     let input1 = document.getElementById("detect-input").value;
-    const type1 = document.getElementById("detect-type").value;
+    const type1 = document.getElementById("detect-type1").value;
+    const type2 = document.getElementById("detect-type2").value;
     let result1 = document.getElementById("detect-result");
 
-    if(type1 === "Even Parity"){
+    if(type1 === "Right-To-Left" && type2 === "Even"){//right to left with even parity
         let n = input1.length;
         let k=0,ctr=0;
         var parity = "";
@@ -9585,7 +9596,38 @@ function hammingCalc1(){
             var p = parseInt(parity,2).toString();
             result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right";
         }
-    }else if(type1 === "Odd Parity"){//for right to left only
+    }else if(type1 === "Left-To-Right" && type2 === "Even"){ //left to right using even parity
+        let n = input1.length;
+        let k=0,ctr=0;
+        var parity = "";
+        for (var i = 0; i < n;i++){
+            if((i+1)== Math.pow(2,k)){
+                for(var j =i;j < n; j++){
+                    if(((i+1) & (j+1)) == (i+1)){
+                        if(input1[j] == "1"){
+                            ctr++;
+                        }else{
+                            ctr +=0;
+                        }
+                    }
+                }
+                if(ctr % 2 == 0){
+                    parity +="0";
+                }else if(ctr % 2 == 1 ){
+                    parity +="1";
+                }
+                ctr = 0;
+                k++;
+            }
+        }
+        if(parseInt(parity)==0){
+            result1.innerHTML = "Error Free";
+        }else{
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2).toString();
+            result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + p + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" +  `${(n-p)+1}` +"&nbsp;&nbsp; from right";
+        }
+    }else if (type1 === "Right-To-Left" && type2 === "Odd"){//for right to left using odd parity
         let n = input1.length;
         let k=0,ctr=0;
         var parity = "";
@@ -11160,4 +11202,28 @@ function chivalue() {
 
 
 
+}
+
+function manhatcal()
+{
+    var num1=document.getElementById("mdx1").value;
+    var num2=document.getElementById("mdx2").value;
+    var num3=document.getElementById("mdx3").value;
+    var num4=document.getElementById("mdx4").value;
+    ans="";
+    if(num1==""||num2==""||num3==""||num4=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        num4=parseFloat(num4);
+
+        var x=Math.abs(num1-num3)+Math.abs(num2-num4);
+        ans="The calculated Manhattan Distnace of given coordinates is: "+x;
+    }
+    document.getElementById("manhatans").innerHTML=ans;
 }
