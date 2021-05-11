@@ -12200,6 +12200,11 @@
                            href="#">Tetrahexahedron</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#disphenoid"
+                           style="text-decoration:none;"
+                           href="#">Disphenoid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#parallelepiped"
                            style="text-decoration:none;"
                            href="#">Parallelepiped</a></td>
@@ -22032,6 +22037,62 @@ N is the population size.
                         <p class="stopwrap" id="resultoftetrahexavol"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultoftetrahexaarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="disphenoid"bindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Disphenoid</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=\sqrt{\frac{(l^2+m^2-n^2)(l^2-m^2+n^2)(-l^2+m^2+n^2)}{72}} \]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <br>
+                                    <h5 class="text-center">Radius </h5>
+                                    <p class="text-center">\[R=\sqrt{\frac{l^2+m^2+n^2}{8}}\]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>                                    
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Disphenoid_tetrahedron.png/200px-Disphenoid_tetrahedron.png" class="img-fluid">                                </div>
+
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                        placeholder="Enter length of first side" id="disin1">
+                        <input class="form__field" type="number"
+                        placeholder="Enter length of second side" id="disin2">
+                        <input class="form__field" type="number"
+                        placeholder="Enter length of third side" id="disin3">
+                        <button class ="btn btn-dark" onclick="disfind()">Find</button>
+                        <p class="stopwrap" id="resultofdisvol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdisrad"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
