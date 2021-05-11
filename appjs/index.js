@@ -147,8 +147,10 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+	"#chng-vol-cube",
         "#sosqs",
         "#sosqsn",
+	"#chng-vol-cuboid",
         "#squaresRanges",
         "#favourite",
         "#cubesRanges",
@@ -172,9 +174,7 @@ function openit(id) {
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
-        "#chng-vol-cube",
         "#chng-vol-sphere",
-        "#chng-vol-cuboid",
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",
@@ -242,7 +242,7 @@ function openit(id) {
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-        "#onetwocom-calc",
+	"#onetwocom-calc",
         "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
@@ -350,6 +350,7 @@ function openit(id) {
         "#lrcs",
         "#perats",
         "#mecs",
+	"#chng-vol-cube"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
