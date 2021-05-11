@@ -174,6 +174,7 @@ function openit(id) {
         "#3d-solid",
         "#chng-vol-cube",
         "#chng-vol-sphere",
+        "#chng-vol-cuboid",
         "#laplacecollapse",
         "#limitscollapse",
         "#parab",

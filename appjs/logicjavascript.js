@@ -7407,6 +7407,21 @@ function volSphere() {
 
 }
 
+function volCuboid() {
+    var l = parseInt(document.getElementById("chng-length-cuboid").value);
+    var b = parseInt(document.getElementById("chng-length-cuboid").value);
+    var h = parseInt(document.getElementById("chng-length-cuboid").value);
+    var ans = "percentage increase in the volume of the cuboid is ";
+
+    var percentInc = (1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100));
+    percentInc -= 1;
+    percentInc *= 100;
+
+    ans = ans + percentInc + " %";
+    document.getElementById("cuboidAns").innerText = ans;
+
+}
+
 // simple and compound interest
 //-----------------------------------------------------
 function simple_interest() {

@@ -2656,6 +2656,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="per-chng-cuboid"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of a Cuboid
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Percentage change in volume of cuboid','#chng-vol-cuboid','c','chng-vol-cuboidimgfav')"><img
+                                        id="chng-vol-cuboidimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="consimbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Congruence
                                 and Similarity of Triangles
@@ -8845,6 +8862,32 @@
                     <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                     font-family:mathfont;" id="sphereAns"></p>
                 </form>
+            </div>
+        </div>
+
+        <div class="collapse" id="chng-vol-cuboid">
+            <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form__field" name="a"
+                       id="chng-length-cuboid"
+                       placeholder="Enter the in the length of the cuboid"/>
+               <br>
+               <br>
+                <input type="text" class="form__field" name="a"
+                       id="chng-breadth-cuboid"
+                       placeholder="Enter the change in the breadth of the cuboid"/>
+                <br>
+                <br>
+                <input type="text" class="form__field" name="a"
+                       id="chng-height-cuboid"
+                       placeholder="Enter the change in the height of the cuboid"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volCuboid()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="cuboidAns"></p>
             </div>
         </div>
 
