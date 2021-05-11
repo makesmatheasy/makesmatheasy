@@ -57,11 +57,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
- $("#per-chng-cube").click(function () {
-        openit("#chng-vol-cube");
-        closenav();
-        clearall();
-    })
     $("#logValues").click(function () {
         openit("#log_values");
         closenav();
