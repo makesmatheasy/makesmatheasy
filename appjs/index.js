@@ -228,6 +228,7 @@ function openit(id) {
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
+        "#manhats",
         "#pandc",
         "#enna_prism",
         "#pairfacts",

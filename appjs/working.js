@@ -28,6 +28,11 @@ $("#utc").click(function(){
     closenav();
     clearall();
 });
+$("#manhat").click(function(){
+    openit("#manhats");
+    closenav();
+    clearall();
+});
 
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
