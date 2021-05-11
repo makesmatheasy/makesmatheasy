@@ -1154,6 +1154,14 @@ function decagramfind(){
     document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
 }
 
+function enneagramfind(){
+    let side  = parseInt(document.getElementById("inputenneagramside").value)
+    let peri = 40*side
+    let ar = 34.462*side*side 
+    document.getElementById("resultofenneagramperi").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofenneagramarea").innerHTML = "The area is "+ar
+}
+
 function cencirtcal(){
     var a1 = parseInt(document.getElementById("fxc").value);
     var a2 = parseInt(document.getElementById("sxc").value);
