@@ -147,6 +147,7 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+	"#chng-vol-cube",
         "#sosqs",
         "#sosqsn",
         "#squaresRanges",
