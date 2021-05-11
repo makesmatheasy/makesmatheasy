@@ -249,7 +249,7 @@ Other Tech/Libraries
     - Ellipse
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
-    - Star Polygons: Pentagram, Double Star Polygon, Star of Lakhshmi
+    - Star Polygons: Pentagram, Unicursal Hexagram, Double Star Polygon, Star of Lakshmi
 
   - 3D Shapes Calculator
     - Cube

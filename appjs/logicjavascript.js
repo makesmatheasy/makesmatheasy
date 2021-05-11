@@ -4354,6 +4354,71 @@ function solvepentagram() {
 
 }
 
+function solveunihexagram() {
+    var a = document.getElementById("inputunihexgramside").value;
+    var shodiagoutput = document.getElementById("resultofunihexshodia");
+    var longdiagoutput = document.getElementById("resultofunihexlongdia");
+    var b1output = document.getElementById("resultofunihexsec1");
+    var b2output = document.getElementById("resultofunihexsec2");
+    var b3output = document.getElementById("resultofunihexsec3");
+    var coutput = document.getElementById("resultofunihexc");
+    var perioutput = document.getElementById("resultofunihexperi");
+    var areaoutput = document.getElementById("resultofunihexarea");
+    var shodiagtemp = "";
+    var longdiagtemp = "";
+    var b1temp = "";
+    var b2temp = "";
+    var b3temp = "";
+    var ctemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        shodiagtemp += "\\[Short\\space diagonal \\space \\newline \\sqrt{3} \\times " + a + "\\ = " + eval(String(1.73205081 * a)).toFixed(2) + "\\]";
+        shodiagoutput.innerHTML = shodiagtemp;
+
+        longdiagtemp += "\\[Long \\space diagonal \\space \\newline 2 \\times" + a + "\\ = " + eval(String(2 * a)).toFixed(2) + "\\]";
+        longdiagoutput.innerHTML = longdiagtemp;
+
+        b1temp += "\\[Section \\space b_1 \\space \\newline \\frac{\\sqrt{3}}{2} \\times" + a + "\\ = " + eval(String(0.8660254 * a)).toFixed(2) + "\\]";
+        b1output.innerHTML = b1temp;
+
+        b2temp += "\\[Section \\space b_2 \\space \\newline \\frac{\\sqrt{3}}{6} \\times" + a + "\\ = " + eval(String(0.28867513 * a)).toFixed(2) + "\\]";
+        b2output.innerHTML = b2temp;
+
+        b3temp += "\\[Section \\space b_3 \\space \\newline \\frac{\\sqrt{3}}{3} \\times" + a + "\\ = " + eval(String(0.57735027 * a)).toFixed(2) + "\\]";
+        b3output.innerHTML = b3temp;
+
+        ctemp += "\\[Section \\space c^` \\space \\newline \\frac{1}{2} \\times" + a + "\\ = " + eval(String(0.5 * a)).toFixed(2) + "\\]";
+        coutput.innerHTML = ctemp;
+
+        peritemp += "\\[Perimeter \\space \\newline ( 2 + \\frac{10}{3} \\times \\sqrt{3}) \\times" + a + "\\ = " + eval(String(7.77350269 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space \\newline \\frac{5}{6} \\times \\sqrt{3} \\times" + a + "\\times" + a + "\\ = " + eval(String(1.44337567 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(shodiagoutput);
+        renderMathInElement(longdiagoutput);
+        renderMathInElement(b1output);
+        renderMathInElement(b2output);
+        renderMathInElement(b3output);
+        renderMathInElement(coutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        shodiagoutput.innerHTML = "";
+        longdiagoutput.innerHTML = "";
+        b1output.innerHTML = "";
+        b2output.innerHTML = "";
+        b3output.innerHTML = "";
+        coutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveoctagram() {
     var a = document.getElementById("inputoctgramside").value;
     var spikeoutput = document.getElementById("resultofoctgramspike");

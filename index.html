@@ -11866,6 +11866,11 @@
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal"
+                                           data-target="#unihexagram"
+                                           style="text-decoration:none;" href="#">Unicursal Hexagram</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
                                            data-target="#octagram"
                                            style="text-decoration:none;" href="#">Octagram</a></td>
                                 </tr>
@@ -19021,6 +19026,91 @@ N is the population size.
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="unihexagram" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Unicursal Hexagram</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Short diagonal</h5>
+                                <p class="text-center">\[b = \sqrt{3} \times a \]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Long diagonal</h5>
+                                <p class="text-center">\[c = 2 \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Section b1</h5>
+                                <p class="text-center">\[b_1 = \frac{b}{2} = \frac{\sqrt{3}}{2} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Section b2</h5>
+                                <p class="text-center">\[b_2 = \frac{b}{6} = \frac{\sqrt{3}}{6} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Section b3</h5>
+                                <p class="text-center">\[b_3 = \frac{b}{3} = \frac{\sqrt{3}}{3} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Section c` </h5>
+                                <p class="text-center">\[c^` = \frac{c}{4} = \frac{a}{2} \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 4b_1 + 4b_3 + 4c^`\]</p>
+                                <p class="text-center">\[\space \space = (2 + \frac{10}{3} \space \sqrt{3}) \space a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = (b_1 + b_2)^2 \space sin(60 \degree) + 2b_{2}c^`\]</p>
+                                <p class="text-center">\[\space = (\frac{5}{6} \space \sqrt{3}) \space a^2\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/unicursal-hexagram.png" class="img-fluid">
+                                    <br><br>
+                                    <img src="images/unicursal-hexagram-2.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of unicursal hexagram(a)" id="inputunihexgramside"
+                                   oninput="solveunihexagram();">
+                        <p class="stopwrap" id="resultofunihexshodia"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexlongdia"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexsec1"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexsec2"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexsec3"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexc"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofunihexarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="octagram" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
