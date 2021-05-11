@@ -284,6 +284,7 @@ Other Tech/Libraries
   - Percentage change in volume of a cube
   - Percentage change in volume of a sphere
   - Percentage change in volume of a Cuboid
+  - Percentage change in volume of a Hemisphere
   - Congruence and Similarity of Triangles
 
 - Equations

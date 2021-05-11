@@ -2673,6 +2673,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="per-chng-hemisphere"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of a HemiSphere
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Percentage change in volume of hemisphere','#chng-vol-hemisphere','c','chng-vol-hemisphereimgfav')"><img
+                                        id="chng-vol-hemisphereimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="consimbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Congruence
                                 and Similarity of Triangles
@@ -8888,6 +8905,22 @@
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                 font-family:mathfont;" id="cuboidAns"></p>
+            </div>
+        </div>
+
+        <div class="collapse" id="chng-vol-hemisphere">
+            <h2 style="color: var(--appimage);">Percentage change in Volume of a hemiSphere</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                       id="chng-side-hemisphere"
+                       placeholder="Enter the percentage change in the radius of the hemisphere"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volhemiSphere()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="hemisphereAns"></p>
             </div>
         </div>
 
