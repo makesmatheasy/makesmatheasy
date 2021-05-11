@@ -11235,3 +11235,11 @@ function manhatcal()
     }
     document.getElementById("manhatans").innerHTML=ans;
 }
+function volCube() {
+    var x = parseInt(document.getElementById("chng-side-cube").value);
+    var ans = "percentage increase in the volume of the cube is ";
+    const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+    ans = ans + per + " %";
+    document.getElementById("cubeAns").innerText = ans;
+
+}
