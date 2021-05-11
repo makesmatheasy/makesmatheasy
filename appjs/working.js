@@ -448,6 +448,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#segcal").click(function () {
+        openit("#segcals");
+        closenav();
+        clearall();
+    });
+
     $("#skew").click(function () {
         openit("#skews");
         closenav();

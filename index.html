@@ -2510,7 +2510,21 @@
                 </table>
             </li>
 
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="segcal"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Segment Area Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Segment Area Calculator','#segcals','c','segfav')"><img
+                                        id="segfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -11838,11 +11852,6 @@
                            style="text-decoration:none;"
                            href="#">Parabolic Arch</a></td>
                 </tr> 
-                <tr>
-                    <td><a data-toggle="modal" data-target="#segcals"
-                           style="text-decoration:none;"
-                           href="#">Segment Calculator</a></td>
-                </tr>               
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -14108,24 +14117,6 @@ N is the population size.
 </div>
 
 
-<div class="collapse" id="segcals">
-    
-    <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
-    <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
-    <p>&nbsp;</p>
-    <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
-    <select id="angseg" class="form__field">
-        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
-        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
-    </select>
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button> <p>&nbsp;</p>
-    <p id="segans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
-    
-    <div style="color: white; text-align: center; font-family:mathfont; font-size: 1.3em;"> A segment of a circle can be defined as a region bounded by a chord and a corresponding arc lying between the chord’s endpoints.<br>Area of a Segment in Radians: A = (½) × r x r x (θ – Sin θ)
-    <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]</div>
-   
-</div>
 
 
 <!--Binomial PMF starts-->
