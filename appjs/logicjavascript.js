@@ -1153,12 +1153,28 @@ function centcal(){
     document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
 }
 
+function rtfind(){
+    let side  = parseInt(document.getElementById("inputdecagramside").value)
+    let ar = 2.975*side*side
+    let vol = 0.422*side*side*side
+    document.getElementById("resultofrtarea").innerHTML = "The surface area is "+ar
+    document.getElementById("resultofrtvol").innerHTML = "The volume  is "+vol
+}
+
 function decagramfind(){
     let side  = parseInt(document.getElementById("inputdecagramside").value)
     let peri = 20*side
     let ar = 17.231*side*side
     document.getElementById("resultofdecagramperi").innerHTML = "The perimeter is "+peri
     document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
+}
+
+function enneagramfind(){
+    let side  = parseInt(document.getElementById("inputenneagramside").value)
+    let peri = 40*side
+    let ar = 34.462*side*side 
+    document.getElementById("resultofenneagramperi").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofenneagramarea").innerHTML = "The area is "+ar
 }
 
 function cencirtcal(){

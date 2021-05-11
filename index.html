@@ -11927,6 +11927,16 @@
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal"
+                                           data-target="#enneagram"
+                                           style="text-decoration:none;" href="#">Enneagram</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
+                                           data-target="#rt"
+                                           style="text-decoration:none;" href="#">Releaux Tetrahedron</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
                                            data-target="#doublestar"
                                            style="text-decoration:none;" href="#">Double Star Polygon</a></td>
                                 </tr>
@@ -19253,11 +19263,109 @@ N is the population size.
                         <div class="dropdown-divider"></div>
                         <!-- --------FROM------- -->
                         <input class="form__field" type="number"
-                                   placeholder="Enter edge length of rhombic dodecahedron(a)" id="inputdecagramside">
+                                   placeholder="Enter edge length of Decagram(a)" id="inputdecagramside">
                         <button class = "btn btn-dark" onclick="decagramfind()">FInd</button>           
                         <p class="stopwrap" id="resultofdecagramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofdecagramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enneagram" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enneagram</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 40*a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = 4\space x\space\frac {\sqrt{5 \times (5 - 2 \sqrt{5})}}{2} \space a^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://sjhexpress.com/wp-content/uploads/2020/02/F7FF52ED-5D1A-46BA-94E9-D0F32DE6D2C8-900x900.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of Enneagram(a)" id="inputenneagramside">
+                        <button class = "btn btn-dark" onclick="enneagramfind()">Find</button>           
+                        <p class="stopwrap" id="resultofenneagramperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofenneagramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="rt" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Releaux Tetrahedron</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = 0.422*s*s*s\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Surface Area</h5>
+                                <p class="text-center">\[A = 2.975*s*s\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="https://studiored.com/wp-content/uploads/2019/11/Reuleaux-polygons.jpg" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of (a)" id="inputrtside">
+                        <button class = "btn btn-dark" onclick="rtfind()">Find</button>           
+                        <p class="stopwrap" id="resultofrtvol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofrtarea"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
