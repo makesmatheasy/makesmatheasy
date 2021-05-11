@@ -1030,6 +1030,18 @@ function setcal() {
     }
 }
 
+function smallerscfind(){
+    let N = parseInt(document.getElementById("smallinin").value)
+    let prevN = Math.floor(Math.sqrt(N));
+    if (prevN * prevN == N)
+        prevN -= 1;
+    document.getElementById("smallsquare").innerHTML = prevN*prevN
+    let prevN1 = Math.floor(Math.cbrt(N));
+    if (prevN1 * prevN1 * prevN1 == N)
+        prevN1 -= 1;    
+    document.getElementById("smallcube").innerHTML = prevN1*prevN1
+}
+
 function disfind(){
     let l = parseInt(document.getElementById("disin1").value)
     let m = parseInt(document.getElementById("disin2").value)

@@ -1534,6 +1534,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="squarecubebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Squares and Cubes Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Squares and Cubes Calculator','#squarecube','c','squarecubeimgfav')"><img
+                                        id="squarecubeimgfav" src="images/unfavourite.png"
+
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="squaresRange"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Squares & Cubes in a range</a>
                         </td>
@@ -6760,6 +6777,17 @@
                 <li>For any two complex numbers, say Z<sub>1</sub> and Z<sub>2</sub>, then \[\mid Z_{1} \space + \space Z_{2}\mid \space \le \space \mid Z_{1}\mid \space + \space \mid Z_{2}\mid \] </li>
                 <li>The result of the multiplication of two complex numbers and its conjugate value should result in a complex number and it should be a positive value.</li>
               </ol>
+        </div>
+
+        <div class="collapse" id="squarecube">
+            <h2>Previous perfect square and cube number smaller than number N</h2>
+            <br>
+            <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="smallerscfind()">Find</button>
+            <br>
+            <p id="smallcube"></p>
+            <p id="smallsquare"></p>
         </div>
 
         <!-- Complex Number Calculations Begin-->
