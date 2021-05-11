@@ -845,6 +845,42 @@ function ssncal()
 
 }
 
+function sencal(){
+    var num=document.getElementById("sen").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var sumoutput = document.getElementById("senans");
+    var sumtemp="";
+    if(num=="")
+    {
+       sumtemp += "\\[Please \\space enter \\space number \\]";
+       sumoutput.innerHTML = sumtemp;
+       renderMathInElement(sumoutput);
+    }
+    else if(!valid.test(num))
+    {
+        sumtemp += "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        sumoutput.innerHTML = sumtemp;
+        renderMathInElement(sumoutput);
+    }
+    else if(num<1){
+        sumtemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        sumoutput.innerHTML = sumtemp;
+        renderMathInElement(sumoutput);
+    }
+    else{
+        var sumN=Math.trunc((num*(num+1)));
+        sumtemp += "\\[Sum \\space of \\space the \\space First \\space n \\space Even \\space Natural \\space Numbers \\space is \\]";
+        sumtemp += "\\[ \\sum {2n} \\space = \\space n(n+1)  \\]";
+        sumtemp += "\\[ \\sum {2n} \\space = \\space " + num + "(" + num + " + 1) \\]";
+        sumtemp += "\\[ \\sum {2n} \\space = \\space " + num + "\\times" + (num+1) +  " \\]";
+        sumtemp += "\\[ \\sum {2n} \\space = \\space " + sumN + "\\]";
+        sumoutput.innerHTML = sumtemp;
+        renderMathInElement(sumoutput);
+    }
+
+}
+
 function ssoncal()
 {
     var num=document.getElementById("sson").value;
