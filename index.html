@@ -747,6 +747,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="imprtoprbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Improper to Proper Integral</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Improper to Proper Integral','#imprtopr','c','imprtoprimgfav')"><img
+                                        id="imprtoprimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--            differentiation-->
             <li>
                 <table class="table">
@@ -1383,6 +1399,25 @@
                         <li>
                             <table class="table">
                                 <tr>
+                                    <td style="border-top: none;">
+            
+                                        <a id="utc"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Unit Rate Calculator</a>
+                                    </td>
+            
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Unit Rate Calculator','#utcs','c','utcsimgfav')"><img
+                                                    id="utcsimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+
+                        <li>
+                            <table class="table">
+                                <tr>
                                     <td style="border-top:none">
                                         <a id="wandtbtn"
                                         style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Work And Time Calculator</a>
@@ -1496,39 +1531,6 @@
                     </tr>
                 </table>
             </li>
-	<li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="numcubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
-                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="numcubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Number of Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Number of Perfect Cubes in a range','#numcubesRanges','c','numcubesRangeimgfav')"><img
-                                        id="numcubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
             <li>
                 <table class="table">
                     <tr>
@@ -1546,22 +1548,7 @@
             </li>
 
           
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="cubesRange"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Cubes in a range</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Perfect cubes in a range','#cubesRanges','c','cubesRangeimgfav')"><img
-                                        id="cubesRangeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
+           
             <li>
                 <table class="table">
                     <tr>
@@ -6908,7 +6895,7 @@
             </div>
             <br><br>
         <div class="text-center">
-            <h3>Modulus of vecotor</h3><br>
+            <h3>Modulus of Vector</h3><br>
         </div>
         <div class="coll">
             <p>
@@ -6925,7 +6912,6 @@
             <p id="vme"><br></p>
         <h5 id="vmr" style="color: white; font-size: x-large;"></h5>
     </div>
-    <br><br>
             <br><br>
             <div class="text-center">
             <h3>Vector Addition Calculator</h3><br>
@@ -7046,6 +7032,50 @@
         <h5 id="var" style="color: white; font-size: x-large;"></h5>
     </div>
 
+    <div class="text-center">
+        <h3>Paraller vector</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Vector X:   <input type="text" id="vpa1" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="vpb1" size=3 value='' placeholder="B"> j + <input type="text" id="vpc1" size=3 value='' placeholder="C"> k
+            <br><br>
+            Vector Y :   <input type="text" id="vpa2" size=3 value='' placeholder="A"> i +
+        <input type="text" id="vpb2" size=3 value='' placeholder="B"> j + <input type="text" id="vpc2" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectpral()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center; display: block;">
+        <p id="vpe"><br></p>
+    <h5 id="vpr" style="color: rgb(221, 228, 183) !important; font-size: x-large;"></h5>
+</div>
+
+    <br><br>
+    <div class="text-center">
+        <h3>Scalar Projection Calculator</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Enter the First Vector X :   <input type="text" id="inp09" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="inp08" size=3 value='' placeholder="B"> j + <input type="text" id="inp07" size=3 value='' placeholder="C"> k
+            <br><br>
+            Enter the Second Vector Y :   <input type="text" id="inp06" size=3 value='' placeholder="A"> i +
+        <input type="text" id="inp05" size=3 value='' placeholder="B"> j + <input type="text" id="inp04" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectorscalar()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vectorscalar1" style="color: white; font-size: x-large;"></h5>
+    </div>
+
     <br><br>
     <div class="text-center">
         <h3>Vector Projection Calculator</h3><br>
@@ -7055,7 +7085,7 @@
             Enter the First Vector X :   <input type="text" id="inp1" size=3 value='' placeholder="A">  i  +
         <input type="text" id="inp2" size=3 value='' placeholder="B"> j + <input type="text" id="inp3" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector the Second Vector Y :   <input type="text" id="inp4" size=3 value='' placeholder="A"> i +
+            Enter the Second Vector Y :   <input type="text" id="inp4" size=3 value='' placeholder="A"> i +
         <input type="text" id="inp5" size=3 value='' placeholder="B"> j + <input type="text" id="inp6" size=3 value='' placeholder="C"> k
                 <br>
                 <br>
@@ -7157,6 +7187,31 @@
     </div><br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectortetra1" style="color: white; font-size: x-large;"></h5>
+    </div>
+    <br><br>
+
+    <div class="text-center">
+        <h3>Area of Triangle</h3><br>
+    </div>
+    <div class="coll">
+        <p>
+            Vector  X :   <input type="text" id="inp90" size=3 value='' placeholder="A">  i  +
+        <input type="text" id="inp98" size=3 value='' placeholder="B"> j + <input type="text" id="inp97" size=3 value='' placeholder="C"> k
+            <br><br>
+            Vector  Y :   <input type="text" id="inp96" size=3 value='' placeholder="A"> i +
+        <input type="text" id="inp95" size=3 value='' placeholder="B"> j + <input type="text" id="inp94" size=3 value='' placeholder="C"> k
+        <br><br>
+        Vector  Z :   <input type="text" id="inp93" size=3 value='' placeholder="A"> i +
+        <input type="text" id="inp92" size=3 value='' placeholder="B"> j + <input type="text" id="inp91" size=3 value='' placeholder="C"> k
+                <br>
+                <br>
+        <button type="button" class="btn btn-light" onclick=vectortria()>
+            Solve
+        </button><br>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+    <h5 id="vectortria1" style="color: white; font-size: x-large;"></h5>
     </div>
     <br><br>
 
@@ -9696,6 +9751,38 @@
           
         </div>
 <!--Standard Deviation end-->
+        <div class="collapse" id="imprtopr">
+            <h2 style="text-align: center;">Improper to Proper Integrals</h2>
+            <br><br>
+            <p>In mathematical analysis, an improper integral is the limit of a definite integral as an endpoint of the interval(s) of integration approaches either a specified real number, {\displaystyle -infinity to +infinity or in some instances as both endpoints approach limits. Such an integral is often written symbolically just like a standard definite integral, in some cases with infinity as a limit of integration.
+
+                Specifically, an improper integral is a limit of the form:
+            </p>
+            <p>\[{\displaystyle \lim _{b\to \infty }\int _{a}^{b}f(x)\,dx,\qquad \lim _{a\to -\infty }\int _{a}^{b}f(x)\,dx,}\]</p>
+            <br>
+            <p>By abuse of notation, improper integrals are often written symbolically just like standard definite integrals, perhaps with infinity among the limits of integration. When the definite integral exists (in the sense of either the Riemann integral or the more advanced Lebesgue integral), 
+                this ambiguity is resolved as both the proper and improper integral will coincide in value.
+            </p>
+            <p>Often one is able to compute values for improper integrals, even when the function is not integrable in the conventional sense (as a Riemann integral, for instance) because of a singularity in the function or because one of the bounds of integration is infinite.</p>
+            <p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Improperintegral2.png/200px-Improperintegral2.png" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Improperintegral1.png/200px-Improperintegral1.png" alt="">
+            </p>
+            <br>
+            <h4>How to convert Improper Integral to Proper Integral</h4>
+            <h6>Case -1 When one of the limit is infinity and other is a constant or both the limits are infinity</h6>
+            <br>
+            <p>a. When upper limit is infinity</p>
+            <p>\[\int_a^{\infty} f(x) \,dx\space =\space \lim_{t->\infty} \int_a^t f(x)\,dx \]</p>
+            <p>If the limit tends to a finite value the function converges else diverges</p>
+            <br>
+            <p>b. When lower limit is infinity</p>
+            <p>\[\int_{-\infty}^b f(x) \,dx\space =\space \lim_{t->-\infty} \int_t^b f(x) \,dx\]</p>
+            <p>If the limit tends to a finite value the function converges else diverges</p>
+            <br>
+            <p>c. When both the limits are infinity</p>
+            <p>\[\int_{-\infty}^{\infty} f(x) \,dx\space =\space \int_{-\infty}^c f(x)\,dx\space +\space \int_c^{\infty} f(x)\,dx \]</p>
+        </div>
         <div class="collapse" id="mi">
             <h2 style="text-align: center;">Methods of Integration</h2>
             <br><br>
@@ -11698,6 +11785,11 @@
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal"
+                                           data-target="#octagram"
+                                           style="text-decoration:none;" href="#">Octagram</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal"
                                            data-target="#decagram"
                                            style="text-decoration:none;" href="#">decagram</a></td>
                                 </tr>
@@ -11719,7 +11811,7 @@
                     <td><a data-toggle="modal" data-target="#parabolic_arc"
                            style="text-decoration:none;"
                            href="#">Parabolic Arch</a></td>
-                </tr>    
+                </tr> 
                 <tr>
                     <td><a data-toggle="modal" data-target="#segcals"
                            style="text-decoration:none;"
@@ -11964,6 +12056,12 @@
                                         href="#">Enneagonal Prism</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#eqtrian_prism"
+                                        style="text-decoration:none;"
+                                        href="#">Equilateral triangular prism</a>
+                                    </td>
+                                </tr>
                             </table>
 
                         </div>
@@ -12006,6 +12104,11 @@
                                     <td><a data-toggle="modal" data-target="#pentpyramid"
                                         style="text-decoration:none;"
                                         href="#">Pentagonal Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pentbipyramid"
+                                        style="text-decoration:none;"
+                                        href="#">Pentagonal Bipyramid (Decahedron)</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#hexpyramid"
@@ -12086,6 +12189,16 @@
                            style="text-decoration:none;"
                            href="#">Trapezoid</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#spheroidalcap"
+                           style="text-decoration:none;"
+                           href="#">Spheroidal Cap</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#ellipsoidalcap"
+                           style="text-decoration:none;"
+                           href="#">Ellipsoidal Cap</a></td>
+                </tr>
             </table>
         </div>
 
@@ -12131,7 +12244,7 @@
 
 
 <div class="collapse" id="centcal">
-    <h2 style="text-align: center;">Diffrent Centers of Triangel</h2><br>
+    <h2 style="text-align: center;">Diffrent Centers of Triangle</h2><br>
     <h3 style="text-align: center;">Using Edges</h3>
     <div class="col-9">
         <div class="col-9">
@@ -13372,6 +13485,26 @@
     <p id="manhatans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
         <p>&nbsp;</p>
     </div>
+<div class="collapse" id="utcs">
+
+    
+    <h1 >UNIT RATE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <input type="number" name="dens" id="urx1" size="5" placeholder="Enter quantity">  +
+    <input type="text" name="dens" id="urx2" size="5" placeholder="Enter unit">
+    <br>
+    <hr class="form__field">
+    <input type="number" name="dens"  id="urx3" size="5" placeholder="Enter quantity">  +
+    <input type="text" name="dens" id="urx4" size="5" placeholder="Enter unit">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="utcal()">Calculate</button>
+    <p id="utcans"></p>
+    
+   
+</div>
+
+
+<div id="mecs" class="collapse">
 
 
 <div id="mecs" class="collapse">
@@ -14788,7 +14921,6 @@ N is the population size.
                 <br>
                 <br>
                 <!--BCD Addition -->
-                <div class="main" style="padding-left: 3.125rem;">
                 <div class="col-6">
                     <div class="form-group">
                         <h2>BCD Code Addition </h2>
@@ -15039,7 +15171,7 @@ N is the population size.
             <div class="form-group">
                 <h4>Binary-Grey Code Converter</h4><br>
                 <h5>From</h5>
-                <select id="grey-select1" class="form__field" onchange="convertgrey()">
+                <select id="grey-select1" class="form__field">
                     <option class="form_field" style="background-color: #232a36;">Grey
                         Code
                     </option>
@@ -15047,22 +15179,25 @@ N is the population size.
                         Binary
                     </option>
                 </select>
-                <input type="number" id="grey-input" value="0" class="form__field"
-                       oninput="convertgrey()">
+                <input type="number" id="grey-input" value="0" class="form__field">
             </div>
         </div>
         <div class="col-6">
             <div class="form-group">
                 <h5>To</h5>
+                <button type="button" class="btn btn-light" onclick="convertgrey()">
+                    Find
+                </button>
             </div>
             <label class="form__group" id="grey-result">0</label>
+            <p class="" id = "grey-working"></p>
         </div>
         <br><br>
         <div class="col-6">
             <div class="form-group">
                 <h4>Decimal-Grey Code Converter</h4><br>
                 <h5>From</h5>
-                <select id="grey-select2" class="form__field" onchange="convertgreydec()">
+                <select id="grey-select2" class="form__field">
                     <option class="form_field" style="background-color: #232a36;">Grey
                         Code
                     </option>
@@ -15070,15 +15205,18 @@ N is the population size.
                         Decimal
                     </option>
                 </select>
-                <input type="number" id="greydec-input" value="0" class="form__field"
-                       oninput="convertgreydec()">
+                <input type="number" id="greydec-input" value="0" class="form__field">
             </div>
         </div>
         <div class="col-6">
             <div class="form-group">
                 <h5>To</h5>
+                <button type="button" class="btn btn-light" onclick="convertgreydec()">
+                    Find
+                </button>
             </div>
             <label class="form__group" id="greydec2-result"></label>
+            <p class="" id = "grey-dec-working"></p>
         </div>
     </div>
 </div>
@@ -17266,6 +17404,65 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="ellipsoidalcap" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ellipsoidal Cap</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5><br>
+                                    <p class="text-center">\[V= \frac{\pi a b}{3 c^2 } h^2 (3c - h )\]</p><br><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base Area</h5><br>
+                                    <p class="text-center">\[B = \frac{\pi a b}{c^2 } h (2c - h )\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/ellcap.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="spcapsemiaxisa" class = "form__field" oninput="ellipcap()" 
+                                placeholder="Enter semi-axis a">
+                            <input type="text" id="spcapsemiaxisb" class = "form__field" oninput="ellipcap()" 
+                                placeholder="Enter semi-axis b">
+                            <input type="text" id="spcapsemiaxisc" class = "form__field" oninput="ellipcap()" 
+                                placeholder="Enter semi-axis c">
+                            <input type="text" id="spcapheight" class = "form__field" oninput="ellipcap()"
+                                placeholder="Enter height (h)">
+                                <br><br>
+                                <p class="stopwrap" id="volspcap1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="volspcap2"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="baspcap1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="baspcap2"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -18740,6 +18937,70 @@ N is the population size.
                         <p class="stopwrap" id="resultofpengramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofpengramarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="octagram" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Octagram</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Chord length</h5>
+                                <p class="text-center">\[l = (1 + \sqrt{2}) \space a \]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal</h5>
+                                <p class="text-center">\[d = \sqrt{4 + 2 \sqrt{2}} a\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Spike length</h5>
+                                <p class="text-center">\[b = \frac{2 - \sqrt{2}}{2} \space l \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[P = 16 \space b \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = l^2 - 6b^2 = (6 \sqrt{2} - 8) \space l^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/octagram.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of octagram (a)" id="inputoctgramside"
+                                   oninput="solveoctagram();">
+                        <p class="stopwrap" id="resultofoctgramcho"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramdiag"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramspike"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramperi"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofoctgramarea"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
@@ -20392,6 +20653,60 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="eqtrian_prism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Equilateral triangular Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume </h5>
+                                    <p class="text-center">\[V= \frac{\sqrt{3}}{4} a^2 h\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area </h5>
+                                    <p class="text-center">\[S= \frac{\sqrt{3}}{2} a^2+ 3ah \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/eqtrianprism.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter base edge length (a)"
+                                       id="inputeqtrianprismedge" oninput="eqtrianprismsolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter height (h)"
+                                       id="inputeqtrianprismheight" oninput="eqtrianprismsolve()">
+                                <br>
+                                <p class="stopwrap" id="resultofvoleqtrianprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofvoleqtrianprism2"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofareaeqtrianprism1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofareaeqtrianprism2"
+                                   style="font-family:mathfont;"></p><br>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="frustum" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -20850,7 +21165,65 @@ N is the population size.
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
+
+        <div class="modal fade" id="pentbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pentagonal Bipyramid (Decahedron)</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-center">a = side of Regular Pentagonal Bipyramid </p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h= a.(\sqrt{2-\frac{2}{\sqrt{5}}}) \]</p>
+                                    <br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Total Surface area</h5>
+                                    <p class="text-center">\[S= (\frac{5\sqrt{3}}{2})a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V=( \frac{5+\sqrt{5}}{12})a^3 \]</p>
+        
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/pentbipyr.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter side length of triangle(a)" id="inputpentbipyramidside"
+                                   oninput="pentbipyramidsolve();">
+                            <p class="stopwrap" id="resultofpentbipyrheight"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentbipyrarea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentbipyrvol"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="hexpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -21379,6 +21752,63 @@ N is the population size.
                                 <p class="stopwrap" id="diagparapipe"
                                    style="font-family:mathfont;"></p><br>
 
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="spheroidalcap" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Spheroidal Cap</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5><br>
+                                    <p class="text-center">\[V= \frac{\pi a^2 h^2}{3 c^2 } (3c - h )\]</p><br><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base Area</h5><br>
+                                    <p class="text-center">\[B = \pi a^2 (1- (1- \frac{h}{c})^2 )\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/spcap.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="sprcapsemiaxisa" class = "form__field" oninput="spcap()" 
+                                placeholder="Enter semi-axis a">
+                            <input type="text" id="sprcapsemiaxisc" class = "form__field" oninput="spcap()" 
+                                placeholder="Enter semi-axis c">
+                            <input type="text" id="sprcapheight" class = "form__field" oninput="spcap()"
+                                placeholder="Enter height (h)">
+                                <br><br>
+                                <p class="stopwrap" id="volsprcap1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="volsprcap2"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="basprcap1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="basprcap2"
+                                   style="font-family:mathfont;"></p><br>
                         </div>
                         <!-- ------HERE------ -->
                     </div>
