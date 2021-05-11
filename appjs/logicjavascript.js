@@ -1030,7 +1030,15 @@ function setcal() {
     }
 }
 
-
+function disfind(){
+    let l = parseInt(document.getElementById("disin1").value)
+    let m = parseInt(document.getElementById("disin2").value)
+    let n = parseInt(document.getElementById("disin3").value)
+    let vol = Math.sqrt(((-l*l+m*m+n*n)*(l*l-m*m+n*n)*(l*l+m*m-n*n))/72)
+    let rad = Math.sqrt((l*l+m*m+n*n)/8)
+    document.getElementById("resultofdisvol").innerHTML = "The volume is "+vol
+    document.getElementById("resultofdisrad").innerHTML = "The radius is "+rad
+}
 function betafind(){
     let num1 = parseInt(document.getElementById("betain1").value)
     let num2 = parseInt(document.getElementById("betain2").value)
