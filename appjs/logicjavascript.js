@@ -2752,6 +2752,33 @@ function vectpral(){
         }
 }
 
+
+function vectprral(){
+    var a,b,c,d,e,f,ans,ans1,ans2;
+    var a=parseFloat(document.getElementById('vpra1').value);
+    var b=parseFloat(document.getElementById('vprb1').value);
+    var c=parseFloat(document.getElementById('vprc1').value);
+    var d=parseFloat(document.getElementById('vpra2').value);
+    var e=parseFloat(document.getElementById('vprb2').value);
+    var f=parseFloat(document.getElementById('vprc2').value);
+    
+
+    ans = (a*d)+(b*e)+(c*f);
+    
+    document.getElementById("vpre").innerHTML = "\\[  \\overrightarrow{X} \\space . \\space \\overrightarrow{Y} \\space = \\space   \\space (" + a*d + ") \\space  +\\space   \\space (" + b*e + ") \\space  +\\space   \\space (" + c*f + ") \\space      \\newline";
+    document.getElementById("vpre").innerHTML += " Dot \\space Product \\space of \\space Vectors \\space (X . Y) \\space = " + ans  + " \\]";
+
+        renderMathInElement(document.getElementById("vpre"));
+        if(ans==0)
+        {
+            document.getElementById("vprr").innerHTML = "As Dot Product is Zero so X is Perpendicular to Y";
+        }
+        else
+        {
+            document.getElementById("vprr").innerHTML = "As Dot Product is Not Zero so X is Not Perpendicular to Y"
+        }
+}
+
 function vecotrmod(){
     var a=parseFloat(document.getElementById('vma').value);
     var b=parseFloat(document.getElementById('vmb').value);
