@@ -1041,6 +1041,13 @@ function smallerscfind(){
         prevN1 -= 1;    
     document.getElementById("smallcube").innerHTML = prevN1*prevN1
 }
+function greatcfind(){
+    let N = parseInt(document.getElementById("greatinin").value)
+    let nextN = Math.floor(Math.cbrt(N)) + 1;
+
+    let ans =  nextN * nextN * nextN;
+    document.getElementById("greatcube").innerHTML = "The cube greater than "+N+" is "+ans
+}
 
 function disfind(){
     let l = parseInt(document.getElementById("disin1").value)
@@ -1152,14 +1159,6 @@ function decagramfind(){
     let ar = 17.231*side*side
     document.getElementById("resultofdecagramperi").innerHTML = "The perimeter is "+peri
     document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
-}
-
-function enneagramfind(){
-    let side  = parseInt(document.getElementById("inputenneagramside").value)
-    let peri = 40*side
-    let ar = 34.462*side*side 
-    document.getElementById("resultofenneagramperi").innerHTML = "The perimeter is "+peri
-    document.getElementById("resultofenneagramarea").innerHTML = "The area is "+ar
 }
 
 function cencirtcal(){
@@ -2749,33 +2748,6 @@ function vectpral(){
         else
         {
             document.getElementById("vpr").innerHTML = "As cross Product is Not Zero so X is Not prallel to Y"
-        }
-}
-
-
-function vectprral(){
-    var a,b,c,d,e,f,ans,ans1,ans2;
-    var a=parseFloat(document.getElementById('vpra1').value);
-    var b=parseFloat(document.getElementById('vprb1').value);
-    var c=parseFloat(document.getElementById('vprc1').value);
-    var d=parseFloat(document.getElementById('vpra2').value);
-    var e=parseFloat(document.getElementById('vprb2').value);
-    var f=parseFloat(document.getElementById('vprc2').value);
-    
-
-    ans = (a*d)+(b*e)+(c*f);
-    
-    document.getElementById("vpre").innerHTML = "\\[  \\overrightarrow{X} \\space . \\space \\overrightarrow{Y} \\space = \\space   \\space (" + a*d + ") \\space  +\\space   \\space (" + b*e + ") \\space  +\\space   \\space (" + c*f + ") \\space      \\newline";
-    document.getElementById("vpre").innerHTML += " Dot \\space Product \\space of \\space Vectors \\space (X . Y) \\space = " + ans  + " \\]";
-
-        renderMathInElement(document.getElementById("vpre"));
-        if(ans==0)
-        {
-            document.getElementById("vprr").innerHTML = "As Dot Product is Zero so X is Perpendicular to Y";
-        }
-        else
-        {
-            document.getElementById("vprr").innerHTML = "As Dot Product is Not Zero so X is Not Perpendicular to Y"
         }
 }
 

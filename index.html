@@ -6772,7 +6772,24 @@
             <p id="smallcube"></p>
             <p id="smallsquare"></p>
         </div>
-
+	<div class="collapse" id="squarecube">
+            <h2>Previous perfect square and cube number smaller than number N</h2>
+            <br>
+            <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="smallerscfind()">Find</button>
+            <br>
+            <p id="smallcube"></p>
+            <p id="smallsquare"></p>
+            <br><br>
+            <h2>Perfect cube greater than a given number</h2>
+            <br>
+            <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="greatcfind()">Find</button>
+            <br>
+            <p id="greatcube"></p>
+        </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
             <h1>Calculations for 1 complex number</h1>
@@ -7103,28 +7120,6 @@
     <div class="coll" style="text-align: center; display: block;">
         <p id="vpe"><br></p>
     <h5 id="vpr" style="color: rgb(221, 228, 183) !important; font-size: x-large;"></h5>
-</div>
-
-<div class="text-center">
-    <h3>Perpendicular vector</h3><br>
-</div>
-<div class="coll">
-    <p>
-        Vector X:   <input type="text" id="vpra1" size=3 value='' placeholder="A">  i  +
-    <input type="text" id="vprb1" size=3 value='' placeholder="B"> j + <input type="text" id="vprc1" size=3 value='' placeholder="C"> k
-        <br><br>
-        Vector Y :   <input type="text" id="vpra2" size=3 value='' placeholder="A"> i +
-    <input type="text" id="vprb2" size=3 value='' placeholder="B"> j + <input type="text" id="vprc2" size=3 value='' placeholder="C"> k
-            <br>
-            <br>
-    <button type="button" class="btn btn-light" onclick=vectprral()>
-        Solve
-    </button><br>
-    </p>
-</div><br>
-<div class="coll" style="text-align: center; display: block;">
-    <p id="vpre"><br></p>
-<h5 id="vprr" style="color: rgb(221, 228, 183) !important; font-size: x-large;"></h5>
 </div>
 
     <br><br>
@@ -11929,11 +11924,6 @@
                                     <td><a data-toggle="modal"
                                            data-target="#decagram"
                                            style="text-decoration:none;" href="#">decagram</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal"
-                                           data-target="#enneagram"
-                                           style="text-decoration:none;" href="#">Enneagram</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal"
@@ -19263,60 +19253,11 @@ N is the population size.
                         <div class="dropdown-divider"></div>
                         <!-- --------FROM------- -->
                         <input class="form__field" type="number"
-                                   placeholder="Enter edge length of Decagram(a)" id="inputdecagramside">
+                                   placeholder="Enter edge length of rhombic dodecahedron(a)" id="inputdecagramside">
                         <button class = "btn btn-dark" onclick="decagramfind()">FInd</button>           
                         <p class="stopwrap" id="resultofdecagramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofdecagramarea"
-                            style="font-family:mathfont;"></p>
-                      </div>
-                    <!-- ------HERE------ -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="enneagram" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Enneagram</h5>
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-label="Close"
-                            style="outline:none">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- added div with class container -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="text-center">Perimeter</h5>
-                                <p class="text-center">\[P = 40*a\]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Area</h5>
-                                <p class="text-center">\[A = 4\space x\space\frac {\sqrt{5 \times (5 - 2 \sqrt{5})}}{2} \space a^2 \]</p>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <img src="https://sjhexpress.com/wp-content/uploads/2020/02/F7FF52ED-5D1A-46BA-94E9-D0F32DE6D2C8-900x900.png" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <!-- --------FROM------- -->
-                        <input class="form__field" type="number"
-                                   placeholder="Enter edge length of Enneagram(a)" id="inputenneagramside">
-                        <button class = "btn btn-dark" onclick="enneagramfind()">Find</button>           
-                        <p class="stopwrap" id="resultofenneagramperi"
-                            style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofenneagramarea"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
