@@ -9696,7 +9696,7 @@ function hammingCalc1(){
         }else{
             parity =  parity.split("").reverse().join("");
             var p = parseInt(parity,2).toString();
-            result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right";
+            result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + p + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + `${(n-p)+1}` +"&nbsp;&nbsp; from right";
         }
     }
 }
