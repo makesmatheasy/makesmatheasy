@@ -2510,7 +2510,21 @@
                 </table>
             </li>
 
-
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="segcal"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Segment Area Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Segment Area Calculator','#segcals','c','segfav')"><img
+                                        id="segfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -2615,8 +2629,7 @@
                     </tr>
                 </table>
             </li>
-
-            <li>
+		<li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -2633,8 +2646,6 @@
                     </tr>
                 </table>
             </li>
-            
-		<li>
             <li>
                 <table class="table">
                     <tr>
@@ -2652,7 +2663,7 @@
                     </tr>
                 </table>
             </li>
-            <li>
+	    <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -2669,7 +2680,7 @@
                     </tr>
                 </table>
             </li>
-            <li>
+<li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -8846,8 +8857,7 @@
 
             </div>
         </div>
-
-        <div class="collapse" id="chng-vol-cube">
+<div class="collapse" id="chng-vol-cube">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2>
             <br>
             <div class="form-group">
@@ -8862,7 +8872,6 @@
                 font-family:mathfont;" id="cubeAns"></p>
             </div>
         </div>
-
         <div class="collapse" id="chng-vol-sphere">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2>
             <br>
@@ -8882,7 +8891,7 @@
             </div>
         </div>
 
-        <div class="collapse" id="chng-vol-cuboid">
+	<div class="collapse" id="chng-vol-cuboid">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2>
             <br>
             <div class="form-group">
@@ -8907,23 +8916,20 @@
                 font-family:mathfont;" id="cuboidAns"></p>
             </div>
         </div>
-
-        <div class="collapse" id="chng-vol-hemisphere">
+	<div class="collapse" id="chng-vol-hemisphere">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a hemiSphere</h2>
-            <br>
+<br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="chng-side-hemisphere"
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="chng-side-hemisphere"
                        placeholder="Enter the percentage change in the radius of the hemisphere"/>
                 <br>
                 <br>
-                <button class="btn btn-outline-light" onclick="volhemiSphere()">Calculate</button>
+<button class="btn btn-outline-light" onclick="volhemiSphere()">Calculate</button>
                 <br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
-                font-family:mathfont;" id="hemisphereAns"></p>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left; 
+font-family:mathfont;" id="hemisphereAns"></p>
             </div>
         </div>
-
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
             <div class="stopwrap">
@@ -11918,11 +11924,6 @@
                            style="text-decoration:none;"
                            href="#">Parabolic Arch</a></td>
                 </tr> 
-                <tr>
-                    <td><a data-toggle="modal" data-target="#segcals"
-                           style="text-decoration:none;"
-                           href="#">Segment Calculator</a></td>
-                </tr>               
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -13615,7 +13616,6 @@
 </div>
 
 
-<div id="mecs" class="collapse">
 
 
 <div id="mecs" class="collapse">
@@ -14188,24 +14188,6 @@ N is the population size.
 </div>
 
 
-<div class="collapse" id="segcals">
-    
-    <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
-    <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
-    <p>&nbsp;</p>
-    <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
-    <select id="angseg" class="form__field">
-        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
-        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
-    </select>
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button> <p>&nbsp;</p>
-    <p id="segans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
-    
-    <div style="color: white; text-align: center; font-family:mathfont; font-size: 1.3em;"> A segment of a circle can be defined as a region bounded by a chord and a corresponding arc lying between the chord’s endpoints.<br>Area of a Segment in Radians: A = (½) × r x r x (θ – Sin θ)
-    <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]</div>
-   
-</div>
 
 
 <!--Binomial PMF starts-->

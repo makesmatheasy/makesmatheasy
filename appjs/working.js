@@ -67,6 +67,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#per-chng-hemisphere").click(function () {
+        openit("#chng-vol-hemisphere");
+        closenav();
+        clearall();
+    })
     $("#aboutbutton").click(function () {
         openit("#about");
         closenav();
