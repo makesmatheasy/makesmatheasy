@@ -178,6 +178,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "ELLIPSE"){
                         document.getElementById('ellipsecollapse').click();
                     } 
+                    else if (inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR") {
+                        $("#beta").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR"){
+                        document.getElementById('beta').click();
+                    } 
                     else if (inp.value.toUpperCase() == "HYPERBOLA") {
                         $("#hyperbolacollapse").slideToggle();    
                     }
@@ -810,7 +816,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Differentiati
                         "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","Perfect Squares & Cubes in a range",
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP","Binomial Coefficient Calculator"
-                        ,"Contour Integration"
+                        ,"Contour Integration","Beta function calculator"
                     ];
 
                       
@@ -1029,6 +1035,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "ELLIPSE") {
         $("#ellipsecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR"){
+        document.getElementById('beta').click(); 
+    }
+    else if (inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR") {
+        $("#beta").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "HYPERBOLA"){
         document.getElementById('hyperbolacollapse').click(); 

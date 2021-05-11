@@ -1021,6 +1021,14 @@ function setcal() {
         document.getElementById("set-result").innerHTML = [...re].join(' ') ;
     }
 }
+
+function betafind(){
+    let num1 = parseInt(document.getElementById("betain1").value)
+    let num2 = parseInt(document.getElementById("betain2").value)
+    let ans = (Math.gamma(num1) + Math.gamma(num2))/Math.gamma(num1+num2)
+    document.getElementById("betafindans").innerHTML = ans
+}
+
 function exterior(){
     // javascript program to find the angle
     // of a cyclic quadrilateral

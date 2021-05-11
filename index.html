@@ -942,6 +942,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="betabtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Beta Function Calculator<a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Beta Function Calculator','#beta','c','betaimgfav')"><img
+                                        id="betaimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <!--            laplace-->
             <li>
@@ -6357,6 +6372,17 @@
             <button type="submit" onclick ="gammafind()">Find</button>
             <br>
             <h4 id="gammafindans"></h4>
+        </div>
+
+        <div class = "collapse" id="beta">
+            <h2 style="text-align: center;">Beta Calculator</h2>
+            <br><br>
+            <input type="text" id="betain1" class="form__field" placeholder="Enter Number 1 for beta function">
+            <input type="text" id="betain2" class="form__field" placeholder="Enter Number 2 for beta function">
+            <br>
+            <button type="submit" onclick ="betafind()">Find</button>
+            <br>
+            <h4 id="betafindans"></h4>
         </div>
 
         <div class="collapse" id="betagamma">
