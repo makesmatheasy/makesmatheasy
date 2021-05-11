@@ -207,6 +207,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#squarecubebtn").click(function () {
+        openit("#squarecube");
+        closenav();
+        clearall();
+    });
     $("#betabtn").click(function () {
         openit("#beta");
          closenav();

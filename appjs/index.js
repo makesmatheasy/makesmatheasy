@@ -229,6 +229,7 @@ function openit(id) {
         "#log_values",
         "#oops",
         "#astroid",
+        "#squarecube",
         "#deca_prism",
         "#log-collapse",
         "#bt-collapse",

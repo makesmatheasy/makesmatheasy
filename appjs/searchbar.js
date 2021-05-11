@@ -626,6 +626,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "DATE"){
                         document.getElementById('datecal').click();
                     }
+                    else if (inp.value.toUpperCase() == "SQUARE AND CUBE CALCULATOR") {
+                        $("#datecal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SQUARE AND CUBE CALCULATOR"){
+                        document.getElementById('datecal').click();
+                    }
                     else if (inp.value.toUpperCase() == "MILNE THOMSON METHOD") {
                         $("#mtm").slideToggle();    
                     }
@@ -826,7 +832,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP","Binomial Coefficient Calculator"
 
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator"
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator"
 
                     ];
 
@@ -1043,6 +1049,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "CIRCLE") {
         $("#circlecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SQAURE AND CUBE CALCULATOR"){
+        document.getElementById('squarecube').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SQAURE AND CUBE CALCULATOR") {
+        $("#squarecube").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "IMPROPER TO PROPER INTEGRAL"){
         document.getElementById('imprtopr').click(); 
