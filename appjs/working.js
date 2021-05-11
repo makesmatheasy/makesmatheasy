@@ -73,11 +73,19 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
     $("#mi").click(function () {
         openit("#mis");
         closenav();
         clearall();
     });
+
+    $("#per-chng-cuboid").click(function () {
+        openit("#chng-vol-cuboid");
+        closenav();
+        clearall();
+    })
+
     $("#per-chng-cube").click(function () {
         openit("#chng-vol-cube");
         closenav();
@@ -210,6 +218,11 @@ $(document).ready(function () {
     });
     $("#vecalgbtn").click(function () {
         openit("#vecalg");
+        closenav();
+        clearall();
+    });
+    $("#squarecubebtn").click(function () {
+        openit("#squarecube");
         closenav();
         clearall();
     });

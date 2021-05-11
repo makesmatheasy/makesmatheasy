@@ -1566,8 +1566,6 @@ function manhatcal()
         ans="The calculated Manhattan Distance is: "+f;
     }
     document.getElementById("manhatans").innerHTML=ans;
-}
-
 function mifcal()
 {
     var num1=document.getElementById("mians1").value;
@@ -1602,4 +1600,5 @@ function midcal()
         ans="Multiplicative inverse of given number in fraction is: "+num2+" / "+num1;
     }
     document.getElementById("mians").innerHTML=ans;
+
 }
