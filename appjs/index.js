@@ -179,7 +179,10 @@ function openit(id) {
         "#binomialcoeff",
         "#matrixcollapse",
         "#pows",
+        "#beta",
+
         "#imprtopr",
+
         "#matrixprops",
         "#cramer",
         "#fractions",

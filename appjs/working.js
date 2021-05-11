@@ -202,8 +202,14 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#betabtn").click(function () {
+        openit("#beta");
+         closenav();
+        clearall();
+    });
     $("#imprtoprbtn").click(function () {
         openit("#imprtopr");
+
         closenav();
         clearall();
     });
