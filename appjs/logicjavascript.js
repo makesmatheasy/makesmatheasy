@@ -1331,9 +1331,17 @@ function greatsfind(){
     document.getElementById("greatsqaure").innerHTML = ans
 }
 
+function ssdfind(){
+    let side = parseInt(document.getElementById("inputsidessd").value)
+    let vol = 1.25*side*side*side*13.70
+    let ar = 15*side*side*3.077
+    document.getElementById("resultofvolssd").innerHTML = "The volume is "+vol
+    document.getElementById("resultofareassd").innerHTML = "The area is "+ar
+}
+
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
-    var pp = document.getElementById("p").value;
+    var pp = document.getElementById("p").value;s
     var base = document.getElementById("b").value;
     var hyp = document.getElementById("h").value;
     if (
