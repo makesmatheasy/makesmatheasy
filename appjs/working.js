@@ -74,7 +74,7 @@ $(document).ready(function () {
         clearall();
     });
 
-    $("#mi").click(function () {
+    $("#minv").click(function () {
         openit("#mis");
         closenav();
         clearall();
