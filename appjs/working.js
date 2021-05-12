@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -73,6 +73,19 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#mi").click(function () {
+        openit("#mis");
+        closenav();
+        clearall();
+    });
+
+    $("#per-chng-cuboid").click(function () {
+        openit("#chng-vol-cuboid");
+        closenav();
+        clearall();
+    })
+
     $("#per-chng-cube").click(function () {
         openit("#chng-vol-cube");
         closenav();
@@ -208,6 +221,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#squarecubebtn").click(function () {
+        openit("#squarecube");
+        closenav();
+        clearall();
+    });
     $("#betabtn").click(function () {
         openit("#beta");
          closenav();
@@ -289,6 +307,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#3d-shape-btn").click(function () {
+        openit("#3d-shape");
+        closenav();
+        clearall();
+    });
 
     $("#per-chng-sphere").click(function () {
         openit("#chng-vol-sphere");
@@ -450,6 +474,12 @@ $(document).ready(function () {
     //Smallest prime factor calculator
     $("#sml-pri-btn").click(function () {
         openit("#smPrime");
+        closenav();
+        clearall();
+    })
+    //Sum of divisors calculator
+    $("#sum-div-btn").click(function () {
+        openit("#sumDiv");
         closenav();
         clearall();
     })

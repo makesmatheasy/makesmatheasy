@@ -539,6 +539,25 @@ ul li .table {
   margin: 0 auto;
 }
 
+#trans h5{
+  text-align: center;
+  margin-top:32px;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+#trans img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#trans p{
+color:#ababab !important;
+font-size: 18px;
+}
+
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
