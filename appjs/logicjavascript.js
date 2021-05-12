@@ -1323,6 +1323,14 @@ function checkforusetrigovalue() {
 
 //check for set value buttons
 
+
+function greatsfind(){
+    let side  = parseInt(document.getElementById("greatinin1").value)
+    let nextN = Math.floor(Math.sqrt(side)) + 1;
+    let ans = nextN*nextN
+    document.getElementById("greatsqaure").innerHTML = ans
+}
+
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
     var pp = document.getElementById("p").value;
@@ -4435,6 +4443,43 @@ function solvepentagram() {
         chordoutput.innerHTML = "";
         longchordoutput.innerHTML = "";
         shortchordoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
+function solvehexagram() {
+    var a = document.getElementById("inputhexgramside").value;
+    var chordoutput = document.getElementById("resultofhexgramchord");
+    var chordsliceoutput = document.getElementById("resultofhexgramchosli");
+    var perioutput = document.getElementById("resultofhexgramperi");
+    var areaoutput = document.getElementById("resultofhexgramarea");
+    var chordtemp = "";
+    var choslicetemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        chordtemp += "\\[Chord \\space length \\space of \\space Hexagram \\newline \\sqrt{3} \\times" + a  + "\\ = " + eval(String(1.73205081 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        choslicetemp += "\\[Chord \\space slice \\space of \\space Hexagram \\space \\newline \\frac{1}{\\sqrt{3}} \\times" + a + "\\ = " + eval(String(0.57735027 * a)).toFixed(2) + "\\]";
+        chordsliceoutput.innerHTML = choslicetemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Hexagram \\space \\newline 4 \\times \\sqrt{3} \\times" + a + "\\ = " + eval(String(6.92820323 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of \\space Hexagram \\space \\newline \\sqrt{3} \\times" + a + "\\times" + a + "\\ = " + eval(String(1.73205081 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(chordoutput);
+        renderMathInElement(chordsliceoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        chordoutput.innerHTML = "";
+        chordsliceoutput.innerHTML = "";
         perioutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
