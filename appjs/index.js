@@ -238,6 +238,7 @@ function openit(id) {
         "#bt-collapse1",
         "#manhats",
         "#pandc",
+        "#per_chng_vol",
         "#enna_prism",
         "#pairfacts",
         "#interest",
