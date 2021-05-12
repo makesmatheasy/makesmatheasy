@@ -2394,25 +2394,25 @@ function parallelsolve()
 }
 function perpendicularsolve(){
     var x1,y1,x2,y2,x3,y3,x4,y4;
-    x1=parseFloat(document.getElementById('xone').value);
-    y1=parseFloat(document.getElementById('yone').value);
-    x2=parseFloat(document.getElementById('xtwo').value);
-    y2=parseFloat(document.getElementById('ytwo').value);
-    x3=parseFloat(document.getElementById('xthree').value);
-    y3=parseFloat(document.getElementById('ythree').value);
-    x4=parseFloat(document.getElementById('xfour').value);
-    y4=parseFloat(document.getElementById('yfour').value);
-    var explain = document.getElementById("line1");
-    var explain1 = document.getElementById("line2");
+    x1=parseFloat(document.getElementById('xoneper').value);
+    y1=parseFloat(document.getElementById('yoneper').value);
+    x2=parseFloat(document.getElementById('xtwoper').value);
+    y2=parseFloat(document.getElementById('ytwoper').value);
+    x3=parseFloat(document.getElementById('xthreeper').value);
+    y3=parseFloat(document.getElementById('ythreeper').value);
+    x4=parseFloat(document.getElementById('xfourper').value);
+    y4=parseFloat(document.getElementById('yfourper').value);
+    var explain = document.getElementById("perline1");
+    var explain1 = document.getElementById("perline2");
     var m1= (y2-y1)/(x2-x1);
     var m2 = (y4-y3)/(x4-x3);
     if(m1*m2==-1){
         explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Perpendicular" + "\\] ";
-        renderMathInElement(document.getElementById("line1"));
+        renderMathInElement(document.getElementById("perline1"));
     }
     else{
         explain1.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Perpendicular" + "\\] ";
-        renderMathInElement(document.getElementById("line2"));
+        renderMathInElement(document.getElementById("perline2"));
     }
 }
 
