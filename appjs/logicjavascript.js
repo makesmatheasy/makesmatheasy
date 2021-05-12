@@ -10642,8 +10642,10 @@ function computeprobability() {
 
     var nettotal = parseInt(document.getElementById('total').value);
     let result = document.getElementById('probability-result');
-
-
+    if((isNaN(favour)) || (isNaN(nettotal)) ){
+        result.innerHTML = "Please enter valid input";
+    }
+    else{
     if (favour < 0 || nettotal < 0) {
         result.innerHTML = "Outcomes can't be negative. Enter positive values only";
 
@@ -10654,11 +10656,18 @@ function computeprobability() {
         result.innerHTML = "The probability of the event is : " + (favour / nettotal).toFixed(3);
     }
 }
+}
 
 function condprobability(){
     var netevent = parseFloat(document.getElementById('totevent').value);
     var event = parseFloat(document.getElementById('event').value);
     var result1 = (netevent/event).toFixed(3);
+    if((isNaN(netevent)) || (isNaN(event)) ){
+        document.getElementById("result1").innerHTML = "Please enter valid input";
+        document.getElementById("result2").innerHTML = "";
+        document.getElementById("result3").innerHTML = "";
+    }
+    else{
     if (netevent < 0 || event < 0) {
         document.getElementById("result1").innerHTML = "Outcomes can't be negative, Enter positive values only. ";
         document.getElementById("result2").innerHTML = "";
@@ -10671,6 +10680,7 @@ function condprobability(){
         document.getElementById("result3").innerHTML = " Probability of Event B given Event A (P(B | A)) = " + result1 ;
     }
 
+}
 }
 
 
@@ -10691,6 +10701,12 @@ function computejointprobability() {
     let result3 = document.getElementById("probability-result3");
     var check = true;
 
+    if((isNaN(favourable1)) || (isNaN(favourable2))  || (isNaN(total1))  || (isNaN(total2))){
+        result1.innerHTML = "Please enter valid input";
+        result2.innerHTML = "";
+        result3.innerHTML = "";
+    }
+    else{
     if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
         if (favourable1 > total1) {
             result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
@@ -10716,6 +10732,7 @@ function computejointprobability() {
         result3.innerHTML = "";
     }
 }
+}
 
 
 function computebayesprobability() {
@@ -10740,14 +10757,21 @@ function computebayesprobability() {
     let result2=document.getElementById("bayesresult2");
     var check = true;
 
+    if((isNaN(favourable1)) || (isNaN(favourable2))  || (isNaN(total1))  || (isNaN(total2)) || (isNaN(pbanda))){
+        result1.innerHTML = "Please enter valid input";
+        result2.innerHTML = "";
+    }
+else{
     if (favourable1 >= 0 && total1 > 0 && favourable2 >= 0 && total2 > 0) {
         if (favourable1 > total1) {
             result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in first event";
+            result2.innerHTML = "";
             check = false;
         }
 
         else if (favourable2 > total2) {
-            result2.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+            result1.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes in second event";
+            result2.innerHTML = "";
             check = false;
         }
 		 else if (pbanda>probability2 || pbanda>probability1) {
@@ -10762,9 +10786,11 @@ function computebayesprobability() {
 
         }
     } else {
-        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
+        result1.innerHTML = "Outcomes can't be negative. Enter positive values only";
+        result2.innerHTML = "";
 
     }
+}
 }
 
 
