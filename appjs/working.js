@@ -292,6 +292,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#hypergeo").click(function () {
+        openit("#hypergeos");
+        closenav();
+        clearall();
+    });
     $("#integration-idencollapsebtn").click(function () {
         openit("#integration-idencollapse");
         closenav();

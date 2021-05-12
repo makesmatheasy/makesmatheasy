@@ -303,6 +303,7 @@ function openit(id) {
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#hypergeos",
         "#condprobability",
         "#prism",
         "#pentprism",
