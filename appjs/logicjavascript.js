@@ -10986,25 +10986,25 @@ function clockcal()
 
 function slvcal()
 {
-    a=document.getElementById("solvex").value;  
-    b=document.getElementById("solvey").value; 
-    c=document.getElementById("solvez").value;   
+    a= parseFloat(document.getElementById("solvex").value);  
+    b= parseFloat(document.getElementById("solvey").value); 
+    c= parseFloat(document.getElementById("solvez").value);
+    var output = document.getElementById("slvans");   
     var ans="";
-    if(a==""||b==""||c=="")
-    {
-        ans="Please enter all the values";
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        ans += "\\[Please \\space enter \\space all \\space the \\space values \\]";
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
     else
     {
-        a=parseFloat(a);
-        b=parseFloat(b);
-        c=parseFloat(c);
-
-        var w=(c-b)/a;
-        ans="The value of X is: "+w;
-        
+        ans += "\\[The \\space value \\space of \\space X \\space is \\]";
+        ans += "\\[" + a + "\\space X \\space + \\space " + b + "\\space = \\space " + c + " \\]";
+        ans += "\\[" + a + "\\space X \\space = \\space " + (c-b) + "\\]";
+        ans += "\\[\\space X \\space = \\space " + (c-b)/a + "\\]"; 
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
-    document.getElementById("slvans").innerHTML=ans;
 }
 
 // >>>>>>> T-test function()
