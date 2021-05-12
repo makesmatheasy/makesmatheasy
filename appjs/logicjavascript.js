@@ -2333,22 +2333,25 @@ function dispointsolve()
     
 }
 
-function plpSolve()
-{
-    var a,b,c, x1,x2;
-    a=parseFloat(document.getElementById('plpa').value);
-    b=parseFloat(document.getElementById('plpb').value);
-    c=parseFloat(document.getElementById('plpc').value);
-    x1=parseFloat(document.getElementById('plpx').value);
-    y1=parseFloat(document.getElementById('plpy').value);
+function plpSolve() {
+    var a=parseFloat(document.getElementById('plpa').value);
+    var b=parseFloat(document.getElementById('plpb').value);
+    var c=parseFloat(document.getElementById('plpc').value);
+    var x1=parseFloat(document.getElementById('plpx').value);
+    var y1=parseFloat(document.getElementById('plpy').value);
    
     var dis = (((b*x1)-(a*y1)));
-    if(-a>0)
-    document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+ (' + b + ')y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x' + '+' + (-a) + 'y' + '=' + dis;
-    else
-    document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x'  + (-a) + 'y' +  '=' + dis;
-    
+    if(isNaN(x1) || isNaN(y1) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('plp_op').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("plp_op"));
+    } else{
+        if(-a>0)
+        document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+ (' + b + ')y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x' + '+' + (-a) + 'y' + '=' + dis;
+        else
+        document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x'  + (-a) + 'y' +  '=' + dis;
+    }
 }
+
 function pppSolve()
 {
     var a,b,c, x1,x2;
