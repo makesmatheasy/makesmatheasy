@@ -1339,6 +1339,14 @@ function ssdfind(){
     document.getElementById("resultofareassd").innerHTML = "The area is "+ar
 }
 
+function lemfind(){
+    let side = parseInt(document.getElementById("inputsidelem").value)
+    let mh = side/(2*1.4)
+    let mw = side
+    document.getElementById("resultofmaxwidthlem").innerHTML = "The max width is  "+mw
+    document.getElementById("resultofmaxheightlem").innerHTML = "The max height is "+mh
+}
+
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
     var pp = document.getElementById("p").value;s
