@@ -1333,53 +1333,38 @@ function slpsolve()
 
 }
 
-
-
-
-
-function suppangcal()
-{
+function suppangcal(){
     var a=document.getElementById("ang").value;
     var ans="";
-    if(a=="")
-    {
+    if(a==""){
         ans="Enter the angle to find the supplementary";
-    }
-    else
-    {
+    } else{
         var t=parseInt(a);
         var v=180-t;
-        ans="The supplementary angle of "+a+" is "+v;
+        ans="\\[The \\space supplementary \\space angle \\space of \\space"+a+" \\space will \\space be \\newline 180 \\degree \\space - \\space t \\degree \\newline 180 \\degree \\space - \\space "+t+" \\degree \\newline = \\space "+v+" \\degree \\]";
     }
-
     document.getElementById("suppangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("suppangans"));
 }
-function suppangvercal()
-{
+
+function suppangvercal(){
     var a=document.getElementById("ang1").value;
     var b=document.getElementById("ang2").value;
     var ans="";
-    if(a==""||b=="")
-    {
+    if(a==""||b==""){
         ans="Enter both angles to verify";
-    }
-    else
-    {
+    } else{
         var x=parseInt(a), y=parseInt(b);
         if(x+y==180)
-        {ans="Entered angles are supplementary";}
-        else{
-        ans="Entered angles are not supplementary";
-        }
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space = 180 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Supplementary\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space != 180 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Not \\space Supplementary\\]";
     }
-
     document.getElementById("suppangverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("suppangverans"));
 }
 
-
-
-function faccal()
-{
+function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
     if(a=="")
