@@ -2462,14 +2462,17 @@ function circumsolve(){
     B=parseFloat(document.getElementById('angleB').value);
     C=parseFloat(document.getElementById('angleC').value);
     var circenterop = document.getElementById("cir_output");
-    var explain = document.getElementById("cirformula");
+    var temp = "";
     var c1 = (((x1*Math.sin(2*A* Math.PI / 180.0))+(x2*Math.sin(2*B* Math.PI / 180.0))+(x3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
     var c2 = (((y1*Math.sin(2*A* Math.PI / 180.0))+(y2*Math.sin(2*B* Math.PI / 180.0))+(y3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
     if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (A!="") && (B!="") && (C!="")){
-        circenterop.innerHTML = "\\[Circumcenter \\space = \\space (" + eval(String(c1)) + "," + eval(String(c2)) + ")"  +"\\]";
-        renderMathInElement(document.getElementById("cir_output"));
-        explain.innerHTML = "\\[Formula \\space (x, \\space y) \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
-        renderMathInElement(document.getElementById("cirformula"));
+        temp += "\\[Circumcenter \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
+        temp += "\\[( \\frac { (" + x1 + "\\times \\space Sin2(" + A + ")) + (" + x2 + "\\times \\space Sin2(" + B + ")) + (" + x3 + "\\times \\space Sin2(" + C + "))}{ (  Sin2(" + A + ") +  Sin2(" + B + ") +  Sin2(" + C + "))} \\space , \\space ( \\frac { (" + y1 + "\\times \\space Sin2(" + A + ")) + (" + y2 + "\\times \\space Sin2(" + B + ")) + (" + y3 + "\\times \\space Sin2(" + C + "))}{ (  Sin2(" + A + ") +  Sin2(" + B + ") +  Sin2(" + C + "))}) \\]";
+        temp += "\\[( \\frac { ((" + ((x1*Math.sin(2*A* Math.PI / 180.0)).toFixed(1)) + " ) + (" + ((x2*Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((x3*Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + "))}{ (" + ((Math.sin(2*A* Math.PI / 180.0)).toFixed(1))+ ") + (" + ((Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + ")} \\space , \\space ( \\frac { ((" + ((y1*Math.sin(2*A* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((y2*Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((y3*Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + "))}{ " + ((Math.sin(2*A* Math.PI / 180.0)).toFixed(1)) + "+" + ((Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + "+" + ((Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + "}) \\]";
+        temp += "\\[( \\frac { " + (((x1*Math.sin(2*A* Math.PI / 180.0))+(x2*Math.sin(2*B* Math.PI / 180.0))+(x3*Math.sin(2*C* Math.PI / 180.0))).toFixed(1)) + "}{" + (Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0)).toFixed(1) + "} \\space , \\space \\frac { " + (((y1*Math.sin(2*A* Math.PI / 180.0))+(y2*Math.sin(2*B* Math.PI / 180.0))+(y3*Math.sin(2*C* Math.PI / 180.0))).toFixed(1)) + "}{" + (Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0)).toFixed(1) + "} ) \\]";
+        temp += "\\[Circumcenter \\space = \\space (" + eval(String(c1)) + "," + eval(String(c2)) + ")"  +"\\]";
+        circenterop.innerHTML = temp;
+        renderMathInElement(circenterop);
     }
 }
 function incentersolve(){
