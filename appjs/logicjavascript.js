@@ -1154,7 +1154,7 @@ function centcal(){
 }
 
 function rtfind(){
-    let side  = parseInt(document.getElementById("inputdecagramside").value)
+    let side  = parseInt(document.getElementById("inputrtside").value)
     let ar = 2.975*side*side
     let vol = 0.422*side*side*side
     document.getElementById("resultofrtarea").innerHTML = "The surface area is "+ar
