@@ -242,6 +242,7 @@ Other Tech/Libraries
     - Semi-Circle
     - Annulus
     - Kite
+    - Lemniscate
     - Line
     - Trapezium
     - Ellipse
