@@ -3118,6 +3118,28 @@ function equationplanesolve()
     document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
 }
 
+function disttwopntsolve(){
+    var x1 =parseFloat(document.getElementById('valx1').value);
+    var y1 =parseFloat(document.getElementById('valy1').value);
+    var z1 =parseFloat(document.getElementById('valz1').value);
+    var x2 =parseFloat(document.getElementById('valx2').value);
+    var y2 =parseFloat(document.getElementById('valy2').value);
+    var z2 =parseFloat(document.getElementById('valz2').value);
+    var result = document.getElementById('dope');
+    var result1 = document.getElementById('dope1');
+    var print = "";
+    var print1 = "";
+
+    var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
+    print += "\\[Distance \\space between \\space two \\space points = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
+    print1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = " + res + "\\]";
+
+    result.innerHTML = print;
+    result1.innerHTML = print1;
+    renderMathInElement(result);
+    renderMathInElement(result1);
+}
+
 function solveicosa() {
     var a = document.getElementById("inputtside").value;
     var resultvolt = document.getElementById("resultofvolt");
