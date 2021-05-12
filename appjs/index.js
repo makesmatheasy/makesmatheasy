@@ -148,6 +148,7 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+        "#sigma",
         "#chng-vol-cube",
         "#sosqs",
         "#sosqsn",
@@ -237,6 +238,7 @@ function openit(id) {
         "#bt-collapse1",
         "#manhats",
         "#pandc",
+        "#per_chng_vol",
         "#enna_prism",
         "#pairfacts",
         "#interest",
@@ -245,6 +247,7 @@ function openit(id) {
         "#subtract-all",
         "#multiplying-all",
         "#onetwocom-calc",
+        "#2d-shape",
         "#3d-shape",
         "#hamming-calc",
         "#3dgeo",
@@ -327,6 +330,7 @@ function openit(id) {
         "#setcal",
         "#mi",
         "#ip",
+        "#oocs",
         "#partialcy",
         "#prices",
         "#centcal",
@@ -564,4 +568,3 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
-
