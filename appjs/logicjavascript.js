@@ -9263,6 +9263,18 @@ function sumDivisor(num)
     document.getElementById("smDivResult").innerHTML = "The sum of divisors of " + num + " is: " + res;
 }
 
+// function to find double factorial
+function dfact(num) {
+    if (num == 0 || num==1)
+        return 1;   
+    return num * dfact(num - 2);
+}
+
+function doubleFactorial(num)
+{
+    document.getElementById("dblFactResult").innerHTML = "The Double Factorial of " + num + " is: " + dfact(num);
+}
+
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
