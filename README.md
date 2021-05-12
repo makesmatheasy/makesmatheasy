@@ -158,8 +158,6 @@ Other Tech/Libraries
   - Strain Calculator
   - Stress Calculator
   - Profit Loss Calculations
-  - Statistics Formulas
-  - Mean Calculator
     - Arithmetic Mean
     - Geometric Mean
     - Harmonic Mean
@@ -249,7 +247,7 @@ Other Tech/Libraries
     - Ellipse
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
-    - Star Polygons: Pentagram, Double Star Polygon, Star of Lakhshmi
+    - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
 
   - 3D Shapes Calculator
     - Cube
@@ -283,6 +281,7 @@ Other Tech/Libraries
   - Volume, CSA, TSA
   - Percentage change in volume of a cube
   - Percentage change in volume of a sphere
+  - Percentage change in volume of a Cuboid
   - Congruence and Similarity of Triangles
 
 - Equations
@@ -341,8 +340,19 @@ Other Tech/Libraries
   - Poisson Distribution Calculator
   - Bayes Probability Theorem
 - Statistics
+  - Statistics Formulae
+  - Mean Calculator
+  - Weighted Mean Calculator
+  - Mean Median Mode
+  - Standard Deviation
   - T-test
   - Z-test
+  - Z score Calculator
+  - Skewness Calculator
+  - Coefficient of Variation
+  - Covariance Calculator
+  - Linear Regression Calculator
+  - Margin of Error Calculator
   - Chi-Square Test
 ---
 

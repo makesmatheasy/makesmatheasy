@@ -1030,6 +1030,25 @@ function setcal() {
     }
 }
 
+function smallerscfind(){
+    let N = parseInt(document.getElementById("smallinin").value)
+    let prevN = Math.floor(Math.sqrt(N));
+    if (prevN * prevN == N)
+        prevN -= 1;
+    document.getElementById("smallsquare").innerHTML = prevN*prevN
+    let prevN1 = Math.floor(Math.cbrt(N));
+    if (prevN1 * prevN1 * prevN1 == N)
+        prevN1 -= 1;    
+    document.getElementById("smallcube").innerHTML = prevN1*prevN1
+}
+function greatcfind(){
+    let N = parseInt(document.getElementById("greatinin").value)
+    let nextN = Math.floor(Math.cbrt(N)) + 1;
+
+    let ans =  nextN * nextN * nextN;
+    document.getElementById("greatcube").innerHTML = "The cube greater than "+N+" is "+ans
+}
+
 function disfind(){
     let l = parseInt(document.getElementById("disin1").value)
     let m = parseInt(document.getElementById("disin2").value)
@@ -1134,12 +1153,28 @@ function centcal(){
     document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
 }
 
+function rtfind(){
+    let side  = parseInt(document.getElementById("inputdecagramside").value)
+    let ar = 2.975*side*side
+    let vol = 0.422*side*side*side
+    document.getElementById("resultofrtarea").innerHTML = "The surface area is "+ar
+    document.getElementById("resultofrtvol").innerHTML = "The volume  is "+vol
+}
+
 function decagramfind(){
     let side  = parseInt(document.getElementById("inputdecagramside").value)
     let peri = 20*side
     let ar = 17.231*side*side
     document.getElementById("resultofdecagramperi").innerHTML = "The perimeter is "+peri
     document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
+}
+
+function enneagramfind(){
+    let side  = parseInt(document.getElementById("inputenneagramside").value)
+    let peri = 40*side
+    let ar = 34.462*side*side 
+    document.getElementById("resultofenneagramperi").innerHTML = "The perimeter is "+peri
+    document.getElementById("resultofenneagramarea").innerHTML = "The area is "+ar
 }
 
 function cencirtcal(){
@@ -1287,6 +1322,14 @@ function checkforusetrigovalue() {
 }
 
 //check for set value buttons
+
+
+function greatsfind(){
+    let side  = parseInt(document.getElementById("greatinin1").value)
+    let nextN = Math.floor(Math.sqrt(side)) + 1;
+    let ans = nextN*nextN
+    document.getElementById("greatsqaure").innerHTML = ans
+}
 
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
@@ -1927,8 +1970,12 @@ function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
     var saoutput = document.getElementById("resultoftetrahexaarea");
+    var midoutput =  document.getElementById("resultoftetrahexamidradius");
+    var inoutput =  document.getElementById("resultoftetrahexainradius");
     var voltemp = "";
     var satemp = "";
+    var midtemp = "";
+    var intemp = "";
     if (a != "") {
         voltemp += "\\[ \\frac{" + 3 + "\\times" + a + "\\times" + a + "\\times" + a  + "}{" + 2 + "}\\]";
         voltemp += "\\[Volume \\space of \\space Tetrahexahedron \\space is \\space \\]";
@@ -1936,13 +1983,25 @@ function solvetetrahexa(){
         voloutput.innerHTML = voltemp;
         satemp += "\\[ " + 3 + "\\times" + a + "\\times" + a + "\\times" + "\\sqrt{" + 5 + "}" +"\\]";
         satemp += "\\[Surface \\space Area \\space of \\space Tetrahexahedron \\space is \\space \\]";
-        satemp += "\\[" + eval(String(3 * a * a * Math.sqrt(5) )) + "\\]";
+        satemp += "\\[" + eval(String(3 * a * a * Math.sqrt(5) )).toFixed(3) + "\\]";
         saoutput.innerHTML = satemp;
+        midtemp += "\\[ \\frac {" + a + "\\times \\sqrt{2}}{2} \\]";
+        midtemp += "\\[Midsphere \\space Radius \\space of \\space Tetrahexahedron \\space is \\]";
+        midtemp += "\\[ " + eval(String(( a * Math.sqrt(2)) / 2)).toFixed(3) + "\\]";
+        midoutput.innerHTML = midtemp;
+        intemp += "\\[ \\frac {3}{10} \\times " + a + "\\times \\sqrt{5} \\]";
+        intemp += "\\[Insphere \\space Radius \\space of \\space Tetrahexahedron \\space is \\]";
+        intemp += "\\[ " + eval(String(((3/10)* a *Math.sqrt(5)))).toFixed(3) + " \\]";
+        inoutput.innerHTML = intemp;
         renderMathInElement(voloutput);
         renderMathInElement(saoutput);
+        renderMathInElement(midoutput);
+        renderMathInElement(inoutput);
     }else{
         voloutput.innerHTML = "";
         saoutput.innerHTML = "";
+        midoutput.innerHTML = "";
+        inoutput.innerHTML = "";
 
     }
 }
@@ -2406,12 +2465,15 @@ function excentersolve(){
     a=parseFloat(document.getElementById('ena').value);
     b=parseFloat(document.getElementById('enb').value);
     c=parseFloat(document.getElementById('enc').value);
-    var excenterop1 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
-    var excenterop2 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
-    var excenterop2 = (-a*x1 + b*y1 + c*z1)/(-a+b+c)
-    document.getElementById("ex_output1").innerHTML = "The excentre for first side is " + excenterop1
-    document.getElementById("ex_output2").innerHTML = "The excentre for second side is " + excenterop2
-    document.getElementById("ex_output3").innerHTML = "The excentre for third side is " + excenterop3
+    var excenterop1 = (-a*x1 + b*x2 + c*x3)/(-a+b+c)
+    var excenterop2 = (-a*y1 + b*y2 + c*y3)/(-a+b+c)
+    var excenterop3 = (a*x1 - b*x2 + c*x3)/(a-b+c)
+    var excenterop4 = (a*y1 - b*y2 + c*y3)/(a-b+c)
+    var excenterop5 = (a*x1 + b*x2 - c*x3)/(a+b-c)
+    var excenterop6 = (a*y1 + b*y2 - c*y3)/(a+b-c)
+    document.getElementById("ex_output1").innerHTML =  "The excentre for first side is (" + excenterop1.toFixed(2) + " , " + excenterop2.toFixed(2) + ")";
+    document.getElementById("ex_output2").innerHTML = "The excentre for second side is (" + excenterop3.toFixed(2) + " , " + excenterop4.toFixed(2) + ")";
+    document.getElementById("ex_output3").innerHTML = "The excentre for third side is (" + excenterop5.toFixed(2)  + " , " + excenterop6.toFixed(2) + ")"; 
 }
 
 function collinearsolve()
@@ -2905,6 +2967,39 @@ function vectorcross(){
     renderMathInElement(document.getElementById("vectorcross2"));
     }
 }
+
+function vectordistance(){
+    var a,b,c,d,e,f,g,h,i;
+    a = parseInt(document.getElementById("in11").value);
+    b = parseInt(document.getElementById("in22").value);
+    c = parseInt(document.getElementById("in33").value);
+    d = parseInt(document.getElementById("in44").value);
+    e = parseInt(document.getElementById("in55").value);
+    f = parseInt(document.getElementById("in66").value);
+    g =  parseInt(document.getElementById("in77").value);
+    h = parseInt(document.getElementById("in88").value);
+    i = parseInt(document.getElementById("in99").value);
+   var outputtria = document.getElementById("vectordist1");
+   var tempoutput = "";
+   var ans = (((h)*(f-c))-((i)*(e-b))); var ans1= -(((g)*(f-c))-((i)*(d-a)) ); var ans2= ( ((g)*(e-b))-((h)*(d-a)));
+   var ans3 = Math.sqrt(g**2+h**2+i**2);
+   if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f) && !isNaN(g) && !isNaN(h) && !isNaN(i))
+  {
+    tempoutput += "\\[ Shortest \\space Distance \\space = \\space \\frac{ | \\overrightarrow{b} \\times (\\overrightarrow{X2} - \\overrightarrow{X1} )} {| \\overrightarrow{b} |} \\]";
+    tempoutput += "\\[ \\overrightarrow{X2} \\space - \\space \\overrightarrow{X1} \\space = \\space (" + (d-a) + "\\hat{i}) \\space + (" + (e-b) + "\\hat{j}) \\space + (" + (f-c) + "\\hat{k}) \\]";
+    tempoutput += "\\[ \\frac{ | (" + ans + "\\hat{i}) + (" + ans1 + "\\hat{j}) + (" + ans2 + "\\hat{k}) | }{" + ans3 + "} \\]";
+    tempoutput += "\\[ \\frac{ \\sqrt{" + ans**2 + "+" + ans1**2 + "+" + ans2**2 + "}}{ " + ans3 + "} \\]";
+    tempoutput += "\\[ \\frac{ \\sqrt{" + (ans**2+ans1**2+ans2**2) + "}}{" + ans3 + "} \\]";
+    outputtria.innerHTML = tempoutput;
+    renderMathInElement(outputtria);
+}
+else{
+    tempoutput += "\\[Please \\space enter \\space all \\space fields \\]";
+    outputtria.innerHTML = tempoutput;
+    renderMathInElement(outputtria);
+}
+}
+
 
 function vector_res(){
     var a=parseFloat(document.getElementById('abc').value);
@@ -4348,6 +4443,108 @@ function solvepentagram() {
         chordoutput.innerHTML = "";
         longchordoutput.innerHTML = "";
         shortchordoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
+function solvehexagram() {
+    var a = document.getElementById("inputhexgramside").value;
+    var chordoutput = document.getElementById("resultofhexgramchord");
+    var chordsliceoutput = document.getElementById("resultofhexgramchosli");
+    var perioutput = document.getElementById("resultofhexgramperi");
+    var areaoutput = document.getElementById("resultofhexgramarea");
+    var chordtemp = "";
+    var choslicetemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        chordtemp += "\\[Chord \\space length \\space of \\space Hexagram \\newline \\sqrt{3} \\times" + a  + "\\ = " + eval(String(1.73205081 * a)).toFixed(2) + "\\]";
+        chordoutput.innerHTML = chordtemp;
+
+        choslicetemp += "\\[Chord \\space slice \\space of \\space Hexagram \\space \\newline \\frac{1}{\\sqrt{3}} \\times" + a + "\\ = " + eval(String(0.57735027 * a)).toFixed(2) + "\\]";
+        chordsliceoutput.innerHTML = choslicetemp;
+
+        peritemp += "\\[Perimeter \\space of \\space Hexagram \\space \\newline 4 \\times \\sqrt{3} \\times" + a + "\\ = " + eval(String(6.92820323 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of \\space Hexagram \\space \\newline \\sqrt{3} \\times" + a + "\\times" + a + "\\ = " + eval(String(1.73205081 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(chordoutput);
+        renderMathInElement(chordsliceoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        chordoutput.innerHTML = "";
+        chordsliceoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
+function solveunihexagram() {
+    var a = document.getElementById("inputunihexgramside").value;
+    var shodiagoutput = document.getElementById("resultofunihexshodia");
+    var longdiagoutput = document.getElementById("resultofunihexlongdia");
+    var b1output = document.getElementById("resultofunihexsec1");
+    var b2output = document.getElementById("resultofunihexsec2");
+    var b3output = document.getElementById("resultofunihexsec3");
+    var coutput = document.getElementById("resultofunihexc");
+    var perioutput = document.getElementById("resultofunihexperi");
+    var areaoutput = document.getElementById("resultofunihexarea");
+    var shodiagtemp = "";
+    var longdiagtemp = "";
+    var b1temp = "";
+    var b2temp = "";
+    var b3temp = "";
+    var ctemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        shodiagtemp += "\\[Short\\space diagonal \\space \\newline \\sqrt{3} \\times " + a + "\\ = " + eval(String(1.73205081 * a)).toFixed(2) + "\\]";
+        shodiagoutput.innerHTML = shodiagtemp;
+
+        longdiagtemp += "\\[Long \\space diagonal \\space \\newline 2 \\times" + a + "\\ = " + eval(String(2 * a)).toFixed(2) + "\\]";
+        longdiagoutput.innerHTML = longdiagtemp;
+
+        b1temp += "\\[Section \\space b_1 \\space \\newline \\frac{\\sqrt{3}}{2} \\times" + a + "\\ = " + eval(String(0.8660254 * a)).toFixed(2) + "\\]";
+        b1output.innerHTML = b1temp;
+
+        b2temp += "\\[Section \\space b_2 \\space \\newline \\frac{\\sqrt{3}}{6} \\times" + a + "\\ = " + eval(String(0.28867513 * a)).toFixed(2) + "\\]";
+        b2output.innerHTML = b2temp;
+
+        b3temp += "\\[Section \\space b_3 \\space \\newline \\frac{\\sqrt{3}}{3} \\times" + a + "\\ = " + eval(String(0.57735027 * a)).toFixed(2) + "\\]";
+        b3output.innerHTML = b3temp;
+
+        ctemp += "\\[Section \\space c^` \\space \\newline \\frac{1}{2} \\times" + a + "\\ = " + eval(String(0.5 * a)).toFixed(2) + "\\]";
+        coutput.innerHTML = ctemp;
+
+        peritemp += "\\[Perimeter \\space \\newline ( 2 + \\frac{10}{3} \\times \\sqrt{3}) \\times" + a + "\\ = " + eval(String(7.77350269 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space \\newline \\frac{5}{6} \\times \\sqrt{3} \\times" + a + "\\times" + a + "\\ = " + eval(String(1.44337567 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(shodiagoutput);
+        renderMathInElement(longdiagoutput);
+        renderMathInElement(b1output);
+        renderMathInElement(b2output);
+        renderMathInElement(b3output);
+        renderMathInElement(coutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        shodiagoutput.innerHTML = "";
+        longdiagoutput.innerHTML = "";
+        b1output.innerHTML = "";
+        b2output.innerHTML = "";
+        b3output.innerHTML = "";
+        coutput.innerHTML = "";
         perioutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
@@ -8990,6 +9187,19 @@ function nextPrime(num)
     }
     document.getElementById("nextPrimeResult").innerHTML = "The next prime number of " + num + " is: " + res;
 }
+
+//Sum of divisors Function
+function sumDivisor(num)
+{
+    let res = 0;
+    for (let i = 1; i <= num; i++){
+      if (!(num % i)) {
+        res += i;
+      }
+    }
+    document.getElementById("smDivResult").innerHTML = "The sum of divisors of " + num + " is: " + res;
+}
+
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
@@ -9666,6 +9876,37 @@ function hammingCalc1(){
             parity =  parity.split("").reverse().join("");
             var p = parseInt(parity,2).toString();
             result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right";
+        }
+    }else if(type1 === "Left-To-Right" && type2 === "Odd"){//left to right using odd parity
+        let n = input1.length;
+        let k=0,ctr=0;
+        var parity = "";
+        for (var i = 0; i < n;i++){
+            if((i+1)== Math.pow(2,k)){
+                for(var j =i;j < n; j++){
+                    if(((i+1) & (j+1)) == (i+1)){
+                        if(input1[j] == "1"){
+                            ctr++;
+                        }else{
+                            ctr +=0;
+                        }
+                    }
+                }
+                if(ctr % 2 == 0){
+                    parity +="1";
+                }else if(ctr % 2 == 1 ){
+                    parity +="0";
+                }
+                ctr = 0;
+                k++;
+            }
+        }
+        if(parseInt(parity)==0){
+            result1.innerHTML = "Error Free";
+        }else{
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2).toString();
+            result1.innerHTML = "The position of error is  &nbsp; &nbsp; " + p + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + `${(n-p)+1}` +"&nbsp;&nbsp; from right";
         }
     }
 }
@@ -10643,6 +10884,9 @@ function rankcal() {
 
     var input = document.getElementById("rankcal-input").value;
     let result = document.getElementById("rankcal-result");
+    if(input == ""){
+    result.innerHTML = "Enter a word to get its rank in dictionary";
+    }
     input = input.toUpperCase();
     var s = input.length;
     var m = fa(s);
@@ -10660,7 +10904,6 @@ function rankcal() {
         }
     else
         result.innerHTML = "Invalid input use alphabet only";
-
 }
 
 
@@ -11234,4 +11477,36 @@ function manhatcal()
         ans="The calculated Manhattan Distnace of given coordinates is: "+x;
     }
     document.getElementById("manhatans").innerHTML=ans;
+}
+function volCube() {
+    var x = parseInt(document.getElementById("chng-side-cube").value);
+    var ans = "percentage increase in the volume of the cube is ";
+    const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+    ans = ans + per + " %";
+    document.getElementById("cubeAns").innerText = ans;
+}
+function volSphere() {
+    var x = parseInt(document.getElementById("chng-side-sphere").value);
+    var ans = "percentage increase in the volume of the sphere is ";
+    const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+    ans = ans + per + " %";
+    document.getElementById("sphereAns").innerText = ans;
+
+}
+function vpdscal()
+{
+    var num1=document.getElementById("vpdsuc").value;
+    var num2=document.getElementById("vpdvar").value;
+    ans="";
+    if(num1==""||num2=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+    ans="The calculated variance is: "+ num1+"<br>"+ "and mean is: "+ num1;
+   
+    }
+    document.getElementById("vpdans").innerHTML=ans;
+
 }
