@@ -314,6 +314,7 @@ function openit(id) {
         "#octahedron",
         "#repp",
         "#partial_sphere",
+        "#hypergeomeans",
         "#mtm",
         "#igc",
         "#res1",

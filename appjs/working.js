@@ -862,6 +862,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#hypergeomean").click(function () {
+        openit("#hypergeomeans");
+        closenav();
+        clearall();
+    });
+
     //Function for hamming code
     $("#hamming-code-btn").click(function(){
         openit("#hamming-calc");
