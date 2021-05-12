@@ -339,7 +339,7 @@ function popvar()
         conint= sampstddev/q;
        var outputstring=""
 
-    outputstring+="Count of inputs: "+len+"<br>";
+        outputstring+="Count of inputs: "+len+"<br>";
         outputstring+="Sum(Σx): "+sum+"<br>";
         outputstring+="Mean(μ): "+meanrzlt+"<br>";
         outputstring+="Variance(σ"+text2.sub()+"): "+varrzlt+"<br>";
@@ -348,8 +348,9 @@ function popvar()
 
 
      document.getElementById('std-var-rslt').innerHTML = outputstring;
+    }
 }
-}
+
 function hydrocal()
 {
     var a=document.getElementById("dept").value;
@@ -361,118 +362,18 @@ function hydrocal()
     }
     else{
     var prs=b*9.80655*a+1;
-    
-   ans="Your answer is: "+prs+" atm"+" <p>&nbsp</p><p>&nbsp</p>";
-    ans+="Our hydrostatic pressure calculator uses the below hydrostatic pressure formula <br>    p = ρ * g * h + p0 where <br>  p is the hydrostatic pressure, ρ is the density of fluid,<br>  g is the gravitational acceleration (the average value for the Earth is g = 9.80655 m/s²), <br>   h is the depth,<br> p0 is the external pressure (usually atmospheric pressure p0 = 1 atm = 1013.25 hPa).";
+    document.getElementById("hydroans1").innerHTML="\\[p \\space = \\space ρ \\space \\times g \\times h \\space + \\space p0\\]";
+    document.getElementById("hydroans2").innerHTML="\\[p \\space = \\space "+b+" \\space \\times 9.806 \\times "+a+" \\space + 1.013 \\space \\]";
+    document.getElementById("hydroans3").innerHTML="\\[p \\space = "+(b*9.80655*a).toFixed(3)+" \\space + \\space 1.013 = \\space "+prs.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("hydroans1"));
+    renderMathInElement(document.getElementById("hydroans2"));
+    renderMathInElement(document.getElementById("hydroans3"));
+    document.getElementById("hydroans4").innerHTML="\\[Your \\space answer \\space is \\space : \\space "+prs.toFixed(3)+" \\space atm\\]";
+    renderMathInElement(document.getElementById("hydroans4"));
+    ans="Our hydrostatic pressure calculator uses the below hydrostatic pressure formula <br>    p = ρ * g * h + p0 where <br>  p is the hydrostatic pressure, ρ is the density of fluid,<br>  g is the gravitational acceleration (the average value for the Earth is g = 9.80655 m/s²), <br>   h is the depth,<br> p0 is the external pressure (usually atmospheric pressure p0 = 1 atm = 1013.25 hPa).";
 
     }
     document.getElementById("hydroans").innerHTML=ans;
-}
-
-function straincal()
-{
-    var a=document.getElementById("chnln").value;
-    var b=document.getElementById("orln").value;
-    var c=document.getElementById("orunit").value;
-    var d=document.getElementById("chunit").value;
-    var ans="";
-    if(a==""||b=="")
-    {
-        ans="Please enter all the values to obtain answer";
-    }
-    else{
-    if(c==='inch')
-    {
-        b=b*2.54;
-    }
-    else if(c==="mm")
-    {
-        b=b/10;
-    }
-    else if(c==="m")
-    {
-        b=b*100;
-    }
-    else if(c==="µm")
-    {
-        b=b/10000;
-    }
-
-    if(d==='inch')
-    {
-        a=a*2.54;
-    }
-    else if(d==="mm")
-    {
-        a=a/10;
-    }
-    else if(d==="m")
-    {
-        a=a*100;
-    }
-    else if(d==="µm")
-    {
-        a=a/10000;
-    }
-
-    var strain=a/b;
-    ans="The calculated Strain(S) is: "+strain+"<br> <br> <br>";
-    ans+="Strain is a measure of a materials dimensions due to a load deformation. It takes the initial length and the extension of that length due to the load and creates a ratio of the two.<br>  ε= Δl/l<br> Where: <br>   ε = Strain<br>Δl = Change in length<br>l = Length"
-   
-}
-document.getElementById("strainans").innerHTML= ans;
-
-}
-
-function stresscalc()
-{
-    var b=document.getElementById("area").value;
-    var a=document.getElementById("strforce").value;
-    var c=document.getElementById("aunit").value;
-    var d=document.getElementById("funit").value;
-    var ans="";
-    if(a==""||b=="")
-    {
-        ans="Please enter all the values to obtain answer";
-    }
-    else{
-    if(c==='inch')
-    {
-        b=b/1550;
-    }
-    else if(c==="mm")
-    {
-        b=b/1000000;
-    }
-    else if(c==="cm")
-    {
-        b=b/10000;
-    }
-    else if(c==="ft")
-    {
-        b=b/10.764;
-    }
-
-    if(d==='gn')
-    {
-        a=a*1000000000;
-    }
-    else if(d==="kn")
-    {
-        a=a*1000;
-    }
-    else if(d==="mn")
-    {
-        a=a*1000000;
-    }
-
-    var stress=a/b;
-    ans="The calculated Stress is: "+stress +" Pa"+"<br> <br> <br>";
-
-    ans+="Stress is defined as “The restoring force per unit area of the material”. It is a tensor quantity. Denoted by Greek letter σ. Measured using Pascal or N/m2. Mathematically expressed as <br>    σ=F/A Where, <br>    F is the restoring force measured in Newton or N. <b>    A is the area of cross-section measured in m2. <br>    σ is the stress measured using N/m2 or Pa. <br>"
-}
-document.getElementById("stressans").innerHTML=ans;
-    
 }
 
 function factorial(n){
