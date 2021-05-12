@@ -148,6 +148,7 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+        "#sigma",
         "#chng-vol-cube",
         "#sosqs",
         "#sosqsn",

@@ -449,6 +449,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sigmabtn").click(function () {
+        openit("#sigma");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();
