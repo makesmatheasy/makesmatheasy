@@ -7941,21 +7941,45 @@ function leap()
 {   
     const i = parseInt(document.getElementById("leapin").value);
     var out  = document.getElementById("leapresult");
+    var today = new Date();//to get current year
+    var curryr = parseInt(today.getFullYear());
     var ans =0;
-    if(i%4==0)
-    {
-        ans =1;
+    if(i < 0){
+        out.innerHTML = "Please enter a valid year to check if it's a leap year";
+    }else if(i>=0 &&i<1000){
+        out.innerHTML = "Too SMALL!! Enter a valid year to check if it's a leap year";
+    }else if(i>9999){
+        out.innerHTML = "Too BIG!! Enter a valid year to check if its a leap year";
+    }else{
+        if(i%4==0)
+        {
+            ans =1;
+        }
+        if(i%100==0)
+        {
+            ans =0;
+            if(i%400==0)
+            ans =1;
+        }
+        if(ans){
+            if(i>curryr){
+                out.innerHTML = `${i} will be a Leap Year`;
+            }else if(i == curryr){
+                out.innerHTML = `${i} is a Leap Year`;
+            }else {
+                out.innerHTML = `${i} was a Leap Year`;
+            }
+        }
+        else{
+            if(i>curryr){
+                out.innerHTML = `${i} will not be a Leap Year`;
+            }else if(i == curryr){
+                out.innerHTML = `${i} is not a Leap Year`;
+            }else {
+                out.innerHTML = `${i} was not a Leap Year`;
+            }
+        }
     }
-    if(i%100==0)
-    {
-        ans =0;
-        if(i%400==0)
-        ans =1;
-    }
-    if(ans)
-    out.innerHTML = `${i} is a Leap Year`;
-    else
-    out.innerHTML = `${i} is not a Leap Year`;
 }
 function rotfind(){
     // JS program to find angle of rotational symmetry
