@@ -3856,7 +3856,7 @@
                            placeholder="Enter Number(s) Space Separated">
                 </div>
                 <div class="form-group " style="text-align: center;">
-                    <button class="btn btn-light" onclick="findFactors()">Factors</button>
+                    <button class="btn btn-light" type="button" onclick="findFactors()">Factors</button>
                     <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
                             class="btn btn-light">
                         Prime Factors
@@ -8965,8 +8965,8 @@
                        placeholder="Enter the percentage change in the radius of the sphere"/>
                     <br>
                     <br>
-                    <button class="btn btn-outline-light" onclick="volSphere()">Calculate</button>
-                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                    <button class="btn btn-outline-light" type="button" onclick="volSphere()">Calculate</button>
+                    <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
                     <br><br><br>
                     <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                     font-family:mathfont;" id="sphereAns"></p>
@@ -9929,13 +9929,13 @@
                 <p>&nbsp;</p>
                 <div class="row">
                     <div class="col">
-                        <button id="smpbtn" class="btn btn-secondary" onclick="samvar()" style="font-family:mathfont;"> Sample Standard Deviation</button>
+                        <button id="smpbtn" class="btn btn-secondary" type="button" onclick="samvar()" style="font-family:mathfont;"> Sample Standard Deviation</button>
                     </div>
                     <div class="col">
-                        <button id="popbtn" class="btn btn-secondary" onclick="popvar()" style="font-family:mathfont;"> Population Standard Deviation</button>
+                        <button id="popbtn" class="btn btn-secondary" type="button" onclick="popvar()" style="font-family:mathfont;"> Population Standard Deviation</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-secondary" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+                        <button class="btn btn-secondary" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
                     </div>
                 </div>
             </form>
@@ -10190,9 +10190,9 @@
             <form>
                 <input class = "form__field"type="text" id="giffnum">
             <br><br>
-            <button class = "btn btn-light" onclick="gif()">Greatest Integer Function</button>
-            <button class = "btn btn-light" onclick="fp()">Fractional Part Function</button>
-            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            <button class = "btn btn-light" type="button" onclick="gif()">Greatest Integer Function</button>
+            <button class = "btn btn-light" type="button" onclick="fp()">Fractional Part Function</button>
+            <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
             </form>
             <p id="giffans"></p>
             <p id="fpans"></p>
@@ -10213,8 +10213,8 @@
                 <br><br>
                 <input class = "form__field"type="text" id="list2" placeholder="Enter list of number separated by SPACE">
                 <br><br>
-                <button class = "btn btn-light" onclick="tvalue()">Test</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+                <button class = "btn btn-light" type="button" onclick="tvalue()">Test</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
             </form>
             
             <p id="testans"></p>
@@ -11229,8 +11229,8 @@
             <form action="">
                 <input type="text" class="form__field" id="ctangle" placeholder="Enter angle in the alternate segment">
                 <br>
-                <button type="submit" class = "btn btn-dark"onclick = "ctangle()">Find angle</button>
-                <button type="submit" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+                <button type="button" class = "btn btn-dark"onclick = "ctangle()">Find angle</button>
+                <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
                 <h4 id="ctangleinfo"></h4>
                 <h4 id="ctangleans"></h4>
                 <br><br>
@@ -11240,8 +11240,8 @@
             <form action="">
                 <input type = "text" class = "form__field" placeholder = "Enter angle" id="anglecalc"/>
                 <br>
-                <button type = "submit" class="btn btn-dark" onclick = "posse()">FInd</button>
-                <button type="submit" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+                <button type = "button" class="btn btn-dark" onclick = "posse()">FInd</button>
+                <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
                 <br>
                 <h4 id="posseans"></h4>
             </form>
@@ -11250,7 +11250,7 @@
             <br>
             <input type="text" class="form__field" placeholder="Enter no. of sides" id="rotside">
             <br>
-            <button type="submit" onclick="rotfind()">Find</button>
+            <button type="button" onclick="rotfind()">Find</button>
             <br>
             <h4 id="rotans"></h4>
 
@@ -11259,7 +11259,7 @@
             <br>
             <input type="text" id="embedin" placeholder="Enter no. of vertices of the polygon" class="form__field"/>
             <br>
-            <button type="submit" class="btn btn-dark" onclick="embedfind()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="embedfind()">Find</button>
             <br>
             <h4 id="embedans"></h4>
 <br>
@@ -11268,7 +11268,7 @@
             <input type="text" class="form__field" placeholder="Enter no. of side of regular polygon" id="diagnin">
             <input type="text" class="form__field" placeholder="Enter length of side" id="diagnin1">
             <br>
-            <button type = "submit" class="btn btn-dark" onclick = "diagnfind()">FInd</button>
+            <button type = "button" class="btn btn-dark" onclick = "diagnfind()">FInd</button>
             <br>
             <h4 id="diagnans"></h4>
 <br>
@@ -11276,7 +11276,7 @@
             <br>
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="numtin"/>
             <br>
-            <button type="submit" class="btn btn-dark" onclick="numtfind()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="numtfind()">Find</button>
             <br>
             <h4 id="numtans"></h4>
  <br>
@@ -11286,7 +11286,7 @@
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="occin"/>
             <input type = "text" class = "form__field" placeholder = "Enter angle" id="occin1"/>
             <br>
-            <button type = "submit" class="btn btn-dark" onclick = "occfind()">FInd</button>
+            <button type = "button" class="btn btn-dark" onclick = "occfind()">FInd</button>
             <br>
             <h4 id="occans"></h4>
         </div>
