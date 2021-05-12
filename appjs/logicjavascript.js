@@ -10056,6 +10056,62 @@ function hammingCodeRtoLOdd(x){
     return res1.split("").reverse().join(""); //reverse the ans to get the ans for R to L
 }
 
+//function for correction of  a message hamming code
+function hammingCalc2(){
+    var input = document.getElementById("crct-input").value;
+    const type1 = document.getElementById("crct-type1").value;
+    const type2 = document.getElementById("crct-type2").value;
+    let result1 = document.getElementById("crct-result");
+    var result ="";
+
+    if(type1 === "Left-To-Right" && type2 ==="Even"){
+        let n = input.length;
+        let k=0,ctr=0;
+        var parity = "";
+        for (var i = 0; i < n;i++){
+            if((i+1)== Math.pow(2,k)){
+                for(var j =i;j < n; j++){
+                    if(((i+1) & (j+1)) == (i+1)){
+                        if(input[j] == "1"){
+                            ctr++;
+                        }else{
+                            ctr +=0;
+                        }
+                    }
+                }
+                //console.log(ctr);
+                if(ctr % 2 == 0){
+                    parity +="0";
+                }else if(ctr % 2 == 1 ){
+                    parity +="1";
+                }
+            
+                ctr = 0;
+                k++;
+            }
+        }
+        //console.log(parity);
+        if(parseInt(parity)==0){
+            result = "Error Free";
+        }else{
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2);
+            for(var a = 0; a<n;a++){
+                if(a == p-1){
+                    if(input[a] == "1"){
+                        result +="0";
+                    }else{
+                        result +="1";
+                    }
+                }else{
+                    result += input[a];
+                }
+            }
+        }
+    }
+    result1.innerHTML = result;
+}
+
 
 //Function that performs conversion of  binary to bcd
 function separator(str, n) { //used for converting BCD code to decimal
