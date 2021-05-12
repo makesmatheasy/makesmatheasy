@@ -3301,23 +3301,27 @@ function solvetetra() {
 
 function pythtriple(){
     var num = parseInt(document.getElementById("nom").value)
-    if (num%2==0){
+    if (num < 0){
+        document.getElementById("answ").innerHTML= "A pythagorean triplet is defined only for positive integers. Negative numbers can't be sides of a right angled triangle, therefore, aren't used in Pythagorean triplets";
+    }else{
+        if (num%2==0){
         
-        var nums = parseInt(num)
-        var les = parseInt((num/2)**2 -1)
-        var more = parseInt((num/2)**2 +1)
-        document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
-    } else{
+            var nums = parseInt(num)
+            var les = parseInt((num/2)**2 -1)
+            var more = parseInt((num/2)**2 +1)
+            document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+        } else{
 
-        var nums = parseInt(num)
-        var les1 =((num*num)/2) -0.5;
-        console.log(les1);
-        var les = parseInt(les1)
-        var more1 = ((num*num)/2) +0.5;
-        console.log(more1);
-        var more = parseInt(more1)
-        document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+            var nums = parseInt(num)
+            var les1 =((num*num)/2) -0.5;
+            console.log(les1);
+            var les = parseInt(les1)
+            var more1 = ((num*num)/2) +0.5;
+            console.log(more1);
+            var more = parseInt(more1)
+            document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
 
+        }
     }
 }
 
