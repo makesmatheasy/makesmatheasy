@@ -1297,20 +1297,35 @@ function rmscal()
 
 function zscorecal()
 { 
-    var a=document.getElementById("rawscore").value;
-    var b=document.getElementById("ppmean").value;
-    var c=document.getElementById("stdtn").value;
-    var ans="";
-    if(a==""||b==""||c=="")
+    var a = parseFloat(document.getElementById("rawscore").value);
+    var b = parseFloat(document.getElementById("ppmean").value);
+    var c = parseFloat(document.getElementById("stdtn").value);
+    var ans = document.getElementById("zscoreans");
+    var temp = "";
+    var z= (a-b)/c;
+    if(isNaN(a) || isNaN(b) || isNaN(c))
     {
-        ans="Please enter all the values";
+        temp += "\\[Please \\space enter \\space all \\space the \\space values \\]";
+        ans.innerHTML = temp;
+        renderMathInElement(ans);
     }
     else
     {
-              var z= (a-b)/c;
-              ans="The calculated Z Score is: "+z;
+        if(b<0){
+            temp += "\\[Z \\space Score \\space = \\space \\frac{Raw \\space Score \\space (X) \\space - \\space Population \\space Mean \\space (μ)}{Standard \\space Deviation \\space (σ)} \\]"
+            temp += "\\[Z \\space Score \\space = \\space \\frac {" + a + "- (" + b + ")}{" + c + "} \\space = \\space \\frac{" + (a-b) + "}{" + c + "} \\]";
+            temp += "\\[Z \\space Score \\space = \\space " + z.toFixed(4) + " \\]"
+            ans.innerHTML = temp;
+            renderMathInElement(ans);
+        }
+        else{
+              temp += "\\[Z \\space Score \\space = \\space \\frac{Raw \\space Score \\space (X) \\space - \\space Population \\space Mean \\space (μ)}{Standard \\space Deviation \\space (σ)} \\]"
+              temp += "\\[Z \\space Score \\space = \\space \\frac {" + a + " - " + b + "}{" + c + "} \\space = \\space \\frac{" + (a-b) + "}{" + c + "} \\]";
+              temp += "\\[Z \\space Score \\space = \\space " + z.toFixed(4) + " \\]"
+              ans.innerHTML = temp;
+              renderMathInElement(ans);
     }
-    document.getElementById("zscoreans").innerHTML=ans;
+}
 }
 
 function slpsolve()
