@@ -3395,22 +3395,29 @@ function solvetetra() {
 function pythtriple(){
     var num = parseInt(document.getElementById("nom").value)
     if (num%2==0){
-        
         var nums = parseInt(num)
         var les = parseInt((num/2)**2 -1)
         var more = parseInt((num/2)**2 +1)
-        document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
+        document.getElementById("answ1").innerHTML = "\\[ The \\space number \\space entered \\space is \\space Even \\newline The \\space first \\space triplet \\space will \\space be \\space "+num+"\\]";
+        document.getElementById("answ2").innerHTML = "\\[The \\space second \\space triplet \\space will \\space be \\space (\\frac{"+num+"}{2})^2 - 1 = "+les+"\\]";
+        document.getElementById("answ3").innerHTML = "\\[The \\space third \\space triplet \\space will \\space be \\space (\\frac{"+num+"}{2})^2 + 1  = "+more+"\\]";
+        renderMathInElement(document.getElementById("answ1"));
+        renderMathInElement(document.getElementById("answ2"));
+        renderMathInElement(document.getElementById("answ3"));
+        document.getElementById("answ4").innerHTML = "The triplets are (" + nums + " ," + les + ", " + more+")";
     } else{
-
         var nums = parseInt(num)
         var les1 =((num*num)/2) -0.5;
-        console.log(les1);
         var les = parseInt(les1)
         var more1 = ((num*num)/2) +0.5;
-        console.log(more1);
         var more = parseInt(more1)
-        document.getElementById("answ").innerHTML = "The triplets are " + nums + " ," + les + ", " + more
-
+        document.getElementById("answ1").innerHTML = "\\[ The \\space number \\space entered \\space is \\space Odd \\newline The \\space first \\space triplet \\space will \\space be \\space "+num+"\\]";
+        document.getElementById("answ2").innerHTML = "\\[The \\space second \\space triplet \\space will \\space be \\space \\frac{"+num+"^2}{2} - \\frac{1}{2} = "+les+"\\]";
+        document.getElementById("answ3").innerHTML = "\\[The \\space third \\space triplet \\space will \\space be \\space \\frac{"+num+"^2}{2} + \\frac{1}{2} = "+more+"\\]";
+        renderMathInElement(document.getElementById("answ1"));
+        renderMathInElement(document.getElementById("answ2"));
+        renderMathInElement(document.getElementById("answ3"));
+        document.getElementById("answ4").innerHTML = "The triplets are (" + nums + " ," + les + ", " + more+")";
     }
 }
 
