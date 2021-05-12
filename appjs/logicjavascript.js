@@ -7367,13 +7367,13 @@ function spicon() {
         if (i > 10) {
             document.getElementById("spiconou").innerHTML = "SPI must be <= 10";
         } else {
-            document.getElementById("spiconou").innerHTML = `${((i - 0.5) * 10)}`;
+            document.getElementById("spiconou").innerHTML = `${(i * 9.5)}`;
         }
     } else {
         if (i > 100) {
             document.getElementById("spiconou").innerHTML = "Percentage must be <=100";
         } else if(i<95){
-            document.getElementById("spiconou").innerHTML = `${(i / 10) + 0.5}`;
+            document.getElementById("spiconou").innerHTML = `${i / 9.5}`;
         } else if(i>=95 && i<=100){
             document.getElementById("spiconou").innerHTML = `${10}`;
         }
