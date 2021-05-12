@@ -1112,6 +1112,44 @@ else{
     renderMathInElement(display);
 }
 }
+
+function vectorline(){
+    let a = parseInt(document.getElementById("i1").value)
+    let b = parseInt(document.getElementById("i2").value)
+    let c = parseInt(document.getElementById("i3").value)
+    let d = parseInt(document.getElementById("i4").value)
+    let e = parseInt(document.getElementById("i5").value)
+    let f = parseInt(document.getElementById("i6").value)
+    let g = parseInt(document.getElementById("i7").value)
+    let h = parseInt(document.getElementById("i8").value)
+    let i = parseInt(document.getElementById("i9").value)
+    let j = parseInt(document.getElementById("i10").value)
+    let k = parseInt(document.getElementById("i11").value)
+    let l = parseInt(document.getElementById("i12").value)
+    var in1 = (g-a);  var in2 = (h-b); var in3 = (i-c);
+    var result = (in1*((e*l)-(k*f))) - (in2*((d*l)-(f*j))) + (in3*((d*k)-(e*j)));
+    var output = document.getElementById("vectorline1");
+    var temp = "";
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f) && !isNaN(g) && !isNaN(h) && !isNaN(i) && !isNaN(j) && !isNaN(k) && !isNaN(l)){
+     if(result==0){
+          temp += "\\[The \\space two \\space given \\space lines \\space intersect \\space each \\space other \\]";
+          output.innerHTML = temp;
+          renderMathInElement(output);
+     }
+     else{
+        temp += "\\[The \\space two \\space given \\space lines \\space do \\space not \\space intersect \\space each \\space other \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+     }
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+
+}
+
 function ctangle(){
     // javascript program to find the angle
     // between a chord and a tangent
