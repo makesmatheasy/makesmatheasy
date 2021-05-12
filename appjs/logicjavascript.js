@@ -7802,7 +7802,7 @@ function leap()
     if(i < 0){
         out.innerHTML = "Please enter a valid year to check if it's a leap year";
     }else if(i>=0 &&i<1000){
-        out.innerHTML = "Too SmALl!! Enter a valid year to check if it's a leap year";
+        out.innerHTML = "Too SMALL!! Enter a valid year to check if it's a leap year";
     }else if(i>9999){
         out.innerHTML = "Too BIG!! Enter a valid year to check if its a leap year";
     }else{
