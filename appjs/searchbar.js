@@ -844,6 +844,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "MANHATTAN DISTANCE CALCULATOR"){
                         document.getElementById('manhats').click();
                     }
+                    else if(inp.value.toUpperCase() == "EULER TOTIENT FUNCTION"){
+                        $("#etf").slideToggle(); 
+                    }
+                    else if (inp.value.toUpperCase() == "EULER TOTIENT FUNCTION") {
+                        document.getElementById('etf').click(); 
+                    }
                     else if (inp.value.toUpperCase() == "UNIT RATE CALCULATOR") {
                         $("#utcs").slideToggle();    
                     }
@@ -1003,6 +1009,12 @@ function autocomplete(inp, arr) {
                     else if (inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULATOR") {
                         $("#binomialcoeff").slideToggle(); 
                     }
+                    else if(inp.value.toUpperCase() == "PERCENTILE RANK CALCULTOR"){
+                        document.getElementById('rankcals').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "PERCENTILE RANK CALCULATOR") {
+                        $("#rankcals").slideToggle(); 
+                    }
                     else if (inp.value.toUpperCase() == "ROMAN TO ARABIC") {
                         document.getElementById('romaracov').click();
                     } else if (inp.value.toUpperCase() == "ARABIC TO ROMAN") {
@@ -1097,7 +1109,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
+                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         ,"Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph",
@@ -1288,7 +1300,12 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULATOR") {
         $("#binomialcoeff").slideToggle(); 
     }
-
+    else if(inp.value.toUpperCase() == "PERCENTILE RANK CALCULATOR"){
+        document.getElementById('rankcals').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PERCENTILE RANK CALCULATOR") {
+        $("#rankcals").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "P/B/H TRIGO"){
         document.getElementById('simpletrignocollapse').click(); 
     }
@@ -1618,6 +1635,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "MANHATTAN DISTANCE CALCULATOR") {
         $("#manhats").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "EULER TOTIENT FUNCTION"){
+        document.getElementById('etf').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EULER TOTIENT FUNCTION") {
+        $("#etf").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "UNIT RATE CALCULATOR"){
         document.getElementById('utcs').click(); 
