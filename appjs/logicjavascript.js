@@ -1323,6 +1323,14 @@ function checkforusetrigovalue() {
 
 //check for set value buttons
 
+
+function greatsfind(){
+    let side  = parseInt(document.getElementById("greatinin1").value)
+    let nextN = Math.floor(Math.sqrt(side)) + 1;
+    let ans = nextN*nextN
+    document.getElementById("greatsqaure").innerHTML = ans
+}
+
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
     var pp = document.getElementById("p").value;
