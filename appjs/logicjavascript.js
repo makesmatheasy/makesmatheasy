@@ -7837,26 +7837,57 @@ function timeu(a) {
     }
 }
 
-function leap()
-{   
+function leap(){   
     const i = parseInt(document.getElementById("leapin").value);
     var out  = document.getElementById("leapresult");
+    document.getElementById("leapresult1").innerHTML ="";
+    document.getElementById("leapresult2").innerHTML ="";
+    document.getElementById("leapresult3").innerHTML ="";
+    document.getElementById("leapresult4").innerHTML ="";
     var ans =0;
-    if(i%4==0)
-    {
+    if(i%4==0) {
+        document.getElementById("leapresult1").innerHTML = "\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 4\\]";
+        document.getElementById("leapresult2").innerHTML = "\\["+i+"\\space \\% \\space 4 \\space equal \\space to \\space zero\\]";
+        renderMathInElement(document.getElementById("leapresult1"));
+        renderMathInElement(document.getElementById("leapresult2"));
         ans =1;
     }
-    if(i%100==0)
-    {
+    if(i%100==0) {
         ans =0;
-        if(i%400==0)
-        ans =1;
+        if (i%4==0){
+            document.getElementById("leapresult3").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 100\\]";
+            document.getElementById("leapresult4").innerHTML = "\\["+i+" \\space \\% \\space 100 \\space equal \\space to \\space Zero \\newline Hence,\\]";
+            renderMathInElement(document.getElementById("leapresult3"));
+            renderMathInElement(document.getElementById("leapresult4"));
+        }else{
+            document.getElementById("leapresult1").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 100\\]";
+            document.getElementById("leapresult2").innerHTML = "\\["+i+"\\space \\% \\space 100 \\space equal \\space to \\space Zero \\newline Hence,\\]";
+            document.getElementById("leapresult3").innerHTML = "";
+            document.getElementById("leapresult4").innerHTML = "";
+            renderMathInElement(document.getElementById("leapresult1"));
+            renderMathInElement(document.getElementById("leapresult2"));
+        }
+        if(i%400==0){
+            ans =1;
+            document.getElementById("leapresult3").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 400\\]";
+            document.getElementById("leapresult4").innerHTML ="\\["+i+"\\space \\% \\space 400 \\space equal \\space to \\space Zero \\newline Hence,\\]";
+            renderMathInElement(document.getElementById("leapresult3"));
+            renderMathInElement(document.getElementById("leapresult4"));
+        }
+    }
+    if (i%100!=0 && i%4!=0){
+        document.getElementById("leapresult1").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space neither \\space divible \\space by \\space 4 \\space or \\space 100 \\newline Hence,\\]";
+        renderMathInElement(document.getElementById("leapresult1"));
+        document.getElementById("leapresult2").innerHTML = "";
+        document.getElementById("leapresult3").innerHTML = "";
+        document.getElementById("leapresult4").innerHTML = "";
     }
     if(ans)
     out.innerHTML = `${i} is a Leap Year`;
     else
     out.innerHTML = `${i} is not a Leap Year`;
 }
+
 function rotfind(){
     // JS program to find angle of rotational symmetry
     let side = parseInt(document.getElementById("rotside").value)

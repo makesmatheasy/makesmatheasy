@@ -6434,17 +6434,27 @@
         <div class="collapse" id="lyear">     
             <h1 style="text-align: center;">Check Leap Year</h1><br>       
             <div class="form-group">
+                <p>Leap Years are any year that can be exactly divided by 4</p>
+                <p>except if it can be exactly divided by 100, then it isn't</p> 
+                <p>except if it can be exactly divided by 400, then it is</p><br>
                 <input type="text" id="leapin" class="form__field"
-                       placeholder="Enter Year"
-                       >
+                       placeholder="Enter a Year">
             </div><br>            
             <div class="form-group">
                 <button type="button" class="btn btn-light"
                         onclick="leap()">
                     Solve
-                </button><br>                
+                </button><br><br>              
             </div>
             <div class="form-group">
+                <p class="stopwrap" id="leapresult1"
+                    style="font-family:mathfont;"></p>
+                <p class="stopwrap" id="leapresult2"
+                    style="font-family:mathfont;"></p>
+                <p class="stopwrap" id="leapresult3"
+                    style="font-family:mathfont;"></p>
+                <p class="stopwrap" id="leapresult4"
+                    style="font-family:mathfont;"></p><br><br>
                 <p id="leapresult"
                    style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
             </div>
