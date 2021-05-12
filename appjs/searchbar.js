@@ -345,6 +345,13 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('3dgeo').click();
                     }
+                    else if (inp.value.toUpperCase() == "SIGMA NOTATION") {
+
+                        $("#sigma").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SIGMA NOTATION"){
+                        document.getElementById('sigma').click();
+                    }
                     else if (inp.value.toUpperCase() == "IDENTITIES") {
                         clearmain()
                         $("#complexidentities").slideDown();    
@@ -1797,6 +1804,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "3-D GEOMETRY") {
         $("#3dgeo").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SIGMA NOTATION"){
+        document.getElementById('sigma').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SIGMA NOTATION") {
+        $("#sigma").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "IDENTITIES"){
         document.getElementById('complexidentities').click(); 
