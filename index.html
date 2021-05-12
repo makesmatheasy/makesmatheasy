@@ -2700,52 +2700,18 @@
                     </tr>
                 </table>
             </li>
-		<li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="per-chng-cube"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of Cube
-                            </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Percentage change in volume of cube','#chng-vol-cube','c','chng-vol-cubeimgfav')"><img
-                                        id="chng-vol-cubeimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
             <li>
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="per-chng-sphere"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of a Sphere
+                            <a id="per_chng_volbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage Change in Volume Calculator
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
-                                        onclick="addtofavourite('Percentage change in volume of sphere','#chng-vol-sphere','c','chng-vol-sphereimgfav')"><img
-                                        id="chng-vol-sphereimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-	    <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="per-chng-cuboid"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage change in Volume of a Cuboid
-                            </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Percentage change in volume of cuboid','#chng-vol-cuboid','c','chng-vol-cuboidimgfav')"><img
-                                        id="chng-vol-cuboidimgfav" src="images/unfavourite.png"
+                                        onclick="addtofavourite('Percentage Change in Volume Calculator ','#per_chng_vol','c','per_chng_volimgfav')"><img
+                                        id="per_chng_volimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -8940,22 +8906,7 @@
 
             </div>
         </div>
-<div class="collapse" id="chng-vol-cube">
-            <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2>
-            <br>
-            <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="chng-side-cube"
-                       placeholder="Enter the percentage change in the side of a cube"/>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="volCube()">Calculate</button>
-                <br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
-                font-family:mathfont;" id="cubeAns"></p>
-            </div>
-        </div>
-        <div class="collapse" id="chng-vol-sphere">
+        <div class="collapse" id="per_chng_vol">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2>
             <br>
             <div class="form-group">
@@ -8971,10 +8922,20 @@
                     <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                     font-family:mathfont;" id="sphereAns"></p>
                 </form>
-            </div>
-        </div>
-
-	<div class="collapse" id="chng-vol-cuboid">
+            </div><br>
+            <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                       id="chng-side-cube"
+                       placeholder="Enter the percentage change in the side of a cube"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volCube()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="cubeAns"></p>
+            </div><br>
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2>
             <br>
             <div class="form-group">
@@ -8999,6 +8960,7 @@
                 font-family:mathfont;" id="cuboidAns"></p>
             </div>
         </div>
+
         <!--multiple matrix-->
         <div class="collapse" id="trigonovaluestable">
             <div class="stopwrap">

@@ -454,6 +454,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#per_chng_volbtn").click(function () {
+        openit("#per_chng_vol");
+        closenav();
+        clearall();
+
+    });
     //Euler's Totient Function
     $("#etfbtn").click(function () {
         openit("#etf");
