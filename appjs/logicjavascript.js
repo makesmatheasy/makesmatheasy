@@ -11504,7 +11504,7 @@ function vpdscal()
     }
     else
     {
-    ans="The calculated variance is: "+ num1+"<br>"+ "and mean is: "+ num1;
+    ans="The calculated variance is: "+ num1;
    
     }
     document.getElementById("vpdans").innerHTML=ans;
