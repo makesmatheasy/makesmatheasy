@@ -10996,6 +10996,14 @@ function slvcal()
         output.innerHTML = ans;
         renderMathInElement(output);
     }
+    else if(b<0){
+        ans += "\\[The \\space value \\space of \\space X \\space is \\]";
+        ans += "\\[" + a + "\\space X \\space " + b + "\\space = \\space " + c + " \\]";
+        ans += "\\[" + a + "\\space X \\space = \\space " + (c-b) + "\\]";
+        ans += "\\[\\space X \\space = \\space " + (c-b)/a + "\\]"; 
+        output.innerHTML = ans;
+        renderMathInElement(output);
+    }
     else
     {
         ans += "\\[The \\space value \\space of \\space X \\space is \\]";
