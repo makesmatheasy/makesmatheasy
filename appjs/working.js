@@ -231,6 +231,11 @@ $(document).ready(function () {
          closenav();
         clearall();
     });
+    $("#ooc").click(function () {
+        openit("#oocs");
+         closenav();
+        clearall();
+    });
     $("#imprtoprbtn").click(function () {
         openit("#imprtopr");
 
