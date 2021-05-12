@@ -245,6 +245,7 @@ function openit(id) {
         "#subtract-all",
         "#multiplying-all",
         "#onetwocom-calc",
+        "#2d-shape",
         "#3d-shape",
         "#hamming-calc",
         "#3dgeo",
