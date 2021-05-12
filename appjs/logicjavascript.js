@@ -11432,11 +11432,6 @@ function manhatcal()
         ans="The calculated Manhattan Distnace of given coordinates is: "+x;
     }
     document.getElementById("manhatans").innerHTML=ans;
-<<<<<<< HEAD
-}
-||||||| 97c84f7
-}
-=======
 }
 function volCube() {
     var x = parseInt(document.getElementById("chng-side-cube").value);
@@ -11453,4 +11448,3 @@ function volSphere() {
     document.getElementById("sphereAns").innerText = ans;
 
 }
->>>>>>> baa55d84f8ba7bee7a5d59a748740ea2d4ca4b65
