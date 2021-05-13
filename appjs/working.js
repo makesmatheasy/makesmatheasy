@@ -74,7 +74,7 @@ $(document).ready(function () {
         clearall();
     });
 
-    $("#mi").click(function () {
+    $("#minv").click(function () {
         openit("#mis");
         closenav();
         clearall();
@@ -231,6 +231,11 @@ $(document).ready(function () {
          closenav();
         clearall();
     });
+    $("#ooc").click(function () {
+        openit("#oocs");
+         closenav();
+        clearall();
+    });
     $("#imprtoprbtn").click(function () {
         openit("#imprtopr");
 
@@ -307,6 +312,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#2d-shape-btn").click(function () {
+        openit("#2d-shape");
+        closenav();
+        clearall();
+    });
 
     $("#3d-shape-btn").click(function () {
         openit("#3d-shape");
@@ -448,6 +459,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sigmabtn").click(function () {
+        openit("#sigma");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();
@@ -455,6 +471,12 @@ $(document).ready(function () {
     });
     $("#ipbtn").click(function () {
         openit("#ip");
+        closenav();
+        clearall();
+
+    });
+    $("#per_chng_volbtn").click(function () {
+        openit("#per_chng_vol");
         closenav();
         clearall();
 
