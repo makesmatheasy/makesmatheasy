@@ -767,3 +767,8 @@ input[type='number'] {
 #unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2{
   display: none;
 }
+@media only screen and (max-width:420px) {
+  #stdinp.form__field{
+    font-size: 0.68rem !important;
+  }
+}

@@ -1122,22 +1122,29 @@ function eircal()
     var b=document.getElementById("nop").value;
     var c=document.getElementById("cprd").value;
     var ans="";
+    var result= document.getElementById("eirans");
     if(a==""||b==""||c=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans="\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer\\]";
     }
 
     else
     {
-
-        var x=parseInt(a)/100;
+        var R = parseInt(a);
+        var x=R/100;
+        ans ="\\[Interest \\space Rate \\space per \\space period = \\frac{R}{100} = \\frac{" + R + "}{100} = " + x + "\\]";
         var y=parseInt(c);
         var z=parseInt(b);
         var rate_period= ((1+(x/z))**z)-1;
-        rate_period=rate_period*100;
-        ans="Effective Annual Interest Rate per Period: "+rate_period+"<br>";
+        var rate_p=rate_period*100;
+        ans +="\\[Effective \\space interest \\space rate \\space per \\space period(i) \\space \\] \\[=(1+ \\frac{r}{m})^{m}-1\\]";
+        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
+        ans +="\\[="+ rate_period +"\\]";
+        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
     }
-    document.getElementById("eirans").innerHTML=ans;
+    result.innerHTML = ans;
+    renderMathInElement(result);
+
 }
 function errpercal()
 {
@@ -1266,21 +1273,22 @@ function covcalcu(){
 document.getElementById("covans").innerHTML=s;
 }
 
-function covcal()
-{
+function covcal() {
     var num=document.getElementById("cvsd").value;
     var s=""; 
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     if(num==""){
        s= "Please enter number";
-
     } else if(!valid.test(num)){
         s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-
     } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
+    if (len == 1){
+        document.getElementById("cvans").innerHTML= "Please enter more than one value";
+        return;
+    }
     var number=[]
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
@@ -1296,16 +1304,10 @@ function covcal()
     }
     varrzlt = varrzlt/(len-1);
     var sdev = Math.sqrt(varrzlt);
-    console.log(sdev);
-    console.log(mean);
-
     s="The Coeffecient of Variation is: "+sdev/mean;
     }
     document.getElementById("cvans").innerHTML=s;
 }
-
-
-
 
 function rmscal()
 {
@@ -1347,20 +1349,35 @@ function rmscal()
 
 function zscorecal()
 { 
-    var a=document.getElementById("rawscore").value;
-    var b=document.getElementById("ppmean").value;
-    var c=document.getElementById("stdtn").value;
-    var ans="";
-    if(a==""||b==""||c=="")
+    var a = parseFloat(document.getElementById("rawscore").value);
+    var b = parseFloat(document.getElementById("ppmean").value);
+    var c = parseFloat(document.getElementById("stdtn").value);
+    var ans = document.getElementById("zscoreans");
+    var temp = "";
+    var z= (a-b)/c;
+    if(isNaN(a) || isNaN(b) || isNaN(c))
     {
-        ans="Please enter all the values";
+        temp += "\\[Please \\space enter \\space all \\space the \\space values \\]";
+        ans.innerHTML = temp;
+        renderMathInElement(ans);
     }
     else
     {
-              var z= (a-b)/c;
-              ans="The calculated Z Score is: "+z;
+        if(b<0){
+            temp += "\\[Z \\space Score \\space = \\space \\frac{Raw \\space Score \\space (X) \\space - \\space Population \\space Mean \\space (μ)}{Standard \\space Deviation \\space (σ)} \\]"
+            temp += "\\[Z \\space Score \\space = \\space \\frac {" + a + "- (" + b + ")}{" + c + "} \\space = \\space \\frac{" + (a-b) + "}{" + c + "} \\]";
+            temp += "\\[Z \\space Score \\space = \\space " + z.toFixed(4) + " \\]"
+            ans.innerHTML = temp;
+            renderMathInElement(ans);
+        }
+        else{
+              temp += "\\[Z \\space Score \\space = \\space \\frac{Raw \\space Score \\space (X) \\space - \\space Population \\space Mean \\space (μ)}{Standard \\space Deviation \\space (σ)} \\]"
+              temp += "\\[Z \\space Score \\space = \\space \\frac {" + a + " - " + b + "}{" + c + "} \\space = \\space \\frac{" + (a-b) + "}{" + c + "} \\]";
+              temp += "\\[Z \\space Score \\space = \\space " + z.toFixed(4) + " \\]"
+              ans.innerHTML = temp;
+              renderMathInElement(ans);
     }
-    document.getElementById("zscoreans").innerHTML=ans;
+}
 }
 
 function slpsolve()
@@ -1383,53 +1400,38 @@ function slpsolve()
 
 }
 
-
-
-
-
-function suppangcal()
-{
+function suppangcal(){
     var a=document.getElementById("ang").value;
     var ans="";
-    if(a=="")
-    {
+    if(a==""){
         ans="Enter the angle to find the supplementary";
-    }
-    else
-    {
+    } else{
         var t=parseInt(a);
         var v=180-t;
-        ans="The supplementary angle of "+a+" is "+v;
+        ans="\\[The \\space supplementary \\space angle \\space of \\space"+a+" \\space will \\space be \\newline 180 \\degree \\space - \\space t \\degree \\newline 180 \\degree \\space - \\space "+t+" \\degree \\newline = \\space "+v+" \\degree \\]";
     }
-
     document.getElementById("suppangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("suppangans"));
 }
-function suppangvercal()
-{
+
+function suppangvercal(){
     var a=document.getElementById("ang1").value;
     var b=document.getElementById("ang2").value;
     var ans="";
-    if(a==""||b=="")
-    {
+    if(a==""||b==""){
         ans="Enter both angles to verify";
-    }
-    else
-    {
+    } else{
         var x=parseInt(a), y=parseInt(b);
         if(x+y==180)
-        {ans="Entered angles are supplementary";}
-        else{
-        ans="Entered angles are not supplementary";
-        }
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space = 180 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Supplementary\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space != 180 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Not \\space Supplementary\\]";
     }
-
     document.getElementById("suppangverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("suppangverans"));
 }
 
-
-
-function faccal()
-{
+function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
     if(a=="")
@@ -1629,8 +1631,6 @@ function perrankcal()
 }
 document.getElementById("perrankans").innerHTML=s;
 }
-
-
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
@@ -1715,3 +1715,4 @@ function midcal()
     document.getElementById("mians").innerHTML=ans;
 
 }
+
