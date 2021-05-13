@@ -320,6 +320,7 @@ function openit(id) {
         "#res1",
         "#clr",
         '#dodecahedron',
+        "#vpds",
         "#icosahedron",
         "#anglecon",
         "#frustum",

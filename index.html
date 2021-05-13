@@ -3464,6 +3464,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="vpd"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Poisson Distribution Statistics</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Poisson Distribution Statistics','#vpds','c','vpdfav')"><img
+                                        id="vpdimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -14236,6 +14253,22 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="vpds">
+
+    
+    <h1 >Poisson Distribution Statistic</h1>
+    <p>&nbsp;</p>
+    <input type="text" name="vpdsuc" class="form__field" id="vpdsuc" width="5em" placeholder="Average rate of success">
+    <p>&nbsp;</p>
+    <input type="text" name="vpdvar" class="form__field" id="vpdvar" placeholder="Value of Random Variable">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="vpdscal()">Variance</button>
+    <p>&nbsp;</p>
+    <p id="vpdans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
+    
+   
+</div>
 
 <div class="collapse" id="oocs">
 

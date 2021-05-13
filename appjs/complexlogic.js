@@ -1579,8 +1579,6 @@ function perrankcal()
 }
 document.getElementById("perrankans").innerHTML=s;
 }
-
-
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
@@ -1665,3 +1663,4 @@ function midcal()
     document.getElementById("mians").innerHTML=ans;
 
 }
+

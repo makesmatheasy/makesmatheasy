@@ -11883,3 +11883,21 @@ function volSphere() {
     document.getElementById("sphereAns").innerText = ans;
 
 }
+function vpdscal()
+{
+    var num1=document.getElementById("vpdsuc").value;
+    var num2=document.getElementById("vpdvar").value;
+    ans="";
+    if(num1==""||num2=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+    ans="The calculated variance is: "+ num1;
+   
+    }
+    document.getElementById("vpdans").innerHTML=ans;
+
+}
+

@@ -237,6 +237,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#vpd").click(function () {
+        openit("#vpds");
+        closenav();
+        clearall();
+    });
     $("#thdifbtn").click(function () {
         openit("#thdif");
         closenav();
