@@ -8265,26 +8265,35 @@ function discount() {
 }
 
 function exposol() {
-    var x = document.getElementById("xval").value
-    var y = document.getElementById("yval").value
+    var x = parseFloat(document.getElementById("xval").value);
+    var y = parseFloat(document.getElementById("yval").value);
     var n = document.getElementById("res");
-    var explainop = document.getElementById("steps");
+    var explainop = document.getElementById("steps1");
     var ntemp="";
     var explain = "";
-    if ((x != "") && (y != "")) {
-        ntemp += "\\[Value \\space of \\space n \\space is \\space : \\space" + eval(String(Math.log(y)/Math.log(x))) + "\\]";  
-        n.innerHTML = ntemp;
-        renderMathInElement(n);
-        explain += "\\[For \\space : \\space" + x + "^{n} \\space = \\space " + y + "\\space" + "\\]";
-        explain += "\\[ Take \\space log \\space of \\space both \\space the \\space sides \\space : \\space log" + x + "^{n} \\space = \\space log" + y + "\\] ";
-        explain += "\\[ By \\space identity \\space we \\space get \\space : \\space nlog" + x + "= \\space log" + y + "\\]";
-        explain += "\\[Dividing \\space both \\space sides \\space by \\space log" + x + "\\space :" + "n \\space = \\frac{log" + y + "}{log" + x + "}" + "\\]";
+    if(isNaN(x) || isNaN(y) ){
+        n.innerHTML = "";
+        explain += "\\[Please \\space enter \\space all \\space inputs \\]";
         explainop.innerHTML = explain;
         renderMathInElement(explainop);
-    } else { 
-        n.innerHTML = ""; 
-        explainop.innerHTML = "";
-    }
+    }else{
+        if(x == 1){
+            n.innerHTML = '';
+            explain += "\\[Value \\space of \\space n \\space will \\space be \\space \\infty \\space when \\space x \\space is \\space 1\\]";
+            explainop.innerHTML = explain;
+            renderMathInElement(explainop);
+        }else{
+            ntemp += "\\[Value \\space of \\space n \\space is \\space : \\space" + eval(String(Math.log(y)/Math.log(x))) + "\\]";  
+            n.innerHTML = ntemp;
+            renderMathInElement(n);
+            explain += "\\[For \\space : \\space" + x + "^{n} \\space = \\space " + y + "\\space" + "\\]";
+            explain += "\\[ Take \\space log \\space of \\space both \\space the \\space sides \\space : \\space log" + x + "^{n} \\space = \\space log" + y + "\\] ";
+            explain += "\\[ By \\space identity \\space we \\space get \\space : \\space nlog" + x + "= \\space log" + y + "\\]";
+            explain += "\\[Dividing \\space both \\space sides \\space by \\space log" + x + "\\space :" + "n \\space = \\frac{log" + y + "}{log" + x + "}" + "\\]";
+            explainop.innerHTML = explain;
+            renderMathInElement(explainop);
+        }
+    }   
 
 }
 
