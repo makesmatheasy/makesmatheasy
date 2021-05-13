@@ -1845,6 +1845,14 @@ function findWork() {
     document.getElementById('workans').innerHTML = "This work done is " + workans; 
 }
 
+function lemfind(){
+    let side = parseInt(document.getElementById("inputsidelem").value)
+    let mh = side/(2*1.4)
+    let mw = side
+    document.getElementById("resultofmaxwidthlem").innerHTML = "The max width is  "+mw
+    document.getElementById("resultofmaxheightlem").innerHTML = "The max height is "+mh
+}
+
 function findTime() {
     const work1 = parseInt(document.getElementById('work1').value);
     const time1 = parseInt(document.getElementById('time1').value);
