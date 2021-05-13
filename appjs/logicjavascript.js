@@ -2317,20 +2317,21 @@ function anglesolve()
     
 }
 
-function dispointsolve()
-{
-    var a,b,c;
-    a=parseFloat(document.getElementById('a').value);
-    b=parseFloat(document.getElementById('b').value);
-    c=parseFloat(document.getElementById('c').value);
-    x1=parseFloat(document.getElementById('point_one').value);
-    y1=parseFloat(document.getElementById('point_two').value);
-    var explain = document.getElementById("dis_point");
-    explain.innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line  =\\space  \\frac{Ax1 + By1 + C}{\\sqrt{A^2+B^2}} \\] ";
-    renderMathInElement(document.getElementById("dis_point"));
+function dispointsolve(){
+    var a=parseFloat(document.getElementById('a').value);
+    var b=parseFloat(document.getElementById('b').value);
+    var c=parseFloat(document.getElementById('c').value);
+    var x1=parseFloat(document.getElementById('point_one').value);
+    var y1=parseFloat(document.getElementById('point_two').value);
     var dis = (Math.abs(a*x1 + b*y1 +c))/(Math.sqrt(a*a + b*b )).toFixed(2);
-    document.getElementById('dis_op').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ' + '    ' + a  + 'x' + '+' + b + 'y' + '+' + c + '=0' + '     is      ' + dis;
-    
+    document.getElementById("dis_point").innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line \\space  = \\space  \\frac{A \\times x1 + B \\times y1 + C}{\\sqrt{A^2+B^2}} \\space\\]";  
+    document.getElementById("dis_point1").innerHTML = "\\[\\frac{"+a+"\\times "+x1+" \\space + \\space "+b+" \\times "+y1+" \\space + \\space "+c+"}{\\sqrt{"+a+"^2 \\space + \\space "+b+"^2}} \\space\\]"; 
+    document.getElementById("dis_point2").innerHTML = "\\[\\frac{"+(Math.abs(a*x1 + b*y1 +c))+"}{"+(Math.sqrt(a*a + b*b )).toFixed(2)+"} \\space = \\space "+dis.toFixed(2)+"\\] ";
+    document.getElementById('dis_op').innerHTML= "\\[The \\space distance \\space between \\space (" + x1 + "," + y1 + ") \\space and \\space" + a  + "x" + "+" + b + "y" + "+" + c + "=0 \\space is  \\space" + dis.toFixed(3)+ "\\]";
+    renderMathInElement(document.getElementById("dis_point")); 
+    renderMathInElement(document.getElementById("dis_point1")); 
+    renderMathInElement(document.getElementById("dis_point2")); 
+    renderMathInElement(document.getElementById("dis_op")); 
 }
 
 function plpSolve()
