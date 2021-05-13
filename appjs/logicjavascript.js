@@ -3654,10 +3654,23 @@ function findeq(){
 }
 
 function volf(){
-    var a2 = parseInt(document.getElementById("ther1").value)
-    var h2 = parseInt(document.getElementById("theh1").value)
-    var ans = 0.5*3.14*a2*a2*h2
-    document.getElementById("volf").innerHTML = "The volume is " + ans
+    var a2 = parseInt(document.getElementById("ther1").value);
+    var h2 = parseInt(document.getElementById("theh1").value);
+    var ans = document.getElementById("volf");
+    var temp = "";
+    var ans1 = 0.5*3.14*a2*a2*h2;
+    if(!isNaN(a2) && !isNaN(h2)){
+    temp += "\\[\\frac{1}{2} \\times 3.14 \\times " + a2 + "^{2} \\times " + h2 + " \\]";
+    temp += "\\[\\frac{1}{2} \\times " + (3.14*a2*a2*h2) + " \\]";
+    temp += "\\[Volume \\space of \\space Paraboloid \\space is \\space " + ans1 + "\\]";
+    ans.innerHTML = temp;
+    renderMathInElement(ans);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space input \\]";
+    ans.innerHTML = temp;
+    renderMathInElement(ans);
+    }
 }
 
 function solveparallelogramcal(){
