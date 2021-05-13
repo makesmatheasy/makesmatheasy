@@ -359,7 +359,8 @@ function openit(id) {
         "#lrcs",
         "#perats",
         "#mecs",
-        "#chng-vol-cube"
+        "#chng-vol-cube",
+        "#squarerootcalc",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
