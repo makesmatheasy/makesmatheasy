@@ -28,11 +28,6 @@ $("#utc").click(function(){
     closenav();
     clearall();
 });
-$("#manhat").click(function(){
-    openit("#manhats");
-    closenav();
-    clearall();
-});
 
 $("#manhat").click(function(){
     openit("#manhats");
