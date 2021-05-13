@@ -3025,6 +3025,34 @@ function vectorunit(){
 }
 }
 
+function projector(){
+    let a=parseFloat(document.getElementById('inpj1').value);
+    let b=parseFloat(document.getElementById('inpj2').value);
+    let c=parseFloat(document.getElementById('inpj3').value);
+    let d=parseFloat(document.getElementById('inpj4').value);
+    let e=parseFloat(document.getElementById('inpj5').value);
+    let f=parseFloat(document.getElementById('inpj6').value);
+    let projoutput = document.getElementById("vectorprojj1");
+    let projtemp="";
+    let dot1 = (a*d)+(b*e) + (c*f);
+    let projy = (d**2+e**2+f**2);
+    let proj = Math.sqrt(projy);
+    let proj1 = (proj)**2;
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        projtemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorprojj1"));
+    }
+    else{
+    projtemp  += "\\[If \\space we \\space project \\space \\overrightarrow{a}  \\space on \\space \\overrightarrow{b} \\space then \\space Projected \\space Vector \\space will \\space be \\space -> \\]";
+    projtemp += "\\[ proj_b a \\space = \\space \\frac { \\overrightarrow{a} . \\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
+    projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toFixed(2)+ "}( \\space (" + d + ") \\hat{i} \\space + \\space (" + e + ") \\hat{j} \\space + \\space ( " + f + " ) \\hat{k} \\space ) \\]";
+    projtemp += "\\[So \\space Projected \\space Vector \\space of \\space \\overrightarrow{X} \\space on \\overrightarrow{Y} \\space is \\space = \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{i} \\space + \\space ( \\frac{"  + (dot1*e)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{j} \\space + \\space \\space ( \\frac{"  + (dot1*f)  + "}{" + (proj1.toFixed(2)) + "} )\\hat{k} \\]";
+    projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorprojj1"));
+}
+}
+
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
     a=parseFloat(document.getElementById('f1g').value);
