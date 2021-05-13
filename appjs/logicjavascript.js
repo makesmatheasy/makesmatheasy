@@ -8155,7 +8155,7 @@ function computeCP() {
     var Cost = document.getElementById("cp2").value;
     var sell = document.getElementById("sp2").value;
     
-    let result1 = document.getElementById("cp");
+    let result1 = document.getElementById("rescp");
     
     var CP = parseInt((100 * sell)(100 + profit));
     
@@ -8173,15 +8173,15 @@ function computeSP() {
     var Cost = document.getElementById("cp2").value;
     var sell = document.getElementById("sp2").value;
     
-    let result2 = document.getElementById("sp");
+    let result2 = document.getElementById("ressp");
     
     var SP = parseInt(((100 - profit) * Cost) / 100) ;
     
     if(sell>0 && Cost==0){
-      result1.innerHTML = "Invalid values" ;
+      result2.innerHTML = "Invalid values" ;
     }
     else{
-      result1.innerHTML = "Selling Price = ₹ " + SP;
+      result2.innerHTML = "Selling Price = ₹ " + SP;
     }
 }
 
