@@ -2317,6 +2317,13 @@ function anglesolve()
     
 }
 
+function parabolafind(){
+    let a = parseInt(document.getElementById('parain').value)
+    document.getElementById('directrixeqn').innerHTML = "The eqn of directrix is x-" +a+"=0"
+    document.getElementById('latus').innerHTML = "The length of latus rectum is "+4*a
+    document.getElementById('ecc').innerHTML = "The eccentricity of parabola is always '1'"
+}
+
 function dispointsolve()
 {
     var a,b,c;
