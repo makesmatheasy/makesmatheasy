@@ -1370,11 +1370,35 @@ function greatsfind(){
 }
 
 function ssdfind(){
-    let side = parseInt(document.getElementById("inputsidessd").value)
-    let vol = 1.25*side*side*side*13.70
-    let ar = 15*side*side*3.077
-    document.getElementById("resultofvolssd").innerHTML = "The volume is "+vol
-    document.getElementById("resultofareassd").innerHTML = "The area is "+ar
+    let side = parseInt(document.getElementById("inputsidessd").value);
+    let vol = (1.25*side*side*side*13.71).toFixed(3);
+    let ar = 15*side*side*3.078;
+    let ans = document.getElementById("resultofvolssd");
+    let ans1 = document.getElementById("resultofareassd");
+    let temp1 ="";
+    let temp2 = "";
+    if(!isNaN(side)){
+    temp1 += "\\[\\frac{5}{4} \\times " + side + "^{3} \\space \\times \\space (7 \\space + \\space 3 \\sqrt{5} ) \\]"
+    temp1 += "\\[ " + (5/4) + "\\times" + (side)**3 + " \\times " + ((7+3*Math.sqrt(5)).toFixed(2)) + " \\]"
+    temp1 += "\\[Volume \\space of \\space Small \\space Stellated \\space Dodecahedron \\space is \\]";
+    temp1 += "\\[" + vol + " \\]"
+    ans.innerHTML = temp1;
+    renderMathInElement(ans);
+    temp2 += "\\[15 \\times " + (side) + "^{2} \\times \\sqrt{5+2\\sqrt{5}} \\]";
+    temp2 += "\\[15 \\times " + (side)**2 + "\\times" + (Math.sqrt(5+(2*(Math.sqrt(5)))).toFixed(3)) + " \\]";
+    temp2 += "\\[Area \\space of \\space Small \\space Stellated \\space Dodecahedron \\space is \\]";
+    temp2 += "\\[" + ar + " \\]";
+    ans1.innerHTML = temp2;
+    renderMathInElement(ans1);
+    }
+    else{
+        temp1 += "\\[Please \\space enter \\space side \\space a \\]";
+        temp2 += "";
+        ans.innerHTML = temp1;
+        ans1.innerHTML = temp2;
+        renderMathInElement(ans);
+        renderMathInElement(ans1);
+    }
 }
 
 //solve trigonometry values from right triangle
