@@ -561,6 +561,42 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "PARABOLOID"){
                         document.getElementById('parab').click();
                     }
+                    else if (inp.value.toUpperCase() == "VOLUME, CSA, TSA") {
+                        $("#3d-solid").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "VOLUME, CSA, TSA"){
+                        document.getElementById('3d-solid').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PERCENTAGE CHANGE IN VOLUME CALCULATOR") {
+                        $("#per_chng_vol").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE CHANGE IN VOLUME CALCULATOR"){
+                        document.getElementById('per_chng_vol').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CONGRUENCE AND SIMILARITY OF TRIANGLES") {
+                        $("#consim").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CONGRUENCE AND SIMILARITY OF TRIANGLES"){
+                        document.getElementById('consim').click();
+                    }
+                    else if (inp.value.toUpperCase() == "TYPES OF RELATIONS") {
+                        $("#relationtypes").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "TYPES OF RELATIONS"){
+                        document.getElementById('relationtypes').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR") {
+                        $("#cramer").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR"){
+                        document.getElementById('cramer').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
+                        $("#sum_n").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
+                        document.getElementById('sum_n').click();
+                    }
                     else if (inp.value.toUpperCase() == "SOLVE FOR X") {
                         $("#slvxs").slideToggle();    
                     }
@@ -807,14 +843,6 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "PRIME NUMBERS"){
                         clearmain()
                         document.getElementById('prime').click();
-                    } 
-                    else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
-                        clearmain()
-                        $("#sum_n").slideDown();    
-                    }
-                    else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
-                        clearmain()
-                        document.getElementById('sum_n').click();
                     }
                     else if (inp.value.toUpperCase() == "PARABOLA") {
                         clearmain()
@@ -1174,15 +1202,16 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Sigma Notation","Laplace Transforms and Properties","Hyperbola","Joint Probability","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
+                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
+                        "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Sum of N terms of AP,GP & HP","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         "Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
-                        "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Sum of Nterms of an Arithmetic Progression","Sum of Nterms of an Geometric Progression","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph",
+                        "SPI/CGPA Convertor","Parabola","Log Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph",
                         ,"Milne Thomson Method","Residue Methods","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Log Calculator","Important Graph Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","Perfect Squares & Cubes in a range",
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
-                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Sum of N terms of AP,GP & HP","Binomial Coefficient Calculator"
+                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
 
                         ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Parabola Calculator"
 
@@ -1352,12 +1381,6 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "CONTOUR INTEGRATION") {
         $("#ci").slideToggle(); 
-    }
-    else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
-        document.getElementById('sum_n').click(); 
-    }
-    else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
-        $("#sum_n").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULATOR"){
         document.getElementById('binomialcoeff').click(); 
@@ -1820,6 +1843,42 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "PARABOLOID") {
         $("#parab").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "VOLUME, CSA, TSA"){
+        document.getElementById('3d-solid').click(); 
+    }
+    else if (inp.value.toUpperCase() == "VOLUME, CSA, TSA") {
+        $("#3d-solid").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PERCENTAGE CHANGE IN VOLUME CALCULATOR"){
+        document.getElementById('per_chng_vol').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PERCENTAGE CHANGE IN VOLUME CALCULATOR") {
+        $("#per_chng_vol").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CONGRUENCE AND SIMILARITY OF TRIANGLES"){
+        document.getElementById('consim').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CONGRUENCE AND SIMILARITY OF TRIANGLES") {
+        $("#consim").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "TYPES OF RELATIONS"){
+        document.getElementById('relationtypes').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TYPES OF RELATIONS") {
+        $("#relationtypes").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR"){
+        document.getElementById('cramer').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR") {
+        $("#cramer").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
+        document.getElementById('sum_n').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
+        $("#sum_n").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "SOLVE FOR X"){
         document.getElementById('slvxs').click(); 
