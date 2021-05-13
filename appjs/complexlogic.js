@@ -978,22 +978,31 @@ function cubesRangecal()
     var num1=document.getElementById("range1").value;
     var num2=document.getElementById("range2").value;
     var s="";
+    let work = document.getElementById("cbrt-workn");
+    let print = "<h2>Working Steps </h2> &emsp;";
     if(num1=="" || num2=="")
     {
        s= "Please enter both numbers";
     }
     else{
+        var pr ="";
         s="Cubes in the given range: ";
         cbrt1 = Math.trunc(Math.cbrt(num1));
         cbrt2 = Math.trunc(Math.cbrt(num2));
+        print += "STEP1 : Take cube root ( only integer part )of the two given inputs<br>";
+        print += "So,Cube root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + cbrt1 + "&nbsp; and &nbsp; Cube root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+cbrt2+"<br>";
+        print += "STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both)<br>";
         for(var i=cbrt1; i<=cbrt2;i++){
             if(i**3>=num1 && i**3<=num2){
                 var ans = i**3;
+                pr +=ans.toString() + "   ";
                 s += ans.toString() + "   ";
             }
         }
+        print += "So, answer = &nbsp;"+pr;
     }
     document.getElementById("cubesRangeans").innerHTML=s;
+    work.innerHTML = print;
 }
 
 var toDegree = function (radians) {
