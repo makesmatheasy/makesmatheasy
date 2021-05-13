@@ -3430,6 +3430,9 @@ function solvetetra() {
 
 function pythtriple(){
     var num = parseInt(document.getElementById("nom").value)
+    if (num < 0){
+        document.getElementById("answ").innerHTML= "A pythagorean triplet is defined only for positive integers. Negative numbers can't be sides of a right angled triangle, therefore, aren't used in Pythagorean triplets";
+    }else{
     if (num%2==0){
         var nums = parseInt(num)
         var les = parseInt((num/2)**2 -1)
@@ -3454,6 +3457,8 @@ function pythtriple(){
         renderMathInElement(document.getElementById("answ2"));
         renderMathInElement(document.getElementById("answ3"));
         document.getElementById("answ4").innerHTML = "The triplets are (" + nums + " ," + les + ", " + more+")";
+
+    }
     }
 }
 
@@ -7965,38 +7970,50 @@ function timeu(a) {
     }
 }
 
-function leap()
-{   
+function leap() {   
     const i = parseInt(document.getElementById("leapin").value);
     var out  = document.getElementById("leapresult");
     var today = new Date();//to get current year
     var curryr = parseInt(today.getFullYear());
     var ans =0;
-    if(i < 0){
+    document.getElementById("leapresult1").innerHTML ="";
+    document.getElementById("leapresult3").innerHTML ="";
+    if (i < 0) {
         out.innerHTML = "Please enter a valid year to check if it's a leap year";
-    }else if(i>=0 &&i<1000){
+    }else if (i>=0 &&i<1000){
         out.innerHTML = "Too SMALL!! Enter a valid year to check if it's a leap year";
-    }else if(i>9999){
+    }else if (i>9999){
         out.innerHTML = "Too BIG!! Enter a valid year to check if its a leap year";
-    }else{
-        if(i%4==0)
-        {
-            ans =1;
-        }
-        if(i%100==0)
-        {
+    }else {
+        if(i%4==0) {
+            document.getElementById("leapresult1").innerHTML = "\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 4 \\newline "+i+"\\space \\% \\space 4 \\space equal \\space to \\space zero\\]";
+            renderMathInElement(document.getElementById("leapresult1"));
+            ans =1;}
+        if(i%100==0) {
             ans =0;
-            if(i%400==0)
-            ans =1;
+            if (i%4==0){
+                document.getElementById("leapresult3").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 100 \\newline"+i+" \\space \\% \\space 100 \\space equal \\space to \\space Zero \\newline Hence,\\]";
+                renderMathInElement(document.getElementById("leapresult3"));
+            } else{
+                document.getElementById("leapresult1").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 100 \\newline"+i+"\\space \\% \\space 100 \\space equal \\space to \\space Zero \\newline Hence,\\]";
+                document.getElementById("leapresult3").innerHTML = "";
+                renderMathInElement(document.getElementById("leapresult1"));}
+            if(i%400==0){
+                ans =1;
+                document.getElementById("leapresult3").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space completely \\space divisible \\space by \\space 400 \\newline"+i+"\\space \\% \\space 400 \\space equal \\space to \\space Zero \\newline Hence,\\]";
+                renderMathInElement(document.getElementById("leapresult3"));}
         }
+        if (i%100!=0 && i%4!=0){
+            document.getElementById("leapresult1").innerHTML ="\\[The \\space Year \\space "+i+" \\space is \\space neither \\space divible \\space by \\space 4 \\space or \\space 100 \\newline Hence,\\]";
+            renderMathInElement(document.getElementById("leapresult1"));
+            document.getElementById("leapresult3").innerHTML = "";}
         if(ans){
             if(i>curryr){
                 out.innerHTML = `${i} will be a Leap Year`;
             }else if(i == curryr){
                 out.innerHTML = `${i} is a Leap Year`;
             }else {
-                out.innerHTML = `${i} was a Leap Year`;
-            }
+                out.innerHTML = `${i} was a Leap Year`;}
         }
         else{
             if(i>curryr){
@@ -8004,8 +8021,7 @@ function leap()
             }else if(i == curryr){
                 out.innerHTML = `${i} is not a Leap Year`;
             }else {
-                out.innerHTML = `${i} was not a Leap Year`;
-            }
+                out.innerHTML = `${i} was not a Leap Year`;}
         }
     }
 }
@@ -8282,26 +8298,35 @@ function discount() {
 }
 
 function exposol() {
-    var x = document.getElementById("xval").value
-    var y = document.getElementById("yval").value
+    var x = parseFloat(document.getElementById("xval").value);
+    var y = parseFloat(document.getElementById("yval").value);
     var n = document.getElementById("res");
-    var explainop = document.getElementById("steps");
+    var explainop = document.getElementById("steps1");
     var ntemp="";
     var explain = "";
-    if ((x != "") && (y != "")) {
-        ntemp += "\\[Value \\space of \\space n \\space is \\space : \\space" + eval(String(Math.log(y)/Math.log(x))) + "\\]";  
-        n.innerHTML = ntemp;
-        renderMathInElement(n);
-        explain += "\\[For \\space : \\space" + x + "^{n} \\space = \\space " + y + "\\space" + "\\]";
-        explain += "\\[ Take \\space log \\space of \\space both \\space the \\space sides \\space : \\space log" + x + "^{n} \\space = \\space log" + y + "\\] ";
-        explain += "\\[ By \\space identity \\space we \\space get \\space : \\space nlog" + x + "= \\space log" + y + "\\]";
-        explain += "\\[Dividing \\space both \\space sides \\space by \\space log" + x + "\\space :" + "n \\space = \\frac{log" + y + "}{log" + x + "}" + "\\]";
+    if(isNaN(x) || isNaN(y) ){
+        n.innerHTML = "";
+        explain += "\\[Please \\space enter \\space all \\space inputs \\]";
         explainop.innerHTML = explain;
         renderMathInElement(explainop);
-    } else { 
-        n.innerHTML = ""; 
-        explainop.innerHTML = "";
-    }
+    }else{
+        if(x == 1){
+            n.innerHTML = '';
+            explain += "\\[Value \\space of \\space n \\space will \\space be \\space \\infty \\space when \\space x \\space is \\space 1\\]";
+            explainop.innerHTML = explain;
+            renderMathInElement(explainop);
+        }else{
+            ntemp += "\\[Value \\space of \\space n \\space is \\space : \\space" + eval(String(Math.log(y)/Math.log(x))) + "\\]";  
+            n.innerHTML = ntemp;
+            renderMathInElement(n);
+            explain += "\\[For \\space : \\space" + x + "^{n} \\space = \\space " + y + "\\space" + "\\]";
+            explain += "\\[ Take \\space log \\space of \\space both \\space the \\space sides \\space : \\space log" + x + "^{n} \\space = \\space log" + y + "\\] ";
+            explain += "\\[ By \\space identity \\space we \\space get \\space : \\space nlog" + x + "= \\space log" + y + "\\]";
+            explain += "\\[Dividing \\space both \\space sides \\space by \\space log" + x + "\\space :" + "n \\space = \\frac{log" + y + "}{log" + x + "}" + "\\]";
+            explainop.innerHTML = explain;
+            renderMathInElement(explainop);
+        }
+    }   
 
 }
 
