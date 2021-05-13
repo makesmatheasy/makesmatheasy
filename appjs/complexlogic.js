@@ -1122,22 +1122,29 @@ function eircal()
     var b=document.getElementById("nop").value;
     var c=document.getElementById("cprd").value;
     var ans="";
+    var result= document.getElementById("eirans");
     if(a==""||b==""||c=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans="\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer\\]";
     }
 
     else
     {
-
-        var x=parseInt(a)/100;
+        var R = parseInt(a);
+        var x=R/100;
+        ans ="\\[Interest \\space Rate \\space per \\space period = \\frac{R}{100} = \\frac{" + R + "}{100} = " + x + "\\]";
         var y=parseInt(c);
         var z=parseInt(b);
         var rate_period= ((1+(x/z))**z)-1;
-        rate_period=rate_period*100;
-        ans="Effective Annual Interest Rate per Period: "+rate_period+"<br>";
+        var rate_p=rate_period*100;
+        ans +="\\[Effective \\space interest \\space rate \\space per \\space period(i) \\space \\] \\[=(1+ \\frac{r}{m})^{m}-1\\]";
+        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
+        ans +="\\[="+ rate_period +"\\]";
+        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
     }
-    document.getElementById("eirans").innerHTML=ans;
+    result.innerHTML = ans;
+    renderMathInElement(result);
+
 }
 function errpercal()
 {
