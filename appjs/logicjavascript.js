@@ -1050,13 +1050,20 @@ function greatcfind(){
 }
 
 function disfind(){
-    let l = parseInt(document.getElementById("disin1").value)
-    let m = parseInt(document.getElementById("disin2").value)
-    let n = parseInt(document.getElementById("disin3").value)
-    let vol = Math.sqrt(((-l*l+m*m+n*n)*(l*l-m*m+n*n)*(l*l+m*m-n*n))/72)
-    let rad = Math.sqrt((l*l+m*m+n*n)/8)
-    document.getElementById("resultofdisvol").innerHTML = "The volume is "+vol
-    document.getElementById("resultofdisrad").innerHTML = "The radius is "+rad
+    let l = document.getElementById("disin1").value;
+    let m = document.getElementById("disin2").value;
+    let n = document.getElementById("disin3").value;
+    let vol = (((l**2+m**2-n**2)*(l**2-m**2+n**2)*((-l)**2+m**2+n**2))/72);
+    let vol1 = Math.sqrt(vol);
+    let rad = Math.sqrt((l*l+m*m+n*n)/8);
+    if(vol>0){
+    document.getElementById("resultofdisvol").innerHTML = "The volume is "+vol1;
+    document.getElementById("resultofdisrad").innerHTML = "The radius is "+rad;
+    }
+    else{
+        document.getElementById("resultofdisvol").innerHTML = "Negative Mumber Square Root is not possible!"
+        document.getElementById("resultofdisrad").innerHTML = "The radius is "+rad;
+    }
 }
 function betafind(){
     let num1 = parseInt(document.getElementById("betain1").value)
