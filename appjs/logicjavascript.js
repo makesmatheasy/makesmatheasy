@@ -2538,8 +2538,38 @@ function vectorsection()
     temp += "\\[The \\space Position \\space vector \\space of \\space point \\space dividing \\space the \\space line \\space segment \\space joining \\space two \\space points \\space P \\space and \\space Q \\space in \\space the \\space ratio \\space m:n \\space is \\space given \\space by \\]";
     temp += "\\[Internally : \\space \\frac{m \\space \\overrightarrow{b} \\space + \\space n \\space \\overrightarrow{a}}{m+n} \\]";
     temp += "\\[\\overrightarrow{OP} \\space = \\space " + x1 + "\\hat{i} + " + y1  + "\\hat{j} + " + z1 + "\\hat{k} \\space and \\space  \\overrightarrow{OQ} \\space = \\space " + x2 + "\\hat{i} + " + y2  + "\\hat{j} + " + z2 + "\\hat{k} \\]";
-    temp += "\\[\\overrightarrow{OR} \\space = \\space \\frac{" + m + " ( "  + x2 + "\\hat{i} + " + y2  + "\\hat{j} + " + z2 + "\\hat{k} ) + " + n + " ( "  + x1 + "\\hat{i} + " + y1  + "\\hat{j} + " + z1 + "\\hat{k} ) }{" + m + "+" + n + "} \\space = \\space \\frac{ ( "  + (m*x2) + "\\hat{i} + " + (m*y2)  + "\\hat{j} + " + (m*z2) + "\\hat{k} ) + ( "  + (n*x1) + "\\hat{i} + " + (n*y1)  + "\\hat{j} + " + (n*z1) + "\\hat{k} ) }{" + (m + n) + "} \\]";
-    temp += "\\[\\frac{" + ((m*x2)+(n*x1)) + "\\hat{i} + " + ((m*y2)+(n*y1)) + "\\hat{j} + " +  ((m*z2)+(n*z1)) + "\\hat{j} }{" + (m + n) + "} \\space = \\space \\frac{" + ((m*x2)+(n*x1)) + "}{" + (m + n )+ "} \\hat{i} + \\frac{" + ((m*y2)+(n*y1)) + "}{" + (m + n) + "} \\hat{j} + \\frac{" + ((m*z2)+(n*z1)) + "}{" + (m + n) + "} \\hat{k} \\]";
+    temp += "\\[\\overrightarrow{OR} \\space = \\space \\frac{(" + m + " ( "  + x2 + "\\hat{i} + " + y2  + "\\hat{j} + " + z2 + "\\hat{k} )) + (" + n + " ( "  + x1 + "\\hat{i} + " + y1  + "\\hat{j} + " + z1 + "\\hat{k} )) }{" + m + "+" + n + "} \\space = \\space \\frac{ ( "  + (m*x2) + "\\hat{i} + " + (m*y2)  + "\\hat{j} + " + (m*z2) + "\\hat{k} ) + ( "  + (n*x1) + "\\hat{i} + " + (n*y1)  + "\\hat{j} + " + (n*z1) + "\\hat{k} ) }{" + (m + n) + "} \\]";
+    temp += "\\[\\frac{" + ((m*x2)+(n*x1)) + "\\hat{i} + " + ((m*y2)+(n*y1)) + "\\hat{j} + " +  ((m*z2)+(n*z1)) + "\\hat{k} }{" + (m + n) + "} \\space = \\space \\frac{" + ((m*x2)+(n*x1)) + "}{" + (m + n )+ "} \\hat{i} + \\frac{" + ((m*y2)+(n*y1)) + "}{" + (m + n) + "} \\hat{j} + \\frac{" + ((m*z2)+(n*z1)) + "}{" + (m + n) + "} \\hat{k} \\]";
+    explain.innerHTML = temp ;
+    renderMathInElement(explain);
+    }
+    else{
+    temp += "\\[ Please \\space enter \\space all \\space input \\]";
+     explain.innerHTML = temp ;
+     renderMathInElement(explain);
+    }
+}
+
+
+function vectorsection2()
+{
+    var x1,y1,x2,y2,m,n;
+    x1=parseFloat(document.getElementById('inp011').value);
+    y1=parseFloat(document.getElementById('inp022').value);
+    z1=parseFloat(document.getElementById('inp033').value);
+    x2=parseFloat(document.getElementById('inp044').value);
+    y2=parseFloat(document.getElementById('inp055').value);
+    z2=parseFloat(document.getElementById('inp066').value);
+    m=parseFloat(document.getElementById('m12').value);
+    n=parseFloat(document.getElementById('n112').value);
+    var explain = document.getElementById("vectorsection2");
+    var temp = "";
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(z1) && !isNaN(x2) && !isNaN(y2) && !isNaN(z2) && !isNaN(m) && !isNaN(n)){
+    temp += "\\[The \\space Position \\space vector \\space of \\space point \\space dividing \\space the \\space line \\space segment \\space joining \\space two \\space points \\space P \\space and \\space Q \\space in \\space the \\space ratio \\space m:n \\space is \\space given \\space by \\]";
+    temp += "\\[Externally : \\space \\frac{m \\space \\overrightarrow{b} \\space - \\space n \\space \\overrightarrow{a}}{m-n} \\]";
+    temp += "\\[\\overrightarrow{OP} \\space = \\space " + x1 + "\\hat{i} + " + y1  + "\\hat{j} + " + z1 + "\\hat{k} \\space and \\space  \\overrightarrow{OQ} \\space = \\space " + x2 + "\\hat{i} + " + y2  + "\\hat{j} + " + z2 + "\\hat{k} \\]";
+    temp += "\\[\\overrightarrow{OR} \\space = \\space \\frac{(" + m + " ( "  + x2 + "\\hat{i} + " + y2  + "\\hat{j} + " + z2 + "\\hat{k} )) - (" + n + " ( "  + x1 + "\\hat{i} + " + y1  + "\\hat{j} + " + z1 + "\\hat{k} )) }{" + m + "-" + n + "} \\space = \\space \\frac{ ( "  + (m*x2) + "\\hat{i} + " + (m*y2)  + "\\hat{j} + " + (m*z2) + "\\hat{k} ) - ( "  + (n*x1) + "\\hat{i} + " + (n*y1)  + "\\hat{j} + " + (n*z1) + "\\hat{k} ) }{" + (m - n) + "} \\]";
+    temp += "\\[\\frac{" + ((m*x2)-(n*x1)) + "\\hat{i} + " + ((m*y2)-(n*y1)) + "\\hat{j} + " +  ((m*z2)-(n*z1)) + "\\hat{k} }{" + (m - n) + "} \\space = \\space \\frac{" + ((m*x2)-(n*x1)) + "}{" + (m - n )+ "} \\hat{i} + \\frac{" + ((m*y2)-(n*y1)) + "}{" + (m - n) + "} \\hat{j} + \\frac{" + ((m*z2)-(n*z1)) + "}{" + (m - n) + "} \\hat{k} \\]";
     explain.innerHTML = temp ;
     renderMathInElement(explain);
     }
