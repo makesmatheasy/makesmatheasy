@@ -10031,15 +10031,17 @@
             <form action="">
                 <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
                 <p>&nbsp;</p>
-                <div class="row">
-                    <div class="col">
-                        <button id="smpbtn" class="btn btn-secondary" type="button" onclick="samvar()" style="font-family:mathfont;"> Sample Standard Deviation</button>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-auto d-flex justify-content-center">
+                        <button id="smpbtn" class="btn btn-secondary m-1" type="button" onclick="samvar()" style="font-family:mathfont;"> Sample Standard Deviation</button><br>
                     </div>
-                    <div class="col">
-                        <button id="popbtn" class="btn btn-secondary" type="button" onclick="popvar()" style="font-family:mathfont;"> Population Standard Deviation</button>
+                    <br><br>
+                    <div class="col-md-auto d-flex justify-content-center">
+                        <button id="popbtn" class="btn btn-secondary m-1" type="button" onclick="popvar()" style="font-family:mathfont;"> Population Standard Deviation</button><br>
                     </div>
-                    <div class="col">
-                        <button class="btn btn-secondary" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+                    <br><br>
+                    <div class="col-md-auto d-flex justify-content-center">
+                        <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
                     </div>
                 </div>
             </form>
