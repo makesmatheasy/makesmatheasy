@@ -5234,19 +5234,37 @@
               Coordinate 2 = (<input type="text" id="a4m" size=5 value='' placeholder="x2"> , 
              <input type="text" id="a5m" size=5 value='' placeholder="y2">, <input type="text" id="a6m" size=5 value='' placeholder="z2">)
              <br>
-         Coordinate 3 = (<input type="text" id="a7m" size=5 value='' placeholder="x3"> , 
-     <input type="text" id="a8m" size=5 value='' placeholder="y3">, <input type="text" id="a9m" size=5 value='' placeholder="z3">)
-         <br>
-         Coordinate 4 = (<input type="text" id="a10m" size=5 value='' placeholder="x4"> , 
-         <input type="text" id="a11m" size=5 value='' placeholder="y4">, <input type="text" id="a12m" size=5 value='' placeholder="z4">)
+            Coordinate 3 = (<input type="text" id="a7m" size=5 value='' placeholder="x3"> , 
+             <input type="text" id="a8m" size=5 value='' placeholder="y3">, <input type="text" id="a9m" size=5 value='' placeholder="z3">)
+             <br>
+            Coordinate 4 = (<input type="text" id="a10m" size=5 value='' placeholder="x4"> , 
+            <input type="text" id="a11m" size=5 value='' placeholder="y4">, <input type="text" id="a12m" size=5 value='' placeholder="z4">)
              <br><br>
-     <button type="button" class="btn btn-light" onclick=centsolve1()>
+            <button type="button" class="btn btn-light" onclick=centsolve1()>
              Find Centroid
-     </button><br>
-     </p>
- </div>
- <h4 id="centres" style="color: white;"></h4>
- <h4 class="text-center" id="line22"> </h4> <br>
+            </button><br>
+            </p>
+            </div>
+             <h4 id="centres" style="color: white;"></h4>
+            <h4 class="text-center" id="line22"> </h4> <br>
+            <h3>3-D Distance Calculator</h3><br>
+            <div class="coll">
+                <p>
+                    Point A = (<input type="text" id="3dinputx1" size=5 value='' placeholder="x1"> , 
+                <input type="text" id="3dinputy1" size=5 value='' placeholder="y1"> , <input type="text" id="3dinputz1" size=5 value='' placeholder="z1">)
+                        <br><br>
+                    Point B = (<input type="text" id="3dinputx2" size=5 value='' placeholder="x2"> , 
+                <input type="text" id="3dinputy2" size=5 value='' placeholder="y2"> , <input type="text" id="3dinputz2" size=5 value='' placeholder="z2">)
+                        <br><br>
+                <button type="button" class="btn btn-light" onclick=threedissolve()>
+                    Find 
+                </button><br>
+                </p>
+            </div><br>
+            <p id="opdis" style="display:flex;font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               text-align="right"></p>
+               <p style="display:flex;text-align: right; color:white;"  id="opdis1"> </p><br>
 
 
         </div>
