@@ -2298,22 +2298,22 @@ function interpointsolve()
     
 }
 
-function anglesolve()
-{
-    var a1, b1, c1, a2, b2, c2;
-    a1=parseFloat(document.getElementById('a1st').value);
-    b1=parseFloat(document.getElementById('b1st').value);
-    c1=parseFloat(document.getElementById('c1st').value);
-    a2=parseFloat(document.getElementById('a2nd').value);
-    b2=parseFloat(document.getElementById('b2nd').value);
-    c2=parseFloat(document.getElementById('c2nd').value);
-    var explain = document.getElementById("angleformula");
-    explain.innerHTML = "\\[Formula \\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2}) \\] ";
-    renderMathInElement(document.getElementById("angleformula"));
+function anglesolve() {
+    var a1=parseFloat(document.getElementById('a1st').value);
+    var b1=parseFloat(document.getElementById('b1st').value);
+    var a2=parseFloat(document.getElementById('a2nd').value);
+    var b2=parseFloat(document.getElementById('b2nd').value);
     var M1=(-a1)/b1;
     var M2=(-a2)/b2;
     var angle = Math.atan((M2-M1)/(1+M1*M2));
-    document.getElementById('angle_output').innerHTML= 'Angle between lines is '  + (angle*180/Math.PI).toFixed(1) + '&deg' ;
+    document.getElementById("angleformula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-"+a1+")}{"+b1+"}  \\space , \\space m2 = \\frac{(-"+a2+")}{"+b2+"}\\] ";
+    document.getElementById("angleformula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
+    document.getElementById("angleformula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{("+M2.toFixed(2)+") - ("+M1.toFixed(2)+")}{1+ ("+M1.toFixed(2)+") \\times ("+M2.toFixed(2)+")}) \\]";
+    document.getElementById('angle_output').innerHTML= "\\[Angle \\space is \\space \\frac{"+angle.toFixed(3)+"}{\\pi} \\space = \\space"+ (angle*180/Math.PI).toFixed(1) + "\\degree\\]";
+    renderMathInElement(document.getElementById("angleformula"));
+    renderMathInElement(document.getElementById("angleformula1"));
+    renderMathInElement(document.getElementById("angleformula2"));
+    renderMathInElement(document.getElementById("angle_output"));
     
 }
 
