@@ -2547,31 +2547,24 @@ function excentersolve(){
     }
 }
 
-function collinearsolve()
-{
-    var x1,y1,x2,y2,x3,y3;
-    x1=parseFloat(document.getElementById('a1').value);   
-    y1=parseFloat(document.getElementById('b1').value);
-    x2=parseFloat(document.getElementById('a2').value);
-    y2=parseFloat(document.getElementById('b2').value);
-    x3=parseFloat(document.getElementById('a3').value);
-    y3=parseFloat(document.getElementById('b3').value);
-    var explainA = document.getElementById('collop1');
-    var explainB = document.getElementById('collop2');
+function collinearsolve() {
+    var x1=parseFloat(document.getElementById('a1').value);   
+    var y1=parseFloat(document.getElementById('b1').value);
+    var x2=parseFloat(document.getElementById('a2').value);
+    var y2=parseFloat(document.getElementById('b2').value);
+    var x3=parseFloat(document.getElementById('a3').value);
+    var y3=parseFloat(document.getElementById('b3').value);
     var mA= (y2-y1)/(x2-x1);  
     var mB = (y3-y2)/(x3-x2);  
     if(mA==mB){
-        explainA.innerHTML = "\\[" + "Points \\space are \\space collinear"  + "\\] ";
-        renderMathInElement(document.getElementById("collop1"));
-       
-    }
-    else{
-        explainB.innerHTML = "\\[" + "Points \\space are \\space non-collinear" +"\\] ";
-        renderMathInElement(document.getElementById("collop2"));
-     
-    }
-    
-    
+        document.getElementById('collop1').innerHTML = "\\[\\frac{y2 - y1}{x2 - x1} \\space = \\space \\frac{y3 - y2}{x3 - x2} \\space => \\space \\frac{"+y2+" - "+y1+"}{"+x2+" - "+x1+"} \\space = \\space \\frac{"+y3+" - "+y2+"}{"+x3+" - "+x2+"} \\space => \\space "+mA.toFixed(3)+" \\space = \\space "+mB.toFixed(3)+"\\]"; 
+        document.getElementById('collop2').innerHTML = "\\[Hence, \\space Points \\space are \\space collinear \\] "; 
+    } else{
+        document.getElementById('collop1').innerHTML = "\\[\\frac{y2 - y1}{x2 - x1} \\space != \\space \\frac{y3 - y2}{x3 - x2} \\space => \\space \\frac{"+y2+" - "+y1+"}{"+x2+" - "+x1+"} \\space != \\space \\frac{"+y3+" - "+y2+"}{"+x3+" - "+x2+"} \\space => \\space "+mA.toFixed(3)+" \\space != \\space "+mB.toFixed(3)+"\\]"; 
+        document.getElementById('collop2').innerHTML = "\\[Hence, \\space Points \\space are \\space non-collinear" +"\\] ";
+    }  
+    renderMathInElement(document.getElementById("collop1"));   
+    renderMathInElement(document.getElementById("collop2"));   
 }
 
 function displanesolve()
