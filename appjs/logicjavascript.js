@@ -3232,6 +3232,27 @@ function coordinatearea(){
 
 }
 
+function obliquetri(){
+    var a,b,c;
+    a=parseFloat(document.getElementById('inputsideoba').value);
+    b=parseFloat(document.getElementById('inputsideobb').value);
+    c=parseFloat(document.getElementById('inputsideobc').value);
+    var displayop = document.getElementById("obliop");
+    var displayop1 = document.getElementById("obliop1");
+    var explaintemp = "";
+    var explaintemp1 = "";
+    if((a*a == b*b + c*c) || (b*b == a*a + c*c) || (c*c == a*a + b*b)){
+        explaintemp += "It will not form an oblique triangle."
+        displayop.innerHTML = explaintemp;
+        renderMathInElement(obliop);
+    }
+    else{
+        explaintemp1 += "It will form an oblique triangle";
+        displayop1.innerHTML = explaintemp1;
+        renderMathInElement(obliop1);
+    }
+}
+
 function vectorquad(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("inp51").value);
