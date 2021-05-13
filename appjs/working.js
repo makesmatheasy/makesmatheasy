@@ -149,6 +149,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#parabolacalcbtn").click(function () {
+        openit("#parabolacalc");
+        closenav();
+        clearall();
+    });
     $("#bpmf").click(function () {
         openit("#bpmfs");
         closenav();
