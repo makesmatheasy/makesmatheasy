@@ -3288,7 +3288,25 @@ function coordinatearea(){
     }
 
 }
+function centersolve(){
+    var a,b,c,d,e,f;
+     a = parseInt(document.getElementById("qcenter").value);
+     b = parseInt(document.getElementById("acenter").value);
+     c = parseInt(document.getElementById("bcenter").value);
+     e = b/(a*2);
+     f = c/(a*2);
 
+     document.getElementById("centere").innerHTML = "\\[Center \\space Of \\space circle \\space -> \\newline";
+     document.getElementById("centere").innerHTML +=" g\\space = \\frac {"+ b + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ e +"\\newline"; 
+     document.getElementById("centere").innerHTML +=" h\\space = \\frac {"+ c + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ f +"\\newline \\] ";
+
+    renderMathInElement(document.getElementById("centere"));
+    document.getElementById("centerr").innerHTML = "\\[Center \\space Of \\space circle \\space = ( \\space -g \\space -h \\space )  \\newline";
+    document.getElementById("centerr").innerHTML += " = \\space ( \\space " + -e +" \\space , \\space "+ -f + " \\space ) \\space \\newline \\] "
+
+    renderMathInElement(document.getElementById("centerr"));
+
+}
 function vectorquad(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("inp51").value);
