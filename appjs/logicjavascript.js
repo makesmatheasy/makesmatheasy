@@ -1215,11 +1215,35 @@ function decagramfind(){
 }
 
 function enneagramfind(){
-    let side  = parseInt(document.getElementById("inputenneagramside").value)
-    let peri = 40*side
-    let ar = 34.462*side*side 
-    document.getElementById("resultofenneagramperi").innerHTML = "The perimeter is "+peri
-    document.getElementById("resultofenneagramarea").innerHTML = "The area is "+ar
+    let side  = parseInt(document.getElementById("inputenneagramside").value);
+    let peri = 40*side;
+    let ar = 3.248*side*side;
+    let ans = document.getElementById("resultofenneagramperi");
+    let ans1 = document.getElementById("resultofenneagramarea");
+    let temp = "";
+    let temp1 = ""; 
+    if(!isNaN(side)){
+    temp += "\\[40 \\times " + side + " \\]";
+    temp += "\\[Perimeter \\space of \\space Enneagram \\space is \\]";
+    temp += "\\[ " + peri + " \\]";
+    ans.innerHTML = temp;
+    renderMathInElement(ans);
+    temp1 += "\\[4 \\times \\frac{ \\sqrt{5 \\times (5 - 2 \\sqrt{5})}}{2} \\times " + side + "^{2} \\]";
+    temp1  += "\\[4 \\times \\frac{ \\sqrt{5 \\times (5 - 2 \\sqrt{5})}}{2} \\times " + (side**2) + " \\]";
+    temp1 += "\\[ 4 \\times 0.812 \\times " + (side**2) + " \\]";
+    temp1 += "\\[Area \\space of \\space Enneagram \\space is \\]";
+    temp1 += "\\[ " + ar + " \\]";
+    ans1.innerHTML = temp1;
+    renderMathInElement(ans1);
+    }
+    else{
+            temp += "\\[Please \\space enter \\space side  \\]";
+            temp1 += "";
+            ans.innerHTML = temp;
+            ans1.innerHTML = temp1;
+            renderMathInElement(ans);
+            renderMathInElement(ans1);
+        }
 }
 
 function cencirtcal(){
