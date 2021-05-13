@@ -2349,21 +2349,23 @@ function plpSolve()
     document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x'  + (-a) + 'y' +  '=' + dis;
     
 }
-function pppSolve()
-{
-    var a,b,c, x1,x2;
-    a=parseFloat(document.getElementById('pppa').value);
-    b=parseFloat(document.getElementById('pppb').value);
-    c=parseFloat(document.getElementById('pppc').value);
-    x1=parseFloat(document.getElementById('pppx').value);
-    y1=parseFloat(document.getElementById('pppy').value);
+function pppSolve() {
+    var a=parseFloat(document.getElementById('pppa').value);
+    var b=parseFloat(document.getElementById('pppb').value);
+    var c=parseFloat(document.getElementById('pppc').value);
+    var x1=parseFloat(document.getElementById('pppx').value);
+    var y1=parseFloat(document.getElementById('pppy').value);
    
     var dis = (((a*x1)+(b*y1)));
-    if(b>0)
-    document.getElementById('ppp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x' + '+' + (b) + 'y' + '=' + dis;
-    else
-    document.getElementById('ppp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x'  + (b) + 'y' +  '=' + dis;
-    
+    if(isNaN(x1) || isNaN(y1) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('ppp_op').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("ppp_op"));
+    } else{
+        if(b>0)
+        document.getElementById('ppp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x' + '+' + (b) + 'y' + '=' + dis;
+        else
+        document.getElementById('ppp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x'  + (b) + 'y' +  '=' + dis;
+    }
 }
 
 function parallelsolve()
