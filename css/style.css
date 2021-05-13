@@ -463,7 +463,7 @@ ul li .table {
 }
 
 .list_menu_items a:hover {
-  /* background: rgba(255, 136, 231,0.5)!important; */
+  background: rgba(255, 136, 231,0.5)!important;
   /* background: var(--apppink) !important; */
   border-radius: 2.25rem;
 }
