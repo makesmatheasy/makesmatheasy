@@ -3017,8 +3017,8 @@ function projector(){
     else{
     projtemp  += "\\[If \\space we \\space project \\space \\overrightarrow{a}  \\space on \\space \\overrightarrow{b} \\space then \\space Projected \\space Vector \\space will \\space be \\space -> \\]";
     projtemp += "\\[ proj_b a \\space = \\space \\frac { \\overrightarrow{a} . \\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
-    projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toFixed(2)+ "}( \\space (" + d + ") \\hat{i} \\space + \\space (" + e + ") \\hat{j} \\space + \\space ( " + f + " ) \\hat{i} \\space ) \\]";
-    projtemp += "\\[So \\space Projected \\space of \\space \\overrightarrow{X} \\space on \\overrightarrow{Y} \\space is \\space = \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{i} \\space + \\space ( \\frac{"  + (dot1*e)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{j} \\space + \\space \\space ( \\frac{"  + (dot1*f)  + "}{" + (proj1.toFixed(2)) + "} ) \\]";
+    projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toFixed(2)+ "}( \\space (" + d + ") \\hat{i} \\space + \\space (" + e + ") \\hat{j} \\space + \\space ( " + f + " ) \\hat{k} \\space ) \\]";
+    projtemp += "\\[So \\space Projected \\space Vector \\space of \\space \\overrightarrow{X} \\space on \\overrightarrow{Y} \\space is \\space = \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{i} \\space + \\space ( \\frac{"  + (dot1*e)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{j} \\space + \\space \\space ( \\frac{"  + (dot1*f)  + "}{" + (proj1.toFixed(2)) + "} )\\hat{k} \\]";
     projoutput.innerHTML = projtemp;
     renderMathInElement(document.getElementById("vectorprojj1"));
 }
