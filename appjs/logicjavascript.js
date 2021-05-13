@@ -3895,7 +3895,57 @@ function Kitesolve() {
         document.getElementById("resultofperiK").innerHTML = "Enter side a and b both to calculate perimeter";
     }
 }
+//created function for lemniscate
+function solvelemniscate() {
+    var a = document.getElementById("inputlemnihei").value;
+    var lenoutput = document.getElementById("resultoflemnilen");
+    var lenoneoutput = document.getElementById("resultoflemnilenone");
+    var perioutput = document.getElementById("resultoflemniperi");
+    var perioneoutput = document.getElementById("resultoflemniperione");
+    var areaoutput = document.getElementById("resultoflemniarea");
+    var areaoneoutput = document.getElementById("resultoflemniareaone");
+    var lentemp = "";
+    var lenonetemp = "";
+    var peritemp = "";
+    var perionetemp = "";
+    var areatemp = "";
+    var areaonetemp = "";
+    if (a != "") {
+        lentemp += "\\[Length \\space of \\space lemniscate \\newline 2 \\times \\sqrt{2} \\times" + a  + "\\ = " + eval(String(2.82842712 * a)).toFixed(2) + "\\]";
+        lenoutput.innerHTML = lentemp;
 
+        lenonetemp += "\\[Length \\space of \\space one \\space drop \\space \\newline \\sqrt{2} \\times" + a + "\\ = " + eval(String(1.41421356 * a)).toFixed(2) + "\\]";
+        lenoneoutput.innerHTML = lenonetemp;
+
+        peritemp += "\\[Perimeter \\space of \\space lemniscate \\space \\newline 2 \\times \\sqrt{2} \\times 2.62 \\times" + a + "\\ = " + eval(String(7.41629871 * a )).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        perionetemp += "\\[Perimeter \\space of \\space one \\space drop \\space \\newline \\sqrt{2} \\times 2.62 \\times" + a + "\\ = " + eval(String(3.70814935 * a )).toFixed(2) + "\\]";
+        perioneoutput.innerHTML = perionetemp;
+
+        areatemp += "\\[Area \\space of \\space lemniscate \\space \\newline 2 \\times" + a + "\\times" + a + "\\ = " + eval(String(2 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        areaonetemp += "\\[Area \\space of \\space one \\space drop \\space \\newline" + a + "\\times" + a + "\\ = " + eval(String(a * a)).toFixed(2) + "\\]";
+        areaoneoutput.innerHTML = areaonetemp;
+
+        renderMathInElement(lenoutput);
+        renderMathInElement(lenoneoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(perioneoutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(areaoneoutput);
+
+    } else {
+        lenoutput.innerHTML = "";
+        lenoneoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        perioneoutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        areaoneoutput.innerHTML = "";
+    }
+
+}
 //created function for Rectangle
 function rectanglesolve() {
     var length = document.getElementById("inputreclength").value;

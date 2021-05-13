@@ -11964,6 +11964,10 @@
                            href="#">Kite</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#lemniscate" style="text-decoration:none;"
+                           href="#">Lemniscate</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#astroid" style="text-decoration:none;"
                            href="#">Astroid</a></td>
                 </tr>
@@ -17464,6 +17468,77 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="lemniscate" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Lemniscate</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Length</h5>
+                                    <p class="text-center">\[l = 2 \space \sqrt{2} \space a \]</p>
+                                    <p class="text-center">a = height</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Length of one drop</h5>
+                                    <p class="text-center">\[l_d = \sqrt{2} \space a \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = 2 \space \sqrt{2} \space S \space a\]</p>
+                                    <p class="text-center">Lemniscate constant S = 2.622057554292119...</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter of one drop</h5>
+                                    <p class="text-center">\[p_d = \sqrt{2} \space S \space a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = 2 \space a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area of one drop</h5>
+                                    <p class="text-center">\[A_d = a^2 \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/lemniscate.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height of lemniscate (a)" id="inputlemnihei"
+                                       oninput="solvelemniscate();">
+                            <p class="stopwrap" id="resultoflemnilen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflemnilenone"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflemniperi"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflemniperione"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflemniarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoflemniareaone"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>    
 
         <div class="modal fade" id="rectangle" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
