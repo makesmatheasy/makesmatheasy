@@ -3402,6 +3402,9 @@ function solvetetra() {
 
 function pythtriple(){
     var num = parseInt(document.getElementById("nom").value)
+    if (num < 0){
+        document.getElementById("answ").innerHTML= "A pythagorean triplet is defined only for positive integers. Negative numbers can't be sides of a right angled triangle, therefore, aren't used in Pythagorean triplets";
+    }else{
     if (num%2==0){
         var nums = parseInt(num)
         var les = parseInt((num/2)**2 -1)
@@ -3426,6 +3429,8 @@ function pythtriple(){
         renderMathInElement(document.getElementById("answ2"));
         renderMathInElement(document.getElementById("answ3"));
         document.getElementById("answ4").innerHTML = "The triplets are (" + nums + " ," + les + ", " + more+")";
+
+    }
     }
 }
 
