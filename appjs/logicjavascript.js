@@ -4313,6 +4313,37 @@ function solveastroid() {
     }
 }
 
+function solvestadium() {
+    var r = document.getElementById("inputcircrad").value;
+    var a = document.getElementById("inputrectlen").value;
+    var stalenoutput = document.getElementById("resultofstadlen");
+    var perioutput = document.getElementById("resultofstadperi");
+    var areaoutput = document.getElementById("resultofstadarea");
+    var stalentemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        stalentemp += "\\[Stadium \\space length \\space \\newline" + a  + "+ 2 \\space (" + r + ")" + "\\ = " + eval(String( parseFloat(a) + (2 * parseFloat(r) ))).toFixed(2) + "\\]";
+        stalenoutput.innerHTML = stalentemp;
+
+        peritemp += "\\[Perimeter \\space \\newline 2 \\times ( 3.14 \\times" + r + "+" + a + ")" + "\\ = " + eval(String(2 * (3.141592653589 * parseFloat(r) + parseFloat(a) ))).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space \\newline" + r + "\\times ( 3.14 \\times" + r + "+ 2" + a + ")" + "\\ = " + eval(String(parseFloat(r) * ((3.141592653589 * parseFloat(r) )+(2 * parseFloat(a) )))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(stalenoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        stalenoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveoctadeca(){
     var side = parseInt(document.getElementById("inputsideoctadeca").value);
     var area = 18/4 * side**2 * math.cot(math.pi/18);
