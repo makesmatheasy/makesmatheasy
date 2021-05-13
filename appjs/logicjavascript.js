@@ -3316,6 +3316,27 @@ function solvetwoplane()
     }
 }
 
+function threedissolve(){
+    var x1 =parseFloat(document.getElementById('3dinputx1').value);
+    var x2 =parseFloat(document.getElementById('3dinputx2').value);
+    var y1 =parseFloat(document.getElementById('3dinputy1').value);
+    var y2 =parseFloat(document.getElementById('3dinputy2').value);
+    var z1 =parseFloat(document.getElementById('3dinputz1').value);
+    var z2 =parseFloat(document.getElementById('3dinputz2').value);
+    var dis = document.getElementById('opdis');
+    var dis1 = document.getElementById('opdis1');
+    var displaytemp = "";
+    var displaytemp1 = "";
+
+    var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
+    displaytemp += "\\[Formula = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
+    displaytemp1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = "+ "\\sqrt{(" + x2 + "-" + x1 + ")^2 + (" + y2 + "-" + y1 + ")^2 + (" + z2 + "-" + z1 + ")^2}" + " = "  + res.toFixed(2) + "\\]";
+    dis.innerHTML = displaytemp;
+    dis1.innerHTML = displaytemp1;
+    renderMathInElement(dis);
+    renderMathInElement(dis1);
+}
+
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {
