@@ -13662,6 +13662,34 @@
             <h5 id="ltap"></h5>
             <h5 id="formula"></h5>
 			<br>
+
+            <h4 class="d-flex justify-content-center">Insert n-Arthimetic Mean between two numbers</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="nt1" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft1" placeholder="Enter the first number(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt1" placeholder="Enter the second number(b)"
+                       style="border: none; background: transparent;width: 25rem; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=nap()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <p id="nAPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
+			<br>
             <h4 class="d-flex justify-content-center">If number of terms and the AP is given</h4><br>
             <form class="form-inline d-flex flex-column align-items-center">
                 <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
