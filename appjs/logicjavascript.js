@@ -8747,6 +8747,24 @@ function anotherap() {
     document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
     document.getElementById("ltap").innerHTML = "Result: " + ans
 }
+
+function nap(){
+    var n = parseInt(document.getElementById("nt1").value)
+    var a = parseInt(document.getElementById("ft1").value)
+    var b = parseInt(document.getElementById("lt1").value)
+    if(isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b)))
+    {
+        document.getElementById("nAPseries2").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+    }
+    var d = (b-a)/(n+1);
+    for (var i = 1, series = "", num = 0; i <= n; i++) {
+        num = ((a) + (i  * d));
+        series += (num.toString() + ", ");
+    }
+    document.getElementById("nAPseries2").innerHTML = "n-Arithmetic Mean: " + series.substring(0, series.length - 2)
+}
+
 function apsum()
 {   var n = document.getElementById("nterms").value
     var val = document.getElementById("ap").value;
