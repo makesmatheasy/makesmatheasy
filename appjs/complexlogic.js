@@ -1216,21 +1216,22 @@ function wmccal()
     document.getElementById("wmcans").innerHTML=ans;
 }
 
-function covcal()
-{
+function covcal() {
     var num=document.getElementById("cvsd").value;
     var s=""; 
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     if(num==""){
        s= "Please enter number";
-
     } else if(!valid.test(num)){
         s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-
     } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
+    if (len == 1){
+        document.getElementById("cvans").innerHTML= "Please enter more than one value";
+        return;
+    }
     var number=[]
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
@@ -1246,16 +1247,10 @@ function covcal()
     }
     varrzlt = varrzlt/(len-1);
     var sdev = Math.sqrt(varrzlt);
-    console.log(sdev);
-    console.log(mean);
-
     s="The Coeffecient of Variation is: "+sdev/mean;
     }
     document.getElementById("cvans").innerHTML=s;
 }
-
-
-
 
 function rmscal()
 {
