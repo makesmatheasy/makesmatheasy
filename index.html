@@ -3592,7 +3592,23 @@
                 </table>
             </li>
 
-          
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="hypergeomean"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Hypergeometric Distribution Statistics
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Hypergeometric Distribution','#hypergeomeans','c','hypergeo,eansimgfav')"><img
+                                       id="hypergeomeansimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -14573,6 +14589,27 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="hypergeomeans">
+
+    
+    <h1 >Hypergeometric Distribution Statistics</h1>
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos12" class="form__field" id="hypergeos12" width="5em" placeholder="Successes of Sample">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos22" class="form__field" id="hypergeos22" placeholder="Sample Size">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos32" class="form__field" id="hypergeos32" placeholder="Successes of Lot">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos42" class="form__field" id="hypergeos42" placeholder="Lot Size">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="hypergeos2cal()">Mean</button>
+    <p>&nbsp;</p>
+    <p id="hypergeos2ans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
+    
+   
+</div>
+
 
 <div class="collapse" id="hypergeos">
 
