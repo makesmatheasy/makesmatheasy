@@ -3056,6 +3056,17 @@ function vactorangle(){
     renderMathInElement(document.getElementById("vae"));
 }
 
+function countscfind(){
+    let N = parseInt(document.getElementById('countsc').value)
+    let cnt = 0, i = 1;
+    while (Math.floor(Math.pow(i, 6)) <= N)
+    {
+        ++cnt;
+        ++i;
+    }
+    document.getElementById("countscans").innerHTML = cnt
+}
+
 function vectpral(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
     var a=parseFloat(document.getElementById('vpa1').value);
