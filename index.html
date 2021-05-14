@@ -3492,7 +3492,7 @@
                             <tr>
                                 <td style="border-top: none;">
                                     <a id="bpmf"
-                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Binomial Distribution Calculator
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Binomial Distribution P.M.F Calculator
                                     </a>
                                 </td>
                                 <td style="float:right;border-top: none;">
@@ -3509,13 +3509,31 @@
                             <tr>
                                 <td style="border-top: none;">
                                     <a id="ppmf"
-                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Poisson Distribution Calculator
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Poisson Distribution P.M.F Calculator
                                     </a>
                                 </td>
                                 <td style="float:right;border-top: none;">
                                        <span
                                                onclick="addtofavourite('Poisson Distribution','#ppmfs','c','ppmfimgfav')"><img
                                                id="bpmfimgfav" src="images/unfavourite.png"
+                                               style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+
+                    <li>
+                        <table class="table">
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="hypergeo"
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Hypergeometric Distribution P.M.F Calculator
+                                    </a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                       <span
+                                               onclick="addtofavourite('Hypergeometric Distribution','#hypergeos','c','hypergeosimgfav')"><img
+                                               id="hypergeosimgfav" src="images/unfavourite.png"
                                                style="height:1.5625rem;filter: none;"></span>
                                 </td>
                             </tr>
@@ -3557,6 +3575,8 @@
                     </tr>
                 </table>
             </li>
+
+          
             <div class="dropdown-divider"></div>
         </div>
 
@@ -14474,6 +14494,29 @@
 
 <!--Hydrosrtatic Pressure ends-->
 
+<div class="collapse" id="hypergeos">
+
+    
+    <h1 >Hypergeometric Distribution PMF Calculator</h1>
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos1" class="form__field" id="hypergeos1" width="5em" placeholder="Successes of Sample">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos2" class="form__field" id="hypergeos2" placeholder="Sample Size">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos3" class="form__field" id="hypergeos3" placeholder="Successes of Lot">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos4" class="form__field" id="hypergeos4" placeholder="Lot Size">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="hypergeoscal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="hypergeosans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
+    
+   
+</div>
+
+
+
+
 <div class="collapse" id="vpds">
 
     
@@ -14489,6 +14532,7 @@
     
    
 </div>
+
 
 <div class="collapse" id="oocs">
 
@@ -14512,8 +14556,6 @@
     <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="midcal()">Calculate in Fraction</button>
     <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="mifcal()">Calculate in Decimal</button>
     <p>&nbsp;</p> <p id="mians"></div>
-    
-   
 </div>
 
 <div class="collapse" id="manhats">

@@ -297,6 +297,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#hypergeo").click(function () {
+        openit("#hypergeos");
+        closenav();
+        clearall();
+    });
     $("#integration-idencollapsebtn").click(function () {
         openit("#integration-idencollapse");
         closenav();
@@ -881,6 +886,12 @@ $(document).ready(function () {
 
     $("#onetwocom-calc-btn").click(function () {
         openit("#onetwocom-calc");
+        closenav();
+        clearall();
+    });
+
+    $("#hypergeomean").click(function () {
+        openit("#hypergeomeans");
         closenav();
         clearall();
     });
