@@ -2077,6 +2077,16 @@ function addsubcfind(){
     document.getElementById("addsubcans")
 }
 
+function addsubsfind(){
+    let n = parseInt(document.getElementById("addsubs").value)
+    let prevSquare = Math.sqrt(n)
+    let nextSquare = prevSquare+1
+    let ans = (n - prevSquare) < (nextSquare - n)
+    ? (prevSquare - n)
+    : (nextSquare - n)
+    document.getElementById("addsubsans")
+}
+
 function solvepenta(){
     var a = document.getElementById("inputsidepenta1").value;
     var b = document.getElementById("inputsidepenta2").value;
