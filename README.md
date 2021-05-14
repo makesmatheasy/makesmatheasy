@@ -147,6 +147,7 @@ Other Tech/Libraries
   - Sum of Square of Given number
   - Natural Numbers
   - Percentage Calculator
+  - Half Life Calculator
   - Set Calculator
   - Pythagorean Triplets
   - Perfect Squares in a range

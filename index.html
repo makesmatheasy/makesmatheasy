@@ -1447,7 +1447,22 @@
                 </table>
             </li>
 
-           
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="halflifebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Half Life Calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Half Life Calculator','#halflife','c','halflifeimgfav')"><img
+                                        id="halflifeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>       
 
             <li>
                 <table class="table">
@@ -1501,8 +1516,7 @@
                                                </tr>
                          </table>
                      </li>
-                                               
-
+                     
                         <li>
                             <table class="table">
                                 <tr>
@@ -14804,6 +14818,14 @@ N is the population size.
         L is the number of values from the set A that are lower than or equal to your data value xₘ; and<br>
         
         N is the total number of values in the set A.</p> 
+</div>
+
+<div class="collapse" id="halflife">
+    <h1 style="font-family:mathfont; text-align:center;">Half Life Calculator </h1>
+   <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
+   <p>&nbsp;</p>
+   <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+   <p id="halflifeAns" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>
 
 

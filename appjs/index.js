@@ -358,6 +358,7 @@ function openit(id) {
         "#clocks",
         "#slvxs",
         "#rankcals",
+        "#halflife",
         "#hyperbolicratios",
         "#covs",
         "#lrcs",
