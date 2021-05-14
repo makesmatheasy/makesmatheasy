@@ -3062,6 +3062,17 @@ function angletwoplanesolve()
     
 }
 
+function countscfind(){
+    let N = parseInt(document.getElementById('countsc').value)
+    let cnt = 0, i = 1;
+    while (Math.floor(Math.pow(i, 6)) <= N)
+    {
+        ++cnt;
+        ++i;
+    }
+    document.getElementById("countscans").innerHTML = cnt
+}
+
 function vectoradd(){
     var a=parseFloat(document.getElementById('a1b').value);
     var b=parseFloat(document.getElementById('a2b').value);
