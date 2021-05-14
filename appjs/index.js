@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#dblFact",
         "#sumDiv",
         "#smPrime",
         "#nextPrime",
@@ -176,6 +177,7 @@ function openit(id) {
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
+        "#parabolacalc",
         "#chng-vol-sphere",
         "#laplacecollapse",
         "#limitscollapse",
