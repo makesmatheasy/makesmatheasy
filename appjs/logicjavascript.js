@@ -2067,6 +2067,16 @@ function findsectorarea(){
 
 }
 
+function addsubcfind(){
+    let n = parseInt(document.getElementById("addsubc").value)
+    let prevCube = Math.cbrt(n)
+    let nextCube = prevCube+1
+    let ans = (n - prevCube) < (nextCube - n)
+    ? (prevCube - n)
+    : (nextCube - n)
+    document.getElementById("addsubcans")
+}
+
 function solvepenta(){
     var a = document.getElementById("inputsidepenta1").value;
     var b = document.getElementById("inputsidepenta2").value;
