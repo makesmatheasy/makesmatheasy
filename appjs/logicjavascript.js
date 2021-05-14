@@ -2455,12 +2455,29 @@ function parabolafind(){
     document.getElementById('ecc').innerHTML = "The eccentricity of parabola is always '1'"
 }
 
-function dispointsolve(){
-    var a=parseFloat(document.getElementById('a').value);
-    var b=parseFloat(document.getElementById('b').value);
-    var c=parseFloat(document.getElementById('c').value);
-    var x1=parseFloat(document.getElementById('point_one').value);
-    var y1=parseFloat(document.getElementById('point_two').value);
+
+function ellipsefind(){
+    let a = parseInt(document.getElementById('ellipsein').value)
+    let b = parseInt(document.getElementById('ellipsein1').value)
+    let e = Math.sqrt(1-((a*a)/(b*b)))
+    let lr = (2*b*b)/(4*a)
+    document.getElementById('directrixeqn1').innerHTML = "The eqn of directrix is x-" +(a/e)+"=0"
+    document.getElementById('latus1').innerHTML = "The length of latus rectum is "+lr
+    document.getElementById('ecc1').innerHTML = "The eccentricity of ellipse is " + e
+}
+
+function dispointsolve()
+{
+    var a,b,c;
+    a=parseFloat(document.getElementById('a').value);
+    b=parseFloat(document.getElementById('b').value);
+    c=parseFloat(document.getElementById('c').value);
+    x1=parseFloat(document.getElementById('point_one').value);
+    y1=parseFloat(document.getElementById('point_two').value);
+    var explain = document.getElementById("dis_point");
+    explain.innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line  =\\space  \\frac{Ax1 + By1 + C}{\\sqrt{A^2+B^2}} \\] ";
+    renderMathInElement(document.getElementById("dis_point"));
+
     var dis = (Math.abs(a*x1 + b*y1 +c))/(Math.sqrt(a*a + b*b )).toFixed(2);
     document.getElementById("dis_point").innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line \\space  = \\space  \\frac{A \\times x1 + B \\times y1 + C}{\\sqrt{A^2+B^2}} \\space\\]";  
     document.getElementById("dis_point1").innerHTML = "\\[\\frac{"+a+"\\times "+x1+" \\space + \\space "+b+" \\times "+y1+" \\space + \\space "+c+"}{\\sqrt{"+a+"^2 \\space + \\space "+b+"^2}} \\space\\]"; 
