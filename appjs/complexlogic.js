@@ -1581,15 +1581,6 @@ function perrankcal()
 }
 document.getElementById("perrankans").innerHTML=s;
 }
-<<<<<<< HEAD
-
-
-
-
-
-||||||| ebc9daf
-
-=======
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
@@ -1615,7 +1606,6 @@ function oocal()
     }
     document.getElementById("ooans").innerHTML=ans;
 }
->>>>>>> 3bc160f2991fe7808dec5bf7c424ac1e35411f49
 function manhatcal()
 {
     var num1=document.getElementById("mdx1").value;
