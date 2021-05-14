@@ -12377,87 +12377,9 @@ function hypergeoscal()
 }
 
 
-function vpdscal()
-{
-    var num1=document.getElementById("vpdsuc").value;
-    var num2=document.getElementById("vpdvar").value;
-    ans="";
-    if(num1==""||num2=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-    ans="The calculated variance is: "+ num1;
-   
-    }
-    document.getElementById("vpdans").innerHTML=ans;
-
-}
-function product_Range(a,b) {
-    var prd = a,i = a;
-   
-    while (i++< b) {
-      prd*=i;
-    }
-    return prd;
-  }
-function comb(n, r) 
-{
-  if (n==r) 
-  {
-    return 1;
-  } 
-  else 
-  {
-    r=(r < n-r) ? n-r : r;
-    return product_Range(r+1, n)/product_Range(1,n-r);
-  }
-}
-function hypergeoscal()
-{
-    var num1=document.getElementById("hypergeos1").value;
-    var num2=document.getElementById("hypergeos2").value;
-    var num3=document.getElementById("hypergeos3").value;
-    var num4=document.getElementById("hypergeos4").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-       var z=comb(num3, num1);
-       var w=comb((num4-num3), (num2-num1));
-       var x=comb(num4,num2);
-       var st= (z*w)/x;
-       ans="The P.M.F of hypergeometric distribution : "+st;
-   
-    }
-    document.getElementById("hypergeosans").innerHTML=ans;
-}
 
 
-function vpdscal()
-{
-    var num1=document.getElementById("vpdsuc").value;
-    var num2=document.getElementById("vpdvar").value;
-    ans="";
-    if(num1==""||num2=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-    ans="The calculated variance is: "+ num1;
-   
-    }
-    document.getElementById("vpdans").innerHTML=ans;
 
-}
+
 
 
