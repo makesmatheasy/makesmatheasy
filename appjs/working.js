@@ -297,6 +297,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#hypergeo").click(function () {
+        openit("#hypergeos");
+        closenav();
+        clearall();
+    });
     $("#integration-idencollapsebtn").click(function () {
         openit("#integration-idencollapse");
         closenav();
@@ -885,6 +890,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#hypergeomean").click(function () {
+        openit("#hypergeomeans");
+        closenav();
+        clearall();
+    });
+
     //Function for hamming code
     $("#hamming-code-btn").click(function(){
         openit("#hamming-calc");
@@ -1158,6 +1169,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#squarerootcollapsebtn").click(function(){
+        openit("#squarerootcalc");
+        closenav();
+        clearall();
+    });
+
 
 })
 
