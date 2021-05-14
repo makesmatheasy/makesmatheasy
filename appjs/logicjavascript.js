@@ -2077,6 +2077,16 @@ function addsubcfind(){
     document.getElementById("addsubcans")
 }
 
+function addsubsfind(){
+    let n = parseInt(document.getElementById("addsubs").value)
+    let prevSquare = Math.sqrt(n)
+    let nextSquare = prevSquare+1
+    let ans = (n - prevSquare) < (nextSquare - n)
+    ? (prevSquare - n)
+    : (nextSquare - n)
+    document.getElementById("addsubsans")
+}
+
 function solvepenta(){
     var a = document.getElementById("inputsidepenta1").value;
     var b = document.getElementById("inputsidepenta2").value;
@@ -2525,6 +2535,32 @@ function pppSolve() {
     }
 }
 
+
+function pppdSolve() {
+    var a=parseFloat(document.getElementById('pppdaq2').value);
+    var b=parseFloat(document.getElementById('pppdbq2').value);
+    var c=parseFloat(document.getElementById('pppdcq1').value);
+    var d=parseFloat(document.getElementById('pppdcq2').value);
+    
+   
+    var dis = ((a*a)+(b*b));
+    var p =Math.abs(c-d);
+
+    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('pppdcq1output').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("pppdcq1output"));
+    } else{
+        document.getElementById('pppdcq1explane').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ "\\space - \\space "+ d+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1explane"));
+
+        if(!(Number.isInteger(Math.sqrt(dis))))
+        document.getElementById('pppdcq1output').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
+        else
+        document.getElementById('pppdcq1output').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1output"));
+    }
+}
+
 function splittrifind(){
     let side = parseInt(document.getElementById('splittri').value);
     var c = binomialCoeff(2 * side, side);
@@ -2740,6 +2776,58 @@ function incentersolve(){
 
     }
 }
+
+function convexcheckfind(){
+    let a = parseInt(document.getElementById("convexcheckin").value)
+    let a1 = parseInt(document.getElementById("convexcheckin1").value)
+    let a2 = parseInt(document.getElementById("convexcheckin2").value)
+    let a3 = parseInt(document.getElementById("convexcheckin3").value)
+    let a4 = parseInt(document.getElementById("convexcheckin4").value)
+    let a5 = parseInt(document.getElementById("convexcheckin5").value)
+    let a6 = parseInt(document.getElementById("convexcheckin6").value)
+    let a7 = parseInt(document.getElementById("convexcheckin7").value)
+    var points = [[a,a1],[a2,a3],[a4,a5],[a6,a7]]
+    if (isConvex(points)){
+        document.getElementById("convexcheckans").innerHTML = "Yes"
+    }
+    else{
+        document.getElementById("convexcheckans").innerHTML = "No"
+    }
+}
+
+function isConvex(points)
+{
+    var N = points.length;
+    var prev = 0;
+    var curr = 0;
+    for (i = 0; i < N; i++) {
+
+        var temp= [ points[i],
+                points[(i + 1) % N],
+                points[(i + 2) % N] ];
+
+        curr = CrossProduct(temp);
+        if (curr != 0) {
+            if (curr * prev < 0) {
+                return false;
+            }
+            else {
+                prev = curr;
+            }
+        }
+    }
+    return true;
+}
+
+function CrossProduct(A)
+{
+    var X1 = (A[1][0] - A[0][0]);
+    var Y1 = (A[1][1] - A[0][1]);
+    var X2 = (A[2][0] - A[0][0]);
+    var Y2 = (A[2][1] - A[0][1]);
+    return (X1 * Y2 - Y1 * X2);
+}
+
 
 function excentersolve(){
     var x1,y1,x2,y2,x3,y3,a,b,c;
@@ -3054,6 +3142,15 @@ function vactorangle(){
   
     document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] ` ;
     renderMathInElement(document.getElementById("vae"));
+}
+
+function ktimes(){
+    let A = parseInt(document.getElementById('aofeqn').value)
+    let B = parseInt(document.getElementById('bofeqn').value)
+    let C = parseInt(document.getElementById('cofeqn').value)
+    let K = parseInt(document.getElementById('kofeqn').value)
+    document.getElementById("ktimesans").innerHTML = A + " " + K * B
+    + " " + K * K * C
 }
 
 function vectpral(){

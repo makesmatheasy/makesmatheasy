@@ -1320,8 +1320,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="invhyptrigonoidenbutton"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse Hyperbolic
-                                Trigonometric Identities
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse Hyperbolic Trigonometric Identities
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -2942,6 +2941,22 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="quadeqncalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Quadratic Equation Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Quadratic Equation Calculator','#quadeqncal','c','quadeqncalfav')"><img
+                                        id="quadeqncalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <div class="dropdown-divider"></div>
         </div>
@@ -3002,7 +3017,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="binary-to-hexadecimal-btn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Bin/Dec/Oct/Hex Converter </a>
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Bin/Dec/Oct/Hex Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -3275,7 +3290,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="theobtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">De-Moivre's Theorem and Cauchy-Reimaan Theorem</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">De-Moivres Theorem and Cauchy-Reimaan Theorem</a>
                         </td>
                         <td style="float:right;border-top: none;">
                              <span
@@ -3439,8 +3454,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="condprobabilitybtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Conditional
-                                Probability</a></td>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Conditional Probability</a></td>
                         <td style="float:right;border-top: none;">
                              <span
                                      onclick="addtofavourite('Conditional Probability','#condprobability','c','condprobabilityfav')"><img
@@ -3455,8 +3469,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="jointprobabilitycollapsebtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint
-                                Probability</a>
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint Probability</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -4915,6 +4928,26 @@
                 class="stopwrap"
                align="right"></p>
             <h4 id="ppp_op"> </h4> 
+            
+            <h3>Distance Between Two Parallel Line</h3><br>
+            <div class="coll">
+                <p>
+                    Line Equation A :   <input type="text" id="pppdaq1" size=3 value='' placeholder="A" oninput="document.getElementById('pppdaq2').value = value">  x  +
+                <input type="text" id="pppdbq1" size=3 value='' placeholder="B" oninput="document.getElementById('pppdbq2').value = value"> y = <input type="text" id="pppdcq1" size=3 value='' placeholder="C">
+                    <br><br>
+                    Line Equation B :   <input type="text" id="pppdaq2" size=3 value='' placeholder="A" oninput="document.getElementById('pppdaq1').value = value">  x  +
+                <input type="text" id="pppdbq2" size=3 value='' placeholder="B" oninput="document.getElementById('pppdbq1').value = value"> y = <input type="text" id="pppdcq2" size=3 value='' placeholder="C">
+                        <br><br>
+                <button type="button" class="btn btn-light" onclick=pppdSolve()>
+                    Find 
+                </button><br>
+                </p>
+            </div><br>
+            <p id="pppdcq1explane" style="font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <p id="pppdcq1output"> </p> 
+        
             <h3>Center of Circle</h3><br>
             <div class="coll">
                 <p>
@@ -7073,6 +7106,14 @@
             <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
             <br>
             <p id="addsubcans"></p>
+            <br><br>
+            <h2>Least number to be added to or subtracted from N to make it a Perfect Square</h2>
+            <br>
+            <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="addsubsfind()">Find</button>
+            <br>
+            <p id="addsubsans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -11322,6 +11363,19 @@
             </div>
         </div>
 
+        <div class="collapse" id="quadeqncal">
+            <h2 style="text-align:center;">Quadratic equation whose roots are K times the roots of given equation</h2>
+            <br>
+            <input type="text" id="aofeqn" class="form__field" placeholder ="Enter coefficeient of x^2">
+            <input type="text" id="bofeqn" class="form__field" placeholder ="Enter coefficeient of x">
+            <input type="text" id="cofeqn" class="form__field" placeholder ="Enter constant term">
+            <input type="text" id="kofeqn" class="form__field" placeholder ="Enter K times eqn to be multiplied">
+            <br>
+            <button class="btn btn-dark" onclick="ktimes()">Find</button>
+            <br>
+            <h4 id="ktimesans"></h4>
+        </div>
+
         <div class="collapse" id="mulsolwithsteps">
             <form class="form-inline">
                 <input type="number" id="numofmulsol" class="form__field" placeholder="Number"
@@ -11681,6 +11735,29 @@
             <button type = "button" class="btn btn-dark" onclick = "splittrifind()">FInd</button>
             <br>
             <h4 id="splitrians"></h4>
+            <br>
+            <h4>Number of ways a convex polygon of n+2 sides can split into triangles by connecting vertices</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="splittri"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "splittrifind()">FInd</button>
+            <br>
+            <h4 id="splitrians"></h4>
+            <br>
+            <h4>Check if given polygon is a convex polygon or not</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin1"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin2"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin3"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin4"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin5"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin6"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="convexcheckin7"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "convexcheckfind()">FInd</button>
+            <br>
+            <h4 id="convexcheckans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
