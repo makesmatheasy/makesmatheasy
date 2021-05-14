@@ -635,6 +635,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="hyperbolacalcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hyperbola Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Hyperbola Calculator','#hyperbolacalc','c','hyperbolacalcfav')"><img
+                                        id="hyperbolacalcfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="ellipsecollapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ellipse</a>
                         </td>
@@ -8446,6 +8461,16 @@
             <p id="directrixeqn1"></p>
             <p id="latus1"></p>
             <p id="ecc1"></p>
+        </div>
+
+        <div class="collapse" id="hyperbolacalc">
+            <input type="text" id="hyperbolain" placeholder="Enter value of a " class="form__field">
+            <input type="text" id="hyperbolain1" placeholder="Enter value of b " class="form__field">
+            <br>
+            <button type="submit" onclick="hyperbolafind()" class="btn btn-dark">Find</button>
+            <p id="directrixeqn2"></p>
+            <p id="latus2"></p>
+            <p id="ecc2"></p>
         </div>
 
         <div class="collapse" id="parabolacollapse">

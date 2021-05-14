@@ -2466,6 +2466,16 @@ function ellipsefind(){
     document.getElementById('ecc1').innerHTML = "The eccentricity of ellipse is " + e
 }
 
+function hyperbolafind(){
+    let a = parseInt(document.getElementById('hyperbolain').value)
+    let b = parseInt(document.getElementById('hyperbolain1').value)
+    let e = Math.sqrt(1+((a*a)/(b*b)))
+    let lr = (2*b*b)/(4*a)
+    document.getElementById('directrixeqn2').innerHTML = "The eqn of directrix is x-" +(a/e)+"=0"
+    document.getElementById('latus2').innerHTML = "The length of latus rectum is "+lr
+    document.getElementById('ecc2').innerHTML = "The eccentricity of hyperbola is " + e
+}
+
 function dispointsolve()
 {
     var a,b,c;
