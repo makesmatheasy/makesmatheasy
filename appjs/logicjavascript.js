@@ -1120,6 +1120,31 @@ else{
 }
 }
 
+function paralleloarea(){
+    let vx1 = parseInt(document.getElementById("volpx1").value)
+    let vy1 = parseInt(document.getElementById("volpx2").value)
+    let vz1 = parseInt(document.getElementById("volpx3").value)
+    let vx2 = parseInt(document.getElementById("volpy1").value)
+    let vy2 = parseInt(document.getElementById("volpy2").value)
+    let vz2 = parseInt(document.getElementById("volpy3").value)
+    let vx3 = parseInt(document.getElementById("volpz1").value)
+    let vy3 = parseInt(document.getElementById("volpz2").value)
+    let vz3 = parseInt(document.getElementById("volpz3").value)
+    var display = document.getElementById("paralleo");
+    var disptemp = "";
+    if(!isNaN(vx1) && !isNaN(vy1) && !isNaN(vz1) && !isNaN(vx2) && !isNaN(vy2) && !isNaN(vz2) && !isNaN(vx3) && !isNaN(vy3) && !isNaN(vz3))
+   {
+    disptemp += ((vx1 * ((vy2 * vz3) - (vy3 * vz2))) -  (vy1 * ((vx2 * vz3) - (vz2 * vx3))) +  (vz1 * ((vx2 * vy3) - (vy2 * vx3)))) ;
+    display.innerHTML = disptemp;
+    renderMathInElement(display);
+}
+else{
+    disptemp += "\\[Please \\space enter \\space all \\space fields \\]";
+    display.innerHTML = disptemp;
+    renderMathInElement(display);
+}
+}
+
 function vectorline(){
     let a = parseInt(document.getElementById("i1").value)
     let b = parseInt(document.getElementById("i2").value)
