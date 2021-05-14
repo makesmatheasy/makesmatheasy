@@ -307,6 +307,7 @@ function openit(id) {
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#hypergeos",
         "#condprobability",
         "#prism",
         "#pentprism",
@@ -317,6 +318,7 @@ function openit(id) {
         "#octahedron",
         "#repp",
         "#partial_sphere",
+        "#hypergeomeans",
         "#mtm",
         "#igc",
         "#res1",
@@ -361,7 +363,8 @@ function openit(id) {
         "#lrcs",
         "#perats",
         "#mecs",
-        "#chng-vol-cube"
+        "#chng-vol-cube",
+        "#squarerootcalc",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

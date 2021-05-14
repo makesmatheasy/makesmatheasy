@@ -978,22 +978,31 @@ function cubesRangecal()
     var num1=document.getElementById("range1").value;
     var num2=document.getElementById("range2").value;
     var s="";
+    let work = document.getElementById("cbrt-workn");
+    let print = "<h2>Working Steps </h2> &emsp;";
     if(num1=="" || num2=="")
     {
        s= "Please enter both numbers";
     }
     else{
+        var pr ="";
         s="Cubes in the given range: ";
         cbrt1 = Math.trunc(Math.cbrt(num1));
         cbrt2 = Math.trunc(Math.cbrt(num2));
+        print += "STEP1 : Take cube root ( only integer part )of the two given inputs<br>";
+        print += "So,Cube root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + cbrt1 + "&nbsp; and &nbsp; Cube root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+cbrt2+"<br>";
+        print += "STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both)<br>";
         for(var i=cbrt1; i<=cbrt2;i++){
             if(i**3>=num1 && i**3<=num2){
                 var ans = i**3;
+                pr +=ans.toString() + "   ";
                 s += ans.toString() + "   ";
             }
         }
+        print += "So, answer = &nbsp;"+pr;
     }
     document.getElementById("cubesRangeans").innerHTML=s;
+    work.innerHTML = print;
 }
 
 var toDegree = function (radians) {
@@ -1221,6 +1230,56 @@ function wmccal()
     
     }
     document.getElementById("wmcans").innerHTML=ans;
+}
+
+function covcalcu(){
+    var num1=document.getElementById("setx").value;
+    var num2=document.getElementById("sety").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num1==""||num2=="") {
+       s= "Please enter number";
+    }else if(!valid.test(num1&&num2))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    } else{
+    num1=num1.trim();
+    num1 = num1.split(" ");
+    var len1=parseInt(num1.length);
+    var number1=[], sum1=0, sum2=0;
+    for (i = 0; i < len1; i++){
+        number1[i] = parseFloat(num1[i].trim());
+        sum1+=number1[i];
+    }
+    sum1=sum1/len1;
+    num2=num2.trim();
+    num2 = num2.split(" ");
+    var len2=parseInt(num2.length);
+    if (len1 == 1 || len2 == 1){
+        document.getElementById("covans").innerHTML= "Please enter more than value for each data set";
+        return;
+    }
+    if(len1!=len2) {
+        s="Your datasets X and Y contain different numbers of element";
+    } else{
+    var number2=[];
+    for (i = 0; i < len2; i++) {
+        number2[i] = parseFloat(num2[i].trim());
+        sum2+=number2[i];
+    }
+    sum2=sum2/len2;
+    var covsum=0;
+    for (i = 0; i < len2; i++) {
+        var d=number2[i]-sum2;
+        var f=number1[i]-sum1;
+        covsum+=(d*f);
+    }
+    var cov=(covsum)/(len2-1);
+    s="The calculated covariance is: "+cov;
+    }
+}
+
+document.getElementById("covans").innerHTML=s;
 }
 
 function covcal() {

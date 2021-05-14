@@ -524,7 +524,24 @@
                     </tr>
                 </table>
             </li>
-            <!--sum of n terms of ap-->
+            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="meanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean
+                                Calculator(AM GM & HM)</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
+                                        id="meanfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -594,6 +611,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Parabola Calculator','#parabolacalc','c','parabolacalcfav')"><img
                                         id="parabolacalcfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ellipsecalcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ellipse Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Ellipse Calculator','#ellipsecalc','c','ellipsecalcfav')"><img
+                                        id="ellipsecalcfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -1453,7 +1485,24 @@
                                             </tr>
                                         </table>
                                     </li>
-            
+                     <li>
+                          <table class="table">
+                                    <tr>
+                                        <td style="border-top: none;">
+                                             <a id="squarerootcollapsebtn"
+                                                        style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Square root calculator 
+                                             </a>
+                                        </td>
+                                        <td style="float:right;border-top: none;">
+                                             <span onclick="addtofavourite('Sqaure root calculator','#squarerootcalc','c','squarerootfav')"><img
+                                                         id="squarerootfav" src="images/unfavourite.png"
+                                                     style="height:1.5625rem;filter: none;"></span>
+                                        </td>
+                                               </tr>
+                         </table>
+                     </li>
+                                               
+
                         <li>
                             <table class="table">
                                 <tr>
@@ -3440,7 +3489,7 @@
                             <tr>
                                 <td style="border-top: none;">
                                     <a id="bpmf"
-                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Binomial Distribution Calculator
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Binomial Distribution P.M.F Calculator
                                     </a>
                                 </td>
                                 <td style="float:right;border-top: none;">
@@ -3457,13 +3506,31 @@
                             <tr>
                                 <td style="border-top: none;">
                                     <a id="ppmf"
-                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Poisson Distribution Calculator
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Poisson Distribution P.M.F Calculator
                                     </a>
                                 </td>
                                 <td style="float:right;border-top: none;">
                                        <span
                                                onclick="addtofavourite('Poisson Distribution','#ppmfs','c','ppmfimgfav')"><img
                                                id="bpmfimgfav" src="images/unfavourite.png"
+                                               style="height:1.5625rem;filter: none;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+
+                    <li>
+                        <table class="table">
+                            <tr>
+                                <td style="border-top: none;">
+                                    <a id="hypergeo"
+                                       style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Hypergeometric Distribution P.M.F Calculator
+                                    </a>
+                                </td>
+                                <td style="float:right;border-top: none;">
+                                       <span
+                                               onclick="addtofavourite('Hypergeometric Distribution','#hypergeos','c','hypergeosimgfav')"><img
+                                               id="hypergeosimgfav" src="images/unfavourite.png"
                                                style="height:1.5625rem;filter: none;"></span>
                                 </td>
                             </tr>
@@ -3505,6 +3572,8 @@
                     </tr>
                 </table>
             </li>
+
+          
             <div class="dropdown-divider"></div>
         </div>
 
@@ -3531,22 +3600,6 @@
                                 <span
                                         onclick="addtofavourite('Statistics Formulae','#stats','c','statsimgfav')"><img
                                         id="statsimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="meanbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean
-                                Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
-                                        id="meanfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -4630,7 +4683,8 @@
             <div class="text-center">
                 <h2><label>Coordinate Geometry Calculator</label></h2>
             </div>
-            <h3>Distance </h3><br>
+            <br><br>
+            <h3 style="text-align: center;">Distance </h3><br>
             <div class="coll">
                 <p>
                     Coordinate 1 = (<input type="text" id="xOne" size=12 value='' placeholder="                   x1"> , 
@@ -4645,10 +4699,8 @@
                 </button><br>
                 </p>
             </div><br>
-            <p id="dis_formula" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <h4 id="outPut"> </h4> <br><br>
+            <p id="dis_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
+            <h4 style="text-align: center;" id="outPut"> </h4> <br><br>
             <h3 style="text-align: center;">Midpoint </h3><br>
             <div class="coll">
                 <p>
@@ -4667,24 +4719,27 @@
             <p id="mid_formula" style="font-family:mathfont;;width:auto;"
                 class="stopwrap"></p>
             <h4 style="text-align: center;" id="mid_output"> </h4> <br><br>
+
             <h3>Intersection Point of Two Lines</h3><br>
             <div class="coll">
                 <p>
                     Equation 1 :   <input type="text" id="aone" size=3 value='' placeholder="A1">  x  +
-                <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text" id="cone" size=3 value='' placeholder="C1"> = 0
-                    <br><br>
+                <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text" id="cone" size=3 value='' placeholder="C1"> = 0  <br><br>
                     Equation 2 :   <input type="text" id="atwo" size=3 value='' placeholder="A2">  x  +
-                <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text" id="ctwo" size=3 value='' placeholder="C2"> = 0
-                    <br><br>
-                <button type="button" class="btn btn-light" onclick=interpointsolve()>
-                    Calculate
-                </button><br>
+                <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text" id="ctwo" size=3 value='' placeholder="C2"> = 0 <br><br>
+                <button type="button" class="btn btn-light" onclick=interpointsolve()>Calculate</button><br>
                 </p>
             </div><br>
-            <p id="formula" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <h4 id="inter_output"> </h4> <br><br>
+            <p class="stopwrap" id="formula"
+            style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="formula1"
+                style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="formula2"
+                style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="formula3"
+                style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="inter_output"
+                style="font-family:mathfont;"></p><br> 
 
             <h3>Angle between two lines</h3><br>
             <div class="coll">
@@ -4709,21 +4764,21 @@
             <div class="coll">
                 <p>
                     Line Equation :   <input type="text" id="a" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c" size=3 value='' placeholder="C"> = 0
-                    <br><br>
+                <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c" size=3 value='' placeholder="C"> = 0<br><br>
                     Point = (<input type="text" id="point_one" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="point_two" size=5 value='' placeholder="y1">)
-                        <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=dispointsolve()>
-                    Calculate Distance
-                </button><br>
+                <input type="text" id="point_two" size=5 value='' placeholder="y1">)<br><br>
+                <button type="button" class="btn btn-light" onclick=dispointsolve()> Calculate Distance </button><br>
                 </p>
             </div><br>
-            <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <h4 id="dis_op"> </h4> 
+            <p class="stopwrap" id="dis_point"
+            style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="dis_point1"
+                style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="dis_point2"
+                style="font-family:mathfont;"></p>
+            <p class="stopwrap" id="dis_op"
+                style="font-family:mathfont;"></p><br>  
+
             <h3>Parallel Line Checker</h3><br>
             <div class="coll">
                 <p>
@@ -4813,21 +4868,14 @@
             <div class="coll">
                 <p>
                     Line Equation :   <input type="text" id="plpa" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C">
-                    <br><br>
+                <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C"><br><br>
                     Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
-                <input type="text" id="plpy" size=5 value='' placeholder="y">)
-                        <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=plpSolve()>
-                    Find Equation Of Line
-                </button><br>
+                <input type="text" id="plpy" size=5 value='' placeholder="y">)<br><br>
+                <button type="button" class="btn btn-light" onclick=plpSolve()>Find Equation Of Line</button><br>
                 </p>
             </div><br>
-            <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <h4 id="plp_op"> </h4> 
+            <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap" align="right"></p>
+            <h4 id="plp_op"> </h4><br><br>
 
             <h3>Line Parallel To Given Line and Pass through the Point</h3><br>
             <div class="coll">
@@ -4938,6 +4986,27 @@
                 </div>
             </div>
         </div>
+         <!-- start of square root calculator   -->
+         <div class="collapse" id="squarerootcalc">     
+            <h1 style="text-align: center;">Square root calculator </h1><br>    
+            <div class="form-group">
+                <input type="text" id="squarerootin" class="form__field"
+                       placeholder="Enter Value "
+                       >
+            </div><br>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="findSqrt()">
+                    Calculate
+                </button><br>
+
+            </div>
+             <br>
+            <div class="form-group">
+                   <p id="squarerootresult" style="overflow-y:hidden;height:100%;text-align: center;"></p>
+            </div>
+    </div>
 
         <div class="collapse" id="straightline">
             <div class="stopwrap">
@@ -5193,7 +5262,7 @@
             <h4 style="color:white" id="dplane1"> </h4> 
 
             
-            <h3>Angle between planes calculator</h3><br>
+            <h3 style="text-align: center;">Angle between planes calculator</h3><br>
             <div class="coll">
                 <p>
                     Plane Equation 1:   <input type="text" id="pa1" size=3 value='' placeholder="A1">  x  +
@@ -5208,11 +5277,10 @@
                 </button><br>
                 </p>
             </div><br>
-            <p id="angleplane" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <h4 style="color:white" id="angleplaneop"> </h4> 
-
+            <p id="angleplane" style="font-family:mathfont;;width:auto;"
+                class="stopwrap"></p>
+            <h4 style="color:white; text-align: center;" id="angleplaneop"> </h4> 
+<br><br>
             
                 <h3 style="text-align: center;">Centroid of a Tetrahedron</h3>
                 <div class= "coll">
@@ -6978,6 +7046,14 @@
             <button type="submit" class="btn btn-dark" onclick="greatsfind()">Find</button>
             <br>
             <p id="greatsquare"></p>
+            <br><br>
+            <h2>Least number to be added to or subtracted from N to make it a Perfect Cube</h2>
+            <br>
+            <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
+            <br>
+            <p id="addsubcans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8357,6 +8433,16 @@
             <p id="directrixeqn"></p>
             <p id="latus"></p>
             <p id="ecc"></p>
+        </div>
+
+        <div class="collapse" id="ellipsecalc">
+            <input type="text" id="ellipsein" placeholder="Enter value of a " class="form__field">
+            <input type="text" id="ellipsein1" placeholder="Enter value of b " class="form__field">
+            <br>
+            <button type="submit" onclick="ellipsefind()" class="btn btn-dark">Find</button>
+            <p id="directrixeqn1"></p>
+            <p id="latus1"></p>
+            <p id="ecc1"></p>
         </div>
 
         <div class="collapse" id="parabolacollapse">
@@ -11568,6 +11654,14 @@
             <button type = "button" class="btn btn-dark" onclick = "occfind()">FInd</button>
             <br>
             <h4 id="occans"></h4>
+            <br>
+            <h4>Number of ways a convex polygon of n+2 sides can split into triangles by connecting vertices</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="splittri"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "splittrifind()">FInd</button>
+            <br>
+            <h4 id="splitrians"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -13136,7 +13230,7 @@
 
 
 <div class="collapse" id="centcal">
-    <h2 style="text-align: center;">Diffrent Centers of Triangle</h2><br>
+    <h2 style="text-align: center;">Different Centers of Triangle</h2><br>
     <h3 style="text-align: center;">Using Edges</h3>
     <div class="col-9">
         <div class="col-9">
@@ -13343,6 +13437,24 @@
     </div>
     <h4 id="areaoutput" style="color:white"></h4>
     <h4 id="formula1" style="color:white"></h4>
+    <br>
+    <h2 style="text-align:center;">Oblique Triangle Calculator</h3><br>
+    <div class="coll">
+        <p>
+            Side 1 (AB) = <input type="text" id="inputsideoba" size=7 value='' placeholder="Enter side AB"> 
+            <br><br>
+            Side 2 (BC) = <input type="text" id="inputsideobb" size=7 value='' placeholder="Enter side BC"> 
+                <br><br>
+            Side 3 (CA) = <input type="text" id="inputsideobc" size=7 value='' placeholder="Enter side CA">  
+                <br><br>
+        <button type="button" class="btn btn-light" onclick=obliquetri()>
+            Check
+        </button><br>
+        </p>
+
+    </div><br>
+    <p id="obliop" class="text-center" style="color:white"></p>
+    <p id="obliop1" class="text-center" style="color:white"></p>
 
 
 </div>
@@ -14038,46 +14150,36 @@
               <p>
                   1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
                   2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
-                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
-                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 + Gain %)<br>
+                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 - Loss %)<br>
                                
               </p>
-      
               <div class="row">
                   <div class="col-md-4">
                       <div class="form-group">
-                          <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
-                          <input type="number" value="0" class="form__field" id="p1">
+                        <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                        <input type="number" value="0" class="form__field" id="p1">
+                        <h5>Enter Cost Price</h5>
+                        <input type="number" value="0" class="form__field" id="cp2">
+                        <button type="button" class="btn btn-light" onclick="computeSP()">
+                            Find SP
+                        </button>
+                        <div id="ressp" style="color: white; font-size: large"></div>
                       </div>
                   </div>
-              </div>
-              <div class="row">
                   <div class="col-md-4">
                       <div class="form-group">
-                          <h5>Enter Cost Price</h5>
-                          <input type="number" value="0" class="form__field" id="cp2">
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                      <div class="form-group">
-                          <h5>Enter Selling Price</h5>
-                          <input type="number" value="0" class="form__field" id="sp2">
+                        <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                        <input type="number" value="0" class="form__field" id="p2">
+                        <h5>Enter Selling Price</h5>
+                        <input type="number" value="0" class="form__field" id="sp2">
+                        <button type="button" class="btn btn-light" onclick="computeCP()">
+                            Find CP
+                        </button>
+                        <div id="rescp" style="color:white; font-size: large;"></div>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
-                  <button type="button" class="btn btn-light"
-                          onclick="computeCP()">
-                      Find CP
-                  </button>
-                  <button type="button" class="btn btn-light"
-                          onclick="computeSP()">
-                      Find SP
-                  </button>
-              </div>
-
-              <div style="color:white; font-size: large;" id="cp"></div>
-              <div id="sp" style="color: white; font-size: large"></div>
           </div>
           <!--End of Cost and selling price -->
 
@@ -14389,6 +14491,29 @@
 
 <!--Hydrosrtatic Pressure ends-->
 
+<div class="collapse" id="hypergeos">
+
+    
+    <h1 >Hypergeometric Distribution PMF Calculator</h1>
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos1" class="form__field" id="hypergeos1" width="5em" placeholder="Successes of Sample">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos2" class="form__field" id="hypergeos2" placeholder="Sample Size">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos3" class="form__field" id="hypergeos3" placeholder="Successes of Lot">
+    <p>&nbsp;</p>
+    <input type="text" name="hypergeos4" class="form__field" id="hypergeos4" placeholder="Lot Size">
+    <p>&nbsp;</p>
+    <button type="button" class="btn btn-outline-light" onclick="hypergeoscal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="hypergeosans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
+    
+   
+</div>
+
+
+
+
 <div class="collapse" id="vpds">
 
     
@@ -14404,6 +14529,7 @@
     
    
 </div>
+
 
 <div class="collapse" id="oocs">
 
@@ -14427,8 +14553,6 @@
     <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="midcal()">Calculate in Fraction</button>
     <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="mifcal()">Calculate in Decimal</button>
     <p>&nbsp;</p> <p id="mians"></div>
-    
-   
 </div>
 
 <div class="collapse" id="manhats">
@@ -14528,34 +14652,25 @@ N is the population size.
       </p>
 </div>
 
-
 <div class="collapse" id="covs">
-
-    
     <h1 style="font-family:mathfont; text-align:center;">COVARIANCE CALCULATOR </h1>
     <form action="">
         <input type="text" name="setx" class="form__field" id="setx" placeholder="Enter dataset X">
         <p>&nbsp;</p>
         <input type="text" name="sety" class="form__field" id="sety" placeholder="Enter dataset Y">
         <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="covcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="covcalcu()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-    </form>
-
-    <p>&nbsp;</p>
+    </form><p>&nbsp;</p>
     <p id="covans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-    
    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Covariance indicates whether two variables X and Y are related by measuring how the variables change in relation to each other.<br>
      It tells us if there is a relationship between two variables and which direction that relationship is in.<br>
       A positive covariance means that the two variables are positively related, and they have the same direction. <br>
       A negative covariance means that the variables are negatively related, and they have the opposite directions.
 </div>
 
-
 <div class="collapse" id="rankcals">
-
-    
-    <h1 style="font-family:mathfont; text-align:center;">PERCENTILE RANK CALCULATOR </h1>
+     <h1 style="font-family:mathfont; text-align:center;">PERCENTILE RANK CALCULATOR </h1>
     <input type="text" name="perrank" class="form__field" id="perrank" width="5em" placeholder="Enter all the marks">
     <p>&nbsp;</p>
     <input type="text" name="peryour" class="form__field" id="peryour" placeholder="Enter your marks">
@@ -14967,6 +15082,7 @@ N is the population size.
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" style="margin-left: 40rem; text-align:center;" onclick="cubesRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="cubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    <p class="" id="cbrt-workn"></p>
 
 </div>
 

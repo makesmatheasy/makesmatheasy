@@ -492,13 +492,25 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "COVARIANCE CALCULATOR"){
                         document.getElementById('covs').click();
-                    }      
+                    }  
+                    else if (inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR") {
+                        $("#clocks").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR"){
+                        document.getElementById('clocks').click();
+                    }          
                     else if (inp.value.toUpperCase() == "SKEWNESS CALCULATOR") {
                         $("#skews").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "SKEWNESS CALCULATOR"){
                         document.getElementById('skews').click();
-                    }      
+                    }     
+                    else if (inp.value.toUpperCase() == "NATURAL NUMBERS") {
+                        $("#sosqsn").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "NATURAL NUMBERS"){
+                        document.getElementById('sosqsn').click();
+                    }       
                     else if (inp.value.toUpperCase() == "IMPROPER TO MIXED FRACTION") {
                         $("#impfixs").slideToggle();    
                     }
@@ -1808,11 +1820,23 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "COVARIANCE CALCULATOR") {
         $("#covs").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR"){
+        document.getElementById('clocks').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR") {
+        $("#clocks").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "SKEWNESS CALCULATOR"){
         document.getElementById('skews').click(); 
     }
     else if (inp.value.toUpperCase() == "SKEWNESS CALCULATOR") {
         $("#skews").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "NATURAL NUMBERS"){
+        document.getElementById('sosqsn').click(); 
+    }
+    else if (inp.value.toUpperCase() == "NATURAL NUMBERS") {
+        $("#sosqsn").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "IMPROPER TO MIXED FRACTION"){
         document.getElementById('impfixs').click(); 
