@@ -9848,6 +9848,13 @@ function eulerTotient(n) {
 
 //Next Prime Function
 
+function recifind(){
+    let A = parseInt(document.getElementById("aofeqn1").value)
+    let B = parseInt(document.getElementById("bofeqn1").value)
+    let C = parseInt(document.getElementById("cofeqn1").value)
+    document.getElementById("recians").innerHTML = C+"x^2"+B+"x"+A+"=0"
+}
+
 function isPrime(n)
 {
     if (n <= 1)
