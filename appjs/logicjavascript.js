@@ -2343,23 +2343,25 @@ function midpointsolve()
     document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     }
 }
-
-function interpointsolve()
-{
-    var a1, b1, c1, a2, b2, c2;
-    a1=parseFloat(document.getElementById('aone').value);
-    b1=parseFloat(document.getElementById('bone').value);
-    c1=parseFloat(document.getElementById('cone').value);
-    a2=parseFloat(document.getElementById('atwo').value);
-    b2=parseFloat(document.getElementById('btwo').value);
-    c2=parseFloat(document.getElementById('ctwo').value);
-    var explain = document.getElementById("formula");
-    explain.innerHTML = "\\[Intersection \\space point \\space  =\\space  (\\frac{b1 * c2 - b2 * c1}{a1 * b2 - a2 * b1}, \\space \\frac{a2 * c1 - a1 * c2}{a1 * b2 - a2 * b1} ) \\] ";
-    renderMathInElement(document.getElementById("formula"));
+function interpointsolve() {
+    var a1=parseFloat(document.getElementById('aone').value);
+    var b1=parseFloat(document.getElementById('bone').value);
+    var c1=parseFloat(document.getElementById('cone').value);
+    var a2=parseFloat(document.getElementById('atwo').value);
+    var b2=parseFloat(document.getElementById('btwo').value);
+    var c2=parseFloat(document.getElementById('ctwo').value);
     var point1 = ((b1*c2 - b2*c1)/(a1*b2 - a2*b1)).toFixed(1);
     var point2 = ((a2*c1 - a1*c2)/(a1*b2 - a2*b1)).toFixed(1);
-    document.getElementById('inter_output').innerHTML= 'The intersection point of ' + a1 + 'x +' + b1 + 'y +'+ c1 + '= 0 and' + a2 + 'x +' + b2 + 'y +'+ c2 + '= 0 is (' + point1 + ','  + point2 + ')';
-    
+    document.getElementById("formula").innerHTML = "\\[Intersection \\space point \\space\\]"
+    document.getElementById("formula1").innerHTML = "\\[ \\space =\\space  (\\frac{b1 \\times c2 - b2 \\times c1}{a1 \\times b2 - a2 \\times b1}, \\space \\frac{a2 \\times c1 - a1 \\times c2}{a1 \\times b2 - a2 \\times b1} ) \\] ";
+    document.getElementById("formula2").innerHTML = "\\[ \\space =\\space  (\\frac{"+b1+" \\times "+c2+" - "+b2+" \\times "+c1+"}{"+a1+" \\times "+b2+" - "+a2+" \\times "+b1+"}, \\space \\frac{"+a2+" \\times "+c1+" - "+a1+" \\times "+c2+"}{"+a1+" \\times "+b2+" - "+a2+" \\times "+b1+"} ) \\] ";
+    document.getElementById("formula3").innerHTML = "\\[ \\space =\\space  (\\frac{"+(b1*c2 - b2*c1).toFixed(2)+"}{"+(a1*b2 - a2*b1).toFixed(2)+"}, \\space \\frac{"+(a2*c1 - a1*c2).toFixed(2)+"}{"+(a1*b2 - a2*b1).toFixed(2)+"}) \\] ";
+    document.getElementById('inter_output').innerHTML= "\\[The \\space intersection \\space point \\space of \\space "+ a1 + "x +" + b1 + "y +"+ c1 + "= 0 \\space and \\space " + a2 + "x +" + b2 + "y +"+ c2 + "= 0 \\space is \\space (" + point1 + ","  + point2 + ")\\]";
+    renderMathInElement(document.getElementById("formula"));
+    renderMathInElement(document.getElementById("formula1"));
+    renderMathInElement(document.getElementById("formula2"));
+    renderMathInElement(document.getElementById("formula3"));
+    renderMathInElement(document.getElementById("inter_output"));
 }
 
 function anglesolve() {
