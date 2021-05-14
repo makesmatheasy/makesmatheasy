@@ -14163,6 +14163,34 @@
                 <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
             </div>
             <br>
+
+            <h4 class="d-flex justify-content-center">Insert n-Geometric Mean between two numbers</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="nt2" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft2" placeholder="Enter the first number(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt2" placeholder="Enter the second number(b)"
+                       style="border: none; background: transparent;width: 25rem; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=ngp()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <p id="nGPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
+			<br>
             <!-- sum of nterms in H.P.  -->
             <h2 class="d-flex justify-content-center">3) Sum of N terms of a Harmonic Progression</h2>
             <div class="form-group d-flex flex-column align-items-center">
