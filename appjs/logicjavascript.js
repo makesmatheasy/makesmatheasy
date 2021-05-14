@@ -2535,6 +2535,32 @@ function pppSolve() {
     }
 }
 
+
+function pppdSolve() {
+    var a=parseFloat(document.getElementById('pppdaq2').value);
+    var b=parseFloat(document.getElementById('pppdbq2').value);
+    var c=parseFloat(document.getElementById('pppdcq1').value);
+    var d=parseFloat(document.getElementById('pppdcq2').value);
+    
+   
+    var dis = ((a*a)+(b*b));
+    var p =Math.abs(c-d);
+
+    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('pppdcq1output').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("pppdcq1output"));
+    } else{
+        document.getElementById('pppdcq1explane').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ "\\space - \\space "+ d+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1explane"));
+
+        if(!(Number.isInteger(Math.sqrt(dis))))
+        document.getElementById('pppdcq1output').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
+        else
+        document.getElementById('pppdcq1output').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1output"));
+    }
+}
+
 function splittrifind(){
     let side = parseInt(document.getElementById('splittri').value);
     var c = binomialCoeff(2 * side, side);
