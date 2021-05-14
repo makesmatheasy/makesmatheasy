@@ -14093,46 +14093,36 @@
               <p>
                   1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
                   2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
-                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 + Gain %)<br>
-                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)(100 - Loss %)<br>
+                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 + Gain %)<br>
+                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 - Loss %)<br>
                                
               </p>
-      
               <div class="row">
                   <div class="col-md-4">
                       <div class="form-group">
-                          <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
-                          <input type="number" value="0" class="form__field" id="p1">
+                        <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                        <input type="number" value="0" class="form__field" id="p1">
+                        <h5>Enter Cost Price</h5>
+                        <input type="number" value="0" class="form__field" id="cp2">
+                        <button type="button" class="btn btn-light" onclick="computeSP()">
+                            Find SP
+                        </button>
+                        <div id="ressp" style="color: white; font-size: large"></div>
                       </div>
                   </div>
-              </div>
-              <div class="row">
                   <div class="col-md-4">
                       <div class="form-group">
-                          <h5>Enter Cost Price</h5>
-                          <input type="number" value="0" class="form__field" id="cp2">
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                      <div class="form-group">
-                          <h5>Enter Selling Price</h5>
-                          <input type="number" value="0" class="form__field" id="sp2">
+                        <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                        <input type="number" value="0" class="form__field" id="p2">
+                        <h5>Enter Selling Price</h5>
+                        <input type="number" value="0" class="form__field" id="sp2">
+                        <button type="button" class="btn btn-light" onclick="computeCP()">
+                            Find CP
+                        </button>
+                        <div id="rescp" style="color:white; font-size: large;"></div>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
-                  <button type="button" class="btn btn-light"
-                          onclick="computeCP()">
-                      Find CP
-                  </button>
-                  <button type="button" class="btn btn-light"
-                          onclick="computeSP()">
-                      Find SP
-                  </button>
-              </div>
-
-              <div style="color:white; font-size: large;" id="cp"></div>
-              <div id="sp" style="color: white; font-size: large"></div>
           </div>
           <!--End of Cost and selling price -->
 
