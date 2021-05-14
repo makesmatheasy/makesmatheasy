@@ -2741,6 +2741,58 @@ function incentersolve(){
     }
 }
 
+function convexcheckfind(){
+    let a = parseInt(document.getElementById("convexcheckin").value)
+    let a1 = parseInt(document.getElementById("convexcheckin1").value)
+    let a2 = parseInt(document.getElementById("convexcheckin2").value)
+    let a3 = parseInt(document.getElementById("convexcheckin3").value)
+    let a4 = parseInt(document.getElementById("convexcheckin4").value)
+    let a5 = parseInt(document.getElementById("convexcheckin5").value)
+    let a6 = parseInt(document.getElementById("convexcheckin6").value)
+    let a7 = parseInt(document.getElementById("convexcheckin7").value)
+    var points = [[a,a1],[a2,a3],[a4,a5],[a6,a7]]
+    if (isConvex(points)){
+        document.getElementById("convexcheckans").innerHTML = "Yes"
+    }
+    else{
+        document.getElementById("convexcheckans").innerHTML = "No"
+    }
+}
+
+function isConvex(points)
+{
+    var N = points.length;
+    var prev = 0;
+    var curr = 0;
+    for (i = 0; i < N; i++) {
+
+        var temp= [ points[i],
+                points[(i + 1) % N],
+                points[(i + 2) % N] ];
+
+        curr = CrossProduct(temp);
+        if (curr != 0) {
+            if (curr * prev < 0) {
+                return false;
+            }
+            else {
+                prev = curr;
+            }
+        }
+    }
+    return true;
+}
+
+function CrossProduct(A)
+{
+    var X1 = (A[1][0] - A[0][0]);
+    var Y1 = (A[1][1] - A[0][1]);
+    var X2 = (A[2][0] - A[0][0]);
+    var Y2 = (A[2][1] - A[0][1]);
+    return (X1 * Y2 - Y1 * X2);
+}
+
+
 function excentersolve(){
     var x1,y1,x2,y2,x3,y3,a,b,c;
     x1=parseFloat(document.getElementById('Xn1').value);
