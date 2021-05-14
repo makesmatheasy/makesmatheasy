@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -25,11 +25,6 @@ $("#clock").click(function(){
 });
 $("#utc").click(function(){
     openit("#utcs");
-    closenav();
-    clearall();
-});
-$("#manhat").click(function(){
-    openit("#manhats");
     closenav();
     clearall();
 });
@@ -74,7 +69,7 @@ $(document).ready(function () {
         clearall();
     });
 
-    $("#mi").click(function () {
+    $("#minv").click(function () {
         openit("#mis");
         closenav();
         clearall();
@@ -154,6 +149,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#parabolacalcbtn").click(function () {
+        openit("#parabolacalc");
+        closenav();
+        clearall();
+    });
     $("#bpmf").click(function () {
         openit("#bpmfs");
         closenav();
@@ -228,6 +228,11 @@ $(document).ready(function () {
     });
     $("#betabtn").click(function () {
         openit("#beta");
+         closenav();
+        clearall();
+    });
+    $("#ooc").click(function () {
+        openit("#oocs");
          closenav();
         clearall();
     });
@@ -312,6 +317,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+
+    $("#2d-shape-btn").click(function () {
+        openit("#2d-shape");
+        closenav();
+        clearall();
+    });
 
     $("#3d-shape-btn").click(function () {
         openit("#3d-shape");
@@ -453,6 +464,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sigmabtn").click(function () {
+        openit("#sigma");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();
@@ -460,6 +476,12 @@ $(document).ready(function () {
     });
     $("#ipbtn").click(function () {
         openit("#ip");
+        closenav();
+        clearall();
+
+    });
+    $("#per_chng_volbtn").click(function () {
+        openit("#per_chng_vol");
         closenav();
         clearall();
 
@@ -485,6 +507,12 @@ $(document).ready(function () {
     //Sum of divisors calculator
     $("#sum-div-btn").click(function () {
         openit("#sumDiv");
+        closenav();
+        clearall();
+    })
+    //Double Factorial calculator
+    $("#dbl-fact-btn").click(function () {
+        openit("#dblFact");
         closenav();
         clearall();
     })
