@@ -1227,8 +1227,32 @@ function rtfind(){
     let side  = parseInt(document.getElementById("inputrtside").value)
     let ar = 2.975*side*side
     let vol = 0.422*side*side*side
-    document.getElementById("resultofrtarea").innerHTML = "The surface area is "+ar
-    document.getElementById("resultofrtvol").innerHTML = "The volume  is "+vol
+    let ans = document.getElementById("resultofrtvol");
+    let ans1 = document.getElementById("resultofrtarea");
+    let temp = "";
+    let temp1 = "";
+    if(!isNaN(side)){
+    temp += "\\[0.422 \\times " + side + "\\times" + side + "\\times" + side + " \\]";
+    temp += "\\[0.422 \\times " + (side*side*side) + " \\]";
+    temp += "\\[Volume \\space of \\space Releaux \\space Tetrahedron \\space is \\]"
+    temp += "\\[ " + vol.toFixed(3) + " \\]";
+    ans.innerHTML = temp;
+    renderMathInElement(ans);
+    temp1 += "\\[2.975 \\times " + side + "\\times" + side + " \\]";
+    temp1 += "\\[0.422 \\times " + (side*side) + " \\]";
+    temp1 += "\\[Area \\space of \\space Releaux \\space Tetrahedron \\space is \\]"
+    temp1 += "\\[ " + ar.toFixed(3) + " \\]";
+    ans1.innerHTML = temp1;
+    renderMathInElement(ans1);
+}
+    else{
+        temp += "\\[Please \\space enter \\space side  \\]";
+        temp1 += "";
+        ans.innerHTML = temp;
+        ans1.innerHTML = temp1;
+        renderMathInElement(ans);
+        renderMathInElement(ans1);
+    }
 }
 
 function decagramfind(){
