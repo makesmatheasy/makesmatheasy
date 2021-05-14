@@ -1169,6 +1169,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#squarerootcollapsebtn").click(function(){
+        openit("#squarerootcalc");
+        closenav();
+        clearall();
+    });
+
 
 })
 
