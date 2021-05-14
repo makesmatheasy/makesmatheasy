@@ -60,9 +60,6 @@ function autocomplete(inp, arr) {
                     } else if (inp.value.toUpperCase() == "HOME") {
                         clearmain()
                         $("#home").slideDown();
-                    } else if (inp.value.toUpperCase() == "FACTORS") {
-                        clearmain()
-                        $("#factors").slideDown();
                     } else if (inp.value.toUpperCase() == "MATRIX") {
                         clearmain()
                         $("#matrixcollapse").slideDown();
@@ -1282,7 +1279,7 @@ function autocomplete(inp, arr) {
 }
 
 
-var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation", "Shapes", "Factors", "Matrix",
+var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Sigma Notation","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
@@ -1318,8 +1315,6 @@ function handleclick(value) {
         $("#about").slideToggle();
     } else if (inp.value.toUpperCase() == "HOME") {
         $("#home").slideToggle();
-    } else if (value.toUpperCase() == "FACTORS") {
-        $("#factors").slideToggle();
     } else if (value.toUpperCase() == "MATRIX") {
         $("#matrixcollapse").slideToggle();
     } else if (value.toUpperCase() == "MULTIPLICATION TABLE") {
