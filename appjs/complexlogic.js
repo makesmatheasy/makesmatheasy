@@ -1748,3 +1748,27 @@ function hypergeos2cal()
     }
     document.getElementById("hypergeos2ans").innerHTML=ans;
 }
+
+function hypergeosvarcal()
+{
+    var num1=document.getElementById("hypergeos12").value;
+    var num2=document.getElementById("hypergeos22").value;
+    var num3=document.getElementById("hypergeos32").value;
+    var num4=document.getElementById("hypergeos42").value;
+    ans="";
+    if(num1==""||num2==""||num4==""||num3=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        num4=parseFloat(num4);
+      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
+       ans="The value of hypergeometric distribution's variance is : "+d;
+   
+    }
+    document.getElementById("hypergeos2ans").innerHTML=ans;
+}
