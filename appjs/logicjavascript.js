@@ -3619,6 +3619,13 @@ function centersolve(){
     renderMathInElement(document.getElementById("centerr"));
 
 }
+
+function nodiagnolfind(){
+    let n= parseInt(document.getElementById('nodiagnol').value)
+    let ans = n*(n-3)/2
+    document.getElementById("nodiagnolans").innerHTML = "The number of diagnols are "+ans
+}
+
 function obliquetri(){
     var a,b,c;
     a=parseFloat(document.getElementById('inputsideoba').value);
