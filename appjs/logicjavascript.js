@@ -2439,6 +2439,26 @@ function pppSolve() {
     }
 }
 
+function splittrifind(){
+    let side = parseInt(document.getElementById('splittri').value);
+    var c = binomialCoeff(2 * side, side);
+    let ans = c/(n+1)
+    document.getElementById("splittrians").innerHTML = ans
+}
+
+function binomialCoeff(n, k)
+{
+    var res = 1;
+    if (k > n - k)
+        k = n - k;
+    for (i = 0; i < k; ++i)
+    {
+        res *= (n - i);
+        res /= (i + 1);
+    }
+    return res;
+}
+
 function parallelsolve()
 {
     var x1,y1,x2,y2,x3,y3,x4,y4;
