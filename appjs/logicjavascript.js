@@ -2388,6 +2388,16 @@ function parabolafind(){
     document.getElementById('ecc').innerHTML = "The eccentricity of parabola is always '1'"
 }
 
+function ellipsefind(){
+    let a = parseInt(document.getElementById('ellipsein').value)
+    let b = parseInt(document.getElementById('ellipsein1').value)
+    let e = Math.sqrt(1-((a*a)/(b*b)))
+    let lr = (2*b*b)/(4*a)
+    document.getElementById('directrixeqn1').innerHTML = "The eqn of directrix is x-" +(a/e)+"=0"
+    document.getElementById('latus1').innerHTML = "The length of latus rectum is "+lr
+    document.getElementById('ecc1').innerHTML = "The eccentricity of ellipse is " + e
+}
+
 function dispointsolve()
 {
     var a,b,c;
