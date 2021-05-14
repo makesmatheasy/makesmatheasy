@@ -12103,6 +12103,52 @@ function volSphere() {
     document.getElementById("sphereAns").innerText = ans;
 
 }
+
+
+function Square(n, i, j)
+{
+    var mid = ((i + j) / 2);
+
+    var mul = mid * mid;
+
+    if ((mul == n) || (Math.abs(mul - n) < 0.0001))
+        return mid;
+
+    else if (mul < n)
+        return Square(n, mid, j);
+
+    else
+        return Square(n, i, mid);
+}
+
+function findSqrt()
+{
+    var i = 1;
+    const n = parseInt(document.getElementById("squarerootin").value);
+
+    var result=document.getElementById("squarerootresult");
+
+    var found = false;
+    while (!found)
+    {
+
+        if (i * i == n)
+        {
+            result.innerHTML = ` The  square root  of  ${n}  is  ${i}`;
+            found = true;
+        }
+
+        else if (i * i > n)
+        {
+            var res = Square(n, i - 1, i);
+            result.innerHTML = `The square root  of ${n}  is  ${res.toFixed(4)}`;
+
+            found = true;
+        }
+        i++;
+    }
+}   
+
 function vpdscal()
 {
     var num1=document.getElementById("vpdsuc").value;
@@ -12120,4 +12166,5 @@ function vpdscal()
     document.getElementById("vpdans").innerHTML=ans;
 
 }
+
 
