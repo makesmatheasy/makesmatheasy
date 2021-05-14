@@ -10196,7 +10196,17 @@ function convertAnyBaseToAnyBase() {
   else if (fromBase === "13") from=13;
   else if (fromBase === "14") from=14;
   else if (fromBase === "15") from=15;
-  else from = 16;
+  else if (fromBase === "16") from=16;
+  else if (fromBase === "17") from=17;
+  else if (fromBase === "18") from=18;
+  else if (fromBase === "19") from=19;
+  else if (fromBase === "20") from=20;
+  else if (fromBase === "21") from=21;
+  else if (fromBase === "22") from=22;
+  else if (fromBase === "23") from=23;
+  else if (fromBase === "24") from=24;
+  else if (fromBase === "25") from=25;
+  else from=26;
 
   if (toBase === "2(Binary)") to = 2;
   else if(toBase === "3") to = 3;
@@ -10212,7 +10222,17 @@ function convertAnyBaseToAnyBase() {
   else if(toBase === "13") to = 13;
   else if(toBase === "14") to = 14;
   else if(toBase === "15") to = 15;
-  else to = 16;
+  else if(toBase === "16") to = 16;
+  else if(toBase === "17") to = 17;
+  else if(toBase === "18") to = 18;
+  else if(toBase === "19") to = 19;
+  else if(toBase === "20") to = 20;
+  else if(toBase === "21") to = 21;
+  else if(toBase === "22") to = 22;
+  else if(toBase === "23") to = 23;
+  else if(toBase === "24") to = 24;
+  else if(toBase === "25") to = 25;
+  else to=26;
 
   result.innerHTML = fracDectoBinHexOct(calculatefrac(input,from),to);
   if (input == "") {
