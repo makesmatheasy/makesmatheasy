@@ -1889,8 +1889,16 @@ function findWork() {
     const men1 = parseInt(document.getElementById('men1').value);
     const time2 = parseInt(document.getElementById('time2').value);
     const men2 = parseInt(document.getElementById('men2').value);
-    let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
-    document.getElementById('workans').innerHTML = "This work done is " + workans; 
+    if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(time2) || isNaN(men2) ){
+        document.getElementById('workans').innerHTML = "Please enter all fields";
+    }else{
+        if(work1<0 || time1<0 || men1<0 || time2<0 || men2<0){
+            document.getElementById('workans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
+        }else{
+            let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
+            document.getElementById('workans').innerHTML = "The work done is " + workans; 
+        }
+    }
 }
 
 function findTime() {
@@ -1899,8 +1907,16 @@ function findTime() {
     const men1 = parseInt(document.getElementById('men1').value);
     const work2 = parseInt(document.getElementById('work2').value);
     const men2 = parseInt(document.getElementById('men2').value);
-    let timans = Math.ceil(work2 * (time1 * men1) / (work1 * men2));
-    document.getElementById('timeans').innerHTML = "This work done is " + timeans; 
+    if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(men2) ){
+        document.getElementById('timeans').innerHTML = "Please enter all fields";
+    }else{
+        if(work1<0 || time1<0 || men1<0 || work2<0 || men2<0){
+            document.getElementById('timeans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
+        }else{
+            let timeans = Math.ceil(work2 * (time1 * men1) / (work1 * men2));
+            document.getElementById('timeans').innerHTML = "The work done is " + timeans; 
+        }
+    }
 }
 
 function findMen() {
@@ -1909,8 +1925,18 @@ function findMen() {
     const men1 = parseInt(document.getElementById('men1').value);
     const time2 = parseInt(document.getElementById('time2').value);
     const work2 = parseInt(document.getElementById('work2').value);
-    let menans = Math.ceil(work2 * (time1 * men1) / (work1 * time2));
-    document.getElementById('menans').innerHTML = "This work done is " + menans; 
+    
+
+    if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(time2) ){
+        document.getElementById('menans').innerHTML = "Please enter all fields";
+    }else{
+        if(work1<0 || time1<0 || men1<0 || work2<0 || time2<0){
+            document.getElementById('menans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
+        }else{
+            let menans = Math.ceil(work2 * (time1 * men1) / (work1 * time2));
+            document.getElementById('menans').innerHTML = "The work done is " + menans; 
+        }
+    }
 }
 
 // Work and Time ended
