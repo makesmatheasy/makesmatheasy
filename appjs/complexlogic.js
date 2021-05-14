@@ -978,22 +978,31 @@ function cubesRangecal()
     var num1=document.getElementById("range1").value;
     var num2=document.getElementById("range2").value;
     var s="";
+    let work = document.getElementById("cbrt-workn");
+    let print = "<h2>Working Steps </h2> &emsp;";
     if(num1=="" || num2=="")
     {
        s= "Please enter both numbers";
     }
     else{
+        var pr ="";
         s="Cubes in the given range: ";
         cbrt1 = Math.trunc(Math.cbrt(num1));
         cbrt2 = Math.trunc(Math.cbrt(num2));
+        print += "STEP1 : Take cube root ( only integer part )of the two given inputs<br>";
+        print += "So,Cube root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + cbrt1 + "&nbsp; and &nbsp; Cube root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+cbrt2+"<br>";
+        print += "STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both)<br>";
         for(var i=cbrt1; i<=cbrt2;i++){
             if(i**3>=num1 && i**3<=num2){
                 var ans = i**3;
+                pr +=ans.toString() + "   ";
                 s += ans.toString() + "   ";
             }
         }
+        print += "So, answer = &nbsp;"+pr;
     }
     document.getElementById("cubesRangeans").innerHTML=s;
+    work.innerHTML = print;
 }
 
 var toDegree = function (radians) {
@@ -1122,22 +1131,29 @@ function eircal()
     var b=document.getElementById("nop").value;
     var c=document.getElementById("cprd").value;
     var ans="";
+    var result= document.getElementById("eirans");
     if(a==""||b==""||c=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans="\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer\\]";
     }
 
     else
     {
-
-        var x=parseInt(a)/100;
+        var R = parseInt(a);
+        var x=R/100;
+        ans ="\\[Interest \\space Rate \\space per \\space period = \\frac{R}{100} = \\frac{" + R + "}{100} = " + x + "\\]";
         var y=parseInt(c);
         var z=parseInt(b);
         var rate_period= ((1+(x/z))**z)-1;
-        rate_period=rate_period*100;
-        ans="Effective Annual Interest Rate per Period: "+rate_period+"<br>";
+        var rate_p=rate_period*100;
+        ans +="\\[Effective \\space interest \\space rate \\space per \\space period(i) \\space \\] \\[=(1+ \\frac{r}{m})^{m}-1\\]";
+        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
+        ans +="\\[="+ rate_period +"\\]";
+        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
     }
-    document.getElementById("eirans").innerHTML=ans;
+    result.innerHTML = ans;
+    renderMathInElement(result);
+
 }
 function errpercal()
 {
@@ -1216,21 +1232,72 @@ function wmccal()
     document.getElementById("wmcans").innerHTML=ans;
 }
 
-function covcal()
-{
+function covcalcu(){
+    var num1=document.getElementById("setx").value;
+    var num2=document.getElementById("sety").value;
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var s="";
+    if(num1==""||num2=="") {
+       s= "Please enter number";
+    }else if(!valid.test(num1&&num2))
+    {
+        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    } else{
+    num1=num1.trim();
+    num1 = num1.split(" ");
+    var len1=parseInt(num1.length);
+    var number1=[], sum1=0, sum2=0;
+    for (i = 0; i < len1; i++){
+        number1[i] = parseFloat(num1[i].trim());
+        sum1+=number1[i];
+    }
+    sum1=sum1/len1;
+    num2=num2.trim();
+    num2 = num2.split(" ");
+    var len2=parseInt(num2.length);
+    if (len1 == 1 || len2 == 1){
+        document.getElementById("covans").innerHTML= "Please enter more than value for each data set";
+        return;
+    }
+    if(len1!=len2) {
+        s="Your datasets X and Y contain different numbers of element";
+    } else{
+    var number2=[];
+    for (i = 0; i < len2; i++) {
+        number2[i] = parseFloat(num2[i].trim());
+        sum2+=number2[i];
+    }
+    sum2=sum2/len2;
+    var covsum=0;
+    for (i = 0; i < len2; i++) {
+        var d=number2[i]-sum2;
+        var f=number1[i]-sum1;
+        covsum+=(d*f);
+    }
+    var cov=(covsum)/(len2-1);
+    s="The calculated covariance is: "+cov;
+    }
+}
+
+document.getElementById("covans").innerHTML=s;
+}
+
+function covcal() {
     var num=document.getElementById("cvsd").value;
     var s=""; 
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     if(num==""){
        s= "Please enter number";
-
     } else if(!valid.test(num)){
         s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-
     } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
+    if (len == 1){
+        document.getElementById("cvans").innerHTML= "Please enter more than one value";
+        return;
+    }
     var number=[]
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
@@ -1246,16 +1313,10 @@ function covcal()
     }
     varrzlt = varrzlt/(len-1);
     var sdev = Math.sqrt(varrzlt);
-    console.log(sdev);
-    console.log(mean);
-
     s="The Coeffecient of Variation is: "+sdev/mean;
     }
     document.getElementById("cvans").innerHTML=s;
 }
-
-
-
 
 function rmscal()
 {
@@ -1297,20 +1358,35 @@ function rmscal()
 
 function zscorecal()
 { 
-    var a=document.getElementById("rawscore").value;
-    var b=document.getElementById("ppmean").value;
-    var c=document.getElementById("stdtn").value;
-    var ans="";
-    if(a==""||b==""||c=="")
+    var a = parseFloat(document.getElementById("rawscore").value);
+    var b = parseFloat(document.getElementById("ppmean").value);
+    var c = parseFloat(document.getElementById("stdtn").value);
+    var ans = document.getElementById("zscoreans");
+    var temp = "";
+    var z= (a-b)/c;
+    if(isNaN(a) || isNaN(b) || isNaN(c))
     {
-        ans="Please enter all the values";
+        temp += "\\[Please \\space enter \\space all \\space the \\space values \\]";
+        ans.innerHTML = temp;
+        renderMathInElement(ans);
     }
     else
     {
-              var z= (a-b)/c;
-              ans="The calculated Z Score is: "+z;
+        if(b<0){
+            temp += "\\[Z \\space Score \\space = \\space \\frac{Raw \\space Score \\space (X) \\space - \\space Population \\space Mean \\space (μ)}{Standard \\space Deviation \\space (σ)} \\]"
+            temp += "\\[Z \\space Score \\space = \\space \\frac {" + a + "- (" + b + ")}{" + c + "} \\space = \\space \\frac{" + (a-b) + "}{" + c + "} \\]";
+            temp += "\\[Z \\space Score \\space = \\space " + z.toFixed(4) + " \\]"
+            ans.innerHTML = temp;
+            renderMathInElement(ans);
+        }
+        else{
+              temp += "\\[Z \\space Score \\space = \\space \\frac{Raw \\space Score \\space (X) \\space - \\space Population \\space Mean \\space (μ)}{Standard \\space Deviation \\space (σ)} \\]"
+              temp += "\\[Z \\space Score \\space = \\space \\frac {" + a + " - " + b + "}{" + c + "} \\space = \\space \\frac{" + (a-b) + "}{" + c + "} \\]";
+              temp += "\\[Z \\space Score \\space = \\space " + z.toFixed(4) + " \\]"
+              ans.innerHTML = temp;
+              renderMathInElement(ans);
     }
-    document.getElementById("zscoreans").innerHTML=ans;
+}
 }
 
 function slpsolve()
@@ -1333,53 +1409,38 @@ function slpsolve()
 
 }
 
-
-
-
-
-function suppangcal()
-{
+function suppangcal(){
     var a=document.getElementById("ang").value;
     var ans="";
-    if(a=="")
-    {
+    if(a==""){
         ans="Enter the angle to find the supplementary";
-    }
-    else
-    {
+    } else{
         var t=parseInt(a);
         var v=180-t;
-        ans="The supplementary angle of "+a+" is "+v;
+        ans="\\[The \\space supplementary \\space angle \\space of \\space"+a+" \\space will \\space be \\newline 180 \\degree \\space - \\space t \\degree \\newline 180 \\degree \\space - \\space "+t+" \\degree \\newline = \\space "+v+" \\degree \\]";
     }
-
     document.getElementById("suppangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("suppangans"));
 }
-function suppangvercal()
-{
+
+function suppangvercal(){
     var a=document.getElementById("ang1").value;
     var b=document.getElementById("ang2").value;
     var ans="";
-    if(a==""||b=="")
-    {
+    if(a==""||b==""){
         ans="Enter both angles to verify";
-    }
-    else
-    {
+    } else{
         var x=parseInt(a), y=parseInt(b);
         if(x+y==180)
-        {ans="Entered angles are supplementary";}
-        else{
-        ans="Entered angles are not supplementary";
-        }
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space = 180 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Supplementary\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space != 180 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Not \\space Supplementary\\]";
     }
-
     document.getElementById("suppangverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("suppangverans"));
 }
 
-
-
-function faccal()
-{
+function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
     if(a=="")
@@ -1579,7 +1640,31 @@ function perrankcal()
 }
 document.getElementById("perrankans").innerHTML=s;
 }
-
+function oocal()
+{
+    var num4=document.getElementById("oocx").value;
+    ans="";
+    if(num4=="")
+    {
+        ans="Please enter number";
+    }
+    else
+    {
+        var len=num4.length;
+        var count=0;
+        for(var b=0;b<len;b++)
+        {
+            if(num4[b]=='.')
+            {
+                break;
+            }
+            else 
+            {count++};
+        }
+        ans="The order of mangnitude is : "+(count-1);
+    }
+    document.getElementById("ooans").innerHTML=ans;
+}
 function manhatcal()
 {
     var num1=document.getElementById("mdx1").value;
@@ -1638,4 +1723,28 @@ function midcal()
     }
     document.getElementById("mians").innerHTML=ans;
 
+}
+
+function hypergeos2cal()
+{
+    var num1=document.getElementById("hypergeos12").value;
+    var num2=document.getElementById("hypergeos22").value;
+    var num3=document.getElementById("hypergeos32").value;
+    var num4=document.getElementById("hypergeos42").value;
+    ans="";
+    if(num1==""||num2==""||num4==""||num3=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        num4=parseFloat(num4);
+      var d= (num2*num3)/num4;
+       ans="The value of hypergeometric distribution's mean is : "+d;
+   
+    }
+    document.getElementById("hypergeos2ans").innerHTML=ans;
 }
