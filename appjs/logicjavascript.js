@@ -3517,22 +3517,26 @@ function disttwopntsolve(){
 }
 
 function solveicosa() {
-    var a = document.getElementById("inputtside").value;
-    var resultvolt = document.getElementById("resultofvolt");
-    var resulttsa = document.getElementById("resultoftsa");
-    resultofvolt.innerHTML = "";
-    resultoftsa.innerHTML = "";
-    var volume = (2.18 * (a * a * a)).toFixed(2);
-    var tsa = (8.66 * (a * a)).toFixed(2);
-  
+    var a = document.getElementById("inputicoside").value;
+    var resultvolt = document.getElementById("resultoficovolt");
+    var resulttsa = document.getElementById("resultoficotsa");
+    var volttemp = "";
+    var tsatemp = "";
     if (a != "") {
-        document.getElementById("resultofvolt").innerHTML = "\\[Volume \\space of \\space Icosahedron \\space \\newline \\frac{5}{12}" + "( \\space 3 \\space + \\space \\sqrt{5})" + a + "\\times" + a + "\\times" + a + "\\ = " + volume + "\\]";
-        renderMathInElement(document.getElementById("resultofvolt"));
+        volttemp += "\\[Volume \\space of \\space Icosahedron \\space \\newline \\frac{5}{12}" + "( \\space 3 \\space + \\space \\sqrt{5})" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(2.18169 * (a * a * a)).toFixed(2) + "\\]";
+        resultvolt.innerHTML = volttemp;
+
+        tsatemp += "\\[Surface \\space Area \\space of \\space Icosahedron \\space \\newline " + 5  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(8.66025 * (a * a))).toFixed(2) + "\\]";
+        resulttsa.innerHTML = tsatemp;
+
+        renderMathInElement(resultvolt);
+        renderMathInElement(resulttsa);
+
+    } else {
+        resultvolt.innerHTML = "";
+        resulttsa.innerHTML = "";
     }
-    if (a != "") {
-        document.getElementById("resultoftsa").innerHTML = "\\[Surface \\space Area \\space of \\space Icosahedron \\space \\newline " + 5  + "\\times \\sqrt{3} " + "\\times" + a + "\\times" + a + "\\ = " + tsa + "\\]";
-        renderMathInElement(document.getElementById("resultoftsa"));
-    }
+
 }
 
 function vectortetra(){
