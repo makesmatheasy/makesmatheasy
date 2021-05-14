@@ -2309,11 +2309,16 @@ var x1, x2, y1, y2;
     y1=parseFloat(document.getElementById('yOne').value);
     y2=parseFloat(document.getElementById('yTwo').value);
     var explain = document.getElementById("dis_formula");
-    explain.innerHTML = "\\[Distance \\space between \\space two \\space points =\\space \\sqrt{ (x1-x2)^2 + (y1-y2)^2 } \\] ";
-    renderMathInElement(document.getElementById("dis_formula"));
-
-var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-
-y2), 2) ).toFixed(2);
+    var temp = "";
+    temp += "\\[Distance \\space between \\space two \\space points \\space is  \\] ";
+    temp += "\\[\\sqrt{ (x1-x2)^2 + (y1-y2)^2 } \\space \\]";
+    temp +=  "\\[\\sqrt{ (( " + x1 + ") - ( " + x2 + "))^{2} + (("  + y1 + ") - (" + y2 + "))^{2}} \\]";
+    temp +=  "\\[\\sqrt{ ( " + (x1-x2) + " )^{2} + ("  + (y1-y2) + ")^{2}} \\]";
+    temp +=  "\\[\\sqrt{ ( " + (x1-x2)**2 + " ) + ("  + (y1-y2)**2 + ")} \\]";
+    temp += "\\[\\sqrt{  " + ((x1-x2)**2 + (y1-y2)**2) + "} \\]";
+    explain.innerHTML=temp;
+    renderMathInElement(explain);
+   var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) ).toFixed(2);
     document.getElementById('outPut').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ('+ x2 + ',' + y2 + ') is '+ distance;
 
     
