@@ -9132,6 +9132,23 @@ function nap(){
     document.getElementById("nAPseries2").innerHTML = "n-Arithmetic Mean: " + series.substring(0, series.length - 2)
 }
 
+function ngp(){
+    var n = parseInt(document.getElementById("nt2").value)
+    var a = parseInt(document.getElementById("ft2").value)
+    var b = parseInt(document.getElementById("lt2").value)
+    if(isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b)))
+    {
+        document.getElementById("nGPseries2").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+    }
+    var d = Math.pow((b/a),1/(n+1))
+    for (var i = 1, series = "", num = 0; i <= n; i++) {
+        num = ((a) * Math.pow(d,i) );
+        series += (num.toString() + ", ");
+    }
+    document.getElementById("nGPseries2").innerHTML = "n-Geometric Mean: " + series.substring(0, series.length - 2)
+}
+
 function apsum()
 {   var n = document.getElementById("nterms").value
     var val = document.getElementById("ap").value;
