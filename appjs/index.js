@@ -352,6 +352,7 @@ function openit(id) {
         "#fourier_series",
         "#wmcs",
         "#cvs",
+        "#confIntrvl",
         "#rmss",
         "#relationtypes",
         "#skews",

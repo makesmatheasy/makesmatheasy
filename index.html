@@ -3779,6 +3779,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="confInterval"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Confidence Interval Calculator </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Confidence Interval Calculator  ','#confIntrvl','c','confimgfav')"><img
+                                        id="confimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -14942,6 +14959,28 @@ N is the population size.
         The coefficient of variation represents the ratio of the standard deviation to the mean,<br>
         and it is a useful statistic for comparing the degree of variation from one data series to another,<br>
         even if the means are drastically different from one another.</p>
+</div>
+
+<div class="collapse" id="confIntrvl">
+    <h1 style="font-family:mathfont; text-align:center;">Confidence Interval Calculator</h1><p>&nbsp;</p>
+        <input type="text" class="form__field" id="conf-obsv" width="5em" placeholder="Enter the number of Observations"><p>&nbsp;</p>
+        <input type="text" class="form__field" id="conf-mean" width="5em" placeholder="Enter the mean"><p>&nbsp;</p>
+        <input type="text" class="form__field" id="conf-dev" width="5em" placeholder="Enter the standard deviation"><p>&nbsp;</p>
+        <select id="z-select" class="form__field bg-dark">
+            <option>Select Z value</option>
+            <option>80%</option>
+            <option>85%</option>
+            <option>90%</option>
+            <option>95%</option>
+            <option>99%</option>
+            <option>99.5%</option>
+            <option>99.9%</option>
+        </select>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="confidence()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    <p id="confans" style="color: white; text-align: center; font-size: 1.6em; font-family:mathfont"></p><p>&nbsp;</p>
+    
 </div>
 
 <div class="collapse" id="rmss">

@@ -351,6 +351,7 @@ Other Tech/Libraries
   - T-test
   - Z-test
   - Z score Calculator
+  - Confidence Interval Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator

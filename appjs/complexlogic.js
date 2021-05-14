@@ -1213,6 +1213,55 @@ function covcal() {
     document.getElementById("cvans").innerHTML = s;
 }
 
+function confidence() {
+    var n = document.getElementById("conf-obsv").value;
+    var mean = document.getElementById("conf-mean").value;
+    var deviation = document.getElementById("conf-dev").value;
+    var z = document.getElementById("z-select").selectedOptions[0].value;
+    valid = /^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var zval = 0;
+    var ans1 = 0;
+    var ans2 = 0;
+    var s = "";
+    if (z = "Select Z value") {
+        s = "Please select a Z value";
+    }
+    if (n == "" || mean == "" || deviation == "") {
+        s = "Please enter number";
+    } else if (!valid.test(n)) {
+        s = "Use of alphabets and special character is not allowed for calculation purpose";
+    } else {
+        if (z === "80%") {
+            zval = 1.282;
+        }
+        else if (z === "85%") {
+            zval = 1.440;
+        }
+        else if (z === "90%") {
+            zval = 1.645;
+        }
+        else if (z === "80%") {
+            zval = 1.960;
+        }
+        else if (z === "80%") {
+            zval = 2.576;
+        }
+        else if (z === "80%") {
+            zval = 2.807;
+        }
+        else if (z === "80%") {
+            zval = 3.291;
+        }
+        console.log(z);
+        var ans = zval * (deviation / Math.sqrt(n));
+        ans1 = mean - ans;
+        ans2 = mean + ans;
+
+        s = " Confidence interval: " + ans1 + " to " + ans2;
+    }
+    document.getElementById("confans").innerHTML = s;
+}
+
 function rmscal() {
     var num = document.getElementById("rmi").value;
     var ans = "";
