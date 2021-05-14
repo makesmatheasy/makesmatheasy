@@ -2028,17 +2028,21 @@ function centsolve1() {
     var z = (c1 + c2 + c3 + c4) / 4;
     var centout = document.getElementById("centres");
     var centemp = "";
-    if((a1 !="") && (a2 != "") && (a3 !="") && (a4 != "") && (b1 != "") && (b2 != "") && (b3 != "") && (b4 != "") && (c1 != "") && (c2 != "") && (c3 !="") && (c4 != "")){
-        centemp += "\\[Centroid \\space of \\space a \\space Tetrahedron \\ is \\space ( \\space \\frac{x_1+x_2+x_3+x_4}{4} \\space , \\space \\frac{y_1+y_2+y_3+y_4}{4} \\space , \\space \\frac{z_1+z_2+z_3+z_4}{4} \\space ) \\]";
-        centemp += "\\[( \\space \\frac{" + a1 + "+" + a2 + "+" + a3 + "+" +a4 + "}{4} \\space , \\space \\frac{" + b1 + "+" + b2 + "+" + b3 + "+" + b4 + "}{4} \\space , \\space \\frac{" + c1 + "+" + c2 + "+" + c3 + "+" + c4 + "}{4} \\space ) \\]";
-        centemp += "\\[( " + x + "," + y + "," + z + " )\\]";
-        centout.innerHTML = centemp;
-        renderMathInElement(centout);
+    if(isNaN(x) || isNaN(y) || isNaN(z)){
+        centemp = "\\[Please \\space enter \\space all \\space fields \\]";
+    }else{
+        if((a1 !="") && (a2 != "") && (a3 !="") && (a4 != "") && (b1 != "") && (b2 != "") && (b3 != "") && (b4 != "") && (c1 != "") && (c2 != "") && (c3 !="") && (c4 != "")){
+            centemp += "\\[Centroid \\space of \\space a \\space Tetrahedron \\ is \\space ( \\space \\frac{x_1+x_2+x_3+x_4}{4} \\space , \\space \\frac{y_1+y_2+y_3+y_4}{4} \\space , \\space \\frac{z_1+z_2+z_3+z_4}{4} \\space ) \\]";
+            centemp += "\\[( \\space \\frac{" + a1 + "+" + a2 + "+" + a3 + "+" +a4 + "}{4} \\space , \\space \\frac{" + b1 + "+" + b2 + "+" + b3 + "+" + b4 + "}{4} \\space , \\space \\frac{" + c1 + "+" + c2 + "+" + c3 + "+" + c4 + "}{4} \\space ) \\]";
+            centemp += "\\[( " + x + "," + y + "," + z + " )\\]";
+        }
+        else{
+            centemp = "";
+        }
     }
-    else{
-        centout.innerHTML = "";
-    }
-    
+
+    centout.innerHTML = centemp;
+    renderMathInElement(centout);
 }
 
 function findsecarea() {
@@ -2260,8 +2264,14 @@ function dlp(){
     var cor2 = parseFloat(document.getElementById("cor2").value)
     var cor3 = parseFloat(document.getElementById("cor3").value)
     var d = parseFloat(document.getElementById("d").value)
-    var dlpans = (cor1*a2 + cor2*b2  + cor3*c2 +d)/(Math.sqrt(a2*a2+b2*b2+c2*c2))
-    document.getElementById("dlpans").innerHTML = "The distance is  " +dlpans
+
+    if(isNaN(a2) || isNaN(b2) || isNaN(c2) || isNaN(cor1) || isNaN(cor2) || isNaN(cor3)){
+        document.getElementById("dlpans").innerHTML = "Please enter all fields";
+    }else{
+        var dlpans = (cor1*a2 + cor2*b2  + cor3*c2 +d)/(Math.sqrt(a2*a2+b2*b2+c2*c2));
+        document.getElementById("dlpans").innerHTML = "The distance is  " +dlpans;
+    }
+    
 }
 
 function solveinverselaplace() {
@@ -2907,10 +2917,17 @@ function displanesolve()
     my=parseFloat(document.getElementById('my1').value);
     mz=parseFloat(document.getElementById('mz1').value);
     var explain = document.getElementById("planept");
-    explain.innerHTML = "\\[Distance \\space from \\space point \\space to \\space plane \\space  =\\space  \\frac{Ax + By + Cz + D}{\\sqrt{A^2+B^2+C^2}} \\] ";
-    renderMathInElement(document.getElementById("planept"));
-    var dis = (Math.abs(a*mx + b*my +c*mz+d))/(Math.sqrt(a*a + b*b + c*c ));
-    document.getElementById('displanept').innerHTML= 'The distance from ('+ mx + ',' + my + ',' + mz + ') to ' + a + 'x + ' + b + 'y + ' + c + 'z + ' + d + '= 0 is ' + dis.toFixed(2);
+
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(mx) || isNaN(my) || isNaN(mz)){
+        explain.innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        renderMathInElement(explain);
+        document.getElementById('displanept').innerHTML= "";
+    }else{
+        explain.innerHTML = "\\[Distance \\space from \\space point \\space to \\space plane \\space  =\\space  \\frac{Ax + By + Cz + D}{\\sqrt{A^2+B^2+C^2}} \\] ";
+        renderMathInElement(explain);
+        var dis = (Math.abs(a*mx + b*my +c*mz+d))/(Math.sqrt(a*a + b*b + c*c ));
+        document.getElementById('displanept').innerHTML= 'The distance from ('+ mx + ',' + my + ',' + mz + ') to ' + a + 'x + ' + b + 'y + ' + c + 'z + ' + d + '= 0 is ' + dis.toFixed(2);
+    }
     
 }
 function solveocta() {
@@ -3046,19 +3063,25 @@ function angletwoplanesolve()
     d1=parseFloat(document.getElementById('pd2').value);
     var explain = document.getElementById("angleplane");
     var temp = "";
-    var ang =(Math.abs(a*a1 + b*b1 +c*c1))/(Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1)));
-    var ang1 =  Math.acos(ang);
-    temp += "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
-    temp += "\\[cos \\alpha = \\frac{| ( " + a + "\\times" + a1 + " ) + ( " + b + "\\times" + b1 + " ) + ( " + c + "\\times" + c1 + " ) | }{\\sqrt{ ( " + a + "^{2} ) + ( " + b + "^{2} ) + ( " + c + "^{2} ) } \\times \\sqrt{ ( " + a1 + "^{2} ) + ( " + b1 + "^{2} ) + ( " + c1 + "^{2} ) } } \\]";
-    temp += "\\[cos \\alpha = \\frac {| ( " + (a*a1) + ") + ( " + (b*b1) + ") + (" + (c*c1) + " )) | }{\\sqrt{  " + a**2 + "  +  " + b**2 + " +  " + c**2 + "  } \\times \\sqrt{  " + a1**2 + " +  " + b1**2 + "  +  " + c1**2 + "  } } \\]";
-    temp += "\\[cos \\alpha = \\frac{| " + ((a*a1)+(b*b1)+(c*c1)) + "| }{\\sqrt{  " + (a**2 +  b**2 + c**2) + "  } \\times \\sqrt{  " + (a1**2 + b1**2 +  c1**2) + "  } } \\]";
-    temp += "\\[cos \\alpha = \\frac{ " + Math.abs(a*a1+b*b1+c*c1) + "}{ " + (Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))).toFixed(4) + "} \\]";
-    temp += "\\[\\alpha = cos^{-1} (\\frac { "  + Math.abs(a*a1+b*b1+c*c1) + "}{ " + (Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))).toFixed(4) + "}) \\]";
-    temp += "\\[\\alpha = cos^{-1} ( " + ang.toFixed(5) + " ) \\]";
-    temp += "\\[\\alpha = " + (ang1*180/Math.PI).toFixed(2) + " \\degree \\]";
+    if(isNaN(a) || isNaN(b) || isNaN(c) ||  isNaN(d) || isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(d1)){
+        temp = "\\[Please \\space enter \\space all \\space fields \\]";
+    }else{
+        var ang =(Math.abs(a*a1 + b*b1 +c*c1))/(Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1)));
+        var ang1 =  Math.acos(ang);
+        temp += "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
+        temp += "\\[cos \\alpha = \\frac{| ( " + a + "\\times" + a1 + " ) + ( " + b + "\\times" + b1 + " ) + ( " + c + "\\times" + c1 + " ) | }{\\sqrt{ ( " + a + "^{2} ) + ( " + b + "^{2} ) + ( " + c + "^{2} ) } \\times \\sqrt{ ( " + a1 + "^{2} ) + ( " + b1 + "^{2} ) + ( " + c1 + "^{2} ) } } \\]";
+        temp += "\\[cos \\alpha = \\frac {| ( " + (a*a1) + ") + ( " + (b*b1) + ") + (" + (c*c1) + " )) | }{\\sqrt{  " + a**2 + "  +  " + b**2 + " +  " + c**2 + "  } \\times \\sqrt{  " + a1**2 + " +  " + b1**2 + "  +  " + c1**2 + "  } } \\]";
+        temp += "\\[cos \\alpha = \\frac{| " + ((a*a1)+(b*b1)+(c*c1)) + "| }{\\sqrt{  " + (a**2 +  b**2 + c**2) + "  } \\times \\sqrt{  " + (a1**2 + b1**2 +  c1**2) + "  } } \\]";
+        temp += "\\[cos \\alpha = \\frac{ " + Math.abs(a*a1+b*b1+c*c1) + "}{ " + (Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))).toFixed(4) + "} \\]";
+        temp += "\\[\\alpha = cos^{-1} (\\frac { "  + Math.abs(a*a1+b*b1+c*c1) + "}{ " + (Math.sqrt((a*a + b*b + c*c)*(a1*a1 + b1*b1 + c1*c1))).toFixed(4) + "}) \\]";
+        temp += "\\[\\alpha = cos^{-1} ( " + ang.toFixed(5) + " ) \\]";
+        temp += "\\[\\alpha = " + (ang1*180/Math.PI).toFixed(2) + " \\degree \\]";
+        document.getElementById('angleplaneop').innerHTML= 'Angle between plane 1 and 2 is '+ (ang1*180/Math.PI).toFixed(2) + '&deg';
+    }
+
     explain.innerHTML = temp ;
     renderMathInElement(explain);
-    document.getElementById('angleplaneop').innerHTML= 'Angle between plane 1 and 2 is '+ (ang1*180/Math.PI).toFixed(2) + '&deg';
+    
     
 }
 
@@ -3487,11 +3510,15 @@ function equationplanesolve()
     cx=parseFloat(document.getElementById('vc1').value);
     cy=parseFloat(document.getElementById('vc2').value);
     cz=parseFloat(document.getElementById('vc3').value);
-    var res1 = ((by-ay)*(cz-az))-((cy-ay)*(bz-az));
-    var res2 = ((bz-az)*(cx-ax))-((cz-az)*(bx-ax));
-    var res3 = ((bx-ax)*(cy-ay))-((cx-ax)*(by-ay));
-    var res4 = -(res1*ax + res2*ay + res3*az);
-    document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
+    if(isNaN(ax) ||  isNaN(ay) || isNaN(az) || isNaN(bx) || isNaN(by) || isNaN(bz) || isNaN(cx) || isNaN(cy) || isNaN(cz)){
+        document.getElementById('eqop').innerHTML="Please enter all fields";
+    }else{
+        var res1 = ((by-ay)*(cz-az))-((cy-ay)*(bz-az));
+        var res2 = ((bz-az)*(cx-ax))-((cz-az)*(bx-ax));
+        var res3 = ((bx-ax)*(cy-ay))-((cx-ax)*(by-ay));
+        var res4 = -(res1*ax + res2*ay + res3*az);
+        document.getElementById('eqop').innerHTML= 'Plane Equation : ' + res1 + 'x + ' + res2 + 'y + ' + res3 + 'z + ' + res4 + ' = 0';
+    }
 }
 
 function disttwopntsolve(){
@@ -3505,10 +3532,15 @@ function disttwopntsolve(){
     var result1 = document.getElementById('dope1');
     var print = "";
     var print1 = "";
-
-    var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
-    print += "\\[Distance \\space between \\space two \\space points = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
+    if(isNaN(x1) || isNaN(y1) || isNaN(z1) || isNaN(x2) || isNaN(y2) || isNaN(z2)){
+        print = "\\[Please \\space enter \\space all \\space fields \\]";
+    }else{
+        var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
+        print += "\\[Distance \\space between \\space two \\space points = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
     print1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = " + res + "\\]";
+    }
+
+    
 
     result.innerHTML = print;
     result1.innerHTML = print1;
@@ -3714,13 +3746,18 @@ function solvetwoplane()
     /*var explain = document.getElementById("angleplane");
     explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
     renderMathInElement(document.getElementById("angleplane"));*/
-    if((a==a1) && (b==b1) && (c==c1)){
-        var res = Math.abs(d1-d)/Math.sqrt(a*a + b*b + c*c);
-        document.getElementById('dplane').innerHTML= 'Distance between plane 1 and 2 is '+ res.toFixed(2) ;
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(d1)){
+        document.getElementById('dplane').innerHTML= "Please enter all fields";
+    }else{
+        if((a==a1) && (b==b1) && (c==c1)){
+            var res = Math.abs(d1-d)/Math.sqrt(a*a + b*b + c*c);
+            document.getElementById('dplane').innerHTML= 'Distance between plane 1 and 2 is '+ res.toFixed(2) ;
+        }
+        else{
+            document.getElementById('dplane').innerHTML= 'Planes are not parallel, so distance is 0' ;
+        }
     }
-    else{
-        document.getElementById('dplane1').innerHTML= 'Planes are not parallel, so distance is 0' ;
-    }
+    
 }
 
 function threedissolve(){
@@ -3734,14 +3771,22 @@ function threedissolve(){
     var dis1 = document.getElementById('opdis1');
     var displaytemp = "";
     var displaytemp1 = "";
-
-    var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
-    displaytemp += "\\[Formula = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
-    displaytemp1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = "+ "\\sqrt{(" + x2 + "-" + x1 + ")^2 + (" + y2 + "-" + y1 + ")^2 + (" + z2 + "-" + z1 + ")^2}" + " = "  + res.toFixed(2) + "\\]";
-    dis.innerHTML = displaytemp;
-    dis1.innerHTML = displaytemp1;
-    renderMathInElement(dis);
-    renderMathInElement(dis1);
+    if(isNaN(x1) || isNaN(x2) || isNaN(y1) || isNaN(y2) || isNaN(z1) || isNaN(z2)){
+        displaytemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        displaytemp1 = "";
+        dis.innerHTML = displaytemp;
+        dis1.innerHTML = displaytemp1;
+        renderMathInElement(dis);
+        renderMathInElement(dis1);
+    }else{
+        var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
+        displaytemp += "\\[Formula = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
+        displaytemp1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = "+ "\\sqrt{(" + x2 + "-" + x1 + ")^2 + (" + y2 + "-" + y1 + ")^2 + (" + z2 + "-" + z1 + ")^2}" + " = "  + res.toFixed(2) + "\\]";
+        dis.innerHTML = displaytemp;
+        dis1.innerHTML = displaytemp1;
+        renderMathInElement(dis);
+        renderMathInElement(dis1);
+    }
 }
 
 //-----------------------------------------------------
