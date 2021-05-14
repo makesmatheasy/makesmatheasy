@@ -1869,7 +1869,7 @@ function findWork() {
         document.getElementById('workans').innerHTML = "Please enter all fields";
     }else{
         if(work1<0 || time1<0 || men1<0 || time2<0 || men2<0){
-            document.getElementById('workans').innerHTML += "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
+            document.getElementById('workans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
             let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
             document.getElementById('workans').innerHTML = "The work done is " + workans; 
