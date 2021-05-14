@@ -3056,6 +3056,15 @@ function vactorangle(){
     renderMathInElement(document.getElementById("vae"));
 }
 
+function ktimes(){
+    let A = parseInt(document.getElementById('aofeqn').value)
+    let B = parseInt(document.getElementById('bofeqn').value)
+    let C = parseInt(document.getElementById('cofeqn').value)
+    let K = parseInt(document.getElementById('kofeqn').value)
+    document.getElementById("ktimesans").innerHTML = A + " " + K * B
+    + " " + K * K * C
+}
+
 function vectpral(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
     var a=parseFloat(document.getElementById('vpa1').value);

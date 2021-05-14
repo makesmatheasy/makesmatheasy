@@ -2942,6 +2942,22 @@
                 </table>
             </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="quadeqncalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Quadratic Equation Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Quadratic Equation Calculator','#quadeqncal','c','quadeqncalfav')"><img
+                                        id="quadeqncalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <div class="dropdown-divider"></div>
         </div>
@@ -11304,6 +11320,19 @@
 
                 </p>
             </div>
+        </div>
+
+        <div class="collapse" id="quadeqncal">
+            <h2 style="text-align:center;">Quadratic equation whose roots are K times the roots of given equation</h2>
+            <br>
+            <input type="text" id="aofeqn" class="form__field" placeholder ="Enter coefficeient of x^2">
+            <input type="text" id="bofeqn" class="form__field" placeholder ="Enter coefficeient of x">
+            <input type="text" id="cofeqn" class="form__field" placeholder ="Enter constant term">
+            <input type="text" id="kofeqn" class="form__field" placeholder ="Enter K times eqn to be multiplied">
+            <br>
+            <button class="btn btn-dark" onclick="ktimes()">Find</button>
+            <br>
+            <h4 id="ktimesans"></h4>
         </div>
 
         <div class="collapse" id="mulsolwithsteps">
