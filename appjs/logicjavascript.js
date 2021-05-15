@@ -12668,26 +12668,56 @@ function chivalue() {
 
 function manhatcal()
 {
-    var num1=document.getElementById("mdx1").value;
-    var num2=document.getElementById("mdx2").value;
-    var num3=document.getElementById("mdx3").value;
-    var num4=document.getElementById("mdx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
+    var num1=parseFloat(document.getElementById("mdx1").value);
+    var num2=parseFloat(document.getElementById("mdx2").value);
+    var num3= parseFloat(document.getElementById("mdx3").value);
+    var num4= parseFloat(document.getElementById("mdx4").value);
+    var output = document.getElementById("manhatans");
+    var ans="";
+    var x = (Math.abs(num1-num3)) + (Math.abs(num2-num4));
+    if(isNaN(num1)||isNaN(num2)||isNaN(num3)||isNaN(num4))
     {
-        ans="Please fill all the field";
+        ans += "Please fill all the field";
+        output.innerHTML= ans;
+    }
+    else if(num3<0 && num4>0){
+        ans += "\\[Mdist \\space = \\space | X1 \\space - \\space X2 | \\space + \\space | Y1 \\space - \\space Y2 | \\]";
+        ans += "\\[ | " + num1 + " - ( " + (num3) + " ) | + | " + num2 + " - " + num4 + " | \\]"
+        ans += "\\[ | " + num1 + " + " + (-num3) + " | + | " + num2 + " - " + num4 + " | \\]"
+        ans += "\\[ | " + (num1 - num3) + " | + | " + (num2 - num4) + " | \\]"
+        ans += "\\[The \\space calculated \\space Manhattan \\space Distance \\space of \\space the \\space given \\space coordinate \\space is \\space " + x + " \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
+
+    }
+    else if(num4<0 && num3>0){
+        ans += "\\[Mdist \\space = \\space | X1 \\space - \\space X2 | \\space + \\space | Y1 \\space - \\space Y2 | \\]";
+        ans += "\\[ | " + num1 + " - " + num3 + " | + | " + num2 + " - ( " + (num4) + " ) | \\]"
+        ans += "\\[ | " + num1 + " - " + num3 + " | + | " + num2 + " + " + (-num4) + " | \\]"
+        ans += "\\[ | " + (num1 - num3) + " | + | " + (num2 - num4) + " | \\]"
+        ans += "\\[The \\space calculated \\space Manhattan \\space Distance \\space of \\space the \\space given \\space coordinate \\space is \\space " + x + " \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
+    }
+    else if(num3<0 && num4<0){
+        ans += "\\[Mdist \\space = \\space | X1 \\space - \\space X2 | \\space + \\space | Y1 \\space - \\space Y2 | \\]";
+        ans += "\\[ | " + num1 + " - ( " + (num3) + " ) | + | " + num2 + " - ( " + (num4) + " ) | \\]"
+        ans += "\\[ | " + num1 + " + " + (-num3) + " | + | " + num2 + " + " + (-num4) + " | \\]"
+        ans += "\\[ | " + (num1 - num3) + " | + | " + (num2 - num4) + " | \\]"
+        ans += "\\[The \\space calculated \\space Manhattan \\space Distance \\space of \\space the \\space given \\space coordinate \\space is \\space " + x + " \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
+
     }
     else
     {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-
-        var x=Math.abs(num1-num3)+Math.abs(num2-num4);
-        ans="The calculated Manhattan Distnace of given coordinates is: "+x;
+        ans += "\\[Mdist \\space = \\space | X1 \\space - \\space X2 | \\space + \\space | Y1 \\space - \\space Y2 | \\]";
+        ans += "\\[ | " + num1 + " - " + num3 + " | + | " + num2 + " - " + num4 + " | \\]"
+        ans += "\\[ | " + (num1 - num3) + " | + | " + (num2 - num4) + " | \\]"
+        ans += "\\[The \\space calculated \\space Manhattan \\space Distance \\space of \\space the \\space given \\space coordinate \\space is \\space " + x + " \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
-    document.getElementById("manhatans").innerHTML=ans;
 }
 function volCube() {
     var x = parseInt(document.getElementById("chng-side-cube").value);
