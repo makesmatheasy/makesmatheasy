@@ -988,11 +988,25 @@ function lcmsol(input) {
 //-----------------------------------------------------
 
 function icosagonfind(){
-    let side = parseInt(document.getElementById("inputsideicosa").value)
-    let peri = 20*side
-    let ar = 31.568*side*side
-    document.getElementById("resultofperimetericosa2").innerHTML = "The perimeter is "+peri
-    document.getElementById("resultofareaicosa1").innerHTML = "The area is "+ar
+    let side = parseInt(document.getElementById("inputsideicosa").value);
+    let peri = 20*side;
+    let ar = 31.568*side*side;
+    let perimeter = "";
+    let area = "";
+    let p = document.getElementById("resultofperimetericosa2");
+    let a = document.getElementById("resultofareaicosa1");
+    perimeter += "\\[Perimeter \\space of \\space Icosagon = \\]";
+    perimeter += "\\[20\\times  side \\]"
+    perimeter += "\\[20\\times" + side + " \\]";
+    perimeter += "\\[ =" + peri + "\\]"
+    area +="\\[Area \\space of \\space Icosagon =\\]";
+    area +="\\[31.568 \\times side \\times side\\]";
+    area +="\\[31.568 \\times" + side + "\\times " + side + "\\]";
+    area +="\\[ = " + ar + "\\]";
+    p.innerHTML = perimeter;
+    a.innerHTML = area;
+    renderMathInElement(p);
+    renderMathInElement(a);
 }
 
 function setcal() {
