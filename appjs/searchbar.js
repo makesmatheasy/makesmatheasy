@@ -1002,12 +1002,6 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CONTOUR INTEGRATION"){
                         document.getElementById('ci').click();
                     }
-                    else if (inp.value.toUpperCase() == "PARABOLA CALCULATOR") {
-                        $("#parabolacalc").slideToggle();    
-                    }
-                    else if(inp.value.toUpperCase() == "PARABOLA CALCULATOR"){
-                        document.getElementById('parabolacalc').click();
-                    } 
                     else if (inp.value.toUpperCase() == "SPI/CGPA CONVERTOR") {
                         clearmain()
                         $("#spiconcal").slideDown();    
@@ -1510,12 +1504,6 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "CIRCLE") {
         $("#circlecollapse").slideToggle(); 
-    }
-    else if(inp.value.toUpperCase() == "PARABOLA CALCULATOR"){
-        document.getElementById('parabolacalc').click(); 
-    }
-    else if (inp.value.toUpperCase() == "PARABOLA CALCULATOR") {
-        $("#parabolacalc").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "SQAURE AND CUBE CALCULATOR"){
         document.getElementById('squarecube').click(); 
