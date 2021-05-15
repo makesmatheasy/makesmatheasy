@@ -3062,6 +3062,20 @@ function solvedodeca() {
 
 }
 
+function sec3dfind(){
+    let x1 = parseInt(document.getElementById("corx1").value)
+    let y1 = parseInt(document.getElementById("cory1").value)
+    let z1 = parseInt(document.getElementById("corz1").value)
+    let x2 = parseInt(document.getElementById("corx2").value)
+    let y2 = parseInt(document.getElementById("cory2").value)
+    let z2 = parseInt(document.getElementById("corz2").value)
+    let ratio = parseInt(document.getElementById("rat").value)
+    let coor1 = (ratio*x2+x1)/(ratio+1)
+    let coor2 = (ratio*y2+y1)/(ratio+1)
+    let coor3 = (ratio*z2+z1)/(ratio+1)
+    document.getElementById("sec3dans").innerHTML = "("+coor1+","+coor2+","+coor3+")"
+}
+
 function solverhododeca() {
     var a = document.getElementById("inputrhododecaside").value;
     var areaoutput = document.getElementById("resultofrhododecaarea");
