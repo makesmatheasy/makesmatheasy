@@ -3238,12 +3238,19 @@ function vactorangle(){
     var z = (d*d+e*e+f*f);
     var p = Math.sqrt(a*a+b*b+c*c).toFixed(2);
     var q = Math.sqrt(d*d+e*e+f*f).toFixed(2);
+
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("var").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("var"));
+        document.getElementById("vae").innerHTML = "";
+    }else{
     var mult =((180*(Math.acos(x/(p*q))))/Math.PI).toFixed(1);
     document.getElementById("var").innerHTML = "\\[ \\theta="  + (mult) + "0^{\\circ} \\]";
     renderMathInElement(document.getElementById("var"));
   
     document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] ` ;
     renderMathInElement(document.getElementById("vae"));
+    }
 }
 
 function ktimes(){
@@ -3274,7 +3281,11 @@ function vectpral(){
     ans1= -(mul2-mul3);
     ans2= (mul4-mul5);
     
-    
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("vpe").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("vpe"));
+        document.getElementById("vpr").innerHTML = "";
+    }else{
     if(ans1<0 && ans2<0){
         document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
         document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
@@ -3305,6 +3316,7 @@ function vectpral(){
         {
             document.getElementById("vpr").innerHTML = "As cross Product is Not Zero so X is Not prallel to Y"
         }
+    }
 }
 
 function vecotrmod(){
