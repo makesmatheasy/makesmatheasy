@@ -9163,8 +9163,13 @@ function solveper()
     var x,y;
     x=parseFloat(document.getElementById('x').value);
     y=parseFloat(document.getElementById('y').value);
+    if(!isNaN(x) || !isNaN(y)){
     var res = (y*x*0.01);
     document.getElementById('op').innerHTML= 'Result : ' + res;
+    }
+    else{
+        document.getElementById('op').innerHTML= 'Please enter all Input';
+    }
 
 }
 function solvepera()
@@ -9172,33 +9177,53 @@ function solvepera()
     var x1,y1;
     x1=parseFloat(document.getElementById('perX1').value);
     y1=parseFloat(document.getElementById('perY1').value);
+    if(!isNaN(x1) || !isNaN(y1)){
     var n = (y1*100)/x1;
     document.getElementById('perAns1').innerHTML= 'Result : ' + n + '%'; 
+    }
+    else{
+        document.getElementById('perAns1').innerHTML= 'Please enter all Input';
+    }
 }
 function solvepercal()
 {
     var x2,y2;
     x2=parseFloat(document.getElementById('perX2').value);
     y2=parseFloat(document.getElementById('perY2').value);
+    if(!isNaN(x2) || !isNaN(y2)){
     var s = (y2*100)/x2;
     s = s.toFixed(2);
     document.getElementById('s').innerHTML= 'Result : ' + s ; 
+    }
+    else{
+        document.getElementById('s').innerHTML= 'Please enter all Input';
+    }
 }
 function solvepercent()
 {
     var x3,y3;
     x3=parseFloat(document.getElementById('x3').value);
     y3=parseFloat(document.getElementById('y3').value);
+    if(!isNaN(x3) || !isNaN(y3)){
     var r = x3+(y3*x3)/100;
-    document.getElementById('r').innerHTML= 'Result : ' + r ; 
+    document.getElementById('r').innerHTML= 'Result : ' + r ;
+    }
+    else{
+        document.getElementById('r').innerHTML= 'Please enter all Input';
+    }
 }
 function solveperc()
 {
     var x4,y4;
     x4=parseFloat(document.getElementById('x4').value);
     y4=parseFloat(document.getElementById('y4').value);
+    if(!isNaN(x3) || !isNaN(y3)){
     var t = x4-(y4*x4)/100;
     document.getElementById('t').innerHTML= 'Result : ' + t ; 
+    }
+    else{
+        document.getElementById('t').innerHTML= 'Please enter all Input';
+    }
 }
 
 //Statistics Calculator
