@@ -3155,6 +3155,12 @@ function vectoradd(){
     var add1 = (a+d);
     var add2 = (b+e);
     var add3 = (c+f);
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("vectorsum1").style.display = "block";
+        document.getElementById("vsumi").innerHTML ="Please enter all fields";
+        document.getElementById("vsumj").innerHTML ="";
+        document.getElementById("vsumk").innerHTML ="";
+    }else{
     document.getElementById("vectorsum1").style.display = "block";
     document.getElementById("vsumi").innerHTML = 'Sum of Vectors (X+Y) =  ' + (add1)  ;
     if(add2<0)
@@ -3165,6 +3171,7 @@ function vectoradd(){
     document.getElementById("vsumk").innerHTML = (add3);
     else
     document.getElementById("vsumk").innerHTML =  '+' +  (add3) ;
+    }
 }
 function vectorsub(){
     var a=parseFloat(document.getElementById('b1a').value);
@@ -3176,6 +3183,12 @@ function vectorsub(){
     var sub1 = (a-d);
     var sub2 = (b-e);
     var sub3 = (c-f);
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("vectorsub1").style.display = "block";
+        document.getElementById("vsubi").innerHTML ="Please enter all fields";
+        document.getElementById("vsubj").innerHTML ="";
+        document.getElementById("vsubk").innerHTML ="";
+    }else{
     document.getElementById("vectorsub1").style.display = "block";
     document.getElementById("vsubi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1)  ;
     if(sub2<0)
@@ -3187,7 +3200,7 @@ function vectorsub(){
     else
     document.getElementById("vsubk").innerHTML =  '+' +  (sub3) ;
    
-
+    }
 }
 function vectordot(){
     var a=parseFloat(document.getElementById('d1e').value);
@@ -3199,12 +3212,18 @@ function vectordot(){
     var mult1 = (a*d);
     var mult2 = (b*e);
     var mult3 = (c*f);
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("vectordot1").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("vectordot1"));
+        document.getElementById("dotex").innerHTML = "";
+    }else{
     var mult = mult1 + mult2 + mult3;
     document.getElementById("vectordot1").innerHTML = "\\[ ="  + (mult) + "\\]";
     renderMathInElement(document.getElementById("vectordot1"));
   
     document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
     renderMathInElement(document.getElementById("dotex"));
+}
 }
 
 function vactorangle(){
@@ -3219,12 +3238,19 @@ function vactorangle(){
     var z = (d*d+e*e+f*f);
     var p = Math.sqrt(a*a+b*b+c*c).toFixed(2);
     var q = Math.sqrt(d*d+e*e+f*f).toFixed(2);
+
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("var").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("var"));
+        document.getElementById("vae").innerHTML = "";
+    }else{
     var mult =((180*(Math.acos(x/(p*q))))/Math.PI).toFixed(1);
     document.getElementById("var").innerHTML = "\\[ \\theta="  + (mult) + "0^{\\circ} \\]";
     renderMathInElement(document.getElementById("var"));
   
     document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] ` ;
     renderMathInElement(document.getElementById("vae"));
+    }
 }
 
 function ktimes(){
@@ -3255,7 +3281,11 @@ function vectpral(){
     ans1= -(mul2-mul3);
     ans2= (mul4-mul5);
     
-    
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("vpe").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("vpe"));
+        document.getElementById("vpr").innerHTML = "";
+    }else{
     if(ans1<0 && ans2<0){
         document.getElementById("vpe").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\newline";
         document.getElementById("vpe").innerHTML += " Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
@@ -3286,13 +3316,20 @@ function vectpral(){
         {
             document.getElementById("vpr").innerHTML = "As cross Product is Not Zero so X is Not prallel to Y"
         }
+    }
 }
 
 function vecotrmod(){
     var a=parseFloat(document.getElementById('vma').value);
     var b=parseFloat(document.getElementById('vmb').value);
     var c=parseFloat(document.getElementById('vmc').value);
-    
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
+        document.getElementById("vme").innerHTML ="";
+        renderMathInElement(document.getElementById("vmr"));
+        renderMathInElement(document.getElementById("vme"));
+
+    }else{
     var ans = (a*a)+(c*c)+(b*b);
     if(Number.isInteger(Math.sqrt(ans)))
     document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
@@ -3303,6 +3340,7 @@ function vecotrmod(){
   
     document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
     renderMathInElement(document.getElementById("vme"));
+    }
 }
 
 function vectorproj(){
@@ -3464,6 +3502,13 @@ function vectorcross(){
     ans = (mul-mul1);
     ans1= -(mul2-mul3);
     ans2= (mul4-mul5);
+
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        document.getElementById("vectorcross1").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        renderMathInElement(document.getElementById("vectorcross1"));
+        document.getElementById("vectorcross2").innerHTML ="";
+    }
+    else{
     if(ans1<0 && ans2<0){
     document.getElementById("vectorcross1").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
     document.getElementById("vectorcross2").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
@@ -3488,6 +3533,7 @@ function vectorcross(){
     renderMathInElement(document.getElementById("vectorcross1"));
     renderMathInElement(document.getElementById("vectorcross2"));
     }
+}
 }
 
 function vectordistance(){
