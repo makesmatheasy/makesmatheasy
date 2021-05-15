@@ -11337,6 +11337,64 @@ function hammingCalc2(){
     result1.innerHTML = result;
 }
 
+function hammingCalc3(){
+    var input = document.getElementById("decd-input").value;
+    const type1 = document.getElementById("decd-type1").value;
+    const type2 = document.getElementById("decd-type2").value;
+    let result1 = document.getElementById("decd-result");
+    var result ="";
+
+    if(type1 === "Right-To-Left" && type2 ==="Even"){
+        let n = input.length;
+        let k=0,ctr=0;
+        var parity = "";
+        input = input.split("").reverse().join("");
+        for (var i = 0; i < n;i++){
+            if((i+1)== Math.pow(2,k)){
+                for(var j =i;j < n; j++){
+                    if(((i+1) & (j+1)) == (i+1)){
+                        if(input[j] == "1"){
+                            ctr++;
+                        }else{
+                            ctr +=0;
+                        }
+                    }
+                }
+                //console.log(ctr);
+                if(ctr % 2 == 0){
+                    parity +="0";
+                }else if(ctr % 2 == 1 ){
+                    parity +="1";
+                }
+            
+                ctr = 0;
+                k++;
+            }
+        }
+        //console.log(parity);
+        k=0;
+        if(parseInt(parity)==0){
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2);
+            for(var a = 0; a<n;a++){
+                if((a+1)== Math.pow(2,k)){
+                    result += "";
+                    k++;
+                }else{
+                    result += input[a];
+                }
+            }
+            result = result.split("").reverse().join("");
+        }else{
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2).toString();
+            result = "Error exists at &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right <br>";
+            result += "Please change the binary value at the position where error exists and then decode again";
+        }
+    }
+    result1.innerHTML = result;
+}
+
 
 //Function that performs conversion of  binary to bcd
 function separator(str, n) { //used for converting BCD code to decimal
