@@ -1056,14 +1056,51 @@ function disfind(){
     let vol = (((l**2+m**2-n**2)*(l**2-m**2+n**2)*((-l)**2+m**2+n**2))/72);
     let vol1 = Math.sqrt(vol);
     let rad = Math.sqrt((l*l+m*m+n*n)/8);
-    if(vol>0){
-    document.getElementById("resultofdisvol").innerHTML = "The volume is "+vol1;
-    document.getElementById("resultofdisrad").innerHTML = "The radius is "+rad;
+    let ans2 = document.getElementById("resultofdisvol");
+    let ans3 = document.getElementById("resultofdisrad");
+    let temp2 = "";
+    let temp3 = ""; 
+    if(!isNaN(l) || !isNaN(m) || !isNaN(n)){
+    if(vol>=0){
+        temp2 += "\\[\\sqrt{ \\frac{ ((" + l + "^{2}) + (" + m + "^{2}) - (" + n + "^{2})) \\times (("  + l + "^{2}) - (" + m + "^{2}) + (" + n + "^{2})) \\times (( - "  + l + "^{2}) + (" + m + "^{2}) + (" + n + "^{2}))}{72}} \\]"
+        temp2 += "\\[\\sqrt{ \\frac{ (" + l**2 + " + " + m**2 + " - " + n**2 + ") \\times ("  + l**2 + " - " + m**2 + " + " + n**2 + ") \\times ( + "  + (-l)**2 + " + " + m**2 + " + " + n**2 + "^{2})}{72}} \\]"
+        temp2 += "\\[\\sqrt{ \\frac{ (" + (l**2 + m**2 - n**2) + ") \\times ("  + (l**2 - m**2 +  n**2) + ") \\times ( + "  + ((-l)**2 +  m**2 + n**2) + ")}{72}} \\]"
+        temp2 += "\\[\\sqrt{ \\frac{ (" + (l**2 + m**2 - n**2) * (l**2 - m**2 +  n**2) * ((-l)**2 +  m**2 + n**2) + ")}{72}} \\]"
+        temp2 += "\\[\\sqrt{ " + vol + "} \\]"
+        temp2 += "\\[Volume \\space of \\space Disphenoid \\space is \\]"
+        temp2 += "\\[ " + vol1.toFixed(3) + " \\]"
+        ans2.innerHTML = temp2;
+        renderMathInElement(ans2);
+        temp3 += "\\[\\sqrt{ \\frac{ ((" + l + "^{2}) + (" + m + "^{2}) + (" + n + "^{2}))}{8}} \\]"
+        temp3 += "\\[\\sqrt{ \\frac{ (" + l**2 + " + " + m**2 + " + " + n**2 + ")}{8}} \\]"
+        temp3 += "\\[\\sqrt{ \\frac{ (" + (l**2 + m**2 + n**2) + ")}{8}} \\]"
+        temp3 += "\\[\\sqrt{ " + ((l**2 + m**2 + n**2)/8) + "} \\]"
+        temp3 += "\\[Radius \\space of \\space Disphenoid \\space is \\]"
+        temp3 += "\\[ " + rad.toFixed(3) + " \\]"
+        ans3.innerHTML = temp3;
+        renderMathInElement(ans3);
     }
     else{
-        document.getElementById("resultofdisvol").innerHTML = "Negative Mumber Square Root is not possible!"
-        document.getElementById("resultofdisrad").innerHTML = "The radius is "+rad;
+        temp2 += "Negative Number Square Root is not possible "
+        ans2.innerHTML = temp2;
+        temp3 += "\\[\\sqrt{ \\frac{ ((" + l + "^{2}) + (" + m + "^{2}) + (" + n + "^{2}))}{8}} \\]"
+        temp3 += "\\[\\sqrt{ \\frac{ (" + l**2 + " + " + m**2 + " + " + n**2 + ")}{8}} \\]"
+        temp3 += "\\[\\sqrt{ \\frac{ (" + (l**2 + m**2 + n**2) + ")}{8}} \\]"
+        temp3 += "\\[\\sqrt{ " + ((l**2 + m**2 + n**2)/8) + "} \\]"
+        temp3 += "\\[Radius \\space of \\space Disphenoid \\space is \\]"
+        temp3 += "\\[ " + rad.toFixed(3) + " \\]"
+        ans3.innerHTML = temp3;
+        renderMathInElement(ans3);
     }
+}
+else{
+    temp2 += "\\[Please \\space enter \\space side  \\]";
+    temp3 += "";
+    ans2.innerHTML = temp2;
+    ans3.innerHTML = temp3;
+    renderMathInElement(ans2);
+    renderMathInElement(ans3);
+}
 }
 function betafind(){
     let num1 = parseInt(document.getElementById("betain1").value)
