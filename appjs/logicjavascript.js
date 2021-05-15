@@ -9981,6 +9981,16 @@ function eulerTotient(n) {
 
 //Next Prime Function
 
+function polymaxfind(){
+    let n = parseInt(document.getElementById("polymax").value)
+    if (n < 4)
+        document.getElementById("polymaxans").innerHTML = "No Polygon can be escribed for sides less than 4"
+    if(n%2===0)
+        document.getElementById("polymaxans").innerHTML = n/2
+    else 
+        document.getElementById("polymaxans").innerHTML =  "No Polygon can be escribed"  
+}
+
 function recifind(){
     let A = parseInt(document.getElementById("aofeqn1").value)
     let B = parseInt(document.getElementById("bofeqn1").value)
