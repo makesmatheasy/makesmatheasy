@@ -12113,7 +12113,7 @@ function computeprobability() {
     let result = document.getElementById('probability-result');
     let temp = "";
     if((isNaN(favour)) || (isNaN(nettotal)) ){
-        result.innerHTML = "Please enter valid input";
+        result.innerHTML = "\\[Please \\space enter \\space valid \\space input \\]";
     }
     else{
     if (favour < 0 || nettotal < 0) {
