@@ -3705,10 +3705,17 @@ function disttwopntsolve(){
     var print1 = "";
     if(isNaN(x1) || isNaN(y1) || isNaN(z1) || isNaN(x2) || isNaN(y2) || isNaN(z2)){
         print = "\\[Please \\space enter \\space all \\space fields \\]";
+        print1 = "";
     }else{
         var res = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2) + Math.pow(z2-z1,2) );
         print += "\\[Distance \\space between \\space two \\space points = \\space \\sqrt{(x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 } \\]";
-    print1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = " + res + "\\]";
+        print += "\\[= \\space \\sqrt{((" + x2 + ")-(" + x1 + "))^2 + ((" + y2 + ")-(" + y1 + "))^2 + ((" + z2 + ")-(" + z1 + "))^2}\\]";
+        print += "\\[= \\space \\sqrt{(" + (x2-x1) + ")^2 + (" + (y2-y1) + ")^2 + ("+ (z2-z1) +")^2}\\]";
+        print += "\\[= \\space \\sqrt{" + (x2-x1)**2 + "+" + (y2-y1)**2 + "+" + (z2-z1)**2 + "}\\]";
+        print += "\\[= \\space \\sqrt{" + ((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2) + "}\\]";
+        print += "\\[= \\space " + ((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2)**0.5 + "\\]";
+        
+        print1 += "\\[Distance \\space between \\space A(" + x1 + "," + y1 + "," + z1 + ") \\space and \\space B(" + x2 + "," + y2 + "," + z2 + ") = " + res + "\\]";
     }
 
     
