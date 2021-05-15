@@ -2480,6 +2480,12 @@ var x1, x2, y1, y2;
     y2=parseFloat(document.getElementById('yTwo').value);
     var explain = document.getElementById("dis_formula");
     var temp = "";
+    if(isNaN(x1) || isNaN(x2) || isNaN(y1) || isNaN(y2)){
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        explain.innerHTML=temp;
+        renderMathInElement(explain);
+        document.getElementById('outPut').innerHTML= "";
+    }else{
     temp += "\\[Distance \\space between \\space two \\space points \\space is  \\] ";
     temp += "\\[\\sqrt{ (x1-x2)^2 + (y1-y2)^2 } \\space \\]";
     temp +=  "\\[\\sqrt{ (( " + x1 + ") - ( " + x2 + "))^{2} + (("  + y1 + ") - (" + y2 + "))^{2}} \\]";
@@ -2490,7 +2496,7 @@ var x1, x2, y1, y2;
     renderMathInElement(explain);
    var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) ).toFixed(2);
     document.getElementById('outPut').innerHTML= 'The distance between (' + x1 + ',' + y1 + ') and ('+ x2 + ',' + y2 + ') is '+ distance;
-
+    }
     
 }
 
@@ -2503,6 +2509,12 @@ function midpointsolve()
     Y2=parseFloat(document.getElementById('YTwo').value);
     var explain_mid = document.getElementById("mid_formula");
     var temp = "";
+    if(isNaN(X1) || isNaN(X2) || isNaN(Y1) || isNaN(Y2)){
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        explain_mid.innerHTML=temp;
+        renderMathInElement(explain_mid);
+        document.getElementById('mid_output').innerHTML= "";
+    }else{
     var midpoint1 = (X1 + X2)/2;
     var midpoint2= (Y1 + Y2)/2;
     if(X2<0 && Y2>0){
@@ -2542,6 +2554,7 @@ function midpointsolve()
     document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     }
 }
+}
 function interpointsolve() {
     var a1=parseFloat(document.getElementById('aone').value);
     var b1=parseFloat(document.getElementById('bone').value);
@@ -2549,6 +2562,19 @@ function interpointsolve() {
     var a2=parseFloat(document.getElementById('atwo').value);
     var b2=parseFloat(document.getElementById('btwo').value);
     var c2=parseFloat(document.getElementById('ctwo').value);
+
+    if(isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(a2) || isNaN(b2) || isNaN(c2)){
+        document.getElementById("formula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("formula1").innerHTML = "";
+        document.getElementById("formula2").innerHTML = "";
+        document.getElementById("formula3").innerHTML = "";
+        document.getElementById('inter_output').innerHTML= "";
+        renderMathInElement(document.getElementById("formula"));
+        renderMathInElement(document.getElementById("formula1"));
+        renderMathInElement(document.getElementById("formula2"));
+        renderMathInElement(document.getElementById("formula3"));
+        renderMathInElement(document.getElementById("inter_output"));
+    }else{
     var point1 = ((b1*c2 - b2*c1)/(a1*b2 - a2*b1)).toFixed(1);
     var point2 = ((a2*c1 - a1*c2)/(a1*b2 - a2*b1)).toFixed(1);
     document.getElementById("formula").innerHTML = "\\[Intersection \\space point \\space\\]"
@@ -2561,6 +2587,7 @@ function interpointsolve() {
     renderMathInElement(document.getElementById("formula2"));
     renderMathInElement(document.getElementById("formula3"));
     renderMathInElement(document.getElementById("inter_output"));
+    }
 }
 
 function anglesolve() {
@@ -2568,6 +2595,17 @@ function anglesolve() {
     var b1=parseFloat(document.getElementById('b1st').value);
     var a2=parseFloat(document.getElementById('a2nd').value);
     var b2=parseFloat(document.getElementById('b2nd').value);
+
+    if(isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)){
+        document.getElementById("angleformula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("angleformula1").innerHTML = "";
+        document.getElementById("angleformula2").innerHTML = "";
+        document.getElementById('angle_output').innerHTML= "";
+        renderMathInElement(document.getElementById("angleformula"));
+        renderMathInElement(document.getElementById("angleformula1"));
+        renderMathInElement(document.getElementById("angleformula2"));
+        renderMathInElement(document.getElementById("angle_output"));
+    }else{
     var M1=(-a1)/b1;
     var M2=(-a2)/b2;
     var angle = Math.atan((M2-M1)/(1+M1*M2));
@@ -2579,7 +2617,7 @@ function anglesolve() {
     renderMathInElement(document.getElementById("angleformula1"));
     renderMathInElement(document.getElementById("angleformula2"));
     renderMathInElement(document.getElementById("angle_output"));
-    
+    }
 }
 
 function parabolafind(){
