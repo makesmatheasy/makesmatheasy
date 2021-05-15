@@ -1073,11 +1073,25 @@ function betafind(){
 }
 
 function heptafind(){
-    let side = parseInt(document.getElementById("inputsideheptadeca").value)
-    let peri = 17*side
-    let ar = 22.735*side*side
-    document.getElementById("resultofareaheptadeca1").innerHTML = "The area is "+ar
-    document.getElementById("resultofperimeterheptadeca").innerHTML = "The perimeter is "+peri
+    let side = parseInt(document.getElementById("inputsideheptadeca").value);
+    let peri = 17*side;
+    let ar = 22.735*side*side;
+    let perimeter = "";
+    let area = "";
+    let p = document.getElementById("resultofperimeterheptadeca");
+    let a = document.getElementById("resultofareaheptadeca1");
+    perimeter += "\\[Perimeter \\space of \\space Heptadecagon = \\]";
+    perimeter += "\\[17\\times  side \\]"
+    perimeter += "\\[17\\times" + side + " \\]";
+    perimeter += "\\[ =" + peri + "\\]"
+    area +="\\[Area \\space of \\space Heptadecagon =\\]";
+    area +="\\[22.735 \\times side \\times side\\]";
+    area +="\\[22.735 \\times" + side + "\\times " + side + "\\]";
+    area +="\\[ = " + ar + "\\]";
+    p.innerHTML = perimeter;
+    a.innerHTML = area;
+    renderMathInElement(p);
+    renderMathInElement(a);
 }
 
 function exterior(){
