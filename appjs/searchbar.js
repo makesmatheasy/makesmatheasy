@@ -1340,7 +1340,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
 
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Parabola Calculator"
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Sieve of Eratosthenes"
 
                     ];
 
@@ -1504,6 +1504,12 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "CONTOUR INTEGRATION") {
         $("#ci").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES"){
+        document.getElementById('sieve').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES") {
+        $("#sieve").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULATOR"){
         document.getElementById('binomialcoeff').click(); 
     }
@@ -1569,6 +1575,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "ELLIPSE") {
         $("#ellipsecollapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES"){
+        document.getElementById('sieve').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES") {
+        $("#sieve").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR"){
         document.getElementById('beta').click(); 

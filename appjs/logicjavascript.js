@@ -2620,24 +2620,6 @@ function anglesolve() {
     }
 }
 
-function parabolafind(){
-    let a = parseInt(document.getElementById('parain').value)
-    document.getElementById('directrixeqn').innerHTML = "The eqn of directrix is x-" +a+"=0"
-    document.getElementById('latus').innerHTML = "The length of latus rectum is "+4*a
-    document.getElementById('ecc').innerHTML = "The eccentricity of parabola is always '1'"
-}
-
-
-function ellipsefind(){
-    let a = parseInt(document.getElementById('ellipsein').value)
-    let b = parseInt(document.getElementById('ellipsein1').value)
-    let e = Math.sqrt(1-((a*a)/(b*b)))
-    let lr = (2*b*b)/(4*a)
-    document.getElementById('directrixeqn1').innerHTML = "The eqn of directrix is x-" +(a/e)+"=0"
-    document.getElementById('latus1').innerHTML = "The length of latus rectum is "+lr
-    document.getElementById('ecc1').innerHTML = "The eccentricity of ellipse is " + e
-}
-
 function dispointsolve()
 {
     var a,b,c;
@@ -2990,6 +2972,22 @@ function CrossProduct(A)
     return (X1 * Y2 - Y1 * X2);
 }
 
+function sievefind(){
+    let n = parseInt(document.getElementById('sievein').value)
+    prime = Array.from({length: n+1}, (_, i) => true); 
+    for (p = 2; p * p <= n; p++){
+        if (prime[p] == true)
+        {
+            for (i = p * p; i <= n; i += p)
+                prime[i] = false;
+        }
+    }
+    for (i = 2; i <= n; i++)
+    {
+        if (prime[i] == true)
+            document.getElementById("sieveans").innerHTML = " " +i+ " "
+    }
+}
 
 function excentersolve(){
     var x1,y1,x2,y2,x3,y3,a,b,c;

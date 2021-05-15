@@ -186,9 +186,8 @@ function openit(id) {
         "#matrixcollapse",
         "#pows",
         "#beta",
-
         "#imprtopr",
-
+        "#sieve",
         "#matrixprops",
         "#cramer",
         "#fractions",
