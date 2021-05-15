@@ -4376,6 +4376,25 @@ function volf(){
     }
 }
 
+function centv(){
+    var h2 = parseInt(document.getElementById("theh2").value);
+    var ans = document.getElementById("volf1");
+    var temp = "";
+    var ans1 = (2/3)*h2;
+    if(!isNaN(h2)){
+    temp += "\\[\\frac{2}{3} \\times " + h2 + " \\]";
+    temp += "\\[Centroid \\space of \\space Paraboloid \\space is \\space " + ans1 + "\\]";
+    ans.innerHTML = temp;
+    renderMathInElement(ans);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space input \\]";
+    ans.innerHTML = temp;
+    renderMathInElement(ans);
+    }
+}
+
+
 function solveparallelogramcal(){
     var base = document.getElementById("inputbasea").value;
     var side = document.getElementById("inputsidebpar").value;
