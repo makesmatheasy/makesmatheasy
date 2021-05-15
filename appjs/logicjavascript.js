@@ -9865,6 +9865,33 @@ function Variance() {
 
     renderMathInElement(document.getElementById("Meanresult"));
 }
+
+function minsquarefind(){
+    let n = parseInt(document.getElementById("minsquare").value)
+    let count = 0;
+    let ans = 1;
+    while (n % 2 == 0)
+    {
+        count++;
+        n /= 2;
+    }
+    if (count % 2)
+        ans *= 2;
+ 
+    for (let i = 3; i <= Math.sqrt(n); i += 2){
+        count = 0;
+        while (n % i == 0){
+            count++;
+            n /= i;
+        }
+        if (count % 2)
+        ans *= i;
+    }
+    if (n > 2)
+        ans *= n;
+    document.getElementById("minsquareans").innerHTML = ans
+}
+
 function vtp(){
     let vvx1 = parseInt(document.getElementById("vvx1").value)
     let vvy1 = parseInt(document.getElementById("vvy1").value)
