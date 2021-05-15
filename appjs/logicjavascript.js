@@ -2628,10 +2628,17 @@ function dispointsolve()
     c=parseFloat(document.getElementById('c').value);
     x1=parseFloat(document.getElementById('point_one').value);
     y1=parseFloat(document.getElementById('point_two').value);
-    var explain = document.getElementById("dis_point");
-    explain.innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line  =\\space  \\frac{Ax1 + By1 + C}{\\sqrt{A^2+B^2}} \\] ";
-    renderMathInElement(document.getElementById("dis_point"));
 
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(x1) || isNaN(y1)){
+        document.getElementById("dis_point").innerHTML = "\\[ Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("dis_point1").innerHTML = ""; 
+        document.getElementById("dis_point2").innerHTML = "";
+        document.getElementById('dis_op').innerHTML= "";
+        renderMathInElement(document.getElementById("dis_point")); 
+        renderMathInElement(document.getElementById("dis_point1")); 
+        renderMathInElement(document.getElementById("dis_point2")); 
+        renderMathInElement(document.getElementById("dis_op")); 
+    }else{
     var dis = (Math.abs(a*x1 + b*y1 +c))/(Math.sqrt(a*a + b*b )).toFixed(2);
     document.getElementById("dis_point").innerHTML = "\\[Distance \\space between \\space point \\space and \\space a \\space line \\space  = \\space  \\frac{A \\times x1 + B \\times y1 + C}{\\sqrt{A^2+B^2}} \\space\\]";  
     document.getElementById("dis_point1").innerHTML = "\\[\\frac{"+a+"\\times "+x1+" \\space + \\space "+b+" \\times "+y1+" \\space + \\space "+c+"}{\\sqrt{"+a+"^2 \\space + \\space "+b+"^2}} \\space\\]"; 
@@ -2641,6 +2648,7 @@ function dispointsolve()
     renderMathInElement(document.getElementById("dis_point1")); 
     renderMathInElement(document.getElementById("dis_point2")); 
     renderMathInElement(document.getElementById("dis_op")); 
+    }
 }
 
 function plpSolve() {
@@ -2693,6 +2701,8 @@ function pppdSolve() {
     if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
         document.getElementById('pppdcq1output').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
         renderMathInElement(document.getElementById("pppdcq1output"));
+        document.getElementById('pppdcq1explane').innerHTML = "";
+        renderMathInElement(document.getElementById("pppdcq1explane"));
     } else{
         document.getElementById('pppdcq1explane').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ "\\space - \\space "+ d+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
         renderMathInElement(document.getElementById("pppdcq1explane"));
@@ -2771,6 +2781,13 @@ function perpendicularsolve(){
     y4=parseFloat(document.getElementById('yfourper').value);
     var explain = document.getElementById("perline1");
     var explain1 = document.getElementById("perline2");
+
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)){
+        explain.innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        explain1.innerHTML = "";
+        renderMathInElement(explain);
+        renderMathInElement(explain1);
+    }else{
     var m1= (y2-y1)/(x2-x1);
     var m2 = (y4-y3)/(x4-x3);
     if(m1*m2==-1){
@@ -2781,6 +2798,7 @@ function perpendicularsolve(){
         explain1.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Perpendicular" + "\\] ";
         renderMathInElement(document.getElementById("perline2"));
     }
+}
 }
 
 function solvesection()
@@ -3043,6 +3061,11 @@ function collinearsolve() {
     var y2=parseFloat(document.getElementById('b2').value);
     var x3=parseFloat(document.getElementById('a3').value);
     var y3=parseFloat(document.getElementById('b3').value);
+
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)){
+        document.getElementById('collop1').innerHTML = "\\[Please \\space enter \\space all \\space fields\\]";
+        document.getElementById('collop2').innerHTML = ""; 
+    }else{
     var mA= (y2-y1)/(x2-x1);  
     var mB = (y3-y2)/(x3-x2);  
     if(mA==mB){
@@ -3052,6 +3075,7 @@ function collinearsolve() {
         document.getElementById('collop1').innerHTML = "\\[\\frac{y2 - y1}{x2 - x1} \\space != \\space \\frac{y3 - y2}{x3 - x2} \\space => \\space \\frac{"+y2+" - "+y1+"}{"+x2+" - "+x1+"} \\space != \\space \\frac{"+y3+" - "+y2+"}{"+x3+" - "+x2+"} \\space => \\space "+mA.toFixed(3)+" \\space != \\space "+mB.toFixed(3)+"\\]"; 
         document.getElementById('collop2').innerHTML = "\\[Hence, \\space Points \\space are \\space non-collinear" +"\\] ";
     }  
+    }
     renderMathInElement(document.getElementById("collop1"));   
     renderMathInElement(document.getElementById("collop2"));   
 }
@@ -3871,15 +3895,19 @@ function centersolve(){
      e = b/(a*2);
      f = c/(a*2);
 
+     if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("centere").innerHTML ="\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("centerr").innerHTML ="";
+     }else{
      document.getElementById("centere").innerHTML = "\\[Center \\space Of \\space circle \\space -> \\newline";
      document.getElementById("centere").innerHTML +=" g\\space = \\frac {"+ b + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ e +"\\newline"; 
      document.getElementById("centere").innerHTML +=" h\\space = \\frac {"+ c + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ f +"\\newline \\] ";
 
+    document.getElementById("centerr").innerHTML = "\\[Center \\space Of \\space circle \\space = ( \\space -g \\space -h \\space )  \\newline";
+    document.getElementById("centerr").innerHTML += " = \\space ( \\space " + -e +" \\space , \\space "+ -f + " \\space ) \\space \\newline \\] ";
+     }
 
     renderMathInElement(document.getElementById("centere"));
-    document.getElementById("centerr").innerHTML = "\\[Center \\space Of \\space circle \\space = ( \\space -g \\space -h \\space )  \\newline";
-    document.getElementById("centerr").innerHTML += " = \\space ( \\space " + -e +" \\space , \\space "+ -f + " \\space ) \\space \\newline \\] "
-
     renderMathInElement(document.getElementById("centerr"));
 
 }
