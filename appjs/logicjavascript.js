@@ -9747,6 +9747,12 @@ function combinationcal(nval, rval) {
     }
 }
 
+function spfind(){
+    let S = parseInt(document.getElementById("sgiven").value)
+    let P = parseInt(document.getElementById("pgiven").value)
+    document.getElementById("spans").innerHTML = "The eqn is x^2"+(-S)+"x"+P+"=0"
+}
+
 //Mean start
 function Means() {
     var s = 0;
