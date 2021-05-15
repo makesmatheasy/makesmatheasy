@@ -9636,6 +9636,17 @@ function combinationcal(nval, rval) {
     }
 }
 
+function rootsunityfind(){
+    let n = parseInt(document.getElementById("rootsunityin").value)
+    var theta = (3.14*2/n);
+    for(let k = 0; k < n; k++)
+    {
+        var real = Math.cos(k*theta);
+        var img = Math.sin(k*theta);
+        document.getElementById("rootsunityans").innerHTML = real.toFixed(6)+"+"+img.toFixed(6)+"<br>"
+    }    
+}
+
 //Mean start
 function Means() {
     var s = 0;

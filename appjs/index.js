@@ -222,6 +222,7 @@ function openit(id) {
         "#curconcal",
         "#factorial",
         "#setop",
+        "#rootsunity",
         "#trans",
         "#hp",
         "#ppmfs",

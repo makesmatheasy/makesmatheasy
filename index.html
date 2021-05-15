@@ -3421,6 +3421,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="rootsunitybtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Roots of Unity calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Roots of Unity calculator','#rootsunity','c','rootsunityfav')"><img
+                                     id="rootsunityfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <!--End of Complex Calculations Section -->
@@ -7262,6 +7278,15 @@
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="compresult"></p>
             </div>
+        </div>
+        <div class="collapse" id="rootsunity">
+            <h2 style="text-align: center;">Roots of Unity Calculator</h2>
+            <br><br>
+            <input type="text" id="rootsunityin" placeholder="Enter no. of roots of unity" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="rootsunityfind()">Find</button>
+            <br>
+            <h4 id="rootsunityans"></h4>
         </div>
         <div class="collapse" id="vector">
             <h2 style="text-align: center;">Vector Calculus Theorems</h2>
