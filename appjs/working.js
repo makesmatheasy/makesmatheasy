@@ -149,11 +149,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#parabolacalcbtn").click(function () {
-        openit("#parabolacalc");
-        closenav();
-        clearall();
-    });
     $("#bpmf").click(function () {
         openit("#bpmfs");
         closenav();
@@ -191,11 +186,9 @@ $(document).ready(function () {
     });
     $("#sosqn").click(function () {
         openit("#sosqsn");
-
         closenav();
         clearall();
     });
-
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
@@ -372,6 +365,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#qrtlbtn").click(function () {
+        openit("#qrtl");
+        closenav();
+        clearall();
+
+    });
 
     $("#dipbtn").click(function () {
         openit("#dip");
@@ -383,7 +382,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#rootsunitybtn").click(function () {
+        openit("#rootsunity");
+        closenav();
+        clearall();
+    })
     $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
@@ -1066,7 +1069,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#sievebtn").click(function () {
+        openit("#sieve");
+        closenav();
+        clearall();
+    });
     $("#meanbtn").click(function () {
         openit("#mean");
         closenav();
