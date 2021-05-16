@@ -1747,6 +1747,22 @@ function midcal()
     renderMathInElement(document.getElementById("mians"));
 }
 
+function ainvcal()
+{
+    var num =document.getElementById("aians1").value;
+    ans="";
+    if(num =="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num=parseFloat(num);
+        ans = -1 * num;
+    }
+    document.getElementById("aians").innerHTML="Answer -> &nbsp;"+ans;
+}
+
 function hypergeos2cal()
 {
     var num1=document.getElementById("hypergeos12").value;
