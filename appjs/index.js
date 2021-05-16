@@ -243,6 +243,7 @@ function openit(id) {
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",
+        "#confi-inter",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
