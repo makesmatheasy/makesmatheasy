@@ -11329,6 +11329,42 @@ function zvalue() {
     }
 }
 
+//confidence interval
+function confivalue() {
+    let n = document.getElementById('nconfiinput').value
+    let x = document.getElementById('xconfiinput').value
+    let sd = document.getElementById('sdconfiinput').value
+    let confi = document.getElementById('clinput').value;
+    let zvalue;
+    if (confi == 0.90) {
+        zvalue = 1.645;
+    } else if (confi == 0.95) {
+        zvalue = 1.96; 
+    } else if (confi == 0.99) {
+        zvalue = 2.576;
+    }
+    else if (confi == 0.70) {
+        zvalue = 1.036;
+    }
+    else if (confi == 0.75) {
+        zvalue = 1.150;
+    }
+    else if (confi == 0.80) {
+        zvalue = 1.282;
+    }
+    else if (confi == 0.85) {
+        zvalue = 1.440;
+    }
+    else if (confi == 0.995) {
+        zvalue = 2.807;
+    }
+    let ci=(zvalue*sd)/Math.sqrt(n);
+    if (n!="" && x!="" && sd!="") {
+        document.getElementById('civalue').innerHTML = "Confidence Interval = " + x + " ± " + ci.toFixed(3)
+    } 
+    
+}
+
 function covcal()
 {
     var num1=document.getElementById("setx").value;

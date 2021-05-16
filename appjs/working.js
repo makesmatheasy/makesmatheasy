@@ -512,6 +512,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#confi-inter-btn").click(function () {
+        openit("#confi-inter");
+        closenav();
+        clearall();
+    });
+
     $("#skew").click(function () {
         openit("#skews");
         closenav();
