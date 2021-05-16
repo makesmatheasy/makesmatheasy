@@ -7363,7 +7363,7 @@
             </p>
             <p>\[\int_C F\,dr = \iint_S curlF\,dS\]</p>
             <div class="d-flex justify-content-center">
-                <img style=""
+                <img 
                  src="https://tutorial.math.lamar.edu/classes/calcIII/StokesTheorem_Files/image001.png"
                  alt="">
             </div>
@@ -7376,7 +7376,7 @@
             </p>
             <p>\[\int_C {P\,dx + Q\,dy} = \iint_S ({\frac {∂Q}{∂x}-\frac{∂P}{∂y}})\,dA \]</p>
             <div class="d-flex justify-content-center">
-                <img style=""
+                <img 
                  src="https://tutorial.math.lamar.edu/classes/calciii/GreensTheorem_Files/image001.png"
                  alt="">
             </div>
@@ -12991,44 +12991,56 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>
+                        <div onclick="$('#polyhedra').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">
+                            Polyhedras
+                        </div>
+                        <div class="collapse" id="polyhedra" style="margin: 0.9375rem;">
+                            <table>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#octahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Octahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#tetrahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Tetrahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#pentahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Pentahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#dodecahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Dodecahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#rhododecahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Rhombic Dodecahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#icosahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Icosahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#tetrahexahedron"
+                                    style="text-decoration:none;"
+                                    href="#">Tetrahexahedron</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#wedge"
-                           style="text-decoration:none;"
-                           href="#">Wedge</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#octahedron"
-                           style="text-decoration:none;"
-                           href="#">Octahedron</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#tetrahedron"
-                           style="text-decoration:none;"
-                           href="#">Tetrahedron</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#pentahedron"
-                           style="text-decoration:none;"
-                           href="#">Pentahedron</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#dodecahedron"
-                           style="text-decoration:none;"
-                           href="#">Dodecahedron</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#rhododecahedron"
-                           style="text-decoration:none;"
-                           href="#">Rhombic Dodecahedron</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#icosahedron"
-                           style="text-decoration:none;"
-                           href="#">Icosahedron</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#tetrahexahedron"
-                           style="text-decoration:none;"
-                           href="#">Tetrahexahedron</a></td>
+                        style="text-decoration:none;"
+                        href="#">Wedge</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#disphenoid"
@@ -13044,6 +13056,11 @@
                     <td><a data-toggle="modal" data-target="#hyperboloid"
                            style="text-decoration:none;"
                            href="#">Hyperboloid</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#reutriangle"
+                           style="text-decoration:none;"
+                           href="#">Reuleaux Triangle</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#ndimsphere"
@@ -23954,6 +23971,60 @@ N is the population size.
                                 <p class="stopwrap" id="basprcap1"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="basprcap2"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="reutriangle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Reuleaux Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Arc Length (l)</h5>
+                                    <p class="text-center">\[l = \frac{a \times \pi}{3}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P = \pi \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{(\pi - \sqrt{3} ) a^2}{2} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/reultriangle.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="reulside" class = "form__field" oninput="reultriangle()" 
+                                placeholder="Enter  side length (a)">
+                                <br><br>
+                                <p class="stopwrap" id="reularclen"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="reulperi"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="reularea"
                                    style="font-family:mathfont;"></p><br>
                         </div>
                         <!-- ------HERE------ -->
