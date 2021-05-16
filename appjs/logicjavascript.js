@@ -2094,8 +2094,29 @@ function parapipe(){
     }
 }
 
+function Rhombohedron(){
+    var a = parseInt(document.getElementById("rhomhededgea").value);
+    var ang = document.getElementById("rhomhedangle").value;
+    var a2 = 180 - ang;
+    var a1 = ang * math.pi/180;
+    var vol = a**3 * (1 - math.cos(a1)) * math.sqrt(1 + 2 * math.cos(a1));
+    var area = 6 * a**2 * math.sin(a1);
 
+    if (a != "" && ang!="") {
+        document.getElementById("rhomhedsecondang").innerHTML = "\\[Second \\space Angle \\space (β) \\space of \\space Rhombohedron \\space \\newline 180 \\degree - "+ang+"= " + a2.toFixed(3) + "\\]";
+        document.getElementById("rhomhedvol").innerHTML = "\\[Volume \\space (V) \\space of \\space Rhombohedron \\space \\newline "+a+"^3 \\times (1 - \cos{("+a1.toFixed(2)+")}) \\times \\sqrt{ 1 + 2 \cos{("+a1.toFixed(2)+")}} \\newline \\space = " + vol.toFixed(3) + "\\]";
+        document.getElementById("rhomhedsurarea").innerHTML = "\\[Area \\space (A) \\space of \\space Reuleaux \\space Triangle \\space \\newline 6 \\times "+a+"^2 \\times  \\sin{("+a1.toFixed(2)+")} \\newline \\space= " + area.toFixed(3) + "\\]"
 
+        renderMathInElement(document.getElementById("rhomhedsecondang"));
+        renderMathInElement(document.getElementById("rhomhedvol"));
+        renderMathInElement(document.getElementById("rhomhedsurarea"));
+
+    } else {
+        document.getElementById("rhomhedsecondang").innerHTML = "";
+        document.getElementById("rhomhedvol").innerHTML = "";
+        document.getElementById("rhomhedsurarea").innerHTML = "";
+    }
+}
 
 function cramer(){
     var a=parseFloat(document.getElementById('cab').value);
