@@ -2647,6 +2647,7 @@ function anglesolve() {
     renderMathInElement(document.getElementById("angle_output"));
 
 }
+}
 
 function dispointsolve()
 {
@@ -9943,7 +9944,8 @@ function rootsunityfind(){
         var real = Math.cos(k*theta);
         var img = Math.sin(k*theta);
         document.getElementById("rootsunityans").innerHTML = real.toFixed(6)+"+"+img.toFixed(6)+"<br>"
-    }    
+    }   
+} 
 
 function spfind(){
     let S = parseInt(document.getElementById("sgiven").value)
