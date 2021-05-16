@@ -12524,6 +12524,28 @@ function ssscal()
     document.getElementById("sstans").innerHTML=ans;
 }
 
+function etc1find(){
+    let n = parseInt(document.getElementById("etc1").value)
+    let phi = new Array(n + 1);
+        for (let i = 1; i <= n; i++)
+        phi[i] = i;
+        for (let p = 2; p <= n; p++)
+        {
+          if (phi[p] == p)
+          {
+              phi[p] = p - 1;
+              for (let i = 2 * p; i <= n; i += p)
+              {
+                phi[i] = parseInt(phi[i] / p, 10) * (p - 1); 
+              }
+          }
+        }
+
+        for (let i = 1; i <= n; i++)
+            document.getElementById("etc1ans").innerHTML = ("Totient of " + i +" is " + phi[i] + "</br>");
+}
+
+
 function clockcal()
 {
     a=document.getElementById("hclock").value;  
@@ -13166,10 +13188,4 @@ function qrtl() {
     let middleQrtl = dataPoints * (2 / 4)
     let upperQrtl = dataPoints * (3 / 4)
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
-}
-
-
-
-
-
-
+}}}

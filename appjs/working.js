@@ -495,6 +495,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#etcbtn").click(function () {
+        openit("#etc");
+        closenav();
+        clearall();
+    })
     //Next Prime Function
     $("#next-pri-btn").click(function () {
         openit("#nextPrime");
