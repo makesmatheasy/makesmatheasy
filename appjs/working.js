@@ -815,6 +815,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#etcbtn").click(function () {
+        openit("#etc");
+        closenav();
+        clearall();
+    });
     $("#powsbtn").click(function () {
         openit("#pows");
         closenav();
