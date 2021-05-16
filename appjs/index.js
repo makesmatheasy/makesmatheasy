@@ -143,7 +143,6 @@ function openit(id) {
         "#theo",
         "#impfixs",
         "#etf",
-        "#etc",
         "#equationssolver",
         "#mulsolwithsteps",
         "#secarea",
