@@ -214,6 +214,7 @@ function openit(id) {
         "#unitconcal",
         "#giff",
         "#qrtl",
+        "#decl",
         "#dip",
         "#wandt",
         "#spiconcal",

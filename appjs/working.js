@@ -371,6 +371,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#declbtn").click(function () {
+        openit("#decl");
+        closenav();
+        clearall();
+
+    });
 
     $("#dipbtn").click(function () {
         openit("#dip");
