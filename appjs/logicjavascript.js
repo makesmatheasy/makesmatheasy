@@ -11563,7 +11563,7 @@ function hammingCalc3(){
         }else{
             parity =  parity.split("").reverse().join("");
             var p = parseInt(parity,2).toString();
-            result = "Error exists at &nbsp; &nbsp; " + `${(n-p)+1}` + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + p +"&nbsp;&nbsp; from right <br>";
+            result = "Error exists at &nbsp; &nbsp; " + p + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + `${(n-p)+1}`+"&nbsp;&nbsp; from right <br>";
             result += "Please change the binary value at the position where error exists and then decode again";
         }
     }
