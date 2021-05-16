@@ -213,6 +213,7 @@ function openit(id) {
         "#parallel",
         "#unitconcal",
         "#giff",
+        "#qrtl",
         "#dip",
         "#wandt",
         "#spiconcal",

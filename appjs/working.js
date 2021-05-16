@@ -365,6 +365,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#qrtlbtn").click(function () {
+        openit("#qrtl");
+        closenav();
+        clearall();
+
+    });
 
     $("#dipbtn").click(function () {
         openit("#dip");
