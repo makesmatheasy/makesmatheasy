@@ -14521,6 +14521,34 @@
                 </form>
             </div>
                 <p id="printHPseries"></p>
+                <br>
+            <h4 class="d-flex justify-content-center">Insert n-Harmonic Mean between two numbers</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="nt3" placeholder="Enter the Nterms  (n)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="ft3" placeholder="Enter the first number(a) "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="lt3" placeholder="Enter the second number(b)"
+                       style="border: none; background: transparent;width: 25rem; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=nhp()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <p id="nHPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
+			<br>
 
                 <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term </h2>
                 <div class="form-group d-flex flex-column align-items-center">

@@ -9517,6 +9517,23 @@ function ngp(){
     document.getElementById("nGPseries2").innerHTML = "n-Geometric Mean: " + series.substring(0, series.length - 2)
 }
 
+function nhp(){
+    var n = parseInt(document.getElementById("nt3").value)
+    var a = parseInt(document.getElementById("ft3").value)
+    var b = parseInt(document.getElementById("lt3").value)
+    if(isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b)))
+    {
+        document.getElementById("nHPseries2").innerHTML = "Enter numbers only. Blank inputs are not allowed";
+        return;
+    }
+    var d = ((1/b)-(1/a))/(n+1);
+    for (var i = 1, series = "", num = 0; i <= n; i++) {
+        num = ((1/a) + (i  * d));
+        num1 = (1/num);
+        series += (num1.toString() + ", ");
+    }
+    document.getElementById("nHPseries2").innerHTML = "n-Harmonic Mean: " + series.substring(0, series.length - 2)
+}
 function apsum()
 {   var n = document.getElementById("nterms").value
     var val = document.getElementById("ap").value;
@@ -9943,7 +9960,7 @@ function rootsunityfind(){
         var real = Math.cos(k*theta);
         var img = Math.sin(k*theta);
         document.getElementById("rootsunityans").innerHTML = real.toFixed(6)+"+"+img.toFixed(6)+"<br>"
-    }    
+    }  
 
 function spfind(){
     let S = parseInt(document.getElementById("sgiven").value)
