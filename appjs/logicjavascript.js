@@ -2619,33 +2619,34 @@ function pppdoSolve() {
 
 
 function anglesolve() {
-    var a1=parseFloat(document.getElementById('a1st').value);
-    var b1=parseFloat(document.getElementById('b1st').value);
-    var a2=parseFloat(document.getElementById('a2nd').value);
-    var b2=parseFloat(document.getElementById('b2nd').value);
+    var a1 = parseFloat(document.getElementById('a1st').value);
+    var b1 = parseFloat(document.getElementById('b1st').value);
+    var a2 = parseFloat(document.getElementById('a2nd').value);
+    var b2 = parseFloat(document.getElementById('b2nd').value);
 
-    if(isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)){
+    if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {
         document.getElementById("angleformula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
         document.getElementById("angleformula1").innerHTML = "";
         document.getElementById("angleformula2").innerHTML = "";
-        document.getElementById('angle_output').innerHTML= "";
+        document.getElementById('angle_output').innerHTML = "";
         renderMathInElement(document.getElementById("angleformula"));
         renderMathInElement(document.getElementById("angleformula1"));
         renderMathInElement(document.getElementById("angleformula2"));
         renderMathInElement(document.getElementById("angle_output"));
-    }else{
-    var M1=(-a1)/b1;
-    var M2=(-a2)/b2;
-    var angle = Math.atan((M2-M1)/(1+M1*M2));
-    document.getElementById("angleformula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-"+a1+")}{"+b1+"}  \\space , \\space m2 = \\frac{(-"+a2+")}{"+b2+"}\\] ";
-    document.getElementById("angleformula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
-    document.getElementById("angleformula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{("+M2.toFixed(2)+") - ("+M1.toFixed(2)+")}{1+ ("+M1.toFixed(2)+") \\times ("+M2.toFixed(2)+")}) \\]";
-    document.getElementById('angle_output').innerHTML= "\\[Angle \\space is \\space \\frac{"+angle.toFixed(3)+"}{\\pi} \\space = \\space"+ (angle*180/Math.PI).toFixed(1) + "\\degree\\]";
-    renderMathInElement(document.getElementById("angleformula"));
-    renderMathInElement(document.getElementById("angleformula1"));
-    renderMathInElement(document.getElementById("angleformula2"));
-    renderMathInElement(document.getElementById("angle_output"));
+    } else {
+        var M1 = (-a1) / b1;
+        var M2 = (-a2) / b2;
+        var angle = Math.atan((M2 - M1) / (1 + M1 * M2));
+        document.getElementById("angleformula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-" + a1 + ")}{" + b1 + "}  \\space , \\space m2 = \\frac{(-" + a2 + ")}{" + b2 + "}\\] ";
+        document.getElementById("angleformula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
+        document.getElementById("angleformula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{(" + M2.toFixed(2) + ") - (" + M1.toFixed(2) + ")}{1+ (" + M1.toFixed(2) + ") \\times (" + M2.toFixed(2) + ")}) \\]";
+        document.getElementById('angle_output').innerHTML = "\\[Angle \\space is \\space \\frac{" + angle.toFixed(3) + "}{\\pi} \\space = \\space" + (angle * 180 / Math.PI).toFixed(1) + "\\degree\\]";
+        renderMathInElement(document.getElementById("angleformula"));
+        renderMathInElement(document.getElementById("angleformula1"));
+        renderMathInElement(document.getElementById("angleformula2"));
+        renderMathInElement(document.getElementById("angle_output"));
 
+    }
 }
 
 function dispointsolve()
@@ -9935,22 +9936,22 @@ function combinationcal(nval, rval) {
     }
 }
 
-function rootsunityfind(){
-    let n = parseInt(document.getElementById("rootsunityin").value)
-    var theta = (3.14*2/n);
-    for(let k = 0; k < n; k++)
-    {
-        var real = Math.cos(k*theta);
-        var img = Math.sin(k*theta);
-        document.getElementById("rootsunityans").innerHTML = real.toFixed(6)+"+"+img.toFixed(6)+"<br>"
-    }    
+    function rootsunityfind() {
+        let n = parseInt(document.getElementById("rootsunityin").value)
+        var theta = (3.14 * 2 / n);
+        for (let k = 0; k < n; k++) {
+            var real = Math.cos(k * theta);
+            var img = Math.sin(k * theta);
+            document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "+" + img.toFixed(6) + "<br>"
+        }
 
-function spfind(){
-    let S = parseInt(document.getElementById("sgiven").value)
-    let P = parseInt(document.getElementById("pgiven").value)
-    document.getElementById("spans").innerHTML = "The eqn is x^2"+(-S)+"x"+P+"=0"
+        function spfind() {
+            let S = parseInt(document.getElementById("sgiven").value)
+            let P = parseInt(document.getElementById("pgiven").value)
+            document.getElementById("spans").innerHTML = "The eqn is x^2" + (-S) + "x" + P + "=0"
 
-}
+        }
+    }
 
 //Mean start
 function Means() {
@@ -13168,6 +13169,36 @@ function qrtl() {
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
 }
 
+// decile calculator
+    
+function decl() {
+    let list = document.getElementById('decllist').value
+    list = list.split(' ')
+    let newList = list.map((item) => {
+        return parseInt(item)
+    })
+    newList = newList.sort(function (a, b) {
+        return a - b;
+    })
+    console.log(newList);
+    let listLen
+    if (newList.length % 2 == 0) {
+        listLen = newList.length
+    } else {
+        listLen = newList.length + 1
+    }
+    let dp = parseInt(document.getElementById('decldp').value)
+    let declans = document.getElementById('declans')
+    let resultArr = [0]
+    for (var i = 1; i <= dp; i++) {
+        resultArr[i] = (listLen * i) / 10
+        let value = "D" + i + " = " + newList[resultArr[i]-1]
+        let para = document.createElement("p")
+        let node = document.createTextNode(value)
+        para.appendChild(node)
+        declans.appendChild(para)
+    }
+}
 
 
 
