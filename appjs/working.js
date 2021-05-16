@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -25,11 +25,6 @@ $("#clock").click(function(){
 });
 $("#utc").click(function(){
     openit("#utcs");
-    closenav();
-    clearall();
-});
-$("#manhat").click(function(){
-    openit("#manhats");
     closenav();
     clearall();
 });
@@ -191,11 +186,9 @@ $(document).ready(function () {
     });
     $("#sosqn").click(function () {
         openit("#sosqsn");
-
         closenav();
         clearall();
     });
-
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
@@ -239,6 +232,11 @@ $(document).ready(function () {
     $("#imprtoprbtn").click(function () {
         openit("#imprtopr");
 
+        closenav();
+        clearall();
+    });
+    $("#vpd").click(function () {
+        openit("#vpds");
         closenav();
         clearall();
     });
@@ -289,6 +287,11 @@ $(document).ready(function () {
     });
     $("#integrate").click(function () {
         openit("#integralcollapse");
+        closenav();
+        clearall();
+    });
+    $("#hypergeo").click(function () {
+        openit("#hypergeos");
         closenav();
         clearall();
     });
@@ -362,6 +365,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#qrtlbtn").click(function () {
+        openit("#qrtl");
+        closenav();
+        clearall();
+
+    });
 
     $("#dipbtn").click(function () {
         openit("#dip");
@@ -373,7 +382,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#rootsunitybtn").click(function () {
+        openit("#rootsunity");
+        closenav();
+        clearall();
+    })
     $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
@@ -497,6 +510,12 @@ $(document).ready(function () {
     //Sum of divisors calculator
     $("#sum-div-btn").click(function () {
         openit("#sumDiv");
+        closenav();
+        clearall();
+    })
+    //Double Factorial calculator
+    $("#dbl-fact-btn").click(function () {
+        openit("#dblFact");
         closenav();
         clearall();
     })
@@ -880,6 +899,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#hypergeomean").click(function () {
+        openit("#hypergeomeans");
+        closenav();
+        clearall();
+    });
+
     //Function for hamming code
     $("#hamming-code-btn").click(function(){
         openit("#hamming-calc");
@@ -1050,7 +1075,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#sievebtn").click(function () {
+        openit("#sieve");
+        closenav();
+        clearall();
+    });
     $("#meanbtn").click(function () {
         openit("#mean");
         closenav();
@@ -1153,6 +1182,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#squarerootcollapsebtn").click(function(){
+        openit("#squarerootcalc");
+        closenav();
+        clearall();
+    });
+
 
 })
 
