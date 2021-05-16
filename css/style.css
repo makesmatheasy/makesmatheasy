@@ -573,6 +573,15 @@ font-size: 18px;
   object-fit: contain;
 }
 
+#pows h4,
+#pows h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+#pows p,
+#pows li{
+  color: #8a8a8a !important;
+}
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
