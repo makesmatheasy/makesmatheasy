@@ -957,23 +957,32 @@ function squaresRangecal()
 {
     var num1=document.getElementById("sqrange1").value;
     var num2=document.getElementById("sqrange2").value;
+    let work = document.getElementById("sqrt-workn");
+    let print = "<h2>Working Steps </h2> &emsp;";
     var s="";
     if(num1=="" || num2=="")
     {
        s= "Please enter both numbers";
     }
     else{
+        var pr ="";
         s="Perfect squares in the given range: ";
         sqrt1 = Math.trunc(Math.sqrt(num1));
         sqrt2 = Math.trunc(Math.sqrt(num2));
+        print += "STEP1 : Take square root ( only integer part )of the two given inputs<br>";
+        print += "So,square root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + sqrt1 + "&nbsp; and &nbsp; Square root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+sqrt2+"<br>";
+        print += "<br>STEP2 : Print squares of &nbsp;"+ sqrt1 +"&nbsp; to &nbsp;"+ sqrt2 +"&nbsp; that comes under the range of &nbsp;"+ sqrt1+"&nbsp; and &nbsp;"+ sqrt2 +"&nbsp; <br> (including &nbsp;"+ sqrt1 +"&nbsp; and &nbsp;"+ sqrt2 +"&nbsp; both if their squares also are in range)<br><br>";
         for(var i=sqrt1; i<=sqrt2;i++){
             if(i**2>=num1 && i**2<=num2){
                 var ans = i**2;
+                pr +=ans.toString() + "   ";
                 s += ans.toString() + "   ";
             }
         }
+        print += "So, answer = &nbsp;"+pr;
     }
     document.getElementById("squaresRangeans").innerHTML=s;
+    work.innerHTML = print;
 }
 
 function cubesRangecal()
@@ -995,7 +1004,7 @@ function cubesRangecal()
         cbrt2 = Math.trunc(Math.cbrt(num2));
         print += "STEP1 : Take cube root ( only integer part )of the two given inputs<br>";
         print += "So,Cube root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + cbrt1 + "&nbsp; and &nbsp; Cube root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+cbrt2+"<br>";
-        print += "STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both)<br>";
+        print += "<br>STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; <br> (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both if their cubes also are in range)<br><br>";
         for(var i=cbrt1; i<=cbrt2;i++){
             if(i**3>=num1 && i**3<=num2){
                 var ans = i**3;
