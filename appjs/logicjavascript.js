@@ -6912,7 +6912,24 @@ function solvesphere() {
         diaoutput.innerHTML = "";
     }
 }
+	
+function solveSquircle(){
+    var radius = document.getElementById("inputsquirclerad").value;
 
+    var peri = 7.01769794356404 * radius;
+    var d = 2 * radius;
+
+    if (radius != "") {
+        document.getElementById("resultofSquirclep").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Squircle \\space \\newline 7.0177 \\times "+radius+" = " + peri.toFixed(3) + "\\]";
+        document.getElementById("resultofSquircled").innerHTML = "\\[Diameter \\space (d) \\space of \\space Squircle \\space \\newline 2 \\times "+radius+" = " + d.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofSquirclep"));
+        renderMathInElement(document.getElementById("resultofSquircled"));
+    } else {
+        document.getElementById("resultofSquirclep").innerHTML = "";
+        document.getElementById("resultofSquircled").innerHTML = "";
+    }
+}
+	
 function solvehollowsphere() {
     var radius1 = document.getElementById("inputradius1hollowsph").value;
     var radius2 = document.getElementById("inputradius2hollowsph").value;
