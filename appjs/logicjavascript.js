@@ -4029,6 +4029,30 @@ function obliquetri(){
         renderMathInElement(obliop1);
     }
 }
+function medtri(){
+    var a,b,c;
+    a=parseFloat(document.getElementById('inputsidea1').value);
+    b=parseFloat(document.getElementById('inputsideb1').value);
+    c=parseFloat(document.getElementById('inputsidec1').value);
+    var output = document.getElementById("medtri1");
+    var temp = " ";
+    var ans = Math.sqrt((((2)*(c**2)) + ((2)*(b**2)) - (a**2)));
+    var ans1 = Math.sqrt((((2)*(c**2)) + ((2)*(a**2)) - (b**2)));
+    var ans2 = Math.sqrt((((2)*(a**2)) + ((2)*(b**2)) - (c**2)));
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Medians \\space of \\space Triangle \\space is: \\]";
+        temp += "\\[m_a \\space = \\space \\frac{1}{2}\\sqrt{2c^{2}+2b^{2}-a^{2}} \\space = \\space \\frac{1}{2} \\times \\sqrt{ 2(" + c + "^{2}) + 2(" + b + "^{2}) - (" + a + "^{2})} \\space =  \\space \\frac{1}{2} \\times \\sqrt{ " + (2)*(c**2) + " + " + (2)*(b**2) + " - " + a**2 + "} \\space =  \\space \\frac{1}{2} \\times \\sqrt{ " + (((2)*(c**2)) + ((2)*(b**2)) - (a**2)) + "}  \\space =  \\space" + (0.5*ans) + "\\]";
+        temp += "\\[m_b \\space = \\space \\frac{1}{2}\\sqrt{2c^{2}+2a^{2}-b^{2}}  \\space = \\space \\frac{1}{2} \\times \\sqrt{ 2(" + c + "^{2}) + 2(" + a + "^{2}) - (" + b + "^{2})} \\space =  \\space \\frac{1}{2} \\times \\sqrt{ " + (2)*(c**2) + " + " + (2)*(a**2) + " - " + b**2 + "} \\space =  \\space \\frac{1}{2} \\times \\sqrt{ " + (((2)*(c**2)) + ((2)*(a**2)) - (b**2)) + "}  \\space =  \\space" + (0.5*ans1) + "\\]";
+        temp += "\\[m_c \\space = \\space \\frac{1}{2}\\sqrt{2a^{2}+2b^{2}-c^{2}}  \\space = \\space \\frac{1}{2} \\times \\sqrt{ 2(" + a + "^{2}) + 2(" + b + "^{2}) - (" + c + "^{2})} \\space =  \\space \\frac{1}{2} \\times \\sqrt{ " + (2)*(a**2) + " + " + (2)*(b**2) + " - " + c**2 + "} \\space =  \\space \\frac{1}{2} \\times \\sqrt{ " + (((2)*(a**2)) + ((2)*(b**2)) - (c**2)) + "}   \\space =  \\space" + (0.5*ans2) + "\\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
 function vectorquad(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("inp51").value);
