@@ -1063,7 +1063,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#sievebtn").click(function () {
+        openit("#sieve");
+        closenav();
+        clearall();
+    });
     $("#meanbtn").click(function () {
         openit("#mean");
         closenav();

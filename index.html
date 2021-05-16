@@ -1389,6 +1389,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="sievebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sieve of Eratosthenes</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sieve of Eratosthenes','#sieve','c','sieveimgfav')"><img
+                                        id="sieveimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="giffbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Greatest Integer Function and Fractional Part</a>
                         </td>
@@ -1848,8 +1863,7 @@
                     <tr>
                         <td style="border-top: none;" onclick="display_log()">
                             <a id="logValues"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
-                                Calculator</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Logarithm Values','#log_values','c','logimgfav')"><img
@@ -1885,8 +1899,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="bt-collapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Binomial Theorem
-                                Properties
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Binomial Theorem Properties
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -3070,9 +3083,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="bcdbtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/BCD
-                                Code
-                                Converter</a>
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/BCD Code Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -3108,9 +3119,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="dec2421btn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/2421
-                                Code
-                                Converter</a>
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/2421 Code Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -3163,8 +3172,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="onetwocom-calc-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">(R-1)'s and R's Complement
-                                Calculator</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">(R-1)'s and R's Complement Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -3182,7 +3190,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="hamming-code-btn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Code </a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Hamming Code</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -3628,8 +3636,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="wmc"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Weighted Mean
-                                Calculator</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Weighted Mean Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Weighted Mean Calculator','#wmcs','c','wmcfav')"><img
@@ -3974,6 +3981,22 @@
             <div class="row">
                 <p id="resultofvariabledivide" style="font-family:mathfont;;"></p>
             </div>
+        </div>
+        <div class="collapse" id="sieve">
+            <h2 style="text-align:center;">Sieve of Eratosthenes</h2>
+            <br><br>
+            <p>In mathematics, the sieve of Eratosthenes is an ancient algorithm for finding all prime numbers up to any given limit.</p>
+            <p>It does so by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, 
+                with constant difference between them that is equal to that prime.This is the sieve's key distinction from using trial division to sequentially test each candidate number for divisibility by each prime.Once all the multiples of 
+                each discovered prime have been marked as composites, the remaining unmarked numbers are primes.
+            </p>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/SieveofEratosthenes5.jpg" alt="">
+            <br>
+            <input type="text" id="sievein" class="form__field" placeholder="Enter the number upto which prime numbers are to be found out">
+            <br>
+            <button class="btn btn-dark" onclick="sievefind()">Find</button>
+            <br>
+            <h4 id="sieveans"></h4>
         </div>
         <!--        start factors-->
         <div class="collapse" id="factors">
@@ -5241,10 +5264,9 @@
                 </button><br>
                 </p>
             </div><br>
-            <p id="dope" style="display:flex;font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               text-align="right"></p>
-               <h4 style="display:flex;text-align: right; color:white;"  id="dope1"> </h4><br>
+            <p id="dope" style="font-family:mathfont;;width:auto;"
+                class="stopwrap"></p>
+                <h4 style="color:white; text-align: center;" id="dope1"> </h4> 
             <h3>Distance from point to plane calculator</h3><br>
             <div class="coll">
                 <p>
@@ -5280,6 +5302,19 @@
             <button type="submit" onclick="dlp()">Find</button>
 
             <h5 id="dlpans"></h5>
+            <br>
+            <h4>Section Formula</h4>
+            <input type="text" id="corx1" placeholder="Enter x-coordinate of first point" class="form__field">
+            <input type="text" id="cory1" placeholder="Enter y-coordinate of first point" class="form__field">
+            <input type="text" id="corz1" placeholder="Enter z-coordinate of first point" class="form__field">
+            <input type="text" id="corx2" placeholder="Enter x-coordinate of second point" class="form__field">
+            <input type="text" id="cory2" placeholder="Enter y-coordinate of second point" class="form__field">
+            <input type="text" id="corz2" placeholder="Enter z-coordinate of second point" class="form__field">
+            <input type="text" id="rat"placeholder="Enter ratio" class="form__field">
+            <br>
+            <button onclick="sec3dfind()" class="btn btn-dark">Find</button>
+            <br>
+            <h5 id="sec3dans"></h5>
             <br>
             <h3>Distance between two planes calculator</h3><br>
             <div class="coll">
@@ -7109,11 +7144,13 @@
             <br>
             <p id="countscans"></p>
             <br>
-            <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
+            <h2>Find minimum number to be divided to make a number a perfect square</h2>
             <br>
-            <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
+            <input type="text" id="minsquare" class="form__field" placholder="Enter the number">
             <br>
-            <p id="addsubcans"></p>
+            <button type="submit" class="btn btn-dark" onclick="minsquarefind()">Find</button>
+            <br>
+            <p id="minsquareans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8946,6 +8983,11 @@
             </div>
             <p>\[Geometric\space centroid\space = \]</p>
             <p>\[\frac{2}{3}h\]</p>
+            <div style="text-align: center;">
+                <input type="text" name="" id="theh2" placeholder="Enter Height">
+                <button type="submit" onclick="centv()">Find Centroid</button>
+                <h5 id="volf1"></h5>
+            </div>
             <p>A circular or elliptical paraboloid surface may be used as a parabolic reflector. Applications of this property are used in automobile headlights, solar furnaces, radar, and radio relay stations.</p>
         </div>
 
@@ -9767,11 +9809,11 @@
             </ul>
             <p>From these three basic functions, the other functions such as hyperbolic cosecant (cosech), hyperbolic secant(sech) and hyperbolic cotangent (coth) functions are derived.</p>
             <p>\[sinh(x)\space =\space \frac{e^{x}-e^{-x}}{2}\]</p>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-1.png" alt="">
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-1.png" class="img-fluid mx-auto" alt="">
             <p>\[cosh(x)\space =\space \frac{e^{x}+e^{-x}}{2}\]</p>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-2.png" alt="">
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-2.png" class="img-fluid mx-auto" alt="">
             <p>\[tanh(x)\space =\space \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}\]</p>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-3.png" alt="">
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-3.png" class="img-fluid mx-auto" alt="">
             <h4>Properties of Hyperbolic Functions</h4>
             <p>\[sinh(-x)\space =\space -sinh(x)\]</p>
             <p>\[cosh(-x)\space =\space cosh(x)\]</p>
@@ -11398,6 +11440,15 @@
             <button class="btn btn-dark" onclick="recifind()">Find</button>
             <br>
             <h4 id="recians"></h4>
+            <br>
+            <h2 style="text-align:center;">Generate Quadratic Equation having given sum and product of roots</h2>
+            <br>
+            <input type="text" id="sgiven" placeholder="Enter sum of roots">
+            <input type="text" id="pgiven" placeholder="Enter product of roots">
+            <br>
+            <button class="btn btn-dark" onclick="spfind()">Find</button>
+            <br>
+            <h4 id="spans"></h4>
         </div>
 
         <div class="collapse" id="mulsolwithsteps">
@@ -11790,6 +11841,14 @@
             <button type = "button" class="btn btn-dark" onclick = "nodiagnolfind()">FInd</button>
             <br>
             <h4 id="nodiagnolans"></h4>
+            <br>
+            <h4>Polygon with maximum sides that can be inscribed in an N-sided regular polygon</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymaxfind()">FInd</button>
+            <br>
+            <h4 id="polymaxans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -13065,6 +13124,65 @@
                         <th scope="row">\[30\]</th>
                         <td>\[Triacontahedron\]</td>
                     </tr>
+                        <th scope="row">\[31\]</th>
+                        <td>\[Hentriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[32\]</th>
+                        <td>\[Dotriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[33\]</th>
+                        <td>\[Tritriaconthedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[34\]</th>
+                        <td>\[Tetratriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[35\]</th>
+                        <td>\[Pentatriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[36\]</th>
+                        <td>\[Hexatriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[37\]</th>
+                        <td>\[Heptatriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[38\]</th>
+                        <td>\[Octatriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[39\]</th>
+                        <td>\[Enneatriacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[40\]</th>
+                        <td>\[Tetracontahedron\]</td>
+                    </tr
+                    <tr>
+                        <th scope="row">\[50\]</th>
+                        <td>\[Pentacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[60\]</th>
+                        <td>\[Hexacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[70\]</th>
+                        <td>\[Heptacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[80\]</th>
+                        <td>\[Octacontahedron\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[90\]</th>
+                        <td>\[Enneacontahedron\]</td>
+                    </tr>>
                     <tr>
                         <th scope="row">\[100\]</th>
                         <td>\[Hectohedron\]</td>
@@ -13256,6 +13374,65 @@
                     <tr>
                         <th scope="row">\[30\]</th>
                         <td>\[Triacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[31\]</th>
+                        <td>\[Hentriacontagon\]</td>
+                    </tr><tr>
+                        <th scope="row">\[32\]</th>
+                        <td>\[Dotriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[33\]</th>
+                        <td>\[Tritriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[34\]</th>
+                        <td>\[Tetratriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[35\]</th>
+                        <td>\[Pentatriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[36\]</th>
+                        <td>\[Hexatriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[37\]</th>
+                        <td>\[Heptatriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[38\]</th>
+                        <td>\[Octatriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[39\]</th>
+                        <td>\[Enneatriacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[40\]</th>
+                        <td>\[Tetracontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[50\]</th>
+                        <td>\[Pentacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[60\]</th>
+                        <td>\[Hexacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[70\]</th>
+                        <td>\[Heptacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[80\]</th>
+                        <td>\[Octacontagon\]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">\[90\]</th>
+                        <td>\[Enneacontagon\]</td>
                     </tr>
                     <tr>
                         <th scope="row">\[100\]</th>
@@ -14734,7 +14911,7 @@
 </div>
 
 <div class="collapse" id="manhats">
-    <h1 style="font-family:mathfont" >MANHATTAN DISTANCE CALCULATOR </h1>
+    <h1 style=" text-align: center; font-family:mathfont" >MANHATTAN DISTANCE CALCULATOR </h1>
     <p>&nbsp;</p>
   <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">First Point:  <input type="number" name="mdx1" id="mdx1" width="5em" placeholder="Enter value of X1"> 
     <input type="number" name="mdx2" id="mdx2" width="5em" placeholder="Enter value of  Y1">
@@ -15988,6 +16165,36 @@ N is the population size.
                                 <option class="form_field" style="background-color: #232a36;">
                                     26
                                 </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    27
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    28
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    29
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    30
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    31
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    32
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    33
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    34
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    35
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">
+                                    36
+                                </option>
                               </select>
                               <input type=" " id="anyBase-input" value="0"
                                      class="form__field"
@@ -16073,6 +16280,36 @@ N is the population size.
                                     </option>
                                     <option class="form_field" style="background-color: #232a36;">
                                         26
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        27
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        28
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        29
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        30
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        31
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        32
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        33
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        34
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        35
+                                    </option>
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        36
                                     </option>
                               </select>
                           </div>
@@ -16650,6 +16887,41 @@ N is the population size.
                         <label class="form__group" id="crct-result">0</label>
                     </div>
                     </form>
+                    <br>
+                    <br>
+                    <form action="">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <h2>Decode a message</h2>
+                                <h4>Choose Order</h4>
+                                <select id="decd-type1" class="form__field">
+                                    <option class="form_field" style="background-color: #232a36;">
+                                        Right-To-Left
+                                    </option>
+                                </select>
+                                <h4>Choose Parity Type</h4>
+                            <select id="decd-type2" class="form__field">
+                                <option class="form_field" style="background-color: #232a36;">
+                                    Even
+                                </option>
+                            </select>
+                                <input type=" " id="decd-input" value="0"
+                                       class="form__field">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <h5>Decoded Message</h5>
+                                <button type="button" class="btn btn-light" onclick="hammingCalc3()">
+                                    Find
+                                </button>
+                                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </div>
+                            <label class="form__group" id="decd-result">0</label>
+                        </div>
+                        </form>
             </div>
         </div>
   <!-- end of Hamming Code -->
