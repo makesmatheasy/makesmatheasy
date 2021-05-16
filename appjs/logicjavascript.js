@@ -11289,6 +11289,21 @@ function hammingCodeLtoROdd(x){
     return res1;
 }
 
+function commonrootsfind(){
+    let a1 = parseInt(document.getElementById("a1cr").value)
+    let b1 = parseInt(document.getElementById("b1cr").value)
+    let c1 = parseInt(document.getElementById("c1cr").value)
+    let a2 = parseInt(document.getElementById("a2cr").value)
+    let b2 = parseInt(document.getElementById("b2cr").value)
+    let c2 = parseInt(document.getElementById("c2cr").value)
+    if((a1 / a2) == (b1 / b2)&& (b1 / b2) == (c1 / c2)){
+        document.getElementById("commonrootsans").innerHTML = "Common roots exist"
+    }
+    else{
+        document.getElementById("commonrootsans").innerHTML = "No Common roots exist"
+    }
+}
+
 //function for encoding message using hamming code with odd parity from Right to left
 function hammingCodeRtoLOdd(x){
     let n = x.length;
