@@ -12122,20 +12122,26 @@ function computeprobability() {
 
     var nettotal = parseInt(document.getElementById('total').value);
     let result = document.getElementById('probability-result');
+    let temp = "";
     if((isNaN(favour)) || (isNaN(nettotal)) ){
-        result.innerHTML = "Please enter valid input";
+        result.innerHTML = "\\[Please \\space enter \\space valid \\space input \\]";
     }
     else{
     if (favour < 0 || nettotal < 0) {
-        result.innerHTML = "Outcomes can't be negative. Enter positive values only";
+        temp += "\\[Outcomes \\space can't \\space be \\space negative. \\space Enter \\space positive \\space values \\space only \\]";
+        result.innerHTML = temp;
 
     } else if (favour > nettotal) {
-        result.innerHTML = "Number of favourable outcomes can't exceeds number of possible outcomes";
+        temp += "\\[Number \\space of \\space favourable \\space outcomes \\space can't \\space exceeds \\space number \\space of \\space possible \\space outcomes \\]";
+        result.innerHTML = temp;
     } else {
-
-        result.innerHTML = "The probability of the event is : " + (favour / nettotal).toFixed(3);
+        temp += "\\[Empirical \\space Probability \\space = \\space \\frac{Number \\space of \\space favourable \\space outcomes}{Total \\space Number \\space of \\space possible \\space outcomes} \\]";
+        temp += "\\[P(E) \\space = \\space \\frac{n(E)}{n(S)} \\space = \\space \\frac{ " + favour + "}{" + nettotal + "} \\]"
+        temp += "\\[The \\space probability \\space of \\space the \\space event \\space is \\space : \\space " + (favour / nettotal).toFixed(3) + " \\]";
+        result.innerHTML = temp;
     }
 }
+       renderMathInElement(result);
 }
 
 function condprobability(){
