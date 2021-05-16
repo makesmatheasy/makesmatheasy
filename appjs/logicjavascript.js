@@ -10136,6 +10136,7 @@ function combinationcal(nval, rval) {
     }
 }
 
+
     function rootsunityfind() {
         let n = parseInt(document.getElementById("rootsunityin").value)
         var theta = (3.14 * 2 / n);
@@ -10144,6 +10145,7 @@ function combinationcal(nval, rval) {
             var img = Math.sin(k * theta);
             document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "+" + img.toFixed(6) + "<br>"
         }
+
 
         function spfind() {
             let S = parseInt(document.getElementById("sgiven").value)
@@ -13202,10 +13204,13 @@ function mecal()
     var num2=document.getElementById("samsize").value;
     var num3=document.getElementById("proper").value;
     var num4=document.getElementById("popsize").value;
-    ans="";
-    if(num1==""||num2==""||num=="")
+    var output = document.getElementById("mecans");
+    var ans="";
+    if(num1 == "" || num2 == "" || num3 == "")
     {
-        ans="Please fill all the field";
+        ans += "\\[Please \\space fill \\space all \\space the \\space field \\]";
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
     else
     {
@@ -13217,24 +13222,41 @@ function mecal()
         {
             var j=(num1*(Math.sqrt(num3*(1-num3))))/Math.sqrt(num2);
             j=j*100;
-            ans="The margin of error is: "+j;
+            ans += "\\[Margin \\space Of \\space Error \\space = \\space z \\space \\times \\frac{\\sqrt{p \\times (1-p)}}{\\sqrt{n}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times \\frac{\\sqrt{" + num3 + "\\times (1 \\space - ( " + num3 + " ))}}{ \\sqrt{" + num2 + "}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times \\frac{\\sqrt{" + num3 + "\\times   " + (1-num3) + " }}{ \\sqrt{" + num2 + "}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times \\frac{\\sqrt{" + (num3 * (1-num3)) + " }}{ \\sqrt{" + num2 + "}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times" + (Math.sqrt(num3*(1-num3)))/Math.sqrt(num2) + " \\times 100 \\]" ;
+            ans += "\\[" + (num1*(Math.sqrt(num3*(1-num3)))/Math.sqrt(num2)) + "\\times 100 \\]" ;
+            ans += "\\[ The \\space margin \\space of \\space error \\space is \\space : \\space " + j + " \\]";
+            output.innerHTML = ans;
+            renderMathInElement(output);
         }
         else
         {
             num4=parseFloat(num4);
             if(num4<=num2)
             {
-                ans="Population size must be greater than sample size";
+                ans += "\\[Population \\space size \\space must \\space be \\space greater \\space than \\space sample \\space size \\]";
+                output.innerHTML = ans;
+                renderMathInElement(output);
             }
             else{
             var j=(num1*(Math.sqrt(num3*(1-num3))))/Math.sqrt((num2*(num4-1))/(num4-num2));
             j=j*100;
-            ans="The margin of error is: "+j;
+            ans += "\\[Margin \\space Of \\space Error \\space ( \\space with \\space finite \\space population \\space correction \\space ) \\space = \\space z \\space \\times \\frac{\\sqrt{p \\times (1-p)}}{\\sqrt{(N-1)*n/(N-n)}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times \\frac{\\sqrt{" + num3 + "\\times (1 \\space - ( " + num3 + " ))}}{ \\sqrt{" + num2 + "\\times (" + num4 + " - \\space 1 ) / (" + num4 + "- (" + num2 + " )}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times \\frac{\\sqrt{" + num3 + "\\times  " + ( 1 - num3 ) + " }}{ \\sqrt{" + num2 + "\\times (" + (num4 -  1 ) + " ) / (" + (num4-num2 )+ " )}} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times \\frac{\\sqrt{" + (num3 * ( 1 - num3 )) + " }}{ \\sqrt{" + ((num2) * ((num4 -  1 ) / (num4-num2 )))+ " }} \\times 100 \\]";
+            ans += "\\[" + num1 + "\\times" +((Math.sqrt(((num3)*(1-num3))))/(Math.sqrt((num2)*((num4-1)/(num4-num2))))) + " \\times 100 \\]";
+            ans += "\\[" + (num1*(Math.sqrt(num3*(1-num3))))/Math.sqrt((num2*(num4-1))/(num4-num2)) + "\\times 100 \\]";
+            ans += "\\[ The \\space margin \\space of \\space error \\space is \\space : \\space " + j + " \\]";
+            output.innerHTML = ans;
+            renderMathInElement(output);
             }
 
         }
     }
-    document.getElementById("mecans").innerHTML=ans;
 }
 function numtfind(){
     let n = parseInt(document.getElementById("numtin").value)
