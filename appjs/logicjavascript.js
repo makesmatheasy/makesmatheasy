@@ -13032,7 +13032,28 @@ function hypergeoscal()
     document.getElementById("hypergeosans").innerHTML=ans;
 }
 
+// quartiles calculator
 
+function qrtl() {
+    let list = document.getElementById('qrtllist').value
+    list = list.split(' ');
+    let newList = list.map((item) => {
+        return parseInt(item)
+    })
+    newList = newList.sort(function(a, b) {
+        return a - b;
+    })
+    let dataPoints
+    if (newList.length % 2 == 0) {
+        dataPoints = newList.length 
+    } else {
+        dataPoints = newList.length + 1 
+    }
+    let lowerQrtl = dataPoints * (1 / 4)
+    let middleQrtl = dataPoints * (2 / 4)
+    let upperQrtl = dataPoints * (3 / 4)
+    document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
+}
 
 
 
