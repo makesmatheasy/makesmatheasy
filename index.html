@@ -13056,6 +13056,23 @@
                            href="#">Trapezoid</a></td>
                 </tr>
                 <tr>
+                    <td>
+                        <div onclick="$('#truncatedshapes').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">
+                            Truncated Shapes
+                        </div>
+                        <div class="collapse" id="truncatedshapes" style="margin: 0.9375rem;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#truntetra"
+                                        style="text-decoration:none;"
+                                        href="#">Truncated Tetrahedron</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#spheroidalcap"
                            style="text-decoration:none;"
                            href="#">Spheroidal Cap</a></td>
@@ -23737,6 +23754,55 @@ N is the population size.
                             <p class="stopwrap" id="resultofrhododecamr"
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofrhododecair"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="truntetra" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 7 \times \sqrt{3} \times a^2\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{23}{12} \times \sqrt{2}  \times a^3\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truntetra.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="inputtruntetraside"
+                                       oninput="solvetruntetra();">
+                            <p class="stopwrap" id="resultoftruntetravol"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftruntetraarea"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
