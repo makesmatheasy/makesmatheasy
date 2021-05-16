@@ -3991,28 +3991,39 @@
         <!--        start factors-->
         <div class="collapse" id="factors">
             <form>
-                <div class="form-group" >
-                    <input style="text-align: center;" type="tel" id="numforfactorhcflcm" class="form__field"
+                <div class="form-group d-flex justify-content-center" >
+                    <input style="text-align: center; max-width: 300px;" type="tel" id="numforfactorhcflcm" class="form__field"
                            placeholder="Enter Number(s) Space Separated">
                 </div>
-                <div class="form-group " style="text-align: center;">
-                    <button class="btn btn-light" type="button" onclick="findFactors()">Factors</button>
-                    <button type="button" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
-                            class="btn btn-light">
+                <div class="form-group container-fluid " style="text-align: center;">
+                
+                        
+                    <button class="btn btn-light" type="button" style="margin:4px" onclick="findFactors()">Factors</button>
+                    
+                    
+                    <button type="button" style="margin:4px" onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
+                            class="btn btn-light prime">
                         Prime Factors
                     </button>
-                    <button type="button" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')"
+                    
+                
+                    <button type="button" style="margin:4px" onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')"
                             class="btn btn-light">
                         LCM
                     </button>
-                    <button type="button" onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')"
+                    
+                    
+                    <button type="button" style="margin:4px" onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')"
                             class="btn btn-light">
                         HCF
                     </button>
-                    <button type="button" onclick="this.form.reset();"
+                    
+                    
+                    <button type="button" style="margin:4px" onclick="this.form.reset();"
                             class="btn btn-light">
                         Reset
                     </button>
+                     
                 </div>
             </form>
 
@@ -4050,8 +4061,11 @@
                 Basically, it is the largest number that divides all the given numbers.</p>
             <p class="lcm"><b>Let’s understand the concept of HCF with an example:</b></p>
             <p>Consider two numbers: 12 and 18</p>
+            <div class="text-center">
             <img src="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2020/12/28185936/image90-300x96.png"
-                 style="margin-left: 18.75rem; height: 12.5rem;" alt="">
+                 style=" height: 12.5rem;" class="img-fluid" alt="">
+                 </div>
+                 <!-- margin-left: 18.75rem; -->
             <p>Factors of 12: 1, 2, 3, 4, 6, and 12 </p>
             <p>Factors of 18: 1, 2, 3, 6, 9, and 18 </p>
             <p>Both 12 and 18 have 1, 2, 3, and 6 as common factors, of which 6 is the highest. So, 6 is the HCF of 12 and 18.</p>
