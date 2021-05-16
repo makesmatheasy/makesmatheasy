@@ -5654,6 +5654,23 @@ function solvedoustar() {
 
 }
 
+function solvetruntetra(){
+    var a = document.getElementById("inputtruntetraside").value;
+
+    var area = 7 * math.sqrt(3) * a**2;
+    var vol = 23/12 * math.sqrt(2) * a**3;
+
+    if (a != "") {
+        document.getElementById("resultoftruntetravol").innerHTML = "\\[Volume \\space (V) \\space of \\space Truncated \\space Tetrahedron \\space \\newline \\frac{23}{12} \\times \\sqrt{2}  \\times "+a+"^3 = " + vol.toFixed(3) + "\\]";
+        document.getElementById("resultoftruntetraarea").innerHTML = "\\[Area \\space (A) \\space of \\space Truncated \\space Tetrahedron \\space \\newline 7 \\times \\sqrt{3} \\times "+a+"^2 = " + area.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultoftruntetravol"));
+        renderMathInElement(document.getElementById("resultoftruntetraarea"));
+    } else {
+        document.getElementById("resultoftruntetravol").innerHTML = "";
+        document.getElementById("resultoftruntetraarea").innerHTML = "";
+    }
+}
+	
 function solvelakstar() {
     var a = document.getElementById("inputlakstarside").value;
     var boutput = document.getElementById("resultoflakstaredoct");
