@@ -13065,6 +13065,11 @@
                            style="text-decoration:none;"
                            href="#">Ellipsoidal Cap</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#triquetra"
+                           style="text-decoration:none;"
+                           href="#">Triquetra</a></td>
+                </tr>
             </table>
         </div>
 
@@ -19258,6 +19263,56 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="triquetra" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Triquetra</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P= 3 \times \pi \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{1}{2} (2 \pi - \sqrt{3}) a^2\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/triqueta.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="triquesidea" class = "form__field" oninput="triquetra()" 
+                                placeholder="Enter distance from two intersections (a)">
+                                <br><br>
+                                <p class="stopwrap" id="triqueperi"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="triquearea"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
