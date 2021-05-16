@@ -5011,6 +5011,33 @@ function rectanglesolve() {
     renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
+	
+function cutrectanglesolve(){
+    var a = document.getElementById("inputreclongside").value;
+    var b = document.getElementById("inputrecshortside").value;
+    var c = document.getElementById("inputreclongcut").value;
+    var d = document.getElementById("inputrecshortcut").value;
+
+    var area = a * b - ( a - c ) * ( b - d ) / 2;
+    var e =  math.sqrt((a-c)**2 + (b-d)**2);
+    var peri = parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+e;
+
+    if (a != "" && b!="" && c!="" && d!="") {
+        document.getElementById("resultofslantcutrec").innerHTML = "\\[Slant \\space side \\space (e) \\space of \\space Cut \\space Rectangle \\space \\newline \\sqrt{("+a+"-"+c+")^2 + ("+b+"-"+d+")^2} = " + e.toFixed(3) + "\\]";
+        document.getElementById("resultofpericutrec").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Cut \\space Rectangle \\space \\newline "+a+"+"+b+"+"+c+"+"+d+"+"+e+" = " + peri.toFixed(3) + "\\]";
+        document.getElementById("resultofareacutrec").innerHTML = "\\[Area \\space (A) \\space of \\space Cut \\space Rectangle \\space \\newline  "+a+" \\times "+b+" - ("+a+" - "+c+") \\times \\frac{("+b+" -"+d+")}{2}= " + area.toFixed(3) + "\\]"
+
+        renderMathInElement(document.getElementById("resultofslantcutrec"));
+        renderMathInElement(document.getElementById("resultofpericutrec"));
+        renderMathInElement(document.getElementById("resultofareacutrec"));
+
+    } else {
+        document.getElementById("resultofslantcutrec").innerHTML = "";
+        document.getElementById("resultofpericutrec").innerHTML = "";
+        document.getElementById("resultofareacutrec").innerHTML = "";
+    }
+}
+	
 function solvecosine() {
     var sidea = document.getElementById("inputsidea").value;
     var sideb = document.getElementById("inputsideb").value;
