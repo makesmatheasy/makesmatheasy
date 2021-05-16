@@ -2217,6 +2217,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- Catalan numbers Calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cat-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Catalan Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Double Factorial','#catNum','c','catnumimgfav')"><img
+                                        id="catnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -10171,6 +10187,26 @@
             </div>
         </div>
         <!-- end of Double Factorial calculator -->
+        <!-- start of Catalan numbers calculator -->
+        <div>
+            <div class="collapse" id="catNum">
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number : &nbsp; &nbsp; </label>
+                    <input type="number" id="cat-num" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="catalanNumbers(document.getElementById('cat-num').value);">
+                        Solve
+                    </button>
+                </div>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="catNumResult"></p>
+                </div>
+            </div>
+        </div>
+        <!-- end of Catalan numbers calculator -->
         
         <div class="collapse" id="trigonofun">
         <h3 style="text-align: center;">Domain,Range,Period and Graph of Trigonometric Functions</h3>

@@ -2645,6 +2645,7 @@ function anglesolve() {
     renderMathInElement(document.getElementById("angleformula1"));
     renderMathInElement(document.getElementById("angleformula2"));
     renderMathInElement(document.getElementById("angle_output"));
+    }
 
 }
 
@@ -9944,6 +9945,7 @@ function rootsunityfind(){
         var img = Math.sin(k*theta);
         document.getElementById("rootsunityans").innerHTML = real.toFixed(6)+"+"+img.toFixed(6)+"<br>"
     }    
+}
 
 function spfind(){
     let S = parseInt(document.getElementById("sgiven").value)
@@ -10396,6 +10398,26 @@ function doubleFactorial(num)
     document.getElementById("dblFactResult").innerHTML = "The Double Factorial of " + num + " is: " + dfact(num);
 }
 
+//Catalan numbers function
+function catalan(num)
+{
+    if (num <= 1)
+        return 1;
+    let res = 0;
+    for(let i = 0; i < num; i++)
+        res += catalan(i) * catalan(num - i - 1);
+    return res;
+}
+
+function catalanNumbers(num){
+    let res="";
+    for (let i = 0; i < num; i++){
+        res+=catalan(i);
+        res+= " ";
+    }
+    document.getElementById("catNumResult").innerHTML = "The Catalan Numbers are: " + res;    
+}
+ 
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
