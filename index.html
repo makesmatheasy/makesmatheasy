@@ -14192,18 +14192,28 @@
             <h3>\[x^n \space =  \space y\]</h3>
             <div class="coll">
                 <form class="form-inline">
-                    <input type="number" id="xval"  value='' placeholder="Enter x"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>       
-                    <input type="number" id="yval"  value='' placeholder="Enter y"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                    <div class="container-fluid text-align: center">
+                        <div class="row">
+                            <div class="col">
+                        <input type="number" id="xval"  value='' placeholder="Enter x"
+                            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>  
+                            </div>
+                            <div class="col">   
+                        <input type="number" id="yval"  value='' placeholder="Enter y"
+                            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        <br>
+                        </div>
                     <br>
-                <br>
-                <button type="button" class="btn btn-light" onclick="exposol();">
-                    Calculate
-                </button>
-                <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                    Reset
-                </button>
+                    <div class="col">
+                    <button type="button" class="btn btn-light" onclick="exposol();">
+                        Calculate
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                    </div>
+                    </div>
+                </div>
                 </form>
             </div>
             <br>
