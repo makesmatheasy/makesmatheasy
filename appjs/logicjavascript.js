@@ -4717,6 +4717,30 @@ function cycquadcal(){
     }
 }
 
+function mincubefind(){
+    let n= parseInt(document.getElementById("mincube").value)
+    var count = 0, ans = 1;
+    while (n % 2 == 0) {
+        count++;
+        n /= 2;
+    }
+    if (count % 3 != 0)
+        ans *= Math.pow(2, (count % 3));
+ 
+    for (var i = 3; i <= Math.sqrt(n); i += 2) {
+        count = 0;
+        while (n % i == 0) {
+            count++;
+            n /= i;
+        }
+        if (count % 3 != 0)
+            ans *= Math.pow(i, (count % 3));
+    } 
+    if (n > 2)
+        ans *= n;  
+        document.getElementById("mincubeans").innerHTML = ans
+}
+
 //interior angle calculation
 function interiorsolve(){
     var n = parseInt(document.getElementById("polyside").value);
@@ -13318,7 +13342,7 @@ function qrtl() {
     let middleQrtl = dataPoints * (2 / 4)
     let upperQrtl = dataPoints * (3 / 4)
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
-}
+}}}
 
 // decile calculator
     
