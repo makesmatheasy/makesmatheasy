@@ -75,6 +75,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#ainv").click(function () {
+        openit("#ais");
+        closenav();
+        clearall();
+    });
+
     $("#per-chng-cuboid").click(function () {
         openit("#chng-vol-cuboid");
         closenav();

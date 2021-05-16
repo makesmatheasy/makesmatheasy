@@ -257,6 +257,7 @@ function openit(id) {
         "#straightline",
         "#binary-hexadecimal",
         "#mis",
+        "#ais",
         "#cay",
         "#utcs",
         "#inversetrigonoiden",

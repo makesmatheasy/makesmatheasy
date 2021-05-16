@@ -1469,6 +1469,27 @@
                                 </tr>
                             </table>
                         </li>
+
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+            
+                                        <a id="ainv"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Additive Inverse
+                                        </a>
+                                    </td>
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Additive Inverse','#ais','c','misimgfav')"><img
+                                                    id="misimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;">
+                                            </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+
                         <li>
                             <table class="table">
                                 <tr>
@@ -15002,6 +15023,18 @@
     <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="midcal()">Calculate in Fraction</button>
     <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="mifcal()">Calculate in Decimal</button>
     <p>&nbsp;</p> <p id="mians"></div>
+</div>
+
+<div class="collapse" id="ais">    
+    <h1 >ADDITIVE INVERSE</h1>
+    <p>&nbsp;</p>
+    <div style="color: white; font-size: 1.3em; font-family:mathfont"> Enter number to find additive inverse: 
+    <input type="number" name="aians1" id="aians1" placeholder="Enter number">
+    <br>
+    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="ainvcal()">Calculate</button>
+    <br>
+    <p id="aians">
+    </div>
 </div>
 
 <div class="collapse" id="manhats">
