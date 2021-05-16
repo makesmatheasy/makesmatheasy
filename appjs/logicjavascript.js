@@ -2590,6 +2590,34 @@ function interpointsolve() {
     }
 }
 
+
+function pppdoSolve() {
+    var a=parseFloat(document.getElementById('pppdaqo1').value);
+    var b=parseFloat(document.getElementById('pppdbqo1').value);
+    var c=parseFloat(document.getElementById('pppdcqo1').value);
+    
+   
+    var dis = ((a*a)+(b*b));
+    var p =Math.abs(c);
+
+    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('pppdcq1outputo').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("pppdcq1outputo"));
+        document.getElementById('pppdcq1explaneo').innerHTML = "";
+        renderMathInElement(document.getElementById("pppdcq1explaneo"));
+    } else{
+        document.getElementById('pppdcq1explaneo').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1explaneo"));
+
+        if(!(Number.isInteger(Math.sqrt(dis))))
+        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
+        else
+        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1outputo"));
+    }
+}
+
+
 function anglesolve() {
     var a1=parseFloat(document.getElementById('a1st').value);
     var b1=parseFloat(document.getElementById('b1st').value);
