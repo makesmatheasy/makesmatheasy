@@ -3918,6 +3918,18 @@ function nodiagnolfind(){
     document.getElementById("nodiagnolans").innerHTML = "The number of diagnols are "+ans
 }
 
+function orthosolve(){
+    let x1 = parseInt(document.getElementById('orthox1').value)
+    let y1 = parseInt(document.getElementById('orthoy1').value)
+    let x2 = parseInt(document.getElementById('orthox2').value)
+    let y2 = parseInt(document.getElementById('orthoy2').value)
+    let x3 = parseInt(document.getElementById('orthox3').value)
+    let y3 = parseInt(document.getElementById('orthoy3').value)
+    let x = ((x2*(x1-x3)+y2*(y1-y3))*(y3-y2)-(y3-y1)*(x1*(x2-x3)+y1*(y2-y3)))/((x3-x2)*(y3-y1)-(y3-y2)(x3-x1))
+    let y = ((x2*(x1-x3)+y2*(y1-y3))*(x3-x2)-(x3-x1)*(x1*(x2-x3)+y1*(y2-y3)))/((y3-y2)*(x3-x1)-(x3-x2)(y3-y1))
+    document.getElementById("ortho_output").innerHTML = "("+x+","+y+")"
+}
+
 function obliquetri(){
     var a,b,c;
     a=parseFloat(document.getElementById('inputsideoba').value);
