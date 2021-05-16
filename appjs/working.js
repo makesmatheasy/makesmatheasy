@@ -1069,6 +1069,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#shapeinscribedbtn").click(function () {
+        openit("#shapeinscribed");
+        closenav();
+        clearall();
+    });
     $("#sievebtn").click(function () {
         openit("#sieve");
         closenav();
