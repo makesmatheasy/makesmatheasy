@@ -3926,6 +3926,24 @@ function coordinatearea(){
     }
 
 }
+
+function triinfind(){
+    let n= parseInt(document.getElementById("triinin").value);
+    let len = parseInt(document.getElementById("triinin1").value);
+    let area = area_of_regular_polygon(n, len);
+    let triangle = area / n;
+    let ins_tri = (triangle * 3);
+    document.getElementById("triinans").innerHTML = ins_tri
+}
+
+function area_of_regular_polygon(n, len)
+{
+    let P = (len * n);
+    let A = len/ (2 * Math.tan((180 / n)* 3.14159 / 180));
+    let area = (P * A) / 2; 
+    return area;
+}
+
 function centersolve(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("qcenter").value);
