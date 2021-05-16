@@ -4602,19 +4602,26 @@
          <!-- start of hyperbolic trigno calculator  -->
         <div class="collapse" id="hyperbolicratios">     
                 <h1 style="text-align: center;">Hyperbolic trignometric ratios </h1><br>    
-                <div class="form-group">
-                    <input type="text" id="hypertrignoin" class="form__field"
-                           placeholder="Enter Value "
-                           >
-                </div><br>
-    
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="hypertrigno()">
-                        Calculate
-                    </button><br>
-    
-                </div>
+                <form action="">
+                    <div class="form-group text-center">
+                        <input type="text" id="hypertrignoin" class="form__field"
+                               placeholder="Enter Value "style="width:100%; max-width:500px;"
+                               >
+                    </div><br>
+        
+                    <div class="form-group text-center">
+                        <button type="button" class="btn btn-light"
+                                onclick="hypertrigno()">
+                            Calculate
+                        </button><br>
+                        <button type="button" class="btn btn-light m-1"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button><br>
+        
+                    </div>
+                </form>
+                
                 <h4 style="text-align:center">Formulas to calculate hyperbolic trignometry identitites</h4>
                 <p>sinh(x) = (eˣ - e⁻ˣ) / 2</p>
                 <br>
@@ -6780,20 +6787,28 @@
         <div class = "collapse" id="gamma">
             <h2 style="text-align: center;">Gamma Calculator</h2>
             <br><br>
-            <input type="number" id="gammain" class="form__field" placeholder="Enter Number for gamma function">
-            <br>
-            <button type="submit" onclick ="gammafind()">Find</button>
-            <br>
+            <form action="">
+                <input type="number" id="gammain" class="form__field" placeholder="Enter Number for gamma function">
+                <br>
+                <button type="submit" onclick ="gammafind()">Find</button>
+                <button type="submit" onclick ="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h4 id="gammafindans"></h4>
         </div>
 
         <div class = "collapse" id="beta">
             <h2 style="text-align: center;">Beta Calculator</h2>
             <br><br>
-            <input type="text" id="betain1" class="form__field" placeholder="Enter Number 1 for beta function">
-            <input type="text" id="betain2" class="form__field" placeholder="Enter Number 2 for beta function">
-            <br>
-            <button type="submit" onclick ="betafind()">Find</button>
+            <form action="">
+                <input type="text" id="betain1" class="form__field" placeholder="Enter Number 1 for beta function">
+                <input type="text" id="betain2" class="form__field" placeholder="Enter Number 2 for beta function">
+                <br>
+                <button type="submit" onclick ="betafind()">Find</button>
+                <button type="submit" onclick ="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h4 id="betafindans"></h4>
         </div>
@@ -10833,24 +10848,32 @@
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>
             <h2 style="margin-bottom: 2rem;">Direct Proportion Calculator</h2>
             <p>X<sub>1</sub>/Y<sub>1</sub> = X<sub>2</sub>/Fourth Value</p>
-            <input class = "form__field"type="text" id="dipnum1" placeholder="Enter the First Value(X1)">
-            <br><br>
-            <input class = "form__field"type="text" id="dipnum2" placeholder="Enter the second value(Y1)">
-            <br><br>
-            <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
-            <br><br>
-            <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
+            <form action="">
+                <input class = "form__field"type="text" id="dipnum1" placeholder="Enter the First Value(X1)">
+                <br><br>
+                <input class = "form__field"type="text" id="dipnum2" placeholder="Enter the second value(Y1)">
+                <br><br>
+                <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="dipans"></p>
 
             <h2 style="margin-bottom: 2rem; margin-top: 4rem;">Indirect Proportion Calculator</h2>
             <p>X<sub>1</sub>.Y<sub>1</sub> = X<sub>2</sub>.(Fourth Value)</p>
-            <input class = "form__field"type="text" id="inDPnum1" placeholder="Enter the First Value(X1)">
-            <br><br>
-            <input class = "form__field"type="text" id="inDPnum2" placeholder="Enter the second value(Y1)">
-            <br><br>
-            <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
-            <br><br>
-            <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
+            <form action="">
+                <input class = "form__field"type="text" id="inDPnum1" placeholder="Enter the First Value(X1)">
+                <br><br>
+                <input class = "form__field"type="text" id="inDPnum2" placeholder="Enter the second value(Y1)">
+                <br><br>
+                <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
+                <br><br>
+                <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="inDPans"></p>
         </div>
 
@@ -15120,11 +15143,15 @@ N is the population size.
 
 <div class="collapse" id="rankcals">
      <h1 style="font-family:mathfont; text-align:center;">PERCENTILE RANK CALCULATOR </h1>
-    <input type="text" name="perrank" class="form__field" id="perrank" width="5em" placeholder="Enter all the marks">
-    <p>&nbsp;</p>
-    <input type="text" name="peryour" class="form__field" id="peryour" placeholder="Enter your marks">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="perrankcal()">Calculate</button>
+    <form action="">
+        <input type="text" name="perrank" class="form__field" id="perrank" width="5em" placeholder="Enter all the marks">
+        <p>&nbsp;</p>
+        <input type="text" name="peryour" class="form__field" id="peryour" placeholder="Enter your marks">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="perrankcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+     
     <p id="perrankans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"> PR = L / N * 100<br>
