@@ -4058,12 +4058,16 @@
                 with constant difference between them that is equal to that prime.This is the sieve's key distinction from using trial division to sequentially test each candidate number for divisibility by each prime.Once all the multiples of 
                 each discovered prime have been marked as composites, the remaining unmarked numbers are primes.
             </p>
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/SieveofEratosthenes5.jpg" alt="">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/SieveofEratosthenes5.jpg" class="img-fluid" alt="">
             <br>
-            <input type="text" id="sievein" class="form__field" placeholder="Enter the number upto which prime numbers are to be found out">
-            <br>
-            <button class="btn btn-dark" onclick="sievefind()">Find</button>
-            <br>
+            <form class="text-center" style="width: 100%;">
+                <input type="text" id="sievein" class="form__field" placeholder="Enter number upto which you want prime number" style="text-align: center; width: 100%;
+                max-width: 450px;">
+                <br><br>
+                <button class="btn btn-dark" onclick="sievefind()">Find</button>
+                <br>
+            </form>
+        
             <h4 id="sieveans"></h4>
         </div>
         <!--        start factors-->
