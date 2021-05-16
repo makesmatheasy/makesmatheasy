@@ -13138,6 +13138,11 @@
                            href="#">Parallelepiped</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#rhombohedron"
+                           style="text-decoration:none;"
+                           href="#">Rhombohedron</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#hyperboloid"
                            style="text-decoration:none;"
                            href="#">Hyperboloid</a></td>
@@ -24081,6 +24086,65 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="rhombohedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rhombohedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Second angle (β)</h5>
+                                    <p class="text-center">\[β = 180 \degree - α\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V=a^3 (1 - \cos{(α)}) \sqrt{ 1 + 2 \cos{(α)}}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (S)</h5>
+                                    <p class="text-center">\[S= 6 \times a^2 \times  \sin{(α)}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/rhombohedron.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>It is a parallelepiped with six equal faces</p><br><br>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="rhomhededgea" class = "form__field" oninput="Rhombohedron()" 
+                                placeholder="Enter Edge length (a)">
+                            <input type="text" id="rhomhedangle" class = "form__field" oninput="Rhombohedron()" 
+                                placeholder="Enter First angle (α)">
+                                <br><br>
+                                <p class="stopwrap" id="rhomhedsecondang"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="rhomhedvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="rhomhedsurarea"
+                                   style="font-family:mathfont;"></p><br>
+        
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="spheroidalcap" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
