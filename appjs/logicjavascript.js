@@ -2617,7 +2617,7 @@ function anglesolve() {
     renderMathInElement(document.getElementById("angleformula1"));
     renderMathInElement(document.getElementById("angleformula2"));
     renderMathInElement(document.getElementById("angle_output"));
-    }
+
 }
 
 function dispointsolve()
@@ -9884,10 +9884,21 @@ function combinationcal(nval, rval) {
     }
 }
 
+function rootsunityfind(){
+    let n = parseInt(document.getElementById("rootsunityin").value)
+    var theta = (3.14*2/n);
+    for(let k = 0; k < n; k++)
+    {
+        var real = Math.cos(k*theta);
+        var img = Math.sin(k*theta);
+        document.getElementById("rootsunityans").innerHTML = real.toFixed(6)+"+"+img.toFixed(6)+"<br>"
+    }    
+
 function spfind(){
     let S = parseInt(document.getElementById("sgiven").value)
     let P = parseInt(document.getElementById("pgiven").value)
     document.getElementById("spans").innerHTML = "The eqn is x^2"+(-S)+"x"+P+"=0"
+
 }
 
 //Mean start

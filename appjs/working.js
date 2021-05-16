@@ -149,11 +149,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#parabolacalcbtn").click(function () {
-        openit("#parabolacalc");
-        closenav();
-        clearall();
-    });
     $("#bpmf").click(function () {
         openit("#bpmfs");
         closenav();
@@ -191,11 +186,9 @@ $(document).ready(function () {
     });
     $("#sosqn").click(function () {
         openit("#sosqsn");
-
         closenav();
         clearall();
     });
-
     $("#squaresRange").click(function () {
         openit("#squaresRanges");
         closenav();
@@ -383,7 +376,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
-
+    $("#rootsunitybtn").click(function () {
+        openit("#rootsunity");
+        closenav();
+        clearall();
+    })
     $("#HPbttn").click(function () {
         openit("#hp");
         closenav();
