@@ -13544,7 +13544,32 @@ function qrtl() {
     let middleQrtl = dataPoints * (2 / 4)
     let upperQrtl = dataPoints * (3 / 4)
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
-}}}
+}
+
+function volweight(){
+var l,w,h;
+l = parseFloat(document.getElementById("length_vol").value);
+w = parseFloat(document.getElementById("width_vol").value);
+h = parseFloat(document.getElementById("height_vol").value);
+var output = document.getElementById("volweightAns");
+var temp = "";
+if(l<0 || h<0 || w<0){
+    temp += "\\[A \\space magnitude \\space cannot \\space be \\space negative. \\space Please \\space enter \\space positive \\space value \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+else if(!isNaN(l) && !isNaN(w) && !isNaN(h)){
+temp += "\\[Volumetric \\space Weight (kg) \\space = \\space \\frac{Lenght \\times Width \\times Height}{5000} \\space = \\space \\frac{ " + l + "\\times" + w + "\\times" + h + "}{5000} \\space  = \\space \\frac{ " + (l * w * h) + "}{5000} \\space  = \\space " + ((l*w *h)/5000) + "  \\]";
+temp += "\\[The \\space Volumetric \\space weight \\space is \\space " + ((l*w *h)/5000) + " \\space Kg \\]";
+output.innerHTML = temp;
+    renderMathInElement(output);
+}
+else{
+    temp += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+}
 
 // decile calculator
     
