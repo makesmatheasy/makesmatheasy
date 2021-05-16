@@ -558,6 +558,21 @@ color:#ababab !important;
 font-size: 18px;
 }
 
+#ip h4,
+#ip p,
+#ip li{
+  text-align:center;
+  list-style: none;
+  margin-bottom: 10px;
+}
+#ip img {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
