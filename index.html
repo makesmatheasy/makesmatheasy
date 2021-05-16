@@ -12564,6 +12564,11 @@
                            href="#">Rectangle</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#cutrectangle"
+                           style="text-decoration:none;"
+                           href="#">Cut Rectangle</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#rhombus"
                            style="text-decoration:none;"
                            href="#">Rhombus</a></td>
@@ -18774,6 +18779,68 @@ N is the population size.
                             <p class="stopwrap" id="resultofperirec"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofdiagonalrec"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cutrectangle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cut Rectangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P = a+b+c+d+e \]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Slant side (e)</h5>
+                                    <p class="text-center">\[e = \sqrt{(a-c)^2 + (b-d)^2}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = a \times b - (a - c) \times \frac{(b -d)}{2} \]</p><br>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/cutrectangle.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-divider"></div>
+                            <p>Fill all the values</p>
+                            <input class="form__field" type="number" 
+                                   placeholder="Enter Long rectangle side (a)"
+                                   id="inputreclongside" oninput="cutrectanglesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Short rectangle side (b)"
+                                   id="inputrecshortside" oninput="cutrectanglesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Long cut side (c)"
+                                   id="inputreclongcut" oninput="cutrectanglesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Short cut side (d)"
+                                   id="inputrecshortcut" oninput="cutrectanglesolve()">
+                            <br>
+                            <p class="stopwrap" id="resultofslantcutrec"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpericutrec"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofareacutrec"
                                style="font-family:mathfont;"></p>
                         </div>
                     </div>
