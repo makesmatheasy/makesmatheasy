@@ -3134,6 +3134,17 @@ function solveocta() {
 
 }
 
+function circleinfind(){
+    let n = parseInt(document.getElementById("circleinin").value)
+    let a = parseInt(document.getElementById("circleinin1").value)
+    // degree converted to radians
+    let r = a /  (2 * Math.tan((180 / n) * 3.14159 / 180));
+ 
+    // area of circle
+    let Area =  (3.14) * (r) * (r);
+    document.getElementById("circleinans").innerHTML = "The area of circle is "+ Area
+}
+
 function solvepolycal(){
     var S = document.getElementById("inputareapolycal").value;
     var n = document.getElementById("inputsidepolycal").value;   
