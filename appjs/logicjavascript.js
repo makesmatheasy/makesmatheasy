@@ -11628,6 +11628,51 @@ function hammingCalc3(){
             result = "Error exists at &nbsp; &nbsp; " + p + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + `${(n-p)+1}`+"&nbsp;&nbsp; from right <br>";
             result += "Please change the binary value at the position where error exists and then decode again";
         }
+    }else  if(type1 === "Left-To-Right" && type2 ==="Odd"){
+        let n = input.length;
+        let k=0,ctr=0;
+        var parity = "";
+        for (var i = 0; i < n;i++){
+            if((i+1)== Math.pow(2,k)){
+                for(var j =i;j < n; j++){
+                    if(((i+1) & (j+1)) == (i+1)){
+                        if(input[j] == "1"){
+                            ctr++;
+                        }else{
+                            ctr +=0;
+                        }
+                    }
+                }
+                //console.log(ctr);
+                if(ctr % 2 == 0){
+                    parity +="1";
+                }else if(ctr % 2 == 1 ){
+                    parity +="0";
+                }
+            
+                ctr = 0;
+                k++;
+            }
+        }
+        //console.log(parity);
+        k=0;
+        if(parseInt(parity)==0){
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2);
+            for(var a = 0; a<n;a++){
+                if((a+1)== Math.pow(2,k)){
+                    result += "";
+                    k++;
+                }else{
+                    result += input[a];
+                }
+            }
+        }else{
+            parity =  parity.split("").reverse().join("");
+            var p = parseInt(parity,2).toString();
+            result = "Error exists at &nbsp; &nbsp; " + p + "&nbsp;&nbsp; from left or &nbsp;&nbsp;" + `${(n-p)+1}`+"&nbsp;&nbsp; from right <br>";
+            result += "Please change the binary value at the position where error exists and then decode again";
+        }
     }
     result1.innerHTML = result;
 }
