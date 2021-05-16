@@ -772,3 +772,10 @@ input[type='number'] {
     font-size: 0.68rem !important;
   }
 }
+@media only screen and (max-width:991px) {
+  .prime{
+    font-size: 0.822rem;
+    width: 78px;
+    padding: 0px;
+  }
+}
