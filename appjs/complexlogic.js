@@ -360,13 +360,17 @@ function hydrocal()
         ans="Please enter all the values to obtain answer";
     }
     else{
-    var prs=b*9.80655*a+1;
-    
-   ans="Your answer is: "+prs+" atm"+" <p>&nbsp</p><p>&nbsp</p>";
-    ans+="Our hydrostatic pressure calculator uses the below hydrostatic pressure formula <br>    p = ρ * g * h + p0 where <br>  p is the hydrostatic pressure, ρ is the density of fluid,<br>  g is the gravitational acceleration (the average value for the Earth is g = 9.80655 m/s²), <br>   h is the depth,<br> p0 is the external pressure (usually atmospheric pressure p0 = 1 atm = 1013.25 hPa).";
-
+        var prs=b*9.80655*a+1;
+        ans += "\\[Formula \\space  :- \\space Hydrostatic \\space pressure(P) \\space = \\space P_0 \\space + \\space  ρ \\times g \\times h \\]";
+        ans += "\\[where,\\space g(gravitational \\space acceleration) \\space -> \\space 9.80655 m/s² \\]";
+        ans += "\\[and \\space  P_0 (atmospheric \\space pressure)\\space -> \\space 1 \\space atm = 1013.25 \\space hPa \\]";
+        ans += "\\[= \\space P_0 \\space + \\space ( ρ \\times g \\times h)\\]",
+        ans += "\\[= \\space 1 \\space + \\space (9.860655 \\times ρ \\times h) \\]";
+        ans += "\\[= \\space 1 \\space + \\space (9.860655 \\times " + b + "\\times" + a + ")\\]";
+        ans += "\\[= \\space " + prs +"\\]";
     }
     document.getElementById("hydroans").innerHTML=ans;
+    renderMathInElement(document.getElementById("hydroans"));
 }
 
 function straincal()
