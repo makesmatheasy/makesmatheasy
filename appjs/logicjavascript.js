@@ -5732,7 +5732,25 @@ function ellipcap(){
         document.getElementById("baspcap2").innerHTML ="";
     }
 }
+	
+function triquetra(){
+    var a = document.getElementById("triquesidea").value;
 
+    var peri = a* math.pi * 3;
+    var area = (( 2 * math.pi - math.sqrt(3)) * a**2) /2;
+
+    if (a != "") {
+        document.getElementById("triqueperi").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Triquetra \\space \\newline 3 \\times \\pi \\times "+a+" = " + peri.toFixed(3) + "\\]";
+        document.getElementById("triquearea").innerHTML = "\\[Area \\space (A) \\space of \\space Triquetra \\space \\newline \\frac{(2 \\times \\pi - \\sqrt{3} ) \\times "+a+"^2}{2} = " + area.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("triqueperi"));
+        renderMathInElement(document.getElementById("triquearea"));
+
+    } else {
+        document.getElementById("triqueperi").innerHTML = "";
+        document.getElementById("triquearea").innerHTML = "";
+    }
+}
+	
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
     var radius2 = document.getElementById("inputradius2").value;
