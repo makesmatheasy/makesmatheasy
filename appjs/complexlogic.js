@@ -1732,10 +1732,14 @@ function midcal()
     {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
-        ans="Multiplicative inverse of given number in fraction is: "+num2+" / "+num1;
+        ans += "\\[[Note \\space :- \\space Multiplicative \\space Inverse \\space of \\space a \\space number \\space is \\space an \\space another \\space number \\space which\\]";
+        ans += "\\[ \\space when \\space multiplied \\space with \\space it, \\space always \\space gives \\space 1 ]\\]";
+        ans += "\\[Divide \\space the \\space number \\space by \\space 1 \\space\\]";
+        ans += "\\[Multiplicative \\space inverse \\space of \\space \\frac{" + num1 + "}{" + num2 + "} \\space = \\space \\frac{1}{\\frac{" + num1 + "}{" + num2 + "}}\\]";
+        ans += "\\[= \\space \\frac{" + num2 + "}{" + num1 + "}\\]";
     }
     document.getElementById("mians").innerHTML=ans;
-
+    renderMathInElement(document.getElementById("mians"));
 }
 
 function hypergeos2cal()
