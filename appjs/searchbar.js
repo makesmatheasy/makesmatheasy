@@ -1074,6 +1074,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('datecal').click();
                     }
+                    else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
+                        clearmain()
+                        $("#2d-shape-ins").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
+                        clearmain()
+                        document.getElementById('2d-shape-ins').click();
+                    }
                     else if (inp.value.toUpperCase() == "SQUARE AND CUBE CALCULATOR") {
                         $("#datecal").slideToggle();    
                     }
@@ -1349,7 +1357,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots","Perfect Squares & Cubes in a range",
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes"
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","2-D Shapes Inscribed"
 
                     ];                    
                         
@@ -1765,7 +1773,12 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
     }
-
+    else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
+        document.getElementById('2d-shape-ins').click(); 
+    }
+    else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
+        $("#2d-shape-ins").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM"){
         document.getElementById('clr').click(); 
     }

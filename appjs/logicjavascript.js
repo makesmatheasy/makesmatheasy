@@ -12756,6 +12756,15 @@ function ratpercal()
     document.getElementById("ratperans").innerHTML=ans;
 
 }
+
+function triinsemifind(){
+    let r = parseInt(document.getElementById("triinsemiin").value)
+    if (r < 0)
+        document.getElementById("triinsemians").innerHTML = "Not triangle can be formed"
+    else
+        document.getElementById("triinsemians").innerHTML = r*r
+}
+
 function hypertrigno()
 {   
     const i = parseInt(document.getElementById("hypertrignoin").value);
@@ -13166,10 +13175,4 @@ function qrtl() {
     let middleQrtl = dataPoints * (2 / 4)
     let upperQrtl = dataPoints * (3 / 4)
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
-}
-
-
-
-
-
-
+}}}
