@@ -5600,6 +5600,23 @@ function solveunihexagram() {
 
 }
 
+function solveheptagram(){
+    var a = document.getElementById("inputhepgramapothem").value;
+    var s = document.getElementById("inputhepgramside").value;
+    var peri = 14 * s;
+    var area = (peri * a) / 2;
+
+    if (a != "" && s!="") {
+        document.getElementById("resultofhepgramperi").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Heptagram \\space \\newline 14 \\times "+s+" = " + peri.toFixed(3) + "\\]";
+        document.getElementById("resultofhepgramarea").innerHTML = "\\[Area \\space (A) \\space of \\space Heptagram \\space \\newline \\frac{ "+peri+" \\times "+a+"}{2} = " + area.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofhepgramperi"));
+        renderMathInElement(document.getElementById("resultofhepgramarea"));
+    } else {
+        document.getElementById("resultofhepgramperi").innerHTML = "";
+        document.getElementById("resultofhepgramarea").innerHTML = "";
+    }
+}
+
 function solveoctagram() {
     var a = document.getElementById("inputoctgramside").value;
     var spikeoutput = document.getElementById("resultofoctgramspike");
