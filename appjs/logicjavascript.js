@@ -11427,6 +11427,30 @@ function hammingCalc1(){
     }
 }
 
+function minsquarefind(){
+    let N = parseInt(document.getElementById("minsquarein").value)
+    let proAngleVar;
+        if (N % 4 == 0) {
+            proAngleVar = pi * (180.0 / N) / 180;
+        } else {
+            proAngleVar = pi * (180.0 / (2 * N)) / 180;
+        }
+        let negX = 1.0e+99, posX = -1.0e+99, negY = 1.0e+99, posY = -1.0e+99;
+ 
+        for ( let j = 0; j < N; ++j) {
+            let px = Math.cos(2 * pi * j / N + proAngleVar);
+            let py = Math.sin(2 * pi * j / N + proAngleVar);
+ 
+            negX = Math.min(negX, px);
+            posX = Math.max(posX, px);
+            negY = Math.min(negY, py);
+            posY = Math.max(posY, py);
+        }
+        let opt2 = Math.max(posX - negX, posY - negY);
+        let ans =  opt2 / Math.sin(pi / N) / 2;
+        document.getElementById("minsquareans").innerHTML = ans
+}
+
 //function for encoding message using hamming code with even parity from left to right
 function hammingCodeLtoREven(x){
     let n = x.length;
