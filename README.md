@@ -141,6 +141,8 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Greatest Integer Function and Fractional Part
+  - Quartiles
+  - Deciles
   - Direct And Indirect Proportion
   - Work And Time Calculator
   - Solve for Exponents

@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#catNum",
         "#dblFact",
         "#sumDiv",
         "#smPrime",
@@ -177,7 +178,6 @@ function openit(id) {
         "#differentiatecollapse",
         "#partialdiffcollapse",
         "#3d-solid",
-        "#parabolacalc",
         "#chng-vol-sphere",
         "#laplacecollapse",
         "#limitscollapse",
@@ -186,9 +186,9 @@ function openit(id) {
         "#matrixcollapse",
         "#pows",
         "#beta",
-
         "#imprtopr",
-
+        "#sieve",
+        "#shapeinscribed",
         "#matrixprops",
         "#cramer",
         "#fractions",
@@ -207,6 +207,7 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
+        "#volume",
         "#thdif",
         "#corgeo",
         "#ttest",
@@ -215,6 +216,8 @@ function openit(id) {
         "#parallel",
         "#unitconcal",
         "#giff",
+        "#qrtl",
+        "#decl",
         "#dip",
         "#wandt",
         "#spiconcal",
@@ -222,6 +225,7 @@ function openit(id) {
         "#curconcal",
         "#factorial",
         "#setop",
+        "#rootsunity",
         "#trans",
         "#hp",
         "#ppmfs",
@@ -242,6 +246,7 @@ function openit(id) {
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",
+        "#confi-inter",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
@@ -257,6 +262,7 @@ function openit(id) {
         "#straightline",
         "#binary-hexadecimal",
         "#mis",
+        "#ais",
         "#cay",
         "#utcs",
         "#inversetrigonoiden",

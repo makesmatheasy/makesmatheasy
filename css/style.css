@@ -265,12 +265,12 @@ h5, h6 {
 }
 
 .favourites:hover {
-  background-color: var(--apppink);
-  color: var(--appblack);
+  background-color: var(--apppink) !important;
+  color: var(--appblack) !important;
   cursor: pointer;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 776px) {
   .favouritecontainer {
     left: 5%;
     right: 5%;
@@ -558,6 +558,30 @@ color:#ababab !important;
 font-size: 18px;
 }
 
+#ip h4,
+#ip p,
+#ip li{
+  text-align:center;
+  list-style: none;
+  margin-bottom: 10px;
+}
+#ip img {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
+#pows h4,
+#pows h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+#pows p,
+#pows li{
+  color: #8a8a8a !important;
+}
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
@@ -771,4 +795,19 @@ input[type='number'] {
   #stdinp.form__field{
     font-size: 0.68rem !important;
   }
+}
+@media only screen and (max-width:991px) {
+  .prime{
+    font-size: 0.822rem;
+    width: 78px;
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:769px) {
+  #sievein{
+
+  font-size: 0.6rem !important;
+  }
+  
 }
