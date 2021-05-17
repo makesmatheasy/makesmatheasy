@@ -10171,14 +10171,37 @@ function combinationcal(nval, rval) {
             var img = Math.sin(k * theta);
             document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "+" + img.toFixed(6) + "<br>"
         }
+    }
 
+//Reuleaux Triangle shape Calculator function
+function reultriangle(){
+    var a = document.getElementById("reulside").value;
 
-        function spfind() {
+    var arc = (a * math.pi )/3;
+    var peri = a* math.pi;
+    var area = ((math.pi - math.sqrt(3)) * a**2) /2;
+
+    if (a != "") {
+        document.getElementById("reularclen").innerHTML = "\\[Arc \\space Length \\space (l) \\space of \\space Reuleaux \\space Triangle \\space \\newline \\frac{"+a+" \\times \\pi}{3} = " + arc.toFixed(3) + "\\]";
+        document.getElementById("reulperi").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Reuleaux \\space Triangle \\space \\newline \\pi \\times "+a+" = " + peri.toFixed(3) + "\\]";
+        document.getElementById("reularea").innerHTML = "\\[Area \\space (A) \\space of \\space Reuleaux \\space Triangle \\space \\newline \\frac{(\\pi - \\sqrt{3} ) \\times "+a+"^2}{2} = " + area.toFixed(3) + "\\]"
+
+        renderMathInElement(document.getElementById("reularclen"));
+        renderMathInElement(document.getElementById("reulperi"));
+        renderMathInElement(document.getElementById("reularea"));
+
+    } else {
+        document.getElementById("reularclen").innerHTML = "";
+        document.getElementById("reulperi").innerHTML = "";
+        document.getElementById("reularea").innerHTML = "";
+    }
+}
+
+    function spfind() {
             let S = parseInt(document.getElementById("sgiven").value)
             let P = parseInt(document.getElementById("pgiven").value)
             document.getElementById("spans").innerHTML = "The eqn is x^2" + (-S) + "x" + P + "=0"
 
-        }
     }
 
 //Mean start

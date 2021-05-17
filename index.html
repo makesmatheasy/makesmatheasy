@@ -13510,6 +13510,11 @@
                            href="#">Hyperboloid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#reutriangle"
+                           style="text-decoration:none;"
+                           href="#">Reuleaux Triangle</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#ndimsphere"
                            style="text-decoration:none;"
                            href="#">N-dimension Sphere</a></td>
@@ -24648,6 +24653,61 @@ N is the population size.
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal fade" id="reutriangle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Reuleaux Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Arc Length (l)</h5>
+                                    <p class="text-center">\[l = \frac{a \times \pi}{3}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P = \pi \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{(\pi - \sqrt{3} ) a^2}{2} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/reultriangle.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="reulside" class = "form__field" oninput="reultriangle()" 
+                                placeholder="Enter  side length (a)">
+                                <br><br>
+                                <p class="stopwrap" id="reularclen"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="reulperi"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="reularea"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
                         </button>
                     </div>
                 </div>
