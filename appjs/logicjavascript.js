@@ -13030,15 +13030,40 @@ function zvalue() {
     } else if (alpha == 0.1) {
         pvalue = 1.64;
     }
+    
+    var answer="";
+    var ans="";
+        ans += "\\[z \\space = \\space \\frac{x-μ0}{ \\frac{σ}{\\sqrt{n}}} \\]";
+        ans += "\\[\\frac{"+(sm)+"-"+pm+"}{\\frac{"+sd+"}{\\sqrt{"+sn+"}}} \\]";
+        ans += "\\[\\frac{"+(sm)+"-"+pm+"}{\\frac{"+sd+"}{"+(Math.sqrt(sn))+"}} \\]";
+        ans += "\\[\\frac{"+(sm)+"-"+pm+"}{"+Number.parseFloat(sd/Math.sqrt(sn)).toPrecision(4)+"} \\]";
+        ans += "\\[\\frac{"+Number.parseFloat(sm-pm).toPrecision(4)+"}{"+Number.parseFloat(sd/Math.sqrt(sn)).toPrecision(4)+"} \\]";
+        ans += "\\[Z score = "+(Number.parseFloat(Number.parseFloat(sm-pm).toPrecision(4)/Number.parseFloat(sd/Math.sqrt(sn)).toPrecision(4)).toPrecision(4))+ "\\]";
+   
+    if(pm==""||sm==""||sd==""||sn =="")
+    {
+        answer="Please fill all the fields";
+        document.getElementById('zworking').innerHTML = answer;
+        document.getElementById('ztestans').innerHTML="";
+        document.getElementById('pvalue').innerHTML = "";
+        document.getElementById('alphavalue').innerHTML = ""; 
 
-    if (z > pvalue) {
+    }
+    else if (z > pvalue) {
         document.getElementById('stepsbox2').style.display = "block"
-        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " > " + pvalue + "</strong>, Null Hypothesis is Rejected."
-        document.getElementById('pvalue').innerHTML = "P value = " + pvalue
-        document.getElementById('alphavalue').innerHTML = "Alpha(α) = " + alpha
+        document.getElementById('zworking').innerHTML =ans;
+        var output=document.getElementById('zworking');
+        renderMathInElement(output);
+        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " > " + pvalue + "</strong>, Null Hypothesis is Rejected.";   
+        document.getElementById('pvalue').innerHTML = "P value = " + pvalue;
+        document.getElementById('alphavalue').innerHTML = "Alpha(α) = " + alpha;
+       
     } else {
         document.getElementById('stepsbox2').style.display = "none"
-        document.getElementById('ztestans').innerHTML = "<strong>Z score = " + Number.parseFloat(z).toPrecision(4) + " < " + pvalue + "</strong>, Null Hypothesis is Not Rejected."
+        document.getElementById('zworking').innerHTML =ans;
+        var output=document.getElementById('zworking');
+        renderMathInElement(output);
+        document.getElementById('ztestans').innerHTML ="<strong>Z score =" + Number.parseFloat(z).toPrecision(4) + " < " + pvalue + ", </strong>Null Hypothesis is Not Rejected.";
     }
 }
 
