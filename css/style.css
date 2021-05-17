@@ -381,6 +381,7 @@ h5, h6 {
 
 #myInput {
   color: black;
+  background-color: transparent !important;
 }
 
 .bi {
@@ -582,6 +583,27 @@ font-size: 18px;
 #pows li{
   color: #8a8a8a !important;
 }
+
+#setop h5{
+  text-align: center;
+  margin-top: 40px;
+}
+#setop p{
+  text-align: center;
+  color: #ababab !important;
+}
+#setop li{
+  text-align: center;
+  list-style: none;
+}
+#setop img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
@@ -590,6 +612,17 @@ font-size: 18px;
   margin-bottom: 14px;
   margin-top: 19px;
 }
+
+.darkmode--activated input,
+.darkmode--activated button {
+  overflow: visible;
+  border-radius: 18px;
+  margin: 7px;
+  background-color: #050101;
+  color: white;
+  padding: 8px;
+}
+
 /*light mode*/
 
 .light-mode #euclid li{

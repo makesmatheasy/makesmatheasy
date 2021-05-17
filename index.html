@@ -1346,6 +1346,25 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="height1btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Height and Distance
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Height and Distance','#height1','c','heightimgfav')"><img
+                                        id="heightimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="expansionbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Expansion
                                 of Functions
@@ -2209,6 +2228,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="etcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Euler Totient Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Euler Totient Calculator','#etc','c','etcimgfav')"><img
+                                        id="etcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <!--Added function to find next prime number-->
              <li>
                 <table class="table">
@@ -2721,7 +2756,24 @@
                             </td>
                     </tr>
                 </table>
+            </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ineqtribtn"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ineqaulities of Triangles</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Ineqaulities of Triangles','#ineqtri','c','ineqtrifav')"><img
+                                            id="ineqtrifav" src="images/unfavourite.png"
+
+
+                                            style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                    </tr>
+                </table>
             </li>
 
             <li>
@@ -4391,6 +4443,17 @@
                 </div>
             </div>
         </div>
+        <div class="collapse" id="ineqtri">
+            <h2>Inequalities of Triangles</h2>
+            <br><br>
+            <input type="text" id="ineqtriin1" class="form__field" placeholder="ENter length of side 1">
+            <input type="text" id="ineqtriin2" class="form__field" placeholder="ENter length of side 2">
+            <input type="text" id="ineqtriin3" class="form__field" placeholder="ENter length of side 3">
+            <br>
+            <button class="btn btn-dark" onclick="ineqtrifind()">Check</button>
+            <br>
+            <h5 id="ineqtrians"></h5>
+        </div>
         <div class="collapse" id="math">
             <div class="stopwrap">
                 <div class="coll">
@@ -5171,9 +5234,22 @@
             <button type="button" class="btn btn-light" onclick=centersolve()>
                 Calculate
             </button><br>
+
+            <h3>Radius of Circle</h3><br>
+            <div class="coll">
+                <p>
+                    <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p><input type="text" id="qcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('pcenterr').value = value">  <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('qcenterr').value = value">  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterr" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
+                <input type="text" id="bcenterr" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenterr" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
+                    <br><br>
+                </p >
+
+            </div><br>
+            <button type="button" class="btn btn-light" onclick=centerrsolve()>
+                Calculate
+            </button><br>
            
-        <h1 id = "centere"></h1>
-        <h1 id = "centerr"></h>   
+        <h1 id = "centerer"></h1>
+        <h1 id = "centerrr"></h>   
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -5259,6 +5335,14 @@
             <button class="btn btn-dark" onclick="triinsemifind()">Find</button>
             <br>
             <h5 id="triinsemians"></h5>
+            <br>
+            <h4>Minimum side of square embedded in Regular polygon with N sides</h4>
+            <br>
+            <input type="text" id="minsquarein" placeholder="Enter no. of side of polygon" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="minsquarefind()">Find</button>
+            <br>
+            <h5 id="minsquareans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -7282,21 +7366,21 @@
             </div>
         </div>
         <div class="collapse" id="theo">
-            <h2>De Moivre's Theorem</h2>
+            <h2 style="text-align:center;">De Moivre's Theorem</h2>
             <p>For any real number x, we have</p>
-            <p>\[(cos(x)+isin(x))^{n}\space =\space cos(nx)\space +\space isin(nx)\]</p>
-            <p>Remark: Result can be shown true when n is a negative integer and even
+            <p >\[(cos(x)+isin(x))^{n}\space =\space cos(nx)\space +\space isin(nx)\]</p>
+            <p style="color: #ababab !important;">Remark: Result can be shown true when n is a negative integer and even
                 n is a rational number.</p>
             <br>    
-            <h2>Cauchy-Reimaan Theorem</h2>
+            <h2 style="text-align: center;">Cauchy-Reimaan Theorem</h2>
             <br>
-            <h4>What are analytic functions?</h4>
-            <p>A function f(z) is said to be analytic in a region R of the complex plane if f(z) has a derivative at each point of R and if f(z) is single valued.</p>
-            <p>Let f(x,y) = u(x,y) + iv(x,y) and the function should be analytic</p>
-            <p>Then,</p>
+            <h4 style="text-align: center;">What are analytic functions?</h4>
+            <p style="color: #ababab !important;">A function f(z) is said to be analytic in a region R of the complex plane if f(z) has a derivative at each point of R and if f(z) is single valued.</p>
+            <p style="color: #ababab !important;">Let f(x,y) = u(x,y) + iv(x,y) and the function should be analytic</p>
+            <p style="color: #ababab !important;">Then,</p>
             <p>\[\frac{∂v}{∂x}\space =\space -\frac{∂u}{∂y}\]</p>
-            <p>If, z = re<sup>iθ</sup>, then Cauchy-Reimaan Theorem become- </p>
-            <p>\[\frac{1}{r}\frac{∂u}{∂θ}\space =\space -\frac{∂v}{∂r}\]</p>
+            <p style="color: #ababab !important;">If, z = re<sup>iθ</sup>, then Cauchy-Reimaan Theorem become- </p>
+            <p >\[\frac{1}{r}\frac{∂u}{∂θ}\space =\space -\frac{∂v}{∂r}\]</p>
         </div>
         <!-- Complex Properties -->
         <div class="collapse" id="complexproperties">
@@ -7380,6 +7464,14 @@
             <button type="submit" class="btn btn-dark" onclick="mincubefind()">Find</button>
             <br>
             <p id="mincubeans"></p>
+            <br>
+            <h2>Cube Free Numbers smaller than n</h2>
+            <br>
+            <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="cubefreefind()">Find</button>
+            <br>
+            <p id="cubefreeans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8239,7 +8331,7 @@
             <h5>1. Union</h5>
             <p>The union of two sets is a set containing all elements that are in A or in B
                 (possibly both). For example,</p>
-            <p>\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
+            <p style="color:white !important;">\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
             <div class="d-flex justify-content-center">
                 <img src="https://www.probabilitycourse.com/images/chapter1/union_b.png"
                  style=" height: 12.5rem;" alt="">
@@ -8248,7 +8340,7 @@
             <h5>2. Intersection</h5>
             <p>The intersection of two sets A and B, denoted by A∩B, consists of all
                 elements that are both in A and B. For example,</p>
-            <p>\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
+            <p style="color:white !important;">\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
             <div class="d-flex justify-content-center">
                 <img src="https://www.probabilitycourse.com/images/chapter1/intersection_b.png"
                  style="width: 65%; height: 12.5rem;" alt="">
@@ -8266,8 +8358,8 @@
             <h5>3. Disjoint</h5>
             <p>Set A and set B are called disjoint sets if no element is common to A and B. 
                 i.e. A and B are disjoint sets then</p>
-            <p>\(A\cap B = ∅\)</p>
-            <p>For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
+            <p style="color:white !important; text-align: center !important;">\(A\cap B = ∅\)</p>
+            <p style="color:white !important;">For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
                 A\cap B\cap C = ∅\]</p>
                 <div class="d-flex justify-content-center">
                     <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
@@ -8286,7 +8378,7 @@
             <h5>5. Difference</h5>
             <p>The set A−B consists of elements that are in A but not in B. For example
                 if</p>
-            <p>\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
+            <p style="color:white !important;">\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
                 A-B = \{1,2\}\]
             </p>
             <div class="d-flex justify-content-center">
@@ -8327,12 +8419,12 @@
                 <li style="color: white; font-size: 1.25rem;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
                 <br>
             </ol>
-            <h4>Remark:</h4>
+            <h4 style="text-align: center;">Remark:</h4>
             <ul>
-                <li style="color: white; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
+                <li style="color:#ababab !important; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
                     i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
                 <br>
-                <li style="color: white; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
+                <li style="color: #ababab !important; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
             </ul>
         </div>
 
@@ -10380,6 +10472,17 @@
             </table>
 
         </div>
+        <div class="collapse" id="etc">
+            <h2 style="text-align:center;">Euler Totient Calculators</h2>
+            <br><br>
+            <h4>Euler’s Totient function for all numbers smaller than or equal to n</h4>
+            <br>
+            <input type="text" id="etc1" class="form__field" placeholder="ENter the number">
+            <br>
+            <button class="btn btn-dark" onclick="etc1find()">Find</button>
+            <br>
+            <h5 id="etc1ans"></h5>
+        </div>
         <!-- start of Hamming Dist -->
         <div>
             <div class="collapse" id="etf">
@@ -11896,6 +11999,38 @@
             </div>
         </div>
 
+        <div class="collapse" id="height1">
+            <div class="text-center">
+                <h2><label>Height and Distance</label></h2><br><br>
+            </div>
+            <h4 class="d-flex justify-content-center">To calculate Height when Angle of Elevation and Distance is given</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="height22" placeholder="Enter Distance (BC)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="height33"
+                placeholder="Enter Angle of Elevation in degree(∠BCA)"
+                style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=heightdist1()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="coll1" style="text-align: center;">
+                <h5 id="printheight1" style="color: white; font-size: x-large;"></h5>
+                </div>
+			<br>
+        </div>
+
         <div class="collapse" id="quadeqncal">
             <h2 style="text-align:center;">Quadratic equation whose roots are K times the roots of given equation</h2>
             <br>
@@ -12360,6 +12495,15 @@
             <button class="btn btn-dark" onclick="triinfind()">Find</button>
             <br>
             <h4 id="triinans"></h4>
+            <br>
+            <h4>Area of a n-sided regular polygon with given side length</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="arinin"/>
+            <input type="text" class = "form__field" placeholder = "Side Length" id="arinin1">
+            <br>
+            <button class="btn btn-dark" onclick="arinfind()">Find</button>
+            <br>
+            <h4 id="arinans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -12936,6 +13080,10 @@
                            href="#">Astroid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#cardiod" style="text-decoration:none;"
+                           href="#">Cardiod</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#slopeline" style="text-decoration:none;"
                            href="#">Line</a>
                     </td>
@@ -13240,6 +13388,13 @@
             <br>
             <button class="btn btn-dark" onclick="cscufind()">Find</button><br>
             <h5 id="cscuans"></h5>
+            <br>
+            <h4>Largest cube that can be inscribed within the sphere</h4>
+            <br>
+            <input type="text" id="cubeinsphere" class="form__field" placeholder="Enter the side length of cube">
+            <br>
+            <button class="btn btn-dark" onclick="cubeinspherefind()">Find</button><br>
+            <h5 id="cubeinsphereans"></h5>
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -14249,13 +14404,13 @@
     <h3 style="text-align: center;">Orthocentre Calculator </h3><br>
     <div class="coll">
         <p>
-            Coordinate 1 = (<input type="text" id="orthox1" size=5 value='' placeholder="x1"> , 
+            Coordinate 1 = (<input type="text" id="orthox11" size=5 value='' placeholder="x1"> , 
         <input type="text" id="orthoy1" size=5 value='' placeholder="y1">)
             <br><br>
-            Coordinate 2 = (<input type="text" id="orthox2" size=5 value='' placeholder="x2"> , 
+            Coordinate 2 = (<input type="text" id="orthox21" size=5 value='' placeholder="x2"> , 
         <input type="text" id="orthoy2" size=5 value='' placeholder="y2">)
                 <br><br>
-            Coordinate 3 = (<input type="text" id="orthox3" size=5 value='' placeholder="x3"> , 
+            Coordinate 3 = (<input type="text" id="orthox31" size=5 value='' placeholder="x3"> , 
         <input type="text" id="orthoy3" size=5 value='' placeholder="y3">)
                 <br><br>            
         <button type="button" class="btn btn-light" onclick=orthosolve()>
@@ -14263,7 +14418,7 @@
         </button><br>
         </p>
     </div>
-    <h4 id="ortho_output" style="color:white"></h4>
+    <h4 style="text-align: center;" id="ortho_output" style="color:white"></h4>
     <br>
     <h3 style="text-align: center;">Incentre Calculator </h3><br>
     <div class="coll">
@@ -15495,9 +15650,16 @@
     <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)[h]">
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
-    <p id="hydroans"></p>
-    
-   
+    <p class="stopwrap" id="hydroans1"
+    style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans2"
+        style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans3"
+        style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans4"
+        style="font-family:mathfont;"></p><br>
+    <p class="stopwrap" id="hydroans"
+        style="font-family:mathfont;"></p>
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
@@ -15558,6 +15720,7 @@
     <input type="text" name="vpdvar" class="form__field" id="vpdvar" placeholder="Value of Random Variable">
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="vpdscal()">Variance</button>
+    <button type="button" class="btn btn-outline-light" onclick="vpds1cal()">Standard Deviation</button>
     <p>&nbsp;</p>
     <p id="vpdans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
     
@@ -20082,6 +20245,59 @@ N is the population size.
                                 <p class="stopwrap" id="resultofastroidlen"
                                 style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultofastroidarea"
+                                style="font-family:mathfont;"></p>   
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cardiod" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cardiod Calculator</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[a=2r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P= 8a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= \frac{3 a^2 \pi}{2}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/cardiod.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter radius(r)"
+                                   id="inputradiuscardiod"
+                                   oninput="solvecardiod()">
+                                <p class="stopwrap" id="resultofcardioddia"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcardiodperi"
+                                style="font-family:mathfont;"></p>   
+                                <p class="stopwrap" id="resultofcardiodarea"
                                 style="font-family:mathfont;"></p>   
                         </div>
                         <!---TILL-->

@@ -1266,6 +1266,13 @@ function autocomplete(inp, arr) {
                         clearmain()
                         $("#3dgeocalc").slideDown(); 
                     }
+                    else if(inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR"){
+                        $("#etc").slideToggle(); 
+                    }
+                    else if (inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR") {
+                        document.getElementById('etc').click(); 
+                    }
+
                     else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
                         clearmain()
                         $("#euclid").slideDown();
@@ -1417,7 +1424,14 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
 
+
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes"
+
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","3-D Shapes Inscribed"
+                          ,"Euler Totient Calculator"
+
                         ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","2-D Shapes Inscribed","3-D Shapes Inscribed"
+
 
 
                     ];                    
@@ -1968,6 +1982,13 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "PYTHAGOREAN TRIPLETS") {
         $("#pythtriple").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR"){
+        document.getElementById('etc').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR") {
+        $("#etc").slideToggle(); 
+    }
+
     else if(inp.value.toUpperCase() == "PROFIT/LOSS CALCULATIONS"){
         document.getElementById('profitloss').click(); 
     }
