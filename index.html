@@ -5346,21 +5346,29 @@
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
-            <h1 style="text-align: center;">Square root calculator </h1><br>    
-            <div class="form-group">
-                <input type="text" id="squarerootin" class="form__field"
-                       placeholder="Enter Value "
-                       >
-            </div><br>
-
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="findSqrt()">
-                    Calculate
-                </button><br>
-
-            </div>
-             <br>
+            <h1 style="text-align: center;">Square root calculator </h1><br> 
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="squarerootin" class="form__field"
+                           placeholder="Enter Value "
+                           >
+                </div><br>
+    
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="findSqrt()">
+                        Calculate
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                        Reset
+                    </button>
+                    <br>
+    
+                </div>
+                 <br>
+            </form>   
+            
             <div class="form-group">
                    <p id="squarerootresult" style="overflow-y:hidden;height:100%;text-align: center;"></p>
             </div>
@@ -7401,76 +7409,112 @@
 	    <div class="collapse" id="squarecube">
             <h2>Previous perfect square and cube number smaller than number N</h2>
             <br>
-            <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="smallerscfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="smallerscfind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="smallcube"></p>
             <p id="smallsquare"></p>
             <br><br>
             <h2>Perfect cube greater than a given number</h2>
             <br>
-            <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="greatcfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="greatcfind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="greatcube"></p>
             <br><br>
             <h2>Perfect square greater than given number</h2>
             <br>
-            <input type="text" id="greatinin1" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="greatsfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="greatinin1" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="greatsfind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="greatsquare"></p>
             <br><br>
             <h2>Least number to be added to or subtracted from N to make it a Perfect Cube</h2>
             <br>
-            <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="addsubcans"></p>
             <br><br>
             <h2>Least number to be added to or subtracted from N to make it a Perfect Square</h2>
             <br>
-            <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="addsubsfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="addsubsfind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="addsubsans"></p>
             <br><br>
             <h2><br><br>
             <h2>Count numbers upto N which are both perfect square and perfect cube</h2>
             <br>
-            <input type="text" id="countsc" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="countscfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="countsc" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="countscfind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="countscans"></p>
             <br>
             <h2>Find minimum number to be divided to make a number a perfect square</h2>
             <br>
-            <input type="text" id="minsquare" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="minsquarefind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="minsquare" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="minsquarefind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="minsquareans"></p>
             <br>
             <h2>Minimum divisor of a number to make the number perfect cube</h2>
             <br>
-            <input type="text" id="mincube" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="mincubefind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="mincube" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="mincubefind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="mincubeans"></p>
             <br>
             <h2>Cube Free Numbers smaller than n</h2>
             <br>
-            <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="cubefreefind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="submit" class="btn btn-dark" onclick="cubefreefind()">Find</button>
+                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="cubefreeans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
@@ -15731,9 +15775,13 @@
 
     
     <h1 >ORDER OF MAGNITUDE CALCULATOR </h1><p>&nbsp;</p>
-    <input type="number" name="oocx" class="form__field" id="oocx" width="5em" placeholder="Enter the number ">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="oocal()">Calculate</button>
+    <form action="">
+        <input type="number" name="oocx" class="form__field" id="oocx" width="5em" placeholder="Enter the number ">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="oocal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p id="ooans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     
    
@@ -15741,13 +15789,17 @@
 
 
 <div class="collapse" id="mis">    
-    <h1 >MULTIPICATIVE INVERSE</h1>
+    <h1 >MULTIPLICATIVE INVERSE</h1>
     <p>&nbsp;</p>
     <div style="color: white; font-size: 1.3em; font-family:mathfont"> Enter number to find mulitplicative answer: <input type="number" name="mians1" id="mians1" placeholder="Enter numerator"> 
-    <input type="number" name="mians2" id="mians2" placeholder="Enter denominator">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="midcal()">Calculate in Fraction</button>
-    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="mifcal()">Calculate in Decimal</button>
+    <form action="">
+        <input type="number" name="mians2" id="mians2" placeholder="Enter denominator">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="midcal()">Calculate in Fraction</button>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="mifcal()">Calculate in Decimal</button>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p>&nbsp;</p> <p id="mians"></div>
 </div>
 
@@ -15782,14 +15834,18 @@
     
     <h1 >UNIT RATE CALCULATOR </h1>
     <p>&nbsp;</p>
-    <input type="number" name="dens" id="urx1" size="5" placeholder="Enter quantity">  +
-    <input type="text" name="dens" id="urx2" size="5" placeholder="Enter unit">
-    <br>
-    <hr class="form__field">
-    <input type="number" name="dens"  id="urx3" size="5" placeholder="Enter quantity">  +
-    <input type="text" name="dens" id="urx4" size="5" placeholder="Enter unit">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="utcal()">Calculate</button>
+    <form action="">
+        <input type="number" name="dens" id="urx1" size="5" placeholder="Enter quantity">  +
+        <input type="text" name="dens" id="urx2" size="5" placeholder="Enter unit">
+        <br>
+        <hr class="form__field">
+        <input type="number" name="dens"  id="urx3" size="5" placeholder="Enter quantity">  +
+        <input type="text" name="dens" id="urx4" size="5" placeholder="Enter unit">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="utcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p id="utcans">
     
    
