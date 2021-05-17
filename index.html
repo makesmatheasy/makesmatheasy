@@ -2758,6 +2758,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="2d-shape-insbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> 2-D Shapes Inscribed
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('2-D Shapes Inscribed','#2d-shape-ins','c','2d-shape-insimgfav')"><img
+                                        id="2d-shape-insimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="2d-shape-btn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Name Of 2D Shapes
                             </a>
@@ -5210,6 +5228,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="collapse" id="2d-shape-ins">
+            <h2 style="text-align:center;">2-D Shapes Inscribed</h2>
+            <br><br>
+            <h4>Largest triangle that can be inscribed in a semicircle </h4>
+            <br>
+            <input type="text" id="triinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="triinsemifind()">Find</button>
+            <br>
+            <h5 id="triinsemians"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     

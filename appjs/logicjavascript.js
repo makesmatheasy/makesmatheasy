@@ -13168,6 +13168,15 @@ function ratpercal()
     document.getElementById("ratperans").innerHTML=ans;
 
 }
+
+function triinsemifind(){
+    let r = parseInt(document.getElementById("triinsemiin").value)
+    if (r < 0)
+        document.getElementById("triinsemians").innerHTML = "Not triangle can be formed"
+    else
+        document.getElementById("triinsemians").innerHTML = r*r
+}
+
 function hypertrigno()
 {   
     const i = parseInt(document.getElementById("hypertrignoin").value);
@@ -13657,6 +13666,7 @@ function decl() {
         declans.appendChild(para)
     }
 }
+
 
 
 
