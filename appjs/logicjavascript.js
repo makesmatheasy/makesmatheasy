@@ -13620,6 +13620,15 @@ function comb(n, r)
     return product_Range(r+1, n)/product_Range(1,n-r);
   }
 }
+
+function arinfind(){
+    let n = parseInt(document.getElementById("arinin").value)
+    let a = parseInt(document.getElementById("arinin1").value)
+    var A = (a * a * n) / (4 * Math.tan((180 / n) * 3.14159 / 180));
+ 
+    document.getElementById("arinans").innerHTML = A
+}
+
 function hypergeoscal()
 {
     var num1=document.getElementById("hypergeos1").value;
@@ -13670,6 +13679,7 @@ function qrtl() {
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
 }
 
+
 function volweight(){
 var l,w,h;
 l = parseFloat(document.getElementById("length_vol").value);
@@ -13694,7 +13704,6 @@ else{
     renderMathInElement(output);
 }
 }
-
 
 
 // decile calculator
@@ -13727,9 +13736,3 @@ function decl() {
         declans.appendChild(para)
     }
 }
-
-
-
-
-
-
