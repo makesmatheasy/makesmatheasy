@@ -2254,6 +2254,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- Catalan numbers Calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cat-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Catalan Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Double Factorial','#catNum','c','catnumimgfav')"><img
+                                        id="catnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -2814,6 +2830,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="shapeinscribedbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D shapes Inscribed</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('3-D shapes Inscribed','#shapeinscribed','c','shapeinscribedimgfav')"><img
+                                        id="shapeinscribedimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="3dgeobtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D
                                 Geometry</a>
@@ -2861,6 +2894,25 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="volumebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volumetric Weight Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Volumetric Weight Calculator','#volume','c','volumeimgfav')"><img
+                                        id="volumeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -9528,6 +9580,31 @@
 
             </div>
         </div>
+        <div class="collapse" id="volume">
+            <h2 style="color: var(--appimage);">Volumetric Weight Calculator</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form__field" name="a"
+                       id="length_vol"
+                       placeholder="Enter length in centimeters"/>
+               <br>
+               <br>
+                <input type="text" class="form__field" name="w"
+                       id="width_vol"
+                       placeholder="Enter width in centimeters"/>
+                <br>
+                <br>
+                <input type="text" class="form__field" name="h"
+                       id="height_vol"
+                       placeholder="Enter height in centimeters"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volweight()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="volweightAns"></p>
+            </div>
+        </div>
         <div class="collapse" id="per_chng_vol">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2>
             <br>
@@ -10250,6 +10327,26 @@
             </div>
         </div>
         <!-- end of Double Factorial calculator -->
+        <!-- start of Catalan numbers calculator -->
+        <div>
+            <div class="collapse" id="catNum">
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number : &nbsp; &nbsp; </label>
+                    <input type="number" id="cat-num" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="catalanNumbers(document.getElementById('cat-num').value);">
+                        Solve
+                    </button>
+                </div>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="catNumResult"></p>
+                </div>
+            </div>
+        </div>
+        <!-- end of Catalan numbers calculator -->
         
         <div class="collapse" id="trigonofun">
         <h3 style="text-align: center;">Domain,Range,Period and Graph of Trigonometric Functions</h3>
@@ -12973,6 +13070,17 @@
             <img src="images/propcontheo.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
         </div>
 
+        <div class="collapse" id="shapeinscribed">
+            <h2 style="text-align:center;">3-D Shapes Inscribed</h2>
+            <br><br>
+            <h4>Largest cone that can be inscribed within a cube</h4>
+            <br>
+            <input type="text" id="shapeinscribedin" class="form__field" placeholder="Enter the side length of cube">
+            <br>
+            <button class="btn btn-dark" onclick="coneincubefind()">Find</button><br>
+            <h5 id="coneincubeans"></h5>
+        </div>
+
         <div class="collapse" id="tdshapescal">
             <h2>Calculator for 3-D Shapes</h2>
             <table class="table">
@@ -14657,10 +14765,37 @@
                     </div>
                 </div>
             </form>
+            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p><br>
             <br>
+            <h4 class="d-flex justify-content-center">Constant/Increasing/Decreasing AP</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+            <!-- <form class="form-inline"> -->
+                <input type="number" id="term121" placeholder="Enter the first term  (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="term112" placeholder="Enter the second term (a+d) "
+                       style="border: none; background: transparent; width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="constAp()">
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="ResetVal()">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <p id="printAPconst" style="font-family:mathfont;width:auto;"
+                   class="stopwrap"></p>
+                <br>
+            </div>
             <!-- sum of nterms in G.P.  -->
-       <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p><br>
-       <br>
        <h2 class="d-flex justify-content-center">2) Sum of N terms of a Geometric Progression</h2>
        <div class="form-group d-flex flex-column align-items-center">
        <form>
