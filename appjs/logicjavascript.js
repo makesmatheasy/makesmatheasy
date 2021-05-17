@@ -9684,6 +9684,33 @@ function nap(){
     document.getElementById("nAPseries2").innerHTML = "n-Arithmetic Mean: " + series.substring(0, series.length - 2)
 }
 
+function constAp(){
+    var a = parseInt(document.getElementById("term121").value)
+    var b = parseInt(document.getElementById("term112").value)
+    var output = document.getElementById("printAPconst")
+    var temp = "";
+    var d = (b-a);
+    if(!isNaN(a) && !isNaN(b)){
+        if(d==0){
+        temp += "\\[The \\space given \\space AP \\space is \\space Constant \\space AP \\space as \\space common \\space difference(d) \\space of \\space an \\space AP \\space is \\space equal \\space to \\space zero. \\]";
+       output.innerHTML = temp;
+    }
+        else if(d>0){
+            temp += "\\[The \\space given \\space AP \\space is \\space Increasing \\space AP \\space as \\space common \\space difference(d) \\space of \\space an \\space AP \\space is \\space greater \\space than \\space zero. \\]";
+            output.innerHTML = temp;
+        }
+        else{
+            temp += "\\[The \\space given \\space AP \\space is \\space Decreasing \\space AP \\space as \\space common \\space difference(d) \\space of \\space an \\space AP \\space is \\space less \\space than \\space zero. \\]";
+            output.innerHTML = temp;
+        }
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
+}
+
 function ngp(){
     var n = parseInt(document.getElementById("nt2").value)
     var a = parseInt(document.getElementById("ft2").value)
@@ -10136,7 +10163,6 @@ function combinationcal(nval, rval) {
     }
 }
 
-
     function rootsunityfind() {
         let n = parseInt(document.getElementById("rootsunityin").value)
         var theta = (3.14 * 2 / n);
@@ -10527,6 +10553,14 @@ function eulerTotient(n) {
 
 //Next Prime Function
 
+function coneincubefind(){
+    let a = parseInt(document.getElementById("shapeinscribedin").value)    
+    let r = (a / Math.sqrt(2));
+    r = r.toFixed(5)
+    let h =a
+    document.getElementById("coneincubeans").innerHTML = "The radius is "+r+"and the height is "+h
+}
+
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
     if (n < 4)
@@ -10599,6 +10633,26 @@ function doubleFactorial(num)
     document.getElementById("dblFactResult").innerHTML = "The Double Factorial of " + num + " is: " + dfact(num);
 }
 
+//Catalan numbers function
+function catalan(num)
+{
+    if (num <= 1)
+        return 1;
+    let res = 0;
+    for(let i = 0; i < num; i++)
+        res += catalan(i) * catalan(num - i - 1);
+    return res;
+}
+
+function catalanNumbers(num){
+    let res="";
+    for (let i = 0; i < num; i++){
+        res+=catalan(i);
+        res+= " ";
+    }
+    document.getElementById("catNumResult").innerHTML = "The Catalan Numbers are: " + res;    
+}
+ 
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
@@ -13554,6 +13608,33 @@ function qrtl() {
     let upperQrtl = dataPoints * (3 / 4)
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
 }
+
+
+function volweight(){
+var l,w,h;
+l = parseFloat(document.getElementById("length_vol").value);
+w = parseFloat(document.getElementById("width_vol").value);
+h = parseFloat(document.getElementById("height_vol").value);
+var output = document.getElementById("volweightAns");
+var temp = "";
+if(l<0 || h<0 || w<0){
+    temp += "\\[A \\space magnitude \\space cannot \\space be \\space negative. \\space Please \\space enter \\space positive \\space value \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+else if(!isNaN(l) && !isNaN(w) && !isNaN(h)){
+temp += "\\[Volumetric \\space Weight (kg) \\space = \\space \\frac{Lenght \\times Width \\times Height}{5000} \\space = \\space \\frac{ " + l + "\\times" + w + "\\times" + h + "}{5000} \\space  = \\space \\frac{ " + (l * w * h) + "}{5000} \\space  = \\space " + ((l*w *h)/5000) + "  \\]";
+temp += "\\[The \\space Volumetric \\space weight \\space is \\space " + ((l*w *h)/5000) + " \\space Kg \\]";
+output.innerHTML = temp;
+    renderMathInElement(output);
+}
+else{
+    temp += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = temp;
+    renderMathInElement(output);
+}
+}
+
 
 // decile calculator
     
