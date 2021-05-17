@@ -7192,6 +7192,31 @@ function solvehemisphere() {
     }
 }
 
+function heightdist1(){
+    var distance = parseFloat(document.getElementById("height22").value);
+    var degree = parseFloat(document.getElementById("height33").value);
+    var output = document.getElementById("printheight1");
+    var temp = "";
+    var deg1 = Math.tan(degree*Math.PI/180).toFixed(3)
+    if(!isNaN(distance) && !isNaN(degree)){
+        temp += "\\[Distance(AC) \\space = \\space " + distance + "m \\]";
+        temp += "\\[Angle \\space of \\space Elevation(∠BAC) \\space = \\space " + degree + "\\degree \\]";
+        temp += "\\[tan θ \\space = \\space \\frac{Opposite Side}{Adjacent Side} \\]";
+        temp += "\\[tan " + degree + "\\degree \\space = \\space \\frac{AB}{BC} \\]";
+        temp += "\\[" + deg1 + "\\space = \\space \\frac{AB}{" + distance + "} \\]";
+        temp += "\\[AB \\space = \\space " + distance + "\\times" + deg1 + " \\space = \\space " + (distance*deg1) + " \\]";
+        temp += "\\[Height \\space is \\space " + (distance*deg1) + "m \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+
+}
+
 function solveCone() {
     var height = document.getElementById("inputhcone").value;
     var radius = document.getElementById("inputrcone").value;

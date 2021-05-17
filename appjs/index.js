@@ -321,6 +321,7 @@ function openit(id) {
         "#pyramid",
         "#tripyramid",
         "#octpyramid",
+        "#height1",
         "#hexpyramid",
         "#octahedron",
         "#repp",

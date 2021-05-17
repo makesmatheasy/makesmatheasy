@@ -609,6 +609,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#height1btn").click(function () {
+        openit("#height1");
+        closenav();
+        clearall();
+    });
     $("#volumebtn").click(function () {
         openit("#volume");
         closenav();
