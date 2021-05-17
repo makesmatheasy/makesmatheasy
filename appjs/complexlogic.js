@@ -1652,6 +1652,19 @@ function midcal() {
     renderMathInElement(document.getElementById("mians"));
 }
 
+function ainvcal() {
+    var num = document.getElementById("aians1").value;
+    ans = "";
+    if (num == "") {
+        ans = "Please fill all the field";
+    }
+    else {
+        num = parseFloat(num);
+        ans = -1 * num;
+    }
+    document.getElementById("aians").innerHTML = "Answer -> &nbsp;" + ans;
+}
+
 function hypergeos2cal() {
     var num1 = document.getElementById("hypergeos12").value;
     var num2 = document.getElementById("hypergeos22").value;
@@ -1689,6 +1702,26 @@ function hypergeosvarcal() {
         num4 = parseFloat(num4);
         var d = (num2 * num3 * (num4 - num3) * (num4 - num2)) / (num4 * num4 * (num4 - 1));
         ans = "The value of hypergeometric distribution's variance is : " + d;
+
+    }
+    document.getElementById("hypergeos2ans").innerHTML = ans;
+}
+function hypergeosvar2cal() {
+    var num1 = document.getElementById("hypergeos12").value;
+    var num2 = document.getElementById("hypergeos22").value;
+    var num3 = document.getElementById("hypergeos32").value;
+    var num4 = document.getElementById("hypergeos42").value;
+    ans = "";
+    if (num1 == "" || num2 == "" || num4 == "" || num3 == "") {
+        ans = "Please fill all the field";
+    }
+    else {
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        num3 = parseFloat(num3);
+        num4 = parseFloat(num4);
+        var d = (num2 * num3 * (num4 - num3) * (num4 - num2)) / (num4 * num4 * (num4 - 1));
+        ans = "The value of hypergeometric distribution's variance is : " + Math.sqrt(d);
 
     }
     document.getElementById("hypergeos2ans").innerHTML = ans;

@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["dblFactResult", "smDivResult", "smPrimeResult", "nextPrimeResult", "distResult", "resultintegration", "integralplot", "etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["catNumResult", "dblFactResult", "smDivResult", "smPrimeResult", "nextPrimeResult", "distResult", "resultintegration", "integralplot", "etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -71,6 +71,12 @@ $(document).ready(function () {
 
     $("#minv").click(function () {
         openit("#mis");
+        closenav();
+        clearall();
+    });
+
+    $("#ainv").click(function () {
+        openit("#ais");
         closenav();
         clearall();
     });
@@ -371,6 +377,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#declbtn").click(function () {
+        openit("#decl");
+        closenav();
+        clearall();
+
+    });
 
     $("#dipbtn").click(function () {
         openit("#dip");
@@ -519,6 +531,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    //Catalan numbers calculator
+    $("#cat-btn").click(function () {
+        openit("#catNum");
+        closenav();
+        clearall();
+    })
     $("#hydrops").click(function () {
         openit("#hydroz");
         closenav();
@@ -527,6 +545,12 @@ $(document).ready(function () {
 
     $("#segcal").click(function () {
         openit("#segcals");
+        closenav();
+        clearall();
+    });
+
+    $("#confi-inter-btn").click(function () {
+        openit("#confi-inter");
         closenav();
         clearall();
     });
@@ -582,6 +606,11 @@ $(document).ready(function () {
     });
     $("#reppbtn").click(function () {
         openit("#repp");
+        closenav();
+        clearall();
+    });
+    $("#volumebtn").click(function () {
+        openit("#volume");
         closenav();
         clearall();
     });
@@ -1069,6 +1098,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#shapeinscribedbtn").click(function () {
+        openit("#shapeinscribed");
+        closenav();
+        clearall();
+    });
     $("#sievebtn").click(function () {
         openit("#sieve");
         closenav();
@@ -1095,7 +1129,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#2d-shape-insbtn").click(function () {
+        openit("#2d-shape-ins");
+        closenav();
+        clearall();
+    });
 
     $("#jointprobabilitycollapsebtn").click(function () {
         openit("#joint-probabilitycollapse");
@@ -1189,7 +1227,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#sqseriescollapsebtn").click(function () {
+        openit("#sqseries");
+        closenav();
+        clearall();
+    });
 
 })
 

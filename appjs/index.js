@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#catNum",
         "#dblFact",
         "#sumDiv",
         "#smPrime",
@@ -187,7 +188,9 @@ function openit(id) {
         "#beta",
         "#imprtopr",
         "#sieve",
+        "#shapeinscribed",
         "#matrixprops",
+        "#2d-shape-ins",
         "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
@@ -205,6 +208,7 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
+        "#volume",
         "#thdif",
         "#corgeo",
         "#ttest",
@@ -214,6 +218,7 @@ function openit(id) {
         "#unitconcal",
         "#giff",
         "#qrtl",
+        "#decl",
         "#dip",
         "#wandt",
         "#spiconcal",
@@ -242,6 +247,7 @@ function openit(id) {
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",
+        "#confi-inter",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
@@ -257,6 +263,7 @@ function openit(id) {
         "#straightline",
         "#binary-hexadecimal",
         "#mis",
+        "#ais",
         "#cay",
         "#utcs",
         "#inversetrigonoiden",
@@ -367,6 +374,7 @@ function openit(id) {
         "#mecs",
         "#chng-vol-cube",
         "#squarerootcalc",
+        "#sqseries",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
