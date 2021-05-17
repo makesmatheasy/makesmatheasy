@@ -188,6 +188,7 @@ function openit(id) {
         "#beta",
         "#imprtopr",
         "#sieve",
+        "#ineqtri",
         "#shapeinscribed",
         "#matrixprops",
         "#2d-shape-ins",

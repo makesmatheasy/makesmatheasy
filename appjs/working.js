@@ -493,7 +493,11 @@ $(document).ready(function () {
         openit("#ip");
         closenav();
         clearall();
-
+    });
+    $("#ineqtribtn").click(function () {
+        openit("#ineqtri");
+        closenav();
+        clearall();
     });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
