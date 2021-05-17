@@ -10171,14 +10171,37 @@ function combinationcal(nval, rval) {
             var img = Math.sin(k * theta);
             document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "+" + img.toFixed(6) + "<br>"
         }
+    }
 
+//Reuleaux Triangle shape Calculator function
+function reultriangle(){
+    var a = document.getElementById("reulside").value;
 
-        function spfind() {
+    var arc = (a * math.pi )/3;
+    var peri = a* math.pi;
+    var area = ((math.pi - math.sqrt(3)) * a**2) /2;
+
+    if (a != "") {
+        document.getElementById("reularclen").innerHTML = "\\[Arc \\space Length \\space (l) \\space of \\space Reuleaux \\space Triangle \\space \\newline \\frac{"+a+" \\times \\pi}{3} = " + arc.toFixed(3) + "\\]";
+        document.getElementById("reulperi").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Reuleaux \\space Triangle \\space \\newline \\pi \\times "+a+" = " + peri.toFixed(3) + "\\]";
+        document.getElementById("reularea").innerHTML = "\\[Area \\space (A) \\space of \\space Reuleaux \\space Triangle \\space \\newline \\frac{(\\pi - \\sqrt{3} ) \\times "+a+"^2}{2} = " + area.toFixed(3) + "\\]"
+
+        renderMathInElement(document.getElementById("reularclen"));
+        renderMathInElement(document.getElementById("reulperi"));
+        renderMathInElement(document.getElementById("reularea"));
+
+    } else {
+        document.getElementById("reularclen").innerHTML = "";
+        document.getElementById("reulperi").innerHTML = "";
+        document.getElementById("reularea").innerHTML = "";
+    }
+}
+
+    function spfind() {
             let S = parseInt(document.getElementById("sgiven").value)
             let P = parseInt(document.getElementById("pgiven").value)
             document.getElementById("spans").innerHTML = "The eqn is x^2" + (-S) + "x" + P + "=0"
 
-        }
     }
 
 //Mean start
@@ -12527,6 +12550,13 @@ function datecal() {
     }
 }
 
+function cscufind(){
+    let a = parseInt(document.getElementById("cscu").value)
+    var r =  (a * Math.sqrt(2)) / 3;
+    var h = (2 * a) / 3;
+    var V = (3.14 *Math. pow(r, 2) * h);
+    document.getElementById("cscuans").innerHTML = "The volume of cone is "+V
+}
 
 function computeprobability() {
 
@@ -12582,6 +12612,15 @@ function condprobability(){
 }
 }
 
+function rootscubicfind(){
+    let a = parseInt(document.getElementById("rootscubicin1").value)
+    let b = parseInt(document.getElementById("rootscubicin2").value)
+    let c = parseInt(document.getElementById("rootscubicin3").value)
+    let X = (a + b + c);
+    let Y = (a * b) + (b * c) + (c * a);
+    let Z = a * b * c;
+    document.getElementById("rootscubicans").innerHTML = "x^3-"+X+"x^2+"+Y+"x-"+Z+"=0"
+}
 
 function computejointprobability() {
 
@@ -13190,6 +13229,15 @@ function ratpercal()
     document.getElementById("ratperans").innerHTML=ans;
 
 }
+
+function triinsemifind(){
+    let r = parseInt(document.getElementById("triinsemiin").value)
+    if (r < 0)
+        document.getElementById("triinsemians").innerHTML = "Not triangle can be formed"
+    else
+        document.getElementById("triinsemians").innerHTML = r*r
+}
+
 function hypertrigno()
 {   
     const i = parseInt(document.getElementById("hypertrignoin").value);

@@ -191,6 +191,7 @@ function openit(id) {
         "#sieve",
         "#shapeinscribed",
         "#matrixprops",
+        "#2d-shape-ins",
         "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
@@ -372,6 +373,7 @@ function openit(id) {
         "#mecs",
         "#chng-vol-cube",
         "#squarerootcalc",
+        "#sqseries",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
