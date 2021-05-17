@@ -10246,6 +10246,12 @@ function Means() {
     }
 }
 
+function cubeinspherefind(){
+    let r = parseInt(document.getElementById("cubeinsphere").value)
+    var a = (2 * r) / Math.sqrt(3);
+    document.getElementById("cubeinsphereans").innerHTML =  a.toFixed(5);
+}
+
 //Mean End
 //Median start
 function Median() {
