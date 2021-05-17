@@ -360,13 +360,17 @@ function hydrocal()
         ans="Please enter all the values to obtain answer";
     }
     else{
-    var prs=b*9.80655*a+1;
-    
-   ans="Your answer is: "+prs+" atm"+" <p>&nbsp</p><p>&nbsp</p>";
-    ans+="Our hydrostatic pressure calculator uses the below hydrostatic pressure formula <br>    p = ρ * g * h + p0 where <br>  p is the hydrostatic pressure, ρ is the density of fluid,<br>  g is the gravitational acceleration (the average value for the Earth is g = 9.80655 m/s²), <br>   h is the depth,<br> p0 is the external pressure (usually atmospheric pressure p0 = 1 atm = 1013.25 hPa).";
-
+        var prs=b*9.80655*a+1;
+        ans += "\\[Formula \\space  :- \\space Hydrostatic \\space pressure(P) \\space = \\space P_0 \\space + \\space  ρ \\times g \\times h \\]";
+        ans += "\\[where,\\space g(gravitational \\space acceleration) \\space -> \\space 9.80655 m/s² \\]";
+        ans += "\\[and \\space  P_0 (atmospheric \\space pressure)\\space -> \\space 1 \\space atm = 1013.25 \\space hPa \\]";
+        ans += "\\[= \\space P_0 \\space + \\space ( ρ \\times g \\times h)\\]",
+        ans += "\\[= \\space 1 \\space + \\space (9.860655 \\times ρ \\times h) \\]";
+        ans += "\\[= \\space 1 \\space + \\space (9.860655 \\times " + b + "\\times" + a + ")\\]";
+        ans += "\\[= \\space " + prs +"\\]";
     }
     document.getElementById("hydroans").innerHTML=ans;
+    renderMathInElement(document.getElementById("hydroans"));
 }
 
 function straincal()
@@ -953,23 +957,32 @@ function squaresRangecal()
 {
     var num1=document.getElementById("sqrange1").value;
     var num2=document.getElementById("sqrange2").value;
+    let work = document.getElementById("sqrt-workn");
+    let print = "<h2>Working Steps </h2> &emsp;";
     var s="";
     if(num1=="" || num2=="")
     {
        s= "Please enter both numbers";
     }
     else{
+        var pr ="";
         s="Perfect squares in the given range: ";
         sqrt1 = Math.trunc(Math.sqrt(num1));
         sqrt2 = Math.trunc(Math.sqrt(num2));
+        print += "STEP1 : Take square root ( only integer part )of the two given inputs<br>";
+        print += "So,square root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + sqrt1 + "&nbsp; and &nbsp; Square root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+sqrt2+"<br>";
+        print += "<br>STEP2 : Print squares of &nbsp;"+ sqrt1 +"&nbsp; to &nbsp;"+ sqrt2 +"&nbsp; that comes under the range of &nbsp;"+ sqrt1+"&nbsp; and &nbsp;"+ sqrt2 +"&nbsp; <br> (including &nbsp;"+ sqrt1 +"&nbsp; and &nbsp;"+ sqrt2 +"&nbsp; both if their squares also are in range)<br><br>";
         for(var i=sqrt1; i<=sqrt2;i++){
             if(i**2>=num1 && i**2<=num2){
                 var ans = i**2;
+                pr +=ans.toString() + "   ";
                 s += ans.toString() + "   ";
             }
         }
+        print += "So, answer = &nbsp;"+pr;
     }
     document.getElementById("squaresRangeans").innerHTML=s;
+    work.innerHTML = print;
 }
 
 function cubesRangecal()
@@ -991,7 +1004,7 @@ function cubesRangecal()
         cbrt2 = Math.trunc(Math.cbrt(num2));
         print += "STEP1 : Take cube root ( only integer part )of the two given inputs<br>";
         print += "So,Cube root of &nbsp;" + num1 + "&nbsp; = &nbsp;" + cbrt1 + "&nbsp; and &nbsp; Cube root of &nbsp;" + num2 +"&nbsp; = &nbsp;"+cbrt2+"<br>";
-        print += "STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both)<br>";
+        print += "<br>STEP2 : Print cubes of &nbsp;"+ cbrt1 +"&nbsp; to &nbsp;"+ cbrt2 +"&nbsp; that comes under the range of &nbsp;"+ cbrt1+"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; <br> (including &nbsp;"+ cbrt1 +"&nbsp; and &nbsp;"+ cbrt2 +"&nbsp; both if their cubes also are in range)<br><br>";
         for(var i=cbrt1; i<=cbrt2;i++){
             if(i**3>=num1 && i**3<=num2){
                 var ans = i**3;
@@ -1701,10 +1714,15 @@ function mifcal()
     {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
-        var d=num2/num1;
-        ans="Multiplicative inverse of given number in decimal is: "+d;
+        ans += "\\[[Note \\space :- \\space Multiplicative \\space Inverse \\space of \\space a \\space number \\space is \\space an \\space another \\space number \\space which \\]"; 
+        ans += "\\[\\space when \\space multiplied \\space with \\space it, \\space always \\space gives \\space 1 ] \\]";
+        ans += "\\[Divide \\space the \\space number \\space by \\space 1 \\space\\]";
+        ans += "\\[Multiplicative \\space inverse \\space of \\space \\frac{" + num1 + "}{" + num2 + "} \\space = \\space \\frac{1}{\\frac{" + num1 + "}{" + num2 + "}}\\]";
+        ans += "\\[= \\space \\frac{" + num2 + "}{" + num1 + "}\\]";
+        ans += "\\[= \\space "+ (num2/num1) + " \\]";
     }
     document.getElementById("mians").innerHTML=ans;
+    renderMathInElement(document.getElementById("mians"));
 }
 function midcal()
 {
@@ -1719,10 +1737,30 @@ function midcal()
     {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
-        ans="Multiplicative inverse of given number in fraction is: "+num2+" / "+num1;
+        ans += "\\[[Note \\space :- \\space Multiplicative \\space Inverse \\space of \\space a \\space number \\space is \\space an \\space another \\space number \\space which\\]";
+        ans += "\\[ \\space when \\space multiplied \\space with \\space it, \\space always \\space gives \\space 1 ]\\]";
+        ans += "\\[Divide \\space the \\space number \\space by \\space 1 \\space\\]";
+        ans += "\\[Multiplicative \\space inverse \\space of \\space \\frac{" + num1 + "}{" + num2 + "} \\space = \\space \\frac{1}{\\frac{" + num1 + "}{" + num2 + "}}\\]";
+        ans += "\\[= \\space \\frac{" + num2 + "}{" + num1 + "}\\]";
     }
     document.getElementById("mians").innerHTML=ans;
+    renderMathInElement(document.getElementById("mians"));
+}
 
+function ainvcal()
+{
+    var num =document.getElementById("aians1").value;
+    ans="";
+    if(num =="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num=parseFloat(num);
+        ans = -1 * num;
+    }
+    document.getElementById("aians").innerHTML="Answer -> &nbsp;"+ans;
 }
 
 function hypergeos2cal()
@@ -1768,6 +1806,29 @@ function hypergeosvarcal()
         num4=parseFloat(num4);
       var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
        ans="The value of hypergeometric distribution's variance is : "+d;
+   
+    }
+    document.getElementById("hypergeos2ans").innerHTML=ans;
+}
+function hypergeosvar2cal()
+{
+    var num1=document.getElementById("hypergeos12").value;
+    var num2=document.getElementById("hypergeos22").value;
+    var num3=document.getElementById("hypergeos32").value;
+    var num4=document.getElementById("hypergeos42").value;
+    ans="";
+    if(num1==""||num2==""||num4==""||num3=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        num4=parseFloat(num4);
+      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
+       ans="The value of hypergeometric distribution's variance is : "+Math.sqrt(d);
    
     }
     document.getElementById("hypergeos2ans").innerHTML=ans;
