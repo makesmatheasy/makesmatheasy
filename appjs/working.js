@@ -609,6 +609,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#volumebtn").click(function () {
+        openit("#volume");
+        closenav();
+        clearall();
+    });
     $("#oop").click(function () {
         openit("#oops");
         closenav();

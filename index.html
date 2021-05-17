@@ -2894,6 +2894,25 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="volumebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volumetric Weight Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Volumetric Weight Calculator','#volume','c','volumeimgfav')"><img
+                                        id="volumeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -9559,6 +9578,31 @@
                     </tbody>
                 </table>
 
+            </div>
+        </div>
+        <div class="collapse" id="volume">
+            <h2 style="color: var(--appimage);">Volumetric Weight Calculator</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form__field" name="a"
+                       id="length_vol"
+                       placeholder="Enter length in centimeters"/>
+               <br>
+               <br>
+                <input type="text" class="form__field" name="w"
+                       id="width_vol"
+                       placeholder="Enter width in centimeters"/>
+                <br>
+                <br>
+                <input type="text" class="form__field" name="h"
+                       id="height_vol"
+                       placeholder="Enter height in centimeters"/>
+                <br>
+                <br>
+                <button class="btn btn-outline-light" onclick="volweight()">Calculate</button>
+                <br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                font-family:mathfont;" id="volweightAns"></p>
             </div>
         </div>
         <div class="collapse" id="per_chng_vol">

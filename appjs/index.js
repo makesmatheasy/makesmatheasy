@@ -207,6 +207,7 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
+        "#volume",
         "#thdif",
         "#corgeo",
         "#ttest",
