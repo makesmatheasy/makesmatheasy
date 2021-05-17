@@ -12527,6 +12527,13 @@ function datecal() {
     }
 }
 
+function cscufind(){
+    let a = parseInt(document.getElementById("cscu").value)
+    var r =  (a * Math.sqrt(2)) / 3;
+    var h = (2 * a) / 3;
+    var V = (3.14 *Math. pow(r, 2) * h);
+    document.getElementById("cscuans").innerHTML = "The volume of cone is "+V
+}
 
 function computeprobability() {
 
