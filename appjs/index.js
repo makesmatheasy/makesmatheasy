@@ -280,6 +280,7 @@ function openit(id) {
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
+        "#sumAndDiffTri",
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",

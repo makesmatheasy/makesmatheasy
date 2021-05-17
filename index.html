@@ -1360,6 +1360,24 @@
                     </tr>
                 </table>
             </li>
+            <!-- sum and difference of trignometric function -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="sumAndDiffTribtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum and Difference of Trignometric function
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Sum and Difference of Trignometric function','#sumAndDiffTri','c','sumAndDiffTriimgfav')"><img
+                                        id="sumAndDiffTriimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <div class="dropdown-divider"></div>
         </div>
@@ -10622,6 +10640,28 @@
                 \,B\]</p>
 
 
+        </div>
+        <!-- Sum and difference of trigno functions -->
+        <div class="collapse text-center" id="sumAndDiffTri">
+            <h2>Sum And Difference Of Trignometric Function</h2>
+            <p>Here you can calculate Sum and Difference of Trignometric Functions using sin, cos and tan.</p>
+            <form class="text-center">
+                <input class = "form__field"type="text" id="triList" placeholder="Enter SPACE separated value e.g -> sin 45 - 30" style="max-width: 500px;">
+                <br><br>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 text-center">
+                        <button class = "btn btn-light" type="button" onclick="sumAndDiffTri()">Solution</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 text-center">
+                        <button class = "btn btn-light" type="button" onclick="clearSumAndDiff()">Reset</button>
+                    </div>
+                    
+                </div>
+            </form>
+            <div id="sumAndDiffTrians"></div>
         </div>
         <!--Standard Deviation starts-->
         <div class="collapse" id="deviation">

@@ -133,6 +133,7 @@ Other Tech/Libraries
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
+  - Sum and Difference Of Trignometric Function
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
