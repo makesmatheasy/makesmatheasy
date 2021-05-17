@@ -381,6 +381,7 @@ h5, h6 {
 
 #myInput {
   color: black;
+  background-color: transparent !important;
 }
 
 .bi {
@@ -590,6 +591,17 @@ font-size: 18px;
   margin-bottom: 14px;
   margin-top: 19px;
 }
+
+.darkmode--activated input,
+.darkmode--activated button {
+  overflow: visible;
+  border-radius: 18px;
+  margin: 7px;
+  background-color: #050101;
+  color: white;
+  padding: 8px;
+}
+
 /*light mode*/
 
 .light-mode #euclid li{
