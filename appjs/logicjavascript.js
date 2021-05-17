@@ -9892,6 +9892,29 @@ function prime_till_num(primetill){
 }
 //end
 
+function cubefreefind(){
+    let n = parseInt(document.getElementById("cubefree").value)
+    for(let i = 2; i <= n; i++)
+    {
+        if (isCubeFree(i))
+        {
+            document.getElementById("cubefreeans").innerHTML= "("+ i + " )"
+        }   
+    }
+}
+
+function isCubeFree(n)
+{
+    if (n == 1)
+        return false;
+ 
+    for(let i = 2; i * i * i <= n; i++)
+        if (n % (i * i * i) == 0)
+            return false;
+ 
+    return true;
+}
+
 function gp() {
     var a = document.getElementById("firstterm").value
     var r = document.getElementById("ratio").value
