@@ -12582,6 +12582,15 @@ function condprobability(){
 }
 }
 
+function rootscubicfind(){
+    let a = parseInt(document.getElementById("rootscubicin1").value)
+    let b = parseInt(document.getElementById("rootscubicin2").value)
+    let c = parseInt(document.getElementById("rootscubicin3").value)
+    let X = (a + b + c);
+    let Y = (a * b) + (b * c) + (c * a);
+    let Z = a * b * c;
+    document.getElementById("rootscubicans").innerHTML = "x^3-"+X+"x^2+"+Y+"x-"+Z+"=0"
+}
 
 function computejointprobability() {
 
