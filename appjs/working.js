@@ -1219,7 +1219,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#sqseriescollapsebtn").click(function(){
+        openit("#sqseries");
+        closenav();
+        clearall();
+    });
 
 })
 
