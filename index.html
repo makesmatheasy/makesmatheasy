@@ -2814,6 +2814,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="shapeinscribedbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D shapes Inscribed</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('3-D shapes Inscribed','#shapeinscribed','c','shapeinscribedimgfav')"><img
+                                        id="shapeinscribedimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="3dgeobtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D
                                 Geometry</a>
@@ -12961,6 +12978,17 @@
                 are proportional then the line is parallel to the third side.</p>
             <br>
             <img src="images/propcontheo.png" alt="" style="width: 46.875rem;height: 22.5625rem;">
+        </div>
+
+        <div class="collapse" id="shapeinscribed">
+            <h2 style="text-align:center;">3-D Shapes Inscribed</h2>
+            <br><br>
+            <h4>Largest cone that can be inscribed within a cube</h4>
+            <br>
+            <input type="text" id="shapeinscribedin" class="form__field" placeholder="Enter the side length of cube">
+            <br>
+            <button class="btn btn-dark" onclick="coneincubefind()">Find</button><br>
+            <h5 id="coneincubeans"></h5>
         </div>
 
         <div class="collapse" id="tdshapescal">

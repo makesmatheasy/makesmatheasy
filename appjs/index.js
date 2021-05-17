@@ -187,6 +187,7 @@ function openit(id) {
         "#beta",
         "#imprtopr",
         "#sieve",
+        "#shapeinscribed",
         "#matrixprops",
         "#cramer",
         "#fractions",

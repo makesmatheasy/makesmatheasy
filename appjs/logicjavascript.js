@@ -10527,6 +10527,14 @@ function eulerTotient(n) {
 
 //Next Prime Function
 
+function coneincubefind(){
+    let a = parseInt(document.getElementById("shapeinscribedin").value)    
+    let r = (a / Math.sqrt(2));
+    r = r.toFixed(5)
+    let h =a
+    document.getElementById("coneincubeans").innerHTML = "The radius is "+r+"and the height is "+h
+}
+
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
     if (n < 4)
@@ -13545,6 +13553,8 @@ function qrtl() {
     let upperQrtl = dataPoints * (3 / 4)
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
 }}}
+
+
 
 // decile calculator
     
