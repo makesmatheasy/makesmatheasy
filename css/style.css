@@ -781,6 +781,9 @@ input[type='number'] {
 .fa-discord:hover {
   color: #7289da;
 }
+.fa-github:hover {
+  color: black;
+}
 
 @media (max-width:420px) {
   #box{
