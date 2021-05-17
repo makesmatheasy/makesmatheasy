@@ -541,7 +541,26 @@
                     </tr>
                 </table>
             </li>
-
+ <!--          Sequence series-->
+            <li>
+                <table class="table">
+                        <tbody>
+                            <tr>
+                            <td style="border-top: none;">
+                                <a id="sqseriescollapsebtn"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sequence & Series
+                                 </a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span
+                                    onclick="addtofavourite('Sequence & Series','#sqseries','c','sequenceseries')"><img
+                                    id="sequenceseries" src="images/unfavourite.png"
+                                    style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                            </tr>
+                        </tbody>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -1322,6 +1341,25 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="height1btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Height and Distance
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Height and Distance','#height1','c','heightimgfav')"><img
+                                        id="heightimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
 
             <li>
                 <table class="table">
@@ -2208,6 +2246,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="etcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Euler Totient Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Euler Totient Calculator','#etc','c','etcimgfav')"><img
+                                        id="etcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <!--Added function to find next prime number-->
              <li>
                 <table class="table">
@@ -2720,7 +2774,24 @@
                             </td>
                     </tr>
                 </table>
+            </li>
 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ineqtribtn"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ineqaulities of Triangles</a>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                    <span onclick="addtofavourite('Ineqaulities of Triangles','#ineqtri','c','ineqtrifav')"><img
+                                            id="ineqtrifav" src="images/unfavourite.png"
+
+
+                                            style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                    </tr>
+                </table>
             </li>
 
             <li>
@@ -2766,6 +2837,24 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Arc Calculator','#arcs','c','arcimgfav')"><img
                                         id="arcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="2d-shape-insbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> 2-D Shapes Inscribed
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('2-D Shapes Inscribed','#2d-shape-ins','c','2d-shape-insimgfav')"><img
+                                        id="2d-shape-insimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -3988,6 +4077,7 @@
             <a href="mailto:makesmatheasy@gmail.com" target="_blank" class="p-0" ><i class="fas fa-envelope icon fa-2x"></i></a>
             <a href="https://www.linkedin.com/in/rajinderpalsingh2001/" target="_blank"class="p-0" ><i class="fab fa-linkedin icon fa-2x"></i></a>
             <a href="https://discord.com/channels/811724426965811210/818825491065995264" target="_blank" class="p-0"><i class="fab fa-discord icon fa-2x"></i></a>
+            <a href="https://github.com/sairish2001/makesmatheasy" target="_blank" class="p-0"><i class="fab fa-github icon fa-2x"></i></a>
         </li>
 
         <li style="color:var(--appimage);font-size: 0.7rem; bottom: 0rem; position:relative;" id="copyright" class="text-center"> Copyright © 2021 Makes
@@ -4370,6 +4460,17 @@
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="collapse" id="ineqtri">
+            <h2>Inequalities of Triangles</h2>
+            <br><br>
+            <input type="text" id="ineqtriin1" class="form__field" placeholder="ENter length of side 1">
+            <input type="text" id="ineqtriin2" class="form__field" placeholder="ENter length of side 2">
+            <input type="text" id="ineqtriin3" class="form__field" placeholder="ENter length of side 3">
+            <br>
+            <button class="btn btn-dark" onclick="ineqtrifind()">Check</button>
+            <br>
+            <h5 id="ineqtrians"></h5>
         </div>
         <div class="collapse" id="math">
             <div class="stopwrap">
@@ -5151,9 +5252,22 @@
             <button type="button" class="btn btn-light" onclick=centersolve()>
                 Calculate
             </button><br>
+
+            <h3>Radius of Circle</h3><br>
+            <div class="coll">
+                <p>
+                    <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p><input type="text" id="qcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('pcenterr').value = value">  <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('qcenterr').value = value">  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterr" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
+                <input type="text" id="bcenterr" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenterr" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
+                    <br><br>
+                </p >
+
+            </div><br>
+            <button type="button" class="btn btn-light" onclick=centerrsolve()>
+                Calculate
+            </button><br>
            
-        <h1 id = "centere"></h1>
-        <h1 id = "centerr"></h>   
+        <h1 id = "centerer"></h1>
+        <h1 id = "centerrr"></h>   
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -5228,6 +5342,25 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="collapse" id="2d-shape-ins">
+            <h2 style="text-align:center;">2-D Shapes Inscribed</h2>
+            <br><br>
+            <h4>Largest triangle that can be inscribed in a semicircle </h4>
+            <br>
+            <input type="text" id="triinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="triinsemifind()">Find</button>
+            <br>
+            <h5 id="triinsemians"></h5>
+            <br>
+            <h4>Minimum side of square embedded in Regular polygon with N sides</h4>
+            <br>
+            <input type="text" id="minsquarein" placeholder="Enter no. of side of polygon" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="minsquarefind()">Find</button>
+            <br>
+            <h5 id="minsquareans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -7251,21 +7384,21 @@
             </div>
         </div>
         <div class="collapse" id="theo">
-            <h2>De Moivre's Theorem</h2>
+            <h2 style="text-align:center;">De Moivre's Theorem</h2>
             <p>For any real number x, we have</p>
-            <p>\[(cos(x)+isin(x))^{n}\space =\space cos(nx)\space +\space isin(nx)\]</p>
-            <p>Remark: Result can be shown true when n is a negative integer and even
+            <p >\[(cos(x)+isin(x))^{n}\space =\space cos(nx)\space +\space isin(nx)\]</p>
+            <p style="color: #ababab !important;">Remark: Result can be shown true when n is a negative integer and even
                 n is a rational number.</p>
             <br>    
-            <h2>Cauchy-Reimaan Theorem</h2>
+            <h2 style="text-align: center;">Cauchy-Reimaan Theorem</h2>
             <br>
-            <h4>What are analytic functions?</h4>
-            <p>A function f(z) is said to be analytic in a region R of the complex plane if f(z) has a derivative at each point of R and if f(z) is single valued.</p>
-            <p>Let f(x,y) = u(x,y) + iv(x,y) and the function should be analytic</p>
-            <p>Then,</p>
+            <h4 style="text-align: center;">What are analytic functions?</h4>
+            <p style="color: #ababab !important;">A function f(z) is said to be analytic in a region R of the complex plane if f(z) has a derivative at each point of R and if f(z) is single valued.</p>
+            <p style="color: #ababab !important;">Let f(x,y) = u(x,y) + iv(x,y) and the function should be analytic</p>
+            <p style="color: #ababab !important;">Then,</p>
             <p>\[\frac{∂v}{∂x}\space =\space -\frac{∂u}{∂y}\]</p>
-            <p>If, z = re<sup>iθ</sup>, then Cauchy-Reimaan Theorem become- </p>
-            <p>\[\frac{1}{r}\frac{∂u}{∂θ}\space =\space -\frac{∂v}{∂r}\]</p>
+            <p style="color: #ababab !important;">If, z = re<sup>iθ</sup>, then Cauchy-Reimaan Theorem become- </p>
+            <p >\[\frac{1}{r}\frac{∂u}{∂θ}\space =\space -\frac{∂v}{∂r}\]</p>
         </div>
         <!-- Complex Properties -->
         <div class="collapse" id="complexproperties">
@@ -7349,6 +7482,14 @@
             <button type="submit" class="btn btn-dark" onclick="mincubefind()">Find</button>
             <br>
             <p id="mincubeans"></p>
+            <br>
+            <h2>Cube Free Numbers smaller than n</h2>
+            <br>
+            <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="cubefreefind()">Find</button>
+            <br>
+            <p id="cubefreeans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8208,7 +8349,7 @@
             <h5>1. Union</h5>
             <p>The union of two sets is a set containing all elements that are in A or in B
                 (possibly both). For example,</p>
-            <p>\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
+            <p style="color:white !important;">\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
             <div class="d-flex justify-content-center">
                 <img src="https://www.probabilitycourse.com/images/chapter1/union_b.png"
                  style=" height: 12.5rem;" alt="">
@@ -8217,7 +8358,7 @@
             <h5>2. Intersection</h5>
             <p>The intersection of two sets A and B, denoted by A∩B, consists of all
                 elements that are both in A and B. For example,</p>
-            <p>\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
+            <p style="color:white !important;">\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
             <div class="d-flex justify-content-center">
                 <img src="https://www.probabilitycourse.com/images/chapter1/intersection_b.png"
                  style="width: 65%; height: 12.5rem;" alt="">
@@ -8235,8 +8376,8 @@
             <h5>3. Disjoint</h5>
             <p>Set A and set B are called disjoint sets if no element is common to A and B. 
                 i.e. A and B are disjoint sets then</p>
-            <p>\(A\cap B = ∅\)</p>
-            <p>For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
+            <p style="color:white !important; text-align: center !important;">\(A\cap B = ∅\)</p>
+            <p style="color:white !important;">For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
                 A\cap B\cap C = ∅\]</p>
                 <div class="d-flex justify-content-center">
                     <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
@@ -8255,7 +8396,7 @@
             <h5>5. Difference</h5>
             <p>The set A−B consists of elements that are in A but not in B. For example
                 if</p>
-            <p>\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
+            <p style="color:white !important;">\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
                 A-B = \{1,2\}\]
             </p>
             <div class="d-flex justify-content-center">
@@ -8296,12 +8437,12 @@
                 <li style="color: white; font-size: 1.25rem;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
                 <br>
             </ol>
-            <h4>Remark:</h4>
+            <h4 style="text-align: center;">Remark:</h4>
             <ul>
-                <li style="color: white; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
+                <li style="color:#ababab !important; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
                     i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
                 <br>
-                <li style="color: white; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
+                <li style="color: #ababab !important; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
             </ul>
         </div>
 
@@ -9019,6 +9160,7 @@
                     </tbody>
                 </table>
             </div>
+
             <!--Calculator code for trivial ecllipse solution ends here-->
             <br>
             <div class="stopwrap">
@@ -9157,6 +9299,109 @@
 
             </div>
         </div>
+<!--  start of sequence and series  -->
+        <div class="collapse" id="sqseries">
+            <div class="stopwrap">
+                <div class="coll">
+                     <div class="left">
+                     <h4>Arithmetic Progression</h4>
+                    <p> A mathematical sequence in which the difference between<br> two consecutive terms
+                         is always a constant and it is abbreviated as AP.</p>
+                     <br>
+                     <h4>Notation in AP</h4>
+                    <p>
+                        In AP, we will come across three main terms, which are denoted as:<br>
+
+                    1. Common difference (d)<br>
+                    2. nth Term ( a<sub>n</sub> )<br>
+                    3. Sum of the first n terms ( s<sub>n</sub> )<br><br>
+                    <h4>Common Difference in Arithmetic Progression</h4>
+                    <p>
+                        In this progression, for a given series, the terms used are the first term, <br>
+                        the common difference between the two terms and nth term. Suppose, a1, a2, a3, …………….,<br>
+                         a<sub>n</sub> is an AP, then; the common difference “ d ” can be obtained as;</p>
+                         <h4>d = a2 – a1 = a3 – a2 = ……. = an – an – 1</h4>
+                         <p>Where “d” is a common difference. It can be positive, negative or zero.</p><br>
+                         <h4>First Term of AP</h4>
+                            <p>The AP can also be written in terms of common difference, as follows;
+                         <br>
+                         a, a + d, a + 2d, a + 3d, a + 4d, ………. ,a + (n – 1) d<br>
+                         where  “a” is the first term of the progression.</p><br>
+                         <h4>nth Term of an AP</h4>
+                         <p>a<sub>n</sub> = a + (n − 1) × d</p>
+                         <p>Where <br>
+                            a = First term<br>
+                            d = Common difference<br>
+                            n = number of terms<br>
+                            an = nth term<br><br>
+                          <h4>Sum of N Terms of AP</h4>
+                       <p>For any progression, the sum of n terms can be easily calculated. For an AP, <br>
+                        the sum of the first n terms can be calculated if the first term and the total<br>
+                         terms are known. The formula for the arithmetic progression sum is explained below:<br>
+                        Consider an AP consisting “n” terms.
+                        <p>S = n/2[2a + (n − 1) × d]</p><br>
+                       <h4> Sum of AP when the Last Term is Given</h4>
+                       <p>Formula to find the sum of AP when first and last terms are given as follows:</p>
+                       <p> S  = n/2 (first term + last term)</p><br>
+                        <h3 style="text-align: center;">Formula Lists
+                        </h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-dark">
+                                <tbody class="abc">
+                                   <tbody>
+                                    <tr>
+                                        <td>General Form of AP	</td>
+                                        <td>a, a + d, a + 2d, a + 3d, . . .
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>The nth term of AP	</td>
+                                        <td>a<sub>n</sub> = a + (n – 1) × d
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sum of n terms in AP</td>
+                                        <td>S = n/2[2a + (n − 1) × d]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sum of all terms in a finite<br> AP with the last term as ‘l’	</td>
+                                        <td>n/2(a + l)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                       <br>
+                       <h4>Geometric Progressions</h4>
+                       <br>
+                       <p>If in a sequence of terms, each succeeding term is generated by multiplying<br>
+                         each preceding term with a constant value, then the sequence is called
+                          a geometric<br> progression. (GP), whereas the constant value is called the<br>
+                           common ratio. <br>For example, 2, 4, 8, 16, 32, 64, … is a GP, where the common ratio is 2.</p>
+                           <br>
+                           <p>
+                            <p>A sequence <span class="latex-for-amp" style="text-align: center; display: inline-block;"> \(a_1,a_2,a_3,…….a_n,….\) </span> is a G.P, then <br><br><span class="latex-for-amp" style="text-align: center; display: inline-block;">\(\frac{a_{k+1}}{a_k} = r~~~~~~~~~~~~ [k&gt;1]\)</span></p><br>
+                            <h4>Sum of Nth terms of G.P.</h4>
+                           <p>Consider the G.P,</p>
+                           <p><span class="latex-for-amp" style="text-align: center; display: inline-block;">\(a,ar,ar^2,…..ar^{n-1}\)</span></p>
+                          <p>Let <span class="latex-for-amp" style="text-align: center; display: inline-block;">\(S_n,a,r\)</span> be the sum of n terms, first term and ratio of the G.P respectively.</p><br>
+                            <p><span style="font-weight: 400;" style="text-align: center; display: inline-block;">\(Sn=\frac{a(r^n &#8211; 1)}{r-1}\)</span>
+                                <p class="mathjax_equation">where r is note equal to 1</p><br>
+                                <h4>Sum To Infinity of GP</h4>
+                                <p>If the number of terms in a GP is not finite, then the GP is called <br>infinite GP. The formula to find the sum to infinity of the given GP is:</p><br>
+                                <p>\(S_{\infty}=\sum_{n=1}^{\infty} ar^{n-1}=\frac{a}{1-r}; -1&lt;r&lt;1\)</p>
+                                <p>Here,</p>
+                                <p>S<sub>∞</sub> = Sum of infinite geometric progression</p>
+                                <p>a = First term</p>
+                                <p>r = Common ratio</p>
+                                <p>n = Number of terms</p>
+                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="collapse" id="parab">
             <h2 style="text-align: center;">ParaBoloid</h2>
             <br>
@@ -10028,30 +10273,30 @@
             <p>\[\frac{d}{dx}cosech^{-1}(x)\space =\space \frac{1}{x\sqrt{1+x^{2}}}\]</p>
         </div>
         <div class="collapse" id="hyptrigonoiden">
-            <h2 style="text-align: center;">Hyperbolic Trigonometric Identities</h2>
-            <p>The hyperbolic functions are analogs of the circular function or the trigonometric functions. The hyperbolic function occurs in the solutions of linear differential equations, calculation of distance and angles in the hyperbolic geometry, Laplace’s equations in the cartesian coordinates. Generally, the hyperbolic function takes place in the real argument called the hyperbolic angle. The basic hyperbolic functions are:</p>
+            <h2 style="text-align: center; margin-bottom:20px;">Hyperbolic Trigonometric Identities</h2>
+            <p style="color:#d3d3d3;margin-bottom: 5px;">The hyperbolic functions are analogs of the circular function or the trigonometric functions. The hyperbolic function occurs in the solutions of linear differential equations, calculation of distance and angles in the hyperbolic geometry, Laplace’s equations in the cartesian coordinates. Generally, the hyperbolic function takes place in the real argument called the hyperbolic angle. The basic hyperbolic functions are:</p>
             <br>
             <ul>
-                <li style="color:white; font-size: 1.25rem;">Hyperbolic Sine(sinh)</li>
-                <li style="color:white; font-size: 1.25rem;">Hyperbolic Cosine(cosh)</li>
-                <li style="color:white; font-size: 1.25rem;">Hyperbolic Tangent(tanh)</li>
+                <li style="color:#ababab; font-size: 1.25rem; text-align: center; list-style:none;">1 Hyperbolic Sine(sinh)</li>
+                <li style="color:#ababab; font-size: 1.25rem; text-align: center; list-style:none;">2 Hyperbolic Cosine(cosh)</li>
+                <li style="color:#ababab; font-size: 1.25rem; text-align: center; list-style:none;">3 Hyperbolic Tangent(tanh)</li>
             </ul>
-            <p>From these three basic functions, the other functions such as hyperbolic cosecant (cosech), hyperbolic secant(sech) and hyperbolic cotangent (coth) functions are derived.</p>
-            <p>\[sinh(x)\space =\space \frac{e^{x}-e^{-x}}{2}\]</p>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-1.png" class="img-fluid mx-auto" alt="">
-            <p>\[cosh(x)\space =\space \frac{e^{x}+e^{-x}}{2}\]</p>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-2.png" class="img-fluid mx-auto" alt="">
-            <p>\[tanh(x)\space =\space \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}\]</p>
-            <img src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-3.png" class="img-fluid mx-auto" alt="">
-            <h4>Properties of Hyperbolic Functions</h4>
-            <p>\[sinh(-x)\space =\space -sinh(x)\]</p>
-            <p>\[cosh(-x)\space =\space cosh(x)\]</p>
-            <p>\[sinh(2x)\space =\space 2sinh(x)cosh(x)\]</p>
-            <p>\[cosh(2x)\space =\space cosh^{2}x + sinh^{2}x\]</p>
-            <p>\[sinh(x)\space =\space -isinh(ix)\]</p>
-            <p>\[cosh(2x)\space –\space sinh(2x)\space =\space 1\]</p>
-            <p>\[tanh(2x)\space +\space sech(2x)\space =\space 1\]</p>
-            <p>\[coth(2x)\space –\space cosech(2x)\space =\space 1\]</p>
+            <p style="color:#ababab; ">From these three basic functions, the other functions such as hyperbolic cosecant (cosech), hyperbolic secant(sech) and hyperbolic cotangent (coth) functions are derived.</p>
+            <p style="color:#d3d3d3;" >\[sinh(x)\space =\space \frac{e^{x}-e^{-x}}{2}\]</p>
+            <img style="margin-left:auto;margin-right:auto;width:50%;display:block" src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-1.png" class="img-fluid mx-auto" alt="">
+            <p style="color:#d3d3d3;" >\[cosh(x)\space =\space \frac{e^{x}+e^{-x}}{2}\]</p>
+            <img style="margin-left:auto;margin-right:auto;width:50%;display:block" src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-2.png" class="img-fluid mx-auto" alt="">
+            <p style="color:#d3d3d3;" >\[tanh(x)\space =\space \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}\]</p>
+            <img style="margin-left:auto;margin-right:auto;width:50%;display:block" src="https://cdn1.byjus.com/wp-content/uploads/2019/09/Hyperbolic-functions-3.png" class="img-fluid mx-auto" alt="">
+            <h4 style="text-align: center; margin-top:18px;">Properties of Hyperbolic Functions</h4>
+            <p style="color:#d3d3d3;">\[sinh(-x)\space =\space -sinh(x)\]</p>
+            <p style="color:#d3d3d3;" >\[cosh(-x)\space =\space cosh(x)\]</p>
+            <p style="color:#d3d3d3;" >\[sinh(2x)\space =\space 2sinh(x)cosh(x)\]</p>
+            <p style="color:#d3d3d3;" >\[cosh(2x)\space =\space cosh^{2}x + sinh^{2}x\]</p>
+            <p style="color:#d3d3d3;" >\[sinh(x)\space =\space -isinh(ix)\]</p>
+            <p style="color:#d3d3d3;" >\[cosh(2x)\space –\space sinh(2x)\space =\space 1\]</p>
+            <p style="color:#d3d3d3;" >\[tanh(2x)\space +\space sech(2x)\space =\space 1\]</p>
+            <p style="color:#d3d3d3;" >\[coth(2x)\space –\space cosech(2x)\space =\space 1\]</p>
         </div>
 
         <div class="collapse" id="inversetrigonoiden">
@@ -10244,6 +10489,17 @@
                 </tbody>
             </table>
 
+        </div>
+        <div class="collapse" id="etc">
+            <h2 style="text-align:center;">Euler Totient Calculators</h2>
+            <br><br>
+            <h4>Euler’s Totient function for all numbers smaller than or equal to n</h4>
+            <br>
+            <input type="text" id="etc1" class="form__field" placeholder="ENter the number">
+            <br>
+            <button class="btn btn-dark" onclick="etc1find()">Find</button>
+            <br>
+            <h5 id="etc1ans"></h5>
         </div>
         <!-- start of Hamming Dist -->
         <div>
@@ -11782,6 +12038,38 @@
             </div>
         </div>
 
+        <div class="collapse" id="height1">
+            <div class="text-center">
+                <h2><label>Height and Distance</label></h2><br><br>
+            </div>
+            <h4 class="d-flex justify-content-center">To calculate Height when Angle of Elevation and Distance is given</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="height22" placeholder="Enter Distance (BC)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="height33"
+                placeholder="Enter Angle of Elevation in degree(∠BCA)"
+                style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=heightdist1()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="coll1" style="text-align: center;">
+                <h5 id="printheight1" style="color: white; font-size: x-large;"></h5>
+                </div>
+			<br>
+        </div>
+
         <div class="collapse" id="quadeqncal">
             <h2 style="text-align:center;">Quadratic equation whose roots are K times the roots of given equation</h2>
             <br>
@@ -11825,6 +12113,16 @@
             <button class="btn btn-dark" onclick="commonroots()">Check</button>
             <br>
             <h4 id="commonrootsans"></h4>
+            <br>
+            <h2>Form the Cubic equation from the given roots</h2>
+            <br>
+            <input type="text" class="form__field" id="rootscubicin1" placeholder="Enter root 1">
+            <input type="text" class="form__field" id="rootscubicin2" placeholder="Enter root 2">
+            <input type="text" class="form__field" id="rootscubicin3" placeholder="Enter root 3">
+            <br>
+            <button class="btn btn-dark" onclick="rootscubicfind()">FInd</button>
+            <br>
+            <h4 id="rootscubicans"></h4>
         </div>
 
         <div class="collapse" id="mulsolwithsteps">
@@ -12236,6 +12534,15 @@
             <button class="btn btn-dark" onclick="triinfind()">Find</button>
             <br>
             <h4 id="triinans"></h4>
+            <br>
+            <h4>Area of a n-sided regular polygon with given side length</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="arinin"/>
+            <input type="text" class = "form__field" placeholder = "Side Length" id="arinin1">
+            <br>
+            <button class="btn btn-dark" onclick="arinfind()">Find</button>
+            <br>
+            <h4 id="arinans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -12812,6 +13119,10 @@
                            href="#">Astroid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#cardiod" style="text-decoration:none;"
+                           href="#">Cardiod</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#slopeline" style="text-decoration:none;"
                            href="#">Line</a>
                     </td>
@@ -13109,6 +13420,20 @@
             <br>
             <button class="btn btn-dark" onclick="coneincubefind()">Find</button><br>
             <h5 id="coneincubeans"></h5>
+            <br>
+            <h4>Largest right circular cone that can be inscribed within a sphere which is inscribed within a cube</h4>
+            <br>
+            <input type="text" id="cscu" class="form__field" placeholder="Enter the side length of cube">
+            <br>
+            <button class="btn btn-dark" onclick="cscufind()">Find</button><br>
+            <h5 id="cscuans"></h5>
+            <br>
+            <h4>Largest cube that can be inscribed within the sphere</h4>
+            <br>
+            <input type="text" id="cubeinsphere" class="form__field" placeholder="Enter the side length of cube">
+            <br>
+            <button class="btn btn-dark" onclick="cubeinspherefind()">Find</button><br>
+            <h5 id="cubeinsphereans"></h5>
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -13385,6 +13710,11 @@
                     <td><a data-toggle="modal" data-target="#hyperboloid"
                            style="text-decoration:none;"
                            href="#">Hyperboloid</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#reutriangle"
+                           style="text-decoration:none;"
+                           href="#">Reuleaux Triangle</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#ndimsphere"
@@ -14113,13 +14443,13 @@
     <h3 style="text-align: center;">Orthocentre Calculator </h3><br>
     <div class="coll">
         <p>
-            Coordinate 1 = (<input type="text" id="orthox1" size=5 value='' placeholder="x1"> , 
+            Coordinate 1 = (<input type="text" id="orthox11" size=5 value='' placeholder="x1"> , 
         <input type="text" id="orthoy1" size=5 value='' placeholder="y1">)
             <br><br>
-            Coordinate 2 = (<input type="text" id="orthox2" size=5 value='' placeholder="x2"> , 
+            Coordinate 2 = (<input type="text" id="orthox21" size=5 value='' placeholder="x2"> , 
         <input type="text" id="orthoy2" size=5 value='' placeholder="y2">)
                 <br><br>
-            Coordinate 3 = (<input type="text" id="orthox3" size=5 value='' placeholder="x3"> , 
+            Coordinate 3 = (<input type="text" id="orthox31" size=5 value='' placeholder="x3"> , 
         <input type="text" id="orthoy3" size=5 value='' placeholder="y3">)
                 <br><br>            
         <button type="button" class="btn btn-light" onclick=orthosolve()>
@@ -14127,7 +14457,7 @@
         </button><br>
         </p>
     </div>
-    <h4 id="ortho_output" style="color:white"></h4>
+    <h4 style="text-align: center;" id="ortho_output" style="color:white"></h4>
     <br>
     <h3 style="text-align: center;">Incentre Calculator </h3><br>
     <div class="coll">
@@ -15359,9 +15689,16 @@
     <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)[h]">
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
-    <p id="hydroans"></p>
-    
-   
+    <p class="stopwrap" id="hydroans1"
+    style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans2"
+        style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans3"
+        style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans4"
+        style="font-family:mathfont;"></p><br>
+    <p class="stopwrap" id="hydroans"
+        style="font-family:mathfont;"></p>
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
@@ -15381,6 +15718,7 @@
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="hypergeos2cal()">Mean</button>
     <button type="button" class="btn btn-outline-light" onclick="hypergeosvarcal()">Variance</button>
+    <button type="button" class="btn btn-outline-light" onclick="hypergeosvar2cal()">Standard Deviation</button>
     <p>&nbsp;</p>
     <p id="hypergeos2ans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
     
@@ -15421,6 +15759,7 @@
     <input type="text" name="vpdvar" class="form__field" id="vpdvar" placeholder="Value of Random Variable">
     <p>&nbsp;</p>
     <button type="button" class="btn btn-outline-light" onclick="vpdscal()">Variance</button>
+    <button type="button" class="btn btn-outline-light" onclick="vpds1cal()">Standard Deviation</button>
     <p>&nbsp;</p>
     <p id="vpdans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
     
@@ -19945,6 +20284,59 @@ N is the population size.
                                 <p class="stopwrap" id="resultofastroidlen"
                                 style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultofastroidarea"
+                                style="font-family:mathfont;"></p>   
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cardiod" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cardiod Calculator</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[a=2r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P= 8a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= \frac{3 a^2 \pi}{2}\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/cardiod.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number" placeholder="Enter radius(r)"
+                                   id="inputradiuscardiod"
+                                   oninput="solvecardiod()">
+                                <p class="stopwrap" id="resultofcardioddia"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcardiodperi"
+                                style="font-family:mathfont;"></p>   
+                                <p class="stopwrap" id="resultofcardiodarea"
                                 style="font-family:mathfont;"></p>   
                         </div>
                         <!---TILL-->
@@ -24525,6 +24917,61 @@ N is the population size.
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal fade" id="reutriangle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Reuleaux Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Arc Length (l)</h5>
+                                    <p class="text-center">\[l = \frac{a \times \pi}{3}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P = \pi \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{(\pi - \sqrt{3} ) a^2}{2} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/reultriangle.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="reulside" class = "form__field" oninput="reultriangle()" 
+                                placeholder="Enter  side length (a)">
+                                <br><br>
+                                <p class="stopwrap" id="reularclen"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="reulperi"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="reularea"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
                         </button>
                     </div>
                 </div>

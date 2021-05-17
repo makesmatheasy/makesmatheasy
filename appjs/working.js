@@ -493,7 +493,11 @@ $(document).ready(function () {
         openit("#ip");
         closenav();
         clearall();
-
+    });
+    $("#ineqtribtn").click(function () {
+        openit("#ineqtri");
+        closenav();
+        clearall();
     });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
@@ -504,6 +508,11 @@ $(document).ready(function () {
     //Euler's Totient Function
     $("#etfbtn").click(function () {
         openit("#etf");
+        closenav();
+        clearall();
+    })
+    $("#etcbtn").click(function () {
+        openit("#etc");
         closenav();
         clearall();
     })
@@ -606,6 +615,11 @@ $(document).ready(function () {
     });
     $("#reppbtn").click(function () {
         openit("#repp");
+        closenav();
+        clearall();
+    });
+    $("#height1btn").click(function () {
+        openit("#height1");
         closenav();
         clearall();
     });
@@ -1134,7 +1148,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#2d-shape-insbtn").click(function () {
+        openit("#2d-shape-ins");
+        closenav();
+        clearall();
+    });
 
     $("#jointprobabilitycollapsebtn").click(function () {
         openit("#joint-probabilitycollapse");
@@ -1220,7 +1238,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#sqseriescollapsebtn").click(function(){
+        openit("#sqseries");
+        closenav();
+        clearall();
+    });
 
 })
 
