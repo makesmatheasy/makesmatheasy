@@ -5331,6 +5331,40 @@ function solveastroid() {
     }
 }
 
+function solvecardiod() {
+    var radius = document.getElementById("inputradiuscardiod").value;
+    var diaoutput = document.getElementById("resultofcardioddia");
+    var areaoutput = document.getElementById("resultofcardiodarea");
+    var perioutput = document.getElementById("resultofcardiodperi");
+    var areatemp = "";
+    var peritemp = "";
+    var diatemp = "";
+    var diameter=2*radius;
+    if ((radius != "")) {
+        areatemp += "\\[Area \\space of \\space Cardiod \\space" +  "\\]";
+        areatemp += "\\[\\frac{3 \\pi \\times" + diameter + "\\times" + diameter + "}{2}" + "\\space" + "=" + eval(String(diameter*diameter*4.71)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        diatemp += "\\[Diameter \\space of \\space Cardiod \\space" +  "\\]";
+        diatemp += "\\[2 \\times" + radius + "\\space" + "=" + eval(String(diameter)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+
+        peritemp += "\\[Length \\space of \\space Astroid \\space is \\space \\]";
+        peritemp += "\\[" + 8 + "\\times" + diameter + "=" + eval(String(8 * diameter)) + "\\]";
+        perioutput.innerHTML = peritemp;
+       
+        renderMathInElement(diaoutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(perioutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+        perioutput.innerHTML = "";    
+
+    }
+}
+
 function solvestadium() {
     var r = document.getElementById("inputcircrad").value;
     var a = document.getElementById("inputrectlen").value;

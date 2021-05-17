@@ -242,6 +242,7 @@ function openit(id) {
         "#astroid",
         "#squarecube",
         "#deca_prism",
+        "#cardiod",
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
