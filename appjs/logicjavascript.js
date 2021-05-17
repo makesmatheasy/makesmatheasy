@@ -13530,6 +13530,23 @@ function vpdscal()
     document.getElementById("vpdans").innerHTML=ans;
 
 }
+function vpds1cal()
+{
+    var num1=document.getElementById("vpdsuc").value;
+    var num2=document.getElementById("vpdvar").value;
+    ans="";
+    if(num1==""||num2=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+    ans="The calculated Standard Deviation is: "+ Math.sqrt(num1);
+   
+    }
+    document.getElementById("vpdans").innerHTML=ans;
+
+}
 function product_Range(a,b) {
     var prd = a,i = a;
    
