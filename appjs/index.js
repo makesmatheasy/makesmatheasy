@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#catNum",
         "#dblFact",
         "#sumDiv",
         "#smPrime",
@@ -188,6 +189,7 @@ function openit(id) {
         "#beta",
         "#imprtopr",
         "#sieve",
+        "#shapeinscribed",
         "#matrixprops",
         "#cramer",
         "#fractions",
@@ -206,6 +208,7 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
+        "#volume",
         "#thdif",
         "#corgeo",
         "#ttest",
