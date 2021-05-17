@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#smNum",
         "#catNum",
         "#dblFact",
         "#sumDiv",

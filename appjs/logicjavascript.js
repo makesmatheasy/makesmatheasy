@@ -10805,7 +10805,23 @@ function catalanNumbers(num){
     }
     document.getElementById("catNumResult").innerHTML = "The Catalan Numbers are: " + res;    
 }
- 
+
+//Smallest number divisible function
+function gcd(a, b)
+{
+   if(a%b != 0)
+      return gcd(b,a%b);
+   else
+      return b;
+}
+   
+function smallestNumberDiv(num){
+    let res = 1;   
+    for (let i = 1; i <= num; i++)
+        res = (res * i)/(gcd(res, i));
+    document.getElementById("smNumResult").innerHTML = "The smallest numbers divisible by all numbers from  " + "1 to " + num + " is: " +res;    
+
+}
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
