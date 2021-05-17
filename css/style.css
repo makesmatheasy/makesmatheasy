@@ -573,6 +573,15 @@ font-size: 18px;
   object-fit: contain;
 }
 
+#pows h4,
+#pows h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+#pows p,
+#pows li{
+  color: #8a8a8a !important;
+}
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
@@ -793,4 +802,12 @@ input[type='number'] {
     width: 78px;
     padding: 0px;
   }
+}
+
+@media only screen and (max-width:769px) {
+  #sievein{
+
+  font-size: 0.6rem !important;
+  }
+  
 }

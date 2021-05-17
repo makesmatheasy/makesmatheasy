@@ -75,6 +75,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#ainv").click(function () {
+        openit("#ais");
+        closenav();
+        clearall();
+    });
+
     $("#per-chng-cuboid").click(function () {
         openit("#chng-vol-cuboid");
         closenav();
@@ -371,6 +377,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#declbtn").click(function () {
+        openit("#decl");
+        closenav();
+        clearall();
+
+    });
 
     $("#dipbtn").click(function () {
         openit("#dip");
@@ -527,6 +539,12 @@ $(document).ready(function () {
 
     $("#segcal").click(function () {
         openit("#segcals");
+        closenav();
+        clearall();
+    });
+
+    $("#confi-inter-btn").click(function () {
+        openit("#confi-inter");
         closenav();
         clearall();
     });
