@@ -3991,6 +3991,36 @@ function centersolve(){
 
 }
 
+function centerrsolve(){
+    var a,b,c,d,e,f;
+     a = parseInt(document.getElementById("qcenterr").value);
+     b = parseInt(document.getElementById("acenterr").value);
+     c = parseInt(document.getElementById("bcenterr").value);
+     d = parseInt(document.getElementById("ccenterr").value);
+     e = b/(a*2);
+     f = c/(a*2);
+        var p = (e*e) + (f*f) - d;
+        var q = Math.sqrt(p);
+     if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("centerer").innerHTML ="\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("centerrr").innerHTML ="";
+     }else{
+     document.getElementById("centerer").innerHTML = "\\[Radius \\space Of \\space circle \\space -> \\newline";
+     document.getElementById("centerer").innerHTML +=" g\\space = \\frac {"+ b + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ e +"\\newline"; 
+     document.getElementById("centerer").innerHTML +=" h\\space = \\frac {"+ c + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ f +"\\newline \\] ";
+
+    document.getElementById("centerrr").innerHTML = "\\[Center \\space Of \\space circle \\space = ( \\sqrt{ \\space g^2 \\space + \\space h^2 \\space - \\space c \\space ) }  \\newline";
+    if(Number.isInteger(Math.sqrt(p)))
+    document.getElementById("centerrr").innerHTML += " = \\space ( \\space " + q + " \\space ) \\space \\newline \\] ";
+     else
+     document.getElementById("centerrr").innerHTML += " = \\space ( \\space \\sqrt { " + p + " } \\space ) \\space \\newline \\] ";
+    
+}
+
+    renderMathInElement(document.getElementById("centerer"));
+    renderMathInElement(document.getElementById("centerrr"));
+
+}
 function nodiagnolfind(){
     let n= parseInt(document.getElementById('nodiagnol').value)
     let ans = n*(n-3)/2
