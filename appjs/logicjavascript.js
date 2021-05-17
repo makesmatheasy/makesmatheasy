@@ -9684,6 +9684,33 @@ function nap(){
     document.getElementById("nAPseries2").innerHTML = "n-Arithmetic Mean: " + series.substring(0, series.length - 2)
 }
 
+function constAp(){
+    var a = parseInt(document.getElementById("term121").value)
+    var b = parseInt(document.getElementById("term112").value)
+    var output = document.getElementById("printAPconst")
+    var temp = "";
+    var d = (b-a);
+    if(!isNaN(a) && !isNaN(b)){
+        if(d==0){
+        temp += "\\[The \\space given \\space AP \\space is \\space Constant \\space AP \\space as \\space common \\space difference(d) \\space of \\space an \\space AP \\space is \\space equal \\space to \\space zero. \\]";
+       output.innerHTML = temp;
+    }
+        else if(d>0){
+            temp += "\\[The \\space given \\space AP \\space is \\space Increasing \\space AP \\space as \\space common \\space difference(d) \\space of \\space an \\space AP \\space is \\space greater \\space than \\space zero. \\]";
+            output.innerHTML = temp;
+        }
+        else{
+            temp += "\\[The \\space given \\space AP \\space is \\space Decreasing \\space AP \\space as \\space common \\space difference(d) \\space of \\space an \\space AP \\space is \\space less \\space than \\space zero. \\]";
+            output.innerHTML = temp;
+        }
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
+}
+
 function ngp(){
     var n = parseInt(document.getElementById("nt2").value)
     var a = parseInt(document.getElementById("ft2").value)

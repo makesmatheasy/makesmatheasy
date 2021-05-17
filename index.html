@@ -14755,10 +14755,37 @@
                     </div>
                 </div>
             </form>
+            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p><br>
             <br>
+            <h4 class="d-flex justify-content-center">Constant/Increasing/Decreasing AP</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+            <!-- <form class="form-inline"> -->
+                <input type="number" id="term121" placeholder="Enter the first term  (a)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="term112" placeholder="Enter the second term (a+d) "
+                       style="border: none; background: transparent; width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="constAp()">
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="ResetVal()">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <p id="printAPconst" style="font-family:mathfont;width:auto;"
+                   class="stopwrap"></p>
+                <br>
+            </div>
             <!-- sum of nterms in G.P.  -->
-       <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p><br>
-       <br>
        <h2 class="d-flex justify-content-center">2) Sum of N terms of a Geometric Progression</h2>
        <div class="form-group d-flex flex-column align-items-center">
        <form>
