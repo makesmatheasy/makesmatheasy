@@ -291,6 +291,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#desbtn").click(function () {
+        openit("#des");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
