@@ -11794,6 +11794,13 @@ function hammingCodeRtoLOdd(x){
     return res1.split("").reverse().join(""); //reverse the ans to get the ans for R to L
 }
 
+function polymax1find(){
+    let n  = parseInt(document.getElementById("polymax1").value)
+    var num;
+    num = n * (n - 4);
+    document.getElementById("polymax1ans").innerHTML = num;
+}
+
 //function for correction of  a message hamming code
 function hammingCalc2(){
     var input = document.getElementById("crct-input").value;
