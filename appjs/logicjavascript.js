@@ -7239,6 +7239,41 @@ function solveCone() {
     }
 }
 
+function solveellipCone() {
+    var a = document.getElementById("inputaellicone").value;
+    var b = document.getElementById("inputbellicone").value;
+    var h = document.getElementById("inputhellicone").value;
+    var voloutput = document.getElementById("resultofvolellicone");
+    var laoutput = document.getElementById("resultoflaellicone");
+    var saoutput = document.getElementById("resultofsaellicone");
+    var la = 0.5*3.14*((a*Math.sqrt(b*b+h*h))+(b*Math.sqrt(a*a+h*h)));
+    var sa = la+ (3.14*a*b);
+    var vol = (1.046 * a*b).toFixed(3);
+    var voltemp = "";
+    var latemp = "";
+    var satemp = "";
+    if ((a != "") && (b != "") && (h!="")) {
+        voltemp += "\\[ \\frac{1}{3} \\times \\pi \\times " + a + "\\times " + b + "\\times" + h + "\\]";
+        voltemp += "\\[Volume \\space of \\space Elliptic \\space Cone \\space is \\space " + eval(String(vol)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        latemp += "\\[L = \\frac{1}{2} \\times \\pi \\times (" + a + "\\times" + "\\sqrt{" + b + " \\times" + b + "+" + h + "\\times" + h + "} + (" + b + "\\times" + "\\sqrt{" + a + " \\times" + a + "+" + h + "\\times" + h + "})" + "\\]";
+        latemp += "\\[Lateral \\space Surface \\space Area \\space is \\space \\]";
+        latemp += "\\[" + eval(String(la.toFixed(3))) + "\\]";
+        laoutput.innerHTML = latemp;
+        satemp += "\\[L + 3.14 \\times" + a + "\\times" + b + "\\]";
+        satemp +="\\[Total \\space Surface \\space Area \\space  is \\space  \\]";
+        satemp += "\\[" + eval(String(sa.toFixed(3))) + "\\]";
+        saoutput.innerHTML = satemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(laoutput);
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+    }
+}
+
 function torussolve() {
     var radius1 = document.getElementById("inputmajorradiustorus").value;
     var radius2 = document.getElementById("inputminorradiustorus").value;

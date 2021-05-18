@@ -244,6 +244,7 @@ function openit(id) {
         "#bt-collapse",
         "#bt-collapse1",
         "#manhats",
+        "#elliptic_cone",
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",
