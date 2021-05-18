@@ -22345,11 +22345,11 @@ N is the population size.
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center">Perimeter</h5>
+                                <h5 class="text-center">Perimeter (P)</h5>
                                 <p class="text-center">\[P = 20*a\]</p>
                                 <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Area</h5>
-                                <p class="text-center">\[A = 2\space x\space\frac {\sqrt{5 \times (5 - 2 \sqrt{5})}}{2} \space a^2 \]</p>
+                                <h5 class="text-center">Area (A)</h5>
+                                <p class="text-center">\[A = 2\space \times \space\frac {\sqrt{5 \times (5 - 2 \sqrt{5})}}{2} \space a^2 \]</p>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
@@ -22360,8 +22360,7 @@ N is the population size.
                         <div class="dropdown-divider"></div>
                         <!-- --------FROM------- -->
                         <input class="form__field" type="number"
-                                   placeholder="Enter edge length of Decagram(a)" id="inputdecagramside">
-                        <button class = "btn btn-dark" onclick="decagramfind()">FInd</button>           
+                                   placeholder="Enter edge length of Decagram(a)" oninput="decagramfind()" id="inputdecagramside">    
                         <p class="stopwrap" id="resultofdecagramperi"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofdecagramarea"
