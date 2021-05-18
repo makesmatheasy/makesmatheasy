@@ -13954,3 +13954,74 @@ function decl() {
         declans.appendChild(para)
     }
 }
+
+// Sum And Difference of trigonometric functions
+
+function sumAndDiffTri() {
+    let list = document.getElementById('triList').value
+    list = list.split(' ')
+    let fn = list[0]
+    let x = parseInt(list[1])
+    let op = list[2]
+    let y = parseInt(list[3])
+    let sin = Math.sin
+    let cos = Math.cos
+    let tan = Math.tan
+    let formula, value, ansValue
+    let ans = document.getElementById("sumAndDiffTrians")
+    let para1 = document.createElement("p")
+    let para2 = document.createElement('p')
+    let para3 = document.createElement('p')
+
+    if (op === '+') {
+        if (fn === 'sin') {
+            formula = "sin(x + y) = sin x cos y + cos x sin y"
+            value = `sin(${x} + ${y}) = sin ${x} cos ${y} + cos ${x} sin ${y}`
+            ansValue = `sin(${x} + ${y}) = (${Number.parseFloat(sin(x)).toPrecision(3)}) * (${Number.parseFloat(cos(y)).toPrecision(3)}) + (${Number.parseFloat(cos(x)).toPrecision(3)}) * (${Number.parseFloat(sin(y)).toPrecision(3)}) = ${Number.parseFloat(sin(x+y)).toPrecision(3)}`
+        } else if (fn === 'cos') {
+            formula = "cos(x + y) = cos x cos y – sin x sin y"
+            value = `cos(${x} + ${y}) = cos ${x} cos ${y} - sin ${x} sin ${y}`
+            ansValue = `cos(${x} + ${y}) = (${Number.parseFloat(cos(x)).toPrecision(3)}) * (${Number.parseFloat(cos(y)).toPrecision(3)}) - (${Number.parseFloat(sin(x)).toPrecision(3)}) * (${Number.parseFloat(sin(y)).toPrecision(3)}) = ${Number.parseFloat(cos(x+y)).toPrecision(3)}`
+        } else if (fn === 'tan') {
+            formula = "tan (x + y) = (tan x + tan y)/ (1-tan x tan y)"
+            value = `tan (${x} + ${y}) = (tan ${x} + tan ${y})/ (1-tan ${x} tan ${y})`
+            ansValue = `tan (${x} + ${y}) = (${Number.parseFloat(tan(x)).toPrecision(3)} + ${Number.parseFloat(tan(y)).toPrecision(3)}) / (1 - (${Number.parseFloat(tan(x)).toPrecision(3)})(${Number.parseFloat(tan(y)).toPrecision(3)})) = ${Number.parseFloat(tan(x+y)).toPrecision(3)}`
+        }
+    } else if (op === '-') {
+        if (fn === 'sin') {
+            formula = "sin (x – y) = sin x cos y – cos x sin y "
+            value = `sin(${x} - ${y}) = sin ${x} cos ${y} - cos ${x} sin ${y}`
+            ansValue = `sin(${x} - ${y}) = (${Number.parseFloat(sin(x)).toPrecision(3)}) * (${Number.parseFloat(cos(y)).toPrecision(3)}) - (${Number.parseFloat(cos(x)).toPrecision(3)}) * (${Number.parseFloat(sin(y)).toPrecision(3)}) = ${Number.parseFloat(sin(x-y)).toPrecision(3)}`
+        } else if (fn === 'cos') {
+            formula = "cos(x – y) = cos x cos y + sin x sin y "
+            value = `cos(${x} - ${y}) = cos ${x} cos ${y} + sin ${x} sin ${y}`
+            ansValue = `cos(${x} - ${y}) = (${Number.parseFloat(cos(x)).toPrecision(3)}) * (${Number.parseFloat(cos(y)).toPrecision(3)}) + (${Number.parseFloat(sin(x)).toPrecision(3)}) * (${Number.parseFloat(sin(y)).toPrecision(3)}) = ${Number.parseFloat(cos(x-y)).toPrecision(3)}`
+        } else if (fn === 'tan') {
+            formula = "tan (x – y) = (tan x – tan y)/ (1+tan x tan y)"
+            value = `tan (${x} - ${y}) = (tan ${x} - tan ${y})/ (1 + tan ${x} tan ${y})`
+            ansValue = `tan (${x} - ${y}) = (${Number.parseFloat(tan(x)).toPrecision(3)} - ${Number.parseFloat(tan(y)).toPrecision(3)}) / (1 + (${Number.parseFloat(tan(x)).toPrecision(3)})(${Number.parseFloat(tan(y)).toPrecision(3)})) = ${Number.parseFloat(tan(x-y)).toPrecision(3)}`
+        }
+    }
+
+
+    let node1 = document.createTextNode(formula)
+    para1.appendChild(node1)
+    ans.appendChild(para1)
+    
+    let node2 = document.createTextNode(value)
+    para2.appendChild(node2)
+    ans.appendChild(para2)
+
+    let node3 = document.createTextNode(ansValue)
+    para3.appendChild(node3)
+    ans.appendChild(para3)
+}
+
+function clearSumAndDiff() {
+    document.getElementById('triList').value = ''
+    const myNode = document.getElementById('sumAndDiffTrians')
+    while (myNode.lastElementChild) {
+        myNode.removeChild(myNode.lastElementChild);
+    }
+}
+

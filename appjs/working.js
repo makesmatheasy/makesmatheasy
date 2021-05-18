@@ -769,6 +769,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sumAndDiffTributton").click(function () {
+        openit("#sumAndDiffTri");
+        closenav();
+        clearall();
+    });
     $("#profitlossbutton").click(function () {
         openit("#profitloss");
         closenav();
