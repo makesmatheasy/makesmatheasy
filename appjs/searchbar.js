@@ -565,6 +565,36 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR"){
                         document.getElementById('cramer').click();
                     }
+                    else if (inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES") {
+                        $("#sieve").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES"){
+                        document.getElementById('sieve').click();
+                    }
+                    else if (inp.value.toUpperCase() == "NAME OF 3D SHAPES") {
+                        $("#3d-shape").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "NAME OF 3D SHAPES"){
+                        document.getElementById('3d-shape').click();
+                    }
+                    else if (inp.value.toUpperCase() == "NEXT PRIME NUMBER") {
+                        $("#nextPrime").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "NEXT PRIME NUMBER"){
+                        document.getElementById('nextPrime').click();
+                    }
+                    else if (inp.value.toUpperCase() == "DOUBLE FACTORIAL") {
+                        $("#dblFact").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DOUBLE FACTORIAL"){
+                        document.getElementById('dblFact').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SMALLEST PRIME FACTOR") {
+                        $("#smPrime").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SMALLEST PRIME FACTOR"){
+                        document.getElementById('smPrime').click();
+                    }
                     else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
                         $("#sum_n").slideToggle();    
                     }
@@ -577,11 +607,30 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CONDITIONAL PROBABILITY"){
                         document.getElementById('condprobability').click();
                     }
+                    else if (inp.value.toUpperCase() == "ADDITIVE INVERSE") {
+                        $("#ais").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ADDITIVE INVERSE"){
+                        document.getElementById('ais').click();
+                    }
+                    else if(inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR"){
+                        document.getElementById('#confi-inter').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR") {
+                        $("confi-inter").slideToggle();    
+                    }
+                   
                     else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
                         $("#joint-probabilitycollapse").slideToggle();    
                     }
                     else if(inp.value.toUpperCase() == "JOINT PROBABILITY"){
                         document.getElementById('joint-probabilitycollapse').click();
+                    }
+                    else if (inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY") {
+                        $("#idevent").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY"){
+                        document.getElementById('idevent').click();
                     }
                     else if (inp.value.toUpperCase() == "BINOMIAL DISTRIBUTION CALCULATOR") {
                         $("#bpmfs").slideToggle();    
@@ -1010,6 +1059,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('solutiontri').click();
                     } 
+                    else if (inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION") {
+                        clearmain()
+                        $("#sumAndDiffTri").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION"){
+                        clearmain()
+                        document.getElementById('sumAndDiffTri').click();
+                    } 
                     else if (inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART") {
                         clearmain()
                         $("#giff").slideDown();    
@@ -1151,6 +1208,14 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "DATE"){
                         clearmain()
                         document.getElementById('datecal').click();
+                    }
+                    else if (inp.value.toUpperCase() == "EUCLID GCD") {
+                        clearmain()
+                        $("#gcd").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "EUCLID GCD"){
+                        clearmain()
+                        document.getElementById('gcd').click();
                     }
                     else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
                         clearmain()
@@ -1424,7 +1489,7 @@ function autocomplete(inp, arr) {
 }
 
 
-var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
+var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Independent And Dependent Event Probability","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Sigma Notation","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
@@ -1438,18 +1503,8 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "SPI/CGPA Convertor","Parabola","Important Graph Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
-                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
-
-
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes"
-
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","3-D Shapes Inscribed"
-                          ,"Euler Totient Calculator"
-
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","2-D Shapes Inscribed","3-D Shapes Inscribed"
-
-
-
+                        "Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator","Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","2-D Shapes Inscribed","3-D Shapes Inscribed","Euler Totient Calculator","Euclid GCD",
+                        "Direct And Indirect Proportion"
                     ];                    
                         
 
@@ -1774,6 +1829,14 @@ function handleclick(value) {
     else if(inp.value.toUpperCase() == "SOLUTION OF TRIANGLES"){
         document.getElementById('solutiontri').click(); 
     }
+    else if (inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION") {
+        clearmain()
+        $("#sumAndDiffTri").slideDown();    
+    }
+    else if(inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION"){
+        clearmain()
+        document.getElementById('sumAndDiffTri').click();
+    } 
     else if (inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART") {
         $("#giff").slideToggle(); 
     }
@@ -1843,6 +1906,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "EUCLID GCD"){
+        document.getElementById('gcd').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EUCLID GCD") {
+        $("#gcd").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
         document.getElementById('2d-shape-ins').click(); 
@@ -2100,6 +2169,36 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR") {
         $("#cramer").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES"){
+        document.getElementById('sieve').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES") {
+        $("#sieve").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "NAME OF 3D SHAPES"){
+        document.getElementById('3d-shape').click(); 
+    }
+    else if (inp.value.toUpperCase() == "NAME OF 3D SHAPES") {
+        $("#3d-shape").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "NEXT PRIME NUMBER"){
+        document.getElementById('nextPrime').click(); 
+    }
+    else if (inp.value.toUpperCase() == "NEXT PRIME NUMBER") {
+        $("#nextPrime").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DOUBLE FACTORIAL"){
+        document.getElementById('dblFact').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DOUBLE FACTORIAL") {
+        $("#dblFact").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SMALLEST PRIME FACTOR"){
+        document.getElementById('smPrime').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SMALLEST PRIME FACTOR") {
+        $("#smPrime").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
         document.getElementById('sum_n').click(); 
     }
@@ -2112,11 +2211,29 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "CONDITIONAL PROBABILITY") {
         $("#condprobability").slideToggle(); 
     }
+    else if (inp.value.toUpperCase() == "ADDITIVE INVERSE") {
+        $("ais").slideToggle();    
+    }
+    else if(inp.value.toUpperCase() == "ADDITIVE INVERSE"){
+        document.getElementById('#ais').click();
+    }
+    else if(inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR"){
+        document.getElementById('confi-inter').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR") {
+        $("#confi-inter").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "JOINT PROBABILITY"){
         document.getElementById('joint-probabilitycollapse').click(); 
     }
     else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
         $("#joint-probabilitycollapse").slideToggle(); 
+    }
+    else if (inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY") {
+        $("#idevent").slideToggle();    
+    }
+    else if(inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY"){
+        document.getElementById('idevent').click();
     }
     else if(inp.value.toUpperCase() == "BINOMIAL DISTRIBUTION CALCULATOR"){
         document.getElementById('bpmfs').click(); 

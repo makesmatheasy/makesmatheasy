@@ -183,6 +183,21 @@ function comOp(value) {
     }
 }
 
+function volofcuboid() {
+    var l = parseInt(document.getElementById("chnglengthcuboid").value);
+    var b = parseInt(document.getElementById("chngbreadthcuboid").value);
+    var h = parseInt(document.getElementById("chngheightcuboid").value);
+    var ans = "percentage increase in the volume of the cuboid is ";
+
+    var percentInc = (1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100));
+    percentInc -= 1;
+    percentInc *= 100;
+
+    ans = ans + percentInc + " %";
+    document.getElementById("cuboidAns").innerText = ans;
+
+}
+
 function euler()
 {
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
@@ -658,6 +673,35 @@ function arcal()
 
 }
 
+function cresccal() {
+    var r1 = document.getElementById("cresc_rad1").value;
+    var r2 = document.getElementById("cresc_rad2").value;
+    var d = document.getElementById("cresc_dist").value;
+    var ans = "";
+    var lans1, lans2, dans;
+    if (r1 == "" || r2 == "" || d == "") {
+        ans = "Error: All values are required to obtain answer";
+    }
+    else {
+        var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
+        var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
+        var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
+
+
+        lans1 = document.createElement('div');
+        lans1.innerHTML = "Area of Lune 1: " + lune1;
+
+        lans2 = document.createElement('div');
+        lans2.innerHTML = "Area of Lune 2: " + lune2;
+
+        dans = document.createElement('div');
+        dans.innerHTML = "Overlap Area: " + op;
+    }
+    document.getElementById("crescans").appendChild(lans1);
+    document.getElementById("crescans").appendChild(lans2);
+    document.getElementById("crescans").appendChild(dans);
+}
+
 function ssqcal()
 {
     var num=document.getElementById("ssq").value;
@@ -1045,35 +1089,28 @@ function segcal()
     ans="The area of segment is: "+area;
 }
 document.getElementById("segans").innerHTML=ans;
-
 }
 
-function impcal()
-{
+function impcal() {
     var a=document.getElementById("num").value;
     var b=document.getElementById("den").value;
-    var ans="";
-    if(a==""||b=="")
-    {
-        ans="Enter all the required inputs to obtain answer";
-    }
-
-    else if(b>=a)
-    {
-        ans="The value of numerator must be greater than be denominator";
-             
-    }
-
-    else
-    {
+    document.getElementById("impans").innerHTML ="";
+    if(a==""||b==""){
+        document.getElementById("impans").innerHTML ="\\[Enter \\space all \\space the \\space required \\space inputs \\space to \\space obtain \\space answer\\]";
+        renderMathInElement(document.getElementById("impans"));
+    } else if(b>=a){
+        document.getElementById("impans").innerHTML ="\\[The \\space value \\space of \\space numerator \\space must \\space be \\space greater \\space than \\space be \\space denominator\\]";
+        renderMathInElement(document.getElementById("impans"));
+    } else if (b == 0){
+        document.getElementById("impans").innerHTML ="\\[The \\space value \\space of \\space denominator \\space cannot \\space be \\space 0\\]";
+        renderMathInElement(document.getElementById("impans"));
+    } else {
         var r=a%b;
         var q=(a-r)/b;
-        ans="The required answer is: "+ q +" "+ r+"/"+b.sub();    }
-    document.getElementById("impans").innerHTML=ans;
-
-
+        document.getElementById("impans").innerHTML ="\\[The \\space required \\space answer \\space is: \\space"+q+" \\space \\frac{"+r+"}{"+b+"}\\]";    
+        renderMathInElement(document.getElementById("impans"));
+    }
 }
-
 
 function factorial(n){
     let answer = 1;
@@ -1168,25 +1205,26 @@ function eircal()
     }
     result.innerHTML = ans;
     renderMathInElement(result);
-
 }
-function errpercal()
-{
+
+function errpercal(){
     var a=document.getElementById("acval").value;
     var b=document.getElementById("expval").value;
-    var ans="";
-    if(a==""||b=="")
-    {
-        ans="Please enter all the values";
-    }
-    else{
+    if(a==""||b==""){
+        document.getElementById("errperans").innerHTML ="\\[Please \\space enter \\space all \\space the \\space values\\]";
+        renderMathInElement(document.getElementById("errperans"));
+        document.getElementById("errperans1").innerHTML ="";
+        document.getElementById("errperans2").innerHTML ="";
+    } else{
     var c= ((b-a)/a)*100;
-    ans="The error percentage is: "+c+"%";
+    document.getElementById("errperans1").innerHTML= "\\[Percentage \\space Error = \\frac{Observed \\space value - \\space True \\space value}{True \\space value} \\times 100 \\]"
+    renderMathInElement(document.getElementById("errperans1"));
+    document.getElementById("errperans2").innerHTML ="\\[\\frac{("+b+"-"+a+")}{"+a+"} \\times 100 \\space = \\space \\frac{("+(b-a)+")}{"+a+"} \\times 100 \\space = \\space "+((b-a)/a).toFixed(2)+" \\times 100\\]";
+    renderMathInElement(document.getElementById("errperans2"));
+    document.getElementById("errperans").innerHTML ="\\[Hence, \\space the \\space error \\space percentage \\space is \\space = \\space"+c.toFixed(3)+"%\\]";
+    renderMathInElement(document.getElementById("errperans"));
     }
-    document.getElementById("errperans").innerHTML=ans;
-
 }
-
 
 function wmccal()
 {
@@ -1617,43 +1655,37 @@ function traprzlt()
     }
 }
 
-
-function perrankcal()
-{
+function perrankcal(){
     var num=document.getElementById("perrank").value;
     var num2=document.getElementById("peryour").value;
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
-    var s="";
-    if(num==""||num2=="")
-    {
-       s= "Please enter number";
-    }
-    else if(!valid.test(num))
-    {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    }
-    else{
+    document.getElementById("perrankans").innerHTML ="";
+    if(num==""||num2==""){
+        document.getElementById("perrankans").innerHTML= "Please enter number";
+    } else if(!valid.test(num)) {
+        document.getElementById("perrankans").innerHTML= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
-   
     var number=[]
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
     }
     num2=parseFloat(num2);
-    var sum=0, count=0;
-    for(var i=0; i<len;i++)
-    {
-         if(number[i]<=num2)
-         {
-             count++;
-         }
+    var count=0;
+    document.getElementById("perrankans1").innerHTML="\\[Here \\space we \\space count \\space the \\space cases \\newline when \\space your \\space marks \\space becomes \\space > \\space or \\space = \\space any \\space marks \\space form \\space dataset\\]";
+    renderMathInElement(document.getElementById("perrankans1"));
+    for(var i=0; i<len;i++){
+        if(number[i]<=num2){
+            count++;}
     }
     var pr= (count/len)*100;
-    var s="The percentile rank for given marks is: "+pr;
-}
-document.getElementById("perrankans").innerHTML=s;
+    document.getElementById("perrankans3").innerHTML= "\\[\\frac{Number \\space of \\space times \\space "+num2+" \\space was \\space > or \\space = \\space any \\space marks \\space form \\space all \\space marks \\space dataset}{Total \\space no. \\space of \\space data \\space in \\space dataset} \\times 100 \\]";
+    renderMathInElement(document.getElementById("perrankans3"));
+    document.getElementById("perrankans").innerHTML= "\\[Hence, \\space the \\space percentile \\space rank \\space for \\space given \\space marks \\space is: \\space \\newline \\frac{"+count+"}{"+len+"} \\times 100 = "+pr.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("perrankans"));
+    }
 }
 function oocal()
 {

@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -207,6 +207,11 @@ $(document).ready(function () {
     });
     $("#arc").click(function () {
         openit("#arcs");
+        closenav();
+        clearall();
+    });
+    $("#crescent").click(function () {
+        openit("#crescentLune");
         closenav();
         clearall();
     });
@@ -499,6 +504,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#gcdbtn").click(function () {
+        openit("#gcd");
+        closenav();
+        clearall();
+    });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
         closenav();
@@ -543,6 +553,18 @@ $(document).ready(function () {
     //Catalan numbers calculator
     $("#cat-btn").click(function () {
         openit("#catNum");
+        closenav();
+        clearall();
+    })
+    //Smallest number divisible calculator
+    $("#sm-num-btn").click(function () {
+        openit("#smNum");
+        closenav();
+        clearall();
+    })
+    //Lucas series calculator
+    $("#luc-btn").click(function () {
+        openit("#lucNum");
         closenav();
         clearall();
     })
@@ -704,6 +726,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#faulbtn").click(function () {
+        openit("#faul");
+        closenav();
+        clearall();
+    });
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
@@ -766,6 +793,11 @@ $(document).ready(function () {
     });
     $("#solutiontributton").click(function () {
         openit("#solutiontri");
+        closenav();
+        clearall();
+    });
+    $("#sumAndDiffTributton").click(function () {
+        openit("#sumAndDiffTri");
         closenav();
         clearall();
     });
@@ -1151,6 +1183,11 @@ $(document).ready(function () {
 
     $("#jointprobabilitycollapsebtn").click(function () {
         openit("#joint-probabilitycollapse");
+        closenav();
+        clearall();
+    });
+    $("#ideventbtn").click(function () {
+        openit("#idevent");
         closenav();
         clearall();
     });
