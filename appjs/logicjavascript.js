@@ -1548,6 +1548,14 @@ function ssdfind(){
     }
 }
 
+function glomefind(){
+    let r=parseInt(document.getElementById("inputsideglome").value)
+    let area = 16*3.14*r*r
+    let vol = 2*3.14*3.14*r*r*r
+    document.getElementById("resultofvolglome").innerHTML = "The volume is "+vol
+    document.getElementById("resultofareaglome").innerHTML = "The volume is "+area
+}
+
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
     var pp = document.getElementById("p").value;s
