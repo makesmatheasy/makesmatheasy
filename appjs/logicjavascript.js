@@ -13245,6 +13245,42 @@ function phi1(n){
     return result;
 }
 
+function etc3find(){
+    let l = parseInt(document.getElementById("etc3").value)
+    let r = parseInt(document.getElementById("etc31").value)
+    var ans = 0, i = 1;
+    var v = power(2, i);
+    while (v <= r) {
+        while (v <= r) {
+
+            if (v >= l)
+                ans++;
+            v = v * 3;
+        }
+
+        i++;
+        v = power(2, i);
+    }
+
+    if (l == 1)
+        ans++;
+
+    document.getElementById("etc3ans").innerHTML =  parseInt( ans);
+}
+
+function power(a , n) {
+    if (n == 0)
+        return 1;
+
+    var p = power(a, parseInt(n / 2));
+    p = p * p;
+
+    if (n % 2 == 1)
+        p = p * a;
+
+    return p;
+}
+
 function clockcal()
 {
     a=document.getElementById("hclock").value;  
