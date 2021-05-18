@@ -14,22 +14,22 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["smNumResult", "catNumResult", "dblFactResult", "smDivResult", "smPrimeResult", "nextPrimeResult", "distResult", "resultintegration", "integralplot", "etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
-$("#clock").click(function () {
+$("#clock").click(function(){
     openit("#clocks");
     closenav();
     clearall();
 });
-$("#utc").click(function () {
+$("#utc").click(function(){
     openit("#utcs");
     closenav();
     clearall();
 });
 
-$("#manhat").click(function () {
+$("#manhat").click(function(){
     openit("#manhats");
     closenav();
     clearall();
@@ -232,12 +232,12 @@ $(document).ready(function () {
     });
     $("#betabtn").click(function () {
         openit("#beta");
-        closenav();
+         closenav();
         clearall();
     });
     $("#ooc").click(function () {
         openit("#oocs");
-        closenav();
+         closenav();
         clearall();
     });
     $("#imprtoprbtn").click(function () {
@@ -453,22 +453,22 @@ $(document).ready(function () {
         openit("#ttest");
         closenav();
         clearall();
-    });
+    });   
     $("#ztestbtn").click(function () {
         openit("#ztest");
         closenav();
         clearall();
-    });
+    });   
     $("#chitestbtn").click(function () {
         openit("#chitest");
         closenav();
         clearall();
-    });
+    });   
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();
         clearall();
-    });
+    }); 
     $("#pairfact").click(function () {
         openit("#pairfacts");
         closenav();
@@ -959,14 +959,14 @@ $(document).ready(function () {
     });
 
     //Function for hamming code
-    $("#hamming-code-btn").click(function () {
+    $("#hamming-code-btn").click(function(){
         openit("#hamming-calc");
         closenav();
         clearall();
     });
 
     //Function for hamming distance betn numbers
-    $("#hamming-dist-btn").click(function () {
+     $("#hamming-dist-btn").click(function(){
         openit("#hamming-dist");
         closenav();
         clearall();
@@ -1203,61 +1203,53 @@ $(document).ready(function () {
     });
 
 
-    $("#wmc").click(function () {
+    $("#wmc").click(function(){
         openit("#wmcs");
         closenav();
         clearall();
     });
 
-    $("#confInterval").click(function () {
-        openit("#confIntrvl");
-        closenav();
-        clearall();
-    });
 
-    $("#cv").click(function () {
+
+    $("#cv").click(function(){
         openit("#cvs");
         closenav();
         clearall();
     });
-    $("#rms").click(function () {
+    $("#rms").click(function(){
         openit("#rmss");
         closenav();
         clearall();
     });
-    $("#relationtypescollapsebtn").click(function () {
+    $("#relationtypescollapsebtn").click(function(){
         openit("#relationtypes");
         closenav();
         clearall();
     });
 
-    $("#slvx").click(function () {
+    $("#slvx").click(function(){
         openit("#slvxs");
         closenav();
         clearall();
     });
 
-    $("#halflifebtn").click(function () {
-        openit("#halflife");
-        closenav();
-        clearall();
-    });
-    $("#perrankcalbtn").click(function () {
+
+    $("#perrankcalbtn").click(function(){
         openit("#rankcals");
         closenav();
         clearall();
     });
-    $("#hyperbolictrignocollapsebtn").click(function () {
+    $("#hyperbolictrignocollapsebtn").click(function(){
         openit("#hyperbolicratios");
         closenav();
         clearall();
     });
-    $("#squarerootcollapsebtn").click(function () {
+    $("#squarerootcollapsebtn").click(function(){
         openit("#squarerootcalc");
         closenav();
         clearall();
     });
-    $("#sqseriescollapsebtn").click(function () {
+    $("#sqseriescollapsebtn").click(function(){
         openit("#sqseries");
         closenav();
         clearall();
