@@ -1045,35 +1045,28 @@ function segcal()
     ans="The area of segment is: "+area;
 }
 document.getElementById("segans").innerHTML=ans;
-
 }
 
-function impcal()
-{
+function impcal() {
     var a=document.getElementById("num").value;
     var b=document.getElementById("den").value;
-    var ans="";
-    if(a==""||b=="")
-    {
-        ans="Enter all the required inputs to obtain answer";
-    }
-
-    else if(b>=a)
-    {
-        ans="The value of numerator must be greater than be denominator";
-             
-    }
-
-    else
-    {
+    document.getElementById("impans").innerHTML ="";
+    if(a==""||b==""){
+        document.getElementById("impans").innerHTML ="\\[Enter \\space all \\space the \\space required \\space inputs \\space to \\space obtain \\space answer\\]";
+        renderMathInElement(document.getElementById("impans"));
+    } else if(b>=a){
+        document.getElementById("impans").innerHTML ="\\[The \\space value \\space of \\space numerator \\space must \\space be \\space greater \\space than \\space be \\space denominator\\]";
+        renderMathInElement(document.getElementById("impans"));
+    } else if (b == 0){
+        document.getElementById("impans").innerHTML ="\\[The \\space value \\space of \\space denominator \\space cannot \\space be \\space 0\\]";
+        renderMathInElement(document.getElementById("impans"));
+    } else {
         var r=a%b;
         var q=(a-r)/b;
-        ans="The required answer is: "+ q +" "+ r+"/"+b.sub();    }
-    document.getElementById("impans").innerHTML=ans;
-
-
+        document.getElementById("impans").innerHTML ="\\[The \\space required \\space answer \\space is: \\space"+q+" \\space \\frac{"+r+"}{"+b+"}\\]";    
+        renderMathInElement(document.getElementById("impans"));
+    }
 }
-
 
 function factorial(n){
     let answer = 1;
