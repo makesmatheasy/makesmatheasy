@@ -11346,6 +11346,13 @@ function calculateTenComplement(x){
     return tenc;
 }
 
+function minsquare1find(){
+    let a = parseInt(document.getElementById("minsquare1").value)
+    var R = a * (2.0 - Math.sqrt(2));
+    var area = 3.14 * R * R / 2.0;
+    document.getElementById("minsquare1ans").innerHTML =  area;
+}
+
 //----------------------------
 
 //Function for multiplication of any number system
