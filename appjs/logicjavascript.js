@@ -4509,21 +4509,24 @@ function solvestriangle(){
     var s1=  document.getElementById("inputfirsts1").value;
     var s2 =  document.getElementById("inputseconds2").value;
     var angle =  document.getElementById("inputangledeg").value;
-    console.log(math.sin(angle));console.log(math.cos(angle));
     var area = 0.5 * s1 * s2 * math.sin(angle);
     var height = s2 * math.sin(angle);
     var peri = parseInt(s1) + parseInt(s2) + math.sqrt(s1**2 + s2**2 - (2 * s1 * s2 * math.cos(angle)));
     
     if (height <=0 && area <=0 && s1 != "" && s2 != "" && angle != ""){
         document.getElementById("resultofper").innerHTML = ""
-        document.getElementById("resultofarea").innerHTML = "Please enter correct angle"
+        document.getElementById("resultofarea").innerHTML = "\\[Please \\space enter \\space correct \\space angle\\]";
         document.getElementById("resultofheight").innerHTML = ""
+        renderMathInElement(document.getElementById("resultofarea"));
         return;
     }
     if (s1 != "" && s2 != "" && angle != ""){
-        document.getElementById("resultofper").innerHTML = "The Perimeter of the triangle (P) = "+ peri.toFixed(3)
-        document.getElementById("resultofarea").innerHTML = "The Area of the triangle  (S) = " +area.toFixed(3)
-        document.getElementById("resultofheight").innerHTML = "The Height of the traingle (h) = "+height.toFixed(3)
+        document.getElementById("resultofper").innerHTML = "\\[The \\space Perimeter \\space of \\space the \\space triangle \\space (P) \\newline "+s1+"+ "+s2+" + \\sqrt{"+s1+"^2 + "+s2+"^2 -2 \\times "+s1+"\\times "+s2+" \\space cos ("+angle+")} \\newline = "+ peri.toFixed(3)+"\\]";
+        document.getElementById("resultofarea").innerHTML = "\\[The \\space Area \\space of \\space the \\space triangle \\space (S) \\newline \\frac{1}{2} \\times "+s1+"\\times "+s2+" \\times sin ("+angle+") \\newline = " +area.toFixed(3)+"\\]";
+        document.getElementById("resultofheight").innerHTML = "\\[The \\space Height \\space of \\space the \\space traingle \\space (h) \\newline "+s2+"\\times sin ("+angle+") \\newline = "+height.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById("resultofper"));
+        renderMathInElement(document.getElementById("resultofarea"));
+        renderMathInElement(document.getElementById("resultofheight"));
     }
 }
 
