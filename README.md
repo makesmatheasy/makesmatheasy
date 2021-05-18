@@ -150,6 +150,7 @@ Other Tech/Libraries
   - Sum of Square of Given number
   - Natural Numbers
   - Percentage Calculator
+  - Half Life Calculator
   - Set Calculator
   - Pythagorean Triplets
   - Perfect Squares in a range
@@ -230,6 +231,7 @@ Other Tech/Libraries
   - Properties of Circles
   - Properties of Quadrilaterals
   - Arc Length Calculator
+  - Area of Crescent and Lunes
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -353,6 +355,7 @@ Other Tech/Libraries
   - T-test
   - Z-test
   - Z score Calculator
+  - Confidence Interval Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator

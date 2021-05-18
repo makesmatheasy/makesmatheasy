@@ -14258,4 +14258,3 @@ function clearSumAndDiff() {
         myNode.removeChild(myNode.lastElementChild);
     }
 }
-

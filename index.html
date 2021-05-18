@@ -1536,7 +1536,22 @@
                 </table>
             </li>
 
-           
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="halflifebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Half Life Calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Half Life Calculator','#halflife','c','halflifeimgfav')"><img
+                                        id="halflifeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>       
 
             <li>
                 <table class="table">
@@ -1611,8 +1626,7 @@
                                                </tr>
                          </table>
                      </li>
-                                               
-
+                     
                         <li>
                             <table class="table">
                                 <tr>
@@ -2878,6 +2892,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="crescent"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;">Area of Crescent and Lune</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Area of Crescent and Lune','#crescentLune','c','crescimgfav')"><img
+                                        id="crescimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="2d-shape-insbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> 2-D Shapes Inscribed
                             </a>
@@ -4016,6 +4046,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="confInterval"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Confidence Interval Calculator </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Confidence Interval Calculator  ','#confIntrvl','c','confimgfav')"><img
+                                        id="confimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -8656,6 +8703,9 @@
                     <div id="generatedmatrixsingle"></div>
                 </div>
             </div>
+            <div id="pow"></div>
+            <br>
+            <br>
             <div class="form-group">
                 <button type="button" class="btn btn-light"
                         onclick="soperation(document.getElementById('sopval').value);">
@@ -16195,6 +16245,14 @@ N is the population size.
         N is the total number of values in the set A.</p> 
 </div>
 
+<div class="collapse" id="halflife">
+    <h1 style="font-family:mathfont; text-align:center;">Half Life Calculator </h1>
+   <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
+   <p>&nbsp;</p>
+   <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+   <p id="halflifeAns" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+</div>
+
 
 <div class="collapse" id="slvxs">
     <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
@@ -16309,6 +16367,28 @@ N is the population size.
         The coefficient of variation represents the ratio of the standard deviation to the mean,<br>
         and it is a useful statistic for comparing the degree of variation from one data series to another,<br>
         even if the means are drastically different from one another.</p>
+</div>
+
+<div class="collapse" id="confIntrvl">
+    <h1 style="font-family:mathfont; text-align:center;">Confidence Interval Calculator</h1><p>&nbsp;</p>
+        <input type="text" class="form__field" id="conf-obsv" width="5em" placeholder="Enter the number of Observations"><p>&nbsp;</p>
+        <input type="text" class="form__field" id="conf-mean" width="5em" placeholder="Enter the mean"><p>&nbsp;</p>
+        <input type="text" class="form__field" id="conf-dev" width="5em" placeholder="Enter the standard deviation"><p>&nbsp;</p>
+        <select id="z-select" class="form__field bg-dark">
+            <option>Select Z value</option>
+            <option>80%</option>
+            <option>85%</option>
+            <option>90%</option>
+            <option>95%</option>
+            <option>99%</option>
+            <option>99.5%</option>
+            <option>99.9%</option>
+        </select>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="confidence()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    <p id="confans" style="color: white; text-align: center; font-size: 1.6em; font-family:mathfont"></p><p>&nbsp;</p>
+    
 </div>
 
 <div class="collapse" id="rmss">
@@ -16643,6 +16723,21 @@ N is the population size.
    
 </div>
 
+<div class="collapse" id="crescentLune">
+    
+    <h1 style="font-family:mathfont; text-align:center;">AREA OF CRESCENT AND LUNE</h1>
+    <form action="">
+        <input type="number" name="ang" class="form__field" id="cresc_rad1"  placeholder="Enter radius of circle 1">
+        <input type="number" name="ang" class="form__field" id="cresc_rad2"  placeholder="Enter radius of circle 2">
+        <input type="number" name="ang" class="form__field" id="cresc_dist"  placeholder="Enter circle center distance">
+        
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="cresccal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p>&nbsp;</p>
+        <p id="crescans" style="font-size: 1.5em;"></p> <p>&nbsp;</p>
+    </form>
+</div>
 
 
 <div class="collapse" id="sosqs">
