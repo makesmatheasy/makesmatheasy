@@ -3225,29 +3225,6 @@ function solvepolycal(){
     }
 }
 
-function solvedodeca() {
-    var a = document.getElementById("inputdodecaside").value;
-    var voloutput = document.getElementById("resultofdodecavol");
-    var tsaoutput = document.getElementById("resultofdodecatsa");
-    var voltemp = "";
-    var tsatemp = "";
-    if (a != "") {
-        voltemp += "\\[Volume \\space of \\space Dodecahedron \\space \\newline \\frac{15 + 7 \\sqrt{5}}{4} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(7.663 * (a * a * a))).toFixed(3) + "\\]";
-        voloutput.innerHTML = voltemp;
-
-        tsatemp += "\\[Surface \\space Area \\space of \\space Dodecahedron \\space \\newline " + 3  + "\\times \\sqrt{25 + 10 \\sqrt{5}} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(20.646 * (a * a))).toFixed(3) + "\\]";
-        tsaoutput.innerHTML = tsatemp;
-
-        renderMathInElement(voloutput);
-        renderMathInElement(tsaoutput);
-
-    } else {
-        voloutput.innerHTML = "";
-        tsaoutput.innerHTML = "";
-    }
-
-}
-
 function sec3dfind(){
     let x1 = parseInt(document.getElementById("corx1").value)
     let y1 = parseInt(document.getElementById("cory1").value)
@@ -5484,6 +5461,30 @@ function solvedodeca(){
     renderMathInElement(document.getElementById("resultofareadodeca1"));
     renderMathInElement(document.getElementById("resultofareadodeca2"));
     renderMathInElement(document.getElementById("resultofperimeterdodeca"));
+}
+
+//function for dodecahedron
+function solveregdodeca() {
+    var a = document.getElementById("inputdodecaside").value;
+    var voloutput = document.getElementById("resultofdodecavol");
+    var tsaoutput = document.getElementById("resultofdodecatsa");
+    var voltemp = "";
+    var tsatemp = "";
+    if (a != "") {
+        voltemp += "\\[Volume \\space of \\space Dodecahedron \\space \\newline \\frac{15 + 7 \\sqrt{5}}{4} \\times" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(7.663 * (a * a * a))).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        tsatemp += "\\[Surface \\space Area \\space of \\space Dodecahedron \\space \\newline " + 3  + "\\times \\sqrt{25 + 10 \\sqrt{5}} " + "\\times" + a + "\\times" + a + "\\ = " + eval(String(20.646 * (a * a))).toFixed(3) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+    }
+
 }
 
 //created function for Hexagon
