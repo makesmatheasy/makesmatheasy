@@ -144,6 +144,7 @@ function openit(id) {
         "#theo",
         "#impfixs",
         "#etf",
+        "#etc",
         "#equationssolver",
         "#mulsolwithsteps",
         "#secarea",
@@ -188,8 +189,10 @@ function openit(id) {
         "#beta",
         "#imprtopr",
         "#sieve",
+        "#ineqtri",
         "#shapeinscribed",
         "#matrixprops",
+        "#2d-shape-ins",
         "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
@@ -239,6 +242,7 @@ function openit(id) {
         "#astroid",
         "#squarecube",
         "#deca_prism",
+        "#cardiod",
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
@@ -320,6 +324,7 @@ function openit(id) {
         "#pyramid",
         "#tripyramid",
         "#octpyramid",
+        "#height1",
         "#hexpyramid",
         "#octahedron",
         "#repp",
@@ -371,6 +376,7 @@ function openit(id) {
         "#mecs",
         "#chng-vol-cube",
         "#squarerootcalc",
+        "#sqseries",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
