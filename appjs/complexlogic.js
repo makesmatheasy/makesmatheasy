@@ -183,6 +183,21 @@ function comOp(value) {
     }
 }
 
+function volofcuboid() {
+    var l = parseInt(document.getElementById("chnglengthcuboid").value);
+    var b = parseInt(document.getElementById("chngbreadthcuboid").value);
+    var h = parseInt(document.getElementById("chngheightcuboid").value);
+    var ans = "percentage increase in the volume of the cuboid is ";
+
+    var percentInc = (1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100));
+    percentInc -= 1;
+    percentInc *= 100;
+
+    ans = ans + percentInc + " %";
+    document.getElementById("cuboidAns").innerText = ans;
+
+}
+
 function euler()
 {
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
