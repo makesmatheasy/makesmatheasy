@@ -317,6 +317,7 @@ function openit(id) {
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
+        "#idevent",
         "#dec2421",
         "#ex3",
         "#lappro",
