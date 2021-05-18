@@ -1321,11 +1321,13 @@ function rtfind(){
 }
 
 function decagramfind(){
-    let side  = parseInt(document.getElementById("inputdecagramside").value)
-    let peri = 20*side
-    let ar = 17.231*side*side
-    document.getElementById("resultofdecagramperi").innerHTML = "The perimeter is "+peri
-    document.getElementById("resultofdecagramarea").innerHTML = "The area is "+ar
+    var a  = document.getElementById("inputdecagramside").value;
+    var peri = 20*a;
+    var ar = 17.231 * a**2;
+    document.getElementById("resultofdecagramperi").innerHTML = "\\[The \\space perimeter \\space (P) \\space of \\space Decagram \\space is \\newline 20 \\times "+a+" = "+peri+"\\]";
+    document.getElementById("resultofdecagramarea").innerHTML = "\\[The \\space area \\space (A) \\space of \\space Decagram \\space is \\newline 2 \\times \\space \\frac {\\sqrt{5 \\times (5 - 2 \\sqrt{5})}}{2} \\space "+a+"^2 = "+ar.toFixed(2)+"\\]";
+    renderMathInElement(document.getElementById("resultofdecagramperi"));
+    renderMathInElement(document.getElementById("resultofdecagramarea"));
 }
 
 function enneagramfind(){
