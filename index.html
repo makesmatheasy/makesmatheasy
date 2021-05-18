@@ -11139,10 +11139,13 @@
             <p>The integer solutions to the Pythagorean Theorem, a^2 + b^2 = c^2 are called Pythagorean Triples which contains three positive integers a, b, and c.</p>
             <br>
             <p>Enter exactly one number</p><br><br>
-            <input style="width: 17.1875rem;" type="text" class="form__field"
-                   placeholder="Enter a number" id="nom">
-            <button class="btn btn-light" onclick=pythtriple()>Submit</button>
-
+            <form action="">
+                <input style="width: 17.1875rem;" type="text" class="form__field"
+                placeholder="Enter a number" id="nom">
+                <button class="btn btn-light" onclick=pythtriple()>Submit</button>
+                <button class="btn btn-light" onclick=this.form.reset();>Reset</button>
+            </form>
+            
             <br><br>
             <p class="stopwrap" id="answ1"
                     style="font-family:mathfont;"></p>
@@ -11427,12 +11430,16 @@
         <div class="collapse" id="profitloss">
             <h2>Profit Loss calculations</h2>
             <br>
-            <input style="width: 17.1875rem;" type="text" class="form__field"
-                   placeholder="Enter cost price" id="cp">
-            <input style="width: 17.1875rem;" type="text" class="form__field"
-                   placeholder="Enter selling price" id="sp">
-            <br><br>
-            <button class="btn btn-light" onclick=profitloss()>Submit</button>
+            <form action="">
+                <input style="width: 17.1875rem;" type="text" class="form__field"
+                placeholder="Enter cost price" id="cp">
+                <input style="width: 17.1875rem;" type="text" class="form__field"
+                        placeholder="Enter selling price" id="sp">
+                <br><br>
+                <button class="btn btn-light" onclick=profitloss()>Submit</button>
+                <button class="btn btn-light" onclick=this.form.reset();>Reset</button>
+            </form>
+            
             <br><br>
             <h5 class="stopwrap" id="pol1" style="font-family:mathfont;"></h5>
             <p class="stopwrap" id="pol2" style="font-family:mathfont;"></p>
@@ -11442,21 +11449,25 @@
             <br><br>
             <h2>Profit/Loss calculations over Discount</h2>
             <br>
-            <input style="width: 17.1875rem;" type="number" class="form__field"
-                   placeholder="Enter Discount" id="dis">
-            <select id="perprice" class="btn btn-outline-light">
-                <option>Percentage</option>
-                <option>Price</option>
-            </select>
-            <br><br>
-            <input style="width: 17.1875rem;" type="number" class="form__field"
-                   placeholder="Enter selling price/cost price" id="cpsp">
-                   <select id="costsell" class="btn btn-outline-light">
-                    <option>Cost Price</option>
-                    <option>Selling Price</option>
+            <form action="">
+                <input style="width: 17.1875rem;" type="number" class="form__field"
+                placeholder="Enter Discount" id="dis">
+                <select id="perprice" class="btn btn-outline-light">
+                    <option>Percentage</option>
+                    <option>Price</option>
                 </select>
-            <br><br>
-            <button class="btn btn-light" onclick=discount()>Submit</button>
+                <br><br>
+                <input style="width: 17.1875rem;" type="number" class="form__field"
+                        placeholder="Enter selling price/cost price" id="cpsp">
+                        <select id="costsell" class="btn btn-outline-light">
+                        <option>Cost Price</option>
+                        <option>Selling Price</option>
+                    </select>
+                <br><br>
+                <button class="btn btn-light" onclick=discount()>Submit</button>
+                <button class="btn btn-light" onclick=this.form.reset();>Reset</button>
+            </form>
+            
             <br><br>
             <p id="discountresult"></p>
             <br>
@@ -14533,13 +14544,17 @@
     
             <h1 style="font-family:mathfont; text-align:center;">EFFECTIVE INTEREST RATE CALCULATOR </h1>
             <p>&nbsp;</p>
-            <input type="number" name="air" class="form__field" id="air" width="5em" placeholder="Enter nominal annual interest rate(R)">
-            <p>&nbsp;</p>
-            <input type="number" name="nop" class="form__field" id="nop" placeholder="Enter number of period(t)">
-            <p>&nbsp;</p>
-            <input type="number" name="cprd" class="form__field" id="cprd" placeholder="Enter compounding per period(m)">
-            <p>&nbsp;</p>
-            <button type="button" class="btn btn-outline-light" onclick="eircal()">Calculate</button>
+            <form action="">
+                <input type="number" name="air" class="form__field" id="air" width="5em" placeholder="Enter nominal annual interest rate(R)">
+                <p>&nbsp;</p>
+                <input type="number" name="nop" class="form__field" id="nop" placeholder="Enter number of period(t)">
+                <p>&nbsp;</p>
+                <input type="number" name="cprd" class="form__field" id="cprd" placeholder="Enter compounding per period(m)">
+                <p>&nbsp;</p>
+                <button type="button" class="btn btn-outline-light" onclick="eircal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="eirans"></p>
             <p>&nbsp;</p>
             <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
@@ -14551,53 +14566,58 @@
            
         </div>
         <div class="collapse" id="setcal">
-           
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>First Set</h5>
-                        <input type="text" value="0 1" class="form__field"
-                               id="first-set" style="color:white"
-                               >
+            <form action="">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>First Set</h5>
+                            <input type="text" value="0 1" class="form__field"
+                                   id="first-set" style="color:white"
+                                   >
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Operation</h5>
-                        <select id="set-operation" class="form__field">
-                            <option class="form__field" style="color : white ;background-color: #232a36;">
-                                Union
-                            </option>
-                            <option class="form__field" style="color :white;background-color: #232a36;">
-                                Intersection
-                            </option>
-                            <option class="form__field" style="color : white ;background-color: #232a36;">
-                                Difference
-                            </option>
-                        </select>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Operation</h5>
+                            <select id="set-operation" class="form__field">
+                                <option class="form__field" style="color : white ;background-color: #232a36;">
+                                    Union
+                                </option>
+                                <option class="form__field" style="color :white;background-color: #232a36;">
+                                    Intersection
+                                </option>
+                                <option class="form__field" style="color : white ;background-color: #232a36;">
+                                    Difference
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <h5>Second Set</h5>
-                        <input type="text" value="2 3" style="color:white" class="form__field"
-                               id="second-set">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Second Set</h5>
+                            <input type="text" value="2 3" style="color:white" class="form__field"
+                                   id="second-set">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="setcal()">
-                            Find
-                        </button>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-light" onclick="setcal()">
+                                Find
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
+            
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
@@ -15322,25 +15342,37 @@
               <div class="row">
                   <div class="col-md-4">
                       <div class="form-group">
-                        <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
-                        <input type="number" value="0" class="form__field" id="p1">
-                        <h5>Enter Cost Price</h5>
-                        <input type="number" value="0" class="form__field" id="cp2">
-                        <button type="button" class="btn btn-light" onclick="computeSP()">
-                            Find SP
-                        </button>
+                          <form action="">
+                            <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                            <input type="number" value="0" class="form__field" id="p1">
+                            <h5>Enter Cost Price</h5>
+                            <input type="number" value="0" class="form__field" id="cp2">
+                            <button type="button" class="btn btn-light" onclick="computeSP()">
+                                Find SP
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                          </form>
+                        
                         <div id="ressp" style="color: white; font-size: large"></div>
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
-                        <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
-                        <input type="number" value="0" class="form__field" id="p2">
-                        <h5>Enter Selling Price</h5>
-                        <input type="number" value="0" class="form__field" id="sp2">
-                        <button type="button" class="btn btn-light" onclick="computeCP()">
-                            Find CP
-                        </button>
+                          <form action="">
+                            <h5>Enter Profit/Loss percent [if profit then +ve, if loss -ve]</h5>
+                            <input type="number" value="0" class="form__field" id="p2">
+                            <h5>Enter Selling Price</h5>
+                            <input type="number" value="0" class="form__field" id="sp2">
+                            <button type="button" class="btn btn-light" onclick="computeCP()">
+                                Find CP
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                          </form>
+                        
                         <div id="rescp" style="color:white; font-size: large;"></div>
                       </div>
                   </div>
