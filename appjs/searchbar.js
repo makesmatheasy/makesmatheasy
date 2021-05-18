@@ -594,6 +594,36 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR"){
                         document.getElementById('cramer').click();
                     }
+                    else if (inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES") {
+                        $("#sieve").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES"){
+                        document.getElementById('sieve').click();
+                    }
+                    else if (inp.value.toUpperCase() == "NAME OF 3D SHAPES") {
+                        $("#3d-shape").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "NAME OF 3D SHAPES"){
+                        document.getElementById('3d-shape').click();
+                    }
+                    else if (inp.value.toUpperCase() == "NEXT PRIME NUMBER") {
+                        $("#nextPrime").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "NEXT PRIME NUMBER"){
+                        document.getElementById('nextPrime').click();
+                    }
+                    else if (inp.value.toUpperCase() == "DOUBLE FACTORIAL") {
+                        $("#dblFact").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DOUBLE FACTORIAL"){
+                        document.getElementById('dblFact').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SMALLEST PRIME FACTOR") {
+                        $("#smPrime").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SMALLEST PRIME FACTOR"){
+                        document.getElementById('smPrime').click();
+                    }
                     else if (inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP") {
                         $("#sum_n").slideToggle();    
                     }
@@ -606,6 +636,19 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CONDITIONAL PROBABILITY"){
                         document.getElementById('condprobability').click();
                     }
+                    else if (inp.value.toUpperCase() == "ADDITIVE INVERSE") {
+                        $("#ais").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ADDITIVE INVERSE"){
+                        document.getElementById('ais').click();
+                    }
+                    else if(inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR"){
+                        document.getElementById('#confi-inter').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR") {
+                        $("confi-inter").slideToggle();    
+                    }
+                   
                     else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
                         $("#joint-probabilitycollapse").slideToggle();    
                     }
@@ -1429,7 +1472,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
-                        "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Sum of N terms of AP,GP & HP","Conditional Probability","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","Decimal BCD Code Converter","Decimal 2421 Code Converter",
+                        "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Name of 3d Shapes","Sieve of Eratosthenes","Double Factorial","Next Prime Number","Sum of N terms of AP,GP & HP","Conditional Probability","Smallest Prime Factor","Additive Inverse","Confidence Interval Calculator","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","Decimal BCD Code Converter","Decimal 2421 Code Converter",
                         "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         "Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
@@ -2135,6 +2178,36 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "CRAMERS RULE CALCULATOR") {
         $("#cramer").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES"){
+        document.getElementById('sieve').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SIEVE OF ERATOSTHENES") {
+        $("#sieve").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "NAME OF 3D SHAPES"){
+        document.getElementById('3d-shape').click(); 
+    }
+    else if (inp.value.toUpperCase() == "NAME OF 3D SHAPES") {
+        $("#3d-shape").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "NEXT PRIME NUMBER"){
+        document.getElementById('nextPrime').click(); 
+    }
+    else if (inp.value.toUpperCase() == "NEXT PRIME NUMBER") {
+        $("#nextPrime").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DOUBLE FACTORIAL"){
+        document.getElementById('dblFact').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DOUBLE FACTORIAL") {
+        $("#dblFact").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SMALLEST PRIME FACTOR"){
+        document.getElementById('smPrime').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SMALLEST PRIME FACTOR") {
+        $("#smPrime").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "SUM OF N TERMS OF AP,GP & HP"){
         document.getElementById('sum_n').click(); 
     }
@@ -2146,6 +2219,18 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "CONDITIONAL PROBABILITY") {
         $("#condprobability").slideToggle(); 
+    }
+    else if (inp.value.toUpperCase() == "ADDITIVE INVERSE") {
+        $("ais").slideToggle();    
+    }
+    else if(inp.value.toUpperCase() == "ADDITIVE INVERSE"){
+        document.getElementById('#ais').click();
+    }
+    else if(inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR"){
+        document.getElementById('confi-inter').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR") {
+        $("#confi-inter").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "JOINT PROBABILITY"){
         document.getElementById('joint-probabilitycollapse').click(); 
