@@ -11895,6 +11895,17 @@ function polymax1find(){
     document.getElementById("polymax1ans").innerHTML = num;
 }
 
+function polymax2find(){
+    let n  = parseInt(document.getElementById("polymax2").value)
+    var count = 0;
+    while (sides > 5)
+    {
+        sides /= 2;
+        count += 1;
+    }
+    document.getElementById("polymax2ans").innerHTML =  count;
+}
+
 //function for correction of  a message hamming code
 function hammingCalc2(){
     var input = document.getElementById("crct-input").value;
