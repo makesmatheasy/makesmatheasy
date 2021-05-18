@@ -2387,6 +2387,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- Lucas series Calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="luc-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Lucas series</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Smallest number divisible','#lucNum','c','lucnumimgfav')"><img
+                                        id="lucnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -10825,7 +10841,26 @@
             </div>
         </div>
         <!-- end of Smallest number divisible calculator -->
-        
+        <!-- start of Lucas series calculator -->
+        <div>
+            <div class="collapse" id="lucNum">
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number of terms of Lucas Numbers you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="luc-num" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="lucasNumbers(document.getElementById('luc-num').value);">
+                        Solve
+                    </button>
+                </div>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="lucNumResult"></p>
+                </div>
+            </div>
+        </div>
+        <!-- end of Lucas series calculator -->
         <div class="collapse" id="trigonofun">
         <h3 style="text-align: center;">Domain,Range,Period and Graph of Trigonometric Functions</h3>
         <table class="table table-bordered table-dark">
