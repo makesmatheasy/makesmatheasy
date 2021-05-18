@@ -985,6 +985,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('solutiontri').click();
                     } 
+                    else if (inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION") {
+                        clearmain()
+                        $("#sumAndDiffTri").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION"){
+                        clearmain()
+                        document.getElementById('sumAndDiffTri').click();
+                    } 
                     else if (inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART") {
                         clearmain()
                         $("#giff").slideDown();    
@@ -1266,6 +1274,13 @@ function autocomplete(inp, arr) {
                         clearmain()
                         $("#3dgeocalc").slideDown(); 
                     }
+                    else if(inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR"){
+                        $("#etc").slideToggle(); 
+                    }
+                    else if (inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR") {
+                        document.getElementById('etc').click(); 
+                    }
+
                     else if(inp.value.toUpperCase() == "EUCLID GEOMETRY"){
                         clearmain()
                         $("#euclid").slideDown();
@@ -1404,7 +1419,7 @@ function autocomplete(inp, arr) {
 var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
-                        "Vector Algebra","Vector Calculus","Sigma Notation","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
+                        "Vector Algebra","Vector Calculus","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
                         "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Sum of N terms of AP,GP & HP","Conditional Probability","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","Decimal BCD Code Converter","Decimal 2421 Code Converter",
                         "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
@@ -1417,7 +1432,14 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
 
+
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes"
+
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","3-D Shapes Inscribed"
+                          ,"Euler Totient Calculator"
+
                         ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","2-D Shapes Inscribed","3-D Shapes Inscribed"
+
 
 
                     ];                    
@@ -1762,6 +1784,14 @@ function handleclick(value) {
     else if(inp.value.toUpperCase() == "SOLUTION OF TRIANGLES"){
         document.getElementById('solutiontri').click(); 
     }
+    else if (inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION") {
+        clearmain()
+        $("#sumAndDiffTri").slideDown();    
+    }
+    else if(inp.value.toUpperCase() == "SUM AND DIFFERENCE OF TRIGNOMETRIC FUNCTION"){
+        clearmain()
+        document.getElementById('sumAndDiffTri').click();
+    } 
     else if (inp.value.toUpperCase() == "GREATEST INTEGER FUNCTION AND FRACTIONAL PART") {
         $("#giff").slideToggle(); 
     }
@@ -1968,6 +1998,13 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "PYTHAGOREAN TRIPLETS") {
         $("#pythtriple").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR"){
+        document.getElementById('etc').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR") {
+        $("#etc").slideToggle(); 
+    }
+
     else if(inp.value.toUpperCase() == "PROFIT/LOSS CALCULATIONS"){
         document.getElementById('profitloss').click(); 
     }

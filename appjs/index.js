@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#smNum",
         "#catNum",
         "#dblFact",
         "#sumDiv",
@@ -144,6 +145,7 @@ function openit(id) {
         "#theo",
         "#impfixs",
         "#etf",
+        "#etc",
         "#equationssolver",
         "#mulsolwithsteps",
         "#secarea",
@@ -188,6 +190,7 @@ function openit(id) {
         "#beta",
         "#imprtopr",
         "#sieve",
+        "#ineqtri",
         "#shapeinscribed",
         "#matrixprops",
         "#2d-shape-ins",
@@ -240,6 +243,7 @@ function openit(id) {
         "#astroid",
         "#squarecube",
         "#deca_prism",
+        "#cardiod",
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
@@ -281,6 +285,7 @@ function openit(id) {
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
+        "#sumAndDiffTri",
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
@@ -321,6 +326,7 @@ function openit(id) {
         "#pyramid",
         "#tripyramid",
         "#octpyramid",
+        "#height1",
         "#hexpyramid",
         "#octahedron",
         "#repp",
