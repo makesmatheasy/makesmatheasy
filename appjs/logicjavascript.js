@@ -10044,6 +10044,18 @@ function prime_till_num(primetill){
 }
 //end
 
+function lacubefind(){
+    let n = parseInt(document.getElementById("lacube").value)
+    let steps = 0;
+    while (n)
+    {
+        let largest = Math.floor(Math.cbrt(n));
+        n -= (largest * largest * largest);
+        steps++;
+    }
+    document.getElementById("lacubeans").innerHTML =  steps;
+}
+
 function cubefreefind(){
     let n = parseInt(document.getElementById("cubefree").value)
     for(let i = 2; i <= n; i++)
