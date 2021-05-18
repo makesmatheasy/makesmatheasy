@@ -2352,18 +2352,18 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "METHODS OF INTEGRATION") {
         $("#mi").slideToggle(); 
     }
-    else if (inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION") {
-        $("#dip").slideToggle(); 
-    }
     else if(inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION"){
         document.getElementById('dip').click(); 
     }
-    else if (inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR") {
-        $("#clocks").slideToggle();    
+    else if (inp.value.toUpperCase() == "DIRECT AND INDIRECT PROPORTION") {
+        $("#dip").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR"){
         document.getElementById('clocks').click();
     }          
+    else if (inp.value.toUpperCase() == "CLOCK ANGLE CALCULATOR") {
+        $("#clocks").slideToggle();    
+    }
     else if(inp.value.toUpperCase() == "SOLVE FOR X"){
         document.getElementById('slvxs').click(); 
     }
