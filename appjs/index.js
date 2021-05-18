@@ -361,6 +361,7 @@ function openit(id) {
         "#parabolic_arc",
         "#lyear",
         "#analytical",
+        "#faul",
         "#isoright",
         "#ellipsoid",
         "#expo",
