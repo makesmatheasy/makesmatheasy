@@ -339,6 +339,7 @@ Other Tech/Libraries
   - Empirical Probability
   - Conditional Probability
   - Joint Probability
+  - Independent And Dependent Event Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator

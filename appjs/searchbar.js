@@ -612,6 +612,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "JOINT PROBABILITY"){
                         document.getElementById('joint-probabilitycollapse').click();
                     }
+                    else if (inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY") {
+                        $("#idevent").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY"){
+                        document.getElementById('idevent').click();
+                    }
                     else if (inp.value.toUpperCase() == "BINOMIAL DISTRIBUTION CALCULATOR") {
                         $("#bpmfs").slideToggle();    
                     }
@@ -1408,7 +1414,7 @@ function autocomplete(inp, arr) {
 }
 
 
-var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
+var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Independent And Dependent Event Probability","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Vector Calculus","Sigma Notation","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
@@ -2132,6 +2138,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
         $("#joint-probabilitycollapse").slideToggle(); 
+    }
+    else if (inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY") {
+        $("#idevent").slideToggle();    
+    }
+    else if(inp.value.toUpperCase() == "INDEPENDENT AND DEPENDENT EVENT PROBABILITY"){
+        document.getElementById('idevent').click();
     }
     else if(inp.value.toUpperCase() == "BINOMIAL DISTRIBUTION CALCULATOR"){
         document.getElementById('bpmfs').click(); 

@@ -13897,6 +13897,30 @@ function qrtl() {
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
 }
 
+function idevent() {
+    let term = document.getElementById('eventProb').value
+    console.log(term);
+    if (term === 'independent') {
+        document.getElementById('deShow').style.display = 'none'
+        document.getElementById('indShow').style.display = 'block'
+        document.getElementById('indBtn').addEventListener('click',() => {
+            let pA = parseFloat(document.getElementById('aProb').value)
+            let pB = parseFloat(document.getElementById('bProb').value)
+            let pAB = pA * pB
+            document.getElementById('indAns').innerHTML = `P(A and B) = P(A)*P(B) = ${pA}*${pB} = ${Number.parseFloat((pAB)).toPrecision(3)}`
+        })
+    } else {
+        document.getElementById('indShow').style.display = 'none'
+        document.getElementById('deShow').style.display = 'block'
+        document.getElementById('deBtn').addEventListener('click',() => {
+            let pA = parseFloat(document.getElementById('aprob').value)
+            let pB = parseFloat(document.getElementById('bprobA').value)
+            let pAB = pA * pB
+            document.getElementById('deAns').innerHTML = `P(A and B) = P(A)*P(B|A) = ${pA}*${pB} = ${Number.parseFloat((pAB)).toPrecision(3)}`
+        })
+    }
+}
+
 
 function volweight(){
 var l,w,h;

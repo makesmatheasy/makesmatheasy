@@ -3669,6 +3669,24 @@
                 </table>
             </li>
             <li>
+                <!-- independent and dependent event probability-->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ideventbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Independent And Dependent Event Probability</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Independent And Dependent Event Probability','#idevent','c','ideventfav')"><img
+                                        id="ideventfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
                           <table class="table">
                               <tr>
                                   <td style="border-top: none;">
@@ -18011,7 +18029,73 @@ N is the population size.
         </div>
 
         <!--End of Joint Probability-->
+        <!-- Start of Independent and dependent event Probabilty-->
+        <div class="collapse" id="idevent" style="text-align: center; margin: auto;">
+            <h1>Independent and Dependent event Probability</h1>
+            <label>Choose Event:</label>
+            <select name="eventProb" id="eventProb" onclick="idevent()">
+                <option value="independent">Independent</option>
+                <option value="dependent">Dependent</option>
+            </select>
+            <div id="indShow">
+                <h2>Independent Event Probability</h2>
+                <p>The outcome of one event does not affect the outcome of the other.
+                    <br>
+                    If A and B are independent events then probability of both occuring is 
+                    <br>
+                    P(A and B) = P(A) X P(B)
+                </p>
+                <form class="text-center">
+                    <input class = "form__field"type="text" id="aProb" style="max-width: 500px;" placeholder="Enter P(A)">
+                    <br><br>
+                    <input class = "form__field"type="text" id="bProb" style="max-width: 500px;" placeholder="Enter P(B)">
+                    <br><br>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 text-center">
+                            <button class = "btn btn-light" id="indBtn" type="button">Probability</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 text-center">
+                            <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+                        </div>
+                        
+                    </div>
+                </form>
+                <p id="indAns" style="margin-top: 2rem;"></p>
+            </div>
+            <div id="deShow">
+                <h2>Dependent Event Probability</h2>
+                <p>The outcome of one event affect the outcome of the other.
+                    <br>
+                    If A and B are dependent events then probability of both occuring is 
+                    <br>
+                    P(A and B) = P(A) X P(B|A)
+                </p>
+                <form class="text-center">
+                    <input class = "form__field"type="text" id="aprob" style="max-width: 500px;" placeholder="Enter P(A)">
+                    <br><br>
+                    <input class = "form__field"type="text" id="bprobA" style="max-width: 500px;" placeholder="Enter P(B|A)">
+                    <br><br>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 text-center">
+                            <button class = "btn btn-light" id="deBtn" type="button">Probability</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 text-center">
+                            <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+                        </div>
+                        
+                    </div>
+                </form>
+                <p id="deAns" style="margin-top: 2rem;"></p>
+            </div>
 
+        </div>
+        <!-- End of Independent and dependent event probabilty -->
         <!--Bayes  Probability-->
         <div class="collapse" id="bayes-probabilitycollapse" style="text-align: center; margin: auto;">
             <h1>Bayes' Theorem</h1>

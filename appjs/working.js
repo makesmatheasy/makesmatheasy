@@ -1154,6 +1154,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ideventbtn").click(function () {
+        openit("#idevent");
+        closenav();
+        clearall();
+    });
 
 
     $("#bayesprobabilitycollapsebtn").click(function () {

@@ -824,7 +824,7 @@ input[type='number'] {
   }
 }
 
-#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2{
+#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2,#indShow,#deShow{
   display: none;
 }
 @media only screen and (max-width:420px) {
