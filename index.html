@@ -1427,6 +1427,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="gcdbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Euclid GCD</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Euclid GCD ','#gcd','c','gcdimgfav')"><img
+                                        id="gcdimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="sievebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sieve of Eratosthenes</a>
                         </td>
@@ -15662,6 +15677,20 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="gcd">
+    <h2 style="text-align:center;">Euclid's GCD</h2>
+    <br>
+    <p>The algorithm is based on the below facts. <br>If we subtract a smaller number from a larger (we reduce a larger number), GCD doesn’t change. So if we keep subtracting repeatedly the larger of two, we end up with GCD.<br>
+    Now instead of subtraction, if we divide the smaller number, the algorithm stops when we find remainder 0.</p>
+    <br>
+    <input type="text"id="gcdin1" placeholder="Enter number 1" class="form__field">
+    <input type="text"id="gcdin2" placeholder="Enter number 2" class="form__field">
+    <br>
+    <button class="btn btn-dark" onclick="gcdfind()">FInd</button>
+    <br>
+    <h4 id="gcdans"></h4>
+</div>
 
 <div class="collapse" id="hypergeomeans">
 

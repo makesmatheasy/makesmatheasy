@@ -499,6 +499,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#gcdbtn").click(function () {
+        openit("#gcd");
+        closenav();
+        clearall();
+    });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
         closenav();
