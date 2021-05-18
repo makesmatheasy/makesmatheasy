@@ -10358,6 +10358,14 @@ function Means() {
     }
 }
 
+function sccofind(){
+    let h = parseInt(document.getElementById("scco").value)
+    let r = parseInt(document.getElementById("scco1").value)
+    var R = ((h * r * Math.sqrt(2)) /(h + Math.sqrt(2) * r)) / 2;
+ 
+    document.getElementById("sccoans").innerHTML =  R;
+}
+
 function cubeinspherefind(){
     let r = parseInt(document.getElementById("cubeinsphere").value)
     var a = (2 * r) / Math.sqrt(3);
