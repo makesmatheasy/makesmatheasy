@@ -10830,6 +10830,29 @@ function smallestNumberDiv(num){
     document.getElementById("smNumResult").innerHTML = "The smallest numbers divisible by all numbers from  " + "1 to " + num + " is: " +res;    
 
 }
+
+//Lucas series function
+function lucasNumbers(num) {
+    let x = 2;
+    let y = 1;
+    let z, count;
+    let res="";
+    if (num == 0)
+      res+=" ";
+    else if (num == 1)
+        res+=x;
+    else {
+        res+= x + " " + y + " ";
+        for (count = 2; count < num; count++) {
+        z = x + y;
+        x = y;
+        y = z;
+        res+= y + " ";
+      }
+    }
+    document.getElementById("lucNumResult").innerHTML = "The Lucas Series of " + num + " terms is : " + res;    
+
+}
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
