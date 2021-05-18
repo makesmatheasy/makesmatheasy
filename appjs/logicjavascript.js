@@ -2180,6 +2180,11 @@ function centsolve1() {
     renderMathInElement(centout);
 }
 
+function faulfind(){
+    let p = parseInt(document.getElementById("faulin").value)
+    document.getElementById("faulans").innerHTML = "\[\frac{n^{p+1}{p+1}+0.5*n^{p}\]"
+}
+
 function findsecarea() {
     var ang = parseInt(document.getElementById("ang").value)
     var r = parseInt(document.getElementById("rad").value)

@@ -710,6 +710,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#faulbtn").click(function () {
+        openit("#faul");
+        closenav();
+        clearall();
+    });
     $("#mulsolwithstepsbtn").click(function () {
         openit('#mulsolwithsteps');
         closenav();
