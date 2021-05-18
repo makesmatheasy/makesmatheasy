@@ -210,6 +210,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#crescent").click(function () {
+        openit("#crescentLune");
+        closenav();
+        clearall();
+    });
     $("#ex3btn").click(function () {
         openit("#ex3");
         closenav();

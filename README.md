@@ -231,6 +231,7 @@ Other Tech/Libraries
   - Properties of Circles
   - Properties of Quadrilaterals
   - Arc Length Calculator
+  - Area of Crescent and Lunes
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle

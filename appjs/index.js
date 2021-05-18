@@ -152,6 +152,7 @@ function openit(id) {
         "#table",
         "#ssts",
         "#arcs",
+        "#crescentLune",
         "#sigma",
         "#chng-vol-cube",
         "#sosqs",

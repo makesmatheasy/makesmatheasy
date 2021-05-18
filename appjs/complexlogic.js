@@ -604,6 +604,35 @@ function arcal() {
 
 }
 
+function cresccal() {
+    var r1 = document.getElementById("cresc_rad1").value;
+    var r2 = document.getElementById("cresc_rad2").value;
+    var d = document.getElementById("cresc_dist").value;
+    var ans = "";
+    var lans1, lans2, dans;
+    if (r1 == "" || r2 == "" || d == "") {
+        ans = "Error: All values are required to obtain answer";
+    }
+    else {
+        var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
+        var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
+        var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
+
+
+        lans1 = document.createElement('div');
+        lans1.innerHTML = "Area of Lune 1: " + lune1;
+
+        lans2 = document.createElement('div');
+        lans2.innerHTML = "Area of Lune 2: " + lune2;
+
+        dans = document.createElement('div');
+        dans.innerHTML = "Overlap Area: " + op;
+    }
+    document.getElementById("crescans").appendChild(lans1);
+    document.getElementById("crescans").appendChild(lans2);
+    document.getElementById("crescans").appendChild(dans);
+}
+
 function ssqcal() {
     var num = document.getElementById("ssq").value;
     valid = /^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
