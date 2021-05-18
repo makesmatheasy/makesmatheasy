@@ -1205,25 +1205,26 @@ function eircal()
     }
     result.innerHTML = ans;
     renderMathInElement(result);
-
 }
-function errpercal()
-{
+
+function errpercal(){
     var a=document.getElementById("acval").value;
     var b=document.getElementById("expval").value;
-    var ans="";
-    if(a==""||b=="")
-    {
-        ans="Please enter all the values";
-    }
-    else{
+    if(a==""||b==""){
+        document.getElementById("errperans").innerHTML ="\\[Please \\space enter \\space all \\space the \\space values\\]";
+        renderMathInElement(document.getElementById("errperans"));
+        document.getElementById("errperans1").innerHTML ="";
+        document.getElementById("errperans2").innerHTML ="";
+    } else{
     var c= ((b-a)/a)*100;
-    ans="The error percentage is: "+c+"%";
+    document.getElementById("errperans1").innerHTML= "\\[Percentage \\space Error = \\frac{Observed \\space value - \\space True \\space value}{True \\space value} \\times 100 \\]"
+    renderMathInElement(document.getElementById("errperans1"));
+    document.getElementById("errperans2").innerHTML ="\\[\\frac{("+b+"-"+a+")}{"+a+"} \\times 100 \\space = \\space \\frac{("+(b-a)+")}{"+a+"} \\times 100 \\space = \\space "+((b-a)/a).toFixed(2)+" \\times 100\\]";
+    renderMathInElement(document.getElementById("errperans2"));
+    document.getElementById("errperans").innerHTML ="\\[Hence, \\space the \\space error \\space percentage \\space is \\space = \\space"+c.toFixed(3)+"%\\]";
+    renderMathInElement(document.getElementById("errperans"));
     }
-    document.getElementById("errperans").innerHTML=ans;
-
 }
-
 
 function wmccal()
 {
