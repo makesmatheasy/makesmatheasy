@@ -13499,6 +13499,14 @@ function triinsemifind(){
         document.getElementById("triinsemians").innerHTML = r*r
 }
 
+function recinsemifind(){
+    let r = parseInt(document.getElementById("recinsemiin").value)
+    if (r < 0)
+        document.getElementById("recinsemians").innerHTML = "Not triangle can be formed"
+    else
+        document.getElementById("recinsemians").innerHTML = r*r
+}
+
 function hypertrigno()
 {   
     const i = parseInt(document.getElementById("hypertrignoin").value);
