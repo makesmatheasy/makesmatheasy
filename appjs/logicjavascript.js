@@ -13783,6 +13783,7 @@ function manhatcal()
         renderMathInElement(output);
     }
 }
+
 function volCube() {
     var x = parseInt(document.getElementById("chng-side-cube").value);
     var ans = "percentage increase in the volume of the cube is ";
@@ -13790,15 +13791,15 @@ function volCube() {
     ans = ans + per + " %";
     document.getElementById("cubeAns").innerText = ans;
 }
-function volSphere() {
-    var x = parseInt(document.getElementById("chng-side-sphere").value);
+
+function volofsphere() {
+    var x = parseInt(document.getElementById("chngsidesphere").value);
     var ans = "percentage increase in the volume of the sphere is ";
     const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
     ans = ans + per + " %";
     document.getElementById("sphereAns").innerText = ans;
 
 }
-
 
 function Square(n, i, j)
 {
