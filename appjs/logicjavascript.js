@@ -7281,6 +7281,34 @@ function heightdist1(){
 
 }
 
+function heightdist2(){
+    var distance = parseFloat(document.getElementById("height21").value);
+    var height = parseFloat(document.getElementById("height31").value);
+    var output = document.getElementById("printheight2");
+    var temp = "";
+    var height1 = (height/distance).toFixed(3)
+    var deg1 = Math.atan(height1).toFixed(3)
+    var deg2 = (deg1*180/Math.PI).toFixed(3)
+    if(!isNaN(distance) && !isNaN(height)){
+        temp += "\\[Distance(AC) \\space = \\space " + distance + "m \\]";
+        temp += "\\[Height(AB) \\space = \\space " + height + "m \\]";
+        temp += "\\[tan θ \\space = \\space \\frac{Opposite Side}{Adjacent Side}  \\space = \\space \\frac{AB}{BC} \\]";
+        temp += "\\[tan θ " + "\\space = \\space \\frac{ " + height + "}{" + distance + "} \\]";
+        temp += "\\[ θ \\space = \\space tan^{-1}  \\frac{ " + height + "}{" + distance + "} \\]";
+        temp += "\\[ θ \\space = \\space  tan^{-1} (" + height1 + ") \\space = \\space " + deg2 + " \\degree \\]";
+        temp += "\\[Angle \\space of \\space Elevation \\space = " + (deg2) + "\\degree \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+
+}
+
+
 function solveCone() {
     var height = document.getElementById("inputhcone").value;
     var radius = document.getElementById("inputrcone").value;
