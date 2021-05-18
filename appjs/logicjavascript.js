@@ -13110,6 +13110,28 @@ function etc1find(){
             document.getElementById("etc1ans").innerHTML = ("Totient of " + i +" is " + phi[i] + "</br>");
 }
 
+function etc2find(){
+    let n = parseInt(document.getElementById("etc2").value)
+    let ans = phi1(n) == phi1(2 * n)
+    document.getElementById("etc2ans").innerHTML = ans
+}
+
+function __gcd( a, b)
+{
+  return b == 0 ? a :__gcd(b, a % b);   
+}
+
+function phi1(n){
+    let result = 1;
+    for (let p = 2; p < n; p++)
+    {
+        if (__gcd(p, n) == 1)
+        {
+        result++;
+        }
+    }
+    return result;
+}
 
 function clockcal()
 {
