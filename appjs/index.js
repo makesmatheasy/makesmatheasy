@@ -173,6 +173,7 @@ function openit(id) {
         "#factors",
         "#stats",
         "#math",
+        "#gcd",
         "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",

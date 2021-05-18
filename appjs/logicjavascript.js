@@ -11056,6 +11056,14 @@ function convertAnyBaseToAnyBase() {
 
 }
 
+function gcdfind(){
+    let a = parseInt(document.getElementById("gcdin1").value)
+    let b = parseInt(document.getElementById("gcdin2").value)
+    if (a == 0)
+        return b;
+    document.getElementById("gcdans").innerHTML =  gcd(b % a, a);
+}
+
 //---------------------------------------------------------------------
 
 //Function for addition of any number system
