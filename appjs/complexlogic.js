@@ -1654,43 +1654,37 @@ function traprzlt()
     }
 }
 
-
-function perrankcal()
-{
+function perrankcal(){
     var num=document.getElementById("perrank").value;
     var num2=document.getElementById("peryour").value;
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
-    var s="";
-    if(num==""||num2=="")
-    {
-       s= "Please enter number";
-    }
-    else if(!valid.test(num))
-    {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    }
-    else{
+    document.getElementById("perrankans").innerHTML ="";
+    if(num==""||num2==""){
+        document.getElementById("perrankans").innerHTML= "Please enter number";
+    } else if(!valid.test(num)) {
+        document.getElementById("perrankans").innerHTML= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
-   
     var number=[]
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
     }
     num2=parseFloat(num2);
-    var sum=0, count=0;
-    for(var i=0; i<len;i++)
-    {
-         if(number[i]<=num2)
-         {
-             count++;
-         }
+    var count=0;
+    document.getElementById("perrankans1").innerHTML="\\[Here \\space we \\space count \\space the \\space cases \\newline when \\space your \\space marks \\space becomes \\space > \\space or \\space = \\space any \\space marks \\space form \\space dataset\\]";
+    renderMathInElement(document.getElementById("perrankans1"));
+    for(var i=0; i<len;i++){
+        if(number[i]<=num2){
+            count++;}
     }
     var pr= (count/len)*100;
-    var s="The percentile rank for given marks is: "+pr;
-}
-document.getElementById("perrankans").innerHTML=s;
+    document.getElementById("perrankans3").innerHTML= "\\[\\frac{Number \\space of \\space times \\space "+num2+" \\space was \\space > or \\space = \\space any \\space marks \\space form \\space all \\space marks \\space dataset}{Total \\space no. \\space of \\space data \\space in \\space dataset} \\times 100 \\]";
+    renderMathInElement(document.getElementById("perrankans3"));
+    document.getElementById("perrankans").innerHTML= "\\[Hence, \\space the \\space percentile \\space rank \\space for \\space given \\space marks \\space is: \\space \\newline \\frac{"+count+"}{"+len+"} \\times 100 = "+pr.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("perrankans"));
+    }
 }
 function oocal()
 {
