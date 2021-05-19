@@ -10947,6 +10947,14 @@ function cubeinconefind(){
     document.getElementById("cubeinconeans").innerHTML = a
 }
 
+function cylinderincubefind(){
+    let a = parseInt(document.getElementById("cylinderincube").value)
+    var r = a / 2;
+    var h = a;
+    var V = (3.14 * Math.pow(r, 2) * h); 
+    document.getElementById("cylinderincubeans").innerHTML =  V;
+}
+
 function coneincubefind(){
     let a = parseInt(document.getElementById("shapeinscribedin").value)    
     let r = (a / Math.sqrt(2));
