@@ -10882,6 +10882,13 @@ function eulerTotient(n) {
 
 //Next Prime Function
 
+function cubeinconefind(){
+    let h = parseInt(document.getElementById("cubeincone").value)
+    let r = parseInt(document.getElementById("cubeincone1").value)
+    var a = (h * r * Math.sqrt(2)) / (h + Math.sqrt(2) * r);
+    document.getElementById("cubeinconeans").innerHTML = a
+}
+
 function coneincubefind(){
     let a = parseInt(document.getElementById("shapeinscribedin").value)    
     let r = (a / Math.sqrt(2));
