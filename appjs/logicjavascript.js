@@ -5279,6 +5279,20 @@ function solveparaArc() {
     }
 }
 
+function hypocycloidcalc() {
+    var a = document.getElementById("hypoa").value;
+    var n = document.getElementById("hypon").value;
+    var res = document.getElementById("hypoans");
+    var restemp = "";
+
+    if (a != "" || n != "") {
+        res.innerHTML = restemp;
+        renderMathInElement(res);
+    } else {
+        res.innerHTML = "";
+        renderMathInElement(res);
+    }
+}
 
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
