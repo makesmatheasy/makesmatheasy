@@ -577,7 +577,20 @@
                     </tr>
                 </table>
             </li>
-            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">         
+                            <a id="impsebtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Important Series and Sequences</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Important Series and Sequences','#impse','c','Nimpseimgfav')"><img
+                                        id="Nimpseimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>         
 
 
             <div class="dropdown-divider"></div>
@@ -18354,6 +18367,19 @@ N is the population size.
     </div>
 </div>
 <!-- End of grey convertor -->
+
+<div class="collapse" id="impse">
+    <h2>Important Series and Sequences</h2>
+    <br><br>
+    <h4>Sum of the sequence x, xx, xxx, ………</h4>
+    <br>
+    <input type="text" id="impse1"class="form__field"placeholder="Enter value of x">
+    <input type="text" id="impse2"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impsefind()">Find</button>
+    <br>
+    <p id="impseans"></p>
+</div>
 
         <!-- start of Hamming Code -->
         <div>

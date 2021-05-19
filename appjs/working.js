@@ -731,6 +731,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#impsebtn").click(function () {
+        openit("#impse");
+        closenav();
+        clearall();
+    });
     $("#setopbtn").click(function () {
         openit("#setop");
         closenav();

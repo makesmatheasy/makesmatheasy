@@ -2318,6 +2318,14 @@ function solvepenta(){
     }
 }
 
+function impsefind(){
+    let x = parseInt(document.getElementById("impse1").value)
+    let n = parseInt(document.getElementById("impse2").value)
+    let ans1 = x/81
+    let ans = ans1*(Math.pow(10,n)-1-(9*n))
+    document.getElementById("impseans").innerHTML = ans
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
