@@ -2366,6 +2366,16 @@ function solvetetrahexa(){
     }
 }
 
+function twicefind(){
+    let a = parseInt(document.getElementById("aofeqn3").value)
+    let b = parseInt(document.getElementById("bofeqn3").value)
+    let c = parseInt(document.getElementById("cofeqn3").value)
+    if (2 * b * b == 9 * a * c)
+        document.getElementById("twiceans").innerHTML  = "Yes";
+    else
+        document.getElementById("twiceans").innerHTML = "No";
+}
+
 function partialdiffsolve() {
     var ikk = document.getElementById("inputpartialorder");
     if (ikk.value == "") {
