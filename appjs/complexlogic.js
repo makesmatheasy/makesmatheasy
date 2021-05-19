@@ -1522,13 +1522,6 @@ function faccal(){
     document.getElementById("facans").innerHTML=ans;
 }
 
-function halflifeCalc() {
-    var decay = document.getElementById("decay").value;
-    var lg = Math.log(2);
-    var halfLife = lg / decay;
-    var ans = "Half Life of the element is " + halfLife;
-    document.getElementById("halflifeAns").innerHTML = ans;
-}
 
 function facpaircal()
 {
