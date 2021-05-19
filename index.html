@@ -10693,27 +10693,39 @@
             <br><br>
             <h4>Euler’s Totient function for all numbers smaller than or equal to n</h4>
             <br>
-            <input type="text" id="etc1" class="form__field" placeholder="ENter the number">
-            <br>
-            <button class="btn btn-dark" onclick="etc1find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="etc1" class="form__field" placeholder="ENter the number">
+                <br>
+                <button class="btn btn-dark" onclick="etc1find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc1ans"></h5>
             <br>
             <h4>Check if Euler Totient Function is same for a given number and twice of that number</h4>
             <br>
-            <input type="text" id="etc2" class="form__field" placeholder="ENter the number">
-            <br>
-            <button class="btn btn-dark" onclick="etc2find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="etc2" class="form__field" placeholder="ENter the number">
+                <br>
+                <button class="btn btn-dark" onclick="etc2find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc2ans"></h5>
             <br>
             <h4>Count integers in a range which are divisible by their euler totient value</h4>
             <br>
-            <input type="text" id="etc3" class="form__field" placeholder="ENter the lower limit">
-            <input type="text" id="etc31" class="form__field" placeholder="ENter the upper limit">
-            <br>
-            <button class="btn btn-dark" onclick="etc3find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="etc3" class="form__field" placeholder="ENter the lower limit">
+                <input type="text" id="etc31" class="form__field" placeholder="ENter the upper limit">
+                <br>
+                <button class="btn btn-dark" onclick="etc3find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc3ans"></h5>
         </div>
         <!-- start of Hamming Dist -->
@@ -10739,17 +10751,24 @@
         <!-- start of next prime number function-->
           <div>
             <div class="collapse" id="nextPrime">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number whose next prime you want : &nbsp; &nbsp; </label>
-                    <input type="number" id="nprime" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="nextPrime(document.getElementById('nprime').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number whose next prime you want : &nbsp; &nbsp; </label>
+                        <input type="number" id="nprime" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="nextPrime(document.getElementById('nprime').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="nextPrimeResult"></p>
                 </div>
@@ -10759,17 +10778,24 @@
         <!-- start of Smallest prime factor calculator -->
         <div>
             <div class="collapse" id="smPrime">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number whose smallest prime factor you want : &nbsp; &nbsp; </label>
-                    <input type="number" id="smprimenum" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="smallestPrimeDivisor(document.getElementById('smprimenum').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number whose smallest prime factor you want : &nbsp; &nbsp; </label>
+                        <input type="number" id="smprimenum" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="smallestPrimeDivisor(document.getElementById('smprimenum').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="smPrimeResult"></p>
                 </div>
@@ -15207,6 +15233,10 @@
                         onclick="factorialsol('factorialval')">
                     Solve
                 </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
+                </button>
             </form>
             <br>
             <div class="form-group">
@@ -15938,18 +15968,23 @@
                 <input type="number" id="rval" placeholder="Item taken from the set (r) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
 
+            
+                <br>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="permutationcal('nval','rval')">
+                        Permutation
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="combinationcal('nval','rval')">
+                        Combination
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
             </form>
-            <br>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="permutationcal('nval','rval')">
-                    Permutation
-                </button>
-                <button type="button" class="btn btn-light"
-                        onclick="combinationcal('nval','rval')">
-                    Combination
-                </button>
-            </div>
             <br>
             <div class="form-group">
                 <div id="permutation_div">
