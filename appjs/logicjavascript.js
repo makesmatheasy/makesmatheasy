@@ -4836,6 +4836,27 @@ function Kitesolve() {
         document.getElementById("resultofperiK").innerHTML = "Enter side a and b both to calculate perimeter";
     }
 }
+
+function solvetricorn() {
+    var r = document.getElementById("inputtricornrad").value;
+    var perioutput = document.getElementById("resultoftricornperi");
+    var areaoutput = document.getElementById("resultoftricornarea");
+    var areatemp = "";
+    var peritemp = "";
+    if (r != "") {
+        peritemp += "\\[Perimeter \\space of \\space Tricorn \\space \\newline \\pi \\times " + r + "\\ = " + eval(String(3.14*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space of \\space Tricorn \\space  \\newline" + "(\\sqrt{\\frac{3}{4}}-\\frac{\\pi}{6})" + "\\times" + r + "^2" + "\\ = " + eval(String(0.343*r*r)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 //created function for lemniscate
 function solvelemniscate() {
     var a = document.getElementById("inputlemnihei").value;

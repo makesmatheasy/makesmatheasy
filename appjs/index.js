@@ -235,6 +235,7 @@ function openit(id) {
         "#bool",
         "#suppangs",
         "#eirs",
+        "#tricorn",
         "#zscores",
         "#errpers",
         "#log_values",
