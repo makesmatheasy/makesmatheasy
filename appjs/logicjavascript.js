@@ -9599,6 +9599,14 @@ function trapinsemifind(){
     document.getElementById("trapinsemians").innerHTML =  a;
 }
 
+function trapinsemi1find(){
+    let n = parseInt(document.getElementById("trapinsemin1").value)
+    let m = parseInt(document.getElementById("trapinsemin2").value)
+    var square_of_radius = ( m * n ) / 4;
+    var area = ( 3.141 * square_of_radius );
+    document.getElementById("trapinsemi1ans").innerHTML =  area;
+}
+
 // gamma find function
 function gammafind(){
     // function to find gamma function of any no.
