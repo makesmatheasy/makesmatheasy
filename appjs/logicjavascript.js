@@ -10193,6 +10193,26 @@ else{
 }
 }
 
+function maxminquadfind(){
+    let a = parseInt(document.getElementById("aofeqn2").value)
+    let b = parseInt(document.getElementById("bofeqn2").value)
+    let c = parseInt(document.getElementById("cofeqn2").value)
+    var secondPart = c * 1.0 -(b * b / (4.0 * a));
+    if (a > 0)
+    {
+        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +"Infinity" + "<br>";
+        document.getElementById("maxminquadans").innerHTML="Minvalue = " + secondPart;
+    }
+    else if (a < 0)
+    {
+        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +secondPart + "<br>";
+        document.getElementById("maxminquadans").innerHTML="Minvalue = " +"-Infinity";
+    }
+    else
+    {
+        document.getElementById("maxminquadans").innerHTML="Not a quadratic function\n";
+    }
+}
 
 function tridecagon(){
     let side = parseFloat(document.getElementById("inputsidetridec").value)
