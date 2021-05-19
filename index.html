@@ -13741,6 +13741,11 @@
                            style="text-decoration:none;"
                            href="#">Parabolic Arch</a></td>
                 </tr> 
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hypocycloid"
+                           style="text-decoration:none;"
+                           href="#">Hypocycloid</a></td>
+                </tr> 
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -22447,6 +22452,65 @@ N is the population size.
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="hypocycloid" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hypocycloid</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Radius of Smaller Circle(b)</h5>
+                                <p class="text-center">\[b = \frac{a}{n}\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Chord length(l) </h5>
+                                <p class="text-center">\[l = 2a \times \sin{\frac{\pi}{n}}\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter(P)</h5>
+                                <p class="text-center">\[P = \frac{8a \times (n-1)}{n}\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area(A)</h5>
+                                <p class="text-center">\[A = \frac{\pi \times a^{2} \times (n-1) \times (n-2)}{n^{2}}\]</p>
+                                <div class="dropdown-divider"></div>
+                                
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hypocycloid.png" class="img-fluid">
+                                </div>
+                                
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number" placeholder="Enter radius of larger circle(a)"
+                                id="hypoa">
+                            <input class="form__field" type="number" placeholder="Enter number of cusps(n) [n must be >2]"
+                                id="hypon">
+                            <button type="button" class="btn btn-secondary" onclick="hypocycloidcalc()" >Find</button>
+                            <br>
+                            <p class="stopwrap" id="hypoans"
+                            style="font-family:mathfont;"></p>
+                           
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="pentagram" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
