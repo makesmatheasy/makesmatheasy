@@ -113,6 +113,7 @@ function cal_func_ecllipse()
                     +"<h4>Equation of Directrix: <span style='color: white; font-weight: light;'>&emsp;x = ±"+(Math.abs(numberb)/Math.abs(e)).toFixed(3)+"</span></h4>"
                     +"<h4>Length of Major Axis: <span style='color: white; font-weight: light;'>&emsp;"+ (2*(Math.abs(numberb))).toFixed(3) +"</span></h4>"
                     +"<h4>Length of Minor Axis: <span style='color: white; font-weight: light;'>&emsp;"+ (2*(Math.abs(numbera))).toFixed(3) +"</span></h4>"
+                    +"<h4>Area: <span style='color: white; font-weight: light;'>&emsp; 	&nbsp; = 	&nbsp; &pi; * a * b &nbsp; = &nbsp;"+ parseFloat(3.14 * numbera * numberb) +"</span></h4>"
                     +"<h4>Eccentricity: <span style='color: white; font-weight: light;'>&emsp;"+e+"</span></h4>"
                     +"<br><p>Equations of Tangent and Normal to Ecllipse - </p>"
                     +"<h4>Parametric coordinates: <span style='color: white; font-weight: light;'>&emsp;("+(Math.abs(numberb)).toFixed(3)+"cosΘ , "+(Math.abs(numbera)).toFixed(3)+"sinΘ)</span></h4>"
