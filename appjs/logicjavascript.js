@@ -1941,6 +1941,14 @@ var pardifforder = "";
 function getparorder(value) {
     pardifforder = value;
 }
+
+function polymax3find(){
+    let n = parseInt(document.getElementById("ploymax3").value)
+    let pi = 3.14159265;
+    let areaf = (1 / (Math.cos(pi / n)* Math.cos(pi / n)));
+    document.getElementById("polymax3ans").innerHTML = areaf
+}
+
 function gif(){
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if(giffnum >=0){
