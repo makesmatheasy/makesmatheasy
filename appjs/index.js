@@ -228,6 +228,7 @@ function openit(id) {
         "#decl",
         "#dip",
         "#wandt",
+        "#bulge",
         "#spiconcal",
         "#home",
         "#curconcal",

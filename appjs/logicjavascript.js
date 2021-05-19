@@ -5124,6 +5124,39 @@ function rectanglesolve() {
     renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
+
+function solvebulge() {
+    var r = document.getElementById("inputbulgerad").value;
+    var widthoutput = document.getElementById("resultofbulgewidth");
+    var heightoutput = document.getElementById("resultofbulgeheight");
+    var perioutput = document.getElementById("resultofbulgeperi");
+    var areaoutput = document.getElementById("resultofbulgearea");
+    var widthtemp = "";
+    var heighttemp = "";
+    var areatemp = "";
+    var peritemp = "";
+    if (r != "") {
+        widthtemp += "\\[Width \\space of \\space Bulge \\space \\newline 4 \\times" + r  + "\\ = " + eval(String(4*r)).toFixed(2) + "\\]";
+        widthoutput.innerHTML = widthtemp;
+        heighttemp += "\\[Height \\space of \\space Bulge \\space \\newline 2 \\times" + r + "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        peritemp += "\\[Perimeter \\space of \\space Bulge \\space \\newline 2 \\times" + r + "(\\pi + 2) " + "\\ = " + eval(String(10.28*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space of \\space Bulge \\space  \\newline" + "4 \\times" + r + "^2" + "\\ = " + eval(String(4*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(widthoutput);
+        renderMathInElement(heightoutput); 
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        widthoutput.innerHTML = "";
+        heightoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 	
 function cutrectanglesolve(){
     var a = document.getElementById("inputreclongside").value;
