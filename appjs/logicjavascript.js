@@ -13976,10 +13976,7 @@ function manhatcal()
         ans += "\\[The \\space calculated \\space Manhattan \\space Distance \\space of \\space the \\space given \\space coordinate \\space is \\space " + x + " \\]"
         output.innerHTML = ans;
         renderMathInElement(output);
-
-    }
-    else
-    {
+    } else{
         ans += "\\[Mdist \\space = \\space | X1 \\space - \\space X2 | \\space + \\space | Y1 \\space - \\space Y2 | \\]";
         ans += "\\[ | " + num1 + " - " + num3 + " | + | " + num2 + " - " + num4 + " | \\]"
         ans += "\\[ | " + (num1 - num3) + " | + | " + (num2 - num4) + " | \\]"
@@ -13989,8 +13986,8 @@ function manhatcal()
     }
 }
 
-function volCube() {
-    var x = parseInt(document.getElementById("chng-side-cube").value);
+function volofcube() {
+    var x = parseInt(document.getElementById("chngsidecube").value);
     var ans = "percentage increase in the volume of the cube is ";
     const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
     ans = ans + per + " %";
