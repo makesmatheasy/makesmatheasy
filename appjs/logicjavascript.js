@@ -5304,7 +5304,15 @@ function hypocycloidcalc() {
     var restemp = "";
 
     if (a != "" || n != "") {
-        res.innerHTML = restemp;
+        restemp += "\\[Radius \\space of \\space smaller \\space circle \\space = \\frac{" + a + "}{" + n + "} \\]";
+        restemp += "\\[= \\space " + (a/n) + "\\]";
+        restemp += "\\[Chord \\space length(l) \\space = 2 \\times " + a + " \\times \\sin{\\frac{\\pi}{" + n + "}}\\]";
+        restemp += "\\[= \\space " + (2*a*(Math.sin(parseFloat(3.1415926/n)))) + "\\]";
+        restemp += "\\[Perimeter \\space = \\frac{8 \\times a \\times (" + n + "-1)}{" + n + "}\\]";
+        restemp += "\\[= \\space " + (8*a* parseFloat((n-1)/n)) + "\\]";
+        restemp += "\\[Area \\space = \\frac{\\pi \\times " + a + "^{2} \\times (" + n + "-1) \\times (" + n + "-2)}{" + n + "^{2}}\\]";
+        restemp += "\\[= " + (parseFloat(3.14159265 * a**2 * (n-1) * (n-2) / n**2)) + "\\]";
+        res.innerHTML = restemp;//print working steps
         renderMathInElement(res);
     } else {
         res.innerHTML = "";
