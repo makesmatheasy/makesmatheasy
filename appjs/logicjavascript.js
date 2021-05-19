@@ -9461,6 +9461,12 @@ function profitloss() {
     }
 }
 
+function trapinsemifind(){
+    let a = parseInt(document.getElementById("trapinsemin").value)
+    var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
+    document.getElementById("trapinsemians").innerHTML =  a;
+}
+
 // gamma find function
 function gammafind(){
     // function to find gamma function of any no.
