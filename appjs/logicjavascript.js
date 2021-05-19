@@ -10010,6 +10010,48 @@ function gmsol() {
     }
 }
 
+
+var array = Array();
+function add_element_to_array()
+{
+    var x=0;
+    array[x] = document.getElementById("text1").value;
+    alert("Element: " + array[x] + " Added at index " + x);
+    x++;
+    document.getElementById("text1").value = "";
+}
+
+let prime = new Uint8Array(1000001);
+function seiveOfEratosthenes()
+{
+ 
+    for (let i = 2; i < 1000001;
+        i++) {
+        prime[i] = 1;
+    }
+ 
+    for (let i = 2; i * i < 1000001;i++) {
+        if (prime[i] == 1) {
+            for (let j = i * i;
+                j < 1000001; j += i) {
+                prime[j] = 0;
+            }
+        }
+    }
+}
+
+function etc4find(){
+    let n = array.length();
+    let L = parseInt(document.getElementById("onelow").value)
+    let R = parseInt(document.getElementById("oneupp").value)
+    seiveOfEratosthenes(); 
+    countPrime = new Uint8Array(n + 1);
+    for (let i = 1; i <= n; i++) {
+        countPrime[i] = countPrime[i - 1]+ prime[arr[i - 1]];
+    }
+    document.getElementById("etc4ans").innerHTML = countPrime[R]- countPrime[L - 1]+ "<br>"
+}
+
 function hmsol() {
     var a = document.getElementById("aval2").value
     var c = document.getElementById("cval2").value
