@@ -1577,6 +1577,24 @@
                                 <tr>
                                     <td style="border-top: none;">
             
+                                        <a id="crossbtn"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cross Multiplcation Calculator</a>
+                                    </td>
+            
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Cross Multiplcation Calculator','#cross','c','crossimgfav')"><img
+                                                    id="crossimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+            
                                         <a id="ainv"
                                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Additive Inverse
                                         </a>
@@ -11694,6 +11712,30 @@
             </form>
             
             <p id="inDPans"></p>
+        </div>
+        
+        <!-- Cross Multiplication Calculator -->
+        <div class="collapse" id="cross">
+            <h1 style="text-align: center; margin-bottom: 4rem;">Cross Multiplication Calculator</h1>
+            <h2 style="margin-bottom: 2rem;" id="cformula">\[\frac{A}{B}=\frac{C}{D}\]</h2>
+            <h4>Enter any 3 fields</h4>
+            <form action="">
+                <input class="form__field" type="number" placeholder="Enter the First Value(A)"
+                                   id="inputA" oninput="cross()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Enter the Second Value(B)"
+                                   id="inputB" oninput="cross()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Enter the Third Value(C)"
+                                   id="inputC" oninput="cross()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Enter the Fourth Value(D)"
+                                   id="inputD" oninput="cross()">
+                <br><br>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="cross_explain"></p>
         </div>
 
         <!-- Work and Time -->

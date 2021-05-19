@@ -399,6 +399,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#crossbtn").click(function () {
+        openit("#cross");
+        closenav();
+        clearall();
+    })
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
