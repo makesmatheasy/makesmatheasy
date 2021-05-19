@@ -6098,34 +6098,6 @@ function solveannulus() {
     }
 }
 
-function solveSlope() {
-    var x1 = document.getElementById("inputlinex1").value;
-    var y1 = document.getElementById("inputliney1").value;
-    var x2 = document.getElementById("inputlinex2").value;
-    var y2 = document.getElementById("inputliney2").value;
-
-    if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
-        document.getElementById("resultofline").innerHTML = "Please enter all four points";
-        document.getElementById("answerofline").innerHTML = "";
-        document.getElementById("answerofline2").innerHTML = "";
-
-    } else if (parseInt(x2) - parseInt(x1) == 0) {
-        document.getElementById("resultofline").innerHTML = "Infinity";
-    } else {
-        let temp = (y2 - y1) / (x2 - x1);
-        console.log(temp);
-        let sol = "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
-        let sol2 = "\\[Slope=" + temp + "\\]";
-        document.getElementById("resultofline").innerHTML = "\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
-        document.getElementById("answerofline").innerHTML = sol;
-        document.getElementById("answerofline2").innerHTML = sol2;
-        renderMathInElement(document.getElementById("answerofline"));
-        renderMathInElement(document.getElementById("answerofline2"));
-        renderMathInElement(document.getElementById("resultofline"));
-    }
-
-}
-
 // ellipse calculator function
 
 function solveellipse() {

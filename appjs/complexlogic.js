@@ -1517,24 +1517,30 @@ function zscorecal()
 }
 }
 
-function slpsolve()
-{
-    var a=document.getElementById("slx1").value;
-    var b=document.getElementById("sly1").value;
-    var c=document.getElementById("slx2").value;
-    var d=document.getElementById("sly2").value;
-    var ans="";
-    if(a==""||b==""||c==""||d=="")
-    {
-        ans="Please enter all values to calculate slope";
+function solveSlope() {
+    var x1 = document.getElementById("inputlinex1").value;
+    var y1 = document.getElementById("inputliney1").value;
+    var x2 = document.getElementById("inputlinex2").value;
+    var y2 = document.getElementById("inputliney2").value;
+    if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
+        document.getElementById("resultofline").innerHTML = "Please enter all four points";
+        document.getElementById("answerofline").innerHTML = "";
+        document.getElementById("answerofline2").innerHTML = "";
+    } else if (parseInt(x2) - parseInt(x1) == 0) {
+        document.getElementById("resultofline").innerHTML = "Infinity";
+        document.getElementById("answerofline").innerHTML = "";
+        document.getElementById("answerofline2").innerHTML = "";
+    } else {
+        let temp = (y2 - y1) / (x2 - x1);
+        let sol = "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
+        let sol2 = "\\[Slope=" + temp + "\\]";
+        document.getElementById("resultofline").innerHTML = "\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
+        document.getElementById("answerofline").innerHTML = sol;
+        document.getElementById("answerofline2").innerHTML = sol2;
+        renderMathInElement(document.getElementById("answerofline"));
+        renderMathInElement(document.getElementById("answerofline2"));
+        renderMathInElement(document.getElementById("resultofline"));
     }
-    else
-    {
-        var p=(d-b)/(c-a);
-        ans="Calculated slope is: "+p;
-    }
-    document.getElementById("slpans").innerHTML=ans;
-
 }
 
 function suppangcal(){
