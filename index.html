@@ -4882,20 +4882,25 @@
         </div>
 
         <div class="collapse" id="table">
-            <div class="form-group num-limit" style="display: inline-block;">
-                <input type="number" oninput="checklimit()" id="numtable" class="form__field"
-                       placeholder="Enter Number">
-            </div>
-            <div class="form-group" style="display: inline-block;">
-                <input type="number" oninput="checklimit()" id="numending" name="ending"
-                       class="form__field"
-                       placeholder="Upto">
-            </div>
-
-            <div class="form-group">
-                <button type="button" onclick="printtable()" class="btn btn-light">Print
-                </button>
-            </div>
+            <form action="">
+                <div class="form-group num-limit" style="display: inline-block;">
+                    <input type="number" oninput="checklimit()" id="numtable" class="form__field"
+                           placeholder="Enter Number">
+                </div>
+                <div class="form-group" style="display: inline-block;">
+                    <input type="number" oninput="checklimit()" id="numending" name="ending"
+                           class="form__field"
+                           placeholder="Upto">
+                </div>
+    
+                <div class="form-group">
+                    <button type="button" onclick="printtable()" class="btn btn-light">Print
+                    </button>
+                    <button type="button" onclick="this.form.reset();" class="btn btn-light">Reset
+                    </button>
+                </div>
+            </form>
+            
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
@@ -6405,28 +6410,34 @@
                 <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 2.8125rem;">Log
                     Calculator
                 </legend>
-
-            <div class="col-6">
-                <div class="form-group">
-                    <h5>Base</h5>
-
-                    <input type="number" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+            <form action="">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Base</h5>
+    
+                        <input type="number" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group">
-                    <h5>Number</h5>
-
-                    <input type="number" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Number</h5>
+    
+                        <input type="number" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+                    </div>
                 </div>
-            </div>
+                
+    
+                <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
+                        onclick="cal_log()">
+                    FIND LOG
+                </button>
+                <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
+                        onclick="this.form.reset();">
+                    RESET
+                </button>
+    
+            </form>
             
-
-            <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
-                    onclick="cal_log()">
-                FIND LOG
-            </button>
-
             <div class="form-group"
                  style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                 <h2 id="result"></h2>
@@ -7189,18 +7200,26 @@
         </div>
         
         <div class="collapse" id="lyear">     
-            <h1 style="text-align: center;">Check Leap Year</h1><br>       
-            <div class="form-group">
-                <input type="text" id="leapin" class="form__field"
-                       placeholder="Enter Year"
-                       >
-            </div><br>            
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="leap()">
-                    Solve
-                </button><br>                
-            </div>
+            <h1 style="text-align: center;">Check Leap Year</h1><br>    
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="leapin" class="form__field"
+                           placeholder="Enter Year"
+                           >
+                </div><br>            
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="leap()">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                        Reset
+                    </button>
+                    <br>                
+                </div>
+            </form>   
+            
             <div class="form-group">
                 <p class="stopwrap" id="leapresult1"
                     style="font-family:mathfont;"></p>
@@ -15228,15 +15247,18 @@
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <input type="number" id="valk" placeholder="Enter k "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-
-            </form>
             <br>
             <div class="form-group">
                 <button type="button" class="btn btn-light"
                         onclick="binomialsolve('valn','valk')">
                     Find
                 </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
+                </button>
             </div>
+            </form>
             <br>
             <div class="form-group">
                 <div id="bino_div">
@@ -16067,11 +16089,15 @@
 
     
     <h1 >HYDROSTATIC PRESSURE CALCULATOR </h1>
-    <input type="number" name="dens" class="form__field" id="dens" width="5em" placeholder="Enter fluid's density(in kg/m^3)[ρ]">
-    <p>&nbsp;</p>
-    <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)[h]">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
+    <form action="">
+        <input type="number" name="dens" class="form__field" id="dens" width="5em" placeholder="Enter fluid's density(in kg/m^3)[ρ]">
+        <p>&nbsp;</p>
+        <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)[h]">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p class="stopwrap" id="hydroans1"
     style="font-family:mathfont;"></p>
     <p class="stopwrap" id="hydroans2"
