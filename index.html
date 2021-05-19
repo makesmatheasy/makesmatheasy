@@ -12102,48 +12102,53 @@
         <div class="collapse" id="roundoff">
             <div class="form-group">
 
-
-                <div class="form-group" style="display: inline-block;">
-                    <input type="number" id="inputroundoffinput" class="form__field"
-                           placeholder="Enter Number">
-                </div>
-
-                <div style="display: inline-block;" class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                            id="placeofroundoffbtn"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Place of Roundoff
-                    </button>
-                    <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;"
-                         aria-labelledby="placeofroundoff">
-                                                <span onclick="placeofroundoffget(this.innerText);"
-                                                      class="dropdown-item">Ones</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Tens</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Hundred</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Thousand</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Ten
-                                Thousand</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Lakh</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Ten Lakh</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Crore</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Ten Crore</span>
+                <form action="">
+                    <div class="form-group" style="display: inline-block;">
+                        <input type="number" id="inputroundoffinput" class="form__field"
+                               placeholder="Enter Number">
                     </div>
+    
+                    <div style="display: inline-block;" class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                id="placeofroundoffbtn"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Place of Roundoff
+                        </button>
+                        <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;"
+                             aria-labelledby="placeofroundoff">
+                                                    <span onclick="placeofroundoffget(this.innerText);"
+                                                          class="dropdown-item">Ones</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Tens</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Hundred</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Thousand</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten
+                                    Thousand</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Lakh</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten Lakh</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Crore</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten Crore</span>
+                        </div>
+                    </div>
+    
                 </div>
-
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="roundoff('inputroundoffinput','inputroundoffoutput')">Round Off
-                </button>
-            </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="roundoff('inputroundoffinput','inputroundoffoutput')">Round Off
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">Reset
+                    </button>
+                </div>
+                </form>
+                
             <div class="form-group">
                 <p class="stopwrap" id="inputroundoffoutput"></p>
             </div>
@@ -12190,20 +12195,24 @@
             <h2 style="color: var(--appimage);">EMI Calculator</h2>
             <br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="first1"
-                       placeholder="Enter Amount"/>
-                <input type="text" name="c" style="width: 15.625rem;" class="form__field"
-                       id="third3"
-                       placeholder="Enter rate of interest(%)"/>
-                <p style="display: inline;"> % </p>
-                <input type="text" name="b" style="width: 15.625rem;" class="form__field"
-                       id="second2"
-                       placeholder="Enter time period(in Year) "/>
-                <p style="display: inline;"> Year </p>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
+                <form action="">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                    id="first1"
+                    placeholder="Enter Amount"/>
+                    <input type="text" name="c" style="width: 15.625rem;" class="form__field"
+                            id="third3"
+                            placeholder="Enter rate of interest(%)"/>
+                    <p style="display: inline;"> % </p>
+                    <input type="text" name="b" style="width: 15.625rem;" class="form__field"
+                            id="second2"
+                            placeholder="Enter time period(in Year) "/>
+                    <p style="display: inline;"> Year </p>
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </form>
+                
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></p>
                 <br>
@@ -12237,16 +12246,20 @@
             <h2 style="color: var(--appimage);">GST Calculator</h2>
             <br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                <form action="">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
                        id="O_Price"
                        placeholder="Enter Original Price"/>      
-                <input type="text" name="c" style="width: 15.625rem;" class="form__field"
-                       id="GST"
-                       placeholder="Enter GST(%)"/>
-                <p style="display: inline;"> % </p>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="gstcal()">Calculate</button>
+                    <input type="text" name="c" style="width: 15.625rem;" class="form__field"
+                        id="GST"
+                        placeholder="Enter GST(%)"/>
+                    <p style="display: inline;"> % </p>
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-light" onclick="gstcal()">Calculate</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </form>
+                
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                 font-family:mathfont;" id="gst0"></p>
@@ -12260,14 +12273,19 @@
         <div class="collapse" id="degcal">
             <h2 style="color: var(--appimage);">Polynomial Degree</h2>
             <br>
-            <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="exp"
-                       placeholder="Enter a Polynomial expression"/><br><br>
-                <button class="btn btn-outline-light" onclick="degcal()">Find</button> <br><br><br> 
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
-                font-family:mathfont;" id="deg"></p>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                           id="exp"
+                           placeholder="Enter a Polynomial expression"/><br><br>
+                    <button class="btn btn-outline-light" onclick="degcal()">Find</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                    <br><br><br> 
+                    <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                    font-family:mathfont;" id="deg"></p>
+                </div>
+            </form>
+            
         </div>
   
         <div class="collapse" id="equationssolver">
@@ -12448,6 +12466,10 @@
                 <button type="button" class="btn btn-light"
                         onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
                     Solve
+                </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
                 </button>
             </form>
 
