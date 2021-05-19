@@ -7590,8 +7590,8 @@
             <form action="">
                 <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="smallerscfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="smallerscfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7603,8 +7603,8 @@
             <form action="">
                 <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="greatcfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="greatcfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7615,8 +7615,8 @@
             <form action="">
                 <input type="text" id="greatinin1" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="greatsfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="greatsfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7627,8 +7627,8 @@
             <form action="">
                 <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="addsubcfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7639,8 +7639,8 @@
             <form action="">
                 <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="addsubsfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="addsubsfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7652,8 +7652,8 @@
             <form action="">
                 <input type="text" id="countsc" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="countscfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="countscfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7664,8 +7664,8 @@
             <form action="">
                 <input type="text" id="minsquare" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="minsquarefind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="minsquarefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7676,8 +7676,8 @@
             <form action="">
                 <input type="text" id="mincube" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="mincubefind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="mincubefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7688,8 +7688,8 @@
             <form action="">
                 <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="cubefreefind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cubefreefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -12379,6 +12379,32 @@
         <div class="coll1" style="text-align: center;">
             <h5 id="printheight2" style="color: white; font-size: x-large;"></h5>
             </div>
+            <br><br>
+            <h4 class="d-flex justify-content-center">To calculate Angle of Depression </h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="height51" placeholder="Enter Distance (BC)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="height41"
+                placeholder="Enter Height (AB)"
+                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=heightdist3()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="coll1" style="text-align: center;">
+                <h5 id="printheight3" style="color: white; font-size: x-large;"></h5>
+                </div>
         <br>
         </div>
 
