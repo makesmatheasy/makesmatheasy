@@ -1235,7 +1235,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#confInterval").click(function () {
+        openit("#confIntrvl");
+        closenav();
+        clearall();
+    });
 
     $("#cv").click(function(){
         openit("#cvs");
@@ -1259,11 +1263,7 @@ $(document).ready(function () {
         clearall();
     });
 
-    $("#halflifebtn").click(function () {
-        openit("#halflife");
-        closenav();
-        clearall();
-    });
+
     $("#perrankcalbtn").click(function(){
         openit("#rankcals");
         closenav();
