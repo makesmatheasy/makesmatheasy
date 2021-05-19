@@ -519,6 +519,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#dbltimebtn").click(function () {
+        openit("#dbltime");
+        closenav();
+        clearall();
+    });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
         closenav();

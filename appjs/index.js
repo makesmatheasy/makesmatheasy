@@ -177,6 +177,7 @@ function openit(id) {
         "#math",
         "#des",
         "#gcd",
+        "#dbltime",
         "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",

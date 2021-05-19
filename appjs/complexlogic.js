@@ -1334,6 +1334,12 @@ function wmccal()
     document.getElementById("wmcans").innerHTML=ans;
 }
 
+function dbltimeCal(){
+    let inc = parseInt(document.getElementById("inctime").value);
+    let ans = Math.log(2) / Math.log(1 + inc);
+    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
+}
+
 function covcalcu(){
     var num1=document.getElementById("setx").value;
     var num2=document.getElementById("sety").value;

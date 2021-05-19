@@ -1460,6 +1460,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="dbltimebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Doubling Time</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Double Time ','#dbltime','c','dbltimeimgfav')"><img
+                                        id="dbltimeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="sievebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sieve of Eratosthenes</a>
                         </td>
@@ -16267,6 +16282,23 @@
     <br>
     <h4 id="gcdans"></h4>
 </div>
+
+<!-- doubling time starts -->
+
+<div class="collapse" id="dbltime">
+    <h2 style="text-align:center;">Doubling Time</h2>
+    <br>
+    <p>The doubling time calculator, is a simple tool that lets you calculate how long it will take an amount to double given a constant growth rate</p>
+    <br>
+    <input type="text"id="inctime" placeholder="Enter % per period increase" class="form__field">
+    <br>
+    <br>
+    <button class="btn btn-dark" onclick="dbltimeCal()">Calculate</button>
+    <br>
+    <br>
+    <h4 id="dbltimeans"></h4>
+</div>
+<!-- doubling time ends -->
 
 <div class="collapse" id="hypergeomeans">
 
