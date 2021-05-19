@@ -872,6 +872,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#quadeqncalbtn").click(function () {
+        openit("#quadeqncal");
+        closenav();
+        clearall();
+    });
+
     $("#plotgraphoption").click(function () {
         openit("#plotgraph");
         closenav();
