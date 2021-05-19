@@ -9494,6 +9494,19 @@ function factorialsol(factorialval) {
     }
 }
 
+function binoexpCalc(){
+    var a1 = document.getElementById("binoa1").value;
+    var a0 = document.getElementById("binoa0").value;
+    var b1 = document.getElementById("binob1").value;
+    var b0 = document.getElementById("binob0").value;
+    var c2 = (a1 * b1);
+    var c1 = (a1 * b0 + a0 * b1);
+    var c0 = (a0 * b0);
+
+    var ans = `${c2} * x^2 + ${c1} * x + ${c2}`;
+    document.getElementById("binoexp_ans").innerHTML = ans;
+}
+
 function binomialsolve(valn, valk) {
     document.getElementById("bino_div").style.display = "block";
     var inputval1 = document.getElementById(valn).value;

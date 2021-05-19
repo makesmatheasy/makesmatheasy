@@ -644,6 +644,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#binoexpbtn").click(function () {
+        openit("#binoexp");
+        closenav();
+        clearall();
+    });
 
     $("#clrbtn").click(function () {
         openit("#clr");

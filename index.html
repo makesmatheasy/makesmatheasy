@@ -2112,6 +2112,22 @@
             <li>
                 <table class="table">
                     <tr>
+                        <td style="border-top: none;">
+                            <a id="binoexpbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Binomial Expression Multiplication
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('binoexp','#binoexpcollapse','c','binoexpfav')"><img
+                                     id="binoexpfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
                         <td style="border-top: none;" onclick="display_fractions()">
                             <a id="fractions_op"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations
@@ -15510,6 +15526,36 @@
 
         </div>
         <!-- Factorial end --> 
+
+        <div class="collapse" id="binoexp">
+            <p>(a₁x + a₀) * (b₁x + b₀) = c₂x² + c₁x + c₀</p>
+            <br>
+            <br>
+            <form class="form-inline">
+                <input type="number" id="binoa1" placeholder="Enter a1"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <input type="number" id="binoa0" placeholder="Enter a0 "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <input type="number" id="binob1" placeholder="Enter b1"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                <input type="number" id="binob0" placeholder="Enter b0 "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="binoexpCalc()">
+                    Multiply
+                </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+            </form>
+            <br>
+            <br>
+            <p id="binoexp_ans"></p>
+        </div>
 
         <div class="collapse" id="binomialcoeff">
             <form class="form-inline">

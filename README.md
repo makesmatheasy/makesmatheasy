@@ -172,6 +172,7 @@ Other Tech/Libraries
   - Log Properties
   - Operations on Fractions
   - Binomial Theorem Properties
+  - Binomial expression multiplication
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
