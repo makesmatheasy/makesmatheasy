@@ -184,18 +184,25 @@ function comOp(value) {
 }
 
 function volofcuboid() {
-    var l = parseInt(document.getElementById("chnglengthcuboid").value);
-    var b = parseInt(document.getElementById("chngbreadthcuboid").value);
-    var h = parseInt(document.getElementById("chngheightcuboid").value);
-    var ans = "percentage increase in the volume of the cuboid is ";
-
-    var percentInc = (1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100));
-    percentInc -= 1;
-    percentInc *= 100;
-
-    ans = ans + percentInc + " %";
-    document.getElementById("cuboidAns").innerText = ans;
-
+    var l = document.getElementById("chnglengthcuboid").value;
+    var b = document.getElementById("chngbreadthcuboid").value;
+    var h = document.getElementById("chngheightcuboid").value;
+    var percentInc = ((1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100)) -1 ) * 100;
+    if (l!="" && b!="" && h!=""){
+    document.getElementById("cuboidAns").innerHTML = "\\[Percentage \\space increase \\space in \\space the \\space volume \\space of \\space the \\space cuboid \\space is \\space\\]";
+    document.getElementById("cuboidAns1").innerHTML = "\\[((1 + \\frac{Change \\space in \\space length}{100}) \\times (1 + \\frac{Change \\space in \\space breadth}{100}) \\times (1 + \\frac{Change \\space in \\space height}{100}) -1 ) \\times 100\\]";
+    document.getElementById("cuboidAns2").innerHTML = "\\[((1 + \\frac{"+l+"}{100}) \\times (1 + \\frac{"+b+"}{100}) \\times (1 + \\frac{"+h+"}{100}) -1 ) \\times 100\\]";
+    document.getElementById("cuboidAns3").innerHTML = "\\[("+(1 + (l / 100)).toFixed(2)+" \\times "+(1 + (b / 100)).toFixed(2)+" \\times "+(1 + (h / 100)).toFixed(2)+"-1 ) \\times 100 \\space = \\space "+percentInc.toFixed(3)+" \\% \\]";
+    } else{
+        document.getElementById("cuboidAns").innerHTML = "";
+        document.getElementById("cuboidAns1").innerHTML = "\\[Enter \\space all \\space values\\]";
+        document.getElementById("cuboidAns2").innerHTML = "";
+        document.getElementById("cuboidAns3").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("cuboidAns"));
+    renderMathInElement(document.getElementById("cuboidAns1"));
+    renderMathInElement(document.getElementById("cuboidAns2"));
+    renderMathInElement(document.getElementById("cuboidAns3"));
 }
 
 function euler()
