@@ -1259,7 +1259,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#halflifebtn").click(function () {
+        openit("#halflife");
+        closenav();
+        clearall();
+    });
     $("#perrankcalbtn").click(function(){
         openit("#rankcals");
         closenav();
