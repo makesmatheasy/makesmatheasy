@@ -1972,6 +1972,49 @@ function inDP() {
     document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal.toFixed(3);
 }
 
+// cross multiplication calculator
+function cross() {
+    var crossA = document.getElementById("inputA").value;
+    var crossB = document.getElementById("inputB").value;
+    var crossC = document.getElementById("inputC").value;
+    var crossD = document.getElementById("inputD").value;
+    var cross_explain = document.getElementById("cross_explain");
+    if(crossA!="" && crossB!="" && crossC!="" && crossD!=""){
+      cross_explain.innerHTML="All values are preknown";
+    }
+    else if(crossA!="" && crossB!="" && crossC!=""){
+        crossD=(parseInt(crossC)*parseInt(crossB)/parseInt(crossA)).toFixed(2);
+        document.getElementById("inputD").value=crossD;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space D }\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{D}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\["+crossA+"\\times D \\space = \\space "+crossB+"\\times "+crossC+"\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space"+crossA+"}\\]"+"\\[D=("+crossB+"\\times"+crossC+")/"+crossA+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[D="+crossD+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else if(crossA!="" && crossB!="" && crossD!=""){
+        crossC=(parseInt(crossA)*parseInt(crossD)/parseInt(crossB)).toFixed(2);
+        document.getElementById("inputC").value=crossC;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space C }\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{C}{"+crossD+"}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\["+crossA+"\\times "+crossD+" \\space = \\space "+crossB+"\\times C\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space "+crossB+"}\\]"+"\\[C=("+crossA+"\\times"+crossD+")/"+crossB+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[C="+crossC+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space  Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else if(crossA!="" && crossC!="" && crossD!=""){
+        crossB=(parseInt(crossA)*parseInt(crossD)/parseInt(crossC)).toFixed(2);
+        document.getElementById("inputB").value=crossB;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space B }\\]"+"\\[\\frac{"+crossA+"}{B}=\\frac{"+crossC+"}{"+crossD+"}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\["+crossA+"\\times "+crossD+" \\space = \\space B \\times "+crossC+"\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space"+crossC+"}\\]"+"\\[B=("+crossA+"\\times"+crossD+")/"+crossC+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[B="+crossB+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space  Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else if(crossD!="" && crossB!="" && crossC!=""){
+        crossA=(parseInt(crossC)*parseInt(crossB)/parseInt(crossD)).toFixed(2);
+        document.getElementById("inputA").value=crossA;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space A }\\]"+"\\[\\frac{A}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\[A\\times "+crossD+" \\space = \\space "+crossB+"\\times "+crossC+"\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space"+crossD+"}\\]"+"\\[A=("+crossB+"\\times"+crossC+")/"+crossD+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[A="+crossA+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else{
+        cross_explain.innerHTML="";
+    }
+}
+
 function fp(){
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if(giffnum >=0){

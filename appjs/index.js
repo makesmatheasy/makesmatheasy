@@ -227,6 +227,7 @@ function openit(id) {
         "#qrtl",
         "#decl",
         "#dip",
+        "#cross",
         "#wandt",
         "#spiconcal",
         "#home",
