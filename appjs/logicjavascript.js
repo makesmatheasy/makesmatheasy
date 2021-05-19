@@ -10164,6 +10164,39 @@ function etc4find(){
     document.getElementById("etc4ans").innerHTML = countPrime[R]- countPrime[L - 1]+ "<br>"
 }
 
+function etc5find(){
+    let n = parseInt(document.getElementById("etc5").value)
+    let temp = n;
+        let sum = 0;
+        while (n > 1) {
+            sum = sum + phi5(n);
+            n = phi5(n);
+        }
+        if (sum == temp)
+            document.getElementById("etc5ans").innerHTML = "true" 
+            document.getElementById("etc5ans").innerHTML = "false"
+}
+
+function phi5( n)
+    {
+        let result = n;
+ 
+        for ( let p = 2; p * p <= n; ++p)
+        {
+            if (n % p == 0)
+            {
+                while (n % p == 0)
+                {
+                    n = parseInt(n/p);
+                }
+                result -= parseInt(result / p);
+            }
+        }
+        if (n > 1)
+            result -= parseInt(result / n);
+        return result;
+    }
+
 function hmsol() {
     var a = document.getElementById("aval2").value
     var c = document.getElementById("cval2").value
