@@ -190,6 +190,7 @@ function openit(id) {
         "#limitscollapse",
         "#parab",
         "#binomialcoeff",
+        "#binoexp",
         "#matrixcollapse",
         "#pows",
         "#beta",
