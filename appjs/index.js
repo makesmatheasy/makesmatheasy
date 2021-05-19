@@ -255,6 +255,7 @@ function openit(id) {
         "#bt-collapse1",
         "#manhats",
         "#elliptic_cone",
+        "#bicone",
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",

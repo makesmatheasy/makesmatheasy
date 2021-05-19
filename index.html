@@ -14024,6 +14024,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#bicone" style="text-decoration:none;"
+                           href="#">Bicone</a>
+                    </td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#elliptic_cone" style="text-decoration:none;"
                            href="#">Elliptic Cone</a>
                     </td>
@@ -23872,6 +23877,68 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="bicone" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Bicone</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{2}{3}*r^2* \pi * h \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = 2*r*\sqrt{h^2+r^2}* \pi\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[d = 2r \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[H = 2h \]</p>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/bicone.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius (r)" id="inputbiconerad"
+                                       oninput="solveBicone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height (h)" id="inputbiconeheight"
+                                       oninput="solveBicone();">
+                            <p class="stopwrap" id="resultofbiconedia"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbiconeheight"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbiconevol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbiconearea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
 
         <div class="modal fade" id="elliptic_cone" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

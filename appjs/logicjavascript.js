@@ -7473,6 +7473,40 @@ function solveCone() {
     }
 }
 
+function solveBicone() {
+    var r = document.getElementById("inputbiconerad").value;
+    var h = document.getElementById("inputbiconeheight").value;
+    var diaoutput = document.getElementById("resultofbiconedia");
+    var heightoutput = document.getElementById("resultofbiconeheight");
+    var voloutput = document.getElementById("resultofbiconevol");
+    var areaoutput = document.getElementById("resultofbiconearea");
+    var diatemp = "";
+    var heighttemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if ((r != "") && (h!="")) {
+        diatemp += "\\[Diameter \\space of \\space Bicone \\space \\newline 2 \\times" + r  + "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        heighttemp += "\\[Height \\space of \\space Bicone \\space \\newline 2 \\times" + h + "\\ = " + eval(String(2*h)).toFixed(2) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        voltemp += "\\[Volume \\space of \\space Bicone \\space \\newline \\frac{2}{3} \\times" + r + " \\times" + "\\pi \\times" + h + "\\ = " + eval(String(0.67*r*r*3.14*h)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Bicone \\space  \\newline" + "2 \\times" + r + "\\times \\sqrt{" + h + "^2 +" + r + "^2}" + "\\times \\pi"  + "\\ = " + eval(String(2*3.14*r*Math.sqrt(h*h+r*r))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(diaoutput);
+        renderMathInElement(heightoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        diaoutput.innerHTML = "";
+        heightoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveellipCone() {
     var a = document.getElementById("inputaellicone").value;
     var b = document.getElementById("inputbellicone").value;
