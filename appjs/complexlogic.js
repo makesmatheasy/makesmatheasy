@@ -134,9 +134,28 @@ function conj(){
         document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; " + x.imaginary + "i";
     }
     document.getElementById('comexplain').innerHTML=explain;
-    renderMathInElement(document.getElementById("comexplain"));
-    
+    renderMathInElement(document.getElementById("comexplain"));   
 }
+
+function volofsphere() {
+    var x = document.getElementById("chngsidesphere").value;
+    var per = Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100;
+    if (x!=""){
+        document.getElementById("sphereAns").innerHTML = "\\[Percentage \\space increase \\space in \\space the \\space volume \\space of \\space the \\space sphere \\space is \\space\\]";
+        document.getElementById("sphereAns1").innerHTML = "\\[\\frac{(change \\space in \\space radius)^3}{10000} + 3\\times (change \\space in \\space radius) + \\frac{(3 \\times (change \\space in \\space radius)^2)}{100}\\]";
+        document.getElementById("sphereAns2").innerHTML = "\\[\\frac{"+x+"^3}{10000} + 3\\times "+x+" + \\frac{(3 \\times "+x+"^2)}{100}\\]";
+        document.getElementById("sphereAns3").innerHTML = "\\[ "+(Math.pow(x, 3) / 10000).toFixed(2)+" + "+(3 * x).toFixed(2)+" + "+((3 * Math.pow(x, 2)) / 100).toFixed(2)+" \\space = \\space "+per.toFixed(3)+" \\% \\]";
+        } else{
+            document.getElementById("sphereAns").innerHTML = "";
+            document.getElementById("sphereAns1").innerHTML = "\\[Enter \\space all \\space values\\]";
+            document.getElementById("sphereAns2").innerHTML = "";
+            document.getElementById("sphereAns3").innerHTML = "";}
+        renderMathInElement(document.getElementById("sphereAns"));
+        renderMathInElement(document.getElementById("sphereAns1"));
+        renderMathInElement(document.getElementById("sphereAns2"));
+        renderMathInElement(document.getElementById("sphereAns3"));
+}
+
 function sqr_rt(){
     let explain="\\[From\\space De\\space Moivre's\\space Formula,\\space z^n=(r^n)(cos(n\\theta)+i \\space sin(n\\theta))\\]"+"\\[So,\\space \\sqrt{z}=\\sqrt{r}(cos(\\frac{\\theta}{2})+i \\space sin(\\frac{\\theta}{2}))\\]"
     explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
