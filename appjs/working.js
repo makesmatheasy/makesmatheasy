@@ -1235,7 +1235,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#confInterval").click(function () {
+        openit("#confIntrvl");
+        closenav();
+        clearall();
+    });
 
     $("#cv").click(function(){
         openit("#cvs");
