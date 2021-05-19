@@ -11915,6 +11915,82 @@ katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, doc
     throwOnError: false
 })
 
+
+function fvalue_xbar(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp,2)
+        diff += temp;
+    }
+    
+    return diff
+}
+//f value
+function fvalue() {
+    let list1 = document.getElementById("dataset1").value;
+    let list2 = document.getElementById("dataset2").value;
+    var ans="";
+    var ans2="";
+
+    list1 = list1.split(" ");
+    list2 = list2.split(" ");
+    let n1 = list1.length;
+    let n2 = list2.length;
+   // f test work for sample size less than 30
+
+    if (n1 <= 30 && n2 <= 30) {
+        for (var i = 0; i < n1; i++) {
+            list1[i] = parseInt(list1[i]);
+        }
+        for (var i = 0; i < n2; i++) {
+            list2[i] = parseInt(list2[i]);
+        }
+  
+        document.getElementById('steps').innerHTML = "Values calculated while the test:"
+        let mean1 = tvalue_mean(list1)
+        let diff1=fvalue_xbar(list1,mean1);
+        ans += "\\[(Variance 1) \\space s1^2 \\space = \\space \\frac{\\sum{{(X1-\\bar{X1})}^2}}{n1-1} \\]";
+        ans += "\\[\\space \\frac{\\sum{{(X1-\\bar{X1})}^2}}{"+(n1)+"-1} \\]";
+        ans += "\\[\\space \\frac{"+(diff1)+"}{"+(n1-1)+"} \\]";
+        ans += "\\[\\space Variance1= \\space"+Number.parseFloat(diff1/(n1-1)).toPrecision(4)+" \\]";
+        
+        document.getElementById('means1').innerHTML = "Mean of first set of numbers = "+ Number.parseFloat(mean1).toPrecision(4);
+        var output=  document.getElementById('Variance1')
+        output.innerHTML=ans;
+        renderMathInElement(output);
+          
+    
+        let mean2 = tvalue_mean(list2);
+        let diff2=fvalue_xbar(list2,mean2);
+        ans2 += "\\[(Variance 2) \\space s2^2 \\space = \\space \\frac{\\sum{{(X2-\\bar{X2})}^2}}{n2-1} \\]";
+        ans2 += "\\[\\space \\frac{\\sum{{(X2-\\bar{X2})}^2}}{"+(n2)+"-1} \\]";
+        ans2 += "\\[\\space \\frac{"+(diff2)+"}{"+(n2-1)+"} \\]";
+        ans2 += "\\[\\space Variance 2= \\space "+Number.parseFloat(diff2/(n2-1)).toPrecision(4)+" \\]";
+        document.getElementById('means2').innerHTML = "Mean of second set of numbers = "+Number.parseFloat(mean2).toPrecision(4);
+        var output2=  document.getElementById('Variance2');
+        output2.innerHTML=ans2;
+        renderMathInElement(output2);
+        var s1=Number.parseFloat(diff1/(n1-1)).toPrecision(4);
+        var s2=Number.parseFloat(diff2/(n2-1)).toPrecision(4);
+        //check for greater variance
+        if(s1>=s2){
+            var result="\\[F-value \\space = \\space \\frac{"+s1+"}{"+s2+"} = \\space "+Number.parseFloat(s1/s2).toPrecision(4)+" \\]"
+            document.getElementById("answer").innerHTML="<strong>"+result+"</strong>";
+        }
+        else
+        {
+            var result="\\[F-value \\space = \\space \\frac{"+s2+"}{"+s1+"} = \\space "+Number.parseFloat(s2/s1).toPrecision(4)+" \\]"
+            document.getElementById("answer").innerHTML="<strong>"+result+"</strong>"; 
+        } 
+        renderMathInElement(document.getElementById("answer"));     
+    }
+    else {
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('ftestans').innerHTML = "F-test is not applicable for set of numbers more than 30"
+    }
+}
 // Z-test logic 
 
 function zvalue() {

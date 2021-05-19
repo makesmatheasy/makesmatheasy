@@ -434,6 +434,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#ftestbtn").click(function () {
+        openit("#ftest");
+        closenav();
+        clearall();
+    }); 
     $("#ztestbtn").click(function () {
         openit("#ztest");
         closenav();
