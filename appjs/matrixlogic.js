@@ -523,7 +523,116 @@ function soperation(value) {
         miandcofactors();
     } else if (value == "Determinant") {
         laplacedeterminant();
-    } 
+    } else if (value == 'Matrix Power') {
+        matPow();
+    }
+}
+
+//matrix power
+function matPow() {
+    loader('show');
+    setTimeout(function () {
+        sendtomatrixsingle();
+        var mul = [];
+        var matrix2 = [];
+        var row = document.getElementById('srow1').value;
+        var col = document.getElementById('scolumn1').value;
+        for (var i = 0; i < row; i++) {
+            matrix2[i] = [];
+            for (var j = 0; j < col; j++) {
+                console.log(matrixsingle[i][j]);
+                matrix2[i][j] = matrixsingle[i][j];
+            }
+        }
+        var pow = document.getElementById('powInp').value;
+        var temp = '';
+        var mulexplanation = '';
+        var d = '';
+        for (var i = 0; i < document.getElementById('srow1').value; i++) {
+            mulexplanation += "<div class='dropdown-divider'></div><br>"
+            mulexplanation += "<span style='color:var(--apppink) !important'>"
+            mulexplanation += '<span style="font-size: 20px;"> Taking Row ' + String(i + 1) + ' of Matrix</span>';
+            mulexplanation += "</span><br>"
+            mul[i] = [];
+            for (var j = 0; j < document.getElementById('scolumn1').value; j++) {
+                mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;width:100%;'>"
+                mulexplanation += '<span style="border: 3px solid var(--appblack);padding: 10px;border-radius: 30px;font-size: 20px;">Column ' + String(j + 1) + ' of Matrix 2</span><br>';
+                mul[i][j] = 0;
+                for (var k = 0; k < document.getElementById('scolumn1').value; k++) {
+                    mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrixsingle[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrixsingle[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrixsingle[i][k]) * parseInt(matrix2[k][j])) + '\\]'
+                    temp += String(parseInt(matrixsingle[i][k]) * parseInt(matrix2[k][j])) + ' + '
+                    mul[i][j] = parseInt(mul[i][j]) + parseInt(matrixsingle[i][k]) * parseInt(matrix2[k][j]);
+                }
+                var dp = '\\[\\begin{bmatrix}'
+                var count = 0
+                for (var ij of matrixsingle) {
+                    for (var ji of ij) {
+                        if (count == i)
+                            dp += '\\color{blue}' + ji + "&"
+                        else {
+                            dp += ji + "&"
+                        }
+                    }
+                    count += 1;
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
+                }
+                dp += '\\end{bmatrix}\\times'
+                dp += '\\begin{bmatrix}';
+                for (var ij of matrix2) {
+                    var count = 0
+                    for (var ji of ij) {
+                        if (count == j)
+                            dp += '\\color{blue}' + ji + "&"
+                        else {
+                            dp += ji + "&"
+                        }
+                        count += 1;
+                    }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
+                }
+                dp += '\\end{bmatrix}\\]'
+                mulexplanation += dp;
+                mulexplanation += '<b style="font-size: 25px;">' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</b>';
+                var mat = [];
+                for (var f = 0; f < document.getElementById('srow1').value; f++) {
+                    mat[f] = [];
+                    for (var d = 0; d < document.getElementById('scolumn1').value; d++) {
+                        if (f == i && d == j) {
+                            mat[f][d] = String(eval(temp.slice(0, -3)))
+                        } else {
+                            mat[f][d] = '.';
+                        }
+                    }
+                }
+                dtemp = '\\[\\begin{bmatrix}'
+                for (var ij of mat) {
+                    for (var ii of ij) {
+                        if (ji == '.')
+                            dtemp += ji + "&"
+                        else
+                            dtemp += '\\color{blue}' + ji + "&"
+                    }
+                    dtemp = dtemp.slice(0, -1);
+                    dtemp += '\\\\';
+                }
+                dtemp += '\\end{bmatrix}\\]'
+
+                mulexplanation += dtemp;
+                temp = '';
+                mat = '';
+                m1 = '';
+                mulexplanation += "</div>"
+            }
+            mulexplanation += '<br>';
+        }
+        document.getElementById('singlematrixexplanation').innerHTML = mulexplanation;
+        renderMathInElement(document.getElementById('singlematrixexplanation'));
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
 
 //rank calculation
@@ -774,6 +883,18 @@ function addop(selectid, value) {
     var select = document.getElementById(selectid);
     var option = document.createElement("option");
     option.text = value;
+    if (value == "Matrix Power") {
+        var pow = document.createElement("input");
+        document.getElementById('pow').appendChild(pow);
+
+        var id = document.createAttribute("id");
+        id.value = "powInp";
+        pow.setAttributeNode(id);
+
+        var ph = document.createAttribute("placeholder");
+        ph.value = "Enter Power";
+        pow.setAttributeNode(ph);
+    }
     select.add(option);
 }
 
@@ -809,6 +930,7 @@ function checkfunctions() {
         addop('sopval', 'Inverse')
         addop('sopval', 'Minors & Co-Factors')
         addop('sopval', 'Determinant')
+	addop('sopval', 'Matrix Power')
     }
     if (parseInt(row) > 3 && parseInt(column) > 3) {
         creatematrixsingle();
