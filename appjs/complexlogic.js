@@ -134,9 +134,28 @@ function conj(){
         document.getElementById('comresult').innerHTML="Conjugate is &nbsp;" + x.real + "&nbsp; " + x.imaginary + "i";
     }
     document.getElementById('comexplain').innerHTML=explain;
-    renderMathInElement(document.getElementById("comexplain"));
-    
+    renderMathInElement(document.getElementById("comexplain"));   
 }
+
+function volofsphere() {
+    var x = document.getElementById("chngsidesphere").value;
+    var per = Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100;
+    if (x!=""){
+        document.getElementById("sphereAns").innerHTML = "\\[Percentage \\space increase \\space in \\space the \\space volume \\space of \\space the \\space sphere \\space is \\space\\]";
+        document.getElementById("sphereAns1").innerHTML = "\\[\\frac{(change \\space in \\space radius)^3}{10000} + 3\\times (change \\space in \\space radius) + \\frac{(3 \\times (change \\space in \\space radius)^2)}{100}\\]";
+        document.getElementById("sphereAns2").innerHTML = "\\[\\frac{"+x+"^3}{10000} + 3\\times "+x+" + \\frac{(3 \\times "+x+"^2)}{100}\\]";
+        document.getElementById("sphereAns3").innerHTML = "\\[ "+(Math.pow(x, 3) / 10000).toFixed(2)+" + "+(3 * x).toFixed(2)+" + "+((3 * Math.pow(x, 2)) / 100).toFixed(2)+" \\space = \\space "+per.toFixed(3)+" \\% \\]";
+        } else{
+            document.getElementById("sphereAns").innerHTML = "";
+            document.getElementById("sphereAns1").innerHTML = "\\[Enter \\space all \\space values\\]";
+            document.getElementById("sphereAns2").innerHTML = "";
+            document.getElementById("sphereAns3").innerHTML = "";}
+        renderMathInElement(document.getElementById("sphereAns"));
+        renderMathInElement(document.getElementById("sphereAns1"));
+        renderMathInElement(document.getElementById("sphereAns2"));
+        renderMathInElement(document.getElementById("sphereAns3"));
+}
+
 function sqr_rt(){
     let explain="\\[From\\space De\\space Moivre's\\space Formula,\\space z^n=(r^n)(cos(n\\theta)+i \\space sin(n\\theta))\\]"+"\\[So,\\space \\sqrt{z}=\\sqrt{r}(cos(\\frac{\\theta}{2})+i \\space sin(\\frac{\\theta}{2}))\\]"
     explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
@@ -184,18 +203,25 @@ function comOp(value) {
 }
 
 function volofcuboid() {
-    var l = parseInt(document.getElementById("chnglengthcuboid").value);
-    var b = parseInt(document.getElementById("chngbreadthcuboid").value);
-    var h = parseInt(document.getElementById("chngheightcuboid").value);
-    var ans = "percentage increase in the volume of the cuboid is ";
-
-    var percentInc = (1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100));
-    percentInc -= 1;
-    percentInc *= 100;
-
-    ans = ans + percentInc + " %";
-    document.getElementById("cuboidAns").innerText = ans;
-
+    var l = document.getElementById("chnglengthcuboid").value;
+    var b = document.getElementById("chngbreadthcuboid").value;
+    var h = document.getElementById("chngheightcuboid").value;
+    var percentInc = ((1 + (l / 100)) * (1 + (b / 100)) * (1 + (h / 100)) -1 ) * 100;
+    if (l!="" && b!="" && h!=""){
+    document.getElementById("cuboidAns").innerHTML = "\\[Percentage \\space increase \\space in \\space the \\space volume \\space of \\space the \\space cuboid \\space is \\space\\]";
+    document.getElementById("cuboidAns1").innerHTML = "\\[((1 + \\frac{Change \\space in \\space length}{100}) \\times (1 + \\frac{Change \\space in \\space breadth}{100}) \\times (1 + \\frac{Change \\space in \\space height}{100}) -1 ) \\times 100\\]";
+    document.getElementById("cuboidAns2").innerHTML = "\\[((1 + \\frac{"+l+"}{100}) \\times (1 + \\frac{"+b+"}{100}) \\times (1 + \\frac{"+h+"}{100}) -1 ) \\times 100\\]";
+    document.getElementById("cuboidAns3").innerHTML = "\\[("+(1 + (l / 100)).toFixed(2)+" \\times "+(1 + (b / 100)).toFixed(2)+" \\times "+(1 + (h / 100)).toFixed(2)+"-1 ) \\times 100 \\space = \\space "+percentInc.toFixed(3)+" \\% \\]";
+    } else{
+        document.getElementById("cuboidAns").innerHTML = "";
+        document.getElementById("cuboidAns1").innerHTML = "\\[Enter \\space all \\space values\\]";
+        document.getElementById("cuboidAns2").innerHTML = "";
+        document.getElementById("cuboidAns3").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("cuboidAns"));
+    renderMathInElement(document.getElementById("cuboidAns1"));
+    renderMathInElement(document.getElementById("cuboidAns2"));
+    renderMathInElement(document.getElementById("cuboidAns3"));
 }
 
 function euler()
@@ -232,6 +258,55 @@ function euler()
   explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
   document.getElementById('compeexplain').innerHTML=explain;
   renderMathInElement(document.getElementById("compeexplain"));
+}
+
+function npower()
+{
+  
+  var r = parseFloat(document.getElementById("cpnreal").value);
+  var i = parseFloat(document.getElementById("cpnimg").value);
+  var n = parseInt(document.getElementById("cpnpow").value);
+  var x = (Math.sqrt((r*r)+(i*i))).toFixed(3);
+  let result="";
+  let explain="\\[1.Find \\space magnitude \\space and \\space Argument\\]";
+  explain+="\\[magnitude=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
+  var y = Math.atan(i/r);
+  explain+="\\[argument(\\theta)=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
+  if(i>=0)
+    result="\\[("+r+"+"+i+"i)^"+n;
+  else
+    result="\\[("+r+i+"i)^"+n; 
+
+  if(r>0 && i<0)
+     y=y+6.28319;
+  else if(r<0 && i>0)
+     y=y+3.14159  
+  y=y.toFixed(3);   
+  
+  explain+=y+"radians\\]";
+  explain+="\\[2.By \\space De  \\space Moivre's  \\space Theorem,\\space z^n=(r^n)(cos(n\\theta)+i \\space sin(n\\theta))\\]";
+  explain+="\\[("+r+"+"+y+"i)^"+n+"=("+x+")^"+n+"(cos("+n+"\\times"+y+")+isin("+n+"\\times"+y+"))\\]";
+  x=Math.pow(x,n).toFixed(3);
+  y=(y*n).toFixed(3);
+  
+  explain+="\\[\\space \\space \\space ="+x+"(cos("+y+")+isin("+y+"))\\]";
+  r=(x*Math.cos(y)).toFixed(3);
+  i=(x*Math.sin(y)).toFixed(3);
+  
+  if(i>=0){
+    result+="="+r+"+"+i+"i\\]";
+    explain+="\\[\\space \\space \\space ="+r+"+"+i+"i\\]";
+  }
+    
+  else{
+    result+="="+r+i+"i\\]";
+    explain+="\\[\\space \\space \\space ="+r+i+"i\\]";
+  }
+    
+  document.getElementById("compnthresult").innerHTML=result;;
+  document.getElementById('compnthexplain').innerHTML=explain;
+  renderMathInElement(document.getElementById("compnthresult"));
+  renderMathInElement(document.getElementById("compnthexplain"));
 }
 
 function display_devi(){
@@ -1226,6 +1301,55 @@ function errpercal(){
     }
 }
 
+function confidence() {
+    var n = document.getElementById("conf-obsv").value;
+    var mean = document.getElementById("conf-mean").value;
+    var deviation = document.getElementById("conf-dev").value;
+    var z = document.getElementById("z-select").selectedOptions[0].value;
+    valid = /^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var zval = 0;
+    var ans1 = 0;
+    var ans2 = 0;
+    var s = "";
+    if (z = "Select Z value") {
+        s = "Please select a Z value";
+    }
+    if (n == "" || mean == "" || deviation == "") {
+        s = "Please enter number";
+    } else if (!valid.test(n)) {
+        s = "Use of alphabets and special character is not allowed for calculation purpose";
+    } else {
+        if (z === "80%") {
+            zval = 1.282;
+        }
+        else if (z === "85%") {
+            zval = 1.440;
+        }
+        else if (z === "90%") {
+            zval = 1.645;
+        }
+        else if (z === "80%") {
+            zval = 1.960;
+        }
+        else if (z === "80%") {
+            zval = 2.576;
+        }
+        else if (z === "80%") {
+            zval = 2.807;
+        }
+        else if (z === "80%") {
+            zval = 3.291;
+        }
+        console.log(z);
+        var ans = zval * (deviation / Math.sqrt(n));
+        ans1 = mean - ans;
+        ans2 = mean + ans;
+
+        s = " Confidence interval: " + ans1 + " to " + ans2;
+    }
+    document.getElementById("confans").innerHTML = s;
+}
+
 function wmccal()
 {
     var num1=document.getElementById("wmcx").value;
@@ -1283,6 +1407,12 @@ function wmccal()
     
     }
     document.getElementById("wmcans").innerHTML=ans;
+}
+
+function dbltimeCal(){
+    let inc = parseInt(document.getElementById("inctime").value);
+    let ans = Math.log(2) / Math.log(1 + inc);
+    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
 }
 
 function covcalcu(){
@@ -1442,24 +1572,30 @@ function zscorecal()
 }
 }
 
-function slpsolve()
-{
-    var a=document.getElementById("slx1").value;
-    var b=document.getElementById("sly1").value;
-    var c=document.getElementById("slx2").value;
-    var d=document.getElementById("sly2").value;
-    var ans="";
-    if(a==""||b==""||c==""||d=="")
-    {
-        ans="Please enter all values to calculate slope";
+function solveSlope() {
+    var x1 = document.getElementById("inputlinex1").value;
+    var y1 = document.getElementById("inputliney1").value;
+    var x2 = document.getElementById("inputlinex2").value;
+    var y2 = document.getElementById("inputliney2").value;
+    if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
+        document.getElementById("resultofline").innerHTML = "Please enter all four points";
+        document.getElementById("answerofline").innerHTML = "";
+        document.getElementById("answerofline2").innerHTML = "";
+    } else if (parseInt(x2) - parseInt(x1) == 0) {
+        document.getElementById("resultofline").innerHTML = "Infinity";
+        document.getElementById("answerofline").innerHTML = "";
+        document.getElementById("answerofline2").innerHTML = "";
+    } else {
+        let temp = (y2 - y1) / (x2 - x1);
+        let sol = "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
+        let sol2 = "\\[Slope=" + temp + "\\]";
+        document.getElementById("resultofline").innerHTML = "\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
+        document.getElementById("answerofline").innerHTML = sol;
+        document.getElementById("answerofline2").innerHTML = sol2;
+        renderMathInElement(document.getElementById("answerofline"));
+        renderMathInElement(document.getElementById("answerofline2"));
+        renderMathInElement(document.getElementById("resultofline"));
     }
-    else
-    {
-        var p=(d-b)/(c-a);
-        ans="Calculated slope is: "+p;
-    }
-    document.getElementById("slpans").innerHTML=ans;
-
 }
 
 function suppangcal(){
@@ -1687,6 +1823,15 @@ function perrankcal(){
     renderMathInElement(document.getElementById("perrankans"));
     }
 }
+
+function halflifeCalc() {
+    var decay = document.getElementById("decay").value;
+    var lg = Math.log(2);
+    var halfLife = lg / decay;
+    var ans = "Half Life of the element is " + halfLife;
+    document.getElementById("halflifeAns").innerHTML = ans;
+}
+
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
@@ -1792,9 +1937,14 @@ function ainvcal()
     else
     {
         num=parseFloat(num);
-        ans = -1 * num;
+        ans1 = -1 * num;
+        ans += "\\[[Note \\space :- \\space Additive \\space Inverse \\space of \\space a \\space number \\space is \\space an \\space another \\space number \\space which\\]";
+        ans += "\\[ \\space on \\space adding \\space with \\space the \\space original \\space number \\space results \\space in \\space zero \\space value. ]\\]";
+        ans += "\\[Additive \\space Inverse \\space of \\space" + num + " \\space = \\space (" + -1 + ") \\times " + (num) + "\\space = \\space " + ans1 +  "\\]";
     }
-    document.getElementById("aians").innerHTML="Answer -> &nbsp;"+ans;
+    document.getElementById("aians").innerHTML= ans;
+    renderMathInElement(document.getElementById("aians"));
+
 }
 
 function hypergeos2cal()

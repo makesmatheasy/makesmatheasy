@@ -144,7 +144,9 @@ Other Tech/Libraries
   - Greatest Integer Function and Fractional Part
   - Quartiles
   - Deciles
+  - Doubling Time
   - Direct And Indirect Proportion
+  - Cross Multiplication Calculator
   - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
@@ -170,6 +172,7 @@ Other Tech/Libraries
   - Log Properties
   - Operations on Fractions
   - Binomial Theorem Properties
+  - Binomial expression multiplication
   - Multiplication Table
     - Prints Multiplication Table
   - Divide

@@ -399,6 +399,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#crossbtn").click(function () {
+        openit("#cross");
+        closenav();
+        clearall();
+    })
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
@@ -511,6 +516,11 @@ $(document).ready(function () {
     });
     $("#gcdbtn").click(function () {
         openit("#gcd");
+        closenav();
+        clearall();
+    });
+    $("#dbltimebtn").click(function () {
+        openit("#dbltime");
         closenav();
         clearall();
     });
@@ -634,6 +644,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#binoexpbtn").click(function () {
+        openit("#binoexp");
+        closenav();
+        clearall();
+    });
 
     $("#clrbtn").click(function () {
         openit("#clr");
@@ -723,6 +738,11 @@ $(document).ready(function () {
     });
     $("#convdivbtn").click(function () {
         openit("#convdiv");
+        closenav();
+        clearall();
+    });
+    $("#impsebtn").click(function () {
+        openit("#impse");
         closenav();
         clearall();
     });
@@ -852,6 +872,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#quadeqncalbtn").click(function () {
+        openit("#quadeqncal");
+        closenav();
+        clearall();
+    });
+  
     $("#plotgraphoption").click(function () {
         openit("#plotgraph");
         closenav();
@@ -1235,7 +1262,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#confInterval").click(function () {
+        openit("#confIntrvl");
+        closenav();
+        clearall();
+    });
 
     $("#cv").click(function(){
         openit("#cvs");
@@ -1259,7 +1290,11 @@ $(document).ready(function () {
         clearall();
     });
 
-
+    $("#halflifebtn").click(function () {
+        openit("#halflife");
+        closenav();
+        clearall();
+    });
     $("#perrankcalbtn").click(function(){
         openit("#rankcals");
         closenav();
