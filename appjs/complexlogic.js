@@ -1736,6 +1736,15 @@ function perrankcal(){
     renderMathInElement(document.getElementById("perrankans"));
     }
 }
+
+function halflifeCalc() {
+    var decay = document.getElementById("decay").value;
+    var lg = Math.log(2);
+    var halfLife = lg / decay;
+    var ans = "Half Life of the element is " + halfLife;
+    document.getElementById("halflifeAns").innerHTML = ans;
+}
+
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
@@ -1841,9 +1850,14 @@ function ainvcal()
     else
     {
         num=parseFloat(num);
-        ans = -1 * num;
+        ans1 = -1 * num;
+        ans += "\\[[Note \\space :- \\space Additive \\space Inverse \\space of \\space a \\space number \\space is \\space an \\space another \\space number \\space which\\]";
+        ans += "\\[ \\space on \\space adding \\space with \\space the \\space original \\space number \\space results \\space in \\space zero \\space value. ]\\]";
+        ans += "\\[Additive \\space Inverse \\space of \\space" + num + " \\space = \\space (" + -1 + ") \\times " + (num) + "\\space = \\space " + ans1 +  "\\]";
     }
-    document.getElementById("aians").innerHTML="Answer -> &nbsp;"+ans;
+    document.getElementById("aians").innerHTML= ans;
+    renderMathInElement(document.getElementById("aians"));
+
 }
 
 function hypergeos2cal()

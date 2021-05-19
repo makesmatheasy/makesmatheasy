@@ -1577,6 +1577,24 @@
                                 <tr>
                                     <td style="border-top: none;">
             
+                                        <a id="crossbtn"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cross Multiplcation Calculator</a>
+                                    </td>
+            
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Cross Multiplcation Calculator','#cross','c','crossimgfav')"><img
+                                                    id="crossimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+            
                                         <a id="ainv"
                                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Additive Inverse
                                         </a>
@@ -4882,20 +4900,25 @@
         </div>
 
         <div class="collapse" id="table">
-            <div class="form-group num-limit" style="display: inline-block;">
-                <input type="number" oninput="checklimit()" id="numtable" class="form__field"
-                       placeholder="Enter Number">
-            </div>
-            <div class="form-group" style="display: inline-block;">
-                <input type="number" oninput="checklimit()" id="numending" name="ending"
-                       class="form__field"
-                       placeholder="Upto">
-            </div>
-
-            <div class="form-group">
-                <button type="button" onclick="printtable()" class="btn btn-light">Print
-                </button>
-            </div>
+            <form action="">
+                <div class="form-group num-limit" style="display: inline-block;">
+                    <input type="number" oninput="checklimit()" id="numtable" class="form__field"
+                           placeholder="Enter Number">
+                </div>
+                <div class="form-group" style="display: inline-block;">
+                    <input type="number" oninput="checklimit()" id="numending" name="ending"
+                           class="form__field"
+                           placeholder="Upto">
+                </div>
+    
+                <div class="form-group">
+                    <button type="button" onclick="printtable()" class="btn btn-light">Print
+                    </button>
+                    <button type="button" onclick="this.form.reset();" class="btn btn-light">Reset
+                    </button>
+                </div>
+            </form>
+            
             <span class="error"></span>
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
@@ -5521,6 +5544,14 @@
             <button class="btn btn-dark" onclick="recinsemifind()">Find</button>
             <br>
             <h5 id="recinsemians"></h5>
+            <br>
+            <h4>Largest trapezoid that can be inscribed in a semicircle </h4>
+            <br>
+            <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="trapinsemifind()">Find</button>
+            <br>
+            <h5 id="trapinsemians"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -6405,28 +6436,34 @@
                 <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 2.8125rem;">Log
                     Calculator
                 </legend>
-
-            <div class="col-6">
-                <div class="form-group">
-                    <h5>Base</h5>
-
-                    <input type="number" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+            <form action="">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Base</h5>
+    
+                        <input type="number" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group">
-                    <h5>Number</h5>
-
-                    <input type="number" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+                <div class="col-6">
+                    <div class="form-group">
+                        <h5>Number</h5>
+    
+                        <input type="number" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+                    </div>
                 </div>
-            </div>
+                
+    
+                <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
+                        onclick="cal_log()">
+                    FIND LOG
+                </button>
+                <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
+                        onclick="this.form.reset();">
+                    RESET
+                </button>
+    
+            </form>
             
-
-            <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
-                    onclick="cal_log()">
-                FIND LOG
-            </button>
-
             <div class="form-group"
                  style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                 <h2 id="result"></h2>
@@ -7189,18 +7226,26 @@
         </div>
         
         <div class="collapse" id="lyear">     
-            <h1 style="text-align: center;">Check Leap Year</h1><br>       
-            <div class="form-group">
-                <input type="text" id="leapin" class="form__field"
-                       placeholder="Enter Year"
-                       >
-            </div><br>            
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="leap()">
-                    Solve
-                </button><br>                
-            </div>
+            <h1 style="text-align: center;">Check Leap Year</h1><br>    
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="leapin" class="form__field"
+                           placeholder="Enter Year"
+                           >
+                </div><br>            
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="leap()">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                        Reset
+                    </button>
+                    <br>                
+                </div>
+            </form>   
+            
             <div class="form-group">
                 <p class="stopwrap" id="leapresult1"
                     style="font-family:mathfont;"></p>
@@ -7590,8 +7635,8 @@
             <form action="">
                 <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="smallerscfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="smallerscfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7603,8 +7648,8 @@
             <form action="">
                 <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="greatcfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="greatcfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7615,8 +7660,8 @@
             <form action="">
                 <input type="text" id="greatinin1" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="greatsfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="greatsfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7627,8 +7672,8 @@
             <form action="">
                 <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="addsubcfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="addsubcfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7639,8 +7684,8 @@
             <form action="">
                 <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="addsubsfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="addsubsfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7652,8 +7697,8 @@
             <form action="">
                 <input type="text" id="countsc" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="countscfind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="countscfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7664,8 +7709,8 @@
             <form action="">
                 <input type="text" id="minsquare" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="minsquarefind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="minsquarefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7676,8 +7721,8 @@
             <form action="">
                 <input type="text" id="mincube" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="mincubefind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="mincubefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7688,8 +7733,8 @@
             <form action="">
                 <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="submit" class="btn btn-dark" onclick="cubefreefind()">Find</button>
-                <button type="" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cubefreefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
@@ -7702,6 +7747,14 @@
             <button type="submit" class="btn btn-dark" onclick="lacubefind()">Find</button>
             <br>
             <p id="lacubeans"></p>
+            <br>
+            <h2>Find minimum number to be multiplied to make a number a perfect square</h2>
+            <br>
+            <input type="text" id="lacube1" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="lacube1find()">Find</button>
+            <br>
+            <p id="lacube1ans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -10095,18 +10148,12 @@
                     <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-align: left; font-family:mathfont;" id="sphereAns"></p>
                 </form>
             </div><br>
-            <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2>
-            <br>
+            <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2><br>
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="chng-side-cube"
-                       placeholder="Enter the percentage change in the side of a cube"/>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="volCube()">Calculate</button>
-                <br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
-                font-family:mathfont;" id="cubeAns"></p>
+                    id="chngsidecube" placeholder="Enter the percentage change in the side of a cube"/><br><br>
+                <button class="btn btn-outline-light" onclick="volofcube()">Calculate</button><br><br><br>
+                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-align: left; font-family:mathfont;" id="cubeAns"></p>
             </div><br>
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2><br>
             <div class="form-group">
@@ -10715,6 +10762,17 @@
             <button class="btn btn-dark" onclick="etc3find()">Find</button>
             <br>
             <h5 id="etc3ans"></h5>
+            <br>
+            <h4>Count of elements having Euler’s Totient value one less than itself</h4>
+            <br>
+            <input type="text" id="text1" class="form__field" placeholder = "Enter the inputs and click on add button to add"></input>
+            <input type="text" id="onelow" class="form_field" placeholder ="Enter lower boundary">
+            <input type="text" id="oneupp" class="form_field" placeholder ="Enter upper boundary">
+            <br>
+            <button class="btn btn-dark" onclick="add_element_to_array()">ADD</button>
+            <button class="btn btn-dark" onclick="etc4find()">Find</button>
+            <br>
+            <h5 id="etc4ans"></h5>
         </div>
         <!-- start of Hamming Dist -->
         <div>
@@ -11655,6 +11713,30 @@
             
             <p id="inDPans"></p>
         </div>
+        
+        <!-- Cross Multiplication Calculator -->
+        <div class="collapse" id="cross">
+            <h1 style="text-align: center; margin-bottom: 4rem;">Cross Multiplication Calculator</h1>
+            <h2 style="margin-bottom: 2rem;" id="cformula">\[\frac{A}{B}=\frac{C}{D}\]</h2>
+            <h4>Enter any 3 fields</h4>
+            <form action="">
+                <input class="form__field" type="number" placeholder="Enter the First Value(A)"
+                                   id="inputA" oninput="cross()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Enter the Second Value(B)"
+                                   id="inputB" oninput="cross()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Enter the Third Value(C)"
+                                   id="inputC" oninput="cross()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Enter the Fourth Value(D)"
+                                   id="inputD" oninput="cross()">
+                <br><br>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="cross_explain"></p>
+        </div>
 
         <!-- Work and Time -->
         <div class="collapse" id="wandt">
@@ -12102,48 +12184,53 @@
         <div class="collapse" id="roundoff">
             <div class="form-group">
 
-
-                <div class="form-group" style="display: inline-block;">
-                    <input type="number" id="inputroundoffinput" class="form__field"
-                           placeholder="Enter Number">
-                </div>
-
-                <div style="display: inline-block;" class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                            id="placeofroundoffbtn"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Place of Roundoff
-                    </button>
-                    <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;"
-                         aria-labelledby="placeofroundoff">
-                                                <span onclick="placeofroundoffget(this.innerText);"
-                                                      class="dropdown-item">Ones</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Tens</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Hundred</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Thousand</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Ten
-                                Thousand</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Lakh</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Ten Lakh</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Crore</span>
-                        <span onclick="placeofroundoffget(this.innerText);"
-                              class="dropdown-item">Ten Crore</span>
+                <form action="">
+                    <div class="form-group" style="display: inline-block;">
+                        <input type="number" id="inputroundoffinput" class="form__field"
+                               placeholder="Enter Number">
                     </div>
+    
+                    <div style="display: inline-block;" class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                id="placeofroundoffbtn"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Place of Roundoff
+                        </button>
+                        <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;"
+                             aria-labelledby="placeofroundoff">
+                                                    <span onclick="placeofroundoffget(this.innerText);"
+                                                          class="dropdown-item">Ones</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Tens</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Hundred</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Thousand</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten
+                                    Thousand</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Lakh</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten Lakh</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Crore</span>
+                            <span onclick="placeofroundoffget(this.innerText);"
+                                  class="dropdown-item">Ten Crore</span>
+                        </div>
+                    </div>
+    
                 </div>
-
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="roundoff('inputroundoffinput','inputroundoffoutput')">Round Off
-                </button>
-            </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="roundoff('inputroundoffinput','inputroundoffoutput')">Round Off
+                    </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">Reset
+                    </button>
+                </div>
+                </form>
+                
             <div class="form-group">
                 <p class="stopwrap" id="inputroundoffoutput"></p>
             </div>
@@ -12190,20 +12277,24 @@
             <h2 style="color: var(--appimage);">EMI Calculator</h2>
             <br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="first1"
-                       placeholder="Enter Amount"/>
-                <input type="text" name="c" style="width: 15.625rem;" class="form__field"
-                       id="third3"
-                       placeholder="Enter rate of interest(%)"/>
-                <p style="display: inline;"> % </p>
-                <input type="text" name="b" style="width: 15.625rem;" class="form__field"
-                       id="second2"
-                       placeholder="Enter time period(in Year) "/>
-                <p style="display: inline;"> Year </p>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
+                <form action="">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                    id="first1"
+                    placeholder="Enter Amount"/>
+                    <input type="text" name="c" style="width: 15.625rem;" class="form__field"
+                            id="third3"
+                            placeholder="Enter rate of interest(%)"/>
+                    <p style="display: inline;"> % </p>
+                    <input type="text" name="b" style="width: 15.625rem;" class="form__field"
+                            id="second2"
+                            placeholder="Enter time period(in Year) "/>
+                    <p style="display: inline;"> Year </p>
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-light" onclick="emical()">Calculate</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </form>
+                
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio1"></p>
                 <br>
@@ -12237,16 +12328,20 @@
             <h2 style="color: var(--appimage);">GST Calculator</h2>
             <br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                <form action="">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
                        id="O_Price"
                        placeholder="Enter Original Price"/>      
-                <input type="text" name="c" style="width: 15.625rem;" class="form__field"
-                       id="GST"
-                       placeholder="Enter GST(%)"/>
-                <p style="display: inline;"> % </p>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="gstcal()">Calculate</button>
+                    <input type="text" name="c" style="width: 15.625rem;" class="form__field"
+                        id="GST"
+                        placeholder="Enter GST(%)"/>
+                    <p style="display: inline;"> % </p>
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-light" onclick="gstcal()">Calculate</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </form>
+                
                 <br><br><br>
                 <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                 font-family:mathfont;" id="gst0"></p>
@@ -12260,14 +12355,19 @@
         <div class="collapse" id="degcal">
             <h2 style="color: var(--appimage);">Polynomial Degree</h2>
             <br>
-            <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
-                       id="exp"
-                       placeholder="Enter a Polynomial expression"/><br><br>
-                <button class="btn btn-outline-light" onclick="degcal()">Find</button> <br><br><br> 
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
-                font-family:mathfont;" id="deg"></p>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                           id="exp"
+                           placeholder="Enter a Polynomial expression"/><br><br>
+                    <button class="btn btn-outline-light" onclick="degcal()">Find</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                    <br><br><br> 
+                    <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                    font-family:mathfont;" id="deg"></p>
+                </div>
+            </form>
+            
         </div>
   
         <div class="collapse" id="equationssolver">
@@ -12379,6 +12479,32 @@
         <div class="coll1" style="text-align: center;">
             <h5 id="printheight2" style="color: white; font-size: x-large;"></h5>
             </div>
+            <br><br>
+            <h4 class="d-flex justify-content-center">To calculate Angle of Depression </h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="height51" placeholder="Enter Distance (BC)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="height41"
+                placeholder="Enter Height (AB)"
+                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=heightdist3()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="coll1" style="text-align: center;">
+                <h5 id="printheight3" style="color: white; font-size: x-large;"></h5>
+                </div>
         <br>
         </div>
 
@@ -12435,6 +12561,16 @@
             <button class="btn btn-dark" onclick="rootscubicfind()">FInd</button>
             <br>
             <h4 id="rootscubicans"></h4>
+            <br>
+            <h2 style="text-align:center;">Maximum and Minimum value of a quadratic function</h2>
+            <br>
+            <input type="text" id="aofeqn2" class="form__field" placeholder ="Enter coefficeient of x^2">
+            <input type="text" id="bofeqn2" class="form__field" placeholder ="Enter coefficeient of x">
+            <input type="text" id="cofeqn2" class="form__field" placeholder ="Enter constant term">
+            <br>
+            <button class="btn btn-dark" onclick="maxminquadfind()">Find</button>
+            <br>
+            <h4 id="maxminquadans"></h4>
         </div>
 
         <div class="collapse" id="mulsolwithsteps">
@@ -12448,6 +12584,10 @@
                 <button type="button" class="btn btn-light"
                         onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
                     Solve
+                </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
                 </button>
             </form>
 
@@ -12871,6 +13011,14 @@
             <button type = "button" class="btn btn-dark" onclick = "polymax2find()">FInd</button>
             <br>
             <h4 id="polymax2ans"></h4>
+            <br>
+            <h4>Ratio of area of two nested polygons formed by connecting midpoints of sides of a regular N-sided polygon</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax3"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax3find()">FInd</button>
+            <br>
+            <h4 id="polymax3ans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -13456,6 +13604,10 @@
                            href="#">Kite</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#tricorn" style="text-decoration:none;"
+                           href="#">Tricorn</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#lemniscate" style="text-decoration:none;"
                            href="#">Lemniscate</a></td>
                 </tr>
@@ -13791,6 +13943,15 @@
             <br>
             <button class="btn btn-dark" onclick="sccofind()">Find</button><br>
             <h5 id="sccoans"></h5>
+            <br>
+            <h4>Largest cube that can be inscribed within the cone</h4>
+            <br>
+            <input type="text" id="cubeincone" class="form__field" placeholder="Enter the height of cone">
+            <input type="text" id="cubeincone1" class="form__field" placeholder="Enter the radius of cone">
+            <br>
+            <button class="btn btn-dark" onclick="cubeinconefind()">Find</button><br>
+            <h5 id="cubeinconeans"></h5>
+            <br>
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -15228,15 +15389,18 @@
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
                 <input type="number" id="valk" placeholder="Enter k "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-
-            </form>
             <br>
             <div class="form-group">
                 <button type="button" class="btn btn-light"
                         onclick="binomialsolve('valn','valk')">
                     Find
                 </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
+                </button>
             </div>
+            </form>
             <br>
             <div class="form-group">
                 <div id="bino_div">
@@ -16067,11 +16231,15 @@
 
     
     <h1 >HYDROSTATIC PRESSURE CALCULATOR </h1>
-    <input type="number" name="dens" class="form__field" id="dens" width="5em" placeholder="Enter fluid's density(in kg/m^3)[ρ]">
-    <p>&nbsp;</p>
-    <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)[h]">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
+    <form action="">
+        <input type="number" name="dens" class="form__field" id="dens" width="5em" placeholder="Enter fluid's density(in kg/m^3)[ρ]">
+        <p>&nbsp;</p>
+        <input type="number" name="dept" class="form__field" id="dept" placeholder="Enter fluid's depth (in meter)[h]">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p class="stopwrap" id="hydroans1"
     style="font-family:mathfont;"></p>
     <p class="stopwrap" id="hydroans2"
@@ -19712,6 +19880,57 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="tricorn" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tricorn</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = \pi r \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \Big(\sqrt{\frac{3}{4}}-\frac{\pi}{6}\Big)*r^2 \]</p>
+                                   
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tricorn.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius (r)" id="inputtricornrad"
+                                       oninput="solvetricorn();">
+                            <p class="stopwrap" id="resultoftricornperi"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftricornarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
 
         <div class="modal fade" id="lemniscate" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

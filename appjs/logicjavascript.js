@@ -1941,6 +1941,14 @@ var pardifforder = "";
 function getparorder(value) {
     pardifforder = value;
 }
+
+function polymax3find(){
+    let n = parseInt(document.getElementById("ploymax3").value)
+    let pi = 3.14159265;
+    let areaf = (1 / (Math.cos(pi / n)* Math.cos(pi / n)));
+    document.getElementById("polymax3ans").innerHTML = areaf
+}
+
 function gif(){
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if(giffnum >=0){
@@ -1970,6 +1978,49 @@ function inDP() {
     var inDPnum3 = document.getElementById("inDPnum3").value;
     var fourthVal = (parseInt(inDPnum1) * parseInt(inDPnum2)) / parseInt(inDPnum3);
     document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal.toFixed(3);
+}
+
+// cross multiplication calculator
+function cross() {
+    var crossA = document.getElementById("inputA").value;
+    var crossB = document.getElementById("inputB").value;
+    var crossC = document.getElementById("inputC").value;
+    var crossD = document.getElementById("inputD").value;
+    var cross_explain = document.getElementById("cross_explain");
+    if(crossA!="" && crossB!="" && crossC!="" && crossD!=""){
+      cross_explain.innerHTML="All values are preknown";
+    }
+    else if(crossA!="" && crossB!="" && crossC!=""){
+        crossD=(parseInt(crossC)*parseInt(crossB)/parseInt(crossA)).toFixed(2);
+        document.getElementById("inputD").value=crossD;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space D }\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{D}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\["+crossA+"\\times D \\space = \\space "+crossB+"\\times "+crossC+"\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space"+crossA+"}\\]"+"\\[D=("+crossB+"\\times"+crossC+")/"+crossA+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[D="+crossD+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else if(crossA!="" && crossB!="" && crossD!=""){
+        crossC=(parseInt(crossA)*parseInt(crossD)/parseInt(crossB)).toFixed(2);
+        document.getElementById("inputC").value=crossC;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space C }\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{C}{"+crossD+"}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\["+crossA+"\\times "+crossD+" \\space = \\space "+crossB+"\\times C\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space "+crossB+"}\\]"+"\\[C=("+crossA+"\\times"+crossD+")/"+crossB+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[C="+crossC+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space  Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else if(crossA!="" && crossC!="" && crossD!=""){
+        crossB=(parseInt(crossA)*parseInt(crossD)/parseInt(crossC)).toFixed(2);
+        document.getElementById("inputB").value=crossB;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space B }\\]"+"\\[\\frac{"+crossA+"}{B}=\\frac{"+crossC+"}{"+crossD+"}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\["+crossA+"\\times "+crossD+" \\space = \\space B \\times "+crossC+"\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space"+crossC+"}\\]"+"\\[B=("+crossA+"\\times"+crossD+")/"+crossC+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[B="+crossB+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space  Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else if(crossD!="" && crossB!="" && crossC!=""){
+        crossA=(parseInt(crossC)*parseInt(crossB)/parseInt(crossD)).toFixed(2);
+        document.getElementById("inputA").value=crossA;
+        cross_explain.innerHTML="\\[ \\underline {Solution \\space \\ for \\space A }\\]"+"\\[\\frac{A}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"+"\\[\\underline {1.Cross \\space Multiply}\\]"+"\\[A\\times "+crossD+" \\space = \\space "+crossB+"\\times "+crossC+"\\]"+"\\[\\underline {2.Divide \\space each \\space side \\space by \\space"+crossD+"}\\]"+"\\[A=("+crossB+"\\times"+crossC+")/"+crossD+"\\]"+"\\[\\underline {3.Reduce}\\]"+"\\[A="+crossA+"\\]";
+        cross_explain.innerHTML+="\\[\\underline {Final \\space Proportion}\\]"+"\\[\\frac{"+crossA+"}{"+crossB+"}=\\frac{"+crossC+"}{"+crossD+"}\\]"
+        renderMathInElement(document.getElementById("cross_explain"));
+    }
+    else{
+        cross_explain.innerHTML="";
+    }
 }
 
 function fp(){
@@ -4831,6 +4882,27 @@ function Kitesolve() {
         document.getElementById("resultofperiK").innerHTML = "Enter side a and b both to calculate perimeter";
     }
 }
+
+function solvetricorn() {
+    var r = document.getElementById("inputtricornrad").value;
+    var perioutput = document.getElementById("resultoftricornperi");
+    var areaoutput = document.getElementById("resultoftricornarea");
+    var areatemp = "";
+    var peritemp = "";
+    if (r != "") {
+        peritemp += "\\[Perimeter \\space of \\space Tricorn \\space \\newline \\pi \\times " + r + "\\ = " + eval(String(3.14*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space of \\space Tricorn \\space  \\newline" + "(\\sqrt{\\frac{3}{4}}-\\frac{\\pi}{6})" + "\\times" + r + "^2" + "\\ = " + eval(String(0.343*r*r)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 //created function for lemniscate
 function solvelemniscate() {
     var a = document.getElementById("inputlemnihei").value;
@@ -7327,6 +7399,32 @@ function heightdist2(){
 
 }
 
+function heightdist3(){
+    var distance = parseFloat(document.getElementById("height51").value);
+    var height = parseFloat(document.getElementById("height41").value);
+    var output = document.getElementById("printheight3");
+    var temp = "";
+    var height1 = (height/distance).toFixed(3)
+    var deg1 = Math.atan(height1).toFixed(3)
+    var deg2 = (deg1*180/Math.PI).toFixed(3)
+    if(!isNaN(distance) && !isNaN(height)){
+        temp += "\\[Distance(AC) \\space = \\space " + distance + "m \\]";
+        temp += "\\[Height(AB) \\space = \\space " + height + "m \\]";
+        temp += "\\[tan θ \\space = \\space \\frac{Opposite Side}{Adjacent Side}  \\space = \\space \\frac{AB}{BC} \\]";
+        temp += "\\[tan θ " + "\\space = \\space \\frac{ " + height + "}{" + distance + "} \\]";
+        temp += "\\[ θ \\space = \\space tan^{-1}  \\frac{ " + height + "}{" + distance + "} \\]";
+        temp += "\\[ θ \\space = \\space  tan^{-1} (" + height1 + ") \\space = \\space " + deg2 + " \\degree \\]";
+        temp += "\\[Angle \\space of \\space Depression \\space = " + (deg2) + "\\degree \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+
+}
 
 function solveCone() {
     var height = document.getElementById("inputhcone").value;
@@ -9461,6 +9559,12 @@ function profitloss() {
     }
 }
 
+function trapinsemifind(){
+    let a = parseInt(document.getElementById("trapinsemin").value)
+    var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
+    document.getElementById("trapinsemians").innerHTML =  a;
+}
+
 // gamma find function
 function gammafind(){
     // function to find gamma function of any no.
@@ -9984,6 +10088,48 @@ function gmsol() {
     }
 }
 
+
+var array = Array();
+function add_element_to_array()
+{
+    var x=0;
+    array[x] = document.getElementById("text1").value;
+    alert("Element: " + array[x] + " Added at index " + x);
+    x++;
+    document.getElementById("text1").value = "";
+}
+
+let prime = new Uint8Array(1000001);
+function seiveOfEratosthenes()
+{
+ 
+    for (let i = 2; i < 1000001;
+        i++) {
+        prime[i] = 1;
+    }
+ 
+    for (let i = 2; i * i < 1000001;i++) {
+        if (prime[i] == 1) {
+            for (let j = i * i;
+                j < 1000001; j += i) {
+                prime[j] = 0;
+            }
+        }
+    }
+}
+
+function etc4find(){
+    let n = array.length();
+    let L = parseInt(document.getElementById("onelow").value)
+    let R = parseInt(document.getElementById("oneupp").value)
+    seiveOfEratosthenes(); 
+    countPrime = new Uint8Array(n + 1);
+    for (let i = 1; i <= n; i++) {
+        countPrime[i] = countPrime[i - 1]+ prime[arr[i - 1]];
+    }
+    document.getElementById("etc4ans").innerHTML = countPrime[R]- countPrime[L - 1]+ "<br>"
+}
+
 function hmsol() {
     var a = document.getElementById("aval2").value
     var c = document.getElementById("cval2").value
@@ -10073,6 +10219,35 @@ function lacubefind(){
         steps++;
     }
     document.getElementById("lacubeans").innerHTML =  steps;
+}
+
+function lacube1find(){
+    let n = parseInt(document.getElementById("lacube1").value)
+    let count = 0;
+    let ans = 1;
+    while (n % 2 == 0)
+    {
+        count++;
+        n /= 2;
+    }
+    if (count % 2)
+        ans *= 2;
+ 
+    for (let i = 3; i <= Math.sqrt(n); i += 2)
+    {
+        count = 0;
+        while (n % i == 0)
+        {
+            count++;
+            n /= i;
+        }
+            ans *= i;
+    }
+ 
+    if (n > 2)
+        ans *= n;
+ 
+    document.getElementById("lacube1ans").innerHTML =  ans;
 }
 
 function cubefreefind(){
@@ -10193,6 +10368,26 @@ else{
 }
 }
 
+function maxminquadfind(){
+    let a = parseInt(document.getElementById("aofeqn2").value)
+    let b = parseInt(document.getElementById("bofeqn2").value)
+    let c = parseInt(document.getElementById("cofeqn2").value)
+    var secondPart = c * 1.0 -(b * b / (4.0 * a));
+    if (a > 0)
+    {
+        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +"Infinity" + "<br>";
+        document.getElementById("maxminquadans").innerHTML="Minvalue = " + secondPart;
+    }
+    else if (a < 0)
+    {
+        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +secondPart + "<br>";
+        document.getElementById("maxminquadans").innerHTML="Minvalue = " +"-Infinity";
+    }
+    else
+    {
+        document.getElementById("maxminquadans").innerHTML="Not a quadratic function\n";
+    }
+}
 
 function tridecagon(){
     let side = parseFloat(document.getElementById("inputsidetridec").value)
@@ -10807,6 +11002,13 @@ function eulerTotient(n) {
   }
 
 //Next Prime Function
+
+function cubeinconefind(){
+    let h = parseInt(document.getElementById("cubeincone").value)
+    let r = parseInt(document.getElementById("cubeincone1").value)
+    var a = (h * r * Math.sqrt(2)) / (h + Math.sqrt(2) * r);
+    document.getElementById("cubeinconeans").innerHTML = a
+}
 
 function coneincubefind(){
     let a = parseInt(document.getElementById("shapeinscribedin").value)    
@@ -13976,10 +14178,7 @@ function manhatcal()
         ans += "\\[The \\space calculated \\space Manhattan \\space Distance \\space of \\space the \\space given \\space coordinate \\space is \\space " + x + " \\]"
         output.innerHTML = ans;
         renderMathInElement(output);
-
-    }
-    else
-    {
+    } else{
         ans += "\\[Mdist \\space = \\space | X1 \\space - \\space X2 | \\space + \\space | Y1 \\space - \\space Y2 | \\]";
         ans += "\\[ | " + num1 + " - " + num3 + " | + | " + num2 + " - " + num4 + " | \\]"
         ans += "\\[ | " + (num1 - num3) + " | + | " + (num2 - num4) + " | \\]"
@@ -13989,8 +14188,8 @@ function manhatcal()
     }
 }
 
-function volCube() {
-    var x = parseInt(document.getElementById("chng-side-cube").value);
+function volofcube() {
+    var x = parseInt(document.getElementById("chngsidecube").value);
     var ans = "percentage increase in the volume of the cube is ";
     const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
     ans = ans + per + " %";

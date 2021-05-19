@@ -145,6 +145,7 @@ Other Tech/Libraries
   - Quartiles
   - Deciles
   - Direct And Indirect Proportion
+  - Cross Multiplication Calculator
   - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
