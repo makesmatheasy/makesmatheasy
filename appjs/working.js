@@ -878,7 +878,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+  
     $("#plotgraphoption").click(function () {
         openit("#plotgraph");
         closenav();

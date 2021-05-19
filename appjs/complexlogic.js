@@ -260,6 +260,55 @@ function euler()
   renderMathInElement(document.getElementById("compeexplain"));
 }
 
+function npower()
+{
+  
+  var r = parseFloat(document.getElementById("cpnreal").value);
+  var i = parseFloat(document.getElementById("cpnimg").value);
+  var n = parseInt(document.getElementById("cpnpow").value);
+  var x = (Math.sqrt((r*r)+(i*i))).toFixed(3);
+  let result="";
+  let explain="\\[1.Find \\space magnitude \\space and \\space Argument\\]";
+  explain+="\\[magnitude=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
+  var y = Math.atan(i/r);
+  explain+="\\[argument(\\theta)=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
+  if(i>=0)
+    result="\\[("+r+"+"+i+"i)^"+n;
+  else
+    result="\\[("+r+i+"i)^"+n; 
+
+  if(r>0 && i<0)
+     y=y+6.28319;
+  else if(r<0 && i>0)
+     y=y+3.14159  
+  y=y.toFixed(3);   
+  
+  explain+=y+"radians\\]";
+  explain+="\\[2.By \\space De  \\space Moivre's  \\space Theorem,\\space z^n=(r^n)(cos(n\\theta)+i \\space sin(n\\theta))\\]";
+  explain+="\\[("+r+"+"+y+"i)^"+n+"=("+x+")^"+n+"(cos("+n+"\\times"+y+")+isin("+n+"\\times"+y+"))\\]";
+  x=Math.pow(x,n).toFixed(3);
+  y=(y*n).toFixed(3);
+  
+  explain+="\\[\\space \\space \\space ="+x+"(cos("+y+")+isin("+y+"))\\]";
+  r=(x*Math.cos(y)).toFixed(3);
+  i=(x*Math.sin(y)).toFixed(3);
+  
+  if(i>=0){
+    result+="="+r+"+"+i+"i\\]";
+    explain+="\\[\\space \\space \\space ="+r+"+"+i+"i\\]";
+  }
+    
+  else{
+    result+="="+r+i+"i\\]";
+    explain+="\\[\\space \\space \\space ="+r+i+"i\\]";
+  }
+    
+  document.getElementById("compnthresult").innerHTML=result;;
+  document.getElementById('compnthexplain').innerHTML=explain;
+  renderMathInElement(document.getElementById("compnthresult"));
+  renderMathInElement(document.getElementById("compnthexplain"));
+}
+
 function display_devi(){
     var x = document.getElementById('deviation');
     if (x.style.display === 'none') {
