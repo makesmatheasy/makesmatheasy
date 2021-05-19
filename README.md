@@ -133,6 +133,7 @@ Other Tech/Libraries
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
+  - Sum and Difference Of Trignometric Function
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
@@ -144,11 +145,13 @@ Other Tech/Libraries
   - Quartiles
   - Deciles
   - Direct And Indirect Proportion
+  - Cross Multiplication Calculator
   - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
   - Natural Numbers
   - Percentage Calculator
+  - Half Life Calculator
   - Set Calculator
   - Pythagorean Triplets
   - Perfect Squares in a range
@@ -229,6 +232,7 @@ Other Tech/Libraries
   - Properties of Circles
   - Properties of Quadrilaterals
   - Arc Length Calculator
+  - Area of Crescent and Lunes
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -339,6 +343,7 @@ Other Tech/Libraries
   - Empirical Probability
   - Conditional Probability
   - Joint Probability
+  - Independent And Dependent Event Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator
@@ -352,6 +357,7 @@ Other Tech/Libraries
   - T-test
   - Z-test
   - Z score Calculator
+  - Confidence Interval Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
