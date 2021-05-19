@@ -11086,6 +11086,22 @@ function lucasNumbers(num) {
     document.getElementById("lucNumResult").innerHTML = "The Lucas Series of " + num + " terms is : " + res;    
 
 }
+
+function sumlucasfind(){
+    let N = parseInt(document.getElementById("sumlucas").value)
+    var sum = 0;
+    var a = 2, b = 1, c; 
+    sum += a; 
+    while (b <= N)
+    {
+        sum += b;
+        var c = a + b;
+        a = b;
+        b = c;
+    }
+    document.getElementById("sumlucasans").innerHTML =  sum;
+}
+
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
