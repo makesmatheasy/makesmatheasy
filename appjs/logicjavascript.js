@@ -10075,6 +10075,35 @@ function lacubefind(){
     document.getElementById("lacubeans").innerHTML =  steps;
 }
 
+function lacube1find(){
+    let n = parseInt(document.getElementById("lacube1").value)
+    let count = 0;
+    let ans = 1;
+    while (n % 2 == 0)
+    {
+        count++;
+        n /= 2;
+    }
+    if (count % 2)
+        ans *= 2;
+ 
+    for (let i = 3; i <= Math.sqrt(n); i += 2)
+    {
+        count = 0;
+        while (n % i == 0)
+        {
+            count++;
+            n /= i;
+        }
+            ans *= i;
+    }
+ 
+    if (n > 2)
+        ans *= n;
+ 
+    document.getElementById("lacube1ans").innerHTML =  ans;
+}
+
 function cubefreefind(){
     let n = parseInt(document.getElementById("cubefree").value)
     for(let i = 2; i <= n; i++)
