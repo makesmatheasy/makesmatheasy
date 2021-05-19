@@ -7905,6 +7905,36 @@
             <div class="form-group text-center">
                 <p style="color:white;" id="compeexplain"></p>
             </div>
+            <h1>N-th Power of complex number</h1>
+            <form action="">
+            <div class="form-group" style="display:inline-block">
+            <label>Enter the real part : &nbsp; &nbsp; </label>
+            <input type="number" id="cpnreal" class="form__field" placeholder="Real"
+               style="width:3rem;display:inline;"> &nbsp; &nbsp;
+            <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+            <input type="number" id="cpnimg" class="form__field" placeholder="Imag"
+               style="width:3rem;display:inline;">
+            <label> Enter the power : &nbsp; &nbsp;</label>
+            <input type="number" id="cpnpow" class="form__field" placeholder="Power"
+                style="width:3rem;display:inline;">       
+            </div>
+            <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="npower()">
+            Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+            </button>
+            </div>
+            </form>
+
+            <div class="form-group text-center">
+            <p style="color:white;" id="compnthresult"></p>
+            </div>
+            <div class="form-group text-center">
+            <p style="color:white;" id="compnthexplain"></p>
+            </div>
+
         </div>
         <div class="collapse" id="complex2collapse">
             <h1>Calculations for 2 complex numbers</h1>
