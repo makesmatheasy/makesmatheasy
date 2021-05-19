@@ -399,6 +399,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#crossbtn").click(function () {
+        openit("#cross");
+        closenav();
+        clearall();
+    })
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
@@ -511,6 +516,11 @@ $(document).ready(function () {
     });
     $("#gcdbtn").click(function () {
         openit("#gcd");
+        closenav();
+        clearall();
+    });
+    $("#dbltimebtn").click(function () {
+        openit("#dbltime");
         closenav();
         clearall();
     });
@@ -723,6 +733,11 @@ $(document).ready(function () {
     });
     $("#convdivbtn").click(function () {
         openit("#convdiv");
+        closenav();
+        clearall();
+    });
+    $("#impsebtn").click(function () {
+        openit("#impse");
         closenav();
         clearall();
     });

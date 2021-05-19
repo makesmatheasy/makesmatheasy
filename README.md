@@ -144,7 +144,9 @@ Other Tech/Libraries
   - Greatest Integer Function and Fractional Part
   - Quartiles
   - Deciles
+  - Doubling Time
   - Direct And Indirect Proportion
+  - Cross Multiplication Calculator
   - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number

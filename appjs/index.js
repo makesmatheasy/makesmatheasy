@@ -177,6 +177,7 @@ function openit(id) {
         "#math",
         "#des",
         "#gcd",
+        "#dbltime",
         "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",
@@ -227,6 +228,7 @@ function openit(id) {
         "#qrtl",
         "#decl",
         "#dip",
+        "#cross",
         "#wandt",
         "#spiconcal",
         "#home",
@@ -254,6 +256,7 @@ function openit(id) {
         "#bt-collapse1",
         "#manhats",
         "#elliptic_cone",
+        "#bicone",
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",
@@ -389,6 +392,7 @@ function openit(id) {
         "#chng-vol-cube",
         "#squarerootcalc",
         "#sqseries",
+        "#impse"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
