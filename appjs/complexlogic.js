@@ -698,54 +698,46 @@ function stresscalc()
 
     ans+="Stress is defined as “The restoring force per unit area of the material”. It is a tensor quantity. Denoted by Greek letter σ. Measured using Pascal or N/m2. Mathematically expressed as <br>    σ=F/A Where, <br>    F is the restoring force measured in Newton or N. <b>    A is the area of cross-section measured in m2. <br>    σ is the stress measured using N/m2 or Pa. <br>"
 }
-document.getElementById("stressans").innerHTML=ans;
-    
-
+document.getElementById("stressans").innerHTML=ans;  
 }
 
-function arcal()
-{
+function arcal() {
       var a=document.getElementById("ang12").value;
       var b=document.getElementById("rad").value;
       var y=document.getElementById("radit").value;
       var d=document.getElementById("angit").value;
-      var ans="";
-      if(a == "" && b == "")
-      {
-          ans="Error: All values are required to obtain answer";
-      }
-      else
-      {
-
-        if(d=="degree")
-        {
+      if(a == "" || b == "") {
+        document.getElementById("arcans1").innerHTML ="\\[Error: \\space All \\space values \\space are \\space required \\space to \\space obtain \\space answer\\]";
+        renderMathInElement(document.getElementById("arcans1"));
+        document.getElementById("arcans2").innerHTML = ""; document.getElementById("arcans3").innerHTML = ""; document.getElementById("arcans4").innerHTML = ""; 
+        document.getElementById("arcans5").innerHTML = ""; document.getElementById("arcans6").innerHTML = ""; return;
+        } else {
+        if(d=="degree") {
             b/=57.296;
-        }
-
-
+            document.getElementById("arcans1").innerHTML = "\\[\\frac{\\theta \\space (degree)}{57.296} \\space = "+b.toFixed(2)+" \\space (radian)\\]";
+            renderMathInElement(document.getElementById("arcans1")); } else{ document.getElementById("arcans1").innerHTML = ""; }
         var c= a*b;
-
-        if(y=="cm")
-        {
+        document.getElementById("arcans2").innerHTML = "\\[Arc \\space length = \\space "+a+" \\times "+b.toFixed(2)+" = \\space "+c.toFixed(3)+" \\space m\\]";
+        renderMathInElement(document.getElementById("arcans2"));
+        if(y=="cm") {
             c=c/100;
-        }
-        else if(y=="mm")
-        {
+            document.getElementById("arcans3").innerHTML = "\\[\\frac{Arc \\space length \\space (m)}{100} = \\space "+c.toFixed(3)+" \\space cm\\]";
+            renderMathInElement(document.getElementById("arcans3"));
+            document.getElementById("arcans4").innerHTML = ""; document.getElementById("arcans5").innerHTML = "";
+        } else if(y=="mm") {
             c=c/1000;
-        }
-        else if(y=="inch")
-        {
+            document.getElementById("arcans4").innerHTML = "\\[\\frac{Arc \\space length \\space (m)}{1000} = \\space "+c.toFixed(3)+" \\space mm\\]";
+            renderMathInElement(document.getElementById("arcans4"));
+            document.getElementById("arcans3").innerHTML = ""; document.getElementById("arcans5").innerHTML = "";
+        } else if(y=="inch") {
               c=c/0.0254;
-        }
-      
-        var k=c.toPrecision(5);
-
-             ans="The arc length is: "+k+" m";
-      }
-
-      document.getElementById("arcans").innerHTML=ans;
-
-
+                document.getElementById("arcans5").innerHTML = "\\[\\frac{Arc \\space length \\space (m)}{0.0254} = \\space "+c.toFixed(3)+" \\space inch\\]";
+                renderMathInElement(document.getElementById("arcans5"));
+                document.getElementById("arcans4").innerHTML = ""; document.getElementById("arcans3").innerHTML = "";
+        } else{
+            document.getElementById("arcans3").innerHTML = ""; document.getElementById("arcans4").innerHTML = ""; document.getElementById("arcans5").innerHTML = "";}
+        document.getElementById("arcans6").innerHTML ="\\[The \\space Arc \\space length \\space is: \\space "+c.toFixed(3)+" \\space "+y+"\\]";
+        renderMathInElement(document.getElementById("arcans6"));}
 }
 
 function cresccal() {
