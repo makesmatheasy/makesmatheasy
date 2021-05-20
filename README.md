@@ -133,6 +133,7 @@ Other Tech/Libraries
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
+  - Sum and Difference Of Trignometric Function
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
@@ -141,12 +142,17 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Greatest Integer Function and Fractional Part
+  - Quartiles
+  - Deciles
+  - Doubling Time
   - Direct And Indirect Proportion
+  - Cross Multiplication Calculator
   - Work And Time Calculator
   - Solve for Exponents
   - Sum of Square of Given number
   - Natural Numbers
   - Percentage Calculator
+  - Half Life Calculator
   - Set Calculator
   - Pythagorean Triplets
   - Perfect Squares in a range
@@ -158,8 +164,6 @@ Other Tech/Libraries
   - Strain Calculator
   - Stress Calculator
   - Profit Loss Calculations
-  - Statistics Formulas
-  - Mean Calculator
     - Arithmetic Mean
     - Geometric Mean
     - Harmonic Mean
@@ -168,6 +172,7 @@ Other Tech/Libraries
   - Log Properties
   - Operations on Fractions
   - Binomial Theorem Properties
+  - Binomial expression multiplication
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -229,6 +234,7 @@ Other Tech/Libraries
   - Properties of Circles
   - Properties of Quadrilaterals
   - Arc Length Calculator
+  - Area of Crescent and Lunes
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -244,12 +250,14 @@ Other Tech/Libraries
     - Semi-Circle
     - Annulus
     - Kite
+    - Lemniscate
     - Line
     - Trapezium
     - Ellipse
+    - Stadium
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
-    - Star Polygons: Pentagram, Double Star Polygon, Star of Lakhshmi
+    - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
 
   - 3D Shapes Calculator
     - Cube
@@ -283,6 +291,7 @@ Other Tech/Libraries
   - Volume, CSA, TSA
   - Percentage change in volume of a cube
   - Percentage change in volume of a sphere
+  - Percentage change in volume of a Cuboid
   - Congruence and Similarity of Triangles
 
 - Equations
@@ -336,13 +345,26 @@ Other Tech/Libraries
   - Empirical Probability
   - Conditional Probability
   - Joint Probability
+  - Independent And Dependent Event Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator
   - Bayes Probability Theorem
 - Statistics
+  - Statistics Formulae
+  - Mean Calculator
+  - Weighted Mean Calculator
+  - Mean Median Mode
+  - Standard Deviation
   - T-test
   - Z-test
+  - Z score Calculator
+  - Confidence Interval Calculator
+  - Skewness Calculator
+  - Coefficient of Variation
+  - Covariance Calculator
+  - Linear Regression Calculator
+  - Margin of Error Calculator
   - Chi-Square Test
 ---
 

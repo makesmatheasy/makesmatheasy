@@ -1,4 +1,4 @@
-## Related Issuse
+## Related Issue
 
 - Info about Issue or bug
 

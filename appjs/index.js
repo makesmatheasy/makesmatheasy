@@ -130,6 +130,11 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#lucNum",
+        "#smNum",
+        "#catNum",
+        "#dblFact",
+        "#sumDiv",
         "#smPrime",
         "#nextPrime",
         "#hamming-dist",
@@ -141,14 +146,20 @@ function openit(id) {
         "#theo",
         "#impfixs",
         "#etf",
+        "#etc",
         "#equationssolver",
+        "quadeqncal",
         "#mulsolwithsteps",
         "#secarea",
         "#table",
         "#ssts",
         "#arcs",
+        "#crescentLune",
+        "#sigma",
+        "#chng-vol-cube",
         "#sosqs",
         "#sosqsn",
+        "#chng-vol-cuboid",
         "#squaresRanges",
         "#favourite",
         "#cubesRanges",
@@ -165,6 +176,9 @@ function openit(id) {
         "#factors",
         "#stats",
         "#math",
+        "#des",
+        "#gcd",
+        "#dbltime",
         "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",
@@ -177,13 +191,16 @@ function openit(id) {
         "#limitscollapse",
         "#parab",
         "#binomialcoeff",
+        "#binoexp",
         "#matrixcollapse",
         "#pows",
         "#beta",
-
         "#imprtopr",
-
+        "#sieve",
+        "#ineqtri",
+        "#shapeinscribed",
         "#matrixprops",
+        "#2d-shape-ins",
         "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
@@ -201,6 +218,7 @@ function openit(id) {
         "#euclid",
         "#aod",
         "#vecalg",
+        "#volume",
         "#thdif",
         "#corgeo",
         "#ttest",
@@ -209,43 +227,58 @@ function openit(id) {
         "#parallel",
         "#unitconcal",
         "#giff",
+        "#qrtl",
+        "#decl",
         "#dip",
+        "#cross",
         "#wandt",
         "#spiconcal",
         "#home",
         "#curconcal",
         "#factorial",
         "#setop",
+        "#rootsunity",
         "#trans",
         "#hp",
         "#ppmfs",
         "#bool",
         "#suppangs",
         "#eirs",
+        "#tricorn",
         "#zscores",
         "#errpers",
         "#log_values",
         "#oops",
         "#astroid",
+        "#squarecube",
         "#deca_prism",
+        "#cardiod",
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
         "#manhats",
+        "#elliptic_cone",
+        "#bicone",
         "#pandc",
+        "#per_chng_vol",
         "#enna_prism",
+        "#confi-inter",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
-	"#onetwocom-calc",
+        "#onetwocom-calc",
+        "#2d-shape",
+        "#3d-shape",
         "#hamming-calc",
         "#3dgeo",
         "#bpmfs",
         "#straightline",
         "#binary-hexadecimal",
+        "#mis",
+        "#ais",
         "#cay",
         "#utcs",
         "#inversetrigonoiden",
@@ -263,6 +296,7 @@ function openit(id) {
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
+        "#sumAndDiffTri",
         "#plotangle",
         "#profitloss",
         "#differentiate-rulecollapse",
@@ -291,26 +325,31 @@ function openit(id) {
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
+        "#idevent",
         "#dec2421",
         "#ex3",
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#hypergeos",
         "#condprobability",
         "#prism",
         "#pentprism",
         "#pyramid",
         "#tripyramid",
         "#octpyramid",
+        "#height1",
         "#hexpyramid",
         "#octahedron",
         "#repp",
         "#partial_sphere",
+        "#hypergeomeans",
         "#mtm",
         "#igc",
         "#res1",
         "#clr",
         '#dodecahedron',
+        "#vpds",
         "#icosahedron",
         "#anglecon",
         "#frustum",
@@ -320,6 +359,7 @@ function openit(id) {
         "#setcal",
         "#mi",
         "#ip",
+        "#oocs",
         "#partialcy",
         "#prices",
         "#centcal",
@@ -329,6 +369,7 @@ function openit(id) {
         "#parabolic_arc",
         "#lyear",
         "#analytical",
+        "#faul",
         "#isoright",
         "#ellipsoid",
         "#expo",
@@ -337,18 +378,23 @@ function openit(id) {
         "#fourier_series",
         "#wmcs",
         "#cvs",
+        "#confIntrvl",
         "#rmss",
         "#relationtypes",
         "#skews",
         "#clocks",
         "#slvxs",
         "#rankcals",
+        "#halflife",
         "#hyperbolicratios",
         "#covs",
         "#lrcs",
         "#perats",
         "#mecs",
-	"#chng-vol-cube"
+        "#chng-vol-cube",
+        "#squarerootcalc",
+        "#sqseries",
+        "#impse"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
@@ -517,67 +563,39 @@ function removefavourite() {
 }
 
 function numbersapi() {
-    let number = Math.floor(Math.random() * 100);
-    let xhttp = new XMLHttpRequest();
     let el = document.getElementById("numberfact");
-    //If the fact is successfully retreived
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let val = this.responseText;
-
-            // var valTex='';
-            // for(i of val){
-            //     if(i==' '){
-            //         valTex+=" \\space ";
-            //     }else{
-            //         valTex+=i;
-            //     }
-            // }
-            // console.log(valTex);
-            // el.innerHTML="\\["+valTex+"\\]";
-            el.innerHTML = val;
-            renderMathInElement(el);
-        }
-    };
-
-    xhttp.open("GET", "http://numbersapi.com/" + number + "/math", true);
-
-    xhttp.onerror = function () {
-        let el = document.getElementById("numberfact");
-        var facts =
-            ["The number 4 is the only number spelled with the same number of letters as itself",
-                "8 is the largest cube in the Fibonacci series",
-                "123 is the tenth Lucas number",
-                "3 is the fourth open meandric number",
-                "15 is a triangular number, a hexagonal number, a pentatope number and the 4th Bell number.",
-                "111 is the smallest possible magic constant of a 3×3 magic square of distinct primes.",
-                "55 is the largest triangular number in the Fibonacci sequence.",
-                "3 is the second triangular number and it is the only prime triangular number.",
-                "2 is a primorial, as well as its own factorial.",
-                "7 is the lowest number that cannot be represented as the sum of the squares of three integers.",
-                "13 is the number of Archimedian solids.",
-                "16 is a centered pentagonal number.",
-                "17 is the only positive Genocchi number that is prime, the only negative one being −3.",
-                "100 is the smallest number whose common logarithm is a prime number.",
-                "100 is the smallest square which is also the sum of 4 consecutive cubes.",
-                "99 is the ninth repdigit, a palindromic number and a Kaprekar number.",
-                "23 is the ninth prime number, the smallest odd prime that is not a twin prime.",
-                "21 is a repdigit in base 4 (111)",
-                "20 is the smallest primitive abundant number",
-                "72 is the sum of four consecutive primes (13 + 17 + 19 + 23), as well as the sum of six consecutive primes (5 + 7 + 11 + 13 + 17 + 19).",
-                "75 is the number of orderings of 4 objects with ties allowed.",
-                "79 is the n value of the Wagstaff prime 201487636602438195784363.",
-                "80 is the smallest number n where n and n+1 are both products of 4 or more primes.",
-                "25 is an aliquot sum of 6 and number 6 is the first (or smallest) number to have an aliquot sequence that does not culminate in 0 through a prime.",
-                "37 is a prime number, the fifth lucky prime, the first irregular prime, the third unique prime and the third cuban prime of the form.",
-                "101 is the number of partitions of 13.",
-                "88 is one of only 2 numbers known whose square has no isolated digits.",
-            ];
-        i = Math.floor(Math.random() * 27);
-        let val = facts[i];
-        el.innerHTML = val;
-    };
-    xhttp.send();
+    var facts =
+        ["The number 4 is the only number spelled with the same number of letters as itself",
+            "8 is the largest cube in the Fibonacci series",
+            "123 is the tenth Lucas number",
+            "3 is the fourth open meandric number",
+            "15 is a triangular number, a hexagonal number, a pentatope number and the 4th Bell number.",
+            "111 is the smallest possible magic constant of a 3×3 magic square of distinct primes.",
+            "55 is the largest triangular number in the Fibonacci sequence.",
+            "3 is the second triangular number and it is the only prime triangular number.",
+            "2 is a primorial, as well as its own factorial.",
+            "7 is the lowest number that cannot be represented as the sum of the squares of three integers.",
+            "13 is the number of Archimedian solids.",
+            "16 is a centered pentagonal number.",
+            "17 is the only positive Genocchi number that is prime, the only negative one being −3.",
+            "100 is the smallest number whose common logarithm is a prime number.",
+            "100 is the smallest square which is also the sum of 4 consecutive cubes.",
+            "99 is the ninth repdigit, a palindromic number and a Kaprekar number.",
+            "23 is the ninth prime number, the smallest odd prime that is not a twin prime.",
+            "21 is a repdigit in base 4 (111)",
+            "20 is the smallest primitive abundant number",
+            "72 is the sum of four consecutive primes (13 + 17 + 19 + 23), as well as the sum of six consecutive primes (5 + 7 + 11 + 13 + 17 + 19).",
+            "75 is the number of orderings of 4 objects with ties allowed.",
+            "79 is the n value of the Wagstaff prime 201487636602438195784363.",
+            "80 is the smallest number n where n and n+1 are both products of 4 or more primes.",
+            "25 is an aliquot sum of 6 and number 6 is the first (or smallest) number to have an aliquot sequence that does not culminate in 0 through a prime.",
+            "37 is a prime number, the fifth lucky prime, the first irregular prime, the third unique prime and the third cuban prime of the form.",
+            "101 is the number of partitions of 13.",
+            "88 is one of only 2 numbers known whose square has no isolated digits.",
+        ];
+    i = Math.floor(Math.random() * 27);
+    let val = facts[i];
+    el.innerHTML = val;
 }
 
 $(document).on('click', ' .list_menu_items ', function () {
@@ -585,4 +603,3 @@ $(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });
-

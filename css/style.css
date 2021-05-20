@@ -265,12 +265,12 @@ h5, h6 {
 }
 
 .favourites:hover {
-  background-color: var(--apppink);
-  color: var(--appblack);
+  background-color: var(--apppink) !important;
+  color: var(--appblack) !important;
   cursor: pointer;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 776px) {
   .favouritecontainer {
     left: 5%;
     right: 5%;
@@ -381,6 +381,7 @@ h5, h6 {
 
 #myInput {
   color: black;
+  background-color: transparent !important;
 }
 
 .bi {
@@ -463,7 +464,7 @@ ul li .table {
 }
 
 .list_menu_items a:hover {
-  /* background: rgba(255, 136, 231,0.5)!important; */
+  background: rgba(255, 136, 231,0.5)!important;
   /* background: var(--apppink) !important; */
   border-radius: 2.25rem;
 }
@@ -539,6 +540,70 @@ ul li .table {
   margin: 0 auto;
 }
 
+#trans h5{
+  text-align: center;
+  margin-top:32px;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+#trans img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#trans p{
+color:#ababab !important;
+font-size: 18px;
+}
+
+#ip h4,
+#ip p,
+#ip li{
+  text-align:center;
+  list-style: none;
+  margin-bottom: 10px;
+}
+#ip img {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
+#pows h4,
+#pows h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+#pows p,
+#pows li{
+  color: #8a8a8a !important;
+}
+
+#setop h5{
+  text-align: center;
+  margin-top: 40px;
+}
+#setop p{
+  text-align: center;
+  color: #ababab !important;
+}
+#setop li{
+  text-align: center;
+  list-style: none;
+}
+#setop img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
@@ -547,6 +612,17 @@ ul li .table {
   margin-bottom: 14px;
   margin-top: 19px;
 }
+
+.darkmode--activated input,
+.darkmode--activated button {
+  overflow: visible;
+  border-radius: 18px;
+  margin: 7px;
+  background-color: #050101;
+  color: white;
+  padding: 8px;
+}
+
 /*light mode*/
 
 .light-mode #euclid li{
@@ -721,10 +797,10 @@ input[type='number'] {
 }
 
 .fa-instagram:hover {
-  /* color: #bc2a8d; */
-  background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  border-radius: 10%;
+  border-radius: 28%;
+  background-clip: padding-box;
+
 }
 
 .fa-linkedin:hover {
@@ -738,6 +814,9 @@ input[type='number'] {
 .fa-discord:hover {
   color: #7289da;
 }
+.fa-github:hover {
+  color: black;
+}
 
 @media (max-width:420px) {
   #box{
@@ -745,6 +824,26 @@ input[type='number'] {
   }
 }
 
-#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2{
+#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2,#indShow,#deShow{
   display: none;
+}
+@media only screen and (max-width:420px) {
+  #stdinp.form__field{
+    font-size: 0.68rem !important;
+  }
+}
+@media only screen and (max-width:991px) {
+  .prime{
+    font-size: 0.822rem;
+    width: 78px;
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:769px) {
+  #sievein{
+
+  font-size: 0.6rem !important;
+  }
+  
 }
