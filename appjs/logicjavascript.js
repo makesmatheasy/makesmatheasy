@@ -11239,12 +11239,19 @@ function catalan(num)
 }
 
 function catalanNumbers(num){
+
+    if(num=="")
+    {
+        document.getElementById("catNumResult").innerHTML = "Enter the number to find answer";
+    }
+    else{
     let res="";
     for (let i = 0; i < num; i++){
         res+=catalan(i);
         res+= " ";
     }
     document.getElementById("catNumResult").innerHTML = "The Catalan Numbers are: " + res;    
+}
 }
 
 //Smallest number divisible function
