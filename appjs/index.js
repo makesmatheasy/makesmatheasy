@@ -201,6 +201,7 @@ function openit(id) {
         "#cramer",
         "#fractions",
         "#multiplematrixcollapse",
+        "#expgrwths",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",

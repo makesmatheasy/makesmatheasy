@@ -1930,3 +1930,26 @@ function hypergeosvar2cal()
     }
     document.getElementById("hypergeos2ans").innerHTML=ans;
 }
+
+function egccal()
+{
+    var num1=document.getElementById("egc1").value;
+    var num2=document.getElementById("egc2").value;
+    var num3=document.getElementById("egc3").value;
+    ans="";
+    if(num1==""||num2==""||num3=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        var si=num1*((1+(num2/100))**num3);
+        ans="The effective rate of growth is: "+si;
+   
+    }
+    document.getElementById("egcans").innerHTML=ans;
+
+}

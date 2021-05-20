@@ -1518,6 +1518,22 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="expgrwth"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Exponential Growth Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Exponential Growth','#expgrwths','c','expgrwthimgfav')"><img
+                                        id="expgrwthimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
  
             <li>
                 <table class="table">
@@ -16253,6 +16269,20 @@
 </div>
 
 <!--Hydrosrtatic Pressure ends-->
+
+<div class="collapse" id="expgrwths">
+    <h1 >Exponential Growth Calculator </h1>
+    <p>&nbsp;</p>
+        <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value">
+        <p>&nbsp;</p>
+        <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change">
+        <p>&nbsp;</p>
+        <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time(in years)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
+        <p>&nbsp;</p>
+        <p id="egcans"></p>
+</div>
 
 <div class="collapse" id="gcd">
     <h2 style="text-align:center;">Euclid's GCD</h2>
