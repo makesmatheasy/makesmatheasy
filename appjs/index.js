@@ -392,6 +392,7 @@ function openit(id) {
         "#halflife",
         "#hyperbolicratios",
         "#covs",
+        "#corr",
         "#lrcs",
         "#perats",
         "#mecs",
