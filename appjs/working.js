@@ -473,6 +473,11 @@ $(document).ready(function () {
         openit("#ztest");
         closenav();
         clearall();
+    }); 
+    $("#npbtn").click(function () {
+        openit("#npchart");
+        closenav();
+        clearall();
     });   
     $("#chitestbtn").click(function () {
         openit("#chitest");
