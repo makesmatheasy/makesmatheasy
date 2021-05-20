@@ -13859,6 +13859,11 @@
                            href="#">Stadium</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#claw"
+                           style="text-decoration:none;"
+                           href="#">Claw</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#interioranglecal"
                            style="text-decoration:none;"
                            href="#">Interior Angle Calculator</a></td>
@@ -21401,7 +21406,67 @@ N is the population size.
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
+
+        <div class="modal fade" id="claw" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Claw</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Straight line length</h5>
+                                    <p class="text-center">\[l = 2 \space (R - r) \]</p>
+                                    <p class="text-center">R = radius large circle</p>
+                                    <p class="text-center">r = radius small circle</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = π \space (R + r) + l \]</p>
+                                    <p class="text-center">\[\space \space = π \space (R + r) + 2 \space (R - r) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{π \space (R^2 - r^2)}{2} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/claw.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius large cicle (R)" id="inputlargerad"
+                                       oninput="solveclaw();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius small circle (r)" id="inputsmallrad"
+                                       oninput="solveclaw();">
+                            <p class="stopwrap" id="resultoflinelen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofclawperi"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofclawarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="trapezium" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
