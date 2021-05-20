@@ -14751,29 +14751,21 @@ function occfind(){
     document.getElementById("occans").innerHTML = ans
 }
 
-function utcal()
-{
+function utcal() {
     var num1=document.getElementById("urx1").value;
     var num2=document.getElementById("urx2").value;
     var num3=document.getElementById("urx3").value;
     var num4=document.getElementById("urx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num3=parseFloat(num3);
-        var z=num1/num3;
-        ans="The unit rate is: "+z+" "+num2+"/"+num4;
-    }
-    document.getElementById("utcans").innerHTML=ans;
+    if(num1==""||num2==""||num3==""||num4=="") {
+        document.getElementById("utcans").innerHTML="\\[Please \\space Enter \\space all \\space the \\space field\\]";
+        renderMathInElement(document.getElementById("utcans"));
+    } else {
+        var z=parseFloat(num1)/parseFloat(num3);
+        document.getElementById("utcans").innerHTML="\\[The \\space unit \\space rate \\space is: \\space"+z.toFixed(3)+"\\space \\frac{"+num2+"}{"+num4+"}\\]";
+        renderMathInElement(document.getElementById("utcans"));}
 }
 
 //  chi value test
-// obs - observed
 function chivalue() {
     let list = document.getElementById('obsList').value
     let obsList = list.split(' ');
@@ -14795,10 +14787,7 @@ function chivalue() {
         ans += chiValue[i]
     }
     ans = Number.parseFloat(ans).toPrecision(5)
-    console.log(ans);
     let sigValue = parseFloat(document.getElementById('sigValue').value)
-    console.log(sigValue);
-    console.log(ans < sigValue);
 
     if (ans < sigValue) {
         document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> < <strong>" + sigValue + "</strong>"
@@ -14810,13 +14799,9 @@ function chivalue() {
         document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> = <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     }
-
-
-
 }
 
-function manhatcal()
-{
+function manhatcal(){
     var num1=parseFloat(document.getElementById("mdx1").value);
     var num2=parseFloat(document.getElementById("mdx2").value);
     var num3= parseFloat(document.getElementById("mdx3").value);
@@ -14885,52 +14870,34 @@ function volofcube() {
         renderMathInElement(document.getElementById("cubeAns3"));
 }
 
-function Square(n, i, j)
-{
+function Square(n, i, j){
     var mid = ((i + j) / 2);
-
     var mul = mid * mid;
-
     if ((mul == n) || (Math.abs(mul - n) < 0.0001))
         return mid;
-
     else if (mul < n)
         return Square(n, mid, j);
-
     else
         return Square(n, i, mid);
 }
 
-function findSqrt()
-{
+function findSqrt() {
     var i = 1;
     const n = parseInt(document.getElementById("squarerootin").value);
-
     var result=document.getElementById("squarerootresult");
-
     var found = false;
-    while (!found)
-    {
-
-        if (i * i == n)
-        {
+    while (!found){
+        if (i * i == n){
             result.innerHTML = ` The  square root  of  ${n}  is  ${i}`;
             found = true;
-        }
-
-        else if (i * i > n)
-        {
+        } else if (i * i > n) {
             var res = Square(n, i - 1, i);
             result.innerHTML = `The square root  of ${n}  is  ${res.toFixed(4)}`;
-
-            found = true;
-        }
-        i++;
-    }
+            found = true;     }
+        i++;}
 }   
 
-function vpdscal()
-{
+function vpdscal(){
     var num1=document.getElementById("vpdsuc").value;
     var num2=document.getElementById("vpdvar").value;
     ans="";
