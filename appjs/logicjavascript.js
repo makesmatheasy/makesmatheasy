@@ -7825,6 +7825,38 @@ function torussolve() {
     }
   }
 
+//4-D Shapes Calculator
+//created function for tesseract
+function solvetesseract() {
+    var edge = document.getElementById("inputtessedge").value;  
+    var areaoutput = document.getElementById("resultoftessarea");
+    var voloutput = document.getElementById("resultoftessvol");
+    var hypvoloutput = document.getElementById("resultoftesshypvol");
+    var areatemp = "";
+    var voltemp = "";
+    var hypvoltemp = "";
+    if (edge != "") {
+        areatemp += "\\[Area \\space of \\space tesseract \\space \\newline 24 \\times (" + edge + ")^2" + "\\ = " + eval(String(24 * edge * edge)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        voltemp += "\\[Volume \\space of \\space tesseract \\space \\newline 8 \\times (" + edge + ")^3" + "\\ = " + eval(String(8 * edge * edge * edge)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        hypvoltemp += "\\[Hypervolume \\space of \\space tesseract \\space \\newline (" + edge + ")^4" + "\\ = " + eval(String(edge * edge * edge * edge)).toFixed(2) + "\\]";
+        hypvoloutput.innerHTML = hypvoltemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(hypvoloutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = ""; 
+        hypvoloutput.innerHTML = "";    
+
+    }
+}
+
 function solvendimsphere() {
     var g = 7;
 var C = [0.99999999999980993, 676.5203681218851, -1259.1392167224028,771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];

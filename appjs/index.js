@@ -168,6 +168,7 @@ function openit(id) {
         "#hydroz",
         "#shapescal",
         "#tdshapescal",
+        "#fdshapescal",
         "#divide",
         "#simpletrignocollapse",
         "#trigonovaluestable",
