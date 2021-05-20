@@ -11448,6 +11448,15 @@ function coneincubefind(){
     document.getElementById("coneincubeans").innerHTML = "The radius is "+r+"and the height is "+h
 }
 
+function scyffind(){
+    let h = parseInt(document.getElementById("scyf").value) 
+    let R = parseInt(document.getElementById("scyf1").value)
+    let r = parseInt(document.getElementById("scyf2").value)  
+    var x = r;
+    var V = ((4 * 3.14 * Math.pow(r, 3)) / 3); 
+    document.getElementById("scyfans").innerHTML =  V;
+}
+
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
     if (n < 4)
