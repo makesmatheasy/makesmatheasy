@@ -5481,14 +5481,14 @@ function solvestadium() {
     var stalentemp = "";
     var peritemp = "";
     var areatemp = "";
-    if (a != "") {
+    if (a != "" && r != "") {
         stalentemp += "\\[Stadium \\space length \\space \\newline" + a  + "+ 2 \\space (" + r + ")" + "\\ = " + eval(String( parseFloat(a) + (2 * parseFloat(r) ))).toFixed(2) + "\\]";
         stalenoutput.innerHTML = stalentemp;
 
         peritemp += "\\[Perimeter \\space \\newline 2 \\times ( 3.14 \\times" + r + "+" + a + ")" + "\\ = " + eval(String(2 * (3.141592653589 * parseFloat(r) + parseFloat(a) ))).toFixed(2) + "\\]";
         perioutput.innerHTML = peritemp;
 
-        areatemp += "\\[Area \\space \\newline" + r + "\\times ( 3.14 \\times" + r + "+ 2" + a + ")" + "\\ = " + eval(String(parseFloat(r) * ((3.141592653589 * parseFloat(r) )+(2 * parseFloat(a) )))).toFixed(2) + "\\]";
+        areatemp += "\\[Area \\space \\newline" + r + "\\times ( 3.14 \\space" + r + "+ 2 \\space (" + a + " ) )" + "\\ = " + eval(String(parseFloat(r) * ((3.141592653589 * parseFloat(r) )+(2 * parseFloat(a) )))).toFixed(2) + "\\]";
         areaoutput.innerHTML = areatemp;
 
         renderMathInElement(stalenoutput);
@@ -5497,6 +5497,41 @@ function solvestadium() {
 
     } else {
         stalenoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
+function solveclaw() {
+    var R = document.getElementById("inputlargerad").value;
+    var r = document.getElementById("inputsmallrad").value;
+    var linelenoutput = document.getElementById("resultoflinelen");
+    var perioutput = document.getElementById("resultofclawperi");
+    var areaoutput = document.getElementById("resultofclawarea");
+    var linelentemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (R != "" && r != "") {
+        if(R < r) {
+            linelenoutput.innerHTML = "R should be greater than r";;
+        } else {
+            linelentemp += "\\[Straight \\space line \\space length \\space \\newline 2 (" + R  + "-" + r + ")" + "\\ = " + eval(String( 2 * (parseFloat(R) - parseFloat(r)))).toFixed(2) + "\\]";
+            linelenoutput.innerHTML = linelentemp;
+
+            peritemp += "\\[Perimeter \\space \\newline 3.14 \\space (" + R + "+" + r + ")" + "+" + " 2 \\space (" + R  + "-" + r + ")" + "\\ = " + eval(String( (3.141592653589793 * (parseFloat(R) + parseFloat(r))) + (2 * (parseFloat(R) - parseFloat(r))) )).toFixed(2) + "\\]";
+            perioutput.innerHTML = peritemp;
+
+            areatemp += "\\[Area \\space \\newline \\frac{1}{2} \\times 3.14 \\space (" + R + "^2 -" + r + "^2 )" + "\\ = " + eval(String((0.5 * 3.141592653589 * (parseFloat(R) * parseFloat(R))) - (0.5 * 3.141592653589 * (parseFloat(r) * parseFloat(r))) )).toFixed(2) + "\\]";
+            areaoutput.innerHTML = areatemp;
+
+            renderMathInElement(linelenoutput);
+            renderMathInElement(perioutput);
+            renderMathInElement(areaoutput);
+        }
+
+    } else {
+        linelenoutput.innerHTML = "";
         perioutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
