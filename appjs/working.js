@@ -117,6 +117,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#corrbtn").click(function () {
+        openit("#corr");
+        closenav();
+        clearall();
+    });
     $("#cov").click(function () {
         openit("#covs");
         closenav();
@@ -514,6 +519,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#alibtn").click(function () {
+        openit("#ali");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();
@@ -627,7 +637,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#typenumbtn").click(function () {
+        openit("#typenum");
+        closenav();
+        clearall();
+    });
 
     $("#resbtn").click(function () {
         openit("#res1");
@@ -919,8 +933,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#parabbtn").click(function () {
-        openit("#parab");
+    $("#pandcbtn").click(function () {
+        openit("#pandc");
+        closenav();
+        clearall();
+    });
+    $("#expgrwth").click(function () {
+        openit("#expgrwths");
         closenav();
         clearall();
     });
