@@ -5306,6 +5306,92 @@ function solvecosine() {
         
     }
 }
+// Law of sines calculator
+function lawsine() {
+    const f = document.getElementById("sformula").value;
+    console.log(f)
+    switch (f) {
+        case "1":
+           document.getElementById("sside1").placeholder="Enter side a";
+           document.getElementById("sside2").placeholder="Enter side b";
+           document.getElementById("sangle1").placeholder="Enter Angle (in degrees) A";
+           document.getElementById("sangle2").placeholder="Enter Angle (in degrees) B";
+           break;
+           
+        case "2":
+            document.getElementById("sside1").placeholder="Enter side b";
+            document.getElementById("sside2").placeholder="Enter side c";
+            document.getElementById("sangle1").placeholder="Enter Angle (in degrees) B";
+            document.getElementById("sangle2").placeholder="Enter Angle (in degrees) C"; 
+            break;
+        case "3":
+           document.getElementById("sside1").placeholder="Enter side a";
+           document.getElementById("sside2").placeholder="Enter side c";
+           document.getElementById("sangle1").placeholder="Enter Angle (in degrees) A";
+           document.getElementById("sangle2").placeholder="Enter Angle (in degrees) C";
+           break;
+    }
+}
+
+function solvesine() {
+    var sside1 = document.getElementById("sside1").value;
+    var sside2 = document.getElementById("sside2").value;
+    var sangle1 =document.getElementById("sangle1").value;
+    var sangle2 =document.getElementById("sangle2").value;
+
+    var acts1=document.getElementById("sside1").placeholder;
+    acts1=acts1[acts1.length-1];
+    var acts2=document.getElementById("sside2").placeholder;
+    acts2=acts2[acts2.length-1];
+    var acta1=document.getElementById("sangle1").placeholder;
+    acta1=acta1[acta1.length-1];
+    var acta2=document.getElementById("sangle2").placeholder;
+    acta2=acta2[acta2.length-1];
+    
+    let srangle1,srangle2,sineresult,sinexplain;
+    
+    if ((sside1 != "") && (sside2 != "") && (sangle1 != "")){
+        srangle1=sangle1*Math.PI/180;
+        sangle2=Math.asin(sside2*Math.sin(srangle1)/sside1);
+        srangle2=(sangle2*180/Math.PI).toFixed(3);
+        sineresult="\\[∠"+acta2+"="+srangle2+"°\\]";
+        sinexplain="\\[∠"+acta2+"=sin^{-1}(\\frac{sin("+acta1+")\\times "+acts2+"}{"+acts1+"})\\]"+"\\[∠"+acta2+"=sin^{-1}(\\frac{sin("+sangle1+"°)\\times "+sside2+"}{"+sside1+"})\\]";
+        
+    }
+    else if ((sside1 != "") && (sside2 != "") && (sangle2 != "")){
+        srangle2=sangle2*Math.PI/180;
+        sangle1=Math.asin(sside1*Math.sin(srangle2)/sside2);
+        srangle1=(sangle1*180/Math.PI).toFixed(3);
+        sineresult="\\[∠"+acta1+"="+srangle1+"°\\]";
+        sinexplain="\\[∠"+acta1+"=sin^{-1}(\\frac{sin("+acta2+")\\times "+acts1+"}{"+acts2+"})\\]"+"\\[∠"+acta1+"=sin^{-1}(\\frac{sin("+sangle2+"°)\\times "+sside1+"}{"+sside2+"})\\]";
+        
+    }
+    else if ((sside1 != "") && (sangle1 != "") && (sangle2 != "")){
+        srangle1=sangle1*Math.PI/180;
+        srangle2=sangle2*Math.PI/180;
+        sside2=(sside1*Math.sin(srangle2)/Math.sin(srangle1)).toFixed(3);
+        sineresult="\\["+acts2+"="+sside2+"\\]";
+        sinexplain="\\["+acts2+"=\\frac{sin("+acta2+")\\times "+acts1+"}{sin("+acta1+")}\\]"+"\\["+acta2+"=\\frac{sin("+sangle2+"°)\\times "+sside1+"}{sin("+sangle1+")}\\]";
+       
+    }
+    else if ((sside2 != "") && (sangle1 != "") && (sangle2 != "")){
+        srangle1=sangle1*Math.PI/180;
+        srangle2=sangle2*Math.PI/180;
+        sside1=(sside2*Math.sin(srangle1)/Math.sin(srangle2)).toFixed(3);
+        sineresult="\\["+acts1+"="+sside1+"\\]";
+        sinexplain="\\["+acts1+"=\\frac{sin("+acta1+")\\times "+acts2+"}{sin("+acta2+")}\\]"+"\\["+acta1+"=\\frac{sin("+sangle1+"°)\\times "+sside2+"}{sin("+sangle2+")}\\]";
+    
+    }
+    else{
+        sineresult="Enter Any 3 values";
+        sinexplain="";
+    }
+    document.getElementById("sineresult").innerHTML=sineresult;
+    document.getElementById("sineexplain").innerHTML=sinexplain;
+    renderMathInElement(document.getElementById("sineresult"));
+    renderMathInElement(document.getElementById("sineexplain"));
+    
+}
 function solveparaArc() {
     var height = document.getElementById("inputa").value;
     var chord = document.getElementById("inputb").value;
@@ -8946,6 +9032,7 @@ function spicon() {
         }
     }
 }
+
 
 function lentgthcon() {
     const f = lenu(document.getElementById("lengthcon-1").value);
