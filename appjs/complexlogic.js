@@ -2016,19 +2016,23 @@ function egccal()
     var num2=document.getElementById("egc2").value;
     var num3=document.getElementById("egc3").value;
     ans="";
+    let explain="";
     if(num1==""||num2==""||num3=="")
     {
-        ans="Please fill all the field";
+        ans="\\[Please \\space fill \\space all \\space the \\space field\\]";
     }
     else
     {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
         num3=parseFloat(num3);
-        var si=num1*((1+(num2/100))**num3);
-        ans="The effective rate of growth is: "+si;
+        var si=(num1*((1+(num2/100))**num3)).toFixed(3);
+        ans="\\[The \\space effective \\space rate \\space of \\space growth \\space is: "+si+"\\]";
+        explain="\\[x(t)="+num1+"(1+\\frac{"+num2+"}{100})^"+num3+"\\]"+"\\[\\space "+num1+"("+((1+(num2/100))**num3).toFixed(3)+")\\]"+"\\[\\space ="+si+"\\]";
    
     }
     document.getElementById("egcans").innerHTML=ans;
-
+    document.getElementById("egcexplain").innerHTML=explain;
+    renderMathInElement(document.getElementById("egcans"));
+    renderMathInElement(document.getElementById("egcexplain"));
 }
