@@ -7281,6 +7281,35 @@ function wedgesolve() {
 
 }
 
+function solverightwedge() {
+    var a = document.getElementById("inputwedgea").value;
+    var b = document.getElementById("inputwedgeb").value;
+    var c = document.getElementById("inputwedgec").value;
+    var heightoutput = document.getElementById("resultofrightwedgeheight");
+    var voloutput = document.getElementById("resultofrightwedgevol");
+    var areaoutput = document.getElementById("resultofrightwedgearea");
+    var heighttemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var h=Math.sqrt(((4*c*c)-(b*b))/4).toFixed(2);
+    if ((a != "") && (b!="") && (c!="")) {
+        heighttemp += "\\[Height \\space of \\space Right \\space Wedge \\space \\newline \\sqrt{\\frac{4 \\times" + c + "^2 -" + b + "^2}{4}}" + "\\ = " + eval(String(h)) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        voltemp += "\\[Volume \\space of \\space Right \\space Wedge \\space \\newline \\frac{" + a + "\\times" + b+ "\\times" + h + "}{2} " + "\\ = " + eval(String(a*b*h*0.5)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Right \\space Wedge \\space  \\newline" + a+ "\\times" + b + "+2 \\times" + a + "\\times" + c + "+" + h + "\\times" + b + "\\ = " + eval(String((a*b)+ (2*a*c) + (h*b))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(heightoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        heightoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;
 
