@@ -10058,7 +10058,13 @@ function solveperc()
 }
 
 function typenumfind(){
-    let n = parseInt(document.getElementById("typenum").value)
+    let n = document.getElementById("typenum").value;
+    if(n=="")
+    {
+        document.getElementById("typenumans").innerHTML =  "Please enter number to find answer";
+    }
+    else{
+      n= parseInt(n);
     var prev = 0;
     var curr;
     for (var i = 1; i <= n; i++)
@@ -10067,6 +10073,7 @@ function typenumfind(){
         document.getElementById("typenumans").innerHTML =  curr + " ";
         prev = curr;
     }
+}
 }
 
 function typenum1find(){
@@ -11564,7 +11571,8 @@ function catalan(num)
     return res;
 }
 
-function catalanNumbers(num){
+function catalanNumbers(num)
+{
     if(num=="")
     {
         document.getElementById("catNumResult").innerHTML = "Enter the number to find answer";
@@ -11576,8 +11584,8 @@ function catalanNumbers(num){
         res+= " ";
     }
     document.getElementById("catNumResult").innerHTML = "The Catalan Numbers are: " + res;    
-}   
 }
+}   
 
 //Smallest number divisible function
 function gcd(a, b)
