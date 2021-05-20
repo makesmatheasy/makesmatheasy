@@ -2326,6 +2326,26 @@ function impsefind(){
     document.getElementById("impseans").innerHTML = ans
 }
 
+function impse1find(){
+    let x = parseInt(document.getElementById("impse3").value)
+    let n = parseInt(document.getElementById("impse4").value)
+    let sum = 1, term = 1, fct, j, y = 2, m;
+    let i;
+    for(i = 1; i < n; i++)
+    {
+        fct = 1;
+        for(j = 1; j <= y; j++)
+        {
+            fct = fct * j;
+        }
+        term = term * (-1);
+        m = term * Math.pow(x, y) / fct;
+        sum = sum + m;
+        y += 2;
+    }
+    document.getElementById("impse1ans").innerHTML = sum
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
