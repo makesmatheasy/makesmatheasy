@@ -224,6 +224,7 @@ function openit(id) {
         "#ttest",
         "#ftest",
         "#ztest",
+        "#pchart",
         "#npchart",
         "#betagamma",
         "#parallel",

@@ -474,6 +474,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+    $("#pbtn").click(function () {
+        openit("#pchart");
+        closenav();
+        clearall();
+    });   
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
