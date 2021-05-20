@@ -9620,7 +9620,7 @@ function profitloss() {
 
 function trapinsemifind(){
     let a = parseInt(document.getElementById("trapinsemiin").value)
-    var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
+    var a = (3 * Math.sqrt(3)* Math.pow(a, 2)) / 4; 
     document.getElementById("trapinsemians").innerHTML =  a;
 }
 
