@@ -13859,7 +13859,7 @@ function fvalue() {
         ans += "\\[(Variance 1) \\space s1^2 \\space = \\space \\frac{\\sum{{(X1-\\bar{X1})}^2}}{n1-1} \\]";
         ans += "\\[\\space \\frac{\\sum{{(X1-\\bar{X1})}^2}}{"+(n1)+"-1} \\]";
         ans += "\\[\\space \\frac{"+(diff1)+"}{"+(n1-1)+"} \\]";
-        ans += "\\[\\space Variance1= \\space"+Number.parseFloat(diff1/(n1-1)).toPrecision(4)+" \\]";
+        ans += "\\[\\space Variance1= \\space "+Number.parseFloat(diff1/(n1-1)).toPrecision(4)+" \\]";
         
         document.getElementById('means1').innerHTML = "Mean of first set of numbers = "+ Number.parseFloat(mean1).toPrecision(4);
         var output=  document.getElementById('Variance1')
@@ -13951,6 +13951,75 @@ function zvalue() {
         renderMathInElement(output);
         document.getElementById('ztestans').innerHTML ="<strong>Z score =" + Number.parseFloat(z).toPrecision(4) + " < " + pvalue + ", </strong>Null Hypothesis is Not Rejected.";
     }
+}
+
+
+//np chart
+function npchart_sum(arr) {
+    let sum=0;
+    for (var i = 0; i < arr.length; i++){
+        sum += arr[i];
+        console.log(sum);
+    }
+
+    return sum;
+}
+
+
+function npvalue() {
+    let list1 = document.getElementById("defective").value;
+    let n = document.getElementById("no").value;
+    
+    console.log(list1+" "+n);
+    list1 = list1.split(" ");
+    let n1 = list1.length;
+    console.log(list1[0])
+    for (var i = 0; i < n1; i++) {
+        list1[i] = parseInt(list1[i]);
+    }
+       
+    var ans="";
+    var ucl="";
+    var sum=npchart_sum(list1);
+    var pbar=Number.parseFloat((sum)/(n*n1)).toPrecision(4);
+    var ucl1=parseFloat(Number.parseFloat(3*(Math.sqrt((n*pbar)*(1-pbar)))).toPrecision(4));
+    
+    document.getElementById('npans').innerHTML="The control limits are:";
+    ans+= "\\[\\space (CL) \\space =\\space n\\bar{p} \\space= n\\times \\frac{\\sum np}{\\sum n} \\space = \\frac{Total \\space No \\space of \\space defectives}{Total \\space no \\space of \\space items \\space inspected}\\]"
+    ans+= "\\[ \\space "+n+"\\times \\frac{"+sum+"}{"+n+" \\times "+n1+"}\\]";
+    ans+= "\\[ \\space "+n+"\\times \\frac{"+sum+"}{"+n*n1+"}\\]";
+    ans+= "\\[ \\space "+n+"\\times "+pbar+"\\]";
+    ans+= "\\[CL \\space = \\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+"\\]";
+    var controlLimit=document.getElementById('cl')
+    controlLimit.innerHTML=ans;
+    renderMathInElement(controlLimit);
+
+
+
+    ucl+= "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space n \\bar{p} +\\space 3 \\sqrt{n \\bar{p} (1- \\bar{p})} \\]"
+    ucl+= "\\[\\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+" + \\space 3 \\sqrt{"+n*pbar+" \\space X \\space "+(1-pbar)+"} \\]"
+    ucl+= "\\[\\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+" +\\space 3 \\sqrt{"+(n*pbar)*(1-pbar)+"} \\]"
+    ucl+= "\\[\\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+" + "+ucl1+" \\]"
+    ucl+= "\\[UCL \\space = \\space "+Number.parseFloat(n*pbar+ucl1).toPrecision(4)+" \\]"
+    var upperControlLimit=document.getElementById('uppercontrol');
+    upperControlLimit.innerHTML=ucl;
+    renderMathInElement(upperControlLimit);
+   
+
+
+    var lcl="";
+    lcl+= "\\[Lower \\space Control \\space Limit \\space (LCL) \\space =\\space n \\bar{p} -\\space 3 \\sqrt{n \\bar{p} (1- \\bar{p})} \\]"
+    lcl+= "\\[\\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+" - \\space 3 \\sqrt{"+n*pbar+" \\space X \\space "+(1-pbar)+"} \\]"
+    lcl+= "\\[\\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+" - \\space 3 \\sqrt{"+(n*pbar)*(1-pbar)+"} \\]"
+    lcl+= "\\[\\space "+Number.parseFloat(n*(pbar)).toPrecision(4)+" - "+ucl1+" \\]"
+    lcl+= "\\[LCL \\space =\\space "+Number.parseFloat(n*pbar-ucl1).toPrecision(4)+" \\]"
+    var lowerControlLimit=document.getElementById('lowercontrol');
+    lowerControlLimit.innerHTML=lcl;
+    renderMathInElement(lowerControlLimit);
+    // document.getElementById('lcl').innerHTML = "";
+  
+
+
 }
 
 //confidence interval
