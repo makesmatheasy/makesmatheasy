@@ -9964,6 +9964,23 @@ function solveperc()
     }
 }
 
+function typenumfind(){
+    let n = parseInt(document.getElementById("typenum").value)
+    var prev = 0;
+    var curr;
+    for (var i = 1; i <= n; i++)
+    {
+        curr = findTriangularNumber(i); 
+        document.getElementById("typenumans").innerHTML =  curr + " ";
+        prev = curr;
+    }
+}
+
+function findTriangularNumber(n)
+{
+    return (n * (n + 1)) / 2;
+}
+
 //Statistics Calculator
 function cal_func_stats()
 {

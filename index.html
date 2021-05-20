@@ -2507,6 +2507,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="typenumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Types of numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('','#typenum','c','typenumnumimgfav')"><img
+                                        id="typenumnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -17105,8 +17120,15 @@ N is the population size.
       We can also say that it is a generalised mean with the exponent value as 2. </p>   
 </div>
 
-
-
+<div>
+    <h2>Print tetrahedral numbers upto Nth term</h2>
+    <br>
+    <input type="text" id="typenum" class="form__field"placeholder="Enter the number">
+    <br>
+    <button class="btn btn-dark" onclick="typenumfind()">Find</button>
+    <br>
+    <h5 id="typenumans"></h5>
+</div>
 
 <div class="collapse" id="zscores">
 

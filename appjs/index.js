@@ -233,6 +233,7 @@ function openit(id) {
         "#giff",
         "#qrtl",
         "#decl",
+        "#typenum",
         "#dip",
         "#cross",
         "#wandt",
