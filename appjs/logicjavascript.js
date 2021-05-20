@@ -1513,7 +1513,7 @@ function greatsfind(){
     let side  = parseInt(document.getElementById("greatinin1").value)
     let nextN = Math.floor(Math.sqrt(side)) + 1;
     let ans = nextN*nextN
-    document.getElementById("greatsqaure").innerHTML = ans
+    document.getElementById("greatsquare").innerHTML = ans
 }
 
 function ssdfind(){
@@ -2279,7 +2279,7 @@ function addsubcfind(){
     let ans = (n - prevCube) < (nextCube - n)
     ? (prevCube - n)
     : (nextCube - n)
-    document.getElementById("addsubcans")
+    document.getElementById("addsubcans").innerHTML = ans;
 }
 
 function addsubsfind(){
@@ -2289,7 +2289,7 @@ function addsubsfind(){
     let ans = (n - prevSquare) < (nextSquare - n)
     ? (prevSquare - n)
     : (nextSquare - n)
-    document.getElementById("addsubsans")
+    document.getElementById("addsubsans").innerHTML = ans;
 }
 
 function solvepenta(){
@@ -12068,19 +12068,19 @@ function hammingCalc1(){
     }
 }
 
-function minsquarefind(){
-    let N = parseInt(document.getElementById("minsquarein").value)
+function minsquarefind1(){
+    let N = parseInt(document.getElementById("minsquare5").value)
     let proAngleVar;
         if (N % 4 == 0) {
-            proAngleVar = pi * (180.0 / N) / 180;
+            proAngleVar = Math.PI * (180.0 / N) / 180;
         } else {
-            proAngleVar = pi * (180.0 / (2 * N)) / 180;
+            proAngleVar = Math.PI * (180.0 / (2 * N)) / 180;
         }
         let negX = 1.0e+99, posX = -1.0e+99, negY = 1.0e+99, posY = -1.0e+99;
  
         for ( let j = 0; j < N; ++j) {
-            let px = Math.cos(2 * pi * j / N + proAngleVar);
-            let py = Math.sin(2 * pi * j / N + proAngleVar);
+            let px = Math.cos(2 * Math.PI * j / N + proAngleVar);
+            let py = Math.sin(2 * Math.PI * j / N + proAngleVar);
  
             negX = Math.min(negX, px);
             posX = Math.max(posX, px);
@@ -12088,8 +12088,8 @@ function minsquarefind(){
             posY = Math.max(posY, py);
         }
         let opt2 = Math.max(posX - negX, posY - negY);
-        let ans =  opt2 / Math.sin(pi / N) / 2;
-        document.getElementById("minsquareans").innerHTML = ans
+        let ans =  opt2 / Math.sin(Math.PI / N) / 2;
+        document.getElementById("minsquareans1").innerHTML = ans
 }
 
 //function for encoding message using hamming code with even parity from left to right
