@@ -14528,11 +14528,22 @@ function manhatcal()
 }
 
 function volofcube() {
-    var x = parseInt(document.getElementById("chngsidecube").value);
-    var ans = "percentage increase in the volume of the cube is ";
-    const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
-    ans = ans + per + " %";
-    document.getElementById("cubeAns").innerText = ans;
+    var x = document.getElementById("chngsidecube").value;
+    var per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
+    if (x!=""){
+        document.getElementById("cubeAns").innerHTML = "\\[Percentage \\space increase \\space in \\space the \\space volume \\space of \\space the \\space cube \\space is \\space\\]";
+        document.getElementById("cubeAns1").innerHTML = "\\[\\frac{(change \\space in \\space radius)^3}{10000} + 3\\times (change \\space in \\space radius) + \\frac{(3 \\times (change \\space in \\space radius)^2)}{100}\\]";
+        document.getElementById("cubeAns2").innerHTML = "\\[\\frac{"+x+"^3}{10000} + 3\\times "+x+" + \\frac{(3 \\times "+x+"^2)}{100}\\]";
+        document.getElementById("cubeAns3").innerHTML = "\\[ "+(Math.pow(x, 3) / 10000).toFixed(2)+" + "+(3 * x).toFixed(2)+" + "+((3 * Math.pow(x, 2)) / 100).toFixed(2)+" \\space = \\space "+per.toFixed(3)+" \\% \\]";
+        } else{
+            document.getElementById("cubeAns").innerHTML = "";
+            document.getElementById("cubeAns1").innerHTML = "\\[Enter \\space all \\space values\\]";
+            document.getElementById("cubeAns2").innerHTML = "";
+            document.getElementById("cubeAns3").innerHTML = "";}
+        renderMathInElement(document.getElementById("cubeAns"));
+        renderMathInElement(document.getElementById("cubeAns1"));
+        renderMathInElement(document.getElementById("cubeAns2"));
+        renderMathInElement(document.getElementById("cubeAns3"));
 }
 
 function Square(n, i, j)
