@@ -9872,6 +9872,12 @@ function shtfind(){
     document.getElementById("shtans").innerHTML =  x;
 }
 
+function htfind(){
+    let a = parseInt(document.getElementById("htin").value)
+    var x = a / 3;
+    document.getElementById("htans").innerHTML =  x;
+}
+
 // gamma find function
 function gammafind(){
     // function to find gamma function of any no.
