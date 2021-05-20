@@ -914,8 +914,13 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#parabbtn").click(function () {
-        openit("#parab");
+    $("#pandcbtn").click(function () {
+        openit("#pandc");
+        closenav();
+        clearall();
+    });
+    $("#expgrwth").click(function () {
+        openit("#expgrwths");
         closenav();
         clearall();
     });
