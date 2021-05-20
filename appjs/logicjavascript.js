@@ -14377,13 +14377,83 @@ function zvalue() {
     }
 }
 
+//p chart
+function pchart_sum(arr) {
+    let sum=0;
+    for (var i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+
+function pvalue() {
+    let list1 = document.getElementById("defectives").value;
+    let n = document.getElementById("samples").value;
+    n=parseInt(n);
+    console.log(list1+" "+n);
+    list1 = list1.split(" ");
+    var n1 =0;
+    n1=parseInt(list1.length);
+
+    for (var i = 0; i < n1; i++) {
+        list1[i] = parseInt(list1[i]);
+    }
+       
+    var ans="";
+    var ucl="";
+    let sum=pchart_sum(list1);
+    var pbar=Number.parseFloat(Number.parseFloat((sum)/(n*n1)).toPrecision(4));
+    var ucl1=Number.parseFloat(3*Math.sqrt((pbar*(1-pbar))/n).toPrecision(4));
+
+    document.getElementById('npans').innerHTML="The control limits are:";
+    ans+= "\\[\\space \\bar{p} \\space = \\frac{Total \\space No \\space of \\space defectives}{Total \\space no \\space of \\space items \\space inspected}\\]"
+    ans+= "\\[ \\space  \\frac{"+sum+"}{"+n+" \\times "+n1+"}\\]";
+    ans+= "\\[ \\space  \\frac{"+sum+"}{"+n*n1+"}\\]";
+    ans+= "\\[ \\space  "+pbar+"\\]";
+    var controlLimit=document.getElementById('pbar')
+    controlLimit.innerHTML=ans;
+    renderMathInElement(controlLimit);
+    var main=Number.parseFloat(3*Math.sqrt((pbar*(1-pbar))/n)).toPrecision(4);
+
+    ucl+= "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{p} +\\space 3 \\sqrt{\\frac{ \\bar{p} (1- \\bar{p})}{n}} \\]"
+    ucl+= "\\[\\space "+pbar+" +\\space 3 \\sqrt{\\frac{ "+pbar+" \\space X "+(1-pbar)+"}{"+n+"}} \\]"
+    ucl+= "\\[\\space "+pbar+" +\\space 3 \\sqrt{\\frac{ "+(pbar*(1-pbar))+"}{"+n+"}} \\]"
+    ucl+= "\\[\\space "+pbar+" +\\space 3 \\sqrt{"+(pbar*(1-pbar))/n+"} \\]"
+    ucl+= "\\[\\space "+pbar+" +\\space "+Number.parseFloat(3*Math.sqrt((pbar*(1-pbar))/n).toPrecision(4))+" \\]"
+    ucl+= "\\[UCL \\space =\\space "+Number.parseFloat((pbar+ucl1).toPrecision(4))+" \\]"
+    
+    var upperControlLimit=document.getElementById('ucl');
+    upperControlLimit.innerHTML=ucl;
+    renderMathInElement(upperControlLimit);
+   
+
+
+    var lcl="";
+    lcl+= "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{p} -\\space 3 \\sqrt{\\frac{ \\bar{p} (1- \\bar{p})}{n}} \\]"
+    lcl+= "\\[\\space "+pbar+" -\\space 3 \\sqrt{\\frac{ "+pbar+" \\space X "+(1-pbar)+"}{"+n+"}} \\]"
+    lcl+= "\\[\\space "+pbar+" -\\space 3 \\sqrt{\\frac{ "+(pbar*(1-pbar))+"}{"+n+"}} \\]"
+    lcl+= "\\[\\space "+pbar+" - \\space 3 \\sqrt{"+(pbar*(1-pbar))/n+"} \\]"
+    lcl+= "\\[\\space "+pbar+" -\\space "+Number.parseFloat(3*Math.sqrt((pbar*(1-pbar))/n).toPrecision(4))+" \\]"
+    lcl+="\\[LCL \\space =\\space "+Number.parseFloat((pbar-ucl1).toPrecision(4))+" \\]"
+    //check if lcl is negative
+    if(Number.parseFloat((pbar-ucl1).toPrecision(4))<0)
+    lcl+="\\[Since \\space the \\space fraction \\space defective \\space cannot \\space be \\space - ve \\space \\therefore \\space LCL \\space = 0 \\]"
+    var lowerControlLimit=document.getElementById('lcl');
+    lowerControlLimit.innerHTML=lcl;
+    renderMathInElement(lowerControlLimit);
+    
+
+
+}
+
 
 //np chart
 function npchart_sum(arr) {
     let sum=0;
     for (var i = 0; i < arr.length; i++){
         sum += arr[i];
-        console.log(sum);
     }
 
     return sum;
@@ -14397,7 +14467,6 @@ function npvalue() {
     console.log(list1+" "+n);
     list1 = list1.split(" ");
     let n1 = list1.length;
-    console.log(list1[0])
     for (var i = 0; i < n1; i++) {
         list1[i] = parseInt(list1[i]);
     }
@@ -14445,6 +14514,7 @@ function npvalue() {
 
 
 }
+
 
 //confidence interval
 function confivalue() {
