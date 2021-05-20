@@ -2318,6 +2318,14 @@ function solvepenta(){
     }
 }
 
+function impsefind(){
+    let x = parseInt(document.getElementById("impse1").value)
+    let n = parseInt(document.getElementById("impse2").value)
+    let ans1 = x/81
+    let ans = ans1*(Math.pow(10,n)-1-(9*n))
+    document.getElementById("impseans").innerHTML = ans
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
@@ -2356,6 +2364,16 @@ function solvetetrahexa(){
         inoutput.innerHTML = "";
 
     }
+}
+
+function twicefind(){
+    let a = parseInt(document.getElementById("aofeqn3").value)
+    let b = parseInt(document.getElementById("bofeqn3").value)
+    let c = parseInt(document.getElementById("cofeqn3").value)
+    if (2 * b * b == 9 * a * c)
+        document.getElementById("twiceans").innerHTML  = "Yes";
+    else
+        document.getElementById("twiceans").innerHTML = "No";
 }
 
 function partialdiffsolve() {
@@ -5279,6 +5297,28 @@ function solveparaArc() {
     }
 }
 
+function hypocycloidcalc() {
+    var a = document.getElementById("hypoa").value;
+    var n = document.getElementById("hypon").value;
+    var res = document.getElementById("hypoans");
+    var restemp = "";
+
+    if (a != "" || n != "") {
+        restemp += "\\[Radius \\space of \\space smaller \\space circle \\space = \\frac{" + a + "}{" + n + "} \\]";
+        restemp += "\\[= \\space " + (a/n) + "\\]";
+        restemp += "\\[Chord \\space length(l) \\space = 2 \\times " + a + " \\times \\sin{\\frac{\\pi}{" + n + "}}\\]";
+        restemp += "\\[= \\space " + (2*a*(Math.sin(parseFloat(3.1415926/n)))) + "\\]";
+        restemp += "\\[Perimeter \\space = \\frac{8 \\times a \\times (" + n + "-1)}{" + n + "}\\]";
+        restemp += "\\[= \\space " + (8*a* parseFloat((n-1)/n)) + "\\]";
+        restemp += "\\[Area \\space = \\frac{\\pi \\times " + a + "^{2} \\times (" + n + "-1) \\times (" + n + "-2)}{" + n + "^{2}}\\]";
+        restemp += "\\[= " + (parseFloat(3.14159265 * a**2 * (n-1) * (n-2) / n**2)) + "\\]";
+        res.innerHTML = restemp;//print working steps
+        renderMathInElement(res);
+    } else {
+        res.innerHTML = "";
+        renderMathInElement(res);
+    }
+}
 
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
@@ -6096,34 +6136,6 @@ function solveannulus() {
         circum1output.innerHTML = "";
         circum2output.innerHTML = "";
     }
-}
-
-function solveSlope() {
-    var x1 = document.getElementById("inputlinex1").value;
-    var y1 = document.getElementById("inputliney1").value;
-    var x2 = document.getElementById("inputlinex2").value;
-    var y2 = document.getElementById("inputliney2").value;
-
-    if (x1 == "" || y1 == "" || x2 == "" || y2 == "") {
-        document.getElementById("resultofline").innerHTML = "Please enter all four points";
-        document.getElementById("answerofline").innerHTML = "";
-        document.getElementById("answerofline2").innerHTML = "";
-
-    } else if (parseInt(x2) - parseInt(x1) == 0) {
-        document.getElementById("resultofline").innerHTML = "Infinity";
-    } else {
-        let temp = (y2 - y1) / (x2 - x1);
-        console.log(temp);
-        let sol = "\\[Slope=\\frac{" + y2 + "-" + y1 + "}{" + x2 + "-" + x1 + "}\\]";
-        let sol2 = "\\[Slope=" + temp + "\\]";
-        document.getElementById("resultofline").innerHTML = "\\[Slope=\\frac{y2-y1}{x2-x1}\\]"
-        document.getElementById("answerofline").innerHTML = sol;
-        document.getElementById("answerofline2").innerHTML = sol2;
-        renderMathInElement(document.getElementById("answerofline"));
-        renderMathInElement(document.getElementById("answerofline2"));
-        renderMathInElement(document.getElementById("resultofline"));
-    }
-
 }
 
 // ellipse calculator function
@@ -7471,6 +7483,40 @@ function solveCone() {
         csaoutput.innerHTML = "";
         shoutput.innerHTML = "";
     }
+}
+
+function solveBicone() {
+    var r = document.getElementById("inputbiconerad").value;
+    var h = document.getElementById("inputbiconeheight").value;
+    var diaoutput = document.getElementById("resultofbiconedia");
+    var heightoutput = document.getElementById("resultofbiconeheight");
+    var voloutput = document.getElementById("resultofbiconevol");
+    var areaoutput = document.getElementById("resultofbiconearea");
+    var diatemp = "";
+    var heighttemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if ((r != "") && (h!="")) {
+        diatemp += "\\[Diameter \\space of \\space Bicone \\space \\newline 2 \\times" + r  + "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        heighttemp += "\\[Height \\space of \\space Bicone \\space \\newline 2 \\times" + h + "\\ = " + eval(String(2*h)).toFixed(2) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        voltemp += "\\[Volume \\space of \\space Bicone \\space \\newline \\frac{2}{3} \\times" + r + " \\times" + "\\pi \\times" + h + "\\ = " + eval(String(0.67*r*r*3.14*h)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Bicone \\space  \\newline" + "2 \\times" + r + "\\times \\sqrt{" + h + "^2 +" + r + "^2}" + "\\times \\pi"  + "\\ = " + eval(String(2*3.14*r*Math.sqrt(h*h+r*r))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(diaoutput);
+        renderMathInElement(heightoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        diaoutput.innerHTML = "";
+        heightoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
 }
 
 function solveellipCone() {
@@ -9456,6 +9502,19 @@ function factorialsol(factorialval) {
     }
 }
 
+function binoexpCalc(){
+    var a1 = document.getElementById("binoa1").value;
+    var a0 = document.getElementById("binoa0").value;
+    var b1 = document.getElementById("binob1").value;
+    var b0 = document.getElementById("binob0").value;
+    var c2 = (a1 * b1);
+    var c1 = (a1 * b0 + a0 * b1);
+    var c0 = (a0 * b0);
+
+    var ans = `${c2} * x^2 + ${c1} * x + ${c2}`;
+    document.getElementById("binoexp_ans").innerHTML = ans;
+}
+
 function binomialsolve(valn, valk) {
     document.getElementById("bino_div").style.display = "block";
     var inputval1 = document.getElementById(valn).value;
@@ -9560,9 +9619,17 @@ function profitloss() {
 }
 
 function trapinsemifind(){
-    let a = parseInt(document.getElementById("trapinsemin").value)
+    let r = parseInt(document.getElementById("trapinsemin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
     document.getElementById("trapinsemians").innerHTML =  a;
+}
+
+function trapinsemi1find(){
+    let n = parseInt(document.getElementById("trapinsemin1").value)
+    let m = parseInt(document.getElementById("trapinsemin2").value)
+    var square_of_radius = ( m * n ) / 4;
+    var area = ( 3.141 * square_of_radius );
+    document.getElementById("trapinsemi1ans").innerHTML =  area;
 }
 
 // gamma find function
@@ -10130,6 +10197,39 @@ function etc4find(){
     document.getElementById("etc4ans").innerHTML = countPrime[R]- countPrime[L - 1]+ "<br>"
 }
 
+function etc5find(){
+    let n = parseInt(document.getElementById("etc5").value)
+    let temp = n;
+        let sum = 0;
+        while (n > 1) {
+            sum = sum + phi5(n);
+            n = phi5(n);
+        }
+        if (sum == temp)
+            document.getElementById("etc5ans").innerHTML = "true" 
+            document.getElementById("etc5ans").innerHTML = "false"
+}
+
+function phi5( n)
+    {
+        let result = n;
+ 
+        for ( let p = 2; p * p <= n; ++p)
+        {
+            if (n % p == 0)
+            {
+                while (n % p == 0)
+                {
+                    n = parseInt(n/p);
+                }
+                result -= parseInt(result / p);
+            }
+        }
+        if (n > 1)
+            result -= parseInt(result / n);
+        return result;
+    }
+
 function hmsol() {
     var a = document.getElementById("aval2").value
     var c = document.getElementById("cval2").value
@@ -10248,6 +10348,35 @@ function lacube1find(){
         ans *= n;
  
     document.getElementById("lacube1ans").innerHTML =  ans;
+}
+
+function lacube2find(){
+    let n = parseInt(document.getElementById("lacube2").value)
+    let count = 0;
+    let ans = 1;
+    while (n % 3 == 0)
+    {
+        count++;
+        n /= 3;
+    }
+    if (count % 3)
+        ans *= 3;
+ 
+    for (let i = 4; i <= Math.sqrt(n); i += 3)
+    {
+        count = 0;
+        while (n % i == 0)
+        {
+            count++;
+            n /= i;
+        }
+            ans *= i;
+    }
+ 
+    if (n > 3)
+        ans *= n;
+ 
+    document.getElementById("lacube2ans").innerHTML =  ans;
 }
 
 function cubefreefind(){
@@ -11010,6 +11139,14 @@ function cubeinconefind(){
     document.getElementById("cubeinconeans").innerHTML = a
 }
 
+function cylinderincubefind(){
+    let a = parseInt(document.getElementById("cylinderincube").value)
+    var r = a / 2;
+    var h = a;
+    var V = (3.14 * Math.pow(r, 2) * h); 
+    document.getElementById("cylinderincubeans").innerHTML =  V;
+}
+
 function coneincubefind(){
     let a = parseInt(document.getElementById("shapeinscribedin").value)    
     let r = (a / Math.sqrt(2));
@@ -11149,6 +11286,22 @@ function lucasNumbers(num) {
     document.getElementById("lucNumResult").innerHTML = "The Lucas Series of " + num + " terms is : " + res;    
 
 }
+
+function sumlucasfind(){
+    let N = parseInt(document.getElementById("sumlucas").value)
+    var sum = 0;
+    var a = 2, b = 1, c; 
+    sum += a; 
+    while (b <= N)
+    {
+        sum += b;
+        var c = a + b;
+        a = b;
+        b = c;
+    }
+    document.getElementById("sumlucasans").innerHTML =  sum;
+}
+
 //converts both integer and fractional part of  binary/hexa/octal to decimal
 function calculatefrac(value, base = 2) {
     var [integer, fraction = ''] = value.toString().split('.');
@@ -13667,6 +13820,82 @@ katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, doc
     throwOnError: false
 })
 
+
+function fvalue_xbar(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp,2)
+        diff += temp;
+    }
+    
+    return diff
+}
+//f value
+function fvalue() {
+    let list1 = document.getElementById("dataset1").value;
+    let list2 = document.getElementById("dataset2").value;
+    var ans="";
+    var ans2="";
+
+    list1 = list1.split(" ");
+    list2 = list2.split(" ");
+    let n1 = list1.length;
+    let n2 = list2.length;
+   // f test work for sample size less than 30
+
+    if (n1 <= 30 && n2 <= 30) {
+        for (var i = 0; i < n1; i++) {
+            list1[i] = parseInt(list1[i]);
+        }
+        for (var i = 0; i < n2; i++) {
+            list2[i] = parseInt(list2[i]);
+        }
+  
+        document.getElementById('steps').innerHTML = "Values calculated while the test:"
+        let mean1 = tvalue_mean(list1)
+        let diff1=fvalue_xbar(list1,mean1);
+        ans += "\\[(Variance 1) \\space s1^2 \\space = \\space \\frac{\\sum{{(X1-\\bar{X1})}^2}}{n1-1} \\]";
+        ans += "\\[\\space \\frac{\\sum{{(X1-\\bar{X1})}^2}}{"+(n1)+"-1} \\]";
+        ans += "\\[\\space \\frac{"+(diff1)+"}{"+(n1-1)+"} \\]";
+        ans += "\\[\\space Variance1= \\space"+Number.parseFloat(diff1/(n1-1)).toPrecision(4)+" \\]";
+        
+        document.getElementById('means1').innerHTML = "Mean of first set of numbers = "+ Number.parseFloat(mean1).toPrecision(4);
+        var output=  document.getElementById('Variance1')
+        output.innerHTML=ans;
+        renderMathInElement(output);
+          
+    
+        let mean2 = tvalue_mean(list2);
+        let diff2=fvalue_xbar(list2,mean2);
+        ans2 += "\\[(Variance 2) \\space s2^2 \\space = \\space \\frac{\\sum{{(X2-\\bar{X2})}^2}}{n2-1} \\]";
+        ans2 += "\\[\\space \\frac{\\sum{{(X2-\\bar{X2})}^2}}{"+(n2)+"-1} \\]";
+        ans2 += "\\[\\space \\frac{"+(diff2)+"}{"+(n2-1)+"} \\]";
+        ans2 += "\\[\\space Variance 2= \\space "+Number.parseFloat(diff2/(n2-1)).toPrecision(4)+" \\]";
+        document.getElementById('means2').innerHTML = "Mean of second set of numbers = "+Number.parseFloat(mean2).toPrecision(4);
+        var output2=  document.getElementById('Variance2');
+        output2.innerHTML=ans2;
+        renderMathInElement(output2);
+        var s1=Number.parseFloat(diff1/(n1-1)).toPrecision(4);
+        var s2=Number.parseFloat(diff2/(n2-1)).toPrecision(4);
+        //check for greater variance
+        if(s1>=s2){
+            var result="\\[F-value \\space = \\space \\frac{"+s1+"}{"+s2+"} = \\space "+Number.parseFloat(s1/s2).toPrecision(4)+" \\]"
+            document.getElementById("answer").innerHTML="<strong>"+result+"</strong>";
+        }
+        else
+        {
+            var result="\\[F-value \\space = \\space \\frac{"+s2+"}{"+s1+"} = \\space "+Number.parseFloat(s2/s1).toPrecision(4)+" \\]"
+            document.getElementById("answer").innerHTML="<strong>"+result+"</strong>"; 
+        } 
+        renderMathInElement(document.getElementById("answer"));     
+    }
+    else {
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('ftestans').innerHTML = "F-test is not applicable for set of numbers more than 30"
+    }
+}
 // Z-test logic 
 
 function zvalue() {
@@ -14194,15 +14423,6 @@ function volofcube() {
     const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
     ans = ans + per + " %";
     document.getElementById("cubeAns").innerText = ans;
-}
-
-function volofsphere() {
-    var x = parseInt(document.getElementById("chngsidesphere").value);
-    var ans = "percentage increase in the volume of the sphere is ";
-    const per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
-    ans = ans + per + " %";
-    document.getElementById("sphereAns").innerText = ans;
-
 }
 
 function Square(n, i, j)

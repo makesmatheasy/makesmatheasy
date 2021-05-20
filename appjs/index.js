@@ -148,6 +148,7 @@ function openit(id) {
         "#etf",
         "#etc",
         "#equationssolver",
+        "quadeqncal",
         "#mulsolwithsteps",
         "#secarea",
         "#table",
@@ -177,6 +178,7 @@ function openit(id) {
         "#math",
         "#des",
         "#gcd",
+        "#dbltime",
         "#chitest",
         "#integralcollapse",
         "#integration-idencollapse",
@@ -189,6 +191,7 @@ function openit(id) {
         "#limitscollapse",
         "#parab",
         "#binomialcoeff",
+        "#binoexp",
         "#matrixcollapse",
         "#pows",
         "#beta",
@@ -220,6 +223,7 @@ function openit(id) {
         "#thdif",
         "#corgeo",
         "#ttest",
+        "#ftest",
         "#ztest",
         "#betagamma",
         "#parallel",
@@ -256,6 +260,7 @@ function openit(id) {
         "#bt-collapse1",
         "#manhats",
         "#elliptic_cone",
+        "#bicone",
         "#pandc",
         "#per_chng_vol",
         "#enna_prism",
@@ -391,6 +396,7 @@ function openit(id) {
         "#chng-vol-cube",
         "#squarerootcalc",
         "#sqseries",
+        "#impse"
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
