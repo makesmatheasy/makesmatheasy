@@ -2774,6 +2774,16 @@ function anglesolve() {
     }
 }
 
+function alisumfind(){
+    let n = parseInt(document.getElementById("alisum").value)
+    let sum = 0;
+    for (let i = 1; i < n; i++)
+        if (n % i == 0)
+            sum += i;
+                   
+    document.getElementById("alisumans").innerHTML =  sum;
+}
+
 function dispointsolve()
 {
     var a,b,c;
