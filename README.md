@@ -133,7 +133,10 @@ Other Tech/Libraries
   - General Solution of Trigonometric Equations
   - Expansion of Functions
   - Solution of Triangles
+    - Law of Sines Calculator
+    - Law of Cosines Calculator
   - Sum and Difference Of Trignometric Function
+
 - General Maths (with Steps)
   - LCM
     - Upto 20 numbers
@@ -190,6 +193,7 @@ Other Tech/Libraries
   - Prime Numbers
     - Primality Test
     - Primes till entered number
+
 - Basic Convertors
   - Currency Convertor
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
@@ -215,6 +219,7 @@ Other Tech/Libraries
     - Conversion from Roman to Arabic and vice versa
     - Expanding the Arabic numbers **(eg. '2423' to '2000+400+20+3')**
     - Expanding the Roman numbers **(eg. 'CIV' to 'C+IV')**
+
 - Graphs & Shapes
 
   - Plot Graph
@@ -255,6 +260,7 @@ Other Tech/Libraries
     - Trapezium
     - Ellipse
     - Stadium
+    - Claw
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
@@ -335,6 +341,7 @@ Other Tech/Libraries
     - Square Root
     - Polar Representation
     - Euler Representation
+    - Nth-Power of Complex Number
   - Operations for 2 complex numbers
     - Addition
     - Subtraction
@@ -363,6 +370,7 @@ Other Tech/Libraries
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
+  - Correlatio Coefficient Calculator
   - Linear Regression Calculator
   - Margin of Error Calculator
   - Chi-Square Test
