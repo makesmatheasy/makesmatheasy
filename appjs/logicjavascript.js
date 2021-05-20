@@ -14552,20 +14552,15 @@ function ratpercal()
     var num1=document.getElementById("ratperx").value;
     var num2=document.getElementById("ratpery").value;
     ans="";
-    if(num1==""||num2=="")
-    {
-        ans="Please enter complete ratio";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        var z=num1/num2;
+    if(num1==""||num2==""){
+        document.getElementById("ratperans").innerHTML ="\\[Please \\space enter \\space complete \\space ratio\\]";
+        renderMathInElement(document.getElementById("ratperans"));
+    } else{
+        var z=parseFloat(num1)/parseFloat(num2);
         z=z*100;
-        ans="The calculated percentage is: "+z+" %";
+        document.getElementById("ratperans").innerHTML="\\[\\frac{"+parseFloat(num1)+"}{"+parseFloat(num2)+"} \\times 100 \\newline Hence, \\space the \\space calculated \\space percentage \\space is: \\space"+z.toFixed(3)+" \\% \\]";
+        renderMathInElement(document.getElementById("ratperans"));
     }
-    document.getElementById("ratperans").innerHTML=ans;
-
 }
 
 function triinsemifind(){
