@@ -11147,6 +11147,13 @@ function cylinderincubefind(){
     document.getElementById("cylinderincubeans").innerHTML =  V;
 }
 
+function cubeincylinderfind(){
+    let r = parseInt(document.getElementById("cubeincylinder").value)
+    let h = parseInt(document.getElementById("cubeincylinder1").value)
+    var a = Math.pow(h, 3);
+    document.getElementById("cubeincylinderans").innerHTML = a
+}
+
 function coneincubefind(){
     let a = parseInt(document.getElementById("shapeinscribedin").value)    
     let r = (a / Math.sqrt(2));
