@@ -363,6 +363,7 @@ Other Tech/Libraries
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
+  - Correlatio Coefficient Calculator
   - Linear Regression Calculator
   - Margin of Error Calculator
   - Chi-Square Test

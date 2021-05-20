@@ -13819,7 +13819,88 @@ function tvalue() {
 katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
     throwOnError: false
 })
+// Correlation Coefficient function()
+function corr_dec(arr, mean) {
+    let diff=arr;
+    for (var i = 0; i < arr.length; i++) 
+         diff[i] = arr[i] - mean
+    return diff
+}
 
+function corr_prod(arr1, arr2) {
+    let pro_sum = 0
+    for (var i = 0; i < arr1.length; i++) 
+        pro_sum += arr1[i]*arr2[i]
+    return pro_sum
+}
+
+function corr_SD(arr) {
+    let SD = 0
+    for (var i = 0; i < arr.length; i++){
+        let temp=0;
+        temp = Math.pow(arr[i],2)
+        SD+=temp;
+    }   
+    return SD
+}
+
+function corrco() {
+    let sam1 = document.getElementById("sam1").value;
+    let sam2 = document.getElementById("sam2").value;
+    
+    sam1 = sam1.split(" ");
+    sam2 = sam2.split(" ");
+    let n1 = sam1.length
+    let n2 = sam2.length
+    console.log(n1)
+    console.log(n2)
+    if(n1==n2){
+        for (var i = 0; i < n1; i++) {
+            sam1[i] = parseFloat(sam1[i]);
+        }
+        for (var i = 0; i < n2; i++) {
+            sam2[i] = parseFloat(sam2[i]);
+        }
+        let coffx="\\[X \\space Values\\]";
+        let coffy="\\[Y \\space Values\\]";
+        let coffxy="\\[X \\space and \\space Y \\space Combined\\]";
+    
+        let mean1 = tvalue_mean(sam1)
+        let mean2 = tvalue_mean(sam2)
+    
+        
+        let diff1 = corr_dec(sam1, mean1)
+        let diff2 = corr_dec(sam2, mean2)
+    
+        let prod_sum=corr_prod(diff1,diff2)
+    
+        let SD1=corr_SD(diff1)
+        let SD2=corr_SD(diff2)
+    
+        coffx+="\\[Mean(X)="+mean1+"\\]"+"\\[\\sum_{}^{}(X-M_{x})^2="+SD1+"\\]";
+        coffy+="\\[Mean(Y)="+mean2+"\\]"+"\\[\\sum_{}^{}(Y-M_{y})^2="+SD2+"\\]";
+        coffxy+="\\[\\sum_{}^{}(X-M_{x})(Y-M_{y})="+prod_sum+"\\]";
+        
+        let r=(prod_sum)/(Math.sqrt(SD1*SD2));
+        let coffr="\\[r_{x,y}=\\frac{\\sum_{i=1}^{n}(X_{i}-M_{x})(Y_{i}-M_{y})}{\\sqrt{\\sum_{i=1}^{n}(X_{i}-M_{y})^2 \\sum_{i=1}^{n}(Y_{i}-M_{y})^2}}\\]"+"\\[\\space =\\frac{"+prod_sum+"}{\\sqrt{("+SD1+")("+SD2+")}}="+r+"\\]";
+        
+        document.getElementById('coffexplain').style.display = "block";
+        document.getElementById('coffans').innerHTML = "\\[The \\space value  \\space of \\space Correlation \\space Coefficient(r) \\space is " + r + " = \\textbf{" + Number.parseFloat(r).toPrecision(4) + "}(approx).\\]";
+        document.getElementById('coffx').innerHTML = coffx;
+        document.getElementById('coffy').innerHTML = coffy;
+        document.getElementById('coffxy').innerHTML = coffxy;
+        document.getElementById('coffr').innerHTML = coffr;
+        renderMathInElement(document.getElementById("coffans")); 
+        renderMathInElement(document.getElementById("coffx")); 
+        renderMathInElement(document.getElementById("coffy")); 
+        renderMathInElement(document.getElementById("coffxy")); 
+        renderMathInElement(document.getElementById("coffr"));
+    }
+    else{
+        document.getElementById('coffans').innerHTML = "Samples should be of same length";
+        document.getElementById('coffexplain').style.display = "none";
+    } 
+}
 
 function fvalue_xbar(arr, mean) {
     let diff = 0

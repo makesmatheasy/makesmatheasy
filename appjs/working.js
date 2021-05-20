@@ -117,6 +117,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#corrbtn").click(function () {
+        openit("#corr");
+        closenav();
+        clearall();
+    });
     $("#cov").click(function () {
         openit("#covs");
         closenav();
