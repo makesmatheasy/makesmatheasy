@@ -4094,7 +4094,28 @@
                     </tr>
                 </table>
             </li>
+            
+                
             <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ftestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">F-test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('F test','#ftest','c','ftestfav')"><img
+                                        id="ttestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
+            <li>
+                
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
@@ -11748,6 +11769,36 @@
                 <p id="SD2" style="text-align: left;"></p>
             </div>
         </div>
+
+
+        
+<div class="collapse" id="ftest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">F - Test</h1>
+    <p style="margin-top: 2rem;">
+        A Statistical F Test uses an F Statistic to compare two variances, s1 and s2, by dividing them. The result is always a positive number (because variances are always positive). The equation for comparing two variances with the f-test is:
+        F = s1^2 / s2^2 ( if s1^2> s2^2). Any statistical test that uses F-distribution can be called an F-test. It is used when the sample size is small i.e. n < 30.
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula for f-value:</p>
+    <p id="fformula" style="margin-bottom:4rem; text-align: left;">(Larger Sample Variance)/(Smaller Sample Variance)</p>
+    <form action="">
+        <input class = "form__field"type="text" id="dataset1" placeholder="Enter Dataset of X separated by SPACE ">
+        <br><br>
+        <input class = "form__field"type="text" id="dataset2" placeholder="Enter Dataset of Y separated by SPACE">
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="fvalue()">Test</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    
+    <p id="ftestans"></p>
+    <div id="stepsbox">    
+        <p id="steps" style="text-align: left; margin-top: 4rem;"></p>
+        <p id="means1" style="text-align: left;"></p>
+        <p id="means2" style="text-align: left;"></p> 
+        <p id="Variance1" style="text-align: left;"></p>
+        <p id="Variance2" style="text-align: left;"></p>
+        <p id="answer" style="text-align: left;"></p>
+    </div>
+</div>
 
          <!-- z -test -->
          <div class="collapse" id="ztest">
