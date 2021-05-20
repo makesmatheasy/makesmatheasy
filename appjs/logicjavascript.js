@@ -7384,6 +7384,31 @@ function heightdist1(){
 
 }
 
+function heightdist5(){
+    var height = parseFloat(document.getElementById("height51").value);
+    var degree = parseFloat(document.getElementById("height52").value);
+    var output = document.getElementById("printheight5");
+    var temp = "";
+    var deg1 = Math.tan(degree*Math.PI/180).toFixed(3)
+    if(!isNaN(height) && !isNaN(degree)){
+        temp += "\\[Height(AB) \\space = \\space " + height + "m \\]";
+        temp += "\\[Angle \\space of \\space Elevation(∠BAC) \\space = \\space " + degree + "\\degree \\]";
+        temp += "\\[tan θ \\space = \\space \\frac{Opposite Side}{Adjacent Side} \\]";
+        temp += "\\[tan " + degree + "\\degree \\space = \\space \\frac{AB}{BC} \\]";
+        temp += "\\[" + deg1 + "\\space = \\space \\frac{" + height + "}{BC} \\]";
+        temp += "\\[BC \\space = \\space \\frac {" + height + "}{" + deg1 + "} \\space = \\space " + (height/deg1).toFixed(3) + " \\]";
+        temp += "\\[Distance \\space is \\space " + (height/deg1).toFixed(3) + "m \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+
+}
+
 function heightdist2(){
     var distance = parseFloat(document.getElementById("height21").value);
     var height = parseFloat(document.getElementById("height31").value);
