@@ -711,6 +711,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#fdshapescalbtn").click(function () {
+        openit("#fdshapescal");
+        closenav();
+        clearall();
+    });
     $("#transbtn").click(function () {
         openit("#trans");
         closenav();
