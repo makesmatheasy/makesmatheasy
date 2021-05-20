@@ -590,8 +590,21 @@
                         </td>
                     </tr>
                 </table>
-            </li>         
-
+            </li>       
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">         
+                            <a id="alibtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Aliquot Sums</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Aliquot Sums','#ali','c','Naliimgfav')"><img
+                                        id="Naliimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>     
 
             <div class="dropdown-divider"></div>
         </div>
@@ -10969,6 +10982,15 @@
             </div>
         </div>
         <!-- end of Smallest prime factor calculator -->
+        <div class="collapse"id="ali">
+            <h2>Aliquot Sum</h2>
+            <br>
+            <input type="text" id="alisum"class="form__field"placeholder="Enter the number of terms for aliquot sum">
+            <br>
+            <button class="btn btn-dark" onclick="alisumfind()">Find</button>
+            <br>
+            <h5 id="alisumans"></h5>
+        </div>
         <!-- start of Sum of divisors  calculator -->
          <div>
             <div class="collapse" id="sumDiv">

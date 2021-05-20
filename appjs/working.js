@@ -499,6 +499,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#alibtn").click(function () {
+        openit("#ali");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();
