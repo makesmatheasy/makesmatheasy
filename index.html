@@ -11282,6 +11282,10 @@
             <h3 style="text-align: center;">Solution of Triangles</h3>
             <br>
             <tr>
+                <td><a data-toggle="modal" data-target="#sine"
+                    style="text-decoration:none;"
+                    href="#"><h4>Law of Sines Calculator</h4></a>
+                </td>
                 <td><a data-toggle="modal" data-target="#cosine"
                     style="text-decoration:none;"
                     href="#"><h4>Law of Cosines Calculator</h4></a>
@@ -13503,6 +13507,79 @@
                 </table>
             </div>
  
+        </div>
+        
+        <div class="modal fade" id="sine" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color: black;">Law of Sines</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 sinecal">
+                                    <br>
+                                    <img src="images/sines.jpg" class="img-fluid sineimg">
+                                    <h5 class="text-center">Sine Rule</h5>
+                                    <p class="text-center">\[\frac{sin A}{a}=\frac{sin B}{b}=\frac{sin C}{c}\]</p><br>
+                                </div>
+        
+                                <label for="from">
+                                    <h5 class="text-center">Which formula you want to apply</h5>
+                                </label>
+                                <select id="sformula" class="form__field"
+                                        onchange="lawsine()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        sin(A)/a=sin(B)/b
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        sin(B)/b=sin(C)/c
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        sin(C)/c=sin(A)/a
+                                    </option>
+                                </select>
+
+                                <div class="dropdown-divider"></div><br>
+                                <p>Type 3 values</p>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side a"
+                                       id="sside1" oninput="solvesine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side b"
+                                       id="sside2" oninput="solvesine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Angle(in degrees) A"
+                                       id="sangle1" oninput="solvesine()">
+                                 <input class="form__field" type="number"
+                                        placeholder="Enter Angle (in degrees) B"
+                                        id="sangle2" oninput="solvesine()">       
+                                <br>
+
+                                <p class="stopwrap" id="sineresult"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="sineexplain"
+                                   style="font-family:mathfont;"></p>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal fade" id="cosine" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
