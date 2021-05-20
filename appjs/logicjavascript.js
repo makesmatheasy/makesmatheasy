@@ -11595,6 +11595,17 @@ function lucasNumbers(num) {
 
 }
 
+function polymax4find(){
+    let N = parseInt(document.getElementById("polymax4").value)
+    let res = 0;
+    let finalResult = 0;
+    let val = 2 * N - 1;
+    let s = val;
+    res = (N - 1) * (N - 2);
+    finalResult = res + s;
+    document.getElementById("polymax4ans").innerHTML =  finalResult;
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
