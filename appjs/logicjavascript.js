@@ -14771,28 +14771,28 @@ function hypertrigno()
 
 
 }
-function perratcal()
-{
+function perratcal(){
     var num1=document.getElementById("peratx").value;
     var ans="", f=100;
-    if(num1=="")
-    {
-        ans="Please enter percentage";
-    }
-    else
-    {
-        for(var i=2;i<num1;i++)
-        {
-            if((num1%i==0)&&(f%i==0))
-            {
+    if(num1==""){
+        document.getElementById("perratans").innerHTML="\\[Please \\space enter \\space percentage\\]";
+        document.getElementById("perratans1").innerHTML="";
+        document.getElementById("perratans2").innerHTML="";
+        renderMathInElement(document.getElementById("perratans"));
+    } else{
+        document.getElementById("perratans1").innerHTML= "\\[Here \\space we \\space check \\space the \\space numbers \\space from \\space 2 \\space to \\space "+num1+" \\space that \\space are \\space both \\space divisible \\space by \\space"+f+" \\space  and \\space "+num1+"\\]";
+        document.getElementById("perratans2").innerHTML="\\[Then \\space divide \\space those \\space with \\space both \\space "+num1+" \\space and \\space "+f+" \\newline initially, Percentage = "+num1+" \\newline f = "+f+"\\space \\]";
+        renderMathInElement(document.getElementById("perratans1"));
+        renderMathInElement(document.getElementById("perratans2"));
+        for(var i=2;i<num1;i++){
+            if((num1%i==0)&&(f%i==0)){
                 num1=num1/i;
                 f=f/i;
-                i--;
-            }
+                i--;    }
         }
-        ans="The calculated ratio is: "+num1+" : "+f;
+        document.getElementById("perratans").innerHTML="\\[Finally \\space after \\space dividing \\space we \\space get \\space the \\space value \\space of \\newline Percentage = "+num1+" \\newline f = "+f+" \\newline Hence, \\space the \\space calculated \\space ratio \\space is: \\space "+num1+" : "+f+"\\]";
+        renderMathInElement(document.getElementById("perratans"));
     }
-    document.getElementById("perratans").innerHTML=ans;
 }
 
 function embedfind(){
