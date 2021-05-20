@@ -10063,10 +10063,28 @@ function typenumfind(){
     }
 }
 
+function typenum1find(){
+    let n = parseInt(document.getElementById("typenum1").value)
+    let prev = 0;
+    let curr;
+    for (let i = 1; i <= n; i++)
+    {
+        curr = findTetrahedralNumber(i);
+        document.getElementById("typenum1ans").innerHTML =  curr + " ";
+        prev = curr;
+    }
+}
+
 function findTriangularNumber(n)
 {
     return (n * (n + 1)) / 2;
 }
+
+function findTetrahedralNumber(n)
+{
+    return ((n * (n + 1) * (n + 2)) / 6);
+}
+ 
 
 //Statistics Calculator
 function cal_func_stats()
