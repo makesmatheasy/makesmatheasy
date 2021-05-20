@@ -14373,6 +14373,11 @@
                            href="#">Squircle</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#salinon"
+                           style="text-decoration:none;"
+                           href="#">Salinon</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#hollowsp"
                            style="text-decoration:none;"
                            href="#">Hollow Sphere</a></td>
@@ -24621,6 +24626,60 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="salinon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Salinon</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>v
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Perimeter(P)</h5>
+                                    <p class="text-center">\[P = 2 \pi R \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area(A)</h5>
+                                    <p class="text-center">\[\frac{1}{4}* \pi * (R+r)^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/salinon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius large semicircle(R)" id="inputsalinonr"
+                                   oninput="solveSalinon();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius small semicircle(r)" id="inputsalinonR"
+                                   oninput="solveSalinon();">
+                            <p class="stopwrap" id="resultofsalinonperi"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofsalinonarea"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="ellipsoid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
