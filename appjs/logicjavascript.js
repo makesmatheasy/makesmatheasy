@@ -3022,15 +3022,15 @@ function vectorsection()
 function vectorsection2()
 {
     var x1,y1,x2,y2,m,n;
-    x1=parseFloat(document.getElementById('inp011').value);
-    y1=parseFloat(document.getElementById('inp022').value);
-    z1=parseFloat(document.getElementById('inp033').value);
-    x2=parseFloat(document.getElementById('inp044').value);
-    y2=parseFloat(document.getElementById('inp055').value);
-    z2=parseFloat(document.getElementById('inp066').value);
-    m=parseFloat(document.getElementById('m12').value);
-    n=parseFloat(document.getElementById('n112').value);
-    var explain = document.getElementById("vectorsection2");
+    x1=parseFloat(document.getElementById('inp001').value);
+    y1=parseFloat(document.getElementById('inp002').value);
+    z1=parseFloat(document.getElementById('inp003').value);
+    x2=parseFloat(document.getElementById('inp004').value);
+    y2=parseFloat(document.getElementById('inp005').value);
+    z2=parseFloat(document.getElementById('inp006').value);
+    m=parseFloat(document.getElementById('m1').value);
+    n=parseFloat(document.getElementById('n11').value);
+    var explain = document.getElementById("vectorsection1");
     var temp = "";
     if(!isNaN(x1) && !isNaN(y1) && !isNaN(z1) && !isNaN(x2) && !isNaN(y2) && !isNaN(z2) && !isNaN(m) && !isNaN(n)){
     temp += "\\[The \\space Position \\space vector \\space of \\space point \\space dividing \\space the \\space line \\space segment \\space joining \\space two \\space points \\space P \\space and \\space Q \\space in \\space the \\space ratio \\space m:n \\space is \\space given \\space by \\]";
