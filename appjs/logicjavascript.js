@@ -10379,6 +10379,35 @@ function lacube2find(){
     document.getElementById("lacube2ans").innerHTML =  ans;
 }
 
+function lacube3find(){
+    let n = parseInt(document.getElementById("lacube3").value)
+    let count = 0;
+    let ans = 1;
+    while (n % 3 == 0)
+    {
+        count++;
+        n /= 3;
+    }
+    if (count % 3)
+        ans *= 3;
+ 
+    for (let i = 4; i <= Math.sqrt(n); i += 3)
+    {
+        count = 0;
+        while (n % i == 0)
+        {
+            count++;
+            n /= i;
+        }
+            ans *= i;
+    }
+ 
+    if (n > 3)
+        ans *= n;
+ 
+    document.getElementById("lacube3ans").innerHTML =  ans;
+}
+
 function cubefreefind(){
     let n = parseInt(document.getElementById("cubefree").value)
     for(let i = 2; i <= n; i++)
