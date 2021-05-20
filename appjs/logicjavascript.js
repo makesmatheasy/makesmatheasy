@@ -3634,33 +3634,7 @@ function vecotrmod(){
     }
 }
 
-function vectorproj(){
-    let a=parseFloat(document.getElementById('inp1').value);
-    let b=parseFloat(document.getElementById('inp2').value);
-    let c=parseFloat(document.getElementById('inp3').value);
-    let d=parseFloat(document.getElementById('inp4').value);
-    let e=parseFloat(document.getElementById('inp5').value);
-    let f=parseFloat(document.getElementById('inp6').value);
-    let projoutput = document.getElementById("vectorproj1");
-    let projtemp="";
-    let dot1 = (a*d)+(b*e) + (c*f);
-    let projy = (d**2+e**2+f**2);
-    let proj = Math.sqrt(projy);
-    let proj1 = (proj)**2;
-    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
-        projtemp += "\\[Please \\space enter \\space all \\space fields \\]";
-        projoutput.innerHTML = projtemp;
-    renderMathInElement(document.getElementById("vectorproj1"));
-    }
-    else{
-    projtemp  += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Vector \\space Projection \\space Formula \\space is \\]";
-    projtemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
-    projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toPrecision(2)+ "}(" + d + "," + e + "," + f + ") \\]";
-    projtemp += "\\[The \\space Projection \\space of \\space X \\space on \\space Y \\space are \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*e)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*f)  + "}{" + (proj1.toPrecision(2)) + "}) \\]";
-    projoutput.innerHTML = projtemp;
-    renderMathInElement(document.getElementById("vectorproj1"));
-}
-}
+
 function vectorplanar(){
     var a=parseFloat(document.getElementById('inp11').value);
     var b=parseFloat(document.getElementById('inp22').value);
@@ -3692,31 +3666,6 @@ function vectorplanar(){
 }
 }
 
-function vectorscalar(){
-    let a=parseFloat(document.getElementById('inp09').value);
-    let b=parseFloat(document.getElementById('inp08').value);
-    let c=parseFloat(document.getElementById('inp07').value);
-    let d=parseFloat(document.getElementById('inp06').value);
-    let e=parseFloat(document.getElementById('inp05').value);
-    let f=parseFloat(document.getElementById('inp04').value);
-    let scalaroutput = document.getElementById("vectorscalar1");
-    let scalartemp="";
-    let dot1 = (a*d)+(b*e) + (c*f);
-    let projy = (a**2+b**2+c**2);
-    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
-        scalartemp += "\\[Please \\space enter \\space all \\space fields \\]";
-        scalaroutput.innerHTML = scalartemp;
-    renderMathInElement(document.getElementById("vectorscalar1"));
-    }
-    else{
-    scalartemp += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Scalar \\space Projection \\space Formula \\space is \\]";
-    scalartemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|a|}  \\]";
-    scalartemp += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy)+ "}} \\]";
-    scalartemp += "\\[Scalar \\space Projection \\space of \\space X \\space on \\space Y \\space is \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy) + "}}  \\]";
-    scalaroutput.innerHTML = scalartemp;
-    renderMathInElement(document.getElementById("vectorscalar1"));
-   }
-}
 
 function vectorunit(){
     var a=parseFloat(document.getElementById('vua').value);
@@ -3747,15 +3696,41 @@ function vectorunit(){
     renderMathInElement(document.getElementById("vur"));
 }
 }
+function vectorscalar(){
+    let a=parseFloat(document.getElementById('inp09').value);
+    let b=parseFloat(document.getElementById('inp08').value);
+    let c=parseFloat(document.getElementById('inp07').value);
+    let d=parseFloat(document.getElementById('inp06').value);
+    let e=parseFloat(document.getElementById('inp05').value);
+    let f=parseFloat(document.getElementById('inp04').value);
+    let scalaroutput = document.getElementById("vectorscalar1");
+    let scalartemp="";
+    let dot1 = (a*d)+(b*e) + (c*f);
+    let projy = (a**2+b**2+c**2);
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        scalartemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        scalaroutput.innerHTML = scalartemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+    }
+    else{
+    scalartemp += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Scalar \\space Projection \\space Formula \\space is \\]";
+    scalartemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|a|}  \\]";
+    scalartemp += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy)+ "}} \\]";
+    scalartemp += "\\[Scalar \\space Projection \\space of \\space X \\space on \\space Y \\space is \\space \\frac{" + dot1 + "}{ \\sqrt{" + (projy) + "}}  \\]";
+    scalaroutput.innerHTML = scalartemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+   }
+}
 
-function projector(){
-    let a=parseFloat(document.getElementById('inpj1').value);
-    let b=parseFloat(document.getElementById('inpj2').value);
-    let c=parseFloat(document.getElementById('inpj3').value);
-    let d=parseFloat(document.getElementById('inpj4').value);
-    let e=parseFloat(document.getElementById('inpj5').value);
-    let f=parseFloat(document.getElementById('inpj6').value);
-    let projoutput = document.getElementById("vectorprojj1");
+
+function vectorproj(){
+    let a=parseFloat(document.getElementById('inp09').value);
+    let b=parseFloat(document.getElementById('inp08').value);
+    let c=parseFloat(document.getElementById('inp07').value);
+    let d=parseFloat(document.getElementById('inp06').value);
+    let e=parseFloat(document.getElementById('inp05').value);
+    let f=parseFloat(document.getElementById('inp04').value);
+    let projoutput = document.getElementById("vectorscalar1");
     let projtemp="";
     let dot1 = (a*d)+(b*e) + (c*f);
     let projy = (d**2+e**2+f**2);
@@ -3764,7 +3739,35 @@ function projector(){
     if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
         projtemp += "\\[Please \\space enter \\space all \\space fields \\]";
         projoutput.innerHTML = projtemp;
-    renderMathInElement(document.getElementById("vectorprojj1"));
+    renderMathInElement(document.getElementById("vectorscalar1"));
+    }
+    else{
+    projtemp  += "\\[If \\space \\overrightarrow{a} \\space is \\space projected \\space on \\space \\overrightarrow{b} \\space then \\space Vector \\space Projection \\space Formula \\space is \\]";
+    projtemp += "\\[ proj_b a \\space = \\space \\frac {\\overrightarrow{a}.\\overrightarrow{b}}{|b|^2} \\overrightarrow{b} \\]";
+    projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toPrecision(2)+ "}(" + d + "," + e + "," + f + ") \\]";
+    projtemp += "\\[The \\space Projection \\space of \\space X \\space on \\space Y \\space are \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*e)  + "}{" + (proj1.toPrecision(2)) + "} \\space , \\space \\frac{"  + (dot1*f)  + "}{" + (proj1.toPrecision(2)) + "}) \\]";
+    projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
+}
+}
+
+function projector(){
+    let a=parseFloat(document.getElementById('inp09').value);
+    let b=parseFloat(document.getElementById('inp08').value);
+    let c=parseFloat(document.getElementById('inp07').value);
+    let d=parseFloat(document.getElementById('inp06').value);
+    let e=parseFloat(document.getElementById('inp05').value);
+    let f=parseFloat(document.getElementById('inp04').value);
+    let projoutput = document.getElementById("vectorscalar1");
+    let projtemp="";
+    let dot1 = (a*d)+(b*e) + (c*f);
+    let projy = (d**2+e**2+f**2);
+    let proj = Math.sqrt(projy);
+    let proj1 = (proj)**2;
+    if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
+        projtemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        projoutput.innerHTML = projtemp;
+    renderMathInElement(document.getElementById("vectorscalar1"));
     }
     else{
     projtemp  += "\\[If \\space we \\space project \\space \\overrightarrow{a}  \\space on \\space \\overrightarrow{b} \\space then \\space Projected \\space Vector \\space will \\space be \\space -> \\]";
@@ -3772,7 +3775,7 @@ function projector(){
     projtemp  += "\\[  proj_b a \\space = \\space \\frac{" + dot1 + "}{" + (proj1).toFixed(2)+ "}( \\space (" + d + ") \\hat{i} \\space + \\space (" + e + ") \\hat{j} \\space + \\space ( " + f + " ) \\hat{k} \\space ) \\]";
     projtemp += "\\[So \\space Projected \\space Vector \\space of \\space \\overrightarrow{X} \\space on \\overrightarrow{Y} \\space is \\space = \\space ( \\frac{" + (dot1*d)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{i} \\space + \\space ( \\frac{"  + (dot1*e)  + "}{" + (proj1.toFixed(2)) + "} ) \\hat{j} \\space + \\space \\space ( \\frac{"  + (dot1*f)  + "}{" + (proj1.toFixed(2)) + "} )\\hat{k} \\]";
     projoutput.innerHTML = projtemp;
-    renderMathInElement(document.getElementById("vectorprojj1"));
+    renderMathInElement(document.getElementById("vectorscalar1"));
 }
 }
 
