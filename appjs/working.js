@@ -117,6 +117,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#corrbtn").click(function () {
+        openit("#corr");
+        closenav();
+        clearall();
+    });
     $("#cov").click(function () {
         openit("#covs");
         closenav();
@@ -473,6 +478,11 @@ $(document).ready(function () {
         openit("#ztest");
         closenav();
         clearall();
+    }); 
+    $("#npbtn").click(function () {
+        openit("#npchart");
+        closenav();
+        clearall();
     });   
     $("#chitestbtn").click(function () {
         openit("#chitest");
@@ -501,6 +511,11 @@ $(document).ready(function () {
     });
     $("#sigmabtn").click(function () {
         openit("#sigma");
+        closenav();
+        clearall();
+    });
+    $("#alibtn").click(function () {
+        openit("#ali");
         closenav();
         clearall();
     });
@@ -617,7 +632,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#typenumbtn").click(function () {
+        openit("#typenum");
+        closenav();
+        clearall();
+    });
 
     $("#resbtn").click(function () {
         openit("#res1");

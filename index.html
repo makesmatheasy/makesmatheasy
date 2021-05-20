@@ -590,8 +590,21 @@
                         </td>
                     </tr>
                 </table>
-            </li>         
-
+            </li>       
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">         
+                            <a id="alibtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Aliquot Sums</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Aliquot Sums','#ali','c','Naliimgfav')"><img
+                                        id="Naliimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>     
 
             <div class="dropdown-divider"></div>
         </div>
@@ -2494,6 +2507,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="typenumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Types of numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('','#typenum','c','typenumnumimgfav')"><img
+                                        id="typenumnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -4166,6 +4194,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="npbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">np chart Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('np chart Calculator','#npchart','c','npfav')"><img
+                                        id="zscimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="confi-inter-btn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Confidence Interval Calculator</a>
                         </td>
@@ -4238,6 +4281,23 @@
                                <span
                                        onclick="addtofavourite('Covariance Calculator','#covs','c','covsimgfav')"><img
                                        id="covsimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="corrbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Correlation Coefficient Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Correlation Coefficient Calculator','#corr','c','corrimgfav')"><img
+                                       id="corrimgfav" src="images/unfavourite.png"
                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -5640,6 +5700,14 @@
             <button class="btn btn-dark" onclick="trapinsemi1find()">Find</button>
             <br>
             <h5 id="trapinsemi1ans"></h5>
+            <br>
+            <h4>Largest square that can be inscribed within a hexagon which is inscribed within an equilateral triangle</h4>
+            <br>
+            <input type="text" id="shtin" placeholder="Enter side length of equilateral triangle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="shtfind()">Find</button>
+            <br>
+            <h5 id="shtans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -7795,14 +7863,14 @@
             <h2>Find minimum number to be divided to make a number a perfect square</h2>
             <br>
             <form action="">
-                <input type="text" id="minsquare" class="form__field" placholder="Enter the number">
+                <input type="text" id="minsquare5" class="form__field" placholder="Enter the number">
                 <br>
-                <button type="button" class="btn btn-dark" onclick="minsquarefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="minsquarefind1()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
             
-            <p id="minsquareans"></p>
+            <p id="minsquareans1"></p>
             <br>
             <h2>Minimum divisor of a number to make the number perfect cube</h2>
             <br>
@@ -7843,6 +7911,7 @@
             <button type="submit" class="btn btn-dark" onclick="lacube1find()">Find</button>
             <br>
             <p id="lacube1ans"></p>
+            <br>
             <h2>Find minimum number to be divided to make a number a perfect cube</h2>
             <br>
             <input type="text" id="lacube2" class="form__field" placholder="Enter the number">
@@ -7850,6 +7919,14 @@
             <button type="submit" class="btn btn-dark" onclick="lacube2find()">Find</button>
             <br>
             <p id="lacube2ans"></p>
+            <br>
+            <h2>Find minimum number to be multiplied to make a number a perfect cube</h2>
+            <br>
+            <input type="text" id="lacube3" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="lacube3find()">Find</button>
+            <br>
+            <p id="lacube3ans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8230,7 +8307,7 @@
 
     <br><br>
     <div class="text-center">
-        <h3>Scalar Projection Calculator</h3><br>
+        <h3> Projection Calculator</h3><br>
     </div>
     <div class="coll">
         <p>
@@ -8242,7 +8319,12 @@
                 <br>
                 <br>
         <button type="button" class="btn btn-light" onclick=vectorscalar()>
-            Solve
+            Scalar Projection
+        </button><button type="button" class="btn btn-light" onclick=vectorproj()>
+            Vector Projection
+        </button>
+        <button type="button" class="btn btn-light" onclick=projector()>
+            Projection Vector
         </button><br>
         </p>
     </div><br>
@@ -8250,32 +8332,11 @@
     <h5 id="vectorscalar1" style="color: white; font-size: x-large;"></h5>
     </div>
 
-    <br><br>
-    <div class="text-center">
-        <h3>Vector Projection Calculator</h3><br>
-    </div>
-    <div class="coll">
-        <p>
-            Enter the First Vector X :   <input type="text" id="inp1" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp2" size=3 value='' placeholder="B"> j + <input type="text" id="inp3" size=3 value='' placeholder="C"> k
-            <br><br>
-            Enter the Second Vector Y :   <input type="text" id="inp4" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp5" size=3 value='' placeholder="B"> j + <input type="text" id="inp6" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectorproj()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
-    <div class="coll" style="text-align: center;">
-    <h5 id="vectorproj1" style="color: white; font-size: x-large;"></h5>
-    </div>
+    
 
     <br><br>
     <div class="text-center">
         <h2>Section Formula</h2><br>
-        <h3>Internal Division</h3><br>
     </div>
     <div class="coll">
         <p>
@@ -8290,34 +8351,20 @@
                 <br>
                 <br>
         <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection()>
-            Solve
+            Internal
+        </button>
+        <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection2()>
+            External
         </button><br>
+
         </p>
     </div><br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorsection1" style="color: white; font-size: x-large;"></h5>
     </div><br>
-    <h3 style="text-align: center;">External Division</h3><br>
-<div class="coll">
-    <p>
-        Position Vector (OP) :   <input type="text" id="inp011" size=3 value='' placeholder="A">  i  +
-    <input type="text" id="inp022" size=3 value='' placeholder="B"> j + <input type="text" id="inp033" size=3 value='' placeholder="C"> k
-        <br><br>
-         Position Vector (OQ) :   <input type="text" id="inp044" size=3 value='' placeholder="A"> i +
-    <input type="text" id="inp055" size=3 value='' placeholder="B"> j + <input type="text" id="inp066" size=3 value='' placeholder="C"> k
-    <br><br>
-    Ratio = (<input type="text" id="m12" size=3 value='' placeholder="m"> , 
-<input type="text" id="n112" size=3 value='' placeholder="n">)
-            <br>
-            <br>
-    <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection2()>
-        Solve
-    </button><br>
-    </p>
-</div><br>
-<div class="coll" style="text-align: center;">
-<h5 id="vectorsection2" style="color: white; font-size: x-large;"></h5>
-</div>
+    
+    
+    
 
     <br><br>
     <div class="text-center">
@@ -8576,27 +8623,8 @@
     <div class="coll" style="text-align: center;">
     <h5 id="vtpans" style="color: white; font-size: x-large;"></h5>
     </div>
-    <div class="text-center">
-        <h3> Projection Vector </h3><br>
-    </div>
-    <div class="coll">
-        <p>
-            Enter the First Vector X :   <input type="text" id="inpj1" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inpj2" size=3 value='' placeholder="B"> j + <input type="text" id="inpj3" size=3 value='' placeholder="C"> k
-            <br><br>
-            Enter the Second Vector Y :   <input type="text" id="inpj4" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inpj5" size=3 value='' placeholder="B"> j + <input type="text" id="inpj6" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=projector()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
-    <div class="coll" style="text-align: center;">
-    <h5 id="vectorprojj1" style="color: white; font-size: x-large;"></h5>
-    </div>
-
+    
+       
 </div>
 
 
@@ -10283,8 +10311,15 @@
             <div class="form-group">
                 <input type="text" style="width: 15.625rem;" class="form__field" name="a"
                     id="chngsidecube" placeholder="Enter the percentage change in the side of a cube"/><br><br>
-                <button class="btn btn-outline-light" onclick="volofcube()">Calculate</button><br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-align: left; font-family:mathfont;" id="cubeAns"></p>
+                    <button class="btn btn-outline-light" onclick="volofcube()">Calculate</button><br><br>
+                    <p class="stopwrap" id="cubeAns"
+                    style="font-family:mathfont;"></p><br>
+                    <p class="stopwrap" id="cubeAns1"
+                        style="font-family:mathfont;"></p><br>
+                    <p class="stopwrap" id="cubeAns2"
+                        style="font-family:mathfont;"></p><br>
+                    <p class="stopwrap" id="cubeAns3"
+                        style="font-family:mathfont;"></p><br>
             </div><br>
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2><br>
             <div class="form-group">
@@ -11006,6 +11041,15 @@
             </div>
         </div>
         <!-- end of Smallest prime factor calculator -->
+        <div class="collapse"id="ali">
+            <h2>Aliquot Sum</h2>
+            <br>
+            <input type="text" id="alisum"class="form__field"placeholder="Enter the number of terms for aliquot sum">
+            <br>
+            <button class="btn btn-dark" onclick="alisumfind()">Find</button>
+            <br>
+            <h5 id="alisumans"></h5>
+        </div>
         <!-- start of Sum of divisors  calculator -->
          <div>
             <div class="collapse" id="sumDiv">
@@ -11298,6 +11342,10 @@
             <h3 style="text-align: center;">Solution of Triangles</h3>
             <br>
             <tr>
+                <td><a data-toggle="modal" data-target="#sine"
+                    style="text-decoration:none;"
+                    href="#"><h4>Law of Sines Calculator</h4></a>
+                </td>
                 <td><a data-toggle="modal" data-target="#cosine"
                     style="text-decoration:none;"
                     href="#"><h4>Law of Cosines Calculator</h4></a>
@@ -11757,6 +11805,35 @@
             </div>
         </div>
 
+        <!-- Correlaton Coeficient Calculator -->
+        <div class="collapse" id="corr">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Correlaton Coefficient Calculator</h1>
+            <p style="margin-top: 2rem; ">
+                Correlation coefficient is used to find how strong a relationship is between data. The formulas return a value between -1 and 1, where:
+                <li style="color:white;margin-left: 2rem;">1 indicates a strong positive relationship.</li>
+                <li style="color:white;margin-left: 2rem;">-1 indicates a strong negative relationship.</li>
+                <li style="color:white;margin-left: 2rem;">A result of zero indicates no relationship at all.</li>
+            </p>
+            <p style="text-align: left; color: white; margin-top:2rem;">Pearson Formula for Correlation Coefficient:</p>
+            <p style="margin-bottom:4rem;">\[r_{x,y}=\frac{\sum_{i=1}^{n}(X_{i}-M_{x})(Y_{i}-M_{y})}{\sqrt{\sum_{i=1}^{n}(X_{i}-M_{y})^2 \sum_{i=1}^{n}(Y_{i}-M_{y})^2}}\]</p>
+            <form action="">
+                <input class = "form__field"type="text" id="sam1" placeholder="Enter list of number separated by SPACE(sample x) ">
+                <br><br>
+                <input class = "form__field"type="text" id="sam2" placeholder="Enter list of number separated by SPACE(sample y)">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="corrco()">Calculate</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="coffans"></p>
+            <div id="coffexplain">    
+                <p id="coffx" style="text-align: left; margin-top: 4rem;"></p><br>
+                <p id="coffy" style="text-align: left;"></p><br>
+                <p id="coffxy" style="text-align: left;"></p><br>
+                <p id="coffr" style="text-align: left;"></p><br>
+            </div>
+        </div>
+
         <!-- t -test -->
         <div class="collapse" id="ttest">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">T - Test</h1>
@@ -11845,6 +11922,32 @@
                 <p id="pvalue"></p>
             </div>
         </div>
+
+
+                <!-- np chart-->
+                <div class="collapse" id="npchart">
+                    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">np chart Calculator</h1>
+                    <p style="margin-top: 2rem;">
+                        NP charts are used to monitor the number of nonconforming units of a process based on samples taken from the process at given times (hours, shifts, days, weeks, months, etc.)
+                        .We plot a graph of No defective items vs Sample No.
+                        If all the points of the graph lie within the control limits, then the process is under statistial control.
+                    </p>
+                    <p id="tformula" style="margin-bottom:4rem;"></p>
+                    <form action="">
+                        <input class = "form__field"type="text" id="defective" placeholder="Enter list of defective items separated by SPACE ">
+                        <br><br>
+                        <input class = "form__field"type="number" id="no" placeholder="Number of items/samples (n) separated by SPACE">
+                        <br><br>
+                        <button class = "btn btn-light" type="button" onclick="npvalue()">Test</button>
+                        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+                    </form>
+                    <p id="npans"></p>
+                    <div id="stepsbox">    
+                        <p id="cl" style="text-align: left; margin-top: 2rem;"></p>
+                        <p id="uppercontrol" ></p>
+                        <p id="lowercontrol" ></p>
+                    </div>
+                </div>
 
         <!--confidence interval calc-->    
         <div class="collapse" id="confi-inter">
@@ -12664,6 +12767,32 @@
                 <h5 id="printheight1" style="color: white; font-size: x-large;"></h5>
                 </div>
 			<br><br>
+            <h4 class="d-flex justify-content-center">To calculate Distance when Angle of Elevation and Height is given</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="height51" placeholder="Enter Height (AB)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="height52"
+                placeholder="Enter Angle of Elevation in degree(∠BCA)"
+                style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=heightdist5()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="coll1" style="text-align: center;">
+                <h5 id="printheight5" style="color: white; font-size: x-large;"></h5>
+                </div>
+                <br><br>
         <h4 class="d-flex justify-content-center">To calculate Angle of Elevation </h4><br>
         <form class="form-inline d-flex flex-column align-items-center" id="myForm">
             <input type="number" id="height21" placeholder="Enter Distance (BC)"
@@ -13520,6 +13649,79 @@
             </div>
  
         </div>
+        
+        <div class="modal fade" id="sine" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color: black;">Law of Sines</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 sinecal">
+                                    <br>
+                                    <img src="images/sines.jpg" class="img-fluid sineimg">
+                                    <h5 class="text-center">Sine Rule</h5>
+                                    <p class="text-center">\[\frac{sin A}{a}=\frac{sin B}{b}=\frac{sin C}{c}\]</p><br>
+                                </div>
+        
+                                <label for="from">
+                                    <h5 class="text-center">Which formula you want to apply</h5>
+                                </label>
+                                <select id="sformula" class="form__field"
+                                        onchange="lawsine()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        sin(A)/a=sin(B)/b
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        sin(B)/b=sin(C)/c
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        sin(C)/c=sin(A)/a
+                                    </option>
+                                </select>
+
+                                <div class="dropdown-divider"></div><br>
+                                <p>Type 3 values</p>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side a"
+                                       id="sside1" oninput="solvesine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter side b"
+                                       id="sside2" oninput="solvesine()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Angle(in degrees) A"
+                                       id="sangle1" oninput="solvesine()">
+                                 <input class="form__field" type="number"
+                                        placeholder="Enter Angle (in degrees) B"
+                                        id="sangle2" oninput="solvesine()">       
+                                <br>
+
+                                <p class="stopwrap" id="sineresult"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="sineexplain"
+                                   style="font-family:mathfont;"></p>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="cosine" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -13875,6 +14077,11 @@
                            href="#">Stadium</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#claw"
+                           style="text-decoration:none;"
+                           href="#">Claw</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#interioranglecal"
                            style="text-decoration:none;"
                            href="#">Interior Angle Calculator</a></td>
@@ -14184,6 +14391,14 @@
             <button class="btn btn-dark" onclick="cylinderincubefind()">Find</button><br>
             <h5 id="cylinderincubeans"></h5>
             <br>
+            <h4>Largest cube that can be inscribed within a cylinder </h4>
+            <br>
+            <input type="text" id="cubeincylinder" class="form__field" placeholder="Enter the radius of cylinder">
+            <input type="text" id="cubeincylinder1" class="form__field" placeholder="Enter the height of cylinder">
+            <br>
+            <button class="btn btn-dark" onclick="cubeincylinderfind()">Find</button><br>
+            <h5 id="cubeincylinderans"></h5>
+            <br>
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -14248,6 +14463,11 @@
                     <td><a data-toggle="modal" data-target="#squircle"
                            style="text-decoration:none;"
                            href="#">Squircle</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#salinon"
+                           style="text-decoration:none;"
+                           href="#">Salinon</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#hollowsp"
@@ -14415,6 +14635,11 @@
                     <td><a data-toggle="modal" data-target="#wedge"
                            style="text-decoration:none;"
                            href="#">Wedge</a></td>
+                </tr>
+                 <tr>
+                    <td><a data-toggle="modal" data-target="#right_wedge"
+                           style="text-decoration:none;"
+                           href="#">Right Wedge</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#octahedron"
@@ -16213,99 +16438,88 @@
             <div class="text-center">
                 <h2><label>Mean Calculator</label></h2>
             </div>
-            <h4>Arithmetic Mean</h4><br>
-            <form class="form-inline text-center">
-                <div class="container">
-                 <div class="row justify-content-center">
-                    <div class=".col-4 ">
+            <br><br>
+            <h4 class="d-flex justify-content-center">Arithmetic Mean</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                         <input type="number" id="aval" placeholder="Enter the first term (a)"
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    
-                    <div class=".col-4 ">
                         <input type="number" id="cval" placeholder="Enter the last term(c) "
                      style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                    </div>
-                    <div class=".col-4 m-4 ">
+                     <div class="row">
+                        <div class="col-6">
                         <button type="button" class="btn btn-light" onclick=amsol()>
                      Solve
                      </button>
-                     <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                     Reset
-                     </button>
                     </div>
-                 </div>
-                </div> 
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
                 </div>
             </form>
             <br>
-            <p id="am_formula" style="display:flex;font-family:mathfont;;width:auto;"
-               class="stopwrap"
-               align="right"></p>
-
+            <div class="coll1" style="text-align: center;">
+            <p id="am_formula" style="font-family:mathfont;;width:auto;"
+               class="stopwrap"></p>
             <h5 id="am"></h5>
+            </div>
             <br><br>
-            <h4>Geometric Mean</h4><br>
-            <form class="form-inline text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class=".col-4">
+            <h4 class="d-flex justify-content-center">Geometric Mean</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                             <input type="number" id="aval1" placeholder="Enter the first term (a)"
                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                         
-                        
-                        <div class=".col-4">
                             <input type="number" id="cval1" placeholder="Enter the last term(c) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                        </div>
                         
-                        <div class=".col-4 m-4">
+                       <div class="row">
+                        <div class="col-6">
                             <button type="button" class="btn btn-light" onclick=gmsol()>
                                 Solve
                             </button>
-                            <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                                Reset
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                            Reset
                             </button>
                         </div>
                     </div>
-                </div>
-        </div>
-            </form>
-            <br>
-            <p id="gm_formula" style="display:flex;font-family:mathfont;;width:auto;"
-               class="stopwrap"
-               align="right"></p>
+                </form>
+                <br>
+                <div class="coll1" style="text-align: center;">
+            <p id="gm_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
             <h5 id="gm"></h5>
-            <br><br><br>
-            <h4>Harmonic Mean</h4><br>
-            <form class="form-inline text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class=".col-4">
+                </div>
+            <br><br>
+            <h4 class="d-flex justify-content-center">Harmonic Mean</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                             <input type="number" id="aval2" placeholder="Enter the first term (a)"
                          style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                        
-                        
-                        <div class=".col-4">
+
                             <input type="number" id="cval2" placeholder="Enter the last term(c) "
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                        </div>
-                        <div class=".col-4 m-4">
+                       <div class="row">
+                        <div class="col-6">
                             <button type="button" class="btn btn-light" onclick=hmsol()>
                                 Solve
                             </button>
-                            <button type="button" class="btn btn-light mx-1" onclick="this.form.reset();">
-                                Reset
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                            Reset
                             </button>
                         </div>
                     </div>
-                </div>
-                </div>
-            </form>
-            <br>
-            <p id="hm_formula" style="display:flex;font-family:mathfont;;width:auto;"
-               class="stopwrap"
-               align="right"></p>
+                </form>
+                <br>
+                <div class="coll1" style="text-align: center;">
+            <p id="hm_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
             <h5 id="hm"></h5>
+                </div>
         </div>
         <!-- sum of nterms in G.P. ends  -->
         <div class="collapse" id="convdiv">
@@ -16983,8 +17197,15 @@ N is the population size.
       We can also say that it is a generalised mean with the exponent value as 2. </p>   
 </div>
 
-
-
+<div>
+    <h2>Print tetrahedral numbers upto Nth term</h2>
+    <p>&nbsp;</p>
+    <input type="text" id="typenum" class="form__field" placeholder="Enter the number">
+    <p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="typenumfind()">Find</button>
+    <p>&nbsp;</p>
+    <h5 id="typenumans"></h5>
+</div>
 
 <div class="collapse" id="zscores">
 
@@ -17254,8 +17475,6 @@ N is the population size.
 </div>
 
 <div class="collapse" id="arcs">
-
-    
     <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
     <form action="">
         <input type="number" name="ang" class="form__field" id="ang12"  placeholder="Enter central angle of circle">
@@ -17269,11 +17488,15 @@ N is the population size.
             <option class="form__field" value="cm"  style="background-color: #232a36;"> cm</option>
             <option class="form__field" value="m"  style="background-color: #232a36;"> m</option>
             <option class="form__field" value="inch"  style="background-color: #232a36;"> inch</option>
-        </select>
-        <p>&nbsp;</p>
+        </select> <p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="arcal()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-        <p id="arcans" style="font-size: 1.5em;"></p> <p>&nbsp;</p>
+        <p class="stopwrap" id="arcans1" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans2" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans3" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans4" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans5" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans6" style="font-family:mathfont;"></p><br>
     </form>
     
     <div id="dt" style="color: white; text-align: center; font-family:mathfont;">The length of an arc depends on the radius of a circle and the central angle θ. <br> L / θ = C / 2π<br>
@@ -18125,43 +18348,43 @@ N is the population size.
         <!-- end of anyBase to anyBase convertor -->
 
         <div class="collapse" id="res1">
-            <h2 style = "text-align : center;">Residue at Pole</h2>
+            <h2 style = "text-align : center;font-size: 28px !important;">Residue at Pole</h2>
             <br><br>
-            <p>Let z=a be a pole of order m of a one valued section f(z) and gamma be any circle of radius r with centre at z=a which doesnt have any singularities except at z=a, then f(z) is analytic within the annulus</p>
-            <p>Hence it can be written in form of Laurent Series as</p>
+            <p style="font-size:19px; color: #ababab !important;">Let z=a be a pole of order m of a one valued section f(z) and gamma be any circle of radius r with centre at z=a which doesnt have any singularities except at z=a, then f(z) is analytic within the annulus</p>
+            <p style="font-size:19px; color: #ababab !important;">Hence it can be written in form of Laurent Series as</p>
             <p>\[f(z)\space =\space \sum_{n=0}^{\infty} a_n (z-a)^{n}\space +\space \sum_{n=0}^{\infty} b_n (z-a)^{-n}\]</p>
             <p>\[a_n \space =\space \frac{1}{2\pi i} \int \frac{f(z)}{(z-a)^{n+1}}\,dz\]</p>
             <p>\[b_n\space =\space \frac{1}{2\pi i} \int \frac{f(z)}{(z-a)^{-n+1}}\,dz\]</p>
             <p>\[ Particularly,\space b_1 \space =\space \frac{1}{2\pi i} \int f(z)\,dz\]</p>
-            <p>The coefficient of b<sub>1</sub> is called residue of f(z) at z=a</p>
+            <p style="font-size:19px; color: #ababab !important;">The coefficient of b<sub>1</sub> is called residue of f(z) at z=a</p>
             <br>
-            <h4>Cauchy Residue Theorem</h4>
+            <h4 style="text-align: center;">Cauchy Residue Theorem</h4>
             <br>
-            <p>In complex analysis, a discipline within mathematics, the residue theorem, sometimes called Cauchy's residue theorem, is a powerful tool to evaluate line integrals of analytic functions over closed curves; it can often be used to compute real integrals and infinite series as well. It generalizes the Cauchy integral theorem and Cauchy's integral formula. From a geometrical perspective, it can be seen as a special case of the generalized Stokes' theorem.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Residue_theorem_illustration.png/250px-Residue_theorem_illustration.png" alt="">
-            <p>Let U be a simply connected open subset of the complex plane containing a finite list of points a1, ..., an, U0 = U \ {a1, ..., an}, and a function f defined and holomorphic on U0. Let γ be a closed rectifiable curve in U0, and denote the winding number of γ around ak by I(γ, ak). The line integral of f around γ is equal to 2πi times the sum of residues of f at the points, each counted as many times as γ winds around the point:</p>
+            <p style="font-size:19px; color: #ababab !important;">In complex analysis, a discipline within mathematics, the residue theorem, sometimes called Cauchy's residue theorem, is a powerful tool to evaluate line integrals of analytic functions over closed curves; it can often be used to compute real integrals and infinite series as well. It generalizes the Cauchy integral theorem and Cauchy's integral formula. From a geometrical perspective, it can be seen as a special case of the generalized Stokes' theorem.</p>
+            <img style="display: block;margin-left: auto; margin-right: auto; width:25%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Residue_theorem_illustration.png/250px-Residue_theorem_illustration.png" alt="">
+            <p style="font-size:19px; color: #ababab !important;">Let U be a simply connected open subset of the complex plane containing a finite list of points a1, ..., an, U0 = U \ {a1, ..., an}, and a function f defined and holomorphic on U0. Let γ be a closed rectifiable curve in U0, and denote the winding number of γ around ak by I(γ, ak). The line integral of f around γ is equal to 2πi times the sum of residues of f at the points, each counted as many times as γ winds around the point:</p>
             <p>\[{\displaystyle \oint _{\gamma }f(z)\,dz=2\pi i\sum _{k=1}^{n}\operatorname {I} (\gamma ,a_{k})\operatorname {Res} (f,a_{k}).}\]</p>
-            <p>If γ is a positively oriented simple closed curve, I(γ, ak) = 1 if ak is in the interior of γ, and 0 if not, therefore</p>
+            <p style="font-size:19px; color: #ababab !important;">If γ is a positively oriented simple closed curve, I(γ, ak) = 1 if ak is in the interior of γ, and 0 if not, therefore</p>
             <p>\[{\displaystyle \oint _{\gamma }f(z)\,dz=2\pi i\sum \operatorname {Res} (f,a_{k})}\]</p>
-            <p>The relationship of the residue theorem to Stokes' theorem is given by the Jordan curve theorem. The general plane curve γ must first be reduced to a set of simple closed curves {γi} whose total is equivalent to γ for integration purposes; this reduces the problem to finding the integral of f dz along a Jordan curve γi with interior V. The requirement that f be holomorphic on U0 = U \ {ak} is equivalent to the statement that the exterior derivative d(f dz) = 0 on U0. Thus if two planar regions V and W of U enclose the same subset {aj} of {ak}, the regions V \ W and W \ V lie entirely in U0, and hence</p>
+            <p style="font-size:19px; color: #ababab !important;">The relationship of the residue theorem to Stokes' theorem is given by the Jordan curve theorem. The general plane curve γ must first be reduced to a set of simple closed curves {γi} whose total is equivalent to γ for integration purposes; this reduces the problem to finding the integral of f dz along a Jordan curve γi with interior V. The requirement that f be holomorphic on U0 = U \ {ak} is equivalent to the statement that the exterior derivative d(f dz) = 0 on U0. Thus if two planar regions V and W of U enclose the same subset {aj} of {ak}, the regions V \ W and W \ V lie entirely in U0, and hence</p>
             <p>\[{\displaystyle \int _{V\smallsetminus W}d(f\,dz)-\int _{W\smallsetminus V}d(f\,dz)}\]</p>
         </div>
         <div class="collapse" id="ci">
             <h2 style="text-align: center;">Contour Integration</h2>
             <br><br>
-            <p>Contour integration is the process of calculating the values of a contour integral around a given contour in the complex plane. As a result of a truly amazing property of holomorphic functions, such integrals can be computed easily simply by summing the values of the complex residues inside the contour.</p>
-            <img src="https://mathworld.wolfram.com/images/eps-gif/ContourIntegral_1000.gif" alt="">
+            <p style="color:#ababab !important">Contour integration is the process of calculating the values of a contour integral around a given contour in the complex plane. As a result of a truly amazing property of holomorphic functions, such integrals can be computed easily simply by summing the values of the complex residues inside the contour.</p>
+            <img style="display: block; margin-left:auto;margin-right:auto;width:30%" src="https://mathworld.wolfram.com/images/eps-gif/ContourIntegral_1000.gif" alt="">
             <br>
-            <p>Contour integration methods include:</p>
-            <p>1. direct integration of a complex-valued function along a curve in the complex plane (a contour);</p>
-            <p>2. application of the Cauchy integral formula; and</p>
-            <p>3. application of the residue theorem.</p>
+            <p style="text-align: center; font-size:1.5rem !important">Contour integration methods include:</p>
+            <p style="color:#ababab !important">1. direct integration of a complex-valued function along a curve in the complex plane (a contour);</p>
+            <p style="color:#ababab !important">2. application of the Cauchy integral formula; and</p>
+            <p style="color:#ababab !important">3. application of the residue theorem.</p>
             <br>
-            <h5>Contours</h5>
-            <p>Contours are the class of curves on which we define contour integration. A contour is a directed curve which is made up of a finite sequence of directed smooth curves whose endpoints are matched to give a single direction. This requires that the sequence of curves γ1, …, γn be such that the terminal point of γi coincides with the initial point of γi+1, ∀ i, 1 ≤ i < n. This includes all directed smooth curves. Also, a single point in the complex plane is considered a contour. The symbol + is often used to denote the piecing of curves together to form a new curve.</p>
+            <h5 style="text-align: center; font-size:2rem !important">Contours</h5>
+            <p style="color:#ababab !important">Contours are the class of curves on which we define contour integration. A contour is a directed curve which is made up of a finite sequence of directed smooth curves whose endpoints are matched to give a single direction. This requires that the sequence of curves γ1, …, γn be such that the terminal point of γi coincides with the initial point of γi+1, ∀ i, 1 ≤ i < n. This includes all directed smooth curves. Also, a single point in the complex plane is considered a contour. The symbol + is often used to denote the piecing of curves together to form a new curve.</p>
             <p>\[\gamma = y_1\space +\space y_2\space +\space y_3\space ....+\space y_n \]</p><br>
-            <p>The contour integral of a complex function f : C → C is a generalization of the integral for real-valued functions. For continuous functions in the complex plane, the contour integral can be defined in analogy to the line integral by first defining the integral along a directed smooth curve in terms of an integral over a real valued parameter. A more general definition can be given in terms of partitions of the contour in analogy with the partition of an interval and the Riemann integral. In both cases the integral over a contour is defined as the sum of the integrals over the directed smooth curves that make up the contour.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ContourDiagram.png/250px-ContourDiagram.png" alt="">
+            <p style="color:#ababab !important">The contour integral of a complex function f : C → C is a generalization of the integral for real-valued functions. For continuous functions in the complex plane, the contour integral can be defined in analogy to the line integral by first defining the integral along a directed smooth curve in terms of an integral over a real valued parameter. A more general definition can be given in terms of partitions of the contour in analogy with the partition of an interval and the Riemann integral. In both cases the integral over a contour is defined as the sum of the integrals over the directed smooth curves that make up the contour.</p>
+            <img  style="display: block; margin-left:auto;margin-right:auto;width:30%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ContourDiagram.png/250px-ContourDiagram.png" alt="">
         </div>
         <div class="collapse" id="mtm">
             <h2 style="text-align: center;">Milne Thomson Method</h2>
@@ -18578,6 +18801,15 @@ N is the population size.
     <button class="btn btn-dark" onclick="impsefind()">Find</button>
     <br>
     <p id="impseans"></p>
+    <br>
+    <h4>Sum of series: 1 – x^2/2! + x^4/4! -…. upto nth term </h4>
+    <br>
+    <input type="text" id="impse3"class="form__field"placeholder="Enter value of x">
+    <input type="text" id="impse4"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse1find()">Find</button>
+    <br>
+    <p id="impse1ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
@@ -21431,7 +21663,67 @@ N is the population size.
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
+
+        <div class="modal fade" id="claw" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Claw</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Straight line length</h5>
+                                    <p class="text-center">\[l = 2 \space (R - r) \]</p>
+                                    <p class="text-center">R = radius large circle</p>
+                                    <p class="text-center">r = radius small circle</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = π \space (R + r) + l \]</p>
+                                    <p class="text-center">\[\space \space = π \space (R + r) + 2 \space (R - r) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{π \space (R^2 - r^2)}{2} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/claw.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius large cicle (R)" id="inputlargerad"
+                                       oninput="solveclaw();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius small circle (r)" id="inputsmallrad"
+                                       oninput="solveclaw();">
+                            <p class="stopwrap" id="resultoflinelen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofclawperi"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofclawarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="trapezium" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -24434,6 +24726,60 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="salinon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Salinon</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>v
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Perimeter(P)</h5>
+                                    <p class="text-center">\[P = 2 \pi R \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area(A)</h5>
+                                    <p class="text-center">\[\frac{1}{4}* \pi * (R+r)^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/salinon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius large semicircle(R)" id="inputsalinonr"
+                                   oninput="solveSalinon();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius small semicircle(r)" id="inputsalinonR"
+                                   oninput="solveSalinon();">
+                            <p class="stopwrap" id="resultofsalinonperi"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofsalinonarea"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="ellipsoid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -25905,6 +26251,70 @@ N is the population size.
                             <p class="stopwrap" id="resofwedgesa2"
                                style="font-family:mathfont;"></p>
 
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="right_wedge" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Right Wedge</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{abh}{2} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center"> Surface area</h5>
+                                    <p class="text-center">\[A = ab+2ac+hb \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \sqrt{\frac{4*c^2-b^2}{4}} \]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/right-wedge.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base length a" id="inputwedgea"
+                                   oninput="solverightwedge();">    
+                            
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base width b" id="inputwedgeb"
+                                   oninput="solverightwedge();">
+                            
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length c" id="inputwedgec"
+                                   oninput="solverightwedge();">
+                           
+                            <p class="stopwrap" id="resultofrightwedgeheight"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrightwedgearea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrightwedgevol"
+                               style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
                     </div>
