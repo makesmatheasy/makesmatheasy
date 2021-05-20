@@ -617,7 +617,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#typenumbtn").click(function () {
+        openit("#typenum");
+        closenav();
+        clearall();
+    });
 
     $("#resbtn").click(function () {
         openit("#res1");
