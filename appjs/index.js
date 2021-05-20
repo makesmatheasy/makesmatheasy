@@ -272,6 +272,7 @@ function openit(id) {
         "#multiplying-all",
         "#onetwocom-calc",
         "#2d-shape",
+        "#salinon",
         "#3d-shape",
         "#hamming-calc",
         "#3dgeo",

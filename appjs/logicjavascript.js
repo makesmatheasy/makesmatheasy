@@ -7369,6 +7369,28 @@ function solvepartialsphere() {
     }
 }
 
+function solveSalinon() {
+    var r = document.getElementById("inputsalinonr").value;
+    var R = document.getElementById("inputsalinonR").value;
+    var perioutput = document.getElementById("resultofsalinonperi");
+    var areaoutput = document.getElementById("resultofsalinonarea");
+    var peritemp = "";
+    var areatemp = "";
+    var area=0.785*((r*r)+(R*R)+(2*R*r));
+    if ((r != "") && (R!="")) {
+        peritemp += "\\[Perimeter \\space of \\space Salinon \\space \\newline 2 \\times \\pi \\times" + R + "\\ = " + eval(String(2*3.14*R)) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space of \\space Salinon \\space  \\newline \\frac{1}{4} \\times \\pi (" + R + "+" + r + ")^2" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 
 function solvehemisphere() {
     var radius = document.getElementById("inputradiushemisph").value;
