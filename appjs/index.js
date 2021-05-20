@@ -222,6 +222,7 @@ function openit(id) {
         "#thdif",
         "#corgeo",
         "#ttest",
+        "#ftest",
         "#ztest",
         "#betagamma",
         "#parallel",
