@@ -9697,6 +9697,15 @@ function trapinsemi1find(){
     document.getElementById("trapinsemi1ans").innerHTML =  area;
 }
 
+function shtfind(){
+    let a = parseInt(document.getElementById("shtin").value)
+    // side length of a hexagon inscribed within an equilateral triangle is h = a/3.
+    // side length of the square that can be inscribed within a hexagon is x = 1.268h
+    // So, side length of the square inscribed within a hexagon which in turn is inscribed within an equilateral triangle, x = 0.423a.
+    var x = (0.423 * a);
+    document.getElementById("shtans").innerHTML =  x;
+}
+
 // gamma find function
 function gammafind(){
     // function to find gamma function of any no.
