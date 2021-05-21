@@ -885,6 +885,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#unitcircbtn").click(function () {
+        openit("#unitcirc");
+        closenav();
+        clearall();
+    });
     $("#trigsolcollapsebtn").click(function () {
         openit("#trigsolcollapse");
         closenav();

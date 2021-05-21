@@ -1342,6 +1342,15 @@ function confidence() {
     document.getElementById("confans").innerHTML = s;
 }
 
+function unitcircCal(){
+    var deg = document.getElementById("unitdeg").value;
+    var x = Math.cos(deg);
+    var y = Math.sin(deg);
+
+    document.getElementById("unitcircxans").innerHTML = "X: " + x;
+    document.getElementById("unitcircyans").innerHTML = "Y: " + y;
+}
+
 function wmccal()
 {
     var num1=document.getElementById("wmcx").value;

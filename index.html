@@ -1370,6 +1370,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="unitcircbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Unit Circle</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Unit Circle','#unitcirc','c','unitfav')"><img
+                                        id="unitfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+           
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="trigsolcollapsebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">General
                                 Solution of
@@ -10764,6 +10780,21 @@
             <p>\[\frac{d}{dx}sech^{-1}(x)\space =\space \frac{1}{x\sqrt{1-x^{2}}}\]</p>
             <p>\[\frac{d}{dx}cosech^{-1}(x)\space =\space \frac{1}{x\sqrt{1+x^{2}}}\]</p>
         </div>
+
+        <div class="collapse" id="unitcirc">
+            <h2 style="text-align: center;">Unit Circle</h2> 
+            <p>A unit circle is a circle with a radius of 1 (unit radius). This tool will help determine the coordinates of any point on the unit circle just by entering the angle.</p>
+            <input type="number" id="unitdeg" class="form__field" placeholder="Enter angle in deg"
+                                   style="border-bottom:0.375rem solid var(--apppink);">
+            <br>
+            <br>
+            <button class="btn btn-dark" onclick="unitcircCal()">Calculate</button>
+            <br>
+            <br>
+            <p id="unitcircxans"></p>
+            <p id="unitcircyans"></p>
+        </div>
+
         <div class="collapse" id="hyptrigonoiden">
             <h2 style="text-align: center; margin-bottom:20px;">Hyperbolic Trigonometric Identities</h2>
             <p style="color:#d3d3d3;margin-bottom: 5px;">The hyperbolic functions are analogs of the circular function or the trigonometric functions. The hyperbolic function occurs in the solutions of linear differential equations, calculation of distance and angles in the hyperbolic geometry, Laplace’s equations in the cartesian coordinates. Generally, the hyperbolic function takes place in the real argument called the hyperbolic angle. The basic hyperbolic functions are:</p>
