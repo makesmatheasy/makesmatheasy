@@ -1393,18 +1393,18 @@ function wmccal()
         console.log(wsum);
         console.log(sum);
         var wm=sum/wsum;
-        ans="The calculated weighted mean is: "+wm;
-
-    }
-    
+        ans="The calculated weighted mean is: "+wm;}
     }
     document.getElementById("wmcans").innerHTML=ans;
 }
 
 function dbltimeCal(){
-    let inc = parseInt(document.getElementById("inctime").value);
-    let ans = Math.log(2) / Math.log(1 + inc);
-    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
+    var inc = parseInt(document.getElementById("inctime").value);
+    var ans = Math.log(2) / Math.log(1 + inc);
+    document.getElementById("dbltimeans").innerHTML = "\\[Doubling \\space Time \\space is \\space \\space \\frac{log \\space (2) }{log \\space (1 + (\\% \\space per \\space period \\space increase)) } \\space \\space that \\space is, \\]";
+    renderMathInElement(document.getElementById("dbltimeans"));
+    document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
+    renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
 function covcalcu(){
