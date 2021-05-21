@@ -1403,7 +1403,7 @@ function enneagramfind(){
         }
 }
 
-function cencirtcal(){
+function cenintcal(){
     var a1 = parseInt(document.getElementById("fxc").value);
     var a2 = parseInt(document.getElementById("sxc").value);
     var a3 = parseInt(document.getElementById("txc").value);
@@ -10156,6 +10156,14 @@ function cirinsemifind(){
     document.getElementById("cirinsemians").innerHTML = a;
 }
 
+function cirinsemi1find(){
+    let R = parseInt(document.getElementById("cirinsemi1in").value)
+    var base = 1.732 * R;
+    var height = (1.5) * R;
+    var area = 0.5 * base * height;
+    document.getElementById("cirinsemi1ans").innerHTML = area;
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
@@ -15724,4 +15732,4 @@ function clearSumAndDiff() {
     }
 
 }
-
+}
