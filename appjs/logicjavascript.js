@@ -10784,6 +10784,13 @@ function lacube4find(){
         document.getElementById("polymax4ans").innerHTML = "No"
     }
 }
+
+function lacube5find(){
+    let n  = parseInt(document.getElementById("lacube5").value)
+    S = Math.floor((n * (n + 1)) / 2);
+    res = S * (S - 1);   
+    document.getElementById("lacube5ans").innerHTML =  res;
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
@@ -15385,4 +15392,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}}
+}}}
