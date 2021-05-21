@@ -345,6 +345,7 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Conditional Probability
+  - Geometric Probability Distribution
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties

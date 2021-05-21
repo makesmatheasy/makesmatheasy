@@ -332,6 +332,7 @@ function openit(id) {
         "#bayes-probabilitycollapse",
         "#hypergeos",
         "#condprobability",
+        "#geoprobability",
         "#prism",
         "#pentprism",
         "#pyramid",

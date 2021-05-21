@@ -13177,6 +13177,26 @@ function computeprobability() {
        renderMathInElement(result);
 }
 
+function geoprobability(){
+    var x = document.getElementById('failure').value;
+    var p = document.getElementById('success').value;
+    
+    if((isNaN(x)) || (isNaN(p)) ){
+        document.getElementById("geoprobAns").innerHTML = "Please enter valid input";
+    }
+    else{
+    if (p > 1) {
+        document.getElementById("geoprobAns").innerHTML = "Probability of success cannot exceed 1 ";
+    }
+    else if ( p < 0 ) {
+        document.getElementById("geoprobAns").innerHTML = "Probability of success cannot be negative ";
+    }
+    else {
+        document.getElementById("geoprobAns").innerHTML = "Geometric Probability: " + (1-p)**x * p ;
+    }
+    }
+}
+
 function condprobability(){
     var netevent = parseFloat(document.getElementById('totevent').value);
     var event = parseFloat(document.getElementById('event').value);

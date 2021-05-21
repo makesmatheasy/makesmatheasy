@@ -1230,6 +1230,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#analyticalbtn").click(function () {
         openit("#analytical");
         closenav();
