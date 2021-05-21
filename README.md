@@ -292,6 +292,8 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+  - 4-D Shapes Calculator
+    - Tesseract
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA

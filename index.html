@@ -3150,6 +3150,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="fdshapescalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">4-D Shapes Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('4-D Shapes Calculator','#fdshapescal','c','fdshapesimgfav')"><img
+                                        id="fdshapesimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="3dgeobtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">3-D
                                 Geometry</a>
@@ -4194,6 +4211,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="pbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">p chart Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('p chart Calculator','#pchart','c','pfav')"><img
+                                        id="zscimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="npbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">np chart Calculator</a>
                         </td>
@@ -4636,29 +4668,29 @@
         <div class="collapse" id="clr">
             <h2 style="text-align: center;">CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM</h2>
             <br><br>
-            <h4>Cauchy Integral Theorem</h4>
+            <h4 style="text-align: center;">Cauchy Integral Theorem</h4>
             <br>
-            <p>If f(z) is analytic in some simply connected region R, then</p>
+            <p style="color:#ababab !important">If f(z) is analytic in some simply connected region R, then</p>
             <p>\[\int f(z)\,dz\space =\space 0\]</p>
-            <p>for any closed contour gamma completely contained in R. Writing z as</p>
+            <p style="color:#ababab !important">for any closed contour gamma completely contained in R. Writing z as</p>
             <p>\[z\space =\space x+iy\]</p>
-            <p>For a multiply connected region,</p>
+            <p style="color:#ababab !important">For a multiply connected region,</p>
             <p>\[\int_{C_1} f(z)\,dz\space =\space \int_{C_2} f(z)\,dz\]</p>
             <br>
-            <h4>Liouville Theorem</h4>
+            <h4 style="text-align: center;">Liouville Theorem</h4>
             <br>
-            <p>In complex analysis, Liouville's theorem, named after Joseph Liouville (although the theorem was first proven by Cauchy in 1844), states that every bounded entire function must be constant. That is, every holomorphic function f for which there exists a positive number M such that  |f(z)|&lt;= M for all z in C  is constant. Equivalently, non-constant holomorphic functions on C have unbounded images.</p>
+            <p style="color:#ababab !important">In complex analysis, Liouville's theorem, named after Joseph Liouville (although the theorem was first proven by Cauchy in 1844), states that every bounded entire function must be constant. That is, every holomorphic function f for which there exists a positive number M such that  |f(z)|&lt;= M for all z in C  is constant. Equivalently, non-constant holomorphic functions on C have unbounded images.</p>
             <p>\[{\displaystyle |a_{k}|\leq {\frac {1}{2\pi }}\oint _{C_{r}}{\frac {|f(\zeta )|}{|\zeta |^{k+1}}}\,|d\zeta |\leq {\frac {1}{2\pi }}\oint _{C_{r}}{\frac {M}{r^{k+1}}}\,|d\zeta |={\frac {M}{2\pi r^{k+1}}}\oint _{C_{r}}|d\zeta |={\frac {M}{2\pi r^{k+1}}}2\pi r={\frac {M}{r^{k}}},}\]</p>
-            <p>A consequence of the theorem is that "genuinely different" entire functions cannot dominate each other, i.e. if f and g are entire, and |f| ≤ |g| everywhere, then f = α·g for some complex number α. Consider that for g = 0 the theorem is trivial so we assume. Consider the function h = f/g. It is enough to prove that h can be extended to an entire function, in which case the result follows by Liouville's theorem. The holomorphy of h is clear except at points in g−1(0). But since h is bounded and all the zeroes of g are isolated, any singularities must be removable. Thus h can be extended to an entire bounded function which by Liouville's theorem implies it is constant.
+            <p style="color:#ababab !important">A consequence of the theorem is that "genuinely different" entire functions cannot dominate each other, i.e. if f and g are entire, and |f| ≤ |g| everywhere, then f = α·g for some complex number α. Consider that for g = 0 the theorem is trivial so we assume. Consider the function h = f/g. It is enough to prove that h can be extended to an entire function, in which case the result follows by Liouville's theorem. The holomorphy of h is clear except at points in g−1(0). But since h is bounded and all the zeroes of g are isolated, any singularities must be removable. Thus h can be extended to an entire bounded function which by Liouville's theorem implies it is constant.
                
             </p>
             <br>
-            <h4>Rouche Theorem</h4>
+            <h4 style="text-align: center;">Rouche Theorem</h4>
             <br>
-            <p>Rouché's theorem, named after Eugène Rouché, states that for any two complex-valued functions f and g holomorphic inside some region K with closed contour K, if |g(z)| &lt; |f(z)| on partial K, then f and f + g have the same number of zeros inside K, where each zero is counted as many times as its multiplicity. This theorem assumes that the contour  K is simple, that is, without self-intersections. Rouché's theorem is an easy consequence of a stronger symmetric Rouché's theorem described below.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Rouche-thm.png/300px-Rouche-thm.png" alt="">
-            <p>Let C be a closed, simple curve (i.e., not self-intersecting). Let h(z) = f(z) + g(z). If f and g are both holomorphic on the interior of C, then h must also be holomorphic on the interior of C. Then, with the conditions imposed above, the Rouche's theorem in its original (and not symmetric) form says that</p>
-            <p>If |f(z)| > |h(z) − f(z)|, for every z in C, then f and h have the same number of zeros in the interior of C.</p>
+            <p style="color:#ababab !important; margin-bottom: 15px;">Rouché's theorem, named after Eugène Rouché, states that for any two complex-valued functions f and g holomorphic inside some region K with closed contour K, if |g(z)| &lt; |f(z)| on partial K, then f and f + g have the same number of zeros inside K, where each zero is counted as many times as its multiplicity. This theorem assumes that the contour  K is simple, that is, without self-intersections. Rouché's theorem is an easy consequence of a stronger symmetric Rouché's theorem described below.</p>
+            <img style="display: block;margin-left: auto; margin-right: auto; width:30%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Rouche-thm.png/300px-Rouche-thm.png" alt="">
+            <p style="color:#ababab !important; margin-top: 15px;">Let C be a closed, simple curve (i.e., not self-intersecting). Let h(z) = f(z) + g(z). If f and g are both holomorphic on the interior of C, then h must also be holomorphic on the interior of C. Then, with the conditions imposed above, the Rouche's theorem in its original (and not symmetric) form says that</p>
+            <p style="color:#ababab !important">If |f(z)| > |h(z) − f(z)|, for every z in C, then f and h have the same number of zeros in the interior of C.</p>
         </div>
                  <!-- Start of Fourier Series  -->
                  <div class="collapse" id="fourier_series">
@@ -5708,6 +5740,14 @@
             <button class="btn btn-dark" onclick="shtfind()">Find</button>
             <br>
             <h5 id="shtans"></h5>
+            <br>
+            <h4>Largest hexagon that can be inscribed within an equilateral triangle </h4>
+            <br>
+            <input type="text" id="htin" placeholder="Enter side length of hexagon" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="htfind()">Find</button>
+            <br>
+            <h5 id="htans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -11866,7 +11906,7 @@
 
         
 <div class="collapse" id="ftest">
-    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">F - Test</h1>
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">F-Test</h1>
     <p style="margin-top: 2rem;">
         A Statistical F Test uses an F Statistic to compare two variances, s1 and s2, by dividing them. The result is always a positive number (because variances are always positive). The equation for comparing two variances with the f-test is:
         F = s1^2 / s2^2 ( if s1^2> s2^2). Any statistical test that uses F-distribution can be called an F-test. It is used when the sample size is small i.e. n < 30.
@@ -11922,6 +11962,30 @@
                 <p id="pvalue"></p>
             </div>
         </div>
+         <!-- p chart-->
+         <div class="collapse" id="pchart">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">p chart Calculator</h1>
+            <p style="margin-top: 2rem;">
+                A p-chart is an attributes control chart used with data collected in subgroups of varying sizes. 
+                Because the subgroup size can vary, it shows a proportion on nonconforming items rather than the actual count.
+                Control limits of p-chart determines whether the process is in control or not.
+            </p>
+            <p id="tformula" style="margin-bottom:4rem;"></p>
+            <form action="">
+                <input class = "form__field"type="text" id="defectives" placeholder="Enter list of defective items separated by SPACE ">
+                <br><br>
+                <input class = "form__field"type="number" id="samples" placeholder="Number of items/samples (n)">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="pvalue()">Test</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+            </form>
+            <p id="npans"></p>
+            <div id="stepsbox">    
+                <p id="pbar" style="text-align: left; margin-top: 2rem;"></p>
+                <p id="ucl" ></p>
+                <p id="lcl" ></p>
+            </div>
+        </div>
 
 
                 <!-- np chart-->
@@ -11936,7 +12000,7 @@
                     <form action="">
                         <input class = "form__field"type="text" id="defective" placeholder="Enter list of defective items separated by SPACE ">
                         <br><br>
-                        <input class = "form__field"type="number" id="no" placeholder="Number of items/samples (n) separated by SPACE">
+                        <input class = "form__field"type="number" id="no" placeholder="Number of items/samples (n)">
                         <br><br>
                         <button class = "btn btn-light" type="button" onclick="npvalue()">Test</button>
                         <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
@@ -13368,6 +13432,14 @@
             <button type = "button" class="btn btn-dark" onclick = "polymax3find()">FInd</button>
             <br>
             <h4 id="polymax3ans"></h4>
+            <br>
+            <h4>Number of cycles formed by joining vertices of n sided polygon at the center</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax4"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax4find()">FInd</button>
+            <br>
+            <h4 id="polymax4ans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -14399,6 +14471,14 @@
             <button class="btn btn-dark" onclick="cubeincylinderfind()">Find</button><br>
             <h5 id="cubeincylinderans"></h5>
             <br>
+            <h4>Largest sphere that can be inscribed in a right circular cylinder inscribed in a frustum </h4>
+            <br>
+            <input type="text" id="scyf" class="form__field" placeholder="Enter the height of cone">
+            <input type="text" id="scyf1" class="form__field" placeholder="Enter the bigger radius of cone">
+            <input type="text" id="scyf2" class="form__field" placeholder="Enter the shorter radius of cone">
+            <br>
+            <button class="btn btn-dark" onclick="scyffind()">Find</button><br>
+            <h5 id="scyfans"></h5>
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -14742,6 +14822,16 @@
                     <td><a data-toggle="modal" data-target="#triquetra"
                            style="text-decoration:none;"
                            href="#">Triquetra</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="collapse" id="fdshapescal">
+            <h2>Calculator for 4-D Shapes</h2>
+            <table class="table">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#tesseract"
+                           style="text-decoration:none;" href="#">Tesseract</a></td>
                 </tr>
             </table>
         </div>
@@ -16747,15 +16837,17 @@
 <div class="collapse" id="expgrwths">
     <h1 >Exponential Growth Calculator </h1>
     <p>&nbsp;</p>
-        <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value">
+    <h3>Formula Used:\[x(t)=x_{0}(1+\frac{r}{100})^t\]</h3>
+        <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value(x₀)">
         <p>&nbsp;</p>
-        <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change">
+        <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change(r)">
         <p>&nbsp;</p>
-        <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time(in years)">
+        <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time( t in years)">
         <p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
         <p>&nbsp;</p>
         <p id="egcans"></p>
+        <p id="egcexplain"></p>
 </div>
 
 <div class="collapse" id="gcd">
@@ -16913,28 +17005,16 @@
     </div>
 <div class="collapse" id="utcs">
 
-    
-    <h1 >UNIT RATE CALCULATOR </h1>
-    <p>&nbsp;</p>
+<h1 >UNIT RATE CALCULATOR </h1><p>&nbsp;</p>
     <form action="">
-        <input type="number" name="dens" id="urx1" size="5" placeholder="Enter quantity">  +
-        <input type="text" name="dens" id="urx2" size="5" placeholder="Enter unit">
-        <br>
+        <input type="number" name="dens" id="urx1" size="5" placeholder="Enter quantity">+<input type="text" name="dens" id="urx2" size="5" placeholder="Enter unit"><br>
         <hr class="form__field">
-        <input type="number" name="dens"  id="urx3" size="5" placeholder="Enter quantity">  +
-        <input type="text" name="dens" id="urx4" size="5" placeholder="Enter unit">
-        <p>&nbsp;</p>
+        <input type="number" name="dens"  id="urx3" size="5" placeholder="Enter quantity">+<input type="text" name="dens" id="urx4" size="5" placeholder="Enter unit"><p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="utcal()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
     </form>
-    
-    <p id="utcans">
-    
-   
+    <p class="stopwrap" id="utcans" style="font-family:mathfont;"></p><br>
 </div>
-
-
-
 
 <div id="mecs" class="collapse">
     <h1 >MARGIN OF ERROR CALCULATOR </h1>
@@ -17067,7 +17147,9 @@ N is the population size.
     <br><br>
     <button type="button" class="btn btn-light" style="width:8em" onclick=perratcal()>  Convert   </button>
     <br><br>
-    <div id="perratans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
+    <p id="perratans1" style= "font-family:mathfont"></p><br>
+    <p id="perratans2" style= "font-family:mathfont"></p><br>
+    <p id="perratans" style= "font-family:mathfont"></p><br>
     </div>
    <br><br><br><br>
    <h1 style="font-family:mathfont; text-align:center;">Ratio to Percentage</h1><br><br>
@@ -17197,14 +17279,22 @@ N is the population size.
       We can also say that it is a generalised mean with the exponent value as 2. </p>   
 </div>
 
-<div>
+<div class="collapse" id="typenum">
     <h2>Print tetrahedral numbers upto Nth term</h2>
-    <br>
-    <input type="text" id="typenum" class="form__field"placeholder="Enter the number">
-    <br>
+    <p>&nbsp;</p>
+    <input type="text" id="typenum" class="form__field" placeholder="Enter the number">
+    <p>&nbsp;</p>
     <button class="btn btn-dark" onclick="typenumfind()">Find</button>
-    <br>
+    <p>&nbsp;</p>
     <h5 id="typenumans"></h5>
+    <br>
+    <h2>Print pentatope numbers upto Nth term</h2>
+    <br>
+    <input type="text" id="typenum1" class="form__field"placeholder="Enter the number">
+    <br>
+    <button class="btn btn-dark" onclick="typenum1find()">Find</button>
+    <br>
+    <h5 id="typenum1ans"></h5>
 </div>
 
 <div class="collapse" id="zscores">
@@ -18810,6 +18900,15 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse1find()">Find</button>
     <br>
     <p id="impse1ans"></p>
+    <br>
+    <h4>Sum of the series 1 + x + x^2+ x^3+ .. + x^n</h4>
+    <br>
+    <input type="text" id="impse5"class="form__field"placeholder="Enter value of x">
+    <input type="text" id="impse6"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse2find()">Find</button>
+    <br>
+    <p id="impse2ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
@@ -23807,6 +23906,62 @@ N is the population size.
     </div>
     
     <!--shapes end-->
+
+    <!-- 4D shapes-->
+    <div class="modal fade" id="tesseract" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tesseract</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Surface Area</h5>
+                                <p class="text-center">\[A = 24 \space a^2 \]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Surface Volume</h5>
+                                <p class="text-center">\[V = 8 \space a^3 \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Hypervolume</h5>
+                                <p class="text-center">\[H = a^4 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/tesseract.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                               placeholder="Enter edge length of tesseract (a)" id="inputtessedge"
+                               oninput="solvetesseract();">
+                        <p class="stopwrap" id="resultoftessarea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftessvol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftesshypvol"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- properties of quadrilaterals -->
     <div>

@@ -479,6 +479,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+    $("#pbtn").click(function () {
+        openit("#pchart");
+        closenav();
+        clearall();
+    });   
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
@@ -727,6 +732,11 @@ $(document).ready(function () {
 
     $("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
+        closenav();
+        clearall();
+    });
+    $("#fdshapescalbtn").click(function () {
+        openit("#fdshapescal");
         closenav();
         clearall();
     });
