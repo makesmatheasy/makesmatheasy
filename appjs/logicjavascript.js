@@ -2388,6 +2388,7 @@ function impse3find(){
         }
         str = tmp;
 }
+}
 
 function impse4find(){
     let n = parseInt(document.getElementById("impse7").value)  
@@ -3561,29 +3562,6 @@ function vectorsub(){
    
     }
 }
-function vectordot(){
-    var a=parseFloat(document.getElementById('d1e').value);
-    var b=parseFloat(document.getElementById('d2e').value);
-    var c=parseFloat(document.getElementById('d3e').value);
-    var d=parseFloat(document.getElementById('e1d').value);
-    var e=parseFloat(document.getElementById('e2d').value);
-    var f=parseFloat(document.getElementById('e3d').value);
-    var mult1 = (a*d);
-    var mult2 = (b*e);
-    var mult3 = (c*f);
-    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
-        document.getElementById("vectordot1").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
-        renderMathInElement(document.getElementById("vectordot1"));
-        document.getElementById("dotex").innerHTML = "";
-    }else{
-    var mult = mult1 + mult2 + mult3;
-    document.getElementById("vectordot1").innerHTML = "\\[ ="  + (mult) + "\\]";
-    renderMathInElement(document.getElementById("vectordot1"));
-  
-    document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
-    renderMathInElement(document.getElementById("dotex"));
-}
-}
 
 function vactorangle(){
     var a=parseFloat(document.getElementById('vaa1').value);
@@ -3846,15 +3824,38 @@ function projector(){
     renderMathInElement(document.getElementById("vectorscalar1"));
 }
 }
+function vectordot(){
+    var a=parseFloat(document.getElementById('d1e').value);
+    var b=parseFloat(document.getElementById('d2e').value);
+    var c=parseFloat(document.getElementById('d3e').value);
+    var d=parseFloat(document.getElementById('e1d').value);
+    var e=parseFloat(document.getElementById('e2d').value);
+    var f=parseFloat(document.getElementById('e3d').value);
+    var mult1 = (a*d);
+    var mult2 = (b*e);
+    var mult3 = (c*f);
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
+        document.getElementById("vectordot1").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("vectordot1"));
+        document.getElementById("dotex").innerHTML = "";
+    }else{
+    var mult = mult1 + mult2 + mult3;
+    document.getElementById("vectordot1").innerHTML = "\\[ ="  + (mult) + "\\]";
+    renderMathInElement(document.getElementById("vectordot1"));
+  
+    document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( "+ (a)+" * " +(d)+  " ) \\space + \\space ( "+ (b)+" * " +(e)+" )  \\space + \\space ( "+ (c)+" * " +(f)+" )  \\space \\newline \\] " ;
+    renderMathInElement(document.getElementById("dotex"));
+}
+}
 
 function vectorcross(){
     var a,b,c,d,e,f,mul,mul1,mul2,mul3,mul4,mul5,ans,ans1,ans2;
-    a=parseFloat(document.getElementById('f1g').value);
-    b=parseFloat(document.getElementById('f2g').value);
-    c=parseFloat(document.getElementById('f3g').value);
-    d=parseFloat(document.getElementById('g1f').value);
-    e=parseFloat(document.getElementById('g2f').value);
-    f=parseFloat(document.getElementById('g3f').value);
+    var a=parseFloat(document.getElementById('d1e').value);
+    var b=parseFloat(document.getElementById('d2e').value);
+    var c=parseFloat(document.getElementById('d3e').value);
+    var d=parseFloat(document.getElementById('e1d').value);
+    var e=parseFloat(document.getElementById('e2d').value);
+    var f=parseFloat(document.getElementById('e3d').value);
     mul = (b*f);
     mul1 = (c*e);
     mul2 = (a*f);
@@ -3866,34 +3867,34 @@ function vectorcross(){
     ans2= (mul4-mul5);
 
     if(isNaN(a) || isNaN(b) ||isNaN(c) ||isNaN(d) ||isNaN(e) ||isNaN(f) ){
-        document.getElementById("vectorcross1").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
-        renderMathInElement(document.getElementById("vectorcross1"));
-        document.getElementById("vectorcross2").innerHTML ="";
+        document.getElementById("dotex").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        renderMathInElement(document.getElementById("dotex"));
+        document.getElementById("vectordot1").innerHTML ="";
     }
     else{
     if(ans1<0 && ans2<0){
-    document.getElementById("vectorcross1").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
-    document.getElementById("vectorcross2").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
-    renderMathInElement(document.getElementById("vectorcross1"));
-    renderMathInElement(document.getElementById("vectorcross2"));
+    document.getElementById("dotex").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
+    document.getElementById("vectordot1").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
+    renderMathInElement(document.getElementById("dotex"));
+    renderMathInElement(document.getElementById("vectordot1"));
     }
     else if(ans1<0){
-    document.getElementById("vectorcross1").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
-    document.getElementById("vectorcross2").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
-    renderMathInElement(document.getElementById("vectorcross1"));
-    renderMathInElement(document.getElementById("vectorcross2"));
+    document.getElementById("dotex").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
+    document.getElementById("vectordot1").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space " + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
+    renderMathInElement(document.getElementById("dotex"));
+    renderMathInElement(document.getElementById("vectordot1"));
     }
     else if(ans2<0){
-    document.getElementById("vectorcross1").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
-    document.getElementById("vectorcross2").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
-    renderMathInElement(document.getElementById("vectorcross1"));
-    renderMathInElement(document.getElementById("vectorcross2"));
+    document.getElementById("dotex").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
+    document.getElementById("vectordot1").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space " + ans2 + "\\hat{k} \\]";
+    renderMathInElement(document.getElementById("dotex"));
+    renderMathInElement(document.getElementById("vectordot1"));
     }
     else{
-    document.getElementById("vectorcross1").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
-    document.getElementById("vectorcross2").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
-    renderMathInElement(document.getElementById("vectorcross1"));
-    renderMathInElement(document.getElementById("vectorcross2"));
+    document.getElementById("dotex").innerHTML = "\\[  \\overrightarrow{X} \\space \\times \\space \\overrightarrow{Y} \\space = \\space \\hat{i} \\space (" + mul + "- \\space (" + mul1 + ")\\space) \\space - \\space \\hat{j} (" + mul2 + "- \\space (" + mul3 + ")\\space)\\space + \\space \\hat{k} (" + mul4 + "- \\space (" + mul5 + ") \\space )    \\]";
+    document.getElementById("vectordot1").innerHTML = "\\[ Cross \\space Product \\space of \\space Vectors \\space (X \\times Y) \\space = " + ans + "\\hat{i} \\space +" + ans1 + "\\hat{j} \\space +" + ans2 + "\\hat{k} \\]";
+    renderMathInElement(document.getElementById("dotex"));
+    renderMathInElement(document.getElementById("vectordot1"));
     }
 }
 }
@@ -15422,4 +15423,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}}
+}
