@@ -231,7 +231,7 @@ function openit(id) {
         "#npchart",
         "#betagamma",
         "#parallel",
-        "#d",
+        "#dri",
         "#unitconcal",
         "#giff",
         "#qrtl",
