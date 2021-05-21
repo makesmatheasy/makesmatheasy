@@ -1047,6 +1047,7 @@ function setcal() {
 function smallerscfind(){
     let N = parseInt(document.getElementById("smallinin").value)
     let prevN = Math.floor(Math.sqrt(N));
+    if(!isNaN(N)){
     if (prevN * prevN == N)
         prevN -= 1;
     document.getElementById("smallsquare").innerHTML = prevN*prevN
@@ -1055,12 +1056,21 @@ function smallerscfind(){
         prevN1 -= 1;    
     document.getElementById("smallcube").innerHTML = prevN1*prevN1
 }
+else{
+    document.getElementById('smallsquare').innerHTML= 'Please enter all Input';
+    document.getElementById("smallcube").innerHTML = "";
+}
+}
 function greatcfind(){
     let N = parseInt(document.getElementById("greatinin").value)
+    if(!isNaN(N)){
     let nextN = Math.floor(Math.cbrt(N)) + 1;
-
     let ans =  nextN * nextN * nextN;
     document.getElementById("greatcube").innerHTML = "The cube greater than "+N+" is "+ans
+}
+else{
+    document.getElementById('greatcube').innerHTML= 'Please enter all Input';
+}
 }
 
 function disfind(){
@@ -1511,9 +1521,14 @@ function checkforusetrigovalue() {
 
 function greatsfind(){
     let side  = parseInt(document.getElementById("greatinin1").value)
+    if(!isNaN(side)){
     let nextN = Math.floor(Math.sqrt(side)) + 1;
     let ans = nextN*nextN
     document.getElementById("greatsquare").innerHTML = ans
+    }
+    else{
+        document.getElementById('greatsquare').innerHTML= 'Please enter all Input';
+    }
 }
 
 function ssdfind(){
@@ -2279,7 +2294,12 @@ function addsubcfind(){
     let ans = (n - prevCube) < (nextCube - n)
     ? (prevCube - n)
     : (nextCube - n)
+    if(!isNaN(n)){
     document.getElementById("addsubcans").innerHTML = ans;
+    }
+    else{
+        document.getElementById('addsubcans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function addsubsfind(){
@@ -2289,7 +2309,12 @@ function addsubsfind(){
     let ans = (n - prevSquare) < (nextSquare - n)
     ? (prevSquare - n)
     : (nextSquare - n)
+    if(!isNaN(n)){
     document.getElementById("addsubsans").innerHTML = ans;
+    }
+    else{
+        document.getElementById('addsubsans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function solvepenta(){
@@ -3471,12 +3496,18 @@ function angletwoplanesolve()
 function countscfind(){
     let N = parseInt(document.getElementById('countsc').value)
     let cnt = 0, i = 1;
+    if(!isNaN(N)){
     while (Math.floor(Math.pow(i, 6)) <= N)
     {
         ++cnt;
         ++i;
     }
-    document.getElementById("countscans").innerHTML = cnt
+   
+    document.getElementById("countscans").innerHTML = cnt;
+    }
+    else{
+        document.getElementById('countscans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function vectoradd(){
@@ -4914,6 +4945,7 @@ function cycquadcal(){
 function mincubefind(){
     let n= parseInt(document.getElementById("mincube").value)
     var count = 0, ans = 1;
+    if(!isNaN(n)){
     while (n % 2 == 0) {
         count++;
         n /= 2;
@@ -4933,6 +4965,10 @@ function mincubefind(){
     if (n > 2)
         ans *= n;  
         document.getElementById("mincubeans").innerHTML = ans
+    }
+    else{
+        document.getElementById('mincubeans').innerHTML= 'Please enter all Input';
+    }
 }
 
 //interior angle calculation
@@ -10675,6 +10711,7 @@ function prime_till_num(primetill){
 function lacubefind(){
     let n = parseInt(document.getElementById("lacube").value)
     let steps = 0;
+    if(!isNaN(n)){
     while (n)
     {
         let largest = Math.floor(Math.cbrt(n));
@@ -10682,12 +10719,17 @@ function lacubefind(){
         steps++;
     }
     document.getElementById("lacubeans").innerHTML =  steps;
+    }
+    else{
+        document.getElementById('lacubeans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function lacube1find(){
     let n = parseInt(document.getElementById("lacube1").value)
     let count = 0;
     let ans = 1;
+    if(!isNaN(n)){
     while (n % 2 == 0)
     {
         count++;
@@ -10711,12 +10753,17 @@ function lacube1find(){
         ans *= n;
  
     document.getElementById("lacube1ans").innerHTML =  ans;
+    }
+    else{
+        document.getElementById('lacube1ans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function lacube2find(){
     let n = parseInt(document.getElementById("lacube2").value)
     let count = 0;
     let ans = 1;
+    if(!isNaN(n)){
     while (n % 3 == 0)
     {
         count++;
@@ -10740,12 +10787,17 @@ function lacube2find(){
         ans *= n;
  
     document.getElementById("lacube2ans").innerHTML =  ans;
+    }
+    else{
+        document.getElementById('lacube2ans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function lacube3find(){
     let n = parseInt(document.getElementById("lacube3").value)
     let count = 0;
     let ans = 1;
+    if(!isNaN(n)){
     while (n % 3 == 0)
     {
         count++;
@@ -10769,6 +10821,10 @@ function lacube3find(){
         ans *= n;
  
     document.getElementById("lacube3ans").innerHTML =  ans;
+    }
+    else{
+        document.getElementById('lacube3ans').innerHTML= 'Please enter all Input';
+    }
 }
 
 function lacube4find(){
@@ -10777,11 +10833,16 @@ function lacube4find(){
     s1 = a.toString();
     s2 = b.toString();
     var c = parseInt(s1 + s2);
+    if(!isNaN(a) || !isNaN(b)){
     if (isPerfectCube(c)) {
         document.getElementById("polymax4ans").innerHTML = "Yes"
     }
     else {
         document.getElementById("polymax4ans").innerHTML = "No"
+    }
+    }
+    else{
+        document.getElementById('polymax4ans').innerHTML= 'Please enter all Input';
     }
 }
 function isPerfectCube(x)
@@ -10792,6 +10853,7 @@ function isPerfectCube(x)
 }
 function cubefreefind(){
     let n = parseInt(document.getElementById("cubefree").value)
+    if(!isNaN(n)){
     for(let i = 2; i <= n; i++)
     {
         if (isCubeFree(i))
@@ -10799,6 +10861,10 @@ function cubefreefind(){
             document.getElementById("cubefreeans").innerHTML= "("+ i + " )"
         }   
     }
+}
+else{
+    document.getElementById('cubefreeans').innerHTML= 'Please enter all Input';
+}
 }
 
 function isCubeFree(n)
@@ -12541,8 +12607,13 @@ function minsquarefind1(){
         }
         let opt2 = Math.max(posX - negX, posY - negY);
         let ans =  opt2 / Math.sin(Math.PI / N) / 2;
+        if(!isNaN(N)){
         document.getElementById("minsquareans1").innerHTML = ans
-}
+        }
+        else{
+            document.getElementById('minsquareans1').innerHTML= 'Please enter all Input';
+        }
+    }
 
 //function for encoding message using hamming code with even parity from left to right
 function hammingCodeLtoREven(x){
