@@ -1582,11 +1582,13 @@ function ssdfind(){
 }
 
 function glomefind(){
-    let r=parseInt(document.getElementById("inputsideglome").value)
-    let area = 16*3.14*r*r
-    let vol = 2*3.14*3.14*r*r*r
-    document.getElementById("resultofvolglome").innerHTML = "The volume is "+vol
-    document.getElementById("resultofareaglome").innerHTML = "The volume is "+area
+    var r=parseInt(document.getElementById("inputsideglome").value);
+    var area = 16*3.14*r*r;
+    var vol = 2*3.14*3.14*r*r*r;
+    document.getElementById("resultofvolglome").innerHTML = "\\[The \\space volume \\space of Glome \\space shape \\space is \\newline 2 \\times \\pi^2 \\times "+r+"^3 \\space = \\space "+vol.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("resultofvolglome"));
+    document.getElementById("resultofareaglome").innerHTML = "\\[The \\space area \\space of \\space Glome \\space shape \\space is \\newline 16 \\times \\pi \\times "+r+"^2 \\space = \\space"+area.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("resultofareaglome"));
 }
 
 //solve trigonometry values from right triangle
