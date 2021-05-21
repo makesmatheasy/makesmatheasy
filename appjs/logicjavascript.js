@@ -9949,6 +9949,12 @@ function profitloss() {
     }
 }
 
+function cirinsemifind(){
+    let r = parseInt(document.getElementById("cirinsemiin").value)
+    var a = 3.14 * R * R / 4; 
+    document.getElementById("cirinsemians").innerHTML = a;
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
