@@ -13693,6 +13693,14 @@ function cscufind(){
     document.getElementById("cscuans").innerHTML = "The volume of cone is "+V
 }
 
+function cscu1find(){
+    let a = parseInt(document.getElementById("cscu1").value)
+    var r = (2 * a *(Math.sqrt (2)) / 3);
+    var h = (2 * a) / 3;
+    var V =(3.14 *(Math.pow(r, 2) * h)); 
+    document.getElementById("cscu1ans").innerHTML= V;
+}
+
 function computeprobability() {
 
     var favour = parseInt(document.getElementById('favourable').value);
