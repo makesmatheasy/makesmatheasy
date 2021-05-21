@@ -1275,6 +1275,15 @@ function confidence() {
     document.getElementById("confans").innerHTML = s;
 }
 
+function unitcircCal(){
+    var deg = document.getElementById("unitdeg").value;
+    var x = Math.cos(deg);
+    var y = Math.sin(deg);
+
+    document.getElementById("unitcircxans").innerHTML = "X: " + x;
+    document.getElementById("unitcircyans").innerHTML = "Y: " + y;
+}
+
 function wmccal()
 {
     var num1=document.getElementById("wmcx").value;
@@ -1332,12 +1341,6 @@ function wmccal()
     
     }
     document.getElementById("wmcans").innerHTML=ans;
-}
-
-function dbltimeCal(){
-    let inc = parseInt(document.getElementById("inctime").value);
-    let ans = Math.log(2) / Math.log(1 + inc);
-    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
 }
 
 function covcalcu(){

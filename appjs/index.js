@@ -300,6 +300,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#unitcirc",
         "#deviation",
         "#degcal",
         "#trigsolcollapse",
