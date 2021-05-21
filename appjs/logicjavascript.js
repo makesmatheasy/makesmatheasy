@@ -2792,11 +2792,22 @@ function anglesolve() {
 function alisumfind(){
     let n = parseInt(document.getElementById("alisum").value)
     let sum = 0;
+    let explain1="\\[Proper \\space Divisors \\space of \\space"+n+":";
+    let explain2="\\[Aliquot \\space Sum=";
     for (let i = 1; i < n; i++)
         if (n % i == 0)
+        {
             sum += i;
-                   
-    document.getElementById("alisumans").innerHTML =  sum;
+            explain1+="\\space"+i+",";
+            explain2+=i+"+";
+        }
+        explain1=explain1.slice(0,-1);
+        explain1+="\\]";
+        explain2=explain2.slice(0,-1);
+        explain2+="="+sum+"\\]";   
+    document.getElementById("alisumans").innerHTML = "Aliquot Sum="+sum;
+    document.getElementById("aliexplain").innerHTML =  explain1+explain2;
+    renderMathInElement(document.getElementById("aliexplain"));
 }
 
 function dispointsolve()
