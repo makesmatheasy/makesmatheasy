@@ -2361,6 +2361,34 @@ function impse2find(){
     return total;
 }
 
+function impse3find(){
+    let n = parseInt(document.getElementById("impse7").value)    
+    if (n == 1)    
+        return "1";
+    if (n == 2)    
+        return "11";
+    let str = "11";
+     
+    for(let i = 3; i <= n; i++)
+    {
+        str += '$';
+        let len = str.length;
+        let cnt = 1;
+        let tmp = "";
+        let arr = str.split("");
+        for(let j = 1; j < len; j++)
+        {
+            if (arr[j] != arr[j - 1])
+            {
+                tmp += cnt + 0;
+                tmp += arr[j - 1];
+                cnt = 1;
+            }
+            else cnt++;
+        }
+        str = tmp;
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
@@ -10743,6 +10771,25 @@ function lacube3find(){
     document.getElementById("lacube3ans").innerHTML =  ans;
 }
 
+function lacube4find(){
+    let a  = parseInt(document.getElementById("lacube4").value)
+    let b = parseInt(document.getElementById("lacube41").value)
+    s1 = a.toString();
+    s2 = b.toString();
+    var c = parseInt(s1 + s2);
+    if (isPerfectCube(c)) {
+        document.getElementById("polymax4ans").innerHTML = "Yes"
+    }
+    else {
+        document.getElementById("polymax4ans").innerHTML = "No"
+    }
+}
+function isPerfectCube(x)
+{
+    var cr = Math.round(Math.cbrt(x));
+ 
+    return (cr * cr * cr == x);
+}
 function cubefreefind(){
     let n = parseInt(document.getElementById("cubefree").value)
     for(let i = 2; i <= n; i++)
@@ -11683,6 +11730,13 @@ function polymax4find(){
     res = (N - 1) * (N - 2);
     finalResult = res + s;
     document.getElementById("polymax4ans").innerHTML =  finalResult;
+}
+
+function polymax5find(){
+    let n  = parseInt(document.getElementById("polymax5").value)
+    let a = parseInt(document.getElementById("polymax51").value)
+    let ans = (a / (2 * Math.tan((180 / n)* 3.14159 / 180)));
+    document.getElementById("polymax5ans").innerHTML = ans
 }
 
 function sumlucasfind(){
@@ -13686,6 +13740,14 @@ function cscufind(){
     document.getElementById("cscuans").innerHTML = "The volume of cone is "+V
 }
 
+function cscu1find(){
+    let a = parseInt(document.getElementById("cscu1").value)
+    var r = (2 * a *(Math.sqrt (2)) / 3);
+    var h = (2 * a) / 3;
+    var V =(3.14 *(Math.pow(r, 2) * h)); 
+    document.getElementById("cscu1ans").innerHTML= V;
+}
+
 function computeprobability() {
 
     var favour = parseInt(document.getElementById('favourable').value);
@@ -15323,4 +15385,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}
+}}
