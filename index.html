@@ -2530,11 +2530,11 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="dbtn"
+                            <a id="dribtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Dirichlet's theorem on arithmetic progressions</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('Dirichlet theorem on arithmetic progressions','#d','c','dimgfav')"><img
+                                <span onclick="addtofavourite('Dirichlet theorem on arithmetic progressions','#dri','c','dimgfav')"><img
                                         id="dimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -3104,7 +3104,22 @@
                     </tr>
                 </table>
             </li>
-
+            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="platonicbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;">Platonic Solids</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Platonic Solids','#platonic','c','platonicimgfav')"><img
+                                        id="platonicimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -5829,6 +5844,15 @@
             <button class="btn btn-dark" onclick="sht6find()">Find</button>
             <br>
             <h5 id="sht6ans"></h5>
+            <br>
+            <h4>Area of Equilateral triangle inscribed in a Circle of radius R </h4>
+            <br>
+            <input type="text" id="cirinsemi1in" placeholder="Enter radius of cicrcle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="cirinsemi1find()">Find</button>
+            <br>
+            <h5 id="cirinsemi1ans"></h5>
+            
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -12772,7 +12796,7 @@
             <p>By definition, two triangles are perspective if and only if they are in perspective centrally (or, equivalently according to this theorem, in perspective axially). Note that perspective triangles need not be similar.</p>
         </div>
 
-        <div>
+        <div class="collapse" id="dri">
             <h2 style="text-align:center;">Drichlet's Theorem</h2>
             <br><br>
             <p>In number theory, Dirichlet's theorem, also called the Dirichlet prime number theorem, states that for any two positive coprime integers a and d, there are infinitely many primes of the form a + nd, where n is also a positive integer. In other words, there are infinitely many primes that are congruent to a modulo d. The numbers of the form a + nd form an arithmetic progression</p>
@@ -17795,6 +17819,102 @@ N is the population size.
     </form>
 </div>
 
+<div class="collapse" id="platonic">
+    <div class="stopwrap">
+        <div class="coll">
+            <div class="left">
+                <h1>Platonic Solids</h1>
+                <br><br><br>
+                <h3>A Platonic Solid is a 3D shape where:
+                    <li>each face is the same regular polygon</li>
+                    <li>the same number of polygons meet at each vertex (corner)</li>
+                </h3>
+                <br><br>
+                <h3>There are only five platonic solids.</h3>
+                <br>
+                <h3>1. Tetrahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="images/platonictetra.svg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>3 triangles meet at each vertex</li>
+                        <li>4 Faces</li>
+                        <li>4 Vertices</li>
+                        <li>6 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <h3>2. Cube</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="images/platoniccube.svg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>3 squares meet at each vertex</li>
+                        <li>6 Faces</li>
+                        <li>8 Vertices</li>
+                        <li>12 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <h3>3. Octahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="images/platonicoctra.svg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>4 triangles meet at each vertex</li>
+                        <li>8 Faces</li>
+                        <li>6 Vertices</li>
+                        <li>12 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <h3>4. Dodecahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="images/platonicdode.svg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>3 pentagons meet at each vertex</li>
+                        <li>12 Faces</li>
+                        <li>20 Vertices</li>
+                        <li>30 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <h3>5. Icosahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="images/platonicicosa.svg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>5 triangles meet at each vertex</li>
+                        <li>20 Faces</li>
+                        <li>12 Vertices</li>
+                        <li>30 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="collapse" id="sosqs">
 
