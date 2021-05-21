@@ -306,8 +306,8 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#dbtn").click(function () {
-        openit("#d");
+    $("#dribtn").click(function () {
+        openit("#dri");
         closenav();
         clearall();
     });
