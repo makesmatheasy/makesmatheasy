@@ -1244,12 +1244,9 @@ function vectorline(){
         output.innerHTML = temp;
         renderMathInElement(output);
     }
-
 }
 
-function ctangle(){
-    // javascript program to find the angle
-    // between a chord and a tangent
+function chordTangle(){
     // when angle in the alternate segment is given
     var into = document.getElementById("ctangle").value
     document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
