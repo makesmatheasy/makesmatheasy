@@ -604,6 +604,10 @@ font-size: 18px;
   object-fit: contain;
 }
 
+.darkmode--activated #mtm p{
+color: rgba(0,0,0,.9) !important;
+}
+
 .darkmode--activated #factors p {
   color:#ababab !important;
 }
