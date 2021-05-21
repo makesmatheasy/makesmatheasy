@@ -2323,9 +2323,12 @@ function solveper() {
     var y=parseFloat(document.getElementById('y').value);
     if(!isNaN(x) || !isNaN(y)){
     var res = (y*x*0.01);
-    document.getElementById('op').innerHTML= "\\[Result \\space is \\space "+y+"\\times "+x+" \\times \\frac{1}{100} \\space = \\space "+ res.toFixed(3)+"\\]";
+    document.getElementById('op').innerHTML= "\\[The \\space value \\space of \\space "+y+" \\space \\% \\space of \\space "+x+" \\space is \\]";
+    document.getElementById('op1').innerHTML= "\\[ "+y+"\\times "+x+" \\times \\frac{1}{100} \\space = \\space "+ res.toFixed(3)+"\\]";
     renderMathInElement(document.getElementById('op'));
+    renderMathInElement(document.getElementById('op1'));
     } else{
+        document.getElementById('op1').innerHTML= "";
         document.getElementById('op').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
         renderMathInElement(document.getElementById('op'));
     }
