@@ -10466,6 +10466,45 @@ function constAp(){
     renderMathInElement(output);
 }
 
+function constGp(){
+    var a = parseInt(document.getElementById("term151").value)
+    var b = parseInt(document.getElementById("term152").value)
+    var output = document.getElementById("printGPconst")
+    var temp = "";
+    var r = (b/a);
+    if(!isNaN(a) && !isNaN(b)){
+        if((r>1 && a>0)){
+        temp += "\\[The \\space given \\space GP \\space is \\space Increasing \\space GP. \\]";
+       output.innerHTML = temp;
+        }
+        else if(a<0 && r<1 && r>0){
+            temp += "\\[The \\space given \\space GP \\space is \\space Increasing \\space GP. \\]";
+       output.innerHTML = temp;
+        }
+        else if((a>0 && r<1 && r>0)){
+            temp += "\\[The \\space given \\space GP \\space is \\space Decreasing \\space GP. \\]";
+            output.innerHTML = temp;
+        }
+        else if(a<0 && r>1){
+            temp += "\\[The \\space given \\space GP \\space is \\space Decreasing \\space GP. \\]";
+            output.innerHTML = temp;
+        }
+        else if(r==1){
+            temp += "\\[The \\space given \\space GP \\space is \\space Constant \\space GP. \\]";
+            output.innerHTML = temp;
+        }
+        else if(r<0){
+            temp += "\\[The \\space given \\space GP \\space is \\space Neither \\space increasing \\space nor \\space decreasing \\space GP. \\]";
+            output.innerHTML = temp;
+        }
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
+}
+
 function ngp(){
     var n = parseInt(document.getElementById("nt2").value)
     var a = parseInt(document.getElementById("ft2").value)
