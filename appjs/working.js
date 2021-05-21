@@ -1203,7 +1203,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    
+    $("#platonicbtn").click(function () {
+        openit("#platonic");
+        closenav();
+        clearall();
+    });
     $("#degbtn").click(function () {
         openit("#degcal");
         closenav();

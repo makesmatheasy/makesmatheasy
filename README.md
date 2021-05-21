@@ -240,6 +240,7 @@ Other Tech/Libraries
   - Properties of Quadrilaterals
   - Arc Length Calculator
   - Area of Crescent and Lunes
+  - Platonic Solids
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
