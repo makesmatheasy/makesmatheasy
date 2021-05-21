@@ -2387,6 +2387,7 @@ function impse3find(){
             else cnt++;
         }
         str = tmp;
+    }
 }
 
 function solvetetrahexa(){
@@ -11505,25 +11506,37 @@ function std() {
 
 //Smallest prime factor calculator
 function smallestPrimeDivisor(num) {
-    let n = num;
-    let res = 0;
-    if (num % 2 == 0)
-        res = 2;
-    else {
+    var res = 0;
+    if (num % 2 == 0 || num == ""){
+        if (num == ""){
+            document.getElementById("smPrimeResult1").innerHTML =  "\\[Please \\space enter \\space the \\space value\\]";
+            renderMathInElement(document.getElementById("smPrimeResult1"));
+        } else if ((num % 2 == 0) && num!=""){
+            res = 2;
+            document.getElementById("smPrimeResult1").innerHTML =  "\\[The \\space entered \\space number, \\space "+num+" \\space is \\space an \\space EVEN \\space number \\newline Hence, \\space the \\space smallest \\space prime \\space factor \\space will \\space be \\newline \\space = \\space "+res+"\\]";
+            renderMathInElement(document.getElementById("smPrimeResult1")); }
+        document.getElementById("smPrimeResult2").innerHTML=""; document.getElementById("smPrimeResult3").innerHTML="";
+        document.getElementById("smPrimeResult4").innerHTML=""; document.getElementById("smPrimeResult5").innerHTML=""; return;
+    } else {
+        document.getElementById("smPrimeResult1").innerHTML="";
+        document.getElementById("smPrimeResult5").innerHTML="";
+        document.getElementById("smPrimeResult2").innerHTML ="\\[The \\space entered \\space number, \\space "+num+" \\space is \\space an \\space ODD \\space number\\]"; 
+        renderMathInElement(document.getElementById("smPrimeResult2"));
         for (let i = 3; i * i <= num; i += 2) {
+            document.getElementById("smPrimeResult3").innerHTML = "\\[First \\space we \\space take \\space a \\space loop \\space where \\space number \\space ranges \\space from \\space 3^2 \\space to \\space "+num+" \\space with \\space  difference \\space of \\space 2 \\newline And, \\space check \\space if \\space any \\space number \\space completely \\space divides \\space "+num+"\\]";
+            renderMathInElement(document.getElementById("smPrimeResult3"));
             if (num % i == 0) {
-                res = i;
-                break;
-            }
-        }
+                document.getElementById("smPrimeResult4").innerHTML = "\\["+num+" \\space is \\space completely \\space divisible \\space by \\space "+i+" \\newline Hence, \\space the \\space smallest \\space prime \\space factor \\space will \\space be \\newline \\space = \\space "+i+"\\]";
+                renderMathInElement(document.getElementById("smPrimeResult4"));res = i; break;}}
+    } if(!res){
+        document.getElementById("smPrimeResult5").innerHTML ="\\["+num+" \\space is \\space niether \\space even \\space or \\space any \\space number \\space from \\space 3^2 \\space to \\space "+num+" \\space completely \\space divides \\space it \\newline Hence , \\space the \\space smallest \\space prime \\space factor \\space will \\space be \\space the \\space number \\space itself \\newline \\space = \\space "+num+"\\]";
+        renderMathInElement(document.getElementById("smPrimeResult5"));
+        document.getElementById("smPrimeResult2").innerHTML=""; document.getElementById("smPrimeResult3").innerHTML="";
+        document.getElementById("smPrimeResult4").innerHTML=""; document.getElementById("smPrimeResult1").innerHTML="";
     }
-    if(!res)
-        res = num;
-    document.getElementById("smPrimeResult").innerHTML = "The smallest prime factor of " + n + " is: " + res;
 }
 
 //Euler's Totient Function
-
 function eulerTotient(n) {
     function gcd(a, b) {
       if (a === 0) {
@@ -15385,4 +15398,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}}
+}
