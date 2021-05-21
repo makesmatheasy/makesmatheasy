@@ -290,6 +290,7 @@ function openit(id) {
         "#ais",
         "#cay",
         "#utcs",
+        "#anticube",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",
