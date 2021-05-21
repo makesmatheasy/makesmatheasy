@@ -11109,7 +11109,7 @@ function lacube5find(){
     S = Math.floor((n * (n + 1)) / 2);
     res = S * (S - 1);   
     document.getElementById("lacube5ans").innerHTML =  res;
-
+}
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
