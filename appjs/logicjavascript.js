@@ -14079,6 +14079,12 @@ function cscu2find(){
     document.getElementById("cscu1ans").innerHTML= "The radius is "+r+"and the height is "+h
 }
 
+function cscu3find(){
+    let R = parseInt(document.getElementById("cscu3").value)
+    let V =  ((1 / 3.0) * (3.14) * (2 * (R * R)) * (4 * R));
+    document.getElementById("cscu3ans").innerHTML =  V;
+}
+
 function computeprobability() {
 
     var favour = parseInt(document.getElementById('favourable').value);
