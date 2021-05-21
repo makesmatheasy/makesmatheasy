@@ -11685,6 +11685,13 @@ function polymax4find(){
     document.getElementById("polymax4ans").innerHTML =  finalResult;
 }
 
+function polymax5find(){
+    let n  = parseInt(document.getElementById("polymax5").value)
+    let a = parseInt(document.getElementById("polymax51").value)
+    let ans = (a / (2 * Math.tan((180 / n)* 3.14159 / 180)));
+    document.getElementById("polymax5ans").innerHTML = ans
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
