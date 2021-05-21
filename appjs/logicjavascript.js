@@ -10688,43 +10688,57 @@ function apsum()
 	}
 }
 function amsol() {
-    var a = document.getElementById("aval").value
-    var c = document.getElementById("cval").value
-    var amadd = parseInt(a) + parseInt(c)
+    var a = parseInt(document.getElementById("aval").value)
+    var c = parseInt(document.getElementById("cval").value)
+    var amadd = (a + c)
     var res = parseFloat(amadd / 2)
     var explain = document.getElementById("am_formula");
-    explain.innerHTML = "Formula: \\[Arithmetic \\space Mean=\\space \\frac{a+c}{2} =\\space \\frac{"+a+"+"+c+"}{2}\\] ";
-    renderMathInElement(document.getElementById("am_formula"));
-    document.getElementById("am").innerHTML = "Result: " + res
-
+    var result = document.getElementById("am");
+    var temp = " "; var temp1 = " ";
+    if((!isNaN(a)) && (!isNaN(c))){
+    temp += "Formula: \\[Arithmetic \\space Mean=\\space \\frac{a+c}{2} =\\space \\frac{"+a+"+"+c+"}{2}\\] ";
+    temp1 += "Result: " + res;
+    explain.innerHTML = temp;
+    result.innerHTML = temp1;
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space Input \\]"
+        temp1 += " ";
+        explain.innerHTML = temp;
+        result.innerHTML = temp1;
+    }
+    renderMathInElement(explain);
+    renderMathInElement(result);
 }
 
 function gmsol() {
-    var a = document.getElementById("aval1").value
-    var c = document.getElementById("cval1").value
-    var gmmul = parseInt(a) * parseInt(c)
-
+    var a = parseInt(document.getElementById("aval1").value)
+    var c = parseInt(document.getElementById("cval1").value)
+    var gmmul = (a * c)
+    var explain = document.getElementById("gm_formula");
+    if(!isNaN(a) && !isNaN(c)){
     if(a<0&&c<0){
       var res1 = -(Math.sqrt(gmmul))
-      var explain = document.getElementById("gm_formula");
       explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space\\ - \\sqrt{a \\times c} = \\space\\ - \\sqrt{"+a+"\\times"+c+"}\\] ";
-      renderMathInElement(document.getElementById("gm_formula"));
       document.getElementById("gm").innerHTML = "Result: " + res1
     }
 
     else if(a<0 || c<0){
-        var explain = document.getElementById("gm_formula");
         explain.innerHTML = "Please enter either both positive or both negative values to calculate the Geomteric Mean";
         document.getElementById("gm").innerHTML = "";
     }
     
     else{
     var res = Math.sqrt(gmmul)
-    var explain = document.getElementById("gm_formula");
     explain.innerHTML = "Formula: \\[\\space Geometric \\space Mean=\\space \\sqrt{a \\times c} = \\space \\sqrt{"+a+"\\times"+c+"}\\] ";
-    renderMathInElement(document.getElementById("gm_formula"));
     document.getElementById("gm").innerHTML = "Result: " + res
     }
+}
+  else{
+        explain.innerHTML = "\\[Please \\space enter \\space all \\space Input \\]"
+        document.getElementById("gm").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("gm_formula"));
 }
 
 
@@ -10803,16 +10817,22 @@ function phi5( n)
     }
 
 function hmsol() {
-    var a = document.getElementById("aval2").value
-    var c = document.getElementById("cval2").value
-    var hmmul = 2 * parseInt(a) * parseInt(c)
-    var hmadd = parseInt(a) + parseInt(c)
+    var a = parseInt(document.getElementById("aval2").value)
+    var c = parseInt(document.getElementById("cval2").value)
+    var hmmul = (2 * a * c)
+    var hmadd = (a + c)
     var res = (hmmul / hmadd)
     var explain = document.getElementById("hm_formula");
+    if(!isNaN(a) && !isNaN(c)){
     explain.innerHTML = "Formula: \\[Harmonic \\space Mean=\\space \\frac{2ac}{a+c} = \\space \\frac{2\\times"+a+"\\times"+c+"}{"+a+"+"+c+"}\\] ";
-    renderMathInElement(document.getElementById("hm_formula"));
     document.getElementById("hm").innerHTML = "Result: " + res
+    }
+    else{
+        explain.innerHTML = "\\[Please \\space enter \\space all \\space Input \\]"
+        document.getElementById("hm").innerHTML = " ";
 
+    }
+    renderMathInElement(document.getElementById("hm_formula"));
 }
 // Primality test
 function check_prime(isprime) {
