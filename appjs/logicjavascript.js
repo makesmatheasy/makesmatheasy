@@ -1184,7 +1184,25 @@ else{
     renderMathInElement(display);
 }
 }
-
+function vtp(){
+    let vvx1 = parseInt(document.getElementById("vx1").value)
+    let vvy1 = parseInt(document.getElementById("vy1").value)
+    let vvz1 = parseInt(document.getElementById("vz1").value)
+    let vvx2 = parseInt(document.getElementById("vx2").value)
+    let vvy2 = parseInt(document.getElementById("vy2").value)
+    let vvz2 = parseInt(document.getElementById("vz2").value)
+    let vvx3 = parseInt(document.getElementById("vx3").value)
+    let vvy3 = parseInt(document.getElementById("vy3").value)
+    let vvz3 = parseInt(document.getElementById("vz3").value)
+    let cvec = vvx1*vvx2 + vvy1*vvy2 + vvz1*vvz2
+    let avec = vvx2*vvx3 + vvy2*vvy3 + vvz2*vvz3
+    if((isNaN(vvx1)) || (isNaN(vvy1)) || (isNaN(vvz1))|| (isNaN(vvx2))|| (isNaN(vvy2))|| (isNaN(vvz2))|| (isNaN(vvx3))|| (isNaN(vvy3))|| (isNaN(vvz3))){
+     document.getElementById("stpans").innerHTML = "Please enter valid input ";
+    }
+    else{
+    document.getElementById("stpans").innerHTML = cvec + "c - "+ avec +"a"
+}
+}
 function paralleloarea(){
     let vx1 = parseInt(document.getElementById("volpx1").value)
     let vy1 = parseInt(document.getElementById("volpx2").value)
@@ -11459,25 +11477,7 @@ function minsquarefind(){
     document.getElementById("minsquareans").innerHTML = ans
 }
 
-function vtp(){
-    let vvx1 = parseInt(document.getElementById("vvx1").value)
-    let vvy1 = parseInt(document.getElementById("vvy1").value)
-    let vvz1 = parseInt(document.getElementById("vvz1").value)
-    let vvx2 = parseInt(document.getElementById("vvx2").value)
-    let vvy2 = parseInt(document.getElementById("vvy2").value)
-    let vvz2 = parseInt(document.getElementById("vvz2").value)
-    let vvx3 = parseInt(document.getElementById("vvx3").value)
-    let vvy3 = parseInt(document.getElementById("vvy3").value)
-    let vvz3 = parseInt(document.getElementById("vvz3").value)
-    let cvec = vvx1*vvx2 + vvy1*vvy2 + vvz1*vvz2
-    let avec = vvx2*vvx3 + vvy2*vvy3 + vvz2*vvz3
-    if((isNaN(vvx1)) || (isNaN(vvy1)) || (isNaN(vvz1))|| (isNaN(vvx2))|| (isNaN(vvy2))|| (isNaN(vvz2))|| (isNaN(vvx3))|| (isNaN(vvy3))|| (isNaN(vvz3))){
-     document.getElementById("vtpans").innerHTML = "Please enter valid input ";
-    }
-    else{
-    document.getElementById("vtpans").innerHTML = cvec + "c - "+ avec +"a"
-}
-}
+
 // Standard Deviation
 function std() {
     var s = 0, ans = 0;
