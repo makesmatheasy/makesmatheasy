@@ -11739,6 +11739,12 @@ function polymax5find(){
     document.getElementById("polymax5ans").innerHTML = ans
 }
 
+function polymax6find(){
+    let n  = parseInt(document.getElementById("polymax6").value)
+    var total_angle = 360;
+    document.getElementById("polymax6ans").innerHTML =  total_angle / n;
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
