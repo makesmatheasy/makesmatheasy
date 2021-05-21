@@ -2318,6 +2318,19 @@ function solvepenta(){
     }
 }
 
+function solveper() {
+    var x=parseFloat(document.getElementById('x').value);
+    var y=parseFloat(document.getElementById('y').value);
+    if(!isNaN(x) || !isNaN(y)){
+    var res = (y*x*0.01);
+    document.getElementById('op').innerHTML= "\\[Result \\space is \\space "+y+"\\times "+x+" \\times \\frac{1}{100} \\space = \\space "+ res.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById('op'));
+    } else{
+        document.getElementById('op').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        renderMathInElement(document.getElementById('op'));
+    }
+}
+
 function impsefind(){
     let x = parseInt(document.getElementById("impse1").value)
     let n = parseInt(document.getElementById("impse2").value)
@@ -10063,21 +10076,6 @@ function exposol() {
 
 }
 
-
-function solveper()
-{
-    var x,y;
-    x=parseFloat(document.getElementById('x').value);
-    y=parseFloat(document.getElementById('y').value);
-    if(!isNaN(x) || !isNaN(y)){
-    var res = (y*x*0.01);
-    document.getElementById('op').innerHTML= 'Result : ' + res;
-    }
-    else{
-        document.getElementById('op').innerHTML= 'Please enter all Input';
-    }
-
-}
 function solvepera()
 {
     var x1,y1;
