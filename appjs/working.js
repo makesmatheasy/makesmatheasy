@@ -306,6 +306,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#dbtn").click(function () {
+        openit("#d");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
