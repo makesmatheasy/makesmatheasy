@@ -10743,6 +10743,25 @@ function lacube3find(){
     document.getElementById("lacube3ans").innerHTML =  ans;
 }
 
+function lacube4find(){
+    let a  = parseInt(document.getElementById("lacube4").value)
+    let b = parseInt(document.getElementById("lacube41").value)
+    s1 = a.toString();
+    s2 = b.toString();
+    var c = parseInt(s1 + s2);
+    if (isPerfectCube(c)) {
+        document.getElementById("polymax4ans").innerHTML = "Yes"
+    }
+    else {
+        document.getElementById("polymax4ans").innerHTML = "No"
+    }
+}
+function isPerfectCube(x)
+{
+    var cr = Math.round(Math.cbrt(x));
+ 
+    return (cr * cr * cr == x);
+}
 function cubefreefind(){
     let n = parseInt(document.getElementById("cubefree").value)
     for(let i = 2; i <= n; i++)
