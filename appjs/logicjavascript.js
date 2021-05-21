@@ -6542,6 +6542,37 @@ function solvecube() {
     }
 }
 
+function solveanticube() {
+    var side = document.getElementById("inputanticubeside").value;
+    var voloutput = document.getElementById("resultofvolanticu");
+    var tsaoutput = document.getElementById("resultoftsaanticu");
+    var heightoutput = document.getElementById("resultofheightanticu");
+    var voltemp = "";
+    var tsatemp = "";
+    var heighttemp = "";
+    if (side != "") {
+        voltemp += "\\[\\frac{1}{3} \\times \\sqrt{1+\\sqrt{2}} \\times \\sqrt{2+\\sqrt{2}} \\times" + side + "^3 \\]";
+        voltemp += "\\[Volume \\space of \\space cube \\space is \\space " + eval(String(0.957*side * side * side)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ 2 \\times (1+\\sqrt{3}) " + side + "^2 \\]";
+        tsatemp += "\\[Surface \\space Area \\space of \\space Anticube \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String(5.464 * side * side)) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        heighttemp += "\\[\\sqrt{1-\\frac{1}{2+\\sqrt{2}}} \\times "  + side + " \\]";
+        heighttemp +=
+            "\\[Height \\space of \\space Anticube \\space is \\space  \\]";
+        heighttemp += "\\[" + eval(String(0.841 * side)) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(heightoutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        heightoutput.innerHTML = "";
+    }
+}
+
 function cubosolve() {
     var length = document.getElementById("inputcubolength").value;
     var breadth = document.getElementById("inputcubobreadth").value;
