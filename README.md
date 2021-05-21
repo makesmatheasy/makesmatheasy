@@ -129,6 +129,7 @@ Other Tech/Libraries
   - Trigonometric Identities
   - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
+  - Unit Circle
   - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
   - Expansion of Functions

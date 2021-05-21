@@ -306,6 +306,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#dbtn").click(function () {
+        openit("#d");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
@@ -882,6 +887,11 @@ $(document).ready(function () {
     });
     $("#invhyptrigonoidenbutton").click(function () {
         openit("#invhyptrigonoiden");
+        closenav();
+        clearall();
+    });
+    $("#unitcircbtn").click(function () {
+        openit("#unitcirc");
         closenav();
         clearall();
     });
