@@ -11145,6 +11145,39 @@ function reultriangle(){
 
     }
 
+// Midrange starts
+    function midrangeCal() {
+        var s = 0;
+        document.getElementById("midrangeAns").innerHTML = "";
+        var val = document.getElementById("midrangeInp").value;
+        val=val.trim()
+        val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+        if(val==null)
+        {
+            document.getElementById("midrangeAns").innerHTML = `Proper input is required`;
+            return;
+        }
+    
+        val = JSON.stringify(val)
+        // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+    
+        val = val.substring(2,val.length-2)
+        val = val.split(" ");
+        val = val.filter(function (str) {
+            return /\S/.test(str);
+        });
+        var len = parseInt(val.length);
+        var min = Math.min(...val);
+        var max = Math.max(...val);
+        if (val.length === 0) {
+            document.getElementById("midrangeAns").innerHTML = `No Number Added`;
+        } else {
+            var ans = (max+min)/2;
+            document.getElementById("midrangeAns").innerHTML = "Midrange: " + ans;
+        }
+    }
+    
 //Mean start
 function Means() {
     var s = 0;

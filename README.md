@@ -366,6 +366,7 @@ Other Tech/Libraries
   - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
+  - Midrange Calculator
   - Standard Deviation
   - T-test
   - Z-test

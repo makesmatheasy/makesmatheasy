@@ -661,6 +661,12 @@ function autocomplete(inp, arr) {
                     else if (inp.value.toUpperCase() == "ODDS CALCULATOR") {
                         $("odds").slideToggle();    
                     }
+                    else if(inp.value.toUpperCase() == "MIDRANGE CALCULATOR"){
+                        document.getElementById('#midrange').click();
+                    }
+                    else if (inp.value.toUpperCase() == "MIDRANGE CALCULATOR") {
+                        $("midrange").slideToggle();    
+                    }
                    
                     else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
                         $("#joint-probabilitycollapse").slideToggle();    
