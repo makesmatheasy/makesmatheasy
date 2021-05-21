@@ -1,10 +1,11 @@
 :root {
-  --apppink: rgb(255, 136, 231);
+  --apppink: #CAD5E2;
   --appblack: #232a36;
   --appimage: white;
 }
+
 :root .light-mode {
-  --apppink: #7868e6;
+  --apppink: white;
   --appblack: #d3e0ea;
   --appimage: black;
 }
@@ -38,8 +39,12 @@ body img {
 }
 
 .container {
-  padding-bottom: 70%;
+  padding-bottom: 10%;
   padding-top: 1.5em;
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
 }
 .qcontainer {
   padding-bottom: 54%;
@@ -104,10 +109,12 @@ label {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  color: var(--apppink);
+h4 {
+  color: var(--apppink) !important; 
+}
+
+h5, h6 {
+  color: var(--appimage) !important;
 }
 
 .modal-title {
@@ -141,6 +148,7 @@ h6 {
 .ulstyle li a:active {
   color: white !important;
 }
+
 .stopwrap {
   white-space: nowrap;
   overflow-y: hidden;
@@ -148,6 +156,20 @@ h6 {
   width: 100%;
   height: 100%;
   display: grid;
+}
+
+.form__field {
+  font-family: mainfont;
+  font-size: 0.9375rem !important;
+  letter-spacing: 0.125rem;
+  width: 100%;
+  border: 0;
+  border-bottom: 0.0625rem solid var(--appimage);
+  outline: 0;
+  color: white;
+  padding: 0.4375rem 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
 
 .carddis {
@@ -166,7 +188,7 @@ h6 {
   display: block;
   z-index: 10;
   float: right;
-  padding: 0rem 0.625rem 0.125rem 0.625rem;
+  padding: 0rem 1.625rem 0.125rem 1.625rem;
   text-transform: uppercase;
   border-radius: 0.5rem;
   border-color: white;
@@ -177,13 +199,16 @@ h6 {
 }
 #fav-button:hover {
   background-color: rgba(255, 244, 253, 0.993);
+  color: var(--appblack);
   font-weight: bolder;
 }
+
 .favouritecontainer {
   position: absolute;
-  left: 76%;
+  left: 80%;
   right: 0%;
   top: 15%;
+  width: 20%;
   bottom: -0.9375rem;
   background-color: #02050a00;
   padding: 1.25rem;
@@ -195,10 +220,12 @@ h6 {
   overflow-y: auto !important;
   overflow-x: hidden !important;
 }
+
 #favourite:ul {
   padding-right: 0;
   list-style: none;
 }
+
 .favourites {
   border-radius: 1.125rem;
   border: 0.0625rem solid var(--apppink);
@@ -209,6 +236,7 @@ h6 {
   color: white !important;
   cursor: pointer;
 }
+
 .nofavourites {
   border-radius: 1.125rem;
   border: 0.0625rem solid var(--apppink);
@@ -237,15 +265,18 @@ h6 {
 }
 
 .favourites:hover {
-  background-color: rgb(255, 136, 231);
+  background-color: var(--apppink) !important;
+  color: var(--appblack) !important;
   cursor: pointer;
 }
-@media screen and (max-width: 37.5rem) {
+
+@media screen and (max-width: 776px) {
   .favouritecontainer {
-    left: 10%;
+    left: 5%;
     right: 5%;
     top: 15%;
     bottom: -0.9375rem;
+    width: 90%;
     background-color: #232a36ce;
   }
   .favourites {
@@ -273,18 +304,19 @@ h6 {
     text-align: center;
     color: white !important;
     cursor: pointer;
-  }
-  
+  }  
 }
 
 ::selection {
   color: var(--appblack);
   background-color: var(--apppink);
 }
+
 .mainheading {
   color: white;
   display: inline;
 }
+
 .searchbar-container {
   position: relative;
   display: flex;
@@ -293,6 +325,7 @@ h6 {
   text-align: center;
   margin-left: 40vh;
 }
+
 #search-txt {
   border: none;
   background: none !important;
@@ -305,6 +338,7 @@ h6 {
   line-height: 2.5rem;
   width: 0rem;
 }
+
 .searchbtn {
   background: azure;
   color: #f1faee;
@@ -317,6 +351,7 @@ h6 {
   align-items: center;
   outline: none !important;
 }
+
 #box {
   display: flex;
   flex-direction: row;
@@ -329,10 +364,12 @@ h6 {
   padding: 0.625rem;
   transform: translateX(50%,50%);
 }
+
 #box:hover > #search-txt {
   width: 15rem;
   padding: 0 0.375rem;
 }
+
 #box:hover > .searchbtn {
   background: #0bd54f;
 }
@@ -342,18 +379,9 @@ h6 {
   border-top: none !important;
 }
 
-.form__field {
-  font-family: mainfont;
-  font-size: 0.9375rem !important;
-  letter-spacing: 0.125rem;
-  width: 100%;
-  border: 0;
-  /* border-bottom: 0.0625rem solid var(--appimage); */
-  outline: 0;
+#myInput {
   color: black;
-  padding: 0.4375rem 0;
-  background: transparent;
-  transition: border-color 0.2s;
+  background-color: transparent !important;
 }
 
 .bi {
@@ -372,18 +400,21 @@ h6 {
   height: 1.25rem;
   filter: invert(100%);
 }
+
 .katex {
   font-size: 1.5625rem !important;
   display: flex;
 }
+
 #numberfact {
   font-family: mainfont;
   letter-spacing: 0.125rem;
-  font-size: 1.5625rem;
+  font-size: 1.25rem;
   text-align: center !important;
   margin-bottom: auto;
   padding: 4vh;
-  color: var(--apppimage);
+  color: white !important;
+  background-color: var(--applink);
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
   /* because of this it is of black color now it will inherit the body color */
@@ -399,7 +430,7 @@ h6 {
   color: black !important;
   box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
     rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
-  background-color: var(--appimage);
+  background-color: white;
 }
 .card h5{
     color: rgb(124, 151, 238);
@@ -425,27 +456,64 @@ ul li .table {
 
 .home {
   height: fit-content;
-  /* background: rgba(255, 136, 231,0.5); */
-  background: var(--apppink) !important;
+  background: rgba(255, 136, 231,0.5);
+  /* background: var(--apppink) !important; */
   margin: 0.8125rem;
   border-radius: 2.25rem;
   font-size: large;
 }
 
 .list_menu_items a:hover {
-  /* background: rgba(255, 136, 231,0.5)!important; */
-  background: var(--apppink) !important;
+  background: rgba(255, 136, 231,0.5)!important;
+  /* background: var(--apppink) !important; */
   border-radius: 2.25rem;
 }
 
-td{
+.abc{
   text-align: center;
   color:white;
 }
 
-#about .table td {
+#about {
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  width: 100%;
+  font-style: italic;
   text-align: center;
+  padding: 3rem;
+  border-top-left-radius: 2.5rem !important;
+  border-bottom-right-radius: 2.5rem !important;
+  background-color: var(--applink) !important;
+  box-shadow: rgba(0, 0, 0, 0.3) 0rem 1.1875rem 2.375rem,
+    rgba(0, 0, 0, 0.22) 0rem 0.9375rem 0.75rem;
 }
+
+#about h5, #aboutContact {
+  color: white !important;
+}
+
+#aboutHeading {
+  border:2px solid azure;
+  border-style: dashed;
+  padding: 1rem;
+}
+
+#aboutBadge:hover {
+  color: black;
+  background-color: rgb(255, 136, 231);
+}
+
+#aboutContact:hover {
+  color: var(--appimage) !important;
+}
+
+@media (max-width:420px) {
+  #about {
+    margin-bottom: 0;
+  }
+}
+
 .table td:hover {
   border-top: 0.0625rem solid #dee2e6;
   border-radius: 2.25rem;
@@ -470,6 +538,89 @@ td{
 #euclid img{
   display: block;
   margin: 0 auto;
+}
+
+#trans h5{
+  text-align: center;
+  margin-top:32px;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+#trans img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#trans p{
+color:#ababab !important;
+font-size: 18px;
+}
+
+#ip h4,
+#ip p,
+#ip li{
+  text-align:center;
+  list-style: none;
+  margin-bottom: 10px;
+}
+#ip img {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
+#pows h4,
+#pows h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+#pows p,
+#pows li{
+  color: #8a8a8a !important;
+}
+
+#setop h5{
+  text-align: center;
+  margin-top: 40px;
+}
+#setop p{
+  text-align: center;
+  color: #ababab !important;
+}
+#setop li{
+  text-align: center;
+  list-style: none;
+}
+#setop img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
+.darkmode--activated #factors p {
+  color:#ababab !important;
+}
+
+.darkmode--activated .lcm{
+  margin-bottom: 14px;
+  margin-top: 19px;
+}
+
+.darkmode--activated input,
+.darkmode--activated button {
+  overflow: visible;
+  border-radius: 18px;
+  margin: 7px;
+  background-color: #050101;
+  color: white;
+  padding: 8px;
 }
 
 /*light mode*/
@@ -632,8 +783,67 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+/* social media icons */
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+.icon:hover{
+  opacity: 0.8;
+  font-size: 1.4em;
+}
+
+.fa-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  border-radius: 28%;
+  background-clip: padding-box;
+
+}
+
+.fa-linkedin:hover {
+  color:#0077b5;
+}
+
+.fa-envelope:hover {
+  color: #d34836;
+}
+
+.fa-discord:hover {
+  color: #7289da;
+}
+.fa-github:hover {
+  color: black;
+}
+
 @media (max-width:420px) {
   #box{
      margin-right:11em; 
   }
+}
+
+#unknownWork, #unknownTime, #unknownMen, #stepsbox #stepsbox2,#indShow,#deShow{
+  display: none;
+}
+@media only screen and (max-width:420px) {
+  #stdinp.form__field{
+    font-size: 0.68rem !important;
+  }
+}
+@media only screen and (max-width:991px) {
+  .prime{
+    font-size: 0.822rem;
+    width: 78px;
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:769px) {
+  #sievein{
+
+  font-size: 0.6rem !important;
+  }
+  
 }

@@ -1,8 +1,8 @@
 function creatematrix1() {
     removeall('generatedmatrix1');
     var ids = "id1"
-    for (i = 0; i < document.getElementById('row1').value; i++) {
-        for (j = 0; j < document.getElementById('column1').value; j++) {
+    for (var i = 0; i < document.getElementById('row1').value; i++) {
+        for (var j = 0; j < document.getElementById('column1').value; j++) {
             var inp = document.createElement('input');
             inp.id = ids;
             inp.type = "number";
@@ -21,8 +21,8 @@ function creatematrix1() {
 function creatematrix2() {
     removeall('generatedmatrix2');
     var ids = "id2"
-    for (i = 0; i < document.getElementById('row2').value; i++) {
-        for (j = 0; j < document.getElementById('column2').value; j++) {
+    for (var i = 0; i < document.getElementById('row2').value; i++) {
+        for (var j = 0; j < document.getElementById('column2').value; j++) {
             var inp = document.createElement('input');
             inp.id = ids;
             inp.type = "number";
@@ -42,9 +42,9 @@ var matrix1 = [];
 
 function sendtomatrix2() {
     var ids = "id2"
-    for (i = 0; i < document.getElementById('row2').value; i++) {
+    for (var i = 0; i < document.getElementById('row2').value; i++) {
         matrix2[i] = [];
-        for (j = 0; j < document.getElementById('column2').value; j++) {
+        for (var j = 0; j < document.getElementById('column2').value; j++) {
             if (document.getElementById(ids).value == '') {
                 matrix2[i][j] = 0;
                 document.getElementById(ids).value = '0';
@@ -61,9 +61,9 @@ var matrix2 = [];
 
 function sendtomatrix1() {
     var ids = "id1"
-    for (i = 0; i < document.getElementById('row1').value; i++) {
+    for (var i = 0; i < document.getElementById('row1').value; i++) {
         matrix1[i] = [];
-        for (j = 0; j < document.getElementById('column1').value; j++) {
+        for (var j = 0; j < document.getElementById('column1').value; j++) {
             if (document.getElementById(ids).value == '') {
                 matrix1[i][j] = 0;
                 document.getElementById(ids).value = '0';
@@ -79,8 +79,8 @@ function sendtomatrix1() {
 function displaymatrix(val, ar, elid, m, n) {
     temp = val + '\\\\'
     temp += '\\begin{bmatrix}'
-    for (i of ar) {
-        for (j of i) {
+    for (var i of ar) {
+        for (var j of i) {
             temp += nerdamer(j).toTeX().toString() + "&"
         }
         temp = temp.slice(0, -1);
@@ -107,17 +107,17 @@ function sumofmatrix() {
         sendtomatrix2();
         var summ = [];
         var sumexplanation = '';
-        for (i = 0; i < document.getElementById('row2').value; i++) {
+        for (var i = 0; i < document.getElementById('row2').value; i++) {
             summ[i] = [];
             sumexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
-            for (j = 0; j < document.getElementById('column2').value; j++) {
+            for (var j = 0; j < document.getElementById('column2').value; j++) {
                 sumexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix2[i][j])) + '\\]';
                 summ[i][j] = parseInt(matrix1[i][j]) + parseInt(matrix2[i][j]);
                 var dp = ''
                 var dp2 = ''
                 dp += '\\[\\color{black}\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += matrix1[ii][jj] + "&"
                         } else {
@@ -129,8 +129,8 @@ function sumofmatrix() {
                 }
                 dp += '\\end{bmatrix}'
                 dp += '+\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += matrix2[ii][jj] + "&"
                         } else {
@@ -142,8 +142,8 @@ function sumofmatrix() {
                 }
                 dp += '\\end{bmatrix}='
                 dp += '\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += String(matrix1[ii][jj]) + '+' + String(matrix2[ii][jj]) + "&"
                         } else {
@@ -155,8 +155,8 @@ function sumofmatrix() {
                 }
                 dp += "\\end{bmatrix}="
                 dp += '\\color{blue}\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += eval(String(matrix1[ii][jj]) + '+' + String(matrix2[ii][jj])) + "&"
                         } else {
@@ -191,17 +191,17 @@ function subtractofmatrix() {
 
         var subb = [];
         var subbexplanation = '';
-        for (i = 0; i < document.getElementById('row2').value; i++) {
+        for (var i = 0; i < document.getElementById('row2').value; i++) {
             subb[i] = [];
             subbexplanation += "<div style='border-radius:50px;padding:20px;min-width:900px;' class='bi'>"
-            for (j = 0; j < document.getElementById('column2').value; j++) {
+            for (var j = 0; j < document.getElementById('column2').value; j++) {
                 subbexplanation += '\\[a_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '} = ' + String(parseInt(matrix1[i][j])) + '\\space and \\space b_{' + String(parseInt(i + 1)) + String(parseInt(j + 1)) + '}=' + String(parseInt(matrix2[i][j])) + '\\]';
                 subb[i][j] = parseInt(matrix1[i][j]) - parseInt(matrix2[i][j]);
                 var dp = ''
                 var dp2 = ''
                 dp += '\\[\\color{black}\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += matrix1[ii][jj] + "&"
                         } else {
@@ -213,8 +213,8 @@ function subtractofmatrix() {
                 }
                 dp += '\\end{bmatrix}'
                 dp += '-\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += matrix2[ii][jj] + "&"
                         } else {
@@ -226,8 +226,8 @@ function subtractofmatrix() {
                 }
                 dp += '\\end{bmatrix}='
                 dp += '\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += String(matrix1[ii][jj]) + '-' + String(matrix2[ii][jj]) + "&"
                         } else {
@@ -239,8 +239,8 @@ function subtractofmatrix() {
                 }
                 dp += "\\end{bmatrix}="
                 dp += '\\color{blue}\\begin{bmatrix}'
-                for (ii = 0; ii < document.getElementById('row2').value; ii++) {
-                    for (jj = 0; jj < document.getElementById('column2').value; jj++) {
+                for (var ii = 0; ii < document.getElementById('row2').value; ii++) {
+                    for (var jj = 0; jj < document.getElementById('column2').value; jj++) {
                         if (ii == i && jj == j) {
                             dp += eval(String(matrix1[ii][jj]) + '-' + String(matrix2[ii][jj])) + "&"
                         } else {
@@ -278,25 +278,25 @@ function mulofmatrix() {
         var temp = '';
         var mulexplanation = '';
         var d = '';
-        for (i = 0; i < document.getElementById('row1').value; i++) {
+        for (var i = 0; i < document.getElementById('row1').value; i++) {
             mulexplanation += "<div class='dropdown-divider'></div><br>"
             mulexplanation += "<span style='color:var(--apppink) !important'>"
             mulexplanation += '<span style="font-size: 20px;"> Taking Row ' + String(i + 1) + ' of Matrix 1</span>';
             mulexplanation += "</span><br>"
             mul[i] = [];
-            for (j = 0; j < document.getElementById('column2').value; j++) {
+            for (var j = 0; j < document.getElementById('column2').value; j++) {
                 mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;width:100%;'>"
                 mulexplanation += '<span style="border: 3px solid var(--appblack);padding: 10px;border-radius: 30px;font-size: 20px;">Column ' + String(j + 1) + ' of Matrix 2</span><br>';
                 mul[i][j] = 0;
-                for (k = 0; k < document.getElementById('column1').value; k++) {
+                for (var k = 0; k < document.getElementById('column1').value; k++) {
                     mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrix1[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrix1[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + '\\]'
                     temp += String(parseInt(matrix1[i][k]) * parseInt(matrix2[k][j])) + ' + '
                     mul[i][j] = parseInt(mul[i][j]) + parseInt(matrix1[i][k]) * parseInt(matrix2[k][j]);
                 }
                 var dp = '\\[\\begin{bmatrix}'
                 var count = 0
-                for (ij of matrix1) {
-                    for (ji of ij) {
+                for (var ij of matrix1) {
+                    for (var ji of ij) {
                         if (count == i)
                             dp += '\\color{blue}' + ji + "&"
                         else {
@@ -309,9 +309,9 @@ function mulofmatrix() {
                 }
                 dp += '\\end{bmatrix}\\times'
                 dp += '\\begin{bmatrix}';
-                for (ij of matrix2) {
+                for (var ij of matrix2) {
                     var count = 0
-                    for (ji of ij) {
+                    for (var ji of ij) {
                         if (count == j)
                             dp += '\\color{blue}' + ji + "&"
                         else {
@@ -327,9 +327,9 @@ function mulofmatrix() {
                 mulexplanation += dp;
                 mulexplanation += '<b style="font-size: 25px;">' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</b>';
                 var mat = [];
-                for (f = 0; f < document.getElementById('row1').value; f++) {
+                for (var f = 0; f < document.getElementById('row1').value; f++) {
                     mat[f] = [];
-                    for (d = 0; d < document.getElementById('column2').value; d++) {
+                    for (var d = 0; d < document.getElementById('column2').value; d++) {
                         if (f == i && d == j) {
                             mat[f][d] = String(eval(temp.slice(0, -3)))
                         } else {
@@ -338,8 +338,8 @@ function mulofmatrix() {
                     }
                 }
                 dtemp = '\\[\\begin{bmatrix}'
-                for (ij of mat) {
-                    for (ji of ij) {
+                for (var ij of mat) {
+                    for (var ii of ij) {
                         if (ji == '.')
                             dtemp += ji + "&"
                         else
@@ -454,8 +454,8 @@ function calloperation(value) {
 function creatematrixsingle() {
     removeall('generatedmatrixsingle');
     var ids = "id13"
-    for (i = 0; i < document.getElementById('srow1').value; i++) {
-        for (j = 0; j < document.getElementById('scolumn1').value; j++) {
+    for (var i = 0; i < document.getElementById('srow1').value; i++) {
+        for (var j = 0; j < document.getElementById('scolumn1').value; j++) {
             var inp = document.createElement('input');
             inp.id = ids;
             inp.type = "number";
@@ -475,9 +475,9 @@ var matrixsingle = []
 
 function sendtomatrixsingle() {
     var ids = "id13"
-    for (i = 0; i < document.getElementById('srow1').value; i++) {
+    for (var i = 0; i < document.getElementById('srow1').value; i++) {
         matrixsingle[i] = [];
-        for (j = 0; j < document.getElementById('scolumn1').value; j++) {
+        for (var j = 0; j < document.getElementById('scolumn1').value; j++) {
             if (document.getElementById(ids).value == '') {
                 matrixsingle[i][j] = 0;
                 document.getElementById(ids).value = '0';
@@ -495,9 +495,9 @@ function transpose() {
     setTimeout(function () {
         sendtomatrixsingle();
         var trans = [];
-        for (i = 0; i < document.getElementById('scolumn1').value; i++) {
+        for (var i = 0; i < document.getElementById('scolumn1').value; i++) {
             trans[i] = [];
-            for (j = 0; j < document.getElementById('srow1').value; j++) {
+            for (var j = 0; j < document.getElementById('srow1').value; j++) {
                 trans[i][j] = matrixsingle[j][i];
             }
         }
@@ -523,7 +523,116 @@ function soperation(value) {
         miandcofactors();
     } else if (value == "Determinant") {
         laplacedeterminant();
-    } 
+    } else if (value == 'Matrix Power') {
+        matPow();
+    }
+}
+
+//matrix power
+function matPow() {
+    loader('show');
+    setTimeout(function () {
+        sendtomatrixsingle();
+        var mul = [];
+        var matrix2 = [];
+        var row = document.getElementById('srow1').value;
+        var col = document.getElementById('scolumn1').value;
+        for (var i = 0; i < row; i++) {
+            matrix2[i] = [];
+            for (var j = 0; j < col; j++) {
+                console.log(matrixsingle[i][j]);
+                matrix2[i][j] = matrixsingle[i][j];
+            }
+        }
+        var pow = document.getElementById('powInp').value;
+        var temp = '';
+        var mulexplanation = '';
+        var d = '';
+        for (var i = 0; i < document.getElementById('srow1').value; i++) {
+            mulexplanation += "<div class='dropdown-divider'></div><br>"
+            mulexplanation += "<span style='color:var(--apppink) !important'>"
+            mulexplanation += '<span style="font-size: 20px;"> Taking Row ' + String(i + 1) + ' of Matrix</span>';
+            mulexplanation += "</span><br>"
+            mul[i] = [];
+            for (var j = 0; j < document.getElementById('scolumn1').value; j++) {
+                mulexplanation += "<div class='bi' style='border-radius:50px;padding:20px;display:table;margin:3px;width:100%;'>"
+                mulexplanation += '<span style="border: 3px solid var(--appblack);padding: 10px;border-radius: 30px;font-size: 20px;">Column ' + String(j + 1) + ' of Matrix 2</span><br>';
+                mul[i][j] = 0;
+                for (var k = 0; k < document.getElementById('scolumn1').value; k++) {
+                    mulexplanation += '\\[a_{' + String(parseInt(j + 1)) + String(parseInt(k + 1)) + '} = ' + String(parseInt(matrixsingle[i][k])) + '\\space and \\space b_{' + String(parseInt(k + 1)) + String(parseInt(i + 1)) + '} = ' + String(parseInt(matrix2[k][j])) + '\\]\\[\\big( ' + String(parseInt(matrixsingle[i][k])) + ' &times; ' + String(parseInt(matrix2[k][j])) + ' \\big) = ' + String(parseInt(matrixsingle[i][k]) * parseInt(matrix2[k][j])) + '\\]'
+                    temp += String(parseInt(matrixsingle[i][k]) * parseInt(matrix2[k][j])) + ' + '
+                    mul[i][j] = parseInt(mul[i][j]) + parseInt(matrixsingle[i][k]) * parseInt(matrix2[k][j]);
+                }
+                var dp = '\\[\\begin{bmatrix}'
+                var count = 0
+                for (var ij of matrixsingle) {
+                    for (var ji of ij) {
+                        if (count == i)
+                            dp += '\\color{blue}' + ji + "&"
+                        else {
+                            dp += ji + "&"
+                        }
+                    }
+                    count += 1;
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
+                }
+                dp += '\\end{bmatrix}\\times'
+                dp += '\\begin{bmatrix}';
+                for (var ij of matrix2) {
+                    var count = 0
+                    for (var ji of ij) {
+                        if (count == j)
+                            dp += '\\color{blue}' + ji + "&"
+                        else {
+                            dp += ji + "&"
+                        }
+                        count += 1;
+                    }
+                    dp = dp.slice(0, -1);
+                    dp += '\\\\';
+                }
+                dp += '\\end{bmatrix}\\]'
+                mulexplanation += dp;
+                mulexplanation += '<b style="font-size: 25px;">' + temp.slice(0, -3) + ' = ' + eval(temp.slice(0, -3)) + '</b>';
+                var mat = [];
+                for (var f = 0; f < document.getElementById('srow1').value; f++) {
+                    mat[f] = [];
+                    for (var d = 0; d < document.getElementById('scolumn1').value; d++) {
+                        if (f == i && d == j) {
+                            mat[f][d] = String(eval(temp.slice(0, -3)))
+                        } else {
+                            mat[f][d] = '.';
+                        }
+                    }
+                }
+                dtemp = '\\[\\begin{bmatrix}'
+                for (var ij of mat) {
+                    for (var ii of ij) {
+                        if (ji == '.')
+                            dtemp += ji + "&"
+                        else
+                            dtemp += '\\color{blue}' + ji + "&"
+                    }
+                    dtemp = dtemp.slice(0, -1);
+                    dtemp += '\\\\';
+                }
+                dtemp += '\\end{bmatrix}\\]'
+
+                mulexplanation += dtemp;
+                temp = '';
+                mat = '';
+                m1 = '';
+                mulexplanation += "</div>"
+            }
+            mulexplanation += '<br>';
+        }
+        document.getElementById('singlematrixexplanation').innerHTML = mulexplanation;
+        renderMathInElement(document.getElementById('singlematrixexplanation'));
+    }, 100);
+    setTimeout(function () {
+        loader('hide');
+    }, 2000);
 }
 
 //rank calculation
@@ -538,8 +647,8 @@ function rank(){
         //---print initial matrix
         rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Given \\space Matrix\\]"
         rankexplanation+='\\[\\begin{bmatrix}'
-        for (i = 0; i < row; i++){
-            for (j = 0; j < column; j++){
+        for (var i = 0; i < row; i++){
+            for (var j = 0; j < column; j++){
                 rankexplanation+=matrixsingle[i][j]+"&";
             }
             rankexplanation = rankexplanation.slice(0, -1);
@@ -547,13 +656,13 @@ function rank(){
         }
         rankexplanation+='\\end{bmatrix}\\]'+"</div>";
 
-        for (i = 0; i < rank && i<row; i++) {
+        for (var i = 0; i < rank && i<row; i++) {
             let eliminateflag=1,swaprowflag=1,swapcolumnflag=1,swaprow;
             if (matrixsingle[i][i]!=0) {
-                for (j = i; j < row; j++) {
+                for (var j = i; j < row; j++) {
                     if(j!=i && matrixsingle[j][i]!=0){
                         let factor=matrixsingle[j][i]/matrixsingle[i][i];
-                        for(k=0;k<rank;k++){
+                        for(var k=0;k<rank;k++){
                             matrixsingle[j][k]-=factor * matrixsingle[i][k];
                             eliminateflag=0;
                         }   
@@ -565,12 +674,12 @@ function rank(){
             }     
             else {
                let flag=1;
-               for(j=i+1;j<row;j++) {
+               for(var j=i+1;j<row;j++) {
                    if(matrixsingle[j][i]!=0){
                         rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Swap \\space the \\space "+(i+1)+" \\space and \\space " +(j+1)+"\\space row\\]";
                         swaprowflag=0; 
                         swaprow=j;
-                        for(k=0;k<column;k++){
+                        for(var k=0;k<column;k++){
                            let temp=matrixsingle[i][k];
                            matrixsingle[i][k]=matrixsingle[j][k];
                            matrixsingle[j][k]=temp;
@@ -584,7 +693,7 @@ function rank(){
                     if(i!=rank){
                         rankexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Swap \\space the \\space "+(i+1)+" \\space and \\space " +(rank+1)+"\\space column\\]";
                         swapcolumnflag=0;
-                        for(k=0;k<row;k++){
+                        for(var k=0;k<row;k++){
                             let temp=matrixsingle[k][i];
                             matrixsingle[k][i]=matrixsingle[k][rank];
                             matrixsingle[k][rank]=temp;
@@ -597,8 +706,8 @@ function rank(){
             }
             if(eliminateflag==0){
                 rankexplanation+='\\[\\begin{bmatrix}'
-                for(j=0;j<row;j++){
-                    for(k=0;k<column;k++){
+                for(var j=0;j<row;j++){
+                    for(var k=0;k<column;k++){
                         if(k==i && j>=i){
                             rankexplanation+='\\color{blue}'
                             let e=nerdamer(matrixsingle[j][k])
@@ -616,8 +725,8 @@ function rank(){
             }
             else if(swaprowflag==0){
                 rankexplanation+='\\[\\begin{bmatrix}'
-                for(j=0;j<row;j++){
-                    for(k=0;k<column;k++){
+                for(var j=0;j<row;j++){
+                    for(var k=0;k<column;k++){
                         if(j==i+1 || j==swaprow){
                             rankexplanation+='\\color{blue}'
                             let e=nerdamer(matrixsingle[j][k])
@@ -635,8 +744,8 @@ function rank(){
             }
             else if(swapcolumnflag==0){
                 rankexplanation+='\\[\\begin{bmatrix}'
-                for(j=0;j<row;j++){
-                    for(k=0;k<column;k++){
+                for(var j=0;j<row;j++){
+                    for(var k=0;k<column;k++){
                         if(k==i+1|| k==rank){
                             rankexplanation+='\\color{blue}'
                             let e=nerdamer(matrixsingle[j][k])
@@ -774,6 +883,18 @@ function addop(selectid, value) {
     var select = document.getElementById(selectid);
     var option = document.createElement("option");
     option.text = value;
+    if (value == "Matrix Power") {
+        var pow = document.createElement("input");
+        document.getElementById('pow').appendChild(pow);
+
+        var id = document.createAttribute("id");
+        id.value = "powInp";
+        pow.setAttributeNode(id);
+
+        var ph = document.createAttribute("placeholder");
+        ph.value = "Enter Power";
+        pow.setAttributeNode(ph);
+    }
     select.add(option);
 }
 
@@ -809,6 +930,7 @@ function checkfunctions() {
         addop('sopval', 'Inverse')
         addop('sopval', 'Minors & Co-Factors')
         addop('sopval', 'Determinant')
+	addop('sopval', 'Matrix Power')
     }
     if (parseInt(row) > 3 && parseInt(column) > 3) {
         creatematrixsingle();
@@ -852,7 +974,7 @@ function determinant(ma) {
     var firstrow = [];
     var jj = 1;
     var el = 0;
-    for (j = 0; j < column + column; j += 2) {
+    for (var j = 0; j < column + column; j += 2) {
         if (el % 2 == 0) {
             var sign = '+'
         } else {
@@ -928,8 +1050,8 @@ function determinant(ma) {
         lets222 += 'Determinant = ' + ss2;
         lets222 += "\\]"
         var dtemp = '\\[\\begin{vmatrix}'
-        for (ij of ma) {
-            for (ji of ij) {
+        for (var ij of ma) {
+            for (var ji of ij) {
                 dtemp += ji + "&"
             }
             dtemp = dtemp.slice(0, -1);
@@ -942,15 +1064,15 @@ function determinant(ma) {
     } else {
 
         //    removes row and column
-        for (lk = 0; lk < column; lk++) {
+        for (var lk = 0; lk < column; lk++) {
             var submatrix = [];
             var k = 0;
             var l = 0;
-            for (i = 0; i < row; i++) {
+            for (var i = 0; i < row; i++) {
                 submatrix[l] = [];
                 if (i == parseInt(firstrow[jj].slice(0, 1)))
                     continue;
-                for (j = 0; j < column; j++) {
+                for (var j = 0; j < column; j++) {
                     if (j == parseInt(firstrow[jj].slice(1, 2)))
                         continue;
                     submatrix[l][k] = ma[i][j];
@@ -965,8 +1087,8 @@ function determinant(ma) {
                 vtfinalfirstresult2 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
                 vtfinalfirstresult2final += firstrow[firstrowel] + '('
                 dtemp += '\\color{red}' + firstrow[firstrowel] + '\\color{black}\\begin{bmatrix}'
-                for (ij of submatrix) {
-                    for (ji of ij) {
+                for (var ij of submatrix) {
+                    for (var ji of ij) {
                         dtemp += ji + "&"
                     }
                     dtemp = dtemp.slice(0, -1);
@@ -990,7 +1112,7 @@ function determinant(ma) {
                 var resultofsub = [];
                 var jjofsub = 1;
                 var elofsub = 0;
-                for (jofsub = 0; jofsub < colofsub + colofsub; jofsub += 2) {
+                for (var jofsub = 0; jofsub < colofsub + colofsub; jofsub += 2) {
                     if (elofsub % 2 == 0) {
                         var signofsub = '+'
                     } else {
@@ -1022,15 +1144,15 @@ function determinant(ma) {
                 vtfinalresult4 += '\\color{red}' + firstrow[firstrowel] + '\\bigg(\\color{black}'
                 sol3 += firstrow[firstrowel] + '('
 
-                for (lkofsub = 0; lkofsub < colofsub; lkofsub++) {
+                for (var lkofsub = 0; lkofsub < colofsub; lkofsub++) {
                     var submatrixofsub = [];
                     var kofsub = 0;
                     var lofsub = 0;
-                    for (iofsub = 0; iofsub < rowofsub; iofsub++) {
+                    for (var iofsub = 0; iofsub < rowofsub; iofsub++) {
                         submatrixofsub[lofsub] = [];
                         if (iofsub == parseInt(firstrowofsub[jjofsub].slice(0, 1)))
                             continue;
-                        for (jofsub = 0; jofsub < colofsub; jofsub++) {
+                        for (var jofsub = 0; jofsub < colofsub; jofsub++) {
                             if (jofsub == parseInt(firstrowofsub[jjofsub].slice(1, 2)))
                                 continue;
                             submatrixofsub[lofsub][kofsub] = submatrix[iofsub][jofsub];
@@ -1045,8 +1167,8 @@ function determinant(ma) {
                     vtfinalresult2 += '\\color{blue}' + firstrowofsub[firstrowelofsub] + '\\big(\\color{black}'
                     vtfinalresult3 += '\\color{blue}' + firstrowofsub[firstrowelofsub][0] + '\\big(\\color{black}'
                     sol2 += firstrowofsub[firstrowelofsub][0] + '('
-                    for (ij of submatrixofsub) {
-                        for (ji of ij) {
+                    for (var ij of submatrixofsub) {
+                        for (var ji of ij) {
                             vt += ji + "&"
                         }
                         vt = vt.slice(0, -1);
@@ -1071,7 +1193,7 @@ function determinant(ma) {
                         var resultofsubofsub = [];
                         var jjofsubofsub = 1;
                         var elofsubofsub = 0;
-                        for (jofsubofsub = 0; jofsubofsub < colofsubofsub + colofsubofsub; jofsubofsub += 2) {
+                        for (var jofsubofsub = 0; jofsubofsub < colofsubofsub + colofsubofsub; jofsubofsub += 2) {
                             if (elofsubofsub % 2 == 0) {
                                 var signofsubofsub = '+'
                             } else {
@@ -1096,15 +1218,15 @@ function determinant(ma) {
 
                         vtofsub += '\\color{blue}' + firstrowofsub[firstrowelofsub - 2] + '\\bigg(\\color{black}'
 
-                        for (lkofsubofsub = 0; lkofsubofsub < colofsubofsub; lkofsubofsub++) {
+                        for (var lkofsubofsub = 0; lkofsubofsub < colofsubofsub; lkofsubofsub++) {
                             var submatrixofsubofsub = [];
                             var kofsubofsub = 0;
                             var lofsubofsub = 0;
-                            for (iofsubofsub = 0; iofsubofsub < rowofsubofsub; iofsubofsub++) {
+                            for (var iofsubofsub = 0; iofsubofsub < rowofsubofsub; iofsubofsub++) {
                                 submatrixofsubofsub[lofsubofsub] = [];
                                 if (iofsubofsub == parseInt(firstrowofsubofsub[jjofsubofsub].slice(0, 1)))
                                     continue;
-                                for (jofsubofsub = 0; jofsubofsub < colofsubofsub; jofsubofsub++) {
+                                for (var jofsubofsub = 0; jofsubofsub < colofsubofsub; jofsubofsub++) {
                                     if (jofsubofsub == parseInt(firstrowofsubofsub[jjofsubofsub].slice(1, 2)))
                                         continue;
                                     submatrixofsubofsub[lofsubofsub][kofsubofsub] = submatrixofsub[iofsubofsub][jofsubofsub];
@@ -1121,8 +1243,8 @@ function determinant(ma) {
                             vtfinalofsubresult2 += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub] + '\\color{black}'
                             vtfinalofsubresult3 += '\\color{#fb650d}' + firstrowofsubofsub[firstrowelofsubofsub][0] + '\\color{black}'
                             sol2sub += firstrowofsubofsub[firstrowelofsubofsub][0]
-                            for (ijofsub of submatrixofsubofsub) {
-                                for (jiofsub of ijofsub) {
+                            for (var ijofsub of submatrixofsubofsub) {
+                                for (var jiofsub of ijofsub) {
                                     vtofsub += jiofsub + "&"
                                 }
                                 vtofsub = vtofsub.slice(0, -1);
@@ -1216,8 +1338,8 @@ function determinant(ma) {
             document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirstresult;
             document.getElementById('singlematrixexplanation').innerHTML += vtfinalfirstresult2;
             var dis = '\\[\\begin{vmatrix}';
-            for (om of ma) {
-                for (omm of om) {
+            for (var om of ma) {
+                for (var omm of om) {
                     dis += omm + '&'
                 }
                 dis = dis.slice(0, -1)
@@ -1238,8 +1360,8 @@ function determinant(ma) {
                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult3;
                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalresult4;
                 var dis = '\\[\\begin{vmatrix}';
-                for (om of ma) {
-                    for (omm of om) {
+                for (var om of ma) {
+                    for (var omm of om) {
                         dis += omm + '&'
                     }
                     dis = dis.slice(0, -1)
@@ -1260,8 +1382,8 @@ function determinant(ma) {
                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult5;
                 document.getElementById('singlematrixexplanation').innerHTML += vtfinalofsubresult6;
                 var dis = '\\[\\begin{vmatrix}';
-                for (om of ma) {
-                    for (omm of om) {
+                for (var om of ma) {
+                    for (var omm of om) {
                         dis += omm + '&'
                     }
                     dis = dis.slice(0, -1)
@@ -1294,9 +1416,9 @@ function inverse() {
         //---print initial matrix
         inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Given \\space Matrix\\]"
         inverseexplanation+='\\[\\begin{bmatrix}'
-        for (i = 0; i < row; i++){
+        for (var i = 0; i < row; i++){
             inversematrix[i]=[];
-            for (j = 0; j < column; j++){
+            for (var j = 0; j < column; j++){
                 inversematrix[i][j]=matrixsingle[i][j];
                 inverseexplanation+=inversematrix[i][j]+"&";
             }
@@ -1307,8 +1429,8 @@ function inverse() {
 
         inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Augmented \\space Matrix\\]";
         inverseexplanation+='\\[\\begin{bmatrix}'
-        for (i = 0; i < row; i++){
-            for (j = 0; j < 2*column; j++){
+        for (var i = 0; i < row; i++){
+            for (var j = 0; j < 2*column; j++){
                 if(j<row)
                     inverseexplanation+=inversematrix[i][j]+"&";
                 else if(j-i==row)
@@ -1328,15 +1450,15 @@ function inverse() {
         inverseexplanation+='\\end{bmatrix}\\]'+"</div>";
         
     
-        for (i = 0; i < row; i++) { 
+        for (var i = 0; i < row; i++) { 
             var flag=0;
             if(inversematrix[i][i]==0)
             {
-                for(p=i+1;p<row;p++)
+                for(var p=i+1;p<row;p++)
                 {
                     if(inversematrix[p][i]!=0)
                     {
-                        for(q=0;q<2*column;q++)
+                        for(var q=0;q<2*column;q++)
                         {   
                             var temp=inversematrix[i][q];
                             inversematrix[i][q]=inversematrix[p][q];
@@ -1349,11 +1471,11 @@ function inverse() {
                 }
                 
             }
-            for (j = 0; j < row; j++) {
+            for (var j = 0; j < row; j++) {
     
                 if (j != i) {
                     var temp = inversematrix[j][i] / inversematrix[i][i];
-                    for (k = 0; k < 2 * column; k++) {
+                    for (var k = 0; k < 2 * column; k++) {
                         inversematrix[j][k] -= inversematrix[i][k] * temp;
 
                     }
@@ -1362,8 +1484,8 @@ function inverse() {
             
             inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Making \\space non-diagonal \\space elements \\space of \\space column \\space " +(i+1)+ "\\space as \\space 0 \\]"
             inverseexplanation+='\\[\\begin{bmatrix}'
-            for (l = 0; l < row; l++){
-                for (m = 0; m < 2*column; m++)
+            for (var l = 0; l < row; l++){
+                for (var m = 0; m < 2*column; m++)
                 {
                     inverseexplanation+=parseFloat(inversematrix[l][m]).toFixed(3) +"&";
                 }
@@ -1374,10 +1496,10 @@ function inverse() {
     
         }
     
-        for (i = 0; i < row; i++) {
+        for (var i = 0; i < row; i++) {
 
             var temp = inversematrix[i][i];
-            for (j = 0; j < 2 * column; j++) {
+            for (var j = 0; j < 2 * column; j++) {
 
                 inversematrix[i][j] = inversematrix[i][j] / temp;
             }
@@ -1385,8 +1507,8 @@ function inverse() {
     
         inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Dividing \\space each \\space row \\space by \\space corresponding diagonal \\space element \\space of \\space the \\space Matrix\\]"
         inverseexplanation+='\\[\\begin{bmatrix}'
-        for (i = 0; i < row; i++){
-            for (j = 0; j < 2*column; j++)
+        for (var i = 0; i < row; i++){
+            for (var j = 0; j < 2*column; j++)
             {
                  inverseexplanation+=inversematrix[i][j].toFixed(3)+"&";
             }
@@ -1397,8 +1519,8 @@ function inverse() {
 
         inverseexplanation+="<div style='border:none;border-radius:30px;margin:2px'>\\[Inverse \\space of \\space the \\space given \\space Matrix\\]"
         inverseexplanation+='\\[\\begin{bmatrix}'
-        for (i = 0; i < row; i++){
-            for (j = column; j < 2*column; j++)
+        for (var i = 0; i < row; i++){
+            for (var j = column; j < 2*column; j++)
             {
                  inverseexplanation+=inversematrix[i][j].toFixed(3)+"&";
             }
