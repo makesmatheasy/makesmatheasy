@@ -2361,6 +2361,34 @@ function impse2find(){
     return total;
 }
 
+function impse3find(){
+    let n = parseInt(document.getElementById("impse7").value)    
+    if (n == 1)    
+        return "1";
+    if (n == 2)    
+        return "11";
+    let str = "11";
+     
+    for(let i = 3; i <= n; i++)
+    {
+        str += '$';
+        let len = str.length;
+        let cnt = 1;
+        let tmp = "";
+        let arr = str.split("");
+        for(let j = 1; j < len; j++)
+        {
+            if (arr[j] != arr[j - 1])
+            {
+                tmp += cnt + 0;
+                tmp += arr[j - 1];
+                cnt = 1;
+            }
+            else cnt++;
+        }
+        str = tmp;
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
@@ -15357,4 +15385,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}
+}}
