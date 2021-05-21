@@ -652,6 +652,22 @@ function printfactorsfl(value) {
     return temp;
 }
 
+function binomialCoeff(n, k) {
+    var res = 1;
+    if (k > n - k)
+        k = n - k;
+    for (i = 0; i < k; ++i){
+        res *= (n - i);
+        res /= (i + 1);}
+    return res;
+}
+function splittrifind(){
+    var side = parseInt(document.getElementById('splittri').value);
+    var c = binomialCoeff(2 * side, side);
+    var ans = c/((2 * side)+1);
+    document.getElementById("splittrians").innerHTML = ans;
+}
+
 function lcmsol(input) {
     document.getElementById("resultlcm").innerHTML = "";
     document.getElementById("resultfac").innerHTML = "";
@@ -2920,26 +2936,6 @@ function pppdSolve() {
         document.getElementById('pppdcq1output').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
         renderMathInElement(document.getElementById("pppdcq1output"));
     }
-}
-
-function splittrifind(){
-    let side = parseInt(document.getElementById('splittri').value);
-    var c = binomialCoeff(2 * side, side);
-    let ans = c/(n+1)
-    document.getElementById("splittrians").innerHTML = ans
-}
-
-function binomialCoeff(n, k)
-{
-    var res = 1;
-    if (k > n - k)
-        k = n - k;
-    for (i = 0; i < k; ++i)
-    {
-        res *= (n - i);
-        res /= (i + 1);
-    }
-    return res;
 }
 
 function parallelsolve()
