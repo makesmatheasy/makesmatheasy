@@ -10179,6 +10179,13 @@ function shtfind(){
     document.getElementById("shtans").innerHTML =  x;
 }
 
+function sht6find(){
+    let a = parseInt(document.getElementById("sht6in").value)
+    var area = Math.sqrt(a) / 6;
+ 
+    document.getElementById("sht6ans").innerHTML =  area;
+}
+
 function htfind(){
     let a = parseInt(document.getElementById("htin").value)
     var x = a / 3;
