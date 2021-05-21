@@ -1210,6 +1210,13 @@ else{
 }
 }
 
+function chordTangle(){
+    // when angle in the alternate segment is given
+    var into = document.getElementById("ctangle").value
+    document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
+    document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
+}
+
 function vectorline(){
     let a = parseInt(document.getElementById("i1").value)
     let b = parseInt(document.getElementById("i2").value)
@@ -1244,16 +1251,6 @@ function vectorline(){
         output.innerHTML = temp;
         renderMathInElement(output);
     }
-
-}
-
-function ctangle(){
-    // javascript program to find the angle
-    // between a chord and a tangent
-    // when angle in the alternate segment is given
-    var into = document.getElementById("ctangle").value
-    document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
-    document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
 }
 
 //-----------------------------------------------------
