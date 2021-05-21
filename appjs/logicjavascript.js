@@ -10351,12 +10351,9 @@ function anotherap() {
     var n = document.getElementById("numterms").value
     var a = document.getElementById("ft").value
     var l = document.getElementById("lt").value
-    if(isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(l)))
-    {
-        document.getElementById("printAPseries1").innerHTML = "Enter numbers only. Blank inputs are not allowed";
-        document.getElementById("ltap").innerHTML = "";
-        return;
-    }
+    var print = document.getElementById("printAPseries1")
+    var temp = "";
+    if (!isNaN(parseInt(n)) && !isNaN(parseInt(a)) && !isNaN(parseInt(l))) {
     var nhalf = parseFloat(n / 2)
     var al = parseInt(a) + parseInt(l)
     var ans = parseInt(nhalf * al)
@@ -10368,8 +10365,22 @@ function anotherap() {
         num += parseInt(d);
         series += (num.toString() + ", ");
     }
-    document.getElementById("printAPseries1").innerHTML = "Arithmetic Progression: " + series.substring(0, series.length - 2);
-    document.getElementById("ltap").innerHTML = "Result: " + ans
+    temp += "\\[Arthimetic \\space Progression : \\space a, \\space a+d, \\space a+2d,....., \\space l-2d, \\space l-d, \\space l \\]";
+    temp += "\\[Arthimetic \\space Progression : " + series.substring(0, series.length - 2) + " \\]" ;
+    temp +=  "\\[Formula : \\]";
+    temp += "\\[S_n=\\frac{n}{2} (a+l) \\]";
+    temp += "\\[S_n = \\frac{" + n + "}{2} ((" + a + ")+(" + l + "))\\]";
+    temp += "\\[S_n = " + (nhalf) + "\\times" + (al) + " \\]";
+    temp += "\\[S_n = " + ans + "\\]";
+    print.innerHTML = temp;
+    renderMathInElement(print);
+}
+else{
+    temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+    print.innerHTML= temp;
+    renderMathInElement(print);
+    return;
+}
 }
 
 function nap(){
