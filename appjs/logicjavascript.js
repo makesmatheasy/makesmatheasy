@@ -3979,6 +3979,30 @@ else{
 }
 }
 
+function vecpoints(){
+    var a,b,c,d,e,f;
+    a = parseInt(document.getElementById("val1a").value);
+    b = parseInt(document.getElementById("val1b").value);
+    c = parseInt(document.getElementById("val1c").value);
+    d = parseInt(document.getElementById("val2b").value);
+    e = parseInt(document.getElementById("val2c").value);
+    f = parseInt(document.getElementById("val2d").value);
+    var output = document.getElementById("vectorpoint1");
+    var temp = "";
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d) && !isNaN(e) && !isNaN(f))
+    {
+        temp += "\\[\\overrightarrow{AB} \\space = \\space (" + (d-a) + "\\hat{i}) \\space + (" + (e-b) + "\\hat{j}) \\space + (" + (f-c) + "\\hat{k}) \\]"
+        temp += "\\[\\overrightarrow{AB} \\space = \\space \\sqrt{ (" + (d-a) + "^{2})+(" + (e-b) + "^{2})+(" + (f-c) + "^{2})} \\space = \\space \\sqrt{ " + ((d-a)**2) + " + " +  ((e-b)**2)+ " + " + ((f-c)**2) + "} \\space = \\space  \\sqrt{ " + (((d-a)**2)+((e-b)**2)+ ((f-c)**2)) + "} \\space = \\space" + Math.sqrt((((d-a)**2)+((e-b)**2)+ ((f-c)**2))) + " \\]"
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    }
+
 
 function vector_res(){
     var a=parseFloat(document.getElementById('abc').value);
