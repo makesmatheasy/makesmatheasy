@@ -3552,31 +3552,31 @@ function vectoradd(){
     }
 }
 function vectorsub(){
-    var a=parseFloat(document.getElementById('b1a').value);
-    var b=parseFloat(document.getElementById('b2a').value);
-    var c=parseFloat(document.getElementById('b3a').value);
-    var d=parseFloat(document.getElementById('c1b').value);
-    var e=parseFloat(document.getElementById('c2b').value);
-    var f=parseFloat(document.getElementById('c3b').value);
+    var a=parseFloat(document.getElementById('a1b').value);
+    var b=parseFloat(document.getElementById('a2b').value);
+    var c=parseFloat(document.getElementById('a3b').value);
+    var d=parseFloat(document.getElementById('b1c').value);
+    var e=parseFloat(document.getElementById('b2c').value);
+    var f=parseFloat(document.getElementById('b3c').value);
     var sub1 = (a-d);
     var sub2 = (b-e);
     var sub3 = (c-f);
     if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f)){
-        document.getElementById("vectorsub1").style.display = "block";
-        document.getElementById("vsubi").innerHTML ="Please enter all fields";
-        document.getElementById("vsubj").innerHTML ="";
-        document.getElementById("vsubk").innerHTML ="";
+        document.getElementById("vectorsum1").style.display = "block";
+        document.getElementById("vsumi").innerHTML ="Please enter all fields";
+        document.getElementById("vsumj").innerHTML ="";
+        document.getElementById("vsumk").innerHTML ="";
     }else{
-    document.getElementById("vectorsub1").style.display = "block";
-    document.getElementById("vsubi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1)  ;
+    document.getElementById("vectorsum1").style.display = "block";
+    document.getElementById("vsumi").innerHTML = 'Difference between Vectors (X-Y) =  ' + (sub1)  ;
     if(sub2<0)
-    document.getElementById("vsubj").innerHTML =   (sub2)  ;
+    document.getElementById("vsumj").innerHTML =   (sub2)  ;
     else
-    document.getElementById("vsubj").innerHTML =  '+' +  (sub2)  ;
+    document.getElementById("vsumj").innerHTML =  '+' +  (sub2)  ;
     if(sub3<0)
-    document.getElementById("vsubk").innerHTML = (sub3);
+    document.getElementById("vsumk").innerHTML = (sub3);
     else
-    document.getElementById("vsubk").innerHTML =  '+' +  (sub3) ;
+    document.getElementById("vsumk").innerHTML =  '+' +  (sub3) ;
    
     }
 }
