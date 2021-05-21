@@ -2348,6 +2348,16 @@ function addsubsfind(){
     }
 }
 
+function countscfind(){
+    let N = parseInt(document.getElementById('countsc').value)
+    let cnt = 0, i = 1;
+    while (Math.floor(Math.pow(i, 6)) <= N)
+    {
+        ++cnt;
+        ++i;
+    }
+    document.getElementById("countscans").innerHTML = cnt
+}
 function solvepenta(){
     var a = document.getElementById("inputsidepenta1").value;
     var b = document.getElementById("inputsidepenta2").value;
@@ -11093,10 +11103,10 @@ function lacube4find(){
     var c = parseInt(s1 + s2);
     if(!isNaN(a) || !isNaN(b)){
     if (isPerfectCube(c)) {
-        document.getElementById("polymax4ans").innerHTML = "Yes"
+        document.getElementById("lacube4ans").innerHTML = "Yes"
     }
     else {
-        document.getElementById("polymax4ans").innerHTML = "No"
+        document.getElementById("lacube4ans").innerHTML = "No"
     }
     }
     else{
@@ -11109,7 +11119,7 @@ function lacube5find(){
     S = Math.floor((n * (n + 1)) / 2);
     res = S * (S - 1);   
     document.getElementById("lacube5ans").innerHTML =  res;
-
+}
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
