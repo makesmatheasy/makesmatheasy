@@ -2389,6 +2389,20 @@ function impse3find(){
         str = tmp;
 }
 
+function impse4find(){
+    let n = parseInt(document.getElementById("impse7").value)  
+    for (var row_num = 1; row_num <= n; row_num++) { 
+        var count = 1;
+        var c = 1; 
+        for (var i = 1; i <= row_num; i++) { 
+            c = c * (row_num - i) / i;
+            if (c % 2 == 1)
+                count++;
+        }
+        document.getElementById("impse7ans").innerHTML =  count + " ";
+    }
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
