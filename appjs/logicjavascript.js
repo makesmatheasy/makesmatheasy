@@ -3188,12 +3188,18 @@ function circumsolve(){
     var temp = "";
     var c1 = (((x1*Math.sin(2*A* Math.PI / 180.0))+(x2*Math.sin(2*B* Math.PI / 180.0))+(x3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
     var c2 = (((y1*Math.sin(2*A* Math.PI / 180.0))+(y2*Math.sin(2*B* Math.PI / 180.0))+(y3*Math.sin(2*C* Math.PI / 180.0)))/(Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0))).toFixed(1)
-    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="") && (A!="") && (B!="") && (C!="")){
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3) && !isNaN(A) && !isNaN(B) && !isNaN(C))
+    {
         temp += "\\[Circumcenter \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
         temp += "\\[( \\frac { (" + x1 + "\\times \\space Sin2(" + A + ")) + (" + x2 + "\\times \\space Sin2(" + B + ")) + (" + x3 + "\\times \\space Sin2(" + C + "))}{ (  Sin2(" + A + ") +  Sin2(" + B + ") +  Sin2(" + C + "))} \\space , \\space  \\frac { (" + y1 + "\\times \\space Sin2(" + A + ")) + (" + y2 + "\\times \\space Sin2(" + B + ")) + (" + y3 + "\\times \\space Sin2(" + C + "))}{ (  Sin2(" + A + ") +  Sin2(" + B + ") +  Sin2(" + C + "))}) \\]";
         temp += "\\[( \\frac { ((" + ((x1*Math.sin(2*A* Math.PI / 180.0)).toFixed(1)) + " ) + (" + ((x2*Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((x3*Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + "))}{ (" + ((Math.sin(2*A* Math.PI / 180.0)).toFixed(1))+ ") + (" + ((Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + ")} \\space , \\space  \\frac { ((" + ((y1*Math.sin(2*A* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((y2*Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + ") + (" + ((y3*Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + "))}{ " + ((Math.sin(2*A* Math.PI / 180.0)).toFixed(1)) + "+" + ((Math.sin(2*B* Math.PI / 180.0)).toFixed(1)) + "+" + ((Math.sin(2*C* Math.PI / 180.0)).toFixed(1)) + "}) \\]";
         temp += "\\[( \\frac { " + (((x1*Math.sin(2*A* Math.PI / 180.0))+(x2*Math.sin(2*B* Math.PI / 180.0))+(x3*Math.sin(2*C* Math.PI / 180.0))).toFixed(1)) + "}{" + (Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0)).toFixed(1) + "} \\space , \\space \\frac { " + (((y1*Math.sin(2*A* Math.PI / 180.0))+(y2*Math.sin(2*B* Math.PI / 180.0))+(y3*Math.sin(2*C* Math.PI / 180.0))).toFixed(1)) + "}{" + (Math.sin(2*A* Math.PI / 180.0)+Math.sin(2*B* Math.PI / 180.0)+Math.sin(2*C* Math.PI / 180.0)).toFixed(1) + "} ) \\]";
         temp += "\\[Circumcenter \\space = \\space (" + eval(String(c1)) + "," + eval(String(c2)) + ")"  +"\\]";
+        circenterop.innerHTML = temp;
+        renderMathInElement(circenterop);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
         circenterop.innerHTML = temp;
         renderMathInElement(circenterop);
     }
@@ -3223,6 +3229,13 @@ function incentersolve(){
         incenterop.innerHTML = temp;
         renderMathInElement(incenterop);
 
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        explain.innerHTML = " ";
+        incenterop.innerHTML = temp;
+        renderMathInElement(incenterop);
+        renderMathInElement(document.getElementById("in_output"));
     }
 }
 
@@ -4180,7 +4193,8 @@ function coordinatearea(){
    // renderMathInElement(document.getElementById("formula"));
     var area= Math.abs(((x1*y2) - (x1*y3) + (x2*y3) - (x2*y1) + (x3*y1)- (x3*y2)));
     var area1 = (area/2);
-    if((x1!="") && (y1!="") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 !="")){
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3))
+    {
         explaintemp += "\\[Area \\space of \\space Triangle  = \\space  \\frac{1}{2} | \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
         explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
         explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2-y3) + ") + (" + x2 + ") \\times (" + (y3-y1) + ") + (" + x3 + ") \\times (" + (y1-y2) + ") \\]";
@@ -4193,7 +4207,14 @@ function coordinatearea(){
         explain.innerHTML = areatemp;
         renderMathInElement(formula1);
     }
-
+    else{
+        explaintemp += "\\[Please \\space enter \\space all \\space fields \\]";
+        areatemp += " ";
+        areaop.innerHTML = explaintemp;
+        explain.innerHTML = areatemp;
+    }
+    renderMathInElement(areaoutput);
+    renderMathInElement(formula1);
 }
 
 function triinfind(){
@@ -4281,9 +4302,14 @@ function orthosolve(){
     let y2 = parseInt(document.getElementById('orthoy2').value)
     let x3 = parseInt(document.getElementById('orthox31').value)
     let y3 = parseInt(document.getElementById('orthoy3').value)
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3)){
     let x = ((x2*(x1-x3)+y2*(y1-y3))*(y3-y2)-(y3-y1)*(x1*(x2-x3)+y1*(y2-y3)))/((x3-x2)*(y3-y1)-(y3-y2)*(x3-x1))
     let y = ((x2*(x1-x3)+y2*(y1-y3))*(x3-x2)-(x3-x1)*(x1*(x2-x3)+y1*(y2-y3)))/((y3-y2)*(x3-x1)-(x3-x2)*(y3-y1))
     document.getElementById("ortho_output").innerHTML = "("+x+","+y+")"
+    }
+    else{
+        document.getElementById('ortho_output').innerHTML= 'Please enter all Input';
+    }
 }
 
 function obliquetri(){
@@ -4295,6 +4321,8 @@ function obliquetri(){
     var displayop1 = document.getElementById("obliop1");
     var explaintemp = "";
     var explaintemp1 = "";
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c))
+    {
     if((a*a == b*b + c*c) || (b*b == a*a + c*c) || (c*c == a*a + b*b)){
         explaintemp += "It will not form an oblique triangle."
         displayop.innerHTML = explaintemp;
@@ -4305,6 +4333,15 @@ function obliquetri(){
         displayop1.innerHTML = explaintemp1;
         renderMathInElement(obliop1);
     }
+}
+else{
+    explaintemp += "\\[Please \\space enter \\space all \\space fields \\]";
+    explaintemp1 += " ";
+    displayop.innerHTML = explaintemp;
+    displayop1.innerHTML = explaintemp1;      
+}
+renderMathInElement(obliop);
+renderMathInElement(obliop1);
 }
 function medtri(){
     var a,b,c;
@@ -7350,7 +7387,8 @@ function centsolve(){
     var yans = (y1+y2+y3)/3
     var centout1 = document.getElementById("apk");
     var centemp1 = "";
-    if((x1 !="") && (y1 != "") && (x2 !="") && (y2 != "") && (x3 != "") && (y3 != "")){
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3))
+    {
         centemp1 += "\\[Centroid \\space of \\space a \\space Triangle \\ is \\space ( \\space \\frac{x_1+x_2+x_3}{3} \\space , \\space \\frac{y_1+y_2+y_3}{3} ) \\space \\]";
         centemp1 += "\\[( \\space \\frac{ (" + x1 + ") + (" + x2 + ") + (" + x3 + ") }{3} \\space , \\space \\frac{ (" + y1 + ") + (" + y2 + ") + (" + y3 +  ") }{3} \\space ) \\]";
         centemp1 += "\\[( " + xans.toFixed(3) + "," + yans.toFixed(3) + " )\\]";
@@ -7358,7 +7396,9 @@ function centsolve(){
         renderMathInElement(centout1);
     }
     else{
-        centout1.innerHTML = "";
+        centemp1 += "\\[Please \\space enter \\space all \\space fields \\]";
+        centout1.innerHTML = centemp1;
+        renderMathInElement(centout1);
     }
 }
 //Octagonal pyramid
