@@ -2292,6 +2292,16 @@ function addsubsfind(){
     document.getElementById("addsubsans").innerHTML = ans;
 }
 
+function countscfind(){
+    let N = parseInt(document.getElementById('countsc').value)
+    let cnt = 0, i = 1;
+    while (Math.floor(Math.pow(i, 6)) <= N)
+    {
+        ++cnt;
+        ++i;
+    }
+    document.getElementById("countscans").innerHTML = cnt
+}
 function solvepenta(){
     var a = document.getElementById("inputsidepenta1").value;
     var b = document.getElementById("inputsidepenta2").value;
@@ -2387,6 +2397,7 @@ function impse3find(){
             else cnt++;
         }
         str = tmp;
+    }    
 }
 
 function solvetetrahexa(){
@@ -10778,10 +10789,10 @@ function lacube4find(){
     s2 = b.toString();
     var c = parseInt(s1 + s2);
     if (isPerfectCube(c)) {
-        document.getElementById("polymax4ans").innerHTML = "Yes"
+        document.getElementById("lacube4ans").innerHTML = "Yes"
     }
     else {
-        document.getElementById("polymax4ans").innerHTML = "No"
+        document.getElementById("lacube4ans").innerHTML = "No"
     }
 }
 function isPerfectCube(x)
@@ -15385,4 +15396,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}}
+}
