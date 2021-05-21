@@ -13180,7 +13180,7 @@ function computeprobability() {
 function geoprobability(){
     var x = document.getElementById('failure').value;
     var p = document.getElementById('success').value;
-
+    
     if((isNaN(x)) || (isNaN(p)) ){
         document.getElementById("geoprobAns").innerHTML = "Please enter valid input";
     }
