@@ -264,6 +264,7 @@
             }
         }
     </style>
+    
 
 </head>
 
@@ -272,6 +273,11 @@
     <!-- using darkmode.js to implement dark mode -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
+                window.onload = function () {
+            var preloader = document.getElementById("preloader")
+            preloader.style.display = 'none';
+        }
+
         var options = {
             bottom: '64px', // default: '32px'
             right: '32px', // default: '32px'
@@ -288,6 +294,20 @@
         const darkmode = new Darkmode(options);
         darkmode.showWidget();
     </script>
+        <!-- preloader starts  -->
+        <div id="preloader">
+                <div class="center_div">
+                    <div class="rot">
+                        <div class="configure-core"></div>
+                    </div>
+                    <div class="rot2">
+                        <div class="configure-core"></div>
+                    </div>
+                    <div class="pre-heading"> <img src="images/makesmatheasylogo.png" style="filter:none;" class="pre-img" alt="logo">
+                    </div>
+                </div>
+            </div>
+    
 <div class="blink-1 javascriptno" style="display:none;">
     <p>
         <span class="badge badge-light">Makes Math Easy only works when JavaScript is enabled</span>
