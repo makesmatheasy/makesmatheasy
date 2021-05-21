@@ -4263,6 +4263,30 @@ function medtri(){
         renderMathInElement(output);
     }
 }
+function circumtri(){
+    var a,b,c;
+    a=parseFloat(document.getElementById('inputsidea2').value);
+    b=parseFloat(document.getElementById('inputsideb2').value);
+    c=parseFloat(document.getElementById('inputsidec2').value);
+    var output = document.getElementById("circumtri1");
+    var temp = " ";
+    var ans = (a*b*c);
+    var ans1 = Math.sqrt((a+b+c)*(b+c-a)*(c+a-b)*(a+b-c));
+    var ans2 = (ans/ans1);
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Circumradius \\space of \\space Triangle \\space is: \\]";
+        temp += "\\[R \\space = \\space \\frac{abc}{\\sqrt{(a+b+c)(b+c-a)(c+a-b)(a+b-c)}} \\]";
+        temp += "\\[R \\space = \\space \\frac{" + a + "\\times" + b + "\\times" + c + "}{\\sqrt{(" + a + "+" + b + "+" + c + ")\\times(" + b + "+" + c + "-" + a + ")\\times(" + c + "+" + a + "-" + b + ")\\times(" + a + "+" + b + "-" + c + ")}}  \\]";
+        temp += "\\[R \\space = \\space \\frac{" + ans + "}{\\sqrt{(" + (a+b+c) + ")(" + (b+c-a) + ")(" + (c+a-b) + ")(" + (a+b-c) + ")}} \\space = \\space \\frac{" + ans + "}{\\sqrt{" + ((a+b+c)*(b+c-a)*(c+a-b)*(a+b-c)) + "}} \\space = \\space \\frac{" + ans + "}{" + ans1 + "} \\space = \\space " + ans2 + " \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
 function vectorquad(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("inp51").value);
