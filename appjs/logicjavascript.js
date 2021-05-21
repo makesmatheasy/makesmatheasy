@@ -2350,15 +2350,12 @@ function impse2find(){
     let x = parseInt(document.getElementById("impse5").value)
     let n = parseInt(document.getElementById("impse6").value)
     let i, total = 1.0, multi = x;
-    document.getElementById("impse2find").innerHTML = total + " ";
     for (i = 1; i < n; i++) {
  
         total = total + multi;
-        document.getElementById("impse2find").innerHTML = multi + " ";
         multi = multi * x;
     } 
-    document.getElementById("impse2find").innerHTML = "<br>";
-    return total;
+    document.getElementById("impse2ans").innerHTML = total;
 }
 
 function impse3find(){
@@ -2387,6 +2384,8 @@ function impse3find(){
             else cnt++;
         }
         str = tmp;
+    } 
+    document.getElementById("impse3ans").innerHTML = str; 
 }
 
 function solvetetrahexa(){
@@ -15385,4 +15384,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-}}
+}
