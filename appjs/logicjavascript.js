@@ -2430,7 +2430,7 @@ function impse3find(){
     } 
     document.getElementById("impse3ans").innerHTML = str; 
 }
-}
+
 
 function impse4find(){
     let n = parseInt(document.getElementById("impse7").value)  
