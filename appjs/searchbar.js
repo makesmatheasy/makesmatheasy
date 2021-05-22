@@ -1454,6 +1454,14 @@ function autocomplete(inp, arr) {
                     else if (inp.value.toUpperCase() == "CHI-SQUARE TEST") {
                         $("#chitest").slideToggle(); 
                     }
+                    else if(inp.value.toUpperCase() == "AB TEST"){
+                        clearmain()
+                        document.getElementById('abtest').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "AB TEST") {
+                        clearmain()
+                        $("#abtest").slideDown(); 
+                    }
                     else if(inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULTOR"){
                         document.getElementById('binomialcoeff').click(); 
                     }
