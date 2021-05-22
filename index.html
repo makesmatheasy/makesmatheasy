@@ -4265,7 +4265,22 @@
                     </tr>
                 </table>
             </li>
-            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="abtestbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">AB-test</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('AB test','#abtest','c','abtestfav')"><img
+                                        id="abtestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
                 
             <li>
                 <table class="table">
@@ -12043,6 +12058,30 @@
             </div>
         </div>
 
+<!-- t -test -->
+<div class="collapse" id="abtest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">AB - Test</h1>
+    <p style="margin-top: 2rem;">
+        An AB test is a statistical significance test in which two populations are compared to see if they differ significantly on a single characteristic.
+        A sample size of 30 or more is recommended.
+    </p>
+    <form action="">
+        <p style="text-align: left; color: white; margin-top:2rem;">Group 1</p>
+        <input class = "form__field"type="text" id="absize1" placeholder="Enter sample size for group 1">
+        <br>
+        <input class = "form__field"type="text" id="abpos1" placeholder="Enter number of positive results">
+        <br><br>
+        <p style="text-align: left; color: white; margin-top:2rem;">Group 2</p>
+        <input class = "form__field"type="text" id="absize2" placeholder="Enter sample size for group 2">
+        <br>
+        <input class = "form__field"type="text" id="abpos2" placeholder="Enter number of positive results">
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="abvalue()">Test</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    
+    <p id="abtestans"></p>
+</div>
 
         
 <div class="collapse" id="ftest">
