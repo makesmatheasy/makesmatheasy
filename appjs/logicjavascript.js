@@ -15749,4 +15749,4 @@ function clearSumAndDiff() {
     }
 
 }
-}
+
