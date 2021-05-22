@@ -11175,7 +11175,7 @@ function lacube5find(){
 function lacube6find(){
     let n  = parseInt(document.getElementById("lacube6").value)
     let S = Math.pow(((n * (n + 1)) / 2),2)
-    let x = (n*(n+1)(2*(n)+1))/6
+    let x = (n*(n+1)*(2*(n)+1))/6
     res = S-x   
     document.getElementById("lacube6ans").innerHTML =  res;
 }
