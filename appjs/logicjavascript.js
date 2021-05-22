@@ -10387,16 +10387,13 @@ function solvepercent(){
     renderMathInElement(document.getElementById('r'));
     renderMathInElement(document.getElementById('r1'));
 }
-function solveperc()
-{
-    var x4,y4;
-    x4=parseFloat(document.getElementById('x4').value);
-    y4=parseFloat(document.getElementById('y4').value);
-    if(!isNaN(x3) || !isNaN(y3)){
-    var t = x4-(y4*x4)/100;
-    document.getElementById('t').innerHTML= 'Result : ' + t ; 
-    }
-    else{
+function solveperc(){
+    var x4=(document.getElementById('x4').value);
+    var y4=(document.getElementById('y4').value);
+    if(x4!="" && y4!=""){
+        var t = parseFloat(x4)-(parseFloat(y4)*parseFloat(x4))/100;
+        document.getElementById('t').innerHTML= 'Result : ' + t ; 
+    } else{
         document.getElementById('t').innerHTML= 'Please enter all Input';
     }
 }
