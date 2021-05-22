@@ -1169,6 +1169,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#parabbtn").click(function () {
+        openit("#parab");
+        closenav();
+        clearall();
+    });
     $("#ellipsecollapsebtn").click(function () {
         openit("#ellipsecollapse");
         closenav();
