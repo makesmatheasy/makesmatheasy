@@ -2225,6 +2225,39 @@ function Rhombohedron(){
     }
 }
 
+function solvehalft() {
+    var a = document.getElementById("inputhalftetraa").value;
+    var voloutput = document.getElementById("resultofhalftvol");
+    var areaoutput = document.getElementById("resultofhalftarea");
+    var boutput = document.getElementById("resultofhalfb");
+    var heightoutput = document.getElementById("resultofhalftheight");
+    var areatemp = "";
+    var voltemp = "";
+    var btemp = "";
+    var heighttemp = "";
+    if (a != "") {
+        voltemp += "\\[Volume \\space of \\space Half \\space Tetrahedron \\space \\newline \\frac{" + a + "^3 \\times \\sqrt{2}}{24}" + "\\ = " + eval(String(0.059*a*a*a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Half \\space Tetrahedron \\space  \\newline" + a + "^2 \\times (\\frac{\\sqrt{3}}{2} + \\frac{1}{4})" + "\\ = " + eval(String(1.116*a*a)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        btemp += "\\[Half \\space edge \\space of \\space Half \\space Tetrahedron \\space  \\newline" + "\\frac{" + a + "}{2}" + "\\ = " + eval(String(0.5*a)).toFixed(3) + "\\]";
+        boutput.innerHTML = btemp;  
+        heighttemp += "\\[Height \\space of \\space Half \\space Tetrahedron \\space  \\newline" + "\\frac{" + a + "\\times \\sqrt{6}}{6}"  +  "\\ = " + eval(String(0.408*a)).toFixed(3) + "\\]";
+        heightoutput.innerHTML = heighttemp;  
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(boutput);
+        renderMathInElement(heightoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        boutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+
+}
+
 function cramer(){
     var a=parseFloat(document.getElementById('cab').value);
     var b=parseFloat(document.getElementById('cab1').value);
@@ -15742,4 +15775,4 @@ function clearSumAndDiff() {
     }
 
 }
-}
+

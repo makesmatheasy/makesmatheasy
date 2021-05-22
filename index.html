@@ -14893,6 +14893,11 @@
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
                 </tr>
+                 <tr>
+                    <td><a data-toggle="modal" data-target="#half_tetra"
+                           style="text-decoration:none;"
+                           href="#">Half Tetrahedron</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#pentahedron"
                            style="text-decoration:none;"
@@ -27306,6 +27311,66 @@ N is the population size.
                                 <p class="stopwrap" id="rhomhedvol"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="rhomhedsurarea"
+                                   style="font-family:mathfont;"></p><br>
+        
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="half_tetra" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Half Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{a^3 \times \sqrt{2}}{24}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = a^2 \times \Big(\frac{\sqrt{3}}{2}-\frac{1}{4} \Big)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Half Edge (b)</h5>
+                                    <p class="text-center">\[b= \frac{a}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h= \frac{a \times \sqrt{6}}{6}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/halft.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputhalftetraa" class = "form__field" oninput="solvehalft()" 
+                                placeholder="Enter Tetrahedron edge (a)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofhalftvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalftarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfb"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofhalftheight"
                                    style="font-family:mathfont;"></p><br>
         
                         </div>
