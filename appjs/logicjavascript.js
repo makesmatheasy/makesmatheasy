@@ -652,20 +652,25 @@ function printfactorsfl(value) {
     return temp;
 }
 
-function binomialCoeff(n, k) {
+function splittrifind(){
+    var side = parseInt(document.getElementById('splittri').value);
+    document.getElementById("splittrians1").innerHTML = "\\[First, \\space we \\space find \\space Binomial \\space Coefficient \\space of \\space (2 \\times "+side+") \\space and \\space "+side+"\\]"
+    renderMathInElement( document.getElementById("splittrians1"));
+    var c = binomialCoeff(2 * side, side);
+    var ans = c/((2 * side)+1);
+    document.getElementById("splittrians2").innerHTML = "\\[Number \\space of \\space ways \\space is \\space \\space \\frac{Binomila \\space Coefficient}{2 \\times side} \\space \\space = \\space \\frac{"+c+"}{2 \\times "+side+"} \\space = \\space "+ans.toFixed(3)+"\\]";
+    renderMathInElement( document.getElementById("splittrians2"));
+}
+
+function binomialCoeff(n, k){
     var res = 1;
     if (k > n - k)
         k = n - k;
     for (i = 0; i < k; ++i){
         res *= (n - i);
-        res /= (i + 1);}
+        res /= (i + 1);
+    }
     return res;
-}
-function splittrifind(){
-    var side = parseInt(document.getElementById('splittri').value);
-    var c = binomialCoeff(2 * side, side);
-    var ans = c/((2 * side)+1);
-    document.getElementById("splittrians").innerHTML = ans;
 }
 
 function lcmsol(input) {
@@ -15740,6 +15745,4 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
-
-}
 }
