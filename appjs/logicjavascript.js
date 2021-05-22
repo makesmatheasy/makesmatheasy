@@ -15641,6 +15641,22 @@ function arinfind(){
     document.getElementById("arinans").innerHTML = A
 }
 
+// Negative Binomial Distribution Calculator
+function negbinoCal() {
+    let n = document.getElementById("negbinon").value;
+    let r = document.getElementById("negbinor").value;
+    let p = document.getElementById("negbinop").value;
+
+    if(n=="" || r=="" || p==""){
+        document.getElementById("negbinoans").innerHTML = "Enter all the inputs";
+    }
+    else{
+        let combi = comb(n-1,r-1);
+        let ans = combi * p**r * (1-p)**(n-r);
+        document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
+    }
+}
+
 function hypergeoscal()
 {
     var num1=document.getElementById("hypergeos1").value;

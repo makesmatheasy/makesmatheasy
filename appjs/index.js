@@ -227,6 +227,7 @@ function openit(id) {
         "#ttest",
         "#abtest",
         "#relrisk",
+        "#negbino",
         "#ftest",
         "#ztest",
         "#pchart",

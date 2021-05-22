@@ -374,6 +374,7 @@ Other Tech/Libraries
   - Z-test
   - Z score Calculator
   - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - Confidence Interval Calculator
   - Odds Calculator
   - Skewness Calculator

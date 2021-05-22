@@ -489,6 +489,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#negbinobtn").click(function () {
+        openit("#negbino");
+        closenav();
+        clearall();
+    });   
     $("#ftestbtn").click(function () {
         openit("#ftest");
         closenav();

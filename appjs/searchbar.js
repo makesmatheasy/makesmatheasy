@@ -1466,9 +1466,17 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('relrisk').click(); 
                     }
-                    else if (inp.value.toUpperCase() == "RELATIVE RISK CALCULATO") {
+                    else if (inp.value.toUpperCase() == "RELATIVE RISK CALCULATOR") {
                         clearmain()
                         $("#relrisk").slideDown(); 
+                    }
+                    else if(inp.value.toUpperCase() == "NEGATIVE BINOMIAL DISTRIBUTION CALCULATOR"){
+                        clearmain()
+                        document.getElementById('negbino').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "NEGATIVE BINOMIAL DISTRIBUTION CALCULATOR") {
+                        clearmain()
+                        $("#negbino").slideDown(); 
                     }
                     else if(inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULTOR"){
                         document.getElementById('binomialcoeff').click(); 
