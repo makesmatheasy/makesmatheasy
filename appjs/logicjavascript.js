@@ -10174,6 +10174,15 @@ function cirinsemi1find(){
     document.getElementById("cirinsemi1ans").innerHTML = area;
 }
 
+function cirinsemi1find(){
+    let l = parseInt(document.getElementById("cirinsemi2in").value)
+    let b = parseInt(document.getElementById("cirinsemi21in").value)
+    let h = parseInt(document.getElementById("cirinsemi22in").value)
+    var a = (l * b) / (l + b);
+    let ans =  a * a;
+    document.getElementById("cirinsemi2ans").innerHTML = ans
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
@@ -15742,4 +15751,4 @@ function clearSumAndDiff() {
     }
 
 }
-}
+
