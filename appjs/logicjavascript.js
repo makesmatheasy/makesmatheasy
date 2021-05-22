@@ -11128,6 +11128,47 @@ function lacube5find(){
     res = S * (S - 1);   
     document.getElementById("lacube5ans").innerHTML =  res;
 }
+
+function lacube6find(){
+    let s = document.getElementById("lacube5").value;
+    let n = s.length();
+    let ans = -1;
+    let num = "";
+        for (let i = 1; i < (1 << n); i++) {
+            let str = "";
+              
+            for (let j = 0; j < n; j++) {
+                if (((i >> j) & 1) == 1) {
+                    str += s.charAt(j);
+                }
+            }
+            if (str.charAt(0) != '0') {
+                let temp = 0;
+                for (let j = 0; j < 
+                              str.length(); j++)
+                    temp = temp * 10 + 
+                      (int)(str.charAt(j) - '0');
+      
+                let k = Number(Math.sqrt(temp));
+                if (k * k == temp) {
+                    if (ans < Number(str.length())) {
+                        ans = Number(str.length());
+                        num = str;
+                    }
+                }
+            }
+        }
+      
+        if (ans == -1)
+            return ans;
+        else {
+              
+            // print PerfectSquare
+            System.out.print(num + " ");
+            return n - ans;
+        }
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
@@ -15742,4 +15783,4 @@ function clearSumAndDiff() {
     }
 
 }
-}
+
