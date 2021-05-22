@@ -4243,26 +4243,27 @@ function area_of_regular_polygon(n, len)
 
 function centersolve(){
     var a,b,c,d,e,f;
-     a = parseInt(document.getElementById("qcenter").value);
-     b = parseInt(document.getElementById("acenter").value);
-     c = parseInt(document.getElementById("bcenter").value);
+    a = parseInt(document.getElementById("qcenterr").value);
+    b = parseInt(document.getElementById("acenterr").value);
+    c = parseInt(document.getElementById("bcenterr").value);
+    d = parseInt(document.getElementById("ccenterr").value);
      e = b/(a*2);
      f = c/(a*2);
 
      if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("centere").innerHTML ="\\[Please \\space enter \\space all \\space fields \\]";
-        document.getElementById("centerr").innerHTML ="";
+        document.getElementById("centerer").innerHTML ="\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("centerrr").innerHTML ="";
      }else{
-     document.getElementById("centere").innerHTML = "\\[Center \\space Of \\space circle \\space -> \\newline";
-     document.getElementById("centere").innerHTML +=" g\\space = \\frac {"+ b + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ e +"\\newline"; 
-     document.getElementById("centere").innerHTML +=" h\\space = \\frac {"+ c + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ f +"\\newline \\] ";
+     document.getElementById("centerer").innerHTML = "\\[Center \\space Of \\space circle \\space -> \\newline";
+     document.getElementById("centerer").innerHTML +=" g\\space = \\frac {"+ b + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ e +"\\newline"; 
+     document.getElementById("centerer").innerHTML +=" h\\space = \\frac {"+ c + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ f +"\\newline \\] ";
 
-    document.getElementById("centerr").innerHTML = "\\[Center \\space Of \\space circle \\space = ( \\space -g \\space -h \\space )  \\newline";
-    document.getElementById("centerr").innerHTML += " = \\space ( \\space " + -e +" \\space , \\space "+ -f + " \\space ) \\space \\newline \\] ";
+    document.getElementById("centerrr").innerHTML = "\\[Center \\space Of \\space circle \\space = ( \\space -g \\space -h \\space )  \\newline";
+    document.getElementById("centerrr").innerHTML += " = \\space ( \\space " + -e +" \\space , \\space "+ -f + " \\space ) \\space \\newline \\] ";
      }
 
-    renderMathInElement(document.getElementById("centere"));
-    renderMathInElement(document.getElementById("centerr"));
+    renderMathInElement(document.getElementById("centerer"));
+    renderMathInElement(document.getElementById("centerrr"));
 
 }
 

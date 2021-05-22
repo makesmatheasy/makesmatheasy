@@ -5658,20 +5658,7 @@
 
 
 
-            <h3>Center of Circle</h3><br>
-            <div class="coll">
-                <p>
-                    <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p><input type="text" id="qcenter" size=3 value='' placeholder="A" oninput="document.getElementById('pcenter').value = value">  <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenter" size=3 value='' placeholder="A" oninput="document.getElementById('qcenter').value = value">  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenter" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
-                <input type="text" id="bcenter" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenter" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
-                    <br><br>
-                </p >
-
-            </div><br>
-            <button type="button" class="btn btn-light" onclick=centersolve()>
-                Calculate
-            </button><br>
-
-            <h3>Radius of Circle</h3><br>
+            <h3>Circle Calculator</h3><br>
             <div class="coll">
                 <p>
                     <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p><input type="text" id="qcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('pcenterr').value = value">  <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('qcenterr').value = value">  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterr" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
@@ -5680,8 +5667,11 @@
                 </p >
 
             </div><br>
+            <button type="button" class="btn btn-light" onclick=centersolve()>
+                Center
+            </button>
             <button type="button" class="btn btn-light" onclick=centerrsolve()>
-                Calculate
+                Radius
             </button><br>
            
         <h1 id = "centerer"></h1>
