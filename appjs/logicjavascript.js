@@ -1327,13 +1327,18 @@ function centcal(){
        var x3 = ((b3*c1)-(b1*c3))/((a1*b3)-(a3*b1));
        var y3 = ((c3*a1)-(c1*a3))/((a1*b3)-(a3*b1));
 
- 
-
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     var ans = "( " + ((x1 + x2 +x3)/3).toFixed(2).toString() + ", " 
     + ((y1 + y2 + y3)/3).toFixed(2).toString() + " )";
 
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
+}
+else{
+    document.getElementById("rcch").innerHTML = "Please enter all fields";
+    document.getElementById("rcc").innerHTML = "";
+}
 }
 
 function rtfind(){
@@ -1410,7 +1415,7 @@ function enneagramfind(){
         }
 }
 
-function cenintcal(){
+function cencirtcal(){
     var a1 = parseInt(document.getElementById("fxc").value);
     var a2 = parseInt(document.getElementById("sxc").value);
     var a3 = parseInt(document.getElementById("txc").value);
@@ -1453,10 +1458,16 @@ function cenintcal(){
     var o1 = (((b4*c5)-(b5*c4))/((a5*b4)-(a4*b5))).toFixed(2);
     var o2 = (((c4*a5)-(c5*a4))/((a5*b4)-(a4*b5))).toFixed(2);
 
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     var ans = "( " + o1 + ", " + o2 + " )";
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML ="Circumcenter of Triangle";
-
+    }
+    else{
+        document.getElementById("rcch").innerHTML = "Please enter all fields";
+        document.getElementById("rcc").innerHTML = "";
+    }
 }
 
 
@@ -1489,11 +1500,16 @@ function cenintcal(){
 
     var o1 = ((((a*x1)+(b*x2)+(c*x3))/(a+b+c))).toFixed(2);
     var o2 = ((((a*y1)+(b*y2)+(c*y3))/(a+b+c))).toFixed(2);
-
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     var ans = "( " + o1 + ", " + o2 + " )";
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML ="Incenter of Triangle";
-
+    }
+    else{
+        document.getElementById("rcch").innerHTML = "Please enter all fields";
+        document.getElementById("rcc").innerHTML = "";
+    }
 }
 
 
@@ -1531,12 +1547,17 @@ function cenextcal(){
     var excenteropy1 = ((-a*y1 + b*y2 + c*y3)/(-a+b+c)).toFixed(2);
     var excenteropy2 = ((a*y1 - b*y2 + c*y3)/(a-b+c)).toFixed(2);
     var excenteropy3 = ((a*y1 + b*y2 - c*y3)/(a+b-c)).toFixed(2);
-
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     document.getElementById("rcc").innerHTML = `The excentre for first side is ( ${excenteropx1} , ${excenteropy1} ) <br>`;
     document.getElementById("rcc").innerHTML += `The excentre for second side is ( ${excenteropx2} , ${excenteropy2} ) <br>`;
     document.getElementById("rcc").innerHTML += `The excentre for third side is ( ${excenteropx3} , ${excenteropy3} ) <br>`;
     document.getElementById("rcch").innerHTML ="Excenter of Triangle";
-
+    }
+    else{
+        document.getElementById("rcch").innerHTML = "Please enter all fields";
+        document.getElementById("rcc").innerHTML = "";
+    }
 }
 //check for set value buttons
 function checkforusetrigovalue() {
