@@ -14184,6 +14184,12 @@ function cscu4find(){
     document.getElementById("cscu4ans").innerHTML =  V;
 }
 
+function cscu5find(){
+    let a = parseInt(document.getElementById("cscu5").value)
+    var r = a / 2;
+    document.getElementById("cscu5ans").innerHTML =  r;
+}
+
 function computeprobability() {
 
     var favour = parseInt(document.getElementById('favourable').value);
