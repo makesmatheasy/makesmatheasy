@@ -306,6 +306,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#dribtn").click(function () {
+        openit("#dri");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
@@ -885,6 +890,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#unitcircbtn").click(function () {
+        openit("#unitcirc");
+        closenav();
+        clearall();
+    });
     $("#trigsolcollapsebtn").click(function () {
         openit("#trigsolcollapse");
         closenav();
@@ -1203,7 +1213,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    
+    $("#platonicbtn").click(function () {
+        openit("#platonic");
+        closenav();
+        clearall();
+    });
     $("#degbtn").click(function () {
         openit("#degcal");
         closenav();
