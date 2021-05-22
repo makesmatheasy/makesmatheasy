@@ -10373,18 +10373,19 @@ function solvepercal()
         document.getElementById('s').innerHTML= 'Please enter all Input';
     }
 }
-function solvepercent()
-{
-    var x3,y3;
-    x3=parseFloat(document.getElementById('x3').value);
-    y3=parseFloat(document.getElementById('y3').value);
-    if(!isNaN(x3) || !isNaN(y3)){
-    var r = x3+(y3*x3)/100;
-    document.getElementById('r').innerHTML= 'Result : ' + r ;
+function solvepercent(){
+    var x3=(document.getElementById('x3').value);
+    var y3=(document.getElementById('y3').value);
+    if(x3 != "" && y3 != ""){
+        var r = (parseFloat(x3)+(parseFloat(y3)*parseFloat(x3))/100).toFixed(2);
+        document.getElementById('r').innerHTML= "\\["+x3+" \\space + \\space \\frac{"+y3+" \\times "+x3+"}{100} \\space = \\space "+r+"\\]" ; 
+        document.getElementById('r1').innerHTML= "\\[Hence, \\space "+y3+" \\space + \\space"+x3+" \\space \\%  \\space is \\space "+r+"\\]";
+    } else{
+        document.getElementById('r').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('r1').innerHTML= "";
     }
-    else{
-        document.getElementById('r').innerHTML= 'Please enter all Input';
-    }
+    renderMathInElement(document.getElementById('r'));
+    renderMathInElement(document.getElementById('r1'));
 }
 function solveperc()
 {
