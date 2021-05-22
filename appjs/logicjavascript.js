@@ -12064,10 +12064,10 @@ function polymax4find(){
 }
 
 function polymax5find(){
-    let n  = parseInt(document.getElementById("polymax5").value)
-    let a = parseInt(document.getElementById("polymax51").value)
-    let ans = (a / (2 * Math.tan((180 / n)* 3.14159 / 180)));
-    document.getElementById("polymax5ans").innerHTML = ans
+    var n  = parseInt(document.getElementById("regpolymax5").value)
+    var a = parseInt(document.getElementById("regpolymax51").value)
+    var ans = (a / (2 * Math.tan((180 / n)* 3.14159 / 180)));
+    document.getElementById("regpolymax5ans").innerHTML = ans
 }
 
 function polymax6find(){
