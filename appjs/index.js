@@ -264,6 +264,7 @@ function openit(id) {
         "#log-collapse",
         "#bt-collapse",
         "#bt-collapse1",
+        "#antipodal",
         "#manhats",
         "#elliptic_cone",
         "#bicone",
