@@ -744,29 +744,24 @@ function cresccal() {
     var r1 = document.getElementById("cresc_rad1").value;
     var r2 = document.getElementById("cresc_rad2").value;
     var d = document.getElementById("cresc_dist").value;
-    var ans = "";
-    var lans1, lans2, dans;
     if (r1 == "" || r2 == "" || d == "") {
-        ans = "Error: All values are required to obtain answer";
+        document.getElementById("crescans1").innerHTML = "Error: All values are required to obtain answer";
+        document.getElementById("crescans2").innerHTML ="";
+        document.getElementById("crescans3").innerHTML = "";
+    } else {
+        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){
+            var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
+            var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
+            var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
+            document.getElementById("crescans1").innerHTML = "Area of Lune 1: " + lune1;
+            document.getElementById("crescans2").innerHTML = "Area of Lune 2: " + lune2;
+            document.getElementById("crescans3").innerHTML = "Overlap Area: " + op;
+        } else{
+            document.getElementById("crescans1").innerHTML  = "Error: Enter proper values";
+            document.getElementById("crescans2").innerHTML = "";
+            document.getElementById("crescans3").innerHTML = "";
+        }
     }
-    else {
-        var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
-        var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
-        var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
-
-
-        lans1 = document.createElement('div');
-        lans1.innerHTML = "Area of Lune 1: " + lune1;
-
-        lans2 = document.createElement('div');
-        lans2.innerHTML = "Area of Lune 2: " + lune2;
-
-        dans = document.createElement('div');
-        dans.innerHTML = "Overlap Area: " + op;
-    }
-    document.getElementById("crescans").appendChild(lans1);
-    document.getElementById("crescans").appendChild(lans2);
-    document.getElementById("crescans").appendChild(dans);
 }
 
 function ssqcal()
@@ -1402,18 +1397,18 @@ function wmccal()
         console.log(wsum);
         console.log(sum);
         var wm=sum/wsum;
-        ans="The calculated weighted mean is: "+wm;
-
-    }
-    
+        ans="The calculated weighted mean is: "+wm;}
     }
     document.getElementById("wmcans").innerHTML=ans;
 }
 
 function dbltimeCal(){
-    let inc = parseInt(document.getElementById("inctime").value);
-    let ans = Math.log(2) / Math.log(1 + inc);
-    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
+    var inc = parseInt(document.getElementById("inctime").value);
+    var ans = Math.log(2) / Math.log(1 + inc);
+    document.getElementById("dbltimeans").innerHTML = "\\[Doubling \\space Time \\space is \\space \\space \\frac{log \\space (2) }{log \\space (1 + (\\% \\space per \\space period \\space increase)) } \\space \\space that \\space is, \\]";
+    renderMathInElement(document.getElementById("dbltimeans"));
+    document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
+    renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
 function covcalcu(){
