@@ -12076,6 +12076,16 @@ function polymax6find(){
     document.getElementById("polymax6ans").innerHTML =  total_angle / n;
 }
 
+function polymax7find(){
+    let n  = parseInt(document.getElementById("polymax7").value)
+    let r = parseInt(document.getElementById("polymax71").value)
+    var theta, theta_in_radians; 
+    theta = 360 / n;
+    theta_in_radians = theta * 3.14 / 180; 
+    let ans =  2 * r * Math.sin(theta_in_radians / 2);
+    document.getElementById("polymax7ans").innerHTML = ans
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
@@ -15742,4 +15752,4 @@ function clearSumAndDiff() {
     }
 
 }
-}
+
