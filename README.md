@@ -373,6 +373,7 @@ Other Tech/Libraries
   - AB-test
   - Z-test
   - Z score Calculator
+  - Relative Risk Calculator
   - Confidence Interval Calculator
   - Odds Calculator
   - Skewness Calculator

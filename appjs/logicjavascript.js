@@ -14656,6 +14656,21 @@ function abvalue() {
     }
 }
 
+function relrisk() {
+    let a = document.getElementById("relexp0").value;
+    let b = document.getElementById("relexp1").value;
+    let c = document.getElementById("relcont0").value;
+    let d = document.getElementById("relcont1").value;
+
+    if(a=="" || b=="" || c=="" || d==""){
+        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
+    }
+    else{
+        let ans = (a / (a + b)) / (c / (c + d));
+        document.getElementById('relriskans').innerHTML = "Relative Risk: " + ans;
+    }
+}
+
 function tvalue() {
     let list1 = document.getElementById("list1").value;
     let list2 = document.getElementById("list2").value;

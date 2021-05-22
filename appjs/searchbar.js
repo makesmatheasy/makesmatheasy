@@ -1462,6 +1462,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         $("#abtest").slideDown(); 
                     }
+                    else if(inp.value.toUpperCase() == "RELATIVE RISK CALCULATOR"){
+                        clearmain()
+                        document.getElementById('relrisk').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "RELATIVE RISK CALCULATO") {
+                        clearmain()
+                        $("#relrisk").slideDown(); 
+                    }
                     else if(inp.value.toUpperCase() == "BINOMIAL COEFFICIENT CALCULTOR"){
                         document.getElementById('binomialcoeff').click(); 
                     }

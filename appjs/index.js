@@ -226,6 +226,7 @@ function openit(id) {
         "#corgeo",
         "#ttest",
         "#abtest",
+        "#relrisk",
         "#ftest",
         "#ztest",
         "#pchart",

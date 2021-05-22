@@ -484,6 +484,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#relriskbtn").click(function () {
+        openit("#relrisk");
+        closenav();
+        clearall();
+    });   
     $("#ftestbtn").click(function () {
         openit("#ftest");
         closenav();
