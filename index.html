@@ -15517,39 +15517,44 @@
         </div>
 
         <div class="collapse" id="datecal">
+            
+            <h1 style="text-align: center; ">Date</h1>
+            <br>
             <div class="row">
+              
                 <div class="col-6" style="max-width: 50%;">
-                    <label>
-                        <h5>From</h5>
+                   
+                    <label style="display: block;">
+                        <h5 style="color: #d3d3d3 ;text-align: center; ">From</h5>
                     </label>
                     <input type="date" id="datef" class="form__field" placeholder="Enter Date">
                 </div>
                 <div class="col-6" style="max-width: 50%;">
-                    <label>
-                        <h5>To</h5>
+                    <label style="display: block;">
+                        <h5 style="color: #d3d3d3; text-align:center ;">To</h5>
                     </label>
                     <input type="date" id="datet" class="form__field" placeholder="Enter Date">
                 </div>
             </div>
             <br>
             <div class="dropdown-divider"></div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="datecal()">
+            <div class="form-group" style="display: flex; justify-content: center;">
+                <button  type="button" class="btn btn-light" onclick="datecal()">
                     Find the Difference
                 </button>
             </div>
             <div class="row">
                 <div class="col-6" style="max-width: 66%;">
-                    <label>
-                        <h5>Difference (years , months ,days) </h5>
+                    <label style="display: block;"> 
+                        <h5 style="color: #d3d3d3; text-align: center; ">Difference (years , months ,days) </h5>
                     </label>
-                    <p id="date-1">0</p>
+                    <p style="text-align:center" id="date-1">0</p>
                 </div>
                 <div class="col-6" style="max-width: 33%;">
-                    <label>
-                        <h5>Difference (days)</h5>
+                    <label style="display: block;">
+                        <h5 style="color: #d3d3d3 ;text-align: center;">Difference (days)</h5>
                     </label>
-                    <p id="date-2">0</p>
+                    <p style="text-align:center" id="date-2">0</p>
                 </div>
             </div>
         </div>
