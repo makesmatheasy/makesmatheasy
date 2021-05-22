@@ -11135,6 +11135,15 @@ function lacube5find(){
     res = S * (S - 1);   
     document.getElementById("lacube5ans").innerHTML =  res;
 }
+
+function lacube6find(){
+    let n  = parseInt(document.getElementById("lacube6").value)
+    let S = Math.pow(((n * (n + 1)) / 2),2)
+    let x = (n*(n+1)(2*(n)+1))/6
+    res = S-x   
+    document.getElementById("lacube6ans").innerHTML =  res;
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
