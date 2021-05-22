@@ -2104,7 +2104,24 @@
                     </tr>
                 </table>
             </li>
-           
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="log-collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
+                                Properties
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Logarithm Properties','#log-collapse','c','logpropimgfav')"><img
+                                       id="logpropimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -2126,19 +2143,17 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="log-collapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
-                                Properties
-                            </a>
+                            <a id="ln"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ln Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                               <span
-                                       onclick="addtofavourite('Logarithm Properties','#log-collapse','c','logpropimgfav')"><img
-                                       id="logpropimgfav" src="images/unfavourite.png"
-                                       style="height:1.5625rem;filter: none;"></span>
+                                <span onclick="addtofavourite('Ln Calculator','#lns','c','lnimgfav')"><img
+                                        id="lnimgfav"
+                                        src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
+
             </li>
 
             <li>
@@ -17076,6 +17091,16 @@
     <button class="btn btn-dark" onclick="gcdfind()">FInd</button>
     <br>
     <h4 id="gcdans"></h4>
+</div>
+
+<div class="collapse" id="lns">
+    <h1 style="color: white;font-family:mathfont">Ln Calculator</h2>
+    <p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="ln1" placeholder="Enter the input number" class="form__field">
+    <p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="lnfind()">FInd</button>
+    <p>&nbsp;</p>
+    <h4 style="color: white;font-family:mathfont" id="lnans"></h4>
 </div>
 
 <!-- doubling time starts -->
