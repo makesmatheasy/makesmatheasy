@@ -306,6 +306,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#dribtn").click(function () {
+        openit("#dri");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
@@ -479,6 +484,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+    $("#pbtn").click(function () {
+        openit("#pchart");
+        closenav();
+        clearall();
+    });   
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
@@ -730,6 +740,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#fdshapescalbtn").click(function () {
+        openit("#fdshapescal");
+        closenav();
+        clearall();
+    });
     $("#transbtn").click(function () {
         openit("#trans");
         closenav();
@@ -872,6 +887,11 @@ $(document).ready(function () {
     });
     $("#invhyptrigonoidenbutton").click(function () {
         openit("#invhyptrigonoiden");
+        closenav();
+        clearall();
+    });
+    $("#unitcircbtn").click(function () {
+        openit("#unitcirc");
         closenav();
         clearall();
     });
@@ -1193,7 +1213,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    
+    $("#platonicbtn").click(function () {
+        openit("#platonic");
+        closenav();
+        clearall();
+    });
     $("#degbtn").click(function () {
         openit("#degcal");
         closenav();
