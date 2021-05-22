@@ -14153,6 +14153,12 @@ function cscu3find(){
     document.getElementById("cscu3ans").innerHTML =  V;
 }
 
+function cscu4find(){
+    let R = parseInt(document.getElementById("cscu4").value)
+    var V = ((2 * 3.14 * Math.pow(R, 3)) /(3 * Math.sqrt(3)));
+    document.getElementById("cscu4ans").innerHTML =  V;
+}
+
 function computeprobability() {
 
     var favour = parseInt(document.getElementById('favourable').value);
