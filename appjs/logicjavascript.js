@@ -1990,9 +1990,17 @@ function getparorder(value) {
 }
 
 function polymax3find(){
-    var n = parseInt(document.getElementById("regploygonmax3").value)
+    var n = document.getElementById("regploygonmax3").value;
     var areaf = (1 / (Math.cos(math.pi / n)* Math.cos(math.pi / n)));
-    document.getElementById("regpolygonmax3ans").innerHTML = areaf
+    if (n!=""){
+        document.getElementById("regpolygonmax3ans1").innerHTML = "\\[Ratio \\space of \\space area \\space of \\space two \\space nested \\space polygons \\space will \\space be \\newline \\frac{1}{( (cos(\\frac{\\pi}{n})) \\times (cos(\\frac{\\pi}{n})) )}\\]";
+        document.getElementById("regpolygonmax3ans2").innerHTML = "\\[\\frac{1}{( (cos(\\frac{\\pi}{"+n+"})) \\times (cos(\\frac{\\pi}{"+n+"})) )} \\space = \\space \\frac{1}{"+(Math.cos(math.pi / n)).toFixed(2)+"\\times"+(Math.cos(math.pi / n)).toFixed(2)+"} \\space = \\space \\frac{1}{"+(Math.cos(math.pi / n)* Math.cos(math.pi / n)).toFixed(3)+"} \\space = \\space "+areaf.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("regpolygonmax3ans1").innerHTML = "\\[Please \\space enter \\space the \\space value\\]";
+        document.getElementById("regpolygonmax3ans2").innerHTML =  "";
+    }
+    renderMathInElement(document.getElementById("regpolygonmax3ans1"));
+    renderMathInElement(document.getElementById("regpolygonmax3ans2"));
 }
 
 function gif(){
