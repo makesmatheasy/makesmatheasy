@@ -15401,11 +15401,13 @@ function utcal() {
     var num4=document.getElementById("urx4").value;
     if(num1==""||num2==""||num3==""||num4=="") {
         document.getElementById("utcans").innerHTML="\\[Please \\space Enter \\space all \\space the \\space field\\]";
-        renderMathInElement(document.getElementById("utcans"));
+        document.getElementById("utcans1").innerHTML="";
     } else {
         var z=parseFloat(num1)/parseFloat(num3);
-        document.getElementById("utcans").innerHTML="\\[The \\space unit \\space rate \\space is: \\space"+z.toFixed(3)+"\\space \\frac{"+num2+"}{"+num4+"}\\]";
-        renderMathInElement(document.getElementById("utcans"));}
+        document.getElementById("utcans").innerHTML="\\[The \\space unit \\space rate \\space is: \\newline  = \\space \\frac{"+(parseFloat(num1)).toFixed(2)+"}{"+(parseFloat(num3)).toFixed(2)+"} \\]";
+        document.getElementById("utcans1").innerHTML="\\[ = \\space "+z.toFixed(3)+"\\space \\frac{"+num2+"}{"+num4+"}\\]";
+        renderMathInElement(document.getElementById("utcans1"));
+    }renderMathInElement(document.getElementById("utcans"));
 }
 
 //  chi value test
