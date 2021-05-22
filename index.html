@@ -15005,6 +15005,11 @@
                            style="text-decoration:none;"
                            href="#">Triquetra</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#antipodal"
+                           style="text-decoration:none;"
+                           href="#">Antipodal Digon</a></td>
+                </tr>
             </table>
         </div>
 
@@ -21845,6 +21850,57 @@ N is the population size.
                                 <p class="stopwrap" id="triqueperi"
                                    style="font-family:mathfont;"></p><br>
                                 <p class="stopwrap" id="triquearea"
+                                   style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="antipodal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Antipodal Digon</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P= 2 \times \pi \times r\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \alpha \times 2 \times r^2\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/digon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="triquesidea" class = "form__field" oninput="antipodal()" 
+                                placeholder="Enter radius (r)">
+                            <input type="text" id="triquesidea" class = "form__field" oninput="antipodal()" 
+                                placeholder="Enter Angle (&#945)">
+                                <br><br>
+                                <p class="stopwrap" id="antidigonperi"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="antidigonarea"
                                    style="font-family:mathfont;"></p><br>
                         </div>
                         <!-- ------HERE------ -->
