@@ -3736,30 +3736,6 @@ function vectpral(){
     }
 }
 
-function vecotrmod(){
-    var a=parseFloat(document.getElementById('vma').value);
-    var b=parseFloat(document.getElementById('vmb').value);
-    var c=parseFloat(document.getElementById('vmc').value);
-    if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
-        document.getElementById("vme").innerHTML ="";
-        renderMathInElement(document.getElementById("vmr"));
-        renderMathInElement(document.getElementById("vme"));
-
-    }else{
-    var ans = (a*a)+(c*c)+(b*b);
-    if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
-    else
-    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
-
-    renderMathInElement(document.getElementById("vmr"));
-  
-    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
-    renderMathInElement(document.getElementById("vme"));
-    }
-}
-
 
 function vectorplanar(){
     var a=parseFloat(document.getElementById('inp11').value);
@@ -3791,35 +3767,59 @@ function vectorplanar(){
     }
 }
 }
+function vecotrmod(){
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
+        document.getElementById("vme").innerHTML ="";
+        renderMathInElement(document.getElementById("vmr"));
+        renderMathInElement(document.getElementById("vme"));
+
+    }else{
+    var ans = (a*a)+(c*c)+(b*b);
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
+    else
+    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
+
+    renderMathInElement(document.getElementById("vmr"));
+  
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vme"));
+    }
+}
+
 
 
 function vectorunit(){
-    var a=parseFloat(document.getElementById('vua').value);
-    var b=parseFloat(document.getElementById('vub').value);
-    var c=parseFloat(document.getElementById('vuc').value);
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
 
     var ans = (a*a)+(c*c)+(b*b);
     if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("vue").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
-        renderMathInElement(document.getElementById("vue"));
+        document.getElementById("vme").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
+        renderMathInElement(document.getElementById("vme"));
     }
     else{
-    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
 
 
     if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vue").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
+    document.getElementById("vme").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
     else
-    document.getElementById("vue").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
-    renderMathInElement(document.getElementById("vue"));
+    document.getElementById("vme").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
+    renderMathInElement(document.getElementById("vme"));
 
 
-    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
+    document.getElementById("vmr").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{k} )} {  ` ;
     if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vur").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
+    document.getElementById("vmr").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
     else
-    document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
-    renderMathInElement(document.getElementById("vur"));
+    document.getElementById("vmr").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
+    renderMathInElement(document.getElementById("vmr"));
 }
 }
 function vectorscalar(){
@@ -15741,5 +15741,4 @@ function clearSumAndDiff() {
         myNode.removeChild(myNode.lastElementChild);
     }
 
-}
 }
