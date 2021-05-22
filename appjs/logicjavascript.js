@@ -10287,6 +10287,22 @@ function discount() {
 
 }
 
+function solvepera() {
+    var x1=parseFloat(document.getElementById('perX1').value);
+    var y1=parseFloat(document.getElementById('perY1').value);
+    if(!isNaN(x1) || !isNaN(y1)){
+        var n = (y1*100)/x1;
+        document.getElementById('perAns1').innerHTML= "\\[The \\space percentage \\space of \\space "+x1+" \\space that \\space is \\space "+y1+" \\space is\\]";
+        document.getElementById('perAns2').innerHTML= "\\[\\frac{"+y1+"\\times 100}{"+x1+"} \\space = \\space "+ n.toFixed(3)+" \\space \\%\\]";
+        renderMathInElement(document.getElementById('perAns1'));
+        renderMathInElement(document.getElementById('perAns2'));
+    }
+    else{
+        document.getElementById('perAns1').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        renderMathInElement(document.getElementById('perAns1'));
+    }
+}
+
 function exposol() {
     var x = parseFloat(document.getElementById("xval").value);
     var y = parseFloat(document.getElementById("yval").value);
@@ -10317,22 +10333,8 @@ function exposol() {
             renderMathInElement(explainop);
         }
     }   
-
 }
 
-function solvepera()
-{
-    var x1,y1;
-    x1=parseFloat(document.getElementById('perX1').value);
-    y1=parseFloat(document.getElementById('perY1').value);
-    if(!isNaN(x1) || !isNaN(y1)){
-    var n = (y1*100)/x1;
-    document.getElementById('perAns1').innerHTML= 'Result : ' + n + '%'; 
-    }
-    else{
-        document.getElementById('perAns1').innerHTML= 'Please enter all Input';
-    }
-}
 function solvepercal()
 {
     var x2,y2;
