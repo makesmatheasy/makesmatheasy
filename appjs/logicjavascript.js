@@ -10223,7 +10223,7 @@ function trapinsemifind(){
     document.getElementById("trapinsemians").innerHTML =  a;
 }
 
-function trapinsemi1find(){
+function trapinsemifind1(){
     let n = parseInt(document.getElementById("trapinsemin1").value)
     let m = parseInt(document.getElementById("trapinsemin2").value)
     var square_of_radius = ( m * n ) / 4;
