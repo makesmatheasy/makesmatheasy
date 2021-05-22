@@ -517,6 +517,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "TRIANGLE CALCULATOR"){
                         document.getElementById('centcal').click();
                     }
+                    else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
+                        $("#2d-shape-ins").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
+                        document.getElementById('2d-shape-ins').click();
+                    }
+                    else if (inp.value.toUpperCase() == "3-D SHAPES INSCRIBED") {
+                        $("#shapeinscribed").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "3-D SHAPES INSCRIBED"){
+                        document.getElementById('shapeinscribed').click();
+                    }
                     else if (inp.value.toUpperCase() == "PROPERTIES OF QUADRILATERALS") {
                         $("#propquad").slideToggle();    
                     }
@@ -576,6 +588,36 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "NAME OF 3D SHAPES"){
                         document.getElementById('3d-shape').click();
+                    }
+                    else if (inp.value.toUpperCase() == "DESARGUES THEOREM") {
+                        $("#des").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DESARGUES THEOREM"){
+                        document.getElementById('des').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR") {
+                        $("#cross").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR"){
+                        document.getElementById('cross').click();
+                    }
+                    else if (inp.value.toUpperCase() == "F-TEST") {
+                        $("#ftest").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "F-TEST"){
+                        document.getElementById('ftest').click();
+                    }
+                    else if (inp.value.toUpperCase() == "CATALAN NUMBERS") {
+                        $("#catNum").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CATALAN NUMBERS"){
+                        document.getElementById('catNum').click();
+                    }
+                    else if (inp.value.toUpperCase() == "EUCLID GCD") {
+                        $("#gcd").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "EUCLID GCD"){
+                        document.getElementById('gcd').click();
                     }
                     else if (inp.value.toUpperCase() == "NEXT PRIME NUMBER") {
                         $("#nextPrime").slideToggle();    
@@ -1209,6 +1251,22 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('datecal').click();
                     }
+                    else if (inp.value.toUpperCase() == "ALIQUOT SUMS") {
+                        clearmain()
+                        $("#ali").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "ALIQUOT SUMS"){
+                        clearmain()
+                        document.getElementById('ali').click();
+                    }
+                    else if (inp.value.toUpperCase() == "TYPES OF NUMBERS") {
+                        clearmain()
+                        $("#typenum").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "TYPES OF NUMBERS"){
+                        clearmain()
+                        document.getElementById('typenum').click();
+                    }
                     else if (inp.value.toUpperCase() == "EUCLID GCD") {
                         clearmain()
                         $("#gcd").slideDown();    
@@ -1216,14 +1274,6 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "EUCLID GCD"){
                         clearmain()
                         document.getElementById('gcd').click();
-                    }
-                    else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
-                        clearmain()
-                        $("#2d-shape-ins").slideDown();    
-                    }
-                    else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
-                        clearmain()
-                        document.getElementById('2d-shape-ins').click();
                     }
                     else if (inp.value.toUpperCase() == "SQUARE AND CUBE CALCULATOR") {
                         $("#datecal").slideToggle();    
@@ -1248,12 +1298,6 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "UNIT RATE CALCULATOR"){
                         document.getElementById('utcs').click();
-                    }
-                    else if (inp.value.toUpperCase() == "3-D SHAPES INSCRIBED") {
-                        $("#shapeinscribed").slideToggle();    
-                    }
-                    else if(inp.value.toUpperCase() == "3-D SHAPES INSCRIBED"){
-                        document.getElementById('shapeinscribed').click();
                     }
                     else if (inp.value.toUpperCase() == "IMPORTANT GRAPH CALCULATORS") {
                         $("#igc").slideDown();    
@@ -1489,11 +1533,11 @@ function autocomplete(inp, arr) {
 }
 
 
-var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square test","Independent And Dependent Event Probability","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
+var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Cross Multiplication Calculator","Desargues Theorem", "Lucas series","Integration","T test","Z test","Chi-Square test","Independent And Dependent Event Probability","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
                         "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
-                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
+                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
                         "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Name of 3d Shapes","Sieve of Eratosthenes","Double Factorial","Next Prime Number","Sum of N terms of AP,GP & HP","Conditional Probability","Smallest Prime Factor","Additive Inverse","Confidence Interval Calculator","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","Decimal BCD Code Converter","Decimal 2421 Code Converter",
                         "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Vector Calculus","Vector Algebra","Vector Calculator","Fourier Series","Theorems on Differentiation","Partial Differential Equations","Methods of Integration","Direct And Indirect Proportion","Clock Angle Calculator","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra",
                         "Bayes Probability Theorem","Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
@@ -1504,7 +1548,7 @@ var arrayofelements =  ["Divide", "Integration","T test","Z test","Chi-Square te
                         "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","2-D Shapes Inscribed","3-D Shapes Inscribed","Euler Totient Calculator","Euclid GCD"
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","Euler Totient Calculator","Euclid GCD","Types of Numbers","Aliquot Sums"
                     ];                    
                         
 
@@ -1730,12 +1774,6 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "PARABOLA") {
         $("#parabolacollapse").slideToggle(); 
     }
-    else if(inp.value.toUpperCase() == "3-D SHAPES INSCRIBED"){
-        document.getElementById('shapeinscribed').click(); 
-    }
-    else if (inp.value.toUpperCase() == "3-D SHAPES INSCRIBED") {
-        $("#shapeinscribed").slideToggle(); 
-    }
     else if(inp.value.toUpperCase() == "ROOTS OF UNITY CALCULATOR"){
         document.getElementById('rootsunity').click(); 
     }
@@ -1907,17 +1945,23 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "DATE") {
         $("#datecal").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "ALIQUOT SUMS"){
+        document.getElementById('ali').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ALIQUOT SUMS") {
+        $("#ali").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "TYPES OF NUMBERS"){
+        document.getElementById('typenum').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TYPES OF NUMBERS") {
+        $("#typenum").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "EUCLID GCD"){
         document.getElementById('gcd').click(); 
     }
     else if (inp.value.toUpperCase() == "EUCLID GCD") {
         $("#gcd").slideToggle(); 
-    }
-    else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
-        document.getElementById('2d-shape-ins').click(); 
-    }
-    else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
-        $("#2d-shape-ins").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "CAUCHY INTEGRAL,LIOUVILLE AND ROUCHE THEOREM"){
         document.getElementById('clr').click(); 
@@ -2121,6 +2165,18 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "TRIANGLE CALCULATOR") {
         $("#centcal").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "2-D SHAPES INSCRIBED"){
+        document.getElementById('2d-shape-ins').click(); 
+    }
+    else if (inp.value.toUpperCase() == "2-D SHAPES INSCRIBED") {
+        $("#2d-shape-ins").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "3-D SHAPES INSCRIBED"){
+        document.getElementById('shapeinscribed').click(); 
+    }
+    else if (inp.value.toUpperCase() == "3-D SHAPES INSCRIBED") {
+        $("#shapeinscribed").slideToggle(); 
+    }
     else if(inp.value.toUpperCase() == "PROPERTIES OF QUADRILATERALS"){
         document.getElementById('propquad').click(); 
     }
@@ -2180,6 +2236,36 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "NAME OF 3D SHAPES") {
         $("#3d-shape").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DESARGUES THEOREM"){
+        document.getElementById('des').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DESARGUES THEOREM") {
+        $("#des").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR"){
+        document.getElementById('cross').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR") {
+        $("#cross").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "F-TEST"){
+        document.getElementById('ftest').click(); 
+    }
+    else if (inp.value.toUpperCase() == "F-TEST") {
+        $("#ftest").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "CATALAN NUMBERS"){
+        document.getElementById('catNum').click(); 
+    }
+    else if (inp.value.toUpperCase() == "CATALAN NUMBERS") {
+        $("#catNum").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "EUCLID GCD"){
+        document.getElementById('gcd').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EUCLID GCD") {
+        $("#gcd").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "NEXT PRIME NUMBER"){
         document.getElementById('nextPrime').click(); 
