@@ -13173,6 +13173,18 @@ function hammingDistance() {
                     hammDist += 1;
             }
             result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+        }else if(type == "Hexadecimal"){
+            x = parseInt(x,10).toString(16);
+            y = parseInt(y,10).toString(16);
+            let val = x ^ y;
+            let hammDist = 0;
+            if(x.length == y.length){
+                while (val > 0) {
+                    val &= val - 1;
+                    hammDist++;
+                }
+                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+            }
         }
     }
 }
