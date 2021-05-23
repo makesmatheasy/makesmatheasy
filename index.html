@@ -14690,6 +14690,11 @@
                     <td><a data-toggle="modal" data-target="#partialcy"
                            style="text-decoration:none;"
                            href="#">Partial Right Cylinder</a></td>
+                </tr> 
+                <tr>
+                    <td><a data-toggle="modal" data-target="#barrel"
+                           style="text-decoration:none;"
+                           href="#">Barrel</a></td>
                 </tr>   
                 <tr>
                     <td><a data-toggle="modal" data-target="#Cone" style="text-decoration:none;"
@@ -24904,6 +24909,62 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="barrel" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Barrel</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{ \pi \times h \times (2R^2+r^2)}{3} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume diagonal</h5>
+                                    <p class="text-center">\[d = \sqrt{h^2+(2 \times r)^2} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/barrel.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius top and bottom(r)" id="inputbarrelrad"
+                                       oninput="solveBarrel();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius barrel middle (R)" id="inputbarrelbigr"
+                                       oninput="solveBarrel();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height(h)" id="inputbarrelheight"
+                                       oninput="solveBarrel();">
+                            <p class="stopwrap" id="resultofbarrelvol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbarreldia"
+                                style="font-family:mathfont;"></p>                          
+                            </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
         <div class="modal fade" id="cube" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
