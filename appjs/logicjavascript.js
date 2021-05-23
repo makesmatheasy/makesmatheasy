@@ -15577,15 +15577,24 @@ function triinsemifind(){
 
 function recinsemifind(){
     let r = parseInt(document.getElementById("recinsemiin").value)
+    let result = document.getElementById("recinsemians")
+    let temp = "";
     if(!isNaN(r)){
-    if (r < 0)
-        document.getElementById("recinsemians").innerHTML = "Not triangle can be formed"
-    else
-        document.getElementById("recinsemians").innerHTML = r*r
+    if (r < 0){
+        temp += "\\[Not \\space triangle \\space can \\space be \\space formed \\]"
+        result.innerHTML = temp;
     }
     else{
-        document.getElementById("recinsemians").innerHTML = "Please enter valid input"
+        temp += "\\[Area \\space = \\space 2 \\times length \\space of \\space the \\space rectangle(x) \\times height \\space of \\space the \\space rectangle(y), \\space where \\space x \\space = \\space \\frac{r}{\\sqrt{2}} \\space and \\space y \\space = \\space \\sqrt{2} \\times \\frac{r}{2} \\]"
+        temp += "\\[Area \\space = \\space 2 \\times \\frac{r}{\\sqrt{2}} \\times \\sqrt{2} \\times \\frac{r}{2} \\space = \\space r^{2} \\space = \\space " + r + "^{2} \\space = \\space " + (r**2) + " \\]"
+        result.innerHTML = temp;
     }
+    }
+    else{
+       temp += "\\[Please \\space enter \\space valid \\space input \\]"
+       result.innerHTML = temp;
+    }
+    renderMathInElement(result);
     }
 
 function hypertrigno()
