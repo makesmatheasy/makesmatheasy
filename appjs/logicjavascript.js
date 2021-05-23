@@ -2867,6 +2867,70 @@ function midpointsolve()
     }
 }
 }
+
+
+function pppdoSolve() {
+    var a=parseFloat(document.getElementById('pppdaqo1').value);
+    var b=parseFloat(document.getElementById('pppdbqo1').value);
+    var c=parseFloat(document.getElementById('pppdcqo1').value);
+    
+   
+    var dis = ((a*a)+(b*b));
+    var p =Math.abs(c);
+
+    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('pppdcq1outputo').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("pppdcq1outputo"));
+        document.getElementById('pppdcq1explaneo').innerHTML = "";
+        renderMathInElement(document.getElementById("pppdcq1explaneo"));
+    } else{
+        document.getElementById('pppdcq1explaneo').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1explaneo"));
+
+        if(!(Number.isInteger(Math.sqrt(dis))))
+        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
+        else
+        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1outputo"));
+    }
+}
+
+
+function anglesolve() {
+    var a1=parseFloat(document.getElementById('aone').value);
+    var b1=parseFloat(document.getElementById('bone').value);
+    var c1=parseFloat(document.getElementById('cone').value);
+    var a2=parseFloat(document.getElementById('atwo').value);
+    var b2=parseFloat(document.getElementById('btwo').value);
+    var c2=parseFloat(document.getElementById('ctwo').value);
+
+    if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {
+        document.getElementById("formula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("formula1").innerHTML = "";
+        document.getElementById("formula2").innerHTML = "";
+        document.getElementById("formula3").innerHTML = "";
+        document.getElementById('inter_output').innerHTML= "";
+        renderMathInElement(document.getElementById("formula"));
+        renderMathInElement(document.getElementById("formula1"));
+        renderMathInElement(document.getElementById("formula2"));
+        renderMathInElement(document.getElementById("formula3"));
+        renderMathInElement(document.getElementById("inter_output"));
+    } else {
+        var M1 = (-a1) / b1;
+        var M2 = (-a2) / b2;
+        var angle = Math.atan((M2 - M1) / (1 + M1 * M2));
+        document.getElementById("formula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-" + a1 + ")}{" + b1 + "}  \\space , \\space m2 = \\frac{(-" + a2 + ")}{" + b2 + "}\\] ";
+        document.getElementById("formula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
+        document.getElementById("formula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{(" + M2.toFixed(2) + ") - (" + M1.toFixed(2) + ")}{1+ (" + M1.toFixed(2) + ") \\times (" + M2.toFixed(2) + ")}) \\]";
+        document.getElementById('inter_output').innerHTML = "\\[Angle \\space is \\space \\frac{" + angle.toFixed(3) + "}{\\pi} \\space = \\space" + (angle * 180 / Math.PI).toFixed(1) + "\\degree\\]";
+        renderMathInElement(document.getElementById("formula"));
+        renderMathInElement(document.getElementById("formula1"));
+        renderMathInElement(document.getElementById("formula2"));
+        renderMathInElement(document.getElementById("inter_output"));
+
+    }
+}
+
 function interpointsolve() {
     var a1=parseFloat(document.getElementById('aone').value);
     var b1=parseFloat(document.getElementById('bone').value);
@@ -2899,65 +2963,6 @@ function interpointsolve() {
     renderMathInElement(document.getElementById("formula2"));
     renderMathInElement(document.getElementById("formula3"));
     renderMathInElement(document.getElementById("inter_output"));
-    }
-}
-
-
-function pppdoSolve() {
-    var a=parseFloat(document.getElementById('pppdaqo1').value);
-    var b=parseFloat(document.getElementById('pppdbqo1').value);
-    var c=parseFloat(document.getElementById('pppdcqo1').value);
-    
-   
-    var dis = ((a*a)+(b*b));
-    var p =Math.abs(c);
-
-    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById('pppdcq1outputo').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
-        renderMathInElement(document.getElementById("pppdcq1outputo"));
-        document.getElementById('pppdcq1explaneo').innerHTML = "";
-        renderMathInElement(document.getElementById("pppdcq1explaneo"));
-    } else{
-        document.getElementById('pppdcq1explaneo').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
-        renderMathInElement(document.getElementById("pppdcq1explaneo"));
-
-        if(!(Number.isInteger(Math.sqrt(dis))))
-        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
-        else
-        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
-        renderMathInElement(document.getElementById("pppdcq1outputo"));
-    }
-}
-
-
-function anglesolve() {
-    var a1 = parseFloat(document.getElementById('a1st').value);
-    var b1 = parseFloat(document.getElementById('b1st').value);
-    var a2 = parseFloat(document.getElementById('a2nd').value);
-    var b2 = parseFloat(document.getElementById('b2nd').value);
-
-    if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {
-        document.getElementById("angleformula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
-        document.getElementById("angleformula1").innerHTML = "";
-        document.getElementById("angleformula2").innerHTML = "";
-        document.getElementById('angle_output').innerHTML = "";
-        renderMathInElement(document.getElementById("angleformula"));
-        renderMathInElement(document.getElementById("angleformula1"));
-        renderMathInElement(document.getElementById("angleformula2"));
-        renderMathInElement(document.getElementById("angle_output"));
-    } else {
-        var M1 = (-a1) / b1;
-        var M2 = (-a2) / b2;
-        var angle = Math.atan((M2 - M1) / (1 + M1 * M2));
-        document.getElementById("angleformula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-" + a1 + ")}{" + b1 + "}  \\space , \\space m2 = \\frac{(-" + a2 + ")}{" + b2 + "}\\] ";
-        document.getElementById("angleformula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
-        document.getElementById("angleformula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{(" + M2.toFixed(2) + ") - (" + M1.toFixed(2) + ")}{1+ (" + M1.toFixed(2) + ") \\times (" + M2.toFixed(2) + ")}) \\]";
-        document.getElementById('angle_output').innerHTML = "\\[Angle \\space is \\space \\frac{" + angle.toFixed(3) + "}{\\pi} \\space = \\space" + (angle * 180 / Math.PI).toFixed(1) + "\\degree\\]";
-        renderMathInElement(document.getElementById("angleformula"));
-        renderMathInElement(document.getElementById("angleformula1"));
-        renderMathInElement(document.getElementById("angleformula2"));
-        renderMathInElement(document.getElementById("angle_output"));
-
     }
 }
 
