@@ -207,6 +207,7 @@ Other Tech/Libraries
     - Temperature
     - Pressure
     - Energy
+    - Radiation
     - Time
     - Angle
     - Speed
@@ -288,6 +289,7 @@ Other Tech/Libraries
     - Dodecahedron
     - Rhombic Dodecahedron
     - Icosahedron
+    - Cuboctahedron
     - Parallelepiped
     - Hyperboloid
     - N-dimension Sphere
@@ -367,8 +369,10 @@ Other Tech/Libraries
   - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
+  - Midrange Calculator
   - Standard Deviation
   - T-test
+  - AB-test
   - Z-test
   - Z score Calculator
   - Confidence Interval Calculator

@@ -53,6 +53,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#midrangebtn").click(function () {
+        openit("#midrange");
+        closenav();
+        clearall();
+    });
     $("#fractions_op").click(function () {
         openit("#fractions");
         closenav();
@@ -481,6 +486,11 @@ $(document).ready(function () {
     });
     $("#ttestbtn").click(function () {
         openit("#ttest");
+        closenav();
+        clearall();
+    });   
+    $("#abtestbtn").click(function () {
+        openit("#abtest");
         closenav();
         clearall();
     });   
@@ -1044,6 +1054,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    //Function of Division of Any Number System
+    $("#div-all-btn").click(function () {
+        openit("#divide-all");
+        closenav();
+        clearall();
+    });
 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function () {
@@ -1317,6 +1333,18 @@ $(document).ready(function () {
         clearall();
     });
     
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
