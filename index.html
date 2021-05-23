@@ -14724,11 +14724,16 @@
                            style="text-decoration:none;"
                            href="#">Hemisphere</a></td>
                 </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#torus"
                            style="text-decoration:none;"
                            href="#">Torus</a></td>
                 </tr>
-
+                <tr>
+                    <td><a data-toggle="modal" data-target="#oloid"
+                           style="text-decoration:none;"
+                           href="#">Oloid</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#obelisk"
                            style="text-decoration:none;"
@@ -27891,6 +27896,61 @@ N is the population size.
                                     data-dismiss="modal">Close
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="oloid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Oloid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = 3.052 \times r^3\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = 4 \times \pi r^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Edge lenght(a)</h5>
+                                    <p class="text-center">\[a = \frac{4}{3} \pi r\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/oloid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputoloidr" class = "form__field" oninput="solveoloid()" 
+                                placeholder="Enter circle radius(r)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofoloidvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofoloidarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofoloida"
+                                   style="font-family:mathfont;"></p><br>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>

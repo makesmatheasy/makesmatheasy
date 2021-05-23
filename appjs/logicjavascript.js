@@ -8183,6 +8183,34 @@ function torussolve() {
     }
   }
 
+
+  function solveoloid() {
+    var r = document.getElementById("inputoloidr").value;
+    var voloutput = document.getElementById("resultofoloidvol");
+    var areaoutput = document.getElementById("resultofoloidarea");
+    var aoutput = document.getElementById("resultofoloida");
+    var areatemp = "";
+    var voltemp = "";
+    var atemp = "";
+    if (r != "") {
+        voltemp += "\\[Volume \\space of \\space Oloid \\space \\newline 3.052 \\times" + r + "^3 " + "\\ = " + eval(String(3.052*r*r*r)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Oloid \\space  \\newline 4 \\times \\pi \\times " + r + "^2 " + "\\ = " + eval(String(12.566*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        atemp += "\\[Half \\space edge \\space of \\space Oloid \\space  \\newline" + "\\frac{4}{3} \\times \\pi \\times " + r + "\\ = " + eval(String(4.189*r)).toFixed(2) + "\\]";
+        aoutput.innerHTML = atemp;  
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(aoutput);
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        aoutput.innerHTML = "";
+    }
+
+}
+
+
 //4-D Shapes Calculator
 //created function for tesseract
 function solvetesseract() {
