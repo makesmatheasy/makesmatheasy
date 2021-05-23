@@ -246,6 +246,7 @@ function openit(id) {
         "#factorial",
         "#setop",
         "#rootsunity",
+        "#half_tetra",
         "#trans",
         "#hp",
         "#ppmfs",
