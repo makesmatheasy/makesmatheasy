@@ -8097,8 +8097,8 @@ function heightdist5(){
 }
 
 function heightdist8(){
-    var height = parseFloat(document.getElementById("height91").value);
-    var degree = parseFloat(document.getElementById("height92").value);
+    var height = parseFloat(document.getElementById("height81").value);
+    var degree = parseFloat(document.getElementById("height82").value);
     var output = document.getElementById("printheight8");
     var temp = "";
     var deg1 = Math.tan(degree*Math.PI/180).toFixed(3)
