@@ -1033,6 +1033,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    //Function of Division of Any Number System
+    $("#div-all-btn").click(function () {
+        openit("#divide-all");
+        closenav();
+        clearall();
+    });
 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function () {
