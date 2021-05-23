@@ -2555,8 +2555,7 @@ function impse4find(){
 }
 
 function impse5find(){
-    let n = parseInt(document.getElementById("impse9").value) 
-    let _n = n, ans; 
+    let _n = parseInt(document.getElementById("impse9").value);
     ans = Math.round((_n * _n) / 12)- Math.floor(_n / 4)* Math.floor((_n + 2) / 4); 
     document.getElementById("impse5ans").innerHTML =  ans;
 }
