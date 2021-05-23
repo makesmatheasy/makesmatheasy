@@ -2539,18 +2539,16 @@ function impse3find(){
     document.getElementById("impse3ans").innerHTML = str; 
 }
 
-
 function impse4find(){
-    let n = parseInt(document.getElementById("impse8").value)  
+    var n = parseInt(document.getElementById("impse8").value)  
     for (var row_num = 1; row_num <= n; row_num++) { 
-        var count = 1;
-        var c = 1; 
+        var count = 1, c = 1;
         for (var i = 1; i <= row_num; i++) { 
             c = c * (row_num - i) / i;
             if (c % 2 == 1)
                 count++;
         }
-        document.getElementById("impse7ans").innerHTML =  count + " ";
+        document.getElementById("impse4ans").innerHTML =  count + " ";
     }
 }
 
