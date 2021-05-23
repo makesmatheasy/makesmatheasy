@@ -10633,10 +10633,14 @@ function solveperc(){
     var y4=(document.getElementById('y4').value);
     if(x4!="" && y4!=""){
         var t = parseFloat(x4)-(parseFloat(y4)*parseFloat(x4))/100;
-        document.getElementById('t').innerHTML= 'Result : ' + t ; 
+        document.getElementById('t').innerHTML= "\\[ "+x4+" \\space - \\space \\frac{"+y4+" \\times "+x4+"}{100} \\space = \\space "+t.toFixed(3)+"\\]" ; 
+        document.getElementById('t1').innerHTML= "\\[Hence, \\space "+x4+" \\space minus \\space "+y4+" \\space \\% \\space is \\space "+t.toFixed(3)+"\\]";
     } else{
-        document.getElementById('t').innerHTML= 'Please enter all Input';
+        document.getElementById('t').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('t1').innerHTML= "";
     }
+    renderMathInElement(document.getElementById('t'));
+    renderMathInElement(document.getElementById('t1'));
 }
 
 function typenumfind(){
