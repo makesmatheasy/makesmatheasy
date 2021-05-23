@@ -2240,6 +2240,39 @@ function Rhombohedron(){
     }
 }
 
+function solvehalft() {
+    var a = document.getElementById("inputhalftetraa").value;
+    var voloutput = document.getElementById("resultofhalftvol");
+    var areaoutput = document.getElementById("resultofhalftarea");
+    var boutput = document.getElementById("resultofhalfb");
+    var heightoutput = document.getElementById("resultofhalftheight");
+    var areatemp = "";
+    var voltemp = "";
+    var btemp = "";
+    var heighttemp = "";
+    if (a != "") {
+        voltemp += "\\[Volume \\space of \\space Half \\space Tetrahedron \\space \\newline \\frac{" + a + "^3 \\times \\sqrt{2}}{24}" + "\\ = " + eval(String(0.059*a*a*a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Half \\space Tetrahedron \\space  \\newline" + a + "^2 \\times (\\frac{\\sqrt{3}}{2} + \\frac{1}{4})" + "\\ = " + eval(String(1.116*a*a)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        btemp += "\\[Half \\space edge \\space of \\space Half \\space Tetrahedron \\space  \\newline" + "\\frac{" + a + "}{2}" + "\\ = " + eval(String(0.5*a)).toFixed(3) + "\\]";
+        boutput.innerHTML = btemp;  
+        heighttemp += "\\[Height \\space of \\space Half \\space Tetrahedron \\space  \\newline" + "\\frac{" + a + "\\times \\sqrt{6}}{6}"  +  "\\ = " + eval(String(0.408*a)).toFixed(3) + "\\]";
+        heightoutput.innerHTML = heighttemp;  
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(boutput);
+        renderMathInElement(heightoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        boutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+
+}
+
 function cramer(){
     var a=parseFloat(document.getElementById('cab').value);
     var b=parseFloat(document.getElementById('cab1').value);
@@ -3751,30 +3784,6 @@ function vectpral(){
     }
 }
 
-function vecotrmod(){
-    var a=parseFloat(document.getElementById('vma').value);
-    var b=parseFloat(document.getElementById('vmb').value);
-    var c=parseFloat(document.getElementById('vmc').value);
-    if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
-        document.getElementById("vme").innerHTML ="";
-        renderMathInElement(document.getElementById("vmr"));
-        renderMathInElement(document.getElementById("vme"));
-
-    }else{
-    var ans = (a*a)+(c*c)+(b*b);
-    if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
-    else
-    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
-
-    renderMathInElement(document.getElementById("vmr"));
-  
-    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
-    renderMathInElement(document.getElementById("vme"));
-    }
-}
-
 
 function vectorplanar(){
     var a=parseFloat(document.getElementById('inp11').value);
@@ -3806,35 +3815,59 @@ function vectorplanar(){
     }
 }
 }
+function vecotrmod(){
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
+        document.getElementById("vme").innerHTML ="";
+        renderMathInElement(document.getElementById("vmr"));
+        renderMathInElement(document.getElementById("vme"));
+
+    }else{
+    var ans = (a*a)+(c*c)+(b*b);
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
+    else
+    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
+
+    renderMathInElement(document.getElementById("vmr"));
+  
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vme"));
+    }
+}
+
 
 
 function vectorunit(){
-    var a=parseFloat(document.getElementById('vua').value);
-    var b=parseFloat(document.getElementById('vub').value);
-    var c=parseFloat(document.getElementById('vuc').value);
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
 
     var ans = (a*a)+(c*c)+(b*b);
     if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("vue").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
-        renderMathInElement(document.getElementById("vue"));
+        document.getElementById("vme").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
+        renderMathInElement(document.getElementById("vme"));
     }
     else{
-    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
 
 
     if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vue").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
+    document.getElementById("vme").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
     else
-    document.getElementById("vue").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
-    renderMathInElement(document.getElementById("vue"));
+    document.getElementById("vme").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
+    renderMathInElement(document.getElementById("vme"));
 
 
-    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
+    document.getElementById("vmr").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{k} )} {  ` ;
     if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vur").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
+    document.getElementById("vmr").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
     else
-    document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
-    renderMathInElement(document.getElementById("vur"));
+    document.getElementById("vmr").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
+    renderMathInElement(document.getElementById("vmr"));
 }
 }
 function vectorscalar(){
@@ -6550,6 +6583,33 @@ function solveannulus() {
         circum1output.innerHTML = "";
         circum2output.innerHTML = "";
     }
+}
+
+function solveyinyang() {
+    var r = document.getElementById("inputhalfyinr").value;
+    var perioutput = document.getElementById("resultofhalfyinperi");
+    var areaoutput = document.getElementById("resultofhalfyinarea");
+    var diaoutput = document.getElementById("resultofhalfyindia");
+    var areatemp = "";
+    var peritemp = "";
+    var diatemp = "";
+    if (r != "") {
+        areatemp += "\\[Area \\space of \\space Half \\space Yin-Yang \\space  \\newline" + " \\frac{ \\pi \\times" + r + "^2}{2}" + "\\ = " + eval(String(0.5*3.14*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        peritemp += "\\[Perimeter \\space of \\space Half \\space Yin-Yang \\space  \\newline" + "2 \\times \\pi \\times " + r + "\\ = " + eval(String(2*3.14*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;  
+        diatemp += "\\[Diameter \\space of \\space Half \\space Yin-Yang \\space  \\newline" + "2 \\times " + r  +  "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;  
+        renderMathInElement(areaoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(diaoutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+    }
+
 }
 
 // ellipse calculator function

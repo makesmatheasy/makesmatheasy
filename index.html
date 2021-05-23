@@ -8316,7 +8316,7 @@
             </div>
             <br><br>
         <div class="text-center">
-            <h3>Modulus of Vector</h3><br>
+            <h3>Mono Vector Calculator </h3><br>
         </div>
         <div class="coll">
             <p>
@@ -8325,7 +8325,10 @@
                 <br><br>
                     <br>
             <button type="button" class="btn btn-light" onclick=vecotrmod()>
-                Solve
+                Modulus
+            </button>
+            <button type="button" class="btn btn-light" onclick=vectorunit()>
+                Unit Vector
             </button><br>
             </p>
         </div><br>
@@ -8587,27 +8590,7 @@
         </div>
     
     <br><br>
-    <div class="text-center">
-        <h3>Unit Vector </h3><br>
-    </div>
-    <div class="coll">
-        <p>
-            Vector (a) :   <input type="text" id="vua" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="vub" size=3 value='' placeholder="B"> j + <input type="text" id="vuc" size=3 value='' placeholder="C"> k
-            <br><br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectorunit()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
-    <div class="coll" style="text-align: center; display: block;">
-        <p id="vue"><br></p>
-    <h5 id="vur" style="color: white; font-size: x-large;"></h5>
-</div>
 
-
-    <br><br>
     <div class="text-center">
         <h3>Resultant Vector Calculator</h3><br>
     </div>
@@ -14248,6 +14231,11 @@
                            href="#">Annulus</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#yin_yang"
+                           style="text-decoration:none;"
+                           href="#">Half Yin-Yang</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
                            href="#">Kite</a></td>
                 </tr>
@@ -14917,6 +14905,11 @@
                     <td><a data-toggle="modal" data-target="#tetrahedron"
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
+                </tr>
+                 <tr>
+                    <td><a data-toggle="modal" data-target="#half_tetra"
+                           style="text-decoration:none;"
+                           href="#">Half Tetrahedron</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#pentahedron"
@@ -21998,6 +21991,61 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="yin_yang" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Half Yin-Yang</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P = 2 \times \pi r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[d= 2 \times r\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/yin-yang-half.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputhalfyinr" class = "form__field" oninput="solveyinyang()" 
+                                placeholder="Enter circle radius (r)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofhalfyinarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfyinperi"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfyindia"
+                                   style="font-family:mathfont;"></p><br>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="astroid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -27388,6 +27436,66 @@ N is the population size.
                                 <p class="stopwrap" id="rhomhedvol"
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="rhomhedsurarea"
+                                   style="font-family:mathfont;"></p><br>
+        
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="half_tetra" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Half Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{a^3 \times \sqrt{2}}{24}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = a^2 \times \Big(\frac{\sqrt{3}}{2}-\frac{1}{4} \Big)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Half Edge (b)</h5>
+                                    <p class="text-center">\[b= \frac{a}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h= \frac{a \times \sqrt{6}}{6}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/halft.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputhalftetraa" class = "form__field" oninput="solvehalft()" 
+                                placeholder="Enter Tetrahedron edge (a)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofhalftvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalftarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfb"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofhalftheight"
                                    style="font-family:mathfont;"></p><br>
         
                         </div>
