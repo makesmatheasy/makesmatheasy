@@ -13922,6 +13922,35 @@ function convertBinhex() {
     }
 }
 
+function exc1find(){
+    let terms = parseInt(document.getElementById("exc1").value)
+    let x = parseInt(document.getElementById("exc2").value)
+    let sum = 0;
+ 
+    for (let i = 1; i <= terms; i += 1) {
+        let B = 0;
+        let Bn = 2 * i;
+        for (let k = 0; k <= Bn; k++) {
+            let temp = 0;
+            for (let r = 0; r <= k; r++)
+                temp = temp + Math.pow(-1, r) * fac(k) * Math.pow(r, Bn)/ (fac(r) * fac(k - r)); 
+            B = B + temp / (k + 1);
+        }
+        sum =sum + Math.pow(-4, i) * (1 - Math.pow(4, i)) * B *Math.pow(x, 2 * i - 1) / fac(2 * i);
+    }
+    document.getElementById("exc1ans").innerHTML =  sum.toFixed(10);
+}
+
+function fac(num)
+{
+    if (num == 0)
+        return 1;
+    let fact = 1;
+    for (let i = 1; i <= num; i++)
+        fact = fact * i;
+    return fact;
+}
+ 
 
 // 1's 2's complement
 function onetwoCalc() {

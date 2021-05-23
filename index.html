@@ -1420,7 +1420,6 @@
                 </table>
             </li>
 
-
             <li>
                 <table class="table">
                     <tr>
@@ -1434,6 +1433,23 @@
                                 <span
                                         onclick="addtofavourite('Expansion of Functions','#expansion','c','expansionimgfav')"><img
                                         id="expansionimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="expansioncbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Expansion Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Expansion Calculator','#expansionc','c','expansioncimgfav')"><img
+                                        id="expansioncimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -17646,6 +17662,18 @@ N is the population size.
    
 </div>
 
+<div class="collapse" id="expansionc">
+    <h2>Expansion Calculator</h2>
+    <br><br>
+    <h4>Sum of the Tan(x) expansion upto N terms</h4>
+    <br>
+    <input type="text" id="exc1" class="form__field" placeholder="Enter value of x">
+    <input type="text" id="exc2" class="form__field" placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="exc1find()">Find</button>
+    <br>
+    <h5 id="exc1ans"></h5>
+</div>
 
 <div class="collapse" id="numcubesRanges">
 

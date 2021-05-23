@@ -311,6 +311,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#expansioncbtn").click(function () {
+        openit("#expansionc");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();

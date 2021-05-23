@@ -232,6 +232,7 @@ function openit(id) {
         "#betagamma",
         "#parallel",
         "#dri",
+        "#expansionc",
         "#unitconcal",
         "#giff",
         "#qrtl",
