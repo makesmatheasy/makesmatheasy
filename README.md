@@ -177,6 +177,7 @@ Other Tech/Libraries
   - Operations on Fractions
   - Binomial Theorem Properties
   - Binomial expression multiplication
+  - Foil Calculator
   - Multiplication Table
     - Prints Multiplication Table
   - Divide

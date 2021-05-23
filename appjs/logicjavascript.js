@@ -10419,6 +10419,24 @@ function binoexpCalc(){
     document.getElementById("binoexp_ans").innerHTML = ans;
 }
 
+function foilcal(){
+    var foila = document.getElementById("foila").value;
+    var foilb = document.getElementById("foilb").value;
+    var foilc = document.getElementById("foilc").value;
+    var foild = document.getElementById("foild").value;
+    var foiln = document.getElementById("foiln").value;
+    var foilm = document.getElementById("foilm").value;
+
+    var ffirst=foila*foilc;
+    var fcoef=parseInt(foiln)+parseInt(foilm);
+    var fouter=foila*foild;
+    var finner=foilb*foilc;
+    var flast=foild*foild;
+    
+    var ans = "\\[("+foila+"x^"+foiln+"+"+foilb+")("+foilc+"x^"+foilm+"+"+foild+")="+ffirst+"x^{"+(fcoef)+"}+"+fouter+"x^{"+foiln+"}+"+finner+"x^{"+foilm+"}+"+flast+"\\]";
+    document.getElementById("foil_ans").innerHTML = ans;
+    renderMathInElement(document.getElementById("foil_ans"));
+}
 function binomialsolve(valn, valk) {
     document.getElementById("bino_div").style.display = "block";
     var inputval1 = document.getElementById(valn).value;
