@@ -9834,6 +9834,54 @@ function energycon() {
     const a = (i * f) / t;
     document.getElementById("energyconou").innerHTML = `${a}`;
 }
+
+function radiation1u(a) {
+    switch (a) {
+        case "1":
+            return 0.001;
+        case "2":
+            return 0.000001;
+        case "3":
+            return 0.01;
+        case "4":
+            return 0.01;
+        case "5":
+            return 1;
+        
+    }
+}
+function radiation1con() {
+    const f = radiation1u(document.getElementById("radiation1con-1").value);
+    const t = radiation1u(document.getElementById("radiation1con-2").value);
+    const i = parseFloat(document.getElementById("radiation1conin").value);
+    const a = (i * f) / t;
+    document.getElementById("radiation1conou").innerHTML = `${a}`;
+}
+
+function radiation2u(a) {
+    switch (a) {
+        case "1":
+            return 0.001;
+        case "2":
+            return 0.00001;
+        case "3":
+            return 0.000001;
+        case "4":
+            return 1;
+        case "5":
+            return 0.01;
+        case "6":
+            return 0.0000001;    
+        
+    }
+}
+function radiation2con() {
+    const f = radiation2u(document.getElementById("radiation2con-1").value);
+    const t = radiation2u(document.getElementById("radiation2con-2").value);
+    const i = parseFloat(document.getElementById("radiation2conin").value);
+    const a = (i * f) / t;
+    document.getElementById("radiation2conou").innerHTML = `${a}`;
+}
 function presu(a) {
   switch (a) {
     case "1":
