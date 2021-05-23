@@ -6585,6 +6585,33 @@ function solveannulus() {
     }
 }
 
+function solveyinyang() {
+    var r = document.getElementById("inputhalfyinr").value;
+    var perioutput = document.getElementById("resultofhalfyinperi");
+    var areaoutput = document.getElementById("resultofhalfyinarea");
+    var diaoutput = document.getElementById("resultofhalfyindia");
+    var areatemp = "";
+    var peritemp = "";
+    var diatemp = "";
+    if (r != "") {
+        areatemp += "\\[Area \\space of \\space Half \\space Yin-Yang \\space  \\newline" + " \\frac{ \\pi \\times" + r + "^2}{2}" + "\\ = " + eval(String(0.5*3.14*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        peritemp += "\\[Perimeter \\space of \\space Half \\space Yin-Yang \\space  \\newline" + "2 \\times \\pi \\times " + r + "\\ = " + eval(String(2*3.14*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;  
+        diatemp += "\\[Diameter \\space of \\space Half \\space Yin-Yang \\space  \\newline" + "2 \\times " + r  +  "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;  
+        renderMathInElement(areaoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(diaoutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+    }
+
+}
+
 // ellipse calculator function
 
 function solveellipse() {

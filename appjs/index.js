@@ -302,6 +302,7 @@ function openit(id) {
         "#ellipsecollapse",
         "#hyperbolacollapse",
         "#datecal",
+        "#yin_yang",
         "#prime",
         "#sum_n_AP",
         "#sum_n_GP",
