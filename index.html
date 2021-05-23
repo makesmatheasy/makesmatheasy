@@ -14372,6 +14372,11 @@
                            href="#">Half Yin-Yang</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#bulge"
+                           style="text-decoration:none;"
+                           href="#">Bulge</a></td>                
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
                            href="#">Kite</a></td>
                 </tr>
@@ -21155,6 +21160,65 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="bulge" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Bulge</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Width</h5>
+                                    <p class="text-center">\[b = 4r \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = 2r \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[P = 2r*( \pi + 2 ) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = 4r^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/bulge.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius (r)" id="inputbulgerad"
+                                       oninput="solvebulge();">
+                            <p class="stopwrap" id="resultofbulgewidth"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbulgeheight"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbulgeperi"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbulgearea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  
         <div class="modal fade" id="tricorn" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -21203,9 +21267,7 @@ N is the population size.
                     </div>
                 </div>
             </div>
-        </div>    
-
-
+        </div> 
         <div class="modal fade" id="lemniscate" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -22329,6 +22391,8 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        
 
         <div class="modal fade" id="astroid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
