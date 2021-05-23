@@ -14088,6 +14088,9 @@ function convertbcd() {
         var temp = "";
         temp = bcdTOdecimal(input).join('');
         result.innerHTML = parseInt(temp,10).toString(8);
+    }else if(fromCode == "Hexadecimal" && toCode == "BCD Code"){
+        input = parseInt(input,16).toString();
+        result.innerHTML = decimalTObcd(input);
     }
     
     if (input == "") {
