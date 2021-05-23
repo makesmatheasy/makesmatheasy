@@ -11522,6 +11522,14 @@ function lacube8find(){
     document.getElementById("lacube8ans").innerHTML =  ans;
 }
 
+function lacube9find(){
+    let n  = parseInt(document.getElementById("lacube10").value)
+    let S = (n * (n + 1)) / 2
+    let x = (n*(n+1)*(2*(n)+1))/6
+    res = x-S  
+    document.getElementById("lacube9ans").innerHTML =  res;
+}    
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
