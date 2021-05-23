@@ -12611,6 +12611,38 @@ function gcdfind(){
     document.getElementById("gcdans").innerHTML =  gcd(b % a, a);
 }
 
+function gcd1find(){
+    let n = parseInt(document.getElementById("gcdin1").value)
+    let res = 0;
+ 
+    for (let i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            let d1 = i;
+            let d2 = Math.floor(n / i)
+            res += d1 * getCount(d1, n);
+            if (d1 != d2)
+                res += d2 * getCount(d2, n);
+        }
+    }
+ 
+    document.getElementById("gcd1ans").innerHTML= res;
+}
+
+function getCount(d, n){ 
+    let no = Math.floor(n / d); 
+    let result = no;
+    for (let p = 2; p * p <= no; ++p) {
+        if (no % p == 0) {
+            while (no % p == 0)
+                no = Math.floor(no / p);
+            result = Math.floor(result - result / p);
+        }
+    }
+    if (no > 1)
+        result = Math.floor(result - result / no);
+    return result;
+}
+
 //---------------------------------------------------------------------
 
 //Function for addition of any number system
