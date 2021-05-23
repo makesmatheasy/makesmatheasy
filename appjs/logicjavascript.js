@@ -10583,17 +10583,23 @@ function trapinsemifind(){
     }
 }
 
-function trapinsemi1find(){
-    let n = parseInt(document.getElementById("trapinsemiin1").value)
-    let m = parseInt(document.getElementById("trapinsemiin2").value)
+function trapinsemifind1(){
+    let n = parseInt(document.getElementById("trapinsemin1").value)
+    let m = parseInt(document.getElementById("trapinsemin2").value)
+    let output = document.getElementById("trapinsemi1ans")
+    let ans = "";
     if(!isNaN(m) && !isNaN(n)){
     var square_of_radius = ( m * n ) / 4;
     var area = ( 3.141 * square_of_radius );
-    document.getElementById("trapinsemi1ans").innerHTML =  area;
+    ans += "\\[Area \\space of \\space cicle \\space = \\space π \\times r^{2}, \\space where \\space radius \\space of \\space Incircle \\space = \\space \\frac{height \\space of \\space trapezoid}{2} \\space = \\space \\frac {\\sqrt{m \\times n}}{2} \\]"
+    ans += "\\[Area \\space of \\space cicle \\space inscribed \\space in \\space Isosceles \\space Trapezoid \\space = \\space π \\times (\\frac {\\sqrt{m \\times n}}{2})^{2} \\space = \\space π \\times \\frac {m \\times n}{4} \\space = \\space 3.141\\times ( \\frac{" + m + "\\times" + n + "}{4} ) \\space = \\space" + area + " \\]";
+    output.innerHTML = ans;
     }
     else{
-        document.getElementById("trapinsemi1ans").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 function shtfind(){
