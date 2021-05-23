@@ -15471,13 +15471,25 @@ function fvalue() {
     let list2 = document.getElementById("dataset2").value;
     var ans="";
     var ans2="";
+    if(list1==""||list2=="")
+    {
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('ftestans').innerHTML = "Please enter all values";
+    }
+    else
+    {
 
     list1 = list1.split(" ");
     list2 = list2.split(" ");
     let n1 = list1.length;
     let n2 = list2.length;
    // f test work for sample size less than 30
-
+     if(n1>n2||n2>n1)
+     { 
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('ftestans').innerHTML = "Datasets should have equal no of inputs";
+     }
+     else{
     if (n1 <= 30 && n2 <= 30) {
         for (var i = 0; i < n1; i++) {
             list1[i] = parseInt(list1[i]);
@@ -15528,6 +15540,8 @@ function fvalue() {
         document.getElementById('stepsbox').style.display = "none" 
         document.getElementById('ftestans').innerHTML = "F-test is not applicable for set of numbers more than 30"
     }
+}
+}
 }
 // Z-test logic 
 
