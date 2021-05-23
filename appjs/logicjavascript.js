@@ -2109,6 +2109,92 @@ function cross() {
     }
 }
 
+// diamond problemcalculator
+function diamond() {
+    var diamondA = document.getElementById("dinputA").value;
+    var diamondB = document.getElementById("dinputB").value;
+    var diamondprod = document.getElementById("dprod").value;
+    var diamondsum = document.getElementById("dsum").value;
+    var diamond_explain = document.getElementById("diamond_explain");
+    
+    if(diamondA!="" && diamondB!="" ){
+        diamondA=parseInt(diamondA);
+        diamondB=parseInt(diamondB);
+        diamondprod=diamondA*diamondB;
+        diamondsum=diamondA+diamondB;
+        document.getElementById("dprod").value=diamondprod;
+        document.getElementById("dsum").value=diamondsum;
+        diamond_explain.innerHTML="\\[ Product=A*B="+diamondA+"*"+diamondB+"="+diamondprod+"\\]";
+        diamond_explain.innerHTML+="\\[ Sum=A+B="+diamondA+"+"+diamondB+"="+diamondsum+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));
+    }
+    else if(diamondA!="" && diamondprod!=""){
+        diamondA=parseInt(diamondA);
+        diamondprod=parseInt(diamondprod);
+        diamondB=diamondprod/diamondA;
+        diamondsum=diamondA+diamondB;
+        document.getElementById("dinputB").value=diamondB;
+        document.getElementById("dsum").value=diamondsum;
+        diamond_explain.innerHTML="\\[ B=Product/A="+diamondprod+"/"+diamondA+"="+diamondB+"\\]";
+        diamond_explain.innerHTML+="\\[ Sum=A+B="+diamondA+"+"+diamondB+"="+diamondsum+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));
+        
+    }
+    else if(diamondA!="" && diamondsum!=""){
+        diamondA=parseInt(diamondA);
+        diamondsum=parseInt(diamondsum);
+        diamondB=diamondsum-diamondA;
+        diamondprod=diamondA*diamondB;
+        document.getElementById("dinputB").value=diamondB;
+        document.getElementById("dprod").value=diamondprod;
+        diamond_explain.innerHTML="\\[ B=Sum-A="+diamondsum+"-"+diamondA+"="+diamondB+"\\]";
+        diamond_explain.innerHTML+="\\[ Product=A*B="+diamondA+"*"+diamondB+"="+diamondprod+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));    
+    }
+    else if(diamondB!="" && diamondprod!=""){
+        diamondB=parseInt(diamondB);
+        diamondprod=parseInt(diamondprod);
+        diamondA=diamondprod/diamondB;
+        diamondsum=diamondA+diamondB;
+        document.getElementById("dinputA").value=diamondA;
+        document.getElementById("dsum").value=diamondsum;
+        diamond_explain.innerHTML="\\[ A=Product/B="+diamondprod+"/"+diamondB+"="+diamondA+"\\]";
+        diamond_explain.innerHTML+="\\[ Sum=A+B="+diamondA+"+"+diamondB+"="+diamondsum+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));   
+    }
+    else if(diamondB!="" && diamondsum!=""){
+        diamondB=parseInt(diamondB);
+        diamondsum=parseInt(diamondsum);
+        diamondA=diamondsum-diamondB;
+        diamondprod=diamondA*diamondB;
+        document.getElementById("dinputA").value=diamondA;
+        document.getElementById("dprod").value=diamondprod;
+        diamond_explain.innerHTML="\\[ A=Sum-B="+diamondsum+"-"+diamondB+"="+diamondA+"\\]";
+        diamond_explain.innerHTML+="\\[ Product=A*B="+diamondA+"*"+diamondB+"="+diamondprod+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));    
+    }
+    else if(diamondprod!="" && diamondsum!=""){
+        diamondprod=parseInt(diamondprod);
+        diamondsum=parseInt(diamondsum);
+        let d=diamondsum*diamondsum-4*diamondprod;
+        if(d<0)
+        {
+            diamond_explain.innerHTML="\\[ No solution exist for these Product and Sum\\]";
+            renderMathInElement(document.getElementById("diamond_explain")); 
+        }
+        else{
+         diamondA=(-diamondsum+Math.sqrt(d) )/2;
+         diamondB=(-diamondsum-Math.sqrt(d) )/2;  
+         document.getElementById("dinputA").value=diamondA;
+         document.getElementById("dinputB").value=diamondB;
+         diamond_explain.innerHTML="\\[ A ,B="+diamondA+","+diamondB+"\\]";
+         renderMathInElement(document.getElementById("diamond_explain"));  
+        }      
+    }
+    else{
+        diamond_explain.innerHTML="Enter two values";
+    }
+}
 function fp(){
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if(giffnum >=0){

@@ -242,6 +242,7 @@ function openit(id) {
         "#typenum",
         "#dip",
         "#cross",
+        "#diamond",
         "#wandt",
         "#spiconcal",
         "#barrel",
