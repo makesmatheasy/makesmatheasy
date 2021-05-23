@@ -10692,7 +10692,16 @@ function typenum2find(){
     if (n > 2)
         count++;
     document.getElementById("typenum2ans").innerHTML =  count;
-}    
+}  
+
+function typenum4find(){
+    let N = parseInt(document.getElementById("typenum5").value)
+    for(let i=0;i<=N;i++){
+        if (divSum(i+1) != i) 
+            document.getElementById("typenum4ans").innerHTML =  false;           
+        document.getElementById("typenum4ans").innerHTML =  divSum(i) == i+1;
+    }
+}
 
 function typenum3find(){
     let x = parseInt(document.getElementById("typenum3").value)
