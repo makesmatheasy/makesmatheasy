@@ -207,6 +207,7 @@ Other Tech/Libraries
     - Temperature
     - Pressure
     - Energy
+    - Radiation
     - Time
     - Angle
     - Speed
@@ -288,6 +289,7 @@ Other Tech/Libraries
     - Dodecahedron
     - Rhombic Dodecahedron
     - Icosahedron
+    - Cuboctahedron
     - Parallelepiped
     - Hyperboloid
     - N-dimension Sphere
@@ -355,6 +357,7 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Conditional Probability
+  - Geometric Probability Distribution
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties
@@ -366,11 +369,14 @@ Other Tech/Libraries
   - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
+  - Midrange Calculator
   - Standard Deviation
   - T-test
+  - AB-test
   - Z-test
   - Z score Calculator
   - Confidence Interval Calculator
+  - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
