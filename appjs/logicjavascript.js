@@ -4486,6 +4486,31 @@ function circumtri(){
         renderMathInElement(output);
     }
 }
+
+function intri(){
+    var a,b,c;
+    a=parseFloat(document.getElementById('inputsidea5').value);
+    b=parseFloat(document.getElementById('inputsideb6').value);
+    c=parseFloat(document.getElementById('inputsidec7').value);
+    var output = document.getElementById("intri1");
+    var temp = " ";
+    var s = (a+b+c)/2;
+    var k = (s*(s-a)*(s-b)*(s-c));
+    var k1 = Math.sqrt(k);
+    var r = k1/s;
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Inradius \\space of \\space Triangle \\space is: " + r + " \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
+
+
 function vectorquad(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("inp51").value);
