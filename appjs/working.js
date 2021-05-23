@@ -484,6 +484,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#abtestbtn").click(function () {
+        openit("#abtest");
+        closenav();
+        clearall();
+    });   
     $("#ftestbtn").click(function () {
         openit("#ftest");
         closenav();
@@ -1317,6 +1322,12 @@ $(document).ready(function () {
         clearall();
     });
     
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();

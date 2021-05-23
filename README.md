@@ -370,6 +370,7 @@ Other Tech/Libraries
   - Midrange Calculator
   - Standard Deviation
   - T-test
+  - AB-test
   - Z-test
   - Z score Calculator
   - Confidence Interval Calculator
