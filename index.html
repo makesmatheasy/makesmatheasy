@@ -19144,7 +19144,7 @@ N is the population size.
                         <h2>BCD Code Converter</h2>
                         <h5>From</h5>
                         <select id="bcd-select1" class="form__field"
-                                onchange="convertbcd()">
+                                onchange="convertbcd()">                                
                             <option class="form_field" style="background-color: #232a36;">
                                 Binary
                             </option>
@@ -19155,11 +19155,14 @@ N is the population size.
                                 Octal
                             </option>
                             <option class="form_field" style="background-color: #232a36;">
+                                Hexadecimal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
                                 BCD Code
                             </option>
                         </select>
 
-                        <input type="number" id="bcd-input" value="0" class="form__field"
+                        <input type="text" id="bcd-input" value="0" class="form__field"
                                oninput="convertbcd()">
                     </div>
                 </div>
@@ -19179,6 +19182,9 @@ N is the population size.
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
                                 Octal
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Hexadecimal
                             </option>
                         </select>
 
