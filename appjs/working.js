@@ -316,6 +316,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#expansioncbtn").click(function () {
+        openit("#expansionc");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
@@ -1127,6 +1132,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ln").click(function () {
+        openit("#lns");
+        closenav();
+        clearall();
+    });
     $("#complex2collapsebtn").click(function () {
         openit("#complex2collapse");
         closenav();
@@ -1187,6 +1197,11 @@ $(document).ready(function () {
 
     $("#parabolacollapsebtn").click(function () {
         openit("#parabolacollapse");
+        closenav();
+        clearall();
+    });
+    $("#parabbtn").click(function () {
+        openit("#parab");
         closenav();
         clearall();
     });
