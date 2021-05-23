@@ -10660,8 +10660,33 @@ function typenum2find(){
     }
     if (n > 2)
         count++;
-    document.getElementById("typenum1ans").innerHTML =  count;
+    document.getElementById("typenum2ans").innerHTML =  count;
 }    
+
+function typenum3find(){
+    let x = parseInt(document.getElementById("typenum3").value)
+    let y = parseInt(document.getElementById("typenum4").value)
+    if (divSum(x) != y) 
+        document.getElementById("typenum3ans").innerHTML =  false; 
+          
+    document.getElementById("typenum3ans").innerHTML =  divSum(y) == x; 
+}
+
+function divSum(n) 
+{ 
+    let result = 0; 
+    for (let i = 2; i <= Math.sqrt(n); i++) 
+    { 
+        if (n % i == 0) 
+        {  
+            if (i == (n / i)) 
+                result += i; 
+            else
+                result += (i + n / i); 
+        } 
+    } 
+    return (result + 1); 
+} 
 
 function findTriangularNumber(n)
 {
