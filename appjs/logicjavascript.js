@@ -10342,8 +10342,13 @@ function profitloss() {
 
 function cirinsemifind(){
     let r = parseInt(document.getElementById("cirinsemiin").value)
-    var a = 3.14 * R * R / 4; 
+    if(!isNaN(r)){
+    var a = 3.14 * r * r / 4; 
     document.getElementById("cirinsemians").innerHTML = a;
+    }
+    else{
+        document.getElementById("cirinsemians").innerHTML = "Please enter valid input"
+    }
 }
 
 function cirinsemi1find(){
@@ -10351,16 +10356,26 @@ function cirinsemi1find(){
     var base = 1.732 * R;
     var height = (1.5) * R;
     var area = 0.5 * base * height;
+    if(!isNaN(R)){
     document.getElementById("cirinsemi1ans").innerHTML = area;
+    }
+    else{
+        document.getElementById("cirinsemi1ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function cirinsemi2find(){
     let l = parseInt(document.getElementById("cirinsemi2in").value)
     let b = parseInt(document.getElementById("cirinsemi21in").value)
     let h = parseInt(document.getElementById("cirinsemi22in").value)
+    if(!isNaN(l) && !isNaN(b) && !isNaN(h)){
     var a = (l * b) / (l + b);
     let ans =  a * a;
     document.getElementById("cirinsemi2ans").innerHTML = ans
+    }
+    else{
+        document.getElementById("cirinsemi2ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function cirinsemi3find(){
@@ -10372,37 +10387,61 @@ function cirinsemi3find(){
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
+    if(!isNaN(r)){
     document.getElementById("trapinsemians").innerHTML =  a;
+    }
+    else{
+        document.getElementById("trapinsemians").innerHTML = "Please enter valid input"
+    }
 }
 
-function trapinsemifind1(){
-    let n = parseInt(document.getElementById("trapinsemin1").value)
-    let m = parseInt(document.getElementById("trapinsemin2").value)
+function trapinsemi1find(){
+    let n = parseInt(document.getElementById("trapinsemiin1").value)
+    let m = parseInt(document.getElementById("trapinsemiin2").value)
+    if(!isNaN(m) && !isNaN(n)){
     var square_of_radius = ( m * n ) / 4;
     var area = ( 3.141 * square_of_radius );
     document.getElementById("trapinsemi1ans").innerHTML =  area;
+    }
+    else{
+        document.getElementById("trapinsemi1ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function shtfind(){
     let a = parseInt(document.getElementById("shtin").value)
+    if(!isNaN(a)){
     // side length of a hexagon inscribed within an equilateral triangle is h = a/3.
     // side length of the square that can be inscribed within a hexagon is x = 1.268h
     // So, side length of the square inscribed within a hexagon which in turn is inscribed within an equilateral triangle, x = 0.423a.
     var x = (0.423 * a);
     document.getElementById("shtans").innerHTML =  x;
+    }
+    else{
+        document.getElementById("shtans").innerHTML = "Please enter valid input"
+    }
 }
 
 function sht6find(){
     let a = parseInt(document.getElementById("sht6in").value)
+    if(!isNaN(a)){
     var area = Math.sqrt(a) / 6;
- 
     document.getElementById("sht6ans").innerHTML =  area;
+    }
+    else{
+        document.getElementById("sht6ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function htfind(){
     let a = parseInt(document.getElementById("htin").value)
+    if(!isNaN(a)){
     var x = a / 3;
     document.getElementById("htans").innerHTML =  x;
+    }
+    else{
+        document.getElementById("htans").innerHTML = "Please enter valid input"
+    }
 }
 
 // gamma find function
@@ -12019,9 +12058,10 @@ function Variance() {
 }
 
 function minsquarefind(){
-    let n = parseInt(document.getElementById("minsquare").value)
+    let n = parseInt(document.getElementById("minsquarein").value)
     let count = 0;
     let ans = 1;
+    if(!isNaN(n)){
     while (n % 2 == 0)
     {
         count++;
@@ -12042,6 +12082,10 @@ function minsquarefind(){
     if (n > 2)
         ans *= n;
     document.getElementById("minsquareans").innerHTML = ans
+}
+else{
+    document.getElementById("minsquareans").innerHTML = "Please enter valid input"
+}
 }
 
 
@@ -12958,7 +13002,12 @@ function minsquare1find(){
     let a = parseInt(document.getElementById("minsquare1").value)
     var R = a * (2.0 - Math.sqrt(2));
     var area = 3.14 * R * R / 2.0;
+    if(!isNaN(a)){
     document.getElementById("minsquare1ans").innerHTML =  area;
+    }
+    else{
+        document.getElementById("minsquare1ans").innerHTML = "Please enter valid input"
+    }
 }
 
 //----------------------------
@@ -15515,19 +15564,29 @@ function ratpercal()
 
 function triinsemifind(){
     let r = parseInt(document.getElementById("triinsemiin").value)
+    if(!isNaN(r)){
     if (r < 0)
         document.getElementById("triinsemians").innerHTML = "Not triangle can be formed"
     else
         document.getElementById("triinsemians").innerHTML = r*r
+    }
+    else{
+        document.getElementById("triinsemians").innerHTML = "Please enter valid input"
+    }
 }
 
 function recinsemifind(){
     let r = parseInt(document.getElementById("recinsemiin").value)
+    if(!isNaN(r)){
     if (r < 0)
         document.getElementById("recinsemians").innerHTML = "Not triangle can be formed"
     else
         document.getElementById("recinsemians").innerHTML = r*r
-}
+    }
+    else{
+        document.getElementById("recinsemians").innerHTML = "Please enter valid input"
+    }
+    }
 
 function hypertrigno()
 {   
