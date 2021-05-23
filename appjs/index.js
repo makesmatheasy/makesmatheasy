@@ -148,7 +148,7 @@ function openit(id) {
         "#etf",
         "#etc",
         "#equationssolver",
-        "quadeqncal",
+        "#quadeqncal",
         "#mulsolwithsteps",
         "#secarea",
         "#table",
