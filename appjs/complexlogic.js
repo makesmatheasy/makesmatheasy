@@ -1144,23 +1144,36 @@ function segcal()
     var a=document.getElementById("segr").value;
     var b=document.getElementById("sega").value;
     var c=document.getElementById("angseg").value;
+    var output = document.getElementById("segans");
     var ans="";
     if(a==""||b=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans += "\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer \\]";
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
     else{
 
     if(c=="degree")
     {
-        b=b/57.296;
+        var t=Math.sin(b);
+        ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + "))  \\]";
+        ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + ")) \\]";
+        ans += "\\[\\frac{1}{2} \\times " + ((a*a)*((Math.PI/180)*(b-t)))+ " \\]"
+        ans += "\\[Area \\space of \\space segment \\space in \\space degrees \\space is \\space " +  (((a*a)*((Math.PI/180)*(b-t)))*0.5) + " \\]";
+        output.innerHTML = ans;
     }
-   console.log(Math.sin(b));
-   var t=Math.sin(b);
-   var area= a*a*(b-t)*0.5
-    ans="The area of segment is: "+area;
+    else{
+        var t=Math.sin(b);
+        var area= a*a*(b-t)*0.5
+   ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times ( " + b + " - sin ( " + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times (  " + b + " - sin(" + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + ((a*a)*(b-t)) + " \\]"
+   ans += "\\[Area \\space of \\space segment \\space in \\space degrees \\space is \\space " + area + " \\]";
+   output.innerHTML = ans;
+    }
 }
-document.getElementById("segans").innerHTML=ans;
+renderMathInElement(output);
 }
 
 function impcal() {
