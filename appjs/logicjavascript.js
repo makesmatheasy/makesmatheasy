@@ -2570,6 +2570,12 @@ function impse6find(){
     document.getElementById("impse6ans").innerHTML = ans
 }
 
+function impse7find(){
+    let n = parseInt(document.getElementById("impse11").value)
+    var y =  (((x) / 81) * (9 * k - 1 + Math.pow(10, (-1) * k)));
+    document.getElementById("impse7ans").innerHTML =  y ;
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
