@@ -15882,20 +15882,22 @@ function numtfind(){
     document.getElementById("numtans").innerHTML = ans
 }
 function occfind(){
-    let n = parseInt(document.getElementById("occin").value)
-    let ang = parseInt(document.getElementById("occin1").value)
-    var ans = 1;
-
-    // Calculate the frequency
-    // of given angle for each vertex
-    var freq = (ang * n) / 180;
-
-    // Multiply answer by frequency.
-    ans = ans * (n - 1 - freq);
-
-    // Multiply answer by the number of vertices.
-    ans = ans * n;
-    document.getElementById("occans").innerHTML = ans
+    let n = (document.getElementById("occin").value);
+    let ang = (document.getElementById("occin1").value);
+    if (n!="" && ang!=""){
+        var freq = (ang * n) / 180;
+        var ans = n * (n - 1 - freq);
+        document.getElementById("occans").innerHTML = "\\[Number \\space of \\space occurrence \\space of \\space given \\space angle \\space is \\newline \\space (No.\\space of \\space sides) \\times ((No. \\space of \\space sides) - 1 - frequency)\\]";
+        document.getElementById("occans1").innerHTML = "\\[Here, \\space frequency \\space = \\space \\frac{Angle \\times (No.\\space of \\space sides) }{180}\\]";
+        document.getElementById("occans2").innerHTML = "\\["+n+" \\times ("+n+" - 1 - (\\frac{"+ang+" \\times "+n+"}{180})) \\space = \\space "+n+" \\times "+(n - 1 - freq).toFixed(2)+" \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("occans").innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
+        document.getElementById("occans1").innerHTML = "";
+        document.getElementById("occans2").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("occans"));
+    renderMathInElement(document.getElementById("occans1"));
+    renderMathInElement(document.getElementById("occans2"));
 }
 
 function utcal() {
