@@ -12149,9 +12149,25 @@ function sccofind(){
 }
 
 function cubeinspherefind(){
-    let r = parseInt(document.getElementById("cubeinsphere").value)
+    let r = parseFloat(document.getElementById("cubeinsphere").value)
     var a = (2 * r) / Math.sqrt(3);
-    document.getElementById("cubeinsphereans").innerHTML =  a.toFixed(5);
+    let result = document.getElementById("cubeinsphereans")
+    let ans = ""
+    if(r<0){
+        ans += "\\[Radius \\space cannot \\space be \\space negative \\]"
+        result.innerHTML = ans
+    }
+   else if(!isNaN(r)){
+         ans += "\\[Diagonal \\space of \\space the \\space cube \\space = \\space Diameter \\space of \\space the \\space sphere \\]"
+         ans += "\\[a\\sqrt{3} \\space = \\space 2r \\space -> \\space a \\space = \\space \\frac{2r}{\\sqrt{3}}, \\space where \\space a \\space = \\space size \\space of \\space the \\space cube \\space , \\space r \\space = \\space radius \\space of \\space the \\space sphere \\]"
+         ans += "\\[a \\space = \\space \\frac{2 \\times r}{\\sqrt{3}} \\space = \\space \\frac{" + (2*r) + "}{\\sqrt{3}} \\space = \\space " + a.toFixed(4) + "\\]"
+         result.innerHTML = ans
+        }
+        else{
+           ans += "\\[Please \\space enter \\space valid \\space input \\]"
+           result.innerHTML = ans
+        }
+        renderMathInElement(result)
 }
 
 //Mean End
