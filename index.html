@@ -1420,7 +1420,6 @@
                 </table>
             </li>
 
-
             <li>
                 <table class="table">
                     <tr>
@@ -1434,6 +1433,23 @@
                                 <span
                                         onclick="addtofavourite('Expansion of Functions','#expansion','c','expansionimgfav')"><img
                                         id="expansionimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="expansioncbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Expansion Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Expansion Calculator','#expansionc','c','expansioncimgfav')"><img
+                                        id="expansioncimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -2104,7 +2120,24 @@
                     </tr>
                 </table>
             </li>
-           
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="log-collapsebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
+                                Properties
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Logarithm Properties','#log-collapse','c','logpropimgfav')"><img
+                                       id="logpropimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -2126,19 +2159,17 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="log-collapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
-                                Properties
-                            </a>
+                            <a id="ln"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ln Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                               <span
-                                       onclick="addtofavourite('Logarithm Properties','#log-collapse','c','logpropimgfav')"><img
-                                       id="logpropimgfav" src="images/unfavourite.png"
-                                       style="height:1.5625rem;filter: none;"></span>
+                                <span onclick="addtofavourite('Ln Calculator','#lns','c','lnimgfav')"><img
+                                        id="lnimgfav"
+                                        src="images/unfavourite.png" style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
+
             </li>
 
             <li>
@@ -5429,14 +5460,15 @@
                 class="stopwrap"></p>
             <h4 style="text-align: center;" id="mid_output"> </h4> <br><br>
 
-            <h3>Intersection Point of Two Lines</h3><br>
+            <h3> When Two Lines Meet </h3><br>
             <div class="coll">
                 <p>
                     Equation 1 :   <input type="text" id="aone" size=3 value='' placeholder="A1">  x  +
                 <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text" id="cone" size=3 value='' placeholder="C1"> = 0  <br><br>
                     Equation 2 :   <input type="text" id="atwo" size=3 value='' placeholder="A2">  x  +
                 <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text" id="ctwo" size=3 value='' placeholder="C2"> = 0 <br><br>
-                <button type="button" class="btn btn-light" onclick=interpointsolve()>Calculate</button><br>
+                <button type="button" class="btn btn-light" onclick=interpointsolve()>Intersection Point</button>
+                <button type="button" class="btn btn-light" onclick=anglesolve()>Angle</button><br>
                 </p>
             </div><br>
             <p class="stopwrap" id="formula"
@@ -5450,25 +5482,7 @@
             <p class="stopwrap" id="inter_output"
                 style="font-family:mathfont;"></p><br> 
 
-            <h3>Angle between two lines</h3><br>
-            <div class="coll">
-                <p>
-                    Equation 1 :   <input type="text" id="a1st" size=3 value='' placeholder="A1">  x  +
-                <input type="text" id="b1st" size=3 value='' placeholder="B1"> y + <input type="text" id="c1st" size=3 value='' placeholder="C1"> = 0<br><br>
-                    Equation 2 :   <input type="text" id="a2nd" size=3 value='' placeholder="A2">  x  +
-                <input type="text" id="b2nd" size=3 value='' placeholder="B2"> y + <input type="text" id="c2nd" size=3 value='' placeholder="C2"> = 0<br><br>
-                <button type="button" class="btn btn-light" onclick=anglesolve()>Calculate</button><br>
-                </p>
-            </div><br>
-                        <p class="stopwrap" id="angleformula"
-                           style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="angleformula1"
-                           style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="angleformula2"
-                           style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="angle_output"
-                           style="font-family:mathfont;"></p><br> 
-        
+            
             <h3>Distance between point and a line</h3><br>
             <div class="coll">
                 <p>
@@ -5488,7 +5502,7 @@
             <p class="stopwrap" id="dis_op"
                 style="font-family:mathfont;"></p><br>  
 
-            <h3>Parallel Line Checker</h3><br>
+            <h3>Line Checker</h3><br>
             <div class="coll">
                 <p>
                     Coordinate 1 = (<input type="text" id="xone" size=5 value='' placeholder="x1"> , 
@@ -5504,36 +5518,16 @@
                 <input type="text" id="yfour" size=5 value='' placeholder="y4">)
                         <br><br>    
                 <button type="button" class="btn btn-light" onclick=parallelsolve()>
-                    Check
+                    Parallel  Check
+                </button>
+                <button type="button" class="btn btn-light" onclick=perpendicularsolve()>
+                    Perpendicular Check
                 </button><br>
                 </p>
             </div><br>
             <p class="text-center" id="line1"> </p> <br>
-	    <p class="text-center" id="line2"> </p> <br>
-            <h3>Perpendicular Line Checker</h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="xoneper" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="yoneper" size=5 value='' placeholder="y1">)
-                    <br>
-                    Coordinate 2 = (<input type="text" id="xtwoper" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="ytwoper" size=5 value='' placeholder="y2">)
-                        <br>
-                    Coordinate 3 = (<input type="text" id="xthreeper" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="ythreeper" size=5 value='' placeholder="y3">)
-                    <br>
-                    Coordinate 4 = (<input type="text" id="xfourper" size=5 value='' placeholder="x4"> , 
-                <input type="text" id="yfourper" size=5 value='' placeholder="y4">)
-                        <br><br>    
-                <button type="button" class="btn btn-light" onclick=perpendicularsolve()>
-                    Check
-                </button><br>
-                </p>
-            </div><br>
-            <h4 class="text-center" id="perline1"> </h4> <br>
-
-            <h4 class="text-center" id="perline2"> </h4> <br>
-           
+            <p class="text-center" id="line2"> </p> <br>
+                       
             <h3 style="text-align: center;">Section Formula</h3><br>
             <div class="coll">
                 <p>
@@ -5782,10 +5776,10 @@
             <br>
             <h4>Area of circle inscribed in a Isosceles Trapezoid </h4>
             <br>
-            <input type="text" id="trapinsemiin1" placeholder="Enter shorter side of trapezoid" class="form__field">
-            <input type="text" id="trapinsemiin2" placeholder="Enter longer side of trapezoid" class="form__field">
+            <input type="text" id="trapinsemin1" placeholder="Enter shorter side of trapezoid" class="form__field">
+            <input type="text" id="trapinsemin2" placeholder="Enter longer side of trapezoid" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="trapinsemi1find()">Find</button>
+            <button class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
             <br>
             <h5 id="trapinsemi1ans"></h5>
             <br>
@@ -5838,7 +5832,14 @@
             <button class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
             <br>
             <h5 id="cirinsemi2ans"></h5>
-            
+            <br>
+            <h4>Maximize a value for a semicircle of given radius</h4>
+            <br>
+            <input type="text" id="cirinsemi3in" placeholder="Enter radius of circle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="cirinsemi3find()">Find</button>
+            <br>
+            <h5 id="cirinsemi3ans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -6727,14 +6728,14 @@
                     <div class="form-group">
                         <h5>Base</h5>
     
-                        <input type="number" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+                        <input type="text" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
                         <h5>Number</h5>
     
-                        <input type="number" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+                        <input type="text" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
                     </div>
                 </div>
                 
@@ -6749,7 +6750,7 @@
                 </button>
     
             </form>
-            
+            <p>&nbsp;</p>
             <div class="form-group"
                  style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
                 <h2 id="result"></h2>
@@ -8028,60 +8029,89 @@
             <br>
             <h2>Number of times the largest Perfect Cube can be subtracted from N</h2>
             <br>
-            <input type="text" id="lacube" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacubefind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacubefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacubeans"></p>
             <br>
             <h2>Find minimum number to be multiplied to make a number a perfect square</h2>
             <br>
-            <input type="text" id="lacube1" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacube1find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube1" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube1find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacube1ans"></p>
             <br>
             <h2>Find minimum number to be divided to make a number a perfect cube</h2>
             <br>
-            <input type="text" id="lacube2" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacube2find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube2" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube2find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacube2ans"></p>
             <br>
             <h2>Find minimum number to be multiplied to make a number a perfect cube</h2>
             <br>
-            <input type="text" id="lacube3" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacube3find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube3" class="form__field" placholder="Enter the number">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube3find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacube3ans"></p>
             <br>
             <h2>Check if number formed by joining two Numbers is Perfect Cube</h2>
             <br>
-            <input type="text" id="lacube4" class="form__field" placholder="Enter the number 1">
-            <input type="text" id="lacube41" class="form__field" placholder="Enter the number 2">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacube4find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube4" class="form__field" placholder="Enter the number 1">
+                <input type="text" id="lacube41" class="form__field" placholder="Enter the number 2">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube4find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacube4ans"></p>
             <br>
             <h2>Difference between Sum of Cubes and Sum of First N Natural Numbers</h2>
             <br>
-            <input type="text" id="lacube5" class="form__field" placholder="Enter the no. of terms in progression">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacube5find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube5" class="form__field" placholder="Enter the no. of terms in progression">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube5find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacube5ans"></p>
             <br>
             <h2>Difference between Sum of Cubes and Sum of Squares of First N Natural Numbers</h2>
             <br>
-            <input type="text" id="lacube6" class="form__field" placholder="Enter the no. of terms in progression">
-            <br>
-            <button type="submit" class="btn btn-dark" onclick="lacube6find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="lacube6" class="form__field" placholder="Enter the no. of terms in progression">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube6find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
             <p id="lacube6ans"></p>
+            <br>
+            <h2>Minimum digits to remove to make a number Perfect Square</h2>
+            <br>
+            <input type="text" id="lacube7" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="submit" class="btn btn-dark" onclick="lacube7find()">Find</button>
+            <br>
+            <p id="lacube7ans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8301,7 +8331,7 @@
             </div>
             <br><br>
         <div class="text-center">
-            <h3>Modulus of Vector</h3><br>
+            <h3>Mono Vector Calculator </h3><br>
         </div>
         <div class="coll">
             <p>
@@ -8310,7 +8340,10 @@
                 <br><br>
                     <br>
             <button type="button" class="btn btn-light" onclick=vecotrmod()>
-                Solve
+                Modulus
+            </button>
+            <button type="button" class="btn btn-light" onclick=vectorunit()>
+                Unit Vector
             </button><br>
             </p>
         </div><br>
@@ -8572,27 +8605,7 @@
         </div>
     
     <br><br>
-    <div class="text-center">
-        <h3>Unit Vector </h3><br>
-    </div>
-    <div class="coll">
-        <p>
-            Vector (a) :   <input type="text" id="vua" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="vub" size=3 value='' placeholder="B"> j + <input type="text" id="vuc" size=3 value='' placeholder="C"> k
-            <br><br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectorunit()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
-    <div class="coll" style="text-align: center; display: block;">
-        <p id="vue"><br></p>
-    <h5 id="vur" style="color: white; font-size: x-large;"></h5>
-</div>
 
-
-    <br><br>
     <div class="text-center">
         <h3>Resultant Vector Calculator</h3><br>
     </div>
@@ -12937,6 +12950,32 @@
                 <h5 id="printheight1" style="color: white; font-size: x-large;"></h5>
                 </div>
 			<br><br>
+            <h4 class="d-flex justify-content-center">To calculate Height when Angle of Depression and Distance is given</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                <input type="number" id="height92" placeholder="Enter Distance (BC)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <input type="number" id="height93"
+                placeholder="Enter Angle of Depression in degree(∠BCA)"
+                style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light" onclick=heightdist9()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="coll1" style="text-align: center;">
+                <h5 id="printheight9" style="color: white; font-size: x-large;"></h5>
+                </div>
+			<br><br>
             <h4 class="d-flex justify-content-center">To calculate Distance when Angle of Elevation and Height is given</h4><br>
             <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                 <input type="number" id="height51" placeholder="Enter Height (AB)"
@@ -14233,6 +14272,11 @@
                            href="#">Annulus</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#yin_yang"
+                           style="text-decoration:none;"
+                           href="#">Half Yin-Yang</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#kite" style="text-decoration:none;"
                            href="#">Kite</a></td>
                 </tr>
@@ -14645,7 +14689,14 @@
             <input type="text" id="cscu4" class="form__field" placeholder="Enter the radius of sphere">
             <br>
             <button class="btn btn-dark" onclick="cscu4find()">Find</button><br>
-            <h5 id="cscu4ans"></h5>           
+            <h5 id="cscu4ans"></h5>   
+            <br>
+            <h4>Largest sphere that can be inscribed inside a cube</h4>
+            <br>
+            <input type="text" id="cscu5" class="form__field" placeholder="Enter the side length of cube">
+            <br>
+            <button class="btn btn-dark" onclick="cscu5find()">Find</button><br>
+            <h5 id="cscu5ans"></h5>        
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -14736,11 +14787,16 @@
                            style="text-decoration:none;"
                            href="#">Hemisphere</a></td>
                 </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#torus"
                            style="text-decoration:none;"
                            href="#">Torus</a></td>
                 </tr>
-
+                <tr>
+                    <td><a data-toggle="modal" data-target="#oloid"
+                           style="text-decoration:none;"
+                           href="#">Oloid</a></td>
+                </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#obelisk"
                            style="text-decoration:none;"
@@ -14902,6 +14958,11 @@
                     <td><a data-toggle="modal" data-target="#tetrahedron"
                            style="text-decoration:none;"
                            href="#">Tetrahedron</a></td>
+                </tr>
+                 <tr>
+                    <td><a data-toggle="modal" data-target="#half_tetra"
+                           style="text-decoration:none;"
+                           href="#">Half Tetrahedron</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#pentahedron"
@@ -15517,39 +15578,44 @@
         </div>
 
         <div class="collapse" id="datecal">
+            
+            <h1 style="text-align: center; ">Date</h1>
+            <br>
             <div class="row">
+              
                 <div class="col-6" style="max-width: 50%;">
-                    <label>
-                        <h5>From</h5>
+                   
+                    <label style="display: block;">
+                        <h5 style="color: #d3d3d3 ;text-align: center; ">From</h5>
                     </label>
                     <input type="date" id="datef" class="form__field" placeholder="Enter Date">
                 </div>
                 <div class="col-6" style="max-width: 50%;">
-                    <label>
-                        <h5>To</h5>
+                    <label style="display: block;">
+                        <h5 style="color: #d3d3d3; text-align:center ;">To</h5>
                     </label>
                     <input type="date" id="datet" class="form__field" placeholder="Enter Date">
                 </div>
             </div>
             <br>
             <div class="dropdown-divider"></div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="datecal()">
+            <div class="form-group" style="display: flex; justify-content: center;">
+                <button  type="button" class="btn btn-light" onclick="datecal()">
                     Find the Difference
                 </button>
             </div>
             <div class="row">
                 <div class="col-6" style="max-width: 66%;">
-                    <label>
-                        <h5>Difference (years , months ,days) </h5>
+                    <label style="display: block;"> 
+                        <h5 style="color: #d3d3d3; text-align: center; ">Difference (years , months ,days) </h5>
                     </label>
-                    <p id="date-1">0</p>
+                    <p style="text-align:center" id="date-1">0</p>
                 </div>
                 <div class="col-6" style="max-width: 33%;">
-                    <label>
-                        <h5>Difference (days)</h5>
+                    <label style="display: block;">
+                        <h5 style="color: #d3d3d3 ;text-align: center;">Difference (days)</h5>
                     </label>
-                    <p id="date-2">0</p>
+                    <p style="text-align:center" id="date-2">0</p>
                 </div>
             </div>
         </div>
@@ -17072,10 +17138,28 @@
     <br>
     <input type="text"id="gcdin1" placeholder="Enter number 1" class="form__field">
     <input type="text"id="gcdin2" placeholder="Enter number 2" class="form__field">
-    <br>+
+    <br>
     <button class="btn btn-dark" onclick="gcdfind()">FInd</button>
     <br>
     <h4 id="gcdans"></h4>
+    <br>
+    <h2>Sum of GCD of all numbers upto N with N itself</h2>
+    <br>
+    <input type="text"id="gcdin3" placeholder="Enter number " class="form__field">
+    <br>
+    <button class="btn btn-dark" onclick="gcd1find()">FInd</button>
+    <br>
+    <h4 id="gcd1ans"></h4>
+</div>
+
+<div class="collapse" id="lns">
+    <h1 style="color: white;font-family:mathfont">Ln Calculator</h2>
+    <p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="ln1" placeholder="Enter the input number" class="form__field">
+    <p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="lnfind()">FInd</button>
+    <p>&nbsp;</p>
+    <h4 style="color: white;font-family:mathfont" id="lnans"></h4>
 </div>
 
 <!-- doubling time starts -->
@@ -17502,6 +17586,14 @@ N is the population size.
     <button class="btn btn-dark" onclick="typenum1find()">Find</button>
     <br>
     <h5 id="typenum1ans"></h5>
+    <br>
+    <h2>Hardy-Ramanujan Theorem</h2>
+    <br>
+    <input type="text" id="typenum2" class="form__field"placeholder="Enter the number">
+    <br>
+    <button class="btn btn-dark" onclick="typenum2find()">Find</button>
+    <br>
+    <h5 id="typenum2ans"></h5>
 </div>
 
 <div class="collapse" id="zscores">
@@ -17646,6 +17738,18 @@ N is the population size.
    
 </div>
 
+<div class="collapse" id="expansionc">
+    <h2>Expansion Calculator</h2>
+    <br><br>
+    <h4>Sum of the Tan(x) expansion upto N terms</h4>
+    <br>
+    <input type="text" id="exc1" class="form__field" placeholder="Enter value of x">
+    <input type="text" id="exc2" class="form__field" placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="exc1find()">Find</button>
+    <br>
+    <h5 id="exc1ans"></h5>
+</div>
 
 <div class="collapse" id="numcubesRanges">
 
@@ -18271,7 +18375,7 @@ N is the population size.
             </div>
             <div class="col-6">
                 <div class="form-group">
-                    <h2>Result Of Addition</h2>
+                    <h2>Result Of Multiplication</h2>
                     <h5>Choose Number System</h5>
                     <select id="multiplying-all-result-type" class="form__field"
                     onchange="multBinDecHexOct()">
@@ -19223,13 +19327,21 @@ N is the population size.
     <br>
     <p id="impse3ans"></p>
     <br>
-    <h4>Sum Gould's sequence</h4>
+    <h4>Sum of Gould's sequence</h4>
     <br>
     <input type="text" id="impse8"class="form__field"placeholder="Enter no. of terms">
     <br>
     <button class="btn btn-dark" onclick="impse4find()">Find</button>
     <br>
     <p id="impse4ans"></p>
+    <br>
+    <h4>Sum of Arcuin's sequence</h4>
+    <br>
+    <input type="text" id="impse9"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse5find()">Find</button>
+    <br>
+    <p id="impse5ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
@@ -21883,9 +21995,9 @@ N is the population size.
                             </div>
                             <div class="dropdown-divider"></div>
                             <!-- --------FROM------- -->
-                            <input type="text" id="triquesidea" class = "form__field" oninput="antipodal()" 
+                            <input type="text" id="antidigonr" class = "form__field" oninput="antipodal()" 
                                 placeholder="Enter radius (r)">
-                            <input type="text" id="triquesidea" class = "form__field" oninput="antipodal()" 
+                            <input type="text" id="antidigona" class = "form__field" oninput="antipodal()" 
                                 placeholder="Enter Angle (&#945)">
                                 <br><br>
                                 <p class="stopwrap" id="antidigonperi"
@@ -21968,6 +22080,61 @@ N is the population size.
                                     data-dismiss="modal">Close
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="yin_yang" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Half Yin-Yang</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (P)</h5>
+                                    <p class="text-center">\[P = 2 \times \pi r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[d= 2 \times r\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/yin-yang-half.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputhalfyinr" class = "form__field" oninput="solveyinyang()" 
+                                placeholder="Enter circle radius (r)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofhalfyinarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfyinperi"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfyindia"
+                                   style="font-family:mathfont;"></p><br>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>
@@ -27377,6 +27544,66 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="half_tetra" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Half Tetrahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{a^3 \times \sqrt{2}}{24}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = a^2 \times \Big(\frac{\sqrt{3}}{2}-\frac{1}{4} \Big)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Half Edge (b)</h5>
+                                    <p class="text-center">\[b= \frac{a}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h= \frac{a \times \sqrt{6}}{6}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/halft.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputhalftetraa" class = "form__field" oninput="solvehalft()" 
+                                placeholder="Enter Tetrahedron edge (a)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofhalftvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalftarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfb"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofhalftheight"
+                                   style="font-family:mathfont;"></p><br>
+        
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="spheroidalcap" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -27783,6 +28010,61 @@ N is the population size.
                                     data-dismiss="modal">Close
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="oloid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Oloid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = 3.052 \times r^3\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = 4 \times \pi r^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Edge lenght(a)</h5>
+                                    <p class="text-center">\[a = \frac{4}{3} \pi r\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/oloid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputoloidr" class = "form__field" oninput="solveoloid()" 
+                                placeholder="Enter circle radius(r)">
+                                <br><br>
+                                <p class="stopwrap" id="resultofoloidvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofoloidarea"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofoloida"
+                                   style="font-family:mathfont;"></p><br>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>

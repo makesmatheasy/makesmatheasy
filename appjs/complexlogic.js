@@ -1863,29 +1863,7 @@ function oocal()
     }
     document.getElementById("ooans").innerHTML=ans;
 }
-function manhatcal()
-{
-    var num1=document.getElementById("mdx1").value;
-    var num2=document.getElementById("mdx2").value;
-    var num3=document.getElementById("mdx3").value;
-    var num4=document.getElementById("mdx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
 
-        var f=Maths.abs(num1-num3)+Maths.abs(num2-num4);
-        ans="The calculated Manhattan Distance is: "+f;
-    }
-    document.getElementById("manhatans").innerHTML=ans;
-}
 function mifcal()
 {
     var num1=document.getElementById("mians1").value;

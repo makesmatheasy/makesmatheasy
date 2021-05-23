@@ -1327,13 +1327,18 @@ function centcal(){
        var x3 = ((b3*c1)-(b1*c3))/((a1*b3)-(a3*b1));
        var y3 = ((c3*a1)-(c1*a3))/((a1*b3)-(a3*b1));
 
- 
-
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     var ans = "( " + ((x1 + x2 +x3)/3).toFixed(2).toString() + ", " 
     + ((y1 + y2 + y3)/3).toFixed(2).toString() + " )";
 
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
+}
+else{
+    document.getElementById("rcch").innerHTML = "Please enter all fields";
+    document.getElementById("rcc").innerHTML = "";
+}
 }
 
 function rtfind(){
@@ -1410,7 +1415,7 @@ function enneagramfind(){
         }
 }
 
-function cenintcal(){
+function cencirtcal(){
     var a1 = parseInt(document.getElementById("fxc").value);
     var a2 = parseInt(document.getElementById("sxc").value);
     var a3 = parseInt(document.getElementById("txc").value);
@@ -1453,10 +1458,16 @@ function cenintcal(){
     var o1 = (((b4*c5)-(b5*c4))/((a5*b4)-(a4*b5))).toFixed(2);
     var o2 = (((c4*a5)-(c5*a4))/((a5*b4)-(a4*b5))).toFixed(2);
 
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     var ans = "( " + o1 + ", " + o2 + " )";
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML ="Circumcenter of Triangle";
-
+    }
+    else{
+        document.getElementById("rcch").innerHTML = "Please enter all fields";
+        document.getElementById("rcc").innerHTML = "";
+    }
 }
 
 
@@ -1489,11 +1500,16 @@ function cenintcal(){
 
     var o1 = ((((a*x1)+(b*x2)+(c*x3))/(a+b+c))).toFixed(2);
     var o2 = ((((a*y1)+(b*y2)+(c*y3))/(a+b+c))).toFixed(2);
-
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     var ans = "( " + o1 + ", " + o2 + " )";
     document.getElementById("rcc").innerHTML = ans;
     document.getElementById("rcch").innerHTML ="Incenter of Triangle";
-
+    }
+    else{
+        document.getElementById("rcch").innerHTML = "Please enter all fields";
+        document.getElementById("rcc").innerHTML = "";
+    }
 }
 
 
@@ -1531,12 +1547,17 @@ function cenextcal(){
     var excenteropy1 = ((-a*y1 + b*y2 + c*y3)/(-a+b+c)).toFixed(2);
     var excenteropy2 = ((a*y1 - b*y2 + c*y3)/(a-b+c)).toFixed(2);
     var excenteropy3 = ((a*y1 + b*y2 - c*y3)/(a+b-c)).toFixed(2);
-
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+    {
     document.getElementById("rcc").innerHTML = `The excentre for first side is ( ${excenteropx1} , ${excenteropy1} ) <br>`;
     document.getElementById("rcc").innerHTML += `The excentre for second side is ( ${excenteropx2} , ${excenteropy2} ) <br>`;
     document.getElementById("rcc").innerHTML += `The excentre for third side is ( ${excenteropx3} , ${excenteropy3} ) <br>`;
     document.getElementById("rcch").innerHTML ="Excenter of Triangle";
-
+    }
+    else{
+        document.getElementById("rcch").innerHTML = "Please enter all fields";
+        document.getElementById("rcc").innerHTML = "";
+    }
 }
 //check for set value buttons
 function checkforusetrigovalue() {
@@ -2240,6 +2261,39 @@ function Rhombohedron(){
     }
 }
 
+function solvehalft() {
+    var a = document.getElementById("inputhalftetraa").value;
+    var voloutput = document.getElementById("resultofhalftvol");
+    var areaoutput = document.getElementById("resultofhalftarea");
+    var boutput = document.getElementById("resultofhalfb");
+    var heightoutput = document.getElementById("resultofhalftheight");
+    var areatemp = "";
+    var voltemp = "";
+    var btemp = "";
+    var heighttemp = "";
+    if (a != "") {
+        voltemp += "\\[Volume \\space of \\space Half \\space Tetrahedron \\space \\newline \\frac{" + a + "^3 \\times \\sqrt{2}}{24}" + "\\ = " + eval(String(0.059*a*a*a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Half \\space Tetrahedron \\space  \\newline" + a + "^2 \\times (\\frac{\\sqrt{3}}{2} + \\frac{1}{4})" + "\\ = " + eval(String(1.116*a*a)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        btemp += "\\[Half \\space edge \\space of \\space Half \\space Tetrahedron \\space  \\newline" + "\\frac{" + a + "}{2}" + "\\ = " + eval(String(0.5*a)).toFixed(3) + "\\]";
+        boutput.innerHTML = btemp;  
+        heighttemp += "\\[Height \\space of \\space Half \\space Tetrahedron \\space  \\newline" + "\\frac{" + a + "\\times \\sqrt{6}}{6}"  +  "\\ = " + eval(String(0.408*a)).toFixed(3) + "\\]";
+        heightoutput.innerHTML = heighttemp;  
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(boutput);
+        renderMathInElement(heightoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        boutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+
+}
+
 function cramer(){
     var a=parseFloat(document.getElementById('cab').value);
     var b=parseFloat(document.getElementById('cab1').value);
@@ -2487,7 +2541,7 @@ function impse3find(){
 
 
 function impse4find(){
-    let n = parseInt(document.getElementById("impse7").value)  
+    let n = parseInt(document.getElementById("impse8").value)  
     for (var row_num = 1; row_num <= n; row_num++) { 
         var count = 1;
         var c = 1; 
@@ -2498,6 +2552,13 @@ function impse4find(){
         }
         document.getElementById("impse7ans").innerHTML =  count + " ";
     }
+}
+
+function impse5find(){
+    let n = parseInt(document.getElementById("impse9").value) 
+    let _n = n, ans; 
+    ans = Math.round((_n * _n) / 12)- Math.floor(_n / 4)* Math.floor((_n + 2) / 4); 
+    document.getElementById("impse9ans").innerHTML =  ans;
 }
 
 function solvetetrahexa(){
@@ -2834,6 +2895,70 @@ function midpointsolve()
     }
 }
 }
+
+
+function pppdoSolve() {
+    var a=parseFloat(document.getElementById('pppdaqo1').value);
+    var b=parseFloat(document.getElementById('pppdbqo1').value);
+    var c=parseFloat(document.getElementById('pppdcqo1').value);
+    
+   
+    var dis = ((a*a)+(b*b));
+    var p =Math.abs(c);
+
+    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById('pppdcq1outputo').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("pppdcq1outputo"));
+        document.getElementById('pppdcq1explaneo').innerHTML = "";
+        renderMathInElement(document.getElementById("pppdcq1explaneo"));
+    } else{
+        document.getElementById('pppdcq1explaneo').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1explaneo"));
+
+        if(!(Number.isInteger(Math.sqrt(dis))))
+        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
+        else
+        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
+        renderMathInElement(document.getElementById("pppdcq1outputo"));
+    }
+}
+
+
+function anglesolve() {
+    var a1=parseFloat(document.getElementById('aone').value);
+    var b1=parseFloat(document.getElementById('bone').value);
+    var c1=parseFloat(document.getElementById('cone').value);
+    var a2=parseFloat(document.getElementById('atwo').value);
+    var b2=parseFloat(document.getElementById('btwo').value);
+    var c2=parseFloat(document.getElementById('ctwo').value);
+
+    if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {
+        document.getElementById("formula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("formula1").innerHTML = "";
+        document.getElementById("formula2").innerHTML = "";
+        document.getElementById("formula3").innerHTML = "";
+        document.getElementById('inter_output').innerHTML= "";
+        renderMathInElement(document.getElementById("formula"));
+        renderMathInElement(document.getElementById("formula1"));
+        renderMathInElement(document.getElementById("formula2"));
+        renderMathInElement(document.getElementById("formula3"));
+        renderMathInElement(document.getElementById("inter_output"));
+    } else {
+        var M1 = (-a1) / b1;
+        var M2 = (-a2) / b2;
+        var angle = Math.atan((M2 - M1) / (1 + M1 * M2));
+        document.getElementById("formula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-" + a1 + ")}{" + b1 + "}  \\space , \\space m2 = \\frac{(-" + a2 + ")}{" + b2 + "}\\] ";
+        document.getElementById("formula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
+        document.getElementById("formula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{(" + M2.toFixed(2) + ") - (" + M1.toFixed(2) + ")}{1+ (" + M1.toFixed(2) + ") \\times (" + M2.toFixed(2) + ")}) \\]";
+        document.getElementById('inter_output').innerHTML = "\\[Angle \\space is \\space \\frac{" + angle.toFixed(3) + "}{\\pi} \\space = \\space" + (angle * 180 / Math.PI).toFixed(1) + "\\degree\\]";
+        renderMathInElement(document.getElementById("formula"));
+        renderMathInElement(document.getElementById("formula1"));
+        renderMathInElement(document.getElementById("formula2"));
+        renderMathInElement(document.getElementById("inter_output"));
+
+    }
+}
+
 function interpointsolve() {
     var a1=parseFloat(document.getElementById('aone').value);
     var b1=parseFloat(document.getElementById('bone').value);
@@ -2866,65 +2991,6 @@ function interpointsolve() {
     renderMathInElement(document.getElementById("formula2"));
     renderMathInElement(document.getElementById("formula3"));
     renderMathInElement(document.getElementById("inter_output"));
-    }
-}
-
-
-function pppdoSolve() {
-    var a=parseFloat(document.getElementById('pppdaqo1').value);
-    var b=parseFloat(document.getElementById('pppdbqo1').value);
-    var c=parseFloat(document.getElementById('pppdcqo1').value);
-    
-   
-    var dis = ((a*a)+(b*b));
-    var p =Math.abs(c);
-
-    if( isNaN(d) || isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById('pppdcq1outputo').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
-        renderMathInElement(document.getElementById("pppdcq1outputo"));
-        document.getElementById('pppdcq1explaneo').innerHTML = "";
-        renderMathInElement(document.getElementById("pppdcq1explaneo"));
-    } else{
-        document.getElementById('pppdcq1explaneo').innerHTML = "\\[ Distance \\space = \\space \\frac{ | \\space "+ c+ " | }{ \\sqrt { ("+ a +" )^2 \\space + \\space ("+ b +")^2 \\space } } \\space  \\]";
-        renderMathInElement(document.getElementById("pppdcq1explaneo"));
-
-        if(!(Number.isInteger(Math.sqrt(dis))))
-        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+  p+ " }{ \\sqrt { "+ dis + "  } } \\space  \\]";
-        else
-        document.getElementById('pppdcq1outputo').innerHTML = "\\[ Distance \\space = \\space \\frac{ "+ p+ " }{ "+ Math.sqrt(dis) +" } \\space  \\]";
-        renderMathInElement(document.getElementById("pppdcq1outputo"));
-    }
-}
-
-
-function anglesolve() {
-    var a1 = parseFloat(document.getElementById('a1st').value);
-    var b1 = parseFloat(document.getElementById('b1st').value);
-    var a2 = parseFloat(document.getElementById('a2nd').value);
-    var b2 = parseFloat(document.getElementById('b2nd').value);
-
-    if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {
-        document.getElementById("angleformula").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
-        document.getElementById("angleformula1").innerHTML = "";
-        document.getElementById("angleformula2").innerHTML = "";
-        document.getElementById('angle_output').innerHTML = "";
-        renderMathInElement(document.getElementById("angleformula"));
-        renderMathInElement(document.getElementById("angleformula1"));
-        renderMathInElement(document.getElementById("angleformula2"));
-        renderMathInElement(document.getElementById("angle_output"));
-    } else {
-        var M1 = (-a1) / b1;
-        var M2 = (-a2) / b2;
-        var angle = Math.atan((M2 - M1) / (1 + M1 * M2));
-        document.getElementById("angleformula").innerHTML = "\\[Angle \\space between \\space two \\space lines \\space \\space m1 = \\frac{(-" + a1 + ")}{" + b1 + "}  \\space , \\space m2 = \\frac{(-" + a2 + ")}{" + b2 + "}\\] ";
-        document.getElementById("angleformula1").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{m2 - m1}{1+m1 \\times m2})\\]";
-        document.getElementById("angleformula2").innerHTML = "\\[\\space = \\space tan^{-1}(\\frac{(" + M2.toFixed(2) + ") - (" + M1.toFixed(2) + ")}{1+ (" + M1.toFixed(2) + ") \\times (" + M2.toFixed(2) + ")}) \\]";
-        document.getElementById('angle_output').innerHTML = "\\[Angle \\space is \\space \\frac{" + angle.toFixed(3) + "}{\\pi} \\space = \\space" + (angle * 180 / Math.PI).toFixed(1) + "\\degree\\]";
-        renderMathInElement(document.getElementById("angleformula"));
-        renderMathInElement(document.getElementById("angleformula1"));
-        renderMathInElement(document.getElementById("angleformula2"));
-        renderMathInElement(document.getElementById("angle_output"));
-
     }
 }
 
@@ -3044,6 +3110,38 @@ function pppdSolve() {
     }
 }
 
+
+function perpendicularsolve(){
+    var x1,y1,x2,y2,x3,y3,x4,y4;
+    x1=parseFloat(document.getElementById('xone').value);
+    y1=parseFloat(document.getElementById('yone').value);
+    x2=parseFloat(document.getElementById('xtwo').value);
+    y2=parseFloat(document.getElementById('ytwo').value);
+    x3=parseFloat(document.getElementById('xthree').value);
+    y3=parseFloat(document.getElementById('ythree').value);
+    x4=parseFloat(document.getElementById('xfour').value);
+    y4=parseFloat(document.getElementById('yfour').value);
+    var explain = document.getElementById("line1");
+    var explain1 = document.getElementById("line2");
+
+    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)){
+        explain.innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        explain1.innerHTML = "";
+        renderMathInElement(explain);
+        renderMathInElement(explain1);
+    }else{
+    var m1= (y2-y1)/(x2-x1);
+    var m2 = (y4-y3)/(x4-x3);
+    if(m1*m2==-1){
+        explain.innerHTML = "\\[Lines \\space y \\space - \\space " + y1 + " = " + " \\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + " y \\space - \\space " + y3 + " = " + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Perpendicular" + "\\] ";
+        renderMathInElement(document.getElementById("line1"));
+    }
+    else{
+        explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + " = " + " \\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + " y \\space - \\space " + y3 + " = " + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Perpendicular" + "\\] ";
+        renderMathInElement(document.getElementById("line1"));
+    }
+}
+}
 function parallelsolve()
 {
     var x1,y1,x2,y2,x3,y3,x4,y4;
@@ -3068,48 +3166,16 @@ function parallelsolve()
     if(m1==m2){
         explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Parallel" + "\\] ";
         renderMathInElement(document.getElementById("line1"));
-        document.getElementById('output1').innerHTML= 'Lines are Parallel ' ;
+        // document.getElementById('line2').innerHTML= 'Lines are Parallel ' ;
     }
     else{
-        explain1.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Parallel" + "\\] ";
-        renderMathInElement(document.getElementById("line2"));
-        document.getElementById('output2').innerHTML= 'Lines are not parallel';
+        explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Parallel" + "\\] ";
+        renderMathInElement(document.getElementById("line1"));
+        // document.getElementById('line2').innerHTML= 'Lines are not parallel';
     }
 }
     
 }
-function perpendicularsolve(){
-    var x1,y1,x2,y2,x3,y3,x4,y4;
-    x1=parseFloat(document.getElementById('xoneper').value);
-    y1=parseFloat(document.getElementById('yoneper').value);
-    x2=parseFloat(document.getElementById('xtwoper').value);
-    y2=parseFloat(document.getElementById('ytwoper').value);
-    x3=parseFloat(document.getElementById('xthreeper').value);
-    y3=parseFloat(document.getElementById('ythreeper').value);
-    x4=parseFloat(document.getElementById('xfourper').value);
-    y4=parseFloat(document.getElementById('yfourper').value);
-    var explain = document.getElementById("perline1");
-    var explain1 = document.getElementById("perline2");
-
-    if(isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)){
-        explain.innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
-        explain1.innerHTML = "";
-        renderMathInElement(explain);
-        renderMathInElement(explain1);
-    }else{
-    var m1= (y2-y1)/(x2-x1);
-    var m2 = (y4-y3)/(x4-x3);
-    if(m1*m2==-1){
-        explain.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space Perpendicular" + "\\] ";
-        renderMathInElement(document.getElementById("perline1"));
-    }
-    else{
-        explain1.innerHTML = "\\[Lines \\space y \\space - \\space" + y1 + "=" + "\\frac{" + y2 +"-"+ y1 + "}{" + x2 + "-" + x1 + "}" + "( \\space x \\space - \\space " + x1 + ") \\space and \\space " + "y \\space - \\space" + y3 + "=" + "\\frac{" + y4 +"-"+ y3 + "}{" + x4 + "-" + x3 + "}" + "( \\space x \\space - \\space " + x3 + ") \\space are \\space not \\space Perpendicular" + "\\] ";
-        renderMathInElement(document.getElementById("perline2"));
-    }
-}
-}
-
 function solvesection()
 {
     var x1,y1,x2,y2,m,n;
@@ -3751,30 +3817,6 @@ function vectpral(){
     }
 }
 
-function vecotrmod(){
-    var a=parseFloat(document.getElementById('vma').value);
-    var b=parseFloat(document.getElementById('vmb').value);
-    var c=parseFloat(document.getElementById('vmc').value);
-    if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
-        document.getElementById("vme").innerHTML ="";
-        renderMathInElement(document.getElementById("vmr"));
-        renderMathInElement(document.getElementById("vme"));
-
-    }else{
-    var ans = (a*a)+(c*c)+(b*b);
-    if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
-    else
-    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
-
-    renderMathInElement(document.getElementById("vmr"));
-  
-    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
-    renderMathInElement(document.getElementById("vme"));
-    }
-}
-
 
 function vectorplanar(){
     var a=parseFloat(document.getElementById('inp11').value);
@@ -3806,35 +3848,59 @@ function vectorplanar(){
     }
 }
 }
+function vecotrmod(){
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("vmr").innerHTML = "\\[Please \\space enter \\space all \\space fields.\\]";
+        document.getElementById("vme").innerHTML ="";
+        renderMathInElement(document.getElementById("vmr"));
+        renderMathInElement(document.getElementById("vme"));
+
+    }else{
+    var ans = (a*a)+(c*c)+(b*b);
+    if(Number.isInteger(Math.sqrt(ans)))
+    document.getElementById("vmr").innerHTML = "\\[ ="  + (Math.sqrt(ans)) + "\\]";
+    else
+    document.getElementById("vmr").innerHTML = "\\[ =   \\space \\sqrt{"+(ans) + "} \\]";
+
+    renderMathInElement(document.getElementById("vmr"));
+  
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vme"));
+    }
+}
+
 
 
 function vectorunit(){
-    var a=parseFloat(document.getElementById('vua').value);
-    var b=parseFloat(document.getElementById('vub').value);
-    var c=parseFloat(document.getElementById('vuc').value);
+    var a=parseFloat(document.getElementById('vma').value);
+    var b=parseFloat(document.getElementById('vmb').value);
+    var c=parseFloat(document.getElementById('vmc').value);
 
     var ans = (a*a)+(c*c)+(b*b);
     if(isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById("vue").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
-        renderMathInElement(document.getElementById("vue"));
+        document.getElementById("vme").innerHTML = "\\[Please \\space enter \\space all \\space field \\]";
+        renderMathInElement(document.getElementById("vme"));
     }
     else{
-    document.getElementById("vue").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
+    document.getElementById("vme").innerHTML = `\\[ Modulus \\space  of \\space Vectors \\space   = \\space \\sqrt{${a}^2+${b}^2+${c}^2} \\space   ` ;
 
 
     if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vue").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
+    document.getElementById("vme").innerHTML += " ="  + (Math.sqrt(ans)) + "\\]";
     else
-    document.getElementById("vue").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
-    renderMathInElement(document.getElementById("vue"));
+    document.getElementById("vme").innerHTML += " =   \\space \\sqrt{"+(ans) + "} \\]";
+    renderMathInElement(document.getElementById("vme"));
 
 
-    document.getElementById("vur").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{j} )} {  ` ;
+    document.getElementById("vmr").innerHTML = `\\[ Unit \\space Vector  \\space \\space (\\hat{a} )   = \\frac{( \\space ${a} \\hat{i} ) + ( \\space ${b} \\hat{j} ) + ( \\space ${c} \\hat{k} )} {  ` ;
     if(Number.isInteger(Math.sqrt(ans)))
-    document.getElementById("vur").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
+    document.getElementById("vmr").innerHTML += " ="  + (Math.sqrt(ans)) + " }\\]";
     else
-    document.getElementById("vur").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
-    renderMathInElement(document.getElementById("vur"));
+    document.getElementById("vmr").innerHTML += " =   \\space \\sqrt{"+(ans) + "} } \\]";
+    renderMathInElement(document.getElementById("vmr"));
 }
 }
 function vectorscalar(){
@@ -6552,6 +6618,33 @@ function solveannulus() {
     }
 }
 
+function solveyinyang() {
+    var r = document.getElementById("inputhalfyinr").value;
+    var perioutput = document.getElementById("resultofhalfyinperi");
+    var areaoutput = document.getElementById("resultofhalfyinarea");
+    var diaoutput = document.getElementById("resultofhalfyindia");
+    var areatemp = "";
+    var peritemp = "";
+    var diatemp = "";
+    if (r != "") {
+        areatemp += "\\[Area \\space of \\space Half \\space Yin-Yang \\space  \\newline" + " \\frac{ \\pi \\times" + r + "^2}{2}" + "\\ = " + eval(String(0.5*3.14*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        peritemp += "\\[Perimeter \\space of \\space Half \\space Yin-Yang \\space  \\newline" + "2 \\times \\pi \\times " + r + "\\ = " + eval(String(2*3.14*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;  
+        diatemp += "\\[Diameter \\space of \\space Half \\space Yin-Yang \\space  \\newline" + "2 \\times " + r  +  "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;  
+        renderMathInElement(areaoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(diaoutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+    }
+
+}
+
 // ellipse calculator function
 
 function solveellipse() {
@@ -7883,6 +7976,31 @@ function heightdist1(){
 
 }
 
+function heightdist9(){
+    var distance = parseFloat(document.getElementById("height92").value);
+    var degree = parseFloat(document.getElementById("height93").value);
+    var output = document.getElementById("printheight9");
+    var temp = "";
+    var deg1 = Math.tan(degree*Math.PI/180).toFixed(3)
+    if(!isNaN(distance) && !isNaN(degree)){
+        temp += "\\[Distance(AC) \\space = \\space " + distance + "m \\]";
+        temp += "\\[Angle \\space of \\space Depression(∠BAC) \\space = \\space " + degree + "\\degree \\]";
+        temp += "\\[tan θ \\space = \\space \\frac{Opposite Side}{Adjacent Side} \\]";
+        temp += "\\[tan " + degree + "\\degree \\space = \\space \\frac{AB}{BC} \\]";
+        temp += "\\[" + deg1 + "\\space = \\space \\frac{AB}{" + distance + "} \\]";
+        temp += "\\[AB \\space = \\space " + distance + "\\times" + deg1 + " \\space = \\space " + (distance*deg1) + " \\]";
+        temp += "\\[Height \\space is \\space " + (distance*deg1) + "m \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+
+}
+
 function heightdist5(){
     var height = parseFloat(document.getElementById("height51").value);
     var degree = parseFloat(document.getElementById("height52").value);
@@ -8122,6 +8240,34 @@ function torussolve() {
         tsaoutput.innerHTML = "";
     }
   }
+
+
+  function solveoloid() {
+    var r = document.getElementById("inputoloidr").value;
+    var voloutput = document.getElementById("resultofoloidvol");
+    var areaoutput = document.getElementById("resultofoloidarea");
+    var aoutput = document.getElementById("resultofoloida");
+    var areatemp = "";
+    var voltemp = "";
+    var atemp = "";
+    if (r != "") {
+        voltemp += "\\[Volume \\space of \\space Oloid \\space \\newline 3.052 \\times" + r + "^3 " + "\\ = " + eval(String(3.052*r*r*r)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Oloid \\space  \\newline 4 \\times \\pi \\times " + r + "^2 " + "\\ = " + eval(String(12.566*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;  
+        atemp += "\\[Half \\space edge \\space of \\space Oloid \\space  \\newline" + "\\frac{4}{3} \\times \\pi \\times " + r + "\\ = " + eval(String(4.189*r)).toFixed(2) + "\\]";
+        aoutput.innerHTML = atemp;  
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(aoutput);
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        aoutput.innerHTML = "";
+    }
+
+}
+
 
 //4-D Shapes Calculator
 //created function for tesseract
@@ -10232,6 +10378,12 @@ function cirinsemi2find(){
     }
 }
 
+function cirinsemi3find(){
+    let R = parseInt(document.getElementById("cirinsemi3in").value)
+    let ans = 4 * R * R + 0.25;  
+    document.getElementById("cirinsemi3ans").innerHTML = ans
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
@@ -10486,6 +10638,30 @@ function typenum1find(){
         prev = curr;
     }
 }
+
+function typenum2find(){
+    let n = parseInt(document.getElementById("typenum2").value)
+    let count = 0;
+ 
+    if (n % 2 == 0)
+    {
+        count++;
+        while (n % 2 == 0)
+            n = n / 2;
+    }
+    for(let i = 3; i <= Math.sqrt(n); i = i + 2)
+    {
+        if (n % i == 0)
+        {
+            count++;
+            while (n % i == 0)
+                n = n / i;
+        }
+    }
+    if (n > 2)
+        count++;
+    document.getElementById("typenum1ans").innerHTML =  count;
+}    
 
 function findTriangularNumber(n)
 {
@@ -11214,9 +11390,49 @@ function lacube5find(){
 function lacube6find(){
     let n  = parseInt(document.getElementById("lacube6").value)
     let S = Math.pow(((n * (n + 1)) / 2),2)
-    let x = (n*(n+1)(2*(n)+1))/6
+    let x = (n*(n+1)*(2*(n)+1))/6
     res = S-x   
     document.getElementById("lacube6ans").innerHTML =  res;
+}
+
+function lacube7find(){
+    let s = document.getElementById("lacube7").value;
+    let n = s.length();
+    let ans = -1;
+    let num = "";
+        for (let i = 1; i < (1 << n); i++) {
+            let str = "";
+
+            for (let j = 0; j < n; j++) {
+                if (((i >> j) & 1) == 1) {
+                    str += s.charAt(j);
+                }
+            }
+            if (str.charAt(0) != '0') {
+                let temp = 0;
+                for (let j = 0; j < 
+                              str.length(); j++)
+                    temp = temp * 10 + 
+                      (int)(str.charAt(j) - '0');
+
+                let k = Number(Math.sqrt(temp));
+                if (k * k == temp) {
+                    if (ans < Number(str.length())) {
+                        ans = Number(str.length());
+                        num = str;
+                    }
+                }
+            }
+        }
+
+        if (ans == -1)
+            return ans;
+        else {
+
+            // print PerfectSquare
+            document.getElementById("lacube7ans").innerHTML =  num + " ";
+            return n - ans;
+        }
 }
 
 function isPerfectCube(x)
@@ -12442,6 +12658,38 @@ function gcdfind(){
     if (a == 0)
         return b;
     document.getElementById("gcdans").innerHTML =  gcd(b % a, a);
+}
+
+function gcd1find(){
+    let n = parseInt(document.getElementById("gcdin1").value)
+    let res = 0;
+ 
+    for (let i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            let d1 = i;
+            let d2 = Math.floor(n / i)
+            res += d1 * getCount(d1, n);
+            if (d1 != d2)
+                res += d2 * getCount(d2, n);
+        }
+    }
+ 
+    document.getElementById("gcd1ans").innerHTML= res;
+}
+
+function getCount(d, n){ 
+    let no = Math.floor(n / d); 
+    let result = no;
+    for (let p = 2; p * p <= no; ++p) {
+        if (no % p == 0) {
+            while (no % p == 0)
+                no = Math.floor(no / p);
+            result = Math.floor(result - result / p);
+        }
+    }
+    if (no > 1)
+        result = Math.floor(result - result / no);
+    return result;
 }
 
 //---------------------------------------------------------------------
@@ -13971,6 +14219,35 @@ function convertBinhex() {
     }
 }
 
+function exc1find(){
+    let terms = parseInt(document.getElementById("exc1").value)
+    let x = parseInt(document.getElementById("exc2").value)
+    let sum = 0;
+ 
+    for (let i = 1; i <= terms; i += 1) {
+        let B = 0;
+        let Bn = 2 * i;
+        for (let k = 0; k <= Bn; k++) {
+            let temp = 0;
+            for (let r = 0; r <= k; r++)
+                temp = temp + Math.pow(-1, r) * fac(k) * Math.pow(r, Bn)/ (fac(r) * fac(k - r)); 
+            B = B + temp / (k + 1);
+        }
+        sum =sum + Math.pow(-4, i) * (1 - Math.pow(4, i)) * B *Math.pow(x, 2 * i - 1) / fac(2 * i);
+    }
+    document.getElementById("exc1ans").innerHTML =  sum.toFixed(10);
+}
+
+function fac(num)
+{
+    if (num == 0)
+        return 1;
+    let fact = 1;
+    for (let i = 1; i <= num; i++)
+        fact = fact * i;
+    return fact;
+}
+ 
 
 // 1's 2's complement
 function onetwoCalc() {
@@ -14231,6 +14508,12 @@ function cscu4find(){
     let R = parseInt(document.getElementById("cscu4").value)
     var V = ((2 * 3.14 * Math.pow(R, 3)) /(3 * Math.sqrt(3)));
     document.getElementById("cscu4ans").innerHTML =  V;
+}
+
+function cscu5find(){
+    let a = parseInt(document.getElementById("cscu5").value)
+    var r = a / 2;
+    document.getElementById("cscu5ans").innerHTML =  r;
 }
 
 function computeprobability() {
