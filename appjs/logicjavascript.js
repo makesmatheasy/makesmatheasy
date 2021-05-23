@@ -14043,6 +14043,9 @@ function convertbcd() {
         var temp = "";
         temp = bcdTOdecimal(input).join('');
         result.innerHTML = parseInt(temp,10).toString(2);
+    }else if(fromCode == "Octal" && toCode == "BCD Code"){
+        input = parseInt(input,8).toString();
+        result.innerHTML = decimalTObcd(input);
     }
     
     if (input == "") {
@@ -14051,6 +14054,8 @@ function convertbcd() {
         result.innerHTML = "BCD Code can only have 0's and 1's";
     } else if (fromCode == "Binary" && input.search(/^[10]+$/) == -1 ){
         result.innerHTML = "BCD Code can only have 0's and 1's";
+    } else if (fromCode == "Octal" && input.search(/^[0-7]+$/) == -1){
+        result.innerHTML = "Error : Invalid Input (Octal numbers dont have 8's and 9's";
     }
 }
 
