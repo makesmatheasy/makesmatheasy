@@ -243,6 +243,7 @@ function openit(id) {
         "#dip",
         "#cross",
         "#wandt",
+        "#bulge",
         "#spiconcal",
         "#barrel",
         "#home",
