@@ -14046,6 +14046,10 @@ function convertbcd() {
     }else if(fromCode == "Octal" && toCode == "BCD Code"){
         input = parseInt(input,8).toString();
         result.innerHTML = decimalTObcd(input);
+    }else if(fromCode == "BCD Code" && toCode == "Octal"){
+        var temp = "";
+        temp = bcdTOdecimal(input).join('');
+        result.innerHTML = parseInt(temp,10).toString(8);
     }
     
     if (input == "") {
