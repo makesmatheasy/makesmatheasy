@@ -2559,9 +2559,18 @@ function impse4find(){
 }
 
 function impse5find(){
-    let _n = parseInt(document.getElementById("impse9").value);
-    ans = Math.round((_n * _n) / 12)- Math.floor(_n / 4)* Math.floor((_n + 2) / 4); 
-    document.getElementById("impse5ans").innerHTML =  ans;
+    var _n = document.getElementById("impse9").value;
+    var n = parseInt(_n);
+    if (_n!=""){
+        ans = Math.round((n * n) / 12)- Math.floor(n / 4)* Math.floor((n + 2) / 4); 
+        document.getElementById("impse5ans").innerHTML =  "\\[Sum \\space of \\space Arcuin's \\space sequence \\space is \\newline \\frac{(No. \\space of \\space terms)^2}{12} - \\frac{(No. \\space of \\space terms)}{4} \\times \\frac{(No. \\space of \\space terms) + 2}{4}\\]";
+        document.getElementById("impse5ans1").innerHTML = "\\[\\frac{("+n+")^2}{12} - \\frac{("+n+")}{4} \\times \\frac{("+n+") + 2}{4} \\space = \\space "+((n * n) / 12).toFixed(2)+" \\space - \\space "+(n / 4).toFixed(2)+" \\times "+((n + 2) / 4).toFixed(2)+" \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("impse5ans").innerHTML = "\\[Please \\space enter \\space the \\space value\\]";
+        document.getElementById("impse5ans1").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("impse5ans"));
+    renderMathInElement(document.getElementById("impse5ans1"));
 }
 
 function impse6find(){
