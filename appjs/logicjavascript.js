@@ -14282,10 +14282,12 @@ function convertbcd() {
     }else if(fromCode == "Hexadecimal" && toCode == "BCD Code"){
         input = parseInt(input,16).toString();
         result.innerHTML = decimalTObcd(input);
+
     }else if(fromCode == "BCD Code" && toCode == "Hexadecimal"){
         var temp = "";
         temp = bcdTOdecimal(input).join('');
         result.innerHTML = parseInt(temp,10).toString(16);
+
     }
 
     
