@@ -12395,8 +12395,8 @@ function hammingDistance() {
             }
             result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
         }else if(type == "Hexadecimal"){
-            x = parseInt(x,16).toString(10);
-            y = parseInt(y,16).toString(10);
+            x = parseInt(x,10).toString(16);
+            y = parseInt(y,10).toString(16);
             let val = x ^ y;
             let hammDist = 0;
             if(x.length == y.length){
