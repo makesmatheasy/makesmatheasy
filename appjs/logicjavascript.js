@@ -13075,6 +13075,8 @@ function divBinDecHexOct(){
     x1=parseInt(input1);
     else if(firstBase === "Octal")
     x1=parseInt(input1,8);
+    else if(firstBase === "Hexa Decimal")
+    x1=parseInt(input1,16);
 
     if(secondBase === "Binary")
     x2=parseInt(input2,2);
@@ -13082,6 +13084,8 @@ function divBinDecHexOct(){
     x2=parseInt(input2);
     else if(secondBase === "Decimal")
     x2=parseInt(input2,8);
+    else if(secondBase === "Hexa Decimal")
+    x2=parseInt(input2,16);
 
     var x3=x1/x2;
 
@@ -13091,6 +13095,8 @@ function divBinDecHexOct(){
     result.innerHTML="Answer in Decimal="+x3.toString();
     else if(resultType === "Octal")
     result.innerHTML="Answer in Octal="+x3.toString(8);
+    else if(resultType === "Hexa Decimal")
+    result.innerHTML="Answer in Hexadecimal="+x3.toString(16);
 }
 
 //----------------------------
