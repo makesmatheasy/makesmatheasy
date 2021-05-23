@@ -6999,6 +6999,47 @@ function solvepartialcy() {
     }
 }
 
+function solveflatcy() {
+    var h = document.getElementById("inputflatcyh").value;
+    var r = document.getElementById("inputflatcyr").value;
+    var l = document.getElementById("inputflatcyl").value;
+    var volumeoutput = document.getElementById("resultofflatcyvol");
+    var laoutput = document.getElementById("resultofflatcyla");
+    var taoutput = document.getElementById("resultofflatcyba");
+    var angleoutput = document.getElementById("resultofflatcyangle");
+    var voltemp = "";
+    var latemp = "";
+    var tatemp = "";
+    var angletemp = "";
+    var theta = 2 * Math.acos(((2*l*l)-(4*r*r))/(2*l*l)) ;
+    var lget= (2.28)*h*r;
+    var f = 0.5*theta*radius*radius - (radius - height)*Math.sqrt((2*radius*height)-(height*height));
+    if ((h != "") && (r != "") && (l != "")) {
+        voltemp += "\\[V \\space = \\space ( \\pi - \\frac{4}{3})  \\times " + r + "\\times" + r + "\\times" + h +  "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((1.81*r*r*h).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[L \\space = \\space (2 \\times \\pi - 4) \\times " + h + "\\times" + r  + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + (lget).toFixed(2) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        tatemp += "\\[A \\space = L + \\pi " + r + "\\times" + l +  "\\pi" + r + "\\times" + r  + "\\]";
+        tatemp += "\\[Surface \\space Area \\space is \\space = \\space " + eval(String((lget + (3.14*r*l) + (3.14*r*r)).toFixed(2))) + "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+        angletemp += "\\[\\alpha \\space = cos^{-1} \\frac{2 \\times l^2 - 4 \\times r^2}{2 \\times l^2}" + width + "\\times" + "\\sqrt{"+ height + "\\times" + "(2 \\times " + radius + "-" + height  + "} )" + "\\]";
+        angletemp += "\\[Top \\space Area \\space is \\space = \\space " + eval(String(theta)).toFixed(2) + "\\]";
+        angleoutput.innerHTML = angletemp;
+        renderMathInElement(angleoutput);
+    } 
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        angleoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
+}
+
 function ellipsoidsolve() {
 
     var a = document.getElementById("inputellipa").value;

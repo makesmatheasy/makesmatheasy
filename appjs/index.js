@@ -254,6 +254,7 @@ function openit(id) {
         "#trans",
         "#hp",
         "#ppmfs",
+        "#flatcy",
         "#right_wedge",
         "#bool",
         "#suppangs",
