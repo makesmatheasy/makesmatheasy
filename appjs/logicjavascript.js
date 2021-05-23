@@ -13184,6 +13184,20 @@ function hammingDistance() {
                     hammDist++;
                 }
                 result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+            }else if(type == "Binary"){
+                if(x.search(/^[10]+$/) == -1 || y.search(/^[10]+$/) == -1){
+                    result.innerHTML = "Error : Invalid Input (Binary can have 0's and 1's only)";
+                }else{
+                    let val = x ^ y;
+                    let hammDist = 0;
+                    if(x.length == y.length){
+                        while (val > 0) {
+                            val &= val - 1;
+                            hammDist++;
+                        }
+                        result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                    }
+                }
             }
         }
     }
