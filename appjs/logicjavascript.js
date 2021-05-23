@@ -9044,6 +9044,30 @@ function multiplywithsteps(numm, withnum) {
     }
 }
 
+function solveBarrel() {
+    var r = document.getElementById("inputbarrelrad").value;
+    var R = document.getElementById("inputbarrelbigr ").value;
+    var h = document.getElementById("inputbarrelheight ").value;
+    var diaoutput = document.getElementById("resultofbarreldia");
+    var voloutput = document.getElementById("resultofbarrelvol");
+    var diatemp = "";
+    var voltemp = "";
+    var vol=1.046*((2*h*R*R)+(r*r*h));
+    var dia= Math.sqrt((h*h)+ ((2*r)*(2*r)));
+    if ((r != "") && (r!="")) {
+        diatemp += "\\[Volume \\diagonal \\space of \\space Barrel \\space \\newline \\sqrt{" + h + "^2 +(2 \\times" + r + ")^2}"  + "\\ = " + eval(String(dia)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        voltemp += "\\[Volume \\space of \\space Barrel \\space \\newline \\frac{\\pi \\times" + h + "(2 \\times" + R + "^2 +" + r + "^2)}{3}" +  "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(diaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        diaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+
+}
+
 //multiplicaion with steps
 //-----------------------------------------------------
 

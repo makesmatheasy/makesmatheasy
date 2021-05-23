@@ -244,6 +244,7 @@ function openit(id) {
         "#cross",
         "#wandt",
         "#spiconcal",
+        "#barrel",
         "#home",
         "#curconcal",
         "#factorial",
