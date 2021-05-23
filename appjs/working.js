@@ -1111,6 +1111,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ln").click(function () {
+        openit("#lns");
+        closenav();
+        clearall();
+    });
     $("#complex2collapsebtn").click(function () {
         openit("#complex2collapse");
         closenav();

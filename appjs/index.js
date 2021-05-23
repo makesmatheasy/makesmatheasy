@@ -205,6 +205,7 @@ function openit(id) {
         "#matrixprops",
         "#2d-shape-ins",
         "#cramer",
+        "#lns",
         "#fractions",
         "#multiplematrixcollapse",
         "#expgrwths",
