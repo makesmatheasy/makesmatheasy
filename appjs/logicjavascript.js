@@ -13121,19 +13121,34 @@ function multBinDecHexOct(){
 //----------------------------	//----------------------------
 
 //function for hamming distance between numbers
-function hammingDistance(x, y) {
-    let val = x ^ y;
-    let res = 0;
-    
-    if(x.length == y.length){
-    while (val > 0) {
-      val &= val - 1;
-      res++;
-    }
-    
-    document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
-    }else{
-        document.getElementById("distResult").innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal inputs )"
+function hammingDistance() {
+
+    var x = document.getElementById("inpFirst").value;
+    var y = document.getElementById("inpSecond").value;
+    const type = document.getElementById("inpType").value;
+    let result = document.getElementById("distResult");
+
+    if(x.length != y.length){
+        result.innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal length of inputs )"
+    } else {
+        if(type == "Decimal"){
+            let val = x ^ y;
+            let hammDist = 0;
+            if(x.length == y.length){
+                while (val > 0) {
+                    val &= val - 1;
+                    hammDist++;
+                }
+                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+            }
+        }else if(type == "String"){
+            let hammDist;
+            for (var i = 0; i <x.length ; i++) {
+                if(x.charAt(i)!=y.charAt(i))
+                    hammDist += 1;
+            }
+            result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+        }
     }
 }
 

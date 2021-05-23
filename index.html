@@ -19554,16 +19554,25 @@ N is the population size.
     <div class="collapse" id="hamming-dist">
         <form action="">
             <div class="form-group" style="display:inline-block">
+                <h4>Choose Input Type</h4>
+                <select id="inpType" class="form__field">
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        String
+                    </option>
+                </select>
                 <label>Enter the first number : &nbsp; &nbsp; </label>
-                <input type="number" id="numFirst" class="form__field" placeholder="x"
+                <input type="text" id="inpFirst" class="form__field" placeholder="x"
                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                 <label> Enter the second number : &nbsp; &nbsp;</label>
-                <input type="number" id="numSecond" class="form__field" placeholder="y"
+                <input type="text" id="inpSecond" class="form__field" placeholder="y"
                     style="width:3rem;display:inline;">
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light"
-                        onclick="hammingDistance(document.getElementById('numFirst').value,document.getElementById('numSecond').value);">
+                        onclick="hammingDistance();">
                     Solve
                 </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
