@@ -287,6 +287,7 @@ function openit(id) {
         "#adding-all",
         "#subtract-all",
         "#multiplying-all",
+        "#divide-all",
         "#onetwocom-calc",
         "#2d-shape",
         "#salinon",

@@ -13377,6 +13377,34 @@ function multBinDecHexOct(){
 
 //----------------------------	//----------------------------
 
+
+//Function for division of any number system
+function divBinDecHexOct(){
+    const firstBase = document.getElementById("divide-all-select1").value;
+    const secondBase = document.getElementById("divide-all-select2").value;
+    const input1 = document.getElementById("divide-all-input1").value;
+    const input2 = document.getElementById("divide-all-input2").value;
+    const resultType= document.getElementById("divide-all-result-type").value;
+    let result = document.getElementById("divide-all-result");
+    var x1;
+    var x2;
+    if(firstBase === "Binary")
+    x1=parseInt(input1,2);
+
+    if(secondBase === "Binary")
+    x2=parseInt(input2,2);
+
+    var x3=x1/x2;
+
+    if(resultType === "Binary")
+    result.innerHTML="Answer in binary="+x3.toString(2);
+}
+
+//----------------------------
+
+
+//----------------------------	//----------------------------
+
 //function for hamming distance between numbers
 function hammingDistance() {
 
