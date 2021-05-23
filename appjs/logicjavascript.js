@@ -13943,6 +13943,8 @@ function convertbcd() {
         result.innerHTML = "";
     } else if (fromCode=="BCD Code" && input.search(/^[10]+$/) == -1 ){
         result.innerHTML = "BCD Code can only have 0's and 1's";
+    } else if (fromCode == "Binary" && input.search(/^[10]+$/) == -1 ){
+        result.innerHTML = "BCD Code can only have 0's and 1's";
     }
 }
 
