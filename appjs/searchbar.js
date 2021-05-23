@@ -1251,6 +1251,22 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('datecal').click();
                     }
+                    else if (inp.value.toUpperCase() == "DESARGUES THEOREM") {
+                        clearmain()
+                        $("#des").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "DESARGUES THEOREM"){
+                        clearmain()
+                        document.getElementById('des').click();
+                    }                    
+                    else if (inp.value.toUpperCase() == "DRICHLET THEOREM") {
+                        clearmain()
+                        $("#dri").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "DRICHLET THEOREM"){
+                        clearmain()
+                        document.getElementById('dri').click();
+                    }
                     else if (inp.value.toUpperCase() == "ALIQUOT SUMS") {
                         clearmain()
                         $("#ali").slideDown();    
@@ -1548,7 +1564,7 @@ var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Cross 
                         "Coordinate Geometry Calculator","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations",
                         "Solution of Triangles","Greatest Integer Function and Fractional Part","Direct And Indirect Proportion","Solve for Exponents","Percentage Calculator","Standard Deviation","Mean Median Mode","Prime Numbers","Plot Bar Graph","Binomial Coefficient Calculator"
-                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","Euler Totient Calculator","Euclid GCD","Types of Numbers","Aliquot Sums"
+                        ,"Contour Integration","Improper to Proper Integral","Beta Function Calculator","Square and Cube Calculator","Roots of Unity Calculator","Sieve of Eratosthenes","Euler Totient Calculator","Euclid GCD","Types of Numbers","Aliquot Sums","Desargues Theorem","Drichlet Theorem"
                     ];                    
                         
 
@@ -1911,6 +1927,18 @@ function handleclick(value) {
     }
     else if(inp.value.toUpperCase() == "PERCENTAGE CALCULATOR"){
         document.getElementById('percal').click(); 
+    }
+    else if(inp.value.toUpperCase() == "DESARGUES THEOREM"){
+        document.getElementById('des').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DESARGUES THEOREM") {
+        $("#des").slideToggle(); 
+    }    
+    else if(inp.value.toUpperCase() == "DRICHLET THEOREM"){
+        document.getElementById('dri').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DRICHLET THEOREM") {
+        $("#dri").slideToggle(); 
     }
     else if (inp.value.toUpperCase() == "STANDARD DEVIATION") {
         $("#deviation").slideToggle(); 

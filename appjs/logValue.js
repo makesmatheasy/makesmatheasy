@@ -35,3 +35,18 @@
      }
    }
  } 
+ function lnfind()
+ {
+    var num=document.getElementById("ln1").value;
+    ans="";
+    if(num==""||isNaN(num))
+    {
+         ans="Please enter valid number";
+    }
+    else
+    {
+       var e=2.718281828459045;
+       ans="The calculated value is: "+ Math.log(num)/Math.log(e);
+    }
+    document.getElementById("lnans").innerHTML=ans;
+ }
