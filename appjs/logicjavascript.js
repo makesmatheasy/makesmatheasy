@@ -12325,6 +12325,16 @@ function scyffind(){
     document.getElementById("scyfans").innerHTML =  V;
 }
 
+function scyf1find(){
+    let h = parseInt(document.getElementById("scyf3").value) 
+    let R = parseInt(document.getElementById("scyf4").value)
+    let r = parseInt(document.getElementById("scyf5").value) 
+    var r1 = r;
+    var h1 = h;
+    var V = (3.14 * Math.pow(r1, 2) * h1);
+    document.getElementById("scyf1ans").innerHTML =  V;
+}
+
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
     if (n < 4)
