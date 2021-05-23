@@ -649,6 +649,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CONDITIONAL PROBABILITY"){
                         document.getElementById('condprobability').click();
                     }
+                    else if (inp.value.toUpperCase() == "GEOMETRIC PROBABILITY DISTRIBUTION") {
+                        $("#geoprobability").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "GEOMETRIC PROBABILITY DISTRIBUTION"){
+                        document.getElementById('geoprobability').click();
+                    }
                     else if (inp.value.toUpperCase() == "ADDITIVE INVERSE") {
                         $("#ais").slideToggle();    
                     }
