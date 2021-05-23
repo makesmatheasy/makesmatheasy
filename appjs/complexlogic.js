@@ -744,29 +744,34 @@ function cresccal() {
     var r1 = document.getElementById("cresc_rad1").value;
     var r2 = document.getElementById("cresc_rad2").value;
     var d = document.getElementById("cresc_dist").value;
-    var ans = "";
-    var lans1, lans2, dans;
     if (r1 == "" || r2 == "" || d == "") {
-        ans = "Error: All values are required to obtain answer";
+        document.getElementById("crescans1").innerHTML = "\\[Error: \\space All \\space values \\space are \\space required \\space to \\space obtain \\space answer \\space\\]";
+        document.getElementById("crescans2").innerHTML ="";
+        document.getElementById("crescans3").innerHTML = "";
+    } else {
+        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){
+            
+            var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 
+            * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
+            var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
+            var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
+            
+            document.getElementById("crescans1").innerHTML = "\\[r1 = Radius \\space of \\space circle \\space 1 \\space = \\space "+r1+" \\newline r2 = Radius \\space of \\space circle \\space 2 \\space = \\space "+r2+" \\newline d = Circle \\space center \\space distance \\space = \\space "+d+"\\]";
+            document.getElementById("crescans2").innerHTML = "\\[Area \\space of \\space Lune \\space 1: \\newline 2 \\times \\frac{\\sqrt{(r1 + r2 + d) \\times (r2 + d - r1) \\times (d + r1 - r2) \\times (r1 + r2 - d)} }{4} + \\newline r1^2 \\times acos(\\frac{(r2^2 - r1^2 - d^2)}{(2^r1 \\times d)}) - r2^2 \\times acos(\\frac{(r2^2 + d^2 - r1^2)}{ (2 \\times r2 \\times d)})\\]";
+            document.getElementById("crescans3").innerHTML =  "\\[2 \\times \\frac{\\sqrt{("+r1+" + "+r2+" + "+d+") \\times ("+r2+" + "+d+" - "+r1+") \\times ("+d+" + "+r1+" - "+r2+") \\times ("+r1+" + "+r2+" - "+d+")} }{4} + \\newline "+r1+"^2 \\times acos(\\frac{("+r2+"^2 - "+r1+"^2 - "+d+"^2)}{(2^"+r1+" \\times "+d+")}) - "+r2+"^2 \\times acos(\\frac{("+r2+"^2 + "+d+"^2 - "+r1+"^2)}{ (2 \\times "+r2+" \\times "+d+")}) \\space   = \\space "+ lune1.toFixed(3)+"\\]";
+            document.getElementById("crescans5").innerHTML ="\\[Overlap \\space Area: \\space \\newline \\pi \\times r1^2 - (Area \\space of \\space Lune \\space 1) \\newline "+(math.pi).toFixed(2)+" \\times "+r1+"^2 - ("+lune1.toFixed(2)+") \\space = \\space "+op.toFixed(3)+"\\]";
+            document.getElementById("crescans6").innerHTML = "\\[ Area \\space of \\space Lune \\space 2:  \\space \\newline \\pi \\times r1^2 - (Overlap \\space Area) \\newline "+(math.pi).toFixed(2)+" \\times "+r2+"^2 - ("+op.toFixed(2)+") \\space = \\space "+lune2.toFixed(3)+"\\]";
+            renderMathInElement(document.getElementById("crescans1"));
+            renderMathInElement(document.getElementById("crescans2"));
+            renderMathInElement(document.getElementById("crescans3"));
+            renderMathInElement(document.getElementById("crescans5"));
+            renderMathInElement(document.getElementById("crescans6"));
+        } else{
+            document.getElementById("crescans1").innerHTML  = "Error: Enter proper values";
+            document.getElementById("crescans2").innerHTML = "";
+            document.getElementById("crescans3").innerHTML = "";
+        }
     }
-    else {
-        var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
-        var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
-        var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
-
-
-        lans1 = document.createElement('div');
-        lans1.innerHTML = "Area of Lune 1: " + lune1;
-
-        lans2 = document.createElement('div');
-        lans2.innerHTML = "Area of Lune 2: " + lune2;
-
-        dans = document.createElement('div');
-        dans.innerHTML = "Overlap Area: " + op;
-    }
-    document.getElementById("crescans").appendChild(lans1);
-    document.getElementById("crescans").appendChild(lans2);
-    document.getElementById("crescans").appendChild(dans);
 }
 
 function ssqcal()
@@ -1342,6 +1347,15 @@ function confidence() {
     document.getElementById("confans").innerHTML = s;
 }
 
+function unitcircCal(){
+    var deg = document.getElementById("unitdeg").value;
+    var x = Math.cos(deg);
+    var y = Math.sin(deg);
+
+    document.getElementById("unitcircxans").innerHTML = "X: " + x;
+    document.getElementById("unitcircyans").innerHTML = "Y: " + y;
+}
+
 function wmccal()
 {
     var num1=document.getElementById("wmcx").value;
@@ -1393,18 +1407,18 @@ function wmccal()
         console.log(wsum);
         console.log(sum);
         var wm=sum/wsum;
-        ans="The calculated weighted mean is: "+wm;
-
-    }
-    
+        ans="The calculated weighted mean is: "+wm;}
     }
     document.getElementById("wmcans").innerHTML=ans;
 }
 
 function dbltimeCal(){
-    let inc = parseInt(document.getElementById("inctime").value);
-    let ans = Math.log(2) / Math.log(1 + inc);
-    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
+    var inc = parseInt(document.getElementById("inctime").value);
+    var ans = Math.log(2) / Math.log(1 + inc);
+    document.getElementById("dbltimeans").innerHTML = "\\[Doubling \\space Time \\space is \\space \\space \\frac{log \\space (2) }{log \\space (1 + (\\% \\space per \\space period \\space increase)) } \\space \\space that \\space is, \\]";
+    renderMathInElement(document.getElementById("dbltimeans"));
+    document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
+    renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
 function covcalcu(){
@@ -1849,29 +1863,7 @@ function oocal()
     }
     document.getElementById("ooans").innerHTML=ans;
 }
-function manhatcal()
-{
-    var num1=document.getElementById("mdx1").value;
-    var num2=document.getElementById("mdx2").value;
-    var num3=document.getElementById("mdx3").value;
-    var num4=document.getElementById("mdx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
 
-        var f=Maths.abs(num1-num3)+Maths.abs(num2-num4);
-        ans="The calculated Manhattan Distance is: "+f;
-    }
-    document.getElementById("manhatans").innerHTML=ans;
-}
 function mifcal()
 {
     var num1=document.getElementById("mians1").value;
@@ -2016,19 +2008,23 @@ function egccal()
     var num2=document.getElementById("egc2").value;
     var num3=document.getElementById("egc3").value;
     ans="";
+    let explain="";
     if(num1==""||num2==""||num3=="")
     {
-        ans="Please fill all the field";
+        ans="\\[Please \\space fill \\space all \\space the \\space field\\]";
     }
     else
     {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
         num3=parseFloat(num3);
-        var si=num1*((1+(num2/100))**num3);
-        ans="The effective rate of growth is: "+si;
+        var si=(num1*((1+(num2/100))**num3)).toFixed(3);
+        ans="\\[The \\space effective \\space rate \\space of \\space growth \\space is: "+si+"\\]";
+        explain="\\[x(t)="+num1+"(1+\\frac{"+num2+"}{100})^"+num3+"\\]"+"\\[\\space "+num1+"("+((1+(num2/100))**num3).toFixed(3)+")\\]"+"\\[\\space ="+si+"\\]";
    
     }
     document.getElementById("egcans").innerHTML=ans;
-
+    document.getElementById("egcexplain").innerHTML=explain;
+    renderMathInElement(document.getElementById("egcans"));
+    renderMathInElement(document.getElementById("egcexplain"));
 }

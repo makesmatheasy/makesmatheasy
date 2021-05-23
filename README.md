@@ -129,6 +129,7 @@ Other Tech/Libraries
   - Trigonometric Identities
   - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
+  - Unit Circle
   - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
   - Expansion of Functions
@@ -240,6 +241,7 @@ Other Tech/Libraries
   - Properties of Quadrilaterals
   - Arc Length Calculator
   - Area of Crescent and Lunes
+  - Platonic Solids
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -292,6 +294,8 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+  - 4-D Shapes Calculator
+    - Tesseract
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
