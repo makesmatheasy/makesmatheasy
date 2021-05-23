@@ -2558,7 +2558,13 @@ function impse5find(){
     let n = parseInt(document.getElementById("impse9").value) 
     let _n = n, ans; 
     ans = Math.round((_n * _n) / 12)- Math.floor(_n / 4)* Math.floor((_n + 2) / 4); 
-    document.getElementById("impse9ans").innerHTML =  ans;
+    document.getElementById("impse5ans").innerHTML =  ans;
+}
+
+function impse6find(){
+    let n = parseInt(document.getElementById("impse10").value)
+    let ans = (parseInt(Math.pow(10, n + 1)) * (9 * n - 1) + 10) /parseInt(Math.pow(9, 3)) - n * (n + 1) / 18;
+    document.getElementById("impse6ans").innerHTML = ans
 }
 
 function solvetetrahexa(){
@@ -4480,6 +4486,31 @@ function circumtri(){
         renderMathInElement(output);
     }
 }
+
+function intri(){
+    var a,b,c;
+    a=parseFloat(document.getElementById('inputsidea5').value);
+    b=parseFloat(document.getElementById('inputsideb6').value);
+    c=parseFloat(document.getElementById('inputsidec7').value);
+    var output = document.getElementById("intri1");
+    var temp = " ";
+    var s = (a+b+c)/2;
+    var k = (s*(s-a)*(s-b)*(s-c));
+    var k1 = Math.sqrt(k);
+    var r = k1/s;
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else{
+        temp += "\\[Inradius \\space of \\space Triangle \\space is: " + r + " \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
+
+
 function vectorquad(){
     var a,b,c,d,e,f;
      a = parseInt(document.getElementById("inp51").value);
@@ -10660,8 +10691,33 @@ function typenum2find(){
     }
     if (n > 2)
         count++;
-    document.getElementById("typenum1ans").innerHTML =  count;
+    document.getElementById("typenum2ans").innerHTML =  count;
 }    
+
+function typenum3find(){
+    let x = parseInt(document.getElementById("typenum3").value)
+    let y = parseInt(document.getElementById("typenum4").value)
+    if (divSum(x) != y) 
+        document.getElementById("typenum3ans").innerHTML =  false; 
+          
+    document.getElementById("typenum3ans").innerHTML =  divSum(y) == x; 
+}
+
+function divSum(n) 
+{ 
+    let result = 0; 
+    for (let i = 2; i <= Math.sqrt(n); i++) 
+    { 
+        if (n % i == 0) 
+        {  
+            if (i == (n / i)) 
+                result += i; 
+            else
+                result += (i + n / i); 
+        } 
+    } 
+    return (result + 1); 
+} 
 
 function findTriangularNumber(n)
 {
@@ -11433,6 +11489,37 @@ function lacube7find(){
             document.getElementById("lacube7ans").innerHTML =  num + " ";
             return n - ans;
         }
+}
+
+function lacube8find(){
+    let number = parseInt(document.getElementById("lacube8").value)
+    let precision = parseInt(document.getElementById("lacube9").value)
+    let start = 0, end = number;
+    let mid;
+    let ans = 0.0;
+    while (start <= end){
+        mid = (start + end) / 2;               
+        if (mid * mid == number){
+            ans = mid;
+            break;
+        }
+        if (mid * mid < number) {
+            start = mid + 1;
+            ans = mid;
+        }
+        else {
+            end = mid - 1;
+        }
+    }
+    let increment = 0.1;
+    for (let i = 0; i < precision; i++) {
+        while (ans * ans <= number) {
+            ans += increment;
+        }
+        ans = ans - increment;
+        increment = increment / 10;
+    }
+    document.getElementById("lacube8ans").innerHTML =  ans;
 }
 
 function isPerfectCube(x)
@@ -13059,19 +13146,34 @@ function multBinDecHexOct(){
 //----------------------------	//----------------------------
 
 //function for hamming distance between numbers
-function hammingDistance(x, y) {
-    let val = x ^ y;
-    let res = 0;
-    
-    if(x.length == y.length){
-    while (val > 0) {
-      val &= val - 1;
-      res++;
-    }
-    
-    document.getElementById("distResult").innerHTML = "The hamming distance between " + x + " and " + y + " is: " + res;
-    }else{
-        document.getElementById("distResult").innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal inputs )"
+function hammingDistance() {
+
+    var x = document.getElementById("inpFirst").value;
+    var y = document.getElementById("inpSecond").value;
+    const type = document.getElementById("inpType").value;
+    let result = document.getElementById("distResult");
+
+    if(x.length != y.length){
+        result.innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal length of inputs )"
+    } else {
+        if(type == "Decimal"){
+            let val = x ^ y;
+            let hammDist = 0;
+            if(x.length == y.length){
+                while (val > 0) {
+                    val &= val - 1;
+                    hammDist++;
+                }
+                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+            }
+        }else if(type == "String"){
+            let hammDist;
+            for (var i = 0; i <x.length ; i++) {
+                if(x.charAt(i)!=y.charAt(i))
+                    hammDist += 1;
+            }
+            result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+        }
     }
 }
 
@@ -14251,6 +14353,19 @@ function exc1find(){
         sum =sum + Math.pow(-4, i) * (1 - Math.pow(4, i)) * B *Math.pow(x, 2 * i - 1) / fac(2 * i);
     }
     document.getElementById("exc1ans").innerHTML =  sum.toFixed(10);
+}
+
+function exc2find(){
+    let n = parseInt(document.getElementById("exc1").value)
+    let x = parseInt(document.getElementById("exc2").value)
+    let sum = x, e = 2, o = 1, p = 1;
+    for (let i = 2; i <= n; i++) {
+        p += 2; 
+        sum += (o / e) * (Math.pow(x, p) / p);
+        o = o * (o + 2);
+        e = e * (e + 2);
+    }
+    document.getElementById("exc2ans").innerHTML =  sum.toFixed(10);
 }
 
 function fac(num)
