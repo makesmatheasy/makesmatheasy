@@ -2570,6 +2570,12 @@ function impse6find(){
     document.getElementById("impse6ans").innerHTML = ans
 }
 
+function impse7find(){
+    let n = parseInt(document.getElementById("impse11").value)
+    var y =  (((x) / 81) * (9 * k - 1 + Math.pow(10, (-1) * k)));
+    document.getElementById("impse7ans").innerHTML =  y ;
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
@@ -4241,6 +4247,28 @@ function solveicosa() {
 
 }
 
+function solvecubo() {
+    var a = document.getElementById("inputcuboside").value;
+    var resultcv = document.getElementById("resultofcubov");
+    var resultca = document.getElementById("resultofcuboa");
+    var vtemp = "";
+    var atemp = "";
+    if (a != "") {
+        vtemp += "\\[Volume \\space of \\space Cuboctahedron \\space \\newline \\frac{5}{3}" + "(\\space \\sqrt{2})" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(2.3570226 * (a * a * a)).toFixed(2) + "\\]";
+        resultcv.innerHTML = vtemp;
+
+        atemp += "\\[ Area \\space of \\space Cuboctahedron \\space \\newline (" + 6  + "+2 \\sqrt{3} )"  + a + "\\times" + a + "\\ = " + eval(String(9.4641016 * (a * a))).toFixed(2) + "\\]";
+        resultca.innerHTML = atemp;
+
+        renderMathInElement(resultcv);
+        renderMathInElement(resultca);
+
+    } else {
+        resultvolt.innerHTML = "";
+        resulttsa.innerHTML = "";
+    }
+
+}
 function vectortetra(){
     var a,b,c,d,e,f,g,h,i;
      a = parseInt(document.getElementById("inp12").value);
@@ -5588,6 +5616,39 @@ function rectanglesolve() {
     renderMathInElement(document.getElementById("resultofdiagonalrec"));
     renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
+}
+
+function solvebulge() {
+    var r = document.getElementById("inputbulgerad").value;
+    var widthoutput = document.getElementById("resultofbulgewidth");
+    var heightoutput = document.getElementById("resultofbulgeheight");
+    var perioutput = document.getElementById("resultofbulgeperi");
+    var areaoutput = document.getElementById("resultofbulgearea");
+    var widthtemp = "";
+    var heighttemp = "";
+    var areatemp = "";
+    var peritemp = "";
+    if (r != "") {
+        widthtemp += "\\[Width \\space of \\space Bulge \\space \\newline 4 \\times" + r  + "\\ = " + eval(String(4*r)).toFixed(2) + "\\]";
+        widthoutput.innerHTML = widthtemp;
+        heighttemp += "\\[Height \\space of \\space Bulge \\space \\newline 2 \\times" + r + "\\ = " + eval(String(2*r)).toFixed(2) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        peritemp += "\\[Perimeter \\space of \\space Bulge \\space \\newline 2 \\times" + r + "(\\pi + 2) " + "\\ = " + eval(String(10.28*r)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space of \\space Bulge \\space  \\newline" + "4 \\times" + r + "^2" + "\\ = " + eval(String(4*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(widthoutput);
+        renderMathInElement(heightoutput); 
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        widthoutput.innerHTML = "";
+        heightoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
 }
 	
 function cutrectanglesolve(){
@@ -8058,8 +8119,8 @@ function heightdist5(){
 }
 
 function heightdist8(){
-    var height = parseFloat(document.getElementById("height91").value);
-    var degree = parseFloat(document.getElementById("height92").value);
+    var height = parseFloat(document.getElementById("height81").value);
+    var degree = parseFloat(document.getElementById("height82").value);
     var output = document.getElementById("printheight8");
     var temp = "";
     var deg1 = Math.tan(degree*Math.PI/180).toFixed(3)
@@ -9773,6 +9834,54 @@ function energycon() {
     const a = (i * f) / t;
     document.getElementById("energyconou").innerHTML = `${a}`;
 }
+
+function radiation1u(a) {
+    switch (a) {
+        case "1":
+            return 0.001;
+        case "2":
+            return 0.000001;
+        case "3":
+            return 0.01;
+        case "4":
+            return 0.01;
+        case "5":
+            return 1;
+        
+    }
+}
+function radiation1con() {
+    const f = radiation1u(document.getElementById("radiation1con-1").value);
+    const t = radiation1u(document.getElementById("radiation1con-2").value);
+    const i = parseFloat(document.getElementById("radiation1conin").value);
+    const a = (i * f) / t;
+    document.getElementById("radiation1conou").innerHTML = `${a}`;
+}
+
+function radiation2u(a) {
+    switch (a) {
+        case "1":
+            return 0.001;
+        case "2":
+            return 0.00001;
+        case "3":
+            return 0.000001;
+        case "4":
+            return 1;
+        case "5":
+            return 0.01;
+        case "6":
+            return 0.0000001;    
+        
+    }
+}
+function radiation2con() {
+    const f = radiation2u(document.getElementById("radiation2con-1").value);
+    const t = radiation2u(document.getElementById("radiation2con-2").value);
+    const i = parseFloat(document.getElementById("radiation2conin").value);
+    const a = (i * f) / t;
+    document.getElementById("radiation2conou").innerHTML = `${a}`;
+}
 function presu(a) {
   switch (a) {
     case "1":
@@ -10442,6 +10551,12 @@ function cirinsemi3find(){
     document.getElementById("cirinsemi3ans").innerHTML = ans
 }
 
+function cirinsemi4find(){
+    let r = parseInt(document.getElementById("cirinsemi4in").value)
+    var area = (3.14 * Math.pow(r / (2 * Math.sqrt(2)), 2));
+    document.getElementById("cirinsemifind4ans").innerHTML =  area;
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
@@ -10659,10 +10774,14 @@ function solveperc(){
     var y4=(document.getElementById('y4').value);
     if(x4!="" && y4!=""){
         var t = parseFloat(x4)-(parseFloat(y4)*parseFloat(x4))/100;
-        document.getElementById('t').innerHTML= 'Result : ' + t ; 
+        document.getElementById('t').innerHTML= "\\[ "+x4+" \\space - \\space \\frac{"+y4+" \\times "+x4+"}{100} \\space = \\space "+t.toFixed(3)+"\\]" ; 
+        document.getElementById('t1').innerHTML= "\\[Hence, \\space "+x4+" \\space minus \\space "+y4+" \\space \\% \\space is \\space "+t.toFixed(3)+"\\]";
     } else{
-        document.getElementById('t').innerHTML= 'Please enter all Input';
+        document.getElementById('t').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('t1').innerHTML= "";
     }
+    renderMathInElement(document.getElementById('t'));
+    renderMathInElement(document.getElementById('t1'));
 }
 
 function typenumfind(){
@@ -10718,7 +10837,16 @@ function typenum2find(){
     if (n > 2)
         count++;
     document.getElementById("typenum2ans").innerHTML =  count;
-}    
+}  
+
+function typenum4find(){
+    let N = parseInt(document.getElementById("typenum5").value)
+    for(let i=0;i<=N;i++){
+        if (divSum(i+1) != i) 
+            document.getElementById("typenum4ans").innerHTML =  false;           
+        document.getElementById("typenum4ans").innerHTML =  divSum(i) == i+1;
+    }
+}
 
 function typenum3find(){
     let x = parseInt(document.getElementById("typenum3").value)
@@ -11548,6 +11676,14 @@ function lacube8find(){
     document.getElementById("lacube8ans").innerHTML =  ans;
 }
 
+function lacube9find(){
+    let n  = parseInt(document.getElementById("lacube10").value)
+    let S = (n * (n + 1)) / 2
+    let x = (n*(n+1)*(2*(n)+1))/6
+    res = x-S  
+    document.getElementById("lacube9ans").innerHTML =  res;
+}    
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
@@ -11914,6 +12050,39 @@ function reultriangle(){
 
     }
 
+// Midrange starts
+    function midrangeCal() {
+        var s = 0;
+        document.getElementById("midrangeAns").innerHTML = "";
+        var val = document.getElementById("midrangeInp").value;
+        val=val.trim()
+        val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
+    
+        if(val==null)
+        {
+            document.getElementById("midrangeAns").innerHTML = `Proper input is required`;
+            return;
+        }
+    
+        val = JSON.stringify(val)
+        // console.log(val.substring(2,val.length-2)+"Hi"+typeof(val));
+    
+        val = val.substring(2,val.length-2)
+        val = val.split(" ");
+        val = val.filter(function (str) {
+            return /\S/.test(str);
+        });
+        var len = parseInt(val.length);
+        var min = Math.min(...val);
+        var max = Math.max(...val);
+        if (val.length === 0) {
+            document.getElementById("midrangeAns").innerHTML = `No Number Added`;
+        } else {
+            var ans = (max+min)/2;
+            document.getElementById("midrangeAns").innerHTML = "Midrange: " + ans;
+        }
+    }
+    
 //Mean start
 function Means() {
     var s = 0;
@@ -12351,6 +12520,16 @@ function scyffind(){
     document.getElementById("scyfans").innerHTML =  V;
 }
 
+function scyf1find(){
+    let h = parseInt(document.getElementById("scyf3").value) 
+    let R = parseInt(document.getElementById("scyf4").value)
+    let r = parseInt(document.getElementById("scyf5").value) 
+    var r1 = r;
+    var h1 = h;
+    var V = (3.14 * Math.pow(r1, 2) * h1);
+    document.getElementById("scyf1ans").innerHTML =  V;
+}
+
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
     if (n < 4)
@@ -12502,10 +12681,22 @@ function polymax4find(){
 }
 
 function polymax5find(){
-    var n  = parseInt(document.getElementById("regpolymax5").value)
-    var a = parseInt(document.getElementById("regpolymax51").value)
-    var ans = (a / (2 * Math.tan((180 / n)* 3.14159 / 180)));
-    document.getElementById("regpolymax5ans").innerHTML = ans
+    var n  = (document.getElementById("regpolymax5").value)
+    var a = (document.getElementById("regpolymax51").value)
+    var ans = a / (2 * Math.tan((180 / n)* (3.14159 / 180)));
+    if (n!="" && a!=""){
+    document.getElementById("regpolymax5ans").innerHTML = "\\[Apothem \\space of \\space a \\space n-sided \\space regular \\space polygon \\space will \\space be, \\]";
+    document.getElementById("regpolymax5ans1").innerHTML = "\\[\\frac{Side \\space Length}{2 \\times tan(\\frac{180}{No. \\space of \\space sides} \\times \\frac{3.1416}{180}  )}\\]"
+    document.getElementById("regpolymax5ans2").innerHTML = "\\[\\frac{"+a+"}{2 \\times tan(\\frac{180}{"+n+"} \\times \\frac{3.1416}{180})} \\space = \\space  \\frac{"+a+"}{2 \\times "+(Math.tan((180 / n)* (3.14159 / 180))).toFixed(2)+"} \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("regpolymax5ans").innerHTML = "\\[Please \\space enter \\space  all \\space the \\space values\\]";
+        document.getElementById("regpolymax5ans1").innerHTML = "";
+        document.getElementById("regpolymax5ans2").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("regpolymax5ans"));
+    renderMathInElement(document.getElementById("regpolymax5ans1"));
+    renderMathInElement(document.getElementById("regpolymax5ans2"));
+
 }
 
 function polymax6find(){
@@ -14091,7 +14282,14 @@ function convertbcd() {
     }else if(fromCode == "Hexadecimal" && toCode == "BCD Code"){
         input = parseInt(input,16).toString();
         result.innerHTML = decimalTObcd(input);
+
+    }else if(fromCode == "BCD Code" && toCode == "Hexadecimal"){
+        var temp = "";
+        temp = bcdTOdecimal(input).join('');
+        result.innerHTML = parseInt(temp,10).toString(16);
+
     }
+
     
     if (input == "") {
         result.innerHTML = "";
@@ -15193,15 +15391,47 @@ function tvalue_SD(diff, length) {
     return Math.sqrt(val);
 }
 
+function abvalue() {
+    let n1 = document.getElementById("absize1").value;
+    let n2 = document.getElementById("absize2").value;
+    let t1 = document.getElementById("abpos1").value;
+    let t2 = document.getElementById("abpos2").value;
+
+    if(n1<30 || n2<30){
+        document.getElementById("abtestans").innerHTML = "A sample size of 30 or more is preferred";
+    }
+    else{
+        let p1 = t1/n1;
+        let p2 = t2/n1;
+        let p = (t1+t2)/(n1+n2);
+        let ans = (p1-p2)/(Math.sqrt(p*(1-p)*(1/n1+1/n2)));
+        document.getElementById('abtestans').innerHTML = "The value for the AB Test is: " + ans;
+    }
+}
+
 function tvalue() {
     let list1 = document.getElementById("list1").value;
     let list2 = document.getElementById("list2").value;
+    
 
+   if(list1==""||list2=="")
+   {
+    document.getElementById('stepsbox').style.display = "none" ;
+    document.getElementById('testans').innerHTML = "Please input all the numbers to find answer";
+   }
+    else{
     list1 = list1.split(" ");
     list2 = list2.split(" ");
     let n1 = list1.length
     let n2 = list2.length
 
+    if(list1.length!=list2.length)
+    {
+     document.getElementById('stepsbox').style.display = "none" ;
+     document.getElementById('testans').innerHTML = "Number of inputs in both dataset should be same";
+    }
+ 
+    else{
     if (n1 <= 30 && n2 <= 30) {
         for (var i = 0; i < n1; i++) {
             list1[i] = parseInt(list1[i]);
@@ -15235,6 +15465,8 @@ function tvalue() {
         document.getElementById('stepsbox').style.display = "none" 
         document.getElementById('testans').innerHTML = "T-test is not applicable for set of numbers more than 30"
     }
+}
+}
 }
 
 // t-value formula
@@ -15341,13 +15573,25 @@ function fvalue() {
     let list2 = document.getElementById("dataset2").value;
     var ans="";
     var ans2="";
+    if(list1==""||list2=="")
+    {
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('ftestans').innerHTML = "Please enter all values";
+    }
+    else
+    {
 
     list1 = list1.split(" ");
     list2 = list2.split(" ");
     let n1 = list1.length;
     let n2 = list2.length;
    // f test work for sample size less than 30
-
+     if(n1>n2||n2>n1)
+     { 
+        document.getElementById('stepsbox').style.display = "none" 
+        document.getElementById('ftestans').innerHTML = "Datasets should have equal no of inputs";
+     }
+     else{
     if (n1 <= 30 && n2 <= 30) {
         for (var i = 0; i < n1; i++) {
             list1[i] = parseInt(list1[i]);
@@ -15398,6 +15642,8 @@ function fvalue() {
         document.getElementById('stepsbox').style.display = "none" 
         document.getElementById('ftestans').innerHTML = "F-test is not applicable for set of numbers more than 30"
     }
+}
+}
 }
 // Z-test logic 
 
@@ -15958,20 +16204,22 @@ function numtfind(){
     document.getElementById("numtans").innerHTML = ans
 }
 function occfind(){
-    let n = parseInt(document.getElementById("occin").value)
-    let ang = parseInt(document.getElementById("occin1").value)
-    var ans = 1;
-
-    // Calculate the frequency
-    // of given angle for each vertex
-    var freq = (ang * n) / 180;
-
-    // Multiply answer by frequency.
-    ans = ans * (n - 1 - freq);
-
-    // Multiply answer by the number of vertices.
-    ans = ans * n;
-    document.getElementById("occans").innerHTML = ans
+    let n = (document.getElementById("occin").value);
+    let ang = (document.getElementById("occin1").value);
+    if (n!="" && ang!=""){
+        var freq = (ang * n) / 180;
+        var ans = n * (n - 1 - freq);
+        document.getElementById("occans").innerHTML = "\\[Number \\space of \\space occurrence \\space of \\space given \\space angle \\space is \\newline \\space (No.\\space of \\space sides) \\times ((No. \\space of \\space sides) - 1 - frequency)\\]";
+        document.getElementById("occans1").innerHTML = "\\[Here, \\space frequency \\space = \\space \\frac{Angle \\times (No.\\space of \\space sides) }{180}\\]";
+        document.getElementById("occans2").innerHTML = "\\["+n+" \\times ("+n+" - 1 - (\\frac{"+ang+" \\times "+n+"}{180})) \\space = \\space "+n+" \\times "+(n - 1 - freq).toFixed(2)+" \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("occans").innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
+        document.getElementById("occans1").innerHTML = "";
+        document.getElementById("occans2").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("occans"));
+    renderMathInElement(document.getElementById("occans1"));
+    renderMathInElement(document.getElementById("occans2"));
 }
 
 function utcal() {
@@ -16384,5 +16632,6 @@ function clearSumAndDiff() {
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
     }
+
 
 }
