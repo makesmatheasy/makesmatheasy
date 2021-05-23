@@ -13059,7 +13059,7 @@ function multBinDecHexOct(){
 //----------------------------	//----------------------------
 
 
-//Function for multiplication of any number system
+//Function for division of any number system
 function divBinDecHexOct(){
     const firstBase = document.getElementById("divide-all-select1").value;
     const secondBase = document.getElementById("divide-all-select2").value;
@@ -13069,7 +13069,6 @@ function divBinDecHexOct(){
     let result = document.getElementById("divide-all-result");
     var x1;
     var x2;
-
     if(firstBase === "Binary")
     x1=parseInt(input1,2);
 
