@@ -12377,7 +12377,26 @@ function hammingDistance() {
     if(x.length != y.length){
         result.innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal length of inputs )"
     } else {
-        if(type == "Decimal"){
+        // if(type == "Decimal"){
+        //     let val = x ^ y;
+        //     let hammDist = 0;
+        //     if(x.length == y.length){
+        //         while (val > 0) {
+        //             val &= val - 1;
+        //             hammDist++;
+        //         }
+        //         result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+        //     }
+        // }else if(type == "String"){
+        //     let hammDist;
+        //     for (var i = 0; i <x.length ; i++) {
+        //         if(x.charAt(i)!=y.charAt(i))
+        //             hammDist += 1;
+        //     }
+        //     result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+        }else if(type == "Hexadecimal"){
+            x = parseInt(x,16).toString(10);
+            y = parseInt(y,16).toString(10);
             let val = x ^ y;
             let hammDist = 0;
             if(x.length == y.length){
@@ -12387,13 +12406,6 @@ function hammingDistance() {
                 }
                 result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
             }
-        }else if(type == "String"){
-            let hammDist;
-            for (var i = 0; i <x.length ; i++) {
-                if(x.charAt(i)!=y.charAt(i))
-                    hammDist += 1;
-            }
-            result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
         }
     }
 }
