@@ -4238,6 +4238,28 @@ function solveicosa() {
 
 }
 
+function solvecubo() {
+    var a = document.getElementById("inputcuboside").value;
+    var resultcv = document.getElementById("resultofcubov");
+    var resultca = document.getElementById("resultofcuboa");
+    var vtemp = "";
+    var atemp = "";
+    if (a != "") {
+        vtemp += "\\[Volume \\space of \\space Cuboctahedron \\space \\newline \\frac{5}{3}" + "(\\space \\sqrt{2})" + a + "\\times" + a + "\\times" + a + "\\ = " + eval(2.3570226 * (a * a * a)).toFixed(2) + "\\]";
+        resultcv.innerHTML = vtemp;
+
+        atemp += "\\[ Area \\space of \\space Cuboctahedron \\space \\newline (" + 6  + "+2 \\sqrt{3} )"  + a + "\\times" + a + "\\ = " + eval(String(9.4641016 * (a * a))).toFixed(2) + "\\]";
+        resultca.innerHTML = atemp;
+
+        renderMathInElement(resultcv);
+        renderMathInElement(resultca);
+
+    } else {
+        resultvolt.innerHTML = "";
+        resulttsa.innerHTML = "";
+    }
+
+}
 function vectortetra(){
     var a,b,c,d,e,f,g,h,i;
      a = parseInt(document.getElementById("inp12").value);
