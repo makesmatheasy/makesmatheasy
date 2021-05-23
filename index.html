@@ -16087,6 +16087,15 @@
                 <tr>
                     <td>
                         <div style="color: var(--appimage);cursor: pointer;">
+                            <a data-toggle="modal" data-target="#radiationcon"
+                               style="text-decoration:none;"
+                               href="#">Radiation</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="color: var(--appimage);cursor: pointer;">
                             <a data-toggle="modal" data-target="#timecon"
                                style="text-decoration:none;"
                                href="#">Time</a>
@@ -28874,6 +28883,138 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="radiationcon" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Radiation</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="row">
+                        <div class="col-6">
+                            <label for="from">
+                                <h3>Absorbed Dose</h3>
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="radiation1con-1" class="form__field" onchange="radiation1con()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">milligray[mGy]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">microgray[uGy]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">centigray[cGy]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">rad[rad]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Gray[Gy]
+                                </option>
+                            </select>
+                            <input type="number" id="radiation1conin" class="form__field"
+                                   placeholder="Enter Side"
+                                   value="0" ; oninput="radiation1con();">
+
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="radiation1con-2" class="form__field" onchange="radiation1con()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">milligray[mGy]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">microgray[uGy]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">centigray[cGy]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">rad[rad]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Gray[Gy]
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="radiation1conou">0</p>
+                            </label>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="from">
+                                <h3>Equivalent Dose</h3>
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="radiation2con-1" class="form__field" onchange="radiation2con()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">millisievert[mSv]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">millirem[mrem]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">microsievert[uSv]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">sievert[Sv]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">rem(rem)
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">banana equivalent dose(BED)
+                                </option>
+                            </select>
+                            <input type="number" id="radiation2conin" class="form__field"
+                                   placeholder="Enter Side"
+                                   value="0" ; oninput="radiation2con();">
+
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="radiation2con-2" class="form__field" onchange="radiation2con()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">millisievert[mSv]
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">millirem[mrem]
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">microsievert[uSv]
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">sievert[Sv]
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">rem(rem)
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">banana equivalent dose(BED)
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="radiation2conou">0</p>
+                            </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="timecon" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
