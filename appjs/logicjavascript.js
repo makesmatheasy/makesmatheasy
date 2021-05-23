@@ -2520,7 +2520,7 @@ function impse3find(){
 
 
 function impse4find(){
-    let n = parseInt(document.getElementById("impse7").value)  
+    let n = parseInt(document.getElementById("impse8").value)  
     for (var row_num = 1; row_num <= n; row_num++) { 
         var count = 1;
         var c = 1; 
@@ -2531,6 +2531,13 @@ function impse4find(){
         }
         document.getElementById("impse7ans").innerHTML =  count + " ";
     }
+}
+
+function impse5find(){
+    let n = parseInt(document.getElementById("impse9").value) 
+    let _n = n, ans; 
+    ans = Math.round((_n * _n) / 12)- Math.floor(_n / 4)* Math.floor((_n + 2) / 4); 
+    document.getElementById("impse9ans").innerHTML =  ans;
 }
 
 function solvetetrahexa(){
