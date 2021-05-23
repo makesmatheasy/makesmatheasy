@@ -10349,13 +10349,19 @@ function cirinsemi1find(){
     document.getElementById("cirinsemi1ans").innerHTML = area;
 }
 
-function cirinsemi1find(){
+function cirinsemi2find(){
     let l = parseInt(document.getElementById("cirinsemi2in").value)
     let b = parseInt(document.getElementById("cirinsemi21in").value)
     let h = parseInt(document.getElementById("cirinsemi22in").value)
     var a = (l * b) / (l + b);
     let ans =  a * a;
     document.getElementById("cirinsemi2ans").innerHTML = ans
+}
+
+function cirinsemi3find(){
+    let R = parseInt(document.getElementById("cirinsemi3in").value)
+    let ans = 4 * R * R + 0.25;  
+    document.getElementById("cirinsemi3ans").innerHTML = ans
 }
 
 function trapinsemifind(){
