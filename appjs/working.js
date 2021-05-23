@@ -1316,6 +1316,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
