@@ -355,6 +355,7 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Conditional Probability
+  - Geometric Probability Distribution
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties
@@ -371,6 +372,7 @@ Other Tech/Libraries
   - Z-test
   - Z score Calculator
   - Confidence Interval Calculator
+  - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
