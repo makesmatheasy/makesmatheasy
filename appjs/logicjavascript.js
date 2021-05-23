@@ -11435,6 +11435,37 @@ function lacube7find(){
         }
 }
 
+function lacube8find(){
+    let number = parseInt(document.getElementById("lacube8").value)
+    let precision = parseInt(document.getElementById("lacube9").value)
+    let start = 0, end = number;
+    let mid;
+    let ans = 0.0;
+    while (start <= end){
+        mid = (start + end) / 2;               
+        if (mid * mid == number){
+            ans = mid;
+            break;
+        }
+        if (mid * mid < number) {
+            start = mid + 1;
+            ans = mid;
+        }
+        else {
+            end = mid - 1;
+        }
+    }
+    let increment = 0.1;
+    for (let i = 0; i < precision; i++) {
+        while (ans * ans <= number) {
+            ans += increment;
+        }
+        ans = ans - increment;
+        increment = increment / 10;
+    }
+    document.getElementById("lacube8ans").innerHTML =  ans;
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
