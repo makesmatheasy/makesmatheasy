@@ -10623,20 +10623,19 @@ function exposol() {
         }
     }   
 }
-
-function solvepercal()
-{
-    var x2,y2;
-    x2=parseFloat(document.getElementById('perX2').value);
-    y2=parseFloat(document.getElementById('perY2').value);
-    if(!isNaN(x2) || !isNaN(y2)){
-    var s = (y2*100)/x2;
-    s = s.toFixed(2);
-    document.getElementById('s').innerHTML= 'Result : ' + s ; 
+function solvepercal(){
+    var x2=document.getElementById('perX2').value;
+    var y2=document.getElementById('perY2').value;
+    if(x2 != "" && y2 != ""){
+        var s = ((y2*100)/x2).toFixed(2);
+        document.getElementById('s').innerHTML= "\\[\\frac{"+y2+" \\times 100}{"+x2+"} \\space = \\space "+s+"\\]" ; 
+        document.getElementById('s1').innerHTML= "\\[Hence, \\space "+y2+" \\space out \\space of \\space"+s+" \\space is \\space"+x2+" \\space \\% \\]";
+    } else{
+        document.getElementById('s').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('s1').innerHTML= "";
     }
-    else{
-        document.getElementById('s').innerHTML= 'Please enter all Input';
-    }
+    renderMathInElement(document.getElementById('s'));
+    renderMathInElement(document.getElementById('s1'));
 }
 function solvepercent(){
     var x3=(document.getElementById('x3').value);
