@@ -14011,12 +14011,18 @@ function convertbcd() {
     result.innerHTML=bcdTOdecimal(input).join('_');
     else if(fromCode=="Decimal" && toCode=="BCD Code")
     result.innerHTML =decimalTObcd(input);
+    else if(fromCode == "Binary" && toCode == "BCD Code"){
+        input = parseInt(input,2).toString();
+        result.innerHTML = decimalTObcd(input);
+    }
+    
     if (input == "") {
         result.innerHTML = "";
     } else if (fromCode=="BCD Code" && input.search(/^[10]+$/) == -1 ){
         result.innerHTML = "BCD Code can only have 0's and 1's";
-
-}
+    } else if (fromCode == "Binary" && input.search(/^[10]+$/) == -1 ){
+        result.innerHTML = "BCD Code can only have 0's and 1's";
+    }
 }
 
 //----------------------------
