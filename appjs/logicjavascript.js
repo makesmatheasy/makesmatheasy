@@ -15002,12 +15002,26 @@ function tvalue_SD(diff, length) {
 function tvalue() {
     let list1 = document.getElementById("list1").value;
     let list2 = document.getElementById("list2").value;
+    
 
+   if(list1==""||list2=="")
+   {
+    document.getElementById('stepsbox').style.display = "none" ;
+    document.getElementById('testans').innerHTML = "Please input all the numbers to find answer";
+   }
+    else{
     list1 = list1.split(" ");
     list2 = list2.split(" ");
     let n1 = list1.length
     let n2 = list2.length
 
+    if(list1.length!=list2.length)
+    {
+     document.getElementById('stepsbox').style.display = "none" ;
+     document.getElementById('testans').innerHTML = "Number of inputs in both dataset should be same";
+    }
+ 
+    else{
     if (n1 <= 30 && n2 <= 30) {
         for (var i = 0; i < n1; i++) {
             list1[i] = parseInt(list1[i]);
@@ -15041,6 +15055,8 @@ function tvalue() {
         document.getElementById('stepsbox').style.display = "none" 
         document.getElementById('testans').innerHTML = "T-test is not applicable for set of numbers more than 30"
     }
+}
+}
 }
 
 // t-value formula
