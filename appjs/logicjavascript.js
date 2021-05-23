@@ -2470,11 +2470,19 @@ function solveper() {
 }
 
 function impsefind(){
-    let x = parseInt(document.getElementById("impse1").value)
-    let n = parseInt(document.getElementById("impse2").value)
-    let ans1 = x/81
-    let ans = ans1*(Math.pow(10,n)-1-(9*n))
-    document.getElementById("impseans").innerHTML = ans
+    var x = (document.getElementById("impse1").value);
+    var n = (document.getElementById("impse2").value);
+    if (x!="" && n!=""){
+        var ans = (x/81)*(Math.pow(10,n)-1-(9*n));
+        document.getElementById("impseans").innerHTML = "\\[The \\space Sum \\space of \\space the \\space sequence \\space  x, \\space xx, \\space xxx,\\space  ……… \\space will \\space be\\]";
+        document.getElementById("impseans1").innerHTML = "\\[\\frac{"+x+"}{81} \\times (10^"+n+" \\space - \\space 1 \\space - \\space (9 \\times "+n+")) \\space = \\space "+(x/81).toFixed(2)+" \\times "+(Math.pow(10,n)-1-(9*n)).toFixed(2)+" \\space = \\space "+ans.toFixed(3)+"\\]";
+        renderMathInElement(document.getElementById('impseans'));
+        renderMathInElement(document.getElementById('impseans1'));
+    } else{
+        document.getElementById('impseans').innerHTML= "";
+        document.getElementById('impseans1').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        renderMathInElement(document.getElementById('impseans1'));
+    }
 }
 
 function impse1find(){
