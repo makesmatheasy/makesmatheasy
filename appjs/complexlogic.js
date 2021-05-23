@@ -1169,7 +1169,7 @@ function segcal()
    ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times ( " + b + " - sin ( " + b + ")) \\]";
    ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times (  " + b + " - sin(" + b + ")) \\]";
    ans += "\\[\\frac{1}{2} \\times " + ((a*a)*(b-t)) + " \\]"
-   ans += "\\[Area \\space of \\space segment \\space in \\space degrees \\space is \\space " + area + " \\]";
+   ans += "\\[Area \\space of \\space segment \\space in \\space radian \\space is \\space " + area + " \\]";
    output.innerHTML = ans;
     }
 }
