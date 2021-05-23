@@ -53,6 +53,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#midrangebtn").click(function () {
+        openit("#midrange");
+        closenav();
+        clearall();
+    });
     $("#fractions_op").click(function () {
         openit("#fractions");
         closenav();
@@ -1312,6 +1317,12 @@ $(document).ready(function () {
         clearall();
     });
     
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();

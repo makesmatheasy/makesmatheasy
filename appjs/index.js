@@ -336,6 +336,7 @@ function openit(id) {
         "#ci",
         "#mean",
         "#Meanit",
+        "#midrange",
         "#bcd",
         "#vector",
         "#vec",
