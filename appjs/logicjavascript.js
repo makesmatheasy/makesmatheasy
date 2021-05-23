@@ -12476,10 +12476,22 @@ function polymax4find(){
 }
 
 function polymax5find(){
-    var n  = parseInt(document.getElementById("regpolymax5").value)
-    var a = parseInt(document.getElementById("regpolymax51").value)
-    var ans = (a / (2 * Math.tan((180 / n)* 3.14159 / 180)));
-    document.getElementById("regpolymax5ans").innerHTML = ans
+    var n  = (document.getElementById("regpolymax5").value)
+    var a = (document.getElementById("regpolymax51").value)
+    var ans = a / (2 * Math.tan((180 / n)* (3.14159 / 180)));
+    if (n!="" && a!=""){
+    document.getElementById("regpolymax5ans").innerHTML = "\\[Apothem \\space of \\space a \\space n-sided \\space regular \\space polygon \\space will \\space be, \\]";
+    document.getElementById("regpolymax5ans1").innerHTML = "\\[\\frac{Side \\space Length}{2 \\times tan(\\frac{180}{No. \\space of \\space sides} \\times \\frac{3.1416}{180}  )}\\]"
+    document.getElementById("regpolymax5ans2").innerHTML = "\\[\\frac{"+a+"}{2 \\times tan(\\frac{180}{"+n+"} \\times \\frac{3.1416}{180})} \\space = \\space  \\frac{"+a+"}{2 \\times "+(Math.tan((180 / n)* (3.14159 / 180))).toFixed(2)+"} \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("regpolymax5ans").innerHTML = "\\[Please \\space enter \\space  all \\space the \\space values\\]";
+        document.getElementById("regpolymax5ans1").innerHTML = "";
+        document.getElementById("regpolymax5ans2").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("regpolymax5ans"));
+    renderMathInElement(document.getElementById("regpolymax5ans1"));
+    renderMathInElement(document.getElementById("regpolymax5ans2"));
+
 }
 
 function polymax6find(){
