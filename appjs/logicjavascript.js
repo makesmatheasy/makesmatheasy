@@ -14039,6 +14039,10 @@ function convertbcd() {
     else if(fromCode == "Binary" && toCode == "BCD Code"){
         input = parseInt(input,2).toString();
         result.innerHTML = decimalTObcd(input);
+    }else if(fromCode == "BCD Code" && toCode == "Binary"){
+        var temp = "";
+        temp = bcdTOdecimal(input).join('');
+        result.innerHTML = parseInt(temp,10).toString(2);
     }
     
     if (input == "") {
