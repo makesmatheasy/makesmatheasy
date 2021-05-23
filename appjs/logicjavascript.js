@@ -14238,6 +14238,19 @@ function exc1find(){
     document.getElementById("exc1ans").innerHTML =  sum.toFixed(10);
 }
 
+function exc2find(){
+    let n = parseInt(document.getElementById("exc1").value)
+    let x = parseInt(document.getElementById("exc2").value)
+    let sum = x, e = 2, o = 1, p = 1;
+    for (let i = 2; i <= n; i++) {
+        p += 2; 
+        sum += (o / e) * (Math.pow(x, p) / p);
+        o = o * (o + 2);
+        e = e * (e + 2);
+    }
+    document.getElementById("exc2ans").innerHTML =  sum.toFixed(10);
+}
+
 function fac(num)
 {
     if (num == 0)
