@@ -2558,7 +2558,13 @@ function impse5find(){
     let n = parseInt(document.getElementById("impse9").value) 
     let _n = n, ans; 
     ans = Math.round((_n * _n) / 12)- Math.floor(_n / 4)* Math.floor((_n + 2) / 4); 
-    document.getElementById("impse9ans").innerHTML =  ans;
+    document.getElementById("impse5ans").innerHTML =  ans;
+}
+
+function impse6find(){
+    let n = parseInt(document.getElementById("impse10").value)
+    let ans = (parseInt(Math.pow(10, n + 1)) * (9 * n - 1) + 10) /parseInt(Math.pow(9, 3)) - n * (n + 1) / 18;
+    document.getElementById("impse6ans").innerHTML = ans
 }
 
 function solvetetrahexa(){
