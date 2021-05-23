@@ -12408,7 +12408,7 @@ function hammingDistance() {
             }
         }else if(type == "Binary"){
             if(x.search(/^[10]+$/) == -1 || y.search(/^[10]+$/) == -1){
-                result.innerHTML = "Error Input : Binary can have 0's and 1's only";
+                result.innerHTML = "Error : Invalid Input (Binary can have 0's and 1's only)";
             }else{
                 let val = x ^ y;
                 let hammDist = 0;
