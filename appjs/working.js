@@ -636,6 +636,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#oddsbtn").click(function () {
+        openit("#odds");
+        closenav();
+        clearall();
+    });
+
     $("#skew").click(function () {
         openit("#skews");
         closenav();
@@ -1306,6 +1312,12 @@ $(document).ready(function () {
         clearall();
     });
     
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();

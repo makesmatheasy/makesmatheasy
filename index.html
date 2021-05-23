@@ -4368,6 +4368,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="oddsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Odds Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Odds Calculator','#odds','c','oddsimgfav')"><img
+                                        id="oddsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="skew"
                             style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Skewness Calculator </a>
                         </td>
@@ -12171,6 +12186,15 @@
             <p id="civalue"></p>
         </div>
          
+        <div class="collapse" id="odds">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Odds Calculator</h1>
+            <input class = "form__field"type="number" id="forsuccess" placeholder="Enter chances for success">
+            <br><br>
+            <input class = "form__field"type="number" id="agsuccess" placeholder="Enter chances against success">
+            <br><br>
+            <button class = "btn btn-light" onclick="oddsCalc()">Calculate</button>
+            <p id="oddsAns"></p>
+        </div>
         
         <!-- chi-square test -->
          <div class="collapse" id="chitest">

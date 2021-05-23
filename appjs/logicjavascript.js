@@ -15589,6 +15589,22 @@ function confivalue() {
     } 
     
 }
+//odds calculator
+function oddsCalc() {
+    let p = document.getElementById('forsuccess').value
+    let q = document.getElementById('agsuccess').value
+    
+    if(p=="" || q==""){
+        document.getElementById("oddsAns").innerHTML = "Enter both the inputs";
+    }
+    else{
+        let win = (p/(p+q)).toFixed(3);
+        let fail = (q/(p+q)).toFixed(3);
+        document.getElementById("oddsAns").innerHTML = "Probability of winning: " + win + "%  " + 
+                    "Probability of losing: " + fail + "%";
+    }   
+}
+
 
 function covcal()
 {

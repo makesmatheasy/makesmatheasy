@@ -667,6 +667,12 @@ function autocomplete(inp, arr) {
                     else if (inp.value.toUpperCase() == "CONFIDENCE INTERVAL CALCULATOR") {
                         $("confi-inter").slideToggle();    
                     }
+                    else if(inp.value.toUpperCase() == "ODDS CALCULATOR"){
+                        document.getElementById('#odds').click();
+                    }
+                    else if (inp.value.toUpperCase() == "ODDS CALCULATOR") {
+                        $("odds").slideToggle();    
+                    }
                    
                     else if (inp.value.toUpperCase() == "JOINT PROBABILITY") {
                         $("#joint-probabilitycollapse").slideToggle();    

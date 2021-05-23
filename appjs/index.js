@@ -277,6 +277,7 @@ function openit(id) {
         "#per_chng_vol",
         "#enna_prism",
         "#confi-inter",
+        "#odds",
         "#pairfacts",
         "#interest",
         "#bitwise-calc",
