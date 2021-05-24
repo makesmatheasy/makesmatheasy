@@ -277,6 +277,7 @@ function openit(id) {
         "#bt-collapse1",
         "#antipodal",
         "#manhats",
+        "#bilinear",
         "#elliptic_cone",
         "#bicone",
         "#pandc",

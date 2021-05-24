@@ -16646,6 +16646,33 @@ function manhatcal(){
     }
 }
 
+function bilinearcal(){
+    var bx1=parseInt(document.getElementById("bicx1").value);
+    var bx2=parseInt(document.getElementById("bicx2").value);
+    var by1= parseInt(document.getElementById("bicy1").value);
+    var by2= parseInt(document.getElementById("bicy2").value);
+    var bq11= parseInt(document.getElementById("bicq11").value);
+    var bq12= parseInt(document.getElementById("bicq12").value);
+    var bq21= parseInt(document.getElementById("bicq21").value);
+    var bq22= parseInt(document.getElementById("bicq22").value);
+    var bx= parseInt(document.getElementById("bicx").value);
+    var by= parseInt(document.getElementById("bicy").value);
+    var ans="";
+    
+    if(isNaN(bx1)||isNaN(bx2)||isNaN(by1)||isNaN(by2)||isNaN(bq11)||isNaN(bq12)||isNaN(bq21)||isNaN(bq22)||isNaN(bx)||isNaN(by))
+    {
+        ans += "Please fill all the field";
+        document.getElementById("bilinearans").innerHTML= ans;
+    }
+    else{
+        var r1 = (bx2-bx)/(bx2-bx1)*bq11+(bx-bx1)/(bx2-bx1)*bq21;
+        var r2 = (bx2-bx)/(bx2-bx1)*bq12+(bx-bx1)/(bx2-bx1)*bq22;
+        var p=(by2-by)/(by2-by1)*r1+(by-by1)/(by2-by1)*r2;
+        ans+="\\[Interpolated \\space point \\space P \\space :="+p+"\\]";
+        document.getElementById("bilinearans").innerHTML= ans;
+        renderMathInElement(document.getElementById("bilinearans"));
+    }
+}
 function volofcube() {
     var x = document.getElementById("chngsidecube").value;
     var per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);

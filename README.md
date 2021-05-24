@@ -234,6 +234,8 @@ Other Tech/Libraries
   - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Manhattan Distance Calculator
+  - Bilinear Interpolation Calculator
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
   - Segment Area Calculator
