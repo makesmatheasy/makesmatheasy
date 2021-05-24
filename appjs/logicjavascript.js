@@ -13548,8 +13548,8 @@ function addBinDecHexOct(){
         x1o = fracDectoBinHexOct(x1,8);
     }
     else if(firstBase === "Hexa Decimal"){
-        x1=parseInt(input1,16);
-        x1o=x1.toString(16);
+        x1 = calculatefrac(input1,16);
+        x1o = fracDectoBinHexOct(x1,16);
     }
     else if(firstBase === "Decimal"){
         x1=parseInt(input1);
@@ -13565,8 +13565,8 @@ function addBinDecHexOct(){
         x2o = fracDectoBinHexOct(x2,8);
     }
     else if(secondBase === "Hexa Decimal"){
-        x2=parseInt(input2,16);
-        x2o=x2.toString(16);
+        x2 = calculatefrac(input2,16);
+        x2o = fracDectoBinHexOct(x2,16);
     }
     else if(secondBase === "Decimal"){
         x2=parseInt(input2);
@@ -13584,7 +13584,7 @@ function addBinDecHexOct(){
     else if (resultType === "Octal")
     result.innerHTML="Answer in Octal="+fracDectoBinHexOct(x3,8);
     else if(resultType === "Hexa Decimal")
-    result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
+    result.innerHTML="Answer in Hexa Decimal="+fracDectoBinHexOct(x3,16);
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
     else
