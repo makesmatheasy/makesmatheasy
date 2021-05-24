@@ -11330,6 +11330,22 @@ function retfind1(){
     }
 }
 
+function retfind8(){
+    var l = parseFloat(document.getElementById("retin8").value)
+    var b = parseFloat(document.getElementById("retin10").value)
+    var h = parseFloat(document.getElementById("retin11").value)
+    var x = ((l * b) / (l + b));
+    var area = 0.70477 * Math.pow(x, 2);
+    if(l<0 || b<0 || h<0){
+        document.getElementById("retans8").innerHTML = "height, base or hypotenuse cannot be negative"
+    }
+    else if(!isNaN(l) && !isNaN(b)  && !isNaN(h)){
+    document.getElementById("retans8").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans8").innerHTML = "Please enter valid input"
+    }
+}
 
 function exposol() {
     var x = parseFloat(document.getElementById("xval").value);
