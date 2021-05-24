@@ -177,6 +177,7 @@ Other Tech/Libraries
   - Operations on Fractions
   - Binomial Theorem Properties
   - Binomial expression multiplication
+  - Foil Calculator
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -207,6 +208,7 @@ Other Tech/Libraries
     - Temperature
     - Pressure
     - Energy
+    - Radiation
     - Time
     - Angle
     - Speed
@@ -232,8 +234,11 @@ Other Tech/Libraries
   - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Manhattan Distance Calculator
+  - Bilinear Interpolation Calculator
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
+  - Cartesian coordinates calculator
   - Segment Area Calculator
   - Curve Tracing
   - Ceva's and Thale's Theorem
@@ -288,6 +293,7 @@ Other Tech/Libraries
     - Dodecahedron
     - Rhombic Dodecahedron
     - Icosahedron
+    - Cuboctahedron
     - Parallelepiped
     - Hyperboloid
     - N-dimension Sphere
@@ -296,6 +302,7 @@ Other Tech/Libraries
     - Ellipsoidal Cap
   - 4-D Shapes Calculator
     - Tesseract
+    - Hypersphere
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
@@ -355,6 +362,7 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Conditional Probability
+  - Geometric Probability Distribution
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties
@@ -366,11 +374,17 @@ Other Tech/Libraries
   - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
+  - Midrange Calculator
   - Standard Deviation
   - T-test
+  - AB-test
   - Z-test
   - Z score Calculator
+  - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - Confidence Interval Calculator
+  - Sensitivity and Specificity Calculator
+  - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
