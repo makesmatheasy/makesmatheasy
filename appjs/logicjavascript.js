@@ -12938,6 +12938,12 @@ function polymax7find(){
     document.getElementById("polymax7ans").innerHTML = ans
 }
 
+function polymax8find(){
+    let N = parseInt(document.getElementById("polymax8").value)
+    let ans =  (N) * (N - 1) + 1;
+    document.getElementById("polymax8ans").innerHTML = ans
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
