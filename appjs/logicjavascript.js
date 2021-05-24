@@ -11989,31 +11989,30 @@ function igp() {
         resout.innerHTML = restemp;
         renderMathInElement(resout);
     }
-}
-
-else{
-             resout.innerHTML="";
-}
+} else{
+        resout.innerHTML="";
+    }
 }
 
 function maxminquadfind(){
-    let a = parseInt(document.getElementById("aofeqn2").value)
-    let b = parseInt(document.getElementById("bofeqn2").value)
-    let c = parseInt(document.getElementById("cofeqn2").value)
-    var secondPart = c * 1.0 -(b * b / (4.0 * a));
-    if (a > 0)
-    {
-        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +"Infinity" + "<br>";
-        document.getElementById("maxminquadans").innerHTML="Minvalue = " + secondPart;
-    }
-    else if (a < 0)
-    {
-        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +secondPart + "<br>";
-        document.getElementById("maxminquadans").innerHTML="Minvalue = " +"-Infinity";
-    }
-    else
-    {
-        document.getElementById("maxminquadans").innerHTML="Not a quadratic function\n";
+    var a = (document.getElementById("aofeqn2").value)
+    var b = (document.getElementById("bofeqn2").value)
+    var c = (document.getElementById("cofeqn2").value)
+    var secondPart = parseInt(c) * 1.0 -(parseInt(b)**2 / (4.0 * parseInt(a)));
+    if (a!="" && b!="" && c!=""){
+        if (a > 0){
+            document.getElementById("maxminquadans1").innerHTML= "\\[Since \\space the \\space coefficeient \\space of \\space x^2 \\space > \\space 0 \\newline Maxvalue \\space  = \\space Infinity \\]";
+            document.getElementById("maxminquadans2").innerHTML= "\\[Minvalue \\space = \\space constant \\times 1 \\space - \\space \\frac{(coefficeient \\space of \\space x)^2}{4 \\times (coefficeient \\space of \\space x^2)} \\space = \\space"+c+" \\times 1 \\space - \\space (\\frac{"+b+"^2}{4 \\times "+a+"}) \\space = \\space "+secondPart.toFixed(3)+"\\]";
+        } else if (a < 0) {
+            document.getElementById("maxminquadans1").innerHTML="\\[Maxvalue \\space =  \\space constant \\times 1 \\space - \\space \\frac{(coefficeient \\space of \\space x)^2}{4 \\times (coefficeient \\space of \\space x^2)} \\space = \\space "+c+" \\times 1 \\space - \\space (\\frac{"+b+"^2}{4 \\times "+a+"}) \\space = \\space "+secondPart.toFixed(3)+"\\]";
+            document.getElementById("maxminquadans2").innerHTML= "\\[Since \\space the \\space coefficeient \\space of \\space x^2 \\space < \\space 0 \\newline Minvalue \\space  = \\space Infinity \\]";
+        }
+        renderMathInElement(document.getElementById("maxminquadans1"));
+        renderMathInElement(document.getElementById("maxminquadans2"));
+    } else{
+        document.getElementById("maxminquadans1").innerHTML="\\[Not \\space a \\space quadratic \\space function : \\space Enter \\space proper \\space values\\]";
+        document.getElementById("maxminquadans2").innerHTML= "";
+        renderMathInElement(document.getElementById("maxminquadans1"));
     }
 }
 
