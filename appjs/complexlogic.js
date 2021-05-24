@@ -745,22 +745,23 @@ function cresccal() {
     var r2 = document.getElementById("cresc_rad2").value;
     var d = document.getElementById("cresc_dist").value;
     if (r1 == "" || r2 == "" || d == "") {
-        document.getElementById("crescans1").innerHTML = "Error: All values are required to obtain answer";
-        document.getElementById("crescans2").innerHTML ="";
-        document.getElementById("crescans3").innerHTML = "";
+        document.getElementById("crescans1").innerHTML = "\\[Error: \\space All \\space values \\space are \\space required \\space to \\space obtain \\space answer \\space\\]";
+        document.getElementById("crescans2").innerHTML =""; document.getElementById("crescans3").innerHTML = ""; renderMathInElement(document.getElementById("crescans1"));
     } else {
-        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){
+        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){ 
             var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
             var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
             var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
-            document.getElementById("crescans1").innerHTML = "Area of Lune 1: " + lune1;
-            document.getElementById("crescans2").innerHTML = "Area of Lune 2: " + lune2;
-            document.getElementById("crescans3").innerHTML = "Overlap Area: " + op;
+            document.getElementById("crescans1").innerHTML = "\\[r1 = Radius \\space of \\space circle \\space 1 \\space = \\space "+r1+" \\newline r2 = Radius \\space of \\space circle \\space 2 \\space = \\space "+r2+" \\newline d = Circle \\space center \\space distance \\space = \\space "+d+"\\]";
+            document.getElementById("crescans2").innerHTML = "\\[Area \\space of \\space Lune \\space 1: \\newline 2 \\times \\frac{\\sqrt{(r1 + r2 + d) \\times (r2 + d - r1) \\times (d + r1 - r2) \\times (r1 + r2 - d)} }{4} + \\newline r1^2 \\times acos(\\frac{(r2^2 - r1^2 - d^2)}{(2^r1 \\times d)}) - r2^2 \\times acos(\\frac{(r2^2 + d^2 - r1^2)}{ (2 \\times r2 \\times d)})\\]";
+            document.getElementById("crescans3").innerHTML =  "\\[2 \\times \\frac{\\sqrt{("+r1+" + "+r2+" + "+d+") \\times ("+r2+" + "+d+" - "+r1+") \\times ("+d+" + "+r1+" - "+r2+") \\times ("+r1+" + "+r2+" - "+d+")} }{4} + \\newline "+r1+"^2 \\times acos(\\frac{("+r2+"^2 - "+r1+"^2 - "+d+"^2)}{(2^"+r1+" \\times "+d+")}) - "+r2+"^2 \\times acos(\\frac{("+r2+"^2 + "+d+"^2 - "+r1+"^2)}{ (2 \\times "+r2+" \\times "+d+")}) \\space   = \\space "+ lune1.toFixed(3)+"\\]";
+            document.getElementById("crescans5").innerHTML ="\\[Overlap \\space Area: \\space \\newline \\pi \\times r1^2 - (Area \\space of \\space Lune \\space 1) \\newline "+(math.pi).toFixed(2)+" \\times "+r1+"^2 - ("+lune1.toFixed(2)+") \\space = \\space "+op.toFixed(3)+"\\]";
+            document.getElementById("crescans6").innerHTML = "\\[ Area \\space of \\space Lune \\space 2:  \\space \\newline \\pi \\times r1^2 - (Overlap \\space Area) \\newline "+(math.pi).toFixed(2)+" \\times "+r2+"^2 - ("+op.toFixed(2)+") \\space = \\space "+lune2.toFixed(3)+"\\]";
+            renderMathInElement(document.getElementById("crescans1")); renderMathInElement(document.getElementById("crescans2"));
+            renderMathInElement(document.getElementById("crescans3")); renderMathInElement(document.getElementById("crescans5")); renderMathInElement(document.getElementById("crescans6"));
         } else{
             document.getElementById("crescans1").innerHTML  = "Error: Enter proper values";
-            document.getElementById("crescans2").innerHTML = "";
-            document.getElementById("crescans3").innerHTML = "";
-        }
+            document.getElementById("crescans2").innerHTML = ""; document.getElementById("crescans3").innerHTML = ""; }
     }
 }
 
@@ -1134,23 +1135,36 @@ function segcal()
     var a=document.getElementById("segr").value;
     var b=document.getElementById("sega").value;
     var c=document.getElementById("angseg").value;
+    var output = document.getElementById("segans");
     var ans="";
     if(a==""||b=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans += "\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer \\]";
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
     else{
 
     if(c=="degree")
     {
-        b=b/57.296;
+        var t=Math.sin(b);
+        ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + "))  \\]";
+        ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + ")) \\]";
+        ans += "\\[\\frac{1}{2} \\times " + ((a*a)*((Math.PI/180)*(b-t)))+ " \\]"
+        ans += "\\[Area \\space of \\space segment \\space in \\space degrees \\space is \\space " +  (((a*a)*((Math.PI/180)*(b-t)))*0.5) + " \\]";
+        output.innerHTML = ans;
     }
-   console.log(Math.sin(b));
-   var t=Math.sin(b);
-   var area= a*a*(b-t)*0.5
-    ans="The area of segment is: "+area;
+    else{
+        var t=Math.sin(b);
+        var area= a*a*(b-t)*0.5
+   ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times ( " + b + " - sin ( " + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times (  " + b + " - sin(" + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + ((a*a)*(b-t)) + " \\]"
+   ans += "\\[Area \\space of \\space segment \\space in \\space radian \\space is \\space " + area + " \\]";
+   output.innerHTML = ans;
+    }
 }
-document.getElementById("segans").innerHTML=ans;
+renderMathInElement(output);
 }
 
 function impcal() {
@@ -1853,29 +1867,7 @@ function oocal()
     }
     document.getElementById("ooans").innerHTML=ans;
 }
-function manhatcal()
-{
-    var num1=document.getElementById("mdx1").value;
-    var num2=document.getElementById("mdx2").value;
-    var num3=document.getElementById("mdx3").value;
-    var num4=document.getElementById("mdx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
 
-        var f=Maths.abs(num1-num3)+Maths.abs(num2-num4);
-        ans="The calculated Manhattan Distance is: "+f;
-    }
-    document.getElementById("manhatans").innerHTML=ans;
-}
 function mifcal()
 {
     var num1=document.getElementById("mians1").value;
