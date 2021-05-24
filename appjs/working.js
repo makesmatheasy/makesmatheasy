@@ -96,6 +96,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#abundant").click(function () {
+        openit("#abundants");
+        closenav();
+        clearall();
+    })
 
     $("#per-chng-cube").click(function () {
         openit("#chng-vol-cube");
@@ -710,6 +715,11 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#foilbtn").click(function () {
+        openit("#foil");
+        closenav();
+        clearall();
+    });
     $("#clrbtn").click(function () {
         openit("#clr");
         closenav();
