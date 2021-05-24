@@ -29,8 +29,19 @@ $("#utc").click(function(){
     clearall();
 });
 
+$("#bilinearbtn").click(function(){
+    openit("#bilinear");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
+    closenav();
+    clearall();
+});
+
+$("#cartbtn").click(function(){
+    openit("#cart");
     closenav();
     clearall();
 });
@@ -87,6 +98,12 @@ $(document).ready(function () {
 
     $("#ainv").click(function () {
         openit("#ais");
+        closenav();
+        clearall();
+    });
+
+    $("#adam").click(function () {
+        openit("#adams");
         closenav();
         clearall();
     });
@@ -434,6 +451,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#diamondbtn").click(function () {
+        openit("#diamond");
+        closenav();
+        clearall();
+    }) 
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
@@ -1265,7 +1287,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    
+    $("#goldrbtn").click(function () {
+        openit("#goldr");
+        closenav();
+        clearall();
+    });
     $("#platonicbtn").click(function () {
         openit("#platonic");
         closenav();
