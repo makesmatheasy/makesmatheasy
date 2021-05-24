@@ -16859,3 +16859,34 @@ function clearSumAndDiff() {
 
 
 }
+
+function amfind()
+{
+    var num1=document.getElementById("amicable1").value;
+    ans="";
+    if(num1=="")
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        var sum1=0;
+        for(var i=1;i<num1;i++)
+        {
+               if(num1%i==0)
+               {sum1+=i;}
+        }
+
+        if(sum1>num1)
+        {
+            ans="The sum of it's divisor is "+sum1+" .<br> Since sum is greater than number, the number is abundant.<br> ";
+        }
+        else
+        {
+            ans="The sum of it's divisor is "+sum1+" .<br> Since sum is smaller than number, the number is not abundant.<br> ";
+        }
+   
+    }
+    document.getElementById("amans").innerHTML=ans;
+}
