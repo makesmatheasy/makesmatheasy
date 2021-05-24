@@ -16660,7 +16660,7 @@ function sphcal(){
     var fi = Math.atan(y/x);
     var ans="";
     
-    if(isNaN(p)||isNaN(o)||isNaN(z))
+    if(isNaN(x)||isNaN(y)||isNaN(z))
     {
         ans += "Please fill all the field";
         outputr.innerHTML= ans;
