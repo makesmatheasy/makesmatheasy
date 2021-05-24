@@ -2381,33 +2381,31 @@ function solvehalft() {
         boutput.innerHTML = "";
         voloutput.innerHTML = "";
     }
-
 }
 
 function cramer(){
-    var a=parseFloat(document.getElementById('cab').value);
-    var b=parseFloat(document.getElementById('cab1').value);
-    var c=parseFloat(document.getElementById('cab2').value);
-    var d=parseFloat(document.getElementById('cab3').value);
-    var e=parseFloat(document.getElementById('cab4').value);
-    var f=parseFloat(document.getElementById('cab5').value);
+    var a=(document.getElementById('cab').value);
+    var b=(document.getElementById('cab1').value);
+    var c=(document.getElementById('cab2').value);
+    var d=(document.getElementById('cab3').value);
+    var e=(document.getElementById('cab4').value);
+    var f=(document.getElementById('cab5').value);
+    var cramtemp = "";
+    var cramoutput = document.getElementById("cramerres");
+    if (a!="" && b!="" && c!="" && d!="" && e!="" && f!=""){
     var res = ((a * e)-(b * d));
     var res1 = ((c * e)-(b * f));
     var res2 =((a * f)-(c * d));
     var x = (res1 / res);
     var y = (res2 / res);
-    var cramoutput = document.getElementById("cramerres");
-    var cramtemp = "";
-   if(a != "" && b != "" && c !=""){
     cramtemp += "\\[Δ = " + res + ",\\space Δ_x = " + res1 + ",\\space Δ_y = " + res2 + " \\]";
     cramtemp += "\\[X = " + x + ",\\space Y = " + y + "\\]";
     cramtemp += "\\[The \\space solution \\space is \\space (X,Y) =  (" + x + "," + y + ") \\]";
-
     cramoutput.innerHTML = cramtemp;
     renderMathInElement(cramoutput);
-   }
-   else {
-    cramoutput.innerHTML = "";
+   } else {
+    cramoutput.innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
+    renderMathInElement(cramoutput);
   }
 }
 
