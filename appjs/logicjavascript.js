@@ -10864,12 +10864,21 @@ function typenum4find(){
 }
 
 function typenum3find(){
+
+    let x = document.getElementById("typenum3").value;
+    let y = document.getElementById("typenum4").value;
+    if(x==""||y=="")
+    {
+        document.getElementById("typenum3ans").innerHTML =  "Please enter all the field to find answer";
+    }
+    else{
     let x = parseInt(document.getElementById("typenum3").value)
     let y = parseInt(document.getElementById("typenum4").value)
     if (divSum(x) != y) 
         document.getElementById("typenum3ans").innerHTML =  false; 
           
     document.getElementById("typenum3ans").innerHTML =  divSum(y) == x; 
+    }
 }
 
 function divSum(n) 
