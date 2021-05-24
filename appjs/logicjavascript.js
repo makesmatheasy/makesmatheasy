@@ -10852,6 +10852,22 @@ function retfind(){
     }
 }
 
+function retfind1(){
+    let a = parseFloat(document.getElementById("retin1").value)
+    let b = parseFloat(document.getElementById("retin2").value)
+    let h = Math.sqrt(((Math.pow(a, 2) + Math.pow(b, 2)) / (Math.pow(a, 2) * Math.pow(b, 2))));
+    let area = 0.70477 * Math.pow(h, 2);
+    if(a<0 || b<0){
+        document.getElementById("retans1").innerHTML = "length of axes cannot be negative"
+    }
+    else if(!isNaN(a) && !isNaN(b)){
+    document.getElementById("retans1").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans1").innerHTML = "Please enter valid input"
+    }
+}
+
 
 function exposol() {
     var x = parseFloat(document.getElementById("xval").value);
