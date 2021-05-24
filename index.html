@@ -1702,6 +1702,24 @@
                                 <tr>
                                     <td style="border-top: none;">
             
+                                        <a id="diamondbtn"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Diamond Problem Calculator</a>
+                                    </td>
+            
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Diamond Problem Calculator','#diamond','c','diamondimgfav')"><img
+                                                    id="diamondimgfav" src="images/unfavourite.png"
+            
+                                                    style="height:1.5625rem;filter: none;"></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                        </li>            
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+            
                                         <a id="ainv"
                                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Additive Inverse
                                         </a>
@@ -12571,6 +12589,31 @@
             <p id="cross_explain"></p>
         </div>
 
+        <!--Diamond Problem Calculator  -->
+        <div class="collapse" id="diamond">
+            <h1 style="text-align: center; margin-bottom: 4rem;">Diamond Problem Calculator</h1>
+            <img src="images/diamond.png" style="display: block; margin-left: auto; margin-right: auto; height: 262px;" class="img-fluid">
+            <br><br>
+            <h4>Enter any 2 fields</h4>
+            <form action="">
+                <input class="form__field" type="number" placeholder="Factor A"
+                                   id="dinputA" oninput="diamond()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Factor B"
+                                   id="dinputB" oninput="diamond()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Product"
+                                   id="dprod" oninput="diamond()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Sum"
+                                   id="dsum" oninput="diamond()">
+                <br><br>
+                <button type="button" class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="diamond_explain"></p>
+        </div>
+        
         <!-- Work and Time -->
         <div class="collapse" id="wandt">
             <h1 style="text-align: center;margin: 4rem auto 4rem auto;">Work And Time Calculator</h1>

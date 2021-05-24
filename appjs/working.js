@@ -439,6 +439,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#diamondbtn").click(function () {
+        openit("#diamond");
+        closenav();
+        clearall();
+    }) 
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();

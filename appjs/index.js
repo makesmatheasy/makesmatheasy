@@ -245,6 +245,7 @@ function openit(id) {
         "#typenum",
         "#dip",
         "#cross",
+        "#diamond",
         "#wandt",
         "#bulge",
         "#spiconcal",
