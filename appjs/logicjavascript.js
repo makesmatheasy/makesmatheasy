@@ -13623,14 +13623,21 @@ function divBinDecHexOct(){
     var x2;
     if(firstBase === "Binary")
     x1=parseInt(input1,2);
+    else if(firstBase === "Decimal")
+    x1=parseInt(input1);
+
 
     if(secondBase === "Binary")
     x2=parseInt(input2,2);
+    else if(secondBase === "Decimal")
+    x2=parseInt(input2);
 
     var x3=x1/x2;
 
     if(resultType === "Binary")
     result.innerHTML="Answer in binary="+x3.toString(2);
+    else if(resultType === "Decimal")
+    result.innerHTML="Answer in Decimal="+x3.toString();
 }
 
 //----------------------------
