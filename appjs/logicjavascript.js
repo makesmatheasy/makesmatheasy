@@ -15214,8 +15214,8 @@ function exc1find(){
 }
 
 function exc2find(){
-    let n = parseInt(document.getElementById("exc1").value)
-    let x = parseInt(document.getElementById("exc2").value)
+    let n = parseInt(document.getElementById("exc3").value)
+    let x = parseInt(document.getElementById("exc4").value)
     let sum = x, e = 2, o = 1, p = 1;
     for (let i = 2; i <= n; i++) {
         p += 2; 
@@ -15224,6 +15224,18 @@ function exc2find(){
         e = e * (e + 2);
     }
     document.getElementById("exc2ans").innerHTML =  sum.toFixed(10);
+}
+
+function exc3find(){
+    let n = parseInt(document.getElementById("exc5").value)
+    let x = parseInt(document.getElementById("exc6").value)
+    var res = 0, fact = 1;
+    for (i = 1; i <= num; i++)
+    {
+        fact = fact * i;
+        res = res + (i / fact);
+    }
+    document.getElementById("exc3ans").innerHTML = res
 }
 
 function fac(num)
