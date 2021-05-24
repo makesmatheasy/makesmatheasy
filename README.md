@@ -234,6 +234,8 @@ Other Tech/Libraries
   - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Manhattan Distance Calculator
+  - Bilinear Interpolation Calculator
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
   - Cartesian coordinates calculator
@@ -300,6 +302,7 @@ Other Tech/Libraries
     - Ellipsoidal Cap
   - 4-D Shapes Calculator
     - Tesseract
+    - Hypersphere
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA

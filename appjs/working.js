@@ -29,6 +29,11 @@ $("#utc").click(function(){
     clearall();
 });
 
+$("#bilinearbtn").click(function(){
+    openit("#bilinear");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -440,6 +445,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#diamondbtn").click(function () {
+        openit("#diamond");
+        closenav();
+        clearall();
+    }) 
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
