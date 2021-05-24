@@ -10959,6 +10959,13 @@ function typenum1find(){
 }
 
 function typenum2find(){
+
+    let n = document.getElementById("typenum2").value
+    if(n=="")
+    {
+        document.getElementById("typenum2ans").innerHTML =  "Please enter number to find answer"
+    }
+    else{
     let n = parseInt(document.getElementById("typenum2").value)
     let count = 0;
  
@@ -10980,6 +10987,7 @@ function typenum2find(){
     if (n > 2)
         count++;
     document.getElementById("typenum2ans").innerHTML =  count;
+}
 }  
 
 function typenum4find(){
