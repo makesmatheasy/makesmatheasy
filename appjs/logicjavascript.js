@@ -3094,21 +3094,21 @@ function plpSolve() {
     }    
 }
 function pppSolve() {
-    var a=parseFloat(document.getElementById('pppa').value);
-    var b=parseFloat(document.getElementById('pppb').value);
-    var c=parseFloat(document.getElementById('pppc').value);
-    var x1=parseFloat(document.getElementById('pppx').value);
-    var y1=parseFloat(document.getElementById('pppy').value);
+    var a=parseFloat(document.getElementById('plpa').value);
+    var b=parseFloat(document.getElementById('plpb').value);
+    var c=parseFloat(document.getElementById('plpc').value);
+    var x1=parseFloat(document.getElementById('plpx').value);
+    var y1=parseFloat(document.getElementById('plpy').value);
    
     var dis = (((a*x1)+(b*y1)));
     if(isNaN(x1) || isNaN(y1) || isNaN(a) || isNaN(b) || isNaN(c)){
-        document.getElementById('ppp_op').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
-        renderMathInElement(document.getElementById("ppp_op"));
+        document.getElementById('plp_op').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("plp_op"));
     } else{
         if(b>0)
-        document.getElementById('ppp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x' + '+' + (b) + 'y' + '=' + dis;
+        document.getElementById('plp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x' + '+' + (b) + 'y' + '=' + dis;
         else
-        document.getElementById('ppp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x'  + (b) + 'y' +  '=' + dis;
+        document.getElementById('plp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x'  + (b) + 'y' +  '=' + dis;
     }
 }
 
