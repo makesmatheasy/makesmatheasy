@@ -13333,7 +13333,26 @@
                 </p>
             </div>
         </div>
-
+        
+        <!-- Midrange start -->
+        <div class="collapse" id="midrange">
+    <h1 style="font-family:mathfont; text-align:center;">Midrange Calculator</h1>
+    <form action="">
+        <input type="text" id="midrangeInp" class="form__field" placeholder="Input space seperated numbers">
+        <p>&nbsp;</p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-auto d-flex justify-content-center">
+                <button id="smpbtn" class="btn btn-secondary m-1" type="button" onclick="midrangeCal()" style="font-family:mathfont;"> Find</button><br>
+            </div>
+            <br><br>
+            <div class="col-md-auto d-flex justify-content-center">
+                <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+            </div>
+        </div>
+    </form>
+  <div  id='midrangeAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
+        </div>
+        
         <div class="collapse" id="height1">
             <div class="text-center">
                 <h2><label>Height and Distance</label></h2><br><br>
@@ -21447,25 +21466,6 @@ N is the population size.
         </div>
     </div>
     
-
-<!-- Midrange start -->
-<div class="collapse" id="midrange">
-    <h1 style="font-family:mathfont; text-align:center;">Midrange Calculator</h1>
-    <form action="">
-        <input type="text" id="midrangeInp" class="form__field" placeholder="Input space seperated numbers">
-        <p>&nbsp;</p>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-auto d-flex justify-content-center">
-                <button id="smpbtn" class="btn btn-secondary m-1" type="button" onclick="midrangeCal()" style="font-family:mathfont;"> Find</button><br>
-            </div>
-            <br><br>
-            <div class="col-md-auto d-flex justify-content-center">
-                <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
-            </div>
-        </div>
-    </form>
-  <div  id='midrangeAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
-</div>
     <!-------------------------------------------------------->
 
     <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-hidden="true">
