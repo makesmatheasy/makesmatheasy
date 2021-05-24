@@ -207,6 +207,7 @@ Other Tech/Libraries
     - Temperature
     - Pressure
     - Energy
+    - Radiation
     - Time
     - Angle
     - Speed
@@ -288,6 +289,7 @@ Other Tech/Libraries
     - Dodecahedron
     - Rhombic Dodecahedron
     - Icosahedron
+    - Cuboctahedron
     - Parallelepiped
     - Hyperboloid
     - N-dimension Sphere
