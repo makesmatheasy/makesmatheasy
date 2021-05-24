@@ -40,6 +40,12 @@ $("#manhat").click(function(){
     clearall();
 });
 
+$("#cartbtn").click(function(){
+    openit("#cart");
+    closenav();
+    clearall();
+});
+
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {
@@ -92,6 +98,12 @@ $(document).ready(function () {
 
     $("#ainv").click(function () {
         openit("#ais");
+        closenav();
+        clearall();
+    });
+
+    $("#adam").click(function () {
+        openit("#adams");
         closenav();
         clearall();
     });
@@ -1275,7 +1287,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    
+    $("#goldrbtn").click(function () {
+        openit("#goldr");
+        closenav();
+        clearall();
+    });
     $("#platonicbtn").click(function () {
         openit("#platonic");
         closenav();

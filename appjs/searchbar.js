@@ -826,6 +826,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "DESARGUES THEOREM"){
                         document.getElementById('des').click();
                     }
+                    else if (inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR") {
+                        $("#goldr").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR"){
+                        document.getElementById('goldr').click();
+                    }
                     else if (inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR") {
                         $("#cross").slideToggle();    
                     }
@@ -1560,6 +1566,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "MANHATTAN DISTANCE CALCULATOR"){
                         document.getElementById('manhats').click();
                     }
+                    else if (inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR") {
+                        $("#cart").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR"){
+                        document.getElementById('cart').click();
+                    }
                     else if (inp.value.toUpperCase() == "BILINEAR INTERPOLATION CALCULATOR") {
                         $("#bilinear").slideToggle();    
                     }
@@ -1850,9 +1862,10 @@ function autocomplete(inp, arr) {
 
 
 var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Diamond Problem Calculator","Cross Multiplication Calculator","Desargues Theorem", "Lucas series","Integration","T test","Z test","Chi-Square test","Independent And Dependent Event Probability","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
-                        "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
+                        "Simple Trigonometry", "Graph", "Roman to Arabic","Golden Ratio Calculator", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
+                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators","Cartesian coordinates calculator",
 
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Bayes Probability Theorem","Hypergeometric Distribution P.M.F Calculator","Poisson Distribution Statistics","Hypergeometric Distribution Statistics","Geometric Probability Distribution","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
 
@@ -2416,6 +2429,12 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "MANHATTAN DISTANCE CALCULATOR") {
         $("#manhats").slideToggle(); 
     }
+    else if(inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR"){
+        document.getElementById('cart').click();
+    }
+    else if (inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR") {
+        $("#cart").slideToggle();    
+    }
     else if(inp.value.toUpperCase() == "BILINEAR INTERPOLATION CALCULATOR"){
         document.getElementById('bilinear').click(); 
     }
@@ -2602,6 +2621,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "DESARGUES THEOREM") {
         $("#des").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR"){
+        document.getElementById('goldr').click(); 
+    }
+    else if (inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR") {
+        $("#goldr").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR"){
         document.getElementById('cross').click(); 

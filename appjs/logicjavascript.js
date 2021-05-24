@@ -2116,6 +2116,51 @@ function cross() {
     }
 }
 
+// golden ratio calculator
+function goldr() {
+    var gla = document.getElementById("gla").value;
+    var gsb = document.getElementById("gsb").value;
+    var gs = document.getElementById("gs").value;
+    var g_explain = document.getElementById("gold_explain");
+    if(gla!="" && gsb!="" && gs!="")
+         gold_explain.innerHTML="Reset the Calculator";
+    else if(gla!="" ){
+        gsb=(parseFloat(gla)/1.618).toFixed(3);
+        gs=(1.618*parseFloat(gla)).toFixed(3);
+
+        document.getElementById("gsb").value=gsb;
+        document.getElementById("gs").value=gs;
+
+        gold_explain.innerHTML="\\[ Shorter \\space section(b)=\\frac{Longer \\space Section(a)}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gla+"}{1.618}="+gsb+"\\]";
+        gold_explain.innerHTML+="\\[ Whole(a+b)=(Longer \\space Section(a))\\times (Golden \\space Ratio)\\]"+"\\[\\space = 1.618 \\times"+gla+"="+gs+"\\]";
+        
+        renderMathInElement(document.getElementById("gold_explain"));
+    }
+    else if(gsb!="" ){
+        gla=(1.618*parseFloat(gsb)).toFixed(3);
+        gs=(1.618*gla).toFixed(3);
+
+        document.getElementById("gla").value=gla;
+        document.getElementById("gs").value=gs;
+
+        gold_explain.innerHTML="\\[ Longer \\space section(a)=(Shorter \\space Section(b))\\times (Golden \\space Ratio)\\]"+"\\[\\space =1.618 \\times"+gsb+"="+gla+"\\]";
+        gold_explain.innerHTML+="\\[ Whole(a+b)=(Longer \\space Section(a))\\times (Golden \\space Ratio)\\]"+"\\[\\space = 1.618 \\times"+gla+"="+gs+"\\]";
+        
+        renderMathInElement(document.getElementById("gold_explain"));
+    }
+    else if(gs!="" ){
+        gla=(parseFloat(gs)/1.618).toFixed(3);
+        gsb=(gla/1.618).toFixed(3);
+
+        document.getElementById("gla").value=gla;
+        document.getElementById("gsb").value=gsb;
+
+        gold_explain.innerHTML="\\[ Longer \\space section(a)=\\frac{Whole(a+b)}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gs+"}{1.618}="+gla+"\\]";
+        gold_explain.innerHTML+="\\[ Shorter \\space section(b)=\\frac{Longer \\space Section(a)}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gla+"}{1.618}="+gsb+"\\]";
+        
+        renderMathInElement(document.getElementById("gold_explain"));
+    }
+}    
 // diamond problemcalculator
 function diamond() {
     var diamondA = document.getElementById("dinputA").value;
@@ -2238,47 +2283,47 @@ function getUnknown() {
 }
 
 function findWork() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const time2 = parseInt(document.getElementById('time2').value);
-    const men2 = parseInt(document.getElementById('men2').value);
+    const work1 = parseInt(document.getElementById('1work1').value);
+    const time1 = parseInt(document.getElementById('1time1').value);
+    const men1 = parseInt(document.getElementById('1men1').value);
+    const time2 = parseInt(document.getElementById('1time2').value);
+    const men2 = parseInt(document.getElementById('1en2').value);
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(time2) || isNaN(men2) ){
         document.getElementById('workans').innerHTML = "Please enter all fields";
     }else{
         if(work1<0 || time1<0 || men1<0 || time2<0 || men2<0){
             document.getElementById('workans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
-            let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
+            let workans = parseFloat(work1 * (time2 * men2) / (time1 * men1));
             document.getElementById('workans').innerHTML = "The work done is " + workans; 
         }
     }
 }
 
 function findTime() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const work2 = parseInt(document.getElementById('work2').value);
-    const men2 = parseInt(document.getElementById('men2').value);
+    const work1 = parseInt(document.getElementById('2work1').value);
+    const time1 = parseInt(document.getElementById('2time1').value);
+    const men1 = parseInt(document.getElementById('2men1').value);
+    const work2 = parseInt(document.getElementById('2work2').value);
+    const men2 = parseInt(document.getElementById('2men2').value);
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(men2) ){
         document.getElementById('timeans').innerHTML = "Please enter all fields";
     }else{
         if(work1<0 || time1<0 || men1<0 || work2<0 || men2<0){
             document.getElementById('timeans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
-            let timeans = Math.ceil(work2 * (time1 * men1) / (work1 * men2));
-            document.getElementById('timeans').innerHTML = "The work done is " + timeans; 
+            let timeans = parseFloat(work2 * (time1 * men1) / (work1 * men2));
+            document.getElementById('timeans').innerHTML = "Total time taken = " + timeans; 
         }
     }
 }
 
 function findMen() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const time2 = parseInt(document.getElementById('time2').value);
-    const work2 = parseInt(document.getElementById('work2').value);
+    const work1 = parseInt(document.getElementById('3work1').value);
+    const time1 = parseInt(document.getElementById('3time1').value);
+    const men1 = parseInt(document.getElementById('3men1').value);
+    const time2 = parseInt(document.getElementById('3time2').value);
+    const work2 = parseInt(document.getElementById('3work2').value);
     
 
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(time2) ){
@@ -2287,8 +2332,8 @@ function findMen() {
         if(work1<0 || time1<0 || men1<0 || work2<0 || time2<0){
             document.getElementById('menans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
-            let menans = Math.ceil(work2 * (time1 * men1) / (work1 * time2));
-            document.getElementById('menans').innerHTML = "The work done is " + menans; 
+            let menans = Math.floor(work2 * (time1 * men1) / (work1 * time2));
+            document.getElementById('menans').innerHTML = "No of men required = " + menans; 
         }
     }
 }
@@ -2690,6 +2735,7 @@ function impse7find(){
     renderMathInElement(document.getElementById("impse7ans"));
     renderMathInElement(document.getElementById("impse7ans1"));
 }
+
 function impse8find(){
     var n = parseInt(document.getElementById("impse12").value)
     var count = 1;
@@ -2700,6 +2746,22 @@ function impse8find(){
         count = find_count(ele);
     }
 }
+
+
+function impse9find(){
+    let n = parseInt(document.getElementById("impse13").value)
+    let res = 0.0 ;
+    let sum = 0, prod = 1;
+    for (let i = 1 ; i <= n ; i++)
+    {
+        sum += i;
+        prod *= i;
+        res += (sum / prod);
+    }
+    document.getElementById("impse9ans").innerHTML = res;
+}
+
+
 function find_count(ele){
     var count = 0;
     for (let i = 0; i < ele.length; i++) {
@@ -8596,6 +8658,42 @@ function solveBicone() {
     } else {
         diaoutput.innerHTML = "";
         heightoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
+function solvehalfcone() {
+    var r = document.getElementById("inputhalfconerad").value;
+    var h = document.getElementById("inputhalfconeheight").value;
+    var edgeoutput = document.getElementById("resultofhalfconeedge");
+    var laoutput = document.getElementById("resultofhalfconela");
+    var voloutput = document.getElementById("resultofhalfconevol");
+    var areaoutput = document.getElementById("resultofhalfconearea");
+    var edgetemp = "";
+    var latemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var s= Math.sqrt((h*h)+(r*r)).toFixed(2);
+    var a = (r*3.14*(r+s))/(2+ Math.sqrt((s*s) - (r*r)))*r;
+    if ((r != "") && (h!="")) {
+        edgetemp += "\\[Edge \\space length \\space of \\space Half \\space Cone \\space \\newline \\sqrt{" + h + "^2+" + r + "^2 }" + "\\ = " + eval(String(s)).toFixed(2) + "\\]";
+        edgeoutput.innerHTML = edgetemp;
+        latemp += "\\[Lateral \\space Area \\space of \\space Half \\space Cone \\space \\newline \\frac{" + r + "\\times " + s + "\\times \\pi}{2}"+ "\\ = " + eval(String(0.5*r*s*3.14)).toFixed(2) + "\\]";
+        laoutput.innerHTML = latemp;
+        voltemp += "\\[Volume \\space of \\space Half \\space Cone \\space \\newline \\frac{1}{6} \\times" + r + " \\times" + "\\pi \\times" + h + "\\ = " + eval(String(0.524*r*r*h)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Surface \\space Area \\space of \\space Half \\space Cone \\space  \\newline" + "\\frac{"+ r + "\\pi \\times (" + r + "+" + s + ")}{2 +" + "\\sqrt{" + s + "^2" + "-" + r + "^2} \\times" + r + "}"  + "\\ = " + eval(String(a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(edgeoutput);
+        renderMathInElement(laoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        edgeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
         voloutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
@@ -17030,6 +17128,31 @@ function manhatcal(){
     }
 }
 
+function cartcal(){
+    var p=parseFloat(document.getElementById("cartp").value);
+    var o=parseFloat(document.getElementById("carto").value);
+    var z= parseFloat(document.getElementById("cartz").value);
+
+    var outputx = document.getElementById("cartxans");
+    var outputy = document.getElementById("cartyans");
+    var outputz = document.getElementById("cartzans");
+    var ans="";
+    var x = p*Math.cos(o);
+    var y = p*Math.sin(o);
+    if(isNaN(p)||isNaN(o)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputx.innerHTML= ans;
+        outputy.innerHTML = "";
+        outputz.innerHTML = "";
+    }
+    else{
+        outputx.innerHTML= "x: " + x;
+        outputy.innerHTML = "y: " + y;
+        outputz.innerHTML = "Z: " + z;
+    }
+}
+
 function bilinearcal(){
     var bx1=parseInt(document.getElementById("bicx1").value);
     var bx2=parseInt(document.getElementById("bicx2").value);
@@ -17389,6 +17512,45 @@ function clearSumAndDiff() {
 
 
 }
+function reverseDigits(num)
+        {
+            let rev = 0;
+            while (num > 0)
+            {
+                rev = rev * 10 + num % 10;
+                num = parseInt(num / 10, 10);
+            }
+            return rev;
+        }
+       
+          
+        function square(num)
+        {
+            return (num * num);
+        }
+                
+function adamfind()
+{
+    var num=document.getElementById("adam1").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter the number to find answer";
+    }
+    else
+    {
+        num=parseInt(num);
+        let a = square(num);
+        let b = square(reverseDigits(num));
+        if (a == reverseDigits(b))
+          {ans= "Square of "+num+" is "+a+"<br>"+" The square of "+ reverseDigits(num)+" is "+b+"</br>" +num+ " is an Adam Number. ";}
+           else
+           {
+               ans="Square of "+num+" is "+a+"<br>"+" The square of "+ reverseDigits(num)+" is "+b+"</br>" +num+ " is not an Adam Number. "
+           }
+        }
+         document.getElementById("adamans").innerHTML=ans;
+    }
 
 function amfind()
 {
