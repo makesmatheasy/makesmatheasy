@@ -10950,6 +10950,29 @@ function typenum4find(){
     }
 }
 
+function typenum5find(){
+    let n = parseInt(document.getElementById("typenum6").value)
+    let arr = [];
+    findCombinationsUtil(arr, 0, n, n);
+}
+
+function findCombinationsUtil(arr, index, num, reducedNum)
+{
+    if (reducedNum < 0)
+    return;
+    if (reducedNum == 0){
+        for (let i = 0; i < index; i++)
+            document.write (arr[i] + " ");
+        document.write("<br/>");
+        return;
+    }
+    let prev = (index == 0) ? 1 : arr[index - 1];
+    for (let k = prev; k <= num ; k++){
+        arr[index] = k;
+        findCombinationsUtil(arr, index + 1, num,reducedNum - k);
+    }
+}
+
 function typenum3find(){
     let x = parseInt(document.getElementById("typenum3").value)
     let y = parseInt(document.getElementById("typenum4").value)
