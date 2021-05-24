@@ -2145,47 +2145,47 @@ function getUnknown() {
 }
 
 function findWork() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const time2 = parseInt(document.getElementById('time2').value);
-    const men2 = parseInt(document.getElementById('men2').value);
+    const work1 = parseInt(document.getElementById('1work1').value);
+    const time1 = parseInt(document.getElementById('1time1').value);
+    const men1 = parseInt(document.getElementById('1men1').value);
+    const time2 = parseInt(document.getElementById('1time2').value);
+    const men2 = parseInt(document.getElementById('1en2').value);
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(time2) || isNaN(men2) ){
         document.getElementById('workans').innerHTML = "Please enter all fields";
     }else{
         if(work1<0 || time1<0 || men1<0 || time2<0 || men2<0){
             document.getElementById('workans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
-            let workans = Math.ceil(work1 * (time2 * men2) / (time1 * men1));
+            let workans = parseFloat(work1 * (time2 * men2) / (time1 * men1));
             document.getElementById('workans').innerHTML = "The work done is " + workans; 
         }
     }
 }
 
 function findTime() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const work2 = parseInt(document.getElementById('work2').value);
-    const men2 = parseInt(document.getElementById('men2').value);
+    const work1 = parseInt(document.getElementById('2work1').value);
+    const time1 = parseInt(document.getElementById('2time1').value);
+    const men1 = parseInt(document.getElementById('2men1').value);
+    const work2 = parseInt(document.getElementById('2work2').value);
+    const men2 = parseInt(document.getElementById('2men2').value);
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(men2) ){
         document.getElementById('timeans').innerHTML = "Please enter all fields";
     }else{
         if(work1<0 || time1<0 || men1<0 || work2<0 || men2<0){
             document.getElementById('timeans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
-            let timeans = Math.ceil(work2 * (time1 * men1) / (work1 * men2));
-            document.getElementById('timeans').innerHTML = "The work done is " + timeans; 
+            let timeans = parseFloat(work2 * (time1 * men1) / (work1 * men2));
+            document.getElementById('timeans').innerHTML = "Total time taken = " + timeans; 
         }
     }
 }
 
 function findMen() {
-    const work1 = parseInt(document.getElementById('work1').value);
-    const time1 = parseInt(document.getElementById('time1').value);
-    const men1 = parseInt(document.getElementById('men1').value);
-    const time2 = parseInt(document.getElementById('time2').value);
-    const work2 = parseInt(document.getElementById('work2').value);
+    const work1 = parseInt(document.getElementById('3work1').value);
+    const time1 = parseInt(document.getElementById('3time1').value);
+    const men1 = parseInt(document.getElementById('3men1').value);
+    const time2 = parseInt(document.getElementById('3time2').value);
+    const work2 = parseInt(document.getElementById('3work2').value);
     
 
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(time2) ){
@@ -2194,8 +2194,8 @@ function findMen() {
         if(work1<0 || time1<0 || men1<0 || work2<0 || time2<0){
             document.getElementById('menans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
-            let menans = Math.ceil(work2 * (time1 * men1) / (work1 * time2));
-            document.getElementById('menans').innerHTML = "The work done is " + menans; 
+            let menans = Math.floor(work2 * (time1 * men1) / (work1 * time2));
+            document.getElementById('menans').innerHTML = "No of men required = " + menans; 
         }
     }
 }
