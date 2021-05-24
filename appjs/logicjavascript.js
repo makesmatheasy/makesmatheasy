@@ -2683,22 +2683,18 @@ function impse7find(){
     renderMathInElement(document.getElementById("impse7ans"));
     renderMathInElement(document.getElementById("impse7ans1"));
 }
-
-function impe8find(){
-    let n = parseInt(document.getElementById("impse12").value)
-    let count = 1;
-    let ele = [];
+function impse8find(){
+    var n = parseInt(document.getElementById("impse12").value)
+    var count = 1;
+    var ele = [];
     for (let i = 0; i < n; i++) {
         document.getElementById("impse8ans").innerHTML =  count + ", ";
         ele.push(count);
         count = find_count(ele);
     }
 }
-
-function find_count(ele)
-{
-    let count = 0;
- 
+function find_count(ele){
+    var count = 0;
     for (let i = 0; i < ele.length; i++) {
         let p = [];
         let c = 0;
@@ -2706,17 +2702,13 @@ function find_count(ele)
              j >= (ele.length - 1 - i) && j >= 0;
              j--)
             p.push(ele[j]);
- 
         let j = ele.length - 1, k = 0;
         while (j >= 0) {
             if (ele[j] != p[k])
                 break;
- 
-            j--;
-            k++;
+            j--; k++;
             if (k == p.length) {
-                c++;
-                k = 0;
+                c++; k = 0;
             }
         }
         count = Math.max(count, c);
