@@ -15024,6 +15024,35 @@ function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
+//function that performs conversion of grey code to octal and vice versa
+function convertgreyoct(){
+    const fromBase = document.getElementById("grey-select3").value;
+    var input = document.getElementById("greyoct-input").value;
+    let result2 = document.getElementById("greyoct-result");
+    var result1 = "";
+
+    result2.innerHTML="";
+
+    result1 = parseInt(input,2).toString(2);
+
+    //assigned first value of input inside result
+    var x = result1[0];
+
+    if (fromBase === "Grey Code"){
+        for (var i = 1; i < result1.length; i++){
+            var n = parseInt(x[i - 1] ^ result1[i]).toString();
+            x += n;
+        }
+        x = parseInt(x,2).toString(8);
+    }
+
+    if(input=="")
+	{
+	  x="";
+	}
+    result2.innerHTML = "Answer -> " + x;
+}
+
 function convertgreydec(){
     const fromBase = document.getElementById("grey-select2").value;
     var input = document.getElementById("greydec-input").value;
