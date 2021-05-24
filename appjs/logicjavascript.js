@@ -654,12 +654,20 @@ function printfactorsfl(value) {
 
 function splittrifind(){
     var side = parseInt(document.getElementById('splittri').value);
+    if (!isNaN(side)){
     document.getElementById("splittrians1").innerHTML = "\\[First, \\space we \\space find \\space Binomial \\space Coefficient \\space of \\space (2 \\times "+side+") \\space and \\space "+side+"\\]"
-    renderMathInElement( document.getElementById("splittrians1"));
     var c = binomialCoeff(2 * side, side);
     var ans = c/((2 * side)+1);
     document.getElementById("splittrians2").innerHTML = "\\[Number \\space of \\space ways \\space is \\space \\space \\frac{Binomila \\space Coefficient}{2 \\times side} \\space \\space = \\space \\frac{"+c+"}{2 \\times "+side+"} \\space = \\space "+ans.toFixed(3)+"\\]";
+    renderMathInElement( document.getElementById("splittrians1"));
     renderMathInElement( document.getElementById("splittrians2"));
+}
+    else{
+        document.getElementById("splittrians3").innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
+        document.getElementById("splittrians4").innerHTML = "";
+    }
+    renderMathInElement( document.getElementById("splittrians3"));
+    renderMathInElement( document.getElementById("splittrians4"));
 }
 function binomialCoeff(n, k) {
     var res = 1;
@@ -1258,13 +1266,6 @@ else{
 }
 }
 
-function chordTangle(){
-    // when angle in the alternate segment is given
-    var into = document.getElementById("ctangle").value
-    document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
-    document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
-}
-
 function vectorline(){
     let a = parseInt(document.getElementById("i1").value)
     let b = parseInt(document.getElementById("i2").value)
@@ -1304,8 +1305,14 @@ function vectorline(){
 function chordTangle(){
     // when angle in the alternate segment is given
     var into = document.getElementById("ctangle").value
+    if(into != ""){
     document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
     document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
+    }
+    else{
+        document.getElementById("ctangleinfo").innerHTML = "Please enter valid input"
+        document.getElementById("ctangleans").innerHTML = ""
+    }
 }
 
 //-----------------------------------------------------
@@ -2109,6 +2116,92 @@ function cross() {
     }
 }
 
+// diamond problemcalculator
+function diamond() {
+    var diamondA = document.getElementById("dinputA").value;
+    var diamondB = document.getElementById("dinputB").value;
+    var diamondprod = document.getElementById("dprod").value;
+    var diamondsum = document.getElementById("dsum").value;
+    var diamond_explain = document.getElementById("diamond_explain");
+    
+    if(diamondA!="" && diamondB!="" ){
+        diamondA=parseInt(diamondA);
+        diamondB=parseInt(diamondB);
+        diamondprod=diamondA*diamondB;
+        diamondsum=diamondA+diamondB;
+        document.getElementById("dprod").value=diamondprod;
+        document.getElementById("dsum").value=diamondsum;
+        diamond_explain.innerHTML="\\[ Product=A*B="+diamondA+"*"+diamondB+"="+diamondprod+"\\]";
+        diamond_explain.innerHTML+="\\[ Sum=A+B="+diamondA+"+"+diamondB+"="+diamondsum+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));
+    }
+    else if(diamondA!="" && diamondprod!=""){
+        diamondA=parseInt(diamondA);
+        diamondprod=parseInt(diamondprod);
+        diamondB=diamondprod/diamondA;
+        diamondsum=diamondA+diamondB;
+        document.getElementById("dinputB").value=diamondB;
+        document.getElementById("dsum").value=diamondsum;
+        diamond_explain.innerHTML="\\[ B=Product/A="+diamondprod+"/"+diamondA+"="+diamondB+"\\]";
+        diamond_explain.innerHTML+="\\[ Sum=A+B="+diamondA+"+"+diamondB+"="+diamondsum+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));
+        
+    }
+    else if(diamondA!="" && diamondsum!=""){
+        diamondA=parseInt(diamondA);
+        diamondsum=parseInt(diamondsum);
+        diamondB=diamondsum-diamondA;
+        diamondprod=diamondA*diamondB;
+        document.getElementById("dinputB").value=diamondB;
+        document.getElementById("dprod").value=diamondprod;
+        diamond_explain.innerHTML="\\[ B=Sum-A="+diamondsum+"-"+diamondA+"="+diamondB+"\\]";
+        diamond_explain.innerHTML+="\\[ Product=A*B="+diamondA+"*"+diamondB+"="+diamondprod+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));    
+    }
+    else if(diamondB!="" && diamondprod!=""){
+        diamondB=parseInt(diamondB);
+        diamondprod=parseInt(diamondprod);
+        diamondA=diamondprod/diamondB;
+        diamondsum=diamondA+diamondB;
+        document.getElementById("dinputA").value=diamondA;
+        document.getElementById("dsum").value=diamondsum;
+        diamond_explain.innerHTML="\\[ A=Product/B="+diamondprod+"/"+diamondB+"="+diamondA+"\\]";
+        diamond_explain.innerHTML+="\\[ Sum=A+B="+diamondA+"+"+diamondB+"="+diamondsum+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));   
+    }
+    else if(diamondB!="" && diamondsum!=""){
+        diamondB=parseInt(diamondB);
+        diamondsum=parseInt(diamondsum);
+        diamondA=diamondsum-diamondB;
+        diamondprod=diamondA*diamondB;
+        document.getElementById("dinputA").value=diamondA;
+        document.getElementById("dprod").value=diamondprod;
+        diamond_explain.innerHTML="\\[ A=Sum-B="+diamondsum+"-"+diamondB+"="+diamondA+"\\]";
+        diamond_explain.innerHTML+="\\[ Product=A*B="+diamondA+"*"+diamondB+"="+diamondprod+"\\]";
+        renderMathInElement(document.getElementById("diamond_explain"));    
+    }
+    else if(diamondprod!="" && diamondsum!=""){
+        diamondprod=parseInt(diamondprod);
+        diamondsum=parseInt(diamondsum);
+        let d=diamondsum*diamondsum-4*diamondprod;
+        if(d<0)
+        {
+            diamond_explain.innerHTML="\\[ No solution exist for these Product and Sum\\]";
+            renderMathInElement(document.getElementById("diamond_explain")); 
+        }
+        else{
+         diamondA=(-diamondsum+Math.sqrt(d) )/2;
+         diamondB=(-diamondsum-Math.sqrt(d) )/2;  
+         document.getElementById("dinputA").value=diamondA;
+         document.getElementById("dinputB").value=diamondB;
+         diamond_explain.innerHTML="\\[ A ,B="+diamondA+","+diamondB+"\\]";
+         renderMathInElement(document.getElementById("diamond_explain"));  
+        }      
+    }
+    else{
+        diamond_explain.innerHTML="Enter two values";
+    }
+}
 function fp(){
     var giffnum = parseInt(document.getElementById("giffnum").value)
     if(giffnum >=0){
@@ -2295,33 +2388,31 @@ function solvehalft() {
         boutput.innerHTML = "";
         voloutput.innerHTML = "";
     }
-
 }
 
 function cramer(){
-    var a=parseFloat(document.getElementById('cab').value);
-    var b=parseFloat(document.getElementById('cab1').value);
-    var c=parseFloat(document.getElementById('cab2').value);
-    var d=parseFloat(document.getElementById('cab3').value);
-    var e=parseFloat(document.getElementById('cab4').value);
-    var f=parseFloat(document.getElementById('cab5').value);
+    var a=(document.getElementById('cab').value);
+    var b=(document.getElementById('cab1').value);
+    var c=(document.getElementById('cab2').value);
+    var d=(document.getElementById('cab3').value);
+    var e=(document.getElementById('cab4').value);
+    var f=(document.getElementById('cab5').value);
+    var cramtemp = "";
+    var cramoutput = document.getElementById("cramerres");
+    if (a!="" && b!="" && c!="" && d!="" && e!="" && f!=""){
     var res = ((a * e)-(b * d));
     var res1 = ((c * e)-(b * f));
     var res2 =((a * f)-(c * d));
     var x = (res1 / res);
     var y = (res2 / res);
-    var cramoutput = document.getElementById("cramerres");
-    var cramtemp = "";
-   if(a != "" && b != "" && c !=""){
     cramtemp += "\\[Δ = " + res + ",\\space Δ_x = " + res1 + ",\\space Δ_y = " + res2 + " \\]";
     cramtemp += "\\[X = " + x + ",\\space Y = " + y + "\\]";
     cramtemp += "\\[The \\space solution \\space is \\space (X,Y) =  (" + x + "," + y + ") \\]";
-
     cramoutput.innerHTML = cramtemp;
     renderMathInElement(cramoutput);
-   }
-   else {
-    cramoutput.innerHTML = "";
+   } else {
+    cramoutput.innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
+    renderMathInElement(cramoutput);
   }
 }
 
@@ -2586,27 +2677,31 @@ function impse6find(){
 }
 
 function impse7find(){
-    var x = parseInt(document.getElementById("impse1x").value);
-    var k = parseInt(document.getElementById("impse11").value);
-    var y =  (((x) / 81) * (9 * k - 1 + Math.pow(10, (-1) * k)));
-    document.getElementById("impse7ans").innerHTML =  y ;
+    var x = (document.getElementById("impse1x").value);
+    var k = (document.getElementById("impse11").value);
+    var y =  (parseInt(x) / 81) * (9 * parseInt(k) - 1 + Math.pow(10, (-1) * parseInt(k)));
+    if (x!="" && k!=""){
+        document.getElementById("impse7ans").innerHTML = "\\[Sum \\space of \\space the \\space series \\space 0.X + 0.XX + 0.XXX +....+ k \\space will \\space be \\newline \\frac{(value \\space of \\space x)}{81} \\times (9 \\times (No. \\space of \\space terms) - 1 + 10^{(-1) \\times (No. \\space of \\space terms)})\\]"
+        document.getElementById("impse7ans1").innerHTML = "\\[\\frac{"+x+"}{81} \\times (9 \\times "+k+" - 1 + 10^{(-1) \\times "+k+"}) \\space = \\space "+(parseInt(x) / 81).toFixed(2)+" \\times "+ (9 * parseInt(k) - 1 + Math.pow(10, (-1) * parseInt(k))).toFixed(2)+"\\space = \\space "+y.toFixed(3)+"\\]"
+    } else{
+        document.getElementById("impse7ans").innerHTML = "\\[Please \\space enter \\space the \\space value\\]";
+        document.getElementById("impse7ans1").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("impse7ans"));
+    renderMathInElement(document.getElementById("impse7ans1"));
 }
-
-function impe8find(){
-    let n = parseInt(document.getElementById("impse12").value)
-    let count = 1;
-    let ele = [];
+function impse8find(){
+    var n = parseInt(document.getElementById("impse12").value)
+    var count = 1;
+    var ele = [];
     for (let i = 0; i < n; i++) {
         document.getElementById("impse8ans").innerHTML =  count + ", ";
         ele.push(count);
         count = find_count(ele);
     }
 }
-
-function find_count(ele)
-{
-    let count = 0;
- 
+function find_count(ele){
+    var count = 0;
     for (let i = 0; i < ele.length; i++) {
         let p = [];
         let c = 0;
@@ -2614,17 +2709,13 @@ function find_count(ele)
              j >= (ele.length - 1 - i) && j >= 0;
              j--)
             p.push(ele[j]);
- 
         let j = ele.length - 1, k = 0;
         while (j >= 0) {
             if (ele[j] != p[k])
                 break;
- 
-            j--;
-            k++;
+            j--; k++;
             if (k == p.length) {
-                c++;
-                k = 0;
+                c++; k = 0;
             }
         }
         count = Math.max(count, c);
@@ -2968,6 +3059,49 @@ function midpointsolve()
 }
 
 
+function endpointsolve()
+{
+    var X1, X2, Y1, Y2;
+    X1=parseFloat(document.getElementById('xOne').value);
+    X2=parseFloat(document.getElementById('xTwo').value);
+    Y1=parseFloat(document.getElementById('yOne').value);
+    Y2=parseFloat(document.getElementById('yTwo').value);
+    var explain_end = document.getElementById("dis_formula");
+    var temp = "";
+    if(isNaN(X1) || isNaN(X2) || isNaN(Y1) || isNaN(Y2)){
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        explain_mid.innerHTML=temp;
+        renderMathInElement(explain_mid);
+        document.getElementById('outPut').innerHTML= "";
+    }else{
+    var endpoint1 = (2*X2 - X1);
+    var endpoint2= (2*Y2 -Y1);
+    if(X1<0 && Y1>0){
+        temp += "\\[Endpoint \\space coordinates \\space given  \\space starting \\space and \\space midpoint \\space coordinates \\space is  \\] ";
+        temp += "\\[ ( 2*x2 - x1 \\space , \\space 2*y2-y1 ) \\]";
+        temp += "\\[ (2 \\times " + X2 + "-(" + X1 + " )\\space , \\space 2\\times" + Y2 + " -" + Y1 + " ) \\]";
+        explain_end.innerHTML=temp;
+        renderMathInElement(explain_end);
+        document.getElementById('outPut').innerHTML= 'The endpoint where starting coordinates (' + X1 + ',' + Y1 + ') and midpoint coordinates ('+ X2 + ',' + Y2 + ') is '+ '(' + endpoint1 + ','  + endpoint2 + ')';
+    }
+    else if(X1>0 && Y1<0){
+        temp += "\\[Endpoint \\space coordinates \\space given  \\space starting \\space and \\space midpoint \\space coordinates \\space is  \\] ";
+        temp += "\\[ ( 2*x2 - x1 \\space , \\space 2*y2-y1 ) \\]";
+        temp += "\\[ (2 \\times " + X2 + "-" + X1 + " \\space , \\space 2\\times" + Y2 + "-(" + Y1 + " )) \\]";
+        explain_end.innerHTML=temp;
+        renderMathInElement(explain_end);
+        document.getElementById('outPut').innerHTML= 'The endpoint where starting coordinates (' + X1 + ',' + Y1 + ') and midpoint coordinates ('+ X2 + ',' + Y2 + ') is '+ '(' + endpoint1 + ','  + endpoint2 + ')';
+     }
+    else{
+        temp += "\\[Endpoint \\space coordinates \\space given  \\space starting \\space and \\space midpoint \\space coordinates \\space is  \\] ";
+        temp += "\\[ ( 2*x2 - x1 \\space , \\space 2*y2-y1 ) \\]";
+        temp += "\\[ (2 \\times " + X2 + "-" + X1 + " \\space , \\space 2\\times" + Y2 + "-" + Y1 + " ) \\]";
+        explain_end.innerHTML=temp;
+        renderMathInElement(explain_end);
+        document.getElementById('outPut').innerHTML= 'The endpoint where starting coordinates (' + X1 + ',' + Y1 + ') and midpoint coordinates ('+ X2 + ',' + Y2 + ') is '+ '(' + endpoint1 + ','  + endpoint2 + ')';
+     }
+}
+}
 function pppdoSolve() {
     var a=parseFloat(document.getElementById('pppdaqo1').value);
     var b=parseFloat(document.getElementById('pppdbqo1').value);
@@ -3408,11 +3542,16 @@ function convexcheckfind(){
     let a6 = parseInt(document.getElementById("convexcheckin6").value)
     let a7 = parseInt(document.getElementById("convexcheckin7").value)
     var points = [[a,a1],[a2,a3],[a4,a5],[a6,a7]]
+    if(!isNaN(a) && !isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(a4) && !isNaN(a5) && !isNaN(a6) && !isNaN(a7)){
     if (isConvex(points)){
         document.getElementById("convexcheckans").innerHTML = "Yes"
     }
     else{
         document.getElementById("convexcheckans").innerHTML = "No"
+    }
+}
+    else{
+        document.getElementById("convexcheckans").innerHTML = "Please enter valid input"
     }
 }
 
@@ -3596,12 +3735,17 @@ function solveocta() {
 function circleinfind(){
     let n = parseInt(document.getElementById("circleinin").value)
     let a = parseInt(document.getElementById("circleinin1").value)
+    if(!isNaN(n) && !isNaN(a)){
     // degree converted to radians
     let r = a /  (2 * Math.tan((180 / n) * 3.14159 / 180));
  
     // area of circle
     let Area =  (3.14) * (r) * (r);
     document.getElementById("circleinans").innerHTML = "The area of circle is "+ Area
+    }
+    else{
+        document.getElementById("circleinans").innerHTML = "Please enter valid input"
+    }
 }
 
 function solvepolycal(){
@@ -4426,10 +4570,15 @@ function coordinatearea(){
 function triinfind(){
     let n= parseInt(document.getElementById("triinin").value);
     let len = parseInt(document.getElementById("triinin1").value);
+    if(!isNaN(n) && !isNaN(len)){
     let area = area_of_regular_polygon(n, len);
     let triangle = area / n;
     let ins_tri = (triangle * 3);
     document.getElementById("triinans").innerHTML = ins_tri
+}
+    else{
+        document.getElementById("triinans").innerHTML = "Please enter valid input"
+    }
 }
 
 function area_of_regular_polygon(n, len)
@@ -4498,8 +4647,13 @@ function centerrsolve(){
 }
 function nodiagnolfind(){
     let n= parseInt(document.getElementById('nodiagnol').value)
+    if(!isNaN(n)){
     let ans = n*(n-3)/2
     document.getElementById("nodiagnolans").innerHTML = "The number of diagnols are "+ans
+}
+else{
+    document.getElementById("nodiagnolans").innerHTML = "Please enter valid input"
+}
 }
 
 function orthosolve(){
@@ -5280,10 +5434,13 @@ function cycquadcal(){
     var s = 0.5 * (parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d));
     var area = math.sqrt( (s - parseInt(a) ) * (s- parseInt(b)) * (s- parseInt(c)) *(s- parseInt(d)) );
     var peri = 2 * s;
-
+    var circum =  Math.sqrt(((parseInt(a) * parseInt(b)) + (parseInt(c) * parseInt(d))) *((parseInt(a) * parseInt(c)) + (parseInt(b) * parseInt(d))) *((parseInt(a) * parseInt(d)) + (parseInt(b) * parseInt(c))) /((s - parseInt(a)) * (s - parseInt(b)) * (s - parseInt(c)) * (s - parseInt(d))));
+    var circum1 = circum/4;
     console.log(s)
     console.log(area)
     console.log(peri)
+    console.log(circum)
+    console.log(circum1)
 
     if (a != "" && b != "" && c!="" && d!= "") {
 
@@ -5311,6 +5468,13 @@ function cycquadcal(){
         document.getElementById("resultofquadperip2").innerHTML = "\\[2 \\times ("+a+"+"+b+"+"+c+"+"+d+") = " + peri.toFixed(3) + "\\]";
         renderMathInElement(document.getElementById("resultofquadperip1"));
         renderMathInElement(document.getElementById("resultofquadperip2"));
+        document.getElementById("resultofcircum11").innerHTML = "\\[Circumradius \\space(R) \\space of \\space Cyclic  \\space Quadrilateral \\space is \\]";
+        document.getElementById("resultofcircum22").innerHTML = "\\[\\frac{1}{4}\\sqrt{ \\frac{(" + (a*b) + "+" + (c*d) + ")(" + (a*c) + "+" + (b*d) + ")(" + (a*d) + "+" + (b*c) + ")" + "}{("+s.toFixed(1)+" - "+a+") ("+s.toFixed(1)+" - "+b+") ("+s.toFixed(1)+" - "+c+") ("+s.toFixed(1)+" - "+d+")} }\\]";
+        document.getElementById("resultofcircum33").innerHTML = "\\[ = " + circum1.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofcircum11"));
+        renderMathInElement(document.getElementById("resultofcircum22"));
+        renderMathInElement(document.getElementById("resultofcircum33"));
+     
     }
 }
 
@@ -7182,6 +7346,47 @@ function solveflatcy() {
     }
 }
 
+function solvehalfcy() {
+    var h = document.getElementById("inputhalfcyh").value;
+    var r = document.getElementById("inputhalfcyr").value;
+    var volumeoutput = document.getElementById("resultofhalfcyvol");
+    var laoutput = document.getElementById("resultofhalfcyla");
+    var taoutput = document.getElementById("resultofhalfcyba");
+    var diaoutput = document.getElementById("resultofhalfcydia");
+    var voltemp = "";
+    var latemp = "";
+    var tatemp = "";
+    var diatemp = "";
+    var vol = 0.5*3.14*r*r*h;
+    var lateral=3.14*r*h;
+    var d=Math.sqrt((h*h)+(r*r));
+    var area=(3.14*r*(h+r))+(2*r*h);
+    if ((h != "") && (r != "") ) {
+        voltemp += "\\[V \\space = \\space \\frac{ \\pi \\times " + r + "\\times" + r + "\\times" + h + "}{2}" +  "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((vol).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[L \\space = \\pi \\times" + r + "\\times" + h  + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + eval(String((lateral).toFixed(2))) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        tatemp += "\\[A \\space = \\pi \\times " + r + "\\times" + "(" + h + "+" + r +  ") + 2 \\times " + r + "\\times" + h  + "\\]";
+        tatemp += "\\[Surface \\space Area \\space is \\space = \\space " + eval(String((area).toFixed(2)))+ "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+        diatemp += "\\[d \\space = \\sqrt{" + h + "^2 + " + r + "^2 }"  + "\\]";
+        diatemp += "\\[Volume \\space diagonal \\space is \\space = \\space " + eval(String((d).toFixed(2))) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        renderMathInElement(diaoutput);
+    } 
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
+}
+
 function ellipsoidsolve() {
 
     var a = document.getElementById("inputellipa").value;
@@ -8512,6 +8717,36 @@ function solvetesseract() {
 
     } else {
         areaoutput.innerHTML = "";
+        voloutput.innerHTML = ""; 
+        hypvoloutput.innerHTML = "";    
+
+    }
+}
+//created function for hypersphere
+function solvehypsphere() {
+    var radius = document.getElementById("inputhypsphrad").value;  
+    var diaoutput = document.getElementById("resultofhypsphdia");
+    var voloutput = document.getElementById("resultofhypsphvol");
+    var hypvoloutput = document.getElementById("resultofhypsphhypvol");
+    var diatemp = "";
+    var voltemp = "";
+    var hypvoltemp = "";
+    if (radius != "") {
+        diatemp += "\\[Diameter \\space of \\space hypersphere \\space \\newline 2 \\times" + radius + "\\ = " + eval(String(2 * radius)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+
+        voltemp += "\\[Volume \\space of \\space hypersphere \\space \\newline 2 \\times (3.14)^2 \\times (" + radius + ")^3" + "\\ = " + eval(String(19.739208801 * radius * radius * radius)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        hypvoltemp += "\\[Hypervolume \\space of \\space hypersphere \\space \\newline \\frac {(3.14)^2}{2} \\times (" + radius + ")^4" + "\\ = " + eval(String(4.9348022 * radius * radius * radius * radius)).toFixed(2) + "\\]";
+        hypvoloutput.innerHTML = hypvoltemp;
+
+        renderMathInElement(diaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(hypvoloutput);
+
+    } else {
+        diaoutput.innerHTML = "";
         voloutput.innerHTML = ""; 
         hypvoloutput.innerHTML = "";    
 
@@ -10424,9 +10659,14 @@ function leap() {
 function rotfind(){
     // JS program to find angle of rotational symmetry
     let side = parseInt(document.getElementById("rotside").value)
+    if(!isNaN(side)){
     let ans = parseInt(360/side)
     // parseint because we want answer in integer
     document.getElementById("rotans").innerHTML = "The angle of rotational symmetry is " + ans
+    }
+    else{
+        document.getElementById("rotans").innerHTML = "Please enter valid input"
+    }
 }
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
@@ -10457,8 +10697,13 @@ function speedu(a) {
 function diagnfind(){
     let n =parseInt(document.getElementById("diagnin").value) 
     let a = parseInt(document.getElementById("diagnin1").value)
+    if(!isNaN(n) && !isNaN(a)){
     let ans = (2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180));
     document.getElementById("diagnans").innerHTML = ans
+    }
+    else{
+        document.getElementById("diagnans").innerHTML = "Please enter valid input"
+    }
 }
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
@@ -10658,6 +10903,21 @@ function cirinsemifind(){
     }
 }
 
+function retfind2(){
+    let a = parseFloat(document.getElementById("retin4").value)
+    let area = 0.70477 * Math.pow(a, 2);
+    if(a<0){
+        document.getElementById("retans2").innerHTML = "side length cannot be negative"
+    }
+    else if(!isNaN(a)){
+    document.getElementById("retans2").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans2").innerHTML = "Please enter valid input"
+    }
+}
+
+
 function cirinsemi1find(){
     let R = parseInt(document.getElementById("cirinsemi1in").value)
     var base = 1.732 * R;
@@ -10703,15 +10963,31 @@ function cirinsemi5find(){
     document.getElementById("cirinsemifind5ans").innerHTML =  area;
 }
 
+function cirinsemi6find(){
+    let l = parseInt(document.getElementById("cirinsemi6in").value)
+    let b = parseInt(document.getElementById("cirinsemi7in").value)
+    var r = ((l * b) / (2 * Math.sqrt((Math.pow(l, 2) + Math.pow(b, 2)))));
+    document.getElementById("cirinsemi6ans").innerHTML =  r;
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
-    if(!isNaN(r)){
-    document.getElementById("trapinsemians").innerHTML =  a;
+    var output = document.getElementById("trapinsemians")
+    var ans = ""
+    if(r<0){
+        ans += "\\[radius \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+    else if(!isNaN(r)){
+        ans += "\\[Area \\space of \\space trapezoid \\space inscribed \\space in \\space a \\space semicircle \\space = \\space \\frac{3 \\sqrt{3} r^{2}}{4} \\space = \\space  \\frac{3 \\sqrt{3} \\times " + r + "^{2}}{4} \\space = \\space \\frac{3 \\sqrt{3} \\times " + r**2 + "}{4} \\space = \\space " + a + " \\]"
+        output.innerHTML = ans
     }
     else{
-        document.getElementById("trapinsemians").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
     }
+    renderMathInElement(output)
 }
 
 function trapinsemifind1(){
@@ -10877,6 +11153,22 @@ function retfind(){
     }
 }
 
+function retfind1(){
+    let a = parseFloat(document.getElementById("retin1").value)
+    let b = parseFloat(document.getElementById("retin2").value)
+    let h = Math.sqrt(((Math.pow(a, 2) + Math.pow(b, 2)) / (Math.pow(a, 2) * Math.pow(b, 2))));
+    let area = 0.70477 * Math.pow(h, 2);
+    if(a<0 || b<0){
+        document.getElementById("retans1").innerHTML = "length of axes cannot be negative"
+    }
+    else if(!isNaN(a) && !isNaN(b)){
+    document.getElementById("retans1").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans1").innerHTML = "Please enter valid input"
+    }
+}
+
 
 function exposol() {
     var x = parseFloat(document.getElementById("xval").value);
@@ -11022,6 +11314,20 @@ function typenum4find(){
             document.getElementById("typenum4ans").innerHTML =  false;           
         document.getElementById("typenum4ans").innerHTML =  divSum(i) == i+1;
     }
+}
+
+function typenum6find(){
+    let n = parseInt(document.getElementById("typenum7").value)
+    let fibo = Array(2 * n + 1);
+    fibo[0] = 0;
+    fibo[1] = 1;
+    let sum = 0;
+    for ( i = 2; i <= 2 * n; i++){
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
+        if (i % 2 == 0)
+            sum += fibo[i];
+    }
+    document.getElementById("typenum6ans").innerHTML =  sum;
 }
 
 function typenum5find(){
@@ -12014,31 +12320,30 @@ function igp() {
         resout.innerHTML = restemp;
         renderMathInElement(resout);
     }
-}
-
-else{
-             resout.innerHTML="";
-}
+} else{
+        resout.innerHTML="";
+    }
 }
 
 function maxminquadfind(){
-    let a = parseInt(document.getElementById("aofeqn2").value)
-    let b = parseInt(document.getElementById("bofeqn2").value)
-    let c = parseInt(document.getElementById("cofeqn2").value)
-    var secondPart = c * 1.0 -(b * b / (4.0 * a));
-    if (a > 0)
-    {
-        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +"Infinity" + "<br>";
-        document.getElementById("maxminquadans").innerHTML="Minvalue = " + secondPart;
-    }
-    else if (a < 0)
-    {
-        document.getElementById("maxminquadans").innerHTML="Maxvalue = " +secondPart + "<br>";
-        document.getElementById("maxminquadans").innerHTML="Minvalue = " +"-Infinity";
-    }
-    else
-    {
-        document.getElementById("maxminquadans").innerHTML="Not a quadratic function\n";
+    var a = (document.getElementById("aofeqn2").value)
+    var b = (document.getElementById("bofeqn2").value)
+    var c = (document.getElementById("cofeqn2").value)
+    var secondPart = parseInt(c) * 1.0 -(parseInt(b)**2 / (4.0 * parseInt(a)));
+    if (a!="" && b!="" && c!=""){
+        if (a > 0){
+            document.getElementById("maxminquadans1").innerHTML= "\\[Since \\space the \\space coefficeient \\space of \\space x^2 \\space > \\space 0 \\newline Maxvalue \\space  = \\space Infinity \\]";
+            document.getElementById("maxminquadans2").innerHTML= "\\[Minvalue \\space = \\space constant \\times 1 \\space - \\space \\frac{(coefficeient \\space of \\space x)^2}{4 \\times (coefficeient \\space of \\space x^2)} \\space = \\space"+c+" \\times 1 \\space - \\space (\\frac{"+b+"^2}{4 \\times "+a+"}) \\space = \\space "+secondPart.toFixed(3)+"\\]";
+        } else if (a < 0) {
+            document.getElementById("maxminquadans1").innerHTML="\\[Maxvalue \\space =  \\space constant \\times 1 \\space - \\space \\frac{(coefficeient \\space of \\space x)^2}{4 \\times (coefficeient \\space of \\space x^2)} \\space = \\space "+c+" \\times 1 \\space - \\space (\\frac{"+b+"^2}{4 \\times "+a+"}) \\space = \\space "+secondPart.toFixed(3)+"\\]";
+            document.getElementById("maxminquadans2").innerHTML= "\\[Since \\space the \\space coefficeient \\space of \\space x^2 \\space < \\space 0 \\newline Minvalue \\space  = \\space Infinity \\]";
+        }
+        renderMathInElement(document.getElementById("maxminquadans1"));
+        renderMathInElement(document.getElementById("maxminquadans2"));
+    } else{
+        document.getElementById("maxminquadans1").innerHTML="\\[Not \\space a \\space quadratic \\space function : \\space Enter \\space proper \\space values\\]";
+        document.getElementById("maxminquadans2").innerHTML= "";
+        renderMathInElement(document.getElementById("maxminquadans1"));
     }
 }
 
@@ -12310,8 +12615,11 @@ function sensiCal() {
     else {
         var sensi = (tp / (tp + fn)).toFixed(3)*100;
         var speci = tn / (fp + tn).toFixed(3)*100;
-        document.getElementById("sensiAns").innerHTML = "Sensitivity: " + sensi + " %";
-        document.getElementById("speciAns").innerHTML = "Specificity: " + speci + " %";
+        var ans="\\[Sensitivity:\\space"+sensi.toFixed(3)+"\\space \\%\\]"+"\\[Specificity:\\space"+speci.toFixed(3)+"\\space \\%\\]"+"\\[Sensitivity=\\frac{TP}{(TP+FN)}\\times 100 \\space \\%\\]"+"\\[\\space =\\frac{"+tp+"}{("+tp+"+"+fn+")}\\times 100 \\space \\%="+sensi.toFixed(3)+"\\space \\%\\]"
+        ans+="\\[Specificity=\\frac{TN}{(FP+TN)}\\times 100 \\space \\%\\]"+"\\[\\space =\\frac{"+tn+"}{("+fp+"+"+tn+")}\\times 100 \\space \\%="+speci.toFixed(3)+"\\space \\%\\]"
+        
+        document.getElementById("sensiAns").innerHTML = ans;
+        renderMathInElement(document.getElementById("sensiAns"))
     }
 }
 
@@ -12592,14 +12900,12 @@ function minsquarefind(){
     let count = 0;
     let ans = 1;
     if(!isNaN(n)){
-    while (n % 2 == 0)
-    {
+    while (n % 2 == 0){
         count++;
         n /= 2;
-    }
-    if (count % 2)
+    } if (count % 2)
         ans *= 2;
- 
+        
     for (let i = 3; i <= Math.sqrt(n); i += 2){
         count = 0;
         while (n % i == 0){
@@ -12752,11 +13058,26 @@ function cubeincylinderfind(){
 }
 
 function coneincubefind(){
-    let a = parseInt(document.getElementById("shapeinscribedin").value)    
+    let a = parseInt(document.getElementById("shapeinscribedin").value)
+    var output = document.getElementById("coneincubeans")
+    var ans = ""
     let r = (a / Math.sqrt(2));
     r = r.toFixed(5)
     let h =a
-    document.getElementById("coneincubeans").innerHTML = "The radius is "+r+"and the height is "+h
+    if(a<0){
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+    else if(!isNaN(a)){
+        ans += "\\[Radius \\space of \\space the \\space cone (r) \\space = \\space \\frac{a}{\\sqrt{2}} \\space = \\space \\frac{" + a + "}{\\sqrt{2}} \\space = \\space " + r + " \\]"
+        ans += "\\[Height \\space of \\space the \\space cone (h) \\space = \\space a \\space = \\space " + h + "  \\]"
+        output.innerHTML = ans
+        }
+        else{
+            ans += "\\[Please \\space enter \\space valid \\space input \\]"
+            output.innerHTML = ans
+         }
+        renderMathInElement(output)
 }
 
 function scyffind(){
@@ -12780,12 +13101,17 @@ function scyf1find(){
 
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
+    if(!isNaN(n)){
     if (n < 4)
         document.getElementById("polymaxans").innerHTML = "No Polygon can be escribed for sides less than 4"
     if(n%2===0)
         document.getElementById("polymaxans").innerHTML = n/2
     else 
         document.getElementById("polymaxans").innerHTML =  "No Polygon can be escribed"  
+    }
+    else{
+        document.getElementById("polymaxans").innerHTML = "Please enter valid input"
+    }
 }
 
 function recifind(){
@@ -12919,6 +13245,7 @@ function lucasNumbers(num) {
 
 function polymax4find(){
     let N = parseInt(document.getElementById("polymax4").value)
+    if(!isNaN(N)){
     let res = 0;
     let finalResult = 0;
     let val = 2 * N - 1;
@@ -12926,6 +13253,10 @@ function polymax4find(){
     res = (N - 1) * (N - 2);
     finalResult = res + s;
     document.getElementById("polymax4ans").innerHTML =  finalResult;
+}
+else{
+    document.getElementById("polymax4ans").innerHTML = "Please enter valid input"
+}
 }
 
 function polymax5find(){
@@ -12949,18 +13280,34 @@ function polymax5find(){
 
 function polymax6find(){
     let n  = parseInt(document.getElementById("polymax6").value)
+    if(!isNaN(n)){
     var total_angle = 360;
     document.getElementById("polymax6ans").innerHTML =  total_angle / n;
+    }
+    else{
+        document.getElementById("polymax6ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function polymax7find(){
     let n  = parseInt(document.getElementById("polymax7").value)
     let r = parseInt(document.getElementById("polymax71").value)
+    if(!isNaN(n) && !isNaN(r)){
     var theta, theta_in_radians; 
     theta = 360 / n;
     theta_in_radians = theta * 3.14 / 180; 
     let ans =  2 * r * Math.sin(theta_in_radians / 2);
     document.getElementById("polymax7ans").innerHTML = ans
+    }
+    else{
+        document.getElementById("polymax7ans").innerHTML = "Please enter valid input"
+    }
+}
+
+function polymax8find(){
+    let N = parseInt(document.getElementById("polymax8").value)
+    let ans =  (N) * (N - 1) + 1;
+    document.getElementById("polymax8ans").innerHTML = ans
 }
 
 function sumlucasfind(){
@@ -13258,16 +13605,16 @@ function addBinDecHexOct(){
     var x2,x2o;
    
     if(firstBase === "Binary"){
-        x1=parseInt(input1,2);
-        x1o=x1.toString(2);
+        x1 = calculatefrac(input1,2);
+        x1o = fracDectoBinHexOct(x1,2);
     }
     else if (firstBase === "Octal"){
-        x1=parseInt(input1,8);
-        x1o=x1.toString(8);
+        x1 = calculatefrac(input1,8);
+        x1o = fracDectoBinHexOct(x1,8);
     }
     else if(firstBase === "Hexa Decimal"){
-        x1=parseInt(input1,16);
-        x1o=x1.toString(16);
+        x1 = calculatefrac(input1,16);
+        x1o = fracDectoBinHexOct(x1,16);
     }
     else if(firstBase === "Decimal"){
         x1=parseInt(input1);
@@ -13275,16 +13622,16 @@ function addBinDecHexOct(){
     }
 
     if(secondBase === "Binary"){
-        x2=parseInt(input2,2);
-        x2o=x2.toString(2);
+        x2 = calculatefrac(input2,2);
+        x2o = fracDectoBinHexOct(x2,2);
     }
     else if (secondBase === "Octal"){
-        x2=parseInt(input2,8);
-        x2o=x2.toString(8);
+        x2 = calculatefrac(input2,8);
+        x2o = fracDectoBinHexOct(x2,8);
     }
     else if(secondBase === "Hexa Decimal"){
-        x2=parseInt(input2,16);
-        x2o=x2.toString(16);
+        x2 = calculatefrac(input2,16);
+        x2o = fracDectoBinHexOct(x2,16);
     }
     else if(secondBase === "Decimal"){
         x2=parseInt(input2);
@@ -13298,11 +13645,11 @@ function addBinDecHexOct(){
     else if(isNaN(x2)|| x2o!=input2)
     result.innerHTML="Enter a "+secondBase+" value in Input 2";
     else if(resultType === "Binary")
-    result.innerHTML="Answer in binary="+x3.toString(2);
+    result.innerHTML="Answer in binary="+fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
-    result.innerHTML="Answer in Octal="+x3.toString(8);
+    result.innerHTML="Answer in Octal="+fracDectoBinHexOct(x3,8);
     else if(resultType === "Hexa Decimal")
-    result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
+    result.innerHTML="Answer in Hexa Decimal="+fracDectoBinHexOct(x3,16);
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
     else
@@ -13631,6 +13978,8 @@ function divBinDecHexOct(){
     x2=parseInt(input2,2);
     else if(secondBase === "Decimal")
     x2=parseInt(input2);
+    else if(secondBase === "Octal")
+    x2=parseInt(input2,8);
 
     var x3=x1/x2;
 
@@ -13638,6 +13987,8 @@ function divBinDecHexOct(){
     result.innerHTML="Answer in binary="+x3.toString(2);
     else if(resultType === "Decimal")
     result.innerHTML="Answer in Decimal="+x3.toString();
+    else if(resultType === "Octal")
+    result.innerHTML="Answer in Octal="+x3.toString(8);
 }
 
 //----------------------------
@@ -14093,13 +14444,19 @@ function hammingCodeRtoLOdd(x){
 
 function polymax1find(){
     let n  = parseInt(document.getElementById("polymax1").value)
+    if(!isNaN(n)){
     var num;
     num = n * (n - 4);
     document.getElementById("polymax1ans").innerHTML = num;
+    }
+    else{
+        document.getElementById("polymax1ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function polymax2find(){
-    let n  = parseInt(document.getElementById("polymax2").value)
+    let sides  = parseInt(document.getElementById("polymax2").value)
+    if(!isNaN(sides)){
     var count = 0;
     while (sides > 5)
     {
@@ -14107,6 +14464,10 @@ function polymax2find(){
         count += 1;
     }
     document.getElementById("polymax2ans").innerHTML =  count;
+}
+    else{
+        document.getElementById("polymax2ans").innerHTML = "Please enter valid input"
+    }
 }
 
 //function for correction of  a message hamming code
@@ -14625,65 +14986,44 @@ function bcdadd(){
         result.innerHTML = "BCD Code can only have 0's and 1's";
 
 }
-//Function that performs conversion of  decimal to ex3
+//Function that performs conversions of excess-3
 function convertex3() {
-
     var input = document.getElementById("ex3-input").value;
     let result = document.getElementById("ex3-result");
+    const fromBase = document.getElementById("ex3-select1").value;
+    const toBase = document.getElementById("ex3-select2").value;
     var x = "_";
 
-    for (var i = 0; i < input.length; i++) {
-        var y = (parseInt(input[i]) + 3).toString(2)
-        if (y.length == 1) {
-            x = x + "000" + y + "_   ";
+    if(fromBase === "Decimal" && toBase === "Excess-3"){
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
         }
-        if (y.length == 2) {
-            x = x + "00" + y + "_   ";
+    }else if(fromBase === "Binary" && toBase === "Excess-3"){
+        r = parseInt(input, 2).toString();
+        for (var i = 0; i < r.length; i++) {
+            var y = (parseInt(r[i]) + 3).toString(2)
         }
-        if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-        }
-        if (y.length == 4) {
-            x = x + +y + "_   ";
-        }
-
     }
 
-    result.innerHTML = x;
-}
-//Function that performs conversion of  binary to ex3
-function convertex3bin(){
-    var input = document.getElementById("ex3bin-input").value;
-    let result = document.getElementById("ex3bin-result");
-    var x = "_";
-
-    result.innerHTML ="";
-
-    r = parseInt(input, 2).toString(10);
-    console.log("decimal");
-    console.log(r);
-
-    for (var i = 0; i < r.length; i++) {
-        var y = (parseInt(r[i]) + 3).toString(2)
-        if (y.length == 1) {
-            x = x + "000" + y + "_   ";
-        }
-        if (y.length == 2) {
-            x = x + "00" + y + "_   ";
-        }
-        if (y.length == 3) {
-            x = x + "0" + y + "_   ";
-        }
-        if (y.length == 4) {
-            x = x + +y + "_   ";
-        }
+    if (y.length == 1) {
+        x = x + "000" + y + "_   ";
+    }
+    if (y.length == 2) {
+        x = x + "00" + y + "_   ";
+    }
+    if (y.length == 3) {
+        x = x + "0" + y + "_   ";
+    }
+    if (y.length == 4) {
+        x = x + +y + "_   ";
     }
 
     if (input == "") {
         x= "";
-    } else if(input.search(/^[10]+$/) == -1)
-             x= "Binary code can only have 0's and 1's";
-               
+    } else if(fromBase === "Binary" && input.search(/^[10]+$/) == -1){
+        x= "Binary code can only have 0's and 1's";
+    }
+
     result.innerHTML = x;
 }
 
@@ -14733,6 +15073,35 @@ function convertdec2421(){
 //Function that performs conversion of grey to Decimal and viceversa
 function reverseString(str) {
     return str.split("").reverse().join("");
+}
+
+//function that performs conversion of grey code to octal and vice versa
+function convertgreyoct(){
+    const fromBase = document.getElementById("grey-select3").value;
+    var input = document.getElementById("greyoct-input").value;
+    let result2 = document.getElementById("greyoct-result");
+    var result1 = "";
+
+    result2.innerHTML="";
+
+    result1 = parseInt(input,2).toString(2);
+
+    //assigned first value of input inside result
+    var x = result1[0];
+
+    if (fromBase === "Grey Code"){
+        for (var i = 1; i < result1.length; i++){
+            var n = parseInt(x[i - 1] ^ result1[i]).toString();
+            x += n;
+        }
+        x = parseInt(x,2).toString(8);
+    }
+
+    if(input=="")
+	{
+	  x="";
+	}
+    result2.innerHTML = "Answer -> " + x;
 }
 
 function convertgreydec(){
@@ -14896,8 +15265,8 @@ function exc1find(){
 }
 
 function exc2find(){
-    let n = parseInt(document.getElementById("exc1").value)
-    let x = parseInt(document.getElementById("exc2").value)
+    let n = parseInt(document.getElementById("exc3").value)
+    let x = parseInt(document.getElementById("exc4").value)
     let sum = x, e = 2, o = 1, p = 1;
     for (let i = 2; i <= n; i++) {
         p += 2; 
@@ -14906,6 +15275,18 @@ function exc2find(){
         e = e * (e + 2);
     }
     document.getElementById("exc2ans").innerHTML =  sum.toFixed(10);
+}
+
+function exc3find(){
+    let n = parseInt(document.getElementById("exc5").value)
+    let x = parseInt(document.getElementById("exc6").value)
+    var res = 0, fact = 1;
+    for (i = 1; i <= num; i++)
+    {
+        fact = fact * i;
+        res = res + (i / fact);
+    }
+    document.getElementById("exc3ans").innerHTML = res
 }
 
 function fac(num)
@@ -15154,11 +15535,26 @@ function cscufind(){
 }
 
 function cscu1find(){
-    let a = parseInt(document.getElementById("cscu1").value)
+    let a = parseFloat(document.getElementById("cscu1").value)
     var r = (2 * a *(Math.sqrt (2)) / 3);
     var h = (2 * a) / 3;
     var V =(3.14 *(Math.pow(r, 2) * h)); 
-    document.getElementById("cscu1ans").innerHTML= V;
+    var output = document.getElementById("cscu1ans")
+    var ans = ""
+    if(a<0){
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+    else if(!isNaN(a)){
+    ans += "\\[Radius \\space of \\space the \\space cylinder \\space with \\space respect \\space to \\space cube (r) \\space = \\space \\frac{2 a \\sqrt{2}}{3} \\space and \\space Height \\space of \\space the \\space cylinder \\space with \\space respect \\space to \\space cube (h) \\space = \\space\\frac{2a}{3}  \\]"
+    ans += "\\[Volume \\space of \\space the \\space cylinder \\space = \\space  π r^{2} h \\space = \\space  π \\times (\\frac{2 a \\sqrt{2}}{3})^{2} \\times \\frac{2a}{3} \\space = \\space \\frac{16πa^{3}}{27} \\space = \\space \\frac{16 \\times 3.141 \\times" + a + "^{3}}{27} \\space = \\space " + V.toFixed(3) + " \\]"
+    output.innerHTML = ans
+    }
+    else{
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
+     }
+    renderMathInElement(output)
 }
 
 function cscu2find(){
@@ -15439,12 +15835,17 @@ function fa(x)
 
 function posse(){
     let a  = parseInt(document.getElementById("anglecalc").value)
+    if(!isNaN(a)){
     let n = parseFloat(360/(180-a))
     if(n === parseInt(n)){
         document.getElementById("posseans").innerHTML = "Yes It is possible"
     }
     else
         document.getElementById("posseans").innerHTML = "Not possible"
+}
+else{
+    document.getElementById("posseans").innerHTML = "Please enter valid input"
+}
 }
 function rankcal() {
 
@@ -16350,23 +16751,26 @@ function recinsemifind(){
     renderMathInElement(result);
     }
 
-function hypertrigno()
-{   
-    const i = parseInt(document.getElementById("hypertrignoin").value);
+function hypertrigno() {   
+    var i = (document.getElementById("hypertrignoin").value);
     var sinh=document.getElementById("hypersinh");
     var cosh=document.getElementById("hypercosh");
     var tanh=document.getElementById("hypertanh");
     var hyperresult=document.getElementById("hyperresult");
-    var ans =0;
-    var a =Math.sinh(i);
-    var b =Math.cosh(i);
-    var c =Math.tanh(i);
-    hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
-    sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
-    cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
-    tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
-
-
+    var a =Math.sinh(parseInt(i));
+    var b =Math.cosh(parseInt(i));
+    var c =Math.tanh(parseInt(i));
+    if (i!=""){
+        hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
+        sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
+        cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
+        tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
+    } else{
+        hyperresult.innerHTML= 'Please enter the value'
+        sinh.innerHTML = '';
+        cosh.innerHTML = '';
+        tanh.innerHTML = '';
+    }
 }
 function perratcal(){
     var num1=document.getElementById("peratx").value;
@@ -16498,7 +16902,12 @@ function numtfind(){
     let n = parseInt(document.getElementById("numtin").value)
     let num = n;
     let ans =  num * (num - 4) * (num - 5) / 6
+    if(!isNaN(n)){
     document.getElementById("numtans").innerHTML = ans
+}
+else{
+    document.getElementById("numtans").innerHTML = "Please enter valid input"
+}
 }
 function occfind(){
     let n = (document.getElementById("occin").value);
@@ -16621,6 +17030,33 @@ function manhatcal(){
     }
 }
 
+function bilinearcal(){
+    var bx1=parseInt(document.getElementById("bicx1").value);
+    var bx2=parseInt(document.getElementById("bicx2").value);
+    var by1= parseInt(document.getElementById("bicy1").value);
+    var by2= parseInt(document.getElementById("bicy2").value);
+    var bq11= parseInt(document.getElementById("bicq11").value);
+    var bq12= parseInt(document.getElementById("bicq12").value);
+    var bq21= parseInt(document.getElementById("bicq21").value);
+    var bq22= parseInt(document.getElementById("bicq22").value);
+    var bx= parseInt(document.getElementById("bicx").value);
+    var by= parseInt(document.getElementById("bicy").value);
+    var ans="";
+    
+    if(isNaN(bx1)||isNaN(bx2)||isNaN(by1)||isNaN(by2)||isNaN(bq11)||isNaN(bq12)||isNaN(bq21)||isNaN(bq22)||isNaN(bx)||isNaN(by))
+    {
+        ans += "Please fill all the field";
+        document.getElementById("bilinearans").innerHTML= ans;
+    }
+    else{
+        var r1 = (bx2-bx)/(bx2-bx1)*bq11+(bx-bx1)/(bx2-bx1)*bq21;
+        var r2 = (bx2-bx)/(bx2-bx1)*bq12+(bx-bx1)/(bx2-bx1)*bq22;
+        var p=(by2-by)/(by2-by1)*r1+(by-by1)/(by2-by1)*r2;
+        ans+="\\[Interpolated \\space point \\space P \\space :="+p+"\\]";
+        document.getElementById("bilinearans").innerHTML= ans;
+        renderMathInElement(document.getElementById("bilinearans"));
+    }
+}
 function volofcube() {
     var x = document.getElementById("chngsidecube").value;
     var per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
@@ -16724,9 +17160,14 @@ function comb(n, r)
 function arinfind(){
     let n = parseInt(document.getElementById("arinin").value)
     let a = parseInt(document.getElementById("arinin1").value)
+    if(!isNaN(n) && !isNaN(a)){
     var A = (a * a * n) / (4 * Math.tan((180 / n) * 3.14159 / 180));
  
     document.getElementById("arinans").innerHTML = A
+    }
+    else{
+        document.getElementById("arinans").innerHTML = "Please enter valid input"
+    }
 }
 
 // Negative Binomial Distribution Calculator
