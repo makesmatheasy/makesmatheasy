@@ -14921,7 +14921,7 @@ function cscu1find(){
     var output = document.getElementById("cscu1ans")
     var ans = ""
     if(a<0){
-        ans += "\\[side \\space lenght \\space cannot \\space be \\space negative \\]"
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
         output.innerHTML = ans
     }
     else if(!isNaN(a)){
