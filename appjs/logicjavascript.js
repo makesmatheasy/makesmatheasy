@@ -12979,11 +12979,26 @@ function cubeincylinderfind(){
 }
 
 function coneincubefind(){
-    let a = parseInt(document.getElementById("shapeinscribedin").value)    
+    let a = parseInt(document.getElementById("shapeinscribedin").value)
+    var output = document.getElementById("coneincubeans")
+    var ans = ""
     let r = (a / Math.sqrt(2));
     r = r.toFixed(5)
     let h =a
-    document.getElementById("coneincubeans").innerHTML = "The radius is "+r+"and the height is "+h
+    if(a<0){
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+    else if(!isNaN(a)){
+        ans += "\\[Radius \\space of \\space the \\space cone (r) \\space = \\space \\frac{a}{\\sqrt{2}} \\space = \\space \\frac{" + a + "}{\\sqrt{2}} \\space = \\space " + r + " \\]"
+        ans += "\\[Height \\space of \\space the \\space cone (h) \\space = \\space a \\space = \\space " + h + "  \\]"
+        output.innerHTML = ans
+        }
+        else{
+            ans += "\\[Please \\space enter \\space valid \\space input \\]"
+            output.innerHTML = ans
+         }
+        renderMathInElement(output)
 }
 
 function scyffind(){
