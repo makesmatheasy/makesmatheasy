@@ -2972,6 +2972,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="sphbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Spherical coordinates calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Spherical Coordinates Calculator','#sph','c','sphfav')"><img
+                                        id="sphimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="analyticalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate Geometry
                                Calculator</a>
@@ -17754,7 +17770,27 @@
 
             <p>&nbsp;</p>
 </div>
-            
+
+<!-- Spherical Coordinate Calculator starts -->
+<div class="collapse" id="sph">
+    <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
+        <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+            <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
+            <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
+            <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+            <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="sphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="sphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="sphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
+        <p>&nbsp;</p>
+</div>
+        
             
 <div class="collapse" id="utcs">
 

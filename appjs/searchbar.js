@@ -109,6 +109,7 @@ var vals = [
     "#bt-collapse1",
     "#manhats",
     "#cart",
+    "sph",
     "#pandc",
     "#per_chng_vol",
     "#enna_prism",
@@ -1567,6 +1568,12 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR"){
                         document.getElementById('cart').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR") {
+                        $("#sph").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR"){
+                        document.getElementById('sph').click();
                     }
                     else if(inp.value.toUpperCase() == "EULER TOTIENT FUNCTION"){
                         $("#etf").slideToggle(); 

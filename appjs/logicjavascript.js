@@ -16647,6 +16647,33 @@ function cartcal(){
     }
 }
 
+function sphcal(){
+    var x=parseFloat(document.getElementById("sphx").value);
+    var y=parseFloat(document.getElementById("sphy").value);
+    var z= parseFloat(document.getElementById("sphz").value);
+
+    var outputr = document.getElementById("sphrans");
+    var outputo = document.getElementById("sphoans");
+    var outputfi = document.getElementById("sphfians");
+    var r =  Math.sqrt(x*x + y*y + z*z);
+    var o = Math.acos(z/r);
+    var fi = Math.atan(y/x);
+    var ans="";
+    
+    if(isNaN(p)||isNaN(o)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+        outputfi.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+        outputfi.innerHTML = "φ: " + fi;
+    }
+}
+
 function volofcube() {
     var x = document.getElementById("chngsidecube").value;
     var per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);

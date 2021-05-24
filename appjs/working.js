@@ -41,6 +41,12 @@ $("#cartbtn").click(function(){
     clearall();
 });
 
+$("#sphbtn").click(function(){
+    openit("#sph");
+    closenav();
+    clearall();
+});
+
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {
