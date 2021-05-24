@@ -86,6 +86,12 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#adam").click(function () {
+        openit("#adams");
+        closenav();
+        clearall();
+    });
+
     $("#per-chng-cuboid").click(function () {
         openit("#chng-vol-cuboid");
         closenav();
