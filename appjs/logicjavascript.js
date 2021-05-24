@@ -16697,11 +16697,18 @@ function comb(n, r)
 }
 
 function arinfind(){
-    let n = parseInt(document.getElementById("arinin").value)
-    let a = parseInt(document.getElementById("arinin1").value)
-    var A = (a * a * n) / (4 * Math.tan((180 / n) * 3.14159 / 180));
- 
-    document.getElementById("arinans").innerHTML = A
+    let n = (document.getElementById("arinin").value)
+    let a = (document.getElementById("arinin1").value)
+    var A = (parseInt(a)**2 * parseInt(n)) / (4 * Math.tan((180 / n) * 3.14159 / 180));
+    if (n!="" && a!=""){
+        document.getElementById("arinans").innerHTML = "\\[Area \\space of \\space a \\space n-sided \\space regular \\space polygon \\space with \\space given \\space side \\space length \\newline\\frac{(Side \\space Length)^2 \\times (No. \\space of \\space sides)}{4 \\times tan(\\frac{180}{(No. \\space of \\space sides)} \\times \\frac{3.14159}{180})}\\]";
+        document.getElementById("arinans1").innerHTML = "\\[\\frac{"+a+"^2 \\times "+n+"}{4 \\times tan(\\frac{180}{"+n+"} \\times \\frac{3.14159}{180})} \\space = \\space "+(parseInt(a)**2 * parseInt(n)).toFixed(2)+" \\times "+(4 * Math.tan((180 / n) * 3.14159 / 180)).toFixed(2)+" \\space = \\space "+A.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("arinans").innerHTML = "\\[Please \\space enter \\space all \\space values\\]";
+        document.getElementById("arinans1").innerHTML = "";
+    }
+    renderMathInElement( document.getElementById("arinans"));
+    renderMathInElement( document.getElementById("arinans1"));
 }
 
 // Negative Binomial Distribution Calculator
