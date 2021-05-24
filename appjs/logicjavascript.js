@@ -13198,18 +13198,19 @@ function scyf1find(){
 }
 
 function polymaxfind(){
-    let n = parseInt(document.getElementById("polymax").value)
-    if(!isNaN(n)){
-    if (n < 4)
-        document.getElementById("polymaxans").innerHTML = "No Polygon can be escribed for sides less than 4"
-    if(n%2===0)
-        document.getElementById("polymaxans").innerHTML = n/2
-    else 
-        document.getElementById("polymaxans").innerHTML =  "No Polygon can be escribed"  
+    var n = (document.getElementById("polymax").value);
+    if (n!=""){
+        if (parseInt(n) < 4){
+            document.getElementById("polymaxans").innerHTML = "\\[Since \\space number \\space of \\space sides \\space is \\space "+n+" \\space and \\space minimum \\space side \\space for \\space the \\space polygon \\space to \\space be \\space escribed \\space is \\space 4 \\newline Hence, \\space No \\space Polygon \\space can \\space be \\space escribed\\]";
+        } else if(parseInt(n)%2===0){
+            document.getElementById("polymaxans").innerHTML = "\\[Since \\space number \\space of \\space sides \\space is \\space "+n+" \\space and \\space "+n+" \\space is \\space completely \\space divisible \\space by \\space 2 \\newline Hence, \\space Number \\space of \\space Polygon \\space that \\space can \\space be \\space escribed \\space is \\newline \\frac{"+n+"}{2} \\space = \\space "+(n/2).toFixed(3)+"\\]";
+        } else {
+            document.getElementById("polymaxans").innerHTML =  "\\[No \\space Polygon \\space can \\space be \\space escribed\\]";  
+        }
+    } else{
+        document.getElementById("polymaxans").innerHTML = "\\[Please \\spce enter \\space the \\space value\\]";
     }
-    else{
-        document.getElementById("polymaxans").innerHTML = "Please enter valid input"
-    }
+    renderMathInElement(document.getElementById("polymaxans"));
 }
 
 function recifind(){
