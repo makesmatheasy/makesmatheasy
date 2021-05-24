@@ -17092,6 +17092,31 @@ function manhatcal(){
     }
 }
 
+function cartcal(){
+    var p=parseFloat(document.getElementById("cartp").value);
+    var o=parseFloat(document.getElementById("carto").value);
+    var z= parseFloat(document.getElementById("cartz").value);
+
+    var outputx = document.getElementById("cartxans");
+    var outputy = document.getElementById("cartyans");
+    var outputz = document.getElementById("cartzans");
+    var ans="";
+    var x = p*Math.cos(o);
+    var y = p*Math.sin(o);
+    if(isNaN(p)||isNaN(o)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputx.innerHTML= ans;
+        outputy.innerHTML = "";
+        outputz.innerHTML = "";
+    }
+    else{
+        outputx.innerHTML= "x: " + x;
+        outputy.innerHTML = "y: " + y;
+        outputz.innerHTML = "Z: " + z;
+    }
+}
+
 function bilinearcal(){
     var bx1=parseInt(document.getElementById("bicx1").value);
     var bx2=parseInt(document.getElementById("bicx2").value);

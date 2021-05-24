@@ -344,6 +344,7 @@ function openit(id) {
         "#coor",
         "#ci",
         "#mean",
+        "#cart",
         "#Meanit",
         "#midrange",
         "#sensi",
