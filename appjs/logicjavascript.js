@@ -2586,7 +2586,8 @@ function impse6find(){
 }
 
 function impse7find(){
-    let n = parseInt(document.getElementById("impse11").value)
+    var x = parseInt(document.getElementById("impse1x").value);
+    var k = parseInt(document.getElementById("impse11").value);
     var y =  (((x) / 81) * (9 * k - 1 + Math.pow(10, (-1) * k)));
     document.getElementById("impse7ans").innerHTML =  y ;
 }
