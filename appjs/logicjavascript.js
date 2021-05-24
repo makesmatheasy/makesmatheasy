@@ -5214,10 +5214,13 @@ function cycquadcal(){
     var s = 0.5 * (parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d));
     var area = math.sqrt( (s - parseInt(a) ) * (s- parseInt(b)) * (s- parseInt(c)) *(s- parseInt(d)) );
     var peri = 2 * s;
-
+    var circum =  Math.sqrt(((parseInt(a) * parseInt(b)) + (parseInt(c) * parseInt(d))) *((parseInt(a) * parseInt(c)) + (parseInt(b) * parseInt(d))) *((parseInt(a) * parseInt(d)) + (parseInt(b) * parseInt(c))) /((s - parseInt(a)) * (s - parseInt(b)) * (s - parseInt(c)) * (s - parseInt(d))));
+    var circum1 = circum/4;
     console.log(s)
     console.log(area)
     console.log(peri)
+    console.log(circum)
+    console.log(circum1)
 
     if (a != "" && b != "" && c!="" && d!= "") {
 
@@ -5245,6 +5248,13 @@ function cycquadcal(){
         document.getElementById("resultofquadperip2").innerHTML = "\\[2 \\times ("+a+"+"+b+"+"+c+"+"+d+") = " + peri.toFixed(3) + "\\]";
         renderMathInElement(document.getElementById("resultofquadperip1"));
         renderMathInElement(document.getElementById("resultofquadperip2"));
+        document.getElementById("resultofcircum11").innerHTML = "\\[Circumradius \\space(R) \\space of \\space Cyclic  \\space Quadrilateral \\space is \\]";
+        document.getElementById("resultofcircum22").innerHTML = "\\[\\frac{1}{4}\\sqrt{ \\frac{(" + (a*b) + "+" + (c*d) + ")(" + (a*c) + "+" + (b*d) + ")(" + (a*d) + "+" + (b*c) + ")" + "}{("+s.toFixed(1)+" - "+a+") ("+s.toFixed(1)+" - "+b+") ("+s.toFixed(1)+" - "+c+") ("+s.toFixed(1)+" - "+d+")} }\\]";
+        document.getElementById("resultofcircum33").innerHTML = "\\[ = " + circum1.toFixed(3) + "\\]";
+        renderMathInElement(document.getElementById("resultofcircum11"));
+        renderMathInElement(document.getElementById("resultofcircum22"));
+        renderMathInElement(document.getElementById("resultofcircum33"));
+     
     }
 }
 
