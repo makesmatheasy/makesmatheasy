@@ -177,6 +177,7 @@ Other Tech/Libraries
   - Operations on Fractions
   - Binomial Theorem Properties
   - Binomial expression multiplication
+  - Foil Calculator
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -233,6 +234,8 @@ Other Tech/Libraries
   - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Manhattan Distance Calculator
+  - Bilinear Interpolation Calculator
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
   - Segment Area Calculator
@@ -298,6 +301,7 @@ Other Tech/Libraries
     - Ellipsoidal Cap
   - 4-D Shapes Calculator
     - Tesseract
+    - Hypersphere
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
@@ -375,7 +379,10 @@ Other Tech/Libraries
   - AB-test
   - Z-test
   - Z score Calculator
+  - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - Confidence Interval Calculator
+  - Sensitivity and Specificity Calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
