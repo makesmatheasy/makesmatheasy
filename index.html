@@ -3021,6 +3021,38 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="sphbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Spherical coordinates calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Spherical Coordinates Calculator','#sph','c','sphfav')"><img
+                                        id="sphimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="polarbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Polar coordinates calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Polar Coordinates Calculator','#polar','c','polarfav')"><img
+                                        id="polarimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="bilinearbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Bilinear Interpolation Calculator
                                </a>
@@ -5663,6 +5695,27 @@
             <p id="dis_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
             <h4 style="text-align: center;" id="outPut"> </h4> <br><br>
            
+            <h3 style="text-align: center;">3D Distance calculator </h3><br>
+            <div class="coll">
+                <p>
+                    Coordinate 1 = (<input type="text" id="3dx1" size=12 value='' placeholder="                   x1"> , 
+                    <input type="text" id="3dy1" size=12 value='' placeholder="                   y1">)
+                    <input type="text" id="3dz1" size=12 value='' placeholder="                   z1">)
+                    <br>
+                    Coordinate 2 = (<input type="text" id="3dx2" size=12 value='' placeholder="                   x2"> , 
+                    <input type="text" id="3dy2" size=12 value='' placeholder="                   y2">)
+                    <input type="text" id="3dz2" size=12 value='' placeholder="                   z2">)
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=Show3dDistance()>
+                     Distance
+                </button>
+                <br>
+                </p>
+            </div><br>
+            <p id="exp3d" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
+            <h4 style="text-align: center;" id="3dans"> </h4> <br><br>
+
             <h3> When Two Lines Meet </h3><br>
             <div class="coll">
                 <p>
@@ -17946,6 +17999,7 @@
 </div>
             
             
+  
 
 <div class="collapse" id="bilinear">
     <h1 style=" text-align: center; font-family:mathfont" >BILINEAR INTERPOLATION CALCULATOR </h1>

@@ -108,6 +108,8 @@ var vals = [
     "#bt-collapse",
     "#bt-collapse1",
     "#manhats",
+    "#cart",
+    "sph",
     "#bilinear",
     "#pandc",
     "#per_chng_vol",
@@ -1571,6 +1573,18 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR"){
                         document.getElementById('cart').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR") {
+                        $("#sph").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR"){
+                        document.getElementById('sph').click();
+                    }
+                    else if (inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR") {
+                        $("#polar").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR"){
+                        document.getElementById('polar').click();
                     }
                     else if (inp.value.toUpperCase() == "BILINEAR INTERPOLATION CALCULATOR") {
                         $("#bilinear").slideToggle();    

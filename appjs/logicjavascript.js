@@ -3035,6 +3035,39 @@ function printtable() {
     }
 }
 
+function Show3dDistance()
+{
+var x1, x2, y1, y2;
+    x1=parseFloat(document.getElementById('3dx1').value);
+    y1=parseFloat(document.getElementById('3dy1').value);
+    z1=parseFloat(document.getElementById('3dz1').value);
+
+    x2=parseFloat(document.getElementById('3dx2').value);
+    y2=parseFloat(document.getElementById('3dy2').value);
+    z2=parseFloat(document.getElementById('3dz2').value);
+    
+    var explain = document.getElementById("exp3d");
+    var temp = "";
+    if(isNaN(x1) || isNaN(x2) || isNaN(y1) || isNaN(y2) || isNaN(z1) || isNaN(z2)){
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        explain.innerHTML=temp;
+        renderMathInElement(explain);
+        document.getElementById('3dans').innerHTML= "";
+    }else{
+    temp += "\\[Distance \\space between \\space two \\space points \\space is  \\] ";
+    temp += "\\[\\sqrt{ (x1-x2)^2 + (y1-y2)^2 + (z1-z2)^2 } \\space \\]";
+    temp +=  "\\[\\sqrt{ (( " + x1 + ") - ( " + x2 + "))^{2} + (("  + y1 + ") - (" + y2 + "))^{2} + (("  + z1 + ") - (" + z2 + "))^{2}} \\]";
+    temp +=  "\\[\\sqrt{ ( " + (x1-x2) + " )^{2} + ("  + (y1-y2) + ")^{2}  + ("  + (z1-z2) + ")^{2}} \\]";
+    temp +=  "\\[\\sqrt{ ( " + (x1-x2)**2 + " ) + ("  + (y1-y2)**2 + ") + ("  + (z1-z2)**2 + ")} \\]";
+    temp += "\\[\\sqrt{  " + ((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2) + "} \\]";
+    explain.innerHTML=temp;
+    renderMathInElement(explain);
+    var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) + Math.pow((z1-z2), 2)).toFixed(2);
+    document.getElementById('3dans').innerHTML= 'The distance between (' + x1 + ',' + y1 + ',' + z1 + ') and ('+ x2 + ',' + y2 + ',' + z2 +  ') is '+ distance;
+    }
+    
+}
+
 function ShowDistance()
 {
 var x1, x2, y1, y2;
