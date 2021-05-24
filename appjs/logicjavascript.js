@@ -3754,7 +3754,7 @@ function vectorsub(){
     }
 }
 
-function vactorangle(){
+function vactorangle3(){
     var a=parseFloat(document.getElementById('vaa1').value);
     var b=parseFloat(document.getElementById('vab1').value);
     var c=parseFloat(document.getElementById('vac1').value);
@@ -3778,6 +3778,31 @@ function vactorangle(){
   
     document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] ` ;
     renderMathInElement(document.getElementById("vae"));
+    }
+}
+
+function vectorangle2(){
+    var a=parseFloat(document.getElementById('vaa3').value);
+    var b=parseFloat(document.getElementById('vab3').value);
+    var c=parseFloat(document.getElementById('vaa4').value);
+    var d=parseFloat(document.getElementById('vab4').value);
+
+    var ang = Math.acos((a * b + c * d) / (Math.sqrt(a**2 + c**2) * Math.sqrt(b**2 + d**2)));
+    var x = (a * b + c * d);
+    var p = Math.sqrt(a**2 + c**2).toFixed(2);
+    var q = Math.sqrt(b**2 + d**2).toFixed(2);
+
+    if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)){
+        document.getElementById("var2").innerHTML = "\\[Please \\space enter \\space all \\space values \\]";
+        renderMathInElement(document.getElementById("var2"));
+        document.getElementById("vae2").innerHTML = "";
+    }else{
+    var mult =(Math.acos(x/(p*q))).toFixed(1);
+    document.getElementById("var2").innerHTML = "\\[ \\theta="  + (mult) + "0^{\\circ} \\]";
+    renderMathInElement(document.getElementById("var2"));
+  
+    document.getElementById("vae2").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${p}} \\sqrt{${q}}})  \\space \\newline \\] ` ;
+    renderMathInElement(document.getElementById("vae2"));
     }
 }
 
