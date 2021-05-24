@@ -19698,10 +19698,19 @@ N is the population size.
 <div>
     <div class="collapse" id="ex3">
         <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
-        <h5>Decimal-Excess-3 Code Converter</h5><br>
         <div class="col-6">
             <div class="form-group">
-                <h5>Decimal</h5>
+                <h5>Excess-3 Code Converter</h5><br>
+                <h5>From</h5>
+                        <select id="ex3-select1" class="form__field"
+                                onchange="convertex3()">                                
+                            <option class="form_field" style="background-color: #232a36;">
+                                Binary
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
+                        </select>
 
                 <input type="number" id="ex3-input" value="0" class="form__field"
                        oninput="convertex3()">
@@ -19709,26 +19718,22 @@ N is the population size.
         </div>
         <div class="col-6">
             <div class="form-group">
-                <h5>Excess-3</h5>
+                <h5>To</h5>
+                        <select id="ex3-select2" class="form__field"
+                                onchange="convertex3()">
+                            <option class="form__field" style="background-color: #232a36;">
+                                Excess-3
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Binary
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
+                        </select>
 
             </div>
             <label class="form__group" id="ex3-result">0</label>
-        </div><br><br>
-        <h5>Binary-Excess-3 Code Converter</h5><br>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>Binary</h5>
-
-                <input type="number" id="ex3bin-input" value="0" class="form__field"
-                       oninput="convertex3bin()">
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>Excess</h5>
-
-            </div>
-            <label class="form__group" id="ex3bin-result">0</label>
         </div>
         </div>
         <br><br>
