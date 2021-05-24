@@ -10836,6 +10836,22 @@ function solvepera() {
     }
 }
 
+function retfind(){
+    let r = parseFloat(document.getElementById("retin").value)
+    var height = ((2*r)/(Math.sqrt(5)));
+    var area =  0.70477 * Math.pow(height, 2); 
+    if(r<0){
+        document.getElementById("retans").innerHTML = "Radius cannot be negative"
+    }
+    else if(!isNaN(r)){
+    document.getElementById("retans").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans").innerHTML = "Please enter valid input"
+    }
+}
+
+
 function exposol() {
     var x = parseFloat(document.getElementById("xval").value);
     var y = parseFloat(document.getElementById("yval").value);
