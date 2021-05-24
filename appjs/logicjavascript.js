@@ -1,5 +1,3 @@
-
-
 function convertkatex(element, value) {
     var x = nerdamer(value);
     var value = x.toTeX();
