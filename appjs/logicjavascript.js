@@ -8664,6 +8664,42 @@ function solveBicone() {
 
 }
 
+function solvehalfcone() {
+    var r = document.getElementById("inputhalfconerad").value;
+    var h = document.getElementById("inputhalfconeheight").value;
+    var edgeoutput = document.getElementById("resultofhalfconeedge");
+    var laoutput = document.getElementById("resultofhalfconela");
+    var voloutput = document.getElementById("resultofhalfconevol");
+    var areaoutput = document.getElementById("resultofhalfconearea");
+    var edgetemp = "";
+    var latemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var s= Math.sqrt((h*h)+(r*r)).toFixed(2);
+    var a = (r*3.14*(r+s))/(2+ Math.sqrt((s*s) - (r*r)))*r;
+    if ((r != "") && (h!="")) {
+        edgetemp += "\\[Edge \\space length \\space of \\space Half \\space Cone \\space \\newline \\sqrt{" + h + "^2+" + r + "^2 }" + "\\ = " + eval(String(s)).toFixed(2) + "\\]";
+        edgeoutput.innerHTML = edgetemp;
+        latemp += "\\[Lateral \\space Area \\space of \\space Half \\space Cone \\space \\newline \\frac{" + r + "\\times " + s + "\\times \\pi}{2}"+ "\\ = " + eval(String(0.5*r*s*3.14)).toFixed(2) + "\\]";
+        laoutput.innerHTML = latemp;
+        voltemp += "\\[Volume \\space of \\space Half \\space Cone \\space \\newline \\frac{1}{6} \\times" + r + " \\times" + "\\pi \\times" + h + "\\ = " + eval(String(0.524*r*r*h)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Surface \\space Area \\space of \\space Half \\space Cone \\space  \\newline" + "\\frac{"+ r + "\\pi \\times (" + r + "+" + s + ")}{2 +" + "\\sqrt{" + s + "^2" + "-" + r + "^2} \\times" + r + "}"  + "\\ = " + eval(String(a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(edgeoutput);
+        renderMathInElement(laoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        edgeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function solveellipCone() {
     var a = document.getElementById("inputaellicone").value;
     var b = document.getElementById("inputbellicone").value;
