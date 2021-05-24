@@ -16629,20 +16629,19 @@ function cartcal(){
     var outputx = document.getElementById("cartxans");
     var outputy = document.getElementById("cartyans");
     var outputz = document.getElementById("cartzans");
-    var ansx="";
-    var ansy="";
+    var ans="";
     var x = p*Math.cos(o);
     var y = p*Math.sin(o);
     if(isNaN(p)||isNaN(o)||isNaN(z))
     {
-        ansx += "Please fill all the field";
-        outputx.innerHTML= ansx;
+        ans += "Please fill all the field";
+        outputx.innerHTML= ans;
         outputy.innerHTML = "";
         outputz.innerHTML = "";
     }
     else{
-        outputx.innerHTML= "x: " + ansx;
-        outputy.innerHTML = "y: " + ansy;
+        outputx.innerHTML= "x: " + x;
+        outputy.innerHTML = "y: " + y;
         outputz.innerHTML = "Z: " + z;
     }
 }
