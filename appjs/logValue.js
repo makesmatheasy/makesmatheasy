@@ -35,18 +35,17 @@
      }
    }
  } 
- function lnfind()
- {
+ function lnfind() {
     var num=document.getElementById("ln1").value;
-    ans="";
-    if(num==""||isNaN(num))
-    {
-         ans="Please enter valid number";
-    }
-    else
-    {
+    if(num==""||isNaN(num)){
+      document.getElementById("lnans1").innerHTML= "";
+      document.getElementById("lnans").innerHTML ="\\[Please \\space enter \\space valid \\space number\\]";
+      renderMathInElement(document.getElementById("lnans"));
+    } else {
        var e=2.718281828459045;
-       ans="The calculated value is: "+ Math.log(num)/Math.log(e);
+       document.getElementById("lnans1").innerHTML= "\\[The \\space value \\space of \\space e \\space = \\space 2.7183 \\newline \\frac{log(n)}{log(e)} \\space = \\space \\frac{"+num+"}{log("+e.toFixed(3)+")}\\]";
+       document.getElementById("lnans").innerHTML ="\\[The \\space calculated \\space value \\space is: \\space "+ (Math.log(num)/Math.log(e)).toFixed(3)+"\\]";
     }
-    document.getElementById("lnans").innerHTML=ans;
+    renderMathInElement(document.getElementById("lnans1"));
+    renderMathInElement(document.getElementById("lnans"));
  }
