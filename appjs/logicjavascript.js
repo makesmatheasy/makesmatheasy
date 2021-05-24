@@ -16700,23 +16700,26 @@ function recinsemifind(){
     renderMathInElement(result);
     }
 
-function hypertrigno()
-{   
-    const i = parseInt(document.getElementById("hypertrignoin").value);
+function hypertrigno() {   
+    var i = (document.getElementById("hypertrignoin").value);
     var sinh=document.getElementById("hypersinh");
     var cosh=document.getElementById("hypercosh");
     var tanh=document.getElementById("hypertanh");
     var hyperresult=document.getElementById("hyperresult");
-    var ans =0;
-    var a =Math.sinh(i);
-    var b =Math.cosh(i);
-    var c =Math.tanh(i);
-    hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
-    sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
-    cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
-    tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
-
-
+    var a =Math.sinh(parseInt(i));
+    var b =Math.cosh(parseInt(i));
+    var c =Math.tanh(parseInt(i));
+    if (i!=""){
+        hyperresult.innerHTML='The value of Hyperbolic trigonometric ratios '
+        sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
+        cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
+        tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
+    } else{
+        hyperresult.innerHTML= 'Please enter the value'
+        sinh.innerHTML = '';
+        cosh.innerHTML = '';
+        tanh.innerHTML = '';
+    }
 }
 function perratcal(){
     var num1=document.getElementById("peratx").value;
