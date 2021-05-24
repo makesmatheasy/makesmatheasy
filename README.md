@@ -301,6 +301,7 @@ Other Tech/Libraries
     - Ellipsoidal Cap
   - 4-D Shapes Calculator
     - Tesseract
+    - Hypersphere
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
