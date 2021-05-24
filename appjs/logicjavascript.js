@@ -2968,6 +2968,49 @@ function midpointsolve()
 }
 
 
+function endpointsolve()
+{
+    var X1, X2, Y1, Y2;
+    X1=parseFloat(document.getElementById('xOne').value);
+    X2=parseFloat(document.getElementById('xTwo').value);
+    Y1=parseFloat(document.getElementById('yOne').value);
+    Y2=parseFloat(document.getElementById('yTwo').value);
+    var explain_end = document.getElementById("dis_formula");
+    var temp = "";
+    if(isNaN(X1) || isNaN(X2) || isNaN(Y1) || isNaN(Y2)){
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        explain_mid.innerHTML=temp;
+        renderMathInElement(explain_mid);
+        document.getElementById('outPut').innerHTML= "";
+    }else{
+    var endpoint1 = (2*X2 - X1);
+    var endpoint2= (2*Y2 -Y1);
+    if(X1<0 && Y1>0){
+        temp += "\\[Endpoint \\space coordinates \\space given  \\space starting \\space and \\space midpoint \\space coordinates \\space is  \\] ";
+        temp += "\\[ ( 2*x2 - x1 \\space , \\space 2*y2-y1 ) \\]";
+        temp += "\\[ (2 \\times " + X2 + "-(" + X1 + " )\\space , \\space 2\\times" + Y2 + " -" + Y1 + " ) \\]";
+        explain_end.innerHTML=temp;
+        renderMathInElement(explain_end);
+        document.getElementById('outPut').innerHTML= 'The endpoint where starting coordinates (' + X1 + ',' + Y1 + ') and midpoint coordinates ('+ X2 + ',' + Y2 + ') is '+ '(' + endpoint1 + ','  + endpoint2 + ')';
+    }
+    else if(X1>0 && Y1<0){
+        temp += "\\[Endpoint \\space coordinates \\space given  \\space starting \\space and \\space midpoint \\space coordinates \\space is  \\] ";
+        temp += "\\[ ( 2*x2 - x1 \\space , \\space 2*y2-y1 ) \\]";
+        temp += "\\[ (2 \\times " + X2 + "-" + X1 + " \\space , \\space 2\\times" + Y2 + "-(" + Y1 + " )) \\]";
+        explain_end.innerHTML=temp;
+        renderMathInElement(explain_end);
+        document.getElementById('outPut').innerHTML= 'The endpoint where starting coordinates (' + X1 + ',' + Y1 + ') and midpoint coordinates ('+ X2 + ',' + Y2 + ') is '+ '(' + endpoint1 + ','  + endpoint2 + ')';
+     }
+    else{
+        temp += "\\[Endpoint \\space coordinates \\space given  \\space starting \\space and \\space midpoint \\space coordinates \\space is  \\] ";
+        temp += "\\[ ( 2*x2 - x1 \\space , \\space 2*y2-y1 ) \\]";
+        temp += "\\[ (2 \\times " + X2 + "-" + X1 + " \\space , \\space 2\\times" + Y2 + "-" + Y1 + " ) \\]";
+        explain_end.innerHTML=temp;
+        renderMathInElement(explain_end);
+        document.getElementById('outPut').innerHTML= 'The endpoint where starting coordinates (' + X1 + ',' + Y1 + ') and midpoint coordinates ('+ X2 + ',' + Y2 + ') is '+ '(' + endpoint1 + ','  + endpoint2 + ')';
+     }
+}
+}
 function pppdoSolve() {
     var a=parseFloat(document.getElementById('pppdaqo1').value);
     var b=parseFloat(document.getElementById('pppdbqo1').value);
