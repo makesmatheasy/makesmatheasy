@@ -376,7 +376,10 @@ Other Tech/Libraries
   - AB-test
   - Z-test
   - Z score Calculator
+  - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - Confidence Interval Calculator
+  - Sensitivity and Specificity Calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation

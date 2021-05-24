@@ -4309,6 +4309,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="sensibtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sensitivity and Specificity</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Sensitivity and Specificity','#sensi','d','sensiimgfav')"><img
+                                        id="sensiimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="std_dvtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Standard Deviation
                                 </a>
@@ -4404,6 +4419,23 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="negbinobtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Negative Binomial Distribution Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Negative Binomial Distribution Calculator','#negbino','c','negbinofav')"><img
+                                        id="negbinofav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            
             <li>
                 <table class="table">
                     <tr>
@@ -12210,7 +12242,70 @@
     <p id="abtestans"></p>
 </div>
 
+<!-- Negative Binomial Distribution Calculator-->
+<div class="collapse" id="negbino">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Negative Binomial Distribution Calculator</h1>
+    <p style="margin-top: 2rem;">
+        The negative binomial distribution calculator, otherwise called the Pascal distribution calculator, helps in
+        determining what is the probability of requiring n trials to achieve a fixed number of successes. 
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula: P(Y=n) = (n-1)C(r-1) * pr * (1-p)(n-r)</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">n is the total number of trials</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">r is the number of successes</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">p is the probability of one success</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">(n-1)C(r-1) is the number of combinations</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">P(Y=n) is the probability of the exact number of trials n needed to achieve r successes.</p>
+
+    
+    <form action="">
+        <input class = "form__field"type="text" id="negbinon" placeholder="Enter number of events">
+        <br><br>
+        <input class = "form__field"type="text" id="negbinor" placeholder="Enter number of success">
+        <br><br>
+        <input class = "form__field"type="text" id="negbinop" placeholder="Enter probability of one success">
         
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="negbinoCal()">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    
+    <p id="negbinoans"></p>
+</div>
+
+<!-- Relative risk Calculator -->
+<div class="collapse" id="relrisk">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
+    <p style="margin-top: 2rem;">
+        Relative risk compares the probability of a disease being developed in a 
+        group exposed to a particular factor to the probability of the same disease being developed in a control group
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula: [a / (a + b)] / [c / (c + d)]</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">a is the number of members of the exposed group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">b is the number of members of the exposed group who didn't develop the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">c is the number of members of the control group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">d is the number of members of the control group who didn't develop the disease;</p>
+
+    <form action="">
+        <p style="text-align: left; color: white; margin-top:2rem;">Exposed Group</p>
+        <input class = "form__field"type="text" id="relexp0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relexp1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <p style="text-align: left; color: white; margin-top:2rem;">Control Group</p>
+        <input class = "form__field"type="text" id="relcont0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relcont1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="relrisk()">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    
+    <p id="relriskans"></p>
+</div>
+
+
 <div class="collapse" id="ftest">
     <h1 style="text-align: center; margin: 2rem auto 2rem auto;">F-Test</h1>
     <p style="margin-top: 2rem;">
@@ -21141,6 +21236,33 @@ N is the population size.
             </div>
         </div>
     </div>
+    <!-- sensitivity and Specificity starts -->
+    <div class="collapse" id="sensi">
+        <h1 style="font-family:mathfont; text-align:center;">Sensitivity and Specificity</h1>
+        <form action="">
+            <input type="text" id="tp" class="form__field" placeholder="Enter True Positive value">
+            <p>&nbsp;</p>
+            <input type="text" id="tn" class="form__field" placeholder="Enter True Negative value">
+            <p>&nbsp;</p>
+            <input type="text" id="fp" class="form__field" placeholder="Enter False Positive value">
+            <p>&nbsp;</p>
+            <input type="text" id="fn" class="form__field" placeholder="Enter False Negative value">
+            <p>&nbsp;</p>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-auto d-flex justify-content-center">
+                    <button class="btn btn-secondary m-1" type="button" onclick="sensiCal()" style="font-family:mathfont;"> Calculate</button><br>
+                </div>
+                <br><br>
+                <div class="col-md-auto d-flex justify-content-center">
+                    <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+                </div>
+            </div>
+        </form>
+      <div  id='sensiAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
+      <br><br>
+      <div  id='speciAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
+    </div>
+    
 
 <!-- Midrange start -->
 <div class="collapse" id="midrange">

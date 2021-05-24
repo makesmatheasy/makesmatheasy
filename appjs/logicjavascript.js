@@ -12265,7 +12265,31 @@ function reultriangle(){
             document.getElementById("midrangeAns").innerHTML = "Midrange: " + ans;
         }
     }
+
+// Sensitivity and specificity starts
+function sensiCal() {
+    document.getElementById("sensiAns").innerHTML = "";
+    document.getElementById("speciAns").innerHTML = "";
+    var tp = parseInt(document.getElementById("tp").value);
+    var tn = parseInt(document.getElementById("tn").value);
+    var fp = parseInt(document.getElementById("fp").value);
+    var fn = parseInt(document.getElementById("fn").value);
     
+
+    if(tp=="" || tn=="" || fp=="" || fn=="")
+    {
+        document.getElementById("sensiAns").innerHTML = `Proper input is required`;
+        document.getElementById("speciAns").innerHTML = "";
+        return;
+    }
+    else {
+        var sensi = (tp / (tp + fn)).toFixed(3)*100;
+        var speci = tn / (fp + tn).toFixed(3)*100;
+        document.getElementById("sensiAns").innerHTML = "Sensitivity: " + sensi + " %";
+        document.getElementById("speciAns").innerHTML = "Specificity: " + speci + " %";
+    }
+}
+
 //Mean start
 function Means() {
     var s = 0;
@@ -16671,6 +16695,22 @@ function arinfind(){
     var A = (a * a * n) / (4 * Math.tan((180 / n) * 3.14159 / 180));
  
     document.getElementById("arinans").innerHTML = A
+}
+
+// Negative Binomial Distribution Calculator
+function negbinoCal() {
+    let n = document.getElementById("negbinon").value;
+    let r = document.getElementById("negbinor").value;
+    let p = document.getElementById("negbinop").value;
+
+    if(n=="" || r=="" || p==""){
+        document.getElementById("negbinoans").innerHTML = "Enter all the inputs";
+    }
+    else{
+        let combi = comb(n-1,r-1);
+        let ans = combi * p**r * (1-p)**(n-r);
+        document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
+    }
 }
 
 function hypergeoscal()
