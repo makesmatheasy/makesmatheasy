@@ -14074,11 +14074,10 @@ function polymax1find(){
 }
 
 function polymax2find(){
-    let n  = parseInt(document.getElementById("polymax2").value)
+    var n  = parseInt(document.getElementById("polymax2").value)
     var count = 0;
-    while (sides > 5)
-    {
-        sides /= 2;
+    while (n > 5) {
+        n /= 2;
         count += 1;
     }
     document.getElementById("polymax2ans").innerHTML =  count;
