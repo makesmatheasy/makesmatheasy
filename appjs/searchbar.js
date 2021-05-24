@@ -826,6 +826,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "DESARGUES THEOREM"){
                         document.getElementById('des').click();
                     }
+                    else if (inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR") {
+                        $("#goldr").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR"){
+                        document.getElementById('goldr').click();
+                    }
                     else if (inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR") {
                         $("#cross").slideToggle();    
                     }
@@ -1850,7 +1856,7 @@ function autocomplete(inp, arr) {
 
 
 var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Diamond Problem Calculator","Cross Multiplication Calculator","Desargues Theorem", "Lucas series","Integration","T test","Z test","Chi-Square test","Independent And Dependent Event Probability","Quartiles","Deciles","Differentiation", "Laplace", "Inverse Laplace", "Multiplication Table", "Partial Differentiation","Shapes","Matrix",
-                        "Simple Trigonometry", "Graph", "Roman to Arabic", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
+                        "Simple Trigonometry", "Graph", "Roman to Arabic","Golden Ratio Calculator", "Arabic to Roman", "Multiply With Steps", "Roots of Equation", "Play With Equations", "Ascending Order", "Descending Order",
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
 
@@ -2602,6 +2608,12 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "DESARGUES THEOREM") {
         $("#des").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR"){
+        document.getElementById('goldr').click(); 
+    }
+    else if (inp.value.toUpperCase() == "GOLDEN RATIO CALCULATOR") {
+        $("#goldr").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "CROSS MULTIPLICATION CALCULATOR"){
         document.getElementById('cross').click(); 

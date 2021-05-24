@@ -2116,6 +2116,51 @@ function cross() {
     }
 }
 
+// golden ratio calculator
+function goldr() {
+    var gla = document.getElementById("gla").value;
+    var gsb = document.getElementById("gsb").value;
+    var gs = document.getElementById("gs").value;
+    var g_explain = document.getElementById("gold_explain");
+    if(gla!="" && gsb!="" && gs!="")
+         gold_explain.innerHTML="Reset the Calculator";
+    else if(gla!="" ){
+        gsb=(parseFloat(gla)/1.618).toFixed(3);
+        gs=(1.618*parseFloat(gla)).toFixed(3);
+
+        document.getElementById("gsb").value=gsb;
+        document.getElementById("gs").value=gs;
+
+        gold_explain.innerHTML="\\[ Shorter \\space section(b)=\\frac{Longer \\space Section(a)}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gla+"}{1.618}="+gsb+"\\]";
+        gold_explain.innerHTML+="\\[ Whole(a+b)=(Longer \\space Section(a))\\times (Golden \\space Ratio)\\]"+"\\[\\space = 1.618 \\times"+gla+"="+gs+"\\]";
+        
+        renderMathInElement(document.getElementById("gold_explain"));
+    }
+    else if(gsb!="" ){
+        gla=(1.618*parseFloat(gsb)).toFixed(3);
+        gs=(1.618*gla).toFixed(3);
+
+        document.getElementById("gla").value=gla;
+        document.getElementById("gs").value=gs;
+
+        gold_explain.innerHTML="\\[ Longer \\space section(a)=(Shorter \\space Section(b))\\times (Golden \\space Ratio)\\]"+"\\[\\space =1.618 \\times"+gsb+"="+gla+"\\]";
+        gold_explain.innerHTML+="\\[ Whole(a+b)=(Longer \\space Section(a))\\times (Golden \\space Ratio)\\]"+"\\[\\space = 1.618 \\times"+gla+"="+gs+"\\]";
+        
+        renderMathInElement(document.getElementById("gold_explain"));
+    }
+    else if(gs!="" ){
+        gla=(parseFloat(gs)/1.618).toFixed(3);
+        gsb=(gla/1.618).toFixed(3);
+
+        document.getElementById("gla").value=gla;
+        document.getElementById("gsb").value=gsb;
+
+        gold_explain.innerHTML="\\[ Longer \\space section(a)=\\frac{Whole(a+b)}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gs+"}{1.618}="+gla+"\\]";
+        gold_explain.innerHTML+="\\[ Shorter \\space section(b)=\\frac{Longer \\space Section(a)}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gla+"}{1.618}="+gsb+"\\]";
+        
+        renderMathInElement(document.getElementById("gold_explain"));
+    }
+}    
 // diamond problemcalculator
 function diamond() {
     var diamondA = document.getElementById("dinputA").value;
