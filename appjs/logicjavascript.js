@@ -12847,14 +12847,12 @@ function minsquarefind(){
     let count = 0;
     let ans = 1;
     if(!isNaN(n)){
-    while (n % 2 == 0)
-    {
+    while (n % 2 == 0){
         count++;
         n /= 2;
-    }
-    if (count % 2)
+    } if (count % 2)
         ans *= 2;
- 
+        
     for (let i = 3; i <= Math.sqrt(n); i += 2){
         count = 0;
         while (n % i == 0){
