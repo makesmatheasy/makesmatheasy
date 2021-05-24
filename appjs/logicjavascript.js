@@ -14914,11 +14914,26 @@ function cscufind(){
 }
 
 function cscu1find(){
-    let a = parseInt(document.getElementById("cscu1").value)
+    let a = parseFloat(document.getElementById("cscu1").value)
     var r = (2 * a *(Math.sqrt (2)) / 3);
     var h = (2 * a) / 3;
     var V =(3.14 *(Math.pow(r, 2) * h)); 
-    document.getElementById("cscu1ans").innerHTML= V;
+    var output = document.getElementById("cscu1ans")
+    var ans = ""
+    if(a<0){
+        ans += "\\[side \\space lenght \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+    else if(!isNaN(a)){
+    ans += "\\[Radius \\space of \\space the \\space cylinder \\space with \\space respect \\space to \\space cube (r) \\space = \\space \\frac{2 a \\sqrt{2}}{3} \\space and \\space Height \\space of \\space the \\space cylinder \\space with \\space respect \\space to \\space cube (h) \\space = \\space\\frac{2a}{3}  \\]"
+    ans += "\\[Volume \\space of \\space the \\space cylinder \\space = \\space  π r^{2} h \\space = \\space  π \\times (\\frac{2 a \\sqrt{2}}{3})^{2} \\times \\frac{2a}{3} \\space = \\space \\frac{16πa^{3}}{27} \\space = \\space \\frac{16 \\times 3.141 \\times" + a + "^{3}}{27} \\space = \\space " + V.toFixed(3) + " \\]"
+    output.innerHTML = ans
+    }
+    else{
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
+     }
+    renderMathInElement(output)
 }
 
 function cscu2find(){
