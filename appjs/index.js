@@ -268,6 +268,7 @@ function openit(id) {
         "#errpers",
         "#log_values",
         "#oops",
+        "#halfcone",
         "#astroid",
         "#squarecube",
         "#deca_prism",
