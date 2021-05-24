@@ -342,6 +342,7 @@ function openit(id) {
         "#mean",
         "#cart",
         "#sph",
+        "#polar",
         "#Meanit",
         "#midrange",
         "#sensi",

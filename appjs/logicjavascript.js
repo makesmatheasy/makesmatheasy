@@ -16621,56 +16621,26 @@ function manhatcal(){
     }
 }
 
-function cartcal(){
-    var p=parseFloat(document.getElementById("cartp").value);
-    var o=parseFloat(document.getElementById("carto").value);
-    var z= parseFloat(document.getElementById("cartz").value);
+function polarcal(){
+    var x=parseFloat(document.getElementById("polarx").value);
+    var y=parseFloat(document.getElementById("polary").value);
 
-    var outputx = document.getElementById("cartxans");
-    var outputy = document.getElementById("cartyans");
-    var outputz = document.getElementById("cartzans");
-    var ansx="";
-    var ansy="";
-    var x = p*Math.cos(o);
-    var y = p*Math.sin(o);
-    if(isNaN(p)||isNaN(o)||isNaN(z))
-    {
-        ansx += "Please fill all the field";
-        outputx.innerHTML= ansx;
-        outputy.innerHTML = "";
-        outputz.innerHTML = "";
-    }
-    else{
-        outputx.innerHTML= "x: " + ansx;
-        outputy.innerHTML = "y: " + ansy;
-        outputz.innerHTML = "Z: " + z;
-    }
-}
+    var outputr = document.getElementById("polarans1");
+    var outputo = document.getElementById("polarans2");
 
-function sphcal(){
-    var x=parseFloat(document.getElementById("sphx").value);
-    var y=parseFloat(document.getElementById("sphy").value);
-    var z= parseFloat(document.getElementById("sphz").value);
-
-    var outputr = document.getElementById("sphrans");
-    var outputo = document.getElementById("sphoans");
-    var outputfi = document.getElementById("sphfians");
-    var r =  Math.sqrt(x*x + y*y + z*z);
-    var o = Math.acos(z/r);
-    var fi = Math.atan(y/x);
+    var r =  Math.sqrt(x*x + y*y);
+    var o = Math.atan(y/x);
     var ans="";
     
-    if(isNaN(p)||isNaN(o)||isNaN(z))
+    if(isNaN(x)||isNaN(y))
     {
         ans += "Please fill all the field";
         outputr.innerHTML= ans;
         outputo.innerHTML = "";
-        outputfi.innerHTML = "";
     }
     else{
         outputr.innerHTML= "r: " + r;
         outputo.innerHTML = "θ: " + o;
-        outputfi.innerHTML = "φ: " + fi;
     }
 }
 

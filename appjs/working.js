@@ -46,6 +46,11 @@ $("#sphbtn").click(function(){
     closenav();
     clearall();
 });
+$("#polarbtn").click(function(){
+    openit("#polar");
+    closenav();
+    clearall();
+});
 
 function closenav() {
     $('#slide-out').addClass('sidenav-close');

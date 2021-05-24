@@ -238,6 +238,7 @@ Other Tech/Libraries
   - Coordinate Geometry Formula and Theorem
   - Cartesian coordinates calculator
   - Spherical coordinates calculator
+  - Polar coordinates calculator
   - Segment Area Calculator
   - Curve Tracing
   - Ceva's and Thale's Theorem

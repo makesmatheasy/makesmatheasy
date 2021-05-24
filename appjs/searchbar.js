@@ -1575,6 +1575,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR"){
                         document.getElementById('sph').click();
                     }
+                    else if (inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR") {
+                        $("#polar").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR"){
+                        document.getElementById('polar').click();
+                    }
                     else if(inp.value.toUpperCase() == "EULER TOTIENT FUNCTION"){
                         $("#etf").slideToggle(); 
                     }
