@@ -1265,7 +1265,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    
+    $("#goldrbtn").click(function () {
+        openit("#goldr");
+        closenav();
+        clearall();
+    });
     $("#platonicbtn").click(function () {
         openit("#platonic");
         closenav();
