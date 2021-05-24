@@ -108,13 +108,9 @@ var vals = [
     "#bt-collapse",
     "#bt-collapse1",
     "#manhats",
-<<<<<<< HEAD
     "#cart",
     "sph",
-||||||| 53974b3
-=======
     "#bilinear",
->>>>>>> b3ca301b249494bec5dae701942f772619aede0f
     "#pandc",
     "#per_chng_vol",
     "#enna_prism",
