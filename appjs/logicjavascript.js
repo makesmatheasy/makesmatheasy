@@ -12565,8 +12565,11 @@ function sensiCal() {
     else {
         var sensi = (tp / (tp + fn)).toFixed(3)*100;
         var speci = tn / (fp + tn).toFixed(3)*100;
-        document.getElementById("sensiAns").innerHTML = "Sensitivity: " + sensi + " %";
-        document.getElementById("speciAns").innerHTML = "Specificity: " + speci + " %";
+        var ans="\\[Sensitivity:\\space"+sensi.toFixed(3)+"\\space \\%\\]"+"\\[Specificity:\\space"+speci.toFixed(3)+"\\space \\%\\]"+"\\[Sensitivity=\\frac{TP}{(TP+FN)}\\times 100 \\space \\%\\]"+"\\[\\space =\\frac{"+tp+"}{("+tp+"+"+fn+")}\\times 100 \\space \\%="+sensi.toFixed(3)+"\\space \\%\\]"
+        ans+="\\[Specificity=\\frac{TN}{(FP+TN)}\\times 100 \\space \\%\\]"+"\\[\\space =\\frac{"+tn+"}{("+fp+"+"+tn+")}\\times 100 \\space \\%="+speci.toFixed(3)+"\\space \\%\\]"
+        
+        document.getElementById("sensiAns").innerHTML = ans;
+        renderMathInElement(document.getElementById("sensiAns"))
     }
 }
 

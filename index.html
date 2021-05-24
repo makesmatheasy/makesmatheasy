@@ -11871,6 +11871,33 @@
             </form>
             <div id="sumAndDiffTrians"></div>
         </div>
+
+        <!-- sensitivity and Specificity starts -->
+    <div class="collapse" id="sensi">
+        <h1 style="font-family:mathfont; text-align:center;">Sensitivity and Specificity</h1>
+        <form action="">
+            <input type="text" id="tp" class="form__field" placeholder="Enter True Positive value(TP)">
+            <p>&nbsp;</p>
+            <input type="text" id="tn" class="form__field" placeholder="Enter True Negative value(TN)">
+            <p>&nbsp;</p>
+            <input type="text" id="fp" class="form__field" placeholder="Enter False Positive value(FP)">
+            <p>&nbsp;</p>
+            <input type="text" id="fn" class="form__field" placeholder="Enter False Negative value(FN)">
+            <p>&nbsp;</p>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-auto d-flex justify-content-center">
+                    <button class="btn btn-secondary m-1" type="button" onclick="sensiCal()" style="font-family:mathfont;"> Calculate</button><br>
+                </div>
+                <br><br>
+                <div class="col-md-auto d-flex justify-content-center">
+                    <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+                </div>
+            </div>
+        </form>
+      <div  id='sensiAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
+      <br><br>
+      <div  id='speciAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
+    </div>
         <!--Standard Deviation starts-->
         <div class="collapse" id="deviation">
             <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
@@ -21418,32 +21445,6 @@ N is the population size.
                     
             </div>
         </div>
-    </div>
-    <!-- sensitivity and Specificity starts -->
-    <div class="collapse" id="sensi">
-        <h1 style="font-family:mathfont; text-align:center;">Sensitivity and Specificity</h1>
-        <form action="">
-            <input type="text" id="tp" class="form__field" placeholder="Enter True Positive value">
-            <p>&nbsp;</p>
-            <input type="text" id="tn" class="form__field" placeholder="Enter True Negative value">
-            <p>&nbsp;</p>
-            <input type="text" id="fp" class="form__field" placeholder="Enter False Positive value">
-            <p>&nbsp;</p>
-            <input type="text" id="fn" class="form__field" placeholder="Enter False Negative value">
-            <p>&nbsp;</p>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-auto d-flex justify-content-center">
-                    <button class="btn btn-secondary m-1" type="button" onclick="sensiCal()" style="font-family:mathfont;"> Calculate</button><br>
-                </div>
-                <br><br>
-                <div class="col-md-auto d-flex justify-content-center">
-                    <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
-                </div>
-            </div>
-        </form>
-      <div  id='sensiAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
-      <br><br>
-      <div  id='speciAns' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;"></div>
     </div>
     
 
