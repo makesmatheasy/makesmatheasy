@@ -14138,7 +14138,7 @@ function multBinDecHexOct(){
     var x3=x1*x2;
 
     if(resultType === "Binary")
-    result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3);
+    result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
     result.innerHTML="Answer in Octal="+x3.toString(8);
     else if(resultType === "Hexa Decimal")
