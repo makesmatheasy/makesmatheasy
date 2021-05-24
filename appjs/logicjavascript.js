@@ -11812,6 +11812,38 @@ function constAp(){
     renderMathInElement(output);
 }
 
+function apgphp(){
+    var a = parseFloat(document.getElementById("num131").value)
+    var b = parseFloat(document.getElementById("num141").value)
+    var c = parseFloat(document.getElementById("num151").value)
+    var output = document.getElementById("printapgphp")
+    var temp = "";
+    var a1 = ((a-b)/(b-c)) ;
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c)){
+        if(a1 == a/a){
+        temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space AP  \\]";
+       output.innerHTML = temp;
+    }
+        else if(a1 == a/b ){
+            temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space GP  \\]";
+            output.innerHTML = temp;
+        }
+        else if (a1 == (a/c) ){
+            temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space HP  \\]";
+            output.innerHTML = temp;
+        }
+        else{
+            temp += "\\[The \\space given \\space term \\space is \\space neither \\space AP, \\space GP \\space or \\space HP  \\]";
+            output.innerHTML = temp;
+        }
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
+}
+
 function constGp(){
     var a = parseInt(document.getElementById("term151").value)
     var b = parseInt(document.getElementById("term152").value)
