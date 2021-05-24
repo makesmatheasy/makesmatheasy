@@ -284,6 +284,7 @@ function openit(id) {
         "#bicone",
         "#pandc",
         "#per_chng_vol",
+        "#trunbicone",
         "#enna_prism",
         "#confi-inter",
         "#odds",
