@@ -35,6 +35,12 @@ $("#manhat").click(function(){
     clearall();
 });
 
+$("#cartbtn").click(function(){
+    openit("#cart");
+    closenav();
+    clearall();
+});
+
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {

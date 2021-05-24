@@ -236,6 +236,7 @@ Other Tech/Libraries
   - Coordinate Systems
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
+  - Cartesian coordinates calculator
   - Segment Area Calculator
   - Curve Tracing
   - Ceva's and Thale's Theorem
