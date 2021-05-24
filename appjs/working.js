@@ -58,6 +58,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sensibtn").click(function () {
+        openit("#sensi");
+        closenav();
+        clearall();
+    });
     $("#fractions_op").click(function () {
         openit("#fractions");
         closenav();

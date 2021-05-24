@@ -1471,6 +1471,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('pows').click();
                     } 
+                    else if (inp.value.toUpperCase() == "SENSITIVITY AND SPECIFICITY") {
+                        clearmain()
+                        $("#sensi").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "SENSITIVITY AND SPECIFICITY"){
+                        clearmain()
+                        document.getElementById('sensi').click();
+                    } 
                     else if (inp.value.toUpperCase() == "CURRENCY CONVERTOR") {
                         clearmain()
                         $("#curconcal").slideDown();    
