@@ -16394,21 +16394,24 @@
            
         </div>
         <div class="collapse" id="setcal">
-            <form action="">
-                <div class="row">
+            <h1 style="text-align:center">
+                Set Calculator
+            </h1>
+            <form action="" style="display:flex; flex-direction:column; ">
+                <div class="row" style="justify-content: center;">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <h5>First Set</h5>
+                            <h5 style="text-align:center;  margin-top:20px">First Set</h5>
                             <input type="text" value="0 1" class="form__field"
                                    id="first-set" style="color:white"
                                    >
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="justify-content: center;">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <h5>Operation</h5>
+                            <h5 style="text-align:center;  margin-top:20px">Operation</h5>
                             <select id="set-operation" class="form__field">
                                 <option class="form__field" style="color : white ;background-color: #232a36;">
                                     Union
@@ -16423,10 +16426,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="justify-content: center;">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <h5>Second Set</h5>
+                            <h5 style="text-align:center; margin-top:20px">Second Set</h5>
                             <input type="text" value="2 3" style="color:white" class="form__field"
                                    id="second-set">
                         </div>
@@ -16434,11 +16437,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-light" onclick="setcal()">
+                        <div style="text-align: center;" class="form-group">
+                            <button style="width:70px;" type="button" class="btn btn-light" onclick="setcal()">
                                 Find
                             </button>
-                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            <button style="width:70px;" type="button" class="btn btn-light" onclick="this.form.reset();">
                                 Reset
                             </button>
                         </div>
@@ -16446,10 +16449,10 @@
                 </div>
             </form>
             
-            <div class="row">
+            <div class="row" style="justify-content: center;">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <h5>Result</h5>
+                        <h5 style="text-align:center; margin-top:25px">Result</h5>
                         <label class="form__field" style="color:white" id="set-result">{}</label>
                     </div>
                 </div>
