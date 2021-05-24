@@ -10999,6 +10999,20 @@ function typenum4find(){
     }
 }
 
+function typenum6find(){
+    let n = parseInt(document.getElementById("typenum7").value)
+    let fibo = Array(2 * n + 1);
+    fibo[0] = 0;
+    fibo[1] = 1;
+    let sum = 0;
+    for ( i = 2; i <= 2 * n; i++){
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
+        if (i % 2 == 0)
+            sum += fibo[i];
+    }
+    document.getElementById("typenum6ans").innerHTML =  sum;
+}
+
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
     let arr = [];
