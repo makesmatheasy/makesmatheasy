@@ -2586,10 +2586,18 @@ function impse6find(){
 }
 
 function impse7find(){
-    var x = parseInt(document.getElementById("impse1x").value);
-    var k = parseInt(document.getElementById("impse11").value);
-    var y =  (((x) / 81) * (9 * k - 1 + Math.pow(10, (-1) * k)));
-    document.getElementById("impse7ans").innerHTML =  y ;
+    var x = (document.getElementById("impse1x").value);
+    var k = (document.getElementById("impse11").value);
+    var y =  (parseInt(x) / 81) * (9 * parseInt(k) - 1 + Math.pow(10, (-1) * parseInt(k)));
+    if (x!="" && k!=""){
+        document.getElementById("impse7ans").innerHTML = "\\[Sum \\space of \\space the \\space series \\space 0.X + 0.XX + 0.XXX +....+ k \\space will \\space be \\newline \\frac{(value \\space of \\space x)}{81} \\times (9 \\times (No. \\space of \\space terms) - 1 + 10^{(-1) \\times (No. \\space of \\space terms)})\\]"
+        document.getElementById("impse7ans1").innerHTML = "\\[\\frac{"+x+"}{81} \\times (9 \\times "+k+" - 1 + 10^{(-1) \\times "+k+"}) \\space = \\space "+(parseInt(x) / 81).toFixed(2)+" \\times "+ (9 * parseInt(k) - 1 + Math.pow(10, (-1) * parseInt(k))).toFixed(2)+"\\space = \\space "+y.toFixed(3)+"\\]"
+    } else{
+        document.getElementById("impse7ans").innerHTML = "\\[Please \\space enter \\space the \\space value\\]";
+        document.getElementById("impse7ans1").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("impse7ans"));
+    renderMathInElement(document.getElementById("impse7ans1"));
 }
 
 function impe8find(){
