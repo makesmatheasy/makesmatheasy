@@ -129,6 +129,7 @@ Other Tech/Libraries
   - Trigonometric Identities
   - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
+  - Unit Circle
   - Inverse Hyperbolic Trigonometric Identities
   - General Solution of Trigonometric Equations
   - Expansion of Functions
@@ -176,6 +177,7 @@ Other Tech/Libraries
   - Operations on Fractions
   - Binomial Theorem Properties
   - Binomial expression multiplication
+  - Foil Calculator
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -206,6 +208,7 @@ Other Tech/Libraries
     - Temperature
     - Pressure
     - Energy
+    - Radiation
     - Time
     - Angle
     - Speed
@@ -240,6 +243,7 @@ Other Tech/Libraries
   - Properties of Quadrilaterals
   - Arc Length Calculator
   - Area of Crescent and Lunes
+  - Platonic Solids
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -286,6 +290,7 @@ Other Tech/Libraries
     - Dodecahedron
     - Rhombic Dodecahedron
     - Icosahedron
+    - Cuboctahedron
     - Parallelepiped
     - Hyperboloid
     - N-dimension Sphere
@@ -353,6 +358,7 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Conditional Probability
+  - Geometric Probability Distribution
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties
@@ -364,11 +370,17 @@ Other Tech/Libraries
   - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
+  - Midrange Calculator
   - Standard Deviation
   - T-test
+  - AB-test
   - Z-test
   - Z score Calculator
+  - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - Confidence Interval Calculator
+  - Sensitivity and Specificity Calculator
+  - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
