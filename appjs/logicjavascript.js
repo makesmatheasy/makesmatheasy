@@ -17476,6 +17476,45 @@ function clearSumAndDiff() {
 
 
 }
+function reverseDigits(num)
+        {
+            let rev = 0;
+            while (num > 0)
+            {
+                rev = rev * 10 + num % 10;
+                num = parseInt(num / 10, 10);
+            }
+            return rev;
+        }
+       
+          
+        function square(num)
+        {
+            return (num * num);
+        }
+                
+function adamfind()
+{
+    var num=document.getElementById("adam1").value;
+    var ans="";
+    if(num=="")
+    {
+        ans="Please enter the number to find answer";
+    }
+    else
+    {
+        num=parseInt(num);
+        let a = square(num);
+        let b = square(reverseDigits(num));
+        if (a == reverseDigits(b))
+          {ans= "Square of "+num+" is "+a+"<br>"+" The square of "+ reverseDigits(num)+" is "+b+"</br>" +num+ " is an Adam Number. ";}
+           else
+           {
+               ans="Square of "+num+" is "+a+"<br>"+" The square of "+ reverseDigits(num)+" is "+b+"</br>" +num+ " is not an Adam Number. "
+           }
+        }
+         document.getElementById("adamans").innerHTML=ans;
+    }
 
 function amfind()
 {

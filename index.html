@@ -1566,6 +1566,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="adam"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Adam Numbers</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Adam Number','#adams','c','adamimgfav')"><img
+                                        id="adamimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="giffbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Greatest Integer Function and Fractional Part</a>
                         </td>
@@ -17761,6 +17776,13 @@
     <button class="btn btn-dark" onclick="lnfind()">FInd</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="lnans1"></p><br>
     <p style="font-family:mathfont" id="lnans"></p><br>
+</div>
+
+<div class="collapse" id="adams">
+    <h1 style="color: white;font-family:mathfont">Adam Number Checker</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="adam1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="adamans"></p><br>
 </div>
 
 <div class="collapse" id="abundants">
