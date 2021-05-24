@@ -2735,6 +2735,7 @@ function impse7find(){
     renderMathInElement(document.getElementById("impse7ans"));
     renderMathInElement(document.getElementById("impse7ans1"));
 }
+
 function impse8find(){
     var n = parseInt(document.getElementById("impse12").value)
     var count = 1;
@@ -2745,6 +2746,22 @@ function impse8find(){
         count = find_count(ele);
     }
 }
+
+
+function impse9find(){
+    let n = parseInt(document.getElementById("impse13").value)
+    let res = 0.0 ;
+    let sum = 0, prod = 1;
+    for (let i = 1 ; i <= n ; i++)
+    {
+        sum += i;
+        prod *= i;
+        res += (sum / prod);
+    }
+    document.getElementById("impse9ans").innerHTML = res;
+}
+
+
 function find_count(ele){
     var count = 0;
     for (let i = 0; i < ele.length; i++) {
