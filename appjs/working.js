@@ -91,6 +91,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#abundant").click(function () {
+        openit("#abundants");
+        closenav();
+        clearall();
+    })
 
     $("#per-chng-cube").click(function () {
         openit("#chng-vol-cube");
