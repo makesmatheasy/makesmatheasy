@@ -16621,29 +16621,6 @@ function manhatcal(){
     }
 }
 
-function polarcal(){
-    var x=parseFloat(document.getElementById("polarx").value);
-    var y=parseFloat(document.getElementById("polary").value);
-
-    var outputr = document.getElementById("polarans1");
-    var outputo = document.getElementById("polarans2");
-
-    var r =  Math.sqrt(x*x + y*y);
-    var o = Math.atan(y/x);
-    var ans="";
-    
-    if(isNaN(x)||isNaN(y))
-    {
-        ans += "Please fill all the field";
-        outputr.innerHTML= ans;
-        outputo.innerHTML = "";
-    }
-    else{
-        outputr.innerHTML= "r: " + r;
-        outputo.innerHTML = "θ: " + o;
-    }
-}
-
 function volofcube() {
     var x = document.getElementById("chngsidecube").value;
     var per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
