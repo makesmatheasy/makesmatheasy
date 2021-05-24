@@ -17092,9 +17092,59 @@ function manhatcal(){
     }
 }
 
+    var p=parseFloat(document.getElementById("cartp").value);
+    var o=parseFloat(document.getElementById("carto").value);
+    var z= parseFloat(document.getElementById("cartz").value);
+
+    var outputx = document.getElementById("cartxans");
+    var outputy = document.getElementById("cartyans");
+    var outputz = document.getElementById("cartzans");
+    var ansx="";
+    var ansy="";
+    var x = p*Math.cos(o);
+    var y = p*Math.sin(o);
+    if(isNaN(p)||isNaN(o)||isNaN(z))
+    {
+        ansx += "Please fill all the field";
+        outputx.innerHTML= ansx;
+        outputy.innerHTML = "";
+        outputz.innerHTML = "";
+    }
+    else{
+        outputx.innerHTML= "x: " + ansx;
+        outputy.innerHTML = "y: " + ansy;
+        outputz.innerHTML = "Z: " + z;
+    }
+}
+
+function sphcal(){
+    var x=parseFloat(document.getElementById("sphx").value);
+    var y=parseFloat(document.getElementById("sphy").value);
+    var z= parseFloat(document.getElementById("sphz").value);
+
+    var outputr = document.getElementById("sphrans");
+    var outputo = document.getElementById("sphoans");
+    var outputfi = document.getElementById("sphfians");
+    var r =  Math.sqrt(x*x + y*y + z*z);
+    var o = Math.acos(z/r);
+    var fi = Math.atan(y/x);
+    var ans="";
+    
+    if(isNaN(x)||isNaN(y)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+        outputfi.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+        outputfi.innerHTML = "φ: " + fi;
+    }
+}
+
 function bilinearcal(){
-    var bx1=parseInt(document.getElementById("bicx1").value);
-    var bx2=parseInt(document.getElementById("bicx2").value);
     var by1= parseInt(document.getElementById("bicy1").value);
     var by2= parseInt(document.getElementById("bicy2").value);
     var bq11= parseInt(document.getElementById("bicq11").value);
@@ -17122,7 +17172,6 @@ function bilinearcal(){
 function volofcube() {
     var x = document.getElementById("chngsidecube").value;
     var per = (Math.pow(x, 3) / 10000 + 3 * x + (3 * Math.pow(x, 2)) / 100);
-    if (x!=""){
         document.getElementById("cubeAns").innerHTML = "\\[Percentage \\space increase \\space in \\space the \\space volume \\space of \\space the \\space cube \\space is \\space\\]";
         document.getElementById("cubeAns1").innerHTML = "\\[\\frac{(change \\space in \\space radius)^3}{10000} + 3\\times (change \\space in \\space radius) + \\frac{(3 \\times (change \\space in \\space radius)^2)}{100}\\]";
         document.getElementById("cubeAns2").innerHTML = "\\[\\frac{"+x+"^3}{10000} + 3\\times "+x+" + \\frac{(3 \\times "+x+"^2)}{100}\\]";
