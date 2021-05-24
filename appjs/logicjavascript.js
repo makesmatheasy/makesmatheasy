@@ -8766,6 +8766,38 @@ function solveellipCone() {
     }
 }
 
+function solvetrunBicone() {
+    var r = document.getElementById("inputtrunbiconerad").value;
+    var R = document.getElementById("inputtrunbiconebigr").value;
+    var h = document.getElementById("inputtrunbiconeh").value;
+    var laoutput = document.getElementById("resultoftrunbiconela");
+    var voloutput = document.getElementById("resultoftrunbiconevol");
+    var areaoutput = document.getElementById("resultoftrunbiconearea");
+    var latemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var vol=h*3.14*((R*R)+(R*r) + (r*r));
+    var l =2*(R+r)*3.14*Math.sqrt(((R-r)*(R-r))+0.25*h*h);
+    var a=l+(2*3.14*r*r);
+    if ((r != "") && (h!="") && (R!= "")) {
+        latemp += "\\[Lateral \\space Area \\space of \\space Truncated \\space Bicone \\space \\newline 2 \\times ( " + R + "+" + r  + ")\\times \\pi \\times \\sqrt{("+ R + "-" + r  + ")^2 + " + "\\frac{" + h + "^2}{4}}"  + "\\ = " + eval(String(l)).toFixed(2) + "\\]";
+        laoutput.innerHTML = latemp;
+        voltemp += "\\[Volume \\space of \\space Truncated \\space Bicone \\space \\newline \\frac{" + h + "\\times 3.14 \\times(" + R + "^2+" + R + "\\times" + r + "+" + r + "^2)}{3}" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[surface \\space Area \\space of \\space Truncated \\space Bicone \\space  \\newline" + "2 \\times" + r + "\\times \\sqrt{" + h + "^2 +" + r + "^2}" + "\\times \\pi"  + "\\ = " + eval(String(l+ 2*3.14*r*r)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(laoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        laoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function torussolve() {
     var radius1 = document.getElementById("inputmajorradiustorus").value;
     var radius2 = document.getElementById("inputminorradiustorus").value;
