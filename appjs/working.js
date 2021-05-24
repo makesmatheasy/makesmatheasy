@@ -53,6 +53,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#midrangebtn").click(function () {
+        openit("#midrange");
+        closenav();
+        clearall();
+    });
     $("#fractions_op").click(function () {
         openit("#fractions");
         closenav();
@@ -311,6 +316,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#expansioncbtn").click(function () {
+        openit("#expansionc");
+        closenav();
+        clearall();
+    });
     $("#integrate").click(function () {
         openit("#integralcollapse");
         closenav();
@@ -474,6 +484,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#abtestbtn").click(function () {
+        openit("#abtest");
+        closenav();
+        clearall();
+    });   
     $("#ftestbtn").click(function () {
         openit("#ftest");
         closenav();
@@ -627,6 +642,12 @@ $(document).ready(function () {
 
     $("#confi-inter-btn").click(function () {
         openit("#confi-inter");
+        closenav();
+        clearall();
+    });
+
+    $("#oddsbtn").click(function () {
+        openit("#odds");
         closenav();
         clearall();
     });
@@ -1028,6 +1049,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    //Function of Division of Any Number System
+    $("#div-all-btn").click(function () {
+        openit("#divide-all");
+        closenav();
+        clearall();
+    });
 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function () {
@@ -1106,6 +1133,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#ln").click(function () {
+        openit("#lns");
+        closenav();
+        clearall();
+    });
     $("#complex2collapsebtn").click(function () {
         openit("#complex2collapse");
         closenav();
@@ -1166,6 +1198,11 @@ $(document).ready(function () {
 
     $("#parabolacollapsebtn").click(function () {
         openit("#parabolacollapse");
+        closenav();
+        clearall();
+    });
+    $("#parabbtn").click(function () {
+        openit("#parab");
         closenav();
         clearall();
     });
@@ -1287,6 +1324,30 @@ $(document).ready(function () {
 
     $("#condprobabilitybtn").click(function () {
         openit("#condprobability");
+        closenav();
+        clearall();
+    });
+    
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
         closenav();
         clearall();
     });
