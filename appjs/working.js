@@ -29,6 +29,11 @@ $("#utc").click(function(){
     clearall();
 });
 
+$("#bilinearbtn").click(function(){
+    openit("#bilinear");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -55,6 +60,11 @@ $(document).ready(function () {
     });
     $("#midrangebtn").click(function () {
         openit("#midrange");
+        closenav();
+        clearall();
+    });
+    $("#sensibtn").click(function () {
+        openit("#sensi");
         closenav();
         clearall();
     });
@@ -88,6 +98,11 @@ $(document).ready(function () {
 
     $("#per-chng-cuboid").click(function () {
         openit("#chng-vol-cuboid");
+        closenav();
+        clearall();
+    })
+    $("#abundant").click(function () {
+        openit("#abundants");
         closenav();
         clearall();
     })
@@ -424,6 +439,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#diamondbtn").click(function () {
+        openit("#diamond");
+        closenav();
+        clearall();
+    }) 
     $("#wandtbtn").click(function () {
         openit("#wandt");
         closenav();
@@ -705,6 +725,11 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#foilbtn").click(function () {
+        openit("#foil");
+        closenav();
+        clearall();
+    });
     $("#clrbtn").click(function () {
         openit("#clr");
         closenav();
@@ -1328,6 +1353,12 @@ $(document).ready(function () {
         clearall();
     });
     
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
