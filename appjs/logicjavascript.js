@@ -7346,6 +7346,47 @@ function solveflatcy() {
     }
 }
 
+function solvehalfcy() {
+    var h = document.getElementById("inputhalfcyh").value;
+    var r = document.getElementById("inputhalfcyr").value;
+    var volumeoutput = document.getElementById("resultofhalfcyvol");
+    var laoutput = document.getElementById("resultofhalfcyla");
+    var taoutput = document.getElementById("resultofhalfcyba");
+    var diaoutput = document.getElementById("resultofhalfcydia");
+    var voltemp = "";
+    var latemp = "";
+    var tatemp = "";
+    var diatemp = "";
+    var vol = 0.5*3.14*r*r*h;
+    var lateral=3.14*r*h;
+    var d=Math.sqrt((h*h)+(r*r));
+    var area=(3.14*r*(h+r))+(2*r*h);
+    if ((h != "") && (r != "") ) {
+        voltemp += "\\[V \\space = \\space \\frac{ \\pi \\times " + r + "\\times" + r + "\\times" + h + "}{2}" +  "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((vol).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[L \\space = \\pi \\times" + r + "\\times" + h  + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + eval(String((lateral).toFixed(2))) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        tatemp += "\\[A \\space = \\pi \\times " + r + "\\times" + "(" + h + "+" + r +  ") + 2 \\times " + r + "\\times" + h  + "\\]";
+        tatemp += "\\[Surface \\space Area \\space is \\space = \\space " + eval(String((area).toFixed(2)))+ "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+        diatemp += "\\[d \\space = \\sqrt{" + h + "^2 + " + r + "^2 }"  + "\\]";
+        diatemp += "\\[Volume \\space diagonal \\space is \\space = \\space " + eval(String((d).toFixed(2))) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        renderMathInElement(diaoutput);
+    } 
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
+}
+
 function ellipsoidsolve() {
 
     var a = document.getElementById("inputellipa").value;
