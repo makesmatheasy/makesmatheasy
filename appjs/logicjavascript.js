@@ -13525,8 +13525,8 @@ function addBinDecHexOct(){
     var x2,x2o;
    
     if(firstBase === "Binary"){
-        x1=parseInt(input1,2);
-        x1o=x1.toString(2);
+        x1 = calculatefrac(input1,2);
+        x1o = fracDectoBinHexOct(x1,2);
     }
     else if (firstBase === "Octal"){
         x1=parseInt(input1,8);
@@ -13542,8 +13542,8 @@ function addBinDecHexOct(){
     }
 
     if(secondBase === "Binary"){
-        x2=parseInt(input2,2);
-        x2o=x2.toString(2);
+        x2 = calculatefrac(input2,2);
+        x2o = fracDectoBinHexOct(x2,2);
     }
     else if (secondBase === "Octal"){
         x2=parseInt(input2,8);
@@ -13565,7 +13565,7 @@ function addBinDecHexOct(){
     else if(isNaN(x2)|| x2o!=input2)
     result.innerHTML="Enter a "+secondBase+" value in Input 2";
     else if(resultType === "Binary")
-    result.innerHTML="Answer in binary="+x3.toString(2);
+    result.innerHTML="Answer in binary="+fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
     result.innerHTML="Answer in Octal="+x3.toString(8);
     else if(resultType === "Hexa Decimal")
