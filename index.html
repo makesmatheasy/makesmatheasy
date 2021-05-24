@@ -2221,6 +2221,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="foilbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Foil Calculator
+                        </td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Foil Calculator','#foil','c','foilimgfav')"><img
+                                     id="foilimgfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -16481,6 +16498,48 @@
             <br>
             <br>
             <p id="binoexp_ans"></p>
+        </div>
+        
+        <div class="collapse" id="foil">
+            <h1>Foil Calculator</h1>
+            <p style="font-size: 22px;">FOIL is a method for multiplying two binomials. FOIL is an acronym for the four terms appearing in the final result.
+                <li style="color: white; font-size: 20px;"><b> F ➺ First </b>terms of each binomial are multiplied.</li>
+                <li style="color: white; font-size: 20px;"><b> O ➺ Outer </b>terms are multiplied </li>
+                <li style="color: white; font-size: 20px;"><b> I ➺ Inner </b>terms are multiplied</li>
+                <li style="color: white; font-size: 20px;"><b> L ➺ Last </b>terms are multiplied.</li>
+            </p>
+            <img src="images/Foil.webp" class="img-fluid" style=" display: block; margin-left: auto; margin-right: auto; height: 300px;">
+            <br>
+            <p style="font-size: 25px;">Multiply (axⁿ + b) ⋅ (cxᵐ + d) using the FOIL method.</p>
+            <p style="font-size: 23px;">Enter the coefficients.</p>
+            <form action="">
+                <input type="number" id="foila" placeholder="a"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                <input type="number" id="foilb" placeholder="b "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                <input type="number" id="foiln" placeholder="Exponent n"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br><br>
+                <input type="number" id="foilc" placeholder="c"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                <input type="number" id="foild" placeholder="d "
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                <input type="number" id="foilm" placeholder="Exponent m"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+            <br><br>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                        onclick="foilcal()">
+                    Multiply
+                </button>
+                <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+            </form>
+            <br>
+            <br>
+            <p id="foil_ans"></p>
         </div>
 
         <div class="collapse" id="binomialcoeff">

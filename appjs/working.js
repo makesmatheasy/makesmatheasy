@@ -705,6 +705,11 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#foilbtn").click(function () {
+        openit("#foil");
+        closenav();
+        clearall();
+    });
     $("#clrbtn").click(function () {
         openit("#clr");
         closenav();
