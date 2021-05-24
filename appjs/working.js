@@ -58,6 +58,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sensibtn").click(function () {
+        openit("#sensi");
+        closenav();
+        clearall();
+    });
     $("#fractions_op").click(function () {
         openit("#fractions");
         closenav();
@@ -88,6 +93,11 @@ $(document).ready(function () {
 
     $("#per-chng-cuboid").click(function () {
         openit("#chng-vol-cuboid");
+        closenav();
+        clearall();
+    })
+    $("#abundant").click(function () {
+        openit("#abundants");
         closenav();
         clearall();
     })
@@ -710,6 +720,11 @@ $(document).ready(function () {
         clearall();
     });
 
+    $("#foilbtn").click(function () {
+        openit("#foil");
+        closenav();
+        clearall();
+    });
     $("#clrbtn").click(function () {
         openit("#clr");
         closenav();
@@ -1333,6 +1348,12 @@ $(document).ready(function () {
         clearall();
     });
     
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
