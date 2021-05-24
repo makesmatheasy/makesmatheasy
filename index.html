@@ -5505,7 +5505,7 @@
                 <h2><label>Coordinate Geometry Calculator</label></h2>
             </div>
             <br><br>
-            <h3 style="text-align: center;">Distance </h3><br>
+            <h3 style="text-align: center;">Distance/MidPoint </h3><br>
             <div class="coll">
                 <p>
                     Coordinate 1 = (<input type="text" id="xOne" size=12 value='' placeholder="                   x1"> , 
@@ -5516,31 +5516,15 @@
                         <br>
                         <br>
                 <button type="button" class="btn btn-light" onclick=ShowDistance()>
-                    Calculate Distance
-                </button><br>
+                     Distance
+                </button><button type="button" class="btn btn-light" onclick=midpointsolve()>
+                    Midpoint
+               </button><br>
                 </p>
             </div><br>
             <p id="dis_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
             <h4 style="text-align: center;" id="outPut"> </h4> <br><br>
-            <h3 style="text-align: center;">Midpoint </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate A = (<input type="text" id="XOne" size=12 value='' placeholder="                   x1"> , 
-                <input type="text" id="YOne" size=12 value='' placeholder="                   y1">)
-                    <br>
-                    Coordinate B = (<input type="text" id="XTwo" size=12 value='' placeholder="                   x2"> , 
-                <input type="text" id="YTwo" size=12 value='' placeholder="                   y2">)
-                        <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=midpointsolve()>
-                    Calculate Midpoint
-                </button><br>
-                </p>
-            </div><br>
-            <p id="mid_formula" style="font-family:mathfont;;width:auto;"
-                class="stopwrap"></p>
-            <h4 style="text-align: center;" id="mid_output"> </h4> <br><br>
-
+           
             <h3> When Two Lines Meet </h3><br>
             <div class="coll">
                 <p>

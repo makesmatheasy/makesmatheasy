@@ -2873,17 +2873,17 @@ var x1, x2, y1, y2;
 function midpointsolve()
 {
     var X1, X2, Y1, Y2;
-    X1=parseFloat(document.getElementById('XOne').value);
-    X2=parseFloat(document.getElementById('XTwo').value);
-    Y1=parseFloat(document.getElementById('YOne').value);
-    Y2=parseFloat(document.getElementById('YTwo').value);
-    var explain_mid = document.getElementById("mid_formula");
+    X1=parseFloat(document.getElementById('xOne').value);
+    X2=parseFloat(document.getElementById('yTwo').value);
+    Y1=parseFloat(document.getElementById('xOne').value);
+    Y2=parseFloat(document.getElementById('yTwo').value);
+    var explain_mid = document.getElementById("dis_formula");
     var temp = "";
     if(isNaN(X1) || isNaN(X2) || isNaN(Y1) || isNaN(Y2)){
         temp += "\\[Please \\space enter \\space all \\space fields \\]";
         explain_mid.innerHTML=temp;
         renderMathInElement(explain_mid);
-        document.getElementById('mid_output').innerHTML= "";
+        document.getElementById('outPut').innerHTML= "";
     }else{
     var midpoint1 = (X1 + X2)/2;
     var midpoint2= (Y1 + Y2)/2;
@@ -2894,7 +2894,7 @@ function midpointsolve()
         temp += "\\[ ( \\frac{ " + (X1+X2) + " }{2} \\space , \\space \\frac{ " + (Y1+Y2) + " }{2} ) \\]";
         explain_mid.innerHTML=temp;
         renderMathInElement(explain_mid);
-        document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
+        document.getElementById('outPut').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     }
     else if(X2>0 && Y2<0){
         temp += "\\[Midpoint \\space between \\space two \\space points \\space is  \\] ";
@@ -2903,7 +2903,7 @@ function midpointsolve()
         temp += "\\[ ( \\frac{ " + (X1+X2) + " }{2} \\space , \\space \\frac{ " + (Y1+Y2) + " }{2} ) \\]";
         explain_mid.innerHTML=temp;
         renderMathInElement(explain_mid);
-        document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
+        document.getElementById('outPut').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     }
     else if(X2<0 && Y2<0){
         temp += "\\[Midpoint \\space between \\space two \\space points \\space is  \\] ";
@@ -2912,7 +2912,7 @@ function midpointsolve()
         temp += "\\[ ( \\frac{ " + (X1+X2) + " }{2} \\space , \\space \\frac{ " + (Y1+Y2) + " }{2} ) \\]";
         explain_mid.innerHTML=temp;
         renderMathInElement(explain_mid);
-        document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
+        document.getElementById('outPut').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     }
     else{
     temp += "\\[Midpoint \\space between \\space two \\space points \\space is  \\] ";
@@ -2921,7 +2921,7 @@ function midpointsolve()
     temp += "\\[ ( \\frac{ " + (X1+X2) + " }{2} \\space , \\space \\frac{ " + (Y1+Y2) + " }{2} ) \\]";
     explain_mid.innerHTML=temp;
     renderMathInElement(explain_mid);
-    document.getElementById('mid_output').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
+    document.getElementById('outPut').innerHTML= 'The midpoint between (' + X1 + ',' + Y1 + ') and ('+ X2 + ',' + Y2 + ') is '+ '(' + midpoint1 + ','  + midpoint2 + ')';
     }
 }
 }
