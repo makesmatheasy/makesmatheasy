@@ -2922,6 +2922,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="bilinearbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Bilinear Interpolation Calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Bilinear Interpolation Calculator','#bilinear','c','bilinearimgfav')"><img
+                                        id="bilinearimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="analyticalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate Geometry
                                Calculator</a>
@@ -17528,6 +17545,27 @@
     <p id="manhatans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
         <p>&nbsp;</p>
     </div>
+
+<div class="collapse" id="bilinear">
+    <h1 style=" text-align: center; font-family:mathfont" >BILINEAR INTERPOLATION CALCULATOR </h1>
+    <p>Bilinear interpolation calculator is used to estimate function's value at any point (x, y) inside the rectangle.&nbsp;</p><br>
+    <img src="images/bilinear.png" class="img-fluid" style="display: block; margin-left:auto; margin-right:auto; height:244px;"><br>
+
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
+      <input type="number" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
+      <p>&nbsp;</p></p>
+  
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
+        <input type="number" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
+        <p>&nbsp;</p></p>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
+        <input type="number" name="bicy" id="bicy" width="5em" placeholder="Enter y">
+        <p>&nbsp;</p></p>      
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="bilinearcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="bilinearans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        <p>&nbsp;</p>
+    </div>    
 <div class="collapse" id="utcs">
 
 <h1 >UNIT RATE CALCULATOR </h1><p>&nbsp;</p>
