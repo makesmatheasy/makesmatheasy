@@ -2592,7 +2592,7 @@ function impse7find(){
     document.getElementById("impse7ans").innerHTML =  y ;
 }
 
-function impe8find(){
+function impse8find(){
     let n = parseInt(document.getElementById("impse12").value)
     let count = 1;
     let ele = [];
@@ -2601,6 +2601,19 @@ function impe8find(){
         ele.push(count);
         count = find_count(ele);
     }
+}
+
+function impse9find(){
+    let n = parseInt(document.getElementById("impse13").value)
+    let res = 0.0 ;
+    let sum = 0, prod = 1;
+    for (let i = 1 ; i <= n ; i++)
+    {
+        sum += i;
+        prod *= i;
+        res += (sum / prod);
+    }
+    document.getElementById("impse9ans").innerHTML = res;
 }
 
 function find_count(ele)
