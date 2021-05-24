@@ -262,6 +262,7 @@ function openit(id) {
         "#right_wedge",
         "#bool",
         "#suppangs",
+        "#halfcy",
         "#eirs",
         "#tricorn",
         "#zscores",
