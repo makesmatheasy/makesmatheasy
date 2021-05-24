@@ -10653,6 +10653,12 @@ function cirinsemi4find(){
     document.getElementById("cirinsemifind4ans").innerHTML =  area;
 }
 
+function cirinsemi5find(){
+    let r = parseInt(document.getElementById("cirinsemi5in").value)
+    var area = ((3.14 * r * r) / 4);
+    document.getElementById("cirinsemifind5ans").innerHTML =  area;
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
