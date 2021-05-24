@@ -8410,6 +8410,36 @@ function solvetesseract() {
 
     }
 }
+//created function for hypersphere
+function solvehypsphere() {
+    var radius = document.getElementById("inputhypsphrad").value;  
+    var diaoutput = document.getElementById("resultofhypsphdia");
+    var voloutput = document.getElementById("resultofhypsphvol");
+    var hypvoloutput = document.getElementById("resultofhypsphhypvol");
+    var diatemp = "";
+    var voltemp = "";
+    var hypvoltemp = "";
+    if (radius != "") {
+        diatemp += "\\[Diameter \\space of \\space hypersphere \\space \\newline 2 \\times" + radius + "\\ = " + eval(String(2 * radius)).toFixed(2) + "\\]";
+        diaoutput.innerHTML = diatemp;
+
+        voltemp += "\\[Volume \\space of \\space hypersphere \\space \\newline 2 \\times (3.14)^2 \\times (" + radius + ")^3" + "\\ = " + eval(String(19.739208801 * radius * radius * radius)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        hypvoltemp += "\\[Hypervolume \\space of \\space hypersphere \\space \\newline \\frac {(3.14)^2}{2} \\times (" + radius + ")^4" + "\\ = " + eval(String(4.9348022 * radius * radius * radius * radius)).toFixed(2) + "\\]";
+        hypvoloutput.innerHTML = hypvoltemp;
+
+        renderMathInElement(diaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(hypvoloutput);
+
+    } else {
+        diaoutput.innerHTML = "";
+        voloutput.innerHTML = ""; 
+        hypvoloutput.innerHTML = "";    
+
+    }
+}
 
 function solvendimsphere() {
     var g = 7;

@@ -15285,6 +15285,10 @@
                     <td><a data-toggle="modal" data-target="#tesseract"
                            style="text-decoration:none;" href="#">Tesseract</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hypersphere"
+                           style="text-decoration:none;" href="#">Hypersphere</a></td>
+                </tr>
             </table>
         </div>
 
@@ -24942,6 +24946,60 @@ N is the population size.
                         <p class="stopwrap" id="resultoftessvol"
                             style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultoftesshypvol"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                    <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hypersphere" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hypersphere</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Diameter</h5>
+                                <p class="text-center">\[d = 2 \space r \]</p>
+                                <p class="text-center">r = radius</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Surface Volume</h5>
+                                <p class="text-center">\[V = 2 \space π^2 \space r^3 \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Hypervolume</h5>
+                                <p class="text-center">\[H = \frac{π^2}{2} \space r^4 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/hypersphere.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!-- --------FROM------- -->
+                        <input class="form__field" type="number"
+                               placeholder="Enter edge length of tesseract (a)" id="inputhypsphrad"
+                               oninput="solvehypsphere();">
+                        <p class="stopwrap" id="resultofhypsphdia"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofhypsphvol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofhypsphhypvol"
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
