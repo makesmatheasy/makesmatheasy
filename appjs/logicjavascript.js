@@ -2591,6 +2591,46 @@ function impse7find(){
     document.getElementById("impse7ans").innerHTML =  y ;
 }
 
+function impe8find(){
+    let n = parseInt(document.getElementById("impse12").value)
+    let count = 1;
+    let ele = [];
+    for (let i = 0; i < n; i++) {
+        document.getElementById("impse8ans").innerHTML =  count + ", ";
+        ele.push(count);
+        count = find_count(ele);
+    }
+}
+
+function find_count(ele)
+{
+    let count = 0;
+ 
+    for (let i = 0; i < ele.length; i++) {
+        let p = [];
+        let c = 0;
+        for (let j = ele.length - 1;
+             j >= (ele.length - 1 - i) && j >= 0;
+             j--)
+            p.push(ele[j]);
+ 
+        let j = ele.length - 1, k = 0;
+        while (j >= 0) {
+            if (ele[j] != p[k])
+                break;
+ 
+            j--;
+            k++;
+            if (k == p.length) {
+                c++;
+                k = 0;
+            }
+        }
+        count = Math.max(count, c);
+    }
+    return count;
+}
+
 function solvetetrahexa(){
     var a = document.getElementById("inputsidetetrahexa1").value;
     var voloutput = document.getElementById("resultoftetrahexavol");
