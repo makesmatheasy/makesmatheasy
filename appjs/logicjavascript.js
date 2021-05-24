@@ -654,12 +654,20 @@ function printfactorsfl(value) {
 
 function splittrifind(){
     var side = parseInt(document.getElementById('splittri').value);
+    if (!isNaN(side)){
     document.getElementById("splittrians1").innerHTML = "\\[First, \\space we \\space find \\space Binomial \\space Coefficient \\space of \\space (2 \\times "+side+") \\space and \\space "+side+"\\]"
-    renderMathInElement( document.getElementById("splittrians1"));
     var c = binomialCoeff(2 * side, side);
     var ans = c/((2 * side)+1);
     document.getElementById("splittrians2").innerHTML = "\\[Number \\space of \\space ways \\space is \\space \\space \\frac{Binomila \\space Coefficient}{2 \\times side} \\space \\space = \\space \\frac{"+c+"}{2 \\times "+side+"} \\space = \\space "+ans.toFixed(3)+"\\]";
+    renderMathInElement( document.getElementById("splittrians1"));
     renderMathInElement( document.getElementById("splittrians2"));
+}
+    else{
+        document.getElementById("splittrians3").innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
+        document.getElementById("splittrians4").innerHTML = "";
+    }
+    renderMathInElement( document.getElementById("splittrians3"));
+    renderMathInElement( document.getElementById("splittrians4"));
 }
 function binomialCoeff(n, k) {
     var res = 1;
@@ -1258,13 +1266,6 @@ else{
 }
 }
 
-function chordTangle(){
-    // when angle in the alternate segment is given
-    var into = document.getElementById("ctangle").value
-    document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
-    document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
-}
-
 function vectorline(){
     let a = parseInt(document.getElementById("i1").value)
     let b = parseInt(document.getElementById("i2").value)
@@ -1304,8 +1305,14 @@ function vectorline(){
 function chordTangle(){
     // when angle in the alternate segment is given
     var into = document.getElementById("ctangle").value
+    if(into != ""){
     document.getElementById("ctangleinfo").innerHTML = "The angle between chord and tangent is same as angle between alternate segment"
     document.getElementById("ctangleans").innerHTML = "The angle between chord and tangent is " + into
+    }
+    else{
+        document.getElementById("ctangleinfo").innerHTML = "Please enter valid input"
+        document.getElementById("ctangleans").innerHTML = ""
+    }
 }
 
 //-----------------------------------------------------
@@ -3367,11 +3374,16 @@ function convexcheckfind(){
     let a6 = parseInt(document.getElementById("convexcheckin6").value)
     let a7 = parseInt(document.getElementById("convexcheckin7").value)
     var points = [[a,a1],[a2,a3],[a4,a5],[a6,a7]]
+    if(!isNaN(a) && !isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(a4) && !isNaN(a5) && !isNaN(a6) && !isNaN(a7)){
     if (isConvex(points)){
         document.getElementById("convexcheckans").innerHTML = "Yes"
     }
     else{
         document.getElementById("convexcheckans").innerHTML = "No"
+    }
+}
+    else{
+        document.getElementById("convexcheckans").innerHTML = "Please enter valid input"
     }
 }
 
@@ -3555,12 +3567,17 @@ function solveocta() {
 function circleinfind(){
     let n = parseInt(document.getElementById("circleinin").value)
     let a = parseInt(document.getElementById("circleinin1").value)
+    if(!isNaN(n) && !isNaN(a)){
     // degree converted to radians
     let r = a /  (2 * Math.tan((180 / n) * 3.14159 / 180));
  
     // area of circle
     let Area =  (3.14) * (r) * (r);
     document.getElementById("circleinans").innerHTML = "The area of circle is "+ Area
+    }
+    else{
+        document.getElementById("circleinans").innerHTML = "Please enter valid input"
+    }
 }
 
 function solvepolycal(){
@@ -4360,10 +4377,15 @@ function coordinatearea(){
 function triinfind(){
     let n= parseInt(document.getElementById("triinin").value);
     let len = parseInt(document.getElementById("triinin1").value);
+    if(!isNaN(n) && !isNaN(len)){
     let area = area_of_regular_polygon(n, len);
     let triangle = area / n;
     let ins_tri = (triangle * 3);
     document.getElementById("triinans").innerHTML = ins_tri
+}
+    else{
+        document.getElementById("triinans").innerHTML = "Please enter valid input"
+    }
 }
 
 function area_of_regular_polygon(n, len)
@@ -4432,8 +4454,13 @@ function centerrsolve(){
 }
 function nodiagnolfind(){
     let n= parseInt(document.getElementById('nodiagnol').value)
+    if(!isNaN(n)){
     let ans = n*(n-3)/2
     document.getElementById("nodiagnolans").innerHTML = "The number of diagnols are "+ans
+}
+else{
+    document.getElementById("nodiagnolans").innerHTML = "Please enter valid input"
+}
 }
 
 function orthosolve(){
@@ -10317,9 +10344,14 @@ function leap() {
 function rotfind(){
     // JS program to find angle of rotational symmetry
     let side = parseInt(document.getElementById("rotside").value)
+    if(!isNaN(side)){
     let ans = parseInt(360/side)
     // parseint because we want answer in integer
     document.getElementById("rotans").innerHTML = "The angle of rotational symmetry is " + ans
+    }
+    else{
+        document.getElementById("rotans").innerHTML = "Please enter valid input"
+    }
 }
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
@@ -10350,8 +10382,13 @@ function speedu(a) {
 function diagnfind(){
     let n =parseInt(document.getElementById("diagnin").value) 
     let a = parseInt(document.getElementById("diagnin1").value)
+    if(!isNaN(n) && !isNaN(a)){
     let ans = (2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180));
     document.getElementById("diagnans").innerHTML = ans
+    }
+    else{
+        document.getElementById("diagnans").innerHTML = "Please enter valid input"
+    }
 }
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
@@ -12547,12 +12584,17 @@ function scyf1find(){
 
 function polymaxfind(){
     let n = parseInt(document.getElementById("polymax").value)
+    if(!isNaN(n)){
     if (n < 4)
         document.getElementById("polymaxans").innerHTML = "No Polygon can be escribed for sides less than 4"
     if(n%2===0)
         document.getElementById("polymaxans").innerHTML = n/2
     else 
         document.getElementById("polymaxans").innerHTML =  "No Polygon can be escribed"  
+    }
+    else{
+        document.getElementById("polymaxans").innerHTML = "Please enter valid input"
+    }
 }
 
 function recifind(){
@@ -12686,6 +12728,7 @@ function lucasNumbers(num) {
 
 function polymax4find(){
     let N = parseInt(document.getElementById("polymax4").value)
+    if(!isNaN(N)){
     let res = 0;
     let finalResult = 0;
     let val = 2 * N - 1;
@@ -12693,6 +12736,10 @@ function polymax4find(){
     res = (N - 1) * (N - 2);
     finalResult = res + s;
     document.getElementById("polymax4ans").innerHTML =  finalResult;
+}
+else{
+    document.getElementById("polymax4ans").innerHTML = "Please enter valid input"
+}
 }
 
 function polymax5find(){
@@ -12716,18 +12763,28 @@ function polymax5find(){
 
 function polymax6find(){
     let n  = parseInt(document.getElementById("polymax6").value)
+    if(!isNaN(n)){
     var total_angle = 360;
     document.getElementById("polymax6ans").innerHTML =  total_angle / n;
+    }
+    else{
+        document.getElementById("polymax6ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function polymax7find(){
     let n  = parseInt(document.getElementById("polymax7").value)
     let r = parseInt(document.getElementById("polymax71").value)
+    if(!isNaN(n) && !isNaN(r)){
     var theta, theta_in_radians; 
     theta = 360 / n;
     theta_in_radians = theta * 3.14 / 180; 
     let ans =  2 * r * Math.sin(theta_in_radians / 2);
     document.getElementById("polymax7ans").innerHTML = ans
+    }
+    else{
+        document.getElementById("polymax7ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function sumlucasfind(){
@@ -13853,13 +13910,19 @@ function hammingCodeRtoLOdd(x){
 
 function polymax1find(){
     let n  = parseInt(document.getElementById("polymax1").value)
+    if(!isNaN(n)){
     var num;
     num = n * (n - 4);
     document.getElementById("polymax1ans").innerHTML = num;
+    }
+    else{
+        document.getElementById("polymax1ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function polymax2find(){
-    let n  = parseInt(document.getElementById("polymax2").value)
+    let sides  = parseInt(document.getElementById("polymax2").value)
+    if(!isNaN(sides)){
     var count = 0;
     while (sides > 5)
     {
@@ -13867,6 +13930,10 @@ function polymax2find(){
         count += 1;
     }
     document.getElementById("polymax2ans").innerHTML =  count;
+}
+    else{
+        document.getElementById("polymax2ans").innerHTML = "Please enter valid input"
+    }
 }
 
 //function for correction of  a message hamming code
@@ -15199,12 +15266,17 @@ function fa(x)
 
 function posse(){
     let a  = parseInt(document.getElementById("anglecalc").value)
+    if(!isNaN(a)){
     let n = parseFloat(360/(180-a))
     if(n === parseInt(n)){
         document.getElementById("posseans").innerHTML = "Yes It is possible"
     }
     else
         document.getElementById("posseans").innerHTML = "Not possible"
+}
+else{
+    document.getElementById("posseans").innerHTML = "Please enter valid input"
+}
 }
 function rankcal() {
 
@@ -16258,7 +16330,12 @@ function numtfind(){
     let n = parseInt(document.getElementById("numtin").value)
     let num = n;
     let ans =  num * (num - 4) * (num - 5) / 6
+    if(!isNaN(n)){
     document.getElementById("numtans").innerHTML = ans
+}
+else{
+    document.getElementById("numtans").innerHTML = "Please enter valid input"
+}
 }
 function occfind(){
     let n = (document.getElementById("occin").value);
@@ -16484,9 +16561,14 @@ function comb(n, r)
 function arinfind(){
     let n = parseInt(document.getElementById("arinin").value)
     let a = parseInt(document.getElementById("arinin1").value)
+    if(!isNaN(n) && !isNaN(a)){
     var A = (a * a * n) / (4 * Math.tan((180 / n) * 3.14159 / 180));
  
     document.getElementById("arinans").innerHTML = A
+    }
+    else{
+        document.getElementById("arinans").innerHTML = "Please enter valid input"
+    }
 }
 
 function hypergeoscal()
