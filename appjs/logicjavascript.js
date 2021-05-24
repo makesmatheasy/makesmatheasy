@@ -11494,6 +11494,7 @@ function typenum6find(){
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
     let arr = [];
+    document.getElementById("typenum5ans").innerHTML=" ";
     findCombinationsUtil(arr, 0, n, n);
 }
 
@@ -11503,8 +11504,8 @@ function findCombinationsUtil(arr, index, num, reducedNum)
     return;
     if (reducedNum == 0){
         for (let i = 0; i < index; i++)
-            document.write (arr[i] + " ");
-        document.write("<br/>");
+            document.getElementById("typenum5ans").innerHTML+=arr[i] + " ";
+            document.getElementById("typenum5ans").innerHTML+="<br/>";
         return;
     }
     let prev = (index == 0) ? 1 : arr[index - 1];
