@@ -6230,6 +6230,33 @@ function hypocycloidcalc() {
     }
 }
 
+function crossedrectsolve() {
+    var baseLength = document.getElementById("crossrect-a").value;
+    var rectSide = document.getElementById("crossrect-b").value;
+    var legLengthField = document.getElementById("resultOfLegLength");
+    var baseAngleField = document.getElementById("resultOfBaseAngle");
+    var intersectAngleField = document.getElementById("resultOfIntersectionAngle");
+    var apexAngleField = document.getElementById("resultOfApexAngle");
+    var perimeterField = document.getElementById("resultOfPerimeterCrossedRect");
+    var areaField = document.getElementById("resultOfAreaCrossedRect");
+
+    var legLength = (Math.sqrt(Math.pow(baseLength, 2) + Math.pow(rectSide, 2))/2);
+    var apexAngle = Math.acos((2*Math.pow(legLength, 2) - Math.pow(baseLength, 2)) / (2* Math.pow(legLength,2)));
+    var intersectAngle = 180 - apexAngle * (180/Math.PI);
+    var baseAngle = (intersectAngle / 2); 
+    var perimeter = 2*baseLength + 4*legLength;
+    var area = (baseLength * rectSide) / 2;
+
+    if ((baseLength != "") && (rectSide != "")) {
+        legLengthField.innerHTML = `Leg length (c) = ${legLength.toFixed(3)} units`;
+        baseAngleField.innerHTML = `Base angle (α) = ${baseAngle.toFixed(3)} °`
+        intersectAngleField.innerHTML = `Intersection angle (β) = ${intersectAngle.toFixed(3)} °`;
+        apexAngleField.innerHTML = `Apex angle (γ) = ${apexAngle.toFixed(3)} °`;
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)} units`;
+        areaField.innerHTML =  `Area (A) = ${area.toFixed(3)} sq.units`;
+    }
+}
+
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
     let distance = document.getElementById("inputdistance").value;
