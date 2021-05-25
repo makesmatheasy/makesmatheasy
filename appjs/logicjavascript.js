@@ -11078,6 +11078,21 @@ function retfind2(){
     }
 }
 
+function retfind3(){
+    let a = parseFloat(document.getElementById("retin6").value)
+    let x = 0.464 * a;
+    let area = 0.70477 * Math.pow(x, 2);
+    if(a<0){
+        document.getElementById("retans3").innerHTML = "side length cannot be negative"
+    }
+    else if(!isNaN(a)){
+    document.getElementById("retans3").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans3").innerHTML = "Please enter valid input"
+    }
+}
+
 
 function cirinsemi1find(){
     let R = parseInt(document.getElementById("cirinsemi1in").value)
