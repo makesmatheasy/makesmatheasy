@@ -11529,7 +11529,7 @@ function solveperc(){
 }
 
 function typenumfind(){
-    let n = document.getElementById("typenum").value;
+    let n = document.getElementById("typenum0").value;
     if(n=="")
     {
         document.getElementById("typenumans").innerHTML =  "Please enter number to find answer";
