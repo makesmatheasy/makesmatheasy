@@ -13001,10 +13001,18 @@ function reultriangle(){
 }
 
     function spfind() {
-            let S = parseInt(document.getElementById("sgiven").value)
-            let P = parseInt(document.getElementById("pgiven").value)
-            document.getElementById("spans").innerHTML = "The eqn is x^2" + (-S) + "x" + P + "=0"
-
+        var S = parseInt(document.getElementById("sgiven").value)
+        var P = parseInt(document.getElementById("pgiven").value)
+        var output = document.getElementById("spans")
+        var ans = "";
+        ans += "\\[For \\space the \\space Quadratic \\space Equation \\space aX^{2}+bX+c \\space = \\space 0 \\space the \\space roots \\space are \\space given \\space by, \\]"
+        ans += "\\[X \\space = \\space \\frac{-b ± \\sqrt{b^{2} - 4ac}}{2a} \\]"
+        ans += "\\[Sum \\space and \\space Product \\space of \\space roots \\space is \\space given \\space by, \\] "
+        ans += "\\[S \\space = \\space \\frac{-b}{a} and \\space P \\space = \\space \\frac{c}{a} \\]"
+        ans += "\\[The \\space  Equation \\space is \\space given \\space by: \\space X^{2} + (-1) \\times S + P = 0 \\]"
+        ans += "\\[The \\space equation \\space is \\space  X^2" + (-S) + " X + " + P + " \\space = \\space 0 \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
 
 // Midrange starts
