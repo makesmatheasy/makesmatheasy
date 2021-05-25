@@ -15343,6 +15343,12 @@ function convertex3() {
             var y = (parseInt(r[i]) + 3).toString(2)
         }
     }
+    else if(fromBase === "Hexa decimal" && toBase === "Excess-3"){
+        r = parseInt(input, 16).toString();
+        for (var i = 0; i < r.length; i++) {
+            var y = (parseInt(r[i]) + 3).toString(2)
+        }
+    }
 
     if (y.length == 1) {
         x = x + "000" + y + "_   ";
