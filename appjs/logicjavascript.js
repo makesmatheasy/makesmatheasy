@@ -2734,14 +2734,19 @@ function impse5find(){
 }
 
 function impse6find(){
-    let n = parseInt(document.getElementById("impse10").value)
+
+    let n = parseInt(document.getElementById("impse10").value);
     if(!isNaN(n)){
     let ans = (parseInt(Math.pow(10, n + 1)) * (9 * n - 1) + 10) /parseInt(Math.pow(9, 3)) - n * (n + 1) / 18;
-    document.getElementById("impse6ans").innerHTML = ans
+    document.getElementById("impse6ans").innerHTML = "\\[Sum \\space of \\space the \\space series \\space 1+22+333+4444+……n \\space terms \\space will \\space be\\]";
+    document.getElementById("impse6ans1").innerHTML = "\\[\\newline \\frac{10^{"+n+"+1} \\times (9 \\times "+n+" - 1) + 10}{(9^3)} - \\frac{"+n+" \\times ("+n+"+1)}{18} \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("impse6ans").innerHTML = "\\[Please \\space enter \\space valid \\space value\\]";
+        document.getElementById("impse6ans1").innerHTML = "";
     }
-    else{
-        document.getElementById("impse6ans").innerHTML = "Please enter valid input"
-    }
+    renderMathInElement(document.getElementById("impse6ans"));
+    renderMathInElement(document.getElementById("impse6ans1"));
+
 }
 
 function impse7find(){
@@ -2794,6 +2799,16 @@ else{
 }
 }
 
+function impse10find(){
+    let n = parseInt(document.getElementById("impse14").value)
+    var res = 0, fact = 1;
+    for (i = 1; i <= num; i++)
+    {
+        fact = fact * i;
+        res = res + (i / fact);
+    }
+    document.getElementById("impse10ans").innerHTML = res;
+}
 
 function find_count(ele){
     var count = 0;
@@ -11113,6 +11128,21 @@ function retfind2(){
     }
 }
 
+function retfind3(){
+    let a = parseFloat(document.getElementById("retin6").value)
+    let x = 0.464 * a;
+    let area = 0.70477 * Math.pow(x, 2);
+    if(a<0){
+        document.getElementById("retans3").innerHTML = "side length cannot be negative"
+    }
+    else if(!isNaN(a)){
+    document.getElementById("retans3").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans3").innerHTML = "Please enter valid input"
+    }
+}
+
 
 function cirinsemi1find(){
     let R = parseInt(document.getElementById("cirinsemi1in").value)
@@ -11148,14 +11178,14 @@ function cirinsemi3find(){
 }
 
 function cirinsemi4find(){
-    let r = parseInt(document.getElementById("cirinsemi4in").value)
+    var r = parseInt(document.getElementById("cirinsemi4in").value)
     var area = (3.14 * Math.pow(r / (2 * Math.sqrt(2)), 2));
     document.getElementById("cirinsemifind4ans").innerHTML =  area;
 }
 
 function cirinsemi5find(){
-    let r = parseInt(document.getElementById("cirinsemi5in").value)
-    var area = ((3.14 * r * r) / 4);
+    var r = parseInt(document.getElementById("cirinsemi5in").value)
+    var area = ((3.14 * r**2) / 4);
     document.getElementById("cirinsemifind5ans").innerHTML =  area;
 }
 
@@ -11208,15 +11238,16 @@ function trapinsemifind1(){
 function shtfind(){
     let a = parseInt(document.getElementById("shtin").value)
     if(!isNaN(a)){
-    // side length of a hexagon inscribed within an equilateral triangle is h = a/3.
-    // side length of the square that can be inscribed within a hexagon is x = 1.268h
-    // So, side length of the square inscribed within a hexagon which in turn is inscribed within an equilateral triangle, x = 0.423a.
-    var x = (0.423 * a);
-    document.getElementById("shtans").innerHTML =  x;
+        document.getElementById("shtans1").innerHTML ="\\[Side \\space length \\space of \\space a \\space hexagon \\space inscribed \\space within \\space an \\space equilateral \\space triangle \\space is \\space h \\space = \\space \\frac{a}{3} \\newline Side \\space length \\space of \\space the \\space square \\space that \\space can \\space be \\space inscribed \\space within \\space a \\space hexagon \\space is \\space x \\space = \\space 1.268 \\times h \\newline So, \\space Side \\space length \\space of \\space the \\space square \\space inscribed \\space within \\space a \\space hexagon \\space which \\space in \\space turn \\space is \\space inscribed \\space within \\space an \\space equilateral \\space triangle, \\newline x \\space = \\space 1.268 \\times \\frac{a}{3} \\space = \\space 0.423 \\times a\\]";
+        renderMathInElement(document.getElementById("shtans1"));
+        var x = (0.423 * a);
+        document.getElementById("shtans").innerHTML = "\\[Ans: \\space 0.423 \\times (Side \\space length) \\space = \\space 0.433 \\times "+a+" \\space = \\space "+x.toFixed(3)+"\\]";
     }
     else{
-        document.getElementById("shtans").innerHTML = "Please enter valid input"
+        document.getElementById("shtans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("shtans1").innerHTML ="";
     }
+    renderMathInElement(document.getElementById("shtans"));
 }
 
 function sht6find(){
@@ -11231,14 +11262,15 @@ function sht6find(){
 }
 
 function htfind(){
-    let a = parseInt(document.getElementById("htin").value)
+    let a = parseInt(document.getElementById("htin").value);
     if(!isNaN(a)){
-    var x = a / 3;
-    document.getElementById("htans").innerHTML =  x;
+        var x = a / 3;
+        document.getElementById("htans").innerHTML =  "\\[Largest \\space hexagon \\space that \\space can \\space be \\space inscribed \\space within \\space an \\space equilateral \\space triangle \\space will \\space be, \\newline \\frac{(Side \\space length)}{3} \\space = \\space {"+a+"}{3} \\space = \\space "+x.toFixed(3)+"\\]";
     }
     else{
-        document.getElementById("htans").innerHTML = "Please enter valid input"
+        document.getElementById("htans").innerHTML = "\\\[Please \\space enter \\space valid \\space input\\]";
     }
+    renderMathInElement(document.getElementById("htans"));
 }
 
 // gamma find function
@@ -11365,6 +11397,22 @@ function retfind1(){
     }
 }
 
+function retfind8(){
+    var l = parseFloat(document.getElementById("retin8").value)
+    var b = parseFloat(document.getElementById("retin10").value)
+    var h = parseFloat(document.getElementById("retin11").value)
+    var x = ((l * b) / (l + b));
+    var area = 0.70477 * Math.pow(x, 2);
+    if(l<0 || b<0 || h<0){
+        document.getElementById("retans8").innerHTML = "height, base or hypotenuse cannot be negative"
+    }
+    else if(!isNaN(l) && !isNaN(b)  && !isNaN(h)){
+    document.getElementById("retans8").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans8").innerHTML = "Please enter valid input"
+    }
+}
 
 function exposol() {
     var x = parseFloat(document.getElementById("xval").value);
@@ -11524,6 +11572,17 @@ function typenum6find(){
             sum += fibo[i];
     }
     document.getElementById("typenum6ans").innerHTML =  sum;
+}
+
+function typenum7find(){
+    let m = parseInt(document.getElementById("typenum8").value)
+    let n = parseInt(document.getElementById("typenum9").value)
+    if (n == 2 || m == 2 || n % m == 0) {
+        document.getElementById("typenum7ans").innerHTML =  "Yes" + "<br>"
+    }
+    else {
+        document.getElementById("typenum7ans").innerHTML = "No" + "<br>"
+    }
 }
 
 function typenum5find(){
@@ -13847,8 +13906,8 @@ function addBinDecHexOct(){
         x1o = fracDectoBinHexOct(x1,16);
     }
     else if(firstBase === "Decimal"){
-        x1=parseInt(input1);
-        x1o=x1;
+        x1 = parseFloat(input1);
+        x1o = parseFloat(x1);
     }
 
     if(secondBase === "Binary"){
@@ -13864,26 +13923,26 @@ function addBinDecHexOct(){
         x2o = fracDectoBinHexOct(x2,16);
     }
     else if(secondBase === "Decimal"){
-        x2=parseInt(input2);
-        x2o=x2;
+        x2 = parseFloat(input2);
+        x2o = parseFloat(x2);
     }
 
     var x3=x1+x2;
-    console.log(x1)
+
     if(isNaN(x1) || x1o!=input1)
-    result.innerHTML="Enter correct "+firstBase+" value in Input 1";
+    result.innerHTML = "Enter correct " + firstBase + " value in Input 1";
     else if(isNaN(x2)|| x2o!=input2)
-    result.innerHTML="Enter a "+secondBase+" value in Input 2";
+    result.innerHTML = "Enter a " + secondBase + " value in Input 2";
     else if(resultType === "Binary")
-    result.innerHTML="Answer in binary="+fracDectoBinHexOct(x3,2);
+    result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
-    result.innerHTML="Answer in Octal="+fracDectoBinHexOct(x3,8);
+    result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
     else if(resultType === "Hexa Decimal")
-    result.innerHTML="Answer in Hexa Decimal="+fracDectoBinHexOct(x3,16);
+    result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3,16);
     else if(resultType === "Decimal")
-    result.innerHTML="Answer in Decimal="+x3.toString();
+    result.innerHTML = "Answer in Decimal=" + x3.toString();
     else
-    result.innerHTML="";
+    result.innerHTML = "";
 }
 
 //---------------------------------------------------------------------
@@ -14153,7 +14212,7 @@ function multBinDecHexOct(){
     var x2;
 
     if(firstBase === "Binary")
-    x1=parseInt(input1,2);
+    x1 = calculatefrac(input1,2);
     else if (firstBase === "Octal")
     x1=parseInt(input1,8);
     else if(firstBase === "Hexa Decimal")
@@ -14162,7 +14221,7 @@ function multBinDecHexOct(){
     x1=parseInt(input1);
 
     if(secondBase === "Binary")
-    x2=parseInt(input2,2);
+    x2 = calculatefrac(input2,2);
     else if (secondBase === "Octal")
     x2=parseInt(input2,8);
     else if(secondBase === "Hexa Decimal")
@@ -14173,7 +14232,7 @@ function multBinDecHexOct(){
     var x3=x1*x2;
 
     if(resultType === "Binary")
-    result.innerHTML="Answer in binary="+x3.toString(2);
+    result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
     result.innerHTML="Answer in Octal="+x3.toString(8);
     else if(resultType === "Hexa Decimal")
@@ -14691,17 +14750,16 @@ function polymax1find(){
     }
 }
 
-function polymax2find(){    
-    if(!isNaN(sides)){
-        var n  = parseInt(document.getElementById("polymax2").value)
+function polymax2find(){  
+    var n = document.getElementById("polymax2").value;
+    var sides  = parseInt(n);
+    if(n!=""){
         var count = 0;
-        while (n > 5) {
-            n /= 2;
+        while (sides > 5) {
+            sides /= 2;
             count += 1;
-        }
-        document.getElementById("polymax2ans").innerHTML =  count;
-    }
-    else{
+        } document.getElementById("polymax2ans").innerHTML =  count;
+    } else{
         document.getElementById("polymax2ans").innerHTML = "Please enter valid input"
     }
 }
@@ -15319,8 +15377,13 @@ function convertgreyoct(){
     var result1 = "";
 
     result2.innerHTML="";
-
-    result1 = parseInt(input,2).toString(2);
+    if(fromBase === "Octal"){
+        from = 8;
+        to = 2;
+        result1 = parseInt(input, from).toString(to);
+    }else{
+        result1 = input;
+    }
 
     //assigned first value of input inside result
     var x = result1[0];
@@ -15331,6 +15394,11 @@ function convertgreyoct(){
             x += n;
         }
         x = parseInt(x,2).toString(8);
+    }else{
+        for (var i = 1; i < result1.length; i++){
+            var m = parseInt(result1[i - 1] ^ result1[i]).toString();
+            x += m;
+        }
     }
 
     if(input=="")
@@ -15523,6 +15591,23 @@ function exc3find(){
         res = res + (i / fact);
     }
     document.getElementById("exc3ans").innerHTML = res
+}
+
+function exc4find(){
+    let n = parseInt(document.getElementById("exc7").value)
+    var accuracy =  0.0001, denominator, sinx, sinval;
+    n = n *  (3.142 / 180.0); 
+    var x1 = n;
+    sinx = n;
+    sinval =  Math.sin(n);
+    var i = 1;
+    do {
+        denominator = 2 * i * (2 * i + 1);
+        x1 = -x1 * n * n / denominator;
+        sinx = (sinx + x1);
+        i = i + 1;
+    } while (accuracy <= sinval - sinx);
+    document.getElementById("exc4ans").innerHTML =  sinx.toFixed(0)
 }
 
 function fac(num)

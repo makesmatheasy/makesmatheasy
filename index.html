@@ -6029,7 +6029,8 @@
             <br>
             <button class="btn btn-dark" onclick="shtfind()">Find</button>
             <br>
-            <h5 id="shtans"></h5>
+            <p id="shtans1"></p><br>
+            <p id="shtans"></p><br>
             <br>
             <h4>Largest hexagon that can be inscribed within an equilateral triangle </h4>
             <br>
@@ -6037,7 +6038,7 @@
             <br>
             <button class="btn btn-dark" onclick="htfind()">Find</button>
             <br>
-            <h5 id="htans"></h5>
+            <p id="htans"></p>
             <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square</h4>
             <br>
@@ -6046,6 +6047,15 @@
             <button class="btn btn-dark" onclick="retfind2()">Find</button>
             <br>
             <h5 id="retans2"></h5>
+            <br>
+            <h4>Area of a Reuleaux Triangle inscribed in a Square which is inscribed in an equilateral triangle</h4>
+            <br>
+            <input type="text" id="retin6" placeholder="Enter side length of equilateral triangle (a)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="retfind3()">Find</button>
+            <br>
+            <h5 id="retans3"></h5>
+            <br>
             <h4>Largest circle that can be inscribed in a semicircle </h4>
             <br>
             <input type="text" id="cirinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
@@ -6079,6 +6089,19 @@
             <button class="btn btn-dark" onclick="retfind1()">Find</button>
             <br>
             <h5 id="retans1"></h5>
+            <br>
+            <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a Right angle Triangle</h4>
+            <br>
+            <input type="text" id="retin8" placeholder="Enter height of right angle triangle (l)" class="form__field">
+            <br>
+            <input type="text" id="retin10" placeholder= "Enter base of right angle triangle (b)" class="form__field">
+            <br>
+            <input type="text" id="retin11" placeholder="Enter hypotenuse of right angle triangle (h)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="retfind8()">Find</button>
+            <br>
+            <h5 id="retans8"></h5>
+            <br>
             <h4>Area of Equilateral triangle inscribed in a Circle of radius R </h4>
             <br>
             <input type="text" id="cirinsemi1in" placeholder="Enter radius of cicrcle" class="form__field">
@@ -6111,7 +6134,7 @@
             <br>
             <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button>
             <br>
-            <h5 id="cirinsemi4ans"></h5>
+            <h5 id="cirinsemifind4ans"></h5>
             <br>
             <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a semicircle</h4>
             <br>
@@ -6119,7 +6142,7 @@
             <br>
             <button class="btn btn-dark" onclick="cirinsemi5find()">Find</button>
             <br>
-            <h5 id="cirinsemi5ans"></h5>
+            <h5 id="cirinsemifind5ans"></h5>
             <br>
             <h4>Radius of the biggest possible circle inscribed in rhombus which in turn is inscribed in a rectangle </h4>
             <br>
@@ -14128,10 +14151,14 @@
             <br>
             <h4 id="polymax1ans"></h4>
             <br>
-            <h4>Count of nested polygons that can be drawn by joining vertices internally</h4><br>
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax2"/><br>
-            <button type = "button" class="btn btn-dark" onclick = "polymax2find()">FInd</button><br>
-            <h4 id="polymax2ans"></h4><br>
+            <h4>Count of nested polygons that can be drawn by joining vertices internally</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax2"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax2find()">FInd</button>
+            <br>
+            <h4 id="polymax2ans"></h4>
+            <br>
             <h4>Ratio of area of two nested polygons formed by connecting midpoints of sides of a regular N-sided polygon</h4><br>
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regploygonmax3"/><br>
             <button type = "button" class="btn btn-dark" onclick = "polymax3find()">FInd</button><br>
@@ -18412,9 +18439,21 @@ N is the population size.
     <br>
     <button  type="button" class="btn btn-dark" onclick="typenum6find()">Find</button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-
     <br>
     <h5 id="typenum6ans"></h5>
+    </form>
+    <br>
+    </form>
+    <h2>Check if a M-th fibonacci number divides N-th fibonacci number</h2>
+    <br>
+    <form>
+    <input type="text" id="typenum8" class="form__field"placeholder="Enter mth fibonacci number">
+    <input type="text" id="typenum9" class="form__field"placeholder="Enter nth fibonacci number">
+    <br>
+    <button  type="button" class="btn btn-dark" onclick="typenum7find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum7ans"></h5>
     </form>
 </div>
 
@@ -18589,6 +18628,14 @@ N is the population size.
     <button class="btn btn-dark" onclick="exc3find()">Find</button>
     <br>
     <h5 id="exc3ans"></h5>
+    <br>
+    <h4>Sum of the sin(x) expansion upto N terms</h4>
+    <br>
+    <input type="text" id="exc7" class="form__field" placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="exc4find()">Find</button>
+    <br>
+    <h5 id="exc4ans"></h5>
 </div>
 
 <div class="collapse" id="numcubesRanges">
@@ -20304,6 +20351,7 @@ N is the population size.
     <input type="text" id="impse10"class="form__field"placeholder="Enter no. of terms"><br>
     <button class="btn btn-dark" onclick="impse6find()">Find</button><br>
     <p id="impse6ans"></p><br>
+    <p id="impse6ans1"></p><br>
 
     <h4>Sum of the series 0.X + 0.XX + 0.XXX +… upto k terms</h4><br>
     <input type="text" id="impse1x"class="form__field"placeholder="Enter value of x"><br>
@@ -20324,6 +20372,14 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse9find()">Find</button>
     <br>
     <p id="impse9ans"></p>
+    <br>
+    <h4>Sum of a Series 1/1! + 2/2! + 3/3! + 4/4! +…….+ n/n!</h4>
+    <br>
+    <input type="text" id="impse14"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse10find()">Find</button>
+    <br>
+    <p id="impse10ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
