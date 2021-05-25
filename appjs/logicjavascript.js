@@ -13247,15 +13247,19 @@ function hypf(){
 }
 
 function ineqtrifind(){
+    console.log("Hii")
     let s1 = parseInt(document.getElementById("ineqtriin1").value)
     let s2 = parseInt(document.getElementById("ineqtriin2").value)
     let s3 = parseInt(document.getElementById("ineqtriin3").value)
     if(s1+s2>s3 && s2+s3>s1 && s1+s3>s2){
-        if((Math.abs(s1-s2))<s3 && (Math.abs(s2+s3))<s1 && (Math.abs(s1+s3))<s2)
+        if((Math.abs(s1-s2))<s3 && (Math.abs(s2+s3))<s1 && (Math.abs(s1+s3))<s2){
             document.getElementById("ineqtrians").innerHTML = "Yes the triangle with given side lengths can exist"
-    }     
-    else
-    document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"    
+        }else{
+            document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"    
+        }
+    }else{
+        document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"  
+    }  
 }
 
 //spheroidal cap Calculator added
