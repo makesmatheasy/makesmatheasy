@@ -224,40 +224,38 @@ function volofcuboid() {
     renderMathInElement(document.getElementById("cuboidAns3"));
 }
 
-function euler()
-{
+function euler(){
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
   explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
   var r = parseInt(document.getElementById("cpereal").value);
   var i = parseInt(document.getElementById("cpeimg").value);
   var result= document.getElementById("comperesult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  var x1;
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-      x1=x+"e^{-iπ"+y+"}";
-	  x=x+"e<sup>-iπ"+y+"</sup>";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x1=x+"e^{iπ"+y+"}";
-   x=x+"e<sup>iπ"+y+"</sup>";
-   explain+="π" +y+"\\]";
-  }
-  result.innerHTML = x;
-  explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
-  document.getElementById('compeexplain').innerHTML=explain;
-  renderMathInElement(document.getElementById("compeexplain"));
+  if(!isNaN(r) && (!isNaN(i))){
+        var x = (Math.sqrt((r*r)+(i*i)));
+        var x1;
+        if(!Number.isInteger(x)){
+            var j = (r*r)+(i*i);
+            x = "&#8730;  "+ j ;
+        } explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
+        var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+        explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
+        if(y<0) {   
+            y=nerdamer((-1)*y).toString();
+            x1=x+"e^{-iπ"+y+"}";
+            x=x+"e<sup>-iπ"+y+"</sup>";
+            explain+="-π" +y+"\\]";
+        } else{
+            y=y.toString();
+            x1=x+"e^{iπ"+y+"}";
+        x=x+"e<sup>iπ"+y+"</sup>";
+        explain+="π" +y+"\\]";
+        } result.innerHTML = x;
+        explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
+        document.getElementById('compeexplain').innerHTML=explain;
+    } else{
+        document.getElementById('compeexplain').innerHTML= "\\[Please \\space enter \\space valid \\space input\\]";
+        result.innerHTML = "";
+    } renderMathInElement(document.getElementById("compeexplain"));
 }
 
 function npower()

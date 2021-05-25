@@ -11246,21 +11246,18 @@ function cirinsemi7find(){
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
-    var output = document.getElementById("trapinsemians")
+    var answer = document.getElementById("trapinsemians")
     var ans = ""
     if(r<0){
-        ans += "\\[radius \\space cannot \\space be \\space negative \\]"
-        output.innerHTML = ans
-    }
-    else if(!isNaN(r)){
-        ans += "\\[Area \\space of \\space trapezoid \\space inscribed \\space in \\space a \\space semicircle \\space = \\space \\frac{3 \\sqrt{3} r^{2}}{4} \\space = \\space  \\frac{3 \\sqrt{3} \\times " + r + "^{2}}{4} \\space = \\space \\frac{3 \\sqrt{3} \\times " + r**2 + "}{4} \\space = \\space " + a + " \\]"
-        output.innerHTML = ans
-    }
-    else{
-        ans += "\\[Please \\space enter \\space valid \\space input \\]"
-        output.innerHTML = ans
-    }
-    renderMathInElement(output)
+        ans = "\\[radius \\space cannot \\space be \\space negative \\]"
+        answer.innerHTML = ans
+    } else if(!isNaN(r)){
+        ans = "\\[Area \\space of \\space trapezoid \\space inscribed \\space in \\space a \\space semicircle \\space will \\space be, \\newline \\frac{3 \\sqrt{3} r^{2}}{4} \\space = \\space  \\frac{3 \\sqrt{3} \\times " + r + "^{2}}{4} \\space = \\space \\frac{3 \\sqrt{3} \\times " + r**2 + "}{4} \\space = \\space " + a.toFixed(3) + " \\]";
+        answer.innerHTML = ans
+    } else{
+        ans = "\\[Please \\space enter \\space valid \\space input\\]";
+        answer.innerHTML = ans
+    } renderMathInElement(answer)
 }
 
 function trapinsemifind1(){
