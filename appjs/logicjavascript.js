@@ -2628,6 +2628,7 @@ function impse1find(){
     let n = parseInt(document.getElementById("impse4").value)
     let sum = 1, term = 1, fct, j, y = 2, m;
     let i;
+    if(!isNaN(x) && !isNaN(n)){
     for(i = 1; i < n; i++)
     {
         fct = 1;
@@ -2642,11 +2643,16 @@ function impse1find(){
     }
     document.getElementById("impse1ans").innerHTML = sum
 }
+else{
+    document.getElementById("impse1ans").innerHTML = "Please enter valid input"
+}
+}
 
 function impse2find(){
     let x = parseInt(document.getElementById("impse5").value)
     let n = parseInt(document.getElementById("impse6").value)
     let i, total = 1.0, multi = x;
+    if(!isNaN(x) && !isNaN(n)){
     for (i = 1; i < n; i++) {
  
         total = total + multi;
@@ -2654,9 +2660,14 @@ function impse2find(){
     } 
     document.getElementById("impse2ans").innerHTML = total;
 }
+else{
+    document.getElementById("impse2ans").innerHTML = "Please enter valid input"
+}
+}
 
 function impse3find(){
-    let n = parseInt(document.getElementById("impse7").value)    
+    let n = parseInt(document.getElementById("impse7").value) 
+    if(!isNaN(n)){
     if (n == 1)    
         return "1";
     if (n == 2)    
@@ -2684,9 +2695,14 @@ function impse3find(){
     } 
     document.getElementById("impse3ans").innerHTML = str; 
 }
+else{
+    document.getElementById("impse3ans").innerHTML = "Please enter valid input"
+}
+}
 
 function impse4find(){
     var n = parseInt(document.getElementById("impse8").value)  
+    if(!isNaN(n)){
     for (var row_num = 1; row_num <= n; row_num++) { 
         var count = 1;
         var c = 1; 
@@ -2696,6 +2712,10 @@ function impse4find(){
                 count++;}
     document.getElementById("impse4ans").innerHTML =  count + " ";
     }
+}
+else{
+    document.getElementById("impse4ans").innerHTML = "Please enter valid input"
+}
 }
 
 function impse5find(){
@@ -2714,6 +2734,7 @@ function impse5find(){
 }
 
 function impse6find(){
+
     let n = parseInt(document.getElementById("impse10").value);
     if(!isNaN(n)){
     let ans = (parseInt(Math.pow(10, n + 1)) * (9 * n - 1) + 10) /parseInt(Math.pow(9, 3)) - n * (n + 1) / 18;
@@ -2725,6 +2746,7 @@ function impse6find(){
     }
     renderMathInElement(document.getElementById("impse6ans"));
     renderMathInElement(document.getElementById("impse6ans1"));
+
 }
 
 function impse7find(){
@@ -2746,11 +2768,16 @@ function impse8find(){
     var n = parseInt(document.getElementById("impse12").value)
     var count = 1;
     var ele = [];
+    if(!isNaN(n)){
     for (let i = 0; i < n; i++) {
         document.getElementById("impse8ans").innerHTML =  count + ", ";
         ele.push(count);
         count = find_count(ele);
     }
+}
+else{
+    document.getElementById("impse8ans").innerHTML = "Please enter valid input"
+}
 }
 
 
@@ -2758,6 +2785,7 @@ function impse9find(){
     let n = parseInt(document.getElementById("impse13").value)
     let res = 0.0 ;
     let sum = 0, prod = 1;
+    if(!isNaN(n)){
     for (let i = 1 ; i <= n ; i++)
     {
         sum += i;
@@ -2765,6 +2793,10 @@ function impse9find(){
         res += (sum / prod);
     }
     document.getElementById("impse9ans").innerHTML = res;
+}
+else{
+    document.getElementById("impse9ans").innerHTML = "Please enter valid input"
+}
 }
 
 function impse10find(){
