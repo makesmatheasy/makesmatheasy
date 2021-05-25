@@ -13795,6 +13795,13 @@ function polymax9find(){
         document.getElementById("polymax9ans").innerHTML =  "Not Possible"
 }
 
+function polymax10find(){
+    let n  = parseInt(document.getElementById("polymax10").value)
+    let a = parseInt(document.getElementById("polymax11").value)
+    var radius = (a / Math.sqrt(2 - (2 * Math.cos(360 / n))));
+    document.getElementById("polymax10ans").innerHTML = radius;
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
