@@ -14254,7 +14254,7 @@ function multBinDecHexOct(){
     if(firstBase === "Binary")
     x1 = calculatefrac(input1,2);
     else if (firstBase === "Octal")
-    x1=parseInt(input1,8);
+    x1 = calculatefrac(input1,8);
     else if(firstBase === "Hexa Decimal")
     x1=parseInt(input1,16);
     else if(firstBase === "Decimal")
@@ -14263,7 +14263,7 @@ function multBinDecHexOct(){
     if(secondBase === "Binary")
     x2 = calculatefrac(input2,2);
     else if (secondBase === "Octal")
-    x2=parseInt(input2,8);
+    x2 = calculatefrac(input2,8);
     else if(secondBase === "Hexa Decimal")
     x2=parseInt(input2,16);
     else if(secondBase === "Decimal")
@@ -14274,7 +14274,7 @@ function multBinDecHexOct(){
     if(resultType === "Binary")
     result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
-    result.innerHTML="Answer in Octal="+x3.toString(8);
+    result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
     else if(resultType === "Hexa Decimal")
     result.innerHTML="Answer in Hexa Decimal="+x3.toString(16);
     else if(resultType === "Decimal")
