@@ -14687,17 +14687,16 @@ function polymax1find(){
     }
 }
 
-function polymax2find(){    
-    if(!isNaN(sides)){
-        var n  = parseInt(document.getElementById("polymax2").value)
+function polymax2find(){  
+    var n = document.getElementById("polymax2").value;
+    var sides  = parseInt(n);
+    if(n!=""){
         var count = 0;
-        while (n > 5) {
-            n /= 2;
+        while (sides > 5) {
+            sides /= 2;
             count += 1;
-        }
-        document.getElementById("polymax2ans").innerHTML =  count;
-    }
-    else{
+        } document.getElementById("polymax2ans").innerHTML =  count;
+    } else{
         document.getElementById("polymax2ans").innerHTML = "Please enter valid input"
     }
 }
