@@ -11059,8 +11059,10 @@ function binoexpCalc(){
     var c1 = (a1 * b0 + a0 * b1);
     var c0 = (a0 * b0);
 
-    var ans = `${c2} * x^2 + ${c1} * x + ${c2}`;
+    var ans = "\\[("+a1+"x+"+a0+")("+b1+"x+"+b0+")="+c2+"x^2+"+c1+"x+"+c0+"\\]"+"\\[("+a1+"x+"+a0+")("+b1+"x+"+b0+")="+a1+"x("+b1+"x+"+b0+")+"+a0+"("+b1+"x+"+b0+")\\]"+"\\[\\space \\space\\space =("+a1+"*"+b1+")x^2+("+a1+"*"+b0+"+"+a0+"*"+b1+")x+("+a0+"*"+b0+")\\]";
+    ans+="\\[\\space \\space="+c2+"x^2+"+c1+"x+"+c0+"\\]";
     document.getElementById("binoexp_ans").innerHTML = ans;
+    renderMathInElement(document.getElementById("binoexp_ans"));
 }
 
 function foilcal(){
