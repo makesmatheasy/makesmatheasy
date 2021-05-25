@@ -108,6 +108,8 @@ var vals = [
     "#bt-collapse",
     "#bt-collapse1",
     "#manhats",
+    "#cart",
+    "sph",
     "#bilinear",
     "#pandc",
     "#per_chng_vol",
@@ -1572,6 +1574,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CARTESIAN COORDINATE CALCULATOR"){
                         document.getElementById('cart').click();
                     }
+                    else if (inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR") {
+                        $("#sph").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR"){
+                        document.getElementById('sph').click();
+                    }
+                    else if (inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR") {
+                        $("#polar").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR"){
+                        document.getElementById('polar').click();
+                    }
                     else if (inp.value.toUpperCase() == "BILINEAR INTERPOLATION CALCULATOR") {
                         $("#bilinear").slideToggle();    
                     }
@@ -1866,9 +1880,6 @@ var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Diamon
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators","Cartesian coordinates calculator",
-
-                        "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Bayes Probability Theorem","Hypergeometric Distribution P.M.F Calculator","Poisson Distribution Statistics","Hypergeometric Distribution Statistics","Geometric Probability Distribution","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Supplementary Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators",
-
                         "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Name of 3d Shapes","Sieve of Eratosthenes","Double Factorial","Next Prime Number","Sum of N terms of AP,GP & HP","Conditional Probability","Smallest Prime Factor","Additive Inverse","Confidence Interval Calculator","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","Decimal BCD Code Converter","Decimal 2421 Code Converter",
                         "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Vector Calculus","Vector Algebra","Vector Calculator","Fourier Series","Theorems on Differentiation","Partial Differential Equations","Methods of Integration","Direct And Indirect Proportion","Clock Angle Calculator","Solve For X","Grey Code Convertor","Bitwise Calculator","Boolean Algebra"
                         ,"Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
@@ -2441,6 +2452,7 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "BILINEAR INTERPOLATION CALCULATOR") {
         $("#bilinear").slideToggle(); 
     }
+
     else if(inp.value.toUpperCase() == "EULER TOTIENT FUNCTION"){
         document.getElementById('etf').click(); 
     }
