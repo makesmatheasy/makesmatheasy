@@ -11219,8 +11219,16 @@ function cirinsemi4find(){
 
 function cirinsemi5find(){
     var r = parseInt(document.getElementById("cirinsemi5in").value)
-    var area = ((3.14 * r**2) / 4);
-    document.getElementById("cirinsemifind5ans").innerHTML =  area;
+    var area = (3.14 * r**2) / 4;
+    if(!isNaN(r)){
+    document.getElementById("cirinsemifind5ans").innerHTML = "\\[Largest \\space ellipse \\space that \\space can \\space be \\space inscribed \\space within \\space a \\space rectangle \\newline which \\space in \\space turn \\space is \\space inscribed \\space within \\space a \\space semicircle \\space will \\space be, \\]";
+    document.getElementById("cirinsemifind5ans1").innerHTML = "\\[\\newline \\frac{\\pi \\times r^{2}}{4} \\space = \\space \\frac{"+(math.pi).toFixed(2)+" \\times "+r+"^2}{4} \\space = \\space \\frac{"+(3.14 * r**2).toFixed(2)+"}{4} \\space = \\space "+area.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("cirinsemifind5ans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("cirinsemifind5ans1").innerHTML = "";
+    }
+    renderMathInElement( document.getElementById("cirinsemifind5ans"));
+    renderMathInElement( document.getElementById("cirinsemifind5ans1"));
 }
 
 function cirinsemi6find(){
