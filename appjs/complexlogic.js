@@ -1230,6 +1230,21 @@ function hpcal()
    }
 }
 
+function hpcal11()
+{
+    var x=parseInt(document.getElementById("lterm1").value);
+    var y=parseInt(document.getElementById("cdiffer1").value);
+    var z=parseInt(document.getElementById("totnum1").value);
+    var ansout = document.getElementById("hpans11");
+    var anstemp ="";
+    var numb = x - ((y - 1)*z);
+    var num6 = (1 / numb) ;
+    anstemp += "\\[" + num6 + " \\]";
+    ansout.innerHTML = anstemp;
+    renderMathInElement(ansout);
+   }
+
+
 function ppcal()
 {
     var a=document.getElementById("lamb").value;
