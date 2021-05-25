@@ -16033,10 +16033,16 @@ function computejointprobability() {
     var total1 = parseInt(document.getElementById("total1").value)
     var total2 = parseInt(document.getElementById("total2").value)
 
+    let ans = "";
     var probability1 = favourable1 / total1;
     var probability2 = favourable2 / total2;
 
     var probability3 = (probability1 * probability2);
+    
+    ans += "\\[Joint\\space Probability\\space =\\space\\frac{favourable\\space outcome\\space in\\space Event 1}{possible\\space outcome\\space in\\space Event1}\\times\\frac{favourable\\space outcome\\space in\\space\\ Event2}{possible\\space outcome\\space in\\space\\ Event2}\\]"
+    ans += "\\[=\\space\\frac{"+favourable1+"}{"+total1+"}\\times\\frac{"+favourable2+"}{"+total2+"}\\]";
+    ans += "\\[=\\space "+favourable1+"/"+total1+"\\times "+favourable2+"/"+total2+"\\]";
+    ans += "\\[=\\space"+probability3+"\\]";
 
     let result1 = document.getElementById("probability-result1");
     let result2 = document.getElementById("probability-result2");
@@ -16065,7 +16071,9 @@ function computejointprobability() {
         }
 
         if (check == true) {
-            result3.innerHTML = "The joint probability of both the events is: " + (probability3).toFixed(3);
+            // result3.innerHTML = "The joint probability of both the events is: " + (probability3).toFixed(3);
+            result3.innerHTML = ans;
+            renderMathInElement(result3);
 
         }
     } else {
