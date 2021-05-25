@@ -17523,6 +17523,26 @@
                       harmonic means of its two neighbours. For example, the sequence a, b, c, d, …is considered as an arithmetic progression; <br>
                       the harmonic progression can be written as 1/a, 1/b, 1/c, 1/d, …
                 </div>
+                <br>
+                <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term from End </h2>
+                <div class="form-group d-flex flex-column align-items-center">
+                    <form>
+                        <input type="number" name="lterm" class="form__field" id="lterm1" width="5em" placeholder="Enter last term (l)">
+                        <p>&nbsp;</p>
+                        <input type="number" name="cdiffer" class="form__field" id="cdiffer1" placeholder="Enter common difference (d)">
+                        <p>&nbsp;</p>
+                        <input type="number" name="totnum" class="form__field" id="totnum1" placeholder="Enter the number of term to find (n)">
+                        <p>&nbsp;</p>
+                        <div class="row">
+                            <div class="col-6">      
+                                <button type="button" class="btn btn-outline-light" onclick="hpcal11()">Calculate</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                <p id="hpans11"></p>
                
             </div>
         </div>
