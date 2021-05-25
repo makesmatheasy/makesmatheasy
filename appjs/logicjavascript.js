@@ -11262,8 +11262,13 @@ function cirinsemi3find(){
 
 function cirinsemi4find(){
     var r = parseInt(document.getElementById("cirinsemi4in").value)
-    var area = (3.14 * Math.pow(r / (2 * Math.sqrt(2)), 2));
-    document.getElementById("cirinsemifind4ans").innerHTML =  area;
+    var area = 3.14 * Math.pow(r / (2 * Math.sqrt(2)), 2);
+    if(!isNaN(r)){
+        document.getElementById("cirinsemifind4ans").innerHTML = "\\[Area \\space of \\space a \\space circle \\space inscribed  \\space in \\space a \\space rectangle \\space which \\space is \\space inscribed   \\space in \\space a \\space semicircle \\space will \\space be, \\newline \\pi \\times (\\frac{(semicircle \\space radius)}{2 \\times \\sqrt{2}})^{2} \\space = \\space   "+(math.pi).toFixed(2)+" \\times (\\frac{("+r+")}{2 \\times \\sqrt{2}})^{2} \\space = \\space "+area.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("cirinsemifind4ans").innerHTML ="\\[Please \\space enter \\space valid \\space input\\]";
+    }
+    renderMathInElement(document.getElementById("cirinsemifind4ans"));
 }
 
 function cirinsemi5find(){
