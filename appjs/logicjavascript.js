@@ -11130,6 +11130,11 @@ function cirinsemi6find(){
     var r = ((l * b) / (2 * Math.sqrt((Math.pow(l, 2) + Math.pow(b, 2)))));
     document.getElementById("cirinsemi6ans").innerHTML =  r;
 }
+function ret3find(){
+    let a = parseInt(document.getElementById("ret5").value)
+    var area = (Math.PI * a * a) / 4;
+    document.getElementById("ret3ans").innerHTML =  area;
+}
 
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
