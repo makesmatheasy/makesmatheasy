@@ -11293,9 +11293,13 @@ function cirinsemi6find(){
 }
 
 function cirinsemi7find(){
-    let a = parseInt(document.getElementById("cirinsemi8in").value)
+    var a = document.getElementById("cirinsemi8in").value;
+    if (a!=""){
     var area = (Math.PI * a * a) / 4;
     document.getElementById("cirinsemi7ans").innerHTML =  area;
+    } else{
+        document.getElementById("cirinsemi7ans").innerHTML = "";
+    }
 }
 
 function cirinsemi8find(){
