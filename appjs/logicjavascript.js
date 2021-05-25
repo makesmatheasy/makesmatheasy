@@ -13427,6 +13427,13 @@ function scyf1find(){
     document.getElementById("scyf1ans").innerHTML =  V;
 }
 
+function scyf2find(){
+    let b = parseInt(document.getElementById("scyf6").value) 
+    let h = parseInt(document.getElementById("scyf7").value)
+    let ans = 2 * b * s + parseInt(Math.pow(b, 2));
+    document.getElementById("scyf2ans").innerHTML = ans
+}
+
 function polymaxfind(){
     var n = (document.getElementById("polymax").value);
     if (n!=""){
