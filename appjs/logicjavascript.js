@@ -17260,15 +17260,17 @@ function mecal()
     }
 }
 function numtfind(){
-    let n = parseInt(document.getElementById("numtin").value)
-    let num = n;
-    let ans =  num * (num - 4) * (num - 5) / 6
-    if(!isNaN(n)){
-    document.getElementById("numtans").innerHTML = ans
-}
-else{
-    document.getElementById("numtans").innerHTML = "Please enter valid input"
-}
+    var num = parseInt(document.getElementById("numtin").value)
+    if(!isNaN(num)){
+        var ans =  num * (num - 4) * (num - 5) / 6
+        document.getElementById("numtans").innerHTML = "\\[Number \\space of \\space triangles \\space formed \\space will \\space be, \\newline (No. \\space of \\space sides) \\times ((No. \\space of \\space sides) - 4) \\times \\frac{((No. \\space of \\space sides) - 5)}{6}\\]";
+        document.getElementById("numtans1").innerHTML = "\\["+num+" \\times ("+num+" - 4) \\times \\frac{("+num+" - 5)}{6} \\space = \\space "+num+" \\times "+(num - 4).toFixed(2)+" \\times "+((num - 5) / 6).toFixed(2)+" \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("numtans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("numtans1").innerHTML ="";
+    }
+    renderMathInElement(document.getElementById("numtans"));
+    renderMathInElement(document.getElementById("numtans1"));
 }
 function occfind(){
     let n = (document.getElementById("occin").value);
