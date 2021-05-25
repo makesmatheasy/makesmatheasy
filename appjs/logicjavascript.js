@@ -12620,6 +12620,13 @@ function lacube9find(){
     document.getElementById("lacube9ans").innerHTML =  res;
 }    
 
+function lacube10find(){
+    let n  = parseInt(document.getElementById("lacube11").value)
+    let sc = Math.floor(Math.sqrt(n));
+    document.getElementById("lacube10ans").innerHTML = "Count of squares "+ sc + "<br>";
+    document.getElementById("lacube10ans").innerHTML = "Count of non-squares "+ (n - sc) + "<br>";
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
