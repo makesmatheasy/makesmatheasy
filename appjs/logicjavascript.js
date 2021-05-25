@@ -18059,3 +18059,23 @@ function findnthrt()
     result.innerHTML = `The ${n}-th root  of ${x}  is  ${guess.toFixed(4)}`;
 
 }   
+
+//nth Lucas Number function
+function nLucasNumber(num) {
+    let x = 2;
+    let y = 1;
+    let z, count;
+    let res;
+    if (num == 0)
+      res=2;
+    else {
+        for (count = 2; count <= num; count++) {
+        z = x + y;
+        x = y;
+        y = z;
+      }
+      res=y;
+    }
+    document.getElementById("nLucNumResult").innerHTML = "The nth Lucas Number is : " + res;    
+
+}
