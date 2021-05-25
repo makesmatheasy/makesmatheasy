@@ -11354,6 +11354,22 @@ function sht6find(){
     }
 }
 
+function retfind13(){
+    let a = parseFloat(document.getElementById("retin16").value)
+    let x = 1.268 * a;
+    let area = 0.70477 * Math.pow(x, 2);
+    if(a<0){
+        document.getElementById("retans16").innerHTML = "side length cannot be negative"
+    }
+    else if(!isNaN(a)){
+    document.getElementById("retans16").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans16").innerHTML = "Please enter valid input"
+    }
+}
+
+
 function htfind(){
     let a = parseInt(document.getElementById("htin").value);
     if(!isNaN(a)){
