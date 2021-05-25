@@ -11173,15 +11173,16 @@ function trapinsemifind1(){
 function shtfind(){
     let a = parseInt(document.getElementById("shtin").value)
     if(!isNaN(a)){
-    // side length of a hexagon inscribed within an equilateral triangle is h = a/3.
-    // side length of the square that can be inscribed within a hexagon is x = 1.268h
-    // So, side length of the square inscribed within a hexagon which in turn is inscribed within an equilateral triangle, x = 0.423a.
-    var x = (0.423 * a);
-    document.getElementById("shtans").innerHTML =  x;
+        document.getElementById("shtans1").innerHTML ="\\[Side \\space length \\space of \\space a \\space hexagon \\space inscribed \\space within \\space an \\space equilateral \\space triangle \\space is \\space h \\space = \\space \\frac{a}{3} \\newline Side \\space length \\space of \\space the \\space square \\space that \\space can \\space be \\space inscribed \\space within \\space a \\space hexagon \\space is \\space x \\space = \\space 1.268 \\times h \\newline So, \\space Side \\space length \\space of \\space the \\space square \\space inscribed \\space within \\space a \\space hexagon \\space which \\space in \\space turn \\space is \\space inscribed \\space within \\space an \\space equilateral \\space triangle, \\newline x \\space = \\space 1.268 \\times \\frac{a}{3} \\space = \\space 0.423 \\times a\\]";
+        renderMathInElement(document.getElementById("shtans1"));
+        var x = (0.423 * a);
+        document.getElementById("shtans").innerHTML = "\\[Ans: \\space 0.423 \\times (Side \\space length) \\space = \\space 0.433 \\times "+a+" \\space = \\space "+x.toFixed(3)+"\\]";
     }
     else{
-        document.getElementById("shtans").innerHTML = "Please enter valid input"
+        document.getElementById("shtans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("shtans1").innerHTML ="";
     }
+    renderMathInElement(document.getElementById("shtans"));
 }
 
 function sht6find(){
