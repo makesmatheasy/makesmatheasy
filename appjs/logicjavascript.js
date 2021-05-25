@@ -2329,6 +2329,7 @@ function findMen() {
     const men1 = parseInt(document.getElementById('3men1').value);
     const time2 = parseInt(document.getElementById('3time2').value);
     const work2 = parseInt(document.getElementById('3work2').value);
+    var result = document.getElementById('stepsmen');
     
 
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(time2) ){
@@ -2338,7 +2339,12 @@ function findMen() {
             document.getElementById('menans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
             let menans = Math.floor(work2 * (time1 * men1) / (work1 * time2));
-            document.getElementById('menans').innerHTML = "No of men required = " + menans; 
+            document.getElementById('menans').innerHTML = "No of men required = " + menans;
+            result.innerHTML += "\\[Working \\space Steps\\]"
+            result.innerHTML += "\\[Formula \\space -> \\space N_2 \\space = \\space \\frac{N_1 \\times T_1 \\times W_2}{T_2 \\times W_1}\\]";
+            result.innerHTML += "\\[= \\space \\frac{" + men1 + " \\times " + time1 + "\\times " + work2 + "}{" + time2 + "\\times " + work1 + "}\\]";
+            result.innerHTML += "\\[= \\space " + menans + "\\]";
+            renderMathInElement(result);
         }
     }
 }
