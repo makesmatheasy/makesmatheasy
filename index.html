@@ -1925,6 +1925,24 @@
 
             <li>
                 <table class="table">
+                          <tr>
+                              <td style="border-top: none;">
+                                   <a id="nbaserootcollapsebtn"
+                                              style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">n-th base root calculator 
+                                   </a>
+                              </td>
+                              <td style="float:right;border-top: none;">
+                                   <span onclick="addtofavourite('n-th base root calculator','#n_baseroot','c','nrootfav')"><img
+                                               id="nrootfav" src="images/unfavourite.png"
+                                           style="height:1.5625rem;filter: none;"></span>
+                              </td>
+                          </tr>
+               </table>
+           </li>
+
+
+            <li>
+                <table class="table">
                     <tr>
                         <td style="border-top: none;">
                             <a id="squaresRange"
@@ -6812,6 +6830,26 @@
             </div>
         </div>
 
+         <!-- start of nth base  root calculator   -->
+        <div class="collapse" id="n_baseroot">     
+             <h1 style="text-align: center;">n-th base root calculator </h1><br>    
+            <div class="form-group">
+                <input type="text" id="n_rootnumber" class="form__field"
+                        placeholder="Enter the number">
+                <input type="text" id="n_rootbase" class="form__field" placeholder="Enter the value nth base">
+                    </div><br>
+        
+             <div class="form-group">
+                      <button type="button" class="btn btn-light" onclick="findnthrt()">
+                            Calculate
+                        </button><br>
+             </div>
+                     <br>
+             <div class="form-group">
+                           <p id="nrootresult" style="overflow-y:hidden;height:100%;text-align: center;"></p>
+            </div>
+        </div>
+        
         <div class="collapse" id="sigma">
             <div class="stopwrap">
                 <div class="coll">

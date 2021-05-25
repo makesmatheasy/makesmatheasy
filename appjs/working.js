@@ -1451,6 +1451,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#nbaserootcollapsebtn").click(function(){
+        openit("#n_baseroot");
+        closenav();
+        clearall();
+    });
+
 
 })
 
