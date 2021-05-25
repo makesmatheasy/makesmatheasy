@@ -14395,7 +14395,7 @@ function divBinDecHexOct(){
     x2=parseInt(input2,2);
     else if(secondBase === "Decimal")
     x2=parseInt(input2);
-    else if(secondBase === "Decimal")
+    else if(secondBase === "Octal")
     x2=parseInt(input2,8);
     else if(secondBase === "Hexa Decimal")
     x2=parseInt(input2,16);
