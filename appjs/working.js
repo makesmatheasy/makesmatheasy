@@ -511,6 +511,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cotermangbtn").click(function () {
+        openit("#cotermang");
+        closenav();
+        clearall();
+    });
     $("#ttestbtn").click(function () {
         openit("#ttest");
         closenav();
@@ -1477,6 +1482,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#nbaserootcollapsebtn").click(function(){
+        openit("#n_baseroot");
+        closenav();
+        clearall();
+    });
+
 
 })
 
