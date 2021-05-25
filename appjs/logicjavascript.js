@@ -11162,6 +11162,21 @@ function retfind2(){
     }
 }
 
+function retfind11(){
+    let r = parseFloat(document.getElementById("retin11").value)
+    let area = 0.70477 * 2 * Math.pow(r, 2);
+    if(r<0){
+        document.getElementById("retans11").innerHTML = "radius cannot be negative"
+    }
+    else if(!isNaN(r)){
+    document.getElementById("retans11").innerHTML =  area.toFixed(4);
+    }
+    else{
+        document.getElementById("retans11").innerHTML = "Please enter valid input"
+    }
+}
+
+
 function retfind3(){
     let a = parseFloat(document.getElementById("retin6").value)
     let x = 0.464 * a;
