@@ -11212,14 +11212,15 @@ function sht6find(){
 }
 
 function htfind(){
-    let a = parseInt(document.getElementById("htin").value)
+    let a = parseInt(document.getElementById("htin").value);
     if(!isNaN(a)){
-    var x = a / 3;
-    document.getElementById("htans").innerHTML =  x;
+        var x = a / 3;
+        document.getElementById("htans").innerHTML =  "\\[Largest \\space hexagon \\space that \\space can \\space be \\space inscribed \\space within \\space an \\space equilateral \\space triangle \\space will \\space be, \\newline \\frac{(Side \\space length)}{3} \\space = \\space {"+a+"}{3} \\space = \\space "+x.toFixed(3)+"\\]";
     }
     else{
-        document.getElementById("htans").innerHTML = "Please enter valid input"
+        document.getElementById("htans").innerHTML = "\\\[Please \\space enter \\space valid \\space input\\]";
     }
+    renderMathInElement(document.getElementById("htans"));
 }
 
 // gamma find function
