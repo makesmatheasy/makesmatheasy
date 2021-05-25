@@ -417,6 +417,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sptribtn").click(function () {
+        openit("#sptri");
+        closenav();
+        clearall();
+    });
     $("#ppmf").click(function () {
         openit("#ppmfs");
         closenav();

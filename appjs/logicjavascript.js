@@ -5770,6 +5770,71 @@ function solvelemniscate() {
     }
 
 }
+// 306090 triangle
+function sp1solve() {
+    var sp1a = document.getElementById("sp1a").value;
+    var sp1b = document.getElementById("sp1b").value;
+    var sp1c= document.getElementById("sp1c").value;
+    var sp1p = document.getElementById("sp1p").value;;
+    var sp1ar = document.getElementById("sp1ar").value;;
+    var explain= document.getElementById("resultex");
+    if (sp1a!= "" ) {
+        sp1b=(sp1a*Math.sqrt(3)).toFixed(3);
+        sp1c=(sp1a*2).toFixed(3);
+        sp1p=(parseFloat(sp1a)+parseFloat(sp1b)+parseFloat(sp1c)).toFixed(3);
+        sp1ar=(0.5*sp1b*sp1a).toFixed(3);
+        document.getElementById("sp1b").value=sp1b;
+        document.getElementById("sp1c").value=sp1c;
+        document.getElementById("sp1p").value=sp1p;
+        document.getElementById("sp1ar").value=sp1ar;
+        
+    } else if (sp1b!="") {
+        sp1a=(sp1b/Math.sqrt(3)).toFixed(3);
+        sp1c=(sp1a*2).toFixed(3);
+        sp1p=(parseFloat(sp1a)+parseFloat(sp1b)+parseFloat(sp1c)).toFixed(3);
+        sp1ar=(0.5*sp1b*sp1a).toFixed(3);
+        document.getElementById("sp1a").value=sp1a;
+        document.getElementById("sp1c").value=sp1c;
+        document.getElementById("sp1p").value=sp1p;
+        document.getElementById("sp1ar").value=sp1ar;
+        
+    } else if (sp1c!="") {
+        sp1a=(sp1c/2).toFixed(3);
+        sp1b=(sp1a*Math.sqrt(3)).toFixed(3);
+        sp1p=(parseFloat(sp1a)+parseFloat(sp1b)+parseFloat(sp1c)).toFixed(3);
+        sp1ar=(0.5*sp1b*sp1a).toFixed(3);
+        document.getElementById("sp1a").value=sp1a;
+        document.getElementById("sp1b").value=sp1b;
+        document.getElementById("sp1p").value=sp1p;
+        document.getElementById("sp1ar").value=sp1ar;
+        
+    } else if (sp1p!= "") {
+        sp1a=(sp1p/(3+Math.sqrt(3))).toFixed(3)
+        sp1b=(sp1a*Math.sqrt(3)).toFixed(3);
+        sp1c=(sp1a*2).toFixed(3);
+        sp1ar=(0.5*sp1b*sp1a).toFixed(3);
+        document.getElementById("sp1b").value=sp1b;
+        document.getElementById("sp1c").value=sp1c;
+        document.getElementById("sp1a").value=sp1a;
+        document.getElementById("sp1ar").value=sp1ar;
+        
+    } else if (sp1ar!= "") {
+        sp1a=(Math.sqrt(2*sp1ar/Math.sqrt(3))).toFixed(3)
+        sp1b=(sp1a*Math.sqrt(3)).toFixed(3);
+        sp1c=(sp1a*2).toFixed(3);
+        sp1p=(parseFloat(sp1a)+parseFloat(sp1b)+parseFloat(sp1c)).toFixed(3);
+        document.getElementById("sp1b").value=sp1b;
+        document.getElementById("sp1c").value=sp1c;
+        document.getElementById("sp1p").value=sp1p;
+        document.getElementById("sp1a").value=sp1a;
+        
+    } 
+     else {
+        explain.innerHTML="Enter 1 field or reset";
+    }
+    renderMathInElement(document.getElementById("resultex"));
+}
+
 //created function for Rectangle
 function rectanglesolve() {
     var length = document.getElementById("inputreclength").value;
@@ -6012,7 +6077,6 @@ function rectanglesolve() {
     renderMathInElement(document.getElementById("resultoflengthrec"));
     renderMathInElement(document.getElementById("resultofbreadthrec"));
 }
-
 function solvebulge() {
     var r = document.getElementById("inputbulgerad").value;
     var widthoutput = document.getElementById("resultofbulgewidth");

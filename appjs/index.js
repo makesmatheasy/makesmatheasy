@@ -167,6 +167,7 @@ function openit(id) {
         "#segcals",
         "#hydroz",
         "#shapescal",
+        "#sptri",
         "#tdshapescal",
         "#fdshapescal",
         "#divide",

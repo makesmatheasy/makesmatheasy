@@ -3191,6 +3191,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="sptribtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;">Special Right Triangle
+                                Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Special Right Triangle Calculator','#sptri','c','sptriimgfav')"><img
+                                        id="sptriimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="ineqtribtn"
                                 style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Ineqaulities of Triangles</a>
                             </td>
@@ -15106,6 +15122,23 @@
                 </tr>
             </table>
         </div>
+
+        <div class="collapse" id="sptri">
+            <h2>Special Right Triangle Calculator</h2>
+            <table class="table">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#t306090"
+                           style="text-decoration:none;"
+                           href="#">30° 60° 90°</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#t454590"
+                           style="text-decoration:none;"
+                           href="#">45° 45° 90°</a></td>
+                </tr>              
+            </table>
+        </div>
+        
         <div class="collapse" id="consim">
             <h2>Congruence Properties of Triangles</h2>
             <p>1. SSS Property (Side-Side-Side) - When all the three corresponding sides of 2
@@ -22130,6 +22163,55 @@ N is the population size.
                 </div>
             </div>
         </div>  
+        
+        <div class="modal fade" id="t306090" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">30° 60° 90° Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>Enter any 1 field</h3>
+                                    <form action="">
+                                    <input class="form__field" type="number" placeholder="a(cm)"
+                                       id="sp1a" oninput="sp1solve()">
+                                    <input class="form__field" type="number" placeholder="b(cm)"
+                                     id="sp1b" oninput="sp1solve()">
+                                    <input class="form__field" type="number" placeholder="c(cm)"
+                                     id="sp1c" oninput="sp1solve()">
+                                    <input class="form__field" type="number" placeholder="Perimeter(cm)"
+                                     id="sp1p" oninput="sp1solve()"> 
+                                    <input class="form__field" type="number" placeholder="Area(cm²)"
+                                     id="sp1ar" oninput="sp1solve()"> 
+                                    <br><br>
+                                    <button type="button" onclick ="this.form.reset();">Reset</button>
+                                    </form>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/sp306090.svg" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="stopwrap" id="resultex"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="modal fade" id="tricorn" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
