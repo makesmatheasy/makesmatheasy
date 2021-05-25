@@ -13639,6 +13639,19 @@ function polymax8find(){
     document.getElementById("polymax8ans").innerHTML = ans
 }
 
+function polymax9find(){
+    let Angle  = parseInt(document.getElementById("polymax9").value)
+    var edges_primary = 360/Angle;
+ 
+    if (edges_primary >= 6)
+    {
+        var edges_max_secondary = edges_primary / 2; 
+        document.getElementById("polymax9ans").innerHTML =  edges_max_secondary + 3
+    }
+    else
+        document.getElementById("polymax9ans").innerHTML =  "Not Possible"
+}
+
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
     var sum = 0;
