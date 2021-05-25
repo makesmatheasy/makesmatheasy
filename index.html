@@ -15755,6 +15755,11 @@
                                         style="text-decoration:none;"
                                         href="#">Truncated Tetrahedron</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#truncube"
+                                        style="text-decoration:none;"
+                                        href="#">Truncated Cube</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -28990,6 +28995,53 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="truncube" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated cube</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 2 \times a^2 \times (6 + 6 \times \sqrt{2} + \sqrt{3})\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{a^3}{3} \times (21 + 14 \times \sqrt{2}) \]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/Truncacube.PNG" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="inputtruncubeside"
+                                       oninput="solvetruncube();">
+                            <p class="stopwrap" id="resultoftruncubevol"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftruncubearea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close </button>
                     </div>
                 </div>
             </div>
