@@ -148,6 +148,7 @@ Other Tech/Libraries
   - Greatest Integer Function and Fractional Part
   - Quartiles
   - Deciles
+  - Modulo Calculator
   - Doubling Time
   - Direct And Indirect Proportion
   - Cross Multiplication Calculator

@@ -1551,6 +1551,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="modulobtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Modulo calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Double Time ','#modulo','c','moduloimgfav')"><img
+                                        id="moduloimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="sievebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sieve of Eratosthenes</a>
                         </td>
@@ -17928,6 +17943,17 @@
     <p id="dbltimeans1" style= "font-family:mathfont"></p><br>
 </div>
 <!-- doubling time ends -->
+
+<!-- Modulo starts -->
+<div class="collapse" id="modulo">
+    <h2 style="text-align:center;">Modulo Calculator</h2><br>
+    <p>x mod y = r</p><br>
+    <input type="text"id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
+    <input type="text"id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="moduloCal()">Calculate</button><br><br>
+    <p id="moduloans" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Modulo ends -->
 
 <div class="collapse" id="hypergeomeans">
     <h1 >Hypergeometric Distribution Statistics</h1>
