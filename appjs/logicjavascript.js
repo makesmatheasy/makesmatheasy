@@ -11625,6 +11625,23 @@ function typenum7find(){
     }
 }
 
+function printTribRec(n){
+    if (n == 0 || n == 1 || n == 2)
+        return 0;
+
+    if (n == 3)
+        return 1;
+    else
+        return printTribRec(n - 1) +printTribRec(n - 2) + printTribRec(n - 3);
+}
+
+function typenum8find()
+{
+    let n = parseInt(document.getElementById("typenum10").value)
+    for (let i = 1; i <= n; i++)
+        document.getElementById("typenum8ans").innerHTML =  printTribRec(i) + " ";
+}
+
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
     let arr = [];
