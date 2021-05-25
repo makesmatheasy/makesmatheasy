@@ -11270,6 +11270,13 @@ function cirinsemi7find(){
     document.getElementById("cirinsemi7ans").innerHTML =  area;
 }
 
+function cirinsemi8find(){
+    let a = parseInt(document.getElementById("cirinsemi9in").value)
+    let b= parseInt(document.getElementById("cirinsemi10in").value)
+    var area = (3 *  Math.sqrt(3) * a * b) / (4)
+    document.getElementById("cirinsemi8ans").innerHTML =  area.toFixed(5)
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
