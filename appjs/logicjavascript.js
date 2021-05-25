@@ -11119,8 +11119,8 @@ function cirinsemi4find(){
 }
 
 function cirinsemi5find(){
-    let r = parseInt(document.getElementById("cirinsemi5in").value)
-    var area = ((3.14 * r * r) / 4);
+    var r = parseInt(document.getElementById("cirinsemi5in").value)
+    var area = ((3.14 * r**2) / 4);
     document.getElementById("cirinsemifind5ans").innerHTML =  area;
 }
 
