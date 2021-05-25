@@ -13364,10 +13364,30 @@ function eulerTotient(n) {
 //Next Prime Function
 
 function cubeinconefind(){
-    let h = parseInt(document.getElementById("cubeincone").value)
-    let r = parseInt(document.getElementById("cubeincone1").value)
-    var a = (h * r * Math.sqrt(2)) / (h + Math.sqrt(2) * r);
-    document.getElementById("cubeinconeans").innerHTML = a
+    let h = parseFloat(document.getElementById("cubeincone").value)
+    let r = parseFloat(document.getElementById("cubeincone1").value)
+    var a1 = (h * r * Math.sqrt(2));
+    var a2 = (h + Math.sqrt(2) * r);
+    var a11 = a1/a2;
+    let result = document.getElementById("cubeinconeans")
+    let ans = ""
+    if(h<0 || r<0){
+        ans += "\\[Height \\space and \\space Radius \\space cannot \\space be \\space negative \\]"
+        result.innerHTML = ans
+    }
+   else if(!isNaN(r) && !isNaN(h)){
+         ans += "\\[Side \\space of \\space the \\space cube (a) \\space is  \\]"
+         ans += "\\[\\frac{h \\times r \\sqrt{2}}{(h + \\sqrt{2}) \\times r} \\]"
+         ans += "\\[\\frac{" + h + " \\times " + r + " \\sqrt{2}}{(" + h + " + \\sqrt{2}) \\times " + r + "} \\]"
+         ans += "\\[\\frac{" + a1.toFixed(4) + "}{" + a2.toFixed(4) + "} \\space = \\space " + a11.toFixed(4) + " \\]"
+         result.innerHTML = ans
+        }
+        else{
+           ans += "\\[Please \\space enter \\space valid \\space input \\]"
+           result.innerHTML = ans
+        }
+        renderMathInElement(result)
+
 }
 
 function cylinderincubefind(){
