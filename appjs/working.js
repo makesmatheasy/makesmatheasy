@@ -511,6 +511,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cotermangbtn").click(function () {
+        openit("#cotermang");
+        closenav();
+        clearall();
+    });
     $("#ttestbtn").click(function () {
         openit("#ttest");
         closenav();
