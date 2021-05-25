@@ -2759,6 +2759,16 @@ function impse9find(){
     document.getElementById("impse9ans").innerHTML = res;
 }
 
+function impse10find(){
+    let n = parseInt(document.getElementById("impse14").value)
+    var res = 0, fact = 1;
+    for (i = 1; i <= num; i++)
+    {
+        fact = fact * i;
+        res = res + (i / fact);
+    }
+    document.getElementById("impse10ans").innerHTML = res;
+}
 
 function find_count(ele){
     var count = 0;
