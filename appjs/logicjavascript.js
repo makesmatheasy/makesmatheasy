@@ -2158,7 +2158,78 @@ function goldr() {
         
         renderMathInElement(document.getElementById("gold_explain"));
     }
-}    
+} 
+
+// golden rectangle calculator
+function goldrec() {
+    var gra = document.getElementById("gra").value;
+    var grb = document.getElementById("grb").value;
+    var grab = document.getElementById("grab").value;
+    var grar = document.getElementById("grar").value;
+    var goldr_explain = document.getElementById("goldrec_explain");
+    if(gra!="" && grb!="" && grab!="" && grar!="")
+         goldr_explain.innerHTML="Reset the Calculator";
+    else if(gra!="" ){
+        grb=(parseFloat(gra)/1.618).toFixed(3);
+        grab=(1.618*parseFloat(gra)).toFixed(3);
+        grar=(parseFloat(gra)*parseFloat(grab)).toFixed(3);
+
+        document.getElementById("grb").value=grb;
+        document.getElementById("grab").value=grab;
+        document.getElementById("grar").value=grar;
+        
+        goldr_explain.innerHTML="\\[ b=\\frac{a}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gra+"}{1.618}="+grb+"\\]";
+        goldr_explain.innerHTML+="\\[a+b=(a)\\times (Golden \\space Ratio)\\]"+"\\[\\space \\space = 1.618 \\times"+gra+"="+grab+"\\]";
+        goldr_explain.innerHTML+="\\[Area=(a)\\times (a+b)\\]"+"\\[\\space \\space = "+gra+"\\times"+grab+"="+grar+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+    else if(grb!="" ){
+        gra=(1.618*parseFloat(grb)).toFixed(3);
+        grab=(1.618*gra).toFixed(3);
+        grar=(parseFloat(gra)*parseFloat(grab)).toFixed(3);
+        
+        document.getElementById("gra").value=gra;
+        document.getElementById("grab").value=grab;
+        document.getElementById("grar").value=grar;
+        
+        goldr_explain.innerHTML="\\[ a=b\\times (Golden \\space Ratio)\\]"+"\\[\\space =1.618 \\times"+grb+"="+gra+"\\]";
+        goldr_explain.innerHTML+="\\[ a+b=a\\times (Golden \\space Ratio)\\]"+"\\[\\space\\space = 1.618 \\times"+gra+"="+grab+"\\]";
+        goldr_explain.innerHTML+="\\[Area=(a)\\times (a+b)\\]"+"\\[\\space\\space = "+gra+"\\times"+grab+"="+grar+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+    else if(grab!="" ){
+        gra=(parseFloat(grab)/1.618).toFixed(3);
+        grb=(gra/1.618).toFixed(3);
+        grar=(parseFloat(gra)*parseFloat(grab)).toFixed(3);
+        
+        document.getElementById("gra").value=gra;
+        document.getElementById("grb").value=grb;
+        document.getElementById("grar").value=grar;
+
+        goldr_explain.innerHTML="\\[ a=\\frac{a+b}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+grab+"}{1.618}="+gra+"\\]";
+        goldr_explain.innerHTML+="\\[b=\\frac{a}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gra+"}{1.618}="+grb+"\\]";
+        goldr_explain.innerHTML+="\\[Area=(a)\\times (a+b)\\]"+"\\[\\space\\space = "+gra+"\\times"+grab+"="+grar+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+    else if(grar!="" ){
+        gra=(Math.sqrt(parseFloat(grar)/1.618)).toFixed(3);
+        grb=(gra/1.618).toFixed(3);
+        grab=(1.618*gra).toFixed(3);
+        
+        document.getElementById("gra").value=gra;
+        document.getElementById("grb").value=grb;
+        document.getElementById("grab").value=grab;
+
+        goldr_explain.innerHTML="\\[ a=\\sqrt{\\frac{Area}{Golden \\space Ratio}}\\]"+"\\[\\space =\\sqrt{ \\frac{"+grar+"}{1.618}}="+gra+"\\]";
+        goldr_explain.innerHTML+="\\[b=\\frac{a}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gra+"}{1.618}="+grb+"\\]";
+        goldr_explain.innerHTML+="\\[ a+b=a\\times (Golden \\space Ratio)\\]"+"\\[\\space\\space = 1.618 \\times"+gra+"="+grab+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+} 
 // diamond problemcalculator
 function diamond() {
     var diamondA = document.getElementById("dinputA").value;
