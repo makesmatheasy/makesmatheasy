@@ -17225,24 +17225,24 @@ function embedfind(){
         // Projection angle variation
         // when the number of
         // sides are in multiple of 4
-        if (N % 4 == 0) {
-            proAngleVar = pi * (180.0 / N) / 180;
+        if (n % 4 == 0) {
+            proAngleVar = pi * (180.0 / n) / 180;
         } else {
-            proAngleVar = pi * (180.0 / (2 * N)) / 180;
+            proAngleVar = pi * (180.0 / (2 * n)) / 180;
         }
 
         // Distance between the end polets
         let negX = 1.0e+99, posX = -1.0e+99, negY = 1.0e+99, posY = -1.0e+99;
 
-        for ( let j = 0; j < N; ++j) {
+        for ( let j = 0; j < n; ++j) {
 
             // Projection from all N polets
             // on X-axis
-            let px = Math.cos(2 * pi * j / N + proAngleVar);
+            let px = Math.cos(2 * pi * j / n + proAngleVar);
 
             // Projection from all N polets
             // on Y-axis
-            let py = Math.sin(2 * pi * j / N + proAngleVar);
+            let py = Math.sin(2 * pi * j / n + proAngleVar);
 
             negX = Math.min(negX, px);
             posX = Math.max(posX, px);
@@ -17255,7 +17255,7 @@ function embedfind(){
 
         // Return the portion of side
         // forming the square
-        let ans = opt2 / Math.sin(pi / N) / 2;
+        let ans = opt2 / Math.sin(pi / n) / 2;
         document.getElementById("embedans").innerHTML = ans
 }
 
