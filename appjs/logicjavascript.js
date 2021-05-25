@@ -2293,7 +2293,7 @@ function findWork() {
             document.getElementById('workans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
             let workans = parseFloat(work1 * (time2 * men2) / (time1 * men1));
-            document.getElementById('workans').innerHTML = "The work done is " + workans; 
+            document.getElementById('workans').innerHTML = "The work done is " + workans;
         }
     }
 }
@@ -2304,6 +2304,8 @@ function findTime() {
     const men1 = parseInt(document.getElementById('2men1').value);
     const work2 = parseInt(document.getElementById('2work2').value);
     const men2 = parseInt(document.getElementById('2men2').value);
+    var result = document.getElementById('stepstime');
+
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(work2) || isNaN(men2) ){
         document.getElementById('timeans').innerHTML = "Please enter all fields";
     }else{
@@ -2311,7 +2313,12 @@ function findTime() {
             document.getElementById('timeans').innerHTML = "Invalid Input : Value of  WORK/TIME/MEN cant be in negative";
         }else{
             let timeans = parseFloat(work2 * (time1 * men1) / (work1 * men2));
-            document.getElementById('timeans').innerHTML = "Total time taken = " + timeans; 
+            document.getElementById('timeans').innerHTML = "Total time taken = " + timeans;
+            result.innerHTML += "\\[Working \\space Steps\\]"
+            result.innerHTML += "\\[Formula \\space -> \\space T_2 \\space = \\space \\frac{T_1 \\times N_1 \\times W_2}{N_2 \\times W_1}\\]";
+            result.innerHTML += "\\[= \\space \\frac{" + time1 + " \\times " + men1 + "\\times " + work2 + "}{" + men2 + "\\times " + work1 + "}\\]";
+            result.innerHTML += "\\[= \\space " + timeans + "\\]";
+            renderMathInElement(result);
         }
     }
 }
