@@ -2285,7 +2285,7 @@ function findWork() {
     const time1 = parseInt(document.getElementById('1time1').value);
     const men1 = parseInt(document.getElementById('1men1').value);
     const time2 = parseInt(document.getElementById('1time2').value);
-    const men2 = parseInt(document.getElementById('1en2').value);
+    const men2 = parseInt(document.getElementById('1men2').value);
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(time2) || isNaN(men2) ){
         document.getElementById('workans').innerHTML = "Please enter all fields";
     }else{
