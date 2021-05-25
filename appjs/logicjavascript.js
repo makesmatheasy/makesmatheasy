@@ -2817,6 +2817,13 @@ function impse11find(){
     document.getElementById("impse11ans").innerHTML =  -n / 2;
 }
 
+function impse12find(){
+    let n = parseInt(document.getElementById("impse16").value)
+    if (n % 2 == 1)
+        document.getElementById("impse12ans").innerHTML =  (n + 1) / 2;
+    document.getElementById("impse12ans").innerHTML =  -n / 2;
+}
+
 function find_count(ele){
     var count = 0;
     for (let i = 0; i < ele.length; i++) {
