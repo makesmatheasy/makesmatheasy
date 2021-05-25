@@ -14813,6 +14813,10 @@
                            style="text-decoration:none;"
                            href="#">Hypocycloid</a></td>
                 </tr> 
+                <tr>
+                    <td><a data-toggle="modal" data-target="#crossedrectangle"
+                           style="text-decoration:none;" href="#">Crossed Rectangle</a></td>
+                </tr>
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -23232,7 +23236,69 @@ N is the population size.
            </div>
        </div>
    </div>
-</div>
+        </div>
+        <div class="modal fade" id="crossedrectangle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Crossed Rectangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Leg Length (c)</h5>
+                                    <p class="text-center">\[c=\frac{\sqrt{a^2 + b^2}}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Apex angle (γ)</h5>
+                                    <p class="text-center">\[γ=\arccos \frac{2c^2-a^2}{2c^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Intersection angle (β)</h5>
+                                    <p class="text-center">\[β= 180° - γ\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Base angle (α) </h5>
+                                    <p class="text-center">\[α=\frac{β}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/crossed-rectangle.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p=\ 2a + 4c \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A=\frac{a \times b}{2}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter base length(a) of Crossed Rectangle"
+                                   id="crossrect-a" oninput="crossedrectsolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter rectangle side(b) of Crossed Rectangle"
+                                   id="crossrect-b" oninput="crossedrectsolve()">
+                            <br>
+                            <p class="stopwrap" id="resultOfLegLength"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfBaseAngle" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfIntersectionAngle" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfApexAngle" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfPerimeterCrossedRect" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaCrossedRect" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
 <div class="modal fade" id="interioranglecal" tabindex="-1" role="dialog" aria-hidden="true">
