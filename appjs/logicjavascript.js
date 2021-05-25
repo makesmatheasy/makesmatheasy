@@ -17432,8 +17432,24 @@ function cartcal(){
     var outputy = document.getElementById("cartyans");
     var outputz = document.getElementById("cartzans");
     var ans="";
+    var ansx="";
+    var ansy="";
+    var ansz="";
+    var cs = Math.cos(o);
     var x = p*Math.cos(o);
+    var sn = Math.sin(o);
     var y = p*Math.sin(o);
+    ansx += "\\[x\\space coordinate:\\space ρ*cos(θ) \\]";
+    ansx += "\\[x\\space coordinate:\\space ρ*"+cs+"\\]"
+    ansx += "\\[x\\space coordinate:\\space "+x+"\\]"
+
+    ansy += "\\[y\\space coordinate:\\space ρ*sin(θ) \\]";
+    ansy += "\\[y\\space coordinate:\\space ρ*"+sn+"\\]"
+    ansy += "\\[y\\space coordinate:\\space "+y+"\\]"
+
+    ansz += "\\[z coordinate:\\space Z\\]";
+    ansz += "\\[z coordinate:\\space "+z+"\\]";
+    
     if(isNaN(p)||isNaN(o)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -17442,10 +17458,13 @@ function cartcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputx.innerHTML= "x: " + x;
-        outputy.innerHTML = "y: " + y;
-        outputz.innerHTML = "Z: " + z;
+        outputx.innerHTML= ansx;
+        outputy.innerHTML = ansy;
+        outputz.innerHTML = ansz;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
+    renderMathInElement(outputz);
 }
 
 function bilinearcal(){
