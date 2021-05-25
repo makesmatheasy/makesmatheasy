@@ -11711,6 +11711,17 @@ function typenum8find()
         document.getElementById("typenum8ans").innerHTML =  printTribRec(i) + " ";
 }
 
+function typenum9find(){
+    let n = parseInt(document.getElementById("typenum11").value)
+    if (n < 1)
+        document.getElementById("typenum8ans").innerHTML = n;
+    if (n == 1)
+        document.getElementById("typenum8ans").innerHTML = 2;
+ 
+    document.getElementById("typenum8ans").innerHTML = (4 * evenFib(n-1)) +
+                 evenFib(n-2)
+}
+
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
     let arr = [];
