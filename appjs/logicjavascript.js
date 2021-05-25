@@ -2295,7 +2295,7 @@ function findWork() {
     const time1 = parseInt(document.getElementById('1time1').value);
     const men1 = parseInt(document.getElementById('1men1').value);
     const time2 = parseInt(document.getElementById('1time2').value);
-    const men2 = parseInt(document.getElementById('1en2').value);
+    const men2 = parseInt(document.getElementById('1men2').value);
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(time2) || isNaN(men2) ){
         document.getElementById('workans').innerHTML = "Please enter all fields";
     }else{
@@ -13607,6 +13607,14 @@ function scyf1find(){
     var V = (3.14 * Math.pow(r1, 2) * h1);
     document.getElementById("scyf1ans").innerHTML =  V;
 }
+
+function scyf2find(){
+    let b = parseInt(document.getElementById("scyf6").value) 
+    let h = parseInt(document.getElementById("scyf7").value)
+    let ans = 2 * b * s + parseInt(Math.pow(b, 2));
+    document.getElementById("scyf2ans").innerHTML = ans
+}
+
 //Polygon with maximum sides that can be inscribed in an N-sided regular polygon
 function polymaxfind(){
     var n = (document.getElementById("polymax").value);
@@ -13820,6 +13828,20 @@ function polymax8find(){
     let ans =  (N) * (N - 1) + 1;
     document.getElementById("polymax8ans").innerHTML = ans
 }
+
+function polymax9find(){
+    let Angle  = parseInt(document.getElementById("polymax9").value)
+    var edges_primary = 360/Angle;
+ 
+    if (edges_primary >= 6)
+    {
+        var edges_max_secondary = edges_primary / 2; 
+        document.getElementById("polymax9ans").innerHTML =  edges_max_secondary + 3
+    }
+    else
+        document.getElementById("polymax9ans").innerHTML =  "Not Possible"
+}
+
 //Sum of numbers from 1 to N which are in Lucas Sequence
 function sumlucasfind(){
     let N = parseInt(document.getElementById("sumlucas").value)
