@@ -2714,9 +2714,17 @@ function impse5find(){
 }
 
 function impse6find(){
-    let n = parseInt(document.getElementById("impse10").value)
+    let n = parseInt(document.getElementById("impse10").value);
+    if(!isNaN(n)){
     let ans = (parseInt(Math.pow(10, n + 1)) * (9 * n - 1) + 10) /parseInt(Math.pow(9, 3)) - n * (n + 1) / 18;
-    document.getElementById("impse6ans").innerHTML = ans
+    document.getElementById("impse6ans").innerHTML = "\\[Sum \\space of \\space the \\space series \\space 1+22+333+4444+……n \\space terms \\space will \\space be\\]";
+    document.getElementById("impse6ans1").innerHTML = "\\[\\newline \\frac{10^{"+n+"+1} \\times (9 \\times "+n+" - 1) + 10}{(9^3)} - \\frac{"+n+" \\times ("+n+"+1)}{18} \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("impse6ans").innerHTML = "\\[Please \\space enter \\space valid \\space value\\]";
+        document.getElementById("impse6ans1").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("impse6ans"));
+    renderMathInElement(document.getElementById("impse6ans1"));
 }
 
 function impse7find(){
