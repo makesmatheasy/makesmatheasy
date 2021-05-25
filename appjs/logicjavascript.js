@@ -15315,8 +15315,13 @@ function convertgreyoct(){
     var result1 = "";
 
     result2.innerHTML="";
-
-    result1 = parseInt(input,2).toString(2);
+    if(fromBase === "Octal"){
+        from = 8;
+        to = 2;
+        result1 = parseInt(input, from).toString(to);
+    }else{
+        result1 = input;
+    }
 
     //assigned first value of input inside result
     var x = result1[0];
@@ -15327,6 +15332,11 @@ function convertgreyoct(){
             x += n;
         }
         x = parseInt(x,2).toString(8);
+    }else{
+        for (var i = 1; i < result1.length; i++){
+            var m = parseInt(result1[i - 1] ^ result1[i]).toString();
+            x += m;
+        }
     }
 
     if(input=="")
