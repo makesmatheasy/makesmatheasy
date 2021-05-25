@@ -17907,3 +17907,44 @@ function amfind()
     }
     document.getElementById("amans").innerHTML=ans;
 }
+
+
+//  nth base root of a number 
+
+function findnthrt()
+{
+    var i = 1;
+    const x = parseInt(document.getElementById("n_rootnumber").value);
+    const n = parseInt(document.getElementById("n_rootbase").value);
+    var result=document.getElementById("nrootresult");
+
+    if (x >= 0 && x <= 1)
+    {
+        low = x;
+        high = 1;
+    }
+    else
+    {
+        low = 1;
+        high = x;
+    }
+
+    let epsilon = 0.000001;
+
+    let guess = parseInt((low + high) / 2, 10);
+    while (Math.abs((Math.pow(guess, n)) - x)
+            >= epsilon)
+    {
+        if (Math.pow(guess, n) > x)
+        {
+            high = guess;
+        }
+        else
+        {
+            low = guess;
+        }
+        guess = (low + high) / 2;
+    }
+    result.innerHTML = `The ${n}-th root  of ${x}  is  ${guess.toFixed(4)}`;
+
+}   

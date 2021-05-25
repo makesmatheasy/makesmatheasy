@@ -433,7 +433,8 @@ function openit(id) {
         "#chng-vol-cube",
         "#squarerootcalc",
         "#sqseries",
-        "#impse"
+        "#impse",
+        "#n_baseroot",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
