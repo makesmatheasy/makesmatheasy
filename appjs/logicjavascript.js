@@ -4802,6 +4802,36 @@ function centerrsolve(){
     renderMathInElement(document.getElementById("centerrr"));
 
 }
+
+function xintersept(){
+    var a,b,c,d,e,f;
+     a = parseInt(document.getElementById("qcenterr").value);
+     b = -(parseInt(document.getElementById("acenterr").value));
+     c = -(parseInt(document.getElementById("bcenterr").value));
+     d = parseInt(document.getElementById("ccenterr").value);
+     e = (b)/(a*2);
+     f = (c)/(a*2);
+        var p = (e*e)  - d;
+        var q = Math.sqrt(p);
+     if(isNaN(a) || isNaN(b) || isNaN(c)){
+        document.getElementById("centerer").innerHTML ="\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("centerrr").innerHTML ="";
+     }else{
+     document.getElementById("centerer").innerHTML = "\\[X \\space Intercept Of \\space circle \\space -> \\newline";
+     document.getElementById("centerer").innerHTML +=" g\\space = \\frac {"+ b + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ e +"\\newline \\]"; 
+    //  document.getElementById("centerer").innerHTML +=" h\\space = \\frac {"+ c + "} { ( \\space "+ a + " * \\space "+ 2 +" ) } " + " \\space = "+ f +"\\newline \\] ";
+
+    document.getElementById("centerrr").innerHTML = "\\[X \\space Intercept \\space Of \\space circle \\space = 2 ( \\sqrt{ \\space g^2 \\space  \\space - \\space c \\space ) }  \\newline";
+    if(Number.isInteger(Math.sqrt(p)))
+    document.getElementById("centerrr").innerHTML += " = \\space ( \\space " + q + " \\space ) \\space \\newline \\] ";
+     else
+     document.getElementById("centerrr").innerHTML += " = \\space ( \\space \\sqrt { " + p + " } \\space ) \\space \\newline \\] ";
+    
+    }
+    renderMathInElement(document.getElementById("centerer"));
+    renderMathInElement(document.getElementById("centerrr"));
+}
+
 function nodiagnolfind(){
     let n= parseInt(document.getElementById('nodiagnol').value)
     if(!isNaN(n)){
