@@ -11527,6 +11527,22 @@ function solveperc(){
     renderMathInElement(document.getElementById('t'));
     renderMathInElement(document.getElementById('t1'));
 }
+function solveperper(){
+    var x5=(document.getElementById('x5').value);
+    var y5=(document.getElementById('y5').value);
+    var ansexp ="";
+    if(x5!="" && y5!=""){
+        var ans = parseFloat(x5)*parseFloat(y5)/100;
+        ansexp += "\\[ "+x5+" \\space \\times \\space "+y5+"\\]" ; 
+        ansexp += "\\[= "+ans+" %\\]";
+        document.getElementById('perans1').innerHTML= ansexp;
+    } else{
+        document.getElementById('perans1').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('perans2').innerHTML= "";
+    }
+    renderMathInElement(document.getElementById('perans1'));
+}
+
 
 function typenumfind(){
     let n = document.getElementById("typenum").value;
