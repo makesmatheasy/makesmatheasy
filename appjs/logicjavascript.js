@@ -12072,14 +12072,26 @@ function apgphp(){
     var a1 = ((a-b)/(b-c)) ;
     if(!isNaN(a) && !isNaN(b) && !isNaN(c)){
         if(a1 == a/a){
-        temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space AP  \\]";
+       temp += "\\[If \\space a,b,c \\space are \\space three \\space consecutive \\space terms \\space of \\space a \\space series, \\space then \\]";
+       temp +="\\[If \\space \\frac{a-b}{b-c} \\space = \\space \\frac{a}{a}, \\space then \\space a,b,c \\space are \\space in \\space AP \\] ";
+       temp +="\\[\\frac{ " + a + "-" + b + "}{ " + b + "-" + c + "} \\space = \\space \\frac{ " + a + "}{" + a + "} \\]"  
+       temp +="\\[ " +  (a-b) / (b-c) + " \\space = \\space " + a / a + " \\]" 
+       temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space AP  \\]";
        output.innerHTML = temp;
     }
         else if(a1 == a/b ){
+            temp += "\\[If \\space a,b,c \\space are \\space three \\space consecutive \\space terms \\space of \\space a \\space series, \\space then \\]";
+            temp +="\\[If \\space \\frac{a-b}{b-c} \\space = \\space \\frac{a}{b}, \\space then \\space a,b,c \\space are \\space in \\space GP \\] ";
+            temp +="\\[\\frac{ " + a + "-" + b + "}{ " + b + "-" + c + "} \\space = \\space \\frac{ " + a + "}{" + b + "} \\]"  
+            temp +="\\[ " +  (a-b) / (b-c) + " \\space = \\space " + a / b + " \\]" 
             temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space GP  \\]";
             output.innerHTML = temp;
         }
         else if (a1 == (a/c) ){
+            temp += "\\[If \\space a,b,c \\space are \\space three \\space consecutive \\space terms \\space of \\space a \\space series, \\space then \\]";
+            temp +="\\[If \\space \\frac{a-b}{b-c} \\space = \\space \\frac{a}{a}, \\space then \\space a,b,c \\space are \\space in \\space HP \\] ";
+            temp +="\\[\\frac{ " + a + "-" + b + "}{ " + b + "-" + c + "} \\space = \\space \\frac{ " + a + "}{" + c + "} \\]"  
+            temp +="\\[ " +  (a-b) / (b-c) + " \\space = \\space " + a / c + " \\]" 
             temp += "\\[The \\space given \\space term \\space a,b,c \\space are \\space in \\space HP  \\]";
             output.innerHTML = temp;
         }
