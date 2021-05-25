@@ -2912,7 +2912,7 @@
                                Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('supplementary angle calculator','#suppangs','c','suppangfav')"><img
+                                <span onclick="addtofavourite('supplementary angle calculator','#suppangs','c','suppangimgfav')"><img
                                         id="suppangimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -2920,6 +2920,22 @@
                 </table>
             </li>
            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cotermangbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coterminal Angle 
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coterminal Angle Calculator','#cotermang','c','cotermangimgfav')"><img
+                                        id="cotermangimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -18516,7 +18532,19 @@ N is the population size.
     </form>
 </div>
 
-
+<div class="collapse" id="cotermang">
+    <h1 style="font-family:mathfont; text-align:center;">Coterminal Angle 
+        Calculator </h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <input type="number" name="ang" class="form__field" id="cotang" width="5em" placeholder="Enter the angle whose Coterminal angle is to be calculated(in degree)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="cotermangcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button><br><br>
+        <p id="cotermangans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+    </form>
+</div>
 
 
 <div class="collapse" id="pairfacts">

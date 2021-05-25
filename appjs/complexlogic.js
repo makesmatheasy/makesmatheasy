@@ -1639,6 +1639,26 @@ function suppangvercal(){
     renderMathInElement(document.getElementById("suppangverans"));
 }
 
+function cotermangcal(){
+    var a=document.getElementById("cotang").value;
+    var ans="";
+    var pos="\\[Positive \\space Coterminal \\space Angle:\\space";
+    var neg="\\[Negative \\space Coterminal \\space Angle:\\space";
+    if(a==""){
+        ans="Enter the angle to find the coterminal angle";
+    } else{
+        var t=parseInt(a);
+        for(let i=1;i<5;i++){
+            pos+=t+360*i+"°,";
+            neg+=t-360*i+"°,";
+        }
+        pos=pos.slice(0,-1)+"...\\]";
+        neg=neg.slice(0,-1)+"...\\]";
+        ans=pos+neg;
+    }
+    document.getElementById("cotermangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotermangans"));
+}
 function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
