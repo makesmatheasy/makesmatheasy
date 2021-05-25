@@ -11491,6 +11491,17 @@ function typenum6find(){
     document.getElementById("typenum6ans").innerHTML =  sum;
 }
 
+function typenum7find(){
+    let m = parseInt(document.getElementById("typenum8").value)
+    let n = parseInt(document.getElementById("typenum9").value)
+    if (n == 2 || m == 2 || n % m == 0) {
+        document.getElementById("typenum7ans").innerHTML =  "Yes" + "<br>"
+    }
+    else {
+        document.getElementById("typenum7ans").innerHTML = "No" + "<br>"
+    }
+}
+
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
     let arr = [];
