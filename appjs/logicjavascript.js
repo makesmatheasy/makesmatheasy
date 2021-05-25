@@ -5925,6 +5925,27 @@ function crossedrectsolve() {
     }
 }
 
+function tshapesolve() {
+    var beamLength = parseFloat(document.getElementById("tshape-a").value);
+    var beamThickness = parseFloat(document.getElementById("tshape-b").value);
+    var shaftLength = parseFloat(document.getElementById("tshape-c").value);
+    var shaftThickness = parseFloat(document.getElementById("tshape-d").value);
+    var armLengthField = document.getElementById("resultOfArmLengthTshape");
+    var heightField = document.getElementById("resultOfHeightTshape");
+    var perimeterField = document.getElementById("resultOfPerimeterTshape");
+    var areaField = document.getElementById("resultOfAreaTshape");
+    var armLengthTshape = (beamLength - shaftThickness) / 2;
+    var heightTshape = beamThickness + shaftLength;
+    var perimeterTshape = 2 * (beamLength + beamThickness + shaftLength);
+    var areaTshape = (beamLength * beamThickness) + (shaftLength * shaftThickness);
+    if ((!isNaN(beamLength)) && (!isNaN(beamThickness)) && (!isNaN(shaftLength)) && (!isNaN(shaftThickness))) {
+        armLengthField.innerHTML = `Arm length (a') = ${armLengthTshape}`;
+        heightField.innerHTML = `Height (h) = ${heightTshape}`;
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeterTshape}`;
+        areaField.innerHTML = `Area (A) = ${areaTshape}`;
+    }
+}
+
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;
     let distance = document.getElementById("inputdistance").value;
