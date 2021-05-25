@@ -15490,6 +15490,23 @@ function exc3find(){
     document.getElementById("exc3ans").innerHTML = res
 }
 
+function exc4find(){
+    let n = parseInt(document.getElementById("exc7").value)
+    var accuracy =  0.0001, denominator, sinx, sinval;
+    n = n *  (3.142 / 180.0); 
+    var x1 = n;
+    sinx = n;
+    sinval =  Math.sin(n);
+    var i = 1;
+    do {
+        denominator = 2 * i * (2 * i + 1);
+        x1 = -x1 * n * n / denominator;
+        sinx = (sinx + x1);
+        i = i + 1;
+    } while (accuracy <= sinval - sinx);
+    document.getElementById("exc4ans").innerHTML =  sinx.toFixed(0)
+}
+
 function fac(num)
 {
     if (num == 0)
