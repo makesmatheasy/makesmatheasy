@@ -15392,6 +15392,11 @@ function convertex3() {
         for (var i = 0; i < r.length; i++) {
             var y = (parseInt(r[i]) + 3).toString(2)
         }
+    }else if(fromBase === "Octal" && toBase === "Excess-3"){
+        r = parseInt(input, 8).toString();
+        for (var i = 0; i < r.length; i++) {
+            var y = (parseInt(r[i]) + 3).toString(2)
+        }
     }
 
     if (y.length == 1) {
