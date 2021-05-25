@@ -13827,8 +13827,8 @@ function addBinDecHexOct(){
         x1o = fracDectoBinHexOct(x1,16);
     }
     else if(firstBase === "Decimal"){
-        x1=parseInt(input1);
-        x1o=x1;
+        x1 = parseFloat(input1);
+        x1o = parseFloat(x1);
     }
 
     if(secondBase === "Binary"){
@@ -13844,26 +13844,26 @@ function addBinDecHexOct(){
         x2o = fracDectoBinHexOct(x2,16);
     }
     else if(secondBase === "Decimal"){
-        x2=parseInt(input2);
-        x2o=x2;
+        x2 = parseFloat(input2);
+        x2o = parseFloat(x2);
     }
 
     var x3=x1+x2;
-    console.log(x1)
+
     if(isNaN(x1) || x1o!=input1)
-    result.innerHTML="Enter correct "+firstBase+" value in Input 1";
+    result.innerHTML = "Enter correct " + firstBase + " value in Input 1";
     else if(isNaN(x2)|| x2o!=input2)
-    result.innerHTML="Enter a "+secondBase+" value in Input 2";
+    result.innerHTML = "Enter a " + secondBase + " value in Input 2";
     else if(resultType === "Binary")
-    result.innerHTML="Answer in binary="+fracDectoBinHexOct(x3,2);
+    result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
     else if (resultType === "Octal")
-    result.innerHTML="Answer in Octal="+fracDectoBinHexOct(x3,8);
+    result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
     else if(resultType === "Hexa Decimal")
-    result.innerHTML="Answer in Hexa Decimal="+fracDectoBinHexOct(x3,16);
+    result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3,16);
     else if(resultType === "Decimal")
-    result.innerHTML="Answer in Decimal="+x3.toString();
+    result.innerHTML = "Answer in Decimal=" + x3.toString();
     else
-    result.innerHTML="";
+    result.innerHTML = "";
 }
 
 //---------------------------------------------------------------------
