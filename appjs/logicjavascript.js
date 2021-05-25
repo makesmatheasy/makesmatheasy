@@ -7086,17 +7086,14 @@ function antipodal(){
     var a = document.getElementById("antidigona").value;
     var peri = r* math.pi * 2;
     var area = (r*r*2*a*math.pi)/180;
-
     if ((r != "") && (a!="")) {
         document.getElementById("antidigonperi").innerHTML = "\\[Perimeter \\space (P) \\space of \\space Antipodal \\space Digon \\space \\newline 2 \\times \\pi \\times "+ r+" = " + peri.toFixed(3) + "\\]";
-        document.getElementById("antidigonarea").innerHTML = "\\[Area \\space (A) \\space of \\space Antipodal \\space Digon \\space \\newline 2 \\times" + (a*math.pi)/180 + "\\times" + r + " = " + area.toFixed(3) + "\\]";
-        renderMathInElement(document.getElementById("antidigonperi"));
-        renderMathInElement(document.getElementById("antidigonarea"));
-
+        document.getElementById("antidigonarea").innerHTML = "\\[Area \\space (A) \\space of \\space Antipodal \\space Digon \\space \\newline 2 \\times" + ((a*math.pi)/180).toFixed(2) + "\\times" + r + "^2 \\space  = \\space " + area.toFixed(3) + "\\]";
     } else {
         document.getElementById("antidigonperi").innerHTML = "";
         document.getElementById("antidigonarea").innerHTML = "";
-    }
+    }   renderMathInElement(document.getElementById("antidigonperi"));
+        renderMathInElement(document.getElementById("antidigonarea"));
 }
 	
 function solveannulus() {
