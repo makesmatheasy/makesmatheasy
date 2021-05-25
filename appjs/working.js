@@ -601,6 +601,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#sphbtn").click(function(){
+        openit("#sph");
+        closenav();
+        clearall();
+    });
+    $("#polarbtn").click(function(){
+        openit("#polar");
+        closenav();
+        clearall();
+    });
+    $("#cylbtn").click(function(){
+        openit("#cyl");
+        closenav();
+        clearall();
+    });
     $("#modulobtn").click(function () {
         openit("#modulo");
         closenav();

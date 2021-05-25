@@ -1580,6 +1580,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR"){
                         document.getElementById('sph').click();
                     }
+                    else if (inp.value.toUpperCase() == "CYLINDRICAL COORDINATE CALCULATOR") {
+                        $("#cyl").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "CYLINDRICAL COORDINATE CALCULATOR"){
+                        document.getElementById('cyl').click();
+                    }
+                    else if (inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR") {
+                        $("#sph").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SPHERICAL COORDINATE CALCULATOR"){
+                        document.getElementById('sph').click();
+                    }
                     else if (inp.value.toUpperCase() == "POLAR COORDINATE CALCULATOR") {
                         $("#polar").slideToggle();    
                     }
