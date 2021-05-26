@@ -11651,16 +11651,27 @@ function solvepera() {
 function retfind(){
     let r = parseFloat(document.getElementById("retin").value)
     var height = ((2*r)/(Math.sqrt(5)));
-    var area =  0.70477 * Math.pow(height, 2); 
+    var height1 = Math.pow(height, 2); 
+    var area =  0.70477 * height1;
+    var output =  document.getElementById("retans");
+    var ans = "";
     if(r<0){
-        document.getElementById("retans").innerHTML = "Radius cannot be negative"
+        ans += "\\[Radius \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if(!isNaN(r)){
-    document.getElementById("retans").innerHTML =  area.toFixed(4);
+     ans += "\\[Side \\space of \\space the \\space Square \\space inscribed \\space in \\space a \\space Semicircle (a) \\space is \\]"
+     ans += "\\[a \\space = \\space \\frac{2r}{\\sqrt{5}} \\]"
+     ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space a  \\space so, \\space a \\space = \\space h \\]"
+     ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space is \\]"
+     ans += "\\[A \\space = \\space \\frac{(π - \\sqrt{3}) \\times (\\frac{2r}{\\sqrt{5}})^{2}}{2} \\space = \\space \\frac{(π - \\sqrt{3}) \\times (\\frac{2 \\times" + r + " }{\\sqrt{5}})^{2}}{2} \\space = \\space \\frac{(π - \\sqrt{3})}{2} \\times(" + height.toFixed(4) + ")^{2} \\space = \\space 0.70477 \\times " + height1.toFixed(4) + " \\space = \\space " + area.toFixed(4) + "\\]"
+   output.innerHTML = ans;
     }
     else{
-        document.getElementById("retans").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 function retfind1(){
