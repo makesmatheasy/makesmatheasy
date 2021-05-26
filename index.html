@@ -18109,20 +18109,36 @@
 <div class="collapse" id="cart">
         <h1 style=" text-align: center; font-family:mathfont">Cartesian Coordinate Calculator</h1>
             <p>&nbsp;</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="cartp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
-                <input type="number" id="carto" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
-                <input type="number" id="cartz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+                <input type="number" id="cylcartp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
+                <input type="number" id="cylcarto" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
+                <input type="number" id="cylcartz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
         <p>&nbsp;</p>
-        <p id="cartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
-        <p id="cartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p id="cylcartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
-        <p id="cartzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p id="cylcartzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 
-            <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Cartesian</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="sphcartr" width="5em" placeholder="Enter the radial distance (r)"> 
+                <input type="number" id="sphcarto" width="5em" placeholder="Enter the polar angle (θ)">
+                <input type="number" id="sphcartfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+                <p>&nbsp;</p></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcartcal()">Calculate</button>
+        <p>&nbsp;</p>
+        <p id="sphcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+        <p id="sphcartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+        <p id="sphcartzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
 </div>
             
 <!-- Polar Coordinate Calculator starts -->

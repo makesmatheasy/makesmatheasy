@@ -17458,14 +17458,14 @@ function polarcal(){
     }
 }
 
-function cartcal(){
-    var p=parseFloat(document.getElementById("cartp").value);
-    var o=parseFloat(document.getElementById("carto").value);
-    var z= parseFloat(document.getElementById("cartz").value);
+function cylcartcal(){
+    var p=parseFloat(document.getElementById("cylcartp").value);
+    var o=parseFloat(document.getElementById("cylcarto").value);
+    var z= parseFloat(document.getElementById("cylcartz").value);
 
-    var outputx = document.getElementById("cartxans");
-    var outputy = document.getElementById("cartyans");
-    var outputz = document.getElementById("cartzans");
+    var outputx = document.getElementById("cylcartxans");
+    var outputy = document.getElementById("cylcartyans");
+    var outputz = document.getElementById("cylcartzans");
     var ans="";
     var ansx="";
     var ansy="";
@@ -17501,6 +17501,34 @@ function cartcal(){
     renderMathInElement(outputy);
     renderMathInElement(outputz);
 }
+function sphcartcal(){
+    var r=parseFloat(document.getElementById("sphcartr").value);
+    var o=parseFloat(document.getElementById("sphcarto").value);
+    var fi= parseFloat(document.getElementById("sphcartfi").value);
+
+    var outputx = document.getElementById("sphcartxans");
+    var outputy = document.getElementById("sphcartyans");
+    var outputz = document.getElementById("sphcartzans");
+    var ans="";
+    
+    var x = r * Math.sin(o) * Math.cos(fi);
+    var y = r * Math.sin(o) * Math.sin(fi);
+    var z = r * Math.cos(o);
+    
+    if(isNaN(r)||isNaN(o)||isNaN(fi))
+    {
+        ans += "Please fill all the field";
+        outputx.innerHTML= ans;
+        outputy.innerHTML = "";
+        outputz.innerHTML = "";
+    }
+    else{
+        outputx.innerHTML= "X : " + x.toFixed(2);
+        outputy.innerHTML = "Y : " + y.toFixed(2);
+        outputz.innerHTML = "Z : " + z.toFixed(2);
+    }
+}
+
 function sphcal(){
     var x=parseFloat(document.getElementById("sphx").value);
     var y=parseFloat(document.getElementById("sphy").value);
