@@ -343,6 +343,7 @@ function openit(id) {
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
+        "#modulo",
         "#convdiv",
         "#gamma",
         "#curve",

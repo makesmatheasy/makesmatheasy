@@ -606,6 +606,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#modulobtn").click(function () {
+        openit("#modulo");
+        closenav();
+        clearall();
+    });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
         closenav();
