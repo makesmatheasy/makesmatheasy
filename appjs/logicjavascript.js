@@ -12220,6 +12220,19 @@ function amsol() {
     renderMathInElement(result);
 }
 
+function mnapsum(){
+    var m = parseFloat(document.getElementById("mterm").value)
+    var n = parseFloat(document.getElementById("nterm").value)
+    var mtherm = parseFloat(document.getElementById("mthterm").value)
+    var ntherm = parseFloat(document.getElementById("nthterm").value)
+    var pterm = parseFloat(document.getElementById("pterm").value)
+    var d = ((Math.abs(mtherm - ntherm))/Math.abs((m - 1)-(n - 1)));
+    var a =  (mtherm-((m-1) * d));
+    var sum = (pterm*(2*a+(pterm-1)*d))/2;
+    document.getElementById("printmnAP").innerHTML = sum
+
+}
+
 function gmsol() {
     var a = parseInt(document.getElementById("aval1").value)
     var c = parseInt(document.getElementById("cval1").value)
