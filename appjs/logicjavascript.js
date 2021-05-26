@@ -2620,6 +2620,14 @@ function solveper() {
     }
 }
 
+function impse13find(){
+    var n = (document.getElementById("impse32").value);
+    let a = 1,b=2;
+    let r = 2, d = 1;
+    var sum = ((n*(2*a+(n-1)*d))/ 2 + b * ((Math.pow(r, n))-1)/(r - 1));
+    document.getElementById("impseans32").innerHTML =  sum;
+}
+
 function impsefind(){
     var x = (document.getElementById("impse1").value);
     var n = (document.getElementById("impse2").value);
