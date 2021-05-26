@@ -11221,15 +11221,18 @@ function speedu(a) {
 }
 //Length of Diagonal of a n-sided regular polygon
 function diagnfind(){
-    let n =parseInt(document.getElementById("diagnin").value) 
-    let a = parseInt(document.getElementById("diagnin1").value)
+    var n =parseInt(document.getElementById("diagnin").value) 
+    var a = parseInt(document.getElementById("diagnin1").value)
     if(!isNaN(n) && !isNaN(a)){
-    let ans = (2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180));
-    document.getElementById("diagnans").innerHTML = ans
+        var ans = 2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180);
+        document.getElementById("diagnans").innerHTML = "\\[Length \\space of \\space Diagonal \\space of \\space a \\space n-sided \\space regular \\space polygon \\space will \\space be, \\newline 2 \\times (Length \\space of \\space side) \\times sin(\\frac{((No. \\space of \\space side)-2) \\times 180}{(2 \\times (No. \\space of \\space side))} \\times \\frac{3.14159}{180})\\]";
+        document.getElementById("diagnans1").innerHTML = "\\[2 \\times "+a+" \\times sin(\\frac{("+n+"-2) \\times 180}{(2 \\times "+n+")} \\times \\frac{3.14159}{180}) \\space = \\space 2 \\times "+a+" \\times sin("+((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180).toFixed(2)+") \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("diagnans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("diagnans1").innerHTML = "";
     }
-    else{
-        document.getElementById("diagnans").innerHTML = "Please enter valid input"
-    }
+    renderMathInElement(document.getElementById("diagnans"));
+    renderMathInElement(document.getElementById("diagnans1"));
 }
 function speedcon() {
     const f = speedu(document.getElementById("speedcon-1").value);
