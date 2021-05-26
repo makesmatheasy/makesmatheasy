@@ -233,6 +233,7 @@ function openit(id) {
         "#abtest",
         "#ftest",
         "#ztest",
+        "#golds",
         "#pchart",
         "#npchart",
         "#betagamma",
