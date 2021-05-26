@@ -3989,6 +3989,18 @@ function circleinfind(){
     }
 }
 
+function solveheart(){
+    var n = parseInt(document.getElementById("inputlenheart").value);
+    if(!isNaN(n)){
+        var area = ( 1 + (math.pi) / 4 ) * n**2;
+        var height =  ( 3/4 * math.sqrt(2) + 1/2 ) * n;
+        var peri = ( 2 + (math.pi) ) * n;
+        document.getElementById("resultofareaheart").innerHTML = "Area = "+area.toFixed(3)
+        document.getElementById("resultofheightheart").innerHTML = "Height = "+height.toFixed(3)
+        document.getElementById("resultofperiheart").innerHTML = "Perimeter = " +peri.toFixed(3)
+    }
+}
+
 function solvepolycal(){
     var S = document.getElementById("inputareapolycal").value;
     var n = document.getElementById("inputsidepolycal").value;   

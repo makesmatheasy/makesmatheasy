@@ -15050,6 +15050,10 @@
                            href="#">Interior Angle Calculator</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#heart"
+                           style="text-decoration:none;" href="#">Heart</a></td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofpolygon').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;">
@@ -24536,6 +24540,56 @@ N is the population size.
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterpent"
                            style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="heart" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Heart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area (A)</h5>
+                                <p class="text-center">\[A = (1 + \frac{(\pi)}{4}) \times a^2 \]</p><br>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter (P)</h5>
+                                <p class="text-center">\[P= (2 + \pi) \times a\]</p><br>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height (h)</h5>
+                                <p class="text-center">\[h = (\frac{3}{4} \times \sqrt{2} + \frac{1}{2}) \times a\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group"></div>
+                                    <img src="images/heart.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter length square (a)" id="inputlenheart" oninput="solveheart()">
+                        <p class="stopwrap" id="resultofareaheart"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofheightheart"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofperiheart"
+                           style="font-family:mathfont;"></p><br>
                     </div>
                     <!---TILL-->
                 </div>
