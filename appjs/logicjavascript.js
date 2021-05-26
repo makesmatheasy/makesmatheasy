@@ -3542,6 +3542,46 @@ function alisumfind(){
     document.getElementById("aliexplain").innerHTML =  explain1+explain2;
     renderMathInElement(document.getElementById("aliexplain"));
 }
+
+function alisum1find(){
+    let num = parseInt(document.getElementById("alisum1").value)
+    if (!checkAbundant(num)) {
+        document.getElementById("alisum1ans").innerHTML =  "false"
+    }
+    for ( let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0 && i != num) {
+            if (i * i == num) {
+                if (!isDeficient(i)) {
+                    document.getElementById("alisum1ans").innerHTML =  "false";
+                }
+            } else if (!isDeficient(i) || !isDeficient(num / i)) {
+                document.getElementById("alisum1ans").innerHTML =  "false";
+            }
+        }
+    }
+    document.getElementById("alisum1ans").innerHTML =  "true";
+}
+
+function getSum( n) {
+    let sum = 0;
+    for ( let i = 1; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            if (n / i == i)
+                sum = sum + i;
+            else {
+                sum = sum + i;
+                sum = sum + (n / i);
+            }
+        }
+    }
+    return sum;
+}
+function checkAbundant( n) {
+    return (getSum(n) - n > n);
+}
+function isDeficient( n) {
+    return (getSum(n) < (2 * n));
+}
 //Distance between point and a line
 function dispointsolve()
 {
