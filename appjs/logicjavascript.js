@@ -16683,18 +16683,18 @@ function fa(x)
 }
 //Possibility to create a polygon with a given angle
 function posse(){
-    let a  = parseInt(document.getElementById("anglecalc").value)
+    var a  = parseInt(document.getElementById("anglecalc").value)
     if(!isNaN(a)){
-    let n = parseFloat(360/(180-a))
-    if(n === parseInt(n)){
-        document.getElementById("posseans").innerHTML = "Yes It is possible"
+        var n = 360/(180-a);
+        if(n === parseInt(n)){
+            document.getElementById("posseans").innerHTML = "\\[Here \\space the \\space value \\space of \\space n \\space = \\space \\frac{369}{180-"+a+"} \\space = \\space "+n.toFixed(2)+" \\newline since, \\space the \\space value \\space of \\space n \\space is \\space an \\space integer, \\newline It \\space is \\space possible \\space to \\space create \\space a \\space polygon \\space with \\space a \\space given \\space angle \\space ("+a+")\\]";
+        } else{
+            document.getElementById("posseans").innerHTML = "\\[Here \\space the \\space value \\space of \\space n \\space = \\space \\frac{369}{180-"+a+"} \\space = \\space "+n.toFixed(2)+" \\newline since, \\space the \\space value \\space of \\space n \\space is \\space NOT \\space an \\space integer, \\newline It \\space is \\space NOT \\space possible \\space to \\space create \\space a \\space polygon \\space with \\space a \\space given \\space angle \\space ("+a+")\\]";
+        }
+    } else{
+        document.getElementById("posseans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
     }
-    else
-        document.getElementById("posseans").innerHTML = "Not possible"
-}
-else{
-    document.getElementById("posseans").innerHTML = "Please enter valid input"
-}
+    renderMathInElement(document.getElementById("posseans"));
 }
 //PERCENTILE RANK CALCULATOR
 function rankcal() {
