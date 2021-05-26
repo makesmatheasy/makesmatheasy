@@ -11767,7 +11767,27 @@ function solveperc(){
     renderMathInElement(document.getElementById('t'));
     renderMathInElement(document.getElementById('t1'));
 }
+
+function solveperper(){
+    var x5=(document.getElementById('x5').value);
+    var y5=(document.getElementById('y5').value);
+    var ansexp ="";
+    if(x5!="" && y5!=""){
+        var ans = parseFloat(x5)*parseFloat(y5)/100;
+        ansexp += "\\[ "+x5+" \\space \\times \\space "+y5+"\\]" ; 
+        ansexp += "\\[= "+ans+" %\\]";
+        document.getElementById('perans1').innerHTML= ansexp;
+    } else{
+        document.getElementById('perans1').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('perans2').innerHTML= "";
+    }
+    renderMathInElement(document.getElementById('perans1'));
+}
+
+
+
 //Print tetrahedral numbers upto Nth term
+
 function typenumfind(){
     let n = document.getElementById("typenum0").value;
     if(n=="")
@@ -17771,6 +17791,25 @@ function manhatcal(){
         renderMathInElement(output);
     }
 }
+function polarcal(){
+    var x=parseFloat(document.getElementById("polarx").value);
+    var y=parseFloat(document.getElementById("polary").value);
+    var outputr = document.getElementById("polarans1");
+    var outputo = document.getElementById("polarans2");
+    var r =  Math.sqrt(x*x + y*y);
+    var o = Math.atan(y/x);
+    var ans="";
+    if(isNaN(x)||isNaN(y))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+    }
+}
 
 function polarcal(){
     var x=parseFloat(document.getElementById("polarx").value);
@@ -17833,7 +17872,6 @@ function cartcal(){
         outputx.innerHTML= ansx;
         outputy.innerHTML = ansy;
         outputz.innerHTML = ansz;
-
     }
     renderMathInElement(outputx);
     renderMathInElement(outputy);
@@ -17863,6 +17901,7 @@ function sphcal(){
         outputr.innerHTML= "r: " + r;
         outputo.innerHTML = "θ: " + o;
         outputfi.innerHTML = "φ: " + fi;
+
     }
 }
 
@@ -17890,10 +17929,8 @@ function cylcal(){
         outputo.innerHTML = "θ: " + o;
         outputz.innerHTML = "z: " + z;
     }
-    renderMathInElement(outputp);
-    renderMathInElement(outputo);
-    renderMathInElement(outputz);
 }
+
 //BILINEAR INTERPOLATION CALCULATOR
 function bilinearcal(){
     var bx1=parseInt(document.getElementById("bicx1").value);
