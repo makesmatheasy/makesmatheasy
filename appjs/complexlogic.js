@@ -224,40 +224,38 @@ function volofcuboid() {
     renderMathInElement(document.getElementById("cuboidAns3"));
 }
 
-function euler()
-{
+function euler(){
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
   explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
   var r = parseInt(document.getElementById("cpereal").value);
   var i = parseInt(document.getElementById("cpeimg").value);
   var result= document.getElementById("comperesult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  var x1;
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-      x1=x+"e^{-iπ"+y+"}";
-	  x=x+"e<sup>-iπ"+y+"</sup>";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x1=x+"e^{iπ"+y+"}";
-   x=x+"e<sup>iπ"+y+"</sup>";
-   explain+="π" +y+"\\]";
-  }
-  result.innerHTML = x;
-  explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
-  document.getElementById('compeexplain').innerHTML=explain;
-  renderMathInElement(document.getElementById("compeexplain"));
+  if(!isNaN(r) && (!isNaN(i))){
+        var x = (Math.sqrt((r*r)+(i*i)));
+        var x1;
+        if(!Number.isInteger(x)){
+            var j = (r*r)+(i*i);
+            x = "&#8730;  "+ j ;
+        } explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
+        var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+        explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
+        if(y<0) {   
+            y=nerdamer((-1)*y).toString();
+            x1=x+"e^{-iπ"+y+"}";
+            x=x+"e<sup>-iπ"+y+"</sup>";
+            explain+="-π" +y+"\\]";
+        } else{
+            y=y.toString();
+            x1=x+"e^{iπ"+y+"}";
+        x=x+"e<sup>iπ"+y+"</sup>";
+        explain+="π" +y+"\\]";
+        } result.innerHTML = x;
+        explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
+        document.getElementById('compeexplain').innerHTML=explain;
+    } else{
+        document.getElementById('compeexplain').innerHTML= "\\[Please \\space enter \\space valid \\space input\\]";
+        result.innerHTML = "";
+    } renderMathInElement(document.getElementById("compeexplain"));
 }
 
 function npower()
@@ -1230,6 +1228,33 @@ function hpcal()
    }
 }
 
+function hpcal11()
+{
+    var x=parseInt(document.getElementById("lterm1").value);
+    var y=parseInt(document.getElementById("cdiffer1").value);
+    var z=parseInt(document.getElementById("totnum1").value);
+    var ansout = document.getElementById("hpans11");
+    var anstemp ="";
+    if(!isNaN(parseInt(x)) && !isNaN(parseInt(y)) && !isNaN(parseInt(z)))
+   {
+    var numb = x - ((y - 1)*z);
+    var num6 = (1 / numb) ;
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{l-(n-1)d} \\]";
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{" + x +  "- (" + y + " - 1) \\times" + z + "} \\]";
+    anstemp +=  "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space" + (num6).toFixed(3) + "\\]";
+    ansout.innerHTML = anstemp;
+   }
+   else
+   {
+     anstemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+     ansout.innerHTML = anstemp;
+    
+   }
+   renderMathInElement(ansout);
+}
+
+
+
 function ppcal()
 {
     var a=document.getElementById("lamb").value;
@@ -1646,6 +1671,26 @@ function suppangvercal(){
     renderMathInElement(document.getElementById("suppangverans"));
 }
 
+function cotermangcal(){
+    var a=document.getElementById("cotang").value;
+    var ans="";
+    var pos="\\[Positive \\space Coterminal \\space Angle:\\space";
+    var neg="\\[Negative \\space Coterminal \\space Angle:\\space";
+    if(a==""){
+        ans="Enter the angle to find the coterminal angle";
+    } else{
+        var t=parseInt(a);
+        for(let i=1;i<5;i++){
+            pos+=t+360*i+"°,";
+            neg+=t-360*i+"°,";
+        }
+        pos=pos.slice(0,-1)+"...\\]";
+        neg=neg.slice(0,-1)+"...\\]";
+        ans=pos+neg;
+    }
+    document.getElementById("cotermangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotermangans"));
+}
 function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";

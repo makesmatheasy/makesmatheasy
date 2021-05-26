@@ -188,6 +188,8 @@ Other Tech/Libraries
   - Rounding off numbers
   - EMI Calculator
   - GST Calculator
+  - Golden Ratio Calculator
+  - Golden Rectangle Calculator
   - Polynomial Degree Finder
   - Simple and Compound Interest
   - Factorial
