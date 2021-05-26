@@ -1438,6 +1438,13 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
+function moduloCal(){
+    var x = parseInt(document.getElementById("modx").value);
+    var y = parseInt(document.getElementById("mody").value);
+    var r = x%y;
+    document.getElementById("moduloans").innerHTML = "x % y = " + r;
+}
+
 function covcalcu(){
     var num1=document.getElementById("setx").value;
     var num2=document.getElementById("sety").value;
