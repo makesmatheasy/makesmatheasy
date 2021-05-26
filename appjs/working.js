@@ -1016,6 +1016,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#circumradiusareabtn").click(function () {
+        openit("#circumradiusarea");
+        closenav();
+        clearall();
+    });
 
     $("#quadeqncalbtn").click(function () {
         openit("#quadeqncal");

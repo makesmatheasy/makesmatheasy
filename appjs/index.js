@@ -240,6 +240,7 @@ function openit(id) {
         "#npchart",
         "#betagamma",
         "#parallel",
+        "#circumradiusarea",
         "#dri",
         "#expansionc",
         "#unitconcal",

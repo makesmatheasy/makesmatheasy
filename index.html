@@ -1295,6 +1295,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="circumradiusareabtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Circum radius and Area of External Triangle
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Circum radius and Area of External Triangle','#circumradiusarea','c','circumradiusareafav')"><img
+                                        id="circumradiusareafav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="trigonoidenbutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trigonometry
                                 Identities
@@ -12259,6 +12277,40 @@
                 </div>
             </form>
             <div id="sumAndDiffTrians"></div>
+        </div>
+
+        <div class="collapse" id="circumradiusarea">
+            <h2>Circum Area and External Radius</h2>
+            <br>
+            <p>Area of External Triangle</p><br>
+            <p id="exterarea">\[8R^2cosA/2cosB/2cosC/2\]</p>    
+
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="radius" placeholder="Enter External radius"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle1" placeholder="Enter angle A "/>
+                <input type="text" name="c" style="width: 250px;" class="form__field" id="angle2" placeholder="Enter angle B"/>
+                <input type="text" name="d" style="width: 250px;" class="form__field" id="angle3" placeholder="Enter angle C"/>
+                <br>
+
+                <br>
+                <button  class = "btn btn-outline-light" onclick = "external_area()" >Find</button>
+                <br>
+            </div>
+
+                <h2  id="externarea"></h2><br>
+
+                <p>Circum radius of External Triangle</p><br>
+                <p id="exterarea">\[2R\]</p> 
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius1" placeholder="Enter External radius"/>  
+                    <br>
+
+                    <br>
+                    <button  class = "btn btn-outline-light" onclick = "external_radius()" >Find</button>
+                    <br>
+                </div>
+
+                <h2  id="externradius"></h2>
         </div>
 
         <!-- sensitivity and Specificity starts -->
