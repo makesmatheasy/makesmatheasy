@@ -18097,11 +18097,24 @@ function sphcal(){
     var outputr = document.getElementById("sphrans");
     var outputo = document.getElementById("sphoans");
     var outputfi = document.getElementById("sphfians");
-    var r =  Math.sqrt(x*x + y*y + z*z);
-    var o = Math.acos(z/r);
-    var fi = Math.atan(y/x);
+    var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
+    var o = Math.acos(z/r).toFixed(2);
+    var fi = Math.atan(y/x).toFixed(2);
     var ans="";
+    var temp1 = x*x + y*y + z*z;
+    var temp2 = (z/r).toFixed(2);
+    var ansr = "\\[r:\\space \\sqrt{x^2 + y^2 + z^2}\\]";
+    ansr += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2 + "+z+"^2}\\]";
+    ansr += "\\[=\\space \\sqrt{"+temp1+"} \\]";
+    ansr += "\\[=\\space "+r+" \\]";
 
+    var anso = "\\[θ:\\space \\arccos(\\frac{z}{r} )\\]";
+    anso = "\\[θ:\\space \\arccos(\\frac{"+z+"}{"+r+"} )\\]";
+    anso += "\\[=\\space \\arccos("+temp2+")\\]"
+    anso += "\\[=\\space "+o+"\\]"
+
+    var ansz = "\\[z:\\space Z\\]";
+    ansz += "\\[=\\space "+z+"\\]";
     if(isNaN(x)||isNaN(y)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -18110,10 +18123,14 @@ function sphcal(){
         outputfi.innerHTML = "";
     }
     else{
-        outputr.innerHTML= "r: " + r;
-        outputo.innerHTML = "θ: " + o;
-        outputfi.innerHTML = "φ: " + fi;
+        outputr.innerHTML= ansr;
+        outputo.innerHTML = anso;
+        outputfi.innerHTML = ansz;
     }
+    renderMathInElement(outputr);
+    renderMathInElement(outputo);
+    renderMathInElement(outputfi);
+
 }
 
 function cylcal(){
