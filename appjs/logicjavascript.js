@@ -12965,6 +12965,20 @@ function lacube10find(){
     document.getElementById("lacube10ans").innerHTML = "Count of non-squares "+ (n - sc) + "<br>";
 }
 
+function lacube11find(){
+    let n  = parseInt(document.getElementById("lacube12").value)
+    let s = new Map();
+    for (let i = 0; i * i <= n; ++i){
+        s.set(i * i, 1);
+        if (s.has(n - i * i)){
+            document.getElementById("lacube11ans").innerHTML = Math.sqrt(n - i * i) +"^2 + " + i + "^2<br>"
+            document.getElementById("lacube11ans").innerHTML =  "true"
+            return true;
+        }
+    }
+    document.getElementById("lacube11ans").innerHTML =  "false"
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
