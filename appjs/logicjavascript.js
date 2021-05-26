@@ -5158,6 +5158,23 @@ function orthosolve(){
         document.getElementById('ortho_output').innerHTML= 'Please enter all Input';
     }
 }
+
+function inextri(){
+    let a = parseInt(document.getElementById('inputabc').value)
+    let b = parseInt(document.getElementById('inputabc1').value)
+    let c = parseInt(document.getElementById('inputabc2').value)
+    let r = parseInt(document.getElementById('inputabc5').value)
+    if(!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(r)){
+let II1 = r/(Math.sin((b*180/Math.PI)/2)*(Math.sin((c*180/Math.PI)/2)))
+let II2 = r/(Math.sin((b*180/Math.PI)/2)*(Math.sin((c*180/Math.PI)/2)))
+let II3 = r/(Math.sin((b*180/Math.PI)/2)*(Math.sin((c*180/Math.PI)/2)))
+    document.getElementById("inexans").innerHTML = "Distance between Incentre and Excentre is " + II1 + "," + II2 + "," + II3 
+    }
+    else{
+        document.getElementById('inexans').innerHTML= 'Please enter all Input';
+    }
+}
+
 //Oblique Triangle Calculator
 function obliquetri(){
     var a,b,c;
