@@ -14274,30 +14274,6 @@ function planeequation(){
  
 }
 
-// Circum area and external radius
-
-function external_area(){
-    let R = parseInt(document.getElementById("radius").value);
-  let A = parseInt(document.getElementById("angle1").value);
-  let B = parseInt(document.getElementById("angle2").value);
-  let C = parseInt(document.getElementById("angle3").value);
-
-  var res = 8*R*R*(cos(A/2)*cos(B/2)*cos(C/2));
-  document.getElementById("externarea").innerHTML = res;
-
-
-}
-function cos(degrees) {
-    var radians = (degrees*Math.PI)/180;
-    return Math.cos(radians);
-}
-
-function external_radius(){
-    let R1 = parseInt(document.getElementById("radius1").value);
-    var re = 2*R1;
-    document.getElementById("externradius").innerHTML = re;
-}
-
 // function to find double factorial
 function dfact(num) {
     if (num == 0 || num==1)
@@ -14336,6 +14312,19 @@ function catalanNumbers(num)
     document.getElementById("catNumResult").innerHTML = "The Catalan Numbers are: " + res;    
 }
 }   
+
+//Distance between incenter and excenter
+
+function dist_incenex(){
+    let r = parseInt(document.getElementById("ex_rad").value);
+    let ang = parseInt(document.getElementById("angle_1").value);
+    var ans = 4*r*(sin(ang/2));
+    document.getElementById("dist_inex").innerHTML = ans;
+}
+function sin(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.sin(radians);
+}
 
 //Smallest number divisible function
 function gcd(a, b)

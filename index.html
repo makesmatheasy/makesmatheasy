@@ -1277,6 +1277,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="incenterexcenterbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Distance between Incenter and Excenter
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Distance between Incenter and Excenter','#incenterexcenter','c','incenterexcenterfav')"><img
+                                        id="incenterexcenterfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="trigonovaluestablebutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trigonometry
                                 Values
@@ -12311,6 +12327,28 @@
                 </div>
 
                 <h2  id="externradius"></h2>
+        </div>
+
+
+        <div class="collapse" id="incenterexcenter">
+            <h2>Distance between Incenter and Excenter</h2>
+            <br>
+            <p id="incenex">\[4RsinA/2\]</p>    
+
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>
+               
+                <br>
+
+                <br>
+                <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button>
+                <br>
+            </div>
+
+                <h2  id="dist_inex"></h2><br>
+
+                
         </div>
 
         <!-- sensitivity and Specificity starts -->
