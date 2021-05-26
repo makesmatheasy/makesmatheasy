@@ -14078,6 +14078,7 @@ function getCount(d, n){
 
 //---------------------------------------------------------------------
 
+
 //Function for addition of any number system
 function addBinDecHexOct(){
     const firstBase = document.getElementById("adding-all-select1").value;
