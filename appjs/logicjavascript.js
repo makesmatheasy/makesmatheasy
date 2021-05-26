@@ -8807,6 +8807,31 @@ function solverightwedge() {
     }
 
 }
+
+//Spherical Wedge
+function solveSphericalwedge() {
+    var r = document.getElementById("inputsphericalr").value;
+    var a = document.getElementById("inputsphericala").value;
+    var voloutput = document.getElementById("resultofsphericalwedgevol");
+    var areaoutput = document.getElementById("resultofsphericalwedgearea");
+    var areatemp = "";
+    var voltemp = "";
+    var vol = (a*Math.PI*0.67*r*r*r)/180 ;
+    var area= (a*Math.PI*r*r)/180 + (3.14*r*r);
+    if ((r != "") && (a!="")) {
+        voltemp += "\\[Volume \\space of \\space Spherical \\space Wedge \\space \\newline" + a + "\\times \\frac{2}{3} \\times" + r + "\\times" + r + "\\times" + r  +  "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Spherical \\space Wedge \\space  \\newline" + a+ "\\times 2 \\times" + r + "+2 + \\pi \\times" + r + "^2" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 //Sphere
 function solvesphere() {
     var radius = document.getElementById("inputradiussph").value;

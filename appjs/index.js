@@ -346,6 +346,7 @@ function openit(id) {
         "#grey-bin",
         "#consim",
         "#modulo",
+        "#spherewedge",
         "#convdiv",
         "#gamma",
         "#curve",
