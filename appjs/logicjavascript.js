@@ -18003,9 +18003,22 @@ function polarcal(){
     var y=parseFloat(document.getElementById("polary").value);
     var outputr = document.getElementById("polarans1");
     var outputo = document.getElementById("polarans2");
-    var r =  Math.sqrt(x*x + y*y);
-    var o = Math.atan(y/x);
+    var r =  Math.sqrt(x*x + y*y).toFixed(2);
+    var o = Math.atan(y/x).toFixed(2);
     var ans="";
+
+    var temp1 = (x*x + y*y).toFixed(2);
+    var temp2 = (y/x).toFixed(2);
+    var ansr = "\\[r:\\space \\sqrt{x^2 + y^2}\\]";
+    ansr += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2}\\]";
+    ansr += "\\[=\\space \\sqrt{"+temp1+"} \\]";
+    ansr += "\\[=\\space "+r+" \\]";
+
+    var anso = "\\[θ:\\space \\tan(\\frac{y}{x} )\\]";
+    anso = "\\[θ:\\space \\tan(\\frac{"+y+"}{"+x+"} )\\]";
+    anso += "\\[=\\space \\tan("+temp2+")\\]"
+    anso += "\\[=\\space "+o+"\\]"
+
     if(isNaN(x)||isNaN(y))
     {
         ans += "Please fill all the field";
@@ -18013,9 +18026,11 @@ function polarcal(){
         outputo.innerHTML = "";
     }
     else{
-        outputr.innerHTML= "r: " + r;
-        outputo.innerHTML = "θ: " + o;
+        outputr.innerHTML= ansr;
+        outputo.innerHTML = anso;
     }
+    renderMathInElement(outputr);
+    renderMathInElement(outputo);
 }
 
 function cylcartcal(){
