@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -511,6 +511,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cotermangbtn").click(function () {
+        openit("#cotermang");
+        closenav();
+        clearall();
+    });
     $("#ttestbtn").click(function () {
         openit("#ttest");
         closenav();
@@ -598,6 +603,27 @@ $(document).ready(function () {
     });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
+        closenav();
+        clearall();
+    });
+
+    $("#sphbtn").click(function(){
+        openit("#sph");
+        closenav();
+        clearall();
+    });
+    $("#polarbtn").click(function(){
+        openit("#polar");
+        closenav();
+        clearall();
+    });
+    $("#cylbtn").click(function(){
+        openit("#cyl");
+        closenav();
+        clearall();
+    });
+    $("#modulobtn").click(function () {
+        openit("#modulo");
         closenav();
         clearall();
     });
@@ -1292,6 +1318,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#goldrecbtn").click(function () {
+        openit("#goldrec");
+        closenav();
+        clearall();
+    });
     $("#platonicbtn").click(function () {
         openit("#platonic");
         closenav();
@@ -1477,6 +1508,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#nbaserootcollapsebtn").click(function(){
+        openit("#n_baseroot");
+        closenav();
+        clearall();
+    });
+
 
 })
 
