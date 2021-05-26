@@ -18410,8 +18410,8 @@ function cylcal(){
     var outputp = document.getElementById("cylpans");
     var outputo = document.getElementById("cyloans");
     var outputz = document.getElementById("cylzans");
-    var p =  Math.sqrt(x*x + y*y).tofixed(3);
-    var o = Math.tan(y/x).toFixed(3);
+    var p =  math.sqrt(x*x + y*y);
+    var o = math.tan(y/x);
     var ans="";
 
     if(isNaN(x)||isNaN(y)||isNaN(z))
@@ -18422,9 +18422,9 @@ function cylcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputp.innerHTML= "ρ: " + p;
-        outputo.innerHTML = "θ: " + o;
-        outputz.innerHTML = "z: " + z;
+        outputp.innerHTML= "ρ: " + p.toFixed(3);
+        outputo.innerHTML = "θ: " + o.toFixed(3);
+        outputz.innerHTML = "z: " + z.toFixed(3);
     }
 }
 
