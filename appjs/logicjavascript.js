@@ -12131,9 +12131,11 @@ function solveperper(){
 
 function typenumfind(){
     let n = document.getElementById("typenum0").value;
+    var ans="\\[";
+    var explain="\\[N-th \\space tetrahedral \\space number \\space is \\space sum \\space of\\space triangular \\space number \\space upto \\space n \\space terms \\space or \\space Nth \\space Triangular \\space number \\space+\\space Previous \\space Sum\\]"+"\\[Nth \\space Trigular \\space Number=\\frac{n*(n+1)}{2}\\]"+"\\[";
     if(n=="")
     {
-        document.getElementById("typenumans").innerHTML =  "Please enter number to find answer";
+        ans+=  "Please enter number to find answer";
     }
     else{
       n= parseInt(n);
@@ -12141,10 +12143,17 @@ function typenumfind(){
     var curr;
     for (var i = 1; i <= n; i++)
     {
-        curr = findTriangularNumber(i); 
-        document.getElementById("typenumans").innerHTML =  curr + " ";
+        curr = findTriangularNumber(i);
+        explain+="("+curr+"+"+prev+"=";
+        curr =prev+curr; 
+        ans+=  curr + "\\space \\space ";
+        explain+=curr+")\\space ";
         prev = curr;
     }
+    explain+="\\]";
+    ans+="\\]";
+    document.getElementById("typenumans").innerHTML =ans+explain;
+    renderMathInElement(document.getElementById("typenumans"));
 }
 }
 //Print pentatope numbers upto Nth term
