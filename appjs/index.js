@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#ackermann",
         "#lucNum",
         "#smNum",
         "#catNum",
@@ -233,6 +234,7 @@ function openit(id) {
         "#abtest",
         "#ftest",
         "#ztest",
+        "#golds",
         "#pchart",
         "#npchart",
         "#betagamma",
