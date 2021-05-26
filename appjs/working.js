@@ -606,6 +606,27 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
+    $("#sphbtn").click(function(){
+        openit("#sph");
+        closenav();
+        clearall();
+    });
+    $("#polarbtn").click(function(){
+        openit("#polar");
+        closenav();
+        clearall();
+    });
+    $("#cylbtn").click(function(){
+        openit("#cyl");
+        closenav();
+        clearall();
+    });
+    $("#modulobtn").click(function () {
+        openit("#modulo");
+        closenav();
+        clearall();
+    });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
         closenav();
@@ -1294,6 +1315,11 @@ $(document).ready(function () {
     });
     $("#goldrbtn").click(function () {
         openit("#goldr");
+        closenav();
+        clearall();
+    });
+    $("#goldrecbtn").click(function () {
+        openit("#goldrec");
         closenav();
         clearall();
     });
