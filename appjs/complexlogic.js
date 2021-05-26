@@ -2084,3 +2084,51 @@ function egccal()
     renderMathInElement(document.getElementById("egcans"));
     renderMathInElement(document.getElementById("egcexplain"));
 }
+function iskaprekar(n)
+{
+    if (n == 1)
+    return true;
+    let sq_n = n * n;
+    let count_digits = 0;
+    while (sq_n)
+    {
+        count_digits++;
+        sq_n = parseInt(sq_n / 10);
+    }
+ 
+    let sq_n1 = n * n; 
+    for (let r_digits = 1;
+        r_digits < count_digits;
+        r_digits++)
+    {
+        let eq_parts = Math.pow(10, r_digits);
+        if (eq_parts == n)
+            continue;
+        let sum = parseInt((sq_n1 / eq_parts) +
+                    sq_n1 % eq_parts);
+        if (sum == n)
+        return true;
+    }
+    return false;
+}
+function kapfind()
+{
+    var num=document.getElementById("kap1").value;
+    var ans="";
+    if(num==""||isNaN(num))
+    {
+        ans="Please enter proper number";
+    }
+    else
+    {
+      if(iskaprekar(num)==true)
+      {
+          ans=num+" is a Kaprekar Number";
+      }
+      else
+      {
+        ans=num+" is not a Kaprekar Number";
+      }
+    }
+    document.getElementById("kapans").innerHTML=ans;
+}

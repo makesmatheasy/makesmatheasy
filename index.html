@@ -1888,6 +1888,24 @@
                 <table class="table">
                     <tr>
                         <td style="border-top:none">
+                            <a id="kap"
+                            style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Kaprekar Number</a>
+                       
+                         </td>
+
+                     <td style="float:right;border-top: none;">
+                    <span onclick="addtofavourite('Kaprekar Number','#kaps','c','kaprekarimgfav')"><img
+                            id="kaprekarimgfav" src="images/unfavourite.png"
+
+                            style="height:1.5625rem;filter: none;"></span>
+            </td>
+        </tr>
+    </table>
+</li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top:none">
                             <a id="abundant"
                             style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Abundant Number</a>
                        
@@ -18307,7 +18325,12 @@
     <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="adamans"></p><br>
 </div>
-
+<div class="collapse" id="kaps">
+    <h1 style="color: white;font-family:mathfont">Kaprekarumber</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="kap1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="kapfind()">FInd</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="kapans"></p><br>
+</div>
 <div class="collapse" id="abundants">
     <h1 style="color: white;font-family:mathfont">Abundant Number</h2><p>&nbsp;</p>
     <input style="color: white; font-family:mathfont" type="text"id="amicable1" placeholder="Enter the first input number" class="form__field"><p>&nbsp;</p>

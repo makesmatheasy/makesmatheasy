@@ -182,6 +182,7 @@ function openit(id) {
         "#gcd",
         "#oloid",
         "#dbltime",
+        "#kaps",
         "#chitest",
         "#adams",
         "#integralcollapse",
