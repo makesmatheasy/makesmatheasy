@@ -14086,59 +14086,91 @@ function addBinDecHexOct(){
     const input2 = document.getElementById("adding-all-input2").value;
     const resultType= document.getElementById("adding-all-result-type").value;
     let result = document.getElementById("adding-all-result");
+    let work = document.getElementById("adding-all-working");
+    var print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
+
     var x1,x1o;
     var x2,x2o;
    
     if(firstBase === "Binary"){
         x1 = calculatefrac(input1,2);
         x1o = fracDectoBinHexOct(x1,2);
+        print += "<h5>Step1 : Convert the Binary number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
     }
     else if (firstBase === "Octal"){
         x1 = calculatefrac(input1,8);
         x1o = fracDectoBinHexOct(x1,8);
+        print += "<h5>Step1 : Convert the Octal number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
     }
     else if(firstBase === "Hexa Decimal"){
         x1 = calculatefrac(input1,16);
         x1o = fracDectoBinHexOct(x1,16);
+        print += "<h5>Step1 : Convert the Hexa Decimal number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
     }
     else if(firstBase === "Decimal"){
         x1 = parseFloat(input1);
         x1o = parseFloat(x1);
+        print += "<h5>Step1 : Take the Decimal number in Input 1</h5>";
+        print += "i.e," + x1 + "<br>";
     }
 
     if(secondBase === "Binary"){
         x2 = calculatefrac(input2,2);
         x2o = fracDectoBinHexOct(x2,2);
+        print += "<h5>Step2 : Convert the Binary number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
     }
     else if (secondBase === "Octal"){
         x2 = calculatefrac(input2,8);
         x2o = fracDectoBinHexOct(x2,8);
+        print += "<h5>Step2 : Convert the Octal number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
     }
     else if(secondBase === "Hexa Decimal"){
         x2 = calculatefrac(input2,16);
         x2o = fracDectoBinHexOct(x2,16);
+        print += "<h5>Step2 : Convert the Hexa Decimal number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
     }
     else if(secondBase === "Decimal"){
         x2 = parseFloat(input2);
         x2o = parseFloat(x2);
+        print += "<h5>Step2 : Take the Decimal number in Input 2 </h5>";
+        print += "i.e," + x2 + "<br>";
     }
 
     var x3=x1+x2;
+    print += "<h5>Step3 : Now add the decimal values found in STEP1 and STEP2</h5>";
+    print += x1 + "+" + x2 + "=" + x3;
 
-    if(isNaN(x1) || x1o!=input1)
+    if(isNaN(x1) || x1o!=input1){
     result.innerHTML = "Enter correct " + firstBase + " value in Input 1";
-    else if(isNaN(x2)|| x2o!=input2)
+    }else if(isNaN(x2)|| x2o!=input2){
     result.innerHTML = "Enter a " + secondBase + " value in Input 2";
-    else if(resultType === "Binary")
+    }else if(resultType === "Binary"){
     result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
-    else if (resultType === "Octal")
+    print += "<h5>Step4 : To find the result in Binary convert the answer found in STEP3 to Binary</h5>";
+    print += x3 + "->" + fracDectoBinHexOct(x3,2);
+    }else if (resultType === "Octal"){
     result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
-    else if(resultType === "Hexa Decimal")
+    print += "<h5>Step4 : To find the result in Octal convert the answer found in STEP3 to Octal</h5>";
+    print += x3 + "->" + fracDectoBinHexOct(x3,8);
+    }else if(resultType === "Hexa Decimal"){
     result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3,16);
-    else if(resultType === "Decimal")
+    print += "<h5>Step4 : To find the result in Hexa Decimal convert the answer found in STEP3 to Hexa Decimal</h5>";
+    print += x3 + "->" + fracDectoBinHexOct(x3,16);
+    }else if(resultType === "Decimal"){
     result.innerHTML = "Answer in Decimal=" + x3.toString();
-    else
+    print += "<h5>Step4 : Answer in Decimal</h5>";
+    print += x3.toString();
+    }else{
     result.innerHTML = "";
+    }
+
+    work.innerHTML = print;
 }
 
 //---------------------------------------------------------------------
