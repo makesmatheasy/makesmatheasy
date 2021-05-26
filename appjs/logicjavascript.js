@@ -3013,15 +3013,22 @@ function solvetetrahexa(){
 
     }
 }
+
 //Check whether one root of the Quadratic Equation is twice of other or not
 function twicefind(){
-    let a = parseInt(document.getElementById("aofeqn3").value)
-    let b = parseInt(document.getElementById("bofeqn3").value)
-    let c = parseInt(document.getElementById("cofeqn3").value)
-    if (2 * b * b == 9 * a * c)
-        document.getElementById("twiceans").innerHTML  = "Yes";
-    else
-        document.getElementById("twiceans").innerHTML = "No";
+    var a = parseInt(document.getElementById("aofeqn3").value)
+    var b = parseInt(document.getElementById("bofeqn3").value)
+    var c = parseInt(document.getElementById("cofeqn3").value)
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c)){  
+        if (2 * b * b == 9 * a * c){
+            document.getElementById("twiceans").innerHTML  = "\\[Since \\space here, \\space (2 \\times b \\times b) \\space exactly \\space equals \\space to \\space (9 \\times a \\times c) \\space that \\space  is, \\newline "+(2 * b * b)+" \\space = \\space "+(9 * a * c)+" \\newline Hence, \\space one \\space root \\space  of \\space the \\space Quadratic \\space Equation \\space is \\space twice\\]";
+        } else {
+            document.getElementById("twiceans").innerHTML = "\\[Since \\space here, \\space (2 \\times b \\times b) \\space NOT \\space equals \\space to \\space (9 \\times a \\times c) \\space that \\space  is, \\newline "+(2 * b * b)+" \\space != \\space "+(9 * a * c)+" \\newline Hence, \\space one \\space root \\space  of \\space the \\space Quadratic \\space Equation \\space is \\space NOT \\space twice\\]";
+        }
+    } else{
+        document.getElementById("twiceans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    }
+    renderMathInElement(document.getElementById("twiceans"));
 }
 
 function partialdiffsolve() {
