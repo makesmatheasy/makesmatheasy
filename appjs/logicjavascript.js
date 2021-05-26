@@ -2745,6 +2745,12 @@ else{
 }
 }
 
+function impsefind20(){
+    var n = parseInt(document.getElementById("impse20").value)
+    var series = n * (Math.pow(n, 2) + 3 * n + 5 ) / 3;
+    document.getElementById("impseans20").innerHTML =  series;
+}
+
 function impse2find(){
     let x = parseInt(document.getElementById("impse5").value)
     let n = parseInt(document.getElementById("impse6").value)
