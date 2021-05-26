@@ -3725,6 +3725,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="planeinterceptbtn"
+                                style="font-size:15px;cursor: pointer;background:transparent;border:none;">Intercept form of Plane</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                            <span
+                                onclick="addtofavourite('Intercept form of Plane','#planeintercept','c','planeinterceptfav')"><img
+                                    id="planeinterceptfav" src="images/unfavourite.png"
+                                    style="height:25px;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="quadeqncalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Quadratic Equation Calculator</a>
                         </td>
@@ -14005,6 +14022,38 @@
             <button class="btn btn-dark" onclick="twicefind()">Find</button><br>
             <p id="twiceans"></p><br>
         </div>
+
+        <div class="collapse" id="planeintercept">
+            <h2>Intercept form of Plane</h2>
+            <br>
+            <p id="interceptform">\[ax+by+cz+d=0\]</p>    
+
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="x1" placeholder="Enter x1"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="y1" placeholder="Enter y1 "/>
+                <input type="text" name="c" style="width: 250px;" class="form__field" id="z1" placeholder="Enter z1"/>
+                <br>
+
+                <br>
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="x2" placeholder="Enter x2"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="y2" placeholder="Enter y2 "/>
+                <input type="text" name="c" style="width: 250px;" class="form__field" id="z2" placeholder="Enter z2"/>
+                <br>
+                <br>
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="x3" placeholder="Enter x3"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="y3" placeholder="Enter y3 "/>
+                <input type="text" name="c" style="width: 250px;" class="form__field" id="z3" placeholder="Enter z3"/>
+                <br>
+                <br>
+                <button  class = "btn btn-outline-light" onclick = "planeequation()" >Find</button>
+                <br>
+            </div>
+
+                <h2  id="interceptresult"></h2>
+                  
+
+        </div>
+
 
         <div class="collapse" id="mulsolwithsteps">
             <form class="form-inline">
