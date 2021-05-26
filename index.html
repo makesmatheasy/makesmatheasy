@@ -2996,7 +2996,22 @@
                     </tr>
                 </table>
             </li>
-           
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="compangbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Complementary Angle 
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('complementary angle calculator','#compang','c','compangimgfav')"><img
+                                        id="compangimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -19080,6 +19095,19 @@ N is the population size.
     </form>
 </div>
 
+<div class="collapse" id="compang">    
+    <h1 style="font-family:mathfont; text-align:center;">Complementary Angle 
+        Calculator </h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <input type="number" name="ang" class="form__field" id="cang" width="5em" placeholder="Enter the angle whose complementary is to be calculated(in degree)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="compangcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button><br><br>
+        <p id="compangans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+    </form>
+</div>
 <div class="collapse" id="cotermang">
     <h1 style="font-family:mathfont; text-align:center;">Coterminal Angle 
         Calculator </h1>

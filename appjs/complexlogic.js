@@ -1671,6 +1671,20 @@ function suppangvercal(){
     renderMathInElement(document.getElementById("suppangverans"));
 }
 
+function compangcal(){
+    var a=document.getElementById("cang").value;
+    var ans="";
+    if(a==""){
+        ans="Enter the angle to find the complementary";
+    } else{
+        var t=parseInt(a);
+        var v=90-t;
+        ans="\\[The \\space complementary \\space angle \\space of \\space"+a+" \\space will \\space be \\newline 90 \\degree \\space - \\space t \\degree \\newline 90 \\degree \\space - \\space "+t+" \\degree \\newline = \\space "+v+" \\degree \\]";
+    }
+    document.getElementById("compangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("compangans"));
+}
+
 function cotermangcal(){
     var a=document.getElementById("cotang").value;
     var ans="";

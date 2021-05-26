@@ -277,6 +277,7 @@ Other Tech/Libraries
     - Plots a Bar Graph along x and y axis by taking input from the user
   - Plot Angle
   - Supplementary Angle Calculator
+  - Complementary Angle Calculator
   - Coterminal Angle Calculator
   - SSS Triangle's Angle Calculator
   - Straight Line Formulas

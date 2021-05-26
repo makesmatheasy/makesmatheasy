@@ -267,6 +267,7 @@ function openit(id) {
         "#right_wedge",
         "#bool",
         "#suppangs",
+        "#compang",
         "#cotermang",
         "#halfcy",
         "#eirs",
