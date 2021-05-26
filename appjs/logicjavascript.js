@@ -18383,24 +18383,11 @@ function sphcal(){
     var outputr = document.getElementById("sphrans");
     var outputo = document.getElementById("sphoans");
     var outputfi = document.getElementById("sphfians");
-    var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
-    var o = Math.acos(z/r).toFixed(2);
-    var fi = Math.atan(y/x).toFixed(2);
+    var r =  Math.sqrt(x*x + y*y + z*z);
+    var o = Math.acos(z/r);
+    var fi = Math.atan(y/x);
     var ans="";
-    var temp1 = x*x + y*y + z*z;
-    var temp2 = (z/r).toFixed(2);
-    var ansr = "\\[r:\\space \\sqrt{x^2 + y^2 + z^2}\\]";
-    ansr += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2 + "+z+"^2}\\]";
-    ansr += "\\[=\\space \\sqrt{"+temp1+"} \\]";
-    ansr += "\\[=\\space "+r+" \\]";
 
-    var anso = "\\[θ:\\space \\arccos(\\frac{z}{r} )\\]";
-    anso = "\\[θ:\\space \\arccos(\\frac{"+z+"}{"+r+"} )\\]";
-    anso += "\\[=\\space \\arccos("+temp2+")\\]"
-    anso += "\\[=\\space "+o+"\\]"
-
-    var ansz = "\\[z:\\space Z\\]";
-    ansz += "\\[=\\space "+z+"\\]";
     if(isNaN(x)||isNaN(y)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -18409,16 +18396,10 @@ function sphcal(){
         outputfi.innerHTML = "";
     }
     else{
-
-        outputr.innerHTML= ansr;
-        outputo.innerHTML = anso;
-        outputfi.innerHTML = ansz;
-
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+        outputfi.innerHTML = "φ: " + fi;
     }
-    renderMathInElement(outputr);
-    renderMathInElement(outputo);
-    renderMathInElement(outputfi);
-
 }
 
 function cylcal(){
@@ -18429,24 +18410,10 @@ function cylcal(){
     var outputp = document.getElementById("cylpans");
     var outputo = document.getElementById("cyloans");
     var outputz = document.getElementById("cylzans");
-    var p =  Math.sqrt(x*x + y*y).toFixed(3);
+    var p =  Math.sqrt(x*x + y*y).tofixed(3);
     var o = Math.tan(y/x).toFixed(3);
     var ans="";
 
-    var temp1 = (x*x + y*y).toFixed(3);
-    var temp2 = (y/x).toFixed(3);
-    var ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2}\\]";
-    ansp += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2}\\]";
-    ansp += "\\[=\\space \\sqrt{"+temp1+"} \\]";
-    ansp += "\\[=\\space "+p+" \\]";
-
-    var anso = "\\[θ:\\space \\tan(\\frac{y}{x} )\\]";
-    anso = "\\[θ:\\space \\tan(\\frac{"+y+"}{"+x+"} )\\]";
-    anso += "\\[=\\space \\arccos("+temp2+")\\]"
-    anso += "\\[=\\space "+o+"\\]"
-
-    var ansz = "\\[z:\\space z\\]";
-    ansz += "\\[=\\space "+z+"\\]";
     if(isNaN(x)||isNaN(y)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -18455,14 +18422,10 @@ function cylcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputp.innerHTML= ansp;
-        outputo.innerHTML = anso;
-        outputz.innerHTML = ansz;
+        outputp.innerHTML= "ρ: " + p;
+        outputo.innerHTML = "θ: " + o;
+        outputz.innerHTML = "z: " + z;
     }
-    renderMathInElement(outputp);
-    renderMathInElement(outputo);
-    renderMathInElement(outputz);
-
 }
 
 //BILINEAR INTERPOLATION CALCULATOR
