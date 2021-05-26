@@ -3101,6 +3101,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="cylbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cylindrical coordinates calculator
+                               </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cylindrical Coordinates Calculator','#cyl','c','cylfav')"><img
+                                        id="cylimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="polarbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Polar coordinates calculator
                                </a>
@@ -18263,7 +18279,61 @@
             <p>&nbsp;</p>
 </div>
             
-            
+<!-- Polar Coordinate Calculator starts -->
+<div class="collapse" id="polar">
+    <h1 style=" text-align: center; font-family:mathfont">Polar Coordinate Calculator</h1>
+        <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+            <input type="number" id="polarx" width="5em" placeholder="Enter the X coordinate"> 
+            <input type="number" id="polary" width="5em" placeholder="Enter the Y coordinate">
+            <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="polarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="polarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+</div>
+
+<!-- Spherical Coordinate Calculator starts -->
+<div class="collapse" id="sph">
+    <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
+        <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+            <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
+            <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
+            <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+            <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="sphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="sphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="sphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
+        <p>&nbsp;</p>
+</div>
+
+<!-- Cylindrical Coordinate Calculator starts -->
+<div class="collapse" id="cyl">
+    <h1 style=" text-align: center; font-family:mathfont">Cylindrical Coordinate Calculator</h1>
+        <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+            <input type="number" id="cylx" width="5em" placeholder="Enter X coordinate"> 
+            <input type="number" id="cyly" width="5em" placeholder="Enter Y coordinate">
+            <input type="number" id="cylz" width="5em" placeholder="Enter Z coordinate">
+            <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="cylpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cyloans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
+        <p>&nbsp;</p>
+</div>            
   
 
 <div class="collapse" id="bilinear">

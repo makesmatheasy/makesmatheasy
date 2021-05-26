@@ -17761,7 +17761,30 @@ function manhatcal(){
         renderMathInElement(output);
     }
 }
+
+function polarcal(){
+    var x=parseFloat(document.getElementById("polarx").value);
+    var y=parseFloat(document.getElementById("polary").value);
+    var outputr = document.getElementById("polarans1");
+    var outputo = document.getElementById("polarans2");
+    var r =  Math.sqrt(x*x + y*y);
+    var o = Math.atan(y/x);
+    var ans="";
+    if(isNaN(x)||isNaN(y))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+    }
+}
+
+
 //Cartesian Coordinate Calculator
+
 function cartcal(){
     var p=parseFloat(document.getElementById("cartp").value);
     var o=parseFloat(document.getElementById("carto").value);
@@ -17800,9 +17823,65 @@ function cartcal(){
         outputx.innerHTML= ansx;
         outputy.innerHTML = ansy;
         outputz.innerHTML = ansz;
+
     }
     renderMathInElement(outputx);
     renderMathInElement(outputy);
+    renderMathInElement(outputz);
+}
+function sphcal(){
+    var x=parseFloat(document.getElementById("sphx").value);
+    var y=parseFloat(document.getElementById("sphy").value);
+    var z= parseFloat(document.getElementById("sphz").value);
+
+    var outputr = document.getElementById("sphrans");
+    var outputo = document.getElementById("sphoans");
+    var outputfi = document.getElementById("sphfians");
+    var r =  Math.sqrt(x*x + y*y + z*z);
+    var o = Math.acos(z/r);
+    var fi = Math.atan(y/x);
+    var ans="";
+
+    if(isNaN(x)||isNaN(y)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+        outputfi.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+        outputfi.innerHTML = "φ: " + fi;
+    }
+}
+
+function cylcal(){
+    var x=parseFloat(document.getElementById("cylx").value);
+    var y=parseFloat(document.getElementById("cyly").value);
+    var z= parseFloat(document.getElementById("cylz").value);
+
+    var outputp = document.getElementById("cylpans");
+    var outputo = document.getElementById("cyloans");
+    var outputz = document.getElementById("cylzans");
+    var p =  Math.sqrt(x*x + y*y).tofixed(3);
+    var o = Math.tan(y/x).toFixed(3);
+    var ans="";
+
+    if(isNaN(x)||isNaN(y)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputp.innerHTML= ans;
+        outputo.innerHTML = "";
+        outputz.innerHTML = "";
+    }
+    else{
+        outputp.innerHTML= "ρ: " + p;
+        outputo.innerHTML = "θ: " + o;
+        outputz.innerHTML = "z: " + z;
+    }
+    renderMathInElement(outputp);
+    renderMathInElement(outputo);
     renderMathInElement(outputz);
 }
 //BILINEAR INTERPOLATION CALCULATOR
