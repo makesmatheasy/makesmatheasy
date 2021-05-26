@@ -15995,6 +15995,11 @@
                            href="#">Spheroidal Cap</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#halfsphere_shell"
+                           style="text-decoration:none;"
+                           href="#">Half Spherical Shell</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#ellipsoidalcap"
                            style="text-decoration:none;"
                            href="#">Ellipsoidal Cap</a></td>
@@ -30401,6 +30406,65 @@ N is the population size.
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="halfsphere_shell" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Half Spherical shell</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \frac{2}{3} \pi (R^3-r^3)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= \pi [ 2 (R^2+r^2) + (R^2-r^2)]\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Shell Thickness</h5>
+                                    <p class="text-center">\[a= R-r\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/half-spherical-shell.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                               placeholder="Enter Radius large sphere(R)" id="inputhalfsphere_shellR"
+                               oninput="solvehalf_sphere_shell();">
+                            <input class="form__field" type="number"
+                               placeholder="Enter Radius small sphere(r)" id="inputhalfsphere_shellr"
+                               oninput="solvehalf_sphere_shell();">
+                                <br>
+                                <p class="stopwrap" id="resultofhalfsphereshellvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofhalfsphereshellarea"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofhalfsphereshella"
+                                   style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     <div class="modal fade" id="tetrahexahedron" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
