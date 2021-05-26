@@ -15045,6 +15045,11 @@
                            href="#">Claw</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#crossshape"
+                           style="text-decoration:none;"
+                           href="#">Cross</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#interioranglecal"
                            style="text-decoration:none;"
                            href="#">Interior Angle Calculator</a></td>
@@ -23681,6 +23686,67 @@ N is the population size.
                             <p class="stopwrap" id="resultofclawperi"
                                 style="font-family:mathfont;"></p> 
                             <p class="stopwrap" id="resultofclawarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="crossshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cross</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Bar length (l)</h5>
+                                    <p class="text-center">\[l = 2 \times a + b \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = 8 \times a + 4 \times b \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = 4 \times a \times b + b^2 \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/cross.PNG" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Circumcircle radius (r)</h5>
+                                    <p class="text-center">\[r = \sqrt{ (\frac{l}{2})^2 + (\frac{b}{2})^2} \]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Arm length (a)" id="inputcrossarmlen"
+                                       oninput="solvecross();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Width (b)" id="inputcrosswidth"
+                                       oninput="solvecross();">
+                            <p class="stopwrap" id="resultofcrossbarlen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcrossperi"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofcrossarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcrosscirrad"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
