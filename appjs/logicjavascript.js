@@ -2946,6 +2946,23 @@ function impse12find(){
     document.getElementById("impse12ans").innerHTML =  -n / 2;
 }
 
+function impse18find(){
+    let n = parseInt(document.getElementById("impse18").value)
+    let a = n;
+    document.getElementById("impse18ans").innerHTML = a+" ";
+    while (a != 1){
+        let b = 0;
+        if (a%2 == 0)
+            b  = Math.floor(Math.sqrt(a));
+     
+        else
+            b = Math.floor(Math.sqrt(a) *Math.sqrt(a) * Math.sqrt(a));
+     
+        document.getElementById("impse18ans").innerHTML =  b+" ";
+        a = b;
+    }
+}
+
 function impse13find(){
     let n = parseInt(document.getElementById("impse17").value)
     let sum = 0;
