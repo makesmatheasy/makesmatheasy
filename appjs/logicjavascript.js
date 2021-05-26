@@ -11368,7 +11368,9 @@ function speedu(a) {
 function diagnfind(){
     var n =parseInt(document.getElementById("diagnin").value) 
     var a = parseInt(document.getElementById("diagnin1").value)
-    if(!isNaN(n) && !isNaN(a)){
+    if(n<0 || a<0)
+       document.getElementById("diagnans").innerHTML="\\[Input \\space Values \\space cannot \\space be \\space negative\\]" ;
+    else if(!isNaN(n) && !isNaN(a)){
         var ans = 2 * a * Math.sin((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180);
         document.getElementById("diagnans").innerHTML = "\\[Length \\space of \\space Diagonal \\space of \\space a \\space n-sided \\space regular \\space polygon \\space will \\space be, \\newline 2 \\times (Length \\space of \\space side) \\times sin(\\frac{((No. \\space of \\space side)-2) \\times 180}{(2 \\times (No. \\space of \\space side))} \\times \\frac{3.14159}{180})\\]";
         document.getElementById("diagnans1").innerHTML = "\\[2 \\times "+a+" \\times sin(\\frac{("+n+"-2) \\times 180}{(2 \\times "+n+")} \\times \\frac{3.14159}{180}) \\space = \\space 2 \\times "+a+" \\times sin("+((((n - 2) * 180)/ (2 * n)) * 3.14159 / 180).toFixed(2)+") \\space = \\space "+ans.toFixed(3)+"\\]";
