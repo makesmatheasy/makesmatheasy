@@ -13735,7 +13735,17 @@ function scyf2find(){
     document.getElementById("scyf2ans").innerHTML = ans
 }
 
+
+function scyf3find(){
+    let cone_h = parseInt(document.getElementById("scyf8").value) 
+    let cone_r = parseInt(document.getElementById("scyf9").value)
+    var slant_height_cone =Math.sqrt(Math.pow(cone_h, 2) +Math.pow(cone_r, 2)); 
+    document.getElementById("scyf3ans").innerHTML = slant_height_cone
+}
+
+
 //Polygon with maximum sides that can be inscribed in an N-sided regular polygon
+
 function polymaxfind(){
     var n = (document.getElementById("polymax").value);
     if (n!=""){
