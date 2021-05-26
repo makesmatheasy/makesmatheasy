@@ -11589,6 +11589,37 @@ function cirinsemi9find(){
     document.getElementById("cirinsemi9ans").innerHTML =  area;
 }
 
+function cirinsemi10find(){
+    let x1 = b= parseInt(document.getElementById("cirinsemi13in").value)
+    let y1 = b= parseInt(document.getElementById("cirinsemi14in").value)
+    let x2 = b= parseInt(document.getElementById("cirinsemi15in").value)
+    let y2 = b= parseInt(document.getElementById("cirinsemi16in").value)
+    if (x1 == x2) {
+        document.getElementById("cirinsemi10ans").innerHTML =  (x1 + y2 - y1)
+            + ", " + y1 + "<br>";
+ 
+        document.getElementById("cirinsemi10ans").innerHTML =  (x2 + y2 - y1)
+            + ", " + y2;
+    }
+    else if (y1 == y2) {
+        document.getElementById("cirinsemi10ans").innerHTML =  x1 + ", "
+            + (y1 + x2 - x1)
+            + "<br>";
+ 
+        document.getElementById("cirinsemi10ans").innerHTML =  x2 + ", "
+            + (y2 + x2 - x1);
+    }
+    else if (Math.abs(x2 - x1)
+            === Math.abs(y2 - y1)) {
+ 
+        document.getElementById("cirinsemi10ans").innerHTML =  x1 + ", " + y2
+            + "<br>";
+        document.getElementById("cirinsemi10ans").innerHTML =  x2 + ", " + y1;
+    }
+    else
+        document.getElementById("cirinsemi10ans").innerHTML =  "-1"
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
