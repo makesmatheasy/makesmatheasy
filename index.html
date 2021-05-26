@@ -624,6 +624,20 @@
                         </td>
                     </tr>
                 </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">         
+                            <a id="goldsbtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Golden and Silver Ratio</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Golden and Silver Ratio','#golds','c','Ngsimgfav')"><img
+                                        id="Ngsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
             </li>     
 
             <div class="dropdown-divider"></div>
@@ -11361,6 +11375,24 @@
             <br>
             <p id="unitcircxans"></p>
             <p id="unitcircyans"></p>
+        </div>
+
+        <div class="collapse" id="golds">
+            <h2 style="text-align: center; margin-bottom:20px;">Golden and Silver Ratio</h2>
+            <br><br>
+            </form>
+            <h2>Check whether two numbers are in golden ratio</h2>
+            <br>
+            <form>
+            <input type="text" id="golds1" class="form__field"placeholder="Enter the number1">
+            <input type="text" id="golds2" class="form__field"placeholder="Enter the number2">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="golds1find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
+            <br>
+            <h5 id="golds1ans"></h5>
+            <br>
+            </form>
         </div>
 
         <div class="collapse" id="hyptrigonoiden">

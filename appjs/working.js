@@ -581,6 +581,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#goldsbtn").click(function () {
+        openit("#golds");
+        closenav();
+        clearall();
+    });
     $("#zscore").click(function () {
         openit("#zscores");
         closenav();

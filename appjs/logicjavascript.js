@@ -11725,6 +11725,30 @@ function gammafind(){
     document.getElementById("gammafindans").innerHTML = "The gamma is "+ans
 }
 
+function golds1find(){
+    let a = document.getElementById("golds1").value
+    let b = document.getElementById("golds2").value
+    if (a <= b)
+    {
+        let temp = a;
+        a = b;
+        b = temp;
+    }
+    let ratio1 = (a / b).toFixed(3);
+    let ratio2 = ((a + b) / a).toFixed(3);
+    if ((ratio1 == ratio2) &&
+        ratio1 == "1.618")
+    {
+        document.getElementById("golds1ans").innerHTML =  "Yes"
+        return true;
+    }
+    else
+    {
+        document.getElementById("golds1ans").innerHTML =  "No"
+        return false;
+    }
+}
+
 // profit/loss calculations over discount
 function discount() {
     var dis = parseFloat(document.getElementById("dis").value);
