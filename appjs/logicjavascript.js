@@ -11866,6 +11866,20 @@ function golds1find(){
     }
 }
 
+function golds2find(){
+    let a = document.getElementById("golds3").value
+    let PHI = 1.6180339;
+    let f = [ 0, 1, 1, 2, 3, 5 ];
+    if (n < 6)
+        document.getElementById("golds2ans").innerHTML = f[n];
+    let t = 5, fn = 5;   
+    while (t < n) {
+        fn = Math.round(fn * PHI);
+        t++;
+    }   
+    document.getElementById("golds2ans").innerHTML = fn;   
+}
+
 // profit/loss calculations over discount
 function discount() {
     var dis = parseFloat(document.getElementById("dis").value);
