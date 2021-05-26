@@ -14101,20 +14101,14 @@ function addBinDecHexOct(){
     else if (firstBase === "Octal"){
         x1 = calculatefrac(input1,8);
         x1o = fracDectoBinHexOct(x1,8);
-        print += "<h5>Step1 : Convert the Octal number in Input 1 to decimal</h5>";
-        print += input1 + "->" + x1 + "<br>";
     }
     else if(firstBase === "Hexa Decimal"){
         x1 = calculatefrac(input1,16);
         x1o = fracDectoBinHexOct(x1,16);
-        print += "<h5>Step1 : Convert the Hexa Decimal number in Input 1 to decimal</h5>";
-        print += input1 + "->" + x1 + "<br>";
     }
     else if(firstBase === "Decimal"){
         x1 = parseFloat(input1);
         x1o = parseFloat(x1);
-        print += "<h5>Step1 : Take the Decimal number in Input 1</h5>";
-        print += "i.e," + x1 + "<br>";
     }
 
     if(secondBase === "Binary"){
@@ -14126,20 +14120,14 @@ function addBinDecHexOct(){
     else if (secondBase === "Octal"){
         x2 = calculatefrac(input2,8);
         x2o = fracDectoBinHexOct(x2,8);
-        print += "<h5>Step2 : Convert the Octal number in Input 2 to decimal</h5>";
-        print += input2 + "->" + x2 + "<br>";
     }
     else if(secondBase === "Hexa Decimal"){
         x2 = calculatefrac(input2,16);
         x2o = fracDectoBinHexOct(x2,16);
-        print += "<h5>Step2 : Convert the Hexa Decimal number in Input 2 to decimal</h5>";
-        print += input2 + "->" + x2 + "<br>";
     }
     else if(secondBase === "Decimal"){
         x2 = parseFloat(input2);
         x2o = parseFloat(x2);
-        print += "<h5>Step2 : Take the Decimal number in Input 2 </h5>";
-        print += "i.e," + x2 + "<br>";
     }
 
     var x3=x1+x2;
@@ -14156,16 +14144,10 @@ function addBinDecHexOct(){
     print += x3 + "->" + fracDectoBinHexOct(x3,2);
     }else if (resultType === "Octal"){
     result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
-    print += "<h5>Step4 : To find the result in Octal convert the answer found in STEP3 to Octal</h5>";
-    print += x3 + "->" + fracDectoBinHexOct(x3,8);
     }else if(resultType === "Hexa Decimal"){
     result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3,16);
-    print += "<h5>Step4 : To find the result in Hexa Decimal convert the answer found in STEP3 to Hexa Decimal</h5>";
-    print += x3 + "->" + fracDectoBinHexOct(x3,16);
     }else if(resultType === "Decimal"){
     result.innerHTML = "Answer in Decimal=" + x3.toString();
-    print += "<h5>Step4 : Answer in Decimal</h5>";
-    print += x3.toString();
     }else{
     result.innerHTML = "";
     }
