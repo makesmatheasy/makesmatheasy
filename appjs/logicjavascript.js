@@ -16310,9 +16310,14 @@ function cscu1find(){
 
 function cscu2find(){
     let R = parseInt(document.getElementById("cscu2").value)
+    if(!isNaN(R)){
     var h = (4 * R) / 3;
     var r = (2 *Math.sqrt(2) * R) / 3;
-    document.getElementById("cscu1ans").innerHTML= "The radius is "+r+"and the height is "+h
+    document.getElementById("cscu2ans").innerHTML= "The radius is "+r+"and the height is "+h
+    }
+    else{
+        document.getElementById("cscu2ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function cscu3find(){
