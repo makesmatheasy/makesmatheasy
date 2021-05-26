@@ -6715,18 +6715,34 @@ function solvestadium() {
 }
 
 function solvecross(){
-    var a = parseInt(document.getElementById("inputcrossarmlen").value);
-    var b = parseInt(document.getElementById("inputcrosswidth").value);
-    var l = 2 * a + b;
-    var peri = 8*a + 4*b;
-    var area = 4 *a *b + b**2;
-    var cirrad = math.sqrt( (l/2)**2 + (b/2)**2 );
-    if (!isNaN(a) && !isNaN(b)){
-    document.getElementById("resultofcrossbarlen").innerHTML = "Bar length (l):	"+l.toFixed(3)
-    document.getElementById("resultofcrossperi").innerHTML = "Perimeter (p): "+peri.toFixed(3)
-    document.getElementById("resultofcrossarea").innerHTML = "Area (A):	"+area.toFixed(3)
-    document.getElementById("resultofcrosscirrad").innerHTML = "Circumcircle radius (r): "+cirrad.toFixed(3)
+    var a = (document.getElementById("inputcrossarmlen").value);
+    var b = (document.getElementById("inputcrosswidth").value);
+    var l = 2 * parseInt(a) + parseInt(b);
+    var peri = 8*parseInt(a) + 4*parseInt(b);
+    var area = 4 *parseInt(a) *parseInt(b) + parseInt(b)**2;
+    var cirrad = math.sqrt( (l/2)**2 + (parseInt(b)/2)**2 );
+    if (a!="" && b!=""){
+        if (!isNaN(a) && !isNaN(b)){
+            document.getElementById("resultofcrossbarlen").innerHTML = "\\[Bar \\space length \\space (l) \\space of \\space Cross \\space shape \\newline 2 \\times (Arm \\space length) + Width \\newline = \\space "+(2*a)+" + "+b+" \\space = \\space "+l.toFixed(3)+"\\]";
+            document.getElementById("resultofcrossperi").innerHTML = "\\[Perimeter \\space (p) \\space of \\space Cross \\space shape \\newline 8 \\times (Arm \\space length) + 4 \\times Width \\newline = \\space "+(8*a)+" \\times "+(4*a)+" \\space = \\space "+peri.toFixed(3)+"\\]";
+            document.getElementById("resultofcrossarea").innerHTML = "\\[Area \\space (A) \\space of \\space Cross \\space shape \\newline 4 \\times (Arm \\space length) \\times Width + (Width)^2 \\newline = \\space "+(4*a*b)+" + "+(b**2)+" \\space = \\space"+area.toFixed(3)+"\\]";
+            document.getElementById("resultofcrosscirrad").innerHTML = "\\[Circumcircle \\space radius \\space (r) \\space of \\space Cross \\space shape \\newline \\sqrt{ (\\frac{"+l+"}{2})^2 + (\\frac{"+b+"}{2})^2 } \\newline = \\space "+cirrad.toFixed(3)+"\\]";
+        } else{
+            document.getElementById("resultofcrossbarlen").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+            document.getElementById("resultofcrossperi").innerHTML = "";
+            document.getElementById("resultofcrossarea").innerHTML = "";
+            document.getElementById("resultofcrosscirrad").innerHTML = "";
+        }
+    } else{
+        document.getElementById("resultofcrossbarlen").innerHTML = "";
+        document.getElementById("resultofcrossperi").innerHTML = "";
+        document.getElementById("resultofcrossarea").innerHTML = "";
+        document.getElementById("resultofcrosscirrad").innerHTML =  "";
     }
+    renderMathInElement(document.getElementById("resultofcrossbarlen"));
+    renderMathInElement(document.getElementById("resultofcrossperi"));
+    renderMathInElement(document.getElementById("resultofcrossarea"));
+    renderMathInElement(document.getElementById("resultofcrosscirrad"));
 }
 
 //Claw
