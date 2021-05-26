@@ -434,6 +434,11 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#planeinterceptbtn").click(function () {
+        openit("#planeintercept");
+        closenav();
+        clearall();
+    });
     $("#declbtn").click(function () {
         openit("#decl");
         closenav();

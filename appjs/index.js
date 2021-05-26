@@ -219,6 +219,7 @@ function openit(id) {
         "#propquad",
         "#pythtriple",
         "#rootsquadratic",
+        "#planeintercept",
         "#plotgraph",
         "#3dgeocalc",
         "#plotbargraph",
