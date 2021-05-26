@@ -3594,11 +3594,10 @@ function pppSolve() {
         document.getElementById('plp_op').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
         renderMathInElement(document.getElementById("plp_op"));
     } else{
-        if(b>0){
-            document.getElementById('plp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x' + '+' + (b) + 'y' + '=' + dis;
-        }else{
-            document.getElementById('plp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x'  + (b) + 'y' +  '=' + dis;
-        }
+        if(b>0)
+        document.getElementById('plp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x' + '+' + (b) + 'y' + '=' + dis;
+        else
+        document.getElementById('plp_op').innerHTML= 'Equation Of Line Parallel to ' + a  + 'x' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  a  + 'x'  + (b) + 'y' +  '=' + dis;
         work.innerHTML = print;
         renderMathInElement(work);
     }
