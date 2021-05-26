@@ -264,6 +264,7 @@ function openit(id) {
         "#right_wedge",
         "#bool",
         "#suppangs",
+        "#cotermang",
         "#halfcy",
         "#eirs",
         "#tricorn",
@@ -334,6 +335,7 @@ function openit(id) {
         "#emical",
         "#gstcal",
         "#goldr",
+        "#goldrec",
         "#platonic",
         "#unitcirc",
         "#deviation",
@@ -437,7 +439,8 @@ function openit(id) {
         "#chng-vol-cube",
         "#squarerootcalc",
         "#sqseries",
-        "#impse"
+        "#impse",
+        "#n_baseroot",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
