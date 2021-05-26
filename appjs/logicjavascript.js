@@ -12043,6 +12043,16 @@ function typenum9find(){
                  evenFib(n-2)
 }
 
+function typenum10find(){
+    let N = parseInt(document.getElementById("typenum12").value)
+    let k = parseInt(document.getElementById("typenum13").value)
+    let ans = 0;
+    let y = N / K;
+    let x = N % K;
+    ans = (K * (K - 1) / 2) * y +(x * (x + 1)) / 2; 
+    document.getElementById("typenum10ans").innerHTML=  ans;
+}
+
 //Find all combinations that add upto given number
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
