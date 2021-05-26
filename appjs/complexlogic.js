@@ -224,40 +224,38 @@ function volofcuboid() {
     renderMathInElement(document.getElementById("cuboidAns3"));
 }
 
-function euler()
-{
+function euler(){
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
   explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
   var r = parseInt(document.getElementById("cpereal").value);
   var i = parseInt(document.getElementById("cpeimg").value);
   var result= document.getElementById("comperesult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  var x1;
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-      x1=x+"e^{-iπ"+y+"}";
-	  x=x+"e<sup>-iπ"+y+"</sup>";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x1=x+"e^{iπ"+y+"}";
-   x=x+"e<sup>iπ"+y+"</sup>";
-   explain+="π" +y+"\\]";
-  }
-  result.innerHTML = x;
-  explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
-  document.getElementById('compeexplain').innerHTML=explain;
-  renderMathInElement(document.getElementById("compeexplain"));
+  if(!isNaN(r) && (!isNaN(i))){
+        var x = (Math.sqrt((r*r)+(i*i)));
+        var x1;
+        if(!Number.isInteger(x)){
+            var j = (r*r)+(i*i);
+            x = "&#8730;  "+ j ;
+        } explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
+        var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+        explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
+        if(y<0) {   
+            y=nerdamer((-1)*y).toString();
+            x1=x+"e^{-iπ"+y+"}";
+            x=x+"e<sup>-iπ"+y+"</sup>";
+            explain+="-π" +y+"\\]";
+        } else{
+            y=y.toString();
+            x1=x+"e^{iπ"+y+"}";
+        x=x+"e<sup>iπ"+y+"</sup>";
+        explain+="π" +y+"\\]";
+        } result.innerHTML = x;
+        explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
+        document.getElementById('compeexplain').innerHTML=explain;
+    } else{
+        document.getElementById('compeexplain').innerHTML= "\\[Please \\space enter \\space valid \\space input\\]";
+        result.innerHTML = "";
+    } renderMathInElement(document.getElementById("compeexplain"));
 }
 
 function npower()
@@ -746,31 +744,22 @@ function cresccal() {
     var d = document.getElementById("cresc_dist").value;
     if (r1 == "" || r2 == "" || d == "") {
         document.getElementById("crescans1").innerHTML = "\\[Error: \\space All \\space values \\space are \\space required \\space to \\space obtain \\space answer \\space\\]";
-        document.getElementById("crescans2").innerHTML ="";
-        document.getElementById("crescans3").innerHTML = "";
+        document.getElementById("crescans2").innerHTML =""; document.getElementById("crescans3").innerHTML = ""; renderMathInElement(document.getElementById("crescans1"));
     } else {
-        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){
-            
-            var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 
-            * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
+        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){ 
+            var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
             var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
             var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
-            
             document.getElementById("crescans1").innerHTML = "\\[r1 = Radius \\space of \\space circle \\space 1 \\space = \\space "+r1+" \\newline r2 = Radius \\space of \\space circle \\space 2 \\space = \\space "+r2+" \\newline d = Circle \\space center \\space distance \\space = \\space "+d+"\\]";
             document.getElementById("crescans2").innerHTML = "\\[Area \\space of \\space Lune \\space 1: \\newline 2 \\times \\frac{\\sqrt{(r1 + r2 + d) \\times (r2 + d - r1) \\times (d + r1 - r2) \\times (r1 + r2 - d)} }{4} + \\newline r1^2 \\times acos(\\frac{(r2^2 - r1^2 - d^2)}{(2^r1 \\times d)}) - r2^2 \\times acos(\\frac{(r2^2 + d^2 - r1^2)}{ (2 \\times r2 \\times d)})\\]";
             document.getElementById("crescans3").innerHTML =  "\\[2 \\times \\frac{\\sqrt{("+r1+" + "+r2+" + "+d+") \\times ("+r2+" + "+d+" - "+r1+") \\times ("+d+" + "+r1+" - "+r2+") \\times ("+r1+" + "+r2+" - "+d+")} }{4} + \\newline "+r1+"^2 \\times acos(\\frac{("+r2+"^2 - "+r1+"^2 - "+d+"^2)}{(2^"+r1+" \\times "+d+")}) - "+r2+"^2 \\times acos(\\frac{("+r2+"^2 + "+d+"^2 - "+r1+"^2)}{ (2 \\times "+r2+" \\times "+d+")}) \\space   = \\space "+ lune1.toFixed(3)+"\\]";
             document.getElementById("crescans5").innerHTML ="\\[Overlap \\space Area: \\space \\newline \\pi \\times r1^2 - (Area \\space of \\space Lune \\space 1) \\newline "+(math.pi).toFixed(2)+" \\times "+r1+"^2 - ("+lune1.toFixed(2)+") \\space = \\space "+op.toFixed(3)+"\\]";
             document.getElementById("crescans6").innerHTML = "\\[ Area \\space of \\space Lune \\space 2:  \\space \\newline \\pi \\times r1^2 - (Overlap \\space Area) \\newline "+(math.pi).toFixed(2)+" \\times "+r2+"^2 - ("+op.toFixed(2)+") \\space = \\space "+lune2.toFixed(3)+"\\]";
-            renderMathInElement(document.getElementById("crescans1"));
-            renderMathInElement(document.getElementById("crescans2"));
-            renderMathInElement(document.getElementById("crescans3"));
-            renderMathInElement(document.getElementById("crescans5"));
-            renderMathInElement(document.getElementById("crescans6"));
+            renderMathInElement(document.getElementById("crescans1")); renderMathInElement(document.getElementById("crescans2"));
+            renderMathInElement(document.getElementById("crescans3")); renderMathInElement(document.getElementById("crescans5")); renderMathInElement(document.getElementById("crescans6"));
         } else{
             document.getElementById("crescans1").innerHTML  = "Error: Enter proper values";
-            document.getElementById("crescans2").innerHTML = "";
-            document.getElementById("crescans3").innerHTML = "";
-        }
+            document.getElementById("crescans2").innerHTML = ""; document.getElementById("crescans3").innerHTML = ""; }
     }
 }
 
@@ -1144,23 +1133,36 @@ function segcal()
     var a=document.getElementById("segr").value;
     var b=document.getElementById("sega").value;
     var c=document.getElementById("angseg").value;
+    var output = document.getElementById("segans");
     var ans="";
     if(a==""||b=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans += "\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer \\]";
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
     else{
 
     if(c=="degree")
     {
-        b=b/57.296;
+        var t=Math.sin(b);
+        ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + "))  \\]";
+        ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + ")) \\]";
+        ans += "\\[\\frac{1}{2} \\times " + ((a*a)*((Math.PI/180)*(b-t)))+ " \\]"
+        ans += "\\[Area \\space of \\space segment \\space in \\space degrees \\space is \\space " +  (((a*a)*((Math.PI/180)*(b-t)))*0.5) + " \\]";
+        output.innerHTML = ans;
     }
-   console.log(Math.sin(b));
-   var t=Math.sin(b);
-   var area= a*a*(b-t)*0.5
-    ans="The area of segment is: "+area;
+    else{
+        var t=Math.sin(b);
+        var area= a*a*(b-t)*0.5
+   ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times ( " + b + " - sin ( " + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times (  " + b + " - sin(" + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + ((a*a)*(b-t)) + " \\]"
+   ans += "\\[Area \\space of \\space segment \\space in \\space radian \\space is \\space " + area + " \\]";
+   output.innerHTML = ans;
+    }
 }
-document.getElementById("segans").innerHTML=ans;
+renderMathInElement(output);
 }
 
 function impcal() {
@@ -1225,6 +1227,33 @@ function hpcal()
      renderMathInElement(ansout);
    }
 }
+
+function hpcal11()
+{
+    var x=parseInt(document.getElementById("lterm1").value);
+    var y=parseInt(document.getElementById("cdiffer1").value);
+    var z=parseInt(document.getElementById("totnum1").value);
+    var ansout = document.getElementById("hpans11");
+    var anstemp ="";
+    if(!isNaN(parseInt(x)) && !isNaN(parseInt(y)) && !isNaN(parseInt(z)))
+   {
+    var numb = x - ((y - 1)*z);
+    var num6 = (1 / numb) ;
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{l-(n-1)d} \\]";
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{" + x +  "- (" + y + " - 1) \\times" + z + "} \\]";
+    anstemp +=  "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space" + (num6).toFixed(3) + "\\]";
+    ansout.innerHTML = anstemp;
+   }
+   else
+   {
+     anstemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+     ansout.innerHTML = anstemp;
+    
+   }
+   renderMathInElement(ansout);
+}
+
+
 
 function ppcal()
 {
@@ -1419,6 +1448,13 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans"));
     document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
     renderMathInElement(document.getElementById("dbltimeans1"));
+}
+
+function moduloCal(){
+    var x = parseInt(document.getElementById("modx").value);
+    var y = parseInt(document.getElementById("mody").value);
+    var r = x%y;
+    document.getElementById("moduloans").innerHTML = "x % y = " + r;
 }
 
 function covcalcu(){
@@ -1635,6 +1671,26 @@ function suppangvercal(){
     renderMathInElement(document.getElementById("suppangverans"));
 }
 
+function cotermangcal(){
+    var a=document.getElementById("cotang").value;
+    var ans="";
+    var pos="\\[Positive \\space Coterminal \\space Angle:\\space";
+    var neg="\\[Negative \\space Coterminal \\space Angle:\\space";
+    if(a==""){
+        ans="Enter the angle to find the coterminal angle";
+    } else{
+        var t=parseInt(a);
+        for(let i=1;i<5;i++){
+            pos+=t+360*i+"°,";
+            neg+=t-360*i+"°,";
+        }
+        pos=pos.slice(0,-1)+"...\\]";
+        neg=neg.slice(0,-1)+"...\\]";
+        ans=pos+neg;
+    }
+    document.getElementById("cotermangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotermangans"));
+}
 function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
@@ -1863,29 +1919,7 @@ function oocal()
     }
     document.getElementById("ooans").innerHTML=ans;
 }
-function manhatcal()
-{
-    var num1=document.getElementById("mdx1").value;
-    var num2=document.getElementById("mdx2").value;
-    var num3=document.getElementById("mdx3").value;
-    var num4=document.getElementById("mdx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
 
-        var f=Maths.abs(num1-num3)+Maths.abs(num2-num4);
-        ans="The calculated Manhattan Distance is: "+f;
-    }
-    document.getElementById("manhatans").innerHTML=ans;
-}
 function mifcal()
 {
     var num1=document.getElementById("mians1").value;

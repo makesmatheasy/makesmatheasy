@@ -139,6 +139,7 @@ Other Tech/Libraries
   - Sum and Difference Of Trignometric Function
 
 - General Maths (with Steps)
+  - Ackermann Function
   - LCM
     - Upto 20 numbers
   - HCF
@@ -148,6 +149,7 @@ Other Tech/Libraries
   - Greatest Integer Function and Fractional Part
   - Quartiles
   - Deciles
+  - Modulo Calculator
   - Doubling Time
   - Direct And Indirect Proportion
   - Cross Multiplication Calculator
@@ -177,6 +179,7 @@ Other Tech/Libraries
   - Operations on Fractions
   - Binomial Theorem Properties
   - Binomial expression multiplication
+  - Foil Calculator
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -186,6 +189,8 @@ Other Tech/Libraries
   - Rounding off numbers
   - EMI Calculator
   - GST Calculator
+  - Golden Ratio Calculator
+  - Golden Rectangle Calculator
   - Polynomial Degree Finder
   - Simple and Compound Interest
   - Factorial
@@ -207,6 +212,7 @@ Other Tech/Libraries
     - Temperature
     - Pressure
     - Energy
+    - Radiation
     - Time
     - Angle
     - Speed
@@ -232,8 +238,14 @@ Other Tech/Libraries
   - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
+  - Manhattan Distance Calculator
+  - Bilinear Interpolation Calculator
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
+  - Cartesian coordinates calculator
+  - Cylindrical coordinates calculator
+  - Spherical coordinates calculator
+  - Polar coordinates calculator
   - Segment Area Calculator
   - Curve Tracing
   - Ceva's and Thale's Theorem
@@ -263,6 +275,7 @@ Other Tech/Libraries
     - Ellipse
     - Stadium
     - Claw
+    - Cycloid
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
@@ -288,6 +301,7 @@ Other Tech/Libraries
     - Dodecahedron
     - Rhombic Dodecahedron
     - Icosahedron
+    - Cuboctahedron
     - Parallelepiped
     - Hyperboloid
     - N-dimension Sphere
@@ -296,6 +310,7 @@ Other Tech/Libraries
     - Ellipsoidal Cap
   - 4-D Shapes Calculator
     - Tesseract
+    - Hypersphere
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
@@ -355,6 +370,7 @@ Other Tech/Libraries
 - Probability
   - Empirical Probability
   - Conditional Probability
+  - Geometric Probability Distribution
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties
@@ -366,11 +382,17 @@ Other Tech/Libraries
   - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
+  - Midrange Calculator
   - Standard Deviation
   - T-test
+  - AB-test
   - Z-test
   - Z score Calculator
+  - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - Confidence Interval Calculator
+  - Sensitivity and Specificity Calculator
+  - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
