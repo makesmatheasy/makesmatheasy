@@ -2167,7 +2167,78 @@ function goldr() {
         
         renderMathInElement(document.getElementById("gold_explain"));
     }
-}    
+} 
+
+// golden rectangle calculator
+function goldrec() {
+    var gra = document.getElementById("gra").value;
+    var grb = document.getElementById("grb").value;
+    var grab = document.getElementById("grab").value;
+    var grar = document.getElementById("grar").value;
+    var goldr_explain = document.getElementById("goldrec_explain");
+    if(gra!="" && grb!="" && grab!="" && grar!="")
+         goldr_explain.innerHTML="Reset the Calculator";
+    else if(gra!="" ){
+        grb=(parseFloat(gra)/1.618).toFixed(3);
+        grab=(1.618*parseFloat(gra)).toFixed(3);
+        grar=(parseFloat(gra)*parseFloat(grab)).toFixed(3);
+
+        document.getElementById("grb").value=grb;
+        document.getElementById("grab").value=grab;
+        document.getElementById("grar").value=grar;
+        
+        goldr_explain.innerHTML="\\[ b=\\frac{a}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gra+"}{1.618}="+grb+"\\]";
+        goldr_explain.innerHTML+="\\[a+b=(a)\\times (Golden \\space Ratio)\\]"+"\\[\\space \\space = 1.618 \\times"+gra+"="+grab+"\\]";
+        goldr_explain.innerHTML+="\\[Area=(a)\\times (a+b)\\]"+"\\[\\space \\space = "+gra+"\\times"+grab+"="+grar+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+    else if(grb!="" ){
+        gra=(1.618*parseFloat(grb)).toFixed(3);
+        grab=(1.618*gra).toFixed(3);
+        grar=(parseFloat(gra)*parseFloat(grab)).toFixed(3);
+        
+        document.getElementById("gra").value=gra;
+        document.getElementById("grab").value=grab;
+        document.getElementById("grar").value=grar;
+        
+        goldr_explain.innerHTML="\\[ a=b\\times (Golden \\space Ratio)\\]"+"\\[\\space =1.618 \\times"+grb+"="+gra+"\\]";
+        goldr_explain.innerHTML+="\\[ a+b=a\\times (Golden \\space Ratio)\\]"+"\\[\\space\\space = 1.618 \\times"+gra+"="+grab+"\\]";
+        goldr_explain.innerHTML+="\\[Area=(a)\\times (a+b)\\]"+"\\[\\space\\space = "+gra+"\\times"+grab+"="+grar+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+    else if(grab!="" ){
+        gra=(parseFloat(grab)/1.618).toFixed(3);
+        grb=(gra/1.618).toFixed(3);
+        grar=(parseFloat(gra)*parseFloat(grab)).toFixed(3);
+        
+        document.getElementById("gra").value=gra;
+        document.getElementById("grb").value=grb;
+        document.getElementById("grar").value=grar;
+
+        goldr_explain.innerHTML="\\[ a=\\frac{a+b}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+grab+"}{1.618}="+gra+"\\]";
+        goldr_explain.innerHTML+="\\[b=\\frac{a}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gra+"}{1.618}="+grb+"\\]";
+        goldr_explain.innerHTML+="\\[Area=(a)\\times (a+b)\\]"+"\\[\\space\\space = "+gra+"\\times"+grab+"="+grar+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+    else if(grar!="" ){
+        gra=(Math.sqrt(parseFloat(grar)/1.618)).toFixed(3);
+        grb=(gra/1.618).toFixed(3);
+        grab=(1.618*gra).toFixed(3);
+        
+        document.getElementById("gra").value=gra;
+        document.getElementById("grb").value=grb;
+        document.getElementById("grab").value=grab;
+
+        goldr_explain.innerHTML="\\[ a=\\sqrt{\\frac{Area}{Golden \\space Ratio}}\\]"+"\\[\\space =\\sqrt{ \\frac{"+grar+"}{1.618}}="+gra+"\\]";
+        goldr_explain.innerHTML+="\\[b=\\frac{a}{Golden \\space Ratio}\\]"+"\\[\\space = \\frac{"+gra+"}{1.618}="+grb+"\\]";
+        goldr_explain.innerHTML+="\\[ a+b=a\\times (Golden \\space Ratio)\\]"+"\\[\\space\\space = 1.618 \\times"+gra+"="+grab+"\\]";
+        
+        renderMathInElement(document.getElementById("goldrec_explain"));
+    }
+} 
 // diamond problemcalculator
 function diamond() {
     var diamondA = document.getElementById("dinputA").value;
@@ -2848,6 +2919,16 @@ function impse12find(){
     if (n % 2 == 1)
         document.getElementById("impse12ans").innerHTML =  (n + 1) / 2;
     document.getElementById("impse12ans").innerHTML =  -n / 2;
+}
+
+function impse13find(){
+    let n = parseInt(document.getElementById("impse17").value)
+    let sum = 0;
+ 
+    for ( let i = 1; i <= n; i++)
+        sum = sum + i * (i + 1) * (i + 2);
+ 
+        document.getElementById("impse13ans").innerHTML = sum;
 }
 
 function find_count(ele){
@@ -3938,6 +4019,19 @@ function circleinfind(){
         document.getElementById("circleinans").innerHTML = "Please enter valid input"
     }
 }
+
+function solveheart(){
+    var n = parseInt(document.getElementById("inputlenheart").value);
+    if(!isNaN(n)){
+        var area = ( 1 + (math.pi) / 4 ) * n**2;
+        var height =  ( 3/4 * math.sqrt(2) + 1/2 ) * n;
+        var peri = ( 2 + (math.pi) ) * n;
+        document.getElementById("resultofareaheart").innerHTML = "Area = "+area.toFixed(3)
+        document.getElementById("resultofheightheart").innerHTML = "Height = "+height.toFixed(3)
+        document.getElementById("resultofperiheart").innerHTML = "Perimeter = " +peri.toFixed(3)
+    }
+}
+
 //Polygon Calculator
 function solvepolycal(){
     var S = document.getElementById("inputareapolycal").value;
@@ -11362,6 +11456,13 @@ function cirinsemi8find(){
     document.getElementById("cirinsemi8ans").innerHTML =  area.toFixed(5)
 }
 
+function cirinsemi9find(){
+    let a = parseInt(document.getElementById("cirinsemi11in").value)
+    let b= parseInt(document.getElementById("cirinsemi12in").value)
+    var area = (3 * Math.sqrt(3) * Math.pow(a, 2)) / (4 * b); 
+    document.getElementById("cirinsemi9ans").innerHTML =  area;
+}
+
 function trapinsemifind(){
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3)* Math.pow(r, 2)) / 4; 
@@ -11779,6 +11880,18 @@ function typenum8find()
     let n = parseInt(document.getElementById("typenum10").value)
     for (let i = 1; i <= n; i++)
         document.getElementById("typenum8ans").innerHTML =  printTribRec(i) + " ";
+}
+
+
+function typenum9find(){
+    let n = parseInt(document.getElementById("typenum11").value)
+    if (n < 1)
+        document.getElementById("typenum8ans").innerHTML = n;
+    if (n == 1)
+        document.getElementById("typenum8ans").innerHTML = 2;
+ 
+    document.getElementById("typenum8ans").innerHTML = (4 * evenFib(n-1)) +
+                 evenFib(n-2)
 }
 
 //Find all combinations that add upto given number
@@ -14544,37 +14657,56 @@ function hammingDistance() {
     const type = document.getElementById("inpType").value;
     let result = document.getElementById("distResult");
 
+    var ans = "";
     if(x.length != y.length){
         result.innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal length of inputs )"
     } else {
         if(type == "Decimal"){
             let val = x ^ y;
             let hammDist = 0;
+            ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
+            ans += "\\[Scan\\space both\\space the\\space strings\\space from\\space left\\space to\\space right\\space and\\space where\\space both\\space bits\\space are\\space same\\space increment\\space hamming\\space distance\\space by\\space 1\\space\\]"
             if(x.length == y.length){
                 while (val > 0) {
+                    ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
                     val &= val - 1;
                     hammDist++;
                 }
-                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
+                ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+                result.innerHTML = ans;
+                renderMathInElement(result);
             }
         }else if(type == "String"){
             let hammDist;
+            ans += "\\[Scan\\space both\\space the\\space strings\\space from\\space left\\space to\\space right\\space and\\space where\\space both\\space bits\\space are\\space same\\space increment\\space hamming\\space distance\\space by\\space 1\\space\\]"
             for (var i = 0; i <x.length ; i++) {
-                if(x.charAt(i)!=y.charAt(i))
+                if(x.charAt(i)!=y.charAt(i)){
                     hammDist += 1;
+                    var a = x.charAt(i);
+                    var b = y.charAt(i);
+                    ans += "\\[bit\\space at "+(i+1)+"is\\space equal\\space hamming\\space distance="+hammDist+" \\]";
+                }
             }
-            result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+            ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+            result.innerHTML = ans;
+            renderMathInElement(result);
         }else if(type == "Hexadecimal"){
             x = parseInt(x,10).toString(16);
             y = parseInt(y,10).toString(16);
             let val = x ^ y;
             let hammDist = 0;
+            ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
             if(x.length == y.length){
                 while (val > 0) {
+                    ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
                     val &= val - 1;
                     hammDist++;
                 }
-                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
+                ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+                result.innerHTML = ans;
+                renderMathInElement(result);
             }
         }else if(type == "Binary"){
             if(x.search(/^[10]+$/) == -1 || y.search(/^[10]+$/) == -1){
@@ -14582,12 +14714,17 @@ function hammingDistance() {
             }else{
                 let val = x ^ y;
                 let hammDist = 0;
+                ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
                 if(x.length == y.length){
                     while (val > 0) {
+                        ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
                         val &= val - 1;
                         hammDist++;
                     }
-                    result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                    ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
+                    ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+                    result.innerHTML = ans;
+                    renderMathInElement(result);
                 }
             }
         }
@@ -15546,6 +15683,11 @@ function convertex3() {
         for (var i = 0; i < r.length; i++) {
             var y = (parseInt(r[i]) + 3).toString(2)
         }
+    }else if(fromBase === "Hexa decimal" && toBase === "Excess-3"){
+        r = parseInt(input, 16).toString();
+        for (var i = 0; i < r.length; i++) {
+            var y = (parseInt(r[i]) + 3).toString(2)
+        }
     }
 
     if (y.length == 1) {
@@ -15575,37 +15717,25 @@ function convertdec2421(){
     var input = document.getElementById("dec2421-input").value;
     let result = document.getElementById("dec2421-result");
     var x = "_";
-
+    var y = "";
     for (var i = 0; i < input.length; i++) {
-        if (input[i] == 0){
-            x = x + "0000_";
+        if(parseInt(input[i])<5){
+            y = (parseInt(input[i]) + 0).toString(2);
+        }else if(parseInt(input[i])>4){
+            y = (parseInt(input[i]) + 6).toString(2);
         }
-        if (input[i] == 1) {
-            x = x + "0001_" ;
+
+        if (y.length == 1) {
+            x = x + "000" + y + "_   ";
         }
-        if (input[i] == 2) {
-            x = x + "0010_" ;
+        if (y.length == 2) {
+            x = x + "00" + y + "_   ";
         }
-        if (input[i] == 3) {
-            x = x + "0011_";
+        if (y.length == 3) {
+            x = x + "0" + y + "_   ";
         }
-        if (input[i] == 4) {
-            x = x + "0100_";
-        }
-        if(input[i] == 5){
-            x = x + "1011_";
-        }
-        if(input[i] == 6){
-            x = x + "1100_";
-        }
-        if(input[i] == 7){
-            x = x + "1101_";
-        }
-        if(input[i] == 8){
-            x = x + "1110_";
-        }
-        if(input[i] == 9){
-            x = x + "1111_";
+        if (y.length == 4) {
+            x = x + +y + "_   ";
         }
     }
     result.innerHTML = x;
@@ -17624,8 +17754,24 @@ function cartcal(){
     var outputy = document.getElementById("cartyans");
     var outputz = document.getElementById("cartzans");
     var ans="";
+    var ansx="";
+    var ansy="";
+    var ansz="";
+    var cs = Math.cos(o);
     var x = p*Math.cos(o);
+    var sn = Math.sin(o);
     var y = p*Math.sin(o);
+    ansx += "\\[x\\space coordinate:\\space ρ*cos(θ) \\]";
+    ansx += "\\[x\\space coordinate:\\space ρ*"+cs+"\\]"
+    ansx += "\\[x\\space coordinate:\\space "+x+"\\]"
+
+    ansy += "\\[y\\space coordinate:\\space ρ*sin(θ) \\]";
+    ansy += "\\[y\\space coordinate:\\space ρ*"+sn+"\\]"
+    ansy += "\\[y\\space coordinate:\\space "+y+"\\]"
+
+    ansz += "\\[z coordinate:\\space Z\\]";
+    ansz += "\\[z coordinate:\\space "+z+"\\]";
+    
     if(isNaN(p)||isNaN(o)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -17634,10 +17780,13 @@ function cartcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputx.innerHTML= "x: " + x;
-        outputy.innerHTML = "y: " + y;
-        outputz.innerHTML = "Z: " + z;
+        outputx.innerHTML= ansx;
+        outputy.innerHTML = ansy;
+        outputz.innerHTML = ansz;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
+    renderMathInElement(outputz);
 }
 //BILINEAR INTERPOLATION CALCULATOR
 function bilinearcal(){

@@ -148,6 +148,7 @@ Other Tech/Libraries
   - Greatest Integer Function and Fractional Part
   - Quartiles
   - Deciles
+  - Modulo Calculator
   - Doubling Time
   - Direct And Indirect Proportion
   - Cross Multiplication Calculator
@@ -187,6 +188,8 @@ Other Tech/Libraries
   - Rounding off numbers
   - EMI Calculator
   - GST Calculator
+  - Golden Ratio Calculator
+  - Golden Rectangle Calculator
   - Polynomial Degree Finder
   - Simple and Compound Interest
   - Factorial
