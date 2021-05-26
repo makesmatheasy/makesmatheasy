@@ -13925,10 +13925,10 @@ function scyf1find(){
 }
 
 function scyf2find(){
-    let b = parseInt(document.getElementById("scyf6").value) 
-    let h = parseInt(document.getElementById("scyf7").value)
-    let ans = 2 * b * s + parseInt(Math.pow(b, 2));
-    document.getElementById("scyf2ans").innerHTML = ans
+    var b = parseInt(document.getElementById("scyf6").value);
+    var h = parseInt(document.getElementById("scyf7").value);
+    let ans = 2 * b * h + parseInt(Math.pow(b, 2));
+    document.getElementById("scyf2ans").innerHTML = ans;
 }
 
 
