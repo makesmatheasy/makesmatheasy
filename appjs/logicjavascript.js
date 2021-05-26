@@ -11951,6 +11951,22 @@ function solveperc(){
     renderMathInElement(document.getElementById('t'));
     renderMathInElement(document.getElementById('t1'));
 }
+function solveperper(){
+    var x5=(document.getElementById('x5').value);
+    var y5=(document.getElementById('y5').value);
+    var ansexp ="";
+    if(x5!="" && y5!=""){
+        var ans = parseFloat(x5)*parseFloat(y5)/100;
+        ansexp += "\\[ "+x5+" \\space \\times \\space "+y5+"\\]" ; 
+        ansexp += "\\[= "+ans+" %\\]";
+        document.getElementById('perans1').innerHTML= ansexp;
+    } else{
+        document.getElementById('perans1').innerHTML= "\\[Please \\space enter \\space all \\space Input\\]";
+        document.getElementById('perans2').innerHTML= "";
+    }
+    renderMathInElement(document.getElementById('perans1'));
+}
+
 
 function solveperper(){
     var x5=(document.getElementById('x5').value);
@@ -18121,37 +18137,14 @@ function polarcal(){
     }
 }
 
-function polarcal(){
-    var x=parseFloat(document.getElementById("polarx").value);
-    var y=parseFloat(document.getElementById("polary").value);
-    var outputr = document.getElementById("polarans1");
-    var outputo = document.getElementById("polarans2");
-    var r =  Math.sqrt(x*x + y*y);
-    var o = Math.atan(y/x);
-    var ans="";
-    if(isNaN(x)||isNaN(y))
-    {
-        ans += "Please fill all the field";
-        outputr.innerHTML= ans;
-        outputo.innerHTML = "";
-    }
-    else{
-        outputr.innerHTML= "r: " + r;
-        outputo.innerHTML = "θ: " + o;
-    }
-}
+function cylcartcal(){
+    var p=parseFloat(document.getElementById("cylcartp").value);
+    var o=parseFloat(document.getElementById("cylcarto").value);
+    var z= parseFloat(document.getElementById("cylcartz").value);
 
-
-//Cartesian Coordinate Calculator
-
-function cartcal(){
-    var p=parseFloat(document.getElementById("cartp").value);
-    var o=parseFloat(document.getElementById("carto").value);
-    var z= parseFloat(document.getElementById("cartz").value);
-
-    var outputx = document.getElementById("cartxans");
-    var outputy = document.getElementById("cartyans");
-    var outputz = document.getElementById("cartzans");
+    var outputx = document.getElementById("cylcartxans");
+    var outputy = document.getElementById("cylcartyans");
+    var outputz = document.getElementById("cylcartzans");
     var ans="";
     var ansx="";
     var ansy="";
@@ -18187,6 +18180,34 @@ function cartcal(){
     renderMathInElement(outputy);
     renderMathInElement(outputz);
 }
+function sphcartcal(){
+    var r=parseFloat(document.getElementById("sphcartr").value);
+    var o=parseFloat(document.getElementById("sphcarto").value);
+    var fi= parseFloat(document.getElementById("sphcartfi").value);
+
+    var outputx = document.getElementById("sphcartxans");
+    var outputy = document.getElementById("sphcartyans");
+    var outputz = document.getElementById("sphcartzans");
+    var ans="";
+    
+    var x = r * Math.sin(o) * Math.cos(fi);
+    var y = r * Math.sin(o) * Math.sin(fi);
+    var z = r * Math.cos(o);
+    
+    if(isNaN(r)||isNaN(o)||isNaN(fi))
+    {
+        ans += "Please fill all the field";
+        outputx.innerHTML= ans;
+        outputy.innerHTML = "";
+        outputz.innerHTML = "";
+    }
+    else{
+        outputx.innerHTML= "X : " + x.toFixed(2);
+        outputy.innerHTML = "Y : " + y.toFixed(2);
+        outputz.innerHTML = "Z : " + z.toFixed(2);
+    }
+}
+
 function sphcal(){
     var x=parseFloat(document.getElementById("sphx").value);
     var y=parseFloat(document.getElementById("sphy").value);
@@ -18211,7 +18232,6 @@ function sphcal(){
         outputr.innerHTML= "r: " + r;
         outputo.innerHTML = "θ: " + o;
         outputfi.innerHTML = "φ: " + fi;
-
     }
 }
 
