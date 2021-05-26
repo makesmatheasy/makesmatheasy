@@ -4771,6 +4771,33 @@ function solveicosa() {
     }
 
 }
+
+function pointri(){
+    var x1,y1,x2,y2,x3,y3,p1,p2;
+    x1=parseFloat(document.getElementById('q1w').value);
+    y1=parseFloat(document.getElementById('q5w').value);
+    x2=parseFloat(document.getElementById('q2w').value);
+    y2=parseFloat(document.getElementById('q6w').value);
+    x3=parseFloat(document.getElementById('q3w').value);
+    y3=parseFloat(document.getElementById('q7w').value);
+    p1=parseFloat(document.getElementById('q4w').value);
+    p2=parseFloat(document.getElementById('q8w').value);
+   var area =  Math.abs((x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2))/2.0);
+   var area1 = Math.abs((p1*(y2-y3)+x2*(y3-p2)+ x3*(p2-y2))/2.0);
+   var area2 = Math.abs((x1*(p2-y3)+p1*(y3-y1)+ x3*(y1-p2))/2.0);
+   var area3 = Math.abs((x1*(y2-p2)+x2*(p2-y1)+ p1*(y1-y2))/2.0);
+   var areatotal = area1 + area2 + area3;
+   if(area == areatotal){
+       document.getElementById("pointoutput").innerHTML = "Point is Inside the Triangle"
+   }
+   else{
+    document.getElementById("pointoutput").innerHTML = "Point is Not Inside the Triangle"
+   }
+}
+
+
+
+
 //Cuboctahedron
 function solvecubo() {
     var a = document.getElementById("inputcuboside").value;
