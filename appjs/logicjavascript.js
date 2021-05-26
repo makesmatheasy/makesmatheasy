@@ -2970,6 +2970,23 @@ function impse18find(){
     }
 }
 
+function impse19find(){
+    let n = parseInt(document.getElementById("impse19").value)
+    let pPrevPrev = 1;
+    let pPrev = 1;
+    let pCurr = 1;
+    let pNext = 1;
+ 
+    for (let i = 3; i <= n; i++) {
+        pNext = pPrevPrev + pPrev;
+        pPrevPrev = pPrev;
+        pPrev = pCurr;
+        pCurr = pNext;
+    }
+ 
+    document.getElementById("impse18ans").innerHTML =  pNext;
+}
+
 function impse13find(){
     let n = parseInt(document.getElementById("impse17").value)
     let sum = 0;
