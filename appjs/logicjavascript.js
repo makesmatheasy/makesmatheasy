@@ -12132,7 +12132,7 @@ function solveperper(){
 function typenumfind(){
     let n = document.getElementById("typenum0").value;
     var ans="\\[";
-    var explain="\\[N-th \\space tetrahedral \\space number \\space is \\space sum \\space of\\space triangular \\space number \\space upto \\space n \\space terms \\space or \\space Nth \\space Triangular \\space number \\space+\\space Previous \\space Sum\\]"+"\\[Nth \\space Trigular \\space Number=\\frac{n*(n+1)}{2}\\]"+"\\[";
+    var explain="\\[N-th \\space tetrahedral \\space number =\\frac{N*(N+1)*(N+2)}{6}\\]"+"\\[";
     if(n=="")
     {
         ans+=  "Please enter number to find answer";
@@ -12144,7 +12144,7 @@ function typenumfind(){
     for (var i = 1; i <= n; i++)
     {
         curr = findTriangularNumber(i);
-        explain+="("+curr+"+"+prev+"=";
+        explain+="(\\frac{"+i+"*"+(i+1)+"*"+(i+2)+"}{6}=";
         curr =prev+curr; 
         ans+=  curr + "\\space \\space ";
         explain+=curr+")\\space ";
