@@ -4051,10 +4051,13 @@ function solveheart(){
         var area = ( 1 + (math.pi) / 4 ) * n**2;
         var height =  ( 3/4 * math.sqrt(2) + 1/2 ) * n;
         var peri = ( 2 + (math.pi) ) * n;
-        document.getElementById("resultofareaheart").innerHTML = "Area = "+area.toFixed(3)
-        document.getElementById("resultofheightheart").innerHTML = "Height = "+height.toFixed(3)
-        document.getElementById("resultofperiheart").innerHTML = "Perimeter = " +peri.toFixed(3)
+        document.getElementById("resultofareaheart").innerHTML = "\\[Area \\space of \\space Heart \\space shape \\newline (1 + \\frac{\\pi}{4}) \\times (Length \\space square)^2 \\newline = \\space (1 + "+((math.pi)/4).toFixed(2)+") \\times "+n+"^2 \\space = \\space"+area.toFixed(3)+"\\]";
+        document.getElementById("resultofheightheart").innerHTML = "\\[Height \\space of \\space Heart \\space shape \\newline (\\frac{3}{4} \\times \\sqrt{2} + \\frac{1}{2}) \\times (Length \\space square) \\newline = \\space "+( 3/4 * math.sqrt(2) + 1/2 ).toFixed(2)+" \\times "+n+" \\space = \\space "+height.toFixed(3)+"\\]";
+        document.getElementById("resultofperiheart").innerHTML = "\\[Perimeter \\space of \\space Heart \\space shape \\newline (2 + \\pi) \\times (Length \\space square) \\newline = \\space "+( 2 + (math.pi) ).toFixed(2)+" \\times "+n+" \\space = \\space "+peri.toFixed(3)+"\\]";
     }
+    renderMathInElement(document.getElementById("resultofareaheart"));
+    renderMathInElement(document.getElementById("resultofheightheart"));
+    renderMathInElement(document.getElementById("resultofperiheart"));
 }
 
 //Polygon Calculator
