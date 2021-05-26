@@ -19430,12 +19430,12 @@ N is the population size.
 
         <!-- Start of Addition of any number system -->
         <div class="collapse" id="adding-all">
+            <form action="">
             <div class="col-6">
                 <div class="form-group">
                     <h2>1st Input</h2>
                     <h5>Choose Number System</h5>
-                    <select id="adding-all-select1" class="form__field"
-                            onchange="addBinDecHexOct()">
+                    <select id="adding-all-select1" class="form__field">
                         <option class="form_field" style="background-color: #232a36;">
                             Decimal
                         </option>
@@ -19450,16 +19450,14 @@ N is the population size.
                         </option>
                     </select>
                     <input type=" " id="adding-all-input1" value="0"
-                           class="form__field"
-                           oninput="addBinDecHexOct()">
+                           class="form__field">
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <h2>2nd Input</h2>
                     <h5>Choose Number System</h5>
-                    <select id="adding-all-select2" class="form__field"
-                            onchange="addBinDecHexOct()">
+                    <select id="adding-all-select2" class="form__field">
                         <option class="form__field" style="background-color: #232a36;">
                             Decimal
                         </option>
@@ -19474,19 +19472,14 @@ N is the population size.
                         </option>
                     </select>
                     <input type=" " id="adding-all-input2" value="0"
-                    class="form__field"
-                    oninput="addBinDecHexOct()">
+                    class="form__field">
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <h2>Result Of Addition</h2>
                     <h5>Choose Number System</h5>
-                    <select id="adding-all-result-type" class="form__field"
-                    onchange="addBinDecHexOct()">
-                <option class="form__field" style="background-color: #232a36;">
-
-                </option>
+                    <select id="adding-all-result-type" class="form__field">
                 <option class="form__field" style="background-color: #232a36;">
                     Decimal
                 </option>
@@ -19500,9 +19493,17 @@ N is the population size.
                     Hexa Decimal
                 </option>
             </select>
-                </div>
-                <label class="form__group" id="adding-all-result">0</label>
+            <h5>Calculate</h5>
+                    </div>
+                <label class="form__group" id="adding-all-result">0</label><br><br>
+                <button type="button" class="btn btn-light" onclick="addBinDecHexOct()">
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
             </div>
+            </form>
         </div>
         <!-- End of Addition of any number system -->
 
