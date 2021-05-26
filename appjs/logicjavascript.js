@@ -14095,7 +14095,7 @@ function addBinDecHexOct(){
     if(firstBase === "Binary"){
         x1 = calculatefrac(input1,2);
         x1o = fracDectoBinHexOct(x1,2);
-        print += "<h5>Step1 : Convert the Binary number in Input 1 to decimal</h5>";
+        print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
         print += input1 + "->" + x1 + "<br>";
     }
     else if (firstBase === "Octal"){
@@ -14114,7 +14114,7 @@ function addBinDecHexOct(){
     if(secondBase === "Binary"){
         x2 = calculatefrac(input2,2);
         x2o = fracDectoBinHexOct(x2,2);
-        print += "<h5>Step2 : Convert the Binary number in Input 2 to decimal</h5>";
+        print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
         print += input2 + "->" + x2 + "<br>";
     }
     else if (secondBase === "Octal"){
