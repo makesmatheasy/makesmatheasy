@@ -2367,6 +2367,8 @@ function findWork() {
     const men1 = parseInt(document.getElementById('1men1').value);
     const time2 = parseInt(document.getElementById('1time2').value);
     const men2 = parseInt(document.getElementById('1men2').value);
+    var result = document.getElementById('stepswork');
+
     if(isNaN(work1) || isNaN(time1) || isNaN(men1) || isNaN(time2) || isNaN(men2) ){
         document.getElementById('workans').innerHTML = "Please enter all fields";
     }else{
@@ -2375,6 +2377,11 @@ function findWork() {
         }else{
             let workans = parseFloat(work1 * (time2 * men2) / (time1 * men1));
             document.getElementById('workans').innerHTML = "The work done is " + workans;
+            result.innerHTML += "\\[Working \\space Steps\\]"
+            result.innerHTML += "\\[Formula \\space -> \\space W_2 \\space = \\space \\frac{T_2 \\times N_2 \\times W_1}{T_1 \\times N_1}\\]";
+            result.innerHTML += "\\[= \\space \\frac{" + time2 + " \\times " + men2 + "\\times " + work1 + "}{" + time1 + "\\times " + men1 + "}\\]";
+            result.innerHTML += "\\[= \\space " + workans + "\\]";
+            renderMathInElement(result);
         }
     }
 }
