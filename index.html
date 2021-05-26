@@ -17542,6 +17542,7 @@
                         </div>
                     </form>
                 <p id="hpans"></p>
+                </div>
                 <p>&nbsp;</p>
                 <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
                     A Harmonic Progression (HP) is defined as a sequence of real numbers which is determined by taking the reciprocals of the arithmetic progression<br>
@@ -19343,12 +19344,12 @@ N is the population size.
 
          <!-- Start of Multiplication of any number system -->
          <div class="collapse" id="multiplying-all">
+             <form action="">
             <div class="col-6">
                 <div class="form-group">
                     <h2>1st Input</h2>
                     <h5>Choose Number System</h5>
-                    <select id="multiplying-all-select1" class="form__field"
-                            onchange="multBinDecHexOct()">
+                    <select id="multiplying-all-select1" class="form__field">
                         <option class="form_field" style="background-color: #232a36;">
                             Decimal
                         </option>
@@ -19363,16 +19364,14 @@ N is the population size.
                         </option>
                     </select>
                     <input type=" " id="multiplying-all-input1" value="0"
-                           class="form__field"
-                           oninput="multBinDecHexOct()">
+                           class="form__field">
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <h2>2nd Input</h2>
                     <h5>Choose Number System</h5>
-                    <select id="multiplying-all-select2" class="form__field"
-                            onchange="multBinDecHexOct()">
+                    <select id="multiplying-all-select2" class="form__field">
                         <option class="form__field" style="background-color: #232a36;">
                             Decimal
                         </option>
@@ -19387,19 +19386,14 @@ N is the population size.
                         </option>
                     </select>
                     <input type=" " id="multiplying-all-input2" value="0"
-                    class="form__field"
-                    oninput="multBinDecHexOct()">
+                    class="form__field">
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <h2>Result Of Multiplication</h2>
                     <h5>Choose Number System</h5>
-                    <select id="multiplying-all-result-type" class="form__field"
-                    onchange="multBinDecHexOct()">
-                <option class="form__field" style="background-color: #232a36;">
-
-                </option>
+                    <select id="multiplying-all-result-type" class="form__field">
                 <option class="form__field" style="background-color: #232a36;">
                     Decimal
                 </option>
@@ -19413,9 +19407,17 @@ N is the population size.
                     Hexa Decimal
                 </option>
             </select>
+            <h5>Calculate</h5>
                 </div>
-                <label class="form__group" id="multiplying-all-result">0</label>
+                <label class="form__group" id="multiplying-all-result">0</label><br><br>
+                <button type="button" class="btn btn-light" onclick="multBinDecHexOct()">
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
             </div>
+        </form>
         </div>
         <!-- End of Multiplication of any number system -->
 
