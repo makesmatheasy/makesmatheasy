@@ -15570,6 +15570,33 @@ function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
+//function that performs conversion of grey code to hexadecimal and vice versa
+function convertgreyhexdec(){
+    const fromBase = document.getElementById("grey-select4").value;
+    var input = document.getElementById("greyhexdec-input").value;
+    let result2 = document.getElementById("greyhexdec-result");
+    var result1 = "";
+
+    result2.innerHTML="";
+    result1 = input;
+
+    //assigned first value of input inside result
+    var x = result1[0];
+
+    if (fromBase === "Grey Code"){
+        for (var i = 1; i < result1.length; i++){
+            var n = parseInt(x[i - 1] ^ result1[i]).toString();
+            x += n;
+        }
+        x = parseInt(x,2).toString(16);
+    }
+    if(input=="")
+	{
+	  x="";
+	}
+    result2.innerHTML = "Answer -> " + x;
+}
+
 //function that performs conversion of grey code to octal and vice versa
 function convertgreyoct(){
     const fromBase = document.getElementById("grey-select3").value;
