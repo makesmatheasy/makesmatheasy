@@ -14567,37 +14567,56 @@ function hammingDistance() {
     const type = document.getElementById("inpType").value;
     let result = document.getElementById("distResult");
 
+    var ans = "";
     if(x.length != y.length){
         result.innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal length of inputs )"
     } else {
         if(type == "Decimal"){
             let val = x ^ y;
             let hammDist = 0;
+            ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
+            ans += "\\[Scan\\space both\\space the\\space strings\\space from\\space left\\space to\\space right\\space and\\space where\\space both\\space bits\\space are\\space same\\space increment\\space hamming\\space distance\\space by\\space 1\\space\\]"
             if(x.length == y.length){
                 while (val > 0) {
+                    ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
                     val &= val - 1;
                     hammDist++;
                 }
-                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
+                ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+                result.innerHTML = ans;
+                renderMathInElement(result);
             }
         }else if(type == "String"){
             let hammDist;
+            ans += "\\[Scan\\space both\\space the\\space strings\\space from\\space left\\space to\\space right\\space and\\space where\\space both\\space bits\\space are\\space same\\space increment\\space hamming\\space distance\\space by\\space 1\\space\\]"
             for (var i = 0; i <x.length ; i++) {
-                if(x.charAt(i)!=y.charAt(i))
+                if(x.charAt(i)!=y.charAt(i)){
                     hammDist += 1;
+                    var a = x.charAt(i);
+                    var b = y.charAt(i);
+                    ans += "\\[bit\\space at "+(i+1)+"is\\space equal\\space hamming\\space distance="+hammDist+" \\]";
+                }
             }
-            result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+            ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+            result.innerHTML = ans;
+            renderMathInElement(result);
         }else if(type == "Hexadecimal"){
             x = parseInt(x,10).toString(16);
             y = parseInt(y,10).toString(16);
             let val = x ^ y;
             let hammDist = 0;
+            ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
             if(x.length == y.length){
                 while (val > 0) {
+                    ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
                     val &= val - 1;
                     hammDist++;
                 }
-                result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
+                ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+                result.innerHTML = ans;
+                renderMathInElement(result);
             }
         }else if(type == "Binary"){
             if(x.search(/^[10]+$/) == -1 || y.search(/^[10]+$/) == -1){
@@ -14605,12 +14624,17 @@ function hammingDistance() {
             }else{
                 let val = x ^ y;
                 let hammDist = 0;
+                ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
                 if(x.length == y.length){
                     while (val > 0) {
+                        ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
                         val &= val - 1;
                         hammDist++;
                     }
-                    result.innerHTML = "The hamming distance between " + x + " and " + y + " is: " + hammDist;
+                    ans += "\\[When\\space val=\\space "+val+"\\space hamming\\space\\distance="+hammDist+" \\]"
+                    ans += "\\[The\\space hamming\\space distance \\space between\\space "+x+"\\space and\\space "+y+":\\space "+hammDist+"\\]"
+                    result.innerHTML = ans;
+                    renderMathInElement(result);
                 }
             }
         }
@@ -17642,8 +17666,24 @@ function cartcal(){
     var outputy = document.getElementById("cartyans");
     var outputz = document.getElementById("cartzans");
     var ans="";
+    var ansx="";
+    var ansy="";
+    var ansz="";
+    var cs = Math.cos(o);
     var x = p*Math.cos(o);
+    var sn = Math.sin(o);
     var y = p*Math.sin(o);
+    ansx += "\\[x\\space coordinate:\\space ρ*cos(θ) \\]";
+    ansx += "\\[x\\space coordinate:\\space ρ*"+cs+"\\]"
+    ansx += "\\[x\\space coordinate:\\space "+x+"\\]"
+
+    ansy += "\\[y\\space coordinate:\\space ρ*sin(θ) \\]";
+    ansy += "\\[y\\space coordinate:\\space ρ*"+sn+"\\]"
+    ansy += "\\[y\\space coordinate:\\space "+y+"\\]"
+
+    ansz += "\\[z coordinate:\\space Z\\]";
+    ansz += "\\[z coordinate:\\space "+z+"\\]";
+    
     if(isNaN(p)||isNaN(o)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -17652,10 +17692,13 @@ function cartcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputx.innerHTML= "x: " + x;
-        outputy.innerHTML = "y: " + y;
-        outputz.innerHTML = "Z: " + z;
+        outputx.innerHTML= ansx;
+        outputy.innerHTML = ansy;
+        outputz.innerHTML = ansz;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
+    renderMathInElement(outputz);
 }
 
 function bilinearcal(){
