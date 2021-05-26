@@ -295,6 +295,7 @@ function openit(id) {
         "#odds",
         "#pairfacts",
         "#interest",
+        "#sphere_shell",
         "#bitwise-calc",
         "#adding-all",
         "#subtract-all",

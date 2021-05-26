@@ -13872,6 +13872,37 @@ function spcap(){
     }
 }
 
+//spherical shell
+function solvesphere_shell() {
+    var R = document.getElementById("inputsphere_shellR").value;
+    var r = document.getElementById("inputsphere_shellr").value;
+    var aoutput = document.getElementById("resultofsphereshella");
+    var voloutput = document.getElementById("resultofsphereshellvol");
+    var areaoutput = document.getElementById("resultofsphereshellarea");
+    var atemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var vol=1.33*3.14*((R*R*R)-(r*r*r));
+    var area= 4*3.14*((R*R)+(r*r));
+    if ((R != "") && (r!="")) {
+        atemp += "\\[Shell \\space thickness \\space of \\space Spherical \\space shell \\space \\newline " + R + "-" + r + "\\ = " + eval(String(aop)) + "\\]";
+        aoutput.innerHTML = atemp;
+        voltemp += "\\[Volume \\space of \\space Spherical \\space shell \\space \\newline \\frac{4}{3} \\times \\pi (" + R + "^3-" + r + "^3 )" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Spherical \\space shell \\space  \\newline" + "4 \\times \\pi (" + R + "^2+" + r + "^2) " + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(aoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        aoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 //Mode end
 //Variance
 function Variance() {
