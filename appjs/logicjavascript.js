@@ -11539,18 +11539,27 @@ function retfind1(){
 function retfind8(){
     var l = parseFloat(document.getElementById("retin8").value)
     var b = parseFloat(document.getElementById("retin10").value)
-    var h = parseFloat(document.getElementById("retin11").value)
     var x = ((l * b) / (l + b));
-    var area = 0.70477 * Math.pow(x, 2);
-    if(l<0 || b<0 || h<0){
-        document.getElementById("retans8").innerHTML = "height, base or hypotenuse cannot be negative"
+    var x1 = Math.pow(x, 2);
+    var area = 0.70477 * x1
+    var output =  document.getElementById("retans8");
+    var ans = "";
+    if(l<0 || b<0){
+        ans += "\\[Height \\space Base \\space or \\space Hypotenuse \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
-    else if(!isNaN(l) && !isNaN(b)  && !isNaN(h)){
-    document.getElementById("retans8").innerHTML =  area.toFixed(4);
+    else if(!isNaN(l) && !isNaN(b)){
+        ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space = \\space \\frac{(π - \\sqrt{3}) \\times h^{2}}{2} \\space = \\space 0.70477 \\times h^{2} \\]"
+        ans += "\\[Side \\space of \\space the \\space Square \\space inscribed \\space within \\space a \\space right \\space angled \\space triangle (a) \\space = \\space \\frac{l \\times b}{l + b} \\]"
+        ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space a  \\space so, \\space a \\space = \\space h \\]"
+        ans += "\\[A \\space = \\space 0.70477 \\times (\\frac{l \\times b}{l + b})^{2} \\space =  \\space 0.70477 \\times (\\frac{" + l + " \\times " + b + "}{" + l + "+" + b + "})^{2} \\space =  \\space 0.70477 \\times (\\frac{" + (l * b) + "}{" + (l + b) + "})^{2} \\space =  \\space 0.70477 \\times " + x.toFixed(4) + " ^{2} \\space =  \\space 0.70477 \\times " + x1.toFixed(4) + " \\space = \\space " + area.toFixed(4) + " \\]" 
+        output.innerHTML = ans;
     }
     else{
-        document.getElementById("retans8").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 function exposol() {
