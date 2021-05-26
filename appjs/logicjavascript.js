@@ -2813,14 +2813,15 @@ else{
 }
 
 function impse10find(){
-    let n = parseInt(document.getElementById("impse14").value)
-    var res = 0, fact = 1;
+    let num = parseInt(document.getElementById("impse14").value)
+    var result = 0; 
+    var fact = 1;
     for (i = 1; i <= num; i++)
     {
         fact = fact * i;
-        res = res + (i / fact);
+        result = result + (i / fact);
     }
-    document.getElementById("impse10ans").innerHTML = res;
+    document.getElementById("impse10ans").innerHTML = result.toFixed(5) ;
 }
 
 function impse11find(){
