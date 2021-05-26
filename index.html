@@ -1973,6 +1973,24 @@
 
             <li>
                 <table class="table">
+                          <tr>
+                              <td style="border-top: none;">
+                                   <a id="nbaserootcollapsebtn"
+                                              style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">n-th base root calculator 
+                                   </a>
+                              </td>
+                              <td style="float:right;border-top: none;">
+                                   <span onclick="addtofavourite('n-th base root calculator','#n_baseroot','c','nrootfav')"><img
+                                               id="nrootfav" src="images/unfavourite.png"
+                                           style="height:1.5625rem;filter: none;"></span>
+                              </td>
+                          </tr>
+               </table>
+           </li>
+
+
+            <li>
+                <table class="table">
                     <tr>
                         <td style="border-top: none;">
                             <a id="squaresRange"
@@ -2432,6 +2450,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Golden Ratio Calculator ','#goldr','c','goldrimgfav')"><img
                                         id="goldrimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="goldrecbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Golden Rectangle Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Golden Rectangle Calculator ','#goldrec','c','goldrecimgfav')"><img
+                                        id="goldrecimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem; filter:none;"></span>
                         </td>
                     </tr>
@@ -2927,7 +2960,7 @@
                                Calculator</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('supplementary angle calculator','#suppangs','c','suppangfav')"><img
+                                <span onclick="addtofavourite('supplementary angle calculator','#suppangs','c','suppangimgfav')"><img
                                         id="suppangimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -2935,6 +2968,22 @@
                 </table>
             </li>
            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cotermangbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coterminal Angle 
+                               Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Coterminal Angle Calculator','#cotermang','c','cotermangimgfav')"><img
+                                        id="cotermangimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
 
             <li>
                 <table class="table">
@@ -5926,6 +5975,9 @@
             </button>
             <button type="button" class="btn btn-light" onclick=centerrsolve()>
                 Radius
+            </button>
+            <button type="button" class="btn btn-light" onclick=xintersept()>
+                X Intercept
             </button><br>
            
         <h1 id = "centerer"></h1>
@@ -6037,14 +6089,10 @@
             <br>
             <h5 id="recinsemians"></h5>
             <br>
-            <h4>Largest trapezoid that can be inscribed in a semicircle </h4>
-            <br>
-            <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="trapinsemifind()">Find</button>
-            <br>
-            <h5 id="trapinsemians"></h5>
-            <br>
+            <h4>Largest trapezoid that can be inscribed in a semicircle </h4><br>
+            <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field"><br>
+            <button class="btn btn-dark" onclick="trapinsemifind()">Find</button><br>
+            <h5 id="trapinsemians"></h5><br>
             <h4>Area of circle inscribed in a Isosceles Trapezoid </h4>
             <br>
             <input type="text" id="trapinsemin1" placeholder="Enter shorter side of trapezoid" class="form__field">
@@ -6078,6 +6126,14 @@
             <button class="btn btn-dark" onclick="retfind2()">Find</button>
             <br>
             <h5 id="retans2"></h5>
+            <br>
+            <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a circle</h4>
+            <br>
+            <input type="text" id="retin11" placeholder="Enter radius of circle (r)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="retfind11()">Find</button>
+            <br>
+            <h5 id="retans11"></h5>
             <br>
             <h4>Area of a Reuleaux Triangle inscribed in a Square which is inscribed in an equilateral triangle</h4>
             <br>
@@ -6133,6 +6189,14 @@
             <br>
             <h5 id="retans8"></h5>
             <br>
+            <h4>Area of a Reuleaux Triangle inscribed in a Square which is inscribed in a Hexagon</h4>
+            <br>
+            <input type="text" id="retin16" placeholder="Enter side length of regular hexagon (a)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="retfind13()">Find</button>
+            <br>
+            <h5 id="retans16"></h5>
+            <br>
             <h4>Area of Equilateral triangle inscribed in a Circle of radius R </h4>
             <br>
             <input type="text" id="cirinsemi1in" placeholder="Enter radius of cicrcle" class="form__field">
@@ -6159,21 +6223,16 @@
             <br>
             <h5 id="cirinsemi3ans"></h5>
             <br>
-            <h4>Area of a circle inscribed in a rectangle which is inscribed in a semicircle</h4>
-            <br>
-            <input type="text" id="cirinsemi4in" placeholder="Enter radius of semicircle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button>
-            <br>
+            <h4>Area of a circle inscribed in a rectangle which is inscribed in a semicircle</h4><br>
+            <input type="text" id="cirinsemi4in" placeholder="Enter radius of semicircle" class="form__field"><br>
+            <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button><br>
             <h5 id="cirinsemifind4ans"></h5>
             <br>
-            <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a semicircle</h4>
-            <br>
-            <input type="text" id="cirinsemi5in" placeholder="Enter radius of semicircle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi5find()">Find</button>
-            <br>
-            <h5 id="cirinsemifind5ans"></h5>
+            <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a semicircle</h4><br>
+            <input type="text" id="cirinsemi5in" placeholder="Enter radius of semicircle" class="form__field"><br>
+            <button class="btn btn-dark" onclick="cirinsemi5find()">Find</button><br>
+            <p id="cirinsemifind5ans"></p><br>
+            <p id="cirinsemifind5ans1"></p><br>
             <br>
             <h4>Radius of the biggest possible circle inscribed in rhombus which in turn is inscribed in a rectangle </h4>
             <br>
@@ -6184,13 +6243,28 @@
             <br>
             <h5 id="cirinsemi6ans"></h5>
             <br>
-            <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a semicircle</h4>
-            <br>
-            <input type="text" id="cirinsemi8in" placeholder="Enter side of square" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi7find()">Find</button>
-            <br>
+            <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a square</h4><br>
+            <input type="text" id="cirinsemi8in" placeholder="Enter side of square" class="form__field"><br>
+            <button class="btn btn-dark" onclick="cirinsemi7find()">Find</button><br>
             <h5 id="cirinsemi7ans"></h5>
+            <br>
+            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4>
+            <br>
+            <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
+            <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button>
+            <br>
+            <h5 id="cirinsemi8ans"></h5>
+            <br>
+            <h4>Largest triangle that can be inscribed in an ellipse</h4>
+            <br>
+            <input type="text" id="cirinsemi11in" placeholder="Enter length of major axis of ellipse" class="form__field">
+            <input type="text" id="cirinsemi12in" placeholder="Enter length of minor axis of ellipse" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="cirinsemi9find()">Find</button>
+            <br>
+            <h5 id="cirinsemi9ans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -7021,6 +7095,26 @@
             </div>
         </div>
 
+         <!-- start of nth base  root calculator   -->
+        <div class="collapse" id="n_baseroot">     
+             <h1 style="text-align: center;">n-th base root calculator </h1><br>    
+            <div class="form-group">
+                <input type="text" id="n_rootnumber" class="form__field"
+                        placeholder="Enter the number">
+                <input type="text" id="n_rootbase" class="form__field" placeholder="Enter the value nth base">
+                    </div><br>
+        
+             <div class="form-group">
+                      <button type="button" class="btn btn-light" onclick="findnthrt()">
+                            Calculate
+                        </button><br>
+             </div>
+                     <br>
+             <div class="form-group">
+                           <p id="nrootresult" style="overflow-y:hidden;height:100%;text-align: center;"></p>
+            </div>
+        </div>
+        
         <div class="collapse" id="sigma">
             <div class="stopwrap">
                 <div class="coll">
@@ -8483,6 +8577,14 @@
             <button type="button" class="btn btn-dark" onclick="lacube8find()">Find</button>
             <br>
             <p id="lacube8ans"></p>
+            <br>
+            <h2>Count square and non-square numbers before n</h2>
+            <br>
+            <input type="text" id="lacube11" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="lacube9find()">Find</button>
+            <br>
+            <p id="lacube9ans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -8490,11 +8592,9 @@
             <form action="">
                 <div class="form-group" style="display:inline-block">
                     <label>Enter the real part : &nbsp; &nbsp; </label>
-                    <input type="number" id="creal" class="form__field" placeholder="Real"
-                           style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    <input type="number" id="creal" class="form__field" placeholder="Real" style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
                     <label> Enter the imaginary part : &nbsp; &nbsp;</label>
-                    <input type="number" id="cimg" class="form__field" placeholder="Imag"
-                        style="width:3rem;display:inline;">
+                    <input type="number" id="cimg" class="form__field" placeholder="Imag" style="width:3rem;display:inline;">
                 </div>
                 <div class="form-group">
                     <select id="comop" class="btn btn-outline-light">
@@ -8506,16 +8606,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="comOp(document.getElementById('comop').value);">
-                        Solve
-                    </button>
-                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                        Reset
-                    </button>
+                    <button type="button" class="btn btn-light" onclick="comOp(document.getElementById('comop').value);"> Solve </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();"> Reset </button>
                 </div>
-            </form>
-            
+            </form> 
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="comresult"></p>
             </div>
@@ -12822,7 +12916,7 @@
                 <input class="form__field" type="number" id="1men1" placeholder="Enter Number of Men(N1)">
                 <br>
                 <input class="form__field" type="number" id="1time2" placeholder="Enter Time(T2)">
-                <br>1
+                <br>
                 <input class="form__field" type="number" id="1men2" placeholder="Enter Number of Men(N2)">
                 <br><br>
                 <button class = "btn btn-light" onclick="findWork()">Find Work</button>
@@ -12841,6 +12935,7 @@
                 <br><br>
                 <button class = "btn btn-light" onclick="findTime()">Find Time</button>
                 <p id="timeans"></p>
+                <p id="stepstime"></p>
             </div>
             <div id="unknownMen">
                 <input class="form__field" type="number" id="3work1" placeholder="Enter Work(W1)">
@@ -12855,6 +12950,7 @@
                 <br><br>
                 <button class = "btn btn-light" onclick="findMen()">Find Men</button>
                 <p id="menans"></p>
+                <p id="stepsmen"></p>
             </div>
             <!-- <input class = "form__field"type="text" id="giffnum">
             <br><br>
@@ -13446,6 +13542,31 @@
             </form>
             
             <p id="gold_explain"></p>
+        </div>
+
+        <!-- Golden Rectangle Calculator -->
+        <div class="collapse" id="goldrec">
+            <h1 style="text-align: center; margin-bottom: 4rem;">Golden Rectangle Calculator</h1>
+            <h4 style="margin-bottom: 2rem;">The golden rectangle is a rectangle whose sides are in the golden ratio. The golden ratio has a value of approximately 1.618.</h4>
+            <h4 style="margin-bottom: 2rem;">If 'a' is width and 'a+b' is length of golden rectangle then,\[\frac{a+b}{b}=\frac{a}{b}\] </h4>
+            <h4>Enter any 1 field</h4>
+            <form action="">
+                <input class="form__field" type="number" placeholder="a"
+                                   id="gra" oninput="goldrec()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="b"
+                                   id="grb" oninput="goldrec()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="a+b"
+                                   id="grab" oninput="goldrec()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Area"
+                                   id="grar" oninput="goldrec()">
+                <br><br>
+                <button type="button" class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="goldrec_explain"></p>
         </div>
         <div class="collapse" id="degcal">
             <h2 style="color: var(--appimage);">Polynomial Degree</h2>
@@ -14108,13 +14229,11 @@
             <br>
             <h4 id="diagnans"></h4>
 <br>
-            <h4>Number of triangles formed by joining vertices of n-sided polygon with two common sides and no common sides</h4>
-            <br>
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="numtin"/>
-            <br>
-            <button type="button" class="btn btn-dark" onclick="numtfind()">Find</button>
-            <br>
-            <h4 id="numtans"></h4><br>
+            <h4>Number of triangles formed by joining vertices of n-sided polygon with two common sides and no common sides</h4><br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="numtin"/><br>
+            <button type="button" class="btn btn-dark" onclick="numtfind()">Find</button><br>
+            <p id="numtans"></p><br>
+            <p id="numtans1"></p><br>
             <h4>Number of occurrences of a given angle formed using 3 vertices of a n-sided regular polygon</h4><br>
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="occin"/>
             <input type = "text" class = "form__field" placeholder = "Enter angle" id="occin1"/><br>
@@ -14226,14 +14345,6 @@
             <br>
             <h4 id="polymax6ans"></h4>
             <br>
-            <h4>Number of cycles in a Polygon with lines from Centroid to Vertices</h4>
-            <br>
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax8"/>
-            <br>
-            <button type = "button" class="btn btn-dark" onclick = "polymax8find()">FInd</button>
-            <br>
-            <h4 id="polymax8ans"></h4>
-            <br>
             <h4>Side of a regular n-sided polygon circumscribed in a circle</h4>
             <br>
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides of the polygon" id="polymax7"/>
@@ -14242,6 +14353,31 @@
             <button type = "button" class="btn btn-dark" onclick = "polymax7find()">FInd</button>
             <br>
             <h4 id="polymax7ans"></h4>
+            <br>
+            <h4>Number of cycles in a Polygon with lines from Centroid to Vertices</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax8"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax8find()">FInd</button>
+            <br>
+            <h4 id="polymax8ans"></h4>
+            <br>
+            <h4>Sum of sides of largest and smallest child polygons possible from a given polygon</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter the exterior angle of polygon" id="polymax9"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax9find()">FInd</button>
+            <br>
+            <h4 id="polymax9ans"></h4>
+            <br>
+            <h4>Circumcircle of any regular polygon</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter the no. of sides of polygon" id="polymax10"/>
+            <input type = "text" class = "form__field" placeholder = "Enter the side length of polygon" id="polymax11"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax10find()">FInd</button>
+            <br>
+            <h4 id="polymax10ans"></h4>
         </div>
 
         <div class="collapse" id="cevtha">
@@ -14971,6 +15107,10 @@
                            href="#">Interior Angle Calculator</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#heart"
+                           style="text-decoration:none;" href="#">Heart</a></td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofpolygon').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;">
@@ -15338,7 +15478,23 @@
             <input type="text" id="scyf5" class="form__field" placeholder="Enter the shorter radius of cone">
             <br>
             <button class="btn btn-dark" onclick="scyf1find()">Find</button><br>
-            <h5 id="scyf1ans"></h5>       
+            <h5 id="scyf1ans"></h5>     
+            <br>
+            <h4>Surface area of the square pyramid</h4>
+            <br>
+            <input type="text" id="scyf6" class="form__field" placeholder="Enter the base length of square pyramid">
+            <input type="text" id="scyf7" class="form__field" placeholder="Enter the slant height of square pyramid">            
+            <br>
+            <button class="btn btn-dark" onclick="scyf2find()">Find</button><br>
+            <h5 id="scyf2ans"></h5> 
+            <br>
+            <h4>Find slant height of cone and pyramid</h4>
+            <br>
+            <input type="text" id="scyf8" class="form__field" placeholder="Enter the  height of  pyramid">
+            <input type="text" id="scyf9" class="form__field" placeholder="Enter the radius of square pyramid">            
+            <br>
+            <button class="btn btn-dark" onclick="scyf3find()">Find</button><br>
+            <h5 id="scyf3ans"></h5>       
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -17515,6 +17671,26 @@
                       harmonic means of its two neighbours. For example, the sequence a, b, c, d, …is considered as an arithmetic progression; <br>
                       the harmonic progression can be written as 1/a, 1/b, 1/c, 1/d, …
                 </div>
+                <br>
+                <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term from End </h2>
+                <div class="form-group d-flex flex-column align-items-center">
+                    <form>
+                        <input type="number" name="lterm" class="form__field" id="lterm1" width="5em" placeholder="Enter last term (l)">
+                        <p>&nbsp;</p>
+                        <input type="number" name="cdiffer" class="form__field" id="cdiffer1" placeholder="Enter common difference (d)">
+                        <p>&nbsp;</p>
+                        <input type="number" name="totnum" class="form__field" id="totnum1" placeholder="Enter the number of term to find (n)">
+                        <p>&nbsp;</p>
+                        <div class="row">
+                            <div class="col-6">      
+                                <button type="button" class="btn btn-outline-light" onclick="hpcal11()">Calculate</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                <p id="hpans11"></p>
                
             </div>
         </div>
@@ -18110,9 +18286,9 @@
         <h1 style=" text-align: center; font-family:mathfont">Cartesian Coordinate Calculator</h1>
             <p>&nbsp;</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="cartp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
-                <input type="number" id="carto" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
-                <input type="number" id="cartz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+                <input type="number" id="cartp" placeholder="Enter the distance between the pole and the projected point"> 
+                <input type="number" id="carto" placeholder="Enter the angle created by the line and the polar axis in degree">
+                <input type="number" id="cartz" placeholder="Enter the vertical distance between the original point and the projected point">
                 <p>&nbsp;</p></p>
         <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartcal()">Calculate</button>
         <p>&nbsp;</p>
@@ -18483,7 +18659,7 @@ N is the population size.
     <h2>Print tetrahedral numbers upto Nth term</h2>
     <p>&nbsp;</p>
     <form>
-       <input type="text" id="typenum" class="form__field" placeholder="Enter the number">
+       <input type="text" id="typenum0" class="form__field" placeholder="Enter the number">
        <p>&nbsp;</p>
        <button type="button" class="btn btn-dark" onclick="typenumfind()">Find</button>
        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
@@ -18576,6 +18752,30 @@ N is the population size.
     <br>
     <h5 id="typenum7ans"></h5>
     </form>
+    <br>
+    </form>
+    <h2>Tribonacci Numbers</h2>
+    <br>
+    <form>
+    <input type="text" id="typenum10" class="form__field"placeholder="Enter number of terms">   
+    <br>
+    <button  type="button" class="btn btn-dark" onclick="typenum8find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum8ans"></h5>
+    </form>
+    <br>
+    </form>
+    <h2>Nth Even Fibonacci Number</h2>
+    <br>
+    <form>
+    <input type="text" id="typenum11" class="form__field"placeholder="Enter the number of terms">
+    <br>
+    <button  type="button" class="btn btn-dark" onclick="typenum9find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum9ans"></h5>
+    </form>
 </div>
 
 <div class="collapse" id="zscores">
@@ -18625,7 +18825,19 @@ N is the population size.
     </form>
 </div>
 
-
+<div class="collapse" id="cotermang">
+    <h1 style="font-family:mathfont; text-align:center;">Coterminal Angle 
+        Calculator </h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <input type="number" name="ang" class="form__field" id="cotang" width="5em" placeholder="Enter the angle whose Coterminal angle is to be calculated(in degree)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="cotermangcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button><br><br>
+        <p id="cotermangans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+    </form>
+</div>
 
 
 <div class="collapse" id="pairfacts">
@@ -19427,7 +19639,7 @@ N is the population size.
                                     Hexa Decimal
                                 </option>
                             </select>
-                            <input type="text" id="divide-all-input1" value="0"
+                            <input type="" id="divide-all-input1"
                                    class="form__field"
                                    oninput="divBinDecHexOct()">
                         </div>
@@ -19451,7 +19663,7 @@ N is the population size.
                                     Hexa Decimal
                                 </option>
                             </select>
-                            <input type="text" id="divide-all-input2" value="0"
+                            <input type="" id="divide-all-input2"
                             class="form__field"
                             oninput="divBinDecHexOct()">
                         </div>
@@ -19479,7 +19691,7 @@ N is the population size.
                         </option>
                     </select>
                         </div>
-                        <label class="form__group" id="div-all-result">0</label>
+                        <label class="form__group" id="divide-all-result">0</label>
                     </div>
                 </div>
                 <!-- End of Division of any number system -->
@@ -20171,6 +20383,12 @@ N is the population size.
                             <option class="form_field" style="background-color: #232a36;">
                                 Decimal
                             </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Hexa decimal
+                            </option>
                         </select>
 
                 <input type="number" id="ex3-input" value="0" class="form__field"
@@ -20190,6 +20408,12 @@ N is the population size.
                             </option>
                             <option class="form__field" style="background-color: #232a36;">
                                 Decimal
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Hexa decimal
                             </option>
                         </select>
 
@@ -20509,6 +20733,22 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse11find()">Find</button>
     <br>
     <p id="impse11ans"></p>
+    <br>
+    <h4>Sum of the series 1-2+3-4+5-6+7…….</h4>
+    <br>
+    <input type="text" id="impse16"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse12find()">Find</button>
+    <br>
+    <p id="impse12ans"></p>
+    <br>
+    <h4>Sum of series 1*2*3 + 2*3*4+ 3*4*5 + . . . + n*(n+1)*(n+2)</h4>
+    <br>
+    <input type="text" id="impse17"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse13find()">Find</button>
+    <br>
+    <p id="impse13ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
@@ -20775,6 +21015,113 @@ N is the population size.
                         </select>
                     </div>
                     <label class="form__group" id="binary-hexadecimal-result">0</label>
+                </div>
+                <br>
+                <br>
+                <div class="col-6">
+                    <div class="form-group">
+                        <h3 style="text-align: center;">Bin/Dec/Oct/Hex Table</h3>
+                        <table class="table table-bordered table-dark">
+                        <tbody style="text-align: center;">
+                        <tr>
+                            <th scope="col">Decimal Numbers</strong></th>
+                            <th scope="col">Binary Numbers</strong></th>
+                            <th scope="col">Octal Numbers</strong></th>
+                            <th scope="col">Hexa Decimal Numbers</strong></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>1</p></th>
+                            <th scope="row"><p>1</p></th>
+                            <th scope="row"><p>1</p></th>
+                            <th scope="row"><p>1</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>2</p></th>
+                            <th scope="row"><p>10</p></th>
+                            <th scope="row"><p>2</p></th>
+                            <th scope="row"><p>2</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>3</p></th>
+                            <th scope="row"><p>11</p></th>
+                            <th scope="row"><p>3</p></th>
+                            <th scope="row"><p>3</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>4</p></th>
+                            <th scope="row"><p>100</p></th>
+                            <th scope="row"><p>4</p></th>
+                            <th scope="row"><p>4</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>5</p></th>
+                            <th scope="row"><p>101</p></th>
+                            <th scope="row"><p>5</p></th>
+                            <th scope="row"><p>5</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>6</p></th>
+                            <th scope="row"><p>110</p></th>
+                            <th scope="row"><p>6</p></th>
+                            <th scope="row"><p>6</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>7</p></th>
+                            <th scope="row"><p>111</p></th>
+                            <th scope="row"><p>7</p></th>
+                            <th scope="row"><p>7</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>8</p></th>
+                            <th scope="row"><p>1000</p></th>
+                            <th scope="row"><p>10</p></th>
+                            <th scope="row"><p>8</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>9</p></th>
+                            <th scope="row"><p>1001</p></th>
+                            <th scope="row"><p>11</p></th>
+                            <th scope="row"><p>9</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>10</p></th>
+                            <th scope="row"><p>1010</p></th>
+                            <th scope="row"><p>12</p></th>
+                            <th scope="row"><p>A</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>11</p></th>
+                            <th scope="row"><p>1011</p></th>
+                            <th scope="row"><p>13</p></th>
+                            <th scope="row"><p>B</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>12</p></th>
+                            <th scope="row"><p>1100</p></th>
+                            <th scope="row"><p>14</p></th>
+                            <th scope="row"><p>C</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>13</p></th>
+                            <th scope="row"><p>1101</p></th>
+                            <th scope="row"><p>15</p></th>
+                            <th scope="row"><p>D</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>14</p></th>
+                            <th scope="row"><p>1110</p></th>
+                            <th scope="row"><p>16</p></th>
+                            <th scope="row"><p>E</p></th>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>15</p></th>
+                            <th scope="row"><p>1111</p></th>
+                            <th scope="row"><p>17</p></th>
+                            <th scope="row"><p>F</p></th>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -23242,9 +23589,7 @@ N is the population size.
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Antipodal Digon</h5>
-                        <button type="button" class="close" data-dismiss="modal"
-                                aria-label="Close"
-                                style="outline:none">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -23267,27 +23612,19 @@ N is the population size.
                             </div>
                             <div class="dropdown-divider"></div>
                             <!-- --------FROM------- -->
-                            <input type="text" id="antidigonr" class = "form__field" oninput="antipodal()" 
-                                placeholder="Enter radius (r)">
-                            <input type="text" id="antidigona" class = "form__field" oninput="antipodal()" 
-                                placeholder="Enter Angle (&#945)">
-                                <br><br>
-                                <p class="stopwrap" id="antidigonperi"
-                                   style="font-family:mathfont;"></p><br>
-                                <p class="stopwrap" id="antidigonarea"
-                                   style="font-family:mathfont;"></p><br>
+                            <input type="text" id="antidigonr" class = "form__field" oninput="antipodal()"  placeholder="Enter radius (r)">
+                            <input type="text" id="antidigona" class = "form__field" oninput="antipodal()"   placeholder="Enter Angle (&#945)"><br><br>
+                                <p class="stopwrap" id="antidigonperi" style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="antidigonarea"  style="font-family:mathfont;"></p><br>
                         </div>
                         <!-- ------HERE------ -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <div class="modal fade" id="annulus" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -24479,6 +24816,56 @@ N is the population size.
                            style="font-family:mathfont;"></p>
                         <p class="stopwrap" id="resultofperimeterpent"
                            style="font-family:mathfont;"></p>-
+                    </div>
+                    <!---TILL-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="heart" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Heart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- added div with class container -->
+                    <div class="conatiner">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area (A)</h5>
+                                <p class="text-center">\[A = (1 + \frac{(\pi)}{4}) \times a^2 \]</p><br>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter (P)</h5>
+                                <p class="text-center">\[P= (2 + \pi) \times a\]</p><br>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height (h)</h5>
+                                <p class="text-center">\[h = (\frac{3}{4} \times \sqrt{2} + \frac{1}{2}) \times a\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group"></div>
+                                    <img src="images/heart.PNG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <!---FROM-->
+                        <input class="form__field" type="number" placeholder="Enter length square (a)" id="inputlenheart" oninput="solveheart()">
+                        <p class="stopwrap" id="resultofareaheart"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofheightheart"
+                           style="font-family:mathfont;"></p><br>
+                        <p class="stopwrap" id="resultofperiheart"
+                           style="font-family:mathfont;"></p><br>
                     </div>
                     <!---TILL-->
                 </div>

@@ -511,6 +511,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cotermangbtn").click(function () {
+        openit("#cotermang");
+        closenav();
+        clearall();
+    });
     $("#ttestbtn").click(function () {
         openit("#ttest");
         closenav();
@@ -601,6 +606,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
     $("#sphbtn").click(function(){
         openit("#sph");
         closenav();
@@ -1312,6 +1318,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#goldrecbtn").click(function () {
+        openit("#goldrec");
+        closenav();
+        clearall();
+    });
     $("#platonicbtn").click(function () {
         openit("#platonic");
         closenav();
@@ -1497,6 +1508,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#nbaserootcollapsebtn").click(function(){
+        openit("#n_baseroot");
+        closenav();
+        clearall();
+    });
+
 
 })
 
