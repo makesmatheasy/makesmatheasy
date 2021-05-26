@@ -4917,14 +4917,17 @@ function xintersept(){
 }
 
 function nodiagnolfind(){
-    let n= parseInt(document.getElementById('nodiagnol').value)
+    var n= parseInt(document.getElementById('nodiagnol').value);
     if(!isNaN(n)){
-    let ans = n*(n-3)/2
-    document.getElementById("nodiagnolans").innerHTML = "The number of diagnols are "+ans
-}
-else{
-    document.getElementById("nodiagnolans").innerHTML = "Please enter valid input"
-}
+        var ans = n*(n-3)/2;
+        document.getElementById("nodiagnolans").innerHTML = "\\[The \\space number \\space of \\space diagnols \\space in \\space n-sided \\space convex \\space polygon \\space will \\space be \\newline \\frac{(No. \\space of \\space sides) \\times ((No. \\space of \\space sides)-3)}{2} \\]";
+        document.getElementById("nodiagnolans1").innerHTML = "\\[\\frac{"+n+" \\times ("+n+"-3)}{2} \\space = \\space \\frac{"+(n*(n-3)).toFixed(2)+"}{2} \\space = \\space "+ans.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("nodiagnolans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("nodiagnolans1").innerHTML = "";
+    }
+    renderMathInElement(document.getElementById("nodiagnolans"));
+    renderMathInElement(document.getElementById("nodiagnolans1"));
 }
 
 function orthosolve(){
