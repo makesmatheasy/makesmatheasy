@@ -18031,6 +18031,31 @@
             <p id="hm_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
             <h5 id="hm"></h5>
                 </div>
+                <br><br>
+                <h4 class="d-flex justify-content-center">To calculate HM when AM and GM are given</h4><br>
+                <form class="form-inline d-flex flex-column align-items-center" id="myForm">
+                            <input type="number" id="am11" placeholder="Enter Arthimetic Mean (AM)"
+                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                            <input type="number" id="gm11" placeholder="Enter Geometric Mean (GM) "
+                         style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                         <div class="row">
+                            <div class="col-6">
+                            <button type="button" class="btn btn-light" onclick=hmgm()>
+                         Solve
+                         </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">
+                            Reset
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <div class="coll1" style="text-align: center;">
+                <p id="hmgmans" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
+                </div>
         </div>
         <!-- sum of nterms in G.P. ends  -->
         <div class="collapse" id="convdiv">

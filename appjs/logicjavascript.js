@@ -12759,6 +12759,26 @@ function amsol() {
     renderMathInElement(result);
 }
 
+function hmgm() {
+    var am = parseFloat(document.getElementById("am11").value)
+    var gm = parseFloat(document.getElementById("gm11").value)
+    var hm = (gm*gm)/am;
+    var result = document.getElementById("hmgmans");
+    var temp1 = " ";
+    if((!isNaN(am)) && (!isNaN(gm))){
+        temp1 += "\\[Harmonic \\space Mean=\\space \\frac{GM \\times GM}{AM} =\\space \\frac{"+gm+"\\times"+gm+"}{"+am+"}\\] ";
+        temp1 += "\\[Result: " + hm.toFixed(3) + "\\]";
+        result.innerHTML = temp1;
+        }
+    else{
+        temp1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        temp1 += " ";
+        result.innerHTML = temp1;
+    }
+    renderMathInElement(result);
+}
+
+
 function mnapsum(){
     var m = parseFloat(document.getElementById("mterm").value)
     var n = parseFloat(document.getElementById("nterm").value)
