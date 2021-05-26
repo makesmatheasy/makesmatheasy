@@ -2908,6 +2908,16 @@ function impse12find(){
     document.getElementById("impse12ans").innerHTML =  -n / 2;
 }
 
+function impse13find(){
+    let n = parseInt(document.getElementById("impse17").value)
+    let sum = 0;
+ 
+    for ( let i = 1; i <= n; i++)
+        sum = sum + i * (i + 1) * (i + 2);
+ 
+        document.getElementById("impse13ans").innerHTML = sum;
+}
+
 function find_count(ele){
     var count = 0;
     for (let i = 0; i < ele.length; i++) {
