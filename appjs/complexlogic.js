@@ -1235,12 +1235,24 @@ function hpcal11()
     var z=parseInt(document.getElementById("totnum1").value);
     var ansout = document.getElementById("hpans11");
     var anstemp ="";
+    if(!isNaN(parseInt(x)) && !isNaN(parseInt(y)) && !isNaN(parseInt(z)))
+   {
     var numb = x - ((y - 1)*z);
     var num6 = (1 / numb) ;
-    anstemp += "\\[" + num6 + " \\]";
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{l-(n-1)d} \\]";
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{" + x +  "- (" + y + " - 1) \\times" + z + "} \\]";
+    anstemp +=  "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space" + (num6).toFixed(3) + "\\]";
     ansout.innerHTML = anstemp;
-    renderMathInElement(ansout);
    }
+   else
+   {
+     anstemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+     ansout.innerHTML = anstemp;
+    
+   }
+   renderMathInElement(ansout);
+}
+
 
 
 function ppcal()
@@ -1436,6 +1448,13 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans"));
     document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
     renderMathInElement(document.getElementById("dbltimeans1"));
+}
+
+function moduloCal(){
+    var x = parseInt(document.getElementById("modx").value);
+    var y = parseInt(document.getElementById("mody").value);
+    var r = x%y;
+    document.getElementById("moduloans").innerHTML = "x % y = " + r;
 }
 
 function covcalcu(){
