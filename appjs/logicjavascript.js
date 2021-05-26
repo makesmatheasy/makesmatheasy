@@ -14817,36 +14817,53 @@ function divBinDecHexOct(){
     const input2 = document.getElementById("divide-all-input2").value;
     const resultType= document.getElementById("divide-all-result-type").value;
     let result = document.getElementById("divide-all-result");
+    let work = document.getElementById("divide-all-working");
+    var print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
+
     var x1;
     var x2;
-    if(firstBase === "Binary")
-    x1=parseInt(input1,2);
-    else if(firstBase === "Decimal")
-    x1=parseInt(input1);
-    else if(firstBase === "Octal")
-    x1=parseInt(input1,8);
-    else if(firstBase === "Hexa Decimal")
-    x1=parseInt(input1,16);
 
-    if(secondBase === "Binary")
-    x2=parseInt(input2,2);
-    else if(secondBase === "Decimal")
-    x2=parseInt(input2);
-    else if(secondBase === "Octal")
-    x2=parseInt(input2,8);
-    else if(secondBase === "Hexa Decimal")
-    x2=parseInt(input2,16);
+    if(firstBase === "Binary"){
+        x1=parseInt(input1,2);
+        print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
+    }else if(firstBase === "Decimal"){
+        x1=parseInt(input1);
+    }else if(firstBase === "Octal"){
+        x1=parseInt(input1,8);
+    }else if(firstBase === "Hexa Decimal"){
+        x1=parseInt(input1,16);
+    }
+
+    if(secondBase === "Binary"){
+        x2=parseInt(input2,2);
+        print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
+    }else if(secondBase === "Decimal"){
+        x2=parseInt(input2);
+    }else if(secondBase === "Octal"){
+        x2=parseInt(input2,8);
+    }else if(secondBase === "Hexa Decimal"){
+        x2=parseInt(input2,16);
+    }
 
     var x3=x1/x2;
+    print += "<h5>Step3 : Now divide the decimal values found in STEP1 and STEP2</h5>";
+    print += x1 + "&nbsp; &div; &nbsp;" + x2 + "&nbsp; = &nbsp;" + x3;
 
-    if(resultType === "Binary")
-    result.innerHTML="Answer in binary="+x3.toString(2);
-    else if(resultType === "Decimal")
-    result.innerHTML="Answer in Decimal="+x3.toString();
-    else if(resultType === "Octal")
-    result.innerHTML="Answer in Octal="+x3.toString(8);
-    else if(resultType === "Hexa Decimal")
-    result.innerHTML="Answer in Hexadecimal="+x3.toString(16);
+    if(resultType === "Binary"){
+        result.innerHTML="Answer in binary="+x3.toString(2);
+        print += "<h5>Step4 : To find the result in Binary convert the answer found in STEP3 to Binary</h5>";
+        print += x3 + "->" + x3.toString(2);
+    }else if(resultType === "Decimal"){
+        result.innerHTML="Answer in Decimal="+x3.toString();
+    }else if(resultType === "Octal"){
+        result.innerHTML="Answer in Octal="+x3.toString(8);
+    }else if(resultType === "Hexa Decimal"){
+        result.innerHTML="Answer in Hexadecimal="+x3.toString(16);
+    }
+
+    work.innerHTML = print;
 }
 
 //----------------------------
