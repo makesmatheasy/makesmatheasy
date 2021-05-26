@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#ackermann",
         "#lucNum",
         "#smNum",
         "#catNum",
@@ -233,6 +234,7 @@ function openit(id) {
         "#abtest",
         "#ftest",
         "#ztest",
+        "#golds",
         "#pchart",
         "#npchart",
         "#betagamma",
@@ -264,6 +266,7 @@ function openit(id) {
         "#right_wedge",
         "#bool",
         "#suppangs",
+        "#cotermang",
         "#halfcy",
         "#eirs",
         "#tricorn",
@@ -334,6 +337,7 @@ function openit(id) {
         "#emical",
         "#gstcal",
         "#goldr",
+        "#goldrec",
         "#platonic",
         "#unitcirc",
         "#deviation",
@@ -341,10 +345,14 @@ function openit(id) {
         "#trigsolcollapse",
         "#grey-bin",
         "#consim",
+        "#modulo",
         "#convdiv",
         "#gamma",
         "#curve",
         "#coor",
+        "#sph",
+        "#polar",
+        "#cyl",
         "#ci",
         "#mean",
         "#cart",
@@ -433,7 +441,8 @@ function openit(id) {
         "#chng-vol-cube",
         "#squarerootcalc",
         "#sqseries",
-        "#impse"
+        "#impse",
+        "#n_baseroot",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
