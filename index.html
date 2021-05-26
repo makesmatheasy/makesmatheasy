@@ -15668,13 +15668,19 @@
                                         href="#">Pentagonal Prism</a>
                                     </td>
                                 </tr>
-                              <tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#hexprism"
                                         style="text-decoration:none;"
                                         href="#">Hexagonal Prism</a>
                                     </td>
                                 </tr>
-                              <tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#heptprism"
+                                        style="text-decoration:none;"
+                                        href="#">Heptagonal Prism</a>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#octprism"
                                         style="text-decoration:none;"
                                         href="#">Octagonal Prism</a>
@@ -28224,6 +28230,62 @@ N is the population size.
                                     data-dismiss="modal">Close
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="heptprism" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Heptagonal Prism</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Lateral surface area</h5>
+                                    <p class="text-center">\[A_L = 7 \space a \space h \]</p>
+                                    <p class="text-center">a = edge</p>
+                                    <p class="text-center">h = height</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{7}{4} \space a^2 \space cot(\frac{180}{7} \degree) \space h \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = 7 a h + \frac{7}{2} \space a^2 \space cot(\frac{180}{7} \degree) \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/heptagonal-prism.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length of heptagonal prism (a)" id="inputheptprismedge"
+                                   oninput="heptprismsolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height of heptagonal prism (h)" id="inputheptprismheight"
+                                   oninput="heptprismsolve();">
+                            <p class="stopwrap" id="resultoflsaheptprism"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofvolheptprism"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftsaheptprism"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
                     </div>
                 </div>
             </div>

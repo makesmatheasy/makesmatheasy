@@ -7970,6 +7970,35 @@ function hexprismsolve(){
         renderMathInElement(areaoutput2);
     }
 }
+//Right regular heptagonal prism
+function heptprismsolve() {
+    var edge = document.getElementById("inputheptprismedge").value;
+    var height = document.getElementById("inputheptprismheight").value;
+    var tsaoutput = document.getElementById("resultoftsaheptprism");
+    var lsaoutput = document.getElementById("resultoflsaheptprism");
+    var voloutput = document.getElementById("resultofvolheptprism");
+    var tsatemp = "";
+    var lsatemp = "";
+    var voltemp = "";
+    if ((edge != "") && (height != "")) {
+        lsatemp += "\\[Lateral \\space surface \\space area \\space \\newline 7 \\times" + edge + "\\times" + height + "\\ = " + eval(String(7 * edge * height)).toFixed(2) + "\\]";
+        lsaoutput.innerHTML = lsatemp;
+        tsatemp += "\\[Surface \\space area \\space \\newline 7 \\space (" + edge  + ")(" + height + ") + \\frac{7}{2} (" + edge +")^2 \\times cot(\\frac{180\\degree}{7})" + "\\ = " + eval(String((7 * edge * height) +(3.63391 * 2 * edge * edge))).toFixed(2) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{7}{4} (" + edge + ")^2 \\times cot(\\frac{180\\degree}{7}) \\times" + height + "\\ = " + eval(String(3.63391 * edge * edge * height)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        renderMathInElement(tsaoutput);
+        renderMathInElement(lsaoutput);
+        renderMathInElement(voloutput);
+
+    } else {
+        tsaoutput.innerHTML = "";
+        lsaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+
+    }
+}
 //Octagonal Prism
 function octprismsolve(){
     var edge = document.getElementById("inputoctprismedge").value;
