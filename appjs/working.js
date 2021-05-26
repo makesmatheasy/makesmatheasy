@@ -1297,6 +1297,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#goldrecbtn").click(function () {
+        openit("#goldrec");
+        closenav();
+        clearall();
+    });
     $("#platonicbtn").click(function () {
         openit("#platonic");
         closenav();

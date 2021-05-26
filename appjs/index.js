@@ -335,6 +335,7 @@ function openit(id) {
         "#emical",
         "#gstcal",
         "#goldr",
+        "#goldrec",
         "#platonic",
         "#unitcirc",
         "#deviation",

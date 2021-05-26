@@ -2440,6 +2440,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="goldrecbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Golden Rectangle Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Golden Rectangle Calculator ','#goldrec','c','goldrecimgfav')"><img
+                                        id="goldrecimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!-- Polynomial degree start -->
             <li>
                 <table class="table">
@@ -13479,6 +13494,31 @@
             </form>
             
             <p id="gold_explain"></p>
+        </div>
+
+        <!-- Golden Rectangle Calculator -->
+        <div class="collapse" id="goldrec">
+            <h1 style="text-align: center; margin-bottom: 4rem;">Golden Rectangle Calculator</h1>
+            <h4 style="margin-bottom: 2rem;">The golden rectangle is a rectangle whose sides are in the golden ratio. The golden ratio has a value of approximately 1.618.</h4>
+            <h4 style="margin-bottom: 2rem;">If 'a' is width and 'a+b' is length of golden rectangle then,\[\frac{a+b}{b}=\frac{a}{b}\] </h4>
+            <h4>Enter any 1 field</h4>
+            <form action="">
+                <input class="form__field" type="number" placeholder="a"
+                                   id="gra" oninput="goldrec()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="b"
+                                   id="grb" oninput="goldrec()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="a+b"
+                                   id="grab" oninput="goldrec()">
+                <br><br>
+                <input class="form__field" type="number" placeholder="Area"
+                                   id="grar" oninput="goldrec()">
+                <br><br>
+                <button type="button" class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="goldrec_explain"></p>
         </div>
         <div class="collapse" id="degcal">
             <h2 style="color: var(--appimage);">Polynomial Degree</h2>
