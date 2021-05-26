@@ -7259,6 +7259,17 @@ function solvetruntetra(){
         document.getElementById("resultoftruntetraarea").innerHTML = "";
     }
 }
+
+function solvetruncube(){
+    var a = parseInt(document.getElementById("inputtruncubeside").value);
+    var area = 2 * a**2 * ( 6 + 6 * math.sqrt(2) + math.sqrt(3) );
+    var vol = a**3 / 3 * ( 21 + 14 * math.sqrt(2) );
+    document.getElementById("resultoftruncubevol").innerHTML = "\\[Volume \\space = \\space" + vol.toFixed(3) + "\\]";
+    document.getElementById("resultoftruncubearea").innerHTML = "\\[Area \\space = \\space" + area.toFixed(3) + "\\]";
+    renderMathInElement(document.getElementById("resultoftruncubevol"));
+    renderMathInElement(document.getElementById("resultoftruncubearea"));
+}
+
 //Star of Lakshmi	
 function solvelakstar() {
     var a = document.getElementById("inputlakstarside").value;
