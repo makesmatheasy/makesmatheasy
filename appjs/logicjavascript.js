@@ -2926,10 +2926,17 @@ function impse10find(){
 }
 
 function impse11find(){
-    let n = parseInt(document.getElementById("impse15").value)
-    if (n % 2 == 1)
-        document.getElementById("impse11ans").innerHTML =  (n + 1) / 2;
-    document.getElementById("impse11ans").innerHTML =  -n / 2;
+    let n = parseInt(document.getElementById("impse15").value);
+    if(!isNaN(n)){
+        if (n % 2 == 1){
+        document.getElementById("impse11ans").innerHTML = "\\[Here, \\space \\frac{"+n+"}{2} \\space returns \\space the \\space remainder \\space 1 \\space so, \\newline \\frac{("+n+"+1)}{2} \\space = \\space \\frac{"+(n+1).toFixed(2)+"}{2} \\space = \\space "+((n + 1) / 2).toFixed(3)+"\\]";
+        } else{
+            document.getElementById("impse11ans").innerHTML =  "\\[Here, \\space \\frac{"+n+"}{2} \\space does \\space not \\space returns \\space the \\space remainder \\space 1 \\space so, \\newline \\frac{(-"+n+")}{2} \\space = \\space "+((-n) / 2).toFixed(3)+"\\]";
+        }
+    } else{
+        document.getElementById("impse11ans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    }
+    renderMathInElement(document.getElementById("impse11ans"));
 }
 
 function impse12find(){
