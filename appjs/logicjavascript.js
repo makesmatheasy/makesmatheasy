@@ -6668,6 +6668,22 @@ function solvestadium() {
     }
 
 }
+
+function solvecross(){
+    var a = parseInt(document.getElementById("inputcrossarmlen").value);
+    var b = parseInt(document.getElementById("inputcrosswidth").value);
+    var l = 2 * a + b;
+    var peri = 8*a + 4*b;
+    var area = 4 *a *b + b**2;
+    var cirrad = math.sqrt( (l/2)**2 + (b/2)**2 );
+    if (!isNaN(a) && !isNaN(b)){
+    document.getElementById("resultofcrossbarlen").innerHTML = "Bar length (l):	"+l.toFixed(3)
+    document.getElementById("resultofcrossperi").innerHTML = "Perimeter (p): "+peri.toFixed(3)
+    document.getElementById("resultofcrossarea").innerHTML = "Area (A):	"+area.toFixed(3)
+    document.getElementById("resultofcrosscirrad").innerHTML = "Circumcircle radius (r): "+cirrad.toFixed(3)
+    }
+}
+
 //Claw
 function solveclaw() {
     var R = document.getElementById("inputlargerad").value;
