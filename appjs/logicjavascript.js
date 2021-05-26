@@ -12147,17 +12147,59 @@ function typenumfind(){
     }
 }
 }
+function typenumfind(){
+    let n = document.getElementById("typenum0").value;
+    var ans="\\[";
+    var explain="\\[N-th \\space tetrahedral \\space number =\\frac{N*(N+1)*(N+2)}{6}\\]"+"\\[";
+    if(n=="")
+    {
+        ans+=  "Please enter number to find answer";
+    }
+    else{
+      n= parseInt(n);
+    var prev = 0;
+    var curr;
+    for (var i = 1; i <= n; i++)
+    {
+        curr = findTriangularNumber(i);
+        explain+="(\\frac{"+i+"*"+(i+1)+"*"+(i+2)+"}{6}=";
+        curr =prev+curr; 
+        ans+=  curr + "\\space \\space ";
+        explain+=curr+")\\space ";
+        prev = curr;
+    }
+    explain+="\\]";
+    ans+="\\]";
+    document.getElementById("typenumans").innerHTML =ans+explain;
+    renderMathInElement(document.getElementById("typenumans"));
+}
+}
 //Print pentatope numbers upto Nth term
 function typenum1find(){
     let n = parseInt(document.getElementById("typenum1").value)
-    let prev = 0;
-    let curr;
-    for (let i = 1; i <= n; i++)
+    var ans="\\[";
+    var explain="\\[N-th \\space pentatope \\space number =\\frac{N*(N+1)*(N+2)*(N+3)}{24}\\]"+"\\[";
+    if(n=="")
     {
-        curr = findTetrahedralNumber(i);
-        document.getElementById("typenum1ans").innerHTML =  curr + " ";
-        prev = curr;
+        ans+=  "Please enter number to find answer";
     }
+    else{
+        let prev = 0;
+        let curr;
+        for (let i = 1; i <= n; i++)
+        {
+            curr = findTetrahedralNumber(i);
+            explain+="(\\frac{"+i+"*"+(i+1)+"*"+(i+2)+"*"+(i+3)+"}{24}=";
+            curr =prev+curr; 
+            ans+=  curr + "\\space \\space ";
+            explain+=curr+")\\space ";
+            prev = curr;
+        }
+    }
+    explain+="\\]";
+    ans+="\\]";
+    document.getElementById("typenum1ans").innerHTML =ans+explain;
+    renderMathInElement(document.getElementById("typenum1ans"));
 }
 //Hardy-Ramanujan Theorem
 function typenum2find(){
