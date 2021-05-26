@@ -139,6 +139,7 @@ Other Tech/Libraries
   - Sum and Difference Of Trignometric Function
 
 - General Maths (with Steps)
+  - Ackermann Function
   - LCM
     - Upto 20 numbers
   - HCF

@@ -18617,3 +18617,20 @@ function nLucasNumber(num) {
     document.getElementById("nLucNumResult").innerHTML = "The nth Lucas Number is : " + res;    
 
 }
+
+//Ackermann function
+const ackermann = (m, n) => {
+    if (m === 0) {
+       return n+1
+    }
+    if (n === 0) {
+       return ackermann((m - 1), 1);
+    }
+    if (m !== 0 && n !== 0) {
+       return ackermann((m-1), ackermann(m, (n-1)))
+    }
+}
+
+function ackermannFunction(num1,num2){
+    document.getElementById("ackermannResult").innerHTML = "The result is : " + ackermann(num1,num2);   
+}
