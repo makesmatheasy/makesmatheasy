@@ -8740,12 +8740,12 @@ function heightdist5(){
     renderMathInElement(output);
 }
 
-function heightdist8(){
-    var height = parseFloat(document.getElementById("height81").value);
-    var degree = parseFloat(document.getElementById("height82").value);
+function heightdista8(){
+    var height = parseFloat(document.getElementById("height8a1").value);
+    var degree = parseFloat(document.getElementById("height8a2").value);
     var output = document.getElementById("printheight8");
     var temp = "";
-    var deg1 = Math.tan(degree*Math.PI/180).toFixed(3)
+    var deg1 = Math.tan(degree* math.pi/180).toFixed(3)
     if(!isNaN(height) && !isNaN(degree)){
         temp += "\\[Height(AB) \\space = \\space " + height + "m \\]";
         temp += "\\[Angle \\space of \\space Depression(∠BAC) \\space = \\space " + degree + "\\degree \\]";
@@ -8754,9 +8754,8 @@ function heightdist8(){
         temp += "\\[" + deg1 + "\\space = \\space \\frac{" + height + "}{BC} \\]";
         temp += "\\[BC \\space = \\space \\frac {" + height + "}{" + deg1 + "} \\space = \\space " + (height/deg1).toFixed(3) + " \\]";
         temp += "\\[Distance \\space is \\space " + (height/deg1).toFixed(3) + "m \\]";
-    }
-    else{
-        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+    } else{
+        temp = "\\[Please \\space enter \\space all \\space fields \\]";
     }
     output.innerHTML = temp;
     renderMathInElement(output);
