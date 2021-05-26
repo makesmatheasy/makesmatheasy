@@ -18382,16 +18382,27 @@
 <div class="collapse" id="polar">
     <h1 style=" text-align: center; font-family:mathfont">Polar Coordinate Calculator</h1>
         <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Polar</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="polarx" width="5em" placeholder="Enter the X coordinate"> 
-            <input type="number" id="polary" width="5em" placeholder="Enter the Y coordinate">
+            <input type="number" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
+            <input type="number" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
             <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcal()">Calculate</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartpolarcal()">Calculate</button>
     <p>&nbsp;</p>
-    <p id="polarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p id="cartpolarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
-    <p id="polarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p id="cartpolarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="polarcartr" placeholder="Enter the length of the line (r)"> 
+                <input type="number" id="polarcarto" placeholder="Enter the polar angle (θ)">
+                <p>&nbsp;</p></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcartcal()">Calculate</button>
+        <p>&nbsp;</p>
+        <p id="polarcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+        <p id="polarcartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>
 
 <!-- Spherical Coordinate Calculator starts -->

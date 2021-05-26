@@ -17998,11 +17998,34 @@ function manhatcal(){
         renderMathInElement(output);
     }
 }
-function polarcal(){
-    var x=parseFloat(document.getElementById("polarx").value);
-    var y=parseFloat(document.getElementById("polary").value);
-    var outputr = document.getElementById("polarans1");
-    var outputo = document.getElementById("polarans2");
+function polarcartcal(){
+    var r=parseFloat(document.getElementById("polarcartr").value);
+    var o=parseFloat(document.getElementById("polarcarto").value);
+
+    var outputx = document.getElementById("polarcartxans");
+    var outputy = document.getElementById("polarcartyans");
+    var ans="";
+    
+    var x = r * Math.cos(o);
+    var y = r * Math.sin(o);
+    
+    if(isNaN(r)||isNaN(o))
+    {
+        ans += "Please fill all the field";
+        outputx.innerHTML= ans;
+        outputy.innerHTML = "";
+    }
+    else{
+        outputx.innerHTML= "X : " + x.toFixed(2);
+        outputy.innerHTML = "Y : " + y.toFixed(2);
+    }
+}
+
+function cartpolarcal(){
+    var x=parseFloat(document.getElementById("cartpolarx").value);
+    var y=parseFloat(document.getElementById("cartpolary").value);
+    var outputr = document.getElementById("cartpolarans1");
+    var outputo = document.getElementById("cartpolarans2");
     var r =  Math.sqrt(x*x + y*y).toFixed(2);
     var o = Math.atan(y/x).toFixed(2);
     var ans="";
