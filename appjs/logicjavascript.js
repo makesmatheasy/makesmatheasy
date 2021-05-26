@@ -14404,37 +14404,53 @@ function multBinDecHexOct(){
     const input2 = document.getElementById("multiplying-all-input2").value;
     const resultType= document.getElementById("multiplying-all-result-type").value;
     let result = document.getElementById("multiplying-all-result");
+    let work = document.getElementById("multiplying-all-working");
+    var print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
+
     var x1;
     var x2;
 
-    if(firstBase === "Binary")
-    x1 = calculatefrac(input1,2);
-    else if (firstBase === "Octal")
-    x1 = calculatefrac(input1,8);
-    else if(firstBase === "Hexa Decimal")
-    x1 = calculatefrac(input1,16);
-    else if(firstBase === "Decimal")
-    x1 = calculatefrac(input1,10);
+    if(firstBase === "Binary"){
+        x1 = calculatefrac(input1,2);
+        print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
+    }else if (firstBase === "Octal"){
+        x1 = calculatefrac(input1,8);
+    }else if(firstBase === "Hexa Decimal"){
+        x1 = calculatefrac(input1,16);
+    }else if(firstBase === "Decimal"){
+        x1 = calculatefrac(input1,10);
+    }
 
-    if(secondBase === "Binary")
-    x2 = calculatefrac(input2,2);
-    else if (secondBase === "Octal")
-    x2 = calculatefrac(input2,8);
-    else if(secondBase === "Hexa Decimal")
-    x2 = calculatefrac(input2,16);
-    else if(secondBase === "Decimal")
-    x2 = calculatefrac(input2,10);
+    if(secondBase === "Binary"){
+        x2 = calculatefrac(input2,2);
+        print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
+    }else if (secondBase === "Octal"){
+        x2 = calculatefrac(input2,8);
+    }else if(secondBase === "Hexa Decimal"){
+        x2 = calculatefrac(input2,16);
+    }else if(secondBase === "Decimal"){
+        x2 = calculatefrac(input2,10);
+    }
 
     var x3=x1*x2;
+    print += "<h5>Step3 : Now multiply the decimal values found in STEP1 and STEP2</h5>";
+    print += x1 + "X" + x2 + "=" + x3;
 
-    if(resultType === "Binary")
+    if(resultType === "Binary"){
     result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
-    else if (resultType === "Octal")
+    print += "<h5>Step4 : To find the result in Binary convert the answer found in STEP3 to Binary</h5>";
+    print += x3 + "->" + fracDectoBinHexOct(x3,2);
+    }else if (resultType === "Octal"){
     result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
-    else if(resultType === "Hexa Decimal")
+    }else if(resultType === "Hexa Decimal"){
     result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3,16);
-    else if(resultType === "Decimal")
+    }else if(resultType === "Decimal"){
     result.innerHTML = "Answer in Decimal=" + fracDectoBinHexOct(x3,10);
+    }
+
+    work.innerHTML = print;
 }
 
 //----------------------------
