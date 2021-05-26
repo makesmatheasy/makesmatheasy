@@ -12764,13 +12764,30 @@ function mnapsum(){
     var n = parseFloat(document.getElementById("nterm").value)
     var mtherm = parseFloat(document.getElementById("mthterm").value)
     var ntherm = parseFloat(document.getElementById("nthterm").value)
-    var pterm = parseFloat(document.getElementById("pterm").value)
+    var pterm = parseInt(document.getElementById("pterm").value)
     var d = ((Math.abs(mtherm - ntherm))/Math.abs((m - 1)-(n - 1)));
     var a =  (mtherm-((m-1) * d));
     var sum = (pterm*(2*a+(pterm-1)*d))/2;
     document.getElementById("printmnAP").innerHTML = sum
 
 }
+
+function mngpsum(){
+    var m = parseInt(document.getElementById("mterm1").value)
+    var n = parseInt(document.getElementById("nterm1").value)
+    var mtherm = parseFloat(document.getElementById("mthterm1").value)
+    var ntherm = parseFloat(document.getElementById("nthterm1").value)
+    var pterm = parseInt(document.getElementById("pterm1").value)
+
+    var r = Math.pow(mtherm / ntherm, 1.0 / (m - n));
+    var a = mtherm / Math.pow(r, (m - 1)); 
+    var sum = a * Math.pow(r, (pterm - 1.0)); 
+    document.getElementById("printmnGP").innerHTML = sum
+
+}
+
+
+
 
 function gmsol() {
     var a = parseInt(document.getElementById("aval1").value)

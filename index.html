@@ -17736,6 +17736,36 @@
             <br>
             <p id="nGPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
 			<br>
+            <h4 class="d-flex justify-content-center">Sum of P terms of an GP if mth and nth terms are given</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center">
+                <input type="number" id="mterm1" placeholder="Enter the Number of terms (m)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
+                <input type="number" id="nterm1" placeholder="Enter the Number of terms (n)"
+                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
+                       <input type="number" id="mthterm1" placeholder="Enter the mth term (mth) "
+                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
+                       <input type="number" id="nthterm1" placeholder="Enter the nth term (nth) "
+                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
+                       <input type="number" id="pterm1" placeholder="Enter p terms (p)"
+                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
+                <br><br>
+                <div class="row">
+                    <div class="col-6">        
+                        <button type="button" class="btn btn-light" onclick=mngpsum()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+            <h5 id="printmnGP"  style="text-align: center;font-family:mathfont;width:auto;" class="stopwrap"></h5><br>
+            <br>
             <h4 class="d-flex justify-content-center">Constant/Increasing/Decreasing GP</h4><br>
             <form class="form-inline d-flex flex-column align-items-center" id="myForm">
             <!-- <form class="form-inline"> -->
