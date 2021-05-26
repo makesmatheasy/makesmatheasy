@@ -3504,6 +3504,34 @@ function alisumfind(){
     document.getElementById("aliexplain").innerHTML =  explain1+explain2;
     renderMathInElement(document.getElementById("aliexplain"));
 }
+
+function alisum1find(){
+    let n = parseInt(document.getElementById("alisum1").value)
+    if(getSum(n)>n)
+        document.getElementById("alisum1ans").innerHTML = "Yes"
+    else
+        document.getElementById("alisum1ans").innerHTML = "No"
+}
+
+function getSum(n)
+{
+    let sum = 0;
+    for (let i = 1; i <= Math.sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
+            if (n / i == i)
+                sum = sum + i;
+            else
+            {
+                sum = sum + i;
+                sum = sum + (n / i);
+            }
+        }
+    }
+    sum = sum - n;
+    return sum;
+}
 //Distance between point and a line
 function dispointsolve()
 {
