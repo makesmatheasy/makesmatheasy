@@ -6529,12 +6529,18 @@ function crossedrectsolve() {
     var area = (baseLength * rectSide) / 2;
 
     if ((baseLength != "") && (rectSide != "")) {
-        legLengthField.innerHTML = `Leg length (c) = ${legLength.toFixed(3)} units`;
-        baseAngleField.innerHTML = `Base angle (α) = ${baseAngle.toFixed(3)} °`
-        intersectAngleField.innerHTML = `Intersection angle (β) = ${intersectAngle.toFixed(3)} °`;
-        apexAngleField.innerHTML = `Apex angle (γ) = ${apexAngle.toFixed(3)} °`;
-        perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)} units`;
-        areaField.innerHTML =  `Area (A) = ${area.toFixed(3)} sq.units`;
+        legLengthField.innerHTML = "\\[Leg \\space length (c) =\\frac{\\sqrt{"+baseLength+"^2 + "+rectSide+"^2}}{2} = "+legLength.toFixed(3)+" \\space units\\]";
+        renderMathInElement(legLengthField);
+        baseAngleField.innerHTML = "\\[Base \\space angle (\\alpha) =\\frac{"+intersectAngle+"}{2} = "+baseAngle.toFixed(3)+" \\degree \\]";
+        renderMathInElement(baseAngleField);
+        intersectAngleField.innerHTML = "\\[Intersection \\space angle (\\beta) = 180 \\degree - "+apexAngle+" = "+intersectAngle.toFixed(3)+" \\degree \\]";
+        renderMathInElement(intersectAngleField);
+        apexAngleField.innerHTML = "\\[Apex \\space angle (\\gamma) = \\arccos \\frac{2 \\times "+legLength+"^2 - "+baseLength+"^2}{2 \\times "+baseLength+"^2} = "+apexAngle.toFixed(3)+" \\degree \\]";
+        renderMathInElement(apexAngleField);
+        perimeterField.innerHTML = "\\[Perimeter (p) = 2 \\times "+baseLength+" + 4 \\times "+legLength+" = "+perimeter.toFixed(3)+" \\space units \\]";
+        renderMathInElement(perimeterField);
+        areaField.innerHTML =  "\\[Area (A) = \\frac{"+baseLength+" \\times "+rectSide+"}{2} = "+apexAngle.toFixed(3)+" \\space sq.units \\]";
+        renderMathInElement(areaField);
     }
 }
 
