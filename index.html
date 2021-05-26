@@ -29801,7 +29801,7 @@ N is the population size.
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Truncated cube</h5>
+                        <h5 class="modal-title">Truncated Cube</h5>
                         <button type="button" class="close" data-dismiss="modal"
                                 aria-label="Close"
                                 style="outline:none">
@@ -29813,16 +29813,22 @@ N is the population size.
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <h5 class="text-center">Surface Area (A)</h5>
-                                    <p class="text-center">\[A = 2 \times a^2 \times (6 + 6 \times \sqrt{2} + \sqrt{3})\]</p><br>
-                                    <div class="dropdown-divider"></div>
                                     <h5 class="text-center">Volume (V)</h5>
-                                    <p class="text-center">\[V = \frac{a^3}{3} \times (21 + 14 \times \sqrt{2}) \]</p><br>
+                                    <p class="text-center">\[V = \frac{a^3}{3}(21 + 14 \sqrt{2}) \]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 2 a^2 (6 + 6 \sqrt{2} + \sqrt{3})\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (rc)</h5>
+                                    <p class="text-center">\[rc = \frac{a}{2} \times \sqrt{7 + 4 \sqrt{2}}\]</p><br>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <img src="images/Truncacube.png" class="img-fluid">
-                                    </div>
+                                    </div><br><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (rm)</h5>
+                                    <p class="text-center">\[rm = \frac{a}{2} \times ( 2 + \sqrt{2} )\]</p><br>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
@@ -29831,9 +29837,13 @@ N is the population size.
                                        placeholder="Enter Edge length (a)" id="inputtruncubeside"
                                        oninput="solvetruncube();">
                             <p class="stopwrap" id="resultoftruncubevol"
-                                       style="font-family:mathfont;"></p>
+                                style="font-family:mathfont;"></p><br>
                             <p class="stopwrap" id="resultoftruncubearea"
-                                style="font-family:mathfont;"></p>
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultoftruncuberc"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultoftruncuberm"
+                                style="font-family:mathfont;"></p><br>
                           </div>
                         <!-- ------HERE------ -->
                     </div>
