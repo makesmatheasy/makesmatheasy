@@ -14436,7 +14436,7 @@ function multBinDecHexOct(){
 
     var x3=x1*x2;
     print += "<h5>Step3 : Now multiply the decimal values found in STEP1 and STEP2</h5>";
-    print += x1 + "X" + x2 + "=" + x3;
+    print += x1 + "&nbsp; X &nbsp;" + x2 + "=" + x3;
 
     if(resultType === "Binary"){
     result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3,2);
