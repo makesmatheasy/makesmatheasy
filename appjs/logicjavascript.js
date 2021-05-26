@@ -7371,6 +7371,21 @@ function antipodal(){
     }   renderMathInElement(document.getElementById("antidigonperi"));
         renderMathInElement(document.getElementById("antidigonarea"));
 }
+
+function solvecycloid(){
+    var a = parseInt(document.getElementById("inputcirrad").value);
+    var arclen = 8 * a;
+    var baselen=  2 * math.pi * a;
+    var peri = arclen + baselen;
+    var area = 3 *math.pi *  a**2;
+    var height = 2 * a;
+    document.getElementById("resultofcycarclen").innerHTML = "Arc length = "+arclen.toFixed(3)
+    document.getElementById("resultofcycbaselen").innerHTML = "Base length = "+baselen.toFixed(3)
+    document.getElementById("resultofcycperi").innerHTML = "Perimeter = "+peri.toFixed(3)
+    document.getElementById("resultofcycarea").innerHTML = "Area ="+area.toFixed(3)
+    document.getElementById("resultofcycheight").innerHTML = "Height = "+height.toFixed(3)
+}
+
 //Annulus 	
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
