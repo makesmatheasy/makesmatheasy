@@ -18141,10 +18141,24 @@ function cylcal(){
     var outputp = document.getElementById("cylpans");
     var outputo = document.getElementById("cyloans");
     var outputz = document.getElementById("cylzans");
-    var p =  Math.sqrt(x*x + y*y).tofixed(3);
+    var p =  Math.sqrt(x*x + y*y).toFixed(3);
     var o = Math.tan(y/x).toFixed(3);
     var ans="";
 
+    var temp1 = (x*x + y*y).toFixed(3);
+    var temp2 = (y/x).toFixed(3);
+    var ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2}\\]";
+    ansp += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2}\\]";
+    ansp += "\\[=\\space \\sqrt{"+temp1+"} \\]";
+    ansp += "\\[=\\space "+p+" \\]";
+
+    var anso = "\\[θ:\\space \\tan(\\frac{y}{x} )\\]";
+    anso = "\\[θ:\\space \\tan(\\frac{"+y+"}{"+x+"} )\\]";
+    anso += "\\[=\\space \\arccos("+temp2+")\\]"
+    anso += "\\[=\\space "+o+"\\]"
+
+    var ansz = "\\[z:\\space z\\]";
+    ansz += "\\[=\\space "+z+"\\]";
     if(isNaN(x)||isNaN(y)||isNaN(z))
     {
         ans += "Please fill all the field";
@@ -18153,10 +18167,14 @@ function cylcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputp.innerHTML= "ρ: " + p;
-        outputo.innerHTML = "θ: " + o;
-        outputz.innerHTML = "z: " + z;
+        outputp.innerHTML= ansp;
+        outputo.innerHTML = anso;
+        outputz.innerHTML = ansz;
     }
+    renderMathInElement(outputp);
+    renderMathInElement(outputo);
+    renderMathInElement(outputz);
+
 }
 
 //BILINEAR INTERPOLATION CALCULATOR
