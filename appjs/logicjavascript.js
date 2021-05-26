@@ -11020,16 +11020,14 @@ function leap() {
     }
 }
 function rotfind(){
-    // JS program to find angle of rotational symmetry
-    let side = parseInt(document.getElementById("rotside").value)
+    var side = parseInt(document.getElementById("rotside").value)
     if(!isNaN(side)){
-    let ans = parseInt(360/side)
-    // parseint because we want answer in integer
-    document.getElementById("rotans").innerHTML = "The angle of rotational symmetry is " + ans
+        var ans = parseInt(360/side)
+        document.getElementById("rotans").innerHTML = "\\[The \\space Angle \\space of \\space rotational \\space symmetry \\space will \\space be, \\newline \\frac{360}{(No. \\space of \\space sides)} \\space = \\space Int("+(360/side).toFixed(2)+") \\space = \\space "+ans+"\\]";
+    } else{
+        document.getElementById("rotans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
     }
-    else{
-        document.getElementById("rotans").innerHTML = "Please enter valid input"
-    }
+    renderMathInElement(document.getElementById("rotans"));
 }
 function timecon() {
     const f = timeu(document.getElementById("timecon-1").value);
