@@ -19664,12 +19664,12 @@ N is the population size.
 
                 <!-- Start of Division of any number system -->
                 <div class="collapse" id="divide-all">
+                    <form action="">
                     <div class="col-6">
                         <div class="form-group">
                             <h2>1st Input</h2>
                             <h5>Choose Number System</h5>
-                            <select id="divide-all-select1" class="form__field"
-                                    onchange="divBinDecHexOct()">
+                            <select id="divide-all-select1" class="form__field">
                                 <option class="form_field" style="background-color: #232a36;">
                                     Binary
                                 </option>
@@ -19684,16 +19684,14 @@ N is the population size.
                                 </option>
                             </select>
                             <input type="" id="divide-all-input1"
-                                   class="form__field"
-                                   oninput="divBinDecHexOct()">
+                                   class="form__field">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <h2>2nd Input</h2>
                             <h5>Choose Number System</h5>
-                            <select id="divide-all-select2" class="form__field"
-                                    onchange="divBinDecHexOct()">
+                            <select id="divide-all-select2" class="form__field">
                                 <option class="form__field" style="background-color: #232a36;">
                                     Binary
                                 </option>
@@ -19708,19 +19706,14 @@ N is the population size.
                                 </option>
                             </select>
                             <input type="" id="divide-all-input2"
-                            class="form__field"
-                            oninput="divBinDecHexOct()">
+                            class="form__field">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <h2>Result Of Division</h2>
                             <h5>Choose Number System</h5>
-                            <select id="divide-all-result-type" class="form__field"
-                            onchange="divBinDecHexOct()">
-                        <option class="form__field" style="background-color: #232a36;">
-        
-                        </option>
+                            <select id="divide-all-result-type" class="form__field">
                         <option class="form__field" style="background-color: #232a36;">
                             Binary
                         </option>
@@ -19734,9 +19727,17 @@ N is the population size.
                             Hexa Decimal
                         </option>
                     </select>
+                    <h5>Calculate</h5>
                         </div>
-                        <label class="form__group" id="divide-all-result">0</label>
+                        <label class="form__group" id="divide-all-result">0</label><br><br>
+                        <button type="button" class="btn btn-light" onclick="divBinDecHexOct()">
+                            Find
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
                     </div>
+                    </form>
                 </div>
                 <!-- End of Division of any number system -->
         
