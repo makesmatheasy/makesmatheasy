@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#ackermann",
         "#lucNum",
         "#smNum",
         "#catNum",
@@ -218,6 +219,7 @@ function openit(id) {
         "#propquad",
         "#pythtriple",
         "#rootsquadratic",
+        "#planeintercept",
         "#plotgraph",
         "#3dgeocalc",
         "#plotbargraph",
@@ -233,10 +235,12 @@ function openit(id) {
         "#abtest",
         "#ftest",
         "#ztest",
+        "#golds",
         "#pchart",
         "#npchart",
         "#betagamma",
         "#parallel",
+        "#circumradiusarea",
         "#dri",
         "#expansionc",
         "#unitconcal",
