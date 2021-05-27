@@ -1277,6 +1277,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="incenterexcenterbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Distance between Incenter and Excenter
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Distance between Incenter and Excenter','#incenterexcenter','c','incenterexcenterfav')"><img
+                                        id="incenterexcenterfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="trigonovaluestablebutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trigonometry
                                 Values
@@ -4388,6 +4404,22 @@
                                 <span
                                         onclick="addtofavourite('Joint Probability','#joint-probabilitycollapse','c','joint-probailityfav')"><img
                                         id="joint-probailityfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="relriskbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Relative Risk Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Relative Risk Calculator','#relrisk','c','relriskfav')"><img
+                                        id="relriskfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -12210,7 +12242,37 @@
                 </div>
             </div>
         </div>
+<!-- Relative risk Calculator -->
+<div class="collapse" id="relrisk">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
+    <p style="margin-top: 2rem;">
+        Relative risk compares the probability of a disease being developed in a 
+        group exposed to a particular factor to the probability of the same disease being developed in a control group
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula: [a / (a + b)] / [c / (c + d)]</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">a is the number of members of the exposed group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">b is the number of members of the exposed group who didn't develop the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">c is the number of members of the control group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">d is the number of members of the control group who didn't develop the disease;</p>
 
+    <form action="">
+        <p style="text-align: left; color: white; margin-top:2rem;">Exposed Group</p>
+        <input class = "form__field"type="text" id="relexp0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relexp1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <p style="text-align: left; color: white; margin-top:2rem;">Control Group</p>
+        <input class = "form__field"type="text" id="relcont0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relcont1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="relrisk()">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="relriskans"></p>
+</div>
         <div class="collapse" id="expansion">
             <h2>Expansion of Trigonometric Functions</h2>
             <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} -
@@ -12444,6 +12506,29 @@
 
                 <h2  id="externradius"></h2>
         </div>
+
+
+        <div class="collapse" id="incenterexcenter">
+            <h2>Distance between Incenter and Excenter of a Triangle</h2>
+            <br>
+            <p id="incenex">\[4RsinA/2\]</p>    
+
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>
+               
+                <br>
+
+                <br>
+                <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button>
+                <br>
+            </div>
+
+                <h2  id="dist_inex"></h2><br>
+
+                
+        </div>
+
 
         <!-- sensitivity and Specificity starts -->
     <div class="collapse" id="sensi">
@@ -15698,6 +15783,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#tshape"
                            style="text-decoration:none;" href="#">T - Shape</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hshape"
+                           style="text-decoration:none;" href="#">H - Shape</a></td>
                 </tr>
             </table>
         </div>
@@ -21480,6 +21569,14 @@ N is the population size.
     <br>
     <p id="impse20ans"></p>
     <br>
+    <h4>Collatz Sequence</h4>
+    <br>
+    <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse21find()">Find</button>
+    <br>
+    <p id="impse21ans"></p>
+    <br>
     <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
     <br>
     <input type="text" id="impse13"class="form__field"placeholder="Enter no. of terms">
@@ -25200,6 +25297,54 @@ N is the population size.
                             <p class="stopwrap" id="resultOfHeightTshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterTshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaTshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="hshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">H - Shape</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A=2hd+dl\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimter (p)</h5>
+                                    <p class="text-center">\[p=2h+4d+2(h-d)+2l\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group ml-3">
+                                        <img src="images/H-shape.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height(h)"
+                                   id="hshape-h" oninput="hshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter bar thickness(d)"
+                                   id="hshape-d" oninput="hshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter central bar length(l)"
+                                   id="hshape-l" oninput="hshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="resultOfPerimeterHshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaHshape" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
