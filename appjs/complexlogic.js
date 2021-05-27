@@ -1303,6 +1303,10 @@ function eircal()
         ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
         ans +="\\[="+ rate_period +"\\]";
         ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
+        var P = parseFloat(R/y);
+        ans += "\\[Percent \\space Rate \\space per \\space compounding \\space period \\space (P) = \\space \\frac{Nominal \\space Rate(R)}{Number \\space of \\space periods(m)} \\]";
+        ans += "\\[= \\space \\frac{" + R + "}{" + y + "}\\]";
+        ans += "\\[= \\space " + P + "\\]";
     }
     result.innerHTML = ans;
     renderMathInElement(result);
