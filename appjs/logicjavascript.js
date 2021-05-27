@@ -15572,6 +15572,8 @@ function addBinDecHexOct() {
     else if (firstBase === "Hexa Decimal") {
         x1 = calculatefrac(input1, 16);
         x1o = fracDectoBinHexOct(x1, 16);
+        print += "<h5>Step1 : Convert the " + resultType + " number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
     }
     else if (firstBase === "Decimal") {
         x1 = parseFloat(input1);
@@ -15591,6 +15593,8 @@ function addBinDecHexOct() {
     else if (secondBase === "Hexa Decimal") {
         x2 = calculatefrac(input2, 16);
         x2o = fracDectoBinHexOct(x2, 16);
+        print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
     }
     else if (secondBase === "Decimal") {
         x2 = parseFloat(input2);
@@ -15607,12 +15611,14 @@ function addBinDecHexOct() {
         result.innerHTML = "Enter a " + secondBase + " value in Input 2";
     } else if (resultType === "Binary") {
         result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
-        print += "<h5>Step4 : To find the result in Binary convert the answer found in STEP3 to Binary</h5>";
+        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
         print += x3 + "->" + fracDectoBinHexOct(x3, 2);
     } else if (resultType === "Octal") {
         result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
     } else if (resultType === "Hexa Decimal") {
         result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
+        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
+        print += x3 + "->" + fracDectoBinHexOct(x3,16);
     } else if (resultType === "Decimal") {
         result.innerHTML = "Answer in Decimal=" + x3.toString();
     } else {
