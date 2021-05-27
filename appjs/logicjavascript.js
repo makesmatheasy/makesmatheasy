@@ -18292,18 +18292,21 @@ function abvalue() {
     let n2 = parseInt(document.getElementById("absize2").value);
     let t1 = parseInt(document.getElementById("abpos1").value);
     let t2 = parseInt(document.getElementById("abpos2").value);
-
-    if (n1 < 30 || n2 < 30) {
-        document.getElementById("abtestans").innerHTML = "A sample size of 30 or more is preferred";
+    if(isNaN(n1) || isNaN(n2) || isNaN(t1) || isNaN(t2))
+        document.getElementById("abtestans").innerHTML = "\\[Enter \\space all \\space the \\space fields\\]"    
+    else if (n1 < 30 || n2 < 30) {
+        document.getElementById("abtestans").innerHTML = "\\[A \\space sample \\space size \\space of \\space 30 \\space or \\space more \\space is \\space preferred\\]";
     }
     else {
         let p1 = t1 / n1;
         let p2 = t2 / n2;
         let p = (t1 + t2) / (n1 + n2);
-
+        let n =1 / n1 + 1 / n2;
         let ans = (p1 - p2) / (Math.sqrt(p * (1 - p) * (1 / n1 + 1 / n2)));
-        document.getElementById('abtestans').innerHTML = "The value for the AB Test is: " + ans;
+        document.getElementById('abtestans').innerHTML = "\\[The \\space value \\space for \\space the \\space AB \\space Test \\space is: " + ans+"\\]"+"\\[value \\space of \\space AB \\space test=\\frac{p1-p2}{\\sqrt{p(1-p)(\\frac{1}{n1}+\\frac{1}{n2})}}\\]"+"\\[where \\space p1=\\frac{t1}{n1}=\\frac{"+t1+"}{"+n1+"}="+p1.toFixed(2)+" \\space ,\\space  p2=\\frac{t2}{n2}==\\frac{"+t2+"}{"+n2+"}="+p2.toFixed(2)+" \\space ,\\space p=\\frac{t1+t1}{n1+n2}=\\frac{"+(t1+t2)+"}{"+(n1+n2)+"}="+p.toFixed(2)+"\\]";
+        document.getElementById('abtestans').innerHTML+="\\[=\\frac{"+p1.toFixed(2)+"-"+p2.toFixed(2)+"}{\\sqrt{"+p.toFixed(2)+"*"+(1-p).toFixed(2)+"*"+n.toFixed(2)+"}}="+ans+"\\]";
     }
+    renderMathInElement(document.getElementById('abtestans'))
 }
 
 function tvalue() {
