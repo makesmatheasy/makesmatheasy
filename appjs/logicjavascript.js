@@ -14939,6 +14939,39 @@ function polymax6find(){
         document.getElementById("polymax6ans").innerHTML = "Please enter valid input"
     }
 }
+
+function regang(){
+    let a1  = parseInt(document.getElementById("regang1").value)
+    let a2  = parseInt(document.getElementById("regang2").value)
+    let a3  = parseInt(document.getElementById("regang3").value)
+    let n  = parseInt(document.getElementById("regang4").value)
+    var output = document.getElementById("regangans")
+    var temp = "";
+    if(!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(n)){
+    if (a1 < a2){
+       var x = (a2 - a1);
+    }
+    else{
+       var x = a2 + n - a1;
+    }
+    if (a2 < a3){
+       var y = (a3 - a2);
+    }
+    else{
+       var y = a3 + n - a2;
+    }
+    var angle1 = (180 * x) / n;
+    var angle2 = (180 * y) / n;
+    var angle = 180 - angle1 - angle2;
+    temp += "\\[Angle \\space between \\space 3 \\space vertices \\space  is \\space " + angle + " \\]"
+    output.innerHTML = temp;
+}
+else{
+    temp += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = temp;
+}
+renderMathInElement(output);
+}
 //Side of a regular n-sided polygon circumscribed in a circle
 function polymax7find(){
     let n  = parseInt(document.getElementById("polymax7").value)
