@@ -181,6 +181,7 @@ function openit(id) {
         "#des",
         "#gcd",
         "#oloid",
+        "#woods",
         "#dbltime",
         "#chitest",
         "#adams",

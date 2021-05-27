@@ -89,6 +89,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#wood").click(function () {
+        openit("#woods");
+        closenav();
+        clearall();
+    });
 
     $("#minv").click(function () {
         openit("#mis");

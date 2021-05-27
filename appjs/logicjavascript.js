@@ -19312,3 +19312,45 @@ const ackermann = (m, n) => {
 function ackermannFunction(num1,num2){
     document.getElementById("ackermannResult").innerHTML = "The result is : " + ackermann(num1,num2);   
 }
+function isWoodall(x)
+{
+    if (x % 2 == 0)
+        return false;
+    if (x == 1)
+        return true;
+    x++;
+    let p = 0;
+    while (x % 2 == 0)
+    {
+        x = x/2;
+ 
+        p++;
+        if (p == x)
+            return true;
+    }
+ 
+    return false;
+}
+function woodfind()
+{
+    var num1=document.getElementById("wood1").value;
+    ans="";
+    if(num1=="")
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isWoodall(num1)==true)
+        {
+            ans=num1+" is a woodall number"
+        }
+        else
+        {
+            ans=num1+" is not a woodall number"   
+        }
+    }
+    document.getElementById("woodans").innerHTML=ans;
+}
+
