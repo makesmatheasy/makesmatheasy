@@ -158,6 +158,7 @@ function openit(id) {
         "#arcs",
         "#crescentLune",
         "#sigma",
+        "#negbino",
         "#chng-vol-cube",
         "#sosqs",
         "#sosqsn",

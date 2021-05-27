@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#midrangebtn").click(function () {
+    openit("#midrange");
+    closenav();
+    clearall();
+});
 $("#utc").click(function(){
     openit("#utcs");
     closenav();

@@ -332,6 +332,14 @@ function autocomplete(inp, arr) {
                     }else if (inp.value.toUpperCase() == "GRAPH") {
                         clearmain()
                         $("#plotgraph").slideDown();                        
+                    }
+                    else if(inp.value.toUpperCase() == "NEGATIVE BINOMIAL DISTRIBUTION CALCULATOR"){
+                        clearmain()
+                        document.getElementById('negbino').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "NEGATIVE BINOMIAL DISTRIBUTION CALCULATOR") {
+                        clearmain()
+                        $("#negbino").slideDown(); 
                     } else if (inp.value.toUpperCase() == "OPERATIONS ON FRACTIONS") {
                         clearmain()
                         $("#fractions").slideDown();
