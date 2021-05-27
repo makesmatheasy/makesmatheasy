@@ -84,6 +84,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#kap").click(function () {
+        openit("#kaps");
+        closenav();
+        clearall();
+    });
     $("#mathrbtn").click(function () {
         openit("#math");
         closenav();
