@@ -1563,15 +1563,16 @@ function covcal() {
 function rmscal()
 {
     var num=document.getElementById("rmi").value;
-    var ans="";
+    var answer="";
     if(num=="")
     {
-        ans="Please enter all the values";
+        answer="Please enter all the values";
     }
     else
     {
         var outputstring="";
         var s=0;
+        
         num=num.trim();
         num = num.split(" ");
         var len=parseInt(num.length);
@@ -1585,13 +1586,19 @@ function rmscal()
             sum=sum+(number[i]**2);
         }
 
-        sum=sum/len;
-        sum=Math.sqrt(sum);
-        ans="The root mean square of given input is: "+sum;
-        
-    }
-    document.getElementById("rmsans").innerHTML=ans;
+        avg=sum/len;
+        rmss=Math.sqrt(avg);
+        answer+="\\[RMS \\space = \\space \\sqrt{\\frac{1}{n} \\sum_i{x_i^2}}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{\\frac{1}{"+len+"} \\times "+sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{"+1/len.toFixed(4)+" \\times "+sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{"+(1/len) * sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space "+Math.sqrt((1/len) * sum).toFixed(4)+"\\]"
+        answer+="\\[The \\space root \\space mean  \\space square \\space of\\space  given\\space  input \\space is: "+rmss.toFixed(4)+"\\]";
 
+    }
+    document.getElementById("rmsans").innerHTML=answer;
+
+    renderMathInElement(document.getElementById("rmsans"));
 }
 
 
