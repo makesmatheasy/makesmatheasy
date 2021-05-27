@@ -16942,9 +16942,6 @@ function convertbcd() {
     const toCode = document.getElementById("bcd-select2").value;
     var input = document.getElementById("bcd-input").value;
     let result = document.getElementById("bcd-result");
-    var x = "_";
-    var y = "";
-    var temp = "";
 
     if (fromCode == "BCD Code" && toCode == "BCD Code")
         result.innerHTML = input;
@@ -16954,7 +16951,9 @@ function convertbcd() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
-            x = "";
+            var x = "";
+            var y = "";
+            var temp = "";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
@@ -16971,6 +16970,8 @@ function convertbcd() {
             }
         }
     }else if (fromCode == "Decimal" && toCode == "BCD Code"){
+        var x = "_";
+        var y = "";
         for (var i = 0; i < input.length; i++) {
             y = parseInt(input[i]).toString(2);
             if (y.length == 1) {
