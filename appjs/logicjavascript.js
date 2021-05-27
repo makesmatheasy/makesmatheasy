@@ -91,6 +91,26 @@ function romanize(input) {
 
 //Distance between excentre and circumcentre
 //----------------------------------------
+
+function excircum_1(){
+    let R = parseInt(document.getElementById("radius_2").value);
+    let A = parseInt(document.getElementById("ang_1").value);
+    let B = parseInt(document.getElementById("ang_2").value);
+    let C = parseInt(document.getElementById("ang_3").value);
+
+    var result = R*Math.sqrt(1+(8*sin(A/2)*sin(B/2)*sin(C/2)));
+    document.getElementById("excircum1").innerHTML = result;
+}
+function sin(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.sin(radians);
+}
+function cos(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.cos(radians);
+}
+function excircum_2(){
+
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
     var A = parseInt(document.getElementById("ang_1").value);
@@ -126,12 +146,17 @@ function cos(degrees) {
     return Math.cos(radians);
 }
 function excircum_2() {
+
     let R1 = parseInt(document.getElementById("radius_3").value);
     let A1 = parseInt(document.getElementById("ang_A").value);
     let B1 = parseInt(document.getElementById("ang_B").value);
     let C1 = parseInt(document.getElementById("ang_C").value);
 
+
+    var result1 = R1*Math.sqrt(1+(8*cos(A1/2)*cos(B1/2)*cos(C1/2)));
+
     var result1 = R1 * Math.sqrt(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2)));
+
     document.getElementById("excircum2").innerHTML = result1;
 }
 
@@ -15173,6 +15198,19 @@ function dist_incenex() {
 
 function sin(degrees) {
     var radians = (degrees * Math.PI) / 180;
+    return Math.sin(radians);
+}
+
+//Distance between incenter and excenter
+
+function dist_incenex(){
+    let r = parseInt(document.getElementById("ex_rad").value);
+    let ang = parseInt(document.getElementById("angle_1").value);
+    var ans = 4*r*(sin(ang/2));
+    document.getElementById("dist_inex").innerHTML = ans;
+}
+function sin(degrees) {
+    var radians = (degrees*Math.PI)/180;
     return Math.sin(radians);
 }
 
