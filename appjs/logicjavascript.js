@@ -1184,8 +1184,8 @@ function disfind() {
 function betafind() {
     let num1 = parseInt(document.getElementById("betain1").value)
     let num2 = parseInt(document.getElementById("betain2").value)
-    let ans = (Math.gamma(num1) + Math.gamma(num2)) / Math.gamma(num1 + num2)
-    document.getElementById("betafindans").innerHTML = ans
+    let ans = (math.gamma(num1) + math.gamma(num2)) /math.gamma(num1 + num2)
+    document.getElementById("betafindans").innerHTML = "The result is: " + ans;
 }
 //Heptadecagon Calculator
 function heptafind() {
@@ -12334,7 +12334,7 @@ function htfind() {
 function gammafind() {
     // function to find gamma function of any no.
     let inpu = document.getElementById("gammain").value
-    let ans = Math.gamma(inpu)
+    let ans = math.gamma(inpu)
     document.getElementById("gammafindans").innerHTML = "The gamma is " + ans
 }
 
