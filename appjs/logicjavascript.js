@@ -4943,6 +4943,33 @@ function solveicosa() {
 
 }
 
+function pointrect(){
+    var x1,y1,x2,y2,x3,y3,p1,p2;
+    x1=parseFloat(document.getElementById('checkrect1').value);
+    y1=parseFloat(document.getElementById('checkrect2').value);
+    x2=parseFloat(document.getElementById('checkrect3').value);
+    y2=parseFloat(document.getElementById('checkrect4').value);
+    x=parseFloat(document.getElementById('checkrect5').value);
+    y=parseFloat(document.getElementById('checkrect6').value);
+    var output = document.getElementById("pointrectans")
+    var ans = "";
+    if(!isNaN(x1) &&  !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x) && !isNaN(y)){
+    if (x > x1 && x < x2 && y > y1 && y < y2){
+    ans += "\\[The \\space given \\space points \\space lies \\space inside \\space a \\space Rectangle \\]"
+    output.innerHTML = ans;
+    }
+    else{
+        ans += "\\[The \\space given \\space points \\space not \\space lie \\space inside \\space a \\space Rectangle \\]"
+        output.innerHTML = ans;
+    }
+}
+else{
+    ans += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = ans;
+}
+renderMathInElement(output);
+}
+
 function pointri(){
     var x1,y1,x2,y2,x3,y3,p1,p2;
     x1=parseFloat(document.getElementById('q1w').value);
