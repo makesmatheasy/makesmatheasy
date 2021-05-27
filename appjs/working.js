@@ -1054,6 +1054,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#incenterexcenterbtn").click(function () {
+        openit("#incenterexcenter");
+        closenav();
+        clearall();
+    });
     $("#roundoffbtn").click(function () {
         openit("#roundoff");
         closenav();
@@ -1465,7 +1470,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#relriskbtn").click(function () {
+        openit("#relrisk");
+        closenav();
+        clearall();
+    }); 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
