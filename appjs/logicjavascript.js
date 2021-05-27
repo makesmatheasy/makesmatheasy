@@ -2763,10 +2763,23 @@ else{
 }
 }
 
-function impsefind20(){
+function impse20find(){
     var n = parseInt(document.getElementById("impse20").value)
     var series = n * (Math.pow(n, 2) + 3 * n + 5 ) / 3;
-    document.getElementById("impseans20").innerHTML =  series;
+    document.getElementById("impse20ans").innerHTML =  series;
+}
+
+function impse21find(){
+    var n = parseInt(document.getElementById("impse21").value)
+    while (n != 1)
+        {
+            document.getElementById("impse20ans").innerHTML = n + " ";
+            if ((n & 1) != 0)
+                n = 3*n + 1;
+            else
+                n = parseInt(n/2, 10);
+        }
+        document.getElementById("impse20ans").innerHTML = n;
 }
 
 function impse2find(){
