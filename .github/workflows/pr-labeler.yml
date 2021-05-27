@@ -5,7 +5,7 @@ on:
   pull_request_target:
     types: [closed]
 
-# The machine will reun each job
+# The machine will run each job when workflow will be triggered
 jobs:
   automate-issues-labels:
     runs-on: ubuntu-latest
