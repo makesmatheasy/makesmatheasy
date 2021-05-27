@@ -19421,6 +19421,7 @@ function negbinoCal(op) {
             document.getElementById('negbinoans').innerHTML = "Variance: " + variance;
         }    
 }
+}
 //Hypergeometric Distribution PMF Calculator
 function hypergeoscal() {
     var num1 = document.getElementById("hypergeos1").value;
