@@ -390,6 +390,7 @@ function openit(id) {
         "#dec2421",
         "#ex3",
         "#lappro",
+        "#coprimeex",
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#elonpentpyr",
