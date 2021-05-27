@@ -448,7 +448,7 @@ Other Tech/Libraries
   - Poisson Distribution Statistics
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
-
+  - Gamma Distribution Calculator
 - Statistics
 
   - Statistics Formulae

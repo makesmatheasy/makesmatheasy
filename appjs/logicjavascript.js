@@ -19467,7 +19467,7 @@ function exprobability(op)
     let num2=document.getElementById("inran").value;
     if(num1==""||num2=="")
     {
-        ans="Please fill all the field";
+        document.getElementById("exprobAns").innerHTML = "Please fill all the field";
     }
     else
     {
@@ -19481,6 +19481,35 @@ function exprobability(op)
             document.getElementById("exprobAns").innerHTML = "Mean: " + 1/num1;
         else
             document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+    }
+}
+//Exponential Distribution Calculator
+function gammaprobability(op)
+{
+    let num1=document.getElementById("inputx").value;
+    let num2=document.getElementById("inputa").value;
+    let num3=document.getElementById("inputb").value;
+    if(num1==""||num2==""||num3=="")
+    {
+        document.getElementById("gammaprobAns").innerHTML = "Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
+        if(op==1){
+            let g = (math.gamma(num2))**(-1);
+            let b = num3**(-num2);
+            let e = 2.71828**(-num1/num3)
+            let x = num1**(num2-1);
+            let dist = g*b*e*x;
+            document.getElementById("gammaprobAns").innerHTML = "Gamma Probability: " + dist;
+        }
+        else if(op==2)
+            document.getElementById("gammaprobAns").innerHTML = "Mean: " + num2/num3;
+        else
+            document.getElementById("gammaprobAns").innerHTML = "Variance: " + num2/(num3*num3);
     }
 }
 
