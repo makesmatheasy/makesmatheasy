@@ -13343,6 +13343,15 @@ function lacube11find(){
     document.getElementById("lacube11ans").innerHTML =  "false"
 }
 
+function lacube12find(){
+    let n  = parseInt(document.getElementById("lacube13").value)
+    if (n % 4 != 2)
+    {
+        document.getElementById("lacube12ans").innerHTML = "true";
+    }
+    document.getElementById("lacube12ans").innerHTML = "false";
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
