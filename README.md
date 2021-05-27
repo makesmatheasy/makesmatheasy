@@ -59,10 +59,9 @@ Other Tech/Libraries
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
   - Sets,Relations and Functions
+  - Types of Relations
   - Sets Formulas List
-  - Interest(Simple,Compound)
-  - Cost and Selling Prices
-  - Effective Interest Rate
+  - Sigma Notation
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
@@ -74,10 +73,15 @@ Other Tech/Libraries
     - Multiplication
   - Properties of Matrices and Determinants
   - Cramer's Rule Calculator
+  - Solve for X
+  - Cayley Hamilton Theorem and Diagonalization
+  - Mean Calculator(AM GM & HM)
+  - Sequence & Series
   - Sum of Nterms of an Arithmetic Progression
   - Sum of Nterms of a Geometric Progression
   - Sum of Nterms of a Harmonic Progression
-  - Cayley Hamilton Theorem of Diagonalization
+  - Important Series and Sequences
+  - Aliquot Sums
 
 - Conic Section
 
@@ -91,11 +95,14 @@ Other Tech/Libraries
 
   - Inverse and Periodicity of Functions
   - Transformation of Functions
-  - Integration + Limits
+  - Integration
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
   - Integration Formulas
+  - Definite Integration Formulae
+  - Methods of Integration
+  - Improper to Proper Integral
   - Differentiation + Higher Order
     - Solution from Nerdamer
     - Steps from eMathHelp
@@ -105,16 +112,20 @@ Other Tech/Libraries
     - Solution/Steps from eMathHelp
     - Graph
   - Differential Equations
+  - Partial Differential Equations
   - Power Series
   - Theorems on Differentiation
   - Application of Derivative
   - Maxima and Minima of functions
   - Beta Gamma Functions
+  - Gamma Function Calculator
+  - Beta Function Calculator
   - Laplace + Inverse Laplace
     - Solution from Nerdamer
     - Steps from eMathHelp
     - Graph
   - Laplace Transforms and Properties
+  - Limits
   - Tangent and Normal
   - Vector Calculus
   - Vector Calculator
@@ -123,15 +134,18 @@ Other Tech/Libraries
   - Fourier Series
 
 - Trigonometry
+
   - P/B/H Trigo
-  - Finding sides of a right triangle (provided any two)
+  - Hyperbolic trignometrics ratios calculator
   - Trigonometric Values
   - Trigonometric Identities
+  - Tigonometric Functions
   - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
-  - Unit Circle
   - Inverse Hyperbolic Trigonometric Identities
+  - Unit Circle
   - General Solution of Trigonometric Equations
+  - Height and Distance
   - Expansion of Functions
   - Solution of Triangles
     - Law of Sines Calculator
@@ -139,46 +153,63 @@ Other Tech/Libraries
   - Sum and Difference Of Trignometric Function
 
 - General Maths (with Steps)
+  - Ackermann Function
   - LCM
     - Upto 20 numbers
   - HCF
     - Calculating Factors of each number and picking common out of them
   - Factors
     - Prime Factorization **( with steps for single number)**
+  - Euclid GCD
+  - Doubling Time
+  - Modulo calculator
+  - Sieve of Eratosthenes
+  - Adam Numbers
   - Greatest Integer Function and Fractional Part
   - Quartiles
   - Deciles
-  - Modulo Calculator
-  - Doubling Time
+  - Exponential Growth Calculator
+  - Percentile Rank Calculator
+  - Half Life Calculator
   - Direct And Indirect Proportion
   - Cross Multiplication Calculator
+  - Diamond Problem Calculator
+  - Additive Inverse
+  - Multiplicative Inverse
+  - Square root calculator
+  - Unit Rate Calculator
+  - Order of Magnitude Calculator
   - Work And Time Calculator
+  - Abundant Number
   - Solve for Exponents
   - Sum of Square of Given number
   - Natural Numbers
+  - Clock Angle Calculator
+  - Root Mean Square
+  - Squares and Cubes Calculator
+  - n-th base root calculator
+  - Perfect Squares & Cubes in a range
+  - Factorization
   - Percentage Calculator
-  - Half Life Calculator
-  - Set Calculator
+  - Error Percentage Calculator
+  - Interest(Simple,Compound) 
+  - Cost and Selling Prices 
+  - Effective Interest Rate 
+  - Profit Loss Calculations
+  - Set Calculator 
   - Pythagorean Triplets
-  - Perfect Squares in a range
-  - Perfect Cubes in a range
   - Rank Calculator
   - Leap Year
-  - Standard Deviation
   - Hydrostatic Pressure
-  - Strain Calculator
-  - Stress Calculator
-  - Profit Loss Calculations
-    - Arithmetic Mean
-    - Geometric Mean
-    - Harmonic Mean
-  - Log Calculator
+  - Logarithm Properties
+  - Logarithm Calculator
     - Calculates the log of x to the base y
-  - Log Properties
-  - Operations on Fractions
+  - Ln Calculator
   - Binomial Theorem Properties
+  - Binomial Coefficient Calculator
   - Binomial expression multiplication
   - Foil Calculator
+  - Operations on Fractions
   - Multiplication Table
     - Prints Multiplication Table
   - Divide
@@ -191,15 +222,26 @@ Other Tech/Libraries
   - Golden Ratio Calculator
   - Golden Rectangle Calculator
   - Polynomial Degree Finder
-  - Simple and Compound Interest
   - Factorial
   - Permutation & Combination
-  - Mean/Median/Mode
   - Prime Numbers
     - Primality Test
     - Primes till entered number
+  - Euler Totient Function
+  - Euler Totient Calculator
+  - Next Prime Number
+  - Smallest Prime Factor
+  - Sum of Divisors
+  - Double Factorial
+  - Catalan Numbers
+  - Desargues Theorem
+  - Dirichlet's theorem on arithmetic progressions
+  - Smallest Number Divisible
+  - Lucas series
+  - Types of numbers 
 
 - Basic Convertors
+
   - Currency Convertor
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
   - Conversion to words
@@ -218,6 +260,7 @@ Other Tech/Libraries
     - Data
     - Power
   - Improper to Mixed Fraction
+  - Percentage and Ratio Converter
   - SPI/CGPA Convertor
   - Ascending and Descending Order
   - Date
@@ -233,26 +276,34 @@ Other Tech/Libraries
   - Plot Bar Graph
     - Plots a Bar Graph along x and y axis by taking input from the user
   - Plot Angle
+  - Supplementary Angle Calculator
+  - Coterminal Angle Calculator
   - SSS Triangle's Angle Calculator
   - Straight Line Formulas
   - Properties of Parallel Lines
   - Coordinate Systems
   - Manhattan Distance Calculator
+  - Cartesian coordinates calculator
+  - Spherical coordinates calculator
+  - Cylindrical coordinates calculator
+  - Polar coordinates calculator
   - Bilinear Interpolation Calculator
   - Coordinate Geometry Calculator
   - Coordinate Geometry Formula and Theorem
-  - Cartesian coordinates calculator
-  - Cylindrical coordinates calculator
-  - Spherical coordinates calculator
-  - Polar coordinates calculator
   - Segment Area Calculator
   - Curve Tracing
   - Ceva's and Thale's Theorem
+  - Important Graph Calculators
   - Properties of Circles
+  - Triangle Calculator
+  - Ineqaulities of Triangles
   - Properties of Quadrilaterals
+  - Segment Area Calculator
   - Arc Length Calculator
   - Area of Crescent and Lunes
   - Platonic Solids
+  - 2-D Shapes Inscribed
+  - Name Of 2D Shapes
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
@@ -274,11 +325,13 @@ Other Tech/Libraries
     - Ellipse
     - Stadium
     - Claw
+    - Cycloid
     - Parallelogram
     - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
-    - T-Shape
 
+    - T-Shape
+  - Name Of 3D Shapes
   - 3D Shapes Calculator
     - Cube
     - Cuboid
@@ -307,16 +360,19 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+  - 3-D shapes Inscribed
   - 4-D Shapes Calculator
     - Tesseract
     - Hypersphere
   - 3-D Geometry
   - 3-D Geometry Calculator
   - Volume, CSA, TSA
+  - Volumetric Weight Calculator
   - Percentage change in volume of a cube
   - Percentage change in volume of a sphere
   - Percentage change in volume of a Cuboid
   - Congruence and Similarity of Triangles
+  - Faulhaber Formula
 
 - Equations
 
@@ -327,6 +383,7 @@ Other Tech/Libraries
     - Simplify Equation
     - Expand Equation
     - Solve value of variables of multiple inputted equations
+  - Quadratic Equation Calculator
 
 - Binary Calculations
 
@@ -336,8 +393,7 @@ Other Tech/Libraries
   - Addition of any Number System
   - Subtraction of any Number System
   - Multiplication of any Number System
-  - Decimal/Binary/Hexadecimal Converter
-  - Octal/Hexadecimal Converter
+  - Division Of any Number System
   - Decimal/BCD Converter
     - BCD Code Addition
   - Excess-3 Code Converter
@@ -346,12 +402,18 @@ Other Tech/Libraries
   - Bitwise Calculator
   - (R-1)'s & R's Complement Calculator
   - Hamming Code
+  - Hamming Distance
 
 - Complex Numbers
 
   - Identities
   - Properties
   - De-Moivre's Theorem and Cauchy-Reimann Theorem
+  - Representation by Power Series
+  - Milne Thomson Method
+  - Contour Integration
+  - Residue Methods
+  - Cauchy Integral,Liouville and Rouche Theorem
   - Operations for 1 complex number
     - Magnitude
     - Argument
@@ -365,40 +427,50 @@ Other Tech/Libraries
     - Subtraction
     - Multiplication
     - Division
+  - Roots of Unity calculator
 
 - Probability
+
   - Empirical Probability
-  - Conditional Probability
   - Geometric Probability Distribution
+  - Conditional Probability
   - Joint Probability
   - Independent And Dependent Event Probability
   - Probabilty Properties
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator
+  - Hypergeometric Distribution Calculator
   - Bayes Probability Theorem
+  - Poisson Distribution Statistics
+  - Hypergeometric Distribution Statistics
+
 - Statistics
+
   - Statistics Formulae
-  - Mean Calculator
   - Weighted Mean Calculator
   - Mean Median Mode
   - Midrange Calculator
+  - Sensitivity and Specificity Calculator
   - Standard Deviation
   - T-test
   - AB-test
+  - F-test
   - Z-test
   - Z score Calculator
   - Relative Risk Calculator
   - Negative Binomial Distribution Calculator
+  - p chart Calculator
+  - np chart Calculator
   - Confidence Interval Calculator
-  - Sensitivity and Specificity Calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
   - Covariance Calculator
-  - Correlatio Coefficient Calculator
+  - Correlation Coefficient Calculator
   - Linear Regression Calculator
   - Margin of Error Calculator
   - Chi-Square Test
+
 ---
 
 ## Documentation
