@@ -7617,11 +7617,48 @@ function solvecycloid(){
     var peri = arclen + baselen;
     var area = 3 *math.pi *  a**2;
     var height = 2 * a;
-    document.getElementById("resultofcycarclen").innerHTML = "Arc length = "+arclen.toFixed(3)
-    document.getElementById("resultofcycbaselen").innerHTML = "Base length = "+baselen.toFixed(3)
-    document.getElementById("resultofcycperi").innerHTML = "Perimeter = "+peri.toFixed(3)
-    document.getElementById("resultofcycarea").innerHTML = "Area ="+area.toFixed(3)
-    document.getElementById("resultofcycheight").innerHTML = "Height = "+height.toFixed(3)
+    arclenout = document.getElementById("resultofcycarclen")
+    baselenout = document.getElementById("resultofcycbaselen")
+    periout = document.getElementById("resultofcycperi") 
+    areaout = document.getElementById("resultofcycarea") 
+    heighout = document.getElementById("resultofcycheight")
+    arclentemp = "";
+    baselentemp = "";
+    peritemp = "";
+    areatemp = "";
+    heighttemp = "";
+    if(!isNaN(a) && a!=""){
+        arclentemp += "\\[Arc \\space length \\space of Cycloid \\space is\\]";
+        arclentemp += "\\[ 8 \\times "+a+" \\space = \\space "+arclen.toFixed(3)+"\\]";
+        arclenout.innerHTML = arclentemp;
+
+        baselentemp += "\\[Base \\space length \\space length \\space of Cycloid \\space is\\]";
+        baselentemp += "\\[ 2 \\times "+(math.pi).toFixed(2)+" \\times "+a+" \\space = \\space "+baselen.toFixed(3)+"\\]";
+        baselenout.innerHTML = baselentemp;
+
+        peritemp += "\\[Perimeter \\space of Cycloid \\space is\\]";
+        peritemp += "\\[ (Arc \\space length) +  (Base \\space length) \\newline = "+arclen.toFixed(2)+" + "+baselen.toFixed(2)+" \\space = \\space "+peri.toFixed(3)+"\\]";
+        periout.innerHTML = peritemp;
+
+        areatemp += "\\[Area \\space of Cycloid \\space is\\]";
+        areatemp += "\\[ 3 \\times "+(math.pi).toFixed(2)+" \\times "+a+"^2 \\space = \\space "+area.toFixed(3)+"\\]";
+        areaout.innerHTML = areatemp;
+
+        heighttemp += "\\[Height \\space of Cycloid \\space is\\]";
+        heighttemp += "\\[ 2 \\times "+a+" \\space = \\space "+height.toFixed(3)+"\\]";
+        heighout.innerHTML = heighttemp;
+    } else{
+        arclenout.innerHTML = "";
+        baselenout.innerHTML =  "";
+        periout.innerHTML = "";
+        areaout.innerHTML = "";
+        heighout.innerHTML = "";
+    }
+    renderMathInElement(arclenout);
+    renderMathInElement(baselenout);
+    renderMathInElement(periout);
+    renderMathInElement(areaout);
+    renderMathInElement(heighout);
 }
 
 //Annulus 	
