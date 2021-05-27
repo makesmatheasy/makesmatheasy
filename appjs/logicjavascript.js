@@ -14284,17 +14284,16 @@ function reultriangle(){
 
 // Sensitivity and specificity starts
 function sensiCal() {
-    document.getElementById("sensiAns").innerHTML = "";
-    document.getElementById("speciAns").innerHTML = "";
     var tp = parseInt(document.getElementById("tp").value);
     var tn = parseInt(document.getElementById("tn").value);
     var fp = parseInt(document.getElementById("fp").value);
     var fn = parseInt(document.getElementById("fn").value);
-    
+    document.getElementById("sensiAns").innerHTML = "";
+    document.getElementById("speciAns").innerHTML = "";
 
-    if(tp=="" || tn=="" || fp=="" || fn=="")
+    if( isNaN(tp) || isNaN(tn) || isNaN(fp) || isNaN(fn)  )
     {
-        document.getElementById("sensiAns").innerHTML = `Proper input is required`;
+        document.getElementById("sensiAns").innerHTML = "Proper input is required";
         document.getElementById("speciAns").innerHTML = "";
         return;
     }
@@ -18287,14 +18286,23 @@ function corr_SD(arr) {
 function corrco() {
     let sam1 = document.getElementById("sam1").value;
     let sam2 = document.getElementById("sam2").value;
-    
+    sam1=sam1.trim();
     sam1 = sam1.split(" ");
+    sam2=sam2.trim();
     sam2 = sam2.split(" ");
-    let n1 = sam1.length
-    let n2 = sam2.length
+    var n1=parseInt(sam1.length);
+    var n2=parseInt(sam2.length);
     console.log(n1)
     console.log(n2)
-    if(n1==n2){
+    if(sam1 == "" || sam2 == "" ) {
+        document.getElementById('coffans').innerHTML = "Please enter number";
+        document.getElementById('coffexplain').style.display = "none";
+     }
+  else if(n1 != n2){
+        document.getElementById('coffans').innerHTML = "Samples should be of same length";
+        document.getElementById('coffexplain').style.display = "none";
+    }
+   else{
         for (var i = 0; i < n1; i++) {
             sam1[i] = parseFloat(sam1[i]);
         }
@@ -18336,10 +18344,6 @@ function corrco() {
         renderMathInElement(document.getElementById("coffxy")); 
         renderMathInElement(document.getElementById("coffr"));
     }
-    else{
-        document.getElementById('coffans').innerHTML = "Samples should be of same length";
-        document.getElementById('coffexplain').style.display = "none";
-    } 
 }
 
 function fvalue_xbar(arr, mean) {
