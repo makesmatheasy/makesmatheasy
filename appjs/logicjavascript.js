@@ -12392,6 +12392,39 @@ function golds2find(){
     document.getElementById("golds2ans").innerHTML = fn;   
 }
 
+function golds3find(){
+    let a = document.getElementById("golds4").value
+    let b = document.getElementById("golds5").value
+    if (a < b)
+    {
+        a = a + b;
+        b = a - b;
+        a = a - b;
+    }
+   
+    // First Ratio
+    let ratio1 = ((a / b) * 1000) / 1000;
+   
+    // Second Ratio
+    let ratio2 = Math.floor(((2 * a + b) /
+                           a) * 1000);
+    ratio2 = ratio2 / 1000;
+   
+    // Condition to check that two
+    // numbers are in silver ratio
+    if (ratio1 == ratio2 &&
+       (ratio1 - 2.414) == 0)
+    {
+        document.getElementById("golds2ans").innerHTML = "Yes";
+        // return true;
+    }
+    else
+    {
+        document.getElementById("golds2ans").innerHTML = "No";
+        // return false;
+    }
+}
+
 // profit/loss calculations over discount
 function discount() {
     var dis = parseFloat(document.getElementById("dis").value);
