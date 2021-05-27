@@ -1948,26 +1948,43 @@ function oocal()
 {
     var num4=document.getElementById("oocx").value;
     ans="";
+    var answer="";
     if(num4=="")
     {
-        ans="Please enter number";
+        answer="Please enter a number";
     }
     else
     {
-        var len=num4.length;
         var count=0;
-        for(var b=0;b<len;b++)
+        if(num4>5)
         {
-            if(num4[b]=='.')
+            while(num4>5)
             {
-                break;
+             num4=num4/10;
+             count=count+1;
             }
-            else 
-            {count++};
         }
-        ans="The order of mangnitude is : "+(count-1);
+        else if(num4<=0.5)
+        {
+            while(num4 <= 0.5)
+            {num4=num4*10;
+            count=count-1;
+           }
+        }
+        else if(num4==5)
+        {
+            count=0;
+        }
+        answer+="\\[N \\space = \\space n \\times 10 ^ {x}\\]"
+        answer+="\\[Here, \\space N = \\space no \\space whose \\space order \\space of \\space magintude \\space we \\space have \\space to \\space find\\]"
+        answer+="\\[n \\space should \\space be \\space in \\space the \\space range : 0.5 < n \\leq 5\\]"
+        answer+="\\[x \\space => \\space order \\space of \\space magnitude \\]"
+        answer+="\\[N \\space = \\space "+num4+" \\times 10 ^ {"+count+"} \\]"
+        answer+="\\[The \\space order \\space of \\space mangnitude \\space is : "+(count)+"\\]";
+
     }
-    document.getElementById("ooans").innerHTML=ans;
+    document.getElementById("ooans").innerHTML=answer;
+    renderMathInElement(document.getElementById("ooans"));
 }
 
 function mifcal()
