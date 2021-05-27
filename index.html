@@ -2666,6 +2666,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="coprimeexbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Co-Prime
+                                Numbers Theory</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Co-Prime Numbers Theory','#coprimeex','c','coprimeeximgfav')"><img
+                                        id="coprimeeximgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--Added Euler's Totient Function -->
             <li>
                 <table class="table">
@@ -12599,23 +12616,18 @@
         </div>
 
         <div class="collapse" id="circumradiusarea">
-            <h2>Circum Area and External Radius</h2>
-            <br>
+            <h2>Circum Area and External Radius</h2><br>
             <p>Area of External Triangle</p><br>
             <p id="exterarea">\[8R^2cosA/2cosB/2cosC/2\]</p>    
-
             <div class="form-group">
                 <input type="text" style="width: 250px;" class="form__field" name="a" id="radius" placeholder="Enter External radius"/>
                 <input type="text" name="b" style="width: 250px;" class="form__field" id="angle1" placeholder="Enter angle A "/>
                 <input type="text" name="c" style="width: 250px;" class="form__field" id="angle2" placeholder="Enter angle B"/>
-                <input type="text" name="d" style="width: 250px;" class="form__field" id="angle3" placeholder="Enter angle C"/>
-                <br>
-
-                <br>
+                <input type="text" name="d" style="width: 250px;" class="form__field" id="angle3" placeholder="Enter angle C"/><br><br>
                 <button  class = "btn btn-outline-light" onclick = "external_area()" >Find</button>
                 <br>
             </div>
-                <h2  id="externarea"></h2><br>
+                <p  id="externarea"></p><br><br>
                 <p>Circum radius of External Triangle</p><br>
                 <p id="exterarea">\[2R\]</p> 
                 <div class="form-group">
@@ -12627,24 +12639,48 @@
 
 
         <div class="collapse" id="incenterexcenter">
-            <h2>Distance between Incenter and Excenter of a Triangle</h2>
-            <br>
+            <h2>Distance between Incenter and Excenter of a Triangle</h2><br>
             <p id="incenex">\[4RsinA/2\]</p>    
-
             <div class="form-group">
                 <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>
-               
-                <br>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>  <br> <br>
+                <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button> <br>
+            </div>
+                <p  id="dist_inex"></p><br><br>    
+        </div>
 
-                <br>
-                <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button>
+        <div class="collapse" id="excircum">
+            <h2>Distance between excentre and circumcentre</h2><br>
+            <p>For OI1</p>
+            <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
+                <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
+                <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/><br><br>
+                <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button>
                 <br>
             </div>
+                <p  id="excircum1"></p>><br>
+                <br><br>
 
-                <h2  id="dist_inex"></h2><br>
+                <p>For OI2 and OI3</p>
+                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
+    
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
+                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/>
+                    <br>
+    
+                    <br>
+                    <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
+                    <br>
+                </div>
+    
+                    <h2  id="excircum2"></h2><br>
 
-                
         </div>
 
         <div class="collapse" id="excircum">
@@ -14981,15 +15017,12 @@
             <h4 id="polymax6ans"></h4>
             </form>
             <br>
-            <h4>Angle between 3 vertices in a N sided Regular Polygon</h4>
-            <br>
+            <h4>Angle between 3 vertices in a N sided Regular Polygon</h4><br>
             <input type = "text" class = "form__field" placeholder = "Enter 1st vertex (a1)" id="regang1"/>
             <input type = "text" class = "form__field" placeholder = "Enter 2nd vertex (a2)" id="regang2"/>
             <input type = "text" class = "form__field" placeholder = "Enter 3rd vertex (a3)" id="regang3"/>
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regang4"/>
-            <br>
-            <button type = "button" class="btn btn-dark" onclick = "regang()">FInd</button>
-            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regang4"/><br>
+            <button type = "button" class="btn btn-dark" onclick = "regang()">FInd</button><br>
             <h5 id="regangans"></h5>
             <br>
             <h4>Side of a regular n-sided polygon circumscribed in a circle</h4>
@@ -15033,6 +15066,36 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
             <br>
             <h4 id="polymax10ans"></h4></form>
+        </div>
+
+        <div  id="coprimeex">
+            <h1 style="color: #da1085">Co-Prime Numbers Theory</h1><br>
+              <p>‘Co’ refers to a ‘pair’. So, we can define a pair of integers, let's say a and b, as coprime or primes to each other or 
+                  mutually prime or relatively prime if:<br></p>p>
+                  <h5>* the only positive integer that divides both of them to give a remainder zero is 1<br></h5>
+                  <h5>* In other words, the HCF of the two numbers is 1<br></h5>
+                  <h5>* Coprime numbers are denoted as gcd(a, b)=1 or (a, b)=1 or as “a is prime to b”</h5>
+              <br>
+              <h2 style="color: #da1085">How to find Coprime numbers?</h2>
+              <p>Let's understand it with the help of an example:<br>
+
+                Let's consider two numbers 6 and 15.
+                Now find out the factors of 6 and 15. We get the factors of 6 as 1, 2, 3, 6 and factors of 15 as 1, 3, 5, 15.On 
+                comparing the factors of these two numbers 6 and 15, we see that both these numbers have factors 1 and 3 in common. 
+                The HCF for this pair is 3. Therefore the pair is not coprime.
+              </p><br>
+              
+              <h2 style="color: #da1085">
+                Properties of Coprime numbers
+              </h2><br>
+                <h5>1) Numbers that are coprime may not necessarily be prime numbers themselves. For eg: (10,21), the numbers are not prime numbers if taken individually but they are coprime if considered as a pair. This concludes that composite numbers can be coprime numbers too.</h5><br>
+                <h5>2) Prime numbers are coprime by default. For eg: (2,3), (5,11), (19,23) and so on. Every prime number has only two factors i.e. 1 and the number itself. Therefore, the only common factor of a pair of two prime numbers will be 1.<br></h5>
+                <h5>3) Unity is considered coprime with everything else.<br></h5>
+               <h5>4) The concept of coprime is meaningful only with natural numbers.<br></h5>
+               <h5>5) Two successive integers are always coprime. For eg: (2,3), (11,12), (99,100) and so on; they have 1 as their HCF.<br></h5>
+               <h5>6) The sum of any two coprime numbers is always coprime with the product of the same two coprime numbers. For eg: The sum of 2 and 3 is 5 and the product of 2 and 3 is 6. Hence, 5 and 6 are coprime numbers.<br></h5>
+               <h5>7) If p and q are coprime numbers then p2 and q2 are also coprime numbers. For example, the squares of 5 and 6 i.e. 25 and 36 are also coprime to each other.<br></h5>
+             
         </div>
 
         <div class="collapse" id="cevtha">
@@ -15948,6 +16011,10 @@
                     <td><a data-toggle="modal" data-target="#hshape"
                            style="text-decoration:none;" href="#">H - Shape</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#arbelosshape"
+                           style="text-decoration:none;" href="#">Arbelos</a></td>
+                </tr>
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -16050,120 +16117,156 @@
             <br><br>
             <h4>Largest cone that can be inscribed within a cube</h4>
             <br>
+            <form action="">
             <input type="text" id="shapeinscribedin" class="form__field" placeholder="Enter the side length of cube">
             <br>
-            <button class="btn btn-dark" onclick="coneincubefind()">Find</button><br>
+            <button type="button" class="btn btn-dark" onclick="coneincubefind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+            <br>
             <h5 id="coneincubeans"></h5>
+            </form>
             <br>
             <h4>Largest right circular cone that can be inscribed within a sphere which is inscribed within a cube</h4>
             <br>
+            <form action="">
             <input type="text" id="cscu" class="form__field" placeholder="Enter the side length of cube">
             <br>
-            <button class="btn btn-dark" onclick="cscufind()">Find</button><br>
-            <h5 id="cscuans"></h5>
+            <button type="button" class="btn btn-dark" onclick="cscufind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+            <br>
+            <h5 id="cscuans"></h5></form>
             <br>
             <h4>Largest cube that can be inscribed within the sphere</h4>
             <br>
+            <form action="">
             <input type="text" id="cubeinsphere" class="form__field" placeholder="Enter radius of the sphere">
             <br>
-            <button class="btn btn-dark" onclick="cubeinspherefind()">Find</button><br>
-            <h5 id="cubeinsphereans"></h5>
+            <button type="button" class="btn btn-dark" onclick="cubeinspherefind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+            <br>
+            <h5 id="cubeinsphereans"></h5></form>
             <br>
             <h4>Largest sphere that can be inscribed within a cube which is in turn inscribed within a right circular cone</h4>
             <br>
+            <form action="">
             <input type="text" id="scco" class="form__field" placeholder="Enter the height of cone">
             <input type="text" id="scco1" class="form__field" placeholder="Enter the radius of cone">
             <br>
-            <button class="btn btn-dark" onclick="sccofind()">Find</button><br>
-            <h5 id="sccoans"></h5>
+            <button type="button" class="btn btn-dark" onclick="sccofind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="sccoans"></h5></form>
             <br>
             <h4>Largest cube that can be inscribed within the cone</h4>
             <br>
+            <form action="">
             <input type="text" id="cubeincone" class="form__field" placeholder="Enter the height of cone">
             <input type="text" id="cubeincone1" class="form__field" placeholder="Enter the radius of cone">
             <br>
-            <button class="btn btn-dark" onclick="cubeinconefind()">Find</button><br>
-            <h5 id="cubeinconeans"></h5>
+            <button type="button" class="btn btn-dark" onclick="cubeinconefind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cubeinconeans"></h5></form>
             <br>
             <h4>Largest cylinder that can be inscribed within a cube</h4>
             <br>
+            <form action="">
             <input type="text" id="cylinderincube" class="form__field" placeholder="Enter the side length of cube">
             <br>
-            <button class="btn btn-dark" onclick="cylinderincubefind()">Find</button><br>
-            <h5 id="cylinderincubeans"></h5>
+            <button type="button" class="btn btn-dark" onclick="cylinderincubefind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cylinderincubeans"></h5></form>
             <br>
             <h4>Largest cube that can be inscribed within a cylinder </h4>
             <br>
+            <form action="">
             <input type="text" id="cubeincylinder" class="form__field" placeholder="Enter the radius of cylinder">
             <input type="text" id="cubeincylinder1" class="form__field" placeholder="Enter the height of cylinder">
             <br>
-            <button class="btn btn-dark" onclick="cubeincylinderfind()">Find</button><br>
-            <h5 id="cubeincylinderans"></h5>
+            <button type="button" class="btn btn-dark" onclick="cubeincylinderfind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cubeincylinderans"></h5></form>
             <br>
             <h4>Minimum volume of cone that can be circumscribed about a sphere of radius R </h4>
             <br>
+            <form action="">
             <input type="text" id="cscu3" class="form__field" placeholder="Enter the radius of sphere(R)">
             <br>
-            <button class="btn btn-dark" onclick="cscu3find()">Find</button><br>
-            <h5 id="cscu3ans"></h5>
+            <button type="button" class="btn btn-dark" onclick="cscu3find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cscu3ans"></h5></form>
             <br>
             <h4>Largest sphere that can be inscribed in a right circular cylinder inscribed in a frustum </h4>
             <br>
+            <form action="">
             <input type="text" id="scyf" class="form__field" placeholder="Enter the height of cone">
             <input type="text" id="scyf1" class="form__field" placeholder="Enter the bigger radius of cone">
             <input type="text" id="scyf2" class="form__field" placeholder="Enter the shorter radius of cone">
             <br>
-            <button class="btn btn-dark" onclick="scyffind()">Find</button><br>
-            <h5 id="scyfans"></h5>
+            <button type="button" class="btn btn-dark" onclick="scyffind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="scyfans"></h5></form>
             <br>
             <h4>Largest right circular cylinder that can be inscribed within a cone which is in turn inscribed within a cube</h4>
             <br>
+            <form action="">
             <input type="text" id="cscu1" class="form__field" placeholder="Enter the side length of cube">
             <br>
-            <button class="btn btn-dark" onclick="cscu1find()">Find</button><br>
-            <h5 id="cscu1ans"></h5>
+            <button type="button"  class="btn btn-dark" onclick="cscu1find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cscu1ans"></h5></form>
             <br>
             <h4>Largest right circular cone that can be inscribed within a sphere</h4>
             <br>
+            <form action="">
             <input type="text" id="cscu2" class="form__field" placeholder="Enter the radius of sphere">
             <br>
-            <button class="btn btn-dark" onclick="cscu2find()">Find</button><br>
-            <h5 id="cscu2ans"></h5> 
+            <button type="button" class="btn btn-dark" onclick="cscu2find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cscu2ans"></h5> </form>
             <br>
             <h4>Volume of Largest right circular cylinder that can be inscribed within a sphere</h4>
             <br>
+            <form action="">
             <input type="text" id="cscu4" class="form__field" placeholder="Enter the radius of sphere">
             <br>
-            <button class="btn btn-dark" onclick="cscu4find()">Find</button><br>
-            <h5 id="cscu4ans"></h5>   
+            <button type="button" class="btn btn-dark" onclick="cscu4find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cscu4ans"></h5></form>   
             <br>
             <h4>Largest sphere that can be inscribed inside a cube</h4>
             <br>
+            <form action="">
             <input type="text" id="cscu5" class="form__field" placeholder="Enter the side length of cube">
             <br>
-            <button class="btn btn-dark" onclick="cscu5find()">Find</button><br>
-            <h5 id="cscu5ans"></h5> 
+            <button type="button" class="btn btn-dark" onclick="cscu5find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cscu5ans"></h5></form> 
             <br>
             <h4>Largest right circular cylinder within a frustum</h4><br>
+            <form action="">
             <input type="text" id="scyf3" class="form__field" placeholder="Enter the height of cone">
             <input type="text" id="scyf5" class="form__field" placeholder="Enter the shorter radius of cone"><br>
-            <button class="btn btn-dark" onclick="scyf1find()">Find</button><br>
-            <h5 id="scyf1ans"></h5><br>
+            <button type="button" class="btn btn-dark" onclick="scyf1find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="scyf1ans"></h5></form><br>
             <h4>Surface area of the square pyramid</h4>
             <br>
+            <form action="">
             <input type="text" id="scyf6" class="form__field" placeholder="Enter the base length of square pyramid">
             <input type="text" id="scyf7" class="form__field" placeholder="Enter the slant height of square pyramid">            
             <br>
-            <button class="btn btn-dark" onclick="scyf2find()">Find</button><br>
-            <h5 id="scyf2ans"></h5> 
+            <button type="button" class="btn btn-dark" onclick="scyf2find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="scyf2ans"></h5> </form>
             <br>
             <h4>Find slant height of cone and pyramid</h4>
             <br>
+            <form action="">
             <input type="text" id="scyf8" class="form__field" placeholder="Enter the  height of  pyramid">
             <input type="text" id="scyf9" class="form__field" placeholder="Enter the radius of square pyramid">            
             <br>
-            <button class="btn btn-dark" onclick="scyf3find()">Find</button><br>
-            <h5 id="scyf3ans"></h5>       
+            <button type="button" class="btn btn-dark" onclick="scyf3find()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="scyf3ans"></h5> </form>      
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -20310,6 +20413,12 @@ N is the population size.
 <div class="collapse" id="ppmfs">
     <h1 style="font-family:mathfont; text-align:center;"> PMF of Poisson Distribution Calculator </h1>
     <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.1em; font-family:mathfont;">The Poisson distribution is a discrete probability distribution which results from the Poisson experiment.<br>
+        It classifies the experiment into two different categories, such as success and failure. <br>
+        Generally, the Poisson random variable “x” defines the probability of the success of the experiment.<br>
+        From the average rate of success, the Poisson distribution probability can be easily calculated.
+    </div>
+    <br>
     <form action="">
         <input type="number" name="lamb" class="form__field" id="lamb"   placeholder="Average number of occurrences for a given time interval lambda, λ:">
         <p>&nbsp;</p>
@@ -20321,10 +20430,10 @@ N is the population size.
     <p>&nbsp;</p>
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
     <p>&nbsp;</p> 
-    <div style="color: white; text-align: center; font-size: 1em; font-family:mathfont;">The Poisson distribution is a discrete probability distribution which results from the Poisson experiment.<br>
-     It classifies the experiment into two different categories, such as success and failure. <br>
-     Generally, the Poisson random variable “x” defines the probability of the success of the experiment.<br>
-     From the average rate of success, the Poisson distribution probability can be easily calculated.
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = P(X{=}k)= \frac{\lambda^k e^{-\lambda}}{k!}\]</p> where,
+        <br> e = is Euler's number (e = 2.71828...)
+        <br> k = the number of occurrences (k=0,1,2...)
+        <br> λ = parameter such that λ>0
     </div>
 </div>
 
@@ -25580,6 +25689,59 @@ N is the population size.
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="arbelosshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Arbelos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Radius of twin circles (R)</h5>
+                                    <p class="text-center">\[R=\frac{a \times b}{a + b}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Length (c)</h5>
+                                    <p class="text-center">\[c = \sqrt{a \times b}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group ml-3">
+                                        <img src="images/arbelos.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 2 \times \pi \times a \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \pi \times a \times b\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Radius 1. small circle (a)"
+                                   id="arbelos-a" oninput="arbelossolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Radius 2. small circle (b)"
+                                   id="arbelos-b" oninput="arbelossolve()">
+                            <br>
+                            <p class="stopwrap" id="resultOfRadiusArbelos" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfLengthArbelos" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfPerimeterArbelos" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaArbelos" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </div>
 
 <div class="modal fade" id="interioranglecal" tabindex="-1" role="dialog" aria-hidden="true">

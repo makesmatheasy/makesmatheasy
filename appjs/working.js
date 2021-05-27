@@ -1427,6 +1427,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#coprimeexbtn").click(function () {
+        openit("#coprimeex");
+        closenav();
+        clearall();
+    });
 
     $("#lapprobtn").click(function () {
         openit("#lappro");
