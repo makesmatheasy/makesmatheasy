@@ -15008,16 +15008,30 @@ function planeequation() {
 // Circum area and external radius
 
 function external_area() {
-    let R = parseInt(document.getElementById("radius").value);
-    let A = parseInt(document.getElementById("angle1").value);
-    let B = parseInt(document.getElementById("angle2").value);
-    let C = parseInt(document.getElementById("angle3").value);
+    var R = parseInt(document.getElementById("radius").value);
+    var A = parseInt(document.getElementById("angle1").value);
+    var B = parseInt(document.getElementById("angle2").value);
+    var C = parseInt(document.getElementById("angle3").value);
+    var excirout = document.getElementById("externarea");
+    var excirtemp = "";
+    var res = 8 * R**2 * (cos(A / 2) * cos(B / 2) * cos(C / 2));
 
-    var res = 8 * R * R * (cos(A / 2) * cos(B / 2) * cos(C / 2));
-    document.getElementById("externarea").innerHTML = res;
+    if (isNaN(A) || isNaN(R) || isNaN(B) || isNaN(C)){
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
 
+        excirout.innerHTML = excirtemp;
+    } else{
+        excirtemp += "\\[Circum \\space Area \\space and \\space External \\space Radius \\space is \\space \\]";
+        excirtemp += "\\[ \\space = \\space 8 \\times ( External \\space radius)^2 \\times (cos(\\frac{(angle A)}{2}) \\times cos(\\frac{(angle \\space C)}{2}) \\times cos(\\frac{(angle \\space C)}{2})) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 8 \\times "+R+"^2 \\times (cos(\\frac{"+A+"}{2}) \\times cos(\\frac{"+B+"}{2}) \\times cos(\\frac{"+C+"}{2})) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 8  \\times "+(R**2)+" \\times ("+(cos(A / 2) * cos(B / 2) * cos(C / 2)).toFixed(2)+") \\space \\]";
+        excirtemp += "\\[\\space = \\space "+res.toFixed(3)+" \\space \\]";
 
+        excirout.innerHTML = excirtemp;
+    }
+    renderMathInElement(excirout);
 }
+
 function cos(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.cos(radians);
