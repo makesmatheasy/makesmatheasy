@@ -1714,6 +1714,26 @@ function cotermangcal(){
     document.getElementById("cotermangans").innerHTML=ans;
     renderMathInElement(document.getElementById("cotermangans"));
 }
+function cotvercal(){
+    var a=document.getElementById("cotang1").value;
+    var b=document.getElementById("cotang2").value;
+    var ans="";
+    if(a==""||b==""){
+        ans="Enter both angles to verify";
+    } else{
+        var x=parseInt(a), y=parseInt(b),m1,m2;
+        m1=x%360;
+        m2=y%360;
+        console.log(m1,m2)
+        if(m1==m2 ||Math.abs(m1)+Math.abs(m2)==360)
+            ans="\\[Here \\space \\space "+a+" \\degree \\space mod \\space360 \\degree \\space = "+b+" \\degree \\space mod \\space 360 \\degree \\newline Hence,Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Coterminal\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space mod \\space360 \\degree \\space != "+b+" \\degree \\space mod \\space 360 \\degree \\newline Hence,  Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space not \\space Coterminal\\]";
+            
+    }
+    document.getElementById("cotverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotverans"));
+}
 function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
