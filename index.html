@@ -16109,6 +16109,11 @@
                            href="#">Ellipsoidal Cap</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#sphere_shell"
+                           style="text-decoration:none;"
+                           href="#">Spherical Shell</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#triquetra"
                            style="text-decoration:none;"
                            href="#">Triquetra</a></td>
@@ -30471,6 +30476,64 @@ N is the population size.
                                    style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="basprcap2"
                                    style="font-family:mathfont;"></p><br>
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="sphere_shell" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Spherical Shell</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \frac{4}{3} \pi (R^3-r^3)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= 4 \pi (R^2+r^2)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Shell Thickness</h5>
+                                    <p class="text-center">\[a= R-r\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/spherical-shell.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input type="text" id="inputsphere_shellR" class = "form__field" oninput="solvesphere_shell()" 
+                                placeholder="Enter Radius large sphere(R)">
+                            <input type="text" id="inputsphere_shellr" class = "form__field" oninput="solvesphere_shell()" 
+                                placeholder="Enter Radius small sphere(r)">
+
+                                <br>
+                                <p class="stopwrap" id="resultofsphereshellvol"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofsphereshellarea"
+                                   style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofsphereshella"
+                                   style="font-family:mathfont;"></p>
+                
                         </div>
                         <!-- ------HERE------ -->
                     </div>
