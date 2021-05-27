@@ -12287,6 +12287,19 @@ function typenum10find(){
     document.getElementById("typenum10ans").innerHTML=  ans;
 }
 
+function typenum11find(){
+    var N = parseInt(document.getElementById("typenum14").value)
+    var sum=0; 
+    var arr =[];
+    for(var i=1;i<N;i++){
+        sum = ((i*(i+1)*(2*i+1))/6) ;
+        if(sum<N)
+            arr.push(sum)
+    }
+    arr.sort();
+    document.getElementById("typenum11ans").innerHTML=  arr;
+}
+
 //Find all combinations that add upto given number
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
