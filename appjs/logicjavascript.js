@@ -12844,7 +12844,19 @@ function typenum12find() {
     var prev = 0;
     document.getElementById("typenum12ans").innerHTML = kaprekarRec(n, prev);
 }
+function typenum14find(){
+    var s = parseInt(document.getElementById("typenum17").value)
+    var n = parseInt(document.getElementById("typenum172").value)
+    for (var i=1;i<=n;i++){
+        var p=(s-2)*i*(i-1)/2+i;
+        if(i==n)
+        document.getElementById("typenum14ans").innerHTML+= p;
+        else
+        document.getElementById("typenum14ans").innerHTML+= p+", ";
 
+    }
+    
+}
 function kaprekarRec(n, prev) {
     if (n == 0)
         return 0;
