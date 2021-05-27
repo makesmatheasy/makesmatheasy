@@ -109,7 +109,6 @@ function cos(degrees) {
     var radians = (degrees*Math.PI)/180;
     return Math.cos(radians);
 }
-function excircum_2(){
 
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
@@ -5470,6 +5469,27 @@ function intri() {
     }
     else {
         temp += "\\[Inradius \\space of \\space Triangle \\space is: " + r + " \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
+
+function incircum() {
+    var a, b;
+    a = parseFloat(document.getElementById('incircum1').value);
+    b = parseFloat(document.getElementById('incircum2').value);
+    var output = document.getElementById("incircumans");
+    var temp = " ";
+    var d1 = (b**2 - (2*a*b))
+    var d = Math.sqrt(d1)
+    if (isNaN(a) || isNaN(b)) {
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else {
+        temp += "\\[Distance \\space between \\space Incenter \\space and \\space Circumcenter \\space of \\space a \\space Triangle \\space is  \\]";
+        temp += "\\[D \\space = \\space \\sqrt{R^{2} - 2 \\times r \\times R }  \\space = \\space \\sqrt { " + a + "^{2} - 2 \\times " + a + " \\times" + b + "} \\space = \\space \\sqrt{" + d1.toFixed(2) + "} \\space = \\space " + d.toFixed(2) + " \\]"
         output.innerHTML = temp;
         renderMathInElement(output);
     }
