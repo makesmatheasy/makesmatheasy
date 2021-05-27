@@ -12575,17 +12575,27 @@ function retfind() {
 function retfind1() {
     let a = parseFloat(document.getElementById("retin1").value)
     let b = parseFloat(document.getElementById("retin2").value)
-    let h = Math.sqrt(((Math.pow(a, 2) + Math.pow(b, 2)) / (Math.pow(a, 2) * Math.pow(b, 2))));
+    var output =  document.getElementById("retans1");
+    var ans = "";
+    let h1 = ((Math.pow(a, 2) + Math.pow(b, 2)) / (Math.pow(a, 2) * Math.pow(b, 2)));
+   let h = Math.sqrt(((Math.pow(a, 2) + Math.pow(b, 2)) / (Math.pow(a, 2) * Math.pow(b, 2))));
     let area = 0.70477 * Math.pow(h, 2);
     if (a < 0 || b < 0) {
-        document.getElementById("retans1").innerHTML = "length of axes cannot be negative"
+        ans += "\\[Length \\space of \\space axes \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(a) && !isNaN(b)) {
-        document.getElementById("retans1").innerHTML = area.toFixed(4);
+        ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space = \\space \\frac{(π - \\sqrt{3}) \\times h^{2}}{2} \\space = \\space 0.70477 \\times h^{2} \\]"
+        ans += "\\[Side \\space of \\space the \\space Square \\space inscribed \\space within \\space an \\space ellipse (x) \\space = \\space \\frac{\\sqrt{a^{2} + b^{2}}}{ab} \\]"
+        ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space x  \\space so, \\space x \\space = \\space h \\]"
+        ans += "\\[A \\space = \\space 0.70477 \\times \\frac{a^{2} + b^{2}}{a^{2} \\times b^{2}} \\space =  \\space 0.70477 \\times \\frac{" + a + "^{2} + " + b + "^{2}}{" + a + "^{2} \\times " + b + "^{2}} \\space =  \\space 0.70477 \\times \\frac{" + (a*a+ b*b) + "}{" + a**2 * b**2 + "} \\space =  \\space 0.70477 \\times " + h1.toFixed(4) + " \\space =  \\space " + area.toFixed(4) + " \\]" 
+        output.innerHTML = ans;
     }
     else {
-        document.getElementById("retans1").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 function retfind8() {
