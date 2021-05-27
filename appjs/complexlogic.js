@@ -1526,18 +1526,19 @@ document.getElementById("covans").innerHTML=s;
 
 function covcal() {
     var num=document.getElementById("cvsd").value;
-    var s=""; 
+    var s="";
+    var output = document.getElementById("cvans");
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     if(num==""){
-       s= "Please enter number";
+       s= "\\[Please \\space enter \\space number\\]";
     } else if(!valid.test(num)){
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+        s= "\\[Enter \\space space \\space separated \\space numbers. \\newline Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation\\]";
     } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
     if (len == 1){
-        document.getElementById("cvans").innerHTML= "Please enter more than one value";
+        s = "\\[Please \\space enter \\space more \\space than \\space one \\space value\\]";
         return;
     }
     var number=[]
@@ -1545,20 +1546,37 @@ function covcal() {
         number[i] = parseFloat(num[i].trim());
     }
     var sum=0;
+    s += "\\[First, \\space take \\space a \\space loop \\space upto \\space the \\space length \\space of \\space dataset, "+len+"\\]";
+    s += "\\[And, \\space add \\space all \\space of \\space the \\space data \\space in \\space dataset\\]";
     for (i = 0; i < len; i++) {
        sum=sum+number[i];
     }
     var mean=sum/len;
+    s += "\\[We \\space get \\space the \\space sum \\space here \\space "+sum+" \\space\\]";
+    s += "\\[Then \\space we \\space divide \\space this \\space sum \\space by \\space the \\space length \\space the \\space dataset\\]";
+    s += "\\[\\space Mean \\space = \\space \\frac{"+sum+"}{"+len+"}\\]"
+    s += "\\[\\space = \\space "+mean.toFixed(3)+"\\]"
     var varrzlt=0;
     for (i = 0; i < len; i++) {
         varrzlt = varrzlt + ((number[i]-mean)**2);
     }
+    s +="\\[Then \\space we \\space take \\space a \\space loop \\space where \\space each \\space data \\space from \\space dataset \\space is\\]";
+    s +="\\[Substracted \\space and \\space squared, \\space we \\space get, \\space "+varrzlt.toFixed(2)+ " \\space as \\space the \\space value\\]";
     varrzlt = varrzlt/(len-1);
+    s +="\\[This \\space value \\space is \\space now \\space divided \\space by \\space the \\space (length - 1)\\]";
+    s +="\\[\\space = \\space \\frac{"+varrzlt.toFixed(2)+"}{"+len+" - 1}\\]";
+    s +="\\[\\space = \\space \\frac{"+varrzlt.toFixed(2)+"}{"+(len - 1)+"}\\]";
+    s +="\\[\\space = \\space "+varrzlt.toFixed(3)+"\\]";
     var sdev = Math.sqrt(varrzlt);
-    s="The Coeffecient of Variation is: "+sdev/mean;
+    s +="\\[Finally, \\space the \\space Coeffecient \\space of \\space Variation \\space will \\space be,\\]";
+    s += "\\[\\space = \\space \\frac{(\\sqrt{"+varrzlt.toFixed(2)+"})}{"+mean+"}\\]";
+    s += "\\[\\space = \\space \\frac{"+sdev.toFixed(2)+"}{"+mean+"}\\]";
+    s += "\\[\\space = \\space "+(sdev/mean).toFixed(3)+"\\]";
     }
-    document.getElementById("cvans").innerHTML=s;
+    output.innerHTML=s;
+    renderMathInElement(output);
 }
+
 
 function rmscal()
 {
