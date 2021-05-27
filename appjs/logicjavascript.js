@@ -9155,7 +9155,9 @@ function solvewedgecubo() {
         areaoutput.innerHTML = areatemp; 
         renderMathInElement(soutput); 
         renderMathInElement(d1output); 
-        renderMathInElement(d2output); 
+        renderMathInElement(d2output);
+    } 
+}
 
 //Spherical Wedge
 function solveSphericalwedge() {
