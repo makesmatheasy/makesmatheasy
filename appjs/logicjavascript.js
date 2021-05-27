@@ -14277,13 +14277,15 @@ function spfind() {
 // Midrange starts
 function midrangeCal() {
     var s = 0;
-    document.getElementById("midrangeAns").innerHTML = "";
+    var result="";
     var val = document.getElementById("midrangeInp").value;
     val = val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
 
     if (val == null) {
-        document.getElementById("midrangeAns").innerHTML = `Proper input is required`;
+        result= "\\[Proper \\space input \\space is \\space required\\]";
+        document.getElementById("midrangeAns").innerHTML =result;
+        renderMathInElement(document.getElementById("midrangeAns"));
         return;
     }
 
@@ -14299,11 +14301,14 @@ function midrangeCal() {
     var min = Math.min(...val);
     var max = Math.max(...val);
     if (val.length === 0) {
-        document.getElementById("midrangeAns").innerHTML = `No Number Added`;
+        result= "\\[No \\space Number \\space Added \\]";
     } else {
         var ans = (max + min) / 2;
-        document.getElementById("midrangeAns").innerHTML = "Midrange: " + ans;
+        result= "\\[Midrange: " + ans+"\\]";
+        result+="\\[Midrange=\\frac{(Maximum \\space Value \\space + \\space Maximum \\space Value)}{2} \\newline \\space =\\frac{("+max+"+"+min+")}{2}=\\frac{"+(max+min)+"}{2}="+ans+"\\]"
     }
+    document.getElementById("midrangeAns").innerHTML =result;
+    renderMathInElement(document.getElementById("midrangeAns"));
 }
 
 // Sensitivity and specificity starts
