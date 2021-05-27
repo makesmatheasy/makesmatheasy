@@ -16953,7 +16953,7 @@ function convertbcd() {
         result.innerHTML = decimalTObcd(input);
     else if (fromCode == "Binary" && toCode == "BCD Code") {
         input = parseInt(input, 2).toString();
-        var x="",y="";
+        var x="_",y="";
         for (var i = 0; i < input.length; i++) {
             y = parseInt(input[i]).toString(2);
             if (y.length == 1) {
