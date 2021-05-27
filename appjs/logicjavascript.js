@@ -16817,9 +16817,21 @@ function cscu4find(){
 }
 
 function cscu5find(){
-    let a = parseInt(document.getElementById("cscu5").value)
+    var a = parseInt(document.getElementById("cscu5").value)
     var r = a / 2;
-    document.getElementById("cscu5ans").innerHTML =  r;
+    var output = document.getElementById("cscu5ans")
+    var ans = "";
+    if(!isNaN(a)){
+    ans += "\\[Side \\space Length \\space of \\space the \\space cube (a) \\space = \\space 2 \\space \\times \\space Radius \\space of \\space the \\space sphere (r) \\]"
+    ans += "\\[Radius \\space of \\space the \\space sphere (r) \\space = \\space \\frac{Side \\space Length \\space of \\space the \\space cube (a)}{2} \\]"
+    ans += "\\[ Radius \\space of \\space the \\space sphere (r) \\space = \\space \\frac{ " + a + "}{2} \\space = \\space " + r + " \\]"
+    output.innerHTML = ans;    
+}
+    else{
+        ans += "\\[Please \\space enter \\space the \\space value \\]";
+        output.innerHTML = ans; 
+    }
+    renderMathInElement(output);
 }
 //Empirical Probability
 function computeprobability() {
