@@ -3550,6 +3550,26 @@ function plpSolve() {
     var x1=parseFloat(document.getElementById('plpx').value);
     var y1=parseFloat(document.getElementById('plpy').value);
     var dis = (((b*x1)-(a*y1)));
+    var print = "\\[\\underline{Working \\space Steps} \\]";
+    var work = document.getElementById("plp_work");
+
+    print += "\\[Let \\space the \\space equation \\space of \\space the \\space required \\space line \\space be \\space - \\space a_1x \\space + \\space b_1y \\space = \\space c_1\\]";
+    print += "\\[Now \\space this \\space line \\space is \\space perpendicular \\space to \\space the \\space given \\space line \\]";
+    print += "\\[[Note :- \\space constants \\space a \\space and \\space b \\space (in \\space line \\space equation \\space ax+by=c) are \\space always \\space related  \\space in  \\space below \\space mentioned \\space manner \\space for \\space perpendicular \\space lines  ]\\]";
+    print += "\\[So, \\space a_1 \\space = " + b + " \\]";
+    print += "\\[and, \\space b_1 \\space = \\space -" + a + "\\]";
+    print += "\\[As \\space this \\space line \\space also \\space passes \\space through \\space the \\space given \\space point \\space (" + x1 +"," + y1 + ") \\]";
+    print += "\\[So, \\space we \\space can \\space put \\space the \\space value \\space of \\space x1 \\space and \\space y1 \\space in \\space x \\space and \\space y \\space respectively \\space to \\space find \\space the \\space remaining \\space constant \\space  c_1\\]";
+    print += "\\[So, \\space x \\space = " + x1 + " \\]";
+    print += "\\[and, \\space y \\space = " + y1 + "\\]";
+    print += "\\[Equ^{n} \\space of \\space line \\space => \\space a_1x \\space + \\space b_1y = \\space c_1 \\]";
+    print += "\\[(putting \\space values \\space of \\space x \\space and \\space y )\\]";
+    print += "\\[=> \\space a_1(" + x1 + ")\\space + \\space b_1(" + y1 + ") = \\space c_1\\]";
+    print += "\\[(putting \\space values \\space of \\space a_1 \\space and \\space b_1)\\]";
+    print += "\\[=> \\space (" + b + ") \\times (" + x1 + ") \\space + \\space (" + -1*a + ") \\times (" + y1 + ") \\space = \\space c_1\\]";
+    print += "\\[=> \\space c_1 \\space = \\space " + dis + "\\]";
+    print += "\\[Equation \\space of \\space line \\space perpendicular \\space to \\space " + a + "x \\space + \\space " + b + "y \\space = \\space " + c + " \\space and \\space passes \\space through \\space point \\space (" + x1 + "," + y1 + ") \\space is \\space " + b + "x \\space + \\space " + -1*a + "y \\space = \\space " + dis + " \\]";
+
     if(isNaN(x1) || isNaN(y1) || isNaN(a) || isNaN(b) || isNaN(c)){
         document.getElementById('plp_op').innerHTML= "\\[ Please \\space enter \\space all \\space input \\]";
         renderMathInElement(document.getElementById("plp_op"));
@@ -3558,6 +3578,8 @@ function plpSolve() {
         document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+ (' + b + ')y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x' + '+' + (-a) + 'y' + '=' + dis;
         else
         document.getElementById('plp_op').innerHTML= 'Equation Of Line Perpendicular to ' + a  + 'x' + '+' + b + 'y' + '=' + c + 'and pass through point (' + x1 + ',' + y1 + ')  is  ' +  b  + 'x'  + (-a) + 'y' +  '=' + dis;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }    
 }
 //Find Equation Of Parallel Line
