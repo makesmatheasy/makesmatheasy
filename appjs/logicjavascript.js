@@ -16948,12 +16948,12 @@ function convertbcd() {
     else if (fromCode == "Decimal" && toCode == "Decimal")
         result.innerHTML = input;
     else if (fromCode == "BCD Code" && toCode == "Decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
-            var x = "";
-            var y = "";
-            var temp = "";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
