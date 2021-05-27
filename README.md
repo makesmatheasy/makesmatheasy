@@ -447,6 +447,7 @@ Other Tech/Libraries
   - Bayes Probability Theorem
   - Poisson Distribution Statistics
   - Hypergeometric Distribution Statistics
+  - Exponential Distribution Calculator
 
 - Statistics
 

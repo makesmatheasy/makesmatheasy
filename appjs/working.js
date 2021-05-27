@@ -722,6 +722,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    //Exponential Distribution Calculator
+    $("#expo-dist-btn").click(function () {
+        openit("#expoDist");
+        closenav();
+        clearall();
+    })
     //Negative Binomial Distribution Calculator
     $("#negbinobtn").click(function () {
         openit("#negbino");

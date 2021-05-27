@@ -19446,6 +19446,30 @@ function hypergeoscal() {
     document.getElementById("hypergeosans").innerHTML = ans;
 }
 
+//Exponential Distribution Calculator
+function exprobability(op)
+{
+    let num1=document.getElementById("inrate").value;
+    let num2=document.getElementById("inran").value;
+    if(num1==""||num2=="")
+    {
+        ans="Please fill all the field";
+    }
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        if(op==1){
+            let dist =  (num1*2.71828)**(-num1*num2);
+            document.getElementById("exprobAns").innerHTML = "Exponential Probability: " + dist;
+        }
+        else if(op==2)
+            document.getElementById("exprobAns").innerHTML = "Mean: " + 1/num1;
+        else
+            document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+    }
+}
+
 // quartiles calculator
 
 function qrtl() {
