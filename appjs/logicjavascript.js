@@ -109,7 +109,6 @@ function cos(degrees) {
     var radians = (degrees*Math.PI)/180;
     return Math.cos(radians);
 }
-function excircum_2(){
 
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
