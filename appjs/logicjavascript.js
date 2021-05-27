@@ -18557,7 +18557,9 @@ function mecal()
 //Number of triangles formed by joining vertices of n-sided polygon with two common sides and no common sides
 function numtfind(){
     var num = parseInt(document.getElementById("numtin").value)
-    if(!isNaN(num)){
+    if(num<0)
+        document.getElementById("numtans").innerHTML ="\\[Side \\space of \\space polygon \\space csnnot \\space be \\space negative\\]";
+    else if(!isNaN(num)){
         var ans =  num * (num - 4) * (num - 5) / 6
         document.getElementById("numtans").innerHTML = "\\[Number \\space of \\space triangles \\space formed \\space will \\space be, \\newline (No. \\space of \\space sides) \\times ((No. \\space of \\space sides) - 4) \\times \\frac{((No. \\space of \\space sides) - 5)}{6}\\]";
         document.getElementById("numtans1").innerHTML = "\\["+num+" \\times ("+num+" - 4) \\times \\frac{("+num+" - 5)}{6} \\space = \\space "+num+" \\times "+(num - 4).toFixed(2)+" \\times "+((num - 5) / 6).toFixed(2)+" \\space = \\space "+ans.toFixed(3)+"\\]";
