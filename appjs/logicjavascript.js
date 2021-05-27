@@ -12362,6 +12362,36 @@ function typenum11find(){
     document.getElementById("typenum11ans").innerHTML=  arr;
 }
 
+function typenum12find(){
+    var n = parseInt(document.getElementById("typenum14").value)
+    var prev = 0;
+    document.getElementById("typenum12ans").innerHTML= kaprekarRec(n, prev);
+}
+
+function kaprekarRec(n , prev)
+{
+    if (n == 0)
+    return 0;
+    prev = n;
+    var digits= Array.from({length: 4}, (_, i) => 0);
+    for (i=0; i<4; i++){
+        digits[i] = n%10;
+        n = parseInt(n/10);
+    }
+    digits.sort();
+    var asc = 0;
+    for (i=0; i<4; i++)
+        asc = asc*10 + digits[i];
+    digits.sort();
+    var desc = 0;
+    for (i=3; i>=0; i--)
+        desc = desc*10 + digits[i];
+    var diff = Math.abs(asc - desc);
+    if (diff == prev)
+        return diff;
+    return kaprekarRec(diff, prev);
+}
+
 //Find all combinations that add upto given number
 function typenum5find(){
     let n = parseInt(document.getElementById("typenum6").value)
