@@ -3564,7 +3564,8 @@ function alisum1find(){
 
 function alisum2find(){
     let n = parseInt(document.getElementById("alisum2").value)
-    Set<Integer> v = ABUNDANT();  
+    Set<Integer> v;
+    v = ABUNDANT();  
         for (let i = 1; i <= n; i++) {
             if (v.contains(i) & v.contains(n - i)) {
                 document.getElementById("alisum2ans").innerHTML =  i + " " + (n - i);
@@ -3574,8 +3575,8 @@ function alisum2find(){
 }
 
 function ABUNDANT() {
-    Set<Integer> v = new HashSet();
-
+    Set<Integer> v;
+    v = new HashSet();
     for (let i = 1; i < N; i++) {
         let sum = 1;
         for (let j = 2; j * j <= i; j++) {
@@ -18554,6 +18555,33 @@ function sphcartcal(){
     }
 }
 
+function cylcal(){
+    var x=(document.getElementById("cylx").value);
+    var y=(document.getElementById("cyly").value);
+    var z= (document.getElementById("cylz").value);
+    var p =  Math.sqrt(x*x + y*y).toFixed(3);
+    var o = Math.tan(y/x).toFixed(3);
+    var temp1 = (x*x + y*y).toFixed(3);
+    var temp2 = (y/x).toFixed(3);
+    var ansp ="";
+    var anso = "";
+    var ansz = "";
+    if(x==="" || y=="" || z===""){
+        document.getElementById("cylpans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("cyloans").innerHTML = "";
+        document.getElementById("cylzans").innerHTML = "";
+    } else{
+        ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2} \\space =\\space \\sqrt{"+x+"^2 + "+y+"^2} \\space =\\space \\sqrt{"+temp1+"} \\space =\\space "+p+" \\]";
+        anso = "\\[θ:\\space \\tan(\\frac{y}{x} ) \\space θ:\\space \\tan(\\frac{"+y+"}{"+x+"} ) \\space =\\space \\arccos("+temp2+") \\space =\\space "+o+"\\]"
+        ansz = "\\[z:\\space z \\space =\\space "+z+"\\]";
+        document.getElementById("cylpans").innerHTML= ansp;
+        document.getElementById("cyloans").innerHTML = anso;
+        document.getElementById("cylzans").innerHTML = ansz;
+    }   renderMathInElement(document.getElementById("cylpans"));
+        renderMathInElement(document.getElementById("cyloans"));
+        renderMathInElement(document.getElementById("cylzans"));
+}
+
 function sphcal(){
     var x=parseFloat(document.getElementById("sphx").value);
     var y=parseFloat(document.getElementById("sphy").value);
@@ -18597,50 +18625,6 @@ function sphcal(){
     renderMathInElement(outputr);
     renderMathInElement(outputo);
     renderMathInElement(outputfi);
-
-}
-
-function cylcal(){
-    var x=parseFloat(document.getElementById("cylx").value);
-    var y=parseFloat(document.getElementById("cyly").value);
-    var z= parseFloat(document.getElementById("cylz").value);
-
-    var outputp = document.getElementById("cylpans");
-    var outputo = document.getElementById("cyloans");
-    var outputz = document.getElementById("cylzans");
-    var p =  Math.sqrt(x*x + y*y).toFixed(3);
-    var o = Math.tan(y/x).toFixed(3);
-    var ans="";
-
-    var temp1 = (x*x + y*y).toFixed(3);
-    var temp2 = (y/x).toFixed(3);
-    var ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2}\\]";
-    ansp += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2}\\]";
-    ansp += "\\[=\\space \\sqrt{"+temp1+"} \\]";
-    ansp += "\\[=\\space "+p+" \\]";
-
-    var anso = "\\[θ:\\space \\tan(\\frac{y}{x} )\\]";
-    anso = "\\[θ:\\space \\tan(\\frac{"+y+"}{"+x+"} )\\]";
-    anso += "\\[=\\space \\arccos("+temp2+")\\]"
-    anso += "\\[=\\space "+o+"\\]"
-
-    var ansz = "\\[z:\\space z\\]";
-    ansz += "\\[=\\space "+z+"\\]";
-    if(isNaN(x)||isNaN(y)||isNaN(z))
-    {
-        ans += "Please fill all the field";
-        outputp.innerHTML= ans;
-        outputo.innerHTML = "";
-        outputz.innerHTML = "";
-    }
-    else{
-        outputp.innerHTML= ansp;
-        outputo.innerHTML = anso;
-        outputz.innerHTML = ansz;
-    }
-    renderMathInElement(outputp);
-    renderMathInElement(outputo);
-    renderMathInElement(outputz);
 
 }
 
