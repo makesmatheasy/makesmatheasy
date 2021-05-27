@@ -12781,6 +12781,15 @@ function typenum11find(){
     document.getElementById("typenum11ans").innerHTML=  arr;
 }
 
+function typenum13find(){
+    var n = parseInt(document.getElementById("typenum15").value)
+    let dp = [];
+        dp[0] = dp[1] = 1;
+        for (let i = 2; i <= n; i++)
+            dp[i] = dp[i - 1] + dp[i - 2] + 1;
+            document.getElementById("typenum13ans").innerHTML= dp[n];
+}
+
 function typenum12find(){
     var n = parseInt(document.getElementById("typenum14").value)
     var prev = 0;
