@@ -15237,9 +15237,23 @@ function polymax7find() {
 }
 //Number of cycles in a Polygon with lines from Centroid to Vertices
 function polymax8find() {
-    let N = parseInt(document.getElementById("polymax8").value)
-    let ans = (N) * (N - 1) + 1;
-    document.getElementById("polymax8ans").innerHTML = ans
+    var N = parseInt(document.getElementById("polymax8").value)
+    var ans = (N) * (N - 1) + 1;
+    var output =  document.getElementById("polymax8ans");
+    var temp = "";
+    if (!isNaN(N)){
+        temp += "\\[Number \\space  of \\space cycles \\space in \\space a \\space Polygon \\space with \\space lines \\space from \\space Centroid \\space to \\space Vertices,\\]";
+        temp += "\\[\\space = \\space (No. \\space of \\space sides) \\times ((No. \\space of \\space sides) - ) \\space + \\space 1 \\]";
+        temp += "\\[\\space = \\space "+N+" \\times ("+N+" - 1) \\space + \\space 1\\]";
+        temp += "\\[\\space = \\space "+N+" \\times "+(N - 1)+" \\space + \\space 1\\]";
+        temp += "\\[\\space = \\space  "+ans.toFixed(3)+"\\]";
+
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 
 function polymax9find() {
