@@ -16126,6 +16126,11 @@
                                         href="#">Truncated Square Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#elonsquare"
+                                        style="text-decoration:none;"
+                                        href="#">Elongated Square Pyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#tripyramid"
                                         style="text-decoration:none;"
                                         href="#">Triangular Pyramid</a></td>
@@ -29475,6 +29480,63 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="elonsquare" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated Square Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume(V) </h5>
+                                    <p class="text-center">\[V = \Big(1+\frac{\sqrt{2}}{6} \Big) * a^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area(A) </h5>
+                                    <p class="text-center">\[A=  (5+ \sqrt{3}) *a^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height(h) </h5>
+                                    <p class="text-center">\[h = \Big( \frac{1}{\sqrt{2}} + 1 \Big)*a\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-square-pyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputelonsqupyra"
+                                   oninput="solveelonsqupyr();">
+                            <p class="stopwrap" id="resultofelonsqrpyrvol"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofelonsqrpyrrarea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofelonsqrpyrh"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

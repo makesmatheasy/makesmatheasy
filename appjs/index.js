@@ -371,6 +371,7 @@ function openit(id) {
         "#sensi",
         "#bcd",
         "#vector",
+        "#elonsquare",
         "#vec",
         "#diffeqn",
         "#pdiffeqn",
