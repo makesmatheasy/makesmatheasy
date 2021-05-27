@@ -12502,10 +12502,15 @@ function typenum1find(){
 //Hardy-Ramanujan Theorem
 function typenum2find(){
 
-    let n = document.getElementById("typenum2").value
+    let n = document.getElementById("typenum2").value;
+    var ans="\\[";
+    var explain="\\[Hardy \\space Ramanujam \\space theorem \\space return \\space number \\space of \\space distict \\space prime \\space factors \\space of \\space n \\]"+"\\[Distinct \\space prime \\space factors \\space of \\space"+n+":";
     if(n=="")
     {
-        document.getElementById("typenum2ans").innerHTML =  "Please enter number to find answer"
+        console.log(n);
+         ans+="Please \\space enter \\space number \\space to \\space find \\space answer\\]";   
+         document.getElementById("typenum2ans").innerHTML = ans;
+         renderMathInElement(document.getElementById("typenum2ans"));
     }
     else{
     let n = parseInt(document.getElementById("typenum2").value)
@@ -12514,6 +12519,7 @@ function typenum2find(){
     if (n % 2 == 0)
     {
         count++;
+        explain+="2 \\space";
         while (n % 2 == 0)
             n = n / 2;
     }
@@ -12522,13 +12528,20 @@ function typenum2find(){
         if (n % i == 0)
         {
             count++;
+            explain+=i+"\\space";
             while (n % i == 0)
                 n = n / i;
         }
     }
-    if (n > 2)
+    if (n > 2){
+        explain+=n+"\\space";
         count++;
-    document.getElementById("typenum2ans").innerHTML =  count;
+    }
+        
+    ans+=count+"\\]";
+    explain+="\\]";    
+    document.getElementById("typenum2ans").innerHTML = ans+explain ;
+    renderMathInElement(document.getElementById("typenum2ans"));
 }
 }  
 //Sum of the all amicable numbers up to N
