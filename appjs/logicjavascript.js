@@ -9140,7 +9140,8 @@ function solvewedgecubo() {
         renderMathInElement(soutput); 
         renderMathInElement(d1output); 
         renderMathInElement(d2output); 
-
+    } 
+}    
 //Spherical Wedge
 function solveSphericalwedge() {
     var r = document.getElementById("inputsphericalr").value;
@@ -12908,6 +12909,20 @@ function typenum13find(){
         for (let i = 2; i <= n; i++)
             dp[i] = dp[i - 1] + dp[i - 2] + 1;
             document.getElementById("typenum13ans").innerHTML= dp[n];
+}
+
+function typenum14find(){
+    var s = parseInt(document.getElementById("typenum17").value)
+    var n = parseInt(document.getElementById("typenum172").value)
+    for (var i=1;i<=n;i++){
+        var p=(s-2)*i*(i-1)/2+i;
+        if(i==n)
+        document.getElementById("typenum14ans").innerHTML+= p;
+        else
+        document.getElementById("typenum14ans").innerHTML+= p+", ";
+
+    }
+    
 }
 
 function typenum12find(){
