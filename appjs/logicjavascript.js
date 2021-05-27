@@ -15024,9 +15024,22 @@ function cos(degrees) {
 }
 
 function external_radius() {
-    let R1 = parseInt(document.getElementById("radius1").value);
+    var R1 = (document.getElementById("radius1").value);
     var re = 2 * R1;
-    document.getElementById("externradius").innerHTML = re;
+    cirout = document.getElementById("externradius");
+    cirtemp = "";
+    if (!isNaN(R1) && R1!=""){
+        cirtemp += "\\[Circumradius \\space of \\space External \\space Triangle \\space \\]";
+        cirtemp +=  "\\[\\space =  \\space 2 \\times (External \\space radius) \\]";        
+        cirtemp += "\\[\\space = \\space 2 \\times "+R1+"\\]";
+        cirtemp += "\\[\\space = \\space "+re.toFixed(3)+" \\space\\]";
+
+        cirout.innerHTML = cirtemp;
+    } else{
+        cirtemp = "\\[Please \\space enter \\space valid \\space output\\]";
+        cirout.innerHTML = cirtemp;
+    }
+    renderMathInElement(cirout);
 }
 
 // function to find double factorial
@@ -19418,6 +19431,7 @@ function negbinoCal(op) {
         else {
             let variance = (1 - p) / (p * p) * r;
             document.getElementById('negbinoans').innerHTML = "Variance: " + variance;
+
         }
     }
 }
@@ -19827,6 +19841,7 @@ function relrisk() {
         document.getElementById('relriskans').innerHTML = "Relative Risk: " + ans;
     }
 }
+
 // Negative Binomial Distribution Calculator
 function negbinoCal() {
     let n = document.getElementById("negbinon").value;
@@ -19842,3 +19857,4 @@ function negbinoCal() {
         document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
     }
 }
+
