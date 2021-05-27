@@ -1938,10 +1938,29 @@ function perrankcal(){
 
 function halflifeCalc() {
     var decay = document.getElementById("decay").value;
+    var answer="";
+    var ans="";
+    if(decay=="")
+    {
+    //   answer="";
+    //   ans="";
+      document.getElementById("halflifeAns").innerHTML="Please enter the decay constant"
+    }
+    else{
     var lg = Math.log(2);
+    console.log(lg);
     var halfLife = lg / decay;
-    var ans = "Half Life of the element is " + halfLife;
-    document.getElementById("halflifeAns").innerHTML = ans;
+    
+    answer+="\\[t_\\frac{1}{2} \\space = \\space \\frac{ln(2)}{\\lambda}\\]"
+    answer+="\\[\\lambda => \\space decay \\space constant \\]"
+    answer+="\\[t_\\frac{1}{2} = \\space \\frac{"+lg.toFixed(4)+"}{"+decay+"}\\]"
+    answer+="\\[t_\\frac{1}{2} = \\space "+(lg.toFixed(4)/decay).toFixed(4)+"\\]"
+    ans = "Half Life of the element is " + halfLife.toFixed(4);
+    document.getElementById("halflifeAns").innerHTML = answer+ans;
+    renderMathInElement(document.getElementById("halflifeAns"));
+    }
+    
+    
 }
 
 function oocal()
