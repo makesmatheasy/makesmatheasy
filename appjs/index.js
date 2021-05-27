@@ -249,6 +249,7 @@ function openit(id) {
         "#expansionc",
         "#unitconcal",
         "#giff",
+        "#incenterexcenter",
         "#qrtl",
         "#decl",
         "#typenum",

@@ -1054,6 +1054,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#incenterexcenterbtn").click(function () {
+        openit("#incenterexcenter");
+        closenav();
+        clearall();
+    });
     $("#roundoffbtn").click(function () {
         openit("#roundoff");
         closenav();
