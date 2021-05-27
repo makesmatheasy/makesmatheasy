@@ -18269,18 +18269,19 @@ function tvalue_SD(diff, length) {
 }
 
 function abvalue() {
-    let n1 = document.getElementById("absize1").value;
-    let n2 = document.getElementById("absize2").value;
-    let t1 = document.getElementById("abpos1").value;
-    let t2 = document.getElementById("abpos2").value;
+    let n1 = parseInt(document.getElementById("absize1").value);
+    let n2 = parseInt(document.getElementById("absize2").value);
+    let t1 = parseInt(document.getElementById("abpos1").value);
+    let t2 = parseInt(document.getElementById("abpos2").value);
 
     if (n1 < 30 || n2 < 30) {
         document.getElementById("abtestans").innerHTML = "A sample size of 30 or more is preferred";
     }
     else {
         let p1 = t1 / n1;
-        let p2 = t2 / n1;
+        let p2 = t2 / n2;
         let p = (t1 + t2) / (n1 + n2);
+
         let ans = (p1 - p2) / (Math.sqrt(p * (1 - p) * (1 / n1 + 1 / n2)));
         document.getElementById('abtestans').innerHTML = "The value for the AB Test is: " + ans;
     }
