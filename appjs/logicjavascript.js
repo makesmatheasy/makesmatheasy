@@ -9058,6 +9058,42 @@ function solverightwedge() {
 
 }
 
+
+function solvewedgecubo() {
+    var a = document.getElementById("inputwedgecuboa").value;
+    var b = document.getElementById("inputwedgecubob").value;
+    var h1 = document.getElementById("inputwedgecuboh1").value;
+    var h2 = document.getElementById("inputwedgecuboh2").value;
+    var d1output = document.getElementById("resultofcubowedged1");
+    var d2output = document.getElementById("resultofcubowedged2");
+    var soutput = document.getElementById("resultofcubowedges");
+    var voloutput = document.getElementById("resultofcubowedgevol");
+    var areaoutput = document.getElementById("resultofcubowedgearea");
+    var d1temp = "";
+    var d2temp = "";
+    var stemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var vol=(a*b*h1) + (a*b*(h2-h1))/2;
+    var s= Math.sqrt((a*a) + ((h2-h1)*(h2-h1)));
+    var area=a*b + s*b + b*h1 +b*h2 + a*h1 + a*h2;
+    var d1 = Math.sqrt((a*a)+ (b*b) + (h1*h1));
+    var d2 = Math.sqrt((a*a)+ (b*b) + (h2*h2));
+    if ((a != "") && (b!="") && (h1!="") && (h2 !="")) {
+        stemp += "\\[Slant \\space length \\space of \\space Wedge \\space Cuboid \\space \\newline \\sqrt{" + a + "^2 + (" + h2 + "-" + h1 + ")^2}" + "\\ = " + eval(String(s)) + "\\]";
+        soutput.innerHTML = stemp;
+        d1temp += "\\[Short \\space diagonal \\space of \\space Wedge \\space Cuboid \\space \\newline \\sqrt{" + a + "^2 + " + b + "^2 + " + h1 + "^2}" + "\\ = " + eval(String(d1)).toFixed(2) + "\\]";
+        d1output.innerHTML = d1temp;
+        d2temp += "\\[Long \\space diagonal \\space of \\space Wedge \\space Cuboid \\space \\newline \\sqrt{" + a + "^2 + " + b + "^2 + " + h2 + "^2}"  + "\\ = " + eval(String(d2)).toFixed(2) + "\\]";
+        d2output.innerHTML = d2temp;
+        voltemp += "\\[Volume \\space of \\space Wedge \\space Cuboid \\space \\newline " + a + "\\times" + b + "\\times" + h1 + "+" + a + "\\times" + b + "\\times(" + h2 + "-" + h1 + ")/2" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Wedge \\space Cuboid \\space  \\newline" + a+ "\\times" + b + "+" + s + " \\times" + b + "+" + b + "\\times" + h1 + "+" + b + "\\times" + h2 + "+" + a + "\\times (" + h1 + "+" + h2 +")" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(soutput); 
+        renderMathInElement(d1output); 
+        renderMathInElement(d2output); 
+
 //Spherical Wedge
 function solveSphericalwedge() {
     var r = document.getElementById("inputsphericalr").value;
@@ -9073,10 +9109,14 @@ function solveSphericalwedge() {
         voloutput.innerHTML = voltemp;
         areatemp += "\\[Area \\space of \\space Spherical \\space Wedge \\space  \\newline" + a+ "\\times 2 \\times" + r + "+2 + \\pi \\times" + r + "^2" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
         areaoutput.innerHTML = areatemp; 
+
         renderMathInElement(voloutput);
         renderMathInElement(areaoutput);
 
     } else {
+        soutput.innerHTML = "";
+        d1output.innerHTML = "";
+        d2output.innerHTML = "";
         voloutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
