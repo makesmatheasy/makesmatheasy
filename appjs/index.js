@@ -207,6 +207,7 @@ function openit(id) {
         "#sieve",
         "#ali",
         "#ineqtri",
+        "#excircum",
         "#shapeinscribed",
         "#matrixprops",
         "#2d-shape-ins",

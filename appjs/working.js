@@ -1042,6 +1042,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#excircumbtn").click(function () {
+        openit("#excircum");
+        closenav();
+        clearall();
+    });
 
     $("#quadeqncalbtn").click(function () {
         openit("#quadeqncal");
