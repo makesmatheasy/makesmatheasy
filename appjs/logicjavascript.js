@@ -15568,6 +15568,8 @@ function addBinDecHexOct() {
     else if (firstBase === "Octal") {
         x1 = calculatefrac(input1, 8);
         x1o = fracDectoBinHexOct(x1, 8);
+        print += "<h5>Step1 : Convert the Octal number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
     }
     else if (firstBase === "Hexa Decimal") {
         x1 = calculatefrac(input1, 16);
@@ -15587,6 +15589,8 @@ function addBinDecHexOct() {
     else if (secondBase === "Octal") {
         x2 = calculatefrac(input2, 8);
         x2o = fracDectoBinHexOct(x2, 8);
+        print += "<h5>Step2 : Convert the Octal number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
     }
     else if (secondBase === "Hexa Decimal") {
         x2 = calculatefrac(input2, 16);
@@ -15599,7 +15603,7 @@ function addBinDecHexOct() {
 
     var x3 = x1 + x2;
     print += "<h5>Step3 : Now add the decimal values found in STEP1 and STEP2</h5>";
-    print += x1 + "&nbsp; + &nbsp;" + x2 + "=" + x3;
+    print += x1 + "&nbsp; + &nbsp;" + x2 + " &nbsp; = &nbsp; " + x3;
 
     if (isNaN(x1) || x1o != input1) {
         result.innerHTML = "Enter correct " + firstBase + " value in Input 1";
@@ -15611,6 +15615,8 @@ function addBinDecHexOct() {
         print += x3 + "->" + fracDectoBinHexOct(x3, 2);
     } else if (resultType === "Octal") {
         result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
+        print += "<h5>Step4 : To find the result in Octal convert the answer found in STEP3 to Octal</h5>";
+        print += x3 + "->" + fracDectoBinHexOct(x3,8);
     } else if (resultType === "Hexa Decimal") {
         result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
     } else if (resultType === "Decimal") {
