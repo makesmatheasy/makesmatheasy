@@ -12876,15 +12876,25 @@ function typenum12find() {
 function typenum14find() {
     var s = parseInt(document.getElementById("typenum17").value)
     var n = parseInt(document.getElementById("typenum172").value)
+    var ans="\\[";
+    var explain="\\[n-th \\space term \\space of \\space s-gonal \\space number \\space is \\space given \\space as:\\frac{(s-2)n(n-1)}{2}\\]"+"\\[where, \\space s=number \\space of \\space sides \\space in \\space polygon \\space and \\space n=\\space term \\space of \\space s-gonal \\space number\\]"+"\\[";
     for (var i = 1; i <= n; i++) {
         var p = (s - 2) * i * (i - 1) / 2 + i;
         if (i == n)
-            document.getElementById("typenum14ans").innerHTML += p;
-        else
-            document.getElementById("typenum14ans").innerHTML += p + ", ";
-
+        {
+            ans += p;
+            explain+="(\\frac{("+s+"-2)"+i+"("+i+"-1)}{2}+"+i+"="+p+")";
+        }
+            
+        else{
+            ans+= p + ", ";
+            explain+="(\\frac{("+s+"-2)"+i+"("+i+"-1)}{2}+"+i+"="+p+")\\space ,";
+        }
     }
-
+    ans+="\\]";
+    explain+="\\]";
+    document.getElementById("typenum14ans").innerHTML=ans+explain;
+    renderMathInElement(document.getElementById("typenum14ans")) ;
 }
 function kaprekarRec(n, prev) {
     if (n == 0)
