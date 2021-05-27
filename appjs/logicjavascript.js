@@ -109,7 +109,6 @@ function cos(degrees) {
     var radians = (degrees*Math.PI)/180;
     return Math.cos(radians);
 }
-function excircum_2(){
 
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
@@ -4622,19 +4621,36 @@ function vectorplanar() {
     var mult1 = (b * ((d * i) - (f * g)));
     var mult2 = (c * ((d * h) - (e * g)));
     var ans = mult - mult1 + mult2;
+    var output = document.getElementById("vectorplanar1");
+    var temp = "";
     if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f) || isNaN(g) || isNaN(h) || isNaN(i)) {
-        document.getElementById("vectorplanar1").innerHTML = "\\[Please \\space enter \\space valid \\space input  \\]";
-        renderMathInElement(document.getElementById("vectorplanar1"));
-
+        output.innerHTML = "\\[Please \\space enter \\space valid \\space input  \\]";
+        renderMathInElement(output);
     }
     else {
+        temp += "\\[We \\space have \\space to \\space calculate \\space Δ \\space to \\space determine \\space whether \\space vectors \\space are \\space Coplanar \\space or \\space Not\\]";
+        temp +="\\[To \\space calculate \\space Δ, \\space we \\space calculate \\space M1, \\space M2 \\space and \\space M3\\]";
+        temp +="\\[M1 \\space = \\space ("+a+" \\times (("+e+" \\times "+i+") - ("+f+" \\times "+h+")))\\]";
+        temp +="\\[\\space = \\space "+a+" \\times ("+(e * i)+" - "+(f * h)+")\\]";
+        temp +="\\[\\space = \\space"+mult+"\\]";
+        temp +="\\[M2 = ("+b+" \\times (("+d+" \\times "+i+") - ("+f+" \\times "+g+")))\\]";
+        temp +="\\[\\space = \\space "+b+" \\times ("+(d * i)+" - "+(f * g)+")\\]";
+        temp +="\\[\\space = \\space "+mult1+"\\]";
+        temp +="\\[M3 = ("+c+" \\times (("+d+" \\times "+h+") - ("+e+" \\times "+g+")))\\]";
+        temp +="\\[\\space = \\space "+c+" \\times ("+(d * h)+" - "+(e * g)+")\\]";
+        temp +="\\[\\space = \\space "+mult2+"\\]";
+        temp +="\\[Finally, \\space the \\space value \\space of \\space Δ \\space = \\space  M1 - M2 + M3\\]";
+        temp +="\\[\\space = \\space "+mult+" - "+mult1+" + "+mult2+"\\]";
+        temp +="\\[\\space = \\space "+ans.toFixed(2)+"\\]";
         if (ans == 0) {
-            document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Coplanar \\space as \\space Δ \\space = \\space 0.  \\]";
-            renderMathInElement(document.getElementById("vectorplanar1"));
+            temp += "\\[The \\space following \\space vectors \\space are \\space Coplanar \\space as \\space Δ \\space ("+ans.toFixed(2)+") \\space = \\space 0.  \\]";
+            output.innerHTML = temp;
+            renderMathInElement(output);
         }
         else {
-            document.getElementById("vectorplanar1").innerHTML = "\\[The \\space following \\space vectors \\space are \\space Non-Coplanar \\space as \\space Δ \\space != \\space 0.  \\]";
-            renderMathInElement(document.getElementById("vectorplanar1"));
+            temp +="\\[The \\space following \\space vectors \\space are \\space Non-Coplanar \\space as \\space Δ \\space ("+ans.toFixed(2)+") \\space != \\space 0.  \\]";
+            output.innerHTML = temp;
+            renderMathInElement(output);
         }
     }
 }
@@ -19983,4 +19999,3 @@ function negbinoCal() {
         document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
     }
 }
-
