@@ -8928,6 +8928,40 @@ function solvepartialsphere() {
         saoutput.innerHTML = "";
     }
 }
+
+//Elongated Square Pyramid
+function solveelonsqupyr() {
+    var a = document.getElementById("inputelonsqupyra").value;
+    var volumeoutput = document.getElementById("resultofelonsqrpyrvol");
+    var areaoutput = document.getElementById("resultofelonsqrpyrrarea");
+    var houtput = document.getElementById("resultofelonsqrpyrh");
+    var voltemp = "";
+    var areatemp = "";
+    var htemp = "";
+    var vol = 1.236*a*a*a;
+    var area = 6.731*a*a;
+    var h=1.707*a;
+    if (a != ""){
+        areatemp += "\\[ (5+ \\sqrt(3)) \\times" + a + "\\times" + a  + "\\]";
+        areatemp += "\\[Surface \\space Area \\space \\space is \\space = \\space " + (area).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(areaoutput);
+        voltemp += "\\[ V = (1 + \\frac{2}{\\sqrt{6}})" + "\\times" + a + "\\times " + a + "\\times" + a  + "\\]";
+        voltemp += "\\[Volume \\space is \\space = \\space " + (vol).toFixed(2) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        htemp += "\\[ h = ( 1 + \\frac{1}{\\sqrt{2}} ) \\times" +  a  + "\\]";
+        htemp += "\\[Height \\space is \\space " + eval(String(h)) + "\\]";
+        houtput.innerHTML = htemp;
+        renderMathInElement(houtput);
+    } 
+    else {
+        areaoutput.innerHTML = "";
+        volumeoutput.innerHTML = "";
+        houtput.innerHTML = "";
+    }
+}
+
 //Salinon
 function solveSalinon() {
     var r = document.getElementById("inputsalinonr").value;
