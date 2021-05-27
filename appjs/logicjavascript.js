@@ -12662,15 +12662,33 @@ function typenum3find(){
     let y = document.getElementById("typenum4").value;
     if(x==""||y=="")
     {
-        document.getElementById("typenum3ans").innerHTML =  "Please enter all the field to find answer";
+        document.getElementById("typenum3ans").innerHTML =  "\\[Please \\space enter \\space all \\space the \\space field \\space to \\space find \\space answer\\]";
+        renderMathInElement(document.getElementById("typenum3ans"));
     }
     else{
     let x = parseInt(document.getElementById("typenum3").value)
     let y = parseInt(document.getElementById("typenum4").value)
-    if (divSum(x) != y) 
-        document.getElementById("typenum3ans").innerHTML =  false; 
-          
-    document.getElementById("typenum3ans").innerHTML =  divSum(y) == x; 
+    document.getElementById("typenum3ex").innerHTML =  "\\[Proper \\space Divisors \\space of \\space"+x+":\\space 1 ,\\space"; 
+    if (divSum(x) != y){
+        document.getElementById("typenum3ans").innerHTML =  "\\[false\\]";
+        document.getElementById("typenum3ex").innerHTML +=  "!="+y+"\\newline Hence ,\\space not \\space amicable.\\]"; 
+        
+        renderMathInElement(document.getElementById("typenum3ans"))
+        renderMathInElement(document.getElementById("typenum3ex"))
+        return;
+    } 
+    document.getElementById("typenum3ex").innerHTML +=  "=="+y+"\\]"+"\\[Proper \\space Divisors \\space of \\space"+y+":\\space 1 , \\space"; 
+    if(divSum(y) != x){
+        document.getElementById("typenum3ans").innerHTML = "\\[ false\\]"; 
+        document.getElementById("typenum3ex").innerHTML +=  "!="+x+"\\newline Hence ,\\space not \\space amicable.\\]";
+    }
+    else{
+        document.getElementById("typenum3ans").innerHTML = "\\[ true\\]"; 
+        document.getElementById("typenum3ex").innerHTML +=  "=="+x+"\\newline Hence ,\\space amicable.\\]";
+        
+    }
+    renderMathInElement(document.getElementById("typenum3ans"))
+    renderMathInElement(document.getElementById("typenum3ex"))
     }
 }
 
@@ -12682,12 +12700,22 @@ function divSum(n)
         if (n % i == 0) 
         {  
             if (i == (n / i)) 
-                result += i; 
+            {
+                result += i;
+                document.getElementById("typenum3ex").innerHTML += i+ ", \\space"; 
+            }
+                
             else
+            {
                 result += (i + n / i); 
+                document.getElementById("typenum3ex").innerHTML += i+ ", \\space"+(n/i)+", \\space"; 
+            }
         } 
     } 
+    document.getElementById("typenum3ex").innerHTML += " \\]"; 
+    document.getElementById("typenum3ex").innerHTML += "\\[Sum \\space of \\space divisors="+(result+1)+"\\]"+"\\["+(result+1); 
     return (result + 1); 
+
 } 
 
 function findTriangularNumber(n)
