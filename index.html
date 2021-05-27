@@ -4529,8 +4529,26 @@
                         </td>
                         <td style="float:right;border-top: none;">
                                <span
-                                       onclick="addtofavourite('Hypergeometric Distribution','#hypergeomeans','c','hypergeo,eansimgfav')"><img
+                                       onclick="addtofavourite('Hypergeometric Distribution','#hypergeomeans','c','hypergeomeansimgfav')"><img
                                        id="hypergeomeansimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!-- Exponential Distribution Calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="expo-dist-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Exponential Distribution Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Exponential distribution calculator','#expoDist','c','expoDistimgfav')"><img
+                                       id="expoDistimgfav" src="images/unfavourite.png"
                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -18778,6 +18796,55 @@
     
    
 </div>
+<!-- Exponential Distribution Calculator start -->
+<div class="collapse" id="expoDist" style="text-align: center;">
+    <h1 >Exponential Distribution Calculator</h1>
+    <form action="">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inrate" placeholder="Enter the value of rate parameter">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inran" placeholder="Enter the value of random variable">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="exprobability(1)">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light"
+                    onclick="exprobability(2)">
+                Mean
+            </button>
+            <button type="button" class="btn btn-light"
+                onclick="exprobability(3)">
+                Variance
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    <br>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="exprobAns"></p>
+    </div>
+    <br>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = f(x;\lambda) = \begin{cases}
+        \lambda  e^{-\lambda x} & x \ge 0, \\
+        0 & x < 0
+        \end{cases}\]</p> where,
+        <br> λ = rate parameter <br> x = random variable
+    </div>
+    
+</div>
+<!-- Exponential Distribution Calculator end -->
+
 
 
 <div class="collapse" id="hypergeos">
