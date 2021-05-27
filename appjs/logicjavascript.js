@@ -17165,10 +17165,19 @@ function convertgreyoct() {
         }
         x = parseInt(x, 2).toString(8);
     } else {
+        print += "<h4> Converting Octal to Grey Code </h4> &emsp;";
+        print += "<br><h5>STEP 1 : Convert the input from octal to binary.</h5>";
+        print += input + "->" + result1;
+        print += "<br><h5>STEP 2 : Take the first bit of the binary input and write it to the output.</h5>";
+        print += "Output ->" + x;
+        print += "<br><h5>STEP 3 : Repeat the steps below until you reach the end of the input </h5>";
         for (var i = 1; i < result1.length; i++) {
             var m = parseInt(result1[i - 1] ^ result1[i]).toString();
+            print += "Take the " + (i + 1) + "'th bit of the input and XOR it to the previous bit of the input " + "i.e," + result1[i] + "⊕" + result1[i - 1] + "=" + m + "<br>";
+            print += "Write the result to the output. Outputh ->" + x + "<span style='text-decoration: underline;'>" + m + "</span><br><br>";
             x += m;
         }
+        print += "<br><h5>STEP 4 : So, our final gray code result is" + x + "</h5>";
     }
 
     if (input == "") {
