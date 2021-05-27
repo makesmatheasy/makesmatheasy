@@ -1394,8 +1394,9 @@ function confidence() {
 
 function unitcircCal(){
     var deg = document.getElementById("unitdeg").value;
-    var x = Math.cos(deg);
-    var y = Math.sin(deg);
+    var rad=0.0174533*deg;
+    var x = Math.cos(rad);
+    var y = Math.sin(rad);
 
     document.getElementById("unitcircxans").innerHTML = "X: " + x;
     document.getElementById("unitcircyans").innerHTML = "Y: " + y;
