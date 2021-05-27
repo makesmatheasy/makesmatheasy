@@ -5494,7 +5494,7 @@ function vectortria() {
 }
 //Distance between two planes calculator
 function solvetwoplane() {
-    var a, b, c, d, a1, b1, c1, d1;
+    var a, b, c, d, a1, b1, c1, d1,work;
     a = parseFloat(document.getElementById('da1').value);
     b = parseFloat(document.getElementById('db1').value);
     c = parseFloat(document.getElementById('dc1').value);
@@ -5503,6 +5503,8 @@ function solvetwoplane() {
     b1 = parseFloat(document.getElementById('db2').value);
     c1 = parseFloat(document.getElementById('dc2').value);
     d1 = parseFloat(document.getElementById('dd2').value);
+    work = document.getElementById('dplane_work');
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
     /*var explain = document.getElementById("angleplane");
     explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
     renderMathInElement(document.getElementById("angleplane"));*/
@@ -5512,11 +5514,28 @@ function solvetwoplane() {
         if ((a == a1) && (b == b1) && (c == c1)) {
             var res = Math.abs(d1 - d) / Math.sqrt(a * a + b * b + c * c);
             document.getElementById('dplane').innerHTML = 'Distance between plane 1 and 2 is ' + res.toFixed(2);
+            print += "\\[Equation \\space 1 \\space : \\space " + a + "x \\space + \\space " + b + "y \\space + \\space " + c + "z \\space + \\space " + d + " \\space = \\space 0\\]";
+            print += "\\[Equation \\space 1 \\space : \\space " + a1 + "x \\space + \\space " + b1 + "y \\space + \\space " + c1 + "z \\space + \\space" + d1 + "\\space = \\space 0\\]";
+            print += "\\[The \\space coefficients \\space of \\space x\\space y \\space and \\space z \\space are \\space same \\space for \\space both \\space the \\space planes. \\]";
+            print += "\\[So, \\space these \\space two \\space planes \\space are \\space parallel \\space to \\space each \\space other \\]";
+            print += "\\[Distance \\space between \\space two \\space parallel \\space planes \\space  \\]";
+            print += "\\[= \\space \\frac{|D_2 - D_1|}{\\sqrt{A^2 + B^2 + C^2}}\\]";
+            print += "\\[where, A \\space B \\space and \\space C \\space are \\space coefficients \\space of \\space x \\space y \\space and \\space z \\space respectively\\]";
+            print += "\\[= \\space \\frac{|(" + d1 + ") - (" + d + ")|}{\\sqrt{(" + a + ")^2 + (" + b + ")^2 + (" + c + ")^2}}\\]";
+            print += "\\[= \\space " + res + "\\]";
+            print += "\\[So, \\space distance \\space between \\space plane \\space 1 \\space and \\space plane \\space 2 \\space = \\space " + res.toFixed(2) + " \\]";
         }
         else {
             document.getElementById('dplane').innerHTML = 'Planes are not parallel, so distance is 0';
+            print += "\\[Equation \\space 1 \\space : \\space " + a + "x \\space + \\space " + b + "y \\space + \\space " + c + "z \\space + \\space " + d + " \\space = \\space 0\\]";
+            print += "\\[Equation \\space 1 \\space : \\space " + a1 + "x \\space + \\space " + b1 + "y \\space + \\space " + c1 + "z \\space + \\space" + d1 + "\\space = \\space 0\\]";
+            print += "\\[The \\space coefficients \\space of \\space x\\space y \\space and \\space z \\space are \\space not \\space same \\space for \\space both \\space the \\space planes. \\]";
+            print += "\\[So, \\space these \\space two \\space planes \\space are \\space \\space not \\space parallel \\space to \\space each \\space other \\]";
+            print += "\\[Distance \\space between \\space two \\space unparallel \\space planes \\space = \\space 0  \\]";
         }
     }
+    work.innerHTML = print;
+    renderMathInElement(work);
 
 }
 //3-D Distance Calculator
