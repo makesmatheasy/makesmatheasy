@@ -1308,14 +1308,17 @@ function eircal()
         var z=parseInt(b);
         var rate_period= ((1+(x/z))**z)-1;
         var rate_p=rate_period*100;
+        var rate = (1+rate_period)**y - 1;
+        var rate_per = rate*100;
         ans +="\\[Effective \\space interest \\space rate \\space per \\space period(i) \\space \\] \\[=(1+ \\frac{r}{m})^{m}-1\\]";
-        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
+        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "}-1\\]";
         ans +="\\[="+ rate_period +"\\]";
-        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
-        var P = parseFloat(R/y);
-        ans += "\\[Percent \\space Rate \\space per \\space compounding \\space period \\space (P) = \\space \\frac{Nominal \\space Rate(R)}{Number \\space of \\space periods(m)} \\]";
-        ans += "\\[= \\space \\frac{" + R + "}{" + y + "}\\]";
-        ans += "\\[= \\space " + P + "\\]";
+        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period(i \\%)=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
+        ans +="\\[Effective \\space Interest \\space rate \\space for \\space m \\space periods(i_t) \\space \\]";
+        ans +="\\[= \\space (1+ \\frac{r}{m})^{mt}-1 \\]";
+        ans +="\\[= \\space (1+ \\frac{" + x + "}{" + z + "})^{" + z + "\\times" + y + "}-1 \\]";
+        ans +="\\[= \\space " + rate + "\\]";
+        ans +="\\[Effective \\space Interest \\space rate \\space for \\space m \\space periods(i_t \\%)=" + rate + "\\space \\times \\space 100=" + rate_per + "\\% \\]";
     }
     result.innerHTML = ans;
     renderMathInElement(result);
