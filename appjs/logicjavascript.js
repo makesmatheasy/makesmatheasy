@@ -19212,41 +19212,41 @@ function cylcal() {
     renderMathInElement(document.getElementById("cyloans"));
     renderMathInElement(document.getElementById("cylzans"));
 }
-
-function sphcal() {
-    var x = parseFloat(document.getElementById("sphx").value);
-    var y = parseFloat(document.getElementById("sphy").value);
-    var z = parseFloat(document.getElementById("sphz").value);
+function sphcal(){
+    var x=parseFloat(document.getElementById("sphx").value);
+    var y=parseFloat(document.getElementById("sphy").value);
+    var z= parseFloat(document.getElementById("sphz").value);
 
     var outputr = document.getElementById("sphrans");
     var outputo = document.getElementById("sphoans");
     var outputfi = document.getElementById("sphfians");
-    var r = Math.sqrt(x * x + y * y + z * z).toFixed(2);
-    var o = Math.acos(z / r).toFixed(2);
-    var fi = Math.atan(y / x).toFixed(2);
-    var ans = "";
-    var temp1 = x * x + y * y + z * z;
-    var temp2 = (z / r).toFixed(2);
+    var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
+    var o = Math.acos(z/r).toFixed(2);
+    var fi = Math.atan(y/x).toFixed(2);
+    var ans="";
+    var temp1 = x*x + y*y + z*z;
+    var temp2 = (z/r).toFixed(2);
     var ansr = "\\[r:\\space \\sqrt{x^2 + y^2 + z^2}\\]";
-    ansr += "\\[=\\space \\sqrt{" + x + "^2 + " + y + "^2 + " + z + "^2}\\]";
-    ansr += "\\[=\\space \\sqrt{" + temp1 + "} \\]";
-    ansr += "\\[=\\space " + r + " \\]";
+    ansr += "\\[=\\space \\sqrt{"+x+"^2 + "+y+"^2 + "+z+"^2}\\]";
+    ansr += "\\[=\\space \\sqrt{"+temp1+"} \\]";
+    ansr += "\\[=\\space "+r+" \\]";
 
     var anso = "\\[θ:\\space \\arccos(\\frac{z}{r} )\\]";
-    anso = "\\[θ:\\space \\arccos(\\frac{" + z + "}{" + r + "} )\\]";
-    anso += "\\[=\\space \\arccos(" + temp2 + ")\\]"
-    anso += "\\[=\\space " + o + "\\]"
+    anso = "\\[θ:\\space \\arccos(\\frac{"+z+"}{"+r+"} )\\]";
+    anso += "\\[=\\space \\arccos("+temp2+")\\]"
+    anso += "\\[=\\space "+o+"\\]"
 
     var ansz = "\\[z:\\space Z\\]";
-    ansz += "\\[=\\space " + z + "\\]";
-    if (isNaN(x) || isNaN(y) || isNaN(z)) {
+    ansz += "\\[=\\space "+z+"\\]";
+    if(isNaN(x)||isNaN(y)||isNaN(z))
+    {
         ans += "Please fill all the field";
-        outputr.innerHTML = ans;
+        outputr.innerHTML= ans;
         outputo.innerHTML = "";
         outputfi.innerHTML = "";
     }
-    else {
-        outputr.innerHTML = ansr;
+    else{
+        outputr.innerHTML= ansr;
         outputo.innerHTML = anso;
         outputfi.innerHTML = ansz;
     }
