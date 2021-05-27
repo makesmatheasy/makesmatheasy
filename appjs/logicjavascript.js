@@ -9692,6 +9692,26 @@ function solveanticone() {
     }
 
 }
+
+//Hollow Cone
+function solvehollowcone(){
+    var R = parseInt(document.getElementById("inputhollowconeoutrad").value);
+    var r = parseInt(document.getElementById("inputhollowconeinrad").value);
+    var H = parseInt(document.getElementById("inputhollowconeoutheight").value);
+    var h = (H/R) * r;
+    var area = ( R * math.sqrt( H**2 + R**2) + r * math.sqrt( h**2 + r**2) + R**2 - r**2 ) * math.pi;
+    var vol =  (math.pi)/3 * ( R**2 * H - r**2 * h );
+    if (!isNaN(R) && !isNaN(r) && !isNaN(H) && R!="" && r!="" && H!=""){
+        document.getElementById("resultofhollowconeinheight").innerHTML = "The Height inner cone (h): " +h.toFixed(3)
+        document.getElementById("resultofhollowconevol").innerHTML = "The Surface area (A): "+area.toFixed(3)
+        document.getElementById("resultofhollowconearea").innerHTML = "The Volume (V): "+vol.toFixed(3)
+    } else{
+        document.getElementById("resultofhollowconeinheight").innerHTML = "";
+        document.getElementById("resultofhollowconevol").innerHTML = "";
+        document.getElementById("resultofhollowconearea").innerHTML = "";
+    }
+}
+
 //Half cone
 function solvehalfcone() {
     var r = document.getElementById("inputhalfconerad").value;
