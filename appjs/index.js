@@ -378,6 +378,7 @@ function openit(id) {
         "#lappro",
         "#rankcal",
         "#bayes-probabilitycollapse",
+        "#elonpentpyr",
         "#hypergeos",
         "#condprobability",
         "#geoprobability",

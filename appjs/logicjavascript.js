@@ -9001,6 +9001,38 @@ function heightdist1(){
 
 }
 
+function solveelonpentpyr() {
+    var a = document.getElementById("inputelonpentpyra").value;
+    var volumeoutput = document.getElementById("resultofelonpentpyrvol");
+    var areaoutput = document.getElementById("resultofelonpentpyrrarea");
+    var houtput = document.getElementById("resultofelonpentpyrh");
+    var voltemp = "";
+    var areatemp = "";
+    var htemp = "";
+    var vol = 2.022*a*a*a;
+    var area = 8.886*a*a;
+    var h=1.526*a;
+    if (a != ""){
+        areatemp += "\\[ [\\frac{\\sqrt{25 + 10 \\sqrt{5}}}{4} + \\frac{5 \\sqrt{3}}{4} + 5 ] \\times" + a + "\\times" + a  + "\\]";
+        areatemp += "\\[Surface \\space Area \\space \\space  = \\space " + (area).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(areaoutput);
+        voltemp += "\\[ [\\frac{5 + \\sqrt{5}}{24} + \\frac{\\sqrt{25 + 10\\times \\sqrt{5}}}{4}]" + "\\times" + a + "\\times " + a + "\\times" + a  + "\\]";
+        voltemp += "\\[Volume \\space = \\space " + (vol).toFixed(2) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        htemp += "\\[ (\\sqrt{\\frac{5-\\sqrt{5}}{10}} + 1 )\\times" +  a  + "\\]";
+        htemp += "\\[Height \\space = " + eval(String(h)) + "\\]";
+        houtput.innerHTML = htemp;
+        renderMathInElement(houtput);
+    } 
+    else {
+        areaoutput.innerHTML = "";
+        volumeoutput.innerHTML = "";
+        houtput.innerHTML = "";
+    }
+}
+
 function heightdist9(){
     var distance = parseFloat(document.getElementById("height92").value);
     var degree = parseFloat(document.getElementById("height93").value);
