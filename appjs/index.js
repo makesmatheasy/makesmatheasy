@@ -346,6 +346,7 @@ function openit(id) {
         "#sumAndDiffTri",
         "#plotangle",
         "#profitloss",
+        "#cylin_shell",
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",

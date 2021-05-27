@@ -3112,6 +3112,42 @@ function solvetetrahexa() {
     }
 }
 
+
+function solvecylinshell() {
+    var r = document.getElementById("inputcylinshellr").value;
+    var R = document.getElementById("inputcylinshellR").value;
+    var h = document.getElementById("inputcylinshellh").value;
+    var voloutput = document.getElementById("resultofcylinshellvol");
+    var saoutput = document.getElementById("resultofcylinshellarea");
+    var laoutput = document.getElementById("resultofcylinshellla");
+    var voltemp = "";
+    var satemp = "";
+    var latemp = "";
+    var vol= 3.14*h*((R*R)-(r*r));
+    var la=(2*3.14*h*R)+(2*3.14*h*r);
+    var sa=(6.28*R*R)-(6.28*r*r)+ (6.28*2*r*R)-(6.28*R*h)-(6.28*R*h);
+    if ((r != "") && (R !="") && (h!="")) {
+        voltemp += "\\[ \\pi \\times" + h + "\\times (" + R + "+" + r + ")" + "\\]";
+        voltemp += "\\[Volume \\space of \\space Cylindrical \\space Shell \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(vol)).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ 2 \\times \\pi \\times (" + R + "+" + r + ") \\times (" + R + "-" + r + "+" + h + ")" + "\\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Cylindrical \\space Shell \\space is \\space \\]";
+        satemp += "\\[" + eval(String(sa)).toFixed(3) + "\\]";
+        saoutput.innerHTML = satemp;
+        latemp += "\\[ 2 \\times \\pi \\times" + h+ "\\times(" + R + "+" + r + ")" + "\\]";
+        latemp += "\\[Lateral \\space area \\space of \\space Cylindrical \\space Shell \\space is \\]";
+        latemp += "\\[ " + eval(String(la)).toFixed(3) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(laoutput);
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+    }
+}
 //Check whether one root of the Quadratic Equation is twice of other or not
 function twicefind() {
     var a = parseInt(document.getElementById("aofeqn3").value)
