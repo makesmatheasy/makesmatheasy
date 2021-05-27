@@ -14893,7 +14893,7 @@ function polymaxfind(){
             document.getElementById("polymaxans").innerHTML =  "\\[No \\space Polygon \\space can \\space be \\space escribed\\]";  
         }
     } else{
-        document.getElementById("polymaxans").innerHTML = "\\[Please \\spce enter \\space the \\space value\\]";
+        document.getElementById("polymaxans").innerHTML = "\\[Please \\space enter \\space the \\space value\\]";
     }
     renderMathInElement(document.getElementById("polymaxans"));
 }
