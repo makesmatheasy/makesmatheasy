@@ -9112,10 +9112,9 @@ function solvewedgecubo() {
         areaoutput.innerHTML = areatemp; 
         renderMathInElement(soutput); 
         renderMathInElement(d1output); 
-        renderMathInElement(d2output);
-    } 
+        renderMathInElement(d2output); 
+    }
 }
-
 
 //Spherical Wedge
 function solveSphericalwedge() {
@@ -19343,7 +19342,7 @@ function arinfind() {
 }
 
 // Negative Binomial Distribution Calculator
-function negbinoCal() {
+function negbinoCal(op) {
     let n = document.getElementById("negbinon").value;
     let r = document.getElementById("negbinor").value;
     let p = document.getElementById("negbinop").value;
@@ -19351,11 +19350,21 @@ function negbinoCal() {
     if (n == "" || r == "" || p == "") {
         document.getElementById("negbinoans").innerHTML = "Enter all the inputs";
     }
-    else {
-        let combi = comb(n - 1, r - 1);
-        let ans = combi * p ** r * (1 - p) ** (n - r);
-        document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
-    }
+
+    else{
+        if(op===1){
+            let combi = comb(n-1,r-1);
+            let ans = combi * p**r * (1-p)**(n-r);
+            document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
+        }
+        else if(op===2){
+            let mean = (1-p)/p * r;
+            document.getElementById('negbinoans').innerHTML = "Mean: " + mean;
+        }
+        else{
+            let variance = (1-p)/(p*p) * r;
+            document.getElementById('negbinoans').innerHTML = "Variance: " + variance;
+        }    
 }
 //Hypergeometric Distribution PMF Calculator
 function hypergeoscal() {
