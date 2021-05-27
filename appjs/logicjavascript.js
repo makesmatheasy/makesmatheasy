@@ -13860,7 +13860,18 @@ function lacube13find() {
     document.getElementById("lacube12ans").innerHTML = false;
 }
 
-function isPerfectCube(x) {
+
+function lacube14find(){
+    let n  = parseInt(document.getElementById("lacube15").value)
+    for (var i = 1; i * i * i <= n; i++) {
+        if (i * i * i + (i + 1) * (i + 1) * (i + 1)== n)
+            document.getElementById("lacube14ans").innerHTML =  true;
+    }
+    document.getElementById("lacube14ans").innerHTML =  false;
+}
+
+function isPerfectCube(x)
+{
     var cr = Math.round(Math.cbrt(x));
 
     return (cr * cr * cr == x);
