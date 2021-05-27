@@ -14239,30 +14239,31 @@ function sumDivisor(num)
 //-----------------------------------------
 
 function planeequation(){
-  let x1 = parseInt(document.getElementById("x1").value);
-  let y1 = parseInt(document.getElementById("y1").value);
-  let z1 = parseInt(document.getElementById("z1").value);
-  let x2 = parseInt(document.getElementById("x2").value);
-  let y2 = parseInt(document.getElementById("y2").value);
-  let z2 = parseInt(document.getElementById("z2").value);
-  let x3 = parseInt(document.getElementById("x3").value);
-  let y3 = parseInt(document.getElementById("y3").value);
-  let z3 = parseInt(document.getElementById("z3").value);
+  let X1 = parseInt(document.getElementById("x1").value);
+  let Y1 = parseInt(document.getElementById("y1").value);
+  let Z1 = parseInt(document.getElementById("z1").value);
+  let X2 = parseInt(document.getElementById("x2").value);
+  let Y2 = parseInt(document.getElementById("y2").value);
+  let Z2 = parseInt(document.getElementById("z2").value);
+  let X3 = parseInt(document.getElementById("x3").value);
+  let Y3 = parseInt(document.getElementById("y3").value);
+  let Z3 = parseInt(document.getElementById("z3").value);
 
-  var a1 = x2 - x1;
-  var b1 = y2 - y1;
-  var c1 = z2 - z1;
-  var a2 = x3 - x1;
-  var b2 = y3 - y1;
-  var c2 = z3 - z1;
+  var a1 = X2 - X1;
+  var b1 = Y2 - Y1;
+  var c1 = Z2 - Z1;
+  var a2 = X3 - X1;
+  var b2 = Y3 - Y1;
+  var c2 = Z3 - Z1;
   var a = b1*c2 - b2*c1;
   var b = a2*c1 - a1*c2;
   var c = a1*b2 - b1*a2;
   var d = (-a*x1 - b*y1 - c*z1);
 
-  document.getElementById("interceptresult").innerHTML = a+"x+"+b+"y+"+c+"z"+"="+(-1)*d;
+ if(b>0 &&c>0){
+  document.getElementById("interceptresult").innerHTML = a+"x+"+b+"y+"+c+"z"+"="+(-1)*d;}
 
-  if (b>0 && c<0){
+  else if (b>0 && c<0){
     document.getElementById("interceptresult").innerHTML = a+"x+"+b+"y"+c+"z"+"="+(-1)*d;
   }
   else if (b<0 && c>0){
