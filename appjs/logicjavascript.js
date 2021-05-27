@@ -14163,13 +14163,15 @@ function scyffind(){
 }
 
 function scyf1find(){
-    let h = parseInt(document.getElementById("scyf3").value) 
-    let R = parseInt(document.getElementById("scyf4").value)
-    let r = parseInt(document.getElementById("scyf5").value) 
-    var r1 = r;
-    var h1 = h;
-    var V = (3.14 * Math.pow(r1, 2) * h1);
-    document.getElementById("scyf1ans").innerHTML =  V;
+    var h = parseInt(document.getElementById("scyf3").value) 
+    var r = parseInt(document.getElementById("scyf5").value) 
+    var v = 3.14 * Math.pow(r, 2) * h;
+    if(!isNaN(r) && (!isNaN(h)) ){
+        document.getElementById("scyf1ans").innerHTML =  "\\[Largest \\space right \\space circular \\space cylinder \\space within \\space a \\space frustum \\space will \\space be, \\newline \\pi \\times (Shorter \\space radius \\space of \\space cone)^{2} \\times (Height \\space of \\space cone) \\newline "+(math.pi).toFixed(2)+" \\times "+r+"^{2} \\times "+h+" \\newline = \\space "+v.toFixed(3)+"\\]";
+    } else{
+        document.getElementById("scyf1ans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    }
+    renderMathInElement( document.getElementById("scyf1ans"));
 }
 
 function scyf2find(){
