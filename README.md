@@ -188,6 +188,7 @@ Other Tech/Libraries
   - Root Mean Square
   - Squares and Cubes Calculator
   - Relative Risk Calculator
+  - Negative Binomial Distribution Calculator
   - n-th base root calculator
   - Perfect Squares & Cubes in a range
   - Factorization
@@ -446,6 +447,7 @@ Other Tech/Libraries
   - Bayes Probability Theorem
   - Poisson Distribution Statistics
   - Hypergeometric Distribution Statistics
+  - Exponential Distribution Calculator
 
 - Statistics
 

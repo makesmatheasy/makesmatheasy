@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#midrangebtn").click(function () {
+    openit("#midrange");
+    closenav();
+    clearall();
+});
 $("#utc").click(function(){
     openit("#utcs");
     closenav();
@@ -714,6 +719,12 @@ $(document).ready(function () {
     //Ackermann function
     $("#ackermann-btn").click(function () {
         openit("#ackermann");
+        closenav();
+        clearall();
+    })
+    //Exponential Distribution Calculator
+    $("#expo-dist-btn").click(function () {
+        openit("#expoDist");
         closenav();
         clearall();
     })
