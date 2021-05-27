@@ -17101,7 +17101,22 @@ function cscu2find(){
 function cscu3find(){
     let R = parseInt(document.getElementById("cscu3").value)
     let V =  ((1 / 3.0) * (3.14) * (2 * (R * R)) * (4 * R));
-    document.getElementById("cscu3ans").innerHTML =  V;
+    var output = document.getElementById("cscu3ans")
+    var ans = "";
+    if(R<0){
+        ans += "\\[Radius \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+    else if(!isNaN(R)){
+    ans += "\\[Radius \\space of \\space the \\space cone \\space with \\space respect \\space to \\space sphere (r) \\space = \\space \\sqrt{2} R \\space and \\space Height \\space of \\space the \\space cone \\space with \\space respect \\space to \\space sphere (h) \\space = \\space 4R  \\]"
+    ans += "\\[Volume \\space of \\space the \\space cone \\space = \\space \\frac{1}{3} π r^{2} h \\space = \\space \\frac{1}{3}  π(\\sqrt{2} R)^2(4R)\\space = \\space \\frac{1}{3}π(2R^2)(4R) \\space = \\space \\frac{8}{3}πR^3 \\]"+ "\\[\\space \\space = \\frac{8π}{3}("+R+")^3 = \\space " + V.toFixed(3) + " \\space cm^3\\]";
+    output.innerHTML = ans
+    }
+    else{
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
+     }
+    renderMathInElement(output);
 }
 
 function cscu4find(){
