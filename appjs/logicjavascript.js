@@ -18608,65 +18608,6 @@ function oddsCalc() {
     }   
 }
 
-//Coefficient of Variation Calculator
-function covcal()
-{
-    var num1=document.getElementById("setx").value;
-    var num2=document.getElementById("sety").value;
-    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
-    var s="";
-    if(num1==""||num2=="")
-    {
-       s= "Please enter number";
-    }
-    else if(!valid.test(num1&&num2))
-    {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    }
-    else{
-    num1=num1.trim();
-    num1 = num1.split(" ");
-    var len1=parseInt(num1.length);
-   
-    var number1=[], sum1=0, sum2=0;
-    for (i = 0; i < len1; i++)
-     {
-
-        number1[i] = parseFloat(num1[i].trim());
-        sum1+=number1[i];
-    }
-    sum1=sum1/len1;
-
-    num2=num2.trim();
-    num2 = num2.split(" ");
-    var len2=parseInt(num2.length);
-    if(len1!=len2)
-    {
-        s="Your datasets X and Y contain different numbers of element";
-    }
-    else{
-    var number2=[];
-    for (i = 0; i < len2; i++) {
-        number2[i] = parseFloat(num2[i].trim());
-        sum2+=number2[i];
-    }
-   
-    sum2=sum2/len2;
-
-    var covsum=0;
-    for (i = 0; i < len2; i++) 
-    {
-        var d=number2[i]-sum2;
-        var f=number1[i]-sum1;
-        covsum+=(d*f);
-    }
-    var cov=(covsum)/(len2-1);
-    s="The calculated covariance is: "+cov;
-}
-}
-
-document.getElementById("covans").innerHTML=s;
-}
 //LINEAR REGRESSION CALCULATOR
 function lrccal()
 {
