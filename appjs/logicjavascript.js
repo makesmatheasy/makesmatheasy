@@ -15144,26 +15144,28 @@ function catalanNumbers(num) {
 }
 
 //Distance between incenter and excenter
-
 function dist_incenex() {
-    let r = parseInt(document.getElementById("ex_rad").value);
-    let ang = parseInt(document.getElementById("angle_1").value);
+    var r = parseInt(document.getElementById("ex_rad").value);
+    var ang = parseInt(document.getElementById("angle_1").value);
     var ans = 4 * r * (sin(ang / 2));
-    document.getElementById("dist_inex").innerHTML = ans;
-}
-function sin(degrees) {
-    var radians = (degrees * Math.PI) / 180;
-    return Math.sin(radians);
+    var excirout = document.getElementById("dist_inex");
+    var excirtemp = "";
+    if (isNaN(r) || isNaN(ang)){
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
+
+        excirout.innerHTML = excirtemp;
+    } else{
+        excirtemp += "\\[Distance \\space between \\space Incenter \\space and \\space Excenter \\space of \\space a \\space Triangle \\space is \\space \\]";
+        excirtemp += "\\[ \\space = \\space 4 \\times ( External \\space radius) \\times sin(\\frac{(angle \\space A)}{2}) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 4 \\times "+r+" \\times sin(\\frac{("+ang+")}{2}) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 4  \\times "+r+" \\times ("+(sin(ang / 2)).toFixed(2)+") \\space \\]";
+        excirtemp += "\\[\\space = \\space "+ans.toFixed(3)+" \\space \\]";
+
+        excirout.innerHTML = excirtemp;
+    }
+    renderMathInElement(excirout);
 }
 
-//Distance between incenter and excenter
-
-function dist_incenex() {
-    let r = parseInt(document.getElementById("ex_rad").value);
-    let ang = parseInt(document.getElementById("angle_1").value);
-    var ans = 4 * r * (sin(ang / 2));
-    document.getElementById("dist_inex").innerHTML = ans;
-}
 function sin(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.sin(radians);
