@@ -6811,7 +6811,23 @@ function tshapesolve() {
     }
 }
 
+// H - Shape
 
+function hshapesolve(){
+    var height = parseFloat(document.getElementById("hshape-h").value);
+    var thickness = parseFloat(document.getElementById("hshape-d").value);
+    var barLength = parseFloat(document.getElementById("hshape-l").value);
+    var perimeterField = document.getElementById("resultOfPerimeterHshape");
+    var areaField = document.getElementById("resultOfAreaHshape");
+
+    var perimeter = ((2*height) + (4*thickness) + 2*(height-thickness) + 2*barLength).toFixed(3);
+    var area = 2*height*thickness + thickness * barLength;
+
+    if (!isNaN(perimeter) && !isNaN(area)) {
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeter} units`;
+        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+    }
+}
 
 function tshapesolve() {
     var beamLength = parseFloat(document.getElementById("tshape-a").value);
