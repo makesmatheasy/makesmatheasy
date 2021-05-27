@@ -16967,13 +16967,44 @@ function convertbcd() {
         result.innerHTML = parseInt(temp, 10).toString(8);
     } else if (fromCode == "Hexadecimal" && toCode == "BCD Code") {
         input = parseInt(input, 16).toString();
-        result.innerHTML = decimalTObcd(input);
-
+        var x="_",y="";
+        for (var i = 0; i < input.length; i++) {
+            y = parseInt(input[i]).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+        }
     } else if (fromCode == "BCD Code" && toCode == "Hexadecimal") {
-        var temp = "";
-        temp = bcdTOdecimal(input).join('');
-        result.innerHTML = parseInt(temp, 10).toString(16);
-
+        var x = "",y="";
+        var temp ="";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
+        }else{
+            x = "";
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + parseInt(temp,2).toString();
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                result.innerHTML = parseInt(x).toString(16);//converted dec to hexdec
+            }else{
+                result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
+            }
+        }
     }
 
 
