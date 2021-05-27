@@ -14661,7 +14661,23 @@ function recifind(){
     let A = parseInt(document.getElementById("aofeqn1").value)
     let B = parseInt(document.getElementById("bofeqn1").value)
     let C = parseInt(document.getElementById("cofeqn1").value)
-    document.getElementById("recians").innerHTML = C+"x^2"+B+"x"+A+"=0"
+    var output = document.getElementById("recians")
+    var ans = "";
+    if(!isNaN(A) && !isNaN(B) && !isNaN(C)){
+    ans += "\\[For \\space the \\space Quadratic \\space Equation \\space aX^{2}+bX+c \\space = \\space 0 \\space consider \\space the \\space roots \\space are \\space given \\space p,q \\]"
+    ans += "\\[Sum \\space and \\space Product \\space of \\space roots \\space is \\space given \\space by, \\] "
+    ans += "\\[p \\space + \\space q \\space = \\space \\frac{-b}{a} and \\space p \\space \\times \\space q \\space = \\space \\frac{c}{a} \\]"
+    ans += "\\[The \\space reciprocal \\space of \\space the \\space roots \\space are \\space \\frac{1}{p} \\space , \\space \\frac{1}{q}  \\]"
+    ans += "\\[\\frac{1}{p} \\space + \\space \\frac{1}{q} \\space = \\space \\frac{-b}{c} and \\space \\frac{1}{p} \\space \\times \\space \\frac{1}{q} \\space = \\space \\frac{a}{c} \\]"
+    ans += "\\[Solving \\space roots \\space the \\space Quadratic \\space Equation \\space becomes \\space cX^{2}+bX+a \\space = 0 \\]"
+    ans += "\\[The \\space Quadratic \\space Equation \\space with \\space these \\space reciprocal \\space roots \\space is (" + C + ")  X^2 + (" + B + ") X + (" +  A + ") = 0 \\]"
+    output.innerHTML = ans; 
+    }
+    else{
+        ans += "\\[Please \\space enter \\space the \\space value\\]";
+        output.innerHTML = ans; 
+    }
+renderMathInElement(output);
 }
 
 //Next Prime Function
