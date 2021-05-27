@@ -13955,6 +13955,17 @@ function lacube12find(){
     document.getElementById("lacube12ans").innerHTML = "false";
 }
 
+function lacube13find(){
+    let n  = parseInt(document.getElementById("lacube14").value)
+    for (i = 2; i * i <= n; i++)
+ 
+            for (j = 2; j <= n; j++)
+                if (i * i * j * j == n)
+                    document.getElementById("lacube12ans").innerHTML =  true;
+ 
+        document.getElementById("lacube12ans").innerHTML =  false;
+}
+
 function isPerfectCube(x)
 {
     var cr = Math.round(Math.cbrt(x));
