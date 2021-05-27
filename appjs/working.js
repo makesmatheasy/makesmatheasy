@@ -1475,7 +1475,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#relriskbtn").click(function () {
+        openit("#relrisk");
+        closenav();
+        clearall();
+    }); 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
