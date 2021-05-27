@@ -4409,6 +4409,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="relriskbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Relative Risk Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Relative Risk Calculator','#relrisk','c','relriskfav')"><img
+                                        id="relriskfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
                 <!-- independent and dependent event probability-->
             <li>
                 <table class="table">
@@ -12218,7 +12234,37 @@
                 </div>
             </div>
         </div>
+<!-- Relative risk Calculator -->
+<div class="collapse" id="relrisk">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
+    <p style="margin-top: 2rem;">
+        Relative risk compares the probability of a disease being developed in a 
+        group exposed to a particular factor to the probability of the same disease being developed in a control group
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula: [a / (a + b)] / [c / (c + d)]</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">a is the number of members of the exposed group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">b is the number of members of the exposed group who didn't develop the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">c is the number of members of the control group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">d is the number of members of the control group who didn't develop the disease;</p>
 
+    <form action="">
+        <p style="text-align: left; color: white; margin-top:2rem;">Exposed Group</p>
+        <input class = "form__field"type="text" id="relexp0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relexp1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <p style="text-align: left; color: white; margin-top:2rem;">Control Group</p>
+        <input class = "form__field"type="text" id="relcont0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relcont1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="relrisk()">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="relriskans"></p>
+</div>
         <div class="collapse" id="expansion">
             <h2>Expansion of Trigonometric Functions</h2>
             <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} -

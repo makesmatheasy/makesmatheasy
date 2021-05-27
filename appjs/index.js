@@ -164,6 +164,7 @@ function openit(id) {
         "#chng-vol-cuboid",
         "#squaresRanges",
         "#favourite",
+        "#relrisk",
         "#cubesRanges",
         "#numcubesRanges",
         "#segcals",
