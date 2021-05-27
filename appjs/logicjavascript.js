@@ -17145,7 +17145,7 @@ function computeprobability() {
        renderMathInElement(result);
 }
 //Geometric Probability Distribution
-function geoprobability(){
+function geoprobability(op){
     var x = document.getElementById('failure').value;
     var p = document.getElementById('success').value;
 
@@ -17153,15 +17153,20 @@ function geoprobability(){
         document.getElementById("geoprobAns").innerHTML = "Please enter valid input";
     }
     else{
-    if (p > 1) {
-        document.getElementById("geoprobAns").innerHTML = "Probability of success cannot exceed 1 ";
-    }
-    else if ( p < 0 ) {
-        document.getElementById("geoprobAns").innerHTML = "Probability of success cannot be negative ";
-    }
-    else {
-        document.getElementById("geoprobAns").innerHTML = "Geometric Probability: " + (1-p)**x * p ;
-    }
+        if (p > 1) {
+            document.getElementById("geoprobAns").innerHTML = "Probability of success cannot exceed 1 ";
+        }
+        else if ( p < 0 ) {
+            document.getElementById("geoprobAns").innerHTML = "Probability of success cannot be negative ";
+        }
+        else {
+            if(op===1)
+                document.getElementById("geoprobAns").innerHTML = "Geometric Probability: " + (1-p)**x * p ;
+            else if(op==2)
+                document.getElementById("geoprobAns").innerHTML = "Mean: " + (1-p)/p ;
+            else
+                document.getElementById("geoprobAns").innerHTML = "Variance: " + (1-p)/(p*p) ;
+        }
     }
 }
 //Conditional Probability
