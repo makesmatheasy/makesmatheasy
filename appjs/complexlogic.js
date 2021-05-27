@@ -612,12 +612,12 @@ function factorial(n){
 }
 // HP ends
 
-function bpcal()
+function bpcal(op)
 {
-    var a=document.getElementById("psuc").value;
-    var b=document.getElementById("suc").value;
-    var c=document.getElementById("tri").value;
-    var ans="";
+    let a=document.getElementById("psuc").value;
+    let b=document.getElementById("suc").value;
+    let c=document.getElementById("tri").value;
+    let ans="";
 
    
     if(a==""||b==""||c=="")
@@ -628,21 +628,30 @@ function bpcal()
     {
         ans="Input Error: Probability can't be greater than 1";
     }
-    else if(b>c)
+    else if(b<c)
     {
         ans="Input Error: Successful events can't be greater than total number of trials.";
     }
    
     else{
+        if(op===1){
+            let pmf= factorial(c) / (factorial(b) * factorial(c-b));            
+            let n=Math.pow(a,b);
+            let s=1-a, t=c-b;
+            let m=Math.pow(s,t);
+            pmf=pmf*n*m;
+            pmf=pmf.toPrecision(5)
+            ans="The PMF is: " +pmf;
+        }
+        else if(op===2){
+            let mean= c*a;          
+            ans="The Mean is: " + mean;
+        }
+        else{
+            let variance = a*b*c;
+            ans="The Variance is: " + variance;
 
-        var pmf= factorial(c) / (factorial(b) * factorial(c-b));
-        console.log(pmf);
-        var n=Math.pow(a,b);
-        var s=1-a, t=c-b;
-        var m=Math.pow(s,t);
-        pmf=pmf*n*m;
-        pmf=pmf.toPrecision(5)
-        ans="The PMF is: " +pmf;
+        }
     }
     document.getElementById("bpans").innerHTML=ans;
 
@@ -1299,10 +1308,17 @@ function eircal()
         var z=parseInt(b);
         var rate_period= ((1+(x/z))**z)-1;
         var rate_p=rate_period*100;
+        var rate = (1+rate_period)**y - 1;
+        var rate_per = rate*100;
         ans +="\\[Effective \\space interest \\space rate \\space per \\space period(i) \\space \\] \\[=(1+ \\frac{r}{m})^{m}-1\\]";
-        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
+        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "}-1\\]";
         ans +="\\[="+ rate_period +"\\]";
-        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
+        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period(i \\%)=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
+        ans +="\\[Effective \\space Interest \\space rate \\space for \\space m \\space periods(i_t) \\space \\]";
+        ans +="\\[= \\space (1+ \\frac{r}{m})^{mt}-1 \\]";
+        ans +="\\[= \\space (1+ \\frac{" + x + "}{" + z + "})^{" + z + "\\times" + y + "}-1 \\]";
+        ans +="\\[= \\space " + rate + "\\]";
+        ans +="\\[Effective \\space Interest \\space rate \\space for \\space m \\space periods(i_t \\%)=" + rate + "\\space \\times \\space 100=" + rate_per + "\\% \\]";
     }
     result.innerHTML = ans;
     renderMathInElement(result);
@@ -1378,8 +1394,9 @@ function confidence() {
 
 function unitcircCal(){
     var deg = document.getElementById("unitdeg").value;
-    var x = Math.cos(deg);
-    var y = Math.sin(deg);
+    var rad=0.0174533*deg;
+    var x = Math.cos(rad);
+    var y = Math.sin(rad);
 
     document.getElementById("unitcircxans").innerHTML = "X: " + x;
     document.getElementById("unitcircyans").innerHTML = "Y: " + y;
@@ -1546,15 +1563,16 @@ function covcal() {
 function rmscal()
 {
     var num=document.getElementById("rmi").value;
-    var ans="";
+    var answer="";
     if(num=="")
     {
-        ans="Please enter all the values";
+        answer="Please enter all the values";
     }
     else
     {
         var outputstring="";
         var s=0;
+        
         num=num.trim();
         num = num.split(" ");
         var len=parseInt(num.length);
@@ -1568,13 +1586,19 @@ function rmscal()
             sum=sum+(number[i]**2);
         }
 
-        sum=sum/len;
-        sum=Math.sqrt(sum);
-        ans="The root mean square of given input is: "+sum;
-        
-    }
-    document.getElementById("rmsans").innerHTML=ans;
+        avg=sum/len;
+        rmss=Math.sqrt(avg);
+        answer+="\\[RMS \\space = \\space \\sqrt{\\frac{1}{n} \\sum_i{x_i^2}}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{\\frac{1}{"+len+"} \\times "+sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{"+1/len.toFixed(4)+" \\times "+sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{"+(1/len) * sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space "+Math.sqrt((1/len) * sum).toFixed(4)+"\\]"
+        answer+="\\[The \\space root \\space mean  \\space square \\space of\\space  given\\space  input \\space is: "+rmss.toFixed(4)+"\\]";
 
+    }
+    document.getElementById("rmsans").innerHTML=answer;
+
+    renderMathInElement(document.getElementById("rmsans"));
 }
 
 
@@ -1671,6 +1695,20 @@ function suppangvercal(){
     renderMathInElement(document.getElementById("suppangverans"));
 }
 
+function compangcal(){
+    var a=document.getElementById("cang").value;
+    var ans="";
+    if(a==""){
+        ans="Enter the angle to find the complementary";
+    } else{
+        var t=parseInt(a);
+        var v=90-t;
+        ans="\\[The \\space complementary \\space angle \\space of \\space"+a+" \\space will \\space be \\newline 90 \\degree \\space - \\space t \\degree \\newline 90 \\degree \\space - \\space "+t+" \\degree \\newline = \\space "+v+" \\degree \\]";
+    }
+    document.getElementById("compangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("compangans"));
+}
+
 function cotermangcal(){
     var a=document.getElementById("cotang").value;
     var ans="";
@@ -1690,6 +1728,26 @@ function cotermangcal(){
     }
     document.getElementById("cotermangans").innerHTML=ans;
     renderMathInElement(document.getElementById("cotermangans"));
+}
+function cotvercal(){
+    var a=document.getElementById("cotang1").value;
+    var b=document.getElementById("cotang2").value;
+    var ans="";
+    if(a==""||b==""){
+        ans="Enter both angles to verify";
+    } else{
+        var x=parseInt(a), y=parseInt(b),m1,m2;
+        m1=x%360;
+        m2=y%360;
+        console.log(m1,m2)
+        if(m1==m2 ||Math.abs(m1)+Math.abs(m2)==360)
+            ans="\\[Here \\space \\space "+a+" \\degree \\space mod \\space360 \\degree \\space = "+b+" \\degree \\space mod \\space 360 \\degree \\newline Hence,Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Coterminal\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space mod \\space360 \\degree \\space != "+b+" \\degree \\space mod \\space 360 \\degree \\newline Hence,  Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space not \\space Coterminal\\]";
+            
+    }
+    document.getElementById("cotverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotverans"));
 }
 function faccal(){
     var a=document.getElementById("facno").value;
@@ -2083,4 +2141,52 @@ function egccal()
     document.getElementById("egcexplain").innerHTML=explain;
     renderMathInElement(document.getElementById("egcans"));
     renderMathInElement(document.getElementById("egcexplain"));
+}
+function iskaprekar(n)
+{
+    if (n == 1)
+    return true;
+    let sq_n = n * n;
+    let count_digits = 0;
+    while (sq_n)
+    {
+        count_digits++;
+        sq_n = parseInt(sq_n / 10);
+    }
+ 
+    let sq_n1 = n * n; 
+    for (let r_digits = 1;
+        r_digits < count_digits;
+        r_digits++)
+    {
+        let eq_parts = Math.pow(10, r_digits);
+        if (eq_parts == n)
+            continue;
+        let sum = parseInt((sq_n1 / eq_parts) +
+                    sq_n1 % eq_parts);
+        if (sum == n)
+        return true;
+    }
+    return false;
+}
+function kapfind()
+{
+    var num=document.getElementById("kap1").value;
+    var ans="";
+    if(num==""||isNaN(num))
+    {
+        ans="Please enter proper number";
+    }
+    else
+    {
+      if(iskaprekar(num)==true)
+      {
+          ans=num+" is a Kaprekar Number";
+      }
+      else
+      {
+        ans=num+" is not a Kaprekar Number";
+      }
+    }
+    document.getElementById("kapans").innerHTML=ans;
 }
