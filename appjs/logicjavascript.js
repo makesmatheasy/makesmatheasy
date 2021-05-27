@@ -16960,11 +16960,45 @@ function convertbcd() {
         result.innerHTML = parseInt(temp, 10).toString(2);
     } else if (fromCode == "Octal" && toCode == "BCD Code") {
         input = parseInt(input, 8).toString();
-        result.innerHTML = decimalTObcd(input);
+        var x="_",y="";
+        for (var i = 0; i < input.length; i++) {
+            y = parseInt(input[i]).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+        }
+        result.innerHTML = x;
     } else if (fromCode == "BCD Code" && toCode == "Octal") {
-        var temp = "";
-        temp = bcdTOdecimal(input).join('');
-        result.innerHTML = parseInt(temp, 10).toString(8);
+        var x = "",y="";
+        var temp ="";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
+        }else{
+            x = "";
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + parseInt(temp,2).toString();
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                result.innerHTML = parseInt(x).toString(8);//converted dec to oct
+            }else{
+                result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
+            }
+        }
     } else if (fromCode == "Hexadecimal" && toCode == "BCD Code") {
         input = parseInt(input, 16).toString();
         result.innerHTML = decimalTObcd(input);
@@ -16983,8 +17017,6 @@ function convertbcd() {
         result.innerHTML = "BCD Code can only have 0's and 1's";
     } else if (fromCode == "Binary" && input.search(/^[10]+$/) == -1) {
         result.innerHTML = "BCD Code can only have 0's and 1's";
-    } else if (fromCode == "Octal" && input.search(/^[0-7]+$/) == -1) {
-        result.innerHTML = "Error : Invalid Input (Octal numbers dont have 8's and 9's";
     }
 }
 
