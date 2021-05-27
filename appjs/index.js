@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#expoDist",
         "#negbino",
         "#ackermann",
         "#lucNum",
@@ -158,6 +159,7 @@ function openit(id) {
         "#arcs",
         "#crescentLune",
         "#sigma",
+        "#negbino",
         "#chng-vol-cube",
         "#sosqs",
         "#sosqsn",
@@ -388,6 +390,7 @@ function openit(id) {
         "#dec2421",
         "#ex3",
         "#lappro",
+        "#coprimeex",
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#elonpentpyr",
