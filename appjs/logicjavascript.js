@@ -11609,18 +11609,28 @@ function retfind11(){
 
 
 function retfind3(){
-    let a = parseFloat(document.getElementById("retin6").value)
-    let x = 0.464 * a;
-    let area = 0.70477 * Math.pow(x, 2);
+    var a = parseFloat(document.getElementById("retin6").value)
+    var output =  document.getElementById("retans3");
+    var ans = "";
+    var x1 = (0.464*a);
+    var x = Math.pow(x1, 2);
+    var area = 0.70477 * x ;
     if(a<0){
-        document.getElementById("retans3").innerHTML = "side length cannot be negative"
+        ans += "\\[Side \\space Length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if(!isNaN(a)){
-    document.getElementById("retans3").innerHTML =  area.toFixed(4);
+        ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space = \\space \\frac{(π - \\sqrt{3}) \\times h^{2}}{2} \\space = \\space 0.70477 \\times h^{2} \\]"
+        ans += "\\[Side \\space of \\space the \\space Square \\space inscribed \\space within \\space a \\space equilateral \\space angled \\space triangle (a) \\space = \\space \\frac{2x}{\\sqrt{3}} + x \\space -> \\space x \\space = \\space 0.464 \\times a \\]"
+        ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space x  \\space so, \\space x \\space = \\space h \\]"
+        ans += "\\[A \\space = \\space 0.70477 \\times (0.464 \\times a)^{2} \\space =  \\space 0.70477 \\times (0.464 \\times " + a + ")^{2} \\space =  \\space 0.70477 \\times (" + x1.toFixed(4) + ")^{2} \\space =  \\space 0.70477 \\times " + x.toFixed(4) + " \\space =  \\space " + area.toFixed(4) + " \\]" 
+        output.innerHTML = ans;
     }
     else{
-        document.getElementById("retans3").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 
