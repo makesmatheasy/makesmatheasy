@@ -15050,7 +15050,34 @@ function dfact(num) {
 }
 
 function doubleFactorial(num) {
-    document.getElementById("dblFactResult").innerHTML = "The Double Factorial of " + num + " is: " + dfact(num);
+    var result = document.getElementById("dblFactResult");
+    if(num%2==0){
+        result.innerHTML += "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
+        result.innerHTML += num + "&nbsp; is EVEN <br>";
+        result.innerHTML += "So,Double Factorial for even numbers <br>";
+        result.innerHTML += "= &nbsp; n*(n-2)*(n-4).....6*4*2 <br>";
+        result.innerHTML += "So, Double Factorial of " + num + "&nbsp; = &nbsp;";
+        for(var i = num;i>0;i=i-2){
+            result.innerHTML += "&nbsp;" + i + "&nbsp; * &nbsp;";
+        }
+        result.innerHTML += "<br>";
+        result.innerHTML += num + "!! &nbsp; = &nbsp;" + dfact(num) + "<br>";
+    }else if (num%2==1){
+        result.innerHTML += "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
+        result.innerHTML += num + "&nbsp; is ODD <br>";
+        result.innerHTML += "So,Double Factorial for odd numbers <br>";
+        result.innerHTML += "= &nbsp; n*(n-2)*(n-4).....5*3*1 <br>";
+        result.innerHTML += "So, Double Factorial of " + num + "&nbsp; = &nbsp;";
+        for(var i = num;i>0;i=i-2){
+            result.innerHTML += "&nbsp;" + i + "&nbsp; * &nbsp;";
+        }
+        result.innerHTML += "<br>";
+        result.innerHTML += num + "!! &nbsp; = &nbsp;" + dfact(num) + "<br>";
+    }else if(num == 0){
+        result.innerHTML += "The Double Factorial of " + num + " is: " + dfact(num);
+    }else if(num == -1){
+        result.innerHTML += "The Double Factorial of " + num + " is: &nbsp; 1";
+    }
 }
 
 //Catalan numbers function
