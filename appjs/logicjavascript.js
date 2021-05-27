@@ -2991,7 +2991,31 @@ function impse19find(){
         pCurr = pNext;
     }
  
-    document.getElementById("impse18ans").innerHTML =  pNext;
+    document.getElementById("impse19ans").innerHTML =  pNext;
+}
+
+function impse20find(){
+    let n = parseInt(document.getElementById("impse20").value)
+    let arr = new Array(n);
+        arr[0] = 0;
+        document.getElementById("impse20ans").innerHTML = arr[0]+" ,";
+        for (let i = 1; i < n; i++)
+        {
+            let curr = arr[i - 1] - i;
+            let j;
+            for (j = 0; j < i; j++)
+            {
+                if ((arr[j] == curr) || curr < 0)
+                {
+                    curr = arr[i - 1] + i;
+                    break;
+                }
+            }
+       
+            arr[i] = curr;
+        document.getElementById("impse20ans").innerHTML = arr[i]+", ";
+               
+        }
 }
 
 function impse13find(){
