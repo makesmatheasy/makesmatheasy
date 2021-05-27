@@ -12196,10 +12196,26 @@ function cirinsemi7find() {
 }
 
 function cirinsemi8find() {
-    let a = parseInt(document.getElementById("cirinsemi9in").value)
-    let b = parseInt(document.getElementById("cirinsemi10in").value)
-    var area = (3 * Math.sqrt(3) * a * b) / (4)
-    document.getElementById("cirinsemi8ans").innerHTML = area.toFixed(5)
+    var a = parseInt(document.getElementById("cirinsemi9in").value)
+    var b = parseInt(document.getElementById("cirinsemi10in").value)
+    var area = (3 * Math.sqrt(3) * a * b) / (4);
+    var output = document.getElementById("cirinsemi8ans");
+    var temp = "";
+    if (!isNaN(a) && !isNaN(b)){
+        temp += "\\[Area \\space of \\space largest \\space isosceles \\space triangle \\space inscribed \\space in \\space Ellipse,\\]";
+        temp += "\\[\\space = \\space \\frac{3 \\times \\sqrt{3} \\times (Major \\space axis \\space length) \\times (Minor \\space axis \\space length)} {4}\\]";
+        temp += "\\[\\space = \\space \\frac{3 \\times \\sqrt{3} \\times "+a+" \\times "+b+"} {4}\\]";
+        temp += "\\[\\space = \\space \\frac{3 \\times "+(Math.sqrt(3) * a * b).toFixed(2)+"}{4}\\]";
+        temp += "\\[\\space = \\space \\frac{"+(3 * Math.sqrt(3) * a * b).toFixed(2)+"}{4}\\]";
+        temp += "\\[\\space = \\space "+area.toFixed(3)+"\\]";
+
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 
 function cirinsemi9find() {
