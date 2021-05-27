@@ -91,30 +91,72 @@ function romanize(input) {
 
 //Distance between excentre and circumcentre
 //----------------------------------------
-function excircum_1() {
+
+function excircum_1(){
     let R = parseInt(document.getElementById("radius_2").value);
     let A = parseInt(document.getElementById("ang_1").value);
     let B = parseInt(document.getElementById("ang_2").value);
     let C = parseInt(document.getElementById("ang_3").value);
 
-    var result = R * Math.sqrt(1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2)));
+    var result = R*Math.sqrt(1+(8*sin(A/2)*sin(B/2)*sin(C/2)));
     document.getElementById("excircum1").innerHTML = result;
 }
+function sin(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.sin(radians);
+}
+function cos(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.cos(radians);
+}
+function excircum_2(){
+
+function excircum_1() {
+    var R = parseInt(document.getElementById("radius_2").value);
+    var A = parseInt(document.getElementById("ang_1").value);
+    var B = parseInt(document.getElementById("ang_2").value);
+    var C = parseInt(document.getElementById("ang_3").value);
+    var excirout = document.getElementById("excircum1");
+    var excirtemp = "";
+    var result = R * Math.sqrt(1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2)));
+
+    if (isNaN(A) || isNaN(R) || isNaN(B) || isNaN(C)){
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
+
+        excirout.innerHTML = excirtemp;
+    } else{
+        excirtemp += "\\[Distance \\space between \\space excentre \\space and \\space circumcentre \\space is \\space \\]";
+        excirtemp += "\\[ \\space = \\space ( External \\space radius) \\times \\sqrt{1 + (8 \\times sin(\\frac{(angle A)}{2}) \\times sin(\\frac{(angle \\space C)}{2}) \\times sin(\\frac{(angle \\space C)}{2}) )  } \\space \\]";
+        excirtemp += "\\[ \\space = \\space "+R+" \\times \\sqrt{1 + (8 \\times sin(\\frac{"+A+"}{2}) \\times sin(\\frac{"+B+"}{2}) \\times sin(\\frac{"+C+"}{2}) )  } \\space \\]";
+        excirtemp += "\\[ \\space = \\space "+R+" \\times \\sqrt{"+(1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2))).toFixed(2)+"} \\space \\]";
+        excirtemp += "\\[\\space = \\space "+result.toFixed(3)+" \\space \\]";
+
+        excirout.innerHTML = excirtemp;
+    }
+    renderMathInElement(excirout);
+}
+
 function sin(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.sin(radians);
 }
+
 function cos(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.cos(radians);
 }
 function excircum_2() {
+
     let R1 = parseInt(document.getElementById("radius_3").value);
     let A1 = parseInt(document.getElementById("ang_A").value);
     let B1 = parseInt(document.getElementById("ang_B").value);
     let C1 = parseInt(document.getElementById("ang_C").value);
 
+
+    var result1 = R1*Math.sqrt(1+(8*cos(A1/2)*cos(B1/2)*cos(C1/2)));
+
     var result1 = R1 * Math.sqrt(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2)));
+
     document.getElementById("excircum2").innerHTML = result1;
 }
 
@@ -6816,6 +6858,31 @@ function hshapesolve() {
     }
 }
 
+// Arbelos
+
+function arbelossolve(){
+    var radiusA = parseFloat(document.getElementById("arbelos-a").value);
+    var radiusB = parseFloat(document.getElementById("arbelos-b").value);
+    var radiusField = document.getElementById("resultOfRadiusArbelos");
+    var lengthField = document.getElementById("resultOfLengthArbelos");
+    var perimeterField = document.getElementById("resultOfPerimeterArbelos");
+    var areaField = document.getElementById("resultOfAreaArbelos");
+
+    var twinRadius = ((radiusA * radiusB) / (radiusA + radiusB)); 
+    var length = Math.sqrt(radiusA* radiusB);
+    var perimeter = 2 * Math.PI * (radiusA + radiusB);
+    var area = Math.PI * radiusA * radiusB;
+
+    if (!isNaN(radiusA) && !isNaN(radiusB)) {
+        radiusField.innerHTML = `Twin Radius (R) = ${twinRadius.toFixed(3)} units`;
+        lengthField.innerHTML = `Length (c) = ${length.toFixed(3)} units`;
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)} units`;
+        areaField.innerHTML = `Area (A) = ${area.toFixed(3)} sq.units`;
+    }
+}
+
+// T - Shape
+
 function tshapesolve() {
     var beamLength = parseFloat(document.getElementById("tshape-a").value);
     var beamThickness = parseFloat(document.getElementById("tshape-b").value);
@@ -12876,15 +12943,25 @@ function typenum12find() {
 function typenum14find() {
     var s = parseInt(document.getElementById("typenum17").value)
     var n = parseInt(document.getElementById("typenum172").value)
+    var ans="\\[";
+    var explain="\\[n-th \\space term \\space of \\space s-gonal \\space number \\space is \\space given \\space as:\\frac{(s-2)n(n-1)}{2}\\]"+"\\[where, \\space s=number \\space of \\space sides \\space in \\space polygon \\space and \\space n=\\space term \\space of \\space s-gonal \\space number\\]"+"\\[";
     for (var i = 1; i <= n; i++) {
         var p = (s - 2) * i * (i - 1) / 2 + i;
         if (i == n)
-            document.getElementById("typenum14ans").innerHTML += p;
-        else
-            document.getElementById("typenum14ans").innerHTML += p + ", ";
-
+        {
+            ans += p;
+            explain+="(\\frac{("+s+"-2)"+i+"("+i+"-1)}{2}+"+i+"="+p+")";
+        }
+            
+        else{
+            ans+= p + ", ";
+            explain+="(\\frac{("+s+"-2)"+i+"("+i+"-1)}{2}+"+i+"="+p+")\\space ,";
+        }
     }
-
+    ans+="\\]";
+    explain+="\\]";
+    document.getElementById("typenum14ans").innerHTML=ans+explain;
+    renderMathInElement(document.getElementById("typenum14ans")) ;
 }
 function kaprekarRec(n, prev) {
     if (n == 0)
@@ -14277,13 +14354,15 @@ function spfind() {
 // Midrange starts
 function midrangeCal() {
     var s = 0;
-    document.getElementById("midrangeAns").innerHTML = "";
+    var result="";
     var val = document.getElementById("midrangeInp").value;
     val = val.trim()
     val = val.match(/(^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$)/g);
 
     if (val == null) {
-        document.getElementById("midrangeAns").innerHTML = `Proper input is required`;
+        result= "\\[Proper \\space input \\space is \\space required\\]";
+        document.getElementById("midrangeAns").innerHTML =result;
+        renderMathInElement(document.getElementById("midrangeAns"));
         return;
     }
 
@@ -14299,11 +14378,14 @@ function midrangeCal() {
     var min = Math.min(...val);
     var max = Math.max(...val);
     if (val.length === 0) {
-        document.getElementById("midrangeAns").innerHTML = `No Number Added`;
+        result= "\\[No \\space Number \\space Added \\]";
     } else {
         var ans = (max + min) / 2;
-        document.getElementById("midrangeAns").innerHTML = "Midrange: " + ans;
+        result= "\\[Midrange: " + ans+"\\]";
+        result+="\\[Midrange=\\frac{(Maximum \\space Value \\space + \\space Maximum \\space Value)}{2} \\newline \\space =\\frac{("+max+"+"+min+")}{2}=\\frac{"+(max+min)+"}{2}="+ans+"\\]"
     }
+    document.getElementById("midrangeAns").innerHTML =result;
+    renderMathInElement(document.getElementById("midrangeAns"));
 }
 
 // Sensitivity and specificity starts
@@ -15008,16 +15090,30 @@ function planeequation() {
 // Circum area and external radius
 
 function external_area() {
-    let R = parseInt(document.getElementById("radius").value);
-    let A = parseInt(document.getElementById("angle1").value);
-    let B = parseInt(document.getElementById("angle2").value);
-    let C = parseInt(document.getElementById("angle3").value);
+    var R = parseInt(document.getElementById("radius").value);
+    var A = parseInt(document.getElementById("angle1").value);
+    var B = parseInt(document.getElementById("angle2").value);
+    var C = parseInt(document.getElementById("angle3").value);
+    var excirout = document.getElementById("externarea");
+    var excirtemp = "";
+    var res = 8 * R**2 * (cos(A / 2) * cos(B / 2) * cos(C / 2));
 
-    var res = 8 * R * R * (cos(A / 2) * cos(B / 2) * cos(C / 2));
-    document.getElementById("externarea").innerHTML = res;
+    if (isNaN(A) || isNaN(R) || isNaN(B) || isNaN(C)){
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
 
+        excirout.innerHTML = excirtemp;
+    } else{
+        excirtemp += "\\[Circum \\space Area \\space and \\space External \\space Radius \\space is \\space \\]";
+        excirtemp += "\\[ \\space = \\space 8 \\times ( External \\space radius)^2 \\times (cos(\\frac{(angle A)}{2}) \\times cos(\\frac{(angle \\space C)}{2}) \\times cos(\\frac{(angle \\space C)}{2})) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 8 \\times "+R+"^2 \\times (cos(\\frac{"+A+"}{2}) \\times cos(\\frac{"+B+"}{2}) \\times cos(\\frac{"+C+"}{2})) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 8  \\times "+(R**2)+" \\times ("+(cos(A / 2) * cos(B / 2) * cos(C / 2)).toFixed(2)+") \\space \\]";
+        excirtemp += "\\[\\space = \\space "+res.toFixed(3)+" \\space \\]";
 
+        excirout.innerHTML = excirtemp;
+    }
+    renderMathInElement(excirout);
 }
+
 function cos(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.cos(radians);
@@ -15078,13 +15174,28 @@ function catalanNumbers(num) {
 }
 
 //Distance between incenter and excenter
-
 function dist_incenex() {
-    let r = parseInt(document.getElementById("ex_rad").value);
-    let ang = parseInt(document.getElementById("angle_1").value);
+    var r = parseInt(document.getElementById("ex_rad").value);
+    var ang = parseInt(document.getElementById("angle_1").value);
     var ans = 4 * r * (sin(ang / 2));
-    document.getElementById("dist_inex").innerHTML = ans;
+    var excirout = document.getElementById("dist_inex");
+    var excirtemp = "";
+    if (isNaN(r) || isNaN(ang)){
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
+
+        excirout.innerHTML = excirtemp;
+    } else{
+        excirtemp += "\\[Distance \\space between \\space Incenter \\space and \\space Excenter \\space of \\space a \\space Triangle \\space is \\space \\]";
+        excirtemp += "\\[ \\space = \\space 4 \\times ( External \\space radius) \\times sin(\\frac{(angle \\space A)}{2}) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 4 \\times "+r+" \\times sin(\\frac{("+ang+")}{2}) \\space \\]";
+        excirtemp += "\\[ \\space = \\space 4  \\times "+r+" \\times ("+(sin(ang / 2)).toFixed(2)+") \\space \\]";
+        excirtemp += "\\[\\space = \\space "+ans.toFixed(3)+" \\space \\]";
+
+        excirout.innerHTML = excirtemp;
+    }
+    renderMathInElement(excirout);
 }
+
 function sin(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.sin(radians);
@@ -15092,14 +15203,14 @@ function sin(degrees) {
 
 //Distance between incenter and excenter
 
-function dist_incenex() {
+function dist_incenex(){
     let r = parseInt(document.getElementById("ex_rad").value);
     let ang = parseInt(document.getElementById("angle_1").value);
-    var ans = 4 * r * (sin(ang / 2));
+    var ans = 4*r*(sin(ang/2));
     document.getElementById("dist_inex").innerHTML = ans;
 }
 function sin(degrees) {
-    var radians = (degrees * Math.PI) / 180;
+    var radians = (degrees*Math.PI)/180;
     return Math.sin(radians);
 }
 
@@ -15189,32 +15300,46 @@ function polymax6find() {
 }
 
 function regang() {
-    let a1 = parseInt(document.getElementById("regang1").value)
-    let a2 = parseInt(document.getElementById("regang2").value)
-    let a3 = parseInt(document.getElementById("regang3").value)
-    let n = parseInt(document.getElementById("regang4").value)
+    var a1 = parseInt(document.getElementById("regang1").value)
+    var a2 = parseInt(document.getElementById("regang2").value)
+    var a3 = parseInt(document.getElementById("regang3").value)
+    var n = parseInt(document.getElementById("regang4").value)
     var output = document.getElementById("regangans")
     var temp = "";
     if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(n)) {
         if (a1 < a2) {
             var x = (a2 - a1);
+            temp +="\\[Since, \\space 1st \\space vertex \\space is \\space lesser \\space than \\space the \\space 2nd \\space vertex\\]"
+            temp +="\\[\\space x \\space = \\space ("+a2+" -  "+a1+")\\]"
+            temp +="\\[\\space x \\space = \\space "+x+"\\]"
         }
         else {
             var x = a2 + n - a1;
+            temp +="\\[Since, \\space 1st \\space vertex \\space is \\space greater \\space than \\space the \\space 2nd \\space vertex\\]"
+            temp +="\\[\\space x \\space = \\space ("+a2+" + "+n+" - "+a1+")\\]"
+            temp +="\\[\\space x \\space = \\space "+x+"\\]"
         }
         if (a2 < a3) {
             var y = (a3 - a2);
+            temp +="\\[Since, \\space 2nd \\space vertex \\space is \\space lesser \\space than \\space the \\space 3rd \\space vertex\\]"
+            temp +="\\[\\space y \\space = \\space ("+a3+" -  "+a2+")\\]"
+            temp +="\\[\\space y \\space = \\space "+x+"\\]"
         }
         else {
             var y = a3 + n - a2;
+            temp +="\\[Since, \\space  2nd \\space vertex \\space is \\space greater \\space than \\space the \\space 3rd \\space vertex\\]"
+            temp +="\\[\\space y \\space = \\space ("+a3+" + "+n+" - "+a2+")\\]"
+            temp +="\\[\\space y \\space = \\space "+x+"\\]"
         }
         var angle1 = (180 * x) / n;
         var angle2 = (180 * y) / n;
         var angle = 180 - angle1 - angle2;
-        temp += "\\[Angle \\space between \\space 3 \\space vertices \\space  is \\space " + angle + " \\]"
+        temp += "\\[Angle \\space between \\space 3 \\space vertices \\space  is \\space\\]";
+        temp += "\\[\\space = \\space 180 - (\\frac{180 \\times "+x+"}{"+n+"}) - (\\frac{180 \\times "+y+"}{n}) \\]";
+        temp += "\\[\\space = \\space 180 - ("+((180 * x) / n).toFixed(2)+") - ("+((180 * y) / n).toFixed(2)+")\\]"; 
+        temp += "\\[\\space = \\space "+ angle.toFixed(3) + " \\]"
         output.innerHTML = temp;
-    }
-    else {
+    } else {
         temp += "\\[Please \\space enter \\space all \\space fields \\]";
         output.innerHTML = temp;
     }
@@ -18201,18 +18326,19 @@ function tvalue_SD(diff, length) {
 }
 
 function abvalue() {
-    let n1 = document.getElementById("absize1").value;
-    let n2 = document.getElementById("absize2").value;
-    let t1 = document.getElementById("abpos1").value;
-    let t2 = document.getElementById("abpos2").value;
+    let n1 = parseInt(document.getElementById("absize1").value);
+    let n2 = parseInt(document.getElementById("absize2").value);
+    let t1 = parseInt(document.getElementById("abpos1").value);
+    let t2 = parseInt(document.getElementById("abpos2").value);
 
     if (n1 < 30 || n2 < 30) {
         document.getElementById("abtestans").innerHTML = "A sample size of 30 or more is preferred";
     }
     else {
         let p1 = t1 / n1;
-        let p2 = t2 / n1;
+        let p2 = t2 / n2;
         let p = (t1 + t2) / (n1 + n2);
+
         let ans = (p1 - p2) / (Math.sqrt(p * (1 - p) * (1 / n1 + 1 / n2)));
         document.getElementById('abtestans').innerHTML = "The value for the AB Test is: " + ans;
     }
