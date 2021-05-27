@@ -3568,8 +3568,8 @@ function pppSolve() {
     var x1=parseFloat(document.getElementById('plpx').value);
     var y1=parseFloat(document.getElementById('plpy').value);
     var print = "\\[\\underline{Working \\space Steps} \\]";
-    var work = document.getElementById("plp_work");
-   
+    var work = document.getElementById("ppp_work");
+
     var dis = (((a*x1)+(b*y1)));
 
     print += "\\[Let \\space the \\space equation \\space of \\space the \\space required \\space line \\space be \\space - \\space a_1x \\space + \\space b_1y \\space = \\space c_1\\]";
