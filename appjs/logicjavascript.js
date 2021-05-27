@@ -11991,6 +11991,28 @@ function cirinsemi6find(){
     document.getElementById("cirinsemi6ans").innerHTML =  r;
 }
 
+function regpoly(){
+    var a = parseInt(document.getElementById("regpoly11").value)
+    var b = parseInt(document.getElementById("regpoly22").value)
+    var output = document.getElementById("regpolyans")
+    var temp = "";
+    if(!isNaN(a) && !isNaN(b)){
+          if(a % b == 0){
+              temp += "\\[Both \\space Polygons \\space have \\space same \\space center \\space as \\space both \\space Polygons \\space are \\space Inscribed  \\]"
+              output.innerHTML = temp;
+          }
+          else{
+            temp += "\\[Both \\space Polygons \\space don't \\space have \\space same \\space center \\space as \\space both \\space Polygons \\space are \\space not \\space Inscribed  \\]"
+            output.innerHTML = temp;
+          }
+    }
+    else{
+        temp += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = temp;
+    }
+renderMathInElement(output)
+}
+
 function cirinsemi7find(){
     var a = document.getElementById("cirinsemi8in").value;
     if (a!=""){
