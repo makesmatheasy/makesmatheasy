@@ -179,6 +179,7 @@ function openit(id) {
         "#trigonofun",
         "#factors",
         "#stats",
+        "#wags",
         "#math",
         "#des",
         "#gcd",

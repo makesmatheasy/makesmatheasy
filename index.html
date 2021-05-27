@@ -1307,27 +1307,6 @@
                     </tr>
                 </table>
             </li>
-             
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-
-                            <a id="excircumbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Distance between excentre and circumcentre
-                            </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Distance between excentre and circumcentre','#excircum','c','excircumfav')"><img
-                                        id="excircumfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
-
             <li>
                 <table class="table">
                     <tr>
@@ -1974,6 +1953,24 @@
             </td>
         </tr>
     </table>
+</li>
+<li>
+    <table class="table">
+        <tr>
+            <td style="border-top:none">
+                <a id="wag"
+                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Wagstaff Number</a>
+           
+             </td>
+
+         <td style="float:right;border-top: none;">
+        <span onclick="addtofavourite('Wagstaff Number','#wags','c','wagsimgfav')"><img
+                id="wagsimgfav" src="images/unfavourite.png"
+
+                style="height:1.5625rem;filter: none;"></span>
+</td>
+</tr>
+</table>
 </li>
 <li>
     <table class="table">
@@ -12015,24 +12012,17 @@
         <!-- start of Sum of divisors  calculator -->
          <div>
             <div class="collapse" id="sumDiv">
-                <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number whose sum of divisors you want : &nbsp; &nbsp; </label>
-                        <input type="number" id="smdivnum" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="sumDivisor(document.getElementById('smdivnum').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
-                            Reset
-                        </button>
-                    </div>
-                </form>
-                
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number whose sum of divisors you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="smdivnum" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="sumDivisor(document.getElementById('smdivnum').value);">
+                        Solve
+                    </button>
+                </div>
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="smDivResult"></p>
                 </div>
@@ -12042,24 +12032,17 @@
         <!-- start of Double Factorial calculator -->
          <div>
             <div class="collapse" id="dblFact">
-                <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number whose double factorial you want : &nbsp; &nbsp; </label>
-                        <input type="number" id="dfnum" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="doubleFactorial(document.getElementById('dfnum').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
-                            Reset
-                        </button>
-                    </div>
-                </form>
-                
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number whose double factorial you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="dfnum" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="doubleFactorial(document.getElementById('dfnum').value);">
+                        Solve
+                    </button>
+                </div>
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="dblFactResult"></p>
                 </div>
@@ -12089,24 +12072,17 @@
         <!-- start of Smallest number divisible calculator -->
         <div>
             <div class="collapse" id="smNum">
-                <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number : &nbsp; &nbsp; </label>
-                        <input type="number" id="sm-num" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="smallestNumberDiv(document.getElementById('sm-num').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
-                            Reset
-                        </button>
-                    </div>
-                </form>
-                
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number : &nbsp; &nbsp; </label>
+                    <input type="number" id="sm-num" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="smallestNumberDiv(document.getElementById('sm-num').value);">
+                        Solve
+                    </button>
+                </div>
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="smNumResult"></p>
                 </div>
@@ -12116,58 +12092,40 @@
         <!-- start of Lucas series calculator -->
         <div>
             <div class="collapse" id="lucNum">
-                <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number of terms of Lucas Numbers you want : &nbsp; &nbsp; </label>
-                        <input type="number" id="luc-num" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="lucasNumbers(document.getElementById('luc-num').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
-                            Reset
-                        </button>
-                    </div>
-                </form>
-                
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the number of terms of Lucas Numbers you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="luc-num" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="lucasNumbers(document.getElementById('luc-num').value);">
+                        Solve
+                    </button>
+                </div>
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="lucNumResult"></p>
                 </div>
-                <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the term whose nth Lucas Numbers you want : &nbsp; &nbsp; </label>
-                        <input type="number" id="n-luc-num" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="nLucasNumber(document.getElementById('n-luc-num').value);">
-                            Find
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                    onclick="this.form.reset();">
-                                Reset
-                            </button>
-                    </div>
-                </form>
-                
+                <div class="form-group" style="display:inline-block">
+                    <label>Enter the term whose nth Lucas Numbers you want : &nbsp; &nbsp; </label>
+                    <input type="number" id="n-luc-num" class="form__field" placeholder="x"
+                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="nLucasNumber(document.getElementById('n-luc-num').value);">
+                        Find
+                    </button>
+                </div>
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="nLucNumResult"></p>
                 </div>
                 <br>
                 <h4>Sum of numbers from 1 to N which are in Lucas Sequence</h4>
                 <br>
-                <form action="">
-                    <input type="text" id="sumlucas" class="form__field" placeholder="Enter number">
-                    <br>
-                    <button class="btn btn-dark" onclick="sumlucasfind()">Find</button>
-                    <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                </form>
-                
+                <input type="text" id="sumlucas" class="form__field" placeholder="Enter number">
+                <br>
+                <button class="btn btn-dark" onclick="sumlucasfind()">Find</button>
                 <br>
                 <p id="sumlucasans"></p>
             </div>
@@ -12587,46 +12545,6 @@
                 <h2  id="dist_inex"></h2><br>
 
                 
-        </div>
-
-        <div class="collapse" id="excircum">
-            <h2>Distance between excentre and circumcentre</h2>
-            <br>
-            <p>For OI1</p>
-            <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
-
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
-                <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
-                <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/>
-                <br>
-
-                <br>
-                <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button>
-                <br>
-            </div>
-
-                <h2  id="excircum1"></h2><br>
-                <br><br>
-
-                <p>For OI2 and OI3</p>
-                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
-    
-                <div class="form-group">
-                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
-                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
-                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
-                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/>
-                    <br>
-    
-                    <br>
-                    <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
-                    <br>
-                </div>
-    
-                    <h2  id="excircum2"></h2><br>
-
         </div>
 
 
@@ -18929,6 +18847,13 @@
     <button class="btn btn-dark" onclick="amfind()">FInd</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="amans"></p><br>
 </div>
+<div class="collapse" id="wags">
+    <h1 style="color: white;font-family:mathfont">Wagstaff Number</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="wag1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="wagcal()">FInd</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="wagans"></p><br>
+</div>
+
 <div class="collapse" id="woods">
     <h1 style="color: white;font-family:mathfont">Woodall Number</h2><p>&nbsp;</p>
     <input style="color: white; font-family:mathfont" type="text"id="wood1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
@@ -19648,20 +19573,6 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum13ans"></h5>
-    <br>
-    </form>
-    <br>
-    <h2>Polygonal Number </h2>
-    <br>
-    <form>
-    <input type="text" id="typenum17" class="form__field"placeholder="Enter the number of sides of polygon">
-    <br>
-    <input type="text" id="typenum172" class="form__field"placeholder="Enter the number of terms want to generate">
-    <br>
-    <button type="button" class="btn btn-dark" onclick="typenum14find()">Find</button>
-    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    <br>
-    <h5 id="typenum14ans"></h5>
     <br>
     </form>
 </div>

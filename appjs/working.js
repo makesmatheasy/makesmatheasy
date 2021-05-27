@@ -84,6 +84,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#wag").click(function () {
+        openit("#wags");
+        closenav();
+        clearall();
+    });
     $("#kap").click(function () {
         openit("#kaps");
         closenav();
