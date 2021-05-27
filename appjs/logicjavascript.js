@@ -3623,6 +3623,33 @@ function alisum1find() {
     document.getElementById("alisum1ans").innerHTML = "true";
 }
 
+function alisum3find(){
+    let n = parseInt(document.getElementById("alisum3").value)
+    for (let i = 0; i < n; i++){
+        for (let j = 0; j <= i; j++)
+            document.getElementById("alisum3ans").innerHTML =  Hosoya(i, j)+ " ";  
+       
+        document.getElementById("alisum3ans").innerHTML =  "<br/>";
+    }
+}
+
+function Hosoya(n, m)
+    {
+        if ((n == 0 && m == 0) ||
+            (n == 1 && m == 0) ||
+            (n == 1 && m == 1) ||
+            (n == 2 && m == 1))
+                return 1;
+        if (n > m)
+            return Hosoya(n - 1, m)+ Hosoya(n - 2, m);
+               
+        else if (m == n)
+            return Hosoya(n - 1, m - 1)+ Hosoya(n - 2, m - 2);
+               
+        else
+            return 0;
+    }
+
 function alisum2find() {
     let n = parseInt(document.getElementById("alisum2").value)
     Set < Integer > v;
