@@ -612,12 +612,12 @@ function factorial(n){
 }
 // HP ends
 
-function bpcal()
+function bpcal(op)
 {
-    var a=document.getElementById("psuc").value;
-    var b=document.getElementById("suc").value;
-    var c=document.getElementById("tri").value;
-    var ans="";
+    let a=document.getElementById("psuc").value;
+    let b=document.getElementById("suc").value;
+    let c=document.getElementById("tri").value;
+    let ans="";
 
    
     if(a==""||b==""||c=="")
@@ -628,21 +628,30 @@ function bpcal()
     {
         ans="Input Error: Probability can't be greater than 1";
     }
-    else if(b>c)
+    else if(b<c)
     {
         ans="Input Error: Successful events can't be greater than total number of trials.";
     }
    
     else{
+        if(op===1){
+            let pmf= factorial(c) / (factorial(b) * factorial(c-b));            
+            let n=Math.pow(a,b);
+            let s=1-a, t=c-b;
+            let m=Math.pow(s,t);
+            pmf=pmf*n*m;
+            pmf=pmf.toPrecision(5)
+            ans="The PMF is: " +pmf;
+        }
+        else if(op===2){
+            let mean= c*a;          
+            ans="The Mean is: " + mean;
+        }
+        else{
+            let variance = a*b*c;
+            ans="The Variance is: " + variance;
 
-        var pmf= factorial(c) / (factorial(b) * factorial(c-b));
-        console.log(pmf);
-        var n=Math.pow(a,b);
-        var s=1-a, t=c-b;
-        var m=Math.pow(s,t);
-        pmf=pmf*n*m;
-        pmf=pmf.toPrecision(5)
-        ans="The PMF is: " +pmf;
+        }
     }
     document.getElementById("bpans").innerHTML=ans;
 
