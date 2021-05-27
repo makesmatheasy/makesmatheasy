@@ -16983,6 +16983,7 @@ function convertbcd() {
                 x = x + +y + "_   ";
             }
         }
+        result.innerHTML = x;
     } else if (fromCode == "BCD Code" && toCode == "Hexadecimal") {
         var x = "",y="";
         var temp ="";
