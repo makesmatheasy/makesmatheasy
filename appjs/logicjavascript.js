@@ -19461,26 +19461,29 @@ function hypergeoscal() {
 }
 
 //Exponential Distribution Calculator
-function exprobability(op)
-{
-    let num1=document.getElementById("inrate").value;
-    let num2=document.getElementById("inran").value;
-    if(num1==""||num2=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
+function exprobability(op) {
+    var num1=parseFloat(document.getElementById("inrate").value);
+    var num2=parseFloat(document.getElementById("inran").value);
+    var exptemp ="";
+    if(isNaN(num1) || isNaN(num2)){
+        document.getElementById("exprobAns").innerHTML ="\\[Please \\space fill \\space all \\space the \\space field\\]";
+        renderMathInElement(document.getElementById("exprobAns"));
+    } else {
         if(op==1){
-            let dist =  (num1*2.71828)**(-num1*num2);
-            document.getElementById("exprobAns").innerHTML = "Exponential Probability: " + dist;
-        }
-        else if(op==2)
-            document.getElementById("exprobAns").innerHTML = "Mean: " + 1/num1;
-        else
-            document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+            var exprobout = document.getElementById("exprobAns");
+            var dist =  (num1*2.71828)**(-num1*num2);
+            exptemp += "\\[Exponential \\space Probability \\space will \\space be \\]";
+            exptemp += "\\[\\space = \\space ((Rate \\space parameter) \\times 2.71828)^{-(Rate \\space parameter) \\times (Random \\space variable)}\\]";
+            exptemp += "\\[\\space = \\space ("+num1+" \\times 2.71828)^{(-"+num1+" \\times "+num2+")}\\]";
+            exptemp += "\\[\\space = \\space "+dist.toFixed(3)+"\\]";
+            exprobout.innerHTML = exptemp;
+            renderMathInElement(exprobout);
+            return;
+        }   
+    else if(op==2)
+        document.getElementById("exprobAns").innerHTML = "Mean: " + 1/num1;
+    else
+        document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
     }
 }
 
