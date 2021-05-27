@@ -402,6 +402,7 @@ function openit(id) {
         "#repp",
         "#partial_sphere",
         "#hypergeomeans",
+        "#wedge_cuboid",
         "#mtm",
         "#igc",
         "#res1",
