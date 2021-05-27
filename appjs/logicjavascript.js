@@ -15257,32 +15257,46 @@ function polymax6find() {
 }
 
 function regang() {
-    let a1 = parseInt(document.getElementById("regang1").value)
-    let a2 = parseInt(document.getElementById("regang2").value)
-    let a3 = parseInt(document.getElementById("regang3").value)
-    let n = parseInt(document.getElementById("regang4").value)
+    var a1 = parseInt(document.getElementById("regang1").value)
+    var a2 = parseInt(document.getElementById("regang2").value)
+    var a3 = parseInt(document.getElementById("regang3").value)
+    var n = parseInt(document.getElementById("regang4").value)
     var output = document.getElementById("regangans")
     var temp = "";
     if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(n)) {
         if (a1 < a2) {
             var x = (a2 - a1);
+            temp +="\\[Since, \\space 1st \\space vertex \\space is \\space lesser \\space than \\space the \\space 2nd \\space vertex\\]"
+            temp +="\\[\\space x \\space = \\space ("+a2+" -  "+a1+")\\]"
+            temp +="\\[\\space x \\space = \\space "+x+"\\]"
         }
         else {
             var x = a2 + n - a1;
+            temp +="\\[Since, \\space 1st \\space vertex \\space is \\space greater \\space than \\space the \\space 2nd \\space vertex\\]"
+            temp +="\\[\\space x \\space = \\space ("+a2+" + "+n+" - "+a1+")\\]"
+            temp +="\\[\\space x \\space = \\space "+x+"\\]"
         }
         if (a2 < a3) {
             var y = (a3 - a2);
+            temp +="\\[Since, \\space 2nd \\space vertex \\space is \\space lesser \\space than \\space the \\space 3rd \\space vertex\\]"
+            temp +="\\[\\space y \\space = \\space ("+a3+" -  "+a2+")\\]"
+            temp +="\\[\\space y \\space = \\space "+x+"\\]"
         }
         else {
             var y = a3 + n - a2;
+            temp +="\\[Since, \\space  2nd \\space vertex \\space is \\space greater \\space than \\space the \\space 3rd \\space vertex\\]"
+            temp +="\\[\\space y \\space = \\space ("+a3+" + "+n+" - "+a2+")\\]"
+            temp +="\\[\\space y \\space = \\space "+x+"\\]"
         }
         var angle1 = (180 * x) / n;
         var angle2 = (180 * y) / n;
         var angle = 180 - angle1 - angle2;
-        temp += "\\[Angle \\space between \\space 3 \\space vertices \\space  is \\space " + angle + " \\]"
+        temp += "\\[Angle \\space between \\space 3 \\space vertices \\space  is \\space\\]";
+        temp += "\\[\\space = \\space 180 - (\\frac{180 \\times "+x+"}{"+n+"}) - (\\frac{180 \\times "+y+"}{n}) \\]";
+        temp += "\\[\\space = \\space 180 - ("+((180 * x) / n).toFixed(2)+") - ("+((180 * y) / n).toFixed(2)+")\\]"; 
+        temp += "\\[\\space = \\space "+ angle.toFixed(3) + " \\]"
         output.innerHTML = temp;
-    }
-    else {
+    } else {
         temp += "\\[Please \\space enter \\space all \\space fields \\]";
         output.innerHTML = temp;
     }
