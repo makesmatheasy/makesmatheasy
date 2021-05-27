@@ -9365,6 +9365,33 @@ function solveBicone() {
     }
 
 }
+
+
+//Anticone
+function solveanticone() {
+    var r = document.getElementById("inputanticonerad").value;
+    var h = document.getElementById("inputanticoneheight").value;
+    var i = document.getElementById("inputanticonei").value;
+    var voloutput = document.getElementById("resultofanticonevol");
+    var areaoutput = document.getElementById("resultofanticonearea");
+    var areatemp = "";
+    var voltemp = "";
+    var vol= 3.14*r*r*(h-(0.33*i));
+    var area=(3.14*r*(2*h)) + (3.14*r*r) + (3.14*r*Math.sqrt((i*i) + (r*r)));
+    if ((r != "") && (h!="") &&(i!="")) {
+        voltemp += "\\[Volume \\space of \\space Anticone \\space \\newline" + "\\pi \\times" + r + "^2" + "\\times (" + h + "-" + "\\frac{" + i + "}{3})" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Anticone \\space  \\newline" + "\\pi \\times" + r + "(2 \\times" + h + "+" + r + "\\times \\sqrt(" + i + "^2+" + r + "^2))"  + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
 //Half cone
 function solvehalfcone() {
     var r = document.getElementById("inputhalfconerad").value;

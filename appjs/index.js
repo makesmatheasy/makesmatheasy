@@ -342,6 +342,7 @@ function openit(id) {
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
+        "#anticone",
         "#goldr",
         "#goldrec",
         "#platonic",
