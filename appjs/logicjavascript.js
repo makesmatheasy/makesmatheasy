@@ -14375,9 +14375,10 @@ function Means() {
 function sccofind() {
     let h = parseInt(document.getElementById("scco").value)
     let r = parseInt(document.getElementById("scco1").value)
-    var R = ((h * r * Math.sqrt(2)) / (h + Math.sqrt(2) * r)) / 2;
+    var R = ((h * r * Math.sqrt(2)) / (h + Math.sqrt(2) * r)) / 2;                                                                            
 
-    document.getElementById("sccoans").innerHTML = R;
+    document.getElementById("sccoans").innerHTML ="\\[Radius \\space of \\space largest \\space sphere = "+R.toFixed(3)+"\\space cm \\]"+"\\[Radius \\space of \\space inscribed \\space sphere \\space is \\space given \\space as: \\space \\frac{h*r \\sqrt{2}}{2(h+ \\sqrt{2}*r)} \\newline where \\space r \\space is \\space radius \\space of \\space cone \\space and \\space h \\space is \\space height \\space of \\space cone\\]"+"\\[\\space =\\frac{"+h+"*"+r+"\\sqrt{2}}{2("+h+"+ \\sqrt{2}*"+r+")}=\\frac{"+(h * r * Math.sqrt(2)).toFixed(3)+"}{"+(2*(h + Math.sqrt(2) * r)).toFixed(3)+"}="+R.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("sccoans"));
 }
 
 function cubeinspherefind() {
