@@ -19256,10 +19256,16 @@ function amfind()
 function findnthrt()
 {
     var i = 1;
-    const x = parseInt(document.getElementById("n_rootnumber").value);
-    const n = parseInt(document.getElementById("n_rootbase").value);
+    var x = document.getElementById("n_rootnumber").value;
+    var n = document.getElementById("n_rootbase").value;
     var result=document.getElementById("nrootresult");
-
+    if(x==""||n==""||isNaN(x)||isNaN(n))
+    {
+        result.innerHTML = "Please enter proper values"; 
+    }
+    else{
+     const x = parseInt(document.getElementById("n_rootnumber").value);
+    const n = parseInt(document.getElementById("n_rootbase").value);
     if (x >= 0 && x <= 1)
     {
         low = x;
@@ -19288,7 +19294,7 @@ function findnthrt()
         guess = (low + high) / 2;
     }
     result.innerHTML = `The ${n}-th root  of ${x}  is  ${guess.toFixed(4)}`;
-
+    }
 }   
 
 //nth Lucas Number function
