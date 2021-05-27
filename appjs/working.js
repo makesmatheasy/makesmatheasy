@@ -14,12 +14,17 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
 $("#clock").click(function(){
     openit("#clocks");
+    closenav();
+    clearall();
+});
+$("#midrangebtn").click(function () {
+    openit("#midrange");
     closenav();
     clearall();
 });
@@ -84,8 +89,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#kap").click(function () {
+        openit("#kaps");
+        closenav();
+        clearall();
+    });
     $("#mathrbtn").click(function () {
         openit("#math");
+        closenav();
+        clearall();
+    });
+    $("#wood").click(function () {
+        openit("#woods");
         closenav();
         clearall();
     });
@@ -434,6 +449,11 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#planeinterceptbtn").click(function () {
+        openit("#planeintercept");
+        closenav();
+        clearall();
+    });
     $("#declbtn").click(function () {
         openit("#decl");
         closenav();
@@ -511,6 +531,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#compangbtn").click(function () {
+        openit("#compang");
+        closenav();
+        clearall();
+    });
     $("#cotermangbtn").click(function () {
         openit("#cotermang");
         closenav();
@@ -578,6 +603,11 @@ $(document).ready(function () {
     });
     $("#alibtn").click(function () {
         openit("#ali");
+        closenav();
+        clearall();
+    });
+    $("#goldsbtn").click(function () {
+        openit("#golds");
         closenav();
         clearall();
     });
@@ -683,6 +713,24 @@ $(document).ready(function () {
     //Lucas series calculator
     $("#luc-btn").click(function () {
         openit("#lucNum");
+        closenav();
+        clearall();
+    })
+    //Ackermann function
+    $("#ackermann-btn").click(function () {
+        openit("#ackermann");
+        closenav();
+        clearall();
+    })
+    //Exponential Distribution Calculator
+    $("#expo-dist-btn").click(function () {
+        openit("#expoDist");
+        closenav();
+        clearall();
+    })
+    //Negative Binomial Distribution Calculator
+    $("#negbinobtn").click(function () {
+        openit("#negbino");
         closenav();
         clearall();
     })
@@ -1000,6 +1048,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#circumradiusareabtn").click(function () {
+        openit("#circumradiusarea");
+        closenav();
+        clearall();
+    });
+    $("#excircumbtn").click(function () {
+        openit("#excircum");
+        closenav();
+        clearall();
+    });
 
     $("#quadeqncalbtn").click(function () {
         openit("#quadeqncal");
@@ -1009,6 +1067,11 @@ $(document).ready(function () {
   
     $("#plotgraphoption").click(function () {
         openit("#plotgraph");
+        closenav();
+        clearall();
+    });
+    $("#incenterexcenterbtn").click(function () {
+        openit("#incenterexcenter");
         closenav();
         clearall();
     });
@@ -1423,7 +1486,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#relriskbtn").click(function () {
+        openit("#relrisk");
+        closenav();
+        clearall();
+    }); 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
