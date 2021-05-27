@@ -13783,7 +13783,8 @@ function lacube6find() {
 //Minimum digits to remove to make a number Perfect Square
 function lacube7find() {
     let s = document.getElementById("lacube7").value;
-    let n = s.length();
+    let n = s.length;
+    console.log(n)
     let ans = -1;
     let num = "";
     for (let i = 1; i < (1 << n); i++) {
@@ -13797,14 +13798,15 @@ function lacube7find() {
         if (str.charAt(0) != '0') {
             let temp = 0;
             for (let j = 0; j <
-                str.length(); j++)
+                str.length; j++)
                 temp = temp * 10 +
-                    (int)(str.charAt(j) - '0');
+                    parseInt(str.charAt(j) - '0');
 
-            let k = Number(Math.sqrt(temp));
+            let k = parseInt(Math.sqrt(temp));
             if (k * k == temp) {
-                if (ans < Number(str.length())) {
-                    ans = Number(str.length());
+                console.log(k,temp)
+                if (ans < Number(str.length)) {
+                    ans = Number(str.length);
                     num = str;
                 }
             }
@@ -13812,12 +13814,11 @@ function lacube7find() {
     }
 
     if (ans == -1)
-        return ans;
+       document.getElementById("lacube7ans").innerHTML="Not possible to make perfect square";
     else {
 
         // print PerfectSquare
-        document.getElementById("lacube7ans").innerHTML = num + " ";
-        return n - ans;
+        document.getElementById("lacube7ans").innerHTML ="Perfect Square="+String(num)+" and Minimum Digits to remove="+String(n-ans);
     }
 }
 //Find square root of number upto given precision
