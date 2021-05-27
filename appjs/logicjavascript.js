@@ -3562,6 +3562,38 @@ function alisum1find(){
     document.getElementById("alisum1ans").innerHTML =  "true";
 }
 
+function alisum2find(){
+    let n = parseInt(document.getElementById("alisum2").value)
+    Set<Integer> v = ABUNDANT();  
+        for (let i = 1; i <= n; i++) {
+            if (v.contains(i) & v.contains(n - i)) {
+                document.getElementById("alisum2ans").innerHTML =  i + " " + (n - i);
+                return;
+            }
+        }
+}
+
+function ABUNDANT() {
+    Set<Integer> v = new HashSet();
+
+    for (let i = 1; i < N; i++) {
+        let sum = 1;
+        for (let j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                sum += j;
+                if (i / j != j) {
+                    sum += i / j;
+                }
+            }
+        }
+        if (sum > i) {
+            v.add(i);
+        }
+    }
+
+    return v;
+}
+
 function getSum( n) {
     let sum = 0;
     for ( let i = 1; i <= Math.sqrt(n); i++) {
