@@ -6769,7 +6769,23 @@ function tshapesolve() {
     }
 }
 
+// H - Shape
 
+function hshapesolve(){
+    var height = parseFloat(document.getElementById("hshape-h").value);
+    var thickness = parseFloat(document.getElementById("hshape-d").value);
+    var barLength = parseFloat(document.getElementById("hshape-l").value);
+    var perimeterField = document.getElementById("resultOfPerimeterHshape");
+    var areaField = document.getElementById("resultOfAreaHshape");
+
+    var perimeter = ((2*height) + (4*thickness) + 2*(height-thickness) + 2*barLength).toFixed(3);
+    var area = 2*height*thickness + thickness * barLength;
+
+    if (!isNaN(perimeter) && !isNaN(area)) {
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeter} units`;
+        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+    }
+}
 
 function tshapesolve() {
     var beamLength = parseFloat(document.getElementById("tshape-a").value);
@@ -9092,13 +9108,15 @@ function solvewedgecubo() {
         d2output.innerHTML = d2temp;
         voltemp += "\\[Volume \\space of \\space Wedge \\space Cuboid \\space \\newline " + a + "\\times" + b + "\\times" + h1 + "+" + a + "\\times" + b + "\\times(" + h2 + "-" + h1 + ")/2" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
         voloutput.innerHTML = voltemp;
-        areatemp += "\\[Area \\space of \\space Wedge \\space Cuboid \\space  \\newline" + a + "\\times" + b + "+" + s + " \\times" + b + "+" + b + "\\times" + h1 + "+" + b + "\\times" + h2 + "+" + a + "\\times (" + h1 + "+" + h2 + ")" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
-        areaoutput.innerHTML = areatemp;
-        renderMathInElement(soutput);
-        renderMathInElement(d1output);
+        areatemp += "\\[Area \\space of \\space Wedge \\space Cuboid \\space  \\newline" + a+ "\\times" + b + "+" + s + " \\times" + b + "+" + b + "\\times" + h1 + "+" + b + "\\times" + h2 + "+" + a + "\\times (" + h1 + "+" + h2 +")" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(soutput); 
+        renderMathInElement(d1output); 
         renderMathInElement(d2output);
-    }
+    } 
 }
+
+
 //Spherical Wedge
 function solveSphericalwedge() {
     var r = document.getElementById("inputsphericalr").value;
