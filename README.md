@@ -187,6 +187,7 @@ Other Tech/Libraries
   - Clock Angle Calculator
   - Root Mean Square
   - Squares and Cubes Calculator
+  - Relative Risk Calculator
   - n-th base root calculator
   - Perfect Squares & Cubes in a range
   - Factorization
