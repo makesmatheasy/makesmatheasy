@@ -6833,6 +6833,31 @@ function hshapesolve() {
     }
 }
 
+// Arbelos
+
+function arbelossolve(){
+    var radiusA = parseFloat(document.getElementById("arbelos-a").value);
+    var radiusB = parseFloat(document.getElementById("arbelos-b").value);
+    var radiusField = document.getElementById("resultOfRadiusArbelos");
+    var lengthField = document.getElementById("resultOfLengthArbelos");
+    var perimeterField = document.getElementById("resultOfPerimeterArbelos");
+    var areaField = document.getElementById("resultOfAreaArbelos");
+
+    var twinRadius = ((radiusA * radiusB) / (radiusA + radiusB)); 
+    var length = Math.sqrt(radiusA* radiusB);
+    var perimeter = 2 * Math.PI * (radiusA + radiusB);
+    var area = Math.PI * radiusA * radiusB;
+
+    if (!isNaN(radiusA) && !isNaN(radiusB)) {
+        radiusField.innerHTML = `Twin Radius (R) = ${twinRadius.toFixed(3)} units`;
+        lengthField.innerHTML = `Length (c) = ${length.toFixed(3)} units`;
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)} units`;
+        areaField.innerHTML = `Area (A) = ${area.toFixed(3)} sq.units`;
+    }
+}
+
+// T - Shape
+
 function tshapesolve() {
     var beamLength = parseFloat(document.getElementById("tshape-a").value);
     var beamThickness = parseFloat(document.getElementById("tshape-b").value);
