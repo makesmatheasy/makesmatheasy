@@ -1277,6 +1277,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="incenterexcenterbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Distance between Incenter and Excenter
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Distance between Incenter and Excenter','#incenterexcenter','c','incenterexcenterfav')"><img
+                                        id="incenterexcenterfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="trigonovaluestablebutton"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trigonometry
                                 Values
@@ -1291,6 +1307,27 @@
                     </tr>
                 </table>
             </li>
+             
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+
+                            <a id="excircumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Distance between excentre and circumcentre
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Distance between excentre and circumcentre','#excircum','c','excircumfav')"><img
+                                        id="excircumfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+
             <li>
                 <table class="table">
                     <tr>
@@ -4393,6 +4430,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="relriskbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Relative Risk Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Relative Risk Calculator','#relrisk','c','relriskfav')"><img
+                                        id="relriskfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
                 <!-- independent and dependent event probability-->
             <li>
                 <table class="table">
@@ -6338,6 +6391,15 @@
             <br>
             <h5 id="cirinsemi3ans"></h5>
             <br>
+            <h4>To check two Convex Regular Polygon have same center or not</h4>
+            <br>
+            <input type="text" id="regpoly11" placeholder="Enter sides of the convex regular polygon (a)" class="form__field">
+            <input type="text" id="regpoly22" placeholder="Enter sides of the convex regular polygon (b)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="regpoly()">Find</button>
+            <br>
+            <h5 id="regpolyans"></h5>
+            <br>
             <h4>Area of a circle inscribed in a rectangle which is inscribed in a semicircle</h4><br>
             <input type="text" id="cirinsemi4in" placeholder="Enter radius of semicircle" class="form__field"><br>
             <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button><br>
@@ -6391,6 +6453,19 @@
             <button class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
             <br>
             <h5 id="cirinsemi10ans"></h5>
+            <br>
+            <h4>To check whether given Point (P) lies inside a Rectangle</h4>
+            <br>
+            <input type="text" id="checkrect1" placeholder="Enter x coordinate of Rectangle (x1)" class="form__field">
+            <input type="text" id="checkrect2" placeholder="Enter y coordinate of Rectangle (y1)" class="form__field">
+            <input type="text" id="checkrect3" placeholder="Enter x coordinate of Rectangle (x2)" class="form__field">
+            <input type="text" id="checkrect4" placeholder="Enter y coordinate of Rectangle (y2)" class="form__field">
+            <input type="text" id="checkrect5" placeholder="Enter x coordinate of Point (x)" class="form__field">
+            <input type="text" id="checkrect6" placeholder="Enter y coordinate of Point (y)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="pointrect()">Find</button>
+            <br>
+            <h5 id="pointrectans"></h5>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
@@ -8727,6 +8802,22 @@
             <button type="button" class="btn btn-dark" onclick="lacube12find()">Find</button>
             <br>
             <p id="lacube12ans"></p>
+            <br>
+            <h2>Check whether a number can be represented by product of two squares</h2>
+            <br>
+            <input type="text" id="lacube14" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="lacube13find()">Find</button>
+            <br>
+            <p id="lacube13ans"></p>
+            <br>
+            <h2>Check whether a number can be represented by sum of two cubes</h2>
+            <br>
+            <input type="text" id="lacube15" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button>
+            <br>
+            <p id="lacube14ans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -11525,6 +11616,18 @@
             <h5 id="golds2ans"></h5>
             <br>
             </form>
+            <h2>Check whether two numbers are in silver ratio</h2>
+            <br>
+            <form>
+            <input type="text" id="golds4" class="form__field"placeholder="Enter the number">
+            <input type="text" id="golds5" class="form__field"placeholder="Enter the number2">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="golds3find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
+            <br>
+            <h5 id="golds3ans"></h5>
+            <br>
+            </form>
         </div>
 
         <div class="collapse" id="hyptrigonoiden">
@@ -11912,17 +12015,24 @@
         <!-- start of Sum of divisors  calculator -->
          <div>
             <div class="collapse" id="sumDiv">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number whose sum of divisors you want : &nbsp; &nbsp; </label>
-                    <input type="number" id="smdivnum" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="sumDivisor(document.getElementById('smdivnum').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number whose sum of divisors you want : &nbsp; &nbsp; </label>
+                        <input type="number" id="smdivnum" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="sumDivisor(document.getElementById('smdivnum').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="smDivResult"></p>
                 </div>
@@ -11932,17 +12042,24 @@
         <!-- start of Double Factorial calculator -->
          <div>
             <div class="collapse" id="dblFact">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number whose double factorial you want : &nbsp; &nbsp; </label>
-                    <input type="number" id="dfnum" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="doubleFactorial(document.getElementById('dfnum').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number whose double factorial you want : &nbsp; &nbsp; </label>
+                        <input type="number" id="dfnum" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="doubleFactorial(document.getElementById('dfnum').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="dblFactResult"></p>
                 </div>
@@ -11972,17 +12089,24 @@
         <!-- start of Smallest number divisible calculator -->
         <div>
             <div class="collapse" id="smNum">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number : &nbsp; &nbsp; </label>
-                    <input type="number" id="sm-num" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="smallestNumberDiv(document.getElementById('sm-num').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number : &nbsp; &nbsp; </label>
+                        <input type="number" id="sm-num" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="smallestNumberDiv(document.getElementById('sm-num').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="smNumResult"></p>
                 </div>
@@ -11992,40 +12116,58 @@
         <!-- start of Lucas series calculator -->
         <div>
             <div class="collapse" id="lucNum">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number of terms of Lucas Numbers you want : &nbsp; &nbsp; </label>
-                    <input type="number" id="luc-num" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="lucasNumbers(document.getElementById('luc-num').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number of terms of Lucas Numbers you want : &nbsp; &nbsp; </label>
+                        <input type="number" id="luc-num" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="lucasNumbers(document.getElementById('luc-num').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="lucNumResult"></p>
                 </div>
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the term whose nth Lucas Numbers you want : &nbsp; &nbsp; </label>
-                    <input type="number" id="n-luc-num" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="nLucasNumber(document.getElementById('n-luc-num').value);">
-                        Find
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the term whose nth Lucas Numbers you want : &nbsp; &nbsp; </label>
+                        <input type="number" id="n-luc-num" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="nLucasNumber(document.getElementById('n-luc-num').value);">
+                            Find
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                    onclick="this.form.reset();">
+                                Reset
+                            </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="nLucNumResult"></p>
                 </div>
                 <br>
                 <h4>Sum of numbers from 1 to N which are in Lucas Sequence</h4>
                 <br>
-                <input type="text" id="sumlucas" class="form__field" placeholder="Enter number">
-                <br>
-                <button class="btn btn-dark" onclick="sumlucasfind()">Find</button>
+                <form action="">
+                    <input type="text" id="sumlucas" class="form__field" placeholder="Enter number">
+                    <br>
+                    <button class="btn btn-dark" onclick="sumlucasfind()">Find</button>
+                    <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                </form>
+                
                 <br>
                 <p id="sumlucasans"></p>
             </div>
@@ -12160,7 +12302,37 @@
                 </div>
             </div>
         </div>
+<!-- Relative risk Calculator -->
+<div class="collapse" id="relrisk">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
+    <p style="margin-top: 2rem;">
+        Relative risk compares the probability of a disease being developed in a 
+        group exposed to a particular factor to the probability of the same disease being developed in a control group
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula: [a / (a + b)] / [c / (c + d)]</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">a is the number of members of the exposed group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">b is the number of members of the exposed group who didn't develop the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">c is the number of members of the control group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">d is the number of members of the control group who didn't develop the disease;</p>
 
+    <form action="">
+        <p style="text-align: left; color: white; margin-top:2rem;">Exposed Group</p>
+        <input class = "form__field"type="text" id="relexp0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relexp1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <p style="text-align: left; color: white; margin-top:2rem;">Control Group</p>
+        <input class = "form__field"type="text" id="relcont0" placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class = "form__field"type="text" id="relcont1" placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <button class = "btn btn-light" type="button" onclick="relrisk()">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="relriskans"></p>
+</div>
         <div class="collapse" id="expansion">
             <h2>Expansion of Trigonometric Functions</h2>
             <p>\[sine\space =\space x\space - \frac{x^3}{3!}\space + \frac{x^5}{5!} -
@@ -12394,6 +12566,69 @@
 
                 <h2  id="externradius"></h2>
         </div>
+
+
+        <div class="collapse" id="incenterexcenter">
+            <h2>Distance between Incenter and Excenter of a Triangle</h2>
+            <br>
+            <p id="incenex">\[4RsinA/2\]</p>    
+
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>
+               
+                <br>
+
+                <br>
+                <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button>
+                <br>
+            </div>
+
+                <h2  id="dist_inex"></h2><br>
+
+                
+        </div>
+
+        <div class="collapse" id="excircum">
+            <h2>Distance between excentre and circumcentre</h2>
+            <br>
+            <p>For OI1</p>
+            <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
+
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
+                <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
+                <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/>
+                <br>
+
+                <br>
+                <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button>
+                <br>
+            </div>
+
+                <h2  id="excircum1"></h2><br>
+                <br><br>
+
+                <p>For OI2 and OI3</p>
+                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
+    
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
+                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/>
+                    <br>
+    
+                    <br>
+                    <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
+                    <br>
+                </div>
+    
+                    <h2  id="excircum2"></h2><br>
+
+        </div>
+
 
         <!-- sensitivity and Specificity starts -->
     <div class="collapse" id="sensi">
@@ -12874,7 +13109,9 @@
         <input class = "form__field"type="text" id="negbinop" placeholder="Enter probability of one success">
         
         <br><br>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal()">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="negbinoCal(1)">Calculate</button>
+        <button class = "btn btn-light" type="button" onclick="negbinoCal(2)">Mean</button>
+        <button class = "btn btn-light" type="button" onclick="negbinoCal(3)">Variance</button>
         <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
     </form>
     
@@ -13087,8 +13324,8 @@
                 <br><br>
                 <input class = "form__field"type="text" id="dipnum3" placeholder="Enter the third value(X2)">
                 <br><br>
-                <button class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+                <button type="button" class = "btn btn-light" onclick="dip()">Find Fourth Value</button>
+                <button type="button" class = "btn btn-light" onclick="this.form.reset();">Reset</button>
             </form>
             
             <p id="dipans"></p>
@@ -13102,8 +13339,8 @@
                 <br><br>
                 <input class = "form__field"type="text" id="inDPnum3" placeholder="Enter the third value(X2)">
                 <br><br>
-                <button class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+                <button type="button" class = "btn btn-light" onclick="inDP()">Find Fourth Value</button>
+                <button type="button" class = "btn btn-light" onclick="this.form.reset();">Reset</button>
             </form>
             
             <p id="inDPans"></p>
@@ -14686,6 +14923,17 @@
             <h4 id="polymax6ans"></h4>
             </form>
             <br>
+            <h4>Angle between 3 vertices in a N sided Regular Polygon</h4>
+            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter 1st vertex (a1)" id="regang1"/>
+            <input type = "text" class = "form__field" placeholder = "Enter 2nd vertex (a2)" id="regang2"/>
+            <input type = "text" class = "form__field" placeholder = "Enter 3rd vertex (a3)" id="regang3"/>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regang4"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "regang()">FInd</button>
+            <br>
+            <h5 id="regangans"></h5>
+            <br>
             <h4>Side of a regular n-sided polygon circumscribed in a circle</h4>
             <br>
             <form action="">
@@ -15638,6 +15886,10 @@
                     <td><a data-toggle="modal" data-target="#tshape"
                            style="text-decoration:none;" href="#">T - Shape</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#hshape"
+                           style="text-decoration:none;" href="#">H - Shape</a></td>
+                </tr>
             </table>
         </div>
         <div class="collapse" id="consim">
@@ -16093,6 +16345,11 @@
                                         href="#">Truncated Square Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#elonsquare"
+                                        style="text-decoration:none;"
+                                        href="#">Elongated Square Pyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#tripyramid"
                                         style="text-decoration:none;"
                                         href="#">Triangular Pyramid</a></td>
@@ -16111,6 +16368,11 @@
                                     <td><a data-toggle="modal" data-target="#pentpyramid"
                                         style="text-decoration:none;"
                                         href="#">Pentagonal Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#elonpentpyr"
+                                        style="text-decoration:none;"
+                                        href="#">Elongated Pentagonal Pyramid</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#pentbipyramid"
@@ -16135,6 +16397,11 @@
                     <td><a data-toggle="modal" data-target="#wedge"
                            style="text-decoration:none;"
                            href="#">Wedge</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#wedge_cuboid"
+                           style="text-decoration:none;"
+                           href="#">Wedge Cuboid</a></td>
                 </tr>
                  <tr>
                     <td><a data-toggle="modal" data-target="#right_wedge"
@@ -17112,6 +17379,25 @@
     </div><br>
     <p id="obliop" class="text-center" style="color:white"></p>
     <p id="obliop1" class="text-center" style="color:white"></p>
+    <br>
+    <h2 style="text-align:center;">Radius of Escribed Circles of a Triangle Calculator</h2><br>
+    <div class="coll">
+        <p>
+            Enter angle (A) = <input type="text" id="inputabc" size=7 value='' placeholder="Enter angle A"> 
+            <br><br>
+            Enter angle (B) = <input type="text" id="inputabc1" size=7 value='' placeholder="Enter angle B"> 
+                <br><br>
+            Enter angle (C) = <input type="text" id="inputabc2" size=7 value='' placeholder="Enter angle C">  
+                <br><br>
+            Enter External Radius (R) = <input type="text" id="inputabc5" size=7 value='' placeholder="Enter External Radius R">  
+                <br><br>
+        <button type="button" class="btn btn-light" onclick=escbrad()>
+            Check
+        </button><br>
+        </p>
+
+    </div><br>
+    <p id="inexans" class="text-center" style="color:white"></p>
     <br>
     <h2 style="text-align:center;">Median of Triangle Calculator</h3><br>
         <div class="coll">
@@ -19329,7 +19615,6 @@ N is the population size.
     <h5 id="typenum10ans"></h5>
     </form>
     <br>
-    </form>
     <h2>Check if given number can be represented as sum of two great numbers</h2>
     <br>
     <form>
@@ -19339,6 +19624,44 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum11ans"></h5>
+    <br>
+    </form>
+    <br>
+    <h2>Kaprekar Constant </h2>
+    <br>
+    <form>
+    <input type="text" id="typenum15" class="form__field"placeholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum12find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum12ans"></h5>
+    <br>
+    </form>
+    <br>
+    <h2>Leonardo Number </h2>
+    <br>
+    <form>
+    <input type="text" id="typenum16" class="form__field"placeholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum13find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum13ans"></h5>
+    <br>
+    </form>
+    <br>
+    <h2>Polygonal Number </h2>
+    <br>
+    <form>
+    <input type="text" id="typenum17" class="form__field"placeholder="Enter the number of sides of polygon">
+    <br>
+    <input type="text" id="typenum172" class="form__field"placeholder="Enter the number of terms want to generate">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum14find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum14ans"></h5>
     <br>
     </form>
 </div>
@@ -21353,6 +21676,22 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse19find()">Find</button>
     <br>
     <p id="impse19ans"></p>
+    <br>
+    <h4>Recamann Sequence</h4>
+    <br>
+    <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse20find()">Find</button>
+    <br>
+    <p id="impse20ans"></p>
+    <br>
+    <h4>Collatz Sequence</h4>
+    <br>
+    <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse21find()">Find</button>
+    <br>
+    <p id="impse21ans"></p>
     <br>
     <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
     <br>
@@ -25074,6 +25413,54 @@ N is the population size.
                             <p class="stopwrap" id="resultOfHeightTshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterTshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaTshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="hshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">H - Shape</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A=2hd+dl\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimter (p)</h5>
+                                    <p class="text-center">\[p=2h+4d+2(h-d)+2l\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group ml-3">
+                                        <img src="images/H-shape.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter height(h)"
+                                   id="hshape-h" oninput="hshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter bar thickness(d)"
+                                   id="hshape-d" oninput="hshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter central bar length(l)"
+                                   id="hshape-l" oninput="hshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="resultOfPerimeterHshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaHshape" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -29443,6 +29830,63 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="elonsquare" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated Square Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume(V) </h5>
+                                    <p class="text-center">\[V = \Big(1+\frac{\sqrt{2}}{6} \Big) * a^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area(A) </h5>
+                                    <p class="text-center">\[A=  (5+ \sqrt{3}) *a^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height(h) </h5>
+                                    <p class="text-center">\[h = \Big( \frac{1}{\sqrt{2}} + 1 \Big)*a\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-square-pyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputelonsqupyra"
+                                   oninput="solveelonsqupyr();">
+                            <p class="stopwrap" id="resultofelonsqrpyrvol"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofelonsqrpyrrarea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofelonsqrpyrh"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="pyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -29776,6 +30220,59 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="elonpentpyr" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated Pentagonal Pyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="text-center">Height</h4>
+                                    <p class="text-center">\[h = (\sqrt{\frac{5-\sqrt{5}}{10}} + 1 )a\]</p>
+                                    <h4 class="text-center">Volume</h4>
+                                    <p class="text-center">\[V= [\frac{5+ \sqrt{5}}{24} + \frac{25 + 10*\sqrt{5}}{4}] * a^3\]</p>
+                                    <h4 class="text-center">Surface area</h4>
+                                    <p class="text-center">\[A= [ \frac{\sqrt{25 + 10 \sqrt{5}}}{4} + \frac{5 \sqrt{3}}{4} + 5 ] *a^2\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-pentagonal-pyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length(a)" id="inputelonpentpyra"
+                                   oninput="solveelonpentpyr();">   
+                            <p class="stopwrap" id="resultofelonpentpyrvol"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofelonpentpyrrarea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofelonpentpyrh"
+                               style="font-family:mathfont;"></p>
+
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="pentbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -30038,6 +30535,80 @@ N is the population size.
                             <p class="stopwrap" id="resofwedgesa2"
                                style="font-family:mathfont;"></p>
 
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="wedge_cuboid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Wedge Cuboid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume(V)</h5>
+                                    <p class="text-center">\[abh_{1} + ab(h_{2} - h_{1})/2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area(A)</h5>
+                                    <p class="text-center">\[ab + sb + bh_{1} + bh_{2} + a(h_{1} + h_{2}) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Short diagonal(d<sub>1</sub>)</h5>
+                                    <p class="text-center">\[\sqrt{a^2 + b^2 + h_{1} ^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Long diagonal(d<sub>2</sub>)</h5>
+                                    <p class="text-center">\[ \sqrt{a^2 + b^2 + h_{2} ^2}\]</p>
+                                    <br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/wedge-cuboid.png" class="img-fluid">
+                                    </div><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Slant height(s)</h5>
+                                    <p class="text-center">\[\sqrt{a^2 + (h_{2} - h_{1})^2}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter length a" id="inputwedgecuboa"
+                                   oninput="solvewedgecubo();">    
+                            <input class="form__field" type="number"
+                                   placeholder="Enter width b" id="inputwedgecubob"
+                                   oninput="solvewedgecubo();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter short height h1" id="inputwedgecuboh1"
+                                   oninput="solvewedgecubo();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter long height h2" id="inputwedgecuboh2"
+                                   oninput="solvewedgecubo();">
+                            <p class="stopwrap" id="resultofcubowedges"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcubowedged1"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcubowedged2"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcubowedgearea"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcubowedgevol"
+                               style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
                     </div>

@@ -709,6 +709,14 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "COVARIANCE CALCULATOR"){
                         document.getElementById('covs').click();
+                    }
+                    else if(inp.value.toUpperCase() == "RELATIVE RISK CALCULATOR"){
+                        clearmain()
+                        document.getElementById('relrisk').click(); 
+                    }
+                    else if (inp.value.toUpperCase() == "RELATIVE RISK CALCULATO") {
+                        clearmain()
+                        $("#relrisk").slideDown(); 
                     }  
                     else if (inp.value.toUpperCase() == "SKEWNESS CALCULATOR") {
                         $("#skews").slideToggle();    

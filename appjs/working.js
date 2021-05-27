@@ -1042,6 +1042,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#excircumbtn").click(function () {
+        openit("#excircum");
+        closenav();
+        clearall();
+    });
 
     $("#quadeqncalbtn").click(function () {
         openit("#quadeqncal");
@@ -1051,6 +1056,11 @@ $(document).ready(function () {
   
     $("#plotgraphoption").click(function () {
         openit("#plotgraph");
+        closenav();
+        clearall();
+    });
+    $("#incenterexcenterbtn").click(function () {
+        openit("#incenterexcenter");
         closenav();
         clearall();
     });
@@ -1465,7 +1475,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#relriskbtn").click(function () {
+        openit("#relrisk");
+        closenav();
+        clearall();
+    }); 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
