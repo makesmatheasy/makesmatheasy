@@ -317,6 +317,7 @@ function openit(id) {
         "#cay",
         "#utcs",
         "#anticube",
+        "#halfsphere_shell",
         "#inversetrigonoiden",
         "#hyptrigonoiden",
         "#invhyptrigonoiden",

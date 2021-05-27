@@ -9102,6 +9102,37 @@ function heightdist1(){
 
 }
 
+//spherical shell
+function solvehalf_sphere_shell() {
+    var R = document.getElementById("inputhalfsphere_shellR").value;
+    var r = document.getElementById("inputhalfsphere_shellr").value;
+    var aoutput = document.getElementById("resultofhalfsphereshella");
+    var voloutput = document.getElementById("resultofhalfsphereshellvol");
+    var areaoutput = document.getElementById("resultofhalfsphereshellarea");
+    var atemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var vol=0.67*3.14*((R*R*R)-(r*r*r));
+    var area= 3.14*((2*((R*R)+(r*r))) + ((R*R)-(r*r)));
+    if ((R != "") && (r!="")) {
+        atemp += "\\[Shell \\space thickness \\space of \\space Half \\space Spherical \\space shell \\space \\newline " + R + "-" + r + "\\ = " + eval(String(aop)) + "\\]";
+        aoutput.innerHTML = atemp;
+        voltemp += "\\[Volume \\space of \\space Half \\space Spherical \\space shell \\space \\newline \\frac{2}{3} \\times \\pi (" + R + "^3-" + r + "^3 )" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Half \\space Spherical \\space shell \\space  \\newline" + "\\pi \\times [2 \\times (" + R + "^2+" + r + "^2) + (" + R + "^2" + r+ "^2)]" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp; 
+        renderMathInElement(aoutput); 
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        aoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 function heightdist9(){
     var distance = parseFloat(document.getElementById("height92").value);
     var degree = parseFloat(document.getElementById("height93").value);
