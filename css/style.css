@@ -795,31 +795,40 @@ input[type='number'] {
   justify-content: space-evenly;
   overflow: hidden;
 }
+.icon{
+  transition:.2s ease-in-out
+}
 .icon:hover{
-  opacity: 0.8;
-  font-size: 1.4em;
+  -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
 }
 
-.fa-instagram:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  border-radius: 28%;
-  background-clip: padding-box;
-
+.fa-instagram{
+  
+  color:#d6249f;
+  font-size:40px;
 }
 
-.fa-linkedin:hover {
+
+
+.fa-linkedin {
   color:#0077b5;
+  font-size:40px;
 }
 
-.fa-envelope:hover {
+.fa-envelope{
   color: #d34836;
+  font-size:40px;
 }
 
-.fa-discord:hover {
+.fa-discord {
   color: #7289da;
+  font-size:40px;
 }
-.fa-github:hover {
+.fa-github {
   color: black;
+  font-size:40px;
 }
 
 @media (max-width:420px) {
