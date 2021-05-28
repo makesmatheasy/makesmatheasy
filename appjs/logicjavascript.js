@@ -5373,14 +5373,16 @@ function triinfind() {
         let triangle = area / n;
         let ins_tri = (triangle * 3);
         document.getElementById("triinans").innerHTML = ins_tri
-        document.getElementById("triinans").innerHTML +="\\[As\\space it\\space can\\space be\\space seen,\\space the\\space triangle\\space divides\\space given\\space polygon\\space into\\space 6 equal\\space triangular\\space areas,\\space \\space where the point\\space of intersection\\space of triangle\\space AEC is\\space the centroid\\space of the triangle.\\]"
-        document.getElementById("triinans").innerHTML +="\\[Since\\space  the\\space  Triangle\\space  ACE\\space  comprises\\space  of\\space  3\\space  out\\space  of\\space  6\\space  in\\space  it,\\space  So\\space  the\\space  area\\space  of\\space  triangle\\space  ACE will be (3 * TriangulatedArea) \\]"
-        document.getElementById("triinans").innerHTML +="\\[Therefore,\\space in\\space general,\\space if\\space there\\space is\\space an\\space N-sided\\space regular\\space polygon\\space with\\space area A, the area\\space of a triangle\\space inscribed\\space in it will be (A/N)*3.\\]"
+        document.getElementById("triinexp").innerHTML ="\\[Given\\space i\\spaces a\\space 6\\space sided\\space regular\\space polygon\\space ABCDEF\\space with\\space a \\space triangle\\space AEC\\space inscribed\\space in it.\\]"
+        document.getElementById("triinexp").innerHTML ="\\[As\\space it\\space can\\space be\\space seen,\\space the\\space triangle\\space divides\\space given\\space polygon\\space into\\space 6 equal\\space triangular\\space areas,\\space \\space where the point\\space of intersection\\space of triangle\\space AEC is\\space the centroid\\space of the triangle.\\]"
+        document.getElementById("triinexp").innerHTML ="\\[Since\\space  the\\space  Triangle\\space  ACE\\space  comprises\\space  of\\space  3\\space  out\\space  of\\space  6\\space  in\\space  it,\\space  So\\space  the\\space  area\\space  of\\space  triangle\\space  ACE will be (3 * TriangulatedArea) \\]"
+        document.getElementById("triinexp").innerHTML ="\\[Find\\space the\\space area\\space of\\space the\\space regular\\space polygon.\\space Area\\space of\\space the\\space regular\\space polygon\\space can\\space be\\space calculated\\space with\\space the\\space help\\space of\\space formula\\space (A*P)/2\\space where P is the perimeter of that polygon and A is apothem of that polygon.\\]"
+        document.getElementById("triinexp").innerHTML ="\\[Therefore,\\space in\\space general,\\space if\\space there\\space is\\space an\\space N-sided\\space regular\\space polygon\\space with\\space area A, the area\\space of a triangle\\space inscribed\\space in it will be (A/N)*3.\\]"
     }
     else {
         document.getElementById("triinans").innerHTML = "Please enter valid input"
     }
-    renderMathInElement(document.getElementById("triinans"))
+    renderMathInElement(document.getElementById("triinexp"))
 }
 
 function area_of_regular_polygon(n, len) {
