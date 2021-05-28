@@ -4641,6 +4641,24 @@
                     </tr>
                 </table>
             </li>
+             <!-- Gamma distribution Calculator -->
+             <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="gamma-dist-btn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Gamma Distribution Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Gamma distribution calculator','#gammaDist','c','gammaDistimgfav')"><img
+                                       id="gammaDistimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -5202,20 +5220,21 @@
             </div>
         </div>
         <div class="collapse" id="sieve">
-            <h2 style="text-align:center;">Sieve of Eratosthenes</h2>
-            <br><br>
-            <p>In mathematics, the sieve of Eratosthenes is an ancient algorithm for finding all prime numbers up to any given limit.</p>
-            <p>It does so by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, 
+            <h2 style="text-align:center;margin-bottom: 0px;">Sieve of Eratosthenes</h2>
+            <br>
+            <p style="color:#ababab !important">In mathematics, the sieve of Eratosthenes is an ancient algorithm for finding all prime numbers up to any given limit.</p>
+            <p style="color:#ababab !important">It does so by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, 
                 with constant difference between them that is equal to that prime.This is the sieve's key distinction from using trial division to sequentially test each candidate number for divisibility by each prime.Once all the multiples of 
                 each discovered prime have been marked as composites, the remaining unmarked numbers are primes.
             </p>
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/SieveofEratosthenes5.jpg" class="img-fluid" alt="">
+            <br>
+            <img  style=" display:block; margin-left:auto; margin-right:auto; width:80%; filter: grayscale(100%);" src="https://media.geeksforgeeks.org/wp-content/uploads/SieveofEratosthenes5.jpg" class="img-fluid" alt="">
             <br>
             <form class="text-center" style="width: 100%;">
-                <input type="text" id="sievein" class="form__field" placeholder="Enter number upto which you want prime number" style="text-align: center; width: 100%;
+                <input style="margin-bottom:0px;" type="text" id="sievein" class="form__field" placeholder="Enter number upto which you want prime number" style="text-align: center; width: 100%;
                 max-width: 450px;">
                 <br><br>
-                <button class="btn btn-dark" onclick="sievefind()">Find</button>
+                <button style="margin-top:0px; width:80px" class="btn btn-dark" onclick="sievefind()">Find</button>
                 <br>
             </form>
         
@@ -6477,13 +6496,10 @@
             <button class="btn btn-dark" onclick="cirinsemi7find()">Find</button><br>
             <h5 id="cirinsemi7ans"></h5>
             <br>
-            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4>
-            <br>
+            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4><br>
             <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
-            <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button>
-            <br>
+            <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field"><br>
+            <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button><br>
             <h5 id="cirinsemi8ans"></h5>
             <br>
             <h4>Largest triangle that can be inscribed in an ellipse</h4>
@@ -8251,8 +8267,9 @@
                 <button type="button" onclick ="this.form.reset();">Reset</button>
                 <br>
             </form>
-            
-            <h4 id="gammafindans"></h4>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="gammafindans"></p>
+            </div>
         </div>
 
         <div class = "collapse" id="beta">
@@ -8265,9 +8282,10 @@
                 <button type="button" onclick ="betafind()">Find</button>
                 <button type="button" onclick ="this.form.reset();">Reset</button>
             </form>
-            
             <br>
-            <h4 id="betafindans"></h4>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="betafindans"></p>
+            </div>
         </div>
 
         <div class="collapse" id="betagamma">
@@ -8870,6 +8888,14 @@
             <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button>
             <br>
             <p id="lacube14ans"></p>
+            <br>
+            <h2>Check whether a number can be represented by difference of two cubes</h2>
+            <br>
+            <input type="text" id="lacube16" class="form__field" placholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="lacube15find()">Find</button>
+            <br>
+            <p id="lacube15ans"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -12063,6 +12089,14 @@
             <button class="btn btn-dark" onclick="alisum2find()">Find</button>
             <br>
             <p id="alisum2ans" style="font-size: 26px;"></p>
+            <br>
+            <p>Hosoya’s Triangle</p>
+            <br>
+            <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
+            <br><br>
+            <button class="btn btn-dark" onclick="alisum3find()">Find</button>
+            <br>
+            <p id="alisum3ans" style="font-size: 26px;"></p>
         </div>
         <!-- start of Sum of divisors  calculator -->
          <div>
@@ -14715,25 +14749,36 @@
             <br><br>
             <h4>What are parallel lines?</h4>
             <p>Parallel lines are equidistant lines (lines having equal distance from each other) that will never meet. </p>
-            <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/examples-of-parallel-lines.png" alt="">
+            <div class=" d-flex justify-content-center">
+                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/examples-of-parallel-lines.png" alt="" style="width: 100%; max-width: 450px;">
+            </div>
+            
             <br><br><br>
             <h4>Conditions for Lines to be parallel</h4>
             <ol>
                 <li style="color: white;">the pair of alternate angles is equal, then two straight lines are parallel to each other.</li>
                 <br><br>
-                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/alternate-interior-angles-in-parallel-lines-1.png" alt="">
+                <div class=" d-flex justify-content-center">
+                    <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/alternate-interior-angles-in-parallel-lines-1.png" alt="" style="width: 100%; max-width: 450px;">
+                </div>
                 <br><br>
                 <li style="color: white;">the pair of interior angles are on the same side of traversals is supplementary, then the two straight lines are parallel.</li>
                 <br><br>
-                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/consecutive-interior-angles-in-parallel-lines-1.png" alt="">
+                <div class=" d-flex justify-content-center">
+                    <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/consecutive-interior-angles-in-parallel-lines-1.png" alt="" style="width: 100%; max-width: 450px;">
+                </div>
                 <br><br>
                 <li style="color: white;">the pair of corresponding angles is equal, then the two straight lines are parallel to each other.</li>
                 <br><br>
-                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/corresponding-angles-in-parallel-lines-1.png" alt="">
+                <div class=" d-flex justify-content-center">
+                    <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/corresponding-angles-in-parallel-lines-1.png" alt="" style="width: 100%; max-width: 450px;">
+                </div>
                 <br><br>
                 <li style="color: white;">Two lines cut by a transversal line are parallel when the sum of the consecutive exterior angles is 180 &deg;</li>
                 <br><br>
-                <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/consecutive-exterior-angles-in-parallel-lines.png" alt="">
+                <div class=" d-flex justify-content-center">
+                    <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/10/consecutive-exterior-angles-in-parallel-lines.png" alt="" style="width: 100%; max-width: 450px;">
+                </div>
                 <br><br>
                 <li style="color: white;">The sum of angles together on a line is 180 &deg;</li>
             </ol>
@@ -15036,15 +15081,13 @@
             <br>
             <h4 id="polymax7ans"></h4></form>
             <br>
-            <h4>Number of cycles in a Polygon with lines from Centroid to Vertices</h4>
-            <br>
+            <h4>Number of cycles in a Polygon with lines from Centroid to Vertices</h4><br>
             <form action="">
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax8"/>
-            <br>
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax8"/><br>
             <button type = "button" class="btn btn-dark" onclick = "polymax8find()">FInd</button>
-            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
-            <br>
-            <h4 id="polymax8ans"></h4></form>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <p id="polymax8ans"></p><br>
+            </form>
             <br>
             <h4>Sum of sides of largest and smallest child polygons possible from a given polygon</h4>
             <br>
@@ -16342,6 +16385,10 @@
                            href="#">Half cone</a>                    
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#hollowcone" style="text-decoration:none;"
+                           href="#">Hollow cone</a>                    
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#trunbicone" style="text-decoration:none;"
                         href="#">Truncated Bicone</a>
                  </td>
@@ -16682,11 +16729,6 @@
                            href="#">Spheroidal Cap</a></td>
                 </tr>
                 <tr>
-                    <td><a data-toggle="modal" data-target="#halfsphere_shell"
-                           style="text-decoration:none;"
-                           href="#">Half Spherical Shell</a></td>
-                </tr>
-                <tr>
                     <td><a data-toggle="modal" data-target="#ellipsoidalcap"
                            style="text-decoration:none;"
                            href="#">Ellipsoidal Cap</a></td>
@@ -16695,6 +16737,16 @@
                     <td><a data-toggle="modal" data-target="#sphere_shell"
                            style="text-decoration:none;"
                            href="#">Spherical Shell</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#halfsphere_shell"
+                           style="text-decoration:none;"
+                           href="#">Half Spherical Shell</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#cylin_shell"
+                           style="text-decoration:none;"
+                           href="#">Cylindrical Shell</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#triquetra"
@@ -17235,29 +17287,35 @@
             
             <h1 style="text-align: center; ">Date</h1>
             <br>
-            <div class="row">
+            <form action="">
+                <div class="row">
               
-                <div class="col-6" style="max-width: 50%;">
-                   
-                    <label style="display: block;">
-                        <h5 style="color: #d3d3d3 ;text-align: center; ">From</h5>
-                    </label>
-                    <input type="date" id="datef" class="form__field" placeholder="Enter Date">
+                    <div class="col-6" style="max-width: 50%;">
+                       
+                        <label style="display: block;">
+                            <h5 style="color: #d3d3d3 ;text-align: center; ">From</h5>
+                        </label>
+                        <input type="date" id="datef" class="form__field" placeholder="Enter Date">
+                    </div>
+                    <div class="col-6" style="max-width: 50%;">
+                        <label style="display: block;">
+                            <h5 style="color: #d3d3d3; text-align:center ;">To</h5>
+                        </label>
+                        <input type="date" id="datet" class="form__field" placeholder="Enter Date">
+                    </div>
                 </div>
-                <div class="col-6" style="max-width: 50%;">
-                    <label style="display: block;">
-                        <h5 style="color: #d3d3d3; text-align:center ;">To</h5>
-                    </label>
-                    <input type="date" id="datet" class="form__field" placeholder="Enter Date">
+                <br>
+                <div class="dropdown-divider"></div>
+                <div class="form-group" style="display: flex; justify-content: center;">
+                    <button  type="button" class="btn btn-light" onclick="datecal()">
+                        Find the Difference
+                    </button>
+                    <button  type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
                 </div>
-            </div>
-            <br>
-            <div class="dropdown-divider"></div>
-            <div class="form-group" style="display: flex; justify-content: center;">
-                <button  type="button" class="btn btn-light" onclick="datecal()">
-                    Find the Difference
-                </button>
-            </div>
+            </form>
+            
             <div class="row">
                 <div class="col-6" style="max-width: 66%;">
                     <label style="display: block;"> 
@@ -19160,10 +19218,7 @@
             </div>
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-light"
-                    onclick="exprobability(1)">
-                Solve
-            </button>
+            <button type="button" class="btn btn-light" onclick="exprobability(1)"> Solve </button>
             <button type="button" class="btn btn-light"
                     onclick="exprobability(2)">
                 Mean
@@ -19191,7 +19246,56 @@
     
 </div>
 <!-- Exponential Distribution Calculator end -->
-
+<!-- Gamma Distribution Calculator start -->
+<div class="collapse" id="gammaDist" style="text-align: center;">
+    <h1 >Gamma Distribution Calculator</h1>
+    <form action="">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inputx" placeholder="Enter the value of x">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inputa" placeholder="Enter the value of α">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inputb" placeholder="Enter the value of β">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="gammaprobability(1)">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light"
+                    onclick="gammaprobability(2)">
+                Mean
+            </button>
+            <button type="button" class="btn btn-light"
+                onclick="gammaprobability(3)">
+                Variance
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    <br>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="gammaprobAns"></p>
+    </div>
+    <br>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = f(x;\alpha,\beta)
+        = \frac{\beta^\alpha x^{\alpha-1} e^{-\beta x}}{\Gamma(\alpha)}\]</p> where,
+        <br> α = shape parameter <br> x = random variable <br> β = scale parameter <br>  Γ(x) = the gamma function
+    </div>
+</div>
+<!-- Gamma Distribution Calculator end -->
 
 
 <div class="collapse" id="hypergeos"> 
@@ -19285,13 +19389,17 @@
 <div class="collapse" id="manhats">
     <h1 style=" text-align: center; font-family:mathfont" >MANHATTAN DISTANCE CALCULATOR </h1>
     <p>&nbsp;</p>
-  <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">First Point:  <input type="number" name="mdx1" id="mdx1" width="5em" placeholder="Enter value of X1"> 
-    <input type="number" name="mdx2" id="mdx2" width="5em" placeholder="Enter value of  Y1">
-    <p>&nbsp;</p></p>
-  <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Second Point  <input type="number" name="mdx3" id="mdx3" width="5em" placeholder="Enter value of X2"> 
-    <input type="number" name="mdx4" id="mdx4" width="5em" placeholder="Enter value of Y2"> 
-    <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="manhatcal()">Calculate</button>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">First Point:  <input type="number" name="mdx1" id="mdx1" width="5em" placeholder="Enter value of X1"> 
+            <input type="number" name="mdx2" id="mdx2" width="5em" placeholder="Enter value of  Y1">
+            <p>&nbsp;</p></p>
+          <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Second Point  <input type="number" name="mdx3" id="mdx3" width="5em" placeholder="Enter value of X2"> 
+            <input type="number" name="mdx4" id="mdx4" width="5em" placeholder="Enter value of Y2"> 
+            <p>&nbsp;</p></p>
+            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="manhatcal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+    </form>
+  
     <p>&nbsp;</p>
     <p id="manhatans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
         <p>&nbsp;</p>
@@ -19301,13 +19409,17 @@
 <div class="collapse" id="cart">
         <h1 style=" text-align: center; font-family:mathfont">Cartesian Coordinate Calculator</h1>
             <p>&nbsp;</p>
-            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
-            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
-                <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
-                <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
-                <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
+            <form action="">
+                <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
+                <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                    <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
+                    <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
+                    <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
+                    <p>&nbsp;</p></p>
+            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+            </form>
+            
         <p>&nbsp;</p>
         <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
@@ -19317,6 +19429,7 @@
 
         <p>&nbsp;</p>
         <p>&nbsp;</p>
+        <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Cartesian</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
                 <input type="number" id="sphcartr" width="5em" placeholder="Enter the radial distance (r)"> 
@@ -19324,6 +19437,9 @@
                 <input type="number" id="sphcartfi" width="5em" placeholder="Enter the azimuth angle (φ)">
                 <p>&nbsp;</p></p>
         <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcartcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+        </form>
+            
         <p>&nbsp;</p>
         <p id="sphcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
@@ -19538,6 +19654,12 @@ N is the population size.
 
 <div class="collapse" id="halflife">
     <h1 style="font-family:mathfont; text-align:center;">Half Life Calculator </h1>
+    <br>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">In radioactivity, the interval of
+         time required for one-half of the atomic nuclei of a radioactive sample to decay (change spontaneously into other
+          nuclear species by emitting particles and energy), or, equivalently, the time interval
+         required for the number of disintegrations per second of a radioactive material to decrease by one-half is called Half-life.</p>
+         <br><br>
    <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
    <p>&nbsp;</p>
    <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
@@ -19560,11 +19682,15 @@ N is the population size.
 
 <div id="perats" class="collapse">
     <h1 style="font-family:mathfont; text-align:center;">Percentage to Ratio</h1><br><br>
-    <div style="margin-left:5rem; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
+    <form action="">
+        <div style="margin-left:5rem; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
 
-    Enter Percentage to convert to Ratio: <input type="text" id="peratx" size=5 value='' placeholder="x">% 
-    <br><br>
-    <button type="button" class="btn btn-light" style="width:8em" onclick=perratcal()>  Convert   </button>
+            Enter Percentage to convert to Ratio: <input type="text" id="peratx" size=5 value='' placeholder="x">% 
+            <br><br>
+            <button type="button" class="btn btn-light" style="width:8em" onclick=perratcal()>  Convert   </button>
+            <button type="button" class="btn btn-light" style="width:8em" onclick="this.form.reset();">  Reset   </button>
+    </form>
+    
     <br><br>
     <p id="perratans1" style= "font-family:mathfont"></p><br>
     <p id="perratans2" style= "font-family:mathfont"></p><br>
@@ -19572,10 +19698,14 @@ N is the population size.
     </div>
    <br><br><br><br>
    <h1 style="font-family:mathfont; text-align:center;">Ratio to Percentage</h1><br><br>
-   <div  style="margin-left:5rem; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
-   Enter Ratio to convert to Percentage: <input type="text" id="ratperx" size=5 value='' placeholder="a"> : <input type="text" id="ratpery" size=5 value='' placeholder="b">
-   <br><br>
-   <button type="button" class="btn btn-light" style="width:8em" onclick=ratpercal()>   Convert   </button>
+   <form action="">
+    <div  style="margin-left:5rem; color: white; text-align: center; font-size: 1.5em; font-family:mathfont">
+        Enter Ratio to convert to Percentage: <input type="text" id="ratperx" size=5 value='' placeholder="a"> : <input type="text" id="ratpery" size=5 value='' placeholder="b">
+        <br><br>
+        <button type="button" class="btn btn-light" style="width:8em" onclick=ratpercal()>   Convert   </button>
+        <button type="button" class="btn btn-light" style="width:8em" onclick="this.form.reset();">  Reset   </button>
+   </form>
+   
    <br><br>
     <div id="ratperans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
     
@@ -19882,6 +20012,18 @@ N is the population size.
     <h5 id="typenum14ans"></h5>
     <br>
     </form>
+    <br>
+    <h2>Sphenic Number </h2>
+    <br>
+    <form>
+    <input type="text" id="typenum18" class="form__field"placeholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum15find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum15ans"></h5>
+    <br>
+    </form>
 </div>
 
 <div class="collapse" id="zscores">
@@ -19942,6 +20084,18 @@ N is the population size.
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button><br><br>
         <p id="compangans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
         <p>&nbsp;</p>
+    </form>
+    <h1 style="font-family:mathfont; text-align:center;"> Verify if two angles are complementary </h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <input type="number" name="cvang1" class="form__field" id="cvang1" width="5em" placeholder="Enter first angle">
+        <p>&nbsp;</p>
+        <input type="number" name="cvang2" class="form__field" id="cvang2" width="5em" placeholder="Enter second angle">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="compangvercal()">VERIFY</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="compangverans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></p>
+
     </form>
 </div>
 <div class="collapse" id="cotermang">
@@ -21785,6 +21939,7 @@ N is the population size.
                 </button>
             </div>
             <label class="form__group" id="greyoct-result"></label>
+            <p class="" id = "grey-oct-working"></p>
         </div>
         <br><br>
         <div class="col-6">
@@ -21810,6 +21965,7 @@ N is the population size.
                 </button>
             </div>
             <label class="form__group" id="greyhexdec-result"></label>
+            <p class="" id = "grey-hexdec-working"></p>
         </div>
     </div>
 </div>
@@ -28884,6 +29040,63 @@ N is the population size.
             </div>
         </div> 
 
+        <div class="modal fade" id="hollowcone" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hollow Cone</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{\pi}{3} ( R^2 H - r^2 h )\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = ( R \sqrt{H^2 + R^2} +\] </p>
+                                        <p>\[r \sqrt{ h^2 + r^2} + R^2 - r^2 )\pi\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/half-cone.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter base radius (R)" id="inputhollowconeoutrad"
+                                       oninput="solvehollowcone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height (r)" id="inputhollowconeinrad"
+                                       oninput="solvehollowcone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height (H)" id="inputhollowconeoutheight"
+                                       oninput="solvehollowcone();">
+                            <p class="stopwrap" id="resultofhollowconeinheight"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofhollowconevol"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofhollowconearea"
+                                style="font-family:mathfont;"></p><br>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
         <div class="modal fade" id="elliptic_cone" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -31823,6 +32036,67 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="cylin_shell" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cylindrical Shell</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \pi h (R^2-r^2)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A=2 \pi \times (R+r) \times (R-r+h)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface Area</h5>
+                                    <p class="text-center">\[L= 2 \pi \times h \times (R+r)\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/cylindrical-shell.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                               placeholder="Enter radius outer cylinder(R)" id="inputcylinshellR"
+                               oninput="solvecylinshell();">
+                            <input class="form__field" type="number"
+                               placeholder="Enter radius inner cylinder(r)" id="inputcylinshellr"
+                               oninput="solvecylinshell();">
+                             <input class="form__field" type="number"
+                               placeholder="Enter height (h)" id="inputcylinshellh"
+                               oninput="solvecylinshell();">
+                            <p class="stopwrap" id="resultofcylinshellvol"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcylinshellarea"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcylinshellla"
+                            style="font-family:mathfont;"></p>
+                
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -32502,93 +32776,99 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="lengthcon-1" class="form__field"
-                                    onchange="lentgthcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Millimeter
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Centimeter
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Meter
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Kilometer
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Inch
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Foot
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Yard
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Mile
-                                </option>
-                                <option value="9" class="form_field"
-                                        style="background-color:var(--appblack);">Nautical
-                                    mile
-                                </option>
-                            </select>
-                            <input type="number" id="lengthconin" class="form__field"
-                                   placeholder="Enter Side" value="0" ;
-                                   oninput="lentgthcon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="lengthcon-2" class="form__field"
-                                    onchange="lentgthcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Millimeter
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Centimeter
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Meter
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Kilometer
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Inch
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Foot
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Yard
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Mile
-                                </option>
-                                <option value="9" class="form_field"
-                                        style="background-color:var(--appblack);">Nautical
-                                    mile
-                                </option>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="lengthconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="lengthcon-1" class="form__field"
+                                        onchange="lentgthcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Millimeter
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Centimeter
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Meter
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Kilometer
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Inch
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Foot
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Yard
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Mile
+                                    </option>
+                                    <option value="9" class="form_field"
+                                            style="background-color:var(--appblack);">Nautical
+                                        mile
+                                    </option>
+                                </select>
+                                <input type="number" id="lengthconin" class="form__field"
+                                       placeholder="Enter Side" value="0" ;
+                                       oninput="lentgthcon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="lengthcon-2" class="form__field"
+                                        onchange="lentgthcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Millimeter
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Centimeter
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Meter
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Kilometer
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Inch
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Foot
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Yard
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Mile
+                                    </option>
+                                    <option value="9" class="form_field"
+                                            style="background-color:var(--appblack);">Nautical
+                                        mile
+                                    </option>
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="lengthconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -32604,82 +32884,87 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="areacon-1" class="form__field" onchange="areacon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Acre
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Are
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Hectare
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    centimeter
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    foot
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    inch
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    meter
-                                </option>
-                            </select>
-                            <input type="number" id="areaconin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="areacon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="areacon-2" class="form__field" onchange="areacon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Acre
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Are
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Hectare
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    centimeter
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    foot
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    inch
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Square
-                                    meter
-                                </option>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="areaconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="areacon-1" class="form__field" onchange="areacon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Acre
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Are
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Hectare
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        centimeter
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        foot
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        inch
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        meter
+                                    </option>
+                                </select>
+                                <input type="number" id="areaconin" class="form__field"
+                                       placeholder="Enter Side"
+                                       value="0" ; oninput="areacon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="areacon-2" class="form__field" onchange="areacon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Acre
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Are
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Hectare
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        centimeter
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        foot
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        inch
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Square
+                                        meter
+                                    </option>
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="areaconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -32695,95 +32980,100 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="volcon-1" class="form__field" onchange="volcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Gallon
-                                    (US)
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Gallon
-                                    (UK)
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Liter
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Milliliter
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    centimeter (cc)
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    meter
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    inch
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    foot
-                                </option>
-                            </select>
-                            <input type="number" id="volconin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="volcon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="volcon-2" class="form__field" onchange="volcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Gallon
-                                    (US)
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Gallon
-                                    (UK)
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Liter
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Milliliter
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    centimeter (cc)
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    meter
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    inch
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Cubic
-                                    foot
-                                </option>
-                            </select>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="volconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="volcon-1" class="form__field" onchange="volcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Gallon
+                                        (US)
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Gallon
+                                        (UK)
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Liter
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Milliliter
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        centimeter (cc)
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        meter
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        inch
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        foot
+                                    </option>
+                                </select>
+                                <input type="number" id="volconin" class="form__field"
+                                       placeholder="Enter Side"
+                                       value="0" ; oninput="volcon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="volcon-2" class="form__field" onchange="volcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Gallon
+                                        (US)
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Gallon
+                                        (UK)
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Liter
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Milliliter
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        centimeter (cc)
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        meter
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        inch
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Cubic
+                                        foot
+                                    </option>
+                                </select>
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="volconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -32799,79 +33089,85 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="masscon-1" class="form__field" onchange="masscon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Ton
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Ton (UK)
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Ton (US)
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Pound
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Ounce
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Kilogram
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Gram
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Miligram
-                                </option>
-                            </select>
-                            <input type="number" id="massconin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="masscon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="masscon-2" class="form__field" onchange="masscon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Ton
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Ton (UK)
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Ton (US)
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Pound
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Ounce
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Kilogram
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Gram
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Miligram
-                                </option>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="massconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="masscon-1" class="form__field" onchange="masscon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Ton
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Ton (UK)
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Ton (US)
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Pound
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Ounce
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Kilogram
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Gram
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Miligram
+                                    </option>
+                                </select>
+                                <input type="number" id="massconin" class="form__field"
+                                       placeholder="Enter Side"
+                                       value="0" ; oninput="masscon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="masscon-2" class="form__field" onchange="masscon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Ton
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Ton (UK)
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Ton (US)
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Pound
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Ounce
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Kilogram
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Gram
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Miligram
+                                    </option>
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="massconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -32887,58 +33183,64 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="tempcon-1" class="form__field" onchange="tempcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Celsius
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Fahrenheit
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Kelvin
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Réaumur
-                                </option>
-                            </select>
-                            <input type="number" id="tempconin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="tempcon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="tempcon-2" class="form__field" onchange="tempcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Celsius
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Fahrenheit
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Kelvin
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Réaumur
-                                </option>
-                            </select>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="tempconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="tempcon-1" class="form__field" onchange="tempcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Celsius
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Fahrenheit
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Kelvin
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Réaumur
+                                    </option>
+                                </select>
+                                <input type="number" id="tempconin" class="form__field"
+                                       placeholder="Enter Side"
+                                       value="0" ; oninput="tempcon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="tempcon-2" class="form__field" onchange="tempcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Celsius
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Fahrenheit
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Kelvin
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Réaumur
+                                    </option>
+                                </select>
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="tempconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -32954,69 +33256,74 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="energycon-1" class="form__field" onchange="energycon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">joule[J]
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Kilojoule[kJ]
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">watt-hour[W-h]
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">kilowatt-hour[kW-h]
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">calorie
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">horsepower(metric)hour
-                                </option>
-                            </select>
-                            <input type="number" id="energyconin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="energycon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="energycon-2" class="form__field" onchange="energycon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">joule[J]
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Kilojoule[kJ]
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">watt-hour[W-h]
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">kilowatt-hour[kW-h]
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">calorie
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">horsepower(metric)hour
-                                
-                                </option>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="energyconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="energycon-1" class="form__field" onchange="energycon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">joule[J]
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Kilojoule[kJ]
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">watt-hour[W-h]
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">kilowatt-hour[kW-h]
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">calorie
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">horsepower(metric)hour
+                                    </option>
+                                </select>
+                                <input type="number" id="energyconin" class="form__field"
+                                       placeholder="Enter Side"
+                                       value="0" ; oninput="energycon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="energycon-2" class="form__field" onchange="energycon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">joule[J]
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Kilojoule[kJ]
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">watt-hour[W-h]
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">kilowatt-hour[kW-h]
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">calorie
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">horsepower(metric)hour
+                                    
+                                    </option>
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="energyconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -33033,121 +33340,127 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                       <div class="row">
-                        <div class="col-6">
-                            <label for="from">
-                                <h3>Absorbed Dose</h3>
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="radiation1con-1" class="form__field" onchange="radiation1con()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">milligray[mGy]
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">microgray[uGy]
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">centigray[cGy]
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">rad[rad]
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Gray[Gy]
-                                </option>
-                            </select>
-                            <input type="number" id="radiation1conin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="radiation1con();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="radiation1con-2" class="form__field" onchange="radiation1con()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">milligray[mGy]
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">microgray[uGy]
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">centigray[cGy]
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">rad[rad]
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Gray[Gy]
-                                </option>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="radiation1conou">0</p>
-                            </label>
-                        </div>
-
-                        <div class="col-6">
-                            <label for="from">
-                                <h3>Equivalent Dose</h3>
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="radiation2con-1" class="form__field" onchange="radiation2con()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">millisievert[mSv]
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">millirem[mrem]
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">microsievert[uSv]
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">sievert[Sv]
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">rem(rem)
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">banana equivalent dose(BED)
-                                </option>
-                            </select>
-                            <input type="number" id="radiation2conin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="radiation2con();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="radiation2con-2" class="form__field" onchange="radiation2con()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">millisievert[mSv]
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">millirem[mrem]
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">microsievert[uSv]
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">sievert[Sv]
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">rem(rem)
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">banana equivalent dose(BED)
-                                </option>
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="radiation2conou">0</p>
-                            </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <form action="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="from">
+                                        <h3>Absorbed Dose</h3>
+                                        <h5 class="text-center">From</h5>
+                                    </label>
+                                    <select id="radiation1con-1" class="form__field" onchange="radiation1con()">
+                                        <option value="1" class="form_field"
+                                                style="background-color:var(--appblack);">milligray[mGy]
+                                        </option>
+                                        <option value="2" class="form_field"
+                                                style="background-color:var(--appblack);">microgray[uGy]
+                                        </option>
+                                        <option value="3" class="form_field"
+                                                style="background-color:var(--appblack);">centigray[cGy]
+                                        </option>
+                                        <option value="4" class="form_field"
+                                                style="background-color:var(--appblack);">rad[rad]
+                                        </option>
+                                        <option value="5" class="form_field"
+                                                style="background-color:var(--appblack);">Gray[Gy]
+                                        </option>
+                                    </select>
+                                    <input type="number" id="radiation1conin" class="form__field"
+                                           placeholder="Enter Side"
+                                           value="0" ; oninput="radiation1con();">
+        
+                                    <label for="To">
+                                        <h5 class="text-center">To</h5>
+                                    </label>
+                                    <select id="radiation1con-2" class="form__field" onchange="radiation1con()">
+                                        <option value="1" class="form_field"
+                                                style="background-color:var(--appblack);">milligray[mGy]
+                                        </option>
+                                        <option value="2" class="form_field"
+                                                style="background-color:var(--appblack);">microgray[uGy]
+                                        </option>
+                                        <option value="3" class="form_field"
+                                                style="background-color:var(--appblack);">centigray[cGy]
+                                        </option>
+                                        <option value="4" class="form_field"
+                                                style="background-color:var(--appblack);">rad[rad]
+                                        </option>
+                                        <option value="5" class="form_field"
+                                                style="background-color:var(--appblack);">Gray[Gy]
+                                        </option>
+                                    </select>
+                                    <label for="out">
+                                        <p class="form__field" id="radiation1conou">0</p>
+                                    </label>
+                                </div>
+        
+                                <div class="col-6">
+                                    <label for="from">
+                                        <h3>Equivalent Dose</h3>
+                                        <h5 class="text-center">From</h5>
+                                    </label>
+                                    <select id="radiation2con-1" class="form__field" onchange="radiation2con()">
+                                        <option value="1" class="form_field"
+                                                style="background-color:var(--appblack);">millisievert[mSv]
+                                        </option>
+                                        <option value="2" class="form_field"
+                                                style="background-color:var(--appblack);">millirem[mrem]
+                                        </option>
+                                        <option value="3" class="form_field"
+                                                style="background-color:var(--appblack);">microsievert[uSv]
+                                        </option>
+                                        <option value="4" class="form_field"
+                                                style="background-color:var(--appblack);">sievert[Sv]
+                                        </option>
+                                        <option value="5" class="form_field"
+                                                style="background-color:var(--appblack);">rem(rem)
+                                        </option>
+                                        <option value="6" class="form_field"
+                                                style="background-color:var(--appblack);">banana equivalent dose(BED)
+                                        </option>
+                                    </select>
+                                    <input type="number" id="radiation2conin" class="form__field"
+                                           placeholder="Enter Side"
+                                           value="0" ; oninput="radiation2con();">
+        
+                                    <label for="To">
+                                        <h5 class="text-center">To</h5>
+                                    </label>
+                                    <select id="radiation2con-2" class="form__field" onchange="radiation2con()">
+                                        <option value="1" class="form_field"
+                                                style="background-color:var(--appblack);">millisievert[mSv]
+                                        </option>
+                                        <option value="2" class="form_field"
+                                                style="background-color:var(--appblack);">millirem[mrem]
+                                        </option>
+                                        <option value="3" class="form_field"
+                                                style="background-color:var(--appblack);">microsievert[uSv]
+                                        </option>
+                                        <option value="4" class="form_field"
+                                                style="background-color:var(--appblack);">sievert[Sv]
+                                        </option>
+                                        <option value="5" class="form_field"
+                                                style="background-color:var(--appblack);">rem(rem)
+                                        </option>
+                                        <option value="6" class="form_field"
+                                                style="background-color:var(--appblack);">banana equivalent dose(BED)
+                                        </option>
+                                    </select>
+                                    <label for="out">
+                                        <p class="form__field" id="radiation2conou">0</p>
+                                    </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Close
+                                </button>
+                                <button type="button" class="btn btn-secondary"
+                                        onclick="this.form.reset();">Reset
+                                </button>
+                            </div>
+                        </form>
+                       
                 </div>
             </div>
         </div>
@@ -33164,73 +33477,79 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="timecon-1" class="form__field" onchange="timecon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Day
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Hour
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Minute
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Second
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Millisecond
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Microsecond
-                                </option>
-
-                            </select>
-                            <input type="number" id="timeconin" class="form__field"
-                                   placeholder="Enter Side"
-                                   value="0" ; oninput="timecon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="timecon-2" class="form__field" onchange="timecon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Day
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Hour
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Minute
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Second
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Millisecond
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Microsecond
-                                </option>
-
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="timeconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="timecon-1" class="form__field" onchange="timecon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Day
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Hour
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Minute
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Second
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Millisecond
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Microsecond
+                                    </option>
+    
+                                </select>
+                                <input type="number" id="timeconin" class="form__field"
+                                       placeholder="Enter Side"
+                                       value="0" ; oninput="timecon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="timecon-2" class="form__field" onchange="timecon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Day
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Hour
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Minute
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Second
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Millisecond
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Microsecond
+                                    </option>
+    
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="timeconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -33246,89 +33565,95 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="anglecon-1" class="form__field" onchange="anglecon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Degree
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Radian
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Minutes
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Seconds
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">Sign
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">Octant
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Sextant
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Quadrant
-                                </option>
-                                <option value="9" class="form_field"
-                                        style="background-color:var(--appblack);">Revolution
-                                </option>
-
-                            </select>
-                            <input type="number" id="angleconin" class="form__field"
-                                   placeholder="Enter Angle"
-                                   value="0" ; oninput="anglecon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="anglecon-2" class="form__field" onchange="anglecon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Degree
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Radian
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Minutes
-                                </option>
-                                <option value="4" class="form_field"
-                                        style="background-color:var(--appblack);">Seconds
-                                </option>
-                                <option value="5" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Sign
-                                </option>
-                                <option value="6" class="form_field"
-                                        style="background-color:var(--appblack);">
-                                    Octant
-                                </option>
-                                <option value="7" class="form_field"
-                                        style="background-color:var(--appblack);">Sextant
-                                </option>
-                                <option value="8" class="form_field"
-                                        style="background-color:var(--appblack);">Quadrant
-                                </option>
-                                <option value="9" class="form_field"
-                                        style="background-color:var(--appblack);">Revolution
-                                </option>
-
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="angleconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="anglecon-1" class="form__field" onchange="anglecon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Degree
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Radian
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Minutes
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Seconds
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">Sign
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">Octant
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Sextant
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Quadrant
+                                    </option>
+                                    <option value="9" class="form_field"
+                                            style="background-color:var(--appblack);">Revolution
+                                    </option>
+    
+                                </select>
+                                <input type="number" id="angleconin" class="form__field"
+                                       placeholder="Enter Angle"
+                                       value="0" ; oninput="anglecon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="anglecon-2" class="form__field" onchange="anglecon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Degree
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Radian
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Minutes
+                                    </option>
+                                    <option value="4" class="form_field"
+                                            style="background-color:var(--appblack);">Seconds
+                                    </option>
+                                    <option value="5" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Sign
+                                    </option>
+                                    <option value="6" class="form_field"
+                                            style="background-color:var(--appblack);">
+                                        Octant
+                                    </option>
+                                    <option value="7" class="form_field"
+                                            style="background-color:var(--appblack);">Sextant
+                                    </option>
+                                    <option value="8" class="form_field"
+                                            style="background-color:var(--appblack);">Quadrant
+                                    </option>
+                                    <option value="9" class="form_field"
+                                            style="background-color:var(--appblack);">Revolution
+                                    </option>
+    
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="angleconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -33345,59 +33670,65 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <label for="from">
-                                <h5 class="text-center">From</h5>
-                            </label>
-                            <select id="speedcon-1" class="form__field"
-                                    onchange="speedcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Miles per
-                                    hour
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Kilometer
-                                    per hour
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Meter per
-                                    second
-                                </option>
-
-                            </select>
-                            <input type="number" id="speedconin" class="form__field"
-                                   placeholder="Enter Side" value="0" ;
-                                   oninput="speedcon();">
-
-                            <label for="To">
-                                <h5 class="text-center">To</h5>
-                            </label>
-                            <select id="speedcon-2" class="form__field"
-                                    onchange="speedcon()">
-                                <option value="1" class="form_field"
-                                        style="background-color:var(--appblack);">Miles per
-                                    hour
-                                </option>
-                                <option value="2" class="form_field"
-                                        style="background-color:var(--appblack);">Kilometer
-                                    per hour
-                                </option>
-                                <option value="3" class="form_field"
-                                        style="background-color:var(--appblack);">Meter per
-                                    second
-                                </option>
-
-                            </select>
-                            <label for="out">
-                                <p class="form__field" id="speedconou">0</p>
-                            </label>
+                        <form action="">
+                            <div class="col-6">
+                                <label for="from">
+                                    <h5 class="text-center">From</h5>
+                                </label>
+                                <select id="speedcon-1" class="form__field"
+                                        onchange="speedcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Miles per
+                                        hour
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Kilometer
+                                        per hour
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Meter per
+                                        second
+                                    </option>
+    
+                                </select>
+                                <input type="number" id="speedconin" class="form__field"
+                                       placeholder="Enter Side" value="0" ;
+                                       oninput="speedcon();">
+    
+                                <label for="To">
+                                    <h5 class="text-center">To</h5>
+                                </label>
+                                <select id="speedcon-2" class="form__field"
+                                        onchange="speedcon()">
+                                    <option value="1" class="form_field"
+                                            style="background-color:var(--appblack);">Miles per
+                                        hour
+                                    </option>
+                                    <option value="2" class="form_field"
+                                            style="background-color:var(--appblack);">Kilometer
+                                        per hour
+                                    </option>
+                                    <option value="3" class="form_field"
+                                            style="background-color:var(--appblack);">Meter per
+                                        second
+                                    </option>
+    
+                                </select>
+                                <label for="out">
+                                    <p class="form__field" id="speedconou">0</p>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -33417,74 +33748,79 @@ N is the population size.
                 </div>
 
                 <div class="modal-body">
-
-                    <div class="col-6">
-                        <label for="from">
-                            <h5 class="text-center">From</h5>
-                        </label>
-                        <select id="datacon-1" class="form__field" onchange="datacon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Bit
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">Byte
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">Kilobyte
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Megabyte
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">Gigabyte
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">Terabyte
-                            </option>
-                            <option value="7" class="form_field"
-                                    style="background-color:var(--appblack);">Petabyte
-                            </option>
-                        </select>
-                        <input type="number" id="dataconin" class="form__field"
-                               placeholder="Enter Side" value="0" ;
-                               oninput="datacon();">
-
-                        <label for="To">
-                            <h5 class="text-center">To</h5>
-                        </label>
-                        <select id="datacon-2" class="form__field" onchange="datacon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Bit
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">Byte
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">Kilobyte
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">Megabyte
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">Gigabyte
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">Terabyte
-                            </option>
-                            <option value="7" class="form_field"
-                                    style="background-color:var(--appblack);">Petabyte
-                            </option>
-                        </select>
-                        <label for="out">
-                            <p class="form__field" id="dataconou">0</p>
-                        </label>
+                    <form action="">
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="datacon-1" class="form__field" onchange="datacon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Bit
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Byte
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">Kilobyte
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Megabyte
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Gigabyte
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">Terabyte
+                                </option>
+                                <option value="7" class="form_field"
+                                        style="background-color:var(--appblack);">Petabyte
+                                </option>
+                            </select>
+                            <input type="number" id="dataconin" class="form__field"
+                                   placeholder="Enter Side" value="0" ;
+                                   oninput="datacon();">
+    
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="datacon-2" class="form__field" onchange="datacon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Bit
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">Byte
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">Kilobyte
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">Megabyte
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">Gigabyte
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">Terabyte
+                                </option>
+                                <option value="7" class="form_field"
+                                        style="background-color:var(--appblack);">Petabyte
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="dataconou">0</p>
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                    </div>
+                    </form>
+                    
             </div>
         </div>
     </div>
@@ -33558,6 +33894,9 @@ N is the population size.
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary"
+                                onclick="this.form.reset();">Reset
+                        </button>
                 </div>
             </div>
         </div>
@@ -33576,68 +33915,73 @@ N is the population size.
                 </div>
 
                 <div class="modal-body">
-
-                    <div class="col-6">
-                        <label for="from">
-                            <h5 class="text-center">From</h5>
-                        </label>
-                        <select id="powercon-1" class="form__field" onchange="powercon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Watt
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">erg/sec
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">BTU/hr
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">foot-pound/sec
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">horsepower
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">calorie/sec
-                            </option>
-                        </select>
-                        <input type="number" id="powerconin" class="form__field"
-                               placeholder="Enter Side" value="0" ;
-                               oninput="powercon();">
-
-                        <label for="To">
-                            <h5 class="text-center">To</h5>
-                        </label>
-                        <select id="powercon-2" class="form__field" onchange="powercon()">
-                            <option value="1" class="form_field"
-                                    style="background-color:var(--appblack);">Watt
-                            </option>
-                            <option value="2" class="form_field"
-                                    style="background-color:var(--appblack);">erg/sec
-                            </option>
-                            <option value="3" class="form_field"
-                                    style="background-color:var(--appblack);">BTU/hr
-                            </option>
-                            <option value="4" class="form_field"
-                                    style="background-color:var(--appblack);">foot-pound/sec
-                            </option>
-                            <option value="5" class="form_field"
-                                    style="background-color:var(--appblack);">horsepower
-                            </option>
-                            <option value="6" class="form_field"
-                                    style="background-color:var(--appblack);">calorie/sec
-                            </option>
-                        </select>
-                        <label for="out">
-                            <p class="form__field" id="powerconou">0</p>
-                        </label>
+                    <form action="">
+                        <div class="col-6">
+                            <label for="from">
+                                <h5 class="text-center">From</h5>
+                            </label>
+                            <select id="powercon-1" class="form__field" onchange="powercon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Watt
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">erg/sec
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">BTU/hr
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">foot-pound/sec
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">horsepower
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">calorie/sec
+                                </option>
+                            </select>
+                            <input type="number" id="powerconin" class="form__field"
+                                   placeholder="Enter Side" value="0" ;
+                                   oninput="powercon();">
+    
+                            <label for="To">
+                                <h5 class="text-center">To</h5>
+                            </label>
+                            <select id="powercon-2" class="form__field" onchange="powercon()">
+                                <option value="1" class="form_field"
+                                        style="background-color:var(--appblack);">Watt
+                                </option>
+                                <option value="2" class="form_field"
+                                        style="background-color:var(--appblack);">erg/sec
+                                </option>
+                                <option value="3" class="form_field"
+                                        style="background-color:var(--appblack);">BTU/hr
+                                </option>
+                                <option value="4" class="form_field"
+                                        style="background-color:var(--appblack);">foot-pound/sec
+                                </option>
+                                <option value="5" class="form_field"
+                                        style="background-color:var(--appblack);">horsepower
+                                </option>
+                                <option value="6" class="form_field"
+                                        style="background-color:var(--appblack);">calorie/sec
+                                </option>
+                            </select>
+                            <label for="out">
+                                <p class="form__field" id="powerconou">0</p>
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                    onclick="this.form.reset();">Reset
+                            </button>
+                    </div>
+                    </form>
+                    
             </div>
         </div>
     </div>
