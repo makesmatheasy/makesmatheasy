@@ -13039,6 +13039,47 @@ function typenum12find() {
     var prev = 0;
     document.getElementById("typenum12ans").innerHTML = kaprekarRec(n, prev);
 }
+
+function typenum16find(){
+    var n = parseInt(document.getElementById("typenum19").value)
+    var pf = primeFactors(n);
+    if (pf[0] == n)
+        return false;
+    var all_pf_sum = 0;   
+    for (var i = 0; i < pf.length; i++) {
+ 
+        var pf_sum;
+        for (pf_sum = 0; pf[i] > 0;
+             pf_sum += pf[i] % 10, pf[i] = parseInt(pf[i]/10))
+            ;
+ 
+        all_pf_sum += pf_sum;
+    }
+    var sum_n;
+    for (sum_n = 0; n > 0; sum_n += n % 10,n = parseInt(n/10))
+    document.getElementById("typenum16ans").innerHTML =  sum_n == all_pf_sum;
+}
+
+function primeFactors(n)
+{
+    var res =[];
+    if (n % 2 == 0) {
+        while (n % 2 == 0)
+            n = parseInt(n / 2);
+        res.push(2);
+    }
+    for (var i = 3; i <= Math.sqrt(n); i = i + 2) {
+        if (n % i == 0) {
+            while (n % i == 0)
+                n = parseInt(n / i);
+            res.push(i);
+        }
+    }
+    if (n > 2)
+        res.push(n);
+    return res;
+}
+
 let arr = Array(1001).fill(true);
 function typenum15find(){
     var n = parseInt(document.getElementById("typenum18").value)
