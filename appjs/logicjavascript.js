@@ -1323,7 +1323,17 @@ function paralleloarea() {
     var display = document.getElementById("paralleo");
     var disptemp = "";
     if (!isNaN(vx1) && !isNaN(vy1) && !isNaN(vz1) && !isNaN(vx2) && !isNaN(vy2) && !isNaN(vz2) && !isNaN(vx3) && !isNaN(vy3) && !isNaN(vz3)) {
-        disptemp += ((vx1 * ((vy2 * vz3) - (vy3 * vz2))) - (vy1 * ((vx2 * vz3) - (vz2 * vx3))) + (vz1 * ((vx2 * vy3) - (vy2 * vx3))));
+        var ans = ((vx1 * ((vy2 * vz3) - (vy3 * vz2))) - (vy1 * ((vx2 * vz3) - (vz2 * vx3))) + (vz1 * ((vx2 * vy3) - (vy2 * vx3))));
+        disptemp += "\\[Working \\space Steps\\]";
+        disptemp += "\\[Volume \\space of \\space Parallelopiped \\space whose \\space adjacent \\space sides \\space are \\space represented \\space by \\space three \\space vectors \\]";
+        disptemp += "\\[= Scalar \\space Triple \\space Product \\space of \\space the \\space three \\space vectors \\space a \\space b \\space and c \\]";
+        disptemp += "\\[= \\overrightarrow{a} . (\\overrightarrow{b} \\times \\overrightarrow{c} )\\]";
+        disptemp += "\\[= \\space \\begin{vmatrix} x1 & y1 & z1 \\\\ x2 & y2 & z2 \\\\ x3 & y3 & z3 \\end{vmatrix}\\]";
+        disptemp += "\\[= \\space \\begin{vmatrix} " + vx1 + " & " + vy1 + " & " + vz1 + " \\\\ " + vx2 + " & " + vy2 + " & " + vz2 + " \\\\ " + vx3 + " & " + vy3 + " & " + vz3 + " \\end{vmatrix}\\]";
+        disptemp += "\\[= \\space ((" + vx1 + " \\times ((" + vy2 + " \\times " + vz3 + ") - (" + vy3 + " \\times " + vz2 + "))) - (" + vy1 + " \\times ((" + vx2 + " \\times " + vz3 + ") - (" + vz2 + " \\times " + vx3 + "))) + (" + vz1 + " \\times ((" + vx2 + " \\times " + vy3 + ") - (" + vy2 + " \\times " + vx3 + "))));\\]";
+        disptemp += "\\[= " + ans + "\\]";
+        disptemp += "\\[Volume \\space of \\space parallelopiped \\space = \\space " + ans + "\\space cb.units \\]";
+
         display.innerHTML = disptemp;
         renderMathInElement(display);
     }
