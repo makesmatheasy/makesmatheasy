@@ -17889,18 +17889,28 @@ function convertdec2421() {
             x = x + +y + "_   ";
         }
     }
-    }else if(type === "Binary"){
+
+
+
+
+
+
+    else if(type === "Octal"){
         var x = "_";
         var y = "";
 
-        input = parseInt(input,2).toString();
+        input = parseInt(input,8).toString();
+
+
+
+
         for (var i = 0; i < input.length; i++) {
             if (parseInt(input[i]) < 5) {
                 y = (parseInt(input[i]) + 0).toString(2);
             } else if (parseInt(input[i]) > 4) {
                 y = (parseInt(input[i]) + 6).toString(2);
             }
-    
+
             if (y.length == 1) {
                 x = x + "000" + y + "_   ";
             }
