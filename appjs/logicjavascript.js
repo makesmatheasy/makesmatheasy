@@ -9671,6 +9671,27 @@ function solveSalinon() {
     }
 
 }
+
+//Spherical Triangle
+function sphericalTriangleSolve() {
+    var r = parseFloat(document.getElementById("sphericaltri-r").value);
+    var alpha = parseFloat(document.getElementById("sphericaltri-a").value);
+    var beta = parseFloat(document.getElementById("sphericaltri-b").value);
+    var gamma = parseFloat(document.getElementById("sphericaltri-y").value);
+    var sphericalExcessField = document.getElementById("resultSphericalExcessSphereTri");
+    var areaField = document.getElementById("resultAreaSphereTri");
+    var sphericalExcess = alpha + beta + gamma - 180;
+    var area = sphericalExcess * r * r;
+    if(sphericalExcess < 0){
+        sphericalExcessField.innerHTML = "Angular sum must be > 180!";
+        areaField.innerHTML = "";
+    }
+    else if ((!isNaN(r)) && (!isNaN(alpha)) && (!isNaN(beta)) && (!isNaN(gamma))) {
+        sphericalExcessField.innerHTML = `Spherical excess (ε) = ${sphericalExcess}°`;
+        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+    }
+}
+
 //HemiSphere
 function solvehemisphere() {
     var radius = document.getElementById("inputradiushemisph").value;
