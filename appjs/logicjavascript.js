@@ -12992,6 +12992,41 @@ function typenum12find() {
     var prev = 0;
     document.getElementById("typenum12ans").innerHTML = kaprekarRec(n, prev);
 }
+let arr = Array(1001).fill(true);
+function typenum15find(){
+    var n = parseInt(document.getElementById("typenum18").value)
+    simpleSieve();
+    var ans = find_sphene(n);
+    if (ans == 1)
+        document.getElementById("typenum15ans").innerHTML  =  "Yes"
+    else
+        document.getElementById("typenum15ans").innerHTML  =  "NO"
+    }    
+}
+function simpleSieve(){
+    for (let p = 2; p * p < 1001; p++) {
+        if (arr[p]) {
+            for (let i = p * 2; i < 1001; i = i + p)
+                arr[i] = false;
+        }
+    }
+}
+ 
+function find_sphene(N) {
+    var arr1 = Array(8).fill(0); 
+    var count = 0; 
+    var j = 0;
+    for (let i = 1; i <= N; i++) {
+        if (N % i == 0 && count < 8) {
+            count++;
+            arr1[j++] = i; 
+        }
+    }
+    if (count == 8 && (arr[arr1[1]] && arr[arr1[2]] && arr[arr1[3]]))
+        return 1;
+ 
+    return 0;
+    }
 function typenum14find() {
     var s = parseInt(document.getElementById("typenum17").value)
     var n = parseInt(document.getElementById("typenum172").value)
