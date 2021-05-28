@@ -17938,36 +17938,60 @@ function convertdec2421() {
         if (y.length == 4) {
             x = x + +y + "_   ";
         }
-    }
-
-
-
-
-
-
-
-
-    else if(type === "Octal"){
+      }
+    }else if(type === "Binary"){
         var x = "_";
         var y = "";
-
+        input = parseInt(input,2).toString();
+        for (var i = 0; i < input.length; i++) {
+            if (parseInt(input[i]) < 5) {
+                y = (parseInt(input[i]) + 0).toString(2);
+            } else if (parseInt(input[i]) > 4) {
+                y = (parseInt(input[i]) + 6).toString(2);
+            }
+    
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+        }
+    }else if(type === "Octal"){
+        var x = "_";
+        var y = "";
         input = parseInt(input,8).toString();
-
-
-
-
-
-
-
-
-
-    else if(type === "Hexa decimal"){
+        for (var i = 0; i < input.length; i++) {
+            if (parseInt(input[i]) < 5) {
+                y = (parseInt(input[i]) + 0).toString(2);
+            } else if (parseInt(input[i]) > 4) {
+                y = (parseInt(input[i]) + 6).toString(2);
+            }
+    
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+        }
+    }else if(type === "Hexa decimal"){
         var x = "_";
         var y = "";
 
         input = parseInt(input,16).toString();
-
-
         for (var i = 0; i < input.length; i++) {
             if (parseInt(input[i]) < 5) {
                 y = (parseInt(input[i]) + 0).toString(2);
@@ -17988,8 +18012,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }
-    result.innerHTML = x;
+    }result.innerHTML = x;
 }
 
 
