@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
 $("#midrangebtn").click(function () {
     openit("#midrange");
     closenav();
