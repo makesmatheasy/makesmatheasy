@@ -5542,29 +5542,36 @@ function obliquetri() {
     b = parseFloat(document.getElementById('inputsideobb').value);
     c = parseFloat(document.getElementById('inputsideobc').value);
     var displayop = document.getElementById("obliop");
-    var displayop1 = document.getElementById("obliop1");
     var explaintemp = "";
-    var explaintemp1 = "";
     if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
         if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)) {
-            explaintemp += "It will not form an oblique triangle."
+            explaintemp += "\\[If \\space A^{2} \\space = \\space B^{2} \\space + C^{2} \\space or \\space \\space B^{2} \\space = \\space A^{2} \\space + C^{2} \\space or \\space \\space C^{2} \\space = \\space A^{2} \\space + B^{2} \\space it \\space will \\space form \\space a \\space Right \\space Angle \\space Triangle \\]"
+            explaintemp += "\\[" + a + " \\times " + a + " \\space = \\space " + b + "\\times" + b + " + " +  c + "\\times" + c + " \\space -> \\space " + (a * a) + " \\space = \\space " + (b * b + c * c) + " \\]"
+            explaintemp += "\\[" + b + " \\times " + b + " \\space = \\space " + a + "\\times" + a + " + " +  c + "\\times" + c + " \\space -> \\space " + (b * b) + " \\space = \\space " + (a * a + c * c) + " \\]"
+            explaintemp += "\\[" + c + " \\times " + c + " \\space = \\space " + a + "\\times" + a + " + " +  b + "\\times" + b + " \\space -> \\space " + (c * c) + " \\space = \\space " + (a * a + b * b) + " \\]"
+            explaintemp += "\\[ It \\space is \\space a \\space Right \\space Angle \\space Triangle \\]"
+            explaintemp += "\\[An \\space Oblique \\space Triangle \\space is \\space a \\space Triangle \\space with \\space no \\space Right \\space Angle \\space it \\space is \\space either \\space Obtuse \\space Angle \\space or \\space Acute \\space Angle \\space \\]"
+            explaintemp += "\\[So \\space It \\space will \\space not \\space form \\space an \\space oblique \\space triangle. \\]"
             displayop.innerHTML = explaintemp;
             renderMathInElement(obliop);
         }
         else {
-            explaintemp1 += "It will form an oblique triangle";
-            displayop1.innerHTML = explaintemp1;
-            renderMathInElement(obliop1);
+            explaintemp += "\\[If \\space A^{2} \\space = \\space B^{2} \\space + C^{2} \\space or \\space \\space B^{2} \\space = \\space A^{2} \\space + C^{2} \\space or \\space \\space C^{2} \\space = \\space A^{2} \\space + B^{2} \\space it \\space will \\space form \\space a \\space Right \\space Angle \\space Triangle \\]"
+            explaintemp += "\\[" + a + " \\times " + a + " \\space = \\space " + b + "\\times" + b + " + " +  c + "\\times" + c + " \\space -> \\space " + (a * a) + " \\space = \\space " + (b * b + c * c) +  " \\]"
+            explaintemp += "\\[" + b + " \\times " + b + " \\space = \\space " + a + "\\times" + a + " + " +  c + "\\times" + c + " \\space -> \\space " + (b * b) + " \\space = \\space " + (a * a + c * c) + " \\]"
+            explaintemp += "\\[" + c + " \\times " + c + " \\space = \\space " + a + "\\times" + a + " + " +  b + "\\times" + b + " \\space -> \\space " + (c * c) + " \\space = \\space " + (a * a + b * b) + "  \\]"
+            explaintemp += "\\[It \\space is \\space not \\space a \\space Right \\space Angle \\space Triangle \\]"
+            explaintemp += "\\[An \\space Oblique \\space Triangle \\space is \\space a \\space Triangle \\space with \\space no \\space Right \\space Angle \\space it \\space is \\space either \\space Obtuse \\space Angle \\space or \\space Acute \\space Angle \\space \\]"
+            explaintemp += "\\[So \\space It \\space will \\space form \\space an \\space oblique \\space triangle \\]";
+            displayop.innerHTML = explaintemp;
+            renderMathInElement(obliop);
         }
     }
     else {
         explaintemp += "\\[Please \\space enter \\space all \\space fields \\]";
-        explaintemp1 += " ";
         displayop.innerHTML = explaintemp;
-        displayop1.innerHTML = explaintemp1;
     }
     renderMathInElement(obliop);
-    renderMathInElement(obliop1);
 }
 
 function escbrad() {
