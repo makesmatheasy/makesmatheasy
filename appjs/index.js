@@ -132,7 +132,6 @@ function openit(id) {
     var ids = [
         "#gammaDist",
         "#expoDist",
-        "#negbino",
         "#ackermann",
         "#lucNum",
         "#smNum",
