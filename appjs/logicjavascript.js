@@ -5947,7 +5947,7 @@ function pythtriplecheck(){
     if(p**2 + q**2 == r**2){
         result.innerHTML = "\\[(" + a + "," + b + "," + c + ") \\space are \\space Pythagorean \\space Triplets\\]";
     }else{
-        result.innerHTML ="\\[Entered \\space values \\space are'nt \\space Pythagorean \\space Triplets \\]";
+        result.innerHTML ="\\[Entered \\space values \\space aren't \\space Pythagorean \\space Triplets \\]";
     }
 
     renderMathInElement(result);
