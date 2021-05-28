@@ -14938,10 +14938,11 @@ function solvesphere_shell() {
     var atemp = "";
     var areatemp = "";
     var voltemp = "";
+    var th = (R - r)
     var vol = 1.33 * 3.14 * ((R * R * R) - (r * r * r));
     var area = 4 * 3.14 * ((R * R) + (r * r));
     if ((R != "") && (r != "")) {
-        atemp += "\\[Shell \\space thickness \\space of \\space Spherical \\space shell \\space \\newline " + R + "-" + r + "\\ = " + eval(String(aop)) + "\\]";
+        atemp += "\\[Shell \\space thickness \\space of \\space Spherical \\space shell \\space \\newline " + R + "-" + r + "\\ = " + eval(String(th)) + "\\]";
         aoutput.innerHTML = atemp;
         voltemp += "\\[Volume \\space of \\space Spherical \\space shell \\space \\newline \\frac{4}{3} \\times \\pi (" + R + "^3-" + r + "^3 )" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
         voloutput.innerHTML = voltemp;
