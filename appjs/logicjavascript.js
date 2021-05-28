@@ -12731,11 +12731,11 @@ function golds3find() {
     // numbers are in silver ratio
     if (ratio1 == ratio2 &&
         (ratio1 - 2.414) == 0) {
-        document.getElementById("golds2ans").innerHTML = "Yes";
+        document.getElementById("golds3ans").innerHTML = "Yes";
         // return true;
     }
     else {
-        document.getElementById("golds2ans").innerHTML = "No";
+        document.getElementById("golds3ans").innerHTML = "No";
         // return false;
     }
 }
