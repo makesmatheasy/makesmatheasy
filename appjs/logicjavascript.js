@@ -2855,13 +2855,12 @@ function impse20find() {
 function impse21find() {
     var n = parseInt(document.getElementById("impse21").value)
     while (n != 1) {
-        document.getElementById("impse20ans").innerHTML = n + " ";
+        document.getElementById("impse21ans").innerHTML = n + " ";
         if ((n & 1) != 0)
             n = 3 * n + 1;
         else
             n = parseInt(n / 2, 10);
-    }
-    document.getElementById("impse20ans").innerHTML = n;
+    } document.getElementById("impse21ans").innerHTML = n;
 }
 
 function impse2find() {
