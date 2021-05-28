@@ -4225,7 +4225,10 @@ function CrossProduct(A) {
 }
 //Sieve of Eratosthenes
 function sievefind() {
-    let n = parseInt(document.getElementById('sievein').value)
+    let n = document.getElementById('sievein').value;
+    var result = document.getElementById("sieveans");
+    if(!isNaN(n)){
+    var temp ="";
     prime = Array.from({ length: n + 1 }, (_, i) => true);
     for (p = 2; p * p <= n; p++) {
         if (prime[p] == true) {
@@ -4235,8 +4238,12 @@ function sievefind() {
     }
     for (i = 2; i <= n; i++) {
         if (prime[i] == true)
-            document.getElementById("sieveans").innerHTML = " " + i + " "
+            temp +="&nbsp;" + i + "&nbsp;";
     }
+    result.innerHTML = "Prime Numbers from 1 to " + n + " = " + temp ;
+}else{
+    result.innerHTML = "Please enter any valid natural number only";
+}
 }
 //Excentre Calculator
 function excentersolve() {
