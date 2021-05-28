@@ -16343,6 +16343,10 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#capsule"
+                            style="text-decoration:none;" href="#">Capsule</a></td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofcone').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;"> Cone
@@ -28845,6 +28849,62 @@ N is the population size.
                 </div>
             </div>
         </div> 
+
+        <div class="modal fade" id="capsule" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Capsule</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Capsule length</h5>
+                                    <p class="text-center">\[l = h + 2 \space r \]</p>
+                                    <p class="text-center">h = cylinder height</p>
+                                    <p class="text-center">r = circle radius</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = 2 π r \space (2 \space r + h)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = π \space r^2 \space (\frac{4}{3} \space r + h) \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/capsule.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter sphere radius (r)" id="inputsphrad"
+                                       oninput="solvecapsule();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cylinder height (h)" id="inputcylhei"
+                                       oninput="solvecapsule();">
+                            <p class="stopwrap" id="resultofcapsulelen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcapsulearea"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofcapsulevol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="cube" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

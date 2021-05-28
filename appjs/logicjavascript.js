@@ -8370,6 +8370,32 @@ function solveanticube() {
         heightoutput.innerHTML = "";
     }
 }
+//Capsule
+function solvecapsule() {
+    var r = document.getElementById("inputsphrad").value;
+    var h = document.getElementById("inputcylhei").value;
+    var capsulelenoutput = document.getElementById("resultofcapsulelen");
+    var areaoutput = document.getElementById("resultofcapsulearea");
+    var voloutput = document.getElementById("resultofcapsulevol");
+    var capsulelentemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if ((r != "") && (h != "") ) {
+        capsulelentemp += "\\[Capsule \\space length \\space \\newline" + h  + "+ 2 \\space (" + r + ")" + "\\ = " + eval(String( parseFloat(h) + (2 * parseFloat(r) ))).toFixed(2) + "\\]";
+        capsulelenoutput.innerHTML = capsulelentemp;
+        areatemp += "\\[Surface \\space area \\space \\newline 2 (3.14) (" + r + ") \\space (2 \\times" + r + "+ " + h + ")" + "\\ = " + eval(String(2 * 3.141592653589 * parseFloat(r) * ((2 * parseFloat(r) )+(parseFloat(h) )))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline 3.14 (" + r + ")^2 \\space (\\frac{4}{3 (" + r + ")} + " + h + ")" + "\\ = " + eval(String(3.141592653589 * parseFloat(r) * parseFloat(r) * ( ((4 * parseFloat(r))/3 ) + parseFloat(h) ) )).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(capsulelenoutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        capsulelenoutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 //Cuboid
 function cubosolve() {
     var length = document.getElementById("inputcubolength").value;
@@ -13272,9 +13298,13 @@ function typenum15find(){
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
 
+
     }    
 
 }
+
+
+
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
         if (arr[p]) {
