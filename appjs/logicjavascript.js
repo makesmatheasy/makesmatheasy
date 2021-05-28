@@ -6882,27 +6882,6 @@ function crossedrectsolve() {
     }
 }
 
-function tshapesolve() {
-    var beamLength = parseFloat(document.getElementById("tshape-a").value);
-    var beamThickness = parseFloat(document.getElementById("tshape-b").value);
-    var shaftLength = parseFloat(document.getElementById("tshape-c").value);
-    var shaftThickness = parseFloat(document.getElementById("tshape-d").value);
-    var armLengthField = document.getElementById("resultOfArmLengthTshape");
-    var heightField = document.getElementById("resultOfHeightTshape");
-    var perimeterField = document.getElementById("resultOfPerimeterTshape");
-    var areaField = document.getElementById("resultOfAreaTshape");
-    var armLengthTshape = (beamLength - shaftThickness) / 2;
-    var heightTshape = beamThickness + shaftLength;
-    var perimeterTshape = 2 * (beamLength + beamThickness + shaftLength);
-    var areaTshape = (beamLength * beamThickness) + (shaftLength * shaftThickness);
-    if ((!isNaN(beamLength)) && (!isNaN(beamThickness)) && (!isNaN(shaftLength)) && (!isNaN(shaftThickness))) {
-        armLengthField.innerHTML = `Arm length (a') = ${armLengthTshape}`;
-        heightField.innerHTML = `Height (h) = ${heightTshape}`;
-        perimeterField.innerHTML = `Perimeter (p) = ${perimeterTshape}`;
-        areaField.innerHTML = `Area (A) = ${areaTshape}`;
-    }
-}
-
 // H - Shape
 
 function hshapesolve() {
@@ -6960,10 +6939,14 @@ function tshapesolve() {
     var perimeterTshape = 2 * (beamLength + beamThickness + shaftLength);
     var areaTshape = (beamLength * beamThickness) + (shaftLength * shaftThickness);
     if ((!isNaN(beamLength)) && (!isNaN(beamThickness)) && (!isNaN(shaftLength)) && (!isNaN(shaftThickness))) {
-        armLengthField.innerHTML = `Arm length (a') = ${armLengthTshape}`;
-        heightField.innerHTML = `Height (h) = ${heightTshape}`;
-        perimeterField.innerHTML = `Perimeter (p) = ${perimeterTshape}`;
-        areaField.innerHTML = `Area (A) = ${areaTshape}`;
+        armLengthField.innerHTML = "\\[Arm \\space length (a') =\\frac{"+beamLength+" - "+shaftThickness+"}{2} = " + armLengthTshape.toFixed(3) + " \\space units\\]";
+        renderMathInElement(armLengthField);
+        heightField.innerHTML = "\\[Height \\space (h) = "+beamThickness+" + "+shaftLength+" = " + heightTshape.toFixed(3) + " \\space units \\]";
+        renderMathInElement(heightField);
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = 2 \\times \\left ( "+beamLength+" + "+beamThickness+" + "+shaftLength+" \\right )  = " + perimeterTshape.toFixed(3) +" \\space units \\]";
+        renderMathInElement(perimeterField);
+        areaField.innerHTML = "\\[Area \\space (A) = \\left ( "+beamLength+" \\times "+beamThickness+" \\right ) + \\left ( "+shaftLength+" \\times "+shaftThickness+" \\right ) = "+areaTshape.toFixed(3)+" \\space sq.units\\]";
+        renderMathInElement(areaField);
     }
 }
 
