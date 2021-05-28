@@ -15834,6 +15834,25 @@ function regang() {
     }
     renderMathInElement(output);
 }
+
+//CO-Prime calculator
+//-------------------------------
+
+function co_prime_calc(){
+    let n = parseInt(document.getElementById("co_num1").value);
+    let m = parseInt(document.getElementById("co_num2").value);
+    const smaller = n > m ? n : m;
+    for(let ind = 2; ind < smaller; ind++){
+      const condition1 = n % ind === 0;
+      const condition2 = m % ind === 0;
+      if(condition1 && condition2){
+         document.getElementById("co_prime_res").innerHTML = "NO the numbers "+n+" and "+m+" are not co-prime";
+      }
+   }
+   document.getElementById("co_prime_res").innerHTML = "YES the numbers "+n+" and "+m+" are co-prime";
+
+}
+
 //Side of a regular n-sided polygon circumscribed in a circle
 function polymax7find() {
     let n = parseInt(document.getElementById("polymax7").value)
