@@ -18065,6 +18065,7 @@ function exc1find() {
     let terms = parseInt(document.getElementById("exc1").value)
     let x = parseInt(document.getElementById("exc2").value)
     let sum = 0;
+    if(!isNaN(terms) && !isNaN(x)){
 
     for (let i = 1; i <= terms; i += 1) {
         let B = 0;
@@ -18079,11 +18080,16 @@ function exc1find() {
     }
     document.getElementById("exc1ans").innerHTML = sum.toFixed(10);
 }
+else{
+    document.getElementById("exc1ans").innerHTML = "Please enter valid input"
+}
+}
 
 function exc2find() {
     let n = parseInt(document.getElementById("exc3").value)
     let x = parseInt(document.getElementById("exc4").value)
     let sum = x, e = 2, o = 1, p = 1;
+    if(!isNaN(n) && !isNaN(x)){
     for (let i = 2; i <= n; i++) {
         p += 2;
         sum += (o / e) * (Math.pow(x, p) / p);
@@ -18092,10 +18098,15 @@ function exc2find() {
     }
     document.getElementById("exc2ans").innerHTML = sum.toFixed(10);
 }
+else{
+    document.getElementById("exc2ans").innerHTML = "Please enter valid input"
+}
+}
 
 function exc3find() {
-    let n = parseInt(document.getElementById("exc5").value)
+    let num = parseInt(document.getElementById("exc5").value)
     let x = parseInt(document.getElementById("exc6").value)
+    if(!isNaN(num) && !isNaN(x)){
     var res = 0, fact = 1;
     for (i = 1; i <= num; i++) {
         fact = fact * i;
@@ -18103,9 +18114,14 @@ function exc3find() {
     }
     document.getElementById("exc3ans").innerHTML = res
 }
+else{
+    document.getElementById("exc3ans").innerHTML = "Please enter valid input"
+}
+}
 
 function exc4find() {
     let n = parseInt(document.getElementById("exc7").value)
+    if(!isNaN(n)){
     var accuracy = 0.0001, denominator, sinx, sinval;
     n = n * (3.142 / 180.0);
     var x1 = n;
@@ -18119,6 +18135,10 @@ function exc4find() {
         i = i + 1;
     } while (accuracy <= sinval - sinx);
     document.getElementById("exc4ans").innerHTML = sinx.toFixed(0)
+}
+else{
+    document.getElementById("exc4ans").innerHTML = "Please enter valid input"
+}
 }
 
 function fac(num) {
