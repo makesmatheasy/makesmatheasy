@@ -12628,6 +12628,21 @@ function retfind13() {
     }
 }
 
+function trirect() {
+    let l = parseFloat(document.getElementById("trirect1").value)
+    let b = parseFloat(document.getElementById("trirect2").value)
+    let area = (l * b) / 2;
+    if (l < 0 || b < 0) {
+        document.getElementById("trirectans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+    }
+    else if (!isNaN(l) && !isNaN(b) ) {
+        document.getElementById("trirectans").innerHTML = area.toFixed(4);
+    }
+    else {
+        document.getElementById("trirectans").innerHTML = "Please enter valid input"
+    }
+}
+
 
 function htfind() {
     let a = parseInt(document.getElementById("htin").value);
