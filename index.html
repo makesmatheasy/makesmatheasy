@@ -15874,6 +15874,10 @@
                                            style="text-decoration:none;" href="#">Pentagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#concavepentagon"
+                                           style="text-decoration:none;" href="#">Concave Pentagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#hexagon"
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
@@ -26667,6 +26671,60 @@ N is the population size.
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="concavepentagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Concave Pentagon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Leg length of triangle</h5>
+                                <p class="text-center">\[b = \frac{\sqrt{2}}{2} \space a \]</p>
+                                <p class="text-center">a = edge length of the square</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[p = 3 \space a + 2 \space b\]</p>
+                                <p class="text-center">\[ = 3 \space a + 2 \space (\frac{\sqrt{2}}{2} \space a) \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{3}{4} \space a^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/concave-pentagon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length of square (a)" id="inputsquedge"
+                                   oninput="solveconcavepent();">
+                        <p class="stopwrap" id="resultoftrileglen"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofconcavepentperi"
+                            style="font-family:mathfont;"></p> 
+                        <p class="stopwrap" id="resultofconcavepentarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="modal fade" id="heart" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
