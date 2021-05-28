@@ -845,6 +845,17 @@ function sspncal()
 
 }
 
+function ssfncal(){
+    var num=document.getElementById("ssfn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var poweroutput = document.getElementById("ssfnans");
+    var powersum=Math.trunc(( (num)**2 * (num + 1)**2 * (2 * num**2 + 2 * num - 1)  ));
+    var powersum1 = powersum/12;
+    poweroutput.innerHTML = "The value will be "+powersum1.toFixed(2)
+    renderMathInElement(poweroutput);
+
+}
 
 function ssqncal()
 {
