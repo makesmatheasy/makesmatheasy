@@ -14379,11 +14379,33 @@ function lacube8find() {
 }
 //Difference between Sum of Squares and Sum of First N Natural Numbers
 function lacube9find() {
-    let n = parseInt(document.getElementById("lacube10").value)
-    let S = (n * (n + 1)) / 2
-    let x = (n * (n + 1) * (2 * (n) + 1)) / 6
-    res = x - S
-    document.getElementById("lacube9ans").innerHTML = res;
+    var n = parseInt(document.getElementById("lacube10").value);
+    var output = document.getElementById("lacube9ans");
+    var temp = "";
+    if (!isNaN(n)){
+        var S = (n * (n + 1)) / 2
+        var x = (n * (n + 1) * (2 * (n) + 1)) / 6
+        res = x - S
+        temp += "\\[The \\space difference \\space between \\space Sum \\space of \\space Squares \\space and \\space Sum \\space of \\space First \\space N \\space Natural \\space Numbers \\space is,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space S \\space and \\space x, \\space here \\space n \\space = \\space No. \\space of \\space terms \\space in \\space progression \\]"
+        temp += "\\[S \\space = \\space \\frac{(n \\times (n+1))}{2}\\]"
+        temp += "\\[\\space = \\space \\frac{"+n+" \\times ("+n+" + 1 )}{2}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(n * (n + 1))+"}{2}\\]"
+        temp += "\\[\\space = \\space "+S.toFixed(3)+"\\]"
+        temp += "\\[x \\space = \\space \\frac{n \\times (n+1) \\times (2 \\times n + 1)}{6}\\]"
+        temp += "\\[\\space = \\space \\frac{"+n+" \\times ("+n+" + 1) \\times (2 \\times "+n+" + 1)}{6} \\]"
+        temp += "\\[\\space = \\space \\frac{"+n+" \\times "+(n + 1)+" \\times "+(2 * (n) + 1)+"}{6}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(n * (n + 1) * (2 * (n) + 1))+"}{6}\\]"
+        temp += "\\[\\space = \\space "+x.toFixed(3)+"\\]"
+        temp += "\\[Finally, \\space difference \\space will \\space be,\\]"
+        temp += "\\[\\space "+x.toFixed(2)+" - "+S.toFixed(2)+" \\space = \\space "+res.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 
 function lacube10find() {
