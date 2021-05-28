@@ -7865,6 +7865,19 @@ function antipodal() {
     renderMathInElement(document.getElementById("antidigonarea"));
 }
 
+function hollowcuboidsolve() {
+    var a = parseFloat(document.getElementById("hollowcuboid-a").value);
+    var d = parseFloat(document.getElementById("hollowcuboid-d").value);
+    var b = parseFloat(document.getElementById("hollowcuboid-b").value);
+    var c = parseFloat(document.getElementById("hollowcuboid-c").value);
+    var surfaceArea = 4 * ( a*b + a*c + b*d + c*d - 2*a*d - 2*Math.pow(d, 2));
+    var volume = 2*a*d * ( b + c - 2*d );
+    if ((!isNaN(a)) && (!isNaN(d)) && (!isNaN(b)) && (!isNaN(c))) {
+        document.getElementById("hollowcuboid-vol").innerHTML = `Volume (V) = ${volume}`;
+        document.getElementById("hollowcuboid-area").innerHTML = `Surface Area (A) = ${surfaceArea}`;
+    }
+}
+
 function solvecycloid() {
     var a = parseInt(document.getElementById("inputcirrad").value);
     var arclen = 8 * a;

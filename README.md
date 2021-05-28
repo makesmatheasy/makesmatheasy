@@ -365,6 +365,7 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+    - Hollow Cuboid
   - 3-D shapes Inscribed
   - 4-D Shapes Calculator
     - Tesseract
