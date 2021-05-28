@@ -13518,6 +13518,27 @@ function mnapsum() {
 
 }
 
+function mnap() {
+    var m = parseFloat(document.getElementById("mterm99").value)
+    var n = parseFloat(document.getElementById("nterm98").value)
+    var output = document.getElementById("printmnAPans")
+    var ans = "";
+    var tm = (2 * m - 1) 
+    var tn =  (2 * n - 1);
+    var tmn = tm/tn;
+    if (!isNaN(m) && !isNaN(n)) {
+        ans += "\\[\\frac{t_m}{t_n} \\space = \\space \\frac{2 \\times m - 1}{2 \\times n - 1} \\space = \\space \\frac{2 \\times" +  m + " - 1}{2 \\times " + n + " - 1}  \\space = \\space \\frac{" + tm + "}{" + tn + "}  \\space = \\space " + tmn.toFixed(4) + " \\]"
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+
+}
+
+
 function mngpsum() {
     var m = parseInt(document.getElementById("mterm1").value)
     var n = parseInt(document.getElementById("nterm1").value)
