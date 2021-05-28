@@ -1613,6 +1613,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('perchng').click();
                     }
+                    else if (inp.value.toUpperCase() == "ANTILOG CALCULATOR") {
+                        clearmain()
+                        $("#antilog").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "ANTILOG CALCULATOR"){
+                        clearmain()
+                        document.getElementById('antilog').click();
+                    }
                     else if (inp.value.toUpperCase() == "PERCENTAGE OFF") {
                         clearmain()
                         $("#peroff").slideDown();    

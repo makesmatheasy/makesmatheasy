@@ -161,6 +161,7 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
+  - Antilog calculator
   - Doubling Time
   - Percentage change
   - Percentage off

@@ -631,6 +631,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#antilogbtn").click(function () {
+        openit("#antilog");
+        closenav();
+        clearall();
+    });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
         closenav();

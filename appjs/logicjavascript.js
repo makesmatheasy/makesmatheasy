@@ -20976,6 +20976,21 @@ function woodfind() {
     }
     document.getElementById("woodans").innerHTML = ans;
 }
+function antilogCal(){
+    let val = document.getElementById("logvalue").value;
+    let base = document.getElementById("logbase").value;
+    let output = document.getElementById("antilogans");
+
+    if(val=="" || base==""){
+        output.innerHTML = "Enter all the inputs";
+    }
+    else{
+        let ans = Math.pow(base,val); //trick to find antilog
+        output.innerHTML = "Antilog of " + val + " with base " + base + " is " + ans;
+    }
+
+}
+
 function relrisk() {
     let a = document.getElementById("relexp0").value;
     let b = document.getElementById("relexp1").value;

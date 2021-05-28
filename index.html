@@ -1638,6 +1638,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="antilogbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Antilog calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Antilog calculator','#antilog','c','antilogimgfav')"><img
+                                        id="antilogimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="dbltimebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Doubling Time</a>
                         </td>
@@ -19258,6 +19273,16 @@
     <p id="dbltimeans1" style= "font-family:mathfont"></p><br>
 </div>
 <!-- doubling time ends -->
+
+<!-- Antilog starts -->
+<div class="collapse" id="antilog">
+    <h2 style="text-align:center;">Antilog Calculator</h2><br>
+    <input type="text"id="logvalue" placeholder="Enter the log value" class="form__field"><br><br>
+    <input type="text"id="logbase" placeholder="Enter the base" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="antilogCal()">Calculate</button><br><br>
+    <p id="antilogans" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Antilog ends -->
 
 
 <!-- Percentage change starts -->
