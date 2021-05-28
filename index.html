@@ -15847,6 +15847,10 @@
                             style="text-decoration:none;" href="#">Line</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#lshape" 
+                            style="text-decoration:none;" href="#">L - Shape</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#parabolic_arc"
                            style="text-decoration:none;" href="#">Parabolic Arch</a></td>
                 </tr>
@@ -26068,6 +26072,62 @@ N is the population size.
                             <p class="stopwrap" id="resultOfLengthArbelos" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterArbelos" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaArbelos" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">L - Shape</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Long inner side (a')</h5>
+                                    <p class="text-center">\[a' = a - c\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Short inner side (b')</h5>
+                                    <p class="text-center">\[b' = b - c\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = a + a' + b + b' + \left ( 2 \times c \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A= ac + b'c = a'c + bc\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/L-shape.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter the length of Long outer side (a)"
+                                   id="lshape-a" oninput="lshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter the length Short outer side (b)"
+                                   id="lshape-b" oninput="lshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Width (c)"
+                                   id="lshape-c" oninput="lshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="resultOfLongSideLshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfShortSideLshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfPerimeterLshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaLshape" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
