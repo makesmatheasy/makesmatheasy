@@ -23,11 +23,6 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
-$("#midrangebtn").click(function () {
-    openit("#midrange");
-    closenav();
-    clearall();
-});
 $("#utc").click(function(){
     openit("#utcs");
     closenav();
@@ -69,11 +64,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#midrangebtn").click(function () {
-        openit("#midrange");
-        closenav();
-        clearall();
-    });
     $("#sensibtn").click(function () {
         openit("#sensi");
         closenav();
@@ -107,6 +97,12 @@ $(document).ready(function () {
 
     $("#minv").click(function () {
         openit("#mis");
+        closenav();
+        clearall();
+    });
+
+    $("#midrangebtn").click(function () {
+        openit("#midrange");
         closenav();
         clearall();
     });
