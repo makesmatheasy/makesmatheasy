@@ -16192,15 +16192,17 @@ function hammingDistance() {
             } else {
                 let val = x ^ y;
                 let hammDist = 0;
-                ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
+                ans += "\\[Input \\space 1 : \\space " + x + " \\]";
+                ans += "\\[Input \\space 2 : \\space " + y + " \\]";
+                ans += "\\[Check \\space one \\space character \\space at \\space a \\space time \\space for \\space both \\space the \\space inputs \\]";
+                ans += "\\[Count \\space the \\space number \\space of \\space positions \\space at \\space which \\space the \\space characters \\space are \\space different\\]";
                 if (x.length == y.length) {
                     while (val > 0) {
-                        ans += "\\[When\\space val=\\space " + val + "\\space hamming\\space\\distance=" + hammDist + " \\]"
                         val &= val - 1;
                         hammDist++;
                     }
-                    ans += "\\[When\\space val=\\space " + val + "\\space hamming\\space\\distance=" + hammDist + " \\]"
-                    ans += "\\[The\\space hamming\\space distance \\space between\\space " + x + "\\space and\\space " + y + ":\\space " + hammDist + "\\]"
+                    ans += "\\[Here, \\space There \\space are \\space " + hammDist + " \\space positions \\space at \\space which \\space characters \\space are \\space different.\\]";
+                    ans += "\\[So, \\space Hamming \\space Distance \\space = \\space " + hammDist + "\\]";
                     result.innerHTML = ans;
                     renderMathInElement(result);
                 }
