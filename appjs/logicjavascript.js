@@ -12988,7 +12988,7 @@ function typenum13find() {
 }
 
 function typenum12find() {
-    var n = parseInt(document.getElementById("typenum14").value)
+    var n = parseInt(document.getElementById("typenum15").value)
     var prev = 0;
     document.getElementById("typenum12ans").innerHTML = kaprekarRec(n, prev);
 }
