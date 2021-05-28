@@ -668,6 +668,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#rsqr").click(function () {
+        openit("#rsqrs");
+        closenav();
+        clearall();
+
+    });
     //Euler's Totient Function
     $("#etfbtn").click(function () {
         openit("#etf");

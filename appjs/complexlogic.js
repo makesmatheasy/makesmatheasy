@@ -2318,3 +2318,47 @@ function wagcal()
     document.getElementById("wagans").innerHTML=ans;
 }
 
+function rsqrsfind()
+{
+let sam1 = document.getElementById("rsqrs1").value;
+let sam2 = document.getElementById("rsqrs2").value;
+sam1 = sam1.trim();
+sam1 = sam1.split(" ");
+sam2 = sam2.trim();
+sam2 = sam2.split(" ");
+var n1 = parseInt(sam1.length);
+var n2 = parseInt(sam2.length);
+console.log(n1)
+console.log(n2)
+if (sam1 == "" || sam2 == "") {
+    document.getElementById('rsqrsans').innerHTML = "Please enter number";
+}
+else if (n1 != n2) {
+    document.getElementById('rsqrsans').innerHTML = "Samples should be of same length";
+}
+else {
+    for (var i = 0; i < n1; i++) {
+        sam1[i] = parseFloat(sam1[i]);
+    }
+    for (var i = 0; i < n2; i++) {
+        sam2[i] = parseFloat(sam2[i]);
+    }
+    let mean1 = tvalue_mean(sam1)
+    let mean2 = tvalue_mean(sam2)
+
+
+    let diff1 = corr_dec(sam1, mean1)
+    let diff2 = corr_dec(sam2, mean2)
+
+    let prod_sum = corr_prod(diff1, diff2)
+
+    let SD1 = corr_SD(diff1)
+    let SD2 = corr_SD(diff2)
+
+    
+    let r = (prod_sum) / (Math.sqrt(SD1 * SD2));
+    let coffr = r*r;
+    document.getElementById('rsqrsans').innerHTML = "The calculated R-squared value is: "+coffr;
+}
+   
+}

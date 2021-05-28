@@ -439,6 +439,7 @@ function openit(id) {
         "#analytical",
         "#faul",
         "#isoright",
+        "#rsqrs",
         "#ellipsoid",
         "#expo",
         "#setformula",
