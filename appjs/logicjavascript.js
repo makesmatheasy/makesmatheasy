@@ -14924,17 +14924,31 @@ function sccofind() {
     document.getElementById("sccoans").innerHTML = R;
 }
 
+
 function cube() {
     let h = parseFloat(document.getElementById("cube1").value)
-    var v = Math.pow(h, 3);                                                                            
+    var output = document.getElementById("cubeans")
+    var ans = ""
+    var v = Math.pow(h, 3); 
+    if(!isNaN(h)){                                                                           
     if(h<0)
     {
-       document.getElementById("cubeans").innerHTML+="\\[Height \\space of \\space the \\space Cylinder \\space cannot \\space be \\space negative.\\]"  
-       renderMathInElement( document.getElementById("cubeans"));
+        ans += "\\[Height \\space of \\space the \\space Cylinder \\space cannot \\space be \\space negative.\\]"  
+       output.innerHTML = ans
     }else {
-     document.getElementById("cubeans").innerHTML =v;
+        ans += "\\[Side \\space of \\space the \\space Cube \\space = \\space Height \\space of \\space the \\space Cylinder \\]"
+        ans += "\\[Volume \\space = \\space (height)^{3} \\space = \\space " + h + "^{3} \\]"
+        ans += "\\[Volume \\space of \\space the \\space biggest \\space cube \\space that \\space can \\space be \\space inscribed \\space in \\space cylinder \\space = \\space " + v + " \\]"
+        output.innerHTML = ans
     }  
 }
+else{
+    ans += "\\[Please \\space enter \\space valid \\space input \\]"
+    output.innerHTML = ans
+}
+renderMathInElement(output)
+}
+
 
 function cubeinspherefind() {
     let r = parseFloat(document.getElementById("cubeinsphere").value)
