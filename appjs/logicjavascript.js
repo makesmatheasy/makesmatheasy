@@ -5132,6 +5132,32 @@ function pointrect() {
     renderMathInElement(output);
 }
 
+function pointhyper() {
+    var h,k,a,b, p1, p2;
+    h = parseFloat(document.getElementById('checkhyper1').value);
+    k = parseFloat(document.getElementById('checkhyper2').value);
+    a = parseFloat(document.getElementById('checkhyper3').value);
+    b = parseFloat(document.getElementById('checkhyper4').value);
+    x = parseFloat(document.getElementById('checkhyper5').value);
+    y = parseFloat(document.getElementById('checkhyper6').value);
+    var output = document.getElementById("pointhyperans")
+    var ans = "";
+    if (!isNaN(h) && !isNaN(k) && !isNaN(a) && !isNaN(b) && !isNaN(x) && !isNaN(y)) {
+        p = ((Math.pow((x - h), 2) / Math.pow(a, 2)) -(Math.pow((y - k), 2) / Math.pow(b, 2)))
+        if (p > 1)
+          ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Hyperbola \\]";
+        else if (p == 1)
+          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Hyperbola \\]";
+        else
+          ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Hyperbola \\]";
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
 function pointri() {
     var x1, y1, x2, y2, x3, y3, p1, p2;
     x1 = parseFloat(document.getElementById('q1w').value);
