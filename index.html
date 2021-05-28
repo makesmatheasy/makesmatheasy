@@ -2689,6 +2689,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="co_primebtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Co-Prime Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Co-Prime Calculator','#co_prime','c','co_primeimgfav')"><img
+                                        id="co_primeimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="coprimeexbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Co-Prime
                                 Numbers Theory</a>
@@ -15141,6 +15158,18 @@
             <br>
             <h4 id="polymax11ans"></h4></form>
         </div>
+        
+        <div class="collapse" id="co_prime">
+            <h2>Co-Prime Calculator</h2><br>
+            
+            <div class="form-group">
+                <input type="text" style="width: 250px;" class="form__field" name="a" id="co_num1" placeholder="Enter first number"/>
+                <input type="text" name="b" style="width: 250px;" class="form__field" id="co_num2" placeholder="Enter second number "/>  <br> <br>
+                <button  class = "btn btn-outline-light" onclick = "co_prime_calc()" >Find</button> <br>
+            </div>
+                <p  id="co_prime_res"></p><br><br>    
+        </div>
+
 
         <div  class="collapse" id="coprimeex">
             <h1 style="color: #da1085">Co-Prime Numbers Theory</h1><br>
@@ -16190,6 +16219,15 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
             <h5 id="sccoans"></h5></form>
             <br>
+            <h4>Largest Cube that can be inscribed within a Right Circular Cylinder</h4>
+            <br>
+            <form action="">
+            <input type="text" id="cube1" class="form__field" placeholder="Enter the height of cylinder">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="cube()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="cubeans"></h5></form>
+            <br>
             <h4>Largest cube that can be inscribed within the cone</h4>
             <br>
             <form action="">
@@ -16332,6 +16370,10 @@
                             </table>
                         </div>
                     </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#capsule"
+                            style="text-decoration:none;" href="#">Capsule</a></td>
                 </tr>
                 <tr>
                     <td>
@@ -18558,8 +18600,11 @@
                 </div>
             </form>
             <br>
-            <p id="nGPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
-			<br>
+            <div class="form-group"></div>
+               <p id="nGPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
+			  <br>
+            </div>
+            <br>
             <h4 class="d-flex justify-content-center">Sum of P terms of an GP if mth and nth terms are given</h4><br>
             <form class="form-inline d-flex flex-column align-items-center">
                 <input type="number" id="mterm1" placeholder="Enter the Number of terms (m)"
@@ -20633,11 +20678,12 @@ N is the population size.
 <div class="collapse" id="ppmfs">
     <h1 style="font-family:mathfont; text-align:center;"> PMF of Poisson Distribution Calculator </h1>
     <p>&nbsp;</p>
-    <div style="color: white; text-align: center; font-size: 1.1em; font-family:mathfont;">The Poisson distribution is a discrete probability distribution which results from the Poisson experiment.<br>
-        It classifies the experiment into two different categories, such as success and failure. <br>
-        Generally, the Poisson random variable “x” defines the probability of the success of the experiment.<br>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;">The Poisson distribution is a discrete probability distribution which results from the Poisson experiment.<br>
+        It classifies the experiment into two different categories, such as success and failure.
+        Generally, the Poisson random variable “x” defines the probability of the success of the experiment.
         From the average rate of success, the Poisson distribution probability can be easily calculated.
     </div>
+    <br>
     <br>
     <form action="">
         <input type="number" name="lamb" class="form__field" id="lamb"   placeholder="Average number of occurrences for a given time interval lambda, λ:">
@@ -20647,14 +20693,15 @@ N is the population size.
         <button type="button" class="btn btn-outline-light" onclick="ppcal()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
     </form>
-    <p>&nbsp;</p>
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
     <p>&nbsp;</p> 
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = P(X{=}k)= \frac{\lambda^k e^{-\lambda}}{k!}\]</p> where,
+    <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;"> 
+        In the given formula below :
         <br> e = is Euler's number (e = 2.71828...)
         <br> k = the number of occurrences (k=0,1,2...)
         <br> λ = parameter such that λ>0
+        <br>\[P.M.F = P(X{=}k)= \frac{\lambda^k e^{-\lambda}}{k!}\]
     </div>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
 </div>
 
         <div class="collapse" id="bool">
@@ -28836,6 +28883,62 @@ N is the population size.
                 </div>
             </div>
         </div> 
+
+        <div class="modal fade" id="capsule" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Capsule</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Capsule length</h5>
+                                    <p class="text-center">\[l = h + 2 \space r \]</p>
+                                    <p class="text-center">h = cylinder height</p>
+                                    <p class="text-center">r = circle radius</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = 2 π r \space (2 \space r + h)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = π \space r^2 \space (\frac{4}{3} \space r + h) \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/capsule.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter sphere radius (r)" id="inputsphrad"
+                                       oninput="solvecapsule();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cylinder height (h)" id="inputcylhei"
+                                       oninput="solvecapsule();">
+                            <p class="stopwrap" id="resultofcapsulelen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcapsulearea"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofcapsulevol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="cube" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
