@@ -14408,11 +14408,29 @@ function lacube11find() {
 }
 
 function lacube12find() {
-    let n = parseInt(document.getElementById("lacube13").value)
-    if (n % 4 != 2) {
-        document.getElementById("lacube12ans").innerHTML = "true";
+    var n = parseInt(document.getElementById("lacube13").value);
+    var output = document.getElementById("lacube12ans");
+    var temp = "";
+    if (isNaN(n)){
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    } 
+    else{
+        temp += "\\[To \\space Check \\space if \\space a \\space number \\space can \\space be \\space represented \\space by \\space difference \\space of \\space two \\space squares, \\space\\]";
+        temp += "\\[we \\space check \\space if, \\space the \\space remainder \\space of \\space \\frac{Number}{4} \\space equals \\space to \\space 2 \\space or \\space not\\]"
+        if (n % 4 != 2) {
+            temp += "\\[Here, \\space the \\space remainder \\space of \\space \\frac{"+n+"}{4} \\space is \\space "+(n % 4 ).toFixed(1)+"\\]"
+            temp += "\\[Since, \\space  "+(n % 4 ).toFixed(1)+" \\space is \\space not \\space equal \\space to \\space 2\\]"
+            temp += "\\["+n+" \\space can \\space be \\space represented \\space by \\space difference \\space of \\space two \\space squares\\]"
+            output.innerHTML = temp;
+        } else{
+            temp += "\\[Here, \\space the \\space remainder \\space of \\space \\frac{"+n+"}{4} \\space is \\space "+(n % 4 ).toFixed(1)+"\\]"
+            temp += "\\[Since, \\space "+(n % 4 ).toFixed(1)+" \\space equal \\space to \\space 2\\]"
+            temp += "\\["+n+" \\space cannot \\space be \\space represented \\space by \\space difference \\space of \\space two \\space squares\\]"
+            output.innerHTML = temp;
+        }
     }
-    document.getElementById("lacube12ans").innerHTML = "false";
+    renderMathInElement(output);
 }
 
 function lacube13find() {
