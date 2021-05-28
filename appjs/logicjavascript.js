@@ -5554,6 +5554,27 @@ function intri() {
     }
 }
 
+function incircum() {
+    var a, b;
+    a = parseFloat(document.getElementById('incircum1').value);
+    b = parseFloat(document.getElementById('incircum2').value);
+    var output = document.getElementById("incircumans");
+    var temp = " ";
+    var d1 = (b**2 - (2*a*b))
+    var d = Math.sqrt(d1)
+    if (isNaN(a) || isNaN(b)) {
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else {
+        temp += "\\[Distance \\space between \\space Incenter \\space and \\space Circumcenter \\space of \\space a \\space Triangle \\space is  \\]";
+        temp += "\\[D \\space = \\space \\sqrt{R^{2} - 2 \\times r \\times R }  \\space = \\space \\sqrt { " + a + "^{2} - 2 \\times " + a + " \\times" + b + "} \\space = \\space \\sqrt{" + d1.toFixed(2) + "} \\space = \\space " + d.toFixed(2) + " \\]"
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
+
 //Area of Quadrilateral
 function vectorquad() {
     var a, b, c, d, e, f;
