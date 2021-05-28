@@ -3720,6 +3720,12 @@ function alisum3find(){
     }
 }
 
+function alisum4find(){
+    let n = parseInt(document.getElementById("alisum4").value)
+    let ans = (n & 1) ? -1 : 1;
+    document.getElementById("alisum4ans").innerHTML = ans
+}
+
 function Hosoya(n, m)
     {
         if ((n == 0 && m == 0) ||
