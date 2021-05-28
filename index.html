@@ -16365,6 +16365,10 @@
                            href="#">Half cone</a>                    
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#hollowcone" style="text-decoration:none;"
+                           href="#">Hollow cone</a>                    
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#trunbicone" style="text-decoration:none;"
                         href="#">Truncated Bicone</a>
                  </td>
@@ -28927,6 +28931,63 @@ N is the population size.
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofhalfconearea"
                                 style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="modal fade" id="hollowcone" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hollow Cone</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{\pi}{3} ( R^2 H - r^2 h )\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = ( R \sqrt{H^2 + R^2} +\] </p>
+                                        <p>\[r \sqrt{ h^2 + r^2} + R^2 - r^2 )\pi\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/half-cone.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter base radius (R)" id="inputhollowconeoutrad"
+                                       oninput="solvehollowcone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height (r)" id="inputhollowconeinrad"
+                                       oninput="solvehollowcone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height (H)" id="inputhollowconeoutheight"
+                                       oninput="solvehollowcone();">
+                            <p class="stopwrap" id="resultofhollowconeinheight"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofhollowconevol"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofhollowconearea"
+                                style="font-family:mathfont;"></p><br>
                           </div>
                         <!-- ------HERE------ -->
                     </div>
