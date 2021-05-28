@@ -14535,7 +14535,10 @@ function rootsunityfind() {
     for (let k = 0; k < n; k++) {
         var real = Math.cos(k * theta);
         var img = Math.sin(k * theta);
-        document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "+" + img.toFixed(6) + "<br>"
+        if(img>0)
+        document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + " + " + img.toFixed(6) + "i<br>";
+        else
+        document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "   " + img.toFixed(6) + "i<br>"
     }
 }
 
