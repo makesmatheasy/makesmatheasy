@@ -3855,7 +3855,7 @@
                             <span
                                 onclick="addtofavourite('Intercept form of Plane','#planeintercept','c','planeinterceptfav')"><img
                                     id="planeinterceptfav" src="images/unfavourite.png"
-                                    style="height:25px;"></span>
+                                    style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
                 </table>
@@ -4041,7 +4041,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="bcdbtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/BCD Code Converter</a>
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">BCD Code Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -4077,7 +4077,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="dec2421btn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Decimal/2421 Code Converter</a>
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">2421 Code Converter</a>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -4358,22 +4358,7 @@
                     </tr>
                 </table>
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="negbinobtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Negative Binomial Distribution Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Negative Binomial Distribution Calculator','#negbino','c','negbinofav')"><img
-                                        id="negbinofav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+
 
             <li>
                 <table class="table">
@@ -6330,6 +6315,14 @@
             <br>
             <h5 id="recinsemians"></h5>
             <br>
+            <h4>Largest Hexagon that can be inscribed in a Square </h4>
+            <br>
+            <input type="text" id="hexsq1" placeholder="Enter side length of square" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="hexsq()">Find</button>
+            <br>
+            <h5 id="hexsqans"></h5>
+            <br>
             <h4>Largest trapezoid that can be inscribed in a semicircle </h4><br>
             <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field"><br>
             <button class="btn btn-dark" onclick="trapinsemifind()">Find</button><br>
@@ -6534,6 +6527,17 @@
             <button class="btn btn-dark" onclick="pointrect()">Find</button>
             <br>
             <h5 id="pointrectans"></h5>
+            <h4>To check whether given Point (P) lies inside a Parabola</h4>
+            <br>
+            <input type="text" id="checkpara1" placeholder="Enter x coordinate of vertex of parabola (h)" class="form__field">
+            <input type="text" id="checkpara2" placeholder="Enter y coordinate of vertex of parabola (k)" class="form__field">
+            <input type="text" id="checkpara3" placeholder="Enter distance between focus and vertex (a)" class="form__field">
+            <input type="text" id="checkpara4" placeholder="Enter x coordinate of Point (x)" class="form__field">
+            <input type="text" id="checkpara5" placeholder="Enter y coordinate of Point (y)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="pointpara()">Find</button>
+            <br>
+            <h5 id="pointparaans"></h5>
             <h4>To check whether given Point (P) lies inside a Hyperbola</h4>
             <br>
             <input type="text" id="checkhyper1" placeholder="Enter x coordinate of centre of Hyperbola (h)" class="form__field">
@@ -9512,14 +9516,14 @@
     </div>
     <div class="coll">
         <p>
-          Adjacent Side 1 :   <input type="text" id="volpx1" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="volpx2" size=3 value='' placeholder="B"> j + <input type="text" id="volpx3" size=3 value='' placeholder="C"> k
+          Adjacent Side 1 (a):   <input type="text" id="volpx1" size=3 value='' placeholder="x1">  i  +
+        <input type="text" id="volpx2" size=3 value='' placeholder="y1"> j + <input type="text" id="volpx3" size=3 value='' placeholder="z1"> k
             <br><br>
-          Adjacent Side 2 :   <input type="text" id="volpy1" size=3 value='' placeholder="A"> i +
-        <input type="text" id="volpy2" size=3 value='' placeholder="B"> j + <input type="text" id="volpy3" size=3 value='' placeholder="C"> k
+          Adjacent Side 2 (b) :   <input type="text" id="volpy1" size=3 value='' placeholder="x2"> i +
+        <input type="text" id="volpy2" size=3 value='' placeholder="y2"> j + <input type="text" id="volpy3" size=3 value='' placeholder="z2"> k
         <br><br>
-          Adjacent Side 3 :   <input type="text" id="volpz1" size=3 value='' placeholder="A"> i +
-        <input type="text" id="volpz2" size=3 value='' placeholder="B"> j + <input type="text" id="volpz3" size=3 value='' placeholder="C"> k
+          Adjacent Side 3 (c) :   <input type="text" id="volpz1" size=3 value='' placeholder="x3"> i +
+        <input type="text" id="volpz2" size=3 value='' placeholder="y3"> j + <input type="text" id="volpz3" size=3 value='' placeholder="z3"> k
                 <br>
                 <br>
         <button type="button" class="btn btn-light" onclick=paralleloarea()>
@@ -12109,6 +12113,14 @@
             <button class="btn btn-dark" onclick="alisum3find()">Find</button>
             <br>
             <p id="alisum3ans" style="font-size: 26px;"></p>
+            <br>
+            <p>Cassini’s Identity</p>
+            <br>
+            <input type="text" id="alisum4"class="form__field"placeholder="Enter the number ">
+            <br><br>
+            <button class="btn btn-dark" onclick="alisum4find()">Find</button>
+            <br>
+            <p id="alisum4ans" style="font-size: 26px;"></p>
         </div>
         <!-- start of Sum of divisors  calculator -->
          <div>
@@ -12863,33 +12875,33 @@
         </div>
         <div class="collapse" id="mi">
             <h2 style="text-align: center;">Methods of Integration</h2>
-            <br><br>
-            <h4>1. Integration by Substitution</h4>
             <br>
-            <p>Sometimes, it is really difficult to find the integration of a function, thus we can find the integration by introducing a new independent variable. This method is called Integration By Substitution.</p>
-            <p>The given form of integral function (say ∫f(x)) can be transformed into another by changing the independent variable x to t,</p>
-            <p>Substituting x = g(t) in the function ∫f(x), we get;</p>
-            <p>\[\frac{dx}{dt}\space =\space g^{'}t\]</p>
-            <p>\[Thus,\space I\space =\space \int f(x)\,dx\space =\space f(g(t))g^{'}t\,dt\]</p>
+            <h4 style="text-align: center;">1. Integration by Substitution</h4>
             <br>
-            <h4>2. Integration by Parts</h4>
+            <p style="color:#ababab !important">Sometimes, it is really difficult to find the integration of a function, thus we can find the integration by introducing a new independent variable. This method is called Integration By Substitution.</p>
+            <p style="color:#ababab !important">The given form of integral function (say ∫f(x)) can be transformed into another by changing the independent variable x to t,</p>
+            <p style="color:#ababab !important">Substituting x = g(t) in the function ∫f(x), we get;</p>
+            <p style="color:rgba(0,0,0,.9) !important">\[\frac{dx}{dt}\space =\space g^{'}t\]</p>
+            <p style="color:rgba(0,0,0,.9) !important">\[Thus,\space I\space =\space \int f(x)\,dx\space =\space f(g(t))g^{'}t\,dt\]</p>
             <br>
-            <p>Integration by parts requires a special technique for integration of a function, where the integrand function is the multiple of two or more function.
+            <h4 style="text-align: center;">2. Integration by Parts</h4>
+            <br>
+            <p  style="color:#ababab !important">Integration by parts requires a special technique for integration of a function, where the integrand function is the multiple of two or more function.
                     <br>
                 Let us consider an integrand function to be f(x).g(x).
                 <br>
                 Mathematically, integration by parts can be represented as;
             </p>
-            <p>\[\int f(x)g(x)\,dx\space =\space f(x)\int g(x)\,dx\space -\space \int f^{'}(x)\int g(x)\,dx\]</p>
-            <p>For deciding the first and the second functions, one can follow the ILATE rule for integration.</p>
-            <p>\[Inverse,Logarithmic,Arithmetic,Trigonometric,Exponential\space =\space ILATE\]</p>
+            <p style="color:rgba(0,0,0,.9) !important" >\[\int f(x)g(x)\,dx\space =\space f(x)\int g(x)\,dx\space -\space \int f^{'}(x)\int g(x)\,dx\]</p>
+            <p  style="color:#ababab !important">For deciding the first and the second functions, one can follow the ILATE rule for integration.</p>
+            <p  style="color:#ababab !important">\[Inverse,Logarithmic,Arithmetic,Trigonometric,Exponential\space =\space ILATE\]</p>
+        
+            <h4 style="text-align: center;">3. Integration by Partial Fractions</h4>
             <br>
-            <h4>3. Integration by Partial Fractions</h4>
-            <br>
-            <p>We know that a Rational Number can be expressed in the form of p/q, where p and q are integers and q≠0. Similarly, a rational function is defined as the ratio of two polynomials which can be expressed in the form of partial fractions: P(x)/Q(x), where Q(x)≠0.</p>
-            <p>There are in general two forms of partial fraction:</p>
-            <p><b>Proper partial fraction:</b> When the degree of the numerator is less than the degree of the denominator, then the partial fraction is known as a proper partial fraction.</p>
-            <p><b>Improper partial fraction:</b> When the degree of the numerator is greater than the degree of denominator then the partial fraction is known as an improper partial fraction. Thus, the fraction can be simplified into simpler partial fractions, that can be easily integrated.</p>
+            <p  style="color:#ababab !important">We know that a Rational Number can be expressed in the form of p/q, where p and q are integers and q≠0. Similarly, a rational function is defined as the ratio of two polynomials which can be expressed in the form of partial fractions: P(x)/Q(x), where Q(x)≠0.</p>
+            <p  style="color:#ababab !important">There are in general two forms of partial fraction:</p>
+            <p  style="color:#ababab !important"><b>Proper partial fraction:</b> When the degree of the numerator is less than the degree of the denominator, then the partial fraction is known as a proper partial fraction.</p>
+            <p  style="color:#ababab !important"><b>Improper partial fraction:</b> When the degree of the numerator is greater than the degree of denominator then the partial fraction is known as an improper partial fraction. Thus, the fraction can be simplified into simpler partial fractions, that can be easily integrated.</p>
         </div>
         <!--algebraic formulas list starts-->
         <div class="collapse" id="algebraic_formulascollapse">
@@ -13225,38 +13237,6 @@
     <p id="abtestans"></p>
 </div>
 
-<!-- Negative Binomial Distribution Calculator-->
-<div class="collapse" id="negbino">
-    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Negative Binomial Distribution Calculator</h1>
-    <p style="margin-top: 2rem;">
-        The negative binomial distribution calculator, otherwise called the Pascal distribution calculator, helps in
-        determining what is the probability of requiring n trials to achieve a fixed number of successes. 
-    </p>
-    <p style="text-align: left; color: white; margin-top:2rem;">Formula: P(Y=n) = (n-1)C(r-1) * pr * (1-p)(n-r)</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">n is the total number of trials</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">r is the number of successes</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">p is the probability of one success</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">(n-1)C(r-1) is the number of combinations</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">P(Y=n) is the probability of the exact number of trials n needed to achieve r successes.</p>
-
-    
-    <form action="">
-        <input class = "form__field"type="text" id="negbinon" placeholder="Enter number of events">
-        <br><br>
-        <input class = "form__field"type="text" id="negbinor" placeholder="Enter number of success">
-        <br><br>
-        <input class = "form__field"type="text" id="negbinop" placeholder="Enter probability of one success">
-        
-        <br><br>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal(1)">Calculate</button>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal(2)">Mean</button>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal(3)">Variance</button>
-        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
-    </form>
-    
-    <p id="negbinoans"></p>
-</div>
 
 <!-- Relative risk Calculator -->
 <div class="collapse" id="relrisk">
@@ -15078,17 +15058,11 @@
             <p class="stopwrap" id="regpolymax5ans2" style="font-family:mathfont;"></p>
             </form><br>
             <br>
-            <h4>Central angle of a N sided Regular Polygon</h4>
-            <br>
-            <form action="">
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax6"/>
-            <br>
+            <h4>Central angle of a N sided Regular Polygon</h4><br><form action="">
+            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="polymax6"/><br>
             <button type = "button" class="btn btn-dark" onclick = "polymax6find()">FInd</button>
-            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
-            <br>
-            <h4 id="polymax6ans"></h4>
-            </form>
-            <br>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <p id="polymax6ans"></p></form><br>
             <h4>Angle between 3 vertices in a N sided Regular Polygon</h4><br>
             <input type = "text" class = "form__field" placeholder = "Enter 1st vertex (a1)" id="regang1"/>
             <input type = "text" class = "form__field" placeholder = "Enter 2nd vertex (a2)" id="regang2"/>
@@ -15126,7 +15100,7 @@
             <br>
             <h4 id="polymax9ans"></h4>
             <br>
-            <h4>Circumcircle of any regular polygon</h4></form>
+            <h4>Circumcircle of any regular polygon</h4>
             <br>
             <form action="">
             <input type = "text" class = "form__field" placeholder = "Enter the no. of sides of polygon" id="polymax10"/>
@@ -15136,6 +15110,17 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
             <br>
             <h4 id="polymax10ans"></h4></form>
+            <br>
+            <h4>Vertex diagonally opposite to the vertex M from an N-sided polygon</h4>
+            <br>
+            <form action="">
+            <input type = "text" class = "form__field" placeholder = "Enter the no. of sides of polygon" id="polymax20"/>
+            <input type = "text" class = "form__field" placeholder = "Enter the mth vertex " id="polymax21"/>
+            <br>
+            <button type = "button" class="btn btn-dark" onclick = "polymax11find()">FInd</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+            <br>
+            <h4 id="polymax11ans"></h4></form>
         </div>
 
         <div  class="collapse" id="coprimeex">
@@ -18381,6 +18366,30 @@
             <br><br>
             <h5 id="printmnAP"  style="text-align: center;font-family:mathfont;width:auto;" class="stopwrap"></h5><br>
             <br>
+            <h4 class="d-flex justify-content-center">Ratio of mth and nth terms of an AP</h4><br>
+            <form class="form-inline d-flex flex-column align-items-center">
+                <input type="number" id="mterm99" placeholder="Enter the Number of terms (m)"
+                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
+                <input type="number" id="nterm98" placeholder="Enter the Number of terms (n)"
+                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
+                <br><br>
+                <div class="row">
+                    <div class="col-6">        
+                        <button type="button" class="btn btn-light" onclick=mnap()>
+                            Find
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-light"
+                        onclick="this.form.reset();">
+                        Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+            <h5 id="printmnAPans"  style="text-align: center;font-family:mathfont;width:auto;" class="stopwrap"></h5><br>
+            <br>
             <h4 class="d-flex justify-content-center">Constant/Increasing/Decreasing AP</h4><br>
             <form class="form-inline d-flex flex-column align-items-center" id="myForm">
             <!-- <form class="form-inline"> -->
@@ -19929,19 +19938,12 @@ N is the population size.
     </form>
     <br>
     </form>
-    <h2>Check if a M-th fibonacci number divides N-th fibonacci number</h2>
-    <br>
-    <form>
+    <h2>Check if a M-th fibonacci number divides N-th fibonacci number</h2><br><form>
     <input type="text" id="typenum8" class="form__field"placeholder="Enter mth fibonacci number">
-    <input type="text" id="typenum9" class="form__field"placeholder="Enter nth fibonacci number">
-    <br>
+    <input type="text" id="typenum9" class="form__field"placeholder="Enter nth fibonacci number"><br>
     <button  type="button" class="btn btn-dark" onclick="typenum7find()">Find</button>
-    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    <br>
-    <h5 id="typenum7ans"></h5>
-    </form>
-    <br>
-    </form>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    <h5 id="typenum7ans"></h5></form><br></form>
     <h2>Tribonacci Numbers</h2>
     <br>
     <form>
@@ -20037,6 +20039,18 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum15ans"></h5>
+    <br>
+    </form>
+    <br>
+    <h2>Hoax Number </h2>
+    <br>
+    <form>
+    <input type="text" id="typenum19" class="form__field"placeholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum16find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum16ans"></h5>
     <br>
     </form>
 </div>
@@ -20347,6 +20361,17 @@ N is the population size.
         <button type="button" class="btn btn-outline-light" onclick="sspncal()">Calculate</button> <p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
         <p id="sspnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
+    </form>
+
+    <br><br>
+
+    <h1 style="font-family:mathfont; text-align:center;">Sum of Power Five of N Natural Numbers </h1>
+    <form>
+        <input style="text-align: center;" type="text" name="sspn" class="form__field" id="ssfn" placeholder="Enter the number upto which you want to find sum of squares">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="ssfncal()">Calculate</button> <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="ssfnans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     </form>
    
 </div>
@@ -21791,6 +21816,21 @@ N is the population size.
         <div class="col-6">
             <div class="form-group">
                 <h5>Decimal</h5>
+                <select id="dec2421-select" class="form__field"
+                                onchange="convertdec2421()">
+                            <option class="form__field" style="background-color: #232a36;">
+                                Binary
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Decimal
+                            </option>
+                            <option class="form__field" style="background-color: #232a36;">
+                                Octal
+                            </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                Hexa decimal
+                            </option>
+                        </select>
 
                 <input type="number" id="dec2421-input" value="0" class="form__field"
                        oninput="convertdec2421()">
@@ -22127,6 +22167,14 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse13find()">Find</button>
     <br>
     <p id="impse13ans"></p>
+    <br>
+    <h4>Nth term of Ruler Function Series</h4>
+    <br>
+    <input type="text" id="impse22"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="impse22find()">Find</button>
+    <br>
+    <p id="impse22ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
