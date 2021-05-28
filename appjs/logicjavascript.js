@@ -13272,12 +13272,9 @@ function typenum15find(){
     simpleSieve();
     var ans = find_sphene(n);
     if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
+        document.getElementById("typenum15ans").innerHTML  =  "Yes";
     else
-        document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-    }    
-
+        document.getElementById("typenum15ans").innerHTML  =  "NO";
 }    
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
