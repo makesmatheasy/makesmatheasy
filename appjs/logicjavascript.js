@@ -17899,8 +17899,10 @@ function bcdadd() {
         result.innerHTML = "INVALID BCD";
     else {
         decimalresult = parseInt(s1) + parseInt(s2);
+        result.innerHTML += "<h5>Step 1: Convert decimal digits to nibbles</h5><br>"; 
         bcdresult = decimalTObcd(decimalresult.toString());
-        result.innerHTML = "BCD Result=" + bcdresult + "<br>";
+        result.innerHTML += "<h5>Step 2: Combine the nibbles to get your BCD number</h5><br>"; 
+        result.innerHTML += "BCD Result=" + bcdresult + "<br>";
         result.innerHTML += "Decimal Result=" + decimalresult + "<br>";
 
     }
