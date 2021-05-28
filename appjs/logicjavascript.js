@@ -18710,14 +18710,26 @@ function cscu1find() {
 
 function cscu2find() {
     let R = parseInt(document.getElementById("cscu2").value)
-    if (!isNaN(R)) {
+    var output = document.getElementById("cscu2ans")
+    var ans = ""
+    if (R < 0) {
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans
+    }
+   else if (!isNaN(R)) {
         var h = (4 * R) / 3;
         var r = (2 * Math.sqrt(2) * R) / 3;
-        document.getElementById("cscu2ans").innerHTML = "The radius is " + r + "and the height is " + h
+        ans += "\\[Radius \\space of \\space the \\space Cone \\space = \\space \\frac{2 \\sqrt{2} \\times r}{3} \\space = \\space \\frac{2 \\sqrt{2} \\times " + R + "}{3} \\]"
+        ans += "\\[Radius \\space of \\space the \\space Cone \\space inscribed \\space in \\space a \\space Sphere \\space is \\space = \\space " + r.toFixed(4) + " \\]"
+        ans += "\\[Height \\space of \\space the \\space Cone \\space = \\space \\frac{4 \\times r}{3} \\space = \\space \\frac{4 \\times " + R + "}{3} \\]"
+        ans += "\\[Height \\space of \\space the \\space Cone \\space inscribed \\space in \\space a \\space Sphere \\space is \\space = \\space " + h.toFixed(4) + " \\]"
+        output.innerHTML = ans
     }
     else {
-        document.getElementById("cscu2ans").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
     }
+    renderMathInElement(output)
 }
 
 function cscu3find() {
