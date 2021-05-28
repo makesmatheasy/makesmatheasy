@@ -1480,6 +1480,14 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
+function perchngCal(){
+    var initial = parseInt(document.getElementById("initialVal").value);
+    var final = parseInt(document.getElementById("finalVal").value);
+    var ans = ((final-initial)/Math.abs(initial))*100;
+    var output = document.getElementById("perchngans");
+    output.innerHTML = final  + " is a " + ans + "% change of " + initial;
+}
+
 function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);

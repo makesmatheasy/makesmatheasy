@@ -1605,6 +1605,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('dbltime').click();
                     }
+                    else if (inp.value.toUpperCase() == "PERCENTAGE CHANGE") {
+                        clearmain()
+                        $("#perchng").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE CHANGE"){
+                        clearmain()
+                        document.getElementById('perchng').click();
+                    }
                     else if (inp.value.toUpperCase() == "ADAM NUMBERS") {
                         clearmain()
                         $("#adams").slideDown();    

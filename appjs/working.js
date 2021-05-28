@@ -636,6 +636,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#perchngbtn").click(function () {
+        openit("#perchng");
+        closenav();
+        clearall();
+    });
 
     $("#sphbtn").click(function(){
         openit("#sph");
