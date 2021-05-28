@@ -5278,6 +5278,26 @@ function coordinatearea() {
     renderMathInElement(areaoutput);
     renderMathInElement(formula1);
 }
+
+function inmed() {
+    var a;
+    a = parseFloat(document.getElementById('inmed1').value);
+    var output = document.getElementById("inmedans");
+    var temp = " ";
+    var r = (2/3) * a
+    var d = Math.PI * r * r
+    if (isNaN(a)) {
+        temp += "\\[Please \\space enter \\space all \\space field \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+    else {
+        temp += "\\[Radius \\space of \\space Circle \\space = \\space \\frac{2}{3} \\times M  \\]";
+        temp += "\\[Area \\space of \\space Circle \\space = \\space  π \\times r^{2} \\space = \\space  π \\times (\\frac{2}{3} \\times M )^{2} \\space = \\space  π \\times (\\frac{2}{3} \\times " + a + ")^{2} \\space = \\space " + d.toFixed(3) + " \\]";
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
+}
 //Area of largest Triangle inscribe in N-sided Regular polygon
 function triinfind() {
     let n = parseInt(document.getElementById("triinin").value);
