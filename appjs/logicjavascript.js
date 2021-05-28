@@ -20131,8 +20131,20 @@ function polarcartcal() {
     var outputy = document.getElementById("polarcartyans");
     var ans = "";
 
-    var x = r * Math.cos(o);
-    var y = r * Math.sin(o);
+    var x = r * Math.cos(o).toFixed(2);
+    var y = r * Math.sin(o).toFixed(2);
+    var cs = Math.cos(o).toFixed(2);
+    var sn = Math.sin(o).toFixed(2);
+
+    var ansx = "";
+    var ansy = "";
+    ansx += "\\[x\\space coordinate:\\space r \\times cos(θ) \\]";
+    ansx += "\\[x\\space coordinate:\\space " + r + " \\times " + cs + "\\]"
+    ansx += "\\[x\\space coordinate:\\space " + x + "\\]"
+
+    ansy += "\\[y\\space coordinate:\\space r \\times sin(θ) \\]";
+    ansy += "\\[y\\space coordinate:\\space " + r + " \\times " + sn + "\\]"
+    ansy += "\\[y\\space coordinate:\\space " + y + "\\]"
 
     if (isNaN(r) || isNaN(o)) {
         ans += "Please fill all the field";
@@ -20140,9 +20152,11 @@ function polarcartcal() {
         outputy.innerHTML = "";
     }
     else {
-        outputx.innerHTML = "X : " + x.toFixed(2);
-        outputy.innerHTML = "Y : " + y.toFixed(2);
+        outputx.innerHTML = ansx;
+        outputy.innerHTML = ansy;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
 }
 
 function cartpolarcal() {
