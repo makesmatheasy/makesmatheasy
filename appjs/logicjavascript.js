@@ -15810,6 +15810,14 @@ function polymax10find() {
     document.getElementById("polymax10ans").innerHTML = radius;
 }
 
+function polymax11find(){
+    let n = parseInt(document.getElementById("polymax20").value)
+    let m = parseInt(document.getElementById("polymax21").value)
+    if (M > parseInt(N / 2)) {
+        document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+    }
+    document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+}
 
 //Sum of numbers from 1 to N which are in Lucas Sequence
 
