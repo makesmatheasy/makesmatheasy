@@ -5116,27 +5116,33 @@ function solveicosa() {
 }
 
 function pointrect() {
-    var x1, y1, x2, y2, x3, y3, p1, p2;
-    x1 = parseFloat(document.getElementById('checkrect1').value);
-    y1 = parseFloat(document.getElementById('checkrect2').value);
-    x2 = parseFloat(document.getElementById('checkrect3').value);
-    y2 = parseFloat(document.getElementById('checkrect4').value);
-    x = parseFloat(document.getElementById('checkrect5').value);
-    y = parseFloat(document.getElementById('checkrect6').value);
+    var x1 = parseFloat(document.getElementById('checkrect1').value);
+    var y1 = parseFloat(document.getElementById('checkrect2').value);
+    var x2 = parseFloat(document.getElementById('checkrect3').value);
+    var y2 = parseFloat(document.getElementById('checkrect4').value);
+    var x = parseFloat(document.getElementById('checkrect5').value);
+    var y = parseFloat(document.getElementById('checkrect6').value);
     var output = document.getElementById("pointrectans")
     var ans = "";
+    ans +="\\[To \\space see \\space if \\space Point \\space lies \\space inside \\space a \\space Rectangle, \\space we \\space check \\space if \\space all \\space four \\space conditions \\space satisfy\\]";
+    ans +="\\[\\space 1.\\space (x \\space coordinate \\space of \\space Point) \\space > \\space (x1 \\space coordinate \\space of \\space Rectangle) \\space i.e. \\space "+x+" > "+x1+"\\]"
+    ans +="\\[\\space 2. \\space (x \\space coordinate \\space of \\space Point) \\space < \\space (x2 \\space coordinate \\space of \\space Rectangle) \\space i.e. \\space"+x+" < "+x2+"\\]"
+    ans +="\\[\\space 3. \\space (y \\space coordinate \\space of \\space Point) \\space > \\space (y1 \\space coordinate \\space of \\space Rectangle) \\space  i.e. \\space"+y+" > "+y1+"\\]"
+    ans +="\\[\\space 4. \\space (y \\space coordinate \\space of \\space Point) \\space < \\space (y2 \\space coordinate \\space of \\space Rectangle) \\space i.e. \\space"+y+" < "+y2+"\\]"
     if (!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x) && !isNaN(y)) {
         if (x > x1 && x < x2 && y > y1 && y < y2) {
+            ans +="\\[As, \\space we \\space can  \\space see, \\space all \\space of \\space the \\space four \\space conditions \\space are \\space satified \\space for \\space this \\space input\\]";
             ans += "\\[The \\space given \\space points \\space lies \\space inside \\space a \\space Rectangle \\]"
             output.innerHTML = ans;
         }
         else {
-            ans += "\\[The \\space given \\space points \\space not \\space lie \\space inside \\space a \\space Rectangle \\]"
+            ans +="\\[Since, \\space all \\space of \\space the \\space four \\space conditions \\space are \\space not \\space satified \\space for \\space this \\space input\\]";
+            ans += "\\[The \\space given \\space points \\space does \\space not \\space lie \\space inside \\space a \\space Rectangle \\]"
             output.innerHTML = ans;
         }
     }
     else {
-        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        ans = "\\[Please \\space enter \\space all \\space fields \\]";
         output.innerHTML = ans;
     }
     renderMathInElement(output);
