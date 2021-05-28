@@ -15122,8 +15122,21 @@ function cylinderincubefind() {
     let a = parseInt(document.getElementById("cylinderincube").value)
     var r = a / 2;
     var h = a;
-    var V = (3.14 * Math.pow(r, 2) * h);
-    document.getElementById("cylinderincubeans").innerHTML = V;
+    var V = (3.1416 * Math.pow(r, 2) * h);
+    var output = document.getElementById("cylinderincubeans")
+    var ans = "";
+    if(!isNaN(a)){
+    ans += "\\[Height \\space of \\space the \\space cylinder (h) \\space = \\space Side \\space of \\space the \\space cube (a) \\]"
+    ans += "\\[Radius \\space of \\space the \\space cylinder (r) \\space = \\space \\frac{Side \\space of \\space the \\space cube (a)}{2} \\]"
+    ans += "\\[Volume \\space of \\space the \\space cylinder (v) \\space = \\space π \\times r^{2} \\times h \\space = \\space π \\times (\\frac{a}{2})^{2} \\times a \\]"
+    ans += "\\[Volume \\space of \\space the \\space cylinder \\space Inscribed \\space in \\space a \\space cube (v) \\space = \\space π \\times \\frac{a^{2}}{4} \\times a \\space = \\space " + (Math.PI).toFixed(4) + " \\times \\frac{" + a**2 + "}{4} \\times " + a + " \\space = \\space " + (Math.PI).toFixed(4) + "\\times " + (a**2/4) + " \\times " + a + " \\space = \\space " + V.toFixed(4) + " \\]"
+    output.innerHTML = ans;    
+}
+    else{
+        ans += "\\[Please \\space enter \\space the \\space value \\]";
+        output.innerHTML = ans; 
+    }
+    renderMathInElement(output);
 }
 
 function cubeincylinderfind() {
