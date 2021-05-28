@@ -2786,6 +2786,24 @@ function impse13find() {
     document.getElementById("impseans32").innerHTML = sum;
 }
 
+function impse22find(){
+    var n = (document.getElementById("impse22").value);
+    var x = setBits(N ^ (N - 1));
+    document.getElementById("impseans22").innerHTML = x
+}
+
+function setBits(n)
+{
+    var count = 0;
+ 
+    while (n > 0)
+    {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
+}
+
 //Important Series and Sequences start
 
 function impsefind() {
