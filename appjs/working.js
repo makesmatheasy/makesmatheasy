@@ -561,6 +561,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+    $("#cbtn").click(function () {
+        openit("#cchart");
+        closenav();
+        clearall();
+    }); 
     $("#pbtn").click(function () {
         openit("#pchart");
         closenav();

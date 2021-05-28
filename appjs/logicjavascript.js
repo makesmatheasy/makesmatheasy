@@ -13301,7 +13301,7 @@ function typenum15find(){
 
     }    
 
-}
+
 
 
 
@@ -19581,6 +19581,73 @@ function zvalue() {
         document.getElementById('ztestans').innerHTML = "<strong>Z score =" + Number.parseFloat(z).toPrecision(4) + " < " + pvalue + ", </strong>Null Hypothesis is Not Rejected.";
     }
 }
+
+//C chart
+function cchart_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+
+function cvalue() {
+    let list1 = document.getElementById("cdefective").value;
+    list1 = list1.split(" ");
+    var n1 = 0;
+    n1 = parseInt(list1.length);
+
+    for (var i = 0; i < n1; i++) {
+        list1[i] = parseInt(list1[i]);
+    }
+
+    var ans = "";
+    var ucl = "";
+    let sum = cchart_sum(list1);
+    var cbar =  (sum/n1).toFixed(4);
+    var ucl2 = (3*Math.sqrt(sum/n1).toFixed(4)).toFixed(4);
+
+    document.getElementById('cpans').innerHTML = "The control limits are:";
+    ans += "\\[\\space \\bar{C} \\space = \\frac{Total \\space No \\space of \\space defects \\space in \\space all \\space samples}{Total \\space no \\space of \\space items \\space inspected}\\]"
+    ans += "\\[ \\space  \\frac{" + sum + "}{"+n1+"}\\]";
+    ans += "\\[ \\space  " + (sum/n1).toFixed(4) + "\\]";
+    var controlLimit = document.getElementById('ccl')
+    controlLimit.innerHTML = ans;
+    renderMathInElement(controlLimit);
+
+    ucl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{C} +\\space 3 \\sqrt{ \\bar{C}} \\]"
+    ucl += "\\[\\space " + (sum/n1).toFixed(4) + " +\\space 3 \\sqrt{"+cbar+"} \\]"
+    ucl += "\\[\\space " + (sum/n1).toFixed(4)+ " +\\space 3 "+Math.sqrt(cbar).toFixed(4)+" \\]"
+    ucl += "\\[\\space " + (sum/n1).toFixed(4)+ " +\\space "+ucl2+" \\]"
+    ucl += "\\[\\space " + (cbar+ucl2).toFixed(4) + " \\]"
+    ucl += "\\[UCL \\space =\\space " + Number.parseFloat((cbar + ucl2).toPrecision(4)) + " \\]"
+
+    var upperControlLimit = document.getElementById('cuppercontrol');
+    upperControlLimit.innerHTML = ucl;
+    renderMathInElement(upperControlLimit);
+
+
+
+    var lcl = "";
+    lcl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{p} - \\space 3 \\sqrt{ \\bar{C}}\\]"
+    lcl += "\\[\\space " + cbar + " -\\space 3  \\sqrt{"+cbar+"} \\]"
+    lcl += "\\[\\space " + cbar + " -\\space 3 "+Math.sqrt(cbar).toFixed(4)+" \\]"
+    lcl += "\\[\\space " + cbar + " - \\space "+ucl2+" \\]"
+    lcl += "\\[\\space " + (cbar-ucl2).toFixed(4) + " \\]"
+    lcl += "\\[LCL \\space =\\space " + Number.parseFloat((cbar-ucl2).toPrecision(4)) + " \\]"
+    //check if lcl is negative
+    if (Number.parseFloat((cbar - ucl2).toPrecision(4)) < 0)
+        lcl += "\\[Since \\space the \\space fraction \\space defective \\space cannot \\space be \\space - ve \\space \\therefore \\space LCL \\space = 0 \\]"
+    var lowerControlLimit = document.getElementById('clowercontrol');
+    lowerControlLimit.innerHTML = lcl;
+    renderMathInElement(lowerControlLimit);
+
+
+
+}
+
 
 //p chart
 function pchart_sum(arr) {
