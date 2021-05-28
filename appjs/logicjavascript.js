@@ -18899,6 +18899,22 @@ function triinsemifind() {
     }
 }
 
+function hexsq() {
+    let a = parseFloat(document.getElementById("hexsq1").value)
+    if (!isNaN(a)) {
+        if (a < 0){
+            document.getElementById("hexsqans").innerHTML = "Side Length cannot be negative"
+    }
+    else{
+        var s = 0.5176 * a;
+        document.getElementById("hexsqans").innerHTML = s
+    }
+}
+    else {
+        document.getElementById("hexsqans").innerHTML = "Please enter valid input"
+    }
+}
+
 function recinsemifind() {
     let r = parseInt(document.getElementById("recinsemiin").value)
     let result = document.getElementById("recinsemians")
