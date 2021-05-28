@@ -1910,6 +1910,37 @@ else{
 }
 document.getElementById("skewans").innerHTML=ans;
 }
+// kurtosis calculator
+// kurtosis calculator
+function kurtcal()
+{   var num=document.getElementById("kurtinput").value;
+     var num1=document.getElementById("kurtinput2").value;
+    
+var ans="";
+    if(num == ""|| num1 =="")
+    {
+        ans="Please fill both fields"
+    }
+    else{
+        num = parseFloat(num);
+        num1 = parseFloat(num1);
+    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+num1+"^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+Math.pow(num1,4).toFixed(4)+"}\\]"
+    ans+="\\[\\beta_2 = "+(num/Math.pow(num1,4).toFixed(4)).toFixed(4)+"\\]"
+
+    if((num/Math.pow(num1,4).toFixed(4)).toFixed(4)==3)
+    ans+="\\[Since \\space \\beta_2 \\space is \\space equal \\space to \\space 3 \\space the  \\space distribution  \\space is  \\space mesokurtic. \\]"
+    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)>3)
+    ans+="\\[Since \\space \\beta_2 \\space > \\space 3 \\space the  \\space distribution  \\space is  \\space leptokurtic. \\]"
+    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)<3)
+    ans+="\\[Since \\space \\beta_2 \\space < \\space 3 \\space the  \\space distribution  \\space is  \\space platykurtic. \\]" 
+    }
+
+document.getElementById("kurtans").innerHTML=ans;
+renderMathInElement(document.getElementById("kurtans"));
+
+}
 function clockcal()
 {
     a=document.getElementById("hclock").value;  
