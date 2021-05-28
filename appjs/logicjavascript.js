@@ -13107,10 +13107,21 @@ function typenum11find() {
 function typenum13find() {
     var n = parseInt(document.getElementById("typenum16").value)
     let dp = [];
+    var explain="\\[Leonardo \\space Number(n)=1 \\space for \\space n=1 \\space \\space L(n-1)+L(n-2)+1 \\space for \\space n>1  \\]"+"\\[Leonardo \\space series \\space  upto \\space n :1 \\space,1 \\space ,";
     dp[0] = dp[1] = 1;
-    for (let i = 2; i <= n; i++)
+    for (let i = 2; i <= n; i++){
         dp[i] = dp[i - 1] + dp[i - 2] + 1;
-    document.getElementById("typenum13ans").innerHTML = dp[n];
+        explain+="("+dp[i-1]+"+"+dp[i-2]+"+1="+dp[i]+")\\space ,";
+    }
+    explain=explain.slice(0,-1);
+    explain+="\\]";
+    if (n==0 || n==1)
+        explain+="\\["+n+"th -Leonardo \\ Number is =1 \\]";
+    else 
+        explain+="\\["+n+"th -Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
+    
+    document.getElementById("typenum13ans").innerHTML ="\\["+n+"th \\space Leonardo \\space Number \\space is:"+dp[n]+"\\]"+explain;
+    renderMathInElement(document.getElementById("typenum13ans"))
 }
 
 function typenum12find() {
@@ -13127,7 +13138,7 @@ function typenum15find(){
         document.getElementById("typenum15ans").innerHTML  =  "Yes"
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
-    }    
+   
 }
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
