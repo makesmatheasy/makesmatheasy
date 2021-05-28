@@ -7099,6 +7099,26 @@ function tshapesolve() {
     }
 }
 
+// L - Shape
+function lshapesolve() {
+    var a = parseFloat(document.getElementById("lshape-a").value);
+    var b = parseFloat(document.getElementById("lshape-b").value);
+    var c = parseFloat(document.getElementById("lshape-c").value);
+    var longSideField = document.getElementById("resultOfLongSideLshape");
+    var shortSideField = document.getElementById("resultOfShortSideLshape");
+    var perimeterField = document.getElementById("resultOfPerimeterLshape");
+    var areaField = document.getElementById("resultOfAreaLshape");
+    var longSide = a - c;
+    var shortSide = b - c;
+    var perimeter =  a + longSide + b + shortSide + 2*c;
+    var area = a*c + shortSide*c;
+    if ((!isNaN(a)) && (!isNaN(b)) && (!isNaN(c))) {
+        longSideField.innerHTML = `Long inner side (a') = ${longSide.toFixed(3)}`;
+        shortSideField.innerHTML = `Short inner side (b') = ${shortSide.toFixed(3)}`;
+        perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)}`;
+        areaField.innerHTML = `Area (A) = ${area.toFixed(3)}`;
+    }
+}
 
 //Circle
 function solvecircle() {
