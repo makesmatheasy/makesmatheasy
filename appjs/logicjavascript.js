@@ -20960,6 +20960,10 @@ function relrisk() {
     if (a == "" || b == "" || c == "" || d == "") {
         document.getElementById("relriskans").innerHTML = "Enter all the inputs";
     }
+    else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
+    {
+        document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
+    }
     else {
         let ans = (a / (a + b)) / (c / (c + d));
         document.getElementById('relriskans').innerHTML = "Relative Risk: " + ans;
