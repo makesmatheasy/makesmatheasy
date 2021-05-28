@@ -561,7 +561,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
-    $("#cbtn").click(function () {
+    $("#ccbtn").click(function () {
         openit("#cchart");
         closenav();
         clearall();

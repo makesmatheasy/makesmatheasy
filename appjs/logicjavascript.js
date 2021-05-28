@@ -19607,7 +19607,7 @@ function cvalue() {
     var ucl2 = (3*Math.sqrt(sum/n1).toFixed(4)).toFixed(4);
 
     document.getElementById('cpans').innerHTML = "The control limits are:";
-    ans += "\\[\\space \\bar{C} \\space = \\frac{Total \\space No \\space of \\space defects \\space in \\space all \\space samples}{Total \\space no \\space of \\space items \\space inspected}\\]"
+    ans += "\\[\\space \\bar{C} \\space = \\frac{ Number \\space of \\space defects \\space in \\space all \\space samples}{Total \\space no \\space of \\space samples}\\]"
     ans += "\\[ \\space  \\frac{" + sum + "}{"+n1+"}\\]";
     ans += "\\[ \\space  " + (sum/n1).toFixed(4) + "\\]";
     var controlLimit = document.getElementById('ccl')
@@ -19616,10 +19616,10 @@ function cvalue() {
 
     ucl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{C} +\\space 3 \\sqrt{ \\bar{C}} \\]"
     ucl += "\\[\\space " + (sum/n1).toFixed(4) + " +\\space 3 \\sqrt{"+cbar+"} \\]"
-    ucl += "\\[\\space " + (sum/n1).toFixed(4)+ " +\\space 3 "+Math.sqrt(cbar).toFixed(4)+" \\]"
+    ucl += "\\[\\space " + (sum/n1).toFixed(4)+ " +\\space 3 \\times "+Math.sqrt(cbar).toFixed(4)+" \\]"
     ucl += "\\[\\space " + (sum/n1).toFixed(4)+ " +\\space "+ucl2+" \\]"
-    ucl += "\\[\\space " + (cbar+ucl2).toFixed(4) + " \\]"
-    ucl += "\\[UCL \\space =\\space " + Number.parseFloat((cbar + ucl2).toPrecision(4)) + " \\]"
+    ucl += "\\[\\space " +  (Number(cbar) + Number(ucl2)).toFixed(4)+ " \\]"
+    ucl += "\\[UCL \\space =\\space " + (Number(cbar) + Number(ucl2)).toFixed(4) + " \\]"
 
     var upperControlLimit = document.getElementById('cuppercontrol');
     upperControlLimit.innerHTML = ucl;
@@ -19628,12 +19628,12 @@ function cvalue() {
 
 
     var lcl = "";
-    lcl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{p} - \\space 3 \\sqrt{ \\bar{C}}\\]"
+    lcl += "\\[Lower \\space Control \\space Limit \\space (LCL) \\space =\\space \\bar{C} - \\space 3 \\sqrt{ \\bar{C}}\\]"
     lcl += "\\[\\space " + cbar + " -\\space 3  \\sqrt{"+cbar+"} \\]"
-    lcl += "\\[\\space " + cbar + " -\\space 3 "+Math.sqrt(cbar).toFixed(4)+" \\]"
+    lcl += "\\[\\space " + cbar + " -\\space 3 \\times "+Math.sqrt(cbar).toFixed(4)+" \\]"
     lcl += "\\[\\space " + cbar + " - \\space "+ucl2+" \\]"
     lcl += "\\[\\space " + (cbar-ucl2).toFixed(4) + " \\]"
-    lcl += "\\[LCL \\space =\\space " + Number.parseFloat((cbar-ucl2).toPrecision(4)) + " \\]"
+    lcl += "\\[LCL \\space =\\space " + (Number(cbar)-Number(ucl2)).toFixed(4) + " \\]"
     //check if lcl is negative
     if (Number.parseFloat((cbar - ucl2).toPrecision(4)) < 0)
         lcl += "\\[Since \\space the \\space fraction \\space defective \\space cannot \\space be \\space - ve \\space \\therefore \\space LCL \\space = 0 \\]"
@@ -19700,7 +19700,7 @@ function pvalue() {
 
 
     var lcl = "";
-    lcl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{p} -\\space 3 \\sqrt{\\frac{ \\bar{p} (1- \\bar{p})}{n}} \\]"
+    lcl += "\\[Lower \\space Control \\space Limit \\space (LCL) \\space =\\space \\bar{p} -\\space 3 \\sqrt{\\frac{ \\bar{p} (1- \\bar{p})}{n}} \\]"
     lcl += "\\[\\space " + pbar + " -\\space 3 \\sqrt{\\frac{ " + pbar + " \\space X " + (1 - pbar) + "}{" + n + "}} \\]"
     lcl += "\\[\\space " + pbar + " -\\space 3 \\sqrt{\\frac{ " + (pbar * (1 - pbar)) + "}{" + n + "}} \\]"
     lcl += "\\[\\space " + pbar + " - \\space 3 \\sqrt{" + (pbar * (1 - pbar)) / n + "} \\]"
