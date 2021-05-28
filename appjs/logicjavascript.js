@@ -15289,14 +15289,22 @@ function polymax5find() {
 }
 //Central angle of a N sided Regular Polygon
 function polymax6find() {
-    let n = parseInt(document.getElementById("polymax6").value)
+    var n = parseInt(document.getElementById("polymax6").value);
+    var output = document.getElementById("polymax6ans");
+    var temp ="";
     if (!isNaN(n)) {
         var total_angle = 360;
-        document.getElementById("polymax6ans").innerHTML = total_angle / n;
+        temp += "\\[Central \\space angle \\space of \\space a \\space N-sided \\space Regular \\space Polygon \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{(Total \\space angle)}{(No. \\space of \\space sides)}\\]"
+        temp += "\\[\\space = \\space \\frac{360}{"+n+"}\\]"
+        temp += "\\[\\space = \\space "+(total_angle / n).toFixed(3)+"\\]"
+        output.innerHTML = temp;
     }
     else {
-        document.getElementById("polymax6ans").innerHTML = "Please enter valid input"
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
     }
+    renderMathInElement(output);
 }
 
 function regang() {
