@@ -109,7 +109,6 @@ function cos(degrees) {
     var radians = (degrees*Math.PI)/180;
     return Math.cos(radians);
 }
-function excircum_2(){
 
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
@@ -12867,12 +12866,28 @@ function typenum6find() {
 function typenum7find() {
     let m = parseInt(document.getElementById("typenum8").value)
     let n = parseInt(document.getElementById("typenum9").value)
-    if (n == 2 || m == 2 || n % m == 0) {
-        document.getElementById("typenum7ans").innerHTML = "Yes" + "<br>"
+    var output = document.getElementById("typenum7ans");
+    var temp = "";
+    if (!isNaN(m) && !isNaN(n)){
+        temp += "\\[To \\space see \\space if \\space a \\space M-th \\space fibonacci \\space number \\space divides \\space N-th \\space fibonacci \\space number, \\space we \\space check\\]";
+        temp += "\\[\\space 1. \\space If \\space N-th \\space fibonacci \\space number \\space ("+m+") \\space exactly \\space equals \\space to \\space 2\\]";
+        temp += "\\[\\space 2. \\space If \\space M-th \\space fibonacci \\space number \\space ("+n+") \\space exactly \\space equals \\space to \\space 2\\]";
+        temp += "\\[\\space 3. \\space If \\space the \\space remainder \\space of \\space \\frac{N-th \\space fibonacci \\space number} {M-th \\space fibonacci \\space number} \\space is \\space 0\\]";
+        if (n == 2 || m == 2 || n % m == 0) {
+            temp +=  "\\[Since, \\space one \\space of \\space the \\space three \\space conditions \\space are \\space satified \\space for \\space this \\space input\\]";
+            temp += "\\[We \\space can \\space say \\space  M-th \\space fibonacci \\space number \\space ("+m+") \\space divides \\space N-th \\space fibonacci \\space number \\space ("+n+")\\]";
+            output.innerHTML = temp;
+        }
+        else {
+            temp += "\\[Since, \\space none \\space of \\space the \\space three \\space conditions \\space are \\space satified \\space for \\space this \\space input\\]";
+            temp += "\\[We \\space can \\space say \\space M-th \\space fibonacci \\space number \\space ("+m+") \\space DOES \\space NOT \\space divides \\space N-th \\space fibonacci \\space number \\space ("+n+")\\]";
+            output.innerHTML = temp;
+        }
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById("typenum7ans").innerHTML = "No" + "<br>"
-    }
+    renderMathInElement(output);
 }
 
 function printTribRec(n) {
