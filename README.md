@@ -365,6 +365,7 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+    - Hollow Cuboid
   - 3-D shapes Inscribed
   - 4-D Shapes Calculator
     - Tesseract
@@ -449,7 +450,7 @@ Other Tech/Libraries
   - Poisson Distribution Statistics
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
-
+  - Gamma Distribution Calculator
 - Statistics
 
   - Statistics Formulae
