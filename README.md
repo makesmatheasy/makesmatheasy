@@ -338,6 +338,7 @@ Other Tech/Libraries
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
+    - Capsule
     - Cube
     - Cuboid
     - Cylinder
