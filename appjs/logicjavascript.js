@@ -2132,20 +2132,42 @@ function gif() {
 
 // dip - calculator to find direct proportion
 function dip() {
-    var dipnum1 = document.getElementById("dipnum1").value;
-    var dipnum2 = document.getElementById("dipnum2").value;
-    var dipnum3 = document.getElementById("dipnum3").value;
-    var fourthVal = (parseInt(dipnum3) * parseInt(dipnum2)) / parseInt(dipnum1);
-    document.getElementById("dipans").innerHTML = "The Fourth Value is " + fourthVal.toFixed(3);
+    var dipnum1 = parseInt (document.getElementById("dipnum1").value);
+    var dipnum2 = parseInt (document.getElementById("dipnum2").value);
+    var dipnum3 = parseInt (document.getElementById("dipnum3").value);
+    var output = document.getElementById("dipans")
+    var ans = "";
+    if(!isNaN(dipnum1) && !isNaN(dipnum2) && !isNaN(dipnum3)){
+    var fourthVal = ((dipnum3) * (dipnum2)) / (dipnum1);
+    ans += "\\[\\frac{X1}{Y1} \\space = \\space \\frac{X2}{Fourth Value} \\]"
+    ans += "\\[Fourth Value \\space = \\space \\frac{X2 \\times Y1}{X1} \\space = \\space \\frac{ " + dipnum3 + " \\times " + dipnum2 + "}{" + dipnum1 + "} \\space = \\space \\frac{ " + dipnum3 * dipnum2 + "}{" + dipnum1 + "} \\space = \\space " + fourthVal.toFixed(3) + " \\]"
+    output.innerHTML = ans;
+  }
+else{
+    ans += "\\[Please \\space enter \\space the \\space value \\]";
+    output.innerHTML = ans; 
+}
+renderMathInElement(output);
 }
 
 // inDP - calculator to find indirect proportion
 function inDP() {
-    var inDPnum1 = document.getElementById("inDPnum1").value;
-    var inDPnum2 = document.getElementById("inDPnum2").value;
-    var inDPnum3 = document.getElementById("inDPnum3").value;
-    var fourthVal = (parseInt(inDPnum1) * parseInt(inDPnum2)) / parseInt(inDPnum3);
-    document.getElementById("inDPans").innerHTML = "The Fourth Value is " + fourthVal.toFixed(3);
+    var inDPnum1 = parseInt (document.getElementById("inDPnum1").value);
+    var inDPnum2 = parseInt (document.getElementById("inDPnum2").value);
+    var inDPnum3 = parseInt (document.getElementById("inDPnum3").value);
+    var output =   document.getElementById("inDPans")
+    var ans = "";
+    if(!isNaN(inDPnum1) && !isNaN(inDPnum2) && !isNaN(inDPnum3)){
+    var fourthVal = ((inDPnum1) * (inDPnum2)) / (inDPnum3);
+    ans += "\\[X1 \\times Y1 \\space = \\space X2 \\times Fourth Value \\]"
+    ans += "\\[Fourth Value \\space = \\space \\frac{X1 \\times Y1}{X2} \\space = \\space \\frac{ " + inDPnum1 + " \\times " + inDPnum2 + "}{" + inDPnum3 + "} \\space = \\space \\frac{ " + inDPnum1 * inDPnum2 + "}{" + inDPnum3 + "} \\space = \\space " + fourthVal.toFixed(3) + " \\]"
+    output.innerHTML = ans;
+  }
+else{
+    ans += "\\[Please \\space enter \\space the \\space value \\]";
+    output.innerHTML = ans; 
+}
+renderMathInElement(output);
 }
 
 // cross multiplication calculator
