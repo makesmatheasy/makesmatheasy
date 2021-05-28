@@ -17072,11 +17072,48 @@ function convertbcd() {
         result.innerHTML = input;
     else if (fromCode == "Decimal" && toCode == "Decimal")
         result.innerHTML = input;
-    else if (fromCode == "BCD Code" && toCode == "Decimal")
-        result.innerHTML = bcdTOdecimal(input).join('_');
-    else if (fromCode == "Decimal" && toCode == "BCD Code")
-        result.innerHTML = decimalTObcd(input);
-    else if (fromCode == "Binary" && toCode == "BCD Code") {
+    else if (fromCode == "BCD Code" && toCode == "Decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + parseInt(temp,2).toString();
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                result.innerHTML = x;
+            }else{
+                result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
+            }
+        }
+    }else if (fromCode == "Decimal" && toCode == "BCD Code"){
+        var x = "_";
+        var y = "";
+        for (var i = 0; i < input.length; i++) {
+            y = parseInt(input[i]).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
+        }
+        result.innerHTML = x;
+    }else if (fromCode == "Binary" && toCode == "BCD Code") {
         input = parseInt(input, 2).toString();
         result.innerHTML = decimalTObcd(input);
     } else if (fromCode == "BCD Code" && toCode == "Binary") {
