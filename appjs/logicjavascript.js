@@ -17898,6 +17898,8 @@ function convertdec2421() {
 
 
 
+
+
     else if(type === "Octal"){
         var x = "_";
         var y = "";
@@ -17905,6 +17907,18 @@ function convertdec2421() {
         input = parseInt(input,8).toString();
 
 
+
+
+
+
+
+
+
+    else if(type === "Hexa decimal"){
+        var x = "_";
+        var y = "";
+
+        input = parseInt(input,16).toString();
 
 
         for (var i = 0; i < input.length; i++) {
