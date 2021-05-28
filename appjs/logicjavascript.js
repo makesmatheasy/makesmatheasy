@@ -5921,6 +5921,39 @@ function pythtriple() {
         }
     }
 }
+
+//Pythagorean Triplets Checker
+function pythtriplecheck(){
+    var a = document.getElementById('pytha').value;
+    var b = document.getElementById('pythb').value;
+    var c = document.getElementById('pythc').value;
+    var result = document.getElementById('pythans');
+    
+    var p;
+    var q;
+    var r;
+
+    if(a>b && a>c){
+        r=a;
+        p=b;q=c;
+    }else if(b>a && b>c){
+        r=b;
+        p=a;q=c;
+    }else if(c>a && c>b){
+        r=c;
+        p=a;q=b;
+    }
+
+    if(p**2 + q**2 == r**2){
+        result.innerHTML = "\\[(" + a + "," + b + "," + c + ") \\space are \\space Pythagorean \\space Triplets\\]";
+    }else{
+        result.innerHTML ="\\[Entered \\space values \\space are'nt \\space Pythagorean \\space Triplets \\]";
+    }
+
+    renderMathInElement(result);
+
+}
+
 //Equilateral Triangle
 function equilateraltrianglearea() {
     var side = document.getElementById("equilateraltriangleside").value;
