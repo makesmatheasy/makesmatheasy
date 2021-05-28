@@ -12577,6 +12577,16 @@ function cirinsemi10find() {
         document.getElementById("cirinsemi10ans").innerHTML = "-1"
 }
 
+function cirinsemi11find(){
+    let H = parseInt(document.getElementById("cirinsemi17in").value)
+    let n = parseInt(document.getElementById("cirinsemi18in").value)
+    let m = parseInt(document.getElementById("cirinsemi19in").value)
+    let N = n * 1.0;
+    let M = m * 1.0;
+    let h = H * Math.sqrt(N / (N + M));
+    document.getElementById("cirinsemi11ans").innerHTML = h;
+}
+
 function trapinsemifind() {
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3) * Math.pow(r, 2)) / 4;
