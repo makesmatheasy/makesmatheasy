@@ -1398,8 +1398,10 @@ function unitcircCal(){
     var x = Math.cos(rad);
     var y = Math.sin(rad);
 
-    document.getElementById("unitcircxans").innerHTML = "X: " + x;
-    document.getElementById("unitcircyans").innerHTML = "Y: " + y;
+    document.getElementById("unitcircxans").innerHTML = "\\[X: " + x+"\\newline Y:  "+ y+"\\]";
+    document.getElementById("unitcircyans").innerHTML = "\\[X \\space =cos("+deg+"\\degree )="+x+"  \\space \\newline Y \\space =sin("+deg+"\\degree )="+y+"  \\]"
+    renderMathInElement(document.getElementById("unitcircxans"));
+    renderMathInElement(document.getElementById("unitcircyans"));
 }
 
 function wmccal()
