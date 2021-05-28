@@ -16499,17 +16499,23 @@ function hammingDistance() {
                 renderMathInElement(result);
             }
         } else if (type == "String") {
-            let hammDist;
-            ans += "\\[Scan\\space both\\space the\\space strings\\space from\\space left\\space to\\space right\\space and\\space where\\space both\\space bits\\space are\\space same\\space increment\\space hamming\\space distance\\space by\\space 1\\space\\]"
+            let hammDist = 0;
+            ans += "\\[Input \\space 1 : \\space " + x + " \\]";
+            ans += "\\[Input \\space 2 : \\space " + y + " \\]";
+            ans += "\\[Check \\space one \\space character \\space at \\space a \\space time \\space for \\space both \\space the \\space inputs \\]";
+            ans += "\\[Count \\space the \\space number \\space of \\space positions \\space at \\space which \\space the \\space characters \\space are \\space different\\]";
+            ans += "\\[The \\space positions \\space at \\space which \\space the \\space characters \\space are \\space different \\space = \\space ";
             for (var i = 0; i < x.length; i++) {
                 if (x.charAt(i) != y.charAt(i)) {
                     hammDist += 1;
                     var a = x.charAt(i);
                     var b = y.charAt(i);
-                    ans += "\\[bit\\space at " + (i + 1) + "is\\space equal\\space hamming\\space distance=" + hammDist + " \\]";
+                    ans += " \\space " + i + ", \\space ";
                 }
             }
-            ans += "\\[The\\space hamming\\space distance \\space between\\space " + x + "\\space and\\space " + y + ":\\space " + hammDist + "\\]"
+            ans += "\\]";
+            ans += "\\[Here, \\space There \\space are \\space " + hammDist + " \\space positions \\space at \\space which \\space characters \\space are \\space different.\\]";
+            ans += "\\[So, \\space Hamming \\space Distance \\space = \\space " + hammDist + "\\]";
             result.innerHTML = ans;
             renderMathInElement(result);
         } else if (type == "Hexadecimal") {
