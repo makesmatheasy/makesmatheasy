@@ -13274,7 +13274,7 @@ function typenum15find(){
 
     }    
 
-}    
+}
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
         if (arr[p]) {
@@ -14880,6 +14880,18 @@ function sccofind() {
        renderMathInElement( document.getElementById("sccoans"));
     }else {
      document.getElementById("sccoans").innerHTML =R;
+    }  
+}
+
+function cube() {
+    let h = parseFloat(document.getElementById("cube1").value)
+    var v = Math.pow(h, 3);                                                                            
+    if(h<0)
+    {
+       document.getElementById("cubeans").innerHTML+="\\[Height \\space of \\space the \\space Cylinder \\space cannot \\space be \\space negative.\\]"  
+       renderMathInElement( document.getElementById("cubeans"));
+    }else {
+     document.getElementById("cubeans").innerHTML =v;
     }  
 }
 
