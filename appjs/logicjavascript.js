@@ -5182,15 +5182,23 @@ function pointhyper() {
     y = parseFloat(document.getElementById('checkhyper6').value);
     var output = document.getElementById("pointhyperans")
     var ans = "";
+    var explain="\\[Put \\space the \\space point(x,y) \\space in \\space eq. \\space of \\space Hyperbola, \\space p= \\frac{(x-h)^2}{a^2}-\\frac{(y-k)^2}{b^2}  \\newline if \\space p>1 \\space point \\space lies \\space outside \\space the \\space hyperbola \\newline if \\space p==1 \\space point \\space lies \\space on \\space the \\space hyperbola \\newline else \\space point \\space lies \\space inside \\space the \\space hyperbola \\]"
     if (!isNaN(h) && !isNaN(k) && !isNaN(a) && !isNaN(b) && !isNaN(x) && !isNaN(y)) {
         var p = ((Math.pow((x - h), 2) / Math.pow(a, 2)) -(Math.pow((y - k), 2) / Math.pow(b, 2)))
-        if (p > 1)
-          ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Hyperbola \\]";
-        else if (p == 1)
-          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Hyperbola \\]";
-        else
-          ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Hyperbola \\]";
-        output.innerHTML = ans;
+        explain+="\\[Put \\space the \\space value \\space p("+x+","+y+"): \\space p=\\frac{("+x+"-"+h+")^2}{"+a+"^2}-\\frac{("+y+"-"+k+")^2}{"+b+"^2}="+p+"\\]";
+        if (p > 1){
+          ans += "\\[The \\space given \\space point("+x+","+y+") \\space lies \\space outside \\space the \\space Hyperbola \\]";
+          explain+="\\[Hence "+p+">1 \\space, So \\space point("+x+","+y+") \\space lies \\space outside \\space the \\space Hyperbola  \\]"  
+        }
+        else if (p == 1){
+          ans += "\\[The \\space given \\space point("+x+","+y+") \\space lies \\space on \\space the \\space Hyperbola \\]";
+          explain+="\\[Hence "+p+"==1 \\space, So \\space point("+x+","+y+") \\space lies \\space on \\space the \\space Hyperbola  \\]"   
+        }
+        else{
+            ans += "\\[The \\space given \\space point("+x+","+y+") \\space lies \\space inside \\space the \\space Hyperbola \\]";
+          explain+="\\[Hence "+p+"<1 \\space, So \\space point("+x+","+y+") \\space lies \\space inside \\space the \\space Hyperbola  \\]"   
+        }
+        output.innerHTML = ans+explain;
     }
     else {
         ans += "\\[Please \\space enter \\space all \\space fields \\]";
