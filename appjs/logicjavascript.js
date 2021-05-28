@@ -16482,18 +16482,19 @@ function hammingDistance() {
         result.innerHTML = "Error : Unequal Length ( Hamming distance can be calculated between 2 equal length of inputs )"
     } else {
         if (type == "Decimal") {
+            ans += "\\[Input \\space 1 : \\space " + x + " \\space \\& \\space in \\space binary  : \\space " + parseInt(x).toString(2) + "\\]";
+            ans += "\\[Input \\space 2 : \\space " + y + " \\space \\& \\space in \\space binary  : \\space " + parseInt(y).toString(2) + "\\]";
+            ans += "\\[Check \\space one \\space character \\space at \\space a \\space time \\space for \\space both \\space the \\space inputs in \\space binary\\]";
+            ans += "\\[Count \\space the \\space number \\space of \\space positions \\space at \\space which \\space the \\space bits \\space are \\space different\\]";
             let val = x ^ y;
             let hammDist = 0;
-            ans += "\\[Let\\space val=\\space first\\space number\\space \XOR \\space second\\space number\\space \\]";
-            ans += "\\[Scan\\space both\\space the\\space strings\\space from\\space left\\space to\\space right\\space and\\space where\\space both\\space bits\\space are\\space same\\space increment\\space hamming\\space distance\\space by\\space 1\\space\\]"
             if (x.length == y.length) {
                 while (val > 0) {
-                    ans += "\\[When\\space val=\\space " + val + "\\space hamming\\space\\distance=" + hammDist + " \\]"
                     val &= val - 1;
                     hammDist++;
                 }
-                ans += "\\[When\\space val=\\space " + val + "\\space hamming\\space\\distance=" + hammDist + " \\]"
-                ans += "\\[The\\space hamming\\space distance \\space between\\space " + x + "\\space and\\space " + y + ":\\space " + hammDist + "\\]"
+                ans += "\\[Here, \\space There \\space are \\space " + hammDist + " \\space positions \\space at \\space which \\space bits \\space are \\space different.\\]";
+                ans += "\\[So, \\space Hamming \\space Distance \\space = \\space " + hammDist + "\\]";
                 result.innerHTML = ans;
                 renderMathInElement(result);
             }
@@ -20579,4 +20580,4 @@ function negbinoCal() {
         let ans = combi * p**r * (1-p)**(n-r);
         document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
     }
-}
+  }
