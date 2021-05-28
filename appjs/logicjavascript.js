@@ -14122,6 +14122,19 @@ function lacube14find() {
     document.getElementById("lacube14ans").innerHTML = false;
 }
 
+function lacube15find(){
+    let n = parseInt(document.getElementById("lacube16").value)
+    for(let i = 0; i < 100000; i++)
+    {
+        if (parseInt(Math.pow(i + 1, 3), 10) -
+            parseInt(Math.pow(i, 3), 10) == N)
+        {
+            document.getElementById("lacube15ans").innerHTML =  i + " " + (i + 1);
+            return;
+        }
+    }
+}
+
 function isPerfectCube(x) {
     var cr = Math.round(Math.cbrt(x));
 
