@@ -641,7 +641,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#peroffbtn").click(function () {
+        openit("#peroff");
+        closenav();
+        clearall();
+    });
     $("#sphbtn").click(function(){
         openit("#sph");
         closenav();

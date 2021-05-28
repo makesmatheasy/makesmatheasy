@@ -188,6 +188,7 @@ function openit(id) {
         "#woods",
         "#dbltime",
         "#perchng",
+        "#peroff",
         "#kaps",
         "#chitest",
         "#adams",

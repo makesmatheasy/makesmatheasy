@@ -1613,6 +1613,14 @@ function autocomplete(inp, arr) {
                         clearmain()
                         document.getElementById('perchng').click();
                     }
+                    else if (inp.value.toUpperCase() == "PERCENTAGE OFF") {
+                        clearmain()
+                        $("#peroff").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE OFF"){
+                        clearmain()
+                        document.getElementById('peroff').click();
+                    }
                     else if (inp.value.toUpperCase() == "ADAM NUMBERS") {
                         clearmain()
                         $("#adams").slideDown();    

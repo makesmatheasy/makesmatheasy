@@ -163,6 +163,7 @@ Other Tech/Libraries
   - Euclid GCD
   - Doubling Time
   - Percentage change
+  - Percentage off
   - Modulo calculator
   - Sieve of Eratosthenes
   - Adam Numbers
