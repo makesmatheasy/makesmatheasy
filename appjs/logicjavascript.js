@@ -5539,7 +5539,7 @@ function orthosolve() {
             temp += "\\[y \\space = \\space ( \\space \\frac{[x2(x1-x3) + y2(y1 - y3)][x3 - x2]-[x3-x1][x1(x2 - x3) + y1(y2-y3)]}{(y3-y2)(x3-x1)-(x3-x2)(y3-y1)} \\]";
             temp += "\\[y \\space = \\space ( \\space \\frac{[" + x2 + " \\times  ( " + x1 + "-" + x3 + ") + " + y2 + " \\times  ( " + y1 + " - " + y3 + ")][ " +x3 + " - " + x2 + "]-[ " +x3 + "-" + x1 + "][ " + x1 + " \\times ( " + x2 + " - " + x3 + ") + " +  y1 + " \\times (  " + y2 + "- " +y3 + ")]}{( " + y3 + "- " + y2 + ")( " +x3 + "- " + x1 + ")-( " + x3 + "- " +x2 + ")( " + y3 + "- " +y1 + ")} \\]";
             temp += "\\[y \\space = \\space ( \\space \\frac{[" + x2 + " \\times" + (x1 - x3) + " + " + y2 + " \\times" + (y1 - y3) + "][ " + (x3 -  x2) + "]-[ " + (x3 - x1) + "][" + x1 + " \\times  " + (x2 - x3) + " + " +  y1 + " \\times   " + (y2 - y3) + "]}{( " + (y3 - y2) + ")( " + (x3 - x1) + ")-( " + (x3 - x2) + ")( " + (y3 - y1) + ")} \\]";
-            temp += "\\[y \\space = \\space " + x + " \\]"
+            temp += "\\[y \\space = \\space " + y + " \\]"
             temp += "\\[The \\space orthocenter \\space for \\space the \\space Triangle \\space is \\space ( " + x + " , " + y + ") \\]";
             output1.innerHTML = temp;
             renderMathInElement(output1);
