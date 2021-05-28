@@ -336,6 +336,7 @@ Other Tech/Libraries
     - H-Shape
     - L-Shape
     - Arbelos
+    - Spherical Triangle
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
