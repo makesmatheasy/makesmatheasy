@@ -20229,10 +20229,31 @@ function sphcartcal(){
     var outputy = document.getElementById("sphcartyans");
     var outputz = document.getElementById("sphcartzans");
     var ans="";
+    var ansx = "";
+    var ansy = "";
+    var ansz = "";
     
-    var x = r * Math.sin(o) * Math.cos(fi);
-    var y = r * Math.sin(o) * Math.sin(fi);
-    var z = r * Math.cos(o);
+    var cso = Math.cos(o).toFixed(2);
+    var csfi = Math.cos(fi).toFixed(2);
+    var sno = Math.sin(o).toFixed(2);
+    var snfi = Math.sin(fi).toFixed(2);
+    
+    var x = (r * Math.sin(o) * Math.cos(fi)).toFixed(2);
+    var y = (r * Math.sin(o) * Math.sin(fi)).toFixed(2);
+    var z = (r * Math.cos(o)).toFixed(2);
+
+    ansx += "\\[x\\space coordinate:\\space r \\times sin(θ) \\times cos(φ) \\]";
+    ansx += "\\[x\\space coordinate:\\space " + r + " \\times " + sno + " \\times " + csfi + " \\]";
+    ansx += "\\[x\\space coordinate:\\space " + x + "\\]"
+
+    ansy += "\\[y\\space coordinate:\\space sin(θ) \\times sin(φ) \\]";
+    ansy += "\\[y\\space coordinate:\\space " + r + " \\times " + sno + " \\times " + snfi + "\\]";
+    ansy += "\\[y\\space coordinate:\\space " + y + "\\]"
+
+    ansz += "\\[z\\space coordinate:\\space r \\times cos(θ) \\]";
+    ansz += "\\[z\\space coordinate:\\space " + r + " \\times " + cso + " \\]";
+    ansz += "\\[z\\space coordinate:\\space " + z + " \\]";
+
     
     if(isNaN(r)||isNaN(o)||isNaN(fi))
     {
@@ -20242,10 +20263,13 @@ function sphcartcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputx.innerHTML= "X : " + x.toFixed(2);
-        outputy.innerHTML = "Y : " + y.toFixed(2);
-        outputz.innerHTML = "Z : " + z.toFixed(2);
+        outputx.innerHTML= ansx;
+        outputy.innerHTML = ansy;
+        outputz.innerHTML = ansz;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
+    renderMathInElement(outputz);
 }
 
 function cartcylcal() {
