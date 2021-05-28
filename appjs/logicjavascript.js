@@ -17583,6 +17583,9 @@ function convertex3() {
 function convertdec2421() {
     var input = document.getElementById("dec2421-input").value;
     let result = document.getElementById("dec2421-result");
+    const type = document.getElementById("dec2421-select");
+
+    if(type === "Decimal"){
     var x = "_";
     var y = "";
     for (var i = 0; i < input.length; i++) {
@@ -17603,6 +17606,32 @@ function convertdec2421() {
         }
         if (y.length == 4) {
             x = x + +y + "_   ";
+        }
+    }
+    }else if(type === "Binary"){
+        var x = "_";
+        var y = "";
+
+        input = parseInt(input,2).toString();
+        for (var i = 0; i < input.length; i++) {
+            if (parseInt(input[i]) < 5) {
+                y = (parseInt(input[i]) + 0).toString(2);
+            } else if (parseInt(input[i]) > 4) {
+                y = (parseInt(input[i]) + 6).toString(2);
+            }
+    
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
         }
     }
     result.innerHTML = x;
