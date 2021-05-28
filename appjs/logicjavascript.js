@@ -5133,7 +5133,7 @@ function pointrect() {
 }
 
 function pointhyper() {
-    var h,k,a,b, p1, p2;
+    var h,k,a,b, x,y;
     h = parseFloat(document.getElementById('checkhyper1').value);
     k = parseFloat(document.getElementById('checkhyper2').value);
     a = parseFloat(document.getElementById('checkhyper3').value);
@@ -5143,13 +5143,39 @@ function pointhyper() {
     var output = document.getElementById("pointhyperans")
     var ans = "";
     if (!isNaN(h) && !isNaN(k) && !isNaN(a) && !isNaN(b) && !isNaN(x) && !isNaN(y)) {
-        p = ((Math.pow((x - h), 2) / Math.pow(a, 2)) -(Math.pow((y - k), 2) / Math.pow(b, 2)))
+        var p = ((Math.pow((x - h), 2) / Math.pow(a, 2)) -(Math.pow((y - k), 2) / Math.pow(b, 2)))
         if (p > 1)
           ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Hyperbola \\]";
         else if (p == 1)
           ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Hyperbola \\]";
         else
           ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Hyperbola \\]";
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
+
+function pointpara() {
+    var h,k,a,b, x,y;
+    h = parseFloat(document.getElementById('checkpara1').value);
+    k = parseFloat(document.getElementById('checkpara2').value);
+    a = parseFloat(document.getElementById('checkpara3').value);
+    x = parseFloat(document.getElementById('checkpara4').value);
+    y = parseFloat(document.getElementById('checkpara5').value);
+    var output = document.getElementById("pointparaans")
+    var ans = "";
+    if (!isNaN(h) && !isNaN(k) && !isNaN(a)  && !isNaN(x) && !isNaN(y)) {
+        var p =parseInt(Math.pow((y - k), 2) - 4 * a * (x - h));
+        if (p > 0)
+          ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Parabola \\]";
+        else if (p ==0)
+          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Parabola \\]";
+        else
+          ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Parabola \\]";
         output.innerHTML = ans;
     }
     else {
@@ -13127,8 +13153,7 @@ function typenum15find(){
         document.getElementById("typenum15ans").innerHTML  =  "Yes"
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
-    }    
-}
+}    
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
         if (arr[p]) {
