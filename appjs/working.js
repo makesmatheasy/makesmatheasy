@@ -1591,11 +1591,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#hex_graybtn").click(function(){
-        openit("#hex_gray");
-        closenav();
-        clearall();
-    });
 
 
 })

@@ -384,7 +384,6 @@ function openit(id) {
         "#pdiffeqn",
         "#maxmin",
         "#locroots",
-        "#hex_gray",
         "#tangent",
         "#srf",
         "#probabilitycollapse",

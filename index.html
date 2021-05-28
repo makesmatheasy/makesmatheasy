@@ -3966,22 +3966,7 @@
                     </tr>
                 </table>
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="hex_graybtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Steps for Hexadecimal to Gray</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Steps for Hexadecimal to Gray','#hex_gray','c','hex_grayimgfav')"><img
-                                        id="hex_grayimgfav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+            
             
             <!--end-->
 
@@ -22542,38 +22527,6 @@ N is the population size.
 
         <!--end of binary to hexadecimal-->
 
-        <div class="collapse" id="hex_gray">
-            <h1 style="text-align: center; margin-bottom: 20px; color: #da1085;;">Steps for Hexadecimal to Gray</h1>
-            <p>A Hex can be converted to Gray Code in three steps:-</p>
-            <h5>1) Convert the input hex to binary</h5><br>
-            <h5>2) Take the first bit of the binary input and write it to the output</h5><br>
-            <h5>3) Repeat the following steps until you reach the end of the input</h5><br>
-            <h5>4) Take the second bit of the input and XOR it to the previous bit of the input</h5><br>
-            <h5>5) Write this result to the output. So, 0 + 0 = 0, 0 + 1 = 1, 1 + 0 = 1 and 1 + 1 = 0.</h5><br>
-            <h1 style="text-align: center; margin-bottom: 20px;">Example Hex to Gray Code Conversion</h1><br>
-            <p>Let's say your Hex value is 0xad and you want to convert it to it's Gray Code form.</p><br>
-            <h5>Step 1: Convert the input hex to binary. So, 0xad becomes 10101101</h5><br>
-            <h5>Step 2: Take the first bit of the binary input and write it to the output. Output is 1</h5><br>
-            <h5>Step 3: Repeat the steps below until you reach the end of the input</h5><br>
-            <h5 style="margin-left: 10px;">* Take the second bit of the input and XOR it to the previous bit of the input. 1 + 0 = 1</h5><br>
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 11</h5><br>
-            <h5 style="margin-left: 10px;">* Take the third bit of the input and XOR it to the previous bit of the input. 0 + 1 = 1</h5><br>
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 111</h5><br>
-            <h5 style="margin-left: 10px;">* Take the fourth bit of the input and XOR it to the previous bit of the input. 1 + 0 = 1</h5><br>
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 1111</h5><br>
-            <h5 style="margin-left: 10px;">* Take the fifth bit of the input and XOR it to the previous bit of the input. 0 + 1 = 1</h5><br>
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 11111</h5><br>
-            <h5 style="margin-left: 10px;">* Take the sixth bit of the input and XOR it to the previous bit of the input. 1 + 1 = 0</h5><br>
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 111110</h5><br>
-            <h5 style="margin-left: 10px;">* Take the seventh bit of the input and XOR it to the previous bit. 1 + 0 = 1</h5><br>
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 1111101</h5><br>
-
-            <h5 style="margin-left: 10px;">* Take the eighth (last) bit of the input and XOR it to the previous bit. 0 + 1 = 1</h5><br>
-
-            <h5 style="margin-left: 10px;">* Write the result to the output. Output: 11111011</h5><br>
-            <h5></h5>Step 4: So, our final gray code result is: 11111011</h5>
-
-        </div>
         <!--Simple Probability-->
 
         <div class="collapse" id="probabilitycollapse">
