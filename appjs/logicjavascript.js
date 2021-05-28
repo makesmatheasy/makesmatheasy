@@ -20982,13 +20982,26 @@ function relrisk() {
     let c = document.getElementById("relcont0").value;
     let d = document.getElementById("relcont1").value;
 
+    let ans = "";
+    var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
+        output.innerHTML = "Enter all the inputs";
     }
     else {
-        let ans = (a / (a + b)) / (c / (c + d));
-        document.getElementById('relriskans').innerHTML = "Relative Risk: " + ans;
+        let ab = a+b; 
+        let cd = c+d; 
+        let aa = (a/ab).toFixed(2); 
+        let cc = (c/cd).toFixed(2); 
+        let rel = ((a / (a + b)) / (c / (c + d))).toFixed(2); 
+
+        ans += "\\[Relative\\space risk\\space = \\frac{ \\frac{a}{(a + b)}}{\\frac{c}{(c + d)}}\\]";
+        ans += "\\[Relative\\space risk\\space = \\frac{ \\frac{"+a+"}{("+a+" + "+b+")}}{\\frac{"+c+"}{("+c+" + "+d+")}}\\]";
+        ans += "\\[Relative\\space risk\\space = \\frac{ \\frac{"+a+"}{"+ab+"}}{\\frac{"+c+"}{"+cd+"}}\\]";
+        ans += "\\[Relative\\space risk\\space = \\frac{"+aa+"}{"+cc+"}\\]";
+        ans += "\\[Relative\\space risk\\space = "+rel+"\\]";
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 // Negative Binomial Distribution Calculator
