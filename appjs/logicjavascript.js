@@ -9648,6 +9648,32 @@ function solveelonsqupyr() {
     }
 }
 
+// Sharp Kink
+function sharpKinkSolve() {
+    var b = parseFloat(document.getElementById("sharpkink-b").value);
+    var a = parseFloat(document.getElementById("sharpkink-a").value);
+    var c = parseFloat(document.getElementById("sharpkink-c").value);
+    var cx = parseFloat(document.getElementById("sharpkink-cx").value);
+    var alpha = parseFloat(document.getElementById("sharpkink-alpha").value);
+    var diagonalField = document.getElementById("resultKinkDiagonal");
+    var perimeterField = document.getElementById("resultKinkPerimeter");
+    var areaField = document.getElementById("resultKinkArea");
+    var d = b/Math.sin((a/2)* (180 / Math.PI));
+    var ax = cx + Math.sqrt(d*d - b*b);
+    var perimeter = a + 2*b + c + ax + cx;
+    var area = b * ( a + cx );
+    if(alpha > 180){
+        diagonalField.innerHTML = "Angle must be <= 180!";
+        perimeterField.innerHTML = "";
+        areaField.innerHTML = "";
+    }
+    else if ((!isNaN(b)) && (!isNaN(a)) && (!isNaN(c)) && (!isNaN(cx))) {
+        diagonalField.innerHTML = `Diagonal Field = ${d}`;
+        perimeterField.innerHTML = `Perimeter = ${perimeter} units`;
+        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+    }
+}
+
 //Salinon
 function solveSalinon() {
     var r = document.getElementById("inputsalinonr").value;
