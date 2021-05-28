@@ -769,6 +769,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#kurtbtn").click(function () {
+        openit("#kurt");
+        closenav();
+        clearall();
+    });
 
     $("#igcbtn").click(function () {
         openit("#igc");
