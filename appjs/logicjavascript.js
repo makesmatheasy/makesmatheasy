@@ -12979,7 +12979,7 @@ function typenum11find() {
 }
 
 function typenum13find() {
-    var n = parseInt(document.getElementById("typenum15").value)
+    var n = parseInt(document.getElementById("typenum16").value)
     let dp = [];
     dp[0] = dp[1] = 1;
     for (let i = 2; i <= n; i++)
