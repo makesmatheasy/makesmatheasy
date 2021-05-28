@@ -15524,14 +15524,30 @@ function nextPrime(num) {
 }
 
 //Sum of divisors Function
+//Sum of divisors Function
 function sumDivisor(num) {
+    var result = document.getElementById('smDivResult');
+    var work = document.getElementById('work_smDiv');
+    var print = "\\[\\underline{Working \\space Steps}\\]";
+    print += "\\[Find \\space all \\space the \\space divisors \\space the \\space number \\space and \\space add \\space them \\space simultaneously\\]";
+    print += "\\[Divisors \\space of \\space " + num + " \\space = ";
     let res = 0;
     for (let i = 1; i <= num; i++) {
         if (!(num % i)) {
+            if(num == i){
+                print += " \\space " + i +" \\space ";
+            }else{
+                print += " \\space " + i +" \\space + \\space ";
+            }
             res += i;
         }
     }
     document.getElementById("smDivResult").innerHTML = "The sum of divisors of " + num + " is: " + res;
+    print += "\\]";
+    print += "\\[Sum \\space of \\space all \\space divisors \\space of \\space " + num + " \\space = \\space " + res + "\\]";
+    result.innerHTML = "Answer -> The sum of divisors of " + num + " is: " + res;
+    work.innerHTML = print;
+    renderMathInElement(work);
 }
 
 // Intercept form of plane
