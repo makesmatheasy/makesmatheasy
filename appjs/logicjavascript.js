@@ -5380,7 +5380,7 @@ function triinfind() {
     else {
         document.getElementById("triinans").innerHTML = "Please enter valid input"
     }
-    renderMathInElement(document.getElementById("triinans));
+    renderMathInElement(document.getElementById("triinans"))
 }
 
 function area_of_regular_polygon(n, len) {
