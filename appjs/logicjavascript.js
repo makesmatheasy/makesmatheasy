@@ -13271,9 +13271,6 @@ function typenum15find(){
         document.getElementById("typenum15ans").innerHTML  =  "Yes"
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-    }    
-
 }    
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
