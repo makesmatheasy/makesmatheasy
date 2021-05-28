@@ -130,8 +130,8 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#gammaDist",
         "#expoDist",
-        "#negbino",
         "#ackermann",
         "#lucNum",
         "#smNum",
@@ -346,6 +346,7 @@ function openit(id) {
         "#sumAndDiffTri",
         "#plotangle",
         "#profitloss",
+        "#cylin_shell",
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",
@@ -390,6 +391,7 @@ function openit(id) {
         "#dec2421",
         "#ex3",
         "#lappro",
+        "#coprimeex",
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#elonpentpyr",

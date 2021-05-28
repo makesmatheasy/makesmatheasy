@@ -334,9 +334,11 @@ Other Tech/Libraries
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
     - T-Shape
     - H-Shape
+    - Arbelos
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
+    - Capsule
     - Cube
     - Cuboid
     - Cylinder
@@ -364,6 +366,7 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+    - Hollow Cuboid
   - 3-D shapes Inscribed
   - 4-D Shapes Calculator
     - Tesseract
@@ -448,7 +451,7 @@ Other Tech/Libraries
   - Poisson Distribution Statistics
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
-
+  - Gamma Distribution Calculator
 - Statistics
 
   - Statistics Formulae
