@@ -16211,6 +16211,8 @@ function multBinDecHexOct() {
         print += input1 + "->" + x1 + "<br>";
     } else if (firstBase === "Hexa Decimal") {
         x1 = calculatefrac(input1, 16);
+        print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
+        print += input1 + "->" + x1 + "<br>";
     } else if (firstBase === "Decimal") {
         x1 = calculatefrac(input1, 10);
     }
@@ -16225,6 +16227,8 @@ function multBinDecHexOct() {
         print += input2 + "->" + x2 + "<br>";
     } else if (secondBase === "Hexa Decimal") {
         x2 = calculatefrac(input2, 16);
+        print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
+        print += input2 + "->" + x2 + "<br>";
     } else if (secondBase === "Decimal") {
         x2 = calculatefrac(input2, 10);
     }
@@ -16243,6 +16247,8 @@ function multBinDecHexOct() {
         print += x3 + "->" + fracDectoBinHexOct(x3, 8);
     } else if (resultType === "Hexa Decimal") {
         result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
+        print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
+        print += x3 + "->" + fracDectoBinHexOct(x3, 16);
     } else if (resultType === "Decimal") {
         result.innerHTML = "Answer in Decimal=" + fracDectoBinHexOct(x3, 10);
     }
