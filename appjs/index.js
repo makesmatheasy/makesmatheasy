@@ -131,7 +131,6 @@ function collapseit(openit) {
 function openit(id) {
     var ids = [
         "#expoDist",
-        "#negbino",
         "#ackermann",
         "#lucNum",
         "#smNum",

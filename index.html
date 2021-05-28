@@ -4358,22 +4358,7 @@
                     </tr>
                 </table>
             </li>
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="negbinobtn"
-                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Negative Binomial Distribution Calculator</a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Negative Binomial Distribution Calculator','#negbino','c','negbinofav')"><img
-                                        id="negbinofav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
+
 
             <li>
                 <table class="table">
@@ -13179,38 +13164,6 @@
     <p id="abtestans"></p>
 </div>
 
-<!-- Negative Binomial Distribution Calculator-->
-<div class="collapse" id="negbino">
-    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Negative Binomial Distribution Calculator</h1>
-    <p style="margin-top: 2rem;">
-        The negative binomial distribution calculator, otherwise called the Pascal distribution calculator, helps in
-        determining what is the probability of requiring n trials to achieve a fixed number of successes. 
-    </p>
-    <p style="text-align: left; color: white; margin-top:2rem;">Formula: P(Y=n) = (n-1)C(r-1) * pr * (1-p)(n-r)</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">n is the total number of trials</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">r is the number of successes</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">p is the probability of one success</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">(n-1)C(r-1) is the number of combinations</p>
-    <p style="text-align: left; color: white; margin-top:2rem;">P(Y=n) is the probability of the exact number of trials n needed to achieve r successes.</p>
-
-    
-    <form action="">
-        <input class = "form__field"type="text" id="negbinon" placeholder="Enter number of events">
-        <br><br>
-        <input class = "form__field"type="text" id="negbinor" placeholder="Enter number of success">
-        <br><br>
-        <input class = "form__field"type="text" id="negbinop" placeholder="Enter probability of one success">
-        
-        <br><br>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal(1)">Calculate</button>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal(2)">Mean</button>
-        <button class = "btn btn-light" type="button" onclick="negbinoCal(3)">Variance</button>
-        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
-    </form>
-    
-    <p id="negbinoans"></p>
-</div>
 
 <!-- Relative risk Calculator -->
 <div class="collapse" id="relrisk">
