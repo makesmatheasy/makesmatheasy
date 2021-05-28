@@ -17504,35 +17504,70 @@ function convertex3() {
     if (fromBase === "Decimal" && toBase === "Excess-3") {
         for (var i = 0; i < input.length; i++) {
             var y = (parseInt(input[i]) + 3).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
         }
     } else if (fromBase === "Binary" && toBase === "Excess-3") {
         r = parseInt(input, 2).toString();
         for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2)
+            var y = (parseInt(r[i]) + 3).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
         }
     } else if (fromBase === "Octal" && toBase === "Excess-3") {
         r = parseInt(input, 8).toString();
         for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2)
+            var y = (parseInt(r[i]) + 3).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
         }
     } else if (fromBase === "Hexa decimal" && toBase === "Excess-3") {
         r = parseInt(input, 16).toString();
         for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2)
+            var y = (parseInt(r[i]) + 3).toString(2);
+            if (y.length == 1) {
+                x = x + "000" + y + "_   ";
+            }
+            if (y.length == 2) {
+                x = x + "00" + y + "_   ";
+            }
+            if (y.length == 3) {
+                x = x + "0" + y + "_   ";
+            }
+            if (y.length == 4) {
+                x = x + +y + "_   ";
+            }
         }
-    }
-
-    if (y.length == 1) {
-        x = x + "000" + y + "_   ";
-    }
-    if (y.length == 2) {
-        x = x + "00" + y + "_   ";
-    }
-    if (y.length == 3) {
-        x = x + "0" + y + "_   ";
-    }
-    if (y.length == 4) {
-        x = x + +y + "_   ";
     }
 
     if (input == "") {
