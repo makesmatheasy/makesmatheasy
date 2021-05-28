@@ -1075,16 +1075,16 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "BINOMIAL THEOREM PROPERTIES"){
                         document.getElementById('bt-collapse').click();
                     }
-                    else if (inp.value.toUpperCase() == "DECIMAL BCD CODE CONVERTER") {
+                    else if (inp.value.toUpperCase() == "BCD CODE CONVERTER") {
                         $("#bcd").slideToggle();    
                     }
-                    else if(inp.value.toUpperCase() == "DECIMAL BCD CODE CONVERTER"){
+                    else if(inp.value.toUpperCase() == "BCD CODE CONVERTER"){
                         document.getElementById('bcd').click();
                     }
-                    else if (inp.value.toUpperCase() == "DECIMAL 2421 CODE CONVERTER") {
+                    else if (inp.value.toUpperCase() == "2421 CODE CONVERTER") {
                         $("#dec2421").slideToggle();    
                     }
-                    else if(inp.value.toUpperCase() == "DECIMAL 2421 CODE CONVERTER"){
+                    else if(inp.value.toUpperCase() == "2421 CODE CONVERTER"){
                         document.getElementById('dec2421').click();
                     }
                     else if (inp.value.toUpperCase() == "R-1 S AND R S COMPLEMENT CALCULATOR") {
@@ -2042,7 +2042,7 @@ var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Diamon
                         "Conversion to Words","Work And Time Calculator", "Roundoff", "LCM", "HCF","Ellipse","Circle","Expansion of Functions","Inverse Trigonometric Identities","Trigonometric Identities","P/B/H Trigo","Limits",
                         "Vector Algebra","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Complementary angle calculator","Supplementary Angle Calculator","Coterminal Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators","Cartesian coordinates calculator",
-                        "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Name of 3d Shapes","Sieve of Eratosthenes","Double Factorial","Next Prime Number","Sum of N terms of AP,GP & HP","Conditional Probability","Smallest Prime Factor","Additive Inverse","Confidence Interval Calculator","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","Decimal BCD Code Converter","Decimal 2421 Code Converter",
+                        "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Name of 3d Shapes","Sieve of Eratosthenes","Double Factorial","Next Prime Number","Sum of N terms of AP,GP & HP","Conditional Probability","Smallest Prime Factor","Additive Inverse","Confidence Interval Calculator","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","BCD Code Converter","2421 Code Converter",
                         "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Vector Calculus","Vector Algebra","Vector Calculator","Fourier Series","Theorems on Differentiation","Partial Differential Equations","Methods of Integration","Direct And Indirect Proportion","Clock Angle Calculator","Grey Code Convertor","Bitwise Calculator","Boolean Algebra"
                         ,"Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","p chart calculator","Midrange Calculator","Sensitivity and Specificity","T-test","AB-test","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
@@ -3099,16 +3099,16 @@ function handleclick(value) {
     else if (inp.value.toUpperCase() == "BINOMIAL THEOREM PROPERTIES") {
         $("#bt-collapse").slideToggle(); 
     }
-    else if(inp.value.toUpperCase() == "DECIMAL/BCD CODE CONVERTER"){
+    else if(inp.value.toUpperCase() == "BCD CODE CONVERTER"){
         document.getElementById('bcd').click(); 
     }
-    else if (inp.value.toUpperCase() == "DECIMAL/BCD CODE CONVERTER") {
+    else if (inp.value.toUpperCase() == "BCD CODE CONVERTER") {
         $("#bcd").slideToggle(); 
     }
-    else if(inp.value.toUpperCase() == "DECIMAL/2421 CODE CONVERTER"){
+    else if(inp.value.toUpperCase() == "2421 CODE CONVERTER"){
         document.getElementById('dec2421').click(); 
     }
-    else if (inp.value.toUpperCase() == "DECIMAL/2421 CODE CONVERTER") {
+    else if (inp.value.toUpperCase() == "2421 CODE CONVERTER") {
         $("#dec2421").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "(R-1) S AND R S COMPLEMENT CALCULATOR"){
