@@ -16100,10 +16100,10 @@ function divBinDecHexOct() {
         x2 = parseInt(input2);
     } else if (secondBase === "Octal") {
         x2 = parseInt(input2, 8);
-    } else if (secondBase === "Hexa Decimal") {
-        x2 = parseInt(input2, 16);
         print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
         print += input2 + "->" + x2 + "<br>";
+    } else if (secondBase === "Hexa Decimal") {
+        x2 = parseInt(input2, 16);
     }
 
     var x3 = x1 / x2;
