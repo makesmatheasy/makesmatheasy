@@ -1709,6 +1709,22 @@ function compangcal(){
     renderMathInElement(document.getElementById("compangans"));
 }
 
+function compangvercal(){
+    var a=document.getElementById("cvang1").value;
+    var b=document.getElementById("cvang2").value;
+    var ans="";
+    if(a==""||b==""){
+        ans="Enter both angles to verify";
+    } else{
+        var x=parseInt(a), y=parseInt(b);
+        if(x+y==90)
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space = 90 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Complementary\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space != 90 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Not \\space Complementary\\]";
+    }
+    document.getElementById("compangverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("compangverans"));
+}
 function cotermangcal(){
     var a=document.getElementById("cotang").value;
     var ans="";
