@@ -5251,15 +5251,15 @@ function pointrect() {
     renderMathInElement(output);
 }
 
-function pointellip(){
-   var x1 = parseFloat(document.getElementById('checkellip1').value);
-   var y1 =parseFloat(document.getElementById('checkellip2').value);
-   var z1 =parseFloat(document.getElementById('checkellip3').value);
-   var r =parseFloat(document.getElementById('checkellip4').value);
-   var x = parseFloat(document.getElementById('checkellip5').value);
-   var y = parseFloat(document.getElementById('checkellip6').value);
-   var z = parseFloat(document.getElementById('checkellip7').value);
-    var output = document.getElementById("pointellipans")
+function pointsphere(){
+   var x1 = parseFloat(document.getElementById('checksphere1').value);
+   var y1 =parseFloat(document.getElementById('checksphere2').value);
+   var z1 =parseFloat(document.getElementById('checksphere3').value);
+   var r =parseFloat(document.getElementById('checksphere4').value);
+   var x = parseFloat(document.getElementById('checksphere5').value);
+   var y = parseFloat(document.getElementById('checksphere6').value);
+   var z = parseFloat(document.getElementById('checksphere7').value);
+    var output = document.getElementById("pointsphereans")
     var ans = "";
     let x11 = Math.pow((x-x1),2);
     let y11 = Math.pow((y-y1),2);
