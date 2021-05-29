@@ -2451,18 +2451,38 @@ function diamond() {
 }
 //Fractional Part Function
 function fp() {
-    var giffnum = parseInt(document.getElementById("giffnum").value)
-    if (giffnum >= 0) {
-        let ans1 = Math.floor(giffnum)
-        let ans = giffnum - ans1
-        document.getElementById("giffans").innerHTML = "The fractional part is " + ans
+    var giffnum = parseFloat(document.getElementById("giffnum").value)
+    var output = document.getElementById("giffans");
+    var temp = "";
+    if (!isNaN(giffnum)){
+        "\\[The \\space Fractional \\space Part \\space Function \\space will \\space be,\\]"
+        if (giffnum >= 0) {
+            var ans1 = Math.floor(giffnum)
+            var ans = giffnum - ans1
+            temp += "\\[Here, \\space since \\space "+giffnum+" \\space is \\space greater \\space than \\space or \\space equal \\space to \\space 0\\]"
+            temp += "\\[Fractional \\space Part \\space = \\space "+giffnum+" \\space - \\space (Largest \\space integer \\space less \\space than \\space or \\space equal \\space to \\space "+giffnum+")\\]"
+            temp += "\\[\\space = \\space "+giffnum+" \\space - \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+            output.innerHTML = temp;
+        } else {
+            var ans1 = Math.abs(giffnum)
+            var ans2 = Math.ceil(ans1)
+            var ans = ans2 - ans1
+            temp += "\\[Here, \\space since \\space "+giffnum+" \\space is \\space less \\space than \\space 0\\]"
+            temp += "\\[Fractional \\space Part \\space = \\space (Rounded \\space number \\space up \\space to \\space the \\space next \\space largest \\space integer) \\space of \\space |"+giffnum+"| \\space - \\space |"+giffnum+"|\\]"
+            temp += "\\[\\space = \\space (Rounded \\space number \\space up \\space to \\space the \\space next \\space largest \\space integer) \\space  of \\space "+ans1+" \\space - \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans2+" \\space - \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+            output.innerHTML = temp;
+        }
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input \\]"
+
+        output.innerHTML = temp;
     }
-    else {
-        let ans1 = Math.abs(giffnum)
-        let ans2 = Math.ceil(giffnum)
-        let ans = ans2 - ans1
-        document.getElementById("giffans").innerHTML = "The fractional part is " + ans
-    }
+    renderMathInElement(output);
 }
 
 // Work and Time calculator
