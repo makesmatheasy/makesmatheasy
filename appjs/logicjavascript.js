@@ -5321,14 +5321,22 @@ function pointellip() {
     y = parseFloat(document.getElementById('checkellip6').value);
     var output = document.getElementById("pointellipans")
     var ans = "";
+    var explain="\\[Put \\space the \\space point(x,y) \\space in \\space eq. \\space of \\space Ellipse, \\space p= \\frac{(x-h)^2}{a^2}+\\frac{(y-k)^2}{b^2}  \\newline if \\space p>1 \\space point \\space lies \\space outside \\space the \\space ellipse \\newline if \\space p==1 \\space point \\space lies \\space on \\space the \\space ellipse \\newline else \\space point \\space lies \\space inside \\space the \\space ellipse \\]"
+
     if (!isNaN(h) && !isNaN(k) && !isNaN(a) && !isNaN(b) && !isNaN(x) && !isNaN(y)) {
         var p = (parseInt(Math.pow((x - h), 2)) / parseInt(Math.pow(a, 2)))+ (parseInt(Math.pow((y - k), 2)) / parseInt(Math.pow(b, 2)));
-        if (p > 1)
+        if (p > 1){
           ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Ellipse \\]";
-        else if (p == 1)
-          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Ellipse \\]";
-        else
+          explain+="\\[Put \\space the \\space value \\space p("+x+","+y+"): \\space p=\\frac{("+x+"-"+h+")^2}{"+a+"^2}+\\frac{("+y+"-"+k+")^2}{"+b+"^2}="+p+"\\]";    
+        }
+        else if (p == 1){
+            ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Ellipse \\]";
+            explain+="\\[Hence "+p+"==1 \\space, So \\space point("+x+","+y+") \\space lies \\space on \\space the \\space Ellipse  \\]"   
+        }
+        else{
           ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Ellipse \\]";
+          explain+="\\[Hence "+p+"<1 \\space, So \\space point("+x+","+y+") \\space lies \\space inside \\space the \\space Ellipse  \\]"     
+        }
         output.innerHTML = ans;
     }
     else {
@@ -22013,4 +22021,4 @@ function hyperfind() {
     }
     document.getElementById("hyperans").innerHTML = ans;
 }
-
+  
