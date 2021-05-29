@@ -13726,19 +13726,7 @@ function typenum15find()
         document.getElementById("typenum15ans").innerHTML  =  "Yes"
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
-<<<<<<< HEAD
- 
-
 }
-||||||| 6e7cb7c
-
-
-    }    
-
-}
-=======
-}    
->>>>>>> 7d47dad8696a64a7ed2f20397483870eeb04a552
 
 
 
@@ -18616,20 +18604,7 @@ function convertex3() {
                 x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
         }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    else if(fromBase === "Excess-3" && toBase === "Binary"){
+    }else if(fromBase === "Excess-3" && toBase === "Binary"){
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
@@ -18653,7 +18628,33 @@ function convertex3() {
                 x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
         }
-
+    }else if(fromBase === "Excess-3" && toBase === "Octal"){
+        var x = "",y="";
+        var temp ="";
+        if(input.length % 4 != 0 ){
+            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+        }else{
+            x = "";
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + (parseInt(temp,2)-3).toString();
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString(8);
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+            }
+        }
+    }
+  
+  
     if (input == "") {
         x = "";
     } else if (fromBase === "Binary" && input.search(/^[10]+$/) == -1) {
