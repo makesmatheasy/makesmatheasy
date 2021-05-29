@@ -453,6 +453,7 @@ function openit(id) {
         "#rmss",
         "#relationtypes",
         "#skews",
+        "#kurt",
         "#clocks",
         "#slvxs",
         "#rankcals",
