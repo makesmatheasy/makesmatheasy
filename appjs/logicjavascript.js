@@ -17100,8 +17100,21 @@ function subBinDecHexOct() {
     var input2 = document.getElementById("subtract-all-input2").value;
     let result = document.getElementById("subtract-all-result");
     let work = document.getElementById("subtract-all-working");
-    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
 
+    if(parseFloat(input1)-Math.trunc(input1) > 0 || parseFloat(input2)-Math.trunc(input2) > 0){
+        var x1;var x2;var x3;
+
+        if(base === "Binary"){
+            x1 = calculatefrac(input1,2);
+            x2 = calculatefrac(input2,2);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,2);
+            work.innerHTML = "";
+        }
+    }else{
     if (input1.length > input2.length) {
         var p = input1.length - input2.length;
         p = Math.pow(10, p);
@@ -17264,6 +17277,7 @@ function subBinDecHexOct() {
             print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         }
 
+    }
     }
     work.innerHTML = print;
 }
