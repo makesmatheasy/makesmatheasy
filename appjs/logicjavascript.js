@@ -18941,7 +18941,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }else if (type === "2421 Code" && type1 === "Binary"){
+    }else if (type === "2421 Code" && type1 === "Octal"){
         var x = "";
         var y = "";
         var temp = "";
@@ -18965,7 +18965,7 @@ function convertdec2421() {
                 }
             }
             if(input.length / 4 == x.length ){
-                x = parseInt(x).toString(2);
+                x = parseInt(x).toString(8);
             }else if(parseInt(x)<0){
                 x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
             }else{
