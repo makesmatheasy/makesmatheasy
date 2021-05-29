@@ -5183,6 +5183,41 @@ function pointrect() {
     renderMathInElement(output);
 }
 
+function pointellip(){
+   var x1 = parseFloat(document.getElementById('checkellip1').value);
+   var y1 =parseFloat(document.getElementById('checkellip2').value);
+   var z1 =parseFloat(document.getElementById('checkellip3').value);
+   var r =parseFloat(document.getElementById('checkellip4').value);
+   var x = parseFloat(document.getElementById('checkellip5').value);
+   var y = parseFloat(document.getElementById('checkellip6').value);
+   var z = parseFloat(document.getElementById('checkellip7').value);
+    var output = document.getElementById("pointellipans")
+    var ans = "";
+    let x11 = Math.pow((x-x1),2);
+    let y11 = Math.pow((y-y1),2);
+    let z11 = Math.pow((z-z1),2);
+    let pts = x11 + y11 + z11;
+    if(!isNaN(x1) &&  !isNaN(y1) && !isNaN(z1) && !isNaN(r) && !isNaN(x) && !isNaN(y)  && !isNaN(z)){
+    if (pts < (r**2)){
+    ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Sphere \\]"
+    output.innerHTML = ans;
+    }
+    else if (pts == (r**2)){
+        ans += "\\[The \\space given \\space points \\space lies \\space on \\space the \\space Sphere \\]"
+        output.innerHTML = ans;
+    }
+    else{
+        ans += "\\[The \\space given \\space points \\space lies \\space outside \\space the \\space Sphere \\]"
+        output.innerHTML = ans;
+    }
+}
+else{
+    ans += "\\[Please \\space enter \\space all \\space fields \\]";
+    output.innerHTML = ans;
+}
+renderMathInElement(output);
+}
+
 function pointhyper() {
     var h,k,a,b, x,y;
     h = parseFloat(document.getElementById('checkhyper1').value);
