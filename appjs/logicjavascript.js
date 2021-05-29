@@ -18411,10 +18411,17 @@ function convertbcd() {
             }
         }
     } else if (fromCode == "Octal" && toCode == "BCD Code") {
+        result.innerHTML += "<h4>Converting Octal to BCD</h4><br>";
+        result.innerHTML += "<h5>Step 1: Convert the given octal number to decimal number</h5><br>";
         input = parseInt(input, 8).toString();
+        result.innerHTML += "Input -> "+ input;
+        result.innerHTML += "<h5>Step 2: Extract each digit of the number and convert to BCD</h5><br>"
         var x="_",y="";
-        for (var i = 0; i < input.length; i++) {
+        for (var i = 0; i < input.length; i++) {            
+            result.innerHTML += "Extract the "+(i+1)+" th element<br>";
             y = parseInt(input[i]).toString(2);
+            result.innerHTML += y + "<br>";
+            result.innerHTML += "Step 3: Depending on the length of " +y +" combine the binary form  of all the digits<br>";            
             if (y.length == 1) {
                 x = x + "000" + y + "_   ";
             }
@@ -18428,7 +18435,7 @@ function convertbcd() {
                 x = x + +y + "_   ";
             }
         }
-        result.innerHTML = x;
+        result.innerHTML += "Output -> "+ x;
     } else if (fromCode == "BCD Code" && toCode == "Octal") {
         var x = "",y="";
         var temp ="";
