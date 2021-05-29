@@ -2321,4 +2321,44 @@ function wagcal()
     }
     document.getElementById("wagans").innerHTML=ans;
 }
+function mdcfind()
+{
+    var num = document.getElementById('mdcs1').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
 
+
+    if(num=="")
+    {
+       document.getElementById('mdcans').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('mdcans').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       var sum=0;
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+            sum+=number[i];
+        }
+        sum=sum/len;
+        var absdif=0;
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+            absdif+=Math.abs((number[i]-sum));
+        }
+        absdif=absdif/len;
+
+        document.getElementById('mdcans').innerHTML = "The calculated answer is: "+absdif;
+
+
+}
+}

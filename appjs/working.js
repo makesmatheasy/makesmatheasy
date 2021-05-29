@@ -44,6 +44,11 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+$("#madc").click(function(){
+    openit("#madcs");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();

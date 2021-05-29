@@ -431,6 +431,7 @@ function openit(id) {
         "#partialcy",
         "#prices",
         "#centcal",
+        "#madcs",
         "#cevtha",
         "#sum_n",
         "#percal",
