@@ -16194,6 +16194,10 @@
                            style="text-decoration:none;" href="#">Cycloid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#doublecycloid"
+                           style="text-decoration:none;" href="#">Double Cycloid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#ellipse"
                            style="text-decoration:none;" href="#">Ellipse</a></td>
                 </tr>
@@ -24739,6 +24743,68 @@ N is the population size.
                             <p class="stopwrap" id="resultofcycarea"
                                 style="font-family:mathfont;"></p><br>
                             <p class="stopwrap" id="resultofcycheight"
+                                style="font-family:mathfont;"></p><br>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="modal fade" id="doublecycloid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Double Cycloid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Arc length (b)</h5>
+                                    <p class="text-center">\[b = 8 \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Long diameter (c)</h5>
+                                    <p class="text-center">\[c = 2 \times \pi \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Short diameter (d)</h5>
+                                    <p class="text-center">\[d = 4 \times a\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/double-cycloid.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 2 \times b\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = 6 \times \pi \times a^2 \]</p><br>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number" placeholder="Enter Radius of circle (a)" 
+                                id="doublecycloid-a" oninput="doublecycloidsolve();">
+                            <p class="stopwrap" id="resultOfDoubleCycArcLen"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycLongDia"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycShortDia"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycPeri"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycArea"
                                 style="font-family:mathfont;"></p><br>
                           </div>
                         <!-- ------HERE------ -->
