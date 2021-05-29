@@ -1996,6 +1996,26 @@ document.getElementById("skewans").innerHTML=ans;
 }
 // kurtosis calculator
 // kurtosis calculator
+function kurt_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+function kurt_bar(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp, 4)
+        diff += temp;
+    }
+
+    return diff
+}
 function kurtcal()
 {   var num=document.getElementById("kurtinput").value;
      var num1=document.getElementById("kurtinput2").value;
@@ -2006,18 +2026,35 @@ var ans="";
         ans="Please fill both fields"
     }
     else{
-        num = parseFloat(num);
-        num1 = parseFloat(num1);
-    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
-    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+num1+"^{4}}\\]"
-    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+Math.pow(num1,4).toFixed(4)+"}\\]"
-    ans+="\\[\\beta_2 = "+(num/Math.pow(num1,4).toFixed(4)).toFixed(4)+"\\]"
 
-    if((num/Math.pow(num1,4).toFixed(4)).toFixed(4)==3)
+        num = num.split(" ");
+        let n1 = num.length;
+        for (var i = 0; i < n1; i++) {
+            num[i] = parseFloat(num[i]);
+        }
+        var sum=kurt_sum(num)
+        var mean=(sum/n1).toFixed(4);
+        var numer=kurt_bar(num,mean);
+        numer=numer.toFixed(4);
+        num1 = parseFloat(num1);
+    ans+="\\[In \\space the \\space below \\space formula :\\]"
+    ans+="\\[\\mu_4 => Fourth \\space central \\space moment\\]"
+    ans+="\\[\\sigma => Standard \\space deviation \\space of \\space the \\space sample\\]"
+    ans+="\\[\\bar{x} => Mean \\space of \\space the \\space sample\\]"
+    ans+="\\[N=>Sample \\space size\\]"
+
+    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
+    ans+="\\[\\because \\mu_4= \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N} \\]"
+    ans+="\\[\\therefore \\beta_2 = \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N\\sigma^{4}} \\]"   
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{ ("+n1+") \\times"+num1+"^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{"+(n1)+" \\times "+Math.pow(num1,4).toFixed(4)+"} \\]"
+    ans+="\\[\\beta_2 = "+(numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)+"\\]"
+
+    if((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)==3)
     ans+="\\[Since \\space \\beta_2 \\space is \\space equal \\space to \\space 3 \\space the  \\space distribution  \\space is  \\space mesokurtic. \\]"
-    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)>3)
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)>3)
     ans+="\\[Since \\space \\beta_2 \\space > \\space 3 \\space the  \\space distribution  \\space is  \\space leptokurtic. \\]"
-    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)<3)
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)<3)
     ans+="\\[Since \\space \\beta_2 \\space < \\space 3 \\space the  \\space distribution  \\space is  \\space platykurtic. \\]" 
     }
 
