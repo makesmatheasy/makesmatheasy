@@ -1653,6 +1653,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="perchngbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage Change</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Double Time ','#perchng','c','perchngimgfav')"><img
+                                        id="perchngimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="modulobtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Modulo calculator</a>
                         </td>
@@ -19438,6 +19453,18 @@
     <p id="dbltimeans1" style= "font-family:mathfont"></p><br>
 </div>
 <!-- doubling time ends -->
+
+
+<!-- Percentage change starts -->
+<div class="collapse" id="perchng">
+    <h2 style="text-align:center;">Percentage change</h2><br>
+    
+    <input type="text"id="initialVal" placeholder="Enter the initial value" class="form__field"><br><br>
+    <input type="text"id="finalVal" placeholder="Enter the final value" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="perchngCal()">Calculate</button><br><br>
+    <p id="perchngans" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Percentage change ends -->
 
 <!-- Modulo starts -->
 <div class="collapse" id="modulo">

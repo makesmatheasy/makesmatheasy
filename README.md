@@ -162,6 +162,7 @@ Other Tech/Libraries
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
   - Doubling Time
+  - Percentage change
   - Modulo calculator
   - Sieve of Eratosthenes
   - Adam Numbers
