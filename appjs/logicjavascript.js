@@ -90,25 +90,6 @@ function romanize(input) {
 }
 
 //Distance between excentre and circumcentre
-//----------------------------------------
-
-function excircum_1(){
-    let R = parseInt(document.getElementById("radius_2").value);
-    let A = parseInt(document.getElementById("ang_1").value);
-    let B = parseInt(document.getElementById("ang_2").value);
-    let C = parseInt(document.getElementById("ang_3").value);
-
-    var result = R*Math.sqrt(1+(8*sin(A/2)*sin(B/2)*sin(C/2)));
-    document.getElementById("excircum1").innerHTML = result;
-}
-function sin(degrees) {
-    var radians = (degrees*Math.PI)/180;
-    return Math.sin(radians);
-}
-function cos(degrees) {
-    var radians = (degrees*Math.PI)/180;
-    return Math.cos(radians);
-}
 
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
