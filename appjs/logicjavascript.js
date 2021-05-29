@@ -18807,6 +18807,19 @@ function cscu5find() {
     }
     renderMathInElement(output);
 }
+
+function hexa121find() {
+    let a = parseFloat(document.getElementById("hexa131").value)
+    var area = (Math.pow(1.268, 2) * Math.pow(a, 2));                                                             
+    if(a<0)
+    {
+       document.getElementById("hexa121ans").innerHTML+="\\[Side \\space Length \\space of \\space the \\space Hexagon \\space cannot \\space be \\space negative.\\]"  
+       renderMathInElement( document.getElementById("hexa121ans"));
+    }else {
+     document.getElementById("hexa121ans").innerHTML =area;
+    }  
+}
+
 //Empirical Probability
 function computeprobability() {
 
