@@ -20641,10 +20641,15 @@ function ratpercal() {
 function triinsemifind() {
     let r = parseInt(document.getElementById("triinsemiin").value)
     if (!isNaN(r)) {
+        document.getElementById("triinsemiexp").innerHTML = "\\[Given a semicircle with radius r, we have to find the largest triangle that can be inscribed in the semicircle, with base lying on the diameter.\\]"
+        document.getElementById("triinsemiexp").innerHTML = "\\[From the figure, we can clearly understand the biggest triangle that can be inscribed in the semicircle has height r.\\]"
+        document.getElementById("triinsemiexp").innerHTML = "\\[Also, we know the base has length 2r. So the triangle is an isosceles triangle.\\]"
+        document.getElementById("triinsemiexp").innerHTML = "\\[So, Area A: = (base * height)/2 = (2r * r)/2 = r^2\\]"
         if (r < 0)
             document.getElementById("triinsemians").innerHTML = "Not triangle can be formed"
         else
             document.getElementById("triinsemians").innerHTML = r * r
+            renderMathInElement(document.getElementById("triinsemiexp"));    
     }
     else {
         document.getElementById("triinsemians").innerHTML = "Please enter valid input"
