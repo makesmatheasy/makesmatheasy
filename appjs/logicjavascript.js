@@ -13713,6 +13713,7 @@ function typenum15find()
 }    
 
 
+
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
         if (arr[p]) {
@@ -20320,6 +20321,85 @@ function pvalue() {
     var lowerControlLimit = document.getElementById('lcl');
     lowerControlLimit.innerHTML = lcl;
     renderMathInElement(lowerControlLimit);
+
+
+
+}
+
+//R chart
+
+function rchart_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+
+function rvalue() {
+    let list1 = document.getElementById("range").value;
+    let n = document.getElementById("D4").value;
+    let num = document.getElementById("D3").value;
+   if(list1=="" || n=="" || num=="")
+   {
+    document.getElementById('rans').innerHTML="Please fill all the fields.";
+    document.getElementById('rbar').innerHTML="";
+       document.getElementById('rucl').innerHTML="";
+       document.getElementById('rlcl').innerHTML="";
+   }
+   else
+   {
+    n = parseFloat(n);
+    num=parseFloat(num);
+    list1 = list1.split(" ");
+    var n1 = 0;
+    n1 = parseInt(list1.length);
+
+    for (var i = 0; i < n1; i++) {
+        list1[i] = parseFloat(list1[i]);
+    }
+
+    var ans = "";
+    var ucl = "";
+    let sum = rchart_sum(list1);
+    var rbar =sum/n1;
+    var ucl1 = Number.parseFloat(3 * Math.sqrt((pbar * (1 - pbar)) / n).toPrecision(4));
+
+    document.getElementById('rans').innerHTML = "The control limits are:";
+    ans += "\\[\\space \\bar{R} \\space = \\frac{\\sum{R}}{Total \\space No \\space of \\space samples}\\]"
+    ans += "\\[ \\space  \\frac{" + sum + "}{"+ n1 + "}\\]";
+    ans += "\\[ \\space  "+rbar.toFixed(4)+" \\]";
+
+    var controlLimit = document.getElementById('rbar')
+    controlLimit.innerHTML = ans;
+    renderMathInElement(controlLimit);
+
+    ucl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space D_4 \\bar{R} \\]"
+    ucl += "\\[\\space "+n+" \\times "+rbar.toFixed(4)+"\\]"
+    ucl += "\\[\\space "+(n*rbar.toFixed(4)).toFixed(4)+"\\]"
+    ucl += "\\[UCL \\space =\\space " +(n*rbar.toFixed(4)).toFixed(4)+ " \\]"
+    var upperControlLimit = document.getElementById('rucl');
+    upperControlLimit.innerHTML = ucl;
+    renderMathInElement(upperControlLimit);
+
+
+
+    var lcl = "";
+    lcl += "\\[Lower \\space Control \\space Limit \\space (UCL) \\space =\\space D_3 \\bar{R}\\]"
+    lcl += "\\[\\space "+num+" \\times "+rbar.toFixed(4)+" \\]"
+    lcl += "\\[\\space "+(num*rbar.toFixed(4)).toFixed(4)+"\\]"
+    lcl += "\\[LCL \\space =\\space " +(num*rbar.toFixed(4)).toFixed(4)+ " \\]"
+    //check if lcl is negative
+    if ((num*rbar.toFixed(4)).toFixed(4) < 0)
+        lcl += "\\[Since \\space the \\space fraction \\space defective \\space cannot \\space be \\space - ve \\space \\therefore \\space LCL \\space = 0 \\]"
+    var lowerControlLimit = document.getElementById('rlcl');
+    lowerControlLimit.innerHTML = lcl;
+    renderMathInElement(lowerControlLimit);
+
+   }
+    
 
 
 

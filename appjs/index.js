@@ -246,6 +246,7 @@ function openit(id) {
         "#golds",
         "#cchart",
         "#pchart",
+        "#rchart",
         "#npchart",
         "#betagamma",
         "#parallel",

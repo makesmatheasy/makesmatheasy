@@ -4971,6 +4971,22 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="rbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">R chart Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('r chart Calculator','#Rchart','c','rfav')"><img
+                                        id="zscimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -13591,6 +13607,33 @@
                 <p id="lcl" ></p>
             </div>
         </div>
+        <!-- r chart-->
+        <div class="collapse" id="rchart">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">R chart Calculator</h1>
+            <p style="margin-top: 2rem;">
+                R chart is a type of scheme, popularly known as control chart, used to monitor 
+                range of a normally distributed variables simultaneously, when samples are collected at regular intervals from a business or industrial process.
+            </p>
+            <p id="tformula" style="margin-bottom:4rem;"></p>
+            <form action="">
+                <input class = "form__field"type="text" id="range" placeholder="Enter list of ranges separated by SPACE ">
+                <br><br>
+                <input class = "form__field"type="number" id="D4" placeholder="Enter value of D4 (Upper Range Limit)">
+                <br><br>
+                <input class = "form__field"type="number" id="D3" placeholder="Enter value of D3 (Lower Range Limit)">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="rvalue()">Test</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+            </form>
+            <br>
+            <p id="rans"></p>
+            <div id="stepsbox">    
+                <p id="rbar" style="text-align: left; margin-top: 2rem;"></p>
+                <p id="rucl" ></p>
+                <p id="rlcl" ></p>
+            </div>
+        </div>
+
 
 
                 <!-- np chart-->
