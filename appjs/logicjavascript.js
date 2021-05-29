@@ -16796,11 +16796,20 @@ function convertAnyBaseToAnyBase() {
 }
 //Euclid's GCD
 function gcdfind() {
+
+    let a = parseInt(document.getElementById("gcdin1").value)
+    let b = parseInt(document.getElementById("gcdin2").value)
+    if(a==""||b==""||isNaN(a)||isNaN(b))
+    {
+        document.getElementById("gcdans").innerHTML = "Please enter proper numeric value";
+    }
+    else{
     let a = parseInt(document.getElementById("gcdin1").value)
     let b = parseInt(document.getElementById("gcdin2").value)
     if (a == 0)
         return b;
     document.getElementById("gcdans").innerHTML = gcd(b % a, a);
+}
 }
 
 function gcd1find() {
