@@ -1591,6 +1591,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#co_primebtn").click(function(){
+        openit("#co_prime");
+        closenav();
+        clearall();
+    });
 
 
 })
