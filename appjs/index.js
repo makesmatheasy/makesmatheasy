@@ -292,6 +292,7 @@ function openit(id) {
         "#tricorn",
         "#zscores",
         "#pvalue",
+        "#ppv",
         "#errpers",
         "#log_values",
         "#oops",
