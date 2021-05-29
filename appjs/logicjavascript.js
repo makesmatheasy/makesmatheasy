@@ -2922,13 +2922,24 @@ function impse20find() {
 
 function impse21find() {
     var n = parseInt(document.getElementById("impse21").value)
-    while (n != 1) {
-        document.getElementById("impse21ans").innerHTML = n + " ";
-        if ((n & 1) != 0)
-            n = 3 * n + 1;
-        else
-            n = parseInt(n / 2, 10);
-    } document.getElementById("impse21ans").innerHTML = n;
+    if(!isNaN(n)){
+        while (n != 1) {
+            document.getElementById("impse21ans").innerHTML = n + " ";
+            if ((n & 1) != 0)
+                n = 3 * n + 1;
+            else
+                n = parseInt(n / 2, 10);
+        } 
+        document.getElementById("impse21ans").innerHTML = n;
+        document.getElementById("impse21exp").innerHTML = "\\[Starting with any positive integer N, Collatz sequence is defined corresponding to n as the numbers formed by the following operations :\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[1. If n is even, then n = n / 2.\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[2. If n is odd, then n = 3*n + 1.\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[3. Repeat above steps, until it becomes 1.\\]"
+        renderMathInElement(document.getElementById("impse21exp"))
+    }
+    else {
+        document.getElementById("impse21ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function impse2find() {
