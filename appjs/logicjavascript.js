@@ -16509,7 +16509,7 @@ function sumDivisor(num) {
     var work = document.getElementById('work_smDiv');
     var print = "\\[\\underline{Working \\space Steps}\\]";
     print += "\\[Find \\space all \\space the \\space divisors \\space the \\space number \\space and \\space add \\space them \\space simultaneously\\]";
-    print += "\\[Divisors \\space of \\space " + num + " \\space = ";
+    print += "\\[1) \\space All \\space Divisors \\space of \\space " + num + " \\space = ";
     let res = 0;
     for (let i = 1; i <= num; i++) {
         if (!(num % i)) {
@@ -16521,10 +16521,29 @@ function sumDivisor(num) {
             res += i;
         }
     }
-    document.getElementById("smDivResult").innerHTML = "The sum of divisors of " + num + " is: " + res;
     print += "\\]";
     print += "\\[Sum \\space of \\space all \\space divisors \\space of \\space " + num + " \\space = \\space " + res + "\\]";
     result.innerHTML = "Answer -> The sum of divisors of " + num + " is: " + res;
+
+    //for proper  divisors
+    print += "\\[2) \\space Proper \\space Divisors \\space of \\space " + num + " \\space = ";
+    let res1 = 0;
+    for (let i = 1; i <= num; i++) {
+        if (!(num % i)) {
+            if(num == i){
+                print += " \\space ";
+            }else{
+                print += " \\space " + i +" \\space + \\space ";
+            }
+            res1 += i;
+        }
+    }
+    print += "\\]";
+    print += "\\[Sum \\space of \\space proper \\space divisors \\space only \\space of \\space " + num + " \\space = \\space " + (res1 -num) + "\\]";
+    result.innerHTML = "Answer -> The sum of divisors of " + num + " is: " + (res1 -num);
+
+
+
     work.innerHTML = print;
     renderMathInElement(work);
 }
