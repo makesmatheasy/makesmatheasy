@@ -16545,6 +16545,10 @@
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#concavehexagon"
+                                           style="text-decoration:none;" href="#">Concave Hexagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#stretchhexagon"
                                            style="text-decoration:none;" href="#">Stretched Hexagon</a></td>
                                 </tr>
@@ -28356,6 +28360,62 @@ N is the population size.
         </div>
     </div>
 
+    <div class="modal fade" id="concavehexagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Concave Hexagon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Breadth</h5>
+                                <p class="text-center">\[b = \sqrt{3} \space a \]</p>
+                                <p class="text-center">a = side length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h = \frac{3}{2} \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[p = 6 \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \sqrt{3} \space a^2  \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/concave-hexagon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter side length (a)" id="inputconhexside"
+                                   oninput="solveconcavehex();">
+                        <p class="stopwrap" id="resultofconhexbreadth"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofconhexhei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofconhexperi"
+                            style="font-family:mathfont;"></p> 
+                        <p class="stopwrap" id="resultofconhexarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="stretchhexagon" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

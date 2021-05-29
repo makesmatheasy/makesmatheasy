@@ -7831,6 +7831,37 @@ function solvehex() {
     renderMathInElement(document.getElementById("resultofperimeterhex"));
 
 }
+//Concave Hexagon
+function solveconcavehex() {
+    let a = document.getElementById("inputconhexside").value;
+    let breadthoutput = document.getElementById("resultofconhexbreadth");
+    let heioutput = document.getElementById("resultofconhexhei");
+    let perioutput = document.getElementById("resultofconhexperi");
+    let areaoutput = document.getElementById("resultofconhexarea");
+    var breadthtemp = "";
+    var heitemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        breadthtemp += "\\[Breadth \\space \\newline \\sqrt{3} \\times" + a  + "\\ = " + eval(String(1.7320508 * a)).toFixed(2) + "\\]";
+        breadthoutput.innerHTML = breadthtemp;
+        heitemp += "\\[Height \\space \\newline \\frac{3}{2} \\times" + a + "\\ = " + eval(String(1.5 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        peritemp += "\\[Perimeter \\space \\newline 6 \\times" + a + "\\ = " + eval(String(6 * a)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space \\newline \\sqrt{3} \\times (" + a + ")^2" + "\\ = " + eval(String(1.7320508 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(breadthoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput); 
+    } else {
+        breadthoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+}
 //Stretched Hexagon
 function solvestretchhex() {
     let a = document.getElementById("inputsthexshoside").value;
