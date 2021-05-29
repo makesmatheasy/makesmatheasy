@@ -845,6 +845,36 @@ function sspncal()
 
 }
 
+function ssfncal(){
+    var num=document.getElementById("ssfn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var poweroutput = document.getElementById("ssfnans");
+    var powertemp="";
+    if(!valid.test(num))
+    {
+        powertemp += "\\[Enter \\space any \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else if(num<1){
+        powertemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    } 
+    else{
+        var powersum=Math.trunc(( (num)**2 * (num + 1)**2 * (2 * num**2 + 2 * num - 1)  ));
+        var powersum1 = powersum/12;
+        powertemp += "\\[Sum \\space of \\space the \\space Power \\space Five \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        powertemp += "\\[ \\sum {n}^5 \\space = \\space \\frac{n^2 (n+1)^2 (2n^2 + 2n -1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+num+"^2 \\times ("+num+"+1)^2 \\times (2 \\times "+num+"^2 + 2 \\times "+num+" \\space - \\space 1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+(num**2)+" \\times "+(num +1)+"^2 \\times (2 \\times "+(num**2)+" + 2 \\times "+num+" \\space - \\space 1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+powersum+"}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space "+powersum1.toFixed(2)+" \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+}
 
 function ssqncal()
 {
@@ -1280,10 +1310,14 @@ function ppcal()
            var y=(2.718)**(-a);
            var z=factorial(b);
            var num= (s*y)/z;
-           ans="The answer is:" + num;
+           ans+="\\[\\space P(X{=}"+b+")= \\frac{"+a+"^"+b+" \\times e^{-"+a+"}}{"+b+"!}\\]";
+           ans+="\\[\\space P(X{=}"+b+")= \\frac{"+(s*y).toFixed(4)+"}{"+z+"}\\]";
+           ans+="\\[\\space P(X{=}"+b+")= "+num.toFixed(4)+"\\]";
+           ans+="The answer is  "+num.toFixed(4);
     }
 
     document.getElementById("ppans").innerHTML=ans;
+    renderMathInElement(document.getElementById("ppans"));
 
 }
 
@@ -1398,8 +1432,10 @@ function unitcircCal(){
     var x = Math.cos(rad);
     var y = Math.sin(rad);
 
-    document.getElementById("unitcircxans").innerHTML = "X: " + x;
-    document.getElementById("unitcircyans").innerHTML = "Y: " + y;
+    document.getElementById("unitcircxans").innerHTML = "\\[X: " + x+"\\newline Y:  "+ y+"\\]";
+    document.getElementById("unitcircyans").innerHTML = "\\[X \\space =cos("+deg+"\\degree )="+x+"  \\space \\newline Y \\space =sin("+deg+"\\degree )="+y+"  \\]"
+    renderMathInElement(document.getElementById("unitcircxans"));
+    renderMathInElement(document.getElementById("unitcircyans"));
 }
 
 function wmccal()
@@ -1467,6 +1503,26 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
+function perchngCal(){
+    var initial = parseInt(document.getElementById("initialVal").value);
+    var final = parseInt(document.getElementById("finalVal").value);
+    var ans = ((final-initial)/Math.abs(initial))*100;
+    var output = document.getElementById("perchngans");
+    output.innerHTML = final  + " is a " + ans + "% change of " + initial;
+}
+
+function peroffCal(){
+    var original = parseInt(document.getElementById("originalPrice").value);
+    var off = parseInt(document.getElementById("offper").value)/100;
+    var tax = parseInt(document.getElementById("salestax").value)/100;
+    var final = (original + (original*tax))*off;
+    var savings = original - final;
+    var output1 = document.getElementById("peroffans1");
+    var output2 = document.getElementById("peroffans2");
+    output1.innerHTML = "Final price: " + final.toFixed(2);
+    output2.innerHTML = "Your savings: " + savings;
+}
+
 function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
@@ -1526,18 +1582,19 @@ document.getElementById("covans").innerHTML=s;
 
 function covcal() {
     var num=document.getElementById("cvsd").value;
-    var s=""; 
+    var s="";
+    var output = document.getElementById("cvans");
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     if(num==""){
-       s= "Please enter number";
+       s= "\\[Please \\space enter \\space number\\]";
     } else if(!valid.test(num)){
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+        s= "\\[Enter \\space space \\space separated \\space numbers. \\newline Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation\\]";
     } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
     if (len == 1){
-        document.getElementById("cvans").innerHTML= "Please enter more than one value";
+        s = "\\[Please \\space enter \\space more \\space than \\space one \\space value\\]";
         return;
     }
     var number=[]
@@ -1545,20 +1602,37 @@ function covcal() {
         number[i] = parseFloat(num[i].trim());
     }
     var sum=0;
+    s += "\\[First, \\space take \\space a \\space loop \\space upto \\space the \\space length \\space of \\space dataset, "+len+"\\]";
+    s += "\\[And, \\space add \\space all \\space of \\space the \\space data \\space in \\space dataset\\]";
     for (i = 0; i < len; i++) {
        sum=sum+number[i];
     }
     var mean=sum/len;
+    s += "\\[We \\space get \\space the \\space sum \\space here \\space "+sum+" \\space\\]";
+    s += "\\[Then \\space we \\space divide \\space this \\space sum \\space by \\space the \\space length \\space the \\space dataset\\]";
+    s += "\\[\\space Mean \\space = \\space \\frac{"+sum+"}{"+len+"}\\]"
+    s += "\\[\\space = \\space "+mean.toFixed(3)+"\\]"
     var varrzlt=0;
     for (i = 0; i < len; i++) {
         varrzlt = varrzlt + ((number[i]-mean)**2);
     }
+    s +="\\[Then \\space we \\space take \\space a \\space loop \\space where \\space each \\space data \\space from \\space dataset \\space is\\]";
+    s +="\\[Substracted \\space and \\space squared, \\space we \\space get, \\space "+varrzlt.toFixed(2)+ " \\space as \\space the \\space value\\]";
     varrzlt = varrzlt/(len-1);
+    s +="\\[This \\space value \\space is \\space now \\space divided \\space by \\space the \\space (length - 1)\\]";
+    s +="\\[\\space = \\space \\frac{"+varrzlt.toFixed(2)+"}{"+len+" - 1}\\]";
+    s +="\\[\\space = \\space \\frac{"+varrzlt.toFixed(2)+"}{"+(len - 1)+"}\\]";
+    s +="\\[\\space = \\space "+varrzlt.toFixed(3)+"\\]";
     var sdev = Math.sqrt(varrzlt);
-    s="The Coeffecient of Variation is: "+sdev/mean;
+    s +="\\[Finally, \\space the \\space Coeffecient \\space of \\space Variation \\space will \\space be,\\]";
+    s += "\\[\\space = \\space \\frac{(\\sqrt{"+varrzlt.toFixed(2)+"})}{"+mean+"}\\]";
+    s += "\\[\\space = \\space \\frac{"+sdev.toFixed(2)+"}{"+mean+"}\\]";
+    s += "\\[\\space = \\space "+(sdev/mean).toFixed(3)+"\\]";
     }
-    document.getElementById("cvans").innerHTML=s;
+    output.innerHTML=s;
+    renderMathInElement(output);
 }
+
 
 function rmscal()
 {
@@ -1601,7 +1675,25 @@ function rmscal()
     renderMathInElement(document.getElementById("rmsans"));
 }
 
-
+function pvaluecal()
+{ 
+    var z = parseFloat(document.getElementById("pvalueinp").value);
+    
+    var output = document.getElementById("pvalueans");
+    var temp = "";
+    var Zval = (1/Math.sqrt(2*3.14)* (2.71)**((z**2)/2));
+    var ans = 2*Zval;
+    if(isNaN(z))
+    {
+        temp = "Please enter proper value";
+        output.innerHTML = temp;
+    }
+    else
+    {
+        temp = "P value: " + ans;
+        output.innerHTML = temp;
+    }
+}
 
 
 
@@ -1709,6 +1801,22 @@ function compangcal(){
     renderMathInElement(document.getElementById("compangans"));
 }
 
+function compangvercal(){
+    var a=document.getElementById("cvang1").value;
+    var b=document.getElementById("cvang2").value;
+    var ans="";
+    if(a==""||b==""){
+        ans="Enter both angles to verify";
+    } else{
+        var x=parseInt(a), y=parseInt(b);
+        if(x+y==90)
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space = 90 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Complementary\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space != 90 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Not \\space Complementary\\]";
+    }
+    document.getElementById("compangverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("compangverans"));
+}
 function cotermangcal(){
     var a=document.getElementById("cotang").value;
     var ans="";
@@ -1859,6 +1967,37 @@ else{
 }
 document.getElementById("skewans").innerHTML=ans;
 }
+// kurtosis calculator
+// kurtosis calculator
+function kurtcal()
+{   var num=document.getElementById("kurtinput").value;
+     var num1=document.getElementById("kurtinput2").value;
+    
+var ans="";
+    if(num == ""|| num1 =="")
+    {
+        ans="Please fill both fields"
+    }
+    else{
+        num = parseFloat(num);
+        num1 = parseFloat(num1);
+    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+num1+"^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+Math.pow(num1,4).toFixed(4)+"}\\]"
+    ans+="\\[\\beta_2 = "+(num/Math.pow(num1,4).toFixed(4)).toFixed(4)+"\\]"
+
+    if((num/Math.pow(num1,4).toFixed(4)).toFixed(4)==3)
+    ans+="\\[Since \\space \\beta_2 \\space is \\space equal \\space to \\space 3 \\space the  \\space distribution  \\space is  \\space mesokurtic. \\]"
+    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)>3)
+    ans+="\\[Since \\space \\beta_2 \\space > \\space 3 \\space the  \\space distribution  \\space is  \\space leptokurtic. \\]"
+    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)<3)
+    ans+="\\[Since \\space \\beta_2 \\space < \\space 3 \\space the  \\space distribution  \\space is  \\space platykurtic. \\]" 
+    }
+
+document.getElementById("kurtans").innerHTML=ans;
+renderMathInElement(document.getElementById("kurtans"));
+
+}
 function clockcal()
 {
     a=document.getElementById("hclock").value;  
@@ -1946,36 +2085,72 @@ function perrankcal(){
 
 function halflifeCalc() {
     var decay = document.getElementById("decay").value;
+    var answer="";
+    var ans="";
+    if(decay=="")
+    {
+    //   answer="";
+    //   ans="";
+      document.getElementById("halflifeAns").innerHTML="Please enter the decay constant"
+    }
+    else{
     var lg = Math.log(2);
+    console.log(lg);
     var halfLife = lg / decay;
-    var ans = "Half Life of the element is " + halfLife;
-    document.getElementById("halflifeAns").innerHTML = ans;
+    
+    answer+="\\[t_\\frac{1}{2} \\space = \\space \\frac{ln(2)}{\\lambda}\\]"
+    answer+="\\[\\lambda => \\space decay \\space constant \\]"
+    answer+="\\[t_\\frac{1}{2} = \\space \\frac{"+lg.toFixed(4)+"}{"+decay+"}\\]"
+    answer+="\\[t_\\frac{1}{2} = \\space "+(lg.toFixed(4)/decay).toFixed(4)+"\\]"
+    ans = "Half Life of the element is " + halfLife.toFixed(4);
+    document.getElementById("halflifeAns").innerHTML = answer+ans;
+    renderMathInElement(document.getElementById("halflifeAns"));
+    }
+    
+    
 }
 
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
     ans="";
+    var answer="";
     if(num4=="")
     {
-        ans="Please enter number";
+        answer="Please enter a number";
     }
     else
     {
-        var len=num4.length;
         var count=0;
-        for(var b=0;b<len;b++)
+        if(num4>5)
         {
-            if(num4[b]=='.')
+            while(num4>5)
             {
-                break;
+             num4=num4/10;
+             count=count+1;
             }
-            else 
-            {count++};
         }
-        ans="The order of mangnitude is : "+(count-1);
+        else if(num4<=0.5)
+        {
+            while(num4 <= 0.5)
+            {num4=num4*10;
+            count=count-1;
+           }
+        }
+        else if(num4==5)
+        {
+            count=0;
+        }
+        answer+="\\[N \\space = \\space n \\times 10 ^ {x}\\]"
+        answer+="\\[Here, \\space N = \\space no \\space whose \\space order \\space of \\space magintude \\space we \\space have \\space to \\space find\\]"
+        answer+="\\[n \\space should \\space be \\space in \\space the \\space range : 0.5 < n \\leq 5\\]"
+        answer+="\\[x \\space => \\space order \\space of \\space magnitude \\]"
+        answer+="\\[N \\space = \\space "+num4+" \\times 10 ^ {"+count+"} \\]"
+        answer+="\\[The \\space order \\space of \\space mangnitude \\space is : "+(count)+"\\]";
+
     }
-    document.getElementById("ooans").innerHTML=ans;
+    document.getElementById("ooans").innerHTML=answer;
+    renderMathInElement(document.getElementById("ooans"));
 }
 
 function mifcal()
@@ -2190,3 +2365,48 @@ function kapfind()
     }
     document.getElementById("kapans").innerHTML=ans;
 }
+
+function isPrime( n)
+    {
+        if (n <= 1)
+            return false;
+        if (n <= 3)
+            return true;
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+ 
+        for (var i = 5; i * i <= n; i = i + 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function isPowerOfTwo(n)
+    {
+        return (n != 0 )&& ((n & (n - 1)) == 0);
+    }
+ 
+function wagcal()
+{
+    var num1=document.getElementById("wag1").value;
+    ans="";
+    if(num1==""||isNaN(num1))
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
+        {
+            ans=num1+" is a Wagstaff number"
+        }
+        else
+        {
+            ans=num1+" is not a Wagstaff number"   
+        }
+    }
+    document.getElementById("wagans").innerHTML=ans;
+}
+
