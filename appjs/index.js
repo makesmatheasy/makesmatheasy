@@ -265,6 +265,7 @@ function openit(id) {
         "#barrel",
         "#home",
         "#curconcal",
+        "#wags",
         "#factorial",
         "#setop",
         "#rootsunity",
