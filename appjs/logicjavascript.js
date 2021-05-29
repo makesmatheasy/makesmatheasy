@@ -90,25 +90,6 @@ function romanize(input) {
 }
 
 //Distance between excentre and circumcentre
-//----------------------------------------
-
-function excircum_1(){
-    let R = parseInt(document.getElementById("radius_2").value);
-    let A = parseInt(document.getElementById("ang_1").value);
-    let B = parseInt(document.getElementById("ang_2").value);
-    let C = parseInt(document.getElementById("ang_3").value);
-
-    var result = R*Math.sqrt(1+(8*sin(A/2)*sin(B/2)*sin(C/2)));
-    document.getElementById("excircum1").innerHTML = result;
-}
-function sin(degrees) {
-    var radians = (degrees*Math.PI)/180;
-    return Math.sin(radians);
-}
-function cos(degrees) {
-    var radians = (degrees*Math.PI)/180;
-    return Math.cos(radians);
-}
 
 function excircum_1() {
     var R = parseInt(document.getElementById("radius_2").value);
@@ -146,17 +127,29 @@ function cos(degrees) {
 }
 function excircum_2() {
 
-    let R1 = parseInt(document.getElementById("radius_3").value);
-    let A1 = parseInt(document.getElementById("ang_A").value);
-    let B1 = parseInt(document.getElementById("ang_B").value);
-    let C1 = parseInt(document.getElementById("ang_C").value);
-
-
-    var result1 = R1*Math.sqrt(1+(8*cos(A1/2)*cos(B1/2)*cos(C1/2)));
+    var R1 = parseInt(document.getElementById("radius_3").value);
+    var A1 = parseInt(document.getElementById("ang_A").value);
+    var B1 = parseInt(document.getElementById("ang_B").value);
+    var C1 = parseInt(document.getElementById("ang_C").value);
+    var excirout = document.getElementById("excircum2");
+    var excirtemp = "";
 
     var result1 = R1 * Math.sqrt(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2)));
 
-    document.getElementById("excircum2").innerHTML = result1;
+    if (isNaN(A1) || isNaN(R1) || isNaN(B1) || isNaN(C1)){
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
+        excirout.innerHTML = excirtemp;
+    } else{
+        excirtemp += "\\[Distance \\space between \\space excentre \\space and \\space circumcentre \\space is \\space \\]";
+        excirtemp += "\\[ \\space = \\space ( External \\space radius) \\times \\sqrt{1 + (8 \\times cos(\\frac{(angle A)}{2}) \\times cos(\\frac{(angle \\space C)}{2}) \\times cos(\\frac{(angle \\space C)}{2}) )  } \\space \\]";
+        excirtemp += "\\[ \\space = \\space "+R1+" \\times \\sqrt{1 + (8 \\times cos(\\frac{"+A1+"}{2}) \\times cos(\\frac{"+B1+"}{2}) \\times cos(\\frac{"+C1+"}{2}) )  } \\space \\]";
+        excirtemp += "\\[ \\space = \\space "+R1+" \\times \\sqrt{"+(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2))).toFixed(2)+"} \\space \\]";
+        excirtemp += "\\[\\space = \\space "+result1.toFixed(3)+" \\space \\]";
+
+        excirout.innerHTML = excirtemp;
+    }
+    renderMathInElement(excirout);
+
 }
 
 
@@ -16415,14 +16408,6 @@ function sin(degrees) {
     return Math.sin(radians);
 }
 
-//Distance between incenter and excenter
-
-function dist_incenex(){
-    let r = parseInt(document.getElementById("ex_rad").value);
-    let ang = parseInt(document.getElementById("angle_1").value);
-    var ans = 4*r*(sin(ang/2));
-    document.getElementById("dist_inex").innerHTML = ans;
-}
 function sin(degrees) {
     var radians = (degrees*Math.PI)/180;
     return Math.sin(radians);
