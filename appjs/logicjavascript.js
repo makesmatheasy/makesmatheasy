@@ -7287,14 +7287,33 @@ function hshapesolve() {
     var barLength = parseFloat(document.getElementById("hshape-l").value);
     var perimeterField = document.getElementById("resultOfPerimeterHshape");
     var areaField = document.getElementById("resultOfAreaHshape");
+    var temp1 = "";
+    var temp2 = "";
+
 
     var perimeter = ((2 * height) + (4 * thickness) + 2 * (height - thickness) + 2 * barLength).toFixed(3);
     var area = 2 * height * thickness + thickness * barLength;
 
     if (!isNaN(perimeter) && !isNaN(area)) {
-        perimeterField.innerHTML = `Perimeter (p) = ${perimeter} units`;
-        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+       temp1 += "\\[Perimeter \\space of \\space H - Shape \\space is \\]"
+       temp1 += "\\[2 \\times " + height + "+ 4 \\times " + thickness + " + 2 \\times (" + height + "-" + thickness + ") + 2 \\times " + barLength + "\\]"
+       temp1 += "\\[" + (2*height) + "+" + (4*thickness) + "+" + (2*(height - thickness)) + "+" + 2*barLength + "\\]"
+       temp1 += "\\[" + perimeter + "\\space units \\]"
+       perimeterField.innerHTML = temp1;
+       temp2 += "\\[Area \\space of \\space H - Shape \\space is \\]"
+       temp2 += "\\[2 \\times " + height + " \\times " + thickness + " + " + thickness + " \\times " + barLength + "\\]"
+       temp2 += "\\[" + (2*height*thickness) + "+" + (thickness*barLength) + "\\]"
+       temp2 += "\\[" + area + "\\space units \\]"
+       areaField.innerHTML = temp2;
     }
+    else{
+        temp1 += "\\[Please \\space enter \\space all \\space input \\]"
+        temp2 += ""
+        perimeterField.innerHTML = temp1;
+        areaField.innerHTML = temp2;
+    }
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField);
 }
 
 // Arbelos
