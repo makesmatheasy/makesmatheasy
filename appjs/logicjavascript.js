@@ -14692,33 +14692,42 @@ function lacube2find() {
 }
 //minimum number to be multiplied to make a number a perfect cube
 function lacube3find() {
-    let n = parseInt(document.getElementById("lacube3").value)
+    let n = parseInt(document.getElementById("lacube3").value);
     let count = 0;
     let ans = 1;
+    var ansField = document.getElementById("lacube3ans");
+    var ansStr = "\\[";
     if (!isNaN(n)) {
         while (n % 3 == 0) {
             count++;
+            ansStr += "n = \\frac{"+n+"}{3} = "+(n/3)+" \\space ";
             n /= 3;
         }
-        if (count % 3)
+        if (count % 3){
+            ansStr += "ans = "+ans+" \\times 3 = "+ans*3+" \\space ";
             ans *= 3;
-
+        }
         for (let i = 4; i <= Math.sqrt(n); i += 3) {
             count = 0;
             while (n % i == 0) {
                 count++;
+                ansStr += "n = \\frac{"+n+"}{"+i+"} = "+(n/i)+" \\space ";
                 n /= i;
             }
+            ansStr += "ans = "+ans+" \\times "+i+" = "+(ans*i)+" \\space ";
             ans *= i;
         }
 
-        if (n > 3)
+        if (n > 3){
+            ansStr += "ans = "+ans+" \\times "+n+" = "+(ans*n)+" \\space ";
             ans *= n;
-
-        document.getElementById("lacube3ans").innerHTML = ans;
+        }
+        ansStr +=  " ; Therefore, ans = "+ans+"\\]";
+        ansField.innerHTML = ansStr;
+        renderMathInElement(ansField);
     }
     else {
-        document.getElementById('lacube3ans').innerHTML = 'Please enter all Input';
+        ansField.innerHTML = 'Please enter all Input';
     }
 }
 //Check if number formed by joining two Numbers is Perfect Cube
