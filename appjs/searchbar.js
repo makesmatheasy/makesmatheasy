@@ -1057,6 +1057,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "P VALUE CALCULATOR"){
                         document.getElementById('pvalue').click();
                     }
+                    else if (inp.value.toUpperCase() == "PPV CALCULATOR") {
+                        $("#ppv").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PPV CALCULATOR"){
+                        document.getElementById('ppv').click();
+                    }
                     else if (inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR") {
                         $("#wmcs").slideToggle();    
                     }

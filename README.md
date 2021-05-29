@@ -335,7 +335,7 @@ Other Tech/Libraries
     - Cycloid
     - Double Cycloid
     - Parallelogram
-    - Polygons: Pentagon, Concave Pentagon, Hexagon, Stretched Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
+    - Polygons: Pentagon, Concave Pentagon, Hexagon, Concave Hexagon, Stretched Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
     - T-Shape
     - H-Shape
@@ -376,6 +376,7 @@ Other Tech/Libraries
     - Hollow Cuboid
   - 3-D shapes Inscribed
   - 4-D Shapes Calculator
+    - Glome
     - Tesseract
     - Hypersphere
   - 3-D Geometry
@@ -478,6 +479,7 @@ Other Tech/Libraries
   - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
+  - PPV calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
