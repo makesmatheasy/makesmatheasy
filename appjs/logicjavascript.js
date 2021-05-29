@@ -13330,27 +13330,41 @@ function gammafind() {
 }
 
 function golds1find() {
-    let a = document.getElementById("golds1").value
-    let b = document.getElementById("golds2").value
-    if (a <= b) {
-        let temp = a;
-        a = b;
-        b = temp;
+    var a = parseFloat(document.getElementById("golds1").value)
+    var b = parseFloat(document.getElementById("golds2").value)
+    var output = document.getElementById("golds1exp");
+    var temp = "";
+    if (!isNaN(a) && !isNaN(b)){
+        if (a <= b) {
+            let temp = a;
+            a = b;
+            b = temp;
+        }
+        var ratio1 = (a / b).toFixed(3);
+        var ratio2 = ((a + b) / a).toFixed(3);
+        temp += "\\[To \\space Check \\space whether \\space two \\space numbers, \\space "+a.toFixed(3)+" \\space and \\space "+b.toFixed(3)+", \\space are \\space in \\space golden \\space ratio,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space two \\space values, \\space ratio1 \\space and \\space ratio2\\]"
+        temp += "\\[ratio1 \\space = \\space \\frac{a}{b}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a.toFixed(3)+"}{"+b.toFixed(3)+"}\\]"
+        temp += "\\[\\space = \\space "+ratio1+"\\]"
+        temp += "\\[ratio2 \\space = \\space \\frac{(a+b)}{a}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a.toFixed(3)+" + "+b.toFixed(3)+"}{"+a.toFixed(3)+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(a+b)+"}{"+a+"}\\]"
+        temp += "\\[\\space = \\space "+ratio2+"\\]"
+        if ((ratio1 == ratio2) &&ratio1 == "1.618") {
+            temp +="\\[Since, \\space ratio1 \\space equals \\space to \\space ratio2 \\space and \\space ratio1 \\space equals \\space to \\space 1.618\\]"
+            temp +="\\[The \\space numbers \\space "+a.toFixed(3)+" \\space and \\space "+b.toFixed(3)+", \\space are \\space in \\space golden \\space ratio\\]"
+        }
+        else {
+            temp +="\\[Since, \\space ratio1 \\space NOT \\space equals \\space to \\space ratio2 \\space or \\space ratio1 \\space NOT \\space equals \\space to \\space 1.618\\]"
+            temp +="\\[The \\space numbers \\space "+a.toFixed(3)+" \\space and \\space "+b.toFixed(3)+", \\space are \\space NOT \\space in \\space golden \\space ratio\\]"
+        }
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    let ratio1 = (a / b).toFixed(3);
-    let ratio2 = ((a + b) / a).toFixed(3);
-    if ((ratio1 == ratio2) &&ratio1 == "1.618") {
-        document.getElementById("golds1exp").innerHTML = "\\[\varphi ={\frac {1+{\sqrt {5}}}{2}}=1.6180339887\ldots \\]" 
-        document.getElementById("golds1exp").innerHTML = "\\[nth\\space fibonacci\\space number\\space = round(n-1th\\space Fibonacci\\space number\\space X\\space golden\\space ratio)\\space fn =\\space round(fn-1 \\space* \varphi)\\]"
-        document.getElementById("golds1exp").innerHTML = "\\[This\\space method\\space can\\space calculate\\space first\\space 34\\space fibonacci\\space numbers\\space correctly.\\space After\\space that\\space there\\space may\\space be\\space difference\\space from\\space the\\space correct\\space value. \\]"
-        document.getElementById("golds1ans").innerHTML = "Yes"
-        renderMathInElement(document.getElementById('golds1exp'));
-        return true;
-    }
-    else {
-        document.getElementById("golds1ans").innerHTML = "No"
-        return false;
-    }
+    renderMathInElement(output);
 }
 
 function rectrhomb() {
