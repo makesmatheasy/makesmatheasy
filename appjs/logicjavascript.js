@@ -22172,42 +22172,43 @@ function hypergeoscal() {
 }
 
 //Exponential Distribution Calculator
-function exprobability(op)
-{
-    let num1=document.getElementById("inrate").value;
-    let num2=document.getElementById("inran").value;
-    if(num1==""||num2=="") {
-        document.getElementById("exprobAns").innerHTML = "Please fill all the field";
+function exprobability(op){
+    var num1= parseFloat( document.getElementById("inrate").value);
+    var num2= parseFloat( document.getElementById("inran").value);
 
-    }else {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        if(op==1){
-            var exprobout = document.getElementById("exprobAns");
+    var output = document.getElementById("exprobAns");
+    var exptemp = "";
+    var vartemp = "";
+    var meantemp = "";
+
+    if(isNaN (num1) || isNaN(num2)) {
+        output.innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    } else {
+        if(op === 1){
             var dist =  (num1*2.71828)**(-num1*num2);
             exptemp += "\\[Exponential \\space Probability \\space will \\space be \\]";
             exptemp += "\\[\\space = \\space ((Rate \\space parameter) \\times 2.71828)^{-(Rate \\space parameter) \\times (Random \\space variable)}\\]";
             exptemp += "\\[\\space = \\space ("+num1+" \\times 2.71828)^{(-"+num1+" \\times "+num2+")}\\]";
             exptemp += "\\[\\space = \\space "+dist.toFixed(3)+"\\]";
 
-            exprobout.innerHTML = exptemp;
-            renderMathInElement(exprobout);
-            return;
-
-        }   else if(op==2){
-            var meanout = document.getElementById("exprobAns");
+            output.innerHTML = exptemp;
+        }   else if(op === 2){
             meantemp += "\\[Mean \\space will \\space be \\]";
             meantemp += "\\[\\space = \\space \\frac{1}{(Rate \\space parameter)}\\]";
             meantemp += "\\[\\space = \\space \\frac{1}{"+num1+"}\\]";
             meantemp += "\\[\\space = \\space "+(1/num1).toFixed(3)+"\\]";
 
-            meanout.innerHTML = meantemp;
-            renderMathInElement(meanout);
-            return;
+            output.innerHTML = meantemp;
         } else{
-            document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+            vartemp += "\\[Variance \\space will \\space be \\]";
+            vartemp += "\\[\\space = \\space \\frac{1}{(Rate \\space parameter) \\times (Random \\space variable) }\\]";
+            vartemp += "\\[\\space = \\space \\frac{1}{"+num1+" \\times "+num2+"}\\]";
+            vartemp += "\\[\\space = \\space "+(1/num1*num2).toFixed(3)+"\\]";
+
+            output.innerHTML = vartemp;
         }
     }
+    renderMathInElement(output);
 }
 //Exponential Distribution Calculator
 function gammaprobability(op)

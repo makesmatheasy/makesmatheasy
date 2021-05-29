@@ -20309,29 +20309,22 @@
         <div class="form-group">
             <button type="button" class="btn btn-light" onclick="exprobability(1)"> Solve </button>
             <button type="button" class="btn btn-light" onclick="exprobability(2)"> Mean </button>
-            <button type="button" class="btn btn-light"
-                onclick="exprobability(3)">
-                Variance
-            </button>
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
+            <button type="button" class="btn btn-light" onclick="exprobability(3)"> Variance </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();"> Reset </button>
         </div>
     </form>
     <br>
     <div class="form-group text-center">
         <p class="stopwrap" style="color:white;" id="exprobAns"></p>
-    </div>
-    <br>
+    </div> <br>
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = f(x;\lambda) = \begin{cases}
         \lambda  e^{-\lambda x} & x \ge 0, \\
         0 & x < 0
-        \end{cases}\]</p> where,
-        <br> λ = rate parameter <br> x = random variable
+        \end{cases}\]</p> where, <br> λ = rate parameter <br> x = random variable
     </div>
-    
 </div>
 <!-- Exponential Distribution Calculator end -->
+
 <!-- Gamma Distribution Calculator start -->
 <div class="collapse" id="gammaDist" style="text-align: center;">
     <h1 >Gamma Distribution Calculator</h1>
