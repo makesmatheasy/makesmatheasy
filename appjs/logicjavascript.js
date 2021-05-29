@@ -2811,12 +2811,23 @@ function solveper() {
 }
 
 
-function impse13find() {
+function impse13findd() {
     var n = (document.getElementById("impse32").value);
     let a = 1, b = 2;
     let r = 2, d = 1;
     var sum = ((n * (2 * a + (n - 1) * d)) / 2 + b * ((Math.pow(r, n)) - 1) / (r - 1));
     document.getElementById("impseans32").innerHTML = sum;
+}
+
+function impse36find (){
+    var nterm = parseInt((document.getElementById("impse35").value));
+    var sum = (nterm * ((2 * (nterm**3)) + (12 * (nterm**2))  + (25 * nterm) + 21)) / 2
+    if (!isNaN(nterm)) {
+        document.getElementById("impseans35").innerHTML = sum;
+    }
+    else{
+        document.getElementById("impseans35").innerHTML = "Please enter all Input"
+    }
 }
 
 function impse22find(){
