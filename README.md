@@ -161,7 +161,10 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
+  - Antilog calculator
   - Doubling Time
+  - Percentage change
+  - Percentage off
   - Modulo calculator
   - Sieve of Eratosthenes
   - Adam Numbers
@@ -240,7 +243,8 @@ Other Tech/Libraries
   - Dirichlet's theorem on arithmetic progressions
   - Smallest Number Divisible
   - Lucas series
-  - Types of numbers 
+  - Types of numbers
+  - Disarium Number 
 
 - Basic Convertors
 
@@ -329,12 +333,15 @@ Other Tech/Libraries
     - Stadium
     - Claw
     - Cycloid
+    - Double Cycloid
     - Parallelogram
-    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
+    - Polygons: Pentagon, Concave Pentagon, Hexagon, Stretched Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
     - T-Shape
     - H-Shape
+    - L-Shape
     - Arbelos
+    - Spherical Triangle
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
@@ -468,6 +475,7 @@ Other Tech/Libraries
   - Relative Risk Calculator
   - Negative Binomial Distribution Calculator
   - p chart Calculator
+  - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
   - Odds Calculator
