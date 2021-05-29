@@ -15824,15 +15824,15 @@ function sumDivisor(num) {
 
 
 function planeequation() {
-    let X1 = parseInt(document.getElementById("x1").value);
-    let Y1 = parseInt(document.getElementById("y1").value);
-    let Z1 = parseInt(document.getElementById("z1").value);
-    let X2 = parseInt(document.getElementById("x2").value);
-    let Y2 = parseInt(document.getElementById("y2").value);
-    let Z2 = parseInt(document.getElementById("z2").value);
-    let X3 = parseInt(document.getElementById("x3").value);
-    let Y3 = parseInt(document.getElementById("y3").value);
-    let Z3 = parseInt(document.getElementById("z3").value);
+    let X1 = parseInt(document.getElementById("interplanex1").value);
+    let Y1 = parseInt(document.getElementById("interplaney1").value);
+    let Z1 = parseInt(document.getElementById("interplanez1").value);
+    let X2 = parseInt(document.getElementById("interplanex2").value);
+    let Y2 = parseInt(document.getElementById("interplaney2").value);
+    let Z2 = parseInt(document.getElementById("interplanez2").value);
+    let X3 = parseInt(document.getElementById("interplanex3").value);
+    let Y3 = parseInt(document.getElementById("interplaney3").value);
+    let Z3 = parseInt(document.getElementById("interplanez3").value);
 
     var a1 = X2 - X1;
     var b1 = Y2 - Y1;
@@ -15843,7 +15843,7 @@ function planeequation() {
     var a = b1 * c2 - b2 * c1;
     var b = a2 * c1 - a1 * c2;
     var c = a1 * b2 - b1 * a2;
-    var d = (-a * x1 - b * y1 - c * z1);
+    var d = (-a * X1 - b * Y1 - c * Z1);
 
     if (b > 0 && c > 0) {
         document.getElementById("interceptresult").innerHTML = a + "x+" + b + "y+" + c + "z" + "=" + (-1) * d;
@@ -15856,7 +15856,7 @@ function planeequation() {
         document.getElementById("interceptresult").innerHTML = a + "x" + b + "y+" + c + "z" + "=" + (-1) * d;
     }
     else if (c < 0 && b < 0) {
-        document.getElementById("interceptresult3").innerHTML = a + "x" + b + "y" + c + "z" + "=" + (-1) * d;
+        document.getElementById("interceptresult").innerHTML = a + "x" + b + "y" + c + "z" + "=" + (-1) * d;
     }
 
 
