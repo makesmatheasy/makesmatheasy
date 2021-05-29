@@ -14362,6 +14362,7 @@ function lacube7find() {
         document.getElementById("lacube7ans").innerHTML ="Perfect Square="+String(num)+" and Minimum Digits to remove="+String(n-ans);
     }
 }
+
 //Find square root of number upto given precision
 function lacube8find() {
     let number = parseInt(document.getElementById("lacube8").value)
@@ -14369,30 +14370,43 @@ function lacube8find() {
     let start = 0, end = number;
     let mid;
     let ans = 0.0;
+    var ansStrField = document.getElementById("lacube8ans");
+    var ansStr = "\\[";
     while (start <= end) {
         mid = (start + end) / 2;
+        ansStr += " mid := \\frac{"+start+"+"+end+"}{2} \\space";
         if (mid * mid == number) {
             ans = mid;
+            ansStr += ""+mid+"\\times "+mid+" = "+number+" \\space \\space ";
             break;
         }
         if (mid * mid < number) {
+            ansStr += " start := "+mid+" + 1 \\space ";
             start = mid + 1;
+            ansStr += " ans := "+mid+" \\space ";
             ans = mid;
         }
         else {
+            ansStr += " end = "+mid+" - 1 \\space ";
             end = mid - 1;
         }
     }
     let increment = 0.1;
     for (let i = 0; i < precision; i++) {
         while (ans * ans <= number) {
+            ansStr += " ans := "+ans+" + "+increment+" \\space ";
             ans += increment;
         }
+        ansStr += " ans := "+ans+" - "+increment+" \\space ";
         ans = ans - increment;
+        ansStr += " increment := "+ans+" / "+increment+" \\space ";
         increment = increment / 10;
     }
-    document.getElementById("lacube8ans").innerHTML = ans;
+    ansStr += "\\therefore Final Answer = "+ans.toFixed(precision)+" \\]";
+    ansStrField.innerHTML = ansStr;
+    renderMathInElement(ansStrField);
 }
+
 //Difference between Sum of Squares and Sum of First N Natural Numbers
 function lacube9find() {
     let n = parseInt(document.getElementById("lacube10").value)
