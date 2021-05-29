@@ -2975,6 +2975,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="disnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Disarium Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Disarium Number','#disnum','c','disnumimgfav')"><img
+                                        id="disnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -35136,6 +35151,31 @@ N is the population size.
         </div>
     </div>
     <!--roman numeral end-->
+    <!-- Disarium Number start-->
+    <div class="collapse" id="disnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Disarium Number Checker</h2>
+            <br>
+            <p>A number is called Disarium if sum of its digits powered with their respective positions is equal to the number itself.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="disn" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isDisNum(document.getElementById('disn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="disans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Disarium Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 

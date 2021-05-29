@@ -241,7 +241,8 @@ Other Tech/Libraries
   - Dirichlet's theorem on arithmetic progressions
   - Smallest Number Divisible
   - Lucas series
-  - Types of numbers 
+  - Types of numbers
+  - Disarium Number 
 
 - Basic Convertors
 
