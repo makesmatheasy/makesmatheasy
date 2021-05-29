@@ -22229,6 +22229,23 @@ function negbinoCal() {
     renderMathInElement(document.getElementById('negbinoans'));
   }
 
+// PPV Calculator
+function ppvCal() {
+    let sensi = document.getElementById("ppvsensi").value;
+    let speci = document.getElementById("ppvspeci").value;
+    let prev = document.getElementById("ppvprev").value;
+
+    let ans = "";
+    if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
+        ans = "Enter valid inputs"
+        document.getElementById("ppvans").innerHTML = ans;
+    }
+    else{
+        ans = (sensi * prev)/((sensi * prev) + ((1 - speci) * (1 - prev)));
+       
+        document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
+    }
+  }
 
   function vectsfind()
   {

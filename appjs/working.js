@@ -1569,6 +1569,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    
+    $("#ppvbtn").click(function () {
+        openit("#ppv");
+        closenav();
+        clearall();
+    });
 
     $("#analyticalbtn").click(function () {
         openit("#analytical");

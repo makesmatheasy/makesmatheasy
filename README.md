@@ -476,6 +476,7 @@ Other Tech/Libraries
   - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
+  - PPV calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation

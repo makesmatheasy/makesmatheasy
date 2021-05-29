@@ -5004,6 +5004,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="ppvbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">PPV Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('PPV Calculator','#ppv','c','ppvfav')"><img
+                                        id="ppvfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="ccbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">C chart Calculator</a>
                         </td>
@@ -12720,6 +12737,24 @@
 
     <p id="negbinoans"></p>
 </div>
+        <!-- PPV Calculator-->
+        <div class="collapse" id="ppv">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">PPV Calculator</h1>
+        
+            <form action="">
+                <input class = "form__field"type="text" id="ppvsensi" placeholder="Enter Sensitivity">
+                <br><br>
+                <input class = "form__field"type="text" id="ppvspeci" placeholder="Enter Specificity">
+                <br><br>
+                <input class = "form__field"type="text" id="ppvprev" placeholder="Enter Prevalence">
+        
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="ppvCal()">Calculate</button>
+            </form>
+        
+            <p id="ppvans"></p>
+        </div>
+        
 <!-- Relative risk Calculator -->
 <div class="collapse" id="relrisk">
     <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
