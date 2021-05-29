@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -26,6 +26,12 @@ $("#clock").click(function(){
 // Disarium Number
 $("#disnumbtn").click(function(){
     openit("#disnum");
+    closenav();
+    clearall();
+});
+// Automorphic Number
+$("#autonumbtn").click(function(){
+    openit("#autonum");
     closenav();
     clearall();
 });
@@ -609,6 +615,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#taktbtn").click(function () {
+        openit("#takttest");
+        closenav();
+        clearall();
+    });   
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();
@@ -650,7 +661,7 @@ $(document).ready(function () {
         clearall();
     });
     $("#pvaluebtn").click(function () {
-        openit("#pvalue");
+        openit("#pvalues");
         closenav();
         clearall();
     });
@@ -1537,29 +1548,6 @@ $(document).ready(function () {
         clearall();
     });
     
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
-
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
-
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
-
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
     $("#relriskbtn").click(function () {
         var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
         var output = document.getElementById("relriskform");
@@ -1571,6 +1559,12 @@ $(document).ready(function () {
     }); 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+    
+    $("#ppvbtn").click(function () {
+        openit("#ppv");
         closenav();
         clearall();
     });

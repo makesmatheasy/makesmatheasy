@@ -1409,6 +1409,20 @@ function chordsub() {
         document.getElementById("chsubans").innerHTML = ""
     }
 }
+
+function chordsub1() {
+    var into = document.getElementById("chsub1").value
+    if (into != "") {
+        document.getElementById("chsub1info").innerHTML = "\\[Equal \\space chords \\space of \\space congruent \\space circles \\space subtend  \\space equal \\space angles \\space at \\space their \\space centres.\\]";
+        document.getElementById("chsub1ans").innerHTML = "\\[The \\space angle \\space subtended \\space by \\space chord \\space at \\space the \\space center \\space is \\space " + into+"\\degree \\]";
+    }
+    else {
+        document.getElementById("chsub1info").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
+        document.getElementById("chsub1ans").innerHTML = ""
+    }
+    renderMathInElement(document.getElementById("chsub1ans"));
+    renderMathInElement(document.getElementById("chsub1info"));
+}
 //-----------------------------------------------------
 //Centroid calculator
 function centcal() {
@@ -2451,18 +2465,38 @@ function diamond() {
 }
 //Fractional Part Function
 function fp() {
-    var giffnum = parseInt(document.getElementById("giffnum").value)
-    if (giffnum >= 0) {
-        let ans1 = Math.floor(giffnum)
-        let ans = giffnum - ans1
-        document.getElementById("giffans").innerHTML = "The fractional part is " + ans
+    var giffnum = parseFloat(document.getElementById("giffnum").value)
+    var output = document.getElementById("giffans");
+    var temp = "";
+    if (!isNaN(giffnum)){
+        "\\[The \\space Fractional \\space Part \\space Function \\space will \\space be,\\]"
+        if (giffnum >= 0) {
+            var ans1 = Math.floor(giffnum)
+            var ans = giffnum - ans1
+            temp += "\\[Here, \\space since \\space "+giffnum+" \\space is \\space greater \\space than \\space or \\space equal \\space to \\space 0\\]"
+            temp += "\\[Fractional \\space Part \\space = \\space "+giffnum+" \\space - \\space (Largest \\space integer \\space less \\space than \\space or \\space equal \\space to \\space "+giffnum+")\\]"
+            temp += "\\[\\space = \\space "+giffnum+" \\space - \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+            output.innerHTML = temp;
+        } else {
+            var ans1 = Math.abs(giffnum)
+            var ans2 = Math.ceil(ans1)
+            var ans = ans2 - ans1
+            temp += "\\[Here, \\space since \\space "+giffnum+" \\space is \\space less \\space than \\space 0\\]"
+            temp += "\\[Fractional \\space Part \\space = \\space (Rounded \\space number \\space up \\space to \\space the \\space next \\space largest \\space integer) \\space of \\space |"+giffnum+"| \\space - \\space |"+giffnum+"|\\]"
+            temp += "\\[\\space = \\space (Rounded \\space number \\space up \\space to \\space the \\space next \\space largest \\space integer) \\space  of \\space "+ans1+" \\space - \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans2+" \\space - \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+            output.innerHTML = temp;
+        }
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input \\]"
+
+        output.innerHTML = temp;
     }
-    else {
-        let ans1 = Math.abs(giffnum)
-        let ans2 = Math.ceil(giffnum)
-        let ans = ans2 - ans1
-        document.getElementById("giffans").innerHTML = "The fractional part is " + ans
-    }
+    renderMathInElement(output);
 }
 
 // Work and Time calculator
@@ -2872,6 +2906,19 @@ function setBits(n)
     return count;
 }
 
+function nth113find(){
+    var nterms = (document.getElementById("imp113").value);
+    if (nterms != "") {
+        let first = 12;
+        var ntherm = ((first*(Math.pow(2,nterms-1)))+11*((Math.pow(2,nterms-1))-1));
+        document.getElementById("nth113ans").innerHTML = ntherm;
+    }
+    else{
+        document.getElementById("nth113ans").innerHTML = "Please enter all Input"
+    }
+
+}
+
 //Important Series and Sequences start
 
 function impsefind() {
@@ -2922,13 +2969,24 @@ function impse20find() {
 
 function impse21find() {
     var n = parseInt(document.getElementById("impse21").value)
-    while (n != 1) {
-        document.getElementById("impse21ans").innerHTML = n + " ";
-        if ((n & 1) != 0)
-            n = 3 * n + 1;
-        else
-            n = parseInt(n / 2, 10);
-    } document.getElementById("impse21ans").innerHTML = n;
+    if(!isNaN(n)){
+        while (n != 1) {
+            document.getElementById("impse21ans").innerHTML = n + " ";
+            if ((n & 1) != 0)
+                n = 3 * n + 1;
+            else
+                n = parseInt(n / 2, 10);
+        } 
+        document.getElementById("impse21ans").innerHTML = n;
+        document.getElementById("impse21exp").innerHTML = "\\[Starting with any positive integer N, Collatz sequence is defined corresponding to n as the numbers formed by the following operations :\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[1. If n is even, then n = n / 2.\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[2. If n is odd, then n = 3*n + 1.\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[3. Repeat above steps, until it becomes 1.\\]"
+        renderMathInElement(document.getElementById("impse21exp"))
+    }
+    else {
+        document.getElementById("impse21ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function impse2find() {
@@ -3813,21 +3871,27 @@ function interpointsolve() {
 function alisumfind() {
     let n = parseInt(document.getElementById("alisum").value)
     let sum = 0;
-    let explain1 = "\\[Proper \\space Divisors \\space of \\space" + n + ":";
-    let explain2 = "\\[Aliquot \\space Sum=";
-    for (let i = 1; i < n; i++)
-        if (n % i == 0) {
-            sum += i;
-            explain1 += "\\space" + i + ",";
-            explain2 += i + "+";
-        }
-    explain1 = explain1.slice(0, -1);
-    explain1 += "\\]";
-    explain2 = explain2.slice(0, -1);
-    explain2 += "=" + sum + "\\]";
-    document.getElementById("alisumans").innerHTML = "Aliquot Sum=" + sum;
-    document.getElementById("aliexplain").innerHTML = explain1 + explain2;
-    renderMathInElement(document.getElementById("aliexplain"));
+    if(n=="" || isNaN(n)){
+        document.getElementById("alisumans").innerHTML = "Enter proper input";
+        document.getElementById("aliexplain").innerHTML = "";
+    }
+    else{
+        let explain1 = "\\[Proper \\space Divisors \\space of \\space" + n + ":";
+        let explain2 = "\\[Aliquot \\space Sum=";
+        for (let i = 1; i < n; i++)
+            if (n % i == 0) {
+                sum += i;
+                explain1 += "\\space" + i + ",";
+                explain2 += i + "+";
+            }
+        explain1 = explain1.slice(0, -1);
+        explain1 += "\\]";
+        explain2 = explain2.slice(0, -1);
+        explain2 += "=" + sum + "\\]";
+        document.getElementById("alisumans").innerHTML = "Aliquot Sum=" + sum;
+        document.getElementById("aliexplain").innerHTML = explain1 + explain2;
+        renderMathInElement(document.getElementById("aliexplain"));
+    }
 }
 
 function alisum1find() {
@@ -7294,8 +7358,8 @@ function crossedrectsolve() {
     var areaField = document.getElementById("resultOfAreaCrossedRect");
 
     var legLength = (Math.sqrt(Math.pow(baseLength, 2) + Math.pow(rectSide, 2)) / 2);
-    var apexAngle = Math.acos((2 * Math.pow(legLength, 2) - Math.pow(baseLength, 2)) / (2 * Math.pow(legLength, 2)));
-    var intersectAngle = 180 - apexAngle * (180 / Math.PI);
+    var apexAngle = (Math.acos((2 * Math.pow(legLength, 2) - Math.pow(baseLength, 2)) / (2 * Math.pow(legLength, 2)))) *(180 / Math.PI);
+    var intersectAngle = 180 - apexAngle ;
     var baseAngle = (intersectAngle / 2);
     var perimeter = 2 * baseLength + 4 * legLength;
     var area = (baseLength * rectSide) / 2;
@@ -7305,13 +7369,13 @@ function crossedrectsolve() {
         renderMathInElement(legLengthField);
         baseAngleField.innerHTML = "\\[Base \\space angle (\\alpha) =\\frac{" + intersectAngle + "}{2} = " + baseAngle.toFixed(3) + " \\degree \\]";
         renderMathInElement(baseAngleField);
-        intersectAngleField.innerHTML = "\\[Intersection \\space angle (\\beta) = 180 \\degree - " + apexAngle + " = " + intersectAngle.toFixed(3) + " \\degree \\]";
+        intersectAngleField.innerHTML = "\\[Intersection \\space angle (\\beta) = 180 \\degree - " + apexAngle.toFixed(3) + " = " + intersectAngle.toFixed(3) + " \\degree \\]";
         renderMathInElement(intersectAngleField);
-        apexAngleField.innerHTML = "\\[Apex \\space angle (\\gamma) = \\arccos \\frac{2 \\times " + legLength + "^2 - " + baseLength + "^2}{2 \\times " + baseLength + "^2} = " + apexAngle.toFixed(3) + " \\degree \\]";
+        apexAngleField.innerHTML = "\\[Apex \\space angle (\\gamma) = \\arccos \\frac{2 \\times " + baseLength + "^2 - " + legLength + "^2}{2 \\times " + baseLength + "^2} = " + apexAngle.toFixed(3) + " \\degree \\]";
         renderMathInElement(apexAngleField);
         perimeterField.innerHTML = "\\[Perimeter (p) = 2 \\times " + baseLength + " + 4 \\times " + legLength + " = " + perimeter.toFixed(3) + " \\space units \\]";
         renderMathInElement(perimeterField);
-        areaField.innerHTML = "\\[Area (A) = \\frac{" + baseLength + " \\times " + rectSide + "}{2} = " + apexAngle.toFixed(3) + " \\space sq.units \\]";
+        areaField.innerHTML = "\\[Area (A) = \\frac{" + baseLength + " \\times " + rectSide + "}{2} = " + area.toFixed(3) + " \\space sq.units \\]";
         renderMathInElement(areaField);
     }
 }
@@ -7425,6 +7489,51 @@ function lshapesolve() {
         renderMathInElement(shortSideField);
         renderMathInElement(perimeterField);
         renderMathInElement(areaField);
+    }
+}
+
+// X - Shape
+
+function xshapesolve() {
+    var l = parseFloat(document.getElementById("xshape-l").value);
+    var b = parseFloat(document.getElementById("xshape-b").value);
+    var alpha = parseFloat(document.getElementById("xshape-alpha").value);
+    var beta = parseFloat(document.getElementById("xshape-beta").value);
+    var gammaField = document.getElementById("gammaXshape");
+    var crossLenField = document.getElementById("resultOfCrossLenXshape");
+    var armLenField = document.getElementById("resultOfOuterArmLenXshape");
+    var immerLenField = document.getElementById("resultOfImmerArmLenXshape");
+    var heightField = document.getElementById("resultOfHeightXshape");
+    var widthField = document.getElementById("resultOfWidthXshape");
+    var perimeterField = document.getElementById("resultOfPerimeterXshape");
+    var areaField = document.getElementById("resultOfAreaXshape");
+    if ((alpha + beta) != 180){
+        gammaField.innerHTML = "";
+        crossLenField.innerHTML = "Angular Sum must equals to 180°";
+        armLenField.innerHTML = "";
+        immerLenField.innerHTML = "";
+        heightField.innerHTML = "";
+        widthField.innerHTML = "";
+        perimeterField.innerHTML = "";
+        areaField.innerHTML = "";
+    }
+    else{
+        var gamma = 90 - alpha/2;
+        var x = (b * Math.sin(gamma * (Math.PI/180)))/Math.sin(2*gamma*(Math.PI/180));
+        var m = l/2;
+        var n = m - x;
+        var h = 2 * m * Math.sin( (beta/2) * (Math.PI/180));
+        var i = 2 * n * Math.sin((alpha/2)*(Math.PI/180)) + 2*b;
+        var p = 4 * ( b + m + n );
+        var A = 2 * l * b * Math.sin(alpha*(Math.PI/180)) - Math.pow(x, 2) * Math.sin(alpha * (Math.PI/180));
+        gammaField.innerHTML = `γ = ${gamma.toFixed(3)}`;
+        crossLenField.innerHTML = `x = ${x.toFixed(3)}`;
+        armLenField.innerHTML = `m = ${m.toFixed(3)}`;
+        immerLenField.innerHTML = `n = ${n.toFixed(3)}`;
+        heightField.innerHTML = `h = ${h.toFixed(3)}`;
+        widthField.innerHTML = `i = ${i.toFixed(3)}`;
+        perimeterField.innerHTML = `p = ${p.toFixed(3)}`;
+        areaField.innerHTML = `A = ${A.toFixed(3)}`;
     }
 }
 
@@ -7830,6 +7939,37 @@ function solvehex() {
     renderMathInElement(document.getElementById("resultofareahex2"));
     renderMathInElement(document.getElementById("resultofperimeterhex"));
 
+}
+//Concave Hexagon
+function solveconcavehex() {
+    let a = document.getElementById("inputconhexside").value;
+    let breadthoutput = document.getElementById("resultofconhexbreadth");
+    let heioutput = document.getElementById("resultofconhexhei");
+    let perioutput = document.getElementById("resultofconhexperi");
+    let areaoutput = document.getElementById("resultofconhexarea");
+    var breadthtemp = "";
+    var heitemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        breadthtemp += "\\[Breadth \\space \\newline \\sqrt{3} \\times" + a  + "\\ = " + eval(String(1.7320508 * a)).toFixed(2) + "\\]";
+        breadthoutput.innerHTML = breadthtemp;
+        heitemp += "\\[Height \\space \\newline \\frac{3}{2} \\times" + a + "\\ = " + eval(String(1.5 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        peritemp += "\\[Perimeter \\space \\newline 6 \\times" + a + "\\ = " + eval(String(6 * a)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space \\newline \\sqrt{3} \\times (" + a + ")^2" + "\\ = " + eval(String(1.7320508 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(breadthoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput); 
+    } else {
+        breadthoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
 }
 //Stretched Hexagon
 function solvestretchhex() {
@@ -8461,12 +8601,22 @@ function doublecycloidsolve() {
     var shortDia = 4 * a;
     var perimeter = 2 * arcLength;
     var area = 6 * Math.PI * Math.pow(a, 2);
+    var arcLenField = document.getElementById("resultOfDoubleCycArcLen");
+    var longDiaField = document.getElementById("resultOfDoubleCycLongDia");
+    var shortDiaField = document.getElementById("resultOfDoubleCycShortDia");
+    var perimeterField = document.getElementById("resultOfDoubleCycPeri");
+    var areaField = document.getElementById("resultOfDoubleCycArea");
     if ((!isNaN(a))){
-        document.getElementById("resultOfDoubleCycArcLen").innerHTML = `Arc length (b) = ${arcLength}`;
-        document.getElementById("resultOfDoubleCycLongDia").innerHTML = `Long diameter (c) = ${longDia.toFixed(4)}`;
-        document.getElementById("resultOfDoubleCycShortDia").innerHTML = `Short diameter (d) = ${shortDia}`;
-        document.getElementById("resultOfDoubleCycPeri").innerHTML = `Perimeter (p) = ${perimeter}`;
-        document.getElementById("resultOfDoubleCycArea").innerHTML = `Area (A) = ${area.toFixed(4)}`;
+        arcLenField.innerHTML = "\\[Arc \\space length \\space (b) = 8 \\times "+a+" = "+arcLength.toFixed(4)+" \\space units \\]";
+        longDiaField.innerHTML = "\\[Long \\space diameter \\space (c) = 2 \\times \\pi \\times "+a+" = "+longDia.toFixed(4)+" \\space units\\]";
+        shortDiaField.innerHTML = "\\[Short diameter (d) = 4 \\times "+a+" = "+shortDia.toFixed(4)+" \\space units\\]";
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = 2 \\times "+longDia+" = "+perimeter+" \\space units \\]";
+        areaField.innerHTML = "\\[Area \\space (A) = 6 \\times \\pi \\times "+a+"^2 = "+area+" sq.units\\]";
+        renderMathInElement(arcLenField);
+        renderMathInElement(longDiaField);
+        renderMathInElement(shortDiaField);
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField);
     }
 }
 
@@ -13070,6 +13220,16 @@ function cirinsemi10find() {
         document.getElementById("cirinsemi10ans").innerHTML = "-1"
 }
 
+function cirinsemi11find(){
+    let H = parseInt(document.getElementById("cirinsemi17in").value)
+    let n = parseInt(document.getElementById("cirinsemi18in").value)
+    let m = parseInt(document.getElementById("cirinsemi19in").value)
+    let N = n * 1.0;
+    let M = m * 1.0;
+    let h = H * Math.sqrt(N / (N + M));
+    document.getElementById("cirinsemi11ans").innerHTML = h;
+}
+
 function pksquarefind() {
     let k = parseInt(document.getElementById("pksquare13in").value)
     let list = document.getElementById("pksquare14in").value;
@@ -13151,6 +13311,17 @@ function sht6find() {
     }
 }
 
+function eqrect() {
+    let a = parseInt(document.getElementById("eqrect1").value)
+    if (!isNaN(a)) {
+        var area = (1.732 * Math.pow(a, 2))/8;
+        document.getElementById("eqrectans").innerHTML = area;
+    }
+    else {
+        document.getElementById("eqrectans").innerHTML = "Please enter valid input"
+    }
+}
+
 function retfind13() {
     let a = parseFloat(document.getElementById("retin16").value)
     let x = 1.268 * a;
@@ -13203,31 +13374,63 @@ function gammafind() {
 }
 
 function golds1find() {
-    let a = document.getElementById("golds1").value
-    let b = document.getElementById("golds2").value
-    if (a <= b) {
-        let temp = a;
-        a = b;
-        b = temp;
+    var a = parseFloat(document.getElementById("golds1").value)
+    var b = parseFloat(document.getElementById("golds2").value)
+    var output = document.getElementById("golds1exp");
+    var temp = "";
+    if (!isNaN(a) && !isNaN(b)){
+        if (a <= b) {
+            let temp = a;
+            a = b;
+            b = temp;
+        }
+        var ratio1 = (a / b).toFixed(3);
+        var ratio2 = ((a + b) / a).toFixed(3);
+        temp += "\\[To \\space Check \\space whether \\space two \\space numbers, \\space "+a.toFixed(3)+" \\space and \\space "+b.toFixed(3)+", \\space are \\space in \\space golden \\space ratio,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space two \\space values, \\space ratio1 \\space and \\space ratio2\\]"
+        temp += "\\[ratio1 \\space = \\space \\frac{a}{b}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a.toFixed(3)+"}{"+b.toFixed(3)+"}\\]"
+        temp += "\\[\\space = \\space "+ratio1+"\\]"
+        temp += "\\[ratio2 \\space = \\space \\frac{(a+b)}{a}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a.toFixed(3)+" + "+b.toFixed(3)+"}{"+a.toFixed(3)+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(a+b)+"}{"+a+"}\\]"
+        temp += "\\[\\space = \\space "+ratio2+"\\]"
+        if ((ratio1 == ratio2) &&ratio1 == "1.618") {
+            temp +="\\[Since, \\space ratio1 \\space equals \\space to \\space ratio2 \\space and \\space ratio1 \\space equals \\space to \\space 1.618\\]"
+            temp +="\\[The \\space numbers \\space "+a.toFixed(3)+" \\space and \\space "+b.toFixed(3)+", \\space are \\space in \\space golden \\space ratio\\]"
+        }
+        else {
+            temp +="\\[Since, \\space ratio1 \\space NOT \\space equals \\space to \\space ratio2 \\space or \\space ratio1 \\space NOT \\space equals \\space to \\space 1.618\\]"
+            temp +="\\[The \\space numbers \\space "+a.toFixed(3)+" \\space and \\space "+b.toFixed(3)+", \\space are \\space NOT \\space in \\space golden \\space ratio\\]"
+        }
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    let ratio1 = (a / b).toFixed(3);
-    let ratio2 = ((a + b) / a).toFixed(3);
-    if ((ratio1 == ratio2) &&ratio1 == "1.618") {
-        document.getElementById("golds1exp").innerHTML = "\\[\varphi ={\frac {1+{\sqrt {5}}}{2}}=1.6180339887\ldots \\]" 
-        document.getElementById("golds1exp").innerHTML = "\\[nth\\space fibonacci\\space number\\space = round(n-1th\\space Fibonacci\\space number\\space X\\space golden\\space ratio)\\space fn =\\space round(fn-1 \\space* \varphi)\\]"
-        document.getElementById("golds1exp").innerHTML = "\\[This\\space method\\space can\\space calculate\\space first\\space 34\\space fibonacci\\space numbers\\space correctly.\\space After\\space that\\space there\\space may\\space be\\space difference\\space from\\space the\\space correct\\space value. \\]"
-        document.getElementById("golds1ans").innerHTML = "Yes"
-        renderMathInElement(document.getElementById('golds1exp'));
-        return true;
+    renderMathInElement(output);
+}
+
+function rectrhomb() {
+    var length = parseFloat(document.getElementById("rectrhomb1").value)
+    var breadth = parseFloat(document.getElementById("rectrhomb2").value)
+    var area = ((length*breadth)/2);
+    if (length<0 || breadth<0) {
+        document.getElementById("rectrhombans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+    }
+    else if (!isNaN(length) && !isNaN(breadth) ) {
+        document.getElementById("rectrhombans").innerHTML = area.toFixed(3);
     }
     else {
-        document.getElementById("golds1ans").innerHTML = "No"
-        return false;
+        document.getElementById("rectrhombans").innerHTML = "Please enter all input"
     }
 }
 
+
 function golds2find() {
-    let a = document.getElementById("golds3").value
+    var a = document.getElementById("golds3").value;
+    var output = document.getElementById("golds2exp");
+    var temp = "";
     if(!isNaN(a)){        
         let PHI = 1.6180339;
         let f = [0, 1, 1, 2, 3, 5];
@@ -13238,44 +13441,49 @@ function golds2find() {
             fn = Math.round(fn * PHI);
             t++;
         }
-        document.getElementById("golds2exp").innerHTML = "\\[Two numbers are said to be in the golden ratio if their ratio is the same as the ratio of the sum of the two numbers to the larger number.\\]"
-        document.getElementById("golds2exp").innerHTML = "\\[\\frac{A}{B} = \\frac{A + B}{A} = \\frac{1.618}{1} = 1.618 \\]"
-        document.getElementById("golds2exp").innerHTML = "\\[The idea is to find two ratios and check that this ratio is equal to the Golden ratio. That is 1.618.  \\]"
-        renderMathInElement(document.getElementById('golds2exp'));
-        document.getElementById("golds2ans").innerHTML = fn;
+        temp += "\\[Two \\space numbers \\space are \\space said \\space to \\space be \\space in \\space the \\space golden \\space ratio \\space if ,\\]"
+        temp += "\\[Their \\space ratio \\space is \\space the \\space same \\space as \\space the \\space ratio \\space of \\space  sum \\space of \\space  two \\space numbers \\space to \\space larger \\space number\\]"
+        temp +="\\[\\frac{A}{B} = \\frac{A + B}{A} = \\frac{1.618}{1} = 1.618 \\]"
+        temp +="\\[The \\space idea \\space is \\space to \\space find \\space two \\space ratios \\space and \\space check \\space that \\space this \\space ratio \\space is \\space = \\space Golden \\space ratio \\space i.e. \\space 1.618\\]"
+        temp += "\\[Answer \\space = \\space "+fn+"\\]";
+
+        output.innerHTML = temp;
     }
-    else 
-    document.getElementById("golds2ans").innerHTML = "Please enter valid input"
+    else {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 
 function golds3find() {
     let a = document.getElementById("golds4").value
     let b = document.getElementById("golds5").value
-    if (a < b) {
-        a = a + b;
-        b = a - b;
-        a = a - b;
+    if(!isNaN(a)|| !isNaN(b)){
+        document.getElementById("golds3exp").innerHTML = "\\[Two numbers are said to be in silver ratio if \\]"
+        document.getElementById("golds3exp").innerHTML = "\\[The ratio of the sum of the smaller and twice the larger number to the larger number is the same as the ratio of the larger one to the smaller one.\\]"
+        document.getElementById("golds3exp").innerHTML = "\\[\\frac{2*A+B}{A} = \\frac{A}{B} = \\delta_{\\varsigma} = {1+ \sqrt{2}} = 2.414  \\]"
+        document.getElementById("golds3exp").innerHTML = "\\[ The idea is to find two ratios and check whether they are equal to the silver ratio(2.414).\\]"
+        if (a < b) {
+            a = a + b;
+            b = a - b;
+            a = a - b;
+        }
+        let ratio1 = ((a / b) * 1000) / 1000;
+        let ratio2 = Math.floor(((2 * a + b) /
+            a) * 1000);
+        ratio2 = ratio2 / 1000;
+        if (ratio1 == ratio2 &&
+            (ratio1 - 2.414) == 0) {
+            document.getElementById("golds3ans").innerHTML = "Yes";
+        }
+        else {
+            document.getElementById("golds3ans").innerHTML = "No";
+        }
+        renderMathInElement(document.getElementById("golds3exp"))
     }
-
-    // First Ratio
-    let ratio1 = ((a / b) * 1000) / 1000;
-
-    // Second Ratio
-    let ratio2 = Math.floor(((2 * a + b) /
-        a) * 1000);
-    ratio2 = ratio2 / 1000;
-
-    // Condition to check that two
-    // numbers are in silver ratio
-    if (ratio1 == ratio2 &&
-        (ratio1 - 2.414) == 0) {
-        document.getElementById("golds3ans").innerHTML = "Yes";
-        // return true;
-    }
-    else {
-        document.getElementById("golds3ans").innerHTML = "No";
-        // return false;
-    }
+    else 
+        document.getElementById("golds3ans").innerHTML = "Not a Valid Input"
 }
 
 // profit/loss calculations over discount
@@ -17137,8 +17345,21 @@ function subBinDecHexOct() {
     var input2 = document.getElementById("subtract-all-input2").value;
     let result = document.getElementById("subtract-all-result");
     let work = document.getElementById("subtract-all-working");
-    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
 
+    if(parseFloat(input1)-Math.trunc(input1) > 0 || parseFloat(input2)-Math.trunc(input2) > 0){
+        var x1;var x2;var x3;
+
+        if(base === "Binary"){
+            x1 = calculatefrac(input1,2);
+            x2 = calculatefrac(input2,2);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,2);
+            work.innerHTML = "";
+        }
+    }else{
     if (input1.length > input2.length) {
         var p = input1.length - input2.length;
         p = Math.pow(10, p);
@@ -17301,6 +17522,7 @@ function subBinDecHexOct() {
             print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         }
 
+    }
     }
     work.innerHTML = print;
 }
@@ -18905,9 +19127,10 @@ function convertex3() {
 function convertdec2421() {
     var input = document.getElementById("dec2421-input").value;
     let result = document.getElementById("dec2421-result");
-    const type = document.getElementById("dec2421-select");
+    const type1 = document.getElementById("dec2421-select1").value;
+    const type = document.getElementById("dec2421-select").value;
 
-    if(type === "Decimal"){
+    if(type === "Decimal" && type1 === "2421 Code"){
     var x = "_";
     var y = "";
     for (var i = 0; i < input.length; i++) {
@@ -18930,7 +19153,39 @@ function convertdec2421() {
             x = x + +y + "_   ";
         }
       }
-    }else if(type === "Binary"){
+    }else if (type === "2421 Code" && type1 === "Decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString();
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }
+    }else if(type === "Binary" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
         input = parseInt(input,2).toString();
@@ -18954,7 +19209,41 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }else if(type === "Octal"){
+
+    }else if (type === "2421 Code" && type1 === "Binary"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString(2);
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }
+        }else if(type === "Octal"){
+
         var x = "_";
         var y = "";
         input = parseInt(input,8).toString();
@@ -18978,7 +19267,41 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }else if(type === "Hexa decimal"){
+
+    }else if (type === "2421 Code" && type1 === "Octal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString(8);
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }
+        }
+        else if(type === "Hexa decimal"){
         var x = "_";
         var y = "";
 
@@ -19003,7 +19326,38 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }result.innerHTML = x;
+    }else if (type === "2421 Code" && type1 === "Hexa decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString(16);
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }result.innerHTML = x;
 }
 
 
@@ -19728,52 +20082,49 @@ function computeprobability() {
 }
 //Geometric Probability Distribution
 function geoprobability(op) {
-    var x = document.getElementById('failure').value;
-    var p = document.getElementById('success').value;
+    let x = document.getElementById('failure').value;
+    let p = document.getElementById('success').value;
+
+    var output = document.getElementById("geoprobAns") ;
 
     if ((isNaN(x)) || (isNaN(p)) || x === "" || p === "") {
         document.getElementById("geoprobAns").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
         renderMathInElement(document.getElementById("geoprobAns"));
-    }
-    else {
+    } else {
         if (p > 1) {
             document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space exceed \\space 1 \\]";
             renderMathInElement(document.getElementById("geoprobAns"));
-
-        }
-        else if (p < 0) {
+        } else if (p < 0) {
             document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space be \\space negative \\]";
             renderMathInElement(document.getElementById("geoprobAns"));
-        }
-        else {
+        } else {
             if (op === 1){
-                    var proboutput = document.getElementById("geoprobAns") ;
                     var probtemp = "";
                     probtemp += "\\[Geometric \\space Probability \\space will \\space be \\]";
                     probtemp +="\\[\\space = \\space (1 - (Probability \\space of \\space Success))^{(Number \\space of \\space failures)} \\times (Probability \\space of \\space Success) \\]";
                     probtemp +="\\[\\space = \\space (1 - "+p+")^{"+x+"} \\times "+p+"\\]";
-                    probtemp +="\\[\\space = \\space "+(1-p)**x+" \\times "+p+"\\]";
+                    probtemp +="\\[\\space = \\space "+((1-p)**x).toFixed(2)+" \\times "+p+"\\]";
                     probtemp +="\\[\\space = \\space "+((1 - p) ** x * p).toFixed(3)+"\\]";
-                    proboutput.innerHTML = probtemp;
-                    renderMathInElement(proboutput); 
-                    return;
-            }
-            else if (op == 2){
-                var meanoutput = document.getElementById("geoprobAns") ;
+                    output.innerHTML = probtemp;
+            } else if (op == 2){
                 var meantemp = "";
                 meantemp += "\\[Mean \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
-                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))} (Probability \\space of \\space Success)} \\]";
+                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))}{(Probability \\space of \\space Success)} \\]";
                 meantemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"}\\]";
-                meantemp +="\\[\\space = \\space \\frac{"+(1-p)+"}{ "+p+"}\\]";
+                meantemp +="\\[\\space = \\space \\frac{"+(1-p).toFixed(2)+"}{ "+p+"}\\]";
                 meantemp +="\\[\\space = \\space "+((1 - p)/p).toFixed(3)+"\\]";
-                meanoutput.innerHTML = meantemp;
-                renderMathInElement(meanoutput); 
-                return;
-            }
-            else{
-                document.getElementById("geoprobAns").innerHTML = "Variance: " + (1 - p) / (p * p);
+                output.innerHTML = meantemp;
+            } else{
+                var vartemp = "";
+                vartemp += "\\[Variance \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
+                vartemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))}{(Probability \\space of \\space Success)^{2}} \\]";
+                vartemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"^2}\\]";
+                vartemp +="\\[\\space = \\space \\frac{"+(1-p).toFixed(2)+"}{ "+p**2+"}\\]";
+                vartemp +="\\[\\space = \\space "+((1 - p)/(p*p)).toFixed(3)+"\\]";
+                output.innerHTML = vartemp;
             }
         }
+        renderMathInElement(output); 
     }
 }
 //Conditional Probability
@@ -21354,6 +21705,34 @@ function chivalue() {
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     }}
 }
+//takt time calculator
+function taktvalue() {
+    var num1 = document.getElementById("works").value; 
+    var num2 = document.getElementById("demands").value;
+    var num3 = document.getElementById("breaks").value;
+    if(num1==""||num2=="" ||num3=="")
+    {
+        document.getElementById("taktans").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseInt(num1);
+     num2 =parseInt(num2);
+     num3 =parseInt(num3);
+     var takt=(num1-num3)/num2;
+     console.log(num1+" "+num2+" "+num3);
+     var ans="\\[Takt \\space Time = \\frac{Net \\space Production \\space Time}{Customer \\space Demand} \\]" 
+     ans+="\\[\\frac{"+num1+"-"+num3+"}{"+num2+"} \\]"
+     ans+="\\[\\frac{"+ (num1-num3) +"}{"+num2+"} \\]"
+     ans+="\\[ "+takt.toFixed(4)+" \\]"
+     ans+="\\[Takt \\space Time ="+takt.toFixed(4)+" \\space min \\space per \\space unit \\]"
+     document.getElementById("taktans").innerHTML=ans;
+     renderMathInElement(document.getElementById("taktans"));
+        
+    }
+
+}
+
+
 //MANHATTAN DISTANCE CALCULATOR
 function manhatcal() {
     var num1 = parseFloat(document.getElementById("mdx1").value);
@@ -21688,10 +22067,30 @@ function cylsphcal(){
         outputfi.innerHTML = "";
     }
     else{
-        outputr.innerHTML= "r: " + r;
-        outputo.innerHTML = "θ: " + o;
-        outputfi.innerHTML = "φ: " + fi;
+        var sm = x*x + y*y + z*z;
+        var zr = (z/r).toFixed(2);
+        var yx = (y/x).toFixed(2);
+        var ansr = "\\[r\\space coordinate:\\space \\sqrt{(x^2 + y^2 + z^2)} \\]";
+        ansr += "\\[r\\space coordinate:\\space \\sqrt{("+x+" ^ 2 + "+y+" ^ 2 + "+z+" ^ 2)} \\]";
+        ansr += "\\[r\\space coordinate:\\space \\sqrt{"+sm+"} \\]";
+        ansr += "\\[r\\space coordinate:\\space "+r+" \\]";
+
+        var anso = "\\[θ\\space coordinate:\\space \\arccos(frac{z}{r}) \\]";
+        anso += "\\[θ\\space coordinate:\\space \\arccos(frac{"+z+"}{"+r+"}) \\]";
+        anso += "\\[θ\\space coordinate:\\space \\arccos("+zr+") \\]";
+        anso += "\\[θ\\space coordinate:\\space "+o+" \\]";
+
+        var ansfi = "\\[φ\\space coordinate:\\space \\tan(frac{y}{x}) \\]";
+        ansfi += "\\[φ\\space coordinate:\\space \\tan(frac{"+y+"}{"+x+"}) \\]";
+        ansfi += "\\[φ\\space coordinate:\\space \\arccos("+yx+") \\]";
+        ansfi += "\\[φ\\space coordinate:\\space "+fi+" \\]";
+        outputr.innerHTML= ansr;
+        outputo.innerHTML = anso;
+        outputfi.innerHTML = ansfi;
     }
+    renderMathInElement(outputr);
+    renderMathInElement(outputo);
+    renderMathInElement(outputfi);
 }
 
 //BILINEAR INTERPOLATION CALCULATOR
@@ -21903,42 +22302,43 @@ function hypergeoscal() {
 }
 
 //Exponential Distribution Calculator
-function exprobability(op)
-{
-    let num1=document.getElementById("inrate").value;
-    let num2=document.getElementById("inran").value;
-    if(num1==""||num2=="") {
-        document.getElementById("exprobAns").innerHTML = "Please fill all the field";
+function exprobability(op){
+    var num1= parseFloat( document.getElementById("inrate").value);
+    var num2= parseFloat( document.getElementById("inran").value);
 
-    }else {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        if(op==1){
-            var exprobout = document.getElementById("exprobAns");
+    var output = document.getElementById("exprobAns");
+    var exptemp = "";
+    var vartemp = "";
+    var meantemp = "";
+
+    if(isNaN (num1) || isNaN(num2)) {
+        output.innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    } else {
+        if(op === 1){
             var dist =  (num1*2.71828)**(-num1*num2);
             exptemp += "\\[Exponential \\space Probability \\space will \\space be \\]";
             exptemp += "\\[\\space = \\space ((Rate \\space parameter) \\times 2.71828)^{-(Rate \\space parameter) \\times (Random \\space variable)}\\]";
             exptemp += "\\[\\space = \\space ("+num1+" \\times 2.71828)^{(-"+num1+" \\times "+num2+")}\\]";
             exptemp += "\\[\\space = \\space "+dist.toFixed(3)+"\\]";
 
-            exprobout.innerHTML = exptemp;
-            renderMathInElement(exprobout);
-            return;
-
-        }   else if(op==2){
-            var meanout = document.getElementById("exprobAns");
+            output.innerHTML = exptemp;
+        }   else if(op === 2){
             meantemp += "\\[Mean \\space will \\space be \\]";
             meantemp += "\\[\\space = \\space \\frac{1}{(Rate \\space parameter)}\\]";
             meantemp += "\\[\\space = \\space \\frac{1}{"+num1+"}\\]";
             meantemp += "\\[\\space = \\space "+(1/num1).toFixed(3)+"\\]";
 
-            meanout.innerHTML = meantemp;
-            renderMathInElement(meanout);
-            return;
+            output.innerHTML = meantemp;
         } else{
-            document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+            vartemp += "\\[Variance \\space will \\space be \\]";
+            vartemp += "\\[\\space = \\space \\frac{1}{(Rate \\space parameter) \\times (Random \\space variable) }\\]";
+            vartemp += "\\[\\space = \\space \\frac{1}{"+num1+" \\times "+num2+"}\\]";
+            vartemp += "\\[\\space = \\space "+(1/num1*num2).toFixed(3)+"\\]";
+
+            output.innerHTML = vartemp;
         }
     }
+    renderMathInElement(output);
 }
 //Exponential Distribution Calculator
 function gammaprobability(op)
@@ -22386,6 +22786,23 @@ function negbinoCal() {
     renderMathInElement(document.getElementById('negbinoans'));
   }
 
+// PPV Calculator
+function ppvCal() {
+    let sensi = document.getElementById("ppvsensi").value;
+    let speci = document.getElementById("ppvspeci").value;
+    let prev = document.getElementById("ppvprev").value;
+
+    let ans = "";
+    if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
+        ans = "Enter valid inputs"
+        document.getElementById("ppvans").innerHTML = ans;
+    }
+    else{
+        ans = (sensi * prev)/((sensi * prev) + ((1 - speci) * (1 - prev)));
+       
+        document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
+    }
+  }
 
   function vectsfind()
   {
@@ -22483,3 +22900,17 @@ function isDisNum(num) {
    else
    document.getElementById("disans").innerHTML = num + " is not a Disarium number";
 };
+// Automorphic Number
+function isAutoNum(num) {
+    console.log(num);
+    let sq = num*num;
+    document.getElementById ('autosq').innerHTML ="Square of " + num +  " is: " + sq;
+    if(num%10 != sq%10) {
+        document.getElementById('autoans').innerHTML = num +" is not an atomorphic number";
+        num = num/10;
+        sq = m/10;
+    }
+    else
+        document.getElementById('autoans').innerHTML = num +" is an automorphic number";
+    
+}
