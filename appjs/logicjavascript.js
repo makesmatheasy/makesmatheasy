@@ -10165,15 +10165,46 @@ function solvehollowcone(){
     var h = (H/R) * r;
     var area = ( R * math.sqrt( H**2 + R**2) + r * math.sqrt( h**2 + r**2) + R**2 - r**2 ) * math.pi;
     var vol =  (math.pi)/3 * ( R**2 * H - r**2 * h );
+    var wt = R - r;
+    var out1 = document.getElementById("resultofhollowconeinheight");
+    var out2 = document.getElementById("resultofhollowconevol");
+    var out3 = document.getElementById("resultofhollowconearea");
+    var out4 = document.getElementById("resultofhollowconewall");
+    var temp1 = "";
+    var temp2 = "";
+    var temp3 = "";
+    var temp4 = "";
     if (!isNaN(R) && !isNaN(r) && !isNaN(H) && R!="" && r!="" && H!=""){
-        document.getElementById("resultofhollowconeinheight").innerHTML = "The Height inner cone (h): " +h.toFixed(3)
-        document.getElementById("resultofhollowconevol").innerHTML = "The Surface area (A): "+area.toFixed(3)
-        document.getElementById("resultofhollowconearea").innerHTML = "The Volume (V): "+vol.toFixed(3)
+        temp1 += "\\[The \\space Height \\space inner \\space cone \\space (h) \\]";
+        temp1 +="\\[\\space = \\space \\frac{"+H+"}{"+R+"} \\times "+r+" \\]";
+        temp1 +="\\[\\space = \\space "+h.toFixed(3)+"\\]";
+        out1.innerHTML = temp1;
+
+        temp2 += "\\[The \\space Surface \\space area \\space (A)\\]"; 
+        temp2 +="\\[\\space = \\space ( "+R+" \\sqrt{"+H+"^2 + "+R+"^2} + "+r+" \\sqrt{ "+h+"^2 + "+r+"^2} + "+R+"^2 - "+r+"^2 ) \\times \\pi \\]";
+        temp2 +="\\[\\space = \\space "+area.toFixed(3)+"\\]";
+        out2.innerHTML = temp2;
+
+        temp3 +="\\[The \\space Volume \\space (V)\\]";
+        temp3 +="\\[\\space = \\space \\frac{\\pi}{3} ( "+R+"^2 \\times "+H+" - "+r+"^2 \\times "+h+" ) \\]";
+        temp3 +="\\[\\space = \\space "+vol.toFixed(3)+"\\]";
+        out3.innerHTML = temp3;
+
+        temp4 +="\\[The \\space  Wall \\space thickness \\space (a)\\]";
+        temp4 +="\\[\\space = \\space  "+R+" - "+r+"\\]";
+        temp4 +="\\[\\space = \\space "+wt.toFixed(3)+"\\]";
+        out4.innerHTML = temp4;
+
     } else{
-        document.getElementById("resultofhollowconeinheight").innerHTML = "";
-        document.getElementById("resultofhollowconevol").innerHTML = "";
-        document.getElementById("resultofhollowconearea").innerHTML = "";
+        out1.innerHTML = "";
+        out2.innerHTML = "";
+        out3.innerHTML = "";
+        out4.innerHTML = "";
     }
+    renderMathInElement(out1);
+    renderMathInElement(out2);
+    renderMathInElement(out3);
+    renderMathInElement(out);
 }
 
 //Half cone
