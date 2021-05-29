@@ -22483,3 +22483,17 @@ function isDisNum(num) {
    else
    document.getElementById("disans").innerHTML = num + " is not a Disarium number";
 };
+// Automorphic Number
+function isAutoNum(num) {
+    console.log(num);
+    let sq = num*num;
+    document.getElementById ('autosq').innerHTML ="Square of " + num +  " is: " + sq;
+    if(num%10 != sq%10) {
+        document.getElementById('autoans').innerHTML = num +" is not an atomorphic number";
+        num = num/10;
+        sq = m/10;
+    }
+    else
+        document.getElementById('autoans').innerHTML = num +" is an automorphic number";
+    
+}

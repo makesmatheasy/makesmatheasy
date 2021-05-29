@@ -244,7 +244,8 @@ Other Tech/Libraries
   - Smallest Number Divisible
   - Lucas series
   - Types of numbers
-  - Disarium Number 
+  - Disarium Number
+  - Automorphic Number 
 
 - Basic Convertors
 
