@@ -21218,13 +21218,13 @@ function chivalue() {
     document.getElementById('chians').innerHTML=answer;
     renderMathInElement( document.getElementById('chians'));
     if (ans < sigValue) {
-        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> &nbsp; i.e &nbsp;  <strong>" + ans + "</strong>  <   &nbsp; <strong>" + sigValue + "</strong>"
+        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> &nbsp; i.e &nbsp;  <strong>" + ans + "</strong>  < <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     } else if (ans > sigValue) {
-        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> > χ<sup>2</sup><sub>giv</sub> &nbsp; i.e &nbsp;  <strong>" + ans + "</strong> > &nbsp; <strong>" + sigValue + "</strong>"
+        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> > χ<sup>2</sup><sub>giv</sub> &nbsp; i.e &nbsp;  <strong>" + ans + "</strong> > <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Not Accepted. So data distribution is Not uniform throughout."
     } else {
-        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> &nbsp; i.e  &nbsp; <strong>" + ans + "</strong>  = &nbsp; <strong>" + sigValue + "</strong>"
+        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> &nbsp; i.e  &nbsp; <strong>" + ans + "</strong>  = <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     }}
 }
