@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
 $("#midrangebtn").click(function () {
     openit("#midrange");
     closenav();
@@ -1588,6 +1593,11 @@ $(document).ready(function () {
     });
     $("#nbaserootcollapsebtn").click(function(){
         openit("#n_baseroot");
+        closenav();
+        clearall();
+    });
+    $("#co_primebtn").click(function(){
+        openit("#co_prime");
         closenav();
         clearall();
     });
