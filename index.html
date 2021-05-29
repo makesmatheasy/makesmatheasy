@@ -16260,6 +16260,10 @@
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#stretchhexagon"
+                                           style="text-decoration:none;" href="#">Stretched Hexagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#heptagon"
                                            style="text-decoration:none;" href="#">Heptagon</a></td>
                                 </tr>
@@ -27823,6 +27827,74 @@ N is the population size.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="stretchhexagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Stretched Hexagon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Length</h5>
+                                <p class="text-center">\[l = a + b \]</p>
+                                <p class="text-center">a = short side</p>
+                                <p class="text-center">b = stretched side</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h = \sqrt{3} \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Diagonal</h5>
+                                <p class="text-center">\[d = \sqrt{h^2 + b^2} \]</p>
+                                <p class="text-center">\[ = \sqrt{(\sqrt{3}a)^2 + b^2} \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[p = 4 \space a + 2 \space b\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{3}{2} \space \sqrt{3} \space a^2 + (b - a) \space h \]</p>
+                                <p class="text-center">\[ = \frac{3}{2} \space \sqrt{3} \space a^2 + (b - a) \space \sqrt{3} \space a \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/stretched-hexagon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter short side (a)" id="inputsthexshoside"
+                                   oninput="solvestretchhex();">
+                        <input class="form__field" type="number"
+                                   placeholder="Enter stretched side (a)" id="inputsthexlongside"
+                                   oninput="solvestretchhex();">
+                        <p class="stopwrap" id="resultofsthexlen"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofsthexhei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofsthexdiag"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofsthexperi"
+                            style="font-family:mathfont;"></p> 
+                        <p class="stopwrap" id="resultofsthexarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
                     </button>
                 </div>
             </div>

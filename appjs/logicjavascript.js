@@ -7759,7 +7759,45 @@ function solvehex() {
     renderMathInElement(document.getElementById("resultofperimeterhex"));
 
 }
+//Stretched Hexagon
+function solvestretchhex() {
+    let a = document.getElementById("inputsthexshoside").value;
+    let b = document.getElementById("inputsthexlongside").value;
+    let lenoutput = document.getElementById("resultofsthexlen");
+    let heioutput = document.getElementById("resultofsthexhei");
+    let diagoutput = document.getElementById("resultofsthexdiag");
+    let perioutput = document.getElementById("resultofsthexperi");
+    let areaoutput = document.getElementById("resultofsthexarea");
+    var lentemp = "";
+    var heitemp = "";
+    var diagtemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if ((a != "") && (b != "")) {
+        lentemp += "\\[Length \\space \\newline" + a + "+" + b + "\\ = " + eval(String(parseFloat(a) + parseFloat(b))).toFixed(2) + "\\]";
+        lenoutput.innerHTML = lentemp;
+        heitemp += "\\[Height \\space \\newline \\sqrt{3} \\times" + a + "\\ = " + eval(String(math.sqrt(3) * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        diagtemp += "\\[Diagonal \\space \\newline \\sqrt{(\\sqrt{3} \\times" + a + ")^2 \\space + (" + b + ")^2}" + "\\ = " + eval(String(math.sqrt( ( (math.sqrt(3) * a) * (math.sqrt(3) * a) ) + (b * b) ) )).toFixed(2) + "\\]";
+        diagoutput.innerHTML = diagtemp;
+        peritemp += "\\[Perimeter \\space \\newline 4 \\space (" + a + ") + 2 \\space (" + b + ")" + "\\ = " + eval(String(((4 * a) + (2 * b)))).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space \\newline \\frac{3}{2} \\space (\\sqrt{3}) (" + a + ")^2 + (" + b + "-" + a + ") \\times \\sqrt{3} \\space (" + a + ")" + "\\ = " + eval(String( (2.598076211 * a * a) + ( (b - a) * (math.sqrt(3) * a) ) )).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
 
+        renderMathInElement(lenoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(diagoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput); 
+    } else {
+        lenoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        diagoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+}
 //created function for Heptagon
 function solvehept() {
     var side = document.getElementById("inputsidehept").value;
