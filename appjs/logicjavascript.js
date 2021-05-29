@@ -7458,6 +7458,51 @@ function lshapesolve() {
     }
 }
 
+// X - Shape
+
+function xshapesolve() {
+    var l = parseFloat(document.getElementById("xshape-l").value);
+    var b = parseFloat(document.getElementById("xshape-b").value);
+    var alpha = parseFloat(document.getElementById("xshape-alpha").value);
+    var beta = parseFloat(document.getElementById("xshape-beta").value);
+    var gammaField = document.getElementById("gammaXshape");
+    var crossLenField = document.getElementById("resultOfCrossLenXshape");
+    var armLenField = document.getElementById("resultOfOuterArmLenXshape");
+    var immerLenField = document.getElementById("resultOfImmerArmLenXshape");
+    var heightField = document.getElementById("resultOfHeightXshape");
+    var widthField = document.getElementById("resultOfWidthXshape");
+    var perimeterField = document.getElementById("resultOfPerimeterXshape");
+    var areaField = document.getElementById("resultOfAreaXshape");
+    if ((alpha + beta) != 180){
+        gammaField.innerHTML = "";
+        crossLenField.innerHTML = "Angular Sum must equals to 180°";
+        armLenField.innerHTML = "";
+        immerLenField.innerHTML = "";
+        heightField.innerHTML = "";
+        widthField.innerHTML = "";
+        perimeterField.innerHTML = "";
+        areaField.innerHTML = "";
+    }
+    else{
+        var gamma = 90 - alpha/2;
+        var x = (b * Math.sin(gamma * (Math.PI/180)))/Math.sin(2*gamma*(Math.PI/180));
+        var m = l/2;
+        var n = m - x;
+        var h = 2 * m * Math.sin( (beta/2) * (Math.PI/180));
+        var i = 2 * n * Math.sin((alpha/2)*(Math.PI/180)) + 2*b;
+        var p = 4 * ( b + m + n );
+        var A = 2 * l * b * Math.sin(alpha*(Math.PI/180)) - Math.pow(x, 2) * Math.sin(alpha * (Math.PI/180));
+        gammaField.innerHTML = `γ = ${gamma.toFixed(3)}`;
+        crossLenField.innerHTML = `x = ${x.toFixed(3)}`;
+        armLenField.innerHTML = `m = ${m.toFixed(3)}`;
+        immerLenField.innerHTML = `n = ${n.toFixed(3)}`;
+        heightField.innerHTML = `h = ${h.toFixed(3)}`;
+        widthField.innerHTML = `i = ${i.toFixed(3)}`;
+        perimeterField.innerHTML = `p = ${p.toFixed(3)}`;
+        areaField.innerHTML = `A = ${A.toFixed(3)}`;
+    }
+}
+
 //Circle
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;

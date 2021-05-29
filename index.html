@@ -16784,6 +16784,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#tshape"
                            style="text-decoration:none;" href="#">T - Shape</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#xshape"
+                           style="text-decoration:none;" href="#">X - Shape</a></td>
                 </tr>   
                 <tr>
                     <td><a data-toggle="modal" data-target="#cycquad"
@@ -27143,6 +27147,77 @@ N is the population size.
                             <p class="stopwrap" id="resultOfHeightTshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterTshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaTshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="xshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">X - Shape</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Crossing length (x)</h5>
+                                    <p class="text-center">\[x = \frac{b \times \sin \gamma}{\sin 2\gamma}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Outer arm length (m)</h5>
+                                    <p class="text-center">\[m = \frac{l}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Immer arm length (n)</h5>
+                                    <p class="text-center">\[n = m - x\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h = 2 \times m \times \sin \frac{\beta}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/X-shape.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Width (i)</h5>
+                                    <p class="text-center">\[i = 2n \times \sin \frac{\alpha}{2} + 2b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 4 \times \left ( b + m + n \right )\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = 2 \times l \times b \times \sin \alpha - x^2 \sin \alpha\]</p><br><br>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Bar length (l) of X-Shape"
+                                   id="xshape-l" oninput="xshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Bar thickness (b) of X-Shape"
+                                   id="xshape-b" oninput="xshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle top/bottom (α) of X-Shape"
+                                   id="xshape-alpha" oninput="xshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle left, right (β) of X-Shape"
+                                   id="xshape-beta" oninput="xshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="gammaXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfCrossLenXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfOuterArmLenXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfImmerArmLenXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfHeightXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfWidthXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfPerimeterXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaXshape" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">

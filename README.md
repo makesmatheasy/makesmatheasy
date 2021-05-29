@@ -340,6 +340,7 @@ Other Tech/Libraries
     - T-Shape
     - H-Shape
     - L-Shape
+    - X-Shape
     - Arbelos
     - Spherical Triangle
 
