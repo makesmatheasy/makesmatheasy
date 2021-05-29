@@ -17745,8 +17745,12 @@ function convertbcd() {
     }else if (fromCode == "Decimal" && toCode == "BCD Code"){
         var x = "_";
         var y = "";
+        result.innerHTML +="<h4>Converting Decimal to BCD</h4> &emsp;";
         for (var i = 0; i < input.length; i++) {
+            result.innerHTML += "<br><h5>Step 1: Extract each digit of decimal number and convert it to binary</h5><br>";
             y = parseInt(input[i]).toString(2);
+            result.innerHTML += y + "<br>";
+            result.innerHTML += "Step 2: Depending on the length of " +y +" combine the binary form  of all the digits";
             if (y.length == 1) {
                 x = x + "000" + y + "_   ";
             }
@@ -17760,7 +17764,7 @@ function convertbcd() {
                 x = x + +y + "_   ";
             }
         }
-        result.innerHTML = x;
+        result.innerHTML += "Output -> "+ x;
     }else if (fromCode == "Binary" && toCode == "BCD Code") {
         input = parseInt(input, 2).toString();
         var x="_",y="";
@@ -17915,10 +17919,8 @@ function bcdadd() {
         result.innerHTML = "INVALID BCD";
     else {
         decimalresult = parseInt(s1) + parseInt(s2);
-        result.innerHTML += "<h5>Step 1: Convert decimal digits to nibbles</h5><br>"; 
         bcdresult = decimalTObcd(decimalresult.toString());
-        result.innerHTML += "<h5>Step 2: Combine the nibbles to get your BCD number</h5><br>"; 
-        result.innerHTML += "BCD Result=" + bcdresult + "<br>";
+        result.innerHTML = "BCD Result=" + bcdresult + "<br>";
         result.innerHTML += "Decimal Result=" + decimalresult + "<br>";
 
     }
