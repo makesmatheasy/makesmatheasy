@@ -1532,29 +1532,6 @@ $(document).ready(function () {
         clearall();
     });
     
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
-
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
-
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
-
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-        closenav();
-        clearall();
-    });
     $("#relriskbtn").click(function () {
         var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
         var output = document.getElementById("relriskform");
