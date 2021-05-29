@@ -347,6 +347,7 @@ function openit(id) {
         "#plotangle",
         "#profitloss",
         "#cylin_shell",
+        "#obcyshell",
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",

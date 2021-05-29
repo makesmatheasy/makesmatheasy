@@ -16796,6 +16796,11 @@
                                         href="#">Cylindrical Shell</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#obcyshell"
+                                        style="text-decoration:none;"
+                                        href="#">Oblique Cylindrical Shell</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#halfsphere_shell"
                                        style="text-decoration:none;"
                                        href="#">Half Spherical Shell</a></td>
@@ -32298,6 +32303,70 @@ N is the population size.
                             <p class="stopwrap" id="resultofcylinshellarea"
                             style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofcylinshellla"
+                            style="font-family:mathfont;"></p>
+                
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="obcyshell" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Oblique Cylindrical Shell</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \pi h (R^2-r^2)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A=2 \pi [(R+r) \times a + (R^2-r^2)]\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = a \times sin(\alpha)\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/oblique-cylindrical-shell.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                               placeholder="Enter outer radius (R)" id="inputobcylinshellR"
+                               oninput="solveobcylinshell();">
+                            <input class="form__field" type="number"
+                               placeholder="Enter inner radius (r)" id="inputobcylinshellr"
+                               oninput="solveobcylinshell();">
+                             <input class="form__field" type="number"
+                               placeholder="Enter angle of slope (&#945)" id="inputobcylinshella"
+                               oninput="solveobcylinshell();">
+                             <input class="form__field" type="number"
+                               placeholder="Enter side length (a)" id="inputobcylinshellside"
+                               oninput="solveobcylinshell();">
+                            <p class="stopwrap" id="resultofobcylinshellvol"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobcylinshellarea"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobcylinshelllh"
                             style="font-family:mathfont;"></p>
                 
                         </div>

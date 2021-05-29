@@ -3217,6 +3217,43 @@ function solvecylinshell() {
         laoutput.innerHTML = "";
     }
 }
+
+function solveobcylinshell() {
+    var r = document.getElementById("inputobcylinshellr").value;
+    var R = document.getElementById("inputobcylinshellR").value;
+    var a = document.getElementById("inputobcylinshella").value;
+    var side = document.getElementById("inputobcylinshellside").value;
+    var voloutput = document.getElementById("resultofobcylinshellvol");
+    var saoutput = document.getElementById("resultofobcylinshellarea");
+    var houtput = document.getElementById("resultofobcylinshelllh");
+    var voltemp = "";
+    var satemp = "";
+    var htemp = "";
+    var h=((side*Math.sin(a)*Math.PI)/180).toFixed(2);
+    var vol= 3.14*h*((R*R)-(r*r));
+    var sa=2*3.14*[(R+r)*a+((R*R)+(r*r)-(2*r*R))];
+    if ((r != "") && (R !="") && (a!="") && (side!="")) {
+        voltemp += "\\[ \\pi \\times" + h + "\\times (" + R + "^2-" + r + "^2)" + "\\]";
+        voltemp += "\\[Volume \\space of \\space Oblique \\space Cylindrical \\space Shell \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(vol)).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ 2 \\times \\pi \\times [(" + R + "+" + r + ") \\times" + a + "+ (" + R + "^2-" + r + "^2"  + ")]" + "\\]";
+        satemp += "\\[Area \\space of \\space Oblique \\space Cylindrical \\space Shell \\space is \\space \\]";
+        satemp += "\\[" + eval(String(sa)).toFixed(3) + "\\]";
+        saoutput.innerHTML = satemp;
+        htemp += "\\[ " + side +  "\\times sin(" + a + ")" + "\\]";
+        htemp += "\\[Height \\space of \\space Oblique \\space Cylindrical \\space Shell \\space is \\]";
+        htemp += "\\[ " + eval(String(h)).toFixed(3) + "\\]";
+        houtput.innerHTML = htemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(houtput);
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        houtput.innerHTML = "";
+    }
+}
 //Check whether one root of the Quadratic Equation is twice of other or not
 function twicefind() {
     var a = parseInt(document.getElementById("aofeqn3").value)
