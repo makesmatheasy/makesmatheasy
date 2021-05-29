@@ -22053,10 +22053,30 @@ function cylsphcal(){
         outputfi.innerHTML = "";
     }
     else{
-        outputr.innerHTML= "r: " + r;
-        outputo.innerHTML = "θ: " + o;
-        outputfi.innerHTML = "φ: " + fi;
+        var sm = x*x + y*y + z*z;
+        var zr = (z/r).toFixed(2);
+        var yx = (y/x).toFixed(2);
+        var ansr = "\\[r\\space coordinate:\\space \\sqrt{(x^2 + y^2 + z^2)} \\]";
+        ansr += "\\[r\\space coordinate:\\space \\sqrt{("+x+" ^ 2 + "+y+" ^ 2 + "+z+" ^ 2)} \\]";
+        ansr += "\\[r\\space coordinate:\\space \\sqrt{"+sm+"} \\]";
+        ansr += "\\[r\\space coordinate:\\space "+r+" \\]";
+
+        var anso = "\\[θ\\space coordinate:\\space \\arccos(frac{z}{r}) \\]";
+        anso += "\\[θ\\space coordinate:\\space \\arccos(frac{"+z+"}{"+r+"}) \\]";
+        anso += "\\[θ\\space coordinate:\\space \\arccos("+zr+") \\]";
+        anso += "\\[θ\\space coordinate:\\space "+o+" \\]";
+
+        var ansfi = "\\[φ\\space coordinate:\\space \\tan(frac{y}{x}) \\]";
+        ansfi += "\\[φ\\space coordinate:\\space \\tan(frac{"+y+"}{"+x+"}) \\]";
+        ansfi += "\\[φ\\space coordinate:\\space \\arccos("+yx+") \\]";
+        ansfi += "\\[φ\\space coordinate:\\space "+fi+" \\]";
+        outputr.innerHTML= ansr;
+        outputo.innerHTML = anso;
+        outputfi.innerHTML = ansfi;
     }
+    renderMathInElement(outputr);
+    renderMathInElement(outputo);
+    renderMathInElement(outputfi);
 }
 
 //BILINEAR INTERPOLATION CALCULATOR
