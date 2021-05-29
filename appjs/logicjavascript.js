@@ -19153,6 +19153,7 @@ function convertdec2421() {
             x = x + +y + "_   ";
         }
       }
+      result.innerHTML = x;
     }else if (type === "2421 Code" && type1 === "Decimal"){
         var x = "";
         var y = "";
@@ -19209,7 +19210,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-
+        result.innerHTML = x;
     }else if (type === "2421 Code" && type1 === "Binary"){
         var x = "";
         var y = "";
@@ -19242,7 +19243,7 @@ function convertdec2421() {
             }
             result.innerHTML = x;
         }
-        }else if(type === "Octal"){
+    }else if(type === "Octal"){
 
         var x = "_";
         var y = "";
@@ -19267,7 +19268,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-
+        result.innerHTML = x;
     }else if (type === "2421 Code" && type1 === "Octal"){
         var x = "";
         var y = "";
@@ -19300,8 +19301,7 @@ function convertdec2421() {
             }
             result.innerHTML = x;
         }
-        }
-        else if(type === "Hexa decimal"){
+    }else if(type === "Hexa decimal"){
         var x = "_";
         var y = "";
 
@@ -19326,6 +19326,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
+        result.innerHTML = x;
     }else if (type === "2421 Code" && type1 === "Hexa decimal"){
         var x = "";
         var y = "";
@@ -19357,7 +19358,8 @@ function convertdec2421() {
                 x = "Error : Invalid 2421 input";
             }
             result.innerHTML = x;
-        }result.innerHTML = x;
+        }
+    }
 }
 
 
