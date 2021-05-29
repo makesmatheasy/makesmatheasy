@@ -18820,15 +18820,18 @@ function geoprobability(op) {
 }
 //Conditional Probability
 function condprobability() {
-    var netevent = parseFloat(document.getElementById('totevent').value);
-    var event = parseFloat(document.getElementById('event').value);
-    var result1 = (netevent / event).toFixed(3);
-    if ((isNaN(netevent)) || (isNaN(event))) {
+    var neteve = document.getElementById('totevent').value;
+    var eve= document.getElementById('event').value;
+   
+    if ((isNaN(neteve)) || (isNaN(eve))||neteve==""||eve=="") {
         document.getElementById("result1").innerHTML = "Please enter valid input";
         document.getElementById("result2").innerHTML = "";
         document.getElementById("result3").innerHTML = "";
     }
     else {
+        var netevent = parseFloat(document.getElementById('totevent').value);
+        var event = parseFloat(document.getElementById('event').value);
+        var result1 = (netevent / event).toFixed(3);
         if (netevent < 0 || event < 0) {
             document.getElementById("result1").innerHTML = "Outcomes can't be negative, Enter positive values only. ";
             document.getElementById("result2").innerHTML = "";
