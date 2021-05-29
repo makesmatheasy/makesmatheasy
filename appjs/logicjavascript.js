@@ -22333,14 +22333,20 @@ function negbinoCal() {
     let r = document.getElementById("negbinor").value;
     let p = document.getElementById("negbinop").value;
 
+    let ans = "";
     if(n=="" || r=="" || p==""||isNaN(n)||isNaN(r)||isNaN(p)){
-        document.getElementById("negbinoans").innerHTML = "Enter valid inputs";
+        ans += "\\[Enter\\space valid\\space inputs\\]"
+        document.getElementById("negbinoans").innerHTML = ans;
     }
     else{
         let combi = comb(n-1,r-1);
-        let ans = combi * p**r * (1-p)**(n-r);
+        let temp = combi * p**r * (1-p)**(n-r);
+        ans += "\\[\\dbinom{n-1}{r-1} \\times p^r \\times (1-p)^{(n-r)}\\]";
+        ans += "\\[=\\space "+combi+" \\times "+p+" ^ "+r+" \\times (1-"+p+") ^{("+n+" - "+r+")}\\]";
+        ans += "\\[=\\space "+temp+"\\]";
         document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
     }
+    renderMathInElement(document.getElementById('negbinoans'));
   }
 
 
