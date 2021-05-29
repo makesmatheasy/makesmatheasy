@@ -12775,6 +12775,25 @@ function cirinsemi10find() {
         document.getElementById("cirinsemi10ans").innerHTML = "-1"
 }
 
+function pksquarefind() {
+    let k = parseInt(document.getElementById("pksquare13in").value)
+    let list = document.getElementById("pksquare14in").value;
+    if (list == "" ||  isNaN(k)) {
+        document.getElementById('pksquareans').innerHTML = "\\[Enter \\space both \\space fields\\]";
+    }
+    else{
+        list = list.split(" ");
+        let n2 = list.length;
+        if(n2!=2*k)
+           document.getElementById('pksquareans').innerHTML = "\\[Enter \\space correct \\space values \\space in \\space coordinates\\]";
+        else{
+            list.sort();
+            document.getElementById('pksquareans').innerHTML = "\\[("+list[n2 - k]+","+list[n2 - k]+") \\space lies \\space inside \\space given \\space "+k+" \\space squares\\]";
+        }
+    }
+    renderMathInElement(document.getElementById('pksquareans'));
+}
+
 function trapinsemifind() {
     let r = parseInt(document.getElementById("trapinsemiin").value)
     var a = (3 * Math.sqrt(3) * Math.pow(r, 2)) / 4;
