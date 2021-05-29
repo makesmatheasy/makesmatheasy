@@ -7459,6 +7459,31 @@ function solvepent() {
     }
 
 }
+//Concave Pentagon
+function solveconcavepent() {
+    var a = document.getElementById("inputsquedge").value;
+    var trileglenoutput = document.getElementById("resultoftrileglen");
+    var perioutput = document.getElementById("resultofconcavepentperi");
+    var areaoutput = document.getElementById("resultofconcavepentarea");
+    var trileglentemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        trileglentemp += "\\[Leg \\space length \\space of \\space triangle \\space \\newline \\frac{\\sqrt{2}}{2} \\times" + a + "\\ = " + eval(String(0.707107 * a)).toFixed(2) + "\\]";
+        trileglenoutput.innerHTML = trileglentemp;
+        peritemp += "\\[Perimeter \\space \\newline 3 \\space (" + a + ") + 2 \\space  ( \\frac{\\sqrt{2}}{2} \\times" + a + ")" + "\\ = " + eval(String((3 * a) + (math.sqrt(2) * a))).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space \\newline \\frac{3}{4} \\space (" + a + ")^2" + "\\ = " + eval(String(0.75 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(trileglenoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput); 
+    } else {
+        trileglenoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+}
 
 //created function for Decagon
 function solvedeca() {
@@ -13363,6 +13388,7 @@ function typenum15find(){
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
 }    
+
 
 
 function simpleSieve(){
