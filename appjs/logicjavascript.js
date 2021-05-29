@@ -22172,4 +22172,16 @@ function hyperfind() {
     }
     document.getElementById("hyperans").innerHTML = ans;
 }
-  
+// Disarium Number
+function isDisNum(num) {
+   const res = String(num)
+   .split("")
+   .reduce((acc, val, ind) => {
+      acc += math.pow(+val, ind+1);
+      return acc;
+   }, 0);
+   if(res == num)
+    document.getElementById("disans").innerHTML = num + " is a Disarium number";
+   else
+   document.getElementById("disans").innerHTML = num + " is not a Disarium number";
+};
