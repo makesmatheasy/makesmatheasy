@@ -22094,6 +22094,7 @@ function negbinoCal() {
         document.getElementById("vectans1").innerHTML = "The calculated magnitude of vector is: "+Math.sqrt(sq);
     }    
   }
+}
 
   function divisorSum(N, K)
 {
