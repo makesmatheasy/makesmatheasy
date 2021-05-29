@@ -18788,7 +18788,7 @@ function convertex3() {
 function convertdec2421() {
     var input = document.getElementById("dec2421-input").value;
     let result = document.getElementById("dec2421-result");
-    const type = document.getElementById("dec2421-select");
+    const type = document.getElementById("dec2421-select").value;
 
     if(type === "Decimal"){
     var x = "_";
@@ -18813,7 +18813,9 @@ function convertdec2421() {
             x = x + +y + "_   ";
         }
       }
-    }else if(type === "Binary"){
+      result.innerHTML = x;
+    }
+    else if(type === "Binary"){
         var x = "_";
         var y = "";
         input = parseInt(input,2).toString();
@@ -18837,7 +18839,9 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }else if(type === "Octal"){
+        result.innerHTML = x;
+    }
+    else if(type === "Octal"){
         var x = "_";
         var y = "";
         input = parseInt(input,8).toString();
@@ -18861,7 +18865,9 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }else if(type === "Hexa decimal"){
+        result.innerHTML = x;
+    } 
+    else if(type == "Hexa decimal"){
         var x = "_";
         var y = "";
 
@@ -18885,8 +18891,8 @@ function convertdec2421() {
             if (y.length == 4) {
                 x = x + +y + "_   ";
             }
-        }
-    }result.innerHTML = x;
+        }result.innerHTML = x;
+    }
 }
 
 
