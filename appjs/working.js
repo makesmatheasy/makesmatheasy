@@ -566,6 +566,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#rbtn").click(function () {
+        openit("#rchart");
+        closenav();
+        clearall();
+    });   
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
