@@ -17359,6 +17359,20 @@ function subBinDecHexOct() {
             result.innerHTML = fracDectoBinHexOct(x3,2);
             work.innerHTML = "";
         }
+
+
+
+
+
+
+        else if(base === "Hexa Decimal"){
+            x1 = calculatefrac(input1,16);
+            x2 = calculatefrac(input2,16);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,16);
+        }
     }else{
     if (input1.length > input2.length) {
         var p = input1.length - input2.length;
