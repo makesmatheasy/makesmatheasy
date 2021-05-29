@@ -1561,6 +1561,10 @@ $(document).ready(function () {
         clearall();
     });
     $("#relriskbtn").click(function () {
+        var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
+        var output = document.getElementById("relriskform");
+        output.innerHTML = temp;
+        renderMathInElement(output);
         openit("#relrisk");
         closenav();
         clearall();
