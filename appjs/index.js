@@ -132,7 +132,6 @@ function openit(id) {
     var ids = [
         "#gammaDist",
         "#expoDist",
-        "#negbino",
         "#ackermann",
         "#lucNum",
         "#smNum",
@@ -266,6 +265,7 @@ function openit(id) {
         "#barrel",
         "#home",
         "#curconcal",
+        "#wags",
         "#factorial",
         "#setop",
         "#rootsunity",
@@ -385,6 +385,7 @@ function openit(id) {
         "#maxmin",
         "#locroots",
         "#tangent",
+        "#co_prime",
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
