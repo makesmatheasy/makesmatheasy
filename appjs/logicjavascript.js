@@ -20637,7 +20637,83 @@ function npvalue() {
 
 
 }
+//x bar chart
+function xchart_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
 
+    return sum;
+}
+
+
+function xvalue() {
+    let list1 = document.getElementById("average").value;
+    let list2 = document.getElementById("ranges").value;
+    let n = document.getElementById("A2").value;
+   if(list1=="" || n=="" || list2=="")
+   {
+    document.getElementById('xans').innerHTML="Please fill all the fields.";
+    document.getElementById('xbar').innerHTML="";
+       document.getElementById('xucl').innerHTML="";
+       document.getElementById('xlcl').innerHTML="";
+   }
+   else
+   {
+    n = parseFloat(n);
+    list1 = list1.split(" ");
+    list2 = list2.split(" ");
+    var n1 = 0;
+    n1 = parseInt(list1.length);
+    var n2 = parseInt(list2.length);
+    for (var i = 0; i < n1; i++) {
+        list1[i] = parseFloat(list1[i]);
+    }
+    for (var i = 0; i < n2; i++) {
+        list2[i] = parseFloat(list2[i]);
+    }
+
+    var ans = "";
+    var ucl = "";
+    let sum = xchart_sum(list1);
+    let sum1 = xchart_sum(list2);
+    var xbar =(sum/n1).toFixed(4);
+    var rbar =(sum1/n2).toFixed(4);
+    
+
+    document.getElementById('xans').innerHTML = "The control limits are:";
+    ans += "\\[\\space \\bar{X̄} \\space = \\frac{\\sum{\\bar{X}}}{Total \\space No \\space of \\space samples}\\]"
+    ans += "\\[ \\space  \\frac{" + sum + "}{"+ n1 + "}\\]";
+    ans += "\\[ \\space  "+xbar+" \\]";
+
+    var controlLimit = document.getElementById('xbar')
+    controlLimit.innerHTML = ans;
+    renderMathInElement(controlLimit);
+
+    ucl += "\\[Upper \\space Control \\space Limit \\space (UCL) \\space =\\space \\bar{\\bar{X}} + A_2 \\bar{R} \\]"
+    ucl += "\\[\\space "+xbar+" + "+n+" \\times "+rbar+"\\]"
+    ucl += "\\[\\space "+xbar+"+ "+(n*rbar).toFixed(4)+"\\]"
+    ucl += "\\[UCL \\space =\\space " +(parseFloat(xbar)+parseFloat(n*rbar)).toFixed(4)+ " \\]"
+    var upperControlLimit = document.getElementById('xucl');
+    upperControlLimit.innerHTML = ucl;
+    renderMathInElement(upperControlLimit);
+
+
+
+    var lcl = "";
+    lcl += "\\[Lower \\space Control \\space Limit \\space (LCL) \\space =\\space \\bar{\\bar{X}} - A_2 \\bar{R} \\]"
+    lcl += "\\[\\space "+xbar+" - "+n+" \\times "+rbar+" \\]"
+    lcl += "\\[\\space "+xbar+"- "+(n*rbar).toFixed(4)+" \\]"
+    lcl += "\\[LCL \\space =\\space " +((parseFloat(xbar)-parseFloat(n*rbar))).toFixed(4)+" \\]"
+    //check if lcl is negative
+    if ((parseFloat(xbar)-parseFloat(n*rbar)) < 0)
+        lcl += "\\[Since \\space the \\space fraction \\space defective \\space cannot \\space be \\space - ve \\space \\therefore \\space LCL \\space = 0 \\]"
+    var lowerControlLimit = document.getElementById('xlcl');
+    lowerControlLimit.innerHTML = lcl;
+    renderMathInElement(lowerControlLimit);
+   }
+}
 
 //confidence interval
 function confivalue() {

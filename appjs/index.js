@@ -248,6 +248,7 @@ function openit(id) {
         "#pchart",
         "#rchart",
         "#npchart",
+        "#xchart",
         "#betagamma",
         "#parallel",
         "#circumradiusarea",
