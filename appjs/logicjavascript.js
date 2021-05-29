@@ -14262,11 +14262,32 @@ function mngpsum() {
     var mtherm = parseFloat(document.getElementById("mthterm1").value)
     var ntherm = parseFloat(document.getElementById("nthterm1").value)
     var pterm = parseInt(document.getElementById("pterm1").value)
-
-    var r = Math.pow(mtherm / ntherm, 1.0 / (m - n));
-    var a = mtherm / Math.pow(r, (m - 1));
-    var sum = a * Math.pow(r, (pterm - 1.0));
-    document.getElementById("printmnGP").innerHTML = sum
+    var output = document.getElementById("printmnGP");
+    var temp = "";
+    if (isNaN(m) || isNaN(n) || isNaN(pterm) || isNaN(ntherm) || isNaN(mtherm)){
+        temp += "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    } else{
+        var r = Math.pow(mtherm / ntherm, 1.0 / (m - n));
+        var a = mtherm / Math.pow(r, (m - 1));
+        var sum = a * Math.pow(r, (pterm - 1.0));
+        temp += "\\[Sum \\space of \\space P \\space terms \\space of \\space an \\space GP \\space if \\space mth \\space and \\space nth \\space terms \\space are \\space given, \\space will \\space be\\]";
+        temp += "\\[First, \\space we \\space calculate \\space r \\space and \\space a \\space where,\\]"
+        temp +="\\[\\space r = \\space (\\frac{Mth-term}{Nth-term} )^{\\frac{1}{M-N}}\\]"
+        temp +="\\[\\space = \\space (\\frac{"+mtherm+"}{"+ntherm+"})^{\\frac{1}{"+m+" - "+n+"}}\\]"
+        temp +="\\[\\space = \\space ("+(mtherm / ntherm).toFixed(2)+")^{"+(1.0 / (m - n)).toFixed(2)+"}\\]"
+        temp +="\\[\\space = \\space "+r.toFixed(3)+"\\]"
+        temp +="\\[\\space a = \\space \\frac{Mth-term}{r^{M-1}}\\]"
+        temp +="\\[\\space = \\space \\frac{"+mtherm+"}{"+r.toFixed(2)+"^{"+m+" - 1}}\\]"
+        temp +="\\[\\space = \\space \\frac{"+mtherm+"}{"+(Math.pow(r, (m - 1))).toFixed(2)+"}\\]"
+        temp +="\\[\\space = \\space "+a.toFixed(3)+"\\]";
+        temp +="\\[Finally, \\space sum \\space is\\]"
+        temp +="\\[\\space sum = \\space a \\times r^{(Pth-term - 1)}\\]"
+        temp +="\\[\\space = \\space "+a.toFixed(2)+" \\times "+r.toFixed(2)+"^{"+(pterm - 1.0).toFixed(2)+"}\\]"
+        temp +="\\[\\space = \\space "+sum.toFixed(3)+"\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 
 }
 
