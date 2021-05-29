@@ -1675,7 +1675,25 @@ function rmscal()
     renderMathInElement(document.getElementById("rmsans"));
 }
 
-
+function pvaluecal()
+{ 
+    var z = parseFloat(document.getElementById("pvalueinp").value);
+    
+    var output = document.getElementById("pvalueans");
+    var temp = "";
+    var Zval = (1/Math.sqrt(2*3.14)* (2.71)**((z**2)/2));
+    var ans = 2*Zval;
+    if(isNaN(z))
+    {
+        temp = "Please enter proper value";
+        output.innerHTML = temp;
+    }
+    else
+    {
+        temp = "P value: " + ans;
+        output.innerHTML = temp;
+    }
+}
 
 
 

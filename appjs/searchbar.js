@@ -1051,6 +1051,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "Z SCORE CALCULATOR"){
                         document.getElementById('zscores').click();
                     }
+                    else if (inp.value.toUpperCase() == "P VALUE CALCULATOR") {
+                        $("#pvalue").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "P VALUE CALCULATOR"){
+                        document.getElementById('pvalue').click();
+                    }
                     else if (inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR") {
                         $("#wmcs").slideToggle();    
                     }
