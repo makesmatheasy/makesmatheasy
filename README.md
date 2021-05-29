@@ -335,6 +335,7 @@ Other Tech/Libraries
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
     - T-Shape
     - H-Shape
+    - L-Shape
     - Arbelos
 
   - Name Of 3D Shapes
