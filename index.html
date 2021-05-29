@@ -3020,6 +3020,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="autonumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Automorphic number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Automorphic number','autonum','c','autonumimgfav')"><img
+                                        id="autonumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -4992,7 +5007,7 @@
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">P value</a>
                         </td>
                         <td style="float:right;border-top: none;">
-                                <span onclick="addtofavourite('P value','#pvalue','c','pvalueimgfav')"><img
+                                <span onclick="addtofavourite('P value','#pvalues','c','pvalueimgfav')"><img
                                         id="pvalueimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
@@ -5015,6 +5030,23 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ppvbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">PPV Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('PPV Calculator','#ppv','c','ppvfav')"><img
+                                        id="ppvfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            
             <li>
                 <table class="table">
                     <tr>
@@ -5266,6 +5298,22 @@
                                 <span
                                         onclick="addtofavourite('Chi-Square test','#chitest','c','chitestfav')"><img
                                         id="chitestfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="taktbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Takt Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Takt Time','#takttest','c','takttimefav')"><img
+                                        id="takttimefav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -5688,10 +5736,14 @@
         </div>
         <div class="collapse" id="ineqtri">
             <h2>Inequalities of Triangles</h2><br><br>
-            <input type="text" id="ineqtriin1" class="form__field" placeholder="ENter length of side 1">
-            <input type="text" id="ineqtriin2" class="form__field" placeholder="ENter length of side 2">
-            <input type="text" id="ineqtriin3" class="form__field" placeholder="ENter length of side 3"><br>
-            <button class="btn btn-dark" onclick="ineqtrifind()">Check</button><br>
+            <form action="">
+                <input type="text" id="ineqtriin1" class="form__field" placeholder="ENter length of side 1">
+                <input type="text" id="ineqtriin2" class="form__field" placeholder="ENter length of side 2">
+                <input type="text" id="ineqtriin3" class="form__field" placeholder="ENter length of side 3"><br>
+                <button class="btn btn-dark" onclick="ineqtrifind()">Check</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+            </form>
+            
             <h5 id="ineqtrians"></h5>
         </div>
         <div class="collapse" id="math">
@@ -6197,59 +6249,76 @@
             </div>
             <br><br>
             <h3 style="text-align: center;">Distance/MidPoint/Endpoint </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="xOne" size=12 value='' placeholder="                   x1"> , 
-                <input type="text" id="yOne" size=12 value='' placeholder="                   y1">)
-                    <br>
-                    Coordinate 2 = (<input type="text" id="xTwo" size=12 value='' placeholder="                   x2"> , 
-                <input type="text" id="yTwo" size=12 value='' placeholder="                   y2">)
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Coordinate 1 = (<input type="text" id="xOne" size=12 value='' placeholder="                   x1"> , 
+                    <input type="text" id="yOne" size=12 value='' placeholder="                   y1">)
                         <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=ShowDistance()>
-                     Distance
-                </button><button type="button" class="btn btn-light" onclick=midpointsolve()>
-                    Midpoint
-               </button><button type="button" class="btn btn-light" onclick=endpointsolve()>
-                Endpoint
-               </button><br>
-                </p>
-            </div><br>
+                        Coordinate 2 = (<input type="text" id="xTwo" size=12 value='' placeholder="                   x2"> , 
+                    <input type="text" id="yTwo" size=12 value='' placeholder="                   y2">)
+                            <br>
+                            <br>
+                    <button type="button" class="btn btn-light" onclick=ShowDistance()>
+                         Distance
+                    </button><button type="button" class="btn btn-light" onclick=midpointsolve()>
+                        Midpoint
+                   </button><button type="button" class="btn btn-light" onclick=endpointsolve()>
+                    Endpoint
+                   </button><button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                   </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="dis_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
             <h4 style="text-align: center;" id="outPut"> </h4> <br><br>
            
             <h3 style="text-align: center;">3D Distance calculator </h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="3dx1" size=12 value='' placeholder="                   x1"> , 
-                    <input type="text" id="3dy1" size=12 value='' placeholder="                   y1">)
-                    <input type="text" id="3dz1" size=12 value='' placeholder="                   z1">)
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Coordinate 1 = (<input type="text" id="3dx1" size=12 value='' placeholder="                   x1"> , 
+                        <input type="text" id="3dy1" size=12 value='' placeholder="                   y1">)
+                        <input type="text" id="3dz1" size=12 value='' placeholder="                   z1">)
+                        <br>
+                        Coordinate 2 = (<input type="text" id="3dx2" size=12 value='' placeholder="                   x2"> , 
+                        <input type="text" id="3dy2" size=12 value='' placeholder="                   y2">)
+                        <input type="text" id="3dz2" size=12 value='' placeholder="                   z2">)
+                            <br>
+                            <br>
+                    <button type="button" class="btn btn-light" onclick=Show3dDistance()>
+                         Distance
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button>
                     <br>
-                    Coordinate 2 = (<input type="text" id="3dx2" size=12 value='' placeholder="                   x2"> , 
-                    <input type="text" id="3dy2" size=12 value='' placeholder="                   y2">)
-                    <input type="text" id="3dz2" size=12 value='' placeholder="                   z2">)
-                        <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=Show3dDistance()>
-                     Distance
-                </button>
-                <br>
-                </p>
-            </div><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="exp3d" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
             <h4 style="text-align: center;" id="3dans"> </h4> <br><br>
 
             <h3 style="text-align: center;"> When Two Lines Meet </h3><br>
-            <div class="coll">
-                <p>
-                    Equation 1 :   <input type="text" id="aone" size=3 value='' placeholder="A1">  x  +
-                <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text" id="cone" size=3 value='' placeholder="C1"> = 0  <br><br>
-                    Equation 2 :   <input type="text" id="atwo" size=3 value='' placeholder="A2">  x  +
-                <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text" id="ctwo" size=3 value='' placeholder="C2"> = 0 <br><br>
-                <button type="button" class="btn btn-light" onclick=interpointsolve()>Intersection Point</button>
-                <button type="button" class="btn btn-light" onclick=anglesolve()>Angle</button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Equation 1 :   <input type="text" id="aone" size=3 value='' placeholder="A1">  x  +
+                    <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text" id="cone" size=3 value='' placeholder="C1"> = 0  <br><br>
+                        Equation 2 :   <input type="text" id="atwo" size=3 value='' placeholder="A2">  x  +
+                    <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text" id="ctwo" size=3 value='' placeholder="C2"> = 0 <br><br>
+                    <button type="button" class="btn btn-light" onclick=interpointsolve()>Intersection Point</button>
+                    <button type="button" class="btn btn-light" onclick=anglesolve()>Angle</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p class="stopwrap" id="formula"
             style="font-family:mathfont;"></p>
             <p class="stopwrap" id="formula1"
@@ -6263,15 +6332,21 @@
 
             
             <h3 style="text-align: center;">Distance between point and a line</h3><br>
-            <div class="coll">
-                <p>
-                    Line Equation :   <input type="text" id="a" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c" size=3 value='' placeholder="C"> = 0<br><br>
-                    Point = (<input type="text" id="point_one" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="point_two" size=5 value='' placeholder="y1">)<br><br>
-                <button type="button" class="btn btn-light" onclick=dispointsolve()> Calculate Distance </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Line Equation :   <input type="text" id="a" size=3 value='' placeholder="A">  x  +
+                    <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c" size=3 value='' placeholder="C"> = 0<br><br>
+                        Point = (<input type="text" id="point_one" size=5 value='' placeholder="x1"> , 
+                    <input type="text" id="point_two" size=5 value='' placeholder="y1">)<br><br>
+                    <button type="button" class="btn btn-light" onclick=dispointsolve()> Calculate Distance </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p class="stopwrap" id="dis_point"
             style="font-family:mathfont;"></p>
             <p class="stopwrap" id="dis_point1"
@@ -6282,85 +6357,109 @@
                 style="font-family:mathfont;"></p><br>  
 
             <h3 style="text-align: center;">Line Checker</h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="xone" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="yone" size=5 value='' placeholder="y1">)
-                    <br>
-                    Coordinate 2 = (<input type="text" id="xtwo" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="ytwo" size=5 value='' placeholder="y2">)
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Coordinate 1 = (<input type="text" id="xone" size=5 value='' placeholder="x1"> , 
+                    <input type="text" id="yone" size=5 value='' placeholder="y1">)
                         <br>
-                    Coordinate 3 = (<input type="text" id="xthree" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="ythree" size=5 value='' placeholder="y3">)
-                    <br>
-                    Coordinate 4 = (<input type="text" id="xfour" size=5 value='' placeholder="x4"> , 
-                <input type="text" id="yfour" size=5 value='' placeholder="y4">)
-                        <br><br>    
-                <button type="button" class="btn btn-light" onclick=parallelsolve()>
-                    Parallel  Check
-                </button>
-                <button type="button" class="btn btn-light" onclick=perpendicularsolve()>
-                    Perpendicular Check
-                </button><br>
-                </p>
-            </div><br>
+                        Coordinate 2 = (<input type="text" id="xtwo" size=5 value='' placeholder="x2"> , 
+                    <input type="text" id="ytwo" size=5 value='' placeholder="y2">)
+                            <br>
+                        Coordinate 3 = (<input type="text" id="xthree" size=5 value='' placeholder="x3"> , 
+                    <input type="text" id="ythree" size=5 value='' placeholder="y3">)
+                        <br>
+                        Coordinate 4 = (<input type="text" id="xfour" size=5 value='' placeholder="x4"> , 
+                    <input type="text" id="yfour" size=5 value='' placeholder="y4">)
+                            <br><br>    
+                    <button type="button" class="btn btn-light" onclick=parallelsolve()>
+                        Parallel  Check
+                    </button>
+                    <button type="button" class="btn btn-light" onclick=perpendicularsolve()>
+                        Perpendicular Check
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p class="text-center" id="line1"> </p> <br>
             <p class="text-center" id="line2"> </p> <br>
                        
             <h3 style="text-align: center;">Section Formula</h3><br>
-            <div class="coll">
-                <p>
-                    Coordinate 1 = (<input type="text" id="x1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="y1" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="x2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="y2" size=5 value='' placeholder="y2">)
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Coordinate 1 = (<input type="text" id="x1" size=5 value='' placeholder="x1"> , 
+                    <input type="text" id="y1" size=5 value='' placeholder="y1">)
                         <br><br>
-                    Ratio = (<input type="text" id="m" size=3 value='' placeholder="m"> , 
-                <input type="text" id="n" size=3 value='' placeholder="n">)
-                    <br>
-                        <br><br>    
-                <button type="button" class="btn btn-light" onclick=solvesection()>
-                    Calculate
-                </button><br>
-                </p>
-            </div><br>
+                        Coordinate 2 = (<input type="text" id="x2" size=5 value='' placeholder="x2"> , 
+                    <input type="text" id="y2" size=5 value='' placeholder="y2">)
+                            <br><br>
+                        Ratio = (<input type="text" id="m" size=3 value='' placeholder="m"> , 
+                    <input type="text" id="n" size=3 value='' placeholder="n">)
+                        <br>
+                            <br><br>    
+                    <button type="button" class="btn btn-light" onclick=solvesection()>
+                        Calculate
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="sec_formula" style="font-family:mathfont;;width:auto;"
                 class="stopwrap"></p>
             <p  id="output"> </p> <br>
  
             <h3 style="text-align: center;">Collinear Points Checker</h3><br>
-            <div class="coll">
-                <p> Coordinate 1 = (<input type="text" id="a1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="b1" size=5 value='' placeholder="y1">)
-                    <br><br>
-                    Coordinate 2 = (<input type="text" id="a2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="b2" size=5 value='' placeholder="y2">)
+            <form action="">
+                <div class="coll">
+                    <p> Coordinate 1 = (<input type="text" id="a1" size=5 value='' placeholder="x1"> , 
+                    <input type="text" id="b1" size=5 value='' placeholder="y1">)
                         <br><br>
-                    Coordinate 3 = (<input type="text" id="a3" size=5 value='' placeholder="x3"> , 
-                <input type="text" id="b3" size=5 value='' placeholder="y3">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=collinearsolve()> Calculate</button><br>
-                </p>
-            </div>
+                        Coordinate 2 = (<input type="text" id="a2" size=5 value='' placeholder="x2"> , 
+                    <input type="text" id="b2" size=5 value='' placeholder="y2">)
+                            <br><br>
+                        Coordinate 3 = (<input type="text" id="a3" size=5 value='' placeholder="x3"> , 
+                    <input type="text" id="b3" size=5 value='' placeholder="y3">)
+                            <br><br>
+                    <button type="button" class="btn btn-light" onclick=collinearsolve()> Calculate</button><br>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button>
+                    </p>
+                </div>
+            </form>
+            
             <h4 id="collop1" class="text-center" style="color:white"></h4><br>
             <h4 id="collop2" class="text-center" style="color:white"></h4><br><br>
 
             <h3 style="text-align: center;">Line Perpendicular/Parallel To Given Line and Pass through the Point</h3><br>
-            <div class="coll">
-                <p>
-                    Line Equation :   <input type="text" id="plpa" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C"><br><br>
-                    Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
-                <input type="text" id="plpy" size=5 value='' placeholder="y">)<br><br>
-                <button type="button" class="btn btn-light" onclick=plpSolve()>
-                    Find Equation Of Perpendicular Line
-                </button>
-                <button type="button" class="btn btn-light" onclick=pppSolve()>
-                    Find Equation Of Parallel Line
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Line Equation :   <input type="text" id="plpa" size=3 value='' placeholder="A">  x  +
+                    <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C"><br><br>
+                        Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
+                    <input type="text" id="plpy" size=5 value='' placeholder="y">)<br><br>
+                    <button type="button" class="btn btn-light" onclick=plpSolve()>
+                        Find Equation Of Perpendicular Line
+                    </button>
+                    <button type="button" class="btn btn-light" onclick=pppSolve()>
+                        Find Equation Of Parallel Line
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap" align="right"></p>
             <h4 id="plp_op"> </h4><br><br>
             <p id="plp_work"></p>
@@ -6369,36 +6468,48 @@
            
             
             <h3 style="text-align: center;">Distance Between Two Parallel Line</h3><br>
-            <div class="coll">
-                <p>
-                    Line Equation A :   <input type="text" id="pppdaq1" size=3 value='' placeholder="A" oninput="document.getElementById('pppdaq2').value = value">  x  +
-                <input type="text" id="pppdbq1" size=3 value='' placeholder="B" oninput="document.getElementById('pppdbq2').value = value"> y = <input type="text" id="pppdcq1" size=3 value='' placeholder="C">
-                    <br><br>
-                    Line Equation B :   <input type="text" id="pppdaq2" size=3 value='' placeholder="A" oninput="document.getElementById('pppdaq1').value = value">  x  +
-                <input type="text" id="pppdbq2" size=3 value='' placeholder="B" oninput="document.getElementById('pppdbq1').value = value"> y = <input type="text" id="pppdcq2" size=3 value='' placeholder="C">
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Line Equation A :   <input type="text" id="pppdaq1" size=3 value='' placeholder="A" oninput="document.getElementById('pppdaq2').value = value">  x  +
+                    <input type="text" id="pppdbq1" size=3 value='' placeholder="B" oninput="document.getElementById('pppdbq2').value = value"> y = <input type="text" id="pppdcq1" size=3 value='' placeholder="C">
                         <br><br>
-                <button type="button" class="btn btn-light" onclick=pppdSolve()>
-                    Find 
-                </button><br>
-                </p>
-            </div><br>
+                        Line Equation B :   <input type="text" id="pppdaq2" size=3 value='' placeholder="A" oninput="document.getElementById('pppdaq1').value = value">  x  +
+                    <input type="text" id="pppdbq2" size=3 value='' placeholder="B" oninput="document.getElementById('pppdbq1').value = value"> y = <input type="text" id="pppdcq2" size=3 value='' placeholder="C">
+                            <br><br>
+                    <button type="button" class="btn btn-light" onclick=pppdSolve()>
+                        Find 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="pppdcq1explane" style="font-family:mathfont;;width:auto;"
                 class="stopwrap"
                align="right"></p>
             <p id="pppdcq1output"> </p> 
         
             <h3 style="text-align: center;">Perpendiculer Distance From Origin </h3><br>
-            <div class="coll">
-                <p>
-                    Line Equation A :   <input type="text" id="pppdaqo1" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="pppdbqo1" size=3 value='' placeholder="B" > y = <input type="text" id="pppdcqo1" size=3 value='' placeholder="C">
-                    <br><br>
-                    
-                <button type="button" class="btn btn-light" onclick=pppdoSolve()>
-                    Find 
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Line Equation A :   <input type="text" id="pppdaqo1" size=3 value='' placeholder="A">  x  +
+                    <input type="text" id="pppdbqo1" size=3 value='' placeholder="B" > y = <input type="text" id="pppdcqo1" size=3 value='' placeholder="C">
+                        <br><br>
+                        
+                    <button type="button" class="btn btn-light" onclick=pppdoSolve()>
+                        Find 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="pppdcq1explaneo" style="font-family:mathfont;;width:auto;"
                 class="stopwrap"
                align="right"></p>
@@ -6407,27 +6518,33 @@
 
 
             <h3 style="text-align: center;">Circle Calculator</h3><br>
-            <div class="coll">
-                <p>
-                    <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p><input type="text" id="qcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('pcenterr').value = value">  <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('qcenterr').value = value">  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterr" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
-                <input type="text" id="bcenterr" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenterr" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
-                    <br><br>
-                </p >
-
-            </div><br>
-            <button type="button" class="btn btn-light" onclick=centersolve()>
-                Center
-            </button>
-            <button type="button" class="btn btn-light" onclick=centerrsolve()>
-                Radius
-            </button>
-            <button type="button" class="btn btn-light" onclick=xintersept()>
-                X Intercept
-            </button>
-            <button type="button" class="btn btn-light" onclick=yintersept()>
-                Y Intercept
-            </button><br>
-           
+            <form action="">
+                <div class="coll">
+                    <p>
+                        <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p><input type="text" id="qcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('pcenterr').value = value">  <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenterr" size=3 value='' placeholder="A" oninput="document.getElementById('qcenterr').value = value">  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterr" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
+                    <input type="text" id="bcenterr" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenterr" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
+                        <br><br>
+                    </p >
+    
+                </div><br>
+                <button type="button" class="btn btn-light" onclick=centersolve()>
+                    Center
+                </button>
+                <button type="button" class="btn btn-light" onclick=centerrsolve()>
+                    Radius
+                </button>
+                <button type="button" class="btn btn-light" onclick=xintersept()>
+                    X Intercept
+                </button>
+                <button type="button" class="btn btn-light" onclick=yintersept()>
+                    Y Intercept
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                   </button><br>
+               
+            </form>
+            
         <h1 id = "centerer"></h1>
         <h1 id = "centerrr"></h1>   
         </div>
@@ -6510,31 +6627,48 @@
             <br><br>
             <h4>Largest triangle that can be inscribed in a semicircle </h4>
             <br>
-            <input type="text" id="triinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="triinsemifind()">Find</button>
+            <form action="">
+                <input type="text" id="triinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="triinsemifind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="triinsemians"></h5>
             <h5 id="triinsemiexp"></h5>
             <br>
             <h4>Minimum side of square embedded in Regular polygon with N sides</h4><br>
-            <input type="text" id="minsquarein" placeholder="Enter no. of side of polygon" class="form__field"><br>
-            <button class="btn btn-dark" onclick="minsquarefind()">Find</button><br>
+            <form action="">
+                <input type="text" id="minsquarein" placeholder="Enter no. of side of polygon" class="form__field"><br>
+                <button class="btn btn-dark" onclick="minsquarefind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <h5 id="minsquareans"></h5>
             <br>
             <h4>Area of largest semicircle that can be drawn inside a square</h4>
             <br>
-            <input type="text" id="minsquare1" placeholder="Enter length of side of square" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="minsquare1find()">Find</button>
+            <form action="">
+                <input type="text" id="minsquare1" placeholder="Enter length of side of square" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="minsquare1find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="minsquare1ans"></h5>
             <br>
             <h4>Largest rectangle that can be inscribed in a semicircle </h4>
             <br>
-            <input type="text" id="recinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="recinsemifind()">Find</button>
+            <form action="">
+                <input type="text" id="recinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="recinsemifind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="recinsemians"></h5>
             <br>
@@ -6547,8 +6681,13 @@
             <h5 id="hexsqans"></h5>
             <br>
             <h4>Largest trapezoid that can be inscribed in a semicircle </h4><br>
-            <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field"><br>
-            <button class="btn btn-dark" onclick="trapinsemifind()">Find</button><br>
+            <form action="">
+                <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field"><br>
+                <button class="btn btn-dark" onclick="trapinsemifind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <h5 id="trapinsemians"></h5><br>
             <h4>Area of inner circle which passes through center of outer circle and touches its circumference</h4>
             <br>
@@ -6560,10 +6699,14 @@
             <br>
             <h4>Area of circle inscribed in a Isosceles Trapezoid </h4>
             <br>
-            <input type="text" id="trapinsemin1" placeholder="Enter shorter side of trapezoid" class="form__field">
-            <input type="text" id="trapinsemin2" placeholder="Enter longer side of trapezoid" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
+            <form action="">
+                <input type="text" id="trapinsemin1" placeholder="Enter shorter side of trapezoid" class="form__field">
+                <input type="text" id="trapinsemin2" placeholder="Enter longer side of trapezoid" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h4>Area of the largest triangle inscribed within a rectangle </h4>
             <br>
@@ -6576,183 +6719,310 @@
             <br>
             <h4>Largest square that can be inscribed within a hexagon which is inscribed within an equilateral triangle</h4>
             <br>
-            <input type="text" id="shtin" placeholder="Enter side length of equilateral triangle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="shtfind()">Find</button>
+            <form action="">
+                <input type="text" id="shtin" placeholder="Enter side length of equilateral triangle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="shtfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <p id="shtans1"></p><br>
             <p id="shtans"></p><br>
             <br>
             <h4>Largest hexagon that can be inscribed within an equilateral triangle </h4>
             <br>
-            <input type="text" id="htin" placeholder="Enter side length of hexagon" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="htfind()">Find</button>
+            <form action="">
+                <input type="text" id="htin" placeholder="Enter side length of hexagon" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="htfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>    
+            </form>
             <br>
             <p id="htans"></p>
             <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square</h4>
             <br>
-            <input type="text" id="retin4" placeholder="Enter side length of square (a)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind2()">Find</button>
+            <form action="">
+                <input type="text" id="retin4" placeholder="Enter side length of square (a)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind2()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans2"></h5>
             <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a circle</h4>
             <br>
-            <input type="text" id="retin11" placeholder="Enter radius of circle (r)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind11()">Find</button>
+            <form action="">
+                <input type="text" id="retin11" placeholder="Enter radius of circle (r)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind11()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans11"></h5>
             <br>
             <h4>Area of a Reuleaux Triangle inscribed in a Square which is inscribed in an equilateral triangle</h4>
             <br>
-            <input type="text" id="retin6" placeholder="Enter side length of equilateral triangle (a)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind3()">Find</button>
+            <form action="">
+                <input type="text" id="retin6" placeholder="Enter side length of equilateral triangle (a)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind3()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans3"></h5>
             <br>
+            <h4>Area of the largest Rhombus inscribed within a rectangle </h4>
+            <br>
+            <input type="text" id="rectrhomb1" placeholder="Enter the length of rectangle" class="form__field">
+            <input type="text" id="rectrhomb2" placeholder="Enter the breadth of rectangle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="rectrhomb()">Find</button>
+            <br>
+            <h5 id="rectrhombans"></h5>
+            <br>
             <h4>Largest circle that can be inscribed in a semicircle </h4>
             <br>
-            <input type="text" id="cirinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemifind()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemifind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemians"></h5>
             <h5 id="cirinsemiexp"></h5>
             <br>
             <h4>Area of a square inscribed in a circle which is inscribed in an equilateral triangle</h4>
             <br>
-            <input type="text" id="sht6in" placeholder="Enter side length of equilateral triangle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="sht6find()">Find</button>
+            <form action="">
+                <input type="text" id="sht6in" placeholder="Enter side length of equilateral triangle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="sht6find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="sht6ans"></h5>
             <br>
+            <h4>Area of a Rectangle inscribed in an Equilateral Triangle</h4>
+            <br>
+            <input type="text" id="eqrect1" placeholder="Enter side length of equilateral triangle" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="eqrect()">Find</button>
+            <br>
+            <h5 id="eqrectans"></h5>
+            <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a semicircle</h4>
             <br>
-            <input type="text" id="retin" placeholder="Enter radius of semicircle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind()">Find</button>
+            <form action="">
+                <input type="text" id="retin" placeholder="Enter radius of semicircle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans"></h5>
             <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a ellipse</h4>
             <br>
-            <input type="text" id="retin1" placeholder="Enter lenght of major axis (a)" class="form__field">
-            <br>
-            <input type="text" id="retin2" placeholder="Enter lenght of minor axis (b)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind1()">Find</button>
+            <form action="">
+                <input type="text" id="retin1" placeholder="Enter lenght of major axis (a)" class="form__field">
+                <br>
+                <input type="text" id="retin2" placeholder="Enter lenght of minor axis (b)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind1()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans1"></h5>
             <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a Right angle Triangle</h4>
             <br>
-            <input type="text" id="retin8" placeholder="Enter height of right angle triangle (l)" class="form__field">
-            <br>
-            <input type="text" id="retin10" placeholder= "Enter base of right angle triangle (b)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind8()">Find</button>
+            <form action="">
+                <input type="text" id="retin8" placeholder="Enter height of right angle triangle (l)" class="form__field">
+                <br>
+                <input type="text" id="retin10" placeholder= "Enter base of right angle triangle (b)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind8()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans8"></h5>
             <br>
             <h4>Area of a Reuleaux Triangle inscribed in a Square which is inscribed in a Hexagon</h4>
             <br>
-            <input type="text" id="retin16" placeholder="Enter side length of regular hexagon (a)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="retfind13()">Find</button>
+            <form action="">
+                <input type="text" id="retin16" placeholder="Enter side length of regular hexagon (a)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="retfind13()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="retans16"></h5>
             <br>
             <h4>Area of Equilateral triangle inscribed in a Circle of radius R </h4>
             <br>
-            <input type="text" id="cirinsemi1in" placeholder="Enter radius of cicrcle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi1find()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemi1in" placeholder="Enter radius of cicrcle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi1find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemi1ans"></h5>
             <br>
             <h4>Area of a largest square fit in a right angle triangle</h4>
             <br>
-            <input type="text" id="cirinsemi2in" placeholder="Enter base of triangle" class="form__field">
-            <input type="text" id="cirinsemi21in" placeholder="Enter perpendicular pf triangle" class="form__field">
-            <input type="text" id="cirinsemi22in" placeholder="Enter hypotneuse of triangle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemi2in" placeholder="Enter base of triangle" class="form__field">
+                <input type="text" id="cirinsemi21in" placeholder="Enter perpendicular pf triangle" class="form__field">
+                <input type="text" id="cirinsemi22in" placeholder="Enter hypotneuse of triangle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemi2ans"></h5>
             <br>
             <h4>Maximize a value for a semicircle of given radius</h4>
             <br>
-            <input type="text" id="cirinsemi3in" placeholder="Enter radius of circle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi3find()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemi3in" placeholder="Enter radius of circle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi3find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemi3ans"></h5>
             <br>
             <h4>To check two Convex Regular Polygon have same center or not</h4>
             <br>
-            <input type="text" id="regpoly11" placeholder="Enter sides of the convex regular polygon (a)" class="form__field">
-            <input type="text" id="regpoly22" placeholder="Enter sides of the convex regular polygon (b)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="regpoly()">Find</button>
+            <form action="">
+                <input type="text" id="regpoly11" placeholder="Enter sides of the convex regular polygon (a)" class="form__field">
+                <input type="text" id="regpoly22" placeholder="Enter sides of the convex regular polygon (b)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="regpoly()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="regpolyans"></h5>
             <br>
             <h4>Area of a circle inscribed in a rectangle which is inscribed in a semicircle</h4><br>
-            <input type="text" id="cirinsemi4in" placeholder="Enter radius of semicircle" class="form__field"><br>
-            <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button><br>
+            <form action="">
+                <input type="text" id="cirinsemi4in" placeholder="Enter radius of semicircle" class="form__field"><br>
+                <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <h5 id="cirinsemifind4ans"></h5>
             <br>
             <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a semicircle</h4><br>
-            <input type="text" id="cirinsemi5in" placeholder="Enter radius of semicircle" class="form__field"><br>
-            <button class="btn btn-dark" onclick="cirinsemi5find()">Find</button><br>
+            <form action="">
+                <input type="text" id="cirinsemi5in" placeholder="Enter radius of semicircle" class="form__field"><br>
+                <button class="btn btn-dark" onclick="cirinsemi5find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <p id="cirinsemifind5ans"></p><br>
             <p id="cirinsemifind5ans1"></p><br>
             <br>
             <h4>Radius of the biggest possible circle inscribed in rhombus which in turn is inscribed in a rectangle </h4>
             <br>
-            <input type="text" id="cirinsemi6in" placeholder="Enter length of rectangle" class="form__field">
-            <input type="text" id="cirinsemi7in" placeholder="Enter device-widthrectangle" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi6find()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemi6in" placeholder="Enter length of rectangle" class="form__field">
+                <input type="text" id="cirinsemi7in" placeholder="Enter device-widthrectangle" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi6find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemi6ans"></h5>
             <br>
             <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a square</h4><br>
-            <input type="text" id="cirinsemi8in" placeholder="Enter side of square" class="form__field"><br>
-            <button class="btn btn-dark" onclick="cirinsemi7find()">Find</button><br>
+            <form action="">
+                <input type="text" id="cirinsemi8in" placeholder="Enter side of square" class="form__field"><br>
+                <button class="btn btn-dark" onclick="cirinsemi7find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <h5 id="cirinsemi7ans"></h5>
             <br>
+<<<<<<< HEAD
+            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4>
+            <br>
+            <form action="">
+                <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
+                <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
+=======
             <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4><br>
             <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
             <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field"><br>
             <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button><br>
+>>>>>>> f0ae35bfbbde1e54af65888c0c378abe14c2ffea
             <h5 id="cirinsemi8ans"></h5>
             <br>
             <h4>Largest triangle that can be inscribed in an ellipse</h4>
             <br>
-            <input type="text" id="cirinsemi11in" placeholder="Enter length of major axis of ellipse" class="form__field">
-            <input type="text" id="cirinsemi12in" placeholder="Enter length of minor axis of ellipse" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi9find()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemi11in" placeholder="Enter length of major axis of ellipse" class="form__field">
+                <input type="text" id="cirinsemi12in" placeholder="Enter length of minor axis of ellipse" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi9find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemi9ans"></h5>
             <br>
             <h4>Find the remaining vertices of a square from two given vertices</h4>
             <br>
-            <input type="text" id="cirinsemi13in" placeholder="Enter x coordinate of 1st vertex" class="form__field">
-            <input type="text" id="cirinsemi14in" placeholder="Enter y coordinate of 1st vertex" class="form__field">
-            <input type="text" id="cirinsemi15in" placeholder="Enter x coordinate of 2nd vertex" class="form__field">
-            <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
+            <form action="">
+                <input type="text" id="cirinsemi13in" placeholder="Enter x coordinate of 1st vertex" class="form__field">
+                <input type="text" id="cirinsemi14in" placeholder="Enter y coordinate of 1st vertex" class="form__field">
+                <input type="text" id="cirinsemi15in" placeholder="Enter x coordinate of 2nd vertex" class="form__field">
+                <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="cirinsemi10ans"></h5>
+            <br>
+            <h4>Division of  an isosceles triangle in two parts with ratio of areas as n:m </h4>
+            <br>
+            <input type="text" id="cirinsemi17in" placeholder="Enter height of triangle" class="form__field">
+            <input type="text" id="cirinsemi18in" placeholder="Enter n" class="form__field">
+            <input type="text" id="cirinsemi19in" placeholder="Enter n" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="cirinsemi11find()">Find</button>
+            <br>
+            <h5 id="cirinsemi11ans"></h5>
             <br>
             <h4>Point that lies inside exactly K given squares </h4>
             <br>
@@ -6765,14 +7035,18 @@
             <br>
             <h4>To check whether given Point (P) lies inside a Rectangle</h4>
             <br>
-            <input type="text" id="checkrect1" placeholder="Enter x coordinate of Rectangle (x1)" class="form__field">
-            <input type="text" id="checkrect2" placeholder="Enter y coordinate of Rectangle (y1)" class="form__field">
-            <input type="text" id="checkrect3" placeholder="Enter x coordinate of Rectangle (x2)" class="form__field">
-            <input type="text" id="checkrect4" placeholder="Enter y coordinate of Rectangle (y2)" class="form__field">
-            <input type="text" id="checkrect5" placeholder="Enter x coordinate of Point (x)" class="form__field">
-            <input type="text" id="checkrect6" placeholder="Enter y coordinate of Point (y)" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="pointrect()">Find</button>
+            <form action="">
+                <input type="text" id="checkrect1" placeholder="Enter x coordinate of Rectangle (x1)" class="form__field">
+                <input type="text" id="checkrect2" placeholder="Enter y coordinate of Rectangle (y1)" class="form__field">
+                <input type="text" id="checkrect3" placeholder="Enter x coordinate of Rectangle (x2)" class="form__field">
+                <input type="text" id="checkrect4" placeholder="Enter y coordinate of Rectangle (y2)" class="form__field">
+                <input type="text" id="checkrect5" placeholder="Enter x coordinate of Point (x)" class="form__field">
+                <input type="text" id="checkrect6" placeholder="Enter y coordinate of Point (y)" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="pointrect()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="pointrectans"></h5>
             <br>
@@ -12020,6 +12294,7 @@
             <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
             <br>
             <h5 id="golds3ans"></h5>
+            <h5 id="golds3exp"></h5>
             <br>
             </form>
         </div>
@@ -12743,6 +13018,24 @@
 
     <p id="negbinoans"></p>
 </div>
+        <!-- PPV Calculator-->
+        <div class="collapse" id="ppv">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">PPV Calculator</h1>
+        
+            <form action="">
+                <input class = "form__field"type="text" id="ppvsensi" placeholder="Enter Sensitivity">
+                <br><br>
+                <input class = "form__field"type="text" id="ppvspeci" placeholder="Enter Specificity">
+                <br><br>
+                <input class = "form__field"type="text" id="ppvprev" placeholder="Enter Prevalence">
+        
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="ppvCal()">Calculate</button>
+            </form>
+        
+            <p id="ppvans"></p>
+        </div>
+        
 <!-- Relative risk Calculator -->
 <div class="collapse" id="relrisk">
     <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
@@ -13363,25 +13656,16 @@
             <form class="text-center">
                 <input class = "form__field"type="text" id="giffnum" style="max-width: 500px;"><br><br>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-12 text-center">
-                        <button class = "btn btn-light" type="button" onclick="gif()">Greatest Integer Function</button>
-                    </div>
+                    <div class="col-12 text-center"> <button class = "btn btn-light" type="button" onclick="gif()">Greatest Integer Function</button> </div>
                 </div><br>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-12 text-center">
-                        <button class = "btn btn-light" type="button" onclick="fp()">Fractional Part Function</button>
-                    </div>
-                </div>
-                <br>
+                    <div class="col-12 text-center"> <button class = "btn btn-light" type="button" onclick="fp()">Fractional Part Function</button></div>
+                </div></br>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-12 text-center">
-                        <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
-                    </div>
-                    
-                </div>
+                    <div class="col-12 text-center"> <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button> </div> 
+                </div><br>
             </form>
-            <p id="giffans"></p><br>
-            <p id="fpans"></p><br>
+            <p id="giffans"></p><br><p id="fpans"></p><br>
         </div>
         <!-- Quartiles -->
         <div class="collapse" id="qrtl">
@@ -13783,6 +14067,24 @@
             <p id="chitestans"></p>
             <br>
             <p id="concluChi"></p>
+        </div>
+        
+ <!-- TaktTime Calculator -->
+        <div class="collapse" id="takttest">
+          <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Takt Time Calculator</h1>
+          <p style="margin: 0 auto 6rem auto; font-style: italic;">Takt time is the rate at which you need to complete a product to meet customer demand.
+          Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It allows you to optimize your capacity in
+          the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
+         <br>
+          <input class = "form__field"type="number" id="works" placeholder="Total Available Production Time (in minutes)">
+          <br><br>
+          <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
+          <br><br>
+          <input class = "form__field"type="number" id="breaks" placeholder="Enter BreakTime if any else input 0 (in minutes)">
+          <br><br>
+          <button class = "btn btn-light" onclick="taktvalue()">Test</button>
+          <p id="taktans"></p>
+          <br>
         </div>
 
         <div class="collapse" id="dip">
@@ -15233,6 +15535,15 @@
                 <p id="chsubans"></p>
                 <br><br>
             </form>
+            <h4>Angle subtended by the chord to center of the circle when the angle subtended by the another equal chord of a congruent circle is given</h4><br>
+            <form action="">
+                <input type="text" class="form__field" id="chsub1" placeholder="Enter angle subtended by another chord of a congruent circle"><br>
+                <button type="button" class = "btn btn-dark"onclick = "chordsub1()">Find angle</button>
+                <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+                <p id="chsub1info"></p>
+                <p id="chsub1ans"></p>
+                <br><br>
+            </form>
             <h4>Possibility to create a polygon with a given angle</h4><br>
             <form action="">
                 <input type = "text" class = "form__field" placeholder = "Enter angle" id="anglecalc"/><br>
@@ -15428,11 +15739,15 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
             <p id="polymax6ans"></p></form><br>
             <h4>Angle between 3 vertices in a N sided Regular Polygon</h4><br>
-            <input type = "text" class = "form__field" placeholder = "Enter 1st vertex (a1)" id="regang1"/>
-            <input type = "text" class = "form__field" placeholder = "Enter 2nd vertex (a2)" id="regang2"/>
-            <input type = "text" class = "form__field" placeholder = "Enter 3rd vertex (a3)" id="regang3"/>
-            <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regang4"/><br>
-            <button type = "button" class="btn btn-dark" onclick = "regang()">FInd</button><br>
+            <form action="">
+                <input type = "text" class = "form__field" placeholder = "Enter 1st vertex (a1)" id="regang1"/>
+                <input type = "text" class = "form__field" placeholder = "Enter 2nd vertex (a2)" id="regang2"/>
+                <input type = "text" class = "form__field" placeholder = "Enter 3rd vertex (a3)" id="regang3"/>
+                <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regang4"/><br>
+                <button type = "button" class="btn btn-dark" onclick = "regang()">FInd</button><br>
+                <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+            </form>
+            
             <h5 id="regangans"></h5>
             <br>
             <h4>Side of a regular n-sided polygon circumscribed in a circle</h4>
@@ -16281,6 +16596,10 @@
                                            style="text-decoration:none;" href="#">Hexagon</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#concavehexagon"
+                                           style="text-decoration:none;" href="#">Concave Hexagon</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#stretchhexagon"
                                            style="text-decoration:none;" href="#">Stretched Hexagon</a></td>
                                 </tr>
@@ -16488,6 +16807,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#tshape"
                            style="text-decoration:none;" href="#">T - Shape</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#xshape"
+                           style="text-decoration:none;" href="#">X - Shape</a></td>
                 </tr>   
                 <tr>
                     <td><a data-toggle="modal" data-target="#cycquad"
@@ -17837,87 +18160,93 @@
 <div class="collapse" id="centcal">
     <h2 style="text-align: center;">Different Centers of Triangle</h2><br>
     <h3 style="text-align: center;">Using Edges</h3>
-    <div class="col-9">
+    <form action="">
         <div class="col-9">
-            <label>
-                <h5>First Edge</h5>
-            </label>
+            <div class="col-9">
+                <label>
+                    <h5>First Edge</h5>
+                </label>
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;" >
+                        </div>
+                        <p>X + </p>
+                        <div class="col-3">
+                            <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: center;color: black; background-color: aliceblue;">
+                        </div>
+                        <p> Y = </p>
+                        <div class="col-3">
+                            <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                        </div>
+                    </div>    
+                </div>
+    
+    
+            <div class="col-9">
+                <label>
+                    <h5>Second Edge</h5>
+                </label>
                 <div class="row">
                     <div class="col-3">
-                        <input type="number" id="fxc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;" >
+                        <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: center;background-color: aliceblue; color: black;">
                     </div>
                     <p>X + </p>
                     <div class="col-3">
-                        <input type="number" id="fyc" class="form__field" placeholder="y" ; style="text-align: center;color: black; background-color: aliceblue;">
+                        <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;color: black;">
                     </div>
                     <p> Y = </p>
                     <div class="col-3">
-                        <input type="number" id="fcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                        <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;color: black;">
                     </div>
-                </div>    
-            </div>
-
-
-        <div class="col-9">
-            <label>
-                <h5>Second Edge</h5>
-            </label>
-            <div class="row">
-                <div class="col-3">
-                    <input type="number" id="sxc" class="form__field" placeholder="x" ; style="text-align: center;background-color: aliceblue; color: black;">
-                </div>
-                <p>X + </p>
-                <div class="col-3">
-                    <input type="number" id="syc" class="form__field" placeholder="y" ; style="text-align: center; background-color: aliceblue;color: black;">
-                </div>
-                <p> Y = </p>
-                <div class="col-3">
-                    <input type="number" id="scc" class="form__field" placeholder="c" ; style="text-align: center; background-color: aliceblue;color: black;">
                 </div>
             </div>
-        </div>
-
-
-        <div class="col-9">
-            <label>
-                <h5>Third Edge</h5>
-            </label>
-            <div class="row">
-                <div class="col-3">
-                    <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;">
-                </div>
-                <p>X + </p>
-                <div class="col-3">
-                    <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: center;color: black;  background-color: aliceblue;">
-                </div>
-                <p> Y = </p>
-                <div class="col-3">
-                    <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
+    
+    
+            <div class="col-9">
+                <label>
+                    <h5>Third Edge</h5>
+                </label>
+                <div class="row">
+                    <div class="col-3">
+                        <input type="number" id="txc" class="form__field" placeholder="x" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                    </div>
+                    <p>X + </p>
+                    <div class="col-3">
+                        <input type="number" id="tyc" class="form__field" placeholder="y" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                    </div>
+                    <p> Y = </p>
+                    <div class="col-3">
+                        <input type="number" id="tcc" class="form__field" placeholder="c" ; style="text-align: center;color: black;  background-color: aliceblue;">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="centcal()">
-                    Centroid
-                </button>
-
-                <button type="button" class="btn btn-light" onclick="cencirtcal()">
-                    Circumcenter
-                </button>
-                <button type="button" class="btn btn-light" onclick="cenintcal()">
-                    InCenter
-                </button>
-                <button type="button" class="btn btn-light" onclick="cenextcal()">
-                    ExCenter
-                </button>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="centcal()">
+                        Centroid
+                    </button>
+    
+                    <button type="button" class="btn btn-light" onclick="cencirtcal()">
+                        Circumcenter
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="cenintcal()">
+                        InCenter
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="cenextcal()">
+                        ExCenter
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
+    
+    </form>
+    
     <div class="row">
         <div class="col-6">
             <label>
@@ -17929,134 +18258,170 @@
     
     <h3 style="text-align: center;">Using Vertex</h3>
     <h4>Centroid Calculator</h4>
-    <div class= "coll">
-        <p>
-            Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="y1st" size=5 value='' placeholder="y1">)
-            <br>
-            Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
+    <form action="">
+        <div class= "coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="x1st" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="y1st" size=5 value='' placeholder="y1">)
                 <br>
-            Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
-            <br><br>
-        <button type="button" class="btn btn-light" onclick=centsolve()>
-                Find Centroid
-        </button><br>
-        </p>
-    </div>
+                Coordinate 2 = (<input type="text" id="x2nd" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="y2nd" size=5 value='' placeholder="y2">)
+                    <br>
+                Coordinate 3 = (<input type="text" id="x3rd" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="y3rd" size=5 value='' placeholder="y3">)
+                <br><br>
+            <button type="button" class="btn btn-light" onclick=centsolve()>
+                    Find Centroid
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    
     <h4 id="apk" style="color: white;"></h4>
     <h4 class="text-center" id="line2"> </h4> <br>
     
     <h3 style="text-align: center;">Circumcentre Calculator </h3><br>
-    <div class="coll">
-        <p>
-            Coordinate 1 = (<input type="text" id="X1st" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="Y1st" size=5 value='' placeholder="y1">)
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="X1st" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="Y1st" size=5 value='' placeholder="y1">)
+                <br><br>
+                Coordinate 2 = (<input type="text" id="X2st" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="Y2st" size=5 value='' placeholder="y2">)
+                    <br><br>
+                Coordinate 3 = (<input type="text" id="X3st" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="Y3st" size=5 value='' placeholder="y3">)
+                    <br><br>
+                A = <input type="text" id="angleA" size=7 value='' placeholder="Angle A (in &deg;) ">     B =
+            <input type="text" id="angleB" size=7 value='' placeholder="Angle B (in &deg;)">     C= <input type="text" id="angleC" size=7 value='' placeholder="Angle C (in &deg;)">
             <br><br>
-            Coordinate 2 = (<input type="text" id="X2st" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="Y2st" size=5 value='' placeholder="y2">)
-                <br><br>
-            Coordinate 3 = (<input type="text" id="X3st" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="Y3st" size=5 value='' placeholder="y3">)
-                <br><br>
-            A = <input type="text" id="angleA" size=7 value='' placeholder="Angle A (in &deg;) ">     B =
-        <input type="text" id="angleB" size=7 value='' placeholder="Angle B (in &deg;)">     C= <input type="text" id="angleC" size=7 value='' placeholder="Angle C (in &deg;)">
-        <br><br>
-        <button type="button" class="btn btn-light" onclick=circumsolve()>
-            Calculate
-        </button><br>
-        </p>
-    </div>
+            <button type="button" class="btn btn-light" onclick=circumsolve()>
+                Calculate
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    
     <h4 id="cir_output" style="color:white"></h4>
  <br>
     <h3 style="text-align: center;">Orthocentre Calculator </h3><br>
-    <div class="coll">
-        <p>
-            Coordinate 1 = (<input type="text" id="orthox11" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="orthoy1" size=5 value='' placeholder="y1">)
-            <br><br>
-            Coordinate 2 = (<input type="text" id="orthox21" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="orthoy2" size=5 value='' placeholder="y2">)
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="orthox11" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="orthoy1" size=5 value='' placeholder="y1">)
                 <br><br>
-            Coordinate 3 = (<input type="text" id="orthox31" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="orthoy3" size=5 value='' placeholder="y3">)
-                <br><br>            
-        <button type="button" class="btn btn-light" onclick=orthosolve()>
-            Calculate
-        </button><br>
-        </p>
-    </div>
+                Coordinate 2 = (<input type="text" id="orthox21" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="orthoy2" size=5 value='' placeholder="y2">)
+                    <br><br>
+                Coordinate 3 = (<input type="text" id="orthox31" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="orthoy3" size=5 value='' placeholder="y3">)
+                    <br><br>            
+            <button type="button" class="btn btn-light" onclick=orthosolve()>
+                Calculate
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    
     <h4 style="text-align: center;" id="ortho_output" style="color:white"></h4>
     <br>
     <h3 style="text-align: center;">Incentre Calculator </h3><br>
-    <div class="coll">
-        <p>
-            Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="Y1" size=5 value='' placeholder="y1">)
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="X1" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="Y1" size=5 value='' placeholder="y1">)
+                <br><br>
+                Coordinate 2 = (<input type="text" id="X2" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="Y2" size=5 value='' placeholder="y2">)
+                    <br><br>
+                Coordinate 3 = (<input type="text" id="X3" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="Y3" size=5 value='' placeholder="y3">)
+                    <br><br>
+                a = <input type="text" id="ina" size=5 value='' placeholder="Side a">     b =
+            <input type="text" id="inb" size=5 value='' placeholder="Side b">     c= <input type="text" id="inc" size=5 value='' placeholder="Side c">
             <br><br>
-            Coordinate 2 = (<input type="text" id="X2" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="Y2" size=5 value='' placeholder="y2">)
-                <br><br>
-            Coordinate 3 = (<input type="text" id="X3" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="Y3" size=5 value='' placeholder="y3">)
-                <br><br>
-            a = <input type="text" id="ina" size=5 value='' placeholder="Side a">     b =
-        <input type="text" id="inb" size=5 value='' placeholder="Side b">     c= <input type="text" id="inc" size=5 value='' placeholder="Side c">
-        <br><br>
-        <button type="button" class="btn btn-light" onclick=incentersolve()>
-
-            Calculate
-        </button><br>
-        </p>
-    </div>
+            <button type="button" class="btn btn-light" onclick=incentersolve()>
+    
+                Calculate
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    
     <h4 id="in_output" style="color:white"></h4>
     <h4 id="informula" style="color:white"></h4>
 
     <br><br>
     <h3 style="text-align: center;">Excentre Calculator </h3><br>
-    <div class="coll">
-        <p>
-            Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="Xn1" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="Yn1" size=5 value='' placeholder="y1">)
+                <br><br>
+                Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
+                    <br><br>
+                Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
+                    <br><br>
+                a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
+            <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
             <br><br>
-            Coordinate 2 = (<input type="text" id="Xn2" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="Yn2" size=5 value='' placeholder="y2">)
-                <br><br>
-            Coordinate 3 = (<input type="text" id="Xn3" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="Yn3" size=5 value='' placeholder="y3">)
-                <br><br>
-            a = <input type="text" id="ena" size=5 value='' placeholder="Side a">     b =
-        <input type="text" id="enb" size=5 value='' placeholder="Side b">     c= <input type="text" id="enc" size=5 value='' placeholder="Side c">
-        <br><br>
-        <button type="button" class="btn btn-light" onclick=excentersolve()>
-
-            Calculate
-        </button><br>
-        </p>
-    </div>
+            <button type="button" class="btn btn-light" onclick=excentersolve()>
+    
+                Calculate
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    
     <h4 id="ex_output1" style="color:white"></h4>
 <br><br>
 
     <h2 style="text-align:center;">Area of Triangle</h2><br>
-    <div class="coll">
-        <p>
-            Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="y1s" size=5 value='' placeholder="y1">)
-            <br><br>
-            Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="y2s" size=5 value='' placeholder="y2">)
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="x1s" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="y1s" size=5 value='' placeholder="y1">)
                 <br><br>
-            Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="y3s" size=5 value='' placeholder="y3">)
-                <br><br>
-        <button type="button" class="btn btn-light" onclick=coordinatearea()>
-
-            Calculate
-        </button><br>
-        </p>
-
-    </div>
+                Coordinate 2 = (<input type="text" id="x2s" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="y2s" size=5 value='' placeholder="y2">)
+                    <br><br>
+                Coordinate 3 = (<input type="text" id="x3s" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="y3s" size=5 value='' placeholder="y3">)
+                    <br><br>
+            <button type="button" class="btn btn-light" onclick=coordinatearea()>
+    
+                Calculate
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+    
+        </div>
+    </form>
+    
     <h4 id="areaoutput" style="color:white"></h4>
     <h4 id="formula1" style="color:white"></h4>
     <br>
@@ -18074,116 +18439,152 @@
         <p id="inmedans" class="text-center" style="color:white"></p>
     <br>
     <h2 style="text-align:center;">To check whether given Point (P) lies inside a Triangle</h2><br>
-    <div class="coll">
-        <p>
-            Coordinate 1 (A) = (<input type="text" id="q1w" size=5 value='' placeholder="x1"> , 
-        <input type="text" id="q5w" size=5 value='' placeholder="y1">)
-            <br><br>
-            Coordinate 2 (B) = (<input type="text" id="q2w" size=5 value='' placeholder="x2"> , 
-        <input type="text" id="q6w" size=5 value='' placeholder="y2">)
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 (A) = (<input type="text" id="q1w" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="q5w" size=5 value='' placeholder="y1">)
                 <br><br>
-            Coordinate 3 (C) = (<input type="text" id="q3w" size=5 value='' placeholder="x3"> , 
-        <input type="text" id="q7w" size=5 value='' placeholder="y3">)
-                <br><br>
-         Point (P) = (<input type="text" id="q4w" size=5 value='' placeholder="p1"> , 
-                <input type="text" id="q8w" size=5 value='' placeholder="p2">)
-                        <br><br>
-        <button type="button" class="btn btn-light" onclick= pointri()>
-
-            Calculate
-        </button><br>
-        </p>
-
-    </div>
+                Coordinate 2 (B) = (<input type="text" id="q2w" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="q6w" size=5 value='' placeholder="y2">)
+                    <br><br>
+                Coordinate 3 (C) = (<input type="text" id="q3w" size=5 value='' placeholder="x3"> , 
+            <input type="text" id="q7w" size=5 value='' placeholder="y3">)
+                    <br><br>
+             Point (P) = (<input type="text" id="q4w" size=5 value='' placeholder="p1"> , 
+                    <input type="text" id="q8w" size=5 value='' placeholder="p2">)
+                            <br><br>
+            <button type="button" class="btn btn-light" onclick= pointri()>
+    
+                Calculate
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+    
+        </div>
+    </form>
+    
     <br>
     <h4 id="pointoutput" style="text-align: center; color:white"></h4>
     <br>
     <h2 style="text-align:center;">Oblique Triangle Calculator</h2><br>
-    <div class="coll">
-        <p>
-            Side 1 (AB) = <input type="text" id="inputsideoba" size=7 value='' placeholder="Enter side AB"> 
-            <br><br>
-            Side 2 (BC) = <input type="text" id="inputsideobb" size=7 value='' placeholder="Enter side BC"> 
-                <br><br>
-            Side 3 (CA) = <input type="text" id="inputsideobc" size=7 value='' placeholder="Enter side CA">  
-                <br><br>
-        <button type="button" class="btn btn-light" onclick=obliquetri()>
-            Check
-        </button><br>
-        </p>
-
-    </div><br>
-    <p id="obliop" class="text-center" style="color:white"></p>
-    <br>
-    <h2 style="text-align:center;">Radius of Escribed Circles of a Triangle Calculator</h2><br>
-    <div class="coll">
-        <p>
-            Enter angle (A) = <input type="text" id="inputabc" size=7 value='' placeholder="Enter angle A"> 
-            <br><br>
-            Enter angle (B) = <input type="text" id="inputabc1" size=7 value='' placeholder="Enter angle B"> 
-                <br><br>
-            Enter angle (C) = <input type="text" id="inputabc2" size=7 value='' placeholder="Enter angle C">  
-                <br><br>
-            Enter External Radius (R) = <input type="text" id="inputabc5" size=7 value='' placeholder="Enter External Radius R">  
-                <br><br>
-        <button type="button" class="btn btn-light" onclick=escbrad()>
-            Check
-        </button><br>
-        </p>
-
-    </div><br>
-    <p id="inexans" class="text-center" style="color:white"></p>
-    <br>
-    <h2 style="text-align:center;">Median of Triangle Calculator</h3><br>
+    <form action="">
         <div class="coll">
             <p>
-                Side 1 (a) = <input type="text" id="inputsidea1" size=7 value='' placeholder="side a"> 
+                Side 1 (AB) = <input type="text" id="inputsideoba" size=7 value='' placeholder="Enter side AB"> 
                 <br><br>
-                Side 2 (b) = <input type="text" id="inputsideb1" size=7 value='' placeholder="side b"> 
+                Side 2 (BC) = <input type="text" id="inputsideobb" size=7 value='' placeholder="Enter side BC"> 
                     <br><br>
-                Side 3 (c) = <input type="text" id="inputsidec1" size=7 value='' placeholder="side c">  
+                Side 3 (CA) = <input type="text" id="inputsideobc" size=7 value='' placeholder="Enter side CA">  
                     <br><br>
-            <button type="button" class="btn btn-light" onclick=medtri()>
+            <button type="button" class="btn btn-light" onclick=obliquetri()>
                 Check
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
             </button><br>
             </p>
     
-        </div><br>
-        <p id="medtri1" class="text-center" style="color:white"></p>
-        <br>
-        <h2 style="text-align:center;">Circumradius of Triangle Calculator</h3><br>
+        </div>
+    </form>
+    <br>
+    <p id="obliop" class="text-center" style="color:white"></p>
+    <br>
+    <h2 style="text-align:center;">Radius of Escribed Circles of a Triangle Calculator</h2><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Enter angle (A) = <input type="text" id="inputabc" size=7 value='' placeholder="Enter angle A"> 
+                <br><br>
+                Enter angle (B) = <input type="text" id="inputabc1" size=7 value='' placeholder="Enter angle B"> 
+                    <br><br>
+                Enter angle (C) = <input type="text" id="inputabc2" size=7 value='' placeholder="Enter angle C">  
+                    <br><br>
+                Enter External Radius (R) = <input type="text" id="inputabc5" size=7 value='' placeholder="Enter External Radius R">  
+                    <br><br>
+            <button type="button" class="btn btn-light" onclick=escbrad()>
+                Check
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+    
+        </div>
+    </form>
+    <br>
+    <p id="inexans" class="text-center" style="color:white"></p>
+    <br>
+    <h2 style="text-align:center;">Median of Triangle Calculator</h3><br>
+        <form action="">
             <div class="coll">
                 <p>
-                    Side 1 (a) = <input type="text" id="inputsidea2" size=7 value='' placeholder="side a"> 
+                    Side 1 (a) = <input type="text" id="inputsidea1" size=7 value='' placeholder="side a"> 
                     <br><br>
-                    Side 2 (b) = <input type="text" id="inputsideb2" size=7 value='' placeholder="side b"> 
+                    Side 2 (b) = <input type="text" id="inputsideb1" size=7 value='' placeholder="side b"> 
                         <br><br>
-                    Side 3 (c) = <input type="text" id="inputsidec2" size=7 value='' placeholder="side c">  
+                    Side 3 (c) = <input type="text" id="inputsidec1" size=7 value='' placeholder="side c">  
                         <br><br>
-                <button type="button" class="btn btn-light" onclick=circumtri()>
+                <button type="button" class="btn btn-light" onclick=medtri()>
                     Check
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
                 </button><br>
                 </p>
         
-            </div><br>
+            </div>
+        </form>
+        <br>
+        <p id="medtri1" class="text-center" style="color:white"></p>
+        <br>
+        <h2 style="text-align:center;">Circumradius of Triangle Calculator</h3><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Side 1 (a) = <input type="text" id="inputsidea2" size=7 value='' placeholder="side a"> 
+                        <br><br>
+                        Side 2 (b) = <input type="text" id="inputsideb2" size=7 value='' placeholder="side b"> 
+                            <br><br>
+                        Side 3 (c) = <input type="text" id="inputsidec2" size=7 value='' placeholder="side c">  
+                            <br><br>
+                    <button type="button" class="btn btn-light" onclick=circumtri()>
+                        Check
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button><br>
+                    </p>
+            
+                </div>
+            </form>
+            <br>
             <p id="circumtri1" class="text-center" style="color:white"></p>
 
             <br>
             <h2 style="text-align:center;">Inradius of Triangle Calculator</h3><br>
-                <div class="coll">
-                    <p>
-                        Side 1 (a) = <input type="text" id="inputsidea5" size=7 value='' placeholder="side a"> 
-                        <br><br>
-                        Side 2 (b) = <input type="text" id="inputsideb6" size=7 value='' placeholder="side b"> 
+                <form action="">
+                    <div class="coll">
+                        <p>
+                            Side 1 (a) = <input type="text" id="inputsidea5" size=7 value='' placeholder="side a"> 
                             <br><br>
-                        Side 3 (c) = <input type="text" id="inputsidec7" size=7 value='' placeholder="side c">  
-                            <br><br>
-                    <button type="button" class="btn btn-light" onclick=intri()>
-                        Check
-                    </button><br>
-                    </p>
-
-                </div><br>
+                            Side 2 (b) = <input type="text" id="inputsideb6" size=7 value='' placeholder="side b"> 
+                                <br><br>
+                            Side 3 (c) = <input type="text" id="inputsidec7" size=7 value='' placeholder="side c">  
+                                <br><br>
+                        <button type="button" class="btn btn-light" onclick=intri()>
+                            Check
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button><br>
+                        </p>
+    
+                    </div>
+                </form>
+                <br>
                 <p id="intri1" class="text-center" style="color:white"></p>
 
                 <br>
@@ -19876,7 +20277,6 @@
 <!-- Percentage off starts -->
 <div class="collapse" id="peroff">
     <h2 style="text-align:center;">Percentage Off</h2><br>
-    
     <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
     <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
     <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
@@ -19935,29 +20335,22 @@
         <div class="form-group">
             <button type="button" class="btn btn-light" onclick="exprobability(1)"> Solve </button>
             <button type="button" class="btn btn-light" onclick="exprobability(2)"> Mean </button>
-            <button type="button" class="btn btn-light"
-                onclick="exprobability(3)">
-                Variance
-            </button>
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
+            <button type="button" class="btn btn-light" onclick="exprobability(3)"> Variance </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();"> Reset </button>
         </div>
     </form>
     <br>
     <div class="form-group text-center">
         <p class="stopwrap" style="color:white;" id="exprobAns"></p>
-    </div>
-    <br>
+    </div> <br>
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = f(x;\lambda) = \begin{cases}
         \lambda  e^{-\lambda x} & x \ge 0, \\
         0 & x < 0
-        \end{cases}\]</p> where,
-        <br> λ = rate parameter <br> x = random variable
+        \end{cases}\]</p> where, <br> λ = rate parameter <br> x = random variable
     </div>
-    
 </div>
 <!-- Exponential Distribution Calculator end -->
+
 <!-- Gamma Distribution Calculator start -->
 <div class="collapse" id="gammaDist" style="text-align: center;">
     <h1 >Gamma Distribution Calculator</h1>
@@ -20123,6 +20516,16 @@
             <p>&nbsp;</p>
             <form action="">
                 <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
+<<<<<<< HEAD
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
+                <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
+                <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
+                <p>&nbsp;</p></p>
+                <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+            </form>
+=======
                 <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
                     <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
                     <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
@@ -20132,6 +20535,7 @@
             <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
             </form>
             
+>>>>>>> f0ae35bfbbde1e54af65888c0c378abe14c2ffea
         <p>&nbsp;</p>
         <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
@@ -20165,23 +20569,31 @@
 <div class="collapse" id="polar">
     <h1 style=" text-align: center; font-family:mathfont">Polar Coordinate Calculator</h1>
         <p>&nbsp;</p>
-        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Polar</p>
-        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
-            <input type="number" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
-            <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartpolarcal()">Calculate</button>
+        <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Polar</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
+                <input type="number" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
+                <p>&nbsp;</p></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartpolarcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+        </form>
+        
     <p>&nbsp;</p>
     <p id="cartpolarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
     <p id="cartpolarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
-            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
-            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="polarcartr" placeholder="Enter the length of the line (r)"> 
-                <input type="number" id="polarcarto" placeholder="Enter the polar angle (θ)">
-                <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcartcal()">Calculate</button>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+            <input type="number" id="polarcartr" placeholder="Enter the length of the line (r)"> 
+            <input type="number" id="polarcarto" placeholder="Enter the polar angle (θ)">
+            <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcartcal()">Calculate</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+    </form>
+            
         <p>&nbsp;</p>
         <p id="polarcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
@@ -20192,6 +20604,18 @@
 <div class="collapse" id="sph">
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
+<<<<<<< HEAD
+        <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
+                <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
+                <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+                <p>&nbsp;</p></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+        </form>
+        
+=======
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
             <input type="number" id="cartsphx" width="5em" placeholder="Enter X coordinate"> 
@@ -20199,6 +20623,7 @@
             <input type="number" id="cartsphz" width="5em" placeholder="Enter Z coordinate">
             <p>&nbsp;</p></p>
     <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartsphcal()">Calculate</button>
+>>>>>>> f0ae35bfbbde1e54af65888c0c378abe14c2ffea
     <p>&nbsp;</p>
     <p id="cartsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
@@ -20262,17 +20687,21 @@
     <p>Bilinear interpolation calculator is used to estimate function's value at any point (x, y) inside the rectangle.&nbsp;</p><br>
     <img src="images/bilinear.png" class="img-fluid" style="display: block; margin-left:auto; margin-right:auto; height:244px;"><br>
 
-    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
-      <input type="number" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
-      <p>&nbsp;</p></p>
-  
-    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
-        <input type="number" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
-        <p>&nbsp;</p></p>
-    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
-        <input type="number" name="bicy" id="bicy" width="5em" placeholder="Enter y">
-        <p>&nbsp;</p></p>      
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="bilinearcal()">Calculate</button>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
+            <input type="number" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
+            <p>&nbsp;</p></p>
+        
+          <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
+              <input type="number" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
+              <p>&nbsp;</p></p>
+          <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
+              <input type="number" name="bicy" id="bicy" width="5em" placeholder="Enter y">
+              <p>&nbsp;</p></p>      
+          <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="bilinearcal()">Calculate</button>
+          <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p>&nbsp;</p>
     <p id="bilinearans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
         <p>&nbsp;</p>
@@ -20486,8 +20915,8 @@ N is the population size.
     </p>
    <br><br>
     <form action="">
-        <input type="text" name="skewinput" class="form__field" id="kurtinput" width="5em" placeholder="Fourth central moment (µ4)">
-        <input type="text" name="skewinput" class="form__field" id="kurtinput2" width="5em" placeholder="Standard Deviation (σ)">
+        <input type="text" name="skewinput" class="form__field" id="kurtinput" width="5em" placeholder="Enter set of data separated by space">
+        <input type="number" name="skewinput" class="form__field" id="kurtinput2" width="5em" placeholder="Standard Deviation (σ) of the above dataset">
         <p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="kurtcal()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
@@ -20794,7 +21223,7 @@ N is the population size.
     </form>
 </div>
 
-<div class="collapse" id="pvalue">
+<div class="collapse" id="pvalues">
 
     <h1 style="font-family:mathfont; text-align:center;">P VALUE CALCULATOR </h1>
     <form>
@@ -21155,15 +21584,19 @@ N is the population size.
 
     
     <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
-    <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
-    <p>&nbsp;</p>
-    <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
-    <select id="angseg" class="form__field">
-        <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
-        <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
-    </select>
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button> <p>&nbsp;</p>
+    <form action="">
+        <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
+        <p>&nbsp;</p>
+        <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
+        <select id="angseg" class="form__field">
+            <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
+            <option class="form__field" value="radian"  style="background-color: #232a36;"> radian</option>
+        </select>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+     <p>&nbsp;</p>
     <p id="segans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     
     <div style="color: white; text-align: center; font-family:mathfont; font-size: 1.3em;"> A segment of a circle can be defined as a region bounded by a chord and a corresponding arc lying between the chord’s endpoints.<br>Area of a Segment in Radians: A = (½) × r x r x (θ – Sin θ)
@@ -22571,7 +23004,7 @@ N is the population size.
         <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
         <div class="col-6">
             <div class="form-group">
-                <h5>Decimal</h5>
+                <h5>From</h5>
                 <select id="dec2421-select" class="form__field"
                                 onchange="convertdec2421()">
                             <option class="form__field" style="background-color: #232a36;">
@@ -22586,6 +23019,9 @@ N is the population size.
                             <option class="form_field" style="background-color: #232a36;">
                                 Hexa decimal
                             </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                2421 Code
+                            </option>
                         </select>
 
                 <input type="number" id="dec2421-input" value="0" class="form__field"
@@ -22594,7 +23030,25 @@ N is the population size.
         </div>
         <div class="col-6">
             <div class="form-group">
-                <h5>2421</h5>
+                <h5>To</h5>
+                <select id="dec2421-select1" class="form__field"
+                onchange="convertdec2421()">
+            <option class="form_field" style="background-color: #232a36;">
+                2421 Code
+            </option>
+            <option class="form__field" style="background-color: #232a36;">
+                Binary
+            </option>
+            <option class="form__field" style="background-color: #232a36;">
+                Decimal
+            </option>
+            <option class="form__field" style="background-color: #232a36;">
+                Octal
+            </option>
+            <option class="form_field" style="background-color: #232a36;">
+                Hexa decimal
+            </option>
+        </select>
 
             </div>
             <label class="form__group" id="dec2421-result">0</label>
@@ -22797,7 +23251,7 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse13findd()">Find</button><br>
     <p id="impseans32" style= "font-family:mathfont"></p><br>
     <br>
-    <h4>sum of first N terms of the series 2*3*5, 3*5*7, 4*7*9, …… </h4><br>
+    <h4>Sum of first N terms of the series 2*3*5, 3*5*7, 4*7*9, …… </h4><br>
     <input type="text" id="impse35"class="form__field"placeholder="Enter no. of terms"><br>
     <button class="btn btn-dark" onclick="impse36find()">Find</button><br>
     <p id="impseans35" style= "font-family:mathfont"></p><br>
@@ -22886,7 +23340,7 @@ N is the population size.
     <h4>Collatz Sequence</h4><br>
     <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms"><br>
     <button class="btn btn-dark" onclick="impse21find()">Find</button><br>
-    <p id="impse21ans"></p>
+    <p id="impse21ans"></p><p id="impse21exp"></p>
     <br>
     <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
     <br>
@@ -22935,6 +23389,14 @@ N is the population size.
     <button class="btn btn-dark" onclick="impse22find()">Find</button>
     <br>
     <p id="impse22ans"></p>
+    <br>
+    <h4>Nth term of Series 12, 35, 81, 173, 357, …</h4>
+    <br>
+    <input type="text" id="imp113"class="form__field"placeholder="Enter no. of terms">
+    <br>
+    <button class="btn btn-dark" onclick="nth113find()">Find</button>
+    <br>
+    <p id="nth113ans"></p>
 </div>
 
         <!-- start of Hamming Code -->
@@ -23370,15 +23832,11 @@ N is the population size.
         <div class="form-group">
             <button type="button" class="btn btn-light" onclick="geoprobability(1)"> Solve </button>
             <button type="button" class="btn btn-light" onclick="geoprobability(2)"> Mean </button>
-            <button type="button" class="btn btn-light"
-                onclick="geoprobability(3)">
-                Variance
-            </button>
+            <button type="button" class="btn btn-light"  onclick="geoprobability(3)">Variance </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();"> Reset </button>
         </div>
     </form><br>
     <div class="form-group text-center"> <p class="stopwrap" style="color:white;" id="geoprobAns"></p></div><br>
-
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = \, p(1-p)^x\]</p> where,
         <br> p= probability of success <br> x= the number of failures until the first success
     </div>
@@ -26720,6 +27178,77 @@ N is the population size.
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="xshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">X - Shape</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Crossing length (x)</h5>
+                                    <p class="text-center">\[x = \frac{b \times \sin \gamma}{\sin 2\gamma}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Outer arm length (m)</h5>
+                                    <p class="text-center">\[m = \frac{l}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Immer arm length (n)</h5>
+                                    <p class="text-center">\[n = m - x\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h = 2 \times m \times \sin \frac{\beta}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/X-shape.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Width (i)</h5>
+                                    <p class="text-center">\[i = 2n \times \sin \frac{\alpha}{2} + 2b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 4 \times \left ( b + m + n \right )\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = 2 \times l \times b \times \sin \alpha - x^2 \sin \alpha\]</p><br><br>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Bar length (l) of X-Shape"
+                                   id="xshape-l" oninput="xshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Bar thickness (b) of X-Shape"
+                                   id="xshape-b" oninput="xshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle top/bottom (α) of X-Shape"
+                                   id="xshape-alpha" oninput="xshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle left, right (β) of X-Shape"
+                                   id="xshape-beta" oninput="xshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="gammaXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfCrossLenXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfOuterArmLenXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfImmerArmLenXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfHeightXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfWidthXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfPerimeterXshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultOfAreaXshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="hshape" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -27974,6 +28503,62 @@ N is the population size.
         </div>
     </div>
 
+    <div class="modal fade" id="concavehexagon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Concave Hexagon</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Breadth</h5>
+                                <p class="text-center">\[b = \sqrt{3} \space a \]</p>
+                                <p class="text-center">a = side length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h = \frac{3}{2} \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Perimeter</h5>
+                                <p class="text-center">\[p = 6 \space a \]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \sqrt{3} \space a^2  \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/concave-hexagon.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter side length (a)" id="inputconhexside"
+                                   oninput="solveconcavehex();">
+                        <p class="stopwrap" id="resultofconhexbreadth"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofconhexhei"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofconhexperi"
+                            style="font-family:mathfont;"></p> 
+                        <p class="stopwrap" id="resultofconhexarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="stretchhexagon" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -35424,6 +36009,32 @@ N is the population size.
         </div>
     </div>
     <!-- Disarium Number end -->
+    <!-- Automorphic number start-->
+    <div class="collapse" id="autonum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Automorphic number Checker</h2>
+            <br>
+            <p>A number is called Automorphic number if and only if its square ends in the same digits as the number itself.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="auton" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isAutoNum(document.getElementById('auton').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="autosq"></p><br>
+                <p class="stopwrap" style="color:white;" id="autoans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Automorphic number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 
