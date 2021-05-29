@@ -13522,15 +13522,23 @@ function divSums(n) {
 function typenum4find() {
     let N = parseInt(document.getElementById("typenum5").value)
     let s=0;
+    var ans="\\[Amicable \\space Number \\space in \\space this \\space range: \\space";
+    var ans2="\\[Sum:\\space";
     for (let i = 2; i <= N; i++) {
         let n1=divSums(i);
         let n2=divSums(n1)
         if (i == n2 && n1!=n2){
             s+=i;
-            console.log(i)
+            ans+=i+"\\space ,";
+            ans2+=i+"+";
         }
     }
-    document.getElementById("typenum4ans").innerHTML = s;
+    ans=ans.slice(0,-1);
+    ans2=ans2.slice(0,-1);
+    ans+="\\]";
+    ans2+="="+s+"\\]";
+    document.getElementById("typenum4ans").innerHTML = "\\[Sum \\space of \\space Amicable \\space Numbers \\space upto \\space n:"+s+" \\]"+ans+ans2;
+    renderMathInElement(document.getElementById("typenum4ans"))
 }
 //Sum of Fibonacci numbers at even indexes upto N terms
 function typenum6find() {
