@@ -23,11 +23,18 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
 $("#midrangebtn").click(function () {
     openit("#midrange");
     closenav();
     clearall();
 });
+
 $("#utc").click(function(){
     openit("#utcs");
     closenav();
@@ -69,11 +76,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#midrangebtn").click(function () {
-        openit("#midrange");
-        closenav();
-        clearall();
-    });
     $("#sensibtn").click(function () {
         openit("#sensi");
         closenav();
@@ -107,6 +109,12 @@ $(document).ready(function () {
 
     $("#minv").click(function () {
         openit("#mis");
+        closenav();
+        clearall();
+    });
+
+    $("#midrangebtn").click(function () {
+        openit("#midrange");
         closenav();
         clearall();
     });
@@ -259,6 +267,11 @@ $(document).ready(function () {
     });
     $("#arc").click(function () {
         openit("#arcs");
+        closenav();
+        clearall();
+    });
+    $("#hyper").click(function () {
+        openit("#hypers");
         closenav();
         clearall();
     });
@@ -561,8 +574,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
+    $("#ccbtn").click(function () {
+        openit("#cchart");
+        closenav();
+        clearall();
+    }); 
     $("#pbtn").click(function () {
         openit("#pchart");
+        closenav();
+        clearall();
+    });   
+    $("#rbtn").click(function () {
+        openit("#rchart");
         closenav();
         clearall();
     });   
@@ -571,6 +594,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#xbtn").click(function () {
+        openit("#xchart");
+        closenav();
+        clearall();
+    }); 
     $("#chitestbtn").click(function () {
         openit("#chitest");
         closenav();
@@ -673,6 +701,12 @@ $(document).ready(function () {
     });
     $("#per_chng_volbtn").click(function () {
         openit("#per_chng_vol");
+        closenav();
+        clearall();
+
+    });
+    $("#vect").click(function () {
+        openit("#vects");
         closenav();
         clearall();
 
@@ -780,6 +814,11 @@ $(document).ready(function () {
 
     $("#skew").click(function () {
         openit("#skews");
+        closenav();
+        clearall();
+    });
+    $("#kurtbtn").click(function () {
+        openit("#kurt");
         closenav();
         clearall();
     });
@@ -1602,6 +1641,11 @@ $(document).ready(function () {
     });
     $("#nbaserootcollapsebtn").click(function(){
         openit("#n_baseroot");
+        closenav();
+        clearall();
+    });
+    $("#co_primebtn").click(function(){
+        openit("#co_prime");
         closenav();
         clearall();
     });
