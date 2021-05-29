@@ -2134,16 +2134,35 @@ function polymax3find() {
 }
 
 function gif() {
-    var giffnum = parseInt(document.getElementById("giffnum").value)
-    if (giffnum >= 0) {
-        let ans = Math.floor(giffnum)
-        document.getElementById("giffans").innerHTML = "The gif is " + ans
+    var giffnum = parseFloat(document.getElementById("giffnum").value)
+    var output = document.getElementById("giffans");
+    var temp = "";
+    if (!isNaN(giffnum)){
+        "\\[The \\space Greatest \\space Integer \\space Function \\space will \\space be,\\]"
+        if (giffnum >= 0) {
+            var ans = Math.floor(giffnum)
+            temp += "\\[Here, \\space since \\space "+giffnum+" \\space is \\space greater \\space than \\space or \\space equal \\space to \\space 0\\]"
+            temp += "\\[GIF \\space = \\space (Largest \\space integer \\space less \\space than \\space or \\space equal \\space to \\space "+giffnum+")\\]"
+            temp += "\\[\\space = \\space "+ans+"\\]"
+
+            output.innerHTML = temp;
+        }
+        else {
+            var ans1 = Math.abs(giffnum)
+            var ans = Math.ceil(ans1)
+            temp += "\\[Here, \\space since \\space "+giffnum+" \\space is \\space less \\space than \\space 0\\]"
+            temp += "\\[GIF \\space = \\space (Rounded \\space number \\space up \\space to \\space the \\space next \\space largest \\space integer) \\space of \\space |"+giffnum+"|\\]"
+            temp += "\\[\\space = \\space(Rounded \\space number \\space up \\space to \\space the \\space next \\space largest \\space integer) \\space  of \\space "+ans1+"\\]"
+            temp += "\\[\\space = \\space "+ans+" \\]"
+
+            output.innerHTML = temp;
+        }
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input \\]"
+
+        output.innerHTML = temp;
     }
-    else {
-        let ans1 = Math.abs(ans1)
-        let ans = Math.ceil(ans1)
-        document.getElementById("giffans").innerHTML = "The gif is " + "-" + ans
-    }
+    renderMathInElement(output);
 }
 
 // dip - calculator to find direct proportion
