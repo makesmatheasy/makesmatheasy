@@ -5322,7 +5322,12 @@
                 <input style="margin-bottom:0px;" type="text" id="sievein" class="form__field" placeholder="Enter number upto which you want prime number" style="text-align: center; width: 100%;
                 max-width: 450px;">
                 <br><br>
-                <button style="margin-top:0px; width:80px" class="btn btn-dark" onclick="sievefind()">Find</button>
+                <button type="button" style="margin-top:0px; width:80px" class="btn btn-dark" onclick="sievefind()">
+                    Find
+                </button>
+                <button type="button" style="margin-top:0px; width:80px" class="btn btn-dark" onclick="this.form.reset();">
+                    Reset
+                </button>
                 <br>
             </form>
         
