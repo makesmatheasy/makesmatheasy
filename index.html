@@ -19813,13 +19813,28 @@
 </div>
 
 <!-- doubling time starts -->
-<div class="collapse" id="dbltime">
-    <h2 style="text-align:center;">Doubling Time</h2><br>
-    <p>The doubling time calculator, is a simple tool that lets you calculate how long it will take an amount to double given a constant growth rate</p><br>
-    <input type="text"id="inctime" placeholder="Enter % per period increase" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="dbltimeCal()">Calculate</button><br><br>
-    <p id="dbltimeans" style= "font-family:mathfont"></p><br>
-    <p id="dbltimeans1" style= "font-family:mathfont"></p><br>
+<div class="collapse" id="dbltime" style="text-align: center;">
+    <div class="container">
+        <h2 style="color: white;font-family:mathfont;text-align: center;">Doubling Time</h2>
+        <br>
+        <p>The doubling time calculator, is a simple tool that lets you calculate how long it will take an amount to double given a constant growth rate</p><br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="inctime" placeholder="Enter % per period increase" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="dbltimeCal()">Calculate</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="dbltimeans"></p><br>
+            <p class="stopwrap" style="color:white;" id="dbltimeans1"></p><br>
+        </div>
+    </div>
 </div>
 <!-- doubling time ends -->
 
