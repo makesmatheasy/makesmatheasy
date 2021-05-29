@@ -10028,8 +10028,10 @@ function sphericalTriangleSolve() {
         areaField.innerHTML = "";
     }
     else if ((!isNaN(r)) && (!isNaN(alpha)) && (!isNaN(beta)) && (!isNaN(gamma))) {
-        sphericalExcessField.innerHTML = `Spherical excess (ε) = ${sphericalExcess}°`;
-        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+        sphericalExcessField.innerHTML = "\\[Spherical \\space excess \\space (\\epsilon) = "+alpha+" \\degree + "+beta+" \\degree + "+gamma+" \\degree - 180 \\degree = "+sphericalExcess+" \\degree \\]";
+        areaField.innerHTML = "\\[Area \\space (A) = \\epsilon \\times "+r+"^2 = "+area+" \\space sq.units\\]";
+        renderMathInElement(sphericalExcessField);
+        renderMathInElement(areaField);
     }
 }
 
