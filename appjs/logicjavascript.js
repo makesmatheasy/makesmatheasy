@@ -2872,6 +2872,19 @@ function setBits(n)
     return count;
 }
 
+function nth113find(){
+    var nterms = (document.getElementById("imp113").value);
+    if (nterms != "") {
+        let first = 12;
+        var ntherm = ((first*(Math.pow(2,nterms-1)))+11*((Math.pow(2,nterms-1))-1));
+        document.getElementById("nth113ans").innerHTML = ntherm;
+    }
+    else{
+        document.getElementById("nth113ans").innerHTML = "Please enter all Input"
+    }
+
+}
+
 //Important Series and Sequences start
 
 function impsefind() {
