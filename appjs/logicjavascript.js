@@ -7770,7 +7770,7 @@ function solveconcavehex() {
         heioutput.innerHTML = heitemp;
         peritemp += "\\[Perimeter \\space \\newline 6 \\times" + a + "\\ = " + eval(String(6 * a)).toFixed(2) + "\\]";
         perioutput.innerHTML = peritemp;
-        areatemp += "\\[Area \\space \\newline \\sqrt{3} \\times" + a + ")^2" + "\\ = " + eval(String(1.7320508 * a * a)).toFixed(2) + "\\]";
+        areatemp += "\\[Area \\space \\newline \\sqrt{3} \\times (" + a + ")^2" + "\\ = " + eval(String(1.7320508 * a * a)).toFixed(2) + "\\]";
         areaoutput.innerHTML = areatemp;
         renderMathInElement(breadthoutput);
         renderMathInElement(heioutput);
