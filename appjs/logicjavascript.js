@@ -8461,12 +8461,22 @@ function doublecycloidsolve() {
     var shortDia = 4 * a;
     var perimeter = 2 * arcLength;
     var area = 6 * Math.PI * Math.pow(a, 2);
+    var arcLenField = document.getElementById("resultOfDoubleCycArcLen");
+    var longDiaField = document.getElementById("resultOfDoubleCycLongDia");
+    var shortDiaField = document.getElementById("resultOfDoubleCycShortDia");
+    var perimeterField = document.getElementById("resultOfDoubleCycPeri");
+    var areaField = document.getElementById("resultOfDoubleCycArea");
     if ((!isNaN(a))){
-        document.getElementById("resultOfDoubleCycArcLen").innerHTML = `Arc length (b) = ${arcLength}`;
-        document.getElementById("resultOfDoubleCycLongDia").innerHTML = `Long diameter (c) = ${longDia.toFixed(4)}`;
-        document.getElementById("resultOfDoubleCycShortDia").innerHTML = `Short diameter (d) = ${shortDia}`;
-        document.getElementById("resultOfDoubleCycPeri").innerHTML = `Perimeter (p) = ${perimeter}`;
-        document.getElementById("resultOfDoubleCycArea").innerHTML = `Area (A) = ${area.toFixed(4)}`;
+        arcLenField.innerHTML = "\\[Arc \\space length \\space (b) = 8 \\times "+a+" = "+arcLength.toFixed(4)+" \\space units \\]";
+        longDiaField.innerHTML = "\\[Long \\space diameter \\space (c) = 2 \\times \\pi \\times "+a+" = "+longDia.toFixed(4)+" \\space units\\]";
+        shortDiaField.innerHTML = "\\[Short diameter (d) = 4 \\times "+a+" = "+shortDia.toFixed(4)+" \\space units\\]";
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = 2 \\times "+longDia+" = "+perimeter+" \\space units \\]";
+        areaField.innerHTML = "\\[Area \\space (A) = 6 \\times \\pi \\times "+a+"^2 = "+area+" sq.units\\]";
+        renderMathInElement(arcLenField);
+        renderMathInElement(longDiaField);
+        renderMathInElement(shortDiaField);
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField);
     }
 }
 
