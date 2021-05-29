@@ -20662,24 +20662,56 @@ function recinsemifind() {
 //Hyperbolic trignometric ratios
 function hypertrigno() {
     var i = (document.getElementById("hypertrignoin").value);
-    var sinh = document.getElementById("hypersinh");
-    var cosh = document.getElementById("hypercosh");
-    var tanh = document.getElementById("hypertanh");
-    var hyperresult = document.getElementById("hyperresult");
+    var hyperout = document.getElementById("hyperresult");
+    var sinhout = document.getElementById("hypersinh");
+    var coshout = document.getElementById("hypercosh");
+    var tanhout = document.getElementById("hypertanh");
+    var sinhtemp = "";
+    var coshtemp = "";
+    var tanhtemp = "";
+    var hypertemp = "";
     var a = Math.sinh(parseInt(i));
     var b = Math.cosh(parseInt(i));
     var c = Math.tanh(parseInt(i));
-    if (i != "") {
-        hyperresult.innerHTML = 'The value of Hyperbolic trigonometric ratios '
-        sinh.innerHTML = `Value of sinh( ${i} )  is  ${a}`;
-        cosh.innerHTML = `Value of cosh( ${i} ) is  ${b}`;
-        tanh.innerHTML = `Value of tanh( ${i} )  is ${c}`;
-    } else {
-        hyperresult.innerHTML = 'Please enter the value'
-        sinh.innerHTML = '';
-        cosh.innerHTML = '';
-        tanh.innerHTML = '';
+    if (!isNaN(i) && i != "") {
+        hypertemp = "\\[The \\space value \\space of \\space Hyperbolic \\space trigonometric \\space ratios \\space will \\space be, \\]";
+        sinhtemp += "\\[The \\space value \\space of \\space sinh( "+i+") \\space will \\space be,\\]"
+        sinhtemp += "\\[\\space = \\space \\frac{e^{"+i+"} - e^{(-"+i+")}}{2}\\]"
+        sinhtemp += "\\[\\space = \\space \\frac{"+((math.e**(i) - math.e**(-i)) ).toFixed(2)+"}{2}\\]"
+        sinhtemp += "\\[\\space = \\space "+a.toFixed(3)+"\\]"
+        
+        hyperout.innerHTML = hypertemp;
+        sinhout.innerHTML = sinhtemp;
+
+        coshtemp += "\\[The \\space value \\space of \\space cosh( "+i+") \\space will \\space be,\\]"
+        coshtemp += "\\[\\space = \\space \\frac{e^{"+i+"} + e^{(-"+i+")}}{2}\\]"
+        coshtemp += "\\[\\space = \\space \\frac{"+((math.e**(i) + math.e**(-i)) ).toFixed(2)+"}{2}\\]"
+        coshtemp += "\\[\\space = \\space "+b.toFixed(3)+"\\]"
+        
+        coshout.innerHTML = coshtemp;
+
+        tanhtemp += "\\[The \\space value \\space of \\space tanh( "+i+") \\space will \\space be,\\]"
+        tanhtemp += "\\[\\space = \\space \\frac{sinh("+i+")}{cosh("+i+")}\\]"
+        tanhtemp += "\\[\\space = \\space \\frac{"+((math.e**(i) - math.e**(-i)) ).toFixed(2)+"}{"+((math.e**(i) + math.e**(-i)) ).toFixed(2)+"}\\]"
+        tanhtemp += "\\[\\space = \\space "+c.toFixed(3)+"\\]"
+        
+        tanhout.innerHTML = tanhtemp;
+    } 
+    else {
+        hypertemp = "\\[Please \\space enter \\space valid \\space input\\]"
+        sinhtemp = "";
+        coshtemp = "";
+        tanhtemp = "";
+
+        hyperout.innerHTML = hypertemp;
+        sinhout.innerHTML = sinhtemp;
+        coshout.innerHTML = coshtemp;
+        tanhout.innerHTML = tanhtemp;
     }
+    renderMathInElement(hyperout)
+    renderMathInElement(sinhout)
+    renderMathInElement(coshout)
+    renderMathInElement(tanhout)
 }
 //Percentage to Ratio
 function perratcal() {
