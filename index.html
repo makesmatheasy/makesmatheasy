@@ -4940,6 +4940,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="ccbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">C chart Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('C chart Calculator','#cchart','c','cfav')"><img
+                                        id="zscimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             
             <li>
                 <table class="table">
@@ -13505,6 +13520,32 @@
                 <p id="pvalue"></p>
             </div>
         </div>
+    <!-- C control chart -->
+        <div class="collapse" id="cchart">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">C chart Calculator</h1>
+            <p style="margin-top: 2rem;">
+                A c-chart is an attributes control chart used with data collected in subgroups that are the same size. C-charts show how the process,
+                 measured by the number of nonconformities per item or group of items, changes over time. Nonconformities are defects or occurrences
+                  found in the sampled subgroup.
+            </p>
+            <p id="tformula" style="margin-bottom:4rem;"></p>
+            <form action="">
+                <input class = "form__field"type="text" id="cdefective" placeholder="Enter list of defective items separated by SPACE ">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="cvalue()">Test</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+            </form>
+            <p id="cpans"></p>
+            <div id="stepsbox">    
+                <p id="ccl" style="text-align: left; margin-top: 2rem;"></p>
+                <p id="cuppercontrol" ></p>
+                <p id="clowercontrol" ></p>
+            </div>
+        </div> 
+
+
+
+
          <!-- p chart-->
          <div class="collapse" id="pchart">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">p chart Calculator</h1>

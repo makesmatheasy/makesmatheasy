@@ -244,6 +244,7 @@ function openit(id) {
         "#ftest",
         "#ztest",
         "#golds",
+        "#cchart",
         "#pchart",
         "#npchart",
         "#betagamma",
