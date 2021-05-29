@@ -13299,10 +13299,7 @@ function typenum15find(){
         document.getElementById("typenum15ans").innerHTML  =  "NO"
 
 
-    }    
-
-
-
+}    
 
 
 function simpleSieve(){
