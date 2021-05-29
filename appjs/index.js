@@ -384,6 +384,7 @@ function openit(id) {
         "#maxmin",
         "#locroots",
         "#tangent",
+        "#co_prime",
         "#srf",
         "#probabilitycollapse",
         "#joint-probabilitycollapse",
