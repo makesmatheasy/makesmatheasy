@@ -1683,6 +1683,7 @@ function pvaluecal()
     var temp = "";
     var Zval = (1/Math.sqrt(2*3.14)* (2.71)**((z**2)/2));
     var ans = 2*Zval;
+    var exp = "";
     if(isNaN(z))
     {
         temp = "Please enter proper value";
@@ -1690,9 +1691,13 @@ function pvaluecal()
     }
     else
     {
-        temp = "P value: " + ans;
-        output.innerHTML = temp;
+        exp += "\\[P\\space value\\space = \\space 2\\times \\phi (Z)\\]";
+        exp += "\\[\\phi (Z)\\space = \\space frac{1}{\\sqrt{(2\\times \\pi)} \\times (e)^{frac{z^2}{2}}} \\]";
+        exp += "\\[P\\space value\\space = \\space 2\\times frac{1}{\\sqrt{(2\\times 3.14)} \\times (2.71)^{frac{"+z+"^2}{2}}}\\]";
+        exp += "\\[P\\space value\\space = \\space "+ans+"\\]";
+        output.innerHTML = exp;
     }
+    renderMathInElement(output);
 }
 
 

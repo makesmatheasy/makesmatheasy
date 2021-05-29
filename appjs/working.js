@@ -650,7 +650,7 @@ $(document).ready(function () {
         clearall();
     });
     $("#pvaluebtn").click(function () {
-        openit("#pvalue");
+        openit("#pvalues");
         closenav();
         clearall();
     });
