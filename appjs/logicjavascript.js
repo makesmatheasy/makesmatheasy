@@ -16536,8 +16536,16 @@ function polymax9find() {
 function polymax10find() {
     let n = parseInt(document.getElementById("polymax10").value)
     let a = parseInt(document.getElementById("polymax11").value)
-    var radius = (a / Math.sqrt(2 - (2 * Math.cos(360 / n))));
-    document.getElementById("polymax10ans").innerHTML = radius;
+    if(!isNaN(n)||!isNaN(a)){
+        var radius = (a / Math.sqrt(2 - (2 * Math.cos(360 / n))));
+        document.getElementById("polymax10ans").innerHTML = radius;
+        document.getElementById("polymax10exp").innerHTML = "\\[A regular n-gon divides the circle into n pieces, so the central angle of the triangle is a full circle divided by n: 360 deg/n. \\]"
+        document.getElementById("polymax10exp").innerHTML = "\\[Applying the law of cosines for the three side lengths of the triangle, we get\\]"
+        document.getElementById("polymax10exp").innerHTML = "\\[c2 = a2 + b2 – 2ab cos C \\]"
+        document.getElementById("polymax10exp").innerHTML = "\\[a=r√(2-2cos(360/n))\\]"
+        document.getElementById("polymax10exp").innerHTML = "\\[r=a/√(2-2cos(360/n)) \\]"
+        renderMathInElement(document.getElementById("polymax10exp"));
+    }
 }
 
 function polymax11find(){
