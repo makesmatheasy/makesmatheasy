@@ -13251,31 +13251,31 @@ function golds2find() {
 function golds3find() {
     let a = document.getElementById("golds4").value
     let b = document.getElementById("golds5").value
-    if (a < b) {
-        a = a + b;
-        b = a - b;
-        a = a - b;
+    if(!isNaN(a)|| !isNaN(b)){
+        document.getElementById("golds3exp").innerHTML = "\\[Two numbers are said to be in silver ratio if \\]"
+        document.getElementById("golds3exp").innerHTML = "\\[The ratio of the sum of the smaller and twice the larger number to the larger number is the same as the ratio of the larger one to the smaller one.\\]"
+        document.getElementById("golds3exp").innerHTML = "\\[\\frac{2*A+B}{A} = \\frac{A}{B} = \\delta_{\\varsigma} = {1+ \sqrt{2}} = 2.414  \\]"
+        document.getElementById("golds3exp").innerHTML = "\\[ The idea is to find two ratios and check whether they are equal to the silver ratio(2.414).\\]"
+        if (a < b) {
+            a = a + b;
+            b = a - b;
+            a = a - b;
+        }
+        let ratio1 = ((a / b) * 1000) / 1000;
+        let ratio2 = Math.floor(((2 * a + b) /
+            a) * 1000);
+        ratio2 = ratio2 / 1000;
+        if (ratio1 == ratio2 &&
+            (ratio1 - 2.414) == 0) {
+            document.getElementById("golds3ans").innerHTML = "Yes";
+        }
+        else {
+            document.getElementById("golds3ans").innerHTML = "No";
+        }
+        renderMathInElement(document.getElementById("golds3exp"))
     }
-
-    // First Ratio
-    let ratio1 = ((a / b) * 1000) / 1000;
-
-    // Second Ratio
-    let ratio2 = Math.floor(((2 * a + b) /
-        a) * 1000);
-    ratio2 = ratio2 / 1000;
-
-    // Condition to check that two
-    // numbers are in silver ratio
-    if (ratio1 == ratio2 &&
-        (ratio1 - 2.414) == 0) {
-        document.getElementById("golds3ans").innerHTML = "Yes";
-        // return true;
-    }
-    else {
-        document.getElementById("golds3ans").innerHTML = "No";
-        // return false;
-    }
+    else 
+        document.getElementById("golds3ans").innerHTML = "Not a Valid Input"
 }
 
 // profit/loss calculations over discount
