@@ -13710,7 +13710,19 @@ function typenum15find()
         document.getElementById("typenum15ans").innerHTML  =  "Yes"
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
+<<<<<<< HEAD
+ 
+
+}
+||||||| 6e7cb7c
+
+
+    }    
+
+}
+=======
 }    
+>>>>>>> 7d47dad8696a64a7ed2f20397483870eeb04a552
 
 
 
@@ -21816,6 +21828,10 @@ function relrisk() {
 
     if (a == "" || b == "" || c == "" || d == "") {
         document.getElementById("relriskans").innerHTML = "Enter all the inputs";
+    }
+    else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
+    {
+        document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
     }
     else {
         let ans = (a / (a + b)) / (c / (c + d));
