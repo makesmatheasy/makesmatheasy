@@ -17359,6 +17359,15 @@ function subBinDecHexOct() {
             result.innerHTML = fracDectoBinHexOct(x3,2);
             work.innerHTML = "";
         }
+        else if(base === "Decimal"){
+            x1 = parseFloat(input1);
+            x2 = parseFloat(input2);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = parseFloat(x3);
+            work.innerHTML = "";
+        }
     }else{
     if (input1.length > input2.length) {
         var p = input1.length - input2.length;
