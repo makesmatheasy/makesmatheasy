@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#disnum",
         "#gammaDist",
         "#expoDist",
         "#ackermann",
@@ -357,6 +358,7 @@ function openit(id) {
         "#plotangle",
         "#profitloss",
         "#cylin_shell",
+        "#obcyshell",
         "#differentiate-rulecollapse",
         "#emical",
         "#gstcal",

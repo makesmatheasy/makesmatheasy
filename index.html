@@ -3005,6 +3005,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="disnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Disarium Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Disarium Number','#disnum','c','disnumimgfav')"><img
+                                        id="disnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -7183,8 +7198,10 @@
              <div class="stopwrap">
                 <div class="coll">
                     <div class="left">
-                       <h4>Types of Relations </h4>
-                        <p>
+                       <h4 style="font-size:32px">Types of Relations </h4>
+                       <br>
+                       <br>
+                        <p style="color:#ababab !important;" >
                          Sets and relation are interconnected with each other. The relation defines the relation between two
                         given
                         <br> sets. If there are two sets available, then to check if there is any connection between the two
@@ -7192,88 +7209,91 @@
                          we use relations For example, An empty relation denotes none of the elements in the two sets is
                         same.
                          </p>
+                         <br>
                          <p>There are 8 main types of relations which include:</p>
                          <br>
                 <h4> 1. Empty Relation</h4>
-                <p>An empty relation (or void relation) is one in which there is no relation between any
+                <p style="color:#ababab !important;">An empty relation (or void relation) is one in which there is no relation between any
                     <br>
                     elements of a set. For example, if set A = {1, 2, 3} then, one of the void relations can
                     be R = {x, y} <br>
                     where, |x &#8211; y| = 8. For empty relation,
                 </p>
-                <p><strong>R = φ ⊂ A × A</strong><br /><br>
+                <p style="color:#ababab !important;"><strong>R = φ ⊂ A × A</strong><br /><br>
                 <h4> 2. Universal Relation</h4>
-                <p>A universal (or full relation) is a type of relation in which every element of a <br>
+                <p style="color:#ababab !important;">A universal (or full relation) is a type of relation in which every element of a <br>
                     set is related to each other. Consider set A = {a, b, c}. Now one of the universal <br>
-                    relations will be R = {x, y} where, |x &#8211; y| ≥ 0. For universal relation,</p>
-                <p><strong>R = A × A</strong><br />
-                <h4> 3. Identity Relation</h4>
-                <p>In an identity relation, every element of a set is related to itself only. <br>
+                    relations will be R = {x, y} where, |x &#8211; y| ≥ 0. For universal relation,
+                <p style="color:#ababab !important;"><strong>R = A × A</strong><br /> </p></p>
+               <br>
+                    <h4> 3. Identity Relation</h4>
+                <p style="color:#ababab !important;" >In an identity relation, every element of a set is related to itself only. <br>
                     For example,in a set A = {a, b, c}, the identity relation will be <br>
                     I = {a, a}, {b, b}, {c, c}. For identity relation,</p>
-                <p><strong>I = {(a, a), a ∈ A}</strong><br /><br>
+                <p style="color:#ababab !important;"><strong>I = {(a, a), a ∈ A}</strong><br /><br>
                 <h4> 4. Inverse Relation</h4>
-                <p>Inverse relation is seen when a set has elements which are inverse pairs of <br>
+                <p style="color:#ababab !important;">Inverse relation is seen when a set has elements which are inverse pairs of <br>
                     another set. For example if set A = {(a, b), (c, d)}, then inverse relation will be<br>
                     R<sup>-1</sup> = {(b, a), (d, c)}. So, for an inverse relation,</p>
-                <p><strong>R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</strong><br /><br>
+                <p style="color:#ababab !important;"><strong>R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</strong><br /><br>
                 <h4> 5. Reflexive Relation</h4>
-                <p>In a reflexive relation, every element maps to itself. For example, consider a <br>
+                <p style="color:#ababab !important;">In a reflexive relation, every element maps to itself. For example, consider a <br>
                     set A = {1, 2,}. Now an example of reflexive relation will be<br>
                     R = {(1, 1), (2, 2), (1, 2), (2, 1)}. The reflexive relation is given by-</p>
-                <p><strong>(a, a) ∈ R</strong><br /><br>
+                <p style="color:#ababab !important;"><strong>(a, a) ∈ R</strong><br /><br>
                 <h4> 6. Symmetric Relation</h4>
-                <p>In a symmetric relation, if a=b is true then b=a is also true. In other words,<br>
+                <p style="color:#ababab !important;">In a symmetric relation, if a=b is true then b=a is also true. In other words,<br>
                     a relation R is symmetric only if (b, a) ∈ R is true when (a,b) ∈ R. An example of
                     symmetric <br>
                     relation will be R = {(1, 2), (2, 1)} for a set A = {1, 2}. So, for a symmetric
                     relation,</p>
-                <p><strong>aRb ⇒ bRa, ∀ a, b ∈ A</strong><br /><br>
+                <p style="color:#ababab !important;"><strong>aRb ⇒ bRa, ∀ a, b ∈ A</strong><br /><br>
                 <h4> 7. Transitive Relation</h4>
-                <p>For transitive relation, if (x, y) ∈ R, (y, z) ∈ R, then (x, z) ∈ R. For a transitive
+                <p style="color:#ababab !important;">For transitive relation, if (x, y) ∈ R, (y, z) ∈ R, then (x, z) ∈ R. For a transitive
                     relation,</p>
-                <p><strong>aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</strong><br /><br>
+                <p style="color:#ababab !important;"><strong>aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</strong><br /><br>
                 <h4> 8. Equivalence Relation</h4>
-                    <p>If a relation is reflexive, symmetric and transitive at the same time it is known as
+                    <p style="color:#ababab !important;">If a relation is reflexive, symmetric and transitive at the same time it is known as
                         an equivalence relation.<br /></p>
                     <br>
                     <h3 style="text-align: center;">Representation of Types of Relations</h3>
+                   <br>
                     <div class="table-responsive">
                         <table class="table table-bordered table-dark">
                                 <thead>
                                     <tr>
-                                        <th>Relation Type</th>
-                                        <th>Condition</th>
+                                        <th style="text-align:center; font-size: 20px;">Relation Type</th>
+                                        <th style="text-align:center; font-size:20px">Condition</th>
                                     </tr>
                                 </thead>
                             <tbody class="abc">
                                 <tr>
-                                    <td>Empty Relation</td>
-                                    <td>R = φ ⊂ A × A</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Empty Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">R = φ ⊂ A × A</td>
                                 </tr>
                                 <tr>
-                                    <td>Universal Relation</td>
-                                    <td>R = A × A</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Universal Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">R = A × A</td>
                                 </tr>
                                 <tr>
-                                    <td>Identity Relation</td>
-                                    <td>I = {(a, a), a ∈ A}</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Identity Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">I = {(a, a), a ∈ A}</td>
                                 </tr>
                                 <tr>
-                                    <td>Inverse Relation</td>
-                                    <td>R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Inverse Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</td>
                                 </tr>
                                 <tr>
-                                    <td>Reflexive Relation</td>
-                                    <td>(a, a) ∈ R</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Reflexive Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">(a, a) ∈ R</td>
                                 </tr>
                                 <tr>
-                                    <td>Symmetric Relation</td>
-                                    <td>aRb ⇒ bRa, ∀ a, b ∈ A</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Symmetric Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">aRb ⇒ bRa, ∀ a, b ∈ A</td>
                                 </tr>
                                 <tr>
-                                    <td>Transitive Relation</td>
-                                    <td>aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">Transitive Relation</td>
+                                    <td style="color:#ababab !important; font-size: 18px;">aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -9109,17 +9129,13 @@
             </form>
             <p id="lacube4ans"></p>
             <br>
-            <h2>Difference between Sum of Cubes and Sum of First N Natural Numbers</h2>
-            <br>
+            <h2>Difference between Sum of Cubes and Sum of First N Natural Numbers</h2><br>
             <form action="">
-                <input type="text" id="lacube5" class="form__field" placholder="Enter the no. of terms in progression">
-                <br>
+                <input type="text" id="lacube5" class="form__field" placholder="Enter the no. of terms in progression"><br>
                 <button type="button" class="btn btn-dark" onclick="lacube5find()">Find</button>
-                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
             </form>
-            <p id="lacube5ans"></p>
-            <br>
+            <p id="lacube5ans"></p><br>
             <h2>Difference between Sum of Cubes and Sum of Squares of First N Natural Numbers</h2>
             <br>
             <form action="">
@@ -9130,17 +9146,6 @@
                 <br>
             </form>
             <p id="lacube6ans"></p>
-            <br>
-            <h2>Difference between Sum of Squares and Sum of First N Natural Numbers</h2>
-            <br>
-            <form action="">
-                <input type="text" id="lacube10" class="form__field" placholder="Enter the no. of terms in progression">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube9find()">Find</button>
-                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>
-            <p id="lacube9ans"></p>
             <br>
             <h2>Minimum digits to remove to make a number Perfect Square</h2>
             <br>
@@ -9159,14 +9164,24 @@
             <br>
             <p class="stopwrap" id="lacube8ans"></p>
             <br>
+            <h2>Difference between Sum of Squares and Sum of First N Natural Numbers</h2>
+            <br>
+            <form action="">
+                <input type="text" id="lacube10" class="form__field" placholder="Enter the no. of terms in progression">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="lacube9find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            <p id="lacube9ans"></p>
+            <br>
             <h2>Count square and non-square numbers before n</h2>
             <br>
             <input type="text" id="lacube11" class="form__field" placholder="Enter the number">
             <br>
             <button type="button" class="btn btn-dark" onclick="lacube10find()">Find</button>
             <br>
-            <p id="lacube10ans"></p>
-            <p id="lacube10exp"></p>
+            <p id="lacube10ans"></p><p id="lacube10exp"></p>
             <br>
             <h2>Check whether a number can be represented by sum of two squares</h2>
             <br>
@@ -13022,78 +13037,29 @@
 
         <div class="collapse" id="excircum">
             <h2>Distance between excentre and circumcentre</h2><br>
-            <p>For OI1</p>
-            <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
-                <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
-                <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/><br><br>
-                <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button>
-                <br>
-            </div>
-                <p  id="excircum1"></p>><br>
-                <br><br>
+                <p>For OI1</p>
+                <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
+                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/><br><br>
+                    <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button><br>
+                </div>
+                    <p id="excircum1"></p><br><br>
 
                 <p>For OI2 and OI3</p>
                 <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
-    
                 <div class="form-group">
                     <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
                     <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
                     <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
-                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/>
-                    <br>
-    
-                    <br>
+                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/><br><br>
                     <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
                     <br>
                 </div>
-    
-                    <h2  id="excircum2"></h2><br>
-
+                    <p  id="excircum2"></p><br><br>
         </div>
-
-        <div class="collapse" id="excircum">
-            <h2>Distance between excentre and circumcentre</h2>
-            <br>
-            <p>For OI1</p>
-            <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
-
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
-                <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
-                <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/>
-                <br>
-
-                <br>
-                <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button>
-                <br>
-            </div>
-
-                <h2  id="excircum1"></h2><br>
-                <br><br>
-
-                <p>For OI2 and OI3</p>
-                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
-    
-                <div class="form-group">
-                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
-                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
-                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
-                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/>
-                    <br>
-    
-                    <br>
-                    <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
-                    <br>
-                </div>
-    
-                    <h2  id="excircum2"></h2><br>
-
-        </div>
-
 
         <!-- sensitivity and Specificity starts -->
     <div class="collapse" id="sensi">
@@ -13422,14 +13388,12 @@
         <div class="collapse text-center" id="giff">
             <h2>Greatest Integer Function and Fractional Part</h2>
             <form class="text-center">
-                <input class = "form__field"type="text" id="giffnum" style="max-width: 500px;">
-            <br><br>
+                <input class = "form__field"type="text" id="giffnum" style="max-width: 500px;"><br><br>
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 text-center">
                         <button class = "btn btn-light" type="button" onclick="gif()">Greatest Integer Function</button>
                     </div>
-                </div>
-                <br>
+                </div><br>
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 text-center">
                         <button class = "btn btn-light" type="button" onclick="fp()">Fractional Part Function</button>
@@ -13443,8 +13407,8 @@
                     
                 </div>
             </form>
-            <p id="giffans"></p>
-            <p id="fpans"></p>
+            <p id="giffans"></p><br>
+            <p id="fpans"></p><br>
         </div>
         <!-- Quartiles -->
         <div class="collapse" id="qrtl">
@@ -13839,10 +13803,12 @@
             <br><br>
             <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
             <br><br>
-            <input class = "form__field"type="number" id="degFree" placeholder="Enter Degree of Freedom (d.f.)">
-            <br><br>
+        
             <button class = "btn btn-light" onclick="chivalue()">Test</button>
+            <p id="chians"></p>
+            <br>
             <p id="chitestans"></p>
+            <br>
             <p id="concluChi"></p>
         </div>
 
@@ -16263,6 +16229,10 @@
                            style="text-decoration:none;" href="#">Cycloid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#doublecycloid"
+                           style="text-decoration:none;" href="#">Double Cycloid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#ellipse"
                            style="text-decoration:none;" href="#">Ellipse</a></td>
                 </tr>
@@ -16851,15 +16821,13 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
             <h5 id="scyf2ans"></h5> </form>
             <br>
-            <h4>Find slant height of cone and pyramid</h4>
-            <br>
+            <h4>Find slant height of cone and pyramid</h4><br>
             <form action="">
             <input type="text" id="scyf8" class="form__field" placeholder="Enter the  height of  pyramid">
-            <input type="text" id="scyf9" class="form__field" placeholder="Enter the radius of square pyramid">            
-            <br>
+            <input type="text" id="scyf9" class="form__field" placeholder="Enter the radius of square pyramid"><br>
             <button type="button" class="btn btn-dark" onclick="scyf3find()">Find</button>
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
-            <h5 id="scyf3ans"></h5> </form>      
+            <p id="scyf3ans"></p> </form>      
         </div>
 
         <div class="collapse" id="tdshapescal">
@@ -17287,6 +17255,11 @@
                                 <td><a data-toggle="modal" data-target="#cylin_shell"
                                         style="text-decoration:none;"
                                         href="#">Cylindrical Shell</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#obcyshell"
+                                        style="text-decoration:none;"
+                                        href="#">Oblique Cylindrical Shell</a></td>
                             </tr>
                             <tr>
                                 <td><a data-toggle="modal" data-target="#halfsphere_shell"
@@ -19123,6 +19096,7 @@
             <div class="form-group">
                <p id="nGPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
 			  <br>
+            </div>
             
             <br>
             <h4 class="d-flex justify-content-center">Sum of P terms of an GP if mth and nth terms are given</h4><br>
@@ -19211,7 +19185,7 @@
                 </form>
             </div>
                 <p id="printHPseries"></p>
-                <br>
+                <br><br>
             <h4 class="d-flex justify-content-center">Insert n-Harmonic Mean between two numbers</h4><br>
             <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                 <input type="number" id="nt3" placeholder="Enter the Nterms  (n)"
@@ -19879,13 +19853,28 @@
 </div>
 
 <!-- doubling time starts -->
-<div class="collapse" id="dbltime">
-    <h2 style="text-align:center;">Doubling Time</h2><br>
-    <p>The doubling time calculator, is a simple tool that lets you calculate how long it will take an amount to double given a constant growth rate</p><br>
-    <input type="text"id="inctime" placeholder="Enter % per period increase" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="dbltimeCal()">Calculate</button><br><br>
-    <p id="dbltimeans" style= "font-family:mathfont"></p><br>
-    <p id="dbltimeans1" style= "font-family:mathfont"></p><br>
+<div class="collapse" id="dbltime" style="text-align: center;">
+    <div class="container">
+        <h2 style="color: white;font-family:mathfont;text-align: center;">Doubling Time</h2>
+        <br>
+        <p>The doubling time calculator, is a simple tool that lets you calculate how long it will take an amount to double given a constant growth rate</p><br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="inctime" placeholder="Enter % per period increase" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="dbltimeCal()">Calculate</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="dbltimeans"></p><br>
+            <p class="stopwrap" style="color:white;" id="dbltimeans1"></p><br>
+        </div>
+    </div>
 </div>
 <!-- doubling time ends -->
 
@@ -19972,10 +19961,7 @@
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-light" onclick="exprobability(1)"> Solve </button>
-            <button type="button" class="btn btn-light"
-                    onclick="exprobability(2)">
-                Mean
-            </button>
+            <button type="button" class="btn btn-light" onclick="exprobability(2)"> Mean </button>
             <button type="button" class="btn btn-light"
                 onclick="exprobability(3)">
                 Variance
@@ -23409,19 +23395,13 @@ N is the population size.
             </div>
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-light"
-                    onclick="geoprobability(1)">
-                Solve
-            </button>
-            <button type="button" class="btn btn-light"
-                    onclick="geoprobability(2)">
-                Mean
-            </button>
+            <button type="button" class="btn btn-light" onclick="geoprobability(1)"> Solve </button>
+            <button type="button" class="btn btn-light" onclick="geoprobability(2)"> Mean </button>
             <button type="button" class="btn btn-light"
                 onclick="geoprobability(3)">
                 Variance
             </button>
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">  Reset </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();"> Reset </button>
         </div>
     </form><br>
     <div class="form-group text-center"> <p class="stopwrap" style="color:white;" id="geoprobAns"></p></div><br>
@@ -24818,6 +24798,68 @@ N is the population size.
                             <p class="stopwrap" id="resultofcycarea"
                                 style="font-family:mathfont;"></p><br>
                             <p class="stopwrap" id="resultofcycheight"
+                                style="font-family:mathfont;"></p><br>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="modal fade" id="doublecycloid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Double Cycloid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Arc length (b)</h5>
+                                    <p class="text-center">\[b = 8 \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Long diameter (c)</h5>
+                                    <p class="text-center">\[c = 2 \times \pi \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Short diameter (d)</h5>
+                                    <p class="text-center">\[d = 4 \times a\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/double-cycloid.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 2 \times b\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = 6 \times \pi \times a^2 \]</p><br>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number" placeholder="Enter Radius of circle (a)" 
+                                id="doublecycloid-a" oninput="doublecycloidsolve();">
+                            <p class="stopwrap" id="resultOfDoubleCycArcLen"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycLongDia"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycShortDia"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycPeri"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultOfDoubleCycArea"
                                 style="font-family:mathfont;"></p><br>
                           </div>
                         <!-- ------HERE------ -->
@@ -33322,6 +33364,70 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="obcyshell" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Oblique Cylindrical Shell</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V= \pi h (R^2-r^2)\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A=2 \pi [(R+r) \times a + (R^2-r^2)]\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = a \times sin(\alpha)\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/oblique-cylindrical-shell.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                               placeholder="Enter outer radius (R)" id="inputobcylinshellR"
+                               oninput="solveobcylinshell();">
+                            <input class="form__field" type="number"
+                               placeholder="Enter inner radius (r)" id="inputobcylinshellr"
+                               oninput="solveobcylinshell();">
+                             <input class="form__field" type="number"
+                               placeholder="Enter angle of slope (&#945)" id="inputobcylinshella"
+                               oninput="solveobcylinshell();">
+                             <input class="form__field" type="number"
+                               placeholder="Enter side length (a)" id="inputobcylinshellside"
+                               oninput="solveobcylinshell();">
+                            <p class="stopwrap" id="resultofobcylinshellvol"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobcylinshellarea"
+                            style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofobcylinshelllh"
+                            style="font-family:mathfont;"></p>
+                
+                        </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="tetrahedron" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -35320,6 +35426,31 @@ N is the population size.
         </div>
     </div>
     <!--roman numeral end-->
+    <!-- Disarium Number start-->
+    <div class="collapse" id="disnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Disarium Number Checker</h2>
+            <br>
+            <p>A number is called Disarium if sum of its digits powered with their respective positions is equal to the number itself.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="disn" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isDisNum(document.getElementById('disn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="disans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Disarium Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 
