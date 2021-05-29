@@ -5199,8 +5199,34 @@ function pointhyper() {
     renderMathInElement(output);
 }
 
-function pointpara() {
+function pointellip() {
     var h,k,a,b, x,y;
+    h = parseFloat(document.getElementById('checkellip1').value);
+    k = parseFloat(document.getElementById('checkellip2').value);
+    a = parseFloat(document.getElementById('checkellip3').value);
+    b = parseFloat(document.getElementById('checkellip4').value);
+    x = parseFloat(document.getElementById('checkellip5').value);
+    y = parseFloat(document.getElementById('checkellip6').value);
+    var output = document.getElementById("pointellipans")
+    var ans = "";
+    if (!isNaN(h) && !isNaN(k) && !isNaN(a) && !isNaN(b) && !isNaN(x) && !isNaN(y)) {
+        var p = (parseInt(Math.pow((x - h), 2)) / parseInt(Math.pow(a, 2)))+ (parseInt(Math.pow((y - k), 2)) / parseInt(Math.pow(b, 2)));
+        if (p > 1)
+          ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Ellipse \\]";
+        else if (p == 1)
+          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Ellipse \\]";
+        else
+          ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Ellipse \\]";
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
+function pointpara() {
+    var h,k,a, x,y;
     h = parseFloat(document.getElementById('checkpara1').value);
     k = parseFloat(document.getElementById('checkpara2').value);
     a = parseFloat(document.getElementById('checkpara3').value);
@@ -13253,9 +13279,9 @@ function typenum13find() {
     explain=explain.slice(0,-1);
     explain+="\\]";
     if (n==0 || n==1)
-        explain+="\\["+n+"th -Leonardo \\ Number is =1 \\]";
+        explain+="\\["+n+"th \\space Leonardo \\ Number is =1 \\]";
     else 
-        explain+="\\["+n+"th -Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
+        explain+="\\["+n+"th \\space Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
     
     document.getElementById("typenum13ans").innerHTML ="\\["+n+"th \\space Leonardo \\space Number \\space is:"+dp[n]+"\\]"+explain;
     renderMathInElement(document.getElementById("typenum13ans"))
