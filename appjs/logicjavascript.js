@@ -20456,9 +20456,9 @@ function xvalue() {
 
 
     var lcl = "";
-    lcl += "\\[Lower \\space Control \\space Limit \\space (LCL) \\space =\\space \\bar{\\bar{X}} + A_2 \\bar{R} \\]"
+    lcl += "\\[Lower \\space Control \\space Limit \\space (LCL) \\space =\\space \\bar{\\bar{X}} - A_2 \\bar{R} \\]"
     lcl += "\\[\\space "+xbar+" - "+n+" \\times "+rbar+" \\]"
-    lcl += "\\[\\space "+xbar+"+ "+(n*rbar).toFixed(4)+" \\]"
+    lcl += "\\[\\space "+xbar+"- "+(n*rbar).toFixed(4)+" \\]"
     lcl += "\\[LCL \\space =\\space " +((parseFloat(xbar)-parseFloat(n*rbar))).toFixed(4)+" \\]"
     //check if lcl is negative
     if ((parseFloat(xbar)-parseFloat(n*rbar)) < 0)
