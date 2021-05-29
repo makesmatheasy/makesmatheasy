@@ -8374,6 +8374,23 @@ function solvecycloid() {
     renderMathInElement(heighout);
 }
 
+//Double Cycloid
+function doublecycloidsolve() {
+    var a = parseFloat(document.getElementById("doublecycloid-a").value);
+    var arcLength = 8 * a;
+    var longDia = 2 * Math.PI * a;
+    var shortDia = 4 * a;
+    var perimeter = 2 * arcLength;
+    var area = 6 * Math.PI * Math.pow(a, 2);
+    if ((!isNaN(a))){
+        document.getElementById("resultOfDoubleCycArcLen").innerHTML = `Arc length (b) = ${arcLength}`;
+        document.getElementById("resultOfDoubleCycLongDia").innerHTML = `Long diameter (c) = ${longDia.toFixed(4)}`;
+        document.getElementById("resultOfDoubleCycShortDia").innerHTML = `Short diameter (d) = ${shortDia}`;
+        document.getElementById("resultOfDoubleCycPeri").innerHTML = `Perimeter (p) = ${perimeter}`;
+        document.getElementById("resultOfDoubleCycArea").innerHTML = `Area (A) = ${area.toFixed(4)}`;
+    }
+}
+
 //Annulus 	
 function solveannulus() {
     var radius1 = document.getElementById("inputradius1").value;
