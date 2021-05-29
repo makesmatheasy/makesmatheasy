@@ -13226,6 +13226,22 @@ function golds1find() {
     }
 }
 
+function rectrhomb() {
+    var length = parseFloat(document.getElementById("rectrhomb1").value)
+    var breadth = parseFloat(document.getElementById("rectrhomb2").value)
+    var area = ((length*breadth)/2);
+    if (length<0 || breadth<0) {
+        document.getElementById("rectrhombans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+    }
+    else if (!isNaN(length) && !isNaN(breadth) ) {
+        document.getElementById("rectrhombans").innerHTML = area.toFixed(3);
+    }
+    else {
+        document.getElementById("rectrhombans").innerHTML = "Please enter all input"
+    }
+}
+
+
 function golds2find() {
     let a = document.getElementById("golds3").value
     if(!isNaN(a)){        
