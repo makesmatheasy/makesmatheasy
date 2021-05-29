@@ -18966,7 +18966,38 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }result.innerHTML = x;
+    }else if (type === "2421 Code" && type1 === "Hexa decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString(16);
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }result.innerHTML = x;
 }
 
 
