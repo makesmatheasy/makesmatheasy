@@ -19730,6 +19730,9 @@ function computeprobability() {
 function geoprobability(op) {
     let x = document.getElementById('failure').value;
     let p = document.getElementById('success').value;
+
+    var output = document.getElementById("geoprobAns") ;
+
     if ((isNaN(x)) || (isNaN(p)) || x === "" || p === "") {
         document.getElementById("geoprobAns").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
         renderMathInElement(document.getElementById("geoprobAns"));
@@ -19742,39 +19745,32 @@ function geoprobability(op) {
             renderMathInElement(document.getElementById("geoprobAns"));
         } else {
             if (op === 1){
-                    var proboutput = document.getElementById("geoprobAns") ;
                     var probtemp = "";
                     probtemp += "\\[Geometric \\space Probability \\space will \\space be \\]";
                     probtemp +="\\[\\space = \\space (1 - (Probability \\space of \\space Success))^{(Number \\space of \\space failures)} \\times (Probability \\space of \\space Success) \\]";
                     probtemp +="\\[\\space = \\space (1 - "+p+")^{"+x+"} \\times "+p+"\\]";
-                    probtemp +="\\[\\space = \\space "+(1-p)**x+" \\times "+p+"\\]";
+                    probtemp +="\\[\\space = \\space "+((1-p)**x).toFixed(2)+" \\times "+p+"\\]";
                     probtemp +="\\[\\space = \\space "+((1 - p) ** x * p).toFixed(3)+"\\]";
-                    proboutput.innerHTML = probtemp;
-                    renderMathInElement(proboutput); 
-                    return;
+                    output.innerHTML = probtemp;
             } else if (op == 2){
-                var meanoutput = document.getElementById("geoprobAns") ;
                 var meantemp = "";
                 meantemp += "\\[Mean \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
-                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))} (Probability \\space of \\space Success)} \\]";
+                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))}{(Probability \\space of \\space Success)} \\]";
                 meantemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"}\\]";
-                meantemp +="\\[\\space = \\space \\frac{"+(1-p)+"}{ "+p+"}\\]";
+                meantemp +="\\[\\space = \\space \\frac{"+(1-p).toFixed(2)+"}{ "+p+"}\\]";
                 meantemp +="\\[\\space = \\space "+((1 - p)/p).toFixed(3)+"\\]";
-                meanoutput.innerHTML = meantemp;
-                renderMathInElement(meanoutput); 
-                return;
+                output.innerHTML = meantemp;
             } else{
-                var varoutput = document.getElementById("geoprobAns") ;
                 var vartemp = "";
                 vartemp += "\\[Variance \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
-                vartemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))} (Probability \\space of \\space Success)^{2}} \\]";
+                vartemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))}{(Probability \\space of \\space Success)^{2}} \\]";
                 vartemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"^2}\\]";
-                vartemp +="\\[\\space = \\space \\frac{"+(1-p)+"}{ "+p**2+"}\\]";
+                vartemp +="\\[\\space = \\space \\frac{"+(1-p).toFixed(2)+"}{ "+p**2+"}\\]";
                 vartemp +="\\[\\space = \\space "+((1 - p)/(p*p)).toFixed(3)+"\\]";
-                varoutput.innerHTML = vartemp;
-                renderMathInElement(varoutput); 
+                output.innerHTML = vartemp;
             }
         }
+        renderMathInElement(output); 
     }
 }
 //Conditional Probability
