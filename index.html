@@ -19618,20 +19618,33 @@
 <div class="collapse" id="sph">
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
-            <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
-            <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+            <input type="number" id="cartsphx" width="5em" placeholder="Enter X coordinate"> 
+            <input type="number" id="cartsphy" width="5em" placeholder="Enter Y coordinate">
+            <input type="number" id="cartsphz" width="5em" placeholder="Enter Z coordinate">
             <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartsphcal()">Calculate</button>
     <p>&nbsp;</p>
-    <p id="sphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p id="cartsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
-    <p id="sphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p id="cartsphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
-    <p id="sphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-
-        <p>&nbsp;</p>
+    <p id="cartsphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Spherical</p>
+    <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <input type="number" id="cylsphp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
+        <input type="number" id="cylspho" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
+        <input type="number" id="cylsphz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+        <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylsphcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="cylsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylsphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylsphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>
 
 <!-- Cylindrical Coordinate Calculator starts -->

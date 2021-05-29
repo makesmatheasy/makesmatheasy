@@ -20339,14 +20339,14 @@ function sphcylcal() {
     }
 }
 
-function sphcal(){
-    var x=parseFloat(document.getElementById("sphx").value);
-    var y=parseFloat(document.getElementById("sphy").value);
-    var z= parseFloat(document.getElementById("sphz").value);
+function cartsphcal(){
+    var x=parseFloat(document.getElementById("cartsphx").value);
+    var y=parseFloat(document.getElementById("cartsphy").value);
+    var z= parseFloat(document.getElementById("cartsphz").value);
 
-    var outputr = document.getElementById("sphrans");
-    var outputo = document.getElementById("sphoans");
-    var outputfi = document.getElementById("sphfians");
+    var outputr = document.getElementById("cartsphrans");
+    var outputo = document.getElementById("cartsphoans");
+    var outputfi = document.getElementById("cartsphfians");
     var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
     var o = Math.acos(z/r).toFixed(2);
     var fi = Math.atan(y/x).toFixed(2);
@@ -20380,6 +20380,37 @@ function sphcal(){
     renderMathInElement(outputr);
     renderMathInElement(outputo);
     renderMathInElement(outputfi);
+}
+
+function cylsphcal(){
+    var p=parseFloat(document.getElementById("cylsphp").value);
+    var o=parseFloat(document.getElementById("cylspho").value);
+    var z= parseFloat(document.getElementById("cylsphz").value);
+
+    var outputr = document.getElementById("cylsphrans");
+    var outputo = document.getElementById("cylsphoans");
+    var outputfi = document.getElementById("cylsphfians");
+
+    var x = p * Math.cos(o);
+    var y = p * Math.sin(o);
+
+    var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
+    var o = Math.acos(z/r).toFixed(2);
+    var fi = Math.atan(y/x).toFixed(2);
+    var ans="";
+    
+    if(isNaN(x)||isNaN(y)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+        outputfi.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+        outputfi.innerHTML = "φ: " + fi;
+    }
 }
 
 //BILINEAR INTERPOLATION CALCULATOR
