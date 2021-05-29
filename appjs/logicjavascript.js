@@ -21135,6 +21135,15 @@ function utcal() {
 //  chi value test
 function chivalue() {
     let list = document.getElementById('obsList').value
+    let sign = document.getElementById('sigValue').value
+    if(list==""||sign=="")
+    {
+        document.getElementById('chians').innerHTML="Please fill both fields";
+        document.getElementById('chitestans').innerHTML="";
+        document.getElementById('concluChi').innerHTML ="";
+    }
+    else
+    {
     let obsList = list.split(' ');
     let sum = 0;
     let n = obsList.length
@@ -21153,19 +21162,33 @@ function chivalue() {
         chiValue[i] = obsSubExpMeanSqr[i] / expMean
         ans += chiValue[i]
     }
+    var w="";
     ans = Number.parseFloat(ans).toPrecision(5)
     let sigValue = parseFloat(document.getElementById('sigValue').value)
+    var answer="\\[In \\space the \\space below \\space formula\\]"
+    answer+="\\[E_i \\space =>Expected \\space value  \\]"
+    answer+="\\[O_i \\space =>Observed \\space value  \\]"
+    answer+="\\[\\chi^{2}_{cal} = \\space \\sum{\\frac{(O_i - E_i)^{2}}{E_i}}\\]";
+    for(var i=0;i<n;i++){
+        if(i!=(n-1))
+        w=w+chiValue[i].toFixed(4)+" + ";
+        else
+        w=w+chiValue[i].toFixed(4);
 
+    }
+    answer+="\\[\\chi^{2}_{cal} = \\space\\ "+w+" = "+ans+" \\]"
+    document.getElementById('chians').innerHTML=answer;
+    renderMathInElement( document.getElementById('chians'));
     if (ans < sigValue) {
-        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> < <strong>" + sigValue + "</strong>"
+        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> < χ<sup>2</sup><sub>giv</sub> &nbsp; i.e &nbsp;  <strong>" + ans + "</strong>  <   &nbsp; <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     } else if (ans > sigValue) {
-        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> > χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> > <strong>" + sigValue + "</strong>"
+        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> > χ<sup>2</sup><sub>giv</sub> &nbsp; i.e &nbsp;  <strong>" + ans + "</strong> > &nbsp; <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Not Accepted. So data distribution is Not uniform throughout."
     } else {
-        document.getElementById('chitestans').innerHTML = "As χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> i.e <strong>" + ans + "</strong> = <strong>" + sigValue + "</strong>"
+        document.getElementById('chitestans').innerHTML = "As &nbsp; χ<sup>2</sup><sub>cal</sub> = χ<sup>2</sup><sub>giv</sub> &nbsp; i.e  &nbsp; <strong>" + ans + "</strong>  = &nbsp; <strong>" + sigValue + "</strong>"
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
-    }
+    }}
 }
 //MANHATTAN DISTANCE CALCULATOR
 function manhatcal() {
