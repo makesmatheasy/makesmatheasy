@@ -267,6 +267,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#hyper").click(function () {
+        openit("#hypers");
+        closenav();
+        clearall();
+    });
     $("#crescent").click(function () {
         openit("#crescentLune");
         closenav();
