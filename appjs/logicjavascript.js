@@ -1140,18 +1140,30 @@ function setcal() {
 function smallerscfind() {
     let N = parseInt(document.getElementById("smallinin").value)
     let prevN = Math.floor(Math.sqrt(N));
+    var squareField = document.getElementById("smallsquare");
+    var cubeField = document.getElementById("smallcube");
     if (!isNaN(N)) {
-        if (prevN * prevN == N)
+        if (prevN * prevN == N){
             prevN -= 1;
-        document.getElementById("smallsquare").innerHTML = prevN * prevN
+            squareField.innerHTML = "\\[\\left ( \\sqrt{"+N+"} - 1 \\right )^{2} = "+(prevN*prevN)+" \\]";
+        }
+        else{
+            squareField.innerHTML = "\\[ \\left ( \\left \\lfloor{\\sqrt{"+N+"}}\\right \\rfloor \\right )^{2} = "+(prevN*prevN)+" \\]";
+        }
+        renderMathInElement(squareField);
         let prevN1 = Math.floor(Math.cbrt(N));
-        if (prevN1 * prevN1 * prevN1 == N)
+        if (prevN1 * prevN1 * prevN1 == N){
             prevN1 -= 1;
-        document.getElementById("smallcube").innerHTML = prevN1 * prevN1
+            cubeField.innerHTML = "\\[\\left ( \\sqrt[3]{"+N+"} - 1 \\right )^{2} = "+(prevN1*prevN1*prevN1)+" \\]";
+        }
+        else{
+            cubeField.innerHTML = "\\[ \\left ( \\left \\lfloor{\\sqrt[3]{"+N+"}}\\right \\rfloor \\right )^{2} = "+(prevN1*prevN1*prevN1)+" \\]";
+        }
+        renderMathInElement(cubeField);
     }
     else {
-        document.getElementById('smallsquare').innerHTML = 'Please enter all Input';
-        document.getElementById("smallcube").innerHTML = "";
+        squareField.innerHTML = 'Please enter all Input';
+        cubeField.innerHTML = "";
     }
 }
 //Perfect cube greater than a given number function
@@ -14690,22 +14702,37 @@ function lacube3find() {
 }
 //Check if number formed by joining two Numbers is Perfect Cube
 function lacube4find() {
-    let a = parseInt(document.getElementById("lacube4").value)
-    let b = parseInt(document.getElementById("lacube41").value)
-    s1 = a.toString();
-    s2 = b.toString();
-    var c = parseInt(s1 + s2);
-    if (!isNaN(a) || !isNaN(b)) {
+    var a = (document.getElementById("lacube4").value)
+    var b = (document.getElementById("lacube41").value)
+    var c = parseInt(a + b);
+    var output = document.getElementById("lacube4ans");
+    var temp = "";
+    if (!isNaN(a) && !isNaN(b) && a!= "" && b!="") {
+        temp += "\\[The \\space number \\space formed \\space  by \\space joining \\space two \\space numbers, "+a+", \\space "+b+" \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space "+c+"\\]"
+        temp += "\\[Now \\space we \\space check \\space if \\space "+c+" \\space is \\space Perfect \\space cube,\\]"
+        temp += "\\[\\sqrt[3]{"+c+"} \\times \\sqrt[3]{"+c+"} \\times \\sqrt[3]{"+c+"}\\]"
+        temp += "\\[\\space = \\space "+(math.cbrt(c)).toFixed(2)+" \\times "+(math.cbrt(c)).toFixed(2)+" \\times "+(math.cbrt(c)).toFixed(2)+"\\]"
+        temp += "\\[\\space = \\space "+(math.cbrt(c) * math.cbrt(c) * math.cbrt(c)).toFixed(3)+"\\]"
         if (isPerfectCube(c)) {
-            document.getElementById("lacube4ans").innerHTML = "Yes"
+            temp += "\\[Since, \\space this \\space value \\space equals \\space to \\space the \\space value \\space we \\space got \\space by \\space joining \\space two \\space numbers\\]"
+            temp += "\\[\\space i.e. \\space \\sqrt[3]{"+c+"} \\times \\sqrt[3]{"+c+"} \\times \\sqrt[3]{"+c+"} \\space = \\space "+c+"\\]"
+            temp += "\\[\\space we \\space can \\space say, \\]"
+            temp += "\\[The \\space number \\space formed \\space is \\space a \\space Perfect \\space Cube\\]"
         }
         else {
-            document.getElementById("lacube4ans").innerHTML = "No"
+            temp += "\\[Since, \\space this \\space value \\space not \\space equals \\space to \\space the \\space value \\space we \\space got \\space by \\space joining \\space two \\space numbers\\]"
+            temp += "\\[\\space i.e. \\space \\sqrt[3]{"+c+"} \\times \\sqrt[3]{"+c+"} \\times \\sqrt[3]{"+c+"} \\space != \\space "+c+"\\]"
+            temp += "\\[\\space we \\space can \\space say, \\]"
+            temp += "\\[The \\space number \\space formed \\space is \\space NOT \\space a \\space Perfect \\space Cube\\]"
         }
+        output.innerHTML = temp ;
     }
     else {
-        document.getElementById('polymax4ans').innerHTML = 'Please enter all Input';
+        temp = "\\[Please \\space enter \\space all \\space Input\\]";
+        output.innerHTML = temp ;
     }
+    renderMathInElement(output);
 }
 //Difference between Sum of Cubes and Sum of First N Natural Numbers
 function lacube5find() {
