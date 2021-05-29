@@ -16110,10 +16110,25 @@ function scyf2find() {
 
 
 function scyf3find() {
-    let cone_h = parseInt(document.getElementById("scyf8").value)
-    let cone_r = parseInt(document.getElementById("scyf9").value)
-    var slant_height_cone = Math.sqrt(Math.pow(cone_h, 2) + Math.pow(cone_r, 2));
-    document.getElementById("scyf3ans").innerHTML = slant_height_cone
+    var h = parseInt(document.getElementById("scyf8").value)
+    var r = parseInt(document.getElementById("scyf9").value)
+    var slant_height_cone = Math.sqrt(Math.pow(h, 2) + Math.pow(r, 2));
+    var output = document.getElementById("scyf3ans");
+    var temp ="";
+    if (!isNaN(r) && !isNaN(h)){
+        temp += "\\[Slant \\space height \\space of \\space cone \\space and \\space pyramid \\space will \\space be, \\space \\]";
+        temp += "\\[\\space = \\space \\sqrt{ (Height \\space of \\space pyramid)^2 + (Radius \\space of \\space square \\space pyramid)^2 }\\]";
+        temp += "\\[\\space = \\space \\sqrt{"+h+"^2 + "+r+"^2}\\]";
+        temp += "\\[\\space = \\space \\sqrt{"+(Math.pow(h, 2) + Math.pow(r, 2)).toFixed(2)+"}\\]";
+        temp += "\\[\\space = \\space "+slant_height_cone.toFixed(3)+"\\]";
+
+        output.innerHTML = temp;
+    } else{
+        temp += "\\[Please \\space enter \\space valid \\space input\\]";
+
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 
 
