@@ -609,6 +609,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#taktbtn").click(function () {
+        openit("#takttest");
+        closenav();
+        clearall();
+    });   
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();

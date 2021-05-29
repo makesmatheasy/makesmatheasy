@@ -193,6 +193,7 @@ function openit(id) {
         "#antilog",
         "#kaps",
         "#chitest",
+        "#takttest",
         "#adams",
         "#integralcollapse",
         "#integration-idencollapse",

@@ -5271,6 +5271,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="taktbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Takt Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Takt Time','#takttest','c','takttimefav')"><img
+                                        id="takttimefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <!-- End of Statistics section -->
@@ -13775,6 +13791,24 @@
             <p id="chitestans"></p>
             <br>
             <p id="concluChi"></p>
+        </div>
+        
+ <!-- TaktTime Calculator -->
+        <div class="collapse" id="takttest">
+          <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Takt Time Calculator</h1>
+          <p style="margin: 0 auto 6rem auto; font-style: italic;">Takt time is the rate at which you need to complete a product to meet customer demand.
+          Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It allows you to optimize your capacity in
+          the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
+         <br>
+          <input class = "form__field"type="number" id="works" placeholder="Total Available Production Time (in minutes)">
+          <br><br>
+          <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
+          <br><br>
+          <input class = "form__field"type="number" id="breaks" placeholder="Enter BreakTime if any else input 0 (in minutes)">
+          <br><br>
+          <button class = "btn btn-light" onclick="taktvalue()">Test</button>
+          <p id="taktans"></p>
+          <br>
         </div>
 
         <div class="collapse" id="dip">

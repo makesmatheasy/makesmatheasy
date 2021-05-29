@@ -21317,6 +21317,34 @@ function chivalue() {
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     }}
 }
+//takt time calculator
+function taktvalue() {
+    var num1 = document.getElementById("works").value; 
+    var num2 = document.getElementById("demands").value;
+    var num3 = document.getElementById("breaks").value;
+    if(num1==""||num2=="" ||num3=="")
+    {
+        document.getElementById("taktans").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseInt(num1);
+     num2 =parseInt(num2);
+     num3 =parseInt(num3);
+     var takt=(num1-num3)/num2;
+     console.log(num1+" "+num2+" "+num3);
+     var ans="\\[Takt \\space Time = \\frac{Net \\space Production \\space Time}{Customer \\space Demand} \\]" 
+     ans+="\\[\\frac{"+num1+"-"+num3+"}{"+num2+"} \\]"
+     ans+="\\[\\frac{"+ (num1-num3) +"}{"+num2+"} \\]"
+     ans+="\\[ "+takt.toFixed(4)+" \\]"
+     ans+="\\[Takt \\space Time ="+takt.toFixed(4)+" \\space min \\space per \\space unit \\]"
+     document.getElementById("taktans").innerHTML=ans;
+     renderMathInElement(document.getElementById("taktans"));
+        
+    }
+
+}
+
+
 //MANHATTAN DISTANCE CALCULATOR
 function manhatcal() {
     var num1 = parseFloat(document.getElementById("mdx1").value);
