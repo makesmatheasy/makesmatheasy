@@ -13313,12 +13313,23 @@ function sht6find() {
 
 function eqrect() {
     let a = parseInt(document.getElementById("eqrect1").value)
-    if (!isNaN(a)) {
+    var output = document.getElementById("eqrectans")
+    var ans = ""
+    if (!isNaN(a))
+     {
         var area = (1.732 * Math.pow(a, 2))/8;
-        document.getElementById("eqrectans").innerHTML = area;
+        ans += "\\[Length \\space of \\space Rectangle \\space = \\space \\frac{Side \\space of \\space Equilateral \\space Triangle}{2} \\space = \\space \\frac{a}{2} \\]"
+        ans += "\\[Breadth \\space of \\space Rectangle \\space = \\space \\sqrt{3} \\times \\frac{ Side \\space of \\space Equilateral \\space Triangle}{4} \\space \\sqrt{3} \\times \\frac{a}{4} \\]"
+        ans += "\\[Maximum  \\space Area  \\space of  \\space the  \\space Rectangle  \\space =  \\space \\sqrt{3} \\times \\frac{a}{2} \\times \\frac{a}{4} \\space =  \\space \\sqrt{3} \\times \\frac{a^{2}}{8} \\space = \\space \\sqrt{3} \\times \\frac{" + a + "^{2}}{8} \\space = \\space \\sqrt{3} \\times " + (a**2)/8 +  " \\]"
+        ans += "\\[Maximum  \\space Area  \\space of  \\space the  \\space Rectangle  \\space is \\space " + area.toFixed(3) + " \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
-    else {
-        document.getElementById("eqrectans").innerHTML = "Please enter valid input"
+    else
+     {
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
 }
 
