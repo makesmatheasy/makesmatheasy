@@ -1140,18 +1140,30 @@ function setcal() {
 function smallerscfind() {
     let N = parseInt(document.getElementById("smallinin").value)
     let prevN = Math.floor(Math.sqrt(N));
+    var squareField = document.getElementById("smallsquare");
+    var cubeField = document.getElementById("smallcube");
     if (!isNaN(N)) {
-        if (prevN * prevN == N)
+        if (prevN * prevN == N){
             prevN -= 1;
-        document.getElementById("smallsquare").innerHTML = prevN * prevN
+            squareField.innerHTML = "\\[\\left ( \\sqrt{"+N+"} - 1 \\right )^{2} = "+(prevN*prevN)+" \\]";
+        }
+        else{
+            squareField.innerHTML = "\\[ \\left ( \\left \\lfloor{\\sqrt{"+N+"}}\\right \\rfloor \\right )^{2} = "+(prevN*prevN)+" \\]";
+        }
+        renderMathInElement(squareField);
         let prevN1 = Math.floor(Math.cbrt(N));
-        if (prevN1 * prevN1 * prevN1 == N)
+        if (prevN1 * prevN1 * prevN1 == N){
             prevN1 -= 1;
-        document.getElementById("smallcube").innerHTML = prevN1 * prevN1
+            cubeField.innerHTML = "\\[\\left ( \\sqrt[3]{"+N+"} - 1 \\right )^{2} = "+(prevN1*prevN1*prevN1)+" \\]";
+        }
+        else{
+            cubeField.innerHTML = "\\[ \\left ( \\left \\lfloor{\\sqrt[3]{"+N+"}}\\right \\rfloor \\right )^{2} = "+(prevN1*prevN1*prevN1)+" \\]";
+        }
+        renderMathInElement(cubeField);
     }
     else {
-        document.getElementById('smallsquare').innerHTML = 'Please enter all Input';
-        document.getElementById("smallcube").innerHTML = "";
+        squareField.innerHTML = 'Please enter all Input';
+        cubeField.innerHTML = "";
     }
 }
 //Perfect cube greater than a given number function
