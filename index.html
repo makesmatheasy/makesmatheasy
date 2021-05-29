@@ -19528,48 +19528,57 @@
                     </div>
                 </div>
             </div>
-            <h4>Permutations</h4>
-            <p>An arrangement in sequence of elements of a set is called a permutation of the elements.</p>
-            <h6>Type I</h6>
-            <p>Let 0 ≤ r ≤ n.</p>
-            <p>The number of ways to have an ordered sequence of n distinct elements, taken 
+            <h4 style="text-align: center; font-size: 32px;">Permutations</h4>
+            <br>
+            <p style="color:#ababab !important; text-align:center">An arrangement in sequence of elements of a set is called a permutation of the elements.</p>
+            <br>
+            <h4 style="text-align: center;">Type I</h4>
+            <br>
+            <p  style="color:#ababab !important; text-align:center">Let 0 ≤ r ≤ n.</p>
+            <p  style="color:#ababab !important; text-align:center">The number of ways to have an ordered sequence of n distinct elements, taken 
                 r at a time is called as an r-permutation of n elements and is denoted by P(n,r) or <sup> n </sup> P <sub> r </sub>.</p>
 
-            <p>The first place in the sequence can be filled up in n-ways, the second place in (n - 1) ways
+            <p  style="color:#ababab !important; text-align:center">The first place in the sequence can be filled up in n-ways, the second place in (n - 1) ways
                 and proceeding in this manner the r <sup> th </sup> place can be filled up in (n - r + 1) ways.</p>
 
-            <p>Hence, P(n,r) or <sup> n </sup> P <sub> r </sub> = n (n - 1) (n - 2) ... (n - r + 1)</p>
-            <p> or</p>
+            <p  style="color:#ababab !important; text-align:center">Hence, P(n,r) or <sup> n </sup> P <sub> r </sub> = n (n - 1) (n - 2) ... (n - r + 1)</p>
+            <p  style="color:#ababab !important; text-align:center"> or</p>
             <p>\[nP_r = \, \frac{n!}{(n-r)!}\]</p>
-            <h6>Type II</h6>
-            <p>A general formula for the number of ways to place r coloured balls in n number boxes, where m
+            <br>
+            <h4 style="text-align:center">Type II</h4>
+            <br>
+           <p  style="color:#ababab !important; text-align:center">A general formula for the number of ways to place r coloured balls in n number boxes, where m
                 <sub>1</sub> of these are of one colour , m<sub>2</sub> of them are of a second colour .... and 
                 m <sub>r</sub> of them are of a r<sup>th</sup> colour.</p>
-            <p>Here the placement of the r balls is not changed by rearranging the m <sub>1</sub> balls of the same
+            <p  style="color:#ababab !important; text-align:center">Here the placement of the r balls is not changed by rearranging the m <sub>1</sub> balls of the same
                 colour among the boxes in which they are placed or rearranging the m <sub>2</sub> balls of the same 
                 colour among the boxes in which they are placed, ...</p>
-            <p>On the other hand, if the r balls were distinctly coloured, any arrangement will yield a different placement.</p>
-            <p>It follows that each way to place the r not completely distinctly coloured balls corresponds to m <sub>1</sub> ! m <sub>2</sub> ! 
+            <p  style="color:#ababab !important; text-align:center">On the other hand, if the r balls were distinctly coloured, any arrangement will yield a different placement.</p>
+            <p  style="color:#ababab !important; text-align:center">It follows that each way to place the r not completely distinctly coloured balls corresponds to m <sub>1</sub> ! m <sub>2</sub> ! 
                 ... m <sub> r</sub> ! ways to place r distinctly coloured balls. Since there are P(n,r) ways to place r distinctly coloured balls 
                 in n numbered boxes, the total number of ways to place r coloured balls in n numbered boxes, where</p>
-            <p>m <sub> 1 </sub> of these balls are of one colour,</p>
-            <p>m <sub> 2 </sub> of these balls are of second colour,</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>m <sub> r </sub> of these balls are of a r <sup> th </sup> colour, is \[\frac{P(n,r)}{m_{1}! m_{2}! ... m_r!}\] </p>
-            <p>i.e.</p>
+            <p  style="color:#ababab !important; text-align:center">m <sub> 1 </sub> of these balls are of one colour,</p>
+            <p  style="color:#ababab !important; text-align:center">m <sub> 2 </sub> of these balls are of second colour,</p>
+            <p  style="color:#ababab !important; text-align:center">.</p>
+            <p  style="color:#ababab !important; text-align:center">.</p>
+            <p  style="color:#ababab !important; text-align:center">.</p>
+            <p  style="color:#ababab !important; text-align:center">m <sub> r </sub> of these balls are of a r <sup> th </sup> colour, is \[\frac{P(n,r)}{m_{1}! m_{2}! ... m_r!}\] </p>
+            <p  style="color:#ababab !important; text-align:center">i.e.</p>
             <p>\[Number\space of\space ways = \, \frac{nP_r}{m_{1}! m_{2}! ... m_r!}\]</p>
-            <h6>Type III</h6>
-            <p>The number of permutations of n elements, r at a time, when each element may be repeated once, twice, .... upto r times 
+            <br>
+            <h4 style="text-align:center">Type III</h4>
+            <br>
+            <p  style="color:#ababab !important; text-align:center">The number of permutations of n elements, r at a time, when each element may be repeated once, twice, .... upto r times 
                 in any arrangement.</p>
-            <p>In this case, the first place may be filled up in n ways, the second place may also be filled up in n ways, and so on .... 
+            <p  style="color:#ababab !important; text-align:center">In this case, the first place may be filled up in n ways, the second place may also be filled up in n ways, and so on .... 
                 Proceeding in this manner, the number of ways in which the r places can be filled up is n <sup> r</sup>. </p>
-            <br><br>
-            <h4>Combinations</h4>
-            <p>Selection of a set of r elements from a set of n distinct elements is called a combination.</p>
-            <p>Let 0 ≤ r ≤ n.</p>
-            <p>Consider a problem of choosing 5 mangoes from 12 identical mangoes. We want to know the number of ways in which 5 mangoes
+            <br>
+            <br>
+            <h4 style="text-align: center; font-size: 32px;">Combinations</h4>
+            <br>
+            <p  style="color:#ababab !important; text-align:center">Selection of a set of r elements from a set of n distinct elements is called a combination.</p>
+            <p  style="color:#ababab !important; text-align:center">Let 0 ≤ r ≤ n.</p>
+            <p  style="color:#ababab !important; text-align:center">Consider a problem of choosing 5 mangoes from 12 identical mangoes. We want to know the number of ways in which 5 mangoes
                 can be chosen out of 12 mangoes.</p>
             <p>If all the mangoes are identical then according to the rule of permutation, the number of 
                 ways = \[\frac{P(12,5)}{5!}\]</p>
@@ -19580,7 +19589,7 @@
             <p>The above quantity is denoted by C(n,r) or <sup> n </sup> C <sub> r </sub> [out of n choose r].</p>
             <p>Hence \[nC_r = \frac{n!}{r!\space (n - r)!}\]</p>
             <br><br>
-            <h4>Relation between <sup> n </sup> P <sub> r </sub> and <sup> n </sup> C <sub> r </sub></h4>
+            <h4 style="text-align: center; color:#ababab !important">Relation between <sup> n </sup> P <sub> r </sub> and <sup> n </sup> C <sub> r </sub></h4>
             <p>\[\frac{nP_r}{r!} = nC_r\] or \[nP_r = r!.(nC_r) \]</p>
         </div>
 
