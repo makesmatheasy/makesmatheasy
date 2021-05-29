@@ -664,6 +664,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#antilogbtn").click(function () {
+        openit("#antilog");
+        closenav();
+        clearall();
+    });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
         closenav();
@@ -674,7 +679,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#peroffbtn").click(function () {
+        openit("#peroff");
+        closenav();
+        clearall();
+    });
     $("#sphbtn").click(function(){
         openit("#sph");
         closenav();

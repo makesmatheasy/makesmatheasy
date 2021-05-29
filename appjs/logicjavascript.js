@@ -21307,8 +21307,20 @@ function polarcartcal() {
     var outputy = document.getElementById("polarcartyans");
     var ans = "";
 
-    var x = r * Math.cos(o);
-    var y = r * Math.sin(o);
+    var x = r * Math.cos(o).toFixed(2);
+    var y = r * Math.sin(o).toFixed(2);
+    var cs = Math.cos(o).toFixed(2);
+    var sn = Math.sin(o).toFixed(2);
+
+    var ansx = "";
+    var ansy = "";
+    ansx += "\\[x\\space coordinate:\\space r \\times cos(θ) \\]";
+    ansx += "\\[x\\space coordinate:\\space " + r + " \\times " + cs + "\\]"
+    ansx += "\\[x\\space coordinate:\\space " + x + "\\]"
+
+    ansy += "\\[y\\space coordinate:\\space r \\times sin(θ) \\]";
+    ansy += "\\[y\\space coordinate:\\space " + r + " \\times " + sn + "\\]"
+    ansy += "\\[y\\space coordinate:\\space " + y + "\\]"
 
     if (isNaN(r) || isNaN(o)) {
         ans += "Please fill all the field";
@@ -21316,9 +21328,11 @@ function polarcartcal() {
         outputy.innerHTML = "";
     }
     else {
-        outputx.innerHTML = "X : " + x.toFixed(2);
-        outputy.innerHTML = "Y : " + y.toFixed(2);
+        outputx.innerHTML = ansx;
+        outputy.innerHTML = ansy;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
 }
 
 function cartpolarcal() {
@@ -21405,10 +21419,31 @@ function sphcartcal(){
     var outputy = document.getElementById("sphcartyans");
     var outputz = document.getElementById("sphcartzans");
     var ans="";
+    var ansx = "";
+    var ansy = "";
+    var ansz = "";
     
-    var x = r * Math.sin(o) * Math.cos(fi);
-    var y = r * Math.sin(o) * Math.sin(fi);
-    var z = r * Math.cos(o);
+    var cso = Math.cos(o).toFixed(2);
+    var csfi = Math.cos(fi).toFixed(2);
+    var sno = Math.sin(o).toFixed(2);
+    var snfi = Math.sin(fi).toFixed(2);
+    
+    var x = (r * Math.sin(o) * Math.cos(fi)).toFixed(2);
+    var y = (r * Math.sin(o) * Math.sin(fi)).toFixed(2);
+    var z = (r * Math.cos(o)).toFixed(2);
+
+    ansx += "\\[x\\space coordinate:\\space r \\times sin(θ) \\times cos(φ) \\]";
+    ansx += "\\[x\\space coordinate:\\space " + r + " \\times " + sno + " \\times " + csfi + " \\]";
+    ansx += "\\[x\\space coordinate:\\space " + x + "\\]"
+
+    ansy += "\\[y\\space coordinate:\\space sin(θ) \\times sin(φ) \\]";
+    ansy += "\\[y\\space coordinate:\\space " + r + " \\times " + sno + " \\times " + snfi + "\\]";
+    ansy += "\\[y\\space coordinate:\\space " + y + "\\]"
+
+    ansz += "\\[z\\space coordinate:\\space r \\times cos(θ) \\]";
+    ansz += "\\[z\\space coordinate:\\space " + r + " \\times " + cso + " \\]";
+    ansz += "\\[z\\space coordinate:\\space " + z + " \\]";
+
     
     if(isNaN(r)||isNaN(o)||isNaN(fi))
     {
@@ -21418,10 +21453,13 @@ function sphcartcal(){
         outputz.innerHTML = "";
     }
     else{
-        outputx.innerHTML= "X : " + x.toFixed(2);
-        outputy.innerHTML = "Y : " + y.toFixed(2);
-        outputz.innerHTML = "Z : " + z.toFixed(2);
+        outputx.innerHTML= ansx;
+        outputy.innerHTML = ansy;
+        outputz.innerHTML = ansz;
     }
+    renderMathInElement(outputx);
+    renderMathInElement(outputy);
+    renderMathInElement(outputz);
 }
 
 function cartcylcal() {
@@ -21477,14 +21515,14 @@ function sphcylcal() {
     }
 }
 
-function sphcal(){
-    var x=parseFloat(document.getElementById("sphx").value);
-    var y=parseFloat(document.getElementById("sphy").value);
-    var z= parseFloat(document.getElementById("sphz").value);
+function cartsphcal(){
+    var x=parseFloat(document.getElementById("cartsphx").value);
+    var y=parseFloat(document.getElementById("cartsphy").value);
+    var z= parseFloat(document.getElementById("cartsphz").value);
 
-    var outputr = document.getElementById("sphrans");
-    var outputo = document.getElementById("sphoans");
-    var outputfi = document.getElementById("sphfians");
+    var outputr = document.getElementById("cartsphrans");
+    var outputo = document.getElementById("cartsphoans");
+    var outputfi = document.getElementById("cartsphfians");
     var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
     var o = Math.acos(z/r).toFixed(2);
     var fi = Math.atan(y/x).toFixed(2);
@@ -21518,6 +21556,37 @@ function sphcal(){
     renderMathInElement(outputr);
     renderMathInElement(outputo);
     renderMathInElement(outputfi);
+}
+
+function cylsphcal(){
+    var p=parseFloat(document.getElementById("cylsphp").value);
+    var o=parseFloat(document.getElementById("cylspho").value);
+    var z= parseFloat(document.getElementById("cylsphz").value);
+
+    var outputr = document.getElementById("cylsphrans");
+    var outputo = document.getElementById("cylsphoans");
+    var outputfi = document.getElementById("cylsphfians");
+
+    var x = p * Math.cos(o);
+    var y = p * Math.sin(o);
+
+    var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
+    var o = Math.acos(z/r).toFixed(2);
+    var fi = Math.atan(y/x).toFixed(2);
+    var ans="";
+    
+    if(isNaN(x)||isNaN(y)||isNaN(z))
+    {
+        ans += "Please fill all the field";
+        outputr.innerHTML= ans;
+        outputo.innerHTML = "";
+        outputfi.innerHTML = "";
+    }
+    else{
+        outputr.innerHTML= "r: " + r;
+        outputo.innerHTML = "θ: " + o;
+        outputfi.innerHTML = "φ: " + fi;
+    }
 }
 
 //BILINEAR INTERPOLATION CALCULATOR
@@ -22143,23 +22212,51 @@ function woodfind() {
     }
     document.getElementById("woodans").innerHTML = ans;
 }
+function antilogCal(){
+    let val = document.getElementById("logvalue").value;
+    let base = document.getElementById("logbase").value;
+    let output = document.getElementById("antilogans");
+
+    if(val=="" || base==""){
+        output.innerHTML = "Enter all the inputs";
+    }
+    else{
+        let ans = Math.pow(base,val); //trick to find antilog
+        output.innerHTML = "Antilog of " + val + " with base " + base + " is " + ans;
+    }
+
+}
+
 function relrisk() {
     let a = document.getElementById("relexp0").value;
     let b = document.getElementById("relexp1").value;
     let c = document.getElementById("relcont0").value;
     let d = document.getElementById("relcont1").value;
 
+    let ans = "";
+    var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
+        output.innerHTML = "Enter all the inputs";
     }
     else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
     {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
     }
     else {
-        let ans = (a / (a + b)) / (c / (c + d));
-        document.getElementById('relriskans').innerHTML = "Relative Risk: " + ans;
+        let ab = a+b; 
+        let cd = c+d; 
+        let aa = (a/ab).toFixed(2); 
+        let cc = (c/cd).toFixed(2); 
+        let rel = ((a / (a + b)) / (c / (c + d))).toFixed(2); 
+
+        ans += "\\[Relative\\space risk\\space = \\frac{ \\frac{a}{(a + b)}}{\\frac{c}{(c + d)}}\\]";
+        ans += "\\[Relative\\space risk\\space = \\frac{ \\frac{"+a+"}{("+a+" + "+b+")}}{\\frac{"+c+"}{("+c+" + "+d+")}}\\]";
+        ans += "\\[Relative\\space risk\\space = \\frac{ \\frac{"+a+"}{"+ab+"}}{\\frac{"+c+"}{"+cd+"}}\\]";
+        ans += "\\[Relative\\space risk\\space = \\frac{"+aa+"}{"+cc+"}\\]";
+        ans += "\\[Relative\\space risk\\space = "+rel+"\\]";
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 // Negative Binomial Distribution Calculator

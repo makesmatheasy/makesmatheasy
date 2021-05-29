@@ -1653,6 +1653,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="antilogbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Antilog calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Antilog calculator','#antilog','c','antilogimgfav')"><img
+                                        id="antilogimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="dbltimebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Doubling Time</a>
                         </td>
@@ -1674,6 +1689,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Double Time ','#perchng','c','perchngimgfav')"><img
                                         id="perchngimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="peroffbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage Off</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Percentange off ','#peroff','c','peroffimgfav')"><img
+                                        id="peroffimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -19771,6 +19801,16 @@
 </div>
 <!-- doubling time ends -->
 
+<!-- Antilog starts -->
+<div class="collapse" id="antilog">
+    <h2 style="text-align:center;">Antilog Calculator</h2><br>
+    <input type="text"id="logvalue" placeholder="Enter the log value" class="form__field"><br><br>
+    <input type="text"id="logbase" placeholder="Enter the base" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="antilogCal()">Calculate</button><br><br>
+    <p id="antilogans" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Antilog ends -->
+
 
 <!-- Percentage change starts -->
 <div class="collapse" id="perchng">
@@ -19782,6 +19822,19 @@
     <p id="perchngans" style= "font-family:mathfont"></p><br>
 </div>
 <!-- Percentage change ends -->
+
+<!-- Percentage off starts -->
+<div class="collapse" id="peroff">
+    <h2 style="text-align:center;">Percentage Off</h2><br>
+    
+    <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
+    <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
+    <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
+    <p id="peroffans1" style= "font-family:mathfont"></p><br>
+    <p id="peroffans2" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Percentage off ends -->
 
 <!-- Modulo starts -->
 <div class="collapse" id="modulo">
@@ -20089,20 +20142,33 @@
 <div class="collapse" id="sph">
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
-            <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
-            <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+            <input type="number" id="cartsphx" width="5em" placeholder="Enter X coordinate"> 
+            <input type="number" id="cartsphy" width="5em" placeholder="Enter Y coordinate">
+            <input type="number" id="cartsphz" width="5em" placeholder="Enter Z coordinate">
             <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartsphcal()">Calculate</button>
     <p>&nbsp;</p>
-    <p id="sphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p id="cartsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
-    <p id="sphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p id="cartsphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
-    <p id="sphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-
-        <p>&nbsp;</p>
+    <p id="cartsphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Spherical</p>
+    <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <input type="number" id="cylsphp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
+        <input type="number" id="cylspho" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
+        <input type="number" id="cylsphz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+        <p>&nbsp;</p></p>
+    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylsphcal()">Calculate</button>
+    <p>&nbsp;</p>
+    <p id="cylsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylsphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylsphfians" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>
 
 <!-- Cylindrical Coordinate Calculator starts -->

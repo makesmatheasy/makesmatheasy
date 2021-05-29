@@ -1511,6 +1511,18 @@ function perchngCal(){
     output.innerHTML = final  + " is a " + ans + "% change of " + initial;
 }
 
+function peroffCal(){
+    var original = parseInt(document.getElementById("originalPrice").value);
+    var off = parseInt(document.getElementById("offper").value)/100;
+    var tax = parseInt(document.getElementById("salestax").value)/100;
+    var final = (original + (original*tax))*off;
+    var savings = original - final;
+    var output1 = document.getElementById("peroffans1");
+    var output2 = document.getElementById("peroffans2");
+    output1.innerHTML = "Final price: " + final.toFixed(2);
+    output2.innerHTML = "Your savings: " + savings;
+}
+
 function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
