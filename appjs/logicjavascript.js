@@ -21708,12 +21708,10 @@ function exprobability(op)
 {
     let num1=document.getElementById("inrate").value;
     let num2=document.getElementById("inran").value;
-    if(num1==""||num2=="")
-    {
+    if(num1==""||num2=="") {
         document.getElementById("exprobAns").innerHTML = "Please fill all the field";
-    }
-    else
-    {
+
+    }else {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
         if(op==1){
@@ -21723,14 +21721,24 @@ function exprobability(op)
             exptemp += "\\[\\space = \\space ((Rate \\space parameter) \\times 2.71828)^{-(Rate \\space parameter) \\times (Random \\space variable)}\\]";
             exptemp += "\\[\\space = \\space ("+num1+" \\times 2.71828)^{(-"+num1+" \\times "+num2+")}\\]";
             exptemp += "\\[\\space = \\space "+dist.toFixed(3)+"\\]";
+
             exprobout.innerHTML = exptemp;
             renderMathInElement(exprobout);
             return;
-        }   
-    else if(op==2)
-        document.getElementById("exprobAns").innerHTML = "Mean: " + 1/num1;
-    else
-        document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+
+        }   else if(op==2){
+            var meanout = document.getElementById("exprobAns");
+            meantemp += "\\[Mean \\space will \\space be \\]";
+            meantemp += "\\[\\space = \\space \\frac{1}{(Rate \\space parameter)}\\]";
+            meantemp += "\\[\\space = \\space \\frac{1}{"+num1+"}\\]";
+            meantemp += "\\[\\space = \\space "+(1/num1).toFixed(3)+"\\]";
+
+            meanout.innerHTML = meantemp;
+            renderMathInElement(meanout);
+            return;
+        } else{
+            document.getElementById("exprobAns").innerHTML = "Variance: " + 1/(num1*num1);
+        }
     }
 }
 //Exponential Distribution Calculator
