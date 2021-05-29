@@ -13574,8 +13574,6 @@ function typenum15find(){
 }    
 
 
-
-
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
         if (arr[p]) {
@@ -20597,10 +20595,10 @@ function sphcartcal(){
     }
 }
 
-function cylcal() {
-    var x = (document.getElementById("cylx").value);
-    var y = (document.getElementById("cyly").value);
-    var z = (document.getElementById("cylz").value);
+function cartcylcal() {
+    var x = (document.getElementById("cartcylx").value);
+    var y = (document.getElementById("cartcyly").value);
+    var z = (document.getElementById("cartcylz").value);
     var p = Math.sqrt(x * x + y * y).toFixed(3);
     var o = Math.tan(y / x).toFixed(3);
     var temp1 = (x * x + y * y).toFixed(3);
@@ -20609,20 +20607,47 @@ function cylcal() {
     var anso = "";
     var ansz = "";
     if (x === "" || y == "" || z === "") {
-        document.getElementById("cylpans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
-        document.getElementById("cyloans").innerHTML = "";
-        document.getElementById("cylzans").innerHTML = "";
+        document.getElementById("cartcylpans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        document.getElementById("cartcyloans").innerHTML = "";
+        document.getElementById("cartcylzans").innerHTML = "";
     } else {
         ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2} \\space =\\space \\sqrt{" + x + "^2 + " + y + "^2} \\space =\\space \\sqrt{" + temp1 + "} \\space =\\space " + p + " \\]";
         anso = "\\[θ:\\space \\tan(\\frac{y}{x} ) \\space θ:\\space \\tan(\\frac{" + y + "}{" + x + "} ) \\space =\\space \\arccos(" + temp2 + ") \\space =\\space " + o + "\\]"
         ansz = "\\[z:\\space z \\space =\\space " + z + "\\]";
-        document.getElementById("cylpans").innerHTML = ansp;
-        document.getElementById("cyloans").innerHTML = anso;
-        document.getElementById("cylzans").innerHTML = ansz;
-    } renderMathInElement(document.getElementById("cylpans"));
-    renderMathInElement(document.getElementById("cyloans"));
-    renderMathInElement(document.getElementById("cylzans"));
+        document.getElementById("cartcylpans").innerHTML = ansp;
+        document.getElementById("cartcyloans").innerHTML = anso;
+        document.getElementById("cartcylzans").innerHTML = ansz;
+    } renderMathInElement(document.getElementById("cartcylpans"));
+    renderMathInElement(document.getElementById("cartcyloans"));
+    renderMathInElement(document.getElementById("cartcylzans"));
 }
+function sphcylcal() {
+    var r = (document.getElementById("sphcylr").value);
+    var o = (document.getElementById("sphcylo").value);
+    var fi = (document.getElementById("sphcylfi").value);
+    
+    var x = r * Math.sin(o) * Math.cos(fi);
+    var y = r * Math.sin(o) * Math.sin(fi);
+    var z = r * Math.cos(o);
+
+    var p = Math.sqrt(x * x + y * y).toFixed(3);
+    var o = Math.tan(y / x).toFixed(3);
+    
+    var ansp = "ρ: " + p;
+    var anso = "θ: " + o;
+    var ansz = "z: " + z.toFixed(3);
+    if (r === "" || o == "" || fi === "") {
+        document.getElementById("sphcylpans").innerHTML = "Please enter valid input";
+        document.getElementById("sphcyloans").innerHTML = "";
+        document.getElementById("sphcylzans").innerHTML = "";
+    } else {
+     
+        document.getElementById("sphcylpans").innerHTML = ansp;
+        document.getElementById("sphcyloans").innerHTML = anso;
+        document.getElementById("sphcylzans").innerHTML = ansz;
+    }
+}
+
 function sphcal(){
     var x=parseFloat(document.getElementById("sphx").value);
     var y=parseFloat(document.getElementById("sphy").value);
