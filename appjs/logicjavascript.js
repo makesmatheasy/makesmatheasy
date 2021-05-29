@@ -3096,18 +3096,28 @@ function impse12find() {
 
 function impse18find() {
     let n = parseInt(document.getElementById("impse18").value)
-    let a = n;
-    document.getElementById("impse18ans").innerHTML = a + " ";
-    while (a != 1) {
-        let b = 0;
-        if (a % 2 == 0)
-            b = Math.floor(Math.sqrt(a));
-
-        else
-            b = Math.floor(Math.sqrt(a) * Math.sqrt(a) * Math.sqrt(a));
-
-        document.getElementById("impse18ans").innerHTML = b + " ";
-        a = b;
+    if(!isNaN(n)){
+        let a = n;
+        document.getElementById("impse18ans").innerHTML = a + " ";
+        while (a != 1) {
+            let b = 0;
+            if (a % 2 == 0)
+                b = Math.floor(Math.sqrt(a));
+    
+            else
+                b = Math.floor(Math.sqrt(a) * Math.sqrt(a) * Math.sqrt(a));
+    
+            document.getElementById("impse18ans").innerHTML = b + " ";
+            a = b;
+        }
+        document.getElementById("impse18exp").innerHTML = "\\[Juggler Sequence is a series of integer number in which the first term starts with a positive integer number a and the remaining terms are generated from the immediate previous term\\]"
+        document.getElementById("impse18exp").innerHTML = "\\[a_{k+1}=\\begin{Bmatrix} \\lfloor a_{k}^{1/2} \\rfloor & for \\quad even \\quad a_k\\ \\lfloor a_{k}^{3/2} \\rfloor & for \\quad odd \\quad a_k \\end{Bmatrix}  \\]"
+        document.getElementById("impse18exp").innerHTML = "\\[Juggler Sequence starting with number 3: \\]"
+        document.getElementById("impse18exp").innerHTML = "\\[5, 11, 36, 6, 2, 1\\]"
+        renderMathInElement(document.getElementById("impse18exp"));
+    }
+    else {
+        document.getElementById("impse18ans").innerHTML = "Please enter valid input"
     }
 }
 
