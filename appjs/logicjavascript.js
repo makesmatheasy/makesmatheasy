@@ -13575,7 +13575,6 @@ function typenum15find()
 }    
 
 
-
 function simpleSieve(){
     for (let p = 2; p * p < 1001; p++) {
         if (arr[p]) {
@@ -15036,6 +15035,12 @@ function combinationcal(nval, rval) {
 }
 //Roots of Unity Calculator
 function rootsunityfind() {
+    let n = document.getElementById("rootsunityin").value;
+    if(n==""||isNaN(n))
+    {
+        document.getElementById("rootsunityans").innerHTML = "Please enter proper inputs";
+    }
+    else{
     let n = parseInt(document.getElementById("rootsunityin").value)
     var theta = (3.14 * 2 / n);
     for (let k = 0; k < n; k++) {
@@ -15046,6 +15051,7 @@ function rootsunityfind() {
         else
         document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "   " + img.toFixed(6) + "i<br>"
     }
+}
 }
 
 //Reuleaux Triangle shape Calculator function
