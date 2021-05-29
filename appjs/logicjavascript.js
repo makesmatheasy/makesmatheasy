@@ -13106,6 +13106,24 @@ function trapinsemifind() {
     } renderMathInElement(answer)
 }
 
+function innercir() {
+    let R = parseInt(document.getElementById("innercir1").value)
+    let output = document.getElementById("innercirans")
+    let ans = "";
+    if (isNaN(R) ) {
+        ans="\\[Enter \\space the \\space radius\\]"
+    }
+    else if(radius<0){
+        ans+="\\[Radius \\space cannot \\space be \\space negative\\]";
+    }
+    else {
+        let r = R / 2;
+        let Area = (3.14 * Math.pow(r, 2));
+        ans += "\\[Area \\space of \\space inner \\space circle="+Area+"\\]";
+    }
+    output.innerHTML = ans;
+    renderMathInElement(output);
+}
 function trapinsemifind1() {
     let n = parseInt(document.getElementById("trapinsemin1").value)
     let m = parseInt(document.getElementById("trapinsemin2").value)
