@@ -22543,7 +22543,7 @@ N is the population size.
         <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
         <div class="col-6">
             <div class="form-group">
-                <h5>Decimal</h5>
+                <h5>From</h5>
                 <select id="dec2421-select" class="form__field"
                                 onchange="convertdec2421()">
                             <option class="form__field" style="background-color: #232a36;">
@@ -22558,6 +22558,9 @@ N is the population size.
                             <option class="form_field" style="background-color: #232a36;">
                                 Hexa decimal
                             </option>
+                            <option class="form_field" style="background-color: #232a36;">
+                                2421 Code
+                            </option>
                         </select>
 
                 <input type="number" id="dec2421-input" value="0" class="form__field"
@@ -22566,7 +22569,25 @@ N is the population size.
         </div>
         <div class="col-6">
             <div class="form-group">
-                <h5>2421</h5>
+                <h5>To</h5>
+                <select id="dec2421-select1" class="form__field"
+                onchange="convertdec2421()">
+            <option class="form_field" style="background-color: #232a36;">
+                2421 Code
+            </option>
+            <option class="form__field" style="background-color: #232a36;">
+                Binary
+            </option>
+            <option class="form__field" style="background-color: #232a36;">
+                Decimal
+            </option>
+            <option class="form__field" style="background-color: #232a36;">
+                Octal
+            </option>
+            <option class="form_field" style="background-color: #232a36;">
+                Hexa decimal
+            </option>
+        </select>
 
             </div>
             <label class="form__group" id="dec2421-result">0</label>
