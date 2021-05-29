@@ -7342,10 +7342,14 @@ function lshapesolve() {
     var perimeter =  a + longSide + b + shortSide + 2*c;
     var area = a*c + shortSide*c;
     if ((!isNaN(a)) && (!isNaN(b)) && (!isNaN(c))) {
-        longSideField.innerHTML = `Long inner side (a') = ${longSide.toFixed(3)}`;
-        shortSideField.innerHTML = `Short inner side (b') = ${shortSide.toFixed(3)}`;
-        perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)}`;
-        areaField.innerHTML = `Area (A) = ${area.toFixed(3)}`;
+        longSideField.innerHTML = "\\[Long \\space inner \\space side \\space (a') = "+a+" - "+c+" = "+longSide+" \\space units \\]";
+        shortSideField.innerHTML = "\\[Short \\space inner \\space \\space side \\space (b') = "+b+" - "+c+" = "+shortSide+" \\space units \\]";
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = "+a+" + "+longSide+" + "+b+" + "+shortSide+" + \\left ( 2 \\times "+c+" \\right ) = "+perimeter+" \\space units\\]";
+        areaField.innerHTML = "\\[Area \\space (A) = "+a+" \\times "+c+" + "+shortSide+" \\times "+c+" = "+area+" \\space sq.units\\]";
+        renderMathInElement(longSideField);
+        renderMathInElement(shortSideField);
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField);
     }
 }
 
