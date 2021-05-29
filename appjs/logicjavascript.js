@@ -19092,19 +19092,35 @@ function geoprobability(op) {
     var x = document.getElementById('failure').value;
     var p = document.getElementById('success').value;
 
-    if ((isNaN(x)) || (isNaN(p))) {
-        document.getElementById("geoprobAns").innerHTML = "Please enter valid input";
+    if ((isNaN(x)) || (isNaN(p)) || x === "" || p === "") {
+        document.getElementById("geoprobAns").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+        renderMathInElement(document.getElementById("geoprobAns"));
     }
     else {
         if (p > 1) {
-            document.getElementById("geoprobAns").innerHTML = "Probability of success cannot exceed 1 ";
+            document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space exceed \\space 1 \\]";
+            renderMathInElement(document.getElementById("geoprobAns"));
+
         }
         else if (p < 0) {
-            document.getElementById("geoprobAns").innerHTML = "Probability of success cannot be negative ";
+            document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space be \\space negative \\]";
+            renderMathInElement(document.getElementById("geoprobAns"));
+
         }
         else {
-            if (op === 1)
-                document.getElementById("geoprobAns").innerHTML = "Geometric Probability: " + (1 - p) ** x * p;
+            if (op === 1){
+
+                    var proboutput = document.getElementById("geoprobAns") ;
+                    var probtemp = "";
+                    probtemp += "\\[Geometric \\space Probability \\space will \\space be \\]";
+                    probtemp +="\\[\\space = \\space (1 - (Probability \\space of \\space Success))^{(Number \\space of \\space failures)} \\times (Probability \\space of \\space Success) \\]";
+                    probtemp +="\\[\\space = \\space (1 - "+p+")^{"+x+"} \\times "+p+"\\]";
+                    probtemp +="\\[\\space = \\space "+(1-p)**x+" \\times "+p+"\\]";
+                    probtemp +="\\[\\space = \\space "+((1 - p) ** x * p).toFixed(3)+"\\]";
+                    proboutput.innerHTML = probtemp;
+                    renderMathInElement(proboutput); 
+                    return;
+            }
             else if (op == 2)
                 document.getElementById("geoprobAns").innerHTML = "Mean: " + (1 - p) / p;
             else
