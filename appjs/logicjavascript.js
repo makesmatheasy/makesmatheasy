@@ -13222,6 +13222,17 @@ function sht6find() {
     }
 }
 
+function eqrect() {
+    let a = parseInt(document.getElementById("eqrect1").value)
+    if (!isNaN(a)) {
+        var area = (1.732 * Math.pow(a, 2))/8;
+        document.getElementById("eqrectans").innerHTML = area;
+    }
+    else {
+        document.getElementById("eqrectans").innerHTML = "Please enter valid input"
+    }
+}
+
 function retfind13() {
     let a = parseFloat(document.getElementById("retin16").value)
     let x = 1.268 * a;
