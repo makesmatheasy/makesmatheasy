@@ -1409,6 +1409,20 @@ function chordsub() {
         document.getElementById("chsubans").innerHTML = ""
     }
 }
+
+function chordsub1() {
+    var into = document.getElementById("chsub1").value
+    if (into != "") {
+        document.getElementById("chsub1info").innerHTML = "\\[Equal \\space chords \\space of \\space congruent \\space circles \\space subtend  \\space equal \\space angles \\space at \\space their \\space centres.\\]";
+        document.getElementById("chsub1ans").innerHTML = "\\[The \\space angle \\space subtended \\space by \\space chord \\space at \\space the \\space center \\space is \\space " + into+"\\degree \\]";
+    }
+    else {
+        document.getElementById("chsub1info").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
+        document.getElementById("chsub1ans").innerHTML = ""
+    }
+    renderMathInElement(document.getElementById("chsub1ans"));
+    renderMathInElement(document.getElementById("chsub1info"));
+}
 //-----------------------------------------------------
 //Centroid calculator
 function centcal() {
