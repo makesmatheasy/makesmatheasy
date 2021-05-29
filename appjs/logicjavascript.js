@@ -17818,7 +17818,7 @@ function convertbcd() {
             result.innerHTML += "Extract the "+(i+1)+" th element<br>";
             y = parseInt(input[i]).toString(2);
             result.innerHTML += y + "<br>";
-            result.innerHTML += "Step 2: Depending on the length of " +y +" combine the binary form  of all the digits<br>";            
+            result.innerHTML += "Step 3: Depending on the length of " +y +" combine the binary form  of all the digits<br>";            
             if (y.length == 1) {
                 x = x + "000" + y + "_   ";
             }
