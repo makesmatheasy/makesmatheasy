@@ -19671,11 +19671,9 @@ function geoprobability(op) {
         else if (p < 0) {
             document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space be \\space negative \\]";
             renderMathInElement(document.getElementById("geoprobAns"));
-
         }
         else {
             if (op === 1){
-
                     var proboutput = document.getElementById("geoprobAns") ;
                     var probtemp = "";
                     probtemp += "\\[Geometric \\space Probability \\space will \\space be \\]";
@@ -19687,10 +19685,21 @@ function geoprobability(op) {
                     renderMathInElement(proboutput); 
                     return;
             }
-            else if (op == 2)
-                document.getElementById("geoprobAns").innerHTML = "Mean: " + (1 - p) / p;
-            else
+            else if (op == 2){
+                var meanoutput = document.getElementById("geoprobAns") ;
+                var meantemp = "";
+                meantemp += "\\[Mean \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
+                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))} (Probability \\space of \\space Success)} \\]";
+                meantemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"}\\]";
+                meantemp +="\\[\\space = \\space \\frac{"+(1-p)+"}{ "+p+"}\\]";
+                meantemp +="\\[\\space = \\space "+((1 - p)/p).toFixed(3)+"\\]";
+                meanoutput.innerHTML = meantemp;
+                renderMathInElement(meanoutput); 
+                return;
+            }
+            else{
                 document.getElementById("geoprobAns").innerHTML = "Variance: " + (1 - p) / (p * p);
+            }
         }
     }
 }
