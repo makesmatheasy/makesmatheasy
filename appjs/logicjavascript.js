@@ -13301,7 +13301,7 @@ function typenum15find(){
 
     }    
 
-}
+
 
 
 
@@ -20973,8 +20973,8 @@ function negbinoCal() {
     let r = document.getElementById("negbinor").value;
     let p = document.getElementById("negbinop").value;
 
-    if(n=="" || r=="" || p==""){
-        document.getElementById("negbinoans").innerHTML = "Enter all the inputs";
+    if(n=="" || r=="" || p==""||isNaN(n)||isNaN(r)||isNaN(p)){
+        document.getElementById("negbinoans").innerHTML = "Enter valid inputs";
     }
     else{
         let combi = comb(n-1,r-1);
