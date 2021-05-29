@@ -14781,9 +14781,28 @@ function lacube4find() {
 //Difference between Sum of Cubes and Sum of First N Natural Numbers
 function lacube5find() {
     let n = parseInt(document.getElementById("lacube5").value)
-    S = Math.floor((n * (n + 1)) / 2);
-    res = S * (S - 1);
-    document.getElementById("lacube5ans").innerHTML = res;
+    var output = document.getElementById("lacube5ans");
+    var temp = "";
+    if (!isNaN(n)){
+        S = Math.floor((n * (n + 1)) / 2);
+        res = S * (S - 1);
+        temp += "\\[The \\space difference \\space between \\space Sum \\space of \\space Cubes \\space and \\space Sum \\space of \\space First \\space N \\space Natural \\space Numbers \\space is,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space S, \\space here \\space n \\space = \\space No. \\space of \\space terms \\space in \\space progression \\]"
+        temp += "\\[S \\space = \\space \\frac{(n \\times (n+1))}{2}\\]"
+        temp += "\\[\\space = \\space \\frac{"+n+" \\times ("+n+" + 1 )}{2}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(n * (n + 1))+"}{2}\\]"
+        temp += "\\[\\space = \\space "+S.toFixed(3)+"\\]"
+        temp += "\\[Finally, \\space difference \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space S \\times (S - 1)\\]"
+        temp += "\\[\\space = \\space "+S.toFixed(2)+" \\times ("+S+" - 1)\\]"
+        temp += "\\[\\space = \\space "+res.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 //Difference between Sum of Cubes and Sum of Squares of First N Natural Numbers
 function lacube6find() {
