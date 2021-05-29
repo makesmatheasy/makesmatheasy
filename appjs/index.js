@@ -275,6 +275,7 @@ function openit(id) {
         "#ppmfs",
         "#flatcy",
         "#right_wedge",
+        "#hypers",
         "#bool",
         "#suppangs",
         "#compang",
