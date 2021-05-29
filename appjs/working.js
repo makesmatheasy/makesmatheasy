@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
 $("#midrangebtn").click(function () {
     openit("#midrange");
     closenav();
@@ -259,6 +264,11 @@ $(document).ready(function () {
     });
     $("#arc").click(function () {
         openit("#arcs");
+        closenav();
+        clearall();
+    });
+    $("#hyper").click(function () {
+        openit("#hypers");
         closenav();
         clearall();
     });
@@ -633,6 +643,11 @@ $(document).ready(function () {
     });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
+        closenav();
+        clearall();
+    });
+    $("#perchngbtn").click(function () {
+        openit("#perchng");
         closenav();
         clearall();
     });

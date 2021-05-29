@@ -162,6 +162,7 @@ Other Tech/Libraries
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
   - Doubling Time
+  - Percentage change
   - Modulo calculator
   - Sieve of Eratosthenes
   - Adam Numbers
@@ -330,11 +331,13 @@ Other Tech/Libraries
     - Claw
     - Cycloid
     - Parallelogram
-    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
+    - Polygons: Pentagon, Concave Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
     - T-Shape
     - H-Shape
+    - L-Shape
     - Arbelos
+    - Spherical Triangle
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
