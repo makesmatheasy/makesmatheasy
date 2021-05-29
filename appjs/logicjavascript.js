@@ -12603,10 +12603,19 @@ function gstcal() {
 function degcal() {
     var expression = document.getElementById("exp").value;
     var ans = document.getElementById("deg");
-
+    var print;
     exp = expression.replace(/ /g, '')
     var x = nerdamer(`deg(${exp})`);
+    print = "\\[Answer \\space -> \\space "+x+"\\]"
+    print += "\\[The \\space degree \\space of \\space an \\space individual \\space term \\space of \\space a \\space polynomial \\space is \\]";
+    print += "\\[ the \\space exponent \\space of \\space its \\space variable\\]";
+    print += "\\[ the \\space exponents \\space of \\space the \\space terms \\space of \\space this \\space polynomial \\space are, \\space in \\space order \\space :- \\space "+exp+"\\]";
+    print += "\\[The \\space degree \\space of \\space the \\space polynomial \\space is \\space the \\space highest \\space degree \\space of \\space any \\space of \\space the \\space terms\\]";
+    print += "\\[ in \\space  this \\space case, \\space it \\space is \\space " + x + ".\\]";
     ans.innerText = x;
+
+    ans.innerHTML = print;
+    renderMathInElement(ans);
 
 }
 
