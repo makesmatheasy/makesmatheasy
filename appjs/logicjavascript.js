@@ -14703,8 +14703,13 @@ function lacube9find() {
 function lacube10find() {
     let n = parseInt(document.getElementById("lacube11").value)
     let sc = Math.floor(Math.sqrt(n));
+    document.getElementById("lacube10exp").innerHTML = "\\[A\\space simple\\space solution\\space is\\space to\\space traverse\\space through\\space all\\space numbers\\space from\\space 1\\space to\\space n and for\\space every\\space number\\space check\\space if n is\\space perfect\\space square\\space or\\space not. \\]"
+    document.getElementById("lacube10exp").innerHTML = "\\[An\\space efficient\\space solution\\space is\\space based\\space on\\space below\\space formula.\\]"
+    document.getElementById("lacube10exp").innerHTML = "\\[Count\\space of\\space square\\space numbers\\space that\\space are\\space greater\\space than\\space 0\\space and\\space smaller\\space than\\space or\\space equal\\space to\\space n\\space are\\space floor(sqrt(n))\\space or\\space ⌊√(n)⌋\\]"
+    document.getElementById("lacube10exp").innerHTML = "\\[Count\\space of\\space non-square\\space numbers\\space =\\space n – ⌊√(n)⌋\\]"
     document.getElementById("lacube10ans").innerHTML = "Count of squares " + sc + "<br>";
     document.getElementById("lacube10ans").innerHTML = "Count of non-squares " + (n - sc) + "<br>";
+    renderMathInElement(document.getElementById("lacube10exp"));
 }
 
 function lacube11find() {
