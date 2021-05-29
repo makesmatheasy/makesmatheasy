@@ -19006,9 +19006,10 @@ function convertex3() {
 function convertdec2421() {
     var input = document.getElementById("dec2421-input").value;
     let result = document.getElementById("dec2421-result");
+    const type1 = document.getElementById("dec2421-select1").value;
     const type = document.getElementById("dec2421-select").value;
 
-    if(type === "Decimal"){
+    if(type === "Decimal" && type1 === "2421 Code"){
     var x = "_";
     var y = "";
     for (var i = 0; i < input.length; i++) {
@@ -19031,9 +19032,39 @@ function convertdec2421() {
             x = x + +y + "_   ";
         }
       }
-      result.innerHTML = x;
-    }
-    else if(type === "Binary"){
+    }else if (type === "2421 Code" && type1 === "Decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString();
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }
+    }else if(type === "Binary" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
         input = parseInt(input,2).toString();
@@ -19057,9 +19088,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-        result.innerHTML = x;
-    }
-    else if(type === "Octal"){
+    }else if(type === "Octal" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
         input = parseInt(input,8).toString();
@@ -19083,9 +19112,8 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-        result.innerHTML = x;
-    } 
-    else if(type == "Hexa decimal"){
+    }else if(type === "Hexa decimal" && type1 === "2421 Code"){
+
         var x = "_";
         var y = "";
 
