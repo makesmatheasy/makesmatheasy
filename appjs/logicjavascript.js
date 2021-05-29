@@ -15985,9 +15985,19 @@ function scyffind() {
     let h = parseInt(document.getElementById("scyf").value)
     let R = parseInt(document.getElementById("scyf1").value)
     let r = parseInt(document.getElementById("scyf2").value)
-    var x = r;
-    var V = ((4 * 3.14 * Math.pow(r, 3)) / 3);
-    document.getElementById("scyfans").innerHTML = V;
+    if(!isNaN(h)||!isNaN(R)||!isNaN(r)){
+        var x = r;
+        var V = ((4 * 3.14 * Math.pow(r, 3)) / 3);
+        document.getElementById("scyfexp").innerHTML ="\\[Let the height of the cylinder = H, radius of the sphere = x \\]"
+        document.getElementById("scyfexp").innerHTML ="\\[We know, the height and radius of the cylinder inscribed within the frustum is equal to the height and top-radius of the frustum respectively\\]"
+        document.getElementById("scyfexp").innerHTML ="\\[So the height of the cylinder = h, radius of the cylinder = r. \\]"
+        document.getElementById("scyfexp").innerHTML ="\\[Also, radius of the sphere inscribed within a cylinder is equal to radius of the cylinder\\]"
+        document.getElementById("scyfexp").innerHTML ="\\[volume of the sphere, V = 4*π*r^3/3.\\]"
+        document.getElementById("scyfans").innerHTML = V;
+        renderMathInElement(document.getElementById("scyfexp"))
+    }
+    else 
+        document.getElementById("scyfans").innerHTML = "Please Enter valid input"
 }
 
 function scyf1find() {
