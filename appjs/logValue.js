@@ -14,8 +14,8 @@
       document.getElementById('result').innerHTML = "Please enter proper input to find log value";
      }
      else{
-        number1=parseInt(number1);
-        base=parseInt(base);
+        number1=parseFloat(number1);
+        base=parseFloat(base);
      if(base==1)
      {
         document.getElementById('result').innerHTML = "Base of logarithm cannot be 1 ";
