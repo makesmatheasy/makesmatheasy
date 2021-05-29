@@ -2322,3 +2322,41 @@ function wagcal()
     document.getElementById("wagans").innerHTML=ans;
 }
 
+function Ranges()
+{
+   var num = document.getElementById('getNum').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+
+
+    if(num=="")
+    {
+       document.getElementById('Meanresult').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('Meanresult').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        var max=Math.max(...number);
+        var min=Math.min(...number);
+
+        var d=max-min;
+
+        document.getElementById('Meanresult').innerHTML = "Range is: "+d;
+
+
+}
+}
