@@ -5199,8 +5199,34 @@ function pointhyper() {
     renderMathInElement(output);
 }
 
-function pointpara() {
+function pointellip() {
     var h,k,a,b, x,y;
+    h = parseFloat(document.getElementById('checkellip1').value);
+    k = parseFloat(document.getElementById('checkellip2').value);
+    a = parseFloat(document.getElementById('checkellip3').value);
+    b = parseFloat(document.getElementById('checkellip4').value);
+    x = parseFloat(document.getElementById('checkellip5').value);
+    y = parseFloat(document.getElementById('checkellip6').value);
+    var output = document.getElementById("pointellipans")
+    var ans = "";
+    if (!isNaN(h) && !isNaN(k) && !isNaN(a) && !isNaN(b) && !isNaN(x) && !isNaN(y)) {
+        var p = (parseInt(Math.pow((x - h), 2)) / parseInt(Math.pow(a, 2)))+ (parseInt(Math.pow((y - k), 2)) / parseInt(Math.pow(b, 2)));
+        if (p > 1)
+          ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Ellipse \\]";
+        else if (p == 1)
+          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Ellipse \\]";
+        else
+          ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Ellipse \\]";
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
+function pointpara() {
+    var h,k,a, x,y;
     h = parseFloat(document.getElementById('checkpara1').value);
     k = parseFloat(document.getElementById('checkpara2').value);
     a = parseFloat(document.getElementById('checkpara3').value);
@@ -5748,7 +5774,7 @@ function vectortria() {
 }
 //Distance between two planes calculator
 function solvetwoplane() {
-    var a, b, c, d, a1, b1, c1, d1;
+    var a, b, c, d, a1, b1, c1, d1,work;
     a = parseFloat(document.getElementById('da1').value);
     b = parseFloat(document.getElementById('db1').value);
     c = parseFloat(document.getElementById('dc1').value);
@@ -5757,6 +5783,8 @@ function solvetwoplane() {
     b1 = parseFloat(document.getElementById('db2').value);
     c1 = parseFloat(document.getElementById('dc2').value);
     d1 = parseFloat(document.getElementById('dd2').value);
+    work = document.getElementById('dplane_work');
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
     /*var explain = document.getElementById("angleplane");
     explain.innerHTML = "\\[Formula: \\space cos\\alpha = \\frac{|A1.A2  + B1.B2 + C1.C2 |}{\\sqrt{A1^2+B1^2+C1^2} \\times \\sqrt{A2^2+B2^2+C2^2}} \\] ";
     renderMathInElement(document.getElementById("angleplane"));*/
@@ -5766,11 +5794,28 @@ function solvetwoplane() {
         if ((a == a1) && (b == b1) && (c == c1)) {
             var res = Math.abs(d1 - d) / Math.sqrt(a * a + b * b + c * c);
             document.getElementById('dplane').innerHTML = 'Distance between plane 1 and 2 is ' + res.toFixed(2);
+            print += "\\[Equation \\space 1 \\space : \\space " + a + "x \\space + \\space " + b + "y \\space + \\space " + c + "z \\space + \\space " + d + " \\space = \\space 0\\]";
+            print += "\\[Equation \\space 1 \\space : \\space " + a1 + "x \\space + \\space " + b1 + "y \\space + \\space " + c1 + "z \\space + \\space" + d1 + "\\space = \\space 0\\]";
+            print += "\\[The \\space coefficients \\space of \\space x\\space y \\space and \\space z \\space are \\space same \\space for \\space both \\space the \\space planes. \\]";
+            print += "\\[So, \\space these \\space two \\space planes \\space are \\space parallel \\space to \\space each \\space other \\]";
+            print += "\\[Distance \\space between \\space two \\space parallel \\space planes \\space  \\]";
+            print += "\\[= \\space \\frac{|D_2 - D_1|}{\\sqrt{A^2 + B^2 + C^2}}\\]";
+            print += "\\[where, A \\space B \\space and \\space C \\space are \\space coefficients \\space of \\space x \\space y \\space and \\space z \\space respectively\\]";
+            print += "\\[= \\space \\frac{|(" + d1 + ") - (" + d + ")|}{\\sqrt{(" + a + ")^2 + (" + b + ")^2 + (" + c + ")^2}}\\]";
+            print += "\\[= \\space " + res + "\\]";
+            print += "\\[So, \\space distance \\space between \\space plane \\space 1 \\space and \\space plane \\space 2 \\space = \\space " + res.toFixed(2) + " \\]";
         }
         else {
             document.getElementById('dplane').innerHTML = 'Planes are not parallel, so distance is 0';
+            print += "\\[Equation \\space 1 \\space : \\space " + a + "x \\space + \\space " + b + "y \\space + \\space " + c + "z \\space + \\space " + d + " \\space = \\space 0\\]";
+            print += "\\[Equation \\space 1 \\space : \\space " + a1 + "x \\space + \\space " + b1 + "y \\space + \\space " + c1 + "z \\space + \\space" + d1 + "\\space = \\space 0\\]";
+            print += "\\[The \\space coefficients \\space of \\space x\\space y \\space and \\space z \\space are \\space not \\space same \\space for \\space both \\space the \\space planes. \\]";
+            print += "\\[So, \\space these \\space two \\space planes \\space are \\space \\space not \\space parallel \\space to \\space each \\space other \\]";
+            print += "\\[Distance \\space between \\space two \\space unparallel \\space planes \\space = \\space 0  \\]";
         }
     }
+    work.innerHTML = print;
+    renderMathInElement(work);
 
 }
 //3-D Distance Calculator
@@ -13145,14 +13190,34 @@ function typenum2find() {
         renderMathInElement(document.getElementById("typenum2ans"));
     }
 }
+function divSums(n) {
+    let result = 0;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            if (i == (n / i)) {
+                result += i;
+            }
+
+            else {
+                result += (i + n / i);
+            }
+        }
+    }
+    return (result + 1);
+}
 //Sum of the all amicable numbers up to N
 function typenum4find() {
     let N = parseInt(document.getElementById("typenum5").value)
-    for (let i = 0; i <= N; i++) {
-        if (divSum(i + 1) != i)
-            document.getElementById("typenum4ans").innerHTML = false;
-        document.getElementById("typenum4ans").innerHTML = divSum(i) == i + 1;
+    let s=0;
+    for (let i = 2; i <= N; i++) {
+        let n1=divSums(i);
+        let n2=divSums(n1)
+        if (i == n2 && n1!=n2){
+            s+=i;
+            console.log(i)
+        }
     }
+    document.getElementById("typenum4ans").innerHTML = s;
 }
 //Sum of Fibonacci numbers at even indexes upto N terms
 function typenum6find() {
@@ -13259,9 +13324,9 @@ function typenum13find() {
     explain=explain.slice(0,-1);
     explain+="\\]";
     if (n==0 || n==1)
-        explain+="\\["+n+"th -Leonardo \\ Number is =1 \\]";
+        explain+="\\["+n+"th \\space Leonardo \\ Number is =1 \\]";
     else 
-        explain+="\\["+n+"th -Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
+        explain+="\\["+n+"th \\space Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
     
     document.getElementById("typenum13ans").innerHTML ="\\["+n+"th \\space Leonardo \\space Number \\space is:"+dp[n]+"\\]"+explain;
     renderMathInElement(document.getElementById("typenum13ans"))
@@ -13322,11 +13387,7 @@ function typenum15find(){
         document.getElementById("typenum15ans").innerHTML  =  "Yes"
     else
         document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-
-    }    
-
-
+}    
 
 
 
@@ -16711,7 +16772,7 @@ function divBinDecHexOct() {
         print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
         print += input1 + "->" + x1 + "<br>";
     } else if (firstBase === "Decimal") {
-        x1 = parseInt(input1);
+        x1 = parseFloat(input1);
         print += "<h5>Step1 : Take the "+firstBase+" number in Input 1</h5>";
         print += "i.e," + x1 + "<br>";
     } else if (firstBase === "Octal") {
@@ -16719,7 +16780,7 @@ function divBinDecHexOct() {
         print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
         print += input1 + "->" + x1 + "<br>";
     } else if (firstBase === "Hexa Decimal") {
-        x1 = parseInt(input1, 16);
+        x1 = calculatefrac(input1, 16);
         print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
         print += input1 + "->" + x1 + "<br>";
     }
@@ -16729,7 +16790,7 @@ function divBinDecHexOct() {
         print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
         print += input2 + "->" + x2 + "<br>";
     } else if (secondBase === "Decimal") {
-        x2 = parseInt(input2);
+        x2 = parseFloat(input2);
         print += "<h5>Step2 : Take the "+secondBase+" number in Input 2 </h5>";
         print += "i.e," + x2 + "<br>";
     } else if (secondBase === "Octal") {
@@ -16737,7 +16798,7 @@ function divBinDecHexOct() {
         print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
         print += input2 + "->" + x2 + "<br>";
     } else if (secondBase === "Hexa Decimal") {
-        x2 = parseInt(input2, 16);
+        x2 = calculatefrac(input2, 16);
         print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
         print += input2 + "->" + x2 + "<br>";
     }
@@ -16751,17 +16812,17 @@ function divBinDecHexOct() {
         print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
         print += x3 + "->" + fracDectoBinHexOct(x3,2);
     } else if (resultType === "Decimal") {
-        result.innerHTML = "Answer in Decimal=" + x3.toString();
+        result.innerHTML = "Answer in Decimal=" + parseFloat(x3);
         print += "<h5>Step4 : Answer in "+resultType+"</h5>";
-        print += x3.toString();
+        print += parseFloat(x3);
     } else if (resultType === "Octal") {
         result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3,8);
         print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
         print += x3 + "->" + fracDectoBinHexOct(x3,8);
     } else if (resultType === "Hexa Decimal") {
-        result.innerHTML = "Answer in Hexadecimal=" + x3.toString(16);
+        result.innerHTML = "Answer in Hexadecimal=" + fracDectoBinHexOct(x3,16);
         print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
-        print += x3 + "->" + x3.toString(16);
+        print += x3 + "->" + fracDectoBinHexOct(x3,);
     }
 
     work.innerHTML = print;
@@ -18792,6 +18853,19 @@ function cscu5find() {
     }
     renderMathInElement(output);
 }
+
+function hexa121find() {
+    let a = parseFloat(document.getElementById("hexa131").value)
+    var area = (Math.pow(1.268, 2) * Math.pow(a, 2));                                                             
+    if(a<0)
+    {
+       document.getElementById("hexa121ans").innerHTML+="\\[Side \\space Length \\space of \\space the \\space Hexagon \\space cannot \\space be \\space negative.\\]"  
+       renderMathInElement( document.getElementById("hexa121ans"));
+    }else {
+     document.getElementById("hexa121ans").innerHTML =area;
+    }  
+}
+
 //Empirical Probability
 function computeprobability() {
 
