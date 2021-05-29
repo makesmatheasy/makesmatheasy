@@ -5380,14 +5380,32 @@ function pointsphere(){
     let pts = x11 + y11 + z11;
     if(!isNaN(x1) &&  !isNaN(y1) && !isNaN(z1) && !isNaN(r) && !isNaN(x) && !isNaN(y)  && !isNaN(z)){
     if (pts < (r**2)){
+    ans += "\\[A \\space Point \\space  (x, y, z) \\space  lies \\space  inside \\space  the \\space  sphere \\space  with \\space  center \\space  (x1, y1, z1) \\space  and \\space  radius \\space  r \\space  if \\]"
+    ans += "\\[( x - x1 )^{2} + (y - y1)^{2} + (z - z1)^{2} \\space < \\space r^{2}  \\]"
+    ans += "\\[(" + x + " - " + x1 + " )^{2} + ( " + y + " - " + y1 +  ")^{2} + ( " + z + "-" +  z1 + ")^{2} \\space < \\space " + r +"^{2}  \\]"
+    ans +=  "\\[(" + (x-x1) + " )^{2} + ( " + (y - y1) +  ")^{2} + ( " + (z - z1) + ")^{2} \\space < \\space " + r +"^{2}  \\]"
+    ans +=  "\\[" + (x-x1)**2 + "  +  " + (y - y1)**2 +  " +  " + (z - z1)**2 + " \\space < \\space " + r**2 + "  \\]"
+    ans +=  "\\[" + ((x-x1)**2  + (y - y1)**2 + (z - z1)**2) + " \\space < \\space " + r**2 + "  \\]"
     ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Sphere \\]"
     output.innerHTML = ans;
     }
     else if (pts == (r**2)){
+        ans += "\\[A \\space Point \\space  (x, y, z) \\space  lies \\space  on \\space  the \\space  sphere \\space  with \\space  center \\space  (x1, y1, z1) \\space  and \\space  radius \\space  r \\space  if \\]"
+        ans += "\\[( x - x1 )^{2} + (y - y1)^{2} + (z - z1)^{2} \\space = \\space r^{2}  \\]"
+        ans += "\\[(" + x + " - " + x1 + " )^{2} + ( " + y + " - " + y1 +  ")^{2} + ( " + z + "-" +  z1 + ")^{2} \\space = \\space " + r +"^{2}  \\]"
+        ans +=  "\\[(" + (x-x1) + " )^{2} + ( " + (y - y1) +  ")^{2} + ( " + (z - z1) + ")^{2} \\space = \\space " + r +"^{2}  \\]"
+        ans +=  "\\[" + (x-x1)**2 + "  +  " + (y - y1)**2 +  " +  " + (z - z1)**2 + " \\space = \\space " + r**2 + "  \\]"
+        ans +=  "\\[" + ((x-x1)**2  + (y - y1)**2 + (z - z1)**2) + " \\space = \\space " + r**2 + "  \\]"
         ans += "\\[The \\space given \\space points \\space lies \\space on \\space the \\space Sphere \\]"
         output.innerHTML = ans;
     }
     else{
+        ans += "\\[A \\space Point \\space  (x, y, z) \\space  lies \\space  inside \\space  the \\space  sphere \\space  with \\space  center \\space  (x1, y1, z1) \\space  and \\space  radius \\space  r \\space  if \\]"
+        ans += "\\[( x - x1 )^{2} + (y - y1)^{2} + (z - z1)^{2} \\space > \\space r^{2}  \\]"
+        ans += "\\[(" + x + " - " + x1 + " )^{2} + ( " + y + " - " + y1 +  ")^{2} + ( " + z + "-" +  z1 + ")^{2} \\space > \\space " + r +"^{2}  \\]"
+        ans +=  "\\[(" + (x-x1) + " )^{2} + ( " + (y - y1) +  ")^{2} + ( " + (z - z1) + ")^{2} \\space > \\space " + r +"^{2}  \\]"
+        ans +=  "\\[" + (x-x1)**2 + "  +  " + (y - y1)**2 +  " +  " + (z - z1)**2 + " \\space > \\space " + r**2 + "  \\]"
+        ans +=  "\\[" + ((x-x1)**2  + (y - y1)**2 + (z - z1)**2) + " \\space > \\space " + r**2 + "  \\]"
         ans += "\\[The \\space given \\space points \\space lies \\space outside \\space the \\space Sphere \\]"
         output.innerHTML = ans;
     }
