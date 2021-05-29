@@ -1180,6 +1180,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="vect"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector Magnitude Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Vector Mangnitude Calculator','#vects','c','vectsimgfav')"><img
+                                        id="vectsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="vecalgbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Vector
                                 Algebra</a>
@@ -19584,6 +19599,15 @@
     <button class="btn btn-dark" onclick="lnfind()">FInd</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="lnans1"></p><br>
     <p style="font-family:mathfont" id="lnans"></p><br>
+</div>
+
+<div class="collapse" id="vects">
+    <h1 style="color: white;font-family:mathfont">Vector Magnitude Calculator</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="vects1" placeholder="Enter the Vector space" class="form__field"><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="vects2" placeholder="Enter the input coordinates" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="vectsfind()">Find</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="vectans1"></p><br>
+    
 </div>
 
 <div class="collapse" id="adams">

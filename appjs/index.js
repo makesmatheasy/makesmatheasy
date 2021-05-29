@@ -433,6 +433,7 @@ function openit(id) {
         "#ip",
         "#oocs",
         "#partialcy",
+        "#vects",
         "#prices",
         "#centcal",
         "#cevtha",

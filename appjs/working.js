@@ -691,6 +691,12 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#vect").click(function () {
+        openit("#vects");
+        closenav();
+        clearall();
+
+    });
     //Euler's Totient Function
     $("#etfbtn").click(function () {
         openit("#etf");

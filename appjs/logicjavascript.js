@@ -21838,6 +21838,36 @@ function negbinoCal() {
         document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
     }
   }
+
+
+  function vectsfind()
+  {
+    let n = document.getElementById("vects1").value;
+    let num = document.getElementById("vects2").value;
+
+    if(n=="" || isNaN(n)||num==""){
+        document.getElementById("vectans1").innerHTML = "Enter proper inputs";
+    }
+    else{
+        n=parseInt(n);
+        num = num.trim();
+        num = num.split(" ");
+        var len = parseInt(num.length);
+        if(len!=n)
+        {
+            document.getElementById("vectans1").innerHTML = "Number of coordinates and vector space are not matching";
+        }
+        else{
+        var number = []
+        var sq=0;
+        for (i = 0; i < len; i++) {
+            number[i] = parseInt(num[i].trim());
+            sq+=number[i]*number[i];
+        }
+        document.getElementById("vectans1").innerHTML = "The calculated magnitude of vector is: "+Math.sqrt(sq);
+    }    
+  }
+
   function divisorSum(N, K)
 {
     let sum = 0;
@@ -21892,3 +21922,4 @@ function hyperfind() {
     }
     document.getElementById("hyperans").innerHTML = ans;
 }
+
