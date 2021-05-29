@@ -13227,7 +13227,9 @@ function golds1find() {
 }
 
 function golds2find() {
-    let a = document.getElementById("golds3").value
+    var a = document.getElementById("golds3").value;
+    var output = document.getElementById("golds2exp");
+    var temp = "";
     if(!isNaN(a)){        
         let PHI = 1.6180339;
         let f = [0, 1, 1, 2, 3, 5];
@@ -13238,14 +13240,19 @@ function golds2find() {
             fn = Math.round(fn * PHI);
             t++;
         }
-        document.getElementById("golds2exp").innerHTML = "\\[Two numbers are said to be in the golden ratio if their ratio is the same as the ratio of the sum of the two numbers to the larger number.\\]"
-        document.getElementById("golds2exp").innerHTML = "\\[\\frac{A}{B} = \\frac{A + B}{A} = \\frac{1.618}{1} = 1.618 \\]"
-        document.getElementById("golds2exp").innerHTML = "\\[The idea is to find two ratios and check that this ratio is equal to the Golden ratio. That is 1.618.  \\]"
-        renderMathInElement(document.getElementById('golds2exp'));
-        document.getElementById("golds2ans").innerHTML = fn;
+        temp += "\\[Two \\space numbers \\space are \\space said \\space to \\space be \\space in \\space the \\space golden \\space ratio \\space if ,\\]"
+        temp += "\\[Their \\space ratio \\space is \\space the \\space same \\space as \\space the \\space ratio \\space of \\space  sum \\space of \\space  two \\space numbers \\space to \\space larger \\space number\\]"
+        temp +="\\[\\frac{A}{B} = \\frac{A + B}{A} = \\frac{1.618}{1} = 1.618 \\]"
+        temp +="\\[The \\space idea \\space is \\space to \\space find \\space two \\space ratios \\space and \\space check \\space that \\space this \\space ratio \\space is \\space = \\space Golden \\space ratio \\space i.e. \\space 1.618\\]"
+        temp += "\\[Answer \\space = \\space "+fn+"\\]";
+
+        output.innerHTML = temp;
     }
-    else 
-    document.getElementById("golds2ans").innerHTML = "Please enter valid input"
+    else {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 
 function golds3find() {
