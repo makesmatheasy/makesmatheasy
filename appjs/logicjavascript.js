@@ -20041,14 +20041,30 @@ function cscu5find() {
 
 function hexa121find() {
     let a = parseFloat(document.getElementById("hexa131").value)
-    var area = (Math.pow(1.268, 2) * Math.pow(a, 2));                                                             
+    var output = document.getElementById("hexa121ans")
+    var ans = ""
+    var a1 = 1.268 * a;
+    var a2 = (1.268 * a)**2;
+    var area = (Math.pow(1.268, 2) * Math.pow(a, 2));
     if(a<0)
     {
-       document.getElementById("hexa121ans").innerHTML+="\\[Side \\space Length \\space of \\space the \\space Hexagon \\space cannot \\space be \\space negative.\\]"  
-       renderMathInElement( document.getElementById("hexa121ans"));
-    }else {
-     document.getElementById("hexa121ans").innerHTML =area;
-    }  
+       ans += "\\[Side \\space Length \\space of \\space the \\space Hexagon \\space cannot \\space be \\space negative.\\]"  
+       output.innerHTML = ans
+    }
+    else  if (!isNaN(a))
+     {
+        ans += "\\[Side \\space length \\space of \\space Hexagon \\space = \\space  " + a + " \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space the \\space inscribed \\space square \\space (d) \\space = \\space 1.268 \\times a \\]"
+        ans += "\\[Area \\space of \\space Square \\space = \\space d^{2} \\space = \\space (1.268 \\times a)^{2} \\space = \\space  (1.268 \\times " + a + ")^{2} \\space = \\space (" + (a1).toFixed(3) + ")^{2} \\space = \\space " + (a2).toFixed(3) + " \\]"
+        ans += "\\[Area \\space of \\space Square \\space is \\space " + area.toFixed(3) + " \\]"
+        output.innerHTML = ans
+    }
+    else
+    {
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
+    }
+    renderMathInElement(output)
 }
 
 //Empirical Probability
