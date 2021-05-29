@@ -1901,7 +1901,7 @@ else{
      for (i = 0; i < len; i++) {
          varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
      }
-
+      
      varrzlt = varrzlt/(len-1);
      var sampstddev=Math.sqrt(varrzlt);
      sampstddev=sampstddev**3;
