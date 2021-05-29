@@ -21453,6 +21453,10 @@ function adamfind() {
     if (num == "") {
         ans = "Please enter the number to find answer";
     }
+    else if(isNaN(num))
+    {
+        ans = "Only numeric values are allowed";
+    }
     else {
         num = parseInt(num);
         let a = square(num);
