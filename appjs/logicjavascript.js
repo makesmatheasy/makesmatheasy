@@ -2872,6 +2872,19 @@ function setBits(n)
     return count;
 }
 
+function nth113find(){
+    var nterms = (document.getElementById("imp113").value);
+    if (nterms != "") {
+        let first = 12;
+        var ntherm = ((first*(Math.pow(2,nterms-1)))+11*((Math.pow(2,nterms-1))-1));
+        document.getElementById("nth113ans").innerHTML = ntherm;
+    }
+    else{
+        document.getElementById("nth113ans").innerHTML = "Please enter all Input"
+    }
+
+}
+
 //Important Series and Sequences start
 
 function impsefind() {
@@ -2922,13 +2935,24 @@ function impse20find() {
 
 function impse21find() {
     var n = parseInt(document.getElementById("impse21").value)
-    while (n != 1) {
-        document.getElementById("impse21ans").innerHTML = n + " ";
-        if ((n & 1) != 0)
-            n = 3 * n + 1;
-        else
-            n = parseInt(n / 2, 10);
-    } document.getElementById("impse21ans").innerHTML = n;
+    if(!isNaN(n)){
+        while (n != 1) {
+            document.getElementById("impse21ans").innerHTML = n + " ";
+            if ((n & 1) != 0)
+                n = 3 * n + 1;
+            else
+                n = parseInt(n / 2, 10);
+        } 
+        document.getElementById("impse21ans").innerHTML = n;
+        document.getElementById("impse21exp").innerHTML = "\\[Starting with any positive integer N, Collatz sequence is defined corresponding to n as the numbers formed by the following operations :\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[1. If n is even, then n = n / 2.\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[2. If n is odd, then n = 3*n + 1.\\]"
+        document.getElementById("impse21exp").innerHTML = "\\[3. Repeat above steps, until it becomes 1.\\]"
+        renderMathInElement(document.getElementById("impse21exp"))
+    }
+    else {
+        document.getElementById("impse21ans").innerHTML = "Please enter valid input"
+    }
 }
 
 function impse2find() {
@@ -3299,6 +3323,43 @@ function solvecylinshell() {
         voloutput.innerHTML = "";
         saoutput.innerHTML = "";
         laoutput.innerHTML = "";
+    }
+}
+
+function solveobcylinshell() {
+    var r = document.getElementById("inputobcylinshellr").value;
+    var R = document.getElementById("inputobcylinshellR").value;
+    var a = document.getElementById("inputobcylinshella").value;
+    var side = document.getElementById("inputobcylinshellside").value;
+    var voloutput = document.getElementById("resultofobcylinshellvol");
+    var saoutput = document.getElementById("resultofobcylinshellarea");
+    var houtput = document.getElementById("resultofobcylinshelllh");
+    var voltemp = "";
+    var satemp = "";
+    var htemp = "";
+    var h=((side*Math.sin(a)*Math.PI)/180).toFixed(2);
+    var vol= 3.14*h*((R*R)-(r*r));
+    var sa=2*3.14*[(R+r)*a+((R*R)+(r*r)-(2*r*R))];
+    if ((r != "") && (R !="") && (a!="") && (side!="")) {
+        voltemp += "\\[ \\pi \\times" + h + "\\times (" + R + "^2-" + r + "^2)" + "\\]";
+        voltemp += "\\[Volume \\space of \\space Oblique \\space Cylindrical \\space Shell \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(vol)).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ 2 \\times \\pi \\times [(" + R + "+" + r + ") \\times" + a + "+ (" + R + "^2-" + r + "^2"  + ")]" + "\\]";
+        satemp += "\\[Area \\space of \\space Oblique \\space Cylindrical \\space Shell \\space is \\space \\]";
+        satemp += "\\[" + eval(String(sa)).toFixed(3) + "\\]";
+        saoutput.innerHTML = satemp;
+        htemp += "\\[ " + side +  "\\times sin(" + a + ")" + "\\]";
+        htemp += "\\[Height \\space of \\space Oblique \\space Cylindrical \\space Shell \\space is \\]";
+        htemp += "\\[ " + eval(String(h)).toFixed(3) + "\\]";
+        houtput.innerHTML = htemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(houtput);
+    } else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        houtput.innerHTML = "";
     }
 }
 //Check whether one root of the Quadratic Equation is twice of other or not
@@ -3776,21 +3837,27 @@ function interpointsolve() {
 function alisumfind() {
     let n = parseInt(document.getElementById("alisum").value)
     let sum = 0;
-    let explain1 = "\\[Proper \\space Divisors \\space of \\space" + n + ":";
-    let explain2 = "\\[Aliquot \\space Sum=";
-    for (let i = 1; i < n; i++)
-        if (n % i == 0) {
-            sum += i;
-            explain1 += "\\space" + i + ",";
-            explain2 += i + "+";
-        }
-    explain1 = explain1.slice(0, -1);
-    explain1 += "\\]";
-    explain2 = explain2.slice(0, -1);
-    explain2 += "=" + sum + "\\]";
-    document.getElementById("alisumans").innerHTML = "Aliquot Sum=" + sum;
-    document.getElementById("aliexplain").innerHTML = explain1 + explain2;
-    renderMathInElement(document.getElementById("aliexplain"));
+    if(n=="" || isNaN(n)){
+        document.getElementById("alisumans").innerHTML = "Enter proper input";
+        document.getElementById("aliexplain").innerHTML = "";
+    }
+    else{
+        let explain1 = "\\[Proper \\space Divisors \\space of \\space" + n + ":";
+        let explain2 = "\\[Aliquot \\space Sum=";
+        for (let i = 1; i < n; i++)
+            if (n % i == 0) {
+                sum += i;
+                explain1 += "\\space" + i + ",";
+                explain2 += i + "+";
+            }
+        explain1 = explain1.slice(0, -1);
+        explain1 += "\\]";
+        explain2 = explain2.slice(0, -1);
+        explain2 += "=" + sum + "\\]";
+        document.getElementById("alisumans").innerHTML = "Aliquot Sum=" + sum;
+        document.getElementById("aliexplain").innerHTML = explain1 + explain2;
+        renderMathInElement(document.getElementById("aliexplain"));
+    }
 }
 
 function alisum1find() {
@@ -7793,6 +7860,37 @@ function solvehex() {
     renderMathInElement(document.getElementById("resultofareahex2"));
     renderMathInElement(document.getElementById("resultofperimeterhex"));
 
+}
+//Concave Hexagon
+function solveconcavehex() {
+    let a = document.getElementById("inputconhexside").value;
+    let breadthoutput = document.getElementById("resultofconhexbreadth");
+    let heioutput = document.getElementById("resultofconhexhei");
+    let perioutput = document.getElementById("resultofconhexperi");
+    let areaoutput = document.getElementById("resultofconhexarea");
+    var breadthtemp = "";
+    var heitemp = "";
+    var peritemp = "";
+    var areatemp = "";
+    if (a != "") {
+        breadthtemp += "\\[Breadth \\space \\newline \\sqrt{3} \\times" + a  + "\\ = " + eval(String(1.7320508 * a)).toFixed(2) + "\\]";
+        breadthoutput.innerHTML = breadthtemp;
+        heitemp += "\\[Height \\space \\newline \\frac{3}{2} \\times" + a + "\\ = " + eval(String(1.5 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        peritemp += "\\[Perimeter \\space \\newline 6 \\times" + a + "\\ = " + eval(String(6 * a)).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areatemp += "\\[Area \\space \\newline \\sqrt{3} \\times (" + a + ")^2" + "\\ = " + eval(String(1.7320508 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(breadthoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areaoutput); 
+    } else {
+        breadthoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
 }
 //Stretched Hexagon
 function solvestretchhex() {
@@ -13033,6 +13131,16 @@ function cirinsemi10find() {
         document.getElementById("cirinsemi10ans").innerHTML = "-1"
 }
 
+function cirinsemi11find(){
+    let H = parseInt(document.getElementById("cirinsemi17in").value)
+    let n = parseInt(document.getElementById("cirinsemi18in").value)
+    let m = parseInt(document.getElementById("cirinsemi19in").value)
+    let N = n * 1.0;
+    let M = m * 1.0;
+    let h = H * Math.sqrt(N / (N + M));
+    document.getElementById("cirinsemi11ans").innerHTML = h;
+}
+
 function pksquarefind() {
     let k = parseInt(document.getElementById("pksquare13in").value)
     let list = document.getElementById("pksquare14in").value;
@@ -13114,6 +13222,17 @@ function sht6find() {
     }
 }
 
+function eqrect() {
+    let a = parseInt(document.getElementById("eqrect1").value)
+    if (!isNaN(a)) {
+        var area = (1.732 * Math.pow(a, 2))/8;
+        document.getElementById("eqrectans").innerHTML = area;
+    }
+    else {
+        document.getElementById("eqrectans").innerHTML = "Please enter valid input"
+    }
+}
+
 function retfind13() {
     let a = parseFloat(document.getElementById("retin16").value)
     let x = 1.268 * a;
@@ -13188,6 +13307,22 @@ function golds1find() {
         return false;
     }
 }
+
+function rectrhomb() {
+    var length = parseFloat(document.getElementById("rectrhomb1").value)
+    var breadth = parseFloat(document.getElementById("rectrhomb2").value)
+    var area = ((length*breadth)/2);
+    if (length<0 || breadth<0) {
+        document.getElementById("rectrhombans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+    }
+    else if (!isNaN(length) && !isNaN(breadth) ) {
+        document.getElementById("rectrhombans").innerHTML = area.toFixed(3);
+    }
+    else {
+        document.getElementById("rectrhombans").innerHTML = "Please enter all input"
+    }
+}
+
 
 function golds2find() {
     let a = document.getElementById("golds3").value
@@ -17100,8 +17235,21 @@ function subBinDecHexOct() {
     var input2 = document.getElementById("subtract-all-input2").value;
     let result = document.getElementById("subtract-all-result");
     let work = document.getElementById("subtract-all-working");
-    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;"
+    let print = "<h2 style='margin-top: 50px;'>Working Steps </h2> &emsp;";
 
+    if(parseFloat(input1)-Math.trunc(input1) > 0 || parseFloat(input2)-Math.trunc(input2) > 0){
+        var x1;var x2;var x3;
+
+        if(base === "Binary"){
+            x1 = calculatefrac(input1,2);
+            x2 = calculatefrac(input2,2);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,2);
+            work.innerHTML = "";
+        }
+    }else{
     if (input1.length > input2.length) {
         var p = input1.length - input2.length;
         p = Math.pow(10, p);
@@ -17264,6 +17412,7 @@ function subBinDecHexOct() {
             print += "ANSWER (Ten's complement of the sum) ->   <span style='text-decoration: underline;'>-" + ans3 + "</span>";
         }
 
+    }
     }
     work.innerHTML = print;
 }
@@ -18868,9 +19017,10 @@ function convertex3() {
 function convertdec2421() {
     var input = document.getElementById("dec2421-input").value;
     let result = document.getElementById("dec2421-result");
-    const type = document.getElementById("dec2421-select");
+    const type1 = document.getElementById("dec2421-select1").value;
+    const type = document.getElementById("dec2421-select").value;
 
-    if(type === "Decimal"){
+    if(type === "Decimal" && type1 === "2421 Code"){
     var x = "_";
     var y = "";
     for (var i = 0; i < input.length; i++) {
@@ -18893,7 +19043,39 @@ function convertdec2421() {
             x = x + +y + "_   ";
         }
       }
-    }else if(type === "Binary"){
+    }else if (type === "2421 Code" && type1 === "Decimal"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString();
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }
+    }else if(type === "Binary" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
         input = parseInt(input,2).toString();
@@ -18917,7 +19099,41 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
-    }else if(type === "Octal"){
+
+    }else if (type === "2421 Code" && type1 === "Binary"){
+        var x = "";
+        var y = "";
+        var temp = "";
+        if(input.length % 4 != 0 ){
+            result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
+        }else{
+            for(var i = 0; i < input.length; i++){
+                if((i+1) % 4 == 0){
+                    temp = temp + input[i]; //for 4 th value
+                    if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
+                        x = "Invalid 2421 Input";
+                    }
+                    if(parseInt(temp,2) > 4){
+                        x = x + (parseInt(temp,2) - 6).toString();
+                    }else{
+                        x = x + parseInt(temp,2).toString();
+                    }
+                    temp = "";
+                }else{
+                    temp = temp + input[i];
+                }
+            }
+            if(input.length / 4 == x.length ){
+                x = parseInt(x).toString(2);
+            }else if(parseInt(x)<0){
+                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+            }else{
+                x = "Error : Invalid 2421 input";
+            }
+            result.innerHTML = x;
+        }
+        }else if(type === "Octal"){
+
         var x = "_";
         var y = "";
         input = parseInt(input,8).toString();
@@ -18941,6 +19157,7 @@ function convertdec2421() {
                 x = x + +y + "_   ";
             }
         }
+
     }else if (type === "2421 Code" && type1 === "Octal"){
         var x = "";
         var y = "";
@@ -18998,8 +19215,8 @@ function convertdec2421() {
             if (y.length == 4) {
                 x = x + +y + "_   ";
             }
-        }
-    }result.innerHTML = x;
+        }result.innerHTML = x;
+    }
 }
 
 
@@ -19724,52 +19941,49 @@ function computeprobability() {
 }
 //Geometric Probability Distribution
 function geoprobability(op) {
-    var x = document.getElementById('failure').value;
-    var p = document.getElementById('success').value;
+    let x = document.getElementById('failure').value;
+    let p = document.getElementById('success').value;
+
+    var output = document.getElementById("geoprobAns") ;
 
     if ((isNaN(x)) || (isNaN(p)) || x === "" || p === "") {
         document.getElementById("geoprobAns").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
         renderMathInElement(document.getElementById("geoprobAns"));
-    }
-    else {
+    } else {
         if (p > 1) {
             document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space exceed \\space 1 \\]";
             renderMathInElement(document.getElementById("geoprobAns"));
-
-        }
-        else if (p < 0) {
+        } else if (p < 0) {
             document.getElementById("geoprobAns").innerHTML = "\\[Probability \\space of \\space success \\space cannot \\space be \\space negative \\]";
             renderMathInElement(document.getElementById("geoprobAns"));
-        }
-        else {
+        } else {
             if (op === 1){
-                    var proboutput = document.getElementById("geoprobAns") ;
                     var probtemp = "";
                     probtemp += "\\[Geometric \\space Probability \\space will \\space be \\]";
                     probtemp +="\\[\\space = \\space (1 - (Probability \\space of \\space Success))^{(Number \\space of \\space failures)} \\times (Probability \\space of \\space Success) \\]";
                     probtemp +="\\[\\space = \\space (1 - "+p+")^{"+x+"} \\times "+p+"\\]";
-                    probtemp +="\\[\\space = \\space "+(1-p)**x+" \\times "+p+"\\]";
+                    probtemp +="\\[\\space = \\space "+((1-p)**x).toFixed(2)+" \\times "+p+"\\]";
                     probtemp +="\\[\\space = \\space "+((1 - p) ** x * p).toFixed(3)+"\\]";
-                    proboutput.innerHTML = probtemp;
-                    renderMathInElement(proboutput); 
-                    return;
-            }
-            else if (op == 2){
-                var meanoutput = document.getElementById("geoprobAns") ;
+                    output.innerHTML = probtemp;
+            } else if (op == 2){
                 var meantemp = "";
                 meantemp += "\\[Mean \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
-                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))} (Probability \\space of \\space Success)} \\]";
+                meantemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))}{(Probability \\space of \\space Success)} \\]";
                 meantemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"}\\]";
-                meantemp +="\\[\\space = \\space \\frac{"+(1-p)+"}{ "+p+"}\\]";
+                meantemp +="\\[\\space = \\space \\frac{"+(1-p).toFixed(2)+"}{ "+p+"}\\]";
                 meantemp +="\\[\\space = \\space "+((1 - p)/p).toFixed(3)+"\\]";
-                meanoutput.innerHTML = meantemp;
-                renderMathInElement(meanoutput); 
-                return;
-            }
-            else{
-                document.getElementById("geoprobAns").innerHTML = "Variance: " + (1 - p) / (p * p);
+                output.innerHTML = meantemp;
+            } else{
+                var vartemp = "";
+                vartemp += "\\[Variance \\space of \\space Geometric \\space Probability \\space will \\space be \\]";
+                vartemp +="\\[\\space = \\space \\frac{(1 - (Probability \\space of \\space Success))}{(Probability \\space of \\space Success)^{2}} \\]";
+                vartemp +="\\[\\space = \\space \\frac{(1 - "+p+")}{"+p+"^2}\\]";
+                vartemp +="\\[\\space = \\space \\frac{"+(1-p).toFixed(2)+"}{ "+p**2+"}\\]";
+                vartemp +="\\[\\space = \\space "+((1 - p)/(p*p)).toFixed(3)+"\\]";
+                output.innerHTML = vartemp;
             }
         }
+        renderMathInElement(output); 
     }
 }
 //Conditional Probability
@@ -21350,6 +21564,34 @@ function chivalue() {
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     }}
 }
+//takt time calculator
+function taktvalue() {
+    var num1 = document.getElementById("works").value; 
+    var num2 = document.getElementById("demands").value;
+    var num3 = document.getElementById("breaks").value;
+    if(num1==""||num2=="" ||num3=="")
+    {
+        document.getElementById("taktans").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseInt(num1);
+     num2 =parseInt(num2);
+     num3 =parseInt(num3);
+     var takt=(num1-num3)/num2;
+     console.log(num1+" "+num2+" "+num3);
+     var ans="\\[Takt \\space Time = \\frac{Net \\space Production \\space Time}{Customer \\space Demand} \\]" 
+     ans+="\\[\\frac{"+num1+"-"+num3+"}{"+num2+"} \\]"
+     ans+="\\[\\frac{"+ (num1-num3) +"}{"+num2+"} \\]"
+     ans+="\\[ "+takt.toFixed(4)+" \\]"
+     ans+="\\[Takt \\space Time ="+takt.toFixed(4)+" \\space min \\space per \\space unit \\]"
+     document.getElementById("taktans").innerHTML=ans;
+     renderMathInElement(document.getElementById("taktans"));
+        
+    }
+
+}
+
+
 //MANHATTAN DISTANCE CALCULATOR
 function manhatcal() {
     var num1 = parseFloat(document.getElementById("mdx1").value);
@@ -22366,16 +22608,39 @@ function negbinoCal() {
     let r = document.getElementById("negbinor").value;
     let p = document.getElementById("negbinop").value;
 
+    let ans = "";
     if(n=="" || r=="" || p==""||isNaN(n)||isNaN(r)||isNaN(p)){
-        document.getElementById("negbinoans").innerHTML = "Enter valid inputs";
+        ans += "\\[Enter\\space valid\\space inputs\\]"
+        document.getElementById("negbinoans").innerHTML = ans;
     }
     else{
         let combi = comb(n-1,r-1);
-        let ans = combi * p**r * (1-p)**(n-r);
+        let temp = combi * p**r * (1-p)**(n-r);
+        ans += "\\[\\dbinom{n-1}{r-1} \\times p^r \\times (1-p)^{(n-r)}\\]";
+        ans += "\\[=\\space "+combi+" \\times "+p+" ^ "+r+" \\times (1-"+p+") ^{("+n+" - "+r+")}\\]";
+        ans += "\\[=\\space "+temp+"\\]";
         document.getElementById('negbinoans').innerHTML = "Probability of Y=n: " + ans;
     }
+    renderMathInElement(document.getElementById('negbinoans'));
   }
 
+// PPV Calculator
+function ppvCal() {
+    let sensi = document.getElementById("ppvsensi").value;
+    let speci = document.getElementById("ppvspeci").value;
+    let prev = document.getElementById("ppvprev").value;
+
+    let ans = "";
+    if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
+        ans = "Enter valid inputs"
+        document.getElementById("ppvans").innerHTML = ans;
+    }
+    else{
+        ans = (sensi * prev)/((sensi * prev) + ((1 - speci) * (1 - prev)));
+       
+        document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
+    }
+  }
 
   function vectsfind()
   {
