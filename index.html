@@ -16180,6 +16180,10 @@
                            style="text-decoration:none;" href="#">Salinon</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#sharpkink"
+                           style="text-decoration:none;" href="#">Sharp Kink</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#sphericaltriangle"
                            style="text-decoration:none;" href="#">Spherical Triangle</a></td>
                 </tr>
@@ -30015,6 +30019,73 @@ N is the population size.
                             <p class="stopwrap" id="resultofsalinonperi"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofsalinonarea"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="sharpkink" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sharp Kink</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Kink diagonal (d)</h5>
+                                    <p class="text-center">\[d = \frac{b}{\sin\left ( \frac{\alpha}{2} \right )}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = a + 2 \times b + c + a' + c'\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = b \times \left ( a + c' \right )\]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/kink.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Width (b)" id="sharpkink-b"
+                                   oninput="sharpKinkSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter First long side (a)" id="sharpkink-a"
+                                   oninput="sharpKinkSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter First short side (c)" id="sharpkink-c"
+                                   oninput="sharpKinkSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Second short side (c')" id="sharpkink-cx"
+                                   oninput="sharpKinkSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle (α)" id="sharpkink-alpha"
+                                   oninput="sharpKinkSolve();">
+                            <p class="stopwrap" id="resultKinkDiagonal"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultKinkPerimeter"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultKinkArea"
                                style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
