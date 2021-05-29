@@ -13414,18 +13414,29 @@ function golds1find() {
 function rectrhomb() {
     var length = parseFloat(document.getElementById("rectrhomb1").value)
     var breadth = parseFloat(document.getElementById("rectrhomb2").value)
+    var output = document.getElementById("rectrhombans")
+    var ans = ""
     var area = ((length*breadth)/2);
-    if (length<0 || breadth<0) {
-        document.getElementById("rectrhombans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+    if (length<0 || breadth<0)
+     {
+        ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+     }
+    else if (!isNaN(length) && !isNaN(breadth))
+     {
+        ans += "\\[Length \\space of \\space the \\space Rectangle \\space = \\space " + length + " \\]"
+        ans += "\\[Breadth \\space of \\space the \\space Rectangle \\space = \\space " + breadth + " \\]"
+        ans += "\\[Area \\space of \\space Rhombus \\space = \\space \\frac{length \\times breadth}{2} \\space = \\space \\frac{ " + length + "\\times" + breadth + "}{2} \\space = \\space \\frac{" + (length*breadth) + "}{2} \\]"
+        ans += "\\[Area \\space of \\space Rhombus \\\space is \\space " + area.toFixed(3) + " \\]"
+        output.innerHTML = ans; 
+     }
+    else
+     {
+       ans += "\\[Please \\space enter \\space all \\space input \\]"
+       output.innerHTML = ans;
     }
-    else if (!isNaN(length) && !isNaN(breadth) ) {
-        document.getElementById("rectrhombans").innerHTML = area.toFixed(3);
-    }
-    else {
-        document.getElementById("rectrhombans").innerHTML = "Please enter all input"
-    }
+  renderMathInElement(output);
 }
-
 
 function golds2find() {
     var a = document.getElementById("golds3").value;
