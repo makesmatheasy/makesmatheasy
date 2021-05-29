@@ -13081,16 +13081,24 @@ function golds1find() {
 
 function golds2find() {
     let a = document.getElementById("golds3").value
-    let PHI = 1.6180339;
-    let f = [0, 1, 1, 2, 3, 5];
-    if (n < 6)
-        document.getElementById("golds2ans").innerHTML = f[n];
-    let t = 5, fn = 5;
-    while (t < n) {
-        fn = Math.round(fn * PHI);
-        t++;
+    if(!isNaN(a)){        
+        let PHI = 1.6180339;
+        let f = [0, 1, 1, 2, 3, 5];
+        if (n < 6)
+            document.getElementById("golds2ans").innerHTML = f[n];
+        let t = 5, fn = 5;
+        while (t < n) {
+            fn = Math.round(fn * PHI);
+            t++;
+        }
+        document.getElementById("golds2exp").innerHTML = "\\[Two numbers are said to be in the golden ratio if their ratio is the same as the ratio of the sum of the two numbers to the larger number.\\]"
+        document.getElementById("golds2exp").innerHTML = "\\[\\frac{A}{B} = \\frac{A + B}{A} = \\frac{1.618}{1} = 1.618 \\]"
+        document.getElementById("golds2exp").innerHTML = "\\[The idea is to find two ratios and check that this ratio is equal to the Golden ratio. That is 1.618.  \\]"
+        renderMathInElement(document.getElementById('golds2exp'));
+        document.getElementById("golds2ans").innerHTML = fn;
     }
-    document.getElementById("golds2ans").innerHTML = fn;
+    else 
+    document.getElementById("golds2ans").innerHTML = "Please enter valid input"
 }
 
 function golds3find() {
