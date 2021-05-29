@@ -12959,9 +12959,12 @@ function golds1find() {
     }
     let ratio1 = (a / b).toFixed(3);
     let ratio2 = ((a + b) / a).toFixed(3);
-    if ((ratio1 == ratio2) &&
-        ratio1 == "1.618") {
+    if ((ratio1 == ratio2) &&ratio1 == "1.618") {
+        document.getElementById("golds1exp").innerHTML = "\\[\varphi ={\frac {1+{\sqrt {5}}}{2}}=1.6180339887\ldots \\]" 
+        document.getElementById("golds1exp").innerHTML = "\\[nth\\space fibonacci\\space number\\space = round(n-1th\\space Fibonacci\\space number\\space X\\space golden\\space ratio)\\space fn =\\space round(fn-1 \\space* \varphi)\\]"
+        document.getElementById("golds1exp").innerHTML = "\\[This\\space method\\space can\\space calculate\\space first\\space 34\\space fibonacci\\space numbers\\space correctly.\\space After\\space that\\space there\\space may\\space be\\space difference\\space from\\space the\\space correct\\space value. \\]"
         document.getElementById("golds1ans").innerHTML = "Yes"
+        renderMathInElement(document.getElementById('golds1exp'));
         return true;
     }
     else {
