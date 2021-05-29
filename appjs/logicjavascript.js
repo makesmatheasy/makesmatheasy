@@ -7324,8 +7324,8 @@ function crossedrectsolve() {
     var areaField = document.getElementById("resultOfAreaCrossedRect");
 
     var legLength = (Math.sqrt(Math.pow(baseLength, 2) + Math.pow(rectSide, 2)) / 2);
-    var apexAngle = Math.acos((2 * Math.pow(legLength, 2) - Math.pow(baseLength, 2)) / (2 * Math.pow(legLength, 2)));
-    var intersectAngle = 180 - apexAngle * (180 / Math.PI);
+    var apexAngle = (Math.acos((2 * Math.pow(legLength, 2) - Math.pow(baseLength, 2)) / (2 * Math.pow(legLength, 2)))) *(180 / Math.PI);
+    var intersectAngle = 180 - apexAngle ;
     var baseAngle = (intersectAngle / 2);
     var perimeter = 2 * baseLength + 4 * legLength;
     var area = (baseLength * rectSide) / 2;
@@ -7335,13 +7335,13 @@ function crossedrectsolve() {
         renderMathInElement(legLengthField);
         baseAngleField.innerHTML = "\\[Base \\space angle (\\alpha) =\\frac{" + intersectAngle + "}{2} = " + baseAngle.toFixed(3) + " \\degree \\]";
         renderMathInElement(baseAngleField);
-        intersectAngleField.innerHTML = "\\[Intersection \\space angle (\\beta) = 180 \\degree - " + apexAngle + " = " + intersectAngle.toFixed(3) + " \\degree \\]";
+        intersectAngleField.innerHTML = "\\[Intersection \\space angle (\\beta) = 180 \\degree - " + apexAngle.toFixed(3) + " = " + intersectAngle.toFixed(3) + " \\degree \\]";
         renderMathInElement(intersectAngleField);
-        apexAngleField.innerHTML = "\\[Apex \\space angle (\\gamma) = \\arccos \\frac{2 \\times " + legLength + "^2 - " + baseLength + "^2}{2 \\times " + baseLength + "^2} = " + apexAngle.toFixed(3) + " \\degree \\]";
+        apexAngleField.innerHTML = "\\[Apex \\space angle (\\gamma) = \\arccos \\frac{2 \\times " + baseLength + "^2 - " + legLength + "^2}{2 \\times " + baseLength + "^2} = " + apexAngle.toFixed(3) + " \\degree \\]";
         renderMathInElement(apexAngleField);
         perimeterField.innerHTML = "\\[Perimeter (p) = 2 \\times " + baseLength + " + 4 \\times " + legLength + " = " + perimeter.toFixed(3) + " \\space units \\]";
         renderMathInElement(perimeterField);
-        areaField.innerHTML = "\\[Area (A) = \\frac{" + baseLength + " \\times " + rectSide + "}{2} = " + apexAngle.toFixed(3) + " \\space sq.units \\]";
+        areaField.innerHTML = "\\[Area (A) = \\frac{" + baseLength + " \\times " + rectSide + "}{2} = " + area.toFixed(3) + " \\space sq.units \\]";
         renderMathInElement(areaField);
     }
 }
