@@ -3117,15 +3117,22 @@ function impse19find() {
     let pPrev = 1;
     let pCurr = 1;
     let pNext = 1;
-
-    for (let i = 3; i <= n; i++) {
-        pNext = pPrevPrev + pPrev;
-        pPrevPrev = pPrev;
-        pPrev = pCurr;
-        pCurr = pNext;
+    if(!isNan(n)){
+        for (let i = 3; i <= n; i++) {
+            pNext = pPrevPrev + pPrev;
+            pPrevPrev = pPrev;
+            pPrev = pCurr;
+            pCurr = pNext;
+        }
+        document.getElementById("impse19ans").innerHTML = pNext;
+        document.getElementById("impse19exp").innerHTML = "\\[Padovan\\space Sequence\\space similar\\space to\\space Fibonacci\\space sequence\\space with\\space similar\\space recursive\\space structure.\\space The\\space recursive\\space formula\\space is, \\]"
+        document.getElementById("impse19exp").innerHTML = "\\[ P(n)\\space =\\space P(n-2)\\space +\\space P(n-3)\\]"
+        document.getElementById("impse19exp").innerHTML = "\\[Padovan\\space Sequence:\\space 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37,….. \\]"
+        document.getElementById("impse19exp").innerHTML = "\\[Spiral\\space of\\space equilateral\\space triangles\\space with\\space side\\space lengths\\space which\\space follow\\space the\\space Padovan\\space sequence.\\]"
+        renderMathInElement(document.getElementById("impse19exp"));
     }
-
-    document.getElementById("impse19ans").innerHTML = pNext;
+    else
+        document.getElementById("impse19ans").innerHTML = "Please enter the field"
 }
 
 function impse20find() {
@@ -13574,13 +13581,22 @@ function typenum8find() {
 
 function typenum9find() {
     let n = parseInt(document.getElementById("typenum11").value)
-    if (n < 1)
-        document.getElementById("typenum8ans").innerHTML = n;
-    if (n == 1)
-        document.getElementById("typenum8ans").innerHTML = 2;
-
-    document.getElementById("typenum8ans").innerHTML = (4 * evenFib(n - 1)) +
-        evenFib(n - 2)
+    if(!isNaN(n)){
+        document.getElementById("typenum9exp").innerHTML = "\\[The\\space Fibonacci\\space numbers\\space are\\space the\\space numbers\\space in\\space the\\space following\\space integer\\space sequence. \\]"
+        document.getElementById("typenum9exp").innerHTML = "\\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …. \\]"
+        document.getElementById("typenum9exp").innerHTML = "\\[The\\space even\\space number\\space Fibonacci\\space sequence \\space is,\\space 0, 2, 8, 34, 144, 610, 2584…. \\]"
+        document.getElementById("typenum9exp").innerHTML = "\\[If\\space we\\space take\\space a\\space closer\\space look\\space at\\space Fibonacci\\space sequence,\\space we\\space can\\space notice\\space that\\space every\\space third\\space number\\space in sequence\\space is even\\space and\\space the sequence\\space of evenv numbers follow\\space following\\space recursive\\space formula. \\]"
+        renderMathInElement(document.getElementById("typenum9exp"))
+        if (n < 1)
+            document.getElementById("typenum9ans").innerHTML = n;
+        if (n == 1)
+            document.getElementById("typenum9ans").innerHTML = 2;
+    
+        document.getElementById("typenum9ans").innerHTML = (4 * evenFib(n - 1)) +
+            evenFib(n - 2)
+    }
+    else 
+        document.getElementById("typenum9ans").innerHTML = "Please fill the field"
 }
 
 function typenum10find() {
@@ -14700,11 +14716,33 @@ function lacube5find() {
 }
 //Difference between Sum of Cubes and Sum of Squares of First N Natural Numbers
 function lacube6find() {
-    let n = parseInt(document.getElementById("lacube6").value)
-    let S = Math.pow(((n * (n + 1)) / 2), 2)
-    let x = (n * (n + 1) * (2 * (n) + 1)) / 6
-    res = S - x
-    document.getElementById("lacube6ans").innerHTML = res;
+    var n = parseInt(document.getElementById("lacube6").value)
+    var output = document.getElementById("lacube6ans");
+    var temp = "";
+    if (!isNaN(n)){
+        var S = Math.pow(((n * (n + 1)) / 2), 2)
+        let x = (n * (n + 1) * (2 * (n) + 1)) / 6
+        res = S - x
+        temp += "\\[The \\space difference \\space between \\space Sum \\space of \\space Cubes \\space and \\space Sum \\space of \\space Squares \\space of \\space First \\space N \\space Natural \\space Numbers \\space is,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space S \\space and \\space x, \\space here \\space n \\space = \\space No. \\space of \\space terms \\space in \\space progression \\]"
+        temp += "\\[S \\space = \\space (\\frac{(n \\times (n+1))}{2})^{2}\\]"
+        temp += "\\[\\space = \\space (\\frac{"+n+" \\times ("+n+" + 1 )}{2})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{"+(n * (n + 1))+"}{2})^2\\]"
+        temp += "\\[\\space = \\space "+S.toFixed(3)+"\\]"
+        temp += "\\[x \\space = \\space \\frac{n \\times (n+1) \\times (2 \\times n + 1)}{6}\\]"
+        temp += "\\[\\space = \\space \\frac{"+n+" \\times ("+n+" + 1) \\times (2 \\times "+n+" + 1)}{6} \\]"
+        temp += "\\[\\space = \\space \\frac{"+n+" \\times "+(n + 1)+" \\times "+(2 * (n) + 1)+"}{6}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(n * (n + 1) * (2 * (n) + 1))+"}{6}\\]"
+        temp += "\\[\\space = \\space "+x.toFixed(3)+"\\]"
+        temp += "\\[Finally, \\space difference \\space will \\space be,\\]"
+        temp += "\\[\\space "+S.toFixed(2)+" - "+x.toFixed(2)+" \\space = \\space "+res.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 //Minimum digits to remove to make a number Perfect Square
 function lacube7find() {
@@ -19360,15 +19398,18 @@ function geoprobability(op) {
 }
 //Conditional Probability
 function condprobability() {
-    var netevent = parseFloat(document.getElementById('totevent').value);
-    var event = parseFloat(document.getElementById('event').value);
-    var result1 = (netevent / event).toFixed(3);
-    if ((isNaN(netevent)) || (isNaN(event))) {
+    var neteve = document.getElementById('totevent').value;
+    var eve= document.getElementById('event').value;
+   
+    if ((isNaN(neteve)) || (isNaN(eve))||neteve==""||eve=="") {
         document.getElementById("result1").innerHTML = "Please enter valid input";
         document.getElementById("result2").innerHTML = "";
         document.getElementById("result3").innerHTML = "";
     }
     else {
+        var netevent = parseFloat(document.getElementById('totevent').value);
+        var event = parseFloat(document.getElementById('event').value);
+        var result1 = (netevent / event).toFixed(3);
         if (netevent < 0 || event < 0) {
             document.getElementById("result1").innerHTML = "Outcomes can't be negative, Enter positive values only. ";
             document.getElementById("result2").innerHTML = "";
@@ -21528,6 +21569,10 @@ function adamfind() {
     var ans = "";
     if (num == "") {
         ans = "Please enter the number to find answer";
+    }
+    else if(isNaN(num))
+    {
+        ans = "Only numeric values are allowed";
     }
     else {
         num = parseInt(num);
