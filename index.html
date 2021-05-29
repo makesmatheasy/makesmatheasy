@@ -19635,11 +19635,28 @@
     <button class="btn btn-dark" onclick="amfind()">FInd</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="amans"></p><br>
 </div>
-<div class="collapse" id="wags">
-    <h1 style="color: white;font-family:mathfont">Wagstaff Number</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="wag1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="wagcal()">FInd</button><p>&nbsp;</p>
-    <p style="font-family:mathfont" id="wagans"></p><br>
+<div class="collapse" id="wags" style="text-align: center;">
+    <div class="container">
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Wagstaff Number</h2>
+        <br>
+        <p>A Wagstaff prime is a prime number of the form \[{{2^p+1}\over 3}\] , where p is an odd prime.</p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="wag1" placeholder="Enter the input number" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="wagcal()">FInd</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="wagans"></p><br>
+        </div>
+    </div>
 </div>
 
 <div class="collapse" id="woods">
