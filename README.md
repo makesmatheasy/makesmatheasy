@@ -473,6 +473,7 @@ Other Tech/Libraries
   - Relative Risk Calculator
   - Negative Binomial Distribution Calculator
   - p chart Calculator
+  - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
   - Odds Calculator

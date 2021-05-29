@@ -644,6 +644,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#pvaluebtn").click(function () {
+        openit("#pvalue");
+        closenav();
+        clearall();
+    });
     $("#ipbtn").click(function () {
         openit("#ip");
         closenav();

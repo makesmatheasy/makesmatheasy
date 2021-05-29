@@ -4973,6 +4973,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="pvaluebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">P value</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('P value','#pvalue','c','pvalueimgfav')"><img
+                                        id="pvalueimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="negbinobtn"
                                style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Negative Binomial Distribution Calculator</a>
                         </td>
@@ -20780,6 +20795,18 @@ N is the population size.
     <br>
     </form>
 </div>
+
+<div class="collapse" id="pvalue">
+
+    <h1 style="font-family:mathfont; text-align:center;">P VALUE CALCULATOR </h1>
+    <form>
+        <input type="number" name="pvalueinp" class="form__field" id="rawscore" width="5em" placeholder="Enter the Z score">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
+        <p id="pvalueans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+    </form>
+</div>   
 
 <div class="collapse" id="zscores">
 
