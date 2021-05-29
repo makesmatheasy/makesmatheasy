@@ -17746,8 +17746,9 @@ function convertbcd() {
         var x = "_";
         var y = "";
         result.innerHTML +="<h4>Converting Decimal to BCD</h4> &emsp;";
+        result.innerHTML += "<br><h5>Step 1: Extract each digit of decimal number and convert it to binary</h5><br>";
         for (var i = 0; i < input.length; i++) {
-            result.innerHTML += "<br><h5>Step 1: Extract each digit of decimal number and convert it to binary</h5><br>";
+            result.innerHTML += "Extract the "+(i+1)+" th element";
             y = parseInt(input[i]).toString(2);
             result.innerHTML += y + "<br>";
             result.innerHTML += "Step 2: Depending on the length of " +y +" combine the binary form  of all the digits";
