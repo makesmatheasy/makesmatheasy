@@ -16183,6 +16183,10 @@
                            style="text-decoration:none;" href="#">Salinon</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#sphericaltriangle"
+                           style="text-decoration:none;" href="#">Spherical Triangle</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#stadium"
                            style="text-decoration:none;" href="#">Stadium</a></td>
                 </tr>
@@ -29990,6 +29994,64 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="sphericaltriangle" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Spherical Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Spherical excess (ε)</h5>
+                                    <p class="text-center">\[\epsilon = \alpha + \beta + \gamma - 180 \degree \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \epsilon \times r^2 \]</p>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/spherical-triangle.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!---FROM-->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Circle radius (r)" id="sphericaltri-r"
+                                   oninput="sphericalTriangleSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle α" id="sphericaltri-a"
+                                   oninput="sphericalTriangleSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle β" id="sphericaltri-b"
+                                   oninput="sphericalTriangleSolve();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Angle γ" id="sphericaltri-y"
+                                   oninput="sphericalTriangleSolve();">
+                            <p class="stopwrap" id="resultSphericalExcessSphereTri"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultAreaSphereTri"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="ellipsoid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
