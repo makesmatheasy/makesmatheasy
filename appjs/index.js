@@ -245,6 +245,7 @@ function openit(id) {
         "#golds",
         "#pchart",
         "#npchart",
+        "#xchart",
         "#betagamma",
         "#parallel",
         "#circumradiusarea",

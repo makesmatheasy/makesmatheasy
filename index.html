@@ -4919,6 +4919,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- x bar chart -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="xbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">X bar chart Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('x bar chart Calculator','#xchart','c','xfav')"><img
+                                        id="zscimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -13415,6 +13431,31 @@
                         <p id="lowercontrol" ></p>
                     </div>
                 </div>
+
+                 <!-- X bar chart-->
+         <div class="collapse" id="xchart">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">X bar chart Calculator</h1>
+            <p style="margin-top: 2rem;">
+                A p-chart is an attributes control chart used with data collected in subgroups of varying sizes. 
+                Because the subgroup size can vary, it shows a proportion on nonconforming items rather than the actual count.
+                Control limits of p-chart determines whether the process is in control or not.
+            </p>
+            <p id="tformula" style="margin-bottom:4rem;"></p>
+            <form action="">
+                <input class = "form__field"type="text" id="defectives" placeholder="Enter list of defective items separated by SPACE ">
+                <br><br>
+                <input class = "form__field"type="number" id="samples" placeholder="Number of items/samples (n)">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="xvalue()">Test</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+            </form>
+            <p id="npans"></p>
+            <div id="stepsbox">    
+                <p id="pbar" style="text-align: left; margin-top: 2rem;"></p>
+                <p id="ucl" ></p>
+                <p id="lcl" ></p>
+            </div>
+        </div>
 
         <!--confidence interval calc-->    
         <div class="collapse" id="confi-inter">

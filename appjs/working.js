@@ -571,6 +571,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#xbtn").click(function () {
+        openit("#xchart");
+        closenav();
+        clearall();
+    }); 
     $("#chitestbtn").click(function () {
         openit("#chitest");
         closenav();
