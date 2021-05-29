@@ -2854,10 +2854,10 @@ function impse36find (){
     }
 }
 
-function impse22find(){
-    var n = (document.getElementById("impse22").value);
-    var x = setBits(N ^ (N - 1));
-    document.getElementById("impseans22").innerHTML = x
+function impsefind22(){
+    var n = (document.getElementById("impse57").value);
+    var x = setBits(n ^ (n - 1));
+    document.getElementById("impse57ans").innerHTML = x
 }
 
 function setBits(n)
