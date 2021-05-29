@@ -1393,6 +1393,17 @@ function chordTangle() {
     }
 }
 
+function chordsub() {
+    var into = document.getElementById("chsub").value
+    if (into != "") {
+        document.getElementById("chsubinfo").innerHTML = "Equal chords of a circle subtend equal angles at the centre."
+        document.getElementById("chsubans").innerHTML = "The angle subtended by chord at the center is  " + into
+    }
+    else {
+        document.getElementById("chsubinfo").innerHTML = "Please enter valid input"
+        document.getElementById("chsubans").innerHTML = ""
+    }
+}
 //-----------------------------------------------------
 //Centroid calculator
 function centcal() {
