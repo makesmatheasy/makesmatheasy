@@ -22490,6 +22490,20 @@ function numtfind() {
     renderMathInElement(document.getElementById("numtans"));
     renderMathInElement(document.getElementById("numtans1"));
 }
+
+function gridfind() {
+    var n = parseInt(document.getElementById("gridn").value)
+    var m = parseInt(document.getElementById("gridm").value)
+    if (n< 0 || m<0)
+        document.getElementById("gridans").innerHTML = "\\[Dimension \\space cannot \\space be \\space negative\\]";
+    else if (!isNaN(n) && !isNaN(m)) {
+        var ans = parseInt((m * n * (n + 1) *(m + 1)) / 4);
+        document.getElementById("gridans").innerHTML = "\\[Count \\space of \\space integral \\space coordinate \\space that \\space lie \\space inside \\space square="+ans+"\\]";
+    } else {
+        document.getElementById("gridans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    }
+    renderMathInElement(document.getElementById("gridans"));
+}
 //Number of occurrences of a given angle formed using 3 vertices of a n-sided regular polygon
 function occfind() {
     let n = (document.getElementById("occin").value);
