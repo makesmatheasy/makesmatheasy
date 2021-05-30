@@ -23227,23 +23227,56 @@ function armstrongvalue(){
         document.getElementById("armans").innerHTML="Please input a no";
     }
     else{
+        var w="";
+        let r=0;
+        var ans="\\[";
+        var ans2="\\[";
         num=parseInt(num);
         var temp=num;
         var sum=0;
         while (temp > 0) {
             let d = temp % 10;
             sum = sum+ parseInt(Math.pow(d,digits));
-            temp = parseInt(temp / 10); 
+            temp = parseInt(temp / 10);
+             r=(r*10)+d;  
+           
+        }
+        //working steps for armstrong no
+        while(r>0)
+        {  let d = r% 10;
+            r = parseInt(r/10);
+            if (r>0)
+            {
+            console.log("hello")
+            ans+=" "+d+"^{"+digits+"} +  ";
+            ans2+= " "+parseInt(Math.pow(d,digits))+" + ";
+        }
+             else
+            {
+            console.log("hello mf")
+             ans+=" "+d+"^{"+digits+"}  ";
+            ans2+= " "+parseInt(Math.pow(d,digits))+" ";
 
         }
 
+        }
+
+        ans+= "\\]";
+        ans2+= "\\]";
+        ans2+= "\\["+sum+"\\]"
+        
         if (sum == num) {
-            document.getElementById("armans").innerHTML=num+" is a armstrong no";
+            ans2+= "\\[Since \\space the \\space sum \\space i.e \\space "+sum+" \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+            ans2+="\\[\\therefore \\space "+num+" \\space  is \\space a \\space armstrong \\space number\\]"
+            document.getElementById("armans").innerHTML=ans+ans2;
         }
         else {
-            document.getElementById("armans").innerHTML=num+" is not a armstrong no";
+            ans2+= "\\[Since \\space the \\space sum \\space i.e \\space "+sum+" \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+"\\]";
+            ans2+="\\[\\therefore \\space "+num+" \\space is \\space not \\space a \\space armstrong \\space number\\]"
+            document.getElementById("armans").innerHTML=ans+ans2;
+            
         }
-
+        renderMathInElement(document.getElementById("armans"));
     }
 }
 // Disarium Number
