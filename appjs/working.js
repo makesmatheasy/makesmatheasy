@@ -1185,12 +1185,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    // Permutation and combination
-    $("#pandcbtn").click(function () {
-        openit("#pandc");
-        closenav();
-        clearall();
-    });
 
     // Prime
     $("#primebtn").click(function () {
