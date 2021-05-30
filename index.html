@@ -19321,16 +19321,20 @@
                        style="border: none; background: transparent; width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
-                        onclick="constAp()">
+                        onclick=constAp()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-light"
-                        onclick="ResetVal()">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick = this.form.reset();>
                         Reset
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick = calcexconstAp()>
+                            Example
                         </button>
                     </div>
                 </div>
@@ -19352,15 +19356,20 @@
                 <br>
                 <br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=apgphp()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick=calcexapgphp()>
+                            Example
                         </button>
                     </div>
                 </div>
@@ -19385,19 +19394,24 @@
                   placeholder="Enter number of terms"/>
            <br>
            <div class=" mt-3 row">
-               <div class="col-6">
-                   <button type="button" class="btn btn-light" onclick="gp()">Find</button>
+               <div class="col-4">
+                   <button type="button" class="btn btn-light" onclick=gp()>Find</button>
                </div>
-               <div class="col-6">
+               <div class="col-4">
                    <button type="button" class="btn btn-light"
                    onclick="this.form.reset();">
                    Reset
                    </button>
                </div>
+               <div class="col-4">
+                <button type="button" class="btn btn-light" onclick=calcexgp()>
+                    Example
+                </button>
+            </div>
            </div>
            <br>
        </form>
-                 </div>    
+       </div>    
        <div class="form-group">
            <p id="printGPseries" style="font-family:mathfont;width:auto;"
               class="stopwrap"></p>
@@ -19413,17 +19427,22 @@
                 <form>
                     <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
                        placeholder="Enter first term"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="r1"
+                <input type="number" style="width: 15.625rem;" class="form__field" id="r12"
                        placeholder="Enter ratio between terms"/>
                 <br>
                 <div class="mt-3 row">
-                    <div class="col-6">      
-                         <button type="button" class="btn btn-light" onclick="igp()">Find</button>
+                    <div class="col-4">      
+                         <button type="button" class="btn btn-light" onclick=igp()>Find</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
+                        onclick = "this.form.reset();">
                         Reset
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick=calcexigp()>
+                            Example
                         </button>
                     </div>
                 </div>

@@ -14480,6 +14480,12 @@ function nap() {
 
 }
 //Constant/Increasing/Decreasing AP
+function calcexconstAp(){
+    var a = document.getElementById("term121").value=2;
+    var b = document.getElementById("term112").value=4;
+
+    constAp();
+}
 function constAp() {
     var a = parseInt(document.getElementById("term121").value)
     var b = parseInt(document.getElementById("term112").value)
@@ -14507,6 +14513,13 @@ function constAp() {
     renderMathInElement(output);
 }
 //Three consecutive term (AP, GP OR HP)
+function calcexapgphp(){
+    var a = document.getElementById("num131").value=2;
+    var b = document.getElementById("num141").value=4;
+    var c = document.getElementById("num151").value=6;
+
+    apgphp();
+}
 function apgphp() {
     var a = parseFloat(document.getElementById("num131").value)
     var b = parseFloat(document.getElementById("num141").value)
@@ -15405,6 +15418,13 @@ function isCubeFree(n) {
     return true;
 }
 //Sum of N terms of a Geometric Progression
+function calcexgp(){
+    var a = document.getElementById("firstterm").value=2;
+    var r = document.getElementById("ratio").value=3;
+    var n = document.getElementById("number").value=8;
+
+    gp();
+}
 function gp() {
     var a = document.getElementById("firstterm").value
     var r = document.getElementById("ratio").value
@@ -15472,9 +15492,15 @@ function gp() {
     }
 }
 //Sum of infinite terms of a Geometric Progression with common ratio less than 1
+function calcexigp(){
+    var a = document.getElementById("fterm").value=2;
+    var r = document.getElementById("r12").value = 0.5;
+
+    igp();
+}
 function igp() {
     var a = document.getElementById("fterm").value;
-    var r = parseFloat(document.getElementById("r1").value);
+    var r = parseFloat(document.getElementById("r12").value);
     var resout = document.getElementById("sumigp");
     var restemp = "";
     var ans = a / (1 - r);
