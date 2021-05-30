@@ -18337,7 +18337,7 @@ function multBinDecHexOct() {
     print += x1 + "&nbsp; X &nbsp;" + x2 + "&nbsp; = &nbsp;" + x3;
 
     // var checkbinary = "[01][01]+";
-        if (resultType === "Binary" && (/^[01]+$/.test(input1)  && /^[01]+$/.test(input2)) {
+        if (resultType === "Binary" && (/^[01]+$/.test(input1)  && /^[01]+$/.test(input2))) {
             result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
             print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
             print += x3 + "->" + fracDectoBinHexOct(x3, 2);
@@ -20099,7 +20099,6 @@ function convertdec2421() {
             result.innerHTML = x;
         }
     }
-}
 }
 
 //---------------------------------------------------------------------------
