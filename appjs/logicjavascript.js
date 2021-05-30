@@ -19876,6 +19876,7 @@ function convertex3() {
             }else{
                 result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
+            result.innerHTML = "Answer -> " + x;
             work.innerHTML = print;
             renderMathInElement(work);
         }
