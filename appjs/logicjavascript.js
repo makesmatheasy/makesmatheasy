@@ -23814,6 +23814,33 @@ function hyperfind() {
     }
     document.getElementById("hyperans").innerHTML = ans;
 }
+function armstrongvalue(){
+    var num=document.getElementById("arm").value;
+    var digits=Math.floor(Math.log10(num) + 1);
+    if(num=="")
+    {
+        document.getElementById("armans").innerHTML="Please input a no";
+    }
+    else{
+        num=parseInt(num);
+        var temp=num;
+        var sum=0;
+        while (temp > 0) {
+            let d = temp % 10;
+            sum = sum+ parseInt(Math.pow(d,digits));
+            temp = parseInt(temp / 10); 
+
+        }
+
+        if (sum == num) {
+            document.getElementById("armans").innerHTML=num+" is a armstrong no";
+        }
+        else {
+            document.getElementById("armans").innerHTML=num+" is not a armstrong no";
+        }
+
+    }
+}
 // Disarium Number
 function isDisNum(num) {
    const res = String(num)

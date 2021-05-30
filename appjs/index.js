@@ -132,6 +132,7 @@ function openit(id) {
     var ids = [
         "#pronum",
         "#autonum",
+        "#armnum",
         "#disnum",
         "#gammaDist",
         "#expoDist",
