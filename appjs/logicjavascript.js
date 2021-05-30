@@ -17725,7 +17725,12 @@ function polymax4find() {
         let s = val;
         res = (N - 1) * (N - 2);
         finalResult = res + s;
+        document.getElementById("polymax4exp").innerHTML = "\\[we are supposed to count the total number of closed loops possible in the given polygon after division.\\]"
+        document.getElementById("polymax4exp").innerHTML = "\\[There will be N cycles already created due to the division of polygon. One out of N blocks will form a cycle with rest (N – 1) blocks.\\]"
+        document.getElementById("polymax4exp").innerHTML = "\\[The remaining (N – 1) blocks will form cycle with other (N – 2) blocks.\\]"
+        document.getElementById("polymax4exp").innerHTML = "\\[Total Cycles = 2 * N – 1) + (N – 1) * (N – 2) \\]"
         document.getElementById("polymax4ans").innerHTML = finalResult;
+        renderMathInElement(document.getElementById("polymax4exp"))
     }
     else {
         document.getElementById("polymax4ans").innerHTML = "Please enter valid input"
