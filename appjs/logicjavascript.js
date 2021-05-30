@@ -14098,13 +14098,33 @@ function htfind() {
     }
     renderMathInElement(document.getElementById("htans"));
 }
-
+//to calculate the factorial
+function gamma_fact(num)
+{ var f=1;
+    for(var i=1;i<=num;i++)
+    {f=(f*i);
+    }
+    return f;
+}
 // gamma find function
 function gammafind() {
     // function to find gamma function of any no.
     let inpu = document.getElementById("gammain").value
-    let ans = math.gamma(inpu)
-    document.getElementById("gammafindans").innerHTML = "The gamma is " + ans
+    if(inpu=="")
+    {document.getElementById("gammafindans").innerHTML="Please Enter a no"}
+    else{
+    num1=parseInt(inpu)
+    var num2=num1-1;
+    var num3=gamma_fact(num2);
+    let ans = math.gamma(num1)
+    var gamma ="";
+     gamma +="\\[\\Gamma \\left( x \\right)=\\space \\int_{0}^{\\infty} t^{x-1}e^{-t} dt\\]"
+     gamma +="\\[\\Gamma \\left( "+num1+" \\right) =("+num1+"-1)!\\]"
+     gamma +="\\["+num2+"!\\]"
+     gamma +="\\[The \\space result \\space is: "+num3.toFixed(4)+"\\]"
+    document.getElementById("gammafindans").innerHTML = gamma+"The gamma is " + ans
+    renderMathInElement(document.getElementById("gammafindans"))
+    }
 }
 
 function golds1find() {
@@ -14907,7 +14927,7 @@ function typenum15find()
     renderMathInElement(result);
 }
 
-}    
+  
 
 
 function simpleSieve(){
@@ -24246,17 +24266,11 @@ function relrisk() {
     let ans = "";
     var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-<<<<<<< HEAD
-        output.innerHTML = "Enter all the inputs";
-||||||| 343865d
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
-=======
         output.innerHTML = "Enter all the inputs";
     }
     else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
     {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
->>>>>>> afdd3b431abaa559e8d0216341dd56b83c3ef158
     }
     else {
         let ab = a+b; 
