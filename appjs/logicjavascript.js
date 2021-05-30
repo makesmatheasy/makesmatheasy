@@ -19359,7 +19359,7 @@ function convertdec2421() {
             result.innerHTML = x;
         }result.innerHTML = x;
 }
-
+}
 
 //---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
@@ -21254,38 +21254,59 @@ function xvalue() {
 
 //confidence interval
 function confivalue() {
-    let n = document.getElementById('nconfiinput').value
-    let x = document.getElementById('xconfiinput').value
-    let sd = document.getElementById('sdconfiinput').value
-    let confi = document.getElementById('clinput').value;
-    let zvalue;
-    if (confi == 0.90) {
-        zvalue = 1.645;
-    } else if (confi == 0.95) {
-        zvalue = 1.96;
-    } else if (confi == 0.99) {
-        zvalue = 2.576;
-    }
-    else if (confi == 0.70) {
-        zvalue = 1.036;
-    }
-    else if (confi == 0.75) {
-        zvalue = 1.150;
-    }
-    else if (confi == 0.80) {
-        zvalue = 1.282;
-    }
-    else if (confi == 0.85) {
-        zvalue = 1.440;
-    }
-    else if (confi == 0.995) {
-        zvalue = 2.807;
-    }
-    let ci = (zvalue * sd) / Math.sqrt(n);
-    if (n != "" && x != "" && sd != "") {
-        document.getElementById('civalue').innerHTML = "Confidence Interval = " + x + " ± " + ci.toFixed(3)
-    }
+    var n = document.getElementById('nconfiinput').value
+    var x = document.getElementById('xconfiinput').value
+    var sd = document.getElementById('sdconfiinput').value
+    var confi = document.getElementById('clinput').value;
 
+    var output = document.getElementById('civalue');
+    var temp = "";
+
+    if (!isNaN(n) && !isNaN(x) && !isNaN(sd) && !isNaN(confi) && (n != "" && x != "" && sd != "") ){
+        var zvalue;
+        if (confi == 0.90) {
+            zvalue = 1.645;
+        } else if (confi == 0.995) {
+            zvalue = 2.807;
+        } else if (confi == 0.95) {
+            zvalue = 1.96;
+        } else if (confi == 0.99) {
+            zvalue = 2.576;
+        } else if (confi == 0.70) {
+            zvalue = 1.036;
+        } else if (confi == 0.75) {
+            zvalue = 1.150;
+        } else if (confi == 0.80) {
+            zvalue = 1.282;
+        } else if (confi == 0.85) {
+            zvalue = 1.440;
+        }
+
+        var ci = (zvalue * sd) / Math.sqrt(n);
+
+        temp += "\\[To \\space calculate \\space confidence \\space interval \\space we \\space will,\\]"
+        temp += "\\[First, \\space calculate \\space the \\space Z \\space value\\]"
+        temp += "\\[Since, \\space here \\space the \\space value \\space Confidence \\space Level \\space is \\space "+(confi*100)+" \\space \\% \\]"
+        temp += "\\[Z \\space value \\space = \\space "+zvalue.toFixed(3)+" \\]"
+
+        temp += "\\[Hence, \\space CI \\space = \\space Z \\times \\frac{(Standard \\space Deviation)}{\\sqrt{(Sample \\space size)}}\\]"
+        temp += "\\[\\space = \\space "+zvalue.toFixed(2)+" \\times \\frac{"+sd+"}{\\sqrt{"+n+"}}\\]"
+        temp += "\\[\\space =  \\space "+zvalue.toFixed(2)+" \\times \\frac{"+sd+"}{\\sqrt{"+n+"}}\\]"
+        temp += "\\[\\space =  \\space \\frac{"+zvalue.toFixed(2)+" \\times "+sd+"}{\\sqrt{"+n+"}}\\]"
+        temp += "\\[\\space =  \\space \\frac{"+(zvalue * sd).toFixed(2)+"}{\\sqrt{"+n+"}}\\]"
+        temp += "\\[\\space =  \\space \\frac{"+(zvalue * sd).toFixed(2)+"}{"+(Math.sqrt(n)).toFixed(2)+"}\\]"
+        temp += "\\[\\space =  \\space "+ci.toFixed(3)+"\\]"
+
+        
+        temp +=  "\\[Confidence \\space Interval \\space = \\space " + x + " \\space ± \\space " + ci.toFixed(3)+"\\]";
+        output.innerHTML = temp;
+    } 
+    else
+    {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
+    }
+    renderMathInElement(output);
 }
 //odds calculator
 function oddsCalc() {
