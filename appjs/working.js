@@ -1072,7 +1072,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#sumAndDiffTributton").click(function () {
+    $("#sumAndDiffTribtn").click(function () {
         openit("#sumAndDiffTri");
         closenav();
         clearall();
