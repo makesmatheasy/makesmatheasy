@@ -1668,6 +1668,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="logbasebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Change log base calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Change log base calculator','#logbase','c','logbaseimgfav')"><img
+                                        id="logbaseimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="dbltimebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Doubling Time</a>
                         </td>
@@ -21033,6 +21048,16 @@
 </div>
 <!-- Antilog ends -->
 
+<!-- Log base starts -->
+<div class="collapse" id="logbase">
+    <h2 style="text-align:center;">Log base Calculator</h2><br>
+    <input type="text"id="logbasea" placeholder="Enter the a" class="form__field"><br><br>
+    <input type="text"id="logbasex" placeholder="Enter the x" class="form__field"><br><br>
+    <input type="text"id="logbaseb" placeholder="Enter the b" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="logbaseCal()">Calculate</button><br><br>
+    <p id="logbaseans" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Log base ends -->
 
 <!-- Percentage change starts -->
 <div class="collapse" id="perchng">

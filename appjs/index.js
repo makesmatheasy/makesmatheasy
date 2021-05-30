@@ -195,6 +195,7 @@ function openit(id) {
         "#perchng",
         "#peroff",
         "#antilog",
+        "#logbase",
         "#kaps",
         "#chitest",
         "#leadtest",

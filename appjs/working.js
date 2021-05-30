@@ -722,6 +722,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#logbasebtn").click(function () {
+        openit("#logbase");
+        closenav();
+        clearall();
+    });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
         closenav();
