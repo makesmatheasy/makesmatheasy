@@ -17860,6 +17860,26 @@ function minsquare1find() {
     }
 }
 
+//Area of a triangle with two vertices at midpoints of opposite sides of a square and the other vertex lying on vertex of a square
+function triinfind() {
+    let n = parseInt(document.getElementById("triin").value)
+    if (!isNaN(a)) {
+        if(n<0)
+           document.getElementById("triinans").innerHTML ="Length of side of square cannot be negative";
+        else{
+            let a=n/Math.sqrt(2);
+            let b=Math.sqrt(n*n+n*n/4);
+            let c=b;
+            let s=(a+b+c)/2;
+            let area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+            document.getElementById("triinans").innerHTML = area.toFixed(2);
+        }   
+        
+    }
+    else {
+        document.getElementById("triinans").innerHTML = "Please enter valid input"
+    }
+}
 //----------------------------
 
 //Function for multiplication of any number system
