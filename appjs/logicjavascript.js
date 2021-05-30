@@ -8757,6 +8757,31 @@ function solvetruntetra() {
     }
 }
 
+// Truncated Octahedron
+
+function solvetruncocta() {
+    var a = parseFloat(document.getElementById("truncocta-a").value);
+    var edgeLenOctField = document.getElementById("truncocta-ax");
+    var areaField = document.getElementById("truncocta-A");
+    var volField = document.getElementById("truncocta-V");
+    var cirRadField = document.getElementById("truncocta-rc");
+    var midRadField = document.getElementById("truncocta-rm");
+    var avField = document.getElementById("truncocta-av");
+    var ax = 3 * a;
+    var A = 6*a*a * (1 + 2*Math.sqrt(2));
+    var V = 8*a*a*a * Math.sqrt(2);
+    var rc = a/2*Math.sqrt(10);
+    var rm = 3/2*a;
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length octahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 function solvetruncube() {
     var a = parseInt(document.getElementById("inputtruncubeside").value);
     var area = 2 * a ** 2 * (6 + 6 * math.sqrt(2) + math.sqrt(3));
