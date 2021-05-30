@@ -13498,11 +13498,17 @@ function retfind3() {
 
 function cirinsemi1find() {
     let R = parseInt(document.getElementById("cirinsemi1in").value)
-    var base = 1.732 * R;
-    var height = (1.5) * R;
-    var area = 0.5 * base * height;
     if (!isNaN(R)) {
+        var base = 1.732 * R;
+        var height = (1.5) * R;
+        var area = 0.5 * base * height;
+        document.getElementById("cirinsemi1exp").innerHTML = "\\[Area of triangle = (1/2) * Base * Height\\]"
+        document.getElementById("cirinsemi1exp").innerHTML = "\\[Area of Triangle = (1/2) * QR * PM \\]"
+        document.getElementById("cirinsemi1exp").innerHTML = "\\[PM = PO + OM = r + r * sin30 = (3/2) * r\\]"
+        document.getElementById("cirinsemi1exp").innerHTML = "\\[Base = r * sqrt(3) = r * 1.732\\]"
+        document.getElementById("cirinsemi1exp").innerHTML = "\\[Height = (3/2) * r\\]"
         document.getElementById("cirinsemi1ans").innerHTML = area;
+        renderMathInElement(document.getElementById("cirinsemi1exp"))
     }
     else {
         document.getElementById("cirinsemi1ans").innerHTML = "Please enter valid input"
