@@ -17443,6 +17443,10 @@
                            style="text-decoration:none;" href="#">Stadium</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#conregpenta"
+                           style="text-decoration:none;" href="#">Concave Regular Pentagon</a></td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofstarpolygons').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;"> Star Polygons
@@ -32415,6 +32419,59 @@ N is the population size.
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultAreaSphereTri"
                                style="font-family:mathfont;"></p>
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="conregpenta" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Concave Regular Pentagon</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Distance of the tips (b)</h5>
+                                    <p class="text-center">\[b = \frac{a}{2} \times ( 1 + \sqrt 5 ) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 5 \times a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{a^2}{4} \times \left ( \sqrt{ 25 + 10\sqrt5} - \sqrt{10 + 2\sqrt 5} \right )\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/concave-regular-pentagon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                    placeholder="Enter edge length (a)" id="regularpenta-a"
+                                    oninput="solveconcaveregularpent();">
+                            <p class="stopwrap" id="regularpenta-b"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="regularpenta-p"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="regularpenta-A"
+                                style="font-family:mathfont;"></p>
                         </div>
                         <!---TILL-->
                     </div>
