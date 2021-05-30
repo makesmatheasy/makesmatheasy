@@ -23809,6 +23809,19 @@ function antilogCal(){
     }
 
 }
+function logbaseCal(){
+    let a = document.getElementById("logbasea").value;
+    let b = document.getElementById("logbaseb").value;
+    let x = document.getElementById("logbasex").value;
+
+    if(a=="" || b=="" || x==""){
+        output.innerHTML = "Enter all the inputs";
+    }
+    else{
+        let ans = (Math.log(x) / Math.log(b))/(Math.log(a) / Math.log(b));
+        output.innerHTML =  `log base ${a} of ${x} is ${ans}`;
+    }
+}
 
 function relrisk() {
     let a = document.getElementById("relexp0").value;
