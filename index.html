@@ -3096,6 +3096,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="harnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Harshad Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Harshad Number','harnum','c','harnumimgfav')"><img
+                                        id="harnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -37492,6 +37507,31 @@ N is the population size.
             <br>
             <div class="form-group text-center">
                 <p class="stopwrap" style="color:white;" id="proans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Pronic number end -->
+    <!-- Pronic number start-->
+    <div class="collapse" id="harnum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Harshad Number Checker</h2>
+            <br>
+            <p>An integer number in base 10 which is divisible by the sum of its digits is said to be a Harshad Number.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="harn" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isHarNum(document.getElementById('harn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="harans"></p><br>
             </div>
         </div>
     </div>

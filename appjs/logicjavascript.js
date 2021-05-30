@@ -24439,3 +24439,13 @@ function isProNum(num) {
     else
         document.getElementById('proans').innerHTML = num +" is not a Pronic number";
 }
+// Harshad Number
+function isHarNum(num) {
+    let sum = 0;
+    for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
+        sum += temp % 10;
+    if(num % sum == 0)
+        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
+    else
+        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
+}
