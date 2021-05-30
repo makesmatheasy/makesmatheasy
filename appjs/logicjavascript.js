@@ -19618,7 +19618,7 @@ function convertdec2421() {
         }
     }
 }
-}
+
 
 //---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
@@ -22614,23 +22614,36 @@ function hypergeoscal() {
     var num2 = document.getElementById("hypergeos2").value;
     var num3 = document.getElementById("hypergeos3").value;
     var num4 = document.getElementById("hypergeos4").value;
-    ans = "";
+   
     if (num1 == "" || num2 == "" || num4 == "" || num3 == "") {
-        ans = "Please fill all the field";
+        document.getElementById("hypergeosans").innerHTML  = "Please fill all the field";
     }
     else {
         num1 = parseFloat(num1);
         num2 = parseFloat(num2);
         num3 = parseFloat(num3);
         num4 = parseFloat(num4);
+        var e=num3-num1;
+        var f=num4-num3;
+        var g=num2-num1;
+        var h=f-g;
+        var i=num4-num2;
         var z = comb(num3, num1);
         var w = comb((num4 - num3), (num2 - num1));
         var x = comb(num4, num2);
         var st = (z * w) / x;
-        ans = "The P.M.F of hypergeometric distribution : " + st;
-
+        var ans = "";
+        ans+= "\\[\\frac{\\binom{"+num3+"}{"+num1+"} \\times \\binom{"+num4+" - "+num3+"}{"+num2+" - "+num1+"}}{\\binom{"+num4+"}{"+num2+"}}\\]"
+        ans+= "\\[\\frac{\\binom{"+num3+"}{"+num1+"} \\times \\binom{"+(num4 - num3)+"}{"+(num2 - num1)+"}}{\\binom{"+num4+"}{"+num2+"}}\\]"
+        ans+= "\\[\\frac{\\frac{"+num3+"!}{"+num1+"! \\times "+e+"!}  \\times \\frac{"+f+"!}{"+g+"! \\times "+h+"!}}{\\frac{"+num4+"}{"+num2+"! \\times "+i+"!}}\\]"
+        ans+="\\[\\frac{"+z+" \\times "+w+"}{"+x+"}\\]"
+        ans+="\\[\\frac{"+z*w+"}{"+x+"}\\]"
+        ans+="\\["+((z*w)/x).toFixed(4)+"\\]"
+        ans+= "\\[The \\space P.M.F \\space of \\space hypergeometric \\space distribution : "+ st.toFixed(4)+"\\]";
+        document.getElementById("hypergeosans").innerHTML = ans;
+        renderMathInElement(document.getElementById("hypergeosans"))
     }
-    document.getElementById("hypergeosans").innerHTML = ans;
+   
 }
 
 //Exponential Distribution Calculator
