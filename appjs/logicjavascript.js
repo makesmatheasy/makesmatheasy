@@ -22588,9 +22588,9 @@ function hypergeoscal() {
     var num2 = document.getElementById("hypergeos2").value;
     var num3 = document.getElementById("hypergeos3").value;
     var num4 = document.getElementById("hypergeos4").value;
-    ans = "";
+    let steps = "";
     if (num1 == "" || num2 == "" || num4 == "" || num3 == "") {
-        ans = "Please fill all the field";
+        steps = "\\[Please\\space fill\\space all\\space the\\space field\\]";
     }
     else {
         num1 = parseFloat(num1);
@@ -22601,10 +22601,14 @@ function hypergeoscal() {
         var w = comb((num4 - num3), (num2 - num1));
         var x = comb(num4, num2);
         var st = (z * w) / x;
-        ans = "The P.M.F of hypergeometric distribution : " + st;
+        
+        steps = "\\[P.M.F\\space of\\space hypergeometric\\space distribution:\\space frac{\\binom("+num3+","+num1+") \\times \\binom(("+num4+" - "+num3+"),("+num2+" - "+num1+"))}{\\binom("+num4+","+num2+")} \\]" ;
+        steps += "\\[=\\space \\frac{("+z+"\\times "+w+")}{"+x+"}\\]";
+        steps += "\\[=\\space "+st+"\\]";
 
     }
-    document.getElementById("hypergeosans").innerHTML = ans;
+    document.getElementById("hypergeosans").innerHTML = steps;
+    renderMathInElement(document.getElementById("hypergeosans"));
 }
 
 //Exponential Distribution Calculator
