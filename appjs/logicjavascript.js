@@ -22279,19 +22279,30 @@ function sphcylcal() {
     var p = Math.sqrt(x * x + y * y).toFixed(3);
     var o = Math.tan(y / x).toFixed(3);
     
-    var ansp = "ρ: " + p;
-    var anso = "θ: " + o;
-    var ansz = "z: " + z.toFixed(3);
+    var ansp;
+    var anso;
+    var ansz;
     if (r === "" || o == "" || fi === "") {
         document.getElementById("sphcylpans").innerHTML = "Please enter valid input";
         document.getElementById("sphcyloans").innerHTML = "";
         document.getElementById("sphcylzans").innerHTML = "";
     } else {
-     
+        ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2}\\]";
+        ansp = "\\[ρ:\\space \\sqrt{"+x+"^2 + "+y+"^2}\\]";
+        ansp = "\\[ρ:\\space "+p+" \\]";
+
+        anso = "\\[θ:\\space \\tan(\\frac{y}{x}) \\space  \\tan(\\frac{" + y + "}{" + x + "} ) \\space\\]";
+        anso = "\\[θ:\\space "+o+" \\]";
+
+        ansz = "\\[z:\\space z \\space =\\space " + z + "\\]";
+
         document.getElementById("sphcylpans").innerHTML = ansp;
         document.getElementById("sphcyloans").innerHTML = anso;
         document.getElementById("sphcylzans").innerHTML = ansz;
     }
+    renderMathInElement(document.getElementById("sphcylpans"));
+    renderMathInElement(document.getElementById("sphcyloans"));
+    renderMathInElement(document.getElementById("sphcylzans"));
 }
 
 function cartsphcal(){
