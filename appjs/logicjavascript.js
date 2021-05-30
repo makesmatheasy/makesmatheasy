@@ -14105,21 +14105,28 @@ function divSums(n) {
 function typenum4find() {
     let N = parseInt(document.getElementById("typenum5").value)
     let s=0;
-    var ans="\\[Amicable \\space Number \\space in \\space this \\space range: \\space";
-    var ans2="\\[Sum:\\space";
+    var w="";
+    var v="";
+    var ans="\\[Amicable \\space Number \\space in \\space this \\space range: \\space \\]";
+    var ans2="\\[Sum:\\space \\]";
     for (let i = 2; i <= N; i++) {
         let n1=divSums(i);
         let n2=divSums(n1)
         if (i == n2 && n1!=n2){
             s+=i;
-            ans+=i+"\\space ,";
-            ans2+=i+"+";
+            w=w+i+ ","
+            v=v+i+"+"
+            // ans+=i+ " ,";
+            // ans2+=i+" + ";
         }
     }
-    ans=ans.slice(0,-1);
-    ans2=ans2.slice(0,-1);
-    ans+="\\]";
-    ans2+="="+s+"\\]";
+    // ans+=ans.slice(0,-1);
+    // ans2+=ans2.slice(0,-1);
+    w=w
+    v=v.slice(0,-1);
+    w=w.slice(0,-1)
+    ans+="\\["+w+"\\]";
+    ans2+="\\["+v+"="+s+"\\]";
     document.getElementById("typenum4ans").innerHTML = "\\[Sum \\space of \\space Amicable \\space Numbers \\space upto \\space n:"+s+" \\]"+ans+ans2;
     renderMathInElement(document.getElementById("typenum4ans"))
 }
@@ -19618,7 +19625,7 @@ function convertdec2421() {
         }
     }
 }
-}
+
 
 //---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
@@ -22614,23 +22621,36 @@ function hypergeoscal() {
     var num2 = document.getElementById("hypergeos2").value;
     var num3 = document.getElementById("hypergeos3").value;
     var num4 = document.getElementById("hypergeos4").value;
-    ans = "";
+   
     if (num1 == "" || num2 == "" || num4 == "" || num3 == "") {
-        ans = "Please fill all the field";
+        document.getElementById("hypergeosans").innerHTML  = "Please fill all the field";
     }
     else {
         num1 = parseFloat(num1);
         num2 = parseFloat(num2);
         num3 = parseFloat(num3);
         num4 = parseFloat(num4);
+        var e=num3-num1;
+        var f=num4-num3;
+        var g=num2-num1;
+        var h=f-g;
+        var i=num4-num2;
         var z = comb(num3, num1);
         var w = comb((num4 - num3), (num2 - num1));
         var x = comb(num4, num2);
         var st = (z * w) / x;
-        ans = "The P.M.F of hypergeometric distribution : " + st;
-
+        var ans = "";
+        ans+= "\\[\\frac{\\binom{"+num3+"}{"+num1+"} \\times \\binom{"+num4+" - "+num3+"}{"+num2+" - "+num1+"}}{\\binom{"+num4+"}{"+num2+"}}\\]"
+        ans+= "\\[\\frac{\\binom{"+num3+"}{"+num1+"} \\times \\binom{"+(num4 - num3)+"}{"+(num2 - num1)+"}}{\\binom{"+num4+"}{"+num2+"}}\\]"
+        ans+= "\\[\\frac{\\frac{"+num3+"!}{"+num1+"! \\times "+e+"!}  \\times \\frac{"+f+"!}{"+g+"! \\times "+h+"!}}{\\frac{"+num4+"}{"+num2+"! \\times "+i+"!}}\\]"
+        ans+="\\[\\frac{"+z+" \\times "+w+"}{"+x+"}\\]"
+        ans+="\\[\\frac{"+z*w+"}{"+x+"}\\]"
+        ans+="\\["+((z*w)/x).toFixed(4)+"\\]"
+        ans+= "\\[The \\space P.M.F \\space of \\space hypergeometric \\space distribution : "+ st.toFixed(4)+"\\]";
+        document.getElementById("hypergeosans").innerHTML = ans;
+        renderMathInElement(document.getElementById("hypergeosans"))
     }
-    document.getElementById("hypergeosans").innerHTML = ans;
+   
 }
 
 //Exponential Distribution Calculator
