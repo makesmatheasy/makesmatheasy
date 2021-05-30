@@ -10233,6 +10233,31 @@ function pentbipyramidsolve() {
         houtput.innerHTML = "";
     }
 }
+//Elongated triangular bipyramid
+function solvetrielongbipy() {
+    let a = document.getElementById("inputtrielongbipyedge").value;
+    let heioutput = document.getElementById("resultoftrielongbipyhei");
+    let areaoutput = document.getElementById("resultoftrielongbipyarea");
+    let voloutput = document.getElementById("resultoftrielongbipyvol");
+    var heitemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        heitemp += "\\[Height \\space \\newline (\\frac{2 \\sqrt{6}}{3} + 1) \\space" + a + "\\ = " + eval(String(2.6329932 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        areatemp += "\\[Area \\space \\newline \\frac{3}{2} \\space (2 + \\sqrt(3)) \\space (" + a + ")^2" + "\\ = " + eval(String(5.5980762 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{(2 \\sqrt{2} + 3 \\sqrt{3})}{12} \\space (" + a + ")^3" + "\\ = " + eval(String(0.668715 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(heioutput);
+        renderMathInElement(areaoutput); 
+        renderMathInElement(voloutput);
+    } else {
+        heioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 
 //Hexagonal Pyramid
 function hexpyramidsolve() {
