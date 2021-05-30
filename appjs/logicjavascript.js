@@ -20540,6 +20540,15 @@ function clockcal() {
     document.getElementById("clockans").innerHTML = ans;
 }
 //SOLVE FOR X
+function calcexslvcal(){
+    a = document.getElementById("solvex");
+    b = document.getElementById("solvey");
+    c = document.getElementById("solvez");
+    a.value = 3;
+    b.value = 5;
+    c.value = 14;
+    slvcal();
+}
 function slvcal() {
     a = parseFloat(document.getElementById("solvex").value);
     b = parseFloat(document.getElementById("solvey").value);
