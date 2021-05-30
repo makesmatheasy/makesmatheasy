@@ -245,6 +245,7 @@ Other Tech/Libraries
   - Smallest Number Divisible
   - Lucas series
   - Types of numbers
+  - Neon Number
   - Disarium Number
   - Krishnamurthy Number
   - Automorphic Number 

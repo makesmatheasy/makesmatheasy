@@ -155,6 +155,7 @@ function openit(id) {
         "#etf",
         "#etc",
         "#krishnum",
+        "#neonnum",
         "#equationssolver",
         "#quadeqncal",
         "#mulsolwithsteps",
