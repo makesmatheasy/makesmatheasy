@@ -254,6 +254,7 @@ function openit(id) {
         "#cchart",
         "#pchart",
         "#rchart",
+        "#sheppard",
         "#npchart",
         "#xchart",
         "#betagamma",

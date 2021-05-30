@@ -600,6 +600,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#shepbtn").click(function () {
+        openit("#sheppard");
+        closenav();
+        clearall();
+    });
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
