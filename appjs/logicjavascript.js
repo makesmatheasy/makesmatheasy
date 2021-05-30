@@ -14121,8 +14121,9 @@ function gammafind() {
      gamma +="\\[\\Gamma \\left( x \\right)=\\space \\int_{0}^{\\infty} t^{x-1}e^{-t} dt\\]"
      gamma +="\\[\\Gamma \\left( "+num1+" \\right) =("+num1+"-1)!\\]"
      gamma +="\\["+num2+"!\\]"
-     gamma +="\\[The \\space result \\space is: "+num3.toFixed(4)+"\\]"
-    document.getElementById("gammafindans").innerHTML = gamma+"The gamma is " + ans
+     gamma +="\\["+num3.toFixed(4)+"\\]"
+     gamma +="\\[The \\space result \\space is: "+ans.toFixed(4)+"\\]"
+    document.getElementById("gammafindans").innerHTML = gamma;
     renderMathInElement(document.getElementById("gammafindans"))
     }
 }
