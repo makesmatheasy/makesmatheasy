@@ -13561,7 +13561,55 @@ function trirect() {
    renderMathInElement(output);
 }
 
-
+function receq1() {
+    let n = parseInt(document.getElementById("receq1").value)
+    var output = document.getElementById("receq1ans")
+    var ans = ""
+    if (n < 0 ) {
+        ans += "\\[Side \\ cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+    }
+    else if (!isNaN(n)) {
+        if (n & 1){
+            let coun = 0, m, j, i;
+            for (i = n - 2; i >= 1; i--) {
+                if (i >= 1) {
+                    m = parseInt((n - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+                else {
+                    m = parseInt(((n - 1) - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+            }
+            ans += coun;
+        }
+        else{
+            let coun = 0, m, j, i;
+            for (i = n - 2; i >= 1; i--) {
+                if (i >= 1) {
+                    m = parseInt(((n - 1) - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+                else {
+                    m = parseInt((n - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+            }
+            ans+=coun;
+        }
+        output.innerHTML = ans; 
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space input \\]"
+        output.innerHTML = ans;
+     }
+   renderMathInElement(output);
+}
 function htfind() {
     let a = parseInt(document.getElementById("htin").value);
     if (!isNaN(a)) {
