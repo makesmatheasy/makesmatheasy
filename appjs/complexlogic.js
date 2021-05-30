@@ -850,11 +850,30 @@ function ssfncal(){
     num = parseInt(num);
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     var poweroutput = document.getElementById("ssfnans");
-    var powersum=Math.trunc(( (num)**2 * (num + 1)**2 * (2 * num**2 + 2 * num - 1)  ));
-    var powersum1 = powersum/12;
-    poweroutput.innerHTML = "The value will be "+powersum1.toFixed(2)
-    renderMathInElement(poweroutput);
-
+    var powertemp="";
+    if(!valid.test(num))
+    {
+        powertemp += "\\[Enter \\space any \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else if(num<1){
+        powertemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    } 
+    else{
+        var powersum=Math.trunc(( (num)**2 * (num + 1)**2 * (2 * num**2 + 2 * num - 1)  ));
+        var powersum1 = powersum/12;
+        powertemp += "\\[Sum \\space of \\space the \\space Power \\space Five \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        powertemp += "\\[ \\sum {n}^5 \\space = \\space \\frac{n^2 (n+1)^2 (2n^2 + 2n -1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+num+"^2 \\times ("+num+"+1)^2 \\times (2 \\times "+num+"^2 + 2 \\times "+num+" \\space - \\space 1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+(num**2)+" \\times "+(num +1)+"^2 \\times (2 \\times "+(num**2)+" + 2 \\times "+num+" \\space - \\space 1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+powersum+"}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space "+powersum1.toFixed(2)+" \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
 }
 
 function ssqncal()
@@ -1484,6 +1503,53 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans1"));
 }
 
+function perchngCal(){
+    var initial = parseInt(document.getElementById("initialVal").value);
+    var final = parseInt(document.getElementById("finalVal").value);
+    var ans = ((final-initial)/Math.abs(initial))*100;
+    var output = document.getElementById("perchngans");
+    output.innerHTML = final  + " is a " + ans + "% change of " + initial;
+}
+
+function peroffCal(){
+    var original = parseInt(document.getElementById("originalPrice").value);
+    var off = parseInt(document.getElementById("offper").value);
+    var tax = parseInt(document.getElementById("salestax").value);
+    var output1 = document.getElementById("peroffans1");
+    var output2 = document.getElementById("peroffans2");
+    var temp1 = "";
+    var temp2 = "";
+    var final = (original + (original*(tax/100)))*(off/100);
+    var savings = original - final;
+
+    if(!isNaN(original) && !isNaN(tax) && !isNaN(off)){
+
+        temp1 += "\\[The \\space Percentage \\space Off \\space will \\space be,\\]"
+        temp1 += "\\[First, \\space we \\space calculate \\space the \\space final \\space value\\]"
+        temp1 += "\\[Final \\space Price \\space = \\space (Original \\space Price) +  ( (Original \\space Price) \\times \\frac{(Tax \\space value)}{100} ) \\times \\frac{(Off \\space value)}{100}\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times \\frac{("+tax+")}{100} ) \\times \\frac{("+off+")}{100}\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times "+(tax/100).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( "+(original * (tax/100)).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space "+(original * (original * (tax/100))).toFixed(2)+"  \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space "+final.toFixed(3)+"\\]"
+
+        output1.innerHTML = temp1;
+
+        temp2 += "\\[Finally,\\space we \\space substract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
+        temp2 += "\\[Savings \\space = \\space (Orginal \\space Price) \\space - \\space (Final \\space Price)\\]"
+        temp2 += "\\[\\space = \\space "+original+" - "+final.toFixed(2)+"\\]"
+        temp2 += "\\[\\space = \\space "+savings.toFixed(3)+"\\]"
+
+        output2.innerHTML = temp2;
+    } else{
+        temp1 = "\\[Please \\space enter \\space valid \\space input\\]"
+        output1.innerHTML = temp1;
+        temp2 = "";
+    }
+    renderMathInElement(output1);
+    renderMathInElement(output2);
+}
+
 function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
@@ -1636,7 +1702,30 @@ function rmscal()
     renderMathInElement(document.getElementById("rmsans"));
 }
 
-
+function pvaluecal()
+{ 
+    var z = parseFloat(document.getElementById("pvalueinp").value);
+    
+    var output = document.getElementById("pvalueans");
+    var temp = "";
+    var Zval = (1/Math.sqrt(2*3.14)* (2.71)**((z**2)/2));
+    var ans = 2*Zval;
+    var exp = "";
+    if(isNaN(z))
+    {
+        temp = "Please enter proper value";
+        output.innerHTML = temp;
+    }
+    else
+    {
+        exp += "\\[P\\space value\\space = \\space 2\\times \\phi (Z)\\]";
+        exp += "\\[\\phi (Z)\\space = \\space frac{1}{\\sqrt{(2\\times \\pi)} \\times (e)^{frac{z^2}{2}}} \\]";
+        exp += "\\[P\\space value\\space = \\space 2\\times frac{1}{\\sqrt{(2\\times 3.14)} \\times (2.71)^{frac{"+z+"^2}{2}}}\\]";
+        exp += "\\[P\\space value\\space = \\space "+ans+"\\]";
+        output.innerHTML = exp;
+    }
+    renderMathInElement(output);
+}
 
 
 
@@ -1909,6 +1998,74 @@ else{
      ans="The skewness is: "+rzlt;
 }
 document.getElementById("skewans").innerHTML=ans;
+}
+// kurtosis calculator
+// kurtosis calculator
+function kurt_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+function kurt_bar(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp, 4)
+        diff += temp;
+    }
+
+    return diff
+}
+function kurtcal()
+{   var num=document.getElementById("kurtinput").value;
+     var num1=document.getElementById("kurtinput2").value;
+    
+var ans="";
+    if(num == ""|| num1 =="")
+    {
+        ans="Please fill both fields"
+    }
+    else{
+
+        num = num.split(" ");
+        let n1 = num.length;
+        for (var i = 0; i < n1; i++) {
+            num[i] = parseFloat(num[i]);
+        }
+        var sum=kurt_sum(num)
+        var mean=(sum/n1).toFixed(4);
+        var numer=kurt_bar(num,mean);
+        numer=numer.toFixed(4);
+        num1 = parseFloat(num1);
+    ans+="\\[In \\space the \\space below \\space formula :\\]"
+    ans+="\\[\\mu_4 => Fourth \\space central \\space moment\\]"
+    ans+="\\[\\sigma => Standard \\space deviation \\space of \\space the \\space sample\\]"
+    ans+="\\[\\bar{x} => Mean \\space of \\space the \\space sample\\]"
+    ans+="\\[N=>Sample \\space size\\]"
+
+    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
+    ans+="\\[\\because \\mu_4= \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N} \\]"
+    ans+="\\[\\therefore \\beta_2 = \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N\\sigma^{4}} \\]"   
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{ ("+n1+") \\times"+num1+"^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{"+(n1)+" \\times "+Math.pow(num1,4).toFixed(4)+"} \\]"
+    ans+="\\[\\beta_2 = "+(numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)+"\\]"
+
+    if((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)==3)
+    ans+="\\[Since \\space \\beta_2 \\space is \\space equal \\space to \\space 3 \\space the  \\space distribution  \\space is  \\space mesokurtic. \\]"
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)>3)
+    ans+="\\[Since \\space \\beta_2 \\space > \\space 3 \\space the  \\space distribution  \\space is  \\space leptokurtic. \\]"
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)<3)
+    ans+="\\[Since \\space \\beta_2 \\space < \\space 3 \\space the  \\space distribution  \\space is  \\space platykurtic. \\]" 
+    }
+
+document.getElementById("kurtans").innerHTML=ans;
+renderMathInElement(document.getElementById("kurtans"));
+
 }
 function clockcal()
 {
@@ -2277,3 +2434,48 @@ function kapfind()
     }
     document.getElementById("kapans").innerHTML=ans;
 }
+
+function isPrime( n)
+    {
+        if (n <= 1)
+            return false;
+        if (n <= 3)
+            return true;
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+ 
+        for (var i = 5; i * i <= n; i = i + 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function isPowerOfTwo(n)
+    {
+        return (n != 0 )&& ((n & (n - 1)) == 0);
+    }
+ 
+function wagcal()
+{
+    var num1=document.getElementById("wag1").value;
+    ans="";
+    if(num1==""||isNaN(num1))
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
+        {
+            ans=num1+" is a Wagstaff number"
+        }
+        else
+        {
+            ans=num1+" is not a Wagstaff number"   
+        }
+    }
+    document.getElementById("wagans").innerHTML=ans;
+}
+
