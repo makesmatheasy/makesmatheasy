@@ -1229,12 +1229,38 @@ function disfind() {
         renderMathInElement(ans3);
     }
 }
+//to calculate the factorial
+function beta_fact(num)
+{ var f=1;
+    for(var i=1;i<=num;i++)
+    {f=(f*i);
+    }
+    return f;
+}
 //Beta Calculator
 function betafind() {
-    let num1 = parseInt(document.getElementById("betain1").value)
-    let num2 = parseInt(document.getElementById("betain2").value)
+    let num1 = document.getElementById("betain1").value;
+    let num2 = document.getElementById("betain2").value;
+    if(num1==""||num2=="")
+    { document.getElementById("betafindans")="Please enter both fields"}
+    else{
+        num1=parseInt(num1);
+        num2=parseInt(num2);
+        var num12=num1+num2;
+        var num3=num1+num2-1;
+        var num4=beta_fact(num1-1);
+        var num5=beta_fact(num2-1);
+        var num6=beta_fact(num3);
     let ans = (math.gamma(num1) + math.gamma(num2)) /math.gamma(num1 + num2)
-    document.getElementById("betafindans").innerHTML = "The result is: " + ans;
+    var beta ="\\[B(x,y) = \\frac{\\Gamma \\left( "+num1+" \\right)+\\Gamma \\left( "+num2+" \\right)}{\\Gamma \\left( "+num12+" \\right)}\\]";
+     beta += "\\[\\frac{"+parseInt(parseInt(num1)-parseInt(1))+"! \\space + "+parseInt(parseInt(num2)-parseInt(1))+"!}{"+(parseInt(num3))+"!}\\]";
+     beta +="\\[\\frac{"+num4+"+"+num5+"}{"+num6+"}\\]"
+     beta +="\\[\\frac{"+parseInt(parseInt(num4)+parseInt(num5))+"}{"+num6+"}\\]"
+     beta +="\\[The \\space result \\space is \\space : \\space "+ans.toFixed(4)+"\\]"
+     console.log(ans);
+    document.getElementById("betafindans").innerHTML = beta;
+    renderMathInElement( document.getElementById("betafindans"));
+    }
 }
 //Heptadecagon Calculator
 function heptafind() {
