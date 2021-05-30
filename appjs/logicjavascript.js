@@ -5615,15 +5615,24 @@ function pointpara() {
     y = parseFloat(document.getElementById('checkpara5').value);
     var output = document.getElementById("pointparaans")
     var ans = "";
+    var explain="\\[Put \\space the \\space point(x,y) \\space in \\space eq. \\space of \\space Parabola, \\space p= (y-k)^2 -4*a*(x-h)\\newline if \\space p>0 \\space point \\space lies \\space outside \\space the \\space parabola \\newline if \\space p==0 \\space point \\space lies \\space on \\space the \\space parabola \\newline else \\space point \\space lies \\space inside \\space the \\space parabola \\]"
     if (!isNaN(h) && !isNaN(k) && !isNaN(a)  && !isNaN(x) && !isNaN(y)) {
         var p =parseInt(Math.pow((y - k), 2) - 4 * a * (x - h));
-        if (p > 0)
+        explain+="\\[Put \\space the \\space value \\space p("+x+","+y+"): \\space p=("+y+"-"+k+")^2-4*"+a+"*("+x+"-"+h+")="+p+"\\]";    
+
+        if (p > 0){
           ans += "\\[The \\space given \\space point \\space lies \\space outside \\space the \\space Parabola \\]";
-        else if (p ==0)
-          ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Parabola \\]";
-        else
-          ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Parabola \\]";
-        output.innerHTML = ans;
+           explain+="\\[Hence \\space"+p+">0 \\space, So \\space point("+x+","+y+") \\space lies \\space outside \\space the \\space Parabola  \\]"  
+        }
+        else if (p ==0){
+            ans += "\\[The \\space given \\space point \\space lies \\space on \\space the \\space Parabola \\]";
+            explain+="\\[Hence \\space"+p+"==0 \\space, So \\space point("+x+","+y+") \\space lies \\space on \\space the \\space Parabola  \\]"   
+        }
+        else{
+            ans += "\\[The \\space given \\space point \\space lies \\space inside \\space the \\space Parabola \\]";
+            explain+="\\[Hence \\space "+p+"<0 \\space, So \\space point("+x+","+y+") \\space lies \\space inside \\space the \\space Parabola  \\]"     
+        }
+        output.innerHTML = ans+explain;
     }
     else {
         ans += "\\[Please \\space enter \\space all \\space fields \\]";
