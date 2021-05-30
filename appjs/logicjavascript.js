@@ -7680,6 +7680,45 @@ function xshapesolve() {
     }
 }
 
+// Drop - Shape
+
+function dropshapesolve() {
+    var r = parseFloat(document.getElementById("dropshape-r").value);
+    var hs = parseFloat(document.getElementById("dropshape-hs").value);
+    var tangentAngleField = document.getElementById("tangentAngleDropshape");
+    var arcLenField = document.getElementById("arcLenDropshape");
+    var chordLenField = document.getElementById("chordLenDropshape");
+    var triSideLenField = document.getElementById("triSideLenDropshape");
+    var heightField = document.getElementById("heightDropshape");
+    var perimeterField = document.getElementById("perimeterDropshape");
+    var areaField = document.getElementById("areaDropshape");
+    var alpha = 180 - Math.acos((1-(hs/r)))*(180/Math.PI);
+    var l = r * 2 * Math.acos((1-(hs/r)))*(180/Math.PI);
+    var c = 2 * Math.sqrt(2*r*hs - (hs*hs));
+    var a = (c/Math.sin((180 - 2*alpha)* (Math.PI / 180)));
+    var h = hs + Math.sqrt((4*a*a - c*c)/4);
+    var p = l + 2*a;
+    var A = (r * l + c * (hs - r) + c * Math.sqrt((4*a*a - c*c)/4))/2;
+    if(!(hs > r && hs < 2 * r )){
+        tangentAngleField.innerHTML = "The height must be between r and 2r.";
+        arcLenField.innerHTML = "";
+        chordLenField.innerHTML = "";
+        triSideLenField.innerHTML = "";
+        heightField.innerHTML = "";
+        perimeterField.innerHTML = "";
+        areaField.innerHTML = "";
+    }
+    if ((!isNaN(r)) && (!isNaN(hs))) {
+        tangentAngleField.innerHTML = `Tangent angle (α) = ${alpha.toFixed(4)}°`;
+        arcLenField.innerHTML = `Arc length (l) = ${l.toFixed(4)}`;
+        chordLenField.innerHTML = `Chord length (c) = ${c.toFixed(4)}`;
+        triSideLenField.innerHTML = `Triangle side length (a) = ${a.toFixed(4)}`;
+        heightField.innerHTML = `Height (h) = ${h.toFixed(4)}`;
+        perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(4)}`;
+        areaField.innerHTML = `Area (A) = ${A.toFixed(4)}`;
+    }
+}
+
 //Circle
 function solvecircle() {
     let radius = document.getElementById("inputradius").value;

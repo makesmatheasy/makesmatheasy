@@ -342,6 +342,7 @@ Other Tech/Libraries
     - H-Shape
     - L-Shape
     - X-Shape
+    - Drop Shape
     - Arbelos
     - Spherical Triangle
 
