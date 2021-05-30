@@ -18838,12 +18838,23 @@ function commonrootsfind() {
     let a2 = parseInt(document.getElementById("a2cr").value)
     let b2 = parseInt(document.getElementById("b2cr").value)
     let c2 = parseInt(document.getElementById("c2cr").value)
-    if ((a1 / a2) == (b1 / b2) && (b1 / b2) == (c1 / c2)) {
-        document.getElementById("commonrootsans").innerHTML = "Common roots exist"
+    if(!isNaN(a1)||!isNaN(a2)||!isNaN(b1)||!isNaN(b2)||!isNaN(c1)||!isNaN(c2)){
+        document.getElementById("commonrootsexp").innerHTML = "\\[Let the two quadratic equations are a_{1}x^{2} + b_{1}x + c_{1} = 0   and a_{2}x^{2} + b_{2}x + c_{2} = 0   \\]"
+        document.getElementById("commonrootsexp").innerHTML = "\\[As we know that \\text{Sum of roots = } -\\frac{b}{a}   and \\text{Product of roots = } \\frac{c}{a}   \\]"
+        document.getElementById("commonrootsexp").innerHTML = "\\[Now since both the roots are common, \\]"
+        document.getElementById("commonrootsexp").innerHTML = "\\[\\alpha + \\beta = -\\frac{b_{1}}{a_{1}} = -\\frac{b_{2}}{a_{2}}   \\Rightarrow \\frac{a_{1}}{a_{2}} = \\frac{b_{1}}{b_{2}}   \\]"
+        document.getElementById("commonrootsexp").innerHTML = "\\[\\alpha \\beta = \\frac{c_{1}}{a_{1}} = \\frac{c_{2}}{a_{2}}   \\Rightarrow \\frac{c_{1}}{c_{2}} = \\frac{a_{1}}{a_{2}}   \\]"
+        document.getElementById("commonrootsexp").innerHTML = "\\[\\frac{a_{1}}{a_{2}} = \\frac{b_{1}}{b_{2}} = \\frac{c_{1}}{c_{2}} \\]"
+        if ((a1 / a2) == (b1 / b2) && (b1 / b2) == (c1 / c2)) {
+            document.getElementById("commonrootsans").innerHTML = "Common roots exist"
+        }
+        else {
+            document.getElementById("commonrootsans").innerHTML = "No Common roots exist"
+        }
+        renderMathInElement(document.getElementById("commonrootsexp"))
     }
-    else {
-        document.getElementById("commonrootsans").innerHTML = "No Common roots exist"
-    }
+    else 
+        document.getElementById("commonrootsans").innerHTML = "Please Enter valid input"
 }
 
 //function for encoding message using hamming code with odd parity from Right to left
