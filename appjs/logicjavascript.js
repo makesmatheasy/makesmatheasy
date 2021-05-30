@@ -15301,8 +15301,17 @@ function nap() {
     //}
     var p = document.getElementById("nAPseries2")
     var temp = ""
-    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(b))) {
-    var d = (b - a) / (n + 1);
+
+    if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
+
+        temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+        p.innerHTML=temp;
+        renderMathInElement(p);
+        return;
+    }
+    
+    else{
+        var d = (b - a) / (n + 1);
     for (var i = 1, series = "", num = 0; i <= n; i++) {
         num = ((a) + (i * d));
         series += (num.toString() + ", ");
@@ -15311,17 +15320,11 @@ function nap() {
     temp += "\\[Arithmetic \\space Progression : \\space a, \\space A_1, \\space A_2, \\space A_3,......, \\space A_n, \\space b \\]";
     temp += "\\[Arithmetic \\space Progression : "+ series.substring(0, series.length - 2) +"\\]";
     temp += "\\[Formula : \\]";
-    temp += "\\[A_1=\\frac{na+b} {n+1} \\=\\space a+d\\]";
-    temp += "\\[A_r=\\frac{(n−r+1)a+rb} {n+1} \\=\\space a+rd\\]";
-    temp += "\\[A_1=\\(" + a +")+(" + d +") \\]"
+    temp += "\\[A_1 = \\frac{na+b} {n+1} \\ = \\space a+d \\]";
+    temp += "\\[A_r = \\frac{(n−r+1)a+rb} {n+1} \\ = \\space a+rd \\]";
+    temp += "\\[A_1 = \\space (" + a +")+(" + d +") \\]"
     p.innerHTML = temp;
     renderMathInElement(p);
-    }
-    else{
-        temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
-        p.innerHTML=temp;
-        renderMathInElement(p);
-        return;
     }
 
 }
@@ -15457,30 +15460,32 @@ function ngp() {
     //    document.getElementById("nGPseries2").innerHTML = "Enter numbers only. Blank inputs are not allowed";
     //    return;
     //}
-    if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
-    var d = Math.pow((b / a), 1 / (n + 1))
+    if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))){
+
+        temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+        p.innerHTML=temp;
+        renderMathInElement(p);
+        return;
+    }
+    
+    else{
+        var d = Math.pow((b / a), 1 / (n + 1))
     for (var i = 1, series = "", num = 0; i <= n; i++) {
         num = ((a) * Math.pow(d, i));
         series += (num.toString() + ", ");
     }
     //document.getElementById("nGPseries2").innerHTML = "n-Geometric Mean: " + series.substring(0, series.length - 2)
-    var p = document.getElementById("nGPseries2")
-    var temp = ""
+    var p = document.getElementById("nGPseries2");
+    var temp = "";
     //document.getElementById("nAPseries2").innerHTML = "n-Arithmetic Mean: " + series.substring(0, series.length - 2)
     temp += "\\[Geometric \\space Progression : \\space a, \\space G_1, \\space G_2, \\space G_3,......, \\space G_n, \\space b \\]";
     temp += "\\[Geometric \\space Progression : "+ series.substring(0, series.length - 2) +"\\]";
     temp += "\\[Formula : \\]";
-    temp += "\\[G_1=\\ar \\]";
-    temp += "\\[G_n=\\ar^n \\]";
-    temp += "\\[G_1=\\(" + (a) +"\\times" + (d) +") \\]"
+    temp += "\\[G_1 = \\space ar \\]";
+    temp += "\\[G_n = \\space ar^n \\]";
+    temp += "\\[G_1 = \\space (" + (a) +"\\times" + (d) +") \\]"
     p.innerHTML = temp;
     renderMathInElement(p);
-    }
-    else{
-        temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
-        p.innerHTML=temp;
-        renderMathInElement(p);
-        return;
     }
 }
 //Insert n-Harmonic Mean between two numbers
