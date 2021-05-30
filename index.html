@@ -6630,8 +6630,8 @@
             <form action="">
                 <input type="text" id="triinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="triinsemifind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="triinsemifind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6641,8 +6641,8 @@
             <h4>Minimum side of square embedded in Regular polygon with N sides</h4><br>
             <form action="">
                 <input type="text" id="minsquarein" placeholder="Enter no. of side of polygon" class="form__field"><br>
-                <button class="btn btn-dark" onclick="minsquarefind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="minsquarefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6653,8 +6653,8 @@
             <form action="">
                 <input type="text" id="minsquare1" placeholder="Enter length of side of square" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="minsquare1find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="minsquare1find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6665,8 +6665,8 @@
             <form action="">
                 <input type="text" id="recinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="recinsemifind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="recinsemifind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6676,26 +6676,30 @@
             <br>
             <input type="text" id="hexsq1" placeholder="Enter side length of square" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="hexsq()">Find</button>
+            <form action="">
+            <button type="button" class="btn btn-dark" onclick="hexsq()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
-            <h5 id="hexsqans"></h5>
+            <h5 id="hexsqans"></h5></form>
             <br>
             <h4>Largest trapezoid that can be inscribed in a semicircle </h4><br>
             <form action="">
                 <input type="text" id="trapinsemiin" placeholder="Enter radius of semicicrcle" class="form__field"><br>
-                <button class="btn btn-dark" onclick="trapinsemifind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="trapinsemifind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
             <h5 id="trapinsemians"></h5><br>
             <h4>Area of inner circle which passes through center of outer circle and touches its circumference</h4>
             <br>
+            <form action="">
             <input type="text" id="innercir1" placeholder="Enter the radius of outer circle(R)" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="innercir()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="innercir()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
-            <h5 id="innercirans"></h5>
+            <h5 id="innercirans"></h5></form>
             <br>
             <h4>Area of circle inscribed in a Isosceles Trapezoid </h4>
             <br>
@@ -6703,27 +6707,30 @@
                 <input type="text" id="trapinsemin1" placeholder="Enter shorter side of trapezoid" class="form__field">
                 <input type="text" id="trapinsemin2" placeholder="Enter longer side of trapezoid" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
             <h4>Area of the largest triangle inscribed within a rectangle </h4>
             <br>
+            <form action="">
             <input type="text" id="trirect1" placeholder="Enter the length of rectangle" class="form__field">
             <input type="text" id="trirect2" placeholder="Enter the breadth of rectangle" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="trirect()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="trirect()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="trirectans"></h5>
+            </form>
             <br>
             <h4>Largest square that can be inscribed within a hexagon which is inscribed within an equilateral triangle</h4>
             <br>
             <form action="">
                 <input type="text" id="shtin" placeholder="Enter side length of equilateral triangle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="shtfind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="shtfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6735,8 +6742,8 @@
             <form action="">
                 <input type="text" id="htin" placeholder="Enter side length of hexagon" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="htfind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>    
+                <button type="button" class="btn btn-dark" onclick="htfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>    
             </form>
             <br>
             <p id="htans"></p>
@@ -6746,8 +6753,8 @@
             <form action="">
                 <input type="text" id="retin4" placeholder="Enter side length of square (a)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind2()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind2()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6758,8 +6765,8 @@
             <form action="">
                 <input type="text" id="retin11" placeholder="Enter radius of circle (r)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind11()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind11()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6770,8 +6777,8 @@
             <form action="">
                 <input type="text" id="retin6" placeholder="Enter side length of equilateral triangle (a)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind3()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind3()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6779,10 +6786,13 @@
             <br>
             <h4>Area of the largest Rhombus inscribed within a rectangle </h4>
             <br>
+            <form action=""></form>
             <input type="text" id="rectrhomb1" placeholder="Enter the length of rectangle" class="form__field">
             <input type="text" id="rectrhomb2" placeholder="Enter the breadth of rectangle" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="rectrhomb()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="rectrhomb()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+             </form>
             <br>
             <h5 id="rectrhombans"></h5>
             <br>
@@ -6791,8 +6801,8 @@
             <form action="">
                 <input type="text" id="cirinsemiin" placeholder="Enter radius of semicicrcle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemifind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemifind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6804,8 +6814,8 @@
             <form action="">
                 <input type="text" id="sht6in" placeholder="Enter side length of equilateral triangle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="sht6find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="sht6find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6813,19 +6823,22 @@
             <br>
             <h4>Area of a Rectangle inscribed in an Equilateral Triangle</h4>
             <br>
+            <form action="">
             <input type="text" id="eqrect1" placeholder="Enter side length of equilateral triangle" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="eqrect()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="eqrect()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="eqrectans"></h5>
+            </form>
             <br>
             <h4>Area of a Reuleaux Triangle inscirbed in a square which is inscribed in a semicircle</h4>
             <br>
             <form action="">
                 <input type="text" id="retin" placeholder="Enter radius of semicircle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6838,8 +6851,8 @@
                 <br>
                 <input type="text" id="retin2" placeholder="Enter lenght of minor axis (b)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind1()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind1()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6852,8 +6865,8 @@
                 <br>
                 <input type="text" id="retin10" placeholder= "Enter base of right angle triangle (b)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind8()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind8()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6864,8 +6877,8 @@
             <form action="">
                 <input type="text" id="retin16" placeholder="Enter side length of regular hexagon (a)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="retfind13()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="retfind13()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6876,8 +6889,8 @@
             <form action="">
                 <input type="text" id="cirinsemi1in" placeholder="Enter radius of cicrcle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi1find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi1find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6890,8 +6903,8 @@
                 <input type="text" id="cirinsemi21in" placeholder="Enter perpendicular pf triangle" class="form__field">
                 <input type="text" id="cirinsemi22in" placeholder="Enter hypotneuse of triangle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6902,8 +6915,8 @@
             <form action="">
                 <input type="text" id="cirinsemi3in" placeholder="Enter radius of circle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi3find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi3find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6915,8 +6928,8 @@
                 <input type="text" id="regpoly11" placeholder="Enter sides of the convex regular polygon (a)" class="form__field">
                 <input type="text" id="regpoly22" placeholder="Enter sides of the convex regular polygon (b)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="regpoly()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="regpoly()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6925,8 +6938,8 @@
             <h4>Area of a circle inscribed in a rectangle which is inscribed in a semicircle</h4><br>
             <form action="">
                 <input type="text" id="cirinsemi4in" placeholder="Enter radius of semicircle" class="form__field"><br>
-                <button class="btn btn-dark" onclick="cirinsemi4find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi4find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6935,8 +6948,8 @@
             <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a semicircle</h4><br>
             <form action="">
                 <input type="text" id="cirinsemi5in" placeholder="Enter radius of semicircle" class="form__field"><br>
-                <button class="btn btn-dark" onclick="cirinsemi5find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi5find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6949,8 +6962,8 @@
                 <input type="text" id="cirinsemi6in" placeholder="Enter length of rectangle" class="form__field">
                 <input type="text" id="cirinsemi7in" placeholder="Enter device-widthrectangle" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi6find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi6find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6959,8 +6972,8 @@
             <h4>Largest ellipse that can be inscribed within a rectangle which in turn is inscribed within a square</h4><br>
             <form action="">
                 <input type="text" id="cirinsemi8in" placeholder="Enter side of square" class="form__field"><br>
-                <button class="btn btn-dark" onclick="cirinsemi7find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi7find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6972,8 +6985,8 @@
                 <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
                 <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi8find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -6985,8 +6998,8 @@
                 <input type="text" id="cirinsemi11in" placeholder="Enter length of major axis of ellipse" class="form__field">
                 <input type="text" id="cirinsemi12in" placeholder="Enter length of minor axis of ellipse" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi9find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi9find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -7000,8 +7013,8 @@
                 <input type="text" id="cirinsemi15in" placeholder="Enter x coordinate of 2nd vertex" class="form__field">
                 <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -7009,22 +7022,28 @@
             <br>
             <h4>Division of  an isosceles triangle in two parts with ratio of areas as n:m </h4>
             <br>
+            <form action="">
             <input type="text" id="cirinsemi17in" placeholder="Enter height of triangle" class="form__field">
             <input type="text" id="cirinsemi18in" placeholder="Enter n" class="form__field">
             <input type="text" id="cirinsemi19in" placeholder="Enter n" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="cirinsemi11find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="cirinsemi11find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="cirinsemi11ans"></h5>
+            </form>
             <br>
             <h4>Point that lies inside exactly K given squares </h4>
             <br>
+            <form action="">
             <input type="text" id="pksquare13in" placeholder="Enter number of squares(k)" class="form__field">
             <input type="text" id="pksquare14in" placeholder="Enter space separated co-ordinate of square" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="pksquarefind()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="pksquarefind()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="pksquareans"></h5>
+            </form>
             <br>
             <h4>To check whether given Point (P) lies inside a Rectangle</h4>
             <br>
@@ -7036,8 +7055,8 @@
                 <input type="text" id="checkrect5" placeholder="Enter x coordinate of Point (x)" class="form__field">
                 <input type="text" id="checkrect6" placeholder="Enter y coordinate of Point (y)" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="pointrect()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button  type="button" class="btn btn-dark" onclick="pointrect()">Find</button>
+                <button  type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             </form>
             
             <br>
@@ -7045,6 +7064,7 @@
             <br>
             <h4>To check whether given Point (P) lies inside a Sphere</h4>
             <br>
+            <form action="">
             <input type="text" id="checksphere1" placeholder="Enter x coordinate of Sphere (x)" class="form__field">
             <input type="text" id="checksphere2" placeholder="Enter y coordinate of Sphere (y)" class="form__field">
             <input type="text" id="checksphere3"  placeholder="Enter z coordinate of Sphere (z)" class="form__field">
@@ -7053,22 +7073,28 @@
             <input type="text" id="checksphere6"  placeholder="Enter y coordinate of Point (y)" class="form__field">
             <input type="text" id="checksphere7"  placeholder="Enter z coordinate of Point (z)" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="pointsphere()">Find</button>
+            <button  type="button" class="btn btn-dark" onclick="pointsphere()">Find</button>
+            <button  type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="pointsphereans"></h5>
+            </form>
             <h4>To check whether given Point (P) lies inside a Parabola</h4>
             <br>
+            <form action="">
             <input type="text" id="checkpara1" placeholder="Enter x coordinate of vertex of parabola (h)" class="form__field">
             <input type="text" id="checkpara2" placeholder="Enter y coordinate of vertex of parabola (k)" class="form__field">
             <input type="text" id="checkpara3" placeholder="Enter distance between focus and vertex (a)" class="form__field">
             <input type="text" id="checkpara4" placeholder="Enter x coordinate of Point (x)" class="form__field">
             <input type="text" id="checkpara5" placeholder="Enter y coordinate of Point (y)" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="pointpara()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="pointpara()">Find</button>
+            <button  type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="pointparaans"></h5>
+            </form>
             <h4>To check whether given Point (P) lies inside a Hyperbola</h4>
             <br>
+            <form action="">
             <input type="text" id="checkhyper1" placeholder="Enter x coordinate of centre of Hyperbola (h)" class="form__field">
             <input type="text" id="checkhyper2" placeholder="Enter y coordinate of centre of Hyperbola (k)" class="form__field">
             <input type="text" id="checkhyper3" placeholder="Enter length of semi-minor axis (a)" class="form__field">
@@ -7076,11 +7102,14 @@
             <input type="text" id="checkhyper5" placeholder="Enter x coordinate of Point (x)" class="form__field">
             <input type="text" id="checkhyper6" placeholder="Enter y coordinate of Point (y)" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="pointhyper()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="pointhyper()">Find</button>
+            <button  type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="pointhyperans"></h5>
+            </form>
             <h4>To check whether given Point (P) lies inside a Ellipse</h4>
             <br>
+            <form action="">
             <input type="text" id="checkellip1" placeholder="Enter x coordinate of centre of Ellipse (h)" class="form__field">
             <input type="text" id="checkellip2" placeholder="Enter y coordinate of centre of Ellipse (k)" class="form__field">
             <input type="text" id="checkellip3" placeholder="Enter length of semi-minor axis (a)" class="form__field">
@@ -7088,9 +7117,11 @@
             <input type="text" id="checkellip5" placeholder="Enter x coordinate of Point (x)" class="form__field">
             <input type="text" id="checkellip6" placeholder="Enter y coordinate of Point (y)" class="form__field">
             <br>
-            <button class="btn btn-dark" onclick="pointellip()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="pointellip()">Find</button>
+            <button  type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
             <br>
             <h5 id="pointellipans"></h5>
+            </form>
         </div>
          <!-- start of square root calculator   -->
          <div class="collapse" id="squarerootcalc">     
