@@ -7756,14 +7756,22 @@ function xshapesolve() {
         var i = 2 * n * Math.sin((alpha/2)*(Math.PI/180)) + 2*b;
         var p = 4 * ( b + m + n );
         var A = 2 * l * b * Math.sin(alpha*(Math.PI/180)) - Math.pow(x, 2) * Math.sin(alpha * (Math.PI/180));
-        gammaField.innerHTML = `γ = ${gamma.toFixed(3)}`;
-        crossLenField.innerHTML = `x = ${x.toFixed(3)}`;
-        armLenField.innerHTML = `m = ${m.toFixed(3)}`;
-        immerLenField.innerHTML = `n = ${n.toFixed(3)}`;
-        heightField.innerHTML = `h = ${h.toFixed(3)}`;
-        widthField.innerHTML = `i = ${i.toFixed(3)}`;
-        perimeterField.innerHTML = `p = ${p.toFixed(3)}`;
-        areaField.innerHTML = `A = ${A.toFixed(3)}`;
+        gammaField.innerHTML = "\\[\\gamma = \\frac{"+alpha+" + "+beta+"}{2} = "+gamma+" \\]";
+        crossLenField.innerHTML = "\\[Crossing \\space length \\space (x) = \\frac{"+b+" \\times \\sin "+gamma+"}{\\sin\\left ( 2 \\times "+gamma+" \\right )} = "+x.toFixed(3)+" \\space units\\]";
+        armLenField.innerHTML = "\\[Outer \\space arm \\space length \\space (m) = \\frac{"+l+"}{2} = "+m.toFixed(3)+" \\space units\\]";
+        immerLenField.innerHTML = "\\[Immer \\space arm \\space length \\space (n) =  "+m+" - "+x+" = "+n.toFixed(3)+" \\space units\\]";
+        heightField.innerHTML = "\\[Height \\space (h) =  2 \\times "+m+" \\times \\sin \\frac{"+beta+"}{2} = "+h.toFixed(3)+" \\space units\\]";
+        widthField.innerHTML = "\\[Width \\space (i) = 2 \\times "+n+" \\times \\sin \\frac{"+alpha+"}{2} + 2 \\times "+b+" = "+i.toFixed(3)+" \\space units\\]";
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = 4 \\times \\left ( "+b+" + "+m+" + "+n+" \\right ) = "+p.toFixed(3)+" \\space units\\]";
+        areaField.innerHTML = "\\[Area \\space (A) =  2 \\times "+l+" \\times "+b+" \\times \\sin "+alpha+" - "+x+"^2 \\sin "+alpha+" = "+A+" sq.units\\]";
+        renderMathInElement(gammaField);
+        renderMathInElement(crossLenField);
+        renderMathInElement(armLenField);
+        renderMathInElement(immerLenField);
+        renderMathInElement(heightField);
+        renderMathInElement(widthField);
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField)
     }
 }
 
