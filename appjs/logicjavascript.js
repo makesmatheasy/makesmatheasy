@@ -5844,6 +5844,35 @@ function yintersept() {
     renderMathInElement(document.getElementById("centerer"));
     renderMathInElement(document.getElementById("centerrr"));
 }
+function director_c() {
+    var a, b, c, d, e, f;
+    a = parseInt(document.getElementById("qcenterr").value);
+    b = parseInt(document.getElementById("acenterr").value);
+    c = parseInt(document.getElementById("bcenterr").value);
+    d = parseInt(document.getElementById("ccenterr").value);
+    e = b / (a * 2);
+    f = c / (a * 2);
+    var p = d+d - (e * e) - (f * f) ;
+    var q = -p;
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById("centerer").innerHTML = "\\[Please \\space enter \\space all \\space fields \\]";
+        document.getElementById("centerrr").innerHTML = "";
+    } else {
+        document.getElementById("centerer").innerHTML = "\\[Radius \\space Of \\space circle \\space -> \\newline";
+        document.getElementById("centerer").innerHTML += " g\\space = \\frac {" + b + "} { ( \\space " + a + " * \\space " + 2 + " ) } " + " \\space = " + e + "\\newline";
+        document.getElementById("centerer").innerHTML += " h\\space = \\frac {" + c + "} { ( \\space " + a + " * \\space " + 2 + " ) } " + " \\space = " + f + "\\newline \\] ";
+
+        document.getElementById("centerrr").innerHTML = "\\[ c' \\space Of \\space circle \\space = ( \\ \\space 2c \\space - \\space h^2 \\space - \\space g^2 \\space )   \\newline";
+        
+        document.getElementById("centerrr").innerHTML += " Diractor Circle = \\space " + a + "x^2 \\space + " + a + "y^2 \\space + " + b + "x  \\space + " + c + "y \\space =" + q+ " \\newline \\] ";
+       
+
+    }
+
+    renderMathInElement(document.getElementById("centerer"));
+    renderMathInElement(document.getElementById("centerrr"));
+
+}
 
 
 // number of diagonals in n sided convex polygon
